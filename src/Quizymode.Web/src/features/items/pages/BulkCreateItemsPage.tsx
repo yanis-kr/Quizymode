@@ -6,9 +6,11 @@ import { useState, useMemo, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
 import { apiClient } from "@/api/client";
+import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import {
   XMarkIcon,
@@ -18,6 +20,7 @@ import {
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
+import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 
 const MAX_PROMPT_QUESTIONS = 15;
 
@@ -73,6 +76,7 @@ function consolidateBulkItemKeywords(
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated } = useAuth();
+  const { activeCollectionId } = useActiveCollection();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams.get("category") ?? "";
@@ -272,7 +276,8 @@ Generate the JSON array only.`;
           incorrectAnswers = o.incorrectAnswers.map((a) => String(a).trim()).filter(Boolean);
         }
         const explanation = (o.explanation ?? "").toString().trim();
-        const source = (o.source ?? "").toString().trim() || undefined;
+        const rawSource = (o.source ?? "").toString().trim();
+        const source = rawSource ? rawSource.slice(0, 200) : undefined;
         let keywords: string[] = [];
         if (Array.isArray(o.keywords)) {
           const raw = (o.keywords as (string | { name?: string })[]).map((k) =>
@@ -364,6 +369,11 @@ Generate the JSON array only.`;
       return res.data;
     },
     onSuccess: (data, variables) => {
+      if (activeCollectionId && data.createdItemIds && data.createdItemIds.length > 0) {
+        collectionsApi
+          .bulkAddItems(activeCollectionId, { itemIds: data.createdItemIds })
+          .catch(() => {});
+      }
       setResultModal({
         isOpen: true,
         message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}`,
@@ -420,6 +430,7 @@ Generate the JSON array only.`;
         </p>
 
         <ContentComplianceNotice />
+        <ActiveCollectionNotice />
 
         {localError && (
           <div className="mb-4">

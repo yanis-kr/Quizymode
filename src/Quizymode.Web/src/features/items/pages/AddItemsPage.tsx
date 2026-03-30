@@ -19,6 +19,7 @@ import {
 } from "@/utils/addItemsScopeUrl";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
+import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 
 const EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT = 10;
 
@@ -197,6 +198,7 @@ const AddItemsPage = () => {
         </p>
 
         <ContentComplianceNotice />
+        <ActiveCollectionNotice />
 
         <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-4 mb-8">
           <div>

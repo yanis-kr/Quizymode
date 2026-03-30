@@ -13,7 +13,7 @@ describe("ModeSwitcher", () => {
       />
     );
     expect(screen.getByRole("tab", { name: /list/i })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /explore/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /flashcards/i })).toBeInTheDocument();
     expect(screen.queryByRole("tab", { name: /sets/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("tab", { name: /quiz/i })).not.toBeInTheDocument();
   });
@@ -28,7 +28,7 @@ describe("ModeSwitcher", () => {
     );
     expect(screen.getByRole("tab", { name: /sets/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /list/i })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /explore/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /flashcards/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /quiz/i })).toBeInTheDocument();
   });
 
@@ -40,7 +40,7 @@ describe("ModeSwitcher", () => {
         onChange={() => {}}
       />
     );
-    const exploreTab = screen.getByRole("tab", { name: /explore/i });
+    const exploreTab = screen.getByRole("tab", { name: /flashcards/i });
     expect(exploreTab).toHaveAttribute("aria-selected", "true");
     expect(screen.getByRole("tab", { name: /list/i })).toHaveAttribute(
       "aria-selected",
