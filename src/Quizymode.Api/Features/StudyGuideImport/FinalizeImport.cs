@@ -107,7 +107,7 @@ public static class FinalizeImport
             var array = new List<JsonElement>();
             foreach (var e in doc.RootElement.EnumerateArray())
                 array.Add(e.Clone());
-            (_, _, itemsToImport) = StudyGuideItemValidator.ValidateAndMap(array, session.CategoryName, sessionKeywords);
+            (_, _, itemsToImport, _) = StudyGuideItemValidator.ValidateAndMap(array, session.CategoryName, navPath, sessionKeywords);
         }
         else
         {
@@ -126,7 +126,7 @@ public static class FinalizeImport
                 var array = new List<JsonElement>();
                 foreach (var e in doc.RootElement.EnumerateArray())
                     array.Add(e.Clone());
-                (_, _, var items) = StudyGuideItemValidator.ValidateAndMap(array, session.CategoryName, sessionKeywords);
+                (_, _, var items, _) = StudyGuideItemValidator.ValidateAndMap(array, session.CategoryName, navPath, sessionKeywords);
                 if (items != null)
                     allItems.AddRange(items);
             }

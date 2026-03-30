@@ -103,13 +103,17 @@ public static class SubmitChunkResult
             .Select(k => new Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest(k, true))
             .ToList();
 
-        (bool isValid, List<string> messages, var _) = StudyGuideItemValidator.ValidateAndMap(
+        List<string> navPath = JsonSerializer.Deserialize<List<string>>(session.NavigationKeywordPathJson) ?? [];
+
+        (bool isValid, List<string> messages, _, string? enrichedJson) = StudyGuideItemValidator.ValidateAndMap(
             array,
             session.CategoryName,
+            navPath,
             sessionKeywords);
 
         var status = isValid ? StudyGuidePromptResultStatus.Valid : StudyGuidePromptResultStatus.Invalid;
-        string? parsedJson = isValid ? rawResponseText : null;
+        // Store enriched JSON (with overridden category/nav/seedId) instead of raw AI text
+        string? parsedJson = isValid ? enrichedJson : null;
 
         var existing = await db.StudyGuidePromptResults
             .FirstOrDefaultAsync(r => r.ImportSessionId == sessionId && r.ChunkIndex == chunkIndex, cancellationToken);

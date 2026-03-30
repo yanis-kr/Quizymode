@@ -204,6 +204,7 @@ Requirements:
 - If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
+- Field length limits: "question" max 1000 chars; "correctAnswer" and each "incorrectAnswers" item max 500 chars; "source" max 200 chars (URL only); "explanation" max 4000 chars. Truncate if needed.
 - Keep the questions varied and avoid near-duplicates.
 
 Generate the JSON array only.`;

@@ -29,14 +29,14 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
           "category": "science",
           "navigationKeyword1": "primary-topic",
           "navigationKeyword2": "subtopic",
-          "question": "Question text",
-          "correctAnswer": "Correct answer",
-          "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
-          "explanation": "Short explanation (optional but recommended)",
-          "source": "https://example.com/reliable-reference",
+          "question": "Question text (max 1000 chars)",
+          "correctAnswer": "Correct answer (max 500 chars)",
+          "incorrectAnswers": ["Wrong 1 (max 500 chars each)", "Wrong 2", "Wrong 3"],
+          "explanation": "Short explanation, optional but recommended (max 4000 chars)",
+          "source": "https://example.com/reliable-reference (max 200 chars, URL only)",
           "keywords": ["optional", "extra", "tags"],
           "factualRisk": 0.2,
-          "reviewComments": "Optional note about uncertainty or assumptions"
+          "reviewComments": "Optional note about uncertainty or assumptions (max 500 chars)"
         }
         """;
 
