@@ -45,7 +45,7 @@ public class StudyGuidePromptBuilderServiceTests
             null,
             null);
 
-        prompt.Should().Contain("\"source\": \"https://example.com/reliable-reference\"");
+        prompt.Should().Contain("\"source\": \"https://example.com/reliable-reference (max 200 chars, URL only)\"");
         prompt.Should().Contain("direct URL to a reliable, verifiable source");
         prompt.Should().Contain("Do not cite the AI assistant itself");
         prompt.Should().Contain("Every item must include a unique seedId in UUID format");

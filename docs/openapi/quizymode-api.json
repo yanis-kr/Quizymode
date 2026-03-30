@@ -547,14 +547,14 @@
             "name": "rank",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
             }
           },
           {
             "name": "pendingOnly",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
             }
           }
         ],
@@ -1353,14 +1353,14 @@
             "name": "page",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
             }
           },
           {
             "name": "pageSize",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
             }
           }
         ],
@@ -1480,7 +1480,7 @@
             "name": "itemId",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
             }
           }
         ],
@@ -1662,7 +1662,7 @@
             "name": "isPrivate",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
             }
           },
           {
@@ -1683,14 +1683,14 @@
             "name": "collectionId",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
             }
           },
           {
             "name": "isRandom",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
             }
           },
           {
@@ -2983,7 +2983,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -3028,7 +3028,7 @@
             "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminUsersActivity.UserActivitySummaryResponse"
           },
           "urlHistory": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -3072,7 +3072,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -3173,7 +3173,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -3194,7 +3194,7 @@
             "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminUsersActivity.UsersSummaryResponse"
           },
           "users": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -3279,7 +3279,7 @@
         "type": "object",
         "properties": {
           "settings": {
-            "$ref": "#/components/schemas/System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String"
           }
         }
       },
@@ -3402,7 +3402,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           },
@@ -3451,7 +3451,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -3525,7 +3525,7 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "metadata": {
-            "$ref": "#/components/schemas/System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String"
           }
         }
       },
@@ -3540,7 +3540,7 @@
         "type": "object",
         "properties": {
           "logs": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -3578,7 +3578,7 @@
         "type": "object",
         "properties": {
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetAvailableKeywordsForCategory.KeywordOption, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAvailableKeywordsForCategory.KeywordOption"
           }
         }
       },
@@ -3620,7 +3620,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -3672,7 +3672,7 @@
         "type": "object",
         "properties": {
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
           }
         }
       },
@@ -3769,10 +3769,10 @@
             "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.SummaryResponse"
           },
           "topPages": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse"
           },
           "recentPageViews": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -3911,7 +3911,7 @@
         "type": "object",
         "properties": {
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
           }
         }
       },
@@ -3959,7 +3959,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           },
@@ -4022,7 +4022,7 @@
             "$ref": "#/components/schemas/System.Boolean"
           },
           "changes": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse"
           }
         }
       },
@@ -4057,7 +4057,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "changedFields": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           }
         }
       },
@@ -4112,7 +4112,7 @@
             "$ref": "#/components/schemas/System.Boolean"
           },
           "changes": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse"
           }
         }
       },
@@ -4131,7 +4131,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest"
           },
           "deltaPreviewLimit": {
             "$ref": "#/components/schemas/System.Int32"
@@ -4169,7 +4169,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "oneOf": [
@@ -4187,7 +4187,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
               }
             ]
           },
@@ -4284,7 +4284,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           },
@@ -4294,7 +4294,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -4314,7 +4314,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
           }
@@ -4349,7 +4349,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -4475,7 +4475,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
               }
             ]
           }
@@ -4488,7 +4488,7 @@
         "type": "object",
         "properties": {
           "categories": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Categories.GetCategories.CategoryResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse"
           }
         }
       },
@@ -4517,7 +4517,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
           }
@@ -4596,7 +4596,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -4620,7 +4620,7 @@
         "type": "object",
         "properties": {
           "itemIds": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
           }
         }
       },
@@ -4639,7 +4639,7 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "addedItemIds": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           }
         }
       },
@@ -4716,7 +4716,7 @@
         "type": "object",
         "properties": {
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -4757,7 +4757,7 @@
         "type": "object",
         "properties": {
           "collections": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetBookmarks.BookmarkItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetBookmarks.BookmarkItem"
           }
         }
       },
@@ -4794,7 +4794,7 @@
         "type": "object",
         "properties": {
           "bookmarkedBy": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetCollectionBookmarks.BookmarkerItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetCollectionBookmarks.BookmarkerItem"
           }
         }
       },
@@ -4857,7 +4857,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
               }
             ]
           },
@@ -4867,7 +4867,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           }
@@ -4918,7 +4918,7 @@
         "type": "object",
         "properties": {
           "collections": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetCollections.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetCollections.CollectionResponse"
           }
         }
       },
@@ -4956,7 +4956,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
           }
@@ -4998,7 +4998,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           },
@@ -5103,7 +5103,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -5116,7 +5116,7 @@
         "type": "object",
         "properties": {
           "comments": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Comments.GetComments.CommentResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Comments.GetComments.CommentResponse"
           }
         }
       },
@@ -5174,7 +5174,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -5323,7 +5323,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -5334,7 +5334,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Add.AddItem.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Add.AddItem.KeywordRequest"
               }
             ]
           },
@@ -5357,7 +5357,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           },
@@ -5367,7 +5367,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -5413,7 +5413,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -5447,7 +5447,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -5498,7 +5498,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -5509,7 +5509,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest"
               }
             ]
           },
@@ -5529,7 +5529,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -5591,10 +5591,10 @@
             ]
           },
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest"
           },
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest"
           },
           "uploadId": {
             "oneOf": [
@@ -5602,7 +5602,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           }
@@ -5632,10 +5632,10 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "duplicateQuestions": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "errors": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError"
           },
           "createdItemIds": {
             "oneOf": [
@@ -5643,7 +5643,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
               }
             ]
           }
@@ -5700,7 +5700,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -5709,10 +5709,10 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.KeywordResponse"
           },
           "collections": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.CollectionResponse"
           },
           "source": {
             "oneOf": [
@@ -5740,7 +5740,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -5786,7 +5786,7 @@
         "type": "object",
         "properties": {
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.ItemResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.ItemResponse"
           },
           "totalCount": {
             "$ref": "#/components/schemas/System.Int32"
@@ -5880,7 +5880,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -5899,10 +5899,10 @@
             ]
           },
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.GetById.GetItemById.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.GetById.GetItemById.KeywordResponse"
           },
           "collections": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.GetById.GetItemById.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.GetById.GetItemById.CollectionResponse"
           },
           "source": {
             "oneOf": [
@@ -5925,7 +5925,7 @@
             ]
           },
           "navigationBreadcrumb": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "factualRisk": {
             "oneOf": [
@@ -5933,7 +5933,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -5978,7 +5978,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -6018,7 +6018,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -6035,7 +6035,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -6058,7 +6058,7 @@
         "type": "object",
         "properties": {
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.ReviewBoard.GetReviewBoardItems.ItemResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.ReviewBoard.GetReviewBoardItems.ItemResponse"
           }
         }
       },
@@ -6092,7 +6092,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -6200,7 +6200,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -6214,7 +6214,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Update.UpdateItem.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Update.UpdateItem.KeywordRequest"
               }
             ]
           },
@@ -6224,7 +6224,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
           },
@@ -6244,7 +6244,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -6290,7 +6290,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "explanation": {
             "$ref": "#/components/schemas/System.String"
@@ -6314,7 +6314,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           },
@@ -6363,7 +6363,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           },
@@ -6414,10 +6414,10 @@
             "$ref": "#/components/schemas/System.String"
           },
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest"
           },
           "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest"
           },
           "inputText": {
             "$ref": "#/components/schemas/System.String"
@@ -6451,7 +6451,7 @@
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           }
         }
       },
@@ -6484,7 +6484,7 @@
         "type": "object",
         "properties": {
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Keywords.GetKeywordDescriptions.KeywordDescriptionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Keywords.GetKeywordDescriptions.KeywordDescriptionResponse"
           }
         }
       },
@@ -6509,7 +6509,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
               }
             ]
           },
@@ -6539,7 +6539,7 @@
         "type": "object",
         "properties": {
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.Keywords.GetKeywords.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Keywords.GetKeywords.KeywordResponse"
           }
         }
       },
@@ -6555,7 +6555,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           }
@@ -6583,7 +6583,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -6596,7 +6596,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -6619,7 +6619,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
               }
             ]
           },
@@ -6629,7 +6629,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           }
@@ -6668,7 +6668,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
           },
@@ -6681,7 +6681,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
           }
@@ -6698,7 +6698,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "navigationKeywordPath": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfSystem.String"
           },
           "defaultKeywords": {
             "oneOf": [
@@ -6706,7 +6706,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfSystem.String"
               }
             ]
           },
@@ -6758,10 +6758,10 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "createdItemIds": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "errors": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           }
         }
       },
@@ -6795,7 +6795,7 @@
         "type": "object",
         "properties": {
           "chunks": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo"
           }
         }
       },
@@ -6939,7 +6939,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "navigationKeywordPath": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "defaultKeywords": {
             "oneOf": [
@@ -6947,7 +6947,7 @@
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
               }
             ]
           },
@@ -6958,10 +6958,10 @@
             "$ref": "#/components/schemas/System.String"
           },
           "chunks": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GetImportSession.ChunkDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GetImportSession.ChunkDto"
           },
           "promptResults": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
           },
           "dedupResult": {
             "oneOf": [
@@ -6998,7 +6998,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "validationMessages": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "parsedItemsJson": {
             "oneOf": [
@@ -7035,7 +7035,7 @@
             "$ref": "#/components/schemas/System.String"
           },
           "validationMessages": {
-            "$ref": "#/components/schemas/System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
           },
           "parsedDedupItemsJson": {
             "oneOf": [
@@ -7157,10 +7157,10 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "groups": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto"
           },
           "allKeywordSlugs": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfSystem.String"
           }
         }
       },
@@ -7190,7 +7190,7 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "keywords": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto"
           }
         }
       },
@@ -7227,7 +7227,7 @@
         "type": "object",
         "properties": {
           "categories": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto"
           }
         }
       },
@@ -7421,7 +7421,7 @@
         "type": "object",
         "properties": {
           "acceptances": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollectionOfQuizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem"
           }
         }
       },
@@ -7432,7 +7432,7 @@
         "type": "object",
         "properties": {
           "acceptances": {
-            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyCollectionOfQuizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse"
           }
         }
       },
@@ -7488,7 +7488,7 @@
         "type": "object",
         "properties": {
           "settings": {
-            "$ref": "#/components/schemas/System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String"
           }
         },
         "description": "Response containing all settings for the current user as a dictionary of key-value pairs."
@@ -7532,247 +7532,247 @@
       "System.Boolean": {
         "type": "boolean"
       },
-      "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/System.String"
         }
       },
-      "System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.IReadOnlyCollectionOfQuizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem"
         }
       },
-      "System.Collections.Generic.IReadOnlyCollection`1[[Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.IReadOnlyCollectionOfQuizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse"
         }
       },
-      "System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto"
         }
       },
-      "System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.GetTaxonomy.L1Dto"
         }
       },
-      "System.Collections.Generic.IReadOnlyList`1[[Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto"
         }
       },
-      "System.Collections.Generic.IReadOnlyList`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.Collections.Generic.IReadOnlyListOfSystem.String": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.String"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetAvailableKeywordsForCategory.KeywordOption, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAvailableKeywordsForCategory.KeywordOption": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAvailableKeywordsForCategory.KeywordOption"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Categories.GetCategories.CategoryResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Categories.GetCategories.CategoryResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetBookmarks.BookmarkItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetBookmarks.BookmarkItem": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.GetBookmarks.BookmarkItem"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetCollectionBookmarks.BookmarkerItem, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetCollectionBookmarks.BookmarkerItem": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.GetCollectionBookmarks.BookmarkerItem"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Collections.GetCollections.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.GetCollections.CollectionResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.GetCollections.CollectionResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Comments.GetComments.CommentResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Comments.GetComments.CommentResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Comments.GetComments.CommentResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Add.AddItem.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Add.AddItem.KeywordRequest": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Add.AddItem.KeywordRequest"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemRequest"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.CollectionResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Get.GetItems.CollectionResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.ItemResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.ItemResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Get.GetItems.ItemResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Get.GetItems.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.KeywordResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Get.GetItems.KeywordResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.GetById.GetItemById.CollectionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.GetById.GetItemById.CollectionResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.GetById.GetItemById.CollectionResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.GetById.GetItemById.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.GetById.GetItemById.KeywordResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.GetById.GetItemById.KeywordResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.ReviewBoard.GetReviewBoardItems.ItemResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.ReviewBoard.GetReviewBoardItems.ItemResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.ReviewBoard.GetReviewBoardItems.ItemResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Items.Update.UpdateItem.KeywordRequest, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Update.UpdateItem.KeywordRequest": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Update.UpdateItem.KeywordRequest"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Keywords.GetKeywordDescriptions.KeywordDescriptionResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Keywords.GetKeywordDescriptions.KeywordDescriptionResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Keywords.GetKeywordDescriptions.KeywordDescriptionResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.Keywords.GetKeywords.KeywordResponse, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Keywords.GetKeywords.KeywordResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Keywords.GetKeywords.KeywordResponse"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GetImportSession.ChunkDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GetImportSession.ChunkDto": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.ChunkDto"
         }
       },
-      "System.Collections.Generic.List`1[[Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto, Quizymode.Api, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
         }
       },
-      "System.Collections.Generic.List`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.Collections.Generic.ListOfSystem.Guid": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.Guid"
         }
       },
-      "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.Collections.Generic.ListOfSystem.String": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.String"
@@ -7810,14 +7810,14 @@
         ],
         "format": "int64"
       },
-      "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.Boolean": {
         "type": "boolean"
       },
-      "System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.DateTime": {
         "type": "string",
         "format": "date-time"
       },
-      "System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.Decimal": {
         "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
         "type": [
           "number",
@@ -7825,7 +7825,7 @@
         ],
         "format": "double"
       },
-      "System.Nullable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.Double": {
         "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
         "type": [
           "number",
@@ -7833,11 +7833,11 @@
         ],
         "format": "double"
       },
-      "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.Guid": {
         "type": "string",
         "format": "uuid"
       },
-      "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+      "System.NullableOfSystem.Int32": {
         "pattern": "^-?(?:0|[1-9]\\d*)$",
         "type": [
           "integer",
