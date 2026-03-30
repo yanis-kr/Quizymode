@@ -116,28 +116,6 @@ internal sealed class SeedSyncAdminService(
             .Select(i => i.SeedId)
             .ToHashSet();
 
-        List<Item> conflictingSeedItems = await db.Items
-            .Where(i => i.IsSeedManaged
-                && i.SeedId.HasValue
-                && incomingSeedIds.Contains(i.SeedId.Value)
-                && i.SeedSet != request.SeedSet)
-            .Select(i => new Item
-            {
-                Id = i.Id,
-                SeedId = i.SeedId,
-                SeedSet = i.SeedSet
-            })
-            .ToListAsync(cancellationToken);
-
-        if (conflictingSeedItems.Count > 0)
-        {
-            Item conflict = conflictingSeedItems[0];
-            return Result.Failure<SeedSyncPlan>(
-                Error.Validation(
-                    "Admin.SeedSyncSeedIdCollision",
-                    $"SeedId '{conflict.SeedId}' is already assigned to seed set '{conflict.SeedSet}'."));
-        }
-
         List<Item> existingManagedItems = await db.Items
             .Where(i => i.IsSeedManaged && i.SeedSet == request.SeedSet)
             .Include(i => i.Category)
@@ -161,6 +139,16 @@ internal sealed class SeedSyncAdminService(
         List<Item> legacyCandidates = isInitialSeed
             ? await LoadLegacyCandidatesAsync(normalizedItems, cancellationToken)
             : [];
+        Dictionary<Guid, NormalizedSeedItem> normalizedBySeedId = normalizedItems
+            .ToDictionary(i => i.SeedId);
+
+        List<Item> existingSeedIdItems = await db.Items
+            .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId.Value))
+            .Include(i => i.Category)
+            .Include(i => i.NavigationKeyword1)
+            .Include(i => i.NavigationKeyword2)
+            .AsSplitQuery()
+            .ToListAsync(cancellationToken);
 
         Dictionary<string, Category> categoryCache = categoryResult.Value!;
         Dictionary<string, ResolvedNavigationPath> navigationCache = new(StringComparer.OrdinalIgnoreCase);
@@ -168,7 +156,47 @@ internal sealed class SeedSyncAdminService(
             .Where(i => i.SeedId.HasValue)
             .ToDictionary(i => i.SeedId!.Value);
         Dictionary<string, Queue<Item>> legacyLookup = BuildLegacyLookup(legacyCandidates);
+        Dictionary<Guid, Item> legacyBySeedId = legacyCandidates
+            .Where(i => i.SeedId.HasValue)
+            .GroupBy(i => i.SeedId!.Value)
+            .ToDictionary(g => g.Key, g => g.First());
+        HashSet<Guid> usedLegacyItemIds = [];
         HashSet<Guid> matchedManagedSeedIds = [];
+
+        foreach (Item existingSeedItem in existingSeedIdItems)
+        {
+            if (!existingSeedItem.SeedId.HasValue)
+            {
+                continue;
+            }
+
+            Guid seedId = existingSeedItem.SeedId.Value;
+            if (existingBySeedId.ContainsKey(seedId))
+            {
+                continue;
+            }
+
+            if (existingSeedItem.IsSeedManaged)
+            {
+                return Result.Failure<SeedSyncPlan>(
+                    Error.Validation(
+                        "Admin.SeedSyncSeedIdCollision",
+                        $"SeedId '{seedId}' is already assigned to seed set '{existingSeedItem.SeedSet}'."));
+            }
+
+            if (isInitialSeed
+                && legacyBySeedId.TryGetValue(seedId, out Item? legacyMatchBySeedId)
+                && normalizedBySeedId.TryGetValue(seedId, out NormalizedSeedItem? normalizedById)
+                && CanAdoptLegacyCandidate(legacyMatchBySeedId, normalizedById))
+            {
+                continue;
+            }
+
+            return Result.Failure<SeedSyncPlan>(
+                Error.Validation(
+                    "Admin.SeedSyncSeedIdAlreadyAssigned",
+                    $"SeedId '{seedId}' is already assigned to existing item '{existingSeedItem.Id}' and cannot be created again."));
+        }
 
         List<PlannedSeedItemChange> changes = [];
 
@@ -205,18 +233,44 @@ internal sealed class SeedSyncAdminService(
 
             if (isInitialSeed)
             {
-                string legacyKey = BuildLegacyKey(normalizedItem.Category, normalizedItem.NavigationKeyword1, normalizedItem.NavigationKeyword2, normalizedItem.Question);
-                if (legacyLookup.TryGetValue(legacyKey, out Queue<Item>? queue) && queue.Count > 0)
+                if (legacyBySeedId.TryGetValue(normalizedItem.SeedId, out Item? exactLegacyMatch)
+                    && CanAdoptLegacyCandidate(exactLegacyMatch, normalizedItem)
+                    && usedLegacyItemIds.Add(exactLegacyMatch.Id))
                 {
-                    Item adoptedItem = queue.Dequeue();
-                    List<string> changedFields = GetChangedFields(adoptedItem, normalizedItem);
+                    List<string> changedFields = GetChangedFields(exactLegacyMatch, normalizedItem);
                     changes.Add(new PlannedSeedItemChange(
                         normalizedItem,
                         path,
-                        adoptedItem,
+                        exactLegacyMatch,
                         SeedSyncChangeKind.Adopt,
                         changedFields));
                     continue;
+                }
+
+                string legacyKey = BuildLegacyKey(normalizedItem.Category, normalizedItem.NavigationKeyword1, normalizedItem.NavigationKeyword2, normalizedItem.Question);
+                if (legacyLookup.TryGetValue(legacyKey, out Queue<Item>? queue))
+                {
+                    Item? adoptedItem = null;
+                    while (queue.Count > 0 && adoptedItem is null)
+                    {
+                        Item candidate = queue.Dequeue();
+                        if (usedLegacyItemIds.Add(candidate.Id))
+                        {
+                            adoptedItem = candidate;
+                        }
+                    }
+
+                    if (adoptedItem is not null)
+                    {
+                        List<string> changedFields = GetChangedFields(adoptedItem, normalizedItem);
+                        changes.Add(new PlannedSeedItemChange(
+                            normalizedItem,
+                            path,
+                            adoptedItem,
+                            SeedSyncChangeKind.Adopt,
+                            changedFields));
+                        continue;
+                    }
                 }
             }
 
@@ -237,6 +291,27 @@ internal sealed class SeedSyncAdminService(
             existingManagedItems.Count,
             missingFromPayloadCount,
             changes));
+    }
+
+    private static bool CanAdoptLegacyCandidate(Item candidate, NormalizedSeedItem normalizedItem)
+    {
+        if (candidate.IsSeedManaged || candidate.IsPrivate || !string.Equals(candidate.CreatedBy, SeederUserId, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        string candidateKey = BuildLegacyKey(
+            candidate.Category?.Name ?? string.Empty,
+            candidate.NavigationKeyword1?.Name ?? string.Empty,
+            candidate.NavigationKeyword2?.Name ?? string.Empty,
+            candidate.Question);
+        string incomingKey = BuildLegacyKey(
+            normalizedItem.Category,
+            normalizedItem.NavigationKeyword1,
+            normalizedItem.NavigationKeyword2,
+            normalizedItem.Question);
+
+        return string.Equals(candidateKey, incomingKey, StringComparison.OrdinalIgnoreCase);
     }
 
     private async Task<Result<Dictionary<string, Category>>> LoadCategoriesAsync(

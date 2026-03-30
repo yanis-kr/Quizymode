@@ -11,8 +11,9 @@ $ErrorActionPreference = "Stop"
 # Configuration
 $S3Bucket = "quizymode-web"
 $CloudFrontDistributionId = "EH1DS9REH8KR5"
-$WebProjectPath = "src\Quizymode.Web"
-$BuildOutputPath = "$WebProjectPath\dist"
+$RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+$WebProjectPath = Join-Path $RepositoryRoot "src\Quizymode.Web"
+$BuildOutputPath = Join-Path $WebProjectPath "dist"
 
 function Test-CloudFrontSpaFallback {
     param(
@@ -106,7 +107,6 @@ if (-not $SkipBuild) {
         Write-Host "Build completed successfully" -ForegroundColor Green
     } catch {
         Write-Host "Build failed: $_" -ForegroundColor Red
-        Pop-Location
         exit 1
     } finally {
         Pop-Location
@@ -130,7 +130,7 @@ if (Test-CloudFrontSpaFallback -DistributionId $CloudFrontDistributionId) {
     Write-Host "CloudFront SPA fallback is configured for deep links (403/404 -> /index.html)" -ForegroundColor Green
 } else {
     Write-Host "WARNING: CloudFront SPA fallback is not configured for deep links" -ForegroundColor Yellow
-    Write-Host "  Configure custom error responses on distribution $CloudFrontDistributionId:" -ForegroundColor Yellow
+    Write-Host "  Configure custom error responses on distribution ${CloudFrontDistributionId}:" -ForegroundColor Yellow
     Write-Host "  - 403 -> /index.html (HTTP 200)" -ForegroundColor Yellow
     Write-Host "  - 404 -> /index.html (HTTP 200)" -ForegroundColor Yellow
     Write-Host "  Without this, refreshing /collections/... or other nested routes will return S3 AccessDenied." -ForegroundColor Yellow
