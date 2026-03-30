@@ -107,7 +107,7 @@ public static class TrackPageView
         };
 
         db.PageViews.Add(pageView);
-        await db.SaveChangesAsync(cancellationToken);
+        await db.SaveChangesAsync(CancellationToken.None);
 
         return Result.Success(new Response(pageView.Id.ToString(), pageView.CreatedUtc));
     }

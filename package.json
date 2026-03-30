@@ -1,5 +1,11 @@
 {
+  "type": "module",
+  "scripts": {
+    "screenshots": "playwright test",
+    "user-guide": "playwright test && node scripts/generate-user-guide.js"
+  },
   "devDependencies": {
     "@playwright/test": "^1.58.2"
   }
 }
+

@@ -373,3 +373,11 @@ src/Quizymode.Api/appsettings.Development.json
 src/Quizymode.Api/appsettings.Development.json
 /generated/
 /data/generated/seed-progress/
+
+# Playwright auth state (contains session tokens — never commit)
+playwright/.auth/
+# Playwright test artifacts and local runner logs
+playwright/test-results/
+playwright/logs/
+# Note: docs/user-guide/screenshots/ is intentionally tracked in source control
+# so the user guide renders on GitHub without running Playwright locally.
