@@ -4,8 +4,10 @@ import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
 import { itemsApi } from "@/api/items";
+import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { ItemForm, type ItemFormValues } from "@/components/items/ItemForm";
 import type { CreateItemRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
@@ -13,6 +15,7 @@ import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutoco
 import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
+import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 
 interface ApiValidationError {
   errorMessage?: string;
@@ -85,6 +88,7 @@ function CreateItemEditor({
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState(initialValues);
   const [validationError, setValidationError] = useState("");
+  const { activeCollectionId } = useActiveCollection();
 
   const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
     queryKey: ["taxonomy"],
@@ -135,6 +139,10 @@ function CreateItemEditor({
         queryClient.invalidateQueries({ queryKey: ["itemTagKeywords", category] });
       }
       const createdItemId = typeof data?.id === "string" ? data.id : "";
+      if (activeCollectionId && createdItemId) {
+        // Fire-and-forget: silently add to active collection; failure does not block navigation
+        collectionsApi.addItem(activeCollectionId, { itemId: createdItemId }).catch(() => {});
+      }
       navigate(createdItemId ? `/items/${createdItemId}` : "/categories");
     },
     onError: (error: unknown) => {
@@ -314,6 +322,7 @@ const CreateItemPage = () => {
         </p>
 
         <ContentComplianceNotice />
+        <ActiveCollectionNotice />
 
         <CreateItemEditor
           key={scopeKey}

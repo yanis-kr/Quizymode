@@ -25,6 +25,9 @@ public class StudyGuidePromptBuilderServiceTests
         prompt.Should().Contain("prompt set 2 of 3");
         prompt.Should().Contain("Default extra keywords already applied to every imported item: exam-prep");
         prompt.Should().Contain("Already generated questions");
+        prompt.Should().Contain("\"navigationKeyword1\": \"anatomy\"");
+        prompt.Should().Contain("\"navigationKeyword2\": \"digestive\"");
+        prompt.Should().Contain("\"seedId\": \"00000000-0000-0000-0000-000000000001\"");
     }
 
     [Fact]
@@ -42,8 +45,9 @@ public class StudyGuidePromptBuilderServiceTests
             null,
             null);
 
-        prompt.Should().Contain("\"source\": \"https://example.com/reliable-reference\"");
+        prompt.Should().Contain("\"source\": \"https://example.com/reliable-reference (max 200 chars, URL only)\"");
         prompt.Should().Contain("direct URL to a reliable, verifiable source");
         prompt.Should().Contain("Do not cite the AI assistant itself");
+        prompt.Should().Contain("Every item must include a unique seedId in UUID format");
     }
 }

@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(xargs grep:*)",
-      "Bash(dotnet ef:*)"
+      "Bash(dotnet ef:*)",
+      "Bash(grep -i \"^.*\\\\.\\\\\\(tsx\\\\|ts\\\\\\)$\")",
+      "Bash(find C:ProjectsQuizymode -name *.json -path */seed*)",
+      "Bash(find C:ProjectsQuizymode/data -type f -name *.json)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet test:*)",
+      "Bash(npm test:*)",
+      "Bash(grep:*)"
     ]
   }
 }

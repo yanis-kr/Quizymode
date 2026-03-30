@@ -6,9 +6,11 @@ import { useState, useMemo, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
 import { apiClient } from "@/api/client";
+import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import {
   XMarkIcon,
@@ -18,6 +20,7 @@ import {
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
+import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 
 const MAX_PROMPT_QUESTIONS = 15;
 
@@ -73,6 +76,7 @@ function consolidateBulkItemKeywords(
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated } = useAuth();
+  const { activeCollectionId } = useActiveCollection();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams.get("category") ?? "";
@@ -184,7 +188,10 @@ ${extraLine}
 
 Each item must be a JSON object with this exact shape:
 {
+  "seedId": "00000000-0000-0000-0000-000000000001",
   "category": "${category}",
+  "navigationKeyword1": "${primaryTopic.trim()}",
+  "navigationKeyword2": "${subtopic.trim()}",
   "question": "Question text?",
   "correctAnswer": "Correct answer",
   "incorrectAnswers": ["Wrong 1", "Wrong 2", "Wrong 3"],
@@ -196,10 +203,12 @@ Each item must be a JSON object with this exact shape:
 Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
-- Every item must have: "category", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- Every item must have: unique "seedId" (UUID), "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
+- Use "${primaryTopic.trim()}" for "navigationKeyword1" and "${subtopic.trim()}" for "navigationKeyword2" on every item. These are required seed-compatible fields and must not be moved into "keywords".
 - If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
+- Field length limits: "question" max 1000 chars; "correctAnswer" and each "incorrectAnswers" item max 500 chars; "source" max 200 chars (URL only); "explanation" max 4000 chars. Truncate if needed.
 - Keep the questions varied and avoid near-duplicates.
 
 Generate the JSON array only.`;
@@ -251,6 +260,14 @@ Generate the JSON array only.`;
         if (selectedCategory && itemCategory.toLowerCase() !== selectedCategory.toLowerCase()) {
           continue;
         }
+        const navigationKeyword1 = (o.navigationKeyword1 ?? "").toString().trim();
+        const navigationKeyword2 = (o.navigationKeyword2 ?? "").toString().trim();
+        if (navigationKeyword1 && navigationKeyword1.toLowerCase() !== primaryTopic.trim().toLowerCase()) {
+          continue;
+        }
+        if (navigationKeyword2 && navigationKeyword2.toLowerCase() !== subtopic.trim().toLowerCase()) {
+          continue;
+        }
         const question = (o.question ?? "").toString().trim();
         const correctAnswer = (o.correctAnswer ?? "").toString().trim();
         if (!question || !correctAnswer) continue;
@@ -259,7 +276,8 @@ Generate the JSON array only.`;
           incorrectAnswers = o.incorrectAnswers.map((a) => String(a).trim()).filter(Boolean);
         }
         const explanation = (o.explanation ?? "").toString().trim();
-        const source = (o.source ?? "").toString().trim() || undefined;
+        const rawSource = (o.source ?? "").toString().trim();
+        const source = rawSource ? rawSource.slice(0, 200) : undefined;
         let keywords: string[] = [];
         if (Array.isArray(o.keywords)) {
           const raw = (o.keywords as (string | { name?: string })[]).map((k) =>
@@ -351,6 +369,11 @@ Generate the JSON array only.`;
       return res.data;
     },
     onSuccess: (data, variables) => {
+      if (activeCollectionId && data.createdItemIds && data.createdItemIds.length > 0) {
+        collectionsApi
+          .bulkAddItems(activeCollectionId, { itemIds: data.createdItemIds })
+          .catch(() => {});
+      }
       setResultModal({
         isOpen: true,
         message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}`,
@@ -407,6 +430,7 @@ Generate the JSON array only.`;
         </p>
 
         <ContentComplianceNotice />
+        <ActiveCollectionNotice />
 
         {localError && (
           <div className="mb-4">

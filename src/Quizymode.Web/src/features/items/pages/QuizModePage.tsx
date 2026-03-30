@@ -75,9 +75,29 @@ const QuizModePage = () => {
   ]);
   const { isAuthenticated } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [showAnswer, setShowAnswer] = useState(false);
-  const [stats, setStats] = useState({ total: 0, correct: 0 });
+
+  // Read collection quiz state once at mount (synchronous) so the storage effect below
+  // doesn't overwrite saved state with defaults before a restoration useEffect could run.
+  const [collectionSavedCtx] = useState(() => {
+    if (!collectionId || !itemId) return null;
+    try {
+      const raw = sessionStorage.getItem("navigationContext_quiz");
+      if (!raw) return null;
+      const ctx = JSON.parse(raw);
+      if (ctx.mode === "quiz" && ctx.collectionId === collectionId) return ctx;
+    } catch {}
+    return null;
+  });
+
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(
+    collectionSavedCtx?.quizStateByItemId?.[itemId!]?.selectedAnswer ?? null
+  );
+  const [showAnswer, setShowAnswer] = useState<boolean>(
+    collectionSavedCtx?.quizStateByItemId?.[itemId!]?.showAnswer ?? false
+  );
+  const [stats, setStats] = useState<{ total: number; correct: number }>(
+    collectionSavedCtx?.stats ?? { total: 0, correct: 0 }
+  );
   /** Quiz uses random N items (default 10); changing this refetches items */
   const [quizSize, setQuizSize] = useState(10);
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
@@ -437,10 +457,57 @@ const QuizModePage = () => {
     }
   }, [items.length, currentIndex]);
 
-  // Store items and quiz state in sessionStorage when we have them (for restoration after comments)
+  // When entering a collection quiz without an item in the path (fresh start), clear any
+  // stale saved state so the quiz always begins from zero.
   useEffect(() => {
-    if (items.length > 0 && !collectionId) {
-      // Load existing quiz state from sessionStorage to preserve state for all items
+    if (collectionId && !itemId) {
+      try {
+        const raw = sessionStorage.getItem("navigationContext_quiz");
+        if (raw) {
+          const ctx = JSON.parse(raw);
+          if (ctx.collectionId === collectionId) {
+            sessionStorage.removeItem("navigationContext_quiz");
+          }
+        }
+      } catch {}
+    }
+  }, [collectionId, itemId]);
+
+  // Store items and quiz state in sessionStorage when we have them (for restoration after item detail view)
+  useEffect(() => {
+    if (items.length === 0) return;
+
+    if (collectionId) {
+      // Collections: items are always re-fetched from the API so we only persist
+      // stats and per-item answer state, keyed by item ID (not index) so we can
+      // restore them synchronously at mount before the items list is available.
+      let existingByItemId: Record<string, { selectedAnswer: string | null; showAnswer: boolean }> = {};
+      try {
+        const raw = sessionStorage.getItem("navigationContext_quiz");
+        if (raw) {
+          const ctx = JSON.parse(raw);
+          if (ctx.mode === "quiz" && ctx.collectionId === collectionId && ctx.quizStateByItemId) {
+            existingByItemId = ctx.quizStateByItemId;
+          }
+        }
+      } catch {}
+      const currentItemId = items[currentIndex]?.id;
+      if (currentItemId) {
+        existingByItemId = { ...existingByItemId, [currentItemId]: { selectedAnswer, showAnswer } };
+      }
+      sessionStorage.setItem(
+        "navigationContext_quiz",
+        JSON.stringify({
+          mode: "quiz",
+          collectionId,
+          currentIndex,
+          itemIds: items.map((i) => i.id),
+          stats,
+          quizStateByItemId: existingByItemId,
+        })
+      );
+    } else {
+      // Non-collection: existing index-based logic (unchanged)
       let existingQuizState: Record<
         number,
         { selectedAnswer: string | null; showAnswer: boolean }
@@ -449,7 +516,6 @@ const QuizModePage = () => {
         const stored = sessionStorage.getItem("navigationContext_quiz");
         if (stored) {
           const context = JSON.parse(stored);
-          // Only load existing state if category matches (to avoid mixing states from different sessions)
           const categoryMatches =
             (!context.category && !category) || context.category === category;
           if (categoryMatches && context.quizState) {
@@ -459,15 +525,7 @@ const QuizModePage = () => {
       } catch (e) {
         // Ignore errors
       }
-
-      // Update current item's state
-      existingQuizState[currentIndex] = {
-        selectedAnswer: selectedAnswer,
-        showAnswer: showAnswer,
-      };
-
-      // Store items for both random items and category-based items to restore after comments
-      // Don't store for collections as they're stable and can be reloaded
+      existingQuizState[currentIndex] = { selectedAnswer, showAnswer };
       sessionStorage.setItem(
         "navigationContext_quiz",
         JSON.stringify({
@@ -476,9 +534,9 @@ const QuizModePage = () => {
           collectionId: collectionId,
           currentIndex: currentIndex,
           itemIds: items.map((item) => item.id),
-          items: items, // Store full items data
-          stats: stats, // Store quiz stats
-          quizState: existingQuizState, // Store quiz state for all items
+          items: items,
+          stats: stats,
+          quizState: existingQuizState,
         })
       );
     }

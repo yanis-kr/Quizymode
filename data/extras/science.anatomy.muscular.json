@@ -1,0 +1,302 @@
+[
+    {
+        "seedId": "3a9c2a41-8c5f-4e63-8d8a-4f3c6f1c0a11",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle is primarily responsible for flexing the elbow when you lift a light object with your palm facing upward?",
+        "correctAnswer": "Biceps brachii",
+        "incorrectAnswers": [
+            "Triceps brachii",
+            "Deltoid",
+            "Latissimus dorsi"
+        ],
+        "keywords": [
+            "upper-limb",
+            "elbow-flexion",
+            "arm-muscles"
+        ],
+        "explanation": "The biceps brachii is a major elbow flexor and also helps supinate the forearm. It is especially active when the palm faces upward.",
+        "source": "[https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs)"
+    },
+    {
+        "seedId": "d1b4ef90-6a7a-4e52-9e9f-2f8c8b572d22",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle is the main muscle used to straighten the elbow joint?",
+        "correctAnswer": "Triceps brachii",
+        "incorrectAnswers": [
+            "Brachialis",
+            "Biceps brachii",
+            "Pectoralis major"
+        ],
+        "keywords": [
+            "upper-limb",
+            "elbow-extension",
+            "arm-muscles"
+        ],
+        "explanation": "The triceps brachii is the prime mover for elbow extension. It is located on the posterior side of the upper arm.",
+        "source": "[https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs)"
+    },
+    {
+        "seedId": "7f2e1b6a-20f2-45c6-92a4-6d3f5e9b8c33",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "What is the name of the broad chest muscle that helps flex, adduct, and medially rotate the arm?",
+        "correctAnswer": "Pectoralis major",
+        "incorrectAnswers": [
+            "Serratus anterior",
+            "Rectus abdominis",
+            "Trapezius"
+        ],
+        "keywords": [
+            "chest",
+            "shoulder-movement",
+            "upper-limb"
+        ],
+        "explanation": "Pectoralis major is a large superficial chest muscle that contributes to several movements of the humerus, including flexion, adduction, and medial rotation.",
+        "source": "[https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-muscles-of-the-pectoral-girdle-and-upper-limbs)"
+    },
+    {
+        "seedId": "c4d8b793-94b8-4e13-a62d-1a7e4f7d9d44",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which shoulder muscle is the prime mover for arm abduction from about 15 degrees to 90 degrees?",
+        "correctAnswer": "Deltoid",
+        "incorrectAnswers": [
+            "Supraspinatus",
+            "Teres major",
+            "Subscapularis"
+        ],
+        "keywords": [
+            "shoulder",
+            "abduction",
+            "upper-limb"
+        ],
+        "explanation": "The deltoid is the main muscle responsible for arm abduction after the first part of the movement is initiated. The supraspinatus starts the initial abduction.",
+        "source": "[https://teachmeanatomy.info/upper-limb/muscles/shoulder/deltoid/](https://teachmeanatomy.info/upper-limb/muscles/shoulder/deltoid/)"
+    },
+    {
+        "seedId": "9ab3d7e4-1f7c-4e6f-8b19-5c2d0a6f5e55",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle forms the bulk of the calf and is most active during forceful plantar flexion, such as jumping?",
+        "correctAnswer": "Gastrocnemius",
+        "incorrectAnswers": [
+            "Tibialis anterior",
+            "Fibularis longus",
+            "Soleus"
+        ],
+        "keywords": [
+            "lower-limb",
+            "calf",
+            "plantar-flexion"
+        ],
+        "explanation": "The gastrocnemius is a large superficial calf muscle that helps produce strong plantar flexion and also assists with knee flexion.",
+        "source": "[https://my.clevelandclinic.org/health/body/22329-gastrocnemius-muscle](https://my.clevelandclinic.org/health/body/22329-gastrocnemius-muscle)"
+    },
+    {
+        "seedId": "f0d5c6b8-2f28-4f29-9b6a-7e1a2d4c6f66",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle lies deep to the gastrocnemius and is especially important for maintaining posture while standing?",
+        "correctAnswer": "Soleus",
+        "incorrectAnswers": [
+            "Plantaris",
+            "Gluteus maximus",
+            "Biceps femoris"
+        ],
+        "keywords": [
+            "lower-limb",
+            "calf",
+            "posture"
+        ],
+        "explanation": "The soleus is a deep calf muscle that contributes to plantar flexion and plays a key role in steady standing and posture.",
+        "source": "[https://my.clevelandclinic.org/health/body/22363-soleus-muscle](https://my.clevelandclinic.org/health/body/22363-soleus-muscle)"
+    },
+    {
+        "seedId": "2e7f9a4d-5c1b-45b6-9a3d-8f4a1b2c7d77",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle on the front of the lower leg dorsiflexes the foot, helping keep the toes from dragging while walking?",
+        "correctAnswer": "Tibialis anterior",
+        "incorrectAnswers": [
+            "Gastrocnemius",
+            "Sartorius",
+            "Gluteus medius"
+        ],
+        "keywords": [
+            "lower-limb",
+            "dorsiflexion",
+            "gait"
+        ],
+        "explanation": "Tibialis anterior is the main dorsiflexor of the ankle. It helps lift the foot during the swing phase of gait.",
+        "source": "[https://my.clevelandclinic.org/health/body/22366-tibialis-anterior](https://my.clevelandclinic.org/health/body/22366-tibialis-anterior)"
+    },
+    {
+        "seedId": "8c6a1d2e-3f4b-4a7f-b5c8-9d0e1f2a8b88",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which large buttock muscle is the primary extensor of the hip during actions such as climbing stairs or rising from a chair?",
+        "correctAnswer": "Gluteus maximus",
+        "incorrectAnswers": [
+            "Gluteus minimus",
+            "Rectus femoris",
+            "Adductor longus"
+        ],
+        "keywords": [
+            "lower-limb",
+            "hip-extension",
+            "gluteal"
+        ],
+        "explanation": "Gluteus maximus is the largest gluteal muscle and is a powerful hip extensor, especially during vigorous activities.",
+        "source": "[https://teachmeanatomy.info/lower-limb/muscles/gluteal-region/gluteus-maximus/](https://teachmeanatomy.info/lower-limb/muscles/gluteal-region/gluteus-maximus/)"
+    },
+    {
+        "seedId": "5d1e7a9c-6b3f-4c8a-8d7e-0a2b3c4d9e99",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle group on the back of the thigh is primarily responsible for knee flexion?",
+        "correctAnswer": "Hamstrings",
+        "incorrectAnswers": [
+            "Quadriceps femoris",
+            "Hip adductors",
+            "Calf muscles"
+        ],
+        "keywords": [
+            "lower-limb",
+            "knee-flexion",
+            "posterior-thigh"
+        ],
+        "explanation": "The hamstrings, including biceps femoris, semitendinosus, and semimembranosus, flex the knee and also extend the hip.",
+        "source": "[https://my.clevelandclinic.org/health/body/22214-hamstring-muscles](https://my.clevelandclinic.org/health/body/22214-hamstring-muscles)"
+    },
+    {
+        "seedId": "1f8c2b3d-7a4e-4d2f-9c1b-3e5f6a7b1c10",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "What is the name of the four-muscle group on the front of the thigh that primarily extends the knee?",
+        "correctAnswer": "Quadriceps femoris",
+        "incorrectAnswers": [
+            "Hamstrings",
+            "Rotator cuff",
+            "Trapezius"
+        ],
+        "keywords": [
+            "lower-limb",
+            "knee-extension",
+            "anterior-thigh"
+        ],
+        "explanation": "The quadriceps femoris consists of rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius, and it is the main knee extensor group.",
+        "source": "[https://my.clevelandclinic.org/health/body/22575-quadriceps-muscles](https://my.clevelandclinic.org/health/body/22575-quadriceps-muscles)"
+    },
+    {
+        "seedId": "6b3d9f1a-2c7e-4f5b-8a9d-4c6e7f8a2b11",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle is the major muscle of breathing that contracts and flattens during inhalation?",
+        "correctAnswer": "Diaphragm",
+        "incorrectAnswers": [
+            "External oblique",
+            "Rectus femoris",
+            "Masseter"
+        ],
+        "keywords": [
+            "respiration",
+            "thorax",
+            "breathing"
+        ],
+        "explanation": "The diaphragm is the primary muscle of inspiration. When it contracts, it flattens and increases the volume of the thoracic cavity.",
+        "source": "[https://www.britannica.com/science/diaphragm-anatomy](https://www.britannica.com/science/diaphragm-anatomy)"
+    },
+    {
+        "seedId": "4a7b2c8d-9e1f-4b6a-8c3d-5e7f9a0b3c12",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which facial muscle closes the eyelids?",
+        "correctAnswer": "Orbicularis oculi",
+        "incorrectAnswers": [
+            "Orbicularis oris",
+            "Buccinator",
+            "Zygomaticus major"
+        ],
+        "keywords": [
+            "face",
+            "facial-muscles",
+            "eyelids"
+        ],
+        "explanation": "Orbicularis oculi is a circular muscle around the eye that closes the eyelids during blinking and squinting.",
+        "source": "[https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back)"
+    },
+    {
+        "seedId": "7c9d1e2f-3a4b-4c5d-8e6f-1a2b3c4d5e13",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which muscle is commonly called the jaw muscle because it powerfully elevates the mandible during chewing?",
+        "correctAnswer": "Masseter",
+        "incorrectAnswers": [
+            "Platysma",
+            "Temporalis fascia",
+            "Sternocleidomastoid"
+        ],
+        "keywords": [
+            "head",
+            "mastication",
+            "jaw"
+        ],
+        "explanation": "The masseter is one of the main muscles of mastication and is a strong elevator of the mandible.",
+        "source": "[https://www.britannica.com/science/masseter](https://www.britannica.com/science/masseter)"
+    },
+    {
+        "seedId": "0d2e3f4a-5b6c-4d7e-8f9a-2b3c4d5e6f14",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which neck muscle rotates the head to the opposite side and flexes the neck when both sides contract?",
+        "correctAnswer": "Sternocleidomastoid",
+        "incorrectAnswers": [
+            "Trapezius",
+            "Splenius capitis",
+            "Buccinator"
+        ],
+        "keywords": [
+            "neck",
+            "head-movement",
+            "rotation"
+        ],
+        "explanation": "The sternocleidomastoid helps rotate the head to the opposite side when acting alone and flexes the neck when both muscles contract together.",
+        "source": "[https://teachmeanatomy.info/neck/muscles/sternocleidomastoid/](https://teachmeanatomy.info/neck/muscles/sternocleidomastoid/)"
+    },
+    {
+        "seedId": "9e0f1a2b-3c4d-4e5f-8a6b-7c8d9e0f1a15",
+        "category": "science",
+        "navigationKeyword1": "anatomy",
+        "navigationKeyword2": "muscular",
+        "question": "Which abdominal muscle is known for its vertical fibers and segmented appearance in a well-defined six-pack?",
+        "correctAnswer": "Rectus abdominis",
+        "incorrectAnswers": [
+            "Transversus abdominis",
+            "Internal oblique",
+            "Tensor fasciae latae"
+        ],
+        "keywords": [
+            "abdomen",
+            "core",
+            "trunk"
+        ],
+        "explanation": "Rectus abdominis runs vertically along the anterior abdominal wall and is divided by tendinous intersections that create the six-pack appearance.",
+        "source": "[https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax](https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax)"
+    }
+]

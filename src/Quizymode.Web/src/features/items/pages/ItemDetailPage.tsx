@@ -1,4 +1,5 @@
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
@@ -13,12 +14,14 @@ import {
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
+import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 
 const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(null);
   const queryClient = useQueryClient();
   const { isAuthenticated, userId, isAdmin } = useAuth();
   const returnUrl = searchParams.get("return");
@@ -308,13 +311,18 @@ const ItemDetailPage = () => {
               <div className="border-t border-gray-200 pt-4">
                 <ItemRatingsComments
                   itemId={item.id}
-                  returnUrl={window.location.pathname}
+                  onOpenComments={(itemId) => setCommentsDrawerItemId(itemId)}
                 />
               </div>
             )}
           </div>
         </div>
       </div>
+
+      <CommentsDrawer
+        itemId={commentsDrawerItemId}
+        onClose={() => setCommentsDrawerItemId(null)}
+      />
     </div>
   );
 };
