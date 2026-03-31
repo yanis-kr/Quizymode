@@ -1,6 +1,10 @@
 # Quizymode
 
-Quizymode is a full-stack study and quiz application with a `.NET 10` API, a React frontend, AWS Cognito authentication, and PostgreSQL. It is optimized for category-driven study flows, personal collections, quiz mode, and AI-assisted content creation/import.
+Quizymode is a full-stack study and quiz application built for people who want to learn from structured question banks. Users can browse items by category, study with flashcards, test themselves in quiz mode, and organise content into personal or shared collections. Content can be created manually, imported in bulk, or generated with AI assistance — and everything is tied to a taxonomy of categories and keywords to keep study sessions focused.
+
+For a full walkthrough with screenshots, see the [User Guide](./docs/user-guide/user-guide.md).
+
+**Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
 
 Production shape:
 
@@ -325,7 +329,7 @@ That means you do **not** need many READMEs by default. One root README should s
 
 Quizymode draws inspiration from Milan Jovanović's Clean Architecture teaching and template ecosystem — especially the emphasis on clear boundaries, pragmatic conventions, and production-minded cross-cutting concerns (validation, logging, observability). Even where Quizymode chooses a more feature-sliced structure, that same "make the next change easy" mindset is a visible influence.
 
-Quizymode also benefits from the broader Clean Architecture community momentum shaped by the Steve Smith's (Ardalis) [Clean Architectur template](https://github.com/ardalis/cleanarchitecture): a strong bias toward maintainable defaults, explicit dependency direction, and testability-first scaffolding. The layered template and its modern endpoint-focused evolutions are a helpful reference point for making deliberate tradeoffs as Quizymode grows.
+Quizymode also benefits from the broader Clean Architecture community momentum shaped by Steve Smith's (Ardalis) [Clean Architecture Template](https://github.com/ardalis/cleanarchitecture): a strong bias toward maintainable defaults, explicit dependency direction, and testability-first scaffolding. The layered template and its modern endpoint-focused evolutions are a helpful reference point for making deliberate tradeoffs as Quizymode grows.
 
 ## License
 
