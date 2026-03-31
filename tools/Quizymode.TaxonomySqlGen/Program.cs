@@ -1,5 +1,5 @@
 using System.Text;
-using Quizymode.Taxonomy;
+using Quizymode.Api.Shared.Taxonomy;
 
 namespace Quizymode.TaxonomySqlGen;
 

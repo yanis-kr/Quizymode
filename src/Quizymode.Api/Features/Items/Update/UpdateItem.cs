@@ -1,7 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Helpers;

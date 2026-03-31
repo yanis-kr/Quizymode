@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Hosting;
 using Quizymode.Api.Shared.Options;
-using Quizymode.Taxonomy;
+using Quizymode.Api.Shared.Taxonomy;
 
 namespace Quizymode.Api.Services.Taxonomy;
 

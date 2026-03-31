@@ -3,9 +3,9 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Helpers;
+using Quizymode.Api.Shared.Taxonomy;
 using Quizymode.Api.Shared.Models;
 using Microsoft.EntityFrameworkCore;
-using Quizymode.Taxonomy;
 
 namespace Quizymode.Api.Features.Taxonomy;
 

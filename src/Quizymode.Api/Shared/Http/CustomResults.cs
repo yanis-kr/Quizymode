@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Shared.Kernel;
 
-namespace Quizymode.Api.Infrastructure;
+namespace Quizymode.Api.Shared.Http;
 
 public static class CustomResults
 {

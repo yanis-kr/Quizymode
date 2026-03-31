@@ -35,11 +35,11 @@
     <PackageReference Include="Dapper" />
     <PackageReference Include="Npgsql.OpenTelemetry" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
+    <PackageReference Include="YamlDotNet" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj" />
-    <ProjectReference Include="..\Quizymode.Taxonomy\Quizymode.Taxonomy.csproj" />
   </ItemGroup>
 
   <ItemGroup>

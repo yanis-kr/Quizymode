@@ -1,5 +1,5 @@
 using Quizymode.Api.Data;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;

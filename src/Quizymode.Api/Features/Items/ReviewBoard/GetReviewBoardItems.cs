@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Items.ReviewBoard;

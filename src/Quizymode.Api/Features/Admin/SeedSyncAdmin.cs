@@ -1,5 +1,5 @@
 using FluentValidation;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 
