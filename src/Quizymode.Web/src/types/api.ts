@@ -56,8 +56,6 @@ export interface ItemResponse {
   source?: string | null;
   /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
   navigationBreadcrumb?: string[];
-  factualRisk?: number | null;
-  reviewComments?: string | null;
 }
 
 export interface ItemsResponse {
@@ -170,8 +168,6 @@ export interface CreateItemRequest {
   keywords?: KeywordRequest[];
   source?: string;
   uploadId?: string | null;
-  factualRisk?: number | null;
-  reviewComments?: string | null;
   readyForReview?: boolean | null;
 }
 
@@ -186,8 +182,6 @@ export interface UpdateItemRequest {
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;
-  factualRisk?: number | null;
-  reviewComments?: string | null;
   readyForReview?: boolean | null;
 }
 

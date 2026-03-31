@@ -1,6 +1,6 @@
 # generate-user-guide-local.ps1
 # Captures user-guide screenshots from the local dev stack and regenerates
-# docs/user-guide/README.md.
+# docs/user-guide/user-guide.md.
 #
 # Prerequisites: start Aspire first in a separate terminal:
 #   cd src/Quizymode.Api.AppHost && dotnet run
@@ -36,7 +36,7 @@ try {
     Stop-ReactDevServer $react
 }
 
-$guideFile = Join-Path $RepoRoot "docs\user-guide\README.md"
+$guideFile = Join-Path $RepoRoot "docs\user-guide\user-guide.md"
 if (Test-Path $guideFile) {
     Write-Host ""
     Write-Host "User guide updated:" -ForegroundColor Green

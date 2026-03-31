@@ -28,8 +28,6 @@ const EditItemPage = () => {
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
-    factualRisk: "",
-    reviewComments: "",
     readyForReview: false,
   });
 
@@ -109,9 +107,6 @@ const EditItemPage = () => {
               .map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
         source: itemData.source || "",
-        factualRisk:
-          itemData.factualRisk != null ? String(itemData.factualRisk) : "",
-        reviewComments: itemData.reviewComments || "",
         readyForReview: false,
       });
     }
@@ -167,10 +162,6 @@ const EditItemPage = () => {
       (k) => k.name.toLowerCase() !== r1 && k.name.toLowerCase() !== r2
     );
 
-    const factualRiskNum =
-      formData.factualRisk.trim() !== ""
-        ? parseFloat(formData.factualRisk.trim())
-        : undefined;
     const data = {
       category: formData.category.trim(),
       navigationKeyword1: formData.navigationRank1.trim(),
@@ -182,11 +173,6 @@ const EditItemPage = () => {
       explanation: formData.explanation.trim(),
       keywords: otherKeywords,
       source: formData.source.trim() || undefined,
-      factualRisk:
-        factualRiskNum !== undefined && factualRiskNum >= 0 && factualRiskNum <= 1
-          ? factualRiskNum
-          : undefined,
-      reviewComments: formData.reviewComments.trim() || undefined,
       readyForReview: formData.readyForReview,
     };
 

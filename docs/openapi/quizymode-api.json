@@ -5360,26 +5360,6 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
-          },
-          "factualRisk": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
-              }
-            ]
-          },
-          "reviewComments": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
           }
         }
       },
@@ -5432,26 +5412,6 @@
             ]
           },
           "uploadId": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
-          },
-          "factualRisk": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
-              }
-            ]
-          },
-          "reviewComments": {
             "oneOf": [
               {
                 "type": "null"
@@ -5523,23 +5483,13 @@
               }
             ]
           },
-          "factualRisk": {
+          "seedId": {
             "oneOf": [
               {
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
-              }
-            ]
-          },
-          "reviewComments": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
           }
@@ -5638,6 +5588,16 @@
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError"
           },
           "createdItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          },
+          "reassignedSeedIds": {
             "oneOf": [
               {
                 "type": "null"
@@ -6237,26 +6197,6 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
-          },
-          "factualRisk": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
-              }
-            ]
-          },
-          "reviewComments": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
           }
         }
       },
@@ -6299,26 +6239,6 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "source": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
-          },
-          "factualRisk": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
-              }
-            ]
-          },
-          "reviewComments": {
             "oneOf": [
               {
                 "type": "null"

@@ -112,8 +112,6 @@ internal static class AddItemHandler
                 NavigationKeywordId1 = navK1.Id,
                 NavigationKeywordId2 = navK2.Id,
                 Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim(),
-                FactualRisk = request.FactualRisk is >= 0m and <= 1m ? request.FactualRisk : null,
-                ReviewComments = string.IsNullOrWhiteSpace(request.ReviewComments) ? null : request.ReviewComments.Trim()
             };
 
             db.Items.Add(item);
@@ -199,9 +197,7 @@ internal static class AddItemHandler
                 item.Explanation,
                 item.CreatedAt,
                 item.Source,
-                item.UploadId?.ToString(),
-                item.FactualRisk,
-                item.ReviewComments);
+                item.UploadId?.ToString());
 
             return Result.Success(response);
         }

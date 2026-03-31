@@ -20,8 +20,7 @@ public static class AddItemsBulk
         string Explanation,
         List<KeywordRequest>? Keywords = null,
         string? Source = null,
-        decimal? FactualRisk = null,
-        string? ReviewComments = null);
+        Guid? SeedId = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -39,7 +38,8 @@ public static class AddItemsBulk
         int FailedCount,
         List<string> DuplicateQuestions,
         List<ItemError> Errors,
-        List<Guid>? CreatedItemIds = null);
+        List<Guid>? CreatedItemIds = null,
+        List<Guid>? ReassignedSeedIds = null);
 
     public sealed record ItemError(
         int Index,
@@ -134,15 +134,6 @@ public static class AddItemsBulk
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
 
-            RuleFor(x => x.FactualRisk)
-                .InclusiveBetween(0m, 1m)
-                .When(x => x.FactualRisk.HasValue)
-                .WithMessage("FactualRisk must be between 0 and 1");
-
-            RuleFor(x => x.ReviewComments)
-                .MaximumLength(500)
-                .When(x => x.ReviewComments != null)
-                .WithMessage("ReviewComments must not exceed 500 characters");
         }
     }
 

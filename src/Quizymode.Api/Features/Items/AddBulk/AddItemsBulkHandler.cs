@@ -32,6 +32,22 @@ internal static class AddItemsBulkHandler
             List<string> duplicateQuestions = [];
             List<AddItemsBulk.ItemError> errors = [];
 
+            // Detect SeedId collisions up-front so we can auto-generate replacements.
+            HashSet<Guid> existingSeedIds = [];
+            List<Guid> incomingSeedIds = request.Items
+                .Where(i => i.SeedId.HasValue)
+                .Select(i => i.SeedId!.Value)
+                .ToList();
+            if (incomingSeedIds.Count > 0)
+            {
+                List<Guid> found = await db.Items
+                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value))
+                    .Select(i => i.SeedId!.Value)
+                    .ToListAsync(cancellationToken);
+                existingSeedIds = [.. found];
+            }
+            List<Guid> reassignedSeedIds = [];
+
             Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
                 cancellationToken);
@@ -174,6 +190,13 @@ internal static class AddItemsBulkHandler
                         continue;
                     }
 
+                    Guid? resolvedSeedId = itemRequest.SeedId;
+                    if (resolvedSeedId.HasValue && existingSeedIds.Contains(resolvedSeedId.Value))
+                    {
+                        reassignedSeedIds.Add(resolvedSeedId.Value);
+                        resolvedSeedId = Guid.NewGuid();
+                    }
+
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
@@ -191,8 +214,7 @@ internal static class AddItemsBulkHandler
                         NavigationKeywordId2 = keyword2Entity.Id,
                         Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
                         UploadId = request.UploadId,
-                        FactualRisk = itemRequest.FactualRisk is >= 0m and <= 1m ? itemRequest.FactualRisk : null,
-                        ReviewComments = string.IsNullOrWhiteSpace(itemRequest.ReviewComments) ? null : itemRequest.ReviewComments.Trim()
+                        SeedId = resolvedSeedId,
                     };
 
                     itemsToInsert.Add(item);
@@ -311,7 +333,8 @@ internal static class AddItemsBulkHandler
                 errors.Count,
                 duplicateQuestions,
                 errors,
-                createdIds);
+                createdIds,
+                reassignedSeedIds.Count > 0 ? reassignedSeedIds : null);
 
                 return Result.Success(response);
             }

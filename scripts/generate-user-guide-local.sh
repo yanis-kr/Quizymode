@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # generate-user-guide-local.sh
 # Captures user-guide screenshots from the local dev stack and regenerates
-# docs/user-guide/README.md.
+# docs/user-guide/user-guide.md.
 #
 # Prerequisites: start Aspire first in a separate terminal:
 #   cd src/Quizymode.Api.AppHost && dotnet run
@@ -37,7 +37,7 @@ echo "Generating user guide..."
 node scripts/generate-user-guide.js
 exit_code=$?
 
-guide_file="$REPO_ROOT/docs/user-guide/README.md"
+guide_file="$REPO_ROOT/docs/user-guide/user-guide.md"
 if [[ -f "$guide_file" ]]; then
     echo ""
     echo "User guide updated:"

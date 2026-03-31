@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Reads all PNGs from docs/user-guide/screenshots/user/ and generates
-// docs/user-guide/README.md with a table of contents and feature sections.
+// docs/user-guide/user-guide.md with a table of contents and feature sections.
 
 import fs from "fs";
 import path from "path";
@@ -12,7 +12,7 @@ const screenshotDir = path.join(
   projectRoot,
   "docs/user-guide/screenshots/user"
 );
-const outputFile = path.join(projectRoot, "docs/user-guide/README.md");
+const outputFile = path.join(projectRoot, "docs/user-guide/user-guide.md");
 
 // ---------------------------------------------------------------------------
 // Screen descriptions (derived from AC.md)

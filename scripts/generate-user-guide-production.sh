@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # generate-user-guide-production.sh
 # Captures user-guide screenshots from the live production site and regenerates
-# docs/user-guide/README.md.
+# docs/user-guide/user-guide.md.
 #
 # No local servers required — screenshots are taken from https://www.quizymode.com
 #
@@ -26,7 +26,7 @@ echo "Generating user guide..."
 node scripts/generate-user-guide.js
 exit_code=$?
 
-guide_file="$REPO_ROOT/docs/user-guide/README.md"
+guide_file="$REPO_ROOT/docs/user-guide/user-guide.md"
 if [[ -f "$guide_file" ]]; then
     echo ""
     echo "User guide updated:"

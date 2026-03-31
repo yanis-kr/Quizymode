@@ -53,8 +53,6 @@ function buildInitialFormData(
       return { name: n, isPrivate: !publicSet.has(n) };
     }),
     source: "",
-    factualRisk: "",
-    reviewComments: "",
     readyForReview: false,
   };
 }
@@ -185,11 +183,6 @@ function CreateItemEditor({
       return name !== rank1 && name !== rank2;
     });
 
-    const factualRiskNum =
-      formData.factualRisk.trim() !== ""
-        ? parseFloat(formData.factualRisk.trim())
-        : undefined;
-
     const data: CreateItemRequest = {
       category: formData.category.trim(),
       navigationKeyword1: formData.navigationRank1.trim(),
@@ -201,11 +194,6 @@ function CreateItemEditor({
       explanation: formData.explanation.trim(),
       keywords: otherKeywords.length > 0 ? otherKeywords : undefined,
       source: formData.source.trim() || undefined,
-      factualRisk:
-        factualRiskNum !== undefined && factualRiskNum >= 0 && factualRiskNum <= 1
-          ? factualRiskNum
-          : undefined,
-      reviewComments: formData.reviewComments.trim() || undefined,
       readyForReview: formData.readyForReview,
     };
 

@@ -123,7 +123,7 @@ E2E tests live in `playwright/e2e/`. Tag a test with `@smoke` in its title to in
 
 ### Generating the User Guide
 
-The user guide (`docs/user-guide/README.md`) is built from Playwright screenshots. Two modes are available:
+The user guide (`docs/user-guide/user-guide.md`) is built from Playwright screenshots. Two modes are available:
 
 **From production** — screenshots taken from `https://www.quizymode.com` (no local stack needed):
 
@@ -263,7 +263,7 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/infra/SUPABASE.md](./docs/infra/SUPABASE.md): managed Postgres notes
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
-- [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide with screenshots
+- [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): end-user guide with screenshots
 - [scripts/_e2e-common.ps1](./scripts/_e2e-common.ps1) / [_e2e-common.sh](./scripts/_e2e-common.sh): shared E2E runner helpers (not run directly)
 - [scripts/generate-user-guide-production.ps1](./scripts/generate-user-guide-production.ps1) / [.sh](./scripts/generate-user-guide-production.sh): capture screenshots from production and regenerate user guide
 - [scripts/generate-user-guide-local.ps1](./scripts/generate-user-guide-local.ps1) / [.sh](./scripts/generate-user-guide-local.sh): capture screenshots from local dev stack and regenerate user guide

@@ -126,9 +126,7 @@ internal static class StudyGuideItemValidator
                 incorrectAnswers!.Select(a => a.Trim()).ToList(),
                 explanation?.Trim() ?? "",
                 keywordRequests.Count > 0 ? keywordRequests : null,
-                source?.Trim(),
-                factualRisk is >= 0m and <= 1m ? factualRisk : null,
-                !string.IsNullOrWhiteSpace(reviewComments) ? reviewComments.Trim() : null));
+                source?.Trim()));
 
             // Build enriched DTO with overridden scope fields (seed-sync compatible)
             enrichedDtos.Add(new EnrichedItemDto

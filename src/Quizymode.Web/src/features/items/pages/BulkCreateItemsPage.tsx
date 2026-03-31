@@ -32,6 +32,7 @@ interface ParsedItem {
   incorrectAnswers: string[];
   explanation: string;
   source?: string;
+  seedId?: string;
   /** AI-only tags (merged with setup scope on save). */
   keywords?: string[];
   /** Nav + user extras + AI tags, deduped (case-insensitive); for review display. */
@@ -268,6 +269,10 @@ Generate the JSON array only.`;
         if (navigationKeyword2 && navigationKeyword2.toLowerCase() !== subtopic.trim().toLowerCase()) {
           continue;
         }
+        const rawSeedId = (o.seedId ?? "").toString().trim();
+        const seedId = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(rawSeedId)
+          ? rawSeedId
+          : undefined;
         const question = (o.question ?? "").toString().trim();
         const correctAnswer = (o.correctAnswer ?? "").toString().trim();
         if (!question || !correctAnswer) continue;
@@ -306,6 +311,7 @@ Generate the JSON array only.`;
           incorrectAnswers: incorrectAnswers.slice(0, 5),
           explanation,
           source,
+          seedId,
           keywords: keywords.length > 0 ? keywords : undefined,
           consolidatedKeywords,
         });
@@ -354,6 +360,7 @@ Generate the JSON array only.`;
             explanation: item.explanation || "",
             keywords: aiExtras.length > 0 ? aiExtras : undefined,
             source: item.source,
+            seedId: item.seedId,
           };
         }),
       };
@@ -365,6 +372,7 @@ Generate the JSON array only.`;
         duplicateQuestions: string[];
         errors: Array<{ index: number; question: string; errorMessage: string }>;
         createdItemIds?: string[];
+        reassignedSeedIds?: string[];
       }>("/items/bulk", payload);
       return res.data;
     },
@@ -374,9 +382,12 @@ Generate the JSON array only.`;
           .bulkAddItems(activeCollectionId, { itemIds: data.createdItemIds })
           .catch(() => {});
       }
+      const reassignedNote = data.reassignedSeedIds && data.reassignedSeedIds.length > 0
+        ? `\n\n${data.reassignedSeedIds.length} item(s) had duplicate seed IDs — new IDs were automatically assigned.`
+        : "";
       setResultModal({
         isOpen: true,
-        message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}`,
+        message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}${reassignedNote}`,
         details: (data.errors ?? [])
           .map((e) => `Item ${e.index + 1}: ${e.errorMessage}`)
           .join("\n"),
