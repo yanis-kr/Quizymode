@@ -32,19 +32,25 @@ internal static class AddItemsBulkHandler
             List<string> duplicateQuestions = [];
             List<AddItemsBulk.ItemError> errors = [];
 
-            // Detect SeedId collisions up-front so we can auto-generate replacements.
-            HashSet<Guid> existingSeedIds = [];
+            // Detect SeedId collisions up-front.
+            // Same user re-importing → skip as duplicate. Different user collision → reassign new ID.
+            HashSet<Guid> existingSeedIdsSameUser = [];
+            HashSet<Guid> existingSeedIdsOtherUser = [];
             List<Guid> incomingSeedIds = request.Items
                 .Where(i => i.SeedId.HasValue)
                 .Select(i => i.SeedId!.Value)
                 .ToList();
             if (incomingSeedIds.Count > 0)
             {
-                List<Guid> found = await db.Items
-                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value))
+                existingSeedIdsSameUser = (await db.Items
+                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy == userId)
                     .Select(i => i.SeedId!.Value)
-                    .ToListAsync(cancellationToken);
-                existingSeedIds = [.. found];
+                    .ToListAsync(cancellationToken)).ToHashSet();
+
+                existingSeedIdsOtherUser = (await db.Items
+                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy != userId)
+                    .Select(i => i.SeedId!.Value)
+                    .ToListAsync(cancellationToken)).ToHashSet();
             }
             List<Guid> reassignedSeedIds = [];
 
@@ -191,8 +197,15 @@ internal static class AddItemsBulkHandler
                     }
 
                     Guid? resolvedSeedId = itemRequest.SeedId;
-                    if (resolvedSeedId.HasValue && existingSeedIds.Contains(resolvedSeedId.Value))
+                    if (resolvedSeedId.HasValue && existingSeedIdsSameUser.Contains(resolvedSeedId.Value))
                     {
+                        // Same user re-importing the same JSON → treat as duplicate, skip silently
+                        duplicateQuestions.Add(itemRequest.Question);
+                        continue;
+                    }
+                    if (resolvedSeedId.HasValue && existingSeedIdsOtherUser.Contains(resolvedSeedId.Value))
+                    {
+                        // SeedId already owned by a different user → assign a fresh ID to avoid collision
                         reassignedSeedIds.Add(resolvedSeedId.Value);
                         resolvedSeedId = Guid.NewGuid();
                     }
