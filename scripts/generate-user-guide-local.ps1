@@ -5,7 +5,15 @@
 # Prerequisites: start Aspire first in a separate terminal:
 #   cd src/Quizymode.Api.AppHost && dotnet run
 #
-# Usage: .\scripts\generate-user-guide-local.ps1
+# Usage:
+#   .\scripts\generate-user-guide-local.ps1
+#   .\scripts\generate-user-guide-local.ps1 -Password "your-password"
+
+param(
+    [string]$Password
+)
+
+if ($Password) { $env:TEST_USER_PASSWORD = $Password }
 
 . "$PSScriptRoot\_e2e-common.ps1"
 
@@ -21,6 +29,12 @@ try {
 
     $env:PLAYWRIGHT_BASE_URL = "http://localhost:7000"
     Push-Location $RepoRoot
+
+    $screenshotDir = Join-Path $RepoRoot "docs\user-guide\screenshots\user"
+    if (Test-Path $screenshotDir) {
+        Write-Host "Clearing previous screenshots..." -ForegroundColor Cyan
+        Remove-Item -LiteralPath (Join-Path $screenshotDir "*.png") -Force -ErrorAction SilentlyContinue
+    }
 
     Write-Host "Capturing screenshots from local dev stack..." -ForegroundColor Cyan
     npx playwright test --project=screenshots

@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { ExploreRenderer } from "./ExploreRenderer";
 
 const mockItem = {
@@ -16,23 +17,49 @@ const mockItem = {
 };
 
 describe("ExploreRenderer", () => {
-  it("renders question and correct answer", () => {
+  it("shows the question face-up; answer and explanation are hidden until flipped", () => {
     render(<ExploreRenderer item={mockItem} />);
-    expect(screen.getByText("Question")).toBeInTheDocument();
+    expect(screen.getByTestId("flashcard-front")).not.toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByTestId("flashcard-back")).toHaveAttribute("aria-hidden", "true");
     expect(screen.getByText("What is 2 + 2?")).toBeInTheDocument();
-    expect(screen.getByText("Answer")).toBeInTheDocument();
-    expect(screen.getByText("4")).toBeInTheDocument();
   });
 
-  it("renders explanation when present", () => {
+  it("flips to show answer and explanation when the card is clicked", async () => {
+    const user = userEvent.setup();
     render(<ExploreRenderer item={mockItem} />);
+    await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+    expect(screen.getByText("4")).toBeInTheDocument();
     expect(screen.getByText("Explanation")).toBeInTheDocument();
     expect(screen.getByText("Basic addition.")).toBeInTheDocument();
   });
 
-  it("does not render explanation section when explanation is empty", () => {
+  it("does not render explanation on the back when explanation is empty", async () => {
+    const user = userEvent.setup();
     const itemNoExplanation = { ...mockItem, explanation: "" };
     render(<ExploreRenderer item={itemNoExplanation} />);
+    await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+    expect(screen.getByText("4")).toBeInTheDocument();
     expect(screen.queryByText("Explanation")).not.toBeInTheDocument();
+  });
+
+  it("resets to question face-up when the item changes", async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(<ExploreRenderer item={mockItem} />);
+    await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+    expect(screen.getByText("4")).toBeInTheDocument();
+
+    rerender(
+      <ExploreRenderer
+        item={{
+          ...mockItem,
+          id: "item-2",
+          question: "Next?",
+          correctAnswer: "Yes",
+          explanation: "Because.",
+        }}
+      />
+    );
+    expect(screen.getByTestId("flashcard-back")).toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByText("Next?")).toBeInTheDocument();
   });
 });

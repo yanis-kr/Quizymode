@@ -14,6 +14,12 @@ try {
     # Credentials are still needed because some screens require auth.
     Test-Prerequisites
 
+    $screenshotDir = Join-Path $RepoRoot "docs\user-guide\screenshots\user"
+    if (Test-Path $screenshotDir) {
+        Write-Host "Clearing previous screenshots..." -ForegroundColor Cyan
+        Remove-Item -LiteralPath (Join-Path $screenshotDir "*.png") -Force -ErrorAction SilentlyContinue
+    }
+
     Write-Host "Capturing screenshots from production..." -ForegroundColor Cyan
     Push-Location $RepoRoot
     # No PLAYWRIGHT_BASE_URL set — config defaults to https://www.quizymode.com
