@@ -376,6 +376,9 @@ src/Quizymode.Api/appsettings.Development.json
 
 # Playwright auth state (contains session tokens — never commit)
 playwright/.auth/
+# Claude Code local settings (machine-specific, may contain sensitive data)
+.claude/settings.local.json
+
 # Playwright test artifacts and local runner logs
 playwright/test-results/
 playwright/logs/

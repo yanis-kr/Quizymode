@@ -1,8 +1,6 @@
 ## Why Quizymode
 
-The name says it — **quiz + easy mode**. Making it simple to find a topic, review it, and actually learn from it.
-
-And like Quasimodo of Notre-Dame, this app is built to be strong, reliable, and always there — quietly carrying a lot of knowledge, ready whenever you need it.
+The name says it — **quiz + easy mode**. Making it simple to find a topic, review it, and actually learn from it. And like Quasimodo of Notre-Dame, this app is built to be strong, reliable, and always there — quietly carrying a lot of knowledge, ready whenever you need it.
 
 ## What it does
 
