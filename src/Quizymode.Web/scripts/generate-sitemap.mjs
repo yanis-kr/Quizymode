@@ -1,11 +1,29 @@
 import { readFileSync, writeFileSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { resolve } from "node:path";
 
 const SITE_URL = "https://www.quizymode.com";
 const WEB_ROOT = resolve(import.meta.dirname, "..");
 const TAXONOMY_PATH = resolve(WEB_ROOT, "..", "..", "docs", "quizymode_taxonomy.yaml");
 const SITEMAP_PATH = resolve(WEB_ROOT, "public", "sitemap.xml");
-const LAST_MOD = new Date().toISOString().slice(0, 10);
+const REPO_ROOT = resolve(WEB_ROOT, "..", "..");
+
+// Use the last git commit date of the taxonomy file as lastmod.
+// This stays stable across builds and only advances when the taxonomy actually changes.
+// Falls back to today if git is unavailable (e.g. fresh checkout without history).
+function getTaxonomyLastMod() {
+  try {
+    const date = execSync("git log -1 --format=%cs -- docs/quizymode_taxonomy.yaml", {
+      cwd: REPO_ROOT,
+      encoding: "utf8",
+    }).trim();
+    return date || new Date().toISOString().slice(0, 10);
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
+
+const LAST_MOD = getTaxonomyLastMod();
 
 function parseTaxonomy(yamlText) {
   const categories = [];

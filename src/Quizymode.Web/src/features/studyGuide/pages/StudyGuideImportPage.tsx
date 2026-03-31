@@ -3,6 +3,9 @@ import { isAxiosError } from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { useActiveCollection } from "@/hooks/useActiveCollection";
+import { collectionsApi } from "@/api/collections";
+import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import {
@@ -76,6 +79,7 @@ function getApiErrorMessage(error: unknown, fallback: string): string {
 
 const StudyGuideImportPage = () => {
   const { isAuthenticated } = useAuth();
+  const { activeCollectionId, activeCollection } = useActiveCollection();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -314,6 +318,9 @@ const StudyGuideImportPage = () => {
     mutationFn: (id: string) => studyGuideImportApi.finalize(id),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
+      if (activeCollectionId && data.createdItemIds && data.createdItemIds.length > 0) {
+        collectionsApi.bulkAddItems(activeCollectionId, { itemIds: data.createdItemIds }).catch(() => {});
+      }
       setFinalizeSummary(data);
       setStep(4);
       setLocalError(null);
@@ -447,6 +454,7 @@ const StudyGuideImportPage = () => {
       </p>
 
       <ContentComplianceNotice />
+      <ActiveCollectionNotice />
 
       {renderStepIndicator()}
 
@@ -773,24 +781,33 @@ const StudyGuideImportPage = () => {
       )}
 
       {step === 4 && (
-        <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-sm text-emerald-900">
-          <h2 className="font-semibold mb-1">Import completed</h2>
-          <p className="mb-2">
-            Your items have been imported as private questions under{" "}
-            <span className="font-semibold">{categoryName}</span>.
-          </p>
-          {finalizeSummary && (
-            <p className="mb-3 text-xs text-emerald-800">
-              Created {finalizeSummary.createdCount}, skipped {finalizeSummary.duplicateCount} duplicates, failed {finalizeSummary.failedCount}.
+        <div className="mt-6 space-y-3">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-sm text-emerald-900">
+            <h2 className="font-semibold mb-1">Import completed</h2>
+            <p className="mb-2">
+              Your items have been imported as private questions under{" "}
+              <span className="font-semibold">{categoryName}</span>.
             </p>
+            {finalizeSummary && (
+              <p className="mb-3 text-xs text-emerald-800">
+                Created {finalizeSummary.createdCount}, skipped {finalizeSummary.duplicateCount} duplicates, failed {finalizeSummary.failedCount}.
+              </p>
+            )}
+            <button
+              type="button"
+              onClick={() => navigate("/categories")}
+              className="px-4 py-2 text-xs font-medium text-emerald-700 bg-white border border-emerald-300 rounded-md hover:bg-emerald-50"
+            >
+              Go to Categories
+            </button>
+          </div>
+          {activeCollection?.isPublic && (
+            <div className="rounded-md bg-amber-50 border border-amber-200 px-4 py-3 text-sm text-amber-800">
+              <span className="font-semibold">Public collection warning:</span> Items were added to{" "}
+              <span className="font-medium">{activeCollection.name}</span>, which is public — they
+              are accessible via its shareable link immediately.
+            </div>
           )}
-          <button
-            type="button"
-            onClick={() => navigate("/categories")}
-            className="px-4 py-2 text-xs font-medium text-emerald-700 bg-white border border-emerald-300 rounded-md hover:bg-emerald-50"
-          >
-            Go to Categories
-          </button>
         </div>
       )}
     </div>

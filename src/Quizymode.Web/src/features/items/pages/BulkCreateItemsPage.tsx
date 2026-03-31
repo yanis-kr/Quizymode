@@ -77,7 +77,7 @@ function consolidateBulkItemKeywords(
 
 const BulkCreateItemsPage = () => {
   const { isAuthenticated } = useAuth();
-  const { activeCollectionId } = useActiveCollection();
+  const { activeCollectionId, activeCollection } = useActiveCollection();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams.get("category") ?? "";
@@ -701,6 +701,13 @@ Generate the JSON array only.`;
               </button>
             </div>
             <p className="text-sm text-gray-700 mb-4">{resultModal.message}</p>
+            {activeCollection?.isPublic && (
+              <p className="mb-4 rounded-md bg-amber-50 border border-amber-200 px-3 py-2 text-sm text-amber-800">
+                <span className="font-semibold">Public collection warning:</span> Items were added to{" "}
+                <span className="font-medium">{activeCollection.name}</span>, which is public — they
+                are accessible via its shareable link immediately.
+              </p>
+            )}
             {resultModal.details && (
               <textarea
                 readOnly

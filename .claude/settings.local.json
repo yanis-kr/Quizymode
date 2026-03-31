@@ -21,7 +21,8 @@
       "Bash(npm run:*)",
       "Bash(npx tsc:*)",
       "Bash(grep '\"\"version\"\"' /c/Projects/Quizymode/src/Quizymode.Web/package.json)",
-      "Bash(dotnet run:*)"
+      "Bash(dotnet run:*)",
+      "Bash(find /c/Projects/Quizymode -name *StudyGuide* -o -name *Upload*)"
     ]
   }
 }
