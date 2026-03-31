@@ -282,4 +282,112 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         DbContext.Database.CurrentTransaction.Should().BeNull();
     }
 
+    // AC 2.2.6.11
+    [Fact]
+    public async Task HandleAsync_ValidRequest_CreatesItems()
+    {
+        // Arrange
+        await EnsureGeographyPublicWithNavAsync("test-user");
+
+        AddItemsBulk.Request request = new(
+            IsPrivate: true,
+            Category: "geography",
+            Keyword1: "capitals",
+            Keyword2: "europe",
+            Keywords: [],
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("Q1?", "A1", new List<string> { "W1", "W2", "W3" }, "Exp1")
+            });
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            DbContext,
+            SimHashService,
+            _userContextMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.CreatedCount.Should().Be(1);
+        result.Value.CreatedItemIds.Should().HaveCount(1);
+    }
+
+    // AC 2.2.6.11
+    [Fact]
+    public async Task HandleAsync_DuplicateQuestion_SkipsDuplicate()
+    {
+        // Arrange
+        await EnsureGeographyPublicWithNavAsync("test-user");
+        Item existingItem = await CreateItemWithCategoryAsync(
+            "geography",
+            "What is the capital of Greece?",
+            "Athens",
+            new List<string> { "Thessaloniki" },
+            "Existing",
+            isPrivate: false,
+            createdBy: "test-user");
+
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Category: "geography",
+            Keyword1: "capitals",
+            Keyword2: "europe",
+            Keywords: [],
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("What is the capital of Greece?", "Athens", new List<string> { "Thessaloniki" }, "Duplicate")
+            });
+
+        // Act
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            DbContext,
+            SimHashService,
+            _userContextMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.DuplicateCount.Should().BeGreaterThanOrEqualTo(1);
+        result.Value.CreatedCount.Should().Be(0);
+    }
+
+    [Fact]
+    public void HandleAsync_EmptyKeyword2_ReturnsValidationError()
+    {
+        // Arrange
+        Mock<IUserContext> userContextMock = new();
+        userContextMock.Setup(x => x.UserId).Returns("test-user");
+        userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        userContextMock.Setup(x => x.IsAdmin).Returns(false);
+
+        AddItemsBulk.Request request = new(
+            IsPrivate: false,
+            Category: "geography",
+            Keyword1: "capitals",
+            Keyword2: "",
+            Keywords: [],
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("Q?", "A", new List<string> { "W1" }, "Exp")
+            });
+
+        AddItemsBulk.Validator validator = new(userContextMock.Object);
+
+        // Act
+        FluentValidation.Results.ValidationResult validationResult = validator.Validate(request);
+
+        // Assert
+        validationResult.IsValid.Should().BeFalse();
+        validationResult.Errors.Should().Contain(e => e.PropertyName == "Keyword2");
+    }
+
 }

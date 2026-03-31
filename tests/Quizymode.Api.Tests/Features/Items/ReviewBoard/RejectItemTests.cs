@@ -1,87 +1,92 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Quizymode.Api.Features.Items.SetVisibility;
+using Moq;
+using Quizymode.Api.Features.Items.ReviewBoard;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
-namespace Quizymode.Api.Tests.Features.Items.SetVisibility;
+namespace Quizymode.Api.Tests.Features.Items.ReviewBoard;
 
-public sealed class SetItemVisibilityTests : DatabaseTestFixture
+public sealed class RejectItemTests : DatabaseTestFixture
 {
+    private readonly Mock<IUserContext> _userContextMock;
+
+    public RejectItemTests()
+    {
+        _userContextMock = new Mock<IUserContext>();
+        _userContextMock.Setup(x => x.UserId).Returns("admin-user");
+        _userContextMock.Setup(x => x.IsAuthenticated).Returns(true);
+        _userContextMock.Setup(x => x.IsAdmin).Returns(true);
+    }
 
     [Fact]
-    public async Task HandleAsync_ValidItem_SetsPrivateTrue()
+    public async Task HandleAsync_ItemReadyForReview_RejectsAndKeepsPrivate()
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
         Item item = await CreateItemWithCategoryAsync(
             itemId, "geography", "What is the capital of France?", "Paris",
-            new List<string> { "Lyon" }, "Test", false, "test");
+            new List<string> { "Lyon", "Marseille" }, "Test", true, "test");
+        item.ReadyForReview = true;
+        await DbContext.SaveChangesAsync();
 
-        SetItemVisibility.Request request = new(true);
+        RejectItem.Request request = new(Reason: "Incorrect information");
 
         // Act
-        Result<SetItemVisibility.Response> result = await SetItemVisibility.HandleAsync(
-            itemId.ToString(),
+        Result<RejectItem.RejectItemResponse> result = await RejectItem.HandleAsync(
+            itemId,
             request,
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
+        result.Value.Should().NotBeNull();
+        result.Value.Id.Should().Be(itemId.ToString());
         result.Value.IsPrivate.Should().BeTrue();
+        result.Value.ReviewComments.Should().Contain("Incorrect information");
 
         Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
         updatedItem!.IsPrivate.Should().BeTrue();
+        updatedItem.ReadyForReview.Should().BeFalse();
+        updatedItem.ReviewComments.Should().Contain("Incorrect information");
     }
 
     [Fact]
-    public async Task HandleAsync_ValidItem_SetsPrivateFalse()
+    public async Task HandleAsync_ItemReadyForReview_WithNullReason_RejectsWithoutReason()
     {
         // Arrange
         Guid itemId = Guid.NewGuid();
         Item item = await CreateItemWithCategoryAsync(
             itemId, "geography", "What is the capital of Spain?", "Madrid",
             new List<string> { "Barcelona" }, "Test", true, "test");
+        item.ReadyForReview = true;
+        await DbContext.SaveChangesAsync();
 
-        SetItemVisibility.Request request = new(false);
+        RejectItem.Request request = new(Reason: null);
 
         // Act
-        Result<SetItemVisibility.Response> result = await SetItemVisibility.HandleAsync(
-            itemId.ToString(),
+        Result<RejectItem.RejectItemResponse> result = await RejectItem.HandleAsync(
+            itemId,
             request,
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
-        result.Value.IsPrivate.Should().BeFalse();
+        result.Value.Should().NotBeNull();
+        result.Value.ReviewComments.Should().Contain("Rejected");
+        result.Value.ReviewComments.Should().NotContain("null");
 
         Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
-        updatedItem!.IsPrivate.Should().BeFalse();
-    }
-
-    [Fact]
-    public async Task HandleAsync_InvalidGuidFormat_ReturnsValidationError()
-    {
-        // Arrange
-        SetItemVisibility.Request request = new(false);
-
-        // Act
-        Result<SetItemVisibility.Response> result = await SetItemVisibility.HandleAsync(
-            "invalid-guid",
-            request,
-            DbContext,
-            CancellationToken.None);
-
-        // Assert
-        result.IsFailure.Should().BeTrue();
-        result.Error.Type.Should().Be(ErrorType.Validation);
-        result.Error.Code.Should().Be("Item.InvalidId");
+        updatedItem!.ReadyForReview.Should().BeFalse();
     }
 
     [Fact]
@@ -89,19 +94,19 @@ public sealed class SetItemVisibilityTests : DatabaseTestFixture
     {
         // Arrange
         Guid nonExistentId = Guid.NewGuid();
-        SetItemVisibility.Request request = new(false);
+        RejectItem.Request request = new(Reason: "Test reason");
 
         // Act
-        Result<SetItemVisibility.Response> result = await SetItemVisibility.HandleAsync(
-            nonExistentId.ToString(),
+        Result<RejectItem.RejectItemResponse> result = await RejectItem.HandleAsync(
+            nonExistentId,
             request,
             DbContext,
+            _userContextMock.Object,
             CancellationToken.None);
 
         // Assert
         result.IsFailure.Should().BeTrue();
         result.Error.Type.Should().Be(ErrorType.NotFound);
-        result.Error.Code.Should().Be("Item.NotFound");
     }
 
     private async Task<Item> CreateItemWithCategoryAsync(
