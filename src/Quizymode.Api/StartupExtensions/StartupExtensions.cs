@@ -6,6 +6,7 @@ internal static partial class StartupExtensions
 {
     public static WebApplicationBuilder ConfigureServices(this WebApplicationBuilder builder)
     {
+        StartupLogger();
         builder.Configuration.AddEnvironmentVariables(prefix: "APP_");
 
         builder.AddServiceDefaults();
