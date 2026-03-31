@@ -50,6 +50,10 @@ jobs:
           npm ci
           npm run build
 
+      - name: Run frontend tests with coverage
+        working-directory: src/Quizymode.Web
+        run: npm run test:coverage
+
       - name: Verify OpenAPI artifact is in sync (warning mode)
         id: verify_openapi
         shell: pwsh
@@ -167,7 +171,7 @@ jobs:
       - name: Summarize coverage
         id: summarize_coverage
         shell: pwsh
-        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json
+        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath src/Quizymode.Web/coverage/coverage-summary.json
 
       - name: Comment on coverage summary
         if: github.event_name == 'pull_request'

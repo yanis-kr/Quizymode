@@ -132,7 +132,7 @@ describe("EditItemPage", () => {
     );
 
     vi.mocked(itemsApi.update).mockResolvedValue(
-      { id: "item-1", ...itemMock } as Awaited<ReturnType<typeof itemsApi.update>>
+      itemMock as Awaited<ReturnType<typeof itemsApi.update>>
     );
 
     vi.mocked(useExtraKeywordAutocompleteSource).mockReturnValue({

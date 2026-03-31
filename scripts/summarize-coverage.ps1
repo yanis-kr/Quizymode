@@ -1,7 +1,8 @@
 param(
     [string]$ResultsDirectory = "TestResults/coverage",
     [string]$MarkdownOutputPath = "coverage-summary.md",
-    [string]$JsonOutputPath = "coverage-summary.json"
+    [string]$JsonOutputPath = "coverage-summary.json",
+    [string]$FrontendCoverageJsonPath = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -215,6 +216,34 @@ foreach ($project in $projects) {
     $lineRateDisplay = if ($null -ne $project.LineRate) { "{0:N2}%" -f $project.LineRate } else { "n/a" }
     $branchRateDisplay = if ($null -ne $project.BranchRate) { "{0:N2}%" -f $project.BranchRate } else { "n/a" }
     $markdownLines.Add("| $($project.Name) | $lineRateDisplay | $($project.LinesCovered)/$($project.LinesValid) | $branchRateDisplay | $($project.BranchesCovered)/$($project.BranchesValid) |")
+}
+
+$frontendSection = ""
+if (-not [string]::IsNullOrWhiteSpace($FrontendCoverageJsonPath) -and (Test-Path $FrontendCoverageJsonPath)) {
+    $frontendJson = Get-Content -Path $FrontendCoverageJsonPath -Raw | ConvertFrom-Json
+    $total = $frontendJson.total
+    $feLines = $total.lines
+    $feFunctions = $total.functions
+    $feStatements = $total.statements
+    $feBranches = $total.branches
+
+    $feLinesPct = if ($feLines.total -gt 0) { "{0:N2}%" -f (($feLines.covered / $feLines.total) * 100.0) } else { "n/a" }
+    $feFuncPct = if ($feFunctions.total -gt 0) { "{0:N2}%" -f (($feFunctions.covered / $feFunctions.total) * 100.0) } else { "n/a" }
+    $feStmtPct = if ($feStatements.total -gt 0) { "{0:N2}%" -f (($feStatements.covered / $feStatements.total) * 100.0) } else { "n/a" }
+    $feBranchPct = if ($feBranches.total -gt 0) { "{0:N2}%" -f (($feBranches.covered / $feBranches.total) * 100.0) } else { "n/a" }
+
+    $feLines2 = [System.Collections.Generic.List[string]]::new()
+    $feLines2.Add("")
+    $feLines2.Add("## Frontend Coverage (Vitest / v8)")
+    $feLines2.Add("")
+    $feLines2.Add("| Metric | % | Covered / Total |")
+    $feLines2.Add("| --- | ---: | ---: |")
+    $feLines2.Add("| Lines | $feLinesPct | $($feLines.covered)/$($feLines.total) |")
+    $feLines2.Add("| Functions | $feFuncPct | $($feFunctions.covered)/$($feFunctions.total) |")
+    $feLines2.Add("| Statements | $feStmtPct | $($feStatements.covered)/$($feStatements.total) |")
+    $feLines2.Add("| Branches | $feBranchPct | $($feBranches.covered)/$($feBranches.total) |")
+    $frontendSection = ($feLines2 -join [Environment]::NewLine)
+    $markdownLines.AddRange($feLines2)
 }
 
 $markdown = ($markdownLines -join [Environment]::NewLine)
