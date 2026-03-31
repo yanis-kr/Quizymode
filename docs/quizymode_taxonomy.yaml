@@ -1,5 +1,5 @@
 exams:
-  description: Exams
+  description: Exam prep for certifications, licensing, and standardized tests at all levels.
   keywords:
     general:
       description: Mixed exams
@@ -166,7 +166,7 @@ exams:
         ea-foundation: EA foundation
         ea-practitioner: EA practitioner
 tech:
-  description: Tech
+  description: Software, hardware, networking, databases, and modern development practices.
   keywords:
     general:
       description: Mixed tech
@@ -292,7 +292,7 @@ tech:
         protocols: Net rules
         http: Web protocol
 business:
-  description: Business
+  description: Finance, marketing, management, strategy, and professional business skills.
   keywords:
     general:
       description: Mixed business
@@ -412,7 +412,7 @@ business:
         risk: Project risk
         stakeholders: People involved
 science:
-  description: Natural sciences, mathematics, statistics, lab skills, and quantitative reasoning—from biology and chemistry through calculus, data, and discrete math.
+  description: Natural sciences, math, and statistics—from biology and chemistry to calculus.
   keywords:
     general:
       description: Mixed science
@@ -651,7 +651,7 @@ science:
         proofs: Reasoning
         number-theory: Integers
 history:
-  description: History
+  description: World history, civilizations, events, and key figures from ancient times to today.
   keywords:
     general:
       description: Mixed history
@@ -772,7 +772,7 @@ history:
         ottoman: Ottoman world
         indus: Indus world
 geography:
-  description: Geography
+  description: Countries, capitals, world regions, physical geography, and map skills.
   keywords:
     general:
       description: Mixed geo
@@ -892,7 +892,7 @@ geography:
         airports: Major airports
         mixed: Travel mix
 languages:
-  description: Languages
+  description: Grammar, vocabulary, and language skills across major world languages.
   keywords:
     general:
       description: Mixed language
@@ -1013,7 +1013,7 @@ languages:
         travel: Travel mix
         conversation: Speaking mix
 humanities:
-  description: Humanities
+  description: Literature, philosophy, art, music, and the cultural study of human thought.
   keywords:
     general:
       description: Mixed hum
@@ -1133,7 +1133,7 @@ humanities:
         philosophy: Ideas mix
         culture: Culture mix
 civics:
-  description: Civics
+  description: Government, law, democracy, elections, rights, and civic participation.
   keywords:
     general:
       description: Mixed civics
@@ -1254,7 +1254,7 @@ civics:
         campaign-media: Political media
         debate: Public debate
 sports:
-  description: Sports
+  description: Rules, history, athletes, and statistics across major sports and games.
   keywords:
     general:
       description: Mixed sports
@@ -1437,7 +1437,7 @@ nature:
         weather-events: Storms and extremes
         geology-events: Earth events
 trivia:
-  description: Trivia
+  description: Pop culture, entertainment, general knowledge, and fun facts from every field.
   keywords:
     general:
       description: Mixed trivia

@@ -15,12 +15,12 @@ const AboutPage = () => {
 
         {/* Markdown content from docs/about.md */}
         <div
-          className="prose prose-sm max-w-none
-            prose-headings:font-semibold prose-headings:text-slate-800
-            prose-h2:mt-5 prose-h2:mb-2 prose-h2:text-base
-            prose-p:text-slate-600 prose-p:leading-relaxed prose-p:my-2
-            prose-ul:my-2 prose-li:text-slate-600 prose-li:my-0.5
-            prose-strong:text-slate-700"
+          className="max-w-none text-sm text-slate-600
+            [&_h2]:mt-5 [&_h2]:mb-2 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-slate-800
+            [&_p]:my-2 [&_p]:leading-relaxed
+            [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5
+            [&_li]:my-0.5
+            [&_strong]:font-semibold [&_strong]:text-slate-700"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: __ABOUT_HTML__ }}
         />

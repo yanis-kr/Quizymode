@@ -32,6 +32,28 @@ internal static class AddItemsBulkHandler
             List<string> duplicateQuestions = [];
             List<AddItemsBulk.ItemError> errors = [];
 
+            // Detect SeedId collisions up-front.
+            // Same user re-importing → skip as duplicate. Different user collision → reassign new ID.
+            HashSet<Guid> existingSeedIdsSameUser = [];
+            HashSet<Guid> existingSeedIdsOtherUser = [];
+            List<Guid> incomingSeedIds = request.Items
+                .Where(i => i.SeedId.HasValue)
+                .Select(i => i.SeedId!.Value)
+                .ToList();
+            if (incomingSeedIds.Count > 0)
+            {
+                existingSeedIdsSameUser = (await db.Items
+                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy == userId)
+                    .Select(i => i.SeedId!.Value)
+                    .ToListAsync(cancellationToken)).ToHashSet();
+
+                existingSeedIdsOtherUser = (await db.Items
+                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy != userId)
+                    .Select(i => i.SeedId!.Value)
+                    .ToListAsync(cancellationToken)).ToHashSet();
+            }
+            List<Guid> reassignedSeedIds = [];
+
             Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
                 cancellationToken);
@@ -174,6 +196,20 @@ internal static class AddItemsBulkHandler
                         continue;
                     }
 
+                    Guid? resolvedSeedId = itemRequest.SeedId;
+                    if (resolvedSeedId.HasValue && existingSeedIdsSameUser.Contains(resolvedSeedId.Value))
+                    {
+                        // Same user re-importing the same JSON → treat as duplicate, skip silently
+                        duplicateQuestions.Add(itemRequest.Question);
+                        continue;
+                    }
+                    if (resolvedSeedId.HasValue && existingSeedIdsOtherUser.Contains(resolvedSeedId.Value))
+                    {
+                        // SeedId already owned by a different user → assign a fresh ID to avoid collision
+                        reassignedSeedIds.Add(resolvedSeedId.Value);
+                        resolvedSeedId = Guid.NewGuid();
+                    }
+
                     Item item = new Item
                     {
                         Id = Guid.NewGuid(),
@@ -191,8 +227,7 @@ internal static class AddItemsBulkHandler
                         NavigationKeywordId2 = keyword2Entity.Id,
                         Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
                         UploadId = request.UploadId,
-                        FactualRisk = itemRequest.FactualRisk is >= 0m and <= 1m ? itemRequest.FactualRisk : null,
-                        ReviewComments = string.IsNullOrWhiteSpace(itemRequest.ReviewComments) ? null : itemRequest.ReviewComments.Trim()
+                        SeedId = resolvedSeedId,
                     };
 
                     itemsToInsert.Add(item);
@@ -311,7 +346,8 @@ internal static class AddItemsBulkHandler
                 errors.Count,
                 duplicateQuestions,
                 errors,
-                createdIds);
+                createdIds,
+                reassignedSeedIds.Count > 0 ? reassignedSeedIds : null);
 
                 return Result.Success(response);
             }

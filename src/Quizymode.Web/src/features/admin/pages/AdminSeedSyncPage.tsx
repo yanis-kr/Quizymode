@@ -56,6 +56,15 @@ function extractErrorMessage(error: unknown): string {
   );
 }
 
+function autoSeedSetFromItems(items: unknown[]): string {
+  const first = items[0] as Record<string, unknown> | undefined;
+  const category = typeof first?.category === "string" ? first.category.trim() : "";
+  const kw1 = typeof first?.navigationKeyword1 === "string" ? first.navigationKeyword1.trim() : "";
+  if (category && kw1) return `${category}/${kw1}`;
+  const date = new Date().toISOString().slice(0, 10);
+  return `import-${date}`;
+}
+
 function parseSeedSyncRequest(
   rawJson: string,
   deltaPreviewLimitInput: string
@@ -65,20 +74,35 @@ function parseSeedSyncRequest(
     throw new Error("Paste or upload a seed-sync manifest first.");
   }
 
-  const parsed = JSON.parse(trimmed) as SeedSyncRequest;
+  const raw = JSON.parse(trimmed);
 
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
-    throw new Error("Manifest root must be a JSON object.");
-  }
+  // Accept plain array — wrap it automatically.
+  let parsed: SeedSyncRequest;
+  if (Array.isArray(raw)) {
+    if (raw.length === 0) {
+      throw new Error("Array must contain at least one item.");
+    }
+    parsed = {
+      schemaVersion: 1,
+      seedSet: autoSeedSetFromItems(raw),
+      items: raw as SeedSyncRequest["items"],
+    };
+  } else {
+    parsed = raw as SeedSyncRequest;
 
-  if (
-    typeof parsed.schemaVersion !== "number" ||
-    typeof parsed.seedSet !== "string" ||
-    !Array.isArray(parsed.items)
-  ) {
-    throw new Error(
-      "Manifest must include schemaVersion, seedSet, and items."
-    );
+    if (!parsed || typeof parsed !== "object") {
+      throw new Error("Manifest root must be a JSON object or array.");
+    }
+
+    if (
+      typeof parsed.schemaVersion !== "number" ||
+      typeof parsed.seedSet !== "string" ||
+      !Array.isArray(parsed.items)
+    ) {
+      throw new Error(
+        "Manifest must include schemaVersion, seedSet, and items."
+      );
+    }
   }
 
   const limitTrimmed = deltaPreviewLimitInput.trim();

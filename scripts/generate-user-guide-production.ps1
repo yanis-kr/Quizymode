@@ -1,6 +1,6 @@
 # generate-user-guide-production.ps1
 # Captures user-guide screenshots from the live production site and regenerates
-# docs/user-guide/README.md.
+# docs/user-guide/user-guide.md.
 #
 # No local servers required — screenshots are taken from https://www.quizymode.com
 #
@@ -30,7 +30,7 @@ try {
     # nothing to clean up
 }
 
-$guideFile = Join-Path $RepoRoot "docs\user-guide\README.md"
+$guideFile = Join-Path $RepoRoot "docs\user-guide\user-guide.md"
 if (Test-Path $guideFile) {
     Write-Host ""
     Write-Host "User guide updated:" -ForegroundColor Green
