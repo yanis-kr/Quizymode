@@ -49,7 +49,7 @@ Selecting a subtopic (here: World) reaches the leaf level and shows the actual q
 
 ### Mode Flashcards
 
-**Flashcards mode** shows one item at a time as a card. The **question** is shown face-up; clicking the card flips it to reveal the **correct answer** and **explanation** (if any). Click again to flip back to the question. Use the arrow controls to move to the next or previous card (the card resets to the question). This mode is ideal for self-testing with spaced repetition.
+**Flashcards mode** shows one item at a time as a card. The correct answer is shown first; clicking the card flips it to reveal the question and explanation. Use the arrow controls to move to the next or previous card. This mode is ideal for self-testing with spaced repetition.
 
 ![Mode Flashcards](screenshots/user/mode-flashcards.png "Mode Flashcards")
 
@@ -63,25 +63,25 @@ Selecting a subtopic (here: World) reaches the leaf level and shows the actual q
 
 ### Items Add To Collection
 
-Each item in List mode has a **+** button on the right. Clicking it adds that item to your currently active collection instantly — no confirmation required. The active collection name is shown in the notice banner at the top of the page.
+Each item in study views includes collection controls. The folder button shows your current active collection, and the **+** button adds that item to it immediately with no confirmation. On list cards the controls sit to the right; in other study modes they appear beneath the item content.
 
 ![Items Add To Collection](screenshots/user/items-add-to-collection.png "Items Add To Collection")
 
 ### Items Collection Badges
 
-After adding items to your active collection, each added item shows a filled collection indicator (a box icon). This lets you see at a glance which items from the current scope are already in your collection. You can add as many items as you like from the same or different scopes.
+After adding items to your active collection, those items show a filled collection badge so you can see at a glance what is already included. While an item is already in the active collection, its **+** button is disabled until you remove it or switch to a different active collection.
 
 ![Items Collection Badges](screenshots/user/items-collection-badges.png "Items Collection Badges")
 
 ### Items Collection Removed
 
-Clicking the **−** button on an item that is already in your active collection removes it immediately. The collection indicator disappears and the + button returns, so you can re-add it later if needed.
+Clicking the **minus icon** removes an item from your active collection immediately. The filled collection badge disappears and the **+** button becomes available again, so you can add the item back later if needed.
 
 ![Items Collection Removed](screenshots/user/items-collection-removed.png "Items Collection Removed")
 
 ### Active Collection Selector
 
-Your **active collection** is the collection that receives items when you click +. On the My Collections page you can change your active collection by clicking the "Set as active" button on any collection card. The currently active one is highlighted.
+Your **active collection** is the collection that receives items when you click **+**. From any item, click the folder button or the active collection name beside it to open **Manage Collections**. There you can create another collection, mark it active with the radio button, and then continue adding items into that newly active collection.
 
 ![Active Collection Selector](screenshots/user/active-collection-selector.png "Active Collection Selector")
 
@@ -93,7 +93,7 @@ Click **New collection** to create a second (or third, etc.) collection. Give it
 
 ### Collections Mine Two
 
-After creating a second collection your My Collections list shows both. Each card displays the collection name, item count, and whether it is public or private. The active collection is highlighted. You can switch between them at any time.
+After creating a second collection, the **My Collections** tab shows both cards together. Each card shows the collection name, item count, and action icons for edit, active, copy link, and delete. The active collection uses a filled active icon so you can tell where one-click item adds will go.
 
 ![Collections Mine Two](screenshots/user/collections-mine-two.png "Collections Mine Two")
 
@@ -107,19 +107,19 @@ Items in List mode show their keywords as small tags. Clicking a keyword tag ins
 
 ### Collections Mine
 
-The My Collections tab shows all collections you own. Each card displays the collection name, description, item count, and sharing status. You can set any collection as your active collection (used for the one-click add-to-collection control on item pages), edit name, description, or the "Shared with others" toggle, copy the shareable link, or delete the collection. Creating a new collection is available from this tab.
+The **My Collections** tab shows all collections you own once the page finishes loading. Each card displays the collection name, description, item count, and sharing state, along with icon actions to edit it, make it active, copy its link, or delete it. You can also create a new collection from this tab.
 
 ![Collections Mine](screenshots/user/collections-mine.png "Collections Mine")
 
 ### Collection Detail
 
-A collection detail page shows the collection name, description, owner, and the full list of items it contains. You can switch between List, Flashcards, and Quiz modes using the mode buttons. Owners can add or remove items; non-owners with access (public collections) can study and rate but cannot modify.
+Clicking a collection card opens that collection's study page. The page keeps **Collections** as the active navigation area and shows mode tabs for **List**, **Flashcards**, and **Quiz** so you can study the same collection in different ways. Owners can also remove items or manage which collection is currently active from here.
 
 ![Collection Detail](screenshots/user/collection-detail.png "Collection Detail")
 
 ### Collection Detail Flashcards
 
-Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card — **question** first, then **answer** and **explanation** when flipped.
+Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card — answer first, then question and explanation when flipped.
 
 ![Collection Detail Flashcards](screenshots/user/collection-detail-flashcards.png "Collection Detail Flashcards")
 
@@ -131,7 +131,7 @@ Collections also support **Quiz** mode: each item is shown as a multiple-choice 
 
 ### Collection Settings Public
 
-Every collection has a **Shared with others** toggle in its settings. Turning it on makes the collection public — it will appear in the Discover tab and anyone with the shareable link can study it. The toggle is off by default, keeping new collections private.
+From **My Collections**, click **Edit collection** on a card to open its settings modal. Turning on **Shared with others** and saving makes the collection public: it appears in Discover and anyone with the shareable link can study it. New collections start private by default.
 
 ![Collection Settings Public](screenshots/user/collection-settings-public.png "Collection Settings Public")
 
@@ -163,7 +163,7 @@ The Add Items hub is the central starting point for creating new quiz content. I
 
 ### Add Items Prepopulated
 
-When you click the **Add** button while browsing a specific scope in Categories, the Add Items page opens with that scope already filled in — category, primary topic, and subtopic are pre-selected. You can adjust the scope or proceed straight to creating items. The first time you visit you will see a brief content compliance notice; clicking "I understand" dismisses it permanently.
+When you click the **Add** button while browsing a specific scope in Categories, the Add Items page opens with that scope already filled in: category, primary topic, and subtopic are pre-selected. The first time you visit you will see a brief content compliance notice; after clicking **I understand**, the page stays open with the selected scope ready for you to use.
 
 ![Add Items Prepopulated](screenshots/user/add-items-prepopulated.png "Add Items Prepopulated")
 
@@ -225,7 +225,7 @@ The Study Guide import wizard turns your saved study guide text into quiz items 
 
 ### Study Guide Import Prompts
 
-The wizard splits your study guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt and paste it into an AI assistant, then paste the AI's JSON response back into the corresponding text area and click **Validate JSON**.
+After you save a study guide and click **Create prompt sets**, the wizard splits that saved guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt into an AI assistant, then paste the JSON response back into the matching text area and click **Validate JSON**.
 
 ![Study Guide Import Prompts](screenshots/user/study-guide-import-prompts.png "Study Guide Import Prompts")
 

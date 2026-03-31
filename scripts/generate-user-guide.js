@@ -35,30 +35,30 @@ const descriptions = {
   "mode-quiz": `**Quiz mode** presents each item as a multiple-choice question with the correct answer shuffled among the incorrect options. After answering, the app reveals whether you were right and shows the explanation. At the end of the set your score is displayed.`,
 
   // ---- Building your collection ----
-  "items-add-to-collection": `Each item in List mode has a **+** button on the right. Clicking it adds that item to your currently active collection instantly — no confirmation required. The active collection name is shown in the notice banner at the top of the page.`,
+  "items-add-to-collection": `Each item in study views includes collection controls. The folder button shows your current active collection, and the **+** button adds that item to it immediately with no confirmation. On list cards the controls sit to the right; in other study modes they appear beneath the item content.`,
 
-  "items-collection-badges": `After adding items to your active collection, each added item shows a filled collection indicator (a box icon). This lets you see at a glance which items from the current scope are already in your collection. You can add as many items as you like from the same or different scopes.`,
+  "items-collection-badges": `After adding items to your active collection, those items show a filled collection badge so you can see at a glance what is already included. While an item is already in the active collection, its **+** button is disabled until you remove it or switch to a different active collection.`,
 
-  "items-collection-removed": `Clicking the **−** button on an item that is already in your active collection removes it immediately. The collection indicator disappears and the + button returns, so you can re-add it later if needed.`,
+  "items-collection-removed": `Clicking the **minus icon** removes an item from your active collection immediately. The filled collection badge disappears and the **+** button becomes available again, so you can add the item back later if needed.`,
 
-  "active-collection-selector": `Your **active collection** is the collection that receives items when you click +. On the My Collections page you can change your active collection by clicking the "Set as active" button on any collection card. The currently active one is highlighted.`,
+  "active-collection-selector": `Your **active collection** is the collection that receives items when you click **+**. From any item, click the folder button or the active collection name beside it to open **Manage Collections**. There you can create another collection, mark it active with the radio button, and then continue adding items into that newly active collection.`,
 
   "collection-new": `Click **New collection** to create a second (or third, etc.) collection. Give it a name and an optional description, then save. Once created it appears in your collections list and you can set it as the active collection to start adding items to it.`,
 
-  "collections-mine-two": `After creating a second collection your My Collections list shows both. Each card displays the collection name, item count, and whether it is public or private. The active collection is highlighted. You can switch between them at any time.`,
+  "collections-mine-two": `After creating a second collection, the **My Collections** tab shows both cards together. Each card shows the collection name, item count, and action icons for edit, active, copy link, and delete. The active collection uses a filled active icon so you can tell where one-click item adds will go.`,
 
   "keyword-filter": `Items in List mode show their keywords as small tags. Clicking a keyword tag instantly filters the list to show only items that share that tag. This is useful for focusing on a specific sub-topic (for example, only Western-Europe capitals) within a broader scope.`,
 
   // ---- Collections ----
-  "collection-detail": `A collection detail page shows the collection name, description, owner, and the full list of items it contains. You can switch between List, Flashcards, and Quiz modes using the mode buttons. Owners can add or remove items; non-owners with access (public collections) can study and rate but cannot modify.`,
+  "collection-detail": `Clicking a collection card opens that collection's study page. The page keeps **Collections** as the active navigation area and shows mode tabs for **List**, **Flashcards**, and **Quiz** so you can study the same collection in different ways. Owners can also remove items or manage which collection is currently active from here.`,
 
   "collection-detail-flashcards": `Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card — answer first, then question and explanation when flipped.`,
 
   "collection-detail-quiz": `Collections also support **Quiz** mode: each item is shown as a multiple-choice question. This is handy for testing yourself on a curated set of items you have assembled across different categories.`,
 
-  "collection-settings-public": `Every collection has a **Shared with others** toggle in its settings. Turning it on makes the collection public — it will appear in the Discover tab and anyone with the shareable link can study it. The toggle is off by default, keeping new collections private.`,
+  "collection-settings-public": `From **My Collections**, click **Edit collection** on a card to open its settings modal. Turning on **Shared with others** and saving makes the collection public: it appears in Discover and anyone with the shareable link can study it. New collections start private by default.`,
 
-  "collections-mine": `The My Collections tab shows all collections you own. Each card displays the collection name, description, item count, and sharing status. You can set any collection as your active collection (used for the one-click add-to-collection control on item pages), edit name, description, or the "Shared with others" toggle, copy the shareable link, or delete the collection. Creating a new collection is available from this tab.`,
+  "collections-mine": `The **My Collections** tab shows all collections you own once the page finishes loading. Each card displays the collection name, description, item count, and sharing state, along with icon actions to edit it, make it active, copy its link, or delete it. You can also create a new collection from this tab.`,
 
   "collections-discover": `The Discover tab lets anyone browse and search public collections shared by other users. You can filter by text (collection name or description), subject category, primary topic, subtopic, and item tags. Signed-in users can bookmark collections for quick access and rate them with 1–5 stars. You can also open any collection directly by entering its ID.`,
 
@@ -71,7 +71,7 @@ const descriptions = {
   // ---- Adding items ----
   "add-items": `The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords — the same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the AI-assisted Bulk Create flow, or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.`,
 
-  "add-items-prepopulated": `When you click the **Add** button while browsing a specific scope in Categories, the Add Items page opens with that scope already filled in — category, primary topic, and subtopic are pre-selected. You can adjust the scope or proceed straight to creating items. The first time you visit you will see a brief content compliance notice; clicking "I understand" dismisses it permanently.`,
+  "add-items-prepopulated": `When you click the **Add** button while browsing a specific scope in Categories, the Add Items page opens with that scope already filled in: category, primary topic, and subtopic are pre-selected. The first time you visit you will see a brief content compliance notice; after clicking **I understand**, the page stays open with the selected scope ready for you to use.`,
 
   "add-new-item": `The Create Item form lets you write a single quiz item from scratch. Fill in the question, one correct answer, up to three incorrect answer options, an optional explanation, and a source URL. Category, primary topic, and subtopic are required and must be chosen from the taxonomy. You can add extra keywords. Successfully created items are automatically added to your active collection.`,
 
@@ -92,7 +92,7 @@ const descriptions = {
 
   "study-guide-import": `The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; set the number of prompt sets (1–6); then click **Create prompt sets**.`,
 
-  "study-guide-import-prompts": `The wizard splits your study guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt and paste it into an AI assistant, then paste the AI's JSON response back into the corresponding text area and click **Validate JSON**.`,
+  "study-guide-import-prompts": `After you save a study guide and click **Create prompt sets**, the wizard splits that saved guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt into an AI assistant, then paste the JSON response back into the matching text area and click **Validate JSON**.`,
 
   "study-guide-import-first-prompt": `A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI — the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.`,
 };

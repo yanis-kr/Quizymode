@@ -154,19 +154,90 @@ const BULK_AI_RESPONSE = JSON.stringify(
 async function safeGoto(page: Page, url: string) {
   try {
     await page.goto(url, { waitUntil: "load", timeout: 20_000 });
-    await page.waitForTimeout(2_000);
+    await waitForUiToSettle(page);
     return true;
   } catch {
     return false;
   }
 }
 
-async function capture(page: Page, slug: string, url: string, waitFor?: string) {
+async function waitForUiToSettle(page: Page) {
+  await page.waitForLoadState("domcontentloaded").catch(() => {});
+  await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
+
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < 15_000) {
+    const hasVisibleSpinner = await page
+      .locator("[role='status']")
+      .evaluateAll((elements) =>
+        elements.some((element) => {
+          const htmlElement = element as HTMLElement;
+          return htmlElement.offsetParent !== null;
+        })
+      )
+      .catch(() => false);
+
+    if (!hasVisibleSpinner) {
+      break;
+    }
+
+    await page.waitForTimeout(200);
+  }
+}
+
+async function waitForTextToDisappear(page: Page, textPattern: RegExp) {
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < 15_000) {
+    const matchingText = await page
+      .getByText(textPattern)
+      .evaluateAll((elements) =>
+        elements.some((element) => {
+          const htmlElement = element as HTMLElement;
+          return htmlElement.offsetParent !== null;
+        })
+      )
+      .catch(() => false);
+
+    if (!matchingText) {
+      return;
+    }
+
+    await page.waitForTimeout(200);
+  }
+}
+
+async function waitForAnyVisible(
+  page: Page,
+  selectors: string[],
+  timeout = 15_000
+) {
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < timeout) {
+    for (const selector of selectors) {
+      const isVisible = await page.locator(selector).first().isVisible().catch(() => false);
+      if (isVisible) {
+        return selector;
+      }
+    }
+
+    await page.waitForTimeout(200);
+  }
+
+  return null;
+}
+
+async function capture(
+  page: Page,
+  slug: string,
+  url: string,
+  waitFor?: string | string[]
+) {
   fs.mkdirSync(screenshotDir, { recursive: true });
 
   await safeGoto(page, url);
   if (waitFor) {
-    await page.waitForSelector(waitFor, { timeout: 8_000 }).catch(() => {});
+    const selectors = Array.isArray(waitFor) ? waitFor : [waitFor];
+    await waitForAnyVisible(page, selectors, 12_000);
   }
 
   await captureCurrentPage(page, slug);
@@ -174,6 +245,7 @@ async function capture(page: Page, slug: string, url: string, waitFor?: string) 
 
 async function captureCurrentPage(page: Page, slug: string) {
   fs.mkdirSync(screenshotDir, { recursive: true });
+  await waitForUiToSettle(page);
   await page
     .screenshot({
       path: path.join(screenshotDir, `${slug}.png`),
@@ -188,7 +260,7 @@ async function clickMode(page: Page, modeName: string) {
     .first()
     .click()
     .catch(() => {});
-  await page.waitForTimeout(1_500);
+  await waitForUiToSettle(page);
 }
 
 function pickCollectionDetailHref(hrefs: string[]) {
@@ -258,9 +330,211 @@ async function ensureListMode(page: Page) {
   await clickMode(page, "list");
 }
 
+async function waitForCategoryItemsLoaded(page: Page) {
+  await waitForUiToSettle(page);
+  await waitForAnyVisible(page, [
+    "button[title='Manage collections']",
+    "button[title*='Add to ']",
+    "button[title*='Remove from ']",
+    "h3.text-lg",
+    "text=Answer:",
+    "text=No items found.",
+  ]);
+}
+
+async function waitForCollectionsPageLoaded(page: Page) {
+  await waitForUiToSettle(page);
+  await waitForTextToDisappear(page, /loading collections/i);
+  await waitForAnyVisible(page, [
+    "button:has-text('New collection')",
+    "button[title='Edit collection']",
+    "button[title='Active collection']",
+    "button[title='Set as active collection']",
+    "text=No collections yet. Create your first collection!",
+  ]);
+}
+
+async function waitForManageCollectionsDialog(page: Page) {
+  await waitForAnyVisible(page, ["text=Manage Collections"]);
+  await waitForTextToDisappear(page, /loading collections/i);
+  await waitForAnyVisible(page, [
+    "input[type='checkbox']",
+    "text=No collections available",
+  ]);
+}
+
+async function clickConsentIfPresent(page: Page) {
+  const consentButton = page.getByRole("button", { name: /i understand/i });
+  if (await consentButton.isVisible().catch(() => false)) {
+    await consentButton.click().catch(() => {});
+    await consentButton.waitFor({ state: "hidden", timeout: 10_000 }).catch(() => {});
+    await waitForUiToSettle(page);
+  }
+}
+
+function collectionRowXPath(name: string) {
+  return `xpath=//div[contains(@class,'flex items-center gap-3')][.//span[normalize-space()="${name}"]]`;
+}
+
+function collectionCardXPath(name: string) {
+  return `xpath=//div[contains(@class,'rounded-2xl')][.//h3[normalize-space()="${name}"]]`;
+}
+
+async function ensureCollectionExistsInManageDialog(page: Page, name: string) {
+  const existing = page.locator(collectionRowXPath(name));
+  if (await existing.first().isVisible().catch(() => false)) {
+    return;
+  }
+
+  await page.locator("input[placeholder='Enter collection name']").fill(name).catch(() => {});
+  await page.locator("button[title='Add new collection']").click().catch(() => {});
+  await waitForAnyVisible(page, [collectionRowXPath(name)], 15_000);
+}
+
+async function setActiveCollectionInManageDialog(page: Page, name: string) {
+  const row = page.locator(collectionRowXPath(name)).first();
+  await row.locator("input[type='radio']").check().catch(() => {});
+  await page.waitForTimeout(300);
+}
+
+async function openManageCollectionsForFirstItem(page: Page) {
+  await waitForCategoryItemsLoaded(page);
+  await page.locator("button[title='Manage collections']").first().click().catch(() => {});
+  await waitForManageCollectionsDialog(page);
+}
+
+async function ensureSecondCollectionIsActive(page: Page, name: string) {
+  await openManageCollectionsForFirstItem(page);
+  await ensureCollectionExistsInManageDialog(page, name);
+  await setActiveCollectionInManageDialog(page, name);
+}
+
+async function closeManageCollectionsDialog(page: Page) {
+  await page
+    .locator("xpath=//h3[normalize-space()='Manage Collections']/following-sibling::button[1]")
+    .click()
+    .catch(() => {});
+  await page.waitForTimeout(300);
+}
+
+async function addFirstItemsToActiveCollection(page: Page, count: number) {
+  const addButtons = page.locator("button[title*='Add to ']");
+  const total = await addButtons.count();
+  let addedCount = 0;
+
+  for (let index = 0; index < total && addedCount < count; index += 1) {
+    const button = addButtons.nth(index);
+    const enabled = await button.isEnabled().catch(() => false);
+    if (!enabled) {
+      continue;
+    }
+
+    await button.click().catch(() => {});
+    await page.waitForTimeout(500);
+    addedCount += 1;
+  }
+
+  await waitForUiToSettle(page);
+}
+
+async function getCollectionHrefByName(page: Page, name: string) {
+  await safeGoto(page, "/collections");
+  await waitForCollectionsPageLoaded(page);
+
+  const card = page.locator(collectionCardXPath(name)).first();
+  const link = card.locator("a[href^='/collections/']").first();
+  return (await link.getAttribute("href").catch(() => null)) ?? HOME_SAMPLE_COLLECTION_DETAIL_PATH;
+}
+
+async function openCollectionByName(page: Page, name: string) {
+  const href = await getCollectionHrefByName(page, name);
+  await safeGoto(page, href);
+  await waitForCollectionDetailLoaded(page);
+}
+
+async function waitForCollectionDetailLoaded(page: Page) {
+  await waitForUiToSettle(page);
+  await waitForAnyVisible(page, [
+    "text=Collection",
+    "button:has-text('Details')",
+    "text=No items in this collection.",
+  ]);
+}
+
+async function ensureStudyGuideSaved(page: Page) {
+  await safeGoto(page, "/study-guide");
+  await waitForAnyVisible(page, [
+    "#sg-title",
+    "text=Study Guide",
+  ]);
+
+  await page.locator("#sg-title").fill("Capitals Study Guide").catch(() => {});
+  await page.locator("#sg-content").fill(STUDY_GUIDE_TEXT).catch(() => {});
+  await page.getByRole("button", { name: /^save$/i }).click().catch(() => {});
+  await waitForTextToDisappear(page, /saving/i);
+  await waitForUiToSettle(page);
+}
+
+async function ensurePromptSetsExist(page: Page) {
+  await ensureStudyGuideSaved(page);
+  await safeGoto(
+    page,
+    "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
+  );
+  await clickConsentIfPresent(page);
+  await waitForAnyVisible(page, [
+    "text=Using study guide:",
+    "text=You do not have a study guide yet.",
+  ]);
+
+  const hasPromptCards = await page
+    .getByText(/bytes of study guide content/i)
+    .first()
+    .isVisible()
+    .catch(() => false);
+
+  if (!hasPromptCards) {
+    await page
+      .getByRole("button", { name: /create prompt sets/i })
+      .click()
+      .catch(() => {});
+    await waitForAnyVisible(page, ["text=bytes of study guide content", "text=AI prompt"], 20_000);
+  }
+
+  await waitForUiToSettle(page);
+}
+
+async function applyKeywordFilterWithResults(page: Page) {
+  await safeGoto(page, "/categories/geography/capitals/world");
+  await ensureListMode(page);
+  await waitForCategoryItemsLoaded(page);
+
+  const keywordButtons = page.locator("button[title*='click to filter']");
+  const total = await keywordButtons.count();
+
+  for (let index = 0; index < total; index += 1) {
+    await safeGoto(page, "/categories/geography/capitals/world");
+    await ensureListMode(page);
+    await waitForCategoryItemsLoaded(page);
+
+    const button = keywordButtons.nth(index);
+    const buttonText = await button.textContent().catch(() => "");
+    await button.click().catch(() => {});
+    await waitForUiToSettle(page);
+
+    const itemCards = await page.locator("h3.text-lg").count().catch(() => 0);
+    const noItems = await page.getByText(/no items found/i).isVisible().catch(() => false);
+    if (itemCards > 0 && !noItems && !/mixed/i.test(buttonText ?? "")) {
+      return;
+    }
+  }
+}
+
 test.describe("User guide screenshots", () => {
   test.describe.configure({ mode: "serial" });
   test.setTimeout(30_000);
+
+  const secondCollectionName = "Second collection";
 
   test("home", async ({ page }) => {
     await capture(page, "home", "/");
@@ -320,7 +594,10 @@ test.describe("User guide screenshots", () => {
   });
 
   test("collections-mine", async ({ page }) => {
-    await capture(page, "collections-mine", "/collections");
+    await capture(page, "collections-mine", "/collections", [
+      "button:has-text('New collection')",
+      "button[title='Edit collection']",
+    ]);
   });
 
   test("collections-discover", async ({ page }) => {
@@ -328,7 +605,8 @@ test.describe("User guide screenshots", () => {
   });
 
   test("collection-detail", async ({ page }) => {
-    await capture(page, "collection-detail", HOME_SAMPLE_COLLECTION_DETAIL_PATH);
+    await openCollectionByName(page, secondCollectionName);
+    await captureCurrentPage(page, "collection-detail");
   });
 
   test("about", async ({ page }) => {
@@ -370,42 +648,43 @@ test.describe("User guide screenshots", () => {
   test("items-add-to-collection", async ({ page }) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
+    await waitForCategoryItemsLoaded(page);
     await captureCurrentPage(page, "items-add-to-collection");
   });
 
   test("items-collection-badges", async ({ page }) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
-
-    const addButtons = page.locator("button[title*='Add to ']");
-    const total = await addButtons.count();
-    for (let index = 0; index < Math.min(3, total); index += 1) {
-      await addButtons.nth(index).click().catch(() => {});
-      await page.waitForTimeout(600);
-    }
-
-    await page.waitForTimeout(1_000);
+    await waitForCategoryItemsLoaded(page);
+    await addFirstItemsToActiveCollection(page, 3);
     await captureCurrentPage(page, "items-collection-badges");
   });
 
   test("items-collection-removed", async ({ page }) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
+    await waitForCategoryItemsLoaded(page);
 
     let removeButtons = page.locator("button[title*='Remove from ']");
     if ((await removeButtons.count()) === 0) {
       await page.locator("button[title*='Add to ']").first().click().catch(() => {});
-      await page.waitForTimeout(1_000);
+      await waitForUiToSettle(page);
       removeButtons = page.locator("button[title*='Remove from ']");
     }
 
     await removeButtons.first().click().catch(() => {});
-    await page.waitForTimeout(1_000);
+    await waitForUiToSettle(page);
     await captureCurrentPage(page, "items-collection-removed");
   });
 
   test("active-collection-selector", async ({ page }) => {
-    await capture(page, "active-collection-selector", "/collections");
+    await safeGoto(page, "/categories/geography/capitals/world");
+    await ensureListMode(page);
+    await waitForCategoryItemsLoaded(page);
+    await ensureSecondCollectionIsActive(page, secondCollectionName);
+    await captureCurrentPage(page, "active-collection-selector");
+    await closeManageCollectionsDialog(page);
+    await addFirstItemsToActiveCollection(page, 2);
   });
 
   test("collection-new", async ({ page }) => {
@@ -425,44 +704,48 @@ test.describe("User guide screenshots", () => {
   });
 
   test("collections-mine-two", async ({ page }) => {
-    await capture(page, "collections-mine-two", "/collections");
+    await capture(page, "collections-mine-two", "/collections", [
+      "button[title='Edit collection']",
+      "button[title='Active collection']",
+    ]);
   });
 
   test("keyword-filter", async ({ page }) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await page
-      .locator("button[title*='click to filter']")
-      .first()
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(1_500);
+    await applyKeywordFilterWithResults(page);
     await captureCurrentPage(page, "keyword-filter");
   });
 
   test("collection-detail-flashcards", async ({ page }) => {
-    await openCollectionDetail(page);
+    await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "flashcards");
     await captureCurrentPage(page, "collection-detail-flashcards");
   });
 
   test("collection-detail-quiz", async ({ page }) => {
-    await openCollectionDetail(page);
+    await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "quiz");
     await captureCurrentPage(page, "collection-detail-quiz");
   });
 
   test("collection-settings-public", async ({ page }) => {
-    await openCollectionDetail(page, true);
+    await safeGoto(page, "/collections");
+    await waitForCollectionsPageLoaded(page);
 
-    const toggle = page.getByRole("switch").first();
-    const isPublic = (await toggle.getAttribute("aria-checked").catch(() => "false")) === "true";
-    if (!isPublic) {
-      await toggle.click().catch(() => {});
-      await page.waitForTimeout(1_000);
+    const card = page.locator(collectionCardXPath(secondCollectionName)).first();
+    await card.locator("button[title='Edit collection']").click().catch(() => {});
+    await waitForAnyVisible(page, ["text=Edit Collection", "#edit-collection-is-public"]);
+
+    const publicToggle = page.locator("#edit-collection-is-public");
+    const isChecked = await publicToggle.isChecked().catch(() => false);
+    if (!isChecked) {
+      await publicToggle.check().catch(() => {});
     }
 
     await captureCurrentPage(page, "collection-settings-public");
+
+    await page.getByRole("button", { name: /^save$/i }).click().catch(() => {});
+    await waitForTextToDisappear(page, /saving/i);
+    await waitForCollectionsPageLoaded(page);
   });
 
   test("collections-discover-public", async ({ page }) => {
@@ -485,11 +768,13 @@ test.describe("User guide screenshots", () => {
   });
 
   test("add-items-prepopulated", async ({ page }) => {
-    await capture(
-      page,
-      "add-items-prepopulated",
-      "/items/add?category=geography&keywords=capitals,world"
-    );
+    await safeGoto(page, "/items/add?category=geography&keywords=capitals,world");
+    await clickConsentIfPresent(page);
+    await waitForAnyVisible(page, [
+      "#add-hub-scope-category",
+      "text=Topic and tags",
+    ]);
+    await captureCurrentPage(page, "add-items-prepopulated");
   });
 
   test("bulk-create-prompt", async ({ page }) => {
@@ -545,37 +830,28 @@ test.describe("User guide screenshots", () => {
 
   test("study-guide-content", async ({ page }) => {
     await safeGoto(page, "/study-guide");
-    await page.locator("textarea").first().fill(STUDY_GUIDE_TEXT).catch(() => {});
-    await page.waitForTimeout(600);
+    await waitForAnyVisible(page, ["#sg-title", "#sg-content"]);
+    await page.locator("#sg-title").fill("Capitals Study Guide").catch(() => {});
+    await page.locator("#sg-content").fill(STUDY_GUIDE_TEXT).catch(() => {});
     await captureCurrentPage(page, "study-guide-content");
     await page.getByRole("button", { name: /save/i }).click().catch(() => {});
-    await page.waitForTimeout(1_500);
+    await waitForTextToDisappear(page, /saving/i);
+    await waitForUiToSettle(page);
   });
 
   test("study-guide-import-prompts", async ({ page }) => {
-    await safeGoto(
-      page,
-      "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
-    );
-    await page
-      .getByRole("button", { name: /create prompt sets/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(8_000);
+    await ensurePromptSetsExist(page);
     await captureCurrentPage(page, "study-guide-import-prompts");
   });
 
   test("study-guide-import-first-prompt", async ({ page }) => {
-    await safeGoto(
-      page,
-      "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
-    );
+    await ensurePromptSetsExist(page);
     await page
       .locator(".font-mono, pre, code")
       .first()
       .scrollIntoViewIfNeeded()
       .catch(() => {});
-    await page.waitForTimeout(500);
+    await waitForUiToSettle(page);
     await captureCurrentPage(page, "study-guide-import-first-prompt");
   });
 });
