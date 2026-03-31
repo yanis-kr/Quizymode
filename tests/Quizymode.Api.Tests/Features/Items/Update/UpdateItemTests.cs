@@ -235,5 +235,102 @@ public sealed class UpdateItemTests : ItemTestFixture
         result.Error.Code.Should().Be("Item.NotFound");
     }
 
+    // AC 2.1.5
+    [Fact]
+    public async Task HandleAsync_RegularUser_CannotSetItemPublic()
+    {
+        // Arrange
+        const string ownerId = "owner-user";
+        await EnsureGeographyPublicWithNavAsync(ownerId);
+        Item item = await CreateItemWithCategoryAsync(
+            "geography",
+            "What is the capital of Spain?",
+            "Madrid",
+            new List<string> { "Barcelona" },
+            "Explanation",
+            isPrivate: true,
+            createdBy: ownerId);
+
+        Mock<IUserContext> regularUserMock = new();
+        regularUserMock.Setup(x => x.UserId).Returns(ownerId);
+        regularUserMock.Setup(x => x.IsAuthenticated).Returns(true);
+        regularUserMock.Setup(x => x.IsAdmin).Returns(false);
+
+        UpdateItem.Request request = new(
+            Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
+            Question: "What is the capital of Spain?",
+            CorrectAnswer: "Madrid",
+            IncorrectAnswers: new List<string> { "Barcelona" },
+            Explanation: "Explanation",
+            IsPrivate: false,
+            ReadyForReview: null);
+
+        // Act
+        Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
+            item.Id.ToString(),
+            request,
+            DbContext,
+            SimHashService,
+            regularUserMock.Object,
+            _auditServiceMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.IsPrivate.Should().BeTrue("non-admins cannot change IsPrivate to false");
+    }
+
+    // AC 2.1.6
+    [Fact]
+    public async Task HandleAsync_RegularUser_CanSetReadyForReview()
+    {
+        // Arrange
+        const string ownerId = "owner-user";
+        await EnsureGeographyPublicWithNavAsync(ownerId);
+        Item item = await CreateItemWithCategoryAsync(
+            "geography",
+            "What is the capital of Portugal?",
+            "Lisbon",
+            new List<string> { "Porto" },
+            "Explanation",
+            isPrivate: true,
+            createdBy: ownerId);
+
+        Mock<IUserContext> regularUserMock = new();
+        regularUserMock.Setup(x => x.UserId).Returns(ownerId);
+        regularUserMock.Setup(x => x.IsAuthenticated).Returns(true);
+        regularUserMock.Setup(x => x.IsAdmin).Returns(false);
+
+        UpdateItem.Request request = new(
+            Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
+            Question: "What is the capital of Portugal?",
+            CorrectAnswer: "Lisbon",
+            IncorrectAnswers: new List<string> { "Porto" },
+            Explanation: "Explanation",
+            IsPrivate: true,
+            ReadyForReview: true);
+
+        // Act
+        Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
+            item.Id.ToString(),
+            request,
+            DbContext,
+            SimHashService,
+            regularUserMock.Object,
+            _auditServiceMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+    }
+
 }
 

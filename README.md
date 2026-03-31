@@ -32,6 +32,48 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
 
 ## Architecture
 
+```mermaid
+graph TD
+    subgraph Client
+        Browser["Browser\n(React 19 SPA)"]
+    end
+
+    subgraph Edge
+        CF["Cloudflare\n(DNS · TLS · Proxy)"]
+        CDN["CloudFront + S3\n(Static hosting)"]
+    end
+
+    subgraph Auth
+        Cognito["AWS Cognito\n(User pool · JWT issuance)"]
+        Amplify["AWS Amplify\n(Frontend SDK)"]
+    end
+
+    subgraph API ["API (AWS Lightsail)"]
+        MinAPI[".NET 10 Minimal API\nVertical-slice features"]
+        EF["EF Core\n(migrations on startup)"]
+        OTel["OpenTelemetry\nexporter"]
+    end
+
+    subgraph Data
+        PG["PostgreSQL\n(Supabase in prod\nAspire/Docker locally)"]
+    end
+
+    subgraph Observability
+        Grafana["Grafana Cloud\n(traces · metrics · logs)"]
+    end
+
+    Browser -- "static assets" --> CDN
+    Browser -- "signIn / signUp / fetchAuthSession" --> Cognito
+    Amplify -. "used by" .-> Browser
+    Browser -- "Authorization: Bearer JWT\n/api/*" --> CF
+    CF --> MinAPI
+    MinAPI -- "validates JWT" --> Cognito
+    MinAPI --> EF
+    EF --> PG
+    MinAPI -- "OTLP" --> OTel
+    OTel --> Grafana
+```
+
 - `src/Quizymode.Api`: main API using vertical-slice features
 - `src/Quizymode.Web`: React SPA
 - `src/Quizymode.Api.AppHost`: local Aspire orchestration
@@ -278,6 +320,12 @@ For humans and AI agents:
 - Treat [docs/AC.md](./docs/AC.md) as the source of truth for application behavior, and update it whenever code changes alter behavior or contract intent.
 
 That means you do **not** need many READMEs by default. One root README should stay canonical. Additional READMEs are only justified when they reduce ambiguity for a specific subproject.
+
+## Credits & Influences
+
+Quizymode draws inspiration from Milan's Clean Architecture teaching and template ecosystem — especially the emphasis on clear boundaries, pragmatic conventions, and production-minded cross-cutting concerns (validation, logging, observability). Even where Quizymode chooses a more feature-sliced structure, that same "make the next change easy" mindset is a visible influence.
+
+Quizymode also benefits from the broader Clean Architecture community momentum shaped by the Ardalis template: a strong bias toward maintainable defaults, explicit dependency direction, and testability-first scaffolding. The layered template and its modern endpoint-focused evolutions are a helpful reference point for making deliberate tradeoffs as Quizymode grows.
 
 ## License
 
