@@ -323,9 +323,9 @@ That means you do **not** need many READMEs by default. One root README should s
 
 ## Credits & Influences
 
-Quizymode draws inspiration from Milan's Clean Architecture teaching and template ecosystem — especially the emphasis on clear boundaries, pragmatic conventions, and production-minded cross-cutting concerns (validation, logging, observability). Even where Quizymode chooses a more feature-sliced structure, that same "make the next change easy" mindset is a visible influence.
+Quizymode draws inspiration from Milan Jovanović's Clean Architecture teaching and template ecosystem — especially the emphasis on clear boundaries, pragmatic conventions, and production-minded cross-cutting concerns (validation, logging, observability). Even where Quizymode chooses a more feature-sliced structure, that same "make the next change easy" mindset is a visible influence.
 
-Quizymode also benefits from the broader Clean Architecture community momentum shaped by the Ardalis template: a strong bias toward maintainable defaults, explicit dependency direction, and testability-first scaffolding. The layered template and its modern endpoint-focused evolutions are a helpful reference point for making deliberate tradeoffs as Quizymode grows.
+Quizymode also benefits from the broader Clean Architecture community momentum shaped by the Steve Smith's (Ardalis) [Clean Architectur template](https://github.com/ardalis/cleanarchitecture): a strong bias toward maintainable defaults, explicit dependency direction, and testability-first scaffolding. The layered template and its modern endpoint-focused evolutions are a helpful reference point for making deliberate tradeoffs as Quizymode grows.
 
 ## License
 
