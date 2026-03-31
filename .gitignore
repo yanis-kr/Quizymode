@@ -379,6 +379,9 @@ playwright/.auth/
 # Claude Code local settings (machine-specific, may contain sensitive data)
 .claude/settings.local.json
 
+# Local infrastructure snapshots (AWS config exports etc.) — keep locally, not in repo
+.artifacts/
+
 # Playwright test artifacts and local runner logs
 playwright/test-results/
 playwright/logs/

@@ -25,8 +25,21 @@ const AboutPage = () => {
           dangerouslySetInnerHTML={{ __html: __ABOUT_HTML__ }}
         />
 
+        <p className="mt-6 text-sm text-slate-600">
+          New to Quizymode?{" "}
+          <a
+            href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
+          >
+            Read the User Guide
+          </a>{" "}
+          for a full walkthrough.
+        </p>
+
         {/* Version — small, unobtrusive, at the bottom */}
-        <p className="mt-6 text-xs text-slate-400">
+        <p className="mt-2 text-xs text-slate-400">
           Version {__APP_VERSION__}
         </p>
       </div>
