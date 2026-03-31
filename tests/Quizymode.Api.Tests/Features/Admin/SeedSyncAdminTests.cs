@@ -176,6 +176,42 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         DbContext.Items.Should().Contain(i => i.SeedId == seedId && i.IsSeedManaged);
     }
 
+    [Fact]
+    public async Task ApplyAsync_ReturnsValidationError_WhenSeedIdAlreadyBelongsToNonManagedItem()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Guid conflictingSeedId = Guid.Parse("88888888-8888-8888-8888-888888888888");
+        Item existing = await CreateItemWithCategoryAsync(
+            itemId: Guid.NewGuid(),
+            categoryName: "geography",
+            question: "Legacy row with conflicting seed id",
+            correctAnswer: "Paris",
+            incorrectAnswers: ["Lyon", "Marseille", "Nice"],
+            explanation: "Legacy explanation.",
+            isPrivate: false,
+            createdBy: "seed-import");
+        existing.SeedId = conflictingSeedId;
+        await DbContext.SaveChangesAsync();
+
+        SeedSyncAdmin.Request request = BuildRequest(
+            "core-geography",
+            [
+                BuildItem(
+                    conflictingSeedId,
+                    "What is the capital of France?",
+                    "Paris",
+                    ["Lyon", "Marseille", "Nice"])
+            ]);
+
+        var result = await _service.ApplyAsync(request, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Should().NotBeNull();
+        result.Error!.Code.Should().Be("Admin.SeedSyncSeedIdAlreadyAssigned");
+        result.Error.Description.Should().Contain(conflictingSeedId.ToString());
+    }
+
     private static SeedSyncAdmin.Request BuildRequest(
         string seedSet,
         List<SeedSyncAdmin.SeedItemRequest> items)

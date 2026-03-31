@@ -45,8 +45,24 @@ var api = builder.AddProject("quizymode-api", "../Quizymode.Api/Quizymode.Api.cs
     .WithEnvironment("APP_Authentication__Cognito__Audience", 
         GetAudienceValue(builder.Configuration));
 
-// Web UI is run separately via `npm run dev` in the Quizymode.Web directory
-// This provides better developer experience with direct access to Vite output and easier debugging
-// See README.md for instructions on running the Web UI
+// Add the React/Vite dev server via AddExecutable (Aspire.Hosting.NodeJs is not yet released
+// at the Aspire 13.x version, so we drive npm directly).
+// vite.config.ts reads the PORT env var set here; falls back to 7000 for standalone npm run dev.
+// Start the React/Vite dev server.
+// Kill any stale process on port 7000 first so Vite always binds to the expected port.
+// No endpoint registration needed — navigate to http://localhost:7000 directly.
+string npmExe = OperatingSystem.IsWindows() ? "powershell.exe" : "sh";
+string[] npmArgs = OperatingSystem.IsWindows()
+    ? [
+        "-NoProfile", "-Command",
+        "Get-NetTCPConnection -LocalPort 7000 -ErrorAction SilentlyContinue " +
+        "| ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; " +
+        "Start-Sleep -Milliseconds 300; " +
+        "npm run dev"
+      ]
+    : ["-c", "fuser -k 7000/tcp 2>/dev/null; sleep 0.3; npm run dev"];
+
+builder.AddExecutable("quizymode-web", npmExe, "../../src/Quizymode.Web", npmArgs)
+    .WaitFor(api);
 
 builder.Build().Run();

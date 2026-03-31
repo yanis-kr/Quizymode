@@ -20,8 +20,8 @@ This is the canonical agent-facing guide for the Quizymode repo. Keep it short, 
 - Human overview: [README.md](./README.md)
 - Behavior and contract intent: [docs/AC.md](./docs/AC.md)
 - Generated API contract: [docs/openapi/quizymode-api.json](./docs/openapi/quizymode-api.json)
-- Auth setup details: [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md)
-- Observability setup: [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md)
+- Auth setup details: [docs/infra/COGNITO_SETUP.md](./docs/infra/COGNITO_SETUP.md)
+- Observability setup: [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/infra/GRAFANA_CLOUD_SETUP.md)
 
 When docs disagree, prefer:
 

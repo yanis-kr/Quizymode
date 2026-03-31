@@ -59,34 +59,32 @@ The root README is the canonical entry point. Detailed or fast-changing material
 
 ### Run The App
 
-1. Start Aspire AppHost:
+1. Install frontend dependencies (once, or after `package.json` changes):
+
+   ```bash
+   cd src/Quizymode.Web && npm install
+   ```
+
+2. Start Aspire AppHost — this starts everything: PostgreSQL, API, and the React dev server:
 
    ```bash
    cd src/Quizymode.Api.AppHost
    dotnet run
    ```
 
-2. Start the web app in a second terminal:
-
-   ```bash
-   cd src/Quizymode.Web
-   npm install
-   npm run dev
-   ```
-
 3. Local endpoints:
 
    - Web UI: `http://localhost:7000`
-   - API: `https://localhost:8080`
-   - Swagger UI: `https://localhost:8080/swagger`
-   - OpenAPI JSON: `https://localhost:8080/openapi/v1.json`
-   - OpenAPI YAML: `https://localhost:8080/openapi/v1.yaml`
+   - API: `https://localhost:8082`
+   - Swagger UI: `https://localhost:8082/swagger`
+   - OpenAPI JSON: `https://localhost:8082/openapi/v1.json`
+   - OpenAPI YAML: `https://localhost:8082/openapi/v1.yaml`
    - Aspire dashboard: `https://localhost:5000`
 
 In practice, local development is:
 
-- Aspire runs the API and local PostgreSQL-backed services.
-- The React app runs separately with `npm run dev`.
+- Aspire orchestrates PostgreSQL, the API, and the React dev server in one command.
+- Vite HMR still works as normal — Aspire just manages the process lifecycle.
 - Cognito remains the identity provider in local development.
 
 ### Database
@@ -94,6 +92,62 @@ In practice, local development is:
 - PostgreSQL runs through Aspire in local development.
 - EF Core migrations are applied automatically on API startup.
 - Seed data is loaded from `data/seed-dev/`.
+
+### Running E2E Tests Locally
+
+Start Aspire first in a separate terminal (API + DB must be running). The scripts check the API is reachable, start the React dev server, authenticate via Playwright, run the tests, print an AC-ID summary table, open the HTML report, and stop the React dev server on exit.
+
+#### Windows (PowerShell)
+
+```powershell
+# 1. Start Aspire in a separate terminal first
+cd src/Quizymode.Api.AppHost && dotnet run
+
+# 2. Run tests (React dev server is managed automatically)
+.\scripts\run-e2e-local-smoke.ps1    # quick check before pushing (@smoke tests only)
+.\scripts\run-e2e-local-full.ps1     # full suite when needed
+```
+
+#### Mac / Linux / WSL
+
+```bash
+# 1. Start Aspire in a separate terminal first
+cd src/Quizymode.Api.AppHost && dotnet run
+
+# 2. Run tests
+./scripts/run-e2e-local-smoke.sh
+./scripts/run-e2e-local-full.sh
+```
+
+E2E tests live in `playwright/e2e/`. Tag a test with `@smoke` in its title to include it in the smoke run.
+
+### Generating the User Guide
+
+The user guide (`docs/user-guide/README.md`) is built from Playwright screenshots. Two modes are available:
+
+**From production** — screenshots taken from `https://www.quizymode.com` (no local stack needed):
+
+```powershell
+.\scripts\generate-user-guide-production.ps1   # Windows
+```
+```bash
+./scripts/generate-user-guide-production.sh    # Mac / Linux / WSL
+```
+
+**From local dev stack** — screenshots taken from `http://localhost:7000` (Aspire must be running first):
+
+```powershell
+# 1. Start Aspire in a separate terminal first
+cd src/Quizymode.Api.AppHost && dotnet run
+
+# 2. Generate (React dev server managed automatically)
+.\scripts\generate-user-guide-local.ps1        # Windows
+```
+```bash
+./scripts/generate-user-guide-local.sh         # Mac / Linux / WSL
+```
+
+Both scripts authenticate via Playwright auth setup before capturing, then call `scripts/generate-user-guide.js` to rebuild the guide.
 
 ## Authentication
 
@@ -106,7 +160,7 @@ The current web app authentication model is:
 
 Important clarification: the current app code is **not** using Cognito Hosted UI as its primary sign-in flow, so the main web app auth flow is **not PKCE today**. The API is JWT-bearer based; the SPA currently uses direct Cognito user-pool operations rather than an OAuth redirect + PKCE flow.
 
-For environment setup details, see [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md).
+For environment setup details, see [docs/infra/COGNITO_SETUP.md](./docs/infra/COGNITO_SETUP.md).
 
 ## Most Important API Endpoints
 
@@ -194,17 +248,25 @@ Without that fallback, reloading non-root routes returns the S3 `AccessDenied` X
 
 ### Observability
 
-Grafana Cloud setup is documented in [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md).
+Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/infra/GRAFANA_CLOUD_SETUP.md).
 
 ## Documentation Map
 
 - [docs/AC.md](./docs/AC.md): canonical behavior and contract reference
+- [docs/infra/README.md](./docs/infra/README.md): infrastructure and platform setup notes
 - [docs/openapi/README.md](./docs/openapi/README.md): generated API contract notes
-- [docs/COGNITO_SETUP.md](./docs/COGNITO_SETUP.md): Cognito setup details
-- [docs/GRAFANA_CLOUD_SETUP.md](./docs/GRAFANA_CLOUD_SETUP.md): observability setup
+- [docs/infra/COGNITO_SETUP.md](./docs/infra/COGNITO_SETUP.md): Cognito setup details
+- [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/infra/GRAFANA_CLOUD_SETUP.md): observability setup
+- [docs/infra/CLOUDFLARE.md](./docs/infra/CLOUDFLARE.md): edge, DNS, TLS, and proxy notes
+- [docs/infra/S3_CLOUDFRONT.md](./docs/infra/S3_CLOUDFRONT.md): SPA hosting and CDN notes
+- [docs/infra/LIGHTSAIL.md](./docs/infra/LIGHTSAIL.md): API container hosting notes
+- [docs/infra/SUPABASE.md](./docs/infra/SUPABASE.md): managed Postgres notes
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
-- [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide
+- [docs/user-guide/README.md](./docs/user-guide/README.md): end-user guide with screenshots
+- [scripts/_e2e-common.ps1](./scripts/_e2e-common.ps1) / [_e2e-common.sh](./scripts/_e2e-common.sh): shared E2E runner helpers (not run directly)
+- [scripts/generate-user-guide-production.ps1](./scripts/generate-user-guide-production.ps1) / [.sh](./scripts/generate-user-guide-production.sh): capture screenshots from production and regenerate user guide
+- [scripts/generate-user-guide-local.ps1](./scripts/generate-user-guide-local.ps1) / [.sh](./scripts/generate-user-guide-local.sh): capture screenshots from local dev stack and regenerate user guide
 
 ## README Policy
 

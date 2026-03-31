@@ -1,117 +1,109 @@
-# Quizymode user guide
+# Quizymode User Guide
 
-Quizymode is a web app for browsing a large public question bank, building your own items, organizing them into **collections**, and studying in several modes (**Sets**, **List**, **Flashcards**, **Quiz**). The live site is [quizymode.com](https://www.quizymode.com/).
+This guide provides an overview of the main screens available to signed-in users.
+_Screenshots are generated automatically — run `npx playwright test && node scripts/generate-user-guide.js` from the repo root to refresh them._
 
-**Screenshots:** Add PNG or WebP files under [`images/`](images/) using the filenames listed in [`images/README.md`](images/README.md). The figures below reference those paths; until the files exist, GitHub may show broken image icons.
+## Table of Contents
 
----
+- [Home](#home)
+- [Categories & Keywords](#categories-keywords)
+- [Adding Items](#adding-items)
+- [Study Guide Import](#study-guide-import)
+- [Collections](#collections)
+- [Other Pages](#other-pages)
 
-## 1. Home
+## Home
 
-The home page highlights **Explore Categories** (cards into the taxonomy) and **Featured sets** (curated entry points). You can open **Try Sample Collection** to jump straight into a public collection in quiz mode.
+### Home
 
-![Home page with hero, category cards, and sample collection CTA](images/01-home.png)
+The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of six featured sets linking directly to specific study scopes. The footer provides access to Feedback, Categories Map, and About from anywhere in the app.
 
----
+![Home](screenshots/user/home.png "Home")
 
-## 2. Categories
+## Categories & Keywords
 
-**Categories** are the top-level way the catalog is organized (for example: sports, science, certifications). Pick a category, then narrow down with **keywords** (two levels in the UI: primary and secondary topics, plus optional extra tags depending on scope).
+### Categories
 
-From the categories view you can:
+The Categories page lists all public subject areas available in Quizymode. You can search categories by name and sort by name, number of items, or average rating. Clicking a category opens its Sets view, where you can drill down through topics and subtopics to find exactly the items you want to study.
 
-- Drill from broad domain → subtopic → items.
-- Use **Sets** when there are child buckets to open (sub-groupings).
-- Switch to **List**, **Flashcards**, or **Quiz** for the same scope (see [§5](#5-study-modes-sets--list--flashcards--quiz)).
-- Add items to **collections** from the item row when signed in.
+![Categories](screenshots/user/categories.png "Categories")
 
-![Categories page showing topic navigation and mode tabs](images/02-categories.png)
+### Category Detail
 
-**Tip:** Paths look like `/categories/{category}` and may include keyword segments—for example `/categories/sports/tennis/grand-slams`—so links are bookmarkable.
+A category detail page (Sets view) shows the primary topics (rank-1 keywords) available for that subject area as clickable bucket cards. Each card displays the topic name, item count, and optional description. Clicking a bucket narrows the scope to that topic and reveals the next level of subtopics. A breadcrumb trail at the top lets you navigate back up the hierarchy at any point.
 
----
+![Category Detail](screenshots/user/category-detail.png "Category Detail")
 
-## 3. Collections
+### Category Keyword Group
 
-**Collections** are your own named sets of items (plus any collection someone shared with you by link, depending on product rules). Use them to group exam chapters, class units, or anything you want to revisit as one deck.
+After selecting a primary topic you reach the subtopic level (rank-2 Sets view), showing the specific sections or units available under that topic. Selecting a subtopic opens the item list for that full navigation path (category → primary topic → subtopic). From there you can switch between List Items, Flashcards, and Quiz modes for the same scope, add individual items to your active collection, or filter by tags and search text.
 
-- **Collections** in the nav lists collections you **created** (signed in).
-- Open a collection to see its items, metadata, and shortcuts into **Explore** (flashcards) / **Quiz** for that collection only.
-- Anyone with a **link** can typically open a collection’s study URLs (`/explore/collections/...`, `/quiz/collections/...`) even without owning it—see product docs for visibility edge cases.
+![Category Keyword Group](screenshots/user/category-keyword-group.png "Category Keyword Group")
 
-![Collections list or collection detail with study actions](images/03-collections.png)
+## Adding Items
 
----
+### Add Items
 
-## 4. Add Items (signed in)
+The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords — the same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the AI-assisted Bulk Create flow, or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
 
-**Add Items** is the hub for contributing questions. After you sign in, it appears in the main nav. From here you typically:
+![Add Items](screenshots/user/add-items.png "Add Items")
 
-- Choose **category** and **keyword scope** so new items land in the right place in the taxonomy.
-- Jump to **create a single item**, **bulk create** (many items at once), or **upload** into a collection, depending on what you need.
+### Add New Item
 
-![Add Items hub with scope selection and links to create or bulk add](images/04-add-items-hub.png)
+The Create Item form lets you write a single quiz item from scratch. Fill in the question, one correct answer, up to three incorrect answer options, an optional explanation, and a source URL. Category, primary topic, and subtopic are required and must be chosen from the taxonomy. You can add extra keywords and, if you are a regular user, request an admin review to make the item public. Successfully created items are automatically added to your active collection.
 
-Creating or editing an item usually involves the question text, answers, explanations, and visibility (public vs private) according to your role and moderation rules.
+![Add New Item](screenshots/user/add-new-item.png "Add New Item")
 
----
+### Bulk Create Items
 
-## 5. Study modes: Sets | List | Flashcards | Quiz
+The Bulk Create page (AI-assisted, no Study Guide) streamlines adding many items at once using an external AI assistant. Choose your category, primary topic, and subtopic; the app generates a structured prompt you copy into any AI tool (e.g. ChatGPT or Claude). Paste the AI response back and the app parses the JSON into a review list where you can accept or reject each item individually before anything is saved to the database.
 
-On category and collection study screens, a **mode switcher** lets you view the **same scope** in four ways:
+![Bulk Create Items](screenshots/user/bulk-create-items.png "Bulk Create Items")
 
-| Mode | Purpose |
-|------|--------|
-| **Sets** | When the current scope has **child buckets**, this mode shows those sub-groups so you can drill in without leaving the topic. |
-| **List** | Scan items in a **table-style list**—good for skimming, sorting mentally, or managing which cards to open. |
-| **Flashcards** | **Explore** mode: step through items like flashcards (question-focused study, move at your own pace). |
-| **Quiz** | **Assess** yourself: answer under quiz rules for that flow (client-side scoring in the browser). |
+## Study Guide Import
 
-![Mode switcher showing Sets, List, Flashcards, and Quiz](images/05-mode-switcher.png)
+### Study Guide
 
-![Flashcards (explore) view for one item](images/06-flashcards.png)
+The My Study Guide page is a personal text editor where you paste or write the study material you want to turn into quiz items — lecture notes, textbook excerpts, documentation, or any reference text. Your study guide is saved per user and used as the source content for the Study Guide import wizard, which generates targeted questions from it using AI.
 
-![Quiz mode view](images/07-quiz.png)
+![Study Guide](screenshots/user/study-guide.png "Study Guide")
 
----
+### Study Guide Import
 
-## 6. All items (`/items`)
+The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; the wizard splits your text into chunks and generates an AI prompt per chunk. Paste each chunk's response back and the wizard validates and enriches the items. At the end you review the combined results and finalize the import, which saves accepted items as private items under your chosen scope.
 
-The **Items** area lists quiz items (with filters depending on auth and API). Use it when you want a **flat catalog-style browse** rather than starting from Categories.
+![Study Guide Import](screenshots/user/study-guide-import.png "Study Guide Import")
 
-![Items list page](images/08-items.png)
+## Collections
 
----
+### Collections Mine
 
-## 7. Item detail
+The My Collections tab shows all collections you own. Each card displays the collection name, description, item count, and sharing status. You can set any collection as your active collection (used for the one-click add-to-collection control on item pages), edit name, description, or the "Shared with others" toggle, copy the shareable link, or delete the collection. Creating a new collection is available from this tab.
 
-Opening a single item shows full question content, answers, ratings/comments where enabled, and actions such as **edit** (if allowed) or **open in Explore/Quiz** from that card.
+![Collections Mine](screenshots/user/collections-mine.png "Collections Mine")
 
-![Item detail page](images/09-item-detail.png)
+### Collections Discover
 
----
+The Discover tab lets anyone browse and search public collections shared by other users. You can filter by text (collection name or description), subject category, primary topic, subtopic, and item tags. Signed-in users can bookmark collections for quick access and rate them with 1–5 stars. You can also open any collection directly by entering its ID.
 
-## 8. Study guide import (signed in)
+![Collections Discover](screenshots/user/collections-discover.png "Collections Discover")
 
-**Study guide** lets you paste long-form notes; the product can help turn structured text into private practice material (limits and behavior are defined in the app). Reach it from the UI where linked (for example `/study-guide` and import flows).
+### Collection Detail
 
-![Study guide editor or import flow](images/10-study-guide.png)
+A collection detail page shows a specific collection's name, description, owner, and the full list of items it contains. Items can be viewed in List Items, Flashcards, or Quiz mode using the same mode switcher as category pages. Owners can add or remove items, edit collection settings, or delete the collection. Non-owners with access (public collections) can study and rate the collection but cannot modify it.
 
----
+![Collection Detail](screenshots/user/collection-detail.png "Collection Detail")
 
-## 9. Account and admin
+## Other Pages
 
-- **Sign in / Sign up** use the app’s authentication (AWS Cognito in production). Some routes require a signed-in user.
-- **Profile** is available from the user menu when signed in.
-- **Admin** appears only for administrator accounts and leads to operational tools (review board, audit logs, etc.)—not covered in detail here.
+### About
 
-![Signed-in header with user menu](images/11-nav-signed-in.png)
+The About page shows the current version and build identifier of the deployed frontend so you can confirm exactly which release you are running. It also provides basic product information about Quizymode.
 
----
+![About](screenshots/user/about.png "About")
 
-## 10. Where to learn more
+### Feedback
 
-- **Developers:** Repository [README](../../README.md) (local dev, API overview, deployment).
-- **Operations:** `docs/` includes Cognito, Grafana, and other setup guides.
+The Feedback page provides three entry points: Report an issue, Ask for more items, and Provide feedback. Selecting any option opens a shared feedback dialog with the current page URL pre-filled and an optional email field (pre-filled from your account when signed in). The "Ask for more items" flow also includes an optional Additional keywords field to specify the topic you want covered.
 
-If something in the app disagrees with this guide, trust the **running product** and file an issue to update this document.
+![Feedback](screenshots/user/feedback.png "Feedback")

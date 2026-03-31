@@ -9,7 +9,16 @@
       "Bash(dotnet build:*)",
       "Bash(dotnet test:*)",
       "Bash(npm test:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(find C:/Projects/Quizymode -maxdepth 2 -name .env*)",
+      "Bash(npx playwright:*)",
+      "Bash(TEST_USER_EMAIL=test-user@quizymode.com TEST_USER_PASSWORD='*' npx playwright test)",
+      "Bash(TEST_USER_EMAIL=test-user@quizymode.com TEST_USER_PASSWORD='*' npx playwright test --grep \"category-detail\")",
+      "Bash(node scripts/generate-user-guide.js)",
+      "Bash(chmod:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
