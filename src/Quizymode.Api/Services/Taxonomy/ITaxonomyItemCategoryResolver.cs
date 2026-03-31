@@ -1,7 +1,7 @@
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
-namespace Quizymode.Api.Services;
+namespace Quizymode.Api.Services.Taxonomy;
 
 public interface ITaxonomyItemCategoryResolver
 {

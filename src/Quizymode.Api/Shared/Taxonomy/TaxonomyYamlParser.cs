@@ -1,6 +1,6 @@
 using YamlDotNet.RepresentationModel;
 
-namespace Quizymode.Taxonomy;
+namespace Quizymode.Api.Shared.Taxonomy;
 
 /// <summary>Parses <c>quizymode_taxonomy.yaml</c> into category definitions (shared by API and codegen).</summary>
 public static class TaxonomyYamlParser

@@ -1,10 +1,10 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Xunit;
 
-namespace Quizymode.Api.Tests.Infrastructure;
+namespace Quizymode.Api.Tests.Shared.Http;
 
 public sealed class CustomResultsTests
 {

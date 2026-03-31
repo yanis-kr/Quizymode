@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Quizymode.Taxonomy;
+namespace Quizymode.Api.Shared.Taxonomy;
 
 /// <summary>URL slug for keyword names (aligned with API keyword slug rules).</summary>
 public static class TaxonomyKeywordSlug

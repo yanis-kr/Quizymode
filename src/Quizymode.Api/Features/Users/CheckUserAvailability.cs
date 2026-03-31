@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
-using Quizymode.Api.Infrastructure;
+using Quizymode.Api.Shared.Http;
 
 namespace Quizymode.Api.Features.Users;
 

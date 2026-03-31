@@ -7,6 +7,6 @@
     <RootNamespace>Quizymode.TaxonomySqlGen</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Quizymode.Taxonomy\Quizymode.Taxonomy.csproj" />
+    <ProjectReference Include="..\..\src\Quizymode.Api\Quizymode.Api.csproj" />
   </ItemGroup>
 </Project>
