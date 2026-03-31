@@ -3,7 +3,7 @@
 # Captures user-guide screenshots from the live production site and regenerates
 # docs/user-guide/user-guide.md.
 #
-# No local servers required — screenshots are taken from https://www.quizymode.com
+# No local servers required - screenshots are taken from https://www.quizymode.com
 #
 # Usage: ./scripts/generate-user-guide-production.sh
 
@@ -19,7 +19,9 @@ test_prerequisites
 
 echo "Capturing screenshots from production..."
 cd "$REPO_ROOT"
-# No PLAYWRIGHT_BASE_URL set — config defaults to https://www.quizymode.com
+mkdir -p "$REPO_ROOT/docs/user-guide/screenshots/user"
+rm -f "$REPO_ROOT/docs/user-guide/screenshots/user"/*.png
+# No PLAYWRIGHT_BASE_URL set - config defaults to https://www.quizymode.com
 npx playwright test --project=screenshots || echo "Screenshot capture had failures. Proceeding to generate guide anyway."
 
 echo "Generating user guide..."

@@ -49,6 +49,12 @@ const descriptions = {
 
   "keyword-filter": `Items in List mode show their keywords as small tags. Clicking a keyword tag instantly filters the list to show only items that share that tag. This is useful for focusing on a specific sub-topic (for example, only Western-Europe capitals) within a broader scope.`,
 
+  "item-detail": `Clicking the **eye icon** on a list card opens the item detail page. This page shows extra information that is not visible in the regular list, flashcard, or quiz views, such as the full answer block, incorrect options, explanation, source, visibility, created metadata, keywords, and collections.`,
+
+  "item-rating-five-stars": `On the item detail page, signed-in users can rate an item by clicking one of the five stars. The rating saves immediately; clicking the same star again removes your rating. The row also shows the current average rating and total rating count.`,
+
+  "item-comment-added": `From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread right away with your name and timestamp.`,
+
   // ---- Collections ----
   "collection-detail": `Clicking a collection card opens that collection's study page. The page keeps **Collections** as the active navigation area and shows mode tabs for **List**, **Flashcards**, and **Quiz** so you can study the same collection in different ways. Owners can also remove items or manage which collection is currently active from here.`,
 
@@ -126,6 +132,9 @@ const sections = [
       "collection-new",
       "collections-mine-two",
       "keyword-filter",
+      "item-detail",
+      "item-rating-five-stars",
+      "item-comment-added",
     ],
   },
   {

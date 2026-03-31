@@ -103,6 +103,24 @@ Items in List mode show their keywords as small tags. Clicking a keyword tag ins
 
 ![Keyword Filter](screenshots/user/keyword-filter.png "Keyword Filter")
 
+### Item Detail
+
+Clicking the **eye icon** on a list card opens the item detail page. This page shows extra information that is not visible in the regular list, flashcard, or quiz views, such as the full answer block, incorrect options, explanation, source, visibility, created metadata, keywords, and collections.
+
+![Item Detail](screenshots/user/item-detail.png "Item Detail")
+
+### Item Rating Five Stars
+
+On the item detail page, signed-in users can rate an item by clicking one of the five stars. The rating saves immediately; clicking the same star again removes your rating. The row also shows the current average rating and total rating count.
+
+![Item Rating Five Stars](screenshots/user/item-rating-five-stars.png "Item Rating Five Stars")
+
+### Item Comment Added
+
+From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread right away with your name and timestamp.
+
+![Item Comment Added](screenshots/user/item-comment-added.png "Item Comment Added")
+
 ## Collections
 
 ### Collections Mine

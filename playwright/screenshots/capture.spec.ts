@@ -10,6 +10,7 @@ const screenshotDir = path.resolve(
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 const HOME_SAMPLE_COLLECTION_SLUG = "sample+collection";
 const HOME_SAMPLE_COLLECTION_DETAIL_PATH = `/collections/${HOME_SAMPLE_COLLECTION_ID}/${HOME_SAMPLE_COLLECTION_SLUG}`;
+const USER_GUIDE_COMMENT_TEXT = "Great mnemonic: Bern sounds like bear for Switzerland.";
 
 const STUDY_GUIDE_TEXT = `Here are 50 random countries with their capitals and approximate current populations.
 
@@ -161,6 +162,31 @@ async function safeGoto(page: Page, url: string) {
   }
 }
 
+async function signInWithEnvCredentials(page: Page) {
+  const email = process.env.TEST_USER_EMAIL;
+  const password = process.env.TEST_USER_PASSWORD;
+  if (!email || !password) {
+    return false;
+  }
+
+  await page.goto("/login", { waitUntil: "load", timeout: 20_000 }).catch(() => {});
+  await page.locator("#email").fill(email).catch(() => {});
+  await page.locator("#password").fill(password).catch(() => {});
+  await page.getByRole("button", { name: /sign in/i }).click().catch(() => {});
+  await page.waitForURL((url) => !url.pathname.endsWith("/login"), { timeout: 15_000 }).catch(() => {});
+  await waitForUiToSettle(page);
+  return true;
+}
+
+async function ensureSignedIn(page: Page) {
+  const signOutButton = page.getByRole("button", { name: /sign out/i });
+  if (await signOutButton.isVisible().catch(() => false)) {
+    return;
+  }
+
+  await signInWithEnvCredentials(page);
+}
+
 async function waitForUiToSettle(page: Page) {
   await page.waitForLoadState("domcontentloaded").catch(() => {});
   await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
@@ -183,6 +209,25 @@ async function waitForUiToSettle(page: Page) {
 
     await page.waitForTimeout(200);
   }
+}
+
+async function waitForSelectValue(
+  page: Page,
+  selector: string,
+  expectedValue: string,
+  timeout = 15_000
+) {
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < timeout) {
+    const value = await page.locator(selector).inputValue().catch(() => "");
+    if (value.trim().toLowerCase() === expectedValue.trim().toLowerCase()) {
+      return true;
+    }
+
+    await page.waitForTimeout(200);
+  }
+
+  return false;
 }
 
 async function waitForTextToDisappear(page: Page, textPattern: RegExp) {
@@ -234,6 +279,7 @@ async function capture(
 ) {
   fs.mkdirSync(screenshotDir, { recursive: true });
 
+  await ensureSignedIn(page);
   await safeGoto(page, url);
   if (waitFor) {
     const selectors = Array.isArray(waitFor) ? waitFor : [waitFor];
@@ -461,7 +507,76 @@ async function waitForCollectionDetailLoaded(page: Page) {
   ]);
 }
 
+async function getFirstCategoryItemDetailHref(page: Page) {
+  await safeGoto(page, "/categories/geography/capitals/world");
+  await ensureSignedIn(page);
+  await ensureListMode(page);
+  await waitForCategoryItemsLoaded(page);
+
+  return (
+    (await page
+      .locator("a[title='View item details'][href^='/items/']")
+      .first()
+      .getAttribute("href")
+      .catch(() => null)) ??
+    null
+  );
+}
+
+async function openFirstCategoryItemDetail(page: Page) {
+  await safeGoto(page, "/categories/geography/capitals/world");
+  await ensureSignedIn(page);
+  await ensureListMode(page);
+  await waitForCategoryItemsLoaded(page);
+
+  const detailButton = page
+    .locator("a[title='View item details'][href^='/items/']")
+    .first();
+  if (await detailButton.isVisible().catch(() => false)) {
+    await detailButton.click().catch(() => {});
+    await page.waitForURL(/\/items\/[^/?#]+/, { timeout: 15_000 }).catch(() => {});
+  } else {
+    const href = await getFirstCategoryItemDetailHref(page);
+    await safeGoto(page, href ?? "/categories/geography/capitals/world");
+  }
+
+  await waitForAnyVisible(page, [
+    "text=Item details",
+    "text=Question",
+    "button:has-text('Comments')",
+  ]);
+}
+
+async function rateCurrentItemFiveStars(page: Page) {
+  const fiveStarButton = page.locator("button[title='Rate 5 stars']").first();
+  if (await fiveStarButton.isVisible().catch(() => false)) {
+    await fiveStarButton.click().catch(() => {});
+    await waitForUiToSettle(page);
+  }
+}
+
+async function openCommentsForCurrentItem(page: Page) {
+  await page.getByRole("button", { name: /comments \(/i }).click().catch(() => {});
+  await waitForAnyVisible(page, [
+    "[role='dialog']",
+    "textarea[placeholder='Write your comment...']",
+    "text=No comments yet. Be the first to comment!",
+  ]);
+}
+
+async function addCommentForCurrentItem(page: Page, text: string) {
+  await openCommentsForCurrentItem(page);
+  const commentBox = page.locator("textarea[placeholder='Write your comment...']").first();
+  if (await commentBox.isVisible().catch(() => false)) {
+    await commentBox.fill(text).catch(() => {});
+    await page.getByRole("button", { name: /post comment/i }).click().catch(() => {});
+    await waitForAnyVisible(page, [`text=${text}`], 15_000);
+    await waitForUiToSettle(page);
+  }
+}
+
 async function ensureStudyGuideSaved(page: Page) {
+  await ensureSignedIn(page);
   await safeGoto(page, "/study-guide");
   await waitForAnyVisible(page, [
     "#sg-title",
@@ -473,6 +588,23 @@ async function ensureStudyGuideSaved(page: Page) {
   await page.getByRole("button", { name: /^save$/i }).click().catch(() => {});
   await waitForTextToDisappear(page, /saving/i);
   await waitForUiToSettle(page);
+  await waitForAnyVisible(page, ["button:has-text('Continue to prompt sets')", "#sg-content"]);
+}
+
+async function ensureStudyGuideDeleted(page: Page) {
+  await ensureSignedIn(page);
+  await safeGoto(page, "/study-guide");
+  await waitForAnyVisible(page, ["#sg-title", "button:has-text('Save')"]);
+
+  const deleteButton = page.getByRole("button", { name: /^delete$/i });
+  if (!(await deleteButton.isVisible().catch(() => false))) {
+    return;
+  }
+
+  page.once("dialog", (dialog) => dialog.accept().catch(() => {}));
+  await deleteButton.click().catch(() => {});
+  await waitForUiToSettle(page);
+  await waitForAnyVisible(page, ["button:has-text('Save')"]);
 }
 
 async function ensurePromptSetsExist(page: Page) {
@@ -504,27 +636,47 @@ async function ensurePromptSetsExist(page: Page) {
   await waitForUiToSettle(page);
 }
 
+async function openScopedAddItemsPage(page: Page) {
+  await ensureSignedIn(page);
+  await safeGoto(page, "/categories/geography/capitals/world");
+  await clickConsentIfPresent(page);
+  await waitForAnyVisible(page, [
+    "a[title='Add items for this category and navigation path']",
+    "text=World",
+  ]);
+  await page
+    .locator("a[title='Add items for this category and navigation path']")
+    .first()
+    .click()
+    .catch(() => {});
+  await page.waitForURL(/\/items\/add/, { timeout: 15_000 }).catch(() => {});
+  await clickConsentIfPresent(page);
+  await waitForAnyVisible(page, ["#add-hub-scope-category", "#add-hub-scope-rank1"]);
+}
+
 async function applyKeywordFilterWithResults(page: Page) {
   await safeGoto(page, "/categories/geography/capitals/world");
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 
-  const keywordButtons = page.locator("button[title*='click to filter']");
-  const total = await keywordButtons.count();
+  const preferredKeywords = ["western-europe", "oceania", "belgium", "switzerland", "australia"];
+  for (const keyword of preferredKeywords) {
+    const button = page.locator(`button[title*='click to filter']:has-text('${keyword}')`).first();
+    if (!(await button.isVisible().catch(() => false))) {
+      continue;
+    }
 
-  for (let index = 0; index < total; index += 1) {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await waitForCategoryItemsLoaded(page);
-
-    const button = keywordButtons.nth(index);
-    const buttonText = await button.textContent().catch(() => "");
     await button.click().catch(() => {});
     await waitForUiToSettle(page);
+    await waitForAnyVisible(page, [
+      "h3.text-lg",
+      `button.bg-indigo-600:has-text('${keyword}')`,
+      `button.text-white:has-text('${keyword}')`,
+    ]);
 
     const itemCards = await page.locator("h3.text-lg").count().catch(() => 0);
     const noItems = await page.getByText(/no items found/i).isVisible().catch(() => false);
-    if (itemCards > 0 && !noItems && !/mixed/i.test(buttonText ?? "")) {
+    if (itemCards > 0 && !noItems) {
       return;
     }
   }
@@ -590,7 +742,18 @@ test.describe("User guide screenshots", () => {
   });
 
   test("study-guide-import", async ({ page }) => {
-    await capture(page, "study-guide-import", "/study-guide/import");
+    await ensureStudyGuideSaved(page);
+    await safeGoto(
+      page,
+      "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
+    );
+    await clickConsentIfPresent(page);
+    await waitForAnyVisible(page, [
+      "#study-guide-import-scope-category",
+      "button:has-text('Create prompt sets')",
+      "text=Using study guide:",
+    ]);
+    await captureCurrentPage(page, "study-guide-import");
   });
 
   test("collections-mine", async ({ page }) => {
@@ -715,6 +878,24 @@ test.describe("User guide screenshots", () => {
     await captureCurrentPage(page, "keyword-filter");
   });
 
+  test("item-detail", async ({ page }) => {
+    await openFirstCategoryItemDetail(page);
+    await captureCurrentPage(page, "item-detail");
+  });
+
+  test("item-rating-five-stars", async ({ page }) => {
+    await openFirstCategoryItemDetail(page);
+    await rateCurrentItemFiveStars(page);
+    await captureCurrentPage(page, "item-rating-five-stars");
+  });
+
+  test("item-comment-added", async ({ page }) => {
+    await openFirstCategoryItemDetail(page);
+    await addCommentForCurrentItem(page, USER_GUIDE_COMMENT_TEXT);
+    await waitForAnyVisible(page, ["[role='dialog']", `text=${USER_GUIDE_COMMENT_TEXT}`]);
+    await captureCurrentPage(page, "item-comment-added");
+  });
+
   test("collection-detail-flashcards", async ({ page }) => {
     await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "flashcards");
@@ -768,12 +949,10 @@ test.describe("User guide screenshots", () => {
   });
 
   test("add-items-prepopulated", async ({ page }) => {
-    await safeGoto(page, "/items/add?category=geography&keywords=capitals,world");
-    await clickConsentIfPresent(page);
-    await waitForAnyVisible(page, [
-      "#add-hub-scope-category",
-      "text=Topic and tags",
-    ]);
+    await openScopedAddItemsPage(page);
+    await waitForSelectValue(page, "#add-hub-scope-category", "geography");
+    await waitForSelectValue(page, "#add-hub-scope-rank1", "capitals");
+    await waitForSelectValue(page, "#add-hub-scope-rank2", "world");
     await captureCurrentPage(page, "add-items-prepopulated");
   });
 
@@ -825,18 +1004,21 @@ test.describe("User guide screenshots", () => {
   });
 
   test("study-guide-no-guide", async ({ page }) => {
+    await ensureStudyGuideDeleted(page);
     await capture(page, "study-guide-no-guide", "/study-guide/import");
   });
 
   test("study-guide-content", async ({ page }) => {
+    await ensureSignedIn(page);
     await safeGoto(page, "/study-guide");
     await waitForAnyVisible(page, ["#sg-title", "#sg-content"]);
     await page.locator("#sg-title").fill("Capitals Study Guide").catch(() => {});
     await page.locator("#sg-content").fill(STUDY_GUIDE_TEXT).catch(() => {});
-    await captureCurrentPage(page, "study-guide-content");
     await page.getByRole("button", { name: /save/i }).click().catch(() => {});
     await waitForTextToDisappear(page, /saving/i);
     await waitForUiToSettle(page);
+    await waitForAnyVisible(page, ["button:has-text('Continue to prompt sets')", "#sg-content"]);
+    await captureCurrentPage(page, "study-guide-content");
   });
 
   test("study-guide-import-prompts", async ({ page }) => {

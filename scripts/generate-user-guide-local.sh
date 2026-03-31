@@ -31,6 +31,8 @@ export PLAYWRIGHT_BASE_URL="http://localhost:7000"
 cd "$REPO_ROOT"
 
 echo "Capturing screenshots from local dev stack..."
+mkdir -p "$REPO_ROOT/docs/user-guide/screenshots/user"
+rm -f "$REPO_ROOT/docs/user-guide/screenshots/user"/*.png
 npx playwright test --project=screenshots || echo "Screenshot capture had failures. Proceeding to generate guide anyway."
 
 echo "Generating user guide..."

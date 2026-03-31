@@ -30,6 +30,12 @@ try {
     $env:PLAYWRIGHT_BASE_URL = "http://localhost:7000"
     Push-Location $RepoRoot
 
+    $screenshotDir = Join-Path $RepoRoot "docs\user-guide\screenshots\user"
+    if (Test-Path $screenshotDir) {
+        Write-Host "Clearing previous screenshots..." -ForegroundColor Cyan
+        Remove-Item -LiteralPath (Join-Path $screenshotDir "*.png") -Force -ErrorAction SilentlyContinue
+    }
+
     Write-Host "Capturing screenshots from local dev stack..." -ForegroundColor Cyan
     npx playwright test --project=screenshots
     if ($LASTEXITCODE -ne 0) {
