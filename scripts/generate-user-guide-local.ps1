@@ -5,7 +5,15 @@
 # Prerequisites: start Aspire first in a separate terminal:
 #   cd src/Quizymode.Api.AppHost && dotnet run
 #
-# Usage: .\scripts\generate-user-guide-local.ps1
+# Usage:
+#   .\scripts\generate-user-guide-local.ps1
+#   .\scripts\generate-user-guide-local.ps1 -Password "your-password"
+
+param(
+    [string]$Password
+)
+
+if ($Password) { $env:TEST_USER_PASSWORD = $Password }
 
 . "$PSScriptRoot\_e2e-common.ps1"
 

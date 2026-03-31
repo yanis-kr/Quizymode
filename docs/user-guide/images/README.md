@@ -9,7 +9,7 @@ Add **PNG** or **WebP** images here so the figures in [`../README.md`](../README
 | `03-collections.png` | Either **collections list** (`/collections`) or a **collection detail** with items and study links. | Signed in; `/collections` or `/collections/{id}/...` |
 | `04-add-items-hub.png` | **Add Items** hub with category/keyword scope and links to create / bulk / upload. | Signed in; `/items/add` |
 | `05-mode-switcher.png` | **Close-up** of the four mode tabs (Sets, List, Flashcards, Quiz) so labels are readable. | Crop from same screen as `02` or `06` |
-| `06-flashcards.png` | **Explore / Flashcards** UI showing one card (question side or front state is fine). | `/explore/...` with an item open |
+| `06-flashcards.png` | **Explore / Flashcards** UI showing one card (**question** face-up, or the flipped **answer** side). | `/explore/...` with an item open |
 | `07-quiz.png` | **Quiz** UI (question + answer choices or input—whatever your quiz step shows). | `/quiz/...` with an item open |
 | `08-items.png` | **All items** list. | `/items` |
 | `09-item-detail.png` | **Single item** detail page with content visible. | `/items/{id}` |

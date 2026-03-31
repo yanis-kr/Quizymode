@@ -71,7 +71,7 @@ const ItemsPage = () => {
             {category ? `Category: ${category}` : "Get Random Items"}
           </h1>
           <p className="text-gray-600 text-sm mb-6">
-            Select a mode to interact with quiz items. Choose Flashcards Mode to view questions with answers and explanations, or Quiz Mode to test your knowledge with multiple-choice questions.
+            Select a mode to interact with quiz items. Choose Flashcards Mode to study one question at a time (question first; click the card to reveal the answer and explanation), or Quiz Mode to test your knowledge with multiple-choice questions.
           </p>
 
           <p className="text-sm text-gray-600 mb-6">
@@ -87,7 +87,7 @@ const ItemsPage = () => {
                 Flashcards Mode
               </h3>
               <p className="text-sm text-gray-500">
-                View questions with answers and explanations
+                Question face-up; click the card to reveal the answer and explanation
               </p>
             </button>
             <button
@@ -121,7 +121,7 @@ const ItemsPage = () => {
         </h1>
         <p className="text-gray-600 text-sm mb-6">
           {mode === "explore" 
-            ? "Review the selected items below. Click on any item to view it in detail with answers and explanations."
+            ? "Review the selected items below. Click an item to open Flashcards mode: the question is shown first; click the card to reveal the answer and explanation."
             : "Test your knowledge with the selected items. Click on any item to start the quiz and track your score."}
         </p>
 

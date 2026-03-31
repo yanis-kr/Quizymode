@@ -60,6 +60,14 @@ internal static partial class StartupExtensions
         {
             // Enable detailed exception pages in development for better debugging experience
             app.UseDeveloperExceptionPage();
+            // Must be registered AFTER UseDeveloperExceptionPage so it sits inner (catches first).
+            // Silently absorbs client-disconnect cancellations before DeveloperExceptionPage logs them.
+            app.Use(async (ctx, next) =>
+            {
+                try { await next(ctx); }
+                catch (OperationCanceledException) when (ctx.RequestAborted.IsCancellationRequested)
+                { ctx.Response.StatusCode = 499; }
+            });
             
             app.MapOpenApi("/openapi/{documentName}.json");
             app.MapOpenApi("/openapi/{documentName}.yaml");
@@ -69,6 +77,16 @@ internal static partial class StartupExtensions
                 c.RoutePrefix = "swagger";
                 c.DisplayRequestDuration();
                 c.EnableTryItOutByDefault();
+            });
+        }
+        else
+        {
+            // Silently absorb client-disconnect cancellations in production.
+            app.Use(async (ctx, next) =>
+            {
+                try { await next(ctx); }
+                catch (OperationCanceledException) when (ctx.RequestAborted.IsCancellationRequested)
+                { ctx.Response.StatusCode = 499; }
             });
         }
 

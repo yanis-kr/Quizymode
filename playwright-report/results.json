@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Projects/Quizymode/playwright/test-results/full-2026-03-30_16-30-23",
+        "outputDir": "C:/Projects/Quizymode/playwright/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -32,7 +32,7 @@
         "timeout": 15000
       },
       {
-        "outputDir": "C:/Projects/Quizymode/playwright/test-results/full-2026-03-30_16-30-23",
+        "outputDir": "C:/Projects/Quizymode/playwright/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -48,7 +48,7 @@
         "timeout": 15000
       },
       {
-        "outputDir": "C:/Projects/Quizymode/playwright/test-results/full-2026-03-30_16-30-23",
+        "outputDir": "C:/Projects/Quizymode/playwright/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -64,7 +64,7 @@
         "timeout": 15000
       },
       {
-        "outputDir": "C:/Projects/Quizymode/playwright/test-results/full-2026-03-30_16-30-23",
+        "outputDir": "C:/Projects/Quizymode/playwright/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -136,7 +136,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3711,
+                  "duration": 4964,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -144,10 +144,10 @@
                   "steps": [
                     {
                       "title": "fill password",
-                      "duration": 41
+                      "duration": 45
                     }
                   ],
-                  "startTime": "2026-03-30T21:30:47.872Z",
+                  "startTime": "2026-03-31T04:32:21.421Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -163,801 +163,1388 @@
       ]
     },
     {
-      "title": "e2e\\auth.spec.ts",
-      "file": "e2e/auth.spec.ts",
+      "title": "screenshots\\capture.spec.ts",
+      "file": "screenshots/capture.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "AC 4.3 @smoke - login page renders sign-in form",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+          "title": "User guide screenshots",
+          "file": "screenshots/capture.spec.ts",
+          "line": 261,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "home",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2008,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:30:54.946Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-auth-AC-4-3-smoke---login-page-renders-sign-in-form-e2e-full\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "9563bb343517399bdb94-41d61b37d1def51243cc",
-          "file": "e2e/auth.spec.ts",
-          "line": 12,
-          "column": 1
-        },
-        {
-          "title": "AC 4.3 @smoke - valid credentials redirect away from the login page",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
-            {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4030,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "fill password",
-                      "duration": 30
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4444,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:31.077Z",
+                      "annotations": [],
+                      "attachments": []
                     }
                   ],
-                  "startTime": "2026-03-30T21:30:57.260Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-auth-AC-4-3-smoke---va-b5acb-ct-away-from-the-login-page-e2e-full\\test-finished-1.png"
-                    }
-                  ]
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "9563bb343517399bdb94-5a71ca4d32bea9ae5ba5",
-          "file": "e2e/auth.spec.ts",
-          "line": 22,
-          "column": 1
-        },
-        {
-          "title": "AC 4.3.6 - invalid credentials show an error message without leaking account existence",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-580676981069fe8cb30e",
+              "file": "screenshots/capture.spec.ts",
+              "line": 265,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "categories",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 3105,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "title": "fill password",
-                      "duration": 24
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4153,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:35.844Z",
+                      "annotations": [],
+                      "attachments": []
                     }
                   ],
-                  "startTime": "2026-03-30T21:31:01.351Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-auth-AC-4-3-6---invali-79cba-t-leaking-account-existence-e2e-full\\test-finished-1.png"
-                    }
-                  ]
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "9563bb343517399bdb94-5abd490eec060df91dd8",
-          "file": "e2e/auth.spec.ts",
-          "line": 46,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "e2e\\categories.spec.ts",
-      "file": "e2e/categories.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "AC 3.1 @smoke - categories page shows at least one category card",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-8780addd9105c5f154ee",
+              "file": "screenshots/capture.spec.ts",
+              "line": 269,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "category-detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4300,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:04.529Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-categories-AC-3-1-smok-8b174--at-least-one-category-card-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7446,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:40.057Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "a3b11220c4f8698ce2ca-6db79eae91518d4c73e7",
-          "file": "e2e/categories.spec.ts",
-          "line": 19,
-          "column": 1
-        },
-        {
-          "title": "AC 3.1 @smoke - clicking a category navigates to its scoped page",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-69af21d2e533cf1d2eac",
+              "file": "screenshots/capture.spec.ts",
+              "line": 273,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "category-keyword-group",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5090,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:08.870Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-categories-AC-3-1-smok-dbb19-avigates-to-its-scoped-page-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6611,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:47.540Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "a3b11220c4f8698ce2ca-3e40767e9e17630820e7",
-          "file": "e2e/categories.spec.ts",
-          "line": 34,
-          "column": 1
-        },
-        {
-          "title": "AC 3.4 - category Sets view shows secondary navigation with mode tabs",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-513917aa2533c4cac33c",
+              "file": "screenshots/capture.spec.ts",
+              "line": 290,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "add-items",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4747,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:14.030Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-categories-AC-3-4---ca-605f6-y-navigation-with-mode-tabs-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4380,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:54.186Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "a3b11220c4f8698ce2ca-bd80cf55f37b119fb87f",
-          "file": "e2e/categories.spec.ts",
-          "line": 44,
-          "column": 1
-        },
-        {
-          "title": "AC 3.4 - category Sets view shows keyword buckets",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-02faeb0a75c2c3e1e79f",
+              "file": "screenshots/capture.spec.ts",
+              "line": 302,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "add-new-item",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4974,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:18.836Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-categories-AC-3-4---ca-04b41--view-shows-keyword-buckets-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4777,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:32:58.599Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "a3b11220c4f8698ce2ca-4dd3193ea3ca55329ea7",
-          "file": "e2e/categories.spec.ts",
-          "line": 59,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "e2e\\collections.spec.ts",
-      "file": "e2e/collections.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "AC 1.3 @smoke - collections page loads with Mine / Bookmarked / Discover tabs",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-1ccce40dc9a2f49c55da",
+              "file": "screenshots/capture.spec.ts",
+              "line": 306,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "bulk-create-items",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2335,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:23.882Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-collections-AC-1-3-smo-1aa5c-ne-Bookmarked-Discover-tabs-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4497,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:03.423Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "0eb0bbeda1a0ed3a9761-4780561b84ea009007f1",
-          "file": "e2e/collections.spec.ts",
-          "line": 21,
-          "column": 1
-        },
-        {
-          "title": "AC 1.1 @smoke - authenticated user sees a create-collection action",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-26ffc9f7fcb9f1f3ad98",
+              "file": "screenshots/capture.spec.ts",
+              "line": 310,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "study-guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2468,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:26.253Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-collections-AC-1-1-smo-4b7bb--a-create-collection-action-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3944,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:07.999Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "0eb0bbeda1a0ed3a9761-8b423e720e2143b2e160",
-          "file": "e2e/collections.spec.ts",
-          "line": 35,
-          "column": 1
-        },
-        {
-          "title": "AC 1.9 - switching to the Discover tab shows public collections",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-acf488eb6d302a9b1c60",
+              "file": "screenshots/capture.spec.ts",
+              "line": 314,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "study-guide-import",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2839,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:28.768Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-collections-AC-1-9---s-df5d1-ab-shows-public-collections-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3912,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:12.019Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "0eb0bbeda1a0ed3a9761-75585fb555d9b4e5d5ec",
-          "file": "e2e/collections.spec.ts",
-          "line": 49,
-          "column": 1
-        },
-        {
-          "title": "AC 1.3 - Mine tab is active by default for an authenticated user",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-2e61510e19fe473cad71",
+              "file": "screenshots/capture.spec.ts",
+              "line": 318,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "collections-mine",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2718,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:31.643Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-collections-AC-1-3---M-64cde-t-for-an-authenticated-user-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4745,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:15.983Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "0eb0bbeda1a0ed3a9761-e54cf02417f93bfddc6e",
-          "file": "e2e/collections.spec.ts",
-          "line": 63,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "e2e\\items.spec.ts",
-      "file": "e2e/items.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "AC 3.5 @smoke - list items view shows items after navigating into a category",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-4a2a7b9836bd8568e785",
+              "file": "screenshots/capture.spec.ts",
+              "line": 322,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "collections-discover",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5326,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:34.430Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-items-AC-3-5-smoke---l-fcaeb--navigating-into-a-category-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3999,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:20.772Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "5cc26bbaa9f1d32335ea-e43469b372c15e22d0e7",
-          "file": "e2e/items.spec.ts",
-          "line": 29,
-          "column": 1
-        },
-        {
-          "title": "AC 2.3 - item detail page shows question and answer sections",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-6f8a5e511d67ba5850c4",
+              "file": "screenshots/capture.spec.ts",
+              "line": 326,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "collection-detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 7278,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:39.792Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-items-AC-2-3---item-de-fcb72-uestion-and-answer-sections-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4353,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:24.837Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "5cc26bbaa9f1d32335ea-809cbe399274a03abae6",
-          "file": "e2e/items.spec.ts",
-          "line": 41,
-          "column": 1
-        },
-        {
-          "title": "AC 3.5.6 - back control on item detail returns to the previous list URL",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-ea20aaf0c6bacf8fa899",
+              "file": "screenshots/capture.spec.ts",
+              "line": 330,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "about",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 7684,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:47.131Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-items-AC-3-5-6---back--9b2db-ns-to-the-previous-list-URL-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3821,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:29.269Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "5cc26bbaa9f1d32335ea-ccf9f09172956d902c86",
-          "file": "e2e/items.spec.ts",
-          "line": 59,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "e2e\\quiz.spec.ts",
-      "file": "e2e/quiz.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "AC 3.6 @smoke - quiz page loads and shows a question with answer options",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-95f7d95d6fbe576f683a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 334,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "feedback",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 6481,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:31:54.890Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-quiz-AC-3-6-smoke---qu-3320a-uestion-with-answer-options-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3757,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:33.143Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "8798955fa894779380fb-9bb3538aa07a4ce5aaf3",
-          "file": "e2e/quiz.spec.ts",
-          "line": 26,
-          "column": 1
-        },
-        {
-          "title": "AC 3.6 @smoke - selecting an answer reveals the correct answer",
-          "ok": true,
-          "tags": [
-            "smoke"
-          ],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-efbc9ea7df15cc72abfa",
+              "file": "screenshots/capture.spec.ts",
+              "line": 338,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "nav-geography",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5741,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:32:01.407Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-quiz-AC-3-6-smoke---se-db5e5--reveals-the-correct-answer-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:36.944Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "8798955fa894779380fb-f269069a44e3416b277e",
-          "file": "e2e/quiz.spec.ts",
-          "line": 40,
-          "column": 1
-        },
-        {
-          "title": "AC 3.6 - quiz navigation moves to the next question",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-a42afdb754acb66519d7",
+              "file": "screenshots/capture.spec.ts",
+              "line": 342,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "nav-geography-capitals",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5612,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:32:07.182Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-quiz-AC-3-6---quiz-navigation-moves-to-the-next-question-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4111,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:41.232Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "8798955fa894779380fb-16d96027d3e4bd0305a0",
-          "file": "e2e/quiz.spec.ts",
-          "line": 62,
-          "column": 1
-        },
-        {
-          "title": "AC 3.6 - quiz score counter increments after a correct answer",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "8055b76dba9258d15c9f-be538a000ccf9a2d763e",
+              "file": "screenshots/capture.spec.ts",
+              "line": 346,
+              "column": 3
+            },
             {
-              "timeout": 15000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "e2e-full",
-              "projectName": "e2e-full",
-              "results": [
+              "title": "nav-geography-capitals-world",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5288,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-03-30T21:32:12.820Z",
+                  "timeout": 30000,
                   "annotations": [],
-                  "attachments": [
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
                     {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\full-2026-03-30_16-30-23\\e2e-quiz-AC-3-6---quiz-sco-5202d-ents-after-a-correct-answer-e2e-full\\test-finished-1.png"
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3863,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:45.378Z",
+                      "annotations": [],
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
+              "id": "8055b76dba9258d15c9f-9e53816891573a271d05",
+              "file": "screenshots/capture.spec.ts",
+              "line": 350,
+              "column": 3
+            },
+            {
+              "title": "mode-flashcards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8888,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:49.297Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-9c80d17545f060a5328c",
+              "file": "screenshots/capture.spec.ts",
+              "line": 358,
+              "column": 3
+            },
+            {
+              "title": "mode-quiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5488,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:33:58.226Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-9b25a7d612d2c8b14d78",
+              "file": "screenshots/capture.spec.ts",
+              "line": 364,
+              "column": 3
+            },
+            {
+              "title": "items-add-to-collection",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6876,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:03.757Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-6f976b0fb7d1aa993e81",
+              "file": "screenshots/capture.spec.ts",
+              "line": 370,
+              "column": 3
+            },
+            {
+              "title": "items-collection-badges",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10249,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:10.694Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-612e6df1cf3cba31dff0",
+              "file": "screenshots/capture.spec.ts",
+              "line": 376,
+              "column": 3
+            },
+            {
+              "title": "items-collection-removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7716,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:20.977Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-e41625e6c14d56775120",
+              "file": "screenshots/capture.spec.ts",
+              "line": 391,
+              "column": 3
+            },
+            {
+              "title": "active-collection-selector",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3468,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:28.731Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-cedf1c0f2e8549ce3039",
+              "file": "screenshots/capture.spec.ts",
+              "line": 407,
+              "column": 3
+            },
+            {
+              "title": "collection-new",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14918,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:32.239Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-d422d1196f5428555374",
+              "file": "screenshots/capture.spec.ts",
+              "line": 411,
+              "column": 3
+            },
+            {
+              "title": "collections-mine-two",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3451,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:47.199Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-da42564462a5674457ca",
+              "file": "screenshots/capture.spec.ts",
+              "line": 427,
+              "column": 3
+            },
+            {
+              "title": "keyword-filter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7791,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:50.681Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-d74e22ca8e51b6c1020f",
+              "file": "screenshots/capture.spec.ts",
+              "line": 431,
+              "column": 3
+            },
+            {
+              "title": "collection-detail-flashcards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7792,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:34:58.506Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-7e21f4ce141462ae009c",
+              "file": "screenshots/capture.spec.ts",
+              "line": 443,
+              "column": 3
+            },
+            {
+              "title": "collection-detail-quiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7640,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:06.330Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-db4d7a71d2bfd7383fd2",
+              "file": "screenshots/capture.spec.ts",
+              "line": 449,
+              "column": 3
+            },
+            {
+              "title": "collection-settings-public",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12815,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:14.000Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-c3312f1a96fbf2d62368",
+              "file": "screenshots/capture.spec.ts",
+              "line": 455,
+              "column": 3
+            },
+            {
+              "title": "collections-discover-public",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3474,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:26.843Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-f1f7fab94f72274a5719",
+              "file": "screenshots/capture.spec.ts",
+              "line": 468,
+              "column": 3
+            },
+            {
+              "title": "collection-bookmark",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4458,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:30.346Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-47386243a8d7fa80105d",
+              "file": "screenshots/capture.spec.ts",
+              "line": 472,
+              "column": 3
+            },
+            {
+              "title": "collections-bookmarked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3264,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:34.836Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-5b4f6be6a4ed7fba6d96",
+              "file": "screenshots/capture.spec.ts",
+              "line": 483,
+              "column": 3
+            },
+            {
+              "title": "add-items-prepopulated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3519,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:38.129Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-b0836d59a1cc0ba7ef04",
+              "file": "screenshots/capture.spec.ts",
+              "line": 487,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-prompt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6689,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:41.677Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-4513749d03190a6461e0",
+              "file": "screenshots/capture.spec.ts",
+              "line": 495,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-paste",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6810,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:48.399Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-c96332a426d1de112e3c",
+              "file": "screenshots/capture.spec.ts",
+              "line": 505,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8718,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:35:55.237Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-8e7b79be48a07354bc04",
+              "file": "screenshots/capture.spec.ts",
+              "line": 521,
+              "column": 3
+            },
+            {
+              "title": "study-guide-no-guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3336,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:36:03.981Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-eda8a5cae03a5344e879",
+              "file": "screenshots/capture.spec.ts",
+              "line": 542,
+              "column": 3
+            },
+            {
+              "title": "study-guide-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6176,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:36:07.343Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-0349d951071d2a2026af",
+              "file": "screenshots/capture.spec.ts",
+              "line": 546,
+              "column": 3
+            },
+            {
+              "title": "study-guide-import-prompts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14395,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:36:13.551Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-f5815d5556a290aeadda",
+              "file": "screenshots/capture.spec.ts",
+              "line": 555,
+              "column": 3
+            },
+            {
+              "title": "study-guide-import-first-prompt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots",
+                  "projectName": "screenshots",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6923,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-31T04:36:27.975Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-653e0319df872d71f079",
+              "file": "screenshots/capture.spec.ts",
+              "line": 568,
+              "column": 3
             }
-          ],
-          "id": "8798955fa894779380fb-9a04db26b7f45169cdcf",
-          "file": "e2e/quiz.spec.ts",
-          "line": 98,
-          "column": 1
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-30T21:30:44.954Z",
-    "duration": 93491.641,
-    "expected": 19,
+    "startTime": "2026-03-31T04:32:17.015Z",
+    "duration": 258215.87099999998,
+    "expected": 41,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

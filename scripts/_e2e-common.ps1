@@ -29,13 +29,13 @@ function Test-Prerequisites {
         exit 1
     }
 
-    # Default email if not set
+    # Email is fixed — override with TEST_USER_EMAIL env var if needed
     if (-not $env:TEST_USER_EMAIL) {
         $env:TEST_USER_EMAIL = "test-user@quizymode.com"
-        Write-Host "Using default test email: $($env:TEST_USER_EMAIL)" -ForegroundColor DarkGray
     }
+    Write-Host "Test email: $($env:TEST_USER_EMAIL)" -ForegroundColor DarkGray
 
-    # Prompt for password if not set
+    # Prompt for password if not provided via env var
     if (-not $env:TEST_USER_PASSWORD) {
         $secure = Read-Host "Enter password for $($env:TEST_USER_EMAIL)" -AsSecureString
         $env:TEST_USER_PASSWORD = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
@@ -88,14 +88,37 @@ function Start-ReactDevServer {
     }
 
     $webDir = Join-Path $RepoRoot "src\Quizymode.Web"
+    $artifactsDir = Join-Path $RepoRoot ".artifacts"
+    $stdoutLog = Join-Path $artifactsDir "react-dev-server.stdout.log"
+    $stderrLog = Join-Path $artifactsDir "react-dev-server.stderr.log"
+    $npmExe = if (Get-Command npm.cmd -ErrorAction SilentlyContinue) { "npm.cmd" } else { "npm" }
+
+    New-Item -ItemType Directory -Path $artifactsDir -Force | Out-Null
+    if (Test-Path $stdoutLog) { Remove-Item $stdoutLog -Force -ErrorAction SilentlyContinue }
+    if (Test-Path $stderrLog) { Remove-Item $stderrLog -Force -ErrorAction SilentlyContinue }
+
     Write-Host "Starting React dev server..." -ForegroundColor Cyan
 
     $process = Start-Process `
-        -FilePath "npm" `
+        -FilePath $npmExe `
         -ArgumentList "run", "dev" `
         -WorkingDirectory $webDir `
         -PassThru `
-        -NoNewWindow
+        -RedirectStandardOutput $stdoutLog `
+        -RedirectStandardError $stderrLog
+
+    Start-Sleep -Seconds 2
+    if ($process.HasExited) {
+        Write-Host "React dev server exited immediately. Recent stderr:" -ForegroundColor Red
+        if (Test-Path $stderrLog) {
+            Get-Content $stderrLog | Select-Object -Last 20
+        }
+        exit 1
+    }
+
+    Write-Host "  Logs:" -ForegroundColor DarkGray
+    Write-Host "    $stdoutLog" -ForegroundColor DarkGray
+    Write-Host "    $stderrLog" -ForegroundColor DarkGray
     return $process
 }
 
