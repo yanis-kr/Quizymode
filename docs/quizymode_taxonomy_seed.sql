@@ -3,37 +3,37 @@
 --   dotnet run --project tools/Quizymode.TaxonomySqlGen
 --
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('12d76e4a-06ce-a942-914f-65dc3be020e1'::uuid, 'business', 'Business', 'Business', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('12d76e4a-06ce-a942-914f-65dc3be020e1'::uuid, 'business', 'Finance, marketing, management, strategy, and professional business skills.', 'Finance, marketing, management, strategy, and', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('410c6354-8a4d-d249-972a-45f84b9e34c4'::uuid, 'civics', 'Civics', 'Civics', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('410c6354-8a4d-d249-972a-45f84b9e34c4'::uuid, 'civics', 'Government, law, democracy, elections, rights, and civic participation.', 'Government, law, democracy, elections, rights,', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('6aaa4415-44a8-1841-a082-4a0b14511e9d'::uuid, 'exams', 'Exams', 'Exams', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('6aaa4415-44a8-1841-a082-4a0b14511e9d'::uuid, 'exams', 'Exam prep for certifications, licensing, and standardized tests at all levels.', 'Exam prep for certifications, licensing,', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('8a8179b7-1505-2e41-b2e5-34356b0d43db'::uuid, 'geography', 'Geography', 'Geography', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('8a8179b7-1505-2e41-b2e5-34356b0d43db'::uuid, 'geography', 'Countries, capitals, world regions, physical geography, and map skills.', 'Countries, capitals, world regions, physical', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('706e0753-c5b3-2d42-a0a2-bf4645b7fea4'::uuid, 'history', 'History', 'History', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('706e0753-c5b3-2d42-a0a2-bf4645b7fea4'::uuid, 'history', 'World history, civilizations, events, and key figures from ancient times to today.', 'World history, civilizations, events, and', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('3ebc3e8e-be2a-b646-b3de-e0923e0a117d'::uuid, 'humanities', 'Humanities', 'Humanities', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('3ebc3e8e-be2a-b646-b3de-e0923e0a117d'::uuid, 'humanities', 'Literature, philosophy, art, music, and the cultural study of human thought.', 'Literature, philosophy, art, music, and', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('6175a344-fd30-8e44-bcd0-75bccc8746ae'::uuid, 'languages', 'Languages', 'Languages', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('6175a344-fd30-8e44-bcd0-75bccc8746ae'::uuid, 'languages', 'Grammar, vocabulary, and language skills across major world languages.', 'Grammar, vocabulary, and language skills', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
@@ -43,22 +43,22 @@ ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('5a46719b-294e-374a-9382-f76018b68c68'::uuid, 'science', 'Natural sciences, mathematics, statistics, lab skills, and quantitative reasoning—from biology and chemistry through calculus, data, and discrete math.', 'Natural sciences, mathematics, statistics, lab', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('5a46719b-294e-374a-9382-f76018b68c68'::uuid, 'science', 'Natural sciences, math, and statistics—from biology and chemistry to calculus.', 'Natural sciences, math, and statistics—from', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('cda6b9ca-8abe-fc41-8b9f-33effd9332d4'::uuid, 'sports', 'Sports', 'Sports', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('cda6b9ca-8abe-fc41-8b9f-33effd9332d4'::uuid, 'sports', 'Rules, history, athletes, and statistics across major sports and games.', 'Rules, history, athletes, and statistics', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('a8126ab2-e1f3-bc46-a665-f747f7792e1e'::uuid, 'tech', 'Tech', 'Tech', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('a8126ab2-e1f3-bc46-a665-f747f7792e1e'::uuid, 'tech', 'Software, hardware, networking, databases, and modern development practices.', 'Software, hardware, networking, databases, and', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
 INSERT INTO "Categories" ("Id", "Name", "Description", "ShortDescription", "IsPrivate", "CreatedBy", "CreatedAt")
-VALUES ('cfeefa9b-29a5-c54c-8816-4ab6c0dd3cde'::uuid, 'trivia', 'Trivia', 'Trivia', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
+VALUES ('cfeefa9b-29a5-c54c-8816-4ab6c0dd3cde'::uuid, 'trivia', 'Pop culture, entertainment, general knowledge, and fun facts from every field.', 'Pop culture, entertainment, general knowledge,', false, 'seeder', timestamptz '2024-01-01 00:00:00+00')
 ON CONFLICT ("Name") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "ShortDescription" = EXCLUDED."ShortDescription";
