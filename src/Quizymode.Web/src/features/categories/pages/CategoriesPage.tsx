@@ -1290,10 +1290,7 @@ const CategoriesPage = () => {
       />
       <div className="space-y-4">
         <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-            Browse
-          </div>
-          <h1 className="mt-1 text-2xl font-semibold text-slate-900">Categories</h1>
+          <h1 className="text-2xl font-semibold text-slate-900">Categories</h1>
           <p className="mt-1 text-sm leading-6 text-slate-700">
             Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
           </p>

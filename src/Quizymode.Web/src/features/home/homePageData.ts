@@ -59,6 +59,14 @@ export interface FeaturedSetCard {
   image: string;
 }
 
+export interface FeaturedCollectionCard {
+  id: string;
+  name: string;
+  eyebrow: string;
+  description: string;
+  image: string;
+}
+
 const categoryDescriptions = new Map<string, string>([
   ["exams", "Certification prep, standardized tests, and professional exam drills."],
   ["tech", "Programming, cloud, security, systems, and modern engineering topics."],
@@ -74,13 +82,43 @@ const categoryDescriptions = new Map<string, string>([
   ["trivia", "Movies, music, pop culture, brands, games, and high-energy fun facts."],
 ]);
 
-export const homeCategoryCards: HomeCategoryCard[] = categoryThemes.map((theme) => ({
-  slug: theme.slug,
-  name: theme.name,
-  description: categoryDescriptions.get(theme.slug) ?? "",
-  image: getCategoryThemeBySlug(theme.slug).image,
-}));
+/**
+ * Order in which categories are shown in the home page carousel.
+ * The first four are always fully visible on a full-screen desktop layout.
+ * Add or reorder slugs here to change the home page category presentation.
+ */
+const HOME_CATEGORY_ORDER = [
+  "exams",
+  "trivia",
+  "history",
+  "geography",
+  // remaining categories follow in their natural order
+];
 
+const allCategorySlugs = categoryThemes.map((t) => t.slug);
+const orderedSlugs = [
+  ...HOME_CATEGORY_ORDER,
+  ...allCategorySlugs.filter((s) => !HOME_CATEGORY_ORDER.includes(s)),
+];
+
+export const homeCategoryCards: HomeCategoryCard[] = orderedSlugs
+  .map((slug) => {
+    const theme = getCategoryThemeBySlug(slug);
+    if (!theme) return null;
+    return {
+      slug: theme.slug,
+      name: theme.name,
+      description: categoryDescriptions.get(theme.slug) ?? "",
+      image: theme.image,
+    };
+  })
+  .filter((c): c is HomeCategoryCard => c !== null);
+
+/**
+ * Featured keyword sets shown on the home page.
+ * Each entry links to a pre-filtered quiz URL.
+ * Edit this array to add, remove, or reorder featured sets.
+ */
 export const featuredSetCards: FeaturedSetCard[] = [
   {
     id: "aws-saa-c03",
@@ -160,4 +198,33 @@ export const featuredSetCards: FeaturedSetCard[] = [
       accent: "#c4b5fd",
     }),
   },
+];
+
+/**
+ * Featured public collections shown on the home page.
+ * Each entry references a real collection by ID and name.
+ * Edit this array to add, remove, or reorder featured collections.
+ * To find a collection ID: open the collection in the app — the UUID appears in the URL.
+ */
+export const featuredCollectionCards: FeaturedCollectionCard[] = [
+  {
+    id: HOME_SAMPLE_COLLECTION_ID,
+    name: HOME_SAMPLE_COLLECTION_NAME,
+    eyebrow: "Starter",
+    description: "A public demo collection — great for getting started with Quizymode.",
+    image: createFeaturedSetArt({
+      label: "SAMPLE",
+      primary: "#1e1b4b",
+      secondary: "#4338ca",
+      accent: "#a5b4fc",
+    }),
+  },
+  // Add more featured collections below. Example:
+  // {
+  //   id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  //   name: "My Collection Name",
+  //   eyebrow: "Category label",
+  //   description: "Short description shown on the card.",
+  //   image: createFeaturedSetArt({ label: "LABEL", primary: "#...", secondary: "#...", accent: "#..." }),
+  // },
 ];
