@@ -188,10 +188,10 @@ const AddItemsPage = () => {
   }
 
   return (
-    <div className="px-4 py-6 sm:px-0">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Add Items</h1>
-        <p className="text-gray-600 text-sm mb-6">
+    <div className="bg-slate-950 text-white min-h-full">
+      <div className="mx-auto max-w-3xl px-4 py-6">
+        <h1 className="text-3xl font-bold text-white mb-2">Add Items</h1>
+        <p className="text-slate-300 text-sm mb-6">
           Choose the scope once, then pick one of three ways to add new private items. The selected
           category, navigation path, and extra keywords stay in the URL so each path starts with the
           same setup.
@@ -200,13 +200,13 @@ const AddItemsPage = () => {
         <ContentComplianceNotice />
         <ActiveCollectionNotice />
 
-        <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-4 mb-8">
+        <section className="rounded-lg border border-white/10 bg-slate-800/50 p-4 sm:p-5 space-y-4 mb-8">
           <div>
-            <h2 className="text-sm font-semibold text-gray-900">Topic and tags</h2>
-            <p className="mt-1 text-xs text-gray-500">
+            <h2 className="text-sm font-semibold text-white">Topic and tags</h2>
+            <p className="mt-1 text-xs text-slate-400">
               Category and navigation topics match the create-item form. Optional extra tags become
               additional keywords when you open single or bulk create (same as{" "}
-              <code className="text-xs bg-white px-1 rounded border">keywords</code> in the URL after
+              <code className="text-xs bg-slate-700 px-1 rounded border border-white/20 text-slate-200">keywords</code> in the URL after
               rank 1 and rank 2).
             </p>
           </div>
@@ -228,19 +228,19 @@ const AddItemsPage = () => {
             isLoadingRank1={isLoadingRank1}
             isLoadingRank2={isLoadingRank2}
           />
-          <div className="pt-4 border-t border-gray-200/90">
+          <div className="pt-4 border-t border-white/10">
             <label
               htmlFor="add-hub-extras"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-slate-300 mb-1"
             >
               Additional keywords (comma-separated, optional)
             </label>
-            <p className="text-xs text-gray-500 mb-2">
+            <p className="text-xs text-slate-400 mb-2">
               Type to reuse existing tags for this category, or keep entering your own comma-separated
               labels.
             </p>
             {itemTagKeywordsLoading && category !== "" && (
-              <p className="text-xs text-gray-500 mb-2" aria-live="polite">
+              <p className="text-xs text-slate-400 mb-2" aria-live="polite">
                 Loading keyword suggestions for this category...
               </p>
             )}
@@ -306,13 +306,13 @@ const AddItemsPage = () => {
                     ? `${listboxId}-opt-${activeHighlightIndex}`
                     : undefined
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white"
+                className="w-full px-3 py-2 border border-white/15 rounded-md text-sm bg-slate-700/50 text-white placeholder:text-slate-400"
               />
               {suggestOpen && extraKeywordMatches.length > 0 && (
                 <ul
                   id={listboxId}
                   role="listbox"
-                  className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-200 bg-white py-1 text-sm shadow-lg"
+                  className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-white/10 bg-slate-800 py-1 text-sm shadow-lg"
                 >
                   {extraKeywordMatches.map((name, index) => (
                     <li
@@ -321,7 +321,7 @@ const AddItemsPage = () => {
                       role="option"
                       aria-selected={index === activeHighlightIndex}
                       className={`cursor-pointer px-3 py-2 ${
-                        index === activeHighlightIndex ? "bg-indigo-50 text-indigo-900" : "text-gray-800"
+                        index === activeHighlightIndex ? "bg-indigo-500/25 text-indigo-200" : "text-slate-200"
                       }`}
                       onMouseEnter={() => setHighlightIndex(index)}
                       onMouseDown={(ev) => {
@@ -377,9 +377,9 @@ const AddItemsPage = () => {
           </button>
         </div>
 
-        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+        <div className="mt-6 rounded-lg border border-white/10 bg-slate-800/50 px-4 py-3 text-sm text-slate-300">
           <div className="flex items-start gap-3">
-            <BookOpenIcon className="h-5 w-5 flex-shrink-0 text-slate-500 mt-0.5" />
+            <BookOpenIcon className="h-5 w-5 flex-shrink-0 text-slate-400 mt-0.5" />
             <p>
               Need to upload or edit the study guide first?{" "}
               <Link to={buildStudyGuideUrl()} className="font-medium text-indigo-600 hover:text-indigo-800">
@@ -390,7 +390,7 @@ const AddItemsPage = () => {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-gray-500">
+        <p className="mt-8 text-xs text-slate-400">
           Bookmark or share:{" "}
           <Link
             to={`/items/add${buildQueryString()}`}

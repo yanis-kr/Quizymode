@@ -136,19 +136,19 @@ function CollectionCard({
 
   const titleArea = (
     <>
-      <h3 className="text-lg font-semibold text-slate-900">{name}</h3>
-      <p className="mt-2 text-sm text-slate-700">
+      <h3 className="text-lg font-semibold text-white">{name}</h3>
+      <p className="mt-2 text-sm text-slate-300">
         {itemCount} {itemCount === 1 ? "item" : "items"}
       </p>
       {description && description.trim() !== "" && (
-        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
           {description}
         </p>
       )}
       {createdBy && (
-        <p className="mt-1 text-xs font-medium text-slate-600">By {createdBy}</p>
+        <p className="mt-1 text-xs font-medium text-slate-400">By {createdBy}</p>
       )}
-      <p className="mt-1 text-sm text-slate-600">
+      <p className="mt-1 text-sm text-slate-400">
         Created {new Date(createdAt).toLocaleDateString()}
       </p>
     </>
@@ -157,8 +157,8 @@ function CollectionCard({
   return (
     <div
       ref={cardRef}
-      className={`overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 p-6 shadow-sm shadow-slate-300/25 transition-all hover:-translate-y-0.5 hover:shadow-lg ${
-        selectedCollectionId === id ? "ring-2 ring-indigo-500 ring-offset-2" : ""
+      className={`overflow-hidden rounded-2xl border border-white/10 bg-slate-800/60 p-6 shadow-sm shadow-slate-950/30 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:border-white/20 ${
+        selectedCollectionId === id ? "ring-2 ring-indigo-500 ring-offset-2 ring-offset-slate-900" : ""
       }`}
     >
       <div className="flex justify-between items-start mb-4">
@@ -186,7 +186,7 @@ function CollectionCard({
                 onEdit(id, { name, description: description ?? null, isPublic: isPublic ?? false });
               }}
               disabled={isEditPending}
-              className="rounded-md p-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 disabled:opacity-50"
+              className="rounded-md p-2 text-slate-400 hover:bg-white/10 hover:text-indigo-300 disabled:opacity-50"
               title="Edit collection"
             >
               <PencilSquareIcon className="h-5 w-5" />
@@ -202,8 +202,8 @@ function CollectionCard({
               disabled={isEditPending}
               className={`p-2 rounded-md disabled:opacity-50 ${
                 isActive
-                  ? "text-indigo-600 bg-indigo-50"
-                  : "text-slate-600 hover:bg-indigo-50 hover:text-indigo-700"
+                  ? "text-indigo-400 bg-indigo-500/20"
+                  : "text-slate-400 hover:bg-white/10 hover:text-indigo-300"
               }`}
               title={isActive ? "Active collection" : "Set as active collection"}
             >
@@ -221,7 +221,7 @@ function CollectionCard({
                 e.stopPropagation();
                 onCopyLink(id, name, isPublic ?? false);
               }}
-              className="rounded-md p-2 text-slate-600 hover:bg-blue-50 hover:text-blue-700"
+              className="rounded-md p-2 text-slate-400 hover:bg-white/10 hover:text-blue-300"
               title="Copy shared link"
             >
               <LinkIcon className="h-5 w-5" />
@@ -235,7 +235,7 @@ function CollectionCard({
                 onDelete(id, name);
               }}
               disabled={isDeletePending}
-              className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md disabled:opacity-50"
+              className="p-2 text-red-400 hover:text-red-300 hover:bg-red-500/15 rounded-md disabled:opacity-50"
               title="Delete collection"
             >
               <TrashIcon className="h-5 w-5" />
@@ -249,7 +249,7 @@ function CollectionCard({
                 onUnbookmark(id);
               }}
               disabled={isBookmarkPending}
-              className="p-2 text-amber-600 hover:bg-amber-50 rounded-md disabled:opacity-50"
+              className="p-2 text-amber-400 hover:bg-amber-500/15 rounded-md disabled:opacity-50"
               title="Remove bookmark"
             >
               <BookmarkIconSolid className="h-5 w-5" />
@@ -263,7 +263,7 @@ function CollectionCard({
                 onBookmark(id);
               }}
               disabled={isBookmarkPending}
-              className="rounded-md p-2 text-slate-600 hover:bg-amber-50 hover:text-amber-700 disabled:opacity-50"
+              className="rounded-md p-2 text-slate-400 hover:bg-amber-500/15 hover:text-amber-300 disabled:opacity-50"
               title="Bookmark collection"
             >
               <BookmarkIcon className="h-5 w-5" />
@@ -272,8 +272,8 @@ function CollectionCard({
         </div>
       </div>
       {showRating && readOnlyRating && (
-        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-3">
-          <span className="text-sm font-medium text-slate-700">Rating</span>
+        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3">
+          <span className="text-sm font-medium text-slate-300">Rating</span>
           <div className="flex items-center gap-0.5" aria-hidden>
             {[1, 2, 3, 4, 5].map((star) => {
               const avg = ratingData?.averageStars;
@@ -289,7 +289,7 @@ function CollectionCard({
               );
             })}
           </div>
-          <span className="text-xs text-slate-600">
+          <span className="text-xs text-slate-400">
             {ratingData?.averageStars != null
               ? `${ratingData.averageStars} (${ratingData.count})`
               : "No ratings yet"}
@@ -297,8 +297,8 @@ function CollectionCard({
         </div>
       )}
       {showRating && !readOnlyRating && (
-        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-3">
-          <span className="text-sm font-medium text-slate-700">Rating</span>
+        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3">
+          <span className="text-sm font-medium text-slate-300">Rating</span>
           <div className="flex items-center gap-0.5">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
@@ -311,7 +311,7 @@ function CollectionCard({
                   onRate?.(id, star);
                 }}
                 disabled={setRatingMutation.isPending}
-                className="rounded p-0.5 hover:bg-slate-100 disabled:opacity-50"
+                className="rounded p-0.5 hover:bg-white/10 disabled:opacity-50"
                 title={`Rate ${star} star${star > 1 ? "s" : ""}`}
               >
                 {ratingData?.myStars != null && star <= ratingData.myStars ? (
@@ -322,7 +322,7 @@ function CollectionCard({
               </button>
             ))}
           </div>
-          <span className="text-xs text-slate-600">
+          <span className="text-xs text-slate-400">
             {ratingData?.averageStars != null
               ? `${ratingData.averageStars} (${ratingData.count})`
               : "No ratings yet"}
@@ -332,7 +332,7 @@ function CollectionCard({
       <div className="flex flex-wrap gap-2 mt-4">
         <Link
           to={collectionPath}
-          className="flex items-center rounded-md bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-100"
+          className="flex items-center rounded-md bg-blue-500/15 px-3 py-2 text-sm font-medium text-blue-300 hover:bg-blue-500/25"
           onClick={(e) => e.stopPropagation()}
         >
           <ListBulletIcon className="h-4 w-4 mr-1" />
@@ -340,7 +340,7 @@ function CollectionCard({
         </Link>
         <Link
           to={explorePath}
-          className="flex items-center rounded-md bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-100"
+          className="flex items-center rounded-md bg-indigo-500/15 px-3 py-2 text-sm font-medium text-indigo-300 hover:bg-indigo-500/25"
           onClick={(e) => e.stopPropagation()}
         >
           <EyeIcon className="h-4 w-4 mr-1" />
@@ -348,7 +348,7 @@ function CollectionCard({
         </Link>
         <Link
           to={quizPath}
-          className="flex items-center rounded-md bg-green-50 px-3 py-2 text-sm font-medium text-green-700 hover:bg-green-100"
+          className="flex items-center rounded-md bg-green-500/15 px-3 py-2 text-sm font-medium text-green-300 hover:bg-green-500/25"
           onClick={(e) => e.stopPropagation()}
         >
           <AcademicCapIcon className="h-4 w-4 mr-1" />
@@ -646,10 +646,11 @@ const CollectionsPage = () => {
         canonical="https://www.quizymode.com/collections"
         noindex={activeTab !== "discover"}
       />
-      <div className="space-y-4">
-        <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
-          <h1 className="mb-1 text-2xl font-semibold text-slate-900">Collections</h1>
-          <p className="max-w-3xl text-sm leading-6 text-slate-700">
+      <div className="bg-slate-950 text-white">
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8 space-y-4">
+        <div className="rounded-[24px] border border-white/10 bg-slate-950/70 px-5 py-4 shadow-sm shadow-slate-950/25">
+          <h1 className="mb-1 text-2xl font-semibold text-white">Collections</h1>
+          <p className="max-w-3xl text-sm leading-6 text-slate-300">
             {isAuthenticated
               ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
               : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
@@ -657,7 +658,7 @@ const CollectionsPage = () => {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex overflow-hidden rounded-xl border border-slate-300 bg-white shadow-sm">
+          <div className="flex overflow-hidden rounded-xl border border-white/15 bg-slate-800/50 shadow-sm">
             {(["mine", "bookmarked", "discover"] as const).map((tab) => {
               const locked = !isAuthenticated && (tab === "mine" || tab === "bookmarked");
               return (
@@ -671,8 +672,8 @@ const CollectionsPage = () => {
                     activeTab === tab
                       ? "bg-indigo-700 text-white"
                       : locked
-                        ? "cursor-not-allowed bg-slate-100 text-slate-500"
-                        : "bg-white text-slate-800 hover:bg-slate-100"
+                        ? "cursor-not-allowed bg-white/5 text-slate-500"
+                        : "bg-transparent text-slate-300 hover:bg-white/10"
                   }`}
                 >
                   {tab === "mine" ? "Mine" : tab === "bookmarked" ? "Bookmarked" : "Discover"}
@@ -698,7 +699,7 @@ const CollectionsPage = () => {
       )}
 
       {activeTab === "discover" && (
-        <div className="space-y-4 rounded-[28px] border border-slate-200/80 bg-white/88 p-5 shadow-sm shadow-slate-300/20">
+        <div className="space-y-4 rounded-[28px] border border-white/10 bg-slate-900/70 p-5 shadow-sm shadow-slate-950/25">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <div className="relative flex-1 min-w-[200px] max-w-md">
@@ -712,13 +713,13 @@ const CollectionsPage = () => {
                     setDiscoverPage(1);
                   }}
                   onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
-                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 pl-10 text-sm text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                  className="w-full rounded-md border border-white/15 bg-slate-700/50 px-3 py-2 pl-10 text-sm text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
               <button
                 type="button"
                 onClick={() => setDiscoverPage(1)}
-                className="rounded-md bg-slate-100 px-3 py-2 text-sm text-slate-800 hover:bg-slate-200"
+                className="rounded-md bg-white/10 px-3 py-2 text-sm text-slate-200 hover:bg-white/15"
               >
                 Search
               </button>
@@ -730,7 +731,7 @@ const CollectionsPage = () => {
                 value={collectionIdInput}
                 onChange={(e) => setCollectionIdInput(e.target.value.trim())}
                 onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
-                className="min-w-[240px] rounded-md border border-slate-300 bg-white px-3 py-2 font-mono text-sm text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                className="min-w-[240px] rounded-md border border-white/15 bg-slate-700/50 px-3 py-2 font-mono text-sm text-white placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
               />
               <button
                 type="button"
@@ -741,9 +742,9 @@ const CollectionsPage = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
+          <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-white/10 bg-slate-800/40 p-4">
             <div>
-              <label htmlFor="discover-category" className="mb-1 block text-xs font-medium text-gray-700">
+              <label htmlFor="discover-category" className="mb-1 block text-xs font-medium text-slate-300">
                 Category
               </label>
               <select
@@ -755,7 +756,7 @@ const CollectionsPage = () => {
                   setDiscoverNav2("");
                   setDiscoverPage(1);
                 }}
-                className="min-w-[160px] rounded-md border border-slate-300 bg-white px-2 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500"
+                className="min-w-[160px] rounded-md border border-white/15 bg-slate-700/50 px-2 py-2 text-sm text-white focus:ring-2 focus:ring-indigo-500"
               >
                 <option value="">All categories</option>
                 {sortedDiscoverCategories.map((c) => (
@@ -766,7 +767,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div>
-              <label htmlFor="discover-nav1" className="mb-1 block text-xs font-medium text-gray-700">
+              <label htmlFor="discover-nav1" className="mb-1 block text-xs font-medium text-slate-300">
                 Topic (L1)
               </label>
               <select
@@ -778,7 +779,7 @@ const CollectionsPage = () => {
                   setDiscoverNav2("");
                   setDiscoverPage(1);
                 }}
-                className="min-w-[140px] rounded-md border border-slate-300 bg-white px-2 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 disabled:bg-slate-100"
+                className="min-w-[140px] rounded-md border border-white/15 bg-slate-700/50 px-2 py-2 text-sm text-white focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
               >
                 <option value="">Any</option>
                 {discoverRank1Options.map((k) => (
@@ -789,7 +790,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div>
-              <label htmlFor="discover-nav2" className="mb-1 block text-xs font-medium text-gray-700">
+              <label htmlFor="discover-nav2" className="mb-1 block text-xs font-medium text-slate-300">
                 Subtopic (L2)
               </label>
               <select
@@ -800,7 +801,7 @@ const CollectionsPage = () => {
                   setDiscoverNav2(e.target.value);
                   setDiscoverPage(1);
                 }}
-                className="min-w-[140px] rounded-md border border-slate-300 bg-white px-2 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 disabled:bg-slate-100"
+                className="min-w-[140px] rounded-md border border-white/15 bg-slate-700/50 px-2 py-2 text-sm text-white focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
               >
                 <option value="">Any</option>
                 {discoverRank2Options.map((k) => (
@@ -811,7 +812,7 @@ const CollectionsPage = () => {
               </select>
             </div>
             <div className="flex-1 min-w-[180px] max-w-xs">
-              <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-gray-700">
+              <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-slate-300">
                 Item tags
               </label>
               <input
@@ -823,13 +824,13 @@ const CollectionsPage = () => {
                   setDiscoverTags(e.target.value);
                   setDiscoverPage(1);
                 }}
-                className="w-full rounded-md border border-slate-300 bg-white px-2 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-md border border-white/15 bg-slate-700/50 px-2 py-2 text-sm text-white placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500"
               />
             </div>
             <button
               type="button"
               onClick={clearDiscoverFilters}
-              className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:bg-white"
+              className="rounded-md border border-white/15 px-3 py-2 text-sm text-slate-300 hover:bg-white/10"
             >
               Clear filters
             </button>
@@ -1032,8 +1033,8 @@ const CollectionsPage = () => {
             ))}
           </div>
         ) : (
-          <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
-            <p className="text-slate-700">No collections yet. Create your first collection!</p>
+          <div className="rounded-[28px] border border-dashed border-white/20 bg-slate-800/30 py-12 text-center">
+            <p className="text-slate-300">No collections yet. Create your first collection!</p>
           </div>
         )
       )}
@@ -1058,8 +1059,8 @@ const CollectionsPage = () => {
             ))}
           </div>
         ) : (
-          <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
-            <p className="text-slate-700">No bookmarked collections. Use Discover to find and bookmark public collections.</p>
+          <div className="rounded-[28px] border border-dashed border-white/20 bg-slate-800/30 py-12 text-center">
+            <p className="text-slate-300">No bookmarked collections. Use Discover to find and bookmark public collections.</p>
           </div>
         )
       )}
@@ -1070,7 +1071,7 @@ const CollectionsPage = () => {
             <LoadingSpinner />
           ) : discoverItems.length > 0 ? (
             <>
-              <p className="mb-4 text-sm text-slate-700">
+              <p className="mb-4 text-sm text-slate-300">
                 {discoverTotal} public collection{discoverTotal !== 1 ? "s" : ""} found. Make your collection public in its settings to appear here.
               </p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -1106,18 +1107,18 @@ const CollectionsPage = () => {
                     type="button"
                     disabled={discoverPage <= 1}
                     onClick={() => setDiscoverPage((p) => Math.max(1, p - 1))}
-                    className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 disabled:opacity-50"
+                    className="rounded-md border border-white/20 px-3 py-2 text-sm text-slate-300 hover:bg-white/10 disabled:opacity-50"
                   >
                     Previous
                   </button>
-                  <span className="py-2 text-sm text-slate-700">
+                  <span className="py-2 text-sm text-slate-300">
                     Page {discoverPage} of {Math.ceil(discoverTotal / 12)}
                   </span>
                   <button
                     type="button"
                     disabled={discoverPage >= Math.ceil(discoverTotal / 12)}
                     onClick={() => setDiscoverPage((p) => p + 1)}
-                    className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-800 disabled:opacity-50"
+                    className="rounded-md border border-white/20 px-3 py-2 text-sm text-slate-300 hover:bg-white/10 disabled:opacity-50"
                   >
                     Next
                   </button>
@@ -1125,8 +1126,8 @@ const CollectionsPage = () => {
               )}
             </>
           ) : (
-            <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
-              <p className="text-slate-700">
+            <div className="rounded-[28px] border border-dashed border-white/20 bg-slate-800/30 py-12 text-center">
+              <p className="text-slate-300">
                 {discoverHasActiveFilters
                   ? "No public collections match your search or filters."
                   : "No public collections yet. Create a collection and make it public to share it."}
@@ -1135,6 +1136,7 @@ const CollectionsPage = () => {
           )}
         </>
       )}
+      </div>
       </div>
     </>
   );

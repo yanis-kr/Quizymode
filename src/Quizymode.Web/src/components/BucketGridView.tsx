@@ -42,6 +42,7 @@ export function BucketGridView({
           key={bucket.id}
           role="button"
           tabIndex={0}
+          title={bucket.description ?? undefined}
           onClick={() => onOpenBucket(bucket)}
           onKeyDown={(e) => e.key === "Enter" && onOpenBucket(bucket)}
           className={

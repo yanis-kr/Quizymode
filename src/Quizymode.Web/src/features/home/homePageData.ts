@@ -126,12 +126,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Cloud Cert",
     title: "AWS SAA-C03",
     description: "A fast set for architecture basics, S3, Lambda, and common cert patterns.",
-    image: createFeaturedSetArt({
-      label: "AWS SAA",
-      primary: "#111827",
-      secondary: "#1d4ed8",
-      accent: "#60a5fa",
-    }),
+    image: getCategoryThemeBySlug("exams").image,
   },
   {
     id: "soccer-world-cup",
@@ -139,12 +134,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Competition",
     title: "World Cup Starter",
     description: "Teams, substitutions, tournament rules, and a clean on-ramp into soccer quizzes.",
-    image: createFeaturedSetArt({
-      label: "WORLD CUP",
-      primary: "#17240e",
-      secondary: "#4d7c0f",
-      accent: "#bef264",
-    }),
+    image: getCategoryThemeBySlug("sports").image,
   },
   {
     id: "tropical-island",
@@ -152,12 +142,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Survival",
     title: "Tropical Island Survival",
     description: "Water, shelter, signaling, and the practical decisions that matter first.",
-    image: createFeaturedSetArt({
-      label: "SURVIVAL",
-      primary: "#0a2415",
-      secondary: "#15803d",
-      accent: "#86efac",
-    }),
+    image: getCategoryThemeBySlug("nature").image,
   },
   {
     id: "solar-system",
@@ -165,12 +150,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Space",
     title: "Solar System Sprint",
     description: "Planets, scale, motion, and the easy wins every astronomy round needs.",
-    image: createFeaturedSetArt({
-      label: "SOLAR",
-      primary: "#120c2f",
-      secondary: "#4338ca",
-      accent: "#a78bfa",
-    }),
+    image: getCategoryThemeBySlug("science").image,
   },
   {
     id: "world-capitals",
@@ -178,12 +158,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Maps",
     title: "World Capitals Express",
     description: "A quick route through major capitals and the country-city pairs worth knowing.",
-    image: createFeaturedSetArt({
-      label: "CAPITALS",
-      primary: "#082032",
-      secondary: "#0284c7",
-      accent: "#7dd3fc",
-    }),
+    image: getCategoryThemeBySlug("geography").image,
   },
   {
     id: "spanish-vocab",
@@ -191,12 +166,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Language",
     title: "Spanish Core Vocab",
     description: "Greetings, everyday words, and beginner-friendly recall reps for quick practice.",
-    image: createFeaturedSetArt({
-      label: "SPANISH",
-      primary: "#24124a",
-      secondary: "#7c3aed",
-      accent: "#c4b5fd",
-    }),
+    image: getCategoryThemeBySlug("languages").image,
   },
 ];
 

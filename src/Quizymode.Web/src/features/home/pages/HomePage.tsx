@@ -87,20 +87,22 @@ const HomePage = () => {
             </section>
 
             {/* ── Categories lane ── */}
-            <section className="rounded-[26px] bg-[linear-gradient(180deg,rgba(248,250,252,0.98)_0%,rgba(239,246,255,0.98)_100%)] p-3 text-slate-950 shadow-xl shadow-slate-950/25 lg:px-4 lg:py-3">
-              <div className="flex items-center justify-between gap-3 mb-2">
-                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Explore Categories</h2>
+            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+              <div className="mb-1.5 flex items-center justify-between gap-3">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                  Categories
+                </div>
                 <Link
                   to="/categories"
-                  className="flex items-center gap-1 text-sm font-semibold text-sky-700 transition hover:text-sky-900"
+                  className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
                 >
                   Show all
-                  <ArrowRightIcon className="h-3.5 w-3.5" />
+                  <ArrowRightIcon className="h-3 w-3" />
                 </Link>
               </div>
 
               {/* Horizontal carousel: 2 visible by default, 3 on md, 4 on xl */}
-              <div className="flex gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {homeCategoryCards.map((category) => {
                   const liveCount = countsByCategory.get(category.slug);
 
@@ -108,28 +110,21 @@ const HomePage = () => {
                     <Link
                       key={category.slug}
                       to={`/categories/${category.slug}`}
-                      className="group relative isolate shrink-0 overflow-hidden rounded-[20px] border border-slate-200/80 bg-slate-900 shadow-md shadow-slate-300/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg
-                        basis-[calc(50%-0.375rem)] md:basis-[calc((100%-1.5rem)/3)] xl:basis-[calc((100%-2.25rem)/4)]
-                        h-28 md:h-32"
+                      className="group relative min-w-0 shrink-0 overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50
+                        basis-[calc(50%-0.3125rem)] md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
                     >
                       <img
                         src={category.image}
                         alt=""
                         className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_0%,rgba(2,6,23,0.3)_42%,rgba(2,6,23,0.88)_100%)]" />
-                      <div className="relative flex h-full flex-col justify-between p-3 text-white">
-                        <div className="flex justify-end">
-                          {liveCount != null && (
-                            <div className="rounded-full border border-white/18 bg-slate-950/45 px-2.5 py-0.5 text-xs font-semibold text-sky-100 backdrop-blur">
-                              {formatItemCount(liveCount)}
-                            </div>
-                          )}
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                      <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 text-white sm:min-h-[96px]">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
+                          {liveCount != null ? formatItemCount(liveCount) : ""}
                         </div>
-                        <div className="flex items-end justify-between gap-2">
-                          <h3 className="text-base font-semibold leading-tight tracking-tight sm:text-lg">
-                            {category.name}
-                          </h3>
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="text-sm font-semibold text-white">{category.name}</h3>
                           <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
                         </div>
                       </div>
