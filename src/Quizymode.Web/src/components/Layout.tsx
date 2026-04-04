@@ -50,6 +50,12 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   const isHomePage = location.pathname === "/";
+  /** Pages that render their own full-bleed dark container (no white wrapper from Layout). */
+  const isFullBleedPage =
+    isHomePage ||
+    location.pathname === "/categories" ||
+    location.pathname === "/collections" ||
+    location.pathname === "/items/add";
 
   const isPathActive = (basePath: string) => {
     const path = location.pathname;
@@ -286,12 +292,12 @@ const Layout = ({ children }: LayoutProps) => {
       </nav>
       <main
         className={
-          isHomePage
+          isFullBleedPage
             ? "flex-1 py-0"
             : "mx-auto flex-1 w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
         }
       >
-        {isHomePage ? (
+        {isFullBleedPage ? (
           children
         ) : (
           <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-4 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8">

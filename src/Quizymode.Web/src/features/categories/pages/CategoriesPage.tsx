@@ -1288,49 +1288,47 @@ const CategoriesPage = () => {
         description="Browse all categories on Quizymode. Find flashcards and quizzes organized by topic."
         canonical="https://www.quizymode.com/categories"
       />
-      <div className="space-y-4">
-        <div className="rounded-[24px] border border-slate-200/80 bg-white/90 px-5 py-4 shadow-sm shadow-slate-300/20">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-            Browse
+      <div className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8 flex flex-col gap-3">
+          <div className="rounded-[24px] border border-white/10 bg-slate-950/70 px-5 py-4 shadow-xl shadow-slate-950/25">
+            <h1 className="text-2xl font-semibold text-white">Categories</h1>
+            <p className="mt-1 text-sm leading-6 text-slate-300">
+              Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
+            </p>
           </div>
-          <h1 className="mt-1 text-2xl font-semibold text-slate-900">Categories</h1>
-          <p className="mt-1 text-sm leading-6 text-slate-700">
-            Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
-          </p>
-        </div>
 
-        <section className="rounded-[24px] border border-slate-200/80 bg-white/95 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
-          <BucketGridView
-            buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
-              id: cat.category,
-              label: cat.category,
-              itemCount: cat.count,
-              description: cat.description ?? cat.shortDescription ?? null,
-              averageRating: cat.averageStars ?? null,
-              backgroundImage: getCategoryThemeByName(cat.category).image,
-              eyebrow: "Browse",
-            }))}
-            columnsClassName="grid-cols-2 gap-2.5 md:grid-cols-3 xl:grid-cols-4"
-            compact
-            onOpenBucket={(bucket) =>
-              navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
-            }
-          />
-
-          {sortedAndPaginatedCategories.categories.length === 0 && (
-            <div className="py-12 text-center">
-              <p className="text-gray-500">No categories found.</p>
-            </div>
-          )}
-
-          {sortedAndPaginatedCategories.totalPages > 1 && (
-            <Pagination
-              currentPage={categoriesPage}
-              totalPages={sortedAndPaginatedCategories.totalPages}
-              onPageChange={handleCategoriesPageChange}
+          <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-4 shadow-xl shadow-slate-950/25">
+            <BucketGridView
+              buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
+                id: cat.category,
+                label: cat.category,
+                itemCount: cat.count,
+                description: cat.description ?? cat.shortDescription ?? null,
+                averageRating: cat.averageStars ?? null,
+                backgroundImage: getCategoryThemeByName(cat.category).image,
+              }))}
+              columnsClassName="grid-cols-2 gap-2.5 md:grid-cols-3 xl:grid-cols-4"
+              compact
+              onOpenBucket={(bucket) =>
+                navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
+              }
             />
-          )}
-        </section>
+
+            {sortedAndPaginatedCategories.categories.length === 0 && (
+              <div className="py-12 text-center">
+                <p className="text-slate-400">No categories found.</p>
+              </div>
+            )}
+
+            {sortedAndPaginatedCategories.totalPages > 1 && (
+              <Pagination
+                currentPage={categoriesPage}
+                totalPages={sortedAndPaginatedCategories.totalPages}
+                onPageChange={handleCategoriesPageChange}
+              />
+            )}
+          </section>
+        </div>
       </div>
     </>
   );
@@ -1521,33 +1519,33 @@ function Pagination({
   onPageChange: (page: number) => void;
 }) {
   return (
-    <div className="mt-8 flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+    <div className="mt-6 flex items-center justify-between border-t border-white/10 px-1 pt-4">
       <div className="flex flex-1 justify-between sm:hidden">
         <button
           onClick={() => onPageChange(Math.max(1, currentPage - 1))}
           disabled={currentPage === 1}
-          className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center rounded-md border border-white/20 bg-white/8 px-4 py-2 text-sm font-medium text-slate-300 hover:bg-white/12 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Previous
         </button>
         <button
           onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
           disabled={currentPage === totalPages}
-          className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="ml-3 inline-flex items-center rounded-md border border-white/20 bg-white/8 px-4 py-2 text-sm font-medium text-slate-300 hover:bg-white/12 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Next
         </button>
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <p className="text-sm text-gray-700">
-          Page <span className="font-medium">{currentPage}</span> of{" "}
-          <span className="font-medium">{totalPages}</span>
+        <p className="text-sm text-slate-400">
+          Page <span className="font-medium text-slate-200">{currentPage}</span> of{" "}
+          <span className="font-medium text-slate-200">{totalPages}</span>
         </p>
-        <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm">
+        <nav className="isolate inline-flex -space-x-px rounded-md">
           <button
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-white/20 hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <ChevronLeftIcon className="h-5 w-5" />
           </button>
@@ -1563,16 +1561,16 @@ function Pagination({
               return (
                 <div key={p} className="flex items-center">
                   {showEllipsis && (
-                    <span className="px-4 py-2 text-sm ring-1 ring-inset ring-gray-300">
+                    <span className="px-4 py-2 text-sm text-slate-500 ring-1 ring-inset ring-white/20">
                       ...
                     </span>
                   )}
                   <button
                     onClick={() => onPageChange(p)}
-                    className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
+                    className={`inline-flex items-center px-4 py-2 text-sm font-semibold ${
                       p === currentPage
                         ? "z-10 bg-indigo-600 text-white"
-                        : "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        : "text-slate-300 ring-1 ring-inset ring-white/20 hover:bg-white/10"
                     }`}
                   >
                     {p}
@@ -1583,7 +1581,7 @@ function Pagination({
           <button
             onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-white/20 hover:bg-white/10 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>

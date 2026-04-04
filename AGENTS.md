@@ -104,6 +104,17 @@ dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 - Keep `src/Quizymode.Web/package.json` and any surfaced version displays aligned with `QuizymodeVersion` when you bump the version.
 - After each completed change, include a short commit title suggestion in the final response.
 
+## Agent Environment Variables
+
+- Agents may use these local database variables if present: `QM_AGENT_LOCAL_PGHOST`, `QM_AGENT_LOCAL_PGPORT`, `QM_AGENT_LOCAL_PGDATABASE`, `QM_AGENT_LOCAL_PGUSER`, `QM_AGENT_LOCAL_PGPASSWORD`, `QM_AGENT_LOCAL_PGSSLMODE`.
+- Agents may use these local test-user variables if present: `QM_AGENT_USER_TEST_UID`, `QM_AGENT_USER_TEST_PWD`.
+- Agents may use `QM_AGENT_PROD_PG_CS` for production database troubleshooting if present.
+- Never print secret values. Redact passwords, tokens, and full connection strings from output.
+- Treat `QM_AGENT_PROD_PG_CS` as production-sensitive and default to read-only behavior for production access.
+- Agents must prefer local repro over production whenever feasible.
+- Do not execute writes against production without explicit user confirmation.
+- Prefer storing database snapshots, audits, and generated SQL outside the repo.
+
 ## What Agents Should Optimize For
 
 - Minimize duplicated documentation.

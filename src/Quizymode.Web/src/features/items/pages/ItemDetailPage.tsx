@@ -239,7 +239,20 @@ const ItemDetailPage = () => {
                 {item.source && (
                   <div className="sm:col-span-2">
                     <span className="text-gray-500">Source</span>
-                    <p className="font-medium text-gray-900">{item.source}</p>
+                    {/^https?:\/\//i.test(item.source) ? (
+                      <p className="font-medium">
+                        <a
+                          href={item.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-indigo-600 hover:text-indigo-800 hover:underline break-all"
+                        >
+                          {item.source}
+                        </a>
+                      </p>
+                    ) : (
+                      <p className="font-medium text-gray-900">{item.source}</p>
+                    )}
                   </div>
                 )}
               </div>

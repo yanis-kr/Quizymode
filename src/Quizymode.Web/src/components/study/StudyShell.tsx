@@ -87,60 +87,59 @@ export function StudyShell({
     <div className="max-w-4xl mx-auto">
         {backContent}
 
-        <div className="bg-white shadow rounded-lg p-6 mb-4">
-          {(title || currentItem) && (
-            <div className="flex justify-between items-start gap-3 mb-2">
-              <div>
-                {title ? (
-                  <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-                ) : null}
-              </div>
-              {currentItem && (
+        <div className="bg-white shadow rounded-lg p-4 mb-4">
+          {title && (
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{title}</h2>
+          )}
+          {description && (
+            <p className="text-xs text-gray-500 mb-2">{description}</p>
+          )}
+
+          {/* Compact stripe: [quiz size / left] [navigation / center] [eye icon / right] */}
+          <div className="flex items-center justify-between gap-2 mb-3">
+            <div className="flex-1 flex items-center">
+              {headerExtra ?? null}
+            </div>
+            <div className="flex items-center space-x-1 flex-shrink-0">
+              <button
+                type="button"
+                onClick={onPrev}
+                disabled={isPrevDisabled}
+                className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                title="Previous item"
+              >
+                <ChevronLeftIcon className="h-5 w-5" />
+              </button>
+              <span className="text-sm text-gray-500 min-w-[72px] text-center">
+                {currentIndex + 1} of {totalCount}
+              </span>
+              <button
+                type="button"
+                onClick={onNext}
+                disabled={isNextDisabled}
+                className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                title="Next item"
+              >
+                <ChevronRightIcon className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="flex-1 flex items-center justify-end">
+              {currentItem ? (
                 <Link
                   to={itemDetailHref ?? `/items/${currentItem.id}`}
-                  className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md"
+                  className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-md"
                   title="View item details"
                 >
                   <EyeIcon className="h-5 w-5" />
                 </Link>
+              ) : (
+                <span className="w-8" />
               )}
-            </div>
-          )}
-          {description && (
-            <p className="text-xs text-gray-500 mb-4">{description}</p>
-          )}
-          {headerExtra}
-
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <button
-                  type="button"
-                  onClick={onPrev}
-                  disabled={isPrevDisabled}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Previous item"
-                >
-                  <ChevronLeftIcon className="h-5 w-5" />
-                </button>
-                <span className="text-sm text-gray-500 min-w-[80px] text-center">
-                  {currentIndex + 1} of {totalCount}
-                </span>
-                <button
-                  type="button"
-                  onClick={onNext}
-                  disabled={isNextDisabled}
-                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Next item"
-                >
-                  <ChevronRightIcon className="h-5 w-5" />
-                </button>
-              </div>
             </div>
           </div>
 
           {currentItem && (
-            <div className="space-y-4">
+            <div className="space-y-3">
               {children}
 
               {showRatingsAndCollections && (
@@ -188,7 +187,7 @@ export function StudyShell({
             </div>
           )}
 
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-between mt-4">
             <button
               type="button"
               onClick={onPrev}

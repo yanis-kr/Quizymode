@@ -2,7 +2,11 @@
  * Renders a single item in Explore (Flashcards) mode: question face-up; tap/click flips to answer + explanation.
  */
 import { useEffect, useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
+
+/** Characters beyond which the explanation is truncated with a "Show more" toggle. */
+const EXPLANATION_CLAMP_THRESHOLD = 220;
 
 export interface ExploreRendererProps {
   item: ItemResponse;
@@ -10,58 +14,99 @@ export interface ExploreRendererProps {
 
 export function ExploreRenderer({ item }: ExploreRendererProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [explanationExpanded, setExplanationExpanded] = useState(false);
 
   useEffect(() => {
     setIsFlipped(false);
+    setExplanationExpanded(false);
   }, [item.id]);
 
   const explanationTrimmed = item.explanation?.trim() ?? "";
   const hasExplanation = explanationTrimmed.length > 0;
+  const isLongExplanation = explanationTrimmed.length > EXPLANATION_CLAMP_THRESHOLD;
 
   return (
     <div className="mx-auto max-w-2xl">
-      <button
-        type="button"
-        onClick={() => setIsFlipped((f) => !f)}
-        aria-expanded={isFlipped}
-        aria-label={isFlipped ? "Show question" : "Show answer and explanation"}
-        className="group w-full rounded-xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-      >
-        <div className="relative min-h-[12rem] w-full [perspective:1200px]">
-          <div
-            className={`relative min-h-[12rem] w-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] ${
-              isFlipped ? "[transform:rotateY(180deg)]" : ""
-            }`}
-          >
-            {/* Front: question */}
-            <div
-              className="absolute inset-0 flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm [backface-visibility:hidden]"
-              aria-hidden={isFlipped}
-              data-testid="flashcard-front"
-            >
-              <p className="text-sm font-medium text-gray-500">Question</p>
-              <p className="mt-2 flex-1 text-lg text-gray-900">{item.question}</p>
-              <p className="mt-4 text-xs text-gray-400">Click the card to reveal the answer</p>
-            </div>
+      {/*
+        Outer container sets the minimum card height. Whichever face is
+        currently visible is in normal document flow (drives height); the
+        hidden face is pulled out of flow with absolute positioning so it
+        doesn't affect layout.
+      */}
+      <div className="relative min-h-[12rem]">
 
-            {/* Back: answer + explanation */}
-            <div
-              className="absolute inset-0 flex flex-col rounded-xl border border-indigo-100 bg-indigo-50/80 p-6 shadow-sm [backface-visibility:hidden] [transform:rotateY(180deg)]"
-              aria-hidden={!isFlipped}
-              data-testid="flashcard-back"
-            >
-              <p className="text-sm font-medium text-gray-500">Answer</p>
-              <p className="mt-2 text-lg font-semibold text-gray-900">{item.correctAnswer}</p>
-              {hasExplanation && (
-                <div className="mt-4 border-t border-indigo-200/80 pt-4">
-                  <p className="text-sm font-medium text-gray-500">Explanation</p>
-                  <p className="mt-2 text-gray-800">{explanationTrimmed}</p>
-                </div>
+        {/* ── Front face: question ── */}
+        <div
+          className={`rounded-xl border border-gray-200 bg-white shadow-sm transition-opacity duration-300 ${
+            isFlipped ? "absolute inset-0 opacity-0 pointer-events-none select-none" : "opacity-100"
+          }`}
+          aria-hidden={isFlipped}
+          data-testid="flashcard-front"
+        >
+          <button
+            type="button"
+            onClick={() => setIsFlipped(true)}
+            aria-expanded={false}
+            aria-label="Show answer and explanation"
+            className="w-full rounded-xl p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          >
+            <p className="text-sm font-medium text-gray-500">Question</p>
+            <p className="mt-2 flex-1 text-lg text-gray-900">{item.question}</p>
+            <p className="mt-4 text-xs text-gray-400">Click the card to reveal the answer</p>
+          </button>
+        </div>
+
+        {/* ── Back face: answer + explanation ── */}
+        <div
+          className={`rounded-xl border border-indigo-100 bg-indigo-50/80 shadow-sm transition-opacity duration-300 ${
+            !isFlipped ? "absolute inset-0 opacity-0 pointer-events-none select-none" : "opacity-100"
+          }`}
+          aria-hidden={!isFlipped}
+          data-testid="flashcard-back"
+        >
+          {/* Tapping the answer section flips back to the question */}
+          <button
+            type="button"
+            onClick={() => setIsFlipped(false)}
+            aria-expanded={isFlipped}
+            aria-label="Show question"
+            className="w-full rounded-t-xl px-6 pb-2 pt-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          >
+            <p className="text-sm font-medium text-gray-500">Answer</p>
+            <p className="mt-2 text-lg font-semibold text-gray-900">{item.correctAnswer}</p>
+            <p className="mt-2 text-xs text-gray-400">Click to show question</p>
+          </button>
+
+          {hasExplanation && (
+            <div className="border-t border-indigo-200/80 px-6 pb-6 pt-4">
+              <p className="text-sm font-medium text-gray-500">Explanation</p>
+              <p
+                className={`mt-2 text-gray-800 ${
+                  isLongExplanation && !explanationExpanded ? "line-clamp-3" : ""
+                }`}
+              >
+                {explanationTrimmed}
+              </p>
+              {isLongExplanation && (
+                <button
+                  type="button"
+                  onClick={() => setExplanationExpanded((e) => !e)}
+                  className="mt-2 flex items-center gap-1 text-xs font-medium text-indigo-600 hover:text-indigo-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-indigo-500 rounded"
+                >
+                  {explanationExpanded ? "Show less" : "Show more"}
+                  <ChevronDownIcon
+                    className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                      explanationExpanded ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
               )}
             </div>
-          </div>
+          )}
+
+          {!hasExplanation && <div className="pb-4" />}
         </div>
-      </button>
+      </div>
     </div>
   );
 }

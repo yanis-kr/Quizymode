@@ -4,8 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
 import { categoriesApi } from "@/api/categories";
-import { buildCollectionStudyPath } from "@/utils/collectionPath";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import {
+  featuredCollectionCards,
   featuredSetCards,
   HOME_SAMPLE_COLLECTION_ID,
   HOME_SAMPLE_COLLECTION_NAME,
@@ -50,116 +51,168 @@ const HomePage = () => {
         }}
       />
 
-      <div className="overflow-hidden bg-slate-950 text-white">
-        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)]">
-          <div className="absolute inset-0 opacity-30">
+      <div className="bg-slate-950 text-white">
+        <section className="relative bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)]">
+          <div className="absolute inset-0 pointer-events-none opacity-30">
             <div className="absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5" />
             <div className="absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl" />
             <div className="absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl" />
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.92)_100%)]" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 py-2 sm:px-6 xl:h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-4rem)] lg:px-8 lg:py-2">
-            <div className="flex flex-col gap-2.5 xl:grid xl:h-full xl:min-h-0 xl:grid-rows-[minmax(0,0.21fr)_minmax(0,0.59fr)_minmax(0,0.2fr)]">
-              <section className="rounded-[24px] border border-white/12 bg-white/8 p-3 shadow-2xl shadow-slate-950/30 backdrop-blur lg:flex lg:items-center lg:justify-between lg:gap-6 lg:px-5 lg:py-3 xl:min-h-0">
-                <div className="max-w-3xl">
-                  <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
-                    Build, share, and study your own quizzes.
-                  </h1>
-                  <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
-                    Browse a vast public question bank, upload your own questions, share collections, and turn study guides into private practice sets with AI-assisted import.
-                  </p>
-                </div>
-                <div className="mt-3 flex shrink-0 items-center lg:mt-0">
-                  <Link
-                    to={buildCollectionStudyPath(
-                      "quiz",
-                      HOME_SAMPLE_COLLECTION_ID,
-                      HOME_SAMPLE_COLLECTION_NAME
-                    )}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 sm:w-auto"
-                  >
-                    Try Sample Collection
-                    <ArrowRightIcon className="h-4 w-4" />
-                  </Link>
-                </div>
-              </section>
+          <div className="relative mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8 flex flex-col gap-3">
 
-              <section className="rounded-[26px] bg-[linear-gradient(180deg,rgba(248,250,252,0.98)_0%,rgba(239,246,255,0.98)_100%)] p-4 text-slate-950 shadow-xl shadow-slate-950/25 lg:px-5 lg:py-4 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
-                <div className="flex items-end justify-between gap-3">
-                  <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Explore Categories</h2>
-                  <Link to="/categories" className="text-sm font-semibold text-sky-700 transition hover:text-sky-900">
-                    View all
-                  </Link>
+            {/* ── Hero card ── */}
+            <section className="rounded-[24px] border border-white/12 bg-white/8 p-3 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">
+              <div className="max-w-3xl">
+                <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
+                  Build, share, and study your own quizzes.
+                </h1>
+                <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
+                  Browse a vast public question bank, upload your own questions, share collections, and turn study guides into private practice sets with AI-assisted import.
+                </p>
+              </div>
+              <div className="mt-3 flex shrink-0 items-center sm:mt-0">
+                <Link
+                  to={buildCollectionStudyPath(
+                    "quiz",
+                    HOME_SAMPLE_COLLECTION_ID,
+                    HOME_SAMPLE_COLLECTION_NAME
+                  )}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 sm:w-auto"
+                >
+                  Try Sample Collection
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+              </div>
+            </section>
+
+            {/* ── Categories lane ── */}
+            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+              <div className="mb-1.5 flex items-center justify-between gap-3">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                  Categories
                 </div>
+                <Link
+                  to="/categories"
+                  className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
+                >
+                  Show all
+                  <ArrowRightIcon className="h-3 w-3" />
+                </Link>
+              </div>
 
-                <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3 xl:min-h-0 xl:grid-cols-4 xl:grid-rows-3">
-                  {homeCategoryCards.map((category) => {
-                    const liveCount = countsByCategory.get(category.slug);
+              {/* Horizontal carousel: 2 visible by default, 3 on md, 4 on xl */}
+              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {homeCategoryCards.map((category) => {
+                  const liveCount = countsByCategory.get(category.slug);
 
-                    return (
-                      <Link
-                        key={category.slug}
-                        to={`/categories/${category.slug}`}
-                        className="group relative isolate overflow-hidden rounded-[22px] border border-slate-200/80 bg-slate-900 shadow-md shadow-slate-300/20 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-                      >
-                        <img
-                          src={category.image}
-                          alt=""
-                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.04)_0%,rgba(2,6,23,0.3)_42%,rgba(2,6,23,0.88)_100%)]" />
-                        <div className="relative flex h-full min-h-[125px] flex-col justify-between p-3.5 text-white sm:min-h-[149px] xl:min-h-0">
-                          <div className="flex justify-end">
-                            {liveCount != null && (
-                              <div className="rounded-full border border-white/18 bg-slate-950/45 px-3 py-1 text-xs font-semibold text-sky-100 backdrop-blur">
-                                {formatItemCount(liveCount)}
-                              </div>
-                            )}
-                          </div>
-                          <div className="flex items-end justify-between gap-2">
-                            <h3 className="text-lg font-semibold leading-tight tracking-tight sm:text-xl lg:text-[1.225rem]">
-                              {category.name}
-                            </h3>
-                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
-
-              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25 xl:grid xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)]">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Quick Starts</div>
-                </div>
-
-                <div className="mt-2 flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {featuredSetCards.map((set) => (
+                  return (
                     <Link
-                      key={set.id}
-                      to={set.path}
-                      className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                      key={category.slug}
+                      to={`/categories/${category.slug}`}
+                      className="group relative min-w-0 shrink-0 overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50
+                        basis-[calc(50%-0.3125rem)] md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
                     >
                       <img
-                        src={set.image}
+                        src={category.image}
                         alt=""
                         className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
-                      <div className="relative flex h-full min-h-[104px] flex-col justify-between p-3 sm:min-h-[124px] xl:min-h-0">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">{set.eyebrow}</div>
+                      <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 text-white sm:min-h-[96px]">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
+                          {liveCount != null ? formatItemCount(liveCount) : ""}
+                        </div>
                         <div className="flex items-center justify-between gap-2">
-                          <h3 className="text-sm font-semibold text-white">{set.title}</h3>
+                          <h3 className="text-sm font-semibold text-white">{category.name}</h3>
                           <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* ── Featured Sets lane ── */}
+            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+              <div className="mb-1.5 flex items-center justify-between gap-3">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                  Featured Sets
+                </div>
+              </div>
+
+              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {featuredSetCards.map((set) => (
+                  <Link
+                    key={set.id}
+                    to={set.path}
+                    className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                  >
+                    <img
+                      src={set.image}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                    <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                      <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
+                        {set.eyebrow}
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <h3 className="text-sm font-semibold text-white">{set.title}</h3>
+                        <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* ── Featured Collections lane ── */}
+            {featuredCollectionCards.length > 0 && (
+              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+                <div className="mb-1.5 flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                    Featured Collections
+                  </div>
+                </div>
+
+                <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {featuredCollectionCards.map((collection) => (
+                    <Link
+                      key={collection.id}
+                      to={buildCollectionPath(collection.id, collection.name)}
+                      className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                    >
+                      <img
+                        src={collection.image}
+                        alt=""
+                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                      <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
+                          {collection.eyebrow}
+                        </div>
+                        <div>
+                          <div className="flex items-center justify-between gap-2">
+                            <h3 className="text-sm font-semibold text-white">{collection.name}</h3>
+                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                          </div>
+                          {collection.description && (
+                            <p className="mt-0.5 text-xs text-slate-300 line-clamp-2">
+                              {collection.description}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </Link>
                   ))}
                 </div>
               </section>
-            </div>
+            )}
+
           </div>
         </section>
       </div>

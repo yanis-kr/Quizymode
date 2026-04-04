@@ -100,6 +100,8 @@ const QuizModePage = () => {
   );
   /** Quiz uses random N items (default 10); changing this refetches items */
   const [quizSize, setQuizSize] = useState(10);
+  /** Controlled display value for the quiz size input; committed on blur */
+  const [quizSizeInput, setQuizSizeInput] = useState("10");
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);
@@ -112,8 +114,12 @@ const QuizModePage = () => {
   /** Category/global quiz uses random N items; changing size must refetch and drop session-cached lists. */
   const handleQuizSizeChange = (raw: string) => {
     const n = parseInt(raw, 10);
-    if (Number.isNaN(n)) return;
+    if (Number.isNaN(n)) {
+      setQuizSizeInput(String(quizSize));
+      return;
+    }
     const next = Math.min(1000, Math.max(1, n));
+    setQuizSizeInput(String(next));
     if (collectionId) {
       setQuizSize(next);
       return;
@@ -738,7 +744,7 @@ const QuizModePage = () => {
     : null;
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="px-4 py-3 sm:px-0">
       <ScopeSecondaryBar
         scopeType={collectionId ? "collection" : "category"}
         activeMode="quiz"
@@ -900,20 +906,18 @@ const QuizModePage = () => {
         }
         headerExtra={
           !collectionId ? (
-            <div className="flex items-center gap-4 mb-4 flex-wrap">
-              <label className="flex items-center gap-2 text-sm text-gray-700">
-                <span>Quiz size:</span>
-                <input
-                  type="number"
-                  min={1}
-                  max={1000}
-                  value={quizSize}
-                  onChange={(e) => handleQuizSizeChange(e.target.value)}
-                  className="w-20 rounded-md border border-gray-300 px-2 py-1 text-sm"
-                />
-                <span className="text-gray-500">items (change refetches)</span>
-              </label>
-            </div>
+            <label className="flex items-center gap-2 text-sm text-gray-700">
+              <span>Quiz size:</span>
+              <input
+                type="number"
+                min={1}
+                max={1000}
+                value={quizSizeInput}
+                onChange={(e) => setQuizSizeInput(e.target.value)}
+                onBlur={(e) => handleQuizSizeChange(e.target.value)}
+                className="w-16 rounded-md border border-gray-300 px-2 py-1 text-sm"
+              />
+            </label>
           ) : undefined
         }
         currentIndex={currentIndex}

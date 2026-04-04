@@ -53,7 +53,7 @@ describe("HomePage", () => {
         name: /build, share, and study your own quizzes/i,
       })
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /explore categories/i })).toBeInTheDocument();
+    expect(screen.getByText(/categories/i, { selector: "div" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /exams/i })).toHaveAttribute("href", "/categories/exams");
     expect(screen.getByRole("link", { name: /aws saa-c03/i })).toHaveAttribute(
       "href",

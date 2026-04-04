@@ -59,6 +59,14 @@ export interface FeaturedSetCard {
   image: string;
 }
 
+export interface FeaturedCollectionCard {
+  id: string;
+  name: string;
+  eyebrow: string;
+  description: string;
+  image: string;
+}
+
 const categoryDescriptions = new Map<string, string>([
   ["exams", "Certification prep, standardized tests, and professional exam drills."],
   ["tech", "Programming, cloud, security, systems, and modern engineering topics."],
@@ -74,13 +82,43 @@ const categoryDescriptions = new Map<string, string>([
   ["trivia", "Movies, music, pop culture, brands, games, and high-energy fun facts."],
 ]);
 
-export const homeCategoryCards: HomeCategoryCard[] = categoryThemes.map((theme) => ({
-  slug: theme.slug,
-  name: theme.name,
-  description: categoryDescriptions.get(theme.slug) ?? "",
-  image: getCategoryThemeBySlug(theme.slug).image,
-}));
+/**
+ * Order in which categories are shown in the home page carousel.
+ * The first four are always fully visible on a full-screen desktop layout.
+ * Add or reorder slugs here to change the home page category presentation.
+ */
+const HOME_CATEGORY_ORDER = [
+  "exams",
+  "trivia",
+  "history",
+  "geography",
+  // remaining categories follow in their natural order
+];
 
+const allCategorySlugs = categoryThemes.map((t) => t.slug);
+const orderedSlugs = [
+  ...HOME_CATEGORY_ORDER,
+  ...allCategorySlugs.filter((s) => !HOME_CATEGORY_ORDER.includes(s)),
+];
+
+export const homeCategoryCards: HomeCategoryCard[] = orderedSlugs
+  .map((slug) => {
+    const theme = getCategoryThemeBySlug(slug);
+    if (!theme) return null;
+    return {
+      slug: theme.slug,
+      name: theme.name,
+      description: categoryDescriptions.get(theme.slug) ?? "",
+      image: theme.image,
+    };
+  })
+  .filter((c): c is HomeCategoryCard => c !== null);
+
+/**
+ * Featured keyword sets shown on the home page.
+ * Each entry links to a pre-filtered quiz URL.
+ * Edit this array to add, remove, or reorder featured sets.
+ */
 export const featuredSetCards: FeaturedSetCard[] = [
   {
     id: "aws-saa-c03",
@@ -88,12 +126,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Cloud Cert",
     title: "AWS SAA-C03",
     description: "A fast set for architecture basics, S3, Lambda, and common cert patterns.",
-    image: createFeaturedSetArt({
-      label: "AWS SAA",
-      primary: "#111827",
-      secondary: "#1d4ed8",
-      accent: "#60a5fa",
-    }),
+    image: getCategoryThemeBySlug("exams").image,
   },
   {
     id: "soccer-world-cup",
@@ -101,12 +134,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Competition",
     title: "World Cup Starter",
     description: "Teams, substitutions, tournament rules, and a clean on-ramp into soccer quizzes.",
-    image: createFeaturedSetArt({
-      label: "WORLD CUP",
-      primary: "#17240e",
-      secondary: "#4d7c0f",
-      accent: "#bef264",
-    }),
+    image: getCategoryThemeBySlug("sports").image,
   },
   {
     id: "tropical-island",
@@ -114,12 +142,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Survival",
     title: "Tropical Island Survival",
     description: "Water, shelter, signaling, and the practical decisions that matter first.",
-    image: createFeaturedSetArt({
-      label: "SURVIVAL",
-      primary: "#0a2415",
-      secondary: "#15803d",
-      accent: "#86efac",
-    }),
+    image: getCategoryThemeBySlug("nature").image,
   },
   {
     id: "solar-system",
@@ -127,12 +150,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Space",
     title: "Solar System Sprint",
     description: "Planets, scale, motion, and the easy wins every astronomy round needs.",
-    image: createFeaturedSetArt({
-      label: "SOLAR",
-      primary: "#120c2f",
-      secondary: "#4338ca",
-      accent: "#a78bfa",
-    }),
+    image: getCategoryThemeBySlug("science").image,
   },
   {
     id: "world-capitals",
@@ -140,12 +158,7 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Maps",
     title: "World Capitals Express",
     description: "A quick route through major capitals and the country-city pairs worth knowing.",
-    image: createFeaturedSetArt({
-      label: "CAPITALS",
-      primary: "#082032",
-      secondary: "#0284c7",
-      accent: "#7dd3fc",
-    }),
+    image: getCategoryThemeBySlug("geography").image,
   },
   {
     id: "spanish-vocab",
@@ -153,11 +166,35 @@ export const featuredSetCards: FeaturedSetCard[] = [
     eyebrow: "Language",
     title: "Spanish Core Vocab",
     description: "Greetings, everyday words, and beginner-friendly recall reps for quick practice.",
+    image: getCategoryThemeBySlug("languages").image,
+  },
+];
+
+/**
+ * Featured public collections shown on the home page.
+ * Each entry references a real collection by ID and name.
+ * Edit this array to add, remove, or reorder featured collections.
+ * To find a collection ID: open the collection in the app — the UUID appears in the URL.
+ */
+export const featuredCollectionCards: FeaturedCollectionCard[] = [
+  {
+    id: HOME_SAMPLE_COLLECTION_ID,
+    name: HOME_SAMPLE_COLLECTION_NAME,
+    eyebrow: "Starter",
+    description: "A public demo collection — great for getting started with Quizymode.",
     image: createFeaturedSetArt({
-      label: "SPANISH",
-      primary: "#24124a",
-      secondary: "#7c3aed",
-      accent: "#c4b5fd",
+      label: "SAMPLE",
+      primary: "#1e1b4b",
+      secondary: "#4338ca",
+      accent: "#a5b4fc",
     }),
   },
+  // Add more featured collections below. Example:
+  // {
+  //   id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  //   name: "My Collection Name",
+  //   eyebrow: "Category label",
+  //   description: "Short description shown on the card.",
+  //   image: createFeaturedSetArt({ label: "LABEL", primary: "#...", secondary: "#...", accent: "#..." }),
+  // },
 ];
