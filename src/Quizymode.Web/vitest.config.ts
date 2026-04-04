@@ -17,9 +17,15 @@ export default defineConfig({
     globals: true,
     coverage: {
       provider: "v8",
-      reporter: ["text", "json-summary", "json"],
+      reporter: ["text", "json-summary", "json", "cobertura"],
       include: ["src/**/*.{ts,tsx}"],
-      exclude: ["src/**/*.{test,spec}.{ts,tsx}", "src/test/**"],
+      exclude: [
+        "src/**/*.{test,spec}.{ts,tsx}",
+        "src/test/**",
+        "src/**/*.d.ts",
+        "src/main.tsx",
+        "src/**/index.ts",
+      ],
       reportsDirectory: "coverage",
     },
   },

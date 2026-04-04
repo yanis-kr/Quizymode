@@ -165,13 +165,22 @@ jobs:
               console.log(`Skipping OpenAPI drift comment cleanup: ${error.message}`);
             }
 
-      - name: Run tests with coverage
+      - name: Run architecture tests
+        run: |
+          dotnet test tests/Quizymode.Api.Tests/Quizymode.Api.Tests.csproj \
+            --no-restore \
+            --verbosity normal \
+            --filter "FullyQualifiedName~Architecture" \
+            --logger "trx;LogFileName=architecture-tests.trx" \
+            --results-directory TestResults/architecture
+
+      - name: Run backend tests with coverage
         run: dotnet test Quizymode.sln --no-restore --verbosity normal --collect:"XPlat Code Coverage" --settings tests/Quizymode.Api.Tests/coverlet.runsettings --results-directory TestResults/coverage
 
       - name: Summarize coverage
         id: summarize_coverage
         shell: pwsh
-        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath src/Quizymode.Web/coverage/coverage-summary.json
+        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath src/Quizymode.Web/coverage/coverage-summary.json -ArchitectureResultsPath TestResults/architecture/architecture-tests.trx
 
       - name: Comment on coverage summary
         if: github.event_name == 'pull_request'

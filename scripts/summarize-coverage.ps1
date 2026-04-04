@@ -2,7 +2,9 @@ param(
     [string]$ResultsDirectory = "TestResults/coverage",
     [string]$MarkdownOutputPath = "coverage-summary.md",
     [string]$JsonOutputPath = "coverage-summary.json",
-    [string]$FrontendCoverageJsonPath = ""
+    [string]$FrontendCoverageJsonPath = "",
+    [string]$ArchitectureResultsPath = "",
+    [string[]]$ExcludedProjects = @("Quizymode.ServiceDefaults")
 )
 
 $ErrorActionPreference = "Stop"
@@ -18,20 +20,6 @@ function Format-Percent {
     }
 
     return "{0:N2}%" -f (($Numerator / $Denominator) * 100.0)
-}
-
-function Get-IntAttributeValue {
-    param(
-        [System.Xml.XmlElement]$Element,
-        [string]$AttributeName
-    )
-
-    $raw = $Element.GetAttribute($AttributeName)
-    if ([string]::IsNullOrWhiteSpace($raw)) {
-        return 0
-    }
-
-    return [int]$raw
 }
 
 function Get-BranchCounts {
@@ -74,6 +62,13 @@ function Get-PackageMetrics {
         $filename = $classElement.GetAttribute("filename")
         if ([string]::IsNullOrWhiteSpace($filename)) {
             $filename = $classElement.GetAttribute("name")
+        }
+
+        if (
+            $filename -match '[\\/](obj|Migrations)[\\/]' -or
+            $filename -like '*.generated.cs'
+        ) {
+            continue
         }
 
         $lineElements = @($classElement.SelectNodes('.//line'))
@@ -133,29 +128,108 @@ function Get-PackageMetrics {
     }
 }
 
+function Format-Duration {
+    param(
+        [TimeSpan]$Duration
+    )
+
+    if ($Duration.TotalMinutes -ge 1) {
+        return "{0:N2} min" -f $Duration.TotalMinutes
+    }
+
+    return "{0:N2} s" -f $Duration.TotalSeconds
+}
+
+function Get-ArchitectureSummary {
+    param(
+        [string]$ResultsPath
+    )
+
+    if ([string]::IsNullOrWhiteSpace($ResultsPath) -or -not (Test-Path $ResultsPath)) {
+        return $null
+    }
+
+    [xml]$trx = Get-Content -Path $ResultsPath
+    $ns = [System.Xml.XmlNamespaceManager]::new($trx.NameTable)
+    $ns.AddNamespace("t", "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")
+
+    $countersNode = $trx.SelectSingleNode("/t:TestRun/t:ResultSummary/t:Counters", $ns)
+    if ($null -eq $countersNode) {
+        return $null
+    }
+
+    $timesNode = $trx.SelectSingleNode("/t:TestRun/t:Times", $ns)
+    $duration = [TimeSpan]::Zero
+    if ($null -ne $timesNode) {
+        $start = [datetimeoffset]$timesNode.GetAttribute("start")
+        $finish = [datetimeoffset]$timesNode.GetAttribute("finish")
+        $duration = $finish - $start
+    }
+
+    $suiteMap = @{}
+    $resultNodes = @($trx.SelectNodes("/t:TestRun/t:Results/t:UnitTestResult", $ns))
+    foreach ($resultNode in $resultNodes) {
+        $testName = $resultNode.GetAttribute("testName")
+        $parts = $testName.Split(".")
+        $suiteName = if ($parts.Length -ge 2) { $parts[$parts.Length - 2] } else { "Architecture" }
+        $outcome = $resultNode.GetAttribute("outcome")
+
+        if (-not $suiteMap.ContainsKey($suiteName)) {
+            $suiteMap[$suiteName] = [ordered]@{
+                Name = $suiteName
+                Passed = 0
+                Failed = 0
+                Total = 0
+            }
+        }
+
+        $suiteMap[$suiteName].Total += 1
+        if ($outcome -eq "Passed") {
+            $suiteMap[$suiteName].Passed += 1
+        }
+        else {
+            $suiteMap[$suiteName].Failed += 1
+        }
+    }
+
+    return [pscustomobject]@{
+        Total = [int]$countersNode.GetAttribute("total")
+        Passed = [int]$countersNode.GetAttribute("passed")
+        Failed = [int]$countersNode.GetAttribute("failed")
+        Executed = [int]$countersNode.GetAttribute("executed")
+        Duration = Format-Duration -Duration $duration
+        Suites = @(
+            $suiteMap.Values |
+                Sort-Object Name |
+                ForEach-Object {
+                    [pscustomobject]@{
+                        Name = $_.Name
+                        Passed = $_.Passed
+                        Failed = $_.Failed
+                        Total = $_.Total
+                    }
+                }
+        )
+    }
+}
+
 $coverageFiles = @(Get-ChildItem -Path $ResultsDirectory -Recurse -Filter "coverage.cobertura.xml" -File | Sort-Object LastWriteTimeUtc)
 
 if ($coverageFiles.Count -eq 0) {
     throw "No coverage.cobertura.xml files found under '$ResultsDirectory'."
 }
 
-$totals = [ordered]@{
-    LinesCovered = 0
-    LinesValid = 0
-    BranchesCovered = 0
-    BranchesValid = 0
-}
-
 $projectMap = @{}
+$excludedProjectSet = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+foreach ($excludedProject in $ExcludedProjects) {
+    if (-not [string]::IsNullOrWhiteSpace($excludedProject)) {
+        $null = $excludedProjectSet.Add($excludedProject)
+    }
+}
 
 foreach ($coverageFile in $coverageFiles) {
     [xml]$xml = Get-Content -Path $coverageFile.FullName
     $coverageNode = $xml.coverage
-
-    $totals.LinesCovered += Get-IntAttributeValue -Element $coverageNode -AttributeName "lines-covered"
-    $totals.LinesValid += Get-IntAttributeValue -Element $coverageNode -AttributeName "lines-valid"
-    $totals.BranchesCovered += Get-IntAttributeValue -Element $coverageNode -AttributeName "branches-covered"
-    $totals.BranchesValid += Get-IntAttributeValue -Element $coverageNode -AttributeName "branches-valid"
 
     $packageNodes = @($coverageNode.packages.package)
     foreach ($packageNode in $packageNodes) {
@@ -164,6 +238,10 @@ foreach ($coverageFile in $coverageFiles) {
         }
 
         $packageMetrics = Get-PackageMetrics -PackageElement $packageNode
+        if ($excludedProjectSet.Contains($packageMetrics.Name)) {
+            continue
+        }
+
         if (-not $projectMap.ContainsKey($packageMetrics.Name)) {
             $projectMap[$packageMetrics.Name] = [ordered]@{
                 Name = $packageMetrics.Name
@@ -178,7 +256,7 @@ foreach ($coverageFile in $coverageFiles) {
         $projectMap[$packageMetrics.Name].LinesValid += $packageMetrics.LinesValid
         $projectMap[$packageMetrics.Name].BranchesCovered += $packageMetrics.BranchesCovered
         $projectMap[$packageMetrics.Name].BranchesValid += $packageMetrics.BranchesValid
-    }
+        }
 }
 
 $projects = @(
@@ -196,6 +274,17 @@ $projects = @(
             }
         }
 )
+
+if ($projects.Count -eq 0) {
+    throw "No coverage projects were found after exclusions."
+}
+
+$totals = [ordered]@{
+    LinesCovered = ($projects | Measure-Object LinesCovered -Sum).Sum
+    LinesValid = ($projects | Measure-Object LinesValid -Sum).Sum
+    BranchesCovered = ($projects | Measure-Object BranchesCovered -Sum).Sum
+    BranchesValid = ($projects | Measure-Object BranchesValid -Sum).Sum
+}
 
 $overallLineRate = Format-Percent -Numerator $totals.LinesCovered -Denominator $totals.LinesValid
 $overallBranchRate = Format-Percent -Numerator $totals.BranchesCovered -Denominator $totals.BranchesValid
@@ -216,6 +305,26 @@ foreach ($project in $projects) {
     $lineRateDisplay = if ($null -ne $project.LineRate) { "{0:N2}%" -f $project.LineRate } else { "n/a" }
     $branchRateDisplay = if ($null -ne $project.BranchRate) { "{0:N2}%" -f $project.BranchRate } else { "n/a" }
     $markdownLines.Add("| $($project.Name) | $lineRateDisplay | $($project.LinesCovered)/$($project.LinesValid) | $branchRateDisplay | $($project.BranchesCovered)/$($project.BranchesValid) |")
+}
+
+$architectureSummary = Get-ArchitectureSummary -ResultsPath $ArchitectureResultsPath
+if ($null -ne $architectureSummary) {
+    $markdownLines.Add("")
+    $markdownLines.Add("## Architecture Tests")
+    $markdownLines.Add("")
+    $markdownLines.Add("- Total: **$($architectureSummary.Total)**")
+    $markdownLines.Add("- Passed: **$($architectureSummary.Passed)**")
+    $markdownLines.Add("- Failed: **$($architectureSummary.Failed)**")
+    $markdownLines.Add("- Duration: **$($architectureSummary.Duration)**")
+
+    if ($architectureSummary.Suites.Count -gt 0) {
+        $markdownLines.Add("")
+        $markdownLines.Add("| Suite | Passed | Failed | Total |")
+        $markdownLines.Add("| --- | ---: | ---: | ---: |")
+        foreach ($suite in $architectureSummary.Suites) {
+            $markdownLines.Add("| $($suite.Name) | $($suite.Passed) | $($suite.Failed) | $($suite.Total) |")
+        }
+    }
 }
 
 $frontendSection = ""
@@ -269,6 +378,7 @@ $summary = [pscustomobject]@{
         coverageFiles = $coverageFiles.Count
     }
     projects = $projects
+    architecture = $architectureSummary
 }
 
 $markdown | Set-Content -Path $MarkdownOutputPath -Encoding utf8
