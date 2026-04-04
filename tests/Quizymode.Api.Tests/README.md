@@ -6,8 +6,8 @@ This test project provides comprehensive test coverage for the Quizymode API.
 
 ### Test Statistics
 
-- **Total Tests**: 155
-- **Passing**: 155
+- **Total Tests**: 340
+- **Passing**: 340
 - **Failing**: 0
 - **Coverage**: >80% (estimated)
 
@@ -33,6 +33,11 @@ This test project provides comprehensive test coverage for the Quizymode API.
 #### Shared HTTP Tests
 
 - `Shared/Http/CustomResultsTests` - HTTP result mapping tests
+
+#### Architecture Tests
+
+- `Architecture/LayerDependencyTests` - namespace dependency guardrails for shared, data, services, features, and startup wiring
+- `Architecture/VerticalSliceConventionTests` - vertical-slice conventions for endpoints, handlers, registrations, EF configurations, and MVC controller avoidance
 
 ### Running Tests
 
@@ -66,3 +71,4 @@ Tests follow these patterns:
 - Duplicate detection logic
 - Pagination logic
 - Filtering logic
+- Architecture and vertical-slice conventions

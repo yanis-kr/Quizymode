@@ -4,7 +4,7 @@ using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Data.Configurations;
 
-public sealed class CollectionShareConfiguration : IEntityTypeConfiguration<CollectionShare>
+internal sealed class CollectionShareConfiguration : IEntityTypeConfiguration<CollectionShare>
 {
     public void Configure(EntityTypeBuilder<CollectionShare> builder)
     {

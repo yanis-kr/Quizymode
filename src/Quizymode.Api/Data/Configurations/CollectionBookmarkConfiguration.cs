@@ -4,7 +4,7 @@ using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Data.Configurations;
 
-public sealed class CollectionBookmarkConfiguration : IEntityTypeConfiguration<CollectionBookmark>
+internal sealed class CollectionBookmarkConfiguration : IEntityTypeConfiguration<CollectionBookmark>
 {
     public void Configure(EntityTypeBuilder<CollectionBookmark> builder)
     {

@@ -7,8 +7,9 @@
           <Format>json,cobertura</Format>
           <Exclude>[*.Tests]*</Exclude>
           <Exclude>[*.Test]*</Exclude>
+          <Exclude>[Quizymode.ServiceDefaults]*</Exclude>
           <ExcludeByAttribute>Obsolete,GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
-          <ExcludeByFile>**/Migrations/**</ExcludeByFile>
+          <ExcludeByFile>**/Migrations/*.cs,**/*.Designer.cs,**/*Snapshot.cs,**/*.generated.cs,**/obj/**</ExcludeByFile>
           <IncludeDirectory>../../src/Quizymode.Api</IncludeDirectory>
         </Configuration>
       </DataCollector>

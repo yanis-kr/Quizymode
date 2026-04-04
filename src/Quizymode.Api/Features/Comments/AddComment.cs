@@ -1,10 +1,8 @@
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
-using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Comments;
 
@@ -84,67 +82,12 @@ public static class AddComment
         IAuditService auditService,
         CancellationToken cancellationToken)
     {
-        try
-        {
-            if (string.IsNullOrEmpty(userContext.UserId))
-            {
-                return Result.Failure<Response>(
-                    Error.Validation("Comment.UserIdMissing", "User ID is missing"));
-            }
-
-            bool itemExists = await db.Items.AnyAsync(i => i.Id == request.ItemId, cancellationToken);
-            if (!itemExists)
-            {
-                return Result.Failure<Response>(
-                    Error.NotFound("Comment.ItemNotFound", $"Item with id {request.ItemId} not found"));
-            }
-
-            Comment entity = new()
-            {
-                Id = Guid.NewGuid(),
-                ItemId = request.ItemId,
-                Text = request.Text,
-                CreatedBy = userContext.UserId,
-                CreatedAt = DateTime.UtcNow
-            };
-
-            db.Comments.Add(entity);
-            await db.SaveChangesAsync(cancellationToken);
-
-            // Log audit entry
-            if (Guid.TryParse(userContext.UserId, out Guid userId))
-            {
-                await auditService.LogAsync(
-                    AuditAction.CommentCreated,
-                    userId: userId,
-                    entityId: entity.Id,
-                    cancellationToken: cancellationToken);
-            }
-
-            // Fetch user name for response
-            string? userName = null;
-            if (Guid.TryParse(userContext.UserId, out Guid userIdForName))
-            {
-                User? user = await db.Users
-                    .FirstOrDefaultAsync(u => u.Id == userIdForName, cancellationToken);
-                userName = user?.Name;
-            }
-
-            Response response = new(
-                entity.Id.ToString(),
-                entity.ItemId,
-                entity.Text,
-                entity.CreatedBy,
-                userName,
-                entity.CreatedAt);
-
-            return Result.Success(response);
-        }
-        catch (Exception ex)
-        {
-            return Result.Failure<Response>(
-                Error.Problem("Comments.CreateFailed", $"Failed to create comment: {ex.Message}"));
-        }
+        return await AddCommentHandler.HandleAsync(
+            request,
+            db,
+            userContext,
+            auditService,
+            cancellationToken);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration
