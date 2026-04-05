@@ -24,7 +24,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-204",
-    "question": "Which Azure service provides serverless, event-driven compute?",
+    "question": "On the AZ-204 exam, which Azure service provides serverless, event-driven compute?",
     "correctAnswer": "Azure Functions",
     "incorrectAnswers": [
       "Azure Load Balancer",
@@ -224,7 +224,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-204",
-    "question": "Which Azure service is Microsoft's object storage solution for unstructured data?",
+    "question": "On the AZ-204 exam, which Azure service is Microsoft's object storage solution for unstructured data?",
     "correctAnswer": "Azure Blob Storage",
     "incorrectAnswers": [
       "Azure Load Balancer",

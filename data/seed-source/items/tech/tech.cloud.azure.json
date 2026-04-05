@@ -4,7 +4,7 @@
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
-    "question": "What is an Azure Resource Group?",
+    "question": "In Azure cloud architecture, what is an Azure resource group?",
     "correctAnswer": "a container that holds related resources for a solution with shared lifecycle and management scope",
     "incorrectAnswers": [
       "a physical rack in one city only",
@@ -23,7 +23,7 @@
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
-    "question": "What is an Azure Region?",
+    "question": "In Azure cloud architecture, what is an Azure region?",
     "correctAnswer": "a geographic area containing one or more datacenter clusters with defined data residency boundaries",
     "incorrectAnswers": [
       "a single CPU core",

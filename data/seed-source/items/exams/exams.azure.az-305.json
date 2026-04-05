@@ -4,7 +4,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
-    "question": "What is an Azure region?",
+    "question": "On the AZ-305 exam, what is an Azure region?",
     "correctAnswer": "A set of physical facilities that include datacenters and networking infrastructure",
     "incorrectAnswers": [
       "A single availability zone",
@@ -124,7 +124,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
-    "question": "Which Azure service stores secrets, keys, and certificates?",
+    "question": "On the AZ-305 exam, which Azure service stores secrets, keys, and certificates?",
     "correctAnswer": "Azure Key Vault",
     "incorrectAnswers": [
       "Azure Virtual Network",

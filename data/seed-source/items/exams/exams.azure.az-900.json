@@ -4,7 +4,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
-    "question": "What is an Azure region?",
+    "question": "On the AZ-900 exam, what is an Azure region?",
     "correctAnswer": "A set of datacenters deployed within a latency-defined perimeter",
     "incorrectAnswers": [
       "A single virtual machine host",
@@ -184,7 +184,7 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
-    "question": "What is an Azure resource group?",
+    "question": "On the AZ-900 exam, what is an Azure resource group?",
     "correctAnswer": "A container that holds related resources for an Azure solution",
     "incorrectAnswers": [
       "A physical Azure datacenter",

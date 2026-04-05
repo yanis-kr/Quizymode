@@ -23,7 +23,7 @@
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
-    "question": "What does a Deployment controller primarily manage?",
+    "question": "In a DevOps Kubernetes workflow, what does a Deployment controller primarily manage?",
     "correctAnswer": "ReplicaSets and rolling updates of Pod templates",
     "incorrectAnswers": [
       "Only TLS certificates for the cluster",

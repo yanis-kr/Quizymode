@@ -383,7 +383,7 @@ db5dd241-d5b2-46dd-a750-98d13e08a49e,business,strategy,planning,What is a Key Re
 1a1c8f3a-0477-4441-8a56-ac325a8fc9aa,business,strategy,planning,What is a rolling forecast?,data/seed-source/items/business/business.strategy.planning.json
 a799932f-ed92-4874-8a1d-97cfb9d36720,business,strategy,planning,What is scenario planning used for?,data/seed-source/items/business/business.strategy.planning.json
 43bbb402-848d-4ff1-9ca0-4d8fa6acea14,business,strategy,planning,Why align team goals to company strategy?,data/seed-source/items/business/business.strategy.planning.json
-23fb50b2-7157-4721-974a-16e44e49de32,business,strategy,pricing,What does price elasticity of demand measure?,data/seed-source/items/business/business.strategy.pricing.json
+23fb50b2-7157-4721-974a-16e44e49de32,business,strategy,pricing,"In pricing strategy, what does price elasticity of",data/seed-source/items/business/business.strategy.pricing.json
 e10163c1-a578-451c-b5ef-ba42387839f4,business,strategy,pricing,What is a decoy effect in pricing menus?,data/seed-source/items/business/business.strategy.pricing.json
 6715ef21-b2fa-46e9-a1e6-2538466ecb69,business,strategy,pricing,What is cost-plus pricing?,data/seed-source/items/business/business.strategy.pricing.json
 efd4c5ea-01ca-4676-8bcf-4ad74ebcad99,business,strategy,pricing,What is dynamic pricing?,data/seed-source/items/business/business.strategy.pricing.json
@@ -1533,6 +1533,7 @@ bcdffd6a-04d3-425f-81f7-9dabcad860c3,exams,azure,ai-900,Which Azure service acce
 a9cfbbb5-0b5d-452c-aa16-749a8ed1b16a,exams,azure,ai-900,Which Azure service connects enterprise data to AI,data/seed-source/items/exams/exams.azure.ai-900.json
 4b4c87a7-b547-482f-9919-58eb1a29469c,exams,azure,ai-900,Which Azure service provides REST API access to Op,data/seed-source/items/exams/exams.azure.ai-900.json
 721c3682-42cd-4cf7-a1dd-00e05f00b588,exams,azure,ai-900,Which Azure service would you use to ground a chat,data/seed-source/items/exams/exams.azure.ai-900.json
+2822b355-588c-4adf-8d95-700722a246ff,exams,azure,az-104,"On the AZ-104 exam, which Microsoft service provid",data/seed-source/items/exams/exams.azure.az-104.json
 fc0a867a-4dc1-4678-b54f-6ef57c5c46ee,exams,azure,az-104,What do Azure network security groups do?,data/seed-source/items/exams/exams.azure.az-104.json
 0d963ee4-c9b0-4fe0-8262-ec23490f1139,exams,azure,az-104,What does an Azure storage account contain?,data/seed-source/items/exams/exams.azure.az-104.json
 8793adc9-ec96-421d-bf41-61f8c9e90403,exams,azure,az-104,Which Azure feature controls who can access resour,data/seed-source/items/exams/exams.azure.az-104.json
@@ -1544,21 +1545,21 @@ c9345b3d-4552-4d1d-8d88-60677c3d353d,exams,azure,az-104,Which Azure service prov
 5a1a68b6-9ac4-4b06-b6ec-4844bf8bfbf3,exams,azure,az-104,"Which Azure service provides simple, secure, and c",data/seed-source/items/exams/exams.azure.az-104.json
 3369a562-eff3-4135-a645-f10762cade24,exams,azure,az-104,"Which Azure service stores secrets, keys, and cert",data/seed-source/items/exams/exams.azure.az-104.json
 f323cf73-4714-4d5e-acd7-76238d088b5d,exams,azure,az-104,Which Azure service supports disaster recovery for,data/seed-source/items/exams/exams.azure.az-104.json
-2822b355-588c-4adf-8d95-700722a246ff,exams,azure,az-104,Which Microsoft service provides cloud-based ident,data/seed-source/items/exams/exams.azure.az-104.json
+fe1eb148-4c00-4fcb-a6a2-93ae1e1e7ccb,exams,azure,az-204,"On the AZ-204 exam, which Azure service is Microso",data/seed-source/items/exams/exams.azure.az-204.json
+c51a6ff3-e936-4fa3-9be8-774d48a730fe,exams,azure,az-204,"On the AZ-204 exam, which Azure service provides s",data/seed-source/items/exams/exams.azure.az-204.json
 7a87919a-0037-4683-862e-74fbc4be7c1e,exams,azure,az-204,Which Azure database service is a globally distrib,data/seed-source/items/exams/exams.azure.az-204.json
 77d32e82-f2f8-40ab-b1cc-e31b700330d7,exams,azure,az-204,Which Azure feature of Azure Monitor is used for a,data/seed-source/items/exams/exams.azure.az-204.json
 f212c766-0fe9-40f6-a5e8-9ac79cf4dd85,exams,azure,az-204,Which Azure messaging service is a fully managed e,data/seed-source/items/exams/exams.azure.az-204.json
 3d67e7ef-4db5-4ad5-9c83-228afdd2af68,exams,azure,az-204,Which Azure messaging service stores large numbers,data/seed-source/items/exams/exams.azure.az-204.json
 a8d377f0-9818-4f68-b75a-764cef23c070,exams,azure,az-204,Which Azure service centrally manages application ,data/seed-source/items/exams/exams.azure.az-204.json
-fe1eb148-4c00-4fcb-a6a2-93ae1e1e7ccb,exams,azure,az-204,Which Azure service is Microsoft's object storage ,data/seed-source/items/exams/exams.azure.az-204.json
 b7948645-732c-461d-b899-908bc5b11ce6,exams,azure,az-204,Which Azure service is a fully managed publish-sub,data/seed-source/items/exams/exams.azure.az-204.json
 0fb714a9-1f76-4250-aa26-eaa002db99a1,exams,azure,az-204,Which Azure service is a hybrid multicloud managem,data/seed-source/items/exams/exams.azure.az-204.json
 65d9f344-4a51-43a1-8760-0486b9361419,exams,azure,az-204,"Which Azure service lets you run web apps, mobile ",data/seed-source/items/exams/exams.azure.az-204.json
-c51a6ff3-e936-4fa3-9be8-774d48a730fe,exams,azure,az-204,"Which Azure service provides serverless, event-dri",data/seed-source/items/exams/exams.azure.az-204.json
 f5483ac1-fe89-48e2-9b3a-2f9fec32abcf,exams,azure,az-204,Which Azure service runs containerized application,data/seed-source/items/exams/exams.azure.az-204.json
 f0312d78-416c-4e9c-b09e-b2525ecfb152,exams,azure,az-204,"Which Azure service securely stores tokens, passwo",data/seed-source/items/exams/exams.azure.az-204.json
+6719a6b9-9dda-4b98-8fcb-4ee631f915b3,exams,azure,az-305,"On the AZ-305 exam, what is an Azure region?",data/seed-source/items/exams/exams.azure.az-305.json
+0dc1341b-d6af-43dd-9547-f0ba764ab21f,exams,azure,az-305,"On the AZ-305 exam, which Azure service stores sec",data/seed-source/items/exams/exams.azure.az-305.json
 1f149eee-70d5-4a64-8638-a3aee54197e3,exams,azure,az-305,What do Azure availability zones provide?,data/seed-source/items/exams/exams.azure.az-305.json
-6719a6b9-9dda-4b98-8fcb-4ee631f915b3,exams,azure,az-305,What is an Azure region?,data/seed-source/items/exams/exams.azure.az-305.json
 f693a8cf-125e-4943-92ae-afd41c698499,exams,azure,az-305,Which Azure database service is a fully managed No,data/seed-source/items/exams/exams.azure.az-305.json
 d63bedd8-e57f-4571-b6d0-22616f0aaf0a,exams,azure,az-305,Which Azure framework helps review workloads again,data/seed-source/items/exams/exams.azure.az-305.json
 9e33e3f6-2abf-4f21-bd2f-d7c0b05e3a61,exams,azure,az-305,Which Azure service connects enterprise data to AI,data/seed-source/items/exams/exams.azure.az-305.json
@@ -1566,10 +1567,9 @@ d63bedd8-e57f-4571-b6d0-22616f0aaf0a,exams,azure,az-305,Which Azure framework he
 c5973ab2-74e7-4ec6-baa0-41ec9f422aff,exams,azure,az-305,Which Azure service is the deployment and manageme,data/seed-source/items/exams/exams.azure.az-305.json
 1f47b01d-3c28-4c62-ad40-c1bdb088c1d2,exams,azure,az-305,Which Azure service lets you run web apps and REST,data/seed-source/items/exams/exams.azure.az-305.json
 5e00abd1-11d3-4f01-8c48-a3dd4fea8eaf,exams,azure,az-305,Which Azure service provides the fundamental build,data/seed-source/items/exams/exams.azure.az-305.json
-0dc1341b-d6af-43dd-9547-f0ba764ab21f,exams,azure,az-305,"Which Azure service stores secrets, keys, and cert",data/seed-source/items/exams/exams.azure.az-305.json
+70c26af3-d10a-4ac8-800d-71a541f7234e,exams,azure,az-900,"On the AZ-900 exam, what is an Azure region?",data/seed-source/items/exams/exams.azure.az-900.json
+9bc981d4-6d86-4c81-a5cc-87fff0280ea1,exams,azure,az-900,"On the AZ-900 exam, what is an Azure resource grou",data/seed-source/items/exams/exams.azure.az-900.json
 e3a6d89a-5a7e-4c54-ba07-21ff1105d280,exams,azure,az-900,What are Azure availability zones?,data/seed-source/items/exams/exams.azure.az-900.json
-70c26af3-d10a-4ac8-800d-71a541f7234e,exams,azure,az-900,What is an Azure region?,data/seed-source/items/exams/exams.azure.az-900.json
-9bc981d4-6d86-4c81-a5cc-87fff0280ea1,exams,azure,az-900,What is an Azure resource group?,data/seed-source/items/exams/exams.azure.az-900.json
 67a10eed-645b-4137-a664-f12eaf830361,exams,azure,az-900,Which Azure feature provides fine-grained access m,data/seed-source/items/exams/exams.azure.az-900.json
 f5009560-82a0-415b-8f1b-2ab74f92581c,exams,azure,az-900,Which Azure service is Microsoft's unified observa,data/seed-source/items/exams/exams.azure.az-900.json
 7a5b2b3d-9248-4619-868b-cf1bff25d119,exams,azure,az-900,Which Azure service is the fundamental building bl,data/seed-source/items/exams/exams.azure.az-900.json
@@ -1619,13 +1619,13 @@ ab34aa39-5f25-47ea-9c92-2f576307554d,exams,cisco,ccnp,What is the function of a 
 82f95aab-6a80-4e97-bdcc-84ac87066000,exams,cisco,ccnp,What problem does spanning tree address in switche,data/seed-source/items/exams/exams.cisco.ccnp.json
 d989ca71-0a0e-4264-bef6-3f4864580d8b,exams,cisco,ccnp,What type of routing protocol is OSPF?,data/seed-source/items/exams/exams.cisco.ccnp.json
 64b7c885-a3ea-40d5-b898-2e408569f57a,exams,cisco,ccnp,Why is BGP AS_PATH useful for loop prevention?,data/seed-source/items/exams/exams.cisco.ccnp.json
+b11e68db-5ad9-400a-bfe3-679e8ec5ac2c,exams,cisco,cyberops,"On the Cisco CyberOps exam, what is phishing?",data/seed-source/items/exams/exams.cisco.cyberops.json
 8304470c-0041-4b6f-9edd-f9a63fd53719,exams,cisco,cyberops,What does endpoint detection and response (EDR) fo,data/seed-source/items/exams/exams.cisco.cyberops.json
 4ebd63a9-780c-4914-8710-758092cd06bc,exams,cisco,cyberops,What does the principle of least privilege mean?,data/seed-source/items/exams/exams.cisco.cyberops.json
 0702b800-87b3-4b74-a37f-a5fc0223ae76,exams,cisco,cyberops,What is a false positive in security monitoring?,data/seed-source/items/exams/exams.cisco.cyberops.json
 7578fe05-9dcd-4315-a12b-2deefb7b772e,exams,cisco,cyberops,What is a packet capture primarily used for during,data/seed-source/items/exams/exams.cisco.cyberops.json
 f7f3d691-8aeb-47b4-b33b-c408a11b6e15,exams,cisco,cyberops,What is an incident response playbook?,data/seed-source/items/exams/exams.cisco.cyberops.json
 53fb43c9-ce6b-4132-85f6-885a84e0ec21,exams,cisco,cyberops,What is an indicator of compromise (IOC)?,data/seed-source/items/exams/exams.cisco.cyberops.json
-b11e68db-5ad9-400a-bfe3-679e8ec5ac2c,exams,cisco,cyberops,What is phishing?,data/seed-source/items/exams/exams.cisco.cyberops.json
 3adf1ae9-1c24-4d78-9247-2e34cf594f04,exams,cisco,cyberops,What is the main role of a SIEM platform?,data/seed-source/items/exams/exams.cisco.cyberops.json
 6c558014-6ff2-4c67-90a5-6cd45c23867a,exams,cisco,cyberops,Why do analysts compare file hashes during triage?,data/seed-source/items/exams/exams.cisco.cyberops.json
 342e2018-15b6-48d8-988f-35722aa2c030,exams,cisco,cyberops,Why is chain of custody important for digital evid,data/seed-source/items/exams/exams.cisco.cyberops.json
@@ -1731,7 +1731,7 @@ b250b373-7d7c-4243-a88b-f5cef313bbf7,exams,finance,cfa,How is earnings per share
 b12f1aeb-fa1e-45b3-9dbe-d59c3814c36f,exams,finance,cfa,Which municipal bond is backed by revenues from a ,data/seed-source/items/exams/exams.finance.cfa.json
 8f3c6ae7-0609-4829-a57a-f4368c381b1d,exams,finance,cpa,A company can have high revenue but low net income,data/seed-source/items/exams/exams.finance.cpa.json
 15652fa1-05ed-4b34-9e61-5ad0806027ad,exams,finance,cpa,"For an investment company, what does net asset val",data/seed-source/items/exams/exams.finance.cpa.json
-3f992d14-eeb0-404e-8e0e-0fd7418d7182,exams,finance,cpa,How is earnings per share calculated?,data/seed-source/items/exams/exams.finance.cpa.json
+3f992d14-eeb0-404e-8e0e-0fd7418d7182,exams,finance,cpa,"On the CPA exam, how is earnings per share calcula",data/seed-source/items/exams/exams.finance.cpa.json
 0cc447c6-d9e2-4c54-96ef-ef7e51211c6b,exams,finance,cpa,What does a company's P/E ratio use in the denomin,data/seed-source/items/exams/exams.finance.cpa.json
 c9777210-1377-43f4-a442-b2e2fa152e6a,exams,finance,cpa,What does cash represent in basic financial terms?,data/seed-source/items/exams/exams.finance.cpa.json
 77f8e513-eae0-4225-9841-e14f10417436,exams,finance,cpa,What does net income represent?,data/seed-source/items/exams/exams.finance.cpa.json
@@ -3605,16 +3605,16 @@ be5a9e03-b07c-429b-a3bc-6d3774816534,languages,esl,reading,"If you underline the
 cf9ba17d-3360-489b-b244-cc4767753a4d,languages,esl,speaking,What does clear speech usually need from word stre,data/seed-source/items/languages/languages.esl.speaking.json
 a1d7f43b-e5ac-4308-bddc-12d3fd64c869,languages,esl,speaking,"When you agree politely, which phrase is common in",data/seed-source/items/languages/languages.esl.speaking.json
 3b576f1b-0f72-49ef-84c7-9aa8634953c7,languages,esl,speaking,Which intonation pattern is typical for a yes/no q,data/seed-source/items/languages/languages.esl.speaking.json
-db43aab2-753c-4343-9047-216364abbc1e,languages,esl,vocab,Which word means a mother or father?,data/seed-source/items/languages/languages.esl.vocab.json
+db43aab2-753c-4343-9047-216364abbc1e,languages,esl,vocab,"In ESL vocabulary, which word means a mother or fa",data/seed-source/items/languages/languages.esl.vocab.json
 614bce23-d649-4e92-bbfc-fcc1a7383959,languages,esl,vocab,Which word means a place where people learn togeth,data/seed-source/items/languages/languages.esl.vocab.json
 6b3902f0-5317-45a0-a1cf-3e70b7273c13,languages,esl,vocab,Which word means feeling worry or fear about somet,data/seed-source/items/languages/languages.esl.vocab.json
 bf9c6352-2362-4f6c-a1bf-c78844ef1615,languages,esl,vocab,Which word means not expensive?,data/seed-source/items/languages/languages.esl.vocab.json
 70da6924-3496-41c5-b45d-227a8812a6f3,languages,esl,vocab,Which word means the meal you eat in the middle of,data/seed-source/items/languages/languages.esl.vocab.json
 c3a98435-6d6b-4759-8ddc-c1ac028d70c6,languages,esl,vocab,Which word means the room where food is cooked?,data/seed-source/items/languages/languages.esl.vocab.json
+e7f09660-9f94-442a-ab84-4614dc3b2f12,languages,french,conversation,"In French, which phrase politely asks someone to r",data/seed-source/items/languages/languages.french.conversation.json
 a216d1cb-7f69-4873-b4f5-0e812b7ffdf1,languages,french,conversation,"Which informal question asks ""How are you?"" to som",data/seed-source/items/languages/languages.french.conversation.json
 5d8bdbfb-3114-48ae-8824-27526a0dc81e,languages,french,conversation,Which phrase is a common daytime greeting?,data/seed-source/items/languages/languages.french.conversation.json
 59494a8d-eb25-4e04-b3ff-9b6914ffe1c9,languages,french,conversation,Which phrase is a simple apology after a small mis,data/seed-source/items/languages/languages.french.conversation.json
-e7f09660-9f94-442a-ab84-4614dc3b2f12,languages,french,conversation,Which phrase politely asks someone to repeat what ,data/seed-source/items/languages/languages.french.conversation.json
 bdaf27ff-1089-4053-b34f-7bf986d52647,languages,french,conversation,"Which phrase politely says ""Excuse me"" before you ",data/seed-source/items/languages/languages.french.conversation.json
 5044c1f8-f39f-420c-aeb5-b5c1dedcce86,languages,french,conversation,"Which reply is a simple way to say ""Nice to meet y",data/seed-source/items/languages/languages.french.conversation.json
 000a7d01-cff5-49a7-9416-ec70c8d574b6,languages,french,grammar,"For regular -er verbs in the present tense, which ",data/seed-source/items/languages/languages.french.grammar.json
@@ -3630,17 +3630,17 @@ e7318129-2724-430d-8928-db315f50ff2f,languages,french,listening,"Which final con
 d869a114-4c9d-43b5-b886-d601aeacf993,languages,french,listening,Which pair differs clearly for most learners becau,data/seed-source/items/languages/languages.french.listening.json
 7ae1f477-7d8c-427e-9cf0-7f436ab8a21f,languages,french,listening,Which pair is a common listening challenge because,data/seed-source/items/languages/languages.french.listening.json
 23d8a71e-246e-401b-8dd4-4a8d58a41625,languages,french,travel,"At a hotel desk, which phrase asks if they have a ",data/seed-source/items/languages/languages.french.travel.json
-6232bd22-3ff0-4dcf-8ee0-fa00a89eff26,languages,french,travel,"At the airport, which word usually means ""passport",data/seed-source/items/languages/languages.french.travel.json
-9d6bef9a-21d7-4a22-b878-df930adb2b33,languages,french,travel,Which phrase politely asks where the nearest bank ,data/seed-source/items/languages/languages.french.travel.json
-7679e97e-0049-4f6f-84d0-12d82ffe35aa,languages,french,travel,"Which word means ""left"" when you give or follow di",data/seed-source/items/languages/languages.french.travel.json
+6232bd22-3ff0-4dcf-8ee0-fa00a89eff26,languages,french,travel,"In French, at the airport, which word usually mean",data/seed-source/items/languages/languages.french.travel.json
+9d6bef9a-21d7-4a22-b878-df930adb2b33,languages,french,travel,"In French, which phrase politely asks where the ne",data/seed-source/items/languages/languages.french.travel.json
+7679e97e-0049-4f6f-84d0-12d82ffe35aa,languages,french,travel,"In French, which word means ""left"" when you give o",data/seed-source/items/languages/languages.french.travel.json
 7a118463-4f0b-4fff-a70b-82c4bbf0b9b0,languages,french,travel,"Which word often means ""train station"" in city tra",data/seed-source/items/languages/languages.french.travel.json
 ea0065ae-018d-4f3a-96c5-048d5d4f705a,languages,french,travel,You want a one-way train ticket. Which short phras,data/seed-source/items/languages/languages.french.travel.json
 347fe8cd-d65a-4039-ab18-cb836e08609c,languages,french,verbs,"For ""avoir"" in the present, which form matches ""il",data/seed-source/items/languages/languages.french.verbs.json
+8633ec78-4b0d-4787-96ae-c997bbe9c7a7,languages,french,verbs,"In French, what is the infinitive that means ""to e",data/seed-source/items/languages/languages.french.verbs.json
+28089476-cd68-48da-9b61-657351d1935c,languages,french,verbs,"In French, which infinitive means ""to want""?",data/seed-source/items/languages/languages.french.verbs.json
 ba5dd63b-fe64-4378-b7dd-aabb1180d16f,languages,french,verbs,"In the present tense, which ""faire"" form matches """,data/seed-source/items/languages/languages.french.verbs.json
-8633ec78-4b0d-4787-96ae-c997bbe9c7a7,languages,french,verbs,"What is the infinitive that means ""to eat""?",data/seed-source/items/languages/languages.french.verbs.json
 00e8dbdc-a395-40af-aff3-78daa36aa9a7,languages,french,verbs,"Which form completes this line: ""Je ___ de Paris"" ",data/seed-source/items/languages/languages.french.verbs.json
 d1efe9ed-de4c-4dc5-8a9e-07a2686f347e,languages,french,verbs,"Which form is correct for ""nous"" with the verb ""pa",data/seed-source/items/languages/languages.french.verbs.json
-28089476-cd68-48da-9b61-657351d1935c,languages,french,verbs,"Which infinitive means ""to want""?",data/seed-source/items/languages/languages.french.verbs.json
 d1e08aea-6822-4483-bc54-e38c3cd100ed,languages,french,vocab,"What is the usual French word for ""big""?",data/seed-source/items/languages/languages.french.vocab.json
 0efc7ce3-890a-4a18-8359-5bf9b9ede0c8,languages,french,vocab,"What is the usual French word for ""bread""?",data/seed-source/items/languages/languages.french.vocab.json
 439ac061-0096-4952-a51b-20f5c25411c0,languages,french,vocab,"What is the usual French word for ""thank you""?",data/seed-source/items/languages/languages.french.vocab.json
@@ -3797,10 +3797,10 @@ d0d6d522-2693-41ed-97a5-7fe600affbbe,languages,other-langs,russian,What does 'С
 a7134ba0-2a1a-413e-a82d-4ef9cd465a5c,languages,other-langs,russian,What does 'вода' (voda) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
 0a3a42ee-704e-4692-a637-c628d32fb0ff,languages,other-langs,russian,What does 'да' (da) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
 5453b98a-8a6d-4e0d-80f8-8ccc79b4bd54,languages,other-langs,russian,What does 'нет' (net) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
+0f1b739a-eab6-4f6e-af13-73abc040d9bc,languages,spanish,conversation,"In Spanish, which phrase politely asks someone to ",data/seed-source/items/languages/languages.spanish.conversation.json
 41e6fa1f-d2ce-49b1-82f9-4a3da0963c2c,languages,spanish,conversation,Which phrase is a common morning greeting?,data/seed-source/items/languages/languages.spanish.conversation.json
 365d18e4-bbea-44f5-ae61-f29e86a2b5e1,languages,spanish,conversation,"Which phrase is a simple way to say ""I am sorry"" a",data/seed-source/items/languages/languages.spanish.conversation.json
 21755aef-9be5-4af7-9e2f-956d9886dab5,languages,spanish,conversation,"Which phrase means ""Excuse me"" when you need to ge",data/seed-source/items/languages/languages.spanish.conversation.json
-0f1b739a-eab6-4f6e-af13-73abc040d9bc,languages,spanish,conversation,Which phrase politely asks someone to repeat what ,data/seed-source/items/languages/languages.spanish.conversation.json
 ce421721-50da-4f0d-87cc-09964db2cd1e,languages,spanish,conversation,"Which question asks ""How are you?"" in an informal ",data/seed-source/items/languages/languages.spanish.conversation.json
 8a067dc6-b0d1-4453-98d2-9f5868dcd5a5,languages,spanish,conversation,"Which reply is a simple way to say ""Nice to meet y",data/seed-source/items/languages/languages.spanish.conversation.json
 136d2831-cb45-44d1-aa53-2dd221074292,languages,spanish,grammar,"After ""para"" meaning ""in order to,"" which verb for",data/seed-source/items/languages/languages.spanish.grammar.json
@@ -3816,17 +3816,17 @@ ade26931-4293-4839-81d7-8080851d8aea,languages,spanish,listening,"Which letter i
 d18e9bf3-6612-4ea8-a7c5-dbb9f3a2b6d9,languages,spanish,listening,Which pair is a common listening challenge because,data/seed-source/items/languages/languages.spanish.listening.json
 24d5963a-994b-4283-9496-036b69fa42e4,languages,spanish,listening,Which spelling is the standard Spanish word for a ,data/seed-source/items/languages/languages.spanish.listening.json
 5d07508f-c098-4436-84a8-842495012ba7,languages,spanish,travel,"At a hotel front desk, which phrase asks if they h",data/seed-source/items/languages/languages.spanish.travel.json
-413355fe-20cf-4b09-884a-84f78146b081,languages,spanish,travel,"At the airport, which word usually means ""passport",data/seed-source/items/languages/languages.spanish.travel.json
-b51fa688-05db-4ec9-bf37-71626125c57a,languages,spanish,travel,Which phrase politely asks where the nearest bank ,data/seed-source/items/languages/languages.spanish.travel.json
-ee1b00b2-028f-4fb7-953b-1c6812a14781,languages,spanish,travel,"Which word means ""left"" when you give or follow di",data/seed-source/items/languages/languages.spanish.travel.json
+413355fe-20cf-4b09-884a-84f78146b081,languages,spanish,travel,"In Spanish, at the airport, which word usually mea",data/seed-source/items/languages/languages.spanish.travel.json
+b51fa688-05db-4ec9-bf37-71626125c57a,languages,spanish,travel,"In Spanish, which phrase politely asks where the n",data/seed-source/items/languages/languages.spanish.travel.json
+ee1b00b2-028f-4fb7-953b-1c6812a14781,languages,spanish,travel,"In Spanish, which word means ""left"" when you give ",data/seed-source/items/languages/languages.spanish.travel.json
 5baca5d3-7d31-47a8-8433-dcd5612b7e40,languages,spanish,travel,You need the main train station. Which word often ,data/seed-source/items/languages/languages.spanish.travel.json
 5256ed1a-0dfa-4f73-bc5c-3877d0ec4426,languages,spanish,travel,You want a single ticket for a train. Which short ,data/seed-source/items/languages/languages.spanish.travel.json
 0270d5f1-ff66-48ca-9ba9-1740dc0c4094,languages,spanish,verbs,"For ""tener"" in the present, which form matches ""el",data/seed-source/items/languages/languages.spanish.verbs.json
+7933512d-0977-44aa-b24f-862d6e236f26,languages,spanish,verbs,"In Spanish, what is the infinitive that means ""to ",data/seed-source/items/languages/languages.spanish.verbs.json
+372a002b-86b7-4178-a921-828ca9a24beb,languages,spanish,verbs,"In Spanish, which infinitive means ""to want""?",data/seed-source/items/languages/languages.spanish.verbs.json
 e47ecb17-8baf-4f6c-b6a7-31e95abb166d,languages,spanish,verbs,"In the present tense, which ""hacer"" form matches """,data/seed-source/items/languages/languages.spanish.verbs.json
-7933512d-0977-44aa-b24f-862d6e236f26,languages,spanish,verbs,"What is the infinitive that means ""to eat""?",data/seed-source/items/languages/languages.spanish.verbs.json
 79768df9-5816-46da-8fc8-5190759fb039,languages,spanish,verbs,"Which form completes this line: ""Yo ___ de Madrid""",data/seed-source/items/languages/languages.spanish.verbs.json
 7e6413d8-50c1-4448-b8eb-3b6d71918a06,languages,spanish,verbs,"Which form is correct for ""nosotros"" with the verb",data/seed-source/items/languages/languages.spanish.verbs.json
-372a002b-86b7-4178-a921-828ca9a24beb,languages,spanish,verbs,"Which infinitive means ""to want""?",data/seed-source/items/languages/languages.spanish.verbs.json
 d24cab6b-c702-4485-8903-cdb3b142dd83,languages,spanish,vocab,"What is the usual Spanish word for ""big""?",data/seed-source/items/languages/languages.spanish.vocab.json
 672d3be8-e231-4f25-9f8b-29eb18d4954c,languages,spanish,vocab,"What is the usual Spanish word for ""bread""?",data/seed-source/items/languages/languages.spanish.vocab.json
 b1933550-8af6-4905-be0a-e148729ba871,languages,spanish,vocab,"What is the usual Spanish word for ""friend"" when y",data/seed-source/items/languages/languages.spanish.vocab.json
@@ -3875,9 +3875,9 @@ d8ae14f2-60ab-4f13-95cd-9c5fea586c7d,languages,vocab,academic,Which word means t
 84f48ee2-9e9e-47bb-afb8-659db15d9f92,languages,vocab,academic,Which word means the result or outcome of an actio,data/seed-source/items/languages/languages.vocab.academic.json
 a4b249bd-dc1e-4d7b-9629-26b54023a7dc,languages,vocab,academic,Which word means to look at something closely to u,data/seed-source/items/languages/languages.vocab.academic.json
 d86ab9d3-3af7-4f90-a4a3-9411f3a677db,languages,vocab,academic,Which word means to say what something means in si,data/seed-source/items/languages/languages.vocab.academic.json
+d856359d-f44a-4dec-8356-c7be023239ee,languages,vocab,beginner,"In beginner English vocabulary, which word means a",data/seed-source/items/languages/languages.vocab.beginner.json
 5eebfc6b-69c5-4fcc-b534-0bf72f25a162,languages,vocab,beginner,Which verb means to move on your feet at a slow sp,data/seed-source/items/languages/languages.vocab.beginner.json
 50e55c38-df66-441b-a7fc-3c1389dc341f,languages,vocab,beginner,Which word is a basic color like the sky on a clea,data/seed-source/items/languages/languages.vocab.beginner.json
-d856359d-f44a-4dec-8356-c7be023239ee,languages,vocab,beginner,Which word means a mother or father?,data/seed-source/items/languages/languages.vocab.beginner.json
 ffdafa16-fc47-4ff8-9750-d67b26cf5c80,languages,vocab,beginner,"Which word means the opposite of ""hot"" for weather",data/seed-source/items/languages/languages.vocab.beginner.json
 b5801423-5da4-429f-b8b5-dc37e41cc417,languages,vocab,beginner,Which word names a place where people go when they,data/seed-source/items/languages/languages.vocab.beginner.json
 8250f01c-d3c3-4a39-a1ab-c12db91da621,languages,vocab,beginner,Which word names something you read that has many ,data/seed-source/items/languages/languages.vocab.beginner.json
@@ -3905,7 +3905,7 @@ c29e3327-ae15-497d-b93e-481ed9b9e397,languages,vocab,travel,Which word means a p
 97c4ba88-0b76-4d74-bfb5-3f0d4005775c,languages,vocab,travel,Which word means bags you take on a trip?,data/seed-source/items/languages/languages.vocab.travel.json
 de1e5d99-3623-490e-8212-1d4a2419134d,languages,vocab,travel,Which word means the document that lets you board ,data/seed-source/items/languages/languages.vocab.travel.json
 b83c633c-9f68-4539-af16-da34ffff9f1e,languages,vocab,travel,"Which word means the time when a bus, train, or pl",data/seed-source/items/languages/languages.vocab.travel.json
-6909e3a5-5e95-4db9-bdac-d2deea3b2571,nature,animals,birds,Penguins are native to which hemisphere?,data/seed-source/items/nature/nature.animals.birds.json
+6909e3a5-5e95-4db9-bdac-d2deea3b2571,nature,animals,birds,"In wildlife study, penguins are native to which he",data/seed-source/items/nature/nature.animals.birds.json
 91a8169e-8f88-4375-bc07-24f52f5784c3,nature,animals,birds,Which bird is the largest living bird species?,data/seed-source/items/nature/nature.animals.birds.json
 57f9731c-b519-4458-960e-0abfa88a631a,nature,animals,birds,Which bird of prey is famous for extreme speed dur,data/seed-source/items/nature/nature.animals.birds.json
 3e60b128-4d2e-4e52-9c37-766d1bef6367,nature,animals,birds,Which birds are famous for nearly silent flight wh,data/seed-source/items/nature/nature.animals.birds.json
@@ -4619,11 +4619,11 @@ f34a6a39-caad-46ec-a326-2df160bc0fda,science,discrete-math,sets,What is power se
 9b41a7d7-aaec-43bd-aef4-b0bffec3bcaa,science,discrete-math,sets,What is subset A ⊆ B?,data/seed-source/items/science/science.discrete-math.sets.json
 7fa5161a-d6b1-4069-87b0-c92c2d31b5ea,science,discrete-math,sets,What is union A ∪ B?,data/seed-source/items/science/science.discrete-math.sets.json
 decdc145-38e4-40dc-aec1-ae38433b131b,science,discrete-math,sets,What is ∅?,data/seed-source/items/science/science.discrete-math.sets.json
+94d7317a-e075-41d0-ad12-e291e4fe79c6,science,earth-space,astronomy,"In Earth and space science, what is a light-year?",data/seed-source/items/science/science.earth-space.astronomy.json
 0016b6c1-9611-4e4b-931d-7ac285d0419f,science,earth-space,astronomy,"In Earth–space context, what is a satellite?",data/seed-source/items/science/science.earth-space.astronomy.json
 756fc6ee-c2c6-4abd-b838-18784f3021ae,science,earth-space,astronomy,What causes seasons on Earth?,data/seed-source/items/science/science.earth-space.astronomy.json
 c0bd5e88-be05-4c88-ab78-7b33e3e1a65c,science,earth-space,astronomy,What is Doppler shift for stars?,data/seed-source/items/science/science.earth-space.astronomy.json
 d6930fd2-7a0e-482e-a229-5d4e8d28496c,science,earth-space,astronomy,What is a constellation?,data/seed-source/items/science/science.earth-space.astronomy.json
-94d7317a-e075-41d0-ad12-e291e4fe79c6,science,earth-space,astronomy,What is a light-year?,data/seed-source/items/science/science.earth-space.astronomy.json
 99dd482d-6c59-404f-89d8-83bbf936bfd7,science,earth-space,astronomy,What is a lunar phase?,data/seed-source/items/science/science.earth-space.astronomy.json
 4d352f9a-043c-4155-b896-7c38e7b8a442,science,earth-space,astronomy,What is a meteor?,data/seed-source/items/science/science.earth-space.astronomy.json
 87592abd-15e3-40ab-95ca-7c502b5bbb29,science,earth-space,astronomy,What is an exoplanet?,data/seed-source/items/science/science.earth-space.astronomy.json
@@ -4715,9 +4715,9 @@ f6fb2bfa-70eb-41a1-8a3f-1f3fefc3314c,science,environmental,conservation,What is 
 a772313d-665c-4f36-853f-5c1a4b9848f1,science,environmental,conservation,What is protected area?,data/seed-source/items/science/science.environmental.conservation.json
 f4f6c666-7162-4a66-9c49-6a9fcd97dcd8,science,environmental,conservation,What is rewilding?,data/seed-source/items/science/science.environmental.conservation.json
 1357079d-1f81-4fcd-8b19-540798c14a9e,science,environmental,conservation,What is sustainable yield?,data/seed-source/items/science/science.environmental.conservation.json
+04d6e5dc-9ee3-40af-98d6-b1989c11c5d2,science,environmental,ecosystems,"In environmental science, what is biomagnification",data/seed-source/items/science/science.environmental.ecosystems.json
 7ed80b02-4c02-4995-97f2-6ea7b4c2865d,science,environmental,ecosystems,What is a food web’s role?,data/seed-source/items/science/science.environmental.ecosystems.json
 ea49bdfb-1a66-4ed5-834e-1e7e8a801917,science,environmental,ecosystems,What is an ecosystem service?,data/seed-source/items/science/science.environmental.ecosystems.json
-04d6e5dc-9ee3-40af-98d6-b1989c11c5d2,science,environmental,ecosystems,What is biomagnification?,data/seed-source/items/science/science.environmental.ecosystems.json
 ef7fbd1e-e916-42b7-a941-a2d468bdc284,science,environmental,ecosystems,What is carrying capacity in ecology?,data/seed-source/items/science/science.environmental.ecosystems.json
 07f89693-cd0c-4def-8cb2-9d5f45bd1085,science,environmental,ecosystems,What is coral reef ecosystem?,data/seed-source/items/science/science.environmental.ecosystems.json
 441bc8fb-133e-40ff-8e66-7b3f55f44bdb,science,environmental,ecosystems,What is deforestation impact?,data/seed-source/items/science/science.environmental.ecosystems.json
@@ -4835,7 +4835,7 @@ ff5bb257-e929-4e27-a863-90d1611b671d,science,geometry,volume,What is the volume 
 ca51d7af-a513-42fe-98e2-9bb36be72d97,science,geometry,volume,What is the volume formula for a rectangular prism,data/seed-source/items/science/science.geometry.volume.json
 100a3d61-949e-40d5-979f-487964fc29d7,science,geometry,volume,What is the volume formula for a sphere?,data/seed-source/items/science/science.geometry.volume.json
 70d48370-48fe-4f99-b2cc-8e4cc1f9c571,science,geometry,volume,What is the volume of a unit cube?,data/seed-source/items/science/science.geometry.volume.json
-71f1a553-cd80-4362-8f78-cac0e4083abb,science,health,disease,What is a pathogen?,data/seed-source/items/science/science.health.disease.json
+71f1a553-cd80-4362-8f78-cac0e4083abb,science,health,disease,"In health science, what is a pathogen?",data/seed-source/items/science/science.health.disease.json
 d9ddf388-9429-4b6d-93ea-399e40fddff6,science,health,disease,What is antibiotic misuse harm?,data/seed-source/items/science/science.health.disease.json
 0e46ec30-c6fc-48d3-a116-0a8b0b0f9497,science,health,disease,What is cancer (very general)?,data/seed-source/items/science/science.health.disease.json
 1996547a-c894-466c-a720-f33b5ffd6b51,science,health,disease,What is chronic disease example?,data/seed-source/items/science/science.health.disease.json
@@ -5165,9 +5165,9 @@ f0006634-43be-43e2-a8bf-09466ca17714,science,physics,energy,Conservative force p
 d7c6efa4-3ffe-4fb7-8246-62de39ac3ec8,science,physics,energy,Gravitational PE near Earth (uniform g)?,data/seed-source/items/science/science.physics.energy.json
 8e14df6c-386e-41ae-859b-5c93b449ffe3,science,physics,energy,"Gravitational potential (two masses, general)?",data/seed-source/items/science/science.physics.energy.json
 89635827-c4a2-46f5-b588-1669d60473aa,science,physics,energy,Hooke’s law (ideal spring)?,data/seed-source/items/science/science.physics.energy.json
+024ff597-dd2a-43c4-9fb0-dea7bdd31508,science,physics,energy,"In physics, what is power?",data/seed-source/items/science/science.physics.energy.json
 a6f748e4-fd1b-45cf-88b0-3cd52a42e719,science,physics,energy,Kinetic energy?,data/seed-source/items/science/science.physics.energy.json
 7f3b0225-72a8-4ea5-ace1-1d3b7234a254,science,physics,energy,"Mechanical energy (ideal, only conservative)?",data/seed-source/items/science/science.physics.energy.json
-024ff597-dd2a-43c4-9fb0-dea7bdd31508,science,physics,energy,Power?,data/seed-source/items/science/science.physics.energy.json
 5e9cf5f6-b6fb-47ef-9474-0664f0b449d4,science,physics,energy,Rotational KE?,data/seed-source/items/science/science.physics.energy.json
 c0e255a6-e0d8-4112-83fa-e070ba90397a,science,physics,energy,Work by constant force along displacement?,data/seed-source/items/science/science.physics.energy.json
 d974c0b8-5e99-42a2-be95-50fae23eb038,science,physics,energy,Work–energy theorem?,data/seed-source/items/science/science.physics.energy.json
@@ -5533,10 +5533,10 @@ f1ac6fa4-34dc-4cc2-8a9c-abb4f6269a04,science,statistics,distributions,Uniform di
 707d2310-fc5b-4804-b55e-fbff48932736,science,statistics,distributions,t-distribution vs normal (heavier tails)?,data/seed-source/items/science/science.statistics.distributions.json
 657b39a9-235e-484b-8932-8a8f59d1b4a7,science,statistics,hypothesis,ANOVA compares?,data/seed-source/items/science/science.statistics.hypothesis.json
 e215b011-98db-4a6f-b226-28c20352ac77,science,statistics,hypothesis,Confidence interval interpretation (frequentist)?,data/seed-source/items/science/science.statistics.hypothesis.json
+fe8ebf07-cb2c-47a3-beac-a6e5389731f4,science,statistics,hypothesis,"In hypothesis testing, what is statistical power?",data/seed-source/items/science/science.statistics.hypothesis.json
 ddc71c12-b60d-42ba-85f1-c9b43c81720e,science,statistics,hypothesis,Null hypothesis H0?,data/seed-source/items/science/science.statistics.hypothesis.json
 dcd12067-6be6-4d9e-ac29-5ae661fdecec,science,statistics,hypothesis,Paired vs two-sample?,data/seed-source/items/science/science.statistics.hypothesis.json
 d29a5912-25df-4ab6-819f-aa87b64d9044,science,statistics,hypothesis,Post-hoc tests after ANOVA?,data/seed-source/items/science/science.statistics.hypothesis.json
-fe8ebf07-cb2c-47a3-beac-a6e5389731f4,science,statistics,hypothesis,Power?,data/seed-source/items/science/science.statistics.hypothesis.json
 e60924ac-83cc-4deb-ac92-1b0ea852a65d,science,statistics,hypothesis,Two-sided vs one-sided test?,data/seed-source/items/science/science.statistics.hypothesis.json
 a15f5dc0-a948-47a5-b473-a789270d5b1c,science,statistics,hypothesis,Type I error?,data/seed-source/items/science/science.statistics.hypothesis.json
 7a212b92-176b-4522-b010-fc8615d97870,science,statistics,hypothesis,Type II error?,data/seed-source/items/science/science.statistics.hypothesis.json
@@ -6342,11 +6342,11 @@ c0718ce3-8dd9-431a-8101-c4f54480efc7,tech,cloud,aws,What does horizontal scaling
 75b09781-2568-4f3f-9b5c-e35a1fef3766,tech,cloud,aws,What is an Amazon VPC primarily used for?,data/seed-source/items/tech/tech.cloud.aws.json
 9819dd13-0a9f-4b0e-9c09-46617b7a592d,tech,cloud,aws,What is the relationship between an AWS Region and,data/seed-source/items/tech/tech.cloud.aws.json
 22de7d0a-85ad-4bf4-b671-9d1dda57b847,tech,cloud,aws,What must be globally unique in Amazon S3 among al,data/seed-source/items/tech/tech.cloud.aws.json
+2f4c7de9-3420-4d90-b26c-7b0ad0cbd491,tech,cloud,azure,"In Azure cloud architecture, what is an Azure regi",data/seed-source/items/tech/tech.cloud.azure.json
+b060dcdb-4ea7-4460-ac13-c6e8b385d4c2,tech,cloud,azure,"In Azure cloud architecture, what is an Azure reso",data/seed-source/items/tech/tech.cloud.azure.json
 2f497876-af65-4030-a328-69cf5b468e54,tech,cloud,azure,What does ARM stand for in Azure deployment toolin,data/seed-source/items/tech/tech.cloud.azure.json
 2f9b31cc-2a27-437a-b64c-9f4854f599b0,tech,cloud,azure,What does a user-assigned managed identity provide,data/seed-source/items/tech/tech.cloud.azure.json
 9ccd30b0-3169-4a5a-aff6-077ccc49d898,tech,cloud,azure,What is an Azure Availability Zone?,data/seed-source/items/tech/tech.cloud.azure.json
-2f4c7de9-3420-4d90-b26c-7b0ad0cbd491,tech,cloud,azure,What is an Azure Region?,data/seed-source/items/tech/tech.cloud.azure.json
-b060dcdb-4ea7-4460-ac13-c6e8b385d4c2,tech,cloud,azure,What is an Azure Resource Group?,data/seed-source/items/tech/tech.cloud.azure.json
 def86d98-0324-4710-a428-0132e87cba42,tech,cloud,azure,What is an Azure subscription primarily used to or,data/seed-source/items/tech/tech.cloud.azure.json
 5be96de9-89f7-4881-80ab-e905562886e9,tech,cloud,containers,What Linux kernel features commonly isolate contai,data/seed-source/items/tech/tech.cloud.containers.json
 7dfcfa17-9aad-419f-a817-ae1a62671419,tech,cloud,containers,What does the OCI Image Specification standardize?,data/seed-source/items/tech/tech.cloud.containers.json
@@ -6522,7 +6522,7 @@ d655ab18-3640-44b5-a1b9-7973c7037558,tech,devops,git,What does `git rebase` do t
 798fbc78-594b-4049-9737-7f535a7eb8c9,tech,devops,git,What does a merge conflict mean in Git?,data/seed-source/items/tech/tech.devops.git.json
 c91ff6ce-0c4e-4728-80ee-7c2637b1da98,tech,devops,git,What is a lightweight tag in Git?,data/seed-source/items/tech/tech.devops.git.json
 adcb23bf-b895-4003-8f57-ac8925c404ce,tech,devops,git,What is the purpose of the staging area (index) in,data/seed-source/items/tech/tech.devops.git.json
-9afb5ca0-0056-4c3f-9880-045e274dae1c,tech,devops,kubernetes,What does a Deployment controller primarily manage,data/seed-source/items/tech/tech.devops.kubernetes.json
+9afb5ca0-0056-4c3f-9880-045e274dae1c,tech,devops,kubernetes,"In a DevOps Kubernetes workflow, what does a Deplo",data/seed-source/items/tech/tech.devops.kubernetes.json
 55860039-6007-4f76-a2e6-c07249caaa39,tech,devops,kubernetes,What does a liveness probe help Kubernetes decide?,data/seed-source/items/tech/tech.devops.kubernetes.json
 46643663-63c8-437d-a12d-20f90523ad1d,tech,devops,kubernetes,What is a Namespace in Kubernetes mainly for?,data/seed-source/items/tech/tech.devops.kubernetes.json
 80a71161-4f4b-4965-9228-29ee4d7757fe,tech,devops,kubernetes,What is a Service used for in Kubernetes?,data/seed-source/items/tech/tech.devops.kubernetes.json
@@ -6668,10 +6668,10 @@ a5e92f3a-dd90-41d3-bb78-c4393efcbf7e,tech,security,cryptography,What is the main
 b2a793f1-09b7-4c05-ab45-c472197879bb,tech,security,cryptography,What property should a cryptographic hash function,data/seed-source/items/tech/tech.security.cryptography.json
 f496a946-43db-452c-bf66-2945734ff468,tech,security,cryptography,Why add a random salt when storing password hashes,data/seed-source/items/tech/tech.security.cryptography.json
 5128b911-9eb1-4dae-ba61-f21bccc09039,tech,security,iam,"In OAuth 2.0, what does an access token typically ",data/seed-source/items/tech/tech.security.iam.json
+ac10f52b-ced6-43fc-b740-8d9d8360073f,tech,security,iam,"In security IAM, what does role-based access contr",data/seed-source/items/tech/tech.security.iam.json
+b6432889-f346-4a81-a5da-690e9cad47b0,tech,security,iam,"In security IAM, what is the difference between au",data/seed-source/items/tech/tech.security.iam.json
 c64e5d46-c321-4581-8f39-e4b1b995df6e,tech,security,iam,What does multi-factor authentication add beyond a,data/seed-source/items/tech/tech.security.iam.json
-ac10f52b-ced6-43fc-b740-8d9d8360073f,tech,security,iam,What does role-based access control (RBAC) assign ,data/seed-source/items/tech/tech.security.iam.json
 bfa34d5d-2cef-456f-a5ef-3c104860fc58,tech,security,iam,What is SAML commonly used for?,data/seed-source/items/tech/tech.security.iam.json
-b6432889-f346-4a81-a5da-690e9cad47b0,tech,security,iam,What is the difference between authentication and ,data/seed-source/items/tech/tech.security.iam.json
 aef0ccff-47d2-4cff-96f1-29cd05102844,tech,security,iam,What problem does single sign-on (SSO) mainly redu,data/seed-source/items/tech/tech.security.iam.json
 916dfdd2-d359-4440-b6f2-f9598a61a7db,tech,security,netsec,What does DNS primarily map?,data/seed-source/items/tech/tech.security.netsec.json
 4e519bae-7b01-45e9-8cdf-fbf5f7243af1,tech,security,netsec,What does TLS primarily provide for data on the wi,data/seed-source/items/tech/tech.security.netsec.json
@@ -6685,10 +6685,10 @@ cc02e6a2-20a8-4cab-9ff9-fce751829eb5,tech,security,netsec,What is a common goal 
 4d43b532-3a93-469e-981f-d48ed21ccc47,tech,security,pentest,What is a CVE identifier?,data/seed-source/items/tech/tech.security.pentest.json
 d109be9b-24e9-42f4-92ec-050a031c8b48,tech,security,pentest,What is coordinated vulnerability disclosure?,data/seed-source/items/tech/tech.security.pentest.json
 5648a57e-42cf-46dd-b7c5-518dfa1f11e6,tech,security,pentest,What is the main goal of an authorized penetration,data/seed-source/items/tech/tech.security.pentest.json
+4eb387da-b631-4c46-9f21-54e6436abb6a,tech,security,sec-basics,"In security basics, what is phishing?",data/seed-source/items/tech/tech.security.sec-basics.json
 88251fce-92d0-4995-ade7-ec466a19439f,tech,security,sec-basics,"In the classic CIA triad, what does “integrity” re",data/seed-source/items/tech/tech.security.sec-basics.json
 4be82327-292a-421d-95ff-3ab37d6491c0,tech,security,sec-basics,What does the principle of least privilege require,data/seed-source/items/tech/tech.security.sec-basics.json
 c6b9840d-746e-4db0-95f9-81c158bc586a,tech,security,sec-basics,What is malware?,data/seed-source/items/tech/tech.security.sec-basics.json
-4eb387da-b631-4c46-9f21-54e6436abb6a,tech,security,sec-basics,What is phishing?,data/seed-source/items/tech/tech.security.sec-basics.json
 b454bebb-9850-4d45-8429-6e22b5b26155,tech,security,sec-basics,What is the main idea of defense in depth?,data/seed-source/items/tech/tech.security.sec-basics.json
 245752c7-cdaf-47dc-bdd3-81e000b3a441,tech,security,sec-basics,Why is timely patching important for security?,data/seed-source/items/tech/tech.security.sec-basics.json
 e7d4b5ca-5311-463a-b4bf-04a975aeddfe,tech,web-dev,api-design,HATEOAS means clients discover next actions throug,data/seed-source/items/tech/tech.web-dev.api-design.json
@@ -6734,7 +6734,7 @@ c0303a31-2ac8-4071-a17a-768920119b3f,tech,web-dev,testing,The test pyramid recom
 569fa460-e006-410e-9b22-10dcc491976e,tech,web-dev,testing,Unit tests usually focus verification on what scop,data/seed-source/items/tech/tech.web-dev.testing.json
 34694ea5-6bac-4500-b6ed-246accbe4982,tech,web-dev,testing,What is the main difference between a stub and a m,data/seed-source/items/tech/tech.web-dev.testing.json
 a6efa6ad-8d71-4f93-87b3-83c7262bfaac,trivia,animals,birds,Emperor penguins breed during which Antarctic seas,data/seed-source/items/trivia/trivia.animals.birds.json
-e42366a6-7a86-4bd3-a519-337ea2c27d65,trivia,animals,birds,Penguins are native to which hemisphere?,data/seed-source/items/trivia/trivia.animals.birds.json
+e42366a6-7a86-4bd3-a519-337ea2c27d65,trivia,animals,birds,"In bird trivia, penguins are native to which hemis",data/seed-source/items/trivia/trivia.animals.birds.json
 6959c247-abd4-41ba-bb34-311f6846f945,trivia,animals,birds,What is the largest living bird?,data/seed-source/items/trivia/trivia.animals.birds.json
 7b4ee451-095e-404e-a6c4-2c7972e4fb9e,trivia,animals,birds,What is the national bird of the United States?,data/seed-source/items/trivia/trivia.animals.birds.json
 8137e321-33c5-462d-acc1-780a4094edad,trivia,animals,birds,Which bird can fly backward?,data/seed-source/items/trivia/trivia.animals.birds.json
@@ -6904,7 +6904,6 @@ cf5fb9b9-6c4d-4fc4-a0eb-df3312d5eaab,trivia,famous-people,leaders,Which nonviole
 8e8787e0-0e77-488b-9da9-3a7abed258c5,trivia,famous-people,leaders,WhiteHouse.gov biography dates George Washington’s,data/seed-source/items/trivia/trivia.famous-people.leaders.json
 a337f4b6-e9af-4739-9956-55642402fd02,trivia,famous-people,leaders,Winston Churchill as a wartime prime minister of w,data/seed-source/items/trivia/trivia.famous-people.leaders.json
 bc1e4c7d-4d4e-42a9-b4b1-489f47e3d5e2,trivia,food-drink,brands,Coca‑Cola history dates first glass at Jacobs’ Pha,data/seed-source/items/trivia/trivia.food-drink.brands.json
-5d7f869a-2aad-45ac-b944-6e1e73ced2dd,trivia,food-drink,brands,Coca‑Cola history introduces Diet Coke in which ye,data/seed-source/items/trivia/trivia.food-drink.brands.json
 a7799dc3-a6b4-4332-8d4f-88ecc092fc91,trivia,food-drink,brands,Coca‑Cola history introduces Fanta Orange in Naple,data/seed-source/items/trivia/trivia.food-drink.brands.json
 87bcf1cb-d850-49fa-b4e7-768c978bb767,trivia,food-drink,brands,Coca‑Cola history lists TaB launch year as what?,data/seed-source/items/trivia/trivia.food-drink.brands.json
 8eb54222-49d4-46ae-ba6a-626a13b06fc4,trivia,food-drink,brands,Coca‑Cola history lists incorporation of The Coca‑,data/seed-source/items/trivia/trivia.food-drink.brands.json
@@ -6913,6 +6912,7 @@ a7799dc3-a6b4-4332-8d4f-88ecc092fc91,trivia,food-drink,brands,Coca‑Cola histor
 ca148784-eda2-460b-9420-6bc954cc1897,trivia,food-drink,brands,Coca‑Cola history notes World of Coca‑Cola museum ,data/seed-source/items/trivia/trivia.food-drink.brands.json
 a5b77c0c-61eb-44ea-8b4e-8fd58fd63cc4,trivia,food-drink,brands,Coca‑Cola history records first bottling contract ,data/seed-source/items/trivia/trivia.food-drink.brands.json
 f1527e3c-9739-46f6-8b30-e29cc95a08b3,trivia,food-drink,brands,Coca‑Cola history records steel 12-ounce cans intr,data/seed-source/items/trivia/trivia.food-drink.brands.json
+5d7f869a-2aad-45ac-b944-6e1e73ced2dd,trivia,food-drink,brands,Diet Coke entered the Coca-Cola lineup in which ye,data/seed-source/items/trivia/trivia.food-drink.brands.json
 205313ec-e146-4f2f-a405-0fdeecf74f6c,trivia,food-drink,cuisine,Falafel is usually made from chickpeas or what oth,data/seed-source/items/trivia/trivia.food-drink.cuisine.json
 736c832e-eab3-4cfd-9000-ad16759d01ed,trivia,food-drink,cuisine,Hummus is traditionally blended with what sesame-b,data/seed-source/items/trivia/trivia.food-drink.cuisine.json
 efc93477-503d-48ad-b578-311ab9747b01,trivia,food-drink,cuisine,Kimchi most commonly uses what main vegetable?,data/seed-source/items/trivia/trivia.food-drink.cuisine.json
@@ -7035,8 +7035,8 @@ ab50d87c-eb2a-4953-a34b-f2c6facaa139,trivia,general,mixed,Which planet has a day
 73ff2850-3fcf-4ce1-b850-780b75726ca6,trivia,internet,apps,Dropbox is primarily used for what?,data/seed-source/items/trivia/trivia.internet.apps.json
 fea95653-2c21-4335-bd5f-8d597ff70a98,trivia,internet,apps,HTML is the standard language for structuring what,data/seed-source/items/trivia/trivia.internet.apps.json
 2c60bb96-e451-4009-b216-87f4385de3ef,trivia,internet,apps,"In Slack, work is organized into dedicated spaces ",data/seed-source/items/trivia/trivia.internet.apps.json
+1a638a95-ef16-4e0b-b62f-9c6484998dd5,trivia,internet,apps,"In web browsing, which TCP port is the default for",data/seed-source/items/trivia/trivia.internet.apps.json
 8e7d56f0-0bd0-4f37-96ee-71490114b2a1,trivia,internet,apps,Search engines build indexes of what?,data/seed-source/items/trivia/trivia.internet.apps.json
-1a638a95-ef16-4e0b-b62f-9c6484998dd5,trivia,internet,apps,Which TCP port is the default for HTTP when no por,data/seed-source/items/trivia/trivia.internet.apps.json
 920527c7-13a7-4c90-86d0-6207619cee39,trivia,internet,apps,Which symbol separates the user name from the doma,data/seed-source/items/trivia/trivia.internet.apps.json
 d1a8b667-c319-4001-b3a3-2a66246b5e94,trivia,internet,gaming,Cloud gaming to running games on remote what?,data/seed-source/items/trivia/trivia.internet.gaming.json
 91a4e7bc-81b4-4d09-80de-cd4649af28a4,trivia,internet,gaming,Cross-platform play allows different what to play ,data/seed-source/items/trivia/trivia.internet.gaming.json
@@ -7128,7 +7128,7 @@ e42c44de-f22b-42eb-aeb7-3f9911156cf4,trivia,movies-tv,movies,"In Toy Story, Buzz
 7eb219e1-b487-463c-8408-d8f9fafd4ea6,trivia,movies-tv,movies,Titanic is set aboard what ill-fated ocean liner?,data/seed-source/items/trivia/trivia.movies-tv.movies.json
 38e7bde0-c391-4b68-906f-57f2da43e7ff,trivia,movies-tv,movies,What is the name of the kingdom ruled by Elsa and ,data/seed-source/items/trivia/trivia.movies-tv.movies.json
 1e6cc862-6442-493d-b3b4-f0452194b8c9,trivia,movies-tv,movies,What kind of animal is Simba in The Lion King?,data/seed-source/items/trivia/trivia.movies-tv.movies.json
-d069c5d0-4202-476b-ab9f-d8abe61774d6,trivia,movies-tv,quotes,"At the 94th Academy Awards, which song won Best Or",data/seed-source/items/trivia/trivia.movies-tv.quotes.json
+d069c5d0-4202-476b-ab9f-d8abe61774d6,trivia,movies-tv,quotes,"At the 94th Academy Awards, which film song won Be",data/seed-source/items/trivia/trivia.movies-tv.quotes.json
 fb59bfc5-7546-4d3e-a128-2573fcc88aaf,trivia,movies-tv,quotes,"At the 95th Academy Awards, which film won Best Do",data/seed-source/items/trivia/trivia.movies-tv.quotes.json
 745ceccb-d374-4221-bdac-c9f7dba561ce,trivia,movies-tv,quotes,"At the 95th Academy Awards, which screenplay won B",data/seed-source/items/trivia/trivia.movies-tv.quotes.json
 45fb1786-6d29-46eb-bcd6-b694eb35bed7,trivia,movies-tv,quotes,"At the 95th Academy Awards, which screenplay won B",data/seed-source/items/trivia/trivia.movies-tv.quotes.json
@@ -7320,7 +7320,7 @@ c22432a7-2daf-46a7-8b4d-795df1e3fb4e,trivia,travel,landmarks,The Statue of Liber
 ae77f943-4f47-4e10-9192-88b4293cbce6,trivia,travel,landmarks,The Sydney Opera House is in which city?,data/seed-source/items/trivia/trivia.travel.landmarks.json
 c24407ef-3888-4272-b567-fd8fd20d92ff,trivia,travel,wonders,Chichen Itza is in which country?,data/seed-source/items/trivia/trivia.travel.wonders.json
 85bd628f-072b-44ec-bef3-05cf9a02a9c9,trivia,travel,wonders,Christ the Redeemer overlooks which city?,data/seed-source/items/trivia/trivia.travel.wonders.json
-8878abcb-eabd-427b-b952-cffb5100a346,trivia,travel,wonders,Machu Picchu is in which country?,data/seed-source/items/trivia/trivia.travel.wonders.json
+8878abcb-eabd-427b-b952-cffb5100a346,trivia,travel,wonders,"Machu Picchu, one of the New Seven Wonders, is in ",data/seed-source/items/trivia/trivia.travel.wonders.json
 695bcdf3-80ac-44e3-b6a4-b05af80a992e,trivia,travel,wonders,Petra is in which country?,data/seed-source/items/trivia/trivia.travel.wonders.json
 5d407720-da16-4105-8dda-f1faf335a53f,trivia,travel,wonders,The Colosseum is in which city?,data/seed-source/items/trivia/trivia.travel.wonders.json
 fe3062c4-f98d-44e4-833c-86854c094fb0,trivia,travel,wonders,The Colossus of Rhodes stood on which Greek island,data/seed-source/items/trivia/trivia.travel.wonders.json

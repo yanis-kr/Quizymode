@@ -4,7 +4,7 @@
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
-    "question": "What is the difference between authentication and authorization?",
+    "question": "In security IAM, what is the difference between authentication and authorization?",
     "correctAnswer": "Authentication proves identity; authorization decides what that identity may do",
     "incorrectAnswers": [
       "They are identical terms",
@@ -61,7 +61,7 @@
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
-    "question": "What does role-based access control (RBAC) assign permissions to?",
+    "question": "In security IAM, what does role-based access control (RBAC) assign permissions to?",
     "correctAnswer": "Roles that users inherit instead of ad hoc rights per user",
     "incorrectAnswers": [
       "Only individual IP packets",
