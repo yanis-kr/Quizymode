@@ -1,4 +1,6 @@
+using Aspire.Hosting.ApplicationModel;
 using Microsoft.Extensions.Configuration;
+using System.Net.Sockets;
 
 static string GetAudienceValue(IConfiguration configuration)
 {
@@ -17,11 +19,56 @@ static string GetAudienceValue(IConfiguration configuration)
     return configuredAudience;
 }
 
+static int GetLocalPostgresPort(IConfiguration configuration)
+{
+    int? configuredPort = configuration.GetValue<int?>("LocalInfrastructure:Postgres:Port");
+    return configuredPort ?? 49800;
+}
+
 var builder = DistributedApplication.CreateBuilder(args);
 
-// Add PostgreSQL with pgAdmin for database management
+string postgresUserName = builder.Configuration["LocalInfrastructure:Postgres:Username"] ?? "postgres";
+int postgresPort = GetLocalPostgresPort(builder.Configuration);
+string? configuredPostgresPassword = builder.Configuration["LocalInfrastructure:Postgres:Password"];
+var postgresUserParameter = builder.AddParameter(
+    "postgres-username",
+    postgresUserName,
+    publishValueAsDefault: true,
+    secret: false);
+var postgresPasswordParameter = string.IsNullOrWhiteSpace(configuredPostgresPassword)
+    ? builder.AddParameter(
+        "postgres-password",
+        new GenerateParameterDefault
+        {
+            MinLength = 24,
+            Lower = true,
+            Upper = true,
+            Numeric = true,
+            Special = true,
+            MinLower = 1,
+            MinUpper = 1,
+            MinNumeric = 1,
+            MinSpecial = 1
+        },
+        secret: true,
+        persist: true)
+    : builder.AddParameter(
+        "postgres-password",
+        configuredPostgresPassword,
+        publishValueAsDefault: false,
+        secret: true);
+
+// Add PostgreSQL with a fixed local port and persisted credentials so local tooling can rely on stable values.
 var postgres = builder
-    .AddPostgres("postgres")
+    .AddPostgres("postgres", postgresUserParameter, postgresPasswordParameter)
+    .WithEndpoint("tcp", endpoint =>
+    {
+        endpoint.Port = postgresPort;
+        endpoint.TargetPort = 5432;
+        endpoint.Protocol = ProtocolType.Tcp;
+        endpoint.UriScheme = "tcp";
+        endpoint.IsProxied = false;
+    }, createIfNotExists: false)
     .WithPgAdmin();
 
 var postgresDb = postgres.AddDatabase("quizymode");

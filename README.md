@@ -137,6 +137,7 @@ In practice, local development is:
 ### Database
 
 - PostgreSQL runs through Aspire in local development.
+- The AppHost pins the local PostgreSQL host port to `49800` and keeps the password stable through the AppHost user-secrets store, so local agent/test env vars do not need to change on every container recreation.
 - EF Core migrations are applied automatically on API startup.
 - Seed data is loaded from `data/seed-dev/`.
 
@@ -148,6 +149,8 @@ Canonical admin content lives under `data/seed-source/` and is validated/built w
 - `python scripts/build_item_registry.py`
 - `python scripts/build_seed_dev_subset.py`
 - `python scripts/process_import_inbox.py --write`
+
+Admin item sync no longer depends on a generated upload bundle. The admin UI/API now read canonical item seed files directly from GitHub at a chosen repo/ref.
 
 ### Running E2E Tests Locally
 
