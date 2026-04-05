@@ -251,6 +251,27 @@ async function waitForTextToDisappear(page: Page, textPattern: RegExp) {
   }
 }
 
+async function waitForInputValue(
+  page: Page,
+  selector: string,
+  expectedValue: string,
+  timeout = 15_000
+) {
+  const startedAt = Date.now();
+  const normalizedExpected = expectedValue.trim();
+
+  while (Date.now() - startedAt < timeout) {
+    const value = await page.locator(selector).inputValue().catch(() => "");
+    if (value.trim() === normalizedExpected) {
+      return true;
+    }
+
+    await page.waitForTimeout(200);
+  }
+
+  return false;
+}
+
 async function waitForAnyVisible(
   page: Page,
   selectors: string[],
@@ -504,6 +525,18 @@ async function waitForCollectionDetailLoaded(page: Page) {
     "text=Collection",
     "button:has-text('Details')",
     "text=No items in this collection.",
+  ]);
+}
+
+async function waitForCollectionQuizModeLoaded(page: Page) {
+  await page.waitForURL(/\/quiz\/collections\//, { timeout: 15_000 }).catch(() => {});
+  await waitForUiToSettle(page);
+  await waitForTextToDisappear(page, /loading/i);
+  await waitForAnyVisible(page, [
+    "h3:has-text('Question')",
+    "h3:has-text('Select an answer:')",
+    "text=/Score:\\s*\\d+\\s*\\/\\s*\\d+\\s*correct/i",
+    "button[title='View item details']",
   ]);
 }
 
@@ -905,6 +938,7 @@ test.describe("User guide screenshots", () => {
   test("collection-detail-quiz", async ({ page }) => {
     await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "quiz");
+    await waitForCollectionQuizModeLoaded(page);
     await captureCurrentPage(page, "collection-detail-quiz");
   });
 
@@ -915,6 +949,7 @@ test.describe("User guide screenshots", () => {
     const card = page.locator(collectionCardXPath(secondCollectionName)).first();
     await card.locator("button[title='Edit collection']").click().catch(() => {});
     await waitForAnyVisible(page, ["text=Edit Collection", "#edit-collection-is-public"]);
+    await waitForInputValue(page, "#edit-collection-name", secondCollectionName);
 
     const publicToggle = page.locator("#edit-collection-is-public");
     const isChecked = await publicToggle.isChecked().catch(() => false);
