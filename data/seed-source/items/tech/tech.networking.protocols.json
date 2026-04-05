@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "65f1e5fa-db6c-44cb-bc17-2bb9856f270d",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -15,10 +16,10 @@
       "protocols",
       "osi"
     ],
-    "source": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
-    "seedId": "6c794221-a16d-531e-ad0f-b9b49f9c9c32"
+    "source": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/"
   },
   {
+    "itemId": "eb6214f4-2cae-4d9b-b065-ac1f4784df64",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -34,10 +35,10 @@
       "protocols",
       "arp"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/ARP",
-    "seedId": "f95e62e9-6679-5d49-bc23-ed5d34672c30"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/ARP"
   },
   {
+    "itemId": "a771b856-5f32-4a7e-a192-86611222c647",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -53,10 +54,10 @@
       "protocols",
       "icmp"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc792",
-    "seedId": "60cb0ff9-e66d-5da7-aa18-25a7d10ab91c"
+    "source": "https://www.rfc-editor.org/rfc/rfc792"
   },
   {
+    "itemId": "f55fa263-b17a-499a-a840-9c551af131ab",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -72,10 +73,10 @@
       "protocols",
       "dhcp"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc2131",
-    "seedId": "11294304-3797-5a9a-94c2-a51f5736c0b1"
+    "source": "https://www.rfc-editor.org/rfc/rfc2131"
   },
   {
+    "itemId": "2e6972d4-5a4a-4ee9-96b5-7caf0317fe59",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -91,10 +92,10 @@
       "protocols",
       "nat"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/NAT",
-    "seedId": "7ce6ae84-24db-5c16-a5d2-abfb9330ff64"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/NAT"
   },
   {
+    "itemId": "c3e45918-f66d-4f94-8e29-656528b1db43",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "protocols",
@@ -110,7 +111,6 @@
       "protocols",
       "tls"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc8446",
-    "seedId": "8134b90f-f6d8-5996-bf39-e412fc816aca"
+    "source": "https://www.rfc-editor.org/rfc/rfc8446"
   }
 ]

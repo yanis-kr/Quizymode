@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "24578509-c4e6-4e34-8765-d405a69fa2a5",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -15,10 +16,10 @@
       "medicare",
       "health-policy"
     ],
-    "source": "https://www.medicare.gov/basics/get-started-with-medicare",
-    "seedId": "dca0168e-37fd-5d4d-982c-07ee5d566733"
+    "source": "https://www.medicare.gov/basics/get-started-with-medicare"
   },
   {
+    "itemId": "d00e2bc4-2476-48d6-be0d-7547750a9017",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -34,10 +35,10 @@
       "medicaid",
       "health-policy"
     ],
-    "source": "https://www.medicaid.gov/medicaid/index.html",
-    "seedId": "a1f809a1-57b0-5155-981c-8e7847f2fba3"
+    "source": "https://www.medicaid.gov/medicaid/index.html"
   },
   {
+    "itemId": "da2dfd54-7e5c-4eb6-8655-3ce74ac45ce8",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -53,10 +54,10 @@
       "chip",
       "childrens-health"
     ],
-    "source": "https://www.medicaid.gov/chip/index.html",
-    "seedId": "e1b00685-8f39-5b6f-af63-8e41fd47a985"
+    "source": "https://www.medicaid.gov/chip/index.html"
   },
   {
+    "itemId": "3f216c1e-8630-492a-b4b8-81faa5a444b6",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -72,10 +73,10 @@
       "public-health",
       "local-government"
     ],
-    "source": "https://www.cdc.gov/publichealthgateway/publichealthservices/local.html",
-    "seedId": "554d6d6f-2ad4-57d9-9a00-4c079fb84c7e"
+    "source": "https://www.cdc.gov/publichealthgateway/publichealthservices/local.html"
   },
   {
+    "itemId": "6bc10fa2-a7b4-4891-96c7-5dc209d0059a",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -91,10 +92,10 @@
       "hipaa",
       "health-privacy"
     ],
-    "source": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html",
-    "seedId": "7dae3fa6-eaf7-54aa-a39b-36f0329e9815"
+    "source": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html"
   },
   {
+    "itemId": "7aae3328-3581-4072-aabc-efa36ca4949c",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "healthcare",
@@ -110,7 +111,6 @@
       "licensure",
       "state-regulation"
     ],
-    "source": "https://www.ncsl.org/health/state-medical-professional-licensing",
-    "seedId": "8f89da5e-b8e4-5b88-85b2-4f0582a8fe3d"
+    "source": "https://www.ncsl.org/health/state-medical-professional-licensing"
   }
 ]

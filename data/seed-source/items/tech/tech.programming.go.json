@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e89c80d8-26ef-4ff0-8396-3828d651ed7a",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -15,10 +16,10 @@
       "go",
       "concurrency"
     ],
-    "source": "https://go.dev/tour/concurrency/1",
-    "seedId": "1fbaa9f4-6a2f-5256-925b-9bac1c99f81e"
+    "source": "https://go.dev/tour/concurrency/1"
   },
   {
+    "itemId": "bc333b31-caec-40fb-9746-5b74fec60e32",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -34,10 +35,10 @@
       "go",
       "control-flow"
     ],
-    "source": "https://go.dev/tour/flowcontrol/12",
-    "seedId": "bb001379-7850-57d3-aedb-fc151483d59e"
+    "source": "https://go.dev/tour/flowcontrol/12"
   },
   {
+    "itemId": "93566847-87d7-4b23-8e08-d7aeaeec4363",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -53,10 +54,10 @@
       "go",
       "interfaces"
     ],
-    "source": "https://go.dev/ref/spec#Interface_types",
-    "seedId": "2bf62e94-cd26-51d2-aeed-00159f7952bc"
+    "source": "https://go.dev/ref/spec#Interface_types"
   },
   {
+    "itemId": "100d3a1e-9a3c-4df5-8f2a-b59b54349595",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -72,10 +73,10 @@
       "go",
       "errors"
     ],
-    "source": "https://go.dev/doc/effective_go#errors",
-    "seedId": "560f1821-dee8-516c-b1e7-fc20456486d5"
+    "source": "https://go.dev/doc/effective_go#errors"
   },
   {
+    "itemId": "0d0fc762-0ab7-4972-b9b0-34dcbf479fce",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -91,10 +92,10 @@
       "go",
       "slices"
     ],
-    "source": "https://en.wikipedia.org/wiki/Go_(programming_language)",
-    "seedId": "456db83b-e8f1-5c6d-92f2-74eedf3154a3"
+    "source": "https://en.wikipedia.org/wiki/Go_(programming_language)"
   },
   {
+    "itemId": "4f8e6ccb-bed3-4563-871c-fccc9bf4086a",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "go",
@@ -110,7 +111,6 @@
       "go",
       "channels"
     ],
-    "source": "https://go.dev/tour/concurrency/2",
-    "seedId": "a6adda5c-61bf-58cf-adab-40c8822c865d"
+    "source": "https://go.dev/tour/concurrency/2"
   }
 ]

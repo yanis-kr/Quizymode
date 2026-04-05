@@ -1,6 +1,7 @@
 using FluentValidation;
-using Quizymode.Api.Shared.Http;
+using FluentValidation.Results;
 using Quizymode.Api.Shared.Helpers;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Admin;
@@ -8,7 +9,7 @@ namespace Quizymode.Api.Features.Admin;
 public static class SeedSyncAdmin
 {
     public sealed record SeedItemRequest(
-        Guid SeedId,
+        Guid ItemId,
         string Category,
         string NavigationKeyword1,
         string NavigationKeyword2,
@@ -26,7 +27,7 @@ public static class SeedSyncAdmin
         int DeltaPreviewLimit = 200);
 
     public sealed record ChangeResponse(
-        Guid SeedId,
+        Guid ItemId,
         string Action,
         string Category,
         string NavigationKeyword1,
@@ -36,28 +37,21 @@ public static class SeedSyncAdmin
 
     public sealed record PreviewResponse(
         string SeedSet,
-        bool IsInitialSeed,
-        bool PreviewSuppressed,
         int TotalItemsInPayload,
-        int ExistingManagedItemCount,
+        int ExistingItemCount,
         int CreatedCount,
         int UpdatedCount,
-        int AdoptedCount,
         int UnchangedCount,
-        int MissingFromPayloadCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
 
     public sealed record ApplyResponse(
         string SeedSet,
-        bool IsInitialSeed,
         int TotalItemsInPayload,
-        int ExistingManagedItemCount,
+        int ExistingItemCount,
         int CreatedCount,
         int UpdatedCount,
-        int AdoptedCount,
         int UnchangedCount,
-        int MissingFromPayloadCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
 
@@ -86,21 +80,21 @@ public static class SeedSyncAdmin
                 .WithMessage("At least one item is required.")
                 .Must(items => items.Count <= 5000)
                 .WithMessage("Cannot sync more than 5000 items at once.")
-                .Must(HaveUniqueSeedIds)
-                .WithMessage("SeedId values must be unique within a sync request.");
+                .Must(HaveUniqueItemIds)
+                .WithMessage("ItemId values must be unique within a sync request.");
 
             RuleForEach(x => x.Items)
                 .SetValidator(new SeedItemValidator());
         }
 
-        private static bool HaveUniqueSeedIds(List<SeedItemRequest>? items)
+        private static bool HaveUniqueItemIds(List<SeedItemRequest>? items)
         {
             if (items is null)
             {
                 return false;
             }
 
-            return items.Select(i => i.SeedId).Distinct().Count() == items.Count;
+            return items.Select(i => i.ItemId).Distinct().Count() == items.Count;
         }
     }
 
@@ -108,9 +102,9 @@ public static class SeedSyncAdmin
     {
         public SeedItemValidator()
         {
-            RuleFor(x => x.SeedId)
+            RuleFor(x => x.ItemId)
                 .NotEmpty()
-                .WithMessage("SeedId is required.");
+                .WithMessage("ItemId is required.");
 
             RuleFor(x => x.Category)
                 .NotEmpty()
@@ -181,16 +175,16 @@ public static class SeedSyncAdmin
         {
             app.MapPost("admin/seed-sync/preview", PreviewHandler)
                 .WithTags("Admin")
-                .WithSummary("Preview a repo-managed seed sync (Admin only)")
-                .WithDescription("Validates an uploaded seed manifest and returns only the delta for existing seeded items. Initial seed previews suppress the full item list.")
+                .WithSummary("Preview a repo-managed item sync (Admin only)")
+                .WithDescription("Validates an uploaded item manifest and returns the create/update delta for explicit item IDs.")
                 .RequireAuthorization("Admin")
                 .Produces<PreviewResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
 
             app.MapPost("admin/seed-sync/apply", ApplyHandler)
                 .WithTags("Admin")
-                .WithSummary("Apply a repo-managed seed sync (Admin only)")
-                .WithDescription("Upserts a repo-managed seed set using stable item seed IDs. Missing seeded rows in the database are recreated from the manifest.")
+                .WithSummary("Apply a repo-managed item sync (Admin only)")
+                .WithDescription("Upserts repo-managed public items using explicit item IDs.")
                 .RequireAuthorization("Admin")
                 .Produces<ApplyResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -202,7 +196,7 @@ public static class SeedSyncAdmin
             SeedSyncAdminService service,
             CancellationToken cancellationToken)
         {
-            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
@@ -220,7 +214,7 @@ public static class SeedSyncAdmin
             SeedSyncAdminService service,
             CancellationToken cancellationToken)
         {
-            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);

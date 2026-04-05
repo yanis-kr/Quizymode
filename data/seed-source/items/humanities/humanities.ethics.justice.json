@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8cd950a9-bdc2-4ed0-9cec-7877bea19155",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "justice",
@@ -15,10 +16,10 @@
       "justice",
       "fairness"
     ],
-    "source": "https://www.britannica.com/topic/justice-ethics",
-    "seedId": "0fb0947d-4c47-5672-84c5-9d1617b43d72"
+    "source": "https://www.britannica.com/topic/justice-ethics"
   },
   {
+    "itemId": "0d9e3b04-a6d8-491c-8166-4e70830a3f6f",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "justice",
@@ -34,7 +35,6 @@
       "justice",
       "distribution"
     ],
-    "source": "https://plato.stanford.edu/entries/justice-distributive/",
-    "seedId": "b65c70ed-6fc8-58c9-95a2-22cf10564eb2"
+    "source": "https://plato.stanford.edu/entries/justice-distributive/"
   }
 ]

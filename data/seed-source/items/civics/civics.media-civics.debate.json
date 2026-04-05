@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "4c1253dd-f060-472b-9195-bc665cb74bf3",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
     "question": "What does a debate moderator typically do in formal civic debates?",
     "correctAnswer": "enforce time limits, keep order, and ensure each side gets fair turns",
     "incorrectAnswers": [
-      "argue one side’s case",
+      "argue one side\u2019s case",
       "decide the election alone",
       "write the final law"
     ],
@@ -15,10 +16,10 @@
       "moderator",
       "format"
     ],
-    "source": "https://www.britannica.com/topic/debate",
-    "seedId": "37f45c24-0b11-50ee-96d5-44e394f5bb0b"
+    "source": "https://www.britannica.com/topic/debate"
   },
   {
+    "itemId": "cafa88b8-4403-4f6e-a590-0771377df977",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
@@ -26,7 +27,7 @@
     "correctAnswer": "the statement that one team supports and another opposes",
     "incorrectAnswers": [
       "the name of the audience",
-      "a judge’s private notes",
+      "a judge\u2019s private notes",
       "the room temperature"
     ],
     "explanation": "Debaters clash over a clear resolution so arguments stay focused.",
@@ -34,10 +35,10 @@
       "proposition",
       "resolution"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "9ce39bac-1cc0-55a6-b557-6e460e206888"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "89833cb2-689b-4190-bc97-7b2fea3099d8",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
@@ -53,10 +54,10 @@
       "cross-examination",
       "evidence"
     ],
-    "source": "https://www.britannica.com/topic/debate",
-    "seedId": "f0edbc9a-0d44-5fe0-a2d8-a400790541e9"
+    "source": "https://www.britannica.com/topic/debate"
   },
   {
+    "itemId": "f3f49c4d-1c5e-4984-8263-8b2634eb0621",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
@@ -72,10 +73,10 @@
       "rebuttal",
       "argumentation"
     ],
-    "source": "https://www.usa.gov/",
-    "seedId": "23ce55da-c02f-5765-b9e9-3fd81e0956c1"
+    "source": "https://www.usa.gov/"
   },
   {
+    "itemId": "9dce5fdf-c5fe-4637-b09a-97af66060415",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
@@ -91,10 +92,10 @@
       "town-hall",
       "public-forum"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "ca0fa1ca-f244-5fdb-b772-5e57cfc653fd"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "3da8a2a3-d293-4a76-9e12-b524613af2c6",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "debate",
@@ -110,7 +111,6 @@
       "fallacy",
       "logic"
     ],
-    "source": "https://plato.stanford.edu/entries/fallacies/",
-    "seedId": "702dadb0-07c5-544a-a49e-3b79959b9bc5"
+    "source": "https://plato.stanford.edu/entries/fallacies/"
   }
 ]

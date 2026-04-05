@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9819dd13-0a9f-4b0e-9c09-46617b7a592d",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
@@ -15,17 +16,17 @@
       "aws",
       "regions"
     ],
-    "source": "https://docs.aws.amazon.com/global-infrastructure/latest/awsgsg/aws-global-infrastructure.html",
-    "seedId": "3a762937-c6c3-52fb-a3fc-af010104a71b"
+    "source": "https://docs.aws.amazon.com/global-infrastructure/latest/awsgsg/aws-global-infrastructure.html"
   },
   {
+    "itemId": "22de7d0a-85ad-4bf4-b671-9d1dda57b847",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
     "question": "What must be globally unique in Amazon S3 among all AWS accounts?",
-    "correctAnswer": "the bucket name (within the partition’s namespace rules)",
+    "correctAnswer": "the bucket name (within the partition\u2019s namespace rules)",
     "incorrectAnswers": [
-      "each object’s size",
+      "each object\u2019s size",
       "the AWS account email address",
       "the Region code string"
     ],
@@ -34,10 +35,10 @@
       "aws",
       "s3"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html",
-    "seedId": "92aa18f5-0bab-5b2f-a8cb-72bbbb67e65c"
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html"
   },
   {
+    "itemId": "f3e2c3c1-7099-43e8-8699-623a9d6548b8",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
@@ -53,14 +54,14 @@
       "aws",
       "iam"
     ],
-    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
-    "seedId": "47e009b8-35e1-52eb-adfe-2343c6c52818"
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
   },
   {
+    "itemId": "e965c369-fe56-4b8b-8a63-dda155319b63",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
-    "question": "In the shared responsibility model, what is generally the customer’s responsibility for data in the cloud?",
+    "question": "In the shared responsibility model, what is generally the customer\u2019s responsibility for data in the cloud?",
     "correctAnswer": "securing and classifying their data and managing access to it",
     "incorrectAnswers": [
       "physically destroying data center disks on request",
@@ -72,10 +73,10 @@
       "aws",
       "security"
     ],
-    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/",
-    "seedId": "843347db-674a-59cc-8867-b5ddbad35dd3"
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
   },
   {
+    "itemId": "75b09781-2568-4f3f-9b5c-e35a1fef3766",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
@@ -91,10 +92,10 @@
       "aws",
       "networking"
     ],
-    "source": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
-    "seedId": "614c1bd4-cd17-5773-bc33-d1082ed56ce7"
+    "source": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
   },
   {
+    "itemId": "c0718ce3-8dd9-431a-8101-c4f54480efc7",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "aws",
@@ -110,7 +111,6 @@
       "aws",
       "scaling"
     ],
-    "source": "https://www.ibm.com/cloud/learn/scaling",
-    "seedId": "14d470c5-476c-5463-a84b-7b147af590ff"
+    "source": "https://www.ibm.com/cloud/learn/scaling"
   }
 ]

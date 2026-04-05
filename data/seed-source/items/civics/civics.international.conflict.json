@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "3ec7534a-5033-46e9-907c-e01f1b0b47f1",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
-    "question": "What is the UN’s peacekeeping role in simplified civic terms?",
+    "question": "What is the UN\u2019s peacekeeping role in simplified civic terms?",
     "correctAnswer": "deploy multinational missions with consent to stabilize areas and protect civilians within mandates",
     "incorrectAnswers": [
       "replace all national armies permanently",
@@ -15,10 +16,10 @@
       "peacekeeping",
       "un"
     ],
-    "source": "https://peacekeeping.un.org/en",
-    "seedId": "b75c1bcb-055b-5d23-9e25-76f59c0771eb"
+    "source": "https://peacekeeping.un.org/en"
   },
   {
+    "itemId": "99642a39-1b6d-4f3d-923f-28520d928994",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
@@ -34,10 +35,10 @@
       "neutrality",
       "international-law"
     ],
-    "source": "https://www.icrc.org/en/war-and-law",
-    "seedId": "59404de3-57b8-5136-8bb1-86f6fafe7726"
+    "source": "https://www.icrc.org/en/war-and-law"
   },
   {
+    "itemId": "11e0a4f3-4338-4dc4-ac05-e206125e8a29",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
@@ -53,10 +54,10 @@
       "distinction",
       "civilian-protection"
     ],
-    "source": "https://www.icrc.org/en/doc/resources/documents/misc/summary-geneva-conventions.htm",
-    "seedId": "3be3a362-2708-5441-886b-92eb1dd69db4"
+    "source": "https://www.icrc.org/en/doc/resources/documents/misc/summary-geneva-conventions.htm"
   },
   {
+    "itemId": "e0da2ae0-8985-45d9-8ed7-0b7b397ff2d4",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
@@ -72,10 +73,10 @@
       "mediation",
       "peace"
     ],
-    "source": "https://www.un.org/en/peace-and-security/",
-    "seedId": "17371243-3f96-5ae7-87a8-ed0e1926b85c"
+    "source": "https://www.un.org/en/peace-and-security/"
   },
   {
+    "itemId": "b8ea5c01-9a2a-4577-977d-d8c14f1bb358",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
@@ -91,10 +92,10 @@
       "sanctions",
       "pressure"
     ],
-    "source": "https://www.state.gov/economic-sanctions-programs/",
-    "seedId": "2f360ff2-bc7c-52db-a152-22b7a8ae3096"
+    "source": "https://www.state.gov/economic-sanctions-programs/"
   },
   {
+    "itemId": "894652c7-b270-418d-a82d-f6bdd60a764c",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "conflict",
@@ -110,7 +111,6 @@
       "transitional-justice",
       "accountability"
     ],
-    "source": "https://www.ohchr.org/",
-    "seedId": "76ce0b9f-798a-5e91-a0a9-90127b019cc9"
+    "source": "https://www.ohchr.org/"
   }
 ]

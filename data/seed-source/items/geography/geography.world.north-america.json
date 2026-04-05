@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f87ca465-0c6b-42f8-b0bc-5c0f481abff8",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -16,10 +17,10 @@
       "mountain-ranges",
       "rockies"
     ],
-    "source": "https://www.britannica.com/place/Rocky-Mountains",
-    "seedId": "6f72763b-ec7b-43be-a098-a1b03019b384"
+    "source": "https://www.britannica.com/place/Rocky-Mountains"
   },
   {
+    "itemId": "300913bc-d533-45c5-8889-447542fad65d",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -36,10 +37,10 @@
       "mountain-ranges",
       "appalachians"
     ],
-    "source": "https://www.britannica.com/place/Appalachian-Mountains",
-    "seedId": "f964bb5a-a51c-4371-85ac-e0ae4bed0a0a"
+    "source": "https://www.britannica.com/place/Appalachian-Mountains"
   },
   {
+    "itemId": "686b7ad3-8746-4eeb-b832-ab66811000ed",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -50,16 +51,16 @@
       "The Finger Lakes",
       "The Great Slave and Great Bear lakes"
     ],
-    "explanation": "The five Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) lie along or near the US–Canada boundary in eastern North America.",
+    "explanation": "The five Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) lie along or near the US\u2013Canada boundary in eastern North America.",
     "keywords": [
       "north-america",
       "great-lakes",
       "freshwater"
     ],
-    "source": "https://www.britannica.com/place/Great-Lakes",
-    "seedId": "ad31ffd4-519b-4ddc-b602-edd04cf32fb4"
+    "source": "https://www.britannica.com/place/Great-Lakes"
   },
   {
+    "itemId": "e6bc1152-57a0-48ae-b2b0-96460a5b2c35",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -76,10 +77,10 @@
       "great-lakes",
       "lakes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Superior",
-    "seedId": "af75f7f8-8e1a-45ad-98fa-564080a821aa"
+    "source": "https://www.britannica.com/place/Lake-Superior"
   },
   {
+    "itemId": "5105f5d3-01f8-46c1-b544-26d4d63a7cdf",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -96,10 +97,10 @@
       "rivers",
       "mississippi"
     ],
-    "source": "https://www.britannica.com/place/Mississippi-River",
-    "seedId": "6fd51d43-ae10-421e-ac55-bb1b31b07705"
+    "source": "https://www.britannica.com/place/Mississippi-River"
   },
   {
+    "itemId": "467e4c32-6b4f-4fde-a15c-cd0f1c89bcc3",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -116,10 +117,10 @@
       "arctic",
       "canada"
     ],
-    "source": "https://www.britannica.com/place/Hudson-Bay",
-    "seedId": "719849a8-8fc9-4a76-afe1-d1388910a791"
+    "source": "https://www.britannica.com/place/Hudson-Bay"
   },
   {
+    "itemId": "ffb0e6df-4af3-4d7a-92a2-9fa474546f1a",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -136,10 +137,10 @@
       "gulf",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America",
-    "seedId": "ac8ef724-d8a7-4e91-a2b1-e9f42f7cbfda"
+    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
   },
   {
+    "itemId": "51b649df-697a-4154-aa3f-e4fd878944a0",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -156,14 +157,14 @@
       "straits",
       "arctic"
     ],
-    "source": "https://www.britannica.com/place/Bering-Strait",
-    "seedId": "c8ed51d5-b026-4010-b8bc-f1248f12844b"
+    "source": "https://www.britannica.com/place/Bering-Strait"
   },
   {
+    "itemId": "bcf6f4bd-dc1c-470f-9607-9fd50b99e4bc",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
-    "question": "Greenland, the world’s largest island, is part of which European kingdom?",
+    "question": "Greenland, the world\u2019s largest island, is part of which European kingdom?",
     "correctAnswer": "Denmark",
     "incorrectAnswers": [
       "Canada",
@@ -176,10 +177,10 @@
       "arctic",
       "greenland"
     ],
-    "source": "https://www.britannica.com/place/Greenland",
-    "seedId": "fa075893-f950-4458-9115-00ac48a140db"
+    "source": "https://www.britannica.com/place/Greenland"
   },
   {
+    "itemId": "ce19e2a1-007c-4b02-a9ec-5ca74ef044ee",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
@@ -196,47 +197,46 @@
       "canada",
       "geology"
     ],
-    "source": "https://www.britannica.com/place/Canadian-Shield",
-    "seedId": "56630e61-61de-47da-a23f-a2a1e1ae0fd4"
+    "source": "https://www.britannica.com/place/Canadian-Shield"
   },
   {
+    "itemId": "ec2efab9-0b4d-4e2c-aa84-36c70a002eba",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
-    "question": "Which river system, draining northwestern Canada to the Arctic Ocean, is Canada’s longest?",
+    "question": "Which river system, draining northwestern Canada to the Arctic Ocean, is Canada\u2019s longest?",
     "correctAnswer": "The Mackenzie River system",
     "incorrectAnswers": [
       "The St. Lawrence River",
       "The Yukon River",
       "The Nelson River"
     ],
-    "explanation": "The Mackenzie system flows from the Rocky Mountain headwaters region northward to the Beaufort Sea and is Canada’s longest river system.",
+    "explanation": "The Mackenzie system flows from the Rocky Mountain headwaters region northward to the Beaufort Sea and is Canada\u2019s longest river system.",
     "keywords": [
       "north-america",
       "rivers",
       "canada"
     ],
-    "source": "https://www.britannica.com/place/Mackenzie-River",
-    "seedId": "dfae3aae-482a-4c3e-a043-6471053e1c8b"
+    "source": "https://www.britannica.com/place/Mackenzie-River"
   },
   {
+    "itemId": "cd36e7d5-413b-425a-8e14-ee6b52d1c47d",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "north-america",
-    "question": "The Yucatán Peninsula lies between the Gulf of Mexico and which other body of water?",
+    "question": "The Yucat\u00e1n Peninsula lies between the Gulf of Mexico and which other body of water?",
     "correctAnswer": "The Caribbean Sea",
     "incorrectAnswers": [
       "The Pacific Ocean",
       "The Gulf of California",
       "The Adriatic Sea"
     ],
-    "explanation": "The Yucatán Peninsula projects northward between the Gulf of Mexico to the west and north and the Caribbean Sea to the east.",
+    "explanation": "The Yucat\u00e1n Peninsula projects northward between the Gulf of Mexico to the west and north and the Caribbean Sea to the east.",
     "keywords": [
       "north-america",
       "peninsulas",
       "caribbean"
     ],
-    "source": "https://www.britannica.com/place/Yucatan-Peninsula",
-    "seedId": "ed371588-3abb-4fec-83ad-cf75e0ebcba8"
+    "source": "https://www.britannica.com/place/Yucatan-Peninsula"
   }
 ]

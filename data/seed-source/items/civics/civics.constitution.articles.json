@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f4e8a0ae-9fb9-4b60-8752-8adb2b1c1398",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
@@ -15,10 +16,10 @@
       "articles",
       "legislative-branch"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-1/",
-    "seedId": "cac4f2ad-fbd1-5c06-b7f4-746385bc86ee"
+    "source": "https://constitution.congress.gov/constitution/article-1/"
   },
   {
+    "itemId": "4c7eb585-abfb-4177-9a79-8db19e5a1833",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
@@ -34,10 +35,10 @@
       "articles",
       "executive-branch"
     ],
-    "source": "https://www.law.cornell.edu/constitution/article-ii",
-    "seedId": "5ecdbf98-6d10-5167-aca3-af5b46c6b8fa"
+    "source": "https://www.law.cornell.edu/constitution/article-ii"
   },
   {
+    "itemId": "dc4d1fe8-f169-4aa5-b537-9cbd2acac1cf",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
@@ -53,10 +54,10 @@
       "articles",
       "judicial-branch"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/article-iii",
-    "seedId": "ce236940-85da-5a83-b949-03c04c370fdf"
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/article-iii"
   },
   {
+    "itemId": "5d880977-17de-46e7-81d1-86cc2253aee7",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
@@ -72,14 +73,14 @@
       "articles",
       "amendment-process"
     ],
-    "source": "https://www.senate.gov/civics/constitution_item/constitution.htm?con_article=V",
-    "seedId": "35eacafd-9513-5967-a3e1-1b1687646b2a"
+    "source": "https://www.senate.gov/civics/constitution_item/constitution.htm?con_article=V"
   },
   {
+    "itemId": "3b517cb0-b7c7-4be5-9176-5313250b08b3",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
-    "question": "Which article contains the Supremacy Clause, making the Constitution and valid federal law the “supreme Law of the Land”?",
+    "question": "Which article contains the Supremacy Clause, making the Constitution and valid federal law the \u201csupreme Law of the Land\u201d?",
     "correctAnswer": "Article VI",
     "incorrectAnswers": [
       "Article IV",
@@ -91,10 +92,10 @@
       "articles",
       "supremacy-clause"
     ],
-    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
-    "seedId": "26dc1950-582b-5bad-8a54-4d845391a565"
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript"
   },
   {
+    "itemId": "2b1152ed-8190-480c-a9fe-8ea10e04b06d",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "articles",
@@ -110,7 +111,6 @@
       "articles",
       "ratification"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-7/",
-    "seedId": "7ba6aca7-0314-51e0-96b7-849c05f9023c"
+    "source": "https://constitution.congress.gov/constitution/article-7/"
   }
 ]

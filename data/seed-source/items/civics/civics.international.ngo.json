@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6f83d441-5b22-41b0-b822-39339e5ef6ba",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -15,10 +16,10 @@
       "ngo",
       "definition"
     ],
-    "source": "https://www.un.org/en/partnerships/non-governmental-organizations",
-    "seedId": "267dd006-fa34-5757-9e44-0aded238ba14"
+    "source": "https://www.un.org/en/partnerships/non-governmental-organizations"
   },
   {
+    "itemId": "7c9c83ce-89a3-4c88-b647-f94bbdbaa3fa",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -34,10 +35,10 @@
       "igo",
       "civil-society"
     ],
-    "source": "https://www.un.org/en/",
-    "seedId": "028758b4-e635-5008-b5eb-1b7edf7b542b"
+    "source": "https://www.un.org/en/"
   },
   {
+    "itemId": "899c072a-d8a1-4525-b647-4c6299f8ff54",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -48,15 +49,15 @@
       "replace national constitutions",
       "command all border troops"
     ],
-    "explanation": "They fill gaps with consent and safety rules, complementing—not replacing—states.",
+    "explanation": "They fill gaps with consent and safety rules, complementing\u2014not replacing\u2014states.",
     "keywords": [
       "humanitarian-aid",
       "relief"
     ],
-    "source": "https://www.icrc.org/en/what-we-do",
-    "seedId": "f72e5adf-8062-5317-a1fb-dd12516ce86f"
+    "source": "https://www.icrc.org/en/what-we-do"
   },
   {
+    "itemId": "2b4cf3c8-289b-4366-9c13-e5c9fae250e9",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -72,10 +73,10 @@
       "ecosoc",
       "advocacy"
     ],
-    "source": "https://www.un.org/en/partnerships/non-governmental-organizations",
-    "seedId": "b37f653c-8a54-59b5-b5fd-66f0b0c26215"
+    "source": "https://www.un.org/en/partnerships/non-governmental-organizations"
   },
   {
+    "itemId": "d5064b8a-d04f-4c40-84d7-22bd2a370941",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -91,10 +92,10 @@
       "accountability",
       "governance"
     ],
-    "source": "https://www.oecd.org/dac/standards-for-civil-society-organisations.htm",
-    "seedId": "4cc9cced-853c-5a47-a2e8-e97b9aeff9bc"
+    "source": "https://www.oecd.org/dac/standards-for-civil-society-organisations.htm"
   },
   {
+    "itemId": "e7f301b3-ce85-4580-b069-259b56c6def4",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "ngo",
@@ -110,7 +111,6 @@
       "watchdog",
       "advocacy"
     ],
-    "source": "https://www.ohchr.org/",
-    "seedId": "53164ba1-ae13-5bac-9aa1-5d7af56ee8e0"
+    "source": "https://www.ohchr.org/"
   }
 ]

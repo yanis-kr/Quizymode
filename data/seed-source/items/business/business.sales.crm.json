@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c6aa757d-bf99-4e88-a68c-3e187d97f1e1",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -15,10 +16,10 @@
       "crm",
       "systems"
     ],
-    "source": "https://www.salesforce.com/crm/what-is-crm/",
-    "seedId": "6127f5d6-f87c-493d-a1eb-091adf2af670"
+    "source": "https://www.salesforce.com/crm/what-is-crm/"
   },
   {
+    "itemId": "3f2996ef-1787-4b15-b985-d1d3556b504e",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -34,10 +35,10 @@
       "activity-logging",
       "crm"
     ],
-    "source": "https://blog.hubspot.com/sales/crm-best-practices",
-    "seedId": "279e18fc-93cd-4a50-85ef-d2ea772157e1"
+    "source": "https://blog.hubspot.com/sales/crm-best-practices"
   },
   {
+    "itemId": "3f6f0009-a7a8-4913-88f8-1680924c1cf4",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -53,10 +54,10 @@
       "lead-scoring",
       "marketing-sales"
     ],
-    "source": "https://www.salesforce.com/products/guide/lead-scoring/",
-    "seedId": "202c9876-ba50-42c4-a3c8-a58e4ab6c3ba"
+    "source": "https://www.salesforce.com/products/guide/lead-scoring/"
   },
   {
+    "itemId": "202d7485-aa91-442e-987b-3472b2544183",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -72,10 +73,10 @@
       "opportunity-owner",
       "crm"
     ],
-    "source": "https://help.salesforce.com/s/articleView?id=sf.fo_opportunity_owner.htm",
-    "seedId": "5574f334-68fa-4db0-9b82-32837fe77543"
+    "source": "https://help.salesforce.com/s/articleView?id=sf.fo_opportunity_owner.htm"
   },
   {
+    "itemId": "22f9fac2-5137-46be-8cee-94604c0a060c",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -91,10 +92,10 @@
       "privacy",
       "data-governance"
     ],
-    "source": "https://www.ftc.gov/business-guidance/privacy-security",
-    "seedId": "d9db5013-01d8-4200-9e14-3b6de1b3c751"
+    "source": "https://www.ftc.gov/business-guidance/privacy-security"
   },
   {
+    "itemId": "9af83ee0-b5bb-4ca1-9879-ae9f118dda93",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "crm",
@@ -110,7 +111,6 @@
       "integration",
       "revops"
     ],
-    "source": "https://blog.hubspot.com/marketing/crm-marketing-automation",
-    "seedId": "89ee0402-d143-4026-9e0e-7c0c7de62a38"
+    "source": "https://blog.hubspot.com/marketing/crm-marketing-automation"
   }
 ]

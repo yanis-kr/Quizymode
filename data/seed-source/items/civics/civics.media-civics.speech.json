@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bd5f966c-3fc9-47b0-aa18-0fcfa5e3b733",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
@@ -15,10 +16,10 @@
       "prior-restraint",
       "press-freedom"
     ],
-    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity",
-    "seedId": "bb2709b1-a025-5f37-8b2e-53e815912eb5"
+    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity"
   },
   {
+    "itemId": "23ed4fa3-7e4c-4a88-925e-0c08a47dd3c9",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
@@ -29,15 +30,15 @@
       "to ban all criticism of courts",
       "to end all advertising"
     ],
-    "explanation": "Independence supports the public’s access to information and accountability reporting.",
+    "explanation": "Independence supports the public\u2019s access to information and accountability reporting.",
     "keywords": [
       "editorial-independence",
       "press"
     ],
-    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
-    "seedId": "6602775e-3cbb-585e-b8a6-acfa8b72c3a7"
+    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
   },
   {
+    "itemId": "69c73c24-ab31-4911-933e-9980da034c96",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
@@ -53,10 +54,10 @@
       "defamation",
       "opinion"
     ],
-    "source": "https://www.law.cornell.edu/wex/defamation",
-    "seedId": "bd022e27-7cd0-58be-980b-02dd22d547fc"
+    "source": "https://www.law.cornell.edu/wex/defamation"
   },
   {
+    "itemId": "0ac98606-7381-4a1a-9667-a07b98201253",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
@@ -72,10 +73,10 @@
       "public-forum",
       "first-amendment"
     ],
-    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity",
-    "seedId": "a070fd8f-182f-5ae9-9282-2088712f52b4"
+    "source": "https://www.uscourts.gov/educational-resources/educational-activities/first-amendment-activity"
   },
   {
+    "itemId": "36a889b7-74b5-4b9b-88e8-70f918ee091b",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
@@ -91,15 +92,15 @@
       "broadcast-regulation",
       "spectrum"
     ],
-    "source": "https://www.fcc.gov/consumers/guides/public-and-broadcasting",
-    "seedId": "32205a81-5dfd-58cb-a8f0-f4ce65b6eeb2"
+    "source": "https://www.fcc.gov/consumers/guides/public-and-broadcasting"
   },
   {
+    "itemId": "a5d6e59c-65b0-47ee-9a11-b7176c6f4fb6",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "speech",
     "question": "What is anonymous speech in civic debate?",
-    "correctAnswer": "expression where the author’s identity is not revealed",
+    "correctAnswer": "expression where the author\u2019s identity is not revealed",
     "incorrectAnswers": [
       "speech that must be false",
       "speech only allowed for judges",
@@ -110,7 +111,6 @@
       "anonymity",
       "expression"
     ],
-    "source": "https://www.britannica.com/topic/freedom-of-speech",
-    "seedId": "4bcd4956-f8b4-5ae0-9ab4-c0d56ca31b68"
+    "source": "https://www.britannica.com/topic/freedom-of-speech"
   }
 ]

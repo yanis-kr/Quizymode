@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "4d634f72-d42b-4eb1-9ba1-2f376a8668c3",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "composers",
@@ -15,10 +16,10 @@
       "music-composers",
       "composition"
     ],
-    "source": "https://www.britannica.com/art/composition-music",
-    "seedId": "6c7a746c-7962-546d-a281-e2923801baba"
+    "source": "https://www.britannica.com/art/composition-music"
   },
   {
+    "itemId": "da9f0de5-ae85-49cc-8bf8-510fc44d8092",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "composers",
@@ -34,7 +35,6 @@
       "music-composers",
       "beethoven"
     ],
-    "source": "https://www.loc.gov/collections/ludwig-van-beethoven/about-this-collection/",
-    "seedId": "dac40ddc-ee81-5f88-b159-269f773ac038"
+    "source": "https://www.loc.gov/collections/ludwig-van-beethoven/about-this-collection/"
   }
 ]

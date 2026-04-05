@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bc77c383-7a94-4302-a9fd-5246ac3e05d3",
     "category": "humanities",
     "navigationKeyword1": "culture",
     "navigationKeyword2": "media",
@@ -15,10 +16,10 @@
       "culture-media",
       "representation"
     ],
-    "source": "https://www.britannica.com/topic/mass-media",
-    "seedId": "dfc80f5e-67e3-5ada-9ff1-88c308c06231"
+    "source": "https://www.britannica.com/topic/mass-media"
   },
   {
+    "itemId": "51ebd2cc-2025-40cd-bc52-de2cc332cb1a",
     "category": "humanities",
     "navigationKeyword1": "culture",
     "navigationKeyword2": "media",
@@ -34,7 +35,6 @@
       "culture-media",
       "influence"
     ],
-    "source": "https://www.loc.gov/programs/radio-preservation-task-force/about-this-program/",
-    "seedId": "cd9d6afe-349e-5982-992c-dc7ed7d5d447"
+    "source": "https://www.loc.gov/programs/radio-preservation-task-force/about-this-program/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8de69137-6dc5-4017-a7ec-276906bc7ca1",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -15,10 +16,10 @@
       "criminal-law",
       "burden-of-proof"
     ],
-    "source": "https://www.law.cornell.edu/wex/burden_of_proof",
-    "seedId": "b6be7a05-70d2-51ac-8228-ef0cb6c45b52"
+    "source": "https://www.law.cornell.edu/wex/burden_of_proof"
   },
   {
+    "itemId": "b6dc33bc-b08b-4cf9-bc9c-eb2d4d2480d8",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -34,10 +35,10 @@
       "criminal-law",
       "reasonable-doubt"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases",
-    "seedId": "b513c81b-df77-507e-ba1d-cf6c862498ca"
+    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases"
   },
   {
+    "itemId": "bf55abe3-186c-49ce-a4c2-334111716b5a",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -53,10 +54,10 @@
       "criminal-law",
       "constitutional-rights"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-5/",
-    "seedId": "58a155d5-2f19-5674-b49e-32c74971a8bb"
+    "source": "https://constitution.congress.gov/constitution/amendment-5/"
   },
   {
+    "itemId": "a19f59bf-d266-4e4f-bfad-bd01f70a9fb6",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -72,10 +73,10 @@
       "criminal-law",
       "grand-jury"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/types-cases",
-    "seedId": "7f73b79e-54ce-51a6-9c21-690cba618efc"
+    "source": "https://www.uscourts.gov/about-federal-courts/types-cases"
   },
   {
+    "itemId": "5335a4d6-09a4-41f1-90c9-9ce36a0e245a",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -91,10 +92,10 @@
       "criminal-law",
       "right-to-counsel"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-6/",
-    "seedId": "8e7083f1-ee71-5486-a560-4bc0cc4d1f4c"
+    "source": "https://constitution.congress.gov/constitution/amendment-6/"
   },
   {
+    "itemId": "4fbd16cd-a829-4bf6-9861-75542f715736",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "criminal",
@@ -110,7 +111,6 @@
       "criminal-law",
       "felony-misdemeanor"
     ],
-    "source": "https://www.law.cornell.edu/wex/misdemeanor",
-    "seedId": "c16afda5-4d66-5a90-a053-1df2d5cd64dc"
+    "source": "https://www.law.cornell.edu/wex/misdemeanor"
   }
 ]

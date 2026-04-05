@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ee25f181-6977-4528-a65b-7155d25bc453",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -15,10 +16,10 @@
       "water",
       "german-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser",
-    "seedId": "aca0a51d-0338-5a2a-ae0a-e400c0a74612"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser"
   },
   {
+    "itemId": "50f64e5a-a62e-4d56-aacf-e0c50896c084",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -34,10 +35,10 @@
       "bread",
       "german-vocab"
     ],
-    "source": "https://www.duden.de/rechtschreibung/Brot",
-    "seedId": "cb906c89-af9c-5de2-95a6-6ee71ffbe5b3"
+    "source": "https://www.duden.de/rechtschreibung/Brot"
   },
   {
+    "itemId": "099d73b8-8738-4dc0-94cb-d473c0f45773",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -53,10 +54,10 @@
       "thank-you",
       "german-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/danke",
-    "seedId": "b8f71e98-55fc-569d-88f0-e000b824fc19"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/danke"
   },
   {
+    "itemId": "d3210c32-efb1-4052-bb3f-3b7130871bdb",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -72,10 +73,10 @@
       "please",
       "german-vocab"
     ],
-    "source": "https://www.goethe.de/en/spr/englisch.html",
-    "seedId": "bbe2dfa6-9f5a-5d3c-b96e-043d975f3e0a"
+    "source": "https://www.goethe.de/en/spr/englisch.html"
   },
   {
+    "itemId": "7a9eabed-1834-4ded-8f0d-040aec5fdfab",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -91,10 +92,10 @@
       "family",
       "german-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/familie",
-    "seedId": "989d86aa-ee71-51a4-80c3-777af521e1d8"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/familie"
   },
   {
+    "itemId": "c303992e-eb65-4052-a558-56d3bed18400",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
@@ -110,7 +111,6 @@
       "good-morning",
       "german-vocab"
     ],
-    "source": "https://www.deutsch.info/en/vocabulary/",
-    "seedId": "50814660-a41c-5d91-b615-d05aaa48c6a7"
+    "source": "https://www.deutsch.info/en/vocabulary/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0577322f-2fc1-4c15-8b3d-29837c276b9d",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -15,10 +16,10 @@
       "sre",
       "error-budget"
     ],
-    "source": "https://aws.amazon.com/builders-library/availability-metrics/",
-    "seedId": "ce54cfd8-8f63-5a48-90b7-31b3e0075448"
+    "source": "https://aws.amazon.com/builders-library/availability-metrics/"
   },
   {
+    "itemId": "8ad52ee6-f175-4f2f-a1ad-ba71b0fc4ed5",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -34,10 +35,10 @@
       "sre",
       "slo"
     ],
-    "source": "https://sre.google/sre-book/service-level-objectives/",
-    "seedId": "7af279c4-514b-5d4f-81a3-fad1223fd4d3"
+    "source": "https://sre.google/sre-book/service-level-objectives/"
   },
   {
+    "itemId": "7322cccd-c613-44ef-bafc-b5ba88e714f9",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -53,10 +54,10 @@
       "sre",
       "sla"
     ],
-    "source": "https://www.atlassian.com/incident-management/kpis/sla-vs-slo-vs-sli",
-    "seedId": "7540ffbd-a227-592a-8783-fbb96bd0bd14"
+    "source": "https://www.atlassian.com/incident-management/kpis/sla-vs-slo-vs-sli"
   },
   {
+    "itemId": "7c640574-bbac-4637-828e-43ff95881b3f",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -72,10 +73,10 @@
       "sre",
       "toil"
     ],
-    "source": "https://sre.google/sre-book/eliminating-toil/",
-    "seedId": "a973b5a0-be8e-509e-9356-0148605cd26b"
+    "source": "https://sre.google/sre-book/eliminating-toil/"
   },
   {
+    "itemId": "ea131b00-ee8f-4b21-9f3a-e9db8b5aa930",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -91,10 +92,10 @@
       "sre",
       "alerting"
     ],
-    "source": "https://sre.google/sre-book/monitoring-distributed-systems/",
-    "seedId": "e4a3c66a-ad77-5432-a818-d9aefe7016b3"
+    "source": "https://sre.google/sre-book/monitoring-distributed-systems/"
   },
   {
+    "itemId": "dd0acbf4-181b-463b-ba9c-e023d69c676c",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "sre",
@@ -110,7 +111,6 @@
       "sre",
       "postmortem"
     ],
-    "source": "https://sre.google/sre-book/postmortem-culture/",
-    "seedId": "7ae41919-8a70-58fe-91d9-dd4dbda67afc"
+    "source": "https://sre.google/sre-book/postmortem-culture/"
   }
 ]

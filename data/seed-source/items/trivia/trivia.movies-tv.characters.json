@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "6aa27ae9-ded0-4401-93a9-5b7405173206",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "At the 95th Academy Awards, which film’s character is associated with Michelle Yeoh’s Lead Actress win?",
+    "question": "At the 95th Academy Awards, which film\u2019s character is associated with Michelle Yeoh\u2019s Lead Actress win?",
     "correctAnswer": "Everything Everywhere All at Once",
     "incorrectAnswers": [
-      "Tár",
+      "T\u00e1r",
       "Blonde",
       "To Leslie"
     ],
@@ -15,14 +16,14 @@
       "oscars",
       "roles"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "e01632b6-877f-5f1c-880f-46eb44c43545"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "59173229-ebe5-48ab-86f8-cf24e4f537dd",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "At the 95th Academy Awards, brendan Fraser won Lead Actor for which film’s role?",
+    "question": "At the 95th Academy Awards, brendan Fraser won Lead Actor for which film\u2019s role?",
     "correctAnswer": "The Whale",
     "incorrectAnswers": [
       "Elvis",
@@ -34,10 +35,10 @@
       "oscars",
       "roles"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "b7cd9679-c242-53e4-a04a-69a5332cf38b"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "43043b6e-d662-423e-b06c-679f778597aa",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
@@ -53,10 +54,10 @@
       "oscars",
       "roles"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "3feba801-f4c4-57d3-9863-c4c14c48b2e8"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "6244ed1f-6cd4-42b8-994a-7d1d7d93d150",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
@@ -72,14 +73,14 @@
       "oscars",
       "roles"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "60cf4ee7-dd65-549f-a13c-da7d36b09f5c"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "f6b3c8cf-f7df-4787-a996-d5945f2fcf3e",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "Which creator’s stories is associated with Sherlock Holmes?",
+    "question": "Which creator\u2019s stories is associated with Sherlock Holmes?",
     "correctAnswer": "Arthur Conan Doyle",
     "incorrectAnswers": [
       "Agatha Christie",
@@ -91,29 +92,29 @@
       "detective",
       "literature"
     ],
-    "source": "https://www.britannica.com/topic/Sherlock-Holmes-fictional-character",
-    "seedId": "e693bd32-0be8-5139-b354-72210071b457"
+    "source": "https://www.britannica.com/topic/Sherlock-Holmes-fictional-character"
   },
   {
+    "itemId": "02330165-f9cf-4878-b457-d68c2f321583",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "Which author’s spy novels origin is most closely associated with James Bond?",
+    "question": "Which author\u2019s spy novels origin is most closely associated with James Bond?",
     "correctAnswer": "Ian Fleming",
     "incorrectAnswers": [
-      "John le Carré",
+      "John le Carr\u00e9",
       "Tom Clancy",
       "Graham Greene"
     ],
-    "explanation": "Bond originates in Fleming’s novels.",
+    "explanation": "Bond originates in Fleming\u2019s novels.",
     "keywords": [
       "bond",
       "spy-fi"
     ],
-    "source": "https://www.britannica.com/topic/James-Bond-fictional-character",
-    "seedId": "00fa5cf0-ea86-5f4a-87bc-d77516434373"
+    "source": "https://www.britannica.com/topic/James-Bond-fictional-character"
   },
   {
+    "itemId": "0cd19851-9491-4aa4-8ff3-cc64cc44d771",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
@@ -129,29 +130,29 @@
       "star-wars",
       "villains"
     ],
-    "source": "https://www.britannica.com/topic/Darth-Vader",
-    "seedId": "4572bd5d-0c0b-5916-a999-f0328cbda76e"
+    "source": "https://www.britannica.com/topic/Darth-Vader"
   },
   {
+    "itemId": "e8ab3b17-88f3-4d46-8e7b-b6d6d3d028ba",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "Which novelist’s work is associated with Elizabeth Bennet?",
+    "question": "Which novelist\u2019s work is associated with Elizabeth Bennet?",
     "correctAnswer": "Jane Austen",
     "incorrectAnswers": [
-      "Charlotte Brontë",
+      "Charlotte Bront\u00eb",
       "Emily Dickinson",
       "Virginia Woolf"
     ],
-    "explanation": "Elizabeth Bennet is from Austen’s Pride and Prejudice.",
+    "explanation": "Elizabeth Bennet is from Austen\u2019s Pride and Prejudice.",
     "keywords": [
       "austen",
       "adaptations"
     ],
-    "source": "https://www.britannica.com/topic/Elizabeth-Bennet-fictional-character",
-    "seedId": "042a4a11-38fe-5bb5-bc82-9722a61f1e94"
+    "source": "https://www.britannica.com/topic/Elizabeth-Bennet-fictional-character"
   },
   {
+    "itemId": "cd5fd579-aa4e-4504-b4f2-f9e632f5f679",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
@@ -167,14 +168,14 @@
       "fantasy",
       "adaptations"
     ],
-    "source": "https://www.britannica.com/topic/Harry-Potter-fictional-character",
-    "seedId": "e066152a-280f-529d-b0b2-a45c1a090598"
+    "source": "https://www.britannica.com/topic/Harry-Potter-fictional-character"
   },
   {
+    "itemId": "0d666aad-526a-454c-bf1e-8b55afe9d230",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "characters",
-    "question": "Which publisher’s comics is most closely associated with Batman?",
+    "question": "Which publisher\u2019s comics is most closely associated with Batman?",
     "correctAnswer": "DC Comics",
     "incorrectAnswers": [
       "Marvel Comics",
@@ -186,7 +187,6 @@
       "batman",
       "comics"
     ],
-    "source": "https://www.britannica.com/topic/Batman-fictional-character",
-    "seedId": "b2f3b247-a73e-5658-ad11-26d7081641d2"
+    "source": "https://www.britannica.com/topic/Batman-fictional-character"
   }
 ]

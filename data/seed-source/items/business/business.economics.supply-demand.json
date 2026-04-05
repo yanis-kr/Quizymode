@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d5838306-fed4-4509-a169-24ffdf91e772",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
@@ -16,10 +17,10 @@
       "demand-shift",
       "price-response"
     ],
-    "source": "https://www.investopedia.com/terms/d/demand.asp",
-    "seedId": "24b9782a-4947-5411-bcf2-0d8e4b455dc2"
+    "source": "https://www.investopedia.com/terms/d/demand.asp"
   },
   {
+    "itemId": "367e0077-f404-46ca-bba1-c02c47654079",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
@@ -30,16 +31,16 @@
       "It stays constant because equilibrium price depends only on demand",
       "It jumps to a random value unrelated to supply and demand"
     ],
-    "explanation": "A supply increase pushes the equilibrium toward a higher quantity and a lower price (assuming demand doesn’t change).",
+    "explanation": "A supply increase pushes the equilibrium toward a higher quantity and a lower price (assuming demand doesn\u2019t change).",
     "keywords": [
       "equilibrium",
       "supply-shift",
       "price"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "337e03a4-f675-53ab-ac6e-2b83f270c4f9"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "80f18f71-4631-4c22-bbe1-021e9feb89e1",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
@@ -56,10 +57,10 @@
       "shifts",
       "movements"
     ],
-    "source": "https://www.investopedia.com/terms/d/demand.asp",
-    "seedId": "07dce26f-4060-50f2-94e0-566550781953"
+    "source": "https://www.investopedia.com/terms/d/demand.asp"
   },
   {
+    "itemId": "69515dcc-19ae-4c39-8615-d003011b3ed0",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
@@ -67,26 +68,26 @@
     "correctAnswer": "A shortage, because quantity demanded exceeds quantity supplied at that price.",
     "incorrectAnswers": [
       "A surplus, because quantity supplied exceeds quantity demanded",
-      "No change, because ceilings don’t affect markets",
+      "No change, because ceilings don\u2019t affect markets",
       "Perfect equilibrium, because shortages improve allocation automatically"
     ],
-    "explanation": "When the ceiling prevents the price from reaching the equilibrium level, the market can’t clear, leading to shortage conditions.",
+    "explanation": "When the ceiling prevents the price from reaching the equilibrium level, the market can\u2019t clear, leading to shortage conditions.",
     "keywords": [
       "price-ceiling",
       "shortage",
       "market-clearing"
     ],
-    "source": "https://www.imf.org/en/Topics",
-    "seedId": "6e6dac35-2bc7-5c04-839d-7863dfd8a8b7"
+    "source": "https://www.imf.org/en/Topics"
   },
   {
+    "itemId": "e310629e-92b6-4249-bf2e-fd7657f33b63",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
     "question": "If a government sets a price floor above equilibrium, what is a common outcome?",
     "correctAnswer": "A surplus, because quantity supplied exceeds quantity demanded at that price.",
     "incorrectAnswers": [
-      "A shortage, because sellers can’t produce enough",
+      "A shortage, because sellers can\u2019t produce enough",
       "No effect, because floors do not constrain prices",
       "Only more inflation, with no quantity effects"
     ],
@@ -96,10 +97,10 @@
       "surplus",
       "price-controls"
     ],
-    "source": "https://www.investopedia.com/terms/p/pricefloor.asp",
-    "seedId": "3608cd7e-0bcc-5643-8c0b-b7ac8c27b7bd"
+    "source": "https://www.investopedia.com/terms/p/pricefloor.asp"
   },
   {
+    "itemId": "2a4ecbc2-6d35-4860-94ac-4483623e38f2",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "supply-demand",
@@ -116,7 +117,6 @@
       "responsiveness",
       "price-change"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "377225c2-b111-5f34-96aa-e55722b54f78"
+    "source": "https://www.oecd.org/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bea2ea37-ef66-4bec-8789-c66f3599fb53",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
@@ -16,10 +17,10 @@
       "risk",
       "portfolio-management"
     ],
-    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
-    "seedId": "91e04231-c07b-5813-b139-745b9e2c4716"
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
   },
   {
+    "itemId": "e154af32-942d-4271-83c4-ffb2542ff9c0",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
@@ -30,20 +31,20 @@
       "Guarantee a fixed return regardless of market moves.",
       "Move your allocation each day to maximize short-term gains."
     ],
-    "explanation": "Index funds are built to mirror an index’s holdings and performance rather than trying to beat it through frequent trading.",
+    "explanation": "Index funds are built to mirror an index\u2019s holdings and performance rather than trying to beat it through frequent trading.",
     "keywords": [
       "index-funds",
       "passive-investing",
       "indexing"
     ],
-    "source": "https://www.sec.gov/investor/pubs/index-mutualfunds.html",
-    "seedId": "a3ba5422-4258-5af9-a327-8d9db9785dae"
+    "source": "https://www.sec.gov/investor/pubs/index-mutualfunds.html"
   },
   {
+    "itemId": "ee7ad80b-36cd-49b4-b647-000035e8c8f6",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
-    "question": "In portfolio terms, what is “rebalancing” usually meant to fix?",
+    "question": "In portfolio terms, what is \u201crebalancing\u201d usually meant to fix?",
     "correctAnswer": "That asset weights drift away from your intended mix over time.",
     "incorrectAnswers": [
       "It converts your investments into cash automatically at market peaks.",
@@ -56,10 +57,10 @@
       "asset-allocation",
       "risk-control"
     ],
-    "source": "https://www.finra.org/investors/investing-basics/portfolio-rebalancing",
-    "seedId": "c8d2521a-538b-50c2-a2c7-9e016d29b618"
+    "source": "https://www.finra.org/investors/investing-basics/portfolio-rebalancing"
   },
   {
+    "itemId": "a39cede1-4a68-4ab3-8c17-d414906e73c0",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
@@ -76,14 +77,14 @@
       "volatility",
       "expected-returns"
     ],
-    "source": "https://www.investopedia.com/terms/r/riskreturntradeoff.asp",
-    "seedId": "df4228d8-2273-572c-9c67-f77951edf74f"
+    "source": "https://www.investopedia.com/terms/r/riskreturntradeoff.asp"
   },
   {
+    "itemId": "53e4c26d-df45-422e-864c-e5766b0633a1",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
-    "question": "Why do bonds’ price usually move when interest rates move?",
+    "question": "Why do bonds\u2019 price usually move when interest rates move?",
     "correctAnswer": "Because the present value of bond payments changes when the market discount rate changes.",
     "incorrectAnswers": [
       "Because bond prices are fixed and never respond to rates.",
@@ -96,27 +97,26 @@
       "interest-rates",
       "price-risk"
     ],
-    "source": "https://www.investopedia.com/terms/d/duration.asp",
-    "seedId": "4b3256fd-6cff-570f-80da-897552d3d4ea"
+    "source": "https://www.investopedia.com/terms/d/duration.asp"
   },
   {
+    "itemId": "e5c1cf99-a738-4f10-bcc5-434b66d3a5fd",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "investing",
-    "question": "What is the difference between a bond’s coupon rate and its yield?",
-    "correctAnswer": "The coupon rate is the bond’s fixed interest rate on face value, while yield reflects the return based on the bond’s current price.",
+    "question": "What is the difference between a bond\u2019s coupon rate and its yield?",
+    "correctAnswer": "The coupon rate is the bond\u2019s fixed interest rate on face value, while yield reflects the return based on the bond\u2019s current price.",
     "incorrectAnswers": [
       "The coupon rate and yield are always identical for every bond.",
       "Coupon rate is the return today, and yield is the promised future rate on face value.",
       "Yield ignores price entirely and only depends on face value."
     ],
-    "explanation": "Coupon rate is set at issuance, but yield changes with the bond’s price in the market.",
+    "explanation": "Coupon rate is set at issuance, but yield changes with the bond\u2019s price in the market.",
     "keywords": [
       "bond-yield",
       "coupon-rate",
       "fixed-income"
     ],
-    "source": "https://www.sec.gov/education/capital-markets/bonds",
-    "seedId": "350da6d4-2951-547f-992b-b3f478edcd63"
+    "source": "https://www.sec.gov/education/capital-markets/bonds"
   }
 ]

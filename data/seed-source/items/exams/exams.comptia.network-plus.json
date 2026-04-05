@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6bc97ea4-72ec-423d-994a-caf085403823",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -16,10 +17,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.comptia.org/en-us/certifications/network/",
-    "seedId": "5c0fff41-507f-4f95-8429-a114db4915b3"
+    "source": "https://www.comptia.org/en-us/certifications/network/"
   },
   {
+    "itemId": "a06da73a-a207-4892-b172-833e7d4c5b84",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -36,10 +37,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc2131",
-    "seedId": "f508d1e9-cd82-47a1-a8e8-7670ca22016e"
+    "source": "https://www.rfc-editor.org/rfc/rfc2131"
   },
   {
+    "itemId": "face4809-2cf9-4edb-b87e-84bc47a33b68",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -56,10 +57,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html",
-    "seedId": "479e51ab-fd7f-448f-93f5-383ac6ec4e08"
+    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html"
   },
   {
+    "itemId": "2e07fe51-782b-40b9-b036-f48b1f82eb3e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -76,10 +77,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html",
-    "seedId": "4c65833b-c4b7-4da7-8256-d4913eb77cf1"
+    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
   },
   {
+    "itemId": "3e9e7488-c96c-46e7-913c-801df2322e59",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -96,10 +97,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html",
-    "seedId": "b92a2531-7294-4d2c-a01f-76622c191854"
+    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
   },
   {
+    "itemId": "66079818-9543-4c82-b8b3-acba5f5eb871",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -116,10 +117,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4251",
-    "seedId": "630e4483-5db7-48f7-8209-bad01fd44d42"
+    "source": "https://www.rfc-editor.org/rfc/rfc4251"
   },
   {
+    "itemId": "85791681-e1a8-4825-bdc3-6366c8d0aefe",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -136,10 +137,10 @@
       "network-fundamentals",
       "protocols"
     ],
-    "source": "https://www.comptia.org/en-us/certifications/network/",
-    "seedId": "b460d79c-bf5a-4802-840d-54c31e09d180"
+    "source": "https://www.comptia.org/en-us/certifications/network/"
   },
   {
+    "itemId": "686f4cd3-2199-491b-8fa9-6a1ffcac5f9a",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -156,10 +157,10 @@
       "dns",
       "protocols"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc1034",
-    "seedId": "888fd598-4a1b-49a0-9757-15cbcb91eb5d"
+    "source": "https://www.rfc-editor.org/rfc/rfc1034"
   },
   {
+    "itemId": "be13792e-de31-4a9f-baee-eddd5226a6da",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -176,10 +177,10 @@
       "ip-addressing",
       "protocols"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc950",
-    "seedId": "8b638d80-815e-4fa3-96b0-c4893bfe6100"
+    "source": "https://www.rfc-editor.org/rfc/rfc950"
   },
   {
+    "itemId": "26a6f217-52db-4279-a144-e474a04a542e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "network-plus",
@@ -196,7 +197,6 @@
       "tcp-ip",
       "protocols"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9293",
-    "seedId": "47c24bb9-f68d-4bbf-9b08-41ddc220fb69"
+    "source": "https://www.rfc-editor.org/rfc/rfc9293"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "abae117b-cca2-4bab-b82a-7a1d8f140e8a",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -15,10 +16,10 @@
       "mobile-ui",
       "touch-targets"
     ],
-    "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
-    "seedId": "96ee2666-3846-5843-acd3-d4e60eb52f7f"
+    "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility"
   },
   {
+    "itemId": "9a892a02-7998-4a8f-b3f3-e564b4278c52",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -34,10 +35,10 @@
       "mobile-ui",
       "safe-area"
     ],
-    "source": "https://developer.apple.com/documentation/uikit/uiview/positioning-content-relative-to-the-safe-area",
-    "seedId": "2b102d62-40d9-51b7-8ad5-01537dee08df"
+    "source": "https://developer.apple.com/documentation/uikit/uiview/positioning-content-relative-to-the-safe-area"
   },
   {
+    "itemId": "fee260e9-7a8e-45a6-8fd6-71fa0c6004f8",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -53,10 +54,10 @@
       "mobile-ui",
       "material"
     ],
-    "source": "https://m3.material.io/foundations/overview/introduction",
-    "seedId": "94474bf8-4e4d-5d13-945f-a9f0d8ea289f"
+    "source": "https://m3.material.io/foundations/overview/introduction"
   },
   {
+    "itemId": "73c4088a-c7c5-4f17-a664-d0172409bba2",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -72,10 +73,10 @@
       "mobile-ui",
       "ux"
     ],
-    "source": "https://www.nngroup.com/articles/progressive-disclosure/",
-    "seedId": "eb7ba039-5775-51fa-9f9a-5dd46858d261"
+    "source": "https://www.nngroup.com/articles/progressive-disclosure/"
   },
   {
+    "itemId": "cce628ef-8962-471e-bd5c-f90a0727baf0",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -91,10 +92,10 @@
       "mobile-ui",
       "accessibility"
     ],
-    "source": "https://developer.android.com/guide/topics/ui/accessibility",
-    "seedId": "3ebc08ad-721e-5a24-a18c-db5aea05f3ec"
+    "source": "https://developer.android.com/guide/topics/ui/accessibility"
   },
   {
+    "itemId": "6a8e77b1-3372-4f6b-a86f-626303658796",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "mobile-ui",
@@ -110,7 +111,6 @@
       "mobile-ui",
       "navigation"
     ],
-    "source": "https://m3.material.io/components/navigation-bar/overview",
-    "seedId": "42fc2046-8105-5583-aec2-a3ca2021abd1"
+    "source": "https://m3.material.io/components/navigation-bar/overview"
   }
 ]

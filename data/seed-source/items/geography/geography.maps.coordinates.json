@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1bc628f7-bf23-4eb5-acdb-18110aa0349d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -8,7 +9,7 @@
     "incorrectAnswers": [
       "No, latitude degrees shrink to zero at the tropics.",
       "No, latitude degrees only apply over oceans.",
-      "No, they double in length every 10° toward the poles."
+      "No, they double in length every 10\u00b0 toward the poles."
     ],
     "explanation": "USGS notes that a degree, minute, or second of latitude remains fairly constant from the equator to the poles.",
     "keywords": [
@@ -16,10 +17,10 @@
       "latitude",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps",
-    "seedId": "4e4b99e4-d3d7-43a7-8759-8ecda54f36a6"
+    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
   },
   {
+    "itemId": "dbeb0a7c-c351-4032-a38e-4323075c00f0",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -36,10 +37,10 @@
       "longitude",
       "meridians"
     ],
-    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps",
-    "seedId": "4d7b97aa-0894-4cb6-9fe1-c4faa50125db"
+    "source": "https://www.usgs.gov/faqs/how-much-distance-does-degree-minute-and-second-cover-your-maps"
   },
   {
+    "itemId": "e87d1f4e-4805-4881-9bc3-94c6d8aa3261",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -56,10 +57,10 @@
       "utm",
       "grids"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
-    "seedId": "dc02437d-ea12-4541-a163-fbd835d6ec97"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
   },
   {
+    "itemId": "026b01ea-18bf-408a-8d7d-db44261b9b93",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -76,30 +77,30 @@
       "utm",
       "zones"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
-    "seedId": "b2c9ece3-afa5-4732-8878-5fe9921ce3c4"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
   },
   {
+    "itemId": "ab7aa649-0167-4f82-b57f-6eb54b2fac46",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
-    "question": "UTM zones are numbered 1–60 beginning at which longitude, according to USGS?",
+    "question": "UTM zones are numbered 1\u201360 beginning at which longitude, according to USGS?",
     "correctAnswer": "180 degrees longitude, increasing eastward",
     "incorrectAnswers": [
-      "0° at Greenwich, increasing westward only",
+      "0\u00b0 at Greenwich, increasing westward only",
       "the International Date Line only on water",
       "the prime meridian, alternating north and south"
     ],
-    "explanation": "USGS says UTM zones begin at 180° longitude and increase to the east.",
+    "explanation": "USGS says UTM zones begin at 180\u00b0 longitude and increase to the east.",
     "keywords": [
       "coordinates",
       "utm",
       "longitude"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
-    "seedId": "34cc17cb-fbbb-4d96-aa87-168639fe0134"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
   },
   {
+    "itemId": "ccbcc5b9-7429-489a-99d3-f94029ab578a",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -116,10 +117,10 @@
       "graticule",
       "mapping"
     ],
-    "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift",
-    "seedId": "a0993a21-837c-49e4-9e41-ce61e928f51e"
+    "source": "https://www.usgs.gov/faqs/how-large-north-american-datum-1927-nad-27-nad-83-shift"
   },
   {
+    "itemId": "e8c3d9d8-0215-4086-8bd6-4728771c530c",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -130,16 +131,16 @@
       "sonar-only depth finders",
       "barcodes on paper charts"
     ],
-    "explanation": "Britannica’s navigation survey ties dependable sea charts to the magnetic compass and latitude/longitude determination.",
+    "explanation": "Britannica\u2019s navigation survey ties dependable sea charts to the magnetic compass and latitude/longitude determination.",
     "keywords": [
       "coordinates",
       "navigation",
       "history"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology",
-    "seedId": "2b23514d-ecfa-42a5-ab3c-655892011147"
+    "source": "https://www.britannica.com/technology/navigation-technology"
   },
   {
+    "itemId": "34e204c4-bad5-4429-8bf9-ae991dc8e5e4",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -150,16 +151,16 @@
       "directly toward the equator",
       "the direction of sunset year-round"
     ],
-    "explanation": "Britannica notes Northern Hemisphere navigators used the Pole Star’s apparent rotation for orientation.",
+    "explanation": "Britannica notes Northern Hemisphere navigators used the Pole Star\u2019s apparent rotation for orientation.",
     "keywords": [
       "coordinates",
       "celestial-navigation",
       "north"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology",
-    "seedId": "10320dc9-caa7-478b-a527-53e219ca8db7"
+    "source": "https://www.britannica.com/technology/navigation-technology"
   },
   {
+    "itemId": "a3f73e7c-3f8c-4e54-8498-e0a31a9d31ba",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -176,10 +177,10 @@
       "cardinal-directions",
       "sun"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology",
-    "seedId": "cc653b25-519d-44a5-b358-711755300992"
+    "source": "https://www.britannica.com/technology/navigation-technology"
   },
   {
+    "itemId": "625bf3ed-e714-457e-b327-5613685b0f63",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -196,10 +197,10 @@
       "globe",
       "maps"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "a0383da7-39eb-42d4-85a5-69815c92871a"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "874dff65-c5a6-4a1f-a111-02de6e33da9b",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "coordinates",
@@ -216,7 +217,6 @@
       "cartography",
       "definitions"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "87442254-e0f2-4693-8b5c-a6bde4a00849"
+    "source": "https://www.britannica.com/science/map"
   }
 ]

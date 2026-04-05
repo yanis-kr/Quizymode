@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5d8bdbfb-3114-48ae-8824-27526a0dc81e",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
@@ -7,8 +8,8 @@
     "correctAnswer": "Bonjour.",
     "incorrectAnswers": [
       "Bonne nuit.",
-      "À bientôt.",
-      "Enchanté."
+      "\u00c0 bient\u00f4t.",
+      "Enchant\u00e9."
     ],
     "explanation": "\"Bonjour\" is the usual general greeting during the day.",
     "keywords": [
@@ -16,39 +17,39 @@
       "greetings",
       "french-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour",
-    "seedId": "0e291354-43a9-5c67-9faf-a4de19c6d779"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour"
   },
   {
+    "itemId": "a216d1cb-7f69-4873-b4f5-0e812b7ffdf1",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which informal question asks \"How are you?\" to someone you call \"tu\"?",
-    "correctAnswer": "Comment ça va ?",
+    "correctAnswer": "Comment \u00e7a va ?",
     "incorrectAnswers": [
       "Comment vous appelez-vous ?",
-      "D'où venez-vous ?",
-      "Quel âge avez-vous ?"
+      "D'o\u00f9 venez-vous ?",
+      "Quel \u00e2ge avez-vous ?"
     ],
-    "explanation": "\"Comment ça va ?\" is a very common informal check-in among friends.",
+    "explanation": "\"Comment \u00e7a va ?\" is a very common informal check-in among friends.",
     "keywords": [
       "how-are-you",
       "greetings",
       "french-conversation"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/comment",
-    "seedId": "f97ef742-a553-5eca-8bfd-47658386f5c3"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/comment"
   },
   {
+    "itemId": "bdaf27ff-1089-4053-b34f-7bf986d52647",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which phrase politely says \"Excuse me\" before you ask a stranger for help?",
     "correctAnswer": "Excusez-moi.",
     "incorrectAnswers": [
-      "Félicitations.",
-      "Bon appétit.",
-      "À demain."
+      "F\u00e9licitations.",
+      "Bon app\u00e9tit.",
+      "\u00c0 demain."
     ],
     "explanation": "\"Excusez-moi\" is a polite way to get attention before a question.",
     "keywords": [
@@ -56,50 +57,50 @@
       "politeness",
       "french-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/excusez-moi",
-    "seedId": "4b436954-a416-5982-86fa-af9f8edb5b22"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/excusez-moi"
   },
   {
+    "itemId": "5044c1f8-f39f-420c-aeb5-b5c1dedcce86",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which reply is a simple way to say \"Nice to meet you\" in a first meeting?",
-    "correctAnswer": "Enchanté.",
+    "correctAnswer": "Enchant\u00e9.",
     "incorrectAnswers": [
-      "À tout à l'heure.",
-      "Je suis désolé.",
-      "Je me dépêche."
+      "\u00c0 tout \u00e0 l'heure.",
+      "Je suis d\u00e9sol\u00e9.",
+      "Je me d\u00e9p\u00eache."
     ],
-    "explanation": "\"Enchanté\" (or \"Enchantée\" for feminine speakers) is a common polite phrase after introductions.",
+    "explanation": "\"Enchant\u00e9\" (or \"Enchant\u00e9e\" for feminine speakers) is a common polite phrase after introductions.",
     "keywords": [
       "nice-to-meet-you",
       "introductions",
       "french-conversation"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/enchant%C3%A9",
-    "seedId": "d59e46cf-b0f9-5f5c-8f12-80b79fef2a03"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/enchant%C3%A9"
   },
   {
+    "itemId": "e7f09660-9f94-442a-ab84-4614dc3b2f12",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which phrase politely asks someone to repeat what they said?",
-    "correctAnswer": "Pouvez-vous répéter, s'il vous plaît ?",
+    "correctAnswer": "Pouvez-vous r\u00e9p\u00e9ter, s'il vous pla\u00eet ?",
     "incorrectAnswers": [
-      "Je n'aime pas ça.",
-      "Je suis fatigué.",
-      "Il fait très froid."
+      "Je n'aime pas \u00e7a.",
+      "Je suis fatigu\u00e9.",
+      "Il fait tr\u00e8s froid."
     ],
-    "explanation": "\"Répéter\" means to repeat; adding \"s'il vous plaît\" keeps the request polite.",
+    "explanation": "\"R\u00e9p\u00e9ter\" means to repeat; adding \"s'il vous pla\u00eet\" keeps the request polite.",
     "keywords": [
       "repeat",
       "clarification",
       "french-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/r%C3%A9p%C3%A9ter",
-    "seedId": "b7fbd051-f786-5a6d-b1dd-c0778f3eafb6"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/r%C3%A9p%C3%A9ter"
   },
   {
+    "itemId": "59494a8d-eb25-4e04-b3ff-9b6914ffe1c9",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
@@ -107,8 +108,8 @@
     "correctAnswer": "Pardon.",
     "incorrectAnswers": [
       "De rien.",
-      "Bien sûr.",
-      "Toutes mes félicitations."
+      "Bien s\u00fbr.",
+      "Toutes mes f\u00e9licitations."
     ],
     "explanation": "\"Pardon\" is a quick everyday apology for small mistakes.",
     "keywords": [
@@ -116,7 +117,6 @@
       "apology",
       "french-conversation"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/pardon",
-    "seedId": "357ae37b-d6f7-50cd-95d8-229cf9a6cc2b"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/pardon"
   }
 ]

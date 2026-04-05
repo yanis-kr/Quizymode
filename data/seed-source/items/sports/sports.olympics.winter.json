@@ -1,25 +1,6 @@
 [
   {
-    "category": "sports",
-    "navigationKeyword1": "olympics",
-    "navigationKeyword2": "winter",
-    "question": "Which city hosted the 2022 Winter Olympics?",
-    "correctAnswer": "Beijing",
-    "incorrectAnswers": [
-      "PyeongChang",
-      "Sochi",
-      "Milan"
-    ],
-    "explanation": "Beijing hosted the 2022 Winter Games.",
-    "keywords": [
-      "olympics",
-      "winter",
-      "beijing"
-    ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "dafec68a-4f68-51c8-9abb-2bf457611886"
-  },
-  {
+    "itemId": "b3298ddc-9ba9-447f-8bca-83dd8c8bbffe",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -36,10 +17,10 @@
       "winter",
       "pyeongchang"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "dd066026-956d-56a0-a1b3-db592b14bf1c"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "2a7e4ab1-2326-49e9-adb1-386e4bab82e9",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -56,10 +37,10 @@
       "winter",
       "sochi"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "941f16f5-268a-5c87-8d95-0decd43f726b"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "9924bdb3-4970-4f80-8aa7-8f890f87eabe",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -76,10 +57,10 @@
       "winter",
       "vancouver"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "1f984197-c81d-5200-82b4-28f238a4dfcc"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "f1744f62-a640-4767-8b5a-fdd5fdfd0b7b",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -96,10 +77,10 @@
       "winter",
       "2026"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "b287edbd-39a8-569d-906a-f12ec3ca3082"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "217bcc3e-0f85-4e3f-ba91-a722a79bda3f",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -116,10 +97,10 @@
       "winter",
       "lake-placid"
     ],
-    "source": "https://www.britannica.com/sports/Olympic-Games",
-    "seedId": "31a00ffb-549c-5212-815e-974b3cbb6949"
+    "source": "https://www.britannica.com/sports/Olympic-Games"
   },
   {
+    "itemId": "7ea8bc3b-925f-4d2c-a455-b8e749f08838",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -136,10 +117,10 @@
       "winter",
       "lillehammer"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "1c2fb2a9-2edc-5ba8-8967-a05c21f45083"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "39b88c93-1565-42ff-8e15-9500a86f76db",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -156,10 +137,10 @@
       "winter",
       "nagano"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "acca7960-9295-59de-a578-6160d51c7178"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "694792eb-b3d5-43f3-954c-ba4f315e39f7",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -176,10 +157,10 @@
       "winter",
       "cycle"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "7f1be571-f2e1-5ff3-80d0-8ba13237c2f0"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "d25d036e-40ac-496e-82b9-1cafe40d4198",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "winter",
@@ -196,7 +177,6 @@
       "winter",
       "salt-lake-city"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "7b224d59-2f1a-5fd4-b98a-e9330b181881"
+    "source": "https://olympics.com/en/olympic-games"
   }
 ]

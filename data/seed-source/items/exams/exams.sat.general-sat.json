@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "703ccc4f-83cb-4188-951d-8e9bf21e3731",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "general-sat",
@@ -15,10 +16,10 @@
       "sat-format",
       "test-prep"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test",
-    "seedId": "9bed28a9-0cb3-42c1-b4ad-09803ce9d1f6"
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test"
   },
   {
+    "itemId": "e5f9cab2-eead-462b-972e-f02f648114e4",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "general-sat",
@@ -35,10 +36,10 @@
       "timing",
       "test-prep"
     ],
-    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect",
-    "seedId": "842440ec-8e64-41c5-8e89-d9004034971e"
+    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
   },
   {
+    "itemId": "3aa6e6c4-cec8-4126-b26d-d57d9728a4e6",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "general-sat",
@@ -55,10 +56,10 @@
       "modules",
       "test-prep"
     ],
-    "source": "https://satsuite.collegeboard.org/digital/why-digital",
-    "seedId": "065c3361-bbc0-44a8-9ed5-57734dc047ff"
+    "source": "https://satsuite.collegeboard.org/digital/why-digital"
   },
   {
+    "itemId": "f45767bd-f11c-45bd-8c77-d556f836954a",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "general-sat",
@@ -75,10 +76,10 @@
       "break",
       "test-prep"
     ],
-    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect",
-    "seedId": "67786ea4-d5a5-461b-bfea-e10eabb6e893"
+    "source": "https://satsuite.collegeboard.org/digital/digital-sat/what-to-expect"
   },
   {
+    "itemId": "02d9a28e-4b0c-4368-b251-84272a9dc650",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "general-sat",
@@ -95,7 +96,6 @@
       "adaptive-testing",
       "test-prep"
     ],
-    "source": "https://satsuite.collegeboard.org/digital/why-digital",
-    "seedId": "92fbc6db-8f35-45ea-8e42-f61d8eeae485"
+    "source": "https://satsuite.collegeboard.org/digital/why-digital"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2f0c7d47-8f30-475f-99b0-0c7dec2e384d",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -16,30 +17,30 @@
       "definition",
       "aviation"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "fefa8388-ab04-43d7-94fb-6a5b07d0ae40"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "a3e5591e-b38d-4fe2-a9f9-bd8091a45c23",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
-    "question": "Which U.S. airport does Britannica identify as the world’s busiest?",
+    "question": "Which U.S. airport does Britannica identify as the world\u2019s busiest?",
     "correctAnswer": "Hartsfield-Jackson Atlanta International Airport in Georgia",
     "incorrectAnswers": [
       "LaGuardia Airport only",
       "Anchorage Merrill Field",
       "Dallas Love Field exclusively"
     ],
-    "explanation": "Britannica’s airport article states the busiest airport title belongs to Hartsfield-Jackson Atlanta International in Georgia.",
+    "explanation": "Britannica\u2019s airport article states the busiest airport title belongs to Hartsfield-Jackson Atlanta International in Georgia.",
     "keywords": [
       "airports",
       "atlanta",
       "busiest-airport"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "fe277a6f-645d-43b2-8029-55fe0d5e81a4"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "3b6c6b80-a517-45f6-beb7-d5c19090bd2f",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -56,10 +57,10 @@
       "apron",
       "airside"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "e5f68cbc-9127-4d6e-97bb-ec20991d85de"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "fabee638-3a0e-4be7-83d5-1aa1adf862ad",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -76,50 +77,50 @@
       "navigation",
       "air-traffic-control"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "c663c262-7325-4c71-9212-42ae5138227b"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "db13644d-7c1c-49ad-a070-27c3a4877d10",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
-    "question": "Chicago’s Orchard Field Airport was renamed in 1949 to honor which naval aviator?",
-    "correctAnswer": "Edward O’Hare",
+    "question": "Chicago\u2019s Orchard Field Airport was renamed in 1949 to honor which naval aviator?",
+    "correctAnswer": "Edward O\u2019Hare",
     "incorrectAnswers": [
       "Charles Lindbergh",
       "Amelia Earhart",
       "Billy Mitchell"
     ],
-    "explanation": "Britannica’s Edward O’Hare biography notes Orchard Field near Chicago was renamed O’Hare International Airport in his honor in 1949.",
+    "explanation": "Britannica\u2019s Edward O\u2019Hare biography notes Orchard Field near Chicago was renamed O\u2019Hare International Airport in his honor in 1949.",
     "keywords": [
       "airports",
       "ohare",
       "chicago"
     ],
-    "source": "https://www.britannica.com/biography/Edward-OHare",
-    "seedId": "4afa32a1-1c07-481a-8e5b-88034c2306dd"
+    "source": "https://www.britannica.com/biography/Edward-OHare"
   },
   {
+    "itemId": "22f7e9ef-f299-4744-9aa2-e4c5233c5907",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
-    "question": "At O’Hare and Atlanta’s Hartsfield, about what share of passengers were transferring without visiting the host city, per Britannica’s terminal-design discussion?",
+    "question": "At O\u2019Hare and Atlanta\u2019s Hartsfield, about what share of passengers were transferring without visiting the host city, per Britannica\u2019s terminal-design discussion?",
     "correctAnswer": "About two-thirds",
     "incorrectAnswers": [
       "Less than five percent",
       "One hundred percent always",
       "Exactly one-half in every season"
     ],
-    "explanation": "Britannica’s airport passenger-layout section cites O’Hare and Atlanta as examples where roughly two-thirds of passengers connect without leaving the airport.",
+    "explanation": "Britannica\u2019s airport passenger-layout section cites O\u2019Hare and Atlanta as examples where roughly two-thirds of passengers connect without leaving the airport.",
     "keywords": [
       "airports",
       "hub",
       "connecting-flights"
     ],
-    "source": "https://www.britannica.com/technology/airport/Passenger-terminal-layout-and-design",
-    "seedId": "3910796b-7d83-43af-a721-ccc48a796a0e"
+    "source": "https://www.britannica.com/technology/airport/Passenger-terminal-layout-and-design"
   },
   {
+    "itemId": "420fadab-fc9a-4470-9070-f71a42c428d2",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -128,7 +129,7 @@
     "incorrectAnswers": [
       "Moscow",
       "Cairo",
-      "São Paulo"
+      "S\u00e3o Paulo"
     ],
     "explanation": "Britannica groups London Heathrow among the very large airports handling tens of millions of passengers yearly.",
     "keywords": [
@@ -136,10 +137,10 @@
       "heathrow",
       "london"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "19e2dcdb-9b4c-4dc0-881f-b9311bf04f68"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "342a1f10-33d8-4868-86aa-b9166710fdc2",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -156,14 +157,14 @@
       "beijing",
       "traffic"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "1e8414f6-0037-4eb5-a0ff-ce27d08c96b3"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "0e222a93-ed4c-4eac-9494-45fdc93b06b6",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
-    "question": "Memphis International and Hong Kong International have been noted as among the world’s largest handlers of what?",
+    "question": "Memphis International and Hong Kong International have been noted as among the world\u2019s largest handlers of what?",
     "correctAnswer": "Air cargo",
     "incorrectAnswers": [
       "Passenger cruise ships",
@@ -176,10 +177,10 @@
       "cargo",
       "freight"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "643691aa-9da6-4411-9cc1-921acc05433e"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "3d050989-3db5-47e9-b70d-4b3c61ee3272",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
@@ -196,27 +197,26 @@
       "landside",
       "terminals"
     ],
-    "source": "https://www.britannica.com/technology/airport",
-    "seedId": "68d964c1-ff82-4445-865d-e5c8c287fc5b"
+    "source": "https://www.britannica.com/technology/airport"
   },
   {
+    "itemId": "905f4a05-9394-4623-ac56-84709e3e9b7d",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "airports",
-    "question": "1970s pier-style terminal designs at O’Hare and Atlanta’s Hartsfield handled more than how many mainly domestic passengers per year?",
+    "question": "1970s pier-style terminal designs at O\u2019Hare and Atlanta\u2019s Hartsfield handled more than how many mainly domestic passengers per year?",
     "correctAnswer": "More than 45 million",
     "incorrectAnswers": [
       "Under one million",
       "Exactly 500,000",
       "Zero domestic traffic"
     ],
-    "explanation": "Britannica states 1970s pier designs at Chicago O’Hare and Atlanta Hartsfield accommodated over 45 million mostly domestic passengers yearly.",
+    "explanation": "Britannica states 1970s pier designs at Chicago O\u2019Hare and Atlanta Hartsfield accommodated over 45 million mostly domestic passengers yearly.",
     "keywords": [
       "airports",
       "terminals",
       "capacity"
     ],
-    "source": "https://www.britannica.com/technology/airport/Passenger-terminal-layout-and-design",
-    "seedId": "f949bab7-2b74-4db9-95cc-59bc9dc3b149"
+    "source": "https://www.britannica.com/technology/airport/Passenger-terminal-layout-and-design"
   }
 ]

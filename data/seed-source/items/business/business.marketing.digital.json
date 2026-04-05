@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1beacdd7-c0c8-4b06-a5b3-3f12c5d988d6",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
@@ -16,14 +17,14 @@
       "online-channels",
       "conversion"
     ],
-    "source": "https://www.hubspot.com/marketing/digital-marketing",
-    "seedId": "c8c463b8-3e17-51db-b824-dcbee0085b7a"
+    "source": "https://www.hubspot.com/marketing/digital-marketing"
   },
   {
+    "itemId": "302e9324-6895-4563-9c95-9b46b94dc20e",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
-    "question": "What is “owned, earned, and paid media” describing?",
+    "question": "What is \u201cowned, earned, and paid media\u201d describing?",
     "correctAnswer": "Different ways a brand gains reach: what you control (owned), what others share (earned), and what you buy (paid).",
     "incorrectAnswers": [
       "Different types of product inventory categories",
@@ -36,10 +37,10 @@
       "owned-earned-paid",
       "channel-strategy"
     ],
-    "source": "https://www.hubspot.com/owned-earned-and-paid-media",
-    "seedId": "b41f225b-16d8-54ca-902b-8cf59f744e80"
+    "source": "https://www.hubspot.com/owned-earned-and-paid-media"
   },
   {
+    "itemId": "9e282d5a-601d-471f-889e-c5456e5573c4",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
@@ -56,10 +57,10 @@
       "conversion",
       "funnel-optimization"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "e5fa7e1f-c4e1-5bc3-8abd-87f06de25295"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "018d2721-ca3b-4994-a6c9-bb6ebbd2d404",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
@@ -76,10 +77,10 @@
       "optimization",
       "measurement"
     ],
-    "source": "https://moz.com/",
-    "seedId": "f5d480f3-6922-5990-af06-dad1a8f45e78"
+    "source": "https://moz.com/"
   },
   {
+    "itemId": "68be5d80-c4c5-475d-acf9-81819c93aac3",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
@@ -96,10 +97,10 @@
       "measurement",
       "touchpoints"
     ],
-    "source": "https://www.hubspot.com/",
-    "seedId": "6d074f4f-f9c2-5944-b54d-bd63da146fd7"
+    "source": "https://www.hubspot.com/"
   },
   {
+    "itemId": "64279393-af7a-437c-ad89-bc516d0043bd",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "digital",
@@ -116,7 +117,6 @@
       "experimentation",
       "conversion-rate"
     ],
-    "source": "https://moz.com/learn/seo/ab-testing",
-    "seedId": "6ececd5f-40c0-5b82-bc50-3ab7328f72c4"
+    "source": "https://moz.com/learn/seo/ab-testing"
   }
 ]

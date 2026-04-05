@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "665bfa69-cc25-4d8a-9366-5049915ab0d1",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -16,10 +17,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
-    "seedId": "d722ec33-9923-47cf-9587-f2c85e80b627"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
   },
   {
+    "itemId": "9efcb31a-41b0-409b-b964-367f85e7a417",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -36,10 +37,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-data-lake-storage/",
-    "seedId": "b1970c3a-f87d-46e5-9489-4aec474bd457"
+    "source": "https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-data-lake-storage/"
   },
   {
+    "itemId": "14415eb0-6016-486a-97be-f55315c0bf59",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -56,10 +57,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview?view=azuresql-db",
-    "seedId": "0de28316-89a2-4b05-9d54-783124b78168"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview?view=azuresql-db"
   },
   {
+    "itemId": "07afdeb7-ffca-47ac-a79c-ee21e8e8b893",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -76,10 +77,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview",
-    "seedId": "84bab7ea-a828-41e1-8e24-18d60adcfddf"
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
   },
   {
+    "itemId": "158d521f-f334-4ab7-bb92-c37d996397e2",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -96,10 +97,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is",
-    "seedId": "be4f1f49-fc54-4fa9-82f0-4ad0ec97704b"
+    "source": "https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is"
   },
   {
+    "itemId": "83819e5b-89ca-4dbe-8dbe-11622c840b1f",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -116,10 +117,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction",
-    "seedId": "7fe95d56-03df-49f2-a5d9-1a8be6b98024"
+    "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction"
   },
   {
+    "itemId": "a7821f65-237a-4821-a507-12b37c625431",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -136,10 +137,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction",
-    "seedId": "e0d06a14-1fcd-45d8-b1bd-234e2ced2ab3"
+    "source": "https://learn.microsoft.com/en-us/azure/data-factory/introduction"
   },
   {
+    "itemId": "66725919-74f8-44f3-afbd-26ae53cba284",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -156,10 +157,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/databricks/introduction/",
-    "seedId": "014fc505-8aea-4cfa-b810-c8c4f754ccda"
+    "source": "https://learn.microsoft.com/en-us/azure/databricks/introduction/"
   },
   {
+    "itemId": "7fcbedf2-640c-40a3-9248-18c1493695e8",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -176,10 +177,10 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview",
-    "seedId": "7d39c92b-e155-4255-bf6e-99e2fed71dfa"
+    "source": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview"
   },
   {
+    "itemId": "a0a5c915-3dad-46fe-b688-0a5e0a253394",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "dp-900",
@@ -196,7 +197,6 @@
       "azure-data",
       "data-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview",
-    "seedId": "c45d525b-91e8-40a2-9d49-1f6d7103f50e"
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
   }
 ]

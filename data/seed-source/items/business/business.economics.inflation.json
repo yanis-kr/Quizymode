@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "996e6d97-aa0a-49fa-bbc8-8e9dbf3144db",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
@@ -10,16 +11,16 @@
       "A guaranteed rise in stock prices every month",
       "A change only in wages with no price impact"
     ],
-    "explanation": "Inflation is about general, persistent price increases—not single price movements in one product category.",
+    "explanation": "Inflation is about general, persistent price increases\u2014not single price movements in one product category.",
     "keywords": [
       "inflation",
       "price-levels",
       "purchasing-power"
     ],
-    "source": "https://www.imf.org/en/Topics/inflation",
-    "seedId": "a4720326-aca3-59be-85fe-3365db6517cb"
+    "source": "https://www.imf.org/en/Topics/inflation"
   },
   {
+    "itemId": "b3c73a1e-7d79-4db0-9663-55da8d076fed",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
@@ -36,15 +37,15 @@
       "price-index",
       "measurement"
     ],
-    "source": "https://www.investopedia.com/terms/c/consumerpriceindex.asp",
-    "seedId": "d257961e-a233-5ac0-a284-a9a149d9c8d2"
+    "source": "https://www.investopedia.com/terms/c/consumerpriceindex.asp"
   },
   {
+    "itemId": "d81714dc-6a6e-4d78-aba2-651dee508b06",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
     "question": "What is the difference between nominal and real interest rates?",
-    "correctAnswer": "Nominal is the stated rate; real adjusts for inflation’s impact on purchasing power.",
+    "correctAnswer": "Nominal is the stated rate; real adjusts for inflation\u2019s impact on purchasing power.",
     "incorrectAnswers": [
       "Nominal changes with inflation, while real never does",
       "Real includes taxes automatically and nominal never does",
@@ -56,10 +57,10 @@
       "interest-rates",
       "inflation-adjustment"
     ],
-    "source": "https://www.federalreserve.gov/faqs/interest-rates.htm",
-    "seedId": "6a099672-2f59-505c-95c1-0fe168448221"
+    "source": "https://www.federalreserve.gov/faqs/interest-rates.htm"
   },
   {
+    "itemId": "4348d1cd-39a1-4ecf-b101-325e4e352ebe",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
@@ -76,10 +77,10 @@
       "aggregate-demand",
       "prices"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "79901a63-0ca6-5bd4-a01b-1c8ca7c6db14"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "bdd54f2c-9d10-4648-a600-7573fec49492",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
@@ -96,10 +97,10 @@
       "income",
       "prices"
     ],
-    "source": "https://www.investopedia.com/terms/i/inflation.asp",
-    "seedId": "d4c3e27c-265f-5bd7-9d6f-ea5ceb3b1d0c"
+    "source": "https://www.investopedia.com/terms/i/inflation.asp"
   },
   {
+    "itemId": "1094ff2c-f515-49f5-98e3-e192f55dd9b6",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "inflation",
@@ -116,7 +117,6 @@
       "wage-setting",
       "monetary-policy"
     ],
-    "source": "https://www.imf.org/en/Topics",
-    "seedId": "e647a59a-8743-5c32-a19b-a01ff7c8a53d"
+    "source": "https://www.imf.org/en/Topics"
   }
 ]

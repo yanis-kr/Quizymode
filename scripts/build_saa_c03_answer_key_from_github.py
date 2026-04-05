@@ -20,13 +20,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from convert_saa_c03_extract import (  # noqa: E402
+    AUXILIARY_EXAMS_DIR,
     EXTRACT_PATH,
-    OUT_DIR,
     parse_extract,
     eligible,
 )
 
-ANSWER_KEY_OUT = OUT_DIR / "saa_c03_extract_answer_key.json"
+ANSWER_KEY_OUT = AUXILIARY_EXAMS_DIR / "saa_c03_extract_answer_key.json"
 
 NEG = re.compile(
     r"\b(incorrect|wrong|not\s+(the\s+)?(?:best|correct|ideal|suitable)|"

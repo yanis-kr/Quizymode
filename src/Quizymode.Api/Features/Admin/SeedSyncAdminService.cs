@@ -1,6 +1,3 @@
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
@@ -35,7 +32,7 @@ internal sealed class SeedSyncAdminService(
         catch (Exception ex)
         {
             return Result.Failure<SeedSyncAdmin.PreviewResponse>(
-                Error.Problem("Admin.SeedSyncPreviewFailed", $"Failed to preview seed sync: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncPreviewFailed", $"Failed to preview item sync: {ex.Message}"));
         }
     }
 
@@ -71,7 +68,7 @@ internal sealed class SeedSyncAdminService(
 
             foreach (PlannedSeedItemChange change in plan.Changes)
             {
-                ApplyChange(change, publicKeywordMap, plan.SeedSet, utcNow);
+                ApplyChange(change, publicKeywordMap, utcNow);
             }
 
             await db.SaveChangesAsync(cancellationToken);
@@ -87,7 +84,7 @@ internal sealed class SeedSyncAdminService(
         {
             await TryRollbackAsync(transaction, cancellationToken);
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(
-                Error.Problem("Admin.SeedSyncApplyFailed", $"Failed to apply seed sync: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncApplyFailed", $"Failed to apply item sync: {ex.Message}"));
         }
         finally
         {
@@ -112,92 +109,34 @@ internal sealed class SeedSyncAdminService(
             return Result.Failure<SeedSyncPlan>(categoryResult.Error!);
         }
 
-        HashSet<Guid> incomingSeedIds = normalizedItems
-            .Select(i => i.SeedId)
+        HashSet<Guid> incomingItemIds = normalizedItems
+            .Select(item => item.ItemId)
             .ToHashSet();
 
-        List<Item> existingManagedItems = await db.Items
-            .Where(i => i.IsSeedManaged && i.SeedSet == request.SeedSet)
-            .Include(i => i.Category)
-            .Include(i => i.NavigationKeyword1)
-            .Include(i => i.NavigationKeyword2)
-            .Include(i => i.ItemKeywords)
-                .ThenInclude(ik => ik.Keyword)
+        List<Item> existingItems = await db.Items
+            .Where(item => incomingItemIds.Contains(item.Id))
+            .Include(item => item.Category)
+            .Include(item => item.NavigationKeyword1)
+            .Include(item => item.NavigationKeyword2)
+            .Include(item => item.ItemKeywords)
+                .ThenInclude(link => link.Keyword)
             .AsSplitQuery()
             .ToListAsync(cancellationToken);
 
-        Item? missingSeedId = existingManagedItems.FirstOrDefault(i => i.SeedId is null);
-        if (missingSeedId is not null)
+        foreach (Item existingItem in existingItems)
         {
-            return Result.Failure<SeedSyncPlan>(
-                Error.Validation(
-                    "Admin.SeedSyncInvalidExistingState",
-                    $"Seed-managed item '{missingSeedId.Id}' is missing SeedId."));
-        }
-
-        bool isInitialSeed = existingManagedItems.Count == 0;
-        List<Item> legacyCandidates = isInitialSeed
-            ? await LoadLegacyCandidatesAsync(normalizedItems, cancellationToken)
-            : [];
-        Dictionary<Guid, NormalizedSeedItem> normalizedBySeedId = normalizedItems
-            .ToDictionary(i => i.SeedId);
-
-        List<Item> existingSeedIdItems = await db.Items
-            .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId.Value))
-            .Include(i => i.Category)
-            .Include(i => i.NavigationKeyword1)
-            .Include(i => i.NavigationKeyword2)
-            .AsSplitQuery()
-            .ToListAsync(cancellationToken);
-
-        Dictionary<string, Category> categoryCache = categoryResult.Value!;
-        Dictionary<string, ResolvedNavigationPath> navigationCache = new(StringComparer.OrdinalIgnoreCase);
-        Dictionary<Guid, Item> existingBySeedId = existingManagedItems
-            .Where(i => i.SeedId.HasValue)
-            .ToDictionary(i => i.SeedId!.Value);
-        Dictionary<string, Queue<Item>> legacyLookup = BuildLegacyLookup(legacyCandidates);
-        Dictionary<Guid, Item> legacyBySeedId = legacyCandidates
-            .Where(i => i.SeedId.HasValue)
-            .GroupBy(i => i.SeedId!.Value)
-            .ToDictionary(g => g.Key, g => g.First());
-        HashSet<Guid> usedLegacyItemIds = [];
-        HashSet<Guid> matchedManagedSeedIds = [];
-
-        foreach (Item existingSeedItem in existingSeedIdItems)
-        {
-            if (!existingSeedItem.SeedId.HasValue)
-            {
-                continue;
-            }
-
-            Guid seedId = existingSeedItem.SeedId.Value;
-            if (existingBySeedId.ContainsKey(seedId))
-            {
-                continue;
-            }
-
-            if (existingSeedItem.IsSeedManaged)
+            if (existingItem.IsPrivate || !string.Equals(existingItem.CreatedBy, SeederUserId, StringComparison.OrdinalIgnoreCase))
             {
                 return Result.Failure<SeedSyncPlan>(
                     Error.Validation(
-                        "Admin.SeedSyncSeedIdCollision",
-                        $"SeedId '{seedId}' is already assigned to seed set '{existingSeedItem.SeedSet}'."));
+                        "Admin.ItemSyncIdConflict",
+                        $"ItemId '{existingItem.Id}' is already assigned to a non-seeder or private item and cannot be managed by admin sync."));
             }
-
-            if (isInitialSeed
-                && legacyBySeedId.TryGetValue(seedId, out Item? legacyMatchBySeedId)
-                && normalizedBySeedId.TryGetValue(seedId, out NormalizedSeedItem? normalizedById)
-                && CanAdoptLegacyCandidate(legacyMatchBySeedId, normalizedById))
-            {
-                continue;
-            }
-
-            return Result.Failure<SeedSyncPlan>(
-                Error.Validation(
-                    "Admin.SeedSyncSeedIdAlreadyAssigned",
-                    $"SeedId '{seedId}' is already assigned to existing item '{existingSeedItem.Id}' and cannot be created again."));
         }
 
+        Dictionary<string, Category> categoryCache = categoryResult.Value!;
+        Dictionary<Guid, Item> existingById = existingItems.ToDictionary(item => item.Id);
+        Dictionary<string, ResolvedNavigationPath> navigationCache = new(StringComparer.OrdinalIgnoreCase);
         List<PlannedSeedItemChange> changes = [];
 
         foreach (NormalizedSeedItem normalizedItem in normalizedItems)
@@ -214,64 +153,16 @@ internal sealed class SeedSyncAdminService(
             }
 
             ResolvedNavigationPath path = pathResult.Value!;
-
-            if (existingBySeedId.TryGetValue(normalizedItem.SeedId, out Item? existingManaged))
+            if (existingById.TryGetValue(normalizedItem.ItemId, out Item? existingItem))
             {
-                matchedManagedSeedIds.Add(normalizedItem.SeedId);
-                List<string> changedFields = existingManaged.SeedHash == normalizedItem.CanonicalHash && existingManaged.SeedHash is not null
-                    ? []
-                    : GetChangedFields(existingManaged, normalizedItem);
-
+                List<string> changedFields = GetChangedFields(existingItem, normalizedItem);
                 changes.Add(new PlannedSeedItemChange(
                     normalizedItem,
                     path,
-                    existingManaged,
+                    existingItem,
                     changedFields.Count == 0 ? SeedSyncChangeKind.Unchanged : SeedSyncChangeKind.Update,
                     changedFields));
                 continue;
-            }
-
-            if (isInitialSeed)
-            {
-                if (legacyBySeedId.TryGetValue(normalizedItem.SeedId, out Item? exactLegacyMatch)
-                    && CanAdoptLegacyCandidate(exactLegacyMatch, normalizedItem)
-                    && usedLegacyItemIds.Add(exactLegacyMatch.Id))
-                {
-                    List<string> changedFields = GetChangedFields(exactLegacyMatch, normalizedItem);
-                    changes.Add(new PlannedSeedItemChange(
-                        normalizedItem,
-                        path,
-                        exactLegacyMatch,
-                        SeedSyncChangeKind.Adopt,
-                        changedFields));
-                    continue;
-                }
-
-                string legacyKey = BuildLegacyKey(normalizedItem.Category, normalizedItem.NavigationKeyword1, normalizedItem.NavigationKeyword2, normalizedItem.Question);
-                if (legacyLookup.TryGetValue(legacyKey, out Queue<Item>? queue))
-                {
-                    Item? adoptedItem = null;
-                    while (queue.Count > 0 && adoptedItem is null)
-                    {
-                        Item candidate = queue.Dequeue();
-                        if (usedLegacyItemIds.Add(candidate.Id))
-                        {
-                            adoptedItem = candidate;
-                        }
-                    }
-
-                    if (adoptedItem is not null)
-                    {
-                        List<string> changedFields = GetChangedFields(adoptedItem, normalizedItem);
-                        changes.Add(new PlannedSeedItemChange(
-                            normalizedItem,
-                            path,
-                            adoptedItem,
-                            SeedSyncChangeKind.Adopt,
-                            changedFields));
-                        continue;
-                    }
-                }
             }
 
             changes.Add(new PlannedSeedItemChange(
@@ -282,118 +173,49 @@ internal sealed class SeedSyncAdminService(
                 []));
         }
 
-        int missingFromPayloadCount = existingManagedItems.Count - matchedManagedSeedIds.Count;
-
         return Result.Success(new SeedSyncPlan(
             request.SeedSet,
-            isInitialSeed,
             normalizedItems.Count,
-            existingManagedItems.Count,
-            missingFromPayloadCount,
+            existingById.Count,
             changes));
     }
 
-    private static bool CanAdoptLegacyCandidate(Item candidate, NormalizedSeedItem normalizedItem)
-    {
-        if (candidate.IsSeedManaged || candidate.IsPrivate || !string.Equals(candidate.CreatedBy, SeederUserId, StringComparison.Ordinal))
-        {
-            return false;
-        }
-
-        string candidateKey = BuildLegacyKey(
-            candidate.Category?.Name ?? string.Empty,
-            candidate.NavigationKeyword1?.Name ?? string.Empty,
-            candidate.NavigationKeyword2?.Name ?? string.Empty,
-            candidate.Question);
-        string incomingKey = BuildLegacyKey(
-            normalizedItem.Category,
-            normalizedItem.NavigationKeyword1,
-            normalizedItem.NavigationKeyword2,
-            normalizedItem.Question);
-
-        return string.Equals(candidateKey, incomingKey, StringComparison.OrdinalIgnoreCase);
-    }
-
     private async Task<Result<Dictionary<string, Category>>> LoadCategoriesAsync(
-        List<NormalizedSeedItem> normalizedItems,
+        List<NormalizedSeedItem> items,
         CancellationToken cancellationToken)
     {
-        HashSet<string> categoryNames = normalizedItems
-            .Select(i => i.Category)
+        HashSet<string> requestedCategorySlugs = items
+            .Select(item => item.Category)
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-        foreach (string categoryName in categoryNames)
-        {
-            if (!taxonomyRegistry.HasCategory(categoryName))
-            {
-                return Result.Failure<Dictionary<string, Category>>(
-                    Error.Validation(
-                        "Admin.SeedSyncInvalidCategory",
-                        $"Category '{categoryName}' is not a valid taxonomy category."));
-            }
-        }
-
         List<Category> categories = await db.Categories
-            .Where(c => !c.IsPrivate && categoryNames.Contains(c.Name.ToLower()))
+            .AsNoTracking()
             .ToListAsync(cancellationToken);
 
-        Dictionary<string, Category> categoryCache = categories
-            .ToDictionary(c => c.Name.ToLower(), c => c, StringComparer.OrdinalIgnoreCase);
+        Dictionary<string, Category> categoryBySlug = categories
+            .GroupBy(category => CategoryHelper.NameToSlug(category.Name), StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 
-        string? missingCategory = categoryNames.FirstOrDefault(name => !categoryCache.ContainsKey(name));
-        if (missingCategory is not null)
+        List<string> missing = requestedCategorySlugs
+            .Where(slug => !categoryBySlug.ContainsKey(slug))
+            .OrderBy(slug => slug, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        if (missing.Count > 0)
         {
             return Result.Failure<Dictionary<string, Category>>(
                 Error.Validation(
-                    "Admin.SeedSyncCategoryMissingFromDb",
-                    $"Category '{missingCategory}' does not exist in the database."));
+                    "Admin.ItemSyncInvalidCategory",
+                    $"The following categories do not exist in the database: {string.Join(", ", missing)}."));
         }
 
-        return Result.Success(categoryCache);
-    }
-
-    private async Task<List<Item>> LoadLegacyCandidatesAsync(
-        List<NormalizedSeedItem> normalizedItems,
-        CancellationToken cancellationToken)
-    {
-        HashSet<string> categoryNames = normalizedItems
-            .Select(i => i.Category)
-            .ToHashSet(StringComparer.OrdinalIgnoreCase);
-
-        return await db.Items
-            .Where(i => !i.IsSeedManaged && !i.IsPrivate && i.CreatedBy == SeederUserId)
-            .Where(i => i.Category != null && categoryNames.Contains(i.Category.Name.ToLower()))
-            .Include(i => i.Category)
-            .Include(i => i.NavigationKeyword1)
-            .Include(i => i.NavigationKeyword2)
-            .Include(i => i.ItemKeywords)
-                .ThenInclude(ik => ik.Keyword)
-            .AsSplitQuery()
-            .ToListAsync(cancellationToken);
-    }
-
-    private static Dictionary<string, Queue<Item>> BuildLegacyLookup(List<Item> legacyCandidates)
-    {
-        Dictionary<string, Queue<Item>> lookup = new(StringComparer.OrdinalIgnoreCase);
-
-        foreach (Item item in legacyCandidates)
+        Dictionary<string, Category> requested = new(StringComparer.OrdinalIgnoreCase);
+        foreach (string slug in requestedCategorySlugs)
         {
-            string key = BuildLegacyKey(
-                item.Category?.Name ?? string.Empty,
-                item.NavigationKeyword1?.Name ?? string.Empty,
-                item.NavigationKeyword2?.Name ?? string.Empty,
-                item.Question);
-
-            if (!lookup.TryGetValue(key, out Queue<Item>? queue))
-            {
-                queue = new Queue<Item>();
-                lookup[key] = queue;
-            }
-
-            queue.Enqueue(item);
+            requested[slug] = categoryBySlug[slug];
         }
 
-        return lookup;
+        return Result.Success(requested);
     }
 
     private async Task<Result<ResolvedNavigationPath>> ResolveNavigationAsync(
@@ -412,7 +234,7 @@ internal sealed class SeedSyncAdminService(
         {
             return Result.Failure<ResolvedNavigationPath>(
                 Error.Validation(
-                    "Admin.SeedSyncCategoryMissingFromDb",
+                    "Admin.ItemSyncCategoryMissingFromDb",
                     $"Category '{item.Category}' does not exist in the database."));
         }
 
@@ -448,13 +270,13 @@ internal sealed class SeedSyncAdminService(
         }
 
         List<Keyword> existing = await db.Keywords
-            .Where(k => !k.IsPrivate && requiredNames.Contains(k.Name.ToLower()))
+            .Where(keyword => !keyword.IsPrivate && requiredNames.Contains(keyword.Name.ToLower()))
             .ToListAsync(cancellationToken);
 
         Dictionary<string, Keyword> map = existing
-            .ToDictionary(k => k.Name.ToLower(), k => k, StringComparer.OrdinalIgnoreCase);
+            .ToDictionary(keyword => keyword.Name.ToLower(), keyword => keyword, StringComparer.OrdinalIgnoreCase);
 
-        foreach (string requiredName in requiredNames.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
+        foreach (string requiredName in requiredNames.OrderBy(name => name, StringComparer.OrdinalIgnoreCase))
         {
             if (map.ContainsKey(requiredName))
             {
@@ -482,12 +304,11 @@ internal sealed class SeedSyncAdminService(
     private void ApplyChange(
         PlannedSeedItemChange change,
         Dictionary<string, Keyword> publicKeywordMap,
-        string seedSet,
         DateTime utcNow)
     {
         Item item = change.ExistingItem ?? new Item
         {
-            Id = Guid.NewGuid(),
+            Id = change.Item.ItemId,
             CreatedAt = utcNow,
             CreatedBy = SeederUserId
         };
@@ -497,11 +318,6 @@ internal sealed class SeedSyncAdminService(
             db.Items.Add(item);
         }
 
-        item.SeedId = change.Item.SeedId;
-        item.IsSeedManaged = true;
-        item.SeedSet = seedSet;
-        item.SeedHash = change.Item.CanonicalHash;
-        item.SeedLastSyncedAt = utcNow;
         item.IsPrivate = false;
         item.Question = change.Item.Question;
         item.CorrectAnswer = change.Item.CorrectAnswer;
@@ -538,21 +354,21 @@ internal sealed class SeedSyncAdminService(
             }
         }
 
-        List<ItemKeyword> toRemove = item.ItemKeywords
-            .Where(ik => !desiredKeywordIds.Contains(ik.KeywordId))
+        List<ItemKeyword> linksToRemove = item.ItemKeywords
+            .Where(link => !desiredKeywordIds.Contains(link.KeywordId))
             .ToList();
 
-        if (toRemove.Count > 0)
+        if (linksToRemove.Count > 0)
         {
-            db.ItemKeywords.RemoveRange(toRemove);
-            foreach (ItemKeyword link in toRemove)
+            db.ItemKeywords.RemoveRange(linksToRemove);
+            foreach (ItemKeyword link in linksToRemove)
             {
                 item.ItemKeywords.Remove(link);
             }
         }
 
         HashSet<Guid> existingKeywordIds = item.ItemKeywords
-            .Select(ik => ik.KeywordId)
+            .Select(link => link.KeywordId)
             .ToHashSet();
 
         foreach (Guid keywordId in desiredKeywordIds)
@@ -579,37 +395,16 @@ internal sealed class SeedSyncAdminService(
         SeedSyncPlan plan,
         int deltaPreviewLimit)
     {
-        if (plan.IsInitialSeed)
-        {
-            return new SeedSyncAdmin.PreviewResponse(
-                plan.SeedSet,
-                IsInitialSeed: true,
-                PreviewSuppressed: true,
-                TotalItemsInPayload: plan.TotalItemsInPayload,
-                ExistingManagedItemCount: plan.ExistingManagedItemCount,
-                CreatedCount: plan.CreateCount,
-                UpdatedCount: plan.UpdateCount,
-                AdoptedCount: plan.AdoptCount,
-                UnchangedCount: plan.UnchangedCount,
-                MissingFromPayloadCount: plan.MissingFromPayloadCount,
-                HasMoreChanges: false,
-                Changes: []);
-        }
-
         List<SeedSyncAdmin.ChangeResponse> deltaChanges = BuildDeltaChanges(plan, deltaPreviewLimit);
 
         return new SeedSyncAdmin.PreviewResponse(
             plan.SeedSet,
-            plan.IsInitialSeed,
-            PreviewSuppressed: false,
             plan.TotalItemsInPayload,
-            plan.ExistingManagedItemCount,
+            plan.ExistingItemCount,
             plan.CreateCount,
             plan.UpdateCount,
-            plan.AdoptCount,
             plan.UnchangedCount,
-            plan.MissingFromPayloadCount,
-            HasMoreChanges: plan.DeltaChangeCount > deltaChanges.Count,
+            plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
     }
 
@@ -617,21 +412,16 @@ internal sealed class SeedSyncAdminService(
         SeedSyncPlan plan,
         int deltaPreviewLimit)
     {
-        List<SeedSyncAdmin.ChangeResponse> deltaChanges = plan.IsInitialSeed
-            ? []
-            : BuildDeltaChanges(plan, deltaPreviewLimit);
+        List<SeedSyncAdmin.ChangeResponse> deltaChanges = BuildDeltaChanges(plan, deltaPreviewLimit);
 
         return new SeedSyncAdmin.ApplyResponse(
             plan.SeedSet,
-            plan.IsInitialSeed,
             plan.TotalItemsInPayload,
-            plan.ExistingManagedItemCount,
+            plan.ExistingItemCount,
             plan.CreateCount,
             plan.UpdateCount,
-            plan.AdoptCount,
             plan.UnchangedCount,
-            plan.MissingFromPayloadCount,
-            HasMoreChanges: !plan.IsInitialSeed && plan.DeltaChangeCount > deltaChanges.Count,
+            plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
     }
 
@@ -643,12 +433,11 @@ internal sealed class SeedSyncAdminService(
             .Where(change => change.ChangeKind != SeedSyncChangeKind.Unchanged)
             .Take(deltaPreviewLimit)
             .Select(change => new SeedSyncAdmin.ChangeResponse(
-                change.Item.SeedId,
+                change.Item.ItemId,
                 change.ChangeKind switch
                 {
                     SeedSyncChangeKind.Create => "Created",
                     SeedSyncChangeKind.Update => "Updated",
-                    SeedSyncChangeKind.Adopt => "Adopted",
                     _ => "Unchanged"
                 },
                 change.Item.Category,
@@ -666,14 +455,13 @@ internal sealed class SeedSyncAdminService(
         string nav2 = KeywordHelper.NormalizeKeywordName(item.NavigationKeyword2).ToLowerInvariant();
         string question = item.Question.Trim();
         string correctAnswer = item.CorrectAnswer.Trim();
-        List<string> incorrectAnswers = item.IncorrectAnswers.Select(x => x.Trim()).ToList();
+        List<string> incorrectAnswers = item.IncorrectAnswers.Select(answer => answer.Trim()).ToList();
         string explanation = (item.Explanation ?? string.Empty).Trim();
         string? source = string.IsNullOrWhiteSpace(item.Source) ? null : item.Source.Trim();
         List<string> keywords = NormalizeKeywords(item.Keywords, category, nav1, nav2);
-        string canonicalHash = ComputeCanonicalHash(category, nav1, nav2, question, correctAnswer, incorrectAnswers, explanation, source, keywords);
 
         return new NormalizedSeedItem(
-            item.SeedId,
+            item.ItemId,
             category,
             nav1,
             nav2,
@@ -682,8 +470,7 @@ internal sealed class SeedSyncAdminService(
             incorrectAnswers,
             explanation,
             keywords,
-            source,
-            canonicalHash);
+            source);
     }
 
     private static List<string> NormalizeKeywords(
@@ -727,37 +514,9 @@ internal sealed class SeedSyncAdminService(
         return normalized;
     }
 
-    private static string ComputeCanonicalHash(
-        string category,
-        string nav1,
-        string nav2,
-        string question,
-        string correctAnswer,
-        List<string> incorrectAnswers,
-        string explanation,
-        string? source,
-        List<string> keywords)
-    {
-        string json = JsonSerializer.Serialize(new
-        {
-            category,
-            navigationKeyword1 = nav1,
-            navigationKeyword2 = nav2,
-            question,
-            correctAnswer,
-            incorrectAnswers,
-            explanation,
-            source = source ?? string.Empty,
-            keywords
-        });
-
-        byte[] hash = SHA256.HashData(Encoding.UTF8.GetBytes(json));
-        return Convert.ToHexString(hash).ToLowerInvariant();
-    }
-
     private static List<string> GetChangedFields(Item existingItem, NormalizedSeedItem incoming)
     {
-        ExistingSeedState existing = BuildExistingState(existingItem);
+        ExistingItemState existing = BuildExistingState(existingItem);
         List<string> changed = [];
 
         if (!string.Equals(existing.Category, incoming.Category, StringComparison.OrdinalIgnoreCase))
@@ -808,13 +567,13 @@ internal sealed class SeedSyncAdminService(
         return changed;
     }
 
-    private static ExistingSeedState BuildExistingState(Item item)
+    private static ExistingItemState BuildExistingState(Item item)
     {
         string nav1 = item.NavigationKeyword1?.Name?.Trim().ToLowerInvariant() ?? string.Empty;
         string nav2 = item.NavigationKeyword2?.Name?.Trim().ToLowerInvariant() ?? string.Empty;
 
         List<string> extras = item.ItemKeywords
-            .Select(ik => ik.Keyword?.Name)
+            .Select(link => link.Keyword?.Name)
             .Where(name => !string.IsNullOrWhiteSpace(name))
             .Select(name => name!.Trim().ToLowerInvariant())
             .Where(name => !string.Equals(name, nav1, StringComparison.OrdinalIgnoreCase))
@@ -823,25 +582,16 @@ internal sealed class SeedSyncAdminService(
             .OrderBy(name => name, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        return new ExistingSeedState(
+        return new ExistingItemState(
             CategoryHelper.NameToSlug(item.Category?.Name ?? string.Empty),
             nav1,
             nav2,
             item.Question.Trim(),
             item.CorrectAnswer.Trim(),
-            item.IncorrectAnswers.Select(x => x.Trim()).ToList(),
+            item.IncorrectAnswers.Select(answer => answer.Trim()).ToList(),
             item.Explanation.Trim(),
             string.IsNullOrWhiteSpace(item.Source) ? null : item.Source.Trim(),
             extras);
-    }
-
-    private static string BuildLegacyKey(
-        string category,
-        string navigationKeyword1,
-        string navigationKeyword2,
-        string question)
-    {
-        return $"{CategoryHelper.NameToSlug(category)}|{KeywordHelper.NormalizeKeywordName(navigationKeyword1).ToLowerInvariant()}|{KeywordHelper.NormalizeKeywordName(navigationKeyword2).ToLowerInvariant()}|{question.Trim().ToLowerInvariant()}";
     }
 
     private static async Task TryRollbackAsync(
@@ -863,7 +613,7 @@ internal sealed class SeedSyncAdminService(
     }
 
     private sealed record NormalizedSeedItem(
-        Guid SeedId,
+        Guid ItemId,
         string Category,
         string NavigationKeyword1,
         string NavigationKeyword2,
@@ -872,10 +622,9 @@ internal sealed class SeedSyncAdminService(
         List<string> IncorrectAnswers,
         string Explanation,
         List<string> Keywords,
-        string? Source,
-        string CanonicalHash);
+        string? Source);
 
-    private sealed record ExistingSeedState(
+    private sealed record ExistingItemState(
         string Category,
         string NavigationKeyword1,
         string NavigationKeyword2,
@@ -900,15 +649,12 @@ internal sealed class SeedSyncAdminService(
 
     private sealed record SeedSyncPlan(
         string SeedSet,
-        bool IsInitialSeed,
         int TotalItemsInPayload,
-        int ExistingManagedItemCount,
-        int MissingFromPayloadCount,
+        int ExistingItemCount,
         List<PlannedSeedItemChange> Changes)
     {
         public int CreateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Create);
         public int UpdateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Update);
-        public int AdoptCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Adopt);
         public int UnchangedCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Unchanged);
         public int DeltaChangeCount => Changes.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
     }
@@ -917,7 +663,6 @@ internal sealed class SeedSyncAdminService(
     {
         Create,
         Update,
-        Adopt,
         Unchanged
     }
 }

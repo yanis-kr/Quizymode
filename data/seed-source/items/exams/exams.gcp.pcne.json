@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bbd829e4-c8df-47a2-a473-7b4e38cb4226",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -16,10 +17,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/vpc",
-    "seedId": "9a6f2e2b-a756-4f64-a416-963a574d9aee"
+    "source": "https://cloud.google.com/vpc"
   },
   {
+    "itemId": "99612f10-fa42-4eaa-b0a9-0b22e538c4a1",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -36,10 +37,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/load-balancing",
-    "seedId": "bca35ab0-6d17-48f5-927d-4735238f998c"
+    "source": "https://cloud.google.com/load-balancing"
   },
   {
+    "itemId": "04592e23-4ef8-439a-b4e6-a13b2b5a3f89",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -56,10 +57,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/products/networking/",
-    "seedId": "f4445ad7-5660-4548-b8fa-219e2e06c58a"
+    "source": "https://cloud.google.com/products/networking/"
   },
   {
+    "itemId": "c13dc76b-a5db-4210-afe7-5590e9a5b7b5",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -76,10 +77,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/nat",
-    "seedId": "8310d910-79e1-4787-ac91-aad8d19a7a22"
+    "source": "https://cloud.google.com/nat"
   },
   {
+    "itemId": "ff0c2dae-f470-4357-aec8-b7c4c72b1f85",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -96,10 +97,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/hybrid-connectivity",
-    "seedId": "99d0b89c-8b16-4e3f-a2eb-0286602bbf4c"
+    "source": "https://cloud.google.com/hybrid-connectivity"
   },
   {
+    "itemId": "c2859cab-2860-4494-b9a5-23b05c73d013",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -116,10 +117,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/security/products/armor",
-    "seedId": "2c86999b-304f-41a6-bd3d-fa432ae81ca0"
+    "source": "https://cloud.google.com/security/products/armor"
   },
   {
+    "itemId": "f2899ef3-a495-4b77-880d-f54fa527a7a5",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -136,10 +137,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/security/products/firewall",
-    "seedId": "b6ffd993-d87f-44fa-9acd-1cb5f2693008"
+    "source": "https://cloud.google.com/security/products/firewall"
   },
   {
+    "itemId": "16a18d61-cd4a-4eed-b80e-a6f1a9f7840e",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -156,10 +157,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/network-intelligence-center",
-    "seedId": "c6a442e7-dc55-40e9-a2af-526aae5f4ecc"
+    "source": "https://cloud.google.com/network-intelligence-center"
   },
   {
+    "itemId": "dc7ea662-d914-4cdf-9832-d1a4f4d3a5d0",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -176,10 +177,10 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/monitoring",
-    "seedId": "a8642f71-c4a2-4940-831c-ecc0e5d4249c"
+    "source": "https://cloud.google.com/monitoring"
   },
   {
+    "itemId": "e88ff7ec-8b90-451b-95f7-6ce484d8aceb",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcne",
@@ -196,7 +197,6 @@
       "google-cloud-networking",
       "network-services"
     ],
-    "source": "https://cloud.google.com/vpc",
-    "seedId": "0b6dbc29-730d-4556-a2f4-b7d56985e8c4"
+    "source": "https://cloud.google.com/vpc"
   }
 ]

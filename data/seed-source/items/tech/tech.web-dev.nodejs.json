@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bb2f2011-7b15-4ffe-85d0-5ad95eebda26",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -15,10 +16,10 @@
       "nodejs",
       "runtime"
     ],
-    "source": "https://nodejs.org/en/about",
-    "seedId": "b298de6b-b485-55a5-9bee-072377f9415e"
+    "source": "https://nodejs.org/en/about"
   },
   {
+    "itemId": "c533a365-a16a-4bf2-b012-25841a0335da",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -34,10 +35,10 @@
       "nodejs",
       "libuv"
     ],
-    "source": "https://libuv.org/",
-    "seedId": "661c4a31-49ce-5de7-ac98-7f7b95eeebc5"
+    "source": "https://libuv.org/"
   },
   {
+    "itemId": "71092418-32fc-47f1-9495-f8669788542f",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -53,10 +54,10 @@
       "nodejs",
       "modules"
     ],
-    "source": "https://nodejs.org/api/modules.html#modules-commonjs-modules",
-    "seedId": "8c3065d9-a8b8-5f8f-bd5d-fc42124f36b7"
+    "source": "https://nodejs.org/api/modules.html#modules-commonjs-modules"
   },
   {
+    "itemId": "28b14104-144d-4b8c-8f84-918a37906394",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -72,10 +73,10 @@
       "nodejs",
       "performance"
     ],
-    "source": "https://nodejs.org/api/worker_threads.html",
-    "seedId": "9b4c55ee-5483-56a6-89c0-ec7ba886e525"
+    "source": "https://nodejs.org/api/worker_threads.html"
   },
   {
+    "itemId": "488f458b-60ad-4312-a4b5-7f993c2c6366",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -91,10 +92,10 @@
       "nodejs",
       "streams"
     ],
-    "source": "https://nodejs.org/api/stream.html",
-    "seedId": "e7b38330-2ae4-534d-95f2-9254dec7bc62"
+    "source": "https://nodejs.org/api/stream.html"
   },
   {
+    "itemId": "749294b8-4d31-4899-990b-137c612c8fdb",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "nodejs",
@@ -110,7 +111,6 @@
       "nodejs",
       "npm"
     ],
-    "source": "https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies",
-    "seedId": "4ae84eda-b594-5d19-a5bb-363e104f7c53"
+    "source": "https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies"
   }
 ]

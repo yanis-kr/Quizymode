@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bdebb421-d34c-4907-b272-deae27a9c8f1",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -16,10 +17,10 @@
       "sahara",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Sahara-desert-Africa",
-    "seedId": "0d3118e4-c8da-4c23-82d0-d588251c3aed"
+    "source": "https://www.britannica.com/place/Sahara-desert-Africa"
   },
   {
+    "itemId": "6b71e1de-96a0-438c-b4d7-686bc8306a27",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -36,10 +37,10 @@
       "gobi",
       "asia"
     ],
-    "source": "https://www.britannica.com/place/Gobi-desert",
-    "seedId": "345cb4bd-f4c0-4e56-bf86-119fc8133ecd"
+    "source": "https://www.britannica.com/place/Gobi-desert"
   },
   {
+    "itemId": "1fb6c8ab-aef4-45e0-9074-4dc03a530c52",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -56,10 +57,10 @@
       "arabian",
       "middle-east"
     ],
-    "source": "https://www.britannica.com/place/Arabian-Desert",
-    "seedId": "ba3fce9b-482c-4889-912e-c492320be933"
+    "source": "https://www.britannica.com/place/Arabian-Desert"
   },
   {
+    "itemId": "d646b295-1bb0-4672-ba20-6a372696a942",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -76,10 +77,10 @@
       "kalahari",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Kalahari-Desert",
-    "seedId": "b36ce970-030e-4314-a184-1490e42d05ff"
+    "source": "https://www.britannica.com/place/Kalahari-Desert"
   },
   {
+    "itemId": "6cf50a55-7636-4f9f-a4ee-066bff116901",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -90,16 +91,16 @@
       "Sechura Desert",
       "Monte Desert"
     ],
-    "explanation": "The Atacama is one of the driest places on Earth along South America’s Pacific coast.",
+    "explanation": "The Atacama is one of the driest places on Earth along South America\u2019s Pacific coast.",
     "keywords": [
       "deserts",
       "atacama",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Atacama-Desert",
-    "seedId": "0b5dd6a9-ec8f-47bb-8d9f-b350a0528fd1"
+    "source": "https://www.britannica.com/place/Atacama-Desert"
   },
   {
+    "itemId": "34831a78-b8bf-44ec-b638-6e767992451f",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -116,10 +117,10 @@
       "mojave",
       "southwest-us"
     ],
-    "source": "https://www.britannica.com/place/Mojave-Desert",
-    "seedId": "66ddfb88-9861-48d3-b329-464ff2f8db70"
+    "source": "https://www.britannica.com/place/Mojave-Desert"
   },
   {
+    "itemId": "7c60c51b-a92c-488d-a23e-48371a08ea6d",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -136,10 +137,10 @@
       "sonoran",
       "north-america"
     ],
-    "source": "https://www.britannica.com/place/Sonoran-Desert",
-    "seedId": "2bf09273-d5dd-42a1-a4e0-705f9fad08e1"
+    "source": "https://www.britannica.com/place/Sonoran-Desert"
   },
   {
+    "itemId": "d5dbb81b-1e5e-4a38-861f-9217813f2e5c",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -150,20 +151,20 @@
       "Danakil Desert",
       "Libyan Desert"
     ],
-    "explanation": "The Namib is an ancient arid strip along Namibia’s shoreline.",
+    "explanation": "The Namib is an ancient arid strip along Namibia\u2019s shoreline.",
     "keywords": [
       "deserts",
       "namib",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Namib",
-    "seedId": "831b5532-99a0-4d13-ba00-8e5875044591"
+    "source": "https://www.britannica.com/place/Namib"
   },
   {
+    "itemId": "716f5a85-0fe9-48ba-a461-a68a61f151c6",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
-    "question": "Which desert lies along the India–Pakistan border east of the Indus River?",
+    "question": "Which desert lies along the India\u2013Pakistan border east of the Indus River?",
     "correctAnswer": "Thar Desert",
     "incorrectAnswers": [
       "Dasht-e Margo",
@@ -176,10 +177,10 @@
       "thar",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Thar-Desert",
-    "seedId": "cce2d271-c339-4940-8d28-c7b721bd936a"
+    "source": "https://www.britannica.com/place/Thar-Desert"
   },
   {
+    "itemId": "68eaf3fd-8818-49be-b00f-70c3cfcef36e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
@@ -196,14 +197,14 @@
       "polar",
       "antarctica"
     ],
-    "source": "https://www.britannica.com/place/Antarctica",
-    "seedId": "7f9e5d1b-9239-44d5-b538-58cafbb37203"
+    "source": "https://www.britannica.com/place/Antarctica"
   },
   {
+    "itemId": "17d4b4bd-988b-470b-b53b-9f13888713e4",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "deserts",
-    "question": "Which Australian desert is the country’s largest hot desert?",
+    "question": "Which Australian desert is the country\u2019s largest hot desert?",
     "correctAnswer": "Great Victoria Desert",
     "incorrectAnswers": [
       "Great Sandy Desert",
@@ -216,7 +217,6 @@
       "australia",
       "interior"
     ],
-    "source": "https://www.britannica.com/place/Great-Victoria-Desert",
-    "seedId": "7191ef05-6034-4ad5-8848-7dac1e674cd9"
+    "source": "https://www.britannica.com/place/Great-Victoria-Desert"
   }
 ]

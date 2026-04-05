@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7756df1d-abb3-4c26-84a3-75f2d3e3519f",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -15,10 +16,10 @@
       "csharp",
       "types"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct",
-    "seedId": "4bda4d75-600b-5830-bf07-c2c108624f65"
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct"
   },
   {
+    "itemId": "4f7ad3bf-f4be-4937-9a6c-eba0cee0c1ab",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -34,10 +35,10 @@
       "csharp",
       "async"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model",
-    "seedId": "1be8c8f3-ee14-5292-a973-c2ad966c4372"
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model"
   },
   {
+    "itemId": "e1d0a436-db4c-415b-b1b6-41e334fc6af4",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -53,10 +54,10 @@
       "csharp",
       "linq"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/deferred-execution-lazy-evaluation",
-    "seedId": "f4a188a1-e531-5b14-bbc7-6df9768b1a41"
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/linq/deferred-execution-lazy-evaluation"
   },
   {
+    "itemId": "a5b3e644-0a08-4d10-aea4-9acdffac0a32",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -72,10 +73,10 @@
       "csharp",
       "resources"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/api/system.idisposable",
-    "seedId": "fa685084-d435-5f59-8457-eb030bb6e853"
+    "source": "https://learn.microsoft.com/en-us/dotnet/api/system.idisposable"
   },
   {
+    "itemId": "144ada3a-73ac-48d2-83a3-701cb004a0bb",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -91,10 +92,10 @@
       "csharp",
       "oop"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/sealed",
-    "seedId": "e8a118e3-b333-58b2-95ae-d7596d1e6e1f"
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/sealed"
   },
   {
+    "itemId": "fb1152d7-da0a-409a-a844-b873586746e3",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "csharp",
@@ -110,7 +111,6 @@
       "csharp",
       "standards"
     ],
-    "source": "https://www.ecma-international.org/publications-and-standards/standards/ecma-334/",
-    "seedId": "2537cde7-c06f-5bf2-8938-889af42f2164"
+    "source": "https://www.ecma-international.org/publications-and-standards/standards/ecma-334/"
   }
 ]

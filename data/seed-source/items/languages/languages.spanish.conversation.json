@@ -1,45 +1,46 @@
 [
   {
+    "itemId": "41e6fa1f-d2ce-49b1-82f9-4a3da0963c2c",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which phrase is a common morning greeting?",
-    "correctAnswer": "Buenos días.",
+    "correctAnswer": "Buenos d\u00edas.",
     "incorrectAnswers": [
       "Buenas noches.",
       "Hasta luego.",
       "Mucho gusto."
     ],
-    "explanation": "\"Buenos días\" is the usual greeting for much of the morning and early day.",
+    "explanation": "\"Buenos d\u00edas\" is the usual greeting for much of the morning and early day.",
     "keywords": [
       "good-morning",
       "greetings",
       "spanish-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/buenos-d%C3%ADas",
-    "seedId": "68b75e50-d191-5834-893e-b71da0d5e9db"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/buenos-d%C3%ADas"
   },
   {
+    "itemId": "ce421721-50da-4f0d-87cc-09964db2cd1e",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which question asks \"How are you?\" in an informal way?",
-    "correctAnswer": "¿Cómo estás?",
+    "correctAnswer": "\u00bfC\u00f3mo est\u00e1s?",
     "incorrectAnswers": [
-      "¿Cómo se llama usted?",
-      "¿De dónde es?",
-      "¿Cuántos años tiene?"
+      "\u00bfC\u00f3mo se llama usted?",
+      "\u00bfDe d\u00f3nde es?",
+      "\u00bfCu\u00e1ntos a\u00f1os tiene?"
     ],
-    "explanation": "\"¿Cómo estás?\" uses the informal \"tú\" form to ask how someone is.",
+    "explanation": "\"\u00bfC\u00f3mo est\u00e1s?\" uses the informal \"t\u00fa\" form to ask how someone is.",
     "keywords": [
       "how-are-you",
       "greetings",
       "spanish-conversation"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/c%C3%B3mo-est%C3%A1s",
-    "seedId": "958f636c-dff0-51ab-bc32-f4b8b3a54030"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/c%C3%B3mo-est%C3%A1s"
   },
   {
+    "itemId": "21755aef-9be5-4af7-9e2f-956d9886dab5",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
@@ -47,7 +48,7 @@
     "correctAnswer": "Con permiso.",
     "incorrectAnswers": [
       "Encantado.",
-      "Feliz cumpleaños.",
+      "Feliz cumplea\u00f1os.",
       "Buen provecho."
     ],
     "explanation": "\"Con permiso\" is a polite way to say excuse me in many passing situations.",
@@ -56,17 +57,17 @@
       "politeness",
       "spanish-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/con-permiso",
-    "seedId": "0f6b0afa-799b-530d-93d0-a62f599a2c9d"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/con-permiso"
   },
   {
+    "itemId": "8a067dc6-b0d1-4453-98d2-9f5868dcd5a5",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which reply is a simple way to say \"Nice to meet you\" after an introduction?",
     "correctAnswer": "Mucho gusto.",
     "incorrectAnswers": [
-      "Hasta mañana.",
+      "Hasta ma\u00f1ana.",
       "Lo siento.",
       "Tengo prisa."
     ],
@@ -76,15 +77,15 @@
       "introductions",
       "spanish-conversation"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/mucho-gusto",
-    "seedId": "7f489bb0-777a-5d3b-9da0-2932a76e361b"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/mucho-gusto"
   },
   {
+    "itemId": "0f1b739a-eab6-4f6e-af13-73abc040d9bc",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which phrase politely asks someone to repeat what they said?",
-    "correctAnswer": "¿Puede repetir, por favor?",
+    "correctAnswer": "\u00bfPuede repetir, por favor?",
     "incorrectAnswers": [
       "No me gusta.",
       "Estoy cansado.",
@@ -96,10 +97,10 @@
       "clarification",
       "spanish-conversation"
     ],
-    "source": "https://www.spanishdict.com/translate/repetir",
-    "seedId": "b477ac1a-cbe7-5509-95b2-27d017788263"
+    "source": "https://www.spanishdict.com/translate/repetir"
   },
   {
+    "itemId": "365d18e4-bbea-44f5-ae61-f29e86a2b5e1",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
@@ -116,7 +117,6 @@
       "apology",
       "spanish-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/lo-siento",
-    "seedId": "ef4c248a-70b9-5ba5-8678-a22f122f3388"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/lo-siento"
   }
 ]

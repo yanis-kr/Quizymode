@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "e506c2ee-df04-4df4-bba2-2b10089feb15",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '안녕하세요' (annyeonghaseyo) mean?",
+    "question": "What does '\uc548\ub155\ud558\uc138\uc694' (annyeonghaseyo) mean?",
     "correctAnswer": "hello (polite)",
     "incorrectAnswers": [
       "goodbye only",
@@ -15,14 +16,14 @@
       "hello",
       "korean-basics"
     ],
-    "source": "https://ko.wiktionary.org/wiki/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94",
-    "seedId": "a39e6de3-71dd-523e-a7a4-db0d2f1557fd"
+    "source": "https://ko.wiktionary.org/wiki/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94"
   },
   {
+    "itemId": "e8b57986-46e7-4ef9-9416-a8db4dbf19a2",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '감사합니다' (gamsahamnida) mean?",
+    "question": "What does '\uac10\uc0ac\ud569\ub2c8\ub2e4' (gamsahamnida) mean?",
     "correctAnswer": "thank you (polite)",
     "incorrectAnswers": [
       "please",
@@ -34,14 +35,14 @@
       "thank-you",
       "korean-basics"
     ],
-    "source": "https://www.wiktionary.org/wiki/%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4",
-    "seedId": "5fb35a72-d0d4-58c9-bb98-69f707f0659e"
+    "source": "https://www.wiktionary.org/wiki/%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4"
   },
   {
+    "itemId": "754de738-3ace-405b-b102-c747f064e1eb",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '물' (mul) mean?",
+    "question": "What does '\ubb3c' (mul) mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "rice",
@@ -53,14 +54,14 @@
       "water",
       "korean-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-korean/water",
-    "seedId": "b1085f17-2b04-58e8-9790-f3d147f15adc"
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/water"
   },
   {
+    "itemId": "c16b8527-7ba4-49f8-865c-e0d4673103b5",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '네' (ne) often mean in a simple reply?",
+    "question": "What does '\ub124' (ne) often mean in a simple reply?",
     "correctAnswer": "yes (polite)",
     "incorrectAnswers": [
       "no",
@@ -72,14 +73,14 @@
       "yes",
       "korean-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-korean/yes",
-    "seedId": "8ae95dae-d096-5599-aaf7-46de2b84e838"
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/yes"
   },
   {
+    "itemId": "a007fc0a-0cbd-41fc-a696-7c30eaa4b298",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '아니요' (aniyo) mean?",
+    "question": "What does '\uc544\ub2c8\uc694' (aniyo) mean?",
     "correctAnswer": "no (polite)",
     "incorrectAnswers": [
       "yes",
@@ -91,14 +92,14 @@
       "no",
       "korean-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-korean/no",
-    "seedId": "6ed30113-d2b5-5e7e-a1cc-de9d9bf1a837"
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/no"
   },
   {
+    "itemId": "eec33d2d-b0dd-4711-bc6e-a47b8e48b9ad",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "korean",
-    "question": "What does '학교' (hakgyo) mean?",
+    "question": "What does '\ud559\uad50' (hakgyo) mean?",
     "correctAnswer": "school",
     "incorrectAnswers": [
       "hospital",
@@ -110,7 +111,6 @@
       "school",
       "korean-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-korean/school",
-    "seedId": "914980b6-0b98-5618-ba93-c973f7fccaea"
+    "source": "https://dictionary.cambridge.org/dictionary/english-korean/school"
   }
 ]

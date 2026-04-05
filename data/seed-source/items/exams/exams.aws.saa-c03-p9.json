@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7e573b2a-a7db-41fa-8d8f-ad52e5fbd4a5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -16,10 +17,10 @@
       "aws-analytics",
       "opensearch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f51725f8-0561-49d8-a628-58b56883fe32"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9647ee1f-c740-420f-aa37-f604312d156e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -40,14 +41,14 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "2e0a1eb6-4a7b-4587-9d44-32ca712b9d9a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "dfa66659-f333-45b4-874f-46877d181c9d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company wants to use high performance computing (HPC) infrastructure on AWS for nancial risk modeling. The company’s HPC workloads run\non Linux. Each HPC workflow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output les that are\nultimately stored in persistent storage for analytics and long-term future use.\nThe company seeks a cloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available\nfor processing by all EC2 instances. The solution should also be a high performance le system that is integrated with persistent storage to read\nand write datasets and output les.\nWhich combination of AWS services meets these requirements?",
+    "question": "A company wants to use high performance computing (HPC) infrastructure on AWS for nancial risk modeling. The company\u2019s HPC workloads run\non Linux. Each HPC workflow runs on hundreds of Amazon EC2 Spot Instances, is short-lived, and generates thousands of output les that are\nultimately stored in persistent storage for analytics and long-term future use.\nThe company seeks a cloud storage solution that permits the copying of on-premises data to long-term persistent storage to make data available\nfor processing by all EC2 instances. The solution should also be a high performance le system that is integrated with persistent storage to read\nand write datasets and output les.\nWhich combination of AWS services meets these requirements?",
     "correctAnswer": "Amazon FSx for Lustre integrated with Amazon S3",
     "incorrectAnswers": [
       "Amazon FSx for Windows File Server integrated with Amazon S3",
@@ -63,10 +64,10 @@
       "fsx",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "51e6a40e-1277-4424-8ed6-c5ed215743d9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1c945238-4619-46fc-bae0-837c7fefbc65",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -84,10 +85,10 @@
       "fargate",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8749dfea-6ec8-4a5e-b445-9f1f1b47346d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "748803a2-7e6e-42e4-adcb-7371dc092316",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -106,14 +107,14 @@
       "elasticache",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "df865410-6f1e-4e74-b7ee-5114a96c1a3b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1cbb4c8f-68e1-48b1-96f0-1cb39732c0c2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company’s\nsecurity policy requires that all website traffic be inspected by AWS WAF.\nHow should the solutions architect comply with these requirements?",
+    "question": "A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company\u2019s\nsecurity policy requires that all website traffic be inspected by AWS WAF.\nHow should the solutions architect comply with these requirements?",
     "correctAnswer": "Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
     "incorrectAnswers": [
       "Configure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
@@ -129,10 +130,10 @@
       "cloudfront",
       "waf"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "85592b0f-0a95-4c98-9c15-dfbf35c71bce"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f439c838-36df-4d42-a6ac-cc1761d9e985",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -149,10 +150,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1fdeb55e-75aa-4323-9a2b-14f223c1248e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "91e12a91-0125-489b-94a0-7505dbb18b64",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -171,14 +172,14 @@
       "ec2",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e7c29f8c-7518-420f-985d-fb5e8edb860b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5efefefc-df7d-4eb0-9f47-680eb36aef42",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A security team wants to limit access to specific services or actions in all of the team’s AWS accounts. All accounts belong to a large organization\nin AWS Organizations. The solution must be scalable and there must be a single point where permissions can be maintained.\nWhat should a solutions architect do to accomplish this?",
+    "question": "A security team wants to limit access to specific services or actions in all of the team\u2019s AWS accounts. All accounts belong to a large organization\nin AWS Organizations. The solution must be scalable and there must be a single point where permissions can be maintained.\nWhat should a solutions architect do to accomplish this?",
     "correctAnswer": "Create an ACL to provide access to the services or actions.",
     "incorrectAnswers": [
       "Create a security group to allow accounts and attach it to user groups.",
@@ -191,10 +192,10 @@
       "aws-management",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "146ab871-b099-4c4f-b47e-ecba7ba9806c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ea83967f-05ae-4ff6-a043-6d77e3484487",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -212,14 +213,14 @@
       "aws-security",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1ceb1ae7-5188-4bf2-a7c3-29d41def2d49"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9f7ed995-2929-45d8-a461-15af1be20e98",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s web application is running on Amazon EC2 instances behind an Application Load Balancer. The company recently changed its policy,\nwhich now requires the application to be accessed from one specific country only.\nWhich conguration will meet this requirement?",
+    "question": "A company\u2019s web application is running on Amazon EC2 instances behind an Application Load Balancer. The company recently changed its policy,\nwhich now requires the application to be accessed from one specific country only.\nWhich conguration will meet this requirement?",
     "correctAnswer": "Configure the security group for the EC2 instances.",
     "incorrectAnswers": [
       "Configure the security group on the Application Load Balancer.",
@@ -234,10 +235,10 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8b5e8f19-3354-412b-beeb-63769b6a2f73"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a79cc4df-0c90-41b4-a48a-73a883fbf99a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -254,10 +255,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "03756fcf-bed7-4109-a5d0-a74f2651f229"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b54e1121-b621-425a-a503-8f21a071351e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -274,10 +275,10 @@
       "aws-networking",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "50935132-c38c-41c1-beef-5ca560a61a1b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c3c19afd-4b7b-4227-905d-ccb1381de94f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -296,10 +297,10 @@
       "s3",
       "global-accelerator"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cbe6c41f-9dee-4dad-8bac-4bd9a51cb282"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "54efe340-4bfa-41da-9244-e130272ead04",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -319,10 +320,10 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b5f1f3c4-1b4d-4b53-bab0-5ef556f34cc2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a54de292-5413-4b4f-8069-34452e6ecc6b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -344,10 +345,10 @@
       "api-gateway",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "49882316-8e0f-4cbf-8be3-5b39cf290809"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "66b4e68c-b72c-45d6-8d4d-165dfa4773e0",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -369,10 +370,10 @@
       "vpc",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7a36eb81-8d9d-4412-af36-200e5e973929"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ab900fad-dc79-4d96-bf71-b5230d9805fa",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -391,14 +392,14 @@
       "dynamodb",
       "elasticache"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3271d824-becf-4b22-813e-f2404cfa7cf3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "04f551a9-6085-425a-8a40-a3b817f65db2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s infrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in a single AWS Region. The company wants to\nback up its data in a separate Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A company\u2019s infrastructure consists of Amazon EC2 instances and an Amazon RDS DB instance in a single AWS Region. The company wants to\nback up its data in a separate Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Use AWS Backup to copy EC2 backups and RDS backups to the separate Region.",
     "incorrectAnswers": [
       "Use Amazon Data Lifecycle Manager (Amazon DLM) to copy EC2 backups and RDS backups to the separate Region.",
@@ -415,10 +416,10 @@
       "ec2",
       "aws-backup"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "58279ed2-eaf9-4b60-88d2-d097339c15ba"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ac39950d-3e61-4714-890f-7d59939787f7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -441,7 +442,6 @@
       "kms",
       "systems-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f8804e30-6f67-4f3d-94a0-452994d6acc8"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

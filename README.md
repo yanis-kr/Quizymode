@@ -86,11 +86,13 @@ graph TD
 
 Data layout:
 
-- `data/seed-dev/`: tiny startup seed used for local/dev and test bootstrap
-- `data/seed-source/items/`: source-of-truth item banks used to build admin seed-sync bundles
-- `data/seed-source/review-from-seed/`: reviewed legacy seed JSON carried forward for later normalization
+- `data/seed-source/items/`: canonical admin-managed public item source files using permanent `itemId` values
+- `data/seed-source/collections/public/`: canonical public collection seed files referencing permanent `itemId` values
+- `data/seed-source/_registry/`: generated registry and duplicate-allowlist artifacts for seed validation
+- `data/seed-dev/`: derived local/dev startup subset generated from `data/seed-source/` via `data/seed-dev/selection.json`
+- `data/import-inbox/`: gitignored staging area for raw AI-generated JSON before normalization into canonical source files
 - `data/prompts/`: prompt templates and execution instructions
-- `data/generated/seed-sync/`: generated admin upload bundles kept in source control
+- `data/generated/core-public-items.admin-sync.json`: generated admin upload bundle built from canonical source files
 - `data/generated/seed-progress/`: gitignored workflow progress/state files
 
 The root README is the canonical entry point. Detailed or fast-changing material belongs under `docs/`, and this file should link to those documents directly.
@@ -138,6 +140,16 @@ In practice, local development is:
 - PostgreSQL runs through Aspire in local development.
 - EF Core migrations are applied automatically on API startup.
 - Seed data is loaded from `data/seed-dev/`.
+
+### Seed Tooling
+
+Canonical admin content lives under `data/seed-source/` and is validated/built with:
+
+- `python scripts/validate_seed_source.py`
+- `python scripts/build_item_registry.py`
+- `python scripts/build_admin_seed_bundle.py`
+- `python scripts/build_seed_dev_subset.py`
+- `python scripts/process_import_inbox.py --write`
 
 ### Running E2E Tests Locally
 

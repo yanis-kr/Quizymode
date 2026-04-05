@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "90098c87-ec29-4eca-bdcc-4ef046b6e400",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -15,10 +16,10 @@
       "ai-ml",
       "llms"
     ],
-    "source": "https://arxiv.org/abs/2005.14165",
-    "seedId": "9c6321c5-b5bd-54f2-ae7f-c4545b511b69"
+    "source": "https://arxiv.org/abs/2005.14165"
   },
   {
+    "itemId": "4b763260-7fe7-4190-b02d-f0575ab8d9fb",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -34,10 +35,10 @@
       "ai-ml",
       "transformer"
     ],
-    "source": "https://arxiv.org/abs/1706.03762",
-    "seedId": "fb9c7ed8-f67d-5b96-a849-a2e938133a6e"
+    "source": "https://arxiv.org/abs/1706.03762"
   },
   {
+    "itemId": "6bc41ca6-89c2-4c24-8a1e-b1d6e8f2eb08",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -53,10 +54,10 @@
       "ai-ml",
       "context-window"
     ],
-    "source": "https://www.ibm.com/topics/context-window",
-    "seedId": "f0fb8673-8b57-5e9f-95e9-430c723e01f9"
+    "source": "https://www.ibm.com/topics/context-window"
   },
   {
+    "itemId": "df280155-0537-4de5-97be-e0ef14d76cc4",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -72,10 +73,10 @@
       "ai-ml",
       "fine-tuning"
     ],
-    "source": "https://huggingface.co/docs/transformers/training",
-    "seedId": "747ad997-4ef0-52ea-9795-7c63d90fc69f"
+    "source": "https://huggingface.co/docs/transformers/training"
   },
   {
+    "itemId": "3b176527-c8fd-4fd3-9fd0-312c735b9991",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -91,10 +92,10 @@
       "ai-ml",
       "sampling"
     ],
-    "source": "https://en.wikipedia.org/wiki/Softmax_function",
-    "seedId": "2530a835-1437-5c78-990d-4e79d8cf2905"
+    "source": "https://en.wikipedia.org/wiki/Softmax_function"
   },
   {
+    "itemId": "43223986-9ad7-4a85-8711-fe6b68ef307d",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -110,7 +111,6 @@
       "ai-ml",
       "rag"
     ],
-    "source": "https://arxiv.org/abs/2005.11401",
-    "seedId": "ae82e5b0-a1dd-5760-9d38-d79a329b3bac"
+    "source": "https://arxiv.org/abs/2005.11401"
   }
 ]

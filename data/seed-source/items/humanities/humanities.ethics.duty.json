@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "01bf252a-cd9b-43b7-983f-b0458cc4ebdf",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "duty",
@@ -15,10 +16,10 @@
       "duty-ethics",
       "obligation"
     ],
-    "source": "https://www.britannica.com/topic/deontological-ethics",
-    "seedId": "ebe918b7-25e5-53bc-a597-5b455201d18c"
+    "source": "https://www.britannica.com/topic/deontological-ethics"
   },
   {
+    "itemId": "2fe470d2-8c2b-49cd-836c-e7cd8777b1b4",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "duty",
@@ -34,7 +35,6 @@
       "duty-ethics",
       "kant"
     ],
-    "source": "https://plato.stanford.edu/entries/ethics-deontological/",
-    "seedId": "699c96ad-5f82-561c-9c34-180458041b77"
+    "source": "https://plato.stanford.edu/entries/ethics-deontological/"
   }
 ]

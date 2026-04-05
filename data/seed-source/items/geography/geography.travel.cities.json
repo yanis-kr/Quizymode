@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fb7db934-ba89-4f35-bb54-aa7844e9126d",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -10,16 +11,16 @@
       "Kyushu",
       "Shikoku"
     ],
-    "explanation": "Britannica places Tokyo on the Pacific coast of eastern Honshu, Japan’s largest island.",
+    "explanation": "Britannica places Tokyo on the Pacific coast of eastern Honshu, Japan\u2019s largest island.",
     "keywords": [
       "cities",
       "tokyo",
       "honshu"
     ],
-    "source": "https://www.britannica.com/place/Tokyo",
-    "seedId": "5a78b3f2-6a98-4b98-90d2-2f778226581f"
+    "source": "https://www.britannica.com/place/Tokyo"
   },
   {
+    "itemId": "e2daa1b9-c0b0-463a-b58b-2c7dd1e935cc",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -36,10 +37,10 @@
       "london",
       "thames"
     ],
-    "source": "https://www.britannica.com/place/London",
-    "seedId": "fdf57619-0854-47d8-b92b-0e8a74c15ea8"
+    "source": "https://www.britannica.com/place/London"
   },
   {
+    "itemId": "46f19f60-881c-409a-ae46-a3e929c96f98",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -56,10 +57,10 @@
       "istanbul",
       "bosporus"
     ],
-    "source": "https://www.britannica.com/place/Istanbul",
-    "seedId": "ceaf7da6-11b1-4a32-b084-e65400661b9f"
+    "source": "https://www.britannica.com/place/Istanbul"
   },
   {
+    "itemId": "fc904d27-33f0-4250-9ea2-26fae3814ad1",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -70,16 +71,16 @@
       "The Lena River",
       "The Ob River"
     ],
-    "explanation": "Britannica states Moscow lies on the Moskva River west of the Volga’s headwaters.",
+    "explanation": "Britannica states Moscow lies on the Moskva River west of the Volga\u2019s headwaters.",
     "keywords": [
       "cities",
       "moscow",
       "moskva-river"
     ],
-    "source": "https://www.britannica.com/place/Moscow",
-    "seedId": "e8f5c44b-a210-4765-b00a-ba398083cfa6"
+    "source": "https://www.britannica.com/place/Moscow"
   },
   {
+    "itemId": "7b23ece3-7c1f-47cb-955d-3ae3457ce6c7",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -90,16 +91,16 @@
       "Queensland",
       "Western Australia"
     ],
-    "explanation": "Britannica identifies Sydney as the capital of New South Wales on Australia’s southeastern coast.",
+    "explanation": "Britannica identifies Sydney as the capital of New South Wales on Australia\u2019s southeastern coast.",
     "keywords": [
       "cities",
       "sydney",
       "new-south-wales"
     ],
-    "source": "https://www.britannica.com/place/Sydney-New-South-Wales",
-    "seedId": "837b8916-1a9f-4f11-ace2-e9ec139a63a0"
+    "source": "https://www.britannica.com/place/Sydney-New-South-Wales"
   },
   {
+    "itemId": "016c1cc0-047e-44b4-b4d1-0e03f8acbfab",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -116,10 +117,10 @@
       "dubai",
       "uae"
     ],
-    "source": "https://www.britannica.com/place/Dubai-United-Arab-Emirates",
-    "seedId": "a7bb5a84-49e7-4f34-b3b2-f0920b23e6c1"
+    "source": "https://www.britannica.com/place/Dubai-United-Arab-Emirates"
   },
   {
+    "itemId": "a8d2a6d0-9bc2-4f48-a045-88d004b8368a",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -136,10 +137,10 @@
       "singapore",
       "malay-peninsula"
     ],
-    "source": "https://www.britannica.com/place/Singapore",
-    "seedId": "28aaaf56-bea7-4bb3-959f-cf25718277ce"
+    "source": "https://www.britannica.com/place/Singapore"
   },
   {
+    "itemId": "3fb4a83c-ee04-4624-9d4a-e6cf7864ac64",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -156,50 +157,50 @@
       "mexico-city",
       "altiplano"
     ],
-    "source": "https://www.britannica.com/place/Mexico-City",
-    "seedId": "e864a35f-ebdd-4931-9820-931d6a99f6df"
+    "source": "https://www.britannica.com/place/Mexico-City"
   },
   {
+    "itemId": "fa0b9bce-3e76-4f79-b4a9-c40b5d5bf96d",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
-    "question": "Cairo stands near the head of which major African river’s delta?",
+    "question": "Cairo stands near the head of which major African river\u2019s delta?",
     "correctAnswer": "The Nile River",
     "incorrectAnswers": [
       "The Congo River",
       "The Niger River",
       "The Zambezi River"
     ],
-    "explanation": "Britannica situates Cairo just north of the Nile’s transition into its delta on the North African desert edge.",
+    "explanation": "Britannica situates Cairo just north of the Nile\u2019s transition into its delta on the North African desert edge.",
     "keywords": [
       "cities",
       "cairo",
       "nile"
     ],
-    "source": "https://www.britannica.com/place/Cairo",
-    "seedId": "0e8b2e10-b0ea-49d0-90d4-90948e16fb8f"
+    "source": "https://www.britannica.com/place/Cairo"
   },
   {
+    "itemId": "199a08ac-18c6-41e7-a283-be89627969a8",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
-    "question": "Buenos Aires faces which broad estuary on Argentina’s coast?",
-    "correctAnswer": "The Río de la Plata",
+    "question": "Buenos Aires faces which broad estuary on Argentina\u2019s coast?",
+    "correctAnswer": "The R\u00edo de la Plata",
     "incorrectAnswers": [
       "The Amazon estuary",
       "The Baltic Sea",
       "The Persian Gulf"
     ],
-    "explanation": "Britannica places Buenos Aires on the southern shore of the Río de la Plata estuary.",
+    "explanation": "Britannica places Buenos Aires on the southern shore of the R\u00edo de la Plata estuary.",
     "keywords": [
       "cities",
       "buenos-aires",
       "rio-de-la-plata"
     ],
-    "source": "https://www.britannica.com/place/Buenos-Aires",
-    "seedId": "dba33442-21ae-4ee6-bc2d-599a5ac08ddc"
+    "source": "https://www.britannica.com/place/Buenos-Aires"
   },
   {
+    "itemId": "34849b10-f4c9-438b-b10e-e1e83d78319b",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "cities",
@@ -210,13 +211,12 @@
       "Kenya",
       "Brazil"
     ],
-    "explanation": "Britannica describes Johannesburg as South Africa’s major industrial and financial metropolis on the Witwatersrand.",
+    "explanation": "Britannica describes Johannesburg as South Africa\u2019s major industrial and financial metropolis on the Witwatersrand.",
     "keywords": [
       "cities",
       "johannesburg",
       "south-africa"
     ],
-    "source": "https://www.britannica.com/place/Johannesburg-South-Africa",
-    "seedId": "cdb97fc0-ae06-4477-969e-2a4acc62775b"
+    "source": "https://www.britannica.com/place/Johannesburg-South-Africa"
   }
 ]

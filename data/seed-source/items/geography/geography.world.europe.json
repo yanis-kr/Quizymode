@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f61bf4b8-4538-4acd-89cd-6e87c38045ca",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -10,16 +11,16 @@
       "The Apennines",
       "The Carpathians"
     ],
-    "explanation": "The Pyrenees stretch along the France–Spain frontier, separating the Iberian Peninsula from the rest of Europe.",
+    "explanation": "The Pyrenees stretch along the France\u2013Spain frontier, separating the Iberian Peninsula from the rest of Europe.",
     "keywords": [
       "europe",
       "mountain-ranges",
       "borders"
     ],
-    "source": "https://www.britannica.com/place/Pyrenees",
-    "seedId": "52494387-6064-4132-8dcd-6f250f8da689"
+    "source": "https://www.britannica.com/place/Pyrenees"
   },
   {
+    "itemId": "797386d2-962a-4d18-bcd3-0a4670a85529",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -30,16 +31,16 @@
       "The Rhine",
       "The Dnieper"
     ],
-    "explanation": "The Volga flows mostly through Russia and is commonly listed as Europe’s longest river by length.",
+    "explanation": "The Volga flows mostly through Russia and is commonly listed as Europe\u2019s longest river by length.",
     "keywords": [
       "europe",
       "rivers",
       "physical-geography"
     ],
-    "source": "https://www.britannica.com/place/Volga-River",
-    "seedId": "94226c67-a4b6-4c1a-9621-1e7a70998d44"
+    "source": "https://www.britannica.com/place/Volga-River"
   },
   {
+    "itemId": "37a83f7e-b800-4ab2-a6d9-60db7b27e556",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -56,30 +57,30 @@
       "straits",
       "water-bodies"
     ],
-    "source": "https://www.britannica.com/place/Strait-of-Gibraltar",
-    "seedId": "af098110-fe52-46ea-9108-515602ec0864"
+    "source": "https://www.britannica.com/place/Strait-of-Gibraltar"
   },
   {
+    "itemId": "68a84ad2-ff17-4068-9b42-4a51afd38992",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
-    "question": "Which sea lies east of Sweden’s Baltic coast?",
+    "question": "Which sea lies east of Sweden\u2019s Baltic coast?",
     "correctAnswer": "The Baltic Sea",
     "incorrectAnswers": [
       "The North Sea",
       "The Norwegian Sea",
       "The Celtic Sea"
     ],
-    "explanation": "Sweden’s eastern seaboard fronts the Baltic Sea, which also borders several other northern European states.",
+    "explanation": "Sweden\u2019s eastern seaboard fronts the Baltic Sea, which also borders several other northern European states.",
     "keywords": [
       "europe",
       "seas",
       "northern-europe"
     ],
-    "source": "https://www.britannica.com/place/Baltic-Sea",
-    "seedId": "598a0064-6351-4a19-ae21-f75d9edad940"
+    "source": "https://www.britannica.com/place/Baltic-Sea"
   },
   {
+    "itemId": "589fbb5b-2107-4c37-956d-11907b855dd7",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -90,16 +91,16 @@
       "The Alps",
       "The Atlas Mountains"
     ],
-    "explanation": "The Urals run roughly north–south through Russia and are a standard geographic divider between Europe and Asia.",
+    "explanation": "The Urals run roughly north\u2013south through Russia and are a standard geographic divider between Europe and Asia.",
     "keywords": [
       "europe",
       "mountain-ranges",
       "boundaries"
     ],
-    "source": "https://www.britannica.com/place/Ural-Mountains",
-    "seedId": "6f9a3d4a-4463-4a78-a44c-600028c43ce2"
+    "source": "https://www.britannica.com/place/Ural-Mountains"
   },
   {
+    "itemId": "f31e532d-1929-47e9-b880-df4d4e3ede2c",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -110,36 +111,36 @@
       "The Baltic Sea",
       "The Caspian Sea"
     ],
-    "explanation": "The Danube’s delta empties into the Black Sea after crossing much of Central and Eastern Europe.",
+    "explanation": "The Danube\u2019s delta empties into the Black Sea after crossing much of Central and Eastern Europe.",
     "keywords": [
       "europe",
       "rivers",
       "black-sea"
     ],
-    "source": "https://www.britannica.com/place/Danube-River",
-    "seedId": "8ba67c15-ca11-4ffd-a569-8a98b01957db"
+    "source": "https://www.britannica.com/place/Danube-River"
   },
   {
+    "itemId": "17cd8c89-a0f2-4966-9746-11d5e62abaf0",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
-    "question": "Which major European range includes Mont Blanc, Western Europe’s highest peak?",
+    "question": "Which major European range includes Mont Blanc, Western Europe\u2019s highest peak?",
     "correctAnswer": "The Alps",
     "incorrectAnswers": [
       "The Pyrenees",
       "The Apennines",
       "The Dinaric Alps"
     ],
-    "explanation": "Mont Blanc sits in the Alps on the France–Italy border and is the tallest peak in Western Europe.",
+    "explanation": "Mont Blanc sits in the Alps on the France\u2013Italy border and is the tallest peak in Western Europe.",
     "keywords": [
       "europe",
       "mountain-ranges",
       "alps"
     ],
-    "source": "https://www.britannica.com/place/Alps-mountains-Europe",
-    "seedId": "e419d60c-316c-4832-b8d4-b8a3ee5bdb66"
+    "source": "https://www.britannica.com/place/Alps-mountains-Europe"
   },
   {
+    "itemId": "18bf5eb5-960f-488b-aa49-d2a450d576db",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -156,14 +157,14 @@
       "seas",
       "northwest-europe"
     ],
-    "source": "https://www.britannica.com/place/English-Channel",
-    "seedId": "7237e1d8-0c5a-4888-9204-3f05f9babaac"
+    "source": "https://www.britannica.com/place/English-Channel"
   },
   {
+    "itemId": "f6a34c65-2fd7-4efd-9ac3-20a7d889dc53",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
-    "question": "Iceland’s volcanism is closely associated with which plate boundary setting?",
+    "question": "Iceland\u2019s volcanism is closely associated with which plate boundary setting?",
     "correctAnswer": "A divergent boundary along the Mid-Atlantic Ridge",
     "incorrectAnswers": [
       "A collision between the African and Indian plates",
@@ -176,10 +177,10 @@
       "tectonics",
       "iceland"
     ],
-    "source": "https://www.britannica.com/place/Iceland",
-    "seedId": "c81c223a-180a-442a-8950-3adb2b2e8527"
+    "source": "https://www.britannica.com/place/Iceland"
   },
   {
+    "itemId": "bd70f60a-a3eb-4b3d-b47e-3938a1f0e447",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -196,10 +197,10 @@
       "peninsulas",
       "northern-europe"
     ],
-    "source": "https://www.britannica.com/place/Scandinavian-Peninsula",
-    "seedId": "20be43bf-f270-47f3-9632-36e67821b1a6"
+    "source": "https://www.britannica.com/place/Scandinavian-Peninsula"
   },
   {
+    "itemId": "ebfbc768-eff8-4f69-a332-f0ee8049d4f6",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -216,10 +217,10 @@
       "atlantic",
       "water-bodies"
     ],
-    "source": "https://www.britannica.com/place/Bay-of-Biscay",
-    "seedId": "8e63e41d-8000-42a2-83b0-dc2ca9503941"
+    "source": "https://www.britannica.com/place/Bay-of-Biscay"
   },
   {
+    "itemId": "285c09fb-eb68-4e11-b420-35caa8c59515",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "europe",
@@ -236,7 +237,6 @@
       "seas",
       "sea-of-azov"
     ],
-    "source": "https://www.britannica.com/place/Sea-of-Azov",
-    "seedId": "d5f03ae6-d888-4ebd-bf6c-4137e755eb2d"
+    "source": "https://www.britannica.com/place/Sea-of-Azov"
   }
 ]

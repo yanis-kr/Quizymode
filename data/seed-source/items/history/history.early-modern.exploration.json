@@ -1,29 +1,30 @@
 [
   {
+    "itemId": "f7c1cea4-c568-4ce7-a18e-cabafdb99c52",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Columbus’s first voyage under Spanish patronage reached Caribbean islands in which year?",
+    "question": "Columbus\u2019s first voyage under Spanish patronage reached Caribbean islands in which year?",
     "correctAnswer": "1492",
     "incorrectAnswers": [
       "1488",
       "1519",
       "1588"
     ],
-    "explanation": "1492 marks Columbus’s initial Atlantic crossing sponsored by Ferdinand and Isabella.",
+    "explanation": "1492 marks Columbus\u2019s initial Atlantic crossing sponsored by Ferdinand and Isabella.",
     "keywords": [
       "exploration",
       "columbus",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/biography/Christopher-Columbus",
-    "seedId": "bd61fd3e-23df-49f6-b2de-6ae2d8b9c800"
+    "source": "https://www.britannica.com/biography/Christopher-Columbus"
   },
   {
+    "itemId": "6d15afde-2598-4b13-88a7-2e1626bd9b6c",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Pope Alexander VI’s 1493 bull and the next year’s treaty split non-Christian lands between Spain and which other crown?",
+    "question": "Pope Alexander VI\u2019s 1493 bull and the next year\u2019s treaty split non-Christian lands between Spain and which other crown?",
     "correctAnswer": "Portugal",
     "incorrectAnswers": [
       "France",
@@ -36,34 +37,34 @@
       "iberia",
       "treaty"
     ],
-    "source": "https://www.britannica.com/event/Treaty-of-Tordesillas",
-    "seedId": "e8afe639-9d53-4215-a29a-c38757c43c75"
+    "source": "https://www.britannica.com/event/Treaty-of-Tordesillas"
   },
   {
+    "itemId": "3777135e-5577-4546-b0d8-6e44ca7d3059",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Vasco da Gama’s fleet rounded Africa and reached which Indian port in 1498?",
+    "question": "Vasco da Gama\u2019s fleet rounded Africa and reached which Indian port in 1498?",
     "correctAnswer": "Calicut (Kozhikode)",
     "incorrectAnswers": [
       "Goa (as first landfall)",
       "Malacca",
       "Hormuz"
     ],
-    "explanation": "Da Gama’s arrival at Calicut linked Portuguese sea power to Indian Ocean trade.",
+    "explanation": "Da Gama\u2019s arrival at Calicut linked Portuguese sea power to Indian Ocean trade.",
     "keywords": [
       "exploration",
       "portugal",
       "india"
     ],
-    "source": "https://www.britannica.com/biography/Vasco-da-Gama",
-    "seedId": "289c1ffe-16c0-4fb5-8866-dc27d4bd7920"
+    "source": "https://www.britannica.com/biography/Vasco-da-Gama"
   },
   {
+    "itemId": "67d9fa53-0553-4f39-96fe-e07d2dfedbf2",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Ferdinand Magellan’s expedition, finished by Elcano, achieved what geographic first in 1522?",
+    "question": "Ferdinand Magellan\u2019s expedition, finished by Elcano, achieved what geographic first in 1522?",
     "correctAnswer": "Circumnavigation of the globe",
     "incorrectAnswers": [
       "Discovery of Australia",
@@ -76,30 +77,30 @@
       "spain",
       "pacific"
     ],
-    "source": "https://www.britannica.com/biography/Ferdinand-Magellan",
-    "seedId": "e7cbc464-a32a-4020-9c0f-482668673b7e"
+    "source": "https://www.britannica.com/biography/Ferdinand-Magellan"
   },
   {
+    "itemId": "57c374d7-77cd-40cd-b3f5-bcdac843f1fe",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "John Cabot’s English-sponsored voyages from Bristol sought a northwest route to which Asian economies?",
+    "question": "John Cabot\u2019s English-sponsored voyages from Bristol sought a northwest route to which Asian economies?",
     "correctAnswer": "The spice-producing lands of Asia",
     "incorrectAnswers": [
       "The gold mines of Zimbabwe",
       "The silk roads only overland",
       "Pacific Polynesia"
     ],
-    "explanation": "Cabot explored North Atlantic coasts while seeking Asia for England’s merchants.",
+    "explanation": "Cabot explored North Atlantic coasts while seeking Asia for England\u2019s merchants.",
     "keywords": [
       "exploration",
       "england",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/biography/John-Cabot",
-    "seedId": "6fe00eed-f32b-4a73-bf0c-5d263ad738fd"
+    "source": "https://www.britannica.com/biography/John-Cabot"
   },
   {
+    "itemId": "764fae2e-e588-4ae4-b834-c6f1fe161f68",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
@@ -116,110 +117,110 @@
       "environment",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/science/Columbian-exchange",
-    "seedId": "85e346ec-3be1-49fc-b5c2-a36730f4af2c"
+    "source": "https://www.britannica.com/science/Columbian-exchange"
   },
   {
+    "itemId": "752b011d-9460-4741-8501-1fe94ed358a9",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Which Portuguese prince’s court at Sagres systematically sponsored Atlantic voyages, mapping, and navigation studies that extended Portuguese reach along Africa in the 1400s?",
-    "correctAnswer": "Prince Henry of Portugal (often called “the Navigator” in later tradition)",
+    "question": "Which Portuguese prince\u2019s court at Sagres systematically sponsored Atlantic voyages, mapping, and navigation studies that extended Portuguese reach along Africa in the 1400s?",
+    "correctAnswer": "Prince Henry of Portugal (often called \u201cthe Navigator\u201d in later tradition)",
     "incorrectAnswers": [
       "Henry the Lion, duke of Saxony and Bavaria",
       "Henry the Fowler, East Frankish king",
       "Henry the Impotent of Castile"
     ],
-    "explanation": "Henry’s patronage of seamen and cartographers helped open the African route that later explorers used to reach the Indian Ocean.",
+    "explanation": "Henry\u2019s patronage of seamen and cartographers helped open the African route that later explorers used to reach the Indian Ocean.",
     "keywords": [
       "exploration",
       "portugal",
       "africa"
     ],
-    "source": "https://www.britannica.com/biography/Henry-the-Navigator",
-    "seedId": "68cfec8b-9ac5-40b9-ba73-02fbf2c3a9a8"
+    "source": "https://www.britannica.com/biography/Henry-the-Navigator"
   },
   {
+    "itemId": "012bb315-8a67-46bd-b391-b578b1629209",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Bartolomeu Dias’s 1488 rounding of Africa’s southern tip named that cape what?",
+    "question": "Bartolomeu Dias\u2019s 1488 rounding of Africa\u2019s southern tip named that cape what?",
     "correctAnswer": "Cape of Good Hope",
     "incorrectAnswers": [
       "Cape Horn",
       "Cape Verde",
       "Cape Finisterre"
     ],
-    "explanation": "Dias showed sea passage to the Indian Ocean was possible around Africa’s southern extremity.",
+    "explanation": "Dias showed sea passage to the Indian Ocean was possible around Africa\u2019s southern extremity.",
     "keywords": [
       "exploration",
       "portugal",
       "africa"
     ],
-    "source": "https://www.britannica.com/biography/Bartolomeu-Dias",
-    "seedId": "363526ad-a04c-4254-bf40-f5c57a5d8c8c"
+    "source": "https://www.britannica.com/biography/Bartolomeu-Dias"
   },
   {
+    "itemId": "3d4e5d3a-07fb-4c6e-a381-a978763f5822",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Pedro Álvares Cabral’s 1500 landfall is often cited as the European discovery of which territory?",
+    "question": "Pedro \u00c1lvares Cabral\u2019s 1500 landfall is often cited as the European discovery of which territory?",
     "correctAnswer": "Brazil",
     "incorrectAnswers": [
       "Argentina",
       "Florida",
       "Labrador"
     ],
-    "explanation": "Cabral’s fleet reached the South American coast under Portuguese claims.",
+    "explanation": "Cabral\u2019s fleet reached the South American coast under Portuguese claims.",
     "keywords": [
       "exploration",
       "portugal",
       "brazil"
     ],
-    "source": "https://www.britannica.com/biography/Pedro-Alvares-Cabral",
-    "seedId": "3764b44a-805c-4799-b913-d97f49038965"
+    "source": "https://www.britannica.com/biography/Pedro-Alvares-Cabral"
   },
   {
+    "itemId": "5ce42ec2-c4c8-4e90-b6d3-b6ad8456e648",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Martin Waldseemüller’s 1507 map labeled the New World after which Florentine navigator’s first name?",
+    "question": "Martin Waldseem\u00fcller\u2019s 1507 map labeled the New World after which Florentine navigator\u2019s first name?",
     "correctAnswer": "Amerigo Vespucci",
     "incorrectAnswers": [
       "Christopher Columbus",
       "Ferdinand Magellan",
       "John Cabot"
     ],
-    "explanation": "Mapmakers derived the name “America” from Amerigo Vespucci’s published letters on transatlantic voyages.",
+    "explanation": "Mapmakers derived the name \u201cAmerica\u201d from Amerigo Vespucci\u2019s published letters on transatlantic voyages.",
     "keywords": [
       "exploration",
       "cartography",
       "americas"
     ],
-    "source": "https://www.britannica.com/biography/Amerigo-Vespucci",
-    "seedId": "5f9aa0fc-70a7-46a2-af2b-ee36a0b0096f"
+    "source": "https://www.britannica.com/biography/Amerigo-Vespucci"
   },
   {
+    "itemId": "965f304f-d7be-4932-822c-6270a4e72dc9",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
-    "question": "Spanish conquistadors seized the Aztec capital Tenochtitlán under whose leadership?",
-    "correctAnswer": "Hernán Cortés",
+    "question": "Spanish conquistadors seized the Aztec capital Tenochtitl\u00e1n under whose leadership?",
+    "correctAnswer": "Hern\u00e1n Cort\u00e9s",
     "incorrectAnswers": [
       "Francisco Pizarro",
-      "Vasco Núñez de Balboa",
-      "Juan Ponce de León"
+      "Vasco N\u00fa\u00f1ez de Balboa",
+      "Juan Ponce de Le\u00f3n"
     ],
-    "explanation": "Cortés allied with indigenous enemies of the Aztecs and captured Tenochtitlán by 1521.",
+    "explanation": "Cort\u00e9s allied with indigenous enemies of the Aztecs and captured Tenochtitl\u00e1n by 1521.",
     "keywords": [
       "exploration",
       "spain",
       "mesoamerica"
     ],
-    "source": "https://www.britannica.com/biography/Hernan-Cortes-Spanish-conquistador",
-    "seedId": "8fda5fa3-8a01-4d8b-8d16-08d393934ca9"
+    "source": "https://www.britannica.com/biography/Hernan-Cortes-Spanish-conquistador"
   },
   {
+    "itemId": "b707bb12-c286-4bfb-9ade-e675c5dc0765",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "exploration",
@@ -236,7 +237,6 @@
       "magellan",
       "pacific"
     ],
-    "source": "https://www.britannica.com/biography/Juan-Sebastian-del-Cano",
-    "seedId": "1d5782d7-0ed3-4825-abd2-9b8cc011969c"
+    "source": "https://www.britannica.com/biography/Juan-Sebastian-del-Cano"
   }
 ]

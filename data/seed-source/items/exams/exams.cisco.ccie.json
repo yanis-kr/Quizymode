@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0a6fcb38-f987-47a2-b598-4b1436c4d8f6",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -16,10 +17,10 @@
       "vxlan",
       "cisco"
     ],
-    "source": "Cisco Nexus 9000 VXLAN Configuration Guide",
-    "seedId": "219f50b0-93fd-4e1f-8936-f2f36f55940a"
+    "source": "Cisco Nexus 9000 VXLAN Configuration Guide"
   },
   {
+    "itemId": "81df835f-066c-4077-b696-a0d2d4e66682",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -36,10 +37,10 @@
       "vxlan",
       "cisco"
     ],
-    "source": "Cisco Nexus 9000 VXLAN Configuration Guide",
-    "seedId": "2423d8d4-b6cc-40ac-9084-88f5fab8834a"
+    "source": "Cisco Nexus 9000 VXLAN Configuration Guide"
   },
   {
+    "itemId": "c0f9ed76-5ec0-4219-891a-bc7fbe65d910",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -56,10 +57,10 @@
       "vxlan",
       "cisco"
     ],
-    "source": "Cisco Nexus 9000 VXLAN Configuration Guide",
-    "seedId": "d7299da6-8f33-41b9-9524-3778626ea6ed"
+    "source": "Cisco Nexus 9000 VXLAN Configuration Guide"
   },
   {
+    "itemId": "a1eaf29d-323c-469a-9465-edf7fb5b9fc0",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -76,10 +77,10 @@
       "bfd",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc5880",
-    "seedId": "3dff8b6d-3577-4599-98ed-49b27e97c93f"
+    "source": "https://www.rfc-editor.org/rfc/rfc5880"
   },
   {
+    "itemId": "675a8412-601a-469b-94fb-be606ed51a38",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -96,10 +97,10 @@
       "mpls",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc3031",
-    "seedId": "b1aab36b-03dd-4ccb-85ea-e4a7b90f3f31"
+    "source": "https://www.rfc-editor.org/rfc/rfc3031"
   },
   {
+    "itemId": "a69e17a4-0332-4d1b-9338-85d8a2d4cc05",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -116,10 +117,10 @@
       "multicast",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4601",
-    "seedId": "586c24ef-2c9e-4c44-86b0-5e6228e3c498"
+    "source": "https://www.rfc-editor.org/rfc/rfc4601"
   },
   {
+    "itemId": "7ce35e1a-01fd-4c14-afbb-e7d2ea6788d7",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -136,10 +137,10 @@
       "bgp",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4456",
-    "seedId": "788cf354-8db8-4d1a-b7bc-f10e410158c9"
+    "source": "https://www.rfc-editor.org/rfc/rfc4456"
   },
   {
+    "itemId": "c0762df6-f078-4922-af1f-95c800b05c67",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -156,10 +157,10 @@
       "vrf",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html",
-    "seedId": "dbd01439-5e92-49e8-9c10-6f21608c2129"
+    "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html"
   },
   {
+    "itemId": "930173df-9980-45ba-9d47-7101ab0a4bc1",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -176,10 +177,10 @@
       "hsrp",
       "cisco"
     ],
-    "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html",
-    "seedId": "4fb81f25-9ed9-491b-97e2-16454ddf5492"
+    "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html"
   },
   {
+    "itemId": "6e2f66a7-530a-4c9f-8ace-7c5bb938e641",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccie",
@@ -196,7 +197,6 @@
       "ospf",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html",
-    "seedId": "b04371db-437c-4090-beb3-325e3b274e56"
+    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html"
   }
 ]

@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "8e8787e0-0e77-488b-9da9-3a7abed258c5",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
-    "question": "WhiteHouse.gov biography dates George Washington’s presidency as beginning in which year?",
+    "question": "WhiteHouse.gov biography dates George Washington\u2019s presidency as beginning in which year?",
     "correctAnswer": "1789",
     "incorrectAnswers": [
       "1776",
@@ -15,29 +16,29 @@
       "presidents",
       "us-history"
     ],
-    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/george-washington/",
-    "seedId": "ae017273-5ed6-503b-8828-0c2d2506ea6f"
+    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/george-washington/"
   },
   {
+    "itemId": "842e4627-1558-4cca-8cfe-b2913a88beac",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
-    "question": "WhiteHouse.gov biography dates Abraham Lincoln’s presidency as beginning in which year?",
+    "question": "WhiteHouse.gov biography dates Abraham Lincoln\u2019s presidency as beginning in which year?",
     "correctAnswer": "1861",
     "incorrectAnswers": [
       "1850",
       "1877",
       "1845"
     ],
-    "explanation": "The White House places Lincoln’s presidency starting in 1861.",
+    "explanation": "The White House places Lincoln\u2019s presidency starting in 1861.",
     "keywords": [
       "civil-war",
       "presidents"
     ],
-    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/",
-    "seedId": "c25c7f4c-2c17-5527-94af-33226c1d9e9d"
+    "source": "https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/"
   },
   {
+    "itemId": "a337f4b6-e9af-4739-9956-55642402fd02",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -53,10 +54,10 @@
       "world-war-2",
       "uk"
     ],
-    "source": "https://www.britannica.com/biography/Winston-Churchill",
-    "seedId": "152ab72a-3c0b-5de0-a8c8-3077ee41d4fb"
+    "source": "https://www.britannica.com/biography/Winston-Churchill"
   },
   {
+    "itemId": "ebcc3423-b064-4380-8985-a805c89e4de0",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -72,10 +73,10 @@
       "apartheid",
       "south-africa"
     ],
-    "source": "https://www.britannica.com/biography/Nelson-Mandela",
-    "seedId": "3aa40523-f025-52e6-9b52-ae08f2f310f7"
+    "source": "https://www.britannica.com/biography/Nelson-Mandela"
   },
   {
+    "itemId": "cf5fb9b9-6c4d-4fc4-a0eb-df3312d5eaab",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -83,18 +84,18 @@
     "correctAnswer": "satyagraha",
     "incorrectAnswers": [
       "blitzkrieg",
-      "coup d’état",
+      "coup d\u2019\u00e9tat",
       "guerrilla war"
     ],
-    "explanation": "Gandhi’s satyagraha campaigns.",
+    "explanation": "Gandhi\u2019s satyagraha campaigns.",
     "keywords": [
       "india",
       "independence"
     ],
-    "source": "https://www.britannica.com/biography/Mahatma-Gandhi",
-    "seedId": "baac1d1d-b7ec-5479-98d1-00cb282fca38"
+    "source": "https://www.britannica.com/biography/Mahatma-Gandhi"
   },
   {
+    "itemId": "06804e69-3eca-42da-844d-ae9652568098",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -110,10 +111,10 @@
       "ancient-history",
       "egypt"
     ],
-    "source": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt",
-    "seedId": "b8c68caf-c8a6-5501-a7d7-83442f061e82"
+    "source": "https://www.britannica.com/biography/Cleopatra-queen-of-Egypt"
   },
   {
+    "itemId": "2a62b2fb-4b60-41c1-b371-b8e5e1dc1382",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -129,10 +130,10 @@
       "russia",
       "monarchy"
     ],
-    "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia",
-    "seedId": "db722dfb-cf6b-5fa4-b75e-118bb44f2561"
+    "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia"
   },
   {
+    "itemId": "51b0079f-db1c-4bfe-9f5b-7a13806798cb",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -148,10 +149,10 @@
       "ancient-rome",
       "history"
     ],
-    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler",
-    "seedId": "66e175a4-2a35-5463-ae44-5df57e48f61c"
+    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
   },
   {
+    "itemId": "90b5c1f9-de79-492b-b4dd-3eb0c655967d",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -162,15 +163,15 @@
       "secession",
       "draft riots"
     ],
-    "explanation": "King’s nonviolent civil rights leadership.",
+    "explanation": "King\u2019s nonviolent civil rights leadership.",
     "keywords": [
       "civil-rights",
       "us-history"
     ],
-    "source": "https://www.britannica.com/biography/Martin-Luther-King-Jr",
-    "seedId": "c39934c6-1e56-5dd7-96ad-49aba1120ac7"
+    "source": "https://www.britannica.com/biography/Martin-Luther-King-Jr"
   },
   {
+    "itemId": "a1216f27-23cf-4333-88e6-1325f10cc531",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "leaders",
@@ -186,7 +187,6 @@
       "monarchy",
       "uk"
     ],
-    "source": "https://www.britannica.com/biography/Elizabeth-II",
-    "seedId": "a08ca9f4-d148-5211-ac68-ba902a7aea78"
+    "source": "https://www.britannica.com/biography/Elizabeth-II"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "4cb08ee3-8e66-45c8-a022-d072c3f1ee97",
     "category": "humanities",
     "navigationKeyword1": "art-history",
     "navigationKeyword2": "renaissance",
@@ -15,10 +16,10 @@
       "art-history",
       "renaissance"
     ],
-    "source": "https://www.britannica.com/event/Renaissance",
-    "seedId": "58f88756-846c-564f-ab63-06a83abc966e"
+    "source": "https://www.britannica.com/event/Renaissance"
   },
   {
+    "itemId": "e8166253-67ba-40e3-92c7-143d2c5417be",
     "category": "humanities",
     "navigationKeyword1": "art-history",
     "navigationKeyword2": "renaissance",
@@ -34,7 +35,6 @@
       "art-history",
       "perspective"
     ],
-    "source": "https://www.metmuseum.org/toah/hd/rena/hd_rena.htm",
-    "seedId": "123f6da6-0db9-5cb1-bcc3-b83b2ff95241"
+    "source": "https://www.metmuseum.org/toah/hd/rena/hd_rena.htm"
   }
 ]

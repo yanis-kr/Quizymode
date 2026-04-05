@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3181fcb1-7b22-4443-b532-113d360848ac",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -15,10 +16,10 @@
       "travel",
       "payment"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/cash",
-    "seedId": "454bb563-0b44-5a69-ac81-48b5ea44aa4e"
+    "source": "https://dictionary.cambridge.org/dictionary/english/cash"
   },
   {
+    "itemId": "26b0bdfa-0a46-4825-aefb-205fd25cf16b",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -34,10 +35,10 @@
       "travel",
       "receipt"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/receipt",
-    "seedId": "d9b5b729-5c7d-50ec-b846-638f7a771a09"
+    "source": "https://www.merriam-webster.com/dictionary/receipt"
   },
   {
+    "itemId": "68269c5d-961a-4db1-97c4-81133ab0f459",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -53,10 +54,10 @@
       "travel",
       "size"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/english/size",
-    "seedId": "9893fc3a-8d13-5510-8536-cd55d48048b8"
+    "source": "https://www.collinsdictionary.com/dictionary/english/size"
   },
   {
+    "itemId": "a801e250-8190-4448-b6c4-7a25d20059a1",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -72,10 +73,10 @@
       "travel",
       "discount"
     ],
-    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/sale_1",
-    "seedId": "31562570-e681-5a0a-91a1-62856d4df108"
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/sale_1"
   },
   {
+    "itemId": "7c10ad9f-b9d1-4d93-8a49-e0bebd9ea903",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -91,10 +92,10 @@
       "travel",
       "availability"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/in-stock",
-    "seedId": "b59e51f6-742f-5f56-802f-832bed536b69"
+    "source": "https://dictionary.cambridge.org/dictionary/english/in-stock"
   },
   {
+    "itemId": "ceb8b1a5-3285-4a79-b4cd-4bbd3b315640",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "shopping",
@@ -110,7 +111,6 @@
       "travel",
       "tax"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/duty",
-    "seedId": "cb3d1ea3-4dd9-59ea-9250-ebe8275dd89d"
+    "source": "https://dictionary.cambridge.org/dictionary/english/duty"
   }
 ]

@@ -1,10 +1,10 @@
 [
   {
-    "seedId": "ec86a586-64e3-47ac-8a33-708b4b82ae51",
+    "itemId": "f855b097-5faf-47c7-ab83-5ebdbc6004d7",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
-    "question": "What is a “system of equations”?",
+    "question": "What is a \u201csystem of equations\u201d?",
     "correctAnswer": "A set of equations that share the same variables",
     "incorrectAnswers": [
       "A single equation with more than one variable",
@@ -20,7 +20,7 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
   },
   {
-    "seedId": "dfbec514-d5d8-4b08-a263-eab6f3a8d43c",
+    "itemId": "f905bf7f-529f-4317-9dd3-43c6a5434d5d",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -31,7 +31,7 @@
       "A value that makes the equations equal to 0 only",
       "A point that is on neither graph"
     ],
-    "explanation": "A solution must satisfy both (or all) equations simultaneously. On graphs, it’s a point that lies on every corresponding line.",
+    "explanation": "A solution must satisfy both (or all) equations simultaneously. On graphs, it\u2019s a point that lies on every corresponding line.",
     "keywords": [
       "solutions",
       "ordered-pairs",
@@ -40,7 +40,7 @@
     "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
   },
   {
-    "seedId": "271c2542-56e6-4b8d-abc7-35bc1f2a5cd1",
+    "itemId": "00da6fee-4009-433d-b04e-f0497e957bc6",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -49,7 +49,7 @@
     "incorrectAnswers": [
       "The system has no solutions",
       "The system has infinitely many solutions",
-      "The system’s solution must be x only"
+      "The system\u2019s solution must be x only"
     ],
     "explanation": "If the graphs cross at one point, that intersection point satisfies both equations, so there is one solution.",
     "keywords": [
@@ -60,7 +60,7 @@
     "source": "https://en.wikipedia.org/wiki/System_of_linear_equations"
   },
   {
-    "seedId": "aa81ed31-bd74-4165-93fd-3db1e228b6b7",
+    "itemId": "36e11bcd-7e75-484a-9224-e07ebddef067",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -80,11 +80,11 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
   },
   {
-    "seedId": "5e0f43c3-c7e3-4cd4-96fb-cdc8cdf23836",
+    "itemId": "c4436a66-3121-45a7-84c1-537db797e591",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
-    "question": "What does it mean when a system is “inconsistent”?",
+    "question": "What does it mean when a system is \u201cinconsistent\u201d?",
     "correctAnswer": "There is no ordered pair that satisfies all equations",
     "incorrectAnswers": [
       "There is exactly one solution",
@@ -100,7 +100,7 @@
     "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
   },
   {
-    "seedId": "eebb7c93-c07d-48bf-9890-d258dd0a2531",
+    "itemId": "ac7c3412-ae68-4bf4-af42-fc68b19db1be",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -120,7 +120,7 @@
     "source": "https://openstax.org/books/college-algebra/pages/2-3-systems-of-equations-and-inequalities"
   },
   {
-    "seedId": "c2854fd7-00d6-4c40-8c15-d2a1107073ab",
+    "itemId": "f4880890-8df3-491e-a518-606d7f9c0730",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -140,7 +140,7 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations"
   },
   {
-    "seedId": "702bcefa-3bea-4b40-a8e7-820ce76d54e2",
+    "itemId": "4f5b76df-5296-4111-b2bf-7cc404e9f263",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -160,7 +160,7 @@
     "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
   },
   {
-    "seedId": "62e8107f-a9a7-47c5-b1a0-4ba259540ece",
+    "itemId": "3ff9b09b-9d50-4dcd-9547-04a52f4df14f",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -171,7 +171,7 @@
       "It satisfies only the first equation",
       "It satisfies only the second equation"
     ],
-    "explanation": "Check both: for x + y = 7, 2 + 5 = 7 (true). For x - y = 3, 2 - 5 = -3 (false). Since one equation fails, it’s not a solution.",
+    "explanation": "Check both: for x + y = 7, 2 + 5 = 7 (true). For x - y = 3, 2 - 5 = -3 (false). Since one equation fails, it\u2019s not a solution.",
     "keywords": [
       "check-point",
       "substitution-check",
@@ -180,7 +180,7 @@
     "source": "https://en.wikipedia.org/wiki/System_of_linear_equations"
   },
   {
-    "seedId": "9b7fc939-963f-4692-b44f-26fdea67ee17",
+    "itemId": "2f2236c1-44d3-45ee-a35c-df7280ce4865",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -191,7 +191,7 @@
       "There are no solutions",
       "The solution is an integer only"
     ],
-    "explanation": "Getting 0 = 0 means the equations are dependent (the same line in disguise), so the system doesn’t pin down a single intersection point.",
+    "explanation": "Getting 0 = 0 means the equations are dependent (the same line in disguise), so the system doesn\u2019t pin down a single intersection point.",
     "keywords": [
       "dependent",
       "0-equals-0",
@@ -200,7 +200,7 @@
     "source": "https://openstax.org/books/college-algebra/pages/2-3-systems-of-equations-and-inequalities"
   },
   {
-    "seedId": "8b3f4c90-e09b-4a26-94ee-e78dbe50dd35",
+    "itemId": "909de495-010b-48b8-92a7-0a1f9f9908bd",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -220,7 +220,7 @@
     "source": "https://www.purplemath.com/modules/solvelin.htm"
   },
   {
-    "seedId": "a9b769f8-576e-4489-b824-47230ea4cbe5",
+    "itemId": "9dae02f9-6477-488f-9b1a-b32732a7c0fc",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "systems",
@@ -240,4 +240,3 @@
     "source": "https://www.mathsisfun.com/algebra/simultaneous-equations.html"
   }
 ]
-

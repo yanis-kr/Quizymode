@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a3dd7c8a-1ba8-4d1f-995f-f2652ed23a44",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -15,10 +16,10 @@
       "selective-service",
       "registration"
     ],
-    "source": "https://www.sss.gov/",
-    "seedId": "6fabe747-5a29-519b-a5ce-45e3a095d7e5"
+    "source": "https://www.sss.gov/"
   },
   {
+    "itemId": "bcd5040b-c3eb-4d1d-b5fc-d8e6c5741bd5",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -34,10 +35,10 @@
       "jury-duty",
       "courts"
     ],
-    "source": "https://www.uscourts.gov/services-forms/jury-service",
-    "seedId": "0af83a27-d8bc-5cb1-bbfe-18e6dd2321f6"
+    "source": "https://www.uscourts.gov/services-forms/jury-service"
   },
   {
+    "itemId": "50be3b00-bcd0-47cf-822f-45ef568a3319",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -53,10 +54,10 @@
       "taxes",
       "federal-law"
     ],
-    "source": "https://www.irs.gov/",
-    "seedId": "99439c07-2ba8-5bfe-828c-8e9db194db8d"
+    "source": "https://www.irs.gov/"
   },
   {
+    "itemId": "afd78b95-955a-41d6-a40e-2685dc60cf69",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -72,10 +73,10 @@
       "rule-of-law",
       "obedience"
     ],
-    "source": "https://www.usa.gov/laws-and-regulations",
-    "seedId": "1eb8df00-2065-52e3-850f-880b000fef11"
+    "source": "https://www.usa.gov/laws-and-regulations"
   },
   {
+    "itemId": "2d8c8fc7-6e67-4271-a13a-a79de4856071",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -91,10 +92,10 @@
       "voting",
       "rights"
     ],
-    "source": "https://www.usa.gov/voting-laws",
-    "seedId": "8552d9c9-0ddd-5795-a830-05279882a993"
+    "source": "https://www.usa.gov/voting-laws"
   },
   {
+    "itemId": "393054f8-7404-40c4-9db2-261b3a74de8a",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "duties",
@@ -110,7 +111,6 @@
       "witness",
       "courts"
     ],
-    "source": "https://www.law.cornell.edu/wex/subpoena",
-    "seedId": "da2b7029-b644-578e-b846-19cba5a5ab10"
+    "source": "https://www.law.cornell.edu/wex/subpoena"
   }
 ]

@@ -32,7 +32,6 @@ interface ParsedItem {
   incorrectAnswers: string[];
   explanation: string;
   source?: string;
-  seedId?: string;
   /** AI-only tags (merged with setup scope on save). */
   keywords?: string[];
   /** Nav + user extras + AI tags, deduped (case-insensitive); for review display. */
@@ -189,7 +188,6 @@ ${extraLine}
 
 Each item must be a JSON object with this exact shape:
 {
-  "seedId": "00000000-0000-0000-0000-000000000001",
   "category": "${category}",
   "navigationKeyword1": "${primaryTopic.trim()}",
   "navigationKeyword2": "${subtopic.trim()}",
@@ -204,8 +202,8 @@ Each item must be a JSON object with this exact shape:
 Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
-- Every item must have: unique "seedId" (UUID), "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1–5 "incorrectAnswers", optional "explanation" and "source".
-- Use "${primaryTopic.trim()}" for "navigationKeyword1" and "${subtopic.trim()}" for "navigationKeyword2" on every item. These are required seed-compatible fields and must not be moved into "keywords".
+- Every item must have: "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1-5 "incorrectAnswers", optional "explanation" and "source".
+- Use "${primaryTopic.trim()}" for "navigationKeyword1" and "${subtopic.trim()}" for "navigationKeyword2" on every item. These fields must not be moved into "keywords".
 - If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
 - All strings must be plain text (no HTML, no LaTeX).
@@ -269,10 +267,6 @@ Generate the JSON array only.`;
         if (navigationKeyword2 && navigationKeyword2.toLowerCase() !== subtopic.trim().toLowerCase()) {
           continue;
         }
-        const rawSeedId = (o.seedId ?? "").toString().trim();
-        const seedId = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(rawSeedId)
-          ? rawSeedId
-          : undefined;
         const question = (o.question ?? "").toString().trim();
         const correctAnswer = (o.correctAnswer ?? "").toString().trim();
         if (!question || !correctAnswer) continue;
@@ -311,7 +305,6 @@ Generate the JSON array only.`;
           incorrectAnswers: incorrectAnswers.slice(0, 5),
           explanation,
           source,
-          seedId,
           keywords: keywords.length > 0 ? keywords : undefined,
           consolidatedKeywords,
         });
@@ -360,7 +353,6 @@ Generate the JSON array only.`;
             explanation: item.explanation || "",
             keywords: aiExtras.length > 0 ? aiExtras : undefined,
             source: item.source,
-            seedId: item.seedId,
           };
         }),
       };
@@ -372,7 +364,6 @@ Generate the JSON array only.`;
         duplicateQuestions: string[];
         errors: Array<{ index: number; question: string; errorMessage: string }>;
         createdItemIds?: string[];
-        reassignedSeedIds?: string[];
       }>("/items/bulk", payload);
       return res.data;
     },
@@ -382,12 +373,9 @@ Generate the JSON array only.`;
           .bulkAddItems(activeCollectionId, { itemIds: data.createdItemIds })
           .catch(() => {});
       }
-      const reassignedNote = data.reassignedSeedIds && data.reassignedSeedIds.length > 0
-        ? `\n\n${data.reassignedSeedIds.length} item(s) had duplicate seed IDs — new IDs were automatically assigned.`
-        : "";
       setResultModal({
         isOpen: true,
-        message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}${reassignedNote}`,
+        message: `Saved ${data.createdCount} item(s).${data.duplicateCount ? ` ${data.duplicateCount} duplicate(s) skipped.` : ""}${data.failedCount ? ` ${data.failedCount} failed.` : ""}`,
         details: (data.errors ?? [])
           .map((e) => `Item ${e.index + 1}: ${e.errorMessage}`)
           .join("\n"),

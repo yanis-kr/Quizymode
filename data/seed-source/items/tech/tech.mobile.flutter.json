@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d214a429-90c7-4ce1-93c1-8320d0785410",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -15,10 +16,10 @@
       "flutter",
       "dart"
     ],
-    "source": "https://docs.flutter.dev/resources/faq#what-language-is-flutter-written-in",
-    "seedId": "15e189c2-f4ec-5ec1-a383-83166c1e9f33"
+    "source": "https://docs.flutter.dev/resources/faq#what-language-is-flutter-written-in"
   },
   {
+    "itemId": "ba0f2023-7e0f-400f-97bf-f1b292b0a3f7",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -34,10 +35,10 @@
       "flutter",
       "widgets"
     ],
-    "source": "https://docs.flutter.dev/ui",
-    "seedId": "02bcdb45-2050-5cdd-9dd1-e44484602d2c"
+    "source": "https://docs.flutter.dev/ui"
   },
   {
+    "itemId": "b5ddfaf1-02ac-403e-aa9a-7526be38022d",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -53,10 +54,10 @@
       "flutter",
       "hot-reload"
     ],
-    "source": "https://docs.flutter.dev/tools/hot-reload",
-    "seedId": "f6b0bf04-3143-5ee0-b634-8c3aad50434c"
+    "source": "https://docs.flutter.dev/tools/hot-reload"
   },
   {
+    "itemId": "cdf5a873-627d-4d98-b39f-16d9823cb779",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -72,10 +73,10 @@
       "flutter",
       "build-context"
     ],
-    "source": "https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/framework.dart",
-    "seedId": "ee6d6c92-7344-5a14-96b4-3b3127864790"
+    "source": "https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/framework.dart"
   },
   {
+    "itemId": "170c6f95-33ff-4e07-8dec-997fd834cb56",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -91,10 +92,10 @@
       "flutter",
       "rendering"
     ],
-    "source": "https://docs.flutter.dev/resources/inside-flutter",
-    "seedId": "6f4fa07b-4ee2-5062-8685-00480f0f2cde"
+    "source": "https://docs.flutter.dev/resources/inside-flutter"
   },
   {
+    "itemId": "a1d2742f-4748-4178-9c84-836534879c82",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "flutter",
@@ -110,7 +111,6 @@
       "flutter",
       "async"
     ],
-    "source": "https://dart.dev/libraries/async/futures-and-error-handling",
-    "seedId": "de13122c-88fb-513f-aa66-e563f2136219"
+    "source": "https://dart.dev/libraries/async/futures-and-error-handling"
   }
 ]

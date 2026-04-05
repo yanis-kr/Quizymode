@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7c6f13ba-882c-4810-8315-b3a3b592d19f",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -16,10 +17,10 @@
       "southern-ocean",
       "antarctica"
     ],
-    "source": "https://www.britannica.com/place/Pacific-Ocean",
-    "seedId": "fd4cafc2-f265-487f-aa1f-7eed4ba1c8bd"
+    "source": "https://www.britannica.com/place/Pacific-Ocean"
   },
   {
+    "itemId": "c0783b0f-8eed-4d82-abb8-82a41fdf197d",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -36,10 +37,10 @@
       "atlantic",
       "basin"
     ],
-    "source": "https://www.britannica.com/place/Atlantic-Ocean",
-    "seedId": "4722c097-7ec0-47d9-8c59-fdb6ed0d65f7"
+    "source": "https://www.britannica.com/place/Atlantic-Ocean"
   },
   {
+    "itemId": "2e2a4b1d-a37d-4bf2-84a2-b7d0958b9039",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -56,10 +57,10 @@
       "indian-ocean",
       "monsoon"
     ],
-    "source": "https://www.britannica.com/place/Indian-Ocean",
-    "seedId": "32e24d55-539d-4868-a906-0e4c64b2a86e"
+    "source": "https://www.britannica.com/place/Indian-Ocean"
   },
   {
+    "itemId": "9080f27a-1e68-4f15-a00b-95f1566a1bcf",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -76,10 +77,10 @@
       "arctic",
       "polar"
     ],
-    "source": "https://www.britannica.com/place/Arctic-Ocean",
-    "seedId": "56c00348-0495-4dc7-8535-5036e09adf7e"
+    "source": "https://www.britannica.com/place/Arctic-Ocean"
   },
   {
+    "itemId": "3c6c8e55-09a9-43d1-9d83-728e7edfcfcc",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -96,10 +97,10 @@
       "trenches",
       "pacific"
     ],
-    "source": "https://www.britannica.com/place/Mariana-Trench",
-    "seedId": "82002ee6-2608-43fe-90c5-9d3557e6406b"
+    "source": "https://www.britannica.com/place/Mariana-Trench"
   },
   {
+    "itemId": "eb907604-521f-4ce6-8882-76af9fc2fa32",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -116,10 +117,10 @@
       "seas",
       "mediterranean"
     ],
-    "source": "https://www.britannica.com/place/Mediterranean-Sea",
-    "seedId": "3337132a-a09f-48c0-8010-6587ca143855"
+    "source": "https://www.britannica.com/place/Mediterranean-Sea"
   },
   {
+    "itemId": "af3eab4c-528b-42ab-b64e-5d52b95ac7e1",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -136,10 +137,10 @@
       "seas",
       "labrador"
     ],
-    "source": "https://www.britannica.com/place/Labrador-Sea",
-    "seedId": "aef03b7d-15f6-4152-a066-908df3c816e6"
+    "source": "https://www.britannica.com/place/Labrador-Sea"
   },
   {
+    "itemId": "9287ac19-aff1-41c1-a106-872c29797216",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -150,16 +151,16 @@
       "Baltic Sea",
       "North Sea"
     ],
-    "explanation": "The Aegean lies between Greece and Türkiye and opens into the Mediterranean.",
+    "explanation": "The Aegean lies between Greece and T\u00fcrkiye and opens into the Mediterranean.",
     "keywords": [
       "oceans",
       "seas",
       "aegean"
     ],
-    "source": "https://www.britannica.com/place/Aegean-Sea",
-    "seedId": "627ae88b-6d35-48b7-a04d-cecd66a18a2f"
+    "source": "https://www.britannica.com/place/Aegean-Sea"
   },
   {
+    "itemId": "bd9ecb63-7631-4251-bebe-0e7f0876049e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -176,10 +177,10 @@
       "seas",
       "red-sea"
     ],
-    "source": "https://www.britannica.com/place/Red-Sea",
-    "seedId": "276c495e-42c2-4ddd-a208-6d656807c03d"
+    "source": "https://www.britannica.com/place/Red-Sea"
   },
   {
+    "itemId": "034d8e6d-ad94-4c5c-8360-bcc0cdd6912e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -196,10 +197,10 @@
       "currents",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/place/Gulf-Stream",
-    "seedId": "6a3091b9-acd7-41c7-b9d7-fb5c6dab1b31"
+    "source": "https://www.britannica.com/place/Gulf-Stream"
   },
   {
+    "itemId": "31bb14b7-a0d4-4432-a281-865d2cea15f0",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "oceans",
@@ -216,7 +217,6 @@
       "gulfs",
       "gulf-of-mexico"
     ],
-    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America",
-    "seedId": "70e6352c-0c31-41b9-9f1c-a6776437216f"
+    "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
   }
 ]

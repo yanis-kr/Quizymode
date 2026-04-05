@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3e7a0da3-b875-49c4-ab2a-8dd713dd968b",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "sculpture",
@@ -15,10 +16,10 @@
       "visual-art",
       "sculpture"
     ],
-    "source": "https://www.britannica.com/art/sculpture",
-    "seedId": "5cb79aae-0f3b-5f14-b94e-885bf009645f"
+    "source": "https://www.britannica.com/art/sculpture"
   },
   {
+    "itemId": "168c5a1d-2396-4765-b169-dddbbfc21faf",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "sculpture",
@@ -34,7 +35,6 @@
       "visual-art",
       "relief"
     ],
-    "source": "https://www.metmuseum.org/toah/hd/scur/hd_scur.htm",
-    "seedId": "6a41376f-d29a-5555-9fb2-6355e1989f66"
+    "source": "https://www.metmuseum.org/toah/hd/scur/hd_scur.htm"
   }
 ]

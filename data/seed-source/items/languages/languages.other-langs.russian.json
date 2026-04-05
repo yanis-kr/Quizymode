@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "3de7cba4-eade-4a5f-b0c5-5fa7aaf27bdd",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
-    "question": "What does 'Здравствуйте' (Zdravstvuyte) mean?",
+    "question": "What does '\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435' (Zdravstvuyte) mean?",
     "correctAnswer": "hello (polite)",
     "incorrectAnswers": [
       "goodbye",
@@ -15,14 +16,14 @@
       "hello",
       "russian-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-russian/hello",
-    "seedId": "ac95d85c-b166-5ef1-890a-5ba42dfe9a0a"
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/hello"
   },
   {
+    "itemId": "d0d6d522-2693-41ed-97a5-7fe600affbbe",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
-    "question": "What does 'Спасибо' (Spasibo) mean?",
+    "question": "What does '\u0421\u043f\u0430\u0441\u0438\u0431\u043e' (Spasibo) mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
@@ -34,14 +35,14 @@
       "thank-you",
       "russian-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-russian/thank-you",
-    "seedId": "4eca38a7-25f0-5477-91a9-0a71e780738b"
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/thank-you"
   },
   {
+    "itemId": "a7134ba0-2a1a-413e-a82d-4ef9cd465a5c",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
-    "question": "What does 'вода' (voda) mean?",
+    "question": "What does '\u0432\u043e\u0434\u0430' (voda) mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "bread",
@@ -53,14 +54,14 @@
       "water",
       "russian-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-russian/water",
-    "seedId": "e156253c-c61a-59de-8aff-a31b354f01d1"
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/water"
   },
   {
+    "itemId": "0a3a42ee-704e-4692-a637-c628d32fb0ff",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
-    "question": "What does 'да' (da) mean?",
+    "question": "What does '\u0434\u0430' (da) mean?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",
@@ -72,14 +73,14 @@
       "yes",
       "russian-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-russian/yes",
-    "seedId": "dd3b7291-7040-5b5f-9258-48df9f2b2e87"
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/yes"
   },
   {
+    "itemId": "5453b98a-8a6d-4e0d-80f8-8ccc79b4bd54",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
-    "question": "What does 'нет' (net) mean?",
+    "question": "What does '\u043d\u0435\u0442' (net) mean?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes",
@@ -91,10 +92,10 @@
       "no",
       "russian-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-russian/no",
-    "seedId": "7ac44839-bd16-5ca6-9368-496a94e3da8e"
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/no"
   },
   {
+    "itemId": "9032b887-7502-4b3f-a9d3-3f184dd28c27",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "russian",
@@ -110,7 +111,6 @@
       "cases",
       "russian-basics"
     ],
-    "source": "https://www.russianlessons.net/lessons/lesson6_main.php",
-    "seedId": "a5ab6590-d3a2-5462-b597-ec54792055dd"
+    "source": "https://www.russianlessons.net/lessons/lesson6_main.php"
   }
 ]

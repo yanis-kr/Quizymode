@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "02e64f5a-e912-46b0-bc20-180a3c5f6a61",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -16,10 +17,10 @@
       "routing",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html",
-    "seedId": "6999c25d-8103-43a9-96b8-2adc3ea3317c"
+    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html"
   },
   {
+    "itemId": "e21e26e1-7885-4caa-b931-f3e42d51d1da",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -36,10 +37,10 @@
       "switching",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html",
-    "seedId": "112ae4bc-893d-41da-ba2a-eb3ffa151762"
+    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
   },
   {
+    "itemId": "00437451-552f-4e36-b836-8be681167cf6",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -56,10 +57,10 @@
       "vlan",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html",
-    "seedId": "60e45404-5793-4bbb-a86d-3e7e78a9f823"
+    "source": "https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/vlan/vlan-configuration-guide/configure-vlan.html"
   },
   {
+    "itemId": "30eeff76-af6d-4a52-b9a2-2d27e4a73d78",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -76,10 +77,10 @@
       "trunking",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11000-series-content-services-switches/21303-css-dot1q.html",
-    "seedId": "677a0cf6-ab92-43c5-8b57-6d67575146e0"
+    "source": "https://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11000-series-content-services-switches/21303-css-dot1q.html"
   },
   {
+    "itemId": "b692ec25-461f-4cce-96fe-2f56066fd808",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -96,10 +97,10 @@
       "dhcp",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc2131",
-    "seedId": "fdbcdc81-86d8-4ba7-a741-f35135e5b7d3"
+    "source": "https://www.rfc-editor.org/rfc/rfc2131"
   },
   {
+    "itemId": "f0db7473-59d4-4a63-9173-2319d1faf717",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -116,10 +117,10 @@
       "arp",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc826",
-    "seedId": "02025f8d-94b0-4e0a-aae3-e7147a8ecbd9"
+    "source": "https://www.rfc-editor.org/rfc/rfc826"
   },
   {
+    "itemId": "42d44f9b-4b68-4905-8a80-959a48dcc106",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -136,10 +137,10 @@
       "dns",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc1034",
-    "seedId": "405926af-3f76-471a-a853-9809e2659eb8"
+    "source": "https://www.rfc-editor.org/rfc/rfc1034"
   },
   {
+    "itemId": "2ee6e7c7-5cb8-46d7-8094-d7e635ae3d34",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -156,10 +157,10 @@
       "default-gateway",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/what-is-a-router.html",
-    "seedId": "6ab78a49-9ac0-4aab-9adf-f8c6ae5c8d86"
+    "source": "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/what-is-a-router.html"
   },
   {
+    "itemId": "1922bb9b-6592-4cc1-95d2-c3af3505e3b1",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -176,10 +177,10 @@
       "ssh",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4251",
-    "seedId": "9c58e6df-779e-42bb-bfbc-8bdfd01485dc"
+    "source": "https://www.rfc-editor.org/rfc/rfc4251"
   },
   {
+    "itemId": "34c637bc-bcaa-45cd-86ae-deb95e1f71bf",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccna",
@@ -196,7 +197,6 @@
       "nat",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html",
-    "seedId": "5a08cd84-24a5-425b-b9d0-67f2fd6e7f81"
+    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
   }
 ]

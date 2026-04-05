@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3cf570c8-f48a-40ee-82a8-0aa13c6a81d8",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -15,10 +16,10 @@
       "amendments",
       "constitution-updates"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendments/",
-    "seedId": "741f80b1-fff6-5db6-8148-9bf672ba44ca"
+    "source": "https://constitution.congress.gov/constitution/amendments/"
   },
   {
+    "itemId": "412fe4f6-7f49-4b2a-b09c-dbb04098fdc1",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -34,10 +35,10 @@
       "amendments",
       "article-v"
     ],
-    "source": "https://www.law.cornell.edu/constitution/article_v",
-    "seedId": "78f51ab1-edd2-5004-b563-e00edff44955"
+    "source": "https://www.law.cornell.edu/constitution/article_v"
   },
   {
+    "itemId": "e51efafc-f22d-48ee-a81e-81ef3e59e5d3",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -53,10 +54,10 @@
       "amendments",
       "ratification"
     ],
-    "source": "https://www.whitehouse.gov/our-government/the-constitution/",
-    "seedId": "cc446747-8368-5519-b56f-b543c335f4ff"
+    "source": "https://www.whitehouse.gov/our-government/the-constitution/"
   },
   {
+    "itemId": "1e8d5bb5-2d04-4ab3-be60-5bffa5766ccd",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -72,10 +73,10 @@
       "bill-of-rights",
       "amendments"
     ],
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
-    "seedId": "6db74034-5e54-5015-b2ad-56d090d7202f"
+    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
   },
   {
+    "itemId": "743dc5f9-b92f-4eb5-a26b-b6c89beec568",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -86,15 +87,15 @@
       "the Nineteenth Amendment",
       "the Twenty-Second Amendment"
     ],
-    "explanation": "The Twenty-First Amendment ended Prohibition by repealing the Eighteenth Amendment’s alcohol ban.",
+    "explanation": "The Twenty-First Amendment ended Prohibition by repealing the Eighteenth Amendment\u2019s alcohol ban.",
     "keywords": [
       "amendments",
       "prohibition"
     ],
-    "source": "https://www.law.cornell.edu/constitution/amendmentxxi",
-    "seedId": "9a8cb35a-47ad-5bcd-8ce4-dc02e9ea147b"
+    "source": "https://www.law.cornell.edu/constitution/amendmentxxi"
   },
   {
+    "itemId": "38cc52e7-7a57-4680-ad36-5f59a6ccd01c",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "amendments",
@@ -110,7 +111,6 @@
       "amendments",
       "presidency"
     ],
-    "source": "https://www.senate.gov/civics/constitution_item/constitution.htm?con_article=&con_amendment=022",
-    "seedId": "a2421bdf-c285-592d-a438-91aea3a60020"
+    "source": "https://www.senate.gov/civics/constitution_item/constitution.htm?con_article=&con_amendment=022"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "863eaba8-0161-4411-9670-116ba23b3cc7",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
@@ -15,10 +16,10 @@
       "kubernetes",
       "pods"
     ],
-    "source": "https://kubernetes.io/docs/concepts/workloads/pods/",
-    "seedId": "b0e3b106-7e43-528a-aa9c-816ed703de01"
+    "source": "https://kubernetes.io/docs/concepts/workloads/pods/"
   },
   {
+    "itemId": "429091b3-a3c6-468e-89e2-c441f4c3942c",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
@@ -34,10 +35,10 @@
       "kubernetes",
       "deployments"
     ],
-    "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
-    "seedId": "b304e53f-dfab-5d5d-8b64-abb5457b315a"
+    "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
   },
   {
+    "itemId": "d23a60e5-ce8b-469b-8e18-80309bea2e4f",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
@@ -53,10 +54,10 @@
       "kubernetes",
       "networking"
     ],
-    "source": "https://kubernetes.io/docs/concepts/services-networking/service/",
-    "seedId": "af1c7d0e-e776-5fe8-9e50-5096500025ed"
+    "source": "https://kubernetes.io/docs/concepts/services-networking/service/"
   },
   {
+    "itemId": "b2b89643-7354-4947-a71d-69f122e88fd6",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
@@ -72,29 +73,29 @@
       "kubernetes",
       "namespaces"
     ],
-    "source": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/",
-    "seedId": "9e529b0b-ed35-574a-a6cb-cc2007902fae"
+    "source": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
   },
   {
+    "itemId": "34633dc2-08b6-4461-b15a-c013e902005c",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
     "question": "Where does the control plane store cluster state?",
     "correctAnswer": "in etcd for Kubernetes",
     "incorrectAnswers": [
-      "only in each Pod’s RAM",
+      "only in each Pod\u2019s RAM",
       "in SMTP mailboxes",
-      "on the developer’s phone"
+      "on the developer\u2019s phone"
     ],
     "explanation": "etcd is the consistent key-value store backing API objects and desired state for the cluster.",
     "keywords": [
       "kubernetes",
       "control-plane"
     ],
-    "source": "https://kubernetes.io/docs/concepts/overview/components/",
-    "seedId": "6875085b-845d-5042-bea8-70744a991026"
+    "source": "https://kubernetes.io/docs/concepts/overview/components/"
   },
   {
+    "itemId": "a0caeb55-aedd-4529-b42d-6d7b1562605b",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "kubernetes",
@@ -110,7 +111,6 @@
       "kubernetes",
       "health"
     ],
-    "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/building_applications/application-health",
-    "seedId": "82ba0c3b-07fe-529f-ad06-0306ff92e185"
+    "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/building_applications/application-health"
   }
 ]

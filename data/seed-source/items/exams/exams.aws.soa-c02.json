@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3a202792-85de-40f0-9b69-e296681afd9d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -16,10 +17,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudtrail/",
-    "seedId": "04938314-cfa2-49f2-a208-2f1422800925"
+    "source": "https://aws.amazon.com/cloudtrail/"
   },
   {
+    "itemId": "f8dd9974-ae9f-400b-8ff8-6cff9856efd6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -36,10 +37,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/config/",
-    "seedId": "d2061294-3143-4eae-a30a-7788f09aeddb"
+    "source": "https://aws.amazon.com/config/"
   },
   {
+    "itemId": "bcda1b54-8e83-48e2-9cfe-7e4b123524e1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -56,10 +57,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/systems-manager/",
-    "seedId": "705a0fcb-60e8-4a82-83e6-ee9d400d74d2"
+    "source": "https://aws.amazon.com/systems-manager/"
   },
   {
+    "itemId": "623f20d2-3b09-494f-80c6-152756c4f1c0",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -76,10 +77,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/backup/",
-    "seedId": "0e8402e4-4bd1-46d2-b201-4f594a63b941"
+    "source": "https://aws.amazon.com/backup/"
   },
   {
+    "itemId": "89ecd43a-f652-436f-b572-3c82c82fc5ff",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -96,10 +97,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/security-hub/",
-    "seedId": "f559cf40-7c1d-4193-8461-56fc4d87d750"
+    "source": "https://aws.amazon.com/security-hub/"
   },
   {
+    "itemId": "2c4bc3d9-ece2-4d9b-922c-310241ce1698",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -116,10 +117,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/waf/",
-    "seedId": "8729df0e-1e19-491e-ac05-1a3647bf4299"
+    "source": "https://aws.amazon.com/waf/"
   },
   {
+    "itemId": "7d6534b4-c721-4ad1-afce-4c7f7f326cd8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -136,10 +137,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/",
-    "seedId": "858fa1ce-ef44-4f3d-b7da-b4663f88d981"
+    "source": "https://aws.amazon.com/cloudwatch/"
   },
   {
+    "itemId": "074fc989-871e-405f-9ea3-0ea62eb8d596",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -156,10 +157,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/autoscaling/",
-    "seedId": "8f0402ba-cd00-4bca-9710-526a6334e201"
+    "source": "https://aws.amazon.com/autoscaling/"
   },
   {
+    "itemId": "01a6325c-1cab-4aad-89b6-033701e8ecaa",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -176,10 +177,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/elasticloadbalancing/",
-    "seedId": "ac27893b-aef8-4c6f-9b05-d22c8aabdbcf"
+    "source": "https://aws.amazon.com/elasticloadbalancing/"
   },
   {
+    "itemId": "02fc32a5-7b73-47f3-9704-5b2981aab88a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -196,10 +197,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/route53/",
-    "seedId": "ebc31a07-0803-4f89-ac63-f3ba50a00b8f"
+    "source": "https://aws.amazon.com/route53/"
   },
   {
+    "itemId": "0e3d737e-3561-45c7-93c7-f0164671a04c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -216,10 +217,10 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/organizations/",
-    "seedId": "f1db5d56-cf5d-4966-85ec-036fd3aefe93"
+    "source": "https://aws.amazon.com/organizations/"
   },
   {
+    "itemId": "78129aa4-9051-4a30-ac4b-19527c9d2045",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "soa-c02",
@@ -236,7 +237,6 @@
       "aws-operations",
       "aws-services"
     ],
-    "source": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
-    "seedId": "bbdbc8ac-927f-46a1-ab0f-902cce0d8504"
+    "source": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
   }
 ]

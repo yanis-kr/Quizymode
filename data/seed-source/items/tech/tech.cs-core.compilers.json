@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "942e38c5-1f87-4afa-826a-78074b053dc5",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -15,10 +16,10 @@
       "compilers",
       "lexer"
     ],
-    "source": "https://en.wikipedia.org/wiki/Lexical_analysis",
-    "seedId": "ff7c277d-9677-5920-9c2d-873d62d727b7"
+    "source": "https://en.wikipedia.org/wiki/Lexical_analysis"
   },
   {
+    "itemId": "edbc378b-c209-4b5d-b564-87c6228036c8",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -34,10 +35,10 @@
       "compilers",
       "parser"
     ],
-    "source": "https://en.wikipedia.org/wiki/Parsing",
-    "seedId": "876eb167-d5f2-5001-91dd-d3c318382dc8"
+    "source": "https://en.wikipedia.org/wiki/Parsing"
   },
   {
+    "itemId": "b92a0316-31a8-4e23-b498-cecb26704ab3",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -53,10 +54,10 @@
       "compilers",
       "ssa"
     ],
-    "source": "https://en.wikipedia.org/wiki/Static_single-assignment_form",
-    "seedId": "eb8543f4-d85b-5319-910c-c4597ee882f5"
+    "source": "https://en.wikipedia.org/wiki/Static_single-assignment_form"
   },
   {
+    "itemId": "ffc14e5c-a1f9-4ba7-a5c0-f830d5c64c6c",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -72,10 +73,10 @@
       "compilers",
       "linker"
     ],
-    "source": "https://sourceware.org/binutils/docs/ld/",
-    "seedId": "715ad20b-a342-5b90-a736-53b67d1b1a7c"
+    "source": "https://sourceware.org/binutils/docs/ld/"
   },
   {
+    "itemId": "7d13207c-2bd3-4089-95b9-1b9bffa0a421",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -91,10 +92,10 @@
       "compilers",
       "optimization"
     ],
-    "source": "https://llvm.org/docs/Passes.html",
-    "seedId": "f720a02b-6ee9-572f-8601-8500a4fc9d55"
+    "source": "https://llvm.org/docs/Passes.html"
   },
   {
+    "itemId": "4bba3720-fea2-4a14-a007-d0343959083c",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "compilers",
@@ -110,7 +111,6 @@
       "compilers",
       "interpreter"
     ],
-    "source": "https://en.wikipedia.org/wiki/Compiler",
-    "seedId": "1e807128-3296-5f06-aa12-3726cb73e67a"
+    "source": "https://en.wikipedia.org/wiki/Compiler"
   }
 ]

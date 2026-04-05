@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7ae1f477-7d8c-427e-9cf0-7f436ab8a21f",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -8,7 +9,7 @@
     "incorrectAnswers": [
       "table and chaise",
       "lune and soleil",
-      "fenêtre and porte"
+      "fen\u00eatre and porte"
     ],
     "explanation": "\"Dessus\" (above) and \"dessous\" (below) sound similar at first; the final consonant sound helps tell them apart with practice.",
     "keywords": [
@@ -16,10 +17,10 @@
       "pronunciation",
       "french-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/dessous",
-    "seedId": "37ec3a93-9b37-5b4e-ae23-0548f3f4b43b"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/dessous"
   },
   {
+    "itemId": "28d6268e-2689-452a-a6fa-2c195b04f56a",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -36,10 +37,10 @@
       "pronunciation",
       "french-listening"
     ],
-    "source": "https://www.lawlessfrench.com/pronunciation/liaisons/",
-    "seedId": "4c70bd31-784f-5184-82da-cee64816f245"
+    "source": "https://www.lawlessfrench.com/pronunciation/liaisons/"
   },
   {
+    "itemId": "e7318129-2724-430d-8928-db315f50ff2f",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -56,10 +57,10 @@
       "pronunciation",
       "french-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/paris",
-    "seedId": "6491353e-17b9-51f4-bab3-320886c22c49"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/paris"
   },
   {
+    "itemId": "f17ee1c6-8c97-437a-b11a-88a0902541ca",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -76,10 +77,10 @@
       "rhythm",
       "french-listening"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/librairie",
-    "seedId": "944d170a-99f1-5515-9c16-c889b080f07f"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/librairie"
   },
   {
+    "itemId": "d869a114-4c9d-43b5-b886-d601aeacf993",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -96,10 +97,10 @@
       "vowels",
       "french-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/tu",
-    "seedId": "23764a6a-70bf-5024-9d62-3ae90ebf20f2"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/tu"
   },
   {
+    "itemId": "f7e036f3-4734-4770-b4ff-f4bf4c96946b",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
@@ -116,7 +117,6 @@
       "questions",
       "french-listening"
     ],
-    "source": "https://www.lawlessfrench.com/grammar/questions/",
-    "seedId": "02eccb79-4453-59e6-85ed-2028900573b8"
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
   }
 ]

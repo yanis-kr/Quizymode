@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a08d9f0a-3b87-4950-b662-6f12986b6bf2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -18,10 +19,10 @@
       "dynamodb",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ff85b223-2e5b-4ece-a811-2e6ef6a734f7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "307d99b8-78ce-4a98-92b5-ce935073b9bf",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -40,14 +41,14 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3b0bf298-71fc-4c91-9641-3d36a9fbc8f5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5535bfb3-ec79-4dea-b760-e7181784ec7e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "An ecommerce company is experiencing an increase in user traffic. The company’s store is deployed on Amazon EC2 instances as a two-tier web\napplication consisting of a web tier and a separate database tier. As traffic increases, the company notices that the architecture is causing\nsignicant delays in sending timely marketing and order conrmation email to users. The company wants to reduce the time it spends resolving\ncomplex email delivery issues and minimize operational overhead.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "An ecommerce company is experiencing an increase in user traffic. The company\u2019s store is deployed on Amazon EC2 instances as a two-tier web\napplication consisting of a web tier and a separate database tier. As traffic increases, the company notices that the architecture is causing\nsignicant delays in sending timely marketing and order conrmation email to users. The company wants to reduce the time it spends resolving\ncomplex email delivery issues and minimize operational overhead.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Create a separate application tier using EC2 instances dedicated to email processing.",
     "incorrectAnswers": [
       "Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).",
@@ -60,10 +61,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9ab967f5-bb54-4082-bde5-891dcc30c675"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2742b143-6116-4b4e-8b44-139017f1bbbd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -81,10 +82,10 @@
       "s3",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "439b790a-e475-4f3a-b844-2a3f197cd67b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "093b2869-06b2-4dc8-b8fc-ed470d4206b8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -101,19 +102,19 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e56bc1fb-d9d6-42ce-bdd7-644a918a438d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f65b3096-1183-41dd-b8d2-95e4efdf6061",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company uses Amazon EC2 instances and AWS Lambda functions to run its application. The company has VPCs with public subnets and private\nsubnets in its AWS account. The EC2 instances run in a private subnet in one of the VPCs. The Lambda functions need direct network access to\nthe EC2 instances for the application to work.\nThe application will run for at least 1 year. The company expects the number of Lambda functions that the application uses to increase during that\ntime. The company wants to maximize its savings on all application resources and to keep network latency between the services low.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Purchase an EC2 Instance Savings Plan Optimize the Lambda functions’ duration and memory usage and the number of invocations. Connect the Lambda functions to the private subnet that contains the EC2 instances.",
+    "correctAnswer": "Purchase an EC2 Instance Savings Plan Optimize the Lambda functions\u2019 duration and memory usage and the number of invocations. Connect the Lambda functions to the private subnet that contains the EC2 instances.",
     "incorrectAnswers": [
       "Purchase an EC2 Instance Savings Plan Optimize the Lambda functions' duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to a public subnet in the same VPC where the EC2 instances run.",
-      "Purchase a Compute Savings Plan. Optimize the Lambda functions’ duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to the private subnet that contains the EC2 instances.",
-      "Purchase a Compute Savings Plan. Optimize the Lambda functions’ duration and memory usage, the number of invocations, and the amount of data that is transferred. Keep the Lambda functions in the Lambda service VPC."
+      "Purchase a Compute Savings Plan. Optimize the Lambda functions\u2019 duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to the private subnet that contains the EC2 instances.",
+      "Purchase a Compute Savings Plan. Optimize the Lambda functions\u2019 duration and memory usage, the number of invocations, and the amount of data that is transferred. Keep the Lambda functions in the Lambda service VPC."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #417). Correct choice: A.",
     "keywords": [
@@ -123,10 +124,10 @@
       "lambda",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "492af1db-948c-45ba-a46b-f9ffcb5380ec"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f785d4e1-5aed-4ed0-84c8-f31b87000597",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -145,10 +146,10 @@
       "s3",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "fa31b2ac-2ab8-41b2-bbfa-0443504f0c78"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "89f859ab-dcfd-41fd-be60-4d8481519bc8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -167,10 +168,10 @@
       "rds",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "41a17796-2a6e-4efe-872e-a35efca3dfea"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e9189b0f-2a76-4197-ba80-ce25d19a6e17",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -190,10 +191,10 @@
       "ec2",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d6a3e029-56cc-49e5-b128-7e5bc0bd0577"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "861e7a21-dfb8-46d1-9731-18cf40839bd4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -213,10 +214,10 @@
       "lambda",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6dccc933-ba34-4d18-b9a2-13a035a59ae4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d0866627-7352-4c48-b8ac-c7fda4750563",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -234,10 +235,10 @@
       "ec2",
       "fargate"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4e81f7d5-0c6d-4415-a371-2ef502bfe70d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "10e33179-3286-4700-aab1-4a87dba6417d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -256,14 +257,14 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5c7d4417-a1c0-4f29-a6bb-3e2dc7695001"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "87596a4e-7130-4244-8f9c-3cd3f681fa77",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to store data from its healthcare application. The application’s data frequently changes. A new regulation requires audit access\nat all levels of the stored data.\nThe company hosts the application on an on-premises infrastructure that is running out of storage capacity. A solutions architect must securely\nmigrate the existing data to AWS while satisfying the new regulation.\nWhich solution will meet these requirements?",
+    "question": "A company needs to store data from its healthcare application. The application\u2019s data frequently changes. A new regulation requires audit access\nat all levels of the stored data.\nThe company hosts the application on an on-premises infrastructure that is running out of storage capacity. A solutions architect must securely\nmigrate the existing data to AWS while satisfying the new regulation.\nWhich solution will meet these requirements?",
     "correctAnswer": "Use AWS DataSync to move the existing data to Amazon S3. Use AWS CloudTrail to log data events.",
     "incorrectAnswers": [
       "Use AWS Snowcone to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.",
@@ -279,10 +280,10 @@
       "cloudtrail",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "95852f9b-75eb-46c5-ba91-fbdc5e44b6b5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4b1ace22-8dde-41a4-986b-7792ba4090be",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -303,10 +304,10 @@
       "api-gateway",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "aabc6f5b-36bb-4ffe-9a49-f94c69c7950c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "31f2ad83-691a-47c4-8cfd-7c35783bc472",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -329,10 +330,10 @@
       "iam",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "db7787ee-c1da-4443-b073-5581c5394209"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8a8e6492-e365-477a-afc6-647762985d56",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -351,14 +352,14 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d36d7fae-8624-4e35-a99a-2c249f88aadf"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0c1c8056-7ccd-4105-b7f6-124f5f0495eb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has developed a new video game as a web application. The application is in a three-tier architecture in a VPC with Amazon RDS for\nMySQL in the database layer. Several players will compete concurrently online. The game’s developers want to display a top-10 scoreboard in near-\nreal time and offer the ability to stop and restore the game while preserving the current scores.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company has developed a new video game as a web application. The application is in a three-tier architecture in a VPC with Amazon RDS for\nMySQL in the database layer. Several players will compete concurrently online. The game\u2019s developers want to display a top-10 scoreboard in near-\nreal time and offer the ability to stop and restore the game while preserving the current scores.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Set up an Amazon ElastiCache for Memcached cluster to cache the scores for the web application to display.",
     "incorrectAnswers": [
       "Set up an Amazon ElastiCache for Redis cluster to compute and cache the scores for the web application to display.",
@@ -376,10 +377,10 @@
       "vpc",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5b589131-871b-4da4-b30e-380d39050ab3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a75dfbde-138f-4b57-a83c-f47d99a1f8fa",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -397,10 +398,10 @@
       "glue",
       "opensearch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "611cf491-5b7b-4501-9e8c-f033dfa10766"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1e2c85d0-022f-4d8c-913e-8be34550db58",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -417,10 +418,10 @@
       "aws-management",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cff247e8-bb73-40a7-afa4-64a2e16a63a9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "bb8045d1-7998-4bff-bf9f-924f15016752",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -442,7 +443,6 @@
       "auto-scaling",
       "dns"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d09d3805-d753-4dc5-b115-c24f0ae0ef79"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

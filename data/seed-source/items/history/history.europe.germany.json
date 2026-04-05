@@ -1,32 +1,33 @@
 [
   {
+    "itemId": "56a94a39-575e-410d-a7e6-538b8479ee75",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
-    "question": "Martin Luther’s 1517 Ninety-five Theses protested indulgences in which German territory’s church?",
+    "question": "Martin Luther\u2019s 1517 Ninety-five Theses protested indulgences in which German territory\u2019s church?",
     "correctAnswer": "Saxony (Wittenberg in the Electorate of Saxony)",
     "incorrectAnswers": [
       "Bavaria only",
       "Prussia",
       "Hanover"
     ],
-    "explanation": "Luther’s critique sparked the Protestant Reformation across German principalities.",
+    "explanation": "Luther\u2019s critique sparked the Protestant Reformation across German principalities.",
     "keywords": [
       "germany",
       "luther",
       "reformation"
     ],
-    "source": "https://www.britannica.com/biography/Martin-Luther",
-    "seedId": "6b368f80-a013-4181-b3a9-899deee04fc4"
+    "source": "https://www.britannica.com/biography/Martin-Luther"
   },
   {
+    "itemId": "a61e55a9-1f21-462d-879f-d8047538e622",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
     "question": "The Peace of Westphalia (1648) ended which devastating conflict fought largely in German lands?",
-    "correctAnswer": "The Thirty Years’ War",
+    "correctAnswer": "The Thirty Years\u2019 War",
     "incorrectAnswers": [
-      "The Seven Years’ War",
+      "The Seven Years\u2019 War",
       "The Napoleonic Wars",
       "The Schmalkaldic War alone"
     ],
@@ -36,15 +37,15 @@
       "westphalia",
       "thirty-years-war"
     ],
-    "source": "https://www.britannica.com/event/Peace-of-Westphalia",
-    "seedId": "9c34da39-cf68-42f0-845f-de02f11cc4c8"
+    "source": "https://www.britannica.com/event/Peace-of-Westphalia"
   },
   {
+    "itemId": "81baacf1-e792-4350-9cf2-760f4cab8e4d",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
-    "question": "Frederick the Great’s Prussia seized Silesia in the 1740s, provoking which series of wars?",
-    "correctAnswer": "The War of the Austrian Succession (and later Seven Years’ War context)",
+    "question": "Frederick the Great\u2019s Prussia seized Silesia in the 1740s, provoking which series of wars?",
+    "correctAnswer": "The War of the Austrian Succession (and later Seven Years\u2019 War context)",
     "incorrectAnswers": [
       "The Franco-Prussian War",
       "The Schleswig Wars",
@@ -56,17 +57,17 @@
       "prussia",
       "frederick"
     ],
-    "source": "https://www.britannica.com/biography/Frederick-II-king-of-Prussia",
-    "seedId": "596bbc12-0de4-492f-bd32-8327409e7e6c"
+    "source": "https://www.britannica.com/biography/Frederick-II-king-of-Prussia"
   },
   {
+    "itemId": "c3c37e82-5b6e-4ab4-bd49-63a0b1a8eec9",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
     "question": "Otto von Bismarck proclaimed the German Empire in 1871 in the Hall of Mirrors at which palace?",
     "correctAnswer": "Versailles (near Paris)",
     "incorrectAnswers": [
-      "Schönbrunn",
+      "Sch\u00f6nbrunn",
       "Sans Souci",
       "Nuremberg Castle"
     ],
@@ -76,14 +77,14 @@
       "bismarck",
       "unification"
     ],
-    "source": "https://www.britannica.com/biography/Otto-von-Bismarck",
-    "seedId": "727356d3-3353-4da9-970c-a0dd0498758c"
+    "source": "https://www.britannica.com/biography/Otto-von-Bismarck"
   },
   {
+    "itemId": "22203fcf-b633-442f-90c0-cf73098bd2ae",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
-    "question": "Johannes Gutenberg’s movable-type printing revolution began in which German city?",
+    "question": "Johannes Gutenberg\u2019s movable-type printing revolution began in which German city?",
     "correctAnswer": "Mainz",
     "incorrectAnswers": [
       "Hamburg",
@@ -96,14 +97,14 @@
       "gutenberg",
       "printing"
     ],
-    "source": "https://www.britannica.com/biography/Johannes-Gutenberg",
-    "seedId": "5f657ceb-6fed-453c-b3da-bbbc15a7ba65"
+    "source": "https://www.britannica.com/biography/Johannes-Gutenberg"
   },
   {
+    "itemId": "ebaf4667-f954-4246-8f7c-17b0f52e532b",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
-    "question": "Germany’s Weimar Republic (1919–33) took its name from the city where which post–World War I constitution was drafted?",
+    "question": "Germany\u2019s Weimar Republic (1919\u201333) took its name from the city where which post\u2013World War I constitution was drafted?",
     "correctAnswer": "Weimar",
     "incorrectAnswers": [
       "Munich",
@@ -116,10 +117,10 @@
       "weimar",
       "world-war-i"
     ],
-    "source": "https://www.britannica.com/place/Weimar-Republic",
-    "seedId": "f790750c-5c9d-4c77-b162-3ac78e29b42c"
+    "source": "https://www.britannica.com/place/Weimar-Republic"
   },
   {
+    "itemId": "9c348646-6f77-4eb0-a32f-75555e9795ed",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -130,16 +131,16 @@
       "Friedrich Ebert",
       "Gustav Stresemann"
     ],
-    "explanation": "The Reichstag fire and Enabling Act soon concentrated dictatorial power in Hitler’s hands.",
+    "explanation": "The Reichstag fire and Enabling Act soon concentrated dictatorial power in Hitler\u2019s hands.",
     "keywords": [
       "germany",
       "hitler",
       "nazi"
     ],
-    "source": "https://www.britannica.com/biography/Adolf-Hitler",
-    "seedId": "3340dd4f-4d72-4ce7-88c2-275f353049f7"
+    "source": "https://www.britannica.com/biography/Adolf-Hitler"
   },
   {
+    "itemId": "7bbf8964-c299-43ad-8ad4-2db72666365e",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -150,16 +151,16 @@
       "Poland",
       "Hungary"
     ],
-    "explanation": "The opening of the Wall accelerated German reunification under the Federal Republic’s constitution.",
+    "explanation": "The opening of the Wall accelerated German reunification under the Federal Republic\u2019s constitution.",
     "keywords": [
       "germany",
       "berlin-wall",
       "cold-war"
     ],
-    "source": "https://www.britannica.com/topic/Berlin-Wall",
-    "seedId": "50de0a00-1f95-4e70-bf28-be444377580c"
+    "source": "https://www.britannica.com/topic/Berlin-Wall"
   },
   {
+    "itemId": "1911eadc-c349-4864-b5b2-ef2fa1b71fc1",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -170,16 +171,16 @@
       "The Kulturkampf",
       "The Spartacist uprising"
     ],
-    "explanation": "The pamphlet’s call—“Workers of the world, unite!”—emerged from radical circles in Brussels and London.",
+    "explanation": "The pamphlet\u2019s call\u2014\u201cWorkers of the world, unite!\u201d\u2014emerged from radical circles in Brussels and London.",
     "keywords": [
       "germany",
       "marx",
       "1848"
     ],
-    "source": "https://www.britannica.com/biography/Karl-Marx",
-    "seedId": "88234db3-81f8-44e2-86d5-2cf652d34cae"
+    "source": "https://www.britannica.com/biography/Karl-Marx"
   },
   {
+    "itemId": "e6a08b5f-0d35-4482-b5e1-e48dcb1d6369",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -190,16 +191,16 @@
       "Hungary",
       "Austria"
     ],
-    "explanation": "Neville Chamberlain’s ‘peace for our time’ failed to prevent Hitler’s further expansion.",
+    "explanation": "Neville Chamberlain\u2019s \u2018peace for our time\u2019 failed to prevent Hitler\u2019s further expansion.",
     "keywords": [
       "germany",
       "munich",
       "appeasement"
     ],
-    "source": "https://www.britannica.com/event/Munich-Agreement",
-    "seedId": "a71ed37b-93ad-48d8-b553-cf5345b11921"
+    "source": "https://www.britannica.com/event/Munich-Agreement"
   },
   {
+    "itemId": "0cdd6355-3a97-4073-a34e-dfb6dbe7834e",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -210,16 +211,16 @@
       "The German Empire",
       "East Germany"
     ],
-    "explanation": "The ‘economic miracle’ and Western alliance defined his long chancellorship (1949–63).",
+    "explanation": "The \u2018economic miracle\u2019 and Western alliance defined his long chancellorship (1949\u201363).",
     "keywords": [
       "germany",
       "adenauer",
       "cold-war"
     ],
-    "source": "https://www.britannica.com/biography/Konrad-Adenauer",
-    "seedId": "174dfd55-7389-467e-9ef9-fa865874f3de"
+    "source": "https://www.britannica.com/biography/Konrad-Adenauer"
   },
   {
+    "itemId": "be63cd5e-546b-4d5b-b872-c69ab264e18a",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "germany",
@@ -236,7 +237,6 @@
       "merkel",
       "modern"
     ],
-    "source": "https://www.britannica.com/biography/Angela-Merkel",
-    "seedId": "652e9f22-6a5f-4134-bc68-f766d98024ca"
+    "source": "https://www.britannica.com/biography/Angela-Merkel"
   }
 ]

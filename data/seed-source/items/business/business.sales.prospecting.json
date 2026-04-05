@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "14cfd530-418d-418b-a47a-a65276e5b889",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -15,10 +16,10 @@
       "icp",
       "segmentation"
     ],
-    "source": "https://blog.hubspot.com/sales/ideal-customer-profile",
-    "seedId": "967da758-6348-4a38-b117-531dddfc5e42"
+    "source": "https://blog.hubspot.com/sales/ideal-customer-profile"
   },
   {
+    "itemId": "39767138-3df7-444a-b0d1-6e8131c97384",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -34,10 +35,10 @@
       "outbound",
       "messaging"
     ],
-    "source": "https://www.salesforce.com/blog/outbound-sales/",
-    "seedId": "74255872-f0d7-4441-9224-635e78358da8"
+    "source": "https://www.salesforce.com/blog/outbound-sales/"
   },
   {
+    "itemId": "e1b7cd0e-1c28-49de-b7a7-1f2bb96c6585",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -53,10 +54,10 @@
       "lead",
       "qualification"
     ],
-    "source": "https://www.investopedia.com/terms/l/lead.asp",
-    "seedId": "5126119c-8f6d-4dc7-bbb5-a0e99bcc6a8a"
+    "source": "https://www.investopedia.com/terms/l/lead.asp"
   },
   {
+    "itemId": "20b6f59a-3774-4706-a638-156e0d3dca44",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -72,10 +73,10 @@
       "can-spam",
       "compliance"
     ],
-    "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
-    "seedId": "393674f7-f2e6-4226-ab72-56089fae6b7c"
+    "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
   },
   {
+    "itemId": "ac8d6e30-03f1-4e6a-a5c8-5e147eaba357",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -91,10 +92,10 @@
       "discovery",
       "sales-process"
     ],
-    "source": "https://www.gong.io/blog/discovery-call",
-    "seedId": "b9b4abb0-47a4-4260-8f82-23f6394982dc"
+    "source": "https://www.gong.io/blog/discovery-call"
   },
   {
+    "itemId": "f61e0da3-7bb3-41ab-bba6-1d7b6511465b",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "prospecting",
@@ -110,7 +111,6 @@
       "trigger-events",
       "timing"
     ],
-    "source": "https://www.salesforce.com/blog/sales-triggers/",
-    "seedId": "30bdb0bc-68be-4925-9fb8-6fab51cf0291"
+    "source": "https://www.salesforce.com/blog/sales-triggers/"
   }
 ]

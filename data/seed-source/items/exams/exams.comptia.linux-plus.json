@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ef6c088b-c719-4077-8650-65977f7d6e91",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -16,10 +17,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://man7.org/linux/man-pages/man1/ls.1.html",
-    "seedId": "e0f5edcc-d44d-4dd3-bf9d-685fab5699a4"
+    "source": "https://man7.org/linux/man-pages/man1/ls.1.html"
   },
   {
+    "itemId": "bea08d4e-c623-499f-8365-9cfb5bd52a2a",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -36,10 +37,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://man7.org/linux/man-pages/man1/chmod.1.html",
-    "seedId": "6d2a4c80-2b14-46a3-b85c-c3a61a48fe74"
+    "source": "https://man7.org/linux/man-pages/man1/chmod.1.html"
   },
   {
+    "itemId": "3a03700b-7870-4231-91f1-774036599408",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -56,10 +57,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://man7.org/linux/man-pages/man1/grep.1.html",
-    "seedId": "31755928-4a67-43b0-9920-bebfa4fc6396"
+    "source": "https://man7.org/linux/man-pages/man1/grep.1.html"
   },
   {
+    "itemId": "24c339c8-f869-4849-9253-a37f09b2bc0b",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -76,10 +77,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://www.freedesktop.org/software/systemd/man/systemctl.html",
-    "seedId": "3910be49-c532-45e0-a722-dad3d3193605"
+    "source": "https://www.freedesktop.org/software/systemd/man/systemctl.html"
   },
   {
+    "itemId": "a52736a9-7dca-4567-b047-3fb1810cbf89",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -96,10 +97,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://www.freedesktop.org/software/systemd/man/journalctl.html",
-    "seedId": "cdd29b83-7bbc-4921-a6ca-46bf5bda16f7"
+    "source": "https://www.freedesktop.org/software/systemd/man/journalctl.html"
   },
   {
+    "itemId": "960b40ab-0d1c-45e0-85f5-212bb96bf65e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -116,10 +117,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://wiki.nftables.org/wiki-nftables/index.php/Main_Page",
-    "seedId": "351a40ba-4817-415d-ad3b-9e975a183570"
+    "source": "https://wiki.nftables.org/wiki-nftables/index.php/Main_Page"
   },
   {
+    "itemId": "de9c6cf4-c476-4ae5-8542-d6f96b2fbdf0",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -136,10 +137,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/index",
-    "seedId": "e937aea9-673c-4643-b98a-7dc91ecf75aa"
+    "source": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/configuring_and_managing_logical_volumes/index"
   },
   {
+    "itemId": "4ce1007d-f5ec-4ff2-ac12-fb9bd7cbf2c9",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -156,10 +157,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4251",
-    "seedId": "676e2a68-d2ab-4a65-acd6-7b0491e71807"
+    "source": "https://www.rfc-editor.org/rfc/rfc4251"
   },
   {
+    "itemId": "b3ff54a2-ad80-46ff-84b7-f23636064d18",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -176,10 +177,10 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://www.gnu.org/software/tar/manual/tar.html",
-    "seedId": "675b30ff-f5a4-4bcf-a73c-007a00dd9e8a"
+    "source": "https://www.gnu.org/software/tar/manual/tar.html"
   },
   {
+    "itemId": "593dfe15-88bd-4efb-b91d-34afc5e4f54e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "linux-plus",
@@ -196,7 +197,6 @@
       "linux-admin",
       "comptia"
     ],
-    "source": "https://docs.python.org/3/tutorial/",
-    "seedId": "876ea4af-9237-43a4-8090-514059ea5300"
+    "source": "https://docs.python.org/3/tutorial/"
   }
 ]

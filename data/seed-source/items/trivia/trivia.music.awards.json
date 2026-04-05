@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0091691d-d406-4a63-9b7c-afb8bc9decb1",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -15,14 +16,14 @@
       "grammys",
       "organization"
     ],
-    "source": "https://www.britannica.com/art/Grammy-Awards",
-    "seedId": "9d606f1d-a207-5121-8117-3e6791f67c53"
+    "source": "https://www.britannica.com/art/Grammy-Awards"
   },
   {
+    "itemId": "8f008bf3-59dc-4cd5-b1e5-d15d05f90fc9",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
-    "question": "Classical music’s Pulitzer Prize category to what?",
+    "question": "Classical music\u2019s Pulitzer Prize category to what?",
     "correctAnswer": "music composition",
     "incorrectAnswers": [
       "sports photography",
@@ -34,10 +35,10 @@
       "pulitzer",
       "classical"
     ],
-    "source": "https://www.britannica.com/topic/Pulitzer-Prize",
-    "seedId": "99930d59-6df1-5dec-8901-81989fcd278e"
+    "source": "https://www.britannica.com/topic/Pulitzer-Prize"
   },
   {
+    "itemId": "1df2fc15-a73a-4c08-80d0-27af7718129c",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -53,17 +54,17 @@
       "oscars",
       "film-score"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "4ad1d17f-60ea-5cfe-9339-e800a7ef8545"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "d95bcea2-c4b6-49d8-bb33-4db7a39402da",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
     "question": "At the 94th Academy Awards, which score won Best Original Score?",
     "correctAnswer": "Dune",
     "incorrectAnswers": [
-      "Don’t Look Up",
+      "Don\u2019t Look Up",
       "Encanto",
       "Parallel Mothers"
     ],
@@ -72,10 +73,10 @@
       "oscars",
       "film-score"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2022",
-    "seedId": "bb854c84-e580-546d-98bf-7efe64726002"
+    "source": "https://www.oscars.org/oscars/ceremonies/2022"
   },
   {
+    "itemId": "8432b880-6f98-43ef-b6d4-b8d67341b1e1",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -91,10 +92,10 @@
       "eurovision",
       "contest"
     ],
-    "source": "https://www.britannica.com/topic/Eurovision-Song-Contest",
-    "seedId": "c33bb1f3-6bfa-5ad7-89ec-50a9a97c21d2"
+    "source": "https://www.britannica.com/topic/Eurovision-Song-Contest"
   },
   {
+    "itemId": "6224d3db-fef3-4ee8-a07a-c24061709c3d",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -110,10 +111,10 @@
       "certifications",
       "sales"
     ],
-    "source": "https://www.britannica.com/topic/gold-record",
-    "seedId": "64a9cdda-3030-5680-908e-60a311fcdaba"
+    "source": "https://www.britannica.com/topic/gold-record"
   },
   {
+    "itemId": "106820ff-170e-412e-a6bd-006b298ab415",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -129,10 +130,10 @@
       "cma",
       "country"
     ],
-    "source": "https://www.britannica.com/topic/Country-Music-Association-Awards",
-    "seedId": "9c10ea26-ed96-5bff-8af1-55670ae4e910"
+    "source": "https://www.britannica.com/topic/Country-Music-Association-Awards"
   },
   {
+    "itemId": "07bc942a-8a01-4254-97df-d49e4c5ca6dc",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -148,10 +149,10 @@
       "vma",
       "videos"
     ],
-    "source": "https://www.britannica.com/topic/MTV-Video-Music-Awards",
-    "seedId": "e72b844f-d84d-571b-a618-d6fb930da579"
+    "source": "https://www.britannica.com/topic/MTV-Video-Music-Awards"
   },
   {
+    "itemId": "a0b90131-dcdc-4176-8e07-acce978142b6",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -167,10 +168,10 @@
       "mercury-prize",
       "uk"
     ],
-    "source": "https://www.britannica.com/topic/Mercury-Prize",
-    "seedId": "6bc93bda-1271-57f9-ae55-847301c2569a"
+    "source": "https://www.britannica.com/topic/Mercury-Prize"
   },
   {
+    "itemId": "33e6bf39-76d0-4bb5-894d-0f016721c4b6",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "awards",
@@ -186,7 +187,6 @@
       "tony-awards",
       "theater"
     ],
-    "source": "https://www.britannica.com/art/Tony-Awards",
-    "seedId": "48768634-e183-54cc-8466-65b681ce521f"
+    "source": "https://www.britannica.com/art/Tony-Awards"
   }
 ]

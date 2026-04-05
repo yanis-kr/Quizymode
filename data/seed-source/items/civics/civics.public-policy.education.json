@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bd6d0673-fd4d-4004-a73b-5fd497f88b22",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -15,10 +16,10 @@
       "education-policy",
       "federalism"
     ],
-    "source": "https://www.usa.gov/state-local-governments",
-    "seedId": "3fcad9da-1b37-58b9-ba27-04c292139518"
+    "source": "https://www.usa.gov/state-local-governments"
   },
   {
+    "itemId": "5267fc30-25b3-4070-a523-c7243d40abcc",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -34,10 +35,10 @@
       "title-i",
       "education-policy"
     ],
-    "source": "https://www2.ed.gov/programs/titleiparta/index.html",
-    "seedId": "b3236411-ebc5-52bc-bb58-9b73961051b3"
+    "source": "https://www2.ed.gov/programs/titleiparta/index.html"
   },
   {
+    "itemId": "5b8810ad-57b9-42c0-a302-b1a0c4a1e04f",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -53,10 +54,10 @@
       "idea",
       "special-education"
     ],
-    "source": "https://www.law.cornell.edu/topn/individuals_with_disabilities_education_act",
-    "seedId": "2d12c865-631b-5c64-823b-6ea416897182"
+    "source": "https://www.law.cornell.edu/topn/individuals_with_disabilities_education_act"
   },
   {
+    "itemId": "9280352c-581b-4672-846f-1248a15b3df2",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -72,10 +73,10 @@
       "local-education",
       "school-governance"
     ],
-    "source": "https://www.ncsl.org/education/education-governance-and-accountability",
-    "seedId": "fa2c6bec-7f5d-5f10-a600-e2a0d63b3465"
+    "source": "https://www.ncsl.org/education/education-governance-and-accountability"
   },
   {
+    "itemId": "da45d9ac-4652-4791-978d-9b6fbc9c7a23",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -91,10 +92,10 @@
       "ferpa",
       "student-privacy"
     ],
-    "source": "https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html",
-    "seedId": "84051f6b-be84-5e3f-a2bd-bf104e38904f"
+    "source": "https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html"
   },
   {
+    "itemId": "976dfb00-05d1-4951-8bd7-be5eb773cf65",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "education",
@@ -110,7 +111,6 @@
       "compulsory-education",
       "state-policy"
     ],
-    "source": "https://www.ncsl.org/research/education/compulsory-education.aspx",
-    "seedId": "a13592f2-f3f4-51c9-87d1-a2f2ec2f9031"
+    "source": "https://www.ncsl.org/research/education/compulsory-education.aspx"
   }
 ]

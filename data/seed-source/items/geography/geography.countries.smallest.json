@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "705771a3-dd94-4035-89d4-0f01cd358520",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
-    "question": "Which independent city-state in Rome is the world’s smallest country by area?",
+    "question": "Which independent city-state in Rome is the world\u2019s smallest country by area?",
     "correctAnswer": "Vatican City",
     "incorrectAnswers": [
       "Monaco",
@@ -16,10 +17,10 @@
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Vatican-City",
-    "seedId": "6755ee43-e9e4-4e7c-b4f3-a1b007165185"
+    "source": "https://www.britannica.com/place/Vatican-City"
   },
   {
+    "itemId": "68623f6b-3643-436e-b579-7266bcab59d6",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -36,14 +37,14 @@
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Monaco",
-    "seedId": "1d18fc3f-91b6-4016-bf0a-dd9d1f62a3ad"
+    "source": "https://www.britannica.com/place/Monaco"
   },
   {
+    "itemId": "33ab4d45-1788-4ca2-8506-5f2173690969",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
-    "question": "Which Pacific island republic is among the world’s smallest countries by land area?",
+    "question": "Which Pacific island republic is among the world\u2019s smallest countries by land area?",
     "correctAnswer": "Nauru",
     "incorrectAnswers": [
       "Fiji",
@@ -56,10 +57,10 @@
       "country-size",
       "oceania"
     ],
-    "source": "https://www.britannica.com/place/Nauru",
-    "seedId": "e27f37da-e04a-4d35-8718-ac2f394c9a5b"
+    "source": "https://www.britannica.com/place/Nauru"
   },
   {
+    "itemId": "ccba48a5-003d-49ec-b4aa-93728baa7128",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -70,16 +71,16 @@
       "Kiribati",
       "Marshall Islands"
     ],
-    "explanation": "Tuvalu’s nine coral islands give it a very small total land area spread across a wide ocean zone.",
+    "explanation": "Tuvalu\u2019s nine coral islands give it a very small total land area spread across a wide ocean zone.",
     "keywords": [
       "smallest",
       "country-size",
       "oceania"
     ],
-    "source": "https://www.britannica.com/place/Tuvalu",
-    "seedId": "0df2a3b9-edd8-449d-82d9-623e8a784713"
+    "source": "https://www.britannica.com/place/Tuvalu"
   },
   {
+    "itemId": "ef9f24cd-8a92-44b7-a6dd-e3d81144541a",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -90,16 +91,16 @@
       "Andorra",
       "Monaco"
     ],
-    "explanation": "San Marino lies on Mount Titano’s slopes entirely within Italian territory.",
+    "explanation": "San Marino lies on Mount Titano\u2019s slopes entirely within Italian territory.",
     "keywords": [
       "smallest",
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/San-Marino",
-    "seedId": "8e8a3b6d-4ee3-4959-adfe-445620a85482"
+    "source": "https://www.britannica.com/place/San-Marino"
   },
   {
+    "itemId": "39982e1e-4c2a-4656-82ac-5621465ec972",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -116,10 +117,10 @@
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Liechtenstein",
-    "seedId": "cadc28ef-0766-4b97-b9a1-d5166bbb03ab"
+    "source": "https://www.britannica.com/place/Liechtenstein"
   },
   {
+    "itemId": "0af833cb-a65f-4fc1-ae2a-417426096d73",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -136,10 +137,10 @@
       "country-size",
       "asia"
     ],
-    "source": "https://www.britannica.com/place/Maldives",
-    "seedId": "6feac9c0-dc2b-4ccd-a547-830a7811335c"
+    "source": "https://www.britannica.com/place/Maldives"
   },
   {
+    "itemId": "f0902d21-1e45-4c9f-89b7-ba505e9753b3",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -156,10 +157,10 @@
       "country-size",
       "caribbean"
     ],
-    "source": "https://www.britannica.com/place/Saint-Kitts-and-Nevis",
-    "seedId": "1dc3a1b2-6d53-4cfa-948c-df7ca5daa1af"
+    "source": "https://www.britannica.com/place/Saint-Kitts-and-Nevis"
   },
   {
+    "itemId": "3b36eae4-d127-47ee-830a-c75460b9fac6",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -176,10 +177,10 @@
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Malta",
-    "seedId": "055f09ea-49f1-4c51-9736-be530f5c85fe"
+    "source": "https://www.britannica.com/place/Malta"
   },
   {
+    "itemId": "8f97ac55-f9a3-483d-8097-872e781eff67",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
@@ -190,20 +191,20 @@
       "Monaco",
       "Luxembourg"
     ],
-    "explanation": "Andorra is a small mountain country wedged along the France–Spain border.",
+    "explanation": "Andorra is a small mountain country wedged along the France\u2013Spain border.",
     "keywords": [
       "smallest",
       "country-size",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Andorra",
-    "seedId": "6d819dcf-0110-47c3-90c1-543162705cb1"
+    "source": "https://www.britannica.com/place/Andorra"
   },
   {
+    "itemId": "01f74184-2e1d-42d6-8ae9-bc72bbb479bf",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "smallest",
-    "question": "Which western Pacific island country’s land area is spread across many atolls and islets?",
+    "question": "Which western Pacific island country\u2019s land area is spread across many atolls and islets?",
     "correctAnswer": "Marshall Islands",
     "incorrectAnswers": [
       "Palau",
@@ -216,7 +217,6 @@
       "country-size",
       "micronesia"
     ],
-    "source": "https://www.britannica.com/place/Marshall-Islands",
-    "seedId": "5f9154f3-a999-46bc-951e-d5059bf52d7f"
+    "source": "https://www.britannica.com/place/Marshall-Islands"
   }
 ]

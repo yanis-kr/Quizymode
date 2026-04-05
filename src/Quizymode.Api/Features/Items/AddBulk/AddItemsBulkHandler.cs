@@ -32,28 +32,6 @@ internal static class AddItemsBulkHandler
             List<string> duplicateQuestions = [];
             List<AddItemsBulk.ItemError> errors = [];
 
-            // Detect SeedId collisions up-front.
-            // Same user re-importing → skip as duplicate. Different user collision → reassign new ID.
-            HashSet<Guid> existingSeedIdsSameUser = [];
-            HashSet<Guid> existingSeedIdsOtherUser = [];
-            List<Guid> incomingSeedIds = request.Items
-                .Where(i => i.SeedId.HasValue)
-                .Select(i => i.SeedId!.Value)
-                .ToList();
-            if (incomingSeedIds.Count > 0)
-            {
-                existingSeedIdsSameUser = (await db.Items
-                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy == userId)
-                    .Select(i => i.SeedId!.Value)
-                    .ToListAsync(cancellationToken)).ToHashSet();
-
-                existingSeedIdsOtherUser = (await db.Items
-                    .Where(i => i.SeedId.HasValue && incomingSeedIds.Contains(i.SeedId!.Value) && i.CreatedBy != userId)
-                    .Select(i => i.SeedId!.Value)
-                    .ToListAsync(cancellationToken)).ToHashSet();
-            }
-            List<Guid> reassignedSeedIds = [];
-
             Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,
                 cancellationToken);
@@ -86,32 +64,46 @@ internal static class AddItemsBulkHandler
 
             foreach (AddItemsBulk.KeywordRequest kw in request.Keywords)
             {
-                string n = KeywordHelper.NormalizeKeywordName(kw.Name);
-                if (string.IsNullOrEmpty(n))
-                    continue;
-                if (!KeywordHelper.IsValidKeywordNameFormat(n))
+                string normalized = KeywordHelper.NormalizeKeywordName(kw.Name);
+                if (string.IsNullOrEmpty(normalized))
                 {
-                    return Result.Failure<AddItemsBulk.Response>(
-                        Error.Validation("Items.BulkInvalidKeyword", $"Default keyword '{n}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                    continue;
                 }
 
-                if (string.Equals(n, normalizedKeyword1, StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(n, normalizedKeyword2, StringComparison.OrdinalIgnoreCase))
+                if (!KeywordHelper.IsValidKeywordNameFormat(normalized))
+                {
+                    return Result.Failure<AddItemsBulk.Response>(
+                        Error.Validation("Items.BulkInvalidKeyword", $"Default keyword '{normalized}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                }
+
+                if (string.Equals(normalized, normalizedKeyword1, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(normalized, normalizedKeyword2, StringComparison.OrdinalIgnoreCase))
+                {
                     continue;
+                }
             }
 
             List<string> bulkDefaultExtraNames = [];
             foreach (AddItemsBulk.KeywordRequest kw in request.Keywords)
             {
-                string n = KeywordHelper.NormalizeKeywordName(kw.Name);
-                if (string.IsNullOrEmpty(n))
+                string normalized = KeywordHelper.NormalizeKeywordName(kw.Name);
+                if (string.IsNullOrEmpty(normalized))
+                {
                     continue;
-                if (bulkDefaultExtraNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
+                }
+
+                if (bulkDefaultExtraNames.Any(x => string.Equals(x, normalized, StringComparison.OrdinalIgnoreCase)))
+                {
                     continue;
-                if (string.Equals(n, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(n, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                }
+
+                if (string.Equals(normalized, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(normalized, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                {
                     continue;
-                bulkDefaultExtraNames.Add(n);
+                }
+
+                bulkDefaultExtraNames.Add(normalized);
             }
 
             IDbContextTransaction? transaction = null;
@@ -128,228 +120,220 @@ internal static class AddItemsBulkHandler
 
             try
             {
-            for (int i = 0; i < request.Items.Count; i++)
-            {
-                AddItemsBulk.ItemRequest itemRequest = request.Items[i];
-                try
+                for (int index = 0; index < request.Items.Count; index++)
                 {
-                    bool skipItem = false;
-                    if (itemRequest.Keywords is { Count: > 0 })
-                    {
-                        foreach (var kw in itemRequest.Keywords)
-                        {
-                            string name = KeywordHelper.NormalizeKeywordName(kw.Name ?? string.Empty);
-                            if (string.IsNullOrEmpty(name))
-                                continue;
-                            if (!KeywordHelper.IsValidKeywordNameFormat(name))
-                            {
-                                errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, $"Keyword '{name}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
-                                skipItem = true;
-                                break;
-                            }
+                    AddItemsBulk.ItemRequest itemRequest = request.Items[index];
 
-                            if (string.Equals(name, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase)
-                                || string.Equals(name, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
-                                continue;
-                        }
-                    }
-
-                    if (skipItem)
-                        continue;
-
-                    string questionText = itemRequest.Question.Trim().ToLowerInvariant();
-                    string fuzzySignature = simHashService.ComputeSimHash(questionText);
-                    int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
-
-                    bool isDuplicate = false;
                     try
                     {
-                        List<Guid> existingItemIds = itemsToInsert.Select(it => it.Id).ToList();
-
-                        List<Item> candidateItems = await db.Items
-                            .Where(item =>
-                                item.CreatedBy == userId &&
-                                item.FuzzyBucket == fuzzyBucket &&
-                                item.CategoryId == category.Id &&
-                                !existingItemIds.Contains(item.Id))
-                            .ToListAsync(cancellationToken);
-
-                        if (candidateItems.Count > 0)
+                        bool skipItem = false;
+                        if (itemRequest.Keywords is { Count: > 0 })
                         {
-                            isDuplicate = candidateItems.Any(item =>
-                                string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase) ||
-                                item.FuzzySignature == fuzzySignature);
+                            foreach (AddItemsBulk.KeywordRequest keywordRequest in itemRequest.Keywords)
+                            {
+                                string name = KeywordHelper.NormalizeKeywordName(keywordRequest.Name ?? string.Empty);
+                                if (string.IsNullOrEmpty(name))
+                                {
+                                    continue;
+                                }
+
+                                if (!KeywordHelper.IsValidKeywordNameFormat(name))
+                                {
+                                    errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, $"Keyword '{name}' is invalid. Use only letters, numbers, and hyphens (max 30 characters)."));
+                                    skipItem = true;
+                                    break;
+                                }
+                            }
                         }
+
+                        if (skipItem)
+                        {
+                            continue;
+                        }
+
+                        string questionText = itemRequest.Question.Trim().ToLowerInvariant();
+                        string fuzzySignature = simHashService.ComputeSimHash(questionText);
+                        int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);
+
+                        bool isDuplicate;
+                        try
+                        {
+                            List<Guid> existingItemIds = itemsToInsert.Select(it => it.Id).ToList();
+                            List<Item> candidateItems = await db.Items
+                                .Where(item =>
+                                    item.CreatedBy == userId &&
+                                    item.FuzzyBucket == fuzzyBucket &&
+                                    item.CategoryId == category.Id &&
+                                    !existingItemIds.Contains(item.Id))
+                                .ToListAsync(cancellationToken);
+
+                            isDuplicate = candidateItems.Any(item =>
+                                string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase)
+                                || item.FuzzySignature == fuzzySignature);
+                        }
+                        catch (Exception ex)
+                        {
+                            errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, $"Unable to check for duplicates: {ex.Message}"));
+                            continue;
+                        }
+
+                        if (isDuplicate)
+                        {
+                            duplicateQuestions.Add(itemRequest.Question);
+                            continue;
+                        }
+
+                        Item item = new()
+                        {
+                            Id = Guid.NewGuid(),
+                            IsPrivate = effectiveIsPrivate,
+                            Question = itemRequest.Question,
+                            CorrectAnswer = itemRequest.CorrectAnswer,
+                            IncorrectAnswers = itemRequest.IncorrectAnswers,
+                            Explanation = itemRequest.Explanation,
+                            FuzzySignature = fuzzySignature,
+                            FuzzyBucket = fuzzyBucket,
+                            CreatedBy = userId,
+                            CreatedAt = DateTime.UtcNow,
+                            CategoryId = category.Id,
+                            NavigationKeywordId1 = keyword1Entity.Id,
+                            NavigationKeywordId2 = keyword2Entity.Id,
+                            Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
+                            UploadId = request.UploadId,
+                        };
+
+                        itemsToInsert.Add(item);
+                        itemIndexMap[index] = item;
                     }
                     catch (Exception ex)
                     {
-                        errors.Add(new AddItemsBulk.ItemError(
-                            i,
-                            itemRequest.Question,
-                            $"Unable to check for duplicates: {ex.Message}"));
-                        continue;
+                        errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, ex.Message));
                     }
-
-                    if (isDuplicate)
-                    {
-                        duplicateQuestions.Add(itemRequest.Question);
-                        continue;
-                    }
-
-                    Guid? resolvedSeedId = itemRequest.SeedId;
-                    if (resolvedSeedId.HasValue && existingSeedIdsSameUser.Contains(resolvedSeedId.Value))
-                    {
-                        // Same user re-importing the same JSON → treat as duplicate, skip silently
-                        duplicateQuestions.Add(itemRequest.Question);
-                        continue;
-                    }
-                    if (resolvedSeedId.HasValue && existingSeedIdsOtherUser.Contains(resolvedSeedId.Value))
-                    {
-                        // SeedId already owned by a different user → assign a fresh ID to avoid collision
-                        reassignedSeedIds.Add(resolvedSeedId.Value);
-                        resolvedSeedId = Guid.NewGuid();
-                    }
-
-                    Item item = new Item
-                    {
-                        Id = Guid.NewGuid(),
-                        IsPrivate = effectiveIsPrivate,
-                        Question = itemRequest.Question,
-                        CorrectAnswer = itemRequest.CorrectAnswer,
-                        IncorrectAnswers = itemRequest.IncorrectAnswers,
-                        Explanation = itemRequest.Explanation,
-                        FuzzySignature = fuzzySignature,
-                        FuzzyBucket = fuzzyBucket,
-                        CreatedBy = userId,
-                        CreatedAt = DateTime.UtcNow,
-                        CategoryId = category.Id,
-                        NavigationKeywordId1 = keyword1Entity.Id,
-                        NavigationKeywordId2 = keyword2Entity.Id,
-                        Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
-                        UploadId = request.UploadId,
-                        SeedId = resolvedSeedId,
-                    };
-
-                    itemsToInsert.Add(item);
-                    itemIndexMap[i] = item;
                 }
-                catch (Exception ex)
+
+                if (itemsToInsert.Count > 0)
                 {
-                    errors.Add(new AddItemsBulk.ItemError(i, itemRequest.Question, ex.Message));
-                }
-            }
+                    db.Items.AddRange(itemsToInsert);
+                    await db.SaveChangesAsync(cancellationToken);
 
-            if (itemsToInsert.Any())
-            {
-                db.Items.AddRange(itemsToInsert);
-                await db.SaveChangesAsync(cancellationToken);
+                    List<ItemKeyword> itemKeywordsToInsert = [];
+                    Dictionary<string, Keyword> keywordCache = new(StringComparer.OrdinalIgnoreCase);
 
-                List<ItemKeyword> itemKeywordsToInsert = [];
-                Dictionary<string, Keyword> keywordCache = new(StringComparer.OrdinalIgnoreCase);
-
-                foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
-                {
-                    int originalIndex = kvp.Key;
-                    Item item = kvp.Value;
-                    AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
-
-                    List<string> orderedNames = [];
-
-                    void AddUnique(string raw)
+                    foreach (KeyValuePair<int, Item> kvp in itemIndexMap)
                     {
-                        string n = KeywordHelper.NormalizeKeywordName(raw);
-                        if (string.IsNullOrEmpty(n))
-                            return;
-                        if (orderedNames.Any(x => string.Equals(x, n, StringComparison.OrdinalIgnoreCase)))
-                            return;
-                        orderedNames.Add(n);
-                    }
+                        int originalIndex = kvp.Key;
+                        Item item = kvp.Value;
+                        AddItemsBulk.ItemRequest itemRequest = request.Items[originalIndex];
 
-                    AddUnique(keyword1Entity.Name);
-                    AddUnique(keyword2Entity.Name);
+                        List<string> orderedNames = [];
 
-                    if (itemRequest.Keywords is { Count: > 0 })
-                    {
-                        foreach (AddItemsBulk.KeywordRequest ik in itemRequest.Keywords)
-                            AddUnique(ik.Name);
-                    }
-                    else
-                    {
-                        foreach (string extra in bulkDefaultExtraNames)
-                            AddUnique(extra);
-                    }
-
-                    HashSet<Guid> attached = [];
-
-                    foreach (string normalizedName in orderedNames)
-                    {
-                        string cacheKey = normalizedName;
-                        Keyword keyword;
-                        if (string.Equals(normalizedName, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase))
-                            keyword = keyword1Entity;
-                        else if (string.Equals(normalizedName, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
-                            keyword = keyword2Entity;
-                        else if (!keywordCache.TryGetValue(cacheKey, out keyword!))
+                        void AddUnique(string raw)
                         {
-                            keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
-                                db,
-                                taxonomyRegistry,
-                                category.Name,
-                                userId,
-                                normalizedName,
-                                cancellationToken);
-                            keywordCache[cacheKey] = keyword;
+                            string normalized = KeywordHelper.NormalizeKeywordName(raw);
+                            if (string.IsNullOrEmpty(normalized))
+                            {
+                                return;
+                            }
+
+                            if (orderedNames.Any(existing => string.Equals(existing, normalized, StringComparison.OrdinalIgnoreCase)))
+                            {
+                                return;
+                            }
+
+                            orderedNames.Add(normalized);
                         }
 
-                        if (!attached.Add(keyword.Id))
-                            continue;
+                        AddUnique(keyword1Entity.Name);
+                        AddUnique(keyword2Entity.Name);
 
-                        itemKeywordsToInsert.Add(new ItemKeyword
+                        if (itemRequest.Keywords is { Count: > 0 })
                         {
-                            Id = Guid.NewGuid(),
-                            ItemId = item.Id,
-                            KeywordId = keyword.Id,
-                            AddedAt = DateTime.UtcNow
-                        });
+                            foreach (AddItemsBulk.KeywordRequest itemKeyword in itemRequest.Keywords)
+                            {
+                                AddUnique(itemKeyword.Name);
+                            }
+                        }
+                        else
+                        {
+                            foreach (string extra in bulkDefaultExtraNames)
+                            {
+                                AddUnique(extra);
+                            }
+                        }
+
+                        HashSet<Guid> attached = [];
+
+                        foreach (string normalizedName in orderedNames)
+                        {
+                            Keyword keyword;
+                            if (string.Equals(normalizedName, keyword1Entity.Name, StringComparison.OrdinalIgnoreCase))
+                            {
+                                keyword = keyword1Entity;
+                            }
+                            else if (string.Equals(normalizedName, keyword2Entity.Name, StringComparison.OrdinalIgnoreCase))
+                            {
+                                keyword = keyword2Entity;
+                            }
+                            else if (!keywordCache.TryGetValue(normalizedName, out keyword!))
+                            {
+                                keyword = await ItemNavigationAndKeywordsHelper.GetOrCreateKeywordForItemAttachmentAsync(
+                                    db,
+                                    taxonomyRegistry,
+                                    category.Name,
+                                    userId,
+                                    normalizedName,
+                                    cancellationToken);
+                                keywordCache[normalizedName] = keyword;
+                            }
+
+                            if (!attached.Add(keyword.Id))
+                            {
+                                continue;
+                            }
+
+                            itemKeywordsToInsert.Add(new ItemKeyword
+                            {
+                                Id = Guid.NewGuid(),
+                                ItemId = item.Id,
+                                KeywordId = keyword.Id,
+                                AddedAt = DateTime.UtcNow
+                            });
+                        }
                     }
-                }
 
-                if (itemKeywordsToInsert.Count > 0)
-                {
-                    db.ItemKeywords.AddRange(itemKeywordsToInsert);
-                    await db.SaveChangesAsync(cancellationToken);
-                }
-
-                if (!string.IsNullOrEmpty(userId) && Guid.TryParse(userId, out Guid userIdGuid))
-                {
-                    foreach (Item item in itemsToInsert)
+                    if (itemKeywordsToInsert.Count > 0)
                     {
-                        await auditService.LogAsync(
-                            AuditAction.ItemCreated,
-                            userId: userIdGuid,
-                            entityId: item.Id,
-                            cancellationToken: cancellationToken);
+                        db.ItemKeywords.AddRange(itemKeywordsToInsert);
+                        await db.SaveChangesAsync(cancellationToken);
+                    }
+
+                    if (Guid.TryParse(userId, out Guid userIdGuid))
+                    {
+                        foreach (Item item in itemsToInsert)
+                        {
+                            await auditService.LogAsync(
+                                AuditAction.ItemCreated,
+                                userId: userIdGuid,
+                                entityId: item.Id,
+                                cancellationToken: cancellationToken);
+                        }
                     }
                 }
-            }
 
-            if (transaction is not null)
-            {
-                await transaction.CommitAsync(cancellationToken);
-            }
+                if (transaction is not null)
+                {
+                    await transaction.CommitAsync(cancellationToken);
+                }
 
-            List<Guid> createdIds = itemsToInsert.Select(i => i.Id).ToList();
-            AddItemsBulk.Response response = new AddItemsBulk.Response(
-                request.Items.Count,
-                itemsToInsert.Count,
-                duplicateQuestions.Count,
-                errors.Count,
-                duplicateQuestions,
-                errors,
-                createdIds,
-                reassignedSeedIds.Count > 0 ? reassignedSeedIds : null);
-
-                return Result.Success(response);
+                List<Guid> createdIds = itemsToInsert.Select(item => item.Id).ToList();
+                return Result.Success(new AddItemsBulk.Response(
+                    request.Items.Count,
+                    itemsToInsert.Count,
+                    duplicateQuestions.Count,
+                    errors.Count,
+                    duplicateQuestions,
+                    errors,
+                    createdIds));
             }
             catch
             {
@@ -359,7 +343,9 @@ internal static class AddItemsBulkHandler
             finally
             {
                 if (transaction is not null)
+                {
                     await transaction.DisposeAsync();
+                }
             }
         }
         catch (Exception ex)
@@ -374,7 +360,10 @@ internal static class AddItemsBulkHandler
         CancellationToken cancellationToken)
     {
         if (transaction is null)
+        {
             return;
+        }
+
         try
         {
             await transaction.RollbackAsync(cancellationToken);

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "607b9ec7-3d35-47ee-a087-6628b5365cc7",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -7,7 +8,7 @@
     "correctAnswer": "The Zimmermann Telegram (proposed German-Mexican alliance against the U.S.)",
     "incorrectAnswers": [
       "The Hay-Pauncefote Treaty",
-      "The Gentlemen’s Agreement",
+      "The Gentlemen\u2019s Agreement",
       "The Rush-Bagot Agreement"
     ],
     "explanation": "Public outrage over the telegram and continued sinkings pushed Wilson toward belligerency.",
@@ -16,14 +17,14 @@
       "world-war-i",
       "wilson"
     ],
-    "source": "https://www.britannica.com/event/Zimmermann-Telegram",
-    "seedId": "d67bdb7a-189c-46b8-9c53-1336efa27ca0"
+    "source": "https://www.britannica.com/event/Zimmermann-Telegram"
   },
   {
+    "itemId": "60fa7c5b-076c-4f60-944f-afb40efd55ad",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
-    "question": "Congress adopted the Nineteenth Amendment in 1919, guaranteeing women’s suffrage based on whose decades of activism?",
+    "question": "Congress adopted the Nineteenth Amendment in 1919, guaranteeing women\u2019s suffrage based on whose decades of activism?",
     "correctAnswer": "Suffragists such as Susan B. Anthony, Elizabeth Cady Stanton, and later Alice Paul (among many)",
     "incorrectAnswers": [
       "The Anti-Saloon League alone",
@@ -36,10 +37,10 @@
       "suffrage",
       "amendment"
     ],
-    "source": "https://www.britannica.com/topic/Nineteenth-Amendment-United-States-Constitution",
-    "seedId": "bbb04937-69ed-43fb-b565-6e568e487848"
+    "source": "https://www.britannica.com/topic/Nineteenth-Amendment-United-States-Constitution"
   },
   {
+    "itemId": "8ec11912-01cd-4faa-aa0a-6182412551c5",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -56,14 +57,14 @@
       "depression",
       "economy"
     ],
-    "source": "https://www.britannica.com/event/Great-Depression",
-    "seedId": "ecc604c2-2533-4dae-90e2-0829f1737bdc"
+    "source": "https://www.britannica.com/event/Great-Depression"
   },
   {
+    "itemId": "31226d0d-48b0-4b3f-a4db-76251cbbc62a",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
-    "question": "Franklin Roosevelt’s first-term programs—relief, recovery, and reform—were collectively nicknamed what?",
+    "question": "Franklin Roosevelt\u2019s first-term programs\u2014relief, recovery, and reform\u2014were collectively nicknamed what?",
     "correctAnswer": "The New Deal",
     "incorrectAnswers": [
       "The Square Deal",
@@ -76,14 +77,14 @@
       "new-deal",
       "fdr"
     ],
-    "source": "https://www.britannica.com/event/New-Deal",
-    "seedId": "fe320813-05a9-410b-a0be-ec3fc513d27e"
+    "source": "https://www.britannica.com/event/New-Deal"
   },
   {
+    "itemId": "c32bc89d-b45a-49bc-b350-2b15b7e643aa",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
-    "question": "Japan’s December 7, 1941, attack on which U.S. naval base brought America fully into World War II?",
+    "question": "Japan\u2019s December 7, 1941, attack on which U.S. naval base brought America fully into World War II?",
     "correctAnswer": "Pearl Harbor, Hawaii",
     "incorrectAnswers": [
       "San Diego",
@@ -96,14 +97,14 @@
       "world-war-ii",
       "pearl-harbor"
     ],
-    "source": "https://www.britannica.com/event/Pearl-Harbor-attack",
-    "seedId": "50bc01b3-6af7-4a43-8145-b6eb11f735f5"
+    "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
   },
   {
+    "itemId": "aa1279b1-7549-474b-9b4e-24eb6ccf613e",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
-    "question": "The 1954 Supreme Court decision Brown v. Board of Education of Topeka overturned which “separate but equal” precedent?",
+    "question": "The 1954 Supreme Court decision Brown v. Board of Education of Topeka overturned which \u201cseparate but equal\u201d precedent?",
     "correctAnswer": "Plessy v. Ferguson (1896)",
     "incorrectAnswers": [
       "Dred Scott v. Sandford",
@@ -116,10 +117,10 @@
       "civil-rights",
       "education"
     ],
-    "source": "https://www.britannica.com/event/Brown-v-Board-of-Education-of-Topeka",
-    "seedId": "6fde55f3-9e1f-4276-a7c8-29688fc25137"
+    "source": "https://www.britannica.com/event/Brown-v-Board-of-Education-of-Topeka"
   },
   {
+    "itemId": "ab58b51d-f4fd-4604-ac8b-84bd4696eb26",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -136,10 +137,10 @@
       "civil-rights",
       "1964"
     ],
-    "source": "https://www.britannica.com/event/Civil-Rights-Act-United-States-1964",
-    "seedId": "324cf81c-c2b0-4c23-b308-7bc67c6e071f"
+    "source": "https://www.britannica.com/event/Civil-Rights-Act-United-States-1964"
   },
   {
+    "itemId": "60f7fffa-bb85-47e9-8712-84e0823e3a51",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -150,16 +151,16 @@
       "Apollo 13",
       "Gemini 4"
     ],
-    "explanation": "The landing fulfilled Kennedy’s pledge to reach the Moon before decade’s end.",
+    "explanation": "The landing fulfilled Kennedy\u2019s pledge to reach the Moon before decade\u2019s end.",
     "keywords": [
       "20th-century",
       "space",
       "apollo"
     ],
-    "source": "https://www.britannica.com/event/Apollo-11-mission",
-    "seedId": "99bcdfeb-1d2f-44fc-a8d5-ebe4ef27c559"
+    "source": "https://www.britannica.com/event/Apollo-11-mission"
   },
   {
+    "itemId": "33e38d54-25b0-49f5-bfd0-5ca4849519cb",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -176,10 +177,10 @@
       "nixon",
       "watergate"
     ],
-    "source": "https://www.britannica.com/event/Watergate-Scandal",
-    "seedId": "1edc1212-b648-423d-b88f-177d2493e2aa"
+    "source": "https://www.britannica.com/event/Watergate-Scandal"
   },
   {
+    "itemId": "78ae3035-5f6c-493d-b80d-1f76d24d4254",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -190,16 +191,16 @@
       "Dominican Republic",
       "Haiti"
     ],
-    "explanation": "Kennedy’s quarantine and secret diplomacy led Khrushchev to withdraw the missiles.",
+    "explanation": "Kennedy\u2019s quarantine and secret diplomacy led Khrushchev to withdraw the missiles.",
     "keywords": [
       "20th-century",
       "cold-war",
       "kennedy"
     ],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
-    "seedId": "7fbafaff-1fb5-49ab-851f-6c71a3d52a12"
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
   },
   {
+    "itemId": "682d31dc-0204-45c2-9d37-b6985690b66c",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
@@ -207,23 +208,23 @@
     "correctAnswer": "The quota system established in the Immigration Act of 1924 (Johnson-Reed)",
     "incorrectAnswers": [
       "The Chinese Exclusion Act alone",
-      "The Gentleman’s Agreement",
+      "The Gentleman\u2019s Agreement",
       "The Bracero Program"
     ],
-    "explanation": "The 1965 law prioritized family reunification and skills, transforming America’s immigrant demographics.",
+    "explanation": "The 1965 law prioritized family reunification and skills, transforming America\u2019s immigrant demographics.",
     "keywords": [
       "20th-century",
       "immigration",
       "1965"
     ],
-    "source": "https://www.britannica.com/topic/Immigration-Act-United-States-1965",
-    "seedId": "4867cd32-856e-41b7-b17c-62ebee9bbfa2"
+    "source": "https://www.britannica.com/topic/Immigration-Act-United-States-1965"
   },
   {
+    "itemId": "ac5c1d42-c98c-4456-9d4b-1b0c9f32af21",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "20th-century",
-    "question": "NATO allies led by the United States reversed Iraq’s 1990 annexation of Kuwait in which short war?",
+    "question": "NATO allies led by the United States reversed Iraq\u2019s 1990 annexation of Kuwait in which short war?",
     "correctAnswer": "The Persian Gulf War (Operation Desert Storm)",
     "incorrectAnswers": [
       "The Iraq War (2003)",
@@ -236,7 +237,6 @@
       "gulf-war",
       "bush"
     ],
-    "source": "https://www.britannica.com/event/Persian-Gulf-War",
-    "seedId": "ba351c6f-6e01-4edc-b40e-3daaedfb4864"
+    "source": "https://www.britannica.com/event/Persian-Gulf-War"
   }
 ]

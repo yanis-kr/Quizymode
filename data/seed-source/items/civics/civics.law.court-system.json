@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b9efd5f2-0350-4a35-8413-e0b4fdff3548",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -15,10 +16,10 @@
       "federal-courts",
       "trial-courts"
     ],
-    "source": "https://www.law.cornell.edu/wex/federal_court",
-    "seedId": "0f136d3f-be0a-5eba-a86f-591bec78fc7e"
+    "source": "https://www.law.cornell.edu/wex/federal_court"
   },
   {
+    "itemId": "22251ec7-60e3-4e7b-9414-a3f232ac3b7a",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -34,10 +35,10 @@
       "federal-courts",
       "appeals"
     ],
-    "source": "https://www.law.cornell.edu/wex/appellate_court",
-    "seedId": "a3443538-1c9d-5fcc-b87e-0a2df54e8d23"
+    "source": "https://www.law.cornell.edu/wex/appellate_court"
   },
   {
+    "itemId": "6529e15c-e290-4f17-be7e-5ce6fa1f04b6",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -53,10 +54,10 @@
       "federal-courts",
       "supreme-court"
     ],
-    "source": "https://www.law.cornell.edu/wex/supreme_court",
-    "seedId": "1e7d2cf4-5fc4-5331-8d00-77e101a58f9a"
+    "source": "https://www.law.cornell.edu/wex/supreme_court"
   },
   {
+    "itemId": "b42aef0b-b369-4ca5-b023-433717cda264",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -67,15 +68,15 @@
       "only in bankruptcy courts",
       "only in military courts"
     ],
-    "explanation": "The bulk of cases—family, probate, most contracts, most crimes—are handled by state court systems.",
+    "explanation": "The bulk of cases\u2014family, probate, most contracts, most crimes\u2014are handled by state court systems.",
     "keywords": [
       "state-courts",
       "jurisdiction"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/jurisdiction-state-federal-courts",
-    "seedId": "6a32578e-284c-5183-9988-c21d58d33c67"
+    "source": "https://www.uscourts.gov/about-federal-courts/jurisdiction-state-federal-courts"
   },
   {
+    "itemId": "751a9b7b-2895-4706-8069-ddddbd5be54c",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -91,10 +92,10 @@
       "trial-courts",
       "procedure"
     ],
-    "source": "https://www.law.cornell.edu/wex/court",
-    "seedId": "db917dec-f8b7-5db2-96bd-3eb0de1c9389"
+    "source": "https://www.law.cornell.edu/wex/court"
   },
   {
+    "itemId": "50a55ef5-6ddf-443c-b95f-ffdbdf0bbcdd",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "court-system",
@@ -110,7 +111,6 @@
       "federal-judges",
       "article-iii"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-3/",
-    "seedId": "aa6f5e39-3193-5641-bed8-04ed322ab0b8"
+    "source": "https://constitution.congress.gov/constitution/article-3/"
   }
 ]

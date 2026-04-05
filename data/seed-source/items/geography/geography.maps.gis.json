@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "0c547cac-b123-4187-8bfe-840c85b5d292",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
-    "question": "Emergency managers layer levees, hospitals, and flood depth grids in map software tied to real coordinates—what is that kind of system called?",
+    "question": "Emergency managers layer levees, hospitals, and flood depth grids in map software tied to real coordinates\u2014what is that kind of system called?",
     "correctAnswer": "A geographic information system (GIS)",
     "incorrectAnswers": [
       "A flight simulator only",
@@ -16,10 +17,10 @@
       "definitions",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
-    "seedId": "6885dda8-04d2-4bcc-a5ff-d980ae4bdae7"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
   },
   {
+    "itemId": "7e70379d-2a1d-4547-b918-63536c4fe574",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -36,10 +37,10 @@
       "spatial-data",
       "basics"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
-    "seedId": "90fdcc5f-f15c-416a-8156-680a10c8bc33"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
   },
   {
+    "itemId": "f65a575d-12b9-4a2d-9d18-0cf385503e27",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -56,10 +57,10 @@
       "habitat",
       "analysis"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
-    "seedId": "6a37ee72-af05-40e1-94c5-1f4c8dc10e1d"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
   },
   {
+    "itemId": "04d0283a-d0b2-42a1-a831-2c80147e5fe2",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -76,10 +77,10 @@
       "us-topo",
       "pdf"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
-    "seedId": "36739f12-4803-4157-9378-4b38a2a65a9a"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
   },
   {
+    "itemId": "143ffab7-d059-4082-8064-1064ae4ff61b",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -96,50 +97,50 @@
       "us-topo",
       "workflow"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
-    "seedId": "a5599c93-a5da-48d6-8f2a-35fa816a3708"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
   },
   {
+    "itemId": "226fa40e-bb56-4617-9f77-b9ea4c823815",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
-    "question": "NOAA’s GeoPlatform delivers maps and data through which widely used online GIS platform?",
-    "correctAnswer": "Esri’s ArcGIS Online",
+    "question": "NOAA\u2019s GeoPlatform delivers maps and data through which widely used online GIS platform?",
+    "correctAnswer": "Esri\u2019s ArcGIS Online",
     "incorrectAnswers": [
       "Microsoft Paint",
       "Adobe Audition",
       "Notepad only"
     ],
-    "explanation": "NOAA Climate.gov describes GeoPlatform as a GIS application using Esri’s ArcGIS Online.",
+    "explanation": "NOAA Climate.gov describes GeoPlatform as a GIS application using Esri\u2019s ArcGIS Online.",
     "keywords": [
       "gis",
       "noaa",
       "geoplatform"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps",
-    "seedId": "c8a4bd3f-c1f0-4a8d-836f-d54fd0cd52f2"
+    "source": "https://www.climate.gov/maps-data/dataset/noaas-geoplatform-geospatial-data-maps-apps"
   },
   {
+    "itemId": "d53c470a-01cb-4721-87ad-230099bb66ff",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
-    "question": "NCEI’s Map Viewer helps users find and download what broad categories of information?",
+    "question": "NCEI\u2019s Map Viewer helps users find and download what broad categories of information?",
     "correctAnswer": "climate and weather data",
     "incorrectAnswers": [
       "patent filings",
       "movie box-office receipts",
       "tax return PDFs"
     ],
-    "explanation": "NOAA lists NCEI’s Map Viewer for locating climate and weather datasets.",
+    "explanation": "NOAA lists NCEI\u2019s Map Viewer for locating climate and weather datasets.",
     "keywords": [
       "gis",
       "ncei",
       "climate-data"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator",
-    "seedId": "3d74bc27-39ef-40ec-8363-dac365e6bf9f"
+    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
   },
   {
+    "itemId": "8daa6e85-8211-408b-9a63-3d4ba7c982e4",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -156,10 +157,10 @@
       "hydrology",
       "pollution"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
-    "seedId": "2ba460e8-8775-4a7e-b24d-4844baf9b48a"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
   },
   {
+    "itemId": "868936bf-243b-4ab7-8158-46242556c8dc",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -176,10 +177,10 @@
       "applications",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis",
-    "seedId": "aa8f3bbe-e8e1-4963-b9b5-c296817e413e"
+    "source": "https://www.usgs.gov/faqs/what-geographic-information-system-gis"
   },
   {
+    "itemId": "1520614c-8eef-4092-99ad-a8ce5fb54ac0",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
@@ -196,14 +197,14 @@
       "national-map",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "b4cc2f16-d6ff-42c6-9838-a3df3864a7ec"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "fbf28969-775f-4f1b-b895-c02740dbdf8e",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "gis",
-    "question": "Climate.gov’s dataset gallery highlights GIS tools for exploring drought impacts through which federal hub?",
+    "question": "Climate.gov\u2019s dataset gallery highlights GIS tools for exploring drought impacts through which federal hub?",
     "correctAnswer": "Drought.gov (National Integrated Drought Information System)",
     "incorrectAnswers": [
       "IRS.gov",
@@ -216,7 +217,6 @@
       "drought",
       "noaa"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more",
-    "seedId": "bb1e149c-60a6-4a02-a601-5b3fe4a059d9"
+    "source": "https://www.climate.gov/maps-data/dataset/droughtgov-maps-graphs-and-more"
   }
 ]

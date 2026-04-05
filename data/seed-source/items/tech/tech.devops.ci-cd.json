@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f5409d6c-31bc-4c9f-9b1f-f220fd7e82cf",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -15,10 +16,10 @@
       "ci-cd",
       "continuous-integration"
     ],
-    "source": "https://martinfowler.com/articles/continuousIntegration.html",
-    "seedId": "b45b6f52-f0e0-5e3d-a2d5-7da17a2772ad"
+    "source": "https://martinfowler.com/articles/continuousIntegration.html"
   },
   {
+    "itemId": "95d8ca50-46d8-4dc3-8171-d9f2262a52b8",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -34,10 +35,10 @@
       "ci-cd",
       "pipeline"
     ],
-    "source": "https://docs.gitlab.com/ee/ci/pipelines/pipeline_artifacts.html",
-    "seedId": "27d0ce34-8614-5ece-92d8-204d13dd5667"
+    "source": "https://docs.gitlab.com/ee/ci/pipelines/pipeline_artifacts.html"
   },
   {
+    "itemId": "568213ed-b7d8-422a-8042-74b9ea3fb1a9",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -53,10 +54,10 @@
       "ci-cd",
       "delivery"
     ],
-    "source": "https://martinfowler.com/bliki/ContinuousDelivery.html",
-    "seedId": "602b3e6a-7624-5af8-bc9f-745e691aea43"
+    "source": "https://martinfowler.com/bliki/ContinuousDelivery.html"
   },
   {
+    "itemId": "b556b9e5-6bbe-4b52-af3a-8a9b1aa0255a",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -72,10 +73,10 @@
       "ci-cd",
       "testing"
     ],
-    "source": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions",
-    "seedId": "07fcd2ce-1af8-56c1-9400-9f2c3c5d62f5"
+    "source": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions"
   },
   {
+    "itemId": "b38fade1-0856-4324-97aa-c7ecd4e8abea",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -91,10 +92,10 @@
       "ci-cd",
       "deployment"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/devops/pipelines/release/approvals-gates",
-    "seedId": "bceaae22-84af-5699-b523-5b3f698775fa"
+    "source": "https://learn.microsoft.com/en-us/azure/devops/pipelines/release/approvals-gates"
   },
   {
+    "itemId": "79e2dce2-2435-47c7-ae0a-8ed5ffe2216c",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "ci-cd",
@@ -110,7 +111,6 @@
       "ci-cd",
       "automation"
     ],
-    "source": "https://www.jenkins.io/doc/book/pipeline/syntax/",
-    "seedId": "60f7d5a9-de74-5d32-ba14-3306f96cd2b4"
+    "source": "https://www.jenkins.io/doc/book/pipeline/syntax/"
   }
 ]

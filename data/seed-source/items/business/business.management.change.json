@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8403a70b-dad4-4192-a182-a7ca8c540040",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
@@ -16,10 +17,10 @@
       "adoption",
       "communication"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "157e57d3-7303-59d4-8b0a-d03dcced9fc4"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "675fcd01-92d3-4d20-b67b-bc999284a319",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
@@ -36,10 +37,10 @@
       "uncertainty",
       "adoption"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "81fa7135-9ada-559f-a9cd-2c411434469e"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "4f738f84-6ac0-4195-9c1e-470beccccfa5",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
@@ -47,7 +48,7 @@
     "correctAnswer": "It clarifies what is changing, why it matters, and how people will be affected so adoption is possible.",
     "incorrectAnswers": [
       "It replaces the need for planning so teams can act randomly",
-      "It’s only needed after the change is already complete",
+      "It\u2019s only needed after the change is already complete",
       "It guarantees that every employee will agree with the change"
     ],
     "explanation": "Effective communication reduces confusion and helps align expectations, which supports smoother implementation.",
@@ -56,14 +57,14 @@
       "clarity",
       "alignment"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "1362ea19-1a8b-57c7-b213-92186376e5a6"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "8c6fac06-b39a-4996-90e2-1782e3b9b2e2",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
-    "question": "In common change frameworks, what does “reinforcing” typically aim to do?",
+    "question": "In common change frameworks, what does \u201creinforcing\u201d typically aim to do?",
     "correctAnswer": "Make the new way of working stick by embedding it into processes, measures, or continued support.",
     "incorrectAnswers": [
       "Stop all feedback so the new behavior never needs adjustment",
@@ -76,10 +77,10 @@
       "sustainability",
       "process-embedding"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "87a8466b-8ac1-5f31-842d-aac49f352552"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "7e16d4aa-dec4-40b8-8190-f3dd9a4f5c04",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
@@ -87,7 +88,7 @@
     "correctAnswer": "Test or pilot the change with a limited group, then adjust before full rollout.",
     "incorrectAnswers": [
       "Roll out everything at once with no learning phase",
-      "Avoid any feedback so people don’t complain",
+      "Avoid any feedback so people don\u2019t complain",
       "Skip training until employees ask for help"
     ],
     "explanation": "Pilots reduce uncertainty by generating evidence about what works and what needs adjustment.",
@@ -96,10 +97,10 @@
       "risk-mitigation",
       "rollout"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "8f76f608-4e35-5a9d-95cc-6198d3f518b5"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "65332156-e477-4fcc-af29-558ac9ed0d78",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "change",
@@ -116,7 +117,6 @@
       "competence",
       "transition"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "d1552c7e-5d30-5def-96a5-27bd08bb4d34"
+    "source": "https://www.investopedia.com/"
   }
 ]

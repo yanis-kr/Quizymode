@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "af271795-a4ab-4876-812c-36bc7fbac5b1",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "film-terms",
@@ -15,10 +16,10 @@
       "film-terms",
       "close-up"
     ],
-    "source": "https://www.britannica.com/art/close-up",
-    "seedId": "c5590c19-c23b-5a0a-9650-1cf9267f25f5"
+    "source": "https://www.britannica.com/art/close-up"
   },
   {
+    "itemId": "a669685f-8e0f-4763-9d39-9de411bbef25",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "film-terms",
@@ -34,7 +35,6 @@
       "film-terms",
       "screenplay"
     ],
-    "source": "https://www.oscars.org/oscars/screenplays",
-    "seedId": "28d76d52-2b80-5278-8fc7-4f508eb78568"
+    "source": "https://www.oscars.org/oscars/screenplays"
   }
 ]

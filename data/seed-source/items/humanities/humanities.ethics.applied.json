@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c24927a0-763c-4469-8df2-40ec2cd21e7c",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "applied",
@@ -15,10 +16,10 @@
       "ethics-applied",
       "practical-ethics"
     ],
-    "source": "https://www.britannica.com/topic/applied-ethics",
-    "seedId": "7cbc94dc-5df8-5aef-86f2-58899505c8ff"
+    "source": "https://www.britannica.com/topic/applied-ethics"
   },
   {
+    "itemId": "ced187a6-046f-4c4b-abff-8da4c8b23f6f",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "applied",
@@ -34,7 +35,6 @@
       "ethics-applied",
       "technology"
     ],
-    "source": "https://plato.stanford.edu/entries/ethics-ai/",
-    "seedId": "c5c85df9-ab69-5ed0-af89-10bce45a716b"
+    "source": "https://plato.stanford.edu/entries/ethics-ai/"
   }
 ]

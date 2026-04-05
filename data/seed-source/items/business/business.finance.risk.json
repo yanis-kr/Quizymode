@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fe071758-ca2b-4209-9c5a-aa77abb3d153",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
@@ -16,10 +17,10 @@
       "risk-reduction",
       "portfolio"
     ],
-    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
-    "seedId": "57bf5a16-bf55-5d3b-b526-60b3cd506f4d"
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
   },
   {
+    "itemId": "44c811c7-4a7b-49ca-ab8c-24ff51ca00ee",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
@@ -30,16 +31,16 @@
       "The guaranteed worst loss that must happen every time.",
       "The total amount of capital a bank must hold to be fully safe."
     ],
-    "explanation": "VaR is an estimate tied to a horizon and confidence level, not a guarantee that the loss can’t be worse.",
+    "explanation": "VaR is an estimate tied to a horizon and confidence level, not a guarantee that the loss can\u2019t be worse.",
     "keywords": [
       "var",
       "risk-metrics",
       "confidence-level"
     ],
-    "source": "https://www.bis.org/publ/bcbs54.pdf",
-    "seedId": "05ecc3c0-e77b-570a-b4fe-f81082731df4"
+    "source": "https://www.bis.org/publ/bcbs54.pdf"
   },
   {
+    "itemId": "7f099f5b-b350-442d-bb5a-50681024cc5c",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
@@ -56,10 +57,10 @@
       "standard-deviation",
       "statistics"
     ],
-    "source": "https://www.investopedia.com/terms/s/standarddeviation.asp",
-    "seedId": "b929e330-b63d-5975-9269-5b2694069a5f"
+    "source": "https://www.investopedia.com/terms/s/standarddeviation.asp"
   },
   {
+    "itemId": "98e192d5-0b6a-4aa8-9092-a20b6f7cecd5",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
@@ -76,47 +77,46 @@
       "credit-risk",
       "liquidity-risk"
     ],
-    "source": "https://www.federalreserve.gov/supervisionreg/topics/market-risk.htm",
-    "seedId": "d1e4433d-bce1-507b-a8ef-4a140a91b58a"
+    "source": "https://www.federalreserve.gov/supervisionreg/topics/market-risk.htm"
   },
   {
+    "itemId": "d94f481b-1917-431c-85d5-84e6d1c4c1fd",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
     "question": "What is liquidity risk, in plain terms?",
-    "correctAnswer": "The risk that you can’t meet short-term cash needs without major losses or borrowing at extreme rates.",
+    "correctAnswer": "The risk that you can\u2019t meet short-term cash needs without major losses or borrowing at extreme rates.",
     "incorrectAnswers": [
-      "The risk that your accounting numbers won’t balance at month-end.",
+      "The risk that your accounting numbers won\u2019t balance at month-end.",
       "The risk that a single investment turns out to be less popular.",
       "The risk that a business model never grows."
     ],
-    "explanation": "Liquidity risk is about access to cash and funding when it’s needed, not about long-term business strategy alone.",
+    "explanation": "Liquidity risk is about access to cash and funding when it\u2019s needed, not about long-term business strategy alone.",
     "keywords": [
       "liquidity-risk",
       "cash-flow",
       "funding"
     ],
-    "source": "https://www.imf.org/en/Topics/liquidity-risk",
-    "seedId": "d8e3a6f3-81cc-5111-8f2f-ddbfe814804f"
+    "source": "https://www.imf.org/en/Topics/liquidity-risk"
   },
   {
+    "itemId": "69b902e4-272d-45d7-8e2e-a3ad935d6256",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "risk",
-    "question": "What’s the difference between risk and uncertainty in decision-making?",
-    "correctAnswer": "Risk has probabilities you can estimate; uncertainty means you don’t have reliable probability estimates.",
+    "question": "What\u2019s the difference between risk and uncertainty in decision-making?",
+    "correctAnswer": "Risk has probabilities you can estimate; uncertainty means you don\u2019t have reliable probability estimates.",
     "incorrectAnswers": [
       "Risk means you never lose money; uncertainty means you always lose money.",
       "Risk and uncertainty are the same thing with different labels.",
       "Uncertainty means probabilities are known with certainty."
     ],
-    "explanation": "In common decision theory, risk is when outcomes can be described with probabilities, while uncertainty is when you can’t reliably assign probabilities.",
+    "explanation": "In common decision theory, risk is when outcomes can be described with probabilities, while uncertainty is when you can\u2019t reliably assign probabilities.",
     "keywords": [
       "uncertainty",
       "probabilities",
       "decision-making"
     ],
-    "source": "https://www.investopedia.com/terms/u/uncertainty.asp",
-    "seedId": "7a886bab-2007-599d-9357-f9f92502128b"
+    "source": "https://www.investopedia.com/terms/u/uncertainty.asp"
   }
 ]

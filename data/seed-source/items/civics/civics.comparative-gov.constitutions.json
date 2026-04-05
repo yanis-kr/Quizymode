@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6dd30369-abfe-4436-9bca-bd54da8c0ce5",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -15,10 +16,10 @@
       "written-constitution",
       "fundamental-law"
     ],
-    "source": "https://www.congress.gov/constitution-annotated/",
-    "seedId": "845eb78f-0dbe-5a11-b686-f2f4c13743fb"
+    "source": "https://www.congress.gov/constitution-annotated/"
   },
   {
+    "itemId": "8a27d69a-598f-4d58-8b24-a452f2ade412",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -34,10 +35,10 @@
       "uncodified-constitution",
       "conventions"
     ],
-    "source": "https://www.parliament.uk/",
-    "seedId": "ff454c8a-6aea-598c-8673-464d05159334"
+    "source": "https://www.parliament.uk/"
   },
   {
+    "itemId": "81f6c76f-e7d4-4bbd-a198-2fecedaf67f3",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -53,10 +54,10 @@
       "amendment",
       "rigidity"
     ],
-    "source": "https://www.loc.gov/rr/program/bib/ourdocs/Constitution.html",
-    "seedId": "7ca29ca4-bac7-5e52-a106-3f79a923c491"
+    "source": "https://www.loc.gov/rr/program/bib/ourdocs/Constitution.html"
   },
   {
+    "itemId": "515eeb13-4ee4-48a4-95c3-23f50b40a91d",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -72,10 +73,10 @@
       "supremacy",
       "judicial-review"
     ],
-    "source": "https://www.britannica.com/topic/judicial-review",
-    "seedId": "430c7350-0ce5-5b7c-a1a3-813cba2d221a"
+    "source": "https://www.britannica.com/topic/judicial-review"
   },
   {
+    "itemId": "6995cc97-b11e-4cd6-a477-a737e8b6b96c",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -91,10 +92,10 @@
       "bill-of-rights",
       "fundamental-rights"
     ],
-    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
-    "seedId": "ab741b49-c86d-5d71-a759-570aed1d1d16"
+    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
   },
   {
+    "itemId": "e2e8c9e3-64b7-4106-9b43-5dd3b4273323",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "constitutions",
@@ -110,7 +111,6 @@
       "federalism",
       "division-of-powers"
     ],
-    "source": "https://www.oecd.org/governance/",
-    "seedId": "02a62133-6eac-5a3c-b324-721cfcf7ced7"
+    "source": "https://www.oecd.org/governance/"
   }
 ]

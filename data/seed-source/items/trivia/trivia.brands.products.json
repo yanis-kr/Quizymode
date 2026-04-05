@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "13bb6b94-4514-4164-873b-1b26c3067fc9",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
@@ -15,10 +16,10 @@
       "software",
       "microsoft"
     ],
-    "source": "https://www.britannica.com/money/Microsoft-Corporation",
-    "seedId": "c69f5ecc-3e17-51d2-96d8-6fec173d003a"
+    "source": "https://www.britannica.com/money/Microsoft-Corporation"
   },
   {
+    "itemId": "6535d46f-06e8-4099-83d1-fd2a95e51aa1",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
@@ -34,14 +35,14 @@
       "cloud",
       "microsoft"
     ],
-    "source": "https://www.britannica.com/money/Microsoft-Corporation",
-    "seedId": "699fa5ff-27e3-5b3b-b390-9abf6f63a2ce"
+    "source": "https://www.britannica.com/money/Microsoft-Corporation"
   },
   {
+    "itemId": "ec782e4a-4366-468e-a09b-89bf62c3c3b6",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
-    "question": "Apple’s 1976 debut computer product name was what?",
+    "question": "Apple\u2019s 1976 debut computer product name was what?",
     "correctAnswer": "Apple I",
     "incorrectAnswers": [
       "Macintosh",
@@ -53,10 +54,10 @@
       "hardware",
       "apple"
     ],
-    "source": "https://www.britannica.com/money/Apple-Inc",
-    "seedId": "8084c708-fca9-5279-98c7-a35fdb973fce"
+    "source": "https://www.britannica.com/money/Apple-Inc"
   },
   {
+    "itemId": "d626b8a1-2f79-4476-8e85-a657d262844d",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
@@ -72,33 +73,33 @@
       "hardware",
       "ibm"
     ],
-    "source": "https://www.britannica.com/money/International-Business-Machines-Corporation",
-    "seedId": "e7100c3c-c51a-5a38-b812-f8ece91a126b"
+    "source": "https://www.britannica.com/money/International-Business-Machines-Corporation"
   },
   {
+    "itemId": "8ba4265f-a7e0-4e88-95a5-658fe0ed0551",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
-    "question": "Coca‑Cola history lists TaB as the company’s first what kind of drink in 1963?",
+    "question": "Coca\u2011Cola history lists TaB as the company\u2019s first what kind of drink in 1963?",
     "correctAnswer": "diet drink",
     "incorrectAnswers": [
       "energy drink",
       "juice drink",
       "sparkling water"
     ],
-    "explanation": "Coca‑Cola’s timeline calls TaB the first diet drink from the company.",
+    "explanation": "Coca\u2011Cola\u2019s timeline calls TaB the first diet drink from the company.",
     "keywords": [
       "beverages",
       "coca-cola"
     ],
-    "source": "https://www.coca-colacompany.com/about-us/history",
-    "seedId": "6104b937-c8e3-51b3-8ae0-8489db561873"
+    "source": "https://www.coca-colacompany.com/about-us/history"
   },
   {
+    "itemId": "39df87b6-9317-442e-aa2f-a739cdab9225",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
-    "question": "Coca‑Cola history places introduction of the contour bottle design patent era in which year?",
+    "question": "Coca\u2011Cola history places introduction of the contour bottle design patent era in which year?",
     "correctAnswer": "1915",
     "incorrectAnswers": [
       "1925",
@@ -110,10 +111,10 @@
       "packaging",
       "coca-cola"
     ],
-    "source": "https://www.coca-colacompany.com/about-us/history",
-    "seedId": "804b6526-85e5-5a8b-8dde-0c8d19ca807f"
+    "source": "https://www.coca-colacompany.com/about-us/history"
   },
   {
+    "itemId": "e0309b2e-32bc-4294-a22c-8710ea09a557",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
@@ -129,10 +130,10 @@
       "apparel",
       "nike"
     ],
-    "source": "https://www.britannica.com/money/Nike-Inc",
-    "seedId": "98c08def-1294-514e-9164-983515ad0201"
+    "source": "https://www.britannica.com/money/Nike-Inc"
   },
   {
+    "itemId": "cb31ebeb-8864-4c3b-af0f-b5e76bc43d73",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
@@ -148,33 +149,33 @@
       "electronics",
       "samsung"
     ],
-    "source": "https://www.britannica.com/money/Samsung-Electronics",
-    "seedId": "50eafa3e-3f78-5626-8666-6d367df45786"
+    "source": "https://www.britannica.com/money/Samsung-Electronics"
   },
   {
+    "itemId": "36538732-8208-41d0-b5da-7012dd811242",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
-    "question": "McDonald’s is best known globally for which food format?",
+    "question": "McDonald\u2019s is best known globally for which food format?",
     "correctAnswer": "hamburgers and fast food",
     "incorrectAnswers": [
       "sushi",
       "pizza only",
       "steakhouses only"
     ],
-    "explanation": "McDonald’s is a hamburger fast-food chain.",
+    "explanation": "McDonald\u2019s is a hamburger fast-food chain.",
     "keywords": [
       "fast-food",
       "mcdonalds"
     ],
-    "source": "https://www.britannica.com/money/McDonalds-Corporation",
-    "seedId": "f04a66cd-451d-5de7-998a-b6843f949662"
+    "source": "https://www.britannica.com/money/McDonalds-Corporation"
   },
   {
+    "itemId": "06c1483f-6040-425a-a80b-bdd938dc2baa",
     "category": "trivia",
     "navigationKeyword1": "brands",
     "navigationKeyword2": "products",
-    "question": "Adobe’s creative software lineup is closely associated with which image-editing product name?",
+    "question": "Adobe\u2019s creative software lineup is closely associated with which image-editing product name?",
     "correctAnswer": "Photoshop",
     "incorrectAnswers": [
       "Excel",
@@ -186,7 +187,6 @@
       "software",
       "adobe"
     ],
-    "source": "https://www.britannica.com/money/Adobe-Inc",
-    "seedId": "936f96cc-7cc2-56c7-b4a2-32c41c09af1d"
+    "source": "https://www.britannica.com/money/Adobe-Inc"
   }
 ]

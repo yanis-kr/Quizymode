@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "cb2cf2d9-e27d-4e9b-b655-bdc8c654ecb2",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -16,10 +17,10 @@
       "scoring",
       "football"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "eff14735-745c-5344-b244-c328c5d91d49"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "452d5d35-5af7-4e3d-a77e-4c9a736b622e",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -36,10 +37,10 @@
       "scoring",
       "basketball"
     ],
-    "source": "https://www.britannica.com/sports/basketball",
-    "seedId": "21967d60-49ae-5883-83bb-c81870195f6d"
+    "source": "https://www.britannica.com/sports/basketball"
   },
   {
+    "itemId": "4a638057-2ff0-4b9f-a0a7-43df16998bb3",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -56,10 +57,10 @@
       "scoring",
       "baseball"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "41cfb3db-2c9c-5cee-a417-1d00d286ef76"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "b059e06f-cb08-4848-8b46-21300534f3d2",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -76,30 +77,10 @@
       "scoring",
       "golf"
     ],
-    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
-    "seedId": "53fa7821-47ef-5bf8-abf1-d2f31c24de78"
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "rules",
-    "navigationKeyword2": "scoring",
-    "question": "How many points is a goal worth in soccer?",
-    "correctAnswer": "One",
-    "incorrectAnswers": [
-      "Two",
-      "Three",
-      "Six"
-    ],
-    "explanation": "Each goal counts as one score in soccer.",
-    "keywords": [
-      "rules",
-      "scoring",
-      "soccer"
-    ],
-    "source": "https://www.britannica.com/sports/football-soccer",
-    "seedId": "87cab991-13d5-57de-b7a0-ea5f61e77698"
-  },
-  {
+    "itemId": "44efde3c-5560-4a8c-bf03-7ad96c8a88ac",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -116,10 +97,10 @@
       "scoring",
       "free-throw"
     ],
-    "source": "https://www.britannica.com/sports/basketball",
-    "seedId": "dc519707-22d4-5a3e-b864-89c931b235da"
+    "source": "https://www.britannica.com/sports/basketball"
   },
   {
+    "itemId": "6d5ed56a-bb28-4f5e-88ac-fa6fea151773",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -136,10 +117,10 @@
       "scoring",
       "par"
     ],
-    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html",
-    "seedId": "f5139dc8-0750-5dde-bb8b-1a57551cfc54"
+    "source": "https://www.usga.org/content/usga/home-page/rules-hub.html"
   },
   {
+    "itemId": "081b58b6-176e-4dd8-bccb-5e9a087d10b4",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -156,10 +137,10 @@
       "scoring",
       "tennis"
     ],
-    "source": "https://www.britannica.com/sports",
-    "seedId": "5cd45ad7-81a0-57ac-a485-65727b6e74d8"
+    "source": "https://www.britannica.com/sports"
   },
   {
+    "itemId": "d0148575-042b-468d-88bc-64eadb6163d3",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -176,10 +157,10 @@
       "scoring",
       "field-goal"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "8ec8cd93-600a-54e2-a9bb-961a4f0e28be"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "01e69f9b-60c1-46b2-b3c9-d59d2b40a652",
     "category": "sports",
     "navigationKeyword1": "rules",
     "navigationKeyword2": "scoring",
@@ -196,7 +177,6 @@
       "scoring",
       "hat-trick"
     ],
-    "source": "https://www.britannica.com/sports/ice-hockey",
-    "seedId": "555379c6-cbd0-5780-847d-cca8e9b2e232"
+    "source": "https://www.britannica.com/sports/ice-hockey"
   }
 ]

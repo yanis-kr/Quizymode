@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "0dd3e1cd-3722-4894-b553-8879ecb2abb1",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
-    "question": "According to the UN’s international migration overview, about how many international migrants were there worldwide in 2024?",
+    "question": "According to the UN\u2019s international migration overview, about how many international migrants were there worldwide in 2024?",
     "correctAnswer": "304 million",
     "incorrectAnswers": [
       "120 million",
@@ -16,10 +17,10 @@
       "migrant-stock",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "8408ab46-838b-406d-9bc7-e82b3ed355bc"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "b2457703-d252-41ff-afff-55f610e173dc",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -36,10 +37,10 @@
       "trends",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "c78f79a6-eb90-485d-82f7-b2c1d687ef36"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "529122df-f0f9-412a-bced-cdbf2f04c460",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -56,10 +57,10 @@
       "demographics",
       "shares"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "684acdd7-813c-45ab-81e0-089f7d680b6f"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "363ef308-c936-4057-bece-6d8697ad3008",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -76,10 +77,10 @@
       "demographics",
       "gender"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "593391e3-4fc8-47c7-8a03-477736b7b358"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "3a342ef2-22f1-499e-bc88-43dda16d6c55",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -96,10 +97,10 @@
       "definitions",
       "statistics"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "dfe49f4f-9b1f-4b0b-b139-0548480af332"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "afae4d78-27db-4270-addb-83561a3f45db",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -116,10 +117,10 @@
       "observances",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "07604b07-2582-4cc4-a396-fccf1719f086"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "a4b1533f-1769-4a59-a170-284ae81d54dc",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -136,14 +137,14 @@
       "iom",
       "organizations"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "4a293e44-1ff8-4eb4-a6cc-692cfb605a05"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "2bde3873-9af6-4ca2-8041-af227fa6d117",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
-    "question": "In which year did IOM enter into an agreement to become a United Nations–related organization?",
+    "question": "In which year did IOM enter into an agreement to become a United Nations\u2013related organization?",
     "correctAnswer": "2016",
     "incorrectAnswers": [
       "2005",
@@ -156,10 +157,10 @@
       "iom",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "116da0a0-8d67-4600-a956-35c9693ba6c9"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "924f6985-e6f2-4aa9-9d53-356c962ace01",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -176,10 +177,10 @@
       "global-compact",
       "governance"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "f5c745e2-b2a2-46a9-92c4-9394b53698ad"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "8681099b-6ee9-4cc0-ba38-7da661ef0479",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -196,10 +197,10 @@
       "global-compact",
       "diplomacy"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "87e91a2e-717d-4121-b589-23f919ac75dc"
+    "source": "https://www.un.org/en/global-issues/migration"
   },
   {
+    "itemId": "90656b68-0e2e-4072-b55c-dda162ca3054",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "migration",
@@ -216,7 +217,6 @@
       "sdgs",
       "policy"
     ],
-    "source": "https://www.un.org/en/global-issues/migration",
-    "seedId": "a51ee89e-c344-4427-af7c-583079344540"
+    "source": "https://www.un.org/en/global-issues/migration"
   }
 ]

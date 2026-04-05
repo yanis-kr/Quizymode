@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ff66f417-c571-4448-833a-ae529ce0370a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -16,10 +17,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/directconnect/",
-    "seedId": "b7fd573e-484f-4ebc-ae48-899224fe7f03"
+    "source": "https://aws.amazon.com/directconnect/"
   },
   {
+    "itemId": "6c33c63d-8ebd-4c94-bb0e-46a6fafeb84e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -36,10 +37,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/transit-gateway/",
-    "seedId": "066734d9-8b67-4787-a9e4-b103f41aa211"
+    "source": "https://aws.amazon.com/transit-gateway/"
   },
   {
+    "itemId": "194beda0-7e1a-4a25-b582-b199700c6720",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -56,10 +57,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/route53/resolver/",
-    "seedId": "1cf9daab-1c15-4f03-a812-5d892eab0ebb"
+    "source": "https://aws.amazon.com/route53/resolver/"
   },
   {
+    "itemId": "caa8b2dc-2b9e-4596-b39c-e8cc926d24b2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -76,10 +77,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/organizations/",
-    "seedId": "8adb3c13-27b0-4af3-9213-b6ca122fb954"
+    "source": "https://aws.amazon.com/organizations/"
   },
   {
+    "itemId": "f7b343aa-944a-4380-8f47-03a439bff6ba",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -96,10 +97,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudformation/",
-    "seedId": "0d31788b-e4a4-4e25-9490-b1579861b329"
+    "source": "https://aws.amazon.com/cloudformation/"
   },
   {
+    "itemId": "7c38f162-7fa7-416d-a995-4c8fb5a3b40a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -116,10 +117,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/elasticloadbalancing/",
-    "seedId": "6e51a146-bedb-44d8-bc3b-a83f933462e8"
+    "source": "https://aws.amazon.com/elasticloadbalancing/"
   },
   {
+    "itemId": "30c2b1fe-9b9d-4f6d-a92a-177c13189aa8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -136,10 +137,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/autoscaling/",
-    "seedId": "2bd8a5ad-d1be-4004-8dca-a0f76dec6ce4"
+    "source": "https://aws.amazon.com/autoscaling/"
   },
   {
+    "itemId": "1b4ef870-f355-4c0e-90ab-335495037ba7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -156,10 +157,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/route53/",
-    "seedId": "babe8553-2a82-45fd-ac01-734fd1639ca3"
+    "source": "https://aws.amazon.com/route53/"
   },
   {
+    "itemId": "6beb9458-78fb-472e-9f1a-99235554fb5d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -176,10 +177,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/",
-    "seedId": "3e0f8937-8e19-4bc0-8cbc-f03fb7188d71"
+    "source": "https://aws.amazon.com/cloudwatch/"
   },
   {
+    "itemId": "5cc25e9f-1c21-4c6d-a87b-6e81145ea872",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -196,10 +197,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/rds/",
-    "seedId": "f3454f1c-e0e8-4ba6-a2a9-ff618da95381"
+    "source": "https://aws.amazon.com/rds/"
   },
   {
+    "itemId": "6bb85552-6263-41a8-a4ed-cce023af8a0c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -216,10 +217,10 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/rds/",
-    "seedId": "68d6487f-0a23-4003-9e8a-e765923049e4"
+    "source": "https://aws.amazon.com/rds/"
   },
   {
+    "itemId": "d88733b9-63d7-482b-ad81-8be32a62cbfd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "sap-c02",
@@ -236,7 +237,6 @@
       "aws-architecture",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/backup/",
-    "seedId": "b3da174d-b9bf-438d-b42f-109af288861b"
+    "source": "https://aws.amazon.com/backup/"
   }
 ]

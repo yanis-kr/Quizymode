@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "569fa460-e006-410e-9b22-10dcc491976e",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -15,10 +16,10 @@
       "testing",
       "unit"
     ],
-    "source": "https://martinfowler.com/bliki/UnitTest.html",
-    "seedId": "4abee362-6ad1-5830-9c82-d47ccd5923f9"
+    "source": "https://martinfowler.com/bliki/UnitTest.html"
   },
   {
+    "itemId": "08d9790c-7264-4f53-9e80-53ebc7eebddb",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -34,10 +35,10 @@
       "testing",
       "integration"
     ],
-    "source": "https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html",
-    "seedId": "c2e61f03-f41a-5c1a-a21f-3cb7806bf2ad"
+    "source": "https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html"
   },
   {
+    "itemId": "c0303a31-2ac8-4071-a17a-768920119b3f",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -53,10 +54,10 @@
       "testing",
       "pyramid"
     ],
-    "source": "https://martinfowler.com/articles/practical-test-pyramid.html",
-    "seedId": "2b2265ad-c310-5c52-8b4d-f3c93dd227f2"
+    "source": "https://martinfowler.com/articles/practical-test-pyramid.html"
   },
   {
+    "itemId": "34694ea5-6bac-4500-b6ed-246accbe4982",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -72,10 +73,10 @@
       "testing",
       "mocks"
     ],
-    "source": "https://martinfowler.com/articles/mocksArentStubs.html",
-    "seedId": "c38d119a-6aa2-51e2-bbb0-420f9e1b62f4"
+    "source": "https://martinfowler.com/articles/mocksArentStubs.html"
   },
   {
+    "itemId": "e881c5e0-00cc-4fbe-befe-6f8e9637fca6",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -91,10 +92,10 @@
       "testing",
       "e2e"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/End-to-end_test",
-    "seedId": "5181c0d1-3337-5ada-b69a-9b5ca61ecbfd"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/End-to-end_test"
   },
   {
+    "itemId": "5da9fff5-ce3f-448e-a56a-a70f8477b58a",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "testing",
@@ -110,7 +111,6 @@
       "testing",
       "tdd"
     ],
-    "source": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
-    "seedId": "8f4a1575-c029-59f3-a324-0f9150e4fc8d"
+    "source": "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
   }
 ]

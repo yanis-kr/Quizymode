@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "21ab3e2b-5107-4d52-ac8e-1f661cd1321e",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "authors",
@@ -15,10 +16,10 @@
       "authors",
       "context"
     ],
-    "source": "https://www.loc.gov/programs/authors/",
-    "seedId": "b21d0dce-7444-5d08-a129-42a8007d5700"
+    "source": "https://www.loc.gov/programs/authors/"
   },
   {
+    "itemId": "dca2616f-cad5-4c13-8f44-e743f08a6415",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "authors",
@@ -34,7 +35,6 @@
       "authors",
       "pseudonym"
     ],
-    "source": "https://www.britannica.com/topic/pseudonym",
-    "seedId": "7ada26f3-e8d0-5f13-a4ea-490a0b8140dc"
+    "source": "https://www.britannica.com/topic/pseudonym"
   }
 ]

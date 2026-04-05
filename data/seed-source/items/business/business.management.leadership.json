@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e5fb2e54-4062-44da-8298-8032ef25a591",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
@@ -16,10 +17,10 @@
       "management",
       "direction"
     ],
-    "source": "https://www.mindtools.com/a4y7o2a/leadership-vs-management/",
-    "seedId": "e14b369c-36a8-538b-9211-b587ac4a59cf"
+    "source": "https://www.mindtools.com/a4y7o2a/leadership-vs-management/"
   },
   {
+    "itemId": "112c378c-6d22-45ac-aedd-f69800e9abde",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
@@ -36,30 +37,30 @@
       "motivation",
       "vision"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "73586248-6149-5824-9de8-12660ac7997f"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "45b44b24-7064-4c64-8aec-de72511fef47",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
     "question": "What does situational leadership emphasize?",
-    "correctAnswer": "Adjusting leadership style to the followers’ readiness/competence for the task.",
+    "correctAnswer": "Adjusting leadership style to the followers\u2019 readiness/competence for the task.",
     "incorrectAnswers": [
       "Using one leadership style regardless of team experience",
       "Never changing approach once a project starts",
       "Choosing style only based on organizational headcount"
     ],
-    "explanation": "Situational leadership is about matching leadership behaviors to the needs of the task and the team’s capability.",
+    "explanation": "Situational leadership is about matching leadership behaviors to the needs of the task and the team\u2019s capability.",
     "keywords": [
       "situational-leadership",
       "readiness",
       "style-match"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "4129cbf6-0980-50ff-815d-470100e331c9"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "79803c15-af8d-41ab-a291-70962c0e5920",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
@@ -68,7 +69,7 @@
     "incorrectAnswers": [
       "Only performing better on technical tasks than peers",
       "Never showing emotion in front of others",
-      "Making every decision without considering other people’s reactions"
+      "Making every decision without considering other people\u2019s reactions"
     ],
     "explanation": "EI is often framed as awareness and regulation of emotions that supports relationships and effective influence.",
     "keywords": [
@@ -76,15 +77,15 @@
       "communication",
       "leadership-skill"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "7087d275-6059-5a70-9a89-5b971e9d7717"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "bb95b373-914b-4c06-b664-7c303b292a05",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
     "question": "What does servant leadership primarily prioritize?",
-    "correctAnswer": "Serving others’ needs to help people grow and perform, rather than leading for personal power.",
+    "correctAnswer": "Serving others\u2019 needs to help people grow and perform, rather than leading for personal power.",
     "incorrectAnswers": [
       "Leading only to maximize status and authority",
       "Avoiding responsibility by delegating all tasks to others",
@@ -96,10 +97,10 @@
       "team-growth",
       "people-first"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "1f366c73-fe79-52c3-b96c-ad1b1efebfb0"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "d01b6f01-c260-45a3-a91a-a6e4c76166f4",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "leadership",
@@ -116,7 +117,6 @@
       "communication",
       "accountability"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "c1d83b95-9708-58ea-a2a2-b238a02db3af"
+    "source": "https://hbr.org/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "34894e8e-3a3d-4256-b616-04e78f171f2b",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -10,16 +11,16 @@
       "Greenland",
       "Russia"
     ],
-    "explanation": "The Canada–United States border is the longest international land boundary between two countries.",
+    "explanation": "The Canada\u2013United States border is the longest international land boundary between two countries.",
     "keywords": [
       "borders",
       "north-america",
       "canada"
     ],
-    "source": "https://www.britannica.com/place/Canada",
-    "seedId": "9e289893-d8ff-4091-85c8-f026b7c7c1f8"
+    "source": "https://www.britannica.com/place/Canada"
   },
   {
+    "itemId": "03b3c26b-df75-42aa-aca6-f74c9551d801",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -36,14 +37,14 @@
       "europe",
       "pyrenees"
     ],
-    "source": "https://www.britannica.com/place/Andorra",
-    "seedId": "f66eb40a-8050-425a-9463-42fd3f0c384b"
+    "source": "https://www.britannica.com/place/Andorra"
   },
   {
+    "itemId": "3aef0089-fa90-418d-becb-6405cdeb5c8e",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
-    "question": "Nepal’s land frontiers are shared with which two giant neighbors?",
+    "question": "Nepal\u2019s land frontiers are shared with which two giant neighbors?",
     "correctAnswer": "China and India",
     "incorrectAnswers": [
       "India and Bangladesh",
@@ -56,10 +57,10 @@
       "south-asia",
       "himalayas"
     ],
-    "source": "https://www.britannica.com/place/Nepal",
-    "seedId": "3bce8aa9-05ac-4ece-bddc-d66ef84a466c"
+    "source": "https://www.britannica.com/place/Nepal"
   },
   {
+    "itemId": "802642f8-892d-4494-bde7-9b83ff0844ca",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -76,10 +77,10 @@
       "europe",
       "poland"
     ],
-    "source": "https://www.britannica.com/place/Poland",
-    "seedId": "3ffb1cc5-a0c7-48ef-b131-1e89c29633e8"
+    "source": "https://www.britannica.com/place/Poland"
   },
   {
+    "itemId": "ddb02bb3-587c-4ea7-a196-05e73a107001",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -90,16 +91,16 @@
       "Peru",
       "Colombia"
     ],
-    "explanation": "Brazil’s enormous perimeter meets nearly every South American state, with Chile and Ecuador the notable exceptions.",
+    "explanation": "Brazil\u2019s enormous perimeter meets nearly every South American state, with Chile and Ecuador the notable exceptions.",
     "keywords": [
       "borders",
       "south-america",
       "brazil"
     ],
-    "source": "https://www.britannica.com/place/Brazil",
-    "seedId": "ffaa5525-bec8-4398-b12e-0ab779e65046"
+    "source": "https://www.britannica.com/place/Brazil"
   },
   {
+    "itemId": "b9af2be1-1f30-4798-8844-8da378196076",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -110,16 +111,16 @@
       "Russia",
       "Cuba"
     ],
-    "explanation": "The Canada–United States border follows the 49th parallel across much of the West from Lake of the Woods to the Pacific coast.",
+    "explanation": "The Canada\u2013United States border follows the 49th parallel across much of the West from Lake of the Woods to the Pacific coast.",
     "keywords": [
       "borders",
       "north-america",
       "latitude"
     ],
-    "source": "https://www.britannica.com/place/Canada",
-    "seedId": "57ddd9a3-c5dc-4b17-8003-287771a131b7"
+    "source": "https://www.britannica.com/place/Canada"
   },
   {
+    "itemId": "f9f7fc6f-aede-406e-8510-4004e470b61e",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -136,10 +137,10 @@
       "straits",
       "turkey"
     ],
-    "source": "https://www.britannica.com/place/Bosporus",
-    "seedId": "cff3424e-c1e0-4881-9b2e-b687cba4e7f1"
+    "source": "https://www.britannica.com/place/Bosporus"
   },
   {
+    "itemId": "48c6eafb-ae50-4b78-a9cf-06196a00b6ef",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -156,15 +157,15 @@
       "southern-africa",
       "enclaves"
     ],
-    "source": "https://www.britannica.com/place/Lesotho",
-    "seedId": "cd74c025-9e97-4db8-8620-0c1ad6c8cf93"
+    "source": "https://www.britannica.com/place/Lesotho"
   },
   {
+    "itemId": "0b75756f-74a4-44c8-8e5c-a07d6eb2e062",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
     "question": "Which river forms much of the border between the United States and Mexico?",
-    "correctAnswer": "The Rio Grande (Río Bravo)",
+    "correctAnswer": "The Rio Grande (R\u00edo Bravo)",
     "incorrectAnswers": [
       "The Colorado River",
       "The Mississippi River",
@@ -176,10 +177,10 @@
       "rivers",
       "north-america"
     ],
-    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico",
-    "seedId": "ee159387-80fc-4aee-9a42-4e9352779b42"
+    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
   },
   {
+    "itemId": "db25302d-192e-41f8-9903-efcceb08778f",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
@@ -190,20 +191,20 @@
       "France",
       "Austria"
     ],
-    "explanation": "San Marino is an enclave microstate lying entirely within Italy’s Apennine landscape.",
+    "explanation": "San Marino is an enclave microstate lying entirely within Italy\u2019s Apennine landscape.",
     "keywords": [
       "borders",
       "europe",
       "enclaves"
     ],
-    "source": "https://www.britannica.com/place/San-Marino",
-    "seedId": "df584db5-ba1b-4fb2-a125-9f02c4245a32"
+    "source": "https://www.britannica.com/place/San-Marino"
   },
   {
+    "itemId": "6f7579b4-d097-4328-a66b-bd19b7d47d08",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "borders",
-    "question": "Gibraltar’s land frontier is with which country?",
+    "question": "Gibraltar\u2019s land frontier is with which country?",
     "correctAnswer": "Spain",
     "incorrectAnswers": [
       "Portugal",
@@ -216,7 +217,6 @@
       "europe",
       "iberia"
     ],
-    "source": "https://www.britannica.com/place/Gibraltar",
-    "seedId": "b89e711b-697e-4e53-a454-f32382f40e6d"
+    "source": "https://www.britannica.com/place/Gibraltar"
   }
 ]

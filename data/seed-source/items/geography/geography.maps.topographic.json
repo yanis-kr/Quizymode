@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e2f8c09f-b45b-4272-946b-b70b791dd10b",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -16,10 +17,10 @@
       "contours",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "25abb42b-ed6a-4f87-9d27-93a979ffe048"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "ad81f0aa-8f36-4269-9f75-03f5593331f5",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -36,10 +37,10 @@
       "contours",
       "elevation"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "0a5bdd77-3232-4683-a0f5-088848a2ef66"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "b6d50d4c-e8a8-494d-9a3a-76ad222cd361",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -56,10 +57,10 @@
       "hydrography",
       "features"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "f06d2030-c5c4-4044-9765-97a0b6a06af0"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "4a0c80e4-39c3-48b8-8549-67a4405efc72",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -76,10 +77,10 @@
       "us-topo",
       "scale"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "f913a02c-63fb-4bd2-94e1-cf0511b7ec12"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "d0b55420-f184-403c-b7cc-49f761dc94ad",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -96,10 +97,10 @@
       "quadrangles",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps",
-    "seedId": "108d6637-fa1d-4e96-b7c2-1f98141ed64d"
+    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
   },
   {
+    "itemId": "60d0af08-6854-4791-985c-1483acb6e709",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -116,17 +117,17 @@
       "land-use",
       "planning"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "6175048c-a9e5-4e51-9822-a30ff6f44ecc"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "71611987-8a66-48a1-a3b6-0e1576855e8a",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
     "question": "Topographic maps record elevations relative to what common vertical reference?",
     "correctAnswer": "sea level",
     "incorrectAnswers": [
-      "the core–mantle boundary",
+      "the core\u2013mantle boundary",
       "airport barometers only",
       "tree canopy height only"
     ],
@@ -136,10 +137,10 @@
       "elevation",
       "sea-level"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "a88a3466-6c4b-46f0-b13d-f518b6ebfc75"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "1e44ee74-b7bb-495f-8a7e-4a6338837f90",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -156,10 +157,10 @@
       "cultural-features",
       "infrastructure"
     ],
-    "source": "https://www.britannica.com/science/topographic-map",
-    "seedId": "c1364b11-745e-4187-84ee-90907c19abe4"
+    "source": "https://www.britannica.com/science/topographic-map"
   },
   {
+    "itemId": "2ffa2a9d-3ca3-45f8-856b-a33ce19fda2d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -176,10 +177,10 @@
       "bathymetry",
       "oceans"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "a2c06de3-8d11-41b1-a0e9-26990e9afa72"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "2c02e150-fe1f-4906-9744-de4386cfcaaa",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
@@ -196,14 +197,14 @@
       "topobuilder",
       "on-demand"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "e80feaf2-2943-4a75-9dd0-5ca7ac29bae8"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "85cca622-1ad8-4f73-81dd-c5007b4aee4f",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "topographic",
-    "question": "A topographic map’s level of detail is described as intermediate between a small-area plan and what?",
+    "question": "A topographic map\u2019s level of detail is described as intermediate between a small-area plan and what?",
     "correctAnswer": "a large regional chorographic map",
     "incorrectAnswers": [
       "a star atlas",
@@ -216,7 +217,6 @@
       "map-types",
       "scale"
     ],
-    "source": "https://www.britannica.com/science/topographic-map",
-    "seedId": "8091b763-683e-4c0c-bb17-ee334b0e670d"
+    "source": "https://www.britannica.com/science/topographic-map"
   }
 ]

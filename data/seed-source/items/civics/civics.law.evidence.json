@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e86d3c11-9245-4719-a3c4-f80bfc923b68",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
@@ -15,10 +16,10 @@
       "evidence",
       "hearsay"
     ],
-    "source": "https://www.law.cornell.edu/wex/hearsay",
-    "seedId": "5c218c4f-86cd-582d-be1e-5f9533371c05"
+    "source": "https://www.law.cornell.edu/wex/hearsay"
   },
   {
+    "itemId": "04bd4a45-a01b-4cfd-bb63-ede8c25deb1b",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
@@ -34,15 +35,15 @@
       "evidence",
       "federal-rules"
     ],
-    "source": "https://www.uscourts.gov/rules-policies/current-rules-practice-procedure/federal-rules-evidence",
-    "seedId": "1c7bb93d-a63d-5365-811e-c6d4e679ae0a"
+    "source": "https://www.uscourts.gov/rules-policies/current-rules-practice-procedure/federal-rules-evidence"
   },
   {
+    "itemId": "4455fc78-3d19-491d-a3e2-6e4f08781390",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
-    "question": "What is the privilege that generally protects private attorney–client communications about legal advice?",
-    "correctAnswer": "attorney–client privilege",
+    "question": "What is the privilege that generally protects private attorney\u2013client communications about legal advice?",
+    "correctAnswer": "attorney\u2013client privilege",
     "incorrectAnswers": [
       "executive privilege for all citizens",
       "journalist privilege in every state by default",
@@ -53,10 +54,10 @@
       "evidence",
       "privilege"
     ],
-    "source": "https://www.law.cornell.edu/wex/attorney-client_privilege",
-    "seedId": "a87aa767-527a-5601-bee5-fdb185c92da4"
+    "source": "https://www.law.cornell.edu/wex/attorney-client_privilege"
   },
   {
+    "itemId": "c883c284-928f-4ef4-9441-b755a5afb5dd",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
@@ -72,15 +73,15 @@
       "evidence",
       "relevance"
     ],
-    "source": "https://www.law.cornell.edu/wex/relevance",
-    "seedId": "502fcd97-caed-5575-b335-627c968670fd"
+    "source": "https://www.law.cornell.edu/wex/relevance"
   },
   {
+    "itemId": "d3b5ebb9-e576-42b2-860c-de543ba88a2c",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
     "question": "In a criminal trial, who may object when the other side tries to introduce improper evidence?",
-    "correctAnswer": "either party’s attorney",
+    "correctAnswer": "either party\u2019s attorney",
     "incorrectAnswers": [
       "only the judge on their own",
       "only eyewitnesses",
@@ -91,10 +92,10 @@
       "evidence",
       "trial-procedure"
     ],
-    "source": "https://www.law.cornell.edu/wex/objection",
-    "seedId": "c3f4d776-6151-55b4-bb38-256779f60b80"
+    "source": "https://www.law.cornell.edu/wex/objection"
   },
   {
+    "itemId": "9428f0ae-ca9a-41ed-9f39-69a887b0ef4c",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "evidence",
@@ -102,7 +103,7 @@
     "correctAnswer": "to show what happened to the item from collection to court",
     "incorrectAnswers": [
       "to replace witness testimony entirely",
-      "to prove the defendant’s income",
+      "to prove the defendant\u2019s income",
       "to select the jury"
     ],
     "explanation": "A chain of custody helps show that evidence was not lost, swapped, or contaminated before trial.",
@@ -110,7 +111,6 @@
       "evidence",
       "chain-of-custody"
     ],
-    "source": "https://www.law.cornell.edu/wex/chain_of_custody",
-    "seedId": "017433d2-8477-5e2f-8b4a-ee34b00d94bf"
+    "source": "https://www.law.cornell.edu/wex/chain_of_custody"
   }
 ]

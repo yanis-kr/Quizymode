@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7eb08da5-b039-4d70-81de-49af496ce373",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -15,10 +16,10 @@
       "python",
       "concurrency"
     ],
-    "source": "https://wiki.python.org/moin/GlobalInterpreterLock",
-    "seedId": "f74c05b7-99c0-5f67-97ae-4cea00a7e393"
+    "source": "https://wiki.python.org/moin/GlobalInterpreterLock"
   },
   {
+    "itemId": "052139f9-f579-4d16-b46c-ecca43f86ca8",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -34,10 +35,10 @@
       "python",
       "modules"
     ],
-    "source": "https://docs.python.org/3/tutorial/modules.html",
-    "seedId": "0f5c0d38-4b8f-5ca1-84a9-2e1b3896a804"
+    "source": "https://docs.python.org/3/tutorial/modules.html"
   },
   {
+    "itemId": "38fe4b83-6723-47a5-a9f6-c8376649cba7",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -53,10 +54,10 @@
       "python",
       "tooling"
     ],
-    "source": "https://docs.python.org/3/library/venv.html",
-    "seedId": "bfbfe445-f06b-537c-885d-0af5b6b73b14"
+    "source": "https://docs.python.org/3/library/venv.html"
   },
   {
+    "itemId": "0ac32dcc-165d-4aff-8c35-baa03e5d27a8",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -72,10 +73,10 @@
       "python",
       "style"
     ],
-    "source": "https://peps.python.org/pep-0008/",
-    "seedId": "e84dd987-b336-56ba-a334-d15a41d9cf3e"
+    "source": "https://peps.python.org/pep-0008/"
   },
   {
+    "itemId": "036ccc56-fb0f-4f7a-9e2e-e4ae0f5d38b1",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -91,10 +92,10 @@
       "python",
       "generators"
     ],
-    "source": "https://docs.python.org/3/reference/simple_stmts.html#the-yield-statement",
-    "seedId": "62932528-ab2b-55d6-b4e4-6b43430f996f"
+    "source": "https://docs.python.org/3/reference/simple_stmts.html#the-yield-statement"
   },
   {
+    "itemId": "54ed769f-ba15-4f62-8a3a-d075e8e83c3d",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "python",
@@ -110,7 +111,6 @@
       "python",
       "data-model"
     ],
-    "source": "https://docs.python.org/3/reference/datamodel.html#object.__contains__",
-    "seedId": "7de39cf9-4b3e-585e-8623-9123bfb2fbab"
+    "source": "https://docs.python.org/3/reference/datamodel.html#object.__contains__"
   }
 ]

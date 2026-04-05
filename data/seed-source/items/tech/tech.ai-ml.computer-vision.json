@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "66450e9f-6bc6-4856-8577-dc3f314977a0",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -8,17 +9,17 @@
     "incorrectAnswers": [
       "A 3D mesh of the scene",
       "The camera serial number",
-      "A list of every pixel’s exact color name"
+      "A list of every pixel\u2019s exact color name"
     ],
     "explanation": "Classification assigns one or more categories to describe the dominant content of the image.",
     "keywords": [
       "ai-ml",
       "classification"
     ],
-    "source": "https://en.wikipedia.org/wiki/Computer_vision",
-    "seedId": "26208512-6fa6-50fa-94ea-95315916cd7d"
+    "source": "https://en.wikipedia.org/wiki/Computer_vision"
   },
   {
+    "itemId": "431df98d-d7eb-4ef3-bf30-42eb74bed5cd",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -26,7 +27,7 @@
     "correctAnswer": "Bounding boxes and class labels for multiple objects in one image",
     "incorrectAnswers": [
       "Only a single label with no locations",
-      "Only resizing the image to 1×1 pixels",
+      "Only resizing the image to 1\u00d71 pixels",
       "Only changing the color balance"
     ],
     "explanation": "Detection localizes instances so systems can count and track objects, not just name the scene.",
@@ -34,10 +35,10 @@
       "ai-ml",
       "object-detection"
     ],
-    "source": "https://arxiv.org/abs/1504.08083",
-    "seedId": "1f6273de-ce9c-527d-8e6b-415821301622"
+    "source": "https://arxiv.org/abs/1504.08083"
   },
   {
+    "itemId": "baf21f37-32be-44b9-ab87-b02eafc32600",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -53,10 +54,10 @@
       "ai-ml",
       "iou"
     ],
-    "source": "https://en.wikipedia.org/wiki/Jaccard_index",
-    "seedId": "b79d2020-16db-596b-a2df-b04ea425a3f1"
+    "source": "https://en.wikipedia.org/wiki/Jaccard_index"
   },
   {
+    "itemId": "7866bde4-bcb8-4981-81e1-1c0c2f839463",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -72,10 +73,10 @@
       "ai-ml",
       "augmentation"
     ],
-    "source": "https://www.tensorflow.org/tutorials/images/data_augmentation",
-    "seedId": "889b4621-b727-5bd3-80be-7bd8100fdbb8"
+    "source": "https://www.tensorflow.org/tutorials/images/data_augmentation"
   },
   {
+    "itemId": "a4c60115-b4c3-4419-8571-414ca29664a5",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -91,10 +92,10 @@
       "ai-ml",
       "transfer-learning"
     ],
-    "source": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
-    "seedId": "9af96330-d129-5236-b110-42ece0730b08"
+    "source": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
   },
   {
+    "itemId": "88b414ab-dc8c-4479-87f8-0eb71f5c5973",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
@@ -110,7 +111,6 @@
       "ai-ml",
       "images"
     ],
-    "source": "https://en.wikipedia.org/wiki/RGB_color_model",
-    "seedId": "833239f7-bd0a-5183-b79a-e447c6fcaa2a"
+    "source": "https://en.wikipedia.org/wiki/RGB_color_model"
   }
 ]

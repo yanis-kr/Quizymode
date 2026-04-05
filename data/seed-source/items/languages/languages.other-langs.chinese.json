@@ -1,66 +1,67 @@
 [
   {
+    "itemId": "a526cc0c-ef20-4b0c-86eb-80d068e444b8",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
-    "question": "What does '你好' (nǐ hǎo) mean?",
+    "question": "What does '\u4f60\u597d' (n\u01d0 h\u01ceo) mean?",
     "correctAnswer": "hello",
     "incorrectAnswers": [
       "goodbye",
       "thank you",
       "sorry"
     ],
-    "explanation": "'Nǐ hǎo' is one of the first greetings learners use, like hello.",
+    "explanation": "'N\u01d0 h\u01ceo' is one of the first greetings learners use, like hello.",
     "keywords": [
       "hello",
       "chinese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/hello",
-    "seedId": "b75f80d4-50f9-5f7d-8711-415ab73f040c"
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/hello"
   },
   {
+    "itemId": "96680d43-1589-4954-9604-65fd6938209b",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
-    "question": "What does '谢谢' (xièxie) mean?",
+    "question": "What does '\u8c22\u8c22' (xi\u00e8xie) mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
       "hello",
       "goodbye"
     ],
-    "explanation": "'Xièxie' is a common way to say thank you.",
+    "explanation": "'Xi\u00e8xie' is a common way to say thank you.",
     "keywords": [
       "thank-you",
       "chinese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/thank-you",
-    "seedId": "fe8357b9-8583-5469-876e-749f6735dc92"
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/thank-you"
   },
   {
+    "itemId": "6aa8cd14-ebc3-486f-a9e8-1b8b0b3ce978",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
-    "question": "What does '水' (shuǐ) mean?",
+    "question": "What does '\u6c34' (shu\u01d0) mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "fire",
       "rice",
       "tea"
     ],
-    "explanation": "'Shuǐ' means water in basic vocabulary.",
+    "explanation": "'Shu\u01d0' means water in basic vocabulary.",
     "keywords": [
       "water",
       "chinese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/water",
-    "seedId": "b173f538-1b4c-5959-92b7-3bb5130743af"
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/water"
   },
   {
+    "itemId": "a3999239-02a7-4ebb-b851-ec02b315f14e",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
-    "question": "Why do tones matter in Mandarin for words like 'mā' and 'mà'?",
+    "question": "Why do tones matter in Mandarin for words like 'm\u0101' and 'm\u00e0'?",
     "correctAnswer": "different tones can mean different words",
     "incorrectAnswers": [
       "tones never change meaning",
@@ -72,45 +73,44 @@
       "tones",
       "chinese-basics"
     ],
-    "source": "https://resources.allsetlearning.com/chinese/grammar/Tone_change_rules",
-    "seedId": "4fa3cfe8-e3f6-514a-836d-4a1f9e379047"
+    "source": "https://resources.allsetlearning.com/chinese/grammar/Tone_change_rules"
   },
   {
+    "itemId": "6590fdb0-5a3f-4689-be24-91bd576a4b9d",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
     "question": "What is a common neutral measure word for many everyday objects, often taught early?",
-    "correctAnswer": "个 (gè)",
+    "correctAnswer": "\u4e2a (g\u00e8)",
     "incorrectAnswers": [
-      "只 (zhǐ) for every noun in all cases",
-      "本 (běn) for every noun",
-      "张 (zhāng) for every noun"
+      "\u53ea (zh\u01d0) for every noun in all cases",
+      "\u672c (b\u011bn) for every noun",
+      "\u5f20 (zh\u0101ng) for every noun"
     ],
-    "explanation": "'个' is a very common general measure word in beginner speech.",
+    "explanation": "'\u4e2a' is a very common general measure word in beginner speech.",
     "keywords": [
       "measure-word",
       "chinese-basics"
     ],
-    "source": "https://resources.allsetlearning.com/chinese/grammar/Measure_word_%22ge%22",
-    "seedId": "26410d61-14df-5e84-9c34-1a077d16ba3d"
+    "source": "https://resources.allsetlearning.com/chinese/grammar/Measure_word_%22ge%22"
   },
   {
+    "itemId": "f92fde2e-e99f-4a37-8378-346f35a3356c",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "chinese",
-    "question": "What does '是' (shì) often mean in a simple 'A 是 B' sentence?",
+    "question": "What does '\u662f' (sh\u00ec) often mean in a simple 'A \u662f B' sentence?",
     "correctAnswer": "is / are (linking A and B)",
     "incorrectAnswers": [
       "only 'was'",
       "only 'have'",
       "only 'want'"
     ],
-    "explanation": "'Shì' is a basic verb for identity and classification in simple sentences.",
+    "explanation": "'Sh\u00ec' is a basic verb for identity and classification in simple sentences.",
     "keywords": [
       "shi",
       "chinese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/is",
-    "seedId": "ea115f49-076c-54f3-9cf7-b7665136a70c"
+    "source": "https://dictionary.cambridge.org/dictionary/english-chinese/is"
   }
 ]

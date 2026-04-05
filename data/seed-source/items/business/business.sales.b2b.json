@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b0803171-f4ae-4ec7-b4b5-8e3b9cf9b8ed",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -15,10 +16,10 @@
       "b2b",
       "buying-process"
     ],
-    "source": "https://www.gartner.com/en/sales/insights/b2b-buying-journey",
-    "seedId": "52c9be83-71e4-4956-9ac6-1f2871142201"
+    "source": "https://www.gartner.com/en/sales/insights/b2b-buying-journey"
   },
   {
+    "itemId": "6e4a0e6e-838f-4568-b342-66df8a06f9ef",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -34,10 +35,10 @@
       "buying-committee",
       "stakeholders"
     ],
-    "source": "https://www.salesforce.com/resources/articles/b2b-buying-committee/",
-    "seedId": "02f04c77-2876-4375-8576-f3959988773c"
+    "source": "https://www.salesforce.com/resources/articles/b2b-buying-committee/"
   },
   {
+    "itemId": "3ebf6082-4d93-4735-8e2c-6e433c8ae7c5",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -53,10 +54,10 @@
       "rfp",
       "procurement"
     ],
-    "source": "https://www.investopedia.com/terms/r/request-for-proposal.asp",
-    "seedId": "0e14c8bc-14ef-469f-a08a-96b20b689de5"
+    "source": "https://www.investopedia.com/terms/r/request-for-proposal.asp"
   },
   {
+    "itemId": "cbb73825-34b3-4e8a-b5b8-2e3c344a1e82",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -72,10 +73,10 @@
       "enterprise",
       "smb"
     ],
-    "source": "https://www.salesforce.com/resources/articles/enterprise-sales/",
-    "seedId": "54cfbab3-ca35-44c6-94d2-81503686e89f"
+    "source": "https://www.salesforce.com/resources/articles/enterprise-sales/"
   },
   {
+    "itemId": "5a856e49-c63a-4122-9df1-0538b17fd406",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -91,10 +92,10 @@
       "channel",
       "partners"
     ],
-    "source": "https://www.investopedia.com/terms/d/distribution-channel.asp",
-    "seedId": "2d40f638-ca05-4d5d-9b39-8a6800bfbbca"
+    "source": "https://www.investopedia.com/terms/d/distribution-channel.asp"
   },
   {
+    "itemId": "363cff63-0905-444c-83a2-161deb351751",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "b2b",
@@ -110,7 +111,6 @@
       "net-terms",
       "working-capital"
     ],
-    "source": "https://www.investopedia.com/terms/n/net30.asp",
-    "seedId": "425f0d7d-00e5-49f2-ba1c-e65f32973ac4"
+    "source": "https://www.investopedia.com/terms/n/net30.asp"
   }
 ]

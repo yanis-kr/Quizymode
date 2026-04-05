@@ -1,25 +1,26 @@
 [
   {
+    "itemId": "9d555be6-2cd3-41e0-a87d-1dd055ea6042",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
-    "question": "Which peak is Earth’s highest above sea level?",
+    "question": "Which peak is Earth\u2019s highest above sea level?",
     "correctAnswer": "Mount Everest",
     "incorrectAnswers": [
       "K2",
       "Kangchenjunga",
       "Lhotse"
     ],
-    "explanation": "Everest on the Nepal–Tibet border reaches the highest surveyed elevation on Earth’s surface.",
+    "explanation": "Everest on the Nepal\u2013Tibet border reaches the highest surveyed elevation on Earth\u2019s surface.",
     "keywords": [
       "mountains",
       "himalayas",
       "elevation"
     ],
-    "source": "https://www.britannica.com/place/Mount-Everest",
-    "seedId": "08c56bc6-f586-4c82-95e8-5ec7157d3f34"
+    "source": "https://www.britannica.com/place/Mount-Everest"
   },
   {
+    "itemId": "82677667-9ff9-4849-8810-0f6c2dee6062",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -30,16 +31,16 @@
       "Makalu",
       "Cho Oyu"
     ],
-    "explanation": "K2 in the Karakoram Range is the world’s second-highest summit.",
+    "explanation": "K2 in the Karakoram Range is the world\u2019s second-highest summit.",
     "keywords": [
       "mountains",
       "karakoram",
       "elevation"
     ],
-    "source": "https://www.britannica.com/place/K2",
-    "seedId": "d2caa379-f416-4ed3-a167-a10e5eb783f8"
+    "source": "https://www.britannica.com/place/K2"
   },
   {
+    "itemId": "1663d884-c1f5-4295-999d-bb1d03a89735",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -56,14 +57,14 @@
       "andes",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Andes-Mountains",
-    "seedId": "fd1be5a2-7d7c-4f37-9d29-f970fcb3cf6b"
+    "source": "https://www.britannica.com/place/Andes-Mountains"
   },
   {
+    "itemId": "704157ca-b711-467e-8376-1ee3f62fb996",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
-    "question": "Which range contains Mount Everest and many of the world’s highest peaks?",
+    "question": "Which range contains Mount Everest and many of the world\u2019s highest peaks?",
     "correctAnswer": "Himalayas",
     "incorrectAnswers": [
       "Alps",
@@ -76,10 +77,10 @@
       "himalayas",
       "asia"
     ],
-    "source": "https://www.britannica.com/place/Himalayas",
-    "seedId": "f35a7f1d-af5a-4672-baec-d020486a870f"
+    "source": "https://www.britannica.com/place/Himalayas"
   },
   {
+    "itemId": "d8dec682-d4ee-40e5-b2e7-1fb7338b299e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -90,16 +91,16 @@
       "Carpathians",
       "Apennines"
     ],
-    "explanation": "The Alps are Europe’s great middle mountain system north of the Mediterranean.",
+    "explanation": "The Alps are Europe\u2019s great middle mountain system north of the Mediterranean.",
     "keywords": [
       "mountains",
       "alps",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Alps",
-    "seedId": "7c81b103-fe12-4c61-9600-505300ca42e0"
+    "source": "https://www.britannica.com/place/Alps"
   },
   {
+    "itemId": "e615a3e8-628e-4968-8d78-87882c3297dd",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -116,10 +117,10 @@
       "atlas",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Atlas-Mountains",
-    "seedId": "37489f3e-c0a0-481a-9256-8dd0d0895a32"
+    "source": "https://www.britannica.com/place/Atlas-Mountains"
   },
   {
+    "itemId": "8b053432-3fb9-433a-93ca-e42ff9598203",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -130,20 +131,20 @@
       "Carpathian Mountains",
       "Scandes"
     ],
-    "explanation": "The Urals run north–south from the Arctic toward Kazakhstan.",
+    "explanation": "The Urals run north\u2013south from the Arctic toward Kazakhstan.",
     "keywords": [
       "mountains",
       "urals",
       "europe-asia"
     ],
-    "source": "https://www.britannica.com/place/Ural-Mountains",
-    "seedId": "6e6615bb-97c0-4c1e-aa5c-1e7b2a62734f"
+    "source": "https://www.britannica.com/place/Ural-Mountains"
   },
   {
+    "itemId": "bfde8275-a341-420e-a595-376fa1d3337f",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
-    "question": "Which freestanding volcanic peak in Tanzania is Africa’s highest mountain?",
+    "question": "Which freestanding volcanic peak in Tanzania is Africa\u2019s highest mountain?",
     "correctAnswer": "Kilimanjaro",
     "incorrectAnswers": [
       "Mount Kenya",
@@ -156,10 +157,10 @@
       "kilimanjaro",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Kilimanjaro",
-    "seedId": "7af18d16-4ea0-4cd3-a592-b67f00c0037f"
+    "source": "https://www.britannica.com/place/Kilimanjaro"
   },
   {
+    "itemId": "d3358c19-01df-4b07-b3b4-1b9a8926a774",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -176,10 +177,10 @@
       "andes",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Aconcagua",
-    "seedId": "df9e2c50-c604-4003-b164-a7d6f56a06dc"
+    "source": "https://www.britannica.com/place/Aconcagua"
   },
   {
+    "itemId": "2e86327c-b469-4802-b45f-d1662cc11893",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -190,16 +191,16 @@
       "Monte Rosa",
       "Finsteraarhorn"
     ],
-    "explanation": "Mont Blanc on the France–Italy border is the Alps’ culminating summit.",
+    "explanation": "Mont Blanc on the France\u2013Italy border is the Alps\u2019 culminating summit.",
     "keywords": [
       "mountains",
       "alps",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Mont-Blanc-mountain-Europe",
-    "seedId": "08a26172-b2d5-459d-9cd6-89d9167ccb05"
+    "source": "https://www.britannica.com/place/Mont-Blanc-mountain-Europe"
   },
   {
+    "itemId": "f37c2048-22c4-4f65-8e52-ff4b00eb4ce4",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "mountains",
@@ -216,7 +217,6 @@
       "pyrenees",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Pyrenees",
-    "seedId": "6e227ffe-0aa5-4b02-87b8-39583fb60a79"
+    "source": "https://www.britannica.com/place/Pyrenees"
   }
 ]

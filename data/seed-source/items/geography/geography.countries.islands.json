@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a53ea6df-e00a-44d0-8133-c5bd17b7ac0b",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -16,14 +17,14 @@
       "island-nations",
       "east-asia"
     ],
-    "source": "https://www.britannica.com/place/Japan",
-    "seedId": "92384577-59ed-4139-b42a-308571af6787"
+    "source": "https://www.britannica.com/place/Japan"
   },
   {
+    "itemId": "4f60d813-da9b-4832-b56b-9130e4b60f19",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
-    "question": "Which island nation off Africa’s southeastern coast is the world’s fourth-largest island?",
+    "question": "Which island nation off Africa\u2019s southeastern coast is the world\u2019s fourth-largest island?",
     "correctAnswer": "Madagascar",
     "incorrectAnswers": [
       "Mauritius",
@@ -36,10 +37,10 @@
       "island-nations",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Madagascar",
-    "seedId": "cf2966ec-df19-4dc9-8bb2-ed61420cae1c"
+    "source": "https://www.britannica.com/place/Madagascar"
   },
   {
+    "itemId": "15e18253-5b32-46c0-a9a8-67a84f0f314e",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -56,14 +57,14 @@
       "island-nations",
       "atlantic"
     ],
-    "source": "https://www.britannica.com/place/Iceland",
-    "seedId": "8f432807-ab75-4a6b-927b-940288fdcafb"
+    "source": "https://www.britannica.com/place/Iceland"
   },
   {
+    "itemId": "51d6bc8c-9f49-49c4-a82e-f42c192d9706",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
-    "question": "The United Kingdom’s core territory includes the island of Great Britain and part of which other island?",
+    "question": "The United Kingdom\u2019s core territory includes the island of Great Britain and part of which other island?",
     "correctAnswer": "Ireland (Northern Ireland)",
     "incorrectAnswers": [
       "Iceland",
@@ -76,10 +77,10 @@
       "island-nations",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/United-Kingdom",
-    "seedId": "c9ce7a53-1920-436f-a929-b8251849add3"
+    "source": "https://www.britannica.com/place/United-Kingdom"
   },
   {
+    "itemId": "f9eec228-261b-478a-9b72-4a9939c12d69",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -96,10 +97,10 @@
       "island-nations",
       "caribbean"
     ],
-    "source": "https://www.britannica.com/place/Cuba",
-    "seedId": "89541380-caf0-4c07-9354-fe1a96efabef"
+    "source": "https://www.britannica.com/place/Cuba"
   },
   {
+    "itemId": "57c47d08-6b5e-4024-a7cb-0a0fe1c3945e",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -110,16 +111,16 @@
       "Mauritius",
       "Seychelles"
     ],
-    "explanation": "Sri Lanka occupies a large island off India’s southeastern tip.",
+    "explanation": "Sri Lanka occupies a large island off India\u2019s southeastern tip.",
     "keywords": [
       "islands",
       "island-nations",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Sri-Lanka",
-    "seedId": "291cf9f5-7c76-47b6-be34-bdf5ed64d48a"
+    "source": "https://www.britannica.com/place/Sri-Lanka"
   },
   {
+    "itemId": "86217be5-e9dd-4d34-894b-94668d4b56ff",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -136,10 +137,10 @@
       "island-nations",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Philippines",
-    "seedId": "a4ccc4e7-b66b-4564-9344-164a08e4ec8d"
+    "source": "https://www.britannica.com/place/Philippines"
   },
   {
+    "itemId": "a5c08507-b109-470b-9079-1148e9f2c357",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -156,10 +157,10 @@
       "island-nations",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Ireland",
-    "seedId": "fa7cf7bb-3786-444c-af4d-5a8df0e62625"
+    "source": "https://www.britannica.com/place/Ireland"
   },
   {
+    "itemId": "5ce44482-b749-4522-b0d4-3b0ba0648364",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -176,10 +177,10 @@
       "island-nations",
       "mediterranean"
     ],
-    "source": "https://www.britannica.com/place/Cyprus",
-    "seedId": "d6370043-2e31-4e2e-907e-1729a78dfca7"
+    "source": "https://www.britannica.com/place/Cyprus"
   },
   {
+    "itemId": "adc310d3-4046-4dd4-adbf-98aa19d3a279",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
@@ -196,27 +197,26 @@
       "island-nations",
       "caribbean"
     ],
-    "source": "https://www.britannica.com/place/Saint-Vincent-and-the-Grenadines",
-    "seedId": "d92b8d98-50e8-48f6-bdba-c1fdc19188be"
+    "source": "https://www.britannica.com/place/Saint-Vincent-and-the-Grenadines"
   },
   {
+    "itemId": "84b6ba6b-2c38-4edb-a02b-e1857ee397d0",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "islands",
-    "question": "Which Pacific country’s two main islands are called Upolu and Savaiʻi?",
+    "question": "Which Pacific country\u2019s two main islands are called Upolu and Savai\u02bbi?",
     "correctAnswer": "Samoa",
     "incorrectAnswers": [
       "Tonga",
       "Fiji",
       "Vanuatu"
     ],
-    "explanation": "Samoa is a Polynesian nation centered on the islands of Upolu and Savaiʻi.",
+    "explanation": "Samoa is a Polynesian nation centered on the islands of Upolu and Savai\u02bbi.",
     "keywords": [
       "islands",
       "island-nations",
       "polynesia"
     ],
-    "source": "https://www.britannica.com/place/Samoa",
-    "seedId": "cae058c2-d1d6-44d2-99b9-3e6b20a2631f"
+    "source": "https://www.britannica.com/place/Samoa"
   }
 ]

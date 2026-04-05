@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3e10e638-eee4-4c49-9615-c6875b42dc1b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -16,10 +17,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c4f31260-9ed6-4f16-bb8f-b34bf14f554a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5d1dc2ed-7e27-4f20-933f-043dcc107a58",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -36,14 +37,14 @@
       "aws-compute",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c5dcf2c4-172b-4f96-a579-7d877b38ad69"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "22f48810-dc6a-431c-a703-147e26f7efd3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s facility has badge readers at every entraffice throughout the building. When badges are scanned, the readers send a message over\nHTTPS to indicate who attempted to access that particular entraffice.\nA solutions architect must design a system to process these messages from the sensors. The solution must be highly available, and the results\nmust be made available for the company’s security team to analyze.\nWhich system architecture should the solutions architect recommend?",
+    "question": "A company\u2019s facility has badge readers at every entraffice throughout the building. When badges are scanned, the readers send a message over\nHTTPS to indicate who attempted to access that particular entraffice.\nA solutions architect must design a system to process these messages from the sensors. The solution must be highly available, and the results\nmust be made available for the company\u2019s security team to analyze.\nWhich system architecture should the solutions architect recommend?",
     "correctAnswer": "Launch an Amazon EC2 instance to serve as the HTTPS endpoint and to process the messages. Configure the EC2 instance to save the results to an Amazon S3 bucket.",
     "incorrectAnswers": [
       "Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.",
@@ -58,10 +59,10 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "21406457-82fe-43f2-955b-ae531c868397"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9ac8406f-5120-444e-bb0b-b18157ab07b5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -80,10 +81,10 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0b3677f0-1b06-47a0-b048-6f76333e5230"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ca835a20-e935-4f36-a72e-d79f8c0dc86b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -103,19 +104,19 @@
       "iam",
       "cognito"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c821cee0-f8aa-4b54-b6b3-d94adc353448"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "448036a5-a61e-4ec0-bb98-47a67ff85b38",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a\nprivate subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on\nthe internet for software product updates that use the third party’s URL. Other internet traffic must be blocked.\nWhich solution meets these requirements?",
+    "question": "A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a\nprivate subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on\nthe internet for software product updates that use the third party\u2019s URL. Other internet traffic must be blocked.\nWhich solution meets these requirements?",
     "correctAnswer": "Update the route table for the private subnet to route the outbound traffic to an AWS Network Firewall rewall. Configure domain list rule groups.",
     "incorrectAnswers": [
       "Set up an AWS WAF web ACL. Create a custom set of rules that lter traffic requests based on source and destination IP address range sets.",
       "Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.",
-      "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet."
+      "Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB\u2019s target group for outbound access to the internet."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #327). Correct choice: A.",
     "keywords": [
@@ -125,10 +126,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3b4eaa96-c1f6-40c5-994a-c65b03010bef"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "64a56fec-656b-49b7-bd5f-87e9e7058195",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -149,14 +150,14 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f1913670-b1f3-4428-8776-80ab8e892a0c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "990cd1c3-336d-49c9-b8e8-95d3382b08f7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A security audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide a solution that will run\nregular security scans across a large eet of EC2 instances. The solution should also patch the EC2 instances on a regular schedule and provide a\nreport of each instance’s patch status.\nWhich solution will meet these requirements?",
+    "question": "A security audit reveals that Amazon EC2 instances are not being patched regularly. A solutions architect needs to provide a solution that will run\nregular security scans across a large eet of EC2 instances. The solution should also patch the EC2 instances on a regular schedule and provide a\nreport of each instance\u2019s patch status.\nWhich solution will meet these requirements?",
     "correctAnswer": "Set up Amazon Macie to scan the EC2 instances for software vulnerabilities. Set up a cron job on each EC2 instance to patch the instance on a regular schedule.",
     "incorrectAnswers": [
       "Turn on Amazon GuardDuty in the account. Configure GuardDuty to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Session Manager to patch the EC2 instances on a regular schedule.",
@@ -170,10 +171,10 @@
       "aws-security",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5fd94648-525e-42d8-b00c-00a7e4a2387e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7b11dfc2-f65f-4a33-8757-38501a7d689b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -193,14 +194,14 @@
       "rds",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "da8563cc-92c4-4e61-8bb7-8c11034d17ba"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "fdf58532-4744-405f-95d6-1278d068e257",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company’s network bandwidth is limited to 15\nMbps and cannot exceed 70% utilization.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company must migrate 20 TB of data from a data center to the AWS Cloud within 30 days. The company\u2019s network bandwidth is limited to 15\nMbps and cannot exceed 70% utilization.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Use AWS Snowball.",
     "incorrectAnswers": [
       "Use AWS DataSync.",
@@ -213,15 +214,15 @@
       "aws-storage",
       "snowball"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b5314898-bac7-431a-a460-a72b2af912e4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9ed988fe-1ffb-4359-bd5a-c62882265ec8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to provide its employees with secure access to condential and sensitive les. The company wants to ensure that the les can\nbe accessed only by authorized users. The les must be downloaded securely to the employees’ devices.\nThe les are stored in an on-premises Windows le server. However, due to an increase in remote usage, the le server is running out of capacity.\n.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Migrate the le server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traffic to the employees’ IP addresses.",
+    "question": "A company needs to provide its employees with secure access to condential and sensitive les. The company wants to ensure that the les can\nbe accessed only by authorized users. The les must be downloaded securely to the employees\u2019 devices.\nThe les are stored in an on-premises Windows le server. However, due to an increase in remote usage, the le server is running out of capacity.\n.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Migrate the le server to an Amazon EC2 instance in a public subnet. Configure the security group to limit inbound traffic to the employees\u2019 IP addresses.",
     "incorrectAnswers": [
       "Migrate the les to an Amazon FSx for Windows File Server le system. Integrate the Amazon FSx le system with the on-premises Active Directory. Configure AWS Client VPN.",
       "Migrate the les to Amazon S3, and create a private VPC endpoint. Create a signed URL to allow download.",
@@ -234,14 +235,14 @@
       "aws-networking",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bdb8e4cc-6e72-4794-8dea-149f48c5d139"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "342d65fe-22ae-4123-9eb8-bea14fac34b6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto\nScaling group across multiple Availability Zones. On the rst day of every month at midnight, the application becomes much slower when the\nmonth-end nancial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the\napplication.\nWhat should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
+    "question": "A company\u2019s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto\nScaling group across multiple Availability Zones. On the rst day of every month at midnight, the application becomes much slower when the\nmonth-end nancial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the\napplication.\nWhat should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
     "correctAnswer": "Configure an Amazon CloudFront distribution in front of the ALB.",
     "incorrectAnswers": [
       "Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
@@ -257,14 +258,14 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "98d335e6-441d-42e8-a45e-d52cbcd029f5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "844b0378-5c96-46ff-bc0c-264469375bca",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download les that are stored in Amazon S3. The\ncustomer’s application uses an SFTP client to download the les.\nWhich solution will meet these requirements with the LEAST operational overhead and no changes to the customer’s application?",
+    "question": "A company wants to give a customer the ability to use on-premises Microsoft Active Directory to download les that are stored in Amazon S3. The\ncustomer\u2019s application uses an SFTP client to download the les.\nWhich solution will meet these requirements with the LEAST operational overhead and no changes to the customer\u2019s application?",
     "correctAnswer": "Set up AWS Transfer Family with SFTP for Amazon S3. Configure integrated Active Directory authentication.",
     "incorrectAnswers": [
       "Set up AWS Database Migration Service (AWS DMS) to synchronize the on-premises client with Amazon S3. Configure integrated Active Directory authentication.",
@@ -278,10 +279,10 @@
       "aws-security",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "208e533f-d3f3-49d7-bb8b-23bcf5135b7f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5e351248-7725-4b62-908c-534087f24b7a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -301,14 +302,14 @@
       "auto-scaling",
       "step-functions"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9bf4a651-af55-4d36-a269-a8f2bd85f8c0"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c845c6bc-cb7b-404b-8b79-16f6f4019a4a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on\nAmazon EC2 instances. The company’s IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days.\nWhat should a solutions architect do to meet this requirement with the LEAST operational effort?",
+    "question": "A company hosts a multi-tier web application that uses an Amazon Aurora MySQL DB cluster for storage. The application tier is hosted on\nAmazon EC2 instances. The company\u2019s IT security guidelines mandate that the database credentials be encrypted and rotated every 14 days.\nWhat should a solutions architect do to meet this requirement with the LEAST operational effort?",
     "correctAnswer": "Create a new AWS Key Management Service (AWS KMS) encryption key. Use AWS Secrets Manager to create a new secret that uses the KMS key with the appropriate credentials. Associate the secret with the Aurora DB cluster. Configure a custom rotation period of 14 days.",
     "incorrectAnswers": [
       "Create two parameters in AWS Systems Manager Parameter Store: one for the user name as a string parameter and one that uses the SecureString type for the password. Select AWS Key Management Service (AWS KMS) encryption for the password parameter, and load these parameters in the application tier. Implement an AWS Lambda function that rotates the password every 14 days.",
@@ -327,10 +328,10 @@
       "secrets-manager",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "946dff48-b00f-4f93-a213-8856edd4584a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "40053f96-a59e-431a-b6fa-774932c73b77",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -351,10 +352,10 @@
       "auto-scaling",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "be71a53d-5535-4893-a323-63d10fe6b7be"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c4952039-b11c-4322-8cba-8218e5b7913a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -373,10 +374,10 @@
       "aurora",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e3b655f4-37db-4df9-8c70-e9b65b614a2e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4662ff4e-1a2d-460d-be4c-2513c7eaf170",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -397,14 +398,14 @@
       "kms",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f37059ae-b3b7-4a9e-be22-2a49aa15d104"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8f3da8b1-c630-4ffe-b724-ef2a43786519",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A media company hosts its website on AWS. The website application’s architecture includes a eet of Amazon EC2 instances behind an\nApplication Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company’s cybersecurity team reports that the application\nis vulnerable to SQL injection.\nHow should the company resolve this issue?",
+    "question": "A media company hosts its website on AWS. The website application\u2019s architecture includes a eet of Amazon EC2 instances behind an\nApplication Load Balancer (ALB) and a database that is hosted on Amazon Aurora. The company\u2019s cybersecurity team reports that the application\nis vulnerable to SQL injection.\nHow should the company resolve this issue?",
     "correctAnswer": "Use AWS WAF in front of the ALB. Associate the appropriate web ACLs with AWS WAF.",
     "incorrectAnswers": [
       "Create an ALB listener rule to reply to SQL injections with a xed response.",
@@ -422,14 +423,14 @@
       "alb",
       "waf"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "30bb1701-ff5f-42c8-9d05-432c8c13778a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f5593625-a083-428a-975a-a418279504bd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an Amazon S3 data lake that is governed by AWS Lake Formation. The company wants to create a visualization in Amazon\nQuickSight by joining the data in the data lake with operational data that is stored in an Amazon Aurora MySQL database. The company wants to\nenforce column-level authorization so that the company’s marketing team can access only a subset of columns in the database.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A company has an Amazon S3 data lake that is governed by AWS Lake Formation. The company wants to create a visualization in Amazon\nQuickSight by joining the data in the data lake with operational data that is stored in an Amazon Aurora MySQL database. The company wants to\nenforce column-level authorization so that the company\u2019s marketing team can access only a subset of columns in the database.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Use Amazon EMR to ingest the data directly from the database to the QuickSight SPICE engine. Include only the required columns.",
     "incorrectAnswers": [
       "Use AWS Glue Studio to ingest the data from the database to the S3 data lake. Attach an IAM policy to the QuickSight users to enforce column-level access control. Use Amazon S3 as the data source in QuickSight.",
@@ -448,7 +449,6 @@
       "quicksight",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7b487150-44ad-43b6-a46e-49320c7e9f21"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "db4e6d55-d52a-4557-b963-a18fc7f670ea",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
@@ -15,10 +16,10 @@
       "ai-ml",
       "supervised-learning"
     ],
-    "source": "https://scikit-learn.org/stable/supervised_learning.html",
-    "seedId": "ecd32b5e-8c3c-5b8f-b561-84e7a3713baf"
+    "source": "https://scikit-learn.org/stable/supervised_learning.html"
   },
   {
+    "itemId": "f7f4b515-eb78-469e-8e2d-a21f8312d711",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
@@ -34,10 +35,10 @@
       "ai-ml",
       "overfitting"
     ],
-    "source": "https://en.wikipedia.org/wiki/Overfitting",
-    "seedId": "c1e5bb30-9c0a-57ae-890c-b498f79add7b"
+    "source": "https://en.wikipedia.org/wiki/Overfitting"
   },
   {
+    "itemId": "ec01fdec-9d52-4fce-b786-a5003e7e1b8b",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
@@ -53,10 +54,10 @@
       "ai-ml",
       "evaluation"
     ],
-    "source": "https://developers.google.com/machine-learning/glossary#test-set",
-    "seedId": "bd27d41e-cbf6-53db-9ec5-cd0c3bd58707"
+    "source": "https://developers.google.com/machine-learning/glossary#test-set"
   },
   {
+    "itemId": "fe962c6c-7029-4527-bbba-37a4140e9c2b",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
@@ -72,14 +73,14 @@
       "ai-ml",
       "loss-functions"
     ],
-    "source": "https://en.wikipedia.org/wiki/Cross-entropy",
-    "seedId": "4dea7e61-8cbc-5c6d-a088-9ed993646d8b"
+    "source": "https://en.wikipedia.org/wiki/Cross-entropy"
   },
   {
+    "itemId": "70aba5b2-e61e-4892-888c-20f4e3993fa0",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "In the bias–variance view, what does high variance often suggest about the model?",
+    "question": "In the bias\u2013variance view, what does high variance often suggest about the model?",
     "correctAnswer": "It is sensitive to small changes in the training sample",
     "incorrectAnswers": [
       "It always predicts the majority class",
@@ -91,10 +92,10 @@
       "ai-ml",
       "bias-variance"
     ],
-    "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html",
-    "seedId": "7a520f88-8de9-57ef-996e-2a1afc53f307"
+    "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html"
   },
   {
+    "itemId": "0b48dfb6-d0a3-4c0f-8915-3c12a60d7676",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
@@ -110,7 +111,6 @@
       "ai-ml",
       "cross-validation"
     ],
-    "source": "https://scikit-learn.org/stable/modules/cross_validation.html",
-    "seedId": "a9ef25de-dc2f-5135-b461-d86dad7cfced"
+    "source": "https://scikit-learn.org/stable/modules/cross_validation.html"
   }
 ]

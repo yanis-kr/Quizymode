@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "303cd77f-1075-475b-9090-846f9921c3d7",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -16,10 +17,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/compute",
-    "seedId": "3f69a7a6-2725-44f0-9775-22ca59b5c8e5"
+    "source": "https://cloud.google.com/compute"
   },
   {
+    "itemId": "defa2ebb-cadd-4a8e-847e-a760658232df",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -36,10 +37,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/storage",
-    "seedId": "a8b3437c-ab01-4bdc-9c2d-845f1201bdfc"
+    "source": "https://cloud.google.com/storage"
   },
   {
+    "itemId": "07ba6bfa-e003-41e2-82ac-0cb54a57dbed",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -56,10 +57,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/vpc",
-    "seedId": "5dae5ff9-54fa-4639-995a-decfe59440b8"
+    "source": "https://cloud.google.com/vpc"
   },
   {
+    "itemId": "00daae45-19ab-4729-adc7-5647c2cf8816",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -76,10 +77,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/sql",
-    "seedId": "c97bcaf0-3d24-4704-adb6-b1e80ec1f435"
+    "source": "https://cloud.google.com/sql"
   },
   {
+    "itemId": "071dd0ec-0ccc-4a92-a359-46eb811fc9cc",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -96,10 +97,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/kubernetes-engine",
-    "seedId": "060ac996-5f30-442b-893c-0f9fcb9828fa"
+    "source": "https://cloud.google.com/kubernetes-engine"
   },
   {
+    "itemId": "f135ebec-437e-409e-8295-c1205b1360c9",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -116,10 +117,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/load-balancing",
-    "seedId": "db7ccbaf-8fde-4752-a2c1-6288f8b5e6a8"
+    "source": "https://cloud.google.com/load-balancing"
   },
   {
+    "itemId": "605e4def-5484-4cc9-be3f-2451bf733481",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -136,10 +137,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/pubsub",
-    "seedId": "09db8dbf-f858-47ba-be39-e648dbf71a24"
+    "source": "https://cloud.google.com/pubsub"
   },
   {
+    "itemId": "d0d4abcf-d8a5-4de2-87de-17c682fa128e",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -156,10 +157,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/monitoring",
-    "seedId": "6c1d9261-6f26-4b3b-be69-ee18c4257899"
+    "source": "https://cloud.google.com/monitoring"
   },
   {
+    "itemId": "d1265e04-f8a4-46f5-952c-b47c4c18c3d0",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -176,10 +177,10 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/products/networking/",
-    "seedId": "ae2f5b5c-f626-4faf-bd07-7191d7e317cd"
+    "source": "https://cloud.google.com/products/networking/"
   },
   {
+    "itemId": "7f8d393d-1273-495a-bd56-0ef11f31c9a4",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "ace",
@@ -196,7 +197,6 @@
       "google-cloud",
       "cloud-services"
     ],
-    "source": "https://cloud.google.com/run",
-    "seedId": "bfa480a4-a07d-443a-9ade-16e25844a59f"
+    "source": "https://cloud.google.com/run"
   }
 ]

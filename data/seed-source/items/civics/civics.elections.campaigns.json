@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3351a1dc-2fae-4a1e-ba48-7f882e0eba84",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -15,10 +16,10 @@
       "fec",
       "campaign-finance"
     ],
-    "source": "https://www.fec.gov/about/",
-    "seedId": "4659b825-85a1-5431-a26d-8713bfea5d98"
+    "source": "https://www.fec.gov/about/"
   },
   {
+    "itemId": "b44013b8-5dee-4f67-863d-ae46066b3602",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -34,10 +35,10 @@
       "foreign-contributions",
       "campaign-rules"
     ],
-    "source": "https://www.fec.gov/help-candidates-and-committees/foreign-nationals/",
-    "seedId": "dd4bb856-73c1-5541-a875-bcc6458a3924"
+    "source": "https://www.fec.gov/help-candidates-and-committees/foreign-nationals/"
   },
   {
+    "itemId": "03b6d0e3-4af0-444f-a93b-9953e9adc04c",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -53,10 +54,10 @@
       "disclosure",
       "reporting"
     ],
-    "source": "https://www.fec.gov/help-candidates-and-committees/reporting/",
-    "seedId": "0c776360-46e6-562c-95ac-9bdcb0706cea"
+    "source": "https://www.fec.gov/help-candidates-and-committees/reporting/"
   },
   {
+    "itemId": "169c1fc7-0aac-47d7-a6a4-45e695cc6260",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -72,10 +73,10 @@
       "independent-expenditures",
       "coordination"
     ],
-    "source": "https://www.fec.gov/help-candidates-and-committees/making-independent-expenditures/",
-    "seedId": "22e22aff-5393-5f4c-be54-ad3f4b05f97e"
+    "source": "https://www.fec.gov/help-candidates-and-committees/making-independent-expenditures/"
   },
   {
+    "itemId": "57fcab35-ace3-42c4-b109-29bb8de128fa",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -91,10 +92,10 @@
       "public-financing",
       "presidential-campaigns"
     ],
-    "source": "https://www.fec.gov/introduction-campaign-finance/presidential-elections/public-funding-presidential-elections/",
-    "seedId": "f47058c1-3d72-53aa-9876-0b090306239e"
+    "source": "https://www.fec.gov/introduction-campaign-finance/presidential-elections/public-funding-presidential-elections/"
   },
   {
+    "itemId": "8d7f5a4d-0c70-4442-a275-7ce3e431112d",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "campaigns",
@@ -110,7 +111,6 @@
       "campaign-ads",
       "broadcast-rules"
     ],
-    "source": "https://www.fcc.gov/consumers/guides/broadcasting-political-ads",
-    "seedId": "5d1da774-ae1c-5993-b7a7-3da547c41c9e"
+    "source": "https://www.fcc.gov/consumers/guides/broadcasting-political-ads"
   }
 ]

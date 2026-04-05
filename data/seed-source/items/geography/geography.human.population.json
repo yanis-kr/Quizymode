@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8a152f35-888a-4ee0-a38b-d249e227a6c4",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -16,10 +17,10 @@
       "un-estimates",
       "south-asia"
     ],
-    "source": "https://www.un.org/development/desa/pd/world-population-prospects-2024",
-    "seedId": "70c0276c-7a0c-4d62-8829-d3128a9cc0b4"
+    "source": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
   },
   {
+    "itemId": "b9db4afc-01a4-49da-a32b-b0838cce4144",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -36,10 +37,10 @@
       "milestones",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/dayof8billion",
-    "seedId": "80fa0ec3-a709-4032-802b-54996159e70f"
+    "source": "https://www.un.org/en/dayof8billion"
   },
   {
+    "itemId": "7fc6bd21-8001-4eb2-ac29-892befa7dd39",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -56,14 +57,14 @@
       "africa",
       "nigeria"
     ],
-    "source": "https://www.britannica.com/place/Nigeria",
-    "seedId": "738a4585-f848-4969-a540-0e66c811acd3"
+    "source": "https://www.britannica.com/place/Nigeria"
   },
   {
+    "itemId": "060d7508-5076-4d05-b6c8-c1c718806e82",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
-    "question": "Which Southeast Asian archipelago country is among the world’s most populous states?",
+    "question": "Which Southeast Asian archipelago country is among the world\u2019s most populous states?",
     "correctAnswer": "Indonesia",
     "incorrectAnswers": [
       "Malaysia",
@@ -76,10 +77,10 @@
       "indonesia",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Indonesia",
-    "seedId": "23950e8b-5f9c-485d-a614-48a0de841959"
+    "source": "https://www.britannica.com/place/Indonesia"
   },
   {
+    "itemId": "11f6e331-7f9c-4f74-9e20-9660bedf3b14",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -96,14 +97,14 @@
       "density",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Bangladesh",
-    "seedId": "54d73bd4-1121-4bce-8816-39dbcf579547"
+    "source": "https://www.britannica.com/place/Bangladesh"
   },
   {
+    "itemId": "64a9087a-7fd3-4461-a700-1406c3c6fed6",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
-    "question": "Which country lies along the Indus Valley and is among the world’s most populous states?",
+    "question": "Which country lies along the Indus Valley and is among the world\u2019s most populous states?",
     "correctAnswer": "Pakistan",
     "incorrectAnswers": [
       "Afghanistan",
@@ -116,10 +117,10 @@
       "pakistan",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Pakistan",
-    "seedId": "50f2acf6-d30d-4d8a-a166-6f7f56e6ac30"
+    "source": "https://www.britannica.com/place/Pakistan"
   },
   {
+    "itemId": "e999e0cf-6f19-4290-bcce-fa520a85dde8",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -136,30 +137,30 @@
       "americas",
       "united-states"
     ],
-    "source": "https://www.britannica.com/place/United-States",
-    "seedId": "a1823944-d08b-4ad6-a674-bb021fc3e54a"
+    "source": "https://www.britannica.com/place/United-States"
   },
   {
+    "itemId": "69b20baa-9ca4-4d27-9120-fdc0198827d8",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
-    "question": "Which South American country is the continent’s most populous?",
+    "question": "Which South American country is the continent\u2019s most populous?",
     "correctAnswer": "Brazil",
     "incorrectAnswers": [
       "Argentina",
       "Colombia",
       "Peru"
     ],
-    "explanation": "Brazil’s population is larger than that of any other South American state.",
+    "explanation": "Brazil\u2019s population is larger than that of any other South American state.",
     "keywords": [
       "population",
       "brazil",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Brazil",
-    "seedId": "2e8f718e-57f9-46e7-a0e2-8876fc990a73"
+    "source": "https://www.britannica.com/place/Brazil"
   },
   {
+    "itemId": "e1c01ed7-02b9-4f69-afc4-9943945298c1",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -176,10 +177,10 @@
       "european-union",
       "germany"
     ],
-    "source": "https://www.britannica.com/place/Germany",
-    "seedId": "c7c0ee57-bc5d-4873-899c-c58fb61db85f"
+    "source": "https://www.britannica.com/place/Germany"
   },
   {
+    "itemId": "a5936e89-db00-4b63-a826-116f98b2fc7e",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -196,10 +197,10 @@
       "census",
       "united-states"
     ],
-    "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html",
-    "seedId": "3dd7b5a2-b278-404c-a1e1-59ec1f0bd1cc"
+    "source": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html"
   },
   {
+    "itemId": "efcea690-f3a4-4056-bd66-ddf951a2c582",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "population",
@@ -216,7 +217,6 @@
       "japan",
       "east-asia"
     ],
-    "source": "https://www.britannica.com/place/Japan",
-    "seedId": "d0c6867e-6029-42e8-9a1e-e15278ce6684"
+    "source": "https://www.britannica.com/place/Japan"
   }
 ]

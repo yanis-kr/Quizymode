@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c964812d-865c-41a4-8317-2055456e60bd",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -16,10 +17,10 @@
       "profit",
       "performance"
     ],
-    "source": "https://www.investopedia.com/terms/i/incomestatement.asp",
-    "seedId": "6af58e53-9e96-5989-8202-d603f1313653"
+    "source": "https://www.investopedia.com/terms/i/incomestatement.asp"
   },
   {
+    "itemId": "ed753082-3ed9-4f67-a40a-1e34142f9764",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -30,16 +31,16 @@
       "Future budget projections for the next quarter",
       "A list of audit issues and management responses"
     ],
-    "explanation": "A balance sheet is a snapshot that reports what the company owns (assets), owes (liabilities), and the owners’ residual interest (equity).",
+    "explanation": "A balance sheet is a snapshot that reports what the company owns (assets), owes (liabilities), and the owners\u2019 residual interest (equity).",
     "keywords": [
       "balance-sheet",
       "assets",
       "liabilities"
     ],
-    "source": "https://www.sec.gov/reportspubs/investor-publications/investorpubsintrohtml",
-    "seedId": "68187ab0-3b31-512b-b9d9-ba4924ad9bb2"
+    "source": "https://www.sec.gov/reportspubs/investor-publications/investorpubsintrohtml"
   },
   {
+    "itemId": "74256520-f2bf-46df-b80a-c2b827253b47",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -50,16 +51,16 @@
       "Cash equals profit plus debt",
       "Equity equals liabilities minus assets"
     ],
-    "explanation": "The accounting equation expresses that a firm’s assets are funded either by creditors (liabilities) or owners (equity).",
+    "explanation": "The accounting equation expresses that a firm\u2019s assets are funded either by creditors (liabilities) or owners (equity).",
     "keywords": [
       "accounting-equation",
       "equity",
       "assets"
     ],
-    "source": "https://www.fasb.org/",
-    "seedId": "148d9346-cc6b-500d-a5d0-5ff519800e6f"
+    "source": "https://www.fasb.org/"
   },
   {
+    "itemId": "5411bfc0-4ffe-409a-940e-70029816a7dd",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -68,18 +69,18 @@
     "incorrectAnswers": [
       "The day-to-day change in cash from operating activity",
       "A fixed amount of tax the company must pay each year",
-      "A guarantee that an asset’s market value will decline at the same pace"
+      "A guarantee that an asset\u2019s market value will decline at the same pace"
     ],
-    "explanation": "Depreciation spreads an asset’s cost across periods, matching expense recognition to the asset’s use.",
+    "explanation": "Depreciation spreads an asset\u2019s cost across periods, matching expense recognition to the asset\u2019s use.",
     "keywords": [
       "depreciation",
       "expense-allocation",
       "assets"
     ],
-    "source": "https://www.investopedia.com/terms/d/depreciation.asp",
-    "seedId": "77bca9e7-bc37-5d22-9824-20d8c5798325"
+    "source": "https://www.investopedia.com/terms/d/depreciation.asp"
   },
   {
+    "itemId": "4e5a1106-2c91-44fc-ad60-033f3e1faafe",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -96,10 +97,10 @@
       "cash",
       "operating-cash-flow"
     ],
-    "source": "https://www.sec.gov/education/capital-markets/overview-of-corporate-disclosures",
-    "seedId": "62d142a4-4f7f-5312-9f97-e16477ee3752"
+    "source": "https://www.sec.gov/education/capital-markets/overview-of-corporate-disclosures"
   },
   {
+    "itemId": "b9948571-4b89-4811-b448-256f6d6aaecb",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "financial",
@@ -116,7 +117,6 @@
       "revenue-recognition",
       "earnings"
     ],
-    "source": "https://www.fasb.org/",
-    "seedId": "34ec8fd8-5a2f-5619-9703-5618ea77bb24"
+    "source": "https://www.fasb.org/"
   }
 ]

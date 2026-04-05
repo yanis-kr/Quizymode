@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9b8f2761-30d0-4365-9681-7e39a941afdb",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -15,10 +16,10 @@
       "java",
       "jvm"
     ],
-    "source": "https://en.wikipedia.org/wiki/Java_virtual_machine",
-    "seedId": "d217765c-afa9-5cd9-a33f-7dd584a03326"
+    "source": "https://en.wikipedia.org/wiki/Java_virtual_machine"
   },
   {
+    "itemId": "f52fca52-b4d4-4dc7-a1e5-38750f1df27e",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -34,10 +35,10 @@
       "java",
       "strings"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/java/data/strings.html",
-    "seedId": "2a5c6c99-a0dd-527b-a995-eed7c69e002c"
+    "source": "https://docs.oracle.com/javase/tutorial/java/data/strings.html"
   },
   {
+    "itemId": "9a0d1c3a-d056-4aa8-b7ca-0814606cb57a",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -53,10 +54,10 @@
       "java",
       "operators"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html",
-    "seedId": "820d9a15-c2a6-5bf1-af0b-6e63a7cda7cd"
+    "source": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html"
   },
   {
+    "itemId": "93552361-4e40-4d12-9861-48d9041a0656",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -72,10 +73,10 @@
       "java",
       "oop"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/java/IandI/final.html",
-    "seedId": "b0ac4627-0de6-56a7-be5d-b5775156cac5"
+    "source": "https://docs.oracle.com/javase/tutorial/java/IandI/final.html"
   },
   {
+    "itemId": "0a263005-861e-4122-a1f5-1fca7b1616d4",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -91,10 +92,10 @@
       "java",
       "exceptions"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/essential/exceptions/declaring.html",
-    "seedId": "5d93ee79-62b6-5e38-b97f-06a2dcf9dd01"
+    "source": "https://docs.oracle.com/javase/tutorial/essential/exceptions/declaring.html"
   },
   {
+    "itemId": "333ff536-e169-4aea-a4b7-6bc71eabbf6e",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "java",
@@ -110,7 +111,6 @@
       "java",
       "openjdk"
     ],
-    "source": "https://openjdk.org/",
-    "seedId": "4a048ce4-4fb1-5a7d-ad3a-b3094d6bc628"
+    "source": "https://openjdk.org/"
   }
 ]

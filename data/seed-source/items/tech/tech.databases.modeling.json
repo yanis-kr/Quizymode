@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "084618c5-20c0-460d-9f36-99a7817c8505",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
@@ -15,15 +16,15 @@
       "modeling",
       "er"
     ],
-    "source": "https://www.ibm.com/topics/entity-relationship-diagram",
-    "seedId": "fd209474-db81-5bd1-a2c6-1182add1f7f5"
+    "source": "https://www.ibm.com/topics/entity-relationship-diagram"
   },
   {
+    "itemId": "9ac2e4c7-0353-4ed8-ac9e-c0baa21015e2",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
     "question": "What is a foreign key meant to represent?",
-    "correctAnswer": "a reference from a child row to a parent row’s key",
+    "correctAnswer": "a reference from a child row to a parent row\u2019s key",
     "incorrectAnswers": [
       "a backup copy of the database",
       "a temporary cache key",
@@ -34,10 +35,10 @@
       "modeling",
       "foreign-keys"
     ],
-    "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FOREIGN-KEYS",
-    "seedId": "ba5e7289-96e0-5c55-b7ef-e52e821432f2"
+    "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FOREIGN-KEYS"
   },
   {
+    "itemId": "7f2d1b2e-fd8d-4a00-aba8-7e687f3aa9b9",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
@@ -53,10 +54,10 @@
       "modeling",
       "normalization"
     ],
-    "source": "https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description",
-    "seedId": "3803b96f-a11c-5480-8c49-e7f152973c0e"
+    "source": "https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description"
   },
   {
+    "itemId": "2ebdd551-1fde-4214-b922-60aa182ea658",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
@@ -72,10 +73,10 @@
       "modeling",
       "keys"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/glossary.html#glos_surrogate",
-    "seedId": "1b74f5a5-4314-5438-b0c8-af845e7139ec"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/glossary.html#glos_surrogate"
   },
   {
+    "itemId": "342e0748-2ad5-4e87-a1c9-9474d5adf414",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
@@ -91,10 +92,10 @@
       "modeling",
       "relationships"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships",
-    "seedId": "6e042537-0be0-5a1f-89d6-578318f3fc5b"
+    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships"
   },
   {
+    "itemId": "ba3918fb-279b-4859-bad7-f6be6e7c23ed",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "modeling",
@@ -110,7 +111,6 @@
       "modeling",
       "denormalization"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/data/data-partitioning#denormalization",
-    "seedId": "3c286fbd-7f36-536f-acdc-26a537742203"
+    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/data/data-partitioning#denormalization"
   }
 ]

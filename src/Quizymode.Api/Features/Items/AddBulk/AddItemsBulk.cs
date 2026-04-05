@@ -19,8 +19,7 @@ public static class AddItemsBulk
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        string? Source = null,
-        Guid? SeedId = null);
+        string? Source = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -38,8 +37,7 @@ public static class AddItemsBulk
         int FailedCount,
         List<string> DuplicateQuestions,
         List<ItemError> Errors,
-        List<Guid>? CreatedItemIds = null,
-        List<Guid>? ReassignedSeedIds = null);
+        List<Guid>? CreatedItemIds = null);
 
     public sealed record ItemError(
         int Index,

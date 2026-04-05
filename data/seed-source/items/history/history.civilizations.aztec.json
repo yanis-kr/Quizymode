@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "154fbb1f-23d7-4b3c-8ce2-d96d5d3914ca",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
@@ -16,10 +17,10 @@
       "texcoco",
       "valley-of-mexico"
     ],
-    "source": "https://www.britannica.com/place/Tenochtitlan",
-    "seedId": "a001331b-96a3-4721-854c-7613c5a3ad8f"
+    "source": "https://www.britannica.com/place/Tenochtitlan"
   },
   {
+    "itemId": "060508f8-a3de-497a-86d7-faf284ced9bf",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
@@ -36,10 +37,10 @@
       "language",
       "mesoamerica"
     ],
-    "source": "https://www.britannica.com/topic/Nahuatl-language",
-    "seedId": "e8238b7e-2345-4d51-8d4d-0804114e0f3f"
+    "source": "https://www.britannica.com/topic/Nahuatl-language"
   },
   {
+    "itemId": "18cc990f-e3a0-4ec9-b1c3-3aa2d81feef0",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
@@ -56,15 +57,15 @@
       "empire",
       "politics"
     ],
-    "source": "https://www.britannica.com/topic/Aztec",
-    "seedId": "d1ba8847-fa59-4ad7-a621-2a609464dd81"
+    "source": "https://www.britannica.com/topic/Aztec"
   },
   {
+    "itemId": "9efe0c17-19d9-4cfa-817f-e9415fb80481",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
-    "question": "Hernán Cortés and indigenous allies pressed a long siege in 1521 against which island city that finally capitulated?",
-    "correctAnswer": "Tenochtitlán",
+    "question": "Hern\u00e1n Cort\u00e9s and indigenous allies pressed a long siege in 1521 against which island city that finally capitulated?",
+    "correctAnswer": "Tenochtitl\u00e1n",
     "incorrectAnswers": [
       "Cuzco",
       "Machu Picchu",
@@ -76,10 +77,10 @@
       "1521",
       "siege"
     ],
-    "source": "https://www.britannica.com/biography/Hernan-Cortes-Marques-del-Valle-de-Oaxaca",
-    "seedId": "f35d761a-3456-451e-b13d-5f9cb9fa20d6"
+    "source": "https://www.britannica.com/biography/Hernan-Cortes-Marques-del-Valle-de-Oaxaca"
   },
   {
+    "itemId": "ba33d23e-979c-49ed-9aba-2eed7be61dd4",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
@@ -96,14 +97,14 @@
       "agriculture",
       "texcoco"
     ],
-    "source": "https://www.britannica.com/topic/chinampa",
-    "seedId": "7604b67a-5068-4d43-a330-57978c87641a"
+    "source": "https://www.britannica.com/topic/chinampa"
   },
   {
+    "itemId": "b7f3c15a-0364-42c5-880d-8a77a393a79d",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
-    "question": "The Templo Mayor in Tenochtitlán was the great shrine precinct especially associated with which patron deity of the Mexica?",
+    "question": "The Templo Mayor in Tenochtitl\u00e1n was the great shrine precinct especially associated with which patron deity of the Mexica?",
     "correctAnswer": "Huitzilopochtli (with Tlaloc cult also prominent at the site)",
     "incorrectAnswers": [
       "Inti",
@@ -116,19 +117,19 @@
       "religion",
       "tenochtitlan"
     ],
-    "source": "https://www.britannica.com/topic/Huitzilopochtli",
-    "seedId": "c6a51fe8-d3a8-44e7-acba-a16ba57fc55b"
+    "source": "https://www.britannica.com/topic/Huitzilopochtli"
   },
   {
+    "itemId": "6ce4e41b-ef41-4e69-818e-85160dc91804",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
     "question": "Moctezuma II ruled when Spanish expeditions arrived; he held the title of ruler over which polity?",
-    "correctAnswer": "The Aztec imperial city-state centered on Tenochtitlán",
+    "correctAnswer": "The Aztec imperial city-state centered on Tenochtitl\u00e1n",
     "incorrectAnswers": [
       "The Inca Tawantinsuyu",
-      "The Maya League of Petén",
-      "The Tarascan Empire of Cortés"
+      "The Maya League of Pet\u00e9n",
+      "The Tarascan Empire of Cort\u00e9s"
     ],
     "explanation": "His authority rested on tribute networks and military prestige even as unfamiliar Atlantic arrivals upset balances.",
     "keywords": [
@@ -136,19 +137,19 @@
       "rulership",
       "empire"
     ],
-    "source": "https://www.britannica.com/biography/Montezuma-II",
-    "seedId": "95db23e7-9c3f-4562-be32-e155bf036d4e"
+    "source": "https://www.britannica.com/biography/Montezuma-II"
   },
   {
+    "itemId": "04f24a5f-9f1c-4052-ae6f-94a0863a732d",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
     "question": "Scheduled Mesoamerican wars partly aimed at taking captives for sacrifice are often studied under which Nahuatl label?",
-    "correctAnswer": "Flower wars (xōchiyāōyōtl)",
+    "correctAnswer": "Flower wars (x\u014dchiy\u0101\u014dy\u014dtl)",
     "incorrectAnswers": [
       "The Punic Wars",
       "The Social War",
-      "The Hundred Years’ War"
+      "The Hundred Years\u2019 War"
     ],
     "explanation": "These conflicts intertwined state diplomacy, warrior prestige, and temple cult needs.",
     "keywords": [
@@ -156,17 +157,17 @@
       "warfare",
       "nahuatl"
     ],
-    "source": "https://www.britannica.com/topic/Aztec",
-    "seedId": "6f9e5b39-4704-4257-8e70-f77000ec57c4"
+    "source": "https://www.britannica.com/topic/Aztec"
   },
   {
+    "itemId": "023a97e1-4710-4ef7-afec-500b432739f6",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
-    "question": "Which island district’s great market, described in colonial sources, became a commercial hub adjoining Tenochtitlán?",
+    "question": "Which island district\u2019s great market, described in colonial sources, became a commercial hub adjoining Tenochtitl\u00e1n?",
     "correctAnswer": "Tlatelolco",
     "incorrectAnswers": [
-      "Coyoacán only",
+      "Coyoac\u00e1n only",
       "Chalco alone",
       "Xochimilco rural fair only"
     ],
@@ -176,14 +177,14 @@
       "trade",
       "market"
     ],
-    "source": "https://www.britannica.com/place/Tlatelolco",
-    "seedId": "ffb66708-cd22-44db-b977-4d42f9d32704"
+    "source": "https://www.britannica.com/place/Tlatelolco"
   },
   {
+    "itemId": "bde43cae-7135-4d5a-9e31-5921013af140",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
-    "question": "Aztec tribute lists recorded goods flowing to Tenochtitlán such as cotton cloth, cacao, feathers, and what staple grain?",
+    "question": "Aztec tribute lists recorded goods flowing to Tenochtitl\u00e1n such as cotton cloth, cacao, feathers, and what staple grain?",
     "correctAnswer": "Maize",
     "incorrectAnswers": [
       "Rice",
@@ -196,18 +197,18 @@
       "maize",
       "economy"
     ],
-    "source": "https://www.britannica.com/topic/Aztec",
-    "seedId": "7e9345a0-c1e6-4bf3-9936-540193c3cbef"
+    "source": "https://www.britannica.com/topic/Aztec"
   },
   {
+    "itemId": "c3cb69a8-3869-466d-9458-184976d3357f",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
     "question": "The last Aztec ruler who led defense during the 1521 siege is commonly named who in Spanish sources?",
-    "correctAnswer": "Cuauhtémoc",
+    "correctAnswer": "Cuauht\u00e9moc",
     "incorrectAnswers": [
       "Atahualpa",
-      "Túpac Amaru I",
+      "T\u00fapac Amaru I",
       "Lautaro"
     ],
     "explanation": "His surrender ended organized resistance in the lake capital though indigenous polities persisted elsewhere.",
@@ -216,10 +217,10 @@
       "1521",
       "fall"
     ],
-    "source": "https://www.britannica.com/biography/Cuauhtemoc",
-    "seedId": "2fbe6f8a-8ad2-44f9-b57d-59dc31668589"
+    "source": "https://www.britannica.com/biography/Cuauhtemoc"
   },
   {
+    "itemId": "e0e843d3-8fc5-4a3b-99a7-3f286e0eab1a",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "aztec",
@@ -236,7 +237,6 @@
       "tonalpohualli",
       "xiuhpohualli"
     ],
-    "source": "https://www.britannica.com/topic/Aztec-calendar",
-    "seedId": "051c9820-aee1-4ba8-a054-38d08d5f94c8"
+    "source": "https://www.britannica.com/topic/Aztec-calendar"
   }
 ]

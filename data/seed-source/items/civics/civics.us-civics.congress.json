@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b48a7235-736c-47e9-af6a-70a0a9434df2",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -15,10 +16,10 @@
       "bicameral",
       "congress"
     ],
-    "source": "https://www.congress.gov/about",
-    "seedId": "60057898-6e44-5092-8f71-2c79353140b1"
+    "source": "https://www.congress.gov/about"
   },
   {
+    "itemId": "560a51cc-07ec-4e80-bef0-04943ae518fe",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -34,10 +35,10 @@
       "house",
       "terms"
     ],
-    "source": "https://www.house.gov/the-house-explained",
-    "seedId": "111ea912-ad14-5497-8271-cbb7e233f1c1"
+    "source": "https://www.house.gov/the-house-explained"
   },
   {
+    "itemId": "0374e5dc-92a1-4d54-a05d-14113ab1e58e",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -53,10 +54,10 @@
       "senate",
       "equal-state-voice"
     ],
-    "source": "https://www.senate.gov/senators/senators-intro.htm",
-    "seedId": "eb63fb25-2928-5014-ae68-36e8b231626a"
+    "source": "https://www.senate.gov/senators/senators-intro.htm"
   },
   {
+    "itemId": "a653a700-fe70-45b5-822d-7ee704ce3c2a",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -72,10 +73,10 @@
       "origination-clause",
       "revenue"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-1/",
-    "seedId": "de7b80b5-af50-5eff-8e41-fe46d12900ec"
+    "source": "https://constitution.congress.gov/constitution/article-1/"
   },
   {
+    "itemId": "e165d987-7a45-4630-b1bc-a745edab1c65",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -91,10 +92,10 @@
       "impeachment",
       "house"
     ],
-    "source": "https://www.house.gov/the-house-explained/the-legislative-process",
-    "seedId": "3539a33f-b6a6-567f-b629-464e042b6fe4"
+    "source": "https://www.house.gov/the-house-explained/the-legislative-process"
   },
   {
+    "itemId": "dcfd2a39-3b39-466a-a8f6-979ddc7fd958",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "congress",
@@ -110,7 +111,6 @@
       "vice-president",
       "senate"
     ],
-    "source": "https://www.senate.gov/artandhistory/history/common/briefing/Vice_President.htm",
-    "seedId": "3eb58cac-18e3-5483-b5d4-938525b0ce6f"
+    "source": "https://www.senate.gov/artandhistory/history/common/briefing/Vice_President.htm"
   }
 ]

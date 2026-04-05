@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "781f5516-4420-4793-ae67-4827fed6858a",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -15,10 +16,10 @@
       "data-science",
       "overfitting"
     ],
-    "source": "https://en.wikipedia.org/wiki/Overfitting",
-    "seedId": "72c2bdff-06be-596d-9461-aa0c963ce28c"
+    "source": "https://en.wikipedia.org/wiki/Overfitting"
   },
   {
+    "itemId": "77fba2d2-882e-46af-b781-266a523bb460",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -34,10 +35,10 @@
       "data-science",
       "evaluation"
     ],
-    "source": "https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets",
-    "seedId": "ccae0629-8a43-5881-a1f8-aa836cd1c58d"
+    "source": "https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets"
   },
   {
+    "itemId": "462bce03-e4ad-40f9-b5d5-45e4238f9ae2",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -53,10 +54,10 @@
       "data-science",
       "cross-validation"
     ],
-    "source": "https://scikit-learn.org/stable/modules/cross_validation.html",
-    "seedId": "fcda1dcc-0b3f-5b35-8fe9-36d974e9c41f"
+    "source": "https://scikit-learn.org/stable/modules/cross_validation.html"
   },
   {
+    "itemId": "be149a94-fefa-493b-8c44-1bfa01aa8796",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -72,10 +73,10 @@
       "data-science",
       "metrics"
     ],
-    "source": "https://en.wikipedia.org/wiki/Root-mean-square_deviation",
-    "seedId": "20b61667-27b1-5d50-b519-1e79192dd14e"
+    "source": "https://en.wikipedia.org/wiki/Root-mean-square_deviation"
   },
   {
+    "itemId": "52f48e84-cfc9-4bfb-812b-35ef79a9230e",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -91,10 +92,10 @@
       "data-science",
       "features"
     ],
-    "source": "https://en.wikipedia.org/wiki/Feature_engineering",
-    "seedId": "46ada8d0-1bd2-568a-bbff-1a6e8d84c7e2"
+    "source": "https://en.wikipedia.org/wiki/Feature_engineering"
   },
   {
+    "itemId": "aa097f32-0561-4354-b3d9-5690da4428c5",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-science",
@@ -110,7 +111,6 @@
       "data-science",
       "classification"
     ],
-    "source": "https://scikit-learn.org/stable/modules/model_evaluation.html#confusion-matrix",
-    "seedId": "6f66e7ec-10b5-58a3-a74f-f9bbc9cc4fab"
+    "source": "https://scikit-learn.org/stable/modules/model_evaluation.html#confusion-matrix"
   }
 ]

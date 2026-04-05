@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "346501f4-5c44-4ac8-97fa-1a58afc0960a",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
-    "question": "In standard Spanish, which article is commonly used before \"agua\" in phrases like \"el agua fría\"?",
+    "question": "In standard Spanish, which article is commonly used before \"agua\" in phrases like \"el agua fr\u00eda\"?",
     "correctAnswer": "el",
     "incorrectAnswers": [
       "la",
@@ -16,17 +17,17 @@
       "articles",
       "spanish-grammar"
     ],
-    "source": "https://www.rae.es/dpd/agua",
-    "seedId": "4ba70274-11ce-5576-b077-45068463a9e1"
+    "source": "https://www.rae.es/dpd/agua"
   },
   {
+    "itemId": "51e4e336-c1e4-473d-8c2c-c487a2f96fae",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
     "question": "Which word fits this sentence about identity: \"___ soy estudiante\"?",
     "correctAnswer": "Yo",
     "incorrectAnswers": [
-      "Tú",
+      "T\u00fa",
       "Ella",
       "Nosotros"
     ],
@@ -36,19 +37,19 @@
       "subject-pronouns",
       "spanish-grammar"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser",
-    "seedId": "858f4af3-6d02-5600-8003-06f6f6ad1e8c"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
   },
   {
+    "itemId": "e8cfacb2-925b-4c90-b8e1-21048e5c0462",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
     "question": "Which word order is the usual way to say \"I do not speak Spanish\"?",
-    "correctAnswer": "No hablo español.",
+    "correctAnswer": "No hablo espa\u00f1ol.",
     "incorrectAnswers": [
-      "Hablo no español.",
-      "Español no hablo.",
-      "No español hablo."
+      "Hablo no espa\u00f1ol.",
+      "Espa\u00f1ol no hablo.",
+      "No espa\u00f1ol hablo."
     ],
     "explanation": "Standard Spanish places \"no\" before the conjugated verb: \"no\" + verb + object.",
     "keywords": [
@@ -56,10 +57,10 @@
       "word-order",
       "spanish-grammar"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/hablar",
-    "seedId": "516067cf-706c-5969-80cd-6de20ab6e5d0"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/hablar"
   },
   {
+    "itemId": "e449ee7f-fb59-40ba-a6e2-2bfa5428423b",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
@@ -76,10 +77,10 @@
       "articles",
       "spanish-grammar"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/libro",
-    "seedId": "ac9eb01b-2995-5625-8a69-cf58c04a1fc0"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/libro"
   },
   {
+    "itemId": "6cfbd85c-7fa0-4387-b25c-473d989dc113",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
@@ -96,10 +97,10 @@
       "verbs",
       "spanish-grammar"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/hablar",
-    "seedId": "a56baedf-72af-552d-b557-218475939fd7"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/hablar"
   },
   {
+    "itemId": "136d2831-cb45-44d1-aa53-2dd221074292",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
@@ -116,7 +117,6 @@
       "purpose",
       "spanish-grammar"
     ],
-    "source": "https://www.spanishdict.com/guide/infinitives-in-spanish",
-    "seedId": "b7fedd58-c897-5573-89f4-d53c369ca31e"
+    "source": "https://www.spanishdict.com/guide/infinitives-in-spanish"
   }
 ]

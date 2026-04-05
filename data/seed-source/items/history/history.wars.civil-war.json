@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8c498186-b36f-44ca-b0eb-c4e17d9b9383",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
@@ -8,7 +9,7 @@
     "incorrectAnswers": [
       "Tower of London",
       "Westminster Abbey",
-      "St Paul’s Cathedral"
+      "St Paul\u2019s Cathedral"
     ],
     "explanation": "The trial and public beheading ended the first phase of the English Civil Wars and cleared the way for the Commonwealth.",
     "keywords": [
@@ -16,10 +17,10 @@
       "charles-i",
       "1649"
     ],
-    "source": "https://www.britannica.com/biography/Charles-I-king-of-Great-Britain-and-Ireland",
-    "seedId": "06312b8c-e155-4976-a223-f0ae4540df63"
+    "source": "https://www.britannica.com/biography/Charles-I-king-of-Great-Britain-and-Ireland"
   },
   {
+    "itemId": "7b0cd10f-b2de-4dd6-bedf-1831fa6464ff",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
@@ -30,20 +31,20 @@
       "Fort Ticonderoga",
       "Fort Pillow"
     ],
-    "explanation": "Lincoln’s call for volunteers after Sumter’s surrender widened a local crisis into a full-scale civil war.",
+    "explanation": "Lincoln\u2019s call for volunteers after Sumter\u2019s surrender widened a local crisis into a full-scale civil war.",
     "keywords": [
       "fort-sumter",
       "1861",
       "american-civil-war"
     ],
-    "source": "https://www.britannica.com/event/Fort-Sumter",
-    "seedId": "e16daf1c-e684-4f01-8e49-c9c2867a6436"
+    "source": "https://www.britannica.com/event/Fort-Sumter"
   },
   {
+    "itemId": "1119c957-0575-48de-b936-483ee4fad712",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "A July 1936 military rising against Spain’s Republican government is commonly treated as the start of which civil war?",
+    "question": "A July 1936 military rising against Spain\u2019s Republican government is commonly treated as the start of which civil war?",
     "correctAnswer": "The Spanish Civil War",
     "incorrectAnswers": [
       "The Greek Civil War",
@@ -56,18 +57,18 @@
       "1936",
       "franco"
     ],
-    "source": "https://www.britannica.com/event/Spanish-Civil-War",
-    "seedId": "cfbb7d1e-e20f-4e4d-b4e7-193d96527ee1"
+    "source": "https://www.britannica.com/event/Spanish-Civil-War"
   },
   {
+    "itemId": "fd074430-88d5-4ec8-afd7-c360f5bc8f6c",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "In 49 BCE Caesar led a legion across the Rubicon, defying the Senate and triggering war against which rival leader’s faction?",
-    "correctAnswer": "Pompey the Great and the Senate’s forces",
+    "question": "In 49 BCE Caesar led a legion across the Rubicon, defying the Senate and triggering war against which rival leader\u2019s faction?",
+    "correctAnswer": "Pompey the Great and the Senate\u2019s forces",
     "incorrectAnswers": [
       "Marc Antony alone",
-      "Brutus’s republican army",
+      "Brutus\u2019s republican army",
       "Parthian expedition corps"
     ],
     "explanation": "Crossing the river broke Roman norms against bringing troops into Italy and forced a showdown for control of the republic.",
@@ -76,14 +77,14 @@
       "caesar",
       "roman-republic"
     ],
-    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler",
-    "seedId": "fbaead3f-e110-4043-a59d-9af44aa95776"
+    "source": "https://www.britannica.com/biography/Julius-Caesar-Roman-ruler"
   },
   {
+    "itemId": "ef78beb9-aba2-477e-ad8f-e85ec5b08414",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "After Communist forces took Nanjing in 1949, which government retreated to Taiwan and claimed continuity as China’s state?",
+    "question": "After Communist forces took Nanjing in 1949, which government retreated to Taiwan and claimed continuity as China\u2019s state?",
     "correctAnswer": "The Nationalist (Kuomintang) government",
     "incorrectAnswers": [
       "The Qing court",
@@ -96,54 +97,54 @@
       "1949",
       "taiwan"
     ],
-    "source": "https://www.britannica.com/event/Chinese-Civil-War",
-    "seedId": "2750db06-8a20-4a27-998e-b963cac3ef3f"
+    "source": "https://www.britannica.com/event/Chinese-Civil-War"
   },
   {
+    "itemId": "5323a96a-30da-43d7-9bfd-d00be2ca5809",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "Which 1863 Pennsylvania battle is widely seen as the turning point that halted Lee’s second northern invasion?",
+    "question": "Which 1863 Pennsylvania battle is widely seen as the turning point that halted Lee\u2019s second northern invasion?",
     "correctAnswer": "The Battle of Gettysburg",
     "incorrectAnswers": [
       "The Battle of Shiloh",
       "The Battle of Antietam",
       "The First Battle of Bull Run"
     ],
-    "explanation": "Three days of costly attacks exhausted Confederate momentum and encouraged Lincoln’s later commitment to harder war aims.",
+    "explanation": "Three days of costly attacks exhausted Confederate momentum and encouraged Lincoln\u2019s later commitment to harder war aims.",
     "keywords": [
       "gettysburg",
       "1863",
       "lee"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Gettysburg",
-    "seedId": "20db85d7-f476-48cf-80dd-27d8b6646f4b"
+    "source": "https://www.britannica.com/event/Battle-of-Gettysburg"
   },
   {
+    "itemId": "876b0b58-df23-4fa3-a7d1-526a6ae3b598",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "Oliver Cromwell’s New Model Army smashed royalist horse at which June 1645 battle that opened the way to Charles I’s defeat?",
+    "question": "Oliver Cromwell\u2019s New Model Army smashed royalist horse at which June 1645 battle that opened the way to Charles I\u2019s defeat?",
     "correctAnswer": "The Battle of Naseby",
     "incorrectAnswers": [
       "The Battle of Marston Moor",
       "The Battle of Edgehill",
       "The Battle of Worcester"
     ],
-    "explanation": "Naseby destroyed the king’s field army and captured correspondence that damaged his diplomatic position.",
+    "explanation": "Naseby destroyed the king\u2019s field army and captured correspondence that damaged his diplomatic position.",
     "keywords": [
       "naseby",
       "cromwell",
       "1645"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Naseby",
-    "seedId": "916fe682-776d-4a4e-abf8-d475997c9399"
+    "source": "https://www.britannica.com/event/Battle-of-Naseby"
   },
   {
+    "itemId": "aee1a13f-e3ca-4b82-88ad-f05c0eb8d710",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "Which 1918–1922 conflict pitted Bolshevik ‘Reds’ against a loose coalition of ‘Whites’ and intervention armies?",
+    "question": "Which 1918\u20131922 conflict pitted Bolshevik \u2018Reds\u2019 against a loose coalition of \u2018Whites\u2019 and intervention armies?",
     "correctAnswer": "The Russian Civil War",
     "incorrectAnswers": [
       "The Russo-Japanese War",
@@ -156,34 +157,34 @@
       "bolsheviks",
       "1918"
     ],
-    "source": "https://www.britannica.com/event/Russian-Civil-War",
-    "seedId": "ed544ea0-a950-480f-9f82-bbe0b46117c8"
+    "source": "https://www.britannica.com/event/Russian-Civil-War"
   },
   {
+    "itemId": "b731079e-74ee-4678-b1af-02977a9feac6",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "The 1936–1939 defense of Madrid became a symbol of Republican resistance against which general’s Nationalist offensive?",
+    "question": "The 1936\u20131939 defense of Madrid became a symbol of Republican resistance against which general\u2019s Nationalist offensive?",
     "correctAnswer": "Francisco Franco",
     "incorrectAnswers": [
-      "José Sanjurjo alone",
+      "Jos\u00e9 Sanjurjo alone",
       "Emilio Mola alone",
-      "Manuel Azaña"
+      "Manuel Aza\u00f1a"
     ],
-    "explanation": "Franco’s forces eventually took the capital in 1939, ending major Republican organized resistance.",
+    "explanation": "Franco\u2019s forces eventually took the capital in 1939, ending major Republican organized resistance.",
     "keywords": [
       "madrid",
       "spain",
       "franco"
     ],
-    "source": "https://www.britannica.com/biography/Francisco-Franco",
-    "seedId": "aa035ff8-5b08-4c00-8b0a-2e64dacac488"
+    "source": "https://www.britannica.com/biography/Francisco-Franco"
   },
   {
+    "itemId": "4b5a8c1e-d1c4-4e9c-a62e-76243d6ad4e4",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "Grant’s 1863 siege of which Mississippi River stronghold split the Confederacy and gave the Union control of the waterway?",
+    "question": "Grant\u2019s 1863 siege of which Mississippi River stronghold split the Confederacy and gave the Union control of the waterway?",
     "correctAnswer": "Vicksburg",
     "incorrectAnswers": [
       "New Orleans",
@@ -196,10 +197,10 @@
       "grant",
       "1863"
     ],
-    "source": "https://www.britannica.com/event/Siege-of-Vicksburg",
-    "seedId": "fd91773c-70e7-4f99-81e9-2d76e526adcf"
+    "source": "https://www.britannica.com/event/Siege-of-Vicksburg"
   },
   {
+    "itemId": "9c81c2d7-2ef3-42fc-8520-50a3dd8304c5",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
@@ -210,20 +211,20 @@
       "The Battle of Lansdowne",
       "The Battle of Newbury"
     ],
-    "explanation": "Parliamentarian and Scottish allies overwhelmed Prince Rupert’s combined force, shifting the north’s balance.",
+    "explanation": "Parliamentarian and Scottish allies overwhelmed Prince Rupert\u2019s combined force, shifting the north\u2019s balance.",
     "keywords": [
       "marston-moor",
       "1644",
       "york"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Marston-Moor",
-    "seedId": "5d4f6ef2-a166-4ee5-a734-4f0443befe71"
+    "source": "https://www.britannica.com/event/Battle-of-Marston-Moor"
   },
   {
+    "itemId": "0a4fc260-9912-4ed2-ae6d-914147bca153",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "civil-war",
-    "question": "Sherman’s 1864 ‘March to the Sea’ from Atlanta to which coastal city aimed to break Confederate logistics and morale?",
+    "question": "Sherman\u2019s 1864 \u2018March to the Sea\u2019 from Atlanta to which coastal city aimed to break Confederate logistics and morale?",
     "correctAnswer": "Savannah",
     "incorrectAnswers": [
       "Charleston",
@@ -236,7 +237,6 @@
       "1864",
       "georgia"
     ],
-    "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea",
-    "seedId": "6dba5455-5a8d-455b-9625-7b5808f2ca12"
+    "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea"
   }
 ]

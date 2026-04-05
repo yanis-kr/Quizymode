@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2cc24e68-ee75-4d06-93c0-0d23d144722c",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
@@ -10,34 +11,34 @@
       "We the Representatives of the Union",
       "In Congress assembled"
     ],
-    "explanation": "The opening words identify the document as resting on popular authority: “We the People of the United States.”",
+    "explanation": "The opening words identify the document as resting on popular authority: \u201cWe the People of the United States.\u201d",
     "keywords": [
       "preamble",
       "constitution-text"
     ],
-    "source": "https://constitution.congress.gov/constitution/",
-    "seedId": "0abc46fb-b674-572d-bb7b-032a06366fb6"
+    "source": "https://constitution.congress.gov/constitution/"
   },
   {
+    "itemId": "e41bc710-0aaa-48f6-bfb7-561698d81cff",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
-    "question": "Which stated purpose comes right after forming “a more perfect Union”?",
+    "question": "Which stated purpose comes right after forming \u201ca more perfect Union\u201d?",
     "correctAnswer": "establish Justice",
     "incorrectAnswers": [
       "provide for the common defence",
       "promote the general Welfare",
       "secure the Blessings of Liberty"
     ],
-    "explanation": "The Preamble lists purposes in order; “establish Justice” immediately follows the goal of a more perfect Union.",
+    "explanation": "The Preamble lists purposes in order; \u201cestablish Justice\u201d immediately follows the goal of a more perfect Union.",
     "keywords": [
       "preamble",
       "constitution-goals"
     ],
-    "source": "https://www.law.cornell.edu/constitution/preamble",
-    "seedId": "8d70f502-5dba-5295-93c8-c96910f15c24"
+    "source": "https://www.law.cornell.edu/constitution/preamble"
   },
   {
+    "itemId": "c50792e3-ef0d-4fab-9000-80f4b771cf90",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
@@ -53,10 +54,10 @@
       "preamble",
       "constitution-structure"
     ],
-    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
-    "seedId": "ada2b24d-bb1f-51db-b394-6a1dd4332342"
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript"
   },
   {
+    "itemId": "5ec48ae8-4e5f-4a60-92d6-44b2861ee261",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
@@ -67,19 +68,19 @@
       "establish Justice",
       "form a more perfect Union"
     ],
-    "explanation": "“Domestic Tranquility” refers to calm and orderly conditions within the country, as one of the stated aims.",
+    "explanation": "\u201cDomestic Tranquility\u201d refers to calm and orderly conditions within the country, as one of the stated aims.",
     "keywords": [
       "preamble",
       "constitution-goals"
     ],
-    "source": "https://www.usa.gov/branches-of-government",
-    "seedId": "534f2213-6713-5a53-a8ee-e1f0bf895740"
+    "source": "https://www.usa.gov/branches-of-government"
   },
   {
+    "itemId": "234d032c-868d-48d6-9b41-82a7acf3b2ff",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
-    "question": "Including “form a more perfect Union,” how many stated purposes appear in the Preamble’s “in Order to” list?",
+    "question": "Including \u201cform a more perfect Union,\u201d how many stated purposes appear in the Preamble\u2019s \u201cin Order to\u201d list?",
     "correctAnswer": "six",
     "incorrectAnswers": [
       "four",
@@ -91,14 +92,14 @@
       "preamble",
       "constitution-goals"
     ],
-    "source": "https://www.whitehouse.gov/our-government/the-constitution/",
-    "seedId": "7409469f-d108-5a66-84e8-bc710867c95c"
+    "source": "https://www.whitehouse.gov/our-government/the-constitution/"
   },
   {
+    "itemId": "86ab1e21-5751-42c6-9653-44c706ba3459",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "preamble",
-    "question": "What does the Preamble say is being “ordain[ed] and establish[ed]” after listing those purposes?",
+    "question": "What does the Preamble say is being \u201cordain[ed] and establish[ed]\u201d after listing those purposes?",
     "correctAnswer": "this Constitution for the United States of America",
     "incorrectAnswers": [
       "the Articles of Confederation alone",
@@ -110,7 +111,6 @@
       "preamble",
       "constitution-text"
     ],
-    "source": "https://constitution.congress.gov/constitution/preamble/",
-    "seedId": "cb8eefd7-0f55-5f05-ac6e-049c7dd0a485"
+    "source": "https://constitution.congress.gov/constitution/preamble/"
   }
 ]

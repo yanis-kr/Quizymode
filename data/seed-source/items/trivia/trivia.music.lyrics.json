@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8c0ffb5a-a550-4e56-a60e-f470c0c67575",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -15,10 +16,10 @@
       "anthems",
       "ceremony"
     ],
-    "source": "https://www.britannica.com/topic/national-anthem",
-    "seedId": "c113e3e7-cf8e-5f13-9a74-b59448724a3a"
+    "source": "https://www.britannica.com/topic/national-anthem"
   },
   {
+    "itemId": "8371cc30-05f7-446e-9242-5ea5cae642d9",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -34,10 +35,10 @@
       "opera",
       "text"
     ],
-    "source": "https://www.britannica.com/art/libretto",
-    "seedId": "b3d329e5-f7d9-5eca-a267-5e5c60834ff1"
+    "source": "https://www.britannica.com/art/libretto"
   },
   {
+    "itemId": "35a9b235-c43b-4ba7-8ab7-81c294978c2e",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -53,10 +54,10 @@
       "ballad",
       "narrative"
     ],
-    "source": "https://www.britannica.com/art/ballad-music",
-    "seedId": "5204b5cf-4de9-5b9b-8eec-f4c1d8bdd507"
+    "source": "https://www.britannica.com/art/ballad-music"
   },
   {
+    "itemId": "28ca82fd-b601-4c0b-83e4-73dbe878e3c1",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -72,10 +73,10 @@
       "refrain",
       "song-form"
     ],
-    "source": "https://www.britannica.com/art/refrain-music",
-    "seedId": "24dbd870-b78b-5c4f-b2d7-0102fc7a21b7"
+    "source": "https://www.britannica.com/art/refrain-music"
   },
   {
+    "itemId": "e4f97a42-f954-44bc-876f-55cd7a653bd9",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -91,10 +92,10 @@
       "rap",
       "hip-hop"
     ],
-    "source": "https://www.britannica.com/art/rap-music",
-    "seedId": "38d119b8-c10a-5953-b93d-188adaa01730"
+    "source": "https://www.britannica.com/art/rap-music"
   },
   {
+    "itemId": "72b7e335-0cb2-4435-8a1e-ab4614aa6c73",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -110,10 +111,10 @@
       "jazz",
       "vocals"
     ],
-    "source": "https://www.britannica.com/art/scat-singing",
-    "seedId": "996809a2-8667-5bff-8758-2a4f5a5eadd1"
+    "source": "https://www.britannica.com/art/scat-singing"
   },
   {
+    "itemId": "7020e16b-858d-44ab-8750-e75995130be4",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -129,10 +130,10 @@
       "verse",
       "rhyme"
     ],
-    "source": "https://www.britannica.com/literature/limerick",
-    "seedId": "19ef4a5b-11f4-595a-8ceb-67bdc2b6e8c3"
+    "source": "https://www.britannica.com/literature/limerick"
   },
   {
+    "itemId": "ff65273d-5447-48ad-9152-c3e0313d0b5a",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -148,10 +149,10 @@
       "hymns",
       "worship"
     ],
-    "source": "https://www.britannica.com/art/hymn-music",
-    "seedId": "92a1eeec-978f-5c78-9db4-1e7ef97698ab"
+    "source": "https://www.britannica.com/art/hymn-music"
   },
   {
+    "itemId": "f36f3e5b-a7a4-483b-ad01-ea7293a6d240",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
@@ -167,14 +168,14 @@
       "shanties",
       "folk"
     ],
-    "source": "https://www.britannica.com/art/sea-shanty",
-    "seedId": "daae1c72-6c8b-5e90-b3c0-e769b501c4aa"
+    "source": "https://www.britannica.com/art/sea-shanty"
   },
   {
+    "itemId": "c13688be-d7aa-456b-a78a-d09ba2f8f953",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "lyrics",
-    "question": "At the 95th Academy Awards, the Original Song winner’s music was by whom (Naatu Naatu)?",
+    "question": "At the 95th Academy Awards, the Original Song winner\u2019s music was by whom (Naatu Naatu)?",
     "correctAnswer": "M.M. Keeravaani",
     "incorrectAnswers": [
       "John Williams",
@@ -186,7 +187,6 @@
       "oscars",
       "credits"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "4a4568d3-725e-50b3-8bee-923279f66a1e"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   }
 ]

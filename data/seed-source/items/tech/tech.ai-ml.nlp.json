@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bfc34c5a-3dce-4693-be69-abbbb601f038",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
@@ -15,10 +16,10 @@
       "ai-ml",
       "tokenization"
     ],
-    "source": "https://huggingface.co/docs/transformers/tokenizer_summary",
-    "seedId": "b647f606-84db-5db4-b0a3-2a92c3fc9855"
+    "source": "https://huggingface.co/docs/transformers/tokenizer_summary"
   },
   {
+    "itemId": "dbca73b8-d7be-484f-b45e-e5b32aeaa2cf",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
@@ -34,10 +35,10 @@
       "ai-ml",
       "embeddings"
     ],
-    "source": "https://arxiv.org/abs/1301.3781",
-    "seedId": "bce51f79-9687-595b-bf28-3c9a0e2993e6"
+    "source": "https://arxiv.org/abs/1301.3781"
   },
   {
+    "itemId": "48819843-98ee-412f-a07b-3e3d73c439c9",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
@@ -53,10 +54,10 @@
       "ai-ml",
       "ner"
     ],
-    "source": "https://spacy.io/usage/linguistic-features#named-entities",
-    "seedId": "b3fa0f74-9498-505b-8f0a-18b98aadf6c0"
+    "source": "https://spacy.io/usage/linguistic-features#named-entities"
   },
   {
+    "itemId": "0f3845d2-f60f-4bd0-af77-a7372757a8b6",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
@@ -72,14 +73,14 @@
       "ai-ml",
       "evaluation"
     ],
-    "source": "https://en.wikipedia.org/wiki/BLEU",
-    "seedId": "5a2ead1d-8847-5ac5-8399-95328c5663fc"
+    "source": "https://en.wikipedia.org/wiki/BLEU"
   },
   {
+    "itemId": "f96861de-dfdf-4f8b-b29c-fc3ac557e357",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
-    "question": "In a classic encoder–decoder sequence model, what does the encoder produce?",
+    "question": "In a classic encoder\u2013decoder sequence model, what does the encoder produce?",
     "correctAnswer": "A representation of the input sequence used by the decoder",
     "incorrectAnswers": [
       "Only the final accuracy percentage",
@@ -91,10 +92,10 @@
       "ai-ml",
       "seq2seq"
     ],
-    "source": "https://en.wikipedia.org/wiki/Encoder%E2%80%93decoder_model",
-    "seedId": "bf8e6877-679f-5dc7-9f5c-dd65acff540c"
+    "source": "https://en.wikipedia.org/wiki/Encoder%E2%80%93decoder_model"
   },
   {
+    "itemId": "ae06eceb-7453-4ba8-ac2b-79ca5c000803",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
@@ -102,7 +103,7 @@
     "correctAnswer": "A grammatical category such as noun or verb",
     "incorrectAnswers": [
       "A random number between 0 and 1",
-      "The author’s birth year",
+      "The author\u2019s birth year",
       "A color code for fonts"
     ],
     "explanation": "POS tagging disambiguates word roles, which helps parsing, information extraction, and many downstream NLP tasks.",
@@ -110,7 +111,6 @@
       "ai-ml",
       "pos-tagging"
     ],
-    "source": "https://universaldependencies.org/",
-    "seedId": "cb4e75be-23df-58bb-8be6-28eea69b52a9"
+    "source": "https://universaldependencies.org/"
   }
 ]

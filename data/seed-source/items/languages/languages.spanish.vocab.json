@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b8bf43f4-702d-4a31-b9a2-c4ad7de0ac0a",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
@@ -16,10 +17,10 @@
       "food-drink",
       "spanish-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/agua",
-    "seedId": "bc024366-2d0b-5c89-966b-6f8bf4398433"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/agua"
   },
   {
+    "itemId": "672d3be8-e231-4f25-9f8b-29eb18d4954c",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
@@ -36,10 +37,10 @@
       "food-drink",
       "spanish-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pan",
-    "seedId": "c1ed8c45-6611-509a-bf83-563e5c48db06"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pan"
   },
   {
+    "itemId": "b1933550-8af6-4905-be0a-e148729ba871",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
@@ -56,10 +57,10 @@
       "people",
       "spanish-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/amigo",
-    "seedId": "db34db45-f8c1-58e4-9fde-82624bddd5c4"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/amigo"
   },
   {
+    "itemId": "26240437-a9b5-490f-b3b6-c3e5fe1a4d29",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
@@ -76,17 +77,17 @@
       "politeness",
       "spanish-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/gracias",
-    "seedId": "ccfc22b7-2351-51ce-8e57-2a6de1faeea7"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/gracias"
   },
   {
+    "itemId": "f6c1c116-beae-44cb-be7f-8c2829111de8",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"today\"?",
     "correctAnswer": "hoy",
     "incorrectAnswers": [
-      "mañana",
+      "ma\u00f1ana",
       "ayer",
       "ahora"
     ],
@@ -96,17 +97,17 @@
       "time",
       "spanish-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hoy",
-    "seedId": "49b1e6e0-025c-587a-8e57-a1641a2b4997"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hoy"
   },
   {
+    "itemId": "d24cab6b-c702-4485-8903-cdb3b142dd83",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"big\"?",
     "correctAnswer": "grande",
     "incorrectAnswers": [
-      "pequeño",
+      "peque\u00f1o",
       "nuevo",
       "bueno"
     ],
@@ -116,7 +117,6 @@
       "adjectives",
       "spanish-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/grande",
-    "seedId": "e525fbae-2aef-5599-b482-e698d700559d"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/grande"
   }
 ]

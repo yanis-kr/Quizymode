@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d1e9be85-9348-4088-a859-bbeddd3c1ce6",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -15,10 +16,10 @@
       "minimal-pair",
       "german-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/bett",
-    "seedId": "92ea6551-d595-53a4-bbae-b63f23acaaeb"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/bett"
   },
   {
+    "itemId": "b717d7cf-d063-458d-ac57-b2ca3d016009",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -34,10 +35,10 @@
       "stress",
       "german-listening"
     ],
-    "source": "https://www.goethe.de/en/spr/englisch.html",
-    "seedId": "0eeb9ecc-e8d6-56c3-abb1-86ce4d49b008"
+    "source": "https://www.goethe.de/en/spr/englisch.html"
   },
   {
+    "itemId": "463e6870-4db9-4bd2-85e8-963dcec921a4",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -53,10 +54,10 @@
       "homophones",
       "german-listening"
     ],
-    "source": "https://www.deutsch.info/en/pronunciation/",
-    "seedId": "bbb2e295-a371-53fa-a3d0-96d4b618f686"
+    "source": "https://www.deutsch.info/en/pronunciation/"
   },
   {
+    "itemId": "0a2b60a6-fe02-42ef-899b-23ff972e5e22",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -72,10 +73,10 @@
       "numbers",
       "german-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/dreizehn",
-    "seedId": "c55d4d67-31fb-5a29-8e63-4121bae378da"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/dreizehn"
   },
   {
+    "itemId": "53f03d09-f70b-4ae4-b5b4-e7daaa4ec596",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -86,15 +87,15 @@
       "the verb is always silent",
       "prefixes are never used"
     ],
-    "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe früh auf.'",
+    "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe fr\u00fch auf.'",
     "keywords": [
       "separable-verbs",
       "german-listening"
     ],
-    "source": "https://www.duden.de/sprachwissen/sprachratgeber/Trennbare_und_untrennbare_Verben",
-    "seedId": "23581dde-bab1-50ca-8591-b6b89c4a6aa0"
+    "source": "https://www.duden.de/sprachwissen/sprachratgeber/Trennbare_und_untrennbare_Verben"
   },
   {
+    "itemId": "45970639-7487-40ab-a7ec-639240d293fe",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
@@ -110,7 +111,6 @@
       "pronunciation",
       "german-listening"
     ],
-    "source": "https://dictionary.cambridge.org/grammar/british-grammar/german",
-    "seedId": "f82b8691-4c0d-5631-9eb4-21fcc5b8519d"
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/german"
   }
 ]

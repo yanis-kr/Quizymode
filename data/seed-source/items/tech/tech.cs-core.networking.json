@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8ea12f6b-ec0a-452e-84da-2fe094cf93a6",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -15,10 +16,10 @@
       "networking",
       "tcp-ip"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110.html",
-    "seedId": "1e35daf3-fade-5293-af47-07dad825c164"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110.html"
   },
   {
+    "itemId": "26327ac4-15fe-4954-8bf9-6a9ff541ca70",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -34,10 +35,10 @@
       "networking",
       "tcp-udp"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9293.html",
-    "seedId": "f7d6f858-9742-5f3e-8c2d-7f22cf4c4599"
+    "source": "https://www.rfc-editor.org/rfc/rfc9293.html"
   },
   {
+    "itemId": "67b13f35-7504-4600-8b08-52d298b8715d",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -53,10 +54,10 @@
       "networking",
       "ip"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc791.html",
-    "seedId": "b2ad5932-c5a4-598b-802b-b46d1575a20d"
+    "source": "https://www.rfc-editor.org/rfc/rfc791.html"
   },
   {
+    "itemId": "62915082-0630-4619-be8d-acac51f6b48e",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -72,10 +73,10 @@
       "networking",
       "dns"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc1035.html",
-    "seedId": "3524e3b9-8313-55ce-8789-db3ea4ea5a3a"
+    "source": "https://www.rfc-editor.org/rfc/rfc1035.html"
   },
   {
+    "itemId": "651b4a8e-2ca2-493f-a3fe-5a9150cdc86b",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -91,10 +92,10 @@
       "networking",
       "subnetting"
     ],
-    "source": "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing",
-    "seedId": "b6466bac-6d01-5c94-ab0f-2d6570223900"
+    "source": "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   },
   {
+    "itemId": "94240bc9-336d-49ce-8d07-f597f1385c1e",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "networking",
@@ -110,7 +111,6 @@
       "networking",
       "tls"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc8446.html",
-    "seedId": "33354f75-8bb6-5fa2-8837-9825a0e94c44"
+    "source": "https://www.rfc-editor.org/rfc/rfc8446.html"
   }
 ]

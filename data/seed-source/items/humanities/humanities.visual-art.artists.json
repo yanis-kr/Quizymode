@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1986928f-8e20-4017-8d0a-5cac03b2a2dc",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "artists",
@@ -15,10 +16,10 @@
       "visual-artists",
       "picasso"
     ],
-    "source": "https://www.britannica.com/biography/Pablo-Picasso",
-    "seedId": "c2130b36-9ecc-53d7-8541-953bb596668c"
+    "source": "https://www.britannica.com/biography/Pablo-Picasso"
   },
   {
+    "itemId": "cf44ecc1-81b3-4133-a8a0-18f5909552a3",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "artists",
@@ -34,7 +35,6 @@
       "visual-artists",
       "frida-kahlo"
     ],
-    "source": "https://www.fridakahlo.org/",
-    "seedId": "f746dc75-f672-55dc-80d3-ed4afaeb6943"
+    "source": "https://www.fridakahlo.org/"
   }
 ]

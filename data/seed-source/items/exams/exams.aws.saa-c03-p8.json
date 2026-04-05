@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "633e2f52-dd71-418f-8ab4-a1cf6027dd71",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -20,19 +21,19 @@
       "kms",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "546f6d60-3935-44ed-a8b5-f116b16154b4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "312c9486-e4f7-4b6f-a04a-4227a9a7761c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's\nVPC. According to the company’s security team, the connectivity must be private and must be restricted to the target service. The connection\nmust be initiated only from the company’s VPC.\nWhich solution will mast these requirements?",
+    "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's\nVPC. According to the company\u2019s security team, the connectivity must be private and must be restricted to the target service. The connection\nmust be initiated only from the company\u2019s VPC.\nWhich solution will mast these requirements?",
     "correctAnswer": "Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.",
     "incorrectAnswers": [
       "Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.",
       "Ask the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.",
-      "Create a NAT gateway in a public subnet of the company’s VPUpdate the route table to connect to the target service."
+      "Create a NAT gateway in a public subnet of the company\u2019s VPUpdate the route table to connect to the target service."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #135). Correct choice: D.",
     "keywords": [
@@ -41,15 +42,15 @@
       "vpc",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b3a7e6cb-da86-4da3-97ad-02ff23acbce2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "fab3c2f0-ff8e-416f-80c3-6f0046cfb43f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company uses AWS Organizations to create dedicated AWS accounts for each business unit to manage each business unit's account\nindependently upon request. The root email recipient missed a notication that was sent to the root user email address of one account. The\ncompany wants to ensure that all future notications are not missed. Future notications must be limited to account administrators.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Configure the company’s email server to forward notication email messages that are sent to the AWS account root user email address to all users in the organization.",
+    "correctAnswer": "Configure the company\u2019s email server to forward notication email messages that are sent to the AWS account root user email address to all users in the organization.",
     "incorrectAnswers": [
       "Configure all AWS account root user email addresses as distribution lists that go to a few administrators who can respond to alerts. Configure AWS account alternate contacts in the AWS Organizations console or programmatically.",
       "Configure all AWS account root user email messages to be sent to one administrator who is responsible for monitoring alerts and forwarding those alerts to the appropriate groups.",
@@ -61,10 +62,10 @@
       "aws-management",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cccec7c1-afbc-4815-86b1-91061c59ac51"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f05b2404-ac4f-49a4-8c37-8149ac3f7596",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -86,10 +87,10 @@
       "mq",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "56d82b20-8161-4644-858e-aa4386b000bf"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b47a4f7e-4fcb-4d65-8363-c49e93007443",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -109,10 +110,10 @@
       "lambda",
       "quicksight"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e8ccdadc-ad2a-4276-8b44-4e41a8007a7b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8ab96d09-2535-4a0f-975e-da4d47ccd4ae",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -132,10 +133,10 @@
       "route53",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "844ccdeb-15cb-4baf-bc33-25e3154e3779"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "93b7a15d-ae3c-40a6-bf27-a21c016ef571",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -156,10 +157,10 @@
       "api-gateway",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e169c823-1280-44f2-bcba-32a5bd54e152"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c6496652-d0e7-47d3-85ec-e9c9a73c6b44",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -178,10 +179,10 @@
       "ecs",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "074fe333-3de7-4b8c-88fe-47812c85135c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "adb1d255-8703-47d1-8731-f91b708a29d2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -201,10 +202,10 @@
       "aurora",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "26bf2c4b-53af-42a3-a354-a118e02f0039"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "6599c24f-5a86-4352-a26b-0194a4e09679",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -226,10 +227,10 @@
       "alb",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ea277969-f841-4daa-82ee-2d84751bd108"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b86ed050-7e5b-443c-a4ce-c54e4775a17c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -248,10 +249,10 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ce5951c1-0d5e-471b-b511-fe2f347bdfa9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "52856484-343e-4869-a36f-d08b91a617e7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -270,10 +271,10 @@
       "glacier",
       "aws-backup"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b88387c3-2e09-4cac-8637-fe03005ac4eb"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "236367fd-a165-40cf-90ef-d9eb3fe1a4d7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -281,7 +282,7 @@
     "correctAnswer": "Configure the Lambda function for deployment across multiple Availability Zones.",
     "incorrectAnswers": [
       "Modify the Lambda function's conguration to increase the CPU and memory allocations for the function.",
-      "Configure the SNS topic’s retry strategy to increase both the number of retries and the wait time between retries.",
+      "Configure the SNS topic\u2019s retry strategy to increase both the number of retries and the wait time between retries.",
       "Configure an Amazon Simple Queue Service (Amazon SQS) queue as the on-failure destination. Modify the Lambda function to process messages in the queue."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #148). Correct choice: A.",
@@ -292,10 +293,10 @@
       "lambda",
       "sns"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "01bf855c-6890-448d-8a09-0a824f611c15"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "30de8e1b-37b5-46e1-9b7e-08e7ac0cc63a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -314,10 +315,10 @@
       "lambda",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "752cb7f5-3fd2-4e4b-82a5-3b61f40d5fb2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "08691f82-0fb7-4900-8775-7fad1f2b3677",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -336,10 +337,10 @@
       "ec2",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1fc7b081-8073-43c6-8031-490b18f40329"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0a6844db-69c1-48d8-a02b-64dc03e538ab",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -361,10 +362,10 @@
       "systems-manager",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f67fe0d0-49f9-4ac5-9137-8cf10401039e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4e8504a2-dd14-490b-b9c9-17ad8c3a13b1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -381,10 +382,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "05287d81-e8e3-49a6-820a-5855f9771a5e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e8bf843b-3e7b-4a9d-a895-66c8d27fe6a1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -401,10 +402,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7816b14b-681b-456b-861a-24c7b845cdcb"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "787884a1-7222-4bcf-bc24-b46f25f375bd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -422,10 +423,10 @@
       "s3",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5cbaa616-e35f-4586-a0a0-1b04a086543c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "13df3505-ff03-4d55-b6f4-968a8a1738c5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -442,7 +443,6 @@
       "aws-networking",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d81324fb-d491-45d4-a48b-74623ec5bd00"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

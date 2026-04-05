@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "de1e5d99-3623-490e-8212-1d4a2419134d",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -16,10 +17,10 @@
       "airport",
       "trip-words"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/boarding-pass",
-    "seedId": "54b3fbd2-e0d3-53e8-9d19-da47adfbff54"
+    "source": "https://dictionary.cambridge.org/dictionary/english/boarding-pass"
   },
   {
+    "itemId": "97c4ba88-0b76-4d74-bfb5-3f0d4005775c",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -36,10 +37,10 @@
       "bags",
       "trip-words"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/luggage",
-    "seedId": "d0e01935-1604-51a8-bae8-18005a41a7e3"
+    "source": "https://www.merriam-webster.com/dictionary/luggage"
   },
   {
+    "itemId": "e9d46b7e-873d-4315-a473-e79b2d2d4d7e",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -56,10 +57,10 @@
       "stay",
       "trip-words"
     ],
-    "source": "https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary/accommodation",
-    "seedId": "1df143f9-3db0-5b46-a129-fafded988f9d"
+    "source": "https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary/accommodation"
   },
   {
+    "itemId": "b83c633c-9f68-4539-af16-da34ffff9f1e",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -76,10 +77,10 @@
       "schedule",
       "trip-words"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/departure",
-    "seedId": "11df71a7-bdaf-5df6-976f-37773f6df850"
+    "source": "https://dictionary.cambridge.org/dictionary/english/departure"
   },
   {
+    "itemId": "cc441e42-4adb-4cec-825d-96e500bbdbcc",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -96,10 +97,10 @@
       "passport",
       "trip-words"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/border",
-    "seedId": "36ddfa85-b043-5e38-a90b-018cd2bc2bb3"
+    "source": "https://www.merriam-webster.com/dictionary/border"
   },
   {
+    "itemId": "c29e3327-ae15-497d-b93e-481ed9b9e397",
     "category": "languages",
     "navigationKeyword1": "vocab",
     "navigationKeyword2": "travel",
@@ -116,7 +117,6 @@
       "directions",
       "trip-words"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/route",
-    "seedId": "25bd008e-74a7-5cd4-982b-26d3145f81f0"
+    "source": "https://dictionary.cambridge.org/dictionary/english/route"
   }
 ]

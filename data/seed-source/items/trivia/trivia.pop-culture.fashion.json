@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0233b84a-a805-4756-be3c-788cb13c096d",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -15,10 +16,10 @@
       "fashion",
       "design"
     ],
-    "source": "https://www.britannica.com/art/fashion-design",
-    "seedId": "63a36309-58c0-5c24-9e71-979679a88cd7"
+    "source": "https://www.britannica.com/art/fashion-design"
   },
   {
+    "itemId": "6c43ec3a-987d-4099-b358-7fe95034a043",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -34,10 +35,10 @@
       "couture",
       "paris"
     ],
-    "source": "https://www.britannica.com/art/haute-couture",
-    "seedId": "8d2a7b53-1b15-5e03-8ee6-891d6e1e6377"
+    "source": "https://www.britannica.com/art/haute-couture"
   },
   {
+    "itemId": "81289f78-c664-4cbe-8ab0-a9614d83cbd7",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -53,10 +54,10 @@
       "denim",
       "casual"
     ],
-    "source": "https://www.britannica.com/topic/denim-textile",
-    "seedId": "ba472f03-b5f1-5524-90d7-a9e2b614d118"
+    "source": "https://www.britannica.com/topic/denim-textile"
   },
   {
+    "itemId": "b65fb743-683b-47a0-b23d-f80705dd7247",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -72,10 +73,10 @@
       "chanel",
       "classic"
     ],
-    "source": "https://www.britannica.com/biography/Coco-Chanel",
-    "seedId": "c321c124-895c-533d-96c5-ab6280173b66"
+    "source": "https://www.britannica.com/biography/Coco-Chanel"
   },
   {
+    "itemId": "67bd6a5f-c043-4297-bbd3-999d79a0f72e",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -91,10 +92,10 @@
       "sneakers",
       "streetwear"
     ],
-    "source": "https://www.britannica.com/topic/sneaker-footwear",
-    "seedId": "effe3072-df77-51e6-b164-1e7f3e7f74d9"
+    "source": "https://www.britannica.com/topic/sneaker-footwear"
   },
   {
+    "itemId": "1e721fe8-a49b-41ae-9664-ce3feac7b200",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -110,14 +111,14 @@
       "runway",
       "fashion-week"
     ],
-    "source": "https://www.britannica.com/topic/fashion-show",
-    "seedId": "f47bd68f-c117-5da7-a71a-0fedcfbc2c55"
+    "source": "https://www.britannica.com/topic/fashion-show"
   },
   {
+    "itemId": "6877f641-4e51-434c-9c2c-ae874704ab74",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
-    "question": "Which country’s traditional dress is most closely associated with tartan patterns strongly?",
+    "question": "Which country\u2019s traditional dress is most closely associated with tartan patterns strongly?",
     "correctAnswer": "Scotland",
     "incorrectAnswers": [
       "Madagascar",
@@ -129,10 +130,10 @@
       "tartan",
       "textiles"
     ],
-    "source": "https://www.britannica.com/topic/tartan-textile",
-    "seedId": "d0210e4f-9284-5459-877b-6a156961add4"
+    "source": "https://www.britannica.com/topic/tartan-textile"
   },
   {
+    "itemId": "2bcca0c9-f884-4b83-bc85-0c75a24a5e2a",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -148,10 +149,10 @@
       "fast-fashion",
       "retail"
     ],
-    "source": "https://www.britannica.com/topic/fast-fashion",
-    "seedId": "06439685-1bbc-57fb-9f67-c3e8bfaf017d"
+    "source": "https://www.britannica.com/topic/fast-fashion"
   },
   {
+    "itemId": "b539e483-406f-4409-9159-37c36371b52b",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -167,10 +168,10 @@
       "hats",
       "accessories"
     ],
-    "source": "https://www.britannica.com/topic/millinery",
-    "seedId": "74d82ad5-358c-5fe3-9359-79568ed22c9b"
+    "source": "https://www.britannica.com/topic/millinery"
   },
   {
+    "itemId": "338630a8-46d5-4bc0-b914-f833270ad9f8",
     "category": "trivia",
     "navigationKeyword1": "pop-culture",
     "navigationKeyword2": "fashion",
@@ -186,7 +187,6 @@
       "textiles",
       "supply-chain"
     ],
-    "source": "https://www.britannica.com/technology/textile",
-    "seedId": "25e1b5bf-ad43-571b-b5d6-c1d9f5b0bbfc"
+    "source": "https://www.britannica.com/technology/textile"
   }
 ]

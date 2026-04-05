@@ -1,30 +1,31 @@
 [
   {
+    "itemId": "f1b7cec4-bd11-4eab-b3e3-3d310be7af07",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
     "question": "Since about 1880, global mean sea level has risen by roughly how much?",
-    "correctAnswer": "about 8–9 inches (21–24 centimeters)",
+    "correctAnswer": "about 8\u20139 inches (21\u201324 centimeters)",
     "incorrectAnswers": [
       "less than one inch total",
-      "about 8–9 feet",
-      "about 80–90 inches"
+      "about 8\u20139 feet",
+      "about 80\u201390 inches"
     ],
-    "explanation": "NOAA Climate.gov reports global mean sea level rose about 8–9 inches since 1880, mainly from glacier and ice sheet melt plus ocean thermal expansion.",
+    "explanation": "NOAA Climate.gov reports global mean sea level rose about 8\u20139 inches since 1880, mainly from glacier and ice sheet melt plus ocean thermal expansion.",
     "keywords": [
       "change",
       "sea-level",
       "observations"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "110ee380-7f69-4437-9de2-fcb0059720e1"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "0ed3c065-cab3-492b-bc4c-82e2b7586da1",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
-    "question": "Coastal towns aren’t just watching ice melt—warming seawater itself lifts the ocean. Besides meltwater from land ice, what is the other big driver of global mean sea-level rise?",
-    "correctAnswer": "Thermal expansion—seawater swells as it absorbs heat",
+    "question": "Coastal towns aren\u2019t just watching ice melt\u2014warming seawater itself lifts the ocean. Besides meltwater from land ice, what is the other big driver of global mean sea-level rise?",
+    "correctAnswer": "Thermal expansion\u2014seawater swells as it absorbs heat",
     "incorrectAnswers": [
       "Tides permanently reversing all rivers",
       "Cargo ships displacing extra water each year",
@@ -36,10 +37,10 @@
       "sea-level",
       "causes"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "d1fdc69e-3663-432c-a512-ce49a30c0c0c"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "a2ff3cef-4e23-4083-b60e-318bb1f7b93c",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -56,50 +57,50 @@
       "measurement",
       "altimetry"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "0b04d5bb-fd25-43d9-a679-4c73f80e752b"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "afa0ca88-bc2a-4ee1-96b3-9ee1b9b83eed",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
-    "question": "From 2006–2015, global mean sea level rose about how much per year on average?",
+    "question": "From 2006\u20132015, global mean sea level rose about how much per year on average?",
     "correctAnswer": "0.14 inches (3.6 millimeters) per year",
     "incorrectAnswers": [
       "0.014 inches per year",
       "1.4 inches per year",
       "14 inches per year"
     ],
-    "explanation": "NOAA Climate.gov notes the global mean ocean rose about 0.14 inches (3.6 mm) per year from 2006–2015, faster than the twentieth-century average it cites.",
+    "explanation": "NOAA Climate.gov notes the global mean ocean rose about 0.14 inches (3.6 mm) per year from 2006\u20132015, faster than the twentieth-century average it cites.",
     "keywords": [
       "change",
       "sea-level",
       "rate"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "5becbbf6-9a2a-4b58-bde6-3676a6ef86c0"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "1f2e7f5e-71c2-45a7-8ec5-9b6ea221cb00",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
-    "question": "Carbon dioxide is described as Earth’s most important long-lived what kind of gas in NOAA’s climate overview?",
+    "question": "Carbon dioxide is described as Earth\u2019s most important long-lived what kind of gas in NOAA\u2019s climate overview?",
     "correctAnswer": "greenhouse gas",
     "incorrectAnswers": [
       "noble gas",
       "inert shield gas with no heat effect",
       "purely stratospheric ozone-depleter only"
     ],
-    "explanation": "NOAA Climate.gov describes carbon dioxide as Earth’s most important long-lived greenhouse gas because it absorbs heat radiated from the surface and rereleases it in all directions.",
+    "explanation": "NOAA Climate.gov describes carbon dioxide as Earth\u2019s most important long-lived greenhouse gas because it absorbs heat radiated from the surface and rereleases it in all directions.",
     "keywords": [
       "change",
       "carbon-dioxide",
       "greenhouse-gas"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
-    "seedId": "21561197-e00b-4890-bcdd-8f1d3399b5c2"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
   },
   {
+    "itemId": "06529dd4-4423-459b-a60c-b093243543ac",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -110,16 +111,16 @@
       "800 parts per million",
       "100 parts per million"
     ],
-    "explanation": "NOAA Climate.gov states pre-industrial atmospheric CO₂ was about 280 ppm or less, based on ice-core and other paleoclimate evidence.",
+    "explanation": "NOAA Climate.gov states pre-industrial atmospheric CO\u2082 was about 280 ppm or less, based on ice-core and other paleoclimate evidence.",
     "keywords": [
       "change",
       "carbon-dioxide",
       "pre-industrial"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
-    "seedId": "e7e3f594-a412-4bb1-99db-f933e633e843"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
   },
   {
+    "itemId": "7f30f2d4-7162-4cf7-9784-ba9a77978477",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -130,16 +131,16 @@
       "about 50 percent",
       "about 99 percent"
     ],
-    "explanation": "NOAA Climate.gov, citing NOAA Global Monitoring Laboratory analysis, states CO₂ is responsible for about 80% of the heating influence of human-produced greenhouse gases since 1990.",
+    "explanation": "NOAA Climate.gov, citing NOAA Global Monitoring Laboratory analysis, states CO\u2082 is responsible for about 80% of the heating influence of human-produced greenhouse gases since 1990.",
     "keywords": [
       "change",
       "radiative-forcing",
       "carbon-dioxide"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
-    "seedId": "0ce10a88-6c23-4029-a05b-1422e35168b2"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
   },
   {
+    "itemId": "62da6331-d30d-4203-b9ba-74a20945dbb8",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -150,16 +151,16 @@
       "9.50",
       "6.21"
     ],
-    "explanation": "NOAA Climate.gov reports ocean surface pH fell from 8.21 to 8.10 since industrialization as CO₂ dissolves and forms carbonic acid, a process called ocean acidification.",
+    "explanation": "NOAA Climate.gov reports ocean surface pH fell from 8.21 to 8.10 since industrialization as CO\u2082 dissolves and forms carbonic acid, a process called ocean acidification.",
     "keywords": [
       "change",
       "ocean-acidification",
       "ph"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
-    "seedId": "386114f8-10bb-4890-9cd6-2764cf6e7553"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
   },
   {
+    "itemId": "00b74226-0f93-4772-8649-ea8bb1fd65ce",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -176,10 +177,10 @@
       "projections",
       "sea-level"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "2bae537a-34f4-4cfa-81b6-16e2697f7465"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "e9252966-0787-430d-934b-6dc3355c4edd",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
@@ -190,25 +191,25 @@
       "desert flash floods only inland",
       "stratospheric lightning floods"
     ],
-    "explanation": "NOAA Climate.gov explains higher background sea level lets storm surges push farther inland and makes high-tide “nuisance flooding” more frequent.",
+    "explanation": "NOAA Climate.gov explains higher background sea level lets storm surges push farther inland and makes high-tide \u201cnuisance flooding\u201d more frequent.",
     "keywords": [
       "change",
       "coastal",
       "flooding"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "646f45f6-f26d-4faf-b8ff-ad6d6b05898b"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   },
   {
+    "itemId": "9e52136a-e1ac-4a00-b8cf-b1f0594a0579",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "change",
     "question": "Why do local coastal sea level trends differ from the global average?",
-    "correctAnswer": "Local factors like land subsidence, currents, and post–ice age land rebound alter relative sea level",
+    "correctAnswer": "Local factors like land subsidence, currents, and post\u2013ice age land rebound alter relative sea level",
     "incorrectAnswers": [
       "The ocean is a single flat bathtub with identical rise everywhere always",
       "Only latitude changes tide gauges, nothing else",
-      "Moon phase permanently fixes each harbor’s level"
+      "Moon phase permanently fixes each harbor\u2019s level"
     ],
     "explanation": "NOAA Climate.gov notes past and future sea level at a coast can be more or less than the global average because of ground settling, currents, erosion, and glacial isostatic rebound.",
     "keywords": [
@@ -216,7 +217,6 @@
       "regional",
       "sea-level"
     ],
-    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
-    "seedId": "f11fedbc-4ba2-482d-980f-cf50bcc0b741"
+    "source": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level"
   }
 ]

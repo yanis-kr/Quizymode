@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d2f21535-310e-4dc2-8e9d-7b4e5fb1cd9c",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -15,10 +16,10 @@
       "routing",
       "forwarding"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc1812",
-    "seedId": "db260636-518d-5b27-852c-0ff9d9d7925d"
+    "source": "https://www.rfc-editor.org/rfc/rfc1812"
   },
   {
+    "itemId": "8e4493e4-c960-4e5d-a23c-898c18a7aaa7",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -34,10 +35,10 @@
       "routing",
       "default-route"
     ],
-    "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13789-3.html",
-    "seedId": "d13f5601-32a7-544b-9079-b0f21313c47e"
+    "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13789-3.html"
   },
   {
+    "itemId": "0f34b2fe-bf02-48cd-873c-c5fa23d8fb6f",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -53,10 +54,10 @@
       "routing",
       "bgp"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4271",
-    "seedId": "8640a227-ab2d-5297-b89b-8cd5d4a1c952"
+    "source": "https://www.rfc-editor.org/rfc/rfc4271"
   },
   {
+    "itemId": "462f520e-7f44-4b77-ac5c-81a4efe84a84",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -72,10 +73,10 @@
       "routing",
       "admin-distance"
     ],
-    "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html",
-    "seedId": "db8969c8-57c3-5e4c-a33b-481254984de7"
+    "source": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html"
   },
   {
+    "itemId": "46b83217-227e-46bd-86dc-a7fa125ffc26",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -91,10 +92,10 @@
       "routing",
       "hops"
     ],
-    "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-router/",
-    "seedId": "70ea4d49-a546-5c41-98cb-8c661485e25e"
+    "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-router/"
   },
   {
+    "itemId": "546b4aa0-1f05-42bf-b9e1-533c55b5e8ed",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "routing",
@@ -110,7 +111,6 @@
       "routing",
       "aggregation"
     ],
-    "source": "https://www.juniper.net/documentation/us/en/software/junos/routing-policy/bgp/topics/topic-map/route-aggregation.html",
-    "seedId": "d9d071f9-fe31-5edf-9438-db88dd1dc7d5"
+    "source": "https://www.juniper.net/documentation/us/en/software/junos/routing-policy/bgp/topics/topic-map/route-aggregation.html"
   }
 ]

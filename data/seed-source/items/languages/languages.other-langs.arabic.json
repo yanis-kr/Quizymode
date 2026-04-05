@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "55e95ff7-dae9-4d42-8298-c6929fb306e6",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
-    "question": "What does 'مرحبا' (marhaban) often mean?",
+    "question": "What does '\u0645\u0631\u062d\u0628\u0627' (marhaban) often mean?",
     "correctAnswer": "hello / welcome",
     "incorrectAnswers": [
       "good night only",
@@ -15,14 +16,14 @@
       "hello",
       "arabic-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/hello",
-    "seedId": "c66ff436-402e-5293-b314-b2583e286765"
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/hello"
   },
   {
+    "itemId": "e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
-    "question": "What does 'شكرا' (shukran) mean?",
+    "question": "What does '\u0634\u0643\u0631\u0627' (shukran) mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
@@ -34,14 +35,14 @@
       "thank-you",
       "arabic-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/thank-you",
-    "seedId": "a96a6338-05fe-55fe-8091-d2850da530a8"
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/thank-you"
   },
   {
+    "itemId": "aece5a88-7dd5-49c7-afb6-45c5121711fc",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
-    "question": "What does 'ماء' (ma') mean?",
+    "question": "What does '\u0645\u0627\u0621' (ma') mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "bread",
@@ -53,14 +54,14 @@
       "water",
       "arabic-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/water",
-    "seedId": "ca845b03-ca42-5feb-ae64-d328f790a859"
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/water"
   },
   {
+    "itemId": "d70e8d11-1848-4d5a-a720-388dc1c89d95",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
-    "question": "What does 'نعم' (na'am) often mean?",
+    "question": "What does '\u0646\u0639\u0645' (na'am) often mean?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",
@@ -72,14 +73,14 @@
       "yes",
       "arabic-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/yes",
-    "seedId": "671c73fc-bce1-5b69-af7e-50ffb5a070a7"
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/yes"
   },
   {
+    "itemId": "54924c48-413d-4417-b7a4-e73ab3cfeb71",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
-    "question": "What does 'لا' (la) often mean?",
+    "question": "What does '\u0644\u0627' (la) often mean?",
     "correctAnswer": "no / not",
     "incorrectAnswers": [
       "yes",
@@ -91,10 +92,10 @@
       "no",
       "arabic-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/no",
-    "seedId": "bd24d51d-193f-5aeb-83fd-98ce70379180"
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/no"
   },
   {
+    "itemId": "da2cf1e7-262c-4a4b-988d-a57fa402b3c6",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "arabic",
@@ -110,7 +111,6 @@
       "script-direction",
       "arabic-basics"
     ],
-    "source": "https://www.britannica.com/topic/Arabic-alphabet",
-    "seedId": "187c18cf-c56e-573b-8dc3-cd2dd47e8d47"
+    "source": "https://www.britannica.com/topic/Arabic-alphabet"
   }
 ]

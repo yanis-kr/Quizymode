@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "1f9f3b7c-90a5-4c51-aa57-1093a0544d63",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
-    "question": "What is a court’s authority to hear a certain kind of case called?",
+    "question": "What is a court\u2019s authority to hear a certain kind of case called?",
     "correctAnswer": "jurisdiction",
     "incorrectAnswers": [
       "verdict",
@@ -15,10 +16,10 @@
       "legal-terms",
       "jurisdiction"
     ],
-    "source": "https://www.law.cornell.edu/wex/jurisdiction",
-    "seedId": "156e1637-aa01-5561-a6be-6d6e6c4282b6"
+    "source": "https://www.law.cornell.edu/wex/jurisdiction"
   },
   {
+    "itemId": "b4e885e2-1e7c-4e7a-9e3b-681af4f0eb33",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
@@ -34,29 +35,29 @@
       "legal-terms",
       "precedent"
     ],
-    "source": "https://www.law.cornell.edu/wex/stare_decisis",
-    "seedId": "536b2564-1c0d-5902-bb52-11cfeb017411"
+    "source": "https://www.law.cornell.edu/wex/stare_decisis"
   },
   {
+    "itemId": "23373942-21ac-4def-9c77-c6a9f1bb8936",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
-    "question": "In a jury trial, what is the jury’s decision on guilt or liability often called?",
+    "question": "In a jury trial, what is the jury\u2019s decision on guilt or liability often called?",
     "correctAnswer": "the verdict",
     "incorrectAnswers": [
       "the indictment",
       "the appeal",
       "the writ"
     ],
-    "explanation": "The verdict is the jury’s formal answer to the questions the judge puts to it after trial.",
+    "explanation": "The verdict is the jury\u2019s formal answer to the questions the judge puts to it after trial.",
     "keywords": [
       "legal-terms",
       "trial"
     ],
-    "source": "https://www.law.cornell.edu/wex/verdict",
-    "seedId": "92969812-dedb-5e7f-8a61-15f8bc6de73e"
+    "source": "https://www.law.cornell.edu/wex/verdict"
   },
   {
+    "itemId": "4690277d-9ec8-4f24-9bfa-e40b4bbf1d72",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
@@ -72,14 +73,14 @@
       "legal-terms",
       "legislation"
     ],
-    "source": "https://www.law.cornell.edu/wex/statute",
-    "seedId": "01d56d95-238b-5f06-9a77-d858ee0fc5b6"
+    "source": "https://www.law.cornell.edu/wex/statute"
   },
   {
+    "itemId": "f5790925-d622-4adf-8026-d610059bd90c",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
-    "question": "What is a higher court’s review of a lower court decision usually called?",
+    "question": "What is a higher court\u2019s review of a lower court decision usually called?",
     "correctAnswer": "an appeal",
     "incorrectAnswers": [
       "a deposition",
@@ -91,10 +92,10 @@
       "legal-terms",
       "appeals"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
-    "seedId": "a9263454-d82f-51b8-9c5c-f421f9712eaf"
+    "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
   },
   {
+    "itemId": "f1523ca7-718a-4e0e-9bfe-680d8a85fb97",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "legal-terms",
@@ -110,7 +111,6 @@
       "legal-terms",
       "procedure"
     ],
-    "source": "https://www.law.cornell.edu/wex/statute_of_limitations",
-    "seedId": "46f7b97a-ca7c-5fe0-a9c2-7244e9ce7d02"
+    "source": "https://www.law.cornell.edu/wex/statute_of_limitations"
   }
 ]

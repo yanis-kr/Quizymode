@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "4e519bae-7b01-45e9-8cdf-fbf5f7243af1",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -15,10 +16,10 @@
       "security",
       "tls"
     ],
-    "source": "https://en.wikipedia.org/wiki/Transport_Layer_Security",
-    "seedId": "ba740e69-666b-549b-a71b-839d8f75deff"
+    "source": "https://en.wikipedia.org/wiki/Transport_Layer_Security"
   },
   {
+    "itemId": "07049dba-0c03-435a-835c-893cf7630ff4",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -34,10 +35,10 @@
       "security",
       "firewall"
     ],
-    "source": "https://www.cloudflare.com/learning/security/what-is-a-firewall/",
-    "seedId": "b954e93b-212d-5cc5-a0e2-bcba0ddb86e1"
+    "source": "https://www.cloudflare.com/learning/security/what-is-a-firewall/"
   },
   {
+    "itemId": "3d3fdd4e-8cb2-4585-9967-7535ba0e4fc9",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -53,10 +54,10 @@
       "security",
       "vpn"
     ],
-    "source": "https://en.wikipedia.org/wiki/Virtual_private_network",
-    "seedId": "14977682-15b5-5db5-9047-0e468e6e6bf0"
+    "source": "https://en.wikipedia.org/wiki/Virtual_private_network"
   },
   {
+    "itemId": "802262b9-6c26-47e9-8a2c-2e10c3c33463",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -72,10 +73,10 @@
       "security",
       "ids-ips"
     ],
-    "source": "https://en.wikipedia.org/wiki/Intrusion_detection_system",
-    "seedId": "551eec78-cefc-5d6c-9488-4d8d7c4cc7c6"
+    "source": "https://en.wikipedia.org/wiki/Intrusion_detection_system"
   },
   {
+    "itemId": "cc02e6a2-20a8-4cab-9ff9-fce751829eb5",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -91,10 +92,10 @@
       "security",
       "ddos"
     ],
-    "source": "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/",
-    "seedId": "066e7699-6fd9-59a4-9995-b72000d55cb1"
+    "source": "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/"
   },
   {
+    "itemId": "916dfdd2-d359-4440-b6f2-f9598a61a7db",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "netsec",
@@ -110,7 +111,6 @@
       "security",
       "dns"
     ],
-    "source": "https://www.ietf.org/rfc/rfc1035.txt",
-    "seedId": "18da1c47-2efb-5b0e-8f90-2d8547e77b70"
+    "source": "https://www.ietf.org/rfc/rfc1035.txt"
   }
 ]

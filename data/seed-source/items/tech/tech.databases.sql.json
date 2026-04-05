@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "13fc2636-d99b-4782-ab3a-c717a0cf1350",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -15,10 +16,10 @@
       "sql",
       "query-basics"
     ],
-    "source": "https://www.postgresql.org/docs/current/sql-select.html",
-    "seedId": "b23c8d1e-5cf8-584b-a6b4-adedffeb7105"
+    "source": "https://www.postgresql.org/docs/current/sql-select.html"
   },
   {
+    "itemId": "76a2fd18-6218-4054-92b7-9f910287b75a",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -34,10 +35,10 @@
       "sql",
       "null-handling"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html",
-    "seedId": "d26b3f41-0924-5ce5-bc72-787ea65914cd"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html"
   },
   {
+    "itemId": "032d9eef-34c1-4e45-abf3-5a31be05e01a",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -53,10 +54,10 @@
       "sql",
       "constraints"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-primary-keys",
-    "seedId": "5ba6dc18-61c0-5c45-b809-8370b8a984dc"
+    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-primary-keys"
   },
   {
+    "itemId": "adee6c38-62b2-4684-8228-afd3a064ab5e",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -72,10 +73,10 @@
       "sql",
       "joins"
     ],
-    "source": "https://sqlite.org/lang_select.html#join_op",
-    "seedId": "0c32ad26-dc0a-551a-a94d-6d40ea210e84"
+    "source": "https://sqlite.org/lang_select.html#join_op"
   },
   {
+    "itemId": "95cc0214-0eb8-46e0-a49e-533d7403fc56",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -86,15 +87,15 @@
       "Authentication",
       "Allocation"
     ],
-    "explanation": "Atomicity means a transaction’s changes succeed or fail together; there is no partial commit of a failed unit of work.",
+    "explanation": "Atomicity means a transaction\u2019s changes succeed or fail together; there is no partial commit of a failed unit of work.",
     "keywords": [
       "sql",
       "transactions"
     ],
-    "source": "https://www.postgresql.org/docs/current/transaction-iso.html",
-    "seedId": "f733dfa1-ba0f-5d91-b018-fbc930911837"
+    "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
   },
   {
+    "itemId": "6d0039a9-c4e8-4f7d-b2de-53b713d65ff2",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql",
@@ -110,7 +111,6 @@
       "sql",
       "normalization"
     ],
-    "source": "https://www.ibm.com/topics/database-normalization",
-    "seedId": "45977380-b87f-55f0-9984-f2581ef437ff"
+    "source": "https://www.ibm.com/topics/database-normalization"
   }
 ]

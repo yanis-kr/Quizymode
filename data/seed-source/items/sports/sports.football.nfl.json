@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "25cb690f-6009-4028-ba8b-6be3f2103ad1",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -16,10 +17,10 @@
       "nfl",
       "league"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "f898abd9-9fd7-5d43-a3ff-a754007c69da"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "f95eaade-2e8d-4eb8-be03-f24b33ac7edb",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -36,10 +37,10 @@
       "nfl",
       "teams"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "2b8f93be-462a-548d-b3f9-07fa13a21a8a"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "4e801153-42cc-495d-ac48-2be562d012ca",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -56,10 +57,10 @@
       "nfl",
       "trophy"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "7da7e24c-013c-58c0-a886-6cb07daddca7"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "3b870ce6-00c0-45e5-84a1-c8cf1385a101",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -76,10 +77,10 @@
       "nfl",
       "conferences"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "181605b2-ea7a-594e-a842-86746faf5e21"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "3bb958af-f9b1-4c74-9e00-5d0cbd93cfad",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -96,10 +97,10 @@
       "nfl",
       "super-bowl"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "83a1cf0b-a672-5eac-9ba0-5ee815168f79"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "53162fa7-66b4-499d-85ca-d1d261511ac4",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -116,10 +117,10 @@
       "nfl",
       "packers"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "47cb6c6d-8b25-5e26-8fe3-578f7fdd38bd"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "35c0a815-9fb2-4b74-a8a2-d7821514987a",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -136,10 +137,10 @@
       "nfl",
       "patriots"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "af8e3b88-7a2b-5a1e-909e-a5c589c4a83e"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
+    "itemId": "c3c4f6e0-67cb-4504-94d0-ba87c5c50688",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -156,30 +157,10 @@
       "nfl",
       "lambeau"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "9ed67067-9846-54fe-8abd-0181a67cff1d"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "football",
-    "navigationKeyword2": "nfl",
-    "question": "How long is a regulation NFL game?",
-    "correctAnswer": "60 minutes",
-    "incorrectAnswers": [
-      "48 minutes",
-      "90 minutes",
-      "80 minutes"
-    ],
-    "explanation": "An NFL game has four 15-minute quarters.",
-    "keywords": [
-      "football",
-      "nfl",
-      "game-length"
-    ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "04b13afe-6044-5f82-a520-d972e9554761"
-  },
-  {
+    "itemId": "52d78ac6-847e-497d-ade7-1a601b168f3c",
     "category": "sports",
     "navigationKeyword1": "football",
     "navigationKeyword2": "nfl",
@@ -196,7 +177,6 @@
       "nfl",
       "touchdown"
     ],
-    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/",
-    "seedId": "ecf9928c-0cff-5642-9d75-30d785338ceb"
+    "source": "https://operations.nfl.com/learn-the-game/nfl-basics/"
   }
 ]

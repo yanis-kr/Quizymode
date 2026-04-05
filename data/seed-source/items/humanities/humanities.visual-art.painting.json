@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bde6493c-5a9d-4d43-8fa2-868cc13202e2",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "painting",
@@ -15,10 +16,10 @@
       "visual-art",
       "painting"
     ],
-    "source": "https://www.britannica.com/art/painting",
-    "seedId": "187a39e5-808a-5234-875b-c23d37207165"
+    "source": "https://www.britannica.com/art/painting"
   },
   {
+    "itemId": "045ae92a-4766-408a-93ef-99b0838be0dc",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "painting",
@@ -34,7 +35,6 @@
       "visual-art",
       "fresco"
     ],
-    "source": "https://www.metmuseum.org/toah/hd/fresc/hd_fresc.htm",
-    "seedId": "8b5a9353-e6f0-573a-9f91-22151ed2e0fb"
+    "source": "https://www.metmuseum.org/toah/hd/fresc/hd_fresc.htm"
   }
 ]

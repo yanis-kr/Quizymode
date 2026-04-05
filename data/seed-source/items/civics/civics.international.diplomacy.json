@@ -1,24 +1,25 @@
 [
   {
+    "itemId": "3612556b-bd36-4922-b192-01dad7d7bf85",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
     "question": "What is the main job of an embassy headed by an ambassador?",
-    "correctAnswer": "represent its home country’s government in the host country",
+    "correctAnswer": "represent its home country\u2019s government in the host country",
     "incorrectAnswers": [
-      "run the host country’s elections",
-      "command the host country’s military",
-      "replace the host country’s courts"
+      "run the host country\u2019s elections",
+      "command the host country\u2019s military",
+      "replace the host country\u2019s courts"
     ],
     "explanation": "Embassies handle official relations, passports, and policy communication under the sending state.",
     "keywords": [
       "embassy",
       "ambassador"
     ],
-    "source": "https://www.state.gov/diplomatic-missions/",
-    "seedId": "5010d393-d922-5df2-bbe8-751995b5d22a"
+    "source": "https://www.state.gov/diplomatic-missions/"
   },
   {
+    "itemId": "9818254f-e800-460d-bf80-36d556511bb3",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
@@ -34,10 +35,10 @@
       "consulate",
       "services"
     ],
-    "source": "https://www.state.gov/what-we-do/",
-    "seedId": "b91badcb-749c-5947-b55b-ff4bf8d246a6"
+    "source": "https://www.state.gov/what-we-do/"
   },
   {
+    "itemId": "f7425d48-83ab-42be-b1d3-ecacaf522a5b",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
@@ -53,29 +54,29 @@
       "diplomatic-immunity",
       "vienna-convention"
     ],
-    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf",
-    "seedId": "cd1f3195-8b9c-5f8f-a704-106c475d1e08"
+    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf"
   },
   {
+    "itemId": "a021bc6e-8d3c-483f-81c0-6c0bab235b56",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
-    "question": "What is a chargé d’affaires when no ambassador is present?",
+    "question": "What is a charg\u00e9 d\u2019affaires when no ambassador is present?",
     "correctAnswer": "a senior diplomat who temporarily leads the mission",
     "incorrectAnswers": [
       "a local mayor who hosts parades",
       "a military rank above general",
       "a judge from the host supreme court"
     ],
-    "explanation": "Missions need continuity; a chargé fills the chief-of-mission role for a time.",
+    "explanation": "Missions need continuity; a charg\u00e9 fills the chief-of-mission role for a time.",
     "keywords": [
       "mission",
       "representation"
     ],
-    "source": "https://www.britannica.com/topic/diplomacy",
-    "seedId": "b9074a22-df75-5669-8a1e-98a9fc671f74"
+    "source": "https://www.britannica.com/topic/diplomacy"
   },
   {
+    "itemId": "93c0922c-06e0-42b3-adb8-1020c809b6fd",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
@@ -91,15 +92,15 @@
       "negotiation",
       "dialogue"
     ],
-    "source": "https://www.un.org/en/peace-and-security/",
-    "seedId": "27b0b10f-5a41-514e-9a75-0d86f4ee7f80"
+    "source": "https://www.un.org/en/peace-and-security/"
   },
   {
+    "itemId": "b349d360-e0ea-4084-bd14-e3a9e418d9d4",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "diplomacy",
     "question": "What is recognition in diplomatic practice?",
-    "correctAnswer": "a state’s decision to treat another entity as a state or government for official relations",
+    "correctAnswer": "a state\u2019s decision to treat another entity as a state or government for official relations",
     "incorrectAnswers": [
       "a prize for winning a sports match",
       "automatic approval of every law the other passes",
@@ -110,7 +111,6 @@
       "recognition",
       "statehood"
     ],
-    "source": "https://www.icj-cij.org/",
-    "seedId": "61beab56-3365-5986-8f12-0164e5ee0f95"
+    "source": "https://www.icj-cij.org/"
   }
 ]

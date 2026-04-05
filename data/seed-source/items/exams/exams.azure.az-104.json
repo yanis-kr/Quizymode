@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0d963ee4-c9b0-4fe0-8262-ec23490f1139",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -16,10 +17,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
-    "seedId": "74ef546c-8897-4313-b805-e9377f76a874"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
   },
   {
+    "itemId": "c9345b3d-4552-4d1d-8d88-60677c3d353d",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -36,10 +37,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
-    "seedId": "c00f9136-ba4e-41f6-9274-d6c771dacbad"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction"
   },
   {
+    "itemId": "3369a562-eff3-4135-a645-f10762cade24",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -56,10 +57,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview",
-    "seedId": "ff0c472a-39f0-4cbd-897f-4bee59a2ce01"
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
   },
   {
+    "itemId": "5a1a68b6-9ac4-4b06-b6ec-4844bf8bfbf3",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -76,10 +77,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
-    "seedId": "fece2bb9-bd03-4593-b18f-b533702cae4d"
+    "source": "https://learn.microsoft.com/en-us/azure/backup/backup-overview"
   },
   {
+    "itemId": "f323cf73-4714-4d5e-acd7-76238d088b5d",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -96,10 +97,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview",
-    "seedId": "99a8fa9a-e4cc-4677-9bda-9569b7c286ae"
+    "source": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview"
   },
   {
+    "itemId": "7e40f380-8b15-4d14-af1a-d77e87f0d74b",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -116,10 +117,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
-    "seedId": "66d76e06-0f12-45e1-ba3d-2047876befb4"
+    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
   },
   {
+    "itemId": "b01570e1-2eed-447c-be31-71b4fa3594e7",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -136,10 +137,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
-    "seedId": "8a56b495-d36c-4489-8685-e183cd51454d"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
   },
   {
+    "itemId": "fc0a867a-4dc1-4678-b54f-6ef57c5c46ee",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -156,10 +157,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
-    "seedId": "ee3e65d9-4141-4038-9f91-ac0100fc1713"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
   },
   {
+    "itemId": "267e0c24-0224-42e8-ab56-7038463ed69b",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -176,10 +177,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview",
-    "seedId": "746e1d50-5a38-4f9d-a56e-aaef86c64fdc"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview"
   },
   {
+    "itemId": "8793adc9-ec96-421d-bf41-61f8c9e90403",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -196,10 +197,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
-    "seedId": "9676d640-a2d7-49a3-b732-87ea99b67b86"
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
   },
   {
+    "itemId": "2822b355-588c-4adf-8d95-700722a246ff",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -216,10 +217,10 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
-    "seedId": "45c58e24-0e7d-4064-b795-657386899c7d"
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
   },
   {
+    "itemId": "5e3a9218-79fc-4691-b61f-09c5bb1713cb",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-104",
@@ -236,7 +237,6 @@
       "azure-admin",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
-    "seedId": "726dd277-cf19-451b-a867-2ad31b69a6b4"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
   }
 ]

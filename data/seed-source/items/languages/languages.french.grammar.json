@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f0b6bac9-0bb2-4bb4-997d-2dbff51f6408",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
@@ -16,10 +17,10 @@
       "gender",
       "french-grammar"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/maison",
-    "seedId": "93d52a8e-fd8f-5657-8d43-7b49e2d933ca"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/maison"
   },
   {
+    "itemId": "37463a3e-7787-4bbc-9009-738b6085e8b3",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
@@ -36,10 +37,10 @@
       "word-order",
       "french-grammar"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/parler",
-    "seedId": "745f4902-acb0-58ad-be09-053442303925"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/parler"
   },
   {
+    "itemId": "6a8976bf-b62f-434e-ba53-42d6fb6c9153",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
@@ -56,30 +57,30 @@
       "gender",
       "french-grammar"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/blanc",
-    "seedId": "5e4367dd-0f6f-5f29-85cb-5df96de37c0f"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/blanc"
   },
   {
+    "itemId": "c1706fe9-df12-4156-ac71-7b4e0bec5c3c",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "Which subject pronoun fits this sentence: \"___ suis étudiant\"?",
+    "question": "Which subject pronoun fits this sentence: \"___ suis \u00e9tudiant\"?",
     "correctAnswer": "Je",
     "incorrectAnswers": [
       "Tu",
       "Il",
       "Nous"
     ],
-    "explanation": "\"Suis\" is the first-person singular form of \"être,\" so it goes with \"je\".",
+    "explanation": "\"Suis\" is the first-person singular form of \"\u00eatre,\" so it goes with \"je\".",
     "keywords": [
       "subject-pronouns",
       "to-be",
       "french-grammar"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre",
-    "seedId": "9a63d377-6fb2-5020-b869-2f80998476aa"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
   },
   {
+    "itemId": "000a7d01-cff5-49a7-9416-ec70c8d574b6",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
@@ -96,10 +97,10 @@
       "verbs",
       "french-grammar"
     ],
-    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/",
-    "seedId": "a271333c-0c25-5e9f-b539-2d48e38fd828"
+    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/"
   },
   {
+    "itemId": "e60e85e5-8fbb-4bae-b694-988d9958592b",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
@@ -116,7 +117,6 @@
       "articles",
       "french-grammar"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme",
-    "seedId": "1144b5ca-d2be-5f4c-a5b4-ad3cc5cf8bad"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
   }
 ]

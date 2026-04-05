@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fcf85dbd-54c3-4ec8-943c-595a950008e1",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -15,10 +16,10 @@
       "etl",
       "basics"
     ],
-    "source": "https://en.wikipedia.org/wiki/Extract,_transform,_load",
-    "seedId": "7e33b238-2b12-5b9e-b70e-82bc549e9cc2"
+    "source": "https://en.wikipedia.org/wiki/Extract,_transform,_load"
   },
   {
+    "itemId": "aa64308a-d06d-4530-96a2-5bc79b26c900",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -34,10 +35,10 @@
       "etl",
       "staging"
     ],
-    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-databases/staging-area.html",
-    "seedId": "221f15b5-7920-57df-87d0-547ed6d02311"
+    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-databases/staging-area.html"
   },
   {
+    "itemId": "a187a004-97d3-468f-9a99-398f8ef1f7ec",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -53,10 +54,10 @@
       "etl",
       "elt"
     ],
-    "source": "https://www.snowflake.com/guides/what-etl/",
-    "seedId": "566ec4c1-8540-5948-882d-7fb384f437aa"
+    "source": "https://www.snowflake.com/guides/what-etl/"
   },
   {
+    "itemId": "346d6be1-2450-4ee8-9952-75df82a5d708",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -72,10 +73,10 @@
       "etl",
       "incremental"
     ],
-    "source": "https://docs.getdbt.com/docs/build/incremental-models",
-    "seedId": "f6f70180-7b38-54d5-baf2-484e57c9a386"
+    "source": "https://docs.getdbt.com/docs/build/incremental-models"
   },
   {
+    "itemId": "35e675d3-5da0-4eda-9dca-3c0613a01855",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -91,10 +92,10 @@
       "etl",
       "reliability"
     ],
-    "source": "https://en.wikipedia.org/wiki/Idempotence",
-    "seedId": "dd825c72-fad3-5da6-a50c-402845b0ef77"
+    "source": "https://en.wikipedia.org/wiki/Idempotence"
   },
   {
+    "itemId": "b8bb0757-ba6d-4247-b6c2-e77e899eaffe",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "etl",
@@ -110,7 +111,6 @@
       "etl",
       "quality"
     ],
-    "source": "https://en.wikipedia.org/wiki/Data_profiling",
-    "seedId": "b6c4cfb3-873d-5e9d-abde-aa6b6b16970b"
+    "source": "https://en.wikipedia.org/wiki/Data_profiling"
   }
 ]

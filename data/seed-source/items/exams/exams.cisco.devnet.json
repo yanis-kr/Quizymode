@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5b2364c2-9dfd-471b-8d67-26e2d6fd5a8e",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -16,10 +17,10 @@
       "rest",
       "cisco"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET",
-    "seedId": "096d75d1-70bc-42e9-bfc1-b5eeaee03406"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"
   },
   {
+    "itemId": "43a7c685-d5f0-4197-93b0-e031b1c94b67",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -36,10 +37,10 @@
       "rest",
       "cisco"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST",
-    "seedId": "0d07a3a5-678f-433e-9e18-68d87f964bcb"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
   },
   {
+    "itemId": "a0675534-e849-4517-9a79-7ba572744d38",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -56,10 +57,10 @@
       "http",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110",
-    "seedId": "36f0fecb-8d67-491f-857f-4f23198b8d61"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110"
   },
   {
+    "itemId": "2b9066d3-2f72-4544-b0b5-b8225b560e94",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -76,10 +77,10 @@
       "json",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc8259",
-    "seedId": "b9a13599-082d-4d60-b003-cf8d463c2208"
+    "source": "https://www.rfc-editor.org/rfc/rfc8259"
   },
   {
+    "itemId": "bfe60b2f-75be-4925-b631-8922807b56a0",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -96,10 +97,10 @@
       "api",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc6750",
-    "seedId": "38a33fe8-f239-46d7-9a4e-09d0e4455f39"
+    "source": "https://www.rfc-editor.org/rfc/rfc6750"
   },
   {
+    "itemId": "b1f44d97-5789-4db5-969f-b397056220fa",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -116,10 +117,10 @@
       "webhooks",
       "cisco"
     ],
-    "source": "https://docs.github.com/en/webhooks-and-events/webhooks/about-webhooks",
-    "seedId": "6972b1f1-0648-4b9a-84d0-edb6ded1537c"
+    "source": "https://docs.github.com/en/webhooks-and-events/webhooks/about-webhooks"
   },
   {
+    "itemId": "9ed015de-73ee-4d11-bb82-6e82c4bc58f1",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -136,10 +137,10 @@
       "api",
       "cisco"
     ],
-    "source": "https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api",
-    "seedId": "13247b87-e7ef-4850-92aa-157831e008df"
+    "source": "https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api"
   },
   {
+    "itemId": "f2b99d14-3669-4718-9332-36fe87dfd921",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -156,10 +157,10 @@
       "git",
       "cisco"
     ],
-    "source": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell",
-    "seedId": "cce5a25c-15fd-4ff4-be15-6ff3c13e9ea3"
+    "source": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell"
   },
   {
+    "itemId": "e28deb88-6f83-4fd7-97f8-7f5582721b03",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -176,10 +177,10 @@
       "yaml",
       "cisco"
     ],
-    "source": "https://yaml.org/spec/1.2.2/",
-    "seedId": "fc6bb778-016a-4661-bda6-8c18ed3f281b"
+    "source": "https://yaml.org/spec/1.2.2/"
   },
   {
+    "itemId": "74157ce8-26d5-4353-8e90-34333680c441",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "devnet",
@@ -196,7 +197,6 @@
       "ci-cd",
       "cisco"
     ],
-    "source": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions",
-    "seedId": "052eba71-00cb-4f79-a0ea-9cbcf98b3880"
+    "source": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions"
   }
 ]

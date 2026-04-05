@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "94af8f14-f982-4f1a-8f99-3e44b48efb97",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -15,10 +16,10 @@
       "ai-ml",
       "backpropagation"
     ],
-    "source": "https://en.wikipedia.org/wiki/Backpropagation",
-    "seedId": "ed2f1ef0-d560-58bb-8a16-6962f8bb0631"
+    "source": "https://en.wikipedia.org/wiki/Backpropagation"
   },
   {
+    "itemId": "0976d70d-9d6a-4a68-9ae7-cb7b77ce836b",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -34,10 +35,10 @@
       "ai-ml",
       "activation-functions"
     ],
-    "source": "https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html",
-    "seedId": "3c27c467-fbb0-50e3-8919-0f378f17456e"
+    "source": "https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html"
   },
   {
+    "itemId": "b1e9333e-2bca-4048-a4fe-514a1081c1e1",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -53,10 +54,10 @@
       "ai-ml",
       "cnn"
     ],
-    "source": "https://www.tensorflow.org/tutorials/images/intro_to_cnns",
-    "seedId": "45305190-9677-59b2-b4c5-cc7b102c092c"
+    "source": "https://www.tensorflow.org/tutorials/images/intro_to_cnns"
   },
   {
+    "itemId": "74fce50c-8980-4622-8480-bd65a2a356e8",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -72,10 +73,10 @@
       "ai-ml",
       "dropout"
     ],
-    "source": "https://en.wikipedia.org/wiki/Dropout_(neural_networks)",
-    "seedId": "ec6b80c1-468a-5a05-9b60-33a4100ce30e"
+    "source": "https://en.wikipedia.org/wiki/Dropout_(neural_networks)"
   },
   {
+    "itemId": "e46fa40e-1267-4b42-93d1-8e4f4b6fd7b4",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -91,10 +92,10 @@
       "ai-ml",
       "batch-norm"
     ],
-    "source": "https://keras.io/api/layers/normalization_layers/batch_normalization/",
-    "seedId": "a9383ab1-a265-585a-8abe-82601eaccede"
+    "source": "https://keras.io/api/layers/normalization_layers/batch_normalization/"
   },
   {
+    "itemId": "a4299f79-ca57-499f-9f10-4d347b0543e8",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
@@ -110,7 +111,6 @@
       "ai-ml",
       "gradient-descent"
     ],
-    "source": "https://en.wikipedia.org/wiki/Gradient_descent",
-    "seedId": "91b22f95-df78-5ec8-b86f-379dc562652e"
+    "source": "https://en.wikipedia.org/wiki/Gradient_descent"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b83ed71e-fae3-4c9d-8636-2d454209cefe",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -15,10 +16,10 @@
       "polling",
       "survey"
     ],
-    "source": "https://www.britannica.com/topic/opinion-poll",
-    "seedId": "5f0f3545-c0f7-5c32-ba39-9c0369017100"
+    "source": "https://www.britannica.com/topic/opinion-poll"
   },
   {
+    "itemId": "5a2b36e9-3bf5-41cf-ac30-03c50921a9d7",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -27,17 +28,17 @@
     "incorrectAnswers": [
       "proof the poll is always wrong",
       "the number of people who refused to vote",
-      "the pollster’s salary"
+      "the pollster\u2019s salary"
     ],
     "explanation": "Random samples produce estimates plus a stated margin that reflects sample size.",
     "keywords": [
       "margin-of-error",
       "statistics"
     ],
-    "source": "https://www.pewresearch.org/our-methods/u-s-survey-research/",
-    "seedId": "1803c232-ae41-5a1b-8e58-4a22fb2f0aaa"
+    "source": "https://www.pewresearch.org/our-methods/u-s-survey-research/"
   },
   {
+    "itemId": "675f84a4-4c28-48ce-80a1-07b9f77ca664",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -53,10 +54,10 @@
       "question-wording",
       "survey-design"
     ],
-    "source": "https://www.aapor.org/",
-    "seedId": "84d18125-8dc7-5bc9-81b5-49eb8091c204"
+    "source": "https://www.aapor.org/"
   },
   {
+    "itemId": "ae5a32de-70af-433b-bc13-9f31584dd0a4",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -72,10 +73,10 @@
       "push-poll",
       "ethics"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "a4b53429-cc9d-5cd3-8338-cfc244db595e"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "a1216f1e-092f-4063-ae84-a5c43eac1008",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -91,10 +92,10 @@
       "weighting",
       "demographics"
     ],
-    "source": "https://www.pewresearch.org/",
-    "seedId": "d648d27b-bed3-55e1-bb0a-eb81ff7e8b6a"
+    "source": "https://www.pewresearch.org/"
   },
   {
+    "itemId": "2b274635-2bc0-4f4b-aa74-d0f66ce9df6d",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "public-opinion",
@@ -110,7 +111,6 @@
       "tracking-poll",
       "trends"
     ],
-    "source": "https://www.britannica.com/topic/opinion-poll",
-    "seedId": "c428fedc-2b88-5110-81d5-dcffca4a5368"
+    "source": "https://www.britannica.com/topic/opinion-poll"
   }
 ]

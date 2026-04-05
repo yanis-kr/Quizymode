@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b54413b9-61b6-420c-898c-2dc6ecde56fa",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -15,10 +16,10 @@
       "terraform",
       "iac"
     ],
-    "source": "https://developer.hashicorp.com/terraform/intro",
-    "seedId": "5bad61dc-e16f-5b03-97a1-b7b4999e299d"
+    "source": "https://developer.hashicorp.com/terraform/intro"
   },
   {
+    "itemId": "8dfc4b26-ab25-447f-9109-08a89ab5d95d",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -34,10 +35,10 @@
       "terraform",
       "state"
     ],
-    "source": "https://developer.hashicorp.com/terraform/language/state",
-    "seedId": "e5a55c3b-ea3d-5e6a-afbb-4d390f305235"
+    "source": "https://developer.hashicorp.com/terraform/language/state"
   },
   {
+    "itemId": "c284a1df-0e7e-430b-923d-17d3516ef2bb",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -53,10 +54,10 @@
       "terraform",
       "hcl"
     ],
-    "source": "https://developer.hashicorp.com/terraform/language/syntax/configuration",
-    "seedId": "9b1db519-2165-5423-aa1f-2a11fb0ea041"
+    "source": "https://developer.hashicorp.com/terraform/language/syntax/configuration"
   },
   {
+    "itemId": "9ac3f206-49e9-498b-a579-ebdbc7a1c46d",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -72,10 +73,10 @@
       "terraform",
       "providers"
     ],
-    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/terraform-aws-provider-best-practices/introduction.html",
-    "seedId": "80f65529-4f5f-56ed-b3fc-4ed855ed29fe"
+    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/terraform-aws-provider-best-practices/introduction.html"
   },
   {
+    "itemId": "1444c868-8178-4109-8be2-5b666a85d9eb",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -91,10 +92,10 @@
       "terraform",
       "plan"
     ],
-    "source": "https://developer.hashicorp.com/terraform/cli/commands/plan",
-    "seedId": "39298535-6793-513a-ae21-0ed673d2531c"
+    "source": "https://developer.hashicorp.com/terraform/cli/commands/plan"
   },
   {
+    "itemId": "59ee4de1-2bc7-407c-96fa-1544ae867440",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "terraform",
@@ -110,7 +111,6 @@
       "terraform",
       "modules"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/developer/terraform/best-practices-module-development",
-    "seedId": "a2ac5b92-e6e3-530b-8a78-b7cf2be00815"
+    "source": "https://learn.microsoft.com/en-us/azure/developer/terraform/best-practices-module-development"
   }
 ]

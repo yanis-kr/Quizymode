@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2945b6a6-87f2-4358-afd7-77bd006daeec",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -15,10 +16,10 @@
       "total-rewards",
       "compensation"
     ],
-    "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/total-rewards.aspx",
-    "seedId": "66fe49fa-cbcb-4570-82b8-ad9b25d689e5"
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/total-rewards.aspx"
   },
   {
+    "itemId": "78c73447-6b0f-42cd-aa56-84d0ff1b5d28",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -34,10 +35,10 @@
       "pay-bands",
       "compensation"
     ],
-    "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/salary-structures.aspx",
-    "seedId": "fbf2799f-8837-4f18-bc1a-14661eb8152d"
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/compensation/pages/salary-structures.aspx"
   },
   {
+    "itemId": "07e5f080-b78f-4b54-b75e-3f9e7924ba83",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -53,10 +54,10 @@
       "flsa",
       "overtime"
     ],
-    "source": "https://www.dol.gov/agencies/whd/overtime",
-    "seedId": "298d8449-c397-4bf4-8113-f746b4684ce0"
+    "source": "https://www.dol.gov/agencies/whd/overtime"
   },
   {
+    "itemId": "4c96b410-5306-45bb-bc4f-f42347e8f013",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -72,10 +73,10 @@
       "benefits",
       "retention"
     ],
-    "source": "https://www.shrm.org/resourcesandtools/hr-topics/benefits/pages/employee-benefits.aspx",
-    "seedId": "db110c8f-df8f-486e-94c0-59a8eb655c41"
+    "source": "https://www.shrm.org/resourcesandtools/hr-topics/benefits/pages/employee-benefits.aspx"
   },
   {
+    "itemId": "55256ec7-95ad-43e5-aca6-d3c4553ff570",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -91,10 +92,10 @@
       "pay-equity",
       "compensation"
     ],
-    "source": "https://www.eeoc.gov/equal-paycompensation-discrimination",
-    "seedId": "781d86da-e6f6-42ab-8c0b-2a05560b6c09"
+    "source": "https://www.eeoc.gov/equal-paycompensation-discrimination"
   },
   {
+    "itemId": "b78b1d5b-3ce1-4008-ab96-e9bdbf726e42",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "pay-benefits",
@@ -110,7 +111,6 @@
       "clawback",
       "governance"
     ],
-    "source": "https://www.investopedia.com/terms/c/clawback.asp",
-    "seedId": "ce30e549-294d-491a-9ca8-59488186ca04"
+    "source": "https://www.investopedia.com/terms/c/clawback.asp"
   }
 ]

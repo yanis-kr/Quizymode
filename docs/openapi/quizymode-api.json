@@ -766,8 +766,8 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Preview a repo-managed seed sync (Admin only)",
-        "description": "Validates an uploaded seed manifest and returns only the delta for existing seeded items. Initial seed previews suppress the full item list.",
+        "summary": "Preview a repo-managed item sync (Admin only)",
+        "description": "Validates an uploaded item manifest and returns the create/update delta for explicit item IDs.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -800,8 +800,8 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Apply a repo-managed seed sync (Admin only)",
-        "description": "Upserts a repo-managed seed set using stable item seed IDs. Missing seeded rows in the database are recreated from the manifest.",
+        "summary": "Apply a repo-managed item sync (Admin only)",
+        "description": "Upserts repo-managed public items using explicit item IDs.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3978,14 +3978,11 @@
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.ApplyResponse": {
         "required": [
           "seedSet",
-          "isInitialSeed",
           "totalItemsInPayload",
-          "existingManagedItemCount",
+          "existingItemCount",
           "createdCount",
           "updatedCount",
-          "adoptedCount",
           "unchangedCount",
-          "missingFromPayloadCount",
           "hasMoreChanges",
           "changes"
         ],
@@ -3994,13 +3991,10 @@
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
-          "isInitialSeed": {
-            "$ref": "#/components/schemas/System.Boolean"
-          },
           "totalItemsInPayload": {
             "$ref": "#/components/schemas/System.Int32"
           },
-          "existingManagedItemCount": {
+          "existingItemCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "createdCount": {
@@ -4009,13 +4003,7 @@
           "updatedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
-          "adoptedCount": {
-            "$ref": "#/components/schemas/System.Int32"
-          },
           "unchangedCount": {
-            "$ref": "#/components/schemas/System.Int32"
-          },
-          "missingFromPayloadCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "hasMoreChanges": {
@@ -4028,7 +4016,7 @@
       },
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse": {
         "required": [
-          "seedId",
+          "itemId",
           "action",
           "category",
           "navigationKeyword1",
@@ -4038,7 +4026,7 @@
         ],
         "type": "object",
         "properties": {
-          "seedId": {
+          "itemId": {
             "$ref": "#/components/schemas/System.Guid"
           },
           "action": {
@@ -4064,15 +4052,11 @@
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.PreviewResponse": {
         "required": [
           "seedSet",
-          "isInitialSeed",
-          "previewSuppressed",
           "totalItemsInPayload",
-          "existingManagedItemCount",
+          "existingItemCount",
           "createdCount",
           "updatedCount",
-          "adoptedCount",
           "unchangedCount",
-          "missingFromPayloadCount",
           "hasMoreChanges",
           "changes"
         ],
@@ -4081,16 +4065,10 @@
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
-          "isInitialSeed": {
-            "$ref": "#/components/schemas/System.Boolean"
-          },
-          "previewSuppressed": {
-            "$ref": "#/components/schemas/System.Boolean"
-          },
           "totalItemsInPayload": {
             "$ref": "#/components/schemas/System.Int32"
           },
-          "existingManagedItemCount": {
+          "existingItemCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "createdCount": {
@@ -4099,13 +4077,7 @@
           "updatedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
-          "adoptedCount": {
-            "$ref": "#/components/schemas/System.Int32"
-          },
           "unchangedCount": {
-            "$ref": "#/components/schemas/System.Int32"
-          },
-          "missingFromPayloadCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "hasMoreChanges": {
@@ -4140,7 +4112,7 @@
       },
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest": {
         "required": [
-          "seedId",
+          "itemId",
           "category",
           "navigationKeyword1",
           "navigationKeyword2",
@@ -4150,7 +4122,7 @@
         ],
         "type": "object",
         "properties": {
-          "seedId": {
+          "itemId": {
             "$ref": "#/components/schemas/System.Guid"
           },
           "category": {
@@ -5482,16 +5454,6 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
-          },
-          "seedId": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
-              }
-            ]
           }
         }
       },
@@ -5588,16 +5550,6 @@
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.AddBulk.AddItemsBulk.ItemError"
           },
           "createdItemIds": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
-              }
-            ]
-          },
-          "reassignedSeedIds": {
             "oneOf": [
               {
                 "type": "null"

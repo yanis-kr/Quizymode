@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "dc417675-fbc0-4c0e-9c8e-e3b2a6d26a01",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -15,10 +16,10 @@
       "epa",
       "environmental-law"
     ],
-    "source": "https://www.epa.gov/aboutepa/our-mission-and-what-we-do",
-    "seedId": "c6fa6bb8-5110-502d-b2f7-7a7eea26dd65"
+    "source": "https://www.epa.gov/aboutepa/our-mission-and-what-we-do"
   },
   {
+    "itemId": "fdb41821-3eff-48dc-81d4-b04805be41cf",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -34,10 +35,10 @@
       "nepa",
       "environmental-review"
     ],
-    "source": "https://www.epa.gov/nepa/national-environmental-policy-act-review-process",
-    "seedId": "02b2feb8-91d8-56d9-ba0f-c708e9cf0eff"
+    "source": "https://www.epa.gov/nepa/national-environmental-policy-act-review-process"
   },
   {
+    "itemId": "af7c55a6-77be-4fdf-86ea-ff0842586070",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -53,10 +54,10 @@
       "cooperative-federalism",
       "permits"
     ],
-    "source": "https://www.epa.gov/laws-regulations/laws-and-executive-orders",
-    "seedId": "37bb8a79-3663-59b6-a37d-cfb209aa2b60"
+    "source": "https://www.epa.gov/laws-regulations/laws-and-executive-orders"
   },
   {
+    "itemId": "5160842d-e473-4bfa-8eac-8702689e7e15",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -72,10 +73,10 @@
       "national-parks",
       "public-lands"
     ],
-    "source": "https://www.nps.gov/aboutus/index.htm",
-    "seedId": "abc763a6-070c-5f72-8ffc-2529eb50056c"
+    "source": "https://www.nps.gov/aboutus/index.htm"
   },
   {
+    "itemId": "961ec0aa-8b9c-4c4c-a754-71b1b0ceedd4",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -91,10 +92,10 @@
       "state-environment",
       "permits"
     ],
-    "source": "https://www.epa.gov/partnerships-and-program-management",
-    "seedId": "7ccc44af-0bec-5f00-aa7b-03212f972a98"
+    "source": "https://www.epa.gov/partnerships-and-program-management"
   },
   {
+    "itemId": "adeb2597-6314-497d-87ee-8d2df65970f5",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "environment",
@@ -110,7 +111,6 @@
       "endangered-species",
       "wildlife-law"
     ],
-    "source": "https://www.fws.gov/law/endangered-species-act",
-    "seedId": "e882aa4d-f1ab-56d9-b366-c631b12eef35"
+    "source": "https://www.fws.gov/law/endangered-species-act"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "65031141-79b8-475b-aaf3-4a3e9e0a83b0",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
@@ -16,18 +17,18 @@
       "massachusetts",
       "1775"
     ],
-    "source": "https://www.britannica.com/event/Battles-of-Lexington-and-Concord",
-    "seedId": "adf88211-b4aa-421b-9d20-640d6e814450"
+    "source": "https://www.britannica.com/event/Battles-of-Lexington-and-Concord"
   },
   {
+    "itemId": "259f4054-f0f6-4c86-8a71-203cb4d38bef",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "Colonial militia fortified Breed’s Hill in June 1775, though the battle is traditionally named after which nearby height?",
+    "question": "Colonial militia fortified Breed\u2019s Hill in June 1775, though the battle is traditionally named after which nearby height?",
     "correctAnswer": "Bunker Hill",
     "incorrectAnswers": [
       "Dorchester Heights",
-      "Copp’s Hill",
+      "Copp\u2019s Hill",
       "Beacon Hill"
     ],
     "explanation": "Patriots inflicted heavy casualties before yielding ground, showing they could stand against regulars.",
@@ -36,14 +37,14 @@
       "boston",
       "1775"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Bunker-Hill",
-    "seedId": "61f247cf-c0da-45e1-b5c9-e226fb2ed578"
+    "source": "https://www.britannica.com/event/Battle-of-Bunker-Hill"
   },
   {
+    "itemId": "9af03196-0212-443f-ad3a-3115adfed08e",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "Thomas Paine’s January 1776 pamphlet Common Sense urged complete independence from which monarch?",
+    "question": "Thomas Paine\u2019s January 1776 pamphlet Common Sense urged complete independence from which monarch?",
     "correctAnswer": "George III",
     "incorrectAnswers": [
       "Louis XVI",
@@ -56,10 +57,10 @@
       "pamphlet",
       "independence"
     ],
-    "source": "https://www.britannica.com/topic/Common-Sense-pamphlet-by-Paine",
-    "seedId": "751503a7-1727-4a56-ad6c-51715a0fe655"
+    "source": "https://www.britannica.com/topic/Common-Sense-pamphlet-by-Paine"
   },
   {
+    "itemId": "2421899e-0b82-4130-bbe0-88ffb05f61cb",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
@@ -70,40 +71,40 @@
       "Benjamin Franklin alone",
       "Alexander Hamilton"
     ],
-    "explanation": "Jefferson’s committee draft asserted natural rights and listed grievances against George III.",
+    "explanation": "Jefferson\u2019s committee draft asserted natural rights and listed grievances against George III.",
     "keywords": [
       "revolution",
       "declaration",
       "1776"
     ],
-    "source": "https://www.britannica.com/event/Declaration-of-Independence",
-    "seedId": "ba64fece-06c2-46d8-a11c-e62078466f89"
+    "source": "https://www.britannica.com/event/Declaration-of-Independence"
   },
   {
+    "itemId": "9c18be0c-ba0f-4e91-8729-8a553981b3a7",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "Horatio Gates’s victory in October 1777 at which New York battle helped convince France to ally openly with the United States?",
+    "question": "Horatio Gates\u2019s victory in October 1777 at which New York battle helped convince France to ally openly with the United States?",
     "correctAnswer": "Saratoga",
     "incorrectAnswers": [
       "Long Island",
       "Brandywine",
       "Monmouth"
     ],
-    "explanation": "Burgoyne’s surrender demonstrated the rebellion could defeat a major British field army.",
+    "explanation": "Burgoyne\u2019s surrender demonstrated the rebellion could defeat a major British field army.",
     "keywords": [
       "revolution",
       "saratoga",
       "france"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Saratoga-United-States-history",
-    "seedId": "5f5fadbd-ee24-4342-964a-9c2dea4da6ee"
+    "source": "https://www.britannica.com/event/Battle-of-Saratoga-United-States-history"
   },
   {
+    "itemId": "ce75a0ff-7f3a-4bfc-90a2-4712cb83c668",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "Washington’s Christmas 1776 crossing of the Delaware River set up a surprise attack on Hessian troops in which New Jersey town?",
+    "question": "Washington\u2019s Christmas 1776 crossing of the Delaware River set up a surprise attack on Hessian troops in which New Jersey town?",
     "correctAnswer": "Trenton",
     "incorrectAnswers": [
       "Princeton",
@@ -116,14 +117,14 @@
       "new-jersey",
       "washington"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Trenton",
-    "seedId": "d6a44bf7-6474-4011-86bb-2aef884bebb3"
+    "source": "https://www.britannica.com/event/Battle-of-Trenton"
   },
   {
+    "itemId": "85879b58-4ae1-4351-8dd3-8f8af0fbd651",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "The Continental Army’s harsh winter encampment of 1777–78, marked by Steuben’s drill reforms, occurred where?",
+    "question": "The Continental Army\u2019s harsh winter encampment of 1777\u201378, marked by Steuben\u2019s drill reforms, occurred where?",
     "correctAnswer": "Valley Forge",
     "incorrectAnswers": [
       "Morristown",
@@ -136,10 +137,10 @@
       "continental-army",
       "pennsylvania"
     ],
-    "source": "https://www.britannica.com/place/Valley-Forge",
-    "seedId": "5357042c-79c5-4d1f-b051-dddbf85c8085"
+    "source": "https://www.britannica.com/place/Valley-Forge"
   },
   {
+    "itemId": "b95214fb-5015-4062-9e72-fbbc31430439",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
@@ -156,10 +157,10 @@
       "treaty",
       "diplomacy"
     ],
-    "source": "https://www.britannica.com/event/Treaty-of-Paris-1783",
-    "seedId": "d87c9296-43be-4ea9-adc9-06d65821d4e1"
+    "source": "https://www.britannica.com/event/Treaty-of-Paris-1783"
   },
   {
+    "itemId": "9a990e2f-b2cc-421c-a254-af78ffe0aae2",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
@@ -176,50 +177,50 @@
       "loyalists",
       "civil-war"
     ],
-    "source": "https://www.britannica.com/topic/Loyalist-American-Revolution",
-    "seedId": "c9603c39-83dc-4f71-83d7-c387a780e34c"
+    "source": "https://www.britannica.com/topic/Loyalist-American-Revolution"
   },
   {
+    "itemId": "a6e1b438-de49-4a22-9ed3-16d823adc6a6",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "The nation’s first frame of government, adopted during the Revolution, was called what?",
+    "question": "The nation\u2019s first frame of government, adopted during the Revolution, was called what?",
     "correctAnswer": "The Articles of Confederation",
     "incorrectAnswers": [
       "The Constitution of 1787",
       "The Albany Plan",
       "The Northwest Ordinance"
     ],
-    "explanation": "Weak central authority under the Articles later spurred the Philadelphia Convention’s reforms.",
+    "explanation": "Weak central authority under the Articles later spurred the Philadelphia Convention\u2019s reforms.",
     "keywords": [
       "revolution",
       "government",
       "articles"
     ],
-    "source": "https://www.britannica.com/topic/Articles-of-Confederation",
-    "seedId": "898a56db-a0c7-4596-9175-5eb64a6d8e02"
+    "source": "https://www.britannica.com/topic/Articles-of-Confederation"
   },
   {
+    "itemId": "e96419c7-5742-49e3-a959-59d658dcf1b9",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
-    "question": "John Paul Jones’s 1779 duel with HMS Serapis off England’s coast made him a naval hero of which emerging navy?",
+    "question": "John Paul Jones\u2019s 1779 duel with HMS Serapis off England\u2019s coast made him a naval hero of which emerging navy?",
     "correctAnswer": "The Continental Navy",
     "incorrectAnswers": [
       "The Royal Navy",
       "The French Navy",
       "The Spanish Armada"
     ],
-    "explanation": "Jones’s refusal to surrender—“I have not yet begun to fight”—symbolized American resolve at sea.",
+    "explanation": "Jones\u2019s refusal to surrender\u2014\u201cI have not yet begun to fight\u201d\u2014symbolized American resolve at sea.",
     "keywords": [
       "revolution",
       "navy",
       "jones"
     ],
-    "source": "https://www.britannica.com/biography/John-Paul-Jones",
-    "seedId": "300192d2-1fc0-4d92-926c-82fe720a6c7d"
+    "source": "https://www.britannica.com/biography/John-Paul-Jones"
   },
   {
+    "itemId": "0bc2fa11-84e1-4473-b144-82e41dadaf77",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "revolution",
@@ -236,7 +237,6 @@
       "yorktown",
       "cornwallis"
     ],
-    "source": "https://www.britannica.com/event/Siege-of-Yorktown",
-    "seedId": "359789a5-f9ea-4b54-a1f7-296b4da685ee"
+    "source": "https://www.britannica.com/event/Siege-of-Yorktown"
   }
 ]

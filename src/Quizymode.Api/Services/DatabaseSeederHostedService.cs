@@ -5,255 +5,112 @@ using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
-using Quizymode.Api.Features.Items.AddBulk;
-using Quizymode.Api.Shared.Helpers;
+using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
-using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Options;
+using Quizymode.Api.Services.Taxonomy;
 
 namespace Quizymode.Api.Services;
 
 internal sealed class DatabaseSeederHostedService(
     ILogger<DatabaseSeederHostedService> logger,
     IServiceProvider serviceProvider,
-    ISimHashService simHashService,
     IWebHostEnvironment environment,
     IOptions<SeedOptions> seedOptions,
     IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
 {
-    private static readonly Guid HomeSampleCollectionId = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
     private const string SeedItemsFolderName = "items";
-    private const string SampleCollectionsFolderName = "sample-collections";
-    private const string HomeSampleCollectionFileName = "home-sample.json";
+    private const string SeedCollectionsFolderName = "collections";
+    private const string SeederUserId = "seeder";
 
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
-    private readonly ISimHashService _simHashService = simHashService;
     private readonly IWebHostEnvironment _environment = environment;
     private readonly SeedOptions _seedOptions = seedOptions.Value;
     private readonly TaxonomyOptions _taxonomyOptions = taxonomyOptions.Value;
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        // Migrations are applied in Program.cs before the app accepts requests.
-        // Apply any pending migrations here so schema is up to date before seeding (idempotent; no-op if already applied).
         try
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            ITaxonomyItemCategoryResolver itemCategoryResolver = scope.ServiceProvider.GetRequiredService<ITaxonomyItemCategoryResolver>();
-            ITaxonomyRegistry taxonomyRegistry = scope.ServiceProvider.GetRequiredService<ITaxonomyRegistry>();
-            IAuditService auditService = scope.ServiceProvider.GetRequiredService<IAuditService>();
+            SeedSyncAdminService seedSyncAdminService = scope.ServiceProvider.GetRequiredService<SeedSyncAdminService>();
 
             await db.Database.MigrateAsync(cancellationToken);
-
-            // Seed categories and navigation keywords (always run, idempotent)
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
 
-            string? resolvedSeedRoot = null;
-            if (!string.IsNullOrWhiteSpace(_seedOptions.Path))
+            if (string.IsNullOrWhiteSpace(_seedOptions.Path))
             {
-                resolvedSeedRoot = ResolveSeedPath(_seedOptions.Path);
+                _logger.LogWarning("Seed path is not configured. Skipping database seeding.");
+                return;
             }
 
-            // Seed items if empty
-            bool hasItems = await db.Items.AnyAsync(cancellationToken);
-            if (!hasItems)
+            string? resolvedSeedRoot = ResolveSeedPath(_seedOptions.Path);
+            if (resolvedSeedRoot is null)
             {
-                _logger.LogInformation("Seeding initial data from JSON files...");
+                _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", _seedOptions.Path);
+                return;
+            }
 
-                if (string.IsNullOrWhiteSpace(_seedOptions.Path))
+            bool hadItemsBefore = await db.Items.AnyAsync(cancellationToken);
+
+            string? resolvedItemsPath = ResolveSeedItemsPath(resolvedSeedRoot);
+            if (resolvedItemsPath is not null)
+            {
+                List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(resolvedItemsPath, cancellationToken);
+                if (itemRequests.Count > 0)
                 {
-                    _logger.LogWarning("Seed path is not configured. Skipping database seeding.");
-                    return;
-                }
+                    SeedSyncAdmin.Request request = new(
+                        SchemaVersion: 1,
+                        SeedSet: "local-seed-dev",
+                        Items: itemRequests,
+                        DeltaPreviewLimit: 50);
 
-                if (resolvedSeedRoot is null)
-                {
-                    _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", _seedOptions.Path);
-                    return;
-                }
-
-                string? resolvedItemsPath = ResolveSeedItemsPath(resolvedSeedRoot);
-                if (resolvedItemsPath is null)
-                {
-                    _logger.LogWarning("Seed items path does not exist under {SeedPath}. Skipping database seeding.", resolvedSeedRoot);
-                    return;
-                }
-
-                _logger.LogInformation("Using seed items path {SeedItemsPath}", resolvedItemsPath);
-
-                // Create a seeder user context (admin privileges)
-                SeederUserContext seederUserContext = new SeederUserContext();
-
-                string[] allFiles = Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories);
-                Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
-
-                int totalItemsProcessed = 0;
-                int totalItemsCreated = 0;
-
-                foreach (string jsonFile in allFiles)
-                {
-                    try
+                    Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyAsync(request, cancellationToken);
+                    if (result.IsFailure)
                     {
-                        string fileJson = await File.ReadAllTextAsync(jsonFile, cancellationToken);
-                        
-                        // Deserialize as array of items (bulk format)
-                        List<BulkItemSeedData>? items = JsonSerializer.Deserialize<List<BulkItemSeedData>>(
-                            fileJson,
-                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                        if (items is null || items.Count == 0)
-                        {
-                            _logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
-                            continue;
-                        }
-
-                        string category = items[0].Category.Trim();
-                        List<string> SanitizeKeywordList(string itemCategory, List<string>? raw)
-                        {
-                            if (raw is null)
-                                return [];
-                            return raw
-                                .Select(k => k.Trim())
-                                .Where(k => !string.IsNullOrEmpty(k))
-                                .Where(k => !string.Equals(k, itemCategory, StringComparison.OrdinalIgnoreCase))
-                                .ToList();
-                        }
-
-                        string keyword1;
-                        string keyword2;
-                        BulkItemSeedData head = items[0];
-                        if (!string.IsNullOrWhiteSpace(head.NavigationKeyword1) && !string.IsNullOrWhiteSpace(head.NavigationKeyword2))
-                        {
-                            keyword1 = KeywordHelper.NormalizeKeywordName(head.NavigationKeyword1) ?? head.NavigationKeyword1.Trim();
-                            keyword2 = KeywordHelper.NormalizeKeywordName(head.NavigationKeyword2) ?? head.NavigationKeyword2.Trim();
-                        }
-                        else
-                        {
-                            List<string> fk = SanitizeKeywordList(category, head.Keywords);
-                            keyword1 = fk.Count > 0 ? KeywordHelper.NormalizeKeywordName(fk[0]) ?? fk[0] : "general";
-                            keyword2 = fk.Count > 1 ? KeywordHelper.NormalizeKeywordName(fk[1]) ?? fk[1] : "mixed";
-                        }
-
-                        List<string> firstExtras = SanitizeKeywordList(category, head.Keywords)
-                            .Where(k => !string.Equals(KeywordHelper.NormalizeKeywordName(k) ?? k, keyword1, StringComparison.OrdinalIgnoreCase))
-                            .Where(k => !string.Equals(KeywordHelper.NormalizeKeywordName(k) ?? k, keyword2, StringComparison.OrdinalIgnoreCase))
-                            .Select(k => KeywordHelper.NormalizeKeywordName(k) ?? k)
-                            .ToList();
-                        List<AddItemsBulk.KeywordRequest> defaultKeywords = firstExtras
-                            .Select(k => new AddItemsBulk.KeywordRequest(k, false))
-                            .ToList();
-
-                        List<AddItemsBulk.ItemRequest> itemRequests = items.Select(item =>
-                        {
-                            List<string>? kw = SanitizeKeywordList(item.Category.Trim(), item.Keywords)
-                                .Select(k => KeywordHelper.NormalizeKeywordName(k) ?? k)
-                                .Where(k => !string.Equals(k, keyword1, StringComparison.OrdinalIgnoreCase))
-                                .Where(k => !string.Equals(k, keyword2, StringComparison.OrdinalIgnoreCase))
-                                .ToList();
-                            return new AddItemsBulk.ItemRequest(
-                                Question: item.Question,
-                                CorrectAnswer: item.CorrectAnswer,
-                                IncorrectAnswers: item.IncorrectAnswers,
-                                Explanation: item.Explanation ?? string.Empty,
-                                Keywords: kw.Count > 0 ? kw.Select(k => new AddItemsBulk.KeywordRequest(k, false)).ToList() : null,
-                                Source: item.Source
-                            );
-                        }).ToList();
-
-                        AddItemsBulk.Request bulkRequest = new AddItemsBulk.Request(
-                            IsPrivate: false,
-                            Category: category,
-                            Keyword1: keyword1,
-                            Keyword2: keyword2,
-                            Keywords: defaultKeywords,
-                            Items: itemRequests
-                        );
-
-                        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
-                            bulkRequest,
-                            db,
-                            _simHashService,
-                            seederUserContext,
-                            itemCategoryResolver,
-                            taxonomyRegistry,
-                            auditService,
-                            cancellationToken);
-
-                        if (result.IsSuccess && result.Value is not null)
-                        {
-                            totalItemsProcessed += result.Value.TotalRequested;
-                            totalItemsCreated += result.Value.CreatedCount;
-
-                            await ApplySeedIdsToCreatedItemsAsync(
-                                db,
-                                items,
-                                result.Value,
-                                cancellationToken);
-                            
-                            _logger.LogInformation(
-                                "Processed {FileName}: {Created} created, {Duplicates} duplicates, {Failed} failed",
-                                Path.GetFileName(jsonFile),
-                                result.Value.CreatedCount,
-                                result.Value.DuplicateCount,
-                                result.Value.FailedCount);
-                            
-                            if (result.Value.Errors.Count > 0)
-                            {
-                                foreach (AddItemsBulk.ItemError error in result.Value.Errors)
-                                {
-                                    _logger.LogWarning("Error in {FileName} item {Index}: {Error}",
-                                        Path.GetFileName(jsonFile),
-                                        error.Index,
-                                        error.ErrorMessage);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            _logger.LogError("Failed to process {FileName}: {Error}",
-                                Path.GetFileName(jsonFile),
-                                result.Error?.Description ?? "Unknown error");
-                        }
+                        _logger.LogError("Failed to apply local item seed sync: {Error}", result.Error?.Description ?? "Unknown error");
+                        return;
                     }
-                    catch (Exception ex)
-                    {
-                        _logger.LogError(ex, "Error processing {FileName}: {Error}",
-                            Path.GetFileName(jsonFile),
-                            ex.Message);
-                    }
+
+                    SeedSyncAdmin.ApplyResponse response = result.Value!;
+                    _logger.LogInformation(
+                        "Applied local item seed sync: {Created} created, {Updated} updated, {Unchanged} unchanged from {Total} payload items.",
+                        response.CreatedCount,
+                        response.UpdatedCount,
+                        response.UnchangedCount,
+                        response.TotalItemsInPayload);
                 }
-
-                _logger.LogInformation("Seeding completed: {TotalProcessed} items processed, {TotalCreated} items created",
-                    totalItemsProcessed,
-                    totalItemsCreated);
-
-                // Add rating 5 for items with Category=Science
-                await SeedScienceRatingsAsync(db, cancellationToken);
-
-                _logger.LogInformation("Database seeding completed successfully.");
             }
             else
             {
-                _logger.LogInformation("Skipping seeding; items already present.");
+                _logger.LogInformation("No seed-dev items folder found under {SeedRoot}.", resolvedSeedRoot);
             }
 
-            await EnsureHomeSampleCollectionAsync(
-                db,
-                itemCategoryResolver,
-                taxonomyRegistry,
-                auditService,
-                resolvedSeedRoot,
-                cancellationToken);
+            await EnsureSeedScienceRatingsAsync(db, cancellationToken);
+
+            string? resolvedCollectionsPath = ResolveSeedCollectionsPath(resolvedSeedRoot);
+            if (resolvedCollectionsPath is not null)
+            {
+                await EnsurePublicCollectionsAsync(db, resolvedCollectionsPath, cancellationToken);
+            }
+
+            if (!hadItemsBefore)
+            {
+                _logger.LogInformation("Database seeding completed successfully for an empty database.");
+            }
+            else
+            {
+                _logger.LogInformation("Database seeding completed successfully with idempotent upserts.");
+            }
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Database seeding failed. Error: {ErrorMessage}", ex.Message);
             _logger.LogError("Stack trace: {StackTrace}", ex.StackTrace);
-            
-            // Re-throw in development to make issues visible
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 throw;
@@ -262,16 +119,6 @@ internal sealed class DatabaseSeederHostedService(
     }
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
-
-    private static string GetFullExceptionMessage(Exception ex)
-    {
-        if (ex.InnerException is null)
-        {
-            return ex.Message;
-        }
-
-        return $"{ex.Message} -> {GetFullExceptionMessage(ex.InnerException)}";
-    }
 
     private string? ResolveSeedPath(string configuredSeedPath)
     {
@@ -306,215 +153,207 @@ internal sealed class DatabaseSeederHostedService(
         return null;
     }
 
-    private async Task SeedScienceRatingsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    private async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadSeedItemRequestsAsync(
+        string resolvedItemsPath,
+        CancellationToken cancellationToken)
     {
-        // Find the Science category
+        string[] allFiles = Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories);
+        Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
+
+        List<SeedSyncAdmin.SeedItemRequest> requests = [];
+        foreach (string jsonFile in allFiles)
+        {
+            string fileJson = await File.ReadAllTextAsync(jsonFile, cancellationToken);
+            List<RepoManagedItemSeedData>? items = JsonSerializer.Deserialize<List<RepoManagedItemSeedData>>(
+                fileJson,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            if (items is null || items.Count == 0)
+            {
+                _logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
+                continue;
+            }
+
+            foreach (RepoManagedItemSeedData item in items)
+            {
+                requests.Add(new SeedSyncAdmin.SeedItemRequest(
+                    item.ItemId,
+                    item.Category,
+                    item.NavigationKeyword1,
+                    item.NavigationKeyword2,
+                    item.Question,
+                    item.CorrectAnswer,
+                    item.IncorrectAnswers,
+                    item.Explanation,
+                    item.Keywords,
+                    item.Source));
+            }
+        }
+
+        return requests;
+    }
+
+    private async Task EnsureSeedScienceRatingsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
         Category? scienceCategory = await db.Categories
-            .Where(c => c.Name.ToLower() == "science")
-            .OrderBy(c => c.Id)
+            .Where(category => category.Name.ToLower() == "science")
+            .OrderBy(category => category.Id)
             .FirstOrDefaultAsync(cancellationToken);
 
         if (scienceCategory is null)
         {
             _logger.LogInformation("Science category not found. Skipping rating seeding.");
-            return; // No Science category found, skip rating seeding
-        }
-
-        // Get all items with Science category
-        List<Item> scienceItems = await db.Items
-            .Where(i => i.CategoryId == scienceCategory.Id)
-            .ToListAsync(cancellationToken);
-
-        if (scienceItems.Count == 0)
-        {
-            _logger.LogInformation("No Science items found. Skipping rating seeding.");
-            return; // No Science items found
-        }
-
-        // Add rating 5 for each Science item
-        List<Rating> ratings = scienceItems.Select(item => new Rating
-        {
-            ItemId = item.Id,
-            Stars = 5,
-            CreatedBy = "seeder",
-            CreatedAt = DateTime.UtcNow
-        }).ToList();
-
-        await db.Ratings.AddRangeAsync(ratings, cancellationToken);
-        await db.SaveChangesAsync(cancellationToken);
-        
-        _logger.LogInformation("Added {Count} ratings (5 stars) for Science category items.", ratings.Count);
-    }
-
-    private async Task EnsureHomeSampleCollectionAsync(
-        ApplicationDbContext db,
-        ITaxonomyItemCategoryResolver itemCategoryResolver,
-        ITaxonomyRegistry taxonomyRegistry,
-        IAuditService auditService,
-        string? resolvedSeedRoot,
-        CancellationToken cancellationToken)
-    {
-        HomeSampleCollectionSeedData seedData = await LoadHomeSampleCollectionSeedDataAsync(
-            resolvedSeedRoot,
-            cancellationToken);
-        List<Guid> sampleItemIds = await ResolveHomeSampleItemIdsAsync(db, seedData, cancellationToken);
-        if (sampleItemIds.Count == 0)
-        {
-            _logger.LogWarning("No public items available for the homepage sample collection. Skipping collection seed.");
             return;
         }
 
-        Collection? collection = await db.Collections
-            .FirstOrDefaultAsync(c => c.Id == seedData.Id, cancellationToken);
-
-        if (collection is null)
-        {
-            collection = new Collection
-            {
-                Id = seedData.Id,
-                Name = seedData.Name,
-                Description = seedData.Description,
-                CreatedBy = "seeder",
-                CreatedAt = DateTime.UtcNow,
-                IsPublic = true,
-            };
-            await db.Collections.AddAsync(collection, cancellationToken);
-        }
-        else
-        {
-            collection.Name = seedData.Name;
-            collection.Description = seedData.Description;
-            collection.IsPublic = true;
-            collection.UpdatedAt = DateTime.UtcNow;
-        }
-
-        List<CollectionItem> existingLinks = await db.CollectionItems
-            .Where(ci => ci.CollectionId == seedData.Id)
+        List<Guid> scienceItemIds = await db.Items
+            .Where(item => item.CategoryId == scienceCategory.Id)
+            .Select(item => item.Id)
             .ToListAsync(cancellationToken);
 
-        HashSet<Guid> desiredItemIds = sampleItemIds.ToHashSet();
-        List<CollectionItem> linksToRemove = existingLinks
-            .Where(link => !desiredItemIds.Contains(link.ItemId))
-            .ToList();
-
-        if (linksToRemove.Count > 0)
+        if (scienceItemIds.Count == 0)
         {
-            db.CollectionItems.RemoveRange(linksToRemove);
+            _logger.LogInformation("No Science items found. Skipping rating seeding.");
+            return;
         }
 
-        HashSet<Guid> existingItemIds = existingLinks
-            .Select(link => link.ItemId)
+        HashSet<Guid> existingRatedItemIds = (await db.Ratings
+            .Where(rating => rating.CreatedBy == SeederUserId && scienceItemIds.Contains(rating.ItemId))
+            .Select(rating => rating.ItemId)
+            .ToListAsync(cancellationToken))
             .ToHashSet();
 
-        List<CollectionItem> linksToAdd = sampleItemIds
-            .Where(itemId => !existingItemIds.Contains(itemId))
-            .Select(itemId => new CollectionItem
+        List<Rating> ratingsToAdd = scienceItemIds
+            .Where(itemId => !existingRatedItemIds.Contains(itemId))
+            .Select(itemId => new Rating
             {
-                CollectionId = seedData.Id,
                 ItemId = itemId,
-                AddedAt = DateTime.UtcNow,
+                Stars = 5,
+                CreatedBy = SeederUserId,
+                CreatedAt = DateTime.UtcNow
             })
             .ToList();
 
-        if (linksToAdd.Count > 0)
+        if (ratingsToAdd.Count == 0)
         {
-            await db.CollectionItems.AddRangeAsync(linksToAdd, cancellationToken);
+            return;
         }
 
+        await db.Ratings.AddRangeAsync(ratingsToAdd, cancellationToken);
         await db.SaveChangesAsync(cancellationToken);
 
-        _logger.LogInformation(
-            "Ensured homepage sample collection {CollectionId} with {ItemCount} items.",
-            seedData.Id,
-            sampleItemIds.Count);
+        _logger.LogInformation("Ensured {Count} seeder ratings (5 stars) for Science items.", ratingsToAdd.Count);
     }
 
-    private async Task<List<Guid>> ResolveHomeSampleItemIdsAsync(
+    private async Task EnsurePublicCollectionsAsync(
         ApplicationDbContext db,
-        HomeSampleCollectionSeedData seedData,
+        string resolvedCollectionsPath,
         CancellationToken cancellationToken)
     {
-        IQueryable<Item> query = db.Items
-            .AsNoTracking()
-            .Where(i => !i.IsPrivate)
-            .Where(i => i.CreatedBy == "seeder")
-            .Where(i => i.Category != null && i.Category.Name == "trivia");
+        string[] allFiles = Directory.GetFiles(resolvedCollectionsPath, "*.json", SearchOption.AllDirectories);
+        Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
 
-        if (seedData.ItemSeedIds.Count > 0)
+        foreach (string jsonFile in allFiles)
         {
-            query = query.Where(i => i.SeedId.HasValue && seedData.ItemSeedIds.Contains(i.SeedId.Value));
-        }
-        else if (seedData.ItemQuestions.Count > 0)
-        {
-            query = query.Where(i => seedData.ItemQuestions.Contains(i.Question));
-        }
-        else
-        {
-            return [];
-        }
+            string raw = await File.ReadAllTextAsync(jsonFile, cancellationToken);
+            PublicCollectionSeedData? seedData = JsonSerializer.Deserialize<PublicCollectionSeedData>(
+                raw,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        List<Item> items = await query
-            .OrderBy(i => i.CreatedAt)
-            .ToListAsync(cancellationToken);
+            if (seedData is null)
+            {
+                _logger.LogWarning("Collection seed file {FileName} was empty.", Path.GetFileName(jsonFile));
+                continue;
+            }
 
-        if (items.Count < seedData.ItemSeedIds.Count && seedData.ItemQuestions.Count > 0)
-        {
-            items = await db.Items
-                .AsNoTracking()
-                .Where(i => !i.IsPrivate)
-                .Where(i => i.CreatedBy == "seeder")
-                .Where(i => i.Category != null && i.Category.Name == "trivia")
-                .Where(i => seedData.ItemQuestions.Contains(i.Question))
-                .OrderBy(i => i.CreatedAt)
+            List<Guid> desiredItemIds = seedData.ItemIds.Distinct().ToList();
+            if (desiredItemIds.Count == 0)
+            {
+                _logger.LogWarning("Collection seed file {FileName} had no itemIds.", Path.GetFileName(jsonFile));
+                continue;
+            }
+
+            HashSet<Guid> existingItemIds = (await db.Items
+                .Where(item => desiredItemIds.Contains(item.Id))
+                .Select(item => item.Id)
+                .ToListAsync(cancellationToken))
+                .ToHashSet();
+
+            List<Guid> missingItemIds = desiredItemIds
+                .Where(itemId => !existingItemIds.Contains(itemId))
+                .ToList();
+
+            if (missingItemIds.Count > 0)
+            {
+                throw new InvalidOperationException(
+                    $"Collection seed '{jsonFile}' references missing itemIds: {string.Join(", ", missingItemIds)}");
+            }
+
+            Collection? collection = await db.Collections
+                .FirstOrDefaultAsync(existing => existing.Id == seedData.CollectionId, cancellationToken);
+
+            if (collection is null)
+            {
+                collection = new Collection
+                {
+                    Id = seedData.CollectionId,
+                    Name = seedData.Name,
+                    Description = seedData.Description,
+                    CreatedBy = SeederUserId,
+                    CreatedAt = DateTime.UtcNow,
+                    IsPublic = true
+                };
+                await db.Collections.AddAsync(collection, cancellationToken);
+            }
+            else
+            {
+                collection.Name = seedData.Name;
+                collection.Description = seedData.Description;
+                collection.IsPublic = true;
+                collection.UpdatedAt = DateTime.UtcNow;
+            }
+
+            List<CollectionItem> existingLinks = await db.CollectionItems
+                .Where(link => link.CollectionId == seedData.CollectionId)
                 .ToListAsync(cancellationToken);
+
+            HashSet<Guid> desiredItemSet = desiredItemIds.ToHashSet();
+            List<CollectionItem> linksToRemove = existingLinks
+                .Where(link => !desiredItemSet.Contains(link.ItemId))
+                .ToList();
+
+            if (linksToRemove.Count > 0)
+            {
+                db.CollectionItems.RemoveRange(linksToRemove);
+            }
+
+            HashSet<Guid> existingLinkItemIds = existingLinks
+                .Select(link => link.ItemId)
+                .ToHashSet();
+
+            List<CollectionItem> linksToAdd = desiredItemIds
+                .Where(itemId => !existingLinkItemIds.Contains(itemId))
+                .Select(itemId => new CollectionItem
+                {
+                    CollectionId = seedData.CollectionId,
+                    ItemId = itemId,
+                    AddedAt = DateTime.UtcNow
+                })
+                .ToList();
+
+            if (linksToAdd.Count > 0)
+            {
+                await db.CollectionItems.AddRangeAsync(linksToAdd, cancellationToken);
+            }
+
+            await db.SaveChangesAsync(cancellationToken);
+
+            _logger.LogInformation(
+                "Ensured public collection {CollectionId} with {ItemCount} items from {FileName}.",
+                seedData.CollectionId,
+                desiredItemIds.Count,
+                Path.GetFileName(jsonFile));
         }
-
-        return items
-            .Select(i => i.Id)
-            .Distinct()
-            .ToList();
-    }
-
-    private async Task<HomeSampleCollectionSeedData> LoadHomeSampleCollectionSeedDataAsync(
-        string? resolvedSeedRoot,
-        CancellationToken cancellationToken)
-    {
-        string? collectionPath = ResolveHomeSampleCollectionPath(resolvedSeedRoot);
-        if (collectionPath is null)
-        {
-            return BuildFallbackHomeSampleCollectionSeedData();
-        }
-
-        string raw = await File.ReadAllTextAsync(collectionPath, cancellationToken);
-        HomeSampleCollectionSeedData? data = JsonSerializer.Deserialize<HomeSampleCollectionSeedData>(
-            raw,
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-        if (data is null)
-        {
-            _logger.LogWarning("Home sample collection file {CollectionPath} was empty. Falling back to defaults.", collectionPath);
-            return BuildFallbackHomeSampleCollectionSeedData();
-        }
-
-        return data;
-    }
-
-    private static HomeSampleCollectionSeedData BuildFallbackHomeSampleCollectionSeedData()
-    {
-        return new HomeSampleCollectionSeedData
-        {
-            Id = HomeSampleCollectionId,
-            Name = "Fun Trivia Facts",
-            Description = "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.",
-            ItemQuestions =
-            [
-                "What color is the \"black box\" recorder on most commercial airplanes?",
-                "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?",
-                "Which planet has a day longer than its year?",
-                "What is the national animal of Scotland?",
-                "What everyday food never really spoils when stored properly?"
-            ]
-        };
     }
 
     private async Task SeedCategoriesAndNavigationAsync(ApplicationDbContext db, CancellationToken cancellationToken)
@@ -535,24 +374,28 @@ internal sealed class DatabaseSeederHostedService(
         }
 
         string sql = await File.ReadAllTextAsync(sqlPath, cancellationToken);
-        DbConnection conn = db.Database.GetDbConnection();
-        bool shouldClose = conn.State != ConnectionState.Open;
+        DbConnection connection = db.Database.GetDbConnection();
+        bool shouldClose = connection.State != ConnectionState.Open;
         if (shouldClose)
+        {
             await db.Database.OpenConnectionAsync(cancellationToken);
+        }
 
         try
         {
-            await using DbTransaction tx = await conn.BeginTransactionAsync(cancellationToken);
-            await using DbCommand cmd = conn.CreateCommand();
-            cmd.Transaction = tx;
-            cmd.CommandText = sql;
-            await cmd.ExecuteNonQueryAsync(cancellationToken);
-            await tx.CommitAsync(cancellationToken);
+            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
+            await using DbCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = sql;
+            await command.ExecuteNonQueryAsync(cancellationToken);
+            await transaction.CommitAsync(cancellationToken);
         }
         finally
         {
             if (shouldClose)
+            {
                 await db.Database.CloseConnectionAsync();
+            }
         }
 
         _logger.LogInformation("Taxonomy seed SQL applied.");
@@ -569,111 +412,41 @@ internal sealed class DatabaseSeederHostedService(
         return Directory.Exists(resolvedSeedRoot) ? resolvedSeedRoot : null;
     }
 
-    private static string? ResolveHomeSampleCollectionPath(string? resolvedSeedRoot)
+    private static string? ResolveSeedCollectionsPath(string resolvedSeedRoot)
     {
-        if (string.IsNullOrWhiteSpace(resolvedSeedRoot))
-        {
-            return null;
-        }
-
-        string candidate = Path.Combine(
-            resolvedSeedRoot,
-            SampleCollectionsFolderName,
-            HomeSampleCollectionFileName);
-
-        return File.Exists(candidate) ? candidate : null;
-    }
-
-    private async Task ApplySeedIdsToCreatedItemsAsync(
-        ApplicationDbContext db,
-        List<BulkItemSeedData> sourceItems,
-        AddItemsBulk.Response response,
-        CancellationToken cancellationToken)
-    {
-        if (response.CreatedItemIds is null || response.CreatedItemIds.Count == 0)
-        {
-            return;
-        }
-
-        List<Guid?> sourceSeedIds = sourceItems.Select(item => item.SeedId).ToList();
-        if (response.CreatedItemIds.Count != sourceSeedIds.Count)
-        {
-            _logger.LogWarning(
-                "Skipping seedId assignment because created item count {CreatedCount} did not match source item count {SourceCount}.",
-                response.CreatedItemIds.Count,
-                sourceSeedIds.Count);
-            return;
-        }
-
-        List<Item> createdItems = await db.Items
-            .Where(item => response.CreatedItemIds.Contains(item.Id))
-            .ToListAsync(cancellationToken);
-
-        Dictionary<Guid, Item> itemById = createdItems.ToDictionary(item => item.Id);
-        bool changed = false;
-
-        for (int index = 0; index < response.CreatedItemIds.Count; index++)
-        {
-            Guid? seedId = sourceSeedIds[index];
-            if (!seedId.HasValue)
-            {
-                continue;
-            }
-
-            if (!itemById.TryGetValue(response.CreatedItemIds[index], out Item? item))
-            {
-                continue;
-            }
-
-            if (item.SeedId == seedId.Value)
-            {
-                continue;
-            }
-
-            item.SeedId = seedId.Value;
-            changed = true;
-        }
-
-        if (changed)
-        {
-            await db.SaveChangesAsync(cancellationToken);
-        }
+        string candidate = Path.Combine(resolvedSeedRoot, SeedCollectionsFolderName);
+        return Directory.Exists(candidate) ? candidate : null;
     }
 }
 
-// Seed data model for JSON deserialization (bulk format)
-internal sealed class BulkItemSeedData
+internal sealed class RepoManagedItemSeedData
 {
-    public Guid? SeedId { get; set; }
+    [JsonPropertyName("itemId")]
+    public Guid ItemId { get; set; }
+
     public string Category { get; set; } = string.Empty;
     public string Question { get; set; } = string.Empty;
     public string CorrectAnswer { get; set; } = string.Empty;
-    public List<string> IncorrectAnswers { get; set; } = new();
+    public List<string> IncorrectAnswers { get; set; } = [];
     public string? Explanation { get; set; }
     public List<string>? Keywords { get; set; }
     public string? Source { get; set; }
 
     [JsonPropertyName("navigationKeyword1")]
-    public string? NavigationKeyword1 { get; set; }
+    public string NavigationKeyword1 { get; set; } = string.Empty;
 
     [JsonPropertyName("navigationKeyword2")]
-    public string? NavigationKeyword2 { get; set; }
+    public string NavigationKeyword2 { get; set; } = string.Empty;
 }
 
-// Seeder user context for bulk add operations
-internal sealed class SeederUserContext : IUserContext
+internal sealed class PublicCollectionSeedData
 {
-    public bool IsAuthenticated => true;
-    public string? UserId => "seeder";
-    public bool IsAdmin => true;
-}
+    [JsonPropertyName("collectionId")]
+    public Guid CollectionId { get; set; }
 
-internal sealed class HomeSampleCollectionSeedData
-{
-    public Guid Id { get; set; } = new("8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511");
-    public string Name { get; set; } = "Fun Trivia Facts";
-    public string Description { get; set; } =
-        "A public five-item trivia sampler with surprising facts and easy conversation-starter questions.";
-    public List<Guid> ItemSeedIds { get; set; } = [];
-    public List<string> ItemQuestions { get; set; } = [];
+    public string Name { get; set; } = string.Empty;
+    public string? Description { get; set; }
+
+    [JsonPropertyName("itemIds")]
+    public List<Guid> ItemIds { get; set; } = [];
 }

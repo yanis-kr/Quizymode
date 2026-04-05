@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "35dc5990-e7d7-4bc6-b6fa-f76f34138739",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -15,10 +16,10 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://www.usa.gov/agencies",
-    "seedId": "9750ad10-af8b-57a5-a684-2f0fafb16acd"
+    "source": "https://www.usa.gov/agencies"
   },
   {
+    "itemId": "86862395-d82f-4e68-b9b4-71732bd31f83",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -34,10 +35,10 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://whitehouse.gov/omb/",
-    "seedId": "d4dbf926-be24-5ec6-a968-db0e9cb98d08"
+    "source": "https://whitehouse.gov/omb/"
   },
   {
+    "itemId": "eaed66b1-4a41-4cbe-aba9-db786be670c2",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -53,10 +54,10 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://www.usa.gov/agencies/government-accountability-office",
-    "seedId": "c4eaeb0c-f1b1-5aa8-9929-0d3c82aed7b0"
+    "source": "https://www.usa.gov/agencies/government-accountability-office"
   },
   {
+    "itemId": "9c39795b-a430-4ffa-83cf-59d941647d8d",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -72,10 +73,10 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://icma.org/description-and-qualifications-professional-manager",
-    "seedId": "73b7f561-0f35-5b29-aee2-de6e4f399001"
+    "source": "https://icma.org/description-and-qualifications-professional-manager"
   },
   {
+    "itemId": "9d384bc7-4a64-415c-a430-45d552e42845",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -91,10 +92,10 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://www.usa.gov/agencies/government-accountability-office",
-    "seedId": "85d414a4-a701-5558-b93c-4cb390ae3d1e"
+    "source": "https://www.usa.gov/agencies/government-accountability-office"
   },
   {
+    "itemId": "f49c6b6d-c626-4f43-b60c-4a991ffc17d2",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "public-admin",
@@ -110,7 +111,6 @@
       "public-admin",
       "civics-government"
     ],
-    "source": "https://www.icma.org/links/about-icma",
-    "seedId": "d491f308-b916-5b84-9219-3342071ea514"
+    "source": "https://www.icma.org/links/about-icma"
   }
 ]

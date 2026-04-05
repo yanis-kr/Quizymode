@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7d07c0d1-55e7-4cd4-a81a-75b857a7cda2",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
@@ -16,10 +17,10 @@
       "assurance",
       "misstatement"
     ],
-    "source": "https://www.pcaobus.org/oversight/standards/auditing-standards",
-    "seedId": "b196db2d-2015-5454-81a1-f1c2c1b2a33f"
+    "source": "https://www.pcaobus.org/oversight/standards/auditing-standards"
   },
   {
+    "itemId": "665f4244-583c-4ab0-983d-004c3b65cc36",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
@@ -36,15 +37,15 @@
       "audit-planning",
       "risk-assessment"
     ],
-    "source": "https://www.sec.gov/",
-    "seedId": "9a251eb4-b039-53e4-ae6a-013d608ca236"
+    "source": "https://www.sec.gov/"
   },
   {
+    "itemId": "190834a3-0e6a-460e-99ad-b80f7b8c2953",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
-    "question": "What does “materiality” refer to in auditing?",
-    "correctAnswer": "The relative importance of a misstatement; misstatements are considered material if they could influence users’ decisions.",
+    "question": "What does \u201cmateriality\u201d refer to in auditing?",
+    "correctAnswer": "The relative importance of a misstatement; misstatements are considered material if they could influence users\u2019 decisions.",
     "incorrectAnswers": [
       "How physically large the document pages are",
       "How long the company has been operating",
@@ -56,10 +57,10 @@
       "audit-judgment",
       "users-decisions"
     ],
-    "source": "https://www.pcaobus.org/",
-    "seedId": "c86fbd74-95c3-5bcc-9d41-511485d7516a"
+    "source": "https://www.pcaobus.org/"
   },
   {
+    "itemId": "f28b0cdf-a28b-472d-8d00-f46d632d2eaf",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
@@ -76,14 +77,14 @@
       "population",
       "evidence"
     ],
-    "source": "https://www.investopedia.com/terms/a/auditsampling.asp",
-    "seedId": "8139a641-a4ec-5ffe-831f-a3394238dc9f"
+    "source": "https://www.investopedia.com/terms/a/auditsampling.asp"
   },
   {
+    "itemId": "2622ba66-1419-44f6-a169-35b750e670b7",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
-    "question": "What is the difference between an audit opinion and management’s responsibility?",
+    "question": "What is the difference between an audit opinion and management\u2019s responsibility?",
     "correctAnswer": "Management is responsible for preparing the statements; the auditor evaluates and reports on whether statements are fairly presented.",
     "incorrectAnswers": [
       "Management gives the auditor opinion; the auditor prepares the financial statements",
@@ -96,10 +97,10 @@
       "responsibilities",
       "independence"
     ],
-    "source": "https://www.aicpa-cima.com/",
-    "seedId": "b91dc596-5f85-5cec-9ded-a00e3f5634aa"
+    "source": "https://www.aicpa-cima.com/"
   },
   {
+    "itemId": "1a86d320-21aa-43a0-8b54-085e2df32430",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "audit",
@@ -116,7 +117,6 @@
       "assurance-level",
       "analytical-procedures"
     ],
-    "source": "https://www.pcaobus.org/",
-    "seedId": "62693a7f-becb-586f-8ca1-cb800aae2bd3"
+    "source": "https://www.pcaobus.org/"
   }
 ]

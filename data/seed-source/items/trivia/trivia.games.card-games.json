@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "14f05f21-fc3e-4111-a425-7451ad992954",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -15,10 +16,10 @@
       "cards",
       "games"
     ],
-    "source": "https://www.britannica.com/topic/playing-card",
-    "seedId": "33cd2dd7-0f47-515e-95b4-af0ca41e641d"
+    "source": "https://www.britannica.com/topic/playing-card"
   },
   {
+    "itemId": "5c2395e5-4e97-4acc-8982-11a221452fc8",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -34,10 +35,10 @@
       "poker",
       "betting"
     ],
-    "source": "https://www.britannica.com/topic/poker-card-game",
-    "seedId": "b1b90113-c873-546a-b9e3-71e4fd0e797d"
+    "source": "https://www.britannica.com/topic/poker-card-game"
   },
   {
+    "itemId": "12fcaf63-c118-41c5-8e06-c4556a0ff0db",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -53,10 +54,10 @@
       "bridge",
       "tricks"
     ],
-    "source": "https://www.britannica.com/topic/bridge-card-game",
-    "seedId": "2f4da55e-4082-5126-b85c-a1aca684c0ee"
+    "source": "https://www.britannica.com/topic/bridge-card-game"
   },
   {
+    "itemId": "3af8b3d9-cb37-422f-81f7-b060befb8c57",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -72,10 +73,10 @@
       "solitaire",
       "patience"
     ],
-    "source": "https://www.britannica.com/topic/solitaire-card-game",
-    "seedId": "5778356e-7644-5e1f-8f27-784b6dc59d9f"
+    "source": "https://www.britannica.com/topic/solitaire-card-game"
   },
   {
+    "itemId": "612c43df-da8a-41d7-aeaf-b3541ff02836",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -91,10 +92,10 @@
       "uno",
       "family-games"
     ],
-    "source": "https://www.britannica.com/topic/Uno-card-game",
-    "seedId": "24357aff-20bd-5080-8a0f-b093c4d888fc"
+    "source": "https://www.britannica.com/topic/Uno-card-game"
   },
   {
+    "itemId": "5778610a-62a9-43bf-8105-ead6f2091fdb",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -110,10 +111,10 @@
       "blackjack",
       "casino"
     ],
-    "source": "https://www.britannica.com/topic/blackjack-card-game",
-    "seedId": "cd6d54d4-078e-5994-86c5-cedc1a36d631"
+    "source": "https://www.britannica.com/topic/blackjack-card-game"
   },
   {
+    "itemId": "f119cb68-837d-4773-b1b3-d6bb132ac777",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -129,10 +130,10 @@
       "rummy",
       "melds"
     ],
-    "source": "https://www.britannica.com/topic/rummy-card-game",
-    "seedId": "d839823f-7672-51d1-91f3-be605b6f365d"
+    "source": "https://www.britannica.com/topic/rummy-card-game"
   },
   {
+    "itemId": "7a8575c0-7c2a-43aa-ae30-e87de3a6e312",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -148,14 +149,14 @@
       "tarot",
       "history"
     ],
-    "source": "https://www.britannica.com/topic/tarot-card-game",
-    "seedId": "3f75c5e5-69dc-58dd-99bc-99a33a604ee5"
+    "source": "https://www.britannica.com/topic/tarot-card-game"
   },
   {
+    "itemId": "7837d1f3-f62c-4534-8566-183754f33a9d",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
-    "question": "Hearts to avoiding taking which suit’s tricks in common variants?",
+    "question": "Hearts to avoiding taking which suit\u2019s tricks in common variants?",
     "correctAnswer": "hearts",
     "incorrectAnswers": [
       "spades only",
@@ -167,10 +168,10 @@
       "hearts",
       "trick-taking"
     ],
-    "source": "https://www.britannica.com/topic/hearts-card-game",
-    "seedId": "f9691cfb-9a6b-50d9-8088-481acbd0b324"
+    "source": "https://www.britannica.com/topic/hearts-card-game"
   },
   {
+    "itemId": "bb550df2-d911-4c2c-bdc6-a93bfbb077cd",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "card-games",
@@ -186,7 +187,6 @@
       "ccg",
       "deck-building"
     ],
-    "source": "https://www.britannica.com/topic/collectible-card-game",
-    "seedId": "1267c61e-90dd-5863-b5bc-63b5728dbe90"
+    "source": "https://www.britannica.com/topic/collectible-card-game"
   }
 ]

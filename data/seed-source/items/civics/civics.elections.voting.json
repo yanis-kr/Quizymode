@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5d17d8b4-20ea-4769-98ad-04999b6beac1",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -15,10 +16,10 @@
       "voting-age",
       "constitutional-amendments"
     ],
-    "source": "https://www.archives.gov/founding-docs/amendments-11-27",
-    "seedId": "9e6f2ede-e7b5-5691-90b9-aa7c7f661cc7"
+    "source": "https://www.archives.gov/founding-docs/amendments-11-27"
   },
   {
+    "itemId": "0c68d9bc-ae22-4850-91cf-633216df8191",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -34,10 +35,10 @@
       "election-administration",
       "federalism"
     ],
-    "source": "https://www.usa.gov/election-offices",
-    "seedId": "a667bb48-4280-550c-8df4-b2239ca29094"
+    "source": "https://www.usa.gov/election-offices"
   },
   {
+    "itemId": "34295ac5-5a7d-4d54-b80e-89344d9b7819",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -53,10 +54,10 @@
       "voter-registration",
       "motor-voter"
     ],
-    "source": "https://www.justice.gov/crt/national-voter-registration-act-nvra",
-    "seedId": "95c30b32-ca1d-51b8-9513-87f1f69835eb"
+    "source": "https://www.justice.gov/crt/national-voter-registration-act-nvra"
   },
   {
+    "itemId": "50af5372-342f-4c18-b738-a6b70ecf0747",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -72,10 +73,10 @@
       "voting-rights-act",
       "civil-rights"
     ],
-    "source": "https://www.justice.gov/crt/about-voting-section",
-    "seedId": "b15deedf-94a5-5864-a5f4-3d8f978b849d"
+    "source": "https://www.justice.gov/crt/about-voting-section"
   },
   {
+    "itemId": "0da8386c-e4c7-4aaf-a6ba-410db834e958",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -91,10 +92,10 @@
       "poll-tax",
       "24th-amendment"
     ],
-    "source": "https://www.law.cornell.edu/supremecourt/text/383/663",
-    "seedId": "66cd2d51-5109-599c-a38d-2eca1be8e839"
+    "source": "https://www.law.cornell.edu/supremecourt/text/383/663"
   },
   {
+    "itemId": "ee1f66f7-16c9-4b80-ab3d-c271d7b64f6c",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "voting",
@@ -110,7 +111,6 @@
       "hava",
       "voter-identification"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/52/21083",
-    "seedId": "c08b3b42-db05-5659-90b9-25a29b2e609d"
+    "source": "https://www.law.cornell.edu/uscode/text/52/21083"
   }
 ]

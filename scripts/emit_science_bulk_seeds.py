@@ -4,7 +4,7 @@
 Each bank file maps L2 slug -> list of item dicts with:
   question, correctAnswer, incorrectAnswers, explanation, keywords, source
 
-The emitter adds seedId (UUID v4), category, navigationKeyword1, navigationKeyword2.
+The emitter adds itemId (UUID v4), category, navigationKeyword1, navigationKeyword2.
 Skips pairs that already have a file (does not overwrite).
 """
 from __future__ import annotations
@@ -47,7 +47,7 @@ def main() -> None:
                     if k not in raw:
                         raise ValueError(f"{path} [{l2}]: missing {k}")
                 row = {
-                    "seedId": str(uuid.uuid4()),
+                    "itemId": str(uuid.uuid4()),
                     "category": "science",
                     "navigationKeyword1": l1,
                     "navigationKeyword2": l2,

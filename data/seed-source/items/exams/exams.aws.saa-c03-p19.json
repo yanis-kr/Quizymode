@@ -1,14 +1,15 @@
 [
   {
+    "itemId": "6744dd20-cfec-4c5c-9344-16455f3216f6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is deploying a two-tier web application in a VPC. The web tier is using an Amazon EC2 Auto Scaling group with public subnets that\nspan multiple Availability Zones. The database tier consists of an Amazon RDS for MySQL DB instance in separate private subnets. The web tier\nrequires access to the database to retrieve product information.\nThe web application is not working as intended. The web application reports that it cannot connect to the database. The database is conrmed to\nbe up and running. All congurations for the network ACLs, security groups, and route tables are still in their default states.\nWhat should a solutions architect recommend to x the application?",
-    "correctAnswer": "Add an explicit rule to the private subnet’s network ACL to allow traffic from the web tier’s EC2 instances.",
+    "correctAnswer": "Add an explicit rule to the private subnet\u2019s network ACL to allow traffic from the web tier\u2019s EC2 instances.",
     "incorrectAnswers": [
-      "Add a route in the VPC route table to allow traffic between the web tier’s EC2 instances and the database tier.",
-      "Deploy the web tier's EC2 instances and the database tier’s RDS instance into two separate VPCs, and congure VPC peering.",
-      "Add an inbound rule to the security group of the database tier’s RDS instance to allow traffic from the web tiers security group."
+      "Add a route in the VPC route table to allow traffic between the web tier\u2019s EC2 instances and the database tier.",
+      "Deploy the web tier's EC2 instances and the database tier\u2019s RDS instance into two separate VPCs, and congure VPC peering.",
+      "Add an inbound rule to the security group of the database tier\u2019s RDS instance to allow traffic from the web tiers security group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #388). Correct choice: A.",
     "keywords": [
@@ -22,10 +23,10 @@
       "vpc",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ae6bf6ba-54e4-4274-a3ad-5f84a6545925"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "46aee3bf-d5b0-4fb6-9c1d-2e7074bd059b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -44,14 +45,14 @@
       "rds",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8973129f-ee38-406b-bd5d-7c0a3c8df0c2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8025f011-d8a4-4ef1-bfc7-2d392c0dd319",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs a backup strategy for its three-tier stateless web application. The web application runs on Amazon EC2 instances in an Auto\nScaling group with a dynamic scaling policy that is congured to respond to scaling events. The database tier runs on Amazon RDS for\nPostgreSQL. The web application does not require temporary local storage on the EC2 instances. The company’s recovery point objective (RPO) is\n2 hours.\nThe backup strategy must maximize scalability and optimize resource utilization for this environment.\nWhich solution will meet these requirements?",
+    "question": "A company needs a backup strategy for its three-tier stateless web application. The web application runs on Amazon EC2 instances in an Auto\nScaling group with a dynamic scaling policy that is congured to respond to scaling events. The database tier runs on Amazon RDS for\nPostgreSQL. The web application does not require temporary local storage on the EC2 instances. The company\u2019s recovery point objective (RPO) is\n2 hours.\nThe backup strategy must maximize scalability and optimize resource utilization for this environment.\nWhich solution will meet these requirements?",
     "correctAnswer": "Take snapshots of Amazon Elastic Block Store (Amazon EBS) volumes of the EC2 instances and database every 2 hours to meet the RPO.",
     "incorrectAnswers": [
       "Configure a snapshot lifecycle policy to take Amazon Elastic Block Store (Amazon EBS) snapshots. Enable automated backups in Amazon RDS to meet the RPO.",
@@ -69,10 +70,10 @@
       "ec2",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "82d6c20b-f6fc-429c-8f33-763d2ca84924"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1a258190-34eb-4de7-98a8-467366116d8b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -93,10 +94,10 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3148e8f7-642f-4373-ac0f-dae6da569f1c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ce603532-f7f0-47fe-9171-7c89c753c4e0",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -116,10 +117,10 @@
       "lambda",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6fc1d223-e0b0-4d0b-8433-03002588dc70"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7f0353a4-cbf5-48cd-8ec3-9398f80e8d19",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -142,10 +143,10 @@
       "cloudwatch",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b41b41dc-82ad-41c0-8c82-466c9934c0fc"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d4adaa26-48b6-4e14-bdea-e44748fed946",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -162,14 +163,14 @@
       "aws-security",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4ffc081b-e2b0-490f-8199-89b625f818ae"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b6010705-28b5-4c39-902f-f84fe3e588d2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has implemented a self-managed DNS service on AWS. The solution consists of the following:\n• Amazon EC2 instances in different AWS Regions\n• Endpoints of a standard accelerator in AWS Global Accelerator\nThe company wants to protect the solution against DDoS attacks.\nWhat should a solutions architect do to meet this requirement?",
+    "question": "A company has implemented a self-managed DNS service on AWS. The solution consists of the following:\n\u2022 Amazon EC2 instances in different AWS Regions\n\u2022 Endpoints of a standard accelerator in AWS Global Accelerator\nThe company wants to protect the solution against DDoS attacks.\nWhat should a solutions architect do to meet this requirement?",
     "correctAnswer": "Subscribe to AWS Shield Advanced. Add the accelerator as a resource to protect.",
     "incorrectAnswers": [
       "Subscribe to AWS Shield Advanced. Add the EC2 instances as resources to protect.",
@@ -186,10 +187,10 @@
       "dns",
       "shield"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0751cffd-f100-49dc-82d1-639959c094e8"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "652001fc-c86e-4442-bc40-428db2d69941",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -209,14 +210,14 @@
       "lambda",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "54312b29-295b-48d2-b249-5ef05a60c4dd"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "355451d5-5e02-4108-9cea-188a96146f62",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to transfer 600 TB of data from its on-premises network-attached storage (NAS) system to the AWS Cloud. The data transfer\nmust be complete within 2 weeks. The data is sensitive and must be encrypted in transit. The company’s internet connection can support an\nupload speed of 100 Mbps.\nWhich solution meets these requirements MOST cost-effectively?",
+    "question": "A company needs to transfer 600 TB of data from its on-premises network-attached storage (NAS) system to the AWS Cloud. The data transfer\nmust be complete within 2 weeks. The data is sensitive and must be encrypted in transit. The company\u2019s internet connection can support an\nupload speed of 100 Mbps.\nWhich solution meets these requirements MOST cost-effectively?",
     "correctAnswer": "Use Amazon S3 multi-part upload functionality to transfer the les over HTTPS.",
     "incorrectAnswers": [
       "Create a VPN connection between the on-premises NAS system and the nearest AWS Region. Transfer the data over the VPN connection.",
@@ -229,14 +230,14 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ba522bad-9bf1-4be3-acf1-c505daf057ca"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "761dce95-563d-4d08-91e3-56c832c179b1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A nancial company hosts a web application on AWS. The application uses an Amazon API Gateway Regional API endpoint to give users the\nability to retrieve current stock prices. The company’s security team has noticed an increase in the number of API requests. The security team is\nconcerned that HTTP ood attacks might take the application oine.\nA solutions architect must design a solution to protect the application from this type of attack.\nWhich solution meets these requirements with the LEAST operational overhead?",
+    "question": "A nancial company hosts a web application on AWS. The application uses an Amazon API Gateway Regional API endpoint to give users the\nability to retrieve current stock prices. The company\u2019s security team has noticed an increase in the number of API requests. The security team is\nconcerned that HTTP ood attacks might take the application oine.\nA solutions architect must design a solution to protect the application from this type of attack.\nWhich solution meets these requirements with the LEAST operational overhead?",
     "correctAnswer": "Create an Amazon CloudFront distribution in front of the API Gateway Regional API endpoint with a maximum TTL of 24 hours.",
     "incorrectAnswers": [
       "Create a Regional AWS WAF web ACL with a rate-based rule. Associate the web ACL with the API Gateway stage.",
@@ -251,10 +252,10 @@
       "api-gateway",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9f5b049f-81d2-4808-bab1-bded984cc5ff"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "fbff8205-f39c-445e-a983-3a287a6ff547",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -272,10 +273,10 @@
       "databases",
       "dynamodb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "26abbe90-b370-400f-a00d-353422aff1c4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ea7df2b1-882d-47e2-b824-cf8b487ecc7c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -296,10 +297,10 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c72b1a54-f6e6-4cb5-b48a-3e6df432e54c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "68388ebc-e7da-4716-b6d4-fceade80881d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -319,10 +320,10 @@
       "ec2",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f9e72793-dcfc-427a-82d2-28ab3447d6da"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "fb9a14ff-2611-4b74-ac9a-231eba801ecb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -342,10 +343,10 @@
       "lambda",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3c4b24f6-9aa6-491c-a1f1-12ae5d20a824"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "307542f0-ff20-4dcd-8a48-bfda287257a4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -365,10 +366,10 @@
       "lambda",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b8d06ab2-d7d0-41b7-abc8-07656f9ff556"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "732d4f92-2216-4579-9d60-907246d17cbb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -385,10 +386,10 @@
       "aws-storage",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4fe42166-8d04-4d1d-986f-9592f92352e9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "84a73f81-7af5-4833-81fe-2886d2c6574d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -408,10 +409,10 @@
       "route53",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "92570321-431c-4c81-a47b-546bbd583e55"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "05ddeebb-d9ac-4c3d-b1ad-21ae29c1e114",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -431,10 +432,10 @@
       "rds",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5fd94345-332b-468e-bebf-fd81dfda7977"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8d27f666-729d-4322-9d86-ba984a5cda0f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -454,7 +455,6 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c77a18e8-f3bf-45d9-9401-6b599d4e4c85"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

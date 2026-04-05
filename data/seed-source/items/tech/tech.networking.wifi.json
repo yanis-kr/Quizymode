@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fd71fa54-3b30-4448-a557-30a50d3ebdeb",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -15,10 +16,10 @@
       "wifi",
       "spectrum"
     ],
-    "source": "https://www.wi-fi.org/discover-wi-fi",
-    "seedId": "fc76d9ef-e779-53ff-bbfd-5a7f2e1bd059"
+    "source": "https://www.wi-fi.org/discover-wi-fi"
   },
   {
+    "itemId": "894199de-7a57-47b0-b1a1-57b520daa06f",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -34,10 +35,10 @@
       "wifi",
       "csma-ca"
     ],
-    "source": "https://www.cloudflare.com/learning/network-layer/what-is-wifi/",
-    "seedId": "128d465c-bf20-59bd-92a5-bbed05c6c393"
+    "source": "https://www.cloudflare.com/learning/network-layer/what-is-wifi/"
   },
   {
+    "itemId": "89705aac-f286-4636-9a06-98f56a113ca9",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -53,10 +54,10 @@
       "wifi",
       "ssid"
     ],
-    "source": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116493-technote-wireless-00.html",
-    "seedId": "8afadbf1-8016-5fa1-bdc8-6b718ef8695f"
+    "source": "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116493-technote-wireless-00.html"
   },
   {
+    "itemId": "29186fdd-97cd-414c-b640-f4c1703bdb19",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -72,10 +73,10 @@
       "wifi",
       "wpa2"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc5246",
-    "seedId": "e3e58acb-b77e-5eca-be5c-31cd430d89fb"
+    "source": "https://www.rfc-editor.org/rfc/rfc5246"
   },
   {
+    "itemId": "192dbd4f-a04f-47d0-9bb2-8917780c84e9",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -91,10 +92,10 @@
       "wifi",
       "channels"
     ],
-    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/network/choosing-a-channel-for-your-wireless-network",
-    "seedId": "cf3ee923-e538-5114-86f4-d9ad4a2620de"
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/network/choosing-a-channel-for-your-wireless-network"
   },
   {
+    "itemId": "c6d32603-3b32-417f-9a53-167334df17c2",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "wifi",
@@ -110,7 +111,6 @@
       "wifi",
       "bss"
     ],
-    "source": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-6/b_cisco_wireless_architecture.html",
-    "seedId": "ea00de0b-62e2-5186-9e2a-8ca63982c205"
+    "source": "https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-6/b_cisco_wireless_architecture.html"
   }
 ]

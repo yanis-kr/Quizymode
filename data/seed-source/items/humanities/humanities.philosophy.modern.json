@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7c0184d0-8acb-4ec9-8c47-f920604cbf48",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "modern",
@@ -15,10 +16,10 @@
       "modern-philosophy",
       "descartes"
     ],
-    "source": "https://www.britannica.com/biography/Rene-Descartes",
-    "seedId": "67d39bb5-501d-5e8b-8bdc-768e7f21651a"
+    "source": "https://www.britannica.com/biography/Rene-Descartes"
   },
   {
+    "itemId": "876eafc0-2101-4901-87d3-daced5d701cb",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "modern",
@@ -34,7 +35,6 @@
       "modern-philosophy",
       "kant"
     ],
-    "source": "https://plato.stanford.edu/entries/kant-moral/",
-    "seedId": "875d669b-3f8f-5da2-a8cb-8c5a0dc726d7"
+    "source": "https://plato.stanford.edu/entries/kant-moral/"
   }
 ]

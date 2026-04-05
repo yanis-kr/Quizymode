@@ -76,7 +76,7 @@ function parseSeedSyncRequest(
 
   const raw = JSON.parse(trimmed);
 
-  // Accept plain array — wrap it automatically.
+  // Accept a canonical item array and wrap it automatically.
   let parsed: SeedSyncRequest;
   if (Array.isArray(raw)) {
     if (raw.length === 0) {
@@ -103,6 +103,15 @@ function parseSeedSyncRequest(
         "Manifest must include schemaVersion, seedSet, and items."
       );
     }
+  }
+
+  const hasInvalidItemIds = parsed.items.some(
+    (item) => typeof item.itemId !== "string" || item.itemId.trim().length === 0
+  );
+  if (hasInvalidItemIds) {
+    throw new Error(
+      "Every manifest item must include a non-empty itemId. Normalize raw AI output through the import-inbox tooling before seed sync."
+    );
   }
 
   const limitTrimmed = deltaPreviewLimitInput.trim();
@@ -172,40 +181,9 @@ function ResultsPanel({
       <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-6">
         <SummaryCard label="Created" value={response.createdCount} tone="success" />
         <SummaryCard label="Updated" value={response.updatedCount} tone="success" />
-        <SummaryCard label="Adopted" value={response.adoptedCount} tone="success" />
         <SummaryCard label="Unchanged" value={response.unchangedCount} />
-        <SummaryCard
-          label="Existing managed"
-          value={response.existingManagedItemCount}
-        />
-        <SummaryCard
-          label="Missing from payload"
-          value={response.missingFromPayloadCount}
-          tone={response.missingFromPayloadCount > 0 ? "warning" : "neutral"}
-        />
+        <SummaryCard label="Existing" value={response.existingItemCount} />
       </div>
-
-      {response.isInitialSeed && (
-        <div className="mt-4 rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
-          This seed set has no existing managed rows yet. Initial preview/apply
-          works against the full payload.
-        </div>
-      )}
-
-      {"previewSuppressed" in response && response.previewSuppressed && (
-        <div className="mt-4 rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
-          Initial preview is intentionally suppressed. The API validated the
-          manifest and returned summary counts without listing every incoming item.
-        </div>
-      )}
-
-      {response.missingFromPayloadCount > 0 && (
-        <div className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          {response.missingFromPayloadCount.toLocaleString()} seed-managed rows
-          already exist in the database for this seed set but are absent from the
-          uploaded manifest. Current apply behavior does not delete or retire them.
-        </div>
-      )}
 
       <div className="mt-6">
         <div className="flex items-center justify-between">
@@ -242,7 +220,7 @@ function ResultsPanel({
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
                 {response.changes.map((change) => (
-                  <tr key={change.seedId}>
+                  <tr key={change.itemId}>
                     <td className="px-4 py-3 text-sm font-medium text-gray-900">
                       {change.action}
                     </td>
@@ -255,7 +233,7 @@ function ResultsPanel({
                     <td className="px-4 py-3 text-sm text-gray-700">
                       <div className="max-w-xl">{change.question}</div>
                       <div className="mt-1 font-mono text-xs text-gray-400">
-                        {change.seedId}
+                        {change.itemId}
                       </div>
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-600">
@@ -376,21 +354,15 @@ const AdminSeedSyncPage = () => {
 
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Seed Sync</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Upload or paste one seed-set manifest, preview only the delta, then
-        apply the upsert. The API accepts one manifest payload per request.
+        Upload or paste one item manifest, preview the upsert delta, then
+        apply it. The API uses explicit item IDs and never infers deletes from
+        missing rows.
       </p>
 
       <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
-        Admin can load a leaf manifest such as{" "}
-        <span className="font-mono">category/l1/l2.json</span>, a combined{" "}
-        <span className="font-mono">category/l1.json</span>, a full{" "}
-        <span className="font-mono">category.json</span>, or global shards such as{" "}
-        <span className="font-mono">all-sync5k.json</span> and{" "}
-        <span className="font-mono">all-sync10k.json</span>. Scoped manifests are
-        valid partial sync inputs for the same seed set; rows outside the
-        uploaded file are reported in{" "}
-        <span className="font-mono">missingFromPayloadCount</span> and are not
-        deleted by apply.
+        Admin manifests must contain explicit <span className="font-mono">itemId</span>
+        values for repo-managed public items. Preview/apply only creates or
+        updates the items present in the uploaded file.
       </div>
 
       <div className="bg-white shadow rounded-lg p-6">
@@ -402,7 +374,8 @@ const AdminSeedSyncPage = () => {
                   Manifest JSON
                 </h2>
                 <p className="text-sm text-gray-500">
-                  Paste the generated manifest or load a JSON file from disk.
+                  Paste the generated manifest, or a plain canonical item array
+                  that already includes itemId values.
                 </p>
               </div>
               <label className="inline-flex cursor-pointer items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
@@ -451,16 +424,14 @@ const AdminSeedSyncPage = () => {
                 className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
               />
               <p className="mt-2 text-xs text-gray-500">
-                Server-enforced range is 0 to 500. Initial seed preview is
-                suppressed even when this is higher than zero.
+                Server-enforced range is 0 to 500.
               </p>
             </div>
 
             <div className="rounded-lg border border-gray-200 p-4 text-sm text-gray-600">
               <p>
-                Use preview first on existing seed sets. On an initial seed, the
-                API validates the payload and returns summary counts without
-                rendering every item.
+                Use preview first before apply. Rows not included in the current
+                manifest are left untouched.
               </p>
             </div>
 

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2176e6cf-3f72-47bc-9bc6-a3f53d2c8177",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -15,10 +16,10 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://www.gps.gov/trilateration",
-    "seedId": "74bbca8f-4eb3-5a42-8636-ebf2b314c6ae"
+    "source": "https://www.gps.gov/trilateration"
   },
   {
+    "itemId": "8bafc6ac-2f2a-44f9-8411-7431df1980df",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -34,10 +35,10 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://www.gps.gov/trilateration",
-    "seedId": "b77856f8-1358-5a70-9b2b-348586a1a49a"
+    "source": "https://www.gps.gov/trilateration"
   },
   {
+    "itemId": "afb393c6-696b-4979-9eb8-c2d607075c15",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -53,10 +54,10 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://www.rei.com/learn/expert-advice/gps-receiver.html",
-    "seedId": "87fa846e-8684-58db-9fea-58a7f67f106f"
+    "source": "https://www.rei.com/learn/expert-advice/gps-receiver.html"
   },
   {
+    "itemId": "8923ef28-8355-4d14-a24e-bed3fec305f3",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -72,10 +73,10 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://www.gps.gov/outdoors-gps",
-    "seedId": "47d7740b-d344-5354-94cd-2133e59129df"
+    "source": "https://www.gps.gov/outdoors-gps"
   },
   {
+    "itemId": "a56771f9-e522-4463-959c-b5e22f9f0910",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -91,10 +92,10 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://www.gps.gov/outdoors-gps",
-    "seedId": "9798e593-64e2-563f-9c48-1c12dfd40574"
+    "source": "https://www.gps.gov/outdoors-gps"
   },
   {
+    "itemId": "56d7e913-07dc-40db-9266-31f02ea4126a",
     "category": "nature",
     "navigationKeyword1": "navigation",
     "navigationKeyword2": "gps",
@@ -110,7 +111,6 @@
       "gps",
       "nature-navigation"
     ],
-    "source": "https://archive.gps.gov/resilience/",
-    "seedId": "8ecf524e-dd01-59f7-b63c-b85209debd42"
+    "source": "https://archive.gps.gov/resilience/"
   }
 ]

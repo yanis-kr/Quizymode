@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6acc210e-0e3f-4a62-bbe0-53995d962bef",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -16,10 +17,10 @@
       "rules",
       "strikes"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "49cdd737-e4dd-516c-bcba-2d16db641d4a"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "12c66996-8c0b-4fa8-8e61-3fdadf75fb33",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -36,10 +37,10 @@
       "rules",
       "balls"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "76d1925d-e958-5afa-8a59-d3052ed66e98"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "27481fdd-3631-40fb-b595-5b56f50c088e",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -56,30 +57,10 @@
       "rules",
       "outs"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "873baf8c-5cfe-5a2e-838d-23af30eb48f6"
+    "source": "https://www.mlb.com/glossary"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "baseball",
-    "navigationKeyword2": "rules",
-    "question": "How many innings are in a regulation MLB game?",
-    "correctAnswer": "Nine",
-    "incorrectAnswers": [
-      "Seven",
-      "Eight",
-      "Ten"
-    ],
-    "explanation": "Major league games are scheduled for nine innings.",
-    "keywords": [
-      "baseball",
-      "rules",
-      "innings"
-    ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "4113dc25-2f2d-536d-bba3-e21b6e0c5131"
-  },
-  {
+    "itemId": "a248a0a7-ebb0-40bc-afff-20f4d7608235",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -96,10 +77,10 @@
       "rules",
       "walk"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "292eab90-7fba-5501-b307-d65f2a0fa2be"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "76ed5cc5-821c-48ae-9bf4-20bd6eb2f949",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -116,10 +97,10 @@
       "rules",
       "stolen-base"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "a4cad26f-e736-50ab-b257-90c1c1128eb9"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "2e174a4f-4a3e-4768-ab78-4059a5799440",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -136,10 +117,10 @@
       "rules",
       "home-run"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "3f1f792d-c8c8-5f7a-bfd8-21676ea3e773"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "5621e3dd-604d-4e39-aafa-dc4eaa2d030c",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -156,10 +137,10 @@
       "rules",
       "double-play"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "a3f3d82c-4c8f-5792-bb50-3a80e264d1a5"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "ee5514b9-b15b-435a-8101-78cf4c0215f8",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -176,10 +157,10 @@
       "rules",
       "foul-ball"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "d070e35e-14a8-578b-a83d-8ac581791cbd"
+    "source": "https://www.mlb.com/glossary"
   },
   {
+    "itemId": "925fb4ba-5677-485c-9d6b-13ea8c37bc2e",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "rules",
@@ -196,7 +177,6 @@
       "rules",
       "infield-fly"
     ],
-    "source": "https://www.mlb.com/glossary",
-    "seedId": "08bd0fe9-8749-5283-8327-7422b10bd6b8"
+    "source": "https://www.mlb.com/glossary"
   }
 ]

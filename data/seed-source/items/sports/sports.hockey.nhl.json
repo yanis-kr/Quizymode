@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bd85e1d7-3c93-4296-8e2a-f0526d4ac4cc",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -16,10 +17,10 @@
       "nhl",
       "league"
     ],
-    "source": "https://www.nhl.com/info/nhl-records",
-    "seedId": "b4ab76c0-1ee8-568b-aaed-dacd5b15fb72"
+    "source": "https://www.nhl.com/info/nhl-records"
   },
   {
+    "itemId": "12f537d6-d28c-4eda-9d64-fbea1728f922",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -36,10 +37,10 @@
       "nhl",
       "teams"
     ],
-    "source": "https://www.nhl.com/info/nhl-records",
-    "seedId": "47e4d950-481a-5bbd-a305-d231775e4d8f"
+    "source": "https://www.nhl.com/info/nhl-records"
   },
   {
+    "itemId": "a85e3fd4-a289-41db-92ae-b984d5910908",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -56,10 +57,10 @@
       "nhl",
       "stanley-cup"
     ],
-    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
-    "seedId": "4111b88c-9634-5e35-8ab9-3e97c73706ee"
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
   },
   {
+    "itemId": "62246552-e479-4b1c-ae7f-25a65c8f0341",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -76,30 +77,10 @@
       "nhl",
       "panthers"
     ],
-    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
-    "seedId": "0b1c7f5b-2c9e-5481-8691-680d5e65bf49"
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "hockey",
-    "navigationKeyword2": "nhl",
-    "question": "Which franchise has won the most Stanley Cups?",
-    "correctAnswer": "Montreal Canadiens",
-    "incorrectAnswers": [
-      "Toronto Maple Leafs",
-      "Detroit Red Wings",
-      "Boston Bruins"
-    ],
-    "explanation": "Montreal leads the Stanley Cup winners list.",
-    "keywords": [
-      "hockey",
-      "nhl",
-      "canadiens"
-    ],
-    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
-    "seedId": "7e12c638-7081-5007-9d69-ca2149e73678"
-  },
-  {
+    "itemId": "8350490a-57be-490d-9eac-5342fb02fefb",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -116,10 +97,10 @@
       "nhl",
       "maple-leafs"
     ],
-    "source": "https://www.nhl.com/info/nhl-records",
-    "seedId": "94241f71-fa2f-540a-b45f-b891371bf9bf"
+    "source": "https://www.nhl.com/info/nhl-records"
   },
   {
+    "itemId": "c6939759-a0b7-4745-a96f-b4cbdff866dd",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -136,10 +117,10 @@
       "nhl",
       "golden-knights"
     ],
-    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
-    "seedId": "b1c229e5-a5c1-5495-9203-d30f164046b1"
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
   },
   {
+    "itemId": "26994588-6b9a-44a7-8682-01ea363f0e2b",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -156,10 +137,10 @@
       "nhl",
       "periods"
     ],
-    "source": "https://www.britannica.com/sports/ice-hockey",
-    "seedId": "40c48450-612f-52aa-90ee-f55ba25f6244"
+    "source": "https://www.britannica.com/sports/ice-hockey"
   },
   {
+    "itemId": "a071a24b-f142-41b4-bd9e-9acce58bcd8d",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -176,10 +157,10 @@
       "nhl",
       "red-wings"
     ],
-    "source": "https://www.nhl.com/info/nhl-records",
-    "seedId": "8c2105c8-1e9e-557f-8931-b7454184f8d5"
+    "source": "https://www.nhl.com/info/nhl-records"
   },
   {
+    "itemId": "89c82ae5-d694-449d-abb0-162bfd89de2c",
     "category": "sports",
     "navigationKeyword1": "hockey",
     "navigationKeyword2": "nhl",
@@ -196,7 +177,6 @@
       "nhl",
       "oilers"
     ],
-    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list",
-    "seedId": "77c57185-4a6a-54cb-92a0-0583a6428387"
+    "source": "https://www.nhl.com/info/stanley-cup-winners-complete-list"
   }
 ]

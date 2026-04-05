@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ecf04d71-0586-4e4a-9bd7-2cfdec81000a",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -16,10 +17,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/bigquery",
-    "seedId": "c657d7e3-5728-4bbf-9be2-7c3d74122918"
+    "source": "https://cloud.google.com/bigquery"
   },
   {
+    "itemId": "246be622-b231-4646-b84b-c6f5bf963bdf",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -36,10 +37,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/dataflow",
-    "seedId": "4a200cb7-239f-4030-994f-93ef70cc2701"
+    "source": "https://cloud.google.com/dataflow"
   },
   {
+    "itemId": "438702fc-ccba-4701-a57b-20e6110c12e0",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -56,10 +57,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/pubsub",
-    "seedId": "57438105-b460-48dc-a322-4a206371bb9b"
+    "source": "https://cloud.google.com/pubsub"
   },
   {
+    "itemId": "cb74d8b9-724b-45bd-99f7-52a0e3bde39e",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -76,10 +77,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/dataproc",
-    "seedId": "f91b6ad5-c5e9-4955-aee6-7c5f18e088ae"
+    "source": "https://cloud.google.com/dataproc"
   },
   {
+    "itemId": "3b715580-8e0a-4f24-923b-1aceb0e10015",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -96,10 +97,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/storage",
-    "seedId": "a534ca9c-4a81-4eff-9e2e-be113efb1926"
+    "source": "https://cloud.google.com/storage"
   },
   {
+    "itemId": "c912e61b-53c1-4aa6-b7e0-9ea050e0c9cb",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -116,10 +117,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/bigtable",
-    "seedId": "274e02a6-33ef-462a-9a93-4d1a7765b8ed"
+    "source": "https://cloud.google.com/bigtable"
   },
   {
+    "itemId": "ffac2bca-53b3-4a31-8071-5c504104cdad",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -136,10 +137,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/sql",
-    "seedId": "d34da7ee-b6b7-43f2-b8f7-0bd8f6ebfa2c"
+    "source": "https://cloud.google.com/sql"
   },
   {
+    "itemId": "02498d6b-efb1-42ac-9e7b-94b25a66c998",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -156,10 +157,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/spanner",
-    "seedId": "ea763090-a227-4942-b48e-ddf241f258c3"
+    "source": "https://cloud.google.com/spanner"
   },
   {
+    "itemId": "0c037063-a67e-479e-b96f-fab53ec7bb44",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -176,10 +177,10 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/vertex-ai",
-    "seedId": "1c1aa8f1-c38b-4a47-95c5-562cd512f515"
+    "source": "https://cloud.google.com/vertex-ai"
   },
   {
+    "itemId": "8b4778c1-18eb-4675-917a-cd706f3b3fc5",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pde",
@@ -196,7 +197,6 @@
       "google-cloud-data",
       "data-engineering"
     ],
-    "source": "https://cloud.google.com/pubsub",
-    "seedId": "5ff2ac48-0775-4695-985d-007deee387ac"
+    "source": "https://cloud.google.com/pubsub"
   }
 ]

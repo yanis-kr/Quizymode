@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d201cc74-38b8-42c9-8918-fab07b00eabe",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -15,10 +16,10 @@
       "postgres",
       "concurrency"
     ],
-    "source": "https://www.postgresql.org/docs/current/mvcc.html",
-    "seedId": "30b97cb1-e2e1-52cd-a779-a297a1dbf0bc"
+    "source": "https://www.postgresql.org/docs/current/mvcc.html"
   },
   {
+    "itemId": "d48d766a-42d8-4bda-9dd9-ac0f07c318a8",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -34,10 +35,10 @@
       "postgres",
       "wal"
     ],
-    "source": "https://www.postgresql.org/docs/current/wal.html",
-    "seedId": "bd9279a9-b2b4-5efd-9b26-7ebfd91e8dea"
+    "source": "https://www.postgresql.org/docs/current/wal.html"
   },
   {
+    "itemId": "5048ae08-8416-433e-9e1c-e966cfeb7505",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -53,10 +54,10 @@
       "postgres",
       "json"
     ],
-    "source": "https://cloud.google.com/sql/docs/postgres/data-types",
-    "seedId": "7f4014c1-86bf-5763-956f-3dee5f1bd426"
+    "source": "https://cloud.google.com/sql/docs/postgres/data-types"
   },
   {
+    "itemId": "b5dd93e0-8189-4dff-8ab1-f7b7ed83be89",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -72,10 +73,10 @@
       "postgres",
       "maintenance"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html",
-    "seedId": "d0547a84-1f11-5992-8ce6-af189d4287c1"
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html"
   },
   {
+    "itemId": "4cf45cb7-2140-4571-aed8-1fdfe74d0c50",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -91,10 +92,10 @@
       "postgres",
       "isolation"
     ],
-    "source": "https://www.postgresql.org/docs/current/transaction-iso.html",
-    "seedId": "7cdac3b4-b219-5d98-a16a-9abdd8f8c988"
+    "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
   },
   {
+    "itemId": "ee651365-73b7-4a7d-8266-e9bf35cceda2",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "postgres",
@@ -110,7 +111,6 @@
       "postgres",
       "indexes"
     ],
-    "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS",
-    "seedId": "c6a051de-f1f4-5a93-b0b3-a86004c1f5f3"
+    "source": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS"
   }
 ]

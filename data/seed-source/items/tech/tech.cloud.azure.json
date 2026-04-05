@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b060dcdb-4ea7-4460-ac13-c6e8b385d4c2",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -15,10 +16,10 @@
       "azure",
       "resource-groups"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
-    "seedId": "6b2c55b5-c5d3-5018-9e41-779093c5c292"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
   },
   {
+    "itemId": "2f4c7de9-3420-4d90-b26c-7b0ad0cbd491",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -34,10 +35,10 @@
       "azure",
       "regions"
     ],
-    "source": "https://www.ibm.com/cloud/learn/regions-zones",
-    "seedId": "4b972af2-7644-5b75-81ee-937c5f292cd1"
+    "source": "https://www.ibm.com/cloud/learn/regions-zones"
   },
   {
+    "itemId": "2f9b31cc-2a27-437a-b64c-9f4854f599b0",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -53,10 +54,10 @@
       "azure",
       "identity"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
-    "seedId": "f050a631-36fd-5bbf-a36f-f7dc31695629"
+    "source": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview"
   },
   {
+    "itemId": "9ccd30b0-3169-4a5a-aff6-077ccc49d898",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -72,10 +73,10 @@
       "azure",
       "resilience"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
-    "seedId": "cf82a4a5-5099-5056-895f-6e9bcc6af213"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
   },
   {
+    "itemId": "def86d98-0324-4710-a428-0132e87cba42",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -91,10 +92,10 @@
       "azure",
       "subscriptions"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/organize-subscriptions",
-    "seedId": "1ea824bc-409a-50a7-aaeb-263d54ace4ab"
+    "source": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/organize-subscriptions"
   },
   {
+    "itemId": "2f497876-af65-4030-a328-69cf5b468e54",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "azure",
@@ -110,7 +111,6 @@
       "azure",
       "arm"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
-    "seedId": "8a6f4d79-c682-51dd-96f1-0409f45ae6ef"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
   }
 ]

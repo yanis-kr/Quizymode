@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "db85590d-2e66-4d83-ab9a-864b3a0a1aba",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
     "question": "What does organizational culture generally describe?",
     "correctAnswer": "Shared values, beliefs, and norms that influence how people behave and make decisions at work.",
     "incorrectAnswers": [
-      "Only the company’s logo and branding colors",
+      "Only the company\u2019s logo and branding colors",
       "Only salaries and job titles across departments",
       "A fixed set of rules that never changes over time"
     ],
@@ -16,10 +17,10 @@
       "values",
       "norms"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "8c7420a6-ed55-59fb-8e4e-6bcf04ff6e61"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "16a0af9b-9807-4871-8f4b-44dcaee43e4c",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
@@ -30,16 +31,16 @@
       "Norms are always secret while values are always public",
       "They are unrelated concepts used for different accounting categories"
     ],
-    "explanation": "Values shape what matters, and norms shape how people typically act on that—both together form culture.",
+    "explanation": "Values shape what matters, and norms shape how people typically act on that\u2014both together form culture.",
     "keywords": [
       "values",
       "norms",
       "behavior"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "43231af8-3934-56a7-bfd9-773aa974a535"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "3ebc25e0-cf39-45a1-97d0-8a0dd318a8d6",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
@@ -56,10 +57,10 @@
       "leadership",
       "reinforcement"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "7cf33aa4-49f3-5d19-a8d9-2b3b488856b8"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "6c700b30-1711-4a58-93df-c16ca620b278",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
@@ -76,14 +77,14 @@
       "behavior",
       "communication"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "d8a66b39-1516-503a-aca8-f9dc1968fde7"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "d01a1020-c9cc-4d6f-8ee2-edf8ff2780a8",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
-    "question": "What is one practical approach to changing an organization’s culture?",
+    "question": "What is one practical approach to changing an organization\u2019s culture?",
     "correctAnswer": "Align systems and daily practices (hiring, rewards, processes) with the desired behaviors and values.",
     "incorrectAnswers": [
       "Publish a new values poster and stop measuring behavior afterward",
@@ -96,18 +97,18 @@
       "systems-alignment",
       "rewards"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "eaaaa515-a644-51ff-a3e9-00ef558b24e8"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "f1fea9cd-0eba-4102-92e5-5ba5341910d9",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "culture",
     "question": "What is a subculture in an organization?",
-    "correctAnswer": "A smaller group’s shared norms and practices that differ somewhat from the organization-wide culture.",
+    "correctAnswer": "A smaller group\u2019s shared norms and practices that differ somewhat from the organization-wide culture.",
     "incorrectAnswers": [
       "A legal requirement that applies to all employees equally",
-      "A department’s org chart that never affects behavior",
+      "A department\u2019s org chart that never affects behavior",
       "A mistake that occurs only when training is skipped once"
     ],
     "explanation": "Subcultures can form across teams or units because work types and incentives differ, even within the same company.",
@@ -116,7 +117,6 @@
       "teams",
       "norms"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "fdfd44ff-c260-52b5-a1e3-8e0ad3ca84eb"
+    "source": "https://www.mindtools.com/"
   }
 ]

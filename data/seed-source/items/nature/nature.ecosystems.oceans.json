@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "17ea9f4d-7521-40d9-ad15-512ad0a5aa81",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -15,10 +16,10 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://oceanservice.noaa.gov/facts/phyto.html",
-    "seedId": "6af4418c-04cb-5b54-bdb9-3e436a402b35"
+    "source": "https://oceanservice.noaa.gov/facts/phyto.html"
   },
   {
+    "itemId": "18f3aba1-20ee-46eb-a9b1-6a10f49b1e1f",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -34,10 +35,10 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://oceanexplorer.noaa.gov/facts/upwelling.html",
-    "seedId": "e7f8622b-2d25-5193-8ca6-9a4eea76467c"
+    "source": "https://oceanexplorer.noaa.gov/facts/upwelling.html"
   },
   {
+    "itemId": "c1a58395-64c1-42b7-b9e6-41037edd6bfa",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -53,10 +54,10 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://www.fisheries.noaa.gov/longform/estuary-habitat",
-    "seedId": "22be93c0-06e8-5fc8-a4a4-c6a988fe8809"
+    "source": "https://www.fisheries.noaa.gov/longform/estuary-habitat"
   },
   {
+    "itemId": "4315dc41-aba9-45b3-ba04-4cda0aa4df28",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -72,10 +73,10 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://www.britannica.com/science/kelp-forest",
-    "seedId": "0b1c681d-5605-5f31-a471-e1c1c2e64994"
+    "source": "https://www.britannica.com/science/kelp-forest"
   },
   {
+    "itemId": "c3d4b98f-2506-4e5d-924c-cca4b6f512ab",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -91,10 +92,10 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://oceanservice.noaa.gov/facts/coral_species.html",
-    "seedId": "8d3d1fb0-8ea4-5b70-ba87-da6805e82fec"
+    "source": "https://oceanservice.noaa.gov/facts/coral_species.html"
   },
   {
+    "itemId": "0e84107c-5959-44dd-9ac1-bc80b1530691",
     "category": "nature",
     "navigationKeyword1": "ecosystems",
     "navigationKeyword2": "oceans",
@@ -110,7 +111,6 @@
       "oceans",
       "nature-ecosystems"
     ],
-    "source": "https://www.epa.gov/nep/basic-information-about-estuaries",
-    "seedId": "8d05b66b-6bfd-5d98-9051-eb1c9b0e03bd"
+    "source": "https://www.epa.gov/nep/basic-information-about-estuaries"
   }
 ]

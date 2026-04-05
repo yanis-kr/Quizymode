@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "885e8802-4aba-423a-af06-206e261bbd2d",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "logic",
@@ -15,10 +16,10 @@
       "philosophy-logic",
       "reasoning"
     ],
-    "source": "https://iep.utm.edu/logic/",
-    "seedId": "144f57ec-8a66-5d66-9f70-ff7aebeaf542"
+    "source": "https://iep.utm.edu/logic/"
   },
   {
+    "itemId": "5f866715-485c-47fa-aa18-f12ad33b8dd5",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "logic",
@@ -34,7 +35,6 @@
       "philosophy-logic",
       "contradiction"
     ],
-    "source": "https://plato.stanford.edu/entries/logic-classical/",
-    "seedId": "1dd04ae9-a67e-555b-9586-e208b2fcca25"
+    "source": "https://plato.stanford.edu/entries/logic-classical/"
   }
 ]

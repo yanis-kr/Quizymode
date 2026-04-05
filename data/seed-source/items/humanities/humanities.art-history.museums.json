@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7ac3a54c-0939-4f48-8b50-44996715de6d",
     "category": "humanities",
     "navigationKeyword1": "art-history",
     "navigationKeyword2": "museums",
@@ -15,10 +16,10 @@
       "art-history",
       "museums"
     ],
-    "source": "https://www.britannica.com/topic/museum-cultural-institution",
-    "seedId": "40c03cb7-b8a4-5b07-a84a-83f9214f1739"
+    "source": "https://www.britannica.com/topic/museum-cultural-institution"
   },
   {
+    "itemId": "bc6d82b2-81b0-4d1c-8a47-23a168edfa21",
     "category": "humanities",
     "navigationKeyword1": "art-history",
     "navigationKeyword2": "museums",
@@ -34,7 +35,6 @@
       "art-history",
       "interpretation"
     ],
-    "source": "https://www.metmuseum.org/about-the-met",
-    "seedId": "3846e1d6-90f7-5e8d-9dea-f6acf00b4a2a"
+    "source": "https://www.metmuseum.org/about-the-met"
   }
 ]

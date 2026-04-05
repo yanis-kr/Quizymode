@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8466cc9d-83fe-4802-b3d9-85f6dfd48eeb",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -15,10 +16,10 @@
       "mysql",
       "storage-engine"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/storage-engines.html",
-    "seedId": "ac329146-1ec7-5bbb-b991-fbaf8644e49c"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/storage-engines.html"
   },
   {
+    "itemId": "24f4647a-bf3c-45ac-8cd4-5505448b7bd8",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -34,10 +35,10 @@
       "mysql",
       "charset"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html",
-    "seedId": "c3e6e1d0-ed7c-5b11-af4e-0faa978079f6"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-utf8mb4.html"
   },
   {
+    "itemId": "6d9d82a4-5a62-4a66-af35-faa217db2813",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -53,10 +54,10 @@
       "mysql",
       "keys"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html",
-    "seedId": "4dd46e14-8b48-57b4-8ad3-2a53e4e0ffa1"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html"
   },
   {
+    "itemId": "62fafbfa-cc1d-4ab8-8358-0c71ca973f0a",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -72,10 +73,10 @@
       "mysql",
       "indexing"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/innodb-index-types.html",
-    "seedId": "8fc163f7-ab04-58ee-9984-0eb84ae02a37"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/innodb-index-types.html"
   },
   {
+    "itemId": "2ad6b0e1-c75c-4c84-a7ac-b062d9c8cddb",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -91,10 +92,10 @@
       "mysql",
       "constraints"
     ],
-    "source": "https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html",
-    "seedId": "db23f2d8-c1d3-5c5d-bcfe-6038f46810a5"
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html"
   },
   {
+    "itemId": "318e45f3-5d03-420b-b231-cec8c4965b4b",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "mysql",
@@ -110,7 +111,6 @@
       "mysql",
       "replication"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.html",
-    "seedId": "643465c3-4815-5b2c-a370-6e02fe630487"
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.html"
   }
 ]

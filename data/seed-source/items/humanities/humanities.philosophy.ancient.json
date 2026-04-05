@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8a2bc46c-e51f-4276-a680-0ae954c04fbb",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "ancient",
@@ -15,10 +16,10 @@
       "ancient-philosophy",
       "socrates"
     ],
-    "source": "https://www.britannica.com/biography/Socrates",
-    "seedId": "78559705-7b5a-585b-8fda-64159defee43"
+    "source": "https://www.britannica.com/biography/Socrates"
   },
   {
+    "itemId": "3afb1fe3-3fa0-4ed0-8381-da4ca23e2053",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "ancient",
@@ -34,7 +35,6 @@
       "ancient-philosophy",
       "aristotle"
     ],
-    "source": "https://plato.stanford.edu/entries/aristotle/",
-    "seedId": "b35e7548-eba5-5b77-9297-217bb422dfd9"
+    "source": "https://plato.stanford.edu/entries/aristotle/"
   }
 ]

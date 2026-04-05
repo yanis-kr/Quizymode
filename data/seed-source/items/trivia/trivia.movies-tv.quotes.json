@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7dc2fb48-c195-46a4-9302-b61566727748",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
@@ -15,10 +16,10 @@
       "oscars",
       "song-awards"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "2dc10bae-cfcf-5a78-9715-061c019c2b15"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "45fb1786-6d29-46eb-bcd6-b694eb35bed7",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
@@ -26,18 +27,18 @@
     "correctAnswer": "Everything Everywhere All at Once",
     "incorrectAnswers": [
       "The Banshees of Inisherin",
-      "Tár",
+      "T\u00e1r",
       "Triangle of Sadness"
     ],
-    "explanation": "Daniel Kwan & Daniel Scheinert’s script as Original Screenplay winner.",
+    "explanation": "Daniel Kwan & Daniel Scheinert\u2019s script as Original Screenplay winner.",
     "keywords": [
       "oscars",
       "screenwriting"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "335f8c97-d057-5789-ae9c-704b800091ea"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "745ceccb-d374-4221-bdac-c9f7dba561ce",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
@@ -53,10 +54,10 @@
       "oscars",
       "screenwriting"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "0c3fcaf6-fec7-5047-a0e2-c772a6665551"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   },
   {
+    "itemId": "d069c5d0-4202-476b-ab9f-d8abe61774d6",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
@@ -72,14 +73,14 @@
       "oscars",
       "song-awards"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2022",
-    "seedId": "fe8379ab-98f1-52c9-8d5a-84445ee99aec"
+    "source": "https://www.oscars.org/oscars/ceremonies/2022"
   },
   {
+    "itemId": "c4038d01-885f-45ae-b412-bc0f175bd3c8",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
-    "question": "Which classic film is associated with ‘Here’s looking at you, kid’?",
+    "question": "Which classic film is associated with \u2018Here\u2019s looking at you, kid\u2019?",
     "correctAnswer": "Casablanca",
     "incorrectAnswers": [
       "Gone with the Wind",
@@ -91,33 +92,33 @@
       "classic-film",
       "dialogue"
     ],
-    "source": "https://www.britannica.com/topic/Casablanca-film",
-    "seedId": "aea7b8e1-5679-5749-a463-99d7e9fa4b5e"
+    "source": "https://www.britannica.com/topic/Casablanca-film"
   },
   {
+    "itemId": "2243d5fe-8909-44e8-b092-af352ef12ea8",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
-    "question": "Which actor’s Terminator role is most closely associated with ‘I’ll be back’?",
+    "question": "Which actor\u2019s Terminator role is most closely associated with \u2018I\u2019ll be back\u2019?",
     "correctAnswer": "Arnold Schwarzenegger",
     "incorrectAnswers": [
       "Sylvester Stallone",
       "Bruce Willis",
       "Jean-Claude Van Damme"
     ],
-    "explanation": "The line is associated with Schwarzenegger’s Terminator.",
+    "explanation": "The line is associated with Schwarzenegger\u2019s Terminator.",
     "keywords": [
       "action-film",
       "catchphrases"
     ],
-    "source": "https://www.britannica.com/topic/The-Terminator-film",
-    "seedId": "bcfce889-4798-55b8-895f-7c59568e6c1e"
+    "source": "https://www.britannica.com/topic/The-Terminator-film"
   },
   {
+    "itemId": "81f1aa8c-9488-44c0-8bda-7b1f9c48415e",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
-    "question": "Which saga is most closely associated with ‘May the Force be with you’?",
+    "question": "Which saga is most closely associated with \u2018May the Force be with you\u2019?",
     "correctAnswer": "Star Wars",
     "incorrectAnswers": [
       "Star Trek",
@@ -129,14 +130,14 @@
       "star-wars",
       "dialogue"
     ],
-    "source": "https://www.britannica.com/topic/Star-Wars-film-series",
-    "seedId": "11a1a718-2497-5701-8e71-7c7127f47919"
+    "source": "https://www.britannica.com/topic/Star-Wars-film-series"
   },
   {
+    "itemId": "1fef510c-aaf2-457b-ae41-24c3db417f29",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
-    "question": "Shakespeare’s ‘To be, or not to be’ soliloquy appears in which play?",
+    "question": "Shakespeare\u2019s \u2018To be, or not to be\u2019 soliloquy appears in which play?",
     "correctAnswer": "Hamlet",
     "incorrectAnswers": [
       "Macbeth",
@@ -148,14 +149,14 @@
       "shakespeare",
       "theater"
     ],
-    "source": "https://www.britannica.com/topic/Hamlet-play-by-Shakespeare",
-    "seedId": "c242aea0-d08a-557d-b273-73854e9d5604"
+    "source": "https://www.britannica.com/topic/Hamlet-play-by-Shakespeare"
   },
   {
+    "itemId": "1c8664b8-a02b-4b26-9283-08b77d16b312",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
-    "question": "Which detective tradition is most closely associated with ‘Elementary, my dear Watson’ popular culture phrase?",
+    "question": "Which detective tradition is most closely associated with \u2018Elementary, my dear Watson\u2019 popular culture phrase?",
     "correctAnswer": "Sherlock Holmes adaptations",
     "incorrectAnswers": [
       "Miss Marple",
@@ -167,10 +168,10 @@
       "holmes",
       "adaptations"
     ],
-    "source": "https://www.britannica.com/topic/Sherlock-Holmes-fictional-character",
-    "seedId": "aec74c3e-3db9-59a3-b77e-01f537188723"
+    "source": "https://www.britannica.com/topic/Sherlock-Holmes-fictional-character"
   },
   {
+    "itemId": "fb59bfc5-7546-4d3e-a128-2573fcc88aaf",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "quotes",
@@ -186,7 +187,6 @@
       "oscars",
       "documentary"
     ],
-    "source": "https://www.oscars.org/oscars/ceremonies/2023",
-    "seedId": "6b4f5872-e2f7-5905-bf37-a1292b68ec94"
+    "source": "https://www.oscars.org/oscars/ceremonies/2023"
   }
 ]

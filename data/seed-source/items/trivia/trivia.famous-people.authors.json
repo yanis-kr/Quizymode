@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b5664541-fa39-4a54-974f-0e2809aeeb9f",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -10,34 +11,34 @@
       "operas only",
       "newspapers only"
     ],
-    "explanation": "Shakespeare’s plays and poetry.",
+    "explanation": "Shakespeare\u2019s plays and poetry.",
     "keywords": [
       "literature",
       "drama"
     ],
-    "source": "https://www.britannica.com/biography/William-Shakespeare",
-    "seedId": "410c5e34-78e4-5f0d-8adc-f0ff70db197e"
+    "source": "https://www.britannica.com/biography/William-Shakespeare"
   },
   {
+    "itemId": "822e8eb5-4f6b-4c1f-bf2f-d6b48a53dcd5",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
-    "question": "Jane Austen with novels exploring manners and marriage in which country’s society?",
+    "question": "Jane Austen with novels exploring manners and marriage in which country\u2019s society?",
     "correctAnswer": "England",
     "incorrectAnswers": [
       "Japan",
       "Brazil",
       "Egypt"
     ],
-    "explanation": "Austen’s novels in English society.",
+    "explanation": "Austen\u2019s novels in English society.",
     "keywords": [
       "novels",
       "regency"
     ],
-    "source": "https://www.britannica.com/biography/Jane-Austen",
-    "seedId": "58268f42-23a0-5410-ad76-20a3f3fe850a"
+    "source": "https://www.britannica.com/biography/Jane-Austen"
   },
   {
+    "itemId": "82b9cb13-17bb-4d0f-97fc-b6d6b72b6271",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -53,14 +54,14 @@
       "american-literature",
       "humor"
     ],
-    "source": "https://www.britannica.com/biography/Mark-Twain",
-    "seedId": "0b099c5b-4ade-5c63-9d4b-c47a399dcda8"
+    "source": "https://www.britannica.com/biography/Mark-Twain"
   },
   {
+    "itemId": "09887539-5561-4bf3-9298-d2b160ad7534",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
-    "question": "Toni Morrison’s Nobel Prize as recognizing achievements in what field?",
+    "question": "Toni Morrison\u2019s Nobel Prize as recognizing achievements in what field?",
     "correctAnswer": "literature",
     "incorrectAnswers": [
       "physics",
@@ -72,10 +73,10 @@
       "novels",
       "nobel"
     ],
-    "source": "https://www.britannica.com/biography/Toni-Morrison",
-    "seedId": "5b46500b-ad76-58b4-b1b8-68fe1ad090b0"
+    "source": "https://www.britannica.com/biography/Toni-Morrison"
   },
   {
+    "itemId": "fb13c943-e463-4a3d-b9f5-88b59e301cfb",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -91,10 +92,10 @@
       "victorian",
       "novels"
     ],
-    "source": "https://www.britannica.com/biography/Charles-Dickens",
-    "seedId": "8d2e19fb-4bdb-5789-9671-926e0b6c3c48"
+    "source": "https://www.britannica.com/biography/Charles-Dickens"
   },
   {
+    "itemId": "b5f3149c-b65e-4824-be83-1ba78a258a0d",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -110,10 +111,10 @@
       "modernism",
       "essays"
     ],
-    "source": "https://www.britannica.com/biography/Virginia-Woolf",
-    "seedId": "58eb8731-ff3b-5106-a39e-faaa11a675ef"
+    "source": "https://www.britannica.com/biography/Virginia-Woolf"
   },
   {
+    "itemId": "c1be971e-3fdf-4fa4-be7b-f9fbcca95d46",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -129,10 +130,10 @@
       "fiction",
       "nobel"
     ],
-    "source": "https://www.britannica.com/biography/Ernest-Hemingway",
-    "seedId": "8d305dcb-5d90-5626-b5d1-b0276ef2978d"
+    "source": "https://www.britannica.com/biography/Ernest-Hemingway"
   },
   {
+    "itemId": "c8e1c87d-b870-4776-b84f-b519f3002b6a",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -148,29 +149,29 @@
       "classics",
       "epic"
     ],
-    "source": "https://www.britannica.com/biography/Homer-Greek-poet",
-    "seedId": "dbb226fe-a479-5fbc-b9b7-93b7ca74b209"
+    "source": "https://www.britannica.com/biography/Homer-Greek-poet"
   },
   {
+    "itemId": "0ac588b9-3cdf-4bea-8e6d-68eb85ef7812",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
-    "question": "Maya Angelou to memoir and poetry rooted especially in which country’s civil rights era?",
+    "question": "Maya Angelou to memoir and poetry rooted especially in which country\u2019s civil rights era?",
     "correctAnswer": "United States",
     "incorrectAnswers": [
       "France",
       "India",
       "Australia"
     ],
-    "explanation": "Angelou’s work is tied to U.S. history and civil rights.",
+    "explanation": "Angelou\u2019s work is tied to U.S. history and civil rights.",
     "keywords": [
       "memoir",
       "poetry"
     ],
-    "source": "https://www.britannica.com/biography/Maya-Angelou",
-    "seedId": "6413f4f2-e821-553b-93a2-a66893e6e87d"
+    "source": "https://www.britannica.com/biography/Maya-Angelou"
   },
   {
+    "itemId": "0841537b-85b2-4a23-b371-84e432a05e34",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "authors",
@@ -186,7 +187,6 @@
       "fantasy",
       "novels"
     ],
-    "source": "https://www.britannica.com/biography/J-K-Rowling",
-    "seedId": "d5c60482-a791-53c2-881f-96d133677494"
+    "source": "https://www.britannica.com/biography/J-K-Rowling"
   }
 ]

@@ -392,11 +392,6 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
-                    b.Property<bool>("IsSeedManaged")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("boolean")
-                        .HasDefaultValue(false);
-
                     b.Property<Guid?>("NavigationKeywordId1")
                         .HasColumnType("uuid");
 
@@ -417,20 +412,6 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<string>("SeedHash")
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
-
-                    b.Property<Guid?>("SeedId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime?>("SeedLastSyncedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("SeedSet")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.Property<string>("Source")
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
@@ -450,16 +431,11 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("NavigationKeywordId2");
 
-                    b.HasIndex("SeedId")
-                        .IsUnique();
-
                     b.HasIndex("UploadId");
 
                     b.HasIndex("CategoryId", "IsPrivate");
 
                     b.HasIndex("IsPrivate", "CreatedBy");
-
-                    b.HasIndex("IsSeedManaged", "SeedSet");
 
                     b.ToTable("Items", null, t =>
                         {

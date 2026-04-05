@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "dcebe718-bf0b-4b74-a3a9-c609f3680900",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -15,10 +16,10 @@
       "how-are-you",
       "german-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/gehen",
-    "seedId": "acd52b78-5822-556c-a849-aec27b67eeca"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/gehen"
   },
   {
+    "itemId": "0e5bc3da-d716-42da-819e-e5ef28fc1abc",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -34,10 +35,10 @@
       "goodbye",
       "german-conversation"
     ],
-    "source": "https://www.duden.de/rechtschreibung/Wiedersehen",
-    "seedId": "ddad2eac-b470-5882-8b8b-9e4c495e0d4c"
+    "source": "https://www.duden.de/rechtschreibung/Wiedersehen"
   },
   {
+    "itemId": "0861ca28-857f-4195-8c56-363a6af51141",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -53,10 +54,10 @@
       "formal-you",
       "german-conversation"
     ],
-    "source": "https://www.goethe.de/en/spr/englisch.html",
-    "seedId": "8e5c9de2-42df-5892-ac17-23544f44da37"
+    "source": "https://www.goethe.de/en/spr/englisch.html"
   },
   {
+    "itemId": "889e1b0b-2707-478e-ac33-689a859ab184",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -72,10 +73,10 @@
       "hello",
       "german-conversation"
     ],
-    "source": "https://www.deutsch.info/en/vocabulary/",
-    "seedId": "a3d7658d-a838-593f-83c0-43e25a121d50"
+    "source": "https://www.deutsch.info/en/vocabulary/"
   },
   {
+    "itemId": "f4dd142b-b1f9-4ea3-9bfe-8206e783d52d",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -91,10 +92,10 @@
       "yes",
       "german-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/ja",
-    "seedId": "dd84f480-a33d-5b2c-b891-a8f81b20e836"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/ja"
   },
   {
+    "itemId": "69ff63bf-1987-4ea0-af16-090715587ba6",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
@@ -110,7 +111,6 @@
       "no",
       "german-conversation"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/german-english/nein",
-    "seedId": "de9395bb-5db7-51fb-a447-622cf0097430"
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/nein"
   }
 ]

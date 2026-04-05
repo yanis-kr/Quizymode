@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "96f16a12-f200-4196-941a-2349c5f7eb40",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -18,10 +19,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "52bb74c3-6c74-414a-88fd-7f8b5f1b4682"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a8711f1d-9429-47ea-81c0-a04e03d8f470",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -40,10 +41,10 @@
       "efs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "489273cb-7c22-46b8-923a-84f2434396a3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "62c16ae8-83db-4938-9b8a-c08f6890df64",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -60,10 +61,10 @@
       "aws-security",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "eb6eaeec-d55b-4d7e-b21d-8bdbba0e27c6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ca738e44-61c2-4280-860a-d2be83ebf2dd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -82,10 +83,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b3298547-7f26-40c5-969b-b9d1ce4ccdb6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f18b0784-02e4-466a-9cd9-9b8a40f6ace5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -102,10 +103,10 @@
       "aws-analytics",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3cdf1ee4-f408-42d7-b4ae-a69f6fdcf2d4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ba744bc9-8073-44f8-b0a7-59cda31fdb43",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -128,10 +129,10 @@
       "cloudwatch",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "73a4d703-069c-4181-89f3-1f4a2cb987a4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "164448ab-0e0c-4eef-9b8c-5dcd9457a644",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -150,10 +151,10 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6fbb616d-f96b-4df2-90f7-4cab7ab891fa"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ffb90e11-4d4e-48bd-a318-8244c96056ad",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -173,14 +174,14 @@
       "rds",
       "aws-backup"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "324aaa07-e2a3-4f06-b4a5-c1571dc073ec"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "61367752-1211-4aaa-9a2e-40221fde0403",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s compliance team needs to move its fifile shares to AWS. The shares run on a Windows Server SMB fifile share. A self-managed on-\npremises Active Directory controls access to the les and folders.\nThe company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active\nDirectory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and les after the move to AWS. The\ncompany has created an FSx for Windows File Server le system.\nWhich solution will meet these requirements?",
+    "question": "A company\u2019s compliance team needs to move its fifile shares to AWS. The shares run on a Windows Server SMB fifile share. A self-managed on-\npremises Active Directory controls access to the les and folders.\nThe company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active\nDirectory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and les after the move to AWS. The\ncompany has created an FSx for Windows File Server le system.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.",
     "incorrectAnswers": [
       "Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.",
@@ -195,19 +196,19 @@
       "fsx",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6d7845eb-d994-4c45-9b9f-2a782ea21654"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c1868e1a-ac0e-43e1-9116-8cc3c09078b1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company plans to use Amazon ElastiCache for its multi-tier web application. A solutions architect creates a Cache VPC for the ElastiCache\ncluster and an App VPC for the application’s Amazon EC2 instances. Both VPCs are in the us-east-1 Region.\nThe solutions architect must implement a solution to provide the application’s EC2 instances with access to the ElastiCache cluster.\nWhich solution will meet these requirements MOST cost-effectively?",
-    "correctAnswer": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster’s security group to allow inbound connection from the application’s security group.",
+    "question": "A company plans to use Amazon ElastiCache for its multi-tier web application. A solutions architect creates a Cache VPC for the ElastiCache\ncluster and an App VPC for the application\u2019s Amazon EC2 instances. Both VPCs are in the us-east-1 Region.\nThe solutions architect must implement a solution to provide the application\u2019s EC2 instances with access to the ElastiCache cluster.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the ElastiCache cluster\u2019s security group to allow inbound connection from the application\u2019s security group.",
     "incorrectAnswers": [
-      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application’s security group.",
-      "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection’s security group to allow inbound connection from the application’s security group.",
-      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group."
+      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the ElastiCache cluster's security group to allow inbound connection from the application\u2019s security group.",
+      "Create a peering connection between the VPCs. Add a route table entry for the peering connection in both VPCs. Configure an inbound rule for the peering connection\u2019s security group to allow inbound connection from the application\u2019s security group.",
+      "Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC\u2019s security group to allow inbound connection from the application\u2019s security group."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #262). Correct choice: A.",
     "keywords": [
@@ -219,10 +220,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "618e1b79-3c41-4fa0-aefd-eca41f98ce34"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5f607e2b-c9f5-41eb-a33b-2d0e8e5ede59",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -241,10 +242,10 @@
       "ec2",
       "route53"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "68a24f32-63ad-4458-96b2-a6c98c4a683c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8e882df6-9f45-4ead-aff3-22f088c02652",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -264,10 +265,10 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8ad282d6-3c9d-40a1-aea5-40cd7240b621"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c3406d00-13b3-4677-9367-b02c11cceb9c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -288,10 +289,10 @@
       "alb",
       "global-accelerator"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0549f952-ae87-4c46-bbc1-24dec0fc5385"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e3f7e599-59b9-479f-a436-eff56d86b6fa",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -311,14 +312,14 @@
       "lambda",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "42b817c3-aa90-4b94-90ba-00027c8c1e79"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "edc8c135-8b8b-4278-aab7-58e5be1228b5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A gaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load\nBalancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that\nare caused by database read performance. The company wants to improve the user experience while minimizing changes to the application’s\narchitecture.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A gaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load\nBalancer. The application stores data in an Amazon RDS for MySQL database. Users are starting to experience long delays and interruptions that\nare caused by database read performance. The company wants to improve the user experience while minimizing changes to the application\u2019s\narchitecture.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Use Amazon ElastiCache in front of the database.",
     "incorrectAnswers": [
       "Use RDS Proxy between the application and the database.",
@@ -336,10 +337,10 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5b7a2b50-a5e6-4957-9da1-39c4cb5375eb"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "27eab016-89b0-475a-84ed-86a061185795",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -358,10 +359,10 @@
       "dynamodb",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "26bd8de7-12c2-43ff-bb25-a22e38e3d1c0"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "415c807e-57d4-443b-9efa-9ab67a194967",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -378,14 +379,14 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0493e902-5f15-4bcf-92cc-c0a82cc013e8"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "946af96b-cfd3-4ff8-8975-cfc9b24308fc",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A solutions architect observes that a nightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is\nreached. The peak capacity is the ‘same every night and the batch jobs always start at 1 AM. The solutions architect needs to nd a cost-effective\nsolution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are\ncomplete.\nWhat should the solutions architect do to meet these requirements?",
+    "question": "A solutions architect observes that a nightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is\nreached. The peak capacity is the \u2018same every night and the batch jobs always start at 1 AM. The solutions architect needs to nd a cost-effective\nsolution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are\ncomplete.\nWhat should the solutions architect do to meet these requirements?",
     "correctAnswer": "Increase the minimum capacity for the Auto Scaling group.",
     "incorrectAnswers": [
       "Increase the maximum capacity for the Auto Scaling group.",
@@ -399,14 +400,14 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "851178b3-6f11-40d0-9dec-420fefbb5220"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e7dfa6cf-3560-4e89-9cdf-d2da4abae03c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company serves a dynamic website from a eet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to\nsupport multiple languages to serve customers around the world. The website’s architecture is running in the us-west-1 Region and is exhibiting\nhigh request latency for users that are located in other parts of the world.\nThe website needs to serve requests quickly and efficiently regardless of a user’s location. However, the company does not want to recreate the\nexisting architecture across multiple Regions.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company serves a dynamic website from a eet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to\nsupport multiple languages to serve customers around the world. The website\u2019s architecture is running in the us-west-1 Region and is exhibiting\nhigh request latency for users that are located in other parts of the world.\nThe website needs to serve requests quickly and efficiently regardless of a user\u2019s location. However, the company does not want to recreate the\nexisting architecture across multiple Regions.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
     "incorrectAnswers": [
       "Configure an Amazon CloudFront distribution with the ALB as the origin. Set the cache behavior settings to cache based on the Accept- Language request header.",
@@ -423,10 +424,10 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6986b5a5-6ff0-4fda-9207-380047bf4cce"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3a91f7e4-3626-478b-ba15-8ecb8b6d33e9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -444,7 +445,6 @@
       "databases",
       "aurora"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c5e54c36-c017-43fe-a44d-afee91b701e4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

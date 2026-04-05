@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c3838966-3202-4b2f-b875-6e9dbdadaeb8",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
@@ -15,14 +16,14 @@
       "due-process",
       "fifth-amendment"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-5/",
-    "seedId": "7a6376f1-b8e7-5a51-875b-50c951b7046c"
+    "source": "https://constitution.congress.gov/constitution/amendment-5/"
   },
   {
+    "itemId": "81fcb63c-b68e-4bdd-b8d8-031ea41a0afa",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
-    "question": "Which amendment’s due process clause is most often cited when limits apply to states and local governments?",
+    "question": "Which amendment\u2019s due process clause is most often cited when limits apply to states and local governments?",
     "correctAnswer": "the Fourteenth Amendment",
     "incorrectAnswers": [
       "the Second Amendment",
@@ -34,10 +35,10 @@
       "due-process",
       "fourteenth-amendment"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-14/",
-    "seedId": "8ec558b9-de45-55b1-870f-ed9f257cbedf"
+    "source": "https://constitution.congress.gov/constitution/amendment-14/"
   },
   {
+    "itemId": "6b999874-9fd5-4895-a9b7-94315fa6ec5f",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
@@ -53,10 +54,10 @@
       "due-process",
       "fair-hearing"
     ],
-    "source": "https://www.law.cornell.edu/wex/procedural_due_process",
-    "seedId": "56d1292c-eacc-5e91-b423-20ce31333fca"
+    "source": "https://www.law.cornell.edu/wex/procedural_due_process"
   },
   {
+    "itemId": "0f24a074-24d6-4adb-9437-78fabacfe404",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
@@ -72,10 +73,10 @@
       "due-process",
       "education"
     ],
-    "source": "https://www.law.cornell.edu/wex/goss_v._lopez",
-    "seedId": "005d9fb4-7450-5d7a-aafd-3d088bef30f8"
+    "source": "https://www.law.cornell.edu/wex/goss_v._lopez"
   },
   {
+    "itemId": "3400800c-6763-43c6-8d9e-616afb767a61",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
@@ -91,10 +92,10 @@
       "due-process",
       "criminal-law"
     ],
-    "source": "https://www.law.cornell.edu/wex/void_for_vagueness_doctrine",
-    "seedId": "1c255eb8-3899-58f4-aa9c-2a5c69ee5319"
+    "source": "https://www.law.cornell.edu/wex/void_for_vagueness_doctrine"
   },
   {
+    "itemId": "fbbaea94-a1d3-4f93-a441-cfea398864f0",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "due-process",
@@ -110,7 +111,6 @@
       "due-process",
       "property"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-5/",
-    "seedId": "b6c2b039-7fa4-568d-802e-8821acc49244"
+    "source": "https://constitution.congress.gov/constitution/amendment-5/"
   }
 ]

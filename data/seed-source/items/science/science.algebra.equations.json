@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "6eb6d2f7-d968-4699-ac09-84986db98100",
+    "itemId": "2feaba75-8274-416a-95c3-8a8ba0381846",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -11,7 +11,7 @@
       "It makes the left side larger than the right side",
       "It is any number that appears in the equation"
     ],
-    "explanation": "A solution is a value that satisfies the equality—plugging it in makes both sides have the same value.",
+    "explanation": "A solution is a value that satisfies the equality\u2014plugging it in makes both sides have the same value.",
     "keywords": [
       "algebra",
       "equations",
@@ -20,7 +20,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/2-introduction-to-equations-and-inequalities"
   },
   {
-    "seedId": "f3e2453a-6cd8-4c7f-aa31-f9ee5af17b87",
+    "itemId": "959122f7-daaa-4697-aaaa-3aa47296effd",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -40,12 +40,12 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:equations-inequalities"
   },
   {
-    "seedId": "a45b675a-e5f4-4d22-b77f-87584e99f5df",
+    "itemId": "3ca48cde-7dfe-445c-8241-1fd9d1b43beb",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
     "question": "What is the first step you usually take to solve an equation like 3x + 5 = 20?",
-    "correctAnswer": "Isolate the variable term (undo the +5, then undo the ×3)",
+    "correctAnswer": "Isolate the variable term (undo the +5, then undo the \u00d73)",
     "incorrectAnswers": [
       "Square both sides",
       "Divide both sides by 5 first, no matter what",
@@ -60,18 +60,18 @@
     "source": "https://www.ck12.org/algebra/solving-two-step-equations/lesson/Solving-Two-Step-Equations-ALG/"
   },
   {
-    "seedId": "bd4e013f-d8eb-4fd2-9e92-b0e5d0063707",
+    "itemId": "ac255ea2-992d-4e7e-8c45-650e8aaf9050",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
-    "question": "In the equation 2(x − 4) = 10, what is the main purpose of distributing the 2?",
+    "question": "In the equation 2(x \u2212 4) = 10, what is the main purpose of distributing the 2?",
     "correctAnswer": "To remove parentheses so you can combine like terms and isolate x",
     "incorrectAnswers": [
       "To change subtraction into division",
       "To make the equation quadratic",
       "To guarantee the solution is an integer"
     ],
-    "explanation": "Distributing expands the left side (2x − 8), making it easier to solve using standard linear-equation steps.",
+    "explanation": "Distributing expands the left side (2x \u2212 8), making it easier to solve using standard linear-equation steps.",
     "keywords": [
       "distributive-property",
       "parentheses",
@@ -80,7 +80,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/1-3-exponents-and-scientific-notation"
   },
   {
-    "seedId": "27b5b267-7c43-47c5-ba15-7dc5f763ff8d",
+    "itemId": "69f6eb74-8da6-4a62-a062-2383b47ae314",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -89,7 +89,7 @@
     "incorrectAnswers": [
       "The equation has no solution",
       "The only solution is x = 0",
-      "You made an error because equations can’t simplify that way"
+      "You made an error because equations can\u2019t simplify that way"
     ],
     "explanation": "If both sides are identical after simplifying, any value that keeps the original expressions defined will satisfy the equation.",
     "keywords": [
@@ -100,7 +100,7 @@
     "source": "https://openstax.org/books/college-algebra-2e/pages/2-1-the-basics-of-algebraic-expressions"
   },
   {
-    "seedId": "17ffb951-9142-44eb-9629-526de7c1490c",
+    "itemId": "c40eb69c-387e-4b5f-9e87-45bd86fd3913",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -120,16 +120,16 @@
     "source": "https://www.purplemath.com/modules/solvelin.htm"
   },
   {
-    "seedId": "8aa010de-1175-419f-92c1-a4e16164e0e7",
+    "itemId": "8d54ba8d-f401-495f-b47e-2b78fc056576",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
     "question": "Why do you have to check for \"extraneous solutions\" after solving some equations?",
-    "correctAnswer": "Some algebra steps can introduce values that don’t satisfy the original equation’s constraints",
+    "correctAnswer": "Some algebra steps can introduce values that don\u2019t satisfy the original equation\u2019s constraints",
     "incorrectAnswers": [
       "Because simplifying always changes the solution set",
       "Because the correct answer is always irrational",
-      "Because equivalent equations can’t be solved directly"
+      "Because equivalent equations can\u2019t be solved directly"
     ],
     "explanation": "Operations like squaring both sides or clearing denominators can add solutions that fail the original equation, so you verify by substitution.",
     "keywords": [
@@ -140,18 +140,18 @@
     "source": "https://en.wikipedia.org/wiki/Extraneous_and_missing_solutions"
   },
   {
-    "seedId": "d3c51131-98bc-4e76-8e08-8114e86e1bc6",
+    "itemId": "4df28dd9-54bb-453a-8bb9-b4b97c0fa1a2",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
-    "question": "If an equation contains a fraction like (x − 1)/3 = 4, what is a common valid first move?",
+    "question": "If an equation contains a fraction like (x \u2212 1)/3 = 4, what is a common valid first move?",
     "correctAnswer": "Multiply both sides by 3 to clear the denominator",
     "incorrectAnswers": [
       "Add 3 to both sides to cancel the denominator",
       "Square both sides to remove the fraction",
       "Replace x with 3 to eliminate the denominator"
     ],
-    "explanation": "Multiplying both sides by the denominator removes the fraction and keeps the equation equivalent (as long as you don’t multiply by zero).",
+    "explanation": "Multiplying both sides by the denominator removes the fraction and keeps the equation equivalent (as long as you don\u2019t multiply by zero).",
     "keywords": [
       "fractions",
       "clear-denominators",
@@ -160,7 +160,7 @@
     "source": "https://www.kutasoftware.com/freeipa.html"
   },
   {
-    "seedId": "121817e1-a475-4f7e-8ffb-364adbdbd070",
+    "itemId": "89aa8be7-7257-4c06-a751-42407bdc49f6",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -180,7 +180,7 @@
     "source": "https://www.mathsisfun.com/algebra/linear-equations.html"
   },
   {
-    "seedId": "6a62f9a2-110d-443c-84af-b7ffe05ca90e",
+    "itemId": "4ba70036-477b-448f-9f13-77aa2688411f",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -191,7 +191,7 @@
       "It makes the equation quadratic",
       "It turns an equation into an inequality"
     ],
-    "explanation": "Algebra steps must be valid operations; since dividing by 0 has no defined result, it can’t preserve equality.",
+    "explanation": "Algebra steps must be valid operations; since dividing by 0 has no defined result, it can\u2019t preserve equality.",
     "keywords": [
       "undefined",
       "division-by-zero",
@@ -200,7 +200,7 @@
     "source": "https://en.wikipedia.org/wiki/Division_by_zero"
   },
   {
-    "seedId": "71a7a6a0-6950-495c-95e4-56a05cc8dc1b",
+    "itemId": "a6934aa3-e000-4c2e-8f30-3c972361518c",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -220,7 +220,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/2-2-solve-equations-using-the-subtraction-and-addition-properties-of-equality"
   },
   {
-    "seedId": "b8de8456-f820-44f5-8c2d-f157755d4155",
+    "itemId": "6329efeb-d363-4924-a68c-2ef6374a166a",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "equations",
@@ -229,7 +229,7 @@
     "incorrectAnswers": [
       "Subtract 7 from both sides and stop",
       "Divide both sides by 7 and compare",
-      "Replace 4 with 7 because it’s the proposed solution"
+      "Replace 4 with 7 because it\u2019s the proposed solution"
     ],
     "explanation": "Plugging in x = 7 gives 7/2 + 1 = 4.5, which is not equal to 4, so x = 7 is not a solution.",
     "keywords": [
@@ -240,4 +240,3 @@
     "source": "https://www.khanacademy.org/math/algebra-home/alg-solving-equations"
   }
 ]
-

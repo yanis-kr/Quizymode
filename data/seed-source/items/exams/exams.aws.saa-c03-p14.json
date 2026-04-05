@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3770338d-a55a-4f97-af13-da32a35242f2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -17,10 +18,10 @@
       "lambda",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3769899f-1cae-42ec-867a-270661fc356d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8a154202-d8c2-49bc-b2a8-61d4f1498539",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -40,10 +41,10 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "82568551-edbd-47ed-a6fe-33ba13258d18"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4efed4b9-90b8-472c-80b1-cae87b4adb63",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -62,14 +63,14 @@
       "efs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f59e4666-06b2-4280-b434-4de3d4a5bcfe"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d1572271-a293-4885-b913-0ff3bf3596a2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an application that is backed by an Amazon DynamoDB table. The company’s compliance requirements specify that database\nbackups must be taken every month, must be available for 6 months, and must be retained for 7 years.\nWhich solution will meet these requirements?",
+    "question": "A company has an application that is backed by an Amazon DynamoDB table. The company\u2019s compliance requirements specify that database\nbackups must be taken every month, must be available for 6 months, and must be retained for 7 years.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create an AWS Backup plan to back up the DynamoDB table on the rst day of each month. Specify a lifecycle policy that transitions the backup to cold storage after 6 months. Set the retention period for each backup to 7 years.",
     "incorrectAnswers": [
       "Create a DynamoDB on-demand backup of the DynamoDB table on the rst day of each month. Transition the backup to Amazon S3 Glacier Flexible Retrieval after 6 months. Create an S3 Lifecycle policy to delete backups that are older than 7 years.",
@@ -85,14 +86,14 @@
       "dynamodb",
       "aws-backup"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4a53b2bc-e820-4d47-9402-b1e5f02ef0a2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "145bdebb-384c-4634-9c8e-f6b3e1fdc093",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is using Amazon CloudFront with its website. The company has enabled logging on the CloudFront distribution, and logs are saved in\none of the company’s Amazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company is using Amazon CloudFront with its website. The company has enabled logging on the CloudFront distribution, and logs are saved in\none of the company\u2019s Amazon S3 buckets. The company needs to perform advanced analyses on the logs and build visualizations.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with AWS Glue.",
     "incorrectAnswers": [
       "Use standard SQL queries in Amazon Athena to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight.",
@@ -109,10 +110,10 @@
       "glue",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "401bef4a-c6e1-4fe7-bd1b-d0b14c5ba573"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "78e0010e-ce9f-4f05-a4eb-447bf2a35b3f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -131,10 +132,10 @@
       "rds",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "dac7e738-a747-4e69-9e9c-f794b4af06b6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "80f26020-ca30-4805-8e72-69797e7d2a65",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -154,10 +155,10 @@
       "vpc",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9b09f88d-cfba-437f-b7ed-dc62467bd9c0"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d43c35ca-2664-4cb3-a19a-d4770edd31ee",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -176,10 +177,10 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0fd92ba3-e7cd-4279-b81e-b9791d120946"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "cf58afd7-ad7a-4a0d-aadc-1686ce79d1ec",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -197,10 +198,10 @@
       "aws-management",
       "athena"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6a8f94b5-8179-4924-954d-d395630122ad"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "eb7e3546-d507-4fa1-b75b-054859cb9816",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -219,19 +220,19 @@
       "s3",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f8326c11-ea1c-4f83-88ce-04251fbc2f5a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b273b83b-94a4-40be-bc8e-b52b20a65e88",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has a static website that is hosted on Amazon CloudFront in front of Amazon S3. The static website uses a database backend. The\ncompany notices that the website does not reect updates that have been made in the website’s Git repository. The company checks the\ncontinuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company veries that the\nwebhooks are congured properly and that the CI/CD pipeline is sending messages that indicate successful deployments.\nA solutions architect needs to implement a solution that displays the updates on the website.\nWhich solution will meet these requirements?",
+    "question": "A company has a static website that is hosted on Amazon CloudFront in front of Amazon S3. The static website uses a database backend. The\ncompany notices that the website does not reect updates that have been made in the website\u2019s Git repository. The company checks the\ncontinuous integration and continuous delivery (CI/CD) pipeline between the Git repository and Amazon S3. The company veries that the\nwebhooks are congured properly and that the CI/CD pipeline is sending messages that indicate successful deployments.\nA solutions architect needs to implement a solution that displays the updates on the website.\nWhich solution will meet these requirements?",
     "correctAnswer": "Add an Application Load Balancer.",
     "incorrectAnswers": [
       "Add Amazon ElastiCache for Redis or Memcached to the database layer of the web application.",
       "Invalidate the CloudFront cache.",
-      "Use AWS Certicate Manager (ACM) to validate the website’s SSL certicate."
+      "Use AWS Certicate Manager (ACM) to validate the website\u2019s SSL certicate."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #286). Correct choice: A.",
     "keywords": [
@@ -242,10 +243,10 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bc5b8258-d842-4f83-b787-ae5f845c4416"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "161b2508-b339-4859-8d95-af9594a102df",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -264,10 +265,10 @@
       "fsx",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e491a8e5-3aef-430e-928f-b9c4c246ebaa"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3f827a7c-8bc4-4a5b-bf99-ea2fb1867314",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -284,10 +285,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "89864e99-6443-41d6-9b88-16ec1f9d3ced"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "67686978-2fdb-4b86-adde-5efbe85965fc",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -295,7 +296,7 @@
     "correctAnswer": "Apply an S3 bucket policy that grants read access to the S3 bucket.",
     "incorrectAnswers": [
       "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to the S3 bucket.",
-      "Embed an access key and a secret key in the Lambda function’s code to grant the required IAM permissions for read access to the S3 bucket.",
+      "Embed an access key and a secret key in the Lambda function\u2019s code to grant the required IAM permissions for read access to the S3 bucket.",
       "Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to all S3 buckets in the account."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #289). Correct choice: A.",
@@ -306,10 +307,10 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "aba23107-d8de-4dd6-9623-f99c6a1b3fdb"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "59a88fce-dd27-4fd3-bec6-5e1630d0158e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -327,10 +328,10 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8e829fe9-99fe-4a80-973f-b6adc9f4a7aa"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "567aae00-6782-4212-a3f7-faff11408973",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -348,10 +349,10 @@
       "s3",
       "snowball"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "dca2c2fe-001a-46ce-8b9b-f3a696f645b5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1332405e-1558-46e3-b6c5-c90b02a52b9c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -371,10 +372,10 @@
       "ec2",
       "route53"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9220426e-0a81-4e22-8e15-1381825e1f05"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "6dc3c06d-52cd-4c1a-83a3-6ae47cc5a19d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -392,10 +393,10 @@
       "databases",
       "dynamodb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "aa2fa70f-415c-4027-b06f-6849bfa8e5de"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "025386d5-b4fb-4081-950a-e9562c510193",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -414,10 +415,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "742bf402-5c0c-42bb-b540-b10308f9621d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "118041a6-3348-486c-823b-e8f1f94e2339",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -438,7 +439,6 @@
       "alb",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "18c8368a-62bc-4ebe-94ba-edd2e8a85522"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

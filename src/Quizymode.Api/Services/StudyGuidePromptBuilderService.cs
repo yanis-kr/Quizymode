@@ -25,7 +25,6 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
     private static readonly string ItemSchema = """
         Each item must be a JSON object with this shape:
         {
-          "seedId": "00000000-0000-0000-0000-000000000001",
           "category": "science",
           "navigationKeyword1": "primary-topic",
           "navigationKeyword2": "subtopic",
@@ -64,7 +63,6 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
             sb.AppendLine("- Default extra keywords already applied to every imported item: " + string.Join(", ", defaultKeywords));
         sb.AppendLine("- Keep the items grounded in the excerpt and avoid duplicating concepts across prompt sets.");
         sb.AppendLine("- Return ONLY a single JSON array of items. No markdown, no code fences, no commentary.");
-        sb.AppendLine("- Every item must include a unique seedId in UUID format so the JSON can be reused in seed workflows.");
         sb.AppendLine("- Use category = " + categoryName + " on every item.");
         sb.AppendLine("- Use navigationKeyword1 = " + nav1 + " and navigationKeyword2 = " + nav2 + " on every item.");
         sb.AppendLine("- question and correctAnswer are required. incorrectAnswers must be an array with 1 to 4 items.");
@@ -110,8 +108,8 @@ internal sealed class StudyGuidePromptBuilderService : IStudyGuidePromptBuilderS
         var sb = new StringBuilder();
         sb.AppendLine("Below is a list of quiz items (questions) generated from multiple chunks of a study guide. Some may be duplicates or near-duplicates.");
         sb.AppendLine("Produce a single JSON array that merges duplicates: keep one best version of each unique concept, preserving the best explanation.");
-        sb.AppendLine("Use the same JSON schema per item: seedId, category, navigationKeyword1, navigationKeyword2, question, correctAnswer, incorrectAnswers, explanation, source, keywords, factualRisk, reviewComments.");
-        sb.AppendLine("Keep seedId unique per item and preserve category/navigationKeyword1/navigationKeyword2 exactly.");
+        sb.AppendLine("Use the same JSON schema per item: category, navigationKeyword1, navigationKeyword2, question, correctAnswer, incorrectAnswers, explanation, source, keywords, factualRisk, reviewComments.");
+        sb.AppendLine("Preserve category/navigationKeyword1/navigationKeyword2 exactly.");
         sb.AppendLine("Preserve or improve source so each item keeps a direct URL to a reliable, verifiable source when available; do not use the AI assistant name as the source.");
         sb.AppendLine("Return ONLY the JSON array. No markdown, no code fences, no commentary.");
         sb.AppendLine();

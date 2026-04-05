@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "953dbe26-33c1-416e-ab44-734383df2ef7",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
@@ -16,14 +17,14 @@
       "charlemagne",
       "carolingian"
     ],
-    "source": "https://www.britannica.com/biography/Charlemagne",
-    "seedId": "cdb67d3b-0359-4054-8bae-60464bcd0a5e"
+    "source": "https://www.britannica.com/biography/Charlemagne"
   },
   {
+    "itemId": "afe1b43b-bac3-4b4c-a4a9-069e2fa4ecaa",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "The Hundred Years’ War chiefly pitted the kingdoms of England and which country?",
+    "question": "The Hundred Years\u2019 War chiefly pitted the kingdoms of England and which country?",
     "correctAnswer": "France",
     "incorrectAnswers": [
       "Spain",
@@ -36,10 +37,10 @@
       "hundred-years-war",
       "france"
     ],
-    "source": "https://www.britannica.com/event/Hundred-Years-War",
-    "seedId": "4c531459-4829-40a8-992c-a53db33d11c1"
+    "source": "https://www.britannica.com/event/Hundred-Years-War"
   },
   {
+    "itemId": "9560952d-7d63-4c0a-a9a0-159803bd552f",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
@@ -56,18 +57,18 @@
       "renaissance",
       "florence"
     ],
-    "source": "https://www.britannica.com/topic/Medici-family",
-    "seedId": "0498d8b3-b5fb-43bb-a152-6bf4debe26f2"
+    "source": "https://www.britannica.com/topic/Medici-family"
   },
   {
+    "itemId": "305af42f-8c43-4d76-81d9-9acc4d84bbb1",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "The 1713–14 Peace of Utrecht ended which war and shifted Spain’s European possessions?",
+    "question": "The 1713\u201314 Peace of Utrecht ended which war and shifted Spain\u2019s European possessions?",
     "correctAnswer": "The War of the Spanish Succession",
     "incorrectAnswers": [
-      "The Thirty Years’ War",
-      "The Nine Years’ War alone",
+      "The Thirty Years\u2019 War",
+      "The Nine Years\u2019 War alone",
       "The Peninsular War"
     ],
     "explanation": "Utrecht recognized Bourbon rule in Spain while partitioning Spanish Netherlands and Italian claims.",
@@ -76,15 +77,15 @@
       "utrecht",
       "spain"
     ],
-    "source": "https://www.britannica.com/event/Peace-of-Utrecht",
-    "seedId": "d0ac6b10-2aa9-4642-954e-de58ba96949e"
+    "source": "https://www.britannica.com/event/Peace-of-Utrecht"
   },
   {
+    "itemId": "fb5c1e12-8d26-4bcf-9917-5952d1efd6fc",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
     "question": "The Dutch Republic won independence recognition from Spain after which long revolt?",
-    "correctAnswer": "The Eighty Years’ War (Dutch Revolt)",
+    "correctAnswer": "The Eighty Years\u2019 War (Dutch Revolt)",
     "incorrectAnswers": [
       "The Franco-Dutch War",
       "The Belgian Revolution of 1830",
@@ -96,54 +97,54 @@
       "netherlands",
       "dutch-revolt"
     ],
-    "source": "https://www.britannica.com/event/Eighty-Years-War",
-    "seedId": "a0c8815f-a994-4782-a439-ce5b870c61db"
+    "source": "https://www.britannica.com/event/Eighty-Years-War"
   },
   {
+    "itemId": "88c0b19b-31b7-4a87-86f2-2f318f4e3e4f",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "Giuseppe Garibaldi’s Redshirts helped unify which peninsula with Piedmont’s monarchy?",
+    "question": "Giuseppe Garibaldi\u2019s Redshirts helped unify which peninsula with Piedmont\u2019s monarchy?",
     "correctAnswer": "Italy",
     "incorrectAnswers": [
       "Iberia",
       "Scandinavia",
       "The Balkans"
     ],
-    "explanation": "Expeditions in Sicily and Naples complemented Cavour’s diplomacy with France against Austria.",
+    "explanation": "Expeditions in Sicily and Naples complemented Cavour\u2019s diplomacy with France against Austria.",
     "keywords": [
       "western-europe",
       "italy",
       "risorgimento"
     ],
-    "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi",
-    "seedId": "18e91473-ca09-4797-a968-bda1799f8cb5"
+    "source": "https://www.britannica.com/biography/Giuseppe-Garibaldi"
   },
   {
+    "itemId": "d699d66c-2377-4b23-85d7-45cda9852dd6",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "The Congress of Vienna (1814–15) redrew Europe after the defeat of whom?",
+    "question": "The Congress of Vienna (1814\u201315) redrew Europe after the defeat of whom?",
     "correctAnswer": "Napoleon Bonaparte",
     "incorrectAnswers": [
       "Louis XIV",
       "Philip II",
       "Frederick the Great"
     ],
-    "explanation": "Metternich’s system sought legitimacy, buffer states, and containment of French and revolutionary power.",
+    "explanation": "Metternich\u2019s system sought legitimacy, buffer states, and containment of French and revolutionary power.",
     "keywords": [
       "western-europe",
       "vienna",
       "congress"
     ],
-    "source": "https://www.britannica.com/event/Congress-of-Vienna",
-    "seedId": "8967464a-f8f0-4e84-a87a-ab6cb71790cc"
+    "source": "https://www.britannica.com/event/Congress-of-Vienna"
   },
   {
+    "itemId": "786652fc-c55e-4023-a366-679986f965f9",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "Germany’s Schlieffen Plan aimed to knock out France quickly by invading through which neutral kingdom?",
+    "question": "Germany\u2019s Schlieffen Plan aimed to knock out France quickly by invading through which neutral kingdom?",
     "correctAnswer": "Belgium",
     "incorrectAnswers": [
       "Switzerland",
@@ -156,30 +157,30 @@
       "world-war-i",
       "belgium"
     ],
-    "source": "https://www.britannica.com/event/World-War-I",
-    "seedId": "edb910b5-8287-4d4d-a513-48bcb459e39e"
+    "source": "https://www.britannica.com/event/World-War-I"
   },
   {
+    "itemId": "49cf05f9-6bdc-48da-b850-dd9cc908db1b",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
-    "question": "Francisco Franco’s Nationalists won which 1936–39 conflict with Republican defenders of the Second Spanish Republic?",
+    "question": "Francisco Franco\u2019s Nationalists won which 1936\u201339 conflict with Republican defenders of the Second Spanish Republic?",
     "correctAnswer": "The Spanish Civil War",
     "incorrectAnswers": [
       "The Carlist Wars",
       "The Rif War",
       "The Peninsular War"
     ],
-    "explanation": "Franco’s dictatorship endured until 1975, isolating Spain early in the Cold War.",
+    "explanation": "Franco\u2019s dictatorship endured until 1975, isolating Spain early in the Cold War.",
     "keywords": [
       "western-europe",
       "spain",
       "civil-war"
     ],
-    "source": "https://www.britannica.com/event/Spanish-Civil-War",
-    "seedId": "1d2afb81-d34d-473d-be9b-eeabe8bdb6c0"
+    "source": "https://www.britannica.com/event/Spanish-Civil-War"
   },
   {
+    "itemId": "b6a12f5c-2b0c-47ff-bd9c-e987f38961dd",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
@@ -190,16 +191,16 @@
       "Britain and Ireland",
       "Greece and Turkey"
     ],
-    "explanation": "The EEC’s common external tariff began today’s European Union institutional lineage.",
+    "explanation": "The EEC\u2019s common external tariff began today\u2019s European Union institutional lineage.",
     "keywords": [
       "western-europe",
       "eec",
       "integration"
     ],
-    "source": "https://www.britannica.com/event/Treaty-of-Rome",
-    "seedId": "1e23b25b-f398-482a-8c82-3c299d8b496c"
+    "source": "https://www.britannica.com/event/Treaty-of-Rome"
   },
   {
+    "itemId": "1e9c9a38-9671-409c-a592-8e86e2271bb0",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
@@ -216,10 +217,10 @@
       "vikings",
       "scandinavia"
     ],
-    "source": "https://www.britannica.com/topic/Viking-people",
-    "seedId": "84914c89-c07c-4496-be1b-2a8a9a42e431"
+    "source": "https://www.britannica.com/topic/Viking-people"
   },
   {
+    "itemId": "9dd26815-810e-4ef1-b838-8cdf13047f00",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "western-europe",
@@ -230,13 +231,12 @@
       "Spain, Portugal, Morocco",
       "Poland, Czechoslovakia, Hungary"
     ],
-    "explanation": "Schengen later expanded into the EU’s passport-free travel zone.",
+    "explanation": "Schengen later expanded into the EU\u2019s passport-free travel zone.",
     "keywords": [
       "western-europe",
       "schengen",
       "eu"
     ],
-    "source": "https://www.britannica.com/topic/Schengen-Agreement",
-    "seedId": "cf0fce2b-77c6-4c0f-84dd-f86bf1d64ef7"
+    "source": "https://www.britannica.com/topic/Schengen-Agreement"
   }
 ]

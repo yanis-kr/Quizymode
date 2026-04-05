@@ -1,14 +1,15 @@
 [
   {
+    "itemId": "ea0065ae-018d-4f3a-96c5-048d5d4f705a",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "You want a one-way train ticket. Which short phrase asks for that?",
-    "correctAnswer": "Un aller simple, s'il vous plaît.",
+    "correctAnswer": "Un aller simple, s'il vous pla\u00eet.",
     "incorrectAnswers": [
-      "Une table pour deux, s'il vous plaît.",
-      "L'addition, s'il vous plaît.",
-      "Où sont les toilettes ?"
+      "Une table pour deux, s'il vous pla\u00eet.",
+      "L'addition, s'il vous pla\u00eet.",
+      "O\u00f9 sont les toilettes ?"
     ],
     "explanation": "\"Aller simple\" is a common label for a one-way ticket in travel French.",
     "keywords": [
@@ -16,10 +17,10 @@
       "train",
       "french-travel"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/aller-simple",
-    "seedId": "c16a41f3-d3c4-5ecc-8a0c-919602660bf4"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/aller-simple"
   },
   {
+    "itemId": "6232bd22-3ff0-4dcf-8ee0-fa00a89eff26",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
@@ -36,10 +37,10 @@
       "airport",
       "french-travel"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/passeport",
-    "seedId": "a2dd59c1-8ef9-5324-947e-4f018fe47920"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/passeport"
   },
   {
+    "itemId": "7a118463-4f0b-4fff-a70b-82c4bbf0b9b0",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
@@ -48,7 +49,7 @@
     "incorrectAnswers": [
       "rue",
       "place",
-      "hôtel"
+      "h\u00f4tel"
     ],
     "explanation": "\"Gare\" is the common word for a station, especially a train station.",
     "keywords": [
@@ -56,30 +57,30 @@
       "train",
       "french-travel"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/gare",
-    "seedId": "70f4f0a5-28f7-55ae-afbd-770b62cf337a"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/gare"
   },
   {
+    "itemId": "9d6bef9a-21d7-4a22-b878-df930adb2b33",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "Which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "Où est la banque la plus proche ?",
+    "correctAnswer": "O\u00f9 est la banque la plus proche ?",
     "incorrectAnswers": [
       "C'est combien ?",
       "Avez-vous un menu en anglais ?",
       "Je voudrais le plat du jour."
     ],
-    "explanation": "\"Où est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
+    "explanation": "\"O\u00f9 est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
     "keywords": [
       "bank",
       "directions",
       "french-travel"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/banque",
-    "seedId": "513691bd-1487-5185-929b-2bffdad9b609"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/banque"
   },
   {
+    "itemId": "7679e97e-0049-4f6f-84d0-12d82ffe35aa",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
@@ -88,27 +89,27 @@
     "incorrectAnswers": [
       "droite",
       "tout droit",
-      "près"
+      "pr\u00e8s"
     ],
-    "explanation": "\"Gauche\" means left; \"à gauche\" is a common direction phrase.",
+    "explanation": "\"Gauche\" means left; \"\u00e0 gauche\" is a common direction phrase.",
     "keywords": [
       "left",
       "directions",
       "french-travel"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche",
-    "seedId": "7447bd59-ae2d-5be0-b6aa-e92861214103"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche"
   },
   {
+    "itemId": "23d8a71e-246e-401b-8dd4-4a8d58a41625",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "At a hotel desk, which phrase asks if they have a free room?",
     "correctAnswer": "Avez-vous une chambre libre ?",
     "incorrectAnswers": [
-      "À quelle heure est le vol ?",
-      "Un café au lait, s'il vous plaît.",
-      "Combien coûte l'entrée ?"
+      "\u00c0 quelle heure est le vol ?",
+      "Un caf\u00e9 au lait, s'il vous pla\u00eet.",
+      "Combien co\u00fbte l'entr\u00e9e ?"
     ],
     "explanation": "\"Chambre\" means room; \"libre\" often signals that a room is available.",
     "keywords": [
@@ -116,7 +117,6 @@
       "room",
       "french-travel"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/chambre",
-    "seedId": "42d25dcb-0167-5413-ad69-a7653263211b"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/chambre"
   }
 ]

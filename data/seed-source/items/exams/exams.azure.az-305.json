@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6719a6b9-9dda-4b98-8fcb-4ee631f915b3",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -16,10 +17,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
-    "seedId": "b1092912-ba25-44c3-8b31-815488591aa9"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"
   },
   {
+    "itemId": "1f149eee-70d5-4a64-8638-a3aee54197e3",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -36,10 +37,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
-    "seedId": "fe7651c5-856e-49b1-9ff0-e0363c581a89"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
   },
   {
+    "itemId": "c5973ab2-74e7-4ec6-baa0-41ec9f422aff",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -56,10 +57,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
-    "seedId": "213be384-cd55-4863-8aeb-c51f4743cfca"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
   },
   {
+    "itemId": "d63bedd8-e57f-4571-b6d0-22616f0aaf0a",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -76,10 +77,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/well-architected/",
-    "seedId": "ecd5fd3e-4d73-411b-93d4-b530d97dad80"
+    "source": "https://learn.microsoft.com/en-us/azure/well-architected/"
   },
   {
+    "itemId": "8355edda-71dc-41de-8bba-63c0ec1cc446",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -96,10 +97,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
-    "seedId": "4cf7afb6-b125-4e96-ad3e-c667c17dc6c9"
+    "source": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
   },
   {
+    "itemId": "1f47b01d-3c28-4c62-ad40-c1bdb088c1d2",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -116,10 +117,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview",
-    "seedId": "b9e8c5fa-c0c3-4ce0-ba99-2aa90bf10609"
+    "source": "https://learn.microsoft.com/en-us/azure/app-service/overview"
   },
   {
+    "itemId": "0dc1341b-d6af-43dd-9547-f0ba764ab21f",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -136,10 +137,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview",
-    "seedId": "6027926a-9c77-4fd8-9524-630901658e05"
+    "source": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
   },
   {
+    "itemId": "5e00abd1-11d3-4f01-8c48-a3dd4fea8eaf",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -156,10 +157,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
-    "seedId": "11c31743-8d8b-424c-b5f9-9559ee9aef1b"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
   },
   {
+    "itemId": "f693a8cf-125e-4943-92ae-afd41c698499",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -176,10 +177,10 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview",
-    "seedId": "4fff5645-2562-481b-9a95-e8da9b7314f7"
+    "source": "https://learn.microsoft.com/en-us/azure/cosmos-db/overview"
   },
   {
+    "itemId": "9e33e3f6-2abf-4f21-bd2f-d7c0b05e3a61",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-305",
@@ -196,7 +197,6 @@
       "azure-architecture",
       "solution-design"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
-    "seedId": "44055acf-0a29-4f04-adfb-977db2fd84bd"
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
   }
 ]

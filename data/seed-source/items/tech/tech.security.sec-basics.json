@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "88251fce-92d0-4995-ade7-ec466a19439f",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
-    "question": "In the classic CIA triad, what does “integrity” refer to?",
+    "question": "In the classic CIA triad, what does \u201cintegrity\u201d refer to?",
     "correctAnswer": "Data is accurate and has not been tampered with",
     "incorrectAnswers": [
       "Data is hidden from everyone",
@@ -15,10 +16,10 @@
       "security",
       "cia-triad"
     ],
-    "source": "https://en.wikipedia.org/wiki/CIA_triad",
-    "seedId": "4ef9a8cc-8281-5705-a54e-203fdd79ca54"
+    "source": "https://en.wikipedia.org/wiki/CIA_triad"
   },
   {
+    "itemId": "b454bebb-9850-4d45-8429-6e22b5b26155",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
@@ -34,10 +35,10 @@
       "security",
       "defense-in-depth"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/defense_in_depth",
-    "seedId": "effdf491-1747-5116-86b7-71a420cb8799"
+    "source": "https://csrc.nist.gov/glossary/term/defense_in_depth"
   },
   {
+    "itemId": "4be82327-292a-421d-95ff-3ab37d6491c0",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
@@ -53,10 +54,10 @@
       "security",
       "least-privilege"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/least_privilege",
-    "seedId": "eeaee150-6046-5d17-b537-0ade3c2ecdb6"
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege"
   },
   {
+    "itemId": "4eb387da-b631-4c46-9f21-54e6436abb6a",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
@@ -72,10 +73,10 @@
       "security",
       "phishing"
     ],
-    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
-    "seedId": "d4ad705a-7f51-5d18-9c9f-1f84cecd711c"
+    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
   },
   {
+    "itemId": "245752c7-cdaf-47dc-bdd3-81e000b3a441",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
@@ -91,10 +92,10 @@
       "security",
       "patching"
     ],
-    "source": "https://csrc.nist.gov/publications/detail/sp/800-40/rev-4/final",
-    "seedId": "7108f7c2-c90a-5d49-9a36-1befda0fadef"
+    "source": "https://csrc.nist.gov/publications/detail/sp/800-40/rev-4/final"
   },
   {
+    "itemId": "c6b9840d-746e-4db0-95f9-81c158bc586a",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "sec-basics",
@@ -110,7 +111,6 @@
       "security",
       "malware"
     ],
-    "source": "https://en.wikipedia.org/wiki/Malware",
-    "seedId": "212e4ac9-1a62-5ac6-9b5b-6c15b5984041"
+    "source": "https://en.wikipedia.org/wiki/Malware"
   }
 ]

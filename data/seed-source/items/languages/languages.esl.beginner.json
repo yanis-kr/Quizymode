@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b64d50ea-b3ea-48eb-8c8e-dc977fcf1675",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -16,10 +17,10 @@
       "greeting",
       "esl-beginner"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/hello",
-    "seedId": "79bc15bf-e56d-501a-8c0b-f79640cc3b0e"
+    "source": "https://dictionary.cambridge.org/dictionary/english/hello"
   },
   {
+    "itemId": "7e71e50e-ea82-4f03-83e6-342ccd273c59",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -36,10 +37,10 @@
       "gratitude",
       "esl-beginner"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/thank-you",
-    "seedId": "de3cc0c5-9f3c-5583-9ea3-435461b4bdd3"
+    "source": "https://dictionary.cambridge.org/dictionary/english/thank-you"
   },
   {
+    "itemId": "b369cd81-1a57-4fa4-819f-a48c271c2c61",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -56,10 +57,10 @@
       "present-simple",
       "esl-beginner"
     ],
-    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple",
-    "seedId": "95d43b50-7b2a-58f0-bdf1-fcc83b31657d"
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple"
   },
   {
+    "itemId": "588a00b8-8947-4e3c-a474-a83d6e8448fd",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -76,10 +77,10 @@
       "questions",
       "esl-beginner"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/name",
-    "seedId": "aa54f089-743f-5fae-ab75-db6bdfec3195"
+    "source": "https://dictionary.cambridge.org/dictionary/english/name"
   },
   {
+    "itemId": "2a4ae5c1-b083-489f-95ca-30ad25dfed84",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -96,10 +97,10 @@
       "food-drink",
       "esl-beginner"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/water",
-    "seedId": "4e08bef1-056f-5f39-b616-7dc9c901b62f"
+    "source": "https://www.merriam-webster.com/dictionary/water"
   },
   {
+    "itemId": "8f33de37-8094-49da-97b5-eeb65465f0c9",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "beginner",
@@ -116,7 +117,6 @@
       "time-words",
       "esl-beginner"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/day",
-    "seedId": "0033297c-cd7f-5394-9491-2b3b7034e31b"
+    "source": "https://dictionary.cambridge.org/dictionary/english/day"
   }
 ]

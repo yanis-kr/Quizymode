@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a266d418-2131-45c2-8d1d-cff16df0e734",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -16,10 +17,10 @@
       "qin",
       "unification"
     ],
-    "source": "https://www.britannica.com/biography/Qin-Shi-Huang",
-    "seedId": "528731fe-ca14-4ca3-87a0-4d3d51d50247"
+    "source": "https://www.britannica.com/biography/Qin-Shi-Huang"
   },
   {
+    "itemId": "c432cb54-483c-4d71-b55d-d0c13c5294cd",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -36,10 +37,10 @@
       "great-wall",
       "frontier"
     ],
-    "source": "https://www.britannica.com/topic/Great-Wall-of-China",
-    "seedId": "c8c761a4-181e-4f15-ae1f-2f0ff720720c"
+    "source": "https://www.britannica.com/topic/Great-Wall-of-China"
   },
   {
+    "itemId": "59d03197-b105-4c31-8b3e-ffa271fc5af8",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -56,30 +57,30 @@
       "silk-road",
       "trade"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "aaff52a7-b36f-418d-a78d-457f266ee75e"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "9609460a-94f6-4d8e-80a3-be230ee69990",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "Chang’an glittered as capital during which dynasty’s golden age of poetry, Buddhism, and westward reach?",
-    "correctAnswer": "The Tang dynasty (618–907 CE)",
+    "question": "Chang\u2019an glittered as capital during which dynasty\u2019s golden age of poetry, Buddhism, and westward reach?",
+    "correctAnswer": "The Tang dynasty (618\u2013907 CE)",
     "incorrectAnswers": [
       "The Yuan dynasty only",
       "The Shang dynasty",
       "The Republic of China (1912)"
     ],
-    "explanation": "Examination culture, cosmopolitan markets, and Taizong’s expansion typified Tang power before late-rebellion decline.",
+    "explanation": "Examination culture, cosmopolitan markets, and Taizong\u2019s expansion typified Tang power before late-rebellion decline.",
     "keywords": [
       "china",
       "tang",
       "chang-an"
     ],
-    "source": "https://www.britannica.com/topic/Tang-dynasty",
-    "seedId": "e7fb9633-fcea-4300-aba2-d80e475dd6a6"
+    "source": "https://www.britannica.com/topic/Tang-dynasty"
   },
   {
+    "itemId": "7bab5d1c-ace7-4d62-8aa7-880252750c88",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -96,10 +97,10 @@
       "ming",
       "maritime"
     ],
-    "source": "https://www.britannica.com/biography/Zheng-He",
-    "seedId": "33273bdb-69a4-4b4f-92c4-f4c25c74f942"
+    "source": "https://www.britannica.com/biography/Zheng-He"
   },
   {
+    "itemId": "f6a59eb8-66a2-459c-8130-b11ed55da25e",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -116,30 +117,30 @@
       "opium",
       "qing"
     ],
-    "source": "https://www.britannica.com/topic/Opium-Wars",
-    "seedId": "72ca908b-6993-4453-bf91-20ebdad6bc28"
+    "source": "https://www.britannica.com/topic/Opium-Wars"
   },
   {
+    "itemId": "c5716bb4-df36-4a75-be5e-392ab6b9df1a",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "Hong Xiuquan’s Christian-inspired ‘Heavenly Kingdom’ sparked which catastrophic 1850s–1864 rebellion?",
+    "question": "Hong Xiuquan\u2019s Christian-inspired \u2018Heavenly Kingdom\u2019 sparked which catastrophic 1850s\u20131864 rebellion?",
     "correctAnswer": "The Taiping Rebellion",
     "incorrectAnswers": [
       "The Nian Rebellion alone",
       "The White Lotus uprising only",
       "The Dungan revolts exclusively"
     ],
-    "explanation": "It ravaged the Yangzi heartland and fatally weakened the Qing before Zeng Guofan’s armies retook Nanjing.",
+    "explanation": "It ravaged the Yangzi heartland and fatally weakened the Qing before Zeng Guofan\u2019s armies retook Nanjing.",
     "keywords": [
       "china",
       "taiping",
       "qing"
     ],
-    "source": "https://www.britannica.com/event/Taiping-Rebellion",
-    "seedId": "381bcc80-a47c-41fd-a595-ae161f197193"
+    "source": "https://www.britannica.com/event/Taiping-Rebellion"
   },
   {
+    "itemId": "af5c2019-d597-4062-a843-51ce36babbb7",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
@@ -150,20 +151,20 @@
       "The Song dynasty",
       "The Yuan dynasty only"
     ],
-    "explanation": "Yuan Shikai and republicans negotiated the child emperor Puyi’s abdication in 1912.",
+    "explanation": "Yuan Shikai and republicans negotiated the child emperor Puyi\u2019s abdication in 1912.",
     "keywords": [
       "china",
       "1911",
       "republic"
     ],
-    "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912",
-    "seedId": "8fa61b2a-c32c-40e9-bf55-14a3da218565"
+    "source": "https://www.britannica.com/event/Chinese-Revolution-1911-1912"
   },
   {
+    "itemId": "4bc4866a-bf5c-4b9c-aa82-149506a38c91",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "Which 1934–35 retreat cemented Mao Zedong’s leadership as Communist armies escaped Jiangxi encirclement?",
+    "question": "Which 1934\u201335 retreat cemented Mao Zedong\u2019s leadership as Communist armies escaped Jiangxi encirclement?",
     "correctAnswer": "The Long March",
     "incorrectAnswers": [
       "The Northern Expedition",
@@ -176,34 +177,34 @@
       "long-march",
       "ccp"
     ],
-    "source": "https://www.britannica.com/event/Long-March",
-    "seedId": "bf15c135-8e46-4baa-a6e1-8728304473f6"
+    "source": "https://www.britannica.com/event/Long-March"
   },
   {
+    "itemId": "dce91dd2-ea93-407d-8c02-50807d5c2b4d",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "After Japan’s 1945 surrender, renewed fighting between Nationalists and Communists ended in 1949 with whose mainland victory?",
-    "correctAnswer": "Mao Zedong’s Chinese Communist Party",
+    "question": "After Japan\u2019s 1945 surrender, renewed fighting between Nationalists and Communists ended in 1949 with whose mainland victory?",
+    "correctAnswer": "Mao Zedong\u2019s Chinese Communist Party",
     "incorrectAnswers": [
-      "Chiang Kai-shek’s permanent reconquest",
+      "Chiang Kai-shek\u2019s permanent reconquest",
       "The Manchukuo restoration",
       "A coalition under the Dalai Lama"
     ],
-    "explanation": "The People’s Republic was proclaimed in Beijing while the Nationalists withdrew to Taiwan.",
+    "explanation": "The People\u2019s Republic was proclaimed in Beijing while the Nationalists withdrew to Taiwan.",
     "keywords": [
       "china",
       "civil-war",
       "1949"
     ],
-    "source": "https://www.britannica.com/event/Chinese-Civil-War",
-    "seedId": "0f953131-8f4d-4173-82a8-e72a68c675cd"
+    "source": "https://www.britannica.com/event/Chinese-Civil-War"
   },
   {
+    "itemId": "0bde96f6-1273-47e2-87d7-20120b7f052e",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "Red Guards and ‘struggle sessions’ typified which Maoist campaign from 1966 aimed at renewing revolution?",
+    "question": "Red Guards and \u2018struggle sessions\u2019 typified which Maoist campaign from 1966 aimed at renewing revolution?",
     "correctAnswer": "The Cultural Revolution",
     "incorrectAnswers": [
       "The Great Leap Forward alone",
@@ -216,14 +217,14 @@
       "cultural-revolution",
       "mao"
     ],
-    "source": "https://www.britannica.com/event/Cultural-Revolution",
-    "seedId": "8819033b-860a-40fa-bab8-16f6479b3ab0"
+    "source": "https://www.britannica.com/event/Cultural-Revolution"
   },
   {
+    "itemId": "87d1390c-0369-479a-b2ab-41c0e89bdf7e",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "china",
-    "question": "Which post-Mao leader opened special economic zones and declared ‘to get rich is glorious’ while reforming the command economy?",
+    "question": "Which post-Mao leader opened special economic zones and declared \u2018to get rich is glorious\u2019 while reforming the command economy?",
     "correctAnswer": "Deng Xiaoping",
     "incorrectAnswers": [
       "Hua Guofeng alone",
@@ -236,7 +237,6 @@
       "reform",
       "deng"
     ],
-    "source": "https://www.britannica.com/biography/Deng-Xiaoping",
-    "seedId": "ff40b351-01b2-448e-8c1e-182b630a158b"
+    "source": "https://www.britannica.com/biography/Deng-Xiaoping"
   }
 ]

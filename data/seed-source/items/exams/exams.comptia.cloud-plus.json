@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ffa60785-4112-490f-8fb8-81b2758459cc",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -16,10 +17,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/hybrid",
-    "seedId": "ccf74caf-d9ac-4e69-b28d-eeb22f9b615c"
+    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/hybrid"
   },
   {
+    "itemId": "fa9d20dc-f5ec-4108-8a5a-d44b72273355",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -36,10 +37,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://developer.hashicorp.com/terraform/intro",
-    "seedId": "f351ba87-3620-42ce-97f7-ab3926d8e84e"
+    "source": "https://developer.hashicorp.com/terraform/intro"
   },
   {
+    "itemId": "8778ee31-fb2d-43b3-b8f0-cce5395e313e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -56,10 +57,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/",
-    "seedId": "32a371a9-7059-4ca4-a20f-e4021f168465"
+    "source": "https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/"
   },
   {
+    "itemId": "1c5786da-a4f8-4c3a-a09c-ac434004f281",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -76,10 +77,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html",
-    "seedId": "a07e14ff-6ae3-43ec-b804-8de48be1ec92"
+    "source": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
   },
   {
+    "itemId": "31fca572-a617-4658-a5ec-0e96b2152a56",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -96,10 +97,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
-    "seedId": "69465bf0-f1e1-427e-a921-1169cc94a192"
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
   },
   {
+    "itemId": "da87c546-5a7d-425a-a1a3-80fab9137286",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -116,10 +117,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
-    "seedId": "ab5535df-5fa7-44e4-8b3f-1efbe9e6a902"
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
   },
   {
+    "itemId": "ecf189ab-b110-4889-9e1c-0082abd7bc9d",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -136,10 +137,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk",
-    "seedId": "5b1a8f91-e898-4582-b38f-10328b446848"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk"
   },
   {
+    "itemId": "c34c6e73-d3c8-4b00-9073-3300b0c76ba5",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -156,10 +157,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance",
-    "seedId": "ad334119-5fc8-4dc5-9372-853d3ff4c755"
+    "source": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance"
   },
   {
+    "itemId": "b1d56ed9-fdfe-4454-a724-27361fd4cd54",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -176,10 +177,10 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/multicloud/overview",
-    "seedId": "9ca6f64c-4d9b-4d3a-9ed0-335f181b6456"
+    "source": "https://learn.microsoft.com/en-us/azure/architecture/guide/multicloud/overview"
   },
   {
+    "itemId": "dac1b9e2-18ad-49c7-aab7-ec41b6d8e5d6",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cloud-plus",
@@ -196,7 +197,6 @@
       "cloud-ops",
       "comptia"
     ],
-    "source": "https://www.iso.org/isoiec-27001-information-security.html",
-    "seedId": "d0040170-9458-4f48-803a-49ff893c1e3a"
+    "source": "https://www.iso.org/isoiec-27001-information-security.html"
   }
 ]

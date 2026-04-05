@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8d3bb352-4aeb-4965-b096-8cfced7f83eb",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -15,10 +16,10 @@
       "tcp-ip",
       "tcp"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9293",
-    "seedId": "b9e536be-72da-5b09-80a9-82f7a0a94a22"
+    "source": "https://www.rfc-editor.org/rfc/rfc9293"
   },
   {
+    "itemId": "87489d16-2957-4ed9-a728-14b8657d8fdc",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -34,10 +35,10 @@
       "tcp-ip",
       "ip"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc791",
-    "seedId": "6a69c181-8009-5e60-a09d-7da56061db6e"
+    "source": "https://www.rfc-editor.org/rfc/rfc791"
   },
   {
+    "itemId": "bc38d38b-6ab2-40e6-adad-adb133dd2b40",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -53,10 +54,10 @@
       "tcp-ip",
       "subnet"
     ],
-    "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/",
-    "seedId": "34885c5e-3e7c-5120-9d90-a133ab54e7aa"
+    "source": "https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/"
   },
   {
+    "itemId": "150360b6-1973-4675-85de-5b8c2fa41a3b",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -72,10 +73,10 @@
       "tcp-ip",
       "handshake"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/TCP_handshake",
-    "seedId": "cbbb8cb3-ef4a-5011-96ac-8eb9a96da45c"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/TCP_handshake"
   },
   {
+    "itemId": "4b86621f-b949-4a5c-a498-40a42da6cbbc",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -91,10 +92,10 @@
       "tcp-ip",
       "ports"
     ],
-    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
-    "seedId": "a0b6ac36-152f-5e13-ba56-045d66f52dec"
+    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml"
   },
   {
+    "itemId": "3dc7f9b3-c50d-4c41-9aca-435d5492fac7",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "tcp-ip",
@@ -110,7 +111,6 @@
       "tcp-ip",
       "ipv6"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc8200",
-    "seedId": "8833afe0-2074-5c15-a7b6-f5a4ec3a7c70"
+    "source": "https://www.rfc-editor.org/rfc/rfc8200"
   }
 ]

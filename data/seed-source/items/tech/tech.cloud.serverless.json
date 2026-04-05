@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "df123acd-0044-4c2e-98a1-1325838791e2",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -15,10 +16,10 @@
       "serverless",
       "latency"
     ],
-    "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html",
-    "seedId": "75759147-022e-51a2-9c57-282ddd49b552"
+    "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html"
   },
   {
+    "itemId": "b26216fe-f29b-433e-8df6-85ccb24b5b40",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -34,10 +35,10 @@
       "serverless",
       "billing"
     ],
-    "source": "https://azure.microsoft.com/pricing/details/functions/",
-    "seedId": "6d5d3bc8-a36c-5196-a480-42da5219339a"
+    "source": "https://azure.microsoft.com/pricing/details/functions/"
   },
   {
+    "itemId": "4df63ade-50b0-4e77-b843-bf3b6fad5f2e",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -53,10 +54,10 @@
       "serverless",
       "design"
     ],
-    "source": "https://cloud.google.com/functions/docs/bestpractices/tips",
-    "seedId": "3dd5df8d-b701-5041-be42-9a31766dd6b4"
+    "source": "https://cloud.google.com/functions/docs/bestpractices/tips"
   },
   {
+    "itemId": "02c5d3fd-e8aa-4d88-b8e3-7294e9706ae5",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -72,10 +73,10 @@
       "serverless",
       "events"
     ],
-    "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html",
-    "seedId": "73fd35c4-bf12-5b57-87bb-4f0d469fbfaa"
+    "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html"
   },
   {
+    "itemId": "05fa1ad1-e54d-4fa2-b504-e6d86c27d99b",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -91,10 +92,10 @@
       "serverless",
       "reliability"
     ],
-    "source": "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html",
-    "seedId": "23d9baae-eba8-5476-a1f4-4812c62e09e4"
+    "source": "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html"
   },
   {
+    "itemId": "3d60fb4a-80d9-4f66-90db-5695496f8a15",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "serverless",
@@ -110,7 +111,6 @@
       "serverless",
       "scaling"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale",
-    "seedId": "ca0ba76f-e106-55e5-8c8f-e342e0189715"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale"
   }
 ]

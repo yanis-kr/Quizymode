@@ -195,7 +195,7 @@ export interface AdminUserSettingUpdateResponse {
 }
 
 export interface SeedSyncItemRequest {
-  seedId: string;
+  itemId: string;
   category: string;
   navigationKeyword1: string;
   navigationKeyword2: string;
@@ -215,7 +215,7 @@ export interface SeedSyncRequest {
 }
 
 export interface SeedSyncChangeResponse {
-  seedId: string;
+  itemId: string;
   action: string;
   category: string;
   navigationKeyword1: string;
@@ -226,29 +226,22 @@ export interface SeedSyncChangeResponse {
 
 export interface SeedSyncPreviewResponse {
   seedSet: string;
-  isInitialSeed: boolean;
-  previewSuppressed: boolean;
   totalItemsInPayload: number;
-  existingManagedItemCount: number;
+  existingItemCount: number;
   createdCount: number;
   updatedCount: number;
-  adoptedCount: number;
   unchangedCount: number;
-  missingFromPayloadCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }
 
 export interface SeedSyncApplyResponse {
   seedSet: string;
-  isInitialSeed: boolean;
   totalItemsInPayload: number;
-  existingManagedItemCount: number;
+  existingItemCount: number;
   createdCount: number;
   updatedCount: number;
-  adoptedCount: number;
   unchangedCount: number;
-  missingFromPayloadCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }

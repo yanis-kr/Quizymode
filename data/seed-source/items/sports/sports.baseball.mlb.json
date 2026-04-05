@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "83bac1ac-54e2-45aa-97b5-1422c5fbb0d5",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -16,10 +17,10 @@
       "mlb",
       "league"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "e9deff04-6c8e-5c0c-ae91-050b26b6b7a6"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "c017fe57-e0a9-45c2-a061-402bf37c2622",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -36,10 +37,10 @@
       "mlb",
       "leagues"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "221bdb92-3086-5c11-9ad6-990c1db50af3"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "68338271-b785-4187-9dc2-e3d6d129fca5",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -56,10 +57,10 @@
       "mlb",
       "teams"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "f3bc93f6-2ad2-5042-9def-f1e1f16d0922"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "8384c981-6408-4536-bc37-398269a98762",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -76,10 +77,10 @@
       "mlb",
       "trophy"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "04829f1b-c387-5aa3-90dc-28087a55d6c2"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "b222298d-b529-47b4-baea-dd91a023cbd9",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -96,10 +97,10 @@
       "mlb",
       "world-series"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "7372405f-efaa-5662-8971-061dfd71bcec"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "be035dce-f9fa-4190-8539-7d58eb677e3b",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -116,10 +117,10 @@
       "mlb",
       "cubs"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "58c97b96-c54a-59c4-8133-a1a87655fbfd"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "69f1dbef-8dc1-495a-b573-fc162697fda4",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -136,10 +137,10 @@
       "mlb",
       "fenway"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "e8d8ae9a-d78f-5cf5-9315-efd7a78e8744"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "f6fd68f7-0faf-46cc-af31-0db543932989",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -156,10 +157,10 @@
       "mlb",
       "yankees"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "c7f08d76-89ae-5afc-9942-df13ba2bba1d"
+    "source": "https://www.mlb.com/history"
   },
   {
+    "itemId": "1871ab4f-a548-4081-a694-6b6182524f07",
     "category": "sports",
     "navigationKeyword1": "baseball",
     "navigationKeyword2": "mlb",
@@ -176,27 +177,6 @@
       "mlb",
       "innings"
     ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "78196cbd-31bd-596e-9ec0-0b172ed77b76"
-  },
-  {
-    "category": "sports",
-    "navigationKeyword1": "baseball",
-    "navigationKeyword2": "mlb",
-    "question": "Which team won the 2023 World Series?",
-    "correctAnswer": "Texas Rangers",
-    "incorrectAnswers": [
-      "Arizona Diamondbacks",
-      "Houston Astros",
-      "Atlanta Braves"
-    ],
-    "explanation": "Texas won the 2023 World Series over Arizona.",
-    "keywords": [
-      "baseball",
-      "mlb",
-      "rangers"
-    ],
-    "source": "https://www.mlb.com/history",
-    "seedId": "849e4893-3c10-50b7-9efd-dccdc2148564"
+    "source": "https://www.mlb.com/history"
   }
 ]

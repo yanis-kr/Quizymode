@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "afaeb878-a8b8-4df9-9a5f-6493e5fd9496",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
-    "question": "Which island is the world’s largest (excluding continental landmasses classified as continents)?",
+    "question": "Which island is the world\u2019s largest (excluding continental landmasses classified as continents)?",
     "correctAnswer": "Greenland",
     "incorrectAnswers": [
       "New Guinea",
@@ -16,10 +17,10 @@
       "greenland",
       "arctic"
     ],
-    "source": "https://www.britannica.com/place/Greenland",
-    "seedId": "6ec7bad8-fa7a-47e3-aaa7-6cdfa1e7b351"
+    "source": "https://www.britannica.com/place/Greenland"
   },
   {
+    "itemId": "31b67f00-81cb-4dab-8633-55fd54830eb3",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -30,16 +31,16 @@
       "Sumatra",
       "Sulawesi"
     ],
-    "explanation": "New Guinea is the world’s second-largest island and lies north of Australia.",
+    "explanation": "New Guinea is the world\u2019s second-largest island and lies north of Australia.",
     "keywords": [
       "islands",
       "new-guinea",
       "pacific"
     ],
-    "source": "https://www.britannica.com/place/New-Guinea",
-    "seedId": "bb31eda0-14ce-4661-9ba5-5599b081527a"
+    "source": "https://www.britannica.com/place/New-Guinea"
   },
   {
+    "itemId": "c4b03e76-153d-400b-8d6f-87814b6fa28e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -56,10 +57,10 @@
       "borneo",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Borneo",
-    "seedId": "2be5a93c-252f-46af-aab8-319a4d2ad6ba"
+    "source": "https://www.britannica.com/place/Borneo"
   },
   {
+    "itemId": "6f50c5d5-e5a3-4f04-bad8-c37276b235c5",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -68,7 +69,7 @@
     "incorrectAnswers": [
       "Zanzibar",
       "Mauritius",
-      "Réunion"
+      "R\u00e9union"
     ],
     "explanation": "Madagascar is the fourth-largest island and hosts unique wildlife.",
     "keywords": [
@@ -76,10 +77,10 @@
       "madagascar",
       "indian-ocean"
     ],
-    "source": "https://www.britannica.com/place/Madagascar",
-    "seedId": "83a4c562-66e3-4053-a8e3-f765308464e2"
+    "source": "https://www.britannica.com/place/Madagascar"
   },
   {
+    "itemId": "c14e4407-0849-41ec-8028-1c0f4b4e5f4d",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -96,10 +97,10 @@
       "baffin",
       "arctic"
     ],
-    "source": "https://www.britannica.com/place/Baffin-Island",
-    "seedId": "4698ab33-2d70-4145-a384-9b1d207d9967"
+    "source": "https://www.britannica.com/place/Baffin-Island"
   },
   {
+    "itemId": "37097165-6db6-4967-ae6f-89d2fb1d851f",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -116,10 +117,10 @@
       "japan",
       "honshu"
     ],
-    "source": "https://www.britannica.com/place/Honshu",
-    "seedId": "ca3694e9-7b52-4d7b-980e-4996faa7d11d"
+    "source": "https://www.britannica.com/place/Honshu"
   },
   {
+    "itemId": "97dcb5ba-9b47-497d-a9da-e9f1ea3daa48",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -136,14 +137,14 @@
       "great-britain",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Great-Britain-island-Europe",
-    "seedId": "f5e1040f-e5ad-44a9-8ee7-7c5344bada7d"
+    "source": "https://www.britannica.com/place/Great-Britain-island-Europe"
   },
   {
+    "itemId": "3250e01a-52d3-4157-9dec-c339ed7e9b94",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
-    "question": "Which Indonesian island lies west of Java and is one of the world’s largest islands?",
+    "question": "Which Indonesian island lies west of Java and is one of the world\u2019s largest islands?",
     "correctAnswer": "Sumatra",
     "incorrectAnswers": [
       "Sulawesi",
@@ -156,34 +157,34 @@
       "sumatra",
       "indonesia"
     ],
-    "source": "https://www.britannica.com/place/Sumatra",
-    "seedId": "4b8ebbe8-c0c8-4391-aada-0812a3199f0e"
+    "source": "https://www.britannica.com/place/Sumatra"
   },
   {
+    "itemId": "b049e4af-4772-4bf8-a34b-88e24ea6ef7a",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
-    "question": "Which Indonesian island is home to roughly half of the country’s people?",
+    "question": "Which Indonesian island is home to roughly half of the country\u2019s people?",
     "correctAnswer": "Java",
     "incorrectAnswers": [
       "Bali",
       "Sumatra",
       "Sulawesi"
     ],
-    "explanation": "Java is one of the world’s most densely populated large islands and anchors Indonesia’s core cities.",
+    "explanation": "Java is one of the world\u2019s most densely populated large islands and anchors Indonesia\u2019s core cities.",
     "keywords": [
       "islands",
       "java",
       "indonesia"
     ],
-    "source": "https://www.britannica.com/place/Java-island-Indonesia",
-    "seedId": "26644350-ac1f-4b1b-bfc9-b92352593af3"
+    "source": "https://www.britannica.com/place/Java-island-Indonesia"
   },
   {
+    "itemId": "95979c9f-79de-4d1f-85fa-ab14a84101f1",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
-    "question": "Which Mediterranean island is Italy’s largest region by land area?",
+    "question": "Which Mediterranean island is Italy\u2019s largest region by land area?",
     "correctAnswer": "Sicily",
     "incorrectAnswers": [
       "Sardinia",
@@ -196,10 +197,10 @@
       "sicily",
       "mediterranean"
     ],
-    "source": "https://www.britannica.com/place/Sicily",
-    "seedId": "fa6e0a74-e51d-4c0e-b264-931c53906741"
+    "source": "https://www.britannica.com/place/Sicily"
   },
   {
+    "itemId": "588baa60-b712-43b9-8389-aae42a65125a",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "islands",
@@ -216,7 +217,6 @@
       "tasmania",
       "australia"
     ],
-    "source": "https://www.britannica.com/place/Tasmania",
-    "seedId": "f52ef5d6-b937-42b2-9f12-7bd617e3ed7e"
+    "source": "https://www.britannica.com/place/Tasmania"
   }
 ]

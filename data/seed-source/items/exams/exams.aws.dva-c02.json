@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8700180d-8379-4cf3-be36-a5a46cea04cd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -16,10 +17,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/lambda/",
-    "seedId": "e5578ee5-f34c-4dc1-aaf9-94ae1759cd5f"
+    "source": "https://aws.amazon.com/lambda/"
   },
   {
+    "itemId": "855981c8-d188-462c-acec-229b6abab18a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -36,10 +37,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/api-gateway/",
-    "seedId": "389eac9b-0738-4e0a-a7a0-0d5d33d1087c"
+    "source": "https://aws.amazon.com/api-gateway/"
   },
   {
+    "itemId": "999ce61b-8388-40ba-a29b-5ab526b2740a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -56,10 +57,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/sns/",
-    "seedId": "239bbb5a-0fdc-46e2-a054-0536f180a1e9"
+    "source": "https://aws.amazon.com/sns/"
   },
   {
+    "itemId": "e98d6c12-56a4-4877-baf8-d71122b3cb27",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -76,10 +77,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/sqs/",
-    "seedId": "6608d11b-9524-46ec-850a-9c2b5bb6f65f"
+    "source": "https://aws.amazon.com/sqs/"
   },
   {
+    "itemId": "8ae90650-8934-4b8a-ba76-2b81b4fbe63e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -96,10 +97,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/step-functions/",
-    "seedId": "da5d494c-6c70-4521-9ac0-2e569e07d180"
+    "source": "https://aws.amazon.com/step-functions/"
   },
   {
+    "itemId": "f545219f-a7b2-4238-a5ec-38bf349c4781",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -116,10 +117,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/codebuild/",
-    "seedId": "e91780bf-4b32-4362-b013-a1a141f75f74"
+    "source": "https://aws.amazon.com/codebuild/"
   },
   {
+    "itemId": "9a702a70-ba62-4af3-b46c-ce071ca795c6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -136,10 +137,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/codedeploy/",
-    "seedId": "26c6ea53-e76c-48b4-8ca0-19b1d7c636f3"
+    "source": "https://aws.amazon.com/codedeploy/"
   },
   {
+    "itemId": "3c7a2617-0072-425e-8185-897c465c11cf",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -156,10 +157,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/iam/",
-    "seedId": "b36c65cd-5e71-4deb-88e9-c5a70fd0c37d"
+    "source": "https://aws.amazon.com/iam/"
   },
   {
+    "itemId": "791b2887-e9e4-4153-b570-1fd0e2c94464",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -176,10 +177,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/secrets-manager/",
-    "seedId": "f3db9073-1b9f-4999-864d-ffa3fe1264f0"
+    "source": "https://aws.amazon.com/secrets-manager/"
   },
   {
+    "itemId": "8aafd3df-31c8-4971-98a2-11b52850aa00",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -196,10 +197,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/eventbridge/",
-    "seedId": "8a98790a-8f14-4a5a-a8aa-dc20bc2be570"
+    "source": "https://aws.amazon.com/eventbridge/"
   },
   {
+    "itemId": "1ce97d1d-072a-49b9-9959-57c6441b13e4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -216,10 +217,10 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/",
-    "seedId": "43a1c4ce-d7e3-4880-ac6a-ed6961563575"
+    "source": "https://aws.amazon.com/cloudwatch/"
   },
   {
+    "itemId": "cd8d31bd-ca81-46ae-a6ee-f0cd1aa3aead",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "dva-c02",
@@ -236,7 +237,6 @@
       "aws-development",
       "aws-services"
     ],
-    "source": "https://aws.amazon.com/dynamodb/",
-    "seedId": "8aed035c-d591-4e5b-8f53-ad01898a7ab4"
+    "source": "https://aws.amazon.com/dynamodb/"
   }
 ]

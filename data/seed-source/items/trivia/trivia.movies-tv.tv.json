@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "14ccd8f3-ff28-4a35-9970-842752b9f8ca",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -15,10 +16,10 @@
       "emmys",
       "awards"
     ],
-    "source": "https://www.britannica.com/art/Emmy-Awards",
-    "seedId": "014df27a-339e-5def-9a34-c2d06ab0b5ac"
+    "source": "https://www.britannica.com/art/Emmy-Awards"
   },
   {
+    "itemId": "99d9b51d-884f-453e-80af-43f8a0481e07",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -34,10 +35,10 @@
       "sitcoms",
       "genres"
     ],
-    "source": "https://www.britannica.com/art/sitcom",
-    "seedId": "0896caf8-45c1-548f-819e-37116f7b87ef"
+    "source": "https://www.britannica.com/art/sitcom"
   },
   {
+    "itemId": "16cf0087-afdb-461a-95fe-38a8fa7b8b59",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -53,10 +54,10 @@
       "soap-operas",
       "daytime"
     ],
-    "source": "https://www.britannica.com/art/soap-opera",
-    "seedId": "eb604a25-4355-5bb7-b49b-3670adc7e530"
+    "source": "https://www.britannica.com/art/soap-opera"
   },
   {
+    "itemId": "f70d738f-3432-4083-8b37-87a72e8000a0",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -72,10 +73,10 @@
       "late-night",
       "talk-shows"
     ],
-    "source": "https://www.britannica.com/topic/late-night-television",
-    "seedId": "930df83b-6a6d-5ff6-ab88-e6ee658a397f"
+    "source": "https://www.britannica.com/topic/late-night-television"
   },
   {
+    "itemId": "2993f5ab-c4d8-4d9e-9d6f-0c85b47b7e81",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -91,10 +92,10 @@
       "streaming",
       "habits"
     ],
-    "source": "https://www.britannica.com/topic/binge-watching",
-    "seedId": "3f8fbb16-94c6-5227-a64b-d0ea19792818"
+    "source": "https://www.britannica.com/topic/binge-watching"
   },
   {
+    "itemId": "0b8085b2-1eab-4cb1-b3d2-a366dc47f23f",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -110,10 +111,10 @@
       "pbs",
       "public-tv"
     ],
-    "source": "https://www.britannica.com/topic/public-broadcasting",
-    "seedId": "47abdada-890b-51a2-b1eb-d47369fda66e"
+    "source": "https://www.britannica.com/topic/public-broadcasting"
   },
   {
+    "itemId": "4cdd8ac3-428f-46f5-9f98-d74cd5d825d8",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -129,10 +130,10 @@
       "cable-tv",
       "history"
     ],
-    "source": "https://www.britannica.com/technology/cable-television",
-    "seedId": "3dffdfc1-e740-5227-a7bb-81b9991a08e9"
+    "source": "https://www.britannica.com/technology/cable-television"
   },
   {
+    "itemId": "1a97e369-44c8-4f9d-8de1-e959d69b2281",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -148,10 +149,10 @@
       "streaming",
       "ott"
     ],
-    "source": "https://www.britannica.com/technology/streaming-media",
-    "seedId": "445486fc-1070-5a15-b03e-214f02991882"
+    "source": "https://www.britannica.com/technology/streaming-media"
   },
   {
+    "itemId": "d6082690-f103-439d-aaab-793e88a69847",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -167,10 +168,10 @@
       "pilots",
       "development"
     ],
-    "source": "https://www.britannica.com/topic/television-pilot",
-    "seedId": "3822c700-4b66-5437-b721-2254051af4f5"
+    "source": "https://www.britannica.com/topic/television-pilot"
   },
   {
+    "itemId": "bc349883-5db0-4090-a3f9-1fd7e7a09152",
     "category": "trivia",
     "navigationKeyword1": "movies-tv",
     "navigationKeyword2": "tv",
@@ -181,12 +182,11 @@
       "a single scene",
       "a credits crawl"
     ],
-    "explanation": "Finales end a season’s arc.",
+    "explanation": "Finales end a season\u2019s arc.",
     "keywords": [
       "season-finale",
       "narrative"
     ],
-    "source": "https://www.britannica.com/art/television-program",
-    "seedId": "e95be53e-f772-5d85-8cc8-8ba276079c22"
+    "source": "https://www.britannica.com/art/television-program"
   }
 ]

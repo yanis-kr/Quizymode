@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2ed5240a-ed6a-4469-90d4-85540118c84a",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -15,10 +16,10 @@
       "oop",
       "encapsulation"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/java/concepts/object.html",
-    "seedId": "bd72071a-04d2-5aa9-980b-132b339fa812"
+    "source": "https://docs.oracle.com/javase/tutorial/java/concepts/object.html"
   },
   {
+    "itemId": "4c71307e-3f38-416c-9405-e927e84c0f59",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -34,10 +35,10 @@
       "oop",
       "polymorphism"
     ],
-    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism",
-    "seedId": "cb856a93-5f70-5f6c-8920-d41eb852c884"
+    "source": "https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism"
   },
   {
+    "itemId": "eb35f245-8729-4538-bf0e-c29ff44820d3",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -53,10 +54,10 @@
       "oop",
       "inheritance"
     ],
-    "source": "https://docs.python.org/3/tutorial/classes.html#inheritance",
-    "seedId": "7e8f1a06-5c42-5824-961d-9eeed932c327"
+    "source": "https://docs.python.org/3/tutorial/classes.html#inheritance"
   },
   {
+    "itemId": "d97c198b-8027-4d01-8660-6effc05fc2d9",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -72,10 +73,10 @@
       "oop",
       "abstract-class"
     ],
-    "source": "https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html",
-    "seedId": "40a498a6-de35-5c15-9df7-582163b81b61"
+    "source": "https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html"
   },
   {
+    "itemId": "26d93a56-1d1f-43c1-9681-9ca94d90e3cf",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -91,10 +92,10 @@
       "oop",
       "composition"
     ],
-    "source": "https://en.wikipedia.org/wiki/Object_composition",
-    "seedId": "1a5f9960-c973-57e3-a0ad-a84a34611bfa"
+    "source": "https://en.wikipedia.org/wiki/Object_composition"
   },
   {
+    "itemId": "5f435754-db1f-480c-9ed8-7e8477634490",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "oop",
@@ -110,7 +111,6 @@
       "oop",
       "solid"
     ],
-    "source": "https://en.wikipedia.org/wiki/Liskov_substitution_principle",
-    "seedId": "9e8d2841-eb91-5984-ab2d-aaf018a554dd"
+    "source": "https://en.wikipedia.org/wiki/Liskov_substitution_principle"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c628c345-2f71-473d-a780-a21dd3a3cfc7",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -15,10 +16,10 @@
       "algorithms",
       "complexity"
     ],
-    "source": "https://xlinux.nist.gov/dads/HTML/mergeSort.html",
-    "seedId": "75258c81-d464-5f57-bae8-3ede6c53d927"
+    "source": "https://xlinux.nist.gov/dads/HTML/mergeSort.html"
   },
   {
+    "itemId": "50ab3526-0aed-4338-aca5-7c658f4f05be",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -34,10 +35,10 @@
       "algorithms",
       "search"
     ],
-    "source": "https://en.wikipedia.org/wiki/Binary_search_algorithm",
-    "seedId": "d2a9e04f-2833-5daf-b3f5-16064d439490"
+    "source": "https://en.wikipedia.org/wiki/Binary_search_algorithm"
   },
   {
+    "itemId": "15433fc0-c051-4d05-beb8-44a325602e19",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -53,10 +54,10 @@
       "algorithms",
       "graphs"
     ],
-    "source": "https://algs4.cs.princeton.edu/41graph/",
-    "seedId": "542ae7a2-2197-5f59-975c-9605f11a8367"
+    "source": "https://algs4.cs.princeton.edu/41graph/"
   },
   {
+    "itemId": "4dc6bde6-de29-473d-b99e-dd50e763cf33",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -72,10 +73,10 @@
       "algorithms",
       "sorting"
     ],
-    "source": "https://xlinux.nist.gov/dads/HTML/quickSort.html",
-    "seedId": "4ebb42f0-4d27-5c68-95c5-3ed5a3e8670a"
+    "source": "https://xlinux.nist.gov/dads/HTML/quickSort.html"
   },
   {
+    "itemId": "5161f254-f621-4318-9158-6ad36f9d027a",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -91,10 +92,10 @@
       "algorithms",
       "hashing"
     ],
-    "source": "https://en.wikipedia.org/wiki/Hash_table",
-    "seedId": "da86574b-9992-52c7-a881-b099a1610866"
+    "source": "https://en.wikipedia.org/wiki/Hash_table"
   },
   {
+    "itemId": "63f692c1-eaa6-40f7-a485-3cd3b7bb8e88",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "algorithms",
@@ -110,7 +111,6 @@
       "algorithms",
       "graphs"
     ],
-    "source": "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm",
-    "seedId": "ed3afc8c-948b-5d6d-941b-b1d13c7b4f79"
+    "source": "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
   }
 ]

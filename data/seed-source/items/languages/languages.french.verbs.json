@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8633ec78-4b0d-4787-96ae-c997bbe9c7a7",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -16,10 +17,10 @@
       "infinitive",
       "french-verbs"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/manger",
-    "seedId": "11ef40aa-857e-5e10-a0ad-86b1b30b40c8"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/manger"
   },
   {
+    "itemId": "347fe8cd-d65a-4039-ab18-cb836e08609c",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -36,10 +37,10 @@
       "present-tense",
       "french-verbs"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/avoir",
-    "seedId": "28eb6609-59c3-57e3-8e7f-920e060eb95e"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/avoir"
   },
   {
+    "itemId": "00e8dbdc-a395-40af-aff3-78daa36aa9a7",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -50,16 +51,16 @@
       "est",
       "sommes"
     ],
-    "explanation": "Origin with \"être\" uses \"je suis de...\" for I am from.",
+    "explanation": "Origin with \"\u00eatre\" uses \"je suis de...\" for I am from.",
     "keywords": [
       "to-be",
       "origin",
       "french-verbs"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre",
-    "seedId": "359b5d4e-54f6-56d9-8104-4351cd654272"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
   },
   {
+    "itemId": "d1efe9ed-de4c-4dc5-8a9e-07a2686f347e",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -76,10 +77,10 @@
       "conjugation",
       "french-verbs"
     ],
-    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/",
-    "seedId": "d0f3a9b8-9b19-579b-875f-d6bded4b283f"
+    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/"
   },
   {
+    "itemId": "28089476-cd68-48da-9b61-657351d1935c",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -96,10 +97,10 @@
       "infinitive",
       "french-verbs"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/vouloir",
-    "seedId": "d8d53fcb-0295-59ee-aecb-5b6ba411bccc"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/vouloir"
   },
   {
+    "itemId": "ba5dd63b-fe64-4378-b7dd-aabb1180d16f",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
@@ -116,7 +117,6 @@
       "present-tense",
       "french-verbs"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/faire",
-    "seedId": "bf31de71-612e-5c81-91b6-21500bf8fdac"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/faire"
   }
 ]

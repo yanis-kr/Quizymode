@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a74beb09-944d-4976-b354-68c2af14cf7b",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -16,10 +17,10 @@
       "security-fundamentals",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/cia_triad",
-    "seedId": "92164033-f548-4dfa-8292-db573efedb4f"
+    "source": "https://csrc.nist.gov/glossary/term/cia_triad"
   },
   {
+    "itemId": "4411a4b4-8ecb-414b-b3fb-819c646d605d",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -36,10 +37,10 @@
       "security-fundamentals",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/authentication",
-    "seedId": "338bcebc-0d10-4800-9b8f-a437d906d416"
+    "source": "https://csrc.nist.gov/glossary/term/authentication"
   },
   {
+    "itemId": "2256457d-e36c-4dab-a129-9e95cab0a2fb",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -56,10 +57,10 @@
       "zero-trust",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/publications/detail/sp/800-207/final",
-    "seedId": "af0414af-fdba-4308-9ca9-01b823af2337"
+    "source": "https://csrc.nist.gov/publications/detail/sp/800-207/final"
   },
   {
+    "itemId": "e653b80a-da67-4eb2-b264-0fc0c6583824",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -76,10 +77,10 @@
       "pki",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/public_key_infrastructure",
-    "seedId": "de9efb86-cb3f-4bb2-8349-90afd3910294"
+    "source": "https://csrc.nist.gov/glossary/term/public_key_infrastructure"
   },
   {
+    "itemId": "8e5fdc00-5afa-46ac-b5c4-232203fdb79e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -96,10 +97,10 @@
       "social-engineering",
       "comptia"
     ],
-    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
-    "seedId": "c9d109c3-c0a5-459a-add3-908e02470371"
+    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
   },
   {
+    "itemId": "255411c2-9a84-423c-8618-679dc67fe79f",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -116,10 +117,10 @@
       "mfa",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/mfa",
-    "seedId": "8ec51c95-cd8a-4fd1-98ec-b22f5358a840"
+    "source": "https://csrc.nist.gov/glossary/term/mfa"
   },
   {
+    "itemId": "db390d55-daa7-4c91-9f3c-01b0024d6903",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -136,10 +137,10 @@
       "least-privilege",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/least_privilege",
-    "seedId": "3ff082bc-d906-4f60-9d36-44d59e0e3e11"
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege"
   },
   {
+    "itemId": "957d3501-4430-4a7b-bafd-f1a0f8e95ef6",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -156,10 +157,10 @@
       "firewall",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/firewall",
-    "seedId": "ed27814d-c3cd-4777-9e38-07e00a25475d"
+    "source": "https://csrc.nist.gov/glossary/term/firewall"
   },
   {
+    "itemId": "8494560e-87f8-4876-badf-88fec09139b6",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -176,10 +177,10 @@
       "patching",
       "comptia"
     ],
-    "source": "https://www.cisa.gov/stopransomware/ransomware-guide#Patch",
-    "seedId": "693e1a23-b8d1-46ec-be3f-17e38ac37309"
+    "source": "https://www.cisa.gov/stopransomware/ransomware-guide#Patch"
   },
   {
+    "itemId": "f9b19ba2-9b46-42c3-b0ee-82b5aac42688",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "security-plus",
@@ -196,7 +197,6 @@
       "vpn",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/virtual_private_network",
-    "seedId": "fd87fe97-65bc-4a70-8bd2-d915cc1791fc"
+    "source": "https://csrc.nist.gov/glossary/term/virtual_private_network"
   }
 ]

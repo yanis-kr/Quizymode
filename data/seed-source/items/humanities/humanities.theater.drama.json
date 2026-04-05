@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f6d0c231-c060-46f1-996e-fbbcc610af1e",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "drama",
@@ -15,10 +16,10 @@
       "theater-drama",
       "conflict"
     ],
-    "source": "https://www.britannica.com/art/drama-literature",
-    "seedId": "9a1afb15-05c2-5800-9034-7b8ac7792a87"
+    "source": "https://www.britannica.com/art/drama-literature"
   },
   {
+    "itemId": "c0fe7d74-d967-49a4-a043-9f0b0c016233",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "drama",
@@ -34,7 +35,6 @@
       "theater-drama",
       "dialogue"
     ],
-    "source": "https://www.nationaltheatre.org.uk/discover-more",
-    "seedId": "8758d025-a5ac-5c24-b6be-8f72ab00799f"
+    "source": "https://www.nationaltheatre.org.uk/discover-more"
   }
 ]
