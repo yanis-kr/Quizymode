@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b832f06b-f902-4b87-ab3f-1fba4c1994b8",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -15,10 +16,10 @@
       "salt",
       "chemistry"
     ],
-    "source": "https://www.britannica.com/science/salt-chemistry",
-    "seedId": "03f0a5ae-4c75-539f-a8dc-8404f36bb1ed"
+    "source": "https://www.britannica.com/science/salt-chemistry"
   },
   {
+    "itemId": "b4a239de-11ea-4bf5-8eb1-5731105923aa",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -29,15 +30,15 @@
       "hydrogen",
       "chlorine"
     ],
-    "explanation": "Baking powder releases CO₂ for leavening.",
+    "explanation": "Baking powder releases CO\u2082 for leavening.",
     "keywords": [
       "baking",
       "leavening"
     ],
-    "source": "https://www.britannica.com/science/baking-powder",
-    "seedId": "0370f7f3-27f0-53ec-b77a-e8191875eb25"
+    "source": "https://www.britannica.com/science/baking-powder"
   },
   {
+    "itemId": "61753348-efaf-465b-b2e8-ce4e3c6943c2",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -48,15 +49,15 @@
       "methane",
       "argon"
     ],
-    "explanation": "Yeast fermentation produces CO₂ in dough.",
+    "explanation": "Yeast fermentation produces CO\u2082 in dough.",
     "keywords": [
       "bread",
       "yeast"
     ],
-    "source": "https://www.britannica.com/science/yeast",
-    "seedId": "0d94d4bc-d4cc-508f-983d-2597e4ea02e3"
+    "source": "https://www.britannica.com/science/yeast"
   },
   {
+    "itemId": "470f253d-e4f8-4dea-ab6d-2a62710b0777",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -72,10 +73,10 @@
       "oils",
       "mediterranean"
     ],
-    "source": "https://www.britannica.com/plant/olive-plant",
-    "seedId": "93ce2568-a24b-5760-89ce-154d438977a8"
+    "source": "https://www.britannica.com/plant/olive-plant"
   },
   {
+    "itemId": "fada0921-528f-4a4f-ad72-08b5a4ef7740",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -91,14 +92,14 @@
       "vanilla",
       "spices"
     ],
-    "source": "https://www.britannica.com/plant/vanilla-plant",
-    "seedId": "bf2b6671-5804-5a56-a55f-c67617ebafba"
+    "source": "https://www.britannica.com/plant/vanilla-plant"
   },
   {
+    "itemId": "019a30a3-82df-4c89-a733-887919257632",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
-    "question": "Capsaicin provides heat in which plant family’s peppers?",
+    "question": "Capsaicin provides heat in which plant family\u2019s peppers?",
     "correctAnswer": "nightshades (Solanaceae)",
     "incorrectAnswers": [
       "grasses",
@@ -110,10 +111,10 @@
       "spices",
       "peppers"
     ],
-    "source": "https://www.britannica.com/science/capsaicin",
-    "seedId": "6d077305-d845-5f6d-bcc0-b4400e8a470d"
+    "source": "https://www.britannica.com/science/capsaicin"
   },
   {
+    "itemId": "7a5a0079-f80a-4dfe-a93c-edc7fdaffe6a",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -129,10 +130,10 @@
       "flour",
       "gluten"
     ],
-    "source": "https://www.britannica.com/science/gluten",
-    "seedId": "952414d8-f431-53b7-b015-40f533c876ba"
+    "source": "https://www.britannica.com/science/gluten"
   },
   {
+    "itemId": "d57da44d-4c9b-466f-8f77-84dcb62ab348",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -148,10 +149,10 @@
       "thickeners",
       "starch"
     ],
-    "source": "https://www.britannica.com/science/starch",
-    "seedId": "f62e0a29-fa9f-50e1-a3c4-6e838d5bd7e0"
+    "source": "https://www.britannica.com/science/starch"
   },
   {
+    "itemId": "4e092a79-20e5-490f-b437-c740d9dfc89b",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -167,10 +168,10 @@
       "acidity",
       "citrus"
     ],
-    "source": "https://www.britannica.com/science/citric-acid",
-    "seedId": "ef33f116-546e-5952-87aa-6a7650699306"
+    "source": "https://www.britannica.com/science/citric-acid"
   },
   {
+    "itemId": "5b055b97-e5de-47e5-b0d0-e9385f71861e",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "ingredients",
@@ -186,7 +187,6 @@
       "baking",
       "chemistry"
     ],
-    "source": "https://www.britannica.com/science/sodium-bicarbonate",
-    "seedId": "6e94015e-2678-55f0-a7de-96474057a516"
+    "source": "https://www.britannica.com/science/sodium-bicarbonate"
   }
 ]

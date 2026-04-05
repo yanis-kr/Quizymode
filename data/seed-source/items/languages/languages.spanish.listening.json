@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d18e9bf3-6612-4ea8-a7c5-dbb9f3a2b6d9",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
@@ -16,15 +17,15 @@
       "pronunciation",
       "spanish-listening"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/perro",
-    "seedId": "63778004-1616-531c-8d56-ad2b2ac916ce"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/perro"
   },
   {
+    "itemId": "24d5963a-994b-4283-9496-036b69fa42e4",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "Which spelling is the standard Spanish word for a medical doctor, including its accent mark?",
-    "correctAnswer": "médico",
+    "correctAnswer": "m\u00e9dico",
     "incorrectAnswers": [
       "medico",
       "medicina",
@@ -36,10 +37,10 @@
       "accent-marks",
       "spanish-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/m%C3%A9dico",
-    "seedId": "ec183567-a0f6-5ed5-8d31-7739da504a74"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/m%C3%A9dico"
   },
   {
+    "itemId": "ade26931-4293-4839-81d7-8080851d8aea",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
@@ -56,30 +57,30 @@
       "pronunciation",
       "spanish-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hombre",
-    "seedId": "9332f993-b96d-56c8-87b7-3e5afb9f25ff"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hombre"
   },
   {
+    "itemId": "f94e9e93-a5b2-4cd3-84f5-1504cfcaabbe",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
-    "question": "In \"teléfono,\" which syllable carries the main stress?",
+    "question": "In \"tel\u00e9fono,\" which syllable carries the main stress?",
     "correctAnswer": "the second syllable",
     "incorrectAnswers": [
       "the first syllable",
       "the third syllable",
       "the last syllable only"
     ],
-    "explanation": "The accent on \"é\" marks stress on the second syllable: te-LÉ-fo-no.",
+    "explanation": "The accent on \"\u00e9\" marks stress on the second syllable: te-L\u00c9-fo-no.",
     "keywords": [
       "stress",
       "accent-marks",
       "spanish-listening"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/tel%C3%A9fono",
-    "seedId": "19136751-541a-54b2-9f72-5ae8740c8908"
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/tel%C3%A9fono"
   },
   {
+    "itemId": "6f093cdf-9bcc-4034-8bde-a754e81a5e05",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
@@ -96,14 +97,14 @@
       "pronunciation",
       "spanish-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/casa",
-    "seedId": "7bc28c2a-cfdb-555b-a722-e615f940e53a"
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/casa"
   },
   {
+    "itemId": "c59a2c34-bfb8-4d89-879f-dc1c04c82656",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
-    "question": "What most often changes between the yes-no question \"¿Hablas inglés?\" and the statement \"Hablas inglés\" when the words stay the same?",
+    "question": "What most often changes between the yes-no question \"\u00bfHablas ingl\u00e9s?\" and the statement \"Hablas ingl\u00e9s\" when the words stay the same?",
     "correctAnswer": "intonation",
     "incorrectAnswers": [
       "word order",
@@ -116,7 +117,6 @@
       "questions",
       "spanish-listening"
     ],
-    "source": "https://www.spanishdict.com/guide/yes-no-questions-in-spanish",
-    "seedId": "9802847c-02ae-5986-b763-bcdeabfa4b99"
+    "source": "https://www.spanishdict.com/guide/yes-no-questions-in-spanish"
   }
 ]

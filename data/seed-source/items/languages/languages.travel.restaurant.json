@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2fe43b1a-afc9-402a-b34e-4a3c286b0180",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -15,10 +16,10 @@
       "travel",
       "booking"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/reservation",
-    "seedId": "fe57f97e-f2f0-5740-88c0-f32b7e054d8c"
+    "source": "https://dictionary.cambridge.org/dictionary/english/reservation"
   },
   {
+    "itemId": "7c8959d3-3e26-4ca8-9629-9fbbb8e6b954",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -34,10 +35,10 @@
       "travel",
       "payment"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/bill",
-    "seedId": "f9d7f83a-ffaf-533d-a677-d22b2785dc0f"
+    "source": "https://www.merriam-webster.com/dictionary/bill"
   },
   {
+    "itemId": "d0fe205e-e0db-4132-a5ba-32bacec7e8f0",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -53,10 +54,10 @@
       "travel",
       "tipping"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/english/tip",
-    "seedId": "bc2cff74-2bba-55ac-bfd4-3673b592282e"
+    "source": "https://www.collinsdictionary.com/dictionary/english/tip"
   },
   {
+    "itemId": "0077d1c6-0ca9-4632-bcf8-d8a7de761900",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -72,10 +73,10 @@
       "travel",
       "allergy"
     ],
-    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/allergy",
-    "seedId": "06e01c7d-b22a-5e70-8c9b-4261d3b11212"
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/allergy"
   },
   {
+    "itemId": "387e8d1a-7dd7-42e4-9a0b-42f3a5098842",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -91,10 +92,10 @@
       "travel",
       "takeout"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/takeout",
-    "seedId": "e1b67a4c-6dee-56ab-9d4e-645fe8242f83"
+    "source": "https://dictionary.cambridge.org/dictionary/english/takeout"
   },
   {
+    "itemId": "54aadcb3-7d7c-4579-8c60-40dfa4a9125b",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "restaurant",
@@ -110,7 +111,6 @@
       "travel",
       "water"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/tap_1",
-    "seedId": "e6074992-cbac-5782-bcb3-089a1ad432b2"
+    "source": "https://dictionary.cambridge.org/dictionary/english/tap_1"
   }
 ]

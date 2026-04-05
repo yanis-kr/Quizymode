@@ -1,25 +1,26 @@
 [
   {
+    "itemId": "559831d5-e8fd-45eb-9bc4-66947cfce318",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
     "question": "Which river carries more water to the sea than any other river in the world?",
     "correctAnswer": "The Amazon River",
     "incorrectAnswers": [
-      "The Paraná River",
+      "The Paran\u00e1 River",
       "The Orinoco River",
       "The Magdalena River"
     ],
-    "explanation": "The Amazon drains the world’s largest equatorial lowland basin and has the greatest discharge of any river system.",
+    "explanation": "The Amazon drains the world\u2019s largest equatorial lowland basin and has the greatest discharge of any river system.",
     "keywords": [
       "south-america",
       "rivers",
       "amazon"
     ],
-    "source": "https://www.britannica.com/place/Amazon-River",
-    "seedId": "94d8fb9e-dbcc-49b1-a8fa-d17d9ebd041e"
+    "source": "https://www.britannica.com/place/Amazon-River"
   },
   {
+    "itemId": "bdaf9fcf-b17c-4775-a3f7-00b2bf4b37ea",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -36,10 +37,10 @@
       "mountain-ranges",
       "andes"
     ],
-    "source": "https://www.britannica.com/place/Andes-Mountains",
-    "seedId": "38b97e6e-ad46-4f9f-9968-635633601a7d"
+    "source": "https://www.britannica.com/place/Andes-Mountains"
   },
   {
+    "itemId": "42473998-f916-400d-b470-d6dbb29dfae7",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -50,16 +51,16 @@
       "The Sechura Desert",
       "The La Guajira Desert"
     ],
-    "explanation": "The Atacama is one of the driest places on Earth and stretches along Chile’s Pacific coast.",
+    "explanation": "The Atacama is one of the driest places on Earth and stretches along Chile\u2019s Pacific coast.",
     "keywords": [
       "south-america",
       "deserts",
       "chile"
     ],
-    "source": "https://www.britannica.com/place/Atacama-Desert",
-    "seedId": "9855efb1-472e-4a21-ab0c-c5c6712a1ec9"
+    "source": "https://www.britannica.com/place/Atacama-Desert"
   },
   {
+    "itemId": "5a37655a-80b6-46fd-acca-25a9ca34f9e0",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -70,16 +71,16 @@
       "Colombia and Ecuador",
       "Brazil and Paraguay"
     ],
-    "explanation": "Lake Titicaca sits on the Altiplano of the central Andes along the Peru–Bolivia border.",
+    "explanation": "Lake Titicaca sits on the Altiplano of the central Andes along the Peru\u2013Bolivia border.",
     "keywords": [
       "south-america",
       "lakes",
       "andes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Titicaca",
-    "seedId": "669e0382-a68a-4875-9351-ac165a612e86"
+    "source": "https://www.britannica.com/place/Lake-Titicaca"
   },
   {
+    "itemId": "5603bb70-c3dc-4578-9818-a1e547729001",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -90,36 +91,36 @@
       "The Gran Chaco",
       "The Caatinga"
     ],
-    "explanation": "The Pampas are treeless grasslands that form one of South America’s major pastoral and farming regions.",
+    "explanation": "The Pampas are treeless grasslands that form one of South America\u2019s major pastoral and farming regions.",
     "keywords": [
       "south-america",
       "plains",
       "argentina"
     ],
-    "source": "https://www.britannica.com/place/Pampas",
-    "seedId": "052a2443-585c-40a1-8e7a-ddc5af360ebe"
+    "source": "https://www.britannica.com/place/Pampas"
   },
   {
+    "itemId": "8a098593-5ae0-4c3d-9c6b-e1d4bb58ec2f",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
-    "question": "Which major South American river joins the Uruguay River to form the Río de la Plata estuary?",
-    "correctAnswer": "The Paraná River",
+    "question": "Which major South American river joins the Uruguay River to form the R\u00edo de la Plata estuary?",
+    "correctAnswer": "The Paran\u00e1 River",
     "incorrectAnswers": [
       "The Amazon River",
       "The Orinoco River",
-      "The São Francisco River"
+      "The S\u00e3o Francisco River"
     ],
-    "explanation": "The Paraná–Uruguay system drains into the Río de la Plata, a large estuary opening to the Atlantic.",
+    "explanation": "The Paran\u00e1\u2013Uruguay system drains into the R\u00edo de la Plata, a large estuary opening to the Atlantic.",
     "keywords": [
       "south-america",
       "rivers",
       "rioplatense"
     ],
-    "source": "https://www.britannica.com/place/Parana-River",
-    "seedId": "0229b0fc-6050-4c87-a280-98b650aa6459"
+    "source": "https://www.britannica.com/place/Parana-River"
   },
   {
+    "itemId": "22b494ea-9930-4de4-8685-e19fce23f865",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -136,10 +137,10 @@
       "rivers",
       "venezuela"
     ],
-    "source": "https://www.britannica.com/place/Orinoco-River",
-    "seedId": "bbb7c5d9-95fb-4623-ae3d-c75532f81984"
+    "source": "https://www.britannica.com/place/Orinoco-River"
   },
   {
+    "itemId": "c0199297-102f-4654-aea5-999d6dd65fcd",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -150,16 +151,16 @@
       "Peru and Bolivia",
       "Colombia and Venezuela"
     ],
-    "explanation": "Iguazu Falls span the Iguazu River on the Argentina–Brazil frontier.",
+    "explanation": "Iguazu Falls span the Iguazu River on the Argentina\u2013Brazil frontier.",
     "keywords": [
       "south-america",
       "waterfalls",
       "rivers"
     ],
-    "source": "https://www.britannica.com/place/Iguacu-Falls",
-    "seedId": "620b10f4-0164-4895-8e34-9cd7d500b3a8"
+    "source": "https://www.britannica.com/place/Iguacu-Falls"
   },
   {
+    "itemId": "91cbfc1f-77a1-4c34-8049-79368d7dfaa8",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -176,10 +177,10 @@
       "patagonia",
       "climate"
     ],
-    "source": "https://www.britannica.com/place/Patagonia",
-    "seedId": "1b0494f5-88e8-4715-bac9-7a39c37f8cb4"
+    "source": "https://www.britannica.com/place/Patagonia"
   },
   {
+    "itemId": "8154fae1-edd4-47ef-a7c6-e8378b1b2b56",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -190,16 +191,16 @@
       "Peru",
       "Colombia"
     ],
-    "explanation": "Brazil occupies nearly half of the continent’s land area, far exceeding any other South American state.",
+    "explanation": "Brazil occupies nearly half of the continent\u2019s land area, far exceeding any other South American state.",
     "keywords": [
       "south-america",
       "brazil",
       "country-size"
     ],
-    "source": "https://www.britannica.com/place/Brazil",
-    "seedId": "90f50568-69b1-468b-a816-d8e3b9a77884"
+    "source": "https://www.britannica.com/place/Brazil"
   },
   {
+    "itemId": "769e5071-087c-44af-98d7-8d350419b6be",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "south-america",
@@ -216,7 +217,6 @@
       "straits",
       "chile"
     ],
-    "source": "https://www.britannica.com/place/Strait-of-Magellan",
-    "seedId": "e4be0edb-1699-43ec-8dd5-8dc39f00396c"
+    "source": "https://www.britannica.com/place/Strait-of-Magellan"
   }
 ]

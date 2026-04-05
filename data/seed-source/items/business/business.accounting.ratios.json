@@ -1,10 +1,11 @@
 [
   {
+    "itemId": "97e257e5-7eb3-4a48-bf43-4fafe8d49511",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
     "question": "What does the current ratio typically help assess?",
-    "correctAnswer": "A company’s ability to cover short-term obligations using current assets.",
+    "correctAnswer": "A company\u2019s ability to cover short-term obligations using current assets.",
     "incorrectAnswers": [
       "How quickly the company will pay all long-term debt tomorrow",
       "Whether the company is profitable only because of taxes",
@@ -16,15 +17,15 @@
       "liquidity",
       "short-term-debt"
     ],
-    "source": "https://www.investopedia.com/terms/c/currentratio.asp",
-    "seedId": "a6f0d912-b9d6-543d-a392-73a938e1b555"
+    "source": "https://www.investopedia.com/terms/c/currentratio.asp"
   },
   {
+    "itemId": "10d4f40b-b5c8-4c0f-af9e-c438555abe2a",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
     "question": "What does a debt-to-equity ratio generally relate?",
-    "correctAnswer": "Total debt compared with shareholders’ equity.",
+    "correctAnswer": "Total debt compared with shareholders\u2019 equity.",
     "incorrectAnswers": [
       "Revenue compared with operating cash flow",
       "Inventory compared with gross profit",
@@ -36,10 +37,10 @@
       "leverage",
       "capital-structure"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/financial-accounting/debt-equity-ratio/",
-    "seedId": "87882204-bb46-5f18-9e04-3cc3f9b18735"
+    "source": "https://corporatefinanceinstitute.com/resources/financial-accounting/debt-equity-ratio/"
   },
   {
+    "itemId": "ec30b564-fce0-463a-9ca7-25d688de375e",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
@@ -56,15 +57,15 @@
       "profitability",
       "direct-costs"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/financial-modeling/gross-margin/",
-    "seedId": "13ed2d21-1730-5e08-a144-4bb90f7d4dc9"
+    "source": "https://corporatefinanceinstitute.com/resources/financial-modeling/gross-margin/"
   },
   {
+    "itemId": "1e9b8c5f-7355-41a1-983c-bff0ad3a1134",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
     "question": "What does return on equity (ROE) primarily reflect?",
-    "correctAnswer": "How effectively shareholders’ equity generates net profit.",
+    "correctAnswer": "How effectively shareholders\u2019 equity generates net profit.",
     "incorrectAnswers": [
       "How quickly inventory is sold in days only",
       "How much interest the company pays on loans",
@@ -76,10 +77,10 @@
       "profitability",
       "shareholders-equity"
     ],
-    "source": "https://www.investopedia.com/terms/r/returnonequity.asp",
-    "seedId": "7940d497-7f64-56b7-9155-21db0f630d3f"
+    "source": "https://www.investopedia.com/terms/r/returnonequity.asp"
   },
   {
+    "itemId": "20d1410d-a7ee-4f3b-a28a-16718c697272",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
@@ -96,10 +97,10 @@
       "efficiency",
       "inventory-management"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/inventory-turnover/",
-    "seedId": "9d5cd71a-f5b7-56f0-b11a-f39e341c4061"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/inventory-turnover/"
   },
   {
+    "itemId": "a1e30058-f0f7-494c-94db-56f0b2759fa4",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "ratios",
@@ -116,7 +117,6 @@
       "profitability",
       "revenue"
     ],
-    "source": "https://www.investopedia.com/terms/n/netprofitmargin.asp",
-    "seedId": "6e789987-50ac-5161-8556-c016ae7147cb"
+    "source": "https://www.investopedia.com/terms/n/netprofitmargin.asp"
   }
 ]

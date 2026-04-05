@@ -4,6 +4,8 @@ public sealed class Collection
 {
     public Guid Id { get; set; }
 
+    public bool IsRepoManaged { get; set; }
+
     public string Name { get; set; } = string.Empty;
 
     /// <summary>

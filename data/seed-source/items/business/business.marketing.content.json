@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "04a5242f-4f0d-4b2c-8950-9562d6192a48",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
@@ -16,10 +17,10 @@
       "value",
       "audience"
     ],
-    "source": "https://www.hubspot.com/content-marketing",
-    "seedId": "c1fe7be2-ed7b-598b-b42c-db876a8e723b"
+    "source": "https://www.hubspot.com/content-marketing"
   },
   {
+    "itemId": "d54ef648-9ac9-45ed-bc6a-b0ab6e341348",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
@@ -36,15 +37,15 @@
       "planning",
       "consistency"
     ],
-    "source": "https://www.hubspot.com/",
-    "seedId": "4bfcb7d6-7ef6-5630-847b-df982f0939fe"
+    "source": "https://www.hubspot.com/"
   },
   {
+    "itemId": "5e165a0e-8143-4d68-92a8-97915a56dd9d",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
     "question": "Why do marketers use calls to action (CTAs) in content?",
-    "correctAnswer": "To guide readers toward a next step that matches the content’s goal.",
+    "correctAnswer": "To guide readers toward a next step that matches the content\u2019s goal.",
     "incorrectAnswers": [
       "To avoid any measurable outcomes so results are never tracked",
       "To make the article longer without changing purpose",
@@ -56,10 +57,10 @@
       "conversion",
       "user-journey"
     ],
-    "source": "https://moz.com/",
-    "seedId": "b5251985-c96a-58c6-81ab-7d31988eb44a"
+    "source": "https://moz.com/"
   },
   {
+    "itemId": "fb48e836-93c1-4421-b5cf-9695fc4e0cf0",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
@@ -76,37 +77,37 @@
       "efficiency",
       "distribution"
     ],
-    "source": "https://www.hubspot.com/content-marketing",
-    "seedId": "bbd6562a-59e1-583d-a6c9-004ed22e4d3b"
+    "source": "https://www.hubspot.com/content-marketing"
   },
   {
+    "itemId": "c2b416b1-0ae2-47f2-a565-7232ae6ee88a",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
-    "question": "What does “content distribution” typically refer to?",
+    "question": "What does \u201ccontent distribution\u201d typically refer to?",
     "correctAnswer": "How you promote and place content so the target audience can find and consume it.",
     "incorrectAnswers": [
       "How you calculate production budgets only",
       "How you decide stock keeping units for inventory",
       "The legal process for registering content copyrights"
     ],
-    "explanation": "Distribution includes channels like social, email, search, and partnerships—so content reaches the intended readers.",
+    "explanation": "Distribution includes channels like social, email, search, and partnerships\u2014so content reaches the intended readers.",
     "keywords": [
       "distribution",
       "reach",
       "channels"
     ],
-    "source": "https://moz.com/learn/seo/content-marketing",
-    "seedId": "8b11f4a5-9e99-5f34-8ec0-861fc4a6038e"
+    "source": "https://moz.com/learn/seo/content-marketing"
   },
   {
+    "itemId": "88cb7b48-d92a-42f8-a3ec-1155d3cfbf12",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "content",
     "question": "Which metric is most directly connected to how well content satisfies searchers?",
     "correctAnswer": "Search engagement signals like click-through rate (CTR) and time-on-page (as a proxy).",
     "incorrectAnswers": [
-      "The company’s quarterly payroll totals",
+      "The company\u2019s quarterly payroll totals",
       "The number of server racks in the hosting facility only",
       "Whether the content is internally audited for accounting"
     ],
@@ -116,7 +117,6 @@
       "ctr",
       "intent"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "32a68c92-b856-554a-9058-d3b1ceae54b9"
+    "source": "https://www.investopedia.com/"
   }
 ]

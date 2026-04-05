@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "148529f0-039f-4a93-b7c6-a46c5e547218",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
@@ -16,15 +17,15 @@
       "labor-efficiency",
       "output-per-labor"
     ],
-    "source": "https://www.investopedia.com/terms/p/productivity.asp",
-    "seedId": "907424d9-43a0-56ea-bc14-2671ffb42af7"
+    "source": "https://www.investopedia.com/terms/p/productivity.asp"
   },
   {
+    "itemId": "34d52f5f-3013-4f33-ad05-2f62d215a556",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
     "question": "What does multifactor productivity (MFP) aim to capture?",
-    "correctAnswer": "Improvements in output that aren’t explained solely by increases in labor or capital input.",
+    "correctAnswer": "Improvements in output that aren\u2019t explained solely by increases in labor or capital input.",
     "incorrectAnswers": [
       "Only changes in raw wages with no link to output",
       "A measure that ignores all inputs by definition",
@@ -36,10 +37,10 @@
       "efficiency",
       "technology"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "24c056dd-2c68-577d-b58a-38b68a33ce68"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "c7ca7869-c6f2-4a5e-87d6-683c608249a5",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
@@ -56,10 +57,10 @@
       "throughput",
       "metrics"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "8000c12a-70c8-540a-8608-f7f09eea0253"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "536d48aa-baef-4f6b-bbee-a49a5deae5f0",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
@@ -70,16 +71,16 @@
       "They are the same metric under different names",
       "Effectiveness always ignores outcomes and only cares about costs"
     ],
-    "explanation": "A process can be efficient (low cost) but not effective if it doesn’t achieve the desired outcome.",
+    "explanation": "A process can be efficient (low cost) but not effective if it doesn\u2019t achieve the desired outcome.",
     "keywords": [
       "efficiency",
       "effectiveness",
       "performance"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "be1ff3cd-afb8-58aa-88a8-c468eee2d8a3"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "edd39dec-82c1-43ac-97cc-00c596029d28",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
@@ -96,10 +97,10 @@
       "value-add",
       "improvement"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "99549cc5-0283-56a6-b5f6-f9c8553838f4"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "0aaef92f-efb1-4100-b243-89f628ad1959",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "productivity",
@@ -116,7 +117,6 @@
       "delays",
       "productivity-improvement"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "af7b00d4-6d92-52ac-9ecd-abc80f9c4a2e"
+    "source": "https://www.investopedia.com/"
   }
 ]

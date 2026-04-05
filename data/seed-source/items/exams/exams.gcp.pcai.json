@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "400c9673-2128-463c-a114-78452708cc03",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -16,10 +17,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/vertex-ai",
-    "seedId": "62c304f6-e51e-4c9d-88b6-d9eca3a24afc"
+    "source": "https://cloud.google.com/vertex-ai"
   },
   {
+    "itemId": "42c7fe76-7bea-4eff-9d4c-ebd43b636e68",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -36,10 +37,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/storage",
-    "seedId": "5348f2b1-b3ce-4abd-a3ab-d9ba10963b96"
+    "source": "https://cloud.google.com/storage"
   },
   {
+    "itemId": "88f23dd0-8d67-4c8d-9c6e-089ceedd4432",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -56,10 +57,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/bigquery",
-    "seedId": "25715b1e-64b1-439c-9271-2ccbdf74ef81"
+    "source": "https://cloud.google.com/bigquery"
   },
   {
+    "itemId": "27065c80-dde8-4914-b9c9-96b1fa8029ef",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -76,10 +77,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/pubsub",
-    "seedId": "b6faeece-8720-48ff-a944-2e4a3c58b611"
+    "source": "https://cloud.google.com/pubsub"
   },
   {
+    "itemId": "a2d2d002-c4a5-446f-b6ee-79f3faf21020",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -96,10 +97,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/run",
-    "seedId": "6dff9183-d812-4aae-83ab-1bef1a6d9e96"
+    "source": "https://cloud.google.com/run"
   },
   {
+    "itemId": "326c6111-1b24-49f3-992d-d6c6dd16e392",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -116,10 +117,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/kubernetes-engine",
-    "seedId": "393d0378-c57d-4bd6-af7f-c6c53a05646e"
+    "source": "https://cloud.google.com/kubernetes-engine"
   },
   {
+    "itemId": "81715c1c-6c42-4b67-9eb1-daebefabd5f4",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -136,10 +137,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/monitoring",
-    "seedId": "ff62b808-65e0-492b-8db2-2f6dc0a3786f"
+    "source": "https://cloud.google.com/monitoring"
   },
   {
+    "itemId": "cdae5998-bfd0-471f-acec-887480e4e71e",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -156,10 +157,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/compute",
-    "seedId": "7f8a9f98-ff2a-4bc9-9439-9c0fc464684b"
+    "source": "https://cloud.google.com/compute"
   },
   {
+    "itemId": "bd6ab8a5-de8f-4ce3-b169-40e0c17bf98b",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -176,10 +177,10 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/spanner",
-    "seedId": "2cc1a0ad-f5d6-4144-8a06-15e11b78ec01"
+    "source": "https://cloud.google.com/spanner"
   },
   {
+    "itemId": "c59652c1-aee2-43bc-bbfc-dfa17382617b",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pcai",
@@ -196,7 +197,6 @@
       "google-cloud-ai",
       "ai-platforms"
     ],
-    "source": "https://cloud.google.com/vertex-ai",
-    "seedId": "bb6bbb71-ccc0-4520-8fa6-5835c6e24001"
+    "source": "https://cloud.google.com/vertex-ai"
   }
 ]

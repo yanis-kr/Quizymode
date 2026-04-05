@@ -1,10 +1,11 @@
 [
   {
+    "itemId": "f7c274f3-933b-4048-a172-513b00d6df2b",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
     "question": "What does few-shot prompting provide inside the prompt?",
-    "correctAnswer": "A small set of input–output examples before the real task",
+    "correctAnswer": "A small set of input\u2013output examples before the real task",
     "incorrectAnswers": [
       "Only a random number seed",
       "A database backup file",
@@ -15,10 +16,10 @@
       "ai-ml",
       "few-shot"
     ],
-    "source": "https://en.wikipedia.org/wiki/Prompt_engineering",
-    "seedId": "52a69045-d0d5-5abf-b757-c95a495f1096"
+    "source": "https://en.wikipedia.org/wiki/Prompt_engineering"
   },
   {
+    "itemId": "4015491d-2d45-453b-9de0-e18cad7ced6e",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
@@ -34,10 +35,10 @@
       "ai-ml",
       "chain-of-thought"
     ],
-    "source": "https://arxiv.org/abs/2201.11903",
-    "seedId": "d21a26c5-fa9e-5678-bd14-b3cc6837130c"
+    "source": "https://arxiv.org/abs/2201.11903"
   },
   {
+    "itemId": "ee9a84bd-6a85-411b-9047-a597ea0d3395",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
@@ -53,10 +54,10 @@
       "ai-ml",
       "prompt-structure"
     ],
-    "source": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
-    "seedId": "dbc53f04-f1dc-5d79-a6cf-c5aced32c4bc"
+    "source": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
   },
   {
+    "itemId": "fc26810b-41a8-4f08-91b1-f26f1f1b4cb4",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
@@ -72,10 +73,10 @@
       "ai-ml",
       "reliability"
     ],
-    "source": "https://en.wikipedia.org/wiki/Large_language_model",
-    "seedId": "6051a589-65a8-5f7f-a129-dd8f2dcf10d7"
+    "source": "https://en.wikipedia.org/wiki/Large_language_model"
   },
   {
+    "itemId": "976f26be-f13f-4a09-ab47-b82504e3d191",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
@@ -91,10 +92,10 @@
       "ai-ml",
       "chat-prompts"
     ],
-    "source": "https://huggingface.co/docs/transformers/chat_templating",
-    "seedId": "8b7eee4e-a311-52a3-81fb-f774a485c5ec"
+    "source": "https://huggingface.co/docs/transformers/chat_templating"
   },
   {
+    "itemId": "11713501-690e-40a7-b773-a717747dfac1",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
@@ -110,7 +111,6 @@
       "ai-ml",
       "zero-shot"
     ],
-    "source": "https://en.wikipedia.org/wiki/Prompt_engineering",
-    "seedId": "d9110683-4193-52cd-8f5b-7a517da3eb12"
+    "source": "https://en.wikipedia.org/wiki/Prompt_engineering"
   }
 ]

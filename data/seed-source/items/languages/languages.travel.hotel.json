@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2dd50ce7-6c8b-468c-aa0a-3534469ecf30",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -15,10 +16,10 @@
       "travel",
       "check-in"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/check-in",
-    "seedId": "cfa2bcc0-e9cb-5e26-85e0-660ec1c9f958"
+    "source": "https://dictionary.cambridge.org/dictionary/english/check-in"
   },
   {
+    "itemId": "3337e6d8-cb5e-4edc-afe0-d88397b73c5a",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -34,10 +35,10 @@
       "travel",
       "check-out"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/checkout",
-    "seedId": "1750b69b-7cc7-5a02-9951-a830d2b903c2"
+    "source": "https://www.merriam-webster.com/dictionary/checkout"
   },
   {
+    "itemId": "b6cef39f-7ca9-4231-837f-58ba832ea659",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -53,10 +54,10 @@
       "travel",
       "room-key"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/english/key-card",
-    "seedId": "d7d70df8-33b2-5b0b-b05e-4e27d9721c57"
+    "source": "https://www.collinsdictionary.com/dictionary/english/key-card"
   },
   {
+    "itemId": "24d68f7c-45bd-4eee-8e0b-4e59a429c4d4",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -72,10 +73,10 @@
       "travel",
       "wake-up"
     ],
-    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/wake-up-call",
-    "seedId": "703a4632-7a28-5bcc-a76b-48d7314d0095"
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/wake-up-call"
   },
   {
+    "itemId": "62d69fe0-4979-4272-8ae2-63e0c8c18c0b",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -91,10 +92,10 @@
       "travel",
       "cleaning"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/housekeeping",
-    "seedId": "e101af3a-ea14-54e1-ac03-95645c630d44"
+    "source": "https://dictionary.cambridge.org/dictionary/english/housekeeping"
   },
   {
+    "itemId": "d7e35ea3-6d2f-4ef5-a5f8-29fd1411ad17",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "hotel",
@@ -110,7 +111,6 @@
       "travel",
       "booking"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/vacancy",
-    "seedId": "b39eab78-d29f-5d45-8413-74b568ba478b"
+    "source": "https://dictionary.cambridge.org/dictionary/english/vacancy"
   }
 ]

@@ -28,7 +28,7 @@ def pack(l1: str, l2: str, items: list[T]) -> list[dict[str, Any]]:
                 "explanation": ex,
                 "keywords": [k1, k2],
                 "source": src,
-                "seedId": str(uuid.uuid4()),
+                "itemId": str(uuid.uuid4()),
             }
         )
     return rows

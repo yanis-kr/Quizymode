@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "78798a3a-3d3a-4617-8c6f-a59a286b37ad",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
@@ -16,14 +17,14 @@
       "ivan-iv",
       "tsar"
     ],
-    "source": "https://www.britannica.com/biography/Ivan-IV-tsar-of-Russia",
-    "seedId": "9b3cbba8-4188-43bf-98d4-faed92d05d6a"
+    "source": "https://www.britannica.com/biography/Ivan-IV-tsar-of-Russia"
   },
   {
+    "itemId": "e82588c2-6299-49ba-9263-76752934cf5c",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Peter the Great founded Saint Petersburg as a ‘window on the West’ after gaining Baltic access in which war?",
+    "question": "Peter the Great founded Saint Petersburg as a \u2018window on the West\u2019 after gaining Baltic access in which war?",
     "correctAnswer": "The Great Northern War",
     "incorrectAnswers": [
       "The Crimean War",
@@ -36,14 +37,14 @@
       "peter-the-great",
       "baltic"
     ],
-    "source": "https://www.britannica.com/biography/Peter-I-emperor-of-Russia",
-    "seedId": "ee7c6069-0e79-4245-8736-7493f1877069"
+    "source": "https://www.britannica.com/biography/Peter-I-emperor-of-Russia"
   },
   {
+    "itemId": "e0a01918-1541-4f64-8ec0-423a3f8cb273",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Catherine the Great’s reign is associated with enlarging Russian power in Crimea, Ukraine, and which northern sea?",
+    "question": "Catherine the Great\u2019s reign is associated with enlarging Russian power in Crimea, Ukraine, and which northern sea?",
     "correctAnswer": "The Black Sea",
     "incorrectAnswers": [
       "The Mediterranean exclusively",
@@ -56,14 +57,14 @@
       "catherine-the-great",
       "expansion"
     ],
-    "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia",
-    "seedId": "0ae8adbe-9be4-4a35-8861-7dc37e783b74"
+    "source": "https://www.britannica.com/biography/Catherine-the-Great-empress-of-Russia"
   },
   {
+    "itemId": "8677e3f5-6fbb-4c63-9163-e48515fa6f5d",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Alexander II’s 1861 Edict of Emancipation freed which laborers tied to noble estates?",
+    "question": "Alexander II\u2019s 1861 Edict of Emancipation freed which laborers tied to noble estates?",
     "correctAnswer": "Serfs",
     "incorrectAnswers": [
       "Industrial factory workers",
@@ -76,14 +77,14 @@
       "emancipation",
       "alexander-ii"
     ],
-    "source": "https://www.britannica.com/biography/Alexander-II-emperor-of-Russia",
-    "seedId": "7bbc2736-0094-4582-82ae-0bd7d10a012d"
+    "source": "https://www.britannica.com/biography/Alexander-II-emperor-of-Russia"
   },
   {
+    "itemId": "358e959a-2921-44fe-a6c2-8cabadc17803",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Russia’s 1905 defeat at Tsushima followed a surprise attack by which non-European imperial navy?",
+    "question": "Russia\u2019s 1905 defeat at Tsushima followed a surprise attack by which non-European imperial navy?",
     "correctAnswer": "Japan (the Imperial Japanese Navy)",
     "incorrectAnswers": [
       "The United States",
@@ -96,10 +97,10 @@
       "russo-japanese-war",
       "1905"
     ],
-    "source": "https://www.britannica.com/event/Russo-Japanese-War",
-    "seedId": "790876c3-b3a4-4cb7-ab59-b82c07d131d5"
+    "source": "https://www.britannica.com/event/Russo-Japanese-War"
   },
   {
+    "itemId": "2a17b3c2-ac93-403a-81bd-9d2b8643da48",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
@@ -116,14 +117,14 @@
       "1917",
       "february-revolution"
     ],
-    "source": "https://www.britannica.com/event/February-Revolution-1917-Russia",
-    "seedId": "cd0bc3c9-2ff5-443a-a654-662c0f327a58"
+    "source": "https://www.britannica.com/event/February-Revolution-1917-Russia"
   },
   {
+    "itemId": "69a0712f-4ca6-418a-ab82-cf41cbd2fa9f",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Vladimir Lenin’s Bolsheviks overthrew the Provisional Government in which 1917 uprising?",
+    "question": "Vladimir Lenin\u2019s Bolsheviks overthrew the Provisional Government in which 1917 uprising?",
     "correctAnswer": "The October Revolution",
     "incorrectAnswers": [
       "The Decembrist revolt",
@@ -136,14 +137,14 @@
       "lenin",
       "bolshevik"
     ],
-    "source": "https://www.britannica.com/event/Russian-Revolution",
-    "seedId": "2f4d3c1e-1446-4bb2-b6fa-832e4fc22da3"
+    "source": "https://www.britannica.com/event/Russian-Revolution"
   },
   {
+    "itemId": "d186cfd7-f5cd-440f-8d93-e528e9b1b51e",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Joseph Stalin’s forced collectivization and five-year plans industrialized the USSR at the cost of which famine?",
+    "question": "Joseph Stalin\u2019s forced collectivization and five-year plans industrialized the USSR at the cost of which famine?",
     "correctAnswer": "The Holodomor and wider Soviet famines of the early 1930s",
     "incorrectAnswers": [
       "The Irish Potato Famine",
@@ -156,34 +157,34 @@
       "stalin",
       "collectivization"
     ],
-    "source": "https://www.britannica.com/biography/Joseph-Stalin",
-    "seedId": "1a6fa9a4-e0fa-465d-893c-18e3a4c397fd"
+    "source": "https://www.britannica.com/biography/Joseph-Stalin"
   },
   {
+    "itemId": "cc32dfa1-9faf-4287-9836-e1744e50e855",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Mikhail Gorbachev’s policies of glasnost and perestroika unintentionally hastened the end of which state?",
+    "question": "Mikhail Gorbachev\u2019s policies of glasnost and perestroika unintentionally hastened the end of which state?",
     "correctAnswer": "The Soviet Union",
     "incorrectAnswers": [
       "The Russian Empire",
       "The Polish-Lithuanian Commonwealth",
       "Yugoslavia"
     ],
-    "explanation": "The USSR dissolved in December 1991 after the August coup’s failure and republic secessions.",
+    "explanation": "The USSR dissolved in December 1991 after the August coup\u2019s failure and republic secessions.",
     "keywords": [
       "russia",
       "gorbachev",
       "soviet-union"
     ],
-    "source": "https://www.britannica.com/biography/Mikhail-Gorbachev",
-    "seedId": "ae417f72-ac0d-40f2-922d-db30fc6a2253"
+    "source": "https://www.britannica.com/biography/Mikhail-Gorbachev"
   },
   {
+    "itemId": "471eea0c-f325-48f7-a318-7a425a23772f",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "Napoleon’s 1812 invasion of Russia failed in part because of scorched-earth retreats and which climactic burning?",
+    "question": "Napoleon\u2019s 1812 invasion of Russia failed in part because of scorched-earth retreats and which climactic burning?",
     "correctAnswer": "The burning of Moscow",
     "incorrectAnswers": [
       "The burning of Saint Petersburg",
@@ -196,14 +197,14 @@
       "napoleon",
       "1812"
     ],
-    "source": "https://www.britannica.com/event/French-invasion-of-Russia",
-    "seedId": "571f09f6-7b6c-4542-bf9a-e98f7926d5b5"
+    "source": "https://www.britannica.com/event/French-invasion-of-Russia"
   },
   {
+    "itemId": "e8225708-7b70-4e2d-901d-8102dff76742",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
-    "question": "The Romanov dynasty ended with the execution of Nicholas II’s family in which city in 1918?",
+    "question": "The Romanov dynasty ended with the execution of Nicholas II\u2019s family in which city in 1918?",
     "correctAnswer": "Yekaterinburg",
     "incorrectAnswers": [
       "Petrograd",
@@ -216,27 +217,26 @@
       "romanovs",
       "1918"
     ],
-    "source": "https://www.britannica.com/biography/Nicholas-II-tsar-of-Russia",
-    "seedId": "bd8c949a-62a5-4ecf-88e9-28e65be9f80e"
+    "source": "https://www.britannica.com/biography/Nicholas-II-tsar-of-Russia"
   },
   {
+    "itemId": "7620961b-72d2-4a6c-9f39-b06989e8e693",
     "category": "history",
     "navigationKeyword1": "europe",
     "navigationKeyword2": "russia",
     "question": "Vladimir Putin rose from the FSB to the presidency after Boris Yeltsin resigned on which eve?",
-    "correctAnswer": "New Year’s Eve 1999 (December 31, 1999)",
+    "correctAnswer": "New Year\u2019s Eve 1999 (December 31, 1999)",
     "incorrectAnswers": [
       "Victory Day 2000",
       "Orthodox Christmas 1998",
       "August 1991"
     ],
-    "explanation": "Putin’s long dominance reshaped post-Soviet Russian politics and foreign policy.",
+    "explanation": "Putin\u2019s long dominance reshaped post-Soviet Russian politics and foreign policy.",
     "keywords": [
       "russia",
       "putin",
       "yeltsin"
     ],
-    "source": "https://www.britannica.com/biography/Vladimir-Putin",
-    "seedId": "f7e3e05e-7368-4c01-9226-cd00f3a0cb1c"
+    "source": "https://www.britannica.com/biography/Vladimir-Putin"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e2657ff1-344a-4bf8-bb07-23a632a20203",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -15,10 +16,10 @@
       "html",
       "semantics"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements",
-    "seedId": "aaa4c4b3-4c1d-58f3-971f-3ebc7841282d"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
   },
   {
+    "itemId": "3736df86-5168-43c6-9217-8591ce3b6e0e",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -34,10 +35,10 @@
       "css",
       "box-model"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model",
-    "seedId": "760af217-56b3-594b-9f47-2cbffb7c0da4"
+    "source": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
   },
   {
+    "itemId": "647fab5a-312c-47d9-b8c5-67cd519f026f",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -53,10 +54,10 @@
       "css",
       "cascade"
     ],
-    "source": "https://www.w3.org/TR/css-cascade-3/#cascade-origin",
-    "seedId": "a9a132b2-467c-55f4-a721-28a43388ff61"
+    "source": "https://www.w3.org/TR/css-cascade-3/#cascade-origin"
   },
   {
+    "itemId": "0b187a47-0c5e-45e4-9c9a-a1ace43bef9f",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -72,10 +73,10 @@
       "css",
       "flexbox"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content",
-    "seedId": "fb5740cb-f321-5c82-aeb8-e77a9d138494"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
   },
   {
+    "itemId": "1e5a58a8-f163-458d-9180-0ba66f646157",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -91,10 +92,10 @@
       "css",
       "units"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#ems_and_rems",
-    "seedId": "e2e261c2-f134-50ff-a14a-fba860890642"
+    "source": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#ems_and_rems"
   },
   {
+    "itemId": "b33a241a-7107-460f-904b-aea192fcc27e",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "html-css",
@@ -110,7 +111,6 @@
       "html",
       "standards"
     ],
-    "source": "https://html.spec.whatwg.org/",
-    "seedId": "8fdd4421-607d-59fe-97f8-a283402dd3c5"
+    "source": "https://html.spec.whatwg.org/"
   }
 ]

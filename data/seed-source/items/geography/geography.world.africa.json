@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d5b0b1b5-49a2-436a-8dfc-7f10740bd0f9",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -16,10 +17,10 @@
       "deserts",
       "north-africa"
     ],
-    "source": "https://www.britannica.com/place/Sahara-desert-Africa",
-    "seedId": "ac990596-89b1-421e-a04b-7f469272a0ab"
+    "source": "https://www.britannica.com/place/Sahara-desert-Africa"
   },
   {
+    "itemId": "34c26fa8-b9dc-437d-91de-26983aac908f",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -30,16 +31,16 @@
       "The Niger River",
       "The Zambezi River"
     ],
-    "explanation": "The Nile flows north through northeastern Africa and is widely listed as Africa’s longest river.",
+    "explanation": "The Nile flows north through northeastern Africa and is widely listed as Africa\u2019s longest river.",
     "keywords": [
       "africa",
       "rivers",
       "nile"
     ],
-    "source": "https://www.britannica.com/place/Nile-River",
-    "seedId": "d3f7e57d-628e-48f2-8e55-873943a34e43"
+    "source": "https://www.britannica.com/place/Nile-River"
   },
   {
+    "itemId": "5b208ad5-d6de-4c98-ae9f-1796b668cedb",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -50,16 +51,16 @@
       "Lake Malawi (Nyasa)",
       "Lake Chad"
     ],
-    "explanation": "Lake Victoria, bordered by Uganda, Kenya, and Tanzania, is Africa’s largest lake by surface area.",
+    "explanation": "Lake Victoria, bordered by Uganda, Kenya, and Tanzania, is Africa\u2019s largest lake by surface area.",
     "keywords": [
       "africa",
       "lakes",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Victoria",
-    "seedId": "2f0cb766-f328-4b88-b923-12860351b86d"
+    "source": "https://www.britannica.com/place/Lake-Victoria"
   },
   {
+    "itemId": "1988997c-abeb-4d57-9e77-937e1a97eabc",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -70,16 +71,16 @@
       "Ras Dashen",
       "Mount Stanley"
     ],
-    "explanation": "Kilimanjaro rises in northeastern Tanzania and is commonly cited as Africa’s tallest mountain.",
+    "explanation": "Kilimanjaro rises in northeastern Tanzania and is commonly cited as Africa\u2019s tallest mountain.",
     "keywords": [
       "africa",
       "mountains",
       "east-africa"
     ],
-    "source": "https://www.britannica.com/place/Mount-Kilimanjaro",
-    "seedId": "6629c1ea-f279-4267-b55e-94175f89e514"
+    "source": "https://www.britannica.com/place/Mount-Kilimanjaro"
   },
   {
+    "itemId": "b69524d6-5a10-4cf8-af1f-3d21e8903348",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -96,10 +97,10 @@
       "mountain-ranges",
       "north-africa"
     ],
-    "source": "https://www.britannica.com/place/Atlas-Mountains",
-    "seedId": "ae0d095f-b1ba-4aaa-a065-a6a415857a32"
+    "source": "https://www.britannica.com/place/Atlas-Mountains"
   },
   {
+    "itemId": "e81558fc-4f69-4556-80d4-590c5af531f9",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -116,10 +117,10 @@
       "seas",
       "northeast-africa"
     ],
-    "source": "https://www.britannica.com/place/Red-Sea",
-    "seedId": "a757e0d3-9941-4dc1-a17d-5d64bfc809b6"
+    "source": "https://www.britannica.com/place/Red-Sea"
   },
   {
+    "itemId": "979e1477-5048-42c5-a381-06590e2da090",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -130,16 +131,16 @@
       "The Gulf of Suez",
       "The Gulf of Aqaba"
     ],
-    "explanation": "The Gulf of Guinea is the large eastern bight of the Atlantic along Africa’s west-central coast.",
+    "explanation": "The Gulf of Guinea is the large eastern bight of the Atlantic along Africa\u2019s west-central coast.",
     "keywords": [
       "africa",
       "atlantic",
       "west-africa"
     ],
-    "source": "https://www.britannica.com/place/Gulf-of-Guinea",
-    "seedId": "9fd1fadc-cc7a-4678-8562-ff1b1f62ed7a"
+    "source": "https://www.britannica.com/place/Gulf-of-Guinea"
   },
   {
+    "itemId": "9d863610-5859-451b-a50c-44d6d105225c",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -156,14 +157,14 @@
       "deserts",
       "southern-africa"
     ],
-    "source": "https://www.britannica.com/place/Kalahari-Desert",
-    "seedId": "dd49eb78-9cfa-48ee-8006-9ca496b5e732"
+    "source": "https://www.britannica.com/place/Kalahari-Desert"
   },
   {
+    "itemId": "1acfded6-c3fa-4934-b067-4c0d5a653162",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
-    "question": "Which major trench-and-rift system runs north–south through eastern Africa and is associated with deep lakes and high escarpments?",
+    "question": "Which major trench-and-rift system runs north\u2013south through eastern Africa and is associated with deep lakes and high escarpments?",
     "correctAnswer": "The Great Rift Valley",
     "incorrectAnswers": [
       "The Congo Basin",
@@ -176,10 +177,10 @@
       "rift-valley",
       "physical-geography"
     ],
-    "source": "https://www.britannica.com/place/Great-Rift-Valley",
-    "seedId": "b593226f-d86a-4172-a2af-4e9045770fb3"
+    "source": "https://www.britannica.com/place/Great-Rift-Valley"
   },
   {
+    "itemId": "f6f63144-2717-4b43-824c-473b10a3a4fa",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -196,10 +197,10 @@
       "rivers",
       "congo-basin"
     ],
-    "source": "https://www.britannica.com/place/Congo-River",
-    "seedId": "c475e9ca-3b7c-4939-8548-b719238e89b8"
+    "source": "https://www.britannica.com/place/Congo-River"
   },
   {
+    "itemId": "21eaa8b1-4fc4-47a6-b923-94f9800212c3",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -216,10 +217,10 @@
       "rivers",
       "waterfalls"
     ],
-    "source": "https://www.britannica.com/place/Victoria-Falls-waterfall-Zambia-Zimbabwe",
-    "seedId": "9a754608-a878-433f-9eac-fc23acfc02b3"
+    "source": "https://www.britannica.com/place/Victoria-Falls-waterfall-Zambia-Zimbabwe"
   },
   {
+    "itemId": "08cca2d4-2b63-4ab5-a72f-7f183a555bed",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "africa",
@@ -236,7 +237,6 @@
       "lakes",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Tanganyika",
-    "seedId": "b0865087-eb23-4ebb-a54a-b66caa1401c6"
+    "source": "https://www.britannica.com/place/Lake-Tanganyika"
   }
 ]

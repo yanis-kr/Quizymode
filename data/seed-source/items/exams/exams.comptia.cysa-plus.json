@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0f8519bf-b09f-432d-b9af-def7d1f75ca3",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -16,10 +17,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html",
-    "seedId": "cf3624ca-d6f5-4422-af38-a5ea9380f817"
+    "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html"
   },
   {
+    "itemId": "d3146d58-d521-416a-8af0-a23569bb2964",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -36,10 +37,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview",
-    "seedId": "638833ce-e249-4dcf-952a-06a581fadc67"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview"
   },
   {
+    "itemId": "2344528b-cec9-48e7-932f-1f32bf53d2cb",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -56,10 +57,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/powershell/scripting/overview",
-    "seedId": "c34856e3-f035-4e88-8864-1e1b3e640b48"
+    "source": "https://learn.microsoft.com/en-us/powershell/scripting/overview"
   },
   {
+    "itemId": "a9bcb69a-0c82-48f1-a81d-625bd2a3250f",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -76,10 +77,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/connect-data-sources",
-    "seedId": "94753554-737f-44f4-b6d2-885c3b1e67f0"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/connect-data-sources"
   },
   {
+    "itemId": "dfad6c0a-2bc5-45c9-989f-39d886775546",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -96,10 +97,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise",
-    "seedId": "a25a0dc3-2a32-41c7-bf66-e2dc9d875e38"
+    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
   },
   {
+    "itemId": "a47a3380-3775-4b4b-a671-7f0a8f59301e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -116,10 +117,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise",
-    "seedId": "72a0b5fe-fdbd-4083-ab96-eae12dd484a7"
+    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
   },
   {
+    "itemId": "79026873-b853-4b0c-b29c-ed16894002d1",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -136,10 +137,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/defender-office-365/safe-attachments-about",
-    "seedId": "d4ee09e6-d2d3-48d7-8c41-024c272229eb"
+    "source": "https://learn.microsoft.com/en-us/defender-office-365/safe-attachments-about"
   },
   {
+    "itemId": "a007babc-ff93-44d4-8df1-734c7b84ac48",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -156,10 +157,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions",
-    "seedId": "f9ff07d4-e55e-4d3c-8a44-732f1c635889"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions"
   },
   {
+    "itemId": "6b819010-6f50-4c2b-87a0-e1483789fb6e",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -176,10 +177,10 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives",
-    "seedId": "d0d78d61-0996-489f-8c03-20b05bac87c9"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives"
   },
   {
+    "itemId": "5d9bf239-7344-4e8f-8475-ca38c9582065",
     "category": "exams",
     "navigationKeyword1": "comptia",
     "navigationKeyword2": "cysa-plus",
@@ -196,7 +197,6 @@
       "soc-analyst",
       "comptia"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/least_privilege",
-    "seedId": "44b7c437-70d7-4fe3-8f48-ea918cfb8d15"
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege"
   }
 ]

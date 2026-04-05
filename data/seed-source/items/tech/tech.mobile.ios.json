@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ac9675be-86b7-44fa-b1c2-143761e5663e",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -15,10 +16,10 @@
       "ios",
       "uikit"
     ],
-    "source": "https://developer.apple.com/documentation/uikit/uiviewcontroller",
-    "seedId": "e67c66d3-53e6-50f2-968e-0ca413c4991b"
+    "source": "https://developer.apple.com/documentation/uikit/uiviewcontroller"
   },
   {
+    "itemId": "007fb7cf-6831-4d2b-9b51-45e23a28722c",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -34,10 +35,10 @@
       "ios",
       "swift"
     ],
-    "source": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
-    "seedId": "d4eb5418-1137-57bc-811b-16d5078ec1ee"
+    "source": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
   },
   {
+    "itemId": "321085ef-7743-4d90-bc28-be41331378aa",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -53,10 +54,10 @@
       "ios",
       "security"
     ],
-    "source": "https://owasp.org/www-project-mobile-security-testing-guide/",
-    "seedId": "1b0a62fe-dfa6-519d-8023-43f270dd952a"
+    "source": "https://owasp.org/www-project-mobile-security-testing-guide/"
   },
   {
+    "itemId": "60eb1d81-c7cc-4b89-8799-89772f3d2a89",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -72,10 +73,10 @@
       "ios",
       "swiftui"
     ],
-    "source": "https://developer.apple.com/documentation/swiftui/view",
-    "seedId": "a04f04d0-00ff-594c-8c4c-1de1dc2f3593"
+    "source": "https://developer.apple.com/documentation/swiftui/view"
   },
   {
+    "itemId": "ca02d184-9a29-4ef2-8bab-011acb590103",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -91,10 +92,10 @@
       "ios",
       "layout"
     ],
-    "source": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/",
-    "seedId": "96bc8e4f-8a55-5d47-8184-9ae12519531f"
+    "source": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/"
   },
   {
+    "itemId": "86aac5f8-a04e-4bf3-b38e-c57dfb61589f",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "ios",
@@ -110,7 +111,6 @@
       "ios",
       "combine"
     ],
-    "source": "https://developer.apple.com/documentation/combine",
-    "seedId": "c7a5780d-9bbf-5a4b-983f-0e34a9a23f2d"
+    "source": "https://developer.apple.com/documentation/combine"
   }
 ]

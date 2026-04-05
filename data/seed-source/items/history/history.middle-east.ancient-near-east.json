@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "019cac31-8459-43fe-a78d-c73f214fe651",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -8,7 +9,7 @@
     "incorrectAnswers": [
       "Phoenicia alone",
       "The Hittite lake district",
-      "Meroë on the Upper Nile"
+      "Mero\u00eb on the Upper Nile"
     ],
     "explanation": "Sumerian experiment with pictographs on clay evolved into the wedge-shaped script later adapted for Akkadian and other languages.",
     "keywords": [
@@ -16,10 +17,10 @@
       "mesopotamia",
       "cuneiform"
     ],
-    "source": "https://www.britannica.com/place/Sumer",
-    "seedId": "b8b90ba9-94c5-4e0b-ae6c-e465678c622d"
+    "source": "https://www.britannica.com/place/Sumer"
   },
   {
+    "itemId": "69e38dfd-6640-4518-a58b-d59d9033b6c0",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -36,10 +37,10 @@
       "writing",
       "mesopotamia"
     ],
-    "source": "https://www.britannica.com/topic/cuneiform",
-    "seedId": "9105add7-1bc9-48c5-8679-f540c4327168"
+    "source": "https://www.britannica.com/topic/cuneiform"
   },
   {
+    "itemId": "120ce97d-0df3-49cc-b7ba-b153d257caaf",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -50,20 +51,20 @@
       "Ashurbanipal of Assyria",
       "Cyrus the Great of Persia"
     ],
-    "explanation": "The stele’s prologue casts Hammurabi as establishing justice; its laws illustrate social ranks and penalties in Old Babylonian society.",
+    "explanation": "The stele\u2019s prologue casts Hammurabi as establishing justice; its laws illustrate social ranks and penalties in Old Babylonian society.",
     "keywords": [
       "hammurabi",
       "babylon",
       "law"
     ],
-    "source": "https://www.britannica.com/topic/Code-of-Hammurabi",
-    "seedId": "dd15d6c1-7860-4c01-a7eb-a588b305c510"
+    "source": "https://www.britannica.com/topic/Code-of-Hammurabi"
   },
   {
+    "itemId": "e323573e-42d2-440a-9bbc-fd87652ba2e1",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
-    "question": "Which Akkadian ruler’s legends describe the unification of southern Mesopotamian cities around 2334–2279 bce?",
+    "question": "Which Akkadian ruler\u2019s legends describe the unification of southern Mesopotamian cities around 2334\u20132279 bce?",
     "correctAnswer": "Sargon of Akkad",
     "incorrectAnswers": [
       "Cyrus the Great in 3000 bce",
@@ -76,14 +77,14 @@
       "akkad",
       "empire"
     ],
-    "source": "https://www.britannica.com/biography/Sargon",
-    "seedId": "877fd0d9-5df3-4a13-b39e-5392bf9cda25"
+    "source": "https://www.britannica.com/biography/Sargon"
   },
   {
+    "itemId": "2bfd8d35-3994-4930-9528-de6ecf060397",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
-    "question": "Ramses II’s inconclusive clash with Hittite chariotry near Kadesh on the Orontes belongs to which century bce?",
+    "question": "Ramses II\u2019s inconclusive clash with Hittite chariotry near Kadesh on the Orontes belongs to which century bce?",
     "correctAnswer": "The 13th century bce (c. 1299 bce)",
     "incorrectAnswers": [
       "The 6th century bce",
@@ -96,19 +97,19 @@
       "kadesh",
       "egypt"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Kadesh",
-    "seedId": "ce4d8a44-f1fe-4696-9755-9ef6bebe8a5d"
+    "source": "https://www.britannica.com/event/Battle-of-Kadesh"
   },
   {
+    "itemId": "655ef155-5491-4c30-bbda-8230add7825e",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
-    "question": "Which Mesopotamian kingdom’s Nineveh library preserved thousands of tablets later rediscovered by 19th-century excavators?",
+    "question": "Which Mesopotamian kingdom\u2019s Nineveh library preserved thousands of tablets later rediscovered by 19th-century excavators?",
     "correctAnswer": "Assyria",
     "incorrectAnswers": [
       "Minoan Crete",
       "The Indus cities alone",
-      "Meroë without cuneiform"
+      "Mero\u00eb without cuneiform"
     ],
     "explanation": "Royal obsession with omens and annals created an archive that became key to deciphering Akkadian literature.",
     "keywords": [
@@ -116,18 +117,18 @@
       "nineveh",
       "cuneiform"
     ],
-    "source": "https://www.britannica.com/place/Assyria",
-    "seedId": "8e8c6a72-34a1-4329-971b-a148e830483b"
+    "source": "https://www.britannica.com/place/Assyria"
   },
   {
+    "itemId": "19a0f96f-8d77-4c69-8b9f-87a9f4407c69",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
-    "question": "Nebuchadrezzar II’s Babylonian campaigns culminated in the deportation of Judah’s elite after which 586 bce event?",
+    "question": "Nebuchadrezzar II\u2019s Babylonian campaigns culminated in the deportation of Judah\u2019s elite after which 586 bce event?",
     "correctAnswer": "The destruction of Jerusalem and its Temple",
     "incorrectAnswers": [
       "The fall of Persepolis in 586 bce",
-      "Alexander’s siege of Tyre in 586 bce",
+      "Alexander\u2019s siege of Tyre in 586 bce",
       "The Assyrian capture of Thebes that year"
     ],
     "explanation": "Exilic biblical texts reframed catastrophe as covenant trial, while Babylonian sources trumpet imperial pacification.",
@@ -136,10 +137,10 @@
       "babylon",
       "judah"
     ],
-    "source": "https://www.britannica.com/biography/Nebuchadnezzar-II",
-    "seedId": "3c32d822-4189-4671-b193-044f9f367450"
+    "source": "https://www.britannica.com/biography/Nebuchadnezzar-II"
   },
   {
+    "itemId": "48ce06f3-8f76-4c7a-95b2-d422b89a5099",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -150,16 +151,16 @@
       "Alexander in 539 bce",
       "Sargon of Ur"
     ],
-    "explanation": "The Cyrus Cylinder’s rhetoric of repatriation became a touchstone for modern debates about ancient human-rights language.",
+    "explanation": "The Cyrus Cylinder\u2019s rhetoric of repatriation became a touchstone for modern debates about ancient human-rights language.",
     "keywords": [
       "cyrus",
       "persia",
       "babylon"
     ],
-    "source": "https://www.britannica.com/biography/Cyrus-the-Great",
-    "seedId": "1c987369-a272-4e83-b93d-ab7caa702dc8"
+    "source": "https://www.britannica.com/biography/Cyrus-the-Great"
   },
   {
+    "itemId": "ed30150b-5d81-4cd0-a4e3-c96b640218e0",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -170,16 +171,16 @@
       "The Hittites alone",
       "The Sea Peoples as a single script"
     ],
-    "explanation": "City identity remained local—Tyre, Sidon, Byblos—yet maritime networks carried their writing across the Mediterranean.",
+    "explanation": "City identity remained local\u2014Tyre, Sidon, Byblos\u2014yet maritime networks carried their writing across the Mediterranean.",
     "keywords": [
       "phoenicia",
       "alphabet",
       "trade"
     ],
-    "source": "https://www.britannica.com/topic/Phoenician-alphabet",
-    "seedId": "056a0f56-ed17-40f3-9658-97badcede239"
+    "source": "https://www.britannica.com/topic/Phoenician-alphabet"
   },
   {
+    "itemId": "10fad517-99a3-42a9-87b8-aa8a540ca6cf",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -190,16 +191,16 @@
       "Knossos",
       "Mohenjo-daro"
     ],
-    "explanation": "Baʿal cycle narratives there parallel later Levantine religious motifs known from Hebrew Bible studies.",
+    "explanation": "Ba\u02bfal cycle narratives there parallel later Levantine religious motifs known from Hebrew Bible studies.",
     "keywords": [
       "ugarit",
       "syria",
       "cuneiform"
     ],
-    "source": "https://www.britannica.com/place/Ugarit",
-    "seedId": "7b612f47-76b1-4bf4-82b6-a5d0e0db14bc"
+    "source": "https://www.britannica.com/place/Ugarit"
   },
   {
+    "itemId": "8dfb45a0-0c6f-4fb9-8634-336e21b13660",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
@@ -210,24 +211,24 @@
       "The Pyramid Texts",
       "The Rigveda in cuneiform"
     ],
-    "explanation": "Its flood narrative invited comparison with Genesis, energizing Assyriology’s public reception in the Victorian era.",
+    "explanation": "Its flood narrative invited comparison with Genesis, energizing Assyriology\u2019s public reception in the Victorian era.",
     "keywords": [
       "gilgamesh",
       "mesopotamia",
       "literature"
     ],
-    "source": "https://www.britannica.com/topic/Epic-of-Gilgamesh",
-    "seedId": "77c9d5b8-f802-4018-9a67-a6a2d8254cd8"
+    "source": "https://www.britannica.com/topic/Epic-of-Gilgamesh"
   },
   {
+    "itemId": "a275120e-4053-4cf0-86fa-13ee4f951c18",
     "category": "history",
     "navigationKeyword1": "middle-east",
     "navigationKeyword2": "ancient-near-east",
     "question": "Which collection of scriptures, shaped largely in Hebrew between roughly 1200 and 100 bce, centers covenant, exile, and return narratives for ancient Israel?",
     "correctAnswer": "The Hebrew Bible",
     "incorrectAnswers": [
-      "The Qurʾān in its 1st-century form",
-      "The Buddhist Tripiṭaka",
+      "The Qur\u02be\u0101n in its 1st-century form",
+      "The Buddhist Tripi\u1e6daka",
       "The Homeric corpus"
     ],
     "explanation": "Its historical books intertwine theology with politics, influencing later Jewish, Christian, and Islamic readings of the Levantine past.",
@@ -236,7 +237,6 @@
       "levant",
       "israel"
     ],
-    "source": "https://www.britannica.com/topic/Hebrew-Bible",
-    "seedId": "ed3baad0-2b24-4ed6-81e0-1bdb3fb714c0"
+    "source": "https://www.britannica.com/topic/Hebrew-Bible"
   }
 ]

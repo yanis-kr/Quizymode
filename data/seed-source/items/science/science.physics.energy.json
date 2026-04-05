@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "48d10397-d5e5-42ca-9748-ac9361d55470",
+    "itemId": "c0e255a6-e0d8-4112-83fa-e070ba90397a",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -19,7 +19,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-2-work"
   },
   {
-    "seedId": "9d503560-ad84-4fab-870d-5eba08360454",
+    "itemId": "a6f748e4-fd1b-45cf-88b0-3cd52a42e719",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -38,7 +38,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-3-kinetic-energy"
   },
   {
-    "seedId": "cef0d5a6-1389-4200-9cbd-ec34636492cc",
+    "itemId": "d7c6efa4-3ffe-4fb7-8246-62de39ac3ec8",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -57,7 +57,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-4-potential-energy"
   },
   {
-    "seedId": "3380d756-2a16-4a44-bb1c-4d86c48c452b",
+    "itemId": "d974c0b8-5e99-42a2-be95-50fae23eb038",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -76,11 +76,11 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-5-work-energy-theorem"
   },
   {
-    "seedId": "150d42ed-e1a8-43c2-9995-f1d88ca5441a",
+    "itemId": "024ff597-dd2a-43c4-9fb0-dea7bdd31508",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
-    "question": "Power?",
+    "question": "In physics, what is power?",
     "correctAnswer": "P = dW/dt = F\u00b7v (instantaneous)",
     "incorrectAnswers": [
       "P = W + t",
@@ -95,7 +95,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-6-power"
   },
   {
-    "seedId": "362dbcff-a6fb-41fd-9e05-bb2a12f60f78",
+    "itemId": "89635827-c4a2-46f5-b588-1669d60473aa",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -114,7 +114,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
   },
   {
-    "seedId": "85dc344c-8e0d-4806-8407-20cb8ba57d48",
+    "itemId": "998842fe-eb94-4616-9cac-4368d1c37df8",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -133,7 +133,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-7-energy-of-a-system"
   },
   {
-    "seedId": "b5b53b7b-437d-4fb6-b129-b2e6392b5701",
+    "itemId": "f0006634-43be-43e2-a8bf-09466ca17714",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -152,7 +152,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-8-potential-energy-of-a-system"
   },
   {
-    "seedId": "a773693b-7c49-4f1e-9f0d-f3bf2dfb8f9a",
+    "itemId": "7f3b0225-72a8-4ea5-ace1-1d3b7234a254",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -171,7 +171,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/7-9-energy-conservation"
   },
   {
-    "seedId": "273701e8-73af-40e7-832e-f6a50ee8c726",
+    "itemId": "484a571c-ead9-476b-a30a-5088ee58b664",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -190,7 +190,7 @@
     "source": "https://www.energy.gov/eere/renewable-energy"
   },
   {
-    "seedId": "da47f427-039e-40fc-9030-89d161c87168",
+    "itemId": "5e9cf5f6-b6fb-47ef-9474-0664f0b449d4",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",
@@ -209,7 +209,7 @@
     "source": "https://openstax.org/books/university-physics-volume-1/pages/10-4-rotational-kinetic-energy"
   },
   {
-    "seedId": "8771d691-b4f0-4eec-b42d-a6fb41361110",
+    "itemId": "8e14df6c-386e-41ae-859b-5c93b449ffe3",
     "category": "science",
     "navigationKeyword1": "physics",
     "navigationKeyword2": "energy",

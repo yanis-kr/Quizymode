@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "990516cc-2f17-4b89-a02f-e71adaf10916",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -16,10 +17,10 @@
       "maps",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used",
-    "seedId": "2a946ad3-b949-4f64-9ff5-6bceab0aeb5e"
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
   },
   {
+    "itemId": "49d4f831-f23b-4f0e-b21d-a4abe979cdfe",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -36,10 +37,10 @@
       "distortion",
       "globe"
     ],
-    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used",
-    "seedId": "d0b3b99d-8a67-47f3-ab96-e566946a7d84"
+    "source": "https://www.usgs.gov/faqs/how-are-different-map-projections-used"
   },
   {
+    "itemId": "26df2978-2029-496e-bd2d-17b115893d35",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -56,10 +57,10 @@
       "utm",
       "mercator"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
-    "seedId": "db884294-e998-4317-9e55-a2524c4187d7"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
   },
   {
+    "itemId": "4c79e69d-f39f-4264-a90e-f23ae8299ccc",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -70,16 +71,16 @@
       "10 degrees",
       "15 degrees"
     ],
-    "explanation": "USGS specifies each UTM zone spans 6° of longitude.",
+    "explanation": "USGS specifies each UTM zone spans 6\u00b0 of longitude.",
     "keywords": [
       "projection",
       "utm",
       "zones"
     ],
-    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude",
-    "seedId": "ba91ac74-d2a5-4944-9013-ab9e4663beb1"
+    "source": "https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude"
   },
   {
+    "itemId": "cfd532c9-d2a7-44db-994b-3ea4372d9eae",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -96,14 +97,14 @@
       "cartography",
       "basics"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "aff489e8-47cc-4fd1-8cdf-f02f1857b55d"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "a3f8c2e0-d328-494d-9588-cb568b3e44aa",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
-    "question": "Which representation does Britannica say can truly represent the entire Earth’s surface without projection trade-offs?",
+    "question": "Which representation does Britannica say can truly represent the entire Earth\u2019s surface without projection trade-offs?",
     "correctAnswer": "a globe",
     "incorrectAnswers": [
       "any flat wall map",
@@ -116,10 +117,10 @@
       "globe",
       "accuracy"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "eee45d92-207c-4755-b1b2-aec9126924fe"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "d418810e-0d4b-4fe0-8eb0-748a9eddc2cb",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -136,10 +137,10 @@
       "hydrography",
       "oceans"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "670485c3-de6b-44f4-b567-f06c8cd5ef89"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "8dd01497-de7a-425f-9971-9c5ed798e304",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -156,10 +157,10 @@
       "wind-rose",
       "history"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology",
-    "seedId": "cd2b5f50-c1a8-4e48-85c9-b87fd04d55e9"
+    "source": "https://www.britannica.com/technology/navigation-technology"
   },
   {
+    "itemId": "fb689081-d3d6-460b-b382-2929e2eb4b9d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -176,10 +177,10 @@
       "wind-rose",
       "navigation"
     ],
-    "source": "https://www.britannica.com/technology/navigation-technology",
-    "seedId": "d1790696-930a-4310-b696-35809abf61b8"
+    "source": "https://www.britannica.com/technology/navigation-technology"
   },
   {
+    "itemId": "7a8e741a-9c45-4fc7-923d-9f16a134b342",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -196,10 +197,10 @@
       "gis",
       "us-topo"
     ],
-    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis",
-    "seedId": "f319d5d7-422a-4288-9d37-554dc3debd0a"
+    "source": "https://www.usgs.gov/faqs/can-i-import-a-us-topo-map-my-geographic-information-system-gis"
   },
   {
+    "itemId": "2da9309f-cdc9-4c40-bbb1-99af2a320fd7",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "projection",
@@ -210,13 +211,12 @@
       "the Federal Reserve Board",
       "the U.S. Mint"
     ],
-    "explanation": "NOAA Climate.gov lists NCEI’s Map Viewer Application for finding climate and weather data.",
+    "explanation": "NOAA Climate.gov lists NCEI\u2019s Map Viewer Application for finding climate and weather data.",
     "keywords": [
       "projection",
       "noaa",
       "gis"
     ],
-    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator",
-    "seedId": "08c413c6-7fa3-4430-9167-c24296639903"
+    "source": "https://www.climate.gov/maps-data/dataset/ncei-map-viewer-application-data-locator"
   }
 ]

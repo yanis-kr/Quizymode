@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "74af2e92-a820-4953-8b94-77c938abf08f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -19,10 +20,10 @@
       "elasticache",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "32933e32-523e-42dd-b9cb-fdfbade875e9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d72678d8-ce18-46e1-95f5-af2fb823f08e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -39,14 +40,14 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a992f510-4e71-411e-a38d-ccf85dcc8d62"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7ac57687-e275-4361-a797-d5fa51be873b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the\nAWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "question": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the\nAWS Cloud. The job runs every 10 minutes. The job\u2019s runtime varies between 1 minute and 3 minutes.\nWhich solution will meet these requirements MOST cost-effectively?",
     "correctAnswer": "Create an AWS Lambda function based on the container image of the job. Configure Amazon EventBridge to invoke the function every 10 minutes.",
     "incorrectAnswers": [
       "Use AWS Batch to create a job that uses AWS Fargate resources. Configure the job scheduling to run every 10 minutes.",
@@ -61,10 +62,10 @@
       "lambda",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8af90f17-7e82-4805-b39d-dba39cb13db3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ea983354-a96f-4843-b235-126689d0f885",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -82,10 +83,10 @@
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ce52d19d-8873-40ce-8185-6ddd2aef5936"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "6594ad7a-e80d-462f-a969-f539efb09fde",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -107,10 +108,10 @@
       "fargate",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "042ce967-8890-49f3-99f7-cd6b17177e7e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b0e98721-1da1-47d2-92ed-a16ca41eb967",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -130,10 +131,10 @@
       "vpc",
       "site-to-site-vpn"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cc45a2b0-9eb7-4395-9741-2ae0a74d9ae6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2a6e3f2d-6a8d-4d2a-a476-a6d2e6a6add2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -152,10 +153,10 @@
       "iam",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e3e882af-1fb4-4b3e-bd8d-04e786f8eb6a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8fcf3f26-af66-4423-b223-c4b86336d41e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -174,10 +175,10 @@
       "sns",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7228c178-79f6-4c8f-849c-68fac4e87f2b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8e9decb9-1e98-4941-b2d7-ba697979ae71",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -198,10 +199,10 @@
       "s3",
       "emr"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7c5c43e6-5368-486f-8ab7-1508a9f69edf"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9b2dc71f-773f-41fc-995b-21a7146a4da3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -221,10 +222,10 @@
       "sqs",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4d5c0b48-2e21-4c08-ab67-3a5b34da7a85"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7466aff5-1c76-46e7-a1b9-3eb675436e89",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -243,10 +244,10 @@
       "ec2",
       "systems-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8234c3ca-0210-4c31-8d1d-94f2b1836622"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "39d7b879-cbd0-4fbd-bd03-7d5570f64020",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -265,14 +266,14 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d43a2a9d-f602-490d-ae7f-b8d8469d97d0"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "cd3360b1-8932-4579-bdca-f710b6a9f7d4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is conducting an internal audit. The company wants to ensure that the data in an Amazon S3 bucket that is associated with the\ncompany’s AWS Lake Formation data lake does not contain sensitive customer or employee data. The company wants to discover personally\nidentiable information (PII) or nancial information, including passport numbers and credit card numbers.\nWhich solution will meet these requirements?",
+    "question": "A company is conducting an internal audit. The company wants to ensure that the data in an Amazon S3 bucket that is associated with the\ncompany\u2019s AWS Lake Formation data lake does not contain sensitive customer or employee data. The company wants to discover personally\nidentiable information (PII) or nancial information, including passport numbers and credit card numbers.\nWhich solution will meet these requirements?",
     "correctAnswer": "Configure AWS Audit Manager on the account. Select the Payment Card Industry Data Security Standards (PCI DSS) for auditing.",
     "incorrectAnswers": [
       "Configure Amazon S3 Inventory on the S3 bucket Configure Amazon Athena to query the inventory.",
@@ -285,10 +286,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bba75419-b1db-48de-bee2-63cb2845471d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "16ccb934-aa70-4b75-83d7-ca96f1b99a7e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -309,10 +310,10 @@
       "vpc",
       "nat-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "002f1408-f96c-4a54-a4a1-d8a0a10d437a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "34e02913-c35b-4484-98fd-10b0cd4a228c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -329,10 +330,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "2e624ca1-65f2-401d-bb1e-0f33535b06c7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "06d9c8b9-683a-405c-ab10-3c7727b1f9c6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -349,10 +350,10 @@
       "aws-networking",
       "direct-connect"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ef153798-5c9e-4652-a87e-536fdd82d149"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2a4225dc-c038-4626-b45d-a1bd0b92756a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -372,15 +373,15 @@
       "lambda",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "127ca48d-3186-4f89-982c-c29d15ac558d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a5a27b68-2202-418d-9e8e-fe65f3dbeacd",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company runs an infrastructure monitoring service. The company is building a new feature that will enable the service to monitor data in\ncustomer AWS accounts. The new feature will call AWS APIs in customer accounts to describe Amazon EC2 instances and read Amazon\nCloudWatch metrics.\nWhat should the company do to obtain access to customer accounts in the MOST secure way?",
-    "correctAnswer": "Ensure that the customers create an IAM role in their account with read-only EC2 and CloudWatch permissions and a trust policy to the company’s account.",
+    "correctAnswer": "Ensure that the customers create an IAM role in their account with read-only EC2 and CloudWatch permissions and a trust policy to the company\u2019s account.",
     "incorrectAnswers": [
       "Create a serverless API that implements a token vending machine to provide temporary AWS credentials for a role with read-only EC2 and CloudWatch permissions.",
       "Ensure that the customers create an IAM user in their account with read-only EC2 and CloudWatch permissions. Encrypt and store customer access and secret keys in a secrets management system.",
@@ -395,19 +396,19 @@
       "iam",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f77d752b-85e9-4135-b2c3-915ec31f1a82"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1e07458f-4650-421f-9255-ce55b7354863",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company needs to connect several VPCs in the us-east-1 Region that span hundreds of AWS accounts. The company's networking team has its\nown AWS account to manage the cloud network.\nWhat is the MOST operationally efficient solution to connect the VPCs?",
-    "correctAnswer": "Set up VPC peering connections between each VPC. Update each associated subnet’s route table",
+    "correctAnswer": "Set up VPC peering connections between each VPC. Update each associated subnet\u2019s route table",
     "incorrectAnswers": [
       "Configure a NAT gateway and an internet gateway in each VPC to connect each VPC through the internet",
-      "Create an AWS Transit Gateway in the networking team’s AWS account. Configure static routes from each VPC.",
-      "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team’s AWS account to connect to each VPC."
+      "Create an AWS Transit Gateway in the networking team\u2019s AWS account. Configure static routes from each VPC.",
+      "Deploy VPN gateways in each VPC. Create a transit VPC in the networking team\u2019s AWS account to connect to each VPC."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #504). Correct choice: A.",
     "keywords": [
@@ -415,10 +416,10 @@
       "aws-networking",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "afffdb3d-a206-4bb3-9d6b-99d277540b71"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7ceb6f46-a10c-497e-a85e-5c3ad8bbd865",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -437,7 +438,6 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "0cc41196-cc9c-4be0-9822-8026be0533f9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

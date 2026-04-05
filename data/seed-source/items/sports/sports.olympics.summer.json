@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3ec69719-51dc-4efb-9ee3-240e65dabe80",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -16,30 +17,10 @@
       "summer",
       "cycle"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "e4269e4b-ed22-50c8-a65b-9e35722a3595"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "olympics",
-    "navigationKeyword2": "summer",
-    "question": "Which city hosted the 2024 Summer Olympics?",
-    "correctAnswer": "Paris",
-    "incorrectAnswers": [
-      "Tokyo",
-      "Los Angeles",
-      "London"
-    ],
-    "explanation": "Paris hosted the 2024 Summer Games.",
-    "keywords": [
-      "olympics",
-      "summer",
-      "paris"
-    ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "ab42a91a-5b8f-5935-8c18-807d28cd4181"
-  },
-  {
+    "itemId": "01343df4-d4b7-4f2a-8fd2-bdc2895436bb",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -56,10 +37,10 @@
       "summer",
       "tokyo"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "42f3b416-beb1-5fa3-b8dd-77513fe66cad"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
+    "itemId": "7f6f4d38-28fd-45a5-81ad-bbe871c7f9d2",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -76,10 +57,10 @@
       "summer",
       "rings"
     ],
-    "source": "https://www.britannica.com/sports/Olympic-Games",
-    "seedId": "8848ce17-82a7-5381-88c0-93c1c15f1737"
+    "source": "https://www.britannica.com/sports/Olympic-Games"
   },
   {
+    "itemId": "66355e5d-5a67-4b57-9fb6-fa32d9c5cdaf",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -96,50 +77,10 @@
       "summer",
       "beijing"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "547c4b50-0622-5c7f-a263-4a506e99ab98"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "olympics",
-    "navigationKeyword2": "summer",
-    "question": "Which city hosted the 2016 Summer Olympics?",
-    "correctAnswer": "Rio de Janeiro",
-    "incorrectAnswers": [
-      "London",
-      "Tokyo",
-      "Madrid"
-    ],
-    "explanation": "Rio hosted the 2016 Summer Games.",
-    "keywords": [
-      "olympics",
-      "summer",
-      "rio"
-    ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "6e3c3188-1dca-5fe4-a4d3-17b3dec9a63c"
-  },
-  {
-    "category": "sports",
-    "navigationKeyword1": "olympics",
-    "navigationKeyword2": "summer",
-    "question": "Which city hosted the 2012 Summer Olympics?",
-    "correctAnswer": "London",
-    "incorrectAnswers": [
-      "Paris",
-      "Athens",
-      "Sydney"
-    ],
-    "explanation": "London hosted the 2012 Summer Games.",
-    "keywords": [
-      "olympics",
-      "summer",
-      "london"
-    ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "3c9b3038-7ced-5156-b730-da68a9dd10fa"
-  },
-  {
+    "itemId": "922c5e91-1304-4862-ab32-716db6d3f0c4",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -156,30 +97,10 @@
       "summer",
       "sydney"
     ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "2dcb1cbf-c598-5284-a798-a132e23f164b"
+    "source": "https://olympics.com/en/olympic-games"
   },
   {
-    "category": "sports",
-    "navigationKeyword1": "olympics",
-    "navigationKeyword2": "summer",
-    "question": "Which city will host the 2028 Summer Olympics?",
-    "correctAnswer": "Los Angeles",
-    "incorrectAnswers": [
-      "Brisbane",
-      "Paris",
-      "Rome"
-    ],
-    "explanation": "Los Angeles is the planned host of the 2028 Summer Games.",
-    "keywords": [
-      "olympics",
-      "summer",
-      "los-angeles"
-    ],
-    "source": "https://olympics.com/en/olympic-games",
-    "seedId": "da3af338-c40f-5d7c-8379-6f19275ed359"
-  },
-  {
+    "itemId": "efe4560a-01fb-475a-9896-b5991ad9d8a1",
     "category": "sports",
     "navigationKeyword1": "olympics",
     "navigationKeyword2": "summer",
@@ -196,7 +117,6 @@
       "summer",
       "athens"
     ],
-    "source": "https://www.britannica.com/sports/Olympic-Games",
-    "seedId": "b94cece3-5524-5701-b600-351a33510979"
+    "source": "https://www.britannica.com/sports/Olympic-Games"
   }
 ]

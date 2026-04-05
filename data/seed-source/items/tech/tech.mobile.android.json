@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "16df5d23-1c52-4397-aa64-c57a11062f47",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -15,10 +16,10 @@
       "android",
       "activity"
     ],
-    "source": "https://developer.android.com/guide/components/activities/intro-activities",
-    "seedId": "fbacfd8f-ecb0-5641-be47-ce4b7a56fd1c"
+    "source": "https://developer.android.com/guide/components/activities/intro-activities"
   },
   {
+    "itemId": "02b6103e-9229-4c1c-9238-b9c486923b36",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -34,10 +35,10 @@
       "android",
       "packaging"
     ],
-    "source": "https://developer.android.com/guide/app-bundle",
-    "seedId": "a6c177df-3868-5691-a919-386ca628e86e"
+    "source": "https://developer.android.com/guide/app-bundle"
   },
   {
+    "itemId": "c9db423d-a517-4766-9561-77b64dd701da",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -53,10 +54,10 @@
       "android",
       "intents"
     ],
-    "source": "https://developer.android.com/guide/components/intents-filters",
-    "seedId": "5bb8d66f-25f1-5800-99f0-5c479e3a0804"
+    "source": "https://developer.android.com/guide/components/intents-filters"
   },
   {
+    "itemId": "81c91bc6-5d64-4e75-8e06-427526242327",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -72,10 +73,10 @@
       "android",
       "kotlin"
     ],
-    "source": "https://kotlinlang.org/docs/android-overview.html",
-    "seedId": "531b7e13-2d8d-5ee4-bb21-f24af8f75bf9"
+    "source": "https://kotlinlang.org/docs/android-overview.html"
   },
   {
+    "itemId": "dafd62bd-81b6-4b52-8672-4a55748cda0d",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -91,10 +92,10 @@
       "android",
       "manifest"
     ],
-    "source": "https://developer.android.com/guide/topics/manifest/manifest-intro",
-    "seedId": "3131372c-a8d8-50e6-abe9-aba3a5c6faf2"
+    "source": "https://developer.android.com/guide/topics/manifest/manifest-intro"
   },
   {
+    "itemId": "06bee9ea-b30e-4842-b29c-6cb57c73cf34",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "android",
@@ -110,7 +111,6 @@
       "android",
       "services"
     ],
-    "source": "https://source.android.com/docs/core/background",
-    "seedId": "d8a79bec-ebbb-50ce-8d3b-550a2a9a5701"
+    "source": "https://source.android.com/docs/core/background"
   }
 ]

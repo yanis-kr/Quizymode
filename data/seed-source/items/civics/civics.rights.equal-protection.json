@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3006a12d-03d0-4626-90fe-a545ce18b171",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
@@ -15,10 +16,10 @@
       "equal-protection",
       "fourteenth-amendment"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-14/",
-    "seedId": "4838c084-9111-5d6e-a203-46c1f3c373a1"
+    "source": "https://constitution.congress.gov/constitution/amendment-14/"
   },
   {
+    "itemId": "74184480-7ed2-4158-98b9-679929978871",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
@@ -34,10 +35,10 @@
       "equal-protection",
       "classification"
     ],
-    "source": "https://www.law.cornell.edu/wex/equal_protection",
-    "seedId": "a0a86d89-ea72-5e12-97a6-aabb7d02d1b5"
+    "source": "https://www.law.cornell.edu/wex/equal_protection"
   },
   {
+    "itemId": "db678f42-bb90-4f23-b363-4dbf97c1dd9b",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
@@ -53,10 +54,10 @@
       "equal-protection",
       "strict-scrutiny"
     ],
-    "source": "https://www.law.cornell.edu/wex/strict_scrutiny",
-    "seedId": "8e206a9d-14dc-5e6d-a2e2-cee2b5c4918e"
+    "source": "https://www.law.cornell.edu/wex/strict_scrutiny"
   },
   {
+    "itemId": "fd8240f8-00c8-454f-9b53-1066f954f0a9",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
@@ -72,14 +73,14 @@
       "equal-protection",
       "intermediate-scrutiny"
     ],
-    "source": "https://www.law.cornell.edu/wex/intermediate_scrutiny",
-    "seedId": "67c41b8d-ce87-5f7a-af43-0648855a7d6b"
+    "source": "https://www.law.cornell.edu/wex/intermediate_scrutiny"
   },
   {
+    "itemId": "f1455ca4-0d0b-49e8-afb3-b2e77c83fb4c",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
-    "question": "Does the Fifth Amendment’s due process clause include an equal protection component for the federal government?",
+    "question": "Does the Fifth Amendment\u2019s due process clause include an equal protection component for the federal government?",
     "correctAnswer": "yes, through doctrine tied to federal action",
     "incorrectAnswers": [
       "no, never",
@@ -91,10 +92,10 @@
       "equal-protection",
       "fifth-amendment"
     ],
-    "source": "https://www.law.cornell.edu/wex/bolling_v._sharpe",
-    "seedId": "fa9950b3-7318-50bf-a075-57b7a4ee2087"
+    "source": "https://www.law.cornell.edu/wex/bolling_v._sharpe"
   },
   {
+    "itemId": "0b54218c-8c36-487a-912d-44a659feca41",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "equal-protection",
@@ -105,12 +106,11 @@
       "Congress must run local schools",
       "segregation is allowed if buses are equal"
     ],
-    "explanation": "The Court rejected “separate but equal” for public education because separation stamped minority children with inferiority.",
+    "explanation": "The Court rejected \u201cseparate but equal\u201d for public education because separation stamped minority children with inferiority.",
     "keywords": [
       "equal-protection",
       "brown-v-board"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/brown-v-board-education-re-enactment",
-    "seedId": "98d13bc2-40a5-5f42-92e2-ed590a3e53b9"
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/brown-v-board-education-re-enactment"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1c725dd4-0c00-4afd-8f0b-0440b398db1c",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -15,10 +16,10 @@
       "trial-close",
       "sales-skills"
     ],
-    "source": "https://www.salesforce.com/blog/sales-closing-techniques/",
-    "seedId": "81e4e174-e019-4184-b43c-e1d4df898f2a"
+    "source": "https://www.salesforce.com/blog/sales-closing-techniques/"
   },
   {
+    "itemId": "e27fae48-2803-48f6-82dc-592949c5c229",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -34,10 +35,10 @@
       "assumptive-close",
       "trust"
     ],
-    "source": "https://blog.hubspot.com/sales/closing-techniques",
-    "seedId": "a990cd21-8754-495f-bf9d-6881957ecb2e"
+    "source": "https://blog.hubspot.com/sales/closing-techniques"
   },
   {
+    "itemId": "0343557b-48e4-402b-a007-5382aca73b22",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -53,10 +54,10 @@
       "objections",
       "sales-process"
     ],
-    "source": "https://www.gong.io/blog/sales-objections",
-    "seedId": "8d08cdbe-8aa7-48d0-8461-1d781d49102f"
+    "source": "https://www.gong.io/blog/sales-objections"
   },
   {
+    "itemId": "6eb83b4f-2be3-4ac1-a7f3-02ba8509d780",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -72,10 +73,10 @@
       "next-steps",
       "discipline"
     ],
-    "source": "https://www.salesforce.com/blog/sales-follow-up/",
-    "seedId": "7001ac49-0f97-4b84-9e7f-aa3bb886795e"
+    "source": "https://www.salesforce.com/blog/sales-follow-up/"
   },
   {
+    "itemId": "c822b22b-c6a2-4732-865f-9e9bef26fbbf",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -91,10 +92,10 @@
       "enterprise-sales",
       "procurement"
     ],
-    "source": "https://www.investopedia.com/terms/e/enterprise-sales.asp",
-    "seedId": "cfac5fc4-32b1-4c7c-9df6-b3c8a0c0ae20"
+    "source": "https://www.investopedia.com/terms/e/enterprise-sales.asp"
   },
   {
+    "itemId": "164bc3ca-0b42-48ab-be96-3496c3b3118b",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "closing",
@@ -110,7 +111,6 @@
       "mutual-action-plan",
       "closing"
     ],
-    "source": "https://www.gong.io/blog/mutual-action-plan",
-    "seedId": "e5137cf7-e590-4594-9a17-4a6c78213759"
+    "source": "https://www.gong.io/blog/mutual-action-plan"
   }
 ]

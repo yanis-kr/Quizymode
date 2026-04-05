@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b425d028-fd52-4429-99b2-a235caa4decd",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "genres",
@@ -15,10 +16,10 @@
       "film-genres",
       "cinema"
     ],
-    "source": "https://www.britannica.com/art/motion-picture",
-    "seedId": "64524b9b-9001-5604-8839-be1423e9d3b2"
+    "source": "https://www.britannica.com/art/motion-picture"
   },
   {
+    "itemId": "247a4127-78ee-4f02-bb88-0d3c2fb46f11",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "genres",
@@ -34,7 +35,6 @@
       "film-genres",
       "horror"
     ],
-    "source": "https://www.bfi.org.uk/lists/100-horror-films-see-before-you-die",
-    "seedId": "7def209b-da86-57ee-b96f-680def165de8"
+    "source": "https://www.bfi.org.uk/lists/100-horror-films-see-before-you-die"
   }
 ]

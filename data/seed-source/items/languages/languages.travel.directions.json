@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2d9caef7-53e9-4a6e-9aef-1ae3ea4648d7",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -15,10 +16,10 @@
       "travel",
       "straight"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/straight-ahead",
-    "seedId": "0176461c-386e-50b8-9766-15ed03c81ad8"
+    "source": "https://dictionary.cambridge.org/dictionary/english/straight-ahead"
   },
   {
+    "itemId": "413be3b6-6710-4673-bc1e-ca094c73639f",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -34,10 +35,10 @@
       "travel",
       "left"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/left",
-    "seedId": "87a83e8c-9afa-58f5-87d0-93b6e297d554"
+    "source": "https://www.merriam-webster.com/dictionary/left"
   },
   {
+    "itemId": "01f95f1d-483c-42d9-9fcf-efd5ab015500",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -53,10 +54,10 @@
       "travel",
       "near"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/english/near",
-    "seedId": "048389ee-e556-5693-9c51-32f73f4fd795"
+    "source": "https://www.collinsdictionary.com/dictionary/english/near"
   },
   {
+    "itemId": "992f217b-f626-4d4a-a034-d11ec6f3bf7a",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -72,10 +73,10 @@
       "travel",
       "landmark"
     ],
-    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/landmark",
-    "seedId": "d62496e8-1e81-5516-846a-2b5cb4e368d1"
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/landmark"
   },
   {
+    "itemId": "8376c2f2-80ef-4ca5-925a-2d50a704c2b4",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -91,10 +92,10 @@
       "travel",
       "lost"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/lost",
-    "seedId": "2fd54c1a-4153-517e-bb8d-9d2bb21ad3d6"
+    "source": "https://dictionary.cambridge.org/dictionary/english/lost"
   },
   {
+    "itemId": "195ffa9c-0f31-4fa3-ba7d-b4e2b31233d6",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "directions",
@@ -110,7 +111,6 @@
       "travel",
       "corner"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/corner_1",
-    "seedId": "816777f9-7123-5b17-bced-53470d9c4654"
+    "source": "https://dictionary.cambridge.org/dictionary/english/corner_1"
   }
 ]

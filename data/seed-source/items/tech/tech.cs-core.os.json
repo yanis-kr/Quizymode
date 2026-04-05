@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9c9387c9-e21c-4cd7-b89e-0b0b6fc9b484",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -15,10 +16,10 @@
       "os",
       "processes"
     ],
-    "source": "https://en.wikipedia.org/wiki/Process_(computing)",
-    "seedId": "c9eabd75-21d6-5d1b-9a0a-be75085ca1b5"
+    "source": "https://en.wikipedia.org/wiki/Process_(computing)"
   },
   {
+    "itemId": "f397f20a-efbc-4c83-8486-7ff2f1087258",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -34,10 +35,10 @@
       "os",
       "memory"
     ],
-    "source": "https://en.wikipedia.org/wiki/Virtual_memory",
-    "seedId": "3251119d-3973-5e76-a5a2-2cdf58434da1"
+    "source": "https://en.wikipedia.org/wiki/Virtual_memory"
   },
   {
+    "itemId": "a5d3d02f-8b15-4516-a508-eb170de80645",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -53,10 +54,10 @@
       "os",
       "deadlock"
     ],
-    "source": "https://en.wikipedia.org/wiki/Deadlock",
-    "seedId": "144e30d9-55e1-5353-8aa6-9f32541b854e"
+    "source": "https://en.wikipedia.org/wiki/Deadlock"
   },
   {
+    "itemId": "59c8da0d-e319-48f5-8437-0df0bdb27c84",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -72,10 +73,10 @@
       "os",
       "kernel"
     ],
-    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/",
-    "seedId": "cd21031e-45ee-5738-ba85-9ed44bdf4990"
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/"
   },
   {
+    "itemId": "ff7f658f-d8cb-4e3e-acd3-76757b0ee043",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -91,10 +92,10 @@
       "os",
       "threads"
     ],
-    "source": "https://man7.org/linux/man-pages/man7/pthreads.7.html",
-    "seedId": "8ce2d82c-0ae7-5193-a098-b2db93445067"
+    "source": "https://man7.org/linux/man-pages/man7/pthreads.7.html"
   },
   {
+    "itemId": "235557e0-4ba8-4333-ab50-87c6228b53ce",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "os",
@@ -110,7 +111,6 @@
       "os",
       "syscalls"
     ],
-    "source": "https://man7.org/linux/man-pages/man2/syscalls.2.html",
-    "seedId": "4a75aaeb-c1e1-5d93-9a9b-e2b786cc676f"
+    "source": "https://man7.org/linux/man-pages/man2/syscalls.2.html"
   }
 ]

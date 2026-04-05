@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9b7f9350-7fda-4ab9-88d5-f0b58113068a",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -10,16 +11,16 @@
       "The Caucasus Mountains",
       "The Kunlun Mountains"
     ],
-    "explanation": "The Himalayas form a high arc along the northern edge of the Indian subcontinent; the range includes Mount Everest on the Nepal–China border.",
+    "explanation": "The Himalayas form a high arc along the northern edge of the Indian subcontinent; the range includes Mount Everest on the Nepal\u2013China border.",
     "keywords": [
       "asia",
       "mountain-ranges",
       "himalayas"
     ],
-    "source": "https://www.britannica.com/place/Himalayas-mountains-Asia",
-    "seedId": "fc8167f4-212c-42f1-8978-603168baabca"
+    "source": "https://www.britannica.com/place/Himalayas-mountains-Asia"
   },
   {
+    "itemId": "f2a80bb5-3937-4bc5-b3ab-785fdff3e144",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -30,16 +31,16 @@
       "The Mekong River",
       "The Ganges River"
     ],
-    "explanation": "The Yangtze flows across central and eastern China and is commonly listed as China’s longest river.",
+    "explanation": "The Yangtze flows across central and eastern China and is commonly listed as China\u2019s longest river.",
     "keywords": [
       "asia",
       "rivers",
       "east-asia"
     ],
-    "source": "https://www.britannica.com/place/Yangtze-River",
-    "seedId": "740ec7d3-1d9f-49f7-a011-783cb88ada0e"
+    "source": "https://www.britannica.com/place/Yangtze-River"
   },
   {
+    "itemId": "6a700f32-888f-426a-9a48-44fff3522a14",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -56,10 +57,10 @@
       "deserts",
       "physical-geography"
     ],
-    "source": "https://www.britannica.com/place/Gobi",
-    "seedId": "01ea39e1-07fd-4a5e-a012-871e3fe8b432"
+    "source": "https://www.britannica.com/place/Gobi"
   },
   {
+    "itemId": "8a2de1af-03b1-4dc9-8356-fd6dbf23d09d",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -76,10 +77,10 @@
       "seas",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/South-China-Sea",
-    "seedId": "6b673a62-fe07-46ac-9001-920447dba9bf"
+    "source": "https://www.britannica.com/place/South-China-Sea"
   },
   {
+    "itemId": "9c4c4589-0cd9-4ff9-8344-4c37abbdf485",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -96,14 +97,14 @@
       "seas",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Bay-of-Bengal",
-    "seedId": "cdb4756b-220b-425f-ac8b-f726d5639c39"
+    "source": "https://www.britannica.com/place/Bay-of-Bengal"
   },
   {
+    "itemId": "89ca4534-b6c6-4476-9786-3625a865fd67",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
-    "question": "Which inland body of water is the world’s largest lake by surface area?",
+    "question": "Which inland body of water is the world\u2019s largest lake by surface area?",
     "correctAnswer": "The Caspian Sea",
     "incorrectAnswers": [
       "Lake Baikal",
@@ -116,10 +117,10 @@
       "lakes",
       "central-asia"
     ],
-    "source": "https://www.britannica.com/place/Caspian-Sea",
-    "seedId": "3aa0e4a1-2a63-484a-bc18-18a7ce9e8097"
+    "source": "https://www.britannica.com/place/Caspian-Sea"
   },
   {
+    "itemId": "da6b78ae-d523-4e09-8e1a-9e936ae7c74b",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -136,10 +137,10 @@
       "peninsulas",
       "middle-east"
     ],
-    "source": "https://www.britannica.com/place/Arabian-Peninsula",
-    "seedId": "176dd808-f419-4890-820a-8f61b1e2a986"
+    "source": "https://www.britannica.com/place/Arabian-Peninsula"
   },
   {
+    "itemId": "153fa245-83c8-45de-bb7c-b1d6f42ba513",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -156,10 +157,10 @@
       "seas",
       "east-asia"
     ],
-    "source": "https://www.britannica.com/place/Sea-of-Japan",
-    "seedId": "1696d310-6f00-4c0b-b828-5251f67dc308"
+    "source": "https://www.britannica.com/place/Sea-of-Japan"
   },
   {
+    "itemId": "614ea3fb-da56-44b8-a280-fb96a483f71a",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -170,16 +171,16 @@
       "Mongolia",
       "China"
     ],
-    "explanation": "Lake Baikal is located in southern Siberia, Russia, and is Earth’s deepest freshwater lake.",
+    "explanation": "Lake Baikal is located in southern Siberia, Russia, and is Earth\u2019s deepest freshwater lake.",
     "keywords": [
       "asia",
       "lakes",
       "siberia"
     ],
-    "source": "https://www.britannica.com/place/Lake-Baikal",
-    "seedId": "2fa8f609-6ee9-4d34-abe8-29ce17718ae6"
+    "source": "https://www.britannica.com/place/Lake-Baikal"
   },
   {
+    "itemId": "8ee3f199-6071-4064-a55c-c252e94325b4",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -190,16 +191,16 @@
       "The Amu Darya and Syr Darya",
       "The Mekong and Red rivers"
     ],
-    "explanation": "Mesopotamia (“land between rivers”) refers to the Tigris–Euphrates valley in present-day Iraq and surroundings.",
+    "explanation": "Mesopotamia (\u201cland between rivers\u201d) refers to the Tigris\u2013Euphrates valley in present-day Iraq and surroundings.",
     "keywords": [
       "asia",
       "rivers",
       "middle-east"
     ],
-    "source": "https://www.britannica.com/place/Mesopotamia-historical-region-Asia",
-    "seedId": "937027db-4851-40dc-9c9a-6070f18af604"
+    "source": "https://www.britannica.com/place/Mesopotamia-historical-region-Asia"
   },
   {
+    "itemId": "acef7fa5-288c-4f8c-919e-b282bb665c51",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "asia",
@@ -216,7 +217,6 @@
       "straits",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Strait-of-Malacca",
-    "seedId": "9eb535a9-9047-4c12-99d7-2e2e762f432c"
+    "source": "https://www.britannica.com/place/Strait-of-Malacca"
   }
 ]

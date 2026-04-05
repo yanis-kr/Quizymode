@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "99e6738f-183c-4c85-8c93-34fbf325382e",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "ethics",
@@ -15,10 +16,10 @@
       "philosophy-ethics",
       "morality"
     ],
-    "source": "https://iep.utm.edu/ethics/",
-    "seedId": "a5f2a4c4-006d-5554-97ac-fdfedef37405"
+    "source": "https://iep.utm.edu/ethics/"
   },
   {
+    "itemId": "cc923970-d6ea-4d87-b10f-792278c67651",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "ethics",
@@ -34,7 +35,6 @@
       "philosophy-ethics",
       "lying"
     ],
-    "source": "https://plato.stanford.edu/entries/ethics-deontological/",
-    "seedId": "a1a2b1aa-4534-5368-acec-be20d33da01a"
+    "source": "https://plato.stanford.edu/entries/ethics-deontological/"
   }
 ]

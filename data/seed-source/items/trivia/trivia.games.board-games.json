@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "772d7858-e2b2-469f-830d-aceb6262d369",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -15,10 +16,10 @@
       "chess",
       "rules"
     ],
-    "source": "https://handbook.fide.com/chapter/B010201",
-    "seedId": "63f15501-2104-5235-a515-df4c1bca62a2"
+    "source": "https://handbook.fide.com/chapter/B010201"
   },
   {
+    "itemId": "b32c46ee-eef7-41d2-8ea9-9b787643c9cc",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -34,10 +35,10 @@
       "chess",
       "rules"
     ],
-    "source": "https://handbook.fide.com/chapter/B010201",
-    "seedId": "fc0a577b-4a65-5a00-905e-43ff08d58639"
+    "source": "https://handbook.fide.com/chapter/B010201"
   },
   {
+    "itemId": "185b690d-3278-4466-8813-9ee1e97cab7a",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -53,10 +54,10 @@
       "monopoly",
       "economics"
     ],
-    "source": "https://www.britannica.com/topic/Monopoly-board-game",
-    "seedId": "2a476b5a-b63c-5684-a12c-3dcb7588ebe2"
+    "source": "https://www.britannica.com/topic/Monopoly-board-game"
   },
   {
+    "itemId": "ec684f37-43a8-40b7-998c-041705692790",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -72,10 +73,10 @@
       "scrabble",
       "words"
     ],
-    "source": "https://www.britannica.com/topic/Scrabble-board-game",
-    "seedId": "531c4d3b-6eda-565c-be23-14999bdc267a"
+    "source": "https://www.britannica.com/topic/Scrabble-board-game"
   },
   {
+    "itemId": "9837db11-cb20-4e44-a902-e5f850cad4ee",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -91,14 +92,14 @@
       "checkers",
       "strategy"
     ],
-    "source": "https://www.britannica.com/topic/checkers",
-    "seedId": "f6a2a512-074c-5714-b2d1-3eaf9698aa9a"
+    "source": "https://www.britannica.com/topic/checkers"
   },
   {
+    "itemId": "0452e462-ee0c-478d-b892-74ff0e21a7ae",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
-    "question": "Go with placing stones on a grid in which countries’ traditional play?",
+    "question": "Go with placing stones on a grid in which countries\u2019 traditional play?",
     "correctAnswer": "China, Korea, and Japan",
     "incorrectAnswers": [
       "Brazil, Chile, Argentina",
@@ -110,10 +111,10 @@
       "go-game",
       "strategy"
     ],
-    "source": "https://www.britannica.com/topic/go-game",
-    "seedId": "7da40660-d5d8-53bb-b2aa-37ad6aa00a97"
+    "source": "https://www.britannica.com/topic/go-game"
   },
   {
+    "itemId": "22c3622e-a96e-40d2-b532-30ef99a89675",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -129,10 +130,10 @@
       "clue",
       "deduction"
     ],
-    "source": "https://www.britannica.com/topic/Clue-board-game",
-    "seedId": "ad014c08-80ff-5e7a-ae1e-3a053ff4e913"
+    "source": "https://www.britannica.com/topic/Clue-board-game"
   },
   {
+    "itemId": "09242986-cd5f-4437-9112-4b97f5f09525",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -148,10 +149,10 @@
       "backgammon",
       "dice"
     ],
-    "source": "https://www.britannica.com/topic/backgammon",
-    "seedId": "f5e22c3f-6880-5053-896b-d82b35886c4d"
+    "source": "https://www.britannica.com/topic/backgammon"
   },
   {
+    "itemId": "a75e8b53-1309-4720-aec3-4795290c57a3",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -167,10 +168,10 @@
       "risk",
       "strategy"
     ],
-    "source": "https://www.britannica.com/topic/Risk-board-game",
-    "seedId": "ee80eb37-9eb9-5076-881f-d25109c41e49"
+    "source": "https://www.britannica.com/topic/Risk-board-game"
   },
   {
+    "itemId": "781b91bf-b43a-4dff-afbc-c4fe86a1272e",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "board-games",
@@ -186,7 +187,6 @@
       "chess",
       "strategy"
     ],
-    "source": "https://handbook.fide.com/chapter/B010201",
-    "seedId": "5f396206-7fdc-53b6-9e24-7976c75e7997"
+    "source": "https://handbook.fide.com/chapter/B010201"
   }
 ]

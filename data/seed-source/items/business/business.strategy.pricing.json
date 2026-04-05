@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6715ef21-b2fa-46e9-a1e6-2538466ecb69",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
@@ -15,10 +16,10 @@
       "cost-plus",
       "pricing"
     ],
-    "source": "https://www.investopedia.com/terms/c/cost-plus-pricing.asp",
-    "seedId": "65409420-835a-4e5a-9aa9-fdfac314c541"
+    "source": "https://www.investopedia.com/terms/c/cost-plus-pricing.asp"
   },
   {
+    "itemId": "fdcc1a48-8ece-4ee6-a66b-10e0ce85def8",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
@@ -34,14 +35,14 @@
       "value-based-pricing",
       "pricing"
     ],
-    "source": "https://www.investopedia.com/terms/v/value-based-pricing.asp",
-    "seedId": "1b920a6f-aeca-4e9d-84a4-f57c819abea8"
+    "source": "https://www.investopedia.com/terms/v/value-based-pricing.asp"
   },
   {
+    "itemId": "23fb50b2-7157-4721-974a-16e44e49de32",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
-    "question": "What does price elasticity of demand measure?",
+    "question": "In pricing strategy, what does price elasticity of demand measure?",
     "correctAnswer": "How quantity demanded changes when price changes.",
     "incorrectAnswers": [
       "How fast a factory runs.",
@@ -53,10 +54,10 @@
       "elasticity",
       "economics"
     ],
-    "source": "https://www.investopedia.com/terms/p/price-elasticity.asp",
-    "seedId": "b3f449a1-e29d-4bd7-9125-4553c307084b"
+    "source": "https://www.investopedia.com/terms/p/price-elasticity.asp"
   },
   {
+    "itemId": "efd4c5ea-01ca-4676-8bcf-4ad74ebcad99",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
@@ -72,10 +73,10 @@
       "dynamic-pricing",
       "revenue"
     ],
-    "source": "https://www.investopedia.com/terms/d/dynamic-pricing.asp",
-    "seedId": "e98675ff-45db-40eb-900c-dcba184cd7bb"
+    "source": "https://www.investopedia.com/terms/d/dynamic-pricing.asp"
   },
   {
+    "itemId": "e10163c1-a578-451c-b5ef-ba42387839f4",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
@@ -91,10 +92,10 @@
       "decoy-effect",
       "behavioral-econ"
     ],
-    "source": "https://www.investopedia.com/terms/d/decoy-effect.asp",
-    "seedId": "b75e4f64-cb70-4e25-95e9-5af5401ad960"
+    "source": "https://www.investopedia.com/terms/d/decoy-effect.asp"
   },
   {
+    "itemId": "a1af7136-1819-4ba3-88fd-7b6d475a1236",
     "category": "business",
     "navigationKeyword1": "strategy",
     "navigationKeyword2": "pricing",
@@ -110,7 +111,6 @@
       "markdown",
       "retail"
     ],
-    "source": "https://www.investopedia.com/terms/m/markdown.asp",
-    "seedId": "218afeda-ee52-40a9-9cda-3f9f2fe919ec"
+    "source": "https://www.investopedia.com/terms/m/markdown.asp"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2db6276f-895d-447e-acc0-c777ecb973fa",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -15,10 +16,10 @@
       "music-genres",
       "style"
     ],
-    "source": "https://www.britannica.com/art/music",
-    "seedId": "3d0d41f6-998e-5a75-8238-543b428bee31"
+    "source": "https://www.britannica.com/art/music"
   },
   {
+    "itemId": "3d36b9d4-3983-482c-b37a-d422270041e3",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -34,7 +35,6 @@
       "music-genres",
       "jazz"
     ],
-    "source": "https://www.loc.gov/collections/classic-jazz/",
-    "seedId": "56640c7e-8157-5f99-b44c-e35c86656930"
+    "source": "https://www.loc.gov/collections/classic-jazz/"
   }
 ]

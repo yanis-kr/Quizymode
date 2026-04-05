@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "26b6be3d-7e3d-4cf1-95dc-da5449dfffd3",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
@@ -15,10 +16,10 @@
       "un-charter",
       "purposes"
     ],
-    "source": "https://www.un.org/en/about-us/un-charter/chapter-1",
-    "seedId": "ddfd442b-c87f-5241-a58e-143d7a615b6b"
+    "source": "https://www.un.org/en/about-us/un-charter/chapter-1"
   },
   {
+    "itemId": "d363a534-048f-46b8-8f87-4f9c1704b5df",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
@@ -27,21 +28,21 @@
     "incorrectAnswers": [
       "the Security Council only",
       "the International Court of Justice bench alone",
-      "the Secretariat’s staff union"
+      "the Secretariat\u2019s staff union"
     ],
     "explanation": "The General Assembly is the broad membership forum for debate and many kinds of resolutions.",
     "keywords": [
       "general-assembly",
       "membership"
     ],
-    "source": "https://www.un.org/en/ga/",
-    "seedId": "bb9f0410-fbe7-520a-86e7-cde9487d870b"
+    "source": "https://www.un.org/en/ga/"
   },
   {
+    "itemId": "31005e90-44f5-4de3-a95d-1e2ef379ad6b",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
-    "question": "What is the Security Council’s special role under the Charter?",
+    "question": "What is the Security Council\u2019s special role under the Charter?",
     "correctAnswer": "primary responsibility for international peace and security",
     "incorrectAnswers": [
       "hiring every national teacher",
@@ -53,15 +54,15 @@
       "security-council",
       "peace"
     ],
-    "source": "https://www.un.org/securitycouncil/",
-    "seedId": "f12fa533-c450-561b-bf53-4dfbb2c40ab9"
+    "source": "https://www.un.org/securitycouncil/"
   },
   {
+    "itemId": "46013e34-ea58-4d55-8d66-a8f65060c5e3",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
     "question": "Who is the UN Secretary-General in institutional terms?",
-    "correctAnswer": "the chief administrative officer appointed by the General Assembly on the Security Council’s recommendation",
+    "correctAnswer": "the chief administrative officer appointed by the General Assembly on the Security Council\u2019s recommendation",
     "incorrectAnswers": [
       "the lifetime monarch of all members",
       "the commander of every national army",
@@ -72,10 +73,10 @@
       "secretariat",
       "leadership"
     ],
-    "source": "https://www.un.org/sg/en/content/sg/appointment-process",
-    "seedId": "24b52e3a-e7d9-518a-bee0-174a6ce2241d"
+    "source": "https://www.un.org/sg/en/content/sg/appointment-process"
   },
   {
+    "itemId": "45744bb0-5926-4211-8b6a-55b62c2b5c80",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
@@ -91,10 +92,10 @@
       "soft-law",
       "implementation"
     ],
-    "source": "https://www.un.org/en/about-us/how-the-un-works",
-    "seedId": "03c9e940-cff0-5908-af19-e43444ed2dcf"
+    "source": "https://www.un.org/en/about-us/how-the-un-works"
   },
   {
+    "itemId": "11609161-88e5-4fac-91a3-34601e53e912",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "un",
@@ -103,14 +104,13 @@
     "incorrectAnswers": [
       "the World Health Assembly alone",
       "the UN postal service",
-      "the General Assembly’s budget office"
+      "the General Assembly\u2019s budget office"
     ],
-    "explanation": "The ICJ is the UN’s principal judicial organ for state-to-state cases under its statute.",
+    "explanation": "The ICJ is the UN\u2019s principal judicial organ for state-to-state cases under its statute.",
     "keywords": [
       "icj",
       "dispute-settlement"
     ],
-    "source": "https://www.icj-cij.org/en",
-    "seedId": "a28b48e8-81b9-5117-be75-266293315815"
+    "source": "https://www.icj-cij.org/en"
   }
 ]

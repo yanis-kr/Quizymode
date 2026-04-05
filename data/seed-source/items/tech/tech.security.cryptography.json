@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a5e92f3a-dd90-41d3-bb78-c4393efcbf7e",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -15,10 +16,10 @@
       "security",
       "encryption"
     ],
-    "source": "https://en.wikipedia.org/wiki/Symmetric-key_algorithm",
-    "seedId": "f7efdc15-e021-5fb0-a4f6-d8cf6e31a4b2"
+    "source": "https://en.wikipedia.org/wiki/Symmetric-key_algorithm"
   },
   {
+    "itemId": "100c5cb6-a9e9-4bc4-a6fd-7d8ab3f88188",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -34,10 +35,10 @@
       "security",
       "aes"
     ],
-    "source": "https://csrc.nist.gov/publications/detail/fips/197/final",
-    "seedId": "8c907d1c-3f90-532b-b8d1-a5186b775cf0"
+    "source": "https://csrc.nist.gov/publications/detail/fips/197/final"
   },
   {
+    "itemId": "038e816c-3bac-4d34-95ef-49cbc5c36b88",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -53,10 +54,10 @@
       "security",
       "rsa"
     ],
-    "source": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)",
-    "seedId": "3459ded6-fb54-5d79-a28c-adebdc0067a1"
+    "source": "https://en.wikipedia.org/wiki/RSA_(cryptosystem)"
   },
   {
+    "itemId": "b2a793f1-09b7-4c05-ab45-c472197879bb",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -72,10 +73,10 @@
       "security",
       "hashing"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/cryptographic-hash-function",
-    "seedId": "158c2325-0562-54ac-b727-6e4deb9f8a27"
+    "source": "https://csrc.nist.gov/glossary/term/cryptographic-hash-function"
   },
   {
+    "itemId": "f496a946-43db-452c-bf66-2945734ff468",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -91,10 +92,10 @@
       "security",
       "password-storage"
     ],
-    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
-    "seedId": "c2bcffef-4cf5-50b3-ad96-38e2a7f30fcd"
+    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
   },
   {
+    "itemId": "c0059207-1461-4f99-b7bb-40994cedd5b5",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "cryptography",
@@ -110,7 +111,6 @@
       "security",
       "https"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc8446",
-    "seedId": "678ae30f-970b-53b6-977b-effb21ab0ad8"
+    "source": "https://www.rfc-editor.org/rfc/rfc8446"
   }
 ]

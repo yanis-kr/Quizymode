@@ -1,13 +1,14 @@
 [
   {
+    "itemId": "3b9caf79-3b24-45c9-9606-9e7b82b4081f",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
     "question": "In international law basics, what is a treaty?",
     "correctAnswer": "a formal written agreement between states governed by international law",
     "incorrectAnswers": [
-      "a private company’s internal memo",
-      "a city’s parking ticket policy",
+      "a private company\u2019s internal memo",
+      "a city\u2019s parking ticket policy",
       "a one-day press statement with no legal force"
     ],
     "explanation": "Treaties are consent-based instruments that create mutual obligations among parties.",
@@ -15,15 +16,15 @@
       "treaty",
       "international-law"
     ],
-    "source": "https://legal.un.org/avl/ha/tbc/tbc.html",
-    "seedId": "3bbedf9f-4227-5d43-8e92-7242c6dae09f"
+    "source": "https://legal.un.org/avl/ha/tbc/tbc.html"
   },
   {
+    "itemId": "a2276c3e-4018-4405-8774-3b5eab5bd892",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
     "question": "What is ratification in treaty practice?",
-    "correctAnswer": "a state’s formal step that binds it to a treaty after negotiation and signature",
+    "correctAnswer": "a state\u2019s formal step that binds it to a treaty after negotiation and signature",
     "incorrectAnswers": [
       "automatic law without any domestic step",
       "a request to delete the treaty text",
@@ -34,10 +35,10 @@
       "ratification",
       "consent"
     ],
-    "source": "https://www.state.gov/treaties/",
-    "seedId": "811b6663-a294-503c-8959-2cec8ac6edc8"
+    "source": "https://www.state.gov/treaties/"
   },
   {
+    "itemId": "d621e690-0468-4554-ab7b-136b2b10c431",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
@@ -53,10 +54,10 @@
       "bilateral",
       "multilateral"
     ],
-    "source": "https://www.britannica.com/topic/treaty-international-relations",
-    "seedId": "39e13a73-82e9-5736-b963-081a3abc7f17"
+    "source": "https://www.britannica.com/topic/treaty-international-relations"
   },
   {
+    "itemId": "b4031d3b-a390-478b-a880-f2cc4ea8ee85",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
@@ -72,10 +73,10 @@
       "vienna-convention",
       "interpretation"
     ],
-    "source": "https://legal.un.org/avl/ha/vclt/vclt.html",
-    "seedId": "a1958709-287b-5875-bc42-afd4847c4813"
+    "source": "https://legal.un.org/avl/ha/vclt/vclt.html"
   },
   {
+    "itemId": "1b5e6b85-31d1-42a4-967c-d635c3b29694",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
@@ -91,10 +92,10 @@
       "reservations",
       "state-consent"
     ],
-    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf",
-    "seedId": "388d7b92-41a7-5bba-b78c-832a9956927e"
+    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf"
   },
   {
+    "itemId": "c557ade5-0cc9-4f48-b209-a78152a5fa84",
     "category": "civics",
     "navigationKeyword1": "international",
     "navigationKeyword2": "treaties",
@@ -110,7 +111,6 @@
       "good-faith",
       "compliance"
     ],
-    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf",
-    "seedId": "ff031378-6187-5ab8-9bb6-516d8e74010e"
+    "source": "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1969.pdf"
   }
 ]

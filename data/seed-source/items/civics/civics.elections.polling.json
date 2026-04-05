@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "67facc49-78af-4c75-ac4f-5f18a4d3816e",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -15,10 +16,10 @@
       "margin-of-error",
       "sampling"
     ],
-    "source": "https://www.aapor.org/education-resources/poll-faq/",
-    "seedId": "c0492443-3853-5398-a517-2806fb891c7e"
+    "source": "https://www.aapor.org/education-resources/poll-faq/"
   },
   {
+    "itemId": "8e92a2f8-2372-4c55-a003-91c2e4ba3e84",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -34,10 +35,10 @@
       "random-sample",
       "survey-methods"
     ],
-    "source": "https://www.pewresearch.org/our-methods/",
-    "seedId": "b72be636-fa59-52b2-a094-fe74640e42be"
+    "source": "https://www.pewresearch.org/our-methods/"
   },
   {
+    "itemId": "622dcb2e-dcbb-4aa5-bd3e-18eccc74cae9",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -53,10 +54,10 @@
       "exit-poll",
       "election-surveys"
     ],
-    "source": "https://www.census.gov/programs-surveys/surveyhelp/glossary.html",
-    "seedId": "48f5383f-cba7-563c-9497-dd5dc285d93b"
+    "source": "https://www.census.gov/programs-surveys/surveyhelp/glossary.html"
   },
   {
+    "itemId": "b3727260-a7ad-4327-ba96-423b4cafb80e",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -72,10 +73,10 @@
       "weighting",
       "survey-adjustment"
     ],
-    "source": "https://www.pewresearch.org/our-methods/",
-    "seedId": "e0cd37b4-9cf2-586a-b04f-a8a1ca221a44"
+    "source": "https://www.pewresearch.org/our-methods/"
   },
   {
+    "itemId": "f65d032a-96fc-4f52-bf68-1af1806c8a2e",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -91,10 +92,10 @@
       "likely-voters",
       "turnout"
     ],
-    "source": "https://www.aapor.org/education-resources/poll-faq/",
-    "seedId": "0778944d-d1d4-54fa-abb0-14083145d8bf"
+    "source": "https://www.aapor.org/education-resources/poll-faq/"
   },
   {
+    "itemId": "1899e73e-9be3-40f6-b821-f76adc33ae3a",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "polling",
@@ -110,7 +111,6 @@
       "poll-timing",
       "election-forecasting"
     ],
-    "source": "https://www.aapor.org/education-resources/poll-faq/",
-    "seedId": "868af83f-9cb7-5826-9fc8-4b05cbf4624b"
+    "source": "https://www.aapor.org/education-resources/poll-faq/"
   }
 ]

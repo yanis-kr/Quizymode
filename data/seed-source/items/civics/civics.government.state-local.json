@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d021e740-837f-4784-93f5-b44ab7fb8adf",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -15,10 +16,10 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.usa.gov/local-governments",
-    "seedId": "2cf7e2d0-a6ad-52af-972c-ffd108b915e9"
+    "source": "https://www.usa.gov/local-governments"
   },
   {
+    "itemId": "a0d5a9b4-c5e2-443c-87ba-b0715fdad6d8",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -34,10 +35,10 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels",
-    "seedId": "50ef8438-90ca-5607-ba2e-3734ffadc122"
+    "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels"
   },
   {
+    "itemId": "0e0694dd-8e09-4ae2-9ba9-6a76fc8ea4c0",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -53,10 +54,10 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels",
-    "seedId": "2537fa8c-c521-59ec-a41a-401b15837189"
+    "source": "https://www.ncsl.org/elections-and-campaigns/election-administration-at-state-and-local-levels"
   },
   {
+    "itemId": "2e3ae083-3586-41d1-b9cb-1c51935d8997",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -72,10 +73,10 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.usa.gov/state-local-governments",
-    "seedId": "1d1ba91a-8966-5df7-8b2c-e2d2b0edf313"
+    "source": "https://www.usa.gov/state-local-governments"
   },
   {
+    "itemId": "ba1532ba-4b5b-4fda-8140-c07d9cfe9566",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -91,10 +92,10 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.usa.gov/state-governments",
-    "seedId": "f162e2b9-894e-5e37-8f0d-55166efcebdd"
+    "source": "https://www.usa.gov/state-governments"
   },
   {
+    "itemId": "c020d7a9-f626-4502-922b-f6243e3f7d35",
     "category": "civics",
     "navigationKeyword1": "government",
     "navigationKeyword2": "state-local",
@@ -110,7 +111,6 @@
       "state-local",
       "civics-structure"
     ],
-    "source": "https://www.ncsl.org/resources/details/pgrid/3666/pageid/1/pid/3666/evl/0/categoryid/1061/categoryname/state-federal",
-    "seedId": "6ceee8af-df7c-59be-b4de-7fce6455f885"
+    "source": "https://www.ncsl.org/resources/details/pgrid/3666/pageid/1/pid/3666/evl/0/categoryid/1061/categoryname/state-federal"
   }
 ]

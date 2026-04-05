@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "4eb9d0fc-27ac-442f-ae26-e7699b2b8da3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -16,10 +17,10 @@
       "aws-fundamentals",
       "pricing"
     ],
-    "source": "https://aws.amazon.com/pricing/",
-    "seedId": "df32589b-ddc1-4ef9-8ab9-9c17134fa6b4"
+    "source": "https://aws.amazon.com/pricing/"
   },
   {
+    "itemId": "987159f6-bb11-4b56-bb00-e053a2058ef6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -36,10 +37,10 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/",
-    "seedId": "873ccc91-662a-4120-8de4-bcc636e11e11"
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
   },
   {
+    "itemId": "334abb90-5109-4c42-9689-b45b94ea0c0b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -56,10 +57,10 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/",
-    "seedId": "ef2a4d34-3c7a-4ad6-8996-d8817278f13d"
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
   },
   {
+    "itemId": "020bf27f-a7ef-453b-a027-fc115cacb508",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -76,10 +77,10 @@
       "aws-fundamentals",
       "infrastructure"
     ],
-    "source": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
-    "seedId": "7f277617-9758-4f35-b63a-877a52bd1cbf"
+    "source": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
   },
   {
+    "itemId": "8ba25a39-ba1d-4f8d-9e1c-6f4672288076",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -96,10 +97,10 @@
       "aws-fundamentals",
       "compute"
     ],
-    "source": "https://aws.amazon.com/ec2/",
-    "seedId": "6b0406bc-21cf-4575-bd94-f2650c214804"
+    "source": "https://aws.amazon.com/ec2/"
   },
   {
+    "itemId": "0541d292-87c7-46fd-9ddb-75ac0c579a05",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -116,10 +117,10 @@
       "aws-fundamentals",
       "storage"
     ],
-    "source": "https://aws.amazon.com/s3/",
-    "seedId": "5263b74d-6ef1-4bdf-8405-e80aae6e383d"
+    "source": "https://aws.amazon.com/s3/"
   },
   {
+    "itemId": "333a8ca6-b53d-4893-8b5a-956f6965a25a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -136,10 +137,10 @@
       "aws-fundamentals",
       "storage"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/sc-howtoset.html",
-    "seedId": "8fe867dc-d0f4-410b-99d3-da5a5edf978e"
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/sc-howtoset.html"
   },
   {
+    "itemId": "ddb14044-9325-4aec-b83e-6fb1702518fb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -156,10 +157,10 @@
       "aws-fundamentals",
       "database"
     ],
-    "source": "https://aws.amazon.com/rds/",
-    "seedId": "8e123952-408c-4bd0-b2f1-6d745029c8bc"
+    "source": "https://aws.amazon.com/rds/"
   },
   {
+    "itemId": "1c4585ae-09aa-4751-8580-f11bfe54bbbf",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -176,10 +177,10 @@
       "aws-fundamentals",
       "networking"
     ],
-    "source": "https://aws.amazon.com/cloudfront/",
-    "seedId": "1c434624-d918-4951-be7a-144ff084308f"
+    "source": "https://aws.amazon.com/cloudfront/"
   },
   {
+    "itemId": "28753023-fad9-4d43-a7e2-3320e7528018",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -196,10 +197,10 @@
       "aws-fundamentals",
       "security"
     ],
-    "source": "https://aws.amazon.com/iam/",
-    "seedId": "94f2d498-e28c-4f4c-bed0-6de87841f976"
+    "source": "https://aws.amazon.com/iam/"
   },
   {
+    "itemId": "2439052d-e87d-4f8d-94f5-b73c61beec75",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -216,10 +217,10 @@
       "aws-fundamentals",
       "monitoring"
     ],
-    "source": "https://aws.amazon.com/cloudwatch/",
-    "seedId": "e853113d-2430-4a33-ba9f-2ec086f379df"
+    "source": "https://aws.amazon.com/cloudwatch/"
   },
   {
+    "itemId": "bb7687f8-3616-4bf6-877f-13d51ed5e975",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -236,10 +237,10 @@
       "aws-fundamentals",
       "pricing"
     ],
-    "source": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
-    "seedId": "c1e353d9-5bcf-45a7-be1d-d45ba4e10c92"
+    "source": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
   },
   {
+    "itemId": "e751da37-5fed-4fe6-b26e-2fc8e36e96ed",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -256,10 +257,10 @@
       "aws-fundamentals",
       "serverless"
     ],
-    "source": "https://aws.amazon.com/lambda/",
-    "seedId": "0cff7e3b-8287-47d7-9dae-3d4ebf7756b5"
+    "source": "https://aws.amazon.com/lambda/"
   },
   {
+    "itemId": "4e9a6303-8205-4796-9cd9-692245bc083e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -276,10 +277,10 @@
       "aws-fundamentals",
       "networking"
     ],
-    "source": "https://aws.amazon.com/vpc/",
-    "seedId": "4b9cb853-a3f8-4eb4-b044-a2bf51f78a0a"
+    "source": "https://aws.amazon.com/vpc/"
   },
   {
+    "itemId": "09f926f5-d7c2-4510-8169-7cdab60d8fe7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "ccp",
@@ -296,7 +297,6 @@
       "aws-fundamentals",
       "architecture"
     ],
-    "source": "https://aws.amazon.com/well-architected-tool/",
-    "seedId": "837dd6d3-2088-455f-ba18-b9adfb66da81"
+    "source": "https://aws.amazon.com/well-architected-tool/"
   }
 ]

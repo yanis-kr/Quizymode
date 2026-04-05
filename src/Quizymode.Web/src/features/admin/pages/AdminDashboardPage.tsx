@@ -76,7 +76,7 @@ const AdminDashboardPage = () => {
         >
           <h3 className="text-lg font-medium text-gray-900 mb-2">Seed Sync</h3>
           <p className="text-sm text-gray-500">
-            Preview and apply repo-managed seed manifests
+            Preview and apply repo-managed GitHub syncs
           </p>
         </Link>
         <Link

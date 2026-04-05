@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6ac13c82-b4a2-45eb-9a4a-f086fcae6c3e",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -16,10 +17,10 @@
       "country-size",
       "area"
     ],
-    "source": "https://www.britannica.com/place/Russia",
-    "seedId": "22eb08ba-8076-415e-94f7-8be3eb648478"
+    "source": "https://www.britannica.com/place/Russia"
   },
   {
+    "itemId": "efd2ab3f-14dd-4f95-b255-3e837ba6d3ac",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -30,16 +31,16 @@
       "Brazil",
       "Australia"
     ],
-    "explanation": "Canada’s vast northern territories make it the second-largest country by total area after Russia.",
+    "explanation": "Canada\u2019s vast northern territories make it the second-largest country by total area after Russia.",
     "keywords": [
       "largest",
       "country-size",
       "area"
     ],
-    "source": "https://www.britannica.com/place/Canada",
-    "seedId": "c9f4eff6-9b62-4105-8abb-b1639322fee0"
+    "source": "https://www.britannica.com/place/Canada"
   },
   {
+    "itemId": "67a313b3-0aa4-4ee5-b880-5aa5ad40ea76",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -50,16 +51,16 @@
       "Peru",
       "Colombia"
     ],
-    "explanation": "Brazil covers roughly half of South America’s land area, far more than any other country on the continent.",
+    "explanation": "Brazil covers roughly half of South America\u2019s land area, far more than any other country on the continent.",
     "keywords": [
       "largest",
       "country-size",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Brazil",
-    "seedId": "8f7e93e1-e3db-48a7-9b7a-db783e764e71"
+    "source": "https://www.britannica.com/place/Brazil"
   },
   {
+    "itemId": "3cf6d798-afcc-4749-8456-0acff2c2fb38",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -76,10 +77,10 @@
       "country-size",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Algeria",
-    "seedId": "b73b8d0e-f152-40cc-9023-e557ac05eeb0"
+    "source": "https://www.britannica.com/place/Algeria"
   },
   {
+    "itemId": "5168e1aa-b5f6-44df-8514-5cdb18758ee1",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -96,30 +97,30 @@
       "country-size",
       "asia"
     ],
-    "source": "https://www.britannica.com/place/China",
-    "seedId": "a9ada082-ca9f-46dc-b142-a08fcea22ce0"
+    "source": "https://www.britannica.com/place/China"
   },
   {
+    "itemId": "0fd6866c-c79b-467f-a78d-c5c25fd5c152",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
-    "question": "Which country is both a continent and one of the world’s largest states by area?",
+    "question": "Which country is both a continent and one of the world\u2019s largest states by area?",
     "correctAnswer": "Australia",
     "incorrectAnswers": [
       "New Zealand",
       "India",
       "Argentina"
     ],
-    "explanation": "Australia occupies the continental landmass called Australia, making it one of Earth’s largest countries.",
+    "explanation": "Australia occupies the continental landmass called Australia, making it one of Earth\u2019s largest countries.",
     "keywords": [
       "largest",
       "country-size",
       "oceania"
     ],
-    "source": "https://www.britannica.com/place/Australia",
-    "seedId": "410ea2d0-3e38-45e7-acce-d767e77ea37b"
+    "source": "https://www.britannica.com/place/Australia"
   },
   {
+    "itemId": "e3769725-8c44-4ab9-a30e-2eb045d737ad",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -130,16 +131,16 @@
       "Bangladesh",
       "Nepal"
     ],
-    "explanation": "India’s territory is the largest among the countries commonly grouped in South Asia.",
+    "explanation": "India\u2019s territory is the largest among the countries commonly grouped in South Asia.",
     "keywords": [
       "largest",
       "country-size",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/India",
-    "seedId": "ecad2cc5-d2d0-4d2f-ac92-36993b5e55ea"
+    "source": "https://www.britannica.com/place/India"
   },
   {
+    "itemId": "dcfc3b5b-10b3-4c7f-85dc-9a5e5a83dffd",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -156,30 +157,30 @@
       "country-size",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Argentina",
-    "seedId": "429b4949-8257-4e99-b868-0e41a6df2644"
+    "source": "https://www.britannica.com/place/Argentina"
   },
   {
+    "itemId": "f5f80e23-2b34-4a40-8c78-10bdeba775c6",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
-    "question": "Which Central Asian country is the world’s largest landlocked state by area?",
+    "question": "Which Central Asian country is the world\u2019s largest landlocked state by area?",
     "correctAnswer": "Kazakhstan",
     "incorrectAnswers": [
       "Mongolia",
       "Chad",
       "Niger"
     ],
-    "explanation": "Kazakhstan’s steppe and desert expanses give it the greatest area of any landlocked country.",
+    "explanation": "Kazakhstan\u2019s steppe and desert expanses give it the greatest area of any landlocked country.",
     "keywords": [
       "largest",
       "country-size",
       "landlocked"
     ],
-    "source": "https://www.britannica.com/place/Kazakhstan",
-    "seedId": "7b8aac46-e533-469c-b0b2-1f0d9b350c68"
+    "source": "https://www.britannica.com/place/Kazakhstan"
   },
   {
+    "itemId": "1beda5da-57b8-4622-b536-48b4762f9373",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -196,10 +197,10 @@
       "country-size",
       "middle-east"
     ],
-    "source": "https://www.britannica.com/place/Saudi-Arabia",
-    "seedId": "bd1b1bfa-6fd6-4ec6-a045-44f66eeb76fc"
+    "source": "https://www.britannica.com/place/Saudi-Arabia"
   },
   {
+    "itemId": "dbb4e37a-6e13-4aba-96e7-ea16f81eb247",
     "category": "geography",
     "navigationKeyword1": "countries",
     "navigationKeyword2": "largest",
@@ -210,13 +211,12 @@
       "Philippines",
       "Thailand"
     ],
-    "explanation": "Indonesia’s thousands of islands span a huge east–west reach, giving it the greatest area in Southeast Asia.",
+    "explanation": "Indonesia\u2019s thousands of islands span a huge east\u2013west reach, giving it the greatest area in Southeast Asia.",
     "keywords": [
       "largest",
       "country-size",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Indonesia",
-    "seedId": "9c11282e-e2a5-4eba-a9b0-45b5dc27d651"
+    "source": "https://www.britannica.com/place/Indonesia"
   }
 ]

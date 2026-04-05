@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "386e00d3-ad37-483f-bf95-9c699d8c01dd",
     "category": "exams",
     "navigationKeyword1": "ap",
     "navigationKeyword2": "general-ap",
@@ -15,10 +16,10 @@
       "ap-biology",
       "test-prep"
     ],
-    "source": "https://apstudents.collegeboard.org/courses/ap-biology",
-    "seedId": "2c37df9b-62c7-4a91-9acf-e80a10169894"
+    "source": "https://apstudents.collegeboard.org/courses/ap-biology"
   },
   {
+    "itemId": "d5a09745-81e5-4ffc-95a6-ab23b3fa2d7d",
     "category": "exams",
     "navigationKeyword1": "ap",
     "navigationKeyword2": "general-ap",
@@ -34,10 +35,10 @@
       "ap-calculus",
       "test-prep"
     ],
-    "source": "https://apstudents.collegeboard.org/courses/ap-calculus-ab",
-    "seedId": "cbfa90bc-e828-4a02-a4cc-30cca770eb86"
+    "source": "https://apstudents.collegeboard.org/courses/ap-calculus-ab"
   },
   {
+    "itemId": "f3763a42-3259-4746-8672-3433116bbde9",
     "category": "exams",
     "navigationKeyword1": "ap",
     "navigationKeyword2": "general-ap",
@@ -53,10 +54,10 @@
       "ap-chemistry",
       "test-prep"
     ],
-    "source": "https://apstudents.collegeboard.org/courses/ap-chemistry",
-    "seedId": "448cb67e-c4d3-475f-8dfb-b66b1eaeb935"
+    "source": "https://apstudents.collegeboard.org/courses/ap-chemistry"
   },
   {
+    "itemId": "53e6b4ce-4066-47ed-a41d-8af6fe81eef2",
     "category": "exams",
     "navigationKeyword1": "ap",
     "navigationKeyword2": "general-ap",
@@ -72,10 +73,10 @@
       "ap-us-history",
       "test-prep"
     ],
-    "source": "https://apstudents.collegeboard.org/courses/ap-united-states-history",
-    "seedId": "ab5fb70f-631c-45dc-851a-a188d35b6489"
+    "source": "https://apstudents.collegeboard.org/courses/ap-united-states-history"
   },
   {
+    "itemId": "b9551e3e-9afd-4f52-b95d-d51aa55ac224",
     "category": "exams",
     "navigationKeyword1": "ap",
     "navigationKeyword2": "general-ap",
@@ -91,7 +92,6 @@
       "ap-psychology",
       "test-prep"
     ],
-    "source": "https://apstudents.collegeboard.org/courses/ap-psychology",
-    "seedId": "3483c01c-4db0-4f8a-8ec5-ce3c0ff0dea8"
+    "source": "https://apstudents.collegeboard.org/courses/ap-psychology"
   }
 ]

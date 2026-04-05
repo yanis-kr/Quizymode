@@ -1,49 +1,50 @@
 [
   {
+    "itemId": "f750457c-18cf-428b-ad61-3141f62d983a",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
-    "question": "What plant symbol sits at the center of Canada’s national flag?",
+    "question": "What plant symbol sits at the center of Canada\u2019s national flag?",
     "correctAnswer": "A maple leaf",
     "incorrectAnswers": [
       "A beaver",
       "A fleur-de-lis",
       "A shamrock"
     ],
-    "explanation": "Britannica describes Canada’s flag as red-white-red with a large central red maple leaf.",
+    "explanation": "Britannica describes Canada\u2019s flag as red-white-red with a large central red maple leaf.",
     "keywords": [
       "symbols",
       "canada",
       "maple-leaf"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-Canada",
-    "seedId": "c24dce41-dcec-4480-96a8-19884df12678"
+    "source": "https://www.britannica.com/topic/flag-of-Canada"
   },
   {
+    "itemId": "61207726-dadf-425d-89c2-03989e20fdf8",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
-    "question": "Japan’s flag centers what solar symbol?",
+    "question": "Japan\u2019s flag centers what solar symbol?",
     "correctAnswer": "A stylized sun disk",
     "incorrectAnswers": [
       "A crescent moon",
-      "A eight-rayed ship’s wheel",
+      "A eight-rayed ship\u2019s wheel",
       "A triangular pennant"
     ],
-    "explanation": "Britannica states Japan’s flag bears a central red disk representing a stylized sun, linked to traditions of the sun goddess and the “Land of the Rising Sun.”",
+    "explanation": "Britannica states Japan\u2019s flag bears a central red disk representing a stylized sun, linked to traditions of the sun goddess and the \u201cLand of the Rising Sun.\u201d",
     "keywords": [
       "symbols",
       "japan",
       "sun"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-Japan",
-    "seedId": "c1346542-2fa9-48be-90b1-96b5d272a2ff"
+    "source": "https://www.britannica.com/topic/flag-of-Japan"
   },
   {
+    "itemId": "9562fd37-b2b8-4fd6-9900-51e185255100",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
-    "question": "The Swiss national flag’s primary heraldic symbol is what?",
+    "question": "The Swiss national flag\u2019s primary heraldic symbol is what?",
     "correctAnswer": "A white cross",
     "incorrectAnswers": [
       "A white crescent",
@@ -56,10 +57,10 @@
       "switzerland",
       "cross"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-Switzerland",
-    "seedId": "876ad869-2ce0-48ae-ac33-d4477617f5f3"
+    "source": "https://www.britannica.com/topic/flag-of-Switzerland"
   },
   {
+    "itemId": "472d85d8-c02c-4fab-aacf-166b3e1fb8e8",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
@@ -76,14 +77,14 @@
       "united-states",
       "stars"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "761d81cb-973b-4702-927b-107560e69de7"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   },
   {
+    "itemId": "a989a205-ad8d-4e0d-ae42-9d64bc6c2e80",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
-    "question": "The U.S. flag’s 13 stripes symbolize what?",
+    "question": "The U.S. flag\u2019s 13 stripes symbolize what?",
     "correctAnswer": "The original 13 states",
     "incorrectAnswers": [
       "The federal cabinet departments",
@@ -96,10 +97,10 @@
       "united-states",
       "stripes"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "d034d8d4-e52b-4675-ad8d-db2b58347e1a"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   },
   {
+    "itemId": "08060cd7-db33-4b42-a301-33025b25f0c2",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
@@ -116,10 +117,10 @@
       "united-states",
       "canton"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "38baa508-4477-45df-b400-dbd0f728156a"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   },
   {
+    "itemId": "1222c9a3-6d52-4de4-bd50-beeb3984eda0",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
@@ -136,14 +137,14 @@
       "united-states",
       "nicknames"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "6fd630e4-46fa-4cb6-b05a-3b57749c2667"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   },
   {
+    "itemId": "fc34cbe5-4c8c-4fb6-9694-ce9fcc01b0d4",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
-    "question": "Canada’s flag uses how many maple leaves in its central emblem?",
+    "question": "Canada\u2019s flag uses how many maple leaves in its central emblem?",
     "correctAnswer": "One",
     "incorrectAnswers": [
       "Three",
@@ -156,17 +157,17 @@
       "canada",
       "maple-leaf"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-Canada",
-    "seedId": "4a9254eb-9295-49c2-aa40-9b519db022df"
+    "source": "https://www.britannica.com/topic/flag-of-Canada"
   },
   {
+    "itemId": "0b4ce61e-dc6c-41cc-be73-0e4ec02c74c4",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
     "question": "The Swiss civil ensign for use at sea differs from the land flag mainly in what way?",
     "correctAnswer": "It is rectangular instead of square",
     "incorrectAnswers": [
-      "It replaces the cross with a ship’s wheel",
+      "It replaces the cross with a ship\u2019s wheel",
       "It adds a crown in each corner",
       "It removes all red colour"
     ],
@@ -176,10 +177,10 @@
       "switzerland",
       "ensign"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-Switzerland",
-    "seedId": "537af07e-159f-4b67-9e82-69d3f812871a"
+    "source": "https://www.britannica.com/topic/flag-of-Switzerland"
   },
   {
+    "itemId": "1422546c-308f-4610-907b-4cca6d91f57d",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
@@ -196,27 +197,26 @@
       "united-states",
       "revolution"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "12e8ec74-21ab-44d2-9010-840483f4db1a"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   },
   {
+    "itemId": "5a3a9f29-f317-4946-bb4a-664d491df89b",
     "category": "geography",
     "navigationKeyword1": "flags",
     "navigationKeyword2": "symbols",
     "question": "Under rules since 1818, when is a new star added to the U.S. flag after a state is admitted?",
-    "correctAnswer": "On the July 4 following the state’s admission",
+    "correctAnswer": "On the July 4 following the state\u2019s admission",
     "incorrectAnswers": [
       "The very next day after admission",
       "Only once every decade",
       "Only during a presidential inauguration"
     ],
-    "explanation": "Britannica states Congress required new stars to be added on the July 4 following a state’s admission, keeping stripes fixed at thirteen.",
+    "explanation": "Britannica states Congress required new stars to be added on the July 4 following a state\u2019s admission, keeping stripes fixed at thirteen.",
     "keywords": [
       "symbols",
       "united-states",
       "stars"
     ],
-    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
-    "seedId": "5f849a5f-9eab-4be2-8b03-c8191efd62f0"
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America"
   }
 ]

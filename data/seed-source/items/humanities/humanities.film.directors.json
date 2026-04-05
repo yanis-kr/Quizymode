@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8abc51ba-a3a6-44db-a0f7-a028f893c9ad",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "directors",
@@ -15,10 +16,10 @@
       "film-directors",
       "direction"
     ],
-    "source": "https://www.britannica.com/art/film-director",
-    "seedId": "7307eadf-6824-57ec-b1aa-42bd4865e857"
+    "source": "https://www.britannica.com/art/film-director"
   },
   {
+    "itemId": "718831b5-e7e4-410a-8b61-c13f8133e08f",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "directors",
@@ -34,7 +35,6 @@
       "film-directors",
       "style"
     ],
-    "source": "https://www.bfi.org.uk/features/what-is-a-film-director",
-    "seedId": "e1460277-88fc-528a-8223-681501bd9a31"
+    "source": "https://www.bfi.org.uk/features/what-is-a-film-director"
   }
 ]

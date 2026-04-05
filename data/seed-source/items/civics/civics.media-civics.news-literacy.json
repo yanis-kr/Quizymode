@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "89a92190-78f9-4734-b5fc-94cecb2a8d66",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
     "question": "Why does news literacy training ask you to notice the byline and dateline?",
     "correctAnswer": "to see who reported the story and when it was published or updated",
     "incorrectAnswers": [
-      "to guess the writer’s favorite color",
+      "to guess the writer\u2019s favorite color",
       "to find hidden coupons",
       "to skip reading the headline"
     ],
@@ -15,10 +16,10 @@
       "byline",
       "verification"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "f5f72665-07c2-538d-b392-0e89db04e541"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "da418e65-ca08-4e24-bd1c-c24d1533b537",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
@@ -34,10 +35,10 @@
       "primary-source",
       "evidence"
     ],
-    "source": "https://guides.loc.gov/primary-sources",
-    "seedId": "f97870dd-1593-5f34-9889-590fef3863d3"
+    "source": "https://guides.loc.gov/primary-sources"
   },
   {
+    "itemId": "9d29f602-3bd7-476b-9c05-4f02a409e56e",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
@@ -53,10 +54,10 @@
       "opinion",
       "news-genres"
     ],
-    "source": "https://www.fcc.gov/consumers/guides/media-literacy",
-    "seedId": "60288b19-8e30-500c-b4dc-ff35da895bd6"
+    "source": "https://www.fcc.gov/consumers/guides/media-literacy"
   },
   {
+    "itemId": "7ba1b995-a6dc-4e1a-9da3-5383e67eb0dc",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
@@ -72,10 +73,10 @@
       "corroboration",
       "verification"
     ],
-    "source": "https://www.usa.gov/media-literacy",
-    "seedId": "c49d7e47-8d72-54a2-8247-3e4cce46f1b1"
+    "source": "https://www.usa.gov/media-literacy"
   },
   {
+    "itemId": "6bbbbff7-3983-44e9-8a26-6997deb175d8",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
@@ -91,10 +92,10 @@
       "sponsored-content",
       "transparency"
     ],
-    "source": "https://www.ftc.gov/business-guidance/resources/native-advertising-guide-businesses",
-    "seedId": "0d30a16f-8074-5cb6-8a6a-cb3f7d5842b3"
+    "source": "https://www.ftc.gov/business-guidance/resources/native-advertising-guide-businesses"
   },
   {
+    "itemId": "96f905cd-5420-4756-887c-360a8a62a05c",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "news-literacy",
@@ -110,7 +111,6 @@
       "misinformation",
       "quotes"
     ],
-    "source": "https://www.britannica.com/topic/journalism",
-    "seedId": "791302fe-1e60-52b0-8e15-9c203918e987"
+    "source": "https://www.britannica.com/topic/journalism"
   }
 ]

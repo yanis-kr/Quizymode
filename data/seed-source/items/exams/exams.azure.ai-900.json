@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "755c7d06-c722-4321-a4ba-7705c3186001",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -16,10 +17,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services",
-    "seedId": "ceae7325-73ed-4866-a700-4b004c0dd6ae"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services"
   },
   {
+    "itemId": "461873b3-d20f-43d3-9f19-be0537d0f0ce",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -36,10 +37,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview",
-    "seedId": "0bc9b669-b40c-4001-bd2c-15f3e7567e9d"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview"
   },
   {
+    "itemId": "766b9dc0-7ebb-42ad-9e95-590cea8cb0d0",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -56,10 +57,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview",
-    "seedId": "daa0e013-3378-42d9-9c69-e8c892bbf90f"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview"
   },
   {
+    "itemId": "c03134d7-415d-456b-97b3-c097a4f5c702",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -76,10 +77,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview",
-    "seedId": "1b092ee4-536e-4291-a3cb-d53e3162cb24"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview"
   },
   {
+    "itemId": "57a87b76-3a8e-47e5-b5bd-a59913b5f93b",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -96,10 +97,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview",
-    "seedId": "ab2dde3e-1d7a-493c-939c-f0e96351f064"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview"
   },
   {
+    "itemId": "a9cfbbb5-0b5d-452c-aa16-749a8ed1b16a",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -116,10 +117,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
-    "seedId": "4b8a16ff-e56b-418d-85a2-a51dda8097cb"
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
   },
   {
+    "itemId": "4b4c87a7-b547-482f-9919-58eb1a29469c",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -136,10 +137,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview",
-    "seedId": "83f56137-103d-447e-8ec2-5e5300b362e8"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview"
   },
   {
+    "itemId": "bcdffd6a-04d3-425f-81f7-9dabcad860c3",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -156,10 +157,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning",
-    "seedId": "1ff8613f-121d-4b5e-88af-0ec6aaef81bd"
+    "source": "https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning"
   },
   {
+    "itemId": "721c3682-42cd-4cf7-a1dd-00e05f00b588",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -176,10 +177,10 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
-    "seedId": "bc094403-bac3-45b3-bcc7-4756e2be6fbf"
+    "source": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search"
   },
   {
+    "itemId": "ed36ed9c-d2dd-40a2-ab7f-dd6577e5e85e",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-900",
@@ -196,7 +197,6 @@
       "azure-ai",
       "ai-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services",
-    "seedId": "086764eb-d994-42ea-91b0-08b9e03fa5d2"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services"
   }
 ]

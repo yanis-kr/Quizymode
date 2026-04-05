@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bf8ad4e7-aacd-4261-8b97-6baa0a748bb9",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -15,10 +16,10 @@
       "authoritarianism",
       "civics-systems"
     ],
-    "source": "https://www.britannica.com/topic/authoritarianism",
-    "seedId": "fcde21da-32f0-5f1b-ab22-d3be7d8c64dd"
+    "source": "https://www.britannica.com/topic/authoritarianism"
   },
   {
+    "itemId": "e0565cc5-b57b-4729-91fa-a4fb36152f8f",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -34,10 +35,10 @@
       "press-freedom",
       "civics-systems"
     ],
-    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
-    "seedId": "076a2f91-0ff9-5ecf-9bc7-a088b12e3ac9"
+    "source": "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
   },
   {
+    "itemId": "af06141c-defb-49e6-b944-dcbf38425d26",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -53,10 +54,10 @@
       "rule-of-law",
       "judiciary"
     ],
-    "source": "https://www.oecd.org/governance/",
-    "seedId": "56555cd5-7ab5-5f39-9b96-9bed7d08cfee"
+    "source": "https://www.oecd.org/governance/"
   },
   {
+    "itemId": "8fe533ea-6884-4ab4-8834-308f3809749b",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -72,10 +73,10 @@
       "totalitarianism",
       "comparative-politics"
     ],
-    "source": "https://www.britannica.com/topic/totalitarianism",
-    "seedId": "223f0017-160b-56c9-a159-911f68710aeb"
+    "source": "https://www.britannica.com/topic/totalitarianism"
   },
   {
+    "itemId": "de00be41-34d8-46dd-a905-0a3e05a10f0c",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -86,15 +87,15 @@
       "because monarchies never hold votes",
       "because courts always cancel results"
     ],
-    "explanation": "Elections need contest, freedoms, and fair rules—not just ballots—to support democratic legitimacy.",
+    "explanation": "Elections need contest, freedoms, and fair rules\u2014not just ballots\u2014to support democratic legitimacy.",
     "keywords": [
       "electoral-authoritarianism",
       "elections"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "336ba700-ba5c-5590-b496-6d25b8736280"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "2fe680e0-c0b5-4599-8630-94a9262ef922",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "authoritarian",
@@ -110,7 +111,6 @@
       "sanctions",
       "human-rights"
     ],
-    "source": "https://www.state.gov/",
-    "seedId": "60f376fb-cdce-5094-914a-99c8a9ea4cb3"
+    "source": "https://www.state.gov/"
   }
 ]

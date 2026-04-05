@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ba82f252-6972-4d77-bfb3-edd37cdfd3ef",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -15,10 +16,10 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://www.fisheries.noaa.gov/species/blue-whale",
-    "seedId": "cccc1ec8-a2bf-5158-97b8-f6dcacf257bb"
+    "source": "https://www.fisheries.noaa.gov/species/blue-whale"
   },
   {
+    "itemId": "cc621c88-15e5-4d11-a542-55688942920a",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -34,10 +35,10 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://www.britannica.com/animal/coral",
-    "seedId": "669c0325-36b2-5152-9026-2e7cb32270a7"
+    "source": "https://www.britannica.com/animal/coral"
   },
   {
+    "itemId": "6adc7142-c61e-40c2-a411-27d863be2329",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -53,10 +54,10 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://oceanservice.noaa.gov/facts/dolphin.html",
-    "seedId": "1a1f543f-1faf-5adf-9351-72bdbcba2445"
+    "source": "https://oceanservice.noaa.gov/facts/dolphin.html"
   },
   {
+    "itemId": "4e2f18f3-5036-4fa5-8580-70f110fd645a",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -72,10 +73,10 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://www.britannica.com/science/How-Many-Hearts-Does-an-Octopus-Have",
-    "seedId": "ce7c6299-5dbc-53a3-a4c2-ff035219455a"
+    "source": "https://www.britannica.com/science/How-Many-Hearts-Does-an-Octopus-Have"
   },
   {
+    "itemId": "c6667b38-ca31-4b8e-9a8b-bf5daeca4e2f",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -91,10 +92,10 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://www.fisheries.noaa.gov/species/narwhal/overview",
-    "seedId": "aea74d51-a3d7-5c36-ba68-112a00d3d507"
+    "source": "https://www.fisheries.noaa.gov/species/narwhal/overview"
   },
   {
+    "itemId": "1a88530c-75a8-46b1-b7a0-a5c3214c5dd6",
     "category": "nature",
     "navigationKeyword1": "animals",
     "navigationKeyword2": "marine",
@@ -110,7 +111,6 @@
       "marine",
       "nature-animals"
     ],
-    "source": "https://www.montereybayaquarium.org/stories/-sea-otters-help-kelp-forests",
-    "seedId": "430dc2db-dcdd-54ab-8418-ccbf24065b43"
+    "source": "https://www.montereybayaquarium.org/stories/-sea-otters-help-kelp-forests"
   }
 ]

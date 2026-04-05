@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "dfb7eea8-b5dc-40ee-aca0-1f88c2749ee4",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
@@ -10,16 +11,16 @@
       "1555",
       "1618"
     ],
-    "explanation": "Luther’s 1517 protest against indulgence preaching is the conventional starting date for the German Reformation.",
+    "explanation": "Luther\u2019s 1517 protest against indulgence preaching is the conventional starting date for the German Reformation.",
     "keywords": [
       "reformation",
       "luther",
       "germany"
     ],
-    "source": "https://www.britannica.com/event/Reformation",
-    "seedId": "b5463a61-011d-44d9-bc8f-9b7c45c38523"
+    "source": "https://www.britannica.com/event/Reformation"
   },
   {
+    "itemId": "4a57adca-f722-43f0-ae5d-deffa6d762b1",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
@@ -36,17 +37,17 @@
       "luther",
       "empire"
     ],
-    "source": "https://www.britannica.com/event/Diet-of-Worms",
-    "seedId": "5bd88a75-3318-4e1d-9169-ff0b7a0311f0"
+    "source": "https://www.britannica.com/event/Diet-of-Worms"
   },
   {
+    "itemId": "1e86be4f-c805-4be9-9bfc-9c1aacd2601a",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "John Calvin’s ministry and academy made which Swiss city a hub of Reformed Protestantism?",
+    "question": "John Calvin\u2019s ministry and academy made which Swiss city a hub of Reformed Protestantism?",
     "correctAnswer": "Geneva",
     "incorrectAnswers": [
-      "Zürich",
+      "Z\u00fcrich",
       "Basel",
       "Bern"
     ],
@@ -56,18 +57,18 @@
       "calvin",
       "switzerland"
     ],
-    "source": "https://www.britannica.com/biography/John-Calvin",
-    "seedId": "c8e64f06-d440-4eb8-b31b-60e20a2c7917"
+    "source": "https://www.britannica.com/biography/John-Calvin"
   },
   {
+    "itemId": "17aa8a44-6b1d-4119-82c6-c9dcba5256b3",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "The 1555 Peace of Augsburg settled religious division in the Holy Roman Empire by tying each territory’s official church to what?",
+    "question": "The 1555 Peace of Augsburg settled religious division in the Holy Roman Empire by tying each territory\u2019s official church to what?",
     "correctAnswer": "The faith of its ruling prince (Lutheran or Catholic)",
     "incorrectAnswers": [
       "A popular vote in each village",
-      "The pope’s appointment of every pastor",
+      "The pope\u2019s appointment of every pastor",
       "Uniform Calvinism across the empire"
     ],
     "explanation": "Princes could choose Lutheranism or Catholicism for their lands; subjects were expected to conform or relocate, embedding religion in territorial sovereignty.",
@@ -76,14 +77,14 @@
       "germany",
       "peace"
     ],
-    "source": "https://www.britannica.com/event/Peace-of-Augsburg",
-    "seedId": "666e0268-0fb5-4644-8e06-2624ae462114"
+    "source": "https://www.britannica.com/event/Peace-of-Augsburg"
   },
   {
+    "itemId": "9720020b-f290-466e-8ce3-5cac18ab63c6",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Henry VIII’s 1534 English act declared him supreme head of which institution in his realms?",
+    "question": "Henry VIII\u2019s 1534 English act declared him supreme head of which institution in his realms?",
     "correctAnswer": "The Church of England",
     "incorrectAnswers": [
       "The Presbyterian Kirk",
@@ -96,14 +97,14 @@
       "england",
       "henry-viii"
     ],
-    "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England",
-    "seedId": "ecca64f7-fd15-475e-970b-f0a78ec45029"
+    "source": "https://www.britannica.com/biography/Henry-VIII-king-of-England"
   },
   {
+    "itemId": "8b09ef0e-0704-422a-b2d9-4073a0428d49",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Catholic bishops gathered at Trent for decades to define doctrine and reform discipline in response to Protestantism—what is that council called?",
+    "question": "Catholic bishops gathered at Trent for decades to define doctrine and reform discipline in response to Protestantism\u2014what is that council called?",
     "correctAnswer": "The Council of Trent",
     "incorrectAnswers": [
       "The Council of Constance",
@@ -116,34 +117,34 @@
       "catholic",
       "council"
     ],
-    "source": "https://www.britannica.com/event/Council-of-Trent",
-    "seedId": "a93e54ba-ddcd-4aac-8cb3-9f5275b4f9c1"
+    "source": "https://www.britannica.com/event/Council-of-Trent"
   },
   {
+    "itemId": "cba49cb9-59cf-4d9f-aaa5-71eef3b3aa89",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Ulrich Zwingli’s reforms began in which Swiss city’s Grossmünster, parallel to Luther’s work?",
-    "correctAnswer": "Zürich",
+    "question": "Ulrich Zwingli\u2019s reforms began in which Swiss city\u2019s Grossm\u00fcnster, parallel to Luther\u2019s work?",
+    "correctAnswer": "Z\u00fcrich",
     "incorrectAnswers": [
       "Geneva",
       "Lausanne",
       "Fribourg"
     ],
-    "explanation": "Zwingli led the Zürich Reformation, an important early Swiss Protestant movement.",
+    "explanation": "Zwingli led the Z\u00fcrich Reformation, an important early Swiss Protestant movement.",
     "keywords": [
       "reformation",
       "zwingli",
       "switzerland"
     ],
-    "source": "https://www.britannica.com/biography/Huldrych-Zwingli",
-    "seedId": "3f55c7b5-8cb4-4857-aab4-d4d1ece336d4"
+    "source": "https://www.britannica.com/biography/Huldrych-Zwingli"
   },
   {
+    "itemId": "2605a427-378f-419a-bf58-f07505d8f46e",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Which radical wing rejected infant baptism and stressed adult believers’ baptism, drawing persecution across Europe?",
+    "question": "Which radical wing rejected infant baptism and stressed adult believers\u2019 baptism, drawing persecution across Europe?",
     "correctAnswer": "Anabaptists",
     "incorrectAnswers": [
       "Jesuits",
@@ -156,10 +157,10 @@
       "radical",
       "baptism"
     ],
-    "source": "https://www.britannica.com/topic/Anabaptist",
-    "seedId": "0da1c3ab-ec10-419f-8dc7-057c02a4ed17"
+    "source": "https://www.britannica.com/topic/Anabaptist"
   },
   {
+    "itemId": "7721048b-a7db-4452-8801-21999f650edb",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
@@ -170,20 +171,20 @@
       "Poland",
       "Sweden"
     ],
-    "explanation": "Knox helped establish Presbyterian governance as Scotland’s national church form.",
+    "explanation": "Knox helped establish Presbyterian governance as Scotland\u2019s national church form.",
     "keywords": [
       "reformation",
       "scotland",
       "knox"
     ],
-    "source": "https://www.britannica.com/biography/John-Knox",
-    "seedId": "8fbacea0-99ce-4367-a40c-d10cebab0ae7"
+    "source": "https://www.britannica.com/biography/John-Knox"
   },
   {
+    "itemId": "cdac050e-8e61-4af3-bfc7-0b79e7e06d57",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Ignatius of Loyola’s society, founded vows and schools to advance Catholic renewal during the Counter-Reformation—what is it?",
+    "question": "Ignatius of Loyola\u2019s society, founded vows and schools to advance Catholic renewal during the Counter-Reformation\u2014what is it?",
     "correctAnswer": "The Society of Jesus (Jesuits)",
     "incorrectAnswers": [
       "The Franciscans",
@@ -196,14 +197,14 @@
       "catholic",
       "jesuits"
     ],
-    "source": "https://www.britannica.com/topic/Society-of-Jesus",
-    "seedId": "09cf6a52-8a80-416d-adf6-736a93a9b4b9"
+    "source": "https://www.britannica.com/topic/Society-of-Jesus"
   },
   {
+    "itemId": "1a7a1b04-6972-4ecb-a9f4-d4877e41493a",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
-    "question": "Philip Melanchthon’s Lutheran confession, presented to Charles V at Augsburg in 1530, is known by what name?",
+    "question": "Philip Melanchthon\u2019s Lutheran confession, presented to Charles V at Augsburg in 1530, is known by what name?",
     "correctAnswer": "The Augsburg Confession",
     "incorrectAnswers": [
       "The Westminster Confession",
@@ -216,10 +217,10 @@
       "lutheran",
       "germany"
     ],
-    "source": "https://www.britannica.com/topic/Augsburg-Confession",
-    "seedId": "67f87a7a-1768-4aa5-98bb-dfaf6ad1a4b6"
+    "source": "https://www.britannica.com/topic/Augsburg-Confession"
   },
   {
+    "itemId": "e2481f6d-a20a-4d3e-bb34-b1bf54c8c9bb",
     "category": "history",
     "navigationKeyword1": "early-modern",
     "navigationKeyword2": "reformation",
@@ -230,13 +231,12 @@
       "Portugal",
       "England"
     ],
-    "explanation": "Henry IV’s edict ended France’s religious civil wars with provisional rights for Protestants.",
+    "explanation": "Henry IV\u2019s edict ended France\u2019s religious civil wars with provisional rights for Protestants.",
     "keywords": [
       "reformation",
       "france",
       "toleration"
     ],
-    "source": "https://www.britannica.com/topic/Edict-of-Nantes",
-    "seedId": "0a81290e-0258-431e-837a-a036d4616ce5"
+    "source": "https://www.britannica.com/topic/Edict-of-Nantes"
   }
 ]

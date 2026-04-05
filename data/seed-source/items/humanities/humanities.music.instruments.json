@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "16af99de-afa5-4aec-acca-4b26cbd2d404",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "instruments",
@@ -15,10 +16,10 @@
       "music-instruments",
       "violin"
     ],
-    "source": "https://www.britannica.com/art/violin",
-    "seedId": "9b57f4f2-3656-5925-9fd6-e0d5d54842f5"
+    "source": "https://www.britannica.com/art/violin"
   },
   {
+    "itemId": "4a506567-4246-4be6-b7c6-a8b6fbb80027",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "instruments",
@@ -34,7 +35,6 @@
       "music-instruments",
       "woodwind"
     ],
-    "source": "https://www.metmuseum.org/toah/hd/muii/hd_muii.htm",
-    "seedId": "08b2809c-beb2-5263-9754-27c49a85e57c"
+    "source": "https://www.metmuseum.org/toah/hd/muii/hd_muii.htm"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d9011d95-69d5-41c3-be21-ce9a74f310ee",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -21,19 +22,19 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "15be1ec1-375d-43a4-b5da-50c791d9451f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "59068620-ec94-4386-a415-4b248620890f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A research laboratory needs to process approximately 8 TB of data. The laboratory requires sub-millisecond latencies and a minimum throughput\nof 6 GBps for the storage subsystem. Hundreds of Amazon EC2 instances that run Amazon Linux will distribute and process the data.\nWhich solution will meet the performance requirements?",
-    "correctAnswer": "Create an Amazon FSx for NetApp ONTAP le system. Sat each volume’ tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.",
+    "correctAnswer": "Create an Amazon FSx for NetApp ONTAP le system. Sat each volume\u2019 tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.",
     "incorrectAnswers": [
       "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent SSD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.",
       "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent HDD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.",
-      "Create an Amazon FSx for NetApp ONTAP le system. Set each volume’s tiering policy to NONE. Import the raw data into the le system. Mount the le system on the EC2 instances."
+      "Create an Amazon FSx for NetApp ONTAP le system. Set each volume\u2019s tiering policy to NONE. Import the raw data into the le system. Mount the le system on the EC2 instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #299). Correct choice: A.",
     "keywords": [
@@ -43,14 +44,14 @@
       "fsx",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5bcaf4c0-d9a8-4a44-8764-9438b2766a5e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8e968fb0-bcdd-42fb-96e5-648ca57ad465",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints.\nThe application runs 24 hours a day, 7 days a week. The application’s database storage continues to grow over time.\nWhat should a solutions architect do to meet these requirements MOST cost-effectively?",
+    "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints.\nThe application runs 24 hours a day, 7 days a week. The application\u2019s database storage continues to grow over time.\nWhat should a solutions architect do to meet these requirements MOST cost-effectively?",
     "correctAnswer": "Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.",
     "incorrectAnswers": [
       "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",
@@ -65,10 +66,10 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "52a85be3-2845-489c-ab39-17b14242acb5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "88a914e9-be09-4efd-b8aa-310dfeb5cefb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -85,10 +86,10 @@
       "aws-storage",
       "fsx"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "dfd8f3ad-e924-4c45-8f68-9d1893e35b19"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "de93aa75-0547-480a-b4f8-521f97fe419d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -108,10 +109,10 @@
       "ecs",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7ea94045-f9cc-41d1-8bde-bfe0708f1070"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5cbd148e-c1ba-451f-a013-cd115edabd69",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -128,10 +129,10 @@
       "aws-storage",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "db1085fe-9425-4d9b-b37e-154b69f4356b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "16177b98-9137-461a-a351-05a92120c02c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -148,10 +149,10 @@
       "aws-storage",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "2a4d82dc-54a9-4128-8a86-dfddef442d01"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "31479614-99da-4cc1-a1a4-eb074bbb9529",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -168,10 +169,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5ddb8365-bc11-4a29-8411-04ccf868db59"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e1d4519e-ba0e-47fb-af85-3bdead6d3bd6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -188,10 +189,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "2d040d40-aa45-4dbb-9d19-cbecaa50c32b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2c24890f-6b60-4dcc-9c65-0f9ff3c39fa1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -208,10 +209,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9c91d085-3cb7-4d04-8944-66f746eeb599"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "135ed8a0-b332-4dbc-99dc-804c724f5cd5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -231,10 +232,10 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3fd5c514-dbfb-46c9-8254-f4e2aad70f49"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7c006542-5475-4283-b0d7-dfcb5cc1de37",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -251,18 +252,18 @@
       "aws-analytics",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "00aa4f74-4397-4e45-8297-57709cce9372"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "41bce5d9-d145-44ae-be80-43a44892ca40",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon\nEBS) data volumes attached to it. The application’s EC2 instance conguration and data need to be backed up nightly. The application also needs\nto be recoverable in a different AWS Region.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
-    "correctAnswer": "Write an AWS Lambda function that schedules nightly snapshots of the application’s EBS volumes and copies the snapshots to a different Region.",
+    "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon\nEBS) data volumes attached to it. The application\u2019s EC2 instance conguration and data need to be backed up nightly. The application also needs\nto be recoverable in a different AWS Region.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
+    "correctAnswer": "Write an AWS Lambda function that schedules nightly snapshots of the application\u2019s EBS volumes and copies the snapshots to a different Region.",
     "incorrectAnswers": [
-      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application’s EC2 instances as resources.",
-      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application’s EBS volumes as resources.",
+      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\u2019s EC2 instances as resources.",
+      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\u2019s EBS volumes as resources.",
       "Write an AWS Lambda function that schedules nightly snapshots of the application's EBS volumes and copies the snapshots to a different Availability Zone."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #312). Correct choice: A.",
@@ -274,14 +275,14 @@
       "lambda",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "20b13b1d-12bc-4a5d-be26-fda2a53ff5c2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a8f12eca-461a-460b-afc2-ff0372d4af60",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform\nso that authorized users can watch the company’s content on their mobile devices.\nWhat should a solutions architect recommend to meet these requirements?",
+    "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform\nso that authorized users can watch the company\u2019s content on their mobile devices.\nWhat should a solutions architect recommend to meet these requirements?",
     "correctAnswer": "Publish content to a public Amazon S3 bucket. Use AWS Key Management Service (AWS KMS) keys to stream content.",
     "incorrectAnswers": [
       "Set up IPsec VPN between the mobile app and the AWS environment to stream content.",
@@ -296,10 +297,10 @@
       "s3",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a242f5d5-0132-4b9a-927b-fad0f752ab5f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7d7ec491-4779-4a8d-ba99-faa563bf687a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -318,10 +319,10 @@
       "aurora",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f4679e00-6643-460b-b1c3-6aeeccfe1802"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d703d540-eefd-472d-b78d-d4dc5820c217",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -342,10 +343,10 @@
       "shield",
       "cloudtrail"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d3d4f40c-9d79-43fa-a483-e5f7ffb4828a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5e68c640-7525-4852-886d-479ddf98822c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -364,10 +365,10 @@
       "ec2",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1cfd89b7-fc0f-4ea6-87bd-7f020c4e1212"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7e60854e-add1-45e2-b190-445b23f3a81d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -388,14 +389,14 @@
       "s3",
       "glue"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c9ffb4a1-d504-4709-90d8-19a338d4f88f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "20dbd54c-4021-42dd-9b16-a7a25f0ed2ec",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage\nthe instances. After a recent audit, the company’s security team is mandating the removal of all shared keys. A solutions architect must design a\nsolution that provides secure access to the EC2 instances.\nWhich solution will meet this requirement with the LEAST amount of administrative overhead?",
+    "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage\nthe instances. After a recent audit, the company\u2019s security team is mandating the removal of all shared keys. A solutions architect must design a\nsolution that provides secure access to the EC2 instances.\nWhich solution will meet this requirement with the LEAST amount of administrative overhead?",
     "correctAnswer": "Use AWS Systems Manager Session Manager to connect to the EC2 instances.",
     "incorrectAnswers": [
       "Use AWS Security Token Service (AWS STS) to generate one-time SSH keys on demand.",
@@ -410,14 +411,14 @@
       "ec2",
       "systems-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "038e8aac-66fd-4d63-a045-a8f4cc41c552"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "35a94ef1-908d-41bc-844c-6f10e1bee50b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion\nrates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost. The company’s data science team wants to query\ningested data in near-real time.\nWhich solution provides near-real-time data querying that is scalable with minimal data loss?",
+    "question": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion\nrates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost. The company\u2019s data science team wants to query\ningested data in near-real time.\nWhich solution provides near-real-time data querying that is scalable with minimal data loss?",
     "correctAnswer": "Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) to query the data.",
     "incorrectAnswers": [
       "Publish data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) with Amazon Redshift as the destination. Use Amazon Redshift to query the data.",
@@ -432,7 +433,6 @@
       "ec2",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f8607ed0-9c87-4626-b8f8-99f79c349cd7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

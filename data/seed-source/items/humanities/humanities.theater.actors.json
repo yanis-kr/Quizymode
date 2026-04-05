@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3159d067-fd0d-48fe-b5cc-0f7d1014d858",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "actors",
@@ -15,10 +16,10 @@
       "theater-actors",
       "performance"
     ],
-    "source": "https://www.britannica.com/art/acting",
-    "seedId": "ad943d56-fa65-5419-a029-1093a86f15e0"
+    "source": "https://www.britannica.com/art/acting"
   },
   {
+    "itemId": "672f390f-81cf-486d-89d1-d9f49ac018c8",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "actors",
@@ -34,7 +35,6 @@
       "theater-actors",
       "stagecraft"
     ],
-    "source": "https://www.nationaltheatre.org.uk/discover-more",
-    "seedId": "f3de5640-31c7-5a70-a589-8a86ddb1005c"
+    "source": "https://www.nationaltheatre.org.uk/discover-more"
   }
 ]

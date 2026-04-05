@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "562bda8d-55c9-4588-951a-b50a1c58c092",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "What does 'こんにちは' (konnichiwa) mean in the daytime?",
+    "question": "What does '\u3053\u3093\u306b\u3061\u306f' (konnichiwa) mean in the daytime?",
     "correctAnswer": "hello / good afternoon (common greeting)",
     "incorrectAnswers": [
       "good night only",
@@ -15,14 +16,14 @@
       "hello",
       "japanese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/hello",
-    "seedId": "eb3c0f71-0c60-5dd8-82a6-ab44563e2579"
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/hello"
   },
   {
+    "itemId": "93e9d35a-11bd-47f1-90f9-f5638d79667e",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "What does 'ありがとう' (arigatou) mean?",
+    "question": "What does '\u3042\u308a\u304c\u3068\u3046' (arigatou) mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
@@ -34,33 +35,33 @@
       "thank-you",
       "japanese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/thank-you",
-    "seedId": "24b65b4c-c757-5e2d-b3ba-68b0694a5aa9"
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/thank-you"
   },
   {
+    "itemId": "d26c79c1-06fb-4cf9-884a-67fe28eb5999",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "What does '水' (mizu) mean?",
+    "question": "What does '\u6c34' (mizu) mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "fire",
       "rice",
       "salt"
     ],
-    "explanation": "The kanji '水' with reading 'mizu' means water in basic vocabulary.",
+    "explanation": "The kanji '\u6c34' with reading 'mizu' means water in basic vocabulary.",
     "keywords": [
       "water",
       "japanese-basics"
     ],
-    "source": "https://jisho.org/word/%E6%B0%B4",
-    "seedId": "299993ca-49bf-5da2-81e8-69cdf2c249d2"
+    "source": "https://jisho.org/word/%E6%B0%B4"
   },
   {
+    "itemId": "a29b0a39-6ee7-4316-8eef-50f26040d212",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "What does 'はい' (hai) often mean in a simple reply?",
+    "question": "What does '\u306f\u3044' (hai) often mean in a simple reply?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",
@@ -72,14 +73,14 @@
       "yes",
       "japanese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/yes",
-    "seedId": "6b62c4fc-8ee7-5634-926e-8a25b58995ea"
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/yes"
   },
   {
+    "itemId": "4985624c-f413-4201-994e-5e8a6a2fbce7",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "What does 'いいえ' (iie) mean?",
+    "question": "What does '\u3044\u3044\u3048' (iie) mean?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes",
@@ -91,14 +92,14 @@
       "no",
       "japanese-basics"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/no",
-    "seedId": "645f01e3-f757-562e-b9b0-e71ba73c8f47"
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/no"
   },
   {
+    "itemId": "b2f82723-d0d5-4ce1-a59a-92c22d4d929a",
     "category": "languages",
     "navigationKeyword1": "other-langs",
     "navigationKeyword2": "japanese",
-    "question": "In a simple polite sentence, what does 'です' (desu) often do at the end?",
+    "question": "In a simple polite sentence, what does '\u3067\u3059' (desu) often do at the end?",
     "correctAnswer": "marks a polite statement (like 'is' in many patterns)",
     "incorrectAnswers": [
       "makes every sentence a question",
@@ -110,7 +111,6 @@
       "desu",
       "japanese-basics"
     ],
-    "source": "https://www.tofugu.com/japanese/polite-form-desu-masu/",
-    "seedId": "f47233b5-cfa9-5a44-be49-c83945bc1866"
+    "source": "https://www.tofugu.com/japanese/polite-form-desu-masu/"
   }
 ]

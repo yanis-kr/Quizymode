@@ -112,7 +112,7 @@ public static class SubmitChunkResult
             sessionKeywords);
 
         var status = isValid ? StudyGuidePromptResultStatus.Valid : StudyGuidePromptResultStatus.Invalid;
-        // Store enriched JSON (with overridden category/nav/seedId) instead of raw AI text
+        // Store enriched JSON (with overridden category/navigation) instead of raw AI text
         string? parsedJson = isValid ? enrichedJson : null;
 
         var existing = await db.StudyGuidePromptResults

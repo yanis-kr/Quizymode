@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "66e5c59d-66f4-4457-82d7-e5adc23fc1ef",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -15,10 +16,10 @@
       "javascript",
       "functions"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures",
-    "seedId": "74d504dd-6590-557f-baf8-402ccb95995c"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
   },
   {
+    "itemId": "6cad0d34-bc32-4074-9f74-6e436e8ba3b8",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -34,10 +35,10 @@
       "javascript",
       "operators"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
-    "seedId": "eb86f889-a978-5fe3-9f72-a9226d3ce4bc"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality"
   },
   {
+    "itemId": "e0fa32bf-6c88-471f-a1af-25bb29014959",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -53,10 +54,10 @@
       "javascript",
       "runtime"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop",
-    "seedId": "39fc69bf-e54e-5736-b434-b8000d5253fd"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop"
   },
   {
+    "itemId": "29cbad9a-68f1-4bb0-84be-ba2523a09f58",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -72,10 +73,10 @@
       "javascript",
       "variables"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let",
-    "seedId": "e1f0511b-d73a-5361-b355-535525c65099"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
   },
   {
+    "itemId": "984ec91e-2f39-4636-a3ad-7dde141d28fd",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -91,10 +92,10 @@
       "javascript",
       "async"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "seedId": "0f181763-a8a2-5e2e-b4ac-5527cb122f2a"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
   },
   {
+    "itemId": "df1e2e42-f189-4c6c-9dfe-e4e6b26ae022",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "javascript",
@@ -110,7 +111,6 @@
       "javascript",
       "standards"
     ],
-    "source": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
-    "seedId": "4861a7ff-0113-5e99-bca3-b3e4523c9310"
+    "source": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f179ecff-3b70-43c7-a2bd-50a500bad70d",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -16,10 +17,10 @@
       "andes",
       "empire"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "0b14f19a-e1a5-4dcc-a06a-1ecd42c354f9"
+    "source": "https://www.britannica.com/topic/Inca"
   },
   {
+    "itemId": "0907f39a-9e95-48e0-8395-4de186682f31",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -36,10 +37,10 @@
       "administration",
       "record-keeping"
     ],
-    "source": "https://www.britannica.com/technology/quipu",
-    "seedId": "54d0239f-7e5a-43a3-9f7a-016fbcf4262a"
+    "source": "https://www.britannica.com/technology/quipu"
   },
   {
+    "itemId": "c5404623-a562-465f-91f1-eb48fe0b57be",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -56,19 +57,19 @@
       "religion",
       "state-cult"
     ],
-    "source": "https://www.britannica.com/topic/Inti-Inca-Sun-god",
-    "seedId": "ea5b110d-c910-40f5-ae63-13bf7d676c6b"
+    "source": "https://www.britannica.com/topic/Inti-Inca-Sun-god"
   },
   {
+    "itemId": "1a941fae-cc73-470a-a4c0-69b189aff29d",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
-    "question": "Francisco Pizarro’s party seized which Inca ruler at Cajamarca in 1532, destabilizing the entire realm?",
+    "question": "Francisco Pizarro\u2019s party seized which Inca ruler at Cajamarca in 1532, destabilizing the entire realm?",
     "correctAnswer": "Atahualpa",
     "incorrectAnswers": [
-      "Huáscar before his capture only",
+      "Hu\u00e1scar before his capture only",
       "Manco Inca Yupanqui",
-      "Túpac Amaru II"
+      "T\u00fapac Amaru II"
     ],
     "explanation": "Ransom and execution of the captive ruler removed centralized command while Spanish forces exploited civil war divisions.",
     "keywords": [
@@ -76,19 +77,19 @@
       "1532",
       "pizarro"
     ],
-    "source": "https://www.britannica.com/biography/Atahualpa",
-    "seedId": "3214371e-fb72-45ae-96c3-c92ffe5cff42"
+    "source": "https://www.britannica.com/biography/Atahualpa"
   },
   {
+    "itemId": "8e7f93bb-ccdb-4432-a676-35d325b59726",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
     "question": "Before Pizarro arrived, a war of succession shook the empire between Atahualpa and which brother based in Cuzco?",
-    "correctAnswer": "Huáscar",
+    "correctAnswer": "Hu\u00e1scar",
     "incorrectAnswers": [
       "Moctezuma II",
-      "Túpac Inca Yupanqui (as contemporary rival)",
-      "Sayri Túpac in the 1540s"
+      "T\u00fapac Inca Yupanqui (as contemporary rival)",
+      "Sayri T\u00fapac in the 1540s"
     ],
     "explanation": "Fratricidal conflict weakened armies and distracted provincial loyalties when Europeans entered the Andes.",
     "keywords": [
@@ -96,17 +97,17 @@
       "huascar",
       "succession"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "811c99ff-6ffa-4c0e-938b-8b24c4dcd31b"
+    "source": "https://www.britannica.com/topic/Inca"
   },
   {
+    "itemId": "504c5627-571e-4d57-90dd-9f7bdbd3b949",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
     "question": "The fifteenth-century emperor most credited with aggressive expansion before the Spanish conquest is commonly called what?",
     "correctAnswer": "Pachacuti Inca Yupanqui",
     "incorrectAnswers": [
-      "Manco Cápac alone as sole expansionist",
+      "Manco C\u00e1pac alone as sole expansionist",
       "Topa Inca without Pachacuti context",
       "Sinchi Roca as world conqueror"
     ],
@@ -116,10 +117,10 @@
       "expansion",
       "cuzco"
     ],
-    "source": "https://www.britannica.com/biography/Pachacuti-Inca-Yupanqui",
-    "seedId": "21b0d8a8-7d98-401e-bae8-68c54d35c729"
+    "source": "https://www.britannica.com/biography/Pachacuti-Inca-Yupanqui"
   },
   {
+    "itemId": "9f98f043-8c76-4a26-90cb-a50c8240a1db",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -136,10 +137,10 @@
       "logistics",
       "empire"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "c87d524c-b542-4c57-a7c2-48f47a33dc42"
+    "source": "https://www.britannica.com/topic/Inca"
   },
   {
+    "itemId": "d35824e1-4c74-41f8-bb1f-786f59bd98dd",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -148,7 +149,7 @@
     "incorrectAnswers": [
       "Chan Chan",
       "Tiwanaku",
-      "Sacsayhuamán alone"
+      "Sacsayhuam\u00e1n alone"
     ],
     "explanation": "Its fine masonry and terraces illustrate Inca integration of architecture with steep mountain ecology.",
     "keywords": [
@@ -156,17 +157,17 @@
       "architecture",
       "urubamba"
     ],
-    "source": "https://www.britannica.com/place/Machu-Picchu",
-    "seedId": "0ac5ec17-d532-408b-9842-5ca938ea97be"
+    "source": "https://www.britannica.com/place/Machu-Picchu"
   },
   {
+    "itemId": "9ad66d2b-5abf-4f19-832c-4020bcfa3b67",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
-    "question": "Corvée labor drafted for agriculture, mining, and construction under Inca rule is widely known by which Quechua-derived term?",
+    "question": "Corv\u00e9e labor drafted for agriculture, mining, and construction under Inca rule is widely known by which Quechua-derived term?",
     "correctAnswer": "Mita",
     "incorrectAnswers": [
-      "Corvée générale",
+      "Corv\u00e9e g\u00e9n\u00e9rale",
       "Serfdom statute",
       "Encomienda (as identical institution)"
     ],
@@ -176,14 +177,14 @@
       "labor",
       "tribute"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "15d7de85-951e-4a12-8741-4a8183a68ac6"
+    "source": "https://www.britannica.com/topic/Inca"
   },
   {
+    "itemId": "a2ea3b7c-c12c-484f-9123-a7cc5a681e1e",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
-    "question": "Cuzco’s monumental core displayed masterful ashlar walls where stones were fitted without what?",
+    "question": "Cuzco\u2019s monumental core displayed masterful ashlar walls where stones were fitted without what?",
     "correctAnswer": "Mortar in the finest ashlar courses",
     "incorrectAnswers": [
       "Any cutting tools",
@@ -196,10 +197,10 @@
       "stonework",
       "architecture"
     ],
-    "source": "https://www.britannica.com/place/Cuzco",
-    "seedId": "5347f330-a8b4-43e0-baaf-6b6188793f1a"
+    "source": "https://www.britannica.com/place/Cuzco"
   },
   {
+    "itemId": "412d41ce-de2a-4e17-9f32-a8730981fbaa",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -207,19 +208,19 @@
     "correctAnswer": "Quechua",
     "incorrectAnswers": [
       "Nahuatl",
-      "Guaraní alone nationwide",
+      "Guaran\u00ed alone nationwide",
       "Aymara for the entire former empire"
     ],
-    "explanation": "Quechua’s wide distribution reflects Inca administrative spread even where other languages persisted locally.",
+    "explanation": "Quechua\u2019s wide distribution reflects Inca administrative spread even where other languages persisted locally.",
     "keywords": [
       "quechua",
       "language",
       "descendants"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "c4261821-83c7-4593-99d8-3a0aef82e503"
+    "source": "https://www.britannica.com/topic/Inca"
   },
   {
+    "itemId": "23109661-bed9-4a2a-93d5-69edf77874f6",
     "category": "history",
     "navigationKeyword1": "civilizations",
     "navigationKeyword2": "inca",
@@ -236,7 +237,6 @@
       "agriculture",
       "andes"
     ],
-    "source": "https://www.britannica.com/topic/Inca",
-    "seedId": "5b413a53-a8ea-417e-a6e9-9f21874a75f5"
+    "source": "https://www.britannica.com/topic/Inca"
   }
 ]

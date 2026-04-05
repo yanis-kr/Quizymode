@@ -1,13 +1,14 @@
 [
   {
+    "itemId": "37be93d0-69c9-4048-9145-5f8a1555a9dd",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
     "question": "In corporate finance, what does WACC stand for and what is it used for?",
-    "correctAnswer": "Weighted Average Cost of Capital; it’s the discount rate used in discounted cash flow (DCF) style valuation.",
+    "correctAnswer": "Weighted Average Cost of Capital; it\u2019s the discount rate used in discounted cash flow (DCF) style valuation.",
     "incorrectAnswers": [
-      "Workforce Average Compensation Cost; it’s used to discount inventory costs.",
-      "Weighted Annual Contract Charge; it’s a fee charged for issuing bonds.",
+      "Workforce Average Compensation Cost; it\u2019s used to discount inventory costs.",
+      "Weighted Annual Contract Charge; it\u2019s a fee charged for issuing bonds.",
       "Whole-Asset Cash Cycle; it measures how quickly the firm collects receivables."
     ],
     "explanation": "WACC combines the cost of equity and the cost of debt into a single weighted rate that discount models use to value future cash flows.",
@@ -16,10 +17,10 @@
       "discount-rate",
       "valuation"
     ],
-    "source": "https://www.investopedia.com/terms/w/wacc.asp",
-    "seedId": "3169c38d-0ae1-59b4-844f-d1e9c18a1263"
+    "source": "https://www.investopedia.com/terms/w/wacc.asp"
   },
   {
+    "itemId": "37190589-3edb-4959-a5e2-5806966b13bc",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
@@ -36,10 +37,10 @@
       "metrics",
       "operating-performance"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/accounting/ebitda/",
-    "seedId": "375277cb-dec0-594d-8b9b-91460963f0ff"
+    "source": "https://corporatefinanceinstitute.com/resources/accounting/ebitda/"
   },
   {
+    "itemId": "ed583da3-0d54-47dc-a2b5-415c8021acd1",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
@@ -48,7 +49,7 @@
     "incorrectAnswers": [
       "Net income after dividends, before accounting for any capex.",
       "Total cash inflows from financing only.",
-      "Book value of the firm’s assets reported on the balance sheet."
+      "Book value of the firm\u2019s assets reported on the balance sheet."
     ],
     "explanation": "FCF is commonly defined as cash from operations minus capex, representing cash the business can use for debt paydown, dividends, or growth.",
     "keywords": [
@@ -56,10 +57,10 @@
       "fcf",
       "capex"
     ],
-    "source": "https://www.investopedia.com/terms/f/freecashflow.asp",
-    "seedId": "7fd689a3-2c17-502e-9c97-712041e2ee04"
+    "source": "https://www.investopedia.com/terms/f/freecashflow.asp"
   },
   {
+    "itemId": "3f9d4ea1-ab97-4391-94cc-b35d5323aac3",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
@@ -76,18 +77,18 @@
       "debt-vs-equity",
       "dilution"
     ],
-    "source": "https://www.investopedia.com/terms/c/capitalstructure.asp",
-    "seedId": "05b2aba3-236a-5cfc-93d0-867747b00fd1"
+    "source": "https://www.investopedia.com/terms/c/capitalstructure.asp"
   },
   {
+    "itemId": "c18272d3-7848-47dc-beb5-d39870941fb4",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
     "question": "In valuation, what does a positive net present value (NPV) imply about an investment?",
-    "correctAnswer": "The investment’s discounted future cash flows exceed the initial cost, suggesting value creation under the assumed discount rate.",
+    "correctAnswer": "The investment\u2019s discounted future cash flows exceed the initial cost, suggesting value creation under the assumed discount rate.",
     "incorrectAnswers": [
       "The investment is guaranteed to produce profits regardless of future cash flows.",
-      "The investment’s cash flows are equal to the initial cost exactly.",
+      "The investment\u2019s cash flows are equal to the initial cost exactly.",
       "The discount rate is too high, so NPV must be negative by definition."
     ],
     "explanation": "NPV discounts expected cash flows and subtracts the initial outlay; if the result is positive, the discounted benefits outweigh discounted costs.",
@@ -96,18 +97,18 @@
       "discounting",
       "value-creation"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/npv-net-present-value/",
-    "seedId": "6e4db1f8-364c-5e23-88cf-81d27fa4c108"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/npv-net-present-value/"
   },
   {
+    "itemId": "641f5ed9-f3df-456e-a824-9350bd257298",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "corporate-finance",
     "question": "What is an enterprise value (EV) typically trying to measure compared with market capitalization?",
-    "correctAnswer": "EV approximates the value of the firm’s operations by reflecting both equity value and debt (adjusting for cash).",
+    "correctAnswer": "EV approximates the value of the firm\u2019s operations by reflecting both equity value and debt (adjusting for cash).",
     "incorrectAnswers": [
       "EV only equals the value of stock and never considers debt.",
-      "EV measures a firm’s total payroll cost.",
+      "EV measures a firm\u2019s total payroll cost.",
       "EV is the number of outstanding shares multiplied by the dividend per share only."
     ],
     "explanation": "EV is often used in multiples because it better represents the total value of the business than equity market cap alone.",
@@ -116,7 +117,6 @@
       "multiples",
       "valuation-basis"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/enterprise-value-ev/",
-    "seedId": "4fd7441a-edd7-5b31-8ee4-9eb15919b782"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/enterprise-value-ev/"
   }
 ]

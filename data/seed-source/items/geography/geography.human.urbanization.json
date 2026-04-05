@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "efbecdf2-505b-4b6e-85b0-4c0285dfc03c",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -16,14 +17,14 @@
       "cities",
       "definitions"
     ],
-    "source": "https://www.britannica.com/science/urbanization",
-    "seedId": "5f6a412a-2f29-49bb-97f8-49947970af2f"
+    "source": "https://www.britannica.com/science/urbanization"
   },
   {
+    "itemId": "f3a2e2e8-2bbb-4403-b303-5fc6740cea13",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
-    "question": "By the early 21st century, more than half of the world’s population lived where?",
+    "question": "By the early 21st century, more than half of the world\u2019s population lived where?",
     "correctAnswer": "in urban centres",
     "incorrectAnswers": [
       "on small family farms",
@@ -36,10 +37,10 @@
       "population",
       "trends"
     ],
-    "source": "https://www.britannica.com/science/urbanization",
-    "seedId": "7e4c380f-d35f-422a-8bbf-87b07a0a9211"
+    "source": "https://www.britannica.com/science/urbanization"
   },
   {
+    "itemId": "d30b6832-2a22-48cb-861c-2e3e17adb13b",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -56,10 +57,10 @@
       "sdg-11",
       "united-nations"
     ],
-    "source": "https://www.un.org/sustainabledevelopment/cities/",
-    "seedId": "d3de1256-a8e9-4435-b825-acf786d978dd"
+    "source": "https://www.un.org/sustainabledevelopment/cities/"
   },
   {
+    "itemId": "aa9dd43b-e35a-4128-8cd8-36fdbb07d907",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -76,10 +77,10 @@
       "projections",
       "sdg-11"
     ],
-    "source": "https://www.un.org/sustainabledevelopment/cities/",
-    "seedId": "50bec985-e49b-4c97-a856-ff0dc74f3f7e"
+    "source": "https://www.un.org/sustainabledevelopment/cities/"
   },
   {
+    "itemId": "da2057ec-23ea-45d6-95ca-38a359f7d236",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -96,10 +97,10 @@
       "projections",
       "cities"
     ],
-    "source": "https://www.un.org/en/global-issues/human-settlements",
-    "seedId": "a3c2eb1c-b3a5-4005-b4f8-bbdf73519c38"
+    "source": "https://www.un.org/en/global-issues/human-settlements"
   },
   {
+    "itemId": "353dd857-9e19-48a7-bd15-a5b51ef26837",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -116,10 +117,10 @@
       "un-habitat",
       "united-nations"
     ],
-    "source": "https://www.un.org/en/global-issues/human-settlements",
-    "seedId": "9dcb0c21-a382-4f25-a963-ee24b4c2e919"
+    "source": "https://www.un.org/en/global-issues/human-settlements"
   },
   {
+    "itemId": "0910f884-bb39-4101-a7c2-29b1e13e0842",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -136,10 +137,10 @@
       "un-habitat",
       "history"
     ],
-    "source": "https://www.un.org/en/global-issues/human-settlements",
-    "seedId": "a6ade040-09de-4c14-a404-807c49feb5d7"
+    "source": "https://www.un.org/en/global-issues/human-settlements"
   },
   {
+    "itemId": "fab647d3-73ed-4ff4-afc0-369605f46062",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -156,10 +157,10 @@
       "world-cities-day",
       "observances"
     ],
-    "source": "https://www.un.org/en/global-issues/human-settlements",
-    "seedId": "3eea0fd7-740e-49a0-8d19-af8ef0496318"
+    "source": "https://www.un.org/en/global-issues/human-settlements"
   },
   {
+    "itemId": "816b60d8-9db4-4143-8069-ac4db2719c53",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -176,10 +177,10 @@
       "world-habitat-day",
       "observances"
     ],
-    "source": "https://www.un.org/en/global-issues/human-settlements",
-    "seedId": "ae4fb9c5-ca03-4a17-a6cc-92175ac61b6c"
+    "source": "https://www.un.org/en/global-issues/human-settlements"
   },
   {
+    "itemId": "3453b5f9-1c06-47fc-8fae-c4a85c69e3c9",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -196,10 +197,10 @@
       "new-urban-agenda",
       "habitat-iii"
     ],
-    "source": "https://www.un.org/sustainabledevelopment/cities/",
-    "seedId": "06c20266-a2a4-4f17-b492-22f4a5890502"
+    "source": "https://www.un.org/sustainabledevelopment/cities/"
   },
   {
+    "itemId": "db079451-a854-4d69-8cbb-e7123fa46c69",
     "category": "geography",
     "navigationKeyword1": "human",
     "navigationKeyword2": "urbanization",
@@ -216,7 +217,6 @@
       "new-urban-agenda",
       "policy"
     ],
-    "source": "https://www.un.org/sustainabledevelopment/cities/",
-    "seedId": "31fd1bad-e8cf-4a4d-9478-c3d9289e0656"
+    "source": "https://www.un.org/sustainabledevelopment/cities/"
   }
 ]

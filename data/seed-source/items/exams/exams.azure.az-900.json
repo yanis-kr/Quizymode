@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "70c26af3-d10a-4ac8-800d-71a541f7234e",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
-    "question": "What is an Azure region?",
+    "question": "On the AZ-900 exam, what is an Azure region?",
     "correctAnswer": "A set of datacenters deployed within a latency-defined perimeter",
     "incorrectAnswers": [
       "A single virtual machine host",
@@ -16,10 +17,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
-    "seedId": "dde2cee7-05c5-45a9-88fe-92652e685d1f"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview"
   },
   {
+    "itemId": "e3a6d89a-5a7e-4c54-ba07-21ff1105d280",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -36,10 +37,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
-    "seedId": "ad80b7e2-4db1-4891-8575-0cc5169dbdff"
+    "source": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview"
   },
   {
+    "itemId": "7bc5dda0-0a61-40e4-a268-b57d56743bf1",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -56,10 +57,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
-    "seedId": "0757021b-73a9-4e90-965e-28b56028e61c"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machines/overview"
   },
   {
+    "itemId": "7a5b2b3d-9248-4619-868b-cf1bff25d119",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -76,10 +77,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
-    "seedId": "1772def8-cc39-4124-b9b3-1ee4a493b1ac"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
   },
   {
+    "itemId": "583fe314-1c19-4407-87c3-8cacf8e31ebc",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -96,10 +97,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
-    "seedId": "29776fef-e3d3-481b-a3f9-0e04f335ea4d"
+    "source": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction"
   },
   {
+    "itemId": "7b379c2f-48d3-457d-b9e7-8b5bffef223b",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -116,10 +117,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
-    "seedId": "f47629b4-c5ef-40f0-b48b-9a4831f88474"
+    "source": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra"
   },
   {
+    "itemId": "67a10eed-645b-4137-a664-f12eaf830361",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -136,10 +137,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
-    "seedId": "de595698-bb35-4747-b085-f0d7a6952ba4"
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
   },
   {
+    "itemId": "f5009560-82a0-415b-8f1b-2ab74f92581c",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -156,10 +157,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview",
-    "seedId": "cd1e50a5-a702-4afc-914f-22e03880f1e0"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview"
   },
   {
+    "itemId": "6584444e-1e71-4665-9350-1a6ab96f50ec",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -176,14 +177,14 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
-    "seedId": "68c9f032-2614-4c46-9b8d-5968008887d8"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
   },
   {
+    "itemId": "9bc981d4-6d86-4c81-a5cc-87fff0280ea1",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
-    "question": "What is an Azure resource group?",
+    "question": "On the AZ-900 exam, what is an Azure resource group?",
     "correctAnswer": "A container that holds related resources for an Azure solution",
     "incorrectAnswers": [
       "A physical Azure datacenter",
@@ -196,10 +197,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
-    "seedId": "cc358bed-aa91-4298-8e1c-6126e2fdcb28"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
   },
   {
+    "itemId": "a9a4104a-d50b-4420-b54d-bcce4929bb3d",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -216,10 +217,10 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
-    "seedId": "c5992c93-3fa5-4ccb-a49a-e28038b7a580"
+    "source": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview"
   },
   {
+    "itemId": "0c6e5a3d-0b4c-490b-9e56-b4e03ec0096c",
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "az-900",
@@ -236,7 +237,6 @@
       "azure-fundamentals",
       "azure-services"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/",
-    "seedId": "97a3b56f-784d-47c5-a184-884ee1aa2881"
+    "source": "https://learn.microsoft.com/en-us/azure/azure-functions/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0d58fcee-db1b-4e11-8be1-85f5bbc6958d",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -15,10 +16,10 @@
       "git",
       "version-control"
     ],
-    "source": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects",
-    "seedId": "6adc9594-2b56-5e11-a8a6-1aacf560afbd"
+    "source": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects"
   },
   {
+    "itemId": "adcb23bf-b895-4003-8f57-ac8925c404ce",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -34,10 +35,10 @@
       "git",
       "staging"
     ],
-    "source": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
-    "seedId": "c9a1f6b0-9b6f-52cc-8d43-d34f523eb513"
+    "source": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository"
   },
   {
+    "itemId": "04004d67-079c-4a3c-86bb-fd434b12e08a",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -53,10 +54,10 @@
       "git",
       "pull"
     ],
-    "source": "https://git-scm.com/docs/git-pull",
-    "seedId": "19dc12f0-a68a-51d3-b18e-58b37e57f69b"
+    "source": "https://git-scm.com/docs/git-pull"
   },
   {
+    "itemId": "798fbc78-594b-4049-9737-7f535a7eb8c9",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -72,10 +73,10 @@
       "git",
       "merge"
     ],
-    "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line",
-    "seedId": "6fedbb93-65d8-53e3-957e-c855b1c8cdae"
+    "source": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line"
   },
   {
+    "itemId": "c91ff6ce-0c4e-4728-80ee-7c2637b1da98",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -91,10 +92,10 @@
       "git",
       "tags"
     ],
-    "source": "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
-    "seedId": "cfb32794-7123-57df-aafe-bab623209ff3"
+    "source": "https://git-scm.com/book/en/v2/Git-Basics-Tagging"
   },
   {
+    "itemId": "d655ab18-3640-44b5-a1b9-7973c7037558",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "git",
@@ -110,7 +111,6 @@
       "git",
       "rebase"
     ],
-    "source": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing",
-    "seedId": "9b6668cb-2bd1-50db-a8ed-3daf6ae1de43"
+    "source": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing"
   }
 ]

@@ -1,25 +1,26 @@
 [
   {
+    "itemId": "64f72abb-b1a8-44c8-814d-1d26664e6647",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
-    "question": "You hear thunder during a downpour but never spot a lightning flash—what must still be happening in that storm?",
+    "question": "You hear thunder during a downpour but never spot a lightning flash\u2014what must still be happening in that storm?",
     "correctAnswer": "Lightning (thunder is the sound produced by lightning heating the air)",
     "incorrectAnswers": [
-      "Only harmless “heat lightning” with no real electricity",
+      "Only harmless \u201cheat lightning\u201d with no real electricity",
       "Static from nearby power lines only",
       "Aurora-like glows in raindrops"
     ],
-    "explanation": "NOAA’s NSSL explains that thunder comes from lightning; if you hear thunder, lightning occurred even when clouds hide the flash.",
+    "explanation": "NOAA\u2019s NSSL explains that thunder comes from lightning; if you hear thunder, lightning occurred even when clouds hide the flash.",
     "keywords": [
       "storms",
       "lightning",
       "thunder"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
-    "seedId": "ecc78c3c-f685-4dce-b738-0985016958d8"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
   },
   {
+    "itemId": "ab8480d0-8cb2-4a46-942f-20baaf0aae54",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -30,20 +31,20 @@
       "quarter inch or greater",
       "three inches or greater"
     ],
-    "explanation": "NSSL states a thunderstorm is “severe” when it contains hail one inch or greater, winds gusting over 50 knots (57.5 mph), or a tornado.",
+    "explanation": "NSSL states a thunderstorm is \u201csevere\u201d when it contains hail one inch or greater, winds gusting over 50 knots (57.5 mph), or a tornado.",
     "keywords": [
       "storms",
       "severe-thunderstorm",
       "hail"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
-    "seedId": "6db90f58-53b0-4ed9-afb2-2fe31eda5232"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
   },
   {
+    "itemId": "22571bad-691f-4c23-8dce-46fce1ffa480",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
-    "question": "Forecasters boil thunderstorm formation down to three ingredients—moisture, unstable air, and what third piece that actually starts the updraft?",
+    "question": "Forecasters boil thunderstorm formation down to three ingredients\u2014moisture, unstable air, and what third piece that actually starts the updraft?",
     "correctAnswer": "a lifting mechanism (front, hills, daytime heating, etc.)",
     "incorrectAnswers": [
       "permanent high pressure that suppresses all clouds",
@@ -56,10 +57,10 @@
       "thunderstorm-formation",
       "lifting-mechanism"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
-    "seedId": "21952c8f-8b49-400d-9647-ccb24173e061"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
   },
   {
+    "itemId": "d4cdab46-59a7-4c79-8c2b-4b31b1be034b",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -76,10 +77,10 @@
       "thunderstorm-life-cycle",
       "mature-stage"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
-    "seedId": "3bd5d8c3-50c4-4388-954a-32a622547459"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
   },
   {
+    "itemId": "3ce8e823-9423-41f2-9df7-ddda581cd58a",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -96,50 +97,50 @@
       "thunderstorm-frequency",
       "united-states"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/",
-    "seedId": "67fc44aa-927c-46d6-99aa-1abbf8b359bf"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/"
   },
   {
+    "itemId": "0d16d1bd-b5bb-4cac-ada4-0740c854aada",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
     "question": "In the United States, the violent tornadoes that make headlines usually spin up under which kind of thunderstorm?",
-    "correctAnswer": "Supercells—long-lived storms with a rotating updraft",
+    "correctAnswer": "Supercells\u2014long-lived storms with a rotating updraft",
     "incorrectAnswers": [
       "Fair-weather cumulus on a blue-sky afternoon",
       "Wide sheets of stratiform drizzle",
       "Winter lake-effect snow bands only"
     ],
-    "explanation": "NOAA’s NSSL notes most strong tornadoes come from supercells, though tornadoes can occasionally form in other storm types.",
+    "explanation": "NOAA\u2019s NSSL notes most strong tornadoes come from supercells, though tornadoes can occasionally form in other storm types.",
     "keywords": [
       "storms",
       "supercell",
       "tornado"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
-    "seedId": "04d0327f-318a-44a2-8e20-769e637fda86"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
   },
   {
+    "itemId": "b7c1a2c0-3f23-45a4-85d9-d1b2d1cc5423",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
-    "question": "On the Enhanced Fujita scale, EF5 surveys describe “incredible” damage—well-built homes swept away and car-sized debris hurled roughly how far?",
+    "question": "On the Enhanced Fujita scale, EF5 surveys describe \u201cincredible\u201d damage\u2014well-built homes swept away and car-sized debris hurled roughly how far?",
     "correctAnswer": "More than 100 meters (over a football field in length)",
     "incorrectAnswers": [
       "Only a few meters from the foundation",
       "Never farther than the visible funnel width",
       "Only straight upward, not outward"
     ],
-    "explanation": "NSSL’s EF-scale training examples include EF5-level indicators such as automobile-sized missiles thrown more than 100 meters, alongside destruction of well-anchored homes.",
+    "explanation": "NSSL\u2019s EF-scale training examples include EF5-level indicators such as automobile-sized missiles thrown more than 100 meters, alongside destruction of well-anchored homes.",
     "keywords": [
       "storms",
       "ef-scale",
       "tornado-damage"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
-    "seedId": "ae2ba599-17ec-434f-abb0-a0e47414add5"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/"
   },
   {
+    "itemId": "cc6170f7-076d-400c-bc66-07fafff25fc2",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -150,16 +151,16 @@
       "110 mph (96 knots)",
       "157 mph (137 knots)"
     ],
-    "explanation": "NOAA’s National Hurricane Center classifies a tropical cyclone with winds of 74 mph or higher as a hurricane in the Atlantic (typhoon in the western North Pacific).",
+    "explanation": "NOAA\u2019s National Hurricane Center classifies a tropical cyclone with winds of 74 mph or higher as a hurricane in the Atlantic (typhoon in the western North Pacific).",
     "keywords": [
       "storms",
       "hurricane-threshold",
       "tropical-cyclone"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/",
-    "seedId": "9df3b199-cd94-4e49-b4b9-0cc7ff91f7ec"
+    "source": "https://www.nhc.noaa.gov/climo/"
   },
   {
+    "itemId": "d34cbf16-a264-4117-a420-9e64117076bb",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -176,10 +177,10 @@
       "atlantic-hurricane-season",
       "june-november"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/",
-    "seedId": "d14dbf90-dce4-436b-8555-ef6efa9a6c02"
+    "source": "https://www.nhc.noaa.gov/climo/"
   },
   {
+    "itemId": "58ad174c-f637-4935-a027-51f8309ad475",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "storms",
@@ -190,13 +191,12 @@
       "November 1",
       "May 15"
     ],
-    "explanation": "NOAA’s tropical cyclone climatology notes the Atlantic season’s peak is September 10, with most activity between mid-August and mid-October.",
+    "explanation": "NOAA\u2019s tropical cyclone climatology notes the Atlantic season\u2019s peak is September 10, with most activity between mid-August and mid-October.",
     "keywords": [
       "storms",
       "atlantic-hurricane-peak",
       "september"
     ],
-    "source": "https://www.nhc.noaa.gov/climo/",
-    "seedId": "1aab8069-5db7-42e2-b03b-4410afbb6a45"
+    "source": "https://www.nhc.noaa.gov/climo/"
   }
 ]

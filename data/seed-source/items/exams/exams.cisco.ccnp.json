@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d989ca71-0a0e-4264-bef6-3f4864580d8b",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -16,10 +17,10 @@
       "ospf",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html",
-    "seedId": "09b0f365-aa20-4607-bb38-45c75b2626d5"
+    "source": "https://www.cisco.com/c/en/us/products/ios-nx-os-software/open-shortest-path-first-ospf/index.html"
   },
   {
+    "itemId": "997bfff8-8a48-4769-b69b-33ee63b5c685",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -36,10 +37,10 @@
       "ospf",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc2328",
-    "seedId": "a4ffc55b-14c8-465d-b140-54a7555a34fd"
+    "source": "https://www.rfc-editor.org/rfc/rfc2328"
   },
   {
+    "itemId": "ec6ba6b3-d083-4a36-ac8f-0c23f8301a84",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -56,10 +57,10 @@
       "ospf",
       "cisco"
     ],
-    "source": "https://www.cisco.com/en/US/docs/security/vpn5000/manager/reference/guide/ospf.html",
-    "seedId": "97341f49-adac-4914-975e-73cf6c9422f0"
+    "source": "https://www.cisco.com/en/US/docs/security/vpn5000/manager/reference/guide/ospf.html"
   },
   {
+    "itemId": "4f01009d-4a71-42ec-bc6a-d0b4de6f94cb",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -76,10 +77,10 @@
       "hsrp",
       "cisco"
     ],
-    "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html",
-    "seedId": "57e75419-5114-4f5f-beac-ccea0ea6be65"
+    "source": "https://www.cisco.com/en/US/docs/switches/metro/me3600x_3800x/trash/swhsrp.html"
   },
   {
+    "itemId": "82f95aab-6a80-4e97-bdcc-84ac87066000",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -96,10 +97,10 @@
       "stp",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html",
-    "seedId": "ad93eebe-0e59-4b3b-90b8-3284189d8163"
+    "source": "https://www.cisco.com/c/en/us/products/switches/what-is-network-switching.html"
   },
   {
+    "itemId": "15c9d8a4-99d9-42d7-a38a-c551ad5c68a6",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -116,10 +117,10 @@
       "vrf",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html",
-    "seedId": "07b51044-be2e-4516-9b5a-d27213859520"
+    "source": "https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/3-8/reference/guide/vrf.html"
   },
   {
+    "itemId": "64b7c885-a3ea-40d5-b898-2e408569f57a",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -136,10 +137,10 @@
       "bgp",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4271",
-    "seedId": "2285d803-c742-4aae-a4a1-7815f0d6840f"
+    "source": "https://www.rfc-editor.org/rfc/rfc4271"
   },
   {
+    "itemId": "41705774-bc04-4fa3-a4b2-2b9041b9c7f5",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -156,10 +157,10 @@
       "pat",
       "cisco"
     ],
-    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html",
-    "seedId": "321e3c76-6946-4e67-aaac-52b5febb1456"
+    "source": "https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
   },
   {
+    "itemId": "ab34aa39-5f25-47ea-9c92-2f576307554d",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -176,10 +177,10 @@
       "bgp",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4456",
-    "seedId": "bba4bb27-09da-4267-a42b-9eabf20531a7"
+    "source": "https://www.rfc-editor.org/rfc/rfc4456"
   },
   {
+    "itemId": "574fc781-968e-4f14-a628-183516e75cc6",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "ccnp",
@@ -196,7 +197,6 @@
       "ipv6",
       "cisco"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc4213",
-    "seedId": "d373328c-b17b-4a12-9512-83252a9f4216"
+    "source": "https://www.rfc-editor.org/rfc/rfc4213"
   }
 ]

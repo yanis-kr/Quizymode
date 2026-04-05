@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a1371aa5-4d18-4a14-998d-2fec6b50fe3f",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -15,10 +16,10 @@
       "judicial-review",
       "interpretation"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
-    "seedId": "16e56561-1a83-5b13-98f1-4627a2d86082"
+    "source": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
   },
   {
+    "itemId": "4c5cfa9e-ca0f-4552-9e50-b61ef59e5485",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -34,10 +35,10 @@
       "article-v",
       "interpretation"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendments/",
-    "seedId": "d8800787-6cbd-594b-99b7-c8fded8af9f0"
+    "source": "https://constitution.congress.gov/constitution/amendments/"
   },
   {
+    "itemId": "5e2d9f6b-f180-40ff-98e9-01d2a188c687",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -53,10 +54,10 @@
       "precedent",
       "interpretation"
     ],
-    "source": "https://www.law.cornell.edu/wex/stare_decisis",
-    "seedId": "7fead731-426e-531b-9146-0ca823951a51"
+    "source": "https://www.law.cornell.edu/wex/stare_decisis"
   },
   {
+    "itemId": "c4a1711a-38e4-484f-ad1e-5d3073d67ca6",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -72,10 +73,10 @@
       "supremacy-clause",
       "interpretation"
     ],
-    "source": "https://www.archives.gov/founding-docs/constitution-transcript",
-    "seedId": "05bdb7e4-2813-5d4e-b2a2-1ec9affc3784"
+    "source": "https://www.archives.gov/founding-docs/constitution-transcript"
   },
   {
+    "itemId": "79de4cad-c262-461b-b5d8-ef3d35f9327e",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -91,10 +92,10 @@
       "judicial-review",
       "interpretation"
     ],
-    "source": "https://www.usa.gov/branches-of-government",
-    "seedId": "a971dddd-23e8-5a2d-b7c2-5ca89b2d72bf"
+    "source": "https://www.usa.gov/branches-of-government"
   },
   {
+    "itemId": "e5772dfd-4ceb-4662-9db7-d2d9969c0c6d",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "interpretation",
@@ -110,7 +111,6 @@
       "interpretation",
       "constitution-debates"
     ],
-    "source": "https://www.whitehouse.gov/our-government/the-constitution/",
-    "seedId": "ba1991d3-bb2f-536c-bd4c-d1a66a989ae9"
+    "source": "https://www.whitehouse.gov/our-government/the-constitution/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "57d38e41-4cbc-4559-96aa-e4624eaa7653",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
@@ -15,14 +16,14 @@
       "kubernetes",
       "pods"
     ],
-    "source": "https://kubernetes.io/docs/concepts/workloads/pods/",
-    "seedId": "2ed297ce-039b-5d74-9cff-9f83675680b4"
+    "source": "https://kubernetes.io/docs/concepts/workloads/pods/"
   },
   {
+    "itemId": "9afb5ca0-0056-4c3f-9880-045e274dae1c",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
-    "question": "What does a Deployment controller primarily manage?",
+    "question": "In a DevOps Kubernetes workflow, what does a Deployment controller primarily manage?",
     "correctAnswer": "ReplicaSets and rolling updates of Pod templates",
     "incorrectAnswers": [
       "Only TLS certificates for the cluster",
@@ -34,10 +35,10 @@
       "kubernetes",
       "deployments"
     ],
-    "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
-    "seedId": "b6763f49-b30a-5e07-a074-0c872a5fa7c0"
+    "source": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
   },
   {
+    "itemId": "80a71161-4f4b-4965-9228-29ee4d7757fe",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
@@ -53,10 +54,10 @@
       "kubernetes",
       "networking"
     ],
-    "source": "https://kubernetes.io/docs/concepts/services-networking/service/",
-    "seedId": "9b67240c-878a-5790-8e11-cd6336cc96f1"
+    "source": "https://kubernetes.io/docs/concepts/services-networking/service/"
   },
   {
+    "itemId": "e5b7e245-6a65-4c52-8de3-343fae3f7147",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
@@ -72,10 +73,10 @@
       "kubernetes",
       "scheduling"
     ],
-    "source": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
-    "seedId": "8b656365-f237-50cb-880c-ddf67677cf36"
+    "source": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/"
   },
   {
+    "itemId": "46643663-63c8-437d-a12d-20f90523ad1d",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
@@ -91,10 +92,10 @@
       "kubernetes",
       "namespaces"
     ],
-    "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/architecture/namespaces",
-    "seedId": "fc73b04f-9b31-554d-a409-ecdf6e9a93ea"
+    "source": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/architecture/namespaces"
   },
   {
+    "itemId": "55860039-6007-4f76-a2e6-c07249caaa39",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "kubernetes",
@@ -110,7 +111,6 @@
       "kubernetes",
       "health"
     ],
-    "source": "https://cloud.google.com/kubernetes-engine/docs/concepts/liveness-probes",
-    "seedId": "12fd1cb8-d119-5e71-9eaf-1a0e8165c269"
+    "source": "https://cloud.google.com/kubernetes-engine/docs/concepts/liveness-probes"
   }
 ]

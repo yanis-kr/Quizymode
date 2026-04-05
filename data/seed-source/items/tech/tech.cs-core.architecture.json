@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b4086616-46b2-4547-8fb8-ca05be471b72",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -15,10 +16,10 @@
       "architecture",
       "von-neumann"
     ],
-    "source": "https://en.wikipedia.org/wiki/Von_Neumann_architecture",
-    "seedId": "b0261b82-f9b2-5b17-9872-bdb30c98eff9"
+    "source": "https://en.wikipedia.org/wiki/Von_Neumann_architecture"
   },
   {
+    "itemId": "5a039b1c-f91e-44b0-854d-1a5fdf8d10f9",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -34,10 +35,10 @@
       "architecture",
       "pipelining"
     ],
-    "source": "https://en.wikipedia.org/wiki/Instruction_pipelining",
-    "seedId": "6c6dab25-02e5-5441-b8a2-0a02dc075a88"
+    "source": "https://en.wikipedia.org/wiki/Instruction_pipelining"
   },
   {
+    "itemId": "a3487a8d-a631-46a2-a47d-5da5bb2bfb78",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -53,10 +54,10 @@
       "architecture",
       "cache"
     ],
-    "source": "https://en.wikipedia.org/wiki/CPU_cache",
-    "seedId": "29aaa54e-ac51-5d3e-9db4-d4c27cc529d6"
+    "source": "https://en.wikipedia.org/wiki/CPU_cache"
   },
   {
+    "itemId": "f5acac2e-b026-45ba-8fc5-9e638445e0b5",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -72,10 +73,10 @@
       "architecture",
       "endianness"
     ],
-    "source": "https://datatracker.ietf.org/doc/html/rfc1700",
-    "seedId": "c8c82362-371c-532c-855c-27df7777178f"
+    "source": "https://datatracker.ietf.org/doc/html/rfc1700"
   },
   {
+    "itemId": "5238eeb1-1214-40ba-a3ec-91be706d21af",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -91,10 +92,10 @@
       "architecture",
       "mmu"
     ],
-    "source": "https://en.wikipedia.org/wiki/Translation_lookaside_buffer",
-    "seedId": "b9260d0d-6229-5b36-9b53-48bd93b6a012"
+    "source": "https://en.wikipedia.org/wiki/Translation_lookaside_buffer"
   },
   {
+    "itemId": "2b81d784-6e54-4ea8-8740-2feabc6cc868",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "architecture",
@@ -110,7 +111,6 @@
       "architecture",
       "pipelining"
     ],
-    "source": "https://en.wikipedia.org/wiki/Classic_RISC_pipeline",
-    "seedId": "b770f250-b01e-5057-9f60-ed962d8d1117"
+    "source": "https://en.wikipedia.org/wiki/Classic_RISC_pipeline"
   }
 ]

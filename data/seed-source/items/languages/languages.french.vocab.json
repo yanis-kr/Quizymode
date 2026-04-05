@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "397d1f2a-3a44-4407-a843-3b9c1d5a8ce6",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
@@ -16,10 +17,10 @@
       "food-drink",
       "french-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/eau",
-    "seedId": "24390ec4-7959-5696-808e-47717248adb5"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/eau"
   },
   {
+    "itemId": "0efc7ce3-890a-4a18-8359-5bf9b9ede0c8",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
@@ -36,17 +37,17 @@
       "food-drink",
       "french-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/pain",
-    "seedId": "9fcacc96-e81e-554d-828d-d7ef2c867b08"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/pain"
   },
   {
+    "itemId": "d4fdd2e1-2520-4231-9c82-65fa2a7229a6",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for a male friend?",
     "correctAnswer": "ami",
     "incorrectAnswers": [
-      "frère",
+      "fr\u00e8re",
       "voisin",
       "chef"
     ],
@@ -56,17 +57,17 @@
       "people",
       "french-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/ami",
-    "seedId": "07a3c8ac-2beb-5022-9d2e-0b1f123af917"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/ami"
   },
   {
+    "itemId": "439ac061-0096-4952-a51b-20f5c25411c0",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"thank you\"?",
     "correctAnswer": "merci",
     "incorrectAnswers": [
-      "s'il vous plaît",
+      "s'il vous pla\u00eet",
       "pardon",
       "bonjour"
     ],
@@ -76,10 +77,10 @@
       "politeness",
       "french-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/merci",
-    "seedId": "96a35959-d1cd-5737-bd8a-6d6a3756f978"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/merci"
   },
   {
+    "itemId": "b26af916-122a-4474-848c-0976a0ddc8c4",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
@@ -96,10 +97,10 @@
       "time",
       "french-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/french-english/aujourd%27hui",
-    "seedId": "981551ea-ca8e-5c03-baf4-197471cc531e"
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/aujourd%27hui"
   },
   {
+    "itemId": "d1e08aea-6822-4483-bc54-e38c3cd100ed",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
@@ -116,7 +117,6 @@
       "adjectives",
       "french-vocab"
     ],
-    "source": "https://www.collinsdictionary.com/dictionary/french-english/grand",
-    "seedId": "01c87ff1-40cc-57b9-a253-35e134ec2053"
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/grand"
   }
 ]

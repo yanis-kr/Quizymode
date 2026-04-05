@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "76e66d7f-6f5e-4a47-a5b2-968fc1485cd6",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -15,10 +16,10 @@
       "separation-of-powers",
       "three-branches"
     ],
-    "source": "https://www.usa.gov/branches-of-government",
-    "seedId": "e72775ea-a7a9-5acc-929b-d2b2cee9414a"
+    "source": "https://www.usa.gov/branches-of-government"
   },
   {
+    "itemId": "82705379-62bb-4670-abcd-e241b68495de",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -34,10 +35,10 @@
       "federalism",
       "government-structure"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-10/",
-    "seedId": "acc93ddd-6a7a-5844-9a2c-fd42cfc8bdfd"
+    "source": "https://constitution.congress.gov/constitution/amendment-10/"
   },
   {
+    "itemId": "a38b4e2a-ab5a-45c1-9588-7599919293ee",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -53,10 +54,10 @@
       "cabinet",
       "executive-departments"
     ],
-    "source": "https://www.whitehouse.gov/administration/the-cabinet/",
-    "seedId": "bdfdbc7c-92e8-518f-9c96-627712c9e777"
+    "source": "https://www.whitehouse.gov/administration/the-cabinet/"
   },
   {
+    "itemId": "b3876e98-34ba-4433-850b-3ec4a1e73f8f",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -72,10 +73,10 @@
       "checks-and-balances",
       "constitution"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/federal-court-interprets-law",
-    "seedId": "6224fabc-5742-571c-ae51-7f10a4040d66"
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/federal-court-interprets-law"
   },
   {
+    "itemId": "df6060e6-2870-49b4-8723-51337ce144fb",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -91,10 +92,10 @@
       "independent-agencies",
       "regulation"
     ],
-    "source": "https://www.usa.gov/agencies",
-    "seedId": "ad0e682b-3fef-573f-8221-69c86c2fffec"
+    "source": "https://www.usa.gov/agencies"
   },
   {
+    "itemId": "e1562e56-c638-49ee-9d8a-19bb364ea948",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "institutions",
@@ -110,7 +111,6 @@
       "seventeenth-amendment",
       "senate"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-17/",
-    "seedId": "7cd08cca-c977-5500-81b8-58ad48aa4cd8"
+    "source": "https://constitution.congress.gov/constitution/amendment-17/"
   }
 ]

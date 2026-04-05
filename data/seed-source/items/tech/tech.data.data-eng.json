@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fc097b5f-67d9-44fa-a130-efeac86828a8",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -15,10 +16,10 @@
       "data-eng",
       "kafka"
     ],
-    "source": "https://kafka.apache.org/documentation/#intro_topics",
-    "seedId": "c915975e-0582-5c45-9f1b-4f5f49175323"
+    "source": "https://kafka.apache.org/documentation/#intro_topics"
   },
   {
+    "itemId": "50699290-2aa4-4672-bbbe-689233f2e76e",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -34,10 +35,10 @@
       "data-eng",
       "orchestration"
     ],
-    "source": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html",
-    "seedId": "3c9d121e-85d7-5d6b-81aa-f33bee4c3d43"
+    "source": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
   },
   {
+    "itemId": "b4f77d73-c135-4a8c-b400-0c7735ad4edf",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -53,10 +54,10 @@
       "data-eng",
       "reliability"
     ],
-    "source": "https://en.wikipedia.org/wiki/Idempotence",
-    "seedId": "85916a10-6e1c-541a-b823-7169b74dd4a7"
+    "source": "https://en.wikipedia.org/wiki/Idempotence"
   },
   {
+    "itemId": "c41b1c8b-dd7e-4deb-b7a4-b1ce2a144500",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -72,10 +73,10 @@
       "data-eng",
       "cdc"
     ],
-    "source": "https://en.wikipedia.org/wiki/Change_data_capture",
-    "seedId": "270e782c-42c7-5063-a408-cd4eeed6ce2a"
+    "source": "https://en.wikipedia.org/wiki/Change_data_capture"
   },
   {
+    "itemId": "38cb4a07-59ca-4963-b7f5-7262d89fb604",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -91,10 +92,10 @@
       "data-eng",
       "schema"
     ],
-    "source": "https://avro.apache.org/docs/current/specification/",
-    "seedId": "83d968b1-5c65-51d0-8a9f-29c14e2159cd"
+    "source": "https://avro.apache.org/docs/current/specification/"
   },
   {
+    "itemId": "55bbe6f6-82ed-46fa-bce2-6fc13e8d0325",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "data-eng",
@@ -110,7 +111,6 @@
       "data-eng",
       "messaging"
     ],
-    "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html",
-    "seedId": "656f9826-232f-583d-b8ed-3792065f7bdb"
+    "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
   }
 ]

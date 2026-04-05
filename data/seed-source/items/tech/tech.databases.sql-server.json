@@ -1,24 +1,25 @@
 [
   {
+    "itemId": "8a51e358-8ee8-49d4-82f6-b43991e89ae6",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
     "question": "What is T-SQL in the Microsoft SQL Server ecosystem?",
-    "correctAnswer": "SQL Server’s SQL dialect with procedural and server-side extensions",
+    "correctAnswer": "SQL Server\u2019s SQL dialect with procedural and server-side extensions",
     "incorrectAnswers": [
       "a separate NoSQL language",
       "only a client GUI tool",
       "a network protocol for ODBC"
     ],
-    "explanation": "Transact-SQL extends standard SQL with stored procedures, control flow, and SQL Server–specific features.",
+    "explanation": "Transact-SQL extends standard SQL with stored procedures, control flow, and SQL Server\u2013specific features.",
     "keywords": [
       "sql-server",
       "tsql"
     ],
-    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html",
-    "seedId": "ca0c4de4-77d3-51d6-a6d0-c5d6dc4633b8"
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html"
   },
   {
+    "itemId": "90af52f2-36a8-4b7d-b956-14fe1f104b81",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
@@ -29,15 +30,15 @@
       "unlimited",
       "exactly two"
     ],
-    "explanation": "The clustered index defines the table’s row order; SQL Server allows only one clustered index per table.",
+    "explanation": "The clustered index defines the table\u2019s row order; SQL Server allows only one clustered index per table.",
     "keywords": [
       "sql-server",
       "indexes"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described",
-    "seedId": "0054cfe3-782b-5856-90b2-1c467e117f2b"
+    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described"
   },
   {
+    "itemId": "2e206053-22a5-4385-b749-fcc563b20b8a",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
@@ -53,10 +54,10 @@
       "sql-server",
       "identity"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property",
-    "seedId": "c95a242e-9db1-5979-a872-37b75fa195bf"
+    "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property"
   },
   {
+    "itemId": "28b0ed6a-b280-40d7-bd12-94e5ad81c741",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
@@ -72,10 +73,10 @@
       "sql-server",
       "recovery"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/recovery-models-sql-server",
-    "seedId": "c9694e69-0c27-5227-b69e-84ce1274bfa4"
+    "source": "https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/recovery-models-sql-server"
   },
   {
+    "itemId": "6d4dd7ae-82cb-4484-b015-ccde700acd28",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
@@ -91,10 +92,10 @@
       "sql-server",
       "unicode"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql",
-    "seedId": "a02c6c31-e35b-5855-b2c4-16c322795ea2"
+    "source": "https://learn.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql"
   },
   {
+    "itemId": "c34b0c57-3391-426d-aaf4-6ee3f5647894",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "sql-server",
@@ -110,7 +111,6 @@
       "sql-server",
       "isolation"
     ],
-    "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql",
-    "seedId": "050ade24-11bb-56ac-9d02-47a0f5c62536"
+    "source": "https://learn.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql"
   }
 ]

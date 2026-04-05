@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "469e503b-248b-455e-9b2b-746df72cc156",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -15,10 +16,10 @@
       "nosql",
       "documents"
     ],
-    "source": "https://www.mongodb.com/docs/manual/core/document/",
-    "seedId": "0d55f2ed-8d3b-544a-a0cc-aa5e720561a1"
+    "source": "https://www.mongodb.com/docs/manual/core/document/"
   },
   {
+    "itemId": "fde74358-1530-4d5d-89ce-d0f9ac5dde01",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -34,10 +35,10 @@
       "nosql",
       "key-value"
     ],
-    "source": "https://redis.io/docs/latest/develop/data-types/",
-    "seedId": "2e793664-1c4c-502f-928c-c60431d2d54a"
+    "source": "https://redis.io/docs/latest/develop/data-types/"
   },
   {
+    "itemId": "f3b1232d-bcf7-4abb-9cbe-8d57fb4c1ba9",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -53,10 +54,10 @@
       "nosql",
       "dynamodb"
     ],
-    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html",
-    "seedId": "c0ff5578-2d27-5efb-bfbc-7a93405d5e36"
+    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html"
   },
   {
+    "itemId": "43ed8c6c-a4d2-48ac-aa51-90c412bb8518",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -72,10 +73,10 @@
       "nosql",
       "distributed-systems"
     ],
-    "source": "https://www.ibm.com/cloud/learn/cap-theorem",
-    "seedId": "9c1e9677-9f35-5959-bdd1-e99725b4c668"
+    "source": "https://www.ibm.com/cloud/learn/cap-theorem"
   },
   {
+    "itemId": "d4948f67-b3e0-44c6-8a1c-f76780bfc4f3",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -91,10 +92,10 @@
       "nosql",
       "consistency"
     ],
-    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html",
-    "seedId": "fe78edc2-38cc-5a8c-bcfa-1de5539d2770"
+    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"
   },
   {
+    "itemId": "3e4c7079-e39b-4537-845e-44fd7c2949f4",
     "category": "tech",
     "navigationKeyword1": "databases",
     "navigationKeyword2": "nosql",
@@ -110,7 +111,6 @@
       "nosql",
       "graphs"
     ],
-    "source": "https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/",
-    "seedId": "dee98e2f-3f68-55bc-ad39-a56e255a0149"
+    "source": "https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/"
   }
 ]

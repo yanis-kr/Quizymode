@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5551a68e-33eb-401b-87b1-321955710f59",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -16,10 +17,10 @@
       "prediction",
       "esl-reading"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/title",
-    "seedId": "60f74b62-69a7-5230-b409-e7c73b7649af"
+    "source": "https://dictionary.cambridge.org/dictionary/english/title"
   },
   {
+    "itemId": "599ddbd7-e978-4802-9299-49d799d8426e",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -36,10 +37,10 @@
       "pictures",
       "esl-reading"
     ],
-    "source": "https://www.britishcouncil.org/learnenglish/reading",
-    "seedId": "44e4db4d-2158-5d04-8216-e9da66f2ae97"
+    "source": "https://www.britishcouncil.org/learnenglish/reading"
   },
   {
+    "itemId": "79fce207-e189-4fd4-9dc1-be7d93725b9b",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -56,10 +57,10 @@
       "prompts",
       "esl-reading"
     ],
-    "source": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/understanding_writing_assignments.html",
-    "seedId": "ed654a09-8d67-5b5f-92b9-a6edc072f9e3"
+    "source": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/understanding_writing_assignments.html"
   },
   {
+    "itemId": "3653347d-70bc-4bc7-8780-1335df5f6cee",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -76,10 +77,10 @@
       "schedules",
       "esl-reading"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/scan",
-    "seedId": "3fc2c9c6-9ec2-5812-b2df-570721bcea26"
+    "source": "https://www.merriam-webster.com/dictionary/scan"
   },
   {
+    "itemId": "be5a9e03-b07c-429b-a3bc-6d3774816534",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -96,10 +97,10 @@
       "paragraphs",
       "esl-reading"
     ],
-    "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/",
-    "seedId": "42097bd4-6905-5fc3-be47-b64a4b4ab36d"
+    "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/"
   },
   {
+    "itemId": "295c0c31-cca5-4ec1-abc5-990cdec4c37b",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "reading",
@@ -116,7 +117,6 @@
       "vocabulary",
       "esl-reading"
     ],
-    "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning",
-    "seedId": "76c60086-5ced-52f3-8c00-0c6f3500f4f1"
+    "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning"
   }
 ]

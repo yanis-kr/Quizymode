@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "217a6999-b538-4e21-98c8-98e187bb54f1",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -16,10 +17,10 @@
       "1948",
       "blockade"
     ],
-    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift",
-    "seedId": "8c391469-20fd-4442-8f5f-1d20be641455"
+    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift"
   },
   {
+    "itemId": "f1ccb803-021a-4178-9559-229cc6d97ba9",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -36,30 +37,30 @@
       "1950",
       "38th-parallel"
     ],
-    "source": "https://www.britannica.com/event/Korean-War",
-    "seedId": "e8188298-9781-4b01-b705-2b7b062a6919"
+    "source": "https://www.britannica.com/event/Korean-War"
   },
   {
+    "itemId": "d9cce9b0-7e2a-4334-a1e2-b79b88f70ef1",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
     "question": "East German authorities began sealing road links and building barriers across Berlin on which night in August 1961?",
-    "correctAnswer": "August 12–13, 1961",
+    "correctAnswer": "August 12\u201313, 1961",
     "incorrectAnswers": [
       "June 17, 1953",
       "November 9, 1989",
       "May 8, 1945"
     ],
-    "explanation": "The closure stopped mass emigration through Berlin and made the Cold War’s division visible in concrete and wire.",
+    "explanation": "The closure stopped mass emigration through Berlin and made the Cold War\u2019s division visible in concrete and wire.",
     "keywords": [
       "berlin-wall",
       "1961",
       "east-germany"
     ],
-    "source": "https://www.britannica.com/event/Berlin-Wall",
-    "seedId": "6d4d92fe-e5dd-4d9e-9ee7-94ccdcb245a6"
+    "source": "https://www.britannica.com/event/Berlin-Wall"
   },
   {
+    "itemId": "120b6b0f-2522-439c-885a-5b38af34f957",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -76,14 +77,14 @@
       "1962",
       "kennedy"
     ],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
-    "seedId": "7fe83a00-5f68-4682-bf7f-e5a682bea12d"
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
   },
   {
+    "itemId": "60f0f3ff-3135-40f9-acd9-1eae560c77f0",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
-    "question": "Soviet forces crossed into Afghanistan in December 1979 to support which faction’s contested leadership?",
+    "question": "Soviet forces crossed into Afghanistan in December 1979 to support which faction\u2019s contested leadership?",
     "correctAnswer": "The communist government facing rural insurgency",
     "incorrectAnswers": [
       "The Afghan monarchy restoration",
@@ -96,14 +97,14 @@
       "1979",
       "soviet-union"
     ],
-    "source": "https://www.britannica.com/event/Soviet-invasion-of-Afghanistan",
-    "seedId": "f1bde147-7643-48bc-af9f-06573fa13827"
+    "source": "https://www.britannica.com/event/Soviet-invasion-of-Afghanistan"
   },
   {
+    "itemId": "bbaa31e6-ad9e-4edc-9975-9b4a7c5d1b7f",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
-    "question": "Warsaw Pact tanks rolled into Prague in August 1968 to crush which reform movement led by Alexander Dubček?",
+    "question": "Warsaw Pact tanks rolled into Prague in August 1968 to crush which reform movement led by Alexander Dub\u010dek?",
     "correctAnswer": "The Prague Spring",
     "incorrectAnswers": [
       "Solidarity",
@@ -116,14 +117,14 @@
       "1968",
       "czechoslovakia"
     ],
-    "source": "https://www.britannica.com/event/Prague-Spring",
-    "seedId": "2df0b9f8-1b9d-4881-9f2a-f615f7ae93f1"
+    "source": "https://www.britannica.com/event/Prague-Spring"
   },
   {
+    "itemId": "6b9c1778-2aff-4ffe-b67d-0736cb5bed1d",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
-    "question": "During the 1956 Hungarian Uprising, Soviet forces reoccupied Budapest after Imre Nagy’s government withdrew from what alliance?",
+    "question": "During the 1956 Hungarian Uprising, Soviet forces reoccupied Budapest after Imre Nagy\u2019s government withdrew from what alliance?",
     "correctAnswer": "The Warsaw Pact",
     "incorrectAnswers": [
       "NATO",
@@ -136,10 +137,10 @@
       "1956",
       "budapest"
     ],
-    "source": "https://www.britannica.com/event/Hungarian-Revolution",
-    "seedId": "fb86b6fb-136b-4e4d-b918-611eefcf1796"
+    "source": "https://www.britannica.com/event/Hungarian-Revolution"
   },
   {
+    "itemId": "fce12ebf-2936-4caa-ac58-f773740e155f",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -156,10 +157,10 @@
       "turkey",
       "1962"
     ],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
-    "seedId": "365c668e-f666-4d74-8d5c-870cd624b89f"
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
   },
   {
+    "itemId": "6939e212-3001-4676-b5cb-19b1344e901e",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -170,16 +171,16 @@
       "Wonsan",
       "Seoul harbor only"
     ],
-    "explanation": "The bold maneuver recaptured Seoul and reversed the war’s momentum until Chinese intervention.",
+    "explanation": "The bold maneuver recaptured Seoul and reversed the war\u2019s momentum until Chinese intervention.",
     "keywords": [
       "inchon",
       "1950",
       "macarthur"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Inchon",
-    "seedId": "504d76ab-b08a-4209-aa39-d71e411aa3b3"
+    "source": "https://www.britannica.com/event/Battle-of-Inchon"
   },
   {
+    "itemId": "ff08c88a-bbcd-45e1-b946-4ed390afa9e7",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -190,16 +191,16 @@
       "Chinese aid to Israel",
       "French neutrality only"
     ],
-    "explanation": "Superpower logistics and diplomacy turned a regional war into a global energy and détente shock.",
+    "explanation": "Superpower logistics and diplomacy turned a regional war into a global energy and d\u00e9tente shock.",
     "keywords": [
       "yom-kippur",
       "1973",
       "detente"
     ],
-    "source": "https://www.britannica.com/event/Yom-Kippur-War",
-    "seedId": "b91349a6-bf7e-4fa4-9093-ac46c9940d4b"
+    "source": "https://www.britannica.com/event/Yom-Kippur-War"
   },
   {
+    "itemId": "9c0d6cca-1a88-4c56-bfef-1dd5811f8b18",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
@@ -216,14 +217,14 @@
       "1961",
       "cuba"
     ],
-    "source": "https://www.britannica.com/event/Bay-of-Pigs-invasion",
-    "seedId": "3da35099-c1b2-4571-be5e-5186b8509c57"
+    "source": "https://www.britannica.com/event/Bay-of-Pigs-invasion"
   },
   {
+    "itemId": "1a2ddbfd-97c2-4ab5-b54d-e2d4947a74ca",
     "category": "history",
     "navigationKeyword1": "wars",
     "navigationKeyword2": "cold-war",
-    "question": "The 1979 revolution that ousted the Shah and installed an Islamic republic in Iran intensified U.S.–Soviet competition over which resource-rich region?",
+    "question": "The 1979 revolution that ousted the Shah and installed an Islamic republic in Iran intensified U.S.\u2013Soviet competition over which resource-rich region?",
     "correctAnswer": "The Persian Gulf and broader Middle East",
     "incorrectAnswers": [
       "The Baltic Sea exclusively",
@@ -236,7 +237,6 @@
       "1979",
       "gulf"
     ],
-    "source": "https://www.britannica.com/event/Iranian-Revolution",
-    "seedId": "dca3b9ee-f277-4ba6-a92b-bd3e9b047e44"
+    "source": "https://www.britannica.com/event/Iranian-Revolution"
   }
 ]

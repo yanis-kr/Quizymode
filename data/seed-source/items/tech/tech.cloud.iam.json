@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9d276e81-9a68-44de-b0f7-ba918281697a",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -15,10 +16,10 @@
       "iam",
       "basics"
     ],
-    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html",
-    "seedId": "e1fc14a9-64b2-599e-8967-f343869b40b7"
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html"
   },
   {
+    "itemId": "2bbb128c-b368-4366-8def-db36e88b7e2f",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -34,10 +35,10 @@
       "iam",
       "rbac"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
-    "seedId": "2213e3ec-f387-518d-a27d-eb53169e1717"
+    "source": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
   },
   {
+    "itemId": "b743dabf-b69a-4205-9a1f-c7d4b4272248",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -53,10 +54,10 @@
       "iam",
       "least-privilege"
     ],
-    "source": "https://cloud.google.com/iam/docs/using-iam-securely",
-    "seedId": "a47a927d-688c-540f-abf7-92c338ed3afa"
+    "source": "https://cloud.google.com/iam/docs/using-iam-securely"
   },
   {
+    "itemId": "d256d97f-e9e7-4e77-9d65-95c3fb92e0ba",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -72,10 +73,10 @@
       "iam",
       "mfa"
     ],
-    "source": "https://www.ncsc.gov.uk/collection/device-security-guidance/mfa",
-    "seedId": "169b8bc2-91c8-502b-bc87-ce3915b5b57e"
+    "source": "https://www.ncsc.gov.uk/collection/device-security-guidance/mfa"
   },
   {
+    "itemId": "b1d6dfa3-abd8-4806-a7cb-e5ef11dbd7ae",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -91,10 +92,10 @@
       "iam",
       "federation"
     ],
-    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html",
-    "seedId": "61ce3cb3-aeab-57c4-9485-9108b4ef74b5"
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers.html"
   },
   {
+    "itemId": "442b6f9f-79c4-4d18-bc69-e978186ad560",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "iam",
@@ -110,7 +111,6 @@
       "iam",
       "workloads"
     ],
-    "source": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
-    "seedId": "96fb5109-c0eb-587d-a8d5-0d897932be7f"
+    "source": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview"
   }
 ]

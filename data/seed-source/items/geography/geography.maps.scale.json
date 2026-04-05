@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "afae2278-5e7f-4c87-8e1b-5d5b52788b3a",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -16,34 +17,34 @@
       "7-5-minute-quad",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps",
-    "seedId": "e4ac649d-fc99-4ff7-9d43-17c73e81248d"
+    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
   },
   {
+    "itemId": "ade767fe-9aef-42a0-bf9d-178ebdf1069d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
-    "question": "In the United States, the term “topographic” on national maps is often limited to scales of what order?",
+    "question": "In the United States, the term \u201ctopographic\u201d on national maps is often limited to scales of what order?",
     "correctAnswer": "1:500,000 or larger (finer detail)",
     "incorrectAnswers": [
       "only 1:1 and smaller",
       "only world wall maps",
       "only marine charts"
     ],
-    "explanation": "Britannica notes U.S. usage often limits “topographic” to scales of 1:500,000 or larger.",
+    "explanation": "Britannica notes U.S. usage often limits \u201ctopographic\u201d to scales of 1:500,000 or larger.",
     "keywords": [
       "scale",
       "topographic-map",
       "united-states"
     ],
-    "source": "https://www.britannica.com/science/topographic-map",
-    "seedId": "9fd82424-7269-46f7-8ac3-4fd76f0de935"
+    "source": "https://www.britannica.com/science/topographic-map"
   },
   {
+    "itemId": "9f6f0165-612f-47b3-902e-9dca1d3523ed",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
-    "question": "Hikers love the phrase “about an inch on the page equals a mile on the trail”—that ratio is why a map is drawn to what?",
+    "question": "Hikers love the phrase \u201cabout an inch on the page equals a mile on the trail\u201d\u2014that ratio is why a map is drawn to what?",
     "correctAnswer": "A defined scale (proportion to the real world)",
     "incorrectAnswers": [
       "Pure freehand with no proportion",
@@ -56,10 +57,10 @@
       "map-basics",
       "definitions"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "43cc68f5-db2e-4dfd-abf6-3a802de31ee1"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "011fc29e-ff78-4c06-aebb-c37e6f3dd99e",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -76,10 +77,10 @@
       "topographic-map",
       "classification"
     ],
-    "source": "https://www.britannica.com/science/topographic-map",
-    "seedId": "194372f7-8c13-4e4c-8b69-6b9040f7b324"
+    "source": "https://www.britannica.com/science/topographic-map"
   },
   {
+    "itemId": "06bbabd3-827f-4946-ac6f-e658b0592113",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -96,19 +97,19 @@
       "national-map",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "b9ce9e5a-07b2-49fd-9d78-3c8a09ca4d0f"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "cb1bd58d-1c4f-48af-a04f-33f25ac6395d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
     "question": "The Historical Topographic Map Collection covers USGS maps originally published on paper between which years?",
-    "correctAnswer": "1884–2006",
+    "correctAnswer": "1884\u20132006",
     "incorrectAnswers": [
-      "1776–1865",
-      "2007–2020 only",
-      "1600–1750"
+      "1776\u20131865",
+      "2007\u20132020 only",
+      "1600\u20131750"
     ],
     "explanation": "USGS dates the scanned historical collection to maps published from 1884 through 2006.",
     "keywords": [
@@ -116,10 +117,10 @@
       "historical-maps",
       "usgs"
     ],
-    "source": "https://www.usgs.gov/faqs/what-topographic-map",
-    "seedId": "6956f360-c94f-4216-91c6-d1772b6e5ca1"
+    "source": "https://www.usgs.gov/faqs/what-topographic-map"
   },
   {
+    "itemId": "e407460f-3e68-4326-9569-6e4ae0a54d55",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -136,10 +137,10 @@
       "us-topo",
       "history"
     ],
-    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps",
-    "seedId": "750a7117-ce50-4181-907a-799ce69ad6cd"
+    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
   },
   {
+    "itemId": "452523b0-47b6-439c-b7cb-5bb9362d8a8d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -150,16 +151,16 @@
       "1906",
       "1941"
     ],
-    "explanation": "USGS states it has been the nation’s primary civilian mapping agency since 1879.",
+    "explanation": "USGS states it has been the nation\u2019s primary civilian mapping agency since 1879.",
     "keywords": [
       "scale",
       "usgs",
       "history"
     ],
-    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps",
-    "seedId": "33ec2c36-200b-4d70-8084-0754eb4477bb"
+    "source": "https://www.usgs.gov/faqs/how-do-i-find-download-or-order-topographic-maps"
   },
   {
+    "itemId": "c2ea36a7-3abd-4a61-b2c3-961bb4e6b10b",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -176,10 +177,10 @@
       "charts",
       "navigation"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "e0c109c6-1978-4ba2-82a6-ed08802e9e71"
+    "source": "https://www.britannica.com/science/map"
   },
   {
+    "itemId": "51c37311-9587-46e6-870f-d46d7eb6097d",
     "category": "geography",
     "navigationKeyword1": "maps",
     "navigationKeyword2": "scale",
@@ -196,7 +197,6 @@
       "aeronautical-charts",
       "aviation"
     ],
-    "source": "https://www.britannica.com/science/map",
-    "seedId": "8c55ebf7-9894-45a5-81fc-6b97a10f3abd"
+    "source": "https://www.britannica.com/science/map"
   }
 ]

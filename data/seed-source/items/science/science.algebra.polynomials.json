@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "3e07d903-4663-4f36-95d3-870b0341c1fc",
+    "itemId": "8376f9f6-4753-4ae8-8f55-1dc15eb94442",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -20,7 +20,7 @@
     "source": "https://www.mathsisfun.com/algebra/polynomials.html"
   },
   {
-    "seedId": "37153cb1-828f-4f9f-b5d5-e8ddbf6b2896",
+    "itemId": "e506334c-919d-42d1-9e07-2e2dc9eee91c",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -31,7 +31,7 @@
       "The coefficient of the smallest-degree term",
       "The number of terms in the polynomial"
     ],
-    "explanation": "The leading coefficient is tied to the highest-degree term, which controls the polynomial’s end behavior.",
+    "explanation": "The leading coefficient is tied to the highest-degree term, which controls the polynomial\u2019s end behavior.",
     "keywords": [
       "leading-coefficient",
       "degree",
@@ -40,7 +40,7 @@
     "source": "https://openstax.org/books/college-algebra/pages/1-8-polynomial-functions"
   },
   {
-    "seedId": "6490574d-6fe6-464c-88cf-e8a0cdf761c3",
+    "itemId": "7eca83e1-163a-4a23-86d1-de0bf00ca9b2",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -60,11 +60,11 @@
     "source": "https://en.wikipedia.org/wiki/Polynomial"
   },
   {
-    "seedId": "de9d7543-72a9-4a59-bcab-c1674932e74e",
+    "itemId": "59613328-5bf6-4c91-95ed-f46ff953a7f4",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
-    "question": "Which form is considered the “standard form” of a polynomial like 4x^3 - 2x + 9?",
+    "question": "Which form is considered the \u201cstandard form\u201d of a polynomial like 4x^3 - 2x + 9?",
     "correctAnswer": "Terms written in descending powers of x",
     "incorrectAnswers": [
       "Terms written in ascending powers of x",
@@ -80,7 +80,7 @@
     "source": "https://www.ck12.org/algebra/polynomials/lesson/Standard-Form-of-Polynomials/"
   },
   {
-    "seedId": "148b433b-ea58-4878-bb86-138c8195c8aa",
+    "itemId": "d7d97489-f5d2-4b90-a171-1bbb518b4531",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -91,7 +91,7 @@
       "3x^2 + 7x + 3",
       "x^2 - x + 3"
     ],
-    "explanation": "Combine like terms: `2x^2 + x^2 = 3x^2`, `3x + (−4x) = −x`, and `1 + 2 = 3`.",
+    "explanation": "Combine like terms: `2x^2 + x^2 = 3x^2`, `3x + (\u22124x) = \u2212x`, and `1 + 2 = 3`.",
     "keywords": [
       "combine-like-terms",
       "polynomial-addition",
@@ -100,7 +100,7 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:polynomials"
   },
   {
-    "seedId": "ec8f09b8-3bed-4997-929e-f3ef9bf795a4",
+    "itemId": "d22e01d3-479d-402e-b335-593bb5175366",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -120,7 +120,7 @@
     "source": "https://www.mathsisfun.com/algebra/polynomials.html"
   },
   {
-    "seedId": "fa5f3649-e697-4b6b-ae3f-bbce18b16cba",
+    "itemId": "da9983f0-8d07-4f76-a0ad-e065482038f2",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -140,7 +140,7 @@
     "source": "https://www.mathsisfun.com/algebra/polynomials-multiplying.html"
   },
   {
-    "seedId": "bfc7f7fd-c0fa-489b-a689-1ea70d027aa3",
+    "itemId": "a0ec841f-8b6e-4647-b2d9-93e08b9abff9",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -160,7 +160,7 @@
     "source": "https://en.wikipedia.org/wiki/Polynomial#Roots"
   },
   {
-    "seedId": "80d7c1ae-1149-44f7-9379-ca94d459de92",
+    "itemId": "61147a4f-cb13-4558-9438-7b4c4f2b26f2",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -180,7 +180,7 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:polynomials"
   },
   {
-    "seedId": "cc715c4b-0874-41e2-9ee4-196c2314fe91",
+    "itemId": "96b00d9c-79a0-45ee-a549-07f0e470dfd6",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -200,7 +200,7 @@
     "source": "https://www.ck12.org/algebra/polynomials/lesson/What-is-a-Polynomial/"
   },
   {
-    "seedId": "725b7b74-9eac-41c1-8e30-7be263b66193",
+    "itemId": "3e7ce0fe-f416-4eae-88a4-58bfd50de245",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -220,7 +220,7 @@
     "source": "https://www.purplemath.com/modules/simplify.htm"
   },
   {
-    "seedId": "8413475c-db1f-40a8-a75b-5334dd5ddb5b",
+    "itemId": "8334e994-fc0f-48c1-b8fd-1d5bfc8e895e",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "polynomials",
@@ -240,4 +240,3 @@
     "source": "https://www.mathsisfun.com/algebra/polynomials.html"
   }
 ]
-

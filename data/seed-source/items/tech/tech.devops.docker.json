@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8128188a-d815-43ef-b0af-bd939779e5e2",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -15,10 +16,10 @@
       "docker",
       "containers"
     ],
-    "source": "https://docs.docker.com/get-started/docker-concepts/building-images/understanding-image-layers/",
-    "seedId": "b3349f1b-49da-5318-b27d-b5807419ed08"
+    "source": "https://docs.docker.com/get-started/docker-concepts/building-images/understanding-image-layers/"
   },
   {
+    "itemId": "74643064-905d-4152-b9d8-8d5ddf756b34",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -34,10 +35,10 @@
       "docker",
       "dockerfile"
     ],
-    "source": "https://docs.docker.com/reference/dockerfile/#from",
-    "seedId": "90d673c2-8b7d-56ea-ad7c-eff9cc340521"
+    "source": "https://docs.docker.com/reference/dockerfile/#from"
   },
   {
+    "itemId": "e4dd3ace-c789-470f-a261-b69a72179a66",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -53,10 +54,10 @@
       "docker",
       "oci"
     ],
-    "source": "https://github.com/opencontainers/image-spec/blob/main/spec.md",
-    "seedId": "7579b28e-fd11-5754-86a8-7645e1d4cea2"
+    "source": "https://github.com/opencontainers/image-spec/blob/main/spec.md"
   },
   {
+    "itemId": "7a4fed68-cfd1-4ce1-a04c-8bed05ac196a",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -72,10 +73,10 @@
       "docker",
       "storage"
     ],
-    "source": "https://docs.docker.com/storage/volumes/",
-    "seedId": "a32b3af7-28ca-53c1-9f42-24c6f7bd8126"
+    "source": "https://docs.docker.com/storage/volumes/"
   },
   {
+    "itemId": "9c76e56d-7b84-433a-a371-6545de7eac5a",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -91,10 +92,10 @@
       "docker",
       "build"
     ],
-    "source": "https://docs.docker.com/build/building/context/",
-    "seedId": "aa2943a9-0b4b-5125-a256-1667ad64c06e"
+    "source": "https://docs.docker.com/build/building/context/"
   },
   {
+    "itemId": "43a7b48b-dd0b-4f2c-baaf-b5150affce75",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "docker",
@@ -110,7 +111,6 @@
       "docker",
       "linux"
     ],
-    "source": "https://www.redhat.com/en/topics/containers/what-is-linux-container",
-    "seedId": "a7178a27-c4d5-572e-a43c-bc882e43dc1e"
+    "source": "https://www.redhat.com/en/topics/containers/what-is-linux-container"
   }
 ]

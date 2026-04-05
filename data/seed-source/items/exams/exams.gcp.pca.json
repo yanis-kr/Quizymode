@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f43e4c17-f727-4f0f-9f98-f77471bb6dfb",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -16,10 +17,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/compute",
-    "seedId": "29387300-28dc-4197-8eb1-8cbd8a619ece"
+    "source": "https://cloud.google.com/compute"
   },
   {
+    "itemId": "b3587f12-dc26-4a94-9a91-47e3ba317ccb",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -36,10 +37,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/kubernetes-engine",
-    "seedId": "0e97713d-ebb1-485a-99fe-c18901e51ad2"
+    "source": "https://cloud.google.com/kubernetes-engine"
   },
   {
+    "itemId": "8591537c-d2b6-452f-8526-6d1d3d434570",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -56,10 +57,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/storage",
-    "seedId": "2b9f65aa-38f8-4528-a908-86ebf59ca38f"
+    "source": "https://cloud.google.com/storage"
   },
   {
+    "itemId": "f663e02e-126e-4408-9ca7-11a943c525ba",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -76,10 +77,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/load-balancing",
-    "seedId": "62678bdf-bc06-4037-a874-950a799a991b"
+    "source": "https://cloud.google.com/load-balancing"
   },
   {
+    "itemId": "2f2e8116-4efc-438a-a29d-bf08e7ac0778",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -96,10 +97,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/hybrid-connectivity",
-    "seedId": "069db33d-74b2-4f30-881b-d3a1684a1b9a"
+    "source": "https://cloud.google.com/hybrid-connectivity"
   },
   {
+    "itemId": "8d68709f-03b7-4269-a99e-cea10ed9f92f",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -116,10 +117,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/security/products/armor",
-    "seedId": "b68b24bd-a251-4ce8-95a8-b73ffd45e9b2"
+    "source": "https://cloud.google.com/security/products/armor"
   },
   {
+    "itemId": "4bc4f53b-4ef6-43f9-ad55-7432398a18c2",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -136,10 +137,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/spanner",
-    "seedId": "f7832918-8b1e-43d0-9646-bc248f62c473"
+    "source": "https://cloud.google.com/spanner"
   },
   {
+    "itemId": "88cba894-3d18-48e9-9063-4dece33212ff",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -156,10 +157,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/bigquery",
-    "seedId": "81e7d8ee-f6aa-4b63-92e1-de37cca57d0e"
+    "source": "https://cloud.google.com/bigquery"
   },
   {
+    "itemId": "84762a68-d245-4f71-afb2-998da250711c",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -176,10 +177,10 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/vpc",
-    "seedId": "fde4eabd-0e70-491d-8ef7-59d00c7de528"
+    "source": "https://cloud.google.com/vpc"
   },
   {
+    "itemId": "9cd9386c-460c-425b-9153-e2e16ef1a5c4",
     "category": "exams",
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "pca",
@@ -196,7 +197,6 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/run",
-    "seedId": "ac452133-237b-4da5-815e-f5e5a3742747"
+    "source": "https://cloud.google.com/run"
   }
 ]

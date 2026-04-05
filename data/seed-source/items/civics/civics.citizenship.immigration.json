@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a5456545-9df0-430b-a64b-c03284a3e145",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -15,10 +16,10 @@
       "uscis",
       "immigration-services"
     ],
-    "source": "https://www.usa.gov/immigration-and-citizenship",
-    "seedId": "e4e033e3-e237-5f45-92a1-e32ec85ace88"
+    "source": "https://www.usa.gov/immigration-and-citizenship"
   },
   {
+    "itemId": "2db853d1-8d04-477f-a648-608e6783d904",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -34,10 +35,10 @@
       "green-card",
       "lpr"
     ],
-    "source": "https://www.uscis.gov/green-card",
-    "seedId": "94756b22-6c1d-521c-b1bd-e1ab1c8a2df8"
+    "source": "https://www.uscis.gov/green-card"
   },
   {
+    "itemId": "7619a6c2-6491-4799-94fb-9a80363ffaac",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -53,10 +54,10 @@
       "nonimmigrant",
       "visas"
     ],
-    "source": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html",
-    "seedId": "e90ae3fd-7d84-5113-ad10-14ab7c237772"
+    "source": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html"
   },
   {
+    "itemId": "72bb7bf4-aea5-4180-ada4-772f16597ee2",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -72,10 +73,10 @@
       "refugee",
       "protection"
     ],
-    "source": "https://www.uscis.gov/humanitarian/refugees-and-asylum/refugees",
-    "seedId": "faadf5d5-b4ba-56f0-9eb0-fe183c3cbd17"
+    "source": "https://www.uscis.gov/humanitarian/refugees-and-asylum/refugees"
   },
   {
+    "itemId": "886f261a-5f80-492c-b4c1-1f2440936812",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -91,10 +92,10 @@
       "asylum",
       "humanitarian"
     ],
-    "source": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum",
-    "seedId": "e88cc9ca-06f2-57bc-a4f0-6832e3e4b150"
+    "source": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum"
   },
   {
+    "itemId": "7dccbf52-6245-4e2d-bace-fc3bbe8692f6",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "immigration",
@@ -110,7 +111,6 @@
       "naturalization",
       "citizenship-equality"
     ],
-    "source": "https://www.law.cornell.edu/constitution/amendmentxiv",
-    "seedId": "c57375b6-e132-5971-b84f-54b83e0b8dfe"
+    "source": "https://www.law.cornell.edu/constitution/amendmentxiv"
   }
 ]

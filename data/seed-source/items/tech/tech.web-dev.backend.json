@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fba70fc2-a604-495c-b832-b4c0b0b4ab45",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -15,10 +16,10 @@
       "rest",
       "architecture"
     ],
-    "source": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
-    "seedId": "e94d9a21-66e8-57ed-be16-bb6ccc470105"
+    "source": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"
   },
   {
+    "itemId": "5cc3c7ec-9737-4447-84ae-061d88e36e48",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -34,10 +35,10 @@
       "http",
       "methods"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-safe-methods",
-    "seedId": "23ad38fa-ad2c-5e56-a8e6-aff181bafade"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-safe-methods"
   },
   {
+    "itemId": "d560d789-b1d0-44ac-9d1d-a0126800fb8e",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -53,10 +54,10 @@
       "http",
       "status-codes"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-201-created",
-    "seedId": "515033a0-4cc9-5c7b-a94d-9b944d5f708a"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-201-created"
   },
   {
+    "itemId": "f521d55c-2652-4c4e-b7b1-13a58d4116d2",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -72,10 +73,10 @@
       "backend",
       "scaling"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Load_balancer",
-    "seedId": "4a3aaed1-ccec-5de5-808d-f9f33391dd34"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Load_balancer"
   },
   {
+    "itemId": "ea024a54-95e6-4100-9097-e0adb288142d",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -91,10 +92,10 @@
       "rest",
       "idempotency"
     ],
-    "source": "https://restfulapi.net/idempotent-rest-apis/",
-    "seedId": "6de32dd0-7bbe-5c59-a9c8-a15e2ca53997"
+    "source": "https://restfulapi.net/idempotent-rest-apis/"
   },
   {
+    "itemId": "31ebe2fe-b06b-4798-8fac-b07bd1273b6a",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "backend",
@@ -110,7 +111,6 @@
       "http",
       "sse"
     ],
-    "source": "https://html.spec.whatwg.org/multipage/server-sent-events.html",
-    "seedId": "27ebd20b-53c2-5810-8626-329999c1750f"
+    "source": "https://html.spec.whatwg.org/multipage/server-sent-events.html"
   }
 ]

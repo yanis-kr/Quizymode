@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "abf36bf8-8b45-4f8a-bf12-71c8b8e33ca4",
     "category": "humanities",
     "navigationKeyword1": "culture",
     "navigationKeyword2": "global",
@@ -15,10 +16,10 @@
       "global-culture",
       "exchange"
     ],
-    "source": "https://www.britannica.com/topic/globalization",
-    "seedId": "39ad9d3e-e958-50a1-a7ad-8a90d23aa2ce"
+    "source": "https://www.britannica.com/topic/globalization"
   },
   {
+    "itemId": "e5d5fca3-7119-43e9-bd35-0b8549ee95bc",
     "category": "humanities",
     "navigationKeyword1": "culture",
     "navigationKeyword2": "global",
@@ -34,7 +35,6 @@
       "global-culture",
       "local-global"
     ],
-    "source": "https://en.unesco.org/themes/intercultural-dialogue",
-    "seedId": "9f87cd67-50b7-52dc-95c4-5d407fe6a4af"
+    "source": "https://en.unesco.org/themes/intercultural-dialogue"
   }
 ]

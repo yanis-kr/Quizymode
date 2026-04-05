@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5a30bc5d-41e3-4cf6-bc78-17512802d3eb",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -16,10 +17,10 @@
       "listening-skills",
       "esl-listening"
     ],
-    "source": "https://www.britishcouncil.org/learnenglish/listening",
-    "seedId": "65140d00-1395-501a-9dee-494500618b55"
+    "source": "https://www.britishcouncil.org/learnenglish/listening"
   },
   {
+    "itemId": "41d3b8b1-86bc-471e-b0f3-7e814224e9aa",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -36,10 +37,10 @@
       "numbers",
       "esl-listening"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/listen",
-    "seedId": "733ee0ba-4e73-5bbb-90c1-a779ff20fbba"
+    "source": "https://www.merriam-webster.com/dictionary/listen"
   },
   {
+    "itemId": "8eef2b84-2c66-4792-94ae-e367dd115367",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -50,16 +51,16 @@
       "The final p",
       "The number of syllables"
     ],
-    "explanation": "Ship and sheep are a classic minimal pair for the short /ɪ/ and long /iː/ vowels.",
+    "explanation": "Ship and sheep are a classic minimal pair for the short /\u026a/ and long /i\u02d0/ vowels.",
     "keywords": [
       "minimal-pairs",
       "vowel-sounds",
       "esl-listening"
     ],
-    "source": "https://dictionary.cambridge.org/pronunciation/english/ship",
-    "seedId": "60509bcc-8bf0-5f67-a15b-c6b799e3d24b"
+    "source": "https://dictionary.cambridge.org/pronunciation/english/ship"
   },
   {
+    "itemId": "afd1965b-3c58-475c-8f42-9011f49265d1",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -76,10 +77,10 @@
       "listening-practice",
       "esl-listening"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/subtitle",
-    "seedId": "2989e400-f0ad-59b9-bd15-b4b554933826"
+    "source": "https://dictionary.cambridge.org/dictionary/english/subtitle"
   },
   {
+    "itemId": "8f0954f9-6cfd-41cb-894a-b2ac0611e45c",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -96,10 +97,10 @@
       "politeness",
       "esl-listening"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/could",
-    "seedId": "c9b8a29d-5230-5f6b-bafe-818e7ede2e29"
+    "source": "https://www.merriam-webster.com/dictionary/could"
   },
   {
+    "itemId": "98bcc298-36cd-40ac-930d-c33ff4802999",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "listening",
@@ -116,7 +117,6 @@
       "organization",
       "esl-listening"
     ],
-    "source": "https://dictionary.cambridge.org/grammar/british-grammar/discourse-markers",
-    "seedId": "3c699e7c-c462-557e-8ede-c0d6252725fb"
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/discourse-markers"
   }
 ]

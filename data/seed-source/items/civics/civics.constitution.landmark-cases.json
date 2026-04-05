@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e95b34d4-ec49-418e-ade9-260de8e92fec",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -15,10 +16,10 @@
       "marbury",
       "judicial-review"
     ],
-    "source": "https://www.uscourts.gov/educational-resources/educational-activity/marbury-v-madison-1803",
-    "seedId": "8b4a2fe3-496e-583f-a6b7-8c00923c8bb1"
+    "source": "https://www.uscourts.gov/educational-resources/educational-activity/marbury-v-madison-1803"
   },
   {
+    "itemId": "d3f4b78f-f2ff-4207-b4ee-ab6b5231d6a4",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -34,10 +35,10 @@
       "brown-v-board",
       "equal-protection"
     ],
-    "source": "https://www.archives.gov/milestone-documents/brown-v-board-of-education",
-    "seedId": "a288b1cd-1d71-5db3-a880-adf214013c00"
+    "source": "https://www.archives.gov/milestone-documents/brown-v-board-of-education"
   },
   {
+    "itemId": "c150b895-c75e-4b7d-ab63-b714ac527d44",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -53,10 +54,10 @@
       "miranda",
       "fifth-amendment"
     ],
-    "source": "https://www.law.cornell.edu/constitution/fifth_amendment",
-    "seedId": "06c69bf7-17c1-5e00-a214-2cc46b2ecdfc"
+    "source": "https://www.law.cornell.edu/constitution/fifth_amendment"
   },
   {
+    "itemId": "ed3c6ba6-00e5-491e-86dd-bbc32d0fb117",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -67,15 +68,15 @@
       "require its officers to run for local office",
       "merge it with state treasuries automatically"
     ],
-    "explanation": "The Court rejected Maryland’s tax scheme as an improper burden on an instrument of the national government.",
+    "explanation": "The Court rejected Maryland\u2019s tax scheme as an improper burden on an instrument of the national government.",
     "keywords": [
       "mcculloch",
       "federal-power"
     ],
-    "source": "https://www.law.cornell.edu/supremecourt/text/17/316",
-    "seedId": "469fcc05-cbc7-5ac1-ae69-c342eb24a9d2"
+    "source": "https://www.law.cornell.edu/supremecourt/text/17/316"
   },
   {
+    "itemId": "acb590e1-2db4-464b-bacb-4c3afcd19d0b",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -91,10 +92,10 @@
       "gideon",
       "sixth-amendment"
     ],
-    "source": "https://www.usa.gov/criminal-justice-system",
-    "seedId": "9703b60d-8fc7-56bc-a7f5-11bc0585d063"
+    "source": "https://www.usa.gov/criminal-justice-system"
   },
   {
+    "itemId": "3902e5c1-5e72-400f-b8d0-a07484104038",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "landmark-cases",
@@ -110,7 +111,6 @@
       "us-v-nixon",
       "separation-of-powers"
     ],
-    "source": "https://www.law.cornell.edu/supremecourt/text/418/683",
-    "seedId": "38bc8a28-b2ba-515f-871c-40709119c3c8"
+    "source": "https://www.law.cornell.edu/supremecourt/text/418/683"
   }
 ]

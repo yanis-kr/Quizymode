@@ -869,7 +869,7 @@ const CollectionsPage = () => {
                     placeholder="Enter collection name"
                     required
                     maxLength={200}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     autoFocus
                   />
                 </div>
@@ -884,7 +884,7 @@ const CollectionsPage = () => {
                     placeholder="e.g. Biology chapter 5 practice set"
                     rows={2}
                     maxLength={2000}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
                 <div className="mb-4 flex items-center">
@@ -953,7 +953,7 @@ const CollectionsPage = () => {
                     placeholder="Collection name"
                     required
                     maxLength={200}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     autoFocus
                   />
                 </div>
@@ -968,7 +968,7 @@ const CollectionsPage = () => {
                     placeholder="e.g. Biology chapter 5 practice set"
                     rows={2}
                     maxLength={2000}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
                 <div className="mb-4 flex items-center">

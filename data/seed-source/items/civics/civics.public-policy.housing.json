@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8edda1b2-b93c-4cd6-addf-3bc590a16ca9",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -15,10 +16,10 @@
       "hud",
       "housing-policy"
     ],
-    "source": "https://www.hud.gov/about/hud-mission",
-    "seedId": "9e58ec1c-7899-5ab7-a3d5-6cd4ae4b19f6"
+    "source": "https://www.hud.gov/about/hud-mission"
   },
   {
+    "itemId": "1f60b19c-6cf6-4e39-81cb-591066844975",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -34,10 +35,10 @@
       "section-8",
       "rental-assistance"
     ],
-    "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/hcv",
-    "seedId": "e1a13d2d-1230-5eb7-9c3a-1a7069f7e4ad"
+    "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/hcv"
   },
   {
+    "itemId": "cd9c0729-298b-4d2d-a2ce-ad57fd7d3a8c",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -53,10 +54,10 @@
       "fair-housing",
       "civil-rights"
     ],
-    "source": "https://www.justice.gov/crt/fair-housing-act-1",
-    "seedId": "2439c455-b0b7-511e-8bf2-3e6e83686bc9"
+    "source": "https://www.justice.gov/crt/fair-housing-act-1"
   },
   {
+    "itemId": "5362d7b0-40b1-4983-b8b9-5301fa59f4b7",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -72,10 +73,10 @@
       "zoning",
       "local-planning"
     ],
-    "source": "https://www.planning.org/planning101/zoning/",
-    "seedId": "39c25544-9c17-5864-845c-ed3378a67998"
+    "source": "https://www.planning.org/planning101/zoning/"
   },
   {
+    "itemId": "e29950bd-c1f2-4def-93ab-7ab34dc8ed6c",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -91,10 +92,10 @@
       "cdbg",
       "community-development"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/42/chapter-69",
-    "seedId": "f2178423-bdaf-52cf-b307-2a9533d6cca6"
+    "source": "https://www.law.cornell.edu/uscode/text/42/chapter-69"
   },
   {
+    "itemId": "70fe89e0-f30e-4faa-a9d7-a845991bfb33",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "housing",
@@ -110,7 +111,6 @@
       "public-housing",
       "pha"
     ],
-    "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/ph",
-    "seedId": "65775027-2488-5d12-b5d9-59a527ec21ba"
+    "source": "https://www.hud.gov/program_offices/public_indian_housing/programs/ph"
   }
 ]

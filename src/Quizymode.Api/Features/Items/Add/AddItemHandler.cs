@@ -98,6 +98,7 @@ internal static class AddItemHandler
             Item item = new Item
             {
                 Id = Guid.NewGuid(),
+                IsRepoManaged = false,
                 IsPrivate = effectiveIsPrivate,
                 Question = request.Question,
                 CorrectAnswer = request.CorrectAnswer,

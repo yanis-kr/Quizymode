@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "042c5446-9f75-4080-a181-d2faea7d2fbe",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -15,10 +16,10 @@
       "travel",
       "emergency-number"
     ],
-    "source": "https://europa.eu/youreurope/citizens/travel/security-and-emergency/emergency/index_en.htm",
-    "seedId": "afc101df-6bef-535a-b8ee-8ed078fd2fc3"
+    "source": "https://europa.eu/youreurope/citizens/travel/security-and-emergency/emergency/index_en.htm"
   },
   {
+    "itemId": "aeb34b3f-2412-4680-9213-8c2caa698f18",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -34,10 +35,10 @@
       "travel",
       "doctor"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/doctor",
-    "seedId": "55bbc7e2-38fa-5c46-ab91-3abcf53e2177"
+    "source": "https://www.merriam-webster.com/dictionary/doctor"
   },
   {
+    "itemId": "b7b6f0fd-f2dc-4664-a37e-0fb90e49f950",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -53,10 +54,10 @@
       "travel",
       "allergy"
     ],
-    "source": "https://www.who.int/health-topics/allergy",
-    "seedId": "a575ee4d-7aae-5d3b-b462-266eb1a62094"
+    "source": "https://www.who.int/health-topics/allergy"
   },
   {
+    "itemId": "96c5fc36-df6a-4278-9321-511f86428c67",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -72,10 +73,10 @@
       "travel",
       "hospital"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/hospital",
-    "seedId": "6732d6bc-58d5-54eb-8ce2-c6507de0493f"
+    "source": "https://dictionary.cambridge.org/dictionary/english/hospital"
   },
   {
+    "itemId": "c6847978-8bf5-4c36-b708-822bde4b707d",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -91,10 +92,10 @@
       "travel",
       "passport"
     ],
-    "source": "https://www.travel.state.gov/content/travel/en/passports/have/lost-stolen.html",
-    "seedId": "42d4c237-a4aa-502b-a820-8e70cee8918f"
+    "source": "https://www.travel.state.gov/content/travel/en/passports/have/lost-stolen.html"
   },
   {
+    "itemId": "96b08548-2fb2-480f-b5c4-9d75a07e460f",
     "category": "languages",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "emergency",
@@ -110,7 +111,6 @@
       "travel",
       "help"
     ],
-    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/help_1",
-    "seedId": "a24754d7-6697-5817-807d-a4fc903807b5"
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/help_1"
   }
 ]

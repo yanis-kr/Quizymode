@@ -97,6 +97,7 @@ public static class AddCollection
             Collection entity = new()
             {
                 Id = Guid.NewGuid(),
+                IsRepoManaged = false,
                 Name = request.Name,
                 Description = request.Description,
                 CreatedBy = userId,

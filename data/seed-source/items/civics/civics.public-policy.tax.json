@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "53a26169-66b6-4281-8b22-101e81a57e56",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -15,10 +16,10 @@
       "income-tax",
       "constitution"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-16/",
-    "seedId": "1c8a1e98-a390-5cec-9d67-98726a8afb3c"
+    "source": "https://constitution.congress.gov/constitution/amendment-16/"
   },
   {
+    "itemId": "73c9750d-bd2b-465f-a6e9-bb7037951452",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -34,10 +35,10 @@
       "irs",
       "tax-administration"
     ],
-    "source": "https://www.irs.gov/about-irs",
-    "seedId": "c858da68-20ea-5cfb-a2d9-9ed536312fb1"
+    "source": "https://www.irs.gov/about-irs"
   },
   {
+    "itemId": "b1024fd0-e82a-419b-a549-ce2e2b3eb3b4",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -53,10 +54,10 @@
       "fica",
       "payroll-tax"
     ],
-    "source": "https://www.irs.gov/taxes/social-security-and-medicare-withholding-rates",
-    "seedId": "8501a5de-4342-5504-9778-fe08b74bb6e0"
+    "source": "https://www.irs.gov/taxes/social-security-and-medicare-withholding-rates"
   },
   {
+    "itemId": "3eac8d71-72d9-4cff-ab7b-2257d357ff0a",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -72,10 +73,10 @@
       "progressive-tax",
       "tax-basics"
     ],
-    "source": "https://www.taxpolicycenter.org/briefing-book/what-are-sources-revenue-federal-government",
-    "seedId": "96e04291-b8f2-57ab-b921-67a0a4d781ba"
+    "source": "https://www.taxpolicycenter.org/briefing-book/what-are-sources-revenue-federal-government"
   },
   {
+    "itemId": "98ac31f2-ce91-40fe-b29f-255159dbc436",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -91,10 +92,10 @@
       "origination-clause",
       "congress"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-1/",
-    "seedId": "47038459-94fd-5137-a4af-77c0f0fc6087"
+    "source": "https://constitution.congress.gov/constitution/article-1/"
   },
   {
+    "itemId": "70797268-1da8-43d3-af08-961ede29f278",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "tax",
@@ -110,7 +111,6 @@
       "sales-tax",
       "state-finance"
     ],
-    "source": "https://www.ncsl.org/fiscal/state-tax-state-by-state-resources",
-    "seedId": "d67c5f73-380c-5227-b355-4999ae9410ef"
+    "source": "https://www.ncsl.org/fiscal/state-tax-state-by-state-resources"
   }
 ]

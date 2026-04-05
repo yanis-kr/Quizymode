@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f4d04510-fbc1-4ca8-927f-0e481f91d873",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "bioethics",
@@ -15,10 +16,10 @@
       "bioethics",
       "medicine"
     ],
-    "source": "https://www.britannica.com/topic/bioethics",
-    "seedId": "e53258b2-c679-5f11-95fa-e99a3bc63b81"
+    "source": "https://www.britannica.com/topic/bioethics"
   },
   {
+    "itemId": "fffc8701-3abd-4013-a106-986649cedf8a",
     "category": "humanities",
     "navigationKeyword1": "ethics",
     "navigationKeyword2": "bioethics",
@@ -34,7 +35,6 @@
       "bioethics",
       "consent"
     ],
-    "source": "https://bioethicsarchive.georgetown.edu/",
-    "seedId": "06a74628-f95c-5238-82e9-8bfaeff597bc"
+    "source": "https://bioethicsarchive.georgetown.edu/"
   }
 ]

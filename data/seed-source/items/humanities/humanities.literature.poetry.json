@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0dd97a8f-a73f-432b-9967-20f5edca1af0",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "poetry",
@@ -15,10 +16,10 @@
       "poetry",
       "literature"
     ],
-    "source": "https://www.britannica.com/art/poetry",
-    "seedId": "f4fbb8b3-21b1-5eff-822d-bee1fc845635"
+    "source": "https://www.britannica.com/art/poetry"
   },
   {
+    "itemId": "837fbeb7-4aa0-4223-87eb-a2e3efc0d54b",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "poetry",
@@ -34,7 +35,6 @@
       "poetry",
       "stanza"
     ],
-    "source": "https://www.poetryfoundation.org/learn/glossary-terms/stanza",
-    "seedId": "63977c90-361f-5008-a1e7-6f58997f364d"
+    "source": "https://www.poetryfoundation.org/learn/glossary-terms/stanza"
   }
 ]

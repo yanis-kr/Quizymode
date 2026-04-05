@@ -15,23 +15,9 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.Id)
             .HasDefaultValueSql("gen_random_uuid()");
 
-        builder.Property(x => x.SeedId)
-            .IsRequired(false);
-
-        builder.Property(x => x.IsSeedManaged)
+        builder.Property(x => x.IsRepoManaged)
             .IsRequired()
             .HasDefaultValue(false);
-
-        builder.Property(x => x.SeedSet)
-            .HasMaxLength(100)
-            .IsRequired(false);
-
-        builder.Property(x => x.SeedHash)
-            .HasMaxLength(64)
-            .IsRequired(false);
-
-        builder.Property(x => x.SeedLastSyncedAt)
-            .IsRequired(false);
 
         builder.Property(x => x.IsPrivate)
             .IsRequired()
@@ -118,9 +104,6 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.HasIndex(x => x.NavigationKeywordId2);
 
         builder.HasIndex(x => x.UploadId);
-        builder.HasIndex(x => x.SeedId)
-            .IsUnique();
-        builder.HasIndex(x => new { x.IsSeedManaged, x.SeedSet });
 
         // Add check constraint for incorrect answers array length (0-4 items)
         builder.ToTable(t => t.HasCheckConstraint(
@@ -135,5 +118,6 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         // Composite indexes for category queries with visibility filtering
         builder.HasIndex(x => new { x.CategoryId, x.IsPrivate });
         builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
+        builder.HasIndex(x => x.IsRepoManaged);
     }
 }

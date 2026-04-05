@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1cf18f4a-641f-4247-8a99-e61b395839c4",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
@@ -16,14 +17,14 @@
       "criteria",
       "options"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "506808f0-f673-5e52-bd3a-fc08645c8caf"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "8915860f-da46-453a-b303-bd898f7217d9",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
-    "question": "In decision-making, what does “bounded rationality” suggest?",
+    "question": "In decision-making, what does \u201cbounded rationality\u201d suggest?",
     "correctAnswer": "People make satisfactory decisions within limits of information and cognitive capacity, not perfect optimization.",
     "incorrectAnswers": [
       "People can always evaluate every option with perfect information",
@@ -36,10 +37,10 @@
       "heuristics",
       "limits"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "0bc255ed-3619-582f-ad0f-5f002ef958ce"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "7c33db27-6eea-4dc3-ba69-01966142bf2f",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
@@ -56,10 +57,10 @@
       "tradeoffs",
       "expected-values"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "746b70bd-d907-551f-b27f-c8bbd8ce2005"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "a9903b54-0ebd-4dbb-b60e-d81afbfff890",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
@@ -76,10 +77,10 @@
       "uncertainty",
       "expected-outcomes"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "4bdd7328-f591-5e41-adb8-3cf34363bbce"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "33ff7613-3772-4711-869e-2a8daa345bcd",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
@@ -96,10 +97,10 @@
       "evaluation",
       "consistency"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "513958f3-00da-5741-bd3e-7118d21406e2"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "b9c498b7-7f2e-4863-aa00-d548973df236",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "decision-making",
@@ -116,7 +117,6 @@
       "governance",
       "risk-management"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "96a8ca62-1a50-5d07-9372-948f38c29947"
+    "source": "https://www.investopedia.com/"
   }
 ]

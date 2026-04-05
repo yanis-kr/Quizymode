@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a73b3208-96c1-4897-9eed-0940abb11810",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
@@ -15,10 +16,10 @@
       "gcp",
       "projects"
     ],
-    "source": "https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
-    "seedId": "65abe010-22c2-5bc6-b476-992873934a4b"
+    "source": "https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy"
   },
   {
+    "itemId": "6795bd2e-20c9-4779-8738-6cac8361ea1d",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
@@ -34,17 +35,17 @@
       "gcp",
       "networking"
     ],
-    "source": "https://www.ibm.com/cloud/learn/vpc",
-    "seedId": "1bf19017-7681-5914-a90a-fc1753cbe981"
+    "source": "https://www.ibm.com/cloud/learn/vpc"
   },
   {
+    "itemId": "6d53f420-7ee6-447c-936c-3f003d9352f3",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
     "question": "What must be globally unique within Cloud Storage?",
     "correctAnswer": "each bucket name",
     "incorrectAnswers": [
-      "each object’s creation timestamp",
+      "each object\u2019s creation timestamp",
       "the project display name",
       "the Region name"
     ],
@@ -53,14 +54,14 @@
       "gcp",
       "storage"
     ],
-    "source": "https://cloud.google.com/storage/docs/buckets",
-    "seedId": "2a580a31-120a-5560-acde-ef0a2901d3f9"
+    "source": "https://cloud.google.com/storage/docs/buckets"
   },
   {
+    "itemId": "d63f24f0-f06b-4bbe-85d2-f2f3616cde57",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
-    "question": "How are IAM policies attached in Google Cloud’s resource hierarchy?",
+    "question": "How are IAM policies attached in Google Cloud\u2019s resource hierarchy?",
     "correctAnswer": "they can be set at organization, folder, project, or resource level and inherit downward",
     "incorrectAnswers": [
       "only on individual log files",
@@ -72,10 +73,10 @@
       "gcp",
       "iam"
     ],
-    "source": "https://cloud.google.com/iam/docs/overview",
-    "seedId": "5a5d322c-54f4-57d7-bfbc-fb62b11cd174"
+    "source": "https://cloud.google.com/iam/docs/overview"
   },
   {
+    "itemId": "84425be3-4ba0-46b2-a9dc-ef8743a085b0",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
@@ -91,10 +92,10 @@
       "gcp",
       "regions"
     ],
-    "source": "https://cloud.google.com/about/locations",
-    "seedId": "6e7c00da-2354-5add-bf99-a2edb7fa4f96"
+    "source": "https://cloud.google.com/about/locations"
   },
   {
+    "itemId": "2d53af41-e8de-411a-8a75-a29021d12057",
     "category": "tech",
     "navigationKeyword1": "cloud",
     "navigationKeyword2": "gcp",
@@ -110,7 +111,6 @@
       "gcp",
       "identity"
     ],
-    "source": "https://cloud.google.com/iam/docs/service-accounts",
-    "seedId": "e646b06e-009b-521c-b12a-d9015dd14fed"
+    "source": "https://cloud.google.com/iam/docs/service-accounts"
   }
 ]

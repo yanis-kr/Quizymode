@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "662cd9a6-be86-43cc-8157-752cdd8226e7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -19,10 +20,10 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d2cd1917-0451-4476-ab86-76fa0e107b51"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5b0b264d-c06d-4200-b91d-e27b08b1cdf5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -43,14 +44,14 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8099e40c-22ec-42ae-8ac5-51abeafd8a00"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c554ee95-cd7e-4846-9166-7b9c6bc4c9e5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the\ncompany’s data center runs a weekly data transformation job. The company plans to pause the application until the data transfer is complete and\nneeds to begin the transfer process as soon as possible.\nThe data center does not have any available network bandwidth for additional workloads. A solutions architect must transfer the data and must\ncongure the transformation job to continue to run in the AWS Cloud.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the\ncompany\u2019s data center runs a weekly data transformation job. The company plans to pause the application until the data transfer is complete and\nneeds to begin the transfer process as soon as possible.\nThe data center does not have any available network bandwidth for additional workloads. A solutions architect must transfer the data and must\ncongure the transformation job to continue to run in the AWS Cloud.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Use AWS DataSync to move the data. Create a custom transformation job by using AWS Glue.",
     "incorrectAnswers": [
       "Order an AWS Snowcone device to move the data. Deploy the transformation application to the device.",
@@ -65,10 +66,10 @@
       "glue",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e419cc38-6a7b-4c58-a109-0e677001a311"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "bc1899d3-7ef1-40f1-be95-1bf273238ea4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -89,10 +90,10 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "26dd0860-a49b-4a0e-921c-ba3bb59476d2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f979bef5-14cb-41ab-8d98-0bcd9f59b7a7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -113,10 +114,10 @@
       "vpc",
       "direct-connect"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "35d95b86-0842-42cb-916b-914a09a85e6c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "cd3a2578-c7ed-42fe-8daa-f5b37728ca5f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -135,10 +136,10 @@
       "opensearch",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9f6301ae-0450-4753-b41d-a10eb2168e2d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "97c10988-300b-4db2-999b-b35a3703f4ef",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -157,10 +158,10 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "454cf60c-641d-4ed3-afd4-3264d54f1bd7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d0d331d9-699f-4164-a855-13fd971dbb5b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -179,17 +180,17 @@
       "api-gateway",
       "waf"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "293c69d1-971b-4699-ac02-3c08ff67d762"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3438e914-f0db-489e-8dde-a5364b1a43d7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind a Network Load Balancer (NLB) in the us-west-\n2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and\navailability of the solution. The company launches and congures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as\ntargets for a new NLB.\nWhich solution can the company use to route traffic to all the EC2 instances?",
-    "correctAnswer": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.",
+    "correctAnswer": "Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\u2019s origin.",
     "incorrectAnswers": [
-      "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.",
+      "Create an Amazon Route 53 geolocation routing policy to route requests to one of the two NLBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution\u2019s origin.",
       "Create a standard accelerator in AWS Global Accelerator. Create endpoint groups in us-west-2 and eu-west-1. Add the two NLBs as endpoints for the endpoint groups.",
       "Attach Elastic IP addresses to the six EC2 instances. Create an Amazon Route 53 geolocation routing policy to route requests to one of the six EC2 instances. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution's origin."
     ],
@@ -204,10 +205,10 @@
       "alb",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "10954002-8e9b-4d67-a8b1-e26c13e8ee9c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "bb0ccb9c-2f2a-4b00-a9ac-9a5a2d1c3d43",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -228,10 +229,10 @@
       "s3",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "08ab0f6f-c40e-49dd-a065-3b28a3912b58"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "290831f3-7d39-48f1-a597-544f7014f419",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -249,10 +250,10 @@
       "iam",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4a970c4b-a0ae-4ffe-ab57-aaec08c24641"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3ff00947-853b-446c-9e96-dad9f9ca1c41",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -270,10 +271,10 @@
       "aws-security",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "42b9073c-3486-4a87-a479-6a64e20e271b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "79aafd42-ff4e-4e76-8d36-218e9d83f671",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -290,10 +291,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "aa2a4419-97f0-4515-8c62-94f6669c0ec2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "130d81ad-9e54-47b9-bc09-d0a61509402d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -311,10 +312,10 @@
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b4200d3e-31e4-419e-a90a-94fc2db01de3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e80fc105-b5fd-4b9d-9b26-aa5982c237b8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -334,10 +335,10 @@
       "glacier",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4a96d7ae-d63b-4ca6-9127-b83efb987d45"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "363b246f-71a5-4ae7-af7e-a2d2cb1be81d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -354,10 +355,10 @@
       "aws-compute",
       "eks"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9fbd84a1-2b9f-4145-afeb-09b5e205ea37"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9a141276-05a6-4a22-b9c0-2a789a85fd4e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -377,10 +378,10 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4f11a3c1-af56-49cb-bad3-2d3343de7f23"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9d46e1e7-ed3f-4e9f-866d-b4a8ad6446ff",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -399,14 +400,14 @@
       "s3",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8fd55cbb-cbc8-45f4-9abd-829316404a7f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "310a95b6-fc2d-4cae-959d-9b2fa5c6e7f5",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s website provides users with downloadable historical performance reports. The website needs a solution that will scale to meet the\ncompany’s website demands globally. The solution should be cost-effective, limit the provisioning of infrastructure resources, and provide the\nfastest possible response time.\nWhich combination should a solutions architect recommend to meet these requirements?",
+    "question": "A company\u2019s website provides users with downloadable historical performance reports. The website needs a solution that will scale to meet the\ncompany\u2019s website demands globally. The solution should be cost-effective, limit the provisioning of infrastructure resources, and provide the\nfastest possible response time.\nWhich combination should a solutions architect recommend to meet these requirements?",
     "correctAnswer": "Amazon CloudFront and Amazon S3",
     "incorrectAnswers": [
       "AWS Lambda and Amazon DynamoDB",
@@ -421,14 +422,14 @@
       "s3",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "42b8a006-3a92-4f73-a00b-6f94e61df0ab"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "441c535a-8ce8-476c-b8d7-6db3bb6da241",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company runs an Oracle database on premises. As part of the company’s migration to AWS, the company wants to upgrade the database to the\nmost recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the\noperational overhead for normal operations and DR setup. The company also needs to maintain access to the database's underlying operating\nsystem.\nWhich solution will meet these requirements?",
+    "question": "A company runs an Oracle database on premises. As part of the company\u2019s migration to AWS, the company wants to upgrade the database to the\nmost recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the\noperational overhead for normal operations and DR setup. The company also needs to maintain access to the database's underlying operating\nsystem.\nWhich solution will meet these requirements?",
     "correctAnswer": "Migrate the Oracle database to Amazon RDS for Oracle. Create a standby database in another Availability Zone.",
     "incorrectAnswers": [
       "Migrate the Oracle database to an Amazon EC2 instance. Set up database replication to a different AWS Region.",
@@ -442,7 +443,6 @@
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "775b6e8b-a3f2-4046-b512-8006a7f2ff1e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

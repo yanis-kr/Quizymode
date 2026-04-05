@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1088833d-a53c-4d35-89e1-813a0c41d9f1",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -15,10 +16,10 @@
       "react-native",
       "bridge"
     ],
-    "source": "https://reactnative.dev/docs/communication-ios",
-    "seedId": "bb4a5829-814d-5e76-833f-2318eb8e800c"
+    "source": "https://reactnative.dev/docs/communication-ios"
   },
   {
+    "itemId": "a7fb881d-555d-4522-89a4-668b1a4a5cb2",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -34,10 +35,10 @@
       "react-native",
       "metro"
     ],
-    "source": "https://metrobundler.dev/docs/getting-started",
-    "seedId": "431a81c0-f1a1-5d6c-826b-1e0d0d6dd011"
+    "source": "https://metrobundler.dev/docs/getting-started"
   },
   {
+    "itemId": "443538ae-10eb-48d4-9e48-eaa544f6274a",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -53,10 +54,10 @@
       "react-native",
       "hermes"
     ],
-    "source": "https://reactnative.dev/docs/hermes",
-    "seedId": "5ca2532e-a682-5b6f-8dcc-f75dd1ddf72f"
+    "source": "https://reactnative.dev/docs/hermes"
   },
   {
+    "itemId": "5d0f040a-d5e6-4337-a217-722c01256d35",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -72,10 +73,10 @@
       "react-native",
       "jsx"
     ],
-    "source": "https://react.dev/learn/writing-markup-with-jsx",
-    "seedId": "eb0c344d-1516-5bef-bdee-2dd82d3884cd"
+    "source": "https://react.dev/learn/writing-markup-with-jsx"
   },
   {
+    "itemId": "8b9a0873-0cdb-45f8-8349-11eddb89d45a",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -91,10 +92,10 @@
       "react-native",
       "native-modules"
     ],
-    "source": "https://reactnative.dev/docs/native-modules-intro",
-    "seedId": "56a7d133-ad97-5704-9ff6-d1528554c2ad"
+    "source": "https://reactnative.dev/docs/native-modules-intro"
   },
   {
+    "itemId": "7dfd5c90-a6b8-44cc-add5-e97bca7833f9",
     "category": "tech",
     "navigationKeyword1": "mobile",
     "navigationKeyword2": "react-native",
@@ -110,7 +111,6 @@
       "react-native",
       "fast-refresh"
     ],
-    "source": "https://reactnative.dev/docs/fast-refresh",
-    "seedId": "e019347d-3fc0-5227-8e53-4237253a6863"
+    "source": "https://reactnative.dev/docs/fast-refresh"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0b29e820-3cdc-499d-bccd-f9100e90f057",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -15,10 +16,10 @@
       "http",
       "https"
     ],
-    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml",
-    "seedId": "8ae4b441-dfb2-5027-b59e-f828e5c926ff"
+    "source": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml"
   },
   {
+    "itemId": "6d2ba881-9678-41c1-9633-64633b48de72",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -34,10 +35,10 @@
       "http",
       "methods"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110",
-    "seedId": "dd17c973-324d-5daa-8156-ddbc918f4a61"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110"
   },
   {
+    "itemId": "65fd8c49-e030-4356-a532-bd8af9f27022",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -53,10 +54,10 @@
       "http",
       "redirects"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301",
-    "seedId": "d3f1d14c-c71b-503d-9f40-6bfad0d64339"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301"
   },
   {
+    "itemId": "0e06fbe3-85fa-4d96-a253-fcc095ddb55a",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -72,10 +73,10 @@
       "http",
       "host-header"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110",
-    "seedId": "af6acf13-186d-558a-9e6c-f58a65823f47"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110"
   },
   {
+    "itemId": "d89b6edf-c78b-4fec-a674-cbe4da477d5e",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -91,10 +92,10 @@
       "http",
       "http2"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9113",
-    "seedId": "80a3917b-fccb-5ae5-b033-00f83e52ff32"
+    "source": "https://www.rfc-editor.org/rfc/rfc9113"
   },
   {
+    "itemId": "504ae8a8-cc06-40c6-b335-9a88c00b7bdc",
     "category": "tech",
     "navigationKeyword1": "networking",
     "navigationKeyword2": "http",
@@ -110,7 +111,6 @@
       "http",
       "caching"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control",
-    "seedId": "34893b8b-753b-55a5-bf8a-298d4a1f64d3"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control"
   }
 ]

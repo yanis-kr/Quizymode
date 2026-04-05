@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "5f402694-b963-4210-9def-80021954f448",
+    "itemId": "97682252-00b2-4048-84b8-88f7abb5c813",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
@@ -11,7 +11,7 @@
       "x is equal to 3",
       "x is not allowed to be a number"
     ],
-    "explanation": "The symbol `>` means “strictly greater than”, so values equal to 3 do not satisfy the inequality.",
+    "explanation": "The symbol `>` means \u201cstrictly greater than\u201d, so values equal to 3 do not satisfy the inequality.",
     "keywords": [
       "inequality-symbols",
       "greater-than",
@@ -20,18 +20,18 @@
     "source": "https://en.wikipedia.org/wiki/Inequality_(mathematics)"
   },
   {
-    "seedId": "51d0697f-40ee-4190-ba4c-89ad1a254a78",
+    "itemId": "b35406a4-d055-4080-825c-5ea32274e3fa",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "Solve: x + 5 ≤ 12. What does x need to be?",
-    "correctAnswer": "x ≤ 7",
+    "question": "Solve: x + 5 \u2264 12. What does x need to be?",
+    "correctAnswer": "x \u2264 7",
     "incorrectAnswers": [
       "x < 7",
-      "x ≥ 7",
-      "x ≥ 12"
+      "x \u2265 7",
+      "x \u2265 12"
     ],
-    "explanation": "Subtract 5 from both sides: x ≤ 12 − 5 = 7. Because it’s `≤`, the endpoint 7 is included.",
+    "explanation": "Subtract 5 from both sides: x \u2264 12 \u2212 5 = 7. Because it\u2019s `\u2264`, the endpoint 7 is included.",
     "keywords": [
       "linear-inequalities",
       "solving",
@@ -40,7 +40,7 @@
     "source": "https://www.mathsisfun.com/algebra/solving-inequalities.html"
   },
   {
-    "seedId": "85e24f07-9ca6-4f4b-9556-384a7acecad7",
+    "itemId": "b6bf825a-62f9-4842-8711-464a0b268d48",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
@@ -48,7 +48,7 @@
     "correctAnswer": "x < -4",
     "incorrectAnswers": [
       "x > -4",
-      "x ≤ -4",
+      "x \u2264 -4",
       "x < 4"
     ],
     "explanation": "Subtract 3: -2x > 8. Divide by -2: the inequality flips, giving x < -4.",
@@ -60,7 +60,7 @@
     "source": "https://www.purplemath.com/modules/solvingin.htm"
   },
   {
-    "seedId": "45c57023-2607-45f3-ab65-ff2534629594",
+    "itemId": "8678c22e-5479-455e-bc66-eeb23fc92bed",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
@@ -69,9 +69,9 @@
     "incorrectAnswers": [
       "The direction stays the same",
       "It turns into an equality",
-      "It becomes “or” (a two-part condition)"
+      "It becomes \u201cor\u201d (a two-part condition)"
     ],
-    "explanation": "Multiplying by a negative reverses the ordering relationship, so `>` becomes `<` and `≥` becomes `≤`.",
+    "explanation": "Multiplying by a negative reverses the ordering relationship, so `>` becomes `<` and `\u2265` becomes `\u2264`.",
     "keywords": [
       "inequality-rules",
       "multiplying-dividing-negative",
@@ -80,18 +80,18 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
   },
   {
-    "seedId": "8a2201fe-f56d-4323-8344-9814efc38b6d",
+    "itemId": "cf5af719-e7bb-4e4f-8d18-1f43c91137fa",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "On a number line, how should you show the solution for x ≤ 4?",
+    "question": "On a number line, how should you show the solution for x \u2264 4?",
     "correctAnswer": "A closed dot at 4 (and shading to the left)",
     "incorrectAnswers": [
       "An open dot at 4 (and shading to the left)",
       "A closed dot at 4 (and shading to the right)",
       "An open dot at 4 (and shading to the right)"
     ],
-    "explanation": "`≤` includes 4, so you use a closed dot at 4, and you shade the side where values are smaller than 4.",
+    "explanation": "`\u2264` includes 4, so you use a closed dot at 4, and you shade the side where values are smaller than 4.",
     "keywords": [
       "number-line",
       "closed-dot",
@@ -100,7 +100,7 @@
     "source": "https://www.mathsisfun.com/number-line.html"
   },
   {
-    "seedId": "d745f1f7-d1f8-432a-ae41-78d32297b50e",
+    "itemId": "c9c4aa16-f71f-4966-a992-4965d148d85a",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
@@ -108,10 +108,10 @@
     "correctAnswer": "No",
     "incorrectAnswers": [
       "Yes",
-      "Only if you change the `>` to `≥` first",
+      "Only if you change the `>` to `\u2265` first",
       "You cannot tell without graphing"
     ],
-    "explanation": "Substitute x = -1: 2(-1) − 1 = -3. But `-3 > -3` is false, so x = -1 does not satisfy the strict inequality.",
+    "explanation": "Substitute x = -1: 2(-1) \u2212 1 = -3. But `-3 > -3` is false, so x = -1 does not satisfy the strict inequality.",
     "keywords": [
       "check-solution",
       "substitution",
@@ -120,18 +120,18 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
   },
   {
-    "seedId": "6a790102-9998-46e5-8640-08b0eab2c1af",
+    "itemId": "7ced9252-4715-4c7d-abd9-50c32e71a2f7",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "Solve the compound inequality: 1 < x + 2 ≤ 6. What is the solution set?",
-    "correctAnswer": "-1 < x ≤ 4",
+    "question": "Solve the compound inequality: 1 < x + 2 \u2264 6. What is the solution set?",
+    "correctAnswer": "-1 < x \u2264 4",
     "incorrectAnswers": [
-      "-1 ≤ x < 4",
-      "1 < x ≤ 6",
+      "-1 \u2264 x < 4",
+      "1 < x \u2264 6",
       "-1 < x < 6"
     ],
-    "explanation": "Subtract 2 from all three parts: `1 − 2 < x ≤ 6 − 2`, which gives `-1 < x ≤ 4`. The strict and non-strict signs stay with the correct endpoints.",
+    "explanation": "Subtract 2 from all three parts: `1 \u2212 2 < x \u2264 6 \u2212 2`, which gives `-1 < x \u2264 4`. The strict and non-strict signs stay with the correct endpoints.",
     "keywords": [
       "compound-inequalities",
       "interval-notation",
@@ -140,18 +140,18 @@
     "source": "https://en.wikipedia.org/wiki/Inequality_(mathematics)"
   },
   {
-    "seedId": "1ab16549-293b-4daf-9e51-cc5366ff32ec",
+    "itemId": "64d2ac85-dd89-4fb0-ac3a-1e4d96688fbe",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "Translate into an inequality: “x is no more than 50.” Which inequality matches?",
-    "correctAnswer": "x ≤ 50",
+    "question": "Translate into an inequality: \u201cx is no more than 50.\u201d Which inequality matches?",
+    "correctAnswer": "x \u2264 50",
     "incorrectAnswers": [
-      "x ≥ 50",
+      "x \u2265 50",
       "x < 50",
       "x = 50"
     ],
-    "explanation": "“No more than” means 50 is allowed, so the relationship is “less than or equal to 50”.",
+    "explanation": "\u201cNo more than\u201d means 50 is allowed, so the relationship is \u201cless than or equal to 50\u201d.",
     "keywords": [
       "word-problems",
       "at-most",
@@ -160,7 +160,7 @@
     "source": "https://www.mathsisfun.com/algebra/inequalities.html"
   },
   {
-    "seedId": "cc0326d5-4278-4053-9e3b-238939c28e10",
+    "itemId": "12cbb71d-9bc1-4634-b798-923f09cc0148",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
@@ -180,18 +180,18 @@
     "source": "https://openstax.org/books/prealgebra/pages/inequalities"
   },
   {
-    "seedId": "c9e5ce91-285f-41bc-a503-c1910b9810b4",
+    "itemId": "f536be2a-290b-45df-acd1-f97a261c1dab",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "Solve: (x − 1)/3 ≥ 2. What is x?",
-    "correctAnswer": "x ≥ 7",
+    "question": "Solve: (x \u2212 1)/3 \u2265 2. What is x?",
+    "correctAnswer": "x \u2265 7",
     "incorrectAnswers": [
-      "x ≤ 7",
+      "x \u2264 7",
       "x > 7",
-      "x ≥ 2"
+      "x \u2265 2"
     ],
-    "explanation": "Multiply by 3 (positive, so the sign doesn’t flip): x − 1 ≥ 6, then add 1: x ≥ 7.",
+    "explanation": "Multiply by 3 (positive, so the sign doesn\u2019t flip): x \u2212 1 \u2265 6, then add 1: x \u2265 7.",
     "keywords": [
       "solve-fractions",
       "clearing-denominators",
@@ -200,18 +200,18 @@
     "source": "https://www.ck12.org/algebra/solving-inequalities/lesson/Solving-Inequalities/"
   },
   {
-    "seedId": "03412115-c4dd-4f76-b072-ddbe329ff003",
+    "itemId": "d438e473-1a7d-43e0-9631-f445ecba8443",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "If an inequality says x ≥ 2, is x = 2 included?",
-    "correctAnswer": "Yes, because 2 satisfies the `≥` symbol",
+    "question": "If an inequality says x \u2265 2, is x = 2 included?",
+    "correctAnswer": "Yes, because 2 satisfies the `\u2265` symbol",
     "incorrectAnswers": [
       "No, because inequalities never include endpoints",
-      "Only if the inequality is written with `<` and not `≥`",
+      "Only if the inequality is written with `<` and not `\u2265`",
       "Yes only when x is an integer"
     ],
-    "explanation": "The `≥` symbol includes equality, so the boundary value 2 is part of the solution set.",
+    "explanation": "The `\u2265` symbol includes equality, so the boundary value 2 is part of the solution set.",
     "keywords": [
       "endpoints",
       "greater-than-or-equal",
@@ -220,18 +220,18 @@
     "source": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:inequalities"
   },
   {
-    "seedId": "83a4f69a-cc41-4002-a048-56cc24f2a063",
+    "itemId": "eebe1ce7-0485-4557-a77e-4748dfc58675",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "inequalities",
-    "question": "Which inequality correctly represents: “x is at least 10, but less than 13”?",
-    "correctAnswer": "10 ≤ x < 13",
+    "question": "Which inequality correctly represents: \u201cx is at least 10, but less than 13\u201d?",
+    "correctAnswer": "10 \u2264 x < 13",
     "incorrectAnswers": [
-      "10 < x ≤ 13",
-      "x ≥ 10 or x < 13",
-      "10 ≤ x ≤ 13"
+      "10 < x \u2264 13",
+      "x \u2265 10 or x < 13",
+      "10 \u2264 x \u2264 13"
     ],
-    "explanation": "“At least 10” gives `x ≥ 10` and “less than 13” gives `x < 13`. Putting them together yields `10 ≤ x < 13`.",
+    "explanation": "\u201cAt least 10\u201d gives `x \u2265 10` and \u201cless than 13\u201d gives `x < 13`. Putting them together yields `10 \u2264 x < 13`.",
     "keywords": [
       "interval-translation",
       "at-least",
@@ -240,4 +240,3 @@
     "source": "https://www.purplemath.com/modules/ineq.htm"
   }
 ]
-

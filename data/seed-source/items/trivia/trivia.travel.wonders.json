@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "1a773738-cc69-4e1b-9b4a-ff452e0d5b79",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -15,10 +16,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Great-Wall-of-China",
-    "seedId": "a9a12c3d-c266-5a7c-9f7e-4f1ca4b8f26f"
+    "source": "https://www.britannica.com/topic/Great-Wall-of-China"
   },
   {
+    "itemId": "695bcdf3-80ac-44e3-b6a4-b05af80a992e",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -34,10 +35,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Petra-ancient-city-Jordan",
-    "seedId": "bde631a0-8626-5d07-8ea3-9517185721b5"
+    "source": "https://www.britannica.com/topic/Petra-ancient-city-Jordan"
   },
   {
+    "itemId": "c24407ef-3888-4272-b567-fd8fd20d92ff",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -53,14 +54,14 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Chichen-Itza",
-    "seedId": "67aff1f7-fb93-5523-a7d3-6e75d16c5188"
+    "source": "https://www.britannica.com/topic/Chichen-Itza"
   },
   {
+    "itemId": "8878abcb-eabd-427b-b952-cffb5100a346",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
-    "question": "Machu Picchu is in which country?",
+    "question": "Machu Picchu, one of the New Seven Wonders, is in which country?",
     "correctAnswer": "Peru",
     "incorrectAnswers": [
       "Chile",
@@ -72,10 +73,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Machu-Picchu",
-    "seedId": "d238c377-2f39-5ed5-a6f1-66e9fe4508cc"
+    "source": "https://www.britannica.com/topic/Machu-Picchu"
   },
   {
+    "itemId": "85bd628f-072b-44ec-bef3-05cf9a02a9c9",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -91,10 +92,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Christ-the-Redeemer",
-    "seedId": "aa8e4f20-61bc-5e46-9011-e0982efee0c6"
+    "source": "https://www.britannica.com/topic/Christ-the-Redeemer"
   },
   {
+    "itemId": "2dfdbf5d-0100-47e8-ad6a-cd50545602b6",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -110,10 +111,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Taj-Mahal",
-    "seedId": "39367673-a72e-5f57-a945-6e141a53c193"
+    "source": "https://www.britannica.com/topic/Taj-Mahal"
   },
   {
+    "itemId": "5d407720-da16-4105-8dda-f1faf335a53f",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -129,10 +130,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Colosseum",
-    "seedId": "124d1107-6d14-543e-9aa1-dfed2106e216"
+    "source": "https://www.britannica.com/topic/Colosseum"
   },
   {
+    "itemId": "db40d7bf-b203-4c4c-bf61-73c8188e580b",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -148,10 +149,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Great-Pyramid-of-Giza",
-    "seedId": "a930067c-3ee5-57d8-95a3-290d0202234b"
+    "source": "https://www.britannica.com/topic/Great-Pyramid-of-Giza"
   },
   {
+    "itemId": "77bde6cc-d027-472a-a078-79cdee6856d4",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -167,10 +168,10 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Lighthouse-of-Alexandria",
-    "seedId": "a53f216c-5062-5ff9-962c-15e8302b91e0"
+    "source": "https://www.britannica.com/topic/Lighthouse-of-Alexandria"
   },
   {
+    "itemId": "fe3062c4-f98d-44e4-833c-86854c094fb0",
     "category": "trivia",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "wonders",
@@ -186,7 +187,6 @@
       "wonders",
       "travel-trivia"
     ],
-    "source": "https://www.britannica.com/topic/Colossus-of-Rhodes",
-    "seedId": "86669c1f-df78-5285-b37f-77ea76a954b9"
+    "source": "https://www.britannica.com/topic/Colossus-of-Rhodes"
   }
 ]

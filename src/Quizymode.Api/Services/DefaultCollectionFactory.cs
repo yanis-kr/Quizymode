@@ -13,6 +13,7 @@ internal static class DefaultCollectionFactory
         return new Collection
         {
             Id = Guid.NewGuid(),
+            IsRepoManaged = false,
             Name = name,
             Description = description,
             CreatedBy = createdBy,

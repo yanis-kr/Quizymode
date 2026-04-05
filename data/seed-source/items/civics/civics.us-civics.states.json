@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "9b5673aa-ff26-477e-ab87-2d4da02a9c6a",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -15,10 +16,10 @@
       "tenth-amendment",
       "federalism"
     ],
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights",
-    "seedId": "f4e042dd-377e-5b1f-ba87-b2a180e1dfa7"
+    "source": "https://www.archives.gov/founding-docs/bill-of-rights"
   },
   {
+    "itemId": "5a78baed-a01c-43eb-9fab-42c62ca17978",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -34,10 +35,10 @@
       "full-faith-and-credit",
       "state-relations"
     ],
-    "source": "https://constitution.congress.gov/constitution/article-4/",
-    "seedId": "818e0079-3b7e-5fca-b63f-8cb5ccb5c0f0"
+    "source": "https://constitution.congress.gov/constitution/article-4/"
   },
   {
+    "itemId": "b211babc-0dff-41e7-b9f8-3117146912a1",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -53,10 +54,10 @@
       "foreign-affairs",
       "state-powers"
     ],
-    "source": "https://www.law.cornell.edu/constitution/articlei#section10",
-    "seedId": "43f84b7a-0aef-577c-857e-37e4a60efa35"
+    "source": "https://www.law.cornell.edu/constitution/articlei#section10"
   },
   {
+    "itemId": "1d1904f2-eea4-49d6-b7ce-8c08a3e595ba",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -72,10 +73,10 @@
       "guarantee-clause",
       "republican-government"
     ],
-    "source": "https://www.law.cornell.edu/constitution/articleiv",
-    "seedId": "b7d40ffe-1048-5e5a-a7d7-a1a4883716f3"
+    "source": "https://www.law.cornell.edu/constitution/articleiv"
   },
   {
+    "itemId": "d07562b1-9192-4c12-9b04-bba01ecbd7c0",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -91,10 +92,10 @@
       "compact-clause",
       "interstate"
     ],
-    "source": "https://www.law.cornell.edu/constitution/articlei#section10",
-    "seedId": "6d0cdf9a-eff2-5d2e-8b70-598e076fb9c0"
+    "source": "https://www.law.cornell.edu/constitution/articlei#section10"
   },
   {
+    "itemId": "b0628021-a401-42d9-88d2-88f380fdee82",
     "category": "civics",
     "navigationKeyword1": "us-civics",
     "navigationKeyword2": "states",
@@ -110,7 +111,6 @@
       "admission-of-states",
       "article-iv"
     ],
-    "source": "https://www.law.cornell.edu/constitution/articleiv",
-    "seedId": "d963ccee-189d-5de4-8b60-fb29462f8ae9"
+    "source": "https://www.law.cornell.edu/constitution/articleiv"
   }
 ]

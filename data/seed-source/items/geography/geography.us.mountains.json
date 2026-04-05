@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6bd45ea1-8a17-4463-8f64-6cb636698fba",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -16,10 +17,10 @@
       "us-mountains",
       "alaska"
     ],
-    "source": "https://www.britannica.com/place/Denali",
-    "seedId": "381a6be9-b0d0-4bec-af92-528c462ca62a"
+    "source": "https://www.britannica.com/place/Denali"
   },
   {
+    "itemId": "fad3354f-f375-4ec7-bb9f-0872d15e6c8d",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -30,16 +31,16 @@
       "Mount Rainier",
       "Pikes Peak"
     ],
-    "explanation": "Mount Whitney stands in California’s Sierra Nevada east of the San Joaquin Valley.",
+    "explanation": "Mount Whitney stands in California\u2019s Sierra Nevada east of the San Joaquin Valley.",
     "keywords": [
       "mountains",
       "us-mountains",
       "sierra-nevada"
     ],
-    "source": "https://www.britannica.com/place/Mount-Whitney",
-    "seedId": "667e0a00-8c74-49a5-b0fa-1937d89ee920"
+    "source": "https://www.britannica.com/place/Mount-Whitney"
   },
   {
+    "itemId": "f90405f0-7e10-43d4-8cc9-469e9b850617",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -56,10 +57,10 @@
       "us-mountains",
       "rockies"
     ],
-    "source": "https://www.britannica.com/place/Rocky-Mountains",
-    "seedId": "4c6cfae5-5dc9-4604-9929-fff4128f6827"
+    "source": "https://www.britannica.com/place/Rocky-Mountains"
   },
   {
+    "itemId": "d8f48b00-9688-4bda-8a6a-cb6540d69027",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -76,30 +77,30 @@
       "us-mountains",
       "appalachians"
     ],
-    "source": "https://www.britannica.com/place/Appalachian-Mountains",
-    "seedId": "7ddd92c6-fc9e-4bc8-b562-4c6e33308f23"
+    "source": "https://www.britannica.com/place/Appalachian-Mountains"
   },
   {
+    "itemId": "565ea384-b9a4-47c0-885d-1ac9534d0cfc",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
-    "question": "Which California–Nevada range contains Mount Whitney?",
+    "question": "Which California\u2013Nevada range contains Mount Whitney?",
     "correctAnswer": "Sierra Nevada",
     "incorrectAnswers": [
       "Cascade Range",
       "Coast Ranges",
       "Peninsular Ranges"
     ],
-    "explanation": "The Sierra Nevada is a high granitic range along California’s eastern edge.",
+    "explanation": "The Sierra Nevada is a high granitic range along California\u2019s eastern edge.",
     "keywords": [
       "mountains",
       "us-mountains",
       "sierra-nevada"
     ],
-    "source": "https://www.britannica.com/place/Sierra-Nevada-mountains",
-    "seedId": "22a78d6e-648d-4e7e-a814-96765bbafc72"
+    "source": "https://www.britannica.com/place/Sierra-Nevada-mountains"
   },
   {
+    "itemId": "619c1812-fb60-4a66-a484-c773192c184b",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -116,10 +117,10 @@
       "us-mountains",
       "cascades"
     ],
-    "source": "https://www.britannica.com/place/Cascade-Range",
-    "seedId": "0c24e6b8-6758-4515-a62c-856202933eb9"
+    "source": "https://www.britannica.com/place/Cascade-Range"
   },
   {
+    "itemId": "9fa800b7-7d5a-449e-b8e5-5baadefc4f9f",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -136,10 +137,10 @@
       "us-mountains",
       "white-mountains"
     ],
-    "source": "https://www.britannica.com/place/Mount-Washington-New-Hampshire",
-    "seedId": "40bdfcb8-d0c4-41b1-8589-5d66764ebf1f"
+    "source": "https://www.britannica.com/place/Mount-Washington-New-Hampshire"
   },
   {
+    "itemId": "870ac019-153b-46e9-a9bf-e8b40051d62f",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -156,30 +157,30 @@
       "us-mountains",
       "ozarks"
     ],
-    "source": "https://www.britannica.com/place/Ozark-Mountains",
-    "seedId": "01a84366-c35f-4351-a0ab-9408c61f7863"
+    "source": "https://www.britannica.com/place/Ozark-Mountains"
   },
   {
+    "itemId": "9bce8c53-05e1-4ea1-9d97-894b9160fc9c",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
-    "question": "Which range stretches east–west across northern Alaska south of the Arctic coastal plain?",
+    "question": "Which range stretches east\u2013west across northern Alaska south of the Arctic coastal plain?",
     "correctAnswer": "Brooks Range",
     "incorrectAnswers": [
       "Alaska Range",
       "Coast Mountains",
       "Mackenzie Mountains"
     ],
-    "explanation": "The Brooks Range divides Alaska’s North Slope from the interior.",
+    "explanation": "The Brooks Range divides Alaska\u2019s North Slope from the interior.",
     "keywords": [
       "mountains",
       "us-mountains",
       "brooks-range"
     ],
-    "source": "https://www.britannica.com/place/Brooks-Range",
-    "seedId": "210d0069-7537-42cd-8682-5beea45c807a"
+    "source": "https://www.britannica.com/place/Brooks-Range"
   },
   {
+    "itemId": "aa9cf51f-a822-49fd-ab03-801308ea9a7c",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -196,10 +197,10 @@
       "us-mountains",
       "adirondacks"
     ],
-    "source": "https://www.britannica.com/place/Adirondack-Mountains",
-    "seedId": "2b78eb4d-aaaf-48d3-86d0-ae24e5aa4f2a"
+    "source": "https://www.britannica.com/place/Adirondack-Mountains"
   },
   {
+    "itemId": "8dc6ea7d-f578-4375-822d-da4fa30cb365",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "mountains",
@@ -210,13 +211,12 @@
       "Haleakala",
       "Mount Redoubt"
     ],
-    "explanation": "Mauna Kea’s dry summit hosts major optical and infrared telescopes.",
+    "explanation": "Mauna Kea\u2019s dry summit hosts major optical and infrared telescopes.",
     "keywords": [
       "mountains",
       "us-mountains",
       "hawaii"
     ],
-    "source": "https://www.britannica.com/place/Mauna-Kea",
-    "seedId": "473b3d09-cfeb-49e0-bbaf-9d09d463c251"
+    "source": "https://www.britannica.com/place/Mauna-Kea"
   }
 ]

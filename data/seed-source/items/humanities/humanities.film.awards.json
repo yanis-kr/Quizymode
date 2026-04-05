@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "02439b40-9475-45da-ba97-7be49c3ecd84",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "awards",
@@ -15,10 +16,10 @@
       "film-awards",
       "oscars"
     ],
-    "source": "https://www.oscars.org/oscars",
-    "seedId": "a16b5129-234e-56b3-a9f6-e2f1ce9195e7"
+    "source": "https://www.oscars.org/oscars"
   },
   {
+    "itemId": "c13a3765-6017-4a57-b93c-e784b260f718",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "awards",
@@ -34,7 +35,6 @@
       "film-awards",
       "recognition"
     ],
-    "source": "https://www.britannica.com/topic/Academy-Award",
-    "seedId": "c8854b3f-28df-5998-be4f-998f982c7765"
+    "source": "https://www.britannica.com/topic/Academy-Award"
   }
 ]

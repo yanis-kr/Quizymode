@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "56ac0d16-3468-441f-afc6-0a4c6479aad5",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -16,10 +17,10 @@
       "tax",
       "filing-status"
     ],
-    "source": "https://www.irs.gov/filing/filing-status",
-    "seedId": "20a154d1-035a-4172-bb44-e880b1972423"
+    "source": "https://www.irs.gov/filing/filing-status"
   },
   {
+    "itemId": "3b2f671b-1c13-4b30-8835-a80ff2badbdb",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -36,10 +37,10 @@
       "tax",
       "filing-status"
     ],
-    "source": "https://www.irs.gov/filing/filing-status",
-    "seedId": "1b76043d-4fba-49b5-a64c-3306469e284b"
+    "source": "https://www.irs.gov/filing/filing-status"
   },
   {
+    "itemId": "0316a814-cf47-44da-87bf-6c5131b57954",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -56,10 +57,10 @@
       "tax",
       "married-filing-jointly"
     ],
-    "source": "https://www.irs.gov/publications/p17/ar01.html",
-    "seedId": "ab1a99bf-103e-475f-a74b-4123e51a20e5"
+    "source": "https://www.irs.gov/publications/p17/ar01.html"
   },
   {
+    "itemId": "187c9fd2-5e91-4d32-a672-3622955f0283",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -76,10 +77,10 @@
       "tax",
       "married-filing-separately"
     ],
-    "source": "https://www.irs.gov/individuals/filing-taxes-after-divorce-or-separation",
-    "seedId": "8167acba-fbe0-4d8b-800e-2b30f0b993cc"
+    "source": "https://www.irs.gov/individuals/filing-taxes-after-divorce-or-separation"
   },
   {
+    "itemId": "321cc8fd-9bfa-4305-9c36-88df352c2c9d",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -96,10 +97,10 @@
       "tax",
       "head-of-household"
     ],
-    "source": "https://www.irs.gov/filing/filing-status",
-    "seedId": "d0ef578d-f0ac-4dd7-b1da-e4db4b42050f"
+    "source": "https://www.irs.gov/filing/filing-status"
   },
   {
+    "itemId": "a0b3be18-607e-4aae-8f77-aeee21970c85",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -116,10 +117,10 @@
       "tax",
       "filing-status"
     ],
-    "source": "https://www.irs.gov/filing/filing-status",
-    "seedId": "4a593478-8509-4060-9dcf-b5c7a13a0ed5"
+    "source": "https://www.irs.gov/filing/filing-status"
   },
   {
+    "itemId": "c1c41ea6-59c5-4706-a7cd-d96915646481",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -136,10 +137,10 @@
       "tax",
       "form-w2"
     ],
-    "source": "https://www.irs.gov/faqs/small-business-self-employed-other-business/form-w-2-fica-medicare-tips-employee-benefits",
-    "seedId": "000a2ff3-b442-4b2f-9048-ecb1d4f8e439"
+    "source": "https://www.irs.gov/faqs/small-business-self-employed-other-business/form-w-2-fica-medicare-tips-employee-benefits"
   },
   {
+    "itemId": "015452b2-da13-46ca-b735-e7c59c397484",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -156,10 +157,10 @@
       "tax",
       "1099-int"
     ],
-    "source": "https://www.irs.gov/forms-pubs/about-form-1099-int",
-    "seedId": "89480d55-b35d-4b55-99d3-e8f93165e202"
+    "source": "https://www.irs.gov/forms-pubs/about-form-1099-int"
   },
   {
+    "itemId": "f1dc2f79-28ec-4119-a6cc-a36715be4abb",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -176,10 +177,10 @@
       "tax",
       "capital-gains"
     ],
-    "source": "https://www.irs.gov/taxtopics/tc409",
-    "seedId": "8aa27c85-2b7b-49ca-8133-ba28830333ec"
+    "source": "https://www.irs.gov/taxtopics/tc409"
   },
   {
+    "itemId": "b5b986af-c15a-40d6-b48b-93a31823c307",
     "category": "exams",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "ea",
@@ -196,7 +197,6 @@
       "tax",
       "schedule-d"
     ],
-    "source": "https://www.irs.gov/taxtopics/tc409",
-    "seedId": "d7191971-4701-45ac-b03f-92e5a711b627"
+    "source": "https://www.irs.gov/taxtopics/tc409"
   }
 ]

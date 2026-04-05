@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6d930ab6-f807-4a7e-92d3-76aeff2d7c26",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -15,10 +16,10 @@
       "qc-qa",
       "quality"
     ],
-    "source": "https://asq.org/quality-resources/quality-assurance-vs-control",
-    "seedId": "043fb5c2-7579-49bb-8c7a-ba7501622e9e"
+    "source": "https://asq.org/quality-resources/quality-assurance-vs-control"
   },
   {
+    "itemId": "d21f6f99-8038-4c91-93b2-fb9318ab58f2",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -34,10 +35,10 @@
       "copq",
       "quality"
     ],
-    "source": "https://asq.org/quality-resources/cost-of-quality",
-    "seedId": "66b358a6-fc1b-403f-811e-c435eaeee304"
+    "source": "https://asq.org/quality-resources/cost-of-quality"
   },
   {
+    "itemId": "3d05e007-1f30-4969-b527-0b51a47efcc1",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -53,10 +54,10 @@
       "spc",
       "variation"
     ],
-    "source": "https://www.nist.gov/itl/sed/topic-areas/statistical-process-control-spc",
-    "seedId": "de0167e5-d7ce-4caa-98b6-5df1ac2da394"
+    "source": "https://www.nist.gov/itl/sed/topic-areas/statistical-process-control-spc"
   },
   {
+    "itemId": "df9274f5-50c7-4689-b4c3-c3cd1b6823cb",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -72,10 +73,10 @@
       "requirements",
       "specs"
     ],
-    "source": "https://asq.org/quality-resources/voice-of-the-customer-voc",
-    "seedId": "36639065-de87-467c-89a5-38c7341d29cc"
+    "source": "https://asq.org/quality-resources/voice-of-the-customer-voc"
   },
   {
+    "itemId": "4fc6862c-83ac-4bcb-9a65-385bbab92eaf",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -91,10 +92,10 @@
       "defect",
       "quality"
     ],
-    "source": "https://asq.org/quality-resources/defect",
-    "seedId": "f60fcbb2-005d-4e02-acc6-c06d702a5c12"
+    "source": "https://asq.org/quality-resources/defect"
   },
   {
+    "itemId": "1d4d4672-c6bb-4372-9d32-1e44e21fda1b",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "quality",
@@ -110,7 +111,6 @@
       "iso-9001",
       "qms"
     ],
-    "source": "https://www.iso.org/iso-9001-quality-management.html",
-    "seedId": "db8a70c9-add1-4b7a-9d3b-49cb280e74b9"
+    "source": "https://www.iso.org/iso-9001-quality-management.html"
   }
 ]

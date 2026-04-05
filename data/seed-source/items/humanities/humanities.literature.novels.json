@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "eb6a224a-be9d-4f74-9716-c295af9f0d1a",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "novels",
@@ -15,10 +16,10 @@
       "novels",
       "fiction"
     ],
-    "source": "https://www.britannica.com/art/novel",
-    "seedId": "92480b26-f925-52b3-868d-4f67eb08b602"
+    "source": "https://www.britannica.com/art/novel"
   },
   {
+    "itemId": "3e497d87-0198-4bca-9781-2a9ca7d2c04f",
     "category": "humanities",
     "navigationKeyword1": "literature",
     "navigationKeyword2": "novels",
@@ -34,7 +35,6 @@
       "novels",
       "narrator"
     ],
-    "source": "https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/fiction_writing_basics/index.html",
-    "seedId": "3de0f25f-a210-59b0-aac5-c910088cdf8c"
+    "source": "https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/fiction_writing_basics/index.html"
   }
 ]

@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "bf70f85b-6ca5-445a-b1c1-e9d539225e8b",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
-    "question": "What does “intrinsic value” mean in business valuation?",
+    "question": "What does \u201cintrinsic value\u201d mean in business valuation?",
     "correctAnswer": "An estimate of what something is worth based on fundamentals (like expected future cash flows), not just its current market price.",
     "incorrectAnswers": [
       "The same as the current market price with no assumptions involved.",
@@ -16,10 +17,10 @@
       "fundamentals",
       "valuation-methods"
     ],
-    "source": "https://www.investopedia.com/terms/i/intrinsicvalue.asp",
-    "seedId": "2e8f84c1-d6e8-573f-81d3-36c69a5c1573"
+    "source": "https://www.investopedia.com/terms/i/intrinsicvalue.asp"
   },
   {
+    "itemId": "04483e07-46da-4032-9964-25478549277b",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
@@ -36,30 +37,30 @@
       "discount-rate",
       "present-value"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/discounted-cash-flow-dcf/",
-    "seedId": "588e16b2-4033-576c-a098-471de741ed81"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/discounted-cash-flow-dcf/"
   },
   {
+    "itemId": "d4252507-17c8-46e3-b8f8-52b35d91f3fc",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
     "question": "What does a P/E (price-to-earnings) ratio compare?",
-    "correctAnswer": "A company’s current share price to its earnings (often per share).",
+    "correctAnswer": "A company\u2019s current share price to its earnings (often per share).",
     "incorrectAnswers": [
-      "A company’s share price to its dividends only.",
-      "A company’s earnings to its balance sheet assets directly.",
-      "A company’s market value to its payroll expense."
+      "A company\u2019s share price to its dividends only.",
+      "A company\u2019s earnings to its balance sheet assets directly.",
+      "A company\u2019s market value to its payroll expense."
     ],
-    "explanation": "P/E relates market price to earnings, which is why it’s often used as a quick relative valuation multiple.",
+    "explanation": "P/E relates market price to earnings, which is why it\u2019s often used as a quick relative valuation multiple.",
     "keywords": [
       "pe-ratio",
       "multiples",
       "relative-valuation"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/price-earnings-ratio-pe/",
-    "seedId": "ce8b74c6-500b-5b06-be8e-a69d1c6e49a6"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/price-earnings-ratio-pe/"
   },
   {
+    "itemId": "ce5b1d5e-d105-4213-a3d1-6891026ccd70",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
@@ -70,16 +71,16 @@
       "It replaces earnings with sales so it only reflects revenue growth.",
       "It forces every firm to be valued using the same cash-flow timing."
     ],
-    "explanation": "EV/EBITDA is designed to compare firms using a measure that’s less affected by financing and taxes than net income.",
+    "explanation": "EV/EBITDA is designed to compare firms using a measure that\u2019s less affected by financing and taxes than net income.",
     "keywords": [
       "ev",
       "ebitda",
       "enterprise-multiples"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/valuation/ev-ebitda-multiple/",
-    "seedId": "e9105e70-13d0-5b0b-911e-d15fb7331ef6"
+    "source": "https://corporatefinanceinstitute.com/resources/valuation/ev-ebitda-multiple/"
   },
   {
+    "itemId": "4b0e249a-79d8-4693-9e32-a306f2dee447",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
@@ -96,18 +97,18 @@
       "assumption-risk",
       "valuation-discipline"
     ],
-    "source": "https://www.investopedia.com/terms/m/marginofsafety.asp",
-    "seedId": "787522b9-4cff-5c62-9ed1-5831e4f2cf7e"
+    "source": "https://www.investopedia.com/terms/m/marginofsafety.asp"
   },
   {
+    "itemId": "bb3efaaa-b0f1-41af-8bb0-1d95c9a708c6",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "valuation",
-    "question": "What’s the basic idea behind using multiples (like P/E) versus DCF?",
+    "question": "What\u2019s the basic idea behind using multiples (like P/E) versus DCF?",
     "correctAnswer": "Multiples infer value by comparing to other assets using ratios, while DCF estimates value from projected cash flows discounted to today.",
     "incorrectAnswers": [
       "Multiples always rely on discounted cash flows, and DCF never does.",
-      "Multiples ignore the concept of required returns, while DCF can’t use it.",
+      "Multiples ignore the concept of required returns, while DCF can\u2019t use it.",
       "DCF is only for bonds, and multiples are only for bank accounts."
     ],
     "explanation": "Multiples are relative valuation methods; DCF is intrinsic valuation grounded in projected cash flows and discounting.",
@@ -116,7 +117,6 @@
       "dcf",
       "relative-vs-intrinsic"
     ],
-    "source": "https://aswathdamodaran.blogspot.com/",
-    "seedId": "437d223b-9724-511c-b270-eda0812fd2f9"
+    "source": "https://aswathdamodaran.blogspot.com/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2de03e94-ea66-488d-809e-668f760f165b",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -10,16 +11,16 @@
       "APY only includes fees; APR excludes any compounding.",
       "APR is the total yearly cost; APY is only the interest for one month."
     ],
-    "explanation": "APY reflects how often interest compounds over a year, while APR is an annualized rate that doesn’t directly show the compounding schedule in its basic form.",
+    "explanation": "APY reflects how often interest compounds over a year, while APR is an annualized rate that doesn\u2019t directly show the compounding schedule in its basic form.",
     "keywords": [
       "apr",
       "apy",
       "credit-cost"
     ],
-    "source": "https://www.consumerfinance.gov/ask-cfpb/what-is-apr-and-how-is-it-different-from-apy-en-482/",
-    "seedId": "cdd1c600-c31e-5018-9b01-ec4e2bcbe53f"
+    "source": "https://www.consumerfinance.gov/ask-cfpb/what-is-apr-and-how-is-it-different-from-apy-en-482/"
   },
   {
+    "itemId": "82bfad90-ae55-4c4a-a7a5-3167b511f324",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -30,16 +31,16 @@
       "Your total credit limit divided by your current balance.",
       "Your balance divided by the number of cards you own."
     ],
-    "explanation": "Credit utilization is usually expressed as the fraction of your available revolving credit that you’re using at a given time (balance ÷ credit limit).",
+    "explanation": "Credit utilization is usually expressed as the fraction of your available revolving credit that you\u2019re using at a given time (balance \u00f7 credit limit).",
     "keywords": [
       "credit-scores",
       "utilization",
       "revolving-credit"
     ],
-    "source": "https://www.investopedia.com/terms/c/credit-utilization-rate.asp",
-    "seedId": "084db4a2-06c8-57af-a4fc-9fe8a4a8167c"
+    "source": "https://www.investopedia.com/terms/c/credit-utilization-rate.asp"
   },
   {
+    "itemId": "c624b5b8-678b-4b88-bd26-83d85ed0a2ed",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -56,10 +57,10 @@
       "minimum-payment",
       "interest"
     ],
-    "source": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/credit-cards",
-    "seedId": "dd4ca519-046f-5a42-9fe2-8943fe307048"
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/credit-cards"
   },
   {
+    "itemId": "3973ae41-d5bf-4847-b669-a4b72b340a52",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -76,10 +77,10 @@
       "principal",
       "interest"
     ],
-    "source": "https://www.federalreserve.gov/consumerscommunities/learnmore/loans-and-debt.htm",
-    "seedId": "32c72d86-30ce-54fc-b7a2-01ae090d843b"
+    "source": "https://www.federalreserve.gov/consumerscommunities/learnmore/loans-and-debt.htm"
   },
   {
+    "itemId": "96b8653a-20ac-40c4-b890-7607a721368f",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -90,16 +91,16 @@
       "To pay for planned purchases like vacations and furniture.",
       "To earn profit from trading while you wait to spend."
     ],
-    "explanation": "An emergency fund is meant to be readily available cash for surprises so you don’t have to borrow at the worst time or at very high rates.",
+    "explanation": "An emergency fund is meant to be readily available cash for surprises so you don\u2019t have to borrow at the worst time or at very high rates.",
     "keywords": [
       "emergency-savings",
       "cash-buffer",
       "debt-prevention"
     ],
-    "source": "https://www.nerdwallet.com/article/banking/emergency-fund",
-    "seedId": "909d2244-a940-5a62-88cd-5cb9b4d331c9"
+    "source": "https://www.nerdwallet.com/article/banking/emergency-fund"
   },
   {
+    "itemId": "db66a882-37b8-4b97-9190-56e90b6e196b",
     "category": "business",
     "navigationKeyword1": "finance",
     "navigationKeyword2": "personal-finance",
@@ -116,7 +117,6 @@
       "portfolio-risk",
       "investing-basics"
     ],
-    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
-    "seedId": "d83a5cd3-8fe3-5c30-a961-e7358844d203"
+    "source": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification"
   }
 ]

@@ -1,34 +1,35 @@
 [
   {
+    "itemId": "cb7cdb8e-7960-4996-9dd5-86464797edff",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "After the capital moved to Heian-kyō in 794, which family dominated the throne through regent marriages for much of the classical era?",
+    "question": "After the capital moved to Heian-ky\u014d in 794, which family dominated the throne through regent marriages for much of the classical era?",
     "correctAnswer": "The Fujiwara clan",
     "incorrectAnswers": [
       "The Tokugawa family",
       "The Taira alone",
       "The Yamato naval house"
     ],
-    "explanation": "Courtier culture, waka poetry, and Murasaki Shikibu’s Tale of Genji flourished under Fujiwara influence.",
+    "explanation": "Courtier culture, waka poetry, and Murasaki Shikibu\u2019s Tale of Genji flourished under Fujiwara influence.",
     "keywords": [
       "japan",
       "heian",
       "fujiwara"
     ],
-    "source": "https://www.britannica.com/event/Heian-period",
-    "seedId": "13e85e4c-183b-437c-80cb-7ba002733119"
+    "source": "https://www.britannica.com/event/Heian-period"
   },
   {
+    "itemId": "1d3be690-6bf0-451f-a018-459f9f6f439c",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Minamoto Yoritomo’s 1192 appointment as shogun founded which warrior-led government based at Kamakura?",
+    "question": "Minamoto Yoritomo\u2019s 1192 appointment as shogun founded which warrior-led government based at Kamakura?",
     "correctAnswer": "The Kamakura shogunate",
     "incorrectAnswers": [
       "The Meiji oligarchy",
       "The Ashikaga bakufu at founding",
-      "The Satsuma-Chōshū alliance"
+      "The Satsuma-Ch\u014dsh\u016b alliance"
     ],
     "explanation": "It institutionalized dual rule: a cloistered emperor in Kyoto and military administration in the east.",
     "keywords": [
@@ -36,34 +37,34 @@
       "kamakura",
       "samurai"
     ],
-    "source": "https://www.britannica.com/event/Kamakura-period",
-    "seedId": "804253d1-299e-4125-b6b2-9ecb1e2d8480"
+    "source": "https://www.britannica.com/event/Kamakura-period"
   },
   {
+    "itemId": "4af90c44-b3b1-489a-9499-b841084f8a93",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Tokugawa Ieyasu’s victory at Sekigahara (1600) paved the way for over two centuries of rule from which city?",
+    "question": "Tokugawa Ieyasu\u2019s victory at Sekigahara (1600) paved the way for over two centuries of rule from which city?",
     "correctAnswer": "Edo (modern Tokyo)",
     "incorrectAnswers": [
       "Kyoto only",
       "Nara exclusively",
       "Osaka without alternate residence"
     ],
-    "explanation": "Sankin-kōtai alternate attendance and sakoku seclusion policies marked the Edo/Tokugawa age.",
+    "explanation": "Sankin-k\u014dtai alternate attendance and sakoku seclusion policies marked the Edo/Tokugawa age.",
     "keywords": [
       "japan",
       "tokugawa",
       "edo"
     ],
-    "source": "https://www.britannica.com/event/Tokugawa-period",
-    "seedId": "893a2142-9df4-4e81-acf6-819ff3f54282"
+    "source": "https://www.britannica.com/event/Tokugawa-period"
   },
   {
+    "itemId": "ba4da34c-e924-4e90-aac5-52afa4518cd7",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Which U.S. commodore’s 1853–54 ‘black ships’ pressured Japan to end more than two centuries of limited foreign contact?",
+    "question": "Which U.S. commodore\u2019s 1853\u201354 \u2018black ships\u2019 pressured Japan to end more than two centuries of limited foreign contact?",
     "correctAnswer": "Matthew C. Perry",
     "incorrectAnswers": [
       "James Biddle only",
@@ -76,18 +77,18 @@
       "perry",
       "opening"
     ],
-    "source": "https://www.britannica.com/biography/Matthew-C-Perry",
-    "seedId": "e8b3e91d-8d21-4fc9-9cec-f000d8b12b52"
+    "source": "https://www.britannica.com/biography/Matthew-C-Perry"
   },
   {
+    "itemId": "89f62fac-4318-4b12-8ba1-6d1ef9e93ad5",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "The 1868 coup ending the Tokugawa shogunate is remembered as the restoration of direct rule under which emperor’s reign name?",
+    "question": "The 1868 coup ending the Tokugawa shogunate is remembered as the restoration of direct rule under which emperor\u2019s reign name?",
     "correctAnswer": "Meiji (Mutsuhito)",
     "incorrectAnswers": [
-      "Taishō alone at that date",
-      "Kōmei without change",
+      "Taish\u014d alone at that date",
+      "K\u014dmei without change",
       "Hirohito in 1868"
     ],
     "explanation": "Charter Oath reforms, conscription, and the Iwakura Mission rapidly modernized state and industry.",
@@ -96,14 +97,14 @@
       "meiji",
       "restoration"
     ],
-    "source": "https://www.britannica.com/event/Meiji-Restoration",
-    "seedId": "4f6424ae-e66c-459e-add2-f5b3aa9bbfc9"
+    "source": "https://www.britannica.com/event/Meiji-Restoration"
   },
   {
+    "itemId": "2745742c-f781-424a-90a9-57bc58b8496c",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Admiral Tōgō’s Tsushima victory helped Japan defeat which European empire in the war of 1904–05?",
+    "question": "Admiral T\u014dg\u014d\u2019s Tsushima victory helped Japan defeat which European empire in the war of 1904\u201305?",
     "correctAnswer": "Russia",
     "incorrectAnswers": [
       "France",
@@ -116,10 +117,10 @@
       "russo-japanese",
       "meiji"
     ],
-    "source": "https://www.britannica.com/event/Russo-Japanese-War",
-    "seedId": "ad617851-bc09-4e86-8394-1f8cc9e7c013"
+    "source": "https://www.britannica.com/event/Russo-Japanese-War"
   },
   {
+    "itemId": "89251ee3-1135-4f00-a9e1-e60ef46fb37e",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
@@ -130,20 +131,20 @@
       "The Boxer intervention alone",
       "The Korean War"
     ],
-    "explanation": "Japanese occupation, Nanjing’s capture, and United Front resistance merged into the wider Pacific conflict after 1941.",
+    "explanation": "Japanese occupation, Nanjing\u2019s capture, and United Front resistance merged into the wider Pacific conflict after 1941.",
     "keywords": [
       "japan",
       "china",
       "1937"
     ],
-    "source": "https://www.britannica.com/event/Second-Sino-Japanese-War",
-    "seedId": "b995b98e-c916-4c90-83cb-69fe550a0f76"
+    "source": "https://www.britannica.com/event/Second-Sino-Japanese-War"
   },
   {
+    "itemId": "f96d9a23-bae1-41cd-944d-2209667308d8",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Which December 1941 surprise strike drew the United States into World War II’s Pacific theater?",
+    "question": "Which December 1941 surprise strike drew the United States into World War II\u2019s Pacific theater?",
     "correctAnswer": "The attack on Pearl Harbor",
     "incorrectAnswers": [
       "The bombing of Darwin only",
@@ -156,10 +157,10 @@
       "pearl-harbor",
       "wwii"
     ],
-    "source": "https://www.britannica.com/event/Pearl-Harbor-attack",
-    "seedId": "ee443a3b-d006-4836-bfa9-cb7261619c17"
+    "source": "https://www.britannica.com/event/Pearl-Harbor-attack"
   },
   {
+    "itemId": "a5c749b3-88d3-4f95-91ad-049af657da32",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
@@ -170,16 +171,16 @@
       "Chemical shells alone",
       "Conventional firebombing without fission devices"
     ],
-    "explanation": "Emperor Hirohito’s broadcast accepting the Potsdam terms followed the Soviet entry and the second bomb.",
+    "explanation": "Emperor Hirohito\u2019s broadcast accepting the Potsdam terms followed the Soviet entry and the second bomb.",
     "keywords": [
       "japan",
       "1945",
       "atomic-bomb"
     ],
-    "source": "https://www.britannica.com/event/Atomic-bombings-of-Hiroshima-and-Nagasaki",
-    "seedId": "46d95a48-7c36-4835-8da3-067899ec2f9f"
+    "source": "https://www.britannica.com/event/Atomic-bombings-of-Hiroshima-and-Nagasaki"
   },
   {
+    "itemId": "c71ec4a2-7466-4a8c-9e7a-97afd7d458e7",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
@@ -190,16 +191,16 @@
       "The San Francisco Peace Treaty text alone",
       "The Five Charter Oath only"
     ],
-    "explanation": "Article 9’s pacifist clause and later reinterpretations remain central to Japanese security politics.",
+    "explanation": "Article 9\u2019s pacifist clause and later reinterpretations remain central to Japanese security politics.",
     "keywords": [
       "japan",
       "constitution",
       "postwar"
     ],
-    "source": "https://www.britannica.com/event/occupation-of-Japan",
-    "seedId": "36c86861-f725-49e6-b232-317de9004217"
+    "source": "https://www.britannica.com/event/occupation-of-Japan"
   },
   {
+    "itemId": "a46efbb4-3aea-427b-8736-490875679096",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
@@ -210,33 +211,32 @@
       "The Sapporo Winter Games of 1972",
       "The Nagano Games of 1998"
     ],
-    "explanation": "Ikeda’s Income Doubling Plan and infrastructure spending symbolized Japan’s high-growth era.",
+    "explanation": "Ikeda\u2019s Income Doubling Plan and infrastructure spending symbolized Japan\u2019s high-growth era.",
     "keywords": [
       "japan",
       "1964",
       "economic-growth"
     ],
-    "source": "https://www.britannica.com/event/Tokyo-1964-Olympic-Games",
-    "seedId": "e928179d-050f-4350-8600-2ca6a101b557"
+    "source": "https://www.britannica.com/event/Tokyo-1964-Olympic-Games"
   },
   {
+    "itemId": "5f434ede-53f8-4b86-9593-9d993bcc76bd",
     "category": "history",
     "navigationKeyword1": "asia",
     "navigationKeyword2": "japan",
-    "question": "Japan’s fragile banks and ‘zombie firms’ worsened when which 1997–98 regional meltdown spread from Thailand across East Asia?",
+    "question": "Japan\u2019s fragile banks and \u2018zombie firms\u2019 worsened when which 1997\u201398 regional meltdown spread from Thailand across East Asia?",
     "correctAnswer": "The Asian financial crisis",
     "incorrectAnswers": [
       "The Latin American debt crisis only",
       "The 2008 subprime mortgage collapse at its start",
       "The European sovereign debt crisis of 2010"
     ],
-    "explanation": "Currency crashes and IMF programs roiled neighbors; Japan’s own asset-bubble hangover made the shock harder to absorb.",
+    "explanation": "Currency crashes and IMF programs roiled neighbors; Japan\u2019s own asset-bubble hangover made the shock harder to absorb.",
     "keywords": [
       "japan",
       "1997",
       "financial-crisis"
     ],
-    "source": "https://www.britannica.com/event/Asian-financial-crisis",
-    "seedId": "30afafef-9472-4ffc-b78d-8f7b405885f4"
+    "source": "https://www.britannica.com/event/Asian-financial-crisis"
   }
 ]

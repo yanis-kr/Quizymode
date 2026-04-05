@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fea95653-2c21-4335-bd5f-8d597ff70a98",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -15,14 +16,14 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.w3.org/TR/html52/",
-    "seedId": "beb75f88-63d3-584c-9571-bc751b57559a"
+    "source": "https://www.w3.org/TR/html52/"
   },
   {
+    "itemId": "1a638a95-ef16-4e0b-b62f-9c6484998dd5",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
-    "question": "Which TCP port is the default for HTTP when no port is specified?",
+    "question": "In web browsing, which TCP port is the default for HTTP when no port is specified?",
     "correctAnswer": "80",
     "incorrectAnswers": [
       "21",
@@ -34,10 +35,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc7230",
-    "seedId": "50c1d9bf-44dd-5040-9d55-92a11e29bce7"
+    "source": "https://www.rfc-editor.org/rfc/rfc7230"
   },
   {
+    "itemId": "920527c7-13a7-4c90-86d0-6207619cee39",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -53,10 +54,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/email",
-    "seedId": "b33e4f3b-4c71-50f0-8a05-3382c46554ea"
+    "source": "https://www.britannica.com/technology/email"
   },
   {
+    "itemId": "642397b5-8ea0-49f6-ade0-2dfc730bfe0c",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -72,10 +73,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/DNS",
-    "seedId": "80c783e7-7d11-5580-a8bd-a9357c852e02"
+    "source": "https://www.britannica.com/technology/DNS"
   },
   {
+    "itemId": "2c6afe1c-a2e7-4bea-b8ef-6090416e134b",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -91,10 +92,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/URL",
-    "seedId": "fb4f316e-b54d-51cc-8eaa-7b23d9111882"
+    "source": "https://www.britannica.com/technology/URL"
   },
   {
+    "itemId": "8e7d56f0-0bd0-4f37-96ee-71490114b2a1",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -110,10 +111,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/search-engine",
-    "seedId": "57c4e553-6afc-51ef-8f97-5f7d8f5894b0"
+    "source": "https://www.britannica.com/technology/search-engine"
   },
   {
+    "itemId": "76f98216-015f-4554-8cc1-2f679b96537f",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -129,10 +130,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/cookie-computer-science",
-    "seedId": "c2123f51-2f44-5c25-a11d-d5ba5809a973"
+    "source": "https://www.britannica.com/technology/cookie-computer-science"
   },
   {
+    "itemId": "68746170-2dfa-4e05-a51e-0a013361f934",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -148,10 +149,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.britannica.com/technology/API-computer-science",
-    "seedId": "5605f014-ae5f-5c5b-bb99-b2d06bd0e528"
+    "source": "https://www.britannica.com/technology/API-computer-science"
   },
   {
+    "itemId": "73ff2850-3fcf-4ce1-b850-780b75726ca6",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -167,10 +168,10 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://www.dropbox.com/features/cloud-storage",
-    "seedId": "87f5c1bc-77b8-5ac2-95a0-6eaa8d5f2f54"
+    "source": "https://www.dropbox.com/features/cloud-storage"
   },
   {
+    "itemId": "2c60bb96-e451-4009-b216-87f4385de3ef",
     "category": "trivia",
     "navigationKeyword1": "internet",
     "navigationKeyword2": "apps",
@@ -186,7 +187,6 @@
       "internet-apps",
       "web-basics"
     ],
-    "source": "https://slack.com/help/articles/360017938993-What-is-a-channel-What-is-a-channel",
-    "seedId": "20f67b0a-2970-56af-87b6-5f81b6c6595c"
+    "source": "https://slack.com/help/articles/360017938993-What-is-a-channel-What-is-a-channel"
   }
 ]

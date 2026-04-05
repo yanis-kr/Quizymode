@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "613fbcdc-bb66-4ad7-8ffa-5ca8634f519a",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -16,10 +17,10 @@
       "africa",
       "drainage"
     ],
-    "source": "https://www.britannica.com/place/Nile-River",
-    "seedId": "750666f4-b9a8-4db0-9268-2040db2bf297"
+    "source": "https://www.britannica.com/place/Nile-River"
   },
   {
+    "itemId": "e5ea8c11-bc4f-4a66-bf1b-69e74556ad8b",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -27,7 +28,7 @@
     "correctAnswer": "Amazon River",
     "incorrectAnswers": [
       "Orinoco River",
-      "Paraná River",
+      "Paran\u00e1 River",
       "Magdalena River"
     ],
     "explanation": "The Amazon moves more water than any other river on Earth.",
@@ -36,14 +37,14 @@
       "amazon",
       "south-america"
     ],
-    "source": "https://www.britannica.com/place/Amazon-River",
-    "seedId": "1a41213e-443e-4435-8796-a76832bcf32c"
+    "source": "https://www.britannica.com/place/Amazon-River"
   },
   {
+    "itemId": "45d669d3-8410-44cd-b3b1-fd96612a5f9d",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
-    "question": "Which river is China’s longest and reaches the East China Sea near Shanghai?",
+    "question": "Which river is China\u2019s longest and reaches the East China Sea near Shanghai?",
     "correctAnswer": "Yangtze River",
     "incorrectAnswers": [
       "Yellow River",
@@ -56,10 +57,10 @@
       "yangtze",
       "asia"
     ],
-    "source": "https://www.britannica.com/place/Yangtze-River",
-    "seedId": "0f53268f-8b2e-4435-8fc0-3c23c375e87b"
+    "source": "https://www.britannica.com/place/Yangtze-River"
   },
   {
+    "itemId": "a270e9b5-1def-403e-b604-515514962007",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -76,10 +77,10 @@
       "congo",
       "africa"
     ],
-    "source": "https://www.britannica.com/place/Congo-River",
-    "seedId": "f2a910bd-db3f-4340-81a0-d9d2b4b4f58d"
+    "source": "https://www.britannica.com/place/Congo-River"
   },
   {
+    "itemId": "733d4bf5-d3f4-4cb5-897b-ea5f9bd60564",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -96,30 +97,30 @@
       "rhine",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Rhine-River",
-    "seedId": "9200ea48-5981-4ca9-bca4-7e1c9be50a3f"
+    "source": "https://www.britannica.com/place/Rhine-River"
   },
   {
+    "itemId": "62fa9dbe-45b7-432a-a91e-4490b015acad",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
-    "question": "Which river is Russia’s principal watercourse draining to the Caspian Sea?",
+    "question": "Which river is Russia\u2019s principal watercourse draining to the Caspian Sea?",
     "correctAnswer": "Volga River",
     "incorrectAnswers": [
       "Don River",
       "Dnieper River",
       "Ob River"
     ],
-    "explanation": "The Volga is Europe’s longest river and ends in the Caspian.",
+    "explanation": "The Volga is Europe\u2019s longest river and ends in the Caspian.",
     "keywords": [
       "rivers",
       "volga",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Volga-River",
-    "seedId": "cd41e2b9-1892-4948-af81-160b304a1c24"
+    "source": "https://www.britannica.com/place/Volga-River"
   },
   {
+    "itemId": "59272096-df88-453e-8e72-f7ce20806441",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -136,14 +137,14 @@
       "ganges",
       "south-asia"
     ],
-    "source": "https://www.britannica.com/place/Ganges-River",
-    "seedId": "500ebca3-cfcf-4ba8-8772-b14afec890a9"
+    "source": "https://www.britannica.com/place/Ganges-River"
   },
   {
+    "itemId": "e5f74496-c395-46a6-9f1d-9e602503b2ea",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
-    "question": "Which river is the longest in Southeast Asia and flows through several countries before reaching Vietnam’s delta?",
+    "question": "Which river is the longest in Southeast Asia and flows through several countries before reaching Vietnam\u2019s delta?",
     "correctAnswer": "Mekong River",
     "incorrectAnswers": [
       "Irrawaddy River",
@@ -156,10 +157,10 @@
       "mekong",
       "southeast-asia"
     ],
-    "source": "https://www.britannica.com/place/Mekong-River",
-    "seedId": "c28653af-124a-49d5-a3bf-524e1bf40a26"
+    "source": "https://www.britannica.com/place/Mekong-River"
   },
   {
+    "itemId": "d0fcf2e7-02c5-4dcb-8590-af68a44b4ff0",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -176,14 +177,14 @@
       "rio-grande",
       "north-america"
     ],
-    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico",
-    "seedId": "ea0c2437-a18c-468a-9f21-69abb49671b5"
+    "source": "https://www.britannica.com/place/Rio-Grande-river-United-States-Mexico"
   },
   {
+    "itemId": "0cb13c07-87dd-45eb-9dfa-f7487f9c1468",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
-    "question": "Which river is the longest in Australia’s Murray–Darling basin?",
+    "question": "Which river is the longest in Australia\u2019s Murray\u2013Darling basin?",
     "correctAnswer": "Murray River",
     "incorrectAnswers": [
       "Darling River",
@@ -196,10 +197,10 @@
       "murray",
       "australia"
     ],
-    "source": "https://www.britannica.com/place/Murray-River",
-    "seedId": "2a617c11-6256-4cd8-9487-91f91c18f4f4"
+    "source": "https://www.britannica.com/place/Murray-River"
   },
   {
+    "itemId": "0483c13e-22c7-418e-a2a6-b66c3cf1f13e",
     "category": "geography",
     "navigationKeyword1": "physical",
     "navigationKeyword2": "rivers",
@@ -216,7 +217,6 @@
       "danube",
       "europe"
     ],
-    "source": "https://www.britannica.com/place/Danube-River",
-    "seedId": "4a09a58a-ea54-4d4b-8fda-7b739873e73a"
+    "source": "https://www.britannica.com/place/Danube-River"
   }
 ]

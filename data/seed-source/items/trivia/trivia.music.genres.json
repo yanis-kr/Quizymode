@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "87803854-9a2d-43fd-9587-633eb67156e0",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -15,14 +16,14 @@
       "jazz",
       "rhythm"
     ],
-    "source": "https://www.britannica.com/art/jazz-music",
-    "seedId": "9cfece48-350c-5962-9f22-87f1768eee3e"
+    "source": "https://www.britannica.com/art/jazz-music"
   },
   {
+    "itemId": "52fea50d-6af4-4195-8ab4-d0213a696b93",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
-    "question": "Blues to roots in which community’s folk traditions?",
+    "question": "Blues to roots in which community\u2019s folk traditions?",
     "correctAnswer": "African American",
     "incorrectAnswers": [
       "Inuit",
@@ -34,14 +35,14 @@
       "blues",
       "history"
     ],
-    "source": "https://www.britannica.com/art/blues-music",
-    "seedId": "05ce4553-ea25-5570-afa9-1a992af93878"
+    "source": "https://www.britannica.com/art/blues-music"
   },
   {
+    "itemId": "f07e697c-4011-46fa-8e44-c0d7afccdeb1",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
-    "question": "Which island nation’s culture is most closely associated with reggae strongly?",
+    "question": "Which island nation\u2019s culture is most closely associated with reggae strongly?",
     "correctAnswer": "Jamaica",
     "incorrectAnswers": [
       "Iceland",
@@ -53,10 +54,10 @@
       "reggae",
       "caribbean"
     ],
-    "source": "https://www.britannica.com/art/reggae-music",
-    "seedId": "3a5172d1-81a7-5467-97e5-f56deb04887f"
+    "source": "https://www.britannica.com/art/reggae-music"
   },
   {
+    "itemId": "c6b31c7e-63ec-4129-9bbd-31bff80a75b8",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -72,10 +73,10 @@
       "hip-hop",
       "culture"
     ],
-    "source": "https://www.britannica.com/art/hip-hop-music",
-    "seedId": "6f22704b-aa66-5fd8-93a5-79cafc01a4d1"
+    "source": "https://www.britannica.com/art/hip-hop-music"
   },
   {
+    "itemId": "2aed1cbc-cfb0-4edc-8643-f44f87302c3d",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -91,10 +92,10 @@
       "symphony",
       "classical"
     ],
-    "source": "https://www.britannica.com/art/symphony-music",
-    "seedId": "24a3eb25-ec2c-5f5a-8526-07a17eaca8f5"
+    "source": "https://www.britannica.com/art/symphony-music"
   },
   {
+    "itemId": "bcfbcf1b-cd60-4ac4-ba03-1b743be94b7a",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -110,14 +111,14 @@
       "edm",
       "electronic"
     ],
-    "source": "https://www.britannica.com/art/electronic-dance-music",
-    "seedId": "ce6d5ea5-c116-5dad-824b-f8870b2d4737"
+    "source": "https://www.britannica.com/art/electronic-dance-music"
   },
   {
+    "itemId": "1e8911e6-7d93-40b8-82e3-1a18d6cdbcba",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
-    "question": "Gospel music to Christian worship traditions especially in which country’s churches?",
+    "question": "Gospel music to Christian worship traditions especially in which country\u2019s churches?",
     "correctAnswer": "United States",
     "incorrectAnswers": [
       "Japan",
@@ -129,10 +130,10 @@
       "gospel",
       "worship"
     ],
-    "source": "https://www.britannica.com/art/gospel-music",
-    "seedId": "cc6349d7-459c-5d86-b438-82650f4ea6b8"
+    "source": "https://www.britannica.com/art/gospel-music"
   },
   {
+    "itemId": "8bb331ae-8c84-48e7-8b04-bfc5b023f033",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -148,10 +149,10 @@
       "punk",
       "rock"
     ],
-    "source": "https://www.britannica.com/art/punk-rock",
-    "seedId": "8541fd76-c040-5271-8ada-6ba1e05b2100"
+    "source": "https://www.britannica.com/art/punk-rock"
   },
   {
+    "itemId": "03769647-2622-44f8-9308-75c58181a2ad",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -167,10 +168,10 @@
       "metal",
       "rock"
     ],
-    "source": "https://www.britannica.com/art/heavy-metal-music",
-    "seedId": "b01d0a51-1300-5bbd-8063-e9b4fb165e2a"
+    "source": "https://www.britannica.com/art/heavy-metal-music"
   },
   {
+    "itemId": "a5058987-89b4-4936-8e33-c80cc84f17ac",
     "category": "trivia",
     "navigationKeyword1": "music",
     "navigationKeyword2": "genres",
@@ -186,7 +187,6 @@
       "folk",
       "tradition"
     ],
-    "source": "https://www.britannica.com/art/folk-music",
-    "seedId": "a9c9d083-d64b-5e1f-ab75-710291963713"
+    "source": "https://www.britannica.com/art/folk-music"
   }
 ]

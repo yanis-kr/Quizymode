@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "bda3abd1-a119-4016-b04e-a1379797dbed",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
@@ -15,10 +16,10 @@
       "privacy",
       "fourth-amendment"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-4/",
-    "seedId": "0d481a0f-f39e-56f1-bb9d-6c1e99eaac0a"
+    "source": "https://constitution.congress.gov/constitution/amendment-4/"
   },
   {
+    "itemId": "daf863e1-4d45-4f08-bc42-6d87df99ffc7",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
@@ -34,29 +35,29 @@
       "privacy",
       "warrants"
     ],
-    "source": "https://www.law.cornell.edu/wex/fourth_amendment",
-    "seedId": "79dc2a2d-2ba0-545b-a240-b36db3af26d2"
+    "source": "https://www.law.cornell.edu/wex/fourth_amendment"
   },
   {
+    "itemId": "a2cba8d9-775e-4eea-b00e-f57f99eebacf",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
-    "question": "What standard do police often need to stop and frisk someone’s outer clothing for weapons?",
+    "question": "What standard do police often need to stop and frisk someone\u2019s outer clothing for weapons?",
     "correctAnswer": "reasonable suspicion of criminal activity",
     "incorrectAnswers": [
       "proof beyond a reasonable doubt",
       "a signed complaint from a victim",
       "a warrant in every case"
     ],
-    "explanation": "Terry stops require reasonable suspicion—more than a hunch but less than probable cause for a full arrest in that setting.",
+    "explanation": "Terry stops require reasonable suspicion\u2014more than a hunch but less than probable cause for a full arrest in that setting.",
     "keywords": [
       "privacy",
       "terry-stop"
     ],
-    "source": "https://www.law.cornell.edu/wex/terry_v._ohio",
-    "seedId": "c4cee347-46a5-55e6-b6d9-7810b5829d10"
+    "source": "https://www.law.cornell.edu/wex/terry_v._ohio"
   },
   {
+    "itemId": "a4504c17-9b3f-4e21-8331-ad659507e52c",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
@@ -72,10 +73,10 @@
       "privacy",
       "exclusionary-rule"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/facts-and-case-summary-mapp-v-ohio",
-    "seedId": "7b189c6c-4e09-55ee-aec5-cce5b9aae46c"
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/about-educational-outreach/activity-resources/facts-and-case-summary-mapp-v-ohio"
   },
   {
+    "itemId": "e548ac55-b9ef-4dde-b93d-48545f487a0f",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
@@ -91,15 +92,15 @@
       "privacy",
       "dui"
     ],
-    "source": "https://www.law.cornell.edu/wex/birchfield_v._north_dakota",
-    "seedId": "33a3e996-99e2-525d-b1cf-c24825b3d37e"
+    "source": "https://www.law.cornell.edu/wex/birchfield_v._north_dakota"
   },
   {
+    "itemId": "00a82f67-1564-4bb0-8a41-b13bb3601120",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "privacy",
     "question": "What does Katz emphasize about Fourth Amendment protection?",
-    "correctAnswer": "people not places—reasonable expectations of privacy can matter",
+    "correctAnswer": "people not places\u2014reasonable expectations of privacy can matter",
     "incorrectAnswers": [
       "only buildings count",
       "only written diaries are protected",
@@ -110,7 +111,6 @@
       "privacy",
       "reasonable-expectation"
     ],
-    "source": "https://www.law.cornell.edu/wex/katz_v._united_states",
-    "seedId": "7ebdf92e-d7b3-5b3b-b8ae-aecbfef0a162"
+    "source": "https://www.law.cornell.edu/wex/katz_v._united_states"
   }
 ]

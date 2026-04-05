@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "3a396e10-38e4-4f9c-8ee7-5905fea2f5b0",
+    "itemId": "68a3da17-3925-42ad-9eab-d3356a38d186",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -20,7 +20,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-1-greatest-common-factor-and-factor-by-grouping"
   },
   {
-    "seedId": "bc0fac39-b38d-4d0e-8b74-b1d85125028c",
+    "itemId": "087988dc-5244-4a45-85df-51bf086eef58",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -40,7 +40,7 @@
     "source": "https://www.khanacademy.org/math/algebra2/polynomial-factorization"
   },
   {
-    "seedId": "72489cb9-559c-40ab-80cc-c1f1fb3d4488",
+    "itemId": "df39ae1c-66d1-4fed-aac6-ca95fea7b0b3",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -60,18 +60,18 @@
     "source": "https://www.ck12.org/algebra/greatest-common-factor/lesson/Greatest-Common-Factor-ALG/"
   },
   {
-    "seedId": "d3ac1066-a2ad-4cda-b6ee-df6581cedb64",
+    "itemId": "06c45a8e-24c6-4839-ab7b-ee8939d0b923",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
-    "question": "Which expression is a correct factorization of x^2 − 9?",
-    "correctAnswer": "(x − 3)(x + 3)",
+    "question": "Which expression is a correct factorization of x^2 \u2212 9?",
+    "correctAnswer": "(x \u2212 3)(x + 3)",
     "incorrectAnswers": [
-      "(x − 9)(x + 1)",
-      "(x − 3)^2",
-      "(x + 9)(x − 1)"
+      "(x \u2212 9)(x + 1)",
+      "(x \u2212 3)^2",
+      "(x + 9)(x \u2212 1)"
     ],
-    "explanation": "x^2 − 9 is a difference of squares: a^2 − b^2 = (a − b)(a + b) with a=x and b=3.",
+    "explanation": "x^2 \u2212 9 is a difference of squares: a^2 \u2212 b^2 = (a \u2212 b)(a + b) with a=x and b=3.",
     "keywords": [
       "difference-of-squares",
       "factoring",
@@ -80,7 +80,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-2-factor-trinomials"
   },
   {
-    "seedId": "51f80827-84cc-4ebc-a350-89a7e5280e94",
+    "itemId": "a1438d15-b71e-4475-9428-21b939acc80d",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -100,18 +100,18 @@
     "source": "https://www.mathsisfun.com/algebra/polynomials-multiplying.html"
   },
   {
-    "seedId": "a1db3fbe-d876-4ff7-8fb3-955422fb3d8f",
+    "itemId": "54283f55-df5a-4409-b941-c44d47c4463f",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
     "question": "What does it mean if you fully factor a polynomial over the integers?",
-    "correctAnswer": "It can’t be factored further using integer coefficients",
+    "correctAnswer": "It can\u2019t be factored further using integer coefficients",
     "incorrectAnswers": [
       "It has no x terms left",
       "It becomes a perfect square every time",
       "It must have exactly two factors"
     ],
-    "explanation": "A polynomial is fully factored (over integers) when it’s written as a product of factors that are irreducible with integer coefficients.",
+    "explanation": "A polynomial is fully factored (over integers) when it\u2019s written as a product of factors that are irreducible with integer coefficients.",
     "keywords": [
       "fully-factored",
       "integers",
@@ -120,7 +120,7 @@
     "source": "https://en.wikipedia.org/wiki/Factorization_of_polynomials"
   },
   {
-    "seedId": "214f1570-6d62-448c-9876-ac3eb48981d4",
+    "itemId": "101f4d2b-f5fb-47f8-91d7-a244abfd300f",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -140,16 +140,16 @@
     "source": "https://www.purplemath.com/modules/factnumb.htm"
   },
   {
-    "seedId": "8434e8ea-e906-41c3-b463-46883bbebe69",
+    "itemId": "bf056601-23f0-437f-856f-597ae1a64a11",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
     "question": "What pattern do you use to factor x^2 + 2x + 1?",
     "correctAnswer": "Perfect-square trinomial: (x + 1)^2",
     "incorrectAnswers": [
-      "Difference of squares: (x − 1)(x + 1)",
-      "Sum of cubes: (x + 1)(x^2 − x + 1)",
-      "No pattern applies; it can’t be factored"
+      "Difference of squares: (x \u2212 1)(x + 1)",
+      "Sum of cubes: (x + 1)(x^2 \u2212 x + 1)",
+      "No pattern applies; it can\u2019t be factored"
     ],
     "explanation": "x^2 + 2x + 1 matches a^2 + 2ab + b^2 with a=x and b=1, so it factors as (x + 1)^2.",
     "keywords": [
@@ -160,7 +160,7 @@
     "source": "https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-factor"
   },
   {
-    "seedId": "3c92b49f-d87f-447a-9739-ffe7206baf35",
+    "itemId": "12e48bf7-32ac-4c53-b155-5d74b321bf03",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -171,7 +171,7 @@
       "Two numbers that both equal b/2",
       "Two numbers that make the discriminant negative"
     ],
-    "explanation": "For a monic quadratic, you want integers m and n with m·n = c and m + n = b, giving (x + m)(x + n).",
+    "explanation": "For a monic quadratic, you want integers m and n with m\u00b7n = c and m + n = b, giving (x + m)(x + n).",
     "keywords": [
       "factor-quadratic",
       "monic",
@@ -180,7 +180,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-2-factor-trinomials"
   },
   {
-    "seedId": "76ef4add-2438-473b-aa0f-1d8b11a10107",
+    "itemId": "208e3f57-6bc3-4448-ad54-d298e3b4131d",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -200,7 +200,7 @@
     "source": "https://www.mathsisfun.com/algebra/distributive-law.html"
   },
   {
-    "seedId": "15cea3fa-d004-41ca-8ebb-41d1a7affc5a",
+    "itemId": "03980f65-4fe2-4e2c-abcb-543d9d75663c",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -220,7 +220,7 @@
     "source": "https://openstax.org/books/elementary-algebra-2e/pages/6-1-greatest-common-factor-and-factor-by-grouping"
   },
   {
-    "seedId": "cd8931a8-e9da-43a7-a498-788c27ea4dbd",
+    "itemId": "d3dcce41-240f-4582-b1ae-0919b7735ca9",
     "category": "science",
     "navigationKeyword1": "algebra",
     "navigationKeyword2": "factoring",
@@ -231,7 +231,7 @@
       "Because patterns only work when the GCF is 1",
       "Because it guarantees the factors are prime numbers"
     ],
-    "explanation": "If you skip the GCF, you can end with factors that still share a common factor, so your final result isn’t in simplest product form.",
+    "explanation": "If you skip the GCF, you can end with factors that still share a common factor, so your final result isn\u2019t in simplest product form.",
     "keywords": [
       "gcf",
       "fully-factored",
@@ -240,4 +240,3 @@
     "source": "https://www.ck12.org/algebra/factor-out-the-gcf/lesson/Factor-out-the-GCF-ALG/"
   }
 ]
-

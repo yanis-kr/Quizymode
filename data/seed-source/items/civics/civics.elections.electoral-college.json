@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e96006d7-53b9-4b95-9660-3aea4b0db4c1",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -15,10 +16,10 @@
       "electoral-votes",
       "538"
     ],
-    "source": "https://www.archives.gov/electoral-college/allocation",
-    "seedId": "b6246ee6-0bd6-5c9c-8ffb-ccacf8135b43"
+    "source": "https://www.archives.gov/electoral-college/allocation"
   },
   {
+    "itemId": "ac760d88-eeb2-443e-b7da-f78dbce70039",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -34,10 +35,10 @@
       "majority",
       "president"
     ],
-    "source": "https://www.usa.gov/electoral-college",
-    "seedId": "204442f7-f06b-503a-acca-3bc40c727009"
+    "source": "https://www.usa.gov/electoral-college"
   },
   {
+    "itemId": "46d4b6b7-50e6-49da-ac96-aa513c07a294",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -53,10 +54,10 @@
       "12th-amendment",
       "contingent-election"
     ],
-    "source": "https://www.archives.gov/founding-docs/amendments-11-27",
-    "seedId": "254cca8b-b3fe-592d-a964-e2247a10383b"
+    "source": "https://www.archives.gov/founding-docs/amendments-11-27"
   },
   {
+    "itemId": "0aad99ea-2453-471a-8a09-2e15db769460",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -72,10 +73,10 @@
       "23rd-amendment",
       "district-of-columbia"
     ],
-    "source": "https://www.archives.gov/founding-docs/amendments-11-27",
-    "seedId": "a1da1ce3-87cd-57ae-9d7d-895382bc5470"
+    "source": "https://www.archives.gov/founding-docs/amendments-11-27"
   },
   {
+    "itemId": "8147ef3a-8c3e-41f6-b606-0f8d66354fb8",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -91,10 +92,10 @@
       "faithless-electors",
       "supreme-court"
     ],
-    "source": "https://www.law.cornell.edu/supremecourt/text/19-465",
-    "seedId": "a374625d-3246-50fe-b441-b329a6a62879"
+    "source": "https://www.law.cornell.edu/supremecourt/text/19-465"
   },
   {
+    "itemId": "a549ae1c-07d9-4cb1-9b3e-950be0ba0bb0",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "electoral-college",
@@ -110,7 +111,6 @@
       "electoral-college-meeting",
       "timeline"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/3/7",
-    "seedId": "da382546-bde2-5ae6-ade8-7d87ac33d240"
+    "source": "https://www.law.cornell.edu/uscode/text/3/7"
   }
 ]

@@ -112,31 +112,48 @@ namespace Quizymode.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
 
                     b.Property<bool>("IsPublic")
-                        .HasColumnType("boolean");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsRepoManaged")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Collections");
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("IsPublic");
+
+                    b.HasIndex("IsRepoManaged");
+
+                    b.ToTable("Collections", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionBookmark", b =>
@@ -392,7 +409,7 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
-                    b.Property<bool>("IsSeedManaged")
+                    b.Property<bool>("IsRepoManaged")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
@@ -417,20 +434,6 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<string>("SeedHash")
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
-
-                    b.Property<Guid?>("SeedId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime?>("SeedLastSyncedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("SeedSet")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.Property<string>("Source")
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
@@ -446,20 +449,17 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("FuzzyBucket");
 
+                    b.HasIndex("IsRepoManaged");
+
                     b.HasIndex("NavigationKeywordId1");
 
                     b.HasIndex("NavigationKeywordId2");
-
-                    b.HasIndex("SeedId")
-                        .IsUnique();
 
                     b.HasIndex("UploadId");
 
                     b.HasIndex("CategoryId", "IsPrivate");
 
                     b.HasIndex("IsPrivate", "CreatedBy");
-
-                    b.HasIndex("IsSeedManaged", "SeedSet");
 
                     b.ToTable("Items", null, t =>
                         {

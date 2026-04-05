@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "29d8f7e7-03cb-4085-a49b-fdad81d06347",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
@@ -16,15 +17,15 @@
       "processes",
       "delivery"
     ],
-    "source": "https://www.investopedia.com/terms/o/operationsmanagement.asp",
-    "seedId": "e0061053-2434-5bab-93af-01bef7be236b"
+    "source": "https://www.investopedia.com/terms/o/operationsmanagement.asp"
   },
   {
+    "itemId": "33ec52fe-3e09-4d79-8c34-4f189e21a6a6",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
     "question": "What is a capacity plan meant to address?",
-    "correctAnswer": "Whether the organization’s ability to produce meets expected demand.",
+    "correctAnswer": "Whether the organization\u2019s ability to produce meets expected demand.",
     "incorrectAnswers": [
       "Only how the company writes revenue recognition policies",
       "Whether every purchase order uses the same vendor invoice format",
@@ -36,10 +37,10 @@
       "demand",
       "bottlenecks"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "ddd308a8-d854-5b3f-8728-25b915ec4cba"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "a46256d0-014e-4e3d-965c-01ca5b86c086",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
@@ -56,10 +57,10 @@
       "throughput",
       "constraints"
     ],
-    "source": "https://www.mindtools.com/",
-    "seedId": "448f396a-2d03-5bcb-a151-52e648277ef4"
+    "source": "https://www.mindtools.com/"
   },
   {
+    "itemId": "430ec6f2-b050-4cde-aa58-46388e4f36df",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
@@ -76,10 +77,10 @@
       "quality",
       "consistency"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "0bbd9648-d17a-5903-8e37-b5017f9056f4"
+    "source": "https://hbr.org/"
   },
   {
+    "itemId": "1dcc0f8e-11e6-41ad-a4cf-c9d4abdb874b",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
@@ -96,10 +97,10 @@
       "workflow",
       "speed"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "871fde1b-d83f-593c-adb8-2cb2fc54e4aa"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "e9f1feea-1ea6-4b9c-a617-5d3f679d2b83",
     "category": "business",
     "navigationKeyword1": "management",
     "navigationKeyword2": "operations",
@@ -116,7 +117,6 @@
       "efficiency",
       "process-feedback"
     ],
-    "source": "https://hbr.org/",
-    "seedId": "b3bcc6a4-5671-51df-9871-6c374b0d0017"
+    "source": "https://hbr.org/"
   }
 ]

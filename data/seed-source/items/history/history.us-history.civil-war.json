@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "c0f89fd6-a357-44d7-83b8-e3def95bf721",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -10,16 +11,16 @@
       "Fort Ticonderoga",
       "Fort Duquesne"
     ],
-    "explanation": "Lincoln’s decision to resupply the garrison prompted South Carolina batteries to fire on the unfinished fort.",
+    "explanation": "Lincoln\u2019s decision to resupply the garrison prompted South Carolina batteries to fire on the unfinished fort.",
     "keywords": [
       "civil-war",
       "1861",
       "south-carolina"
     ],
-    "source": "https://www.britannica.com/event/Fort-Sumter",
-    "seedId": "96a9bd36-2fa4-4da2-9989-6425d28e2a3b"
+    "source": "https://www.britannica.com/event/Fort-Sumter"
   },
   {
+    "itemId": "9cf2a14d-ee94-439f-a7b0-d60ba00c8207",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -36,30 +37,30 @@
       "virginia",
       "1861"
     ],
-    "source": "https://www.britannica.com/event/First-Battle-of-Bull-Run",
-    "seedId": "426be403-6b0a-4c11-8ed6-5dba9aad20db"
+    "source": "https://www.britannica.com/event/First-Battle-of-Bull-Run"
   },
   {
+    "itemId": "dfb64a2e-d3c1-49d2-84e1-ef245957bcfc",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
-    "question": "George B. McClellan’s Peninsula Campaign aimed to capture which Confederate capital by advancing up the Virginia Peninsula?",
+    "question": "George B. McClellan\u2019s Peninsula Campaign aimed to capture which Confederate capital by advancing up the Virginia Peninsula?",
     "correctAnswer": "Richmond",
     "incorrectAnswers": [
       "Atlanta",
       "Montgomery",
       "Charleston"
     ],
-    "explanation": "Robert E. Lee’s Army of Northern Virginia blocked McClellan’s cautious advance during the Seven Days’ Battles.",
+    "explanation": "Robert E. Lee\u2019s Army of Northern Virginia blocked McClellan\u2019s cautious advance during the Seven Days\u2019 Battles.",
     "keywords": [
       "civil-war",
       "virginia",
       "peninsula-campaign"
     ],
-    "source": "https://www.britannica.com/event/Peninsula-Campaign",
-    "seedId": "1081754f-6dad-46ed-adfa-38ccc141b168"
+    "source": "https://www.britannica.com/event/Peninsula-Campaign"
   },
   {
+    "itemId": "868878d0-5cc0-4107-a7a4-1c5b68e02a8f",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -70,20 +71,20 @@
       "Shiloh",
       "Cold Harbor"
     ],
-    "explanation": "Lee’s first invasion of the North ended in stalemate along Antietam Creek, enabling Lincoln to issue a preliminary emancipation proclamation.",
+    "explanation": "Lee\u2019s first invasion of the North ended in stalemate along Antietam Creek, enabling Lincoln to issue a preliminary emancipation proclamation.",
     "keywords": [
       "civil-war",
       "maryland",
       "1862"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Antietam",
-    "seedId": "0018da11-e4ca-4dcc-94f2-5183cca06a64"
+    "source": "https://www.britannica.com/event/Battle-of-Antietam"
   },
   {
+    "itemId": "d7dbb5c3-2f82-4c86-966b-97e537ad64e5",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
-    "question": "Abraham Lincoln’s Emancipation Proclamation (1863) declared freedom for enslaved people in states still in rebellion as of which date?",
+    "question": "Abraham Lincoln\u2019s Emancipation Proclamation (1863) declared freedom for enslaved people in states still in rebellion as of which date?",
     "correctAnswer": "January 1, 1863",
     "incorrectAnswers": [
       "July 4, 1862",
@@ -96,14 +97,14 @@
       "emancipation",
       "lincoln"
     ],
-    "source": "https://www.britannica.com/event/Emancipation-Proclamation",
-    "seedId": "6fd03268-244f-4e09-a425-ed511d782964"
+    "source": "https://www.britannica.com/event/Emancipation-Proclamation"
   },
   {
+    "itemId": "a55c7bee-14e3-4263-9a7f-60147f54962e",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
-    "question": "Ulysses S. Grant’s capture of which Mississippi River city in July 1863 split the Confederacy in two?",
+    "question": "Ulysses S. Grant\u2019s capture of which Mississippi River city in July 1863 split the Confederacy in two?",
     "correctAnswer": "Vicksburg",
     "incorrectAnswers": [
       "New Orleans",
@@ -116,50 +117,50 @@
       "mississippi",
       "grant"
     ],
-    "source": "https://www.britannica.com/event/Siege-of-Vicksburg",
-    "seedId": "d9ef96df-a5e7-433a-a5ae-33aa90092f32"
+    "source": "https://www.britannica.com/event/Siege-of-Vicksburg"
   },
   {
+    "itemId": "d78cc42d-832f-44b7-874b-0be22380b534",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
-    "question": "Pickett’s Charge failed on the third day of which July 1863 Pennsylvania battle?",
+    "question": "Pickett\u2019s Charge failed on the third day of which July 1863 Pennsylvania battle?",
     "correctAnswer": "Gettysburg",
     "incorrectAnswers": [
       "Chancellorsville",
       "Fredericksburg",
       "Wilderness"
     ],
-    "explanation": "Meade’s Army of the Potomac repulsed Lee’s assault on Cemetery Ridge, marking a turning point in the Eastern Theater.",
+    "explanation": "Meade\u2019s Army of the Potomac repulsed Lee\u2019s assault on Cemetery Ridge, marking a turning point in the Eastern Theater.",
     "keywords": [
       "civil-war",
       "pennsylvania",
       "gettysburg"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-Gettysburg",
-    "seedId": "16b5304e-d82e-4b31-9742-2bf9765518c4"
+    "source": "https://www.britannica.com/event/Battle-of-Gettysburg"
   },
   {
+    "itemId": "411d054a-7858-43ca-9711-ebdb62850aac",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
-    "question": "William T. Sherman’s 1864 “March to the Sea” cut a swath of destruction across which state to Savannah?",
+    "question": "William T. Sherman\u2019s 1864 \u201cMarch to the Sea\u201d cut a swath of destruction across which state to Savannah?",
     "correctAnswer": "Georgia",
     "incorrectAnswers": [
       "South Carolina",
       "Alabama",
       "Tennessee"
     ],
-    "explanation": "Sherman’s hard-war strategy aimed to break Confederate morale and logistics by targeting railroads and civilian supplies.",
+    "explanation": "Sherman\u2019s hard-war strategy aimed to break Confederate morale and logistics by targeting railroads and civilian supplies.",
     "keywords": [
       "civil-war",
       "sherman",
       "georgia"
     ],
-    "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea",
-    "seedId": "000f61c6-3856-49e2-8c81-b86a17913084"
+    "source": "https://www.britannica.com/event/Shermans-March-to-the-Sea"
   },
   {
+    "itemId": "44073c3f-b455-46b4-b33e-fe00287ccfed",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -176,18 +177,18 @@
       "lee",
       "grant"
     ],
-    "source": "https://www.britannica.com/event/Appomattox-Court-House",
-    "seedId": "c33fb8c1-4aab-4e2f-894f-21e856aa7969"
+    "source": "https://www.britannica.com/event/Appomattox-Court-House"
   },
   {
+    "itemId": "e5ebf791-bb6a-47f9-921c-789945f19e4b",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
     "question": "John Wilkes Booth assassinated Lincoln on April 14, 1865, while the president attended a play at which Washington theater?",
-    "correctAnswer": "Ford’s Theatre",
+    "correctAnswer": "Ford\u2019s Theatre",
     "incorrectAnswers": [
       "The National Theatre",
-      "Ford’s Opera House in New York",
+      "Ford\u2019s Opera House in New York",
       "The White House East Room"
     ],
     "explanation": "Lincoln died the next morning; Andrew Johnson became president as the nation entered Reconstruction.",
@@ -196,10 +197,10 @@
       "lincoln",
       "assassination"
     ],
-    "source": "https://www.britannica.com/biography/Abraham-Lincoln",
-    "seedId": "6a6bff87-fa5e-498a-881c-cbecc55a9a03"
+    "source": "https://www.britannica.com/biography/Abraham-Lincoln"
   },
   {
+    "itemId": "6e27cf97-2b8a-4da7-894f-b3d01718d485",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -216,10 +217,10 @@
       "navy",
       "ironclads"
     ],
-    "source": "https://www.britannica.com/event/Battle-of-the-Monitor-and-Merrimack",
-    "seedId": "34b37fd4-67c1-41e0-b835-8355007acf2f"
+    "source": "https://www.britannica.com/event/Battle-of-the-Monitor-and-Merrimack"
   },
   {
+    "itemId": "ab47b341-f42b-4f3d-995e-ec2429cb756f",
     "category": "history",
     "navigationKeyword1": "us-history",
     "navigationKeyword2": "civil-war",
@@ -236,7 +237,6 @@
       "draft-riots",
       "new-york"
     ],
-    "source": "https://www.britannica.com/event/New-York-Draft-Riots",
-    "seedId": "b902bc75-ef07-49f0-8f12-1285dc90798e"
+    "source": "https://www.britannica.com/event/New-York-Draft-Riots"
   }
 ]

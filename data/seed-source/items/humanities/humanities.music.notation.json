@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "65545420-08c7-4f4c-8e83-706a11561370",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "notation",
@@ -15,10 +16,10 @@
       "notation",
       "staff"
     ],
-    "source": "https://www.britannica.com/art/musical-notation",
-    "seedId": "dedfdd1d-2a5a-5288-8cd4-72e0ccab94e7"
+    "source": "https://www.britannica.com/art/musical-notation"
   },
   {
+    "itemId": "1a81a15f-db3e-4523-8da2-b4095ab3a83f",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "notation",
@@ -34,7 +35,6 @@
       "notation",
       "clef"
     ],
-    "source": "https://www.musictheory.net/lessons/10",
-    "seedId": "c5103ec4-52b9-50e5-8ab2-7216d7ec9497"
+    "source": "https://www.musictheory.net/lessons/10"
   }
 ]

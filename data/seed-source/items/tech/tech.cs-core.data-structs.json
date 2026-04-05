@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0f045f74-89f3-4a5b-b81f-44a4f97db9fe",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -15,10 +16,10 @@
       "data-structs",
       "stack"
     ],
-    "source": "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)",
-    "seedId": "eb618ef0-eef6-5634-93f5-c1551b731d30"
+    "source": "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"
   },
   {
+    "itemId": "fd9475fc-31c1-451e-8c43-9a580d7aeaa4",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -34,10 +35,10 @@
       "data-structs",
       "heap"
     ],
-    "source": "https://xlinux.nist.gov/dads/HTML/priorityQueue.html",
-    "seedId": "29eb1b5b-a8fc-5ac7-9446-667b047ea1f6"
+    "source": "https://xlinux.nist.gov/dads/HTML/priorityQueue.html"
   },
   {
+    "itemId": "66093754-a5d3-43ce-94c9-0cd332e37e28",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -53,10 +54,10 @@
       "data-structs",
       "trees"
     ],
-    "source": "https://en.wikipedia.org/wiki/Binary_search_tree",
-    "seedId": "c7e624e8-6d10-53d6-9126-472d630c9141"
+    "source": "https://en.wikipedia.org/wiki/Binary_search_tree"
   },
   {
+    "itemId": "f6b702b9-5ce6-4503-80ec-1b1cfe8bd700",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -72,10 +73,10 @@
       "data-structs",
       "queue"
     ],
-    "source": "https://en.wikipedia.org/wiki/Queue_(abstract_data_type)",
-    "seedId": "4b16fb25-0868-5880-a611-eafe5bfef334"
+    "source": "https://en.wikipedia.org/wiki/Queue_(abstract_data_type)"
   },
   {
+    "itemId": "a10ad578-b7a4-4820-bfe7-4bd30fe6984a",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -91,10 +92,10 @@
       "data-structs",
       "graphs"
     ],
-    "source": "https://algs4.cs.princeton.edu/41graph/",
-    "seedId": "1d82e49a-ccf6-58af-8d17-ea7296765d6b"
+    "source": "https://algs4.cs.princeton.edu/41graph/"
   },
   {
+    "itemId": "fb31e514-3b27-4807-a2aa-0f21e0e2a22c",
     "category": "tech",
     "navigationKeyword1": "cs-core",
     "navigationKeyword2": "data-structs",
@@ -110,7 +111,6 @@
       "data-structs",
       "linked-list"
     ],
-    "source": "https://en.wikipedia.org/wiki/Doubly_linked_list",
-    "seedId": "a9caf1c2-21aa-5da8-9a05-fc0b9a5f8ee8"
+    "source": "https://en.wikipedia.org/wiki/Doubly_linked_list"
   }
 ]

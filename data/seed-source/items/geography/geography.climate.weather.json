@@ -1,29 +1,30 @@
 [
   {
+    "itemId": "9b8f29d4-3368-4fa9-a416-4579f402a41c",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Tonight’s forecast and next weekend’s picnic odds are talking about conditions measured over what kind of timeframe?",
-    "correctAnswer": "Hours to days—short-term weather, not long-term climate",
+    "question": "Tonight\u2019s forecast and next weekend\u2019s picnic odds are talking about conditions measured over what kind of timeframe?",
+    "correctAnswer": "Hours to days\u2014short-term weather, not long-term climate",
     "incorrectAnswers": [
       "The whole Phanerozoic eon",
       "Exactly one 30-year climate normal, always",
       "Geologic time scales of tens of millions of years"
     ],
-    "explanation": "Britannica defines weather as the atmosphere’s state at a place during a short period.",
+    "explanation": "Britannica defines weather as the atmosphere\u2019s state at a place during a short period.",
     "keywords": [
       "weather",
       "definitions",
       "time-scale"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "2d7c2229-05f1-47ca-8ff5-144f83c12aa4"
+    "source": "https://www.britannica.com/science/weather"
   },
   {
+    "itemId": "590bd5dd-2a90-4c9e-abfc-c395526d8e75",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Published climate ‘normals’ for temperature and rainfall usually summarize observations over about how many years?",
+    "question": "Published climate \u2018normals\u2019 for temperature and rainfall usually summarize observations over about how many years?",
     "correctAnswer": "About 30 years",
     "incorrectAnswers": [
       "24 hours",
@@ -36,14 +37,14 @@
       "climate-normals",
       "30-year-average"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "df684aaa-5fc4-4766-be07-47485eb0cf02"
+    "source": "https://www.britannica.com/science/weather"
   },
   {
+    "itemId": "342ac739-bf1d-496d-8948-77dbd20a4107",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Commercial jets cruise near the top of the layer where almost all rain, snow, and towering storm clouds live—which layer is it?",
+    "question": "Commercial jets cruise near the top of the layer where almost all rain, snow, and towering storm clouds live\u2014which layer is it?",
     "correctAnswer": "The troposphere",
     "incorrectAnswers": [
       "The mesosphere",
@@ -56,10 +57,10 @@
       "troposphere",
       "atmosphere"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "761c6252-ff28-417d-b466-7168a91f7c06"
+    "source": "https://www.britannica.com/science/weather"
   },
   {
+    "itemId": "cfef6c43-e3c3-4d0d-bdea-1741ab505b85",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
@@ -76,10 +77,10 @@
       "elements",
       "atmosphere"
     ],
-    "source": "https://www.britannica.com/science/climate-meteorology",
-    "seedId": "c866bdd7-3c5e-410c-a0e6-869b87ca4bbe"
+    "source": "https://www.britannica.com/science/climate-meteorology"
   },
   {
+    "itemId": "3925eb4f-a594-4032-ad20-38373a19c394",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
@@ -96,10 +97,10 @@
       "climate",
       "statistics"
     ],
-    "source": "https://www.britannica.com/science/climate-meteorology",
-    "seedId": "39c8679f-3b48-49ac-97f5-4b79c30392db"
+    "source": "https://www.britannica.com/science/climate-meteorology"
   },
   {
+    "itemId": "fe2f9ab8-e8c6-4005-bcd2-4ab035f4a236",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
@@ -116,30 +117,30 @@
       "noaa",
       "nws"
     ],
-    "source": "https://www.weather.gov/jetstream/global",
-    "seedId": "89e67343-bb18-4e08-a463-ca030589f213"
+    "source": "https://www.weather.gov/jetstream/global"
   },
   {
+    "itemId": "b259664f-6bef-455a-8c08-07dac51e3721",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Von Kármán vortices in satellite images form when fluid flow is disturbed by what?",
+    "question": "Von K\u00e1rm\u00e1n vortices in satellite images form when fluid flow is disturbed by what?",
     "correctAnswer": "a stationary obstacle such as an island mountain range",
     "incorrectAnswers": [
       "only aircraft contrails",
       "city street grids alone",
       "submarine cables"
     ],
-    "explanation": "NOAA’s JetStream page explains von Kármán vortices where wind flows past isolated terrain.",
+    "explanation": "NOAA\u2019s JetStream page explains von K\u00e1rm\u00e1n vortices where wind flows past isolated terrain.",
     "keywords": [
       "weather",
       "vortices",
       "clouds"
     ],
-    "source": "https://www.weather.gov/jetstream/global",
-    "seedId": "a9e6c277-7c4f-40a0-a3d2-d2c140c874d8"
+    "source": "https://www.weather.gov/jetstream/global"
   },
   {
+    "itemId": "647b09bf-4195-4761-a549-4924eb7f3c2a",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
@@ -156,10 +157,10 @@
       "forecasting",
       "models"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "689ea021-76d5-41ad-aff6-4a9583996365"
+    "source": "https://www.britannica.com/science/weather"
   },
   {
+    "itemId": "8db1505b-ae63-4bbd-a9f4-09b22414ecd7",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
@@ -176,47 +177,46 @@
       "satellites",
       "monitoring"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "472d38e6-d63f-492e-a7e1-627eb40135a8"
+    "source": "https://www.britannica.com/science/weather"
   },
   {
+    "itemId": "9c93e902-a33a-476a-9ed9-21e68eb90502",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Climate data users checking “climate normals” for event planning are relying on statistics that summarize what?",
-    "correctAnswer": "expected longer-term conditions rather than a single day’s weather",
+    "question": "Climate data users checking \u201cclimate normals\u201d for event planning are relying on statistics that summarize what?",
+    "correctAnswer": "expected longer-term conditions rather than a single day\u2019s weather",
     "incorrectAnswers": [
-      "tomorrow’s exact hourly forecast",
+      "tomorrow\u2019s exact hourly forecast",
       "real-time radar snapshots only",
       "stock market volatility"
     ],
-    "explanation": "NOAA’s Climate Data Primer highlights climate normals for planning around typical conditions, not one-off weather.",
+    "explanation": "NOAA\u2019s Climate Data Primer highlights climate normals for planning around typical conditions, not one-off weather.",
     "keywords": [
       "weather",
       "climate-normals",
       "planning"
     ],
-    "source": "https://www.climate.gov/maps-data/climate-data-primer",
-    "seedId": "6fbd294c-db99-4a7f-a441-4b2935fd04fe"
+    "source": "https://www.climate.gov/maps-data/climate-data-primer"
   },
   {
+    "itemId": "42cb42e8-aa96-40eb-9cb0-252facb1ffc4",
     "category": "geography",
     "navigationKeyword1": "climate",
     "navigationKeyword2": "weather",
-    "question": "Along the leading edge of a thunderstorm’s cold outflow, the shallow boundary that can kick up dust and lift warmer air is often called what?",
+    "question": "Along the leading edge of a thunderstorm\u2019s cold outflow, the shallow boundary that can kick up dust and lift warmer air is often called what?",
     "correctAnswer": "A gust front",
     "incorrectAnswers": [
       "The polar front jet only",
       "A stationary sea breeze with no motion",
       "The stratopause"
     ],
-    "explanation": "NOAA/NSSL teaching materials describe gust fronts as boundaries where storm-cooled air spreads out and forces warmer air upward, often marking the storm’s approach.",
+    "explanation": "NOAA/NSSL teaching materials describe gust fronts as boundaries where storm-cooled air spreads out and forces warmer air upward, often marking the storm\u2019s approach.",
     "keywords": [
       "weather",
       "gust-front",
       "thunderstorm-outflow"
     ],
-    "source": "https://www.britannica.com/science/weather",
-    "seedId": "37e7367b-3083-4ebf-8f72-0e40159b4c80"
+    "source": "https://www.britannica.com/science/weather"
   }
 ]

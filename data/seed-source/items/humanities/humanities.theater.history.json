@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "eb75d7e2-e78b-4eac-9f74-9e907e83ae2d",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "history",
@@ -15,10 +16,10 @@
       "theater-history",
       "greece"
     ],
-    "source": "https://www.britannica.com/art/Western-theatre",
-    "seedId": "8caac659-6783-5d73-91e5-9180e83cf38d"
+    "source": "https://www.britannica.com/art/Western-theatre"
   },
   {
+    "itemId": "0c1d3de4-5630-4c33-8ae5-008a13e14d3d",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "history",
@@ -34,7 +35,6 @@
       "theater-history",
       "periods"
     ],
-    "source": "https://www.loc.gov/collections/plays-and-musicals/",
-    "seedId": "33a2a7eb-4706-59c5-808a-d9f4db897baf"
+    "source": "https://www.loc.gov/collections/plays-and-musicals/"
   }
 ]

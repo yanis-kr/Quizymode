@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6ef90328-7852-45be-a966-16a437b77dfe",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
@@ -16,10 +17,10 @@
       "customers",
       "competitors"
     ],
-    "source": "https://www.investopedia.com/terms/m/marketresearch.asp",
-    "seedId": "1ecf59c0-777e-525e-b435-0ee195008bf9"
+    "source": "https://www.investopedia.com/terms/m/marketresearch.asp"
   },
   {
+    "itemId": "f9887215-e981-4ec6-9c9b-bb8e3b829191",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
@@ -36,10 +37,10 @@
       "secondary-research",
       "data-sources"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "0b048f92-2cf5-5d4f-bb94-bce1d44b83a9"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "bd7deb0d-6ac9-4ff8-8b29-5fd57cc6f5b3",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
@@ -56,10 +57,10 @@
       "market-sizing",
       "demand"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "64c784bd-d69c-5486-a23b-85d0cdfd09c2"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "70d876d0-dfdf-464c-b868-5efdd304556d",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
@@ -76,10 +77,10 @@
       "measurement",
       "insights"
     ],
-    "source": "https://www.moz.com/",
-    "seedId": "efab8349-bc2e-5d5b-8fe6-26ec605604b9"
+    "source": "https://www.moz.com/"
   },
   {
+    "itemId": "5ee6ff3a-4b16-4d2d-bb68-41500e169c4b",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
@@ -96,15 +97,15 @@
       "targeting",
       "positioning"
     ],
-    "source": "https://www.hubspot.com/",
-    "seedId": "fa7d4838-61ae-5a76-a730-a8f1ca9802fc"
+    "source": "https://www.hubspot.com/"
   },
   {
+    "itemId": "7b7e5f93-b39a-47a3-859b-ebc7b30d5170",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "research",
     "question": "What is a competitive analysis generally trying to do?",
-    "correctAnswer": "Understand competitors’ offerings, strategies, and positioning to make clearer decisions about your own approach.",
+    "correctAnswer": "Understand competitors\u2019 offerings, strategies, and positioning to make clearer decisions about your own approach.",
     "incorrectAnswers": [
       "Guarantee that competitors will never change their products",
       "Replace all customer interviews with guesses about competitors",
@@ -116,7 +117,6 @@
       "positioning",
       "strategy"
     ],
-    "source": "https://moz.com/",
-    "seedId": "95339dd1-5cdc-5aa7-9bf7-734b497a38b9"
+    "source": "https://moz.com/"
   }
 ]

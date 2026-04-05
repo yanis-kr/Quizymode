@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "57b8d95e-aa62-41b7-a99b-75b53437f934",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
@@ -8,7 +9,7 @@
     "incorrectAnswers": [
       "Produce a single standardized report only for investors every year",
       "Replace payroll with cost calculations",
-      "Determine the company’s legal tax rate directly"
+      "Determine the company\u2019s legal tax rate directly"
     ],
     "explanation": "Managerial accounting focuses on internal use, helping managers choose actions and evaluate performance.",
     "keywords": [
@@ -16,14 +17,14 @@
       "planning",
       "decision-making"
     ],
-    "source": "https://www.imanet.org/",
-    "seedId": "2221b2c6-1b03-575a-9d24-1b737e6d5197"
+    "source": "https://www.imanet.org/"
   },
   {
+    "itemId": "2d3fe5de-b405-48f3-bae1-e2b992e65cac",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
-    "question": "In cost analysis, what does “fixed cost” mean?",
+    "question": "In cost analysis, what does \u201cfixed cost\u201d mean?",
     "correctAnswer": "A cost that stays the same in total over a relevant range of activity, even if output changes.",
     "incorrectAnswers": [
       "A cost that always drops to zero when output falls",
@@ -36,10 +37,10 @@
       "variable-costs",
       "cost-behavior"
     ],
-    "source": "https://www.investopedia.com/terms/f/fixedcost.asp",
-    "seedId": "5b5c1df3-3d5e-505d-aea0-86ad01ad93b1"
+    "source": "https://www.investopedia.com/terms/f/fixedcost.asp"
   },
   {
+    "itemId": "18ad924e-39fd-488a-8348-f0c5e8e112d3",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
@@ -56,10 +57,10 @@
       "planning",
       "variance-analysis"
     ],
-    "source": "https://www.aicpa-cima.com/Resources/Pages/What-is-management-accounting.aspx",
-    "seedId": "baf3a828-b309-5719-b560-0ff63cd11d41"
+    "source": "https://www.aicpa-cima.com/Resources/Pages/What-is-management-accounting.aspx"
   },
   {
+    "itemId": "cad937ca-8960-4157-93a6-769c605e9e2b",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
@@ -76,18 +77,18 @@
       "variable-costs",
       "break-even"
     ],
-    "source": "https://corporatefinanceinstitute.com/resources/management/contribution-margin/",
-    "seedId": "82b2a2b4-a3b9-5918-bfc4-5c052f1ff6eb"
+    "source": "https://corporatefinanceinstitute.com/resources/management/contribution-margin/"
   },
   {
+    "itemId": "137865a5-8d62-41ae-ac39-9c6db4e418e7",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
     "question": "Why do transfer prices matter in a multi-division company?",
-    "correctAnswer": "They affect how performance and internal “profit” are measured between divisions.",
+    "correctAnswer": "They affect how performance and internal \u201cprofit\u201d are measured between divisions.",
     "incorrectAnswers": [
       "They eliminate the need for any internal reporting",
-      "They guarantee the company’s external stock price will rise",
+      "They guarantee the company\u2019s external stock price will rise",
       "They determine payroll taxes automatically for all divisions"
     ],
     "explanation": "Transfer pricing influences incentives and performance metrics across divisions, so it affects internal decisions.",
@@ -96,27 +97,26 @@
       "divisions",
       "incentives"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "9119396c-faab-534d-8ab7-9c8e8eb7b0d9"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "9d4854c5-0b9b-4b55-ac9c-db1eee00bce6",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "managerial",
-    "question": "What makes a cost “relevant” when comparing decision alternatives?",
+    "question": "What makes a cost \u201crelevant\u201d when comparing decision alternatives?",
     "correctAnswer": "It differs between the alternatives and is expected to change based on the choice.",
     "incorrectAnswers": [
       "It is any cost the company has ever paid historically",
       "It is always fixed cost, regardless of alternatives",
       "It is only costs that appear on the bank statement"
     ],
-    "explanation": "Relevant costs are future and differ across options; sunk costs that don’t change shouldn’t drive the decision.",
+    "explanation": "Relevant costs are future and differ across options; sunk costs that don\u2019t change shouldn\u2019t drive the decision.",
     "keywords": [
       "relevant-costs",
       "sunk-costs",
       "decision-analysis"
     ],
-    "source": "https://corporatefinanceinstitute.com/",
-    "seedId": "5036f236-011c-5ba8-beab-160ec90750ae"
+    "source": "https://corporatefinanceinstitute.com/"
   }
 ]

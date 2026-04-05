@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "3f691bc8-71fd-4344-a674-e1fed24d3089",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -15,10 +16,10 @@
       "agile-manifesto",
       "agile"
     ],
-    "source": "https://agilemanifesto.org/",
-    "seedId": "bafbcfd1-5dff-4bff-bb0d-ef91272d04eb"
+    "source": "https://agilemanifesto.org/"
   },
   {
+    "itemId": "82792890-0fcb-4ecf-99d9-525f38bf1166",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -34,10 +35,10 @@
       "iterations",
       "agile"
     ],
-    "source": "https://www.atlassian.com/agile/software-development/iteration",
-    "seedId": "bcf10339-1eed-4b22-92ac-d32e532cf2b7"
+    "source": "https://www.atlassian.com/agile/software-development/iteration"
   },
   {
+    "itemId": "99996f38-23b8-46b1-89b4-3ee3f41d6b5b",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -53,10 +54,10 @@
       "waterfall",
       "lifecycle"
     ],
-    "source": "https://www.pmi.org/learning/library/agile-vs-waterfall-7118",
-    "seedId": "02c78c3b-9bf6-42c0-a514-969bd1c74223"
+    "source": "https://www.pmi.org/learning/library/agile-vs-waterfall-7118"
   },
   {
+    "itemId": "34c64da2-f4d3-4004-a510-11a3789f7cc5",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -72,10 +73,10 @@
       "working-software",
       "agile"
     ],
-    "source": "https://agilemanifesto.org/",
-    "seedId": "2b2e215d-61c7-4428-bb04-6de039f52bcf"
+    "source": "https://agilemanifesto.org/"
   },
   {
+    "itemId": "05df6489-f10c-4b38-86b2-c5ff6a08d4f4",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -91,10 +92,10 @@
       "product-backlog",
       "scrum"
     ],
-    "source": "https://www.scrum.org/resources/what-is-a-product-backlog",
-    "seedId": "22b11b95-13e8-4171-99d5-1a1cd33d6f96"
+    "source": "https://www.scrum.org/resources/what-is-a-product-backlog"
   },
   {
+    "itemId": "15c4807e-bcff-4f2d-aa9d-6f444fe18dcf",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "agile",
@@ -110,7 +111,6 @@
       "cross-functional",
       "teams"
     ],
-    "source": "https://www.atlassian.com/agile/scrum/cross-functional-teams",
-    "seedId": "90c1dbfc-a2bb-40f1-9ac5-6221b383bf3f"
+    "source": "https://www.atlassian.com/agile/scrum/cross-functional-teams"
   }
 ]

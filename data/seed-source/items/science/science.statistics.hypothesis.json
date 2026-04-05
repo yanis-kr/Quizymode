@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "a06faa7d-80ff-4800-9665-86947189c4f5",
+    "itemId": "ddc71c12-b60d-42ba-85f1-c9b43c81720e",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -19,7 +19,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
   },
   {
-    "seedId": "d524d269-8c17-419d-93ac-967e33f7a476",
+    "itemId": "a15f5dc0-a948-47a5-b473-a789270d5b1c",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -38,7 +38,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
   },
   {
-    "seedId": "fd249da3-dc9e-4fb9-9f2e-85c7c79d3a88",
+    "itemId": "7a212b92-176b-4522-b010-fc8615d97870",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -57,11 +57,11 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
   },
   {
-    "seedId": "cf3f5e6f-a9f5-4bb1-bb0d-d1536043dd7b",
+    "itemId": "fe8ebf07-cb2c-47a3-beac-a6e5389731f4",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
-    "question": "Power?",
+    "question": "In hypothesis testing, what is statistical power?",
     "correctAnswer": "1 \u2212 P(Type II) when alternative true",
     "incorrectAnswers": [
       "Same as \u03b1",
@@ -76,7 +76,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
   },
   {
-    "seedId": "20ad7619-cb5b-4a61-bc77-b9fb678a161e",
+    "itemId": "67ff1e3e-4c6d-4110-bdc4-f0908327320d",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -95,7 +95,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-3-distribution-needed-for-hypothesis-testing"
   },
   {
-    "seedId": "410d21a9-3de1-472a-a534-fa6dea84fff1",
+    "itemId": "cd006087-f0dd-478a-b7cb-24cfdf927e04",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -114,7 +114,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors"
   },
   {
-    "seedId": "4a68d6bb-9248-4e9b-a921-4ca7ea2965a4",
+    "itemId": "e60924ac-83cc-4deb-ac92-1b0ea852a65d",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -133,7 +133,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-3-distribution-needed-for-hypothesis-testing"
   },
   {
-    "seedId": "b61379c3-df45-498a-9d08-133be9db3127",
+    "itemId": "e215b011-98db-4a6f-b226-28c20352ac77",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -152,7 +152,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/8-1-a-single-population-mean-using-the-student-t-distribution"
   },
   {
-    "seedId": "deacfdee-0538-42fb-a708-2367691e4759",
+    "itemId": "2e48d7c0-fcec-4dc2-a869-8ec14f2cdcce",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -171,7 +171,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/8-2-a-single-population-mean-using-the-student-t-distribution"
   },
   {
-    "seedId": "45d93019-7870-4788-be87-ad261593bb5e",
+    "itemId": "dcd12067-6be6-4d9e-ac29-5ae661fdecec",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -190,7 +190,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/9-4-rare-events-the-key-to-hypothesis-testing"
   },
   {
-    "seedId": "9b5b5a08-2daf-4976-8f86-ccdf8e2b7d42",
+    "itemId": "657b39a9-235e-484b-8932-8a8f59d1b4a7",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",
@@ -209,7 +209,7 @@
     "source": "https://openstax.org/books/introductory-statistics/pages/12-1-one-way-anova"
   },
   {
-    "seedId": "161f27d1-dd98-47eb-b14c-716c32178e10",
+    "itemId": "d29a5912-25df-4ab6-819f-aa87b64d9044",
     "category": "science",
     "navigationKeyword1": "statistics",
     "navigationKeyword2": "hypothesis",

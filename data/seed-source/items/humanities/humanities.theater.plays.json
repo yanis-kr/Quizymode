@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "6a3cd914-453a-408f-9e63-01cca992ba0d",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "plays",
@@ -15,10 +16,10 @@
       "theater",
       "plays"
     ],
-    "source": "https://www.britannica.com/art/play-dramatic-literature",
-    "seedId": "4f9754df-16d3-5906-9249-480841510c2e"
+    "source": "https://www.britannica.com/art/play-dramatic-literature"
   },
   {
+    "itemId": "2b5fabdb-65a5-4c79-b2d1-a1f23f8f239e",
     "category": "humanities",
     "navigationKeyword1": "theater",
     "navigationKeyword2": "plays",
@@ -34,7 +35,6 @@
       "theater",
       "scene"
     ],
-    "source": "https://www.loc.gov/collections/plays-and-musicals/",
-    "seedId": "d7186c7a-061e-5caa-8911-d47d2c6b4253"
+    "source": "https://www.loc.gov/collections/plays-and-musicals/"
   }
 ]

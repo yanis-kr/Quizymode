@@ -194,28 +194,17 @@ export interface AdminUserSettingUpdateResponse {
   updatedAt: string;
 }
 
-export interface SeedSyncItemRequest {
-  seedId: string;
-  category: string;
-  navigationKeyword1: string;
-  navigationKeyword2: string;
-  question: string;
-  correctAnswer: string;
-  incorrectAnswers: string[];
-  explanation?: string | null;
-  keywords?: string[] | null;
-  source?: string | null;
-}
-
 export interface SeedSyncRequest {
   schemaVersion: number;
-  seedSet: string;
-  items: SeedSyncItemRequest[];
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  itemsPath?: string | null;
   deltaPreviewLimit?: number;
 }
 
 export interface SeedSyncChangeResponse {
-  seedId: string;
+  itemId: string;
   action: string;
   category: string;
   navigationKeyword1: string;
@@ -225,30 +214,35 @@ export interface SeedSyncChangeResponse {
 }
 
 export interface SeedSyncPreviewResponse {
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  resolvedCommitSha: string;
+  itemsPath: string;
+  sourceFileCount: number;
   seedSet: string;
-  isInitialSeed: boolean;
-  previewSuppressed: boolean;
   totalItemsInPayload: number;
-  existingManagedItemCount: number;
+  existingItemCount: number;
   createdCount: number;
   updatedCount: number;
-  adoptedCount: number;
   unchangedCount: number;
-  missingFromPayloadCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }
 
 export interface SeedSyncApplyResponse {
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  resolvedCommitSha: string;
+  itemsPath: string;
+  sourceFileCount: number;
   seedSet: string;
-  isInitialSeed: boolean;
   totalItemsInPayload: number;
-  existingManagedItemCount: number;
+  existingItemCount: number;
   createdCount: number;
   updatedCount: number;
-  adoptedCount: number;
   unchangedCount: number;
-  missingFromPayloadCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }

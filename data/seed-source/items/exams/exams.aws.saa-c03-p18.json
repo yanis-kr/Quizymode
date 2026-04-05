@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "07471ecc-847b-4850-b8be-208fe7b14e20",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s web application consists of an Amazon API Gateway API in front of an AWS Lambda function and an Amazon DynamoDB database.\nThe Lambda function handles the business logic, and the DynamoDB table hosts the data. The application uses Amazon Cognito user pools to\nidentify the individual users of the application. A solutions architect needs to update the application so that only users who have a subscription\ncan access premium content.\nWhich solution will meet this requirement with the LEAST operational overhead?",
+    "question": "A company\u2019s web application consists of an Amazon API Gateway API in front of an AWS Lambda function and an Amazon DynamoDB database.\nThe Lambda function handles the business logic, and the DynamoDB table hosts the data. The application uses Amazon Cognito user pools to\nidentify the individual users of the application. A solutions architect needs to update the application so that only users who have a subscription\ncan access premium content.\nWhich solution will meet this requirement with the LEAST operational overhead?",
     "correctAnswer": "Enable API caching and throttling on the API Gateway API.",
     "incorrectAnswers": [
       "Set up AWS WAF on the API Gateway API. Create a rule to lter users who have a subscription.",
@@ -21,14 +22,14 @@
       "api-gateway",
       "cognito"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "726f003c-54f4-4893-920d-20d922dd7ced"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f8ce29c9-4399-4945-b7a0-416b6b62800f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based application for users around the world. The\napplication is hosted on redundant servers in the company's on-premises data centers in the United States, Asia, and Europe. The company’s\ncompliance requirements state that the application must be hosted on premises. The company wants to improve the performance and availability\nof the application.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based application for users around the world. The\napplication is hosted on redundant servers in the company's on-premises data centers in the United States, Asia, and Europe. The company\u2019s\ncompliance requirements state that the application must be hosted on premises. The company wants to improve the performance and availability\nof the application.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Configure three Network Load Balancers (NLBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the NLBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
     "incorrectAnswers": [
       "Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. Create an accelerator by using AWS Global Accelerator, and register the ALBs as its endpoints. Provide access to the application by using a CNAME that points to the accelerator DNS.",
@@ -43,10 +44,10 @@
       "nlb",
       "global-accelerator"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "01a7a7c4-0436-42fb-ba1a-8fd4509be352"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "27d1de33-e8e8-4b6c-8eb4-b4645d920f71",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -63,10 +64,10 @@
       "aws-security",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "36bed4c7-4f78-4c95-aafa-a0b8097ce923"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "60d34f0d-2b56-4f40-a713-37864be6e4cc",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -86,10 +87,10 @@
       "eventbridge",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e5466b8d-06bd-459c-a4d5-e8735e650189"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f2ab8155-20d9-4ca4-92b4-1c91d06bfb45",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -108,10 +109,10 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cf633dc1-90f1-461a-982d-dc3aa071ba06"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9cdb5a02-1cc1-4e5c-8f5d-4109a9f75fe4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -129,10 +130,10 @@
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f59dc3be-1fde-44e0-adbf-4dbb03a3bec2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "fe8a95bf-c1e0-4f3e-b418-788edd6ef426",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -152,10 +153,10 @@
       "glacier",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5ff6ec55-7fbe-4f0e-af19-20c047206987"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e8d7623e-5aea-4a04-8c83-a4d7eefd18b2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -173,10 +174,10 @@
       "vpc",
       "site-to-site-vpn"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "fddda547-d846-469e-a843-90edd42130b6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "797fa799-2dff-4217-825a-cccc330c29f6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -197,19 +198,19 @@
       "step-functions",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "df83021a-80ef-41b6-bd6d-aaa0d489d2e2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ecfb63d4-a615-48f0-8857-f14ebdfa4e61",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications.\nApplication traffic to the database changes signicantly at random intervals. At times of high demand, users report that their applications\nexperience database connection rejection errors.\nWhich solution will resolve this issue with the LEAST operational overhead?",
-    "correctAnswer": "Create a proxy in RDS Proxy. Configure the users’ applications to use the DB instance through RDS Proxy.",
+    "correctAnswer": "Create a proxy in RDS Proxy. Configure the users\u2019 applications to use the DB instance through RDS Proxy.",
     "incorrectAnswers": [
-      "Deploy Amazon ElastiCache for Memcached between the users’ applications and the DB instance.",
-      "Migrate the DB instance to a different instance class that has higher I/O capacity. Configure the users’ applications to use the new DB instance.",
-      "Configure Multi-AZ for the DB instance. Configure the users’ applications to switch between the DB instances."
+      "Deploy Amazon ElastiCache for Memcached between the users\u2019 applications and the DB instance.",
+      "Migrate the DB instance to a different instance class that has higher I/O capacity. Configure the users\u2019 applications to use the new DB instance.",
+      "Configure Multi-AZ for the DB instance. Configure the users\u2019 applications to switch between the DB instances."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #376). Correct choice: A.",
     "keywords": [
@@ -220,10 +221,10 @@
       "serverless",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3e578c91-e491-461b-9bc2-41670ecd2b7d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "cc883b76-d70b-42b6-ae41-731667beda9b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -242,10 +243,10 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ec5e6d01-8c35-4454-b21b-5184fc6bcaa2"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "66e3b116-5419-4f08-b031-a3fa5b165790",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -267,10 +268,10 @@
       "route53",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "396160f2-1d1f-411f-829e-b148af9464b5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "65214284-f115-4d83-9812-a68cb7e653e3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -291,10 +292,10 @@
       "lambda",
       "api-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b3aac015-7e9a-4f20-8f88-c4173b5f51e6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0daf310c-5315-4de2-8d59-19c9de1c7cb9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -314,10 +315,10 @@
       "rds",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6841fdf2-ea2f-4022-ae10-ebc2ee883ad4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0b69f221-080b-49d8-803d-90506ede5f2b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -337,14 +338,14 @@
       "s3",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6eb9cc67-e5d4-4c17-8370-4764a942e881"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ad38e415-4a26-4ca5-880f-2a3981f48299",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has a three-tier application on AWS that ingests sensor data from its users’ devices. The traffic ows through a Network Load Balancer\n(NLB), then to Amazon EC2 instances for the web tier, and nally to EC2 instances for the application tier. The application tier makes calls to a\ndatabase.\nWhat should a solutions architect do to improve the security of the data in transit?",
+    "question": "A company has a three-tier application on AWS that ingests sensor data from its users\u2019 devices. The traffic ows through a Network Load Balancer\n(NLB), then to Amazon EC2 instances for the web tier, and nally to EC2 instances for the application tier. The application tier makes calls to a\ndatabase.\nWhat should a solutions architect do to improve the security of the data in transit?",
     "correctAnswer": "Configure a TLS listener. Deploy the server certicate on the NLB.",
     "incorrectAnswers": [
       "Configure AWS Shield Advanced. Enable AWS WAF on the NLB.",
@@ -359,10 +360,10 @@
       "ec2",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "19ed2023-1e98-43cf-8080-8712a9d693e6"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "96152343-165f-4e53-9bb0-54645c680961",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -379,10 +380,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8b2b94e6-9566-43e1-8c4f-7cb4fbd8c17d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "eb4b4e61-dafc-4531-9abd-c553b7a570c1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -402,10 +403,10 @@
       "glacier",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a364bec6-41b0-4dfd-8735-d746a5403a38"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5ec88e5a-f48e-44ba-ad38-ccc8a786404d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -424,10 +425,10 @@
       "vpc",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3de8939e-5110-4220-b9ef-9aa7e7b073e1"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0b5f0cdc-ac91-4b64-8591-e9270e600342",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -449,7 +450,6 @@
       "sns",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1b4e6e87-fd1a-4d73-8c23-511af556a274"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

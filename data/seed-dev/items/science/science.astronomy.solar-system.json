@@ -1,6 +1,25 @@
 [
   {
-    "seedId": "ee186b28-6e5d-43a3-99c6-8eaab957b193",
+    "itemId": "2769d58d-74a7-4a8a-8445-b9cf80301041",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "What is an astronomical unit (AU) often used to mean?",
+    "correctAnswer": "About Earth\u2013Sun average distance",
+    "incorrectAnswers": [
+      "Moon\u2013Earth distance",
+      "Sun\u2019s radius",
+      "Speed of light"
+    ],
+    "explanation": "1 AU is a convenient Earth-centered distance scale in the solar system.",
+    "keywords": [
+      "au",
+      "distance"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Astronomical_unit"
+  },
+  {
+    "itemId": "5219a5cb-6635-4371-b8d0-c89bf9fecf7b",
     "category": "science",
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
@@ -11,7 +30,7 @@
       "Mars",
       "Jupiter"
     ],
-    "explanation": "In order from the Sun, the inner planets begin Mercury, Venus, Earth, and Mars.",
+    "explanation": "Order from the Sun: Mercury, Venus, Earth, Mars\u2026",
     "keywords": [
       "solar-system",
       "planets"
@@ -19,7 +38,7 @@
     "source": "https://science.nasa.gov/solar-system/"
   },
   {
-    "seedId": "676bd04c-93f7-4533-9ede-8d634183f191",
+    "itemId": "7f5be752-5ab7-4be8-b344-8854624d49ff",
     "category": "science",
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
@@ -30,34 +49,34 @@
       "Water ice",
       "Carbon dioxide only"
     ],
-    "explanation": "The Sun is mostly hydrogen and helium, and it shines because nuclear fusion turns hydrogen into helium in its core.",
+    "explanation": "The Sun is a star powered by fusion of light elements.",
     "keywords": [
       "sun",
       "fusion"
     ],
-    "source": "https://science.nasa.gov/sun/facts/"
+    "source": "https://science.nasa.gov/sun/"
   },
   {
-    "seedId": "0b2d98aa-b7ef-435d-9651-3e07ed24b1b4",
+    "itemId": "cef69987-efe9-4dc8-a5d1-d0461a1d7ec6",
     "category": "science",
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
-    "question": "What is an astronomical unit (AU) often used to mean?",
-    "correctAnswer": "About the average Earth-Sun distance",
+    "question": "What is a comet\u2019s icy tail generally pushed by?",
+    "correctAnswer": "Solar wind and radiation pressure",
     "incorrectAnswers": [
-      "Moon-Earth distance",
-      "Sun's radius",
-      "Speed of light"
+      "Earth\u2019s gravity only",
+      "Moonlight",
+      "Jupiter\u2019s rings"
     ],
-    "explanation": "One astronomical unit is defined as about the average distance between Earth and the Sun.",
+    "explanation": "Comet tails point away from the Sun as material is blown outward.",
     "keywords": [
-      "au",
-      "distance"
+      "comets",
+      "solar-wind"
     ],
-    "source": "https://cneos.jpl.nasa.gov/glossary/au.html"
+    "source": "https://science.nasa.gov/comets/"
   },
   {
-    "seedId": "0aac5ba7-07ee-459b-b221-6aa86c67b819",
+    "itemId": "f8623c7c-a2cf-4eb8-b6f3-b248417d1261",
     "category": "science",
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
@@ -74,24 +93,5 @@
       "orbits"
     ],
     "source": "https://science.nasa.gov/asteroids/"
-  },
-  {
-    "seedId": "98ae8bd4-4e5a-408c-ba22-b7f7e7adeeec",
-    "category": "science",
-    "navigationKeyword1": "astronomy",
-    "navigationKeyword2": "solar-system",
-    "question": "What is a comet's icy tail generally pushed by?",
-    "correctAnswer": "Solar wind and radiation pressure",
-    "incorrectAnswers": [
-      "Earth's gravity only",
-      "Moonlight",
-      "Jupiter's rings"
-    ],
-    "explanation": "A comet's dust tail is pushed by sunlight, while its ion tail is shaped by the solar wind, so the tails stream away from the Sun.",
-    "keywords": [
-      "comets",
-      "solar-wind"
-    ],
-    "source": "https://science.nasa.gov/solar-system/comets/facts/"
   }
 ]

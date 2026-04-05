@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "37a486e1-f82f-4541-8921-e0083bedc1b8",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -15,10 +16,10 @@
       "mlk-day",
       "january"
     ],
-    "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
-    "seedId": "8e483eac-673c-5aa2-ac7a-5759cf509a3f"
+    "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"
   },
   {
+    "itemId": "74dc20e8-725f-46cd-a3b1-9f04ea5c2038",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -34,10 +35,10 @@
       "july-fourth",
       "declaration"
     ],
-    "source": "https://www.archives.gov/founding-docs/declaration-transcript",
-    "seedId": "e80bfe8c-84fb-5e2d-8244-c41725bb7243"
+    "source": "https://www.archives.gov/founding-docs/declaration-transcript"
   },
   {
+    "itemId": "4a3a5e5a-a98b-400e-943c-d726b6ed6c42",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -53,10 +54,10 @@
       "memorial-day",
       "military"
     ],
-    "source": "https://www.va.gov/opa/speceven/memorialday/",
-    "seedId": "d9a47b62-b975-5e37-bdce-3c844430cb49"
+    "source": "https://www.va.gov/opa/speceven/memorialday/"
   },
   {
+    "itemId": "86c342e8-4048-4fdc-8a98-000288c55c66",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -72,10 +73,10 @@
       "veterans-day",
       "november"
     ],
-    "source": "https://www.va.gov/opa/vetsday/",
-    "seedId": "ab7426b5-95ae-5011-b5ec-8e0e0a763485"
+    "source": "https://www.va.gov/opa/vetsday/"
   },
   {
+    "itemId": "293a2969-91f4-4465-b528-e62e077ad8f7",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -91,10 +92,10 @@
       "juneteenth",
       "emancipation"
     ],
-    "source": "https://www.nps.gov/articles/juneteenth.htm",
-    "seedId": "1cac50ff-56d1-5fc6-b143-f037ac399dff"
+    "source": "https://www.nps.gov/articles/juneteenth.htm"
   },
   {
+    "itemId": "0f6e9b17-323b-4543-8c74-fb06b6efb5e6",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "holidays",
@@ -110,7 +111,6 @@
       "inauguration",
       "20th-amendment"
     ],
-    "source": "https://www.law.cornell.edu/constitution/amendmentxx",
-    "seedId": "76761238-3b87-502a-904f-d07fbeaf0aba"
+    "source": "https://www.law.cornell.edu/constitution/amendmentxx"
   }
 ]

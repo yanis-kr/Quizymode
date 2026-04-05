@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8cc651a5-43c3-4b6b-bdba-e94c3081688f",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -15,29 +16,29 @@
       "zelda",
       "nintendo"
     ],
-    "source": "https://www.britannica.com/topic/The-Legend-of-Zelda",
-    "seedId": "8c6d552c-e550-58ca-8b53-f8c7b5fcf0da"
+    "source": "https://www.britannica.com/topic/The-Legend-of-Zelda"
   },
   {
+    "itemId": "f98737c9-c7e1-478b-8a83-3f17d46c215c",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
-    "question": "Pokémon to players collecting and battling what?",
-    "correctAnswer": "creatures called Pokémon",
+    "question": "Pok\u00e9mon to players collecting and battling what?",
+    "correctAnswer": "creatures called Pok\u00e9mon",
     "incorrectAnswers": [
       "spaceships",
       "race cars",
       "chess pieces"
     ],
-    "explanation": "Pokémon centers on creature collection battles.",
+    "explanation": "Pok\u00e9mon centers on creature collection battles.",
     "keywords": [
       "pokemon",
       "rpg"
     ],
-    "source": "https://www.britannica.com/topic/Pokemon-electronic-game",
-    "seedId": "c16877ec-893d-5f02-bb10-c80161fba398"
+    "source": "https://www.britannica.com/topic/Pokemon-electronic-game"
   },
   {
+    "itemId": "4d6b912d-0f33-485b-9ffc-8bf9e71d5c13",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -53,14 +54,14 @@
       "cod",
       "fps"
     ],
-    "source": "https://www.britannica.com/topic/Call-of-Duty-electronic-game",
-    "seedId": "0f880834-3a17-51ee-ae05-be8ff7364a1a"
+    "source": "https://www.britannica.com/topic/Call-of-Duty-electronic-game"
   },
   {
+    "itemId": "97738f73-0d03-4c7e-baa3-6d3700b2cb25",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
-    "question": "Which country’s RPG developer historically is most closely associated with Final Fantasy?",
+    "question": "Which country\u2019s RPG developer historically is most closely associated with Final Fantasy?",
     "correctAnswer": "Japan",
     "incorrectAnswers": [
       "Canada",
@@ -72,10 +73,10 @@
       "final-fantasy",
       "jrpg"
     ],
-    "source": "https://www.britannica.com/topic/Final-Fantasy-electronic-game",
-    "seedId": "45a4b5f7-f0ba-5538-9141-0d3146197a64"
+    "source": "https://www.britannica.com/topic/Final-Fantasy-electronic-game"
   },
   {
+    "itemId": "49e3ef00-e3e7-4af8-a8fa-7045bab44a49",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -91,10 +92,10 @@
       "madden",
       "sports-games"
     ],
-    "source": "https://www.britannica.com/topic/Madden-NFL",
-    "seedId": "22cbebc6-8fa6-5400-b2d8-93312f0fc6fe"
+    "source": "https://www.britannica.com/topic/Madden-NFL"
   },
   {
+    "itemId": "28d30c41-8e05-4176-9a2b-8ff8a7e4c3d4",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -110,10 +111,10 @@
       "civ",
       "strategy"
     ],
-    "source": "https://www.britannica.com/topic/Civilization-electronic-game",
-    "seedId": "e47e984e-a947-5095-8d6b-45ea082c6b9f"
+    "source": "https://www.britannica.com/topic/Civilization-electronic-game"
   },
   {
+    "itemId": "12cdd7ee-de82-4265-a49c-57a85ad4b399",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -129,10 +130,10 @@
       "sims",
       "simulation"
     ],
-    "source": "https://www.britannica.com/topic/The-Sims",
-    "seedId": "90e6a738-fbe2-5c61-a7b9-56369cd06793"
+    "source": "https://www.britannica.com/topic/The-Sims"
   },
   {
+    "itemId": "f2d6f35b-1c6a-4033-94ac-74bf2c87b590",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -148,10 +149,10 @@
       "resident-evil",
       "horror"
     ],
-    "source": "https://www.britannica.com/topic/Resident-Evil-electronic-game",
-    "seedId": "60e3ff09-dc50-5d70-9072-a77131fa3d09"
+    "source": "https://www.britannica.com/topic/Resident-Evil-electronic-game"
   },
   {
+    "itemId": "266a063c-99a3-4a36-af23-083b8de29304",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -167,10 +168,10 @@
       "mario-kart",
       "racing"
     ],
-    "source": "https://www.britannica.com/topic/Mario-Kart",
-    "seedId": "c5588ed2-6ae2-5b1d-a93d-95472505ed0f"
+    "source": "https://www.britannica.com/topic/Mario-Kart"
   },
   {
+    "itemId": "24f164c6-81c5-471e-8341-e49f20d61020",
     "category": "trivia",
     "navigationKeyword1": "games",
     "navigationKeyword2": "series",
@@ -186,7 +187,6 @@
       "animal-crossing",
       "life-sim"
     ],
-    "source": "https://www.britannica.com/topic/Animal-Crossing-electronic-game",
-    "seedId": "626c0554-e5bf-5c01-ada9-4003a6ac9f58"
+    "source": "https://www.britannica.com/topic/Animal-Crossing-electronic-game"
   }
 ]

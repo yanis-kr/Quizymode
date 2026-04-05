@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "35ad6472-2c19-4dbf-9105-ddc073a77c28",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "theory",
@@ -15,10 +16,10 @@
       "music-theory",
       "tempo"
     ],
-    "source": "https://www.britannica.com/art/tempo-music",
-    "seedId": "581763ea-141d-5c82-ac00-7fbd0c796d00"
+    "source": "https://www.britannica.com/art/tempo-music"
   },
   {
+    "itemId": "0e2ce026-8b2f-46f9-8212-81d6f1a5dd63",
     "category": "humanities",
     "navigationKeyword1": "music",
     "navigationKeyword2": "theory",
@@ -34,7 +35,6 @@
       "music-theory",
       "chord"
     ],
-    "source": "https://www.musictheory.net/lessons/40",
-    "seedId": "eeff3327-88d4-5122-840f-dcee57d55298"
+    "source": "https://www.musictheory.net/lessons/40"
   }
 ]

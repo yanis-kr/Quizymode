@@ -1,6 +1,6 @@
 [
   {
-    "seedId": "ba928caf-88f8-439e-875a-e9adaee1b747",
+    "itemId": "b5554cac-7804-4b23-a70b-af38e9936377",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -20,7 +20,7 @@
     "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works"
   },
   {
-    "seedId": "9b50937d-025c-4d44-8be4-68e118eeba27",
+    "itemId": "2b0d1387-7517-4eff-a86d-180001833ef1",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -40,7 +40,7 @@
     "source": "https://www.britannica.com/science/human-digestive-system"
   },
   {
-    "seedId": "badaa5a2-2ed6-4f75-a6f0-ce1af24c54d3",
+    "itemId": "0dd1ed4e-f1d2-41da-b9ed-7e36c68e5537",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -60,7 +60,7 @@
     "source": "https://en.wikipedia.org/wiki/Peristalsis"
   },
   {
-    "seedId": "dbe50359-f64f-4bc8-8029-d2f92176407c",
+    "itemId": "e4ed5c2d-e23a-4b30-88c5-620c2030db0f",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -80,7 +80,7 @@
     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-4-the-stomach"
   },
   {
-    "seedId": "ccd2c22c-4aff-4fcb-a64d-a1e2876b0ddb",
+    "itemId": "f3319e1c-8350-46c0-8608-4d75123b6ac0",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -100,7 +100,7 @@
     "source": "https://www.britannica.com/science/bile"
   },
   {
-    "seedId": "06ceac2c-171d-495b-8934-d13cfbcae1b7",
+    "itemId": "90ee3a53-fe74-4578-a12b-7efab6eb7ede",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -120,7 +120,7 @@
     "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreas-how-it-works"
   },
   {
-    "seedId": "1b5f23d6-8102-49d7-acf8-446dc949b33e",
+    "itemId": "01059144-0f57-44ef-9d1d-b2c6646d3a48",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -140,7 +140,7 @@
     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-8-the-large-intestine"
   },
   {
-    "seedId": "69056020-a47a-4451-847f-a506ee2a9cde",
+    "itemId": "ce7f980b-6ab9-4eb3-89c1-276fdf2c08ef",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -160,7 +160,7 @@
     "source": "https://www.britannica.com/science/esophagus"
   },
   {
-    "seedId": "f22549dc-13a9-426f-be54-b314cbd74ebf",
+    "itemId": "2a29bf9a-5820-4f07-b085-c19590c7c75f",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -180,7 +180,7 @@
     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-the-small-intestine"
   },
   {
-    "seedId": "5633895b-f158-403d-ac27-d8ce53dfb8a4",
+    "itemId": "7f204962-14d3-4e2f-8494-3a42e530775e",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -200,11 +200,11 @@
     "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/liver"
   },
   {
-    "seedId": "6430500b-7f48-45b0-8232-c350a864ee41",
+    "itemId": "f19e08ec-8e5f-4f4f-97a0-f338edd07ecf",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
-    "question": "What is the gallbladder’s main digestive function?",
+    "question": "What is the gallbladder\u2019s main digestive function?",
     "correctAnswer": "Store and concentrate bile and release it into the small intestine",
     "incorrectAnswers": [
       "Produce stomach acid",
@@ -220,7 +220,7 @@
     "source": "https://www.britannica.com/science/gallbladder"
   },
   {
-    "seedId": "9ccda417-a878-400b-aa6f-dc4db63a1472",
+    "itemId": "6bc9e417-ff76-4f02-9d58-b6fe916fb543",
     "category": "science",
     "navigationKeyword1": "anatomy",
     "navigationKeyword2": "digestive",
@@ -240,4 +240,3 @@
     "source": "https://en.wikipedia.org/wiki/Duodenum"
   }
 ]
-

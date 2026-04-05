@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "2df6d952-bf28-45c0-af6d-036b48938380",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -15,10 +16,10 @@
       "pipeline",
       "crm"
     ],
-    "source": "https://www.salesforce.com/resources/articles/sales-pipeline/",
-    "seedId": "1d1d68ba-fc78-4c1f-ad4c-b8ed71343045"
+    "source": "https://www.salesforce.com/resources/articles/sales-pipeline/"
   },
   {
+    "itemId": "1fc80e17-5be2-402e-a9a3-f1f09e4a8ae8",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -34,10 +35,10 @@
       "conversion",
       "metrics"
     ],
-    "source": "https://blog.hubspot.com/sales/sales-pipeline-management",
-    "seedId": "cb62d2e0-52b1-43e8-951e-f288a3f6a50f"
+    "source": "https://blog.hubspot.com/sales/sales-pipeline-management"
   },
   {
+    "itemId": "1aff614f-701c-443a-9ced-135f1e4c3d42",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -53,10 +54,10 @@
       "pipeline-coverage",
       "forecasting"
     ],
-    "source": "https://www.investopedia.com/terms/p/pipeline.asp",
-    "seedId": "8ecd6f31-026b-4037-8ee8-72c85bbdb264"
+    "source": "https://www.investopedia.com/terms/p/pipeline.asp"
   },
   {
+    "itemId": "21161e8a-5738-4c67-b6d9-9dd72a4d9458",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -72,10 +73,10 @@
       "crm",
       "data-hygiene"
     ],
-    "source": "https://www.salesforce.com/resources/articles/crm-data-quality/",
-    "seedId": "2eec8888-7df9-4690-824f-a3ed73121def"
+    "source": "https://www.salesforce.com/resources/articles/crm-data-quality/"
   },
   {
+    "itemId": "c15c59a3-82e0-472c-8f06-e7100fb1f7d5",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -91,10 +92,10 @@
       "stale-deals",
       "forecasting"
     ],
-    "source": "https://www.gong.io/blog/sales-pipeline-review",
-    "seedId": "fecad6db-495d-46f8-968e-3bbd43b81980"
+    "source": "https://www.gong.io/blog/sales-pipeline-review"
   },
   {
+    "itemId": "c059c24b-26a4-44b7-93d0-835bc48cf952",
     "category": "business",
     "navigationKeyword1": "sales",
     "navigationKeyword2": "pipeline",
@@ -110,7 +111,6 @@
       "forecast",
       "categories"
     ],
-    "source": "https://www.salesforce.com/resources/articles/sales-forecasting/",
-    "seedId": "3665931e-af12-4e22-a38e-5fba388731b6"
+    "source": "https://www.salesforce.com/resources/articles/sales-forecasting/"
   }
 ]

@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "27e70936-60e1-4069-ab53-a26151a79dc3",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "Winston Churchill’s 1946 Fulton, Missouri, speech famously said an “iron curtain” had descended across which continent?",
+    "question": "Winston Churchill\u2019s 1946 Fulton, Missouri, speech famously said an \u201ciron curtain\u201d had descended across which continent?",
     "correctAnswer": "Europe",
     "incorrectAnswers": [
       "Asia",
@@ -16,14 +17,14 @@
       "churchill",
       "soviet-union"
     ],
-    "source": "https://www.britannica.com/biography/Winston-Churchill",
-    "seedId": "086adca7-69df-4bae-89d5-96de41e40cf1"
+    "source": "https://www.britannica.com/biography/Winston-Churchill"
   },
   {
+    "itemId": "3f1be0f3-55aa-4f42-8813-c5d250372c57",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "Harry Truman’s 1947 pledge to support “free peoples” resisting subjugation is known as what doctrine?",
+    "question": "Harry Truman\u2019s 1947 pledge to support \u201cfree peoples\u201d resisting subjugation is known as what doctrine?",
     "correctAnswer": "The Truman Doctrine",
     "incorrectAnswers": [
       "The Eisenhower Doctrine",
@@ -36,34 +37,34 @@
       "truman",
       "containment"
     ],
-    "source": "https://www.britannica.com/event/Truman-Doctrine",
-    "seedId": "c729383c-77cd-431f-a5dd-6b10034da606"
+    "source": "https://www.britannica.com/event/Truman-Doctrine"
   },
   {
+    "itemId": "04b899ae-c420-4baa-bc50-7d32db94980c",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "The 1948–49 Allied airlift supplied West Berlin after which power blockaded land routes into the city?",
+    "question": "The 1948\u201349 Allied airlift supplied West Berlin after which power blockaded land routes into the city?",
     "correctAnswer": "The Soviet Union",
     "incorrectAnswers": [
       "France",
       "Poland",
       "Yugoslavia"
     ],
-    "explanation": "Stalin’s blockade failed as British and American planes ferried food and fuel around the clock.",
+    "explanation": "Stalin\u2019s blockade failed as British and American planes ferried food and fuel around the clock.",
     "keywords": [
       "cold-war",
       "berlin",
       "blockade"
     ],
-    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift",
-    "seedId": "3352ffda-42fc-4841-b6dd-f4e993653f4b"
+    "source": "https://www.britannica.com/event/Berlin-blockade-and-airlift"
   },
   {
+    "itemId": "0b1ed955-f53c-4856-9eb1-be5da44194e3",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "NATO’s founding treaty was signed in 1949 by the United States, Canada, and most states in which region?",
+    "question": "NATO\u2019s founding treaty was signed in 1949 by the United States, Canada, and most states in which region?",
     "correctAnswer": "Western Europe",
     "incorrectAnswers": [
       "Latin America",
@@ -76,10 +77,10 @@
       "nato",
       "alliance"
     ],
-    "source": "https://www.britannica.com/event/North-Atlantic-Treaty",
-    "seedId": "68c16310-764c-4a6b-8a31-d90775695e3a"
+    "source": "https://www.britannica.com/event/North-Atlantic-Treaty"
   },
   {
+    "itemId": "e9cfd439-d786-48eb-8ab8-c2ec8f709855",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
@@ -90,20 +91,20 @@
       "CENTO",
       "The ANZUS Pact"
     ],
-    "explanation": "East-bloc leaders treated NATO’s rearmament of West Germany as a threat requiring a formal military bloc.",
+    "explanation": "East-bloc leaders treated NATO\u2019s rearmament of West Germany as a threat requiring a formal military bloc.",
     "keywords": [
       "cold-war",
       "warsaw-pact",
       "eastern-europe"
     ],
-    "source": "https://www.britannica.com/event/Warsaw-Pact",
-    "seedId": "49eaeca6-05ca-49d4-a90b-96d684425537"
+    "source": "https://www.britannica.com/event/Warsaw-Pact"
   },
   {
+    "itemId": "ec03c083-3f61-42b2-9579-8404c55be3cc",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "The Korean War (1950–53) ended with an armistice that left which peninsula divided near the 38th parallel?",
+    "question": "The Korean War (1950\u201353) ended with an armistice that left which peninsula divided near the 38th parallel?",
     "correctAnswer": "Korea",
     "incorrectAnswers": [
       "Vietnam",
@@ -116,10 +117,10 @@
       "korea",
       "conflict"
     ],
-    "source": "https://www.britannica.com/event/Korean-War",
-    "seedId": "d3c52584-547c-4a8a-b7c2-92f4921da300"
+    "source": "https://www.britannica.com/event/Korean-War"
   },
   {
+    "itemId": "28cfb5ff-f27d-4096-ba3a-924f6c5b4cca",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
@@ -136,30 +137,30 @@
       "cuba",
       "nuclear"
     ],
-    "source": "https://www.britannica.com/event/Cuban-missile-crisis",
-    "seedId": "424a3408-747d-421f-aafc-88386b5bb0f0"
+    "source": "https://www.britannica.com/event/Cuban-missile-crisis"
   },
   {
+    "itemId": "bc5b53e5-d0cd-40df-892f-f977cb337add",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "The USSR’s October 1957 launch of which satellite shocked American assumptions about missile and space leadership?",
+    "question": "The USSR\u2019s October 1957 launch of which satellite shocked American assumptions about missile and space leadership?",
     "correctAnswer": "Sputnik 1",
     "incorrectAnswers": [
       "Explorer 1",
       "Vostok 1",
       "Luna 2"
     ],
-    "explanation": "Sputnik’s beeping signal spurred U.S. science education reforms and accelerated the space race.",
+    "explanation": "Sputnik\u2019s beeping signal spurred U.S. science education reforms and accelerated the space race.",
     "keywords": [
       "cold-war",
       "space-race",
       "soviet-union"
     ],
-    "source": "https://www.britannica.com/technology/Sputnik",
-    "seedId": "feb0e826-e871-417d-bd8e-1f20892537cc"
+    "source": "https://www.britannica.com/technology/Sputnik"
   },
   {
+    "itemId": "0cc426e5-d779-41cf-b42c-81282db826a7",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
@@ -170,23 +171,23 @@
       "Poland",
       "Romania"
     ],
-    "explanation": "Alexander Dubček’s “socialism with a human face” ended when tanks occupied Prague and ousted the reformers.",
+    "explanation": "Alexander Dub\u010dek\u2019s \u201csocialism with a human face\u201d ended when tanks occupied Prague and ousted the reformers.",
     "keywords": [
       "cold-war",
       "czechoslovakia",
       "prague-spring"
     ],
-    "source": "https://www.britannica.com/event/Prague-Spring",
-    "seedId": "6d5d5987-9960-4924-9f9d-51632df26b73"
+    "source": "https://www.britannica.com/event/Prague-Spring"
   },
   {
+    "itemId": "c0f01e24-840c-4360-bf0b-444dd0eac2b6",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "Imre Nagy’s government was overthrown when Soviet forces invaded Budapest during which 1956 uprising?",
+    "question": "Imre Nagy\u2019s government was overthrown when Soviet forces invaded Budapest during which 1956 uprising?",
     "correctAnswer": "The Hungarian Revolution",
     "incorrectAnswers": [
-      "The Poznań riots",
+      "The Pozna\u0144 riots",
       "The Solidarity crisis",
       "The Velvet Revolution"
     ],
@@ -196,15 +197,15 @@
       "hungary",
       "1956"
     ],
-    "source": "https://www.britannica.com/event/Hungarian-Revolution",
-    "seedId": "d8f98670-723e-4394-965a-23719dac8cb7"
+    "source": "https://www.britannica.com/event/Hungarian-Revolution"
   },
   {
+    "itemId": "4721935b-1cc8-4026-bfaf-7a5688a0b82b",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "Richard Nixon and Mao Zedong’s 1972 Shanghai Communiqué opened a strategic rapprochement between the United States and which state?",
-    "correctAnswer": "The People’s Republic of China",
+    "question": "Richard Nixon and Mao Zedong\u2019s 1972 Shanghai Communiqu\u00e9 opened a strategic rapprochement between the United States and which state?",
+    "correctAnswer": "The People\u2019s Republic of China",
     "incorrectAnswers": [
       "North Vietnam",
       "Cuba",
@@ -216,27 +217,26 @@
       "china",
       "diplomacy"
     ],
-    "source": "https://www.britannica.com/event/Shanghai-Communiqué",
-    "seedId": "ac24085a-9dbb-4afb-aeb2-12c820c622f3"
+    "source": "https://www.britannica.com/event/Shanghai-Communiqu\u00e9"
   },
   {
+    "itemId": "606b7a70-455c-4bef-b1bd-b50c978243db",
     "category": "history",
     "navigationKeyword1": "modern",
     "navigationKeyword2": "cold-war",
-    "question": "Ronald Reagan’s 1987 Berlin speech challenged Mikhail Gorbachev to “tear down” which dividing structure?",
+    "question": "Ronald Reagan\u2019s 1987 Berlin speech challenged Mikhail Gorbachev to \u201ctear down\u201d which dividing structure?",
     "correctAnswer": "The Berlin Wall",
     "incorrectAnswers": [
       "The Maginot Line",
       "The Great Wall of China",
       "The Iron Curtain border fences in Austria"
     ],
-    "explanation": "The wall’s fall in 1989 symbolized the collapse of communist control in eastern Europe.",
+    "explanation": "The wall\u2019s fall in 1989 symbolized the collapse of communist control in eastern Europe.",
     "keywords": [
       "cold-war",
       "berlin",
       "reagan"
     ],
-    "source": "https://www.britannica.com/topic/Berlin-Wall",
-    "seedId": "5ca9313a-a1d4-442b-a4fa-35071ac23a70"
+    "source": "https://www.britannica.com/topic/Berlin-Wall"
   }
 ]

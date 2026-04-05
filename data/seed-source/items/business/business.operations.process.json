@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e9b8f2a1-c4f4-4472-ab39-e7d7b48c4398",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -15,10 +16,10 @@
       "sipoc",
       "process-mapping"
     ],
-    "source": "https://asq.org/quality-resources/sipoc",
-    "seedId": "27ebdfa8-8ae0-459f-9ae2-334b7a97533b"
+    "source": "https://asq.org/quality-resources/sipoc"
   },
   {
+    "itemId": "37f68261-5c1e-444f-94c5-b3b6a3e98966",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -34,10 +35,10 @@
       "sla",
       "operations"
     ],
-    "source": "https://www.atlassian.com/itsm/what-is-sla",
-    "seedId": "0af8ade5-0f3f-4ca2-8020-0fc1e6f5ea6b"
+    "source": "https://www.atlassian.com/itsm/what-is-sla"
   },
   {
+    "itemId": "55f7a691-8e84-44c6-9abd-a94c44279eaa",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -53,10 +54,10 @@
       "bottleneck",
       "throughput"
     ],
-    "source": "https://en.wikipedia.org/wiki/Bottleneck_(production)",
-    "seedId": "bf3e6e0e-e8c2-46b5-bd92-95f0cd855d86"
+    "source": "https://en.wikipedia.org/wiki/Bottleneck_(production)"
   },
   {
+    "itemId": "a49cbcc5-9077-487c-a8c5-8141ba115d21",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -72,10 +73,10 @@
       "pdca",
       "improvement"
     ],
-    "source": "https://www.iso.org/standard/53271.html",
-    "seedId": "ecc3018f-edff-4227-89ab-18a5be6e3bca"
+    "source": "https://www.iso.org/standard/53271.html"
   },
   {
+    "itemId": "1f7c9d37-87be-4b39-87fc-c93e27ba4b52",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -91,10 +92,10 @@
       "standard-work",
       "quality"
     ],
-    "source": "https://www.lean.org/lexicon-terms/standard-work/",
-    "seedId": "f4e4136d-4648-43ac-9b51-98c546168370"
+    "source": "https://www.lean.org/lexicon-terms/standard-work/"
   },
   {
+    "itemId": "a7a4184a-01d3-4cc8-b992-6843e73cfa79",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "process",
@@ -110,7 +111,6 @@
       "value-stream",
       "lean"
     ],
-    "source": "https://www.lean.org/lexicon-terms/value-stream-mapping/",
-    "seedId": "cdad6bc9-3679-466a-96e6-898a033986be"
+    "source": "https://www.lean.org/lexicon-terms/value-stream-mapping/"
   }
 ]

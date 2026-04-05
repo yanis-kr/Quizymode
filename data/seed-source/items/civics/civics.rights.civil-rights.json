@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "880b624e-503b-4334-bba9-2e962e872688",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -15,10 +16,10 @@
       "civil-rights",
       "public-accommodations"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/42/2000a",
-    "seedId": "0948386e-fd7a-5cdf-a764-ce81677bae77"
+    "source": "https://www.law.cornell.edu/uscode/text/42/2000a"
   },
   {
+    "itemId": "dd0e9fb2-4f03-4c8c-b63e-03b30635ac55",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -34,10 +35,10 @@
       "civil-rights",
       "employment"
     ],
-    "source": "https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964",
-    "seedId": "d5f2d086-407c-5ccd-aa04-11ea75827129"
+    "source": "https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964"
   },
   {
+    "itemId": "4522268a-6ecf-4c26-93f1-d73514644707",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -53,10 +54,10 @@
       "civil-rights",
       "citizenship"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-14/",
-    "seedId": "410298fa-063a-5f49-adcc-5b2d3dfee788"
+    "source": "https://constitution.congress.gov/constitution/amendment-14/"
   },
   {
+    "itemId": "e2fbd6e9-0fe3-49e1-ae2a-d864170b0822",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -72,10 +73,10 @@
       "civil-rights",
       "voting"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/52/10101",
-    "seedId": "c33dbb6a-4314-5c4a-93fd-dcd4a4ea5eb0"
+    "source": "https://www.law.cornell.edu/uscode/text/52/10101"
   },
   {
+    "itemId": "d7a80cf9-1842-4eb5-a41f-4a370e9e941d",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -86,15 +87,15 @@
       "appeal directly to a foreign tribunal",
       "void all state laws automatically"
     ],
-    "explanation": "42 U.S.C. § 1983 creates a cause of action against persons acting under color of state law who breach federal rights.",
+    "explanation": "42 U.S.C. \u00a7 1983 creates a cause of action against persons acting under color of state law who breach federal rights.",
     "keywords": [
       "civil-rights",
       "section-1983"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/42/1983",
-    "seedId": "5afe55d4-924f-5723-b677-5b835aa4f8cf"
+    "source": "https://www.law.cornell.edu/uscode/text/42/1983"
   },
   {
+    "itemId": "be9a6466-cd44-47a0-9ebb-e526691464c1",
     "category": "civics",
     "navigationKeyword1": "rights",
     "navigationKeyword2": "civil-rights",
@@ -110,7 +111,6 @@
       "civil-rights",
       "disability"
     ],
-    "source": "https://www.ada.gov/topics/intro-to-ada/",
-    "seedId": "153b780e-9290-54c7-93f7-a7eced6275ba"
+    "source": "https://www.ada.gov/topics/intro-to-ada/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fe1564e0-c2ff-44d2-9bc2-011f8fd12953",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -16,10 +17,10 @@
       "trade",
       "specialization"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "4d14cc0d-e427-5730-b1fe-f3e5998e9def"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "9e26b998-b423-43ee-9fe5-d280bd5bb30d",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -36,10 +37,10 @@
       "imports",
       "trade-policy"
     ],
-    "source": "https://www.investopedia.com/terms/t/tariff.asp",
-    "seedId": "d9475e4f-9459-5162-abe9-36b432ad26e1"
+    "source": "https://www.investopedia.com/terms/t/tariff.asp"
   },
   {
+    "itemId": "47164815-2b80-4d25-81aa-02a5abde0c50",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -56,10 +57,10 @@
       "quantitative-restrictions",
       "trade"
     ],
-    "source": "https://www.wto.org/english/tratop_e/tariffs_e/tariff_profiles_e.htm",
-    "seedId": "2659d2e1-5c5a-50cd-ac59-b7e966fadcd7"
+    "source": "https://www.wto.org/english/tratop_e/tariffs_e/tariff_profiles_e.htm"
   },
   {
+    "itemId": "472cc5e5-56ad-4087-812c-42da69195bb0",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -76,10 +77,10 @@
       "imports",
       "relative-prices"
     ],
-    "source": "https://www.imf.org/en/Topics/exchange-rates",
-    "seedId": "785be4a0-0ba0-598d-a773-9a57fb104c3a"
+    "source": "https://www.imf.org/en/Topics/exchange-rates"
   },
   {
+    "itemId": "47dc8c08-adc1-4dda-af55-0e16600ae6ab",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -96,10 +97,10 @@
       "exports",
       "imports"
     ],
-    "source": "https://www.worldbank.org/",
-    "seedId": "2f689943-6ed8-5ae0-93f9-e7f0a9ae541c"
+    "source": "https://www.worldbank.org/"
   },
   {
+    "itemId": "93f94319-a6c0-4513-97d5-31c532b98ea6",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "trade",
@@ -116,7 +117,6 @@
       "market-access",
       "trade-rules"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "8364566a-c97e-5973-a1ad-1d70f8a6e850"
+    "source": "https://www.oecd.org/"
   }
 ]

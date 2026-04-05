@@ -1,6 +1,7 @@
 using FluentValidation;
-using Quizymode.Api.Shared.Http;
+using FluentValidation.Results;
 using Quizymode.Api.Shared.Helpers;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Features.Admin;
@@ -8,7 +9,7 @@ namespace Quizymode.Api.Features.Admin;
 public static class SeedSyncAdmin
 {
     public sealed record SeedItemRequest(
-        Guid SeedId,
+        Guid ItemId,
         string Category,
         string NavigationKeyword1,
         string NavigationKeyword2,
@@ -19,14 +20,29 @@ public static class SeedSyncAdmin
         List<string>? Keywords = null,
         string? Source = null);
 
-    public sealed record Request(
-        int SchemaVersion,
+    public sealed record ManifestRequest(
         string SeedSet,
         List<SeedItemRequest> Items,
         int DeltaPreviewLimit = 200);
 
+    public sealed record SourceContext(
+        string RepositoryOwner,
+        string RepositoryName,
+        string GitRef,
+        string ResolvedCommitSha,
+        string ItemsPath,
+        int SourceFileCount);
+
+    public sealed record Request(
+        int SchemaVersion,
+        string RepositoryOwner,
+        string RepositoryName,
+        string GitRef,
+        string? ItemsPath = null,
+        int DeltaPreviewLimit = 200);
+
     public sealed record ChangeResponse(
-        Guid SeedId,
+        Guid ItemId,
         string Action,
         string Category,
         string NavigationKeyword1,
@@ -35,45 +51,88 @@ public static class SeedSyncAdmin
         List<string> ChangedFields);
 
     public sealed record PreviewResponse(
+        string RepositoryOwner,
+        string RepositoryName,
+        string GitRef,
+        string ResolvedCommitSha,
+        string ItemsPath,
+        int SourceFileCount,
         string SeedSet,
-        bool IsInitialSeed,
-        bool PreviewSuppressed,
         int TotalItemsInPayload,
-        int ExistingManagedItemCount,
+        int ExistingItemCount,
         int CreatedCount,
         int UpdatedCount,
-        int AdoptedCount,
         int UnchangedCount,
-        int MissingFromPayloadCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
 
     public sealed record ApplyResponse(
+        string RepositoryOwner,
+        string RepositoryName,
+        string GitRef,
+        string ResolvedCommitSha,
+        string ItemsPath,
+        int SourceFileCount,
         string SeedSet,
-        bool IsInitialSeed,
         int TotalItemsInPayload,
-        int ExistingManagedItemCount,
+        int ExistingItemCount,
         int CreatedCount,
         int UpdatedCount,
-        int AdoptedCount,
         int UnchangedCount,
-        int MissingFromPayloadCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
+
+    internal static ValidationResult ValidateManifest(ManifestRequest request)
+    {
+        return new ManifestValidator().Validate(request);
+    }
 
     public sealed class Validator : AbstractValidator<Request>
     {
         public Validator()
         {
             RuleFor(x => x.SchemaVersion)
-                .Equal(1)
-                .WithMessage("SchemaVersion must be 1.");
+                .Equal(2)
+                .WithMessage("SchemaVersion must be 2.");
 
+            RuleFor(x => x.RepositoryOwner)
+                .NotEmpty()
+                .WithMessage("RepositoryOwner is required.")
+                .MaximumLength(100)
+                .WithMessage("RepositoryOwner must not exceed 100 characters.");
+
+            RuleFor(x => x.RepositoryName)
+                .NotEmpty()
+                .WithMessage("RepositoryName is required.")
+                .MaximumLength(100)
+                .WithMessage("RepositoryName must not exceed 100 characters.");
+
+            RuleFor(x => x.GitRef)
+                .NotEmpty()
+                .WithMessage("GitRef is required.")
+                .MaximumLength(200)
+                .WithMessage("GitRef must not exceed 200 characters.");
+
+            RuleFor(x => x.ItemsPath)
+                .MaximumLength(300)
+                .WithMessage("ItemsPath must not exceed 300 characters.")
+                .When(x => !string.IsNullOrWhiteSpace(x.ItemsPath));
+
+            RuleFor(x => x.DeltaPreviewLimit)
+                .InclusiveBetween(0, 500)
+                .WithMessage("DeltaPreviewLimit must be between 0 and 500.");
+        }
+    }
+
+    private sealed class ManifestValidator : AbstractValidator<ManifestRequest>
+    {
+        public ManifestValidator()
+        {
             RuleFor(x => x.SeedSet)
                 .NotEmpty()
                 .WithMessage("SeedSet is required.")
-                .MaximumLength(100)
-                .WithMessage("SeedSet must not exceed 100 characters.");
+                .MaximumLength(200)
+                .WithMessage("SeedSet must not exceed 200 characters.");
 
             RuleFor(x => x.DeltaPreviewLimit)
                 .InclusiveBetween(0, 500)
@@ -86,21 +145,21 @@ public static class SeedSyncAdmin
                 .WithMessage("At least one item is required.")
                 .Must(items => items.Count <= 5000)
                 .WithMessage("Cannot sync more than 5000 items at once.")
-                .Must(HaveUniqueSeedIds)
-                .WithMessage("SeedId values must be unique within a sync request.");
+                .Must(HaveUniqueItemIds)
+                .WithMessage("ItemId values must be unique within a sync request.");
 
             RuleForEach(x => x.Items)
                 .SetValidator(new SeedItemValidator());
         }
 
-        private static bool HaveUniqueSeedIds(List<SeedItemRequest>? items)
+        private static bool HaveUniqueItemIds(List<SeedItemRequest>? items)
         {
             if (items is null)
             {
                 return false;
             }
 
-            return items.Select(i => i.SeedId).Distinct().Count() == items.Count;
+            return items.Select(i => i.ItemId).Distinct().Count() == items.Count;
         }
     }
 
@@ -108,9 +167,9 @@ public static class SeedSyncAdmin
     {
         public SeedItemValidator()
         {
-            RuleFor(x => x.SeedId)
+            RuleFor(x => x.ItemId)
                 .NotEmpty()
-                .WithMessage("SeedId is required.");
+                .WithMessage("ItemId is required.");
 
             RuleFor(x => x.Category)
                 .NotEmpty()
@@ -181,16 +240,16 @@ public static class SeedSyncAdmin
         {
             app.MapPost("admin/seed-sync/preview", PreviewHandler)
                 .WithTags("Admin")
-                .WithSummary("Preview a repo-managed seed sync (Admin only)")
-                .WithDescription("Validates an uploaded seed manifest and returns only the delta for existing seeded items. Initial seed previews suppress the full item list.")
+                .WithSummary("Preview a repo-managed GitHub sync (Admin only)")
+                .WithDescription("Fetches canonical item seed files from GitHub at a specific ref and returns the create/update delta.")
                 .RequireAuthorization("Admin")
                 .Produces<PreviewResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
 
             app.MapPost("admin/seed-sync/apply", ApplyHandler)
                 .WithTags("Admin")
-                .WithSummary("Apply a repo-managed seed sync (Admin only)")
-                .WithDescription("Upserts a repo-managed seed set using stable item seed IDs. Missing seeded rows in the database are recreated from the manifest.")
+                .WithSummary("Apply a repo-managed GitHub sync (Admin only)")
+                .WithDescription("Fetches canonical item seed files from GitHub at a specific ref and upserts repo-managed public items.")
                 .RequireAuthorization("Admin")
                 .Produces<ApplyResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -202,7 +261,7 @@ public static class SeedSyncAdmin
             SeedSyncAdminService service,
             CancellationToken cancellationToken)
         {
-            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);
@@ -220,7 +279,7 @@ public static class SeedSyncAdmin
             SeedSyncAdminService service,
             CancellationToken cancellationToken)
         {
-            var validationResult = await validator.ValidateAsync(request, cancellationToken);
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 return Results.BadRequest(validationResult.Errors);

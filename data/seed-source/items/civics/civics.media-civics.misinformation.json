@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "23b76b2b-9776-4353-b9ca-dfbcfe6e4766",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -15,10 +16,10 @@
       "misinformation",
       "definition"
     ],
-    "source": "https://www.unesco.org/en/disinformation",
-    "seedId": "6c54253e-23d7-57e4-b5cf-2fb63630036e"
+    "source": "https://www.unesco.org/en/disinformation"
   },
   {
+    "itemId": "37c9b822-a127-4e99-8377-40df997f1e9d",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -34,10 +35,10 @@
       "disinformation",
       "intent"
     ],
-    "source": "https://www.unesco.org/en/disinformation",
-    "seedId": "f9c62736-9592-56c1-be1e-8198c4403236"
+    "source": "https://www.unesco.org/en/disinformation"
   },
   {
+    "itemId": "a0f80da2-4d1d-4b32-8858-ebe25aa3fe03",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -53,10 +54,10 @@
       "confirmation-bias",
       "psychology"
     ],
-    "source": "https://www.apa.org/topics/cognitive-bias",
-    "seedId": "6317fedd-f52b-5cd0-a7d6-dc36e982f21f"
+    "source": "https://www.apa.org/topics/cognitive-bias"
   },
   {
+    "itemId": "8552241a-ca5d-4764-b385-594e35218056",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -72,10 +73,10 @@
       "sharing",
       "viral"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "f7781307-65f0-5ced-a979-05c529f6b485"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "7b90b508-4793-40fb-8e8e-f892d08f8c3e",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -91,10 +92,10 @@
       "deepfake",
       "synthetic-media"
     ],
-    "source": "https://www.fcc.gov/consumers/guides/media-literacy",
-    "seedId": "db13676e-89b7-5d97-96f9-dd05fad04e0f"
+    "source": "https://www.fcc.gov/consumers/guides/media-literacy"
   },
   {
+    "itemId": "cc3c5d61-2ae6-4949-aa27-ad9e730e3285",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "misinformation",
@@ -110,7 +111,6 @@
       "lateral-reading",
       "fact-check"
     ],
-    "source": "https://www.usa.gov/media-literacy",
-    "seedId": "26fb0473-f76f-5204-a72b-0eb46ca504dc"
+    "source": "https://www.usa.gov/media-literacy"
   }
 ]

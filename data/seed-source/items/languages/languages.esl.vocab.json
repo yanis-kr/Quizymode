@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "614bce23-d649-4e92-bbfc-fcc1a7383959",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
@@ -16,10 +17,10 @@
       "education",
       "esl-vocab"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/school",
-    "seedId": "d5acf4be-1d11-5c39-a2fd-2df543374d41"
+    "source": "https://www.merriam-webster.com/dictionary/school"
   },
   {
+    "itemId": "70da6924-3496-41c5-b45d-227a8812a6f3",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
@@ -36,10 +37,10 @@
       "food",
       "esl-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/lunch",
-    "seedId": "c2de41b3-d713-5aa5-a1b3-e8e2e04f16d2"
+    "source": "https://dictionary.cambridge.org/dictionary/english/lunch"
   },
   {
+    "itemId": "c3a98435-6d6b-4759-8ddc-c1ac028d70c6",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
@@ -56,14 +57,14 @@
       "home",
       "esl-vocab"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/kitchen",
-    "seedId": "c71730a4-826b-5841-9fee-c77dda1f1541"
+    "source": "https://www.merriam-webster.com/dictionary/kitchen"
   },
   {
+    "itemId": "db43aab2-753c-4343-9047-216364abbc1e",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
-    "question": "Which word means a mother or father?",
+    "question": "In ESL vocabulary, which word means a mother or father?",
     "correctAnswer": "parent",
     "incorrectAnswers": [
       "season",
@@ -76,10 +77,10 @@
       "family",
       "esl-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/parent",
-    "seedId": "732fd744-fe30-5479-9e6f-d07430319e08"
+    "source": "https://dictionary.cambridge.org/dictionary/english/parent"
   },
   {
+    "itemId": "bf9c6352-2362-4f6c-a1bf-c78844ef1615",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
@@ -96,10 +97,10 @@
       "shopping",
       "esl-vocab"
     ],
-    "source": "https://www.merriam-webster.com/dictionary/cheap",
-    "seedId": "6b270c30-1e30-541c-a607-a99d801f1d09"
+    "source": "https://www.merriam-webster.com/dictionary/cheap"
   },
   {
+    "itemId": "6b3902f0-5317-45a0-a1cf-3e70b7273c13",
     "category": "languages",
     "navigationKeyword1": "esl",
     "navigationKeyword2": "vocab",
@@ -116,7 +117,6 @@
       "feelings",
       "esl-vocab"
     ],
-    "source": "https://dictionary.cambridge.org/dictionary/english/afraid",
-    "seedId": "9a7adeb9-945f-5e30-abbd-3397218d610f"
+    "source": "https://dictionary.cambridge.org/dictionary/english/afraid"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ba9941de-86d6-4066-9942-49309d48b4f4",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -15,10 +16,10 @@
       "browser",
       "security"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",
-    "seedId": "5076c121-5aee-5e25-a6ba-450552755c3a"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy"
   },
   {
+    "itemId": "6a8f6798-4ec2-447e-a24f-4ffbbce407b6",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -34,10 +35,10 @@
       "browser",
       "csp"
     ],
-    "source": "https://web.dev/articles/csp",
-    "seedId": "158a636e-e437-58c4-ad31-54e883799342"
+    "source": "https://web.dev/articles/csp"
   },
   {
+    "itemId": "b5474e52-dc08-4559-9b8a-53a9db9aa4d3",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -53,10 +54,10 @@
       "browser",
       "storage"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
-    "seedId": "334a65ed-0c29-549d-85ad-7dc8e225858a"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
   },
   {
+    "itemId": "c3eab351-d00e-4edd-ac11-2f69b12ee11d",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -72,10 +73,10 @@
       "browser",
       "cors"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
-    "seedId": "d5e869e5-0a70-58f4-9dc2-15cb0552914e"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
   },
   {
+    "itemId": "17c38855-e2c4-4808-bdb0-cc23dcf98f2b",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -91,10 +92,10 @@
       "a11y",
       "aria"
     ],
-    "source": "https://www.w3.org/WAI/standards-guidelines/aria/",
-    "seedId": "8a687479-1f11-5d94-8c1f-490eb650f0c3"
+    "source": "https://www.w3.org/WAI/standards-guidelines/aria/"
   },
   {
+    "itemId": "9adb1476-197b-4de2-862d-c20653b1d594",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "frontend",
@@ -110,7 +111,6 @@
       "performance",
       "images"
     ],
-    "source": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes",
-    "seedId": "190b60a5-d88b-5ebd-8f04-eade9ebdd095"
+    "source": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes"
   }
 ]

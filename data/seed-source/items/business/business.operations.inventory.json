@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "15abdd2c-e14f-497f-b162-b1a067c8e270",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -15,10 +16,10 @@
       "abc-analysis",
       "inventory"
     ],
-    "source": "https://www.investopedia.com/terms/a/abc-analysis.asp",
-    "seedId": "add3e3f9-4dad-464e-8fdc-60d85b56a27f"
+    "source": "https://www.investopedia.com/terms/a/abc-analysis.asp"
   },
   {
+    "itemId": "3e66dd98-484e-4206-9732-d1517ba81531",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -34,10 +35,10 @@
       "dio",
       "inventory-turns"
     ],
-    "source": "https://www.investopedia.com/terms/d/days-sales-inventory.asp",
-    "seedId": "05064780-f17a-417b-9456-e5721f4559e7"
+    "source": "https://www.investopedia.com/terms/d/days-sales-inventory.asp"
   },
   {
+    "itemId": "fb8a10c7-adae-4cae-a46e-8574c78da6ee",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -53,10 +54,10 @@
       "carrying-cost",
       "inventory"
     ],
-    "source": "https://www.investopedia.com/terms/c/carryingcost.asp",
-    "seedId": "7dd660b7-bf19-4a0f-aa7f-20b22366ed54"
+    "source": "https://www.investopedia.com/terms/c/carryingcost.asp"
   },
   {
+    "itemId": "c2bb80ac-654f-4bb1-929a-af176fde9641",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -72,10 +73,10 @@
       "cycle-count",
       "warehouse"
     ],
-    "source": "https://www.investopedia.com/terms/c/cycle-count.asp",
-    "seedId": "25a00950-1640-4b11-bfcd-ffd2625464c1"
+    "source": "https://www.investopedia.com/terms/c/cycle-count.asp"
   },
   {
+    "itemId": "283cfa24-9b27-4b95-8f6d-a1d89d0b084f",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -91,10 +92,10 @@
       "obsolescence",
       "inventory"
     ],
-    "source": "https://www.investopedia.com/terms/o/obsolescencerisk.asp",
-    "seedId": "b4037df4-d068-4bbd-95da-1b134b570320"
+    "source": "https://www.investopedia.com/terms/o/obsolescencerisk.asp"
   },
   {
+    "itemId": "f3ac3260-0367-4367-ab41-e4a503e7d598",
     "category": "business",
     "navigationKeyword1": "operations",
     "navigationKeyword2": "inventory",
@@ -110,7 +111,6 @@
       "slotting",
       "logistics"
     ],
-    "source": "https://www.inboundlogistics.com/articles/how-to-slot-your-warehouse-inventory/",
-    "seedId": "70af7233-2cee-4e74-9458-a2f2c79113c5"
+    "source": "https://www.inboundlogistics.com/articles/how-to-slot-your-warehouse-inventory/"
   }
 ]

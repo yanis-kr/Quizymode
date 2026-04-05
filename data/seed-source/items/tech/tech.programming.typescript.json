@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f1ce7b6e-874d-41fa-b2f6-0825db6e5a26",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -15,10 +16,10 @@
       "typescript",
       "types"
     ],
-    "source": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html",
-    "seedId": "8ed31972-7481-53ae-83d0-b94ca427a5e2"
+    "source": "https://www.typescriptlang.org/docs/handbook/type-compatibility.html"
   },
   {
+    "itemId": "dcf2f09a-98fd-44eb-9f14-ad6e4e6e2d3b",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -34,10 +35,10 @@
       "typescript",
       "safety"
     ],
-    "source": "https://devblogs.microsoft.com/typescript/announcing-typescript-2-0/",
-    "seedId": "663f8bd8-ea7d-5f2d-a2a1-ffec4abdffca"
+    "source": "https://devblogs.microsoft.com/typescript/announcing-typescript-2-0/"
   },
   {
+    "itemId": "dbfb2125-306f-4805-92c7-5e82b44dd3d8",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -53,10 +54,10 @@
       "typescript",
       "interfaces"
     ],
-    "source": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html",
-    "seedId": "21693b88-ebd0-52c1-a66f-b1f7125d90a8"
+    "source": "https://www.typescriptlang.org/docs/handbook/declaration-merging.html"
   },
   {
+    "itemId": "1bf0db84-2362-4057-a3e9-16b452c746c7",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -72,10 +73,10 @@
       "typescript",
       "unions"
     ],
-    "source": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types",
-    "seedId": "5461eeff-b359-599b-9168-694484033b20"
+    "source": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types"
   },
   {
+    "itemId": "9b36be5e-a6a4-4119-80a6-d980019fe680",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -91,10 +92,10 @@
       "typescript",
       "safety"
     ],
-    "source": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
-    "seedId": "109b46a4-1a6b-5da9-bdfd-9caad17e0697"
+    "source": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
   },
   {
+    "itemId": "c3078af4-6f8e-4912-90e1-03cb83a626b2",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "typescript",
@@ -110,7 +111,6 @@
       "typescript",
       "generics"
     ],
-    "source": "https://github.com/microsoft/TypeScript/wiki/FAQ",
-    "seedId": "f3f83cd7-392d-5862-bafa-80c4c0fa1495"
+    "source": "https://github.com/microsoft/TypeScript/wiki/FAQ"
   }
 ]

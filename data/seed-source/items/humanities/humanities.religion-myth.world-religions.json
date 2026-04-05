@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "347f06b7-396a-48d7-8731-7730d9593688",
     "category": "humanities",
     "navigationKeyword1": "religion-myth",
     "navigationKeyword2": "world-religions",
@@ -15,10 +16,10 @@
       "world-religions",
       "religion"
     ],
-    "source": "https://www.britannica.com/topic/religion",
-    "seedId": "5f2b0cc6-66c6-5aea-ac1d-5167bde4ecc0"
+    "source": "https://www.britannica.com/topic/religion"
   },
   {
+    "itemId": "230dc9da-81b9-4d0c-83e8-48e034eaf9ed",
     "category": "humanities",
     "navigationKeyword1": "religion-myth",
     "navigationKeyword2": "world-religions",
@@ -34,7 +35,6 @@
       "world-religions",
       "pilgrimage"
     ],
-    "source": "https://www.bbc.co.uk/religion/religions/",
-    "seedId": "cffb6166-82da-5d55-a0ac-ed9bbd5e0479"
+    "source": "https://www.bbc.co.uk/religion/religions/"
   }
 ]

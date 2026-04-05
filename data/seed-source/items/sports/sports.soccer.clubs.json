@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e62badd0-a1ba-4b07-b97a-1a6b38bfa06c",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -16,10 +17,10 @@
       "clubs",
       "real-madrid"
     ],
-    "source": "https://www.realmadrid.com/en-US",
-    "seedId": "2b3f4c0a-6a02-5719-93ba-1ca661277698"
+    "source": "https://www.realmadrid.com/en-US"
   },
   {
+    "itemId": "cf83b0dd-2522-4aa4-98cb-6051c83eeac5",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -36,10 +37,10 @@
       "clubs",
       "manchester-united"
     ],
-    "source": "https://www.manutd.com/",
-    "seedId": "85a5c645-1a6a-56ec-918c-be84f4ad8548"
+    "source": "https://www.manutd.com/"
   },
   {
+    "itemId": "334ea130-734f-451a-8b66-7dc519bdfbea",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -56,10 +57,10 @@
       "clubs",
       "bayern-munich"
     ],
-    "source": "https://fcbayern.com/en",
-    "seedId": "233d7e85-e8ad-51ea-b97a-8953f328e0ef"
+    "source": "https://fcbayern.com/en"
   },
   {
+    "itemId": "90524487-f493-4482-add0-6fba8842f770",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -76,10 +77,10 @@
       "clubs",
       "juventus"
     ],
-    "source": "https://www.juventus.com/en/",
-    "seedId": "25152732-0e45-57b2-8d37-c168698e2162"
+    "source": "https://www.juventus.com/en/"
   },
   {
+    "itemId": "d8a3e94c-e618-4339-8686-7da3309c83e5",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -96,10 +97,10 @@
       "clubs",
       "liverpool"
     ],
-    "source": "https://www.liverpoolfc.com/",
-    "seedId": "72543156-3bac-5fdd-91b1-e7adda40f4aa"
+    "source": "https://www.liverpoolfc.com/"
   },
   {
+    "itemId": "1063fbb0-bc1a-4611-8db2-7d9a4553d1b7",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -116,10 +117,10 @@
       "clubs",
       "barcelona"
     ],
-    "source": "https://www.fcbarcelona.com/",
-    "seedId": "4bbf943c-23de-5b22-b72c-0f52c002d203"
+    "source": "https://www.fcbarcelona.com/"
   },
   {
+    "itemId": "c5b33a94-41eb-479e-b78e-5ac6e0458d6f",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -136,10 +137,10 @@
       "clubs",
       "chelsea"
     ],
-    "source": "https://www.chelseafc.com/",
-    "seedId": "3813de9f-9106-5b34-a949-e5d22ac611de"
+    "source": "https://www.chelseafc.com/"
   },
   {
+    "itemId": "ca948cb0-4d93-40cc-9652-045def54cbe8",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -156,10 +157,10 @@
       "clubs",
       "ac-milan"
     ],
-    "source": "https://www.acmilan.com/en",
-    "seedId": "aba9d447-f8ee-5df6-b477-5c8230688b38"
+    "source": "https://www.acmilan.com/en"
   },
   {
+    "itemId": "e7a47703-768c-4877-aa14-0194209d3924",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -176,10 +177,10 @@
       "clubs",
       "arsenal"
     ],
-    "source": "https://www.arsenal.com/",
-    "seedId": "e3a6587a-5374-5b13-856e-96cbbedf2cdf"
+    "source": "https://www.arsenal.com/"
   },
   {
+    "itemId": "59ca1b4c-ab89-4d83-8173-30716aa8a301",
     "category": "sports",
     "navigationKeyword1": "soccer",
     "navigationKeyword2": "clubs",
@@ -196,7 +197,6 @@
       "clubs",
       "inter-milan"
     ],
-    "source": "https://www.inter.it/en",
-    "seedId": "9458e723-72d6-5cdc-a588-9c59bec2bac3"
+    "source": "https://www.inter.it/en"
   }
 ]

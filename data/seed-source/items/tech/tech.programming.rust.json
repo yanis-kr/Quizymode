@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b7f240bf-82f9-4feb-ab9b-5300352347bc",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -15,10 +16,10 @@
       "rust",
       "ownership"
     ],
-    "source": "https://doc.rust-lang.org/book/ch04-00-ownership.html",
-    "seedId": "2d7dfb16-6c96-516f-8f27-09591413b176"
+    "source": "https://doc.rust-lang.org/book/ch04-00-ownership.html"
   },
   {
+    "itemId": "d12b8036-1fd9-4a42-9227-aa85086c1fe0",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -34,10 +35,10 @@
       "rust",
       "borrowing"
     ],
-    "source": "https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html",
-    "seedId": "6c55b267-c055-5cc6-826d-cce62067ba62"
+    "source": "https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html"
   },
   {
+    "itemId": "1b2873cd-478d-4140-aa9b-ef9b7f6e0f08",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -53,10 +54,10 @@
       "rust",
       "types"
     ],
-    "source": "https://doc.rust-lang.org/std/option/enum.Option.html",
-    "seedId": "cfcc9985-c6ab-5f70-9107-30926f4f11e9"
+    "source": "https://doc.rust-lang.org/std/option/enum.Option.html"
   },
   {
+    "itemId": "5752d758-38a3-4ebd-b53f-d54c5cbce39a",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -72,10 +73,10 @@
       "rust",
       "errors"
     ],
-    "source": "https://doc.rust-lang.org/std/result/enum.Result.html",
-    "seedId": "fa6347c7-6f93-51c6-958f-3a6b7360e041"
+    "source": "https://doc.rust-lang.org/std/result/enum.Result.html"
   },
   {
+    "itemId": "e1c39b24-3930-4032-92f3-602b0b6320f2",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -91,10 +92,10 @@
       "rust",
       "unsafe"
     ],
-    "source": "https://doc.rust-lang.org/nomicon/",
-    "seedId": "baf153ea-3424-51f1-9759-c59595ec504e"
+    "source": "https://doc.rust-lang.org/nomicon/"
   },
   {
+    "itemId": "c3f790a6-2c04-4bf4-aeb0-09dc0d4c2dc6",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -110,10 +111,10 @@
       "rust",
       "traits"
     ],
-    "source": "https://doc.rust-lang.org/book/ch10-02-traits.html",
-    "seedId": "2f47da23-36b2-5c73-ae91-d3b8e66ccf13"
+    "source": "https://doc.rust-lang.org/book/ch10-02-traits.html"
   },
   {
+    "itemId": "7d747dd4-6a67-4b57-8e6b-573db74b1a9e",
     "category": "tech",
     "navigationKeyword1": "programming",
     "navigationKeyword2": "rust",
@@ -129,7 +130,6 @@
       "rust",
       "documentation"
     ],
-    "source": "https://docs.rs/",
-    "seedId": "6854f9f7-c1b5-51ff-a1cf-e7727fbb2cf0"
+    "source": "https://docs.rs/"
   }
 ]

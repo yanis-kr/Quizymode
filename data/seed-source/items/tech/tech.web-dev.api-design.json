@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "fbf747fb-5650-499b-bd97-a551de0d02d0",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -15,10 +16,10 @@
       "openapi",
       "specs"
     ],
-    "source": "https://spec.openapis.org/oas/latest.html",
-    "seedId": "1a4e67b6-cddd-5300-b3bb-fba17c2baf9c"
+    "source": "https://spec.openapis.org/oas/latest.html"
   },
   {
+    "itemId": "73ae6251-9d20-422b-bbdf-07413e438b01",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -34,10 +35,10 @@
       "http",
       "status-codes"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden",
-    "seedId": "6c18f924-d2f5-5de9-9dc7-4f7b18d5eed3"
+    "source": "https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden"
   },
   {
+    "itemId": "c161e2d2-94f2-428c-80a2-840a2d7eb2da",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -53,10 +54,10 @@
       "rest",
       "resources"
     ],
-    "source": "https://restfulapi.net/resource-naming/",
-    "seedId": "9f78663d-4631-51ef-9968-838e61418c39"
+    "source": "https://restfulapi.net/resource-naming/"
   },
   {
+    "itemId": "e7d4b5ca-5311-463a-b4bf-04a975aeddfe",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -72,10 +73,10 @@
       "rest",
       "hateoas"
     ],
-    "source": "https://restfulapi.net/hateoas/",
-    "seedId": "e98542ca-8281-54d6-a35d-2e4ab75a9b38"
+    "source": "https://restfulapi.net/hateoas/"
   },
   {
+    "itemId": "d1ec076b-fdf3-42ae-a253-1342eaa1349f",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -91,10 +92,10 @@
       "versioning",
       "apis"
     ],
-    "source": "https://swagger.io/blog/api-design-best-practices-in-large-organizations/",
-    "seedId": "ef0498d9-2158-5f19-bb00-7ae875cec6d0"
+    "source": "https://swagger.io/blog/api-design-best-practices-in-large-organizations/"
   },
   {
+    "itemId": "20fb4d89-285b-4087-a6e5-de2625c8b7a4",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "api-design",
@@ -110,7 +111,6 @@
       "idempotency",
       "apis"
     ],
-    "source": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
-    "seedId": "a791b7c6-cec0-5775-978b-5cf89b883fe9"
+    "source": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/"
   }
 ]

@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "bdd750bd-8fa2-41c9-a68c-fbf3d13f4dc6",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
     "question": "In bookkeeping, what does a journal record?",
     "correctAnswer": "Transactions in chronological order, typically with debit and credit details.",
     "incorrectAnswers": [
-      "A company’s projected budgets only",
+      "A company\u2019s projected budgets only",
       "A list of employees for payroll",
       "Final financial statements prepared at year-end"
     ],
@@ -16,10 +17,10 @@
       "journal",
       "double-entry"
     ],
-    "source": "https://www.investopedia.com/terms/j/journalentry.asp",
-    "seedId": "978d7461-bbfb-5ee9-9bbb-ab5f3d9b7b00"
+    "source": "https://www.investopedia.com/terms/j/journalentry.asp"
   },
   {
+    "itemId": "4efb25ee-61d2-488f-9a94-28631c8a8049",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
@@ -36,10 +37,10 @@
       "posting",
       "account-balances"
     ],
-    "source": "https://www.fasb.org/",
-    "seedId": "1ab18ff5-6595-596b-92b6-5da347ba176a"
+    "source": "https://www.fasb.org/"
   },
   {
+    "itemId": "39f35830-0dc7-4736-a6c9-0974d502027e",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
@@ -56,10 +57,10 @@
       "classification",
       "reporting"
     ],
-    "source": "https://www.sec.gov/",
-    "seedId": "69772b20-a3b2-5a5d-bb32-c4dede9139a1"
+    "source": "https://www.sec.gov/"
   },
   {
+    "itemId": "6c2b16d8-95c1-45ba-bb66-556782433367",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
@@ -76,10 +77,10 @@
       "debits",
       "credits"
     ],
-    "source": "https://www.fasb.org/",
-    "seedId": "7fde882a-8956-5282-9f78-b8b9e96525da"
+    "source": "https://www.fasb.org/"
   },
   {
+    "itemId": "327da212-1bb2-401f-83df-c938de349a19",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
@@ -87,36 +88,35 @@
     "correctAnswer": "To list ending debits and credits from ledger accounts so totals can be checked for equality.",
     "incorrectAnswers": [
       "To compute net income directly for investors",
-      "To set the company’s bank interest rate",
+      "To set the company\u2019s bank interest rate",
       "To approve which invoices are paid next week"
     ],
-    "explanation": "A trial balance is a bookkeeping check that the ledger’s debit and credit totals agree before preparing financial statements.",
+    "explanation": "A trial balance is a bookkeeping check that the ledger\u2019s debit and credit totals agree before preparing financial statements.",
     "keywords": [
       "trial-balance",
       "debits-credits",
       "ledger-check"
     ],
-    "source": "https://www.sec.gov/education",
-    "seedId": "a94dd3fb-8497-5c9a-8fa7-f7c8d8c13d66"
+    "source": "https://www.sec.gov/education"
   },
   {
+    "itemId": "cbe3cef6-04c7-42de-921a-4d96c692d1f5",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "bookkeeping",
-    "question": "Under accrual-style bookkeeping, how do you usually record an expense you owe but haven’t paid yet?",
+    "question": "Under accrual-style bookkeeping, how do you usually record an expense you owe but haven\u2019t paid yet?",
     "correctAnswer": "Record the expense and an accounts payable or accrued liability for the unpaid amount.",
     "incorrectAnswers": [
       "Record only cash as zero and skip the liability account",
-      "Record it as revenue because cash hasn’t left yet",
+      "Record it as revenue because cash hasn\u2019t left yet",
       "Record only a note in a spreadsheet, not in accounting accounts"
     ],
-    "explanation": "Accrual recording recognizes costs when incurred, so the obligation is reflected as a payable/liability even if cash hasn’t been paid.",
+    "explanation": "Accrual recording recognizes costs when incurred, so the obligation is reflected as a payable/liability even if cash hasn\u2019t been paid.",
     "keywords": [
       "accrual",
       "accounts-payable",
       "liabilities"
     ],
-    "source": "https://www.investopedia.com/terms/a/accrualaccounting.asp",
-    "seedId": "61a7bbd2-af32-57b6-8b4e-b59ce00cbb4d"
+    "source": "https://www.investopedia.com/terms/a/accrualaccounting.asp"
   }
 ]

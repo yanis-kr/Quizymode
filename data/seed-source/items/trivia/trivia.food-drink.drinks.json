@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "24fe2754-d542-4477-bcc3-61ced97badf3",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -15,10 +16,10 @@
       "tea",
       "beverages"
     ],
-    "source": "https://www.britannica.com/plant/tea-plant",
-    "seedId": "af4f19c8-c475-54e7-9057-0b73022c1835"
+    "source": "https://www.britannica.com/plant/tea-plant"
   },
   {
+    "itemId": "b6c59e2c-7393-4080-92f5-ed3cb1e161c5",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -34,10 +35,10 @@
       "coffee",
       "beverages"
     ],
-    "source": "https://www.britannica.com/plant/coffee",
-    "seedId": "ffd64df1-6787-5b5a-9ce2-ae1a56bef103"
+    "source": "https://www.britannica.com/plant/coffee"
   },
   {
+    "itemId": "aecc2bee-2352-4ee8-8113-1f07990fe785",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -53,10 +54,10 @@
       "water",
       "health"
     ],
-    "source": "https://www.britannica.com/science/water",
-    "seedId": "7fbc16ab-8602-598e-b479-8648e3d2899c"
+    "source": "https://www.britannica.com/science/water"
   },
   {
+    "itemId": "05fe7481-3334-41e9-a065-7cd21ad63592",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -67,15 +68,15 @@
       "argon",
       "helium"
     ],
-    "explanation": "Beer fermentation produces ethanol and CO₂.",
+    "explanation": "Beer fermentation produces ethanol and CO\u2082.",
     "keywords": [
       "beer",
       "fermentation"
     ],
-    "source": "https://www.britannica.com/topic/beer",
-    "seedId": "84fa73b7-2635-5cf1-9701-468595901abd"
+    "source": "https://www.britannica.com/topic/beer"
   },
   {
+    "itemId": "0315b44a-04ec-4ef8-be20-d3239f217dec",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -91,10 +92,10 @@
       "wine",
       "fermentation"
     ],
-    "source": "https://www.britannica.com/topic/wine",
-    "seedId": "57a97aba-3dc6-5053-a7c1-11e2af35e1f3"
+    "source": "https://www.britannica.com/topic/wine"
   },
   {
+    "itemId": "f4c99843-97a2-4633-8d32-952a8d43bb68",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -110,10 +111,10 @@
       "milk",
       "dairy"
     ],
-    "source": "https://www.britannica.com/topic/milk",
-    "seedId": "a017f522-41bd-501c-8d14-7956ab7b16c4"
+    "source": "https://www.britannica.com/topic/milk"
   },
   {
+    "itemId": "522243ed-0fe7-47d7-98cd-821a0b29c54d",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -129,10 +130,10 @@
       "juice",
       "vitamins"
     ],
-    "source": "https://www.britannica.com/plant/citrus-plant",
-    "seedId": "ece0ea3a-027d-537c-8737-9005c30b37ea"
+    "source": "https://www.britannica.com/plant/citrus-plant"
   },
   {
+    "itemId": "b6be9a7d-59c5-4157-a8ba-20eb4dd5c0b0",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -148,10 +149,10 @@
       "cocoa",
       "beverages"
     ],
-    "source": "https://www.britannica.com/topic/cocoa-food",
-    "seedId": "4786fc95-a08f-59ab-825d-ec4f81d4c5e2"
+    "source": "https://www.britannica.com/topic/cocoa-food"
   },
   {
+    "itemId": "af27cf88-ff52-4951-ae64-f4a4196ebdad",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -162,15 +163,15 @@
       "nitrogen only",
       "helium"
     ],
-    "explanation": "Carbonation is dissolved CO₂.",
+    "explanation": "Carbonation is dissolved CO\u2082.",
     "keywords": [
       "carbonation",
       "water"
     ],
-    "source": "https://www.britannica.com/topic/carbonated-drink",
-    "seedId": "063f2565-9fe1-5bcf-9e4e-7c4eb238292a"
+    "source": "https://www.britannica.com/topic/carbonated-drink"
   },
   {
+    "itemId": "213a07d1-8ffb-4bb3-95af-9d1d87a5b236",
     "category": "trivia",
     "navigationKeyword1": "food-drink",
     "navigationKeyword2": "drinks",
@@ -186,7 +187,6 @@
       "smoothies",
       "fruit"
     ],
-    "source": "https://www.britannica.com/topic/smoothie",
-    "seedId": "c3847cd2-1414-54eb-aaa1-fa6179a5093c"
+    "source": "https://www.britannica.com/topic/smoothie"
   }
 ]

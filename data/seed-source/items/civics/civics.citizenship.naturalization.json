@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "026e580e-04cf-4341-9fb7-7d0da4f04763",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -15,10 +16,10 @@
       "naturalization",
       "permanent-resident"
     ],
-    "source": "https://www.usa.gov/become-us-citizen",
-    "seedId": "807437cd-ed7d-5f8a-aef6-7094c0a6df16"
+    "source": "https://www.usa.gov/become-us-citizen"
   },
   {
+    "itemId": "c42f1f82-97eb-40d7-8832-5df5fac08ec2",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -34,10 +35,10 @@
       "naturalization",
       "spouses"
     ],
-    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-2",
-    "seedId": "6506952c-c0c9-572b-8c11-399d82a0c18b"
+    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-2"
   },
   {
+    "itemId": "b6d9b551-436c-42ae-a211-ff736b02c56c",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -53,10 +54,10 @@
       "english-test",
       "civics-test"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/8/1423",
-    "seedId": "aeea9a4d-5ed7-5bfa-9ac4-aec6484ca012"
+    "source": "https://www.law.cornell.edu/uscode/text/8/1423"
   },
   {
+    "itemId": "ce692d9c-0bc5-4f81-a556-b05bd7ef5d9e",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -72,10 +73,10 @@
       "oath-of-allegiance",
       "ceremony"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/8/1448",
-    "seedId": "f5f352d2-51a4-5d01-bd9c-27bf50993513"
+    "source": "https://www.law.cornell.edu/uscode/text/8/1448"
   },
   {
+    "itemId": "fce74818-49b8-4a26-b5d1-7ee5cf78b7dc",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -91,10 +92,10 @@
       "good-moral-character",
       "eligibility"
     ],
-    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-9",
-    "seedId": "e2a4a3f7-0ad9-57a5-979e-e381498a67dd"
+    "source": "https://www.uscis.gov/policy-manual/volume-12-part-d-chapter-9"
   },
   {
+    "itemId": "9f050e5f-b7d4-467f-a7c8-2604f13a122e",
     "category": "civics",
     "navigationKeyword1": "citizenship",
     "navigationKeyword2": "naturalization",
@@ -110,7 +111,6 @@
       "constitution",
       "allegiance"
     ],
-    "source": "https://www.law.cornell.edu/uscode/text/8/1427",
-    "seedId": "09412945-3784-569d-a2ae-731f35e26d1f"
+    "source": "https://www.law.cornell.edu/uscode/text/8/1427"
   }
 ]

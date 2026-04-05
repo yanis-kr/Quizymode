@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "58622c65-84d5-4774-8b96-2ed4234b2688",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -15,10 +16,10 @@
       "first-amendment",
       "bill-of-rights"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-1/",
-    "seedId": "a7e936c4-738b-5def-813b-476adccbb939"
+    "source": "https://constitution.congress.gov/constitution/amendment-1/"
   },
   {
+    "itemId": "e964ef98-ed9b-439c-86af-d655cd12566a",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -34,10 +35,10 @@
       "fourth-amendment",
       "bill-of-rights"
     ],
-    "source": "https://www.law.cornell.edu/constitution/fourth_amendment",
-    "seedId": "2213cc88-4768-5647-bb54-100d120361b9"
+    "source": "https://www.law.cornell.edu/constitution/fourth_amendment"
   },
   {
+    "itemId": "bab06bd9-4df4-43d8-a320-44cae5e33883",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -53,10 +54,10 @@
       "sixth-amendment",
       "bill-of-rights"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/supreme-court-landmarks",
-    "seedId": "d36ee756-0c76-5121-8e9e-7fb1f98940dc"
+    "source": "https://www.uscourts.gov/about-federal-courts/educational-resources/supreme-court-landmarks"
   },
   {
+    "itemId": "abae2459-413c-49b8-9c40-754f77303782",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -72,10 +73,10 @@
       "tenth-amendment",
       "federalism"
     ],
-    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
-    "seedId": "29e8a372-eaa7-5813-9dcf-dd41ca2501ae"
+    "source": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
   },
   {
+    "itemId": "c4eed5de-d231-48fe-aa92-4992d5345705",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -91,10 +92,10 @@
       "third-amendment",
       "bill-of-rights"
     ],
-    "source": "https://constitution.congress.gov/constitution/amendment-3/",
-    "seedId": "9f5040c0-3ab3-57ad-8dc4-a803acf937dd"
+    "source": "https://constitution.congress.gov/constitution/amendment-3/"
   },
   {
+    "itemId": "40b7b9ea-099c-45f9-8cdc-0bf5b5144966",
     "category": "civics",
     "navigationKeyword1": "constitution",
     "navigationKeyword2": "bill-of-rights",
@@ -110,7 +111,6 @@
       "fifth-amendment",
       "bill-of-rights"
     ],
-    "source": "https://www.whitehouse.gov/our-government/the-constitution/",
-    "seedId": "2429113d-b5ca-5eff-93aa-11791e7648ae"
+    "source": "https://www.whitehouse.gov/our-government/the-constitution/"
   }
 ]

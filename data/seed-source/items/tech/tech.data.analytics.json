@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "39899283-785c-4148-8785-36bf92111b01",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -15,10 +16,10 @@
       "analytics",
       "kpi"
     ],
-    "source": "https://en.wikipedia.org/wiki/Performance_indicator",
-    "seedId": "63d15a8f-42a5-560d-9c46-97a2730bdcac"
+    "source": "https://en.wikipedia.org/wiki/Performance_indicator"
   },
   {
+    "itemId": "76c7fbd5-19cf-4f66-84b5-180fb94f92f6",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -34,10 +35,10 @@
       "analytics",
       "cohorts"
     ],
-    "source": "https://en.wikipedia.org/wiki/Cohort_analysis",
-    "seedId": "92be598f-2e8d-5421-820e-a85eec505b22"
+    "source": "https://en.wikipedia.org/wiki/Cohort_analysis"
   },
   {
+    "itemId": "4b8dd486-dbf9-4f56-bea3-75ff9a116ea1",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -53,10 +54,10 @@
       "analytics",
       "ab-testing"
     ],
-    "source": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc24.htm",
-    "seedId": "881c6386-74db-5464-bcfb-2f1291cab4ee"
+    "source": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc24.htm"
   },
   {
+    "itemId": "dfed6a96-cb3e-40db-85b7-9a320c88cffa",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -72,10 +73,10 @@
       "analytics",
       "statistics"
     ],
-    "source": "https://en.wikipedia.org/wiki/Statistical_significance",
-    "seedId": "fb584e90-1ce7-5b64-a4ec-1a3d44e57d08"
+    "source": "https://en.wikipedia.org/wiki/Statistical_significance"
   },
   {
+    "itemId": "5350c60a-d1fa-40df-bcf6-b8c181bb9c27",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -91,10 +92,10 @@
       "analytics",
       "bias"
     ],
-    "source": "https://en.wikipedia.org/wiki/Sampling_bias",
-    "seedId": "04124e59-e589-504a-9f76-8107c6a97861"
+    "source": "https://en.wikipedia.org/wiki/Sampling_bias"
   },
   {
+    "itemId": "631cb760-0e7c-4b32-81a9-f9a711e457a6",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "analytics",
@@ -110,7 +111,6 @@
       "analytics",
       "time-series"
     ],
-    "source": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm",
-    "seedId": "df5fe0cf-a4ca-52c6-b8ef-31f7897db32e"
+    "source": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm"
   }
 ]

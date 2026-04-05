@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "187915f2-7216-4835-b0b6-90822cd53bff",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -10,15 +11,15 @@
       "the jury before trial begins",
       "the party being sued, always"
     ],
-    "explanation": "The plaintiff—the party who files the case—typically must prove the elements of the claims asserted.",
+    "explanation": "The plaintiff\u2014the party who files the case\u2014typically must prove the elements of the claims asserted.",
     "keywords": [
       "civil-law",
       "burden-of-proof"
     ],
-    "source": "https://www.law.cornell.edu/wex/burden_of_proof",
-    "seedId": "6ff97b0e-5d8b-51b8-995c-983d926c3044"
+    "source": "https://www.law.cornell.edu/wex/burden_of_proof"
   },
   {
+    "itemId": "6bb917ae-a40a-467c-a2af-0534683191c0",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -34,10 +35,10 @@
       "civil-law",
       "evidence-standard"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases",
-    "seedId": "7993dce0-f74f-5b76-a001-b16a4c8477db"
+    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases"
   },
   {
+    "itemId": "4dfea4ca-2b0a-47d3-b278-bdcd74b90824",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -53,10 +54,10 @@
       "civil-law",
       "court-roles"
     ],
-    "source": "https://www.law.cornell.edu/wex/plaintiff",
-    "seedId": "3e962f8f-7e72-5d95-9e90-e9bc106e2f6b"
+    "source": "https://www.law.cornell.edu/wex/plaintiff"
   },
   {
+    "itemId": "0b6a2b62-1ad0-450f-ac1a-15dd5df0671a",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -72,10 +73,10 @@
       "civil-law",
       "torts"
     ],
-    "source": "https://www.law.cornell.edu/wex/tort",
-    "seedId": "01fee5c4-5405-5270-88a2-ffec866ec1af"
+    "source": "https://www.law.cornell.edu/wex/tort"
   },
   {
+    "itemId": "2d3abc1a-0636-4609-8ca8-316970422197",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -91,10 +92,10 @@
       "civil-law",
       "remedies"
     ],
-    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases",
-    "seedId": "53bd9ac7-22da-57d5-93ea-50d5bd3a5ed6"
+    "source": "https://www.uscourts.gov/about-federal-courts/types-federal-cases"
   },
   {
+    "itemId": "edf07142-89d1-4984-87ff-0a336a10edfa",
     "category": "civics",
     "navigationKeyword1": "law",
     "navigationKeyword2": "civil",
@@ -110,7 +111,6 @@
       "civil-law",
       "contracts"
     ],
-    "source": "https://www.law.cornell.edu/wex/contract",
-    "seedId": "2d6e26de-7bf2-5e80-92a6-5d1aac1136c4"
+    "source": "https://www.law.cornell.edu/wex/contract"
   }
 ]

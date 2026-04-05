@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "7bcdfd9c-0030-45e5-854c-3dde47d67dd7",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -15,10 +16,10 @@
       "osha",
       "safety"
     ],
-    "source": "https://www.osha.gov/",
-    "seedId": "8f27ee5c-034c-4789-8389-63fe7778dfdb"
+    "source": "https://www.osha.gov/"
   },
   {
+    "itemId": "f0c60c7e-8826-443f-bc52-fdb117ff7487",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -34,10 +35,10 @@
       "at-will",
       "employment-law"
     ],
-    "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/employment-at-will",
-    "seedId": "b1ec9d1d-4ec8-4d24-9e19-4c84059b4191"
+    "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/employment-at-will"
   },
   {
+    "itemId": "87dd5a7f-8e89-4828-9b13-ef6e0ef0628b",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -53,10 +54,10 @@
       "collective-bargaining",
       "unions"
     ],
-    "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/collective-bargaining",
-    "seedId": "6a20df85-ace2-4355-bd47-f79d141e70cd"
+    "source": "https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/collective-bargaining"
   },
   {
+    "itemId": "d025e4a1-042d-45cd-8c3d-f576d860bd21",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -72,10 +73,10 @@
       "misclassification",
       "contractors"
     ],
-    "source": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
-    "seedId": "cf441bd2-d8bc-4f58-9016-a353aac64d47"
+    "source": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee"
   },
   {
+    "itemId": "a3dec3f5-d086-40e4-9239-e17b1a9936d8",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -91,10 +92,10 @@
       "whistleblower",
       "compliance"
     ],
-    "source": "https://www.osha.gov/whistleblower",
-    "seedId": "daa8699a-497d-4913-ab6a-890d63f2d0ab"
+    "source": "https://www.osha.gov/whistleblower"
   },
   {
+    "itemId": "6443a81a-8fb1-4663-b572-09db54012bd9",
     "category": "business",
     "navigationKeyword1": "hr",
     "navigationKeyword2": "labor",
@@ -110,7 +111,6 @@
       "nlrb",
       "labor-law"
     ],
-    "source": "https://www.nlrb.gov/",
-    "seedId": "2271c087-1526-4e64-92c4-82a49a6f3577"
+    "source": "https://www.nlrb.gov/"
   }
 ]

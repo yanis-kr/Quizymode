@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "83db4322-148e-48c9-b5e0-7034b5379f15",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -15,10 +16,10 @@
       "kanban",
       "flow"
     ],
-    "source": "https://kanban.university/kanban-guide-for-scrum-teams/",
-    "seedId": "822bb34f-68dd-4d83-a703-93164b9985e1"
+    "source": "https://kanban.university/kanban-guide-for-scrum-teams/"
   },
   {
+    "itemId": "0747ffac-2397-4719-976b-8b1c6e24aaa9",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -34,10 +35,10 @@
       "wip-limits",
       "kanban"
     ],
-    "source": "https://kanban.university/kanban-guide-for-scrum-teams/",
-    "seedId": "aa7be359-28ab-490f-a947-ce01135ed1ac"
+    "source": "https://kanban.university/kanban-guide-for-scrum-teams/"
   },
   {
+    "itemId": "df3db025-d3fc-462d-9490-8dbb1a1088b2",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -53,10 +54,10 @@
       "lead-time",
       "cycle-time"
     ],
-    "source": "https://www.atlassian.com/agile/kanban/kanban-metrics",
-    "seedId": "03002910-ac8f-4039-9f38-64376487ccac"
+    "source": "https://www.atlassian.com/agile/kanban/kanban-metrics"
   },
   {
+    "itemId": "fcf88a96-61fa-4426-a571-38f52bb2d543",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -72,10 +73,10 @@
       "pull",
       "kanban"
     ],
-    "source": "https://www.lean.org/lexicon-terms/pull-production/",
-    "seedId": "22381936-c5b8-4a8b-8082-4bd8739662d8"
+    "source": "https://www.lean.org/lexicon-terms/pull-production/"
   },
   {
+    "itemId": "c0824204-e04a-4fef-a32e-ce2001d304b4",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -91,10 +92,10 @@
       "swimlanes",
       "kanban"
     ],
-    "source": "https://www.atlassian.com/agile/kanban/boards",
-    "seedId": "a8b9d865-d9fe-41f4-a1f1-487951a437eb"
+    "source": "https://www.atlassian.com/agile/kanban/boards"
   },
   {
+    "itemId": "90e64568-3e91-4b75-9e6c-030d53082148",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "kanban",
@@ -110,7 +111,6 @@
       "kanban-vs-scrum",
       "agile"
     ],
-    "source": "https://www.atlassian.com/agile/scrum/kanban-vs-scrum",
-    "seedId": "6d07426b-1c3c-4049-afc2-cdd20ba898d6"
+    "source": "https://www.atlassian.com/agile/scrum/kanban-vs-scrum"
   }
 ]

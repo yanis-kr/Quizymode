@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "96edf96f-1c71-458d-a75d-6d2476e89eb7",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
@@ -15,10 +16,10 @@
       "security",
       "owasp"
     ],
-    "source": "https://owasp.org/www-project-top-ten/",
-    "seedId": "b8cd83d3-ff7a-56cf-88b8-3da12c38c79b"
+    "source": "https://owasp.org/www-project-top-ten/"
   },
   {
+    "itemId": "fe6d829d-0e84-4d31-89c1-ceffc11a3da7",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
@@ -34,10 +35,10 @@
       "security",
       "sql-injection"
     ],
-    "source": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
-    "seedId": "9dadf130-ee44-52ba-b323-fbae3266fd36"
+    "source": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
   },
   {
+    "itemId": "522ebe2d-dd74-49be-b7b6-a0f0bad24873",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
@@ -53,15 +54,15 @@
       "security",
       "xss"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting",
-    "seedId": "51196fbc-feee-5de1-a008-f0b7e4e259b7"
+    "source": "https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting"
   },
   {
+    "itemId": "38ff696d-eb48-4581-accb-f45f08c78b20",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
     "question": "What does a CSRF token primarily defend against?",
-    "correctAnswer": "Forged requests that reuse a victim’s existing browser session",
+    "correctAnswer": "Forged requests that reuse a victim\u2019s existing browser session",
     "incorrectAnswers": [
       "Brute-force guessing weak passwords",
       "Physical theft of a laptop",
@@ -72,10 +73,10 @@
       "security",
       "csrf"
     ],
-    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
-    "seedId": "de9b0023-3190-5dce-ae85-51ed6c13fabc"
+    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
   },
   {
+    "itemId": "fcf246ef-4423-4065-bce6-dd125d9bd7b7",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
@@ -91,10 +92,10 @@
       "security",
       "input-validation"
     ],
-    "source": "https://cwe.mitre.org/data/definitions/20.html",
-    "seedId": "a2600460-c109-5c1f-b616-07f94bd6e1fa"
+    "source": "https://cwe.mitre.org/data/definitions/20.html"
   },
   {
+    "itemId": "5fdbcb2e-e116-4224-bca8-a53c0e56f9f4",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "appsec",
@@ -110,7 +111,6 @@
       "security",
       "csp"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
-    "seedId": "b6995d3e-b2ad-5366-99d2-e968e45f3335"
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
   }
 ]

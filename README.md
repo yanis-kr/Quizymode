@@ -86,11 +86,12 @@ graph TD
 
 Data layout:
 
-- `data/seed-dev/`: tiny startup seed used for local/dev and test bootstrap
-- `data/seed-source/items/`: source-of-truth item banks used to build admin seed-sync bundles
-- `data/seed-source/review-from-seed/`: reviewed legacy seed JSON carried forward for later normalization
+- `data/seed-source/items/`: canonical admin-managed public item source files using permanent `itemId` values
+- `data/seed-source/collections/public/`: canonical public collection seed files referencing permanent `itemId` values
+- `data/seed-source/_registry/`: generated registry and duplicate-allowlist artifacts for seed validation
+- `data/seed-dev/`: derived local/dev startup subset generated from `data/seed-source/` via `data/seed-dev/selection.json`
+- `data/import-inbox/`: gitignored staging area for raw AI-generated JSON before normalization into canonical source files
 - `data/prompts/`: prompt templates and execution instructions
-- `data/generated/seed-sync/`: generated admin upload bundles kept in source control
 - `data/generated/seed-progress/`: gitignored workflow progress/state files
 
 The root README is the canonical entry point. Detailed or fast-changing material belongs under `docs/`, and this file should link to those documents directly.
@@ -136,8 +137,20 @@ In practice, local development is:
 ### Database
 
 - PostgreSQL runs through Aspire in local development.
+- The AppHost pins the local PostgreSQL host port to `49800` and keeps the password stable through the AppHost user-secrets store, so local agent/test env vars do not need to change on every container recreation.
 - EF Core migrations are applied automatically on API startup.
 - Seed data is loaded from `data/seed-dev/`.
+
+### Seed Tooling
+
+Canonical admin content lives under `data/seed-source/` and is validated/built with:
+
+- `python scripts/validate_seed_source.py`
+- `python scripts/build_item_registry.py`
+- `python scripts/build_seed_dev_subset.py`
+- `python scripts/process_import_inbox.py --write`
+
+Admin item sync no longer depends on a generated upload bundle. The admin UI/API now read canonical item seed files directly from GitHub at a chosen repo/ref.
 
 ### Running E2E Tests Locally
 
@@ -307,6 +320,7 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/infra/S3_CLOUDFRONT.md](./docs/infra/S3_CLOUDFRONT.md): SPA hosting and CDN notes
 - [docs/infra/LIGHTSAIL.md](./docs/infra/LIGHTSAIL.md): API container hosting notes
 - [docs/infra/SUPABASE.md](./docs/infra/SUPABASE.md): managed Postgres notes
+- [docs/infra/REPO_MANAGED_CONTENT_RESET.md](./docs/infra/REPO_MANAGED_CONTENT_RESET.md): runbook for deleting and rebuilding repo-managed content from source control
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
 - [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): end-user guide with screenshots

@@ -1,12 +1,13 @@
 [
   {
+    "itemId": "49cbccf1-8c6e-49b3-a845-da6c8f75e375",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
     "question": "Which metric is most directly related to audience engagement on social media?",
     "correctAnswer": "Interactions such as likes, comments, shares, and saves relative to reach or followers.",
     "incorrectAnswers": [
-      "The company’s depreciation schedule",
+      "The company\u2019s depreciation schedule",
       "Only the total number of employees",
       "The interest rate a bank charges for loans"
     ],
@@ -16,10 +17,10 @@
       "engagement",
       "reach"
     ],
-    "source": "https://www.hubspot.com/social-media-marketing",
-    "seedId": "47af1141-8f65-51ae-8392-3c73ceeb7ce1"
+    "source": "https://www.hubspot.com/social-media-marketing"
   },
   {
+    "itemId": "02cda196-586b-426e-86c6-af4c6b68d94d",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
@@ -36,19 +37,19 @@
       "sentiment",
       "insights"
     ],
-    "source": "https://www.hubspot.com/",
-    "seedId": "828da427-bbf1-5e4e-a42e-e693a38792e8"
+    "source": "https://www.hubspot.com/"
   },
   {
+    "itemId": "c7f9eb2b-f394-4ff5-bf3e-e6abe0bfc131",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
-    "question": "In social media strategy, what does “community management” typically involve?",
+    "question": "In social media strategy, what does \u201ccommunity management\u201d typically involve?",
     "correctAnswer": "Responding to comments/messages and fostering healthy interactions around the brand.",
     "incorrectAnswers": [
       "Never replying to users to avoid mistakes",
       "Deleting critical feedback automatically",
-      "Only updating the company’s chart of accounts"
+      "Only updating the company\u2019s chart of accounts"
     ],
     "explanation": "Community management helps maintain trust by turning audience interactions into responsive, constructive communication.",
     "keywords": [
@@ -56,10 +57,10 @@
       "engagement",
       "trust"
     ],
-    "source": "https://sproutsocial.com/insights/social-media-community-management/",
-    "seedId": "0c95f82b-a370-5924-8e6d-85c35dc390ce"
+    "source": "https://sproutsocial.com/insights/social-media-community-management/"
   },
   {
+    "itemId": "332d7a93-d284-4959-bedd-77f306c02d09",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
@@ -76,10 +77,10 @@
       "consistency",
       "publishing"
     ],
-    "source": "https://moz.com/",
-    "seedId": "6e4d846a-807a-505d-aea8-fe33b771811c"
+    "source": "https://moz.com/"
   },
   {
+    "itemId": "123dfc82-824a-4635-84ca-43ba79b38f03",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
@@ -96,17 +97,17 @@
       "planning",
       "campaigns"
     ],
-    "source": "https://www.investopedia.com/",
-    "seedId": "8f4998ce-486d-52f2-9c21-414e40fd9dd0"
+    "source": "https://www.investopedia.com/"
   },
   {
+    "itemId": "95c8e1c7-10ed-4ce8-b30e-af56426da97c",
     "category": "business",
     "navigationKeyword1": "marketing",
     "navigationKeyword2": "social-media",
-    "question": "What does “brand voice” mean in social media?",
+    "question": "What does \u201cbrand voice\u201d mean in social media?",
     "correctAnswer": "The consistent style, tone, and messaging patterns the brand uses in posts and replies.",
     "incorrectAnswers": [
-      "The company’s physical delivery speed of items",
+      "The company\u2019s physical delivery speed of items",
       "The accounting method used to record ad spend",
       "A random style change for every post to maximize confusion"
     ],
@@ -116,7 +117,6 @@
       "tone",
       "consistency"
     ],
-    "source": "https://www.hubspot.com/brand-voice",
-    "seedId": "5ae8b154-a900-5673-bf9a-653fb9fe398d"
+    "source": "https://www.hubspot.com/brand-voice"
   }
 ]

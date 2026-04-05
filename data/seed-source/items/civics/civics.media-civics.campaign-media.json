@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "5cdf65a2-f2e6-44c8-aa87-8b545914e3f2",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
@@ -15,10 +16,10 @@
       "disclosure",
       "political-ads"
     ],
-    "source": "https://www.fec.gov/help-candidates-and-committees/advertising/",
-    "seedId": "d5648c38-bd0f-55d4-abc3-14d5c31ec461"
+    "source": "https://www.fec.gov/help-candidates-and-committees/advertising/"
   },
   {
+    "itemId": "f6969846-8cc2-4357-a001-1c33227c1f76",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
@@ -34,15 +35,15 @@
       "debates",
       "coverage"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "12d594c3-29e4-5bb7-807e-e9e4fc138c9d"
+    "source": "https://www.civiced.org/"
   },
   {
+    "itemId": "1f28a2fb-87ba-482b-9f06-2e5badb82002",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
     "question": "What is an attack ad in campaign media terms?",
-    "correctAnswer": "a spot that criticizes an opponent’s record or character",
+    "correctAnswer": "a spot that criticizes an opponent\u2019s record or character",
     "incorrectAnswers": [
       "any ad that lists a website",
       "only nonpartisan voter guides",
@@ -53,10 +54,10 @@
       "attack-ads",
       "campaigns"
     ],
-    "source": "https://www.britannica.com/topic/political-advertising",
-    "seedId": "6c0acb40-c581-5925-91fb-c8fd15507127"
+    "source": "https://www.britannica.com/topic/political-advertising"
   },
   {
+    "itemId": "8c745d61-26e3-4b3e-a0a6-8a75f92b5820",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
@@ -72,10 +73,10 @@
       "microtargeting",
       "digital-ads"
     ],
-    "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
-    "seedId": "8ee1baba-dd64-5cc5-868c-9787a18dcfbc"
+    "source": "https://www.ftc.gov/business-guidance/advertising-marketing"
   },
   {
+    "itemId": "e0e62bd7-eb8b-4ace-8f07-ba464589b200",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
@@ -91,10 +92,10 @@
       "campaign-finance",
       "fairness"
     ],
-    "source": "https://www.fec.gov/introduction-campaign-finance/how-to-research-public-records/",
-    "seedId": "373a495e-c33d-5df7-9a8c-5d51b8e6696b"
+    "source": "https://www.fec.gov/introduction-campaign-finance/how-to-research-public-records/"
   },
   {
+    "itemId": "d2db5492-f7a4-4d63-89db-96b5920dbd2a",
     "category": "civics",
     "navigationKeyword1": "media-civics",
     "navigationKeyword2": "campaign-media",
@@ -110,7 +111,6 @@
       "earned-media",
       "coverage"
     ],
-    "source": "https://www.britannica.com/topic/political-campaign",
-    "seedId": "a6ee8cd6-8b4f-5eb4-9019-ec41b27e4896"
+    "source": "https://www.britannica.com/topic/political-campaign"
   }
 ]

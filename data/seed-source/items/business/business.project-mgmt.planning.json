@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "da75dc77-e59b-4769-a35a-249577208376",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -15,10 +16,10 @@
       "wbs",
       "scope"
     ],
-    "source": "https://www.pmi.org/learning/library/work-breakdown-structure-basics-7486",
-    "seedId": "776ae9cc-d383-409f-ba64-9a72bbc9a7b5"
+    "source": "https://www.pmi.org/learning/library/work-breakdown-structure-basics-7486"
   },
   {
+    "itemId": "49f2d95e-40ac-4f11-bc29-ce88d92d69e3",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -34,10 +35,10 @@
       "critical-path",
       "scheduling"
     ],
-    "source": "https://www.pmi.org/learning/library/critical-path-method-scheduling-7123",
-    "seedId": "e7e919a3-a64e-445f-ba90-ca024dadb363"
+    "source": "https://www.pmi.org/learning/library/critical-path-method-scheduling-7123"
   },
   {
+    "itemId": "66a6c45c-8828-4105-9e63-127ffd9f4945",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -53,10 +54,10 @@
       "dependencies",
       "schedule"
     ],
-    "source": "https://www.pmi.org/learning/library/understanding-dependencies-7055",
-    "seedId": "971ba8b2-7084-48a0-a362-7ef1ce391eaa"
+    "source": "https://www.pmi.org/learning/library/understanding-dependencies-7055"
   },
   {
+    "itemId": "02126bbe-ae61-455f-8b46-3ffad9042793",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -72,10 +73,10 @@
       "milestone",
       "planning"
     ],
-    "source": "https://www.pmi.org/learning/library/project-milestones-7110",
-    "seedId": "45aa8838-bd9a-4858-9a3d-0e6687116993"
+    "source": "https://www.pmi.org/learning/library/project-milestones-7110"
   },
   {
+    "itemId": "43fd05ab-1b84-44bd-baa5-764a2fc27c28",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -91,10 +92,10 @@
       "scope-creep",
       "change-control"
     ],
-    "source": "https://www.pmi.org/learning/library/scope-creep-7115",
-    "seedId": "432f3998-9ebc-40b9-ae7e-79f85fc5ff27"
+    "source": "https://www.pmi.org/learning/library/scope-creep-7115"
   },
   {
+    "itemId": "7630fd43-4762-4b18-ac12-db3934f08c03",
     "category": "business",
     "navigationKeyword1": "project-mgmt",
     "navigationKeyword2": "planning",
@@ -110,7 +111,6 @@
       "baseline",
       "schedule"
     ],
-    "source": "https://www.pmi.org/learning/library/project-baseline-7112",
-    "seedId": "af2d34fd-dde9-4ccd-a0ec-b47967218dbf"
+    "source": "https://www.pmi.org/learning/library/project-baseline-7112"
   }
 ]

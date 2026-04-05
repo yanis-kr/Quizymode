@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b868dd09-6cbe-4231-be41-5d1cb538a648",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -10,16 +11,16 @@
       "Marseille",
       "Toulouse"
     ],
-    "explanation": "Paris has long been France’s political and cultural capital on the Seine River.",
+    "explanation": "Paris has long been France\u2019s political and cultural capital on the Seine River.",
     "keywords": [
       "europe",
       "france",
       "western-europe"
     ],
-    "source": "https://www.britannica.com/place/Paris",
-    "seedId": "33b6e7fe-01bf-469d-9d70-45b809e04016"
+    "source": "https://www.britannica.com/place/Paris"
   },
   {
+    "itemId": "10cbda1f-de1b-4887-a7ea-9e4c2fdd348d",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -30,16 +31,16 @@
       "Frankfurt",
       "Hamburg"
     ],
-    "explanation": "Berlin is the seat of Germany’s federal government after reunification in 1990.",
+    "explanation": "Berlin is the seat of Germany\u2019s federal government after reunification in 1990.",
     "keywords": [
       "europe",
       "germany",
       "central-europe"
     ],
-    "source": "https://www.britannica.com/place/Berlin",
-    "seedId": "1ecc5ed4-4d3e-4633-ab2f-fdc2c3390553"
+    "source": "https://www.britannica.com/place/Berlin"
   },
   {
+    "itemId": "f23d396e-fad0-478a-8aaa-1b6564e52aab",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -50,16 +51,16 @@
       "Naples",
       "Florence"
     ],
-    "explanation": "Rome is Italy’s capital and also the seat of the Roman Catholic papacy in Vatican City.",
+    "explanation": "Rome is Italy\u2019s capital and also the seat of the Roman Catholic papacy in Vatican City.",
     "keywords": [
       "europe",
       "italy",
       "southern-europe"
     ],
-    "source": "https://www.britannica.com/place/Rome",
-    "seedId": "63e7eb99-46aa-4c20-9fd9-60cfaf258e74"
+    "source": "https://www.britannica.com/place/Rome"
   },
   {
+    "itemId": "cc5c732c-6bbe-451f-8438-e236eeb4276a",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -70,16 +71,16 @@
       "Seville",
       "Valencia"
     ],
-    "explanation": "Madrid lies on the Meseta Central and serves as Spain’s political capital.",
+    "explanation": "Madrid lies on the Meseta Central and serves as Spain\u2019s political capital.",
     "keywords": [
       "europe",
       "spain",
       "iberia"
     ],
-    "source": "https://www.britannica.com/place/Madrid",
-    "seedId": "cbddc41b-7857-4195-9875-8f07ebc69d82"
+    "source": "https://www.britannica.com/place/Madrid"
   },
   {
+    "itemId": "5f0ed1ea-557f-4b00-b2f0-2ccc62c5a0b4",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -90,36 +91,36 @@
       "Cardiff",
       "Belfast"
     ],
-    "explanation": "London on the River Thames is the UK’s primary seat of government and monarchy.",
+    "explanation": "London on the River Thames is the UK\u2019s primary seat of government and monarchy.",
     "keywords": [
       "europe",
       "the-united-kingdom",
       "northern-europe"
     ],
-    "source": "https://www.britannica.com/place/London",
-    "seedId": "005550e8-2d10-418c-a2d5-e006a5bbc846"
+    "source": "https://www.britannica.com/place/London"
   },
   {
+    "itemId": "ce162596-531a-4409-ba40-5f303f15a8d9",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
     "question": "What is the national capital of Poland?",
     "correctAnswer": "Warsaw",
     "incorrectAnswers": [
-      "Kraków",
-      "Gdańsk",
-      "Wrocław"
+      "Krak\u00f3w",
+      "Gda\u0144sk",
+      "Wroc\u0142aw"
     ],
-    "explanation": "Warsaw on the Vistula River is Poland’s capital and largest city.",
+    "explanation": "Warsaw on the Vistula River is Poland\u2019s capital and largest city.",
     "keywords": [
       "europe",
       "poland",
       "eastern-europe"
     ],
-    "source": "https://www.britannica.com/place/Warsaw",
-    "seedId": "8f1c2605-1d7c-4134-a16d-c414bdc85772"
+    "source": "https://www.britannica.com/place/Warsaw"
   },
   {
+    "itemId": "7327ef86-d043-4bdd-bcaa-e45fe67b99a2",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -130,16 +131,16 @@
       "Trondheim",
       "Stavanger"
     ],
-    "explanation": "Oslo lies at the head of Oslofjord and is Norway’s governmental capital.",
+    "explanation": "Oslo lies at the head of Oslofjord and is Norway\u2019s governmental capital.",
     "keywords": [
       "europe",
       "norway",
       "scandinavia"
     ],
-    "source": "https://www.britannica.com/place/Oslo",
-    "seedId": "760a8ff5-61fe-4f8d-898c-eb0739a89150"
+    "source": "https://www.britannica.com/place/Oslo"
   },
   {
+    "itemId": "79417d37-8acd-4ea4-b2de-89c5b2b0d95d",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -147,19 +148,19 @@
     "correctAnswer": "Stockholm",
     "incorrectAnswers": [
       "Gothenburg",
-      "Malmö",
+      "Malm\u00f6",
       "Uppsala"
     ],
-    "explanation": "Stockholm spreads across islands and shores where Lake Mälaren meets the Baltic Sea.",
+    "explanation": "Stockholm spreads across islands and shores where Lake M\u00e4laren meets the Baltic Sea.",
     "keywords": [
       "europe",
       "sweden",
       "scandinavia"
     ],
-    "source": "https://www.britannica.com/place/Stockholm",
-    "seedId": "d245ecb9-3c6e-4c50-a86d-310923e851b5"
+    "source": "https://www.britannica.com/place/Stockholm"
   },
   {
+    "itemId": "d6fc2767-9c7f-4655-883f-6d6b956396ef",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -170,16 +171,16 @@
       "Odesa",
       "Lviv"
     ],
-    "explanation": "Kyiv on the Dnieper River is Ukraine’s capital and historic political center.",
+    "explanation": "Kyiv on the Dnieper River is Ukraine\u2019s capital and historic political center.",
     "keywords": [
       "europe",
       "ukraine",
       "eastern-europe"
     ],
-    "source": "https://www.britannica.com/place/Kyiv",
-    "seedId": "563edc33-cc04-4c1e-88fb-22648dbb5f46"
+    "source": "https://www.britannica.com/place/Kyiv"
   },
   {
+    "itemId": "3d7667c9-bb97-4a81-87a3-6f7aa5e48df3",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -190,16 +191,16 @@
       "Geneva",
       "Basel"
     ],
-    "explanation": "Bern is the seat of Switzerland’s federal government and key administrative institutions.",
+    "explanation": "Bern is the seat of Switzerland\u2019s federal government and key administrative institutions.",
     "keywords": [
       "europe",
       "alpine-europe",
       "switzerland"
     ],
-    "source": "https://www.britannica.com/place/Bern",
-    "seedId": "452e11f3-c536-4063-bdec-62802c77aff4"
+    "source": "https://www.britannica.com/place/Bern"
   },
   {
+    "itemId": "f68c48d0-8e93-4118-b643-83d00d24e9f0",
     "category": "geography",
     "navigationKeyword1": "capitals",
     "navigationKeyword2": "europe",
@@ -210,13 +211,12 @@
       "Patras",
       "Heraklion"
     ],
-    "explanation": "Athens is Greece’s capital and the historic heart of Attica.",
+    "explanation": "Athens is Greece\u2019s capital and the historic heart of Attica.",
     "keywords": [
       "europe",
       "greece",
       "southern-europe"
     ],
-    "source": "https://www.britannica.com/place/Athens",
-    "seedId": "933b1724-f5e2-4915-a255-d464b2cb56ee"
+    "source": "https://www.britannica.com/place/Athens"
   }
 ]

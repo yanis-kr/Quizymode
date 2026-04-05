@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "32c0c260-cee4-4ae8-9fdb-d0bee5a06f7c",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -16,10 +17,10 @@
       "australia",
       "continents"
     ],
-    "source": "https://www.britannica.com/place/Australia",
-    "seedId": "3c2eab12-b2f2-4fdd-92af-e6e32a1632e1"
+    "source": "https://www.britannica.com/place/Australia"
   },
   {
+    "itemId": "3ec34ba1-1696-4e8c-ab91-c0263173e81b",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -30,36 +31,36 @@
       "The Timor Sea",
       "The Arafura Sea"
     ],
-    "explanation": "The Tasman Sea is a southwestern arm of the South Pacific separating Australia’s east coast from New Zealand.",
+    "explanation": "The Tasman Sea is a southwestern arm of the South Pacific separating Australia\u2019s east coast from New Zealand.",
     "keywords": [
       "oceania",
       "seas",
       "pacific"
     ],
-    "source": "https://www.britannica.com/place/Tasman-Sea",
-    "seedId": "173abdbf-8ea2-4eac-ace2-afad21e288d6"
+    "source": "https://www.britannica.com/place/Tasman-Sea"
   },
   {
+    "itemId": "ef45bb56-8209-4fc6-abc3-ba67331bebe3",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
-    "question": "New Zealand’s two main islands are the North Island and which other island?",
+    "question": "New Zealand\u2019s two main islands are the North Island and which other island?",
     "correctAnswer": "The South Island",
     "incorrectAnswers": [
       "Tasmania",
       "New Britain",
       "Guadalcanal"
     ],
-    "explanation": "New Zealand consists mainly of the North Island (Te Ika-a-Māui) and the larger South Island (Te Waipounamu).",
+    "explanation": "New Zealand consists mainly of the North Island (Te Ika-a-M\u0101ui) and the larger South Island (Te Waipounamu).",
     "keywords": [
       "oceania",
       "new-zealand",
       "islands"
     ],
-    "source": "https://www.britannica.com/place/New-Zealand",
-    "seedId": "a11d037a-b580-4459-a6ea-7dd3b71d2363"
+    "source": "https://www.britannica.com/place/New-Zealand"
   },
   {
+    "itemId": "989dd2a0-82e0-4511-97e1-c3991824f62b",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -76,10 +77,10 @@
       "melanesia",
       "new-guinea"
     ],
-    "source": "https://www.britannica.com/place/Papua-New-Guinea",
-    "seedId": "edd4192f-ff94-44ed-a6c9-4c32faab117a"
+    "source": "https://www.britannica.com/place/Papua-New-Guinea"
   },
   {
+    "itemId": "ff6f3ca2-ddc1-4a7f-9570-e1e63ecb1007",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -90,20 +91,20 @@
       "The Florida Reef",
       "Ningaloo Reef"
     ],
-    "explanation": "The Great Barrier Reef is Earth’s largest coral reef complex, paralleling Queensland’s coast.",
+    "explanation": "The Great Barrier Reef is Earth\u2019s largest coral reef complex, paralleling Queensland\u2019s coast.",
     "keywords": [
       "oceania",
       "coral-reefs",
       "australia"
     ],
-    "source": "https://www.britannica.com/place/Great-Barrier-Reef",
-    "seedId": "9c97821c-b2ca-4c69-b81e-5613e82b7bd0"
+    "source": "https://www.britannica.com/place/Great-Barrier-Reef"
   },
   {
+    "itemId": "ac4f6edf-09e3-4c40-b689-ca999e6be13d",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
-    "question": "Australia sits on its own major plate named for the continent—what is that plate commonly called?",
+    "question": "Australia sits on its own major plate named for the continent\u2014what is that plate commonly called?",
     "correctAnswer": "The Australian Plate",
     "incorrectAnswers": [
       "The Pacific Plate",
@@ -116,10 +117,10 @@
       "plate-tectonics",
       "australia"
     ],
-    "source": "https://www.britannica.com/place/Pacific-Ocean",
-    "seedId": "d16a15be-d739-4a18-931b-49de2e61a617"
+    "source": "https://www.britannica.com/place/Pacific-Ocean"
   },
   {
+    "itemId": "d7c044cb-63de-4bac-a3e9-e28204f6a65c",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -136,10 +137,10 @@
       "melanesia",
       "archipelagos"
     ],
-    "source": "https://www.britannica.com/place/Vanuatu",
-    "seedId": "a2aff60b-5423-41bc-b288-4a3aca71e5a7"
+    "source": "https://www.britannica.com/place/Vanuatu"
   },
   {
+    "itemId": "f8424830-69e0-4f1b-9e53-d779d6f88a4c",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -156,10 +157,10 @@
       "micronesia",
       "atolls"
     ],
-    "source": "https://www.britannica.com/place/Kiribati",
-    "seedId": "c780c3f6-6a9c-4238-8632-8b7b2d2bc5ec"
+    "source": "https://www.britannica.com/place/Kiribati"
   },
   {
+    "itemId": "f1546750-43ef-432b-8df5-1e7f11e247c4",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -176,10 +177,10 @@
       "polynesia",
       "france"
     ],
-    "source": "https://www.britannica.com/place/French-Polynesia",
-    "seedId": "79f7476c-4158-423d-800d-e3802abb6722"
+    "source": "https://www.britannica.com/place/French-Polynesia"
   },
   {
+    "itemId": "d6de6315-1413-4259-be56-bb298abbd7e7",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
@@ -196,14 +197,14 @@
       "australia",
       "islands"
     ],
-    "source": "https://www.britannica.com/place/Tasmania",
-    "seedId": "89aa121b-a227-41dc-93cd-0fb5cd98bd95"
+    "source": "https://www.britannica.com/place/Tasmania"
   },
   {
+    "itemId": "eff8cf82-226d-40d9-bd90-ad0fee13c5d9",
     "category": "geography",
     "navigationKeyword1": "world",
     "navigationKeyword2": "oceania",
-    "question": "Fiji’s two largest islands, Viti Levu and Vanua Levu, lie in which ocean?",
+    "question": "Fiji\u2019s two largest islands, Viti Levu and Vanua Levu, lie in which ocean?",
     "correctAnswer": "The Pacific Ocean",
     "incorrectAnswers": [
       "The Indian Ocean",
@@ -216,7 +217,6 @@
       "melanesia",
       "fiji"
     ],
-    "source": "https://www.britannica.com/place/Fiji-republic-Pacific-Ocean",
-    "seedId": "d54977b9-af28-48a6-9793-8552d2923263"
+    "source": "https://www.britannica.com/place/Fiji-republic-Pacific-Ocean"
   }
 ]

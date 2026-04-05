@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "f82adedc-72c0-4489-96ee-ffbe0632780e",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -15,10 +16,10 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/lightning/",
-    "seedId": "ed3ee35a-a21f-5502-b3a2-40209cb77dae"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/lightning/"
   },
   {
+    "itemId": "bf8a4a4e-187e-46ea-88a7-6b72e5fda686",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -34,10 +35,10 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.noaa.gov/jetstream/hail",
-    "seedId": "f63ff0b4-9159-5c37-96df-fba48c1c6c74"
+    "source": "https://www.noaa.gov/jetstream/hail"
   },
   {
+    "itemId": "9057f60e-453b-4713-9c3a-c90ab654e6ce",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -53,10 +54,10 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.weather.gov/glossary/index.php?word=supercell+thunderstorm",
-    "seedId": "e31cd9ae-b12f-5fad-9bc1-fabd8f5f983e"
+    "source": "https://www.weather.gov/glossary/index.php?word=supercell+thunderstorm"
   },
   {
+    "itemId": "6671a0c8-cad8-4bcb-b385-2d3e7b45834d",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -72,10 +73,10 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.weather.gov/glossary/index.php?word=EYE",
-    "seedId": "1dcadc7d-1cbd-56b3-99a3-cb5cb03724ac"
+    "source": "https://www.weather.gov/glossary/index.php?word=EYE"
   },
   {
+    "itemId": "4b52702e-470b-4a3b-b62d-dce990920401",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -91,10 +92,10 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.weather.gov/safety/flood-turn-around-dont-drown/",
-    "seedId": "edc8c4dc-c1fd-5162-96ea-84816c3e3b30"
+    "source": "https://www.weather.gov/safety/flood-turn-around-dont-drown/"
   },
   {
+    "itemId": "fd28005a-b070-4f47-b9eb-02613778e134",
     "category": "nature",
     "navigationKeyword1": "phenomena",
     "navigationKeyword2": "weather-events",
@@ -110,7 +111,6 @@
       "weather-events",
       "nature-phenomena"
     ],
-    "source": "https://www.nssl.noaa.gov/education/svrwx101/winter/faq/",
-    "seedId": "9474f114-89a6-5cb1-a073-bacc47e4cac4"
+    "source": "https://www.nssl.noaa.gov/education/svrwx101/winter/faq/"
   }
 ]

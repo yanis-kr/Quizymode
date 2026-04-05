@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "0f5a57ba-1899-4da0-be08-f0fa4c301d05",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has a legacy data processing application that runs on Amazon EC2 instances. Data is processed sequentially, but the order of results\ndoes not matter. The application uses a monolithic architecture. The only way that the company can scale the application to meet increased\ndemand is to increase the size of the instances.\nThe company’s developers have decided to rewrite the application to use a microservices architecture on Amazon Elastic Container Service\n(Amazon ECS).\nWhat should a solutions architect recommend for communication between the microservices?",
+    "question": "A company has a legacy data processing application that runs on Amazon EC2 instances. Data is processed sequentially, but the order of results\ndoes not matter. The application uses a monolithic architecture. The only way that the company can scale the application to meet increased\ndemand is to increase the size of the instances.\nThe company\u2019s developers have decided to rewrite the application to use a microservices architecture on Amazon Elastic Container Service\n(Amazon ECS).\nWhat should a solutions architect recommend for communication between the microservices?",
     "correctAnswer": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Add code to the data producers, and send data to the queue. Add code to the data consumers to process data from the queue.",
     "incorrectAnswers": [
       "Create an Amazon Simple Notification Service (Amazon SNS) topic. Add code to the data producers, and publish notications to the topic. Add code to the data consumers to subscribe to the topic.",
@@ -19,10 +20,10 @@
       "ecs",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a1c83347-94a2-495f-aa34-5b27c286be6b"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "90246474-e967-4d66-bf8b-205b2758927b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -41,10 +42,10 @@
       "rds",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a9095739-846a-4c73-87e2-7349922d06a4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3de3cbaa-3a7b-4d36-b83f-26c561e2f7f9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -67,14 +68,14 @@
       "api-gateway",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a36b6054-ace9-40ee-867d-a67160c1417e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5cb1ed8b-eeac-4056-a476-0fc502f3b2c4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an AWS account used for software engineering. The AWS account has access to the company’s on-premises data center through a\npair of AWS Direct Connect connections. All non-VPC traffic routes to the virtual private gateway.\nA development team recently created an AWS Lambda function through the console. The development team needs to allow the function to access\na database that runs in a private subnet in the company’s data center.\nWhich solution will meet these requirements?",
+    "question": "A company has an AWS account used for software engineering. The AWS account has access to the company\u2019s on-premises data center through a\npair of AWS Direct Connect connections. All non-VPC traffic routes to the virtual private gateway.\nA development team recently created an AWS Lambda function through the console. The development team needs to allow the function to access\na database that runs in a private subnet in the company\u2019s data center.\nWhich solution will meet these requirements?",
     "correctAnswer": "Configure the Lambda function to run in the VPC with the appropriate security group.",
     "incorrectAnswers": [
       "Set up a VPN connection from AWS to the data center. Route the traffic from the Lambda function through the VPN.",
@@ -90,10 +91,10 @@
       "vpc",
       "direct-connect"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "844f1c6d-892b-436e-b636-0707b68b4761"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4e45f7a8-cda3-47dd-a083-1f8fbe09f4a3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -113,10 +114,10 @@
       "ecs",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "a8fb31bd-1520-46d6-b758-808a1751d4db"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "baf65b3e-ed14-4eed-bd19-c9f5330fff63",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -134,10 +135,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5ae52572-8ffc-45bc-b3d5-470a5ff07984"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "f684e306-935c-4d57-bb9b-af0ef245af4c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -154,10 +155,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "cc19e39d-db61-4981-affd-bbe2ea653ea7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "60683dd7-1c0b-452b-aac6-5f4cc9607ee7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -165,7 +166,7 @@
     "correctAnswer": "Create an Amazon S3 bucket. Enable static web hosting on the S3 bucket. Upload the static content to the S3 bucket. Use AWS Lambda to process all dynamic content.",
     "incorrectAnswers": [
       "Deploy the web application to an AWS Elastic Beanstalk environment. Use URL swapping to switch between multiple Elastic Beanstalk environments for feature testing.",
-      "Deploy the web application to Amazon EC2 instances that are congured with Java and PHP. Use Auto Scaling groups and an Application Load Balancer to manage the website’s availability.",
+      "Deploy the web application to Amazon EC2 instances that are congured with Java and PHP. Use Auto Scaling groups and an Application Load Balancer to manage the website\u2019s availability.",
       "Containerize the web application. Deploy the web application to Amazon EC2 instances. Use the AWS Load Balancer Controller to dynamically route traffic between containers that contain the new site features for testing."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #190). Correct choice: A.",
@@ -176,10 +177,10 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "386990f4-b928-4f12-a316-b0549cd790ea"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "13f210c4-28d4-41f1-bc40-297dc189c4a9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -198,10 +199,10 @@
       "rds",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "df02a599-1317-4953-88cd-27434e7159a3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "17ca965a-b347-4f99-87bc-66f8956f6fe9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -221,14 +222,14 @@
       "rds",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "dd1ec24e-5b89-40c7-b3f6-91f54dda3356"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "bff80eb2-0a76-4d50-8377-e98e5960b68d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to run a critical application on AWS. The company needs to use Amazon EC2 for the application’s database. The database must\nbe highly available and must fail over automatically if a disruptive event occurs.\nWhich solution will meet these requirements?",
+    "question": "A company needs to run a critical application on AWS. The company needs to use Amazon EC2 for the application\u2019s database. The database must\nbe highly available and must fail over automatically if a disruptive event occurs.\nWhich solution will meet these requirements?",
     "correctAnswer": "Launch two EC2 instances, each in a different Availability Zone in the same AWS Region. Install the database on both EC2 instances. Configure the EC2 instances as a cluster. Set up database replication.",
     "incorrectAnswers": [
       "Launch an EC2 instance in an Availability Zone. Install the database on the EC2 instance. Use an Amazon Machine Image (AMI) to back up the data. Use AWS CloudFormation to automate provisioning of the EC2 instance if a disruptive event occurs.",
@@ -241,14 +242,14 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "8d4b7c6a-e2a3-4073-b4a4-ad0c98e5cf61"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e86e1174-b36b-4e94-9239-2ada1078e19a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s order system sends requests from clients to Amazon EC2 instances. The EC2 instances process the orders and then store the orders\nin a database on Amazon RDS. Users report that they must reprocess orders when the system fails. The company wants a resilient solution that\ncan process orders automatically if a system outage occurs.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company\u2019s order system sends requests from clients to Amazon EC2 instances. The EC2 instances process the orders and then store the orders\nin a database on Amazon RDS. Users report that they must reprocess orders when the system fails. The company wants a resilient solution that\ncan process orders automatically if a system outage occurs.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Move the EC2 instances into an Auto Scaling group. Create an Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rule to target an Amazon Elastic Container Service (Amazon ECS) task.",
     "incorrectAnswers": [
       "Move the EC2 instances into an Auto Scaling group behind an Application Load Balancer (ALB). Update the order system to send messages to the ALB endpoint.",
@@ -267,10 +268,10 @@
       "auto-scaling",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1dec8c35-a4dd-4d9f-a53f-00981b9d0823"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4d76c61f-cf8c-4f35-b7f2-9887082bfb39",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -290,10 +291,10 @@
       "dynamodb",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "28257a80-ccef-45d6-aa5f-cc2769a4e2d3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ddc2da3a-7103-4248-9ab9-35f898598518",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -311,10 +312,10 @@
       "ec2",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5bcff3f1-a08f-4adc-a5d4-479c6b5d081a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "32c54dc8-6cfe-49ad-9a67-23534ba32e3b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -331,10 +332,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9f4f1861-bca4-49eb-a10b-288dd6f85035"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "9dbb0273-8202-4a32-a9fd-f15bfe006d33",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -342,7 +343,7 @@
     "correctAnswer": "Configure an AWS Lambda function to be an authorizer in API Gateway to validate which user made the request.",
     "incorrectAnswers": [
       "For each user, create and assign an API key that must be sent with each request. Validate the key by using an AWS Lambda function.",
-      "Send the user’s email address in the header with every request. Invoke an AWS Lambda function to validate that the user with that email address has proper access.",
+      "Send the user\u2019s email address in the header with every request. Invoke an AWS Lambda function to validate that the user with that email address has proper access.",
       "Configure an Amazon Cognito user pool authorizer in API Gateway to allow Amazon Cognito to validate each request."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #200). Correct choice: A.",
@@ -356,10 +357,10 @@
       "api-gateway",
       "cognito"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "acc90369-98e1-4249-95c5-67abdc958c9a"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ee77d91d-ef5a-4388-aab0-fadd4584b6c8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -376,18 +377,18 @@
       "aws-compute",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b0816a0d-9348-4ad1-b1a4-666e66924bd0"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "dfa96b7d-d10d-44d7-8de9-03a123f8f00e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is planning to move its data to an Amazon S3 bucket. The data must be encrypted when it is stored in the S3 bucket. Additionally, the\nencryption key must be automatically rotated every year.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Move the data to the S3 bucket. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use the built-in key rotation behavior of SSE-S3 encryption keys.",
     "incorrectAnswers": [
-      "Create an AWS Key Management Service (AWS KMS) customer managed key. Enable automatic key rotation. Set the S3 bucket’s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket.",
-      "Create an AWS Key Management Service (AWS KMS) customer managed key. Set the S3 bucket’s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket. Manually rotate the KMS key every year.",
+      "Create an AWS Key Management Service (AWS KMS) customer managed key. Enable automatic key rotation. Set the S3 bucket\u2019s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket.",
+      "Create an AWS Key Management Service (AWS KMS) customer managed key. Set the S3 bucket\u2019s default encryption behavior to use the customer managed KMS key. Move the data to the S3 bucket. Manually rotate the KMS key every year.",
       "Encrypt the data with customer key material before moving the data to the S3 bucket. Create an AWS Key Management Service (AWS KMS) key without key material. Import the customer key material into the KMS key. Enable automatic key rotation."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #202). Correct choice: A.",
@@ -397,10 +398,10 @@
       "aws-security",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "86708efa-55b2-4d93-a363-ad4c8ba3a77e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "3ff7e2af-a7fc-4f72-b3c4-a061aa71b179",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -422,10 +423,10 @@
       "ec2",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3626cb33-3ab6-406e-bc5e-f369dc7d97c5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "403aa8e3-fc46-43d6-bb2e-caae8dfdccf7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -445,7 +446,6 @@
       "rds",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e070e13d-9f58-4195-a1ab-1cc8dc5b4906"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

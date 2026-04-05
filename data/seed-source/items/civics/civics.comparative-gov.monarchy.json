@@ -1,10 +1,11 @@
 [
   {
+    "itemId": "f219cd0b-6510-4efe-8486-1d3e110b01b9",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
     "question": "What is a constitutional monarchy?",
-    "correctAnswer": "a system where a monarch’s powers are limited by law and elected institutions",
+    "correctAnswer": "a system where a monarch\u2019s powers are limited by law and elected institutions",
     "incorrectAnswers": [
       "rule by random lottery each year",
       "government with no written rules",
@@ -15,10 +16,10 @@
       "constitutional-monarchy",
       "civics-systems"
     ],
-    "source": "https://www.britannica.com/topic/constitutional-monarchy",
-    "seedId": "7c837f08-f743-5b71-95c9-c1b12665d052"
+    "source": "https://www.britannica.com/topic/constitutional-monarchy"
   },
   {
+    "itemId": "0c882106-4c93-4015-bb4f-d7187d57e448",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
@@ -34,10 +35,10 @@
       "parliamentary-monarchy",
       "cabinet"
     ],
-    "source": "https://www.royal.uk/",
-    "seedId": "70a35433-a8ba-5766-9c08-cd4f83599096"
+    "source": "https://www.royal.uk/"
   },
   {
+    "itemId": "5af9b651-a92c-42f6-ad9a-c7228e2c85d0",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
@@ -53,10 +54,10 @@
       "absolute-monarchy",
       "history"
     ],
-    "source": "https://www.britannica.com/topic/absolutism-political-systems",
-    "seedId": "d84d0f34-124b-504c-8256-96f6c470598e"
+    "source": "https://www.britannica.com/topic/absolutism-political-systems"
   },
   {
+    "itemId": "16beb2f1-58e7-4b00-86a7-b2f4964a668c",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
@@ -72,14 +73,14 @@
       "succession",
       "stability"
     ],
-    "source": "https://www.parliament.uk/",
-    "seedId": "a1b1a980-1b1c-5edf-9f5c-8a401f48c2f4"
+    "source": "https://www.parliament.uk/"
   },
   {
+    "itemId": "205e5757-0803-4787-b38c-74622676d2c1",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
-    "question": "In civic comparison, what is a figurehead monarch’s main public role today?",
+    "question": "In civic comparison, what is a figurehead monarch\u2019s main public role today?",
     "correctAnswer": "symbolic unity, ceremonial duties, and nonpartisan representation of the state",
     "incorrectAnswers": [
       "writing every statute personally",
@@ -91,10 +92,10 @@
       "head-of-state",
       "ceremony"
     ],
-    "source": "https://www.oecd.org/governance/",
-    "seedId": "f2efbe48-1ee6-5c31-a7d4-5320f7212c6f"
+    "source": "https://www.oecd.org/governance/"
   },
   {
+    "itemId": "4e5e138d-07b7-4d14-b8f0-737f66443351",
     "category": "civics",
     "navigationKeyword1": "comparative-gov",
     "navigationKeyword2": "monarchy",
@@ -110,7 +111,6 @@
       "hereditary",
       "republic"
     ],
-    "source": "https://www.civiced.org/",
-    "seedId": "dc6661e4-363e-5cfb-84ad-9e50e33a7687"
+    "source": "https://www.civiced.org/"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8a116094-2dcd-4db2-9a41-5dcf90c56acd",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -15,10 +16,10 @@
       "visualization",
       "charts"
     ],
-    "source": "https://en.wikipedia.org/wiki/Pie_chart#Criticism",
-    "seedId": "9f3465f5-13ba-5919-bf04-f86b3c8764e0"
+    "source": "https://en.wikipedia.org/wiki/Pie_chart#Criticism"
   },
   {
+    "itemId": "5cd8deca-b69d-4914-9c99-c2d8c9d8901b",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -34,10 +35,10 @@
       "visualization",
       "scatter"
     ],
-    "source": "https://en.wikipedia.org/wiki/Scatter_plot",
-    "seedId": "4c9692d3-f78a-5f1a-b7d9-eb63ad9bba77"
+    "source": "https://en.wikipedia.org/wiki/Scatter_plot"
   },
   {
+    "itemId": "0a6c45c6-49e7-43ca-bd1e-5b8152362787",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -53,10 +54,10 @@
       "visualization",
       "color"
     ],
-    "source": "https://colorbrewer2.org/learnmore/schemes.html",
-    "seedId": "6d979b18-30da-5ee2-bcb6-89b8e574fd6d"
+    "source": "https://colorbrewer2.org/learnmore/schemes.html"
   },
   {
+    "itemId": "90656613-3d9a-4903-b170-889e3c98b83e",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -72,10 +73,10 @@
       "visualization",
       "histogram"
     ],
-    "source": "https://matplotlib.org/stable/gallery/statistics/hist.html",
-    "seedId": "a4eb153f-1bde-5bf4-ac36-d281ec944849"
+    "source": "https://matplotlib.org/stable/gallery/statistics/hist.html"
   },
   {
+    "itemId": "232e1abb-a5a5-416a-88c7-d95eb8993cbe",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -91,10 +92,10 @@
       "visualization",
       "line-chart"
     ],
-    "source": "https://vega.github.io/vega-lite/docs/line.html",
-    "seedId": "69e204f8-6efb-5265-8b9a-de2a3f496b4c"
+    "source": "https://vega.github.io/vega-lite/docs/line.html"
   },
   {
+    "itemId": "792cad88-5fb3-4238-abcc-4d0f9da6ef1f",
     "category": "tech",
     "navigationKeyword1": "data",
     "navigationKeyword2": "visualization",
@@ -110,7 +111,6 @@
       "visualization",
       "design"
     ],
-    "source": "https://en.wikipedia.org/wiki/Chartjunk",
-    "seedId": "87676ad5-314d-5207-ae46-3b269c31d8f7"
+    "source": "https://en.wikipedia.org/wiki/Chartjunk"
   }
 ]

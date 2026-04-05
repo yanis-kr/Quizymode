@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "57dd9233-19fb-4c01-bbf3-fc18fb7ddfb8",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "history",
@@ -15,10 +16,10 @@
       "film-history",
       "silent-film"
     ],
-    "source": "https://www.britannica.com/art/silent-film",
-    "seedId": "75f6ea95-7637-5d12-b009-e976002d57fc"
+    "source": "https://www.britannica.com/art/silent-film"
   },
   {
+    "itemId": "93fbd46a-5a0e-4738-9a27-ecd2c84aa24a",
     "category": "humanities",
     "navigationKeyword1": "film",
     "navigationKeyword2": "history",
@@ -34,7 +35,6 @@
       "film-history",
       "cinema"
     ],
-    "source": "https://www.bfi.org.uk/features/brief-history-cinema",
-    "seedId": "a31fa4ed-7ddf-50b9-b0b2-61d1c3805281"
+    "source": "https://www.bfi.org.uk/features/brief-history-cinema"
   }
 ]

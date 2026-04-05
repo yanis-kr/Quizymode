@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "e4604012-bfdd-4a29-bc8a-fc8b60fdea71",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -15,10 +16,10 @@
       "usdot",
       "highways"
     ],
-    "source": "https://www.transportation.gov/mission/about-us",
-    "seedId": "3e839014-fd5f-5e2f-9b4a-dcba055b0796"
+    "source": "https://www.transportation.gov/mission/about-us"
   },
   {
+    "itemId": "d310a85f-dea6-40d5-a44b-ce10c761d205",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -34,10 +35,10 @@
       "highway-trust-fund",
       "fuel-tax"
     ],
-    "source": "https://www.fhwa.dot.gov/infrastructure/gas_tax.cfm",
-    "seedId": "89a75fc2-756b-5f17-99ea-5f8c1dbbeb9b"
+    "source": "https://www.fhwa.dot.gov/infrastructure/gas_tax.cfm"
   },
   {
+    "itemId": "a9e44b98-b79d-40b6-847d-aa69300e58f6",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -53,10 +54,10 @@
       "public-transit",
       "fta"
     ],
-    "source": "https://www.transit.dot.gov/funding",
-    "seedId": "7fce6204-97f6-55ab-b043-5b32e4b7794c"
+    "source": "https://www.transit.dot.gov/funding"
   },
   {
+    "itemId": "7a49d9f1-6312-43a0-ad94-7e5edf2dfd99",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -72,10 +73,10 @@
       "roads",
       "state-local"
     ],
-    "source": "https://www.fhwa.dot.gov/federal-aidessentials/catmod.cfm",
-    "seedId": "8f13ced5-0521-51bf-8562-af0f7b967ffd"
+    "source": "https://www.fhwa.dot.gov/federal-aidessentials/catmod.cfm"
   },
   {
+    "itemId": "92e9a261-d324-4d9b-bdc3-c4f2040647d8",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -91,10 +92,10 @@
       "faa",
       "aviation"
     ],
-    "source": "https://www.faa.gov/about/mission",
-    "seedId": "69e895fe-a9ec-569e-b9d6-961f1272a436"
+    "source": "https://www.faa.gov/about/mission"
   },
   {
+    "itemId": "eeba9579-a5a1-45d2-a8b8-b9410a0f1f16",
     "category": "civics",
     "navigationKeyword1": "public-policy",
     "navigationKeyword2": "transport",
@@ -110,7 +111,6 @@
       "passenger-rail",
       "federal-role"
     ],
-    "source": "https://www.transportation.gov/rail",
-    "seedId": "9a1f100d-99a5-50df-ad46-1c2f599b15d2"
+    "source": "https://www.transportation.gov/rail"
   }
 ]

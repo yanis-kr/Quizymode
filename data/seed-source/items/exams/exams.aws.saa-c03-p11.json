@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "10b22ab6-2153-4d04-a475-b8f4afa9088a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company hosts a marketing website in an on-premises data center. The website consists of static documents and runs on a single server. An\nadministrator updates the website content infrequently and uses an SFTP client to upload new documents.\nThe company decides to host its website on AWS and to use Amazon CloudFront. The company’s solutions architect creates a CloudFront\ndistribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the CloudFront\norigin.\nWhich solution will meet these requirements?",
+    "question": "A company hosts a marketing website in an on-premises data center. The website consists of static documents and runs on a single server. An\nadministrator updates the website content infrequently and uses an SFTP client to upload new documents.\nThe company decides to host its website on AWS and to use Amazon CloudFront. The company\u2019s solutions architect creates a CloudFront\ndistribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the CloudFront\norigin.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create a virtual server by using Amazon Lightsail. Configure the web server in the Lightsail instance. Upload website content by using an SFTP client.",
     "incorrectAnswers": [
       "Create an AWS Auto Scaling group for Amazon EC2 instances. Use an Application Load Balancer. Upload website content by using an SFTP client.",
@@ -16,14 +17,14 @@
       "aws-networking",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "9ca67c55-6414-4243-b9f0-ca83b915afea"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d2d9c9fb-56a7-46ea-bf39-bd8ac3ce58fb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were\ncreated. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 CreateImage API\noperation is called within the company’s account.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A company wants to manage Amazon Machine Images (AMIs). The company currently copies AMIs to the same AWS Region where the AMIs were\ncreated. The company needs to design an application that captures AWS API calls and sends alerts whenever the Amazon EC2 CreateImage API\noperation is called within the company\u2019s account.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Create an AWS Lambda function to query AWS CloudTrail logs and to send an alert when a CreateImage API call is detected.",
     "incorrectAnswers": [
       "Configure AWS CloudTrail with an Amazon Simple Notification Service (Amazon SNS) notication that occurs when updated logs are sent to Amazon S3. Use Amazon Athena to create a new table and to query on CreateImage when an API call is detected.",
@@ -39,10 +40,10 @@
       "ec2",
       "cloudtrail"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "d8863de5-62ae-4a91-bd8c-fa998d873cec"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "ac0b6463-c5ee-4712-92d7-436e50cc0fe2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -63,19 +64,19 @@
       "lambda",
       "api-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "af1b825a-eb4c-4505-b31f-60fa7c3c2b17"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "b0e015d8-eb4f-4f20-8059-6ba145d59b38",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data\nare routed through public internet routes. Only the EC2 instance can have access to upload data to the S3 bucket.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
+    "correctAnswer": "Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance\u2019s IAM role for access.",
     "incorrectAnswers": [
-      "Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
-      "Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket’s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
-      "Use the AWS provided, publicly available ip-ranges.json le to obtain the private IP address of the S3 bucket’s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access."
+      "Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance\u2019s IAM role for access.",
+      "Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket\u2019s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance\u2019s IAM role for access.",
+      "Use the AWS provided, publicly available ip-ranges.json le to obtain the private IP address of the S3 bucket\u2019s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance\u2019s IAM role for access."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #208). Correct choice: A.",
     "keywords": [
@@ -88,10 +89,10 @@
       "vpc-endpoint",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "db7e5cf1-6b89-435f-9915-cc9b6a957904"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "96222a49-58ce-4c28-88ca-bf9fd7e7aef1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -112,15 +113,15 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "2d37390b-83aa-4526-82af-0da5a490d4ee"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a0a2f40e-38b9-431b-ae34-c5da6dd01324",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company offers a food delivery service that is growing rapidly. Because of the growth, the company’s order processing system is experiencing\nscaling profilems during peak traffic hours. The current architecture includes the following:\n• A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application\n• Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulll orders\nThe order collection process occurs quickly, but the order fulllment process can take longer. Data must not be lost because of a scaling event.\nA solutions architect must ensure that the order collection process and the order fulllment process can both scale properly during peak traffic\nhours. The solution must optimize utilization of the company’s AWS resources.\nWhich solution meets these requirements?",
-    "correctAnswer": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group’s minimum capacity according to peak workload values.",
+    "question": "A company offers a food delivery service that is growing rapidly. Because of the growth, the company\u2019s order processing system is experiencing\nscaling profilems during peak traffic hours. The current architecture includes the following:\n\u2022 A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application\n\u2022 Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulll orders\nThe order collection process occurs quickly, but the order fulllment process can take longer. Data must not be lost because of a scaling event.\nA solutions architect must ensure that the order collection process and the order fulllment process can both scale properly during peak traffic\nhours. The solution must optimize utilization of the company\u2019s AWS resources.\nWhich solution meets these requirements?",
+    "correctAnswer": "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group\u2019s minimum capacity according to peak workload values.",
     "incorrectAnswers": [
       "Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure a CloudWatch alarm to invoke an Amazon Simple Notification Service (Amazon SNS) topic that creates additional Auto Scaling groups on demand.",
       "Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulllment. Configure the EC2 instances to poll their respective queue. Scale the Auto Scaling groups based on notications that the queues send.",
@@ -135,14 +136,14 @@
       "auto-scaling",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f0300c45-6925-430d-b87b-78e2c35cdcb8"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "a6ba9928-c247-42b0-8a6c-99e2d41bec03",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company hosts multiple production applications. One of the applications consists of resources from Amazon EC2, AWS Lambda, Amazon RDS,\nAmazon Simple Notification Service (Amazon SNS), and Amazon Simple Queue Service (Amazon SQS) across multiple AWS Regions. All company\nresources are tagged with a tag name of “application” and a value that corresponds to each application. A solutions architect must provide the\nquickest solution for identifying all of the tagged components.\nWhich solution meets these requirements?",
+    "question": "A company hosts multiple production applications. One of the applications consists of resources from Amazon EC2, AWS Lambda, Amazon RDS,\nAmazon Simple Notification Service (Amazon SNS), and Amazon Simple Queue Service (Amazon SQS) across multiple AWS Regions. All company\nresources are tagged with a tag name of \u201capplication\u201d and a value that corresponds to each application. A solutions architect must provide the\nquickest solution for identifying all of the tagged components.\nWhich solution meets these requirements?",
     "correctAnswer": "Use AWS CloudTrail to generate a list of resources with the application tag.",
     "incorrectAnswers": [
       "Use the AWS CLI to query each service across all Regions to report the tagged components.",
@@ -161,10 +162,10 @@
       "sqs",
       "sns"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "39a25cda-7763-4d22-b5b7-15c31f326aa7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "674f27b4-7588-4199-99a4-7ab692cdcfad",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -181,10 +182,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bff9d021-9d82-44f7-909b-4a7a132b096c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d6b10ab4-bf92-4eef-8c22-e53f450fd376",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -203,14 +204,14 @@
       "alb",
       "waf"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "017f1ff8-29d3-4a33-8e29-d405ea92d5e3"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "788b008f-ab4b-48a6-9e0a-02278f68c29e",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s reporting system delivers hundreds of .csv les to an Amazon S3 bucket each day. The company must convert these les to Apache\nParquet format and must store the les in a transformed data bucket.\nWhich solution will meet these requirements with the LEAST development effort?",
+    "question": "A company\u2019s reporting system delivers hundreds of .csv les to an Amazon S3 bucket each day. The company must convert these les to Apache\nParquet format and must store the les in a transformed data bucket.\nWhich solution will meet these requirements with the LEAST development effort?",
     "correctAnswer": "Create an Amazon EMR cluster with Apache Spark installed. Write a Spark application to transform the data. Use EMR File System (EMRFS) to write les to the transformed data bucket.",
     "incorrectAnswers": [
       "Create an AWS Glue crawler to discover the data. Create an AWS Glue extraffict, transform, and load (ETL) job to transform the data. Specify the transformed data bucket in the output step.",
@@ -225,10 +226,10 @@
       "s3",
       "emr"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "92761fa0-2720-4fa2-a14e-9e42abf193bd"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "5fb998c4-036d-4407-8bc9-17193ee67a56",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -247,10 +248,10 @@
       "glacier",
       "snowball"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5e566f7a-877b-4445-84dc-e34653d70d48"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "73464b11-9912-4f82-9960-4b36ea0a6cd3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -259,7 +260,7 @@
     "incorrectAnswers": [
       "Turn on the default encryption settings for the S3 bucket. Use the S3 Inventory feature to create a .csv le that lists the unencrypted objects. Run an S3 Batch Operations job that uses the copy command to encrypt those objects.",
       "Create a new encryption key by using AWS Key Management Service (AWS KMS). Change the settings on the S3 bucket to use server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Turn on versioning for the S3 bucket.",
-      "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket’s objects. Sort by the encryption eld. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
+      "Navigate to Amazon S3 in the AWS Management Console. Browse the S3 bucket\u2019s objects. Sort by the encryption eld. Select each unencrypted object. Use the Modify button to apply default encryption settings to every unencrypted object in the S3 bucket."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #216). Correct choice: A.",
     "keywords": [
@@ -270,10 +271,10 @@
       "cloudfront",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1b76c08e-e296-4a2c-927d-b81d84c15c9c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "77bb1892-663f-4196-b0c0-d72c536c96ac",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -295,14 +296,14 @@
       "route53",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "721b500d-53ea-4555-901f-ba5737973e4f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8a9621aa-dfb8-404e-aed6-2dd3748dd5e3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company’s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2\ninstances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the\napplication performance degraded. Users are reporting delays when the users attempt to access the application.\nWhich solution will resolve these issues in the MOST operationally efficient way?",
+    "question": "A company\u2019s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2\ninstances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the\napplication performance degraded. Users are reporting delays when the users attempt to access the application.\nWhich solution will resolve these issues in the MOST operationally efficient way?",
     "correctAnswer": "Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Deploy the Amazon CloudWatch agent on the EC2 instances to generate custom application latency metrics for future capacity planning.",
     "incorrectAnswers": [
       "Replace the EC2 instances with T3 EC2 instances that run in an Auto Scaling group. Make the changes by using the AWS Management Console.",
@@ -317,10 +318,10 @@
       "ec2",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e1bc8100-202d-4ab9-863a-b0a38f64fbfb"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "c43978fe-21d8-49da-87bd-cf7faede8638",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -339,10 +340,10 @@
       "api-gateway",
       "glue"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bcd271d3-8c7d-4ef7-9502-3b6503e5a9f9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "dac89035-b437-49c8-bee4-56a1184cee10",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -361,19 +362,19 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "321f07ef-dcab-475d-8e5d-49af296ac735"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "d4c4a386-eac5-4c3d-885d-df2ac9df66ad",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has hired an external vendor to perform work in the company’s AWS account. The vendor uses an automated tool that is hosted in an\nAWS account that the vendor owns. The vendor does not have IAM access to the company’s AWS account.\nHow should a solutions architect grant this access to the vendor?",
-    "correctAnswer": "Create an IAM role in the company’s account to delegate access to the vendor’s IAM role. Attach the appropriate IAM policies to the role for the permissions that the vendor requires.",
+    "question": "A company has hired an external vendor to perform work in the company\u2019s AWS account. The vendor uses an automated tool that is hosted in an\nAWS account that the vendor owns. The vendor does not have IAM access to the company\u2019s AWS account.\nHow should a solutions architect grant this access to the vendor?",
+    "correctAnswer": "Create an IAM role in the company\u2019s account to delegate access to the vendor\u2019s IAM role. Attach the appropriate IAM policies to the role for the permissions that the vendor requires.",
     "incorrectAnswers": [
-      "Create an IAM user in the company’s account with a password that meets the password complexity requirements. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.",
-      "Create an IAM group in the company’s account. Add the tool’s IAM user from the vendor account to the group. Attach the appropriate IAM policies to the group for the permissions that the vendor requires.",
-      "Create a new identity provider by choosing “AWS account” as the provider type in the IAM console. Supply the vendor’s AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
+      "Create an IAM user in the company\u2019s account with a password that meets the password complexity requirements. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.",
+      "Create an IAM group in the company\u2019s account. Add the tool\u2019s IAM user from the vendor account to the group. Attach the appropriate IAM policies to the group for the permissions that the vendor requires.",
+      "Create a new identity provider by choosing \u201cAWS account\u201d as the provider type in the IAM console. Supply the vendor\u2019s AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #222). Correct choice: A.",
     "keywords": [
@@ -381,10 +382,10 @@
       "aws-security",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "e34d932a-65ee-44b8-9119-156ad61f6fbe"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "8066dcf6-536d-4ecb-a9bb-d8f32879f825",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -403,15 +404,15 @@
       "s3",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "bf324629-4443-49b6-89b9-18a7fe351a95"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4c3be238-5324-4e01-bf10-b391c2aeea0b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company needs to retain its AWS CloudTrail logs for 3 years. The company is enforcing CloudTrail across a set of AWS accounts by using AWS\nOrganizations from the parent account. The CloudTrail target S3 bucket is congured with S3 Versioning enabled. An S3 Lifecycle policy is in\nplace to delete current objects after 3 years.\nAfter the fourth year of use of the S3 bucket, the S3 bucket metrics show that the number of objects has continued to rise. However, the number\nof new CloudTrail logs that are delivered to the S3 bucket has remained consistent.\nWhich solution will delete objects that are older than 3 years in the MOST cost-effective manner?",
-    "correctAnswer": "Configure the organization’s centralized CloudTrail trail to expire objects after 3 years.",
+    "correctAnswer": "Configure the organization\u2019s centralized CloudTrail trail to expire objects after 3 years.",
     "incorrectAnswers": [
       "Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
       "Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.",
@@ -426,10 +427,10 @@
       "organizations",
       "cloudtrail"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "37d6653c-69d9-4604-b208-3081bf60e460"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7a6b8c67-f1f5-4a97-9494-ec13d8aad57d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -447,7 +448,6 @@
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "3860a238-4686-4d7f-96ee-85a484a203c7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

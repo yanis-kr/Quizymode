@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "8f3b8176-749c-42de-a03e-de8498ea01a9",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -7,7 +8,7 @@
     "correctAnswer": "The behavior of the economy as a whole, like inflation, unemployment, and growth.",
     "incorrectAnswers": [
       "How one specific grocery store sets prices for a single product",
-      "How to calculate a company’s chart of accounts",
+      "How to calculate a company\u2019s chart of accounts",
       "The day-to-day bookkeeping steps in an accounting system"
     ],
     "explanation": "Macroeconomics studies economy-wide outcomes and relationships, not single-market details.",
@@ -16,10 +17,10 @@
       "inflation",
       "unemployment"
     ],
-    "source": "https://www.investopedia.com/terms/m/macroeconomics.asp",
-    "seedId": "e45f5c2b-d782-5c53-909e-4cf31ec1c656"
+    "source": "https://www.investopedia.com/terms/m/macroeconomics.asp"
   },
   {
+    "itemId": "2cd8b21d-2292-4853-925f-72866bd6a01e",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -27,7 +28,7 @@
     "correctAnswer": "The market value of final goods and services produced within a country over a period.",
     "incorrectAnswers": [
       "The amount of money a central bank prints each year",
-      "The total value of a country’s stocks and bonds only",
+      "The total value of a country\u2019s stocks and bonds only",
       "The payroll cost of all employers in the economy"
     ],
     "explanation": "GDP is often used as a headline indicator of economic output and activity.",
@@ -36,10 +37,10 @@
       "economic-output",
       "growth"
     ],
-    "source": "https://www.imf.org/en/Topics/gross-domestic-product-gdp",
-    "seedId": "594eef28-cd7a-55f0-85aa-62ff7a32f215"
+    "source": "https://www.imf.org/en/Topics/gross-domestic-product-gdp"
   },
   {
+    "itemId": "a02ec093-d54a-4b33-b172-dd680e9d8f3f",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -56,10 +57,10 @@
       "labor-market",
       "indicators"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "99f1aa85-bcb6-561c-adb4-3036ce9db549"
+    "source": "https://www.oecd.org/"
   },
   {
+    "itemId": "b6816a94-7dfc-484e-82ec-569deb8eb1bf",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -76,10 +77,10 @@
       "expansion",
       "contraction"
     ],
-    "source": "https://www.investopedia.com/terms/b/businesscycle.asp",
-    "seedId": "521b0434-17df-5229-9189-2ea70054d6ef"
+    "source": "https://www.investopedia.com/terms/b/businesscycle.asp"
   },
   {
+    "itemId": "dfbe06cf-3784-46c0-837a-cc5327912c1d",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -96,10 +97,10 @@
       "spending",
       "price-levels"
     ],
-    "source": "https://www.imf.org/en/Topics",
-    "seedId": "a7f2c364-a129-5b8e-87ff-cc19d1503d61"
+    "source": "https://www.imf.org/en/Topics"
   },
   {
+    "itemId": "f7700e94-f39d-4f7e-9973-9bfccaf74c11",
     "category": "business",
     "navigationKeyword1": "economics",
     "navigationKeyword2": "macro",
@@ -108,7 +109,7 @@
     "incorrectAnswers": [
       "Only the number of employees a company hires",
       "Only whether a product is shipped on time",
-      "Only the accounting system’s file format"
+      "Only the accounting system\u2019s file format"
     ],
     "explanation": "Inflation reduces purchasing power because each unit of currency buys fewer goods and services.",
     "keywords": [
@@ -116,7 +117,6 @@
       "purchasing-power",
       "prices"
     ],
-    "source": "https://www.oecd.org/",
-    "seedId": "a70f7ff9-c1eb-5837-b6a6-39de315d3f2f"
+    "source": "https://www.oecd.org/"
   }
 ]

@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "b6432889-f346-4a81-a5da-690e9cad47b0",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
-    "question": "What is the difference between authentication and authorization?",
+    "question": "In security IAM, what is the difference between authentication and authorization?",
     "correctAnswer": "Authentication proves identity; authorization decides what that identity may do",
     "incorrectAnswers": [
       "They are identical terms",
@@ -15,10 +16,10 @@
       "security",
       "authn-authz"
     ],
-    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
-    "seedId": "6bc18f9c-4820-5463-be2d-42aca92753a5"
+    "source": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
   },
   {
+    "itemId": "5128b911-9eb1-4dae-ba61-f21bccc09039",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
@@ -34,10 +35,10 @@
       "security",
       "oauth"
     ],
-    "source": "https://www.rfc-editor.org/rfc/rfc6749",
-    "seedId": "8f4f4de5-dbaf-5023-baca-dbe5ab088cd7"
+    "source": "https://www.rfc-editor.org/rfc/rfc6749"
   },
   {
+    "itemId": "c64e5d46-c321-4581-8f39-e4b1b995df6e",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
@@ -53,14 +54,14 @@
       "security",
       "mfa"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/multi-factor-authentication",
-    "seedId": "91354160-18c4-52de-888d-427f174ab1ee"
+    "source": "https://csrc.nist.gov/glossary/term/multi-factor-authentication"
   },
   {
+    "itemId": "ac10f52b-ced6-43fc-b740-8d9d8360073f",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
-    "question": "What does role-based access control (RBAC) assign permissions to?",
+    "question": "In security IAM, what does role-based access control (RBAC) assign permissions to?",
     "correctAnswer": "Roles that users inherit instead of ad hoc rights per user",
     "incorrectAnswers": [
       "Only individual IP packets",
@@ -72,10 +73,10 @@
       "security",
       "rbac"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/role-based-access-control",
-    "seedId": "dab4d576-7da5-59ae-b796-df8af1e86531"
+    "source": "https://csrc.nist.gov/glossary/term/role-based-access-control"
   },
   {
+    "itemId": "bfa34d5d-2cef-456f-a5ef-3c104860fc58",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
@@ -91,10 +92,10 @@
       "security",
       "saml"
     ],
-    "source": "https://en.wikipedia/wiki/Security_Assertion_Markup_Language",
-    "seedId": "3fe33e5c-abf6-5562-a939-bd65515073d2"
+    "source": "https://en.wikipedia/wiki/Security_Assertion_Markup_Language"
   },
   {
+    "itemId": "aef0ccff-47d2-4cff-96f1-29cd05102844",
     "category": "tech",
     "navigationKeyword1": "security",
     "navigationKeyword2": "iam",
@@ -110,7 +111,6 @@
       "security",
       "sso"
     ],
-    "source": "https://en.wikipedia.org/wiki/Single_sign-on",
-    "seedId": "a88a0f62-1c0d-5028-a7e6-923405e8eb2f"
+    "source": "https://en.wikipedia.org/wiki/Single_sign-on"
   }
 ]

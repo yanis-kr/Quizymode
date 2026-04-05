@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "b6a64559-c1a1-41a8-b02e-954b3e0f355e",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "color",
@@ -15,10 +16,10 @@
       "visual-art-color",
       "complementary-colors"
     ],
-    "source": "https://www.britannica.com/art/color",
-    "seedId": "16ba2085-bfff-5504-b52b-64d446e4d811"
+    "source": "https://www.britannica.com/art/color"
   },
   {
+    "itemId": "3a0801b3-7154-49f4-898d-d21961ea8507",
     "category": "humanities",
     "navigationKeyword1": "visual-art",
     "navigationKeyword2": "color",
@@ -34,7 +35,6 @@
       "visual-art-color",
       "warm-colors"
     ],
-    "source": "https://www.tate.org.uk/art/art-terms/c/colour",
-    "seedId": "da491e72-41b2-5248-a701-0d8d7083b74b"
+    "source": "https://www.tate.org.uk/art/art-terms/c/colour"
   }
 ]

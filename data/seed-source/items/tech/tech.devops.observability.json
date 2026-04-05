@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "83696f08-9bb4-437d-9801-bea47284c848",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -15,10 +16,10 @@
       "observability",
       "signals"
     ],
-    "source": "https://opentelemetry.io/docs/concepts/signals/",
-    "seedId": "5e13ed97-1bf3-54d1-9f8d-24ade0116d0b"
+    "source": "https://opentelemetry.io/docs/concepts/signals/"
   },
   {
+    "itemId": "bb06086b-8e05-490f-a14f-c1391b8d6915",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -34,10 +35,10 @@
       "observability",
       "metrics"
     ],
-    "source": "https://prometheus.io/docs/concepts/metric_types/",
-    "seedId": "d75dd2bb-de30-55a9-9188-04d04fcba3af"
+    "source": "https://prometheus.io/docs/concepts/metric_types/"
   },
   {
+    "itemId": "f98ea636-628a-4065-bdf9-5cfc958c42d2",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -53,10 +54,10 @@
       "observability",
       "tracing"
     ],
-    "source": "https://opentelemetry.io/docs/concepts/signals/traces/",
-    "seedId": "284d617b-b111-50cf-8f44-b5ebd699f75e"
+    "source": "https://opentelemetry.io/docs/concepts/signals/traces/"
   },
   {
+    "itemId": "5fc296b0-2093-45d0-9841-890e73cb7a36",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -72,10 +73,10 @@
       "observability",
       "logging"
     ],
-    "source": "https://www.elastic.co/guide/en/ecs/current/ecs-base.html",
-    "seedId": "d4906d55-5cf1-53c5-b7ae-9b3a0eae9343"
+    "source": "https://www.elastic.co/guide/en/ecs/current/ecs-base.html"
   },
   {
+    "itemId": "3ce7ed53-60b8-468c-9e33-fff011d36103",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -91,10 +92,10 @@
       "observability",
       "cardinality"
     ],
-    "source": "https://prometheus.io/docs/practices/naming/#labels",
-    "seedId": "9150d8ab-87b4-5dfc-a01b-31e26711e142"
+    "source": "https://prometheus.io/docs/practices/naming/#labels"
   },
   {
+    "itemId": "80f1a563-b76d-468d-96c9-2bcfcd7c9a6e",
     "category": "tech",
     "navigationKeyword1": "devops",
     "navigationKeyword2": "observability",
@@ -110,7 +111,6 @@
       "observability",
       "opentelemetry"
     ],
-    "source": "https://opentelemetry.io/docs/what-is-opentelemetry/",
-    "seedId": "bfd62c37-6a71-5dca-bc3a-25187579bc95"
+    "source": "https://opentelemetry.io/docs/what-is-opentelemetry/"
   }
 ]

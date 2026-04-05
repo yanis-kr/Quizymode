@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "53fb43c9-ce6b-4132-85f6-885a84e0ec21",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -16,10 +17,10 @@
       "ioc",
       "cisco"
     ],
-    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise",
-    "seedId": "94c9d6d5-b284-497e-841b-03f58108aa86"
+    "source": "https://www.cisa.gov/news-events/news/understanding-indicators-compromise"
   },
   {
+    "itemId": "3adf1ae9-1c24-4d78-9247-2e34cf594f04",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -36,10 +37,10 @@
       "siem",
       "cisco"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview",
-    "seedId": "7a96505c-fe8b-4f82-9383-4f7b31563c50"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/overview"
   },
   {
+    "itemId": "7578fe05-9dcd-4315-a12b-2deefb7b772e",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -56,10 +57,10 @@
       "pcap",
       "cisco"
     ],
-    "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html",
-    "seedId": "f3daf5d5-5b61-48bc-991c-691733ac2d56"
+    "source": "https://www.wireshark.org/docs/wsug_html_chunked/ChCapCapturingSection.html"
   },
   {
+    "itemId": "6c558014-6ff2-4c67-90a5-6cd45c23867a",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -76,14 +77,14 @@
       "hashing",
       "cisco"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/hash_function",
-    "seedId": "18bcc428-e7cb-40b7-b80f-3f3beec9c2f5"
+    "source": "https://csrc.nist.gov/glossary/term/hash_function"
   },
   {
+    "itemId": "b11e68db-5ad9-400a-bfe3-679e8ec5ac2c",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
-    "question": "What is phishing?",
+    "question": "On the Cisco CyberOps exam, what is phishing?",
     "correctAnswer": "A social engineering attempt to trick users into revealing data or performing unsafe actions",
     "incorrectAnswers": [
       "A method for compressing log files",
@@ -96,10 +97,10 @@
       "phishing",
       "cisco"
     ],
-    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks",
-    "seedId": "5f338ac9-e78a-4ce6-981b-c787f4b1ee14"
+    "source": "https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks"
   },
   {
+    "itemId": "0702b800-87b3-4b74-a37f-a5fc0223ae76",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -116,10 +117,10 @@
       "detections",
       "cisco"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives",
-    "seedId": "ba1a0acf-eae6-4a7f-8f97-28bafaceba9d"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/false-positives"
   },
   {
+    "itemId": "4ebd63a9-780c-4914-8710-758092cd06bc",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -136,10 +137,10 @@
       "least-privilege",
       "cisco"
     ],
-    "source": "https://csrc.nist.gov/glossary/term/least_privilege",
-    "seedId": "19a46cf8-7408-4cbc-8640-9addde01f34f"
+    "source": "https://csrc.nist.gov/glossary/term/least_privilege"
   },
   {
+    "itemId": "8304470c-0041-4b6f-9edd-f9a63fd53719",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -156,10 +157,10 @@
       "edr",
       "cisco"
     ],
-    "source": "https://learn.microsoft.com/en-us/defender-endpoint/overview-endpoint-detection-response",
-    "seedId": "34fe8052-a4ec-4f9b-ad03-3b3ba97b5e58"
+    "source": "https://learn.microsoft.com/en-us/defender-endpoint/overview-endpoint-detection-response"
   },
   {
+    "itemId": "342e2018-15b6-48d8-988f-35722aa2c030",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -176,10 +177,10 @@
       "forensics",
       "cisco"
     ],
-    "source": "https://www.justice.gov/criminal-ccips/file/442211/dl",
-    "seedId": "df61e126-beef-4ccb-ba5f-0e5b545f3128"
+    "source": "https://www.justice.gov/criminal-ccips/file/442211/dl"
   },
   {
+    "itemId": "f7f3d691-8aeb-47b4-b33b-c408a11b6e15",
     "category": "exams",
     "navigationKeyword1": "cisco",
     "navigationKeyword2": "cyberops",
@@ -196,7 +197,6 @@
       "incident-response",
       "cisco"
     ],
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions",
-    "seedId": "9cd48c99-1040-406b-8561-600ba9c01cb3"
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/playbook-triggers-actions"
   }
 ]

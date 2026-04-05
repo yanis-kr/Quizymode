@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "be3a653d-24db-4342-96d5-29dc7b523973",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "writing",
@@ -16,10 +17,10 @@
       "transitions",
       "grammar"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/practice-preparation",
-    "seedId": "7dd3a981-cd92-447c-b235-a8c1d79c7625"
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
   },
   {
+    "itemId": "94d9d0b6-c3b3-4587-a428-c0a880966d2c",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "writing",
@@ -36,10 +37,10 @@
       "parallel-structure",
       "grammar"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/practice-preparation",
-    "seedId": "c360a719-7114-4d33-bd67-b76ed27fa404"
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
   },
   {
+    "itemId": "77a67669-c645-4a44-ad6e-f369a3cfbc52",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "writing",
@@ -56,10 +57,10 @@
       "boundaries",
       "grammar"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/practice-preparation",
-    "seedId": "70771e28-191d-4474-97d5-0019e504e9d4"
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
   },
   {
+    "itemId": "98827f6c-7070-4b0e-941a-8b5bf6a20fd3",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "writing",
@@ -76,10 +77,10 @@
       "word-choice",
       "grammar"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/practice-preparation",
-    "seedId": "ff51385e-b907-4263-9250-323c34440ae2"
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
   },
   {
+    "itemId": "a07bab15-c05c-4ccf-94e4-b6a5959d932b",
     "category": "exams",
     "navigationKeyword1": "sat",
     "navigationKeyword2": "writing",
@@ -96,7 +97,6 @@
       "concision",
       "grammar"
     ],
-    "source": "https://satsuite.collegeboard.org/sat/practice-preparation",
-    "seedId": "c1e8419e-8479-44b7-8d50-6005fca75eaf"
+    "source": "https://satsuite.collegeboard.org/sat/practice-preparation"
   }
 ]

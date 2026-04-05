@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "a7bd9902-87bf-41ab-bac2-7b0a4530c991",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -10,16 +11,16 @@
       "California",
       "Montana"
     ],
-    "explanation": "Alaska’s land area is larger than any other state’s in Census Bureau measurements.",
+    "explanation": "Alaska\u2019s land area is larger than any other state\u2019s in Census Bureau measurements.",
     "keywords": [
       "states",
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
-    "seedId": "6dd46a20-4aa3-4af1-85c6-912275d1b53f"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
   },
   {
+    "itemId": "f2e176b3-08e9-4d69-ba9f-906cc1427e1f",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -30,16 +31,16 @@
       "Connecticut",
       "New Jersey"
     ],
-    "explanation": "Rhode Island’s total area is the smallest among the 50 states in Census tables.",
+    "explanation": "Rhode Island\u2019s total area is the smallest among the 50 states in Census tables.",
     "keywords": [
       "states",
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
-    "seedId": "7c5199fb-0f35-4a84-aeb9-907c9c28445d"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
   },
   {
+    "itemId": "7854ba68-2373-4ffc-a193-a813d467bfd7",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -56,10 +57,10 @@
       "us-states",
       "land-area"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html",
-    "seedId": "1a09e79e-941c-429e-be33-e1fadc3c96fc"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"
   },
   {
+    "itemId": "1554b483-9068-4d41-acac-709cc05acb1b",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -76,10 +77,10 @@
       "us-states",
       "population"
     ],
-    "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html",
-    "seedId": "876652b7-631a-47c0-845e-93742a700b8c"
+    "source": "https://www.census.gov/data/tables/2020/dec/2020-apportionment-data.html"
   },
   {
+    "itemId": "22886839-a037-4edd-a23a-4889c7ccbe52",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -96,10 +97,10 @@
       "us-states",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Lake-Michigan",
-    "seedId": "2c1d57b0-709d-4e65-94af-5b0720c19572"
+    "source": "https://www.britannica.com/place/Lake-Michigan"
   },
   {
+    "itemId": "fcc6dfc8-fa9c-4dbb-9645-3e212f306a13",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -116,10 +117,10 @@
       "us-states",
       "borders"
     ],
-    "source": "https://www.britannica.com/place/Four-Corners",
-    "seedId": "0bba2b4b-7840-45ba-827c-eb8140822520"
+    "source": "https://www.britannica.com/place/Four-Corners"
   },
   {
+    "itemId": "a96f7add-40b4-411d-820f-e010700c893b",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -136,10 +137,10 @@
       "us-states",
       "pacific"
     ],
-    "source": "https://www.britannica.com/place/Hawaii-state",
-    "seedId": "3413a643-c5ab-4e5b-8af0-1f1fe5ca878c"
+    "source": "https://www.britannica.com/place/Hawaii-state"
   },
   {
+    "itemId": "fc06a641-a73c-49e7-b798-1cc288996bc4",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -156,10 +157,10 @@
       "us-states",
       "state-names"
     ],
-    "source": "https://www.britannica.com/place/Washington-state",
-    "seedId": "81d3d69a-a314-4dc3-9778-35205d3c73fa"
+    "source": "https://www.britannica.com/place/Washington-state"
   },
   {
+    "itemId": "fce93775-c825-47ee-9e3c-e9202ea05972",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -170,16 +171,16 @@
       "Minnesota",
       "Ohio"
     ],
-    "explanation": "Michigan’s two peninsulas are linked by the Mackinac Bridge.",
+    "explanation": "Michigan\u2019s two peninsulas are linked by the Mackinac Bridge.",
     "keywords": [
       "states",
       "us-states",
       "great-lakes"
     ],
-    "source": "https://www.britannica.com/place/Michigan",
-    "seedId": "e04a18f4-9b14-4f3f-a36b-f9eb799a7d15"
+    "source": "https://www.britannica.com/place/Michigan"
   },
   {
+    "itemId": "70ca4773-a659-4565-ad1a-9abe781a80f1",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -196,10 +197,10 @@
       "us-states",
       "counties"
     ],
-    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html",
-    "seedId": "57913170-9114-4184-8aa7-4c03a263f635"
+    "source": "https://www.census.gov/geographies/reference-files/2010/geo/state-local-geo-guides-2010/texas.html"
   },
   {
+    "itemId": "0ba3b47d-6289-4b7b-9adc-90086d69dea8",
     "category": "geography",
     "navigationKeyword1": "us",
     "navigationKeyword2": "states",
@@ -210,13 +211,12 @@
       "California",
       "New York"
     ],
-    "explanation": "Nebraska’s Unicameral is the sole single-chamber state legislature in the United States.",
+    "explanation": "Nebraska\u2019s Unicameral is the sole single-chamber state legislature in the United States.",
     "keywords": [
       "states",
       "us-states",
       "nebraska"
     ],
-    "source": "https://www.britannica.com/place/Nebraska-state",
-    "seedId": "719809a7-0c64-49e4-b416-1bd7acaf694a"
+    "source": "https://www.britannica.com/place/Nebraska-state"
   }
 ]

@@ -1,9 +1,10 @@
 [
   {
+    "itemId": "43f84fbc-abc2-4e5a-96ad-e26a87fdac5d",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
-    "question": "Nobel’s Marie Curie facts note she shared the 1903 Physics Prize for work on radiation phenomena following whose discovery?",
+    "question": "Nobel\u2019s Marie Curie facts note she shared the 1903 Physics Prize for work on radiation phenomena following whose discovery?",
     "correctAnswer": "Henri Becquerel",
     "incorrectAnswers": [
       "Isaac Newton",
@@ -15,29 +16,29 @@
       "physics",
       "nobel"
     ],
-    "source": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/",
-    "seedId": "02c08543-64b7-52a7-ae1b-51feeeac095b"
+    "source": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/"
   },
   {
+    "itemId": "4d6c22c7-c88a-4f06-b502-4a21bde8b796",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
-    "question": "Nobel’s Einstein facts page lists his 1921 Physics Prize as especially tied to what law?",
+    "question": "Nobel\u2019s Einstein facts page lists his 1921 Physics Prize as especially tied to what law?",
     "correctAnswer": "law of the photoelectric effect",
     "incorrectAnswers": [
       "law of gravitation",
       "laws of motion",
-      "Snell’s law"
+      "Snell\u2019s law"
     ],
     "explanation": "Einstein's 1921 Nobel Prize recognized his explanation of the photoelectric effect.",
     "keywords": [
       "physics",
       "nobel"
     ],
-    "source": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
-    "seedId": "4c58f7b6-8798-5ade-9a77-7851675db752"
+    "source": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/"
   },
   {
+    "itemId": "5a6092ed-0bad-45e3-8a11-245630723d7e",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -48,15 +49,15 @@
       "neon tubes only",
       "arc lamps only"
     ],
-    "explanation": "Edison’s work on practical incandescent lighting.",
+    "explanation": "Edison\u2019s work on practical incandescent lighting.",
     "keywords": [
       "electricity",
       "patents"
     ],
-    "source": "https://www.britannica.com/biography/Thomas-Edison",
-    "seedId": "0f6f363f-b2c2-55bd-b2fd-5371c0a643e2"
+    "source": "https://www.britannica.com/biography/Thomas-Edison"
   },
   {
+    "itemId": "d2b14b1d-1041-40d3-a780-b13b52bb5058",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -72,10 +73,10 @@
       "telecommunications",
       "history"
     ],
-    "source": "https://www.britannica.com/biography/Alexander-Graham-Bell",
-    "seedId": "b821f212-0582-528d-bc9f-0b8d06cac7c9"
+    "source": "https://www.britannica.com/biography/Alexander-Graham-Bell"
   },
   {
+    "itemId": "5c6b0350-b321-4697-a556-3a2e3e69a68a",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -91,14 +92,14 @@
       "aviation",
       "history"
     ],
-    "source": "https://www.britannica.com/biography/Wright-brothers",
-    "seedId": "fa6c8995-b743-5973-8432-d0b77698bd78"
+    "source": "https://www.britannica.com/biography/Wright-brothers"
   },
   {
+    "itemId": "577d2a65-fc53-471e-911e-53931add453b",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
-    "question": "Which inventor’s DC systems is associated with Nikola Tesla with alternating-current systems competing?",
+    "question": "Which inventor\u2019s DC systems is associated with Nikola Tesla with alternating-current systems competing?",
     "correctAnswer": "Thomas Edison",
     "incorrectAnswers": [
       "James Watt",
@@ -110,10 +111,10 @@
       "electricity",
       "engineering"
     ],
-    "source": "https://www.britannica.com/biography/Nikola-Tesla",
-    "seedId": "b7f7c278-2d1c-5596-a513-a6191fee59b0"
+    "source": "https://www.britannica.com/biography/Nikola-Tesla"
   },
   {
+    "itemId": "65afeaa8-9c3e-4749-9884-a970c990db15",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -129,10 +130,10 @@
       "printing",
       "history"
     ],
-    "source": "https://www.britannica.com/biography/Johannes-Gutenberg",
-    "seedId": "67937cf3-2ad9-5207-9d5c-051c596fa0b6"
+    "source": "https://www.britannica.com/biography/Johannes-Gutenberg"
   },
   {
+    "itemId": "17770f1f-ea82-4ed5-91d6-cbe9a408ac2a",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -148,10 +149,10 @@
       "internet",
       "web"
     ],
-    "source": "https://www.britannica.com/biography/Tim-Berners-Lee",
-    "seedId": "33c2f740-3302-5137-b616-689150f97af3"
+    "source": "https://www.britannica.com/biography/Tim-Berners-Lee"
   },
   {
+    "itemId": "723ae053-b318-4afb-aa0f-df72a832682f",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -162,15 +163,15 @@
       "cotton gin",
       "telephone"
     ],
-    "explanation": "Watt’s steam-engine improvements.",
+    "explanation": "Watt\u2019s steam-engine improvements.",
     "keywords": [
       "industrial-revolution",
       "engineering"
     ],
-    "source": "https://www.britannica.com/biography/James-Watt",
-    "seedId": "beb3fef5-39a2-5053-947a-01f347cc8588"
+    "source": "https://www.britannica.com/biography/James-Watt"
   },
   {
+    "itemId": "751bdf55-418d-4f4b-a003-13056d1ad490",
     "category": "trivia",
     "navigationKeyword1": "famous-people",
     "navigationKeyword2": "inventors",
@@ -186,7 +187,6 @@
       "agriculture",
       "science"
     ],
-    "source": "https://www.britannica.com/biography/George-Washington-Carver",
-    "seedId": "139c053b-6e61-50d6-a360-25209d043420"
+    "source": "https://www.britannica.com/biography/George-Washington-Carver"
   }
 ]

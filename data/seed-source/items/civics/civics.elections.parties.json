@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "857c3e77-e260-4cc0-9945-018fc4c24049",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -15,10 +16,10 @@
       "political-parties",
       "constitution"
     ],
-    "source": "https://www.usa.gov/political-parties",
-    "seedId": "54bbda32-1f9d-55fe-be76-a2254a69887b"
+    "source": "https://www.usa.gov/political-parties"
   },
   {
+    "itemId": "e69885f0-d8c3-42c2-a3b6-f12b482f6e45",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -34,10 +35,10 @@
       "ballot-access",
       "third-parties"
     ],
-    "source": "https://www.law.cornell.edu/wex/elections",
-    "seedId": "e813454e-ecbf-5309-a7e5-22d87fb37119"
+    "source": "https://www.law.cornell.edu/wex/elections"
   },
   {
+    "itemId": "dbad5363-dadb-4ef4-a360-7377bbef38f4",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -53,10 +54,10 @@
       "fec",
       "party-committees"
     ],
-    "source": "https://www.fec.gov/help-candidates-and-committees/guides/party-committees/",
-    "seedId": "c6677d15-317c-50c6-91fa-2942393f54ed"
+    "source": "https://www.fec.gov/help-candidates-and-committees/guides/party-committees/"
   },
   {
+    "itemId": "c66eab36-416b-4b72-8b7c-b8b58a843f3a",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -72,10 +73,10 @@
       "primary-elections",
       "party-affiliation"
     ],
-    "source": "https://www.law.cornell.edu/wex/elections",
-    "seedId": "c7bcd184-b953-55bf-b351-65970c4418b8"
+    "source": "https://www.law.cornell.edu/wex/elections"
   },
   {
+    "itemId": "c5f78812-2018-4248-a31b-571198129deb",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -91,10 +92,10 @@
       "national-conventions",
       "nominations"
     ],
-    "source": "https://www.usa.gov/presidential-election-process",
-    "seedId": "795ca3b6-1427-554e-b3f1-10c128bf1c3b"
+    "source": "https://www.usa.gov/presidential-election-process"
   },
   {
+    "itemId": "64edb3b5-11fe-4bfa-8b64-233bfa01c60b",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "parties",
@@ -110,7 +111,6 @@
       "washington",
       "parties-history"
     ],
-    "source": "https://www.senate.gov/artandhistory/history/common/generic/WashingtonFarewell.htm",
-    "seedId": "9490cd80-82e4-5d8b-b379-52098fc0818f"
+    "source": "https://www.senate.gov/artandhistory/history/common/generic/WashingtonFarewell.htm"
   }
 ]

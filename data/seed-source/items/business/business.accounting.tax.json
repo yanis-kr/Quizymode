@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "76551650-4e9e-49df-a84f-d7e16ce16ecd",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
@@ -10,20 +11,20 @@
       "Deductions increase tax refunds automatically with no limits.",
       "Credits only apply to payroll taxes, not income taxes."
     ],
-    "explanation": "Deductions affect the income base that’s taxed; credits reduce the final tax liability.",
+    "explanation": "Deductions affect the income base that\u2019s taxed; credits reduce the final tax liability.",
     "keywords": [
       "tax-deductions",
       "tax-credits",
       "tax-basics"
     ],
-    "source": "https://www.irs.gov/taxtopics/tc556",
-    "seedId": "35ea0187-2367-5792-9e0f-15302ced3415"
+    "source": "https://www.irs.gov/taxtopics/tc556"
   },
   {
+    "itemId": "cdf20149-a06c-4f9a-9b7a-203d400bb7cd",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
-    "question": "What is a “tax return” primarily used for?",
+    "question": "What is a \u201ctax return\u201d primarily used for?",
     "correctAnswer": "Reporting income and calculating the tax liability to determine what is owed or refunded.",
     "incorrectAnswers": [
       "Keeping internal budgets for management decisions only",
@@ -36,14 +37,14 @@
       "tax-liability",
       "filing"
     ],
-    "source": "https://www.irs.gov/filing",
-    "seedId": "9179f4d8-562a-54f1-a395-5b457b66940c"
+    "source": "https://www.irs.gov/filing"
   },
   {
+    "itemId": "dd8b4bac-18a3-4044-bfac-e89edf81b37e",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
-    "question": "What does “tax deferral” generally mean?",
+    "question": "What does \u201ctax deferral\u201d generally mean?",
     "correctAnswer": "Delaying when income is taxed (or when deductions reduce tax) to a later year under certain rules.",
     "incorrectAnswers": [
       "Canceling the tax entirely so no tax is ever owed",
@@ -56,14 +57,14 @@
       "timing",
       "cash-flow"
     ],
-    "source": "https://www.oecd.org/tax/tax-policy/taxation-of-savings.htm",
-    "seedId": "f87bca88-6d9f-5086-b9f9-825c78e35816"
+    "source": "https://www.oecd.org/tax/tax-policy/taxation-of-savings.htm"
   },
   {
+    "itemId": "9e7214bc-66bd-4f95-ba52-12d17ea00b6b",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
-    "question": "In general tax concepts, what is a “deductible expense”?",
+    "question": "In general tax concepts, what is a \u201cdeductible expense\u201d?",
     "correctAnswer": "An expense that qualifies under tax rules to reduce taxable income (subject to limits and conditions).",
     "incorrectAnswers": [
       "Any expense that you personally feel was useful",
@@ -76,10 +77,10 @@
       "documentation",
       "tax-base"
     ],
-    "source": "https://www.investopedia.com/terms/d/deductibleexpense.asp",
-    "seedId": "af7bda41-4c2b-5ac7-8500-2729347caee5"
+    "source": "https://www.investopedia.com/terms/d/deductibleexpense.asp"
   },
   {
+    "itemId": "31622685-3619-4e47-8240-3938d9166a99",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
@@ -90,16 +91,16 @@
       "Tax expense is only what you paid in cash that month.",
       "Tax payable refers to office rent payable to a landlord."
     ],
-    "explanation": "Accounting recognition and cash payment timing can differ, so tax expense and the tax liability don’t always match exactly.",
+    "explanation": "Accounting recognition and cash payment timing can differ, so tax expense and the tax liability don\u2019t always match exactly.",
     "keywords": [
       "tax-expense",
       "tax-payable",
       "liabilities"
     ],
-    "source": "https://www.irs.gov/businesses/small-businesses-self-employed",
-    "seedId": "9d4e144e-7d02-5ef5-a294-1e100c7ac448"
+    "source": "https://www.irs.gov/businesses/small-businesses-self-employed"
   },
   {
+    "itemId": "e19ec44e-b4c5-4626-818e-5b3b82cd0d5d",
     "category": "business",
     "navigationKeyword1": "accounting",
     "navigationKeyword2": "tax",
@@ -116,7 +117,6 @@
       "holding-period",
       "tax-rates"
     ],
-    "source": "https://www.investopedia.com/terms/c/capital-gain-tax.asp",
-    "seedId": "2980012e-49b5-5cff-8293-d29d18108e18"
+    "source": "https://www.investopedia.com/terms/c/capital-gain-tax.asp"
   }
 ]

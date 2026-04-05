@@ -152,18 +152,48 @@ describe("adminApi", () => {
   });
 
   it("previewSeedSync calls POST /admin/seed-sync/preview", async () => {
-    const data = { seedSet: "test", isInitialSeed: true, changes: [] };
+    const data = {
+      repositoryOwner: "quizymode",
+      repositoryName: "quizymode",
+      gitRef: "main",
+      resolvedCommitSha: "abc123",
+      itemsPath: "data/seed-source/items",
+      sourceFileCount: 12,
+      seedSet: "test",
+      totalItemsInPayload: 0,
+      existingItemCount: 0,
+      createdCount: 0,
+      updatedCount: 0,
+      unchangedCount: 0,
+      hasMoreChanges: false,
+      changes: [],
+    };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 1, seedSet: "test", items: [] };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
     const result = await adminApi.previewSeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/preview", payload);
     expect(result).toEqual(data);
   });
 
   it("applySeedSync calls POST /admin/seed-sync/apply", async () => {
-    const data = { seedSet: "test", isInitialSeed: false, changes: [] };
+    const data = {
+      repositoryOwner: "quizymode",
+      repositoryName: "quizymode",
+      gitRef: "main",
+      resolvedCommitSha: "abc123",
+      itemsPath: "data/seed-source/items",
+      sourceFileCount: 12,
+      seedSet: "test",
+      totalItemsInPayload: 0,
+      existingItemCount: 0,
+      createdCount: 0,
+      updatedCount: 0,
+      unchangedCount: 0,
+      hasMoreChanges: false,
+      changes: [],
+    };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 1, seedSet: "test", items: [] };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
     const result = await adminApi.applySeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/apply", payload);
     expect(result).toEqual(data);

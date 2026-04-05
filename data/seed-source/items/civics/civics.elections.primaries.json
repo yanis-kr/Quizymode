@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "ed334e48-f7d7-4161-8615-c2a77ddd8fdb",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -15,10 +16,10 @@
       "closed-primary",
       "party-rules"
     ],
-    "source": "https://www.law.cornell.edu/wex/elections",
-    "seedId": "6c4af343-9654-5151-a853-515a54f79846"
+    "source": "https://www.law.cornell.edu/wex/elections"
   },
   {
+    "itemId": "584856e2-571e-4482-b027-ee50aaed4120",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -34,10 +35,10 @@
       "open-primary",
       "voter-choice"
     ],
-    "source": "https://www.law.cornell.edu/wex/elections",
-    "seedId": "34e67c44-567b-5eef-b9c8-5e53bfd6658c"
+    "source": "https://www.law.cornell.edu/wex/elections"
   },
   {
+    "itemId": "4746f18c-5311-4f2b-967d-e6cc88de09f1",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -53,10 +54,10 @@
       "caucus",
       "primary"
     ],
-    "source": "https://www.usa.gov/presidential-election-process",
-    "seedId": "6666326a-eb5f-5e65-bfc6-59e42f754a8c"
+    "source": "https://www.usa.gov/presidential-election-process"
   },
   {
+    "itemId": "bb041223-3c2a-4450-8e7d-356134de9eeb",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -72,10 +73,10 @@
       "delegates",
       "national-convention"
     ],
-    "source": "https://www.usa.gov/presidential-election-process",
-    "seedId": "757945a7-78da-5180-81dc-963250faad5a"
+    "source": "https://www.usa.gov/presidential-election-process"
   },
   {
+    "itemId": "b6fdeb63-eecb-4027-86ca-cee4fed51828",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -91,10 +92,10 @@
       "primary-calendar",
       "state-law"
     ],
-    "source": "https://www.usa.gov/presidential-election-process",
-    "seedId": "82a5a864-6a05-5242-9b8a-fd9621f78d1c"
+    "source": "https://www.usa.gov/presidential-election-process"
   },
   {
+    "itemId": "5f6d7226-ed9e-4fc2-8e80-26017df02c94",
     "category": "civics",
     "navigationKeyword1": "elections",
     "navigationKeyword2": "primaries",
@@ -110,7 +111,6 @@
       "nonpartisan-primary",
       "top-two"
     ],
-    "source": "https://www.law.cornell.edu/wex/elections",
-    "seedId": "18b1ed6e-6aa1-5dab-b55e-2629d4543fe0"
+    "source": "https://www.law.cornell.edu/wex/elections"
   }
 ]

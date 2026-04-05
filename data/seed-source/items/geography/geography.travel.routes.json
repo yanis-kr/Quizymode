@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "0637860e-85dd-435b-9e5f-f3a27dfbebe0",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -16,30 +17,30 @@
       "silk-road",
       "trade"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "1dfe54ae-7b46-4985-8c3a-78634972852e"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "9046f3c8-a4c0-4d70-bd2c-d64a9cf2d685",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
     "question": "Which Chinese capital marks the traditional eastern origin of the overland Silk Road?",
-    "correctAnswer": "Chang’an (modern Xi’an)",
+    "correctAnswer": "Chang\u2019an (modern Xi\u2019an)",
     "incorrectAnswers": [
       "Shanghai",
       "Guangzhou",
       "Lhasa"
     ],
-    "explanation": "Britannica places the Silk Road’s start at Chang’an (Xi’an), whence caravans headed west along the Great Wall corridor.",
+    "explanation": "Britannica places the Silk Road\u2019s start at Chang\u2019an (Xi\u2019an), whence caravans headed west along the Great Wall corridor.",
     "keywords": [
       "routes",
       "xian",
       "chang-an"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "73be1301-7690-40ec-a879-4bcfc28431c8"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "32ccca94-f289-4cee-9f62-eae92ccee189",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -50,16 +51,16 @@
       "About 40,000 miles",
       "Under 100 km"
     ],
-    "explanation": "Britannica gives the caravan route’s length as about 4,000 miles (over 6,400 km) to the Levant and Anatolia.",
+    "explanation": "Britannica gives the caravan route\u2019s length as about 4,000 miles (over 6,400 km) to the Levant and Anatolia.",
     "keywords": [
       "routes",
       "distance",
       "silk-road"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "9479c5d5-c8c8-4f7f-8ddf-eb500cefb3c1"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "15316884-a79b-4fce-ab4c-d9a8844d082c",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -76,10 +77,10 @@
       "mediterranean",
       "trade"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "2a09b072-2553-4442-93b0-f47ae90ff8fd"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "d753dbe9-1875-4c34-8fc1-e7e361a0ee17",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -96,10 +97,10 @@
       "buddhism",
       "cultural-exchange"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "98989aad-5f26-4be9-9bff-f020c6b9cc0d"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "70796852-1062-4799-8b56-22cf9c628a68",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -110,16 +111,16 @@
       "Zheng He",
       "James Cook"
     ],
-    "explanation": "Britannica records Marco Polo traveling the route under Mongol rule in the 13th–14th centuries.",
+    "explanation": "Britannica records Marco Polo traveling the route under Mongol rule in the 13th\u201314th centuries.",
     "keywords": [
       "routes",
       "marco-polo",
       "mongols"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "5c12e6f3-08c4-46d6-bee7-fdec59127394"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "cb7a9124-4ec8-4d76-bc45-8e3ac8e32908",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -136,10 +137,10 @@
       "pamirs",
       "mountains"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "ad933113-6e0b-4fbe-bff5-998d8b96df0b"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "7522e1bf-bfad-4a98-9e01-2ee1242f487c",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -156,14 +157,14 @@
       "trade",
       "logistics"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "9040ee2c-54ed-4fbb-ba3c-1f0a05ce15cb"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "47d348a9-fa73-4980-9ad9-e4024ae9a12c",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
-    "question": "A modern paved highway linking Pakistan to China’s Xinjiang follows part of which historic corridor?",
+    "question": "A modern paved highway linking Pakistan to China\u2019s Xinjiang follows part of which historic corridor?",
     "correctAnswer": "The Silk Road",
     "incorrectAnswers": [
       "The Oregon Trail",
@@ -176,10 +177,10 @@
       "karakoram",
       "highways"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "4aa09f18-b641-4c47-affb-d45944df159e"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "984e87b5-e7d9-4e35-938d-c7ced369b39f",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -190,16 +191,16 @@
       "The Antarctic Treaty Secretariat",
       "OPEC only"
     ],
-    "explanation": "Britannica mentions UNESCAP’s plan for a trans-Asian highway companion to the historic road.",
+    "explanation": "Britannica mentions UNESCAP\u2019s plan for a trans-Asian highway companion to the historic road.",
     "keywords": [
       "routes",
       "unescap",
       "infrastructure"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "69293d2a-a5f6-41cf-8c58-9381c0a9b1f3"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   },
   {
+    "itemId": "14e5ceae-adbb-42df-be18-fbe96f519642",
     "category": "geography",
     "navigationKeyword1": "travel",
     "navigationKeyword2": "routes",
@@ -216,7 +217,6 @@
       "black-death",
       "disease"
     ],
-    "source": "https://www.britannica.com/topic/Silk-Road-trade-route",
-    "seedId": "8e0c0557-70b8-4290-80c8-814d12d553e4"
+    "source": "https://www.britannica.com/topic/Silk-Road-trade-route"
   }
 ]

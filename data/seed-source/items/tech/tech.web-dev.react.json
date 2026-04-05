@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "d5e7face-0f9a-415c-b177-27e49572ea53",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -15,10 +16,10 @@
       "react",
       "rendering"
     ],
-    "source": "https://react.dev/learn/render-and-commit",
-    "seedId": "708e0e00-e197-5f20-878a-7cc7bd7e70ed"
+    "source": "https://react.dev/learn/render-and-commit"
   },
   {
+    "itemId": "1fdcd9c7-3732-4c36-9e45-86d03431d3f1",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -34,10 +35,10 @@
       "react",
       "props"
     ],
-    "source": "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started",
-    "seedId": "05b93417-76a9-566e-b58d-3b119f49303f"
+    "source": "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started"
   },
   {
+    "itemId": "a3bdeee1-f5ca-4ac2-8985-4ae6d468638d",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -53,10 +54,10 @@
       "react",
       "hooks"
     ],
-    "source": "https://react.dev/reference/rules/rules-of-hooks",
-    "seedId": "cd7202c3-8add-5e08-8b74-667d08833aa6"
+    "source": "https://react.dev/reference/rules/rules-of-hooks"
   },
   {
+    "itemId": "ae9f265f-7023-4734-b211-66131e40e8a8",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -72,10 +73,10 @@
       "react",
       "lists"
     ],
-    "source": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
-    "seedId": "537c9566-86f2-5f4e-b4ed-60665832d456"
+    "source": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key"
   },
   {
+    "itemId": "9e130186-0651-4c30-9441-90e8789db264",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -91,10 +92,10 @@
       "react",
       "hooks"
     ],
-    "source": "https://react.dev/reference/react/useState",
-    "seedId": "dd6addc6-7bf8-594c-af86-07706fcfdf23"
+    "source": "https://react.dev/reference/react/useState"
   },
   {
+    "itemId": "93456c25-f4b5-403a-8cff-807dc4765d51",
     "category": "tech",
     "navigationKeyword1": "web-dev",
     "navigationKeyword2": "react",
@@ -110,7 +111,6 @@
       "react",
       "ecosystem"
     ],
-    "source": "https://github.com/facebook/react",
-    "seedId": "bbdb68de-4888-5e77-b3b7-f7df3d17375f"
+    "source": "https://github.com/facebook/react"
   }
 ]

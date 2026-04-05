@@ -1,14 +1,15 @@
 [
   {
+    "itemId": "0166f6ba-7db2-409f-9a2d-41608b61e314",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling\ngroup. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to\nprovision the capacity 30 minutes before the jobs run.\nCurrently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to\nanalyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group’s\ndesired capacity.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling\ngroup. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to\nprovision the capacity 30 minutes before the jobs run.\nCurrently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to\nanalyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group\u2019s\ndesired capacity.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
     "incorrectAnswers": [
       "Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
       "Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
-      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
+      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group\u2019s desired capacity and maximum capacity by 20%."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #342). Correct choice: A.",
     "keywords": [
@@ -17,14 +18,14 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "eb38caef-3d06-4b0b-85ea-a3cac9d67ed7"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2acd7ff1-5fb3-4149-8d0b-dc67066e9d39",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A solutions architect is designing a company’s disaster recovery (DR) architecture. The company has a MySQL database that runs on an Amazon\nEC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A solutions architect is designing a company\u2019s disaster recovery (DR) architecture. The company has a MySQL database that runs on an Amazon\nEC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Migrate the MySQL database to multiple EC2 instances. Configure a standby EC2 instance in the DR Region. Turn on replication.",
     "incorrectAnswers": [
       "Migrate the MySQL database to Amazon RDS. Use a Multi-AZ deployment. Turn on read replication for the primary DB instance in the different Availability Zones.",
@@ -40,10 +41,10 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "27094d09-69c3-4273-8982-690174888d61"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "1ba4791e-343e-415f-87e4-a2a731da60d8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -62,10 +63,10 @@
       "s3",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "90447b70-00f0-4dc3-ab87-b6de186700d5"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "45e83f99-460c-4f3f-95f6-863140da7b35",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -86,14 +87,14 @@
       "cognito",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "b2bafa82-9813-4932-877a-70d3b6709ae9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "34db9bfe-8823-49ea-8aa2-ad27bbd5a66b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client\nworkstations. The company does not want to purchase a new NAS array. The company also does not want to incur the cost of renewing the NAS\narray’s support contraffict. Some of the data is accessed frequently, but much of the data is inactive.\nA solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look\nand feel for the client workstations. The solutions architect has identied AWS Storage Gateway as part of the solution.\nWhich type of storage gateway should the solutions architect provision to meet these requirements?",
+    "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client\nworkstations. The company does not want to purchase a new NAS array. The company also does not want to incur the cost of renewing the NAS\narray\u2019s support contraffict. Some of the data is accessed frequently, but much of the data is inactive.\nA solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look\nand feel for the client workstations. The solutions architect has identied AWS Storage Gateway as part of the solution.\nWhich type of storage gateway should the solutions architect provision to meet these requirements?",
     "correctAnswer": "Volume Gateway",
     "incorrectAnswers": [
       "Tape Gateway",
@@ -106,10 +107,10 @@
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "61de6167-6c01-4e2e-94b8-1a961898ee13"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "7e997b62-c852-4d28-86e3-5d4bd8ab43c2",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -126,10 +127,10 @@
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "ac79744c-934a-4054-94b1-2e9e72b6bbba"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "aedfe0d0-89a7-4c58-a466-6aff14b62a62",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -147,19 +148,19 @@
       "databases",
       "dynamodb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "34915895-272a-4e5b-8089-ee4de20cd71d"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "4cfe20d8-d736-4b13-9ca9-8997ec4f79f7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company stores condential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an\nAWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the\ndatabase with the acquiring company’s AWS account in ap-southeast-3.\nWhat should a solutions architect do to meet these requirements?",
-    "correctAnswer": "Create a database snapshot. Copy the snapshot to a new unencrypted snapshot. Share the new snapshot with the acquiring company’s AWS account.",
+    "question": "A company stores condential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an\nAWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the\ndatabase with the acquiring company\u2019s AWS account in ap-southeast-3.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create a database snapshot. Copy the snapshot to a new unencrypted snapshot. Share the new snapshot with the acquiring company\u2019s AWS account.",
     "incorrectAnswers": [
-      "Create a database snapshot. Add the acquiring company’s AWS account to the KMS key policy. Share the snapshot with the acquiring company’s AWS account.",
-      "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company’s AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
-      "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company’s AWS account."
+      "Create a database snapshot. Add the acquiring company\u2019s AWS account to the KMS key policy. Share the snapshot with the acquiring company\u2019s AWS account.",
+      "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company\u2019s AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
+      "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company\u2019s AWS account."
     ],
     "explanation": "SAA-C03 practice scenario (extract question #349). Correct choice: A.",
     "keywords": [
@@ -171,10 +172,10 @@
       "kms",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "4fc8d32b-3715-4026-aad5-819cbb1df886"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2d2079e7-0261-46ab-83a4-ecdfc8ce2879",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -194,10 +195,10 @@
       "glue",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "5c814af9-313b-47fc-8299-723a7e77a2c8"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "91434a1b-acf6-48fe-8c4b-113541650fc8",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -214,10 +215,10 @@
       "aws-networking",
       "transit-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "7c1976a5-0602-4dbb-8740-0575bc9b9e3f"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "2dffa60e-3227-4e6c-af7d-8091bf0c499c",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -239,10 +240,10 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "afafb732-bd87-436d-ae74-5c4a0b558bcd"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "679a6b3c-f29c-4c48-8fd2-e3e1721ae7ca",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -265,10 +266,10 @@
       "serverless",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "1b07d937-65b3-4839-8663-81488b414f69"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "205ff946-98a3-4c42-8c7b-016a1280a784",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -285,10 +286,10 @@
       "aws-compute",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "31ea99d8-9721-4e5d-a796-495ab32b2ba4"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0d530406-b44f-4930-a40f-61a5b88c1cf3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -306,10 +307,10 @@
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6b1d002a-88cc-446a-a10e-8356d15136e9"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "285f76f3-81e9-41be-af26-97f251cbfe1a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -330,14 +331,14 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "f8f5dd0a-6876-471f-bf25-4136a7f71347"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "0a89a370-daf3-4235-942b-a4fe858c22a3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital’s compliance team must ensure that all protected health\ninformation (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.\nWhich solution will meet these requirements?",
+    "question": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital\u2019s compliance team must ensure that all protected health\ninformation (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create a public SSL/TLS certicate in AWS Certicate Manager (ACM). Associate the certicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
     "incorrectAnswers": [
       "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
@@ -352,10 +353,10 @@
       "s3",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c7c9c43c-70f9-46bd-b183-6a2a75bdee9c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "e29a487f-236d-40d4-b17d-a2b87d6727fb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -374,10 +375,10 @@
       "api-gateway",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "c3fd6a22-556e-4a0d-b396-69e8d4af5c5e"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "894ba84e-1c51-4a58-a39a-85eaadd8b591",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -397,10 +398,10 @@
       "rds",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "61c3f208-2611-4c26-8acc-4029e842ec45"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "afd17edf-4f54-44fb-8c5e-5c1905b52f51",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -417,10 +418,10 @@
       "aws-integration",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "258df4f8-ad39-467b-a42f-7e11657be872"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   },
   {
+    "itemId": "489e266b-b5c1-424f-b094-46e935c2daa6",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
@@ -438,7 +439,6 @@
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
-    "seedId": "6fee7762-4851-41ed-83ec-364ea1bc286c"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "itemId": "22f5e23d-0b51-412e-92b7-500b61e3fe91",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "metaphysics",
@@ -15,10 +16,10 @@
       "metaphysics",
       "reality"
     ],
-    "source": "https://www.britannica.com/topic/metaphysics",
-    "seedId": "a0a4ad98-949d-58f7-9e63-750726ab67b1"
+    "source": "https://www.britannica.com/topic/metaphysics"
   },
   {
+    "itemId": "17150ba8-7f86-4f50-9ae4-3f5d53a87eb5",
     "category": "humanities",
     "navigationKeyword1": "philosophy",
     "navigationKeyword2": "metaphysics",
@@ -34,7 +35,6 @@
       "metaphysics",
       "free-will"
     ],
-    "source": "https://plato.stanford.edu/entries/freewill/",
-    "seedId": "eb799036-7bfd-51b7-94c0-f718bdbee9a4"
+    "source": "https://plato.stanford.edu/entries/freewill/"
   }
 ]

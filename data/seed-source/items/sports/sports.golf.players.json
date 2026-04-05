@@ -1,25 +1,6 @@
 [
   {
-    "category": "sports",
-    "navigationKeyword1": "golf",
-    "navigationKeyword2": "players",
-    "question": "Which golfer won 18 men's major championships?",
-    "correctAnswer": "Jack Nicklaus",
-    "incorrectAnswers": [
-      "Tiger Woods",
-      "Arnold Palmer",
-      "Gary Player"
-    ],
-    "explanation": "Nicklaus leads men's golf in major titles.",
-    "keywords": [
-      "golf",
-      "players",
-      "jack-nicklaus"
-    ],
-    "source": "https://www.britannica.com/biography/Jack-Nicklaus",
-    "seedId": "3d42566b-bdde-534f-99a8-a8807cce9d5e"
-  },
-  {
+    "itemId": "26309d4d-eb1a-4d69-9d66-a61494dbe663",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -36,10 +17,10 @@
       "players",
       "tiger-woods"
     ],
-    "source": "https://www.britannica.com/biography/Tiger-Woods",
-    "seedId": "e7eafd2e-cae9-5812-9a7c-cf4479812185"
+    "source": "https://www.britannica.com/biography/Tiger-Woods"
   },
   {
+    "itemId": "a053ac84-b993-447e-b8fb-f6c63824ee70",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -56,10 +37,10 @@
       "players",
       "gary-player"
     ],
-    "source": "https://www.britannica.com/biography/Gary-Player",
-    "seedId": "a1842413-d428-5749-ac8e-7f32d7ffa397"
+    "source": "https://www.britannica.com/biography/Gary-Player"
   },
   {
+    "itemId": "cb6dbbac-52b5-4fff-ae0d-ab4d50c78171",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -76,10 +57,10 @@
       "players",
       "phil-mickelson"
     ],
-    "source": "https://www.britannica.com/biography/Phil-Mickelson",
-    "seedId": "eab03410-fbda-584d-adb2-dfb3c20d9702"
+    "source": "https://www.britannica.com/biography/Phil-Mickelson"
   },
   {
+    "itemId": "60ab4e2b-adf8-4dc6-b8d0-d819e85cf604",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -96,10 +77,10 @@
       "players",
       "rory-mcilroy"
     ],
-    "source": "https://www.britannica.com/biography/Rory-McIlroy",
-    "seedId": "8afbebe6-fbc6-5c3a-ab0a-c2568099414b"
+    "source": "https://www.britannica.com/biography/Rory-McIlroy"
   },
   {
+    "itemId": "9403e26e-32a5-42e8-ad3e-f88f9d1cb587",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -116,10 +97,10 @@
       "players",
       "arnold-palmer"
     ],
-    "source": "https://www.britannica.com/biography/Arnold-Palmer",
-    "seedId": "dd519aa5-a8fd-53b3-83cf-11464bdc9e0b"
+    "source": "https://www.britannica.com/biography/Arnold-Palmer"
   },
   {
+    "itemId": "2671cea6-a004-40e6-b3ff-068503606aba",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -136,10 +117,10 @@
       "players",
       "seve"
     ],
-    "source": "https://www.britannica.com/biography/Seve-Ballesteros",
-    "seedId": "108a3d22-a727-5325-9611-6c26c78257cd"
+    "source": "https://www.britannica.com/biography/Seve-Ballesteros"
   },
   {
+    "itemId": "c2d1ee36-da71-4a11-8923-9f51ee1ea2e8",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -156,10 +137,10 @@
       "players",
       "scheffler"
     ],
-    "source": "https://www.masters.com/en_US/index.html",
-    "seedId": "dc00cf1c-fadf-544e-b54c-9e8801ae8979"
+    "source": "https://www.masters.com/en_US/index.html"
   },
   {
+    "itemId": "c5636c98-fc73-40fa-97f2-27187fe64587",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -176,10 +157,10 @@
       "players",
       "dechambeau"
     ],
-    "source": "https://www.usopen.com/",
-    "seedId": "8de456cf-a564-5ede-8881-3a31a0236122"
+    "source": "https://www.usopen.com/"
   },
   {
+    "itemId": "c52299f2-9442-4f71-99c3-f64d8040983a",
     "category": "sports",
     "navigationKeyword1": "golf",
     "navigationKeyword2": "players",
@@ -196,7 +177,6 @@
       "players",
       "tom-watson"
     ],
-    "source": "https://www.britannica.com/biography/Tom-Watson",
-    "seedId": "dccd1ac5-8928-539f-81d4-2d50035345fe"
+    "source": "https://www.britannica.com/biography/Tom-Watson"
   }
 ]
