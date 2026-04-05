@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
@@ -10,16 +10,14 @@ import {
 } from "@/api/admin";
 
 function extractErrorMessage(error: unknown): string {
-  const fallback = "The request failed. Check the manifest and try again.";
+  const fallback = "The request failed. Check the repository settings and try again.";
 
   if (!error || typeof error !== "object") {
     return fallback;
   }
 
   const candidate = error as {
-    response?: {
-      data?: unknown;
-    };
+    response?: { data?: unknown };
     message?: string;
   };
 
@@ -54,81 +52,6 @@ function extractErrorMessage(error: unknown): string {
     candidate.message ||
     fallback
   );
-}
-
-function autoSeedSetFromItems(items: unknown[]): string {
-  const first = items[0] as Record<string, unknown> | undefined;
-  const category = typeof first?.category === "string" ? first.category.trim() : "";
-  const kw1 = typeof first?.navigationKeyword1 === "string" ? first.navigationKeyword1.trim() : "";
-  if (category && kw1) return `${category}/${kw1}`;
-  const date = new Date().toISOString().slice(0, 10);
-  return `import-${date}`;
-}
-
-function parseSeedSyncRequest(
-  rawJson: string,
-  deltaPreviewLimitInput: string
-): SeedSyncRequest {
-  const trimmed = rawJson.trim();
-  if (!trimmed) {
-    throw new Error("Paste or upload a seed-sync manifest first.");
-  }
-
-  const raw = JSON.parse(trimmed);
-
-  // Accept a canonical item array and wrap it automatically.
-  let parsed: SeedSyncRequest;
-  if (Array.isArray(raw)) {
-    if (raw.length === 0) {
-      throw new Error("Array must contain at least one item.");
-    }
-    parsed = {
-      schemaVersion: 1,
-      seedSet: autoSeedSetFromItems(raw),
-      items: raw as SeedSyncRequest["items"],
-    };
-  } else {
-    parsed = raw as SeedSyncRequest;
-
-    if (!parsed || typeof parsed !== "object") {
-      throw new Error("Manifest root must be a JSON object or array.");
-    }
-
-    if (
-      typeof parsed.schemaVersion !== "number" ||
-      typeof parsed.seedSet !== "string" ||
-      !Array.isArray(parsed.items)
-    ) {
-      throw new Error(
-        "Manifest must include schemaVersion, seedSet, and items."
-      );
-    }
-  }
-
-  const hasInvalidItemIds = parsed.items.some(
-    (item) => typeof item.itemId !== "string" || item.itemId.trim().length === 0
-  );
-  if (hasInvalidItemIds) {
-    throw new Error(
-      "Every manifest item must include a non-empty itemId. Normalize raw AI output through the import-inbox tooling before seed sync."
-    );
-  }
-
-  const limitTrimmed = deltaPreviewLimitInput.trim();
-  if (limitTrimmed.length === 0) {
-    const { deltaPreviewLimit: _omit, ...withoutLimit } = parsed;
-    return withoutLimit;
-  }
-
-  const limit = Number(limitTrimmed);
-  if (!Number.isInteger(limit) || limit < 0 || limit > 500) {
-    throw new Error("Delta preview limit must be an integer between 0 and 500.");
-  }
-
-  return {
-    ...parsed,
-    deltaPreviewLimit: limit,
-  };
 }
 
 function SummaryCard({
@@ -166,11 +89,24 @@ function ResultsPanel({
 }) {
   return (
     <div className="bg-white shadow rounded-lg p-6">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <h2 className="text-lg font-medium text-gray-900">{title}</h2>
           <p className="text-sm text-gray-600">
-            Seed set <span className="font-mono">{response.seedSet}</span>
+            {response.repositoryOwner}/{response.repositoryName}
+          </p>
+          <p className="text-sm text-gray-500">
+            Ref <span className="font-mono">{response.gitRef}</span>
+            {" · "}
+            Commit{" "}
+            <span className="font-mono">
+              {response.resolvedCommitSha.slice(0, 12)}
+            </span>
+          </p>
+          <p className="text-sm text-gray-500">
+            Path <span className="font-mono">{response.itemsPath}</span>
+            {" · "}
+            Files {response.sourceFileCount.toLocaleString()}
           </p>
         </div>
         <div className="text-sm text-gray-500">
@@ -252,10 +188,14 @@ function ResultsPanel({
   );
 }
 
+const defaultItemsPath = "data/seed-source/items";
+
 const AdminSeedSyncPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const [manifestText, setManifestText] = useState("");
-  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
+  const [repositoryOwner, setRepositoryOwner] = useState("Quizymode");
+  const [repositoryName, setRepositoryName] = useState("Quizymode");
+  const [gitRef, setGitRef] = useState("main");
+  const [itemsPath, setItemsPath] = useState(defaultItemsPath);
   const [deltaPreviewLimit, setDeltaPreviewLimit] = useState("200");
   const [localError, setLocalError] = useState<string | null>(null);
   const [previewResponse, setPreviewResponse] =
@@ -300,27 +240,31 @@ const AdminSeedSyncPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) {
-      return;
-    }
-
-    try {
-      const text = await file.text();
-      setManifestText(text);
-      setSelectedFileName(file.name);
-      resetResults();
-    } catch {
-      setLocalError("Failed to read the selected file.");
-    } finally {
-      event.target.value = "";
-    }
-  };
-
   const buildRequest = (): SeedSyncRequest => {
     resetResults();
-    return parseSeedSyncRequest(manifestText, deltaPreviewLimit);
+
+    const owner = repositoryOwner.trim();
+    const repo = repositoryName.trim();
+    const ref = gitRef.trim();
+    const path = itemsPath.trim();
+    const limit = Number(deltaPreviewLimit.trim());
+
+    if (!owner || !repo || !ref) {
+      throw new Error("Repository owner, repository name, and git ref are required.");
+    }
+
+    if (!Number.isInteger(limit) || limit < 0 || limit > 500) {
+      throw new Error("Delta preview limit must be an integer between 0 and 500.");
+    }
+
+    return {
+      schemaVersion: 2,
+      repositoryOwner: owner,
+      repositoryName: repo,
+      gitRef: ref,
+      itemsPath: path || defaultItemsPath,
+      deltaPreviewLimit: limit,
+    };
   };
 
   const handlePreview = () => {
@@ -354,57 +298,80 @@ const AdminSeedSyncPage = () => {
 
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Seed Sync</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Upload or paste one item manifest, preview the upsert delta, then
-        apply it. The API uses explicit item IDs and never infers deletes from
-        missing rows.
+        Preview or apply repo-managed items directly from GitHub. The API fetches
+        canonical seed-source files at the exact ref you provide and never infers
+        deletes from missing rows.
       </p>
 
       <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
-        Admin manifests must contain explicit <span className="font-mono">itemId</span>
-        values for repo-managed public items. Preview/apply only creates or
-        updates the items present in the uploaded file.
+        Use an immutable commit SHA for production whenever possible. Branch refs
+        are convenient for testing, but commit-based syncs are easier to audit and
+        roll back.
       </div>
 
       <div className="bg-white shadow rounded-lg p-6">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
-          <div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="text-lg font-medium text-gray-900">
-                  Manifest JSON
-                </h2>
-                <p className="text-sm text-gray-500">
-                  Paste the generated manifest, or a plain canonical item array
-                  that already includes itemId values.
-                </p>
-              </div>
-              <label className="inline-flex cursor-pointer items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-                Load JSON file
-                <input
-                  type="file"
-                  accept=".json,application/json"
-                  className="hidden"
-                  onChange={handleFileChange}
-                />
-              </label>
-            </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">
+                Repository owner
+              </span>
+              <input
+                value={repositoryOwner}
+                onChange={(event) => {
+                  setRepositoryOwner(event.target.value);
+                  resetResults();
+                }}
+                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+                placeholder="Quizymode"
+              />
+            </label>
 
-            {selectedFileName && (
-              <p className="mt-3 text-sm text-gray-500">
-                Loaded file: <span className="font-mono">{selectedFileName}</span>
+            <label className="block">
+              <span className="text-sm font-medium text-gray-700">
+                Repository name
+              </span>
+              <input
+                value={repositoryName}
+                onChange={(event) => {
+                  setRepositoryName(event.target.value);
+                  resetResults();
+                }}
+                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+                placeholder="Quizymode"
+              />
+            </label>
+
+            <label className="block md:col-span-2">
+              <span className="text-sm font-medium text-gray-700">Git ref</span>
+              <input
+                value={gitRef}
+                onChange={(event) => {
+                  setGitRef(event.target.value);
+                  resetResults();
+                }}
+                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm"
+                placeholder="main or a commit SHA"
+              />
+            </label>
+
+            <label className="block md:col-span-2">
+              <span className="text-sm font-medium text-gray-700">
+                Items path
+              </span>
+              <input
+                value={itemsPath}
+                onChange={(event) => {
+                  setItemsPath(event.target.value);
+                  resetResults();
+                }}
+                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm"
+                placeholder={defaultItemsPath}
+              />
+              <p className="mt-2 text-xs text-gray-500">
+                Use a narrower subpath to preview just one category or scope.
               </p>
-            )}
-
-            <textarea
-              value={manifestText}
-              onChange={(e) => {
-                setManifestText(e.target.value);
-                resetResults();
-              }}
-              placeholder='{"schemaVersion":1,"seedSet":"core-public-items","items":[...]}'
-              className="mt-4 min-h-[24rem] w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm text-gray-900"
-              spellCheck={false}
-            />
+            </label>
           </div>
 
           <div className="space-y-4">
@@ -417,8 +384,8 @@ const AdminSeedSyncPage = () => {
                 min={0}
                 max={500}
                 value={deltaPreviewLimit}
-                onChange={(e) => {
-                  setDeltaPreviewLimit(e.target.value);
+                onChange={(event) => {
+                  setDeltaPreviewLimit(event.target.value);
                   resetResults();
                 }}
                 className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
@@ -430,24 +397,24 @@ const AdminSeedSyncPage = () => {
 
             <div className="rounded-lg border border-gray-200 p-4 text-sm text-gray-600">
               <p>
-                Use preview first before apply. Rows not included in the current
-                manifest are left untouched.
+                The sync reads canonical JSON directly from GitHub. Local seed-dev
+                startup seeding still uses checked-out local files.
               </p>
             </div>
 
             <button
               type="button"
               onClick={handlePreview}
-              disabled={isWorking || !manifestText.trim()}
+              disabled={isWorking}
               className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
             >
-              {previewMutation.isPending ? "Previewing..." : "Preview delta"}
+              {previewMutation.isPending ? "Previewing..." : "Preview sync"}
             </button>
 
             <button
               type="button"
               onClick={handleApply}
-              disabled={isWorking || !manifestText.trim()}
+              disabled={isWorking}
               className="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
             >
               {applyMutation.isPending ? "Applying..." : "Apply sync"}

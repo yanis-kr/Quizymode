@@ -15,6 +15,10 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.Id)
             .HasDefaultValueSql("gen_random_uuid()");
 
+        builder.Property(x => x.IsRepoManaged)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(x => x.IsPrivate)
             .IsRequired()
             .HasDefaultValue(false);
@@ -114,5 +118,6 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         // Composite indexes for category queries with visibility filtering
         builder.HasIndex(x => new { x.CategoryId, x.IsPrivate });
         builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
+        builder.HasIndex(x => x.IsRepoManaged);
     }
 }

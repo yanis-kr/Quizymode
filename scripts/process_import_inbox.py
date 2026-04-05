@@ -158,7 +158,6 @@ def main() -> int:
         return 1
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_item_registry.py")], check=True)
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "build_admin_seed_bundle.py")], check=True)
     print(f"Wrote {sum(len(payloads) for _, payloads in planned_writes)} new item(s).")
     return 0
 

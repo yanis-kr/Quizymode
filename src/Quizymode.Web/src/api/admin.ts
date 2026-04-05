@@ -194,23 +194,12 @@ export interface AdminUserSettingUpdateResponse {
   updatedAt: string;
 }
 
-export interface SeedSyncItemRequest {
-  itemId: string;
-  category: string;
-  navigationKeyword1: string;
-  navigationKeyword2: string;
-  question: string;
-  correctAnswer: string;
-  incorrectAnswers: string[];
-  explanation?: string | null;
-  keywords?: string[] | null;
-  source?: string | null;
-}
-
 export interface SeedSyncRequest {
   schemaVersion: number;
-  seedSet: string;
-  items: SeedSyncItemRequest[];
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  itemsPath?: string | null;
   deltaPreviewLimit?: number;
 }
 
@@ -225,6 +214,12 @@ export interface SeedSyncChangeResponse {
 }
 
 export interface SeedSyncPreviewResponse {
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  resolvedCommitSha: string;
+  itemsPath: string;
+  sourceFileCount: number;
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;
@@ -236,6 +231,12 @@ export interface SeedSyncPreviewResponse {
 }
 
 export interface SeedSyncApplyResponse {
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  resolvedCommitSha: string;
+  itemsPath: string;
+  sourceFileCount: number;
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;

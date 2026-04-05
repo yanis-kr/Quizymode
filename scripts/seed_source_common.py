@@ -18,7 +18,6 @@ ALLOWLIST_PATH = REGISTRY_ROOT / "duplicate-question-allowlist.json"
 DEV_SELECTION_PATH = ROOT / "data" / "seed-dev" / "selection.json"
 SEED_DEV_ITEMS_ROOT = ROOT / "data" / "seed-dev" / "items"
 SEED_DEV_COLLECTIONS_ROOT = ROOT / "data" / "seed-dev" / "collections"
-GENERATED_BUNDLE_PATH = ROOT / "data" / "generated" / "core-public-items.admin-sync.json"
 
 
 @dataclass(frozen=True)

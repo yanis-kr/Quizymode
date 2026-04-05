@@ -62,13 +62,23 @@ internal sealed class DatabaseSeederHostedService(
                 List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(resolvedItemsPath, cancellationToken);
                 if (itemRequests.Count > 0)
                 {
-                    SeedSyncAdmin.Request request = new(
-                        SchemaVersion: 1,
+                    SeedSyncAdmin.ManifestRequest manifest = new(
                         SeedSet: "local-seed-dev",
                         Items: itemRequests,
                         DeltaPreviewLimit: 50);
 
-                    Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyAsync(request, cancellationToken);
+                    SeedSyncAdmin.SourceContext sourceContext = new(
+                        RepositoryOwner: "local",
+                        RepositoryName: "seed-dev",
+                        GitRef: "local-dev",
+                        ResolvedCommitSha: "local-dev",
+                        ItemsPath: resolvedItemsPath.Replace('\\', '/'),
+                        SourceFileCount: Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories).Length);
+
+                    Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyManifestAsync(
+                        manifest,
+                        sourceContext,
+                        cancellationToken);
                     if (result.IsFailure)
                     {
                         _logger.LogError("Failed to apply local item seed sync: {Error}", result.Error?.Description ?? "Unknown error");
@@ -297,6 +307,7 @@ internal sealed class DatabaseSeederHostedService(
                 collection = new Collection
                 {
                     Id = seedData.CollectionId,
+                    IsRepoManaged = true,
                     Name = seedData.Name,
                     Description = seedData.Description,
                     CreatedBy = SeederUserId,
@@ -307,9 +318,16 @@ internal sealed class DatabaseSeederHostedService(
             }
             else
             {
+                if (!collection.IsRepoManaged)
+                {
+                    throw new InvalidOperationException(
+                        $"Collection seed '{jsonFile}' conflicts with an existing non-repo-managed collection '{collection.Id}'.");
+                }
+
                 collection.Name = seedData.Name;
                 collection.Description = seedData.Description;
                 collection.IsPublic = true;
+                collection.IsRepoManaged = true;
                 collection.UpdatedAt = DateTime.UtcNow;
             }
 

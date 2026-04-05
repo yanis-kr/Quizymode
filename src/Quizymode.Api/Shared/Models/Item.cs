@@ -4,6 +4,8 @@ public sealed class Item
 {
     public Guid Id { get; set; }
 
+    public bool IsRepoManaged { get; set; }
+
     public bool IsPrivate { get; set; }
 
     public string Question { get; set; } = string.Empty;

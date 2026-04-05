@@ -186,6 +186,7 @@ internal static class AddItemsBulkHandler
                         Item item = new()
                         {
                             Id = Guid.NewGuid(),
+                            IsRepoManaged = false,
                             IsPrivate = effectiveIsPrivate,
                             Question = itemRequest.Question,
                             CorrectAnswer = itemRequest.CorrectAnswer,

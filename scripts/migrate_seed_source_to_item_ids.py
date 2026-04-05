@@ -109,7 +109,6 @@ def main() -> int:
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_item_registry.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_seed_dev_subset.py")], check=True)
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "build_admin_seed_bundle.py")], check=True)
 
     print(f"Migrated {len(kept_items)} seed-source items to itemId.")
     print(f"Wrote allowlist entries: {len(allowlist_entries)}")

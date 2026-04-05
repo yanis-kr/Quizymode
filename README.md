@@ -92,7 +92,6 @@ Data layout:
 - `data/seed-dev/`: derived local/dev startup subset generated from `data/seed-source/` via `data/seed-dev/selection.json`
 - `data/import-inbox/`: gitignored staging area for raw AI-generated JSON before normalization into canonical source files
 - `data/prompts/`: prompt templates and execution instructions
-- `data/generated/core-public-items.admin-sync.json`: generated admin upload bundle built from canonical source files
 - `data/generated/seed-progress/`: gitignored workflow progress/state files
 
 The root README is the canonical entry point. Detailed or fast-changing material belongs under `docs/`, and this file should link to those documents directly.
@@ -147,7 +146,6 @@ Canonical admin content lives under `data/seed-source/` and is validated/built w
 
 - `python scripts/validate_seed_source.py`
 - `python scripts/build_item_registry.py`
-- `python scripts/build_admin_seed_bundle.py`
 - `python scripts/build_seed_dev_subset.py`
 - `python scripts/process_import_inbox.py --write`
 
@@ -319,6 +317,7 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/infra/S3_CLOUDFRONT.md](./docs/infra/S3_CLOUDFRONT.md): SPA hosting and CDN notes
 - [docs/infra/LIGHTSAIL.md](./docs/infra/LIGHTSAIL.md): API container hosting notes
 - [docs/infra/SUPABASE.md](./docs/infra/SUPABASE.md): managed Postgres notes
+- [docs/infra/REPO_MANAGED_CONTENT_RESET.md](./docs/infra/REPO_MANAGED_CONTENT_RESET.md): runbook for deleting and rebuilding repo-managed content from source control
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
 - [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): end-user guide with screenshots

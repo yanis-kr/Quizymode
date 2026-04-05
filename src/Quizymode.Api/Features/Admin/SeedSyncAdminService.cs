@@ -1,3 +1,4 @@
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
@@ -11,9 +12,11 @@ namespace Quizymode.Api.Features.Admin;
 
 internal sealed class SeedSyncAdminService(
     ApplicationDbContext db,
-    ITaxonomyRegistry taxonomyRegistry)
+    ITaxonomyRegistry taxonomyRegistry,
+    IGitHubSeedSource gitHubSeedSource)
 {
     private const string SeederUserId = "seeder";
+    private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewAsync(
         SeedSyncAdmin.Request request,
@@ -21,13 +24,35 @@ internal sealed class SeedSyncAdminService(
     {
         try
         {
-            Result<SeedSyncPlan> planResult = await BuildPlanAsync(request, cancellationToken);
+            Result<LoadedGitHubSeedManifest> loadResult = await _gitHubSeedSource.LoadManifestAsync(request, cancellationToken);
+            if (loadResult.IsFailure)
+            {
+                return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
+            }
+
+            return await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<SeedSyncAdmin.PreviewResponse>(
+                Error.Problem("Admin.SeedSyncPreviewFailed", $"Failed to preview item sync: {ex.Message}"));
+        }
+    }
+
+    public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewManifestAsync(
+        SeedSyncAdmin.ManifestRequest manifest,
+        SeedSyncAdmin.SourceContext sourceContext,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken);
             if (planResult.IsFailure)
             {
                 return Result.Failure<SeedSyncAdmin.PreviewResponse>(planResult.Error!);
             }
 
-            return Result.Success(ToPreviewResponse(planResult.Value!, request.DeltaPreviewLimit));
+            return Result.Success(ToPreviewResponse(planResult.Value!, sourceContext, manifest.DeltaPreviewLimit));
         }
         catch (Exception ex)
         {
@@ -40,11 +65,25 @@ internal sealed class SeedSyncAdminService(
         SeedSyncAdmin.Request request,
         CancellationToken cancellationToken)
     {
+        Result<LoadedGitHubSeedManifest> loadResult = await _gitHubSeedSource.LoadManifestAsync(request, cancellationToken);
+        if (loadResult.IsFailure)
+        {
+            return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
+        }
+
+        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+    }
+
+    public async Task<Result<SeedSyncAdmin.ApplyResponse>> ApplyManifestAsync(
+        SeedSyncAdmin.ManifestRequest manifest,
+        SeedSyncAdmin.SourceContext sourceContext,
+        CancellationToken cancellationToken)
+    {
         IDbContextTransaction? transaction = null;
 
         try
         {
-            Result<SeedSyncPlan> planResult = await BuildPlanAsync(request, cancellationToken);
+            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken);
             if (planResult.IsFailure)
             {
                 return Result.Failure<SeedSyncAdmin.ApplyResponse>(planResult.Error!);
@@ -78,7 +117,7 @@ internal sealed class SeedSyncAdminService(
                 await transaction.CommitAsync(cancellationToken);
             }
 
-            return Result.Success(ToApplyResponse(plan, request.DeltaPreviewLimit));
+            return Result.Success(ToApplyResponse(plan, sourceContext, manifest.DeltaPreviewLimit));
         }
         catch (Exception ex)
         {
@@ -96,9 +135,18 @@ internal sealed class SeedSyncAdminService(
     }
 
     private async Task<Result<SeedSyncPlan>> BuildPlanAsync(
-        SeedSyncAdmin.Request request,
+        SeedSyncAdmin.ManifestRequest request,
         CancellationToken cancellationToken)
     {
+        ValidationResult validationResult = SeedSyncAdmin.ValidateManifest(request);
+        if (!validationResult.IsValid)
+        {
+            return Result.Failure<SeedSyncPlan>(
+                Error.Validation(
+                    "Admin.SeedSyncManifestInvalid",
+                    string.Join(" ", validationResult.Errors.Select(error => error.ErrorMessage))));
+        }
+
         List<NormalizedSeedItem> normalizedItems = request.Items
             .Select(NormalizeItem)
             .ToList();
@@ -125,12 +173,12 @@ internal sealed class SeedSyncAdminService(
 
         foreach (Item existingItem in existingItems)
         {
-            if (existingItem.IsPrivate || !string.Equals(existingItem.CreatedBy, SeederUserId, StringComparison.OrdinalIgnoreCase))
+            if (existingItem.IsPrivate || !existingItem.IsRepoManaged)
             {
                 return Result.Failure<SeedSyncPlan>(
                     Error.Validation(
                         "Admin.ItemSyncIdConflict",
-                        $"ItemId '{existingItem.Id}' is already assigned to a non-seeder or private item and cannot be managed by admin sync."));
+                        $"ItemId '{existingItem.Id}' is already assigned to a non-repo-managed or private item and cannot be managed by admin sync."));
             }
         }
 
@@ -310,7 +358,8 @@ internal sealed class SeedSyncAdminService(
         {
             Id = change.Item.ItemId,
             CreatedAt = utcNow,
-            CreatedBy = SeederUserId
+            CreatedBy = SeederUserId,
+            IsRepoManaged = true
         };
 
         if (change.ExistingItem is null)
@@ -319,6 +368,7 @@ internal sealed class SeedSyncAdminService(
         }
 
         item.IsPrivate = false;
+        item.IsRepoManaged = true;
         item.Question = change.Item.Question;
         item.CorrectAnswer = change.Item.CorrectAnswer;
         item.IncorrectAnswers = change.Item.IncorrectAnswers;
@@ -327,7 +377,6 @@ internal sealed class SeedSyncAdminService(
         item.CategoryId = change.Navigation.Category.Id;
         item.NavigationKeywordId1 = change.Navigation.Nav1.Id;
         item.NavigationKeywordId2 = change.Navigation.Nav2.Id;
-        item.CreatedBy = SeederUserId;
 
         ReconcileItemKeywords(item, change, publicKeywordMap, utcNow);
     }
@@ -393,11 +442,18 @@ internal sealed class SeedSyncAdminService(
 
     private static SeedSyncAdmin.PreviewResponse ToPreviewResponse(
         SeedSyncPlan plan,
+        SeedSyncAdmin.SourceContext sourceContext,
         int deltaPreviewLimit)
     {
         List<SeedSyncAdmin.ChangeResponse> deltaChanges = BuildDeltaChanges(plan, deltaPreviewLimit);
 
         return new SeedSyncAdmin.PreviewResponse(
+            sourceContext.RepositoryOwner,
+            sourceContext.RepositoryName,
+            sourceContext.GitRef,
+            sourceContext.ResolvedCommitSha,
+            sourceContext.ItemsPath,
+            sourceContext.SourceFileCount,
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,
@@ -410,11 +466,18 @@ internal sealed class SeedSyncAdminService(
 
     private static SeedSyncAdmin.ApplyResponse ToApplyResponse(
         SeedSyncPlan plan,
+        SeedSyncAdmin.SourceContext sourceContext,
         int deltaPreviewLimit)
     {
         List<SeedSyncAdmin.ChangeResponse> deltaChanges = BuildDeltaChanges(plan, deltaPreviewLimit);
 
         return new SeedSyncAdmin.ApplyResponse(
+            sourceContext.RepositoryOwner,
+            sourceContext.RepositoryName,
+            sourceContext.GitRef,
+            sourceContext.ResolvedCommitSha,
+            sourceContext.ItemsPath,
+            sourceContext.SourceFileCount,
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,

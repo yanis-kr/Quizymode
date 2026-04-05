@@ -766,8 +766,8 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Preview a repo-managed item sync (Admin only)",
-        "description": "Validates an uploaded item manifest and returns the create/update delta for explicit item IDs.",
+        "summary": "Preview a repo-managed GitHub sync (Admin only)",
+        "description": "Fetches canonical item seed files from GitHub at a specific ref and returns the create/update delta.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -800,8 +800,8 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Apply a repo-managed item sync (Admin only)",
-        "description": "Upserts repo-managed public items using explicit item IDs.",
+        "summary": "Apply a repo-managed GitHub sync (Admin only)",
+        "description": "Fetches canonical item seed files from GitHub at a specific ref and upserts repo-managed public items.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3977,6 +3977,12 @@
       },
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.ApplyResponse": {
         "required": [
+          "repositoryOwner",
+          "repositoryName",
+          "gitRef",
+          "resolvedCommitSha",
+          "itemsPath",
+          "sourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -3988,6 +3994,24 @@
         ],
         "type": "object",
         "properties": {
+          "repositoryOwner": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "repositoryName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "gitRef": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "resolvedCommitSha": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
@@ -4051,6 +4075,12 @@
       },
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.PreviewResponse": {
         "required": [
+          "repositoryOwner",
+          "repositoryName",
+          "gitRef",
+          "resolvedCommitSha",
+          "itemsPath",
+          "sourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -4062,6 +4092,24 @@
         ],
         "type": "object",
         "properties": {
+          "repositoryOwner": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "repositoryName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "gitRef": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "resolvedCommitSha": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
@@ -4091,87 +4139,36 @@
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.Request": {
         "required": [
           "schemaVersion",
-          "seedSet",
-          "items"
+          "repositoryOwner",
+          "repositoryName",
+          "gitRef"
         ],
         "type": "object",
         "properties": {
           "schemaVersion": {
             "$ref": "#/components/schemas/System.Int32"
           },
-          "seedSet": {
+          "repositoryOwner": {
             "$ref": "#/components/schemas/System.String"
           },
-          "items": {
-            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest"
+          "repositoryName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "gitRef": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemsPath": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           },
           "deltaPreviewLimit": {
             "$ref": "#/components/schemas/System.Int32"
-          }
-        }
-      },
-      "Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest": {
-        "required": [
-          "itemId",
-          "category",
-          "navigationKeyword1",
-          "navigationKeyword2",
-          "question",
-          "correctAnswer",
-          "incorrectAnswers"
-        ],
-        "type": "object",
-        "properties": {
-          "itemId": {
-            "$ref": "#/components/schemas/System.Guid"
-          },
-          "category": {
-            "$ref": "#/components/schemas/System.String"
-          },
-          "navigationKeyword1": {
-            "$ref": "#/components/schemas/System.String"
-          },
-          "navigationKeyword2": {
-            "$ref": "#/components/schemas/System.String"
-          },
-          "question": {
-            "$ref": "#/components/schemas/System.String"
-          },
-          "correctAnswer": {
-            "$ref": "#/components/schemas/System.String"
-          },
-          "incorrectAnswers": {
-            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
-          },
-          "explanation": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
-          },
-          "keywords": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
-              }
-            ]
-          },
-          "source": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
           }
         }
       },
@@ -7498,12 +7495,6 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse"
-        }
-      },
-      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.SeedItemRequest"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse": {

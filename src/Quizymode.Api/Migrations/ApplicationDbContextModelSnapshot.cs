@@ -112,31 +112,48 @@ namespace Quizymode.Api.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
 
                     b.Property<bool>("IsPublic")
-                        .HasColumnType("boolean");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsRepoManaged")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Collections");
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("IsPublic");
+
+                    b.HasIndex("IsRepoManaged");
+
+                    b.ToTable("Collections", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionBookmark", b =>
@@ -392,6 +409,11 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
+                    b.Property<bool>("IsRepoManaged")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<Guid?>("NavigationKeywordId1")
                         .HasColumnType("uuid");
 
@@ -426,6 +448,8 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("FuzzyBucket");
+
+                    b.HasIndex("IsRepoManaged");
 
                     b.HasIndex("NavigationKeywordId1");
 
