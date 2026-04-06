@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -15,7 +16,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
     public SeedSyncAdminTests()
     {
-        _service = new SeedSyncAdminService(DbContext, TaxonomyRegistry, _gitHubSeedSource);
+        Mock<IUserContext> userContext = new();
+        _service = new SeedSyncAdminService(DbContext, TaxonomyRegistry, _gitHubSeedSource, userContext.Object);
     }
 
     [Fact]
@@ -230,7 +232,6 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             RepositoryOwner: "quizymode",
             RepositoryName: "quizymode",
             GitRef: "main",
-            ItemsPath: "data/seed-source/items/geography",
             DeltaPreviewLimit: 50);
     }
 
