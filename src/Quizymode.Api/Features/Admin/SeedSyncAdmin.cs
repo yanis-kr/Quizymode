@@ -175,8 +175,8 @@ public static class SeedSyncAdmin
                 .WithMessage("Items is required.")
                 .Must(items => items.Count > 0)
                 .WithMessage("At least one item is required.")
-                .Must(items => items.Count <= 5000)
-                .WithMessage("Cannot sync more than 5000 items at once.")
+                .Must(items => items.Count <= 20000)
+                .WithMessage("Cannot sync more than 20000 items at once.")
                 .Must(HaveUniqueItemIds)
                 .WithMessage("ItemId values must be unique within a sync request.");
 
