@@ -46,6 +46,10 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<KeywordRelation> KeywordRelations => Set<KeywordRelation>();
 
+    public DbSet<SeedSyncRun> SeedSyncRuns => Set<SeedSyncRun>();
+
+    public DbSet<SeedSyncItemHistory> SeedSyncItemHistories => Set<SeedSyncItemHistory>();
+
     public DbSet<UserSetting> UserSettings => Set<UserSetting>();
 
     public DbSet<Upload> Uploads => Set<Upload>();

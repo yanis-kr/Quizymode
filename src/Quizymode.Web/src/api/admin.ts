@@ -223,8 +223,10 @@ export interface SeedSyncPreviewResponse {
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;
+  affectedItemCount: number;
   createdCount: number;
   updatedCount: number;
+  deletedCount: number;
   unchangedCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
@@ -240,11 +242,51 @@ export interface SeedSyncApplyResponse {
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;
+  affectedItemCount: number;
   createdCount: number;
   updatedCount: number;
+  deletedCount: number;
   unchangedCount: number;
+  historyRunId?: string | null;
+  historyRecordedUtc?: string | null;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
+}
+
+export interface SeedSyncHistoryItemResponse {
+  itemId: string;
+  action: string;
+  category: string;
+  navigationKeyword1: string;
+  navigationKeyword2: string;
+  question: string;
+  changedFields: string[];
+}
+
+export interface SeedSyncHistoryRunResponse {
+  runId: string;
+  createdUtc: string;
+  triggeredByUserId?: string | null;
+  repositoryOwner: string;
+  repositoryName: string;
+  gitRef: string;
+  resolvedCommitSha: string;
+  itemsPath: string;
+  seedSet: string;
+  sourceFileCount: number;
+  totalItemsInPayload: number;
+  existingItemCount: number;
+  affectedItemCount: number;
+  createdCount: number;
+  updatedCount: number;
+  deletedCount: number;
+  unchangedCount: number;
+  hasMoreChanges: boolean;
+  changes: SeedSyncHistoryItemResponse[];
+}
+
+export interface SeedSyncHistoryResponse {
+  runs: SeedSyncHistoryRunResponse[];
 }
 
 export const adminApi = {
@@ -512,6 +554,19 @@ export const adminApi = {
     const response = await apiClient.post<SeedSyncApplyResponse>(
       "/admin/seed-sync/apply",
       data
+    );
+    return response.data;
+  },
+
+  getSeedSyncHistory: async (
+    take: number = 5,
+    changesPerRun: number = 10
+  ): Promise<SeedSyncHistoryResponse> => {
+    const response = await apiClient.get<SeedSyncHistoryResponse>(
+      "/admin/seed-sync/history",
+      {
+        params: { take, changesPerRun },
+      }
     );
     return response.data;
   },

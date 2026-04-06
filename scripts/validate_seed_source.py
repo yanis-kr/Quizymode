@@ -3,7 +3,6 @@ from __future__ import annotations
 import sys
 
 from seed_source_common import (
-    load_duplicate_allowlist,
     load_public_collections,
     load_source_items,
     validate_source,
@@ -13,8 +12,7 @@ from seed_source_common import (
 def main() -> int:
     items = load_source_items()
     collections = load_public_collections()
-    allowlist = load_duplicate_allowlist()
-    errors = validate_source(items, collections, allowlist)
+    errors = validate_source(items, collections)
 
     if errors:
         for error in errors:

@@ -56,10 +56,18 @@ internal sealed class DatabaseSeederHostedService(
 
             bool hadItemsBefore = await db.Items.AnyAsync(cancellationToken);
 
-            string? resolvedItemsPath = ResolveSeedItemsPath(resolvedSeedRoot);
+            SeedSelection? selection = await LoadSelectionAsync(resolvedSeedRoot, cancellationToken);
+            string? resolvedItemsPath = ResolveItemsPath(resolvedSeedRoot, selection);
+
             if (resolvedItemsPath is not null)
             {
-                List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(resolvedItemsPath, cancellationToken);
+                HashSet<Guid>? allowedIds = selection?.ItemIds?.Count > 0
+                    ? [.. selection.ItemIds]
+                    : null;
+
+                List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(
+                    resolvedItemsPath, allowedIds, cancellationToken);
+
                 if (itemRequests.Count > 0)
                 {
                     SeedSyncAdmin.ManifestRequest manifest = new(
@@ -78,7 +86,8 @@ internal sealed class DatabaseSeederHostedService(
                     Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyManifestAsync(
                         manifest,
                         sourceContext,
-                        cancellationToken);
+                        cancellationToken,
+                        recordHistory: false);
                     if (result.IsFailure)
                     {
                         _logger.LogError("Failed to apply local item seed sync: {Error}", result.Error?.Description ?? "Unknown error");
@@ -96,7 +105,7 @@ internal sealed class DatabaseSeederHostedService(
             }
             else
             {
-                _logger.LogInformation("No seed-dev items folder found under {SeedRoot}.", resolvedSeedRoot);
+                _logger.LogInformation("No items source found under {SeedRoot}. Skipping item seeding.", resolvedSeedRoot);
             }
 
             await EnsureSeedScienceRatingsAsync(db, cancellationToken);
@@ -163,8 +172,54 @@ internal sealed class DatabaseSeederHostedService(
         return null;
     }
 
+    private async Task<SeedSelection?> LoadSelectionAsync(string resolvedSeedRoot, CancellationToken cancellationToken)
+    {
+        string selectionFile = Path.Combine(resolvedSeedRoot, "selection.json");
+        if (!File.Exists(selectionFile))
+        {
+            return null;
+        }
+
+        string json = await File.ReadAllTextAsync(selectionFile, cancellationToken);
+        SeedSelection? selection = JsonSerializer.Deserialize<SeedSelection>(
+            json,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        if (selection is not null)
+        {
+            _logger.LogInformation(
+                "Loaded selection.json: {ItemCount} item IDs, itemsSource={ItemsSource}",
+                selection.ItemIds?.Count ?? 0,
+                selection.ItemsSource ?? "(none)");
+        }
+
+        return selection;
+    }
+
+    private string? ResolveItemsPath(string resolvedSeedRoot, SeedSelection? selection)
+    {
+        // If selection.json specifies an itemsSource path, resolve it the same way
+        // ResolveSeedPath does — first relative to the seed root, then walking up the tree.
+        if (!string.IsNullOrWhiteSpace(selection?.ItemsSource))
+        {
+            string? resolved = ResolveSeedPath(selection.ItemsSource);
+            if (resolved is not null)
+            {
+                return resolved;
+            }
+
+            _logger.LogWarning(
+                "selection.json itemsSource '{ItemsSource}' could not be resolved. Falling back to local items folder.",
+                selection.ItemsSource);
+        }
+
+        // Fall back to a local items/ subfolder inside the seed root.
+        return ResolveSeedItemsPath(resolvedSeedRoot);
+    }
+
     private async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadSeedItemRequestsAsync(
         string resolvedItemsPath,
+        HashSet<Guid>? allowedIds,
         CancellationToken cancellationToken)
     {
         string[] allFiles = Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories);
@@ -186,6 +241,11 @@ internal sealed class DatabaseSeederHostedService(
 
             foreach (RepoManagedItemSeedData item in items)
             {
+                if (allowedIds is not null && !allowedIds.Contains(item.ItemId))
+                {
+                    continue;
+                }
+
                 requests.Add(new SeedSyncAdmin.SeedItemRequest(
                     item.ItemId,
                     item.Category,
@@ -435,6 +495,20 @@ internal sealed class DatabaseSeederHostedService(
         string candidate = Path.Combine(resolvedSeedRoot, SeedCollectionsFolderName);
         return Directory.Exists(candidate) ? candidate : null;
     }
+}
+
+internal sealed class SeedSelection
+{
+    public int SchemaVersion { get; set; }
+
+    [JsonPropertyName("itemsSource")]
+    public string? ItemsSource { get; set; }
+
+    [JsonPropertyName("itemIds")]
+    public List<Guid> ItemIds { get; set; } = [];
+
+    [JsonPropertyName("collectionIds")]
+    public List<Guid> CollectionIds { get; set; } = [];
 }
 
 internal sealed class RepoManagedItemSeedData

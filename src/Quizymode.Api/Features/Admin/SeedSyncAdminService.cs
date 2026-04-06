@@ -13,10 +13,12 @@ namespace Quizymode.Api.Features.Admin;
 internal sealed class SeedSyncAdminService(
     ApplicationDbContext db,
     ITaxonomyRegistry taxonomyRegistry,
-    IGitHubSeedSource gitHubSeedSource)
+    IGitHubSeedSource gitHubSeedSource,
+    IUserContext userContext)
 {
     private const string SeederUserId = "seeder";
     private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
+    private readonly IUserContext _userContext = userContext;
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewAsync(
         SeedSyncAdmin.Request request,
@@ -71,13 +73,14 @@ internal sealed class SeedSyncAdminService(
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
         }
 
-        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
     }
 
     public async Task<Result<SeedSyncAdmin.ApplyResponse>> ApplyManifestAsync(
         SeedSyncAdmin.ManifestRequest manifest,
         SeedSyncAdmin.SourceContext sourceContext,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        bool recordHistory = true)
     {
         IDbContextTransaction? transaction = null;
 
@@ -104,10 +107,18 @@ internal sealed class SeedSyncAdminService(
             }
 
             DateTime utcNow = DateTime.UtcNow;
+            SeedSyncRun? historyRun = recordHistory
+                ? BuildHistoryRun(plan, sourceContext, utcNow)
+                : null;
 
             foreach (PlannedSeedItemChange change in plan.Changes)
             {
                 ApplyChange(change, publicKeywordMap, utcNow);
+            }
+
+            if (historyRun is not null)
+            {
+                db.SeedSyncRuns.Add(historyRun);
             }
 
             await db.SaveChangesAsync(cancellationToken);
@@ -117,7 +128,7 @@ internal sealed class SeedSyncAdminService(
                 await transaction.CommitAsync(cancellationToken);
             }
 
-            return Result.Success(ToApplyResponse(plan, sourceContext, manifest.DeltaPreviewLimit));
+            return Result.Success(ToApplyResponse(plan, sourceContext, manifest.DeltaPreviewLimit, historyRun));
         }
         catch (Exception ex)
         {
@@ -131,6 +142,70 @@ internal sealed class SeedSyncAdminService(
             {
                 await transaction.DisposeAsync();
             }
+        }
+    }
+
+    public async Task<Result<SeedSyncAdmin.HistoryResponse>> GetHistoryAsync(
+        int take,
+        int changesPerRun,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            List<SeedSyncRun> runs = await db.SeedSyncRuns
+                .AsNoTracking()
+                .Include(run => run.ItemHistories)
+                .OrderByDescending(run => run.CreatedUtc)
+                .Take(take)
+                .ToListAsync(cancellationToken);
+
+            List<SeedSyncAdmin.HistoryRunResponse> responseRuns = runs
+                .Select(run => new SeedSyncAdmin.HistoryRunResponse(
+                    run.Id,
+                    run.CreatedUtc,
+                    run.TriggeredByUserId,
+                    run.RepositoryOwner,
+                    run.RepositoryName,
+                    run.GitRef,
+                    run.ResolvedCommitSha,
+                    run.ItemsPath,
+                    run.SeedSet,
+                    run.SourceFileCount,
+                    run.TotalItemsInPayload,
+                    run.ExistingItemCount,
+                    run.CreatedCount + run.UpdatedCount + run.DeletedCount,
+                    run.CreatedCount,
+                    run.UpdatedCount,
+                    run.DeletedCount,
+                    run.UnchangedCount,
+                    run.ItemHistories.Count > changesPerRun,
+                    run.ItemHistories
+                        .OrderBy(history => history.CreatedUtc)
+                        .ThenBy(history => history.ItemId)
+                        .Take(changesPerRun)
+                        .Select(history => new SeedSyncAdmin.HistoryItemResponse(
+                            history.ItemId,
+                            history.Action switch
+                            {
+                                SeedSyncItemHistoryAction.Created => "Created",
+                                SeedSyncItemHistoryAction.Updated => "Updated",
+                                SeedSyncItemHistoryAction.Deleted => "Deleted",
+                                _ => "Updated"
+                            },
+                            history.Category,
+                            history.NavigationKeyword1,
+                            history.NavigationKeyword2,
+                            history.Question,
+                            history.ChangedFields))
+                        .ToList()))
+                .ToList();
+
+            return Result.Success(new SeedSyncAdmin.HistoryResponse(responseRuns));
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<SeedSyncAdmin.HistoryResponse>(
+                Error.Problem("Admin.SeedSyncHistoryFailed", $"Failed to load seed sync history: {ex.Message}"));
         }
     }
 
@@ -457,8 +532,10 @@ internal sealed class SeedSyncAdminService(
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,
+            plan.AffectedItemCount,
             plan.CreateCount,
             plan.UpdateCount,
+            plan.DeleteCount,
             plan.UnchangedCount,
             plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
@@ -467,7 +544,8 @@ internal sealed class SeedSyncAdminService(
     private static SeedSyncAdmin.ApplyResponse ToApplyResponse(
         SeedSyncPlan plan,
         SeedSyncAdmin.SourceContext sourceContext,
-        int deltaPreviewLimit)
+        int deltaPreviewLimit,
+        SeedSyncRun? historyRun)
     {
         List<SeedSyncAdmin.ChangeResponse> deltaChanges = BuildDeltaChanges(plan, deltaPreviewLimit);
 
@@ -481,9 +559,13 @@ internal sealed class SeedSyncAdminService(
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,
+            plan.AffectedItemCount,
             plan.CreateCount,
             plan.UpdateCount,
+            plan.DeleteCount,
             plan.UnchangedCount,
+            historyRun?.Id,
+            historyRun?.CreatedUtc,
             plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
     }
@@ -718,14 +800,73 @@ internal sealed class SeedSyncAdminService(
     {
         public int CreateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Create);
         public int UpdateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Update);
+        public int DeleteCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Delete);
         public int UnchangedCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Unchanged);
         public int DeltaChangeCount => Changes.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
+        public int AffectedItemCount => Changes.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
     }
 
     private enum SeedSyncChangeKind
     {
         Create,
         Update,
+        Delete,
         Unchanged
+    }
+
+    private SeedSyncRun BuildHistoryRun(
+        SeedSyncPlan plan,
+        SeedSyncAdmin.SourceContext sourceContext,
+        DateTime utcNow)
+    {
+        string? triggeredByUserId = string.IsNullOrWhiteSpace(_userContext.UserId)
+            ? null
+            : _userContext.UserId;
+
+        SeedSyncRun run = new()
+        {
+            Id = Guid.NewGuid(),
+            RepositoryOwner = sourceContext.RepositoryOwner,
+            RepositoryName = sourceContext.RepositoryName,
+            GitRef = sourceContext.GitRef,
+            ResolvedCommitSha = sourceContext.ResolvedCommitSha,
+            ItemsPath = sourceContext.ItemsPath,
+            SeedSet = plan.SeedSet,
+            SourceFileCount = sourceContext.SourceFileCount,
+            TotalItemsInPayload = plan.TotalItemsInPayload,
+            ExistingItemCount = plan.ExistingItemCount,
+            CreatedCount = plan.CreateCount,
+            UpdatedCount = plan.UpdateCount,
+            DeletedCount = plan.DeleteCount,
+            UnchangedCount = plan.UnchangedCount,
+            TriggeredByUserId = triggeredByUserId,
+            CreatedUtc = utcNow
+        };
+
+        List<SeedSyncItemHistory> histories = plan.Changes
+            .Where(change => change.ChangeKind != SeedSyncChangeKind.Unchanged)
+            .Select(change => new SeedSyncItemHistory
+            {
+                Id = Guid.NewGuid(),
+                SeedSyncRunId = run.Id,
+                ItemId = change.Item.ItemId,
+                Action = change.ChangeKind switch
+                {
+                    SeedSyncChangeKind.Create => SeedSyncItemHistoryAction.Created,
+                    SeedSyncChangeKind.Update => SeedSyncItemHistoryAction.Updated,
+                    SeedSyncChangeKind.Delete => SeedSyncItemHistoryAction.Deleted,
+                    _ => SeedSyncItemHistoryAction.Updated
+                },
+                Category = change.Item.Category,
+                NavigationKeyword1 = change.Item.NavigationKeyword1,
+                NavigationKeyword2 = change.Item.NavigationKeyword2,
+                Question = change.Item.Question,
+                ChangedFields = change.ChangedFields.ToList(),
+                CreatedUtc = utcNow
+            })
+            .ToList();
+
+        run.ItemHistories = histories;
+        return run;
     }
 }

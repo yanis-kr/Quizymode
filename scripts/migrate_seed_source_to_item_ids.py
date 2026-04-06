@@ -13,7 +13,6 @@ from datetime import datetime
 from pathlib import Path
 
 from seed_source_common import (
-    ALLOWLIST_PATH,
     DEV_SELECTION_PATH,
     REGISTRY_ROOT,
     ROOT,
@@ -96,10 +95,8 @@ def main() -> int:
     resolve_manual_duplicate_drops(legacy_items)
 
     kept_items = [item for item in legacy_items if not item.dropped]
-    allowlist_entries = build_allowlist_entries(kept_items)
 
     write_migrated_source_items(kept_items)
-    write_json(ALLOWLIST_PATH, {"schemaVersion": 1, "allowedDuplicateQuestions": allowlist_entries})
     write_home_sample_collection(kept_items)
     write_seed_dev_selection(kept_items)
 
@@ -111,7 +108,6 @@ def main() -> int:
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_seed_dev_subset.py")], check=True)
 
     print(f"Migrated {len(kept_items)} seed-source items to itemId.")
-    print(f"Wrote allowlist entries: {len(allowlist_entries)}")
     return 0
 
 
@@ -210,19 +206,6 @@ def resolve_manual_duplicate_drops(items: list[LegacyItem]) -> None:
             rel = item.path.relative_to(ROOT).as_posix()
             if rel != keeper_rel:
                 item.dropped = True
-
-
-def build_allowlist_entries(items: list[LegacyItem]) -> list[dict[str, str]]:
-    grouped: dict[tuple[str, str], list[LegacyItem]] = defaultdict(list)
-    for item in items:
-        grouped[item.key].append(item)
-
-    entries: list[dict[str, str]] = []
-    for (category, _normalized_question), grouped_items in sorted(grouped.items()):
-        if len(grouped_items) < 2:
-            continue
-        entries.append({"category": category, "question": grouped_items[0].question})
-    return entries
 
 
 def write_migrated_source_items(items: list[LegacyItem]) -> None:

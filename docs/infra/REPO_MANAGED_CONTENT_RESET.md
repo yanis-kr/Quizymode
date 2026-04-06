@@ -263,7 +263,8 @@ If verification fails at any phase:
 
 - Use an immutable commit SHA for prod syncs, not a branch name. Branch refs may resolve to a different commit between preview and apply.
 - `deltaPreviewLimit: 0` returns counts only with no row listing — useful when the delta is very large and you only need the summary.
-- The startup seeder seeds items from `data/seed-dev/items/` (a 15-item subset for dev/demo), not the full canonical set. The full set only comes from Admin Seed Sync.
+- The startup seeder reads the 15 seed-dev items from `data/seed-source/items/` filtered by `data/seed-dev/selection.json` (via `itemsSource` + `itemIds`). There is no separate `seed-dev/items/` folder.
+- The full canonical item set only comes from Admin Seed Sync.
 - Admin Seed Sync does not infer deletes. Any items missing from the GitHub payload are left untouched. That is why the delete step is necessary when the goal is a clean rebuild.
 - Collection sync is not yet GitHub-backed. The only public collection (`home-sample`) is seeded by the startup seeder from `data/seed-dev/collections/home-sample.json`. Its 5 referenced items are included in the seed-dev selection and will be present after startup.
 

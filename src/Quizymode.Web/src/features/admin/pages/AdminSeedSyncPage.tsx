@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   adminApi,
   type SeedSyncApplyResponse,
+  type SeedSyncHistoryResponse,
   type SeedSyncPreviewResponse,
   type SeedSyncRequest,
 } from "@/api/admin";
@@ -54,6 +59,13 @@ function extractErrorMessage(error: unknown): string {
   );
 }
 
+function formatUtcDateTime(value: string) {
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(new Date(value));
+}
+
 function SummaryCard({
   label,
   value,
@@ -80,6 +92,75 @@ function SummaryCard({
   );
 }
 
+function ChangeTable({
+  changes,
+  emptyMessage,
+}: {
+  changes: {
+    itemId: string;
+    action: string;
+    category: string;
+    navigationKeyword1: string;
+    navigationKeyword2: string;
+    question: string;
+    changedFields: string[];
+  }[];
+  emptyMessage: string;
+}) {
+  if (changes.length === 0) {
+    return <p className="mt-3 text-sm text-gray-500">{emptyMessage}</p>;
+  }
+
+  return (
+    <div className="mt-3 overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
+              Action
+            </th>
+            <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
+              Scope
+            </th>
+            <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
+              Question
+            </th>
+            <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
+              Changed fields
+            </th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {changes.map((change) => (
+            <tr key={change.itemId}>
+              <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                {change.action}
+              </td>
+              <td className="px-4 py-3 text-sm text-gray-600">
+                <div>{change.category}</div>
+                <div className="text-xs text-gray-500">
+                  {change.navigationKeyword1} / {change.navigationKeyword2}
+                </div>
+              </td>
+              <td className="px-4 py-3 text-sm text-gray-700">
+                <div className="max-w-xl">{change.question}</div>
+                <div className="mt-1 font-mono text-xs text-gray-400">
+                  {change.itemId}
+                </div>
+              </td>
+              <td className="px-4 py-3 text-sm text-gray-600">
+                {change.changedFields.length > 0
+                  ? change.changedFields.join(", ")
+                  : "-"}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function ResultsPanel({
   title,
   response,
@@ -87,6 +168,11 @@ function ResultsPanel({
   title: string;
   response: SeedSyncPreviewResponse | SeedSyncApplyResponse;
 }) {
+  const hasRecordedHistory =
+    "historyRunId" in response &&
+    Boolean(response.historyRunId) &&
+    Boolean(response.historyRecordedUtc);
+
   return (
     <div className="bg-white shadow rounded-lg p-6">
       <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
@@ -97,7 +183,7 @@ function ResultsPanel({
           </p>
           <p className="text-sm text-gray-500">
             Ref <span className="font-mono">{response.gitRef}</span>
-            {" · "}
+            {" | "}
             Commit{" "}
             <span className="font-mono">
               {response.resolvedCommitSha.slice(0, 12)}
@@ -105,9 +191,21 @@ function ResultsPanel({
           </p>
           <p className="text-sm text-gray-500">
             Path <span className="font-mono">{response.itemsPath}</span>
-            {" · "}
+            {" | "}
             Files {response.sourceFileCount.toLocaleString()}
           </p>
+          {hasRecordedHistory && (
+            <p className="text-sm text-emerald-700">
+              History recorded{" "}
+              <span className="font-mono">
+                {("historyRunId" in response && response.historyRunId) || ""}
+              </span>
+              {" | "}
+              {formatUtcDateTime(
+                ("historyRecordedUtc" in response && response.historyRecordedUtc) || ""
+              )}
+            </p>
+          )}
         </div>
         <div className="text-sm text-gray-500">
           Payload items: {response.totalItemsInPayload.toLocaleString()}
@@ -115,8 +213,14 @@ function ResultsPanel({
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-6">
+        <SummaryCard
+          label="Affected"
+          value={response.affectedItemCount}
+          tone="warning"
+        />
         <SummaryCard label="Created" value={response.createdCount} tone="success" />
         <SummaryCard label="Updated" value={response.updatedCount} tone="success" />
+        <SummaryCard label="Deleted" value={response.deletedCount} tone="warning" />
         <SummaryCard label="Unchanged" value={response.unchangedCount} />
         <SummaryCard label="Existing" value={response.existingItemCount} />
       </div>
@@ -131,59 +235,90 @@ function ResultsPanel({
           )}
         </div>
 
-        {response.changes.length === 0 ? (
-          <p className="mt-3 text-sm text-gray-500">
-            No delta rows were returned for this response.
-          </p>
-        ) : (
-          <div className="mt-3 overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
-                    Action
-                  </th>
-                  <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
-                    Scope
-                  </th>
-                  <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
-                    Question
-                  </th>
-                  <th className="px-4 py-2 text-left text-xs font-medium uppercase text-gray-500">
-                    Changed fields
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200 bg-white">
-                {response.changes.map((change) => (
-                  <tr key={change.itemId}>
-                    <td className="px-4 py-3 text-sm font-medium text-gray-900">
-                      {change.action}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
-                      <div>{change.category}</div>
-                      <div className="text-xs text-gray-500">
-                        {change.navigationKeyword1} / {change.navigationKeyword2}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      <div className="max-w-xl">{change.question}</div>
-                      <div className="mt-1 font-mono text-xs text-gray-400">
-                        {change.itemId}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
-                      {change.changedFields.length > 0
-                        ? change.changedFields.join(", ")
-                        : "-"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+        <ChangeTable
+          changes={response.changes}
+          emptyMessage="No delta rows were returned for this response."
+        />
       </div>
+    </div>
+  );
+}
+
+function HistoryPanel({ history }: { history: SeedSyncHistoryResponse }) {
+  return (
+    <div className="bg-white shadow rounded-lg p-6">
+      <div>
+        <h2 className="text-lg font-medium text-gray-900">Recent sync history</h2>
+        <p className="text-sm text-gray-500">
+          Each apply run stores one sync record plus one per-item history row for
+          affected items.
+        </p>
+      </div>
+
+      {history.runs.length === 0 ? (
+        <p className="mt-4 text-sm text-gray-500">
+          No seed sync history has been recorded yet.
+        </p>
+      ) : (
+        <div className="mt-4 space-y-4">
+          {history.runs.map((run) => (
+            <div key={run.runId} className="rounded-lg border border-gray-200 p-4">
+              <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                <div>
+                  <div className="text-sm font-medium text-gray-900">
+                    {run.repositoryOwner}/{run.repositoryName}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {formatUtcDateTime(run.createdUtc)}
+                    {" | "}
+                    Triggered by {run.triggeredByUserId ?? "system"}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    Ref <span className="font-mono">{run.gitRef}</span>
+                    {" | "}
+                    Commit{" "}
+                    <span className="font-mono">
+                      {run.resolvedCommitSha.slice(0, 12)}
+                    </span>
+                  </div>
+                </div>
+                <div className="text-xs font-mono text-gray-400">{run.runId}</div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-6">
+                <SummaryCard
+                  label="Affected"
+                  value={run.affectedItemCount}
+                  tone="warning"
+                />
+                <SummaryCard label="Created" value={run.createdCount} tone="success" />
+                <SummaryCard label="Updated" value={run.updatedCount} tone="success" />
+                <SummaryCard label="Deleted" value={run.deletedCount} tone="warning" />
+                <SummaryCard label="Unchanged" value={run.unchangedCount} />
+                <SummaryCard label="Existing" value={run.existingItemCount} />
+              </div>
+
+              <div className="mt-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-md font-medium text-gray-900">
+                    Recorded item changes
+                  </h3>
+                  {run.hasMoreChanges && (
+                    <span className="text-xs text-gray-500">
+                      Only the first recorded changes are shown.
+                    </span>
+                  )}
+                </div>
+
+                <ChangeTable
+                  changes={run.changes}
+                  emptyMessage="No affected item rows were recorded for this run."
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -192,7 +327,8 @@ const defaultItemsPath = "data/seed-source/items";
 
 const AdminSeedSyncPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const [repositoryOwner, setRepositoryOwner] = useState("Quizymode");
+  const queryClient = useQueryClient();
+  const [repositoryOwner, setRepositoryOwner] = useState("yanis-kr");
   const [repositoryName, setRepositoryName] = useState("Quizymode");
   const [gitRef, setGitRef] = useState("main");
   const [itemsPath, setItemsPath] = useState(defaultItemsPath);
@@ -229,11 +365,18 @@ const AdminSeedSyncPage = () => {
       setLocalError(null);
       setPreviewResponse(null);
       setApplyResponse(response);
+      queryClient.invalidateQueries({ queryKey: ["admin", "seed-sync-history"] });
     },
     onError: (error) => {
       setApplyResponse(null);
       setLocalError(extractErrorMessage(error));
     },
+  });
+
+  const historyQuery = useQuery({
+    queryKey: ["admin", "seed-sync-history"],
+    queryFn: () => adminApi.getSeedSyncHistory(),
+    enabled: isAuthenticated && isAdmin,
   });
 
   if (!isAuthenticated || !isAdmin) {
@@ -430,6 +573,12 @@ const AdminSeedSyncPage = () => {
       </div>
 
       <div className="mt-6 space-y-6">
+        {historyQuery.data && <HistoryPanel history={historyQuery.data} />}
+        {historyQuery.isError && (
+          <div className="rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            Recent sync history could not be loaded right now.
+          </div>
+        )}
         {previewResponse && (
           <ResultsPanel title="Preview results" response={previewResponse} />
         )}
