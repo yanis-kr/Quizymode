@@ -7,6 +7,7 @@ from seed_source_common import (
     load_source_items,
     validate_source,
     write_item_registry,
+    write_items_bundle,
 )
 
 
@@ -19,7 +20,8 @@ def main() -> int:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
     write_item_registry(items)
-    print(f"Wrote registry for {len(items)} items.")
+    write_items_bundle(items)
+    print(f"Wrote registry and bundle for {len(items)} items.")
     return 0
 
 

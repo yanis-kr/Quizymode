@@ -38,7 +38,6 @@ public static class SeedSyncAdmin
         string RepositoryOwner,
         string RepositoryName,
         string GitRef,
-        string? ItemsPath = null,
         int DeltaPreviewLimit = 200);
 
     public sealed record ChangeResponse(
@@ -150,11 +149,6 @@ public static class SeedSyncAdmin
                 .WithMessage("GitRef is required.")
                 .MaximumLength(200)
                 .WithMessage("GitRef must not exceed 200 characters.");
-
-            RuleFor(x => x.ItemsPath)
-                .MaximumLength(300)
-                .WithMessage("ItemsPath must not exceed 300 characters.")
-                .When(x => !string.IsNullOrWhiteSpace(x.ItemsPath));
 
             RuleFor(x => x.DeltaPreviewLimit)
                 .InclusiveBetween(0, 500)

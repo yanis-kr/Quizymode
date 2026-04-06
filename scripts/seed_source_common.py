@@ -220,6 +220,11 @@ def validate_source(
     return errors
 
 
+def write_items_bundle(items: list[SourceItem], path: Path = REGISTRY_ROOT / "items-bundle.json") -> None:
+    REGISTRY_ROOT.mkdir(parents=True, exist_ok=True)
+    write_json(path, [canonicalize_item_payload(item) for item in items])
+
+
 def write_item_registry(items: list[SourceItem], path: Path = REGISTRY_ROOT / "item-index.csv") -> None:
     REGISTRY_ROOT.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:

@@ -199,7 +199,6 @@ export interface SeedSyncRequest {
   repositoryOwner: string;
   repositoryName: string;
   gitRef: string;
-  itemsPath?: string | null;
   deltaPreviewLimit?: number;
 }
 

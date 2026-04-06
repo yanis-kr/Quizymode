@@ -171,7 +171,7 @@ describe("adminApi", () => {
       changes: [],
     };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main" };
     const result = await adminApi.previewSeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/preview", payload);
     expect(result).toEqual(data);
@@ -199,7 +199,7 @@ describe("adminApi", () => {
       changes: [],
     };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main" };
     const result = await adminApi.applySeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/apply", payload);
     expect(result).toEqual(data);

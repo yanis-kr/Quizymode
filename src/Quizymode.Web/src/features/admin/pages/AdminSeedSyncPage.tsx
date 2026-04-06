@@ -323,15 +323,12 @@ function HistoryPanel({ history }: { history: SeedSyncHistoryResponse }) {
   );
 }
 
-const defaultItemsPath = "data/seed-source/items";
-
 const AdminSeedSyncPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
   const [repositoryOwner, setRepositoryOwner] = useState("yanis-kr");
   const [repositoryName, setRepositoryName] = useState("Quizymode");
   const [gitRef, setGitRef] = useState("main");
-  const [itemsPath, setItemsPath] = useState(defaultItemsPath);
   const [deltaPreviewLimit, setDeltaPreviewLimit] = useState("200");
   const [localError, setLocalError] = useState<string | null>(null);
   const [previewResponse, setPreviewResponse] =
@@ -389,7 +386,6 @@ const AdminSeedSyncPage = () => {
     const owner = repositoryOwner.trim();
     const repo = repositoryName.trim();
     const ref = gitRef.trim();
-    const path = itemsPath.trim();
     const limit = Number(deltaPreviewLimit.trim());
 
     if (!owner || !repo || !ref) {
@@ -405,7 +401,6 @@ const AdminSeedSyncPage = () => {
       repositoryOwner: owner,
       repositoryName: repo,
       gitRef: ref,
-      itemsPath: path || defaultItemsPath,
       deltaPreviewLimit: limit,
     };
   };
@@ -442,7 +437,7 @@ const AdminSeedSyncPage = () => {
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Seed Sync</h1>
       <p className="text-gray-600 text-sm mb-6">
         Preview or apply repo-managed items directly from GitHub. The API fetches
-        canonical seed-source files at the exact ref you provide and never infers
+        the pre-built items bundle at the exact ref you provide and never infers
         deletes from missing rows.
       </p>
 
@@ -498,23 +493,6 @@ const AdminSeedSyncPage = () => {
               />
             </label>
 
-            <label className="block md:col-span-2">
-              <span className="text-sm font-medium text-gray-700">
-                Items path
-              </span>
-              <input
-                value={itemsPath}
-                onChange={(event) => {
-                  setItemsPath(event.target.value);
-                  resetResults();
-                }}
-                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm"
-                placeholder={defaultItemsPath}
-              />
-              <p className="mt-2 text-xs text-gray-500">
-                Use a narrower subpath to preview just one category or scope.
-              </p>
-            </label>
           </div>
 
           <div className="space-y-4">
