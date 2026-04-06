@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.OpenApi;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
@@ -29,12 +28,7 @@ public static class ApproveItem
                 .WithDescription("No request body. Approves the item (makes it public and removes from review board).")
                 .RequireAuthorization("Admin")
                 .Produces<ApproveItemResponse>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status404NotFound)
-                .WithOpenApi(operation =>
-                {
-                    operation.RequestBody = null;
-                    return operation;
-                });
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(

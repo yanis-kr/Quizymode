@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Quizymode.Api.Features.Admin;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
