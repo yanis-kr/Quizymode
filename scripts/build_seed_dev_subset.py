@@ -11,7 +11,6 @@ from seed_source_common import (
     SOURCE_COLLECTIONS_ROOT,
     SOURCE_ITEMS_ROOT,
     canonicalize_item_payload,
-    load_duplicate_allowlist,
     load_public_collections,
     load_source_items,
     validate_source,
@@ -31,8 +30,7 @@ def main() -> int:
 
     items = load_source_items(SOURCE_ITEMS_ROOT)
     collections = load_public_collections(SOURCE_COLLECTIONS_ROOT)
-    allowlist = load_duplicate_allowlist()
-    validation_errors = validate_source(items, collections, allowlist)
+    validation_errors = validate_source(items, collections)
     if validation_errors:
         for error in validation_errors:
             print(f"ERROR: {error}", file=sys.stderr)

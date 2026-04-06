@@ -13,7 +13,6 @@ from seed_source_common import (
     SOURCE_ITEMS_ROOT,
     canonicalize_item_payload,
     is_guid,
-    load_duplicate_allowlist,
     load_public_collections,
     load_source_items,
     next_sharded_file_path,
@@ -47,12 +46,11 @@ def main() -> int:
 
     existing_items = load_source_items()
     collections = load_public_collections()
-    allowlist = load_duplicate_allowlist()
 
     by_item_id = {item.item_id: item for item in existing_items}
-    by_question = defaultdict(list)
-    for item in existing_items:
-        by_question[(item.category, normalize_question(item.question))].append(item)
+    by_question: dict[str, object] = {
+        normalize_question(item.question): item for item in existing_items
+    }
 
     pending_groups: dict[tuple[str, str, str], list[dict[str, object]]] = defaultdict(list)
     existing_paths = {item.path for item in existing_items}
@@ -115,13 +113,13 @@ def main() -> int:
                     warnings.append(f"{path} item {index}: itemId '{item_id}' already exists unchanged; skipping.")
                 continue
 
-            question_key = (category, normalize_question(question))
-            if by_question.get(question_key):
-                warnings.append(f"{path} item {index}: duplicate normalized question already exists in category '{category}': {question}")
+            normalized_q = normalize_question(question)
+            if by_question.get(normalized_q):
+                warnings.append(f"{path} item {index}: question already exists in canonical source: {question}")
                 continue
 
             by_item_id[item_id] = _payload_to_source_item(payload, path, index)
-            by_question[question_key].append(by_item_id[item_id])
+            by_question[normalized_q] = by_item_id[item_id]
             pending_groups[(category, nav1, nav2)].append(payload)
 
     if errors:
@@ -151,7 +149,7 @@ def main() -> int:
         write_json(target_path, payloads)
 
     items = load_source_items()
-    validation_errors = validate_source(items, collections, allowlist)
+    validation_errors = validate_source(items, collections)
     if validation_errors:
         for error in validation_errors:
             print(f"ERROR: {error}", file=sys.stderr)

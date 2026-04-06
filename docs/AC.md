@@ -878,6 +878,8 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 - **AC 5.2.4** [Admin] **Given** I call `POST /admin/seed-sync/apply` with an item whose `itemId` does **not** exist in the current database (for example because the row was manually deleted earlier), **when** the request succeeds, **then** the API creates a new public repo-managed item using that explicit `itemId` and marks the row with `IsRepoManaged = true`.
 - **AC 5.2.5** [Admin] **Given** an admin seed-sync item includes extra keywords beyond the navigation pair, **when** a keyword name does not already exist as a public keyword, **then** the API creates it as a **public** keyword (not private pending) and attaches it to the repo-managed item; navigation keywords are also attached to the item keywords like other item ingress flows.
 - **AC 5.2.6** [Admin] **Given** some existing public repo-managed rows are absent from the GitHub-loaded item set for the requested path/ref, **when** I call preview or apply, **then** the API leaves those rows untouched; current apply behavior does **not** infer deletes from missing rows.
+- **AC 5.2.7** [Admin] **Given** I call `POST /admin/seed-sync/apply` and the request succeeds, **when** the API commits the sync, **then** it also persists exactly one seed-sync run history row containing at least the repo/ref/commit source metadata, summary counts, timestamp, and the triggering admin user id when available.
+- **AC 5.2.8** [Admin] **Given** a successful seed-sync apply affects items, **when** the run history is stored, **then** the API also persists one per-item history row for each affected item containing at least `itemId`, action (`Created`, `Updated`, or `Deleted`), and a changed-fields summary; unchanged items do not create per-item history rows.
 
 **UI**
 
@@ -885,6 +887,8 @@ Feedback submissions are lightweight inbound messages from the SPA. They may be 
 - **AC 5.2.10** [Admin] **Given** I am on the Seed Sync screen, **when** I enter a GitHub repository, git ref, and optional seed-source path, **then** the UI sends that repo/ref request to the API instead of uploading a manifest JSON payload.
 - **AC 5.2.11** [Admin] **Given** canonical seed-source files in GitHub contain extra fields that are not part of the seed-sync item schema (such as `isPrivate`, `factualRisk`, or `reviewComments`), **when** the API loads those files, **then** those extra fields are silently ignored; repo-managed items are always public (`IsPrivate = false`) regardless of any `isPrivate` value in source.
 - **AC 5.2.12** [Admin] **Given** I am using seed sync for a production change, **when** I choose a GitHub ref, **then** I should prefer an immutable commit SHA over a branch head so the preview/apply result is reproducible and auditable.
+- **AC 5.2.13** [Admin] **Given** I am on the Seed Sync screen, **when** the page loads, **then** I see a recent sync-history summary sourced from persisted seed-sync run history rather than only the transient result of the last browser action.
+- **AC 5.2.14** [Admin] **Given** I apply a seed sync from the Seed Sync screen, **when** the request succeeds, **then** the apply summary shows that the run was recorded in persisted history and the recent-history panel refreshes to include that new run.
 
 ---
 

@@ -162,14 +162,16 @@ describe("adminApi", () => {
       seedSet: "test",
       totalItemsInPayload: 0,
       existingItemCount: 0,
+      affectedItemCount: 0,
       createdCount: 0,
       updatedCount: 0,
+      deletedCount: 0,
       unchangedCount: 0,
       hasMoreChanges: false,
       changes: [],
     };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main" };
     const result = await adminApi.previewSeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/preview", payload);
     expect(result).toEqual(data);
@@ -186,16 +188,33 @@ describe("adminApi", () => {
       seedSet: "test",
       totalItemsInPayload: 0,
       existingItemCount: 0,
+      affectedItemCount: 0,
       createdCount: 0,
       updatedCount: 0,
+      deletedCount: 0,
       unchangedCount: 0,
+      historyRunId: "run1",
+      historyRecordedUtc: "2026-04-05T00:00:00Z",
       hasMoreChanges: false,
       changes: [],
     };
     mockPost.mockResolvedValueOnce({ data });
-    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main", itemsPath: "data/seed-source/items" };
+    const payload = { schemaVersion: 2, repositoryOwner: "quizymode", repositoryName: "quizymode", gitRef: "main" };
     const result = await adminApi.applySeedSync(payload);
     expect(mockPost).toHaveBeenCalledWith("/admin/seed-sync/apply", payload);
+    expect(result).toEqual(data);
+  });
+
+  it("getSeedSyncHistory calls GET /admin/seed-sync/history with defaults", async () => {
+    const data = { runs: [] };
+    mockGet.mockResolvedValueOnce({ data });
+    const result = await adminApi.getSeedSyncHistory();
+    expect(mockGet).toHaveBeenCalledWith(
+      "/admin/seed-sync/history",
+      expect.objectContaining({
+        params: expect.objectContaining({ take: 5, changesPerRun: 10 }),
+      })
+    );
     expect(result).toEqual(data);
   });
 

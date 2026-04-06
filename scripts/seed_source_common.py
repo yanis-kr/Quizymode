@@ -14,7 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ITEMS_ROOT = ROOT / "data" / "seed-source" / "items"
 SOURCE_COLLECTIONS_ROOT = ROOT / "data" / "seed-source" / "collections" / "public"
 REGISTRY_ROOT = ROOT / "data" / "seed-source" / "_registry"
-ALLOWLIST_PATH = REGISTRY_ROOT / "duplicate-question-allowlist.json"
 DEV_SELECTION_PATH = ROOT / "data" / "seed-dev" / "selection.json"
 SEED_DEV_ITEMS_ROOT = ROOT / "data" / "seed-dev" / "items"
 SEED_DEV_COLLECTIONS_ROOT = ROOT / "data" / "seed-dev" / "collections"
@@ -42,10 +41,6 @@ class SourceItem:
     source: str | None
     path: Path
     index: int
-
-    @property
-    def normalized_question(self) -> str:
-        return normalize_question(self.question)
 
 
 @dataclass
@@ -170,38 +165,13 @@ def load_public_collections(collections_root: Path = SOURCE_COLLECTIONS_ROOT) ->
     return collections
 
 
-def load_duplicate_allowlist(path: Path = ALLOWLIST_PATH) -> set[tuple[str, str]]:
-    if not path.exists():
-        return set()
-
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    entries = raw.get("allowedDuplicateQuestions", [])
-    allowlist: set[tuple[str, str]] = set()
-    for entry in entries:
-        allowlist.add((str(entry["category"]).strip(), normalize_question(str(entry["question"]).strip())))
-    return allowlist
-
-
-def write_duplicate_allowlist(entries: list[dict[str, str]], path: Path = ALLOWLIST_PATH) -> None:
-    REGISTRY_ROOT.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "schemaVersion": 1,
-        "allowedDuplicateQuestions": sorted(
-            entries,
-            key=lambda entry: (entry["category"], normalize_question(entry["question"])),
-        ),
-    }
-    write_json(path, payload)
-
-
 def validate_source(
     items: list[SourceItem],
     collections: list[PublicCollection],
-    allowlist: set[tuple[str, str]],
 ) -> list[str]:
     errors: list[str] = []
     seen_item_ids: dict[str, SourceItem] = {}
-    duplicate_groups: dict[tuple[str, str], list[SourceItem]] = {}
+    seen_questions: dict[str, SourceItem] = {}
 
     for item in items:
         scope = parse_scope_from_path(item.path)
@@ -218,24 +188,22 @@ def validate_source(
         if not item.correct_answer:
             errors.append(f"{item.path} item {item.index}: correctAnswer is required.")
 
-        existing = seen_item_ids.get(item.item_id)
-        if existing is not None:
+        existing_id = seen_item_ids.get(item.item_id)
+        if existing_id is not None:
             errors.append(
-                f"Duplicate itemId '{item.item_id}' found in {existing.path} and {item.path}."
+                f"Duplicate itemId '{item.item_id}' found in {existing_id.path} and {item.path}."
             )
         else:
             seen_item_ids[item.item_id] = item
 
-        key = (item.category, item.normalized_question)
-        duplicate_groups.setdefault(key, []).append(item)
-
-    for key, grouped_items in duplicate_groups.items():
-        if len(grouped_items) < 2 or key in allowlist:
-            continue
-        paths = ", ".join(f"{item.path.name}#{item.index}" for item in grouped_items)
-        errors.append(
-            f"Duplicate normalized question in category '{key[0]}' for '{grouped_items[0].question}': {paths}"
-        )
+        normalized = normalize_question(item.question)
+        existing_q = seen_questions.get(normalized)
+        if existing_q is not None:
+            errors.append(
+                f"Duplicate question '{item.question}' found in {existing_q.path}#{existing_q.index} and {item.path}#{item.index}."
+            )
+        else:
+            seen_questions[normalized] = item
 
     known_item_ids = set(seen_item_ids)
     for collection in collections:
@@ -250,6 +218,11 @@ def validate_source(
             errors.append(f"{collection.path}: missing itemIds referenced: {', '.join(missing)}")
 
     return errors
+
+
+def write_items_bundle(items: list[SourceItem], path: Path = REGISTRY_ROOT / "items-bundle.json") -> None:
+    REGISTRY_ROOT.mkdir(parents=True, exist_ok=True)
+    write_json(path, [canonicalize_item_payload(item) for item in items])
 
 
 def write_item_registry(items: list[SourceItem], path: Path = REGISTRY_ROOT / "item-index.csv") -> None:

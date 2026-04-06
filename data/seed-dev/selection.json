@@ -1,5 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "itemsSource": "data/seed-source/items",
   "itemIds": [
     "2b12ec96-5237-4ed8-be39-d61ae92d5cfc",
     "68a6fa13-c7dc-49c5-a303-468fc9743d24",

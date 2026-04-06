@@ -735,6 +735,138 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Requests");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.SeedSyncItemHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<int>("Action")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("ChangedFields")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("NavigationKeyword1")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<string>("NavigationKeyword2")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<Guid>("SeedSyncRunId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Action");
+
+                    b.HasIndex("CreatedUtc");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("SeedSyncRunId");
+
+                    b.ToTable("SeedSyncItemHistories", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.SeedSyncRun", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<int>("CreatedCount")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DeletedCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExistingItemCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("GitRef")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("ItemsPath")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<string>("RepositoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("RepositoryOwner")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("ResolvedCommitSha")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("SeedSet")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("SourceFileCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalItemsInPayload")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TriggeredByUserId")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("UnchangedCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UpdatedCount")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedUtc");
+
+                    b.HasIndex("ResolvedCommitSha");
+
+                    b.HasIndex("TriggeredByUserId");
+
+                    b.ToTable("SeedSyncRuns", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuide", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1162,6 +1294,17 @@ namespace Quizymode.Api.Migrations
                     b.Navigation("ParentKeyword");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.SeedSyncItemHistory", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.SeedSyncRun", "SeedSyncRun")
+                        .WithMany("ItemHistories")
+                        .HasForeignKey("SeedSyncRunId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SeedSyncRun");
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.StudyGuideChunk", b =>
                 {
                     b.HasOne("Quizymode.Api.Shared.Models.StudyGuideImportSession", "ImportSession")
@@ -1236,6 +1379,11 @@ namespace Quizymode.Api.Migrations
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Item", b =>
                 {
                     b.Navigation("ItemKeywords");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.SeedSyncRun", b =>
+                {
+                    b.Navigation("ItemHistories");
                 });
 #pragma warning restore 612, 618
         }

@@ -829,6 +829,46 @@
         }
       }
     },
+    "/admin/seed-sync/history": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get recent repo-managed seed sync history (Admin only)",
+        "description": "Returns the most recent persisted seed sync runs and their affected item changes.",
+        "parameters": [
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "changesPerRun",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/analytics/page-views": {
       "post": {
         "tags": [
@@ -3986,9 +4026,13 @@
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
+          "affectedItemCount",
           "createdCount",
           "updatedCount",
+          "deletedCount",
           "unchangedCount",
+          "historyRunId",
+          "historyRecordedUtc",
           "hasMoreChanges",
           "changes"
         ],
@@ -4021,14 +4065,40 @@
           "existingItemCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "affectedItemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "createdCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "updatedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "deletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "unchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "historyRunId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "historyRecordedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
           },
           "hasMoreChanges": {
             "$ref": "#/components/schemas/System.Boolean"
@@ -4073,6 +4143,142 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryItemResponse": {
+        "required": [
+          "itemId",
+          "action",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "question",
+          "changedFields"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "action": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "changedFields": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryResponse": {
+        "required": [
+          "runs"
+        ],
+        "type": "object",
+        "properties": {
+          "runs": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.HistoryRunResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryRunResponse": {
+        "required": [
+          "runId",
+          "createdUtc",
+          "triggeredByUserId",
+          "repositoryOwner",
+          "repositoryName",
+          "gitRef",
+          "resolvedCommitSha",
+          "itemsPath",
+          "seedSet",
+          "sourceFileCount",
+          "totalItemsInPayload",
+          "existingItemCount",
+          "affectedItemCount",
+          "createdCount",
+          "updatedCount",
+          "deletedCount",
+          "unchangedCount",
+          "hasMoreChanges",
+          "changes"
+        ],
+        "type": "object",
+        "properties": {
+          "runId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "triggeredByUserId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "repositoryOwner": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "repositoryName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "gitRef": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "resolvedCommitSha": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "seedSet": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalItemsInPayload": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "existingItemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "affectedItemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "createdCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "updatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "deletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "unchangedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hasMoreChanges": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "changes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.HistoryItemResponse"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.SeedSyncAdmin.PreviewResponse": {
         "required": [
           "repositoryOwner",
@@ -4084,8 +4290,10 @@
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
+          "affectedItemCount",
           "createdCount",
           "updatedCount",
+          "deletedCount",
           "unchangedCount",
           "hasMoreChanges",
           "changes"
@@ -4119,10 +4327,16 @@
           "existingItemCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "affectedItemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "createdCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "updatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "deletedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "unchangedCount": {
@@ -4156,16 +4370,6 @@
           },
           "gitRef": {
             "$ref": "#/components/schemas/System.String"
-          },
-          "itemsPath": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
           },
           "deltaPreviewLimit": {
             "$ref": "#/components/schemas/System.Int32"
@@ -7495,6 +7699,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.HistoryItemResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryItemResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.HistoryRunResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryRunResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse": {

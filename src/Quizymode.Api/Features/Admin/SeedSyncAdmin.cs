@@ -38,7 +38,6 @@ public static class SeedSyncAdmin
         string RepositoryOwner,
         string RepositoryName,
         string GitRef,
-        string? ItemsPath = null,
         int DeltaPreviewLimit = 200);
 
     public sealed record ChangeResponse(
@@ -60,8 +59,10 @@ public static class SeedSyncAdmin
         string SeedSet,
         int TotalItemsInPayload,
         int ExistingItemCount,
+        int AffectedItemCount,
         int CreatedCount,
         int UpdatedCount,
+        int DeletedCount,
         int UnchangedCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
@@ -76,11 +77,47 @@ public static class SeedSyncAdmin
         string SeedSet,
         int TotalItemsInPayload,
         int ExistingItemCount,
+        int AffectedItemCount,
         int CreatedCount,
         int UpdatedCount,
+        int DeletedCount,
         int UnchangedCount,
+        Guid? HistoryRunId,
+        DateTime? HistoryRecordedUtc,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
+
+    public sealed record HistoryItemResponse(
+        Guid ItemId,
+        string Action,
+        string Category,
+        string NavigationKeyword1,
+        string NavigationKeyword2,
+        string Question,
+        List<string> ChangedFields);
+
+    public sealed record HistoryRunResponse(
+        Guid RunId,
+        DateTime CreatedUtc,
+        string? TriggeredByUserId,
+        string RepositoryOwner,
+        string RepositoryName,
+        string GitRef,
+        string ResolvedCommitSha,
+        string ItemsPath,
+        string SeedSet,
+        int SourceFileCount,
+        int TotalItemsInPayload,
+        int ExistingItemCount,
+        int AffectedItemCount,
+        int CreatedCount,
+        int UpdatedCount,
+        int DeletedCount,
+        int UnchangedCount,
+        bool HasMoreChanges,
+        List<HistoryItemResponse> Changes);
+
+    public sealed record HistoryResponse(List<HistoryRunResponse> Runs);
 
     internal static ValidationResult ValidateManifest(ManifestRequest request)
     {
@@ -112,11 +149,6 @@ public static class SeedSyncAdmin
                 .WithMessage("GitRef is required.")
                 .MaximumLength(200)
                 .WithMessage("GitRef must not exceed 200 characters.");
-
-            RuleFor(x => x.ItemsPath)
-                .MaximumLength(300)
-                .WithMessage("ItemsPath must not exceed 300 characters.")
-                .When(x => !string.IsNullOrWhiteSpace(x.ItemsPath));
 
             RuleFor(x => x.DeltaPreviewLimit)
                 .InclusiveBetween(0, 500)
@@ -253,6 +285,14 @@ public static class SeedSyncAdmin
                 .RequireAuthorization("Admin")
                 .Produces<ApplyResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
+
+            app.MapGet("admin/seed-sync/history", HistoryHandler)
+                .WithTags("Admin")
+                .WithSummary("Get recent repo-managed seed sync history (Admin only)")
+                .WithDescription("Returns the most recent persisted seed sync runs and their affected item changes.")
+                .RequireAuthorization("Admin")
+                .Produces<HistoryResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest);
         }
 
         private static async Task<IResult> PreviewHandler(
@@ -286,6 +326,34 @@ public static class SeedSyncAdmin
             }
 
             Result<ApplyResponse> result = await service.ApplyAsync(request, cancellationToken);
+            return result.Match(
+                value => Results.Ok(value),
+                _ => CustomResults.Problem(result));
+        }
+
+        private static async Task<IResult> HistoryHandler(
+            int? take,
+            int? changesPerRun,
+            SeedSyncAdminService service,
+            CancellationToken cancellationToken)
+        {
+            int resolvedTake = take ?? 5;
+            int resolvedChangesPerRun = changesPerRun ?? 10;
+
+            if (resolvedTake <= 0 || resolvedTake > 20)
+            {
+                return Results.BadRequest("take must be between 1 and 20.");
+            }
+
+            if (resolvedChangesPerRun < 0 || resolvedChangesPerRun > 100)
+            {
+                return Results.BadRequest("changesPerRun must be between 0 and 100.");
+            }
+
+            Result<HistoryResponse> result = await service.GetHistoryAsync(
+                resolvedTake,
+                resolvedChangesPerRun,
+                cancellationToken);
             return result.Match(
                 value => Results.Ok(value),
                 _ => CustomResults.Problem(result));

@@ -1,5 +1,4 @@
 using System.Net.Http.Headers;
-using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Shared.Kernel;
@@ -28,16 +27,9 @@ internal sealed class GitHubSeedSource(
             string repositoryOwner = request.RepositoryOwner.Trim();
             string repositoryName = request.RepositoryName.Trim();
             string gitRef = request.GitRef.Trim();
-            string itemsPath = NormalizeItemsPath(request.ItemsPath, _options.DefaultItemsPath);
+            string bundlePath = _options.BundlePath;
 
-            _httpClient.BaseAddress = new Uri(_options.ApiBaseUrl);
-            _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
-            _httpClient.DefaultRequestHeaders.UserAgent.Clear();
-            _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(_options.UserAgent, "1.0"));
-            _httpClient.DefaultRequestHeaders.Remove("X-GitHub-Api-Version");
-            _httpClient.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2022-11-28");
-            ApplyTokenHeader();
+            ConfigureApiHeaders();
 
             Result<string> commitShaResult = await ResolveCommitShaAsync(
                 repositoryOwner,
@@ -52,36 +44,22 @@ internal sealed class GitHubSeedSource(
 
             string resolvedCommitSha = commitShaResult.Value!;
 
-            Result<List<TreeEntry>> treeResult = await LoadTreeEntriesAsync(
+            Result<List<SeedSyncAdmin.SeedItemRequest>> bundleResult = await LoadBundleAsync(
                 repositoryOwner,
                 repositoryName,
                 resolvedCommitSha,
+                bundlePath,
                 cancellationToken);
 
-            if (treeResult.IsFailure)
+            if (bundleResult.IsFailure)
             {
-                return Result.Failure<LoadedGitHubSeedManifest>(treeResult.Error!);
+                return Result.Failure<LoadedGitHubSeedManifest>(bundleResult.Error!);
             }
 
-            List<TreeEntry> jsonFiles = treeResult.Value!
-                .Where(entry => string.Equals(entry.Type, "blob", StringComparison.OrdinalIgnoreCase))
-                .Where(entry => entry.Path.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
-                .Where(entry => IsWithinItemsPath(entry.Path, itemsPath))
-                .OrderBy(entry => entry.Path, StringComparer.OrdinalIgnoreCase)
-                .ToList();
-
-            if (jsonFiles.Count == 0)
-            {
-                return Result.Failure<LoadedGitHubSeedManifest>(
-                    Error.Validation(
-                        "Admin.SeedSyncItemsPathEmpty",
-                        $"No JSON files were found under '{itemsPath}' in {repositoryOwner}/{repositoryName} at ref '{gitRef}'."));
-            }
-
-            List<SeedSyncAdmin.SeedItemRequest> items = await LoadItemsFromFilesAsync(jsonFiles, cancellationToken);
+            List<SeedSyncAdmin.SeedItemRequest> items = bundleResult.Value!;
 
             SeedSyncAdmin.ManifestRequest manifest = new(
-                SeedSet: itemsPath,
+                SeedSet: bundlePath,
                 Items: items,
                 DeltaPreviewLimit: request.DeltaPreviewLimit);
 
@@ -92,24 +70,29 @@ internal sealed class GitHubSeedSource(
                     repositoryName,
                     gitRef,
                     resolvedCommitSha,
-                    itemsPath,
-                    jsonFiles.Count)));
+                    bundlePath,
+                    SourceFileCount: 1)));
         }
         catch (Exception ex)
         {
             return Result.Failure<LoadedGitHubSeedManifest>(
-                Error.Problem("Admin.SeedSyncGitHubFetchFailed", $"Failed to load seed files from GitHub: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncGitHubFetchFailed", $"Failed to load items bundle from GitHub: {ex.Message}"));
         }
     }
 
-    private void ApplyTokenHeader()
+    private void ConfigureApiHeaders()
     {
-        _httpClient.DefaultRequestHeaders.Authorization = null;
+        _httpClient.BaseAddress = new Uri(_options.ApiBaseUrl);
+        _httpClient.DefaultRequestHeaders.Accept.Clear();
+        _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
+        _httpClient.DefaultRequestHeaders.UserAgent.Clear();
+        _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(_options.UserAgent, "1.0"));
+        _httpClient.DefaultRequestHeaders.Remove("X-GitHub-Api-Version");
+        _httpClient.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2022-11-28");
 
-        if (!string.IsNullOrWhiteSpace(_options.Token))
-        {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _options.Token);
-        }
+        _httpClient.DefaultRequestHeaders.Authorization = string.IsNullOrWhiteSpace(_options.Token)
+            ? null
+            : new AuthenticationHeaderValue("Bearer", _options.Token);
     }
 
     private async Task<Result<string>> ResolveCommitShaAsync(
@@ -147,92 +130,40 @@ internal sealed class GitHubSeedSource(
         return Result.Success(commit.Sha);
     }
 
-    private async Task<Result<List<TreeEntry>>> LoadTreeEntriesAsync(
+    private async Task<Result<List<SeedSyncAdmin.SeedItemRequest>>> LoadBundleAsync(
         string repositoryOwner,
         string repositoryName,
         string resolvedCommitSha,
+        string bundlePath,
         CancellationToken cancellationToken)
     {
-        using HttpResponseMessage response = await _httpClient.GetAsync(
-            $"/repos/{repositoryOwner}/{repositoryName}/git/trees/{resolvedCommitSha}?recursive=1",
-            cancellationToken);
+        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{bundlePath}";
+
+        using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
         if (!response.IsSuccessStatusCode)
         {
             string description = await BuildErrorDescriptionAsync(response, cancellationToken);
-            return Result.Failure<List<TreeEntry>>(
+            return Result.Failure<List<SeedSyncAdmin.SeedItemRequest>>(
                 Error.Problem(
-                    "Admin.SeedSyncTreeLoadFailed",
-                    $"Unable to enumerate seed files from commit '{resolvedCommitSha}': {description}"));
+                    "Admin.SeedSyncBundleFetchFailed",
+                    $"Unable to fetch items bundle '{bundlePath}' at '{resolvedCommitSha}': {description}"));
         }
 
-        GitHubTreeResponse? tree = await JsonSerializer.DeserializeAsync<GitHubTreeResponse>(
+        List<SeedSyncAdmin.SeedItemRequest>? items = await JsonSerializer.DeserializeAsync<List<SeedSyncAdmin.SeedItemRequest>>(
             await response.Content.ReadAsStreamAsync(cancellationToken),
             JsonOptions,
             cancellationToken);
-
-        if (tree?.Tree is null)
-        {
-            return Result.Failure<List<TreeEntry>>(
-                Error.Problem(
-                    "Admin.SeedSyncTreeInvalid",
-                    $"GitHub returned an invalid tree payload for commit '{resolvedCommitSha}'."));
-        }
-
-        return Result.Success(tree.Tree);
-    }
-
-    private async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadItemsFromFilesAsync(
-        List<TreeEntry> jsonFiles,
-        CancellationToken cancellationToken)
-    {
-        List<Task<List<SeedSyncAdmin.SeedItemRequest>>> tasks = jsonFiles
-            .Select(file => LoadFileItemsAsync(file, cancellationToken))
-            .ToList();
-
-        List<SeedSyncAdmin.SeedItemRequest>[] fileItems = await Task.WhenAll(tasks);
-        return fileItems.SelectMany(items => items).ToList();
-    }
-
-    private async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadFileItemsAsync(
-        TreeEntry file,
-        CancellationToken cancellationToken)
-    {
-        if (string.IsNullOrWhiteSpace(file.Url))
-        {
-            throw new InvalidOperationException($"GitHub tree entry '{file.Path}' did not include a blob URL.");
-        }
-
-        using HttpResponseMessage response = await _httpClient.GetAsync(file.Url, cancellationToken);
-        if (!response.IsSuccessStatusCode)
-        {
-            string description = await BuildErrorDescriptionAsync(response, cancellationToken);
-            throw new InvalidOperationException($"Unable to fetch '{file.Path}' from GitHub: {description}");
-        }
-
-        GitHubBlobResponse? blob = await JsonSerializer.DeserializeAsync<GitHubBlobResponse>(
-            await response.Content.ReadAsStreamAsync(cancellationToken),
-            JsonOptions,
-            cancellationToken);
-
-        if (blob is null || !string.Equals(blob.Encoding, "base64", StringComparison.OrdinalIgnoreCase))
-        {
-            throw new InvalidOperationException($"GitHub blob payload for '{file.Path}' was invalid or not base64 encoded.");
-        }
-
-        string normalizedBase64 = blob.Content.Replace("\n", string.Empty).Replace("\r", string.Empty);
-        string json = Encoding.UTF8.GetString(Convert.FromBase64String(normalizedBase64));
-
-        List<SeedSyncAdmin.SeedItemRequest>? items = JsonSerializer.Deserialize<List<SeedSyncAdmin.SeedItemRequest>>(
-            json,
-            JsonOptions);
 
         if (items is null || items.Count == 0)
         {
-            throw new InvalidOperationException($"Seed source file '{file.Path}' did not contain any items.");
+            return Result.Failure<List<SeedSyncAdmin.SeedItemRequest>>(
+                Error.Problem(
+                    "Admin.SeedSyncBundleEmpty",
+                    $"Items bundle '{bundlePath}' did not contain any items."));
         }
 
-        return items;
+        return Result.Success(items);
     }
 
     private static async Task<string> BuildErrorDescriptionAsync(
@@ -249,32 +180,5 @@ internal sealed class GitHubSeedSource(
         return $"{(int)response.StatusCode} {response.ReasonPhrase}: {trimmed}";
     }
 
-    private static string NormalizeItemsPath(string? requestedPath, string defaultItemsPath)
-    {
-        string candidate = string.IsNullOrWhiteSpace(requestedPath)
-            ? defaultItemsPath
-            : requestedPath.Trim();
-
-        return candidate.Replace('\\', '/').Trim('/');
-    }
-
-    private static bool IsWithinItemsPath(string path, string itemsPath)
-    {
-        string normalizedPath = path.Replace('\\', '/').Trim('/');
-
-        if (string.Equals(normalizedPath, itemsPath, StringComparison.OrdinalIgnoreCase))
-        {
-            return true;
-        }
-
-        return normalizedPath.StartsWith(itemsPath + "/", StringComparison.OrdinalIgnoreCase);
-    }
-
     private sealed record GitHubCommitResponse(string Sha);
-
-    private sealed record GitHubTreeResponse(List<TreeEntry> Tree);
-
-    private sealed record TreeEntry(string Path, string Type, string Url);
-
-    private sealed record GitHubBlobResponse(string Content, string Encoding);
 }

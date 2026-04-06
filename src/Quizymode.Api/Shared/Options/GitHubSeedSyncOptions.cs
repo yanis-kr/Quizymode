@@ -6,7 +6,9 @@ internal sealed record class GitHubSeedSyncOptions
 
     public string ApiBaseUrl { get; init; } = "https://api.github.com";
 
-    public string DefaultItemsPath { get; init; } = "data/seed-source/items";
+    public string RawBaseUrl { get; init; } = "https://raw.githubusercontent.com";
+
+    public string BundlePath { get; init; } = "data/seed-source/_registry/items-bundle.json";
 
     public string? Token { get; init; }
 
