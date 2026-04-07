@@ -1,7 +1,7 @@
 # Quizymode User Guide
 
-This guide provides an overview of the main screens available to signed-in users.
-_Screenshots are generated automatically — run `npx playwright test && node scripts/generate-user-guide.js` from the repo root to refresh them._
+This guide provides an overview of the main screens available to signed-in users on desktop and larger screens.
+_Screenshots are generated automatically - run `npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all` from the repo root to refresh both guides._
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ _Screenshots are generated automatically — run `npx playwright test && node sc
 
 ### Home
 
-The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of six featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
+The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
 
 ![Home](screenshots/user/home.png "Home")
 
@@ -31,13 +31,13 @@ The Categories page lists all public subject areas available in Quizymode. You c
 
 ### Nav Geography
 
-Clicking a category card (here: Geography) opens the Sets view for that subject area. Each card represents a primary topic (rank-1 keyword) — for example Capitals, Physical Geography, or Flags. The breadcrumb at the top shows your current position in the hierarchy and lets you navigate back at any time.
+Clicking a category card (here: Geography) opens the Sets view for that subject area. Each card represents a primary topic (rank-1 keyword) such as Capitals, Physical Geography, or Flags. The breadcrumb at the top shows your current position in the hierarchy and lets you navigate back at any time.
 
 ![Nav Geography](screenshots/user/nav-geography.png "Nav Geography")
 
 ### Nav Geography Capitals
 
-Selecting a primary topic (here: Capitals) shows the available subtopics (rank-2 keywords) for that scope — for example World, Europe, or Americas. These are the deepest navigable buckets in the hierarchy.
+Selecting a primary topic (here: Capitals) shows the available subtopics (rank-2 keywords) for that scope such as World, Europe, or Americas. These are the deepest navigable buckets in the hierarchy.
 
 ![Nav Geography Capitals](screenshots/user/nav-geography-capitals.png "Nav Geography Capitals")
 
@@ -87,7 +87,7 @@ Your **active collection** is the collection that receives items when you click 
 
 ### Collection New
 
-Click **New collection** to create a second (or third, etc.) collection. Give it a name and an optional description, then save. Once created it appears in your collections list and you can set it as the active collection to start adding items to it.
+Click **New collection** to create another collection. Give it a name and an optional description, then save. Once created it appears in your collections list and you can set it as the active collection to start adding items to it.
 
 ![Collection New](screenshots/user/collection-new.png "Collection New")
 
@@ -99,7 +99,7 @@ After creating a second collection, the **My Collections** tab shows both cards 
 
 ### Keyword Filter
 
-Items in List mode show their keywords as small tags. Clicking a keyword tag instantly filters the list to show only items that share that tag. This is useful for focusing on a specific sub-topic (for example, only Western-Europe capitals) within a broader scope.
+Items in List mode show their keywords as small tags. Clicking a keyword tag instantly filters the list to show only items that share that tag. This is useful for focusing on a specific sub-topic within a broader scope.
 
 ![Keyword Filter](screenshots/user/keyword-filter.png "Keyword Filter")
 
@@ -137,7 +137,7 @@ Clicking a collection card opens that collection's study page. The page keeps **
 
 ### Collection Detail Flashcards
 
-Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card — answer first, then question and explanation when flipped.
+Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card: answer first, then question and explanation when flipped.
 
 ![Collection Detail Flashcards](screenshots/user/collection-detail-flashcards.png "Collection Detail Flashcards")
 
@@ -161,7 +161,7 @@ Once you make a collection public it immediately appears in the Discover tab alo
 
 ### Collection Bookmark
 
-Clicking the **Bookmark** button on a collection card in Discover saves it to your Bookmarked Collections tab. Bookmarks are personal — they do not affect the collection or its owner. The bookmark button toggles: clicking it again removes the bookmark.
+Clicking the **Bookmark** button on a collection card in Discover saves it to your Bookmarked Collections tab. Bookmarks are personal: they do not affect the collection or its owner. The bookmark button toggles, so clicking it again removes the bookmark.
 
 ![Collection Bookmark](screenshots/user/collection-bookmark.png "Collection Bookmark")
 
@@ -175,7 +175,7 @@ The **Bookmarked** tab shows all collections you have bookmarked. You can open a
 
 ### Add Items
 
-The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords — the same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the AI-assisted Bulk Create flow, or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
+The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the AI-assisted Bulk Create flow, or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
 
 ![Add Items](screenshots/user/add-items.png "Add Items")
 
@@ -193,13 +193,13 @@ The Create Item form lets you write a single quiz item from scratch. Fill in the
 
 ### Bulk Create Items
 
-The Bulk Create page (AI-assisted, no Study Guide) streamlines adding many items at once using an external AI assistant. Choose your category, primary topic, and subtopic; the app generates a structured prompt you copy into any AI tool (e.g. ChatGPT or Claude). Paste the AI response back and the app parses the JSON into a review list where you can accept or reject each item individually before anything is saved to the database.
+The Bulk Create page (AI-assisted, no Study Guide) streamlines adding many items at once using an external AI assistant. Choose your category, primary topic, and subtopic; the app generates a structured prompt you copy into any AI tool. Paste the AI response back and the app parses the JSON into a review list where you can accept or reject each item individually before anything is saved to the database.
 
 ![Bulk Create Items](screenshots/user/bulk-create-items.png "Bulk Create Items")
 
 ### Bulk Create Prompt
 
-After choosing your scope and clicking **Generate Prompt**, the app builds a structured prompt asking an AI assistant to produce 10–15 quiz items for that category, primary topic, and subtopic. Copy the prompt text and paste it into ChatGPT, Claude, or any other AI tool.
+After choosing your scope and clicking **Generate Prompt**, the app builds a structured prompt asking an AI assistant to produce quiz items for that category, primary topic, and subtopic. Copy the prompt text and paste it into ChatGPT, Claude, or any other AI tool.
 
 ![Bulk Create Prompt](screenshots/user/bulk-create-prompt.png "Bulk Create Prompt")
 
@@ -211,7 +211,7 @@ Paste the AI assistant's raw JSON response into the text area and click **Import
 
 ### Bulk Create Review
 
-The review screen shows each parsed item as a card — question, correct answer, incorrect options, explanation, source, and any AI-suggested keywords. Click **Accept** to save an individual item (it is added to your active collection immediately) or **Reject** to discard it. **Accept All** saves every valid item at once.
+The review screen shows each parsed item as a card with the question, correct answer, incorrect options, explanation, source, and any AI-suggested keywords. Click **Accept** to save an individual item or **Reject** to discard it. **Accept All** saves every valid item at once.
 
 ![Bulk Create Review](screenshots/user/bulk-create-review.png "Bulk Create Review")
 
@@ -225,7 +225,7 @@ Navigating to the Study Guide Import wizard before uploading a study guide shows
 
 ### Study Guide
 
-The My Study Guide page is a personal text editor where you paste or write the study material you want to turn into quiz items — lecture notes, textbook excerpts, documentation, or any reference text. Your study guide is saved per user and used as the source content for the Study Guide import wizard, which generates targeted questions from it using AI.
+The My Study Guide page is a personal text editor where you paste or write the study material you want to turn into quiz items such as lecture notes, textbook excerpts, documentation, or any reference text. Your study guide is saved per user and used as the source content for the Study Guide import wizard, which generates targeted questions from it using AI.
 
 ![Study Guide](screenshots/user/study-guide.png "Study Guide")
 
@@ -237,7 +237,7 @@ With your study guide text pasted in, click **Save**. The content is stored on y
 
 ### Study Guide Import
 
-The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; set the number of prompt sets (1–6); then click **Create prompt sets**.
+The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; set the number of prompt sets; then click **Create prompt sets**.
 
 ![Study Guide Import](screenshots/user/study-guide-import.png "Study Guide Import")
 
@@ -249,7 +249,7 @@ After you save a study guide and click **Create prompt sets**, the wizard splits
 
 ### Study Guide Import First Prompt
 
-A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI — the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.
+A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI: the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.
 
 ![Study Guide Import First Prompt](screenshots/user/study-guide-import-first-prompt.png "Study Guide Import First Prompt")
 

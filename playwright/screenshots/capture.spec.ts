@@ -1,11 +1,6 @@
-import { test, type Page } from "@playwright/test";
+import { test, type Page, type TestInfo } from "@playwright/test";
 import path from "path";
 import fs from "fs";
-
-const screenshotDir = path.resolve(
-  process.cwd(),
-  "docs/user-guide/screenshots/user"
-);
 
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 const HOME_SAMPLE_COLLECTION_SLUG = "sample+collection";
@@ -211,6 +206,33 @@ async function waitForUiToSettle(page: Page) {
   }
 }
 
+function getScreenshotDir(testInfo: TestInfo) {
+  return path.resolve(
+    process.cwd(),
+    testInfo.project.name === "screenshots-mobile"
+      ? "docs/user-guide/screenshots/mobile"
+      : "docs/user-guide/screenshots/user"
+  );
+}
+
+async function openMobileMenuIfNeeded(page: Page, testInfo: TestInfo, slug: string) {
+  if (testInfo.project.name !== "screenshots-mobile") {
+    return;
+  }
+
+  if (slug !== "home") {
+    return;
+  }
+
+  const menuButton = page.getByRole("button", { name: /open main menu/i });
+  if (!(await menuButton.isVisible().catch(() => false))) {
+    return;
+  }
+
+  await menuButton.click().catch(() => {});
+  await waitForUiToSettle(page);
+}
+
 async function waitForSelectValue(
   page: Page,
   selector: string,
@@ -294,11 +316,12 @@ async function waitForAnyVisible(
 
 async function capture(
   page: Page,
+  testInfo: TestInfo,
   slug: string,
   url: string,
   waitFor?: string | string[]
 ) {
-  fs.mkdirSync(screenshotDir, { recursive: true });
+  fs.mkdirSync(getScreenshotDir(testInfo), { recursive: true });
 
   await ensureSignedIn(page);
   await safeGoto(page, url);
@@ -307,12 +330,14 @@ async function capture(
     await waitForAnyVisible(page, selectors, 12_000);
   }
 
-  await captureCurrentPage(page, slug);
+  await captureCurrentPage(page, testInfo, slug);
 }
 
-async function captureCurrentPage(page: Page, slug: string) {
+async function captureCurrentPage(page: Page, testInfo: TestInfo, slug: string) {
+  const screenshotDir = getScreenshotDir(testInfo);
   fs.mkdirSync(screenshotDir, { recursive: true });
   await waitForUiToSettle(page);
+  await openMobileMenuIfNeeded(page, testInfo, slug);
   await page
     .screenshot({
       path: path.join(screenshotDir, `${slug}.png`),
@@ -466,7 +491,23 @@ async function setActiveCollectionInManageDialog(page: Page, name: string) {
 
 async function openManageCollectionsForFirstItem(page: Page) {
   await waitForCategoryItemsLoaded(page);
-  await page.locator("button[title='Manage collections']").first().click().catch(() => {});
+  const manageCollectionsButton = page
+    .locator("button[title='Manage collections']")
+    .first();
+  const fallbackCollectionButton = page
+    .locator(
+      "xpath=(//button[contains(@title,'Add to') or contains(@title,'Remove from')]/preceding-sibling::button[1])[1]"
+    )
+    .first();
+
+  if (await manageCollectionsButton.isVisible().catch(() => false)) {
+    await manageCollectionsButton.scrollIntoViewIfNeeded().catch(() => {});
+    await manageCollectionsButton.click({ force: true }).catch(() => {});
+  } else {
+    await fallbackCollectionButton.scrollIntoViewIfNeeded().catch(() => {});
+    await fallbackCollectionButton.click({ force: true }).catch(() => {});
+  }
+
   await waitForManageCollectionsDialog(page);
 }
 
@@ -541,8 +582,8 @@ async function waitForCollectionQuizModeLoaded(page: Page) {
 }
 
 async function getFirstCategoryItemDetailHref(page: Page) {
-  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureSignedIn(page);
+  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 
@@ -557,8 +598,8 @@ async function getFirstCategoryItemDetailHref(page: Page) {
 }
 
 async function openFirstCategoryItemDetail(page: Page) {
-  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureSignedIn(page);
+  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 
@@ -589,7 +630,11 @@ async function rateCurrentItemFiveStars(page: Page) {
 }
 
 async function openCommentsForCurrentItem(page: Page) {
-  await page.getByRole("button", { name: /comments \(/i }).click().catch(() => {});
+  const commentsButton = page
+    .getByRole("button", { name: /comments \(/i })
+    .first();
+  await commentsButton.scrollIntoViewIfNeeded().catch(() => {});
+  await commentsButton.click({ force: true }).catch(() => {});
   await waitForAnyVisible(page, [
     "[role='dialog']",
     "textarea[placeholder='Write your comment...']",
@@ -717,19 +762,19 @@ async function applyKeywordFilterWithResults(page: Page) {
 
 test.describe("User guide screenshots", () => {
   test.describe.configure({ mode: "serial" });
-  test.setTimeout(30_000);
+  test.setTimeout(60_000);
 
   const secondCollectionName = "Second collection";
 
-  test("home", async ({ page }) => {
-    await capture(page, "home", "/");
+  test("home", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "home", "/");
   });
 
-  test("categories", async ({ page }) => {
-    await capture(page, "categories", "/categories");
+  test("categories", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "categories", "/categories");
   });
 
-  test("category-detail", async ({ page }) => {
+  test("category-detail", async ({ page }, testInfo) => {
     await page.goto("/categories", { waitUntil: "load", timeout: 15_000 });
     await page.waitForTimeout(2_000);
 
@@ -743,10 +788,10 @@ test.describe("User guide screenshots", () => {
       }
     }
 
-    await capture(page, "category-detail", href ?? "/categories");
+    await capture(page, testInfo, "category-detail", href ?? "/categories");
   });
 
-  test("category-keyword-group", async ({ page }) => {
+  test("category-keyword-group", async ({ page }, testInfo) => {
     await page.goto("/categories", { waitUntil: "load", timeout: 15_000 });
     await page.waitForTimeout(2_000);
     const links = page.locator("a[href^='/categories/']");
@@ -755,26 +800,26 @@ test.describe("User guide screenshots", () => {
       count >= 2
         ? await links.nth(1).getAttribute("href").catch(() => null)
         : null;
-    await capture(page, "category-keyword-group", href ?? "/categories");
+    await capture(page, testInfo, "category-keyword-group", href ?? "/categories");
   });
 
-  test("add-items", async ({ page }) => {
-    await capture(page, "add-items", "/items/add");
+  test("add-items", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "add-items", "/items/add");
   });
 
-  test("add-new-item", async ({ page }) => {
-    await capture(page, "add-new-item", "/add-new-item");
+  test("add-new-item", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "add-new-item", "/add-new-item");
   });
 
-  test("bulk-create-items", async ({ page }) => {
-    await capture(page, "bulk-create-items", "/items/bulk-create");
+  test("bulk-create-items", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "bulk-create-items", "/items/bulk-create");
   });
 
-  test("study-guide", async ({ page }) => {
-    await capture(page, "study-guide", "/study-guide");
+  test("study-guide", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "study-guide", "/study-guide");
   });
 
-  test("study-guide-import", async ({ page }) => {
+  test("study-guide-import", async ({ page }, testInfo) => {
     await ensureStudyGuideSaved(page);
     await safeGoto(
       page,
@@ -786,77 +831,78 @@ test.describe("User guide screenshots", () => {
       "button:has-text('Create prompt sets')",
       "text=Using study guide:",
     ]);
-    await captureCurrentPage(page, "study-guide-import");
+    await captureCurrentPage(page, testInfo, "study-guide-import");
   });
 
-  test("collections-mine", async ({ page }) => {
-    await capture(page, "collections-mine", "/collections", [
+  test("collections-mine", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "collections-mine", "/collections", [
       "button:has-text('New collection')",
       "button[title='Edit collection']",
     ]);
   });
 
-  test("collections-discover", async ({ page }) => {
-    await capture(page, "collections-discover", "/collections?tab=discover");
+  test("collections-discover", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "collections-discover", "/collections?tab=discover");
   });
 
-  test("collection-detail", async ({ page }) => {
+  test("collection-detail", async ({ page }, testInfo) => {
     await openCollectionByName(page, secondCollectionName);
-    await captureCurrentPage(page, "collection-detail");
+    await captureCurrentPage(page, testInfo, "collection-detail");
   });
 
-  test("about", async ({ page }) => {
-    await capture(page, "about", "/about");
+  test("about", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "about", "/about");
   });
 
-  test("feedback", async ({ page }) => {
-    await capture(page, "feedback", "/feedback");
+  test("feedback", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "feedback", "/feedback");
   });
 
-  test("nav-geography", async ({ page }) => {
-    await capture(page, "nav-geography", "/categories/geography");
+  test("nav-geography", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "nav-geography", "/categories/geography");
   });
 
-  test("nav-geography-capitals", async ({ page }) => {
-    await capture(page, "nav-geography-capitals", "/categories/geography/capitals");
+  test("nav-geography-capitals", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "nav-geography-capitals", "/categories/geography/capitals");
   });
 
-  test("nav-geography-capitals-world", async ({ page }) => {
+  test("nav-geography-capitals-world", async ({ page }, testInfo) => {
     await capture(
       page,
+      testInfo,
       "nav-geography-capitals-world",
       "/categories/geography/capitals/world"
     );
   });
 
-  test("mode-flashcards", async ({ page }) => {
+  test("mode-flashcards", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await clickMode(page, "flashcards");
-    await captureCurrentPage(page, "mode-flashcards");
+    await captureCurrentPage(page, testInfo, "mode-flashcards");
   });
 
-  test("mode-quiz", async ({ page }) => {
+  test("mode-quiz", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await clickMode(page, "quiz");
-    await captureCurrentPage(page, "mode-quiz");
+    await captureCurrentPage(page, testInfo, "mode-quiz");
   });
 
-  test("items-add-to-collection", async ({ page }) => {
+  test("items-add-to-collection", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
     await waitForCategoryItemsLoaded(page);
-    await captureCurrentPage(page, "items-add-to-collection");
+    await captureCurrentPage(page, testInfo, "items-add-to-collection");
   });
 
-  test("items-collection-badges", async ({ page }) => {
+  test("items-collection-badges", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
     await waitForCategoryItemsLoaded(page);
     await addFirstItemsToActiveCollection(page, 3);
-    await captureCurrentPage(page, "items-collection-badges");
+    await captureCurrentPage(page, testInfo, "items-collection-badges");
   });
 
-  test("items-collection-removed", async ({ page }) => {
+  test("items-collection-removed", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
     await waitForCategoryItemsLoaded(page);
@@ -870,20 +916,20 @@ test.describe("User guide screenshots", () => {
 
     await removeButtons.first().click().catch(() => {});
     await waitForUiToSettle(page);
-    await captureCurrentPage(page, "items-collection-removed");
+    await captureCurrentPage(page, testInfo, "items-collection-removed");
   });
 
-  test("active-collection-selector", async ({ page }) => {
+  test("active-collection-selector", async ({ page }, testInfo) => {
     await safeGoto(page, "/categories/geography/capitals/world");
     await ensureListMode(page);
     await waitForCategoryItemsLoaded(page);
     await ensureSecondCollectionIsActive(page, secondCollectionName);
-    await captureCurrentPage(page, "active-collection-selector");
+    await captureCurrentPage(page, testInfo, "active-collection-selector");
     await closeManageCollectionsDialog(page);
     await addFirstItemsToActiveCollection(page, 2);
   });
 
-  test("collection-new", async ({ page }) => {
+  test("collection-new", async ({ page }, testInfo) => {
     await safeGoto(page, "/collections");
     await page
       .getByRole("button", { name: /new collection/i })
@@ -891,7 +937,7 @@ test.describe("User guide screenshots", () => {
       .catch(() => {});
     await page.waitForTimeout(1_000);
     await page.locator("#collection-name").fill("My Second Collection").catch(() => {});
-    await captureCurrentPage(page, "collection-new");
+    await captureCurrentPage(page, testInfo, "collection-new");
     await page
       .getByRole("button", { name: /^create$/i })
       .click()
@@ -899,50 +945,50 @@ test.describe("User guide screenshots", () => {
     await page.waitForTimeout(1_500);
   });
 
-  test("collections-mine-two", async ({ page }) => {
-    await capture(page, "collections-mine-two", "/collections", [
+  test("collections-mine-two", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "collections-mine-two", "/collections", [
       "button[title='Edit collection']",
       "button[title='Active collection']",
     ]);
   });
 
-  test("keyword-filter", async ({ page }) => {
+  test("keyword-filter", async ({ page }, testInfo) => {
     await applyKeywordFilterWithResults(page);
-    await captureCurrentPage(page, "keyword-filter");
+    await captureCurrentPage(page, testInfo, "keyword-filter");
   });
 
-  test("item-detail", async ({ page }) => {
+  test("item-detail", async ({ page }, testInfo) => {
     await openFirstCategoryItemDetail(page);
-    await captureCurrentPage(page, "item-detail");
+    await captureCurrentPage(page, testInfo, "item-detail");
   });
 
-  test("item-rating-five-stars", async ({ page }) => {
+  test("item-rating-five-stars", async ({ page }, testInfo) => {
     await openFirstCategoryItemDetail(page);
     await rateCurrentItemFiveStars(page);
-    await captureCurrentPage(page, "item-rating-five-stars");
+    await captureCurrentPage(page, testInfo, "item-rating-five-stars");
   });
 
-  test("item-comment-added", async ({ page }) => {
+  test("item-comment-added", async ({ page }, testInfo) => {
     await openFirstCategoryItemDetail(page);
     await addCommentForCurrentItem(page, USER_GUIDE_COMMENT_TEXT);
     await waitForAnyVisible(page, ["[role='dialog']", `text=${USER_GUIDE_COMMENT_TEXT}`]);
-    await captureCurrentPage(page, "item-comment-added");
+    await captureCurrentPage(page, testInfo, "item-comment-added");
   });
 
-  test("collection-detail-flashcards", async ({ page }) => {
+  test("collection-detail-flashcards", async ({ page }, testInfo) => {
     await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "flashcards");
-    await captureCurrentPage(page, "collection-detail-flashcards");
+    await captureCurrentPage(page, testInfo, "collection-detail-flashcards");
   });
 
-  test("collection-detail-quiz", async ({ page }) => {
+  test("collection-detail-quiz", async ({ page }, testInfo) => {
     await openCollectionByName(page, secondCollectionName);
     await clickMode(page, "quiz");
     await waitForCollectionQuizModeLoaded(page);
-    await captureCurrentPage(page, "collection-detail-quiz");
+    await captureCurrentPage(page, testInfo, "collection-detail-quiz");
   });
 
-  test("collection-settings-public", async ({ page }) => {
+  test("collection-settings-public", async ({ page }, testInfo) => {
     await safeGoto(page, "/collections");
     await waitForCollectionsPageLoaded(page);
 
@@ -957,18 +1003,18 @@ test.describe("User guide screenshots", () => {
       await publicToggle.check().catch(() => {});
     }
 
-    await captureCurrentPage(page, "collection-settings-public");
+    await captureCurrentPage(page, testInfo, "collection-settings-public");
 
     await page.getByRole("button", { name: /^save$/i }).click().catch(() => {});
     await waitForTextToDisappear(page, /saving/i);
     await waitForCollectionsPageLoaded(page);
   });
 
-  test("collections-discover-public", async ({ page }) => {
-    await capture(page, "collections-discover-public", "/collections?tab=discover");
+  test("collections-discover-public", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "collections-discover-public", "/collections?tab=discover");
   });
 
-  test("collection-bookmark", async ({ page }) => {
+  test("collection-bookmark", async ({ page }, testInfo) => {
     await safeGoto(page, "/collections?tab=discover");
     await page
       .locator("button[title*='Bookmark']")
@@ -976,32 +1022,32 @@ test.describe("User guide screenshots", () => {
       .click()
       .catch(() => {});
     await page.waitForTimeout(1_000);
-    await captureCurrentPage(page, "collection-bookmark");
+    await captureCurrentPage(page, testInfo, "collection-bookmark");
   });
 
-  test("collections-bookmarked", async ({ page }) => {
-    await capture(page, "collections-bookmarked", "/collections?tab=bookmarked");
+  test("collections-bookmarked", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "collections-bookmarked", "/collections?tab=bookmarked");
   });
 
-  test("add-items-prepopulated", async ({ page }) => {
+  test("add-items-prepopulated", async ({ page }, testInfo) => {
     await openScopedAddItemsPage(page);
     await waitForSelectValue(page, "#add-hub-scope-category", "geography");
     await waitForSelectValue(page, "#add-hub-scope-rank1", "capitals");
     await waitForSelectValue(page, "#add-hub-scope-rank2", "world");
-    await captureCurrentPage(page, "add-items-prepopulated");
+    await captureCurrentPage(page, testInfo, "add-items-prepopulated");
   });
 
-  test("bulk-create-prompt", async ({ page }) => {
+  test("bulk-create-prompt", async ({ page }, testInfo) => {
     await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
     await page
       .getByRole("button", { name: /generate ai prompt/i })
       .click()
       .catch(() => {});
     await page.waitForTimeout(2_500);
-    await captureCurrentPage(page, "bulk-create-prompt");
+    await captureCurrentPage(page, testInfo, "bulk-create-prompt");
   });
 
-  test("bulk-create-paste", async ({ page }) => {
+  test("bulk-create-paste", async ({ page }, testInfo) => {
     await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
     await page
       .getByRole("button", { name: /generate ai prompt/i })
@@ -1014,10 +1060,10 @@ test.describe("User guide screenshots", () => {
       .catch(() => {});
     await page.waitForTimeout(1_000);
     await page.locator("textarea").first().fill(BULK_AI_RESPONSE).catch(() => {});
-    await captureCurrentPage(page, "bulk-create-paste");
+    await captureCurrentPage(page, testInfo, "bulk-create-paste");
   });
 
-  test("bulk-create-review", async ({ page }) => {
+  test("bulk-create-review", async ({ page }, testInfo) => {
     await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
     await page
       .getByRole("button", { name: /generate ai prompt/i })
@@ -1035,15 +1081,15 @@ test.describe("User guide screenshots", () => {
       .click()
       .catch(() => {});
     await page.waitForTimeout(2_000);
-    await captureCurrentPage(page, "bulk-create-review");
+    await captureCurrentPage(page, testInfo, "bulk-create-review");
   });
 
-  test("study-guide-no-guide", async ({ page }) => {
+  test("study-guide-no-guide", async ({ page }, testInfo) => {
     await ensureStudyGuideDeleted(page);
-    await capture(page, "study-guide-no-guide", "/study-guide/import");
+    await capture(page, testInfo, "study-guide-no-guide", "/study-guide/import");
   });
 
-  test("study-guide-content", async ({ page }) => {
+  test("study-guide-content", async ({ page }, testInfo) => {
     await ensureSignedIn(page);
     await safeGoto(page, "/study-guide");
     await waitForAnyVisible(page, ["#sg-title", "#sg-content"]);
@@ -1053,15 +1099,15 @@ test.describe("User guide screenshots", () => {
     await waitForTextToDisappear(page, /saving/i);
     await waitForUiToSettle(page);
     await waitForAnyVisible(page, ["button:has-text('Continue to prompt sets')", "#sg-content"]);
-    await captureCurrentPage(page, "study-guide-content");
+    await captureCurrentPage(page, testInfo, "study-guide-content");
   });
 
-  test("study-guide-import-prompts", async ({ page }) => {
+  test("study-guide-import-prompts", async ({ page }, testInfo) => {
     await ensurePromptSetsExist(page);
-    await captureCurrentPage(page, "study-guide-import-prompts");
+    await captureCurrentPage(page, testInfo, "study-guide-import-prompts");
   });
 
-  test("study-guide-import-first-prompt", async ({ page }) => {
+  test("study-guide-import-first-prompt", async ({ page }, testInfo) => {
     await ensurePromptSetsExist(page);
     await page
       .locator(".font-mono, pre, code")
@@ -1069,6 +1115,6 @@ test.describe("User guide screenshots", () => {
       .scrollIntoViewIfNeeded()
       .catch(() => {});
     await waitForUiToSettle(page);
-    await captureCurrentPage(page, "study-guide-import-first-prompt");
+    await captureCurrentPage(page, testInfo, "study-guide-import-first-prompt");
   });
 });

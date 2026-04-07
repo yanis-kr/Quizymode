@@ -1,0 +1,162 @@
+[
+  {
+    "itemId": "b8b71a84-b6aa-4d6e-bdf9-985ae835fd52",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "Tennis is believed to have originated in which country?",
+    "correctAnswer": "France",
+    "incorrectAnswers": [
+      "England",
+      "Italy",
+      "Spain"
+    ],
+    "explanation": "Modern tennis developed much later, but its roots trace back to a French game that evolved over centuries.",
+    "keywords": [
+      "origins",
+      "france",
+      "history"
+    ],
+    "source": "https://www.itftennis.com/en/news-and-media/articles/history-of-tennis/"
+  },
+  {
+    "itemId": "8f384a8d-76a8-4df4-8cc8-48d1d40f3227",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "What was the early ancestor of tennis called?",
+    "correctAnswer": "Jeu de paume",
+    "incorrectAnswers": [
+      "Court royale",
+      "Racquet ball",
+      "Pelota real"
+    ],
+    "explanation": "Jeu de paume means 'game of the hand' and is considered one of the earliest forms of tennis.",
+    "keywords": [
+      "jeu-de-paume",
+      "early-sports",
+      "france"
+    ],
+    "source": "https://www.itftennis.com/en/news-and-media/articles/history-of-tennis/"
+  },
+  {
+    "itemId": "0ce398de-f0d5-49c6-bf18-96bf1533aa67",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "Before yellow became standard, what colors were tennis balls commonly?",
+    "correctAnswer": "Black or white",
+    "incorrectAnswers": [
+      "Red or blue",
+      "Green or orange",
+      "Brown or gray"
+    ],
+    "explanation": "Yellow balls became standard later because they were much easier to see on television.",
+    "keywords": [
+      "tennis-balls",
+      "equipment",
+      "television"
+    ],
+    "source": "https://apnews.com/article/wimbledon-attenborough-yellow-balls-6af39ac4e1789ffc89cba056eee8e5d9"
+  },
+  {
+    "itemId": "cc80c84d-ed54-4f86-9d8a-91b7e280af79",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "Why were yellow tennis balls introduced into the sport?",
+    "correctAnswer": "They were easier for television viewers to see",
+    "incorrectAnswers": [
+      "They were cheaper to manufacture",
+      "They lasted longer on clay courts",
+      "They moved faster through the air"
+    ],
+    "explanation": "The switch to yellow was driven largely by visibility on TV, not by performance on court.",
+    "keywords": [
+      "tv-era",
+      "visibility",
+      "equipment"
+    ],
+    "source": "https://apnews.com/article/wimbledon-attenborough-yellow-balls-6af39ac4e1789ffc89cba056eee8e5d9"
+  },
+  {
+    "itemId": "de2d85eb-4aa5-4d5b-9813-2670dfb801f6",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "How long did the longest match in tennis history last?",
+    "correctAnswer": "11 hours and 5 minutes",
+    "incorrectAnswers": [
+      "8 hours and 42 minutes",
+      "9 hours and 18 minutes",
+      "12 hours and 1 minute"
+    ],
+    "explanation": "The famous Isner-Mahut match at Wimbledon in 2010 lasted 11 hours and 5 minutes over three days.",
+    "keywords": [
+      "longest-match",
+      "wimbledon",
+      "records"
+    ],
+    "source": "https://www.wimbledon.com/en_GB/news/articles/2015-06-24/the_longest_match_in_history.html"
+  },
+  {
+    "itemId": "3674a979-51a1-49d3-8532-72852d4eb686",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "What fruit appears on top of the Wimbledon gentlemen's singles trophy?",
+    "correctAnswer": "A pineapple",
+    "incorrectAnswers": [
+      "An apple",
+      "A lemon",
+      "A pear"
+    ],
+    "explanation": "One of Wimbledon's oddest details is the pineapple on the trophy, a long-standing design feature with uncertain origin.",
+    "keywords": [
+      "wimbledon",
+      "trophy",
+      "symbols"
+    ],
+    "source": "https://www.wimbledon.com/en_GB/news/articles/2018-07-15/2018-06-27_why_is_there_a_pineapple_on_the_wimbledon_trophy.html"
+  },
+  {
+    "itemId": "76d14c16-414c-4faf-ac86-bb55bf0f9176",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "What is the older ancestor of lawn tennis commonly called in Britain?",
+    "correctAnswer": "Real tennis",
+    "incorrectAnswers": [
+      "Royal tennis",
+      "Classic tennis",
+      "True court tennis"
+    ],
+    "explanation": "Real tennis is the historic indoor court game that predates modern lawn tennis.",
+    "keywords": [
+      "real-tennis",
+      "britain",
+      "history"
+    ],
+    "source": "https://www.britannica.com/sports/real-tennis"
+  },
+  {
+    "itemId": "24e759dd-f052-4ab3-b7db-1ea8f9627a76",
+    "category": "sports",
+    "navigationKeyword1": "tennis",
+    "navigationKeyword2": "trivia",
+    "question": "What is the largest tennis stadium in the world?",
+    "correctAnswer": "Arthur Ashe Stadium",
+    "incorrectAnswers": [
+      "Rod Laver Arena",
+      "Centre Court",
+      "Philippe-Chatrier Court"
+    ],
+    "explanation": "Arthur Ashe Stadium, the main court of the US Open, is the largest purpose-built tennis stadium in the world.",
+    "keywords": [
+      "us-open",
+      "stadiums",
+      "records"
+    ],
+    "source": "https://www.usopen.org/en_US/visit/a_z.html"
+  }
+]

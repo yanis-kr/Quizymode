@@ -54,6 +54,22 @@
         "metadata": {
           "actualWorkers": 1
         },
+        "id": "screenshots-mobile",
+        "name": "screenshots-mobile",
+        "testDir": "C:/Projects/Quizymode/playwright",
+        "testIgnore": [],
+        "testMatch": [
+          "**/capture.spec.ts"
+        ],
+        "timeout": 15000
+      },
+      {
+        "outputDir": "C:/Projects/Quizymode/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "smoke",
         "name": "smoke",
         "testDir": "C:/Projects/Quizymode/playwright",
@@ -136,7 +152,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4157,
+                  "duration": 2844,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -144,10 +160,10 @@
                   "steps": [
                     {
                       "title": "fill password",
-                      "duration": 34
+                      "duration": 20
                     }
                   ],
-                  "startTime": "2026-04-05T15:23:29.995Z",
+                  "startTime": "2026-04-07T00:06:14.278Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -172,11 +188,11 @@
         {
           "title": "User guide screenshots",
           "file": "screenshots/capture.spec.ts",
-          "line": 718,
+          "line": 743,
           "column": 6,
           "specs": [
             {
-              "title": "active-collection-selector",
+              "title": "home",
               "ok": true,
               "tags": [],
               "tests": [
@@ -184,19 +200,19 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "screenshots",
-                  "projectName": "screenshots",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
                   "results": [
                     {
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10370,
+                      "duration": 12846,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-05T15:23:37.615Z",
+                      "startTime": "2026-04-07T00:06:19.887Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -204,9 +220,1051 @@
                   "status": "expected"
                 }
               ],
-              "id": "8055b76dba9258d15c9f-cedf1c0f2e8549ce3039",
+              "id": "8055b76dba9258d15c9f-15714998c1f1d4e54714",
               "file": "screenshots/capture.spec.ts",
-              "line": 876,
+              "line": 749,
+              "column": 3
+            },
+            {
+              "title": "categories",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12952,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:06:33.019Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-f8c56aea5e661ed37d83",
+              "file": "screenshots/capture.spec.ts",
+              "line": 753,
+              "column": 3
+            },
+            {
+              "title": "category-detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14286,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:06:46.010Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-bc14da02b4dbc67761fc",
+              "file": "screenshots/capture.spec.ts",
+              "line": 757,
+              "column": 3
+            },
+            {
+              "title": "category-keyword-group",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14533,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:07:00.317Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-2139c703502f479dc0b7",
+              "file": "screenshots/capture.spec.ts",
+              "line": 774,
+              "column": 3
+            },
+            {
+              "title": "add-items",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11770,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:07:14.876Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-a4c3b74eeb426132a298",
+              "file": "screenshots/capture.spec.ts",
+              "line": 786,
+              "column": 3
+            },
+            {
+              "title": "add-new-item",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13416,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:07:26.670Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-6ce9a710092379f1f38a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 790,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-items",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12433,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:07:40.125Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-a47522076dd23a5ee401",
+              "file": "screenshots/capture.spec.ts",
+              "line": 794,
+              "column": 3
+            },
+            {
+              "title": "study-guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11907,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:07:52.590Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-65d013b5bccb09ccfd44",
+              "file": "screenshots/capture.spec.ts",
+              "line": 798,
+              "column": 3
+            },
+            {
+              "title": "study-guide-import",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:08:04.529Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-602127feb383ba7e104a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 802,
+              "column": 3
+            },
+            {
+              "title": "collections-mine",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10974,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:08:18.563Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-ea4f0016e478430907fd",
+              "file": "screenshots/capture.spec.ts",
+              "line": 817,
+              "column": 3
+            },
+            {
+              "title": "collections-discover",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11165,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:08:29.575Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-7654d23d099fe4f215c1",
+              "file": "screenshots/capture.spec.ts",
+              "line": 824,
+              "column": 3
+            },
+            {
+              "title": "collection-detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22109,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:08:40.765Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-0084ed38ced1e30047b7",
+              "file": "screenshots/capture.spec.ts",
+              "line": 828,
+              "column": 3
+            },
+            {
+              "title": "about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11705,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:09:02.905Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-ff4b96bc8fc5b472aaa0",
+              "file": "screenshots/capture.spec.ts",
+              "line": 833,
+              "column": 3
+            },
+            {
+              "title": "feedback",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12321,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:09:14.638Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-ff7b806e1df95bd7c149",
+              "file": "screenshots/capture.spec.ts",
+              "line": 837,
+              "column": 3
+            },
+            {
+              "title": "nav-geography",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12727,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:09:26.983Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-955625b494fda5cffaed",
+              "file": "screenshots/capture.spec.ts",
+              "line": 841,
+              "column": 3
+            },
+            {
+              "title": "nav-geography-capitals",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12398,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:09:39.736Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-0a5e845b8c7f8d5d1639",
+              "file": "screenshots/capture.spec.ts",
+              "line": 845,
+              "column": 3
+            },
+            {
+              "title": "nav-geography-capitals-world",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14820,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:09:52.157Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-4683caf7b5a6bbb1ac56",
+              "file": "screenshots/capture.spec.ts",
+              "line": 849,
+              "column": 3
+            },
+            {
+              "title": "mode-flashcards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4144,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:06.999Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-99c13c5fb62c10da96f1",
+              "file": "screenshots/capture.spec.ts",
+              "line": 858,
+              "column": 3
+            },
+            {
+              "title": "mode-quiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3503,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:11.169Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-90a7ff61285304bb7b33",
+              "file": "screenshots/capture.spec.ts",
+              "line": 864,
+              "column": 3
+            },
+            {
+              "title": "items-add-to-collection",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6098,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:14.702Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-ceb808878607110496b4",
+              "file": "screenshots/capture.spec.ts",
+              "line": 870,
+              "column": 3
+            },
+            {
+              "title": "items-collection-badges",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7691,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:20.826Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-afe007e5df7f43f25a13",
+              "file": "screenshots/capture.spec.ts",
+              "line": 877,
+              "column": 3
+            },
+            {
+              "title": "items-collection-removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8642,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:28.550Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-e7bb6795f0b57b70701b",
+              "file": "screenshots/capture.spec.ts",
+              "line": 885,
+              "column": 3
+            },
+            {
+              "title": "active-collection-selector",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30065,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts",
+                            "column": 16,
+                            "line": 311
+                          },
+                          "message": "Error: page.waitForTimeout: Test timeout of 30000ms exceeded.\n\n  309 |     }\n  310 |\n> 311 |     await page.waitForTimeout(200);\n      |                ^\n  312 |   }\n  313 |\n  314 |   return null;\n    at waitForAnyVisible (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:311:16)\n    at waitForManageCollectionsDialog (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:452:3)\n    at openManageCollectionsForFirstItem (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:495:3)\n    at ensureSecondCollectionIsActive (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:499:3)\n    at C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:906:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:10:37.225Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\screenshots-capture-User-g-b8c76--active-collection-selector-screenshots-mobile\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-68414680c977b02803ce",
+              "file": "screenshots/capture.spec.ts",
+              "line": 902,
+              "column": 3
+            },
+            {
+              "title": "collection-new",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-cfd79061bcdc4cd7a298",
+              "file": "screenshots/capture.spec.ts",
+              "line": 912,
+              "column": 3
+            },
+            {
+              "title": "collections-mine-two",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-e75376a75fc012641b3a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 928,
+              "column": 3
+            },
+            {
+              "title": "keyword-filter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-33a352fa59e942f2acff",
+              "file": "screenshots/capture.spec.ts",
+              "line": 935,
+              "column": 3
+            },
+            {
+              "title": "item-detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-90585d0b4e9aaba3527d",
+              "file": "screenshots/capture.spec.ts",
+              "line": 940,
+              "column": 3
+            },
+            {
+              "title": "item-rating-five-stars",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-41a37fda4ac60aeb513a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 945,
+              "column": 3
+            },
+            {
+              "title": "item-comment-added",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-986985032bcc4c1095df",
+              "file": "screenshots/capture.spec.ts",
+              "line": 951,
+              "column": 3
+            },
+            {
+              "title": "collection-detail-flashcards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-a2c87b450dce9f7cc115",
+              "file": "screenshots/capture.spec.ts",
+              "line": 958,
+              "column": 3
+            },
+            {
+              "title": "collection-detail-quiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-afb2e2fd2e1b50cd78b5",
+              "file": "screenshots/capture.spec.ts",
+              "line": 964,
               "column": 3
             },
             {
@@ -218,29 +1276,403 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "screenshots",
-                  "projectName": "screenshots",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2670,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-05T15:23:48.286Z",
+                      "startTime": "2026-04-07T00:11:07.425Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
-              "id": "8055b76dba9258d15c9f-c3312f1a96fbf2d62368",
+              "id": "8055b76dba9258d15c9f-20bd426bdd9c1a6d5749",
               "file": "screenshots/capture.spec.ts",
-              "line": 945,
+              "line": 971,
+              "column": 3
+            },
+            {
+              "title": "collections-discover-public",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-38435238e4f815103326",
+              "file": "screenshots/capture.spec.ts",
+              "line": 993,
+              "column": 3
+            },
+            {
+              "title": "collection-bookmark",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-a6b8f7158a15c521b687",
+              "file": "screenshots/capture.spec.ts",
+              "line": 997,
+              "column": 3
+            },
+            {
+              "title": "collections-bookmarked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-6774113ba2b72d919aa7",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1008,
+              "column": 3
+            },
+            {
+              "title": "add-items-prepopulated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-0be7914f83263d4a3a4f",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1012,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-prompt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-b95a35767a81a4be2b3d",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1020,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-paste",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-457d2071cb14821f5e2a",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1030,
+              "column": 3
+            },
+            {
+              "title": "bulk-create-review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-06c214005de8a4a10422",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1046,
+              "column": 3
+            },
+            {
+              "title": "study-guide-no-guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-79ac802cb6d551ee7c77",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1067,
+              "column": 3
+            },
+            {
+              "title": "study-guide-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-9102b1e30cf571b9b5fc",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1072,
+              "column": 3
+            },
+            {
+              "title": "study-guide-import-prompts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-752dcf0d6ef6eefeb4f8",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1085,
+              "column": 3
+            },
+            {
+              "title": "study-guide-import-first-prompt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "screenshots-mobile",
+                  "projectName": "screenshots-mobile",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8055b76dba9258d15c9f-05c91ec88842249c7f9d",
+              "file": "screenshots/capture.spec.ts",
+              "line": 1090,
               "column": 3
             }
           ]
@@ -250,11 +1682,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-05T15:23:26.874Z",
-    "duration": 24321.137000000002,
-    "expected": 3,
-    "skipped": 0,
-    "unexpected": 0,
+    "startTime": "2026-04-07T00:06:11.711Z",
+    "duration": 295770.86699999997,
+    "expected": 23,
+    "skipped": 20,
+    "unexpected": 1,
     "flaky": 0
   }
 }
