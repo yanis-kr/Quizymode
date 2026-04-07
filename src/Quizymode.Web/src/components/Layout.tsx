@@ -99,11 +99,11 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
       <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-14">
             <div className="flex">
               <Link
                 to="/"
-                className={`flex items-center px-2 py-4 text-xl font-bold text-indigo-600 hover:text-indigo-700 border-b-2 -mb-px ${
+                className={`flex items-center px-2 py-2 text-xl font-bold text-indigo-600 hover:text-indigo-700 border-b-2 -mb-px ${
                   isPathActive("/") ? "border-indigo-600" : "border-transparent"
                 }`}
                 onClick={closeMobileMenu}
@@ -148,7 +148,7 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Mobile menu button */}
               <button
                 type="button"
-                className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                className="sm:hidden inline-flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-expanded="false"
               >
@@ -307,21 +307,18 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </main>
-      <footer className="mx-auto w-full max-w-7xl px-4 pb-6 pt-2 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.7)_0%,rgba(2,6,23,0.64)_100%)] px-4 py-3 text-slate-100 shadow-xl shadow-slate-950/20 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
-          <div>
+      <footer className="mx-auto w-full max-w-7xl px-3 pb-3 pt-1 sm:px-6 lg:px-8">
+        <div className="rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.7)_0%,rgba(2,6,23,0.64)_100%)] px-3 py-2.5 text-slate-100 shadow-xl shadow-slate-950/20 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-4">
+          <div className="hidden sm:block shrink-0">
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Browse, Support, and Legal
+              Browse, Support &amp; Legal
             </div>
-            <p className="mt-1 text-sm text-slate-300">
-              Open the taxonomy, send feedback, or review the app policies from anywhere.
-            </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 gap-1.5 sm:flex sm:flex-wrap sm:gap-2">
             <Link
               to="/about"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               About
             </Link>
@@ -329,14 +326,14 @@ const Layout = ({ children }: LayoutProps) => {
               href={userGuideUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               User Guide
             </a>
             <button
               type="button"
               onClick={() => setShowFeedbackDialog(true)}
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               Feedback
             </button>
@@ -345,19 +342,19 @@ const Layout = ({ children }: LayoutProps) => {
               onClick={() => setShowCategoriesMap(true)}
               onMouseEnter={prefetchCategoriesMap}
               onFocus={prefetchCategoriesMap}
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
-              Categories Map
+              Cat. Map
             </button>
             <Link
               to="/privacy"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               Privacy
             </Link>
             <Link
               to="/terms"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               Terms
             </Link>

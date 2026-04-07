@@ -38,7 +38,7 @@ export function ExploreQuizBreadcrumb({
   });
 
   return (
-    <nav className="flex items-center gap-1 text-sm text-gray-600 flex-wrap">
+    <nav className="flex items-center gap-1 text-xs text-gray-600 overflow-x-auto whitespace-nowrap">
       <Link to="/categories" className="text-indigo-600 hover:text-indigo-800">
         Categories
       </Link>

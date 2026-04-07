@@ -30,7 +30,7 @@ export function BucketGridView({
   buckets,
   onOpenBucket,
   className = "",
-  columnsClassName = "grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3",
+  columnsClassName = "grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-3",
   compact = false,
 }: BucketGridViewProps) {
   return (
@@ -48,7 +48,7 @@ export function BucketGridView({
           className={
             bucket.backgroundImage
               ? "group relative isolate overflow-hidden rounded-[24px] border border-white/10 bg-slate-900 text-left shadow-lg shadow-slate-950/20 transition duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-              : "bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-6 text-left cursor-pointer"
+              : "bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow p-4 text-left cursor-pointer"
           }
         >
           {bucket.backgroundImage ? (
@@ -61,7 +61,7 @@ export function BucketGridView({
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.34)_42%,rgba(2,6,23,0.92)_100%)]" />
               <div
                 className={`relative flex flex-col justify-between text-white ${
-                  compact ? "min-h-[80px] p-3" : "min-h-[188px] p-5"
+                  compact ? "min-h-[68px] p-2.5" : "min-h-[160px] p-4"
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -126,7 +126,7 @@ export function BucketGridView({
                   )}
                 </div>
                 {bucket.description ? (
-                  <p className="mt-1 text-sm text-gray-600 line-clamp-2">
+                  <p className="mt-1 text-sm text-gray-600 line-clamp-1">
                     {bucket.description}
                   </p>
                 ) : null}
