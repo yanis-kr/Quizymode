@@ -519,7 +519,7 @@ const AdminKeywordsPage = () => {
                           onDelete={() => {
                             if (
                               window.confirm(
-                                `Remove "${kw.keywordName}" from navigation? The keyword itself won't be deleted.`
+                                `Remove "${kw.keywordName}" from navigation? Items classified under this keyword will lose their L2 placement. The keyword itself won't be deleted.`
                               )
                             ) {
                               deleteMutation.mutate(kw.id);
