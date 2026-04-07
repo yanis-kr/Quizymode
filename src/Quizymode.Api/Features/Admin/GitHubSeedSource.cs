@@ -28,6 +28,7 @@ internal sealed class GitHubSeedSource(
             string repositoryName = request.RepositoryName.Trim();
             string gitRef = request.GitRef.Trim();
             string bundlePath = _options.BundlePath;
+            string collectionsPath = _options.CollectionsPath;
 
             ConfigureApiHeaders();
 
@@ -57,10 +58,23 @@ internal sealed class GitHubSeedSource(
             }
 
             List<SeedSyncAdmin.SeedItemRequest> items = bundleResult.Value!;
+            Result<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)> collectionsResult =
+                await LoadCollectionsAsync(
+                    repositoryOwner,
+                    repositoryName,
+                    resolvedCommitSha,
+                    collectionsPath,
+                    cancellationToken);
+
+            if (collectionsResult.IsFailure)
+            {
+                return Result.Failure<LoadedGitHubSeedManifest>(collectionsResult.Error!);
+            }
 
             SeedSyncAdmin.ManifestRequest manifest = new(
                 SeedSet: bundlePath,
                 Items: items,
+                Collections: collectionsResult.Value!.Collections,
                 DeltaPreviewLimit: request.DeltaPreviewLimit);
 
             return Result.Success(new LoadedGitHubSeedManifest(
@@ -71,7 +85,9 @@ internal sealed class GitHubSeedSource(
                     gitRef,
                     resolvedCommitSha,
                     bundlePath,
-                    SourceFileCount: 1)));
+                    SourceFileCount: 1,
+                    CollectionsPath: collectionsPath,
+                    CollectionSourceFileCount: collectionsResult.Value.SourceFileCount)));
         }
         catch (Exception ex)
         {
@@ -166,6 +182,107 @@ internal sealed class GitHubSeedSource(
         return Result.Success(items);
     }
 
+    private async Task<Result<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)>> LoadCollectionsAsync(
+        string repositoryOwner,
+        string repositoryName,
+        string resolvedCommitSha,
+        string collectionsPath,
+        CancellationToken cancellationToken)
+    {
+        Result<List<string>> pathsResult = await ListCollectionPathsAsync(
+            repositoryOwner,
+            repositoryName,
+            resolvedCommitSha,
+            collectionsPath,
+            cancellationToken);
+
+        if (pathsResult.IsFailure)
+        {
+            return Result.Failure<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)>(pathsResult.Error!);
+        }
+
+        List<string> collectionPaths = pathsResult.Value!;
+        List<SeedSyncAdmin.SeedCollectionRequest> collections = [];
+
+        foreach (string collectionPath in collectionPaths)
+        {
+            string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{collectionPath}";
+            using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                string description = await BuildErrorDescriptionAsync(response, cancellationToken);
+                return Result.Failure<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)>(
+                    Error.Problem(
+                        "Admin.SeedSyncCollectionsFetchFailed",
+                        $"Unable to fetch collection seed '{collectionPath}' at '{resolvedCommitSha}': {description}"));
+            }
+
+            SeedSyncAdmin.SeedCollectionRequest? collection =
+                await JsonSerializer.DeserializeAsync<SeedSyncAdmin.SeedCollectionRequest>(
+                    await response.Content.ReadAsStreamAsync(cancellationToken),
+                    JsonOptions,
+                    cancellationToken);
+
+            if (collection is null)
+            {
+                return Result.Failure<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)>(
+                    Error.Problem(
+                        "Admin.SeedSyncCollectionEmpty",
+                        $"Collection seed '{collectionPath}' was empty or invalid."));
+            }
+
+            collections.Add(collection);
+        }
+
+        return Result.Success((collections, collectionPaths.Count));
+    }
+
+    private async Task<Result<List<string>>> ListCollectionPathsAsync(
+        string repositoryOwner,
+        string repositoryName,
+        string resolvedCommitSha,
+        string collectionsPath,
+        CancellationToken cancellationToken)
+    {
+        using HttpResponseMessage response = await _httpClient.GetAsync(
+            $"/repos/{repositoryOwner}/{repositoryName}/git/trees/{resolvedCommitSha}?recursive=1",
+            cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            string description = await BuildErrorDescriptionAsync(response, cancellationToken);
+            return Result.Failure<List<string>>(
+                Error.Problem(
+                    "Admin.SeedSyncCollectionsListFailed",
+                    $"Unable to list collection seeds under '{collectionsPath}' at '{resolvedCommitSha}': {description}"));
+        }
+
+        GitHubTreeResponse? treeResponse = await JsonSerializer.DeserializeAsync<GitHubTreeResponse>(
+            await response.Content.ReadAsStreamAsync(cancellationToken),
+            JsonOptions,
+            cancellationToken);
+
+        if (treeResponse?.Tree is null)
+        {
+            return Result.Failure<List<string>>(
+                Error.Problem(
+                    "Admin.SeedSyncCollectionsListFailed",
+                    $"GitHub did not return a tree for '{resolvedCommitSha}'."));
+        }
+
+        string normalizedPrefix = collectionsPath.Trim('/').Replace('\\', '/') + "/";
+        List<string> paths = treeResponse.Tree
+            .Where(entry => string.Equals(entry.Type, "blob", StringComparison.OrdinalIgnoreCase))
+            .Select(entry => entry.Path)
+            .Where(path => path.StartsWith(normalizedPrefix, StringComparison.OrdinalIgnoreCase))
+            .Where(path => path.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        return Result.Success(paths);
+    }
+
     private static async Task<string> BuildErrorDescriptionAsync(
         HttpResponseMessage response,
         CancellationToken cancellationToken)
@@ -181,4 +298,8 @@ internal sealed class GitHubSeedSource(
     }
 
     private sealed record GitHubCommitResponse(string Sha);
+
+    private sealed record GitHubTreeResponse(List<GitHubTreeEntry> Tree);
+
+    private sealed record GitHubTreeEntry(string Path, string Type);
 }

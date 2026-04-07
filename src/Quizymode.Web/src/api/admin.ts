@@ -219,6 +219,8 @@ export interface SeedSyncPreviewResponse {
   resolvedCommitSha: string;
   itemsPath: string;
   sourceFileCount: number;
+  collectionsPath: string;
+  collectionSourceFileCount: number;
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;
@@ -227,6 +229,13 @@ export interface SeedSyncPreviewResponse {
   updatedCount: number;
   deletedCount: number;
   unchangedCount: number;
+  totalCollectionsInPayload: number;
+  existingCollectionCount: number;
+  affectedCollectionCount: number;
+  collectionCreatedCount: number;
+  collectionUpdatedCount: number;
+  collectionDeletedCount: number;
+  collectionUnchangedCount: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }
@@ -238,6 +247,8 @@ export interface SeedSyncApplyResponse {
   resolvedCommitSha: string;
   itemsPath: string;
   sourceFileCount: number;
+  collectionsPath: string;
+  collectionSourceFileCount: number;
   seedSet: string;
   totalItemsInPayload: number;
   existingItemCount: number;
@@ -246,6 +257,13 @@ export interface SeedSyncApplyResponse {
   updatedCount: number;
   deletedCount: number;
   unchangedCount: number;
+  totalCollectionsInPayload: number;
+  existingCollectionCount: number;
+  affectedCollectionCount: number;
+  collectionCreatedCount: number;
+  collectionUpdatedCount: number;
+  collectionDeletedCount: number;
+  collectionUnchangedCount: number;
   historyRunId?: string | null;
   historyRecordedUtc?: string | null;
   hasMoreChanges: boolean;
@@ -489,6 +507,22 @@ export const adminApi = {
       `/admin/categories/${categoryId}/keywords-available`
     );
     return response.data;
+  },
+
+  createKeyword: async (name: string): Promise<KeywordOption> => {
+    const response = await apiClient.post<{ id: string; name: string; slug: string | null }>(
+      "/admin/keywords",
+      { name }
+    );
+    return { id: response.data.id, name: response.data.name };
+  },
+
+  updateKeyword: async (id: string, name: string): Promise<KeywordOption> => {
+    const response = await apiClient.put<{ id: string; name: string; slug: string | null }>(
+      `/admin/keywords/${id}`,
+      { name }
+    );
+    return { id: response.data.id, name: response.data.name };
   },
 
   updateCategory: async (

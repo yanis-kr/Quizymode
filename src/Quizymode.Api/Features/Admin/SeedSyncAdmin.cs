@@ -20,9 +20,16 @@ public static class SeedSyncAdmin
         List<string>? Keywords = null,
         string? Source = null);
 
+    public sealed record SeedCollectionRequest(
+        Guid CollectionId,
+        string Name,
+        string? Description,
+        List<Guid> ItemIds);
+
     public sealed record ManifestRequest(
         string SeedSet,
         List<SeedItemRequest> Items,
+        List<SeedCollectionRequest> Collections,
         int DeltaPreviewLimit = 200);
 
     public sealed record SourceContext(
@@ -31,7 +38,9 @@ public static class SeedSyncAdmin
         string GitRef,
         string ResolvedCommitSha,
         string ItemsPath,
-        int SourceFileCount);
+        int SourceFileCount,
+        string CollectionsPath,
+        int CollectionSourceFileCount);
 
     public sealed record Request(
         int SchemaVersion,
@@ -56,6 +65,8 @@ public static class SeedSyncAdmin
         string ResolvedCommitSha,
         string ItemsPath,
         int SourceFileCount,
+        string CollectionsPath,
+        int CollectionSourceFileCount,
         string SeedSet,
         int TotalItemsInPayload,
         int ExistingItemCount,
@@ -64,6 +75,13 @@ public static class SeedSyncAdmin
         int UpdatedCount,
         int DeletedCount,
         int UnchangedCount,
+        int TotalCollectionsInPayload,
+        int ExistingCollectionCount,
+        int AffectedCollectionCount,
+        int CollectionCreatedCount,
+        int CollectionUpdatedCount,
+        int CollectionDeletedCount,
+        int CollectionUnchangedCount,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
 
@@ -74,6 +92,8 @@ public static class SeedSyncAdmin
         string ResolvedCommitSha,
         string ItemsPath,
         int SourceFileCount,
+        string CollectionsPath,
+        int CollectionSourceFileCount,
         string SeedSet,
         int TotalItemsInPayload,
         int ExistingItemCount,
@@ -82,6 +102,13 @@ public static class SeedSyncAdmin
         int UpdatedCount,
         int DeletedCount,
         int UnchangedCount,
+        int TotalCollectionsInPayload,
+        int ExistingCollectionCount,
+        int AffectedCollectionCount,
+        int CollectionCreatedCount,
+        int CollectionUpdatedCount,
+        int CollectionDeletedCount,
+        int CollectionUnchangedCount,
         Guid? HistoryRunId,
         DateTime? HistoryRecordedUtc,
         bool HasMoreChanges,
@@ -173,15 +200,28 @@ public static class SeedSyncAdmin
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required.")
-                .Must(items => items.Count > 0)
-                .WithMessage("At least one item is required.")
                 .Must(items => items.Count <= 20000)
                 .WithMessage("Cannot sync more than 20000 items at once.")
                 .Must(HaveUniqueItemIds)
                 .WithMessage("ItemId values must be unique within a sync request.");
 
+            RuleFor(x => x.Collections)
+                .NotNull()
+                .WithMessage("Collections is required.")
+                .Must(collections => collections.Count <= 2000)
+                .WithMessage("Cannot sync more than 2000 collections at once.")
+                .Must(HaveUniqueCollectionIds)
+                .WithMessage("CollectionId values must be unique within a sync request.");
+
+            RuleFor(x => x)
+                .Must(request => request.Items.Count > 0 || request.Collections.Count > 0)
+                .WithMessage("At least one item or collection is required.");
+
             RuleForEach(x => x.Items)
                 .SetValidator(new SeedItemValidator());
+
+            RuleForEach(x => x.Collections)
+                .SetValidator(new SeedCollectionValidator());
         }
 
         private static bool HaveUniqueItemIds(List<SeedItemRequest>? items)
@@ -192,6 +232,16 @@ public static class SeedSyncAdmin
             }
 
             return items.Select(i => i.ItemId).Distinct().Count() == items.Count;
+        }
+
+        private static bool HaveUniqueCollectionIds(List<SeedCollectionRequest>? collections)
+        {
+            if (collections is null)
+            {
+                return false;
+            }
+
+            return collections.Select(i => i.CollectionId).Distinct().Count() == collections.Count;
         }
     }
 
@@ -266,6 +316,35 @@ public static class SeedSyncAdmin
         }
     }
 
+    private sealed class SeedCollectionValidator : AbstractValidator<SeedCollectionRequest>
+    {
+        public SeedCollectionValidator()
+        {
+            RuleFor(x => x.CollectionId)
+                .NotEmpty()
+                .WithMessage("CollectionId is required.");
+
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Collection name is required.")
+                .MaximumLength(120)
+                .WithMessage("Collection name must not exceed 120 characters.");
+
+            RuleFor(x => x.Description)
+                .MaximumLength(1000)
+                .When(x => x.Description is not null)
+                .WithMessage("Collection description must not exceed 1000 characters.");
+
+            RuleFor(x => x.ItemIds)
+                .NotNull()
+                .WithMessage("Collection itemIds are required.")
+                .Must(itemIds => itemIds.Count > 0)
+                .WithMessage("Collections must reference at least one item.")
+                .Must(itemIds => itemIds.Distinct().Count() == itemIds.Count)
+                .WithMessage("Collection itemIds must be unique within a collection.");
+        }
+    }
+
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
@@ -273,7 +352,7 @@ public static class SeedSyncAdmin
             app.MapPost("admin/seed-sync/preview", PreviewHandler)
                 .WithTags("Admin")
                 .WithSummary("Preview a repo-managed GitHub sync (Admin only)")
-                .WithDescription("Fetches canonical item seed files from GitHub at a specific ref and returns the create/update delta.")
+                .WithDescription("Fetches canonical repo-managed items and public collections from GitHub at a specific ref and returns the upsert delta.")
                 .RequireAuthorization("Admin")
                 .Produces<PreviewResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -281,7 +360,7 @@ public static class SeedSyncAdmin
             app.MapPost("admin/seed-sync/apply", ApplyHandler)
                 .WithTags("Admin")
                 .WithSummary("Apply a repo-managed GitHub sync (Admin only)")
-                .WithDescription("Fetches canonical item seed files from GitHub at a specific ref and upserts repo-managed public items.")
+                .WithDescription("Fetches canonical repo-managed items and public collections from GitHub at a specific ref and upserts them.")
                 .RequireAuthorization("Admin")
                 .Produces<ApplyResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);

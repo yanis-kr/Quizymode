@@ -5,6 +5,7 @@ import sys
 from seed_source_common import (
     load_public_collections,
     load_source_items,
+    regenerate_taxonomy_seed_sql,
     validate_source,
     write_item_registry,
     write_items_bundle,
@@ -21,7 +22,8 @@ def main() -> int:
         return 1
     write_item_registry(items)
     write_items_bundle(items)
-    print(f"Wrote registry and bundle for {len(items)} items.")
+    regenerate_taxonomy_seed_sql()
+    print(f"Wrote registry, bundle, and taxonomy seed SQL for {len(items)} items.")
     return 0
 
 

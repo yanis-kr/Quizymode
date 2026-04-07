@@ -1414,15 +1414,9 @@ function Breadcrumb({
 
   return (
     <nav className="flex items-center gap-1 text-sm text-gray-600">
-      <Link
-        to="/categories"
-        className="text-indigo-600 hover:text-indigo-800"
-      >
-        Categories
-      </Link>
       {pathSegments.map((seg, i) => (
         <span key={i} className="flex items-center gap-1">
-          <BreadcrumbChevron className="h-4 w-4 text-gray-400" />
+          {i > 0 && <BreadcrumbChevron className="h-4 w-4 text-gray-400" />}
           <button
             onClick={() => onNavigate(seg.path)}
             className="text-indigo-600 hover:text-indigo-800"

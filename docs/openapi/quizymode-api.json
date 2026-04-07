@@ -302,6 +302,85 @@
         }
       }
     },
+    "/admin/keywords": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Create a new public keyword (Admin only)",
+        "description": "Creates a new public keyword. Name must be alphanumeric + hyphens, max 30 chars. Returns 409 if a public keyword with that name already exists.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.CreateKeywordAdmin.CreateKeywordAdminRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.CreateKeywordAdmin.CreateKeywordAdminResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List all keyword relations (Admin only)",
+        "description": "Returns KeywordRelation entries (excluding 'other'). Optional filters: category name, navigation rank, pendingOnly (relations awaiting review).",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "rank",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pendingOnly",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/categories/{id}": {
       "delete": {
         "tags": [
@@ -528,50 +607,6 @@
         }
       }
     },
-    "/admin/keywords": {
-      "get": {
-        "tags": [
-          "Admin"
-        ],
-        "summary": "List all keyword relations (Admin only)",
-        "description": "Returns KeywordRelation entries (excluding 'other'). Optional filters: category name, navigation rank, pendingOnly (relations awaiting review).",
-        "parameters": [
-          {
-            "name": "category",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/System.String"
-            }
-          },
-          {
-            "name": "rank",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
-            }
-          },
-          {
-            "name": "pendingOnly",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.Response"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/admin/database/size": {
       "get": {
         "tags": [
@@ -767,7 +802,7 @@
           "Admin"
         ],
         "summary": "Preview a repo-managed GitHub sync (Admin only)",
-        "description": "Fetches canonical item seed files from GitHub at a specific ref and returns the create/update delta.",
+        "description": "Fetches canonical repo-managed items and public collections from GitHub at a specific ref and returns the upsert delta.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -801,7 +836,7 @@
           "Admin"
         ],
         "summary": "Apply a repo-managed GitHub sync (Admin only)",
-        "description": "Fetches canonical item seed files from GitHub at a specific ref and upserts repo-managed public items.",
+        "description": "Fetches canonical repo-managed items and public collections from GitHub at a specific ref and upserts them.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -865,6 +900,56 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/admin/keywords/{id}": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Rename a keyword (Admin only)",
+        "description": "Updates the name and slug of an existing keyword. Returns 409 if another public keyword already has that name.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.UpdateKeywordAdmin.UpdateKeywordAdminRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.UpdateKeywordAdmin.UpdateKeywordAdminResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           }
         }
       }
@@ -3520,6 +3605,43 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.CreateKeywordAdmin.CreateKeywordAdminRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.CreateKeywordAdmin.CreateKeywordAdminResponse": {
+        "required": [
+          "id",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "slug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
         "required": [
           "id",
@@ -4023,6 +4145,8 @@
           "resolvedCommitSha",
           "itemsPath",
           "sourceFileCount",
+          "collectionsPath",
+          "collectionSourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -4031,6 +4155,13 @@
           "updatedCount",
           "deletedCount",
           "unchangedCount",
+          "totalCollectionsInPayload",
+          "existingCollectionCount",
+          "affectedCollectionCount",
+          "collectionCreatedCount",
+          "collectionUpdatedCount",
+          "collectionDeletedCount",
+          "collectionUnchangedCount",
           "historyRunId",
           "historyRecordedUtc",
           "hasMoreChanges",
@@ -4056,6 +4187,12 @@
           "sourceFileCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "collectionsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionSourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
@@ -4078,6 +4215,27 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "unchangedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCollectionsInPayload": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "existingCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "affectedCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionCreatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUpdatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionDeletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "historyRunId": {
@@ -4287,6 +4445,8 @@
           "resolvedCommitSha",
           "itemsPath",
           "sourceFileCount",
+          "collectionsPath",
+          "collectionSourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -4295,6 +4455,13 @@
           "updatedCount",
           "deletedCount",
           "unchangedCount",
+          "totalCollectionsInPayload",
+          "existingCollectionCount",
+          "affectedCollectionCount",
+          "collectionCreatedCount",
+          "collectionUpdatedCount",
+          "collectionDeletedCount",
+          "collectionUnchangedCount",
           "hasMoreChanges",
           "changes"
         ],
@@ -4316,6 +4483,12 @@
             "$ref": "#/components/schemas/System.String"
           },
           "sourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionSourceFileCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "seedSet": {
@@ -4340,6 +4513,27 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "unchangedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCollectionsInPayload": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "existingCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "affectedCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionCreatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUpdatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionDeletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "hasMoreChanges": {
@@ -4554,6 +4748,43 @@
           },
           "isReviewPending": {
             "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.UpdateKeywordAdmin.UpdateKeywordAdminRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.UpdateKeywordAdmin.UpdateKeywordAdminResponse": {
+        "required": [
+          "id",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "slug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },

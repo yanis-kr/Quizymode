@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import subprocess
 import re
 import shutil
 import uuid
@@ -17,6 +18,8 @@ REGISTRY_ROOT = ROOT / "data" / "seed-source" / "_registry"
 DEV_SELECTION_PATH = ROOT / "data" / "seed-dev" / "selection.json"
 SEED_DEV_ITEMS_ROOT = ROOT / "data" / "seed-dev" / "items"
 SEED_DEV_COLLECTIONS_ROOT = ROOT / "data" / "seed-dev" / "collections"
+TAXONOMY_YAML_PATH = ROOT / "docs" / "quizymode_taxonomy.yaml"
+TAXONOMY_SEED_SQL_PATH = ROOT / "docs" / "quizymode_taxonomy_seed.sql"
 
 
 @dataclass(frozen=True)
@@ -50,6 +53,13 @@ class PublicCollection:
     description: str | None
     item_ids: list[str]
     path: Path
+
+
+@dataclass(frozen=True)
+class TaxonomyScope:
+    category: str
+    navigation_keyword1: str
+    navigation_keyword2: str
 
 
 def parse_scope_from_path(path: Path) -> Scope:
@@ -172,6 +182,7 @@ def validate_source(
     errors: list[str] = []
     seen_item_ids: dict[str, SourceItem] = {}
     seen_questions: dict[str, SourceItem] = {}
+    taxonomy_scopes = load_taxonomy_scopes()
 
     for item in items:
         scope = parse_scope_from_path(item.path)
@@ -183,6 +194,17 @@ def validate_source(
             errors.append(f"{item.path} item {item.index}: navigationKeyword1 does not match filename scope.")
         if item.navigation_keyword2 != scope.navigation_keyword2:
             errors.append(f"{item.path} item {item.index}: navigationKeyword2 does not match filename scope.")
+        taxonomy_scope = TaxonomyScope(
+            category=item.category,
+            navigation_keyword1=item.navigation_keyword1,
+            navigation_keyword2=item.navigation_keyword2,
+        )
+        if taxonomy_scope not in taxonomy_scopes:
+            errors.append(
+                f"{item.path} item {item.index}: "
+                f"'{item.category}' / '{item.navigation_keyword1}' / '{item.navigation_keyword2}' "
+                f"is missing from docs/quizymode_taxonomy.yaml."
+            )
         if not item.question:
             errors.append(f"{item.path} item {item.index}: question is required.")
         if not item.correct_answer:
@@ -257,6 +279,14 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
 
 
+def regenerate_taxonomy_seed_sql() -> None:
+    subprocess.run(
+        ["dotnet", "run", "--configuration", "Release", "--project", "tools/Quizymode.TaxonomySqlGen"],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def wipe_directory(path: Path) -> None:
     if path.exists():
         shutil.rmtree(path)
@@ -290,3 +320,55 @@ def _optional_string_list(value: Any) -> list[str] | None:
         raise ValueError("Expected a list of strings.")
     result = [str(item).strip() for item in value if str(item).strip()]
     return result or None
+
+
+def load_taxonomy_scopes(taxonomy_path: Path = TAXONOMY_YAML_PATH) -> set[TaxonomyScope]:
+    scopes: set[TaxonomyScope] = set()
+    current_category: str | None = None
+    current_l1: str | None = None
+    in_root_keywords = False
+    in_l1_keywords = False
+
+    for raw_line in taxonomy_path.read_text(encoding="utf-8").splitlines():
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+
+        indent = len(raw_line) - len(raw_line.lstrip(" "))
+        stripped = raw_line.strip()
+
+        if indent == 0 and stripped.endswith(":"):
+            current_category = stripped[:-1].strip()
+            current_l1 = None
+            in_root_keywords = False
+            in_l1_keywords = False
+            continue
+
+        if current_category is None:
+            continue
+
+        if indent == 2 and stripped == "keywords:":
+            in_root_keywords = True
+            in_l1_keywords = False
+            current_l1 = None
+            continue
+
+        if indent == 4 and in_root_keywords and stripped.endswith(":"):
+            current_l1 = stripped[:-1].strip()
+            in_l1_keywords = False
+            continue
+
+        if indent == 6 and current_l1 is not None and stripped == "keywords:":
+            in_l1_keywords = True
+            continue
+
+        if indent == 8 and in_l1_keywords and current_l1 is not None and ":" in stripped:
+            l2_slug = stripped.split(":", 1)[0].strip()
+            scopes.add(
+                TaxonomyScope(
+                    category=current_category,
+                    navigation_keyword1=current_l1,
+                    navigation_keyword2=l2_slug,
+                )
+            )
+
+    return scopes

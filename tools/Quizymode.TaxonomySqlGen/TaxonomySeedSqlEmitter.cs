@@ -71,11 +71,10 @@ internal static class TaxonomySeedSqlEmitter
         foreach (string catSlug in categories.Keys.OrderBy(s => s, StringComparer.Ordinal))
         {
             TaxonomyCategoryDefinition def = categories[catSlug];
-            Guid otherRelId = DeterministicGuid($"taxonomy:kr:{catSlug}::other");
             sb.AppendLine(
                 $"""
                 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-                SELECT {PgUuid(otherRelId)}, c."Id", NULL, k."Id", 0, {PgString(OtherDescription)}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
+                SELECT gen_random_uuid(), c."Id", NULL, k."Id", 0, {PgString(OtherDescription)}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
                 FROM "Categories" c
                 JOIN "Keywords" k ON k."Name" = 'other' AND k."IsPrivate" = false AND k."CreatedBy" = {PgString(SeederUser)}
                 WHERE c."Name" = {PgString(catSlug)}
@@ -89,11 +88,10 @@ internal static class TaxonomySeedSqlEmitter
                 TaxonomyL1Group l1 = def.L1Groups[i];
                 int sortRank = i + 1;
                 string? l1Desc = string.IsNullOrWhiteSpace(l1.Description) ? null : l1.Description;
-                Guid l1RelId = DeterministicGuid($"taxonomy:kr:{catSlug}::{l1.Slug}");
                 sb.AppendLine(
                     $"""
                     INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-                    SELECT {PgUuid(l1RelId)}, c."Id", NULL, k."Id", {sortRank.ToString(CultureInfo.InvariantCulture)}, {PgNullableString(l1Desc is null ? null : Truncate(l1Desc, 500))}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
+                    SELECT gen_random_uuid(), c."Id", NULL, k."Id", {sortRank.ToString(CultureInfo.InvariantCulture)}, {PgNullableString(l1Desc is null ? null : Truncate(l1Desc, 500))}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
                     FROM "Categories" c
                     JOIN "Keywords" k ON k."Name" = {PgString(l1.Slug)} AND k."IsPrivate" = false AND k."CreatedBy" = {PgString(SeederUser)}
                     WHERE c."Name" = {PgString(catSlug)}
@@ -106,11 +104,10 @@ internal static class TaxonomySeedSqlEmitter
                 {
                     TaxonomyL2Leaf l2 = l1.L2Leaves[j];
                     string? l2Desc = string.IsNullOrWhiteSpace(l2.Description) ? null : l2.Description;
-                    Guid l2RelId = DeterministicGuid($"taxonomy:kr:{catSlug}:{l1.Slug}:{l2.Slug}");
                     sb.AppendLine(
                         $"""
                         INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-                        SELECT {PgUuid(l2RelId)}, c."Id", pk."Id", ck."Id", {j.ToString(CultureInfo.InvariantCulture)}, {PgNullableString(l2Desc is null ? null : Truncate(l2Desc, 500))}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
+                        SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", {j.ToString(CultureInfo.InvariantCulture)}, {PgNullableString(l2Desc is null ? null : Truncate(l2Desc, 500))}, false, NULL, false, timestamptz {PgString(SeedTimestampUtc)}
                         FROM "Categories" c
                         JOIN "Keywords" ck ON ck."Name" = {PgString(l2.Slug)} AND ck."IsPrivate" = false AND ck."CreatedBy" = {PgString(SeederUser)}
                         JOIN "Keywords" pk ON pk."Name" = {PgString(l1.Slug)} AND pk."IsPrivate" = false AND pk."CreatedBy" = {PgString(SeederUser)}
