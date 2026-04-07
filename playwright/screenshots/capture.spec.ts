@@ -501,9 +501,11 @@ async function openManageCollectionsForFirstItem(page: Page) {
     .first();
 
   if (await manageCollectionsButton.isVisible().catch(() => false)) {
-    await manageCollectionsButton.click().catch(() => {});
+    await manageCollectionsButton.scrollIntoViewIfNeeded().catch(() => {});
+    await manageCollectionsButton.click({ force: true }).catch(() => {});
   } else {
-    await fallbackCollectionButton.click().catch(() => {});
+    await fallbackCollectionButton.scrollIntoViewIfNeeded().catch(() => {});
+    await fallbackCollectionButton.click({ force: true }).catch(() => {});
   }
 
   await waitForManageCollectionsDialog(page);
@@ -580,8 +582,8 @@ async function waitForCollectionQuizModeLoaded(page: Page) {
 }
 
 async function getFirstCategoryItemDetailHref(page: Page) {
-  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureSignedIn(page);
+  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 
@@ -596,8 +598,8 @@ async function getFirstCategoryItemDetailHref(page: Page) {
 }
 
 async function openFirstCategoryItemDetail(page: Page) {
-  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureSignedIn(page);
+  await safeGoto(page, "/categories/geography/capitals/world");
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 
@@ -628,7 +630,11 @@ async function rateCurrentItemFiveStars(page: Page) {
 }
 
 async function openCommentsForCurrentItem(page: Page) {
-  await page.getByRole("button", { name: /comments \(/i }).click().catch(() => {});
+  const commentsButton = page
+    .getByRole("button", { name: /comments \(/i })
+    .first();
+  await commentsButton.scrollIntoViewIfNeeded().catch(() => {});
+  await commentsButton.click({ force: true }).catch(() => {});
   await waitForAnyVisible(page, [
     "[role='dialog']",
     "textarea[placeholder='Write your comment...']",
@@ -756,7 +762,7 @@ async function applyKeywordFilterWithResults(page: Page) {
 
 test.describe("User guide screenshots", () => {
   test.describe.configure({ mode: "serial" });
-  test.setTimeout(30_000);
+  test.setTimeout(60_000);
 
   const secondCollectionName = "Second collection";
 
