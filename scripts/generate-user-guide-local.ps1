@@ -1,5 +1,5 @@
 # generate-user-guide-local.ps1
-# Captures user-guide screenshots from the local dev stack and regenerates
+# Captures desktop user-guide screenshots from the local dev stack and regenerates
 # docs/user-guide/user-guide.md.
 #
 # Prerequisites: start Aspire first in a separate terminal:
@@ -17,7 +17,7 @@ if ($Password) { $env:TEST_USER_PASSWORD = $Password }
 
 . "$PSScriptRoot\_e2e-common.ps1"
 
-$react    = $null
+$react = $null
 $exitCode = 1
 
 try {
@@ -32,18 +32,18 @@ try {
 
     $screenshotDir = Join-Path $RepoRoot "docs\user-guide\screenshots\user"
     if (Test-Path $screenshotDir) {
-        Write-Host "Clearing previous screenshots..." -ForegroundColor Cyan
+        Write-Host "Clearing previous desktop screenshots..." -ForegroundColor Cyan
         Remove-Item -LiteralPath (Join-Path $screenshotDir "*.png") -Force -ErrorAction SilentlyContinue
     }
 
-    Write-Host "Capturing screenshots from local dev stack..." -ForegroundColor Cyan
+    Write-Host "Capturing desktop screenshots from local dev stack..." -ForegroundColor Cyan
     npx playwright test --project=screenshots
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Screenshot capture had failures (non-zero exit). Proceeding to generate guide anyway." -ForegroundColor Yellow
+        Write-Host "Desktop screenshot capture had failures (non-zero exit). Proceeding to generate guide anyway." -ForegroundColor Yellow
     }
 
-    Write-Host "Generating user guide..." -ForegroundColor Cyan
-    node scripts/generate-user-guide.js
+    Write-Host "Generating desktop user guide..." -ForegroundColor Cyan
+    node scripts/generate-user-guide.js --guide desktop
     $exitCode = $LASTEXITCODE
     Pop-Location
 } finally {
@@ -53,7 +53,7 @@ try {
 $guideFile = Join-Path $RepoRoot "docs\user-guide\user-guide.md"
 if (Test-Path $guideFile) {
     Write-Host ""
-    Write-Host "User guide updated:" -ForegroundColor Green
+    Write-Host "Desktop user guide updated:" -ForegroundColor Green
     Write-Host "  $guideFile" -ForegroundColor White
 }
 

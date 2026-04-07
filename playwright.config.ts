@@ -26,7 +26,6 @@ export default defineConfig({
     navigationTimeout: 5_000,
   },
   projects: [
-    // ── Screenshot pipeline (production) ─────────────────────────────────
     {
       name: "auth-setup",
       testMatch: "**/auth.setup.ts",
@@ -42,8 +41,15 @@ export default defineConfig({
         viewport: { width: 1280, height: 900 },
       },
     },
-
-    // ── Local E2E ─────────────────────────────────────────────────────────
+    {
+      name: "screenshots-mobile",
+      testMatch: "**/capture.spec.ts",
+      dependencies: ["auth-setup"],
+      use: {
+        ...devices["Pixel 5"],
+        storageState: "playwright/.auth/user.json",
+      },
+    },
     {
       name: "smoke",
       testMatch: "**/e2e/**/*.spec.ts",

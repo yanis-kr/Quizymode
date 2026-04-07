@@ -317,6 +317,12 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
 
           <div className="flex flex-wrap gap-2">
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              About
+            </Link>
             <a
               href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md"
               target="_blank"
@@ -324,6 +330,14 @@ const Layout = ({ children }: LayoutProps) => {
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               User Guide
+            </a>
+            <a
+              href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
+            >
+              Mobile Guide
             </a>
             <button
               type="button"
@@ -341,12 +355,6 @@ const Layout = ({ children }: LayoutProps) => {
             >
               Categories Map
             </button>
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
-            >
-              About
-            </Link>
             <Link
               to="/privacy"
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"

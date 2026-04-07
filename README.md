@@ -2,7 +2,7 @@
 
 Quizymode is a full-stack study and quiz application built for people who want to learn from structured question banks. Users can browse items by category, study with flashcards, test themselves in quiz mode, and organise content into personal or shared collections. Content can be created manually, imported in bulk, or generated with AI assistance — and everything is tied to a taxonomy of categories and keywords to keep study sessions focused.
 
-For a full walkthrough with screenshots, see the [User Guide](./docs/user-guide/user-guide.md).
+For a full walkthrough with screenshots, see the [User Guide](./docs/user-guide/user-guide.md) and the [Mobile User Guide](./docs/user-guide/user-guide.mobile.md).
 
 **Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
 
@@ -180,17 +180,22 @@ cd src/Quizymode.Api.AppHost && dotnet run
 
 E2E tests live in `playwright/e2e/`. Tag a test with `@smoke` in its title to include it in the smoke run.
 
-### Generating the User Guide
+### Generating the User Guides
 
-The user guide (`docs/user-guide/user-guide.md`) is built from Playwright screenshots. Two modes are available:
+Quizymode keeps two generated guides:
+
+- `docs/user-guide/user-guide.md` for desktop and larger screens
+- `docs/user-guide/user-guide.mobile.md` for phone-sized screens
+
+Both guides are built from Playwright screenshots.
 
 **From production** — screenshots taken from `https://www.quizymode.com` (no local stack needed):
 
 ```powershell
-.\scripts\generate-user-guide-production.ps1   # Windows
+.\scripts\generate-user-guides-production.ps1   # Windows
 ```
 ```bash
-./scripts/generate-user-guide-production.sh    # Mac / Linux / WSL
+./scripts/generate-user-guides-production.sh    # Mac / Linux / WSL
 ```
 
 **From local dev stack** — screenshots taken from `http://localhost:7000` (Aspire must be running first):
@@ -200,13 +205,22 @@ The user guide (`docs/user-guide/user-guide.md`) is built from Playwright screen
 cd src/Quizymode.Api.AppHost && dotnet run
 
 # 2. Generate (React dev server managed automatically)
-.\scripts\generate-user-guide-local.ps1        # Windows
+.\scripts\generate-user-guides-local.ps1        # Windows
 ```
 ```bash
-./scripts/generate-user-guide-local.sh         # Mac / Linux / WSL
+./scripts/generate-user-guides-local.sh         # Mac / Linux / WSL
 ```
 
-Both scripts authenticate via Playwright auth setup before capturing, then call `scripts/generate-user-guide.js` to rebuild the guide.
+The combined scripts authenticate via Playwright auth setup before capturing, run both screenshot projects, and call `scripts/generate-user-guide.js --all` to rebuild both guides.
+
+If you only want the desktop guide, keep using `generate-user-guide-local.*` or `generate-user-guide-production.*`.
+
+Under the hood, the screenshot projects are:
+
+- `npx playwright test --project=screenshots` for desktop screenshots in `docs/user-guide/screenshots/user/`
+- `npx playwright test --project=screenshots-mobile` for mobile screenshots in `docs/user-guide/screenshots/mobile/`
+
+`node scripts/generate-user-guide.js --all` rebuilds both markdown guides, and `--guide desktop` / `--guide mobile` rebuild a single variant.
 
 ## Authentication
 
@@ -323,10 +337,13 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/infra/REPO_MANAGED_CONTENT_RESET.md](./docs/infra/REPO_MANAGED_CONTENT_RESET.md): runbook for deleting and rebuilding repo-managed content from source control
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
-- [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): end-user guide with screenshots
+- [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): desktop end-user guide with screenshots
+- [docs/user-guide/user-guide.mobile.md](./docs/user-guide/user-guide.mobile.md): mobile end-user guide with screenshots
 - [scripts/_e2e-common.ps1](./scripts/_e2e-common.ps1) / [_e2e-common.sh](./scripts/_e2e-common.sh): shared E2E runner helpers (not run directly)
-- [scripts/generate-user-guide-production.ps1](./scripts/generate-user-guide-production.ps1) / [.sh](./scripts/generate-user-guide-production.sh): capture screenshots from production and regenerate user guide
-- [scripts/generate-user-guide-local.ps1](./scripts/generate-user-guide-local.ps1) / [.sh](./scripts/generate-user-guide-local.sh): capture screenshots from local dev stack and regenerate user guide
+- [scripts/generate-user-guides-production.ps1](./scripts/generate-user-guides-production.ps1) / [.sh](./scripts/generate-user-guides-production.sh): capture desktop and mobile screenshots from production and regenerate both guides
+- [scripts/generate-user-guides-local.ps1](./scripts/generate-user-guides-local.ps1) / [.sh](./scripts/generate-user-guides-local.sh): capture desktop and mobile screenshots from local dev stack and regenerate both guides
+- [scripts/generate-user-guide-production.ps1](./scripts/generate-user-guide-production.ps1) / [.sh](./scripts/generate-user-guide-production.sh): desktop-only guide generation from production
+- [scripts/generate-user-guide-local.ps1](./scripts/generate-user-guide-local.ps1) / [.sh](./scripts/generate-user-guide-local.sh): desktop-only guide generation from local dev stack
 
 ## README Policy
 

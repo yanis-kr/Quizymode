@@ -35,6 +35,15 @@ const AboutPage = () => {
           >
             Read the User Guide
           </a>{" "}
+          or{" "}
+          <a
+            href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
+          >
+            browse the Mobile User Guide
+          </a>{" "}
           for a full walkthrough.
         </p>
 
