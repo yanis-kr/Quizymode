@@ -14,7 +14,7 @@ This runbook covers two scenarios:
 - **Env vars** use an `APP_` prefix. The app strips `APP_` and maps `__` to `:` for nested keys. Example: `APP_ConnectionStrings__PostgreSQL` → config key `ConnectionStrings:PostgreSQL`.
 - **Taxonomy** (Categories, Keywords, KeywordRelations) is seeded from `docs/quizymode_taxonomy_seed.sql` on every API startup via `DatabaseSeederHostedService`. All inserts use `ON CONFLICT ... DO UPDATE`, so taxonomy is fully idempotent and does not need to be deleted during a reset.
 - **Items** are synced via the GitHub-backed Admin Seed Sync endpoint (`POST /admin/seed-sync/apply`). Source: `data/seed-source/items/**/*.json` at a specific repo ref.
-- **Collections** (public, repo-managed) are seeded by the startup seeder from `data/seed-dev/collections/`. The only current public collection is the home-sample (`data/seed-dev/collections/home-sample.json`). Collection seeding requires the referenced items to already exist.
+- **Collections** (public, repo-managed) are managed in two ways: startup seed-dev for local/bootstrap collections from `data/seed-dev/collections/`, and Admin Seed Sync for canonical repo-managed public collections from `data/seed-source/collections/public/`.
 - **Startup seeder sequence** (runs on every container start):
   1. Apply EF Core migrations
   2. Apply taxonomy SQL (idempotent)
@@ -264,14 +264,14 @@ If verification fails at any phase:
 
 - Use an immutable commit SHA for prod syncs, not a branch name. Branch refs may resolve to a different commit between preview and apply.
 - `deltaPreviewLimit: 0` returns counts only with no row listing — useful when the delta is very large and you only need the summary.
-- The startup seeder reads the 15 seed-dev items from `data/seed-source/items/` filtered by `data/seed-dev/selection.json` (via `itemsSource` + `itemIds`). There is no separate `seed-dev/items/` folder.
+- The startup seeder reads the seed-dev item subset from `data/seed-source/items/` filtered by `data/seed-dev/selection.json` (via `itemsSource` + `itemIds`). There is no separate `seed-dev/items/` folder.
 - The full canonical item set only comes from Admin Seed Sync.
 - Admin Seed Sync does not infer deletes. Any items missing from the GitHub payload are left untouched. That is why the delete step is necessary when the goal is a clean rebuild.
-- Collection sync is not yet GitHub-backed. The only public collection (`home-sample`) is seeded by the startup seeder from `data/seed-dev/collections/home-sample.json`. Its 5 referenced items are included in the seed-dev selection and will be present after startup.
+- Admin Seed Sync now also reads public collection files from `data/seed-source/collections/public/` at the requested Git ref and upserts those repo-managed public collections alongside items.
 
 ---
 
 ## Known Gaps
 
-- **Collection sync is not GitHub-backed.** Adding or updating public collections still requires updating `data/seed-dev/collections/` and redeploying the container. This is the main remaining gap for a fully automated content pipeline.
+- **Startup collection seeding and Admin collection sync are separate.** `data/seed-dev/collections/` is still for startup bootstrap content like `home-sample`, while canonical public collections in `data/seed-source/collections/public/` are applied through Admin Seed Sync.
 - **Runtime item sync and the Python validation tooling** are not in full parity on all edge cases (e.g. duplicate-question allowlists, filename/scope validation). Validate with `validate_seed_source.py` before syncing to prod.

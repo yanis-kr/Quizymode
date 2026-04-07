@@ -10,6 +10,8 @@ internal sealed record class GitHubSeedSyncOptions
 
     public string BundlePath { get; init; } = "data/seed-source/_registry/items-bundle.json";
 
+    public string CollectionsPath { get; init; } = "data/seed-source/collections/public";
+
     public string? Token { get; init; }
 
     public string UserAgent { get; init; } = "Quizymode-SeedSync";

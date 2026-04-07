@@ -108,6 +108,48 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
     }
 
     [Fact]
+    public async Task ApplyAsync_UpsertsRepoManagedPublicCollections_FromManifest()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Guid itemId = Guid.Parse("12345678-1234-1234-1234-123456789012");
+        Guid collectionId = Guid.Parse("87654321-4321-4321-4321-210987654321");
+
+        SeedSyncAdmin.Request request = BuildRequest(
+            [
+                BuildItem(
+                    itemId,
+                    "What is the capital of Austria?",
+                    "Vienna",
+                    ["Salzburg", "Graz", "Linz"])
+            ],
+            [
+                new SeedSyncAdmin.SeedCollectionRequest(
+                    CollectionId: collectionId,
+                    Name: "European Capitals",
+                    Description: "Repo-managed collection from admin sync.",
+                    ItemIds: [itemId])
+            ]);
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(request, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.CollectionCreatedCount.Should().Be(1);
+
+        Collection collection = await DbContext.Collections.SingleAsync(c => c.Id == collectionId);
+        collection.IsRepoManaged.Should().BeTrue();
+        collection.IsPublic.Should().BeTrue();
+        collection.CreatedBy.Should().Be("seeder");
+
+        List<Guid> collectionItemIds = await DbContext.CollectionItems
+            .Where(link => link.CollectionId == collectionId)
+            .Select(link => link.ItemId)
+            .ToListAsync();
+
+        collectionItemIds.Should().Equal(itemId);
+    }
+
+    [Fact]
     public async Task PreviewAsync_AfterInitialSeed_ReturnsOnlyDelta()
     {
         await EnsureGeographyPublicWithNavAsync("seeder");
@@ -213,12 +255,15 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         existing.Id.Should().Be(conflictingItemId);
     }
 
-    private SeedSyncAdmin.Request BuildRequest(List<SeedSyncAdmin.SeedItemRequest> items)
+    private SeedSyncAdmin.Request BuildRequest(
+        List<SeedSyncAdmin.SeedItemRequest> items,
+        List<SeedSyncAdmin.SeedCollectionRequest>? collections = null)
     {
         _gitHubSeedSource.LoadedManifest = new LoadedGitHubSeedManifest(
             new SeedSyncAdmin.ManifestRequest(
                 SeedSet: "data/seed-source/items/geography",
                 Items: items,
+                Collections: collections ?? [],
                 DeltaPreviewLimit: 50),
             new SeedSyncAdmin.SourceContext(
                 RepositoryOwner: "quizymode",
@@ -226,7 +271,9 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
                 GitRef: "main",
                 ResolvedCommitSha: "abc123def456",
                 ItemsPath: "data/seed-source/items/geography",
-                SourceFileCount: 1));
+                SourceFileCount: 1,
+                CollectionsPath: "data/seed-source/collections/public",
+                CollectionSourceFileCount: collections?.Count ?? 0));
 
         return new SeedSyncAdmin.Request(
             SchemaVersion: 2,

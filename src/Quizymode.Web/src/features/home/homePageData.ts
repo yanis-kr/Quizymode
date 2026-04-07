@@ -42,6 +42,8 @@ const createFeaturedSetArt = ({
 
 export const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 export const HOME_SAMPLE_COLLECTION_NAME = "Sample Collection";
+export const TENNIS_TRIVIA_COLLECTION_ID = "a3f6c2e1-7d14-4b8a-9e55-1c2f8d3a0b47";
+export const TENNIS_TRIVIA_COLLECTION_NAME = "Tennis Trivia";
 
 export interface HomeCategoryCard {
   slug: string;
@@ -189,12 +191,16 @@ export const featuredCollectionCards: FeaturedCollectionCard[] = [
       accent: "#a5b4fc",
     }),
   },
-  // Add more featured collections below. Example:
-  // {
-  //   id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-  //   name: "My Collection Name",
-  //   eyebrow: "Category label",
-  //   description: "Short description shown on the card.",
-  //   image: createFeaturedSetArt({ label: "LABEL", primary: "#...", secondary: "#...", accent: "#..." }),
-  // },
+  {
+    id: TENNIS_TRIVIA_COLLECTION_ID,
+    name: TENNIS_TRIVIA_COLLECTION_NAME,
+    eyebrow: "Sports",
+    description: "Eight sharp tennis history and rules questions, from Wimbledon quirks to famous firsts.",
+    image: createFeaturedSetArt({
+      label: "TENNIS",
+      primary: "#14532d",
+      secondary: "#15803d",
+      accent: "#fde047",
+    }),
+  },
 ];

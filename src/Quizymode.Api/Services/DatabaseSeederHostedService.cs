@@ -73,6 +73,7 @@ internal sealed class DatabaseSeederHostedService(
                     SeedSyncAdmin.ManifestRequest manifest = new(
                         SeedSet: "local-seed-dev",
                         Items: itemRequests,
+                        Collections: [],
                         DeltaPreviewLimit: 50);
 
                     SeedSyncAdmin.SourceContext sourceContext = new(
@@ -81,7 +82,9 @@ internal sealed class DatabaseSeederHostedService(
                         GitRef: "local-dev",
                         ResolvedCommitSha: "local-dev",
                         ItemsPath: resolvedItemsPath.Replace('\\', '/'),
-                        SourceFileCount: Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories).Length);
+                        SourceFileCount: Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories).Length,
+                        CollectionsPath: string.Empty,
+                        CollectionSourceFileCount: 0);
 
                     Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyManifestAsync(
                         manifest,

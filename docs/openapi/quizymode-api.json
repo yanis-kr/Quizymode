@@ -802,7 +802,7 @@
           "Admin"
         ],
         "summary": "Preview a repo-managed GitHub sync (Admin only)",
-        "description": "Fetches canonical item seed files from GitHub at a specific ref and returns the create/update delta.",
+        "description": "Fetches canonical repo-managed items and public collections from GitHub at a specific ref and returns the upsert delta.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -836,7 +836,7 @@
           "Admin"
         ],
         "summary": "Apply a repo-managed GitHub sync (Admin only)",
-        "description": "Fetches canonical item seed files from GitHub at a specific ref and upserts repo-managed public items.",
+        "description": "Fetches canonical repo-managed items and public collections from GitHub at a specific ref and upserts them.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4145,6 +4145,8 @@
           "resolvedCommitSha",
           "itemsPath",
           "sourceFileCount",
+          "collectionsPath",
+          "collectionSourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -4153,6 +4155,13 @@
           "updatedCount",
           "deletedCount",
           "unchangedCount",
+          "totalCollectionsInPayload",
+          "existingCollectionCount",
+          "affectedCollectionCount",
+          "collectionCreatedCount",
+          "collectionUpdatedCount",
+          "collectionDeletedCount",
+          "collectionUnchangedCount",
           "historyRunId",
           "historyRecordedUtc",
           "hasMoreChanges",
@@ -4178,6 +4187,12 @@
           "sourceFileCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "collectionsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionSourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
           "seedSet": {
             "$ref": "#/components/schemas/System.String"
           },
@@ -4200,6 +4215,27 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "unchangedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCollectionsInPayload": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "existingCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "affectedCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionCreatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUpdatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionDeletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "historyRunId": {
@@ -4409,6 +4445,8 @@
           "resolvedCommitSha",
           "itemsPath",
           "sourceFileCount",
+          "collectionsPath",
+          "collectionSourceFileCount",
           "seedSet",
           "totalItemsInPayload",
           "existingItemCount",
@@ -4417,6 +4455,13 @@
           "updatedCount",
           "deletedCount",
           "unchangedCount",
+          "totalCollectionsInPayload",
+          "existingCollectionCount",
+          "affectedCollectionCount",
+          "collectionCreatedCount",
+          "collectionUpdatedCount",
+          "collectionDeletedCount",
+          "collectionUnchangedCount",
           "hasMoreChanges",
           "changes"
         ],
@@ -4438,6 +4483,12 @@
             "$ref": "#/components/schemas/System.String"
           },
           "sourceFileCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionsPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionSourceFileCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "seedSet": {
@@ -4462,6 +4513,27 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "unchangedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCollectionsInPayload": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "existingCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "affectedCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionCreatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUpdatedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionDeletedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
           "hasMoreChanges": {

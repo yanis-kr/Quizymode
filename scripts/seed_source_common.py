@@ -281,7 +281,7 @@ def write_json(path: Path, payload: Any) -> None:
 
 def regenerate_taxonomy_seed_sql() -> None:
     subprocess.run(
-        ["dotnet", "run", "--project", "tools/Quizymode.TaxonomySqlGen"],
+        ["dotnet", "run", "--configuration", "Release", "--project", "tools/Quizymode.TaxonomySqlGen"],
         cwd=ROOT,
         check=True,
     )

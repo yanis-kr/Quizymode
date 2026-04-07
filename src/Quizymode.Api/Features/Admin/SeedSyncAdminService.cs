@@ -116,6 +116,11 @@ internal sealed class SeedSyncAdminService(
                 ApplyChange(change, publicKeywordMap, utcNow);
             }
 
+            foreach (PlannedSeedCollectionChange change in plan.CollectionChanges)
+            {
+                ApplyCollectionChange(change, utcNow);
+            }
+
             if (historyRun is not null)
             {
                 db.SeedSyncRuns.Add(historyRun);
@@ -225,6 +230,9 @@ internal sealed class SeedSyncAdminService(
         List<NormalizedSeedItem> normalizedItems = request.Items
             .Select(NormalizeItem)
             .ToList();
+        List<NormalizedSeedCollection> normalizedCollections = request.Collections
+            .Select(NormalizeCollection)
+            .ToList();
 
         Result<Dictionary<string, Category>> categoryResult = await LoadCategoriesAsync(normalizedItems, cancellationToken);
         if (categoryResult.IsFailure)
@@ -296,11 +304,69 @@ internal sealed class SeedSyncAdminService(
                 []));
         }
 
+        HashSet<Guid> incomingCollectionIds = normalizedCollections
+            .Select(collection => collection.CollectionId)
+            .ToHashSet();
+
+        List<Collection> existingCollections = await db.Collections
+            .Where(collection => incomingCollectionIds.Contains(collection.Id))
+            .ToListAsync(cancellationToken);
+
+        foreach (Collection existingCollection in existingCollections)
+        {
+            if (!existingCollection.IsRepoManaged)
+            {
+                return Result.Failure<SeedSyncPlan>(
+                    Error.Validation(
+                        "Admin.CollectionSyncIdConflict",
+                        $"CollectionId '{existingCollection.Id}' is already assigned to a non-repo-managed collection and cannot be managed by admin sync."));
+            }
+        }
+
+        HashSet<Guid> availableItemIds = existingById.Keys.ToHashSet();
+        availableItemIds.UnionWith(incomingItemIds);
+
+        Dictionary<Guid, Collection> existingCollectionsById = existingCollections.ToDictionary(collection => collection.Id);
+        List<PlannedSeedCollectionChange> collectionChanges = [];
+
+        foreach (NormalizedSeedCollection normalizedCollection in normalizedCollections)
+        {
+            List<Guid> missingItemIds = normalizedCollection.ItemIds
+                .Where(itemId => !availableItemIds.Contains(itemId))
+                .ToList();
+
+            if (missingItemIds.Count > 0)
+            {
+                return Result.Failure<SeedSyncPlan>(
+                    Error.Validation(
+                        "Admin.CollectionSyncMissingItems",
+                        $"Collection '{normalizedCollection.Name}' references missing itemIds: {string.Join(", ", missingItemIds)}"));
+            }
+
+            existingCollectionsById.TryGetValue(normalizedCollection.CollectionId, out Collection? existingCollection);
+            List<string> changedFields = existingCollection is null
+                ? []
+                : GetChangedFields(existingCollection, normalizedCollection);
+
+            collectionChanges.Add(new PlannedSeedCollectionChange(
+                normalizedCollection,
+                existingCollection,
+                existingCollection is null
+                    ? SeedSyncChangeKind.Create
+                    : changedFields.Count == 0
+                        ? SeedSyncChangeKind.Unchanged
+                        : SeedSyncChangeKind.Update,
+                changedFields));
+        }
+
         return Result.Success(new SeedSyncPlan(
             request.SeedSet,
             normalizedItems.Count,
             existingById.Count,
-            changes));
+            changes,
+            normalizedCollections.Count,
+            existingCollectionsById.Count,
+            collectionChanges));
     }
 
     private async Task<Result<Dictionary<string, Category>>> LoadCategoriesAsync(
@@ -456,6 +522,63 @@ internal sealed class SeedSyncAdminService(
         ReconcileItemKeywords(item, change, publicKeywordMap, utcNow);
     }
 
+    private void ApplyCollectionChange(
+        PlannedSeedCollectionChange change,
+        DateTime utcNow)
+    {
+        Collection collection = change.ExistingCollection ?? new Collection
+        {
+            Id = change.Collection.CollectionId,
+            CreatedAt = utcNow,
+            CreatedBy = SeederUserId,
+            IsRepoManaged = true
+        };
+
+        if (change.ExistingCollection is null)
+        {
+            db.Collections.Add(collection);
+        }
+
+        collection.Name = change.Collection.Name;
+        collection.Description = change.Collection.Description;
+        collection.IsPublic = true;
+        collection.IsRepoManaged = true;
+        collection.UpdatedAt = change.ExistingCollection is null ? null : utcNow;
+
+        List<CollectionItem> existingLinks = db.CollectionItems
+            .Where(link => link.CollectionId == collection.Id)
+            .ToList();
+
+        HashSet<Guid> desiredItemIds = change.Collection.ItemIds.ToHashSet();
+        List<CollectionItem> linksToRemove = existingLinks
+            .Where(link => !desiredItemIds.Contains(link.ItemId))
+            .ToList();
+
+        if (linksToRemove.Count > 0)
+        {
+            db.CollectionItems.RemoveRange(linksToRemove);
+        }
+
+        HashSet<Guid> existingItemIds = existingLinks
+            .Select(link => link.ItemId)
+            .ToHashSet();
+
+        List<CollectionItem> linksToAdd = change.Collection.ItemIds
+            .Where(itemId => !existingItemIds.Contains(itemId))
+            .Select(itemId => new CollectionItem
+            {
+                CollectionId = collection.Id,
+                ItemId = itemId,
+                AddedAt = utcNow
+            })
+            .ToList();
+
+        if (linksToAdd.Count > 0)
+        {
+            db.CollectionItems.AddRange(linksToAdd);
+        }
+    }
+
     private void ReconcileItemKeywords(
         Item item,
         PlannedSeedItemChange change,
@@ -529,6 +652,8 @@ internal sealed class SeedSyncAdminService(
             sourceContext.ResolvedCommitSha,
             sourceContext.ItemsPath,
             sourceContext.SourceFileCount,
+            sourceContext.CollectionsPath,
+            sourceContext.CollectionSourceFileCount,
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,
@@ -537,6 +662,13 @@ internal sealed class SeedSyncAdminService(
             plan.UpdateCount,
             plan.DeleteCount,
             plan.UnchangedCount,
+            plan.TotalCollectionsInPayload,
+            plan.ExistingCollectionCount,
+            plan.AffectedCollectionCount,
+            plan.CollectionCreateCount,
+            plan.CollectionUpdateCount,
+            plan.CollectionDeleteCount,
+            plan.CollectionUnchangedCount,
             plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
     }
@@ -556,6 +688,8 @@ internal sealed class SeedSyncAdminService(
             sourceContext.ResolvedCommitSha,
             sourceContext.ItemsPath,
             sourceContext.SourceFileCount,
+            sourceContext.CollectionsPath,
+            sourceContext.CollectionSourceFileCount,
             plan.SeedSet,
             plan.TotalItemsInPayload,
             plan.ExistingItemCount,
@@ -564,6 +698,13 @@ internal sealed class SeedSyncAdminService(
             plan.UpdateCount,
             plan.DeleteCount,
             plan.UnchangedCount,
+            plan.TotalCollectionsInPayload,
+            plan.ExistingCollectionCount,
+            plan.AffectedCollectionCount,
+            plan.CollectionCreateCount,
+            plan.CollectionUpdateCount,
+            plan.CollectionDeleteCount,
+            plan.CollectionUnchangedCount,
             historyRun?.Id,
             historyRun?.CreatedUtc,
             plan.DeltaChangeCount > deltaChanges.Count,
@@ -616,6 +757,20 @@ internal sealed class SeedSyncAdminService(
             explanation,
             keywords,
             source);
+    }
+
+    private static NormalizedSeedCollection NormalizeCollection(SeedSyncAdmin.SeedCollectionRequest collection)
+    {
+        string name = collection.Name.Trim();
+        string? description = string.IsNullOrWhiteSpace(collection.Description)
+            ? null
+            : collection.Description.Trim();
+
+        return new NormalizedSeedCollection(
+            collection.CollectionId,
+            name,
+            description,
+            collection.ItemIds.Distinct().ToList());
     }
 
     private static List<string> NormalizeKeywords(
@@ -712,6 +867,43 @@ internal sealed class SeedSyncAdminService(
         return changed;
     }
 
+    private List<string> GetChangedFields(Collection existingCollection, NormalizedSeedCollection incoming)
+    {
+        List<string> changed = [];
+
+        if (!string.Equals(existingCollection.Name.Trim(), incoming.Name, StringComparison.Ordinal))
+        {
+            changed.Add("name");
+        }
+
+        string existingDescription = string.IsNullOrWhiteSpace(existingCollection.Description)
+            ? string.Empty
+            : existingCollection.Description.Trim();
+        string incomingDescription = incoming.Description ?? string.Empty;
+
+        if (!string.Equals(existingDescription, incomingDescription, StringComparison.Ordinal))
+        {
+            changed.Add("description");
+        }
+
+        List<Guid> existingItemIds = db.CollectionItems
+            .Where(link => link.CollectionId == existingCollection.Id)
+            .OrderBy(link => link.ItemId)
+            .Select(link => link.ItemId)
+            .ToList();
+
+        List<Guid> incomingItemIds = incoming.ItemIds
+            .OrderBy(id => id)
+            .ToList();
+
+        if (!existingItemIds.SequenceEqual(incomingItemIds))
+        {
+            changed.Add("itemIds");
+        }
+
+        return changed;
+    }
+
     private static ExistingItemState BuildExistingState(Item item)
     {
         string nav1 = item.NavigationKeyword1?.Name?.Trim().ToLowerInvariant() ?? string.Empty;
@@ -780,6 +972,12 @@ internal sealed class SeedSyncAdminService(
         string? Source,
         List<string> Keywords);
 
+    private sealed record NormalizedSeedCollection(
+        Guid CollectionId,
+        string Name,
+        string? Description,
+        List<Guid> ItemIds);
+
     private sealed record ResolvedNavigationPath(
         Category Category,
         Keyword Nav1,
@@ -792,11 +990,20 @@ internal sealed class SeedSyncAdminService(
         SeedSyncChangeKind ChangeKind,
         List<string> ChangedFields);
 
+    private sealed record PlannedSeedCollectionChange(
+        NormalizedSeedCollection Collection,
+        Collection? ExistingCollection,
+        SeedSyncChangeKind ChangeKind,
+        List<string> ChangedFields);
+
     private sealed record SeedSyncPlan(
         string SeedSet,
         int TotalItemsInPayload,
         int ExistingItemCount,
-        List<PlannedSeedItemChange> Changes)
+        List<PlannedSeedItemChange> Changes,
+        int TotalCollectionsInPayload,
+        int ExistingCollectionCount,
+        List<PlannedSeedCollectionChange> CollectionChanges)
     {
         public int CreateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Create);
         public int UpdateCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Update);
@@ -804,6 +1011,11 @@ internal sealed class SeedSyncAdminService(
         public int UnchangedCount => Changes.Count(change => change.ChangeKind == SeedSyncChangeKind.Unchanged);
         public int DeltaChangeCount => Changes.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
         public int AffectedItemCount => Changes.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
+        public int CollectionCreateCount => CollectionChanges.Count(change => change.ChangeKind == SeedSyncChangeKind.Create);
+        public int CollectionUpdateCount => CollectionChanges.Count(change => change.ChangeKind == SeedSyncChangeKind.Update);
+        public int CollectionDeleteCount => CollectionChanges.Count(change => change.ChangeKind == SeedSyncChangeKind.Delete);
+        public int CollectionUnchangedCount => CollectionChanges.Count(change => change.ChangeKind == SeedSyncChangeKind.Unchanged);
+        public int AffectedCollectionCount => CollectionChanges.Count(change => change.ChangeKind != SeedSyncChangeKind.Unchanged);
     }
 
     private enum SeedSyncChangeKind

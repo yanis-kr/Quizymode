@@ -194,6 +194,11 @@ function ResultsPanel({
             {" | "}
             Files {response.sourceFileCount.toLocaleString()}
           </p>
+          <p className="text-sm text-gray-500">
+            Collections <span className="font-mono">{response.collectionsPath}</span>
+            {" | "}
+            Files {response.collectionSourceFileCount.toLocaleString()}
+          </p>
           {hasRecordedHistory && (
             <p className="text-sm text-emerald-700">
               History recorded{" "}
@@ -223,6 +228,37 @@ function ResultsPanel({
         <SummaryCard label="Deleted" value={response.deletedCount} tone="warning" />
         <SummaryCard label="Unchanged" value={response.unchangedCount} />
         <SummaryCard label="Existing" value={response.existingItemCount} />
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-6">
+        <SummaryCard
+          label="Collections affected"
+          value={response.affectedCollectionCount}
+          tone="warning"
+        />
+        <SummaryCard
+          label="Collections created"
+          value={response.collectionCreatedCount}
+          tone="success"
+        />
+        <SummaryCard
+          label="Collections updated"
+          value={response.collectionUpdatedCount}
+          tone="success"
+        />
+        <SummaryCard
+          label="Collections deleted"
+          value={response.collectionDeletedCount}
+          tone="warning"
+        />
+        <SummaryCard
+          label="Collections unchanged"
+          value={response.collectionUnchangedCount}
+        />
+        <SummaryCard
+          label="Collections existing"
+          value={response.existingCollectionCount}
+        />
       </div>
 
       <div className="mt-6">
@@ -436,8 +472,8 @@ const AdminSeedSyncPage = () => {
 
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Seed Sync</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Preview or apply repo-managed items directly from GitHub. The API fetches
-        the pre-built items bundle at the exact ref you provide and never infers
+        Preview or apply repo-managed items and public collections directly from
+        GitHub. The API fetches the exact ref you provide and never infers
         deletes from missing rows.
       </p>
 
