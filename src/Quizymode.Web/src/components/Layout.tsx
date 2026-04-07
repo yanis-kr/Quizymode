@@ -5,6 +5,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { taxonomyApi } from "@/api/taxonomy";
 import { usersApi } from "@/api/users";
+import { getUserGuideUrl } from "@/utils/userGuideLink";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
 import UserProfileModal from "./UserProfileModal";
 import CategoriesMapModal from "./CategoriesMapModal";
@@ -23,6 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [showCategoriesMap, setShowCategoriesMap] = useState(false);
   const [showFeedbackDialog, setShowFeedbackDialog] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const userGuideUrl = getUserGuideUrl(window.navigator.userAgent);
 
   // Fetch user data when authenticated to get full profile info
   const { data: user } = useQuery({
@@ -324,20 +326,12 @@ const Layout = ({ children }: LayoutProps) => {
               About
             </Link>
             <a
-              href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md"
+              href={userGuideUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
               User Guide
-            </a>
-            <a
-              href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
-            >
-              Mobile Guide
             </a>
             <button
               type="button"

@@ -48,6 +48,7 @@ No deletes. Safe to run at any time. Fixes content errors in existing items; add
    python scripts/validate_seed_source.py
    python scripts/build_item_registry.py
    ```
+   If new seed-source files introduce a new `(category, navigationKeyword1, navigationKeyword2)` scope, update `docs/quizymode_taxonomy.yaml` first. `build_item_registry.py` now validates source scopes against that taxonomy and regenerates `docs/quizymode_taxonomy_seed.sql` as part of the same run.
 
 2. Get the commit SHA for the ref to sync:
    ```bash

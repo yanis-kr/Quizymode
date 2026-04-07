@@ -491,6 +491,22 @@ export const adminApi = {
     return response.data;
   },
 
+  createKeyword: async (name: string): Promise<KeywordOption> => {
+    const response = await apiClient.post<{ id: string; name: string; slug: string | null }>(
+      "/admin/keywords",
+      { name }
+    );
+    return { id: response.data.id, name: response.data.name };
+  },
+
+  updateKeyword: async (id: string, name: string): Promise<KeywordOption> => {
+    const response = await apiClient.put<{ id: string; name: string; slug: string | null }>(
+      `/admin/keywords/${id}`,
+      { name }
+    );
+    return { id: response.data.id, name: response.data.name };
+  },
+
   updateCategory: async (
     id: string,
     data: UpdateCategoryRequest
