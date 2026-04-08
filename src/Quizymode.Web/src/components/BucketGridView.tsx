@@ -82,7 +82,7 @@ export function BucketGridView({
                       </span>
                     )}
                   </div>
-                  <div className={`rounded-full border border-white/18 bg-slate-950/45 font-semibold text-sky-100 backdrop-blur ${compact ? "px-2 py-0.5 text-[10px]" : "px-3 py-1 text-xs"}`}>
+                  <div className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
                     {bucket.itemCount} items
                   </div>
                 </div>

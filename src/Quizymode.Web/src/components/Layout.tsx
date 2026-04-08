@@ -344,7 +344,7 @@ const Layout = ({ children }: LayoutProps) => {
               onFocus={prefetchCategoriesMap}
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
-              Cat. Map
+              Map
             </button>
             <Link
               to="/privacy"

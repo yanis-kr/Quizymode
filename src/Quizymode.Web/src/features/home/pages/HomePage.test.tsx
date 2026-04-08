@@ -12,6 +12,12 @@ vi.mock("@/api/categories", () => ({
   },
 }));
 
+vi.mock("@/api/collections", () => ({
+  collectionsApi: {
+    discover: vi.fn().mockResolvedValue({ items: [], totalCount: 0 }),
+  },
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     isAuthenticated: false,

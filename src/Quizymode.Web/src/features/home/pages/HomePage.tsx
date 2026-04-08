@@ -4,14 +4,42 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
 import { categoriesApi } from "@/api/categories";
+import { collectionsApi } from "@/api/collections";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import {
-  featuredCollectionCards,
   featuredSetCards,
   HOME_SAMPLE_COLLECTION_ID,
   HOME_SAMPLE_COLLECTION_NAME,
   homeCategoryCards,
 } from "../homePageData";
+import type { CollectionDiscoverItem } from "@/types/api";
+
+const CARD_GRADIENTS = [
+  { primary: "#0f2027", secondary: "#203a43", accent: "#7dd3fc" },
+  { primary: "#1a1a2e", secondary: "#16213e", accent: "#a78bfa" },
+  { primary: "#0d1b2a", secondary: "#1b2a3b", accent: "#34d399" },
+  { primary: "#1c0a00", secondary: "#3d1a00", accent: "#fb923c" },
+  { primary: "#0a0a14", secondary: "#1e1b4b", accent: "#f472b6" },
+  { primary: "#042f2e", secondary: "#134e4a", accent: "#2dd4bf" },
+];
+
+function publicCollectionCardImage(index: number): string {
+  const g = CARD_GRADIENTS[index % CARD_GRADIENTS.length];
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+    <svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
+          <stop stop-color="${g.primary}" />
+          <stop offset="1" stop-color="${g.secondary}" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="720" fill="url(#bg)" />
+      <circle cx="1000" cy="140" r="180" fill="${g.accent}" fill-opacity="0.12" />
+      <circle cx="160" cy="580" r="200" fill="${g.accent}" fill-opacity="0.07" />
+      <path d="M0 480L300 300L500 420L800 200L1100 380L1200 280" stroke="${g.accent}" stroke-opacity="0.18" stroke-width="48" stroke-linecap="round" />
+    </svg>
+  `)}`;
+}
 
 const numberFormatter = new Intl.NumberFormat("en-US");
 
@@ -26,6 +54,15 @@ const HomePage = () => {
     retry: false,
     staleTime: 5 * 60 * 1000,
   });
+
+  const { data: publicCollectionsData } = useQuery({
+    queryKey: ["home", "public-collections"],
+    queryFn: () => collectionsApi.discover({ pageSize: 6 }),
+    retry: false,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const publicCollections = publicCollectionsData?.items ?? [];
 
   const countsByCategory = useMemo(() => {
     const map = new Map<string, number>();
@@ -59,10 +96,10 @@ const HomePage = () => {
             <div className="absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-3 py-2 sm:px-6 lg:px-8 flex flex-col gap-2">
+          <div className="relative mx-auto max-w-7xl px-1.5 py-2 sm:px-6 lg:px-8 flex flex-col gap-2">
 
             {/* ── Hero card ── */}
-            <section className="rounded-[24px] border border-white/12 bg-white/8 p-3 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">
+            <section className="rounded-[24px] border border-white/12 bg-white/8 p-2 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">
               <div className="max-w-3xl">
                 <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Build, share, and study your own quizzes.
@@ -87,7 +124,7 @@ const HomePage = () => {
             </section>
 
             {/* ── Categories lane ── */}
-            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
               <div className="mb-1.5 flex items-center justify-between gap-3">
                 <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
                   Categories
@@ -120,8 +157,12 @@ const HomePage = () => {
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
                       <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 text-white sm:min-h-[96px]">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
-                          {liveCount != null ? formatItemCount(liveCount) : ""}
+                        <div className="flex justify-end">
+                          {liveCount != null && (
+                            <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                              {formatItemCount(liveCount)}
+                            </span>
+                          )}
                         </div>
                         <div className="flex items-center justify-between gap-2">
                           <h3 className="text-sm font-semibold text-white">{category.name}</h3>
@@ -135,7 +176,7 @@ const HomePage = () => {
             </section>
 
             {/* ── Featured Sets lane ── */}
-            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
               <div className="mb-1.5 flex items-center justify-between gap-3">
                 <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
                   Featured Sets
@@ -156,8 +197,10 @@ const HomePage = () => {
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
                     <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
-                      <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
-                        {set.eyebrow}
+                      <div className="flex justify-end">
+                        <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                          {set.eyebrow}
+                        </span>
                       </div>
                       <div className="flex items-center justify-between gap-2">
                         <h3 className="text-sm font-semibold text-white">{set.title}</h3>
@@ -169,31 +212,40 @@ const HomePage = () => {
               </div>
             </section>
 
-            {/* ── Featured Collections lane ── */}
-            {featuredCollectionCards.length > 0 && (
-              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-3 shadow-xl shadow-slate-950/25">
+            {/* ── Recently Added Collections lane ── */}
+            {publicCollections.length > 0 && (
+              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
                 <div className="mb-1.5 flex items-center justify-between gap-3">
                   <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
-                    Featured Collections
+                    Recently Added Collections
                   </div>
+                  <Link
+                    to="/collections"
+                    className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
+                  >
+                    Browse all
+                    <ArrowRightIcon className="h-3 w-3" />
+                  </Link>
                 </div>
 
                 <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {featuredCollectionCards.map((collection) => (
+                  {publicCollections.map((collection, index) => (
                     <Link
                       key={collection.id}
                       to={buildCollectionPath(collection.id, collection.name)}
                       className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
                     >
                       <img
-                        src={collection.image}
+                        src={publicCollectionCardImage(index)}
                         alt=""
                         className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
                       <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-300">
-                          {collection.eyebrow}
+                        <div className="flex justify-end">
+                          <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                            {collection.itemCount} {collection.itemCount === 1 ? "item" : "items"}
+                          </span>
                         </div>
                         <div>
                           <div className="flex items-center justify-between gap-2">
