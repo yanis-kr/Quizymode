@@ -218,5 +218,265 @@
       "australia"
     ],
     "source": "https://www.britannica.com/topic/Sydney-Opera-House"
+  },
+  {
+    "itemId": "cce1d29f-a120-4f94-adc6-bc55fa1738e8",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which famous iron landmark can become slightly taller in hot weather because of thermal expansion?",
+    "correctAnswer": "Eiffel Tower",
+    "incorrectAnswers": [
+      "Big Ben",
+      "Statue of Liberty",
+      "Leaning Tower of Pisa"
+    ],
+    "explanation": "Heat expands the metal, making the tower a bit taller in warm conditions.",
+    "keywords": [
+      "paris",
+      "engineering",
+      "thermal-expansion"
+    ],
+    "source": "https://www.toureiffel.paris/en/news/history-and-culture/why-does-eiffel-tower-change-size"
+  },
+  {
+    "itemId": "ec211aef-79d1-422e-b09f-3adaea95e407",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "A colossal copper figure in New York Harbor, gifted by France and built with a framework linked to Gustave Eiffel, is which landmark?",
+    "correctAnswer": "Statue of Liberty",
+    "incorrectAnswers": [
+      "Arc de Triomphe",
+      "The Motherland Calls",
+      "Christ the Redeemer"
+    ],
+    "explanation": "Its setting and origin make it one of the world's most recognizable symbols of freedom.",
+    "keywords": [
+      "new-york",
+      "monuments",
+      "usa"
+    ],
+    "source": "https://whc.unesco.org/en/list/307/"
+  },
+  {
+    "itemId": "ad8ff8cf-3cc4-423f-86b7-704e6fd5d92c",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which 15th-century Inca citadel sits high in the Peruvian Andes at more than 2,400 meters above sea level?",
+    "correctAnswer": "Machu Picchu",
+    "incorrectAnswers": [
+      "Teotihuacan",
+      "Mesa Verde",
+      "Petra"
+    ],
+    "explanation": "Its mountain setting is part of what makes it so unforgettable.",
+    "keywords": [
+      "peru",
+      "inca",
+      "andes"
+    ],
+    "source": "https://whc.unesco.org/en/list/274/"
+  },
+  {
+    "itemId": "7cd2825f-da1f-4e5b-bda3-ab8b18458ebf",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which Jordanian archaeological city is famed for rock-cut architecture, red sandstone, and the Treasury at the end of a narrow gorge?",
+    "correctAnswer": "Petra",
+    "incorrectAnswers": [
+      "Palmyra",
+      "Meroe",
+      "Persepolis"
+    ],
+    "explanation": "Petra mixed dramatic natural setting with advanced urban planning and water management.",
+    "keywords": [
+      "jordan",
+      "nabataean",
+      "archaeology"
+    ],
+    "source": "https://whc.unesco.org/en/list/326/"
+  },
+  {
+    "itemId": "c8f74e95-26fb-4e5d-8eb7-241aae3c9f77",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which vast Cambodian site includes Angkor Wat and the face-covered Bayon Temple?",
+    "correctAnswer": "Angkor",
+    "incorrectAnswers": [
+      "Bagan",
+      "Borobudur",
+      "Ayutthaya"
+    ],
+    "explanation": "Angkor was the heart of the Khmer Empire for centuries.",
+    "keywords": [
+      "cambodia",
+      "khmer-empire",
+      "temples"
+    ],
+    "source": "https://whc.unesco.org/en/list/668/"
+  },
+  {
+    "itemId": "a943e78e-8d8a-4e7d-80a6-d90b9c4366d3",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which white marble mausoleum in Agra was commissioned by Shah Jahan in memory of Mumtaz Mahal?",
+    "correctAnswer": "Taj Mahal",
+    "incorrectAnswers": [
+      "Humayun's Tomb",
+      "Hagia Sophia",
+      "Alhambra"
+    ],
+    "explanation": "Its symmetry and white marble made it one of the world's most famous monuments.",
+    "keywords": [
+      "india",
+      "mughal",
+      "mausoleum"
+    ],
+    "source": "https://whc.unesco.org/en/list/252/"
+  },
+  {
+    "itemId": "58e4a7e8-20c0-4f1d-8c44-51bf8d5c6f2c",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which defensive structure stretches over 20,000 kilometers across northern China?",
+    "correctAnswer": "Great Wall of China",
+    "incorrectAnswers": [
+      "Hadrian's Wall",
+      "Walls of Constantinople",
+      "Antonine Wall"
+    ],
+    "explanation": "It was expanded over many centuries by successive Chinese dynasties.",
+    "keywords": [
+      "china",
+      "fortifications",
+      "history"
+    ],
+    "source": "https://whc.unesco.org/en/list/438/"
+  },
+  {
+    "itemId": "e0dc325a-7835-4f69-8009-54bd3ccacf3e",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The giant moai statues belong to which Chilean island site better known to many travelers as Easter Island?",
+    "correctAnswer": "Rapa Nui National Park",
+    "incorrectAnswers": [
+      "Galapagos National Park",
+      "Komodo National Park",
+      "Torres del Paine National Park"
+    ],
+    "explanation": "Rapa Nui is the island's Indigenous name and the name used in the UNESCO listing.",
+    "keywords": [
+      "easter-island",
+      "moai",
+      "pacific"
+    ],
+    "source": "https://whc.unesco.org/en/list/715/"
+  },
+  {
+    "itemId": "20dde95e-8627-452c-bc47-b3af20185879",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "The Flavian Amphitheatre is better known by what name?",
+    "correctAnswer": "Colosseum",
+    "incorrectAnswers": [
+      "Pantheon",
+      "Circus Maximus",
+      "Forum of Trajan"
+    ],
+    "explanation": "Its nickname became far more famous than its formal Roman name.",
+    "keywords": [
+      "rome",
+      "amphitheatre",
+      "ancient-rome"
+    ],
+    "source": "https://colosseo.it/en/area/the-colosseum/"
+  },
+  {
+    "itemId": "efed3d04-09c1-41ff-a647-2564d7565934",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which 1973 architectural icon sits on a peninsula in Sydney Harbour and is famous for its sail-like shells?",
+    "correctAnswer": "Sydney Opera House",
+    "incorrectAnswers": [
+      "Harbour Bridge",
+      "Royal Exhibition Building",
+      "Federation Square"
+    ],
+    "explanation": "It became a global icon of 20th-century architecture almost immediately.",
+    "keywords": [
+      "australia",
+      "architecture",
+      "performing-arts"
+    ],
+    "source": "https://whc.unesco.org/en/list/166/"
+  },
+  {
+    "itemId": "d5abe72c-d8cf-4223-8561-5a0d4ae542a6",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which sacred Maya site in Yucatan includes El Castillo and reflects both Maya and Toltec influences?",
+    "correctAnswer": "Chichen Itza",
+    "incorrectAnswers": [
+      "Tikal",
+      "Uxmal",
+      "Copan"
+    ],
+    "explanation": "Chichen Itza blended local traditions with influences from central Mexico.",
+    "keywords": [
+      "mexico",
+      "maya",
+      "el-castillo"
+    ],
+    "source": "https://whc.unesco.org/en/list/483/"
+  },
+  {
+    "itemId": "173a096c-bff2-4775-a224-b6610d35f4cc",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which abbey-village rises from a rocky tidal islet between Normandy and Brittany?",
+    "correctAnswer": "Mont-Saint-Michel",
+    "incorrectAnswers": [
+      "Lindisfarne",
+      "Cinque Terre",
+      "Mdina"
+    ],
+    "explanation": "Its dramatic tides are a huge part of its appeal.",
+    "keywords": [
+      "france",
+      "abbey",
+      "tides"
+    ],
+    "source": "https://whc.unesco.org/en/list/80/"
+  },
+  {
+    "itemId": "447777fc-ef58-4ec6-9def-9436f019d6d2",
+    "category": "geography",
+    "navigationKeyword1": "travel",
+    "navigationKeyword2": "landmarks",
+    "question": "Which still-unfinished Barcelona basilica is most strongly associated with Antoni Gaudi?",
+    "correctAnswer": "Sagrada Familia",
+    "incorrectAnswers": [
+      "Casa Batllo",
+      "Park Guell",
+      "Palau Guell"
+    ],
+    "explanation": "Its Nativity and Passion facades helped make it one of the world's most distinctive churches.",
+    "keywords": [
+      "barcelona",
+      "gaudi",
+      "basilica"
+    ],
+    "source": "https://sagradafamilia.org/en/home"
   }
 ]

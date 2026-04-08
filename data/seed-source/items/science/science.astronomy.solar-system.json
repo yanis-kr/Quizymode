@@ -226,5 +226,105 @@
       "year"
     ],
     "source": "https://science.nasa.gov/solar-system/"
+  },
+  {
+    "itemId": "3d676c60-8f31-49ef-989c-097257b80a0b",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Which icy moon is thought to hide an ocean that may contain about twice as much water as all of Earth's oceans combined?",
+    "correctAnswer": "Europa",
+    "incorrectAnswers": [
+      "Titan",
+      "Io",
+      "Phobos"
+    ],
+    "explanation": "Europa's buried ocean is one reason scientists see it as a strong candidate in the search for life.",
+    "keywords": [
+      "moons",
+      "jupiter",
+      "ocean-worlds"
+    ],
+    "source": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+  },
+  {
+    "itemId": "78f4f1a6-d489-4b4f-88fc-2f88f4fcb846",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Near the Sun, Martian sunsets usually look what color?",
+    "correctAnswer": "Blue",
+    "incorrectAnswers": [
+      "Orange",
+      "Purple",
+      "Green"
+    ],
+    "explanation": "Fine dust in Mars's atmosphere scatters light differently than Earth's atmosphere does.",
+    "keywords": [
+      "mars",
+      "sunset",
+      "atmosphere"
+    ],
+    "source": "https://science.nasa.gov/solar-system/planets/mars/what-does-a-sunrise-sunset-look-like-on-mars/"
+  },
+  {
+    "itemId": "21b2fd34-a8f6-4d1c-9689-b574a7bd58bd",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Which planet is less dense than water and would float if you had an impossibly huge bathtub?",
+    "correctAnswer": "Saturn",
+    "incorrectAnswers": [
+      "Neptune",
+      "Jupiter",
+      "Mars"
+    ],
+    "explanation": "Saturn is a gas giant with an average density lower than water.",
+    "keywords": [
+      "saturn",
+      "density",
+      "solar-system"
+    ],
+    "source": "https://science.gsfc.nasa.gov/attic/huygensgcms/Saturn.htm"
+  },
+  {
+    "itemId": "8b5a2944-aee7-458d-b7af-a5368c28bf21",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Olympus Mons, the largest volcano in the solar system, is found on which planet?",
+    "correctAnswer": "Mars",
+    "incorrectAnswers": [
+      "Venus",
+      "Mercury",
+      "Jupiter"
+    ],
+    "explanation": "Olympus Mons towers above anything volcanic on Earth.",
+    "keywords": [
+      "olympus-mons",
+      "volcanoes",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/mars/facts/"
+  },
+  {
+    "itemId": "b398c248-e3b4-448e-93bb-40d20ec2bedc",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "On which planet does one full day-night cycle last about 176 Earth days, longer than that planet's 88-day year?",
+    "correctAnswer": "Mercury",
+    "incorrectAnswers": [
+      "Venus",
+      "Jupiter",
+      "Neptune"
+    ],
+    "explanation": "Mercury races around the Sun quickly, but its solar day is surprisingly long.",
+    "keywords": [
+      "mercury",
+      "orbit",
+      "rotation"
+    ],
+    "source": "https://science.nasa.gov/mercury/facts/"
   }
 ]

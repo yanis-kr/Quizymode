@@ -2305,6 +2305,7 @@ d0b55420-f184-403c-b7cc-49f761dc94ad,geography,maps,topographic,Famous USGS 7.5-
 71611987-8a66-48a1-a3b6-0e1576855e8a,geography,maps,topographic,Topographic maps record elevations relative to wha,data/seed-source/items/geography/geography.maps.topographic.json
 4a0c80e4-39c3-48b8-8549-67a4405efc72,geography,maps,topographic,US Topo maps are published as digital documents mo,data/seed-source/items/geography/geography.maps.topographic.json
 e2f8c09f-b45b-4272-946b-b70b791dd10b,geography,maps,topographic,What distinctive lines show land shape and height ,data/seed-source/items/geography/geography.maps.topographic.json
+94c2f67d-6657-4107-91bf-c90902f66275,geography,physical,deserts,What is the largest desert on Earth?,data/seed-source/items/geography/geography.physical.deserts.json
 17d4b4bd-988b-470b-b53b-9f13888713e4,geography,physical,deserts,Which Australian desert is the country’s largest h,data/seed-source/items/geography/geography.physical.deserts.json
 d5dbb81b-1e5e-4a38-861f-9217813f2e5c,geography,physical,deserts,Which Namibian desert features tall dunes along th,data/seed-source/items/geography/geography.physical.deserts.json
 34831a78-b8bf-44ec-b638-6e767992451f,geography,physical,deserts,Which U.S. desert lies mainly in southeastern Cali,data/seed-source/items/geography/geography.physical.deserts.json
@@ -2340,6 +2341,7 @@ f37c2048-22c4-4f65-8e52-ff4b00eb4ce4,geography,physical,mountains,Which range fo
 8b053432-3fb9-433a-93ca-e42ff9598203,geography,physical,mountains,Which range forms part of the traditional boundary,data/seed-source/items/geography/geography.physical.mountains.json
 3c6c8e55-09a9-43d1-9d83-728e7edfcfcc,geography,physical,oceans,"In which ocean is the Mariana Trench, home to Chal",data/seed-source/items/geography/geography.physical.oceans.json
 7c6f13ba-882c-4810-8315-b3a3b592d19f,geography,physical,oceans,Modern geography often treats which circumpolar bo,data/seed-source/items/geography/geography.physical.oceans.json
+f43f291d-4efc-4ed8-b90f-da4993afc84b,geography,physical,oceans,What is the deepest known point in Earth's oceans?,data/seed-source/items/geography/geography.physical.oceans.json
 31bb14b7-a0d4-4432-a281-865d2cea15f0,geography,physical,oceans,Which gulf is the largest in the world by surface ,data/seed-source/items/geography/geography.physical.oceans.json
 eb907604-521f-4ce6-8882-76af9fc2fa32,geography,physical,oceans,Which marginal sea of the Atlantic separates south,data/seed-source/items/geography/geography.physical.oceans.json
 c0783b0f-8eed-4d82-abb8-82a41fdf197d,geography,physical,oceans,Which ocean lies between the Americas to the west ,data/seed-source/items/geography/geography.physical.oceans.json
@@ -2459,17 +2461,30 @@ a8d2a6d0-9bc2-4f48-a045-88d004b8368a,geography,travel,cities,Singapore sits at t
 7b23ece3-7c1f-47cb-955d-3ae3457ce6c7,geography,travel,cities,Sydney is the capital of which Australian state?,data/seed-source/items/geography/geography.travel.cities.json
 fb7db934-ba89-4f35-bb54-aa7844e9126d,geography,travel,cities,Tokyo is located on which Japanese island?,data/seed-source/items/geography/geography.travel.cities.json
 e2daa1b9-c0b0-463a-b58b-2c7dd1e935cc,geography,travel,cities,Which river runs through London?,data/seed-source/items/geography/geography.travel.cities.json
+ec211aef-79d1-422e-b09f-3adaea95e407,geography,travel,landmarks,"A colossal copper figure in New York Harbor, gifte",data/seed-source/items/geography/geography.travel.landmarks.json
 9d524011-5267-43d6-84c9-ab99f69c9dbb,geography,travel,landmarks,Construction of the Taj Mahal’s main mausoleum spa,data/seed-source/items/geography/geography.travel.landmarks.json
 346554fb-9ec4-408d-a284-0f475d9eae0f,geography,travel,landmarks,Petra was the capital of which ancient Arab kingdo,data/seed-source/items/geography/geography.travel.landmarks.json
 2a198060-6e35-496b-820d-f9a93ee8bc7b,geography,travel,landmarks,The Eiffel Tower in Paris was built for which 1889,data/seed-source/items/geography/geography.travel.landmarks.json
+20dde95e-8627-452c-bc47-b3af20185879,geography,travel,landmarks,The Flavian Amphitheatre is better known by what n,data/seed-source/items/geography/geography.travel.landmarks.json
 c273d5a7-2ca8-442a-93b6-1a2c22a98d3c,geography,travel,landmarks,The Great Pyramid of Giza is the only ancient wond,data/seed-source/items/geography/geography.travel.landmarks.json
 ce68aa45-8db1-4c7b-ae08-364da673973b,geography,travel,landmarks,The Statue of Liberty stands on which island in Ne,data/seed-source/items/geography/geography.travel.landmarks.json
 1017c7cf-2833-479f-a031-d3e20f181af6,geography,travel,landmarks,The Sydney Opera House’s sail-like shells overlook,data/seed-source/items/geography/geography.travel.landmarks.json
 923b5059-f071-4f72-ba29-f2ac2c4c4d52,geography,travel,landmarks,The Taj Mahal in Agra is described as an immense m,data/seed-source/items/geography/geography.travel.landmarks.json
 fae9d215-702a-4a18-b9f0-f8a89062e259,geography,travel,landmarks,The Taj Mahal stands on which river’s right bank?,data/seed-source/items/geography/geography.travel.landmarks.json
 68a92965-08df-4334-ab47-8075d298bb96,geography,travel,landmarks,The ancient city of Petra in Jordan is famous for ,data/seed-source/items/geography/geography.travel.landmarks.json
+e0dc325a-7835-4f69-8009-54bd3ccacf3e,geography,travel,landmarks,The giant moai statues belong to which Chilean isl,data/seed-source/items/geography/geography.travel.landmarks.json
 46008a60-c4fa-4a01-bc13-e04f299ef817,geography,travel,landmarks,"When the Eiffel Tower opened in 1889, about how ta",data/seed-source/items/geography/geography.travel.landmarks.json
+ad8ff8cf-3cc4-423f-86b7-704e6fd5d92c,geography,travel,landmarks,Which 15th-century Inca citadel sits high in the P,data/seed-source/items/geography/geography.travel.landmarks.json
+efed3d04-09c1-41ff-a647-2564d7565934,geography,travel,landmarks,Which 1973 architectural icon sits on a peninsula ,data/seed-source/items/geography/geography.travel.landmarks.json
 8f45db00-0b47-4ffd-9c70-03374c7a1f49,geography,travel,landmarks,Which French sculptor designed the Statue of Liber,data/seed-source/items/geography/geography.travel.landmarks.json
+7cd2825f-da1f-4e5b-bda3-ab8b18458ebf,geography,travel,landmarks,Which Jordanian archaeological city is famed for r,data/seed-source/items/geography/geography.travel.landmarks.json
+173a096c-bff2-4775-a224-b6610d35f4cc,geography,travel,landmarks,Which abbey-village rises from a rocky tidal islet,data/seed-source/items/geography/geography.travel.landmarks.json
+58e4a7e8-20c0-4f1d-8c44-51bf8d5c6f2c,geography,travel,landmarks,"Which defensive structure stretches over 20,000 ki",data/seed-source/items/geography/geography.travel.landmarks.json
+cce1d29f-a120-4f94-adc6-bc55fa1738e8,geography,travel,landmarks,Which famous iron landmark can become slightly tal,data/seed-source/items/geography/geography.travel.landmarks.json
+d5abe72c-d8cf-4223-8561-5a0d4ae542a6,geography,travel,landmarks,Which sacred Maya site in Yucatan includes El Cast,data/seed-source/items/geography/geography.travel.landmarks.json
+447777fc-ef58-4ec6-9def-9436f019d6d2,geography,travel,landmarks,Which still-unfinished Barcelona basilica is most ,data/seed-source/items/geography/geography.travel.landmarks.json
+c8f74e95-26fb-4e5d-8eb7-241aae3c9f77,geography,travel,landmarks,Which vast Cambodian site includes Angkor Wat and ,data/seed-source/items/geography/geography.travel.landmarks.json
+a943e78e-8d8a-4e7d-80a6-d90b9c4366d3,geography,travel,landmarks,Which white marble mausoleum in Agra was commissio,data/seed-source/items/geography/geography.travel.landmarks.json
 47d348a9-fa73-4980-9ad9-e4024ae9a12c,geography,travel,routes,A modern paved highway linking Pakistan to China’s,data/seed-source/items/geography/geography.travel.routes.json
 32ccca94-f289-4cee-9f62-eae92ccee189,geography,travel,routes,About how long was the main overland Silk Road car,data/seed-source/items/geography/geography.travel.routes.json
 7522e1bf-bfad-4a98-9e01-2ee1242f487c,geography,travel,routes,Few travelers covered the entire Silk Road; goods ,data/seed-source/items/geography/geography.travel.routes.json
@@ -3915,8 +3930,10 @@ c6667b38-ca31-4b8e-9a8b-bf5daeca4e2f,nature,animals,marine,A narwhal's famous tu
 cc621c88-15e5-4d11-a542-55688942920a,nature,animals,marine,"Are reef-building corals animals, plants, or fungi",data/seed-source/items/nature/nature.animals.marine.json
 4e2f18f3-5036-4fa5-8580-70f110fd645a,nature,animals,marine,How many hearts does an octopus have?,data/seed-source/items/nature/nature.animals.marine.json
 6adc7142-c61e-40c2-a411-27d863be2329,nature,animals,marine,What are dolphins classified as instead of fish?,data/seed-source/items/nature/nature.animals.marine.json
+3a126d30-abe6-4df4-89a1-f6c75380a7e2,nature,animals,marine,What color is an octopus's blood?,data/seed-source/items/nature/nature.animals.marine.json
 ba82f252-6972-4d77-bfb3-edd37cdfd3ef,nature,animals,marine,Which animal is the largest known to have ever liv,data/seed-source/items/nature/nature.animals.marine.json
 1a88530c-75a8-46b1-b7a0-a5c3214c5dd6,nature,animals,marine,Which marine mammal helps protect kelp forests by ,data/seed-source/items/nature/nature.animals.marine.json
+53d7ec22-7ac1-4108-91d7-d86621494610,nature,animals,marine,Which shark is known as the longest-lived vertebra,data/seed-source/items/nature/nature.animals.marine.json
 1103bcb9-3ebb-4efe-97c8-b341f429e83c,nature,animals,predators,Gray wolves usually live and hunt in what kind of ,data/seed-source/items/nature/nature.animals.predators.json
 c40eb424-3f4d-467b-ab43-3be9ef28ab39,nature,animals,predators,What is the usual name for a social group of lions,data/seed-source/items/nature/nature.animals.predators.json
 9d1606ce-2371-4ed4-ada2-573dc440986c,nature,animals,predators,Which Arctic predator depends heavily on sea ice t,data/seed-source/items/nature/nature.animals.predators.json
@@ -4283,6 +4300,9 @@ ddf16074-4543-4fb8-9bd0-6f90a0382a16,science,astronomy,galaxies,What is gravitat
 6dad6c78-db17-4fe3-87da-6a2600dddfa7,science,astronomy,galaxies,What is the Andromeda Galaxy relative to ours?,data/seed-source/items/science/science.astronomy.galaxies.json
 8f5c63fd-c0f7-4fcc-bdf7-0306dddaad94,science,astronomy,galaxies,What is the Local Group?,data/seed-source/items/science/science.astronomy.galaxies.json
 e12fe177-f248-491f-80a3-c9b04ded6440,science,astronomy,galaxies,What is the approximate shape of the Milky Way?,data/seed-source/items/science/science.astronomy.galaxies.json
+78f4f1a6-d489-4b4f-88fc-2f88f4fcb846,science,astronomy,solar-system,"Near the Sun, Martian sunsets usually look what co",data/seed-source/items/science/science.astronomy.solar-system.json
+8b5a2944-aee7-458d-b7af-a5368c28bf21,science,astronomy,solar-system,"Olympus Mons, the largest volcano in the solar sys",data/seed-source/items/science/science.astronomy.solar-system.json
+b398c248-e3b4-448e-93bb-40d20ec2bedc,science,astronomy,solar-system,On which planet does one full day-night cycle last,data/seed-source/items/science/science.astronomy.solar-system.json
 9de65500-00b1-4e88-8263-3f26cef134ec,science,astronomy,solar-system,What is Pluto classified as today (common category,data/seed-source/items/science/science.astronomy.solar-system.json
 cef69987-efe9-4dc8-a5d1-d0461a1d7ec6,science,astronomy,solar-system,What is a comet’s icy tail generally pushed by?,data/seed-source/items/science/science.astronomy.solar-system.json
 9edc470f-4958-4c67-8006-ab256c68b54b,science,astronomy,solar-system,What is a ‘year’ on a planet?,data/seed-source/items/science/science.astronomy.solar-system.json
@@ -4291,7 +4311,9 @@ c6c99fac-cb1c-4281-8071-0b965902daa6,science,astronomy,solar-system,What is the 
 920c5677-a3b2-4444-9529-4061789d2691,science,astronomy,solar-system,What is the Oort cloud (conceptual)?,data/seed-source/items/science/science.astronomy.solar-system.json
 7f5be752-5ab7-4be8-b344-8854624d49ff,science,astronomy,solar-system,What is the Sun mainly composed of?,data/seed-source/items/science/science.astronomy.solar-system.json
 f8623c7c-a2cf-4eb8-b6f3-b248417d1261,science,astronomy,solar-system,What is the asteroid belt mostly between?,data/seed-source/items/science/science.astronomy.solar-system.json
+3d676c60-8f31-49ef-989c-097257b80a0b,science,astronomy,solar-system,Which icy moon is thought to hide an ocean that ma,data/seed-source/items/science/science.astronomy.solar-system.json
 60e42a7f-3c48-46f9-a9e3-3c8fba1b3519,science,astronomy,solar-system,Which planet has the largest mass in the solar sys,data/seed-source/items/science/science.astronomy.solar-system.json
+21b2fd34-a8f6-4d1c-9689-b574a7bd58bd,science,astronomy,solar-system,Which planet is less dense than water and would fl,data/seed-source/items/science/science.astronomy.solar-system.json
 5219a5cb-6635-4371-b8d0-c89bf9fecf7b,science,astronomy,solar-system,Which planet is third from the Sun?,data/seed-source/items/science/science.astronomy.solar-system.json
 b2c12168-eaf5-4ecd-a63f-a561a1065928,science,astronomy,solar-system,Why do planets stay in orbit around the Sun?,data/seed-source/items/science/science.astronomy.solar-system.json
 614466b0-552d-4e66-bb12-c5ba034f9877,science,astronomy,solar-system,Why does Venus appear very bright from Earth?,data/seed-source/items/science/science.astronomy.solar-system.json
@@ -5789,16 +5811,28 @@ e49080dc-c2c8-497b-b4a8-64f06d1c8c78,sports,champions,dynasties,Which NFL franch
 37fe733d-659e-4fe6-8533-11fa1dab15de,sports,champions,dynasties,Which NHL team won four straight Stanley Cups from,data/seed-source/items/sports/sports.champions.dynasties.json
 46595977-47db-479e-af84-e82d4ff271f2,sports,champions,dynasties,Which WNBA team won four titles in seven seasons d,data/seed-source/items/sports/sports.champions.dynasties.json
 83a10969-99ac-497d-945d-681a7c76519a,sports,champions,dynasties,Which college football program won national titles,data/seed-source/items/sports/sports.champions.dynasties.json
+3a38eea7-37b2-4d07-b846-eb2efdefb1a2,sports,champions,legends,Which American track star won four gold medals at ,data/seed-source/items/sports/sports.champions.legends.json
 70d9680f-6d03-48c2-a7c6-275671bfbb2f,sports,champions,legends,Which NFL quarterback won seven Super Bowls?,data/seed-source/items/sports/sports.champions.legends.json
+27faeed2-baf7-4030-9035-8e5510973681,sports,champions,legends,Which U.S. star won Olympic gold in both the hepta,data/seed-source/items/sports/sports.champions.legends.json
 c5f26495-e6e1-4e62-9a7f-b7d815da794d,sports,champions,legends,Which baseball great was known as the Sultan of Sw,data/seed-source/items/sports/sports.champions.legends.json
+1e4560be-287a-45ed-8222-19c60fa8e129,sports,champions,legends,Which basketball legend was known for the skyhook ,data/seed-source/items/sports/sports.champions.legends.json
 88879f86-9b10-42e8-963f-3d50291e2eaf,sports,champions,legends,Which basketball legend won six NBA titles with th,data/seed-source/items/sports/sports.champions.legends.json
 8d9e59cd-9751-4364-86ae-ca42e34825ca,sports,champions,legends,Which boxer called himself The Greatest and won Ol,data/seed-source/items/sports/sports.champions.legends.json
+6e4ba938-dabd-4680-85e1-18ed1cb0aaa4,sports,champions,legends,Which boxing legend won Olympic light heavyweight ,data/seed-source/items/sports/sports.champions.legends.json
+a1a26344-943c-4457-b10d-2b0d3b216cca,sports,champions,legends,Which footballer remains the only player to win th,data/seed-source/items/sports/sports.champions.legends.json
 67dad1cc-cf7b-439b-b852-5c294260d641,sports,champions,legends,Which golfer won 18 men's majors and is known as t,data/seed-source/items/sports/sports.champions.legends.json
+d946a0da-6be6-40c8-a3e9-2fd108eb26d8,sports,champions,legends,Which gymnast became the first to earn a perfect 1,data/seed-source/items/sports/sports.champions.legends.json
 e695df26-8f2c-4398-a9f6-e51f6e75f23e,sports,champions,legends,"Which hockey icon holds the NHL records for goals,",data/seed-source/items/sports/sports.champions.legends.json
+38ed94ad-6d1b-475a-adb0-ae03df00e126,sports,champions,legends,"Which hockey icon retired with 894 goals and 2,857",data/seed-source/items/sports/sports.champions.legends.json
 87c5ffe1-de71-4c0a-a2b1-4ba9945b15ef,sports,champions,legends,Which soccer star won the 1986 World Cup and is of,data/seed-source/items/sports/sports.champions.legends.json
 8116daa5-745c-4717-b44c-1d3df33590dd,sports,champions,legends,Which sprinter became famous worldwide for Olympic,data/seed-source/items/sports/sports.champions.legends.json
+e0d2a875-7be8-4b2f-8679-12a0e0037fce,sports,champions,legends,Which sprinter completed three consecutive Olympic,data/seed-source/items/sports/sports.champions.legends.json
 5859691b-91a3-4e5c-bb26-be22eec44df5,sports,champions,legends,Which swimmer became the most decorated Olympian e,data/seed-source/items/sports/sports.champions.legends.json
+48712a41-7507-48a7-8dbc-d09a2d732a95,sports,champions,legends,Which swimmer owns 23 Olympic gold medals and more,data/seed-source/items/sports/sports.champions.legends.json
+edbac079-33da-4980-b2de-03f3d61ba23f,sports,champions,legends,Which swimmer won seven gold medals at the 1972 Mu,data/seed-source/items/sports/sports.champions.legends.json
 e3875dee-8c6f-44b5-81cf-57f33ba422ea,sports,champions,legends,Which tennis star won 23 Open Era singles majors a,data/seed-source/items/sports/sports.champions.legends.json
+82879eeb-cf09-4f01-be09-cdbf805a2953,sports,champions,legends,Which tennis superstar won 23 Grand Slam singles t,data/seed-source/items/sports/sports.champions.legends.json
+d7049f14-02be-4a7a-981e-3b0beca77fd1,sports,champions,legends,Which wide receiver finished his NFL career with 2,data/seed-source/items/sports/sports.champions.legends.json
 e3933bb6-fe36-4d06-b613-980283dfab73,sports,champions,records,Which MLB player holds the career home run record?,data/seed-source/items/sports/sports.champions.records.json
 0f861a8e-4c92-42c1-bbbc-69d21a5e602e,sports,champions,records,Which NBA player won six Finals MVP awards?,data/seed-source/items/sports/sports.champions.records.json
 29e78a42-003f-4312-9906-442d2764b90e,sports,champions,records,Which NFL quarterback won seven Super Bowls as a p,data/seed-source/items/sports/sports.champions.records.json

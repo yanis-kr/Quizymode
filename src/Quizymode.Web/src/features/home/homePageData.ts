@@ -44,6 +44,12 @@ export const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 export const HOME_SAMPLE_COLLECTION_NAME = "Sample Collection";
 export const TENNIS_TRIVIA_COLLECTION_ID = "a3f6c2e1-7d14-4b8a-9e55-1c2f8d3a0b47";
 export const TENNIS_TRIVIA_COLLECTION_NAME = "Tennis Trivia";
+export const SOUNDS_FAKE_COLLECTION_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
+export const SOUNDS_FAKE_COLLECTION_NAME = "Sounds Fake, But It's True";
+export const SIDEWAYS_CLUES_COLLECTION_ID = "abdbb0fd-ea31-4890-8a20-831592be74e3";
+export const SIDEWAYS_CLUES_COLLECTION_NAME = "Landmarks from Sideways Clues";
+export const SPORTS_LEGENDS_COLLECTION_ID = "403b3307-ae98-46b6-884f-0bd15bdc6433";
+export const SPORTS_LEGENDS_COLLECTION_NAME = "Sports Legends by One Signature Clue";
 
 export interface HomeCategoryCard {
   slug: string;
@@ -201,6 +207,42 @@ export const featuredCollectionCards: FeaturedCollectionCard[] = [
       primary: "#14532d",
       secondary: "#15803d",
       accent: "#fde047",
+    }),
+  },
+  {
+    id: SOUNDS_FAKE_COLLECTION_ID,
+    name: SOUNDS_FAKE_COLLECTION_NAME,
+    eyebrow: "Wild Facts",
+    description: "Surprising facts about planets, oceans, animals, and landmarks that still sound made up.",
+    image: createFeaturedSetArt({
+      label: "TRUE?",
+      primary: "#172554",
+      secondary: "#1d4ed8",
+      accent: "#67e8f9",
+    }),
+  },
+  {
+    id: SIDEWAYS_CLUES_COLLECTION_ID,
+    name: SIDEWAYS_CLUES_COLLECTION_NAME,
+    eyebrow: "Travel",
+    description: "Recognize famous places from sideways clues instead of the usual postcard answers.",
+    image: createFeaturedSetArt({
+      label: "PLACES",
+      primary: "#3f1d2e",
+      secondary: "#9a3412",
+      accent: "#fdba74",
+    }),
+  },
+  {
+    id: SPORTS_LEGENDS_COLLECTION_ID,
+    name: SPORTS_LEGENDS_COLLECTION_NAME,
+    eyebrow: "Icons",
+    description: "A fast lane through record-setters, signature moves, and all-time sports names.",
+    image: createFeaturedSetArt({
+      label: "LEGENDS",
+      primary: "#052e16",
+      secondary: "#166534",
+      accent: "#86efac",
     }),
   },
 ];

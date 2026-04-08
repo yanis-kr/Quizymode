@@ -112,5 +112,45 @@
       "nature-animals"
     ],
     "source": "https://www.montereybayaquarium.org/stories/-sea-otters-help-kelp-forests"
+  },
+  {
+    "itemId": "3a126d30-abe6-4df4-89a1-f6c75380a7e2",
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "What color is an octopus's blood?",
+    "correctAnswer": "Blue",
+    "incorrectAnswers": [
+      "Red",
+      "Green",
+      "Clear"
+    ],
+    "explanation": "Octopus blood uses copper-based hemocyanin, which gives it a blue color.",
+    "keywords": [
+      "cephalopods",
+      "blood",
+      "biology"
+    ],
+    "source": "https://www.noaa.gov/stories/love-is-in-air-and-sea-5-facts-about-affections-of-marine-creatures"
+  },
+  {
+    "itemId": "53d7ec22-7ac1-4108-91d7-d86621494610",
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "marine",
+    "question": "Which shark is known as the longest-lived vertebrate, with some individuals estimated at 400 years or more?",
+    "correctAnswer": "Greenland shark",
+    "incorrectAnswers": [
+      "Great white shark",
+      "Whale shark",
+      "Mako shark"
+    ],
+    "explanation": "Greenland sharks grow slowly and can live for centuries in cold deep waters.",
+    "keywords": [
+      "sharks",
+      "longevity",
+      "arctic"
+    ],
+    "source": "https://www.britannica.com/animal/How-Old-Is-the-Oldest-Living-Greenland-Shark"
   }
 ]
