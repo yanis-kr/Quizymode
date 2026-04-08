@@ -82,10 +82,33 @@ public static class ReviewKeywordAdmin
                 Error.NotFound("Admin.KeywordNotFound", "Keyword not found"));
         }
 
+        DateTime reviewedAtUtc = DateTime.UtcNow;
+        string reviewedBy = userContext.UserId ?? "admin";
+
+        Keyword? existingPublicKeyword = await db.Keywords
+            .FirstOrDefaultAsync(
+                k => k.Id != keyword.Id
+                    && !k.IsPrivate
+                    && k.Name.ToLower() == keyword.Name.ToLower(),
+                cancellationToken);
+
+        if (existingPublicKeyword is not null)
+        {
+            await MergeIntoExistingPublicKeywordAsync(
+                keyword,
+                existingPublicKeyword,
+                db,
+                reviewedAtUtc,
+                reviewedBy,
+                cancellationToken);
+
+            return Result.Success(ToResponse(existingPublicKeyword));
+        }
+
         keyword.IsPrivate = false;
         keyword.IsReviewPending = false;
-        keyword.ReviewedAt = DateTime.UtcNow;
-        keyword.ReviewedBy = userContext.UserId ?? "admin";
+        keyword.ReviewedAt = reviewedAtUtc;
+        keyword.ReviewedBy = reviewedBy;
 
         await db.SaveChangesAsync(cancellationToken);
 
@@ -124,5 +147,44 @@ public static class ReviewKeywordAdmin
             keyword.CreatedAt,
             keyword.ReviewedAt,
             keyword.ReviewedBy);
+
+    private static async Task MergeIntoExistingPublicKeywordAsync(
+        Keyword pendingKeyword,
+        Keyword publicKeyword,
+        ApplicationDbContext db,
+        DateTime reviewedAtUtc,
+        string reviewedBy,
+        CancellationToken cancellationToken)
+    {
+        List<ItemKeyword> pendingLinks = await db.ItemKeywords
+            .Where(link => link.KeywordId == pendingKeyword.Id)
+            .ToListAsync(cancellationToken);
+
+        HashSet<Guid> itemIdsWithPublicKeyword = pendingLinks.Count == 0
+            ? []
+            : (await db.ItemKeywords
+                .Where(link => link.KeywordId == publicKeyword.Id)
+                .Select(link => link.ItemId)
+                .ToListAsync(cancellationToken))
+                .ToHashSet();
+
+        foreach (ItemKeyword pendingLink in pendingLinks)
+        {
+            if (itemIdsWithPublicKeyword.Contains(pendingLink.ItemId))
+            {
+                db.ItemKeywords.Remove(pendingLink);
+                continue;
+            }
+
+            pendingLink.KeywordId = publicKeyword.Id;
+            itemIdsWithPublicKeyword.Add(pendingLink.ItemId);
+        }
+
+        publicKeyword.ReviewedAt = reviewedAtUtc;
+        publicKeyword.ReviewedBy = reviewedBy;
+
+        db.Keywords.Remove(pendingKeyword);
+        await db.SaveChangesAsync(cancellationToken);
+    }
 }
 

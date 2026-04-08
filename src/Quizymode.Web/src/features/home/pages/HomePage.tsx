@@ -12,7 +12,6 @@ import {
   HOME_SAMPLE_COLLECTION_NAME,
   homeCategoryCards,
 } from "../homePageData";
-import type { CollectionDiscoverItem } from "@/types/api";
 
 const CARD_GRADIENTS = [
   { primary: "#0f2027", secondary: "#203a43", accent: "#7dd3fc" },

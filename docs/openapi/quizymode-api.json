@@ -3253,7 +3253,8 @@
           "lastLogin",
           "uniqueUrlsInWindow",
           "totalPageViewsInWindow",
-          "lastOpenedUtc"
+          "lastOpenedUtc",
+          "lastKnownCountry"
         ],
         "type": "object",
         "properties": {
@@ -3299,6 +3300,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "lastKnownCountry": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -3647,6 +3658,7 @@
           "id",
           "userEmail",
           "ipAddress",
+          "country",
           "action",
           "entityId",
           "createdUtc",
@@ -3669,6 +3681,16 @@
           },
           "ipAddress": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "country": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           },
           "action": {
             "$ref": "#/components/schemas/System.String"
@@ -3873,6 +3895,7 @@
           "queryString",
           "sessionId",
           "ipAddress",
+          "country",
           "isAuthenticated",
           "userEmail",
           "createdUtc"
@@ -3896,6 +3919,16 @@
           },
           "ipAddress": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "country": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           },
           "isAuthenticated": {
             "$ref": "#/components/schemas/System.Boolean"

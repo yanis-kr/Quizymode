@@ -57,4 +57,26 @@ public sealed class GetPendingKeywordsAdminTests : DatabaseTestFixture
         result.IsSuccess.Should().BeTrue();
         result.Value!.Keywords.Single(k => k.Name == "test-kw").UsageCount.Should().Be(1);
     }
+
+    [Fact]
+    public async Task HandleAsync_ExcludesPendingKeywordsWithNoUsage()
+    {
+        Keyword unusedPending = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = "unused-kw",
+            IsPrivate = true,
+            IsReviewPending = true,
+            CreatedBy = "user",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Keywords.Add(unusedPending);
+        await DbContext.SaveChangesAsync();
+
+        var result = await GetPendingKeywordsAdmin.HandleAsync(DbContext, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Keywords.Should().BeEmpty();
+    }
 }

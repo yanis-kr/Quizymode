@@ -371,6 +371,11 @@ const PageViewAnalyticsPage = () => {
                         </div>
                         <div className="mt-2 font-mono text-xs text-slate-500">
                           {pageView.ipAddress}
+                          {pageView.country && (
+                            <span className="ml-1.5 font-sans font-medium text-indigo-600 not-italic">
+                              {pageView.country}
+                            </span>
+                          )}
                         </div>
                       </td>
                     </tr>

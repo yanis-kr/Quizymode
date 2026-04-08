@@ -278,11 +278,11 @@ internal sealed class UserUpsertMiddleware
                         // - Always update Email from claims (can change in Cognito)
                         // - Only update Name from claims if user hasn't set a custom name yet (Name is null or equals Subject)
                         // - Always update LastLogin to track user activity
-                        // - Only log LoginSuccess if it's been more than 1 minute since last login (to avoid logging on token refresh)
-                        
+                        // - Only log LoginSuccess if it's been more than 10 minutes since last login (debounce token refreshes)
+
                         DateTime now = DateTime.UtcNow;
                         TimeSpan timeSinceLastLogin = now - lockedUser.LastLogin;
-                        shouldLogLogin = timeSinceLastLogin.TotalMinutes > 1;
+                        shouldLogLogin = timeSinceLastLogin.TotalMinutes > 10;
                         
                         // Update user fields
                         lockedUser.Email = email;
@@ -301,7 +301,7 @@ internal sealed class UserUpsertMiddleware
                         
                         if (shouldLogLogin)
                         {
-                            _logger.LogDebug("Updated user record for subject: {Subject} with UserId: {UserId} (new login after {Minutes:F1} minutes)", 
+                            _logger.LogDebug("Updated user record for subject: {Subject} with UserId: {UserId} (new login after {Minutes:F1} minutes)",
                                 subject, userId, timeSinceLastLogin.TotalMinutes);
                             
                             // Log login success audit only for actual logins, not token refreshes
@@ -313,7 +313,7 @@ internal sealed class UserUpsertMiddleware
                         }
                         else
                         {
-                            _logger.LogDebug("User {Subject} (UserId: {UserId}) authenticated but LastLogin was {Minutes:F1} minutes ago - skipping login audit (likely token refresh)", 
+                            _logger.LogDebug("User {Subject} (UserId: {UserId}) authenticated but LastLogin was {Minutes:F1} minutes ago - skipping login audit (token refresh within 10-minute window)",
                                 subject, userId, timeSinceLastLogin.TotalMinutes);
                         }
                     }

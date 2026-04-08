@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -39,7 +40,8 @@ public static class AdminUsersActivity
         DateTime LastLogin,
         int UniqueUrlsInWindow,
         int TotalPageViewsInWindow,
-        DateTime? LastOpenedUtc);
+        DateTime? LastOpenedUtc,
+        string? LastKnownCountry);
 
     public sealed record UserActivityQueryRequest(
         string UserId,
@@ -133,10 +135,11 @@ public static class AdminUsersActivity
             int page = 1,
             int pageSize = 25,
             ApplicationDbContext db = null!,
+            IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
             UsersQueryRequest request = new(search, activityDays, activityFilter, page, pageSize);
-            Result<UsersResponse> result = await HandleGetUsersAsync(request, db, cancellationToken);
+            Result<UsersResponse> result = await HandleGetUsersAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -166,6 +169,7 @@ public static class AdminUsersActivity
     public static async Task<Result<UsersResponse>> HandleGetUsersAsync(
         UsersQueryRequest request,
         ApplicationDbContext db,
+        IIpGeolocationService geoService,
         CancellationToken cancellationToken)
     {
         if (request.ActivityDays is < 1 or > 365)
@@ -285,21 +289,51 @@ public static class AdminUsersActivity
         int totalPages = filteredUsers == 0 ? 0 : (int)Math.Ceiling(filteredUsers / (double)pageSize);
         int skip = (page - 1) * pageSize;
 
-        List<UserOverviewResponse> users = overviewList
+        List<UserOverviewProjection> pagedOverview = overviewList
             .OrderByDescending(user => user.LastOpenedUtc ?? DateTime.MinValue)
             .ThenByDescending(user => user.CreatedAt)
             .ThenBy(user => user.Email ?? user.Name ?? user.Id.ToString())
             .Skip(skip)
             .Take(pageSize)
-            .Select(user => new UserOverviewResponse(
-                user.Id.ToString(),
-                user.Name,
-                user.Email,
-                user.CreatedAt,
-                user.LastLogin,
-                user.UniqueUrlsInWindow,
-                user.TotalPageViewsInWindow,
-                user.LastOpenedUtc))
+            .ToList();
+
+        // Fetch the most recent page-view IP for each user in this page
+        List<Guid> pagedUserIds = pagedOverview.Select(u => u.Id).ToList();
+        Dictionary<Guid, string> lastIpByUserId = new();
+        if (pagedUserIds.Count > 0)
+        {
+            lastIpByUserId = (await db.PageViews
+                .AsNoTracking()
+                .Where(pv => pv.UserId.HasValue && pagedUserIds.Contains(pv.UserId!.Value))
+                .GroupBy(pv => pv.UserId!.Value)
+                .Select(g => new { UserId = g.Key, IpAddress = g.OrderByDescending(pv => pv.CreatedUtc).First().IpAddress })
+                .ToListAsync(cancellationToken))
+                .ToDictionary(x => x.UserId, x => x.IpAddress);
+        }
+
+        // Resolve country for unique IPs (parallel, cached)
+        List<string> uniqueIps = lastIpByUserId.Values.Distinct().ToList();
+        Dictionary<string, string?> countryByIp = (await Task.WhenAll(
+            uniqueIps.Select(async ip => (ip, country: await geoService.GetCountryAsync(ip, cancellationToken)))))
+            .ToDictionary(t => t.ip, t => t.country);
+
+        List<UserOverviewResponse> users = pagedOverview
+            .Select(user =>
+            {
+                string? lastCountry = lastIpByUserId.TryGetValue(user.Id, out string? ip)
+                    ? countryByIp.GetValueOrDefault(ip)
+                    : null;
+                return new UserOverviewResponse(
+                    user.Id.ToString(),
+                    user.Name,
+                    user.Email,
+                    user.CreatedAt,
+                    user.LastLogin,
+                    user.UniqueUrlsInWindow,
+                    user.TotalPageViewsInWindow,
+                    user.LastOpenedUtc,
+                    lastCountry);
+            })
             .ToList();
 
         UsersSummaryResponse summary = new(

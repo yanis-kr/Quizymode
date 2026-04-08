@@ -1,13 +1,16 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { adminApi, type PendingKeywordResponse } from "@/api/admin";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { getApiErrorMessage } from "@/utils/apiError";
 
 const AdminKeywordReviewPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
+  const [mutationError, setMutationError] = useState<string | null>(null);
 
   const {
     data,
@@ -22,15 +25,43 @@ const AdminKeywordReviewPage = () => {
 
   const approveMutation = useMutation({
     mutationFn: (id: string) => adminApi.approveKeyword(id),
-    onSuccess: () => {
+    onSuccess: (_response, id) => {
+      setMutationError(null);
+      queryClient.setQueryData(
+        ["admin", "pending-keywords"],
+        (current: { keywords?: PendingKeywordResponse[] } | undefined) =>
+          current
+            ? {
+                ...current,
+                keywords: (current.keywords ?? []).filter((keyword) => keyword.id !== id),
+              }
+            : current
+      );
       queryClient.invalidateQueries({ queryKey: ["admin", "pending-keywords"] });
+    },
+    onError: (error) => {
+      setMutationError(getApiErrorMessage(error));
     },
   });
 
   const rejectMutation = useMutation({
     mutationFn: (id: string) => adminApi.rejectKeyword(id),
-    onSuccess: () => {
+    onSuccess: (_response, id) => {
+      setMutationError(null);
+      queryClient.setQueryData(
+        ["admin", "pending-keywords"],
+        (current: { keywords?: PendingKeywordResponse[] } | undefined) =>
+          current
+            ? {
+                ...current,
+                keywords: (current.keywords ?? []).filter((keyword) => keyword.id !== id),
+              }
+            : current
+      );
       queryClient.invalidateQueries({ queryKey: ["admin", "pending-keywords"] });
+    },
+    onError: (error) => {
+      setMutationError(getApiErrorMessage(error));
     },
   });
 
@@ -66,6 +97,18 @@ const AdminKeywordReviewPage = () => {
         Approve to make a keyword public. Reject to keep it private and remove it
         from this review list.
       </p>
+      {mutationError && (
+        <div className="mb-6">
+          <ErrorMessage
+            message="Failed to update keyword review status"
+            errorDetail={mutationError}
+            onRetry={() => {
+              setMutationError(null);
+              refetch();
+            }}
+          />
+        </div>
+      )}
 
       {keywords.length === 0 ? (
         <p className="text-gray-500 text-sm">No keywords are pending review.</p>
