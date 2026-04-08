@@ -112,5 +112,24 @@
       "nature-animals"
     ],
     "source": "https://www.nationalgeographic.com/animals/article/polar-bears-algae-sea-ice-warming"
+  },
+  {
+    "itemId": "26dca3db-6882-4a82-827e-1a63ce4fd3ac",
+    "category": "nature",
+    "navigationKeyword1": "animals",
+    "navigationKeyword2": "predators",
+    "question": "What is an apex predator?",
+    "correctAnswer": "A predator at the top of the food chain with no natural predators",
+    "incorrectAnswers": [
+      "A predator that only eats plants",
+      "A predator that hunts alone",
+      "A predator that is endangered"
+    ],
+    "explanation": "Apex predators occupy the highest trophic level and have no natural predators themselves.",
+    "keywords": [
+      "ecology",
+      "food-chain"
+    ],
+    "source": "https://education.nationalgeographic.org/resource/apex-predators/"
   }
 ]

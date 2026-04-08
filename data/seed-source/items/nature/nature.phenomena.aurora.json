@@ -112,5 +112,43 @@
       "nature-phenomena"
     ],
     "source": "https://science.nasa.gov/sun/auroras/"
+  },
+  {
+    "itemId": "feec6ff4-4a6e-4744-925e-496566bc6a06",
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What causes aurora displays (Northern/Southern Lights)?",
+    "correctAnswer": "Charged particles from the sun interacting with Earth's magnetic field",
+    "incorrectAnswers": [
+      "Reflected sunlight",
+      "Atmospheric pollution",
+      "Volcanic activity"
+    ],
+    "explanation": "Solar wind particles are guided by Earth's magnetic field to polar regions, where they excite atmospheric gases to create auroras.",
+    "keywords": [
+      "solar-wind",
+      "magnetic-field"
+    ],
+    "source": "https://science.nasa.gov/heliophysics/resources/mysteries-of-the-sun/space-weather-xqefo/"
+  },
+  {
+    "itemId": "6829b764-f812-41dc-8783-3ef2b0d8862c",
+    "category": "nature",
+    "navigationKeyword1": "phenomena",
+    "navigationKeyword2": "aurora",
+    "question": "What determines the colors seen in aurora displays?",
+    "correctAnswer": "The type of gas molecules and altitude where particles collide",
+    "incorrectAnswers": [
+      "The time of day",
+      "The season",
+      "The temperature"
+    ],
+    "explanation": "Different gases (oxygen, nitrogen) at different altitudes emit specific colors when excited by solar particles.",
+    "keywords": [
+      "colors",
+      "atmosphere"
+    ],
+    "source": "https://science.nasa.gov/heliophysics/resources/mysteries-of-the-sun/space-weather-xqefo/"
   }
 ]

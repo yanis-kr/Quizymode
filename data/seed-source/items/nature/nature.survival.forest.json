@@ -112,5 +112,23 @@
       "nature-outdoors"
     ],
     "source": "https://www.nps.gov/wrst/planyourvisit/hypothermia.htm"
+  },
+  {
+    "itemId": "2df3a7e7-49ea-4205-9415-f6d163bbd543",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "forest",
+    "question": "What is the rule of threes in survival situations?",
+    "correctAnswer": "3 minutes without air, 3 hours without shelter, 3 days without water, 3 weeks without food",
+    "incorrectAnswers": [
+      "3 hours without air, 3 days without shelter, 3 weeks without water",
+      "3 days without air, 3 weeks without shelter, 3 months without water",
+      "All needs are equally important"
+    ],
+    "explanation": "The rule of threes prioritizes survival needs: air, shelter, water, then food.",
+    "keywords": [
+      "priorities",
+      "rules"
+    ]
   }
 ]

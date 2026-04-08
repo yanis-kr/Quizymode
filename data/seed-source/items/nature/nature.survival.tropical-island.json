@@ -112,5 +112,23 @@
       "nature-outdoors"
     ],
     "source": "https://www.weather.gov/safety/heat-illness"
+  },
+  {
+    "itemId": "bae06545-37ba-4107-9077-3802d95e1558",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "How can you make seawater drinkable in a survival situation?",
+    "correctAnswer": "Distillation using solar still or boiling and condensing",
+    "incorrectAnswers": [
+      "Filtering through sand",
+      "Adding salt to it",
+      "Boiling alone removes salt"
+    ],
+    "explanation": "Distillation separates water from salt by evaporating and condensing the water vapor.",
+    "keywords": [
+      "water",
+      "desalination"
+    ]
   }
 ]

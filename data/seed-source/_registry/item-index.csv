@@ -3935,6 +3935,7 @@ ba82f252-6972-4d77-bfb3-edd37cdfd3ef,nature,animals,marine,Which animal is the l
 1a88530c-75a8-46b1-b7a0-a5c3214c5dd6,nature,animals,marine,Which marine mammal helps protect kelp forests by ,data/seed-source/items/nature/nature.animals.marine.json
 53d7ec22-7ac1-4108-91d7-d86621494610,nature,animals,marine,Which shark is known as the longest-lived vertebra,data/seed-source/items/nature/nature.animals.marine.json
 1103bcb9-3ebb-4efe-97c8-b341f429e83c,nature,animals,predators,Gray wolves usually live and hunt in what kind of ,data/seed-source/items/nature/nature.animals.predators.json
+26dca3db-6882-4a82-827e-1a63ce4fd3ac,nature,animals,predators,What is an apex predator?,data/seed-source/items/nature/nature.animals.predators.json
 c40eb424-3f4d-467b-ab43-3be9ef28ab39,nature,animals,predators,What is the usual name for a social group of lions,data/seed-source/items/nature/nature.animals.predators.json
 9d1606ce-2371-4ed4-ada2-573dc440986c,nature,animals,predators,Which Arctic predator depends heavily on sea ice t,data/seed-source/items/nature/nature.animals.predators.json
 18ad4a94-d4e6-4638-a3d8-252648f22147,nature,animals,predators,Which big cat is especially known for hunting alon,data/seed-source/items/nature/nature.animals.predators.json
@@ -3976,6 +3977,7 @@ e641087a-615a-4282-98f9-7222f9664114,nature,ecosystems,tundra,"Besides the Arcti
 7bf2ed5d-d901-4eb9-aad1-097a5fcbc960,nature,ecosystems,tundra,What kind of rainfall does tundra usually receive?,data/seed-source/items/nature/nature.ecosystems.tundra.json
 0cf46f75-550c-4073-95c1-d36a6dc7327a,nature,ecosystems,tundra,What major feature makes tundra landscapes differe,data/seed-source/items/nature/nature.ecosystems.tundra.json
 65db9eb5-016e-438c-b4f6-2760f0370eea,nature,ecosystems,tundra,Why do many tundra plants have shallow roots?,data/seed-source/items/nature/nature.ecosystems.tundra.json
+e873a3ac-8cd0-488a-ab6f-58c8ff20d6dc,nature,ecosystems,tundra,Why is the tundra ecosystem particularly vulnerabl,data/seed-source/items/nature/nature.ecosystems.tundra.json
 a56771f9-e522-4463-959c-b5e22f9f0910,nature,navigation,gps,"Besides location, what kind of information can man",data/seed-source/items/nature/nature.navigation.gps.json
 8bafc6ac-2f2a-44f9-8411-7431df1980df,nature,navigation,gps,How does a GPS receiver estimate its distance from,data/seed-source/items/nature/nature.navigation.gps.json
 2176e6cf-3f72-47bc-9bc6-a3f53d2c8177,nature,navigation,gps,What does GPS trilateration use to figure out your,data/seed-source/items/nature/nature.navigation.gps.json
@@ -3983,6 +3985,7 @@ afb393c6-696b-4979-9eb8-c2d607075c15,nature,navigation,gps,What is a waypoint on
 8923ef28-8355-4d14-a24e-bed3fec305f3,nature,navigation,gps,What is one major outdoor advantage of storing way,data/seed-source/items/nature/nature.navigation.gps.json
 56d7e913-07dc-40db-9266-31f02ea4126a,nature,navigation,gps,Why is it wise to keep a backup navigation method ,data/seed-source/items/nature/nature.navigation.gps.json
 d4e8256c-f44e-4f3a-aef9-cacb22da2cf7,nature,navigation,map-compass,A compass needle points toward which north?,data/seed-source/items/nature/nature.navigation.map-compass.json
+1906fb56-2a45-4173-9d82-aaa9fc05eff5,nature,navigation,map-compass,How do you find north using the Big Dipper constel,data/seed-source/items/nature/nature.navigation.map-compass.json
 19d5727f-afe4-48bd-8a53-e9dec6980765,nature,navigation,map-compass,"If contour lines are very close together, what doe",data/seed-source/items/nature/nature.navigation.map-compass.json
 1ca02a89-f149-4f36-b5c2-c432cc7aeff4,nature,navigation,map-compass,Topographic maps use contour lines mainly to show ,data/seed-source/items/nature/nature.navigation.map-compass.json
 3bf2f502-51b0-41ab-b027-cc2f6246989e,nature,navigation,map-compass,What do contour lines on a topographic map connect,data/seed-source/items/nature/nature.navigation.map-compass.json
@@ -3996,6 +3999,8 @@ b08befa1-3ef5-4590-b063-16176b9a74c3,nature,navigation,orienteering,"In orientee
 ed2d65cb-b367-4052-849b-462f0be46ca1,nature,navigation,orienteering,What map symbol usually marks the start of an orie,data/seed-source/items/nature/nature.navigation.orienteering.json
 c50818d4-caec-4172-ba29-192475a63961,nature,phenomena,aurora,Auroras are usually strongest and most common near,data/seed-source/items/nature/nature.phenomena.aurora.json
 c6a4db5a-c240-417b-9084-cc26749903b0,nature,phenomena,aurora,What causes an aurora to glow?,data/seed-source/items/nature/nature.phenomena.aurora.json
+feec6ff4-4a6e-4744-925e-496566bc6a06,nature,phenomena,aurora,What causes aurora displays (Northern/Southern Lig,data/seed-source/items/nature/nature.phenomena.aurora.json
+6829b764-f812-41dc-8783-3ef2b0d8862c,nature,phenomena,aurora,What determines the colors seen in aurora displays,data/seed-source/items/nature/nature.phenomena.aurora.json
 80b79958-d527-4337-bab4-9ce2f8f713a0,nature,phenomena,aurora,What is the common name for the aurora borealis?,data/seed-source/items/nature/nature.phenomena.aurora.json
 8d1a4e1f-4c4a-46af-98c4-096fd0ebe849,nature,phenomena,aurora,What is the southern-hemisphere aurora called?,data/seed-source/items/nature/nature.phenomena.aurora.json
 3d6d4c5d-4b7b-4a4e-81c1-7b1a3266d0d0,nature,phenomena,aurora,What stream of particles from the Sun helps drive ,data/seed-source/items/nature/nature.phenomena.aurora.json
@@ -4016,6 +4021,7 @@ fd28005a-b070-4f47-b9eb-02613778e134,nature,phenomena,weather-events,What makes 
 577383ee-7882-4da2-a722-e4bffeb36496,nature,plants,poisonous,Poison oak is most often recognized by leaves grou,data/seed-source/items/nature/nature.plants.poisonous.json
 1eb78f72-a02b-4a98-ad4a-21c21489311f,nature,plants,poisonous,Poison sumac is most often found in what kind of p,data/seed-source/items/nature/nature.plants.poisonous.json
 36133254-5297-4b4f-b0f5-17007dbb793e,nature,plants,poisonous,What oil in poison ivy causes the itchy skin react,data/seed-source/items/nature/nature.plants.poisonous.json
+1e8b3165-6c5f-469b-b276-d08f7bb9d021,nature,plants,poisonous,What should you do if you suspect contact with a p,data/seed-source/items/nature/nature.plants.poisonous.json
 06b1d90e-1d0e-4254-aab0-29749d13cd4f,nature,plants,poisonous,Which part of water hemlock is especially dangerou,data/seed-source/items/nature/nature.plants.poisonous.json
 a5d87b08-1d4c-4ed2-9f2b-79592f2e6273,nature,plants,poisonous,Why is burning poison ivy especially dangerous?,data/seed-source/items/nature/nature.plants.poisonous.json
 1f2488b4-30aa-4b34-ae59-b985bdcc68ff,nature,plants,trees,Acorns are the nuts of which kind of tree?,data/seed-source/items/nature/nature.plants.trees.json
@@ -4038,6 +4044,7 @@ ad991f6d-38d3-4198-ac96-7a02e4648ca0,nature,survival,fire,"Can a small, unattend
 6a45c140-5dd6-478f-96b5-d87b1ae144ee,nature,survival,fire,Which Ten Essential category covers items like wat,data/seed-source/items/nature/nature.survival.fire.json
 c0b26de5-e903-4ca5-8ca0-a171faf5cd77,nature,survival,forest,What is one of the best defenses against hypotherm,data/seed-source/items/nature/nature.survival.forest.json
 1aa6c9be-be80-4f05-8237-0796f9b64b1a,nature,survival,forest,What is the point of dressing in layers in cold ou,data/seed-source/items/nature/nature.survival.forest.json
+2df3a7e7-49ea-4205-9415-f6d163bbd543,nature,survival,forest,What is the rule of threes in survival situations?,data/seed-source/items/nature/nature.survival.forest.json
 bdc5f779-61e4-4e95-81a9-5b49e174631e,nature,survival,forest,What simple item is recommended in a survival kit ,data/seed-source/items/nature/nature.survival.forest.json
 86fc7530-3b43-4d05-b76f-e7e25f321875,nature,survival,forest,What small item can be used as a signaling device ,data/seed-source/items/nature/nature.survival.forest.json
 a42771d8-9a8a-4446-8aa5-98791d2e32eb,nature,survival,forest,"Why is cotton a poor clothing choice in cold, wet ",data/seed-source/items/nature/nature.survival.forest.json
@@ -4049,6 +4056,7 @@ dd6cf521-5b9f-4cc0-a7d3-38d3e381365c,nature,survival,shelter,How far from lakes 
 efc65aee-4dea-42f7-b96b-6d4a32693592,nature,survival,shelter,Which of these counts as a durable surface for cam,data/seed-source/items/nature/nature.survival.shelter.json
 851fe8ca-49d6-4eb5-84d6-a57b0e3dc1cd,nature,survival,shelter,Why is staying dry so important when trying to sta,data/seed-source/items/nature/nature.survival.shelter.json
 7390305c-9f07-4360-9e8a-07fd39950bb3,nature,survival,tropical-island,Do rip currents usually pull swimmers under the wa,data/seed-source/items/nature/nature.survival.tropical-island.json
+bae06545-37ba-4107-9077-3802d95e1558,nature,survival,tropical-island,How can you make seawater drinkable in a survival ,data/seed-source/items/nature/nature.survival.tropical-island.json
 5bbf9948-ffab-4092-8287-33d0614b4801,nature,survival,tropical-island,"If a rip current pulls you away from shore, what i",data/seed-source/items/nature/nature.survival.tropical-island.json
 f55bd4e1-3730-45cc-8e0b-df4098c1ee0b,nature,survival,tropical-island,"If someone shows signs of heat exhaustion, where s",data/seed-source/items/nature/nature.survival.tropical-island.json
 864891b4-14e4-4e08-877b-06dedb4c8459,nature,survival,tropical-island,What do red beach warning flags generally mean for,data/seed-source/items/nature/nature.survival.tropical-island.json

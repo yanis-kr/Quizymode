@@ -112,5 +112,24 @@
       "nature-ecosystems"
     ],
     "source": "https://environment.nationalgeographic.com/environment/habitats/tundra-profile"
+  },
+  {
+    "itemId": "e873a3ac-8cd0-488a-ab6f-58c8ff20d6dc",
+    "category": "nature",
+    "navigationKeyword1": "ecosystems",
+    "navigationKeyword2": "tundra",
+    "question": "Why is the tundra ecosystem particularly vulnerable to climate change?",
+    "correctAnswer": "Melting permafrost releases stored carbon and changes habitat structure",
+    "incorrectAnswers": [
+      "It's not vulnerable",
+      "It adapts quickly to change",
+      "It has no stored carbon"
+    ],
+    "explanation": "Permafrost stores vast amounts of carbon; its melting releases greenhouse gases and fundamentally alters the ecosystem.",
+    "keywords": [
+      "climate-change",
+      "permafrost"
+    ],
+    "source": "https://www.climate.gov/news-features/featured-images/2024-arctic-report-card-arctic-tundra-now-net-source-carbon-dioxide"
   }
 ]
