@@ -27,8 +27,8 @@ export function ModeSwitcher({
   className = "",
 }: ModeSwitcherProps) {
   const baseClass =
-    "inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-md transition-colors";
-  const activeClass = "bg-indigo-100 text-indigo-800 ring-1 ring-indigo-200";
+    "inline-flex items-center gap-1 px-2.5 py-1 text-sm font-medium rounded-md transition-colors";
+  const activeClass = "bg-indigo-50 text-indigo-700 border border-indigo-200";
   const inactiveClass =
     "text-gray-600 hover:bg-gray-100 hover:text-gray-900";
 
@@ -41,7 +41,7 @@ export function ModeSwitcher({
 
   return (
     <div
-      className={`flex flex-wrap items-center gap-2 ${className}`}
+      className={`flex flex-wrap items-center gap-1 ${className}`}
       role="tablist"
       aria-label="View mode"
     >

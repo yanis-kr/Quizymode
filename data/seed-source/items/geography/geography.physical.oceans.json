@@ -218,5 +218,25 @@
       "gulf-of-mexico"
     ],
     "source": "https://www.britannica.com/place/Gulf-of-Mexico-Gulf-of-America"
+  },
+  {
+    "itemId": "f43f291d-4efc-4ed8-b90f-da4993afc84b",
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "oceans",
+    "question": "What is the deepest known point in Earth's oceans?",
+    "correctAnswer": "Challenger Deep",
+    "incorrectAnswers": [
+      "Java Trench",
+      "Puerto Rico Trench",
+      "Tonga Trench"
+    ],
+    "explanation": "Challenger Deep lies in the Mariana Trench and reaches roughly 11,000 meters deep.",
+    "keywords": [
+      "deep-ocean",
+      "mariana-trench",
+      "earth-extremes"
+    ],
+    "source": "https://oceanservice.noaa.gov/facts/oceandepth.html"
   }
 ]

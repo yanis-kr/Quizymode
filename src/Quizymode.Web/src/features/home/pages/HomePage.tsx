@@ -59,7 +59,7 @@ const HomePage = () => {
             <div className="absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8 flex flex-col gap-3">
+          <div className="relative mx-auto max-w-7xl px-3 py-2 sm:px-6 lg:px-8 flex flex-col gap-2">
 
             {/* ── Hero card ── */}
             <section className="rounded-[24px] border border-white/12 bg-white/8 p-3 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">

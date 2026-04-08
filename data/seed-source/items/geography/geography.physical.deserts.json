@@ -218,5 +218,25 @@
       "interior"
     ],
     "source": "https://www.britannica.com/place/Great-Victoria-Desert"
+  },
+  {
+    "itemId": "94c2f67d-6657-4107-91bf-c90902f66275",
+    "category": "geography",
+    "navigationKeyword1": "physical",
+    "navigationKeyword2": "deserts",
+    "question": "What is the largest desert on Earth?",
+    "correctAnswer": "Antarctica",
+    "incorrectAnswers": [
+      "Sahara",
+      "Gobi",
+      "Arabian Desert"
+    ],
+    "explanation": "A desert is defined by very low precipitation, not by sand, which is why Antarctica counts.",
+    "keywords": [
+      "deserts",
+      "antarctica",
+      "climate"
+    ],
+    "source": "https://education.nationalgeographic.org/resource/deserts/"
   }
 ]

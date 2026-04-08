@@ -18,18 +18,18 @@ export function ScopePathHeader({
   const showCount = typeof count === "number";
 
   return (
-    <div className={`mt-2 mb-6 space-y-2 ${className}`}>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap items-center gap-2 min-w-0">
+    <div className={`mt-1 mb-3 space-y-1 ${className}`}>
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-1.5 min-w-0 overflow-x-auto">
           {breadcrumb}
           {showCount && (
-            <span className="text-sm text-gray-600" aria-label="Item count">
+            <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0" aria-label="Item count">
               ({count})
             </span>
           )}
         </div>
         {endSlot ? (
-          <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {endSlot}
           </div>
         ) : null}

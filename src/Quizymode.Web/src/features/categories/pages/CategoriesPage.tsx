@@ -26,7 +26,8 @@ import {
 } from "@/utils/categorySlug";
 import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
-import { FilterSection } from "../../items/components/filters/FilterSection";
+import { FilterControlBar } from "@/components/FilterControlBar";
+import { FilterBottomSheet } from "@/components/FilterBottomSheet";
 import { AddFiltersSection } from "../../items/components/filters/AddFiltersSection";
 import { ItemTypeFilter } from "../../items/components/filters/ItemTypeFilter";
 import { SearchFilter } from "../../items/components/filters/SearchFilter";
@@ -814,7 +815,7 @@ const CategoriesPage = () => {
           description={categoryName ? (currentCategoryMeta?.description ?? `Browse items in the ${categoryName} category on Quizymode.`) : "Browse items across all categories on Quizymode."}
           canonical={`https://www.quizymode.com${scopePath}`}
         />
-        <div className="space-y-6 px-4 py-6 sm:px-0">
+        <div className="space-y-4 px-3 py-4 sm:px-0">
           {!categoryName ? (
             <CategoryPageHero
               theme={categoriesOverviewTheme}
@@ -824,7 +825,7 @@ const CategoriesPage = () => {
             />
           ) : null}
 
-          <section className="rounded-[30px] border border-white/10 bg-white/95 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6">
+          <section className="rounded-[30px] border border-white/10 bg-white/95 p-3 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
             <ScopeSecondaryBar
               scopeType="category"
               activeMode="list"
@@ -853,14 +854,23 @@ const CategoriesPage = () => {
                 ) : null
               }
             />
-            <FilterSection
-              showFilters={showFilters}
+            <FilterControlBar
               hasActiveFilters={
                 !isAllCategoriesSlug(categorySlugParam) ||
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              onToggleFilters={() => setShowFilters(!showFilters)}
+              activeFilterCount={activeScopeFilters.size}
+              onOpenFilters={() => setShowFilters(true)}
+            />
+            <FilterBottomSheet
+              isOpen={showFilters}
+              onClose={() => setShowFilters(false)}
+              hasActiveFilters={
+                !isAllCategoriesSlug(categorySlugParam) ||
+                keywordsFromUrlOrQuery.length > 0 ||
+                hasActiveScopeFilters
+              }
               onClearAll={() => {
                 setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
                 const q = searchParams.get("keywords");
@@ -954,7 +964,7 @@ const CategoriesPage = () => {
                   />
                 )}
               </div>
-            </FilterSection>
+            </FilterBottomSheet>
             <ScopePathHeader
               breadcrumb={
                 <Breadcrumb
@@ -970,8 +980,8 @@ const CategoriesPage = () => {
               count={scopeTotalCount}
               hint="Browse items in this scope."
               endSlot={
-                <div className="flex items-center gap-2">
-                  <label className="text-sm text-gray-600">Per page:</label>
+                <div className="flex items-center gap-1.5">
+                  <label className="text-xs text-gray-500">Per page:</label>
                   <select
                     value={pageSize}
                     onChange={(e) =>
@@ -1061,8 +1071,8 @@ const CategoriesPage = () => {
           description={currentCategoryMeta?.description ?? `Browse sets in the ${categoryName} category on Quizymode.`}
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
-        <div className="space-y-6 px-4 py-6 sm:px-0">
-          <section className="rounded-[30px] border border-white/10 bg-white/95 p-4 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6">
+        <div className="space-y-4 px-3 py-4 sm:px-0">
+          <section className="rounded-[30px] border border-white/10 bg-white/95 p-3 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
             <ScopeSecondaryBar
               scopeType="category"
               activeMode="sets"
@@ -1091,14 +1101,30 @@ const CategoriesPage = () => {
                 ) : null
               }
             />
-            <FilterSection
-              showFilters={showFilters}
+            <FilterControlBar
               hasActiveFilters={
                 !isAllCategoriesSlug(categorySlugParam) ||
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              onToggleFilters={() => setShowFilters(!showFilters)}
+              activeFilterCount={activeScopeFilters.size}
+              onOpenFilters={() => setShowFilters(true)}
+              sortBy={sortBy}
+              onSortChange={(s) => handleSortChange(s as SortOption)}
+              sortOptions={[
+                { value: "name", label: "Name" },
+                { value: "count", label: "Item count" },
+                { value: "rating", label: "Rating" },
+              ]}
+            />
+            <FilterBottomSheet
+              isOpen={showFilters}
+              onClose={() => setShowFilters(false)}
+              hasActiveFilters={
+                !isAllCategoriesSlug(categorySlugParam) ||
+                keywordsFromUrlOrQuery.length > 0 ||
+                hasActiveScopeFilters
+              }
               onClearAll={() => {
                 setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
                 const q = searchParams.get("keywords");
@@ -1192,7 +1218,7 @@ const CategoriesPage = () => {
                   />
                 )}
               </div>
-            </FilterSection>
+            </FilterBottomSheet>
             <ScopePathHeader
               breadcrumb={
                 <Breadcrumb
@@ -1208,7 +1234,6 @@ const CategoriesPage = () => {
                   ? currentCategoryMeta.description
                   : "Browse subtopics in this scope."
               }
-              endSlot={<SortControl sortBy={sortBy} onSortChange={handleSortChange} />}
             />
 
             {sortedKeywords.length > 0 ? (
@@ -1413,7 +1438,7 @@ function Breadcrumb({
   }
 
   return (
-    <nav className="flex items-center gap-1 text-sm text-gray-600">
+    <nav className="flex items-center gap-1 text-xs text-gray-600 whitespace-nowrap">
       {pathSegments.map((seg, i) => (
         <span key={i} className="flex items-center gap-1">
           {i > 0 && <BreadcrumbChevron className="h-4 w-4 text-gray-400" />}
@@ -1427,32 +1452,6 @@ function Breadcrumb({
         </span>
       ))}
     </nav>
-  );
-}
-
-function SortControl({
-  sortBy,
-  onSortChange,
-}: {
-  sortBy: SortOption;
-  onSortChange: (s: SortOption) => void;
-}) {
-  return (
-    <div className="flex items-center gap-2">
-      <label htmlFor="sort-select" className="text-sm font-medium text-gray-700">
-        Sort by:
-      </label>
-      <select
-        id="sort-select"
-        value={sortBy}
-        onChange={(e) => onSortChange(e.target.value as SortOption)}
-        className="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2 border"
-      >
-        <option value="name">Name</option>
-        <option value="count">Number of Items</option>
-        <option value="rating">Avg. Rating</option>
-      </select>
-    </div>
   );
 }
 

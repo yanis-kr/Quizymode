@@ -112,5 +112,23 @@
       "nature-navigation"
     ],
     "source": "https://www.rei.com/learn/expert-advice/compass-declination.html"
+  },
+  {
+    "itemId": "1906fb56-2a45-4173-9d82-aaa9fc05eff5",
+    "category": "nature",
+    "navigationKeyword1": "navigation",
+    "navigationKeyword2": "map-compass",
+    "question": "How do you find north using the Big Dipper constellation?",
+    "correctAnswer": "Follow the pointer stars to Polaris (North Star)",
+    "incorrectAnswers": [
+      "Follow the handle to the horizon",
+      "Point at the brightest star",
+      "Use the middle star of the dipper"
+    ],
+    "explanation": "The two stars forming the outer edge of the Big Dipper's bowl point to Polaris, which indicates north.",
+    "keywords": [
+      "stars",
+      "astronomy"
+    ]
   }
 ]

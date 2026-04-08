@@ -112,5 +112,24 @@
       "nature-plants"
     ],
     "source": "https://www.cdc.gov/niosh/topics/plants/symptoms.html"
+  },
+  {
+    "itemId": "1e8b3165-6c5f-469b-b276-d08f7bb9d021",
+    "category": "nature",
+    "navigationKeyword1": "plants",
+    "navigationKeyword2": "poisonous",
+    "question": "What should you do if you suspect contact with a poisonous plant?",
+    "correctAnswer": "Wash the area immediately with soap and water",
+    "incorrectAnswers": [
+      "Wait to see if symptoms appear",
+      "Apply heat to the area",
+      "Scratch the affected area"
+    ],
+    "explanation": "Immediate washing can remove oils before they bind to skin, reducing or preventing reaction.",
+    "keywords": [
+      "first-aid",
+      "treatment"
+    ],
+    "source": "https://www.fda.gov/consumers/consumer-updates/outsmarting-poison-ivy-and-other-poisonous-plants"
   }
 ]
