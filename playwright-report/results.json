@@ -152,7 +152,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2844,
+                  "duration": 7070,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -160,10 +160,10 @@
                   "steps": [
                     {
                       "title": "fill password",
-                      "duration": 20
+                      "duration": 16
                     }
                   ],
-                  "startTime": "2026-04-07T00:06:14.278Z",
+                  "startTime": "2026-04-08T14:21:03.370Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -188,7 +188,7 @@
         {
           "title": "User guide screenshots",
           "file": "screenshots/capture.spec.ts",
-          "line": 743,
+          "line": 763,
           "column": 6,
           "specs": [
             {
@@ -197,7 +197,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -207,12 +207,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12846,
+                      "duration": 11797,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:06:19.887Z",
+                      "startTime": "2026-04-08T14:21:12.348Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -222,7 +222,7 @@
               ],
               "id": "8055b76dba9258d15c9f-15714998c1f1d4e54714",
               "file": "screenshots/capture.spec.ts",
-              "line": 749,
+              "line": 769,
               "column": 3
             },
             {
@@ -231,7 +231,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -241,12 +241,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12952,
+                      "duration": 12183,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:06:33.019Z",
+                      "startTime": "2026-04-08T14:21:24.322Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -256,7 +256,7 @@
               ],
               "id": "8055b76dba9258d15c9f-f8c56aea5e661ed37d83",
               "file": "screenshots/capture.spec.ts",
-              "line": 753,
+              "line": 773,
               "column": 3
             },
             {
@@ -265,7 +265,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -275,12 +275,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14286,
+                      "duration": 13818,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:06:46.010Z",
+                      "startTime": "2026-04-08T14:21:36.532Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -290,7 +290,7 @@
               ],
               "id": "8055b76dba9258d15c9f-bc14da02b4dbc67761fc",
               "file": "screenshots/capture.spec.ts",
-              "line": 757,
+              "line": 777,
               "column": 3
             },
             {
@@ -299,7 +299,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -309,12 +309,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14533,
+                      "duration": 13831,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:07:00.317Z",
+                      "startTime": "2026-04-08T14:21:50.380Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -324,7 +324,7 @@
               ],
               "id": "8055b76dba9258d15c9f-2139c703502f479dc0b7",
               "file": "screenshots/capture.spec.ts",
-              "line": 774,
+              "line": 794,
               "column": 3
             },
             {
@@ -333,7 +333,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -343,12 +343,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11770,
+                      "duration": 11101,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:07:14.876Z",
+                      "startTime": "2026-04-08T14:22:04.245Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -358,7 +358,7 @@
               ],
               "id": "8055b76dba9258d15c9f-a4c3b74eeb426132a298",
               "file": "screenshots/capture.spec.ts",
-              "line": 786,
+              "line": 806,
               "column": 3
             },
             {
@@ -367,7 +367,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -377,12 +377,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13416,
+                      "duration": 11541,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:07:26.670Z",
+                      "startTime": "2026-04-08T14:22:15.368Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -392,7 +392,7 @@
               ],
               "id": "8055b76dba9258d15c9f-6ce9a710092379f1f38a",
               "file": "screenshots/capture.spec.ts",
-              "line": 790,
+              "line": 810,
               "column": 3
             },
             {
@@ -401,7 +401,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -411,12 +411,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12433,
+                      "duration": 11089,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:07:40.125Z",
+                      "startTime": "2026-04-08T14:22:26.932Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -426,7 +426,7 @@
               ],
               "id": "8055b76dba9258d15c9f-a47522076dd23a5ee401",
               "file": "screenshots/capture.spec.ts",
-              "line": 794,
+              "line": 814,
               "column": 3
             },
             {
@@ -435,7 +435,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -445,12 +445,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11907,
+                      "duration": 11397,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:07:52.590Z",
+                      "startTime": "2026-04-08T14:22:38.039Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -460,7 +460,7 @@
               ],
               "id": "8055b76dba9258d15c9f-65d013b5bccb09ccfd44",
               "file": "screenshots/capture.spec.ts",
-              "line": 798,
+              "line": 818,
               "column": 3
             },
             {
@@ -469,7 +469,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -479,12 +479,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13994,
+                      "duration": 27825,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:08:04.529Z",
+                      "startTime": "2026-04-08T14:22:49.462Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -494,7 +494,7 @@
               ],
               "id": "8055b76dba9258d15c9f-602127feb383ba7e104a",
               "file": "screenshots/capture.spec.ts",
-              "line": 802,
+              "line": 822,
               "column": 3
             },
             {
@@ -503,7 +503,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -513,12 +513,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10974,
+                      "duration": 10772,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:08:18.563Z",
+                      "startTime": "2026-04-08T14:23:17.309Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -528,7 +528,7 @@
               ],
               "id": "8055b76dba9258d15c9f-ea4f0016e478430907fd",
               "file": "screenshots/capture.spec.ts",
-              "line": 817,
+              "line": 837,
               "column": 3
             },
             {
@@ -537,7 +537,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -547,12 +547,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11165,
+                      "duration": 11200,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:08:29.575Z",
+                      "startTime": "2026-04-08T14:23:28.096Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -562,7 +562,7 @@
               ],
               "id": "8055b76dba9258d15c9f-7654d23d099fe4f215c1",
               "file": "screenshots/capture.spec.ts",
-              "line": 824,
+              "line": 844,
               "column": 3
             },
             {
@@ -571,7 +571,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -581,12 +581,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 22109,
+                      "duration": 6067,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:08:40.765Z",
+                      "startTime": "2026-04-08T14:23:39.313Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -596,7 +596,7 @@
               ],
               "id": "8055b76dba9258d15c9f-0084ed38ced1e30047b7",
               "file": "screenshots/capture.spec.ts",
-              "line": 828,
+              "line": 848,
               "column": 3
             },
             {
@@ -605,7 +605,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -615,12 +615,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11705,
+                      "duration": 11507,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:09:02.905Z",
+                      "startTime": "2026-04-08T14:23:45.398Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -630,7 +630,7 @@
               ],
               "id": "8055b76dba9258d15c9f-ff4b96bc8fc5b472aaa0",
               "file": "screenshots/capture.spec.ts",
-              "line": 833,
+              "line": 853,
               "column": 3
             },
             {
@@ -639,7 +639,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -649,12 +649,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12321,
+                      "duration": 11284,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:09:14.638Z",
+                      "startTime": "2026-04-08T14:23:56.924Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -664,7 +664,7 @@
               ],
               "id": "8055b76dba9258d15c9f-ff7b806e1df95bd7c149",
               "file": "screenshots/capture.spec.ts",
-              "line": 837,
+              "line": 857,
               "column": 3
             },
             {
@@ -673,7 +673,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -683,12 +683,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12727,
+                      "duration": 12742,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:09:26.983Z",
+                      "startTime": "2026-04-08T14:24:08.226Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -698,7 +698,7 @@
               ],
               "id": "8055b76dba9258d15c9f-955625b494fda5cffaed",
               "file": "screenshots/capture.spec.ts",
-              "line": 841,
+              "line": 861,
               "column": 3
             },
             {
@@ -707,7 +707,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -717,12 +717,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12398,
+                      "duration": 12669,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:09:39.736Z",
+                      "startTime": "2026-04-08T14:24:20.992Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -732,7 +732,7 @@
               ],
               "id": "8055b76dba9258d15c9f-0a5e845b8c7f8d5d1639",
               "file": "screenshots/capture.spec.ts",
-              "line": 845,
+              "line": 865,
               "column": 3
             },
             {
@@ -741,7 +741,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -751,12 +751,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14820,
+                      "duration": 15743,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:09:52.157Z",
+                      "startTime": "2026-04-08T14:24:33.698Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -766,7 +766,7 @@
               ],
               "id": "8055b76dba9258d15c9f-4683caf7b5a6bbb1ac56",
               "file": "screenshots/capture.spec.ts",
-              "line": 849,
+              "line": 869,
               "column": 3
             },
             {
@@ -775,7 +775,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -785,12 +785,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4144,
+                      "duration": 3199,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:06.999Z",
+                      "startTime": "2026-04-08T14:24:49.458Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -800,7 +800,7 @@
               ],
               "id": "8055b76dba9258d15c9f-99c13c5fb62c10da96f1",
               "file": "screenshots/capture.spec.ts",
-              "line": 858,
+              "line": 878,
               "column": 3
             },
             {
@@ -809,7 +809,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -819,12 +819,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3503,
+                      "duration": 3257,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:11.169Z",
+                      "startTime": "2026-04-08T14:24:52.675Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -834,7 +834,7 @@
               ],
               "id": "8055b76dba9258d15c9f-90a7ff61285304bb7b33",
               "file": "screenshots/capture.spec.ts",
-              "line": 864,
+              "line": 884,
               "column": 3
             },
             {
@@ -843,7 +843,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -853,12 +853,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6098,
+                      "duration": 5513,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:14.702Z",
+                      "startTime": "2026-04-08T14:24:55.950Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -868,7 +868,7 @@
               ],
               "id": "8055b76dba9258d15c9f-ceb808878607110496b4",
               "file": "screenshots/capture.spec.ts",
-              "line": 870,
+              "line": 890,
               "column": 3
             },
             {
@@ -877,7 +877,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -887,12 +887,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7691,
+                      "duration": 6742,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:20.826Z",
+                      "startTime": "2026-04-08T14:25:01.483Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -902,7 +902,7 @@
               ],
               "id": "8055b76dba9258d15c9f-afe007e5df7f43f25a13",
               "file": "screenshots/capture.spec.ts",
-              "line": 877,
+              "line": 897,
               "column": 3
             },
             {
@@ -911,7 +911,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -921,12 +921,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8642,
+                      "duration": 8685,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:28.550Z",
+                      "startTime": "2026-04-08T14:25:08.245Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -936,16 +936,16 @@
               ],
               "id": "8055b76dba9258d15c9f-e7bb6795f0b57b70701b",
               "file": "screenshots/capture.spec.ts",
-              "line": 885,
+              "line": 905,
               "column": 3
             },
             {
               "title": "active-collection-selector",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
@@ -954,45 +954,23 @@
                     {
                       "workerIndex": 1,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30065,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts",
-                            "column": 16,
-                            "line": 311
-                          },
-                          "message": "Error: page.waitForTimeout: Test timeout of 30000ms exceeded.\n\n  309 |     }\n  310 |\n> 311 |     await page.waitForTimeout(200);\n      |                ^\n  312 |   }\n  313 |\n  314 |   return null;\n    at waitForAnyVisible (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:311:16)\n    at waitForManageCollectionsDialog (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:452:3)\n    at openManageCollectionsForFirstItem (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:495:3)\n    at ensureSecondCollectionIsActive (C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:499:3)\n    at C:\\Projects\\Quizymode\\playwright\\screenshots\\capture.spec.ts:906:5"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 7472,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:10:37.225Z",
+                      "startTime": "2026-04-08T14:25:16.954Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Projects\\Quizymode\\playwright\\test-results\\screenshots-capture-User-g-b8c76--active-collection-selector-screenshots-mobile\\error-context.md"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-68414680c977b02803ce",
               "file": "screenshots/capture.spec.ts",
-              "line": 902,
+              "line": 922,
               "column": 3
             },
             {
@@ -1001,32 +979,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13280,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:25:24.446Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-cfd79061bcdc4cd7a298",
               "file": "screenshots/capture.spec.ts",
-              "line": 912,
+              "line": 932,
               "column": 3
             },
             {
@@ -1035,32 +1013,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10908,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:25:37.740Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-e75376a75fc012641b3a",
               "file": "screenshots/capture.spec.ts",
-              "line": 928,
+              "line": 948,
               "column": 3
             },
             {
@@ -1069,32 +1047,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4021,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:25:48.661Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-33a352fa59e942f2acff",
               "file": "screenshots/capture.spec.ts",
-              "line": 935,
+              "line": 955,
               "column": 3
             },
             {
@@ -1103,32 +1081,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 33388,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:25:52.698Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-90585d0b4e9aaba3527d",
               "file": "screenshots/capture.spec.ts",
-              "line": 940,
+              "line": 960,
               "column": 3
             },
             {
@@ -1137,32 +1115,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 32920,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:26:26.107Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-41a37fda4ac60aeb513a",
               "file": "screenshots/capture.spec.ts",
-              "line": 945,
+              "line": 965,
               "column": 3
             },
             {
@@ -1171,32 +1149,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12771,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:26:59.042Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-986985032bcc4c1095df",
               "file": "screenshots/capture.spec.ts",
-              "line": 951,
+              "line": 971,
               "column": 3
             },
             {
@@ -1205,32 +1183,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4072,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.424Z",
+                      "startTime": "2026-04-08T14:27:11.832Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-a2c87b450dce9f7cc115",
               "file": "screenshots/capture.spec.ts",
-              "line": 958,
+              "line": 978,
               "column": 3
             },
             {
@@ -1239,32 +1217,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3969,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:15.919Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-afb2e2fd2e1b50cd78b5",
               "file": "screenshots/capture.spec.ts",
-              "line": 964,
+              "line": 984,
               "column": 3
             },
             {
@@ -1273,32 +1251,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1760,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:19.905Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-20bd426bdd9c1a6d5749",
               "file": "screenshots/capture.spec.ts",
-              "line": 971,
+              "line": 991,
               "column": 3
             },
             {
@@ -1307,32 +1285,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11057,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:21.681Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-38435238e4f815103326",
               "file": "screenshots/capture.spec.ts",
-              "line": 993,
+              "line": 1013,
               "column": 3
             },
             {
@@ -1341,32 +1319,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3155,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:32.753Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-a6b8f7158a15c521b687",
               "file": "screenshots/capture.spec.ts",
-              "line": 997,
+              "line": 1017,
               "column": 3
             },
             {
@@ -1375,32 +1353,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10965,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:35.922Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-6774113ba2b72d919aa7",
               "file": "screenshots/capture.spec.ts",
-              "line": 1008,
+              "line": 1028,
               "column": 3
             },
             {
@@ -1409,32 +1387,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12397,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:46.900Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-0be7914f83263d4a3a4f",
               "file": "screenshots/capture.spec.ts",
-              "line": 1012,
+              "line": 1032,
               "column": 3
             },
             {
@@ -1443,32 +1421,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5462,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:27:59.314Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-b95a35767a81a4be2b3d",
               "file": "screenshots/capture.spec.ts",
-              "line": 1020,
+              "line": 1040,
               "column": 3
             },
             {
@@ -1477,32 +1455,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4828,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:28:04.800Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-457d2071cb14821f5e2a",
               "file": "screenshots/capture.spec.ts",
-              "line": 1030,
+              "line": 1050,
               "column": 3
             },
             {
@@ -1511,32 +1489,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7105,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:28:09.650Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-06c214005de8a4a10422",
               "file": "screenshots/capture.spec.ts",
-              "line": 1046,
+              "line": 1066,
               "column": 3
             },
             {
@@ -1545,32 +1523,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21216,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.425Z",
+                      "startTime": "2026-04-08T14:28:16.777Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-79ac802cb6d551ee7c77",
               "file": "screenshots/capture.spec.ts",
-              "line": 1067,
+              "line": 1087,
               "column": 3
             },
             {
@@ -1579,32 +1557,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 26545,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "startTime": "2026-04-08T14:28:38.008Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-9102b1e30cf571b9b5fc",
               "file": "screenshots/capture.spec.ts",
-              "line": 1072,
+              "line": 1092,
               "column": 3
             },
             {
@@ -1613,32 +1591,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27813,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "startTime": "2026-04-08T14:29:04.574Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-752dcf0d6ef6eefeb4f8",
               "file": "screenshots/capture.spec.ts",
-              "line": 1085,
+              "line": 1105,
               "column": 3
             },
             {
@@ -1647,32 +1625,32 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "screenshots-mobile",
                   "projectName": "screenshots-mobile",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28337,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-07T00:11:07.426Z",
+                      "startTime": "2026-04-08T14:29:32.406Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "8055b76dba9258d15c9f-05c91ec88842249c7f9d",
               "file": "screenshots/capture.spec.ts",
-              "line": 1090,
+              "line": 1110,
               "column": 3
             }
           ]
@@ -1682,11 +1660,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-07T00:06:11.711Z",
-    "duration": 295770.86699999997,
-    "expected": 23,
-    "skipped": 20,
-    "unexpected": 1,
+    "startTime": "2026-04-08T14:21:01.418Z",
+    "duration": 539501.419,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
     "flaky": 0
   }
 }
