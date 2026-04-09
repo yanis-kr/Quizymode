@@ -55,6 +55,7 @@ public static class GetPendingKeywordsAdmin
                     Keyword = k,
                     UsageCount = db.ItemKeywords.Count(ik => ik.KeywordId == k.Id)
                 })
+                .Where(x => x.UsageCount > 0)
                 .OrderBy(x => x.Keyword.CreatedAt)
                 .ThenBy(x => x.Keyword.Name)
                 .Select(x => new PendingKeywordResponse(

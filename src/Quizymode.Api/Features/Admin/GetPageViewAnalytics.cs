@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -51,6 +52,7 @@ public static class GetPageViewAnalytics
         string QueryString,
         string SessionId,
         string IpAddress,
+        string? Country,
         bool IsAuthenticated,
         string? UserEmail,
         DateTime CreatedUtc);
@@ -83,10 +85,11 @@ public static class GetPageViewAnalytics
             int pageSize = 25,
             int topPagesLimit = 10,
             ApplicationDbContext db = null!,
+            IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
             QueryRequest request = new(days, visitorType, pathContains, page, pageSize, topPagesLimit);
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -97,6 +100,7 @@ public static class GetPageViewAnalytics
     public static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
         ApplicationDbContext db,
+        IIpGeolocationService geoService,
         CancellationToken cancellationToken)
     {
         if (request.Days is < 1 or > 365)
@@ -203,6 +207,12 @@ public static class GetPageViewAnalytics
                 .ToDictionaryAsync(user => user.Id, user => user.Email, cancellationToken);
         }
 
+        // Resolve country for unique IPs in this page (parallel, cached)
+        List<string> uniqueIps = recentPageViews.Select(pv => pv.IpAddress).Distinct().ToList();
+        Dictionary<string, string?> countryByIp = (await Task.WhenAll(
+            uniqueIps.Select(async ip => (ip, country: await geoService.GetCountryAsync(ip, cancellationToken)))))
+            .ToDictionary(t => t.ip, t => t.country);
+
         List<RecentPageViewResponse> recentResponses = recentPageViews
             .Select(pageView => new RecentPageViewResponse(
                 pageView.Id.ToString(),
@@ -211,6 +221,7 @@ public static class GetPageViewAnalytics
                 pageView.QueryString,
                 pageView.SessionId,
                 pageView.IpAddress,
+                countryByIp.GetValueOrDefault(pageView.IpAddress),
                 pageView.IsAuthenticated,
                 pageView.UserId.HasValue && userEmails.TryGetValue(pageView.UserId.Value, out string? email) ? email : null,
                 pageView.CreatedUtc))

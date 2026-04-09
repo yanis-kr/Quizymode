@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Moq;
 using Quizymode.Api.Features.Admin;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
@@ -8,6 +10,14 @@ namespace Quizymode.Api.Tests.Features.Admin;
 
 public sealed class GetAuditLogsTests : DatabaseTestFixture
 {
+    private static IIpGeolocationService NullGeoService()
+    {
+        var mock = new Mock<IIpGeolocationService>();
+        mock.Setup(g => g.GetCountryAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((string?)null);
+        return mock.Object;
+    }
+
     private Audit BuildAudit(AuditAction action, Guid? userId = null) => new()
     {
         Id = Guid.NewGuid(),
@@ -21,7 +31,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
     public async Task HandleAsync_NoLogs_ReturnsEmpty()
     {
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().BeEmpty();
@@ -38,7 +48,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.TotalCount.Should().Be(3);
@@ -55,7 +65,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest(new List<AuditAction> { AuditAction.ItemCreated });
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.TotalCount.Should().Be(1);
@@ -72,7 +82,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest(Page: 2, PageSize: 2);
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().HaveCount(2);
@@ -90,7 +100,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().ContainSingle(l => l.UserEmail == "test@example.com");
@@ -103,7 +113,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Single().UserEmail.Should().BeNull();

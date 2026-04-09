@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -24,6 +25,7 @@ public static class GetAuditLogs
         string Id,
         string? UserEmail,
         string IpAddress,
+        string? Country,
         string Action,
         string? EntityId,
         DateTime CreatedUtc,
@@ -46,6 +48,7 @@ public static class GetAuditLogs
             int page = 1,
             int pageSize = 50,
             ApplicationDbContext db = null!,
+            IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
             // Parse actionTypes from comma-separated string
@@ -68,7 +71,7 @@ public static class GetAuditLogs
             }
 
             QueryRequest request = new(parsedActionTypes, page, pageSize);
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -79,6 +82,7 @@ public static class GetAuditLogs
     public static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
         ApplicationDbContext db,
+        IIpGeolocationService geoService,
         CancellationToken cancellationToken)
     {
         try
@@ -124,11 +128,18 @@ public static class GetAuditLogs
                     .ToDictionaryAsync(u => u.Id, u => u.Email, cancellationToken);
             }
 
+            // Resolve country for each unique IP in this page (parallel, cached)
+            List<string> uniqueIps = audits.Select(a => a.IpAddress).Distinct().ToList();
+            Dictionary<string, string?> countryByIp = (await Task.WhenAll(
+                uniqueIps.Select(async ip => (ip, country: await geoService.GetCountryAsync(ip, cancellationToken)))))
+                .ToDictionary(t => t.ip, t => t.country);
+
             // Map to response
             List<AuditLogResponse> logs = audits.Select(a => new AuditLogResponse(
                 a.Id.ToString(),
                 a.UserId.HasValue && userEmails.TryGetValue(a.UserId.Value, out string? email) ? email : null,
                 a.IpAddress,
+                countryByIp.GetValueOrDefault(a.IpAddress),
                 a.Action.ToString(),
                 a.EntityId?.ToString(),
                 a.CreatedUtc,

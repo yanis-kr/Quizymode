@@ -510,6 +510,22 @@ This flow lets authenticated users create items in bulk by pasting AI-generated 
 
 ---
 
+### AC 2.8a Admin review board for keywords
+
+**API**
+
+- **AC 2.8a.1** [Admin] **Given** I am an admin, **when** I call `GET /admin/keywords/pending`, **then** the API returns only private, review-pending keywords that are attached to at least one item, ordered by creation date (oldest first), including name, slug, creator, created time, and usage count.
+- **AC 2.8a.2** [Admin] **Given** I approve a private review-pending keyword via `POST /admin/keywords/{id}/approve`, **when** a public keyword with the same canonical name already exists, **then** the API merges item-keyword links onto the existing public keyword, removes the duplicate private pending row, records review metadata on the surviving public keyword, and returns the surviving keyword in the response instead of failing with a duplicate-key error.
+- **AC 2.8a.3** [Admin] **Given** I approve a private review-pending keyword via `POST /admin/keywords/{id}/approve`, **when** no matching public keyword exists, **then** the API makes that keyword public, clears the review-pending flag, records review metadata, and removes it from the pending list.
+- **AC 2.8a.4** [Admin] **Given** I reject a private review-pending keyword via `POST /admin/keywords/{id}/reject`, **then** the API keeps the keyword private, clears the review-pending flag, records review metadata, and removes it from the pending list.
+
+**UI**
+
+- **AC 2.8a.5** [Admin] **Given** I am on `/admin/keyword-review`, **when** I approve or reject a keyword successfully, **then** that keyword is removed from the visible list immediately and the page refreshes the pending-keyword query in the background.
+- **AC 2.8a.6** [Admin] **Given** a keyword approve or reject request fails, **when** I remain on `/admin/keyword-review`, **then** the UI shows an inline error message with the API failure detail instead of failing silently.
+
+---
+
 ## 3. Categories and keywords
 
 Categories are **public only** (there is no private category). Users navigate by category and by **keywords** (e.g. primary topic, subtopic). The same item set can be viewed in **Sets**, **List**, **Flashcards**, or **Quiz** mode — similar to collection views; the collection view does not have a "Sets" mode. Navigation and all views under Categories (overview, sets, list, flashcards, quiz) are described in this section.
@@ -745,6 +761,9 @@ Authentication uses **email + password** with secure password hashing and short-
 ### AC 4.3 Login and tokens
 
 **API**
+
+- **AC 4.3.0** [System] **Given** an authenticated user makes any API request, **when** the middleware processes the JWT, **then** a `LoginSuccess` audit entry is written at most once per 10-minute window per user; subsequent requests within that window (token refreshes, page navigations) do not generate additional audit entries.
+- **AC 4.3.0a** [System] **Given** the admin views audit logs, the user activity list, or the page-view analytics recent-views, **when** an IP address is present, **then** the API resolves it to a 2-letter ISO country code via ipinfo.io (free tier, HTTPS); results are cached in-process for the application lifetime; loopback and RFC-1918 private addresses resolve to "Local"; failures return null and do not block the response.
 
 - **AC 4.3.1** [Anonymous] **Given** I call `POST /auth/login` with valid credentials (email + password), **when** the credentials match an existing user, **then** the API returns **200 OK** with:
   - a short-lived **access token** (e.g. JWT) and

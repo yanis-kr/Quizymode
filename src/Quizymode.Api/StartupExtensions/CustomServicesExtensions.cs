@@ -24,6 +24,8 @@ internal static partial class StartupExtensions
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpClient<IGitHubSeedSource, GitHubSeedSource>();
+        builder.Services.AddHttpClient("ipgeolocation");
+        builder.Services.AddSingleton<IIpGeolocationService, IpGeolocationService>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();

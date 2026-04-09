@@ -431,6 +431,11 @@ const AdminUserSettingsPage = () => {
                             <div className="mt-1 text-xs text-slate-500">
                               Last login {formatDateTime(user.lastLogin)}
                             </div>
+                            {user.lastKnownCountry && (
+                              <div className="mt-1 text-xs font-medium text-indigo-600">
+                                {user.lastKnownCountry}
+                              </div>
+                            )}
                           </td>
                           <td className="px-5 py-4 text-sm text-slate-700">
                             <div className="font-semibold text-slate-900">

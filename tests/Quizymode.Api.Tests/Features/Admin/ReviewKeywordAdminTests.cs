@@ -63,6 +63,90 @@ public sealed class ReviewKeywordAdminTests : DatabaseTestFixture
         stored.IsReviewPending.Should().BeFalse();
     }
 
+    [Fact]
+    public async Task ApproveAsync_WhenMatchingPublicKeywordExists_MergesLinksAndDeletesPendingKeyword()
+    {
+        Category category = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = "science",
+            IsPrivate = false,
+            CreatedBy = "admin",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        Item item = new()
+        {
+            Id = Guid.NewGuid(),
+            Question = "Q?",
+            CorrectAnswer = "A",
+            IncorrectAnswers = ["B"],
+            Explanation = string.Empty,
+            FuzzySignature = "sig",
+            FuzzyBucket = 1,
+            CreatedBy = "user-1",
+            CreatedAt = DateTime.UtcNow,
+            CategoryId = category.Id
+        };
+
+        Keyword publicKeyword = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = "my-keyword",
+            IsPrivate = false,
+            IsReviewPending = false,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow.AddDays(-1)
+        };
+
+        Keyword pendingKeyword = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = "my-keyword",
+            IsPrivate = true,
+            IsReviewPending = true,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Categories.Add(category);
+        DbContext.Items.Add(item);
+        DbContext.Keywords.AddRange(publicKeyword, pendingKeyword);
+        DbContext.ItemKeywords.Add(new ItemKeyword
+        {
+            Id = Guid.NewGuid(),
+            ItemId = item.Id,
+            KeywordId = pendingKeyword.Id,
+            AddedAt = DateTime.UtcNow
+        });
+        await DbContext.SaveChangesAsync();
+
+        var result = await ReviewKeywordAdmin.ApproveAsync(
+            pendingKeyword.Id,
+            DbContext,
+            AdminUser("admin-merge").Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Id.Should().Be(publicKeyword.Id);
+        result.Value.IsPrivate.Should().BeFalse();
+        result.Value.IsReviewPending.Should().BeFalse();
+        result.Value.ReviewedBy.Should().Be("admin-merge");
+
+        Keyword? deletedPendingKeyword = await DbContext.Keywords.FindAsync(pendingKeyword.Id);
+        deletedPendingKeyword.Should().BeNull();
+
+        Keyword? storedPublicKeyword = await DbContext.Keywords.FindAsync(publicKeyword.Id);
+        storedPublicKeyword.Should().NotBeNull();
+        storedPublicKeyword!.ReviewedBy.Should().Be("admin-merge");
+
+        List<ItemKeyword> links = DbContext.ItemKeywords
+            .Where(link => link.ItemId == item.Id)
+            .ToList();
+        links.Should().ContainSingle();
+        links[0].KeywordId.Should().Be(publicKeyword.Id);
+    }
+
     // --- RejectAsync ---
 
     [Fact]

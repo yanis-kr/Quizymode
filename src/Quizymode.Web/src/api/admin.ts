@@ -56,6 +56,7 @@ interface AuditLogResponse {
   id: string;
   userEmail: string | null;
   ipAddress: string;
+  country?: string | null;
   action: string | number; // Can be string or number depending on serialization
   entityId: string | null;
   createdUtc: string;
@@ -100,6 +101,7 @@ export interface RecentPageViewResponse {
   queryString: string;
   sessionId: string;
   ipAddress: string;
+  country?: string | null;
   isAuthenticated: boolean;
   userEmail: string | null;
   createdUtc: string;
@@ -138,6 +140,7 @@ export interface AdminUserOverviewResponse {
   uniqueUrlsInWindow: number;
   totalPageViewsInWindow: number;
   lastOpenedUtc?: string | null;
+  lastKnownCountry?: string | null;
 }
 
 export interface AdminUsersResponse {

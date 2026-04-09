@@ -1,6 +1,8 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Quizymode.Api.Features.Admin;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
@@ -9,6 +11,14 @@ namespace Quizymode.Api.Tests.Features.Admin;
 
 public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
 {
+    private static IIpGeolocationService NullGeoService()
+    {
+        var mock = new Mock<IIpGeolocationService>();
+        mock.Setup(g => g.GetCountryAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((string?)null);
+        return mock.Object;
+    }
+
     [Fact]
     public async Task HandleAsync_ReturnsSummaryTopPagesAndRecentHits()
     {
@@ -65,7 +75,7 @@ public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
 
         GetPageViewAnalytics.QueryRequest request = new(Days: 7, VisitorType: "all", Page: 1, PageSize: 10, TopPagesLimit: 5);
 
-        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value.Should().NotBeNull();
@@ -130,7 +140,7 @@ public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
 
         GetPageViewAnalytics.QueryRequest request = new(Days: 7, VisitorType: "anonymous", PathContains: "categories", Page: 1, PageSize: 10, TopPagesLimit: 5);
 
-        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Summary.TotalPageViews.Should().Be(1);
@@ -143,7 +153,7 @@ public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
     {
         GetPageViewAnalytics.QueryRequest request = new(Days: 7, VisitorType: "members-only");
 
-        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
     }
@@ -153,7 +163,7 @@ public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
     {
         GetPageViewAnalytics.QueryRequest request = new(Days: 0);
 
-        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, CancellationToken.None);
+        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
     }

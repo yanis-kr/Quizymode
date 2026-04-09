@@ -24,6 +24,19 @@ public sealed class GetPendingKeywordsAdminTests : DatabaseTestFixture
         Keyword privateNotPending = new() { Id = Guid.NewGuid(), Name = "private-approved", IsPrivate = true, IsReviewPending = false, CreatedBy = "user1", CreatedAt = DateTime.UtcNow };
         Keyword privateAndPending = new() { Id = Guid.NewGuid(), Name = "pending-review", IsPrivate = true, IsReviewPending = true, CreatedBy = "user2", CreatedAt = DateTime.UtcNow };
         DbContext.Keywords.AddRange(publicKw, privateNotPending, privateAndPending);
+
+        Category category = new() { Id = Guid.NewGuid(), Name = "cat", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(category);
+        Item item = new()
+        {
+            Id = Guid.NewGuid(), Question = "Q?", CorrectAnswer = "A",
+            IncorrectAnswers = new List<string> { "B" }, Explanation = "",
+            FuzzySignature = "sig", FuzzyBucket = 1, CreatedBy = "user2",
+            CreatedAt = DateTime.UtcNow, CategoryId = category.Id
+        };
+        DbContext.Items.Add(item);
+        DbContext.ItemKeywords.Add(new ItemKeyword { Id = Guid.NewGuid(), ItemId = item.Id, KeywordId = privateAndPending.Id });
+
         await DbContext.SaveChangesAsync();
 
         var result = await GetPendingKeywordsAdmin.HandleAsync(DbContext, CancellationToken.None);
@@ -56,5 +69,27 @@ public sealed class GetPendingKeywordsAdminTests : DatabaseTestFixture
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Keywords.Single(k => k.Name == "test-kw").UsageCount.Should().Be(1);
+    }
+
+    [Fact]
+    public async Task HandleAsync_ExcludesPendingKeywordsWithNoUsage()
+    {
+        Keyword unusedPending = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = "unused-kw",
+            IsPrivate = true,
+            IsReviewPending = true,
+            CreatedBy = "user",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        DbContext.Keywords.Add(unusedPending);
+        await DbContext.SaveChangesAsync();
+
+        var result = await GetPendingKeywordsAdmin.HandleAsync(DbContext, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Keywords.Should().BeEmpty();
     }
 }

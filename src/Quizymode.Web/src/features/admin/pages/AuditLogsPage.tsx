@@ -208,7 +208,7 @@ const AuditLogsPage = () => {
                       Action
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      IP Address
+                      IP / Country
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Entity ID
@@ -230,7 +230,10 @@ const AuditLogsPage = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {log.ipAddress}
+                        <div>{log.ipAddress}</div>
+                        {log.country && (
+                          <div className="text-xs font-medium text-indigo-600">{log.country}</div>
+                        )}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono">
                         {log.entityId || <span className="text-gray-400">N/A</span>}
