@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Moq;
 using Quizymode.Api.Features.Admin;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
@@ -9,6 +11,14 @@ namespace Quizymode.Api.Tests.Features.Admin;
 
 public sealed class AdminUsersActivityTests : DatabaseTestFixture
 {
+    private static IIpGeolocationService NullGeoService()
+    {
+        var mock = new Mock<IIpGeolocationService>();
+        mock.Setup(g => g.GetCountryAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((string?)null);
+        return mock.Object;
+    }
+
     [Fact]
     public async Task HandleGetUsersAsync_ReturnsRegisteredUsersWithActivityMetrics()
     {
@@ -83,7 +93,7 @@ public sealed class AdminUsersActivityTests : DatabaseTestFixture
             PageSize: 10);
 
         Result<AdminUsersActivity.UsersResponse> result =
-            await AdminUsersActivity.HandleGetUsersAsync(request, DbContext, CancellationToken.None);
+            await AdminUsersActivity.HandleGetUsersAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value.Should().NotBeNull();
@@ -141,7 +151,7 @@ public sealed class AdminUsersActivityTests : DatabaseTestFixture
         AdminUsersActivity.UsersQueryRequest request = new(ActivityFilter: "without-activity");
 
         Result<AdminUsersActivity.UsersResponse> result =
-            await AdminUsersActivity.HandleGetUsersAsync(request, DbContext, CancellationToken.None);
+            await AdminUsersActivity.HandleGetUsersAsync(request, DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Users.Should().ContainSingle();
