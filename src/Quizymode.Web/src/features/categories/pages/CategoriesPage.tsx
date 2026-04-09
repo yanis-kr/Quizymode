@@ -27,6 +27,7 @@ import {
 import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
 import { FilterControlBar } from "@/components/FilterControlBar";
+import CategoriesMapModal from "@/components/CategoriesMapModal";
 import { FilterBottomSheet } from "@/components/FilterBottomSheet";
 import { AddFiltersSection } from "../../items/components/filters/AddFiltersSection";
 import { ItemTypeFilter } from "../../items/components/filters/ItemTypeFilter";
@@ -96,6 +97,7 @@ const CategoriesPage = () => {
   const scopeRatingOnlyUnratedFromUrlBool = scopeRatingOnlyUnratedFromUrl === "1" || scopeRatingOnlyUnratedFromUrl === "true";
 
   const [showFilters, setShowFilters] = useState(false);
+  const [showMapModal, setShowMapModal] = useState(false);
   const [filterCategorySlug, setFilterCategorySlug] = useState(
     categorySlugParam ?? getAllCategoriesSlug()
   );
@@ -862,6 +864,7 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              onOpenMap={() => setShowMapModal(true)}
             />
             <FilterBottomSheet
               isOpen={showFilters}
@@ -1109,6 +1112,7 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              onOpenMap={() => setShowMapModal(true)}
               sortBy={sortBy}
               onSortChange={(s) => handleSortChange(s as SortOption)}
               sortOptions={[
@@ -1302,6 +1306,7 @@ const CategoriesPage = () => {
             )}
           </section>
         </div>
+      <CategoriesMapModal isOpen={showMapModal} onClose={() => setShowMapModal(false)} />
       </>
     );
   }
@@ -1323,6 +1328,15 @@ const CategoriesPage = () => {
           </div>
 
           <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-4 shadow-xl shadow-slate-950/25">
+            <div className="flex justify-end pb-2">
+              <button
+                type="button"
+                onClick={() => setShowMapModal(true)}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/8 px-3 py-1.5 text-sm font-medium text-slate-200 transition hover:bg-white/14 hover:text-white"
+              >
+                Map
+              </button>
+            </div>
             <BucketGridView
               buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
                 id: cat.category,
@@ -1355,6 +1369,7 @@ const CategoriesPage = () => {
           </section>
         </div>
       </div>
+      <CategoriesMapModal isOpen={showMapModal} onClose={() => setShowMapModal(false)} />
     </>
   );
 };

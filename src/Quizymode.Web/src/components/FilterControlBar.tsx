@@ -14,6 +14,7 @@ interface FilterControlBarProps {
   /** Number to display in the badge; hidden when 0 or undefined. */
   activeFilterCount?: number;
   onOpenFilters: () => void;
+  onOpenMap?: () => void;
   sortBy?: string;
   onSortChange?: (sort: string) => void;
   sortOptions?: SortOptionItem[];
@@ -23,6 +24,7 @@ export function FilterControlBar({
   hasActiveFilters,
   activeFilterCount,
   onOpenFilters,
+  onOpenMap,
   sortBy,
   onSortChange,
   sortOptions,
@@ -50,26 +52,38 @@ export function FilterControlBar({
         )}
       </button>
 
-      {/* Sort dropdown */}
-      {showSort && (
-        <div className="flex items-center gap-1.5">
-          <label htmlFor="filter-bar-sort" className="hidden text-sm text-gray-500 sm:block whitespace-nowrap">
-            Sort:
-          </label>
-          <select
-            id="filter-bar-sort"
-            value={sortBy}
-            onChange={(e) => onSortChange!(e.target.value)}
-            className="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-sm text-gray-700 focus:border-indigo-400 focus:outline-none focus:ring-0"
+      {/* Right-side controls */}
+      <div className="flex items-center gap-2">
+        {onOpenMap != null && (
+          <button
+            type="button"
+            onClick={onOpenMap}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-600 transition hover:bg-gray-50"
           >
-            {sortOptions!.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+            Map
+          </button>
+        )}
+
+        {showSort && (
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="filter-bar-sort" className="hidden text-sm text-gray-500 sm:block whitespace-nowrap">
+              Sort:
+            </label>
+            <select
+              id="filter-bar-sort"
+              value={sortBy}
+              onChange={(e) => onSortChange!(e.target.value)}
+              className="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-sm text-gray-700 focus:border-indigo-400 focus:outline-none focus:ring-0"
+            >
+              {sortOptions!.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
