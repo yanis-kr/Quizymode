@@ -31,6 +31,32 @@ const emptyValues: IdeaFormValues = {
   turnstileToken: null,
 };
 
+function getFieldError(field: "title" | "problem" | "proposedChange" | "tradeOffs", value: string): string | null {
+  const trimmed = value.trim();
+  switch (field) {
+    case "title":
+      if (trimmed.length === 0) return "Title is required.";
+      if (trimmed.length < 3) return "Title must be at least 3 characters.";
+      if (trimmed.length > 200) return `Title is too long (${trimmed.length}/200).`;
+      return null;
+    case "problem":
+      if (trimmed.length === 0) return "Problem is required.";
+      if (trimmed.length < 10) return "Problem must be at least 10 characters.";
+      if (trimmed.length > 4000) return `Problem is too long (${trimmed.length}/4000).`;
+      return null;
+    case "proposedChange":
+      if (trimmed.length === 0) return "Proposed change is required.";
+      if (trimmed.length < 10) return "Proposed change must be at least 10 characters.";
+      if (trimmed.length > 4000) return `Proposed change is too long (${trimmed.length}/4000).`;
+      return null;
+    case "tradeOffs":
+      if (trimmed.length === 0) return null;
+      if (trimmed.length < 10) return "Trade-offs must be at least 10 characters when provided.";
+      if (trimmed.length > 4000) return `Trade-offs is too long (${trimmed.length}/4000).`;
+      return null;
+  }
+}
+
 const IdeaFormModal = ({
   isOpen,
   title,
@@ -44,6 +70,7 @@ const IdeaFormModal = ({
   onSubmit,
 }: IdeaFormModalProps) => {
   const [values, setValues] = useState<IdeaFormValues>(emptyValues);
+  const [touched, setTouched] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (!isOpen) {
@@ -57,6 +84,7 @@ const IdeaFormModal = ({
       tradeOffs: initialValues?.tradeOffs ?? "",
       turnstileToken: null,
     });
+    setTouched(new Set());
   }, [initialValues, isOpen]);
 
   useEffect(() => {
@@ -78,11 +106,33 @@ const IdeaFormModal = ({
     return null;
   }
 
+  const touch = (field: string) =>
+    setTouched((prev) => new Set([...prev, field]));
+
+  const titleError = getFieldError("title", values.title);
+  const problemError = getFieldError("problem", values.problem);
+  const proposedChangeError = getFieldError("proposedChange", values.proposedChange);
+  const tradeOffsError = getFieldError("tradeOffs", values.tradeOffs);
+
   const canSubmit =
-    values.title.trim().length > 0 &&
-    values.problem.trim().length > 0 &&
-    values.proposedChange.trim().length > 0 &&
+    !titleError &&
+    !problemError &&
+    !proposedChangeError &&
+    !tradeOffsError &&
     (!requireTurnstile || !!values.turnstileToken);
+
+  const handleSubmit = () => {
+    touch("title");
+    touch("problem");
+    touch("proposedChange");
+    touch("tradeOffs");
+
+    if (!canSubmit || isPending) {
+      return;
+    }
+
+    onSubmit(values);
+  };
 
   return (
     <div
@@ -126,16 +176,17 @@ const IdeaFormModal = ({
           className="flex min-h-0 flex-1 flex-col"
           onSubmit={(event) => {
             event.preventDefault();
-            if (canSubmit && !isPending) {
-              onSubmit(values);
-            }
+            handleSubmit();
           }}
         >
           <div className="flex-1 space-y-5 overflow-y-auto px-6 py-6">
             <div>
-              <label htmlFor="idea-title" className="block text-sm font-medium text-slate-900">
-                Title
-              </label>
+              <div className="flex items-baseline justify-between gap-2">
+                <label htmlFor="idea-title" className="block text-sm font-medium text-slate-900">
+                  Title
+                </label>
+                <span className="text-xs text-slate-400">{values.title.trim().length}/200</span>
+              </div>
               <input
                 id="idea-title"
                 type="text"
@@ -143,34 +194,50 @@ const IdeaFormModal = ({
                 onChange={(event) =>
                   setValues((current) => ({ ...current, title: event.target.value }))
                 }
+                onBlur={() => touch("title")}
+                maxLength={210}
                 placeholder="A short label people can scan quickly"
                 className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
               />
+              {touched.has("title") && titleError && (
+                <p className="mt-1.5 text-xs text-rose-600">{titleError}</p>
+              )}
             </div>
 
             <div>
-              <label htmlFor="idea-problem" className="block text-sm font-medium text-slate-900">
-                Problem
-              </label>
+              <div className="flex items-baseline justify-between gap-2">
+                <label htmlFor="idea-problem" className="block text-sm font-medium text-slate-900">
+                  Problem
+                </label>
+                <span className="text-xs text-slate-400">{values.problem.trim().length}/4000</span>
+              </div>
               <textarea
                 id="idea-problem"
                 value={values.problem}
                 onChange={(event) =>
                   setValues((current) => ({ ...current, problem: event.target.value }))
                 }
+                onBlur={() => touch("problem")}
                 rows={4}
+                maxLength={4100}
                 placeholder="What is frustrating, missing, or unclear today?"
                 className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
               />
+              {touched.has("problem") && problemError && (
+                <p className="mt-1.5 text-xs text-rose-600">{problemError}</p>
+              )}
             </div>
 
             <div>
-              <label
-                htmlFor="idea-proposed-change"
-                className="block text-sm font-medium text-slate-900"
-              >
-                Proposed change
-              </label>
+              <div className="flex items-baseline justify-between gap-2">
+                <label
+                  htmlFor="idea-proposed-change"
+                  className="block text-sm font-medium text-slate-900"
+                >
+                  Proposed change
+                </label>
+                <span className="text-xs text-slate-400">{values.proposedChange.trim().length}/4000</span>
+              </div>
               <textarea
                 id="idea-proposed-change"
                 value={values.proposedChange}
@@ -180,26 +247,42 @@ const IdeaFormModal = ({
                     proposedChange: event.target.value,
                   }))
                 }
+                onBlur={() => touch("proposedChange")}
                 rows={4}
+                maxLength={4100}
                 placeholder="Describe the product or workflow change you want."
                 className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
               />
+              {touched.has("proposedChange") && proposedChangeError && (
+                <p className="mt-1.5 text-xs text-rose-600">{proposedChangeError}</p>
+              )}
             </div>
 
             <div>
-              <label htmlFor="idea-tradeoffs" className="block text-sm font-medium text-slate-900">
-                Trade-offs
-              </label>
+              <div className="flex items-baseline justify-between gap-2">
+                <label htmlFor="idea-tradeoffs" className="block text-sm font-medium text-slate-900">
+                  Trade-offs
+                  <span className="ml-1 font-normal text-slate-500">(optional)</span>
+                </label>
+                {values.tradeOffs.trim().length > 0 && (
+                  <span className="text-xs text-slate-400">{values.tradeOffs.trim().length}/4000</span>
+                )}
+              </div>
               <textarea
                 id="idea-tradeoffs"
                 value={values.tradeOffs}
                 onChange={(event) =>
                   setValues((current) => ({ ...current, tradeOffs: event.target.value }))
                 }
+                onBlur={() => touch("tradeOffs")}
                 rows={3}
-                placeholder="Optional. What complexity, cost, or downside should we remember?"
+                maxLength={4100}
+                placeholder="What complexity, cost, or downside should we remember?"
                 className="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
               />
+              {touched.has("tradeOffs") && tradeOffsError && (
+                <p className="mt-1.5 text-xs text-rose-600">{tradeOffsError}</p>
+              )}
             </div>
 
             {requireTurnstile && (

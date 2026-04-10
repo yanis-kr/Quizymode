@@ -156,30 +156,30 @@ const IdeasPage = () => {
         canonical="https://www.quizymode.com/ideas"
       />
 
-      <div className="bg-[radial-gradient(circle_at_top_left,#ecfccb_0%,#dcfce7_18%,#f8fafc_42%,#e2e8f0_100%)] text-slate-900">
+      <div className="bg-slate-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <section className="overflow-hidden rounded-[36px] border border-emerald-200/70 bg-[linear-gradient(135deg,rgba(248,250,252,0.96)_0%,rgba(236,253,245,0.96)_46%,rgba(220,252,231,0.98)_100%)] shadow-2xl shadow-emerald-950/10">
+          <section className="overflow-hidden rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.97)_0%,rgba(6,78,59,0.18)_50%,rgba(2,6,23,0.98)_100%)] shadow-2xl shadow-slate-950/30">
             <div className="grid gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.9fr)] lg:px-8 lg:py-9">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-400">
                   <LightBulbIcon className="h-4 w-4" aria-hidden />
                   Ideas board
                 </div>
-                <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                <h1 className="mt-3 max-w-3xl text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Product thinking, out in the open
                 </h1>
-                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-700">
+                <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-300 lg:text-sm">
                   Each idea stays intentionally simple: the problem, the proposed
                   change, the trade-offs, the current status, and the conversation
                   around whether it is worth building.
                 </p>
               </div>
 
-              <div className="rounded-[28px] border border-emerald-200 bg-white/80 p-5 shadow-lg shadow-emerald-950/5">
-                <div className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+              <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-lg">
+                <div className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
                   How this board works
                 </div>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
                   <li>Anyone can browse published ideas, ratings, and comments.</li>
                   <li>Signed-in users can submit ideas, rate, and join the discussion.</li>
                   <li>New submissions start in review before they go public.</li>
@@ -193,14 +193,14 @@ const IdeasPage = () => {
                         setFormError(null);
                         setCreateModalOpen(true);
                       }}
-                      className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800"
+                      className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-500"
                     >
                       Share an idea
                       <ArrowUpRightIcon className="h-4 w-4" aria-hidden />
                     </button>
                   ) : (
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
-                      <Link to="/login" className="font-semibold text-emerald-700 hover:text-emerald-800">
+                    <div className="rounded-2xl border border-slate-700 bg-slate-800/60 px-4 py-3 text-sm text-slate-300">
+                      <Link to="/login" className="font-semibold text-emerald-400 hover:text-emerald-300">
                         Sign in
                       </Link>{" "}
                       to submit ideas, rate, and comment.
@@ -210,7 +210,7 @@ const IdeasPage = () => {
                   {isAdmin && (
                     <Link
                       to="/admin/ideas"
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-600 px-5 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-slate-800"
                     >
                       Moderate ideas
                     </Link>
@@ -221,13 +221,13 @@ const IdeasPage = () => {
           </section>
 
           {isAuthenticated && (
-            <section className="mt-6 rounded-[28px] border border-slate-200 bg-white/90 p-5 shadow-xl shadow-slate-950/5">
+            <section className="mt-6 rounded-[28px] border border-white/10 bg-slate-900/70 p-5 shadow-xl shadow-slate-950/25">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <h2 className="text-2xl font-semibold text-slate-900">
+                  <h2 className="text-2xl font-semibold text-white">
                     My submissions
                   </h2>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-400">
                     Pending, published, and rejected ideas stay visible here even when
                     they are not public yet.
                   </p>
@@ -247,7 +247,7 @@ const IdeasPage = () => {
                   />
                 </div>
               ) : myIdeas.length === 0 ? (
-                <div className="mt-4 rounded-2xl border border-dashed border-slate-300 px-4 py-6 text-sm text-slate-500">
+                <div className="mt-4 rounded-2xl border border-dashed border-slate-700 px-4 py-6 text-sm text-slate-500">
                   You have not submitted any ideas yet.
                 </div>
               ) : (
@@ -255,20 +255,20 @@ const IdeasPage = () => {
                   {MODERATION_ORDER.map((moderationState) => (
                     <div
                       key={moderationState}
-                      className="rounded-[24px] border border-slate-200 bg-slate-50 p-4"
+                      className="rounded-[24px] border border-white/10 bg-slate-800/50 p-4"
                     >
                       <div className="flex items-center justify-between gap-3">
-                        <h3 className="text-lg font-semibold text-slate-900">
+                        <h3 className="text-lg font-semibold text-white">
                           {formatModerationLabel(moderationState)}
                         </h3>
-                        <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-slate-600">
+                        <span className="rounded-full bg-slate-700 px-2.5 py-1 text-xs font-semibold text-slate-300">
                           {groupedMyIdeas[moderationState].length}
                         </span>
                       </div>
 
                       <div className="mt-4 space-y-4">
                         {groupedMyIdeas[moderationState].length === 0 ? (
-                          <div className="rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500">
+                          <div className="rounded-2xl border border-dashed border-slate-700 px-4 py-4 text-sm text-slate-500">
                             Nothing here right now.
                           </div>
                         ) : (
@@ -305,13 +305,13 @@ const IdeasPage = () => {
             </section>
           )}
 
-          <section className="mt-6 rounded-[30px] border border-slate-200 bg-white/92 p-5 shadow-xl shadow-slate-950/5">
+          <section className="mt-6 rounded-[30px] border border-white/10 bg-slate-900/70 p-5 shadow-xl shadow-slate-950/25">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <h2 className="text-2xl font-semibold text-slate-900">
+                <h2 className="text-2xl font-semibold text-white">
                   Public board
                 </h2>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-slate-400">
                   Published ideas are grouped by lifecycle state and can be sorted by
                   recent activity or rating.
                 </p>
@@ -325,16 +325,16 @@ const IdeasPage = () => {
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                     placeholder="Search titles, problems, changes, or trade-offs"
-                    className="w-full rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-700 outline-none transition focus:border-emerald-500 sm:w-80"
+                    className="w-full rounded-full border border-slate-700 bg-slate-800/80 px-4 py-2.5 text-sm text-slate-200 outline-none transition focus:border-emerald-500 placeholder:text-slate-500 sm:w-80"
                   />
                 </label>
 
-                <label className="flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-700">
-                  <span className="font-medium text-slate-500">Sort</span>
+                <label className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-4 py-2.5 text-sm text-slate-200">
+                  <span className="font-medium text-slate-400">Sort</span>
                   <select
                     value={sortBy}
                     onChange={(event) => setSortBy(event.target.value as BoardSort)}
-                    className="bg-transparent outline-none"
+                    className="bg-transparent outline-none text-slate-200"
                   >
                     <option value="recent">Recently updated</option>
                     <option value="rating">Top rated</option>
@@ -372,7 +372,7 @@ const IdeasPage = () => {
                 />
               </div>
             ) : !boardHasResults ? (
-              <div className="mt-6 rounded-2xl border border-dashed border-slate-300 px-4 py-8 text-center text-sm text-slate-500">
+              <div className="mt-6 rounded-2xl border border-dashed border-slate-700 px-4 py-8 text-center text-sm text-slate-500">
                 No ideas match that search yet.
               </div>
             ) : (
@@ -380,17 +380,17 @@ const IdeasPage = () => {
                 {STATUS_ORDER.map((status) => (
                   <div
                     key={status}
-                    className="rounded-[26px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5"
+                    className="rounded-[26px] border border-white/10 bg-slate-800/50 p-4 sm:p-5"
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <h3 className="text-xl font-semibold text-slate-900">{status}</h3>
-                      <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-slate-600">
+                      <h3 className="text-xl font-semibold text-white">{status}</h3>
+                      <span className="rounded-full bg-slate-700 px-2.5 py-1 text-xs font-semibold text-slate-300">
                         {groupedBoardIdeas[status].length}
                       </span>
                     </div>
 
                     {groupedBoardIdeas[status].length === 0 ? (
-                      <div className="mt-4 rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500">
+                      <div className="mt-4 rounded-2xl border border-dashed border-slate-700 px-4 py-4 text-sm text-slate-500">
                         No ideas in this lane yet.
                       </div>
                     ) : (
