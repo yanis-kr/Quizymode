@@ -15,12 +15,13 @@ internal static partial class StartupExtensions
             {
                 if (!context.HttpContext.Response.HasStarted)
                 {
+                    string detail = GetRejectionDetail(context.HttpContext.Request.Path);
                     await context.HttpContext.Response.WriteAsJsonAsync(
                         new
                         {
                             title = "Too Many Requests",
                             status = StatusCodes.Status429TooManyRequests,
-                            detail = "Too many feedback submissions. Please wait a few minutes and try again."
+                            detail
                         },
                         cancellationToken);
                 }
@@ -28,7 +29,7 @@ internal static partial class StartupExtensions
 
             options.AddPolicy("feedback-submissions", httpContext =>
             {
-                string partitionKey = GetFeedbackPartitionKey(httpContext);
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
                 return RateLimitPartition.GetFixedWindowLimiter(
                     partitionKey,
                     static _ => new FixedWindowRateLimiterOptions
@@ -39,12 +40,54 @@ internal static partial class StartupExtensions
                         AutoReplenishment = true
                     });
             });
+
+            options.AddPolicy("ideas-create", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 2,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
+            options.AddPolicy("ideas-comments", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 10,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
+            options.AddPolicy("ideas-ratings", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 60,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
         });
 
         return builder;
     }
 
-    private static string GetFeedbackPartitionKey(HttpContext httpContext)
+    private static string GetAuthenticatedOrIpPartitionKey(HttpContext httpContext)
     {
         ClaimsPrincipal user = httpContext.User;
         if (user.Identity?.IsAuthenticated == true)
@@ -68,5 +111,26 @@ internal static partial class StartupExtensions
 
         string ipAddress = httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous";
         return $"ip:{ipAddress}";
+    }
+
+    private static string GetRejectionDetail(PathString requestPath)
+    {
+        string path = requestPath.Value ?? string.Empty;
+        if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/comments", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many idea comments. Please wait a few minutes and try again.";
+        }
+
+        if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/rating", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many idea ratings. Please slow down and try again shortly.";
+        }
+
+        if (path.EndsWith("/ideas", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many idea submissions. Please wait a few minutes and try again.";
+        }
+
+        return "Too many feedback submissions. Please wait a few minutes and try again.";
     }
 }

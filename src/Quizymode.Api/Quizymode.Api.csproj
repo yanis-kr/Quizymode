@@ -43,6 +43,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="data\ideas\ideas_seed.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="data\moderation\idea-moderation-terms.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="..\..\data\seed-dev\**\*.json" Link="data\seed-dev\%(RecursiveDir)%(Filename)%(Extension)">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

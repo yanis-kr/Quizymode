@@ -99,6 +99,12 @@ const isOnPublicRoute = (): boolean => {
     "/signup",
     "/explore",
     "/quiz",
+    "/ideas",
+    "/about",
+    "/roadmap",
+    "/feedback",
+    "/privacy",
+    "/terms",
   ];
   const currentPath = window.location.pathname;
   return publicRoutes.some(

@@ -1,14 +1,12 @@
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
-import { taxonomyApi } from "@/api/taxonomy";
 import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
 import UserProfileModal from "./UserProfileModal";
-import CategoriesMapModal from "./CategoriesMapModal";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface LayoutProps {
@@ -19,9 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const queryClient = useQueryClient();
   const [showProfileModal, setShowProfileModal] = useState(false);
-  const [showCategoriesMap, setShowCategoriesMap] = useState(false);
   const [showFeedbackDialog, setShowFeedbackDialog] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const userGuideUrl = getUserGuideUrl(window.navigator.userAgent);
@@ -57,7 +53,8 @@ const Layout = ({ children }: LayoutProps) => {
     isHomePage ||
     location.pathname === "/categories" ||
     location.pathname === "/collections" ||
-    location.pathname === "/items/add";
+    location.pathname === "/items/add" ||
+    location.pathname === "/ideas";
 
   const isPathActive = (basePath: string) => {
     const path = location.pathname;
@@ -82,18 +79,6 @@ const Layout = ({ children }: LayoutProps) => {
     `block px-3 py-2 text-base font-medium ${
       active ? "text-indigo-600 bg-gray-50" : "text-gray-900 hover:text-indigo-600 hover:bg-gray-50"
     }`;
-
-  const prefetchCategoriesMap = () => {
-    void queryClient.prefetchQuery({
-      queryKey: ["taxonomy"],
-      queryFn: () => taxonomyApi.getAll(),
-      staleTime: 24 * 60 * 60 * 1000,
-    });
-  };
-
-  useEffect(() => {
-    prefetchCategoriesMap();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
@@ -337,15 +322,12 @@ const Layout = ({ children }: LayoutProps) => {
             >
               Feedback
             </button>
-            <button
-              type="button"
-              onClick={() => setShowCategoriesMap(true)}
-              onMouseEnter={prefetchCategoriesMap}
-              onFocus={prefetchCategoriesMap}
+            <Link
+              to="/ideas"
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
             >
-              Map
-            </button>
+              Ideas
+            </Link>
             <Link
               to="/privacy"
               className="inline-flex items-center justify-center rounded-md border border-white/12 bg-white/8 px-2.5 py-1.5 text-sm font-medium text-slate-100 transition hover:border-sky-300/35 hover:bg-white/12 hover:text-white"
@@ -364,10 +346,6 @@ const Layout = ({ children }: LayoutProps) => {
       <UserProfileModal
         isOpen={showProfileModal}
         onClose={() => setShowProfileModal(false)}
-      />
-      <CategoriesMapModal
-        isOpen={showCategoriesMap}
-        onClose={() => setShowCategoriesMap(false)}
       />
       <FeedbackDialog
         isOpen={showFeedbackDialog}

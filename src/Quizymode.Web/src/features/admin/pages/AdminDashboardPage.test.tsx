@@ -32,6 +32,7 @@ describe("AdminDashboardPage", () => {
     expect(screen.getByRole("link", { name: /manage keywords/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /seed sync/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /usage analytics/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /ideas moderation/i })).toBeInTheDocument();
   });
 
   it("redirects non-admin users to home", () => {
@@ -67,6 +68,16 @@ describe("AdminDashboardPage", () => {
     expect(screen.getByRole("link", { name: /users.*activity/i })).toHaveAttribute(
       "href",
       "/admin/user-settings"
+    );
+  });
+
+  it("renders ideas moderation link with correct href", () => {
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+    renderPage();
+
+    expect(screen.getByRole("link", { name: /ideas moderation/i })).toHaveAttribute(
+      "href",
+      "/admin/ideas"
     );
   });
 });
