@@ -23,6 +23,7 @@ internal sealed class DatabaseSeederHostedService(
     private const string SeedItemsFolderName = "items";
     private const string SeedCollectionsFolderName = "collections";
     private const string SeederUserId = "seeder";
+    private const string IdeasSeedRelativePath = "data/ideas/ideas_seed.sql";
 
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
@@ -40,6 +41,7 @@ internal sealed class DatabaseSeederHostedService(
 
             await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
+            await SeedIdeasAsync(db, cancellationToken);
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
             {
@@ -480,6 +482,49 @@ internal sealed class DatabaseSeederHostedService(
         }
 
         _logger.LogInformation("Taxonomy seed SQL applied.");
+    }
+
+    private async Task SeedIdeasAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        string sqlPath = Path.Combine(_environment.ContentRootPath, IdeasSeedRelativePath);
+        if (!File.Exists(sqlPath))
+        {
+            _logger.LogWarning("Ideas seed SQL not found at {Path}. Skipping ideas seed.", sqlPath);
+            return;
+        }
+
+        string sql = await File.ReadAllTextAsync(sqlPath, cancellationToken);
+        if (string.IsNullOrWhiteSpace(sql))
+        {
+            _logger.LogWarning("Ideas seed SQL at {Path} was empty. Skipping ideas seed.", sqlPath);
+            return;
+        }
+
+        DbConnection connection = db.Database.GetDbConnection();
+        bool shouldClose = connection.State != ConnectionState.Open;
+        if (shouldClose)
+        {
+            await db.Database.OpenConnectionAsync(cancellationToken);
+        }
+
+        try
+        {
+            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
+            await using DbCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = sql;
+            await command.ExecuteNonQueryAsync(cancellationToken);
+            await transaction.CommitAsync(cancellationToken);
+        }
+        finally
+        {
+            if (shouldClose)
+            {
+                await db.Database.CloseConnectionAsync();
+            }
+        }
+
+        _logger.LogInformation("Ideas seed SQL applied.");
     }
 
     private static string? ResolveSeedItemsPath(string resolvedSeedRoot)

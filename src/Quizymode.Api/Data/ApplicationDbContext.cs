@@ -30,6 +30,12 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CollectionRating> CollectionRatings => Set<CollectionRating>();
 
+    public DbSet<Idea> Ideas => Set<Idea>();
+
+    public DbSet<IdeaComment> IdeaComments => Set<IdeaComment>();
+
+    public DbSet<IdeaRating> IdeaRatings => Set<IdeaRating>();
+
     public DbSet<User> Users => Set<User>();
 
     public DbSet<UserPolicyAcceptance> UserPolicyAcceptances => Set<UserPolicyAcceptance>();

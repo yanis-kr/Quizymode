@@ -232,6 +232,39 @@
         }
       }
     },
+    "/admin/ideas/{id}/approve": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Approve an idea for publication",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/admin/categories": {
       "post": {
         "tags": [
@@ -628,6 +661,38 @@
         }
       }
     },
+    "/admin/ideas": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get ideas for moderation review",
+        "parameters": [
+          {
+            "name": "moderationState",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaBoardResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/admin/page-view-analytics": {
       "get": {
         "tags": [
@@ -724,6 +789,52 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/admin/ideas/{id}/reject": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Reject an idea submission",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.IdeasAdmin.RejectRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -1734,6 +1845,456 @@
           },
           "429": {
             "description": "Too Many Requests"
+          }
+        }
+      }
+    },
+    "/ideas": {
+      "post": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Create a new idea submission",
+        "description": "Creates a new idea in PendingReview moderation state for the authenticated user.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCrud.CreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Get the public ideas board",
+        "description": "Returns published ideas with rating and comment summaries.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaBoardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ideas/{ideaId}/comments": {
+      "post": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Create a comment on a published idea",
+        "parameters": [
+          {
+            "name": "ideaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaComments.CreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCommentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Get comments for a published idea",
+        "parameters": [
+          {
+            "name": "ideaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCommentsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/ideas/{id}": {
+      "delete": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Delete an idea",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Update an idea",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCrud.UpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/ideas/{ideaId}/comments/{commentId}": {
+      "delete": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Delete an idea comment",
+        "parameters": [
+          {
+            "name": "ideaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          },
+          {
+            "name": "commentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Update an idea comment",
+        "parameters": [
+          {
+            "name": "ideaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          },
+          {
+            "name": "commentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaComments.UpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCommentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/ideas/mine": {
+      "get": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Get the current user's ideas",
+        "description": "Returns the authenticated user's ideas across moderation states.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaBoardResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/ideas/{ideaId}/rating": {
+      "post": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Create or update the current user's rating for a published idea",
+        "parameters": [
+          {
+            "name": "ideaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaRatings.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaRatings.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      }
+    },
+    "/ideas/{id}/status": {
+      "put": {
+        "tags": [
+          "Ideas"
+        ],
+        "summary": "Update an idea lifecycle status",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCrud.StatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -4110,6 +4671,17 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.IdeasAdmin.RejectRequest": {
+        "required": [
+          "moderationNotes"
+        ],
+        "type": "object",
+        "properties": {
+          "moderationNotes": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.ReviewKeywordAdmin.KeywordReviewResponse": {
         "required": [
           "id",
@@ -5710,6 +6282,370 @@
           },
           "createdAt": {
             "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaBoardResponse": {
+        "required": [
+          "ideas"
+        ],
+        "type": "object",
+        "properties": {
+          "ideas": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaSummaryResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaCommentResponse": {
+        "required": [
+          "id",
+          "ideaId",
+          "text",
+          "authorName",
+          "createdAt",
+          "updatedAt",
+          "canEdit",
+          "canDelete"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "ideaId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "authorName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "updatedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "canEdit": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "canDelete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaComments.CreateRequest": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaComments.UpdateRequest": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaCommentsResponse": {
+        "required": [
+          "comments"
+        ],
+        "type": "object",
+        "properties": {
+          "comments": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaCommentResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaCrud.CreateRequest": {
+        "required": [
+          "title",
+          "problem",
+          "proposedChange",
+          "tradeOffs",
+          "turnstileToken"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "problem": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "proposedChange": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "tradeOffs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "turnstileToken": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaCrud.StatusRequest": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaCrud.UpdateRequest": {
+        "required": [
+          "title",
+          "problem",
+          "proposedChange",
+          "tradeOffs"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "problem": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "proposedChange": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "tradeOffs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaRatings.Request": {
+        "required": [
+          "stars"
+        ],
+        "type": "object",
+        "properties": {
+          "stars": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaRatings.Response": {
+        "required": [
+          "id",
+          "ideaId",
+          "stars",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "ideaId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "stars": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "updatedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Ideas.IdeaSummaryResponse": {
+        "required": [
+          "id",
+          "title",
+          "problem",
+          "proposedChange",
+          "tradeOffs",
+          "status",
+          "moderationState",
+          "moderationNotes",
+          "authorName",
+          "reviewedByName",
+          "createdAt",
+          "updatedAt",
+          "reviewedAt",
+          "commentCount",
+          "ratingCount",
+          "averageStars",
+          "myRating",
+          "canEdit",
+          "canDelete",
+          "canChangeStatus",
+          "canModerate"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "problem": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "proposedChange": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "tradeOffs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "moderationState": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "moderationNotes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "authorName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "reviewedByName": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "updatedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "reviewedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "commentCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratingCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "averageStars": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "myRating": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "canEdit": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "canDelete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "canChangeStatus": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "canModerate": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -8013,6 +8949,18 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Comments.GetComments.CommentResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaCommentResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaCommentResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaSummaryResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Ideas.IdeaSummaryResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Add.AddItem.KeywordRequest": {
         "type": "array",
         "items": {
@@ -8224,6 +9172,9 @@
     },
     {
       "name": "Feedback"
+    },
+    {
+      "name": "Ideas"
     },
     {
       "name": "Items"

@@ -14,12 +14,6 @@ vi.mock("@/contexts/AuthContext", () => ({
   }),
 }));
 
-vi.mock("@/api/taxonomy", () => ({
-  taxonomyApi: {
-    getAll: vi.fn().mockResolvedValue({ categories: [] }),
-  },
-}));
-
 vi.mock("@/api/users", () => ({
   usersApi: {
     getCurrent: vi.fn(),
@@ -27,10 +21,6 @@ vi.mock("@/api/users", () => ({
 }));
 
 vi.mock("./UserProfileModal", () => ({
-  default: () => null,
-}));
-
-vi.mock("./CategoriesMapModal", () => ({
   default: () => null,
 }));
 
@@ -100,5 +90,15 @@ describe("Layout", () => {
       "href",
       "https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
     );
+  });
+
+  it("shows the ideas footer link instead of the old map action", () => {
+    renderLayout();
+
+    expect(screen.getByRole("link", { name: "Ideas" })).toHaveAttribute(
+      "href",
+      "/ideas"
+    );
+    expect(screen.queryByRole("button", { name: "Map" })).not.toBeInTheDocument();
   });
 });

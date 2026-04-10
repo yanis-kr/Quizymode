@@ -29,12 +29,14 @@ import EditItemPage from "./features/items/pages/EditItemPage";
 import AboutPage from "./features/about/pages/AboutPage";
 import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
 import FeedbackPage from "./features/feedback/pages/FeedbackPage";
+import IdeasPage from "./features/ideas/pages/IdeasPage";
 import StudyGuidePage from "./features/studyGuide/pages/StudyGuidePage";
 import StudyGuideImportPage from "./features/studyGuide/pages/StudyGuideImportPage";
 import PrivacyPolicyPage from "./features/legal/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./features/legal/pages/TermsOfServicePage";
 import PageViewTracker from "./features/analytics/PageViewTracker";
 import RequireAuthRoute from "./components/RequireAuthRoute";
+import AdminIdeasPage from "./features/admin/pages/AdminIdeasPage";
 
 function App() {
   return (
@@ -119,8 +121,10 @@ function App() {
           <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
           <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
           <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
+          <Route path="/admin/ideas" element={<AdminIdeasPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/ideas" element={<IdeasPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />

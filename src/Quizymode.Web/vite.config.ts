@@ -50,7 +50,7 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(appVersion),
     __BUILD_LABEL__: JSON.stringify(buildLabel),
     __BUILD_VERSION__: JSON.stringify(buildVersion),
-    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString().slice(0, 10)),
     __ABOUT_HTML__: JSON.stringify(aboutHtml),
   },
   resolve: {

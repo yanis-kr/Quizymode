@@ -49,7 +49,12 @@ const AboutPage = () => {
 
         {/* Version — small, unobtrusive, at the bottom */}
         <p className="mt-2 text-xs text-slate-400">
-          Version {__APP_VERSION__}
+          Version {__APP_VERSION__} &middot; Deployed{" "}
+          {new Date(`${__BUILD_TIME__}T00:00:00`).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
         </p>
       </div>
     </>

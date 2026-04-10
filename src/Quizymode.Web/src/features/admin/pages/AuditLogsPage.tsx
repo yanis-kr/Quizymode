@@ -11,11 +11,22 @@ const AUDIT_ACTIONS = [
   'UserCreated',
   'LoginSuccess',
   'LoginFailed',
+  'Logout',
   'CommentCreated',
   'CommentDeleted',
   'ItemCreated',
   'ItemUpdated',
   'ItemDeleted',
+  'IdeaCreated',
+  'IdeaUpdated',
+  'IdeaDeleted',
+  'IdeaApproved',
+  'IdeaRejected',
+  'IdeaStatusChanged',
+  'IdeaProfanityRejected',
+  'IdeaCommentCreated',
+  'IdeaCommentUpdated',
+  'IdeaCommentDeleted',
 ] as const;
 
 type AuditAction = typeof AUDIT_ACTIONS[number];
@@ -40,11 +51,22 @@ const AuditLogsPage = () => {
       0: 'UserCreated',
       1: 'LoginSuccess',
       2: 'LoginFailed',
-      3: 'CommentCreated',
-      4: 'CommentDeleted',
-      5: 'ItemCreated',
-      6: 'ItemUpdated',
-      7: 'ItemDeleted',
+      3: 'Logout',
+      4: 'CommentCreated',
+      5: 'CommentDeleted',
+      6: 'ItemCreated',
+      7: 'ItemUpdated',
+      8: 'ItemDeleted',
+      9: 'IdeaCreated',
+      10: 'IdeaUpdated',
+      11: 'IdeaDeleted',
+      12: 'IdeaApproved',
+      13: 'IdeaRejected',
+      14: 'IdeaStatusChanged',
+      15: 'IdeaProfanityRejected',
+      16: 'IdeaCommentCreated',
+      17: 'IdeaCommentUpdated',
+      18: 'IdeaCommentDeleted',
     };
     
     return actionMap[action] || `Unknown (${action})`;
@@ -113,7 +135,7 @@ const AuditLogsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Audit Logs</h1>
       <p className="text-gray-600 text-sm mb-6">
-        View system audit logs with detailed information about user actions, item operations, and system events. Filter by event type and browse paginated results.
+        View system audit logs with detailed information about user actions, item operations, idea moderation, and system events. Filter by event type and browse paginated results.
       </p>
 
       {/* Filters */}

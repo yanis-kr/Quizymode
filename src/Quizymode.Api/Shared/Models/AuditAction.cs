@@ -10,6 +10,16 @@ public enum AuditAction
     CommentDeleted,
     ItemCreated,
     ItemUpdated,
-    ItemDeleted
+    ItemDeleted,
+    IdeaCreated,
+    IdeaUpdated,
+    IdeaDeleted,
+    IdeaApproved,
+    IdeaRejected,
+    IdeaStatusChanged,
+    IdeaProfanityRejected,
+    IdeaCommentCreated,
+    IdeaCommentUpdated,
+    IdeaCommentDeleted
 }
 

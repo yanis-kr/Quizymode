@@ -20,12 +20,16 @@ internal static partial class StartupExtensions
         builder.Services.Configure<CategoryOptions>(builder.Configuration.GetSection(CategoryOptions.SectionName));
         builder.Services.Configure<TaxonomyOptions>(builder.Configuration.GetSection(TaxonomyOptions.SectionName));
         builder.Services.Configure<GitHubSeedSyncOptions>(builder.Configuration.GetSection(GitHubSeedSyncOptions.SectionName));
+        builder.Services.Configure<IdeaAbuseProtectionOptions>(builder.Configuration.GetSection(IdeaAbuseProtectionOptions.SectionName));
+        builder.Services.Configure<TurnstileOptions>(builder.Configuration.GetSection(TurnstileOptions.SectionName));
         builder.Services.AddSingleton<ITaxonomyRegistry, TaxonomyRegistry>();
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpClient<IGitHubSeedSource, GitHubSeedSource>();
         builder.Services.AddHttpClient("ipgeolocation");
+        builder.Services.AddHttpClient<ITurnstileVerificationService, TurnstileVerificationService>();
         builder.Services.AddSingleton<IIpGeolocationService, IpGeolocationService>();
+        builder.Services.AddSingleton<ITextModerationService, IdeaTextModerationService>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();
