@@ -14,6 +14,7 @@ interface FilterControlBarProps {
   /** Number to display in the badge; hidden when 0 or undefined. */
   activeFilterCount?: number;
   onOpenFilters: () => void;
+  onOpenMap?: () => void;
   sortBy?: string;
   onSortChange?: (sort: string) => void;
   sortOptions?: SortOptionItem[];
@@ -23,6 +24,7 @@ export function FilterControlBar({
   hasActiveFilters,
   activeFilterCount,
   onOpenFilters,
+  onOpenMap,
   sortBy,
   onSortChange,
   sortOptions,
@@ -52,6 +54,16 @@ export function FilterControlBar({
 
       {/* Right-side controls */}
       <div className="flex items-center gap-2">
+        {onOpenMap != null && (
+          <button
+            type="button"
+            onClick={onOpenMap}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-600 transition hover:bg-gray-50"
+          >
+            Map
+          </button>
+        )}
+
         {showSort && (
           <div className="flex items-center gap-1.5">
             <label htmlFor="filter-bar-sort" className="hidden text-sm text-gray-500 sm:block whitespace-nowrap">
