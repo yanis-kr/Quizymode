@@ -2,7 +2,7 @@
  * Mobile-first bottom sheet for filter content. Slides up from the bottom on mobile;
  * appears as a centered modal on larger screens.
  */
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface FilterBottomSheetProps {
@@ -20,11 +20,20 @@ export function FilterBottomSheet({
   hasActiveFilters,
   children,
 }: FilterBottomSheetProps) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex flex-col justify-end sm:items-center sm:justify-center"
+      className="fixed inset-0 z-[200] flex flex-col justify-end sm:items-center sm:justify-center"
       aria-modal="true"
       role="dialog"
       aria-label="Filters"

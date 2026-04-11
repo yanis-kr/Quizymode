@@ -49,6 +49,7 @@ import {
   Squares2X2Icon,
   PlusIcon,
   ChevronRightIcon as BreadcrumbChevron,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 type SortOption = "name" | "rating" | "count";
@@ -180,6 +181,17 @@ const CategoriesPage = () => {
     params.set("return", `${location.pathname}${location.search}`);
     return `?${params.toString()}`;
   }, [location.pathname, location.search]);
+
+  const removeTagKeywordFilter = (kw: string) => {
+    const updated = filterKeywordsFromQuery.filter(
+      (k) => k.toLowerCase() !== kw.toLowerCase()
+    );
+    const p = new URLSearchParams(searchParams);
+    if (updated.length > 0) p.set("keywords", updated.join(","));
+    else p.delete("keywords");
+    navigate(`${location.pathname}?${p.toString()}`);
+    setShowFilters(false);
+  };
 
   const handleApplyFilter = () => {
     const path = buildCategoryPath(filterCategorySlug, filterKeywords);
@@ -904,6 +916,26 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
+                {filterKeywordsFromQuery.length > 0 && (
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                      Active keyword filters
+                    </label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {filterKeywordsFromQuery.map((kw) => (
+                        <button
+                          key={kw}
+                          type="button"
+                          onClick={() => removeTagKeywordFilter(kw)}
+                          className="inline-flex items-center gap-1 rounded-full bg-indigo-600 px-2.5 py-0.5 text-xs font-medium text-white hover:bg-indigo-700"
+                        >
+                          {kw}
+                          <XMarkIcon className="h-3 w-3" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>
@@ -1034,10 +1066,14 @@ const CategoriesPage = () => {
                 showRatingsAndComments
                 returnUrl={listItemsReturnUrl}
                 onKeywordClick={(keywordName) => {
-                  const newFilterKeywords = dedupeKeywords([
-                    ...filterKeywordsFromQuery,
-                    keywordName,
-                  ]);
+                  const isSelected = filterKeywordsFromQuery.some(
+                    (k) => k.toLowerCase() === keywordName.toLowerCase()
+                  );
+                  const newFilterKeywords = isSelected
+                    ? filterKeywordsFromQuery.filter(
+                        (k) => k.toLowerCase() !== keywordName.toLowerCase()
+                      )
+                    : dedupeKeywords([...filterKeywordsFromQuery, keywordName]);
                   navigateToItems(
                     scopePathWithNav,
                     true,
@@ -1176,6 +1212,26 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
+                {filterKeywordsFromQuery.length > 0 && (
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                      Active keyword filters
+                    </label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {filterKeywordsFromQuery.map((kw) => (
+                        <button
+                          key={kw}
+                          type="button"
+                          onClick={() => removeTagKeywordFilter(kw)}
+                          className="inline-flex items-center gap-1 rounded-full bg-indigo-600 px-2.5 py-0.5 text-xs font-medium text-white hover:bg-indigo-700"
+                        >
+                          {kw}
+                          <XMarkIcon className="h-3 w-3" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>
