@@ -111,7 +111,7 @@ dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 | Variable | Typical value |
 |---|---|
 | `QM_AGENT_LOCAL_PGHOST` | `localhost` |
-| `QM_AGENT_LOCAL_PGPORT` | `49800` |
+| `QM_AGENT_LOCAL_PGPORT` | `55432` |
 | `QM_AGENT_LOCAL_PGDATABASE` | `quizymode` |
 | `QM_AGENT_LOCAL_PGUSER` | `postgres` |
 | `QM_AGENT_LOCAL_PGPASSWORD` | *(secret — never print)* |

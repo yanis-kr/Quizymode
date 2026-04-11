@@ -137,7 +137,7 @@ In practice, local development is:
 ### Database
 
 - PostgreSQL runs through Aspire in local development.
-- The AppHost pins the local PostgreSQL host port to `49800` and keeps the password stable through the AppHost user-secrets store, so local agent/test env vars do not need to change on every container recreation.
+- The AppHost pins the local PostgreSQL host port to `55432` and keeps the password stable through the AppHost user-secrets store, so local agent/test env vars do not need to change on every container recreation.
 - EF Core migrations are applied automatically on API startup.
 - Seed data is loaded from `data/seed-dev/`.
 

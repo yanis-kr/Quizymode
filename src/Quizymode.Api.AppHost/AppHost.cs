@@ -1,5 +1,6 @@
 using Aspire.Hosting.ApplicationModel;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 using System.Net.Sockets;
 
 static string GetAudienceValue(IConfiguration configuration)
@@ -22,7 +23,28 @@ static string GetAudienceValue(IConfiguration configuration)
 static int GetLocalPostgresPort(IConfiguration configuration)
 {
     int? configuredPort = configuration.GetValue<int?>("LocalInfrastructure:Postgres:Port");
-    return configuredPort ?? 49800;
+    return configuredPort ?? 55432;
+}
+
+// Kill any stale processes on known ports before Aspire starts resources.
+// This prevents "port already in use" failures when VS is restarted after a force-kill.
+if (OperatingSystem.IsWindows())
+{
+    foreach (int port in new[] { 8082, 7000 })
+        KillPortWindows(port);
+}
+
+static void KillPortWindows(int port)
+{
+    using Process? p = Process.Start(new ProcessStartInfo("powershell.exe",
+        $"-NoProfile -Command \"Get-NetTCPConnection -LocalPort {port} -ErrorAction SilentlyContinue " +
+        $"| ForEach-Object {{ Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }}\"")
+    {
+        UseShellExecute = false,
+        RedirectStandardOutput = true,
+        RedirectStandardError = true,
+    });
+    p?.WaitForExit(3_000);
 }
 
 var builder = DistributedApplication.CreateBuilder(args);
@@ -95,19 +117,12 @@ var api = builder.AddProject("quizymode-api", "../Quizymode.Api/Quizymode.Api.cs
 // Add the React/Vite dev server via AddExecutable (Aspire.Hosting.NodeJs is not yet released
 // at the Aspire 13.x version, so we drive npm directly).
 // vite.config.ts reads the PORT env var set here; falls back to 7000 for standalone npm run dev.
-// Start the React/Vite dev server.
-// Kill any stale process on port 7000 first so Vite always binds to the expected port.
 // No endpoint registration needed — navigate to http://localhost:7000 directly.
-string npmExe = OperatingSystem.IsWindows() ? "powershell.exe" : "sh";
+// Stale processes on port 7000 are already killed above before Aspire starts.
+string npmExe = OperatingSystem.IsWindows() ? "cmd.exe" : "sh";
 string[] npmArgs = OperatingSystem.IsWindows()
-    ? [
-        "-NoProfile", "-Command",
-        "Get-NetTCPConnection -LocalPort 7000 -ErrorAction SilentlyContinue " +
-        "| ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; " +
-        "Start-Sleep -Milliseconds 300; " +
-        "npm run dev"
-      ]
-    : ["-c", "fuser -k 7000/tcp 2>/dev/null; sleep 0.3; npm run dev"];
+    ? ["/c", "npm run dev"]
+    : ["-c", "npm run dev"];
 
 builder.AddExecutable("quizymode-web", npmExe, "../../src/Quizymode.Web", npmArgs)
     .WaitFor(api);
