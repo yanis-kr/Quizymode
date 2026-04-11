@@ -249,20 +249,41 @@ export function label(slug) {
     .join(" ");
 }
 
-export function relativeScreenshotPath(outputFile, screenshotDir, slug) {
-  const abs = path.join(screenshotDir, `${slug}.png`);
-  return path.relative(path.dirname(outputFile), abs).replace(/\\/g, "/");
+/** Flat ordered list of all slugs derived from sections — defines the numbering scheme. */
+export const orderedSlugs = sections.flatMap((s) => s.slugs);
+
+/**
+ * Returns the canonical filename for a slug, e.g. "01.home.png".
+ * Falls back to "slug.png" for slugs not in orderedSlugs.
+ */
+export function slugToFilename(slug) {
+  const idx = orderedSlugs.indexOf(slug);
+  if (idx === -1) return `${slug}.png`;
+  const n = idx + 1;
+  return `${String(n).padStart(2, "0")}.${slug}.png`;
 }
 
+/**
+ * Reads the screenshot directory and returns a Map<slug, filename>.
+ * Handles both the legacy "slug.png" format and the new "NN.slug.png" format.
+ */
 export function gatherAvailableScreenshots(screenshotDir) {
-  return new Set(
-    fs.existsSync(screenshotDir)
-      ? fs
-          .readdirSync(screenshotDir)
-          .filter((file) => file.endsWith(".png"))
-          .map((file) => file.replace(/\.png$/, ""))
-      : []
+  if (!fs.existsSync(screenshotDir)) return new Map();
+  return new Map(
+    fs
+      .readdirSync(screenshotDir)
+      .filter((file) => file.endsWith(".png"))
+      .map((file) => {
+        const baseName = file.replace(/\.png$/, "");
+        const slug = baseName.replace(/^\d+\./, ""); // strip "NN." prefix if present
+        return [slug, file];
+      })
   );
+}
+
+export function relativeScreenshotPath(outputFile, screenshotDir, filename) {
+  const abs = path.join(screenshotDir, filename);
+  return path.relative(path.dirname(outputFile), abs).replace(/\\/g, "/");
 }
 
 export function getDescription(guideKey, slug) {
@@ -302,7 +323,8 @@ export function buildGuide(config) {
     lines.push("");
 
     for (const slug of section.slugs) {
-      if (!available.has(slug)) {
+      const filename = available.get(slug);
+      if (!filename) {
         continue;
       }
 
@@ -316,7 +338,7 @@ export function buildGuide(config) {
       }
 
       lines.push(
-        `![${label(slug)}](${relativeScreenshotPath(config.outputFile, config.screenshotDir, slug)} "${label(slug)}")`
+        `![${label(slug)}](${relativeScreenshotPath(config.outputFile, config.screenshotDir, filename)} "${label(slug)}")`
       );
       lines.push("");
     }

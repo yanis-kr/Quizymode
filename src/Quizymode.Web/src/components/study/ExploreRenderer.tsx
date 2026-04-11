@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
+import { TextWithLinks } from "@/components/TextWithLinks";
 
 /** Characters beyond which the explanation is truncated with a "Show more" toggle. */
 const EXPLANATION_CLAMP_THRESHOLD = 220;
@@ -85,7 +86,7 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
                   isLongExplanation && !explanationExpanded ? "line-clamp-3" : ""
                 }`}
               >
-                {explanationTrimmed}
+                <TextWithLinks text={explanationTrimmed} />
               </p>
               {isLongExplanation && (
                 <button

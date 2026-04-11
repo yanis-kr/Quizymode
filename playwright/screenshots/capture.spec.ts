@@ -1,6 +1,7 @@
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import path from "path";
 import fs from "fs";
+import { slugToFilename } from "../../scripts/generate-user-guide.js";
 
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 const HOME_SAMPLE_COLLECTION_SLUG = "sample+collection";
@@ -346,7 +347,7 @@ async function captureCurrentPage(page: Page, testInfo: TestInfo, slug: string) 
   await expect(page.locator("#root")).toBeVisible();
   await openMobileMenuIfNeeded(page, testInfo, slug);
   await page.screenshot({
-    path: path.join(screenshotDir, `${slug}.png`),
+    path: path.join(screenshotDir, slugToFilename(slug)),
     fullPage: true,
     scale: "css",
   });
@@ -744,16 +745,16 @@ async function openScopedAddItemsPage(page: Page) {
   await ensureSignedIn(page);
   await safeGoto(page, "/categories/geography/capitals/world");
   await clickConsentIfPresent(page);
-  await waitForAnyVisible(page, [
-    "a[title='Add items for this category and navigation path']",
-    "text=World",
-  ]);
-  await page
-    .locator("a[title='Add items for this category and navigation path']")
-    .first()
-    .click()
-    .catch(() => {});
-  await page.waitForURL(/\/items\/add/, { timeout: 15_000 }).catch(() => {});
+
+  const addLink = page.locator("a[title='Add items for this category and navigation path']").first();
+  if (await addLink.isVisible({ timeout: 5_000 }).catch(() => false)) {
+    await addLink.click().catch(() => {});
+    await page.waitForURL(/\/items\/add/, { timeout: 15_000 }).catch(() => {});
+  } else {
+    // On mobile the link may be hidden behind overflow; navigate directly with scope pre-filled
+    await safeGoto(page, "/items/add?category=geography&keywords=capitals,world");
+  }
+
   await clickConsentIfPresent(page);
   await waitForAnyVisible(page, ["#add-hub-scope-category", "#add-hub-scope-rank1"]);
 }

@@ -148,8 +148,8 @@ function buildManifest() {
             mobile: getDescription("mobile", slug),
           },
           images: {
-            desktop: desktopShots.has(slug) ? `assets/desktop/${slug}.png` : "",
-            mobile: mobileShots.has(slug) ? `assets/mobile/${slug}.png` : "",
+            desktop: desktopShots.has(slug) ? `assets/desktop/${desktopShots.get(slug)}` : "",
+            mobile: mobileShots.has(slug) ? `assets/mobile/${mobileShots.get(slug)}` : "",
           },
         })),
     }))

@@ -11,7 +11,7 @@
       "Provision a subnet in each Availability Zone. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment.",
       "Provision a subnet that extends across both Availability Zones. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #298). Correct choice: A.",
+    "explanation": "A company is running a critical business application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances run in an Auto Scaling group and access an Amazon RDS DB instance. The design did not pass an operational review because the EC2... The best-matching choice is: Provision a subnet in each Availability Zone. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance with connections to each network.. A load balancer serves as the single point of contact for clients.\nUPD260411: A load balancer serves as the single point of contact for clients. The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. This increases the availability of your application. You add one or more listeners to your load balancer. (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -22,7 +22,16 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "A load balancer serves as the single point of contact for clients. The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. This increases the availability of your application. You add one or more listeners to your load balancer.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "59068620-ec94-4386-a415-4b248620890f",
@@ -30,13 +39,13 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A research laboratory needs to process approximately 8 TB of data. The laboratory requires sub-millisecond latencies and a minimum throughput\nof 6 GBps for the storage subsystem. Hundreds of Amazon EC2 instances that run Amazon Linux will distribute and process the data.\nWhich solution will meet the performance requirements?",
-    "correctAnswer": "Create an Amazon FSx for NetApp ONTAP le system. Sat each volume\u2019 tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.",
+    "correctAnswer": "Create an Amazon FSx for NetApp ONTAP le system. Sat each volume’ tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.",
     "incorrectAnswers": [
       "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent SSD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.",
       "Create an Amazon S3 bucket to store the raw data. Create an Amazon FSx for Lustre le system that uses persistent HDD storage. Select the option to import data from and export data to Amazon S3. Mount the le system on the EC2 instances.",
-      "Create an Amazon FSx for NetApp ONTAP le system. Set each volume\u2019s tiering policy to NONE. Import the raw data into the le system. Mount the le system on the EC2 instances."
+      "Create an Amazon FSx for NetApp ONTAP le system. Set each volume’s tiering policy to NONE. Import the raw data into the le system. Mount the le system on the EC2 instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #299). Correct choice: A.",
+    "explanation": "A research laboratory needs to process approximately 8 TB of data. The laboratory requires sub-millisecond latencies and a minimum throughput of 6 GBps for the storage subsystem. Hundreds of Amazon EC2 instances that run Amazon Linux will distribute and process the data. Which solution... The best-matching choice is: Create an Amazon FSx for NetApp ONTAP le system. Sat each volume’ tiering policy to ALL. Import the raw data into the le system. Mount the la system on the EC2 instances.. The primary resources in Amazon FSx are file systems and backups .\nUPD260411: The primary resources in Amazon FSx are file systems and backups . A file system is where you store and access your files and folders. A file system is made up of one or more Windows file servers and storage volumes. When you create a file system, you specify an amount of storage capacity (in GiB), SSD IOPS, and throughput capacity (in MBps). You can modify these properties as your needs change after you create the file system. For more information, see Managing storage capacity , Managing SSD IOPS , and Managin... (https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -44,21 +53,30 @@
       "fsx",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "The primary resources in Amazon FSx are file systems and backups . A file system is where you store and access your files and folders. A file system is made up of one or more Windows file servers and storage volumes. When you create a file system, you specify an amount of storage capacity (in GiB), SSD IOPS, and throughput capacity (in MBps). You can modify these properties as your needs change after you create the file system. For more information, see Managing storage capacity , Managing SSD IOPS , and Managin...",
+        "source": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "8e968fb0-bcdd-42fb-96e5-648ca57ad465",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints.\nThe application runs 24 hours a day, 7 days a week. The application\u2019s database storage continues to grow over time.\nWhat should a solutions architect do to meet these requirements MOST cost-effectively?",
+    "question": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints.\nThe application runs 24 hours a day, 7 days a week. The application’s database storage continues to grow over time.\nWhat should a solutions architect do to meet these requirements MOST cost-effectively?",
     "correctAnswer": "Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.",
     "incorrectAnswers": [
       "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon RDS On-Demand Instances.",
       "Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon Aurora Reserved Instances.",
       "Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #300). Correct choice: A.",
+    "explanation": "A company needs to migrate a legacy application from an on-premises data center to the AWS Cloud because of hardware capacity constraints. The application runs 24 hours a day, 7 days a week. The application’s database storage continues to grow over time. What should... The best-matching choice is: Migrate the application layer to Amazon EC2 Spot Instances. Migrate the data storage layer to Amazon S3.. Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud.\nUPD260411: Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r... (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -66,7 +84,16 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r...",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "88a914e9-be09-4efd-b8aa-310dfeb5cefb",
@@ -80,13 +107,22 @@
       "AWS DataSync",
       "AWS Transfer Family"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #301). Correct choice: A.",
+    "explanation": "A university research laboratory needs to migrate 30 TB of data from an on-premises Windows le server to Amazon FSx for Windows File Server. The laboratory has a 1 Gbps network link that many other departments in the university share. The laboratory wants to... The best-matching choice is: AWS Snowcone. FSx for Windows File Server backups are file-system-consistent, highly durable, and incremental.\nUPD260411: FSx for Windows File Server backups are file-system-consistent, highly durable, and incremental. To ensure file system consistency, Amazon FSx uses the Volume Shadow Copy Service (VSS) in Microsoft Windows. Automatic daily backups are turned on by default when you create a file system, and you can also take additional manual backups at any time. For more information, see Protecting your data with backups . (https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "fsx"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "FSx for Windows File Server backups are file-system-consistent, highly durable, and incremental. To ensure file system consistency, Amazon FSx uses the Volume Shadow Copy Service (VSS) in Microsoft Windows. Automatic daily backups are turned on by default when you create a file system, and you can also take additional manual backups at any time. For more information, see Protecting your data with backups .",
+        "source": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "de93aa75-0547-480a-b4f8-521f97fe419d",
@@ -100,7 +136,7 @@
       "Use Amazon EC2 Auto Scaling with simple scaling policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.",
       "Use AWS Application Auto Scaling with target trafficking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #303). Correct choice: A.",
+    "explanation": "A company is launching a new application deployed on an Amazon Elastic Container Service (Amazon ECS) cluster and is using the Fargate launch type for ECS tasks. The company is monitoring CPU and memory usage because it is expecting high traffic to the application... The best-matching choice is: Use Amazon EC2 Auto Scaling to scale at certain periods based on previous traffic patterns.. Amazon EC2 Auto Scaling also provides several ways for you to scale your Auto Scaling groups.\nUPD260411: Amazon EC2 Auto Scaling also provides several ways for you to scale your Auto Scaling groups. Using auto scaling allows you to maintain application availability and reduce costs by adding capacity to handle peak loads and removing capacity when demand is lower. You can also manually adjust the size of your Auto Scaling group as needed. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -109,7 +145,16 @@
       "ecs",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling also provides several ways for you to scale your Auto Scaling groups. Using auto scaling allows you to maintain application availability and reduce costs by adding capacity to handle peak loads and removing capacity when demand is lower. You can also manually adjust the size of your Auto Scaling group as needed.",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "5cbd148e-c1ba-451f-a013-cd115edabd69",
@@ -123,13 +168,22 @@
       "Set up an SFTP server on Amazon EC2.",
       "Use AWS Database Migration Service (AWS DMS)."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #304). Correct choice: A.",
+    "explanation": "A company recently created a disaster recovery site in a different AWS Region. The company needs to transfer large amounts of data back and forth between NFS le systems in the two Regions on a periodic basis. Which solution will meet these requirements with... The best-matching choice is: Use AWS DataSync.. Automate data movement – DataSync makes it easier to transfer data over the network between storage systems and services.\nUPD260411: Automate data movement – DataSync makes it easier to transfer data over the network between storage systems and services. DataSync automates both the management of data-transfer processes and the infrastructure required for high performance and secure data transfers. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Automate data movement – DataSync makes it easier to transfer data over the network between storage systems and services. DataSync automates both the management of data-transfer processes and the infrastructure required for high performance and secure data transfers.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
   },
   {
     "itemId": "16177b98-9137-461a-a351-05a92120c02c",
@@ -139,17 +193,26 @@
     "question": "A company is designing a shared storage solution for a gaming application that is hosted in the AWS Cloud. The company needs the ability to use\nSMB clients to access data. The solution must be fully managed.\nWhich AWS solution meets these requirements?",
     "correctAnswer": "Create an AWS DataSync task that shares the data as a mountable le system. Mount the le system to the application server.",
     "incorrectAnswers": [
-      "Create an Amazon EC2 Windows instance. Install and congure a Windows fifile share role on the instance. Connect the application server to the fifile share.",
+      "Create an Amazon EC2 Windows instance. Install and congure a Windows file share role on the instance. Connect the application server to the file share.",
       "Create an Amazon FSx for Windows File Server le system. Attach the le system to the origin server. Connect the application server to the le system.",
       "Create an Amazon S3 bucket. Assign an IAM role to the application to grant access to the S3 bucket. Mount the S3 bucket to the application server."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #305). Correct choice: A.",
+    "explanation": "A company is designing a shared storage solution for a gaming application that is hosted in the AWS Cloud. The company needs the ability to use SMB clients to access data. The solution must be fully managed. Which AWS solution meets these requirements? The best-matching choice is: Create an AWS DataSync task that shares the data as a mountable le system. Mount the le system to the application server.. Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use.\nUPD260411: Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
   },
   {
     "itemId": "31479614-99da-4cc1-a1a4-eb074bbb9529",
@@ -163,13 +226,22 @@
       "Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.",
       "Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #306). Correct choice: A.",
+    "explanation": "A company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide a cost- effective network design that... The best-matching choice is: Launch all EC2 instances in the same Availability Zone within the same AWS Region. Specify a placement group with cluster strategy when launching EC2 instances.. An EC2 instance is a virtual server in the AWS Cloud.\nUPD260411: An EC2 instance is a virtual server in the AWS Cloud. When you launch an EC2 instance, the instance type that you specify determines the hardware available to your instance. Each instance type offers a different balance of compute, memory, network, and storage resources. For more information, see the Amazon EC2 Instance Types Guide . (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "An EC2 instance is a virtual server in the AWS Cloud. When you launch an EC2 instance, the instance type that you specify determines the hardware available to your instance. Each instance type offers a different balance of compute, memory, network, and storage resources. For more information, see the Amazon EC2 Instance Types Guide .",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "e1d4519e-ba0e-47fb-af85-3bdead6d3bd6",
@@ -183,13 +255,22 @@
       "AWS Storage Gateway Volume Gateway stored volumes",
       "AWS Storage Gateway Volume Gateway cached volumes"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #307). Correct choice: A.",
+    "explanation": "A company that primarily runs its application servers on premises has decided to migrate to AWS. The company wants to minimize its need to scale its Internet Small Computer Systems Interface (iSCSI) storage on premises. The company wants only its recently accessed data to... The best-matching choice is: Amazon S3 File Gateway. Amazon S3 File Gateway presents a file-based interface to Amazon S3, which appears as a network file share.\nUPD260411: Amazon S3 File Gateway presents a file-based interface to Amazon S3, which appears as a network file share. It enables you to store and retrieve Amazon S3 objects through standard file storage protocols. File Gateway allows your existing file-based applications or devices to use secure and durable cloud storage without needing to be modified. With S3 File Gateway, your configured S3 buckets will be available as Network File System (NFS) mount points or Server Message Block (SMB) file shares. Your applications re... (https://aws.amazon.com/storagegateway/faqs/)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 File Gateway presents a file-based interface to Amazon S3, which appears as a network file share. It enables you to store and retrieve Amazon S3 objects through standard file storage protocols. File Gateway allows your existing file-based applications or devices to use secure and durable cloud storage without needing to be modified. With S3 File Gateway, your configured S3 buckets will be available as Network File System (NFS) mount points or Server Message Block (SMB) file shares. Your applications re...",
+        "source": "https://aws.amazon.com/storagegateway/faqs/"
+      }
+    ]
   },
   {
     "itemId": "2c24890f-6b60-4dcc-9c65-0f9ff3c39fa1",
@@ -203,13 +284,22 @@
       "Turn on the Amazon CloudWatch BucketSizeBytes metric for buckets. Analyze bucket access patterns by using the metrics data with Amazon Athena.",
       "Turn on AWS CloudTrail for S3 object monitoring. Analyze bucket access patterns by using CloudTrail logs that are integrated with Amazon CloudWatch Logs."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #309). Correct choice: A.",
+    "explanation": "A solutions architect needs to optimize storage costs. The solutions architect must identify any Amazon S3 buckets that are no longer being accessed or are rarely accessed. Which solution will accomplish this goal with the LEAST operational overhead? The best-matching choice is: Analyze bucket access patterns by using the S3 Storage Lens dashboard for advanced activity metrics.. Amazon S3 Storage Lens – Understand, analyze, and optimize your storage.\nUPD260411: Amazon S3 Storage Lens – Understand, analyze, and optimize your storage. S3 Storage Lens provides 60+ usage and activity metrics and interactive dashboards to aggregate data for your entire organization, specific accounts, AWS Regions, buckets, or prefixes. (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Storage Lens – Understand, analyze, and optimize your storage. S3 Storage Lens provides 60+ usage and activity metrics and interactive dashboards to aggregate data for your entire organization, specific accounts, AWS Regions, buckets, or prefixes.",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "135ed8a0-b332-4dbc-99dc-804c724f5cd5",
@@ -223,7 +313,7 @@
       "Set up a second S3 bucket in the eu-central-1 Region with S3 Cross-Region Replication between the buckets. Direct customer requests to the closest Region. Continue to use S3 signed URLs for access control.",
       "Modify the web application to enable streaming of the datasets to end users. Configure the web application to read the data from the existing S3 bucket. Implement access control directly in the application."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #310). Correct choice: A.",
+    "explanation": "A company sells datasets to customers who do research in articial intelligence and machine learning (AI/ML). The datasets are large, formatted les that are stored in an Amazon S3 bucket in the us-east-1 Region. The company hosts a web application that the customers use... The best-matching choice is: Configure S3 Transfer Acceleration on the existing S3 bucket. Direct customer requests to the S3 Transfer Acceleration endpoint. Continue to use S3 signed URLs for access control.. Transfer Acceleration must be enabled on the bucket.\nUPD260411: Transfer Acceleration must be enabled on the bucket. For more information, see Enabling and using S3 Transfer Acceleration . After you enable Transfer Acceleration on a bucket, it might take up to 20 minutes before the data transfer speed to the bucket increases. Note Transfer Acceleration is currently supported for buckets located in the following Regions: Asia Pacific (Tokyo) (ap-northeast-1) Asia Pacific (Seoul) (ap-northeast-2) Asia Pacific (Mumbai) (ap-south-1) Asia Pacific (Singapore) (ap-southeast-1) Asia... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -232,7 +322,16 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Transfer Acceleration must be enabled on the bucket. For more information, see Enabling and using S3 Transfer Acceleration . After you enable Transfer Acceleration on a bucket, it might take up to 20 minutes before the data transfer speed to the bucket increases. Note Transfer Acceleration is currently supported for buckets located in the following Regions: Asia Pacific (Tokyo) (ap-northeast-1) Asia Pacific (Seoul) (ap-northeast-2) Asia Pacific (Mumbai) (ap-south-1) Asia Pacific (Singapore) (ap-southeast-1) Asia...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html"
+      }
+    ]
   },
   {
     "itemId": "7c006542-5475-4283-b0d7-dfcb5cc1de37",
@@ -246,27 +345,36 @@
       "Create a single Amazon Simple Notification Service (Amazon SNS) topic. Subscribe Amazon Simple Queue Service (Amazon SQS) queues to the SNS topic. Configure SNS message ltering to publish messages to the proper SQS queue based on the quote type. Configure each backend application server to use its own SQS queue.",
       "Create multiple Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #311). Correct choice: A.",
+    "explanation": "A company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must... The best-matching choice is: Create multiple Amazon Kinesis data streams based on the quote type. Configure the web application to send messages to the proper data stream. Configure each backend group of application servers to use the Kinesis Client Library (KCL) to pool messages from its own data stream.. You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time.\nUPD260411: You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,... (https://docs.aws.amazon.com/streams/latest/dev/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,...",
+        "source": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "41bce5d9-d145-44ae-be80-43a44892ca40",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon\nEBS) data volumes attached to it. The application\u2019s EC2 instance conguration and data need to be backed up nightly. The application also needs\nto be recoverable in a different AWS Region.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
-    "correctAnswer": "Write an AWS Lambda function that schedules nightly snapshots of the application\u2019s EBS volumes and copies the snapshots to a different Region.",
+    "question": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon\nEBS) data volumes attached to it. The application’s EC2 instance conguration and data need to be backed up nightly. The application also needs\nto be recoverable in a different AWS Region.\nWhich solution will meet these requirements in the MOST operationally efficient way?",
+    "correctAnswer": "Write an AWS Lambda function that schedules nightly snapshots of the application’s EBS volumes and copies the snapshots to a different Region.",
     "incorrectAnswers": [
-      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\u2019s EC2 instances as resources.",
-      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application\u2019s EBS volumes as resources.",
+      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application’s EC2 instances as resources.",
+      "Create a backup plan by using AWS Backup to perform nightly backups. Copy the backups to another Region. Add the application’s EBS volumes as resources.",
       "Write an AWS Lambda function that schedules nightly snapshots of the application's EBS volumes and copies the snapshots to a different Availability Zone."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #312). Correct choice: A.",
+    "explanation": "A company has an application that runs on several Amazon EC2 instances. Each EC2 instance has multiple Amazon Elastic Block Store (Amazon EBS) data volumes attached to it. The application’s EC2 instance conguration and data need to be backed up nightly. The application also... The best-matching choice is: Write an AWS Lambda function that schedules nightly snapshots of the application’s EBS volumes and copies the snapshots to a different Region.. AWS Lambda is a compute service that runs code without the need to manage servers.\nUPD260411: AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function . (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -275,21 +383,30 @@
       "lambda",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function .",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "a8f12eca-461a-460b-afc2-ff0372d4af60",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform\nso that authorized users can watch the company\u2019s content on their mobile devices.\nWhat should a solutions architect recommend to meet these requirements?",
+    "question": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform\nso that authorized users can watch the company’s content on their mobile devices.\nWhat should a solutions architect recommend to meet these requirements?",
     "correctAnswer": "Publish content to a public Amazon S3 bucket. Use AWS Key Management Service (AWS KMS) keys to stream content.",
     "incorrectAnswers": [
       "Set up IPsec VPN between the mobile app and the AWS environment to stream content.",
       "Use Amazon CloudFront. Provide signed URLs to stream content.",
       "Set up AWS Client VPN between the mobile app and the AWS environment to stream content."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #313). Correct choice: A.",
+    "explanation": "A company is building a mobile app on AWS. The company wants to expand its reach to millions of users. The company needs to build a platform so that authorized users can watch the company’s content on their mobile devices. What should a solutions... The best-matching choice is: Publish content to a public Amazon S3 bucket. Use AWS Key Management Service (AWS KMS) keys to stream content.. AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.\nUPD260411: AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS. (https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -297,7 +414,16 @@
       "s3",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS.",
+        "source": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+      }
+    ]
   },
   {
     "itemId": "7d7ec491-4779-4a8d-ba99-faa563bf687a",
@@ -311,7 +437,7 @@
       "Amazon Redshift Spectrum",
       "Amazon RDS for MySQL"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #314). Correct choice: A.",
+    "explanation": "A company has an on-premises MySQL database used by the global sales team with infrequent access patterns. The sales team requires the database to have minimal downtime. A database administrator wants to migrate this database to AWS without selecting a particular instance type in... The best-matching choice is: Amazon Aurora MySQL. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -319,7 +445,16 @@
       "aurora",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "d703d540-eefd-472d-b78d-d4dc5820c217",
@@ -333,7 +468,7 @@
       "Turn on Amazon GuardDuty. Deploy the GuardDuty agents to the EC2 instances. Configure an AWS Lambda function to automate the generation and distribution of reports that detail the ndings.",
       "Turn on Amazon Inspector. Deploy the Amazon Inspector agent to the EC2 instances. Configure an AWS Lambda function to automate the generation and distribution of reports that detail the ndings."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #315). Correct choice: A.",
+    "explanation": "A company experienced a breach that affected several applications in its on-premises data center. The attacker took advantage of vulnerabilities in the custom applications that were running on the servers. The company is now migrating its applications to run on Amazon EC2 instances. The... The best-matching choice is: Deploy AWS Shield to scan the EC2 instances for vulnerabilities. Create an AWS Lambda function to log any ndings to AWS CloudTrail.. After you create a Cost and Usage Report, AWS sends your report to the Amazon S3 bucket that you specify.\nUPD260411: After you create a Cost and Usage Report, AWS sends your report to the Amazon S3 bucket that you specify. AWS updates your report at least once a day until your charges are finalized. (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -343,7 +478,16 @@
       "shield",
       "cloudtrail"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "After you create a Cost and Usage Report, AWS sends your report to the Amazon S3 bucket that you specify. AWS updates your report at least once a day until your charges are finalized.",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
   },
   {
     "itemId": "5e68c640-7525-4852-886d-479ddf98822c",
@@ -357,7 +501,7 @@
       "Migrate the script on the EC2 instance to an AWS Lambda function with the appropriate runtime.",
       "Use AWS Systems Manager Run Command to run the script on demand."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #316). Correct choice: A.",
+    "explanation": "A company uses an Amazon EC2 instance to run a script to poll for and process messages in an Amazon Simple Queue Service (Amazon SQS) queue. The company wants to reduce operational costs while maintaining its ability to process a growing number of messages... The best-matching choice is: Increase the size of the EC2 instance to process messages faster.. Both Amazon SQS and Amazon SNS are recommended for new applications that can benefit from nearly unlimited scalability and simple APIs.\nUPD260411: Both Amazon SQS and Amazon SNS are recommended for new applications that can benefit from nearly unlimited scalability and simple APIs. They generally offer more cost-effective solutions for high-volume applications with their pay-as-you-go pricing. We recommend Amazon MQ for migrating applications from existing message brokers that rely on compatibility with APIs such as JMS or protocols such as Advanced Message Queuing Protocol (AMQP), MQTT, OpenWire, and Simple Text Oriented Message Protocol (STOMP). (https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -365,7 +509,16 @@
       "ec2",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Both Amazon SQS and Amazon SNS are recommended for new applications that can benefit from nearly unlimited scalability and simple APIs. They generally offer more cost-effective solutions for high-volume applications with their pay-as-you-go pricing. We recommend Amazon MQ for migrating applications from existing message brokers that rely on compatibility with APIs such as JMS or protocols such as Advanced Message Queuing Protocol (AMQP), MQTT, OpenWire, and Simple Text Oriented Message Protocol (STOMP).",
+        "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "7e60854e-add1-45e2-b190-445b23f3a81d",
@@ -373,13 +526,13 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company uses a legacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is\ndeploying a new commercial off-the-shelf (COTS) application that can perform complex SQL queries to analyze data that is stored in Amazon\nRedshift and Amazon S3 only. However, the COTS application cannot process the .csv les that the legacy application produces.\nThe company cannot update the legacy application to produce data in another format. The company needs to implement a solution so that the\nCOTS application can use the data that the legacy application produces.\nWhich solution will meet these requirements with the LEAST operational overhead?",
-    "correctAnswer": "Create an AWS Glue extraffict, transform, and load (ETL) job that runs on a schedule. Configure the ETL job to process the .csv les and store the processed data in Amazon Redshift.",
+    "correctAnswer": "Create an AWS Glue extract, transform, and load (ETL) job that runs on a schedule. Configure the ETL job to process the .csv les and store the processed data in Amazon Redshift.",
     "incorrectAnswers": [
       "Develop a Python script that runs on Amazon EC2 instances to convert the .csv les to .sql les. Invoke the Python script on a cron schedule to store the output les in Amazon S3.",
-      "Create an AWS Lambda function and an Amazon DynamoDB table. Use an S3 event to invoke the Lambda function. Configure the Lambda function to perform an extraffict, transform, and load (ETL) job to process the .csv les and store the processed data in the DynamoDB table.",
-      "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extraffict, transform, and load (ETL) job to process the .csv les and store the processed data in an Amazon Redshift table."
+      "Create an AWS Lambda function and an Amazon DynamoDB table. Use an S3 event to invoke the Lambda function. Configure the Lambda function to perform an extract, transform, and load (ETL) job to process the .csv les and store the processed data in the DynamoDB table.",
+      "Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extract, transform, and load (ETL) job to process the .csv les and store the processed data in an Amazon Redshift table."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #317). Correct choice: A.",
+    "explanation": "A company uses a legacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is deploying a new commercial off-the-shelf (COTS) application that can perform complex SQL queries to analyze data that is stored... The best-matching choice is: Create an AWS Glue extract, transform, and load (ETL) job that runs on a schedule. Configure the ETL job to process the .csv les and store the processed data in Amazon Redshift.. With AWS Glue, you can discover and connect to more than 70 diverse data sources and manage your data in a centralized data catalog.\nUPD260411: With AWS Glue, you can discover and connect to more than 70 diverse data sources and manage your data in a centralized data catalog. You can visually create, run, and monitor extract, transform, and load (ETL) pipelines to load data into your data lakes. Also, you can immediately search and query cataloged data using Amazon Athena, Amazon EMR, and Amazon Redshift Spectrum. (https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -389,21 +542,30 @@
       "s3",
       "glue"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "With AWS Glue, you can discover and connect to more than 70 diverse data sources and manage your data in a centralized data catalog. You can visually create, run, and monitor extract, transform, and load (ETL) pipelines to load data into your data lakes. Also, you can immediately search and query cataloged data using Amazon Athena, Amazon EMR, and Amazon Redshift Spectrum.",
+        "source": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+      }
+    ]
   },
   {
     "itemId": "20dbd54c-4021-42dd-9b16-a7a25f0ed2ec",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage\nthe instances. After a recent audit, the company\u2019s security team is mandating the removal of all shared keys. A solutions architect must design a\nsolution that provides secure access to the EC2 instances.\nWhich solution will meet this requirement with the LEAST amount of administrative overhead?",
+    "question": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage\nthe instances. After a recent audit, the company’s security team is mandating the removal of all shared keys. A solutions architect must design a\nsolution that provides secure access to the EC2 instances.\nWhich solution will meet this requirement with the LEAST amount of administrative overhead?",
     "correctAnswer": "Use AWS Systems Manager Session Manager to connect to the EC2 instances.",
     "incorrectAnswers": [
       "Use AWS Security Token Service (AWS STS) to generate one-time SSH keys on demand.",
       "Allow shared SSH access to a set of bastion instances. Configure all other instances to allow only SSH access from the bastion instances.",
       "Use an Amazon Cognito custom authorizer to authenticate users. Invoke an AWS Lambda function to generate a temporary SSH key."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #319). Correct choice: A.",
+    "explanation": "A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage the instances. After a recent audit, the company’s security team is mandating the removal of all shared keys. A solutions architect must... The best-matching choice is: Use AWS Systems Manager Session Manager to connect to the EC2 instances.. Perform operations at scale on EC2 instances with this secure end-to-end management solution.\nUPD260411: Perform operations at scale on EC2 instances with this secure end-to-end management solution. (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-management",
@@ -411,21 +573,30 @@
       "ec2",
       "systems-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "Perform operations at scale on EC2 instances with this secure end-to-end management solution.",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "35a94ef1-908d-41bc-844c-6f10e1bee50b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion\nrates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost. The company\u2019s data science team wants to query\ningested data in near-real time.\nWhich solution provides near-real-time data querying that is scalable with minimal data loss?",
+    "question": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion\nrates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost. The company’s data science team wants to query\ningested data in near-real time.\nWhich solution provides near-real-time data querying that is scalable with minimal data loss?",
     "correctAnswer": "Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) to query the data.",
     "incorrectAnswers": [
       "Publish data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) with Amazon Redshift as the destination. Use Amazon Redshift to query the data.",
       "Store ingested data in an EC2 instance store. Publish data to Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) with Amazon S3 as the destination. Use Amazon Athena to query the data.",
       "Store ingested data in an Amazon Elastic Block Store (Amazon EBS) volume. Publish data to Amazon ElastiCache for Redis. Subscribe to the Redis channel to query the data."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #320). Correct choice: A.",
+    "explanation": "A company is using a eet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion rates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-ight is lost.... The best-matching choice is: Publish data to Amazon Kinesis Data Streams, Use Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads) to query the data.. You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time.\nUPD260411: You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,... (https://docs.aws.amazon.com/streams/latest/dev/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -433,6 +604,15 @@
       "ec2",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:39Z",
+        "conclusion": "correct",
+        "explanation": "You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,...",
+        "source": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+      }
+    ]
   }
 ]

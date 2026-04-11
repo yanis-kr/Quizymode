@@ -1,0 +1,628 @@
+[
+  {
+    "itemId": "633e2f52-dd71-418f-8ab4-a1cf6027dd71",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to move its application to a serverless solution. The serverless solution needs to analyze existing and new data by using SL.\nThe company stores the data in an Amazon S3 bucket. The data requires encryption and must be replicated to a different AWS Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create a new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data.",
+    "incorrectAnswers": [
+      "Create a new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region keys (SSE-KMS). Use Amazon RDS to query the data.",
+      "Load the data into the existing S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use Amazon Athena to query the data.",
+      "Load the data into the existing S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use Amazon RDS to query the data."
+    ],
+    "explanation": "A company wants to move its application to a serverless solution. The serverless solution needs to analyze existing and new data by using SL. The company stores the data in an Amazon S3 bucket. The data requires encryption and must be replicated to a... The best-matching choice is: Create a new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data.. Replicate objects within 15 minutes – To replicate your data in the same AWS Region or across different Regions within a predictable time frame, you can use S3 Replication Time Control (S3 RTC).\nUPD260411: Replicate objects within 15 minutes – To replicate your data in the same AWS Region or across different Regions within a predictable time frame, you can use S3 Replication Time Control (S3 RTC). S3 RTC replicates 99.99 percent of new objects stored in Amazon S3 within 15 minutes (backed by a service-level agreement). For more information, see Meeting compliance requirements with S3 Replication Time Control . Note S3 RTC does not apply to Batch Replication. Batch Replication is an on-demand replication job, and c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3",
+      "athena",
+      "kms",
+      "serverless"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:33Z",
+        "conclusion": "correct",
+        "explanation": "Replicate objects within 15 minutes – To replicate your data in the same AWS Region or across different Regions within a predictable time frame, you can use S3 Replication Time Control (S3 RTC). S3 RTC replicates 99.99 percent of new objects stored in Amazon S3 within 15 minutes (backed by a service-level agreement). For more information, see Meeting compliance requirements with S3 Replication Time Control . Note S3 RTC does not apply to Batch Replication. Batch Replication is an on-demand replication job, and c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+      }
+    ]
+  },
+  {
+    "itemId": "312c9486-e4f7-4b6f-a04a-4227a9a7761c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's\nVPC. According to the company’s security team, the connectivity must be private and must be restricted to the target service. The connection\nmust be initiated only from the company’s VPC.\nWhich solution will mast these requirements?",
+    "correctAnswer": "Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.",
+    "incorrectAnswers": [
+      "Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.",
+      "Ask the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.",
+      "Create a NAT gateway in a public subnet of the company’s VPUpdate the route table to connect to the target service."
+    ],
+    "explanation": "A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's VPC. According to the company’s security team, the connectivity must be private and must be restricted to the target... The best-matching choice is: Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.. Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing.\nUPD260411: Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing. From data warehousing to deployment tools, directories to content delivery, over 200 AWS services are available. (https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "vpc",
+      "vpc-endpoint"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing. From data warehousing to deployment tools, directories to content delivery, over 200 AWS services are available.",
+        "source": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "fab3c2f0-ff8e-416f-80c3-6f0046cfb43f",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses AWS Organizations to create dedicated AWS accounts for each business unit to manage each business unit's account\nindependently upon request. The root email recipient missed a notication that was sent to the root user email address of one account. The\ncompany wants to ensure that all future notications are not missed. Future notications must be limited to account administrators.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Configure the company’s email server to forward notication email messages that are sent to the AWS account root user email address to all users in the organization.",
+    "incorrectAnswers": [
+      "Configure all AWS account root user email addresses as distribution lists that go to a few administrators who can respond to alerts. Configure AWS account alternate contacts in the AWS Organizations console or programmatically.",
+      "Configure all AWS account root user email messages to be sent to one administrator who is responsible for monitoring alerts and forwarding those alerts to the appropriate groups.",
+      "Configure all existing AWS accounts and all newly created accounts to use the same root user email address. Configure AWS account alternate contacts in the AWS Organizations console or programmatically."
+    ],
+    "explanation": "A company uses AWS Organizations to create dedicated AWS accounts for each business unit to manage each business unit's account independently upon request. The root email recipient missed a notication that was sent to the root user email address of one account. The company... The best-matching choice is: Configure the company’s email server to forward notication email messages that are sent to the AWS account root user email address to all users in the organization.. You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements.\nUPD260411: You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements. Create a central log of all actions performed across your organization using AWS CloudTrail . View and enforce standard resource configurations across accounts and AWS Regions using AWS Config . Automatically apply regular backups using AWS Backup . Use AWS Control Tower to apply pre-packaged governance rules for security, operations, and compliance for your AWS wo... (https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "organizations"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements. Create a central log of all actions performed across your organization using AWS CloudTrail . View and enforce standard resource configurations across accounts and AWS Regions using AWS Config . Automatically apply regular backups using AWS Backup . Use AWS Control Tower to apply pre-packaged governance rules for security, operations, and compliance for your AWS wo...",
+        "source": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "f05b2404-ac4f-49a4-8c37-8149ac3f7596",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs its ecommerce application on AWS. Every new order is published as a massage in a RabbitMQ queue that runs on an Amazon EC2\ninstance in a single Availability Zone. These messages are processed by a different application that runs on a separate EC2 instance. This\napplication stores the details in a PostgreSQL database on another EC2 instance. All the EC2 instances are in the same Availability Zone.\nThe company needs to redesign its architecture to provide the highest availability with the least operational overhead.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Migrate the queue to a redundant pair (active/standby) of RabbitMQ instances on Amazon MQ. Create a Multi-AZ Auto Scaling group for EC2 instances that host the application. Create another Multi-AZ Auto Scaling group for EC2 instances that host the PostgreSQL database.",
+    "incorrectAnswers": [
+      "Migrate the queue to a redundant pair (active/standby) of RabbitMQ instances on Amazon MQ. Create a Multi-AZ Auto Scaling group for EC2 instances that host the application. Migrate the database to run on a Multi-AZ deployment of Amazon RDS for PostgreSQL.",
+      "Create a Multi-AZ Auto Scaling group for EC2 instances that host the RabbitMQ queue. Create another Multi-AZ Auto Scaling group for EC2 instances that host the application. Migrate the database to run on a Multi-AZ deployment of Amazon RDS for PostgreSQL.",
+      "Create a Multi-AZ Auto Scaling group for EC2 instances that host the RabbitMQ queue. Create another Multi-AZ Auto Scaling group for EC2 instances that host the application. Create a third Multi-AZ Auto Scaling group for EC2 instances that host the PostgreSQL database"
+    ],
+    "explanation": "A company runs its ecommerce application on AWS. Every new order is published as a massage in a RabbitMQ queue that runs on an Amazon EC2 instance in a single Availability Zone. These messages are processed by a different application that runs on a... The best-matching choice is: Migrate the queue to a redundant pair (active/standby) of RabbitMQ instances on Amazon MQ. Create a Multi-AZ Auto Scaling group for EC2 instances that host the application. Create another Multi-AZ Auto Scaling group for EC2 instances that host the PostgreSQL database.. You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales.\nUPD260411: You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales. This provides high availability and resiliency by protecting your applications from failures in a single location. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "ec2",
+      "auto-scaling",
+      "mq",
+      "postgresql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales. This provides high availability and resiliency by protecting your applications from failures in a single location.",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
+  },
+  {
+    "itemId": "b47a4f7e-4fcb-4d65-8363-c49e93007443",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A reporting team receives les each day in an Amazon S3 bucket. The reporting team manually reviews and copies the les from this initial S3\nbucket to an analysis S3 bucket each day at the same time to use with Amazon QuickSight. Additional teams are starting to send more les in\nlarger sizes to the initial S3 bucket.\nThe reporting team wants to move the les automatically analysis S3 bucket as the les enter the initial S3 bucket. The reporting team also wants\nto use AWS Lambda functions to run pattern-matching code on the copied data. In addition, the reporting team wants to send the data les to a\npipeline in Amazon SageMaker Pipelines.\nWhat should a solutions architect do to meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create a Lambda function to copy the les to the analysis S3 bucket. Create an S3 event notication for the analysis S3 bucket. Configure Lambda and SageMaker Pipelines as destinations of the event notication. Configure s3:ObjectCreated:Put as the event type.",
+    "incorrectAnswers": [
+      "Create a Lambda function to copy the les to the analysis S3 bucket. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge). Configure an ObjectCreated rule in EventBridge (note: outdated alias \"CloudWatch Events\"). Configure Lambda and SageMaker Pipelines as targets for the rule.",
+      "Configure S3 replication between the S3 buckets. Create an S3 event notication for the analysis S3 bucket. Configure Lambda and SageMaker Pipelines as destinations of the event notication. Configure s3:ObjectCreated:Put as the event type.",
+      "Configure S3 replication between the S3 buckets. Configure the analysis S3 bucket to send event notications to Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge). Configure an ObjectCreated rule in EventBridge (note: outdated alias \"CloudWatch Events\"). Configure Lambda and SageMaker Pipelines as targets for the rule."
+    ],
+    "explanation": "A reporting team receives les each day in an Amazon S3 bucket. The reporting team manually reviews and copies the les from this initial S3 bucket to an analysis S3 bucket each day at the same time to use with Amazon QuickSight. Additional teams... The best-matching choice is: Create a Lambda function to copy the les to the analysis S3 bucket. Create an S3 event notication for the analysis S3 bucket. Configure Lambda and SageMaker Pipelines as destinations of the event notication. Configure s3:ObjectCreated:Put as the event type.. Amazon QuickSight has been rebranded to Amazon Quick, expanding from a standalone business intelligence service to a comprehensive analytics and AI platform.\nUPD260411: Amazon QuickSight has been rebranded to Amazon Quick, expanding from a standalone business intelligence service to a comprehensive analytics and AI platform. QuickSight continues as Amazon Quick Sight, a core component within the Quick ecosystem. Amazon Quick Sight retains existing functionality including interactive data visualization, SPICE in-memory analytics, embedded analytics, and dashboard sharing. All existing QuickSight APIs, SDKs, and integrations continue to work without changes. (https://docs.aws.amazon.com/quicksight/latest/user/welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "s3",
+      "lambda",
+      "quicksight"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Amazon QuickSight has been rebranded to Amazon Quick, expanding from a standalone business intelligence service to a comprehensive analytics and AI platform. QuickSight continues as Amazon Quick Sight, a core component within the Quick ecosystem. Amazon Quick Sight retains existing functionality including interactive data visualization, SPICE in-memory analytics, embedded analytics, and dashboard sharing. All existing QuickSight APIs, SDKs, and integrations continue to work without changes.",
+        "source": "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "8ab96d09-2535-4a0f-975e-da4d47ccd4ae",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a web-based portal that provides users with global breaking news, local alerts, and weather updates. The portal delivers each\nuser a personalized view by using mixture of static and dynamic content. Content is served over HTTPS through an API server running on an\nAmazon EC2 instance behind an Application Load Balancer (ALB). The company wants the portal to provide this content to its users across the\nworld as quickly as possible.\nHow should a solutions architect design the application to ensure the LEAST amount of latency for all users?",
+    "correctAnswer": "Deploy the application stack in two AWS Regions. Use an Amazon Route 53 geolocation routing policy to serve all content from the ALB in the closest Region.",
+    "incorrectAnswers": [
+      "Deploy the application stack in a single AWS Region. Use Amazon CloudFront to serve all static and dynamic content by specifying the ALB as an origin.",
+      "Deploy the application stack in two AWS Regions. Use an Amazon Route 53 latency routing policy to serve all content from the ALB in the closest Region.",
+      "Deploy the application stack in a single AWS Region. Use Amazon CloudFront to serve the static content. Serve the dynamic content directly from the ALB."
+    ],
+    "explanation": "A company runs a web-based portal that provides users with global breaking news, local alerts, and weather updates. The portal delivers each user a personalized view by using mixture of static and dynamic content. Content is served over HTTPS through an API server running... The best-matching choice is: Deploy the application stack in two AWS Regions. Use an Amazon Route 53 geolocation routing policy to serve all content from the ALB in the closest Region.. Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional.\nUPD260411: Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional. You also can choose to receive notifications when a resource becomes unavailable and choose to route internet traffic away from unhealthy resources. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "route53",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional. You also can choose to receive notifications when a resource becomes unavailable and choose to route internet traffic away from unhealthy resources.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "93b7a15d-ae3c-40a6-bf27-a21c016ef571",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A gaming company is designing a highly available architecture. The application runs on a modied Linux kernel and supports only UDP-based\ntraffic. The company needs the front-end tier to provide the best possible user experience. That tier must have low latency, route traffic to the\nnearest edge location, and provide static IP addresses for entry into the application endpoints.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Configure Amazon API Gateway to forward requests to an Application Load Balancer. Use Amazon EC2 instances for the application in an EC2 Auto Scaling group.",
+    "incorrectAnswers": [
+      "Configure Amazon Route 53 to forward requests to an Application Load Balancer. Use AWS Lambda for the application in AWS Application Auto Scaling.",
+      "Configure Amazon CloudFront to forward requests to a Network Load Balancer. Use AWS Lambda for the application in an AWS Application Auto Scaling group.",
+      "Configure AWS Global Accelerator to forward requests to a Network Load Balancer. Use Amazon EC2 instances for the application in an EC2 Auto Scaling group."
+    ],
+    "explanation": "A gaming company is designing a highly available architecture. The application runs on a modied Linux kernel and supports only UDP-based traffic. The company needs the front-end tier to provide the best possible user experience. That tier must have low latency, route traffic to... The best-matching choice is: Configure Amazon API Gateway to forward requests to an Application Load Balancer. Use Amazon EC2 instances for the application in an EC2 Auto Scaling group.. Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other.\nUPD260411: Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "api-gateway",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "c6496652-d0e7-47d3-85ec-e9c9a73c6b44",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate its existing on-premises monolithic application to AWS. The company wants to keep as much of the front-end code\nand the backend code as possible. However, the company wants to break the application into smaller applications. A different team will manage\neach application. The company needs a highly scalable solution that minimizes operational overhead.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Host the application on Amazon Elastic Container Service (Amazon ECS). Set up an Application Load Balancer with Amazon ECS as the target.",
+    "incorrectAnswers": [
+      "Host the application on AWS Lambda. Integrate the application with Amazon API Gateway.",
+      "Host the application with AWS Amplify. Connect the application to an Amazon API Gateway API that is integrated with AWS Lambda.",
+      "Host the application on Amazon EC2 instances. Set up an Application Load Balancer with EC2 instances in an Auto Scaling group as targets."
+    ],
+    "explanation": "A company wants to migrate its existing on-premises monolithic application to AWS. The company wants to keep as much of the front-end code and the backend code as possible. However, the company wants to break the application into smaller applications. A different team will... The best-matching choice is: Host the application on Amazon Elastic Container Service (Amazon ECS). Set up an Application Load Balancer with Amazon ECS as the target.. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model.\nUPD260411: An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ecs",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "adb1d255-8703-47d1-8731-f91b708a29d2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company recently started using Amazon Aurora as the data store for its global ecommerce application. When large reports are run, developers\nreport that the ecommerce application is performing poorly. After reviewing metrics in Amazon CloudWatch, a solutions architect nds that the\nReadIOPS and CPUUtilizalion metrics are spiking when monthly reports run.\nWhat is the MOST cost-effective solution?",
+    "correctAnswer": "Increase the Provisioned IOPS on the Aurora instance.",
+    "incorrectAnswers": [
+      "Migrate the monthly reporting to Amazon Redshift.",
+      "Migrate the monthly reporting to an Aurora Replica.",
+      "Migrate the Aurora database to a larger instance class."
+    ],
+    "explanation": "A company recently started using Amazon Aurora as the data store for its global ecommerce application. When large reports are run, developers report that the ecommerce application is performing poorly. After reviewing metrics in Amazon CloudWatch, a solutions architect nds that the ReadIOPS and... The best-matching choice is: Increase the Provisioned IOPS on the Aurora instance.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-management",
+      "databases",
+      "aurora",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
+  },
+  {
+    "itemId": "6599c24f-5a86-4352-a26b-0194a4e09679",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses\na MySQL database. The analytics software, the web server that provides PHP, and the database server are all hosted on the EC2 instance. The\napplication is showing signs of performance degradation during busy times and is presenting 5xx errors. The company needs to make the\napplication scale seamlessly.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use an Application Load Balancer to distribute the load to each EC2 instance.",
+    "incorrectAnswers": [
+      "Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use Amazon Route 53 weighted routing to distribute the load across the two EC2 instances.",
+      "Migrate the database to an Amazon Aurora MySQL DB instance. Create an AWS Lambda function to stop the EC2 instance and change the instance type. Create an Amazon CloudWatch alarm to invoke the Lambda function when CPU utilization surpasses 75%.",
+      "Migrate the database to an Amazon Aurora MySQL DB instance. Create an AMI of the web application. Apply the AMI to a launch template. Create an Auto Scaling group with the launch template Configure the launch template to use a Spot Fleet. Attach an Application Load Balancer to the Auto Scaling group."
+    ],
+    "explanation": "A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL database. The analytics software, the web server that provides PHP, and the database server are all hosted on the... The best-matching choice is: Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use an Application Load Balancer to distribute the load to each EC2 instance.. Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other.\nUPD260411: Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "ec2",
+      "alb",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "b86ed050-7e5b-443c-a4ce-c54e4775a17c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs a stateless web application in production on a group of Amazon EC2 On-Demand Instances behind an Application Load Balancer.\nThe application experiences heavy usage during an 8-hour period each business day. Application usage is moderate and steady overnight.\nApplication usage is low during weekends.\nThe company wants to minimize its EC2 costs without affecting the availability of the application.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use Spot Instances for the entire workload.",
+    "incorrectAnswers": [
+      "Use Reserved Instances for the baseline level of usage. Use Spot instances for any additional capacity that the application needs.",
+      "Use On-Demand Instances for the baseline level of usage. Use Spot Instances for any additional capacity that the application needs.",
+      "Use Dedicated Instances for the baseline level of usage. Use On-Demand Instances for any additional capacity that the application needs."
+    ],
+    "explanation": "A company runs a stateless web application in production on a group of Amazon EC2 On-Demand Instances behind an Application Load Balancer. The application experiences heavy usage during an 8-hour period each business day. Application usage is moderate and steady overnight. Application usage is... The best-matching choice is: Use Spot Instances for the entire workload.. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model.\nUPD260411: An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "alb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "52856484-343e-4869-a36f-d08b91a617e7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to retain application log files for a critical application for 10 years. The application team regularly accesses logs from the past\nmonth for troubleshooting, but logs older than 1 month are rarely accessed. The application generates more than 10 TB of logs per month.\nWhich storage option meets these requirements MOST cost-effectively?",
+    "correctAnswer": "Store the logs in Amazon S3. Use AWS Backup to move logs more than 1 month old to S3 Glacier Deep Archive.",
+    "incorrectAnswers": [
+      "Store the logs in Amazon S3. Use S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive.",
+      "Store the logs in Amazon CloudWatch Logs. Use AWS Backup to move logs more than 1 month old to S3 Glacier Deep Archive.",
+      "Store the logs in Amazon CloudWatch Logs. Use Amazon S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive."
+    ],
+    "explanation": "A company needs to retain application log files for a critical application for 10 years. The application team regularly accesses logs from the past month for troubleshooting, but logs older than 1 month are rarely accessed. The application generates more than 10 TB of... The best-matching choice is: Store the logs in Amazon S3. Use AWS Backup to move logs more than 1 month old to S3 Glacier Deep Archive.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier",
+      "aws-backup"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "236367fd-a165-40cf-90ef-d9eb3fe1a4d7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a data ingestion workflow that includes the following components:\nAn Amazon Simple Notification Service (Amazon SNS) topic that receives notications about new data deliveries\nAn AWS Lambda function that processes and stores the data\nThe ingestion workflow occasionally fails because of network connectivity issues. When failure occurs, the corresponding data is not ingested\nunless the company manually reruns the job.\nWhat should a solutions architect do to ensure that all notications are eventually processed?",
+    "correctAnswer": "Configure the Lambda function for deployment across multiple Availability Zones.",
+    "incorrectAnswers": [
+      "Modify the Lambda function's conguration to increase the CPU and memory allocations for the function.",
+      "Configure the SNS topic’s retry strategy to increase both the number of retries and the wait time between retries.",
+      "Configure an Amazon Simple Queue Service (Amazon SQS) queue as the on-failure destination. Modify the Lambda function to process messages in the queue."
+    ],
+    "explanation": "A company has a data ingestion workflow that includes the following components: An Amazon Simple Notification Service (Amazon SNS) topic that receives notications about new data deliveries An AWS Lambda function that processes and stores the data The ingestion workflow occasionally fails because of... The best-matching choice is: Configure the Lambda function for deployment across multiple Availability Zones.. Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year.\nUPD260411: Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-compute",
+      "lambda",
+      "sns"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "30de8e1b-37b5-46e1-9b7e-08e7ac0cc63a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company has a service that produces event data. The company wants to use AWS to process the event data as it is received. The data is written\nin a specific order that must be maintained throughout processing. The company wants to implement a solution that minimizes operational\noverhead.\nHow should a solutions architect accomplish this?",
+    "correctAnswer": "Create an Amazon Simple Queue Service (Amazon SQS) FIFO queue to hold messages. Set up an AWS Lambda function to process messages from the queue.",
+    "incorrectAnswers": [
+      "Create an Amazon Simple Notification Service (Amazon SNS) topic to deliver notications containing payloads to process. Configure an AWS Lambda function as a subscriber.",
+      "Create an Amazon Simple Queue Service (Amazon SQS) standard queue to hold messages. Set up an AWS Lambda function to process messages from the queue independently.",
+      "Create an Amazon Simple Notification Service (Amazon SNS) topic to deliver notications containing payloads to process. Configure an Amazon Simple Queue Service (Amazon SQS) queue as a subscriber."
+    ],
+    "explanation": "A company has a service that produces event data. The company wants to use AWS to process the event data as it is received. The data is written in a specific order that must be maintained throughout processing. The company wants to implement a... The best-matching choice is: Create an Amazon Simple Queue Service (Amazon SQS) FIFO queue to hold messages. Set up an AWS Lambda function to process messages from the queue.. Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year.\nUPD260411: Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-integration",
+      "aws-compute",
+      "lambda",
+      "sqs"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "08691f82-0fb7-4900-8775-7fad1f2b3677",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is migrating an application from on-premises servers to Amazon EC2 instances. As part of the migration design requirements, a\nsolutions architect must implement infrastructure metric alarms. The company does not need to take action if CPU utilization increases to more\nthan 50% for a short burst of time. However, if the CPU utilization increases to more than 50% and read IOPS on the disk are high at the same time,\nthe company needs to act as soon as possible. The solutions architect also must reduce false alarms.\nWhat should the solutions architect do to meet these requirements?",
+    "correctAnswer": "Create Amazon CloudWatch composite alarms where possible.",
+    "incorrectAnswers": [
+      "Create Amazon CloudWatch dashboards to visualize the metrics and react to issues quickly.",
+      "Create Amazon CloudWatch Synthetics canaries to monitor the application and raise an alarm.",
+      "Create single Amazon CloudWatch metric alarms with multiple metric thresholds where possible."
+    ],
+    "explanation": "A company is migrating an application from on-premises servers to Amazon EC2 instances. As part of the migration design requirements, a solutions architect must implement infrastructure metric alarms. The company does not need to take action if CPU utilization increases to more than 50%... The best-matching choice is: Create Amazon CloudWatch composite alarms where possible.. Use the CloudWatch agent to collect detailed system metrics about processes, CPU, memory, disk usage, and network performance from your fleets of Amazon EC2 instances and on-premises servers.\nUPD260411: Use the CloudWatch agent to collect detailed system metrics about processes, CPU, memory, disk usage, and network performance from your fleets of Amazon EC2 instances and on-premises servers. You can also collect and monitor custom metrics from your applications, aggregate logs from multiple sources, and configure alarms based on the collected data. You can also use the agent to gather GPU metrics . The agent supports both Windows and Linux operating systems and can integrate with Systems Manager for centralized... (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-management",
+      "ec2",
+      "cloudwatch"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Use the CloudWatch agent to collect detailed system metrics about processes, CPU, memory, disk usage, and network performance from your fleets of Amazon EC2 instances and on-premises servers. You can also collect and monitor custom metrics from your applications, aggregate logs from multiple sources, and configure alarms based on the collected data. You can also use the agent to gather GPU metrics . The agent supports both Windows and Linux operating systems and can integrate with Systems Manager for centralized...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      }
+    ]
+  },
+  {
+    "itemId": "0a6844db-69c1-48d8-a02b-64dc03e538ab",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses a three-tier web application to provide training to new employees. The application is accessed for only 12 hours every day. The\ncompany is using an Amazon RDS for MySQL DB instance to store information and wants to minimize costs.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Configure an IAM policy for AWS Systems Manager Session Manager. Create an IAM role for the policy. Update the trust relationship of the role. Set up automatic start and stop for the DB instance.",
+    "incorrectAnswers": [
+      "Create an Amazon ElastiCache for Redis cache cluster that gives users the ability to access the data from the cache when the DB instance is stopped. Invalidate the cache after the DB instance is started.",
+      "Launch an Amazon EC2 instance. Create an IAM role that grants access to Amazon RDS. Attach the role to the EC2 instance. Configure a cron job to start and stop the EC2 instance on the desired schedule.",
+      "Create AWS Lambda functions to start and stop the DB instance. Create Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) scheduled rules to invoke the Lambda functions. Configure the Lambda functions as event targets for the rules."
+    ],
+    "explanation": "A company uses a three-tier web application to provide training to new employees. The application is accessed for only 12 hours every day. The company is using an Amazon RDS for MySQL DB instance to store information and wants to minimize costs. What should... The best-matching choice is: Configure an IAM policy for AWS Systems Manager Session Manager. Create an IAM role for the policy. Update the trust relationship of the role. Set up automatic start and stop for the DB instance.. You can access your DB instances by using the same tools and applications that you use with a standalone database instance.\nUPD260411: You can access your DB instances by using the same tools and applications that you use with a standalone database instance. You can create and modify a DB instance by using the AWS Command Line Interface (AWS CLI), the Amazon RDS API, or the AWS Management Console. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-management",
+      "aws-database",
+      "databases",
+      "rds",
+      "iam",
+      "systems-manager",
+      "mysql"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "You can access your DB instances by using the same tools and applications that you use with a standalone database instance. You can create and modify a DB instance by using the AWS Command Line Interface (AWS CLI), the Amazon RDS API, or the AWS Management Console.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "4e8504a2-dd14-490b-b9c9-17ad8c3a13b1",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company sells ringtones created from clips of popular songs. The les containing the ringtones are stored in Amazon S3 Standard and are at\nleast 128 KB in size. The company has millions of les, but downloads are infrequent for ringtones older than 90 days. The company needs to\nsave money on storage while keeping the most accessed les readily available for its users.\nWhich action should the company take to meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
+    "incorrectAnswers": [
+      "Move the les to S3 Intelligent-Tiering and congure it to move objects to a less expensive storage tier after 90 days.",
+      "Configure S3 inventory to manage objects and move them to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+      "Implement an S3 Lifecycle policy that moves the objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days."
+    ],
+    "explanation": "A company sells ringtones created from clips of popular songs. The les containing the ringtones are stored in Amazon S3 Standard and are at least 128 KB in size. The company has millions of les, but downloads are infrequent for ringtones older than 90... The best-matching choice is: Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "e8bf843b-3e7b-4a9d-a895-66c8d27fe6a1",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs to save the results from a medical trial to an Amazon S3 repository. The repository must allow a few scientists to add new les\nand must restrict all other users to read-only access. No users can have the ability to modify or delete any les in the repository. The company\nmust keep every le in the repository for a minimum of 1 year after its creation date.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use S3 Object Lock in governance mode with a legal hold of 1 year.",
+    "incorrectAnswers": [
+      "Use S3 Object Lock in compliance mode with a retention period of 365 days.",
+      "Use an IAM role to restrict all users from deleting or changing objects in the S3 bucket. Use an S3 bucket policy to only allow the IAM role.",
+      "Configure the S3 bucket to invoke an AWS Lambda function every time an object is added. Configure the function to traffick the hash of the saved object so that modied objects can be marked accordingly."
+    ],
+    "explanation": "A company needs to save the results from a medical trial to an Amazon S3 repository. The repository must allow a few scientists to add new les and must restrict all other users to read-only access. No users can have the ability to modify... The best-matching choice is: Use S3 Object Lock in governance mode with a legal hold of 1 year.. S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely.\nUPD260411: S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely. You can use Object Lock to help meet regulatory requirements that require write-once-read-many (WORM) storage or to simply add another layer of protection against object changes and deletions. (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely. You can use Object Lock to help meet regulatory requirements that require write-once-read-many (WORM) storage or to simply add another layer of protection against object changes and deletions.",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
+  },
+  {
+    "itemId": "787884a1-7222-4bcf-bc24-b46f25f375bd",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A large media company hosts a web application on AWS. The company wants to start caching condential media les so that users around the\nworld will have reliable access to the les. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless\nof where the requests originate geographically.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS DataSync to connect the S3 buckets to the web application.",
+    "incorrectAnswers": [
+      "Deploy AWS Global Accelerator to connect the S3 buckets to the web application.",
+      "Deploy Amazon CloudFront to connect the S3 buckets to CloudFront edge servers.",
+      "Use Amazon Simple Queue Service (Amazon SQS) to connect the S3 buckets to the web application."
+    ],
+    "explanation": "A large media company hosts a web application on AWS. The company wants to start caching condential media les so that users around the world will have reliable access to the les. The content is stored in Amazon S3 buckets. The company must deliver... The best-matching choice is: Use AWS DataSync to connect the S3 buckets to the web application.. AWS DataSync is a secure, reliable, high‐speed file transfer service that helps you quickly and easily transfer your file or object data to, from, and between AWS storage services.\nUPD260411: AWS DataSync is a secure, reliable, high‐speed file transfer service that helps you quickly and easily transfer your file or object data to, from, and between AWS storage services. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:34Z",
+        "conclusion": "correct",
+        "explanation": "AWS DataSync is a secure, reliable, high‐speed file transfer service that helps you quickly and easily transfer your file or object data to, from, and between AWS storage services.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
+  },
+  {
+    "itemId": "13df3505-ff03-4d55-b6f4-968a8a1738c5",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect is optimizing a website for an upcoming musical event. Videos of the performances will be streamed in real time and then\nwill be available on demand. The event is expected to attraffict a global online audience.\nWhich service will improve the performance of both the real-time and on-demand streaming?",
+    "correctAnswer": "Amazon CloudFront",
+    "incorrectAnswers": [
+      "AWS Global Accelerator",
+      "Amazon Route 53",
+      "Amazon S3 Transfer Acceleration"
+    ],
+    "explanation": "A solutions architect is optimizing a website for an upcoming musical event. Videos of the performances will be streamed in real time and then will be available on demand. The event is expected to attraffict a global online audience. Which service will improve the... The best-matching choice is: Amazon CloudFront. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:35Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
+  }
+]

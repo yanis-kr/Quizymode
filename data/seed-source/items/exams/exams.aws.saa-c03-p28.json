@@ -11,14 +11,23 @@
       "Use dynamic scaling to change the size of the Auto Scaling group.",
       "Use schedule scaling to change the size of the Auto Scaling group."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #595). Correct choice: A.",
+    "explanation": "A company's applications run on Amazon EC2 instances in Auto Scaling groups. The company notices that its applications experience sudden traffic increases on random days of the week. The company wants to maintain application performance during sudden traffic increases. Which solution will meet these... The best-matching choice is: Use manual scaling to change the size of the Auto Scaling group.. Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application.\nUPD260411: Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo... (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo...",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "3ba4831a-54cb-4468-ae41-dd7e3bfa86c0",
@@ -32,7 +41,7 @@
       "Migrate the PostgreSQL database to Amazon RDS for PostgreSQL with a larger instance type.",
       "Migrate the PostgreSQL database to Amazon Redshift to accommodate increased usage."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #596). Correct choice: A.",
+    "explanation": "An ecommerce application uses a PostgreSQL database that runs on an Amazon EC2 instance. During a monthly sales event, database usage increases and causes database connection issues for the application. The traffic is unpredictable for subsequent monthly sales events, which impacts the sales forecast.... The best-matching choice is: Migrate the PostgreSQL database to Amazon Aurora Serverless v2.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -43,21 +52,30 @@
       "serverless",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "e5fa24be-1d16-4a42-8d13-ecb59e1e93ec",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company hosts an internal serverless application on AWS by using Amazon API Gateway and AWS Lambda. The company\u2019s employees report\nissues with high latency when they begin using the application each day. The company wants to reduce latency.\nWhich solution will meet these requirements?",
+    "question": "A company hosts an internal serverless application on AWS by using Amazon API Gateway and AWS Lambda. The company’s employees report\nissues with high latency when they begin using the application each day. The company wants to reduce latency.\nWhich solution will meet these requirements?",
     "correctAnswer": "Increase the API Gateway throttling limit.",
     "incorrectAnswers": [
       "Set up a scheduled scaling to increase Lambda provisioned concurrency before employees begin to use the application each day.",
       "Create an Amazon CloudWatch alarm to initiate a Lambda function as a target for the alarm at the beginning of each day.",
       "Increase the Lambda function memory."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #597). Correct choice: A.",
+    "explanation": "A company hosts an internal serverless application on AWS by using Amazon API Gateway and AWS Lambda. The company’s employees report issues with high latency when they begin using the application each day. The company wants to reduce latency. Which solution will meet these... The best-matching choice is: Increase the API Gateway throttling limit.. When using Lambda, you are responsible only for your code.\nUPD260411: When using Lambda, you are responsible only for your code. Lambda runs your code on a high-availability compute infrastructure and manages all the computing resources, including server and operating system maintenance, capacity provisioning, automatic scaling, and logging. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -66,7 +84,16 @@
       "api-gateway",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "When using Lambda, you are responsible only for your code. Lambda runs your code on a high-availability compute infrastructure and manages all the computing resources, including server and operating system maintenance, capacity provisioning, automatic scaling, and logging.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "66c4ea55-8180-4e85-bca5-925ab3aad7c8",
@@ -78,16 +105,25 @@
     "incorrectAnswers": [
       "Deploy an Application Load Balancer (ALB). Configure the ALB to be publicly accessible over the TCP port that the application requires.",
       "Deploy an Amazon CloudFront distribution that listens on the TCP port that the application requires. Use an Application Load Balancer as the origin.",
-      "Deploy an Amazon API Gateway API that is congured with the TCP port that the application requires. Configure AWS Lambda functions with provisioned concurrency to process the requests."
+      "Deploy an Amazon API Gateway API that is configured with the TCP port that the application requires. Configure AWS Lambda functions with provisioned concurrency to process the requests."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #600). Correct choice: A.",
+    "explanation": "A company is planning to migrate a TCP-based application into the company's VPC. The application is publicly accessible on a nonstandard TCP port through a hardware appliance in the company's data center. This public endpoint can process up to 3 million requests per second... The best-matching choice is: Deploy a Network Load Balancer (NLB). Configure the NLB to be publicly accessible over the TCP port that the application requires.. A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify.\nUPD260411: A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify. Network Load Balancer target groups support the TCP, UDP, TCP_UDP, TLS, QUIC, and TCP_QUIC protocols. You can register a target with multiple target groups. You can configure health checks on a per target group basis. Health checks are performed on all targets registered to the target groups that are specified in the default action for your load balancer. (https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "vpc",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify. Network Load Balancer target groups support the TCP, UDP, TCP_UDP, TLS, QUIC, and TCP_QUIC protocols. You can register a target with multiple target groups. You can configure health checks on a per target group basis. Health checks are performed on all targets registered to the target groups that are specified in the default action for your load balancer.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "0b3607d7-f6b8-45ec-81e8-9c8b3944a42e",
@@ -101,7 +137,7 @@
       "Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.",
       "Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #601). Correct choice: A.",
+    "explanation": "A company runs its critical database on an Amazon RDS for PostgreSQL DB instance. The company wants to migrate to Amazon Aurora PostgreSQL with minimal downtime and data loss. Which solution will meet these requirements with the LEAST operational overhead? The best-matching choice is: Create a DB snapshot of the RDS for PostgreSQL DB instance to populate a new Aurora PostgreSQL DB cluster.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -109,7 +145,16 @@
       "aurora",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "746133a7-6726-46f2-bb45-6072005740a8",
@@ -123,7 +168,7 @@
       "Use AWS Backup to set up a backup plan for the entire group of EC2 instances. Use the AWS Backup API or the AWS CLI to speed up the restore process for multiple EC2 instances.",
       "Create an AWS Lambda function to take a snapshot of the EBS storage that is attached to each EC2 instance and copy the Amazon Machine Images (AMIs). Create another Lambda function to perform the restores with the copied AMIs and attach the EBS storage."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #602). Correct choice: A.",
+    "explanation": "A company's infrastructure consists of hundreds of Amazon EC2 instances that use Amazon Elastic Block Store (Amazon EBS) storage. A solutions architect must ensure that every EC2 instance can be recovered after a disaster. What should the solutions architect do to meet this requirement... The best-matching choice is: Take a snapshot of the EBS storage that is attached to each EC2 instance. Create an AWS CloudFormation template to launch new EC2 instances from the EBS storage.. Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances.\nUPD260411: Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources: (https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -131,7 +176,16 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources:",
+        "source": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+      }
+    ]
   },
   {
     "itemId": "ecfae853-a955-45e1-ad91-03bf788adb91",
@@ -145,7 +199,7 @@
       "Use AWS Glue to process the data in parallel.",
       "Use several AWS Lambda functions to process the data in parallel."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #603). Correct choice: A.",
+    "explanation": "A company recently migrated to the AWS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of a semistructured dataset. The data consists of logs, media les, sales transactions, and IoT sensor data that is stored in Amazon S3. The company... The best-matching choice is: Use the AWS Step Functions Map state in Inline mode to process the data in parallel.. Dynamically process data elements – Using a Map state, Step Functions can run a set of workflow steps on each item in a dataset.\nUPD260411: Dynamically process data elements – Using a Map state, Step Functions can run a set of workflow steps on each item in a dataset. The iterations run in parallel, which makes it possible to process a dataset quickly. For example, when your customer orders thirty items, your system needs to apply the same workflow to prepare each item for delivery. After all items have been gathered and packaged for delivery, the next step might be to quickly send your customer a confirmation email with tracking information. For an... (https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -154,7 +208,16 @@
       "step-functions",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Dynamically process data elements – Using a Map state, Step Functions can run a set of workflow steps on each item in a dataset. The iterations run in parallel, which makes it possible to process a dataset quickly. For example, when your customer orders thirty items, your system needs to apply the same workflow to prepare each item for delivery. After all items have been gathered and packaged for delivery, the next step might be to quickly send your customer a confirmation email with tracking information. For an...",
+        "source": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "8229207b-44ef-4a34-857f-e6de0b6bf057",
@@ -168,14 +231,23 @@
       "Use the AWS CLI and multiple copy processes to send the data directly to Amazon S3.",
       "Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #604). Correct choice: A.",
+    "explanation": "A company will migrate 10 PB of data to Amazon S3 in 6 weeks. The current data center has a 500 Mbps uplink to the internet. Other on-premises applications share the uplink. The company can use 80% of the internet bandwidth for this one-time... The best-matching choice is: Configure AWS DataSync to migrate the data to Amazon S3 and to automatically verify the data.. Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use.\nUPD260411: Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
   },
   {
     "itemId": "961cac5e-1e70-4664-a772-e0a9343aee3a",
@@ -186,16 +258,25 @@
     "correctAnswer": "Deploy an Amazon S3 File Gateway.",
     "incorrectAnswers": [
       "Deploy Amazon Elastic Block Store (Amazon EBS) storage with backups to Amazon S3.",
-      "Deploy an AWS Storage Gateway volume gateway that is congured with stored volumes.",
-      "Deploy an AWS Storage Gateway volume gateway that is congured with cached volumes."
+      "Deploy an AWS Storage Gateway volume gateway that is configured with stored volumes.",
+      "Deploy an AWS Storage Gateway volume gateway that is configured with cached volumes."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #605). Correct choice: A.",
+    "explanation": "A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the AWS Cloud. A solutions architect must provide low-latency access to frequently used data and reduce the... The best-matching choice is: Deploy an Amazon S3 File Gateway.. AWS Storage Gateway provides a set of features that enable you to effectively leverage AWS storage within your existing applications and workflows.\nUPD260411: AWS Storage Gateway provides a set of features that enable you to effectively leverage AWS storage within your existing applications and workflows. It provides a standard set of protocols such as iSCSI, SMB and NFS, which allow you to use your existing applications without any changes. Through its local cache, the gateway provides low-latency access to recently used data. The gateway optimizes data transfer to AWS storage, such as optimization of transfer through intelligent buffering, upload management to addre... (https://aws.amazon.com/storagegateway/faqs/)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "AWS Storage Gateway provides a set of features that enable you to effectively leverage AWS storage within your existing applications and workflows. It provides a standard set of protocols such as iSCSI, SMB and NFS, which allow you to use your existing applications without any changes. Through its local cache, the gateway provides low-latency access to recently used data. The gateway optimizes data transfer to AWS storage, such as optimization of transfer through intelligent buffering, upload management to addre...",
+        "source": "https://aws.amazon.com/storagegateway/faqs/"
+      }
+    ]
   },
   {
     "itemId": "d07656d8-b268-4bb2-bec2-760932859cbd",
@@ -209,14 +290,23 @@
       "Store all the objects in S3 Standard with an S3 Lifecycle rule to transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.",
       "Store all the objects in S3 Intelligent-Tiering with an S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #606). Correct choice: A.",
+    "explanation": "A solutions architect is designing an application that will allow business users to upload objects to Amazon S3. The solution needs to maximize object durability. Objects also must be readily available at any time and for any length of time. Users will access objects... The best-matching choice is: Store all the objects in S3 Standard with an S3 Lifecycle rule to transition the objects to S3 Glacier after 30 days.. Transition actions – These actions define when objects transition to another storage class.\nUPD260411: Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+      }
+    ]
   },
   {
     "itemId": "0cd0b5f2-8788-4000-9534-5c436fec4a9f",
@@ -230,7 +320,7 @@
       "Create an Amazon S3 bucket. Update the application to store documents in the S3 bucket. Store the object metadata in the existing database.",
       "Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #607). Correct choice: A.",
+    "explanation": "A company has migrated a two-tier application from its on-premises data center to the AWS Cloud. The data tier is a Multi-AZ deployment of Amazon RDS for Oracle with 12 TB of General Purpose SSD Amazon Elastic Block Store (Amazon EBS) storage. The application... The best-matching choice is: Reduce the RDS DB instance size. Increase the storage capacity to 24 TiB. Change the storage type to Magnetic.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -239,7 +329,16 @@
       "rds",
       "ebs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "0a321bb8-a049-48f6-ba3f-8675eb0ac8f1",
@@ -253,7 +352,7 @@
       "Store the IP addresses in an Amazon DynamoDB table. Configure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.",
       "Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #608). Correct choice: A.",
+    "explanation": "A company has an application that serves clients that are deployed in more than 20.000 retail storefront locations around the world. The application consists of backend web services that are exposed over HTTPS on port 443. The application is hosted on Amazon EC2 instances... The best-matching choice is: Associate an AWS WAF web ACL with the ALB. Use IP rule sets on the ALB to lter traffic. Update the IP addresses in the rule to include the registered IP addresses.. A listener checks for connection requests from clients, using the protocol and port that you configure.\nUPD260411: A listener checks for connection requests from clients, using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, and one or more conditions. When the conditions for a rule are met, then its actions are performed. You must define a default rule for each listener, and you can optionally define additional rules. (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -262,7 +361,16 @@
       "alb",
       "waf"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:44Z",
+        "conclusion": "correct",
+        "explanation": "A listener checks for connection requests from clients, using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to its registered targets. Each rule consists of a priority, one or more actions, and one or more conditions. When the conditions for a rule are met, then its actions are performed. You must define a default rule for each listener, and you can optionally define additional rules.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "4bf76201-7e5f-485b-8dab-37f70c6326d4",
@@ -276,7 +384,7 @@
       "Create an AWS Lambda function that removes sensitive information before Lake Formation ingests the data.",
       "Create an AWS Lambda function that periodically queries and removes sensitive information from Lake Formation tables."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #609). Correct choice: A.",
+    "explanation": "A company is building a data analysis platform on AWS by using AWS Lake Formation. The platform will ingest data from different sources such as Amazon S3 and Amazon RDS. The company needs a secure solution to prevent access to portions of the data... The best-matching choice is: Create an IAM role that includes permissions to access Lake Formation tables.. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -286,7 +394,16 @@
       "s3",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "fca5c32c-9303-4c63-94f9-4c25a0419797",
@@ -300,7 +417,7 @@
       "Set up an AWS Transit Gateway connection from the VPC to the S3 buckets. Create an AWS Site-to-Site VPN connection between the company and the VPC.",
       "Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #610). Correct choice: A.",
+    "explanation": "A company deploys Amazon EC2 instances that run in a VPC. The EC2 instances load source data into Amazon S3 buckets so that the data can be processed in the future. According to compliance laws, the data must not be transmitted over the public... The best-matching choice is: Deploy an interface VPC endpoint for Amazon EC2. Create an AWS Site-to-Site VPN connection between the company and the VPC.. The source IPv4 or IPv6 addresses from instances in your affected subnets as received by Amazon S3 change from public addresses to the private addresses in your VPC.\nUPD260411: The source IPv4 or IPv6 addresses from instances in your affected subnets as received by Amazon S3 change from public addresses to the private addresses in your VPC. An endpoint switches network routes, and disconnects open TCP connections. The previous connections that used public addresses are not resumed. We recommend that you do not have any critical tasks running when you create or modify an endpoint; or that you test to ensure that your software can automatically reconnect to Amazon S3 after the connection... (https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -311,7 +428,16 @@
       "vpc-endpoint",
       "site-to-site-vpn"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "The source IPv4 or IPv6 addresses from instances in your affected subnets as received by Amazon S3 change from public addresses to the private addresses in your VPC. An endpoint switches network routes, and disconnects open TCP connections. The previous connections that used public addresses are not resumed. We recommend that you do not have any critical tasks running when you create or modify an endpoint; or that you test to ensure that your software can automatically reconnect to Amazon S3 after the connection...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"
+      }
+    ]
   },
   {
     "itemId": "c3801302-d13c-4319-953a-41383fcf3592",
@@ -325,7 +451,7 @@
       "Use Amazon Simple Notification Service (Amazon SNS) to ingest the data. Put the EC2 instances in an Auto Scaling group behind an Application Load Balancer.",
       "Repackage the application as a container. Deploy the application using Amazon Elastic Container Service (Amazon ECS) using the EC2 launch type with an Auto Scaling group."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #611). Correct choice: A.",
+    "explanation": "A company has an application with a REST-based interface that allows data to be received in near-real time from a third-party vendor. Once received, the application processes and stores the data for further analysis. The application is running on Amazon EC2 instances. The third-party... The best-matching choice is: Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions.. You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time.\nUPD260411: You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,... (https://docs.aws.amazon.com/streams/latest/dev/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -334,7 +460,16 @@
       "ec2",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "You can use Amazon Kinesis Data Streams to collect and process large streams of data records in real time. You can create data-processing applications, known as Kinesis Data Streams applications . A typical Kinesis Data Streams application reads data from a data stream as data records. These applications can use the Kinesis Client Library, and they can run on Amazon EC2 instances. You can send the processed records to dashboards, use them to generate alerts, dynamically change pricing and advertising strategies,...",
+        "source": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "b937651e-ebf3-432d-9065-48c0a4a1adfa",
@@ -348,7 +483,7 @@
       "Configure a NAT gateway. Update the S3 bucket policy to allow access from the NAT gateway. Update the application to use the new NAT gateway.",
       "Configure a VPC endpoint. Update the S3 bucket policy to allow access from the VPC endpoint. Update the application to use the new VPC endpoint."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #612). Correct choice: A.",
+    "explanation": "A company has an application that runs on Amazon EC2 instances in a private subnet. The application needs to process sensitive information from an Amazon S3 bucket. The application must not use the internet to connect to the S3 bucket. Which solution will meet... The best-matching choice is: Configure an internet gateway. Update the S3 bucket policy to allow access from the internet gateway. Update the application to use the new internet gateway.. Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet.\nUPD260411: Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route... (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -356,7 +491,16 @@
       "s3",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "843f1490-9b21-488f-b647-659fcbc82ede",
@@ -370,7 +514,7 @@
       "Implement an AWS Lambda function to encrypt the information by using AWS Key Management Service (AWS KMS).",
       "Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS)."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #613). Correct choice: A.",
+    "explanation": "A company uses Amazon Elastic Kubernetes Service (Amazon EKS) to run a container application. The EKS cluster stores sensitive information in the Kubernetes secrets object. The company wants to ensure that the information is encrypted. Which solution will meet these requirements with the LEAST... The best-matching choice is: Use the container application to encrypt the information by using AWS Key Management Service (AWS KMS).. AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.\nUPD260411: AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS. (https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -378,21 +522,30 @@
       "eks",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS.",
+        "source": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+      }
+    ]
   },
   {
     "itemId": "2fceb801-0f8e-4725-a83d-248becf126ec",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is designing a new multi-tier web application that consists of the following components:\n\u2022 Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups\n\u2022 An Amazon RDS DB instance for data storage\nA solutions architect needs to limit access to the application servers so that only the web servers can access them.\nWhich solution will meet these requirements?",
+    "question": "A company is designing a new multi-tier web application that consists of the following components:\n• Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups\n• An Amazon RDS DB instance for data storage\nA solutions architect needs to limit access to the application servers so that only the web servers can access them.\nWhich solution will meet these requirements?",
     "correctAnswer": "Deploy AWS PrivateLink in front of the application servers. Configure the network ACL to allow only the web servers to access the application servers.",
     "incorrectAnswers": [
       "Deploy a VPC endpoint in front of the application servers. Configure the security group to allow only the web servers to access the application servers.",
       "Deploy a Network Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the network ACL to allow only the web servers to access the application servers.",
       "Deploy an Application Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the security group to allow only the web servers to access the application servers."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #614). Correct choice: A.",
+    "explanation": "A company is designing a new multi-tier web application that consists of the following components: • Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups • An Amazon RDS DB instance for data storage A solutions architect... The best-matching choice is: Deploy AWS PrivateLink in front of the application servers. Configure the network ACL to allow only the web servers to access the application servers.. Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application.\nUPD260411: Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo... (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -402,7 +555,16 @@
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo...",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "97b7b0ea-9aab-45e2-b51b-2c47057a2047",
@@ -416,7 +578,7 @@
       "Configure AWS CloudTrail to capture data events. Query CloudTrail by using Amazon OpenSearch Service.",
       "Configure Amazon CloudWatch Container Insights in the existing EKS cluster. View the metrics and logs in the CloudWatch console."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #615). Correct choice: A.",
+    "explanation": "A company runs a critical, customer-facing application on Amazon Elastic Kubernetes Service (Amazon EKS). The application has a microservices architecture. The company needs to implement a solution that collects, aggregates, and summarizes metrics and logs from the application in a centralized location. Which solution... The best-matching choice is: Run the Amazon CloudWatch agent in the existing EKS cluster. View the metrics and logs in the CloudWatch console.. AWS CloudTrail is a web service that enables you to monitor the calls made to the CloudWatch Logs API for your account, including calls made by the AWS Management Console, AWS Command Line Interface (AWS CLI), and other services.\nUPD260411: AWS CloudTrail is a web service that enables you to monitor the calls made to the CloudWatch Logs API for your account, including calls made by the AWS Management Console, AWS Command Line Interface (AWS CLI), and other services. When CloudTrail logging is turned on, CloudTrail captures API calls in your account and delivers the log files to the Amazon S3 bucket that you specify. Each log file can contain one or more records, depending on how many actions must be performed to satisfy a request. For more informat... (https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -424,21 +586,30 @@
       "eks",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "AWS CloudTrail is a web service that enables you to monitor the calls made to the CloudWatch Logs API for your account, including calls made by the AWS Management Console, AWS Command Line Interface (AWS CLI), and other services. When CloudTrail logging is turned on, CloudTrail captures API calls in your account and delivers the log files to the Amazon S3 bucket that you specify. Each log file can contain one or more records, depending on how many actions must be performed to satisfy a request. For more informat...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"
+      }
+    ]
   },
   {
     "itemId": "85987dca-aed3-4f0e-8161-0e155d94b0a3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind a Network Load Balancer. The company\nstores the product\u2019s objects in an Amazon S3 bucket.\nThe company recently experienced malicious attacks against its systems. The company needs a solution that continuously monitors for malicious\nactivity in the AWS account, workloads, and access patterns to the S3 bucket. The solution must also report suspicious activity and display the\ninformation on a dashboard.\nWhich solution will meet these requirements?",
+    "question": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind a Network Load Balancer. The company\nstores the product’s objects in an Amazon S3 bucket.\nThe company recently experienced malicious attacks against its systems. The company needs a solution that continuously monitors for malicious\nactivity in the AWS account, workloads, and access patterns to the S3 bucket. The solution must also report suspicious activity and display the\ninformation on a dashboard.\nWhich solution will meet these requirements?",
     "correctAnswer": "Configure Amazon Macie to monitor and report ndings to AWS Config.",
     "incorrectAnswers": [
       "Configure Amazon Inspector to monitor and report ndings to AWS CloudTrail.",
       "Configure Amazon GuardDuty to monitor and report ndings to AWS Security Hub.",
       "Configure AWS Config to monitor and report ndings to Amazon EventBridge."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #616). Correct choice: A.",
+    "explanation": "A company has deployed its newest product on AWS. The product runs in an Auto Scaling group behind a Network Load Balancer. The company stores the product’s objects in an Amazon S3 bucket. The company recently experienced malicious attacks against its systems. The company... The best-matching choice is: Configure Amazon Macie to monitor and report ndings to AWS Config.. A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify.\nUPD260411: A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify. Network Load Balancer target groups support the TCP, UDP, TCP_UDP, TLS, QUIC, and TCP_QUIC protocols. You can register a target with multiple target groups. You can configure health checks on a per target group basis. Health checks are performed on all targets registered to the target groups that are specified in the default action for your load balancer. (https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -447,6 +618,15 @@
       "auto-scaling",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "A target group routes requests to one or more registered targets, such as EC2 instances, using the protocol and the port number that you specify. Network Load Balancer target groups support the TCP, UDP, TCP_UDP, TLS, QUIC, and TCP_QUIC protocols. You can register a target with multiple target groups. You can configure health checks on a per target group basis. Health checks are performed on all targets registered to the target groups that are specified in the default action for your load balancer.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+      }
+    ]
   }
 ]

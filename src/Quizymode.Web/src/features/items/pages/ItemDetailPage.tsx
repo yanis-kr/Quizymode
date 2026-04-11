@@ -13,6 +13,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import { TextWithLinks } from "@/components/TextWithLinks";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
@@ -208,7 +209,7 @@ const ItemDetailPage = () => {
             {item.explanation && (
               <div>
                 <h2 className="text-sm font-medium text-gray-500 mb-1">Explanation</h2>
-                <p className="text-gray-700">{item.explanation}</p>
+                <p className="text-gray-700"><TextWithLinks text={item.explanation} /></p>
               </div>
             )}
 
