@@ -18,3 +18,4 @@ AWS Lightsail hosts the Quizymode API container in production.
 
 - [COGNITO_SETUP.md](./COGNITO_SETUP.md)
 - [GRAFANA_CLOUD_SETUP.md](./GRAFANA_CLOUD_SETUP.md)
+- [GITHUB_ACTIONS_DEPLOY.md](./GITHUB_ACTIONS_DEPLOY.md): automated deployment pipeline
