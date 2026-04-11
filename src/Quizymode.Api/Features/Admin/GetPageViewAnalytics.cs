@@ -150,16 +150,35 @@ public static class GetPageViewAnalytics
         int totalPages = totalCount == 0 ? 0 : (int)Math.Ceiling(totalCount / (double)pageSize);
         int skip = (page - 1) * pageSize;
 
+        // Batch auth-split stats into one GROUP BY query (4 sequential queries → 1)
+        var authBreakdowns = await query
+            .GroupBy(pv => pv.IsAuthenticated)
+            .Select(g => new
+            {
+                IsAuthenticated = g.Key,
+                PageViews = g.Count(),
+                Sessions = g.Select(pv => pv.SessionId).Distinct().Count()
+            })
+            .ToListAsync(cancellationToken);
+
+        int uniquePages = await query.Select(pv => pv.Path).Distinct().CountAsync(cancellationToken);
+        int uniqueSessions = await query.Select(pv => pv.SessionId).Distinct().CountAsync(cancellationToken);
+
+        int authPageViews = authBreakdowns.FirstOrDefault(x => x.IsAuthenticated)?.PageViews ?? 0;
+        int anonPageViews = authBreakdowns.FirstOrDefault(x => !x.IsAuthenticated)?.PageViews ?? 0;
+        int authSessions = authBreakdowns.FirstOrDefault(x => x.IsAuthenticated)?.Sessions ?? 0;
+        int anonSessions = authBreakdowns.FirstOrDefault(x => !x.IsAuthenticated)?.Sessions ?? 0;
+
         SummaryResponse summary = new(
             WindowStartUtc: windowStartUtc,
             WindowEndUtc: windowEndUtc,
             TotalPageViews: totalCount,
-            UniquePages: await query.Select(pageView => pageView.Path).Distinct().CountAsync(cancellationToken),
-            UniqueSessions: await query.Select(pageView => pageView.SessionId).Distinct().CountAsync(cancellationToken),
-            AuthenticatedPageViews: await query.CountAsync(pageView => pageView.IsAuthenticated, cancellationToken),
-            AnonymousPageViews: await query.CountAsync(pageView => !pageView.IsAuthenticated, cancellationToken),
-            AuthenticatedSessions: await query.Where(pageView => pageView.IsAuthenticated).Select(pageView => pageView.SessionId).Distinct().CountAsync(cancellationToken),
-            AnonymousSessions: await query.Where(pageView => !pageView.IsAuthenticated).Select(pageView => pageView.SessionId).Distinct().CountAsync(cancellationToken));
+            UniquePages: uniquePages,
+            UniqueSessions: uniqueSessions,
+            AuthenticatedPageViews: authPageViews,
+            AnonymousPageViews: anonPageViews,
+            AuthenticatedSessions: authSessions,
+            AnonymousSessions: anonSessions);
 
         List<TopPageResponse> topPages = (await query
             .GroupBy(pageView => pageView.Path)

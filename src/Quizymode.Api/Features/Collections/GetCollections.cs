@@ -51,20 +51,14 @@ public static class GetCollections
         {
             string userId = userContext.UserId!;
 
-            var collections = await db.Collections
+            List<Collection> rawCollections = await db.Collections
+                .AsNoTracking()
                 .Where(c => c.CreatedBy == userId)
                 .OrderByDescending(c => c.CreatedAt)
-                .Select(c => new CollectionResponse(
-                    c.Id.ToString(),
-                    c.Name,
-                    c.Description,
-                    c.CreatedAt,
-                    db.CollectionItems.Count(ci => ci.CollectionId == c.Id),
-                    c.IsPublic))
                 .ToListAsync(cancellationToken);
 
             // Ensure user has at least one collection (Default) on first use (e.g. legacy users; new users get it at signup in UserUpsertMiddleware)
-            if (collections.Count == 0)
+            if (rawCollections.Count == 0)
             {
                 string? displayName = null;
                 if (Guid.TryParse(userId, out Guid parsedUserId))
@@ -83,11 +77,29 @@ public static class GetCollections
                 Collection defaultCollection = DefaultCollectionFactory.Create(userId, displayName);
                 db.Collections.Add(defaultCollection);
                 await db.SaveChangesAsync(cancellationToken);
-                collections = new List<CollectionResponse>
+                return Result.Success(new Response(new List<CollectionResponse>
                 {
                     new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false)
-                };
+                }));
             }
+
+            // Batch-load item counts with a single GROUP BY instead of a correlated subquery per collection
+            List<Guid> collectionIds = rawCollections.Select(c => c.Id).ToList();
+            Dictionary<Guid, int> itemCounts = await db.CollectionItems
+                .Where(ci => collectionIds.Contains(ci.CollectionId))
+                .GroupBy(ci => ci.CollectionId)
+                .Select(g => new { CollectionId = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(x => x.CollectionId, x => x.Count, cancellationToken);
+
+            List<CollectionResponse> collections = rawCollections
+                .Select(c => new CollectionResponse(
+                    c.Id.ToString(),
+                    c.Name,
+                    c.Description,
+                    c.CreatedAt,
+                    itemCounts.GetValueOrDefault(c.Id),
+                    c.IsPublic))
+                .ToList();
 
             return Result.Success(new Response(collections));
         }

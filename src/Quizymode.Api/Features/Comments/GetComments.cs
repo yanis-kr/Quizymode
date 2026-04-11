@@ -57,7 +57,7 @@ public static class GetComments
     {
         try
         {
-            IQueryable<Comment> query = db.Comments.AsQueryable();
+            IQueryable<Comment> query = db.Comments.AsNoTracking();
 
             if (request.ItemId.HasValue && request.ItemId.Value != Guid.Empty)
             {

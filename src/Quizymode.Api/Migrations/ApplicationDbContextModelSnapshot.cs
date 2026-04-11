@@ -201,6 +201,10 @@ namespace Quizymode.Api.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CollectionId");
+
+                    b.HasIndex("ItemId");
+
                     b.ToTable("CollectionItems");
                 });
 

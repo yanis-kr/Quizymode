@@ -1,4 +1,4 @@
-﻿ItemId,Category,NavigationKeyword1,NavigationKeyword2,QuestionPrefix50,SourceFile
+ItemId,Category,NavigationKeyword1,NavigationKeyword2,QuestionPrefix50,SourceFile
 1a86d320-21aa-43a0-8b54-085e2df32430,business,accounting,audit,How does a review engagement typically differ from,data/seed-source/items/business/business.accounting.audit.json
 665f4244-583c-4ab0-983d-004c3b65cc36,business,accounting,audit,"In an audit, what is the role of internal controls",data/seed-source/items/business/business.accounting.audit.json
 f28b0cdf-a28b-472d-8d00-f46d632d2eaf,business,accounting,audit,"In basic audit terminology, what is audit sampling",data/seed-source/items/business/business.accounting.audit.json
@@ -943,7 +943,7 @@ f8134692-3915-404a-90b9-0a8a73e4bab9,exams,aws,saa-c03,A company has a three-tie
 a08d9f0a-3b87-4950-b662-6f12986b6bf2,exams,aws,saa-c03,A company has a web application with sporadic usag,data/seed-source/items/exams/exams.aws.saa-c03-p20.json
 6669138d-8604-4a38-9dbd-d5bae823df40,exams,aws,saa-c03,A company has a website hosted on AWS. The website,data/seed-source/items/exams/exams.aws.saa-c03-p04.json
 7a6b8c67-f1f5-4a97-9494-ec13d8aad57d,exams,aws,saa-c03,A company has an API that receives real-time data ,data/seed-source/items/exams/exams.aws.saa-c03-p11.json
-34f305b8-7fc6-4d07-a399-ce4fba4e54d4,exams,aws,saa-c03,"A company has an AWS Glue extraffict, transform, a",data/seed-source/items/exams/exams.aws.saa-c03-p06.json
+34f305b8-7fc6-4d07-a399-ce4fba4e54d4,exams,aws,saa-c03,"A company has an AWS Glue extract, transform, and ",data/seed-source/items/exams/exams.aws.saa-c03-p06.json
 67686978-2fdb-4b86-adde-5efbe85965fc,exams,aws,saa-c03,A company has an AWS Lambda function that needs re,data/seed-source/items/exams/exams.aws.saa-c03-p14.json
 5cb1ed8b-eeac-4056-a476-0fc502f3b2c4,exams,aws,saa-c03,A company has an AWS account used for software eng,data/seed-source/items/exams/exams.aws.saa-c03-p10.json
 f5593625-a083-428a-975a-a418279504bd,exams,aws,saa-c03,A company has an Amazon S3 data lake that is gover,data/seed-source/items/exams/exams.aws.saa-c03-p16.json
@@ -1121,7 +1121,7 @@ d0866627-7352-4c48-b8ac-c7fda4750563,exams,aws,saa-c03,A company is running a cu
 c76c9e16-2a1c-4471-8879-28a3b3f46c0b,exams,aws,saa-c03,A company is running a microservices application o,data/seed-source/items/exams/exams.aws.saa-c03-p24.json
 7f0353a4-cbf5-48cd-8ec3-9398f80e8d19,exams,aws,saa-c03,A company is running a multi-tier ecommerce web ap,data/seed-source/items/exams/exams.aws.saa-c03-p19.json
 e3f887d7-7d4e-4512-a539-1ec85c2a5062,exams,aws,saa-c03,A company is running a popular social media websit,data/seed-source/items/exams/exams.aws.saa-c03-p04.json
-d0468f74-015b-47e7-a32c-20c4ebb06108,exams,aws,saa-c03,A company is running an SMB le server in its data ,data/seed-source/items/exams/exams.aws.saa-c03-p02.json
+d0468f74-015b-47e7-a32c-20c4ebb06108,exams,aws,saa-c03,A company is running an SMB file server in its dat,data/seed-source/items/exams/exams.aws.saa-c03-p02.json
 bb0ccb9c-2f2a-4b00-a9ac-9a5a2d1c3d43,exams,aws,saa-c03,A company is running an online transaction process,data/seed-source/items/exams/exams.aws.saa-c03-p07.json
 1e2c85d0-022f-4d8c-913e-8be34550db58,exams,aws,saa-c03,A company is running its production and nonproduct,data/seed-source/items/exams/exams.aws.saa-c03-p20.json
 e8d7623e-5aea-4a04-8c83-a4d7eefd18b2,exams,aws,saa-c03,A company is running several business applications,data/seed-source/items/exams/exams.aws.saa-c03-p18.json
@@ -1215,7 +1215,7 @@ da3feec1-1273-46ef-b429-b2dfc48fd37b,exams,aws,saa-c03,A company runs a web appl
 8ab96d09-2535-4a0f-975e-da4d47ccd4ae,exams,aws,saa-c03,A company runs a web-based portal that provides us,data/seed-source/items/exams/exams.aws.saa-c03-p08.json
 37f7f10f-af6e-437d-aad2-099e927151ea,exams,aws,saa-c03,A company runs a website that stores images of his,data/seed-source/items/exams/exams.aws.saa-c03-p30.json
 441c535a-8ce8-476c-b8d7-6db3bb6da241,exams,aws,saa-c03,A company runs an Oracle database on premises. As ,data/seed-source/items/exams/exams.aws.saa-c03-p07.json
-279894c7-2d6d-40af-b28d-5ef5cba34d89,exams,aws,saa-c03,A company runs an SMB le server in its data center,data/seed-source/items/exams/exams.aws.saa-c03-p31.json
+279894c7-2d6d-40af-b28d-5ef5cba34d89,exams,aws,saa-c03,A company runs an SMB file server in its data cent,data/seed-source/items/exams/exams.aws.saa-c03-p31.json
 882ae939-8b6c-4d79-bc59-50b0a8bece70,exams,aws,saa-c03,A company runs an application in a VPC with public,data/seed-source/items/exams/exams.aws.saa-c03-p26.json
 d2577951-cea9-4e34-acc0-ce31431012d3,exams,aws,saa-c03,A company runs an application on AWS. The applicat,data/seed-source/items/exams/exams.aws.saa-c03-p26.json
 eb4b4e61-dafc-4531-9abd-c553b7a570c1,exams,aws,saa-c03,A company runs an application on Amazon EC2 Linux ,data/seed-source/items/exams/exams.aws.saa-c03-p18.json
@@ -1346,7 +1346,7 @@ a9323d5a-b0d8-484c-834d-d145874cf4d0,exams,aws,saa-c03,A company's website handl
 c8ec0f5f-6481-48e0-935e-5009d23441d0,exams,aws,saa-c03,A company's website uses an Amazon EC2 instance st,data/seed-source/items/exams/exams.aws.saa-c03-p04.json
 8a9621aa-dfb8-404e-aed6-2dd3748dd5e3,exams,aws,saa-c03,A company’s application is having performance issu,data/seed-source/items/exams/exams.aws.saa-c03-p11.json
 342d65fe-22ae-4123-9eb8-bea14fac34b6,exams,aws,saa-c03,A company’s application runs on Amazon EC2 instanc,data/seed-source/items/exams/exams.aws.saa-c03-p16.json
-61367752-1211-4aaa-9a2e-40221fde0403,exams,aws,saa-c03,A company’s compliance team needs to move its fifi,data/seed-source/items/exams/exams.aws.saa-c03-p13.json
+61367752-1211-4aaa-9a2e-40221fde0403,exams,aws,saa-c03,A company’s compliance team needs to move its file,data/seed-source/items/exams/exams.aws.saa-c03-p13.json
 22f48810-dc6a-431c-a703-147e26f7efd3,exams,aws,saa-c03,A company’s facility has badge readers at every en,data/seed-source/items/exams/exams.aws.saa-c03-p16.json
 04f551a9-6085-425a-8a40-a3b817f65db2,exams,aws,saa-c03,A company’s infrastructure consists of Amazon EC2 ,data/seed-source/items/exams/exams.aws.saa-c03-p09.json
 e86e1174-b36b-4e94-9239-2ada1078e19a,exams,aws,saa-c03,A company’s order system sends requests from clien,data/seed-source/items/exams/exams.aws.saa-c03-p10.json
@@ -1401,7 +1401,7 @@ af9cc3a9-a058-4743-9f72-3d015d83074b,exams,aws,saa-c03,A social media company is
 285f76f3-81e9-41be-af26-97f251cbfe1a,exams,aws,saa-c03,A social media company runs its application on Ama,data/seed-source/items/exams/exams.aws.saa-c03-p17.json
 66eaaee7-3a21-42e6-94da-172558f3002a,exams,aws,saa-c03,A social media company wants to allow its users to,data/seed-source/items/exams/exams.aws.saa-c03-p24.json
 13a01115-8cf8-494f-8fbe-b88bb20a0710,exams,aws,saa-c03,A social media company wants to store its database,data/seed-source/items/exams/exams.aws.saa-c03-p29.json
-e0b6675b-847f-49f9-b5cb-049c873206f7,exams,aws,saa-c03,A solutions architect congured a VPC that has a sm,data/seed-source/items/exams/exams.aws.saa-c03-p21.json
+e0b6675b-847f-49f9-b5cb-049c873206f7,exams,aws,saa-c03,A solutions architect configured a VPC that has a ,data/seed-source/items/exams/exams.aws.saa-c03-p21.json
 62c16ae8-83db-4938-9b8a-c08f6890df64,exams,aws,saa-c03,A solutions architect has created two IAM policies,data/seed-source/items/exams/exams.aws.saa-c03-p13.json
 f5fdd3a0-8747-4176-8401-7fb4cb571ce7,exams,aws,saa-c03,A solutions architect is creating a data processin,data/seed-source/items/exams/exams.aws.saa-c03-p29.json
 b54e1121-b621-425a-a503-8f21a071351e,exams,aws,saa-c03,A solutions architect is creating a new Amazon Clo,data/seed-source/items/exams/exams.aws.saa-c03-p09.json
@@ -1486,19 +1486,19 @@ cf58afd7-ad7a-4a0d-aadc-1686ce79d1ec,exams,aws,saa-c03,"As part of budget planni
 f439c838-36df-4d42-a6ac-cc1761d9e985,exams,aws,saa-c03,Organizers for a global event want to put daily re,data/seed-source/items/exams/exams.aws.saa-c03-p09.json
 3ff7e2af-a7fc-4f72-b3c4-a061aa71b179,exams,aws,saa-c03,The customers of a nance company request appointme,data/seed-source/items/exams/exams.aws.saa-c03-p10.json
 8a8e6492-e365-477a-afc6-647762985d56,exams,aws,saa-c03,The following IAM policy is attached to an IAM gro,data/seed-source/items/exams/exams.aws.saa-c03-p20.json
-de1088b8-8a96-4c26-bc69-4fbcebb4d02a,exams,aws,saa-c03,What lets instances in a private subnet reach the ,data/seed-source/items/exams/exams.aws.saa-c03.json
+de1088b8-8a96-4c26-bc69-4fbcebb4d02a,exams,aws,saa-c03,What lets instances in a private subnet reach the ,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 3e10e638-eee4-4c49-9615-c6875b42dc1b,exams,aws,saa-c03,What should a solutions architect do to ensure tha,data/seed-source/items/exams/exams.aws.saa-c03-p16.json
-f3a9c221-4a2b-44fc-8159-4a11f2880763,exams,aws,saa-c03,Which AWS database service is a fully managed serv,data/seed-source/items/exams/exams.aws.saa-c03.json
-e17ec24a-14f8-4d0b-9b68-3ede1ad76273,exams,aws,saa-c03,Which AWS relational database service is compatibl,data/seed-source/items/exams/exams.aws.saa-c03.json
-37ff4240-90b6-4081-b834-1eda92ac44cd,exams,aws,saa-c03,Which AWS service automatically adjusts capacity t,data/seed-source/items/exams/exams.aws.saa-c03.json
-6cbd25a9-d45c-495d-a672-39a77472804c,exams,aws,saa-c03,Which AWS service distributes incoming traffic acr,data/seed-source/items/exams/exams.aws.saa-c03.json
-3b482677-bf30-4e50-a37a-926f7e6c1b6d,exams,aws,saa-c03,Which AWS service is a content delivery network fo,data/seed-source/items/exams/exams.aws.saa-c03.json
-99008e5d-b346-4962-a0e4-12a2b84e91e4,exams,aws,saa-c03,Which AWS service is used for infrastructure as co,data/seed-source/items/exams/exams.aws.saa-c03.json
-2d3cab62-2904-4ac3-863d-9b1f0509ecc7,exams,aws,saa-c03,Which AWS service provides DNS routing for interne,data/seed-source/items/exams/exams.aws.saa-c03.json
-833092c9-4dd8-4863-b94c-d8f648d09859,exams,aws,saa-c03,"Which AWS service sends, stores, and receives mess",data/seed-source/items/exams/exams.aws.saa-c03.json
-6d9c773e-66c5-43b1-9dbd-e63f5b8b0a0d,exams,aws,saa-c03,Which AWS storage service provides a shared file s,data/seed-source/items/exams/exams.aws.saa-c03.json
-b410980a-475f-48bb-a6b6-1b5c3ff88e36,exams,aws,saa-c03,Which AWS storage service provides block volumes t,data/seed-source/items/exams/exams.aws.saa-c03.json
-b7b5d12c-55a7-4eff-b349-b2bad29e45c4,exams,aws,saa-c03,Which Amazon S3 storage class is designed for data,data/seed-source/items/exams/exams.aws.saa-c03.json
+f3a9c221-4a2b-44fc-8159-4a11f2880763,exams,aws,saa-c03,Which AWS database service is a fully managed serv,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+e17ec24a-14f8-4d0b-9b68-3ede1ad76273,exams,aws,saa-c03,Which AWS relational database service is compatibl,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+37ff4240-90b6-4081-b834-1eda92ac44cd,exams,aws,saa-c03,Which AWS service automatically adjusts capacity t,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+6cbd25a9-d45c-495d-a672-39a77472804c,exams,aws,saa-c03,Which AWS service distributes incoming traffic acr,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+3b482677-bf30-4e50-a37a-926f7e6c1b6d,exams,aws,saa-c03,Which AWS service is a content delivery network fo,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+99008e5d-b346-4962-a0e4-12a2b84e91e4,exams,aws,saa-c03,Which AWS service is used for infrastructure as co,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+2d3cab62-2904-4ac3-863d-9b1f0509ecc7,exams,aws,saa-c03,Which AWS service provides DNS routing for interne,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+833092c9-4dd8-4863-b94c-d8f648d09859,exams,aws,saa-c03,"Which AWS service sends, stores, and receives mess",data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+6d9c773e-66c5-43b1-9dbd-e63f5b8b0a0d,exams,aws,saa-c03,Which AWS storage service provides a shared file s,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+b410980a-475f-48bb-a6b6-1b5c3ff88e36,exams,aws,saa-c03,Which AWS storage service provides block volumes t,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+b7b5d12c-55a7-4eff-b349-b2bad29e45c4,exams,aws,saa-c03,Which Amazon S3 storage class is designed for data,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 1b4ef870-f355-4c0e-90ab-335495037ba7,exams,aws,sap-c02,Which AWS DNS service routes end users to internet,data/seed-source/items/exams/exams.aws.sap-c02.json
 5cc25e9f-1c21-4c6d-a87b-6e81145ea872,exams,aws,sap-c02,Which AWS relational database service automates pr,data/seed-source/items/exams/exams.aws.sap-c02.json
 30c2b1fe-9b9d-4f6d-a92a-177c13189aa8,exams,aws,sap-c02,Which AWS service automatically adjusts capacity t,data/seed-source/items/exams/exams.aws.sap-c02.json
