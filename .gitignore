@@ -390,3 +390,6 @@ playwright/logs/
 .codex-temp/DbProbe/DbProbe.csproj
 .codex-temp/DbProbe/Program.cs
 /.claude/worktrees
+.cursor-aws-factcheck-progress.json
+.cursor-aws-factcheck-summary.json
+.cursor-aws-factcheck-summary.md
