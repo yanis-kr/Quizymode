@@ -29,12 +29,12 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
@@ -77,12 +77,12 @@ jobs:
       - name: Capture live production screenshots
         env:
           PLAYWRIGHT_BASE_URL: https://www.quizymode.com/
-          TEST_USER_EMAIL: test-user@quizymode.com
-          TEST_USER_PASSWORD: ${{ secrets.QM_AGENT_USER_TEST_PWD }}
+          TEST_USER_EMAIL: ${{ vars.TEST_USER_EMAIL || secrets.TEST_USER_EMAIL || 'test-user@quizymode.com' }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || secrets.QM_AGENT_USER_TEST_PWD }}
           USER_GUIDE_SCREENSHOT_ROOT: ${{ runner.temp }}/user-guide-screenshots
         run: |
           if [ -z "${TEST_USER_PASSWORD}" ]; then
-            echo "QM_AGENT_USER_TEST_PWD is required to capture the user guide." >&2
+            echo "TEST_USER_PASSWORD (or legacy QM_AGENT_USER_TEST_PWD) is required to capture the user guide." >&2
             exit 1
           fi
 
@@ -98,7 +98,7 @@ jobs:
 
       - name: Upload debug artifacts
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: user-guide-debug-${{ github.run_id }}
           path: |
