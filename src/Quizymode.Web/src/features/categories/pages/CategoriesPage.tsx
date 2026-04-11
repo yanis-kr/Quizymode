@@ -54,7 +54,7 @@ import {
 type SortOption = "name" | "rating" | "count";
 
 const CATEGORIES_PER_PAGE = 12;
-const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
+const PAGE_SIZE_OPTIONS = [5, 10, 25, 50, 100];
 
 const CategoriesPage = () => {
   const { isAuthenticated } = useAuth();
@@ -79,8 +79,7 @@ const CategoriesPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const { pageSize: userPageSize } = usePageSize();
-  const pageSize =
-    pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
+  const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
   const location = useLocation();
@@ -847,7 +846,7 @@ const CategoriesPage = () => {
                       pathKeywordsFromUrl,
                       filterKeywordsFromQuery
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
                     title="Add items for this category and navigation path"
                   >
                     <PlusIcon className="h-4 w-4" />
@@ -864,6 +863,22 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              middleSlot={
+                isAuthenticated && categoryName ? (
+                  <Link
+                    to={buildAddItemsPathWithParams(
+                      categoryName,
+                      pathKeywordsFromUrl,
+                      filterKeywordsFromQuery
+                    )}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
+                    title="Add items for this category and navigation path"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </Link>
+                ) : null
+              }
               onOpenMap={() => setShowMapModal(true)}
             />
             <FilterBottomSheet
@@ -1035,16 +1050,17 @@ const CategoriesPage = () => {
                   <>
                     <Link
                       to={`/items/${item.id}${itemDetailSearch}`}
-                      className="inline-flex rounded-md p-2 text-indigo-600 hover:bg-indigo-50"
+                      className="inline-flex rounded-md p-1.5 text-indigo-600 hover:bg-indigo-50 sm:p-2"
                       title="View item details"
                     >
-                      <EyeIcon className="h-5 w-5" />
+                      <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Link>
                     {isAuthenticated && (
                       <ItemCollectionControls
                         itemId={item.id}
                         itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
                         onOpenManageCollections={() => setManageCollectionsItemId(item.id)}
+                        displayMode="compact-mobile"
                       />
                     )}
                   </>
@@ -1095,7 +1111,7 @@ const CategoriesPage = () => {
                       pathKeywordsFromUrl,
                       filterKeywordsFromQuery
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
                     title="Add items for this category and navigation path"
                   >
                     <PlusIcon className="h-4 w-4" />
@@ -1112,6 +1128,22 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              middleSlot={
+                isAuthenticated ? (
+                  <Link
+                    to={buildAddItemsPathWithParams(
+                      categoryName,
+                      pathKeywordsFromUrl,
+                      filterKeywordsFromQuery
+                    )}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
+                    title="Add items for this category and navigation path"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </Link>
+                ) : null
+              }
               onOpenMap={() => setShowMapModal(true)}
               sortBy={sortBy}
               onSortChange={(s) => handleSortChange(s as SortOption)}

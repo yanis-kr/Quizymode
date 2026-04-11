@@ -41,6 +41,12 @@ At the subtopic level, mobile keeps the same hierarchy but presents the choices 
 
 ![Nav Geography Capitals](screenshots/mobile/nav-geography-capitals.png "Nav Geography Capitals")
 
+### Nav Geography Capitals World
+
+At the leaf level, the item view switches into the same **List** mode as desktop, but the mode controls and action buttons may wrap across multiple lines. The narrow layout keeps the question content readable while still exposing the study-mode switcher.
+
+![Nav Geography Capitals World](screenshots/mobile/nav-geography-capitals-world.png "Nav Geography Capitals World")
+
 ### Mode Flashcards
 
 On mobile, flashcards stay focused on one item at a time, with the card taking most of the viewport. Navigation controls sit close to the card so you can flip and advance without leaving the screen.
@@ -54,6 +60,30 @@ Quiz mode on mobile keeps the same multiple-choice flow, but the question, answe
 ![Mode Quiz](screenshots/mobile/mode-quiz.png "Mode Quiz")
 
 ## Building Your Collection
+
+### Items Add To Collection
+
+Collection controls remain available in mobile study views, but they compress beneath or alongside the content depending on space. The goal is the same one-tap add flow, with the controls adapted to a tighter card layout.
+
+![Items Add To Collection](screenshots/mobile/items-add-to-collection.png "Items Add To Collection")
+
+### Items Collection Badges
+
+After you add items on mobile, the filled collection badges remain visible directly on the compact item cards. This makes it clear which items are already in the active collection without needing extra panels.
+
+![Items Collection Badges](screenshots/mobile/items-collection-badges.png "Items Collection Badges")
+
+### Items Collection Removed
+
+Removing an item from the active collection works the same on mobile. The item card updates in place, freeing the add button again and keeping the workflow quick on a narrow screen.
+
+![Items Collection Removed](screenshots/mobile/items-collection-removed.png "Items Collection Removed")
+
+### Active Collection Selector
+
+The active collection workflow is still available on mobile, but the management dialog becomes more sheet-like and space-efficient. You can create or switch collections without leaving the current study context.
+
+![Active Collection Selector](screenshots/mobile/active-collection-selector.png "Active Collection Selector")
 
 ### Collection New
 

@@ -13,8 +13,7 @@ import { EyeIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicon
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
-
-const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
+import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,7 +26,7 @@ const CollectionDetailPage = () => {
   const location = useLocation();
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [itemsPage, setItemsPage] = useState(1);
-  const [pageSize, setPageSize] = useState(25);
+  const { pageSize, updatePageSize } = usePageSize();
   const [showDetails, setShowDetails] = useState(false);
 
   const {
@@ -194,7 +193,7 @@ const CollectionDetailPage = () => {
               <select
                 value={pageSize}
                 onChange={(e) => {
-                  setPageSize(parseInt(e.target.value, 10));
+                  updatePageSize(parseInt(e.target.value, 10));
                   setItemsPage(1);
                 }}
                 className="rounded border-slate-300 bg-white text-sm text-slate-900"
@@ -395,19 +394,19 @@ const CollectionDetailPage = () => {
               <>
                 <Link
                   to={`/items/${item.id}${itemDetailSearch}`}
-                  className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-md inline-flex"
+                  className="inline-flex rounded-md p-1.5 text-indigo-600 hover:bg-indigo-50 sm:p-2"
                   title="View item details"
                 >
-                  <EyeIcon className="h-5 w-5" />
+                  <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
                 {isOwner && (
                   <button
                     type="button"
                     onClick={() => handleRemoveItem(item.id)}
-                    className="p-2 text-amber-600 hover:bg-amber-50 rounded-md"
+                    className="rounded-md p-1.5 text-amber-600 hover:bg-amber-50 sm:p-2"
                     title="Remove from collection"
                   >
-                    <MinusIcon className="h-5 w-5" />
+                    <MinusIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </button>
                 )}
                 {isAuthenticated && (
@@ -415,6 +414,7 @@ const CollectionDetailPage = () => {
                     itemId={item.id}
                     itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
                     onOpenManageCollections={() => setManageCollectionsItemId(item.id)}
+                    displayMode="compact-mobile"
                   />
                 )}
               </>

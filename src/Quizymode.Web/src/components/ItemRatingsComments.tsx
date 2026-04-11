@@ -20,6 +20,7 @@ interface ItemRatingsCommentsProps {
   returnUrl?: string;
   /** When in study flow (Explore/Quiz), open comments in drawer instead of navigating */
   onOpenComments?: (itemId: string) => void;
+  presentation?: "default" | "list-card";
 }
 
 const ItemRatingsComments = ({
@@ -27,11 +28,13 @@ const ItemRatingsComments = ({
   navigationContext,
   returnUrl,
   onOpenComments,
+  presentation = "default",
 }: ItemRatingsCommentsProps) => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [userRating, setUserRating] = useState<number | null>(null);
+  const hideAggregateSummary = presentation === "list-card";
 
   const { data: ratingStats } = useQuery({
     queryKey: ["ratingStats", itemId],
@@ -90,11 +93,21 @@ const ItemRatingsComments = ({
   const commentsCount = commentsData?.comments.length || 0;
   const averageStars = ratingStats?.averageStars;
   const ratingCount = ratingStats?.count || 0;
+  const showStarControls = isAuthenticated;
+  const showAggregateSummary =
+    !hideAggregateSummary &&
+    averageStars !== null &&
+    averageStars !== undefined;
+  const hasLeadingContent = showStarControls || showAggregateSummary;
 
   return (
-    <div className="mt-4 flex items-center space-x-6 border-t pt-4">
+    <div
+      className={`mt-4 flex items-center gap-4 border-t pt-4 ${
+        hasLeadingContent ? "justify-between" : "justify-end"
+      }`}
+    >
       {/* Star Rating */}
-      {isAuthenticated && (
+      {showStarControls && (
         <div className="flex items-center space-x-1">
           {[1, 2, 3, 4, 5].map((star) => {
             const isFilled = userRating !== null && star <= userRating;
@@ -118,7 +131,7 @@ const ItemRatingsComments = ({
       )}
 
       {/* Average Rating */}
-      {averageStars !== null && averageStars !== undefined && (
+      {showAggregateSummary && (
         <div className="flex items-center space-x-1 text-sm text-gray-600">
           <StarIconSolid className="h-4 w-4 text-yellow-400" />
           <span className="font-medium">{averageStars.toFixed(1)}</span>
@@ -155,7 +168,7 @@ const ItemRatingsComments = ({
             );
           }
         }}
-        className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+        className="whitespace-nowrap text-sm font-medium text-indigo-600 hover:text-indigo-700"
       >
         Comments ({commentsCount})
       </button>
