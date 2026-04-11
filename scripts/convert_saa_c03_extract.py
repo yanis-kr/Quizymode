@@ -200,8 +200,8 @@ def main() -> None:
 
     for idx in range(max_c):
         chunk = chunks[idx]
-        part = idx + 2  # p2, p3, ...
-        out_path = OUT_DIR / f"exams.aws.saa-c03-p{part}.json"
+        part = idx + 2  # p02, p03, ... (two-digit suffix, matches p01 base)
+        out_path = OUT_DIR / f"exams.aws.saa-c03-p{part:02d}.json"
         items: list[dict] = []
         missing: list[int] = []
         for q in chunk:
@@ -221,7 +221,7 @@ def main() -> None:
     ensure_category_progress_dir("exams")
     progress_path = category_progress_file("exams", "_saa_progress.md")
     total_written = sum(
-        len(json.loads((OUT_DIR / f"exams.aws.saa-c03-p{idx + 2}.json").read_text(encoding="utf-8")))
+        len(json.loads((OUT_DIR / f"exams.aws.saa-c03-p{idx + 2:02d}.json").read_text(encoding="utf-8")))
         for idx in range(max_c)
     )
     header = (
@@ -231,7 +231,7 @@ def main() -> None:
         f"(from `scripts/build_saa_c03_answer_key_from_github.py`; "
         f"uses explanations in [77629296/aws-certified-solutions-architect-associate-saa-c03](https://github.com/77629296/aws-certified-solutions-architect-associate-saa-c03) plus small `OVERRIDES`)\n"
         f"- Base seed (short items): `exams.aws.saa-c03.json` (15 items)\n"
-        f"- Part files: `exams.aws.saa-c03-p2.json` … `p{1 + max_c}.json` — **{total_written}** scenario items this run\n"
+        f"- Part files: `exams.aws.saa-c03-p02.json` … `p{1 + max_c:02d}.json` — **{total_written}** scenario items this run\n"
         f"- Keywords (all parts): same as base — `aws-saa-c03`, `aws-architecture`, `aws-services`\n"
         f"- Last run (UTC): {datetime.now(timezone.utc).isoformat()}\n\n"
     )
