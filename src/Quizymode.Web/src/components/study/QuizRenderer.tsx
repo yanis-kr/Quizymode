@@ -2,6 +2,7 @@
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
 import type { ItemResponse } from "@/types/api";
+import { TextWithLinks } from "@/components/TextWithLinks";
 
 export interface QuizRendererProps {
   item: ItemResponse;
@@ -68,7 +69,7 @@ export function QuizRenderer({
             Correct Answer: {item.correctAnswer}
           </p>
           {item.explanation && (
-            <p className="text-sm text-blue-700 mt-1">{item.explanation}</p>
+            <p className="text-sm text-blue-700 mt-1"><TextWithLinks text={item.explanation} /></p>
           )}
         </div>
       )}
