@@ -49,12 +49,13 @@ import {
   Squares2X2Icon,
   PlusIcon,
   ChevronRightIcon as BreadcrumbChevron,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 type SortOption = "name" | "rating" | "count";
 
 const CATEGORIES_PER_PAGE = 12;
-const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
+const PAGE_SIZE_OPTIONS = [5, 10, 25, 50, 100];
 
 const CategoriesPage = () => {
   const { isAuthenticated } = useAuth();
@@ -79,8 +80,7 @@ const CategoriesPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const { pageSize: userPageSize } = usePageSize();
-  const pageSize =
-    pageSizeFromUrl !== 10 ? pageSizeFromUrl : userPageSize;
+  const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
   const location = useLocation();
@@ -181,6 +181,17 @@ const CategoriesPage = () => {
     params.set("return", `${location.pathname}${location.search}`);
     return `?${params.toString()}`;
   }, [location.pathname, location.search]);
+
+  const removeTagKeywordFilter = (kw: string) => {
+    const updated = filterKeywordsFromQuery.filter(
+      (k) => k.toLowerCase() !== kw.toLowerCase()
+    );
+    const p = new URLSearchParams(searchParams);
+    if (updated.length > 0) p.set("keywords", updated.join(","));
+    else p.delete("keywords");
+    navigate(`${location.pathname}?${p.toString()}`);
+    setShowFilters(false);
+  };
 
   const handleApplyFilter = () => {
     const path = buildCategoryPath(filterCategorySlug, filterKeywords);
@@ -847,7 +858,7 @@ const CategoriesPage = () => {
                       pathKeywordsFromUrl,
                       filterKeywordsFromQuery
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
                     title="Add items for this category and navigation path"
                   >
                     <PlusIcon className="h-4 w-4" />
@@ -864,6 +875,22 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              middleSlot={
+                isAuthenticated && categoryName ? (
+                  <Link
+                    to={buildAddItemsPathWithParams(
+                      categoryName,
+                      pathKeywordsFromUrl,
+                      filterKeywordsFromQuery
+                    )}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
+                    title="Add items for this category and navigation path"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </Link>
+                ) : null
+              }
               onOpenMap={() => setShowMapModal(true)}
             />
             <FilterBottomSheet
@@ -889,6 +916,26 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
+                {filterKeywordsFromQuery.length > 0 && (
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                      Active keyword filters
+                    </label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {filterKeywordsFromQuery.map((kw) => (
+                        <button
+                          key={kw}
+                          type="button"
+                          onClick={() => removeTagKeywordFilter(kw)}
+                          className="inline-flex items-center gap-1 rounded-full bg-indigo-600 px-2.5 py-0.5 text-xs font-medium text-white hover:bg-indigo-700"
+                        >
+                          {kw}
+                          <XMarkIcon className="h-3 w-3" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>
@@ -1019,10 +1066,14 @@ const CategoriesPage = () => {
                 showRatingsAndComments
                 returnUrl={listItemsReturnUrl}
                 onKeywordClick={(keywordName) => {
-                  const newFilterKeywords = dedupeKeywords([
-                    ...filterKeywordsFromQuery,
-                    keywordName,
-                  ]);
+                  const isSelected = filterKeywordsFromQuery.some(
+                    (k) => k.toLowerCase() === keywordName.toLowerCase()
+                  );
+                  const newFilterKeywords = isSelected
+                    ? filterKeywordsFromQuery.filter(
+                        (k) => k.toLowerCase() !== keywordName.toLowerCase()
+                      )
+                    : dedupeKeywords([...filterKeywordsFromQuery, keywordName]);
                   navigateToItems(
                     scopePathWithNav,
                     true,
@@ -1035,16 +1086,17 @@ const CategoriesPage = () => {
                   <>
                     <Link
                       to={`/items/${item.id}${itemDetailSearch}`}
-                      className="inline-flex rounded-md p-2 text-indigo-600 hover:bg-indigo-50"
+                      className="inline-flex rounded-md p-1.5 text-indigo-600 hover:bg-indigo-50 sm:p-2"
                       title="View item details"
                     >
-                      <EyeIcon className="h-5 w-5" />
+                      <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Link>
                     {isAuthenticated && (
                       <ItemCollectionControls
                         itemId={item.id}
                         itemCollectionIds={new Set((item.collections ?? []).map((c) => c.id))}
                         onOpenManageCollections={() => setManageCollectionsItemId(item.id)}
+                        displayMode="compact-mobile"
                       />
                     )}
                   </>
@@ -1095,7 +1147,7 @@ const CategoriesPage = () => {
                       pathKeywordsFromUrl,
                       filterKeywordsFromQuery
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
                     title="Add items for this category and navigation path"
                   >
                     <PlusIcon className="h-4 w-4" />
@@ -1112,6 +1164,22 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              middleSlot={
+                isAuthenticated ? (
+                  <Link
+                    to={buildAddItemsPathWithParams(
+                      categoryName,
+                      pathKeywordsFromUrl,
+                      filterKeywordsFromQuery
+                    )}
+                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
+                    title="Add items for this category and navigation path"
+                  >
+                    <PlusIcon className="h-4 w-4" />
+                    Add
+                  </Link>
+                ) : null
+              }
               onOpenMap={() => setShowMapModal(true)}
               sortBy={sortBy}
               onSortChange={(s) => handleSortChange(s as SortOption)}
@@ -1144,6 +1212,26 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
+                {filterKeywordsFromQuery.length > 0 && (
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                      Active keyword filters
+                    </label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {filterKeywordsFromQuery.map((kw) => (
+                        <button
+                          key={kw}
+                          type="button"
+                          onClick={() => removeTagKeywordFilter(kw)}
+                          className="inline-flex items-center gap-1 rounded-full bg-indigo-600 px-2.5 py-0.5 text-xs font-medium text-white hover:bg-indigo-700"
+                        >
+                          {kw}
+                          <XMarkIcon className="h-3 w-3" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>

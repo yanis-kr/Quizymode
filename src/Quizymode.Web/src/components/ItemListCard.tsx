@@ -25,36 +25,37 @@ const ItemListCard = ({
 }: ItemListCardProps) => {
   return (
     <div className="bg-white shadow rounded-lg p-6">
-      <div className="flex justify-between items-start">
-        <div className="flex items-start space-x-3 flex-1">
-          <div className="flex-1">
-            <h3 className="text-lg font-medium text-gray-900">
-              {item.question}
-            </h3>
-            <p className="mt-2 text-sm text-gray-500">{item.category}</p>
+      <div className="space-y-3">
+        <h3 className="text-lg font-medium text-gray-900">
+          {item.question}
+        </h3>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm text-gray-500">{item.category}</p>
             <p className="mt-1 text-sm text-gray-500">
               {item.isPrivate ? "Private" : "Public"}
             </p>
             <ItemAverageStars itemId={item.id} />
-            <p className="mt-2 text-sm text-gray-700">
-              <strong>Answer:</strong> {item.correctAnswer}
-            </p>
-
-            <KeywordsAndCollectionsSection
-              keywords={item.keywords}
-              collections={item.collections}
-              onKeywordClick={onKeywordClick ? (kw) => onKeywordClick(kw, item) : undefined}
-              selectedKeywords={selectedKeywords}
-            />
-            {showRatingsAndComments && (
-              <ItemRatingsComments
-                itemId={item.id}
-                returnUrl={returnUrl}
-              />
-            )}
           </div>
+          {actions && <div className="flex flex-wrap items-center justify-end gap-1 sm:gap-2">{actions}</div>}
         </div>
-        {actions && <div className="flex space-x-1 ml-4">{actions}</div>}
+        <p className="text-sm text-gray-700">
+          <strong>Answer:</strong> {item.correctAnswer}
+        </p>
+
+        <KeywordsAndCollectionsSection
+          keywords={item.keywords}
+          collections={item.collections}
+          onKeywordClick={onKeywordClick ? (kw) => onKeywordClick(kw, item) : undefined}
+          selectedKeywords={selectedKeywords}
+        />
+        {showRatingsAndComments && (
+          <ItemRatingsComments
+            itemId={item.id}
+            returnUrl={returnUrl}
+            presentation="list-card"
+          />
+        )}
       </div>
     </div>
   );

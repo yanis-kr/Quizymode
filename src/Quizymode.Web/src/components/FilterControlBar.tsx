@@ -1,6 +1,7 @@
+import type { ReactNode } from "react";
 /**
  * Compact control bar that replaces the inline FilterSection header.
- * Shows a filter trigger button (with active badge) and an optional sort dropdown.
+ * Shows a filter trigger button (with active badge) and optional secondary actions.
  */
 import { FunnelIcon } from "@heroicons/react/24/outline";
 
@@ -14,6 +15,7 @@ interface FilterControlBarProps {
   /** Number to display in the badge; hidden when 0 or undefined. */
   activeFilterCount?: number;
   onOpenFilters: () => void;
+  middleSlot?: ReactNode;
   onOpenMap?: () => void;
   sortBy?: string;
   onSortChange?: (sort: string) => void;
@@ -24,6 +26,7 @@ export function FilterControlBar({
   hasActiveFilters,
   activeFilterCount,
   onOpenFilters,
+  middleSlot,
   onOpenMap,
   sortBy,
   onSortChange,
@@ -32,7 +35,7 @@ export function FilterControlBar({
   const showSort = sortBy != null && onSortChange != null && sortOptions != null && sortOptions.length > 0;
 
   return (
-    <div className="flex items-center justify-between gap-2 py-2 mb-1">
+    <div className="mb-1 flex flex-wrap items-center gap-2 py-2">
       {/* Filter trigger */}
       <button
         type="button"
@@ -52,8 +55,10 @@ export function FilterControlBar({
         )}
       </button>
 
+      {middleSlot}
+
       {/* Right-side controls */}
-      <div className="flex items-center gap-2">
+      <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
         {onOpenMap != null && (
           <button
             type="button"

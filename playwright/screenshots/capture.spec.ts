@@ -5,7 +5,7 @@ import fs from "fs";
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 const HOME_SAMPLE_COLLECTION_SLUG = "sample+collection";
 const HOME_SAMPLE_COLLECTION_DETAIL_PATH = `/collections/${HOME_SAMPLE_COLLECTION_ID}/${HOME_SAMPLE_COLLECTION_SLUG}`;
-const USER_GUIDE_COMMENT_TEXT = "Great mnemonic: Bern sounds like bear for Switzerland.";
+const USER_GUIDE_COMMENT_TEXT = "Study tip: grouping capitals by continent makes them easier to remember — try Europe first, then expand to other regions.";
 
 const STUDY_GUIDE_TEXT = `Here are 50 random countries with their capitals and approximate current populations.
 
@@ -659,6 +659,26 @@ async function addCommentForCurrentItem(page: Page, text: string) {
   }
 }
 
+async function setPageSizeToFive(page: Page) {
+  await page.evaluate(async () => {
+    const prefix = "CognitoIdentityServiceProvider";
+    const accessTokenKey = Object.keys(localStorage).find(
+      (k) => k.startsWith(prefix) && k.endsWith(".accessToken")
+    );
+    if (!accessTokenKey) return;
+    const token = localStorage.getItem(accessTokenKey);
+    if (!token) return;
+    await fetch("/api/users/settings", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ key: "PageSize", value: "5" }),
+    }).catch(() => {});
+  }).catch(() => {});
+}
+
 async function ensureStudyGuideSaved(page: Page) {
   await ensureSignedIn(page);
   await safeGoto(page, "/study-guide");
@@ -773,40 +793,12 @@ test.describe("User guide screenshots", () => {
   const secondCollectionName = "Second collection";
 
   test("home", async ({ page }, testInfo) => {
+    await setPageSizeToFive(page);
     await capture(page, testInfo, "home", "/");
   });
 
   test("categories", async ({ page }, testInfo) => {
     await capture(page, testInfo, "categories", "/categories");
-  });
-
-  test("category-detail", async ({ page }, testInfo) => {
-    await page.goto("/categories", { waitUntil: "load", timeout: 15_000 });
-    await page.waitForTimeout(2_000);
-
-    const links = await page.locator("a[href^='/categories/']").all();
-    let href: string | null = null;
-    for (const link of links) {
-      const value = await link.getAttribute("href").catch(() => null);
-      if (value && value.split("/").filter(Boolean).length === 2) {
-        href = value;
-        break;
-      }
-    }
-
-    await capture(page, testInfo, "category-detail", href ?? "/categories");
-  });
-
-  test("category-keyword-group", async ({ page }, testInfo) => {
-    await page.goto("/categories", { waitUntil: "load", timeout: 15_000 });
-    await page.waitForTimeout(2_000);
-    const links = page.locator("a[href^='/categories/']");
-    const count = await links.count();
-    const href =
-      count >= 2
-        ? await links.nth(1).getAttribute("href").catch(() => null)
-        : null;
-    await capture(page, testInfo, "category-keyword-group", href ?? "/categories");
   });
 
   test("add-items", async ({ page }, testInfo) => {
@@ -847,10 +839,6 @@ test.describe("User guide screenshots", () => {
     ]);
   });
 
-  test("collections-discover", async ({ page }, testInfo) => {
-    await capture(page, testInfo, "collections-discover", "/collections?tab=discover");
-  });
-
   test("collection-detail", async ({ page }, testInfo) => {
     await openCollectionByName(page, secondCollectionName);
     await captureCurrentPage(page, testInfo, "collection-detail");
@@ -862,6 +850,10 @@ test.describe("User guide screenshots", () => {
 
   test("feedback", async ({ page }, testInfo) => {
     await capture(page, testInfo, "feedback", "/feedback");
+  });
+
+  test("ideas", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "ideas", "/ideas");
   });
 
   test("nav-geography", async ({ page }, testInfo) => {

@@ -5,6 +5,8 @@ import { useAuth } from "@/contexts/AuthContext";
 const DEFAULT_PAGE_SIZE = 10;
 const SETTING_KEY_PAGE_SIZE = "PageSize";
 
+export const PAGE_SIZE_OPTIONS = [5, 10, 25, 50, 100];
+
 /**
  * Custom hook to get and update the user's page size setting.
  * Returns the current page size (defaults to 10 if not set),

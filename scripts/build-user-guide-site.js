@@ -198,6 +198,7 @@ function buildIndexHtml(manifest, options) {
           return `
             <article class="guide-step" id="${escapeHtml(step.slug)}">
               <header class="guide-step__header">
+                <span class="guide-step__step-number" data-step></span>
                 <h3>${escapeHtml(step.title)}</h3>
                 <p
                   class="guide-step__description"
@@ -252,10 +253,13 @@ function buildIndexHtml(manifest, options) {
     <div class="page-shell">
       <header class="page-header">
         <div class="page-header__copy">
-          <p class="eyebrow">Quizymode Guide</p>
-          <h1>Desktop and mobile walkthroughs in one place</h1>
+          <p class="eyebrow">Quizymode User Guide</p>
+          <h1>Learn, quiz, and organise — all in one place</h1>
+          <p class="app-intro">
+            Quizymode is a study and quiz application for learning from structured question banks. Browse items by subject area and topic, practise with flashcards or multiple-choice quizzes, and organise content into personal or shared collections. Items can be created manually, imported in bulk, or generated with AI assistance — all anchored to a subject-area taxonomy that keeps study sessions focused.
+          </p>
           <p class="lede">
-            These screenshots are captured from the live production site after deployment. Use the switch to compare the same scenario in desktop or mobile mode.
+            This guide walks through every major feature available to signed-in users. Screenshots are captured automatically from the live production site after each deployment. Use the Desktop / Mobile switch to compare the same scenario at each viewport.
           </p>
         </div>
         <div class="page-header__controls">
@@ -290,16 +294,16 @@ function buildIndexHtml(manifest, options) {
 }
 
 const siteCss = `:root {
-  --bg: #f4efe2;
-  --panel: rgba(255, 252, 244, 0.92);
-  --panel-strong: #fffaf0;
-  --text: #1f2933;
-  --muted: #5f6b76;
-  --accent: #c65d3b;
-  --accent-soft: rgba(198, 93, 59, 0.14);
-  --line: rgba(31, 41, 51, 0.14);
-  --shadow: 0 24px 70px rgba(68, 52, 31, 0.12);
-  --radius: 22px;
+  --bg: #f1f5f9;
+  --panel: #ffffff;
+  --panel-strong: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #4f46e5;
+  --accent-soft: rgba(79, 70, 229, 0.08);
+  --line: rgba(100, 116, 139, 0.18);
+  --shadow: 0 2px 16px rgba(15, 23, 42, 0.07);
+  --radius: 16px;
 }
 
 * {
@@ -312,11 +316,10 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(255, 215, 164, 0.55), transparent 28%),
-    linear-gradient(180deg, #f7f0df 0%, #efe4cf 100%);
+  background: linear-gradient(160deg, #eff6ff 0%, #f1f5f9 55%, #eef2ff 100%);
+  min-height: 100vh;
 }
 
 a {
@@ -340,16 +343,16 @@ a {
 
 .page-header {
   display: grid;
-  gap: 24px;
-  grid-template-columns: 1.3fr 1fr;
-  padding: 28px;
+  gap: 32px;
+  grid-template-columns: 1.4fr 1fr;
+  padding: 32px;
 }
 
 .eyebrow {
   margin: 0 0 10px;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -359,17 +362,25 @@ a {
 .guide-section h2,
 .guide-step h3 {
   margin: 0;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .page-header h1 {
-  font-size: clamp(2.3rem, 3.8vw, 3.7rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  color: var(--text);
+}
+
+.app-intro {
+  margin: 14px 0 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--text);
 }
 
 .lede {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   line-height: 1.65;
 }
 
@@ -377,15 +388,16 @@ a {
   display: grid;
   gap: 14px;
   align-content: start;
+  padding-top: 4px;
 }
 
 .mode-switch {
   display: inline-flex;
   width: fit-content;
-  padding: 6px;
+  padding: 4px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(198, 93, 59, 0.18);
+  background: var(--accent-soft);
+  border: 1px solid rgba(79, 70, 229, 0.2);
 }
 
 .mode-switch__button {
@@ -396,12 +408,14 @@ a {
   cursor: pointer;
   font: inherit;
   font-weight: 600;
-  padding: 10px 18px;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  transition: background 0.15s, color 0.15s;
 }
 
 .mode-switch__button[aria-pressed="true"] {
   background: var(--accent);
-  color: #fffaf6;
+  color: #fff;
 }
 
 .mode-switch__status,
@@ -414,38 +428,53 @@ a {
 .mode-switch__status,
 .guide-meta {
   margin: 0;
+  font-size: 0.88rem;
 }
 
 .guide-meta {
-  padding-left: 18px;
+  padding-left: 16px;
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .toc {
-  margin-top: 24px;
-  padding: 18px 24px;
+  margin-top: 16px;
+  padding: 16px 24px;
+}
+
+.toc h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .toc ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 16px;
-  margin: 12px 0 0;
+  gap: 8px 14px;
+  margin: 10px 0 0;
   padding: 0;
 }
 
 .toc a {
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.9rem;
   color: var(--accent);
+}
+
+.toc a:hover {
+  text-decoration: underline;
 }
 
 .guide-content {
   display: grid;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 16px;
+  counter-reset: guide-step;
 }
 
 .guide-section {
@@ -454,33 +483,52 @@ a {
 
 .guide-section__heading {
   margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
 .guide-section h2 {
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  color: var(--text);
 }
 
 .guide-step-grid {
   display: grid;
-  gap: 20px;
+  gap: 16px;
 }
 
 .guide-step {
   display: grid;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 18px;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
   background: var(--panel-strong);
-  border: 1px solid rgba(31, 41, 51, 0.1);
+  border: 1px solid var(--line);
+  counter-increment: guide-step;
+}
+
+.guide-step__header {
+  display: grid;
+  gap: 2px;
+}
+
+.guide-step__step-number {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
 }
 
 .guide-step h3 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  color: var(--text);
 }
 
 .guide-step__description {
-  margin: 10px 0 0;
-  line-height: 1.6;
+  margin: 6px 0 0;
+  line-height: 1.65;
+  font-size: 0.92rem;
 }
 
 .guide-step__figure {
@@ -491,8 +539,8 @@ a {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: 10px;
+  border: 1px solid var(--line);
   background: #fff;
 }
 
@@ -500,12 +548,13 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 10px;
-  font-size: 0.9rem;
+  margin-top: 8px;
+  font-size: 0.82rem;
 }
 
 .guide-step__slug {
   font-family: Consolas, "Courier New", monospace;
+  color: var(--muted);
 }
 
 .guide-step__availability:not([hidden]) {
@@ -534,7 +583,7 @@ a {
   .page-header,
   .guide-section,
   .toc {
-    padding: 18px;
+    padding: 16px;
   }
 
   .mode-switch {
@@ -543,10 +592,11 @@ a {
 
   .mode-switch__button {
     flex: 1;
+    text-align: center;
   }
 
   .guide-step {
-    padding: 14px;
+    padding: 12px;
   }
 
   .guide-step__meta {
@@ -644,6 +694,13 @@ const siteJs = `(() => {
   }
 
   setMode(getPreferredMode(), false);
+
+  // Number steps sequentially across all sections
+  const stepNumbers = Array.from(document.querySelectorAll("[data-step]"));
+  stepNumbers.forEach((el, index) => {
+    const n = index + 1;
+    el.textContent = n < 10 ? "0" + n + "." : n + ".";
+  });
 })();`;
 
 function writeSiteFiles(outputDir, manifest, options) {
