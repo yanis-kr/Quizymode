@@ -80,7 +80,8 @@ export const baseDescriptions = {
   "keyword-filter": `Items in List mode show their keywords as small tags. Clicking a keyword tag instantly filters the list to show only items that share that tag. This is useful for focusing on a specific sub-topic within a broader scope.`,
   "item-detail": `Clicking the **eye icon** on a list card opens the item detail page. This page shows extra information that is not visible in the regular list, flashcard, or quiz views, such as the full answer block, incorrect options, explanation, source, visibility, created metadata, keywords, and collections.`,
   "item-rating-five-stars": `On the item detail page, signed-in users can rate an item by clicking one of the five stars. The rating saves immediately; clicking the same star again removes your rating. The row also shows the current average rating and total rating count.`,
-  "item-comment-added": `From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread right away with your name and timestamp.`,
+  "item-comment-added": `From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread immediately with your name and timestamp.`,
+  ideas: `The **Ideas** board at \`/ideas\` is a public product planning surface where anyone can browse feature requests and improvement proposals. Ideas are grouped by lifecycle status (Proposed, Planned, In Progress, Shipped, Archived). Signed-in users can submit new ideas, rate published ones, and follow discussion threads. New submissions go through moderation before appearing publicly on the board.`,
   "collections-mine": `The **My Collections** tab shows all collections you own once the page finishes loading. Each card displays the collection name, description, item count, and sharing state, along with icon actions to edit it, make it active, copy its link, or delete it. You can also create a new collection from this tab.`,
   "collection-detail": `Clicking a collection card opens that collection's study page. The page keeps **Collections** as the active navigation area and shows mode tabs for **List**, **Flashcards**, and **Quiz** so you can study the same collection in different ways. Owners can also remove items or manage which collection is currently active from here.`,
   "collection-detail-flashcards": `Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card: answer first, then question and explanation when flipped.`,
@@ -143,6 +144,7 @@ export const mobileDescriptionOverrides = {
   "study-guide-import": `The import wizard keeps the same guided flow on mobile, but each setup control and step section stacks vertically. This preserves the multi-step workflow while fitting the full setup onto a phone screen.`,
   "study-guide-import-prompts": `Prompt cards in the import wizard become tall mobile panels showing the chunk details, prompt text, response box, and validation actions in one vertical flow. This makes the workflow slower to scan than desktop, but still complete on a phone.`,
   "study-guide-import-first-prompt": `On mobile, a single prompt set fills most of the screen as a narrow, scrollable block of instructions and source text. The screenshot highlights how the generated prompt remains usable even when the viewport is constrained.`,
+  ideas: `The Ideas board on mobile stacks status groups and idea cards into a single-column scroll view. The submit and rating actions remain accessible, but the layout shifts from a wide grid to a more focused vertical feed.`,
 };
 
 export const sections = [
@@ -211,7 +213,7 @@ export const sections = [
   },
   {
     title: "Other Pages",
-    slugs: ["about", "feedback"],
+    slugs: ["about", "feedback", "ideas"],
   },
 ];
 
