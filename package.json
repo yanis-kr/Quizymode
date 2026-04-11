@@ -1,10 +1,15 @@
 {
   "type": "module",
   "scripts": {
-    "screenshots:production": "playwright test --project=screenshots",
-    "screenshots:local": "playwright test --project=screenshots",
-    "user-guide:production": "npm run screenshots:production && node scripts/generate-user-guide.js",
-    "user-guide:local": "npm run screenshots:local && node scripts/generate-user-guide.js"
+    "screenshots:desktop": "playwright test --project=screenshots",
+    "screenshots:mobile": "playwright test --project=screenshots-mobile",
+    "screenshots:all": "playwright test --project=screenshots --project=screenshots-mobile",
+    "screenshots:production": "npm run screenshots:all",
+    "screenshots:local": "npm run screenshots:all",
+    "user-guide:wait-ready": "node scripts/wait-for-production-ready.js",
+    "user-guide:site": "node scripts/build-user-guide-site.js",
+    "user-guide:production": "npm run screenshots:all && node scripts/generate-user-guide.js --all",
+    "user-guide:local": "npm run screenshots:all && node scripts/generate-user-guide.js --all"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2"

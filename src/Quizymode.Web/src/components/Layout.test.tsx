@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
+import { USER_GUIDE_URL } from "@/utils/userGuideLink";
 import Layout from "./Layout";
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -62,7 +63,7 @@ describe("Layout", () => {
     });
   });
 
-  it("links to the desktop user guide for desktop browsers", () => {
+  it("links to the published user guide for desktop browsers", () => {
     Object.defineProperty(window.navigator, "userAgent", {
       configurable: true,
       value:
@@ -73,11 +74,11 @@ describe("Layout", () => {
 
     expect(screen.getByRole("link", { name: "User Guide" })).toHaveAttribute(
       "href",
-      "https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md"
+      USER_GUIDE_URL
     );
   });
 
-  it("links to the mobile user guide for mobile browsers", () => {
+  it("links to the published user guide for mobile browsers", () => {
     Object.defineProperty(window.navigator, "userAgent", {
       configurable: true,
       value:
@@ -88,7 +89,7 @@ describe("Layout", () => {
 
     expect(screen.getByRole("link", { name: "User Guide" })).toHaveAttribute(
       "href",
-      "https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
+      USER_GUIDE_URL
     );
   });
 

@@ -95,6 +95,8 @@ jobs:
 
       - name: Build web app
         working-directory: src/Quizymode.Web
+        env:
+          VITE_GIT_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           npm ci
           npm run build

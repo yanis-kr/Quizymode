@@ -1,0 +1,130 @@
+name: Publish User Guide
+
+on:
+  workflow_run:
+    workflows: [Deploy]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      expected_build_version:
+        description: Optional exact build version to wait for before capturing screenshots.
+        required: false
+        type: string
+
+concurrency:
+  group: user-guide-pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-guide:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Resolve expected live build
+        id: expected_build
+        shell: bash
+        env:
+          MANUAL_EXPECTED_BUILD_VERSION: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.expected_build_version || '' }}
+        run: |
+          APP_VERSION="$(grep -oPm1 '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)"
+
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            SHORT_SHA="${{ github.event.workflow_run.head_sha }}"
+            SHORT_SHA="${SHORT_SHA:0:7}"
+            EXPECTED_BUILD_VERSION="${APP_VERSION}+sha.${SHORT_SHA}"
+          else
+            EXPECTED_BUILD_VERSION="${MANUAL_EXPECTED_BUILD_VERSION}"
+          fi
+
+          echo "value=${EXPECTED_BUILD_VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "Resolved expected build version: ${EXPECTED_BUILD_VERSION:-<any live build marker>}"
+
+      - name: Wait for live production readiness
+        id: readiness
+        env:
+          USER_GUIDE_BASE_URL: https://www.quizymode.com/
+          USER_GUIDE_EXPECTED_BUILD_VERSION: ${{ steps.expected_build.outputs.value }}
+          USER_GUIDE_READY_TIMEOUT_SECONDS: 900
+          USER_GUIDE_READY_INTERVAL_SECONDS: 15
+        run: node scripts/wait-for-production-ready.js
+
+      - name: Capture live production screenshots
+        env:
+          PLAYWRIGHT_BASE_URL: https://www.quizymode.com/
+          TEST_USER_EMAIL: test-user@quizymode.com
+          TEST_USER_PASSWORD: ${{ secrets.QM_AGENT_USER_TEST_PWD }}
+          USER_GUIDE_SCREENSHOT_ROOT: ${{ runner.temp }}/user-guide-screenshots
+        run: |
+          if [ -z "${TEST_USER_PASSWORD}" ]; then
+            echo "QM_AGENT_USER_TEST_PWD is required to capture the user guide." >&2
+            exit 1
+          fi
+
+          npx playwright test --project=screenshots --project=screenshots-mobile
+
+      - name: Build static user-guide site
+        env:
+          USER_GUIDE_BASE_URL: https://www.quizymode.com/
+          USER_GUIDE_SCREENSHOT_ROOT: ${{ runner.temp }}/user-guide-screenshots
+          USER_GUIDE_SITE_OUTPUT_DIR: ${{ runner.temp }}/user-guide-pages
+          USER_GUIDE_DEPLOYED_BUILD_VERSION: ${{ steps.readiness.outputs.live_build_version }}
+        run: node scripts/build-user-guide-site.js
+
+      - name: Upload debug artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: user-guide-debug-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/user-guide-screenshots
+            playwright-report
+            playwright/test-results
+          retention-days: 3
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/user-guide-pages
+
+  deploy-pages:
+    needs: build-guide
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

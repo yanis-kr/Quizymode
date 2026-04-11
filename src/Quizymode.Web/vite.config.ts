@@ -17,7 +17,7 @@ function readAppVersion(): string {
 }
 
 function resolveBuildLabel(): string {
-  const sha = (process.env.GITHUB_SHA ?? process.env.VITE_GIT_SHA ?? "local").slice(0, 7);
+  const sha = (process.env.VITE_GIT_SHA ?? process.env.GITHUB_SHA ?? "local").slice(0, 7);
   const eventName = process.env.GITHUB_EVENT_NAME;
   const ref = process.env.GITHUB_REF ?? "";
   const prMatch = ref.match(/refs\/pull\/(\d+)\/merge/);
@@ -36,6 +36,7 @@ function resolveBuildLabel(): string {
 const appVersion = readAppVersion();
 const buildLabel = resolveBuildLabel();
 const buildVersion = `${appVersion}+${buildLabel}`;
+const buildTimestamp = new Date().toISOString();
 
 const aboutMarkdown = fs.readFileSync(
   path.resolve(__dirname, "../../docs/about.md"),
@@ -43,14 +44,27 @@ const aboutMarkdown = fs.readFileSync(
 );
 const aboutHtml = marked.parse(aboutMarkdown) as string;
 
+function injectBuildMetadata() {
+  return {
+    name: "quizymode-build-metadata",
+    transformIndexHtml(html: string) {
+      return html
+        .replace(/%QUIZYMODE_APP_VERSION%/g, appVersion)
+        .replace(/%QUIZYMODE_BUILD_LABEL%/g, buildLabel)
+        .replace(/%QUIZYMODE_BUILD_VERSION%/g, buildVersion)
+        .replace(/%QUIZYMODE_BUILD_TIME%/g, buildTimestamp);
+    },
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), injectBuildMetadata()],
   define: {
     __APP_VERSION__: JSON.stringify(appVersion),
     __BUILD_LABEL__: JSON.stringify(buildLabel),
     __BUILD_VERSION__: JSON.stringify(buildVersion),
-    __BUILD_TIME__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+    __BUILD_TIME__: JSON.stringify(buildTimestamp.slice(0, 10)),
     __ABOUT_HTML__: JSON.stringify(aboutHtml),
   },
   resolve: {
