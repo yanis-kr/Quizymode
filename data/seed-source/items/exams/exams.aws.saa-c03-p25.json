@@ -11,7 +11,7 @@
       "Migrate the data to Amazon S3 Use Amazon Macie for data security and protection",
       "Migrate the database to Amazon RDS. Use Amazon CloudWatch Logs for data security and protection."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #529). Correct choice: A.",
+    "explanation": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use AWS Cloud solutions to increase security and reduce operational overhead for the databases. Which solution will meet these requirements? The best-matching choice is: Migrate the databases to Amazon EC2. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.. AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.\nUPD260411: AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS. (https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -19,7 +19,16 @@
       "ec2",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS.",
+        "source": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+      }
+    ]
   },
   {
     "itemId": "2bc0a2d8-6464-480f-b9e9-c5cb509c7bc4",
@@ -33,7 +42,7 @@
       "Add AWS Global Accelerator in front of the NLBs. Configure a Global Accelerator endpoint to use the correct listener ports.",
       "Add an Amazon API Gateway endpoint behind the NLBs. Enable API caching. Override method caching for the different stages."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #530). Correct choice: A.",
+    "explanation": "A company has an online gaming application that has TCP and UDP multiplayer gaming capabilities. The company uses Amazon Route 53 to point the application traffic to multiple Network Load Balancers (NLBs) in different AWS Regions. The company needs to improve application performance and... The best-matching choice is: Add an Amazon CloudFront distribution in front of the NLBs. Increase the Cache-Control max-age parameter.. Easy-to-use and cost-effective global traffic management: route end users to the best endpoint for your application based on geoproximity, latency, health, and other considerations.\nUPD260411: Easy-to-use and cost-effective global traffic management: route end users to the best endpoint for your application based on geoproximity, latency, health, and other considerations. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -41,7 +50,16 @@
       "route53",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Easy-to-use and cost-effective global traffic management: route end users to the best endpoint for your application based on geoproximity, latency, health, and other considerations.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "815bb06a-3bb0-48fb-b2b3-a0920d1c17b2",
@@ -55,27 +73,36 @@
       "Create an Amazon Simple Notification Service (Amazon SNS) topic. Attach the topic to the Lambda function. Provide the public hostname of the SNS topic to the third party for the webhook.",
       "Create an Amazon Simple Queue Service (Amazon SQS) queue. Attach the queue to the Lambda function. Provide the public hostname of the SQS queue to the third party for the webhook."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #531). Correct choice: A.",
+    "explanation": "A company needs to integrate with a third-party data feed. The data feed sends a webhook to notify an external service when new data is ready for consumption. A developer wrote an AWS Lambda function to retrieve data when the company receives a webhook... The best-matching choice is: Create a function URL for the Lambda function. Provide the Lambda function URL to the third party for the webhook.. AWS Lambda is a compute service that runs code without the need to manage servers.\nUPD260411: AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function . (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function .",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "84c92450-f6e3-4bdf-91a0-2cf1b2eb104b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identiable information (PII). The company\nrecently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to notify\nthe company\u2019s security team.\nWhich solution will meet these requirements?",
+    "question": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identiable information (PII). The company\nrecently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to notify\nthe company’s security team.\nWhich solution will meet these requirements?",
     "correctAnswer": "Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData event type from Macie ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.",
     "incorrectAnswers": [
       "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.",
       "Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData:S3Object/Personal event type from Macie ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team.",
       "Use Amazon GuardDuty. Create an Amazon EventBridge rule to lter the CRITICAL event type from GuardDuty ndings and to send an Amazon Simple Queue Service (Amazon SQS) notication to the security team."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #533). Correct choice: A.",
+    "explanation": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identiable information (PII). The company recently discovered that S3 buckets have some objects that contain PII. The company needs to automatically detect PII in S3 buckets and to... The best-matching choice is: Use Amazon Macie. Create an Amazon EventBridge rule to lter the SensitiveData event type from Macie ndings and to send an Amazon Simple Notification Service (Amazon SNS) notication to the security team.. Pipes EventBridge Pipes is intended for point-to-point integrations; each pipe receives events from a single source for processing and delivery to a single target.\nUPD260411: Pipes EventBridge Pipes is intended for point-to-point integrations; each pipe receives events from a single source for processing and delivery to a single target. Pipes also include support for advanced transformations and enrichment of events prior to delivery to a target. Pipes and event buses are often used together. A common use case is to create a pipe with an event bus as its target; the pipe sends events to the event bus, which then sends those events on to multiple targets. For example, you could create... (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -84,7 +111,16 @@
       "sns",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Pipes EventBridge Pipes is intended for point-to-point integrations; each pipe receives events from a single source for processing and delivery to a single target. Pipes also include support for advanced transformations and enrichment of events prior to delivery to a target. Pipes and event buses are often used together. A common use case is to create a pipe with an event bus as its target; the pipe sends events to the event bus, which then sends those events on to multiple targets. For example, you could create...",
+        "source": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+      }
+    ]
   },
   {
     "itemId": "2ed50ab6-e057-4d6a-a990-64e6ea6844a8",
@@ -98,7 +134,7 @@
       "Transition objects to the S3 Glacier Flexible Retrieval storage class 30 days after creation. Write an expiration action that directs Amazon S3 to delete objects after 90 days.",
       "Transition objects to the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class 30 days after creation. Move all objects to the S3 Glacier Flexible Retrieval storage class after 90 days. Write an expiration action that directs Amazon S3 to delete objects after 90 days."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #534). Correct choice: A.",
+    "explanation": "A company wants to build a logging solution for its multiple AWS accounts. The company currently stores the logs from all accounts in a centralized account. The company has created an Amazon S3 bucket in the centralized account to store the VPC ow logs... The best-matching choice is: Transition objects to the S3 Standard storage class 30 days after creation. Write an expiration action that directs Amazon S3 to delete objects after 90 days.. The S3 Standard-IA and S3 One Zone-IA storage classes are suitable for objects larger than 128 KB that you plan to store for at least 30 days.\nUPD260411: The S3 Standard-IA and S3 One Zone-IA storage classes are suitable for objects larger than 128 KB that you plan to store for at least 30 days. If an object is less than 128 KB, Amazon S3 charges you for 128 KB. If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. Objects that are deleted, overwritten, or transitioned to a different storage class before 30 days will incur the normal storage usage charge plus a pro-rated charge for the remainder of the... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -107,7 +143,16 @@
       "vpc",
       "cloudtrail"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "The S3 Standard-IA and S3 One Zone-IA storage classes are suitable for objects larger than 128 KB that you plan to store for at least 30 days. If an object is less than 128 KB, Amazon S3 charges you for 128 KB. If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days. Objects that are deleted, overwritten, or transitioned to a different storage class before 30 days will incur the normal storage usage charge plus a pro-rated charge for the remainder of the...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      }
+    ]
   },
   {
     "itemId": "abe67e34-3b7d-4840-a55b-712b90012fb9",
@@ -121,7 +166,7 @@
       "Create the Amazon EKS cluster with default options. Use the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver as an add-on.",
       "Create a new AWS Key Management Service (AWS KMS) key with the alias/aws/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #535). Correct choice: A.",
+    "explanation": "A company is building an Amazon Elastic Kubernetes Service (Amazon EKS) cluster for its workloads. All secrets that are stored in Amazon EKS must be encrypted in the Kubernetes etcd key-value store. Which solution will meet these requirements? The best-matching choice is: Create a new AWS Key Management Service (AWS KMS) key. Use AWS Secrets Manager to manage, rotate, and store all secrets in Amazon EKS.. If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out.\nUPD260411: If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out. Secrets Manager logs all events as management events. AWS CloudTrail stores the first copy of all management events for free. However, you can incur charges for Amazon S3 for log storage and for Amazon SNS if you enable notification. Also, if you set up additional trails, the additional copies of management events can incur costs. For more information, see AWS CloudTrail pricing . (https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
@@ -130,21 +175,30 @@
       "kms",
       "secrets-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out. Secrets Manager logs all events as management events. AWS CloudTrail stores the first copy of all management events for free. However, you can incur charges for Amazon S3 for log storage and for Amazon SNS if you enable notification. Also, if you set up additional trails, the additional copies of management events can incur costs. For more information, see AWS CloudTrail pricing .",
+        "source": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+      }
+    ]
   },
   {
     "itemId": "63ef9465-4a91-4430-a99a-8b408f33fb36",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL\ndatabase. The database is currently congured as a Single-AZ database. The data scientists use complex queries that will not affect the\nproduction database. The company needs a solution that is highly available.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "question": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL\ndatabase. The database is currently configured as a Single-AZ database. The data scientists use complex queries that will not affect the\nproduction database. The company needs a solution that is highly available.\nWhich solution will meet these requirements MOST cost-effectively?",
     "correctAnswer": "Scale the existing production database in a maintenance window to provide enough power for the data scientists.",
     "incorrectAnswers": [
       "Change the setup from a Single-AZ to a Multi-AZ instance deployment with a larger secondary standby instance. Provide the data scientists access to the secondary instance.",
       "Change the setup from a Single-AZ to a Multi-AZ instance deployment. Provide two additional read replicas for the data scientists.",
       "Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #536). Correct choice: A.",
+    "explanation": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL database. The database is currently configured as a Single-AZ database. The data scientists use complex queries that will not affect the production database. The... The best-matching choice is: Scale the existing production database in a maintenance window to provide enough power for the data scientists.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -152,7 +206,16 @@
       "rds",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "b8ce41f9-42ce-4b8d-a84c-3522b52fbbd4",
@@ -166,7 +229,7 @@
       "Migrate the MySQL database to Amazon DynamoDB Use DynamoDB Accelerator (DAX) to cache reads. Store the session data in DynamoDB. Migrate the web server to an Auto Scaling group that is in three Availability Zones.",
       "Migrate the MySQL database to Amazon RDS for MySQL in a single Availability Zone. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #537). Correct choice: A.",
+    "explanation": "A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon EC2 web server that hosts user session states, and a MySQL database that runs on an EC2... The best-matching choice is: Migrate the MySQL database to Amazon RDS for MySQL with a Multi-AZ DB cluster deployment. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.. Amazon EC2 Auto Scaling — Ensures that you are running your desired number of instances, even if an instance fails, and enables you to automatically increase or decrease the number of instances as the demand on your instances changes.\nUPD260411: Amazon EC2 Auto Scaling — Ensures that you are running your desired number of instances, even if an instance fails, and enables you to automatically increase or decrease the number of instances as the demand on your instances changes. If you enable Auto Scaling with Elastic Load Balancing, instances that are launched by Auto Scaling are automatically registered with the target group, and instances that are terminated by Auto Scaling are automatically de-registered from the target group. (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -178,7 +241,16 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling — Ensures that you are running your desired number of instances, even if an instance fails, and enables you to automatically increase or decrease the number of instances as the demand on your instances changes. If you enable Auto Scaling with Elastic Load Balancing, instances that are launched by Auto Scaling are automatically registered with the target group, and instances that are terminated by Auto Scaling are automatically de-registered from the target group.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "c35a134c-f6ea-4762-b7e5-987d93e3f079",
@@ -192,13 +264,22 @@
       "Encrypt the data for the content that the company distributes. Set up a custom error message.",
       "Create a new URL for restricted content. Set up a time-restricted access policy for signed URLs."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #538). Correct choice: A.",
+    "explanation": "A global video streaming company uses Amazon CloudFront as a content distribution network (CDN). The company wants to roll out content in a phased manner across multiple countries. The company needs to ensure that viewers who are outside the countries to which the company... The best-matching choice is: Add geographic restrictions to the content in CloudFront by using an allow list. Set up a custom error message.. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "df9a3a4c-82e9-4a9e-b1a6-2b02945717c3",
@@ -209,10 +290,10 @@
     "correctAnswer": "Configure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.",
     "incorrectAnswers": [
       "Configure a warm standby Amazon RDS for SQL Server database on AWS. Configure AWS Database Migration Service (AWS DMS) to use change data capture (CDC).",
-      "Use AWS Elastic Disaster Recovery congured to replicate disk changes to AWS as a pilot light.",
+      "Use AWS Elastic Disaster Recovery configured to replicate disk changes to AWS as a pilot light.",
       "Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #539). Correct choice: A.",
+    "explanation": "A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) conguration. The company's core production business application uses Microsoft SQL Server Standard, which runs on a virtual machine (VM). The application has a recovery point objective (RPO) of 30... The best-matching choice is: Configure a multi-site active/active setup between the on-premises server and AWS by using Microsoft SQL Server Enterprise with Always On availability groups.. Application servers interact with RDS DB instances.\nUPD260411: Application servers interact with RDS DB instances. An application server in AWS is typically hosted on EC2 instances, which provide scalable computing capacity. The application servers reside in public subnets with different Availability Zones (AZs) within the same Virtual Private Cloud (VPC). (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-migration",
@@ -222,7 +303,16 @@
       "s3",
       "dms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Application servers interact with RDS DB instances. An application server in AWS is typically hosted on EC2 instances, which provide scalable computing capacity. The application servers reside in public subnets with different Availability Zones (AZs) within the same Virtual Private Cloud (VPC).",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "2a4ed1f8-d4da-483d-aeb5-46a856a3438b",
@@ -236,7 +326,7 @@
       "Use Amazon RDS deployed in a Multi-AZ cluster deployment to create an Oracle database. Direct the reporting functions to use the reader instance in the cluster deployment.",
       "Use Amazon RDS deployed in a Multi-AZ instance deployment to create an Amazon Aurora database. Direct the reporting functions to the reader instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #540). Correct choice: A.",
+    "explanation": "A company has an on-premises server that uses an Oracle database to process and store customer information. The company wants to use an AWS database service to achieve higher availability and to improve application performance. The company also wants to ooad reporting from its... The best-matching choice is: Use AWS Database Migration Service (AWS DMS) to create an Amazon RDS DB instance in multiple AWS Regions. Point the reporting functions toward a separate DB instance from the primary DB instance.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-migration",
@@ -245,7 +335,16 @@
       "rds",
       "dms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "f7653f78-21ae-46b5-81b5-7f529e075c69",
@@ -259,7 +358,7 @@
       "Use origin access control (OAC) to limit the access of non-premium customers.",
       "Generate and activate eld-level encryption to block non-premium customers."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #542). Correct choice: A.",
+    "explanation": "A media company uses an Amazon CloudFront distribution to deliver content over the internet. The company wants only premium customers to have access to the media streams and le content. The company stores all content in an Amazon S3 bucket. The company also delivers... The best-matching choice is: Generate and provide S3 signed cookies to premium customers.. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -267,7 +366,16 @@
       "s3",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "2ada68c6-6213-4720-a003-c93fb0a990ca",
@@ -281,7 +389,7 @@
       "Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON le format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.",
       "Create a new API Gateway endpoint with new versions of the API denitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #544). Correct choice: A.",
+    "explanation": "A retail company uses a regional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is a custom domain name that points to an Amazon Route 53 alias record. A solutions architect needs to create a solution that has minimal... The best-matching choice is: Create a canary release deployment stage for API Gateway. Deploy the latest API version. Point an appropriate percentage of traffic to the canary stage. After API verication, promote the canary stage to the production stage.. Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks.\nUPD260411: Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks. Create conditional forwarding rules and Route 53 endpoints to resolve custom names mastered in Route 53 private hosted zones or in your on-premises DNS servers. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -290,7 +398,16 @@
       "route53",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks. Create conditional forwarding rules and Route 53 endpoints to resolve custom names mastered in Route 53 private hosted zones or in your on-premises DNS servers.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "3e1784d5-2764-45b9-bdf5-fa4cd9aebc1c",
@@ -304,7 +421,7 @@
       "Set up a Route 53 active-active conguration with the ALB and an Amazon EC2 instance that hosts a static error page as endpoints. Configure Route 53 to send requests to the instance only if the health checks fail for the ALB.",
       "Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traffic to the website if the health check passes. Direct traffic to a static error page that is hosted in Amazon S3 if the health check does not pass."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #545). Correct choice: A.",
+    "explanation": "A company wants to direct its users to a backup static error page if the company's primary website is unavailable. The primary website's DNS records are hosted in Amazon Route 53. The domain is pointing to an Application Load Balancer (ALB). The company needs... The best-matching choice is: Update the Route 53 records to use a latency routing policy. Add a static error page that is hosted in an Amazon S3 bucket to the records so that the traffic is sent to the most responsive endpoints.. For a tutorial that takes you through registering a domain and creating a simple website in an Amazon S3 bucket, see Getting started with Amazon Route 53 .\nUPD260411: For a tutorial that takes you through registering a domain and creating a simple website in an Amazon S3 bucket, see Getting started with Amazon Route 53 . (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -313,7 +430,16 @@
       "route53",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "For a tutorial that takes you through registering a domain and creating a simple website in an Amazon S3 bucket, see Getting started with Amazon Route 53 .",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "b965ed8f-6091-43a7-b3b0-0458eff896ec",
@@ -327,13 +453,22 @@
       "Set up an Amazon EFS le system that connects with the backup applications using the iSCSI interface.",
       "Set up AWS Storage Gateway to connect with the backup applications using the iSCSI-virtual tape library (VTL) interface."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #546). Correct choice: A.",
+    "explanation": "A recent analysis of a company's IT expenses highlights the need to reduce backup costs. The company's chief information ocer wants to simplify the on-premises backup infrastructure and reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing... The best-matching choice is: Set up AWS Storage Gateway to connect with the backup applications using the NFS interface.. Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance.\nUPD260411: Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo... (https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "efs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo...",
+        "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+      }
+    ]
   },
   {
     "itemId": "42e1b677-6c04-4a8f-921a-372c07025cc7",
@@ -347,7 +482,7 @@
       "Use AWS Lambda to deliver streaming data and store the data to Amazon S3.",
       "Use AWS Database Migration Service (AWS DMS) to deliver streaming data to Amazon S3."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #547). Correct choice: A.",
+    "explanation": "A company has data collection sensors at different locations. The data collection sensors stream a high volume of data to the company. The company wants to design a platform on AWS to ingest and process high-volume streaming data. The solution must be scalable and... The best-matching choice is: Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to deliver streaming data to Amazon S3.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -355,7 +490,16 @@
       "s3",
       "kinesis"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "38f55611-592a-4ea6-b497-89f5e57c4644",
@@ -369,13 +513,22 @@
       "Use AWS CloudFormation to automatically provision only the AWS services that each department can use.",
       "Set up a list of products in AWS Service Catalog in the AWS accounts to manage and control the usage of specific AWS services."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #548). Correct choice: A.",
+    "explanation": "A company has separate AWS accounts for its nance, data analytics, and development departments. Because of costs and security concerns, the company wants to control which services each AWS account can use. Which solution will meet these requirements with the LEAST operational overhead? The best-matching choice is: Use AWS Systems Manager templates to control which AWS services each department can use.. Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing.\nUPD260411: Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing. From data warehousing to deployment tools, directories to content delivery, over 200 AWS services are available. (https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-management",
       "systems-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications: on-demand, available in seconds, with pay-as-you-go pricing. From data warehousing to deployment tools, directories to content delivery, over 200 AWS services are available.",
+        "source": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "718316c0-2717-4354-a496-44389e4fbe72",
@@ -389,7 +542,7 @@
       "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.",
       "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #549). Correct choice: A.",
+    "explanation": "A company has created a multi-tier application for its ecommerce website. The website uses an Application Load Balancer that resides in the public subnets, a web tier in the public subnets, and a MySQL cluster hosted on Amazon EC2 instances in the private subnets.... The best-matching choice is: Deploy a NAT instance in the VPC. Route all the internet-based traffic through the NAT instance.. Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet.\nUPD260411: Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route... (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -400,7 +553,16 @@
       "alb",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "83e66744-b681-4e83-8941-6dbbf1fae212",
@@ -414,14 +576,23 @@
       "Use S3 Intelligent-Tiering. Configure S3 Intelligent-Tiering to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) and S3 Glacier.",
       "Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier Deep Archive after 7 days."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #551). Correct choice: A.",
+    "explanation": "A company has a nancial application that produces reports. The reports average 50 KB in size and are stored in Amazon S3. The reports are frequently accessed during the rst week after production and must be stored for several years. The reports must be... The best-matching choice is: Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier after 7 days.. Transition actions – These actions define when objects transition to another storage class.\nUPD260411: Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+      }
+    ]
   },
   {
     "itemId": "e69d72c4-7c58-4193-923e-988b9cb2e6ac",
@@ -435,12 +606,21 @@
       "Purchase All Upfront Reserved Instances for a 1-year term.",
       "Purchase an All Upfront EC2 Instance Savings Plan for a 1-year term."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #552). Correct choice: A.",
+    "explanation": "A company needs to optimize the cost of its Amazon EC2 instances. The company also needs to change the type and family of its EC2 instances every 2-3 months. What should the company do to meet these requirements? The best-matching choice is: Purchase Partial Upfront Reserved Instances for a 3-year term.. You can reduce your Amazon EC2 costs by making a commitment to a specific instance configuration, including instance type and Region, for a term of 1 or 3 years.\nUPD260411: You can reduce your Amazon EC2 costs by making a commitment to a specific instance configuration, including instance type and Region, for a term of 1 or 3 years. (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:43Z",
+        "conclusion": "correct",
+        "explanation": "You can reduce your Amazon EC2 costs by making a commitment to a specific instance configuration, including instance type and Region, for a term of 1 or 3 years.",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   }
 ]

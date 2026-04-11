@@ -11,7 +11,7 @@
       "Replace the NAT gateway with a NAT instance.",
       "Deploy a gateway VPC endpoint for Amazon S3."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #42). Correct choice: D.",
+    "explanation": "A company runs a highly available image-processing application on Amazon EC2 instances in a single VPC. The EC2 instances run inside several subnets across multiple Availability Zones. The EC2 instances do not communicate with each other. However, the EC2 instances download images from Amazon... The best-matching choice is: Provision an EC2 Dedicated Host to run the EC2 instances.. Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet.\nUPD260411: Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route... (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -21,7 +21,16 @@
       "vpc",
       "nat-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:27Z",
+        "conclusion": "correct",
+        "explanation": "Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "71409559-4191-4f58-90de-50dc51b54506",
@@ -35,13 +44,22 @@
       "Establish a new AWS Direct Connect connection and direct backup traffic through this new connection.",
       "Order daily AWS Snowball devices. Load the data onto the Snowball devices and return the devices to AWS each day."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #43). Correct choice: D.",
+    "explanation": "A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design a long-term solution that... The best-matching choice is: Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:27Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "e91fb911-6783-4df5-a082-5560e1eae6dc",
@@ -55,14 +73,23 @@
       "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger a notication to the administrators to remove the objects that contain PII.",
       "Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger a notication to the administrators and trigger an S3 Lifecycle policy to remove the objects that contain PII."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #46). Correct choice: A.",
+    "explanation": "A company has an application that provides marketing services to stores. The services are based on previous purchases by store customers. The stores upload transaction data to the company through SFTP, and the data is processed and analyzed to generate new marketing offers. Some... The best-matching choice is: Use an Amazon S3 bucket as a secure transfer point. Use Amazon Inspector to scan the objects in the bucket. If objects contain PII, trigger an S3 Lifecycle policy to remove the objects that contain PII.. Expiration actions – These actions define when objects expire.\nUPD260411: Expiration actions – These actions define when objects expire. Amazon S3 deletes expired objects on your behalf. For example, you might to choose to expire objects after they have been stored for a regulatory compliance period. For more information, see Expiring objects . There are potential costs associated with lifecycle expiration only when you expire objects in a storage class with a minimum storage duration. For more information, see Minimum storage duration charge . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "aws-security",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:27Z",
+        "conclusion": "correct",
+        "explanation": "Expiration actions – These actions define when objects expire. Amazon S3 deletes expired objects on your behalf. For example, you might to choose to expire objects after they have been stored for a regulatory compliance period. For more information, see Expiring objects . There are potential costs associated with lifecycle expiration only when you expire objects in a storage class with a minimum storage duration. For more information, see Minimum storage duration charge .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+      }
+    ]
   },
   {
     "itemId": "5c6a8dce-3a48-4f59-b38e-b0930759ecce",
@@ -76,13 +103,22 @@
       "Purchase Reserved Instances that specify the Region and three Availability Zones needed.",
       "Create an On-Demand Capacity Reservation that species the Region and three Availability Zones needed."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #47). Correct choice: A.",
+    "explanation": "A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in a specific AWS Region for an upcoming event that will last 1 week. What should the company do to guarantee the EC2 capacity? The best-matching choice is: Purchase Reserved Instances that specify the Region needed.. Reserve compute capacity for your EC2 instances in a specific Availability Zone for any duration of time.\nUPD260411: Reserve compute capacity for your EC2 instances in a specific Availability Zone for any duration of time. (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Reserve compute capacity for your EC2 instances in a specific Availability Zone for any duration of time.",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "c8ec0f5f-6481-48e0-935e-5009d23441d0",
@@ -96,7 +132,7 @@
       "Move the catalog from the instance store to Amazon S3 Glacier Deep Archive.",
       "Move the catalog to an Amazon Elastic File System (Amazon EFS) le system."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #48). Correct choice: A.",
+    "explanation": "A company's website uses an Amazon EC2 instance store for its catalog of items. The company wants to make sure that the catalog is highly available and that the catalog is stored in a durable location. What should a solutions architect do to meet... The best-matching choice is: Move the catalog to Amazon ElastiCache for Redis.. Welcome to the Amazon ElastiCache User Guide .\nUPD260411: Welcome to the Amazon ElastiCache User Guide . Amazon ElastiCache is a web service that makes it easy to set up, manage, and scale a distributed in-memory data store or cache environment in the cloud. It provides a high-performance, scalable, and cost-effective caching solution. At the same time, it helps remove the complexity associated with deploying and managing a distributed cache environment. (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -105,7 +141,16 @@
       "elasticache",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Welcome to the Amazon ElastiCache User Guide . Amazon ElastiCache is a web service that makes it easy to set up, manage, and scale a distributed in-memory data store or cache environment in the cloud. It provides a high-performance, scalable, and cost-effective caching solution. At the same time, it helps remove the complexity associated with deploying and managing a distributed cache environment.",
+        "source": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+      }
+    ]
   },
   {
     "itemId": "42f6a73b-e13a-4ff2-b5c0-8d2d23935878",
@@ -119,14 +164,23 @@
       "Store individual les with tags in Amazon S3 Standard storage. Store search metadata for each archive in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the les to S3 Glacier Instant Retrieval after 1 year. Query and retrieve the les by searching for metadata from Amazon S3.",
       "Store individual les in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the les to S3 Glacier Deep Archive after 1 year. Store search metadata in Amazon RDS. Query the les from Amazon RDS. Retrieve the les from S3 Glacier Deep Archive."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #49). Correct choice: A.",
+    "explanation": "A company stores call transcript les on a monthly basis. Users access the les randomly within 1 year of the call, but users access the les infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query... The best-matching choice is: Store individual les with tags in Amazon S3 Glacier Instant Retrieval. Query the tags to retrieve the les from S3 Glacier Instant Retrieval.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "2af48a3d-7274-47f5-a1d0-af7b7609ca5f",
@@ -140,14 +194,23 @@
       "Schedule an AWS Systems Manager maintenance window to apply the patch to all EC2 instances.",
       "Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #50). Correct choice: A.",
+    "explanation": "A company has a production workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability. What... The best-matching choice is: Create an AWS Lambda function to apply the patch to all EC2 instances.. AWS Lambda is a compute service that runs code without the need to manage servers.\nUPD260411: AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function . (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "lambda",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function .",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "e6f52146-f838-4006-b437-a3bd80ce231c",
@@ -161,7 +224,7 @@
       "Migrate the application to Amazon EC2 instances in a Multi-AZ Auto Scaling group. Use Amazon Elastic File System (Amazon EFS) for storage.",
       "Migrate the application to Amazon EC2 instances in a Multi-AZ Auto Scaling group. Use Amazon Elastic Block Store (Amazon EBS) for storage."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #52). Correct choice: A.",
+    "explanation": "A company wants to migrate its on-premises application to AWS. The application produces output les that vary in size from tens of gigabytes to hundreds of terabytes. The application data must be stored in a standard le system structure. The company wants a solution... The best-matching choice is: Migrate the application to run as containers on Amazon Elastic Container Service (Amazon ECS). Use Amazon S3 for storage.. Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications.\nUPD260411: Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications. As a fully managed service, Amazon ECS comes with AWS configuration and operational best practices built-in. It's integrated with both AWS tools, such as Amazon Elastic Container Registry, and third-party tools, such as Docker. This integration makes it easier for teams to focus on building the applications, not the environment. You can run a... (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -169,7 +232,16 @@
       "s3",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications. As a fully managed service, Amazon ECS comes with AWS configuration and operational best practices built-in. It's integrated with both AWS tools, such as Amazon Elastic Container Registry, and third-party tools, such as Docker. This integration makes it easier for teams to focus on building the applications, not the environment. You can run a...",
+        "source": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "75f45040-22db-4b0e-aab4-7caa21248ab5",
@@ -183,28 +255,37 @@
       "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 Glacier Deep Archive after 1 year. Use S3 Object Lock in compliance mode for a period of 10 years.",
       "Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #53). Correct choice: A.",
+    "explanation": "A company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be archived for an additional 9 years. No one at the company, including administrative users and root users, can be able... The best-matching choice is: Store the records in S3 Glacier for the entire 10-year period. Use an access control policy to deny deletion of the records for a period of 10 years.. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "fc2d09cb-faf4-4a3f-8b97-dd04ae14766b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company runs multiple Windows workloads on AWS. The company's employees use Windows fifile shares that are hosted on two Amazon EC2\ninstances. The fifile shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and\ndurable storage solution that preserves how users currently access the les.\nWhat should a solutions architect do to meet these requirements?",
+    "question": "A company runs multiple Windows workloads on AWS. The company's employees use Windows file shares that are hosted on two Amazon EC2\ninstances. The file shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and\ndurable storage solution that preserves how users currently access the les.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Migrate all the data to Amazon S3. Set up IAM authentication for users to access les.",
     "incorrectAnswers": [
       "Set up an Amazon S3 File Gateway. Mount the S3 File Gateway on the existing EC2 instances.",
-      "Extend the fifile share environment to Amazon FSx for Windows File Server with a Multi-AZ conguration. Migrate all the data to FSx for Windows File Server.",
-      "Extend the fifile share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ conguration. Migrate all the data to Amazon EFS."
+      "Extend the file share environment to Amazon FSx for Windows File Server with a Multi-AZ conguration. Migrate all the data to FSx for Windows File Server.",
+      "Extend the file share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ conguration. Migrate all the data to Amazon EFS."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #54). Correct choice: A.",
+    "explanation": "A company runs multiple Windows workloads on AWS. The company's employees use Windows file shares that are hosted on two Amazon EC2 instances. The file shares synchronize data between themselves and maintain duplicate copies. The company wants a highly available and durable storage solution... The best-matching choice is: Migrate all the data to Amazon S3. Set up IAM authentication for users to access les.. AWS services that support these attributes might allow you to create multiple key names that differ only by case.\nUPD260411: AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures. (https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -213,7 +294,16 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures.",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html"
+      }
+    ]
   },
   {
     "itemId": "be192712-b0bf-49c0-a6b6-0f4a4c3d930e",
@@ -227,7 +317,7 @@
       "Create a security group that allows inbound traffic from the security group that is assigned to instances in the private subnets. Attach the security group to the DB instances.",
       "Create a new peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #55). Correct choice: A.",
+    "explanation": "A solutions architect is developing a VPC architecture that includes multiple subnets. The architecture will host applications that use Amazon EC2 instances and Amazon RDS DB instances. The architecture consists of six subnets in two Availability Zones. Each Availability Zone includes a public subnet... The best-matching choice is: Create a new route table that excludes the route to the public subnets' CIDR blocks. Associate the route table with the database subnets.. A DB instance is an isolated database environment in the AWS Cloud.\nUPD260411: A DB instance is an isolated database environment in the AWS Cloud. The basic building block of Amazon RDS is the DB instance. Your DB instance can contain one or more user-created databases. The following diagram shows a virtual private cloud (VPC) that contains two Availability Zones, with each AZ containing two DB instances. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -237,7 +327,16 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "A DB instance is an isolated database environment in the AWS Cloud. The basic building block of Amazon RDS is the DB instance. Your DB instance can contain one or more user-created databases. The following diagram shows a virtual private cloud (VPC) that contains two Availability Zones, with each AZ containing two DB instances.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "c8a157bb-40a6-49d5-83f6-79945f2d0028",
@@ -251,7 +350,7 @@
       "Create Route 53 DNS records with the company's domain name. Point the alias record to the Regional API Gateway stage endpoint. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region.",
       "Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the same Region. Attach the certicate to the API Gateway endpoint. Configure Route 53 to route traffic to the API Gateway endpoint."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #56). Correct choice: D.",
+    "explanation": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public interface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway... The best-matching choice is: Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certicate associated with the company's domain name into AWS Certicate Manager (ACM) in the us-east-1 Region. Attach the certicate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.. Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks.\nUPD260411: Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks. Create conditional forwarding rules and Route 53 endpoints to resolve custom names mastered in Route 53 private hosted zones or in your on-premises DNS servers. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -260,7 +359,16 @@
       "route53",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Get recursive DNS for your Amazon VPCs in AWS Regions, VPCs in AWS Outposts racks, or any other on-premises networks. Create conditional forwarding rules and Route 53 endpoints to resolve custom names mastered in Route 53 private hosted zones or in your on-premises DNS servers.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "e3f887d7-7d4e-4512-a539-1ec85c2a5062",
@@ -274,13 +382,22 @@
       "Use Amazon Rekognition to detect inappropriate content. Use human review for low-confidence predictions.",
       "Use Amazon SageMaker to detect inappropriate content. Use ground truth to label low-confidence predictions."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #57). Correct choice: D.",
+    "explanation": "A company is running a popular social media website. The website gives users the ability to upload images to share with other users. The company wants to make sure that the images do not contain inappropriate content. The company needs a solution that minimizes... The best-matching choice is: Use AWS Fargate to deploy a custom machine learning model to detect inappropriate content. Use ground truth to label low-confidence predictions.. Scalability — You can create Amazon EBS volumes with capacity and performance specifications that meet your needs.\nUPD260411: Scalability — You can create Amazon EBS volumes with capacity and performance specifications that meet your needs. As your needs changes, you can use Elastic Volumes operations to dynamically increase capacity or tune performance, with no downtime. (https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "fargate"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Scalability — You can create Amazon EBS volumes with capacity and performance specifications that meet your needs. As your needs changes, you can use Elastic Volumes operations to dynamically increase capacity or tune performance, with no downtime.",
+        "source": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+      }
+    ]
   },
   {
     "itemId": "d3b44c03-a1fb-4dd9-b061-298fb7a115ae",
@@ -294,14 +411,23 @@
       "Use Amazon Elastic Container Service (Amazon ECS) on Amazon EC2 worker nodes.",
       "Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #58). Correct choice: D.",
+    "explanation": "A company wants to run its critical applications in containers to meet requirements for scalability and availability. The company prefers to focus on maintenance of the critical applications. The company does not want to be responsible for provisioning and managing the underlying infrastructure that... The best-matching choice is: Use Amazon EC2 instances from an Amazon Elastic Container Service (Amazon ECS)-optimized Amazon Machine Image (AMI).. Amazon ECS Managed Instances is a compute option for Amazon ECS that enables you to run containerized workloads on a range of Amazon EC2 instance types while offloading infrastructure management to AWS.\nUPD260411: Amazon ECS Managed Instances is a compute option for Amazon ECS that enables you to run containerized workloads on a range of Amazon EC2 instance types while offloading infrastructure management to AWS. With Amazon ECS Managed Instances, you can access specific compute capabilities such as GPU acceleration, specific CPU architectures, high network performance, and specialized instances types, while AWS handles provisioning, patching, scaling, and maintenance of the underlying infrastructure. (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2",
       "ecs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:28Z",
+        "conclusion": "correct",
+        "explanation": "Amazon ECS Managed Instances is a compute option for Amazon ECS that enables you to run containerized workloads on a range of Amazon EC2 instance types while offloading infrastructure management to AWS. With Amazon ECS Managed Instances, you can access specific compute capabilities such as GPU acceleration, specific CPU architectures, high network performance, and specialized instances types, while AWS handles provisioning, patching, scaling, and maintenance of the underlying infrastructure.",
+        "source": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "98353e8d-4e4e-451b-8ded-80b9c840879e",
@@ -315,7 +441,7 @@
       "Cache the data to Amazon CloudFront. Store the data in an Amazon S3 bucket. When an object is added to the S3 bucket. run an AWS Lambda function to process the data for analysis.",
       "Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #59). Correct choice: A.",
+    "explanation": "A company hosts more than 300 global websites and applications. The company requires a platform to analyze more than 30 TB of clickstream data each day. What should a solutions architect do to transmit and process the clickstream data? The best-matching choice is: Design an AWS Data Pipeline to archive the data to an Amazon S3 bucket and run an Amazon EMR cluster with the data to generate analytics.. Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.\nUPD260411: Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor... (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -323,27 +449,45 @@
       "s3",
       "emr"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor...",
+        "source": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+      }
+    ]
   },
   {
     "itemId": "6669138d-8604-4a38-9dbd-d5bae823df40",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has a website hosted on AWS. The website is behind an Application Load Balancer (ALB) that is congured to handle HTTP and\nHTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS.\nWhat should a solutions architect do to meet this requirement?",
+    "question": "A company has a website hosted on AWS. The website is behind an Application Load Balancer (ALB) that is configured to handle HTTP and\nHTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS.\nWhat should a solutions architect do to meet this requirement?",
     "correctAnswer": "Update the ALB's network ACL to accept only HTTPS traffic.",
     "incorrectAnswers": [
       "Create a rule that replaces the HTTP in the URL with HTTPS.",
       "Create a listener rule on the ALB to redirect HTTP traffic to HTTPS.",
-      "Replace the ALB with a Network Load Balancer congured to use Server Name Indication (SNI)."
+      "Replace the ALB with a Network Load Balancer configured to use Server Name Indication (SNI)."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #60). Correct choice: A.",
+    "explanation": "A company has a website hosted on AWS. The website is behind an Application Load Balancer (ALB) that is configured to handle HTTP and HTTPS separately. The company wants to forward all requests to the website so that the requests will use HTTPS. What... The best-matching choice is: Update the ALB's network ACL to accept only HTTPS traffic.. Support for Host conditions . You can configure rules for your listener that forward requests based on the host field in the HTTP header. This enables you to route requests to multiple domains using a single load balancer.\nUPD260411: Support for Host conditions . You can configure rules for your listener that forward requests based on the host field in the HTTP header. This enables you to route requests to multiple domains using a single load balancer. (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "Support for Host conditions . You can configure rules for your listener that forward requests based on the host field in the HTTP header. This enables you to route requests to multiple domains using a single load balancer.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "96270daf-f200-4a66-b1b3-426ead7b19f5",
@@ -357,7 +501,7 @@
       "Store the database credentials as a secret in AWS Secrets Manager. Turn on automatic rotation for the secret. Attach the required permission to the EC2 role to grant access to the secret.",
       "Store the database credentials as encrypted parameters in AWS Systems Manager Parameter Store. Turn on automatic rotation for the encrypted parameters. Attach the required permission to the EC2 role to grant access to the encrypted parameters."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #61). Correct choice: A.",
+    "explanation": "A company is developing a two-tier web application on AWS. The company's developers have deployed the application on an Amazon EC2 instance that connects directly to a backend Amazon RDS database. The company must not hardcode database credentials in the application. The company must... The best-matching choice is: Store the database credentials in the instance metadata. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -369,7 +513,16 @@
       "eventbridge",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "8e2e40d2-46c8-4172-baf5-6f527d4be9a2",
@@ -383,14 +536,23 @@
       "Use AWS Certicate Manager (ACM) Private Certicate Authority to issue an SSL/TLS certicate from the root CA. Apply the certicate to the ALB. Use the managed renewal feature to automatically rotate the certicate.",
       "Use AWS Certicate Manager (ACM) to import an SSL/TLS certicate. Apply the certicate to the ALB. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to send a notication when the certicate is nearing expiration. Rotate the certicate manually."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #62). Correct choice: A.",
+    "explanation": "A company is deploying a new public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application needs to be encrypted at the edge with an SSL/TLS certicate that is issued by an external certicate authority (CA). The... The best-matching choice is: Use AWS Certicate Manager (ACM) to issue an SSL/TLS certicate. Apply the certicate to the ALB. Use the managed renewal feature to automatically rotate the certicate.. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model.\nUPD260411: An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "aws-security",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "78a3c9b0-7f4e-4bfd-9d40-6df8b96d4b62",
@@ -404,7 +566,7 @@
       "Upload the .pdf les to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the les to .jpg format. Save the .pdf les and the .jpg les in the EBS store.",
       "Upload the .pdf les to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the le to .jpg format. Save the .pdf les and the .jpg les in the EBS store."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #63). Correct choice: A.",
+    "explanation": "A company runs its infrastructure on AWS and has a registered base of 700,000 users for its document management application. The company intends to create a product that converts large .pdf les to .jpg image les. The .pdf les average 5 MB in size.... The best-matching choice is: Save the .pdf les to Amazon S3. Configure an S3 PUT event to invoke an AWS Lambda function to convert the les to .jpg format and store them back in Amazon S3.. AWS Lambda is a compute service that runs code without the need to manage servers.\nUPD260411: AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function . (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -412,7 +574,16 @@
       "s3",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function .",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "fbeddc2a-6cb4-41f7-9fbb-f4a016e667f0",
@@ -426,7 +597,7 @@
       "Deploy and congure an Amazon S3 File Gateway on premises. Move the on-premises le data to Amazon S3. Recongure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.",
       "Deploy and congure Amazon FSx for Windows File Server on AWS. Deploy and congure an Amazon FSx File Gateway on premises. Move the on-premises le data to the FSx File Gateway. Configure the cloud workloads to use FSx for Windows File Server on AWS. Configure the on- premises workloads to use the FSx File Gateway."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #64). Correct choice: A.",
+    "explanation": "A company has more than 5 TB of le data on Windows le servers that run on premises. Users and applications interact with the data each day. The company is moving its Windows workloads to AWS. As the company continues this process, the company... The best-matching choice is: Deploy and congure Amazon FSx for Windows File Server on AWS. Move the on-premises le data to FSx for Windows File Server. Recongure the workloads to use FSx for Windows File Server on AWS.. By default, an instance that you launch within an Amazon VPC can't communicate with a local (AWS Cloud) network and a remote device — for example, this might be a site or an on-premises device.\nUPD260411: By default, an instance that you launch within an Amazon VPC can't communicate with a local (AWS Cloud) network and a remote device — for example, this might be a site or an on-premises device. You can enable access to your remote devices from your VPC by creating an AWS Site-to-Site VPN (Site-to-Site VPN) connection, and configuring routing to pass traffic through the connection. (https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -434,6 +605,15 @@
       "fsx",
       "site-to-site-vpn"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:29Z",
+        "conclusion": "correct",
+        "explanation": "By default, an instance that you launch within an Amazon VPC can't communicate with a local (AWS Cloud) network and a remote device — for example, this might be a site or an on-premises device. You can enable access to your remote devices from your VPC by creating an AWS Site-to-Site VPN (Site-to-Site VPN) connection, and configuring routing to pass traffic through the connection.",
+        "source": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+      }
+    ]
   }
 ]

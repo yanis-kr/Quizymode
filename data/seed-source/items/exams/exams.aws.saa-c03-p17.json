@@ -4,35 +4,44 @@
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling\ngroup. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to\nprovision the capacity 30 minutes before the jobs run.\nCurrently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to\nanalyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group\u2019s\ndesired capacity.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling\ngroup. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to\nprovision the capacity 30 minutes before the jobs run.\nCurrently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to\nanalyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group’s\ndesired capacity.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
     "incorrectAnswers": [
       "Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
       "Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
-      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group\u2019s desired capacity and maximum capacity by 20%."
+      "Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #342). Correct choice: A.",
+    "explanation": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least... The best-matching choice is: Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.. Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application.\nUPD260411: Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo... (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups . You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes abo...",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "2acd7ff1-5fb3-4149-8d0b-dc67066e9d39",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A solutions architect is designing a company\u2019s disaster recovery (DR) architecture. The company has a MySQL database that runs on an Amazon\nEC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A solutions architect is designing a company’s disaster recovery (DR) architecture. The company has a MySQL database that runs on an Amazon\nEC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Migrate the MySQL database to multiple EC2 instances. Configure a standby EC2 instance in the DR Region. Turn on replication.",
     "incorrectAnswers": [
       "Migrate the MySQL database to Amazon RDS. Use a Multi-AZ deployment. Turn on read replication for the primary DB instance in the different Availability Zones.",
       "Migrate the MySQL database to an Amazon Aurora global database. Host the primary DB cluster in the primary Region. Host the secondary DB cluster in the DR Region.",
-      "Store the scheduled backup of the MySQL database in an Amazon S3 bucket that is congured for S3 Cross-Region Replication (CRR). Use the data backup to restore the database in the DR Region."
+      "Store the scheduled backup of the MySQL database in an Amazon S3 bucket that is configured for S3 Cross-Region Replication (CRR). Use the data backup to restore the database in the DR Region."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #343). Correct choice: A.",
+    "explanation": "A solutions architect is designing a company’s disaster recovery (DR) architecture. The company has a MySQL database that runs on an Amazon EC2 instance in a private subnet with scheduled backup. The DR design needs to include multiple AWS Regions. Which solution will meet... The best-matching choice is: Migrate the MySQL database to multiple EC2 instances. Configure a standby EC2 instance in the DR Region. Turn on replication.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -41,7 +50,16 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "1ba4791e-343e-415f-87e4-a2a731da60d8",
@@ -55,7 +73,7 @@
       "Change the limit in Amazon SQS to handle messages that are larger than 256 KB.",
       "Store messages that are larger than 256 KB in Amazon Elastic File System (Amazon EFS). Configure Amazon SQS to reference this location in the messages."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #344). Correct choice: A.",
+    "explanation": "A company has a Java application that uses Amazon Simple Queue Service (Amazon SQS) to parse messages. The application cannot parse messages that are larger than 256 KB in size. The company wants to implement a solution to give the application the ability to... The best-matching choice is: Use the Amazon SQS Extended Client Library for Java to host messages that are larger than 256 KB in Amazon S3.. Customization – Your queues don't have to be exactly alike—for example, you can set a default delay on a queue .\nUPD260411: Customization – Your queues don't have to be exactly alike—for example, you can set a default delay on a queue . You can store the contents of messages larger than 1 MiB using Amazon Simple Storage Service (Amazon S3) or Amazon DynamoDB, with Amazon SQS holding a pointer to the Amazon S3 object, or you can split a large message into smaller messages. (https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -63,7 +81,16 @@
       "s3",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Customization – Your queues don't have to be exactly alike—for example, you can set a default delay on a queue . You can store the contents of messages larger than 1 MiB using Amazon Simple Storage Service (Amazon S3) or Amazon DynamoDB, with Amazon SQS holding a pointer to the Amazon S3 object, or you can split a large message into smaller messages.",
+        "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "45e83f99-460c-4f3f-95f6-863140da7b35",
@@ -77,7 +104,7 @@
       "Use Amazon Cognito for authentication. Use AWS Lambda for authorization. Use Amazon S3 Transfer Acceleration to serve the web application globally.",
       "Use AWS Directory Service for Microsoft Active Directory for authentication. Use Lambda@Edge for authorization. Use AWS Elastic Beanstalk to serve the web application globally."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #345). Correct choice: A.",
+    "explanation": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wants to implement a serverless architecture and an authentication solution for fewer than 100... The best-matching choice is: Use Amazon Cognito for authentication. Use Lambda@Edge for authorization. Use Amazon CloudFront to serve the web application globally.. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -87,27 +114,45 @@
       "cognito",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "34db9bfe-8823-49ea-8aa2-ad27bbd5a66b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client\nworkstations. The company does not want to purchase a new NAS array. The company also does not want to incur the cost of renewing the NAS\narray\u2019s support contraffict. Some of the data is accessed frequently, but much of the data is inactive.\nA solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look\nand feel for the client workstations. The solutions architect has identied AWS Storage Gateway as part of the solution.\nWhich type of storage gateway should the solutions architect provision to meet these requirements?",
+    "question": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client\nworkstations. The company does not want to purchase a new NAS array. The company also does not want to incur the cost of renewing the NAS\narray’s support contraffict. Some of the data is accessed frequently, but much of the data is inactive.\nA solutions architect needs to implement a solution that migrates the data to Amazon S3, uses S3 Lifecycle policies, and maintains the same look\nand feel for the client workstations. The solutions architect has identied AWS Storage Gateway as part of the solution.\nWhich type of storage gateway should the solutions architect provision to meet these requirements?",
     "correctAnswer": "Volume Gateway",
     "incorrectAnswers": [
       "Tape Gateway",
       "Amazon FSx File Gateway",
       "Amazon S3 File Gateway"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #346). Correct choice: A.",
+    "explanation": "A company has an aging network-attached storage (NAS) array in its data center. The NAS array presents SMB shares and NFS shares to client workstations. The company does not want to purchase a new NAS array. The company also does not want to incur... The best-matching choice is: Volume Gateway. Transition actions – These actions define when objects transition to another storage class.\nUPD260411: Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+      }
+    ]
   },
   {
     "itemId": "7e997b62-c852-4d28-86e3-5d4bd8ab43c2",
@@ -121,13 +166,22 @@
       "Zonal Reserved Instances",
       "Standard Reserved Instances"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #347). Correct choice: A.",
+    "explanation": "A company has an application that is running on Amazon EC2 instances. A solutions architect has standardized the company on a particular instance family and various instance sizes based on the current needs of the company. The company wants to maximize cost savings for... The best-matching choice is: Compute Savings Plan. Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud.\nUPD260411: Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r... (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r...",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "aedfe0d0-89a7-4c58-a466-6aff14b62a62",
@@ -141,28 +195,37 @@
       "Use on-demand mode. Set the read capacity units (RCUs) and write capacity units (WCUs) high enough to accommodate changes in the workload.",
       "Use on-demand mode. Specify the read capacity units (RCUs) and write capacity units (WCUs) with reserved capacity."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #348). Correct choice: A.",
+    "explanation": "A company collects data from a large number of participants who use wearable devices. The company stores the data in an Amazon DynamoDB table and uses applications to analyze the data. The data workload is constant and predictable. The company wants to stay at... The best-matching choice is: Use provisioned mode and DynamoDB Standard-Infrequent Access (DynamoDB Standard-IA). Reserve capacity for the forecasted workload.. Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers.\nUPD260411: Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers. With DynamoDB global tables , your applications can respond to events and serve traffic from your chosen AWS Regions with fast, local read and write performance. DynamoDB is suitable for applications with the most stringent availability requirements. It removes the operational burden of manually scaling instances for incr... (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
       "databases",
       "dynamodb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers. With DynamoDB global tables , your applications can respond to events and serve traffic from your chosen AWS Regions with fast, local read and write performance. DynamoDB is suitable for applications with the most stringent availability requirements. It removes the operational burden of manually scaling instances for incr...",
+        "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "4cfe20d8-d736-4b13-9ca9-8997ec4f79f7",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company stores condential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an\nAWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the\ndatabase with the acquiring company\u2019s AWS account in ap-southeast-3.\nWhat should a solutions architect do to meet these requirements?",
-    "correctAnswer": "Create a database snapshot. Copy the snapshot to a new unencrypted snapshot. Share the new snapshot with the acquiring company\u2019s AWS account.",
+    "question": "A company stores condential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an\nAWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the\ndatabase with the acquiring company’s AWS account in ap-southeast-3.\nWhat should a solutions architect do to meet these requirements?",
+    "correctAnswer": "Create a database snapshot. Copy the snapshot to a new unencrypted snapshot. Share the new snapshot with the acquiring company’s AWS account.",
     "incorrectAnswers": [
-      "Create a database snapshot. Add the acquiring company\u2019s AWS account to the KMS key policy. Share the snapshot with the acquiring company\u2019s AWS account.",
-      "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company\u2019s AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
-      "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company\u2019s AWS account."
+      "Create a database snapshot. Add the acquiring company’s AWS account to the KMS key policy. Share the snapshot with the acquiring company’s AWS account.",
+      "Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company’s AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.",
+      "Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company’s AWS account."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #349). Correct choice: A.",
+    "explanation": "A company stores condential data in an Amazon Aurora PostgreSQL database in the ap-southeast-3 Region. The database is encrypted with an AWS Key Management Service (AWS KMS) customer managed key. The company was recently acquired and must securely share a backup of the database... The best-matching choice is: Create a database snapshot. Copy the snapshot to a new unencrypted snapshot. Share the new snapshot with the acquiring company’s AWS account.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -172,7 +235,16 @@
       "kms",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "2d2079e7-0261-46ab-83a4-ecdfc8ce2879",
@@ -186,7 +258,7 @@
       "Build out the workflow in Amazon EventBridge. Use EventBridge to invoke AWS Lambda functions on a schedule to process the workflow steps.",
       "Build out the workflow in AWS Step Functions. Use Step Functions to create a state machine. Use the state machine to invoke AWS Lambda functions to process the workflow steps."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #351). Correct choice: A.",
+    "explanation": "A company is moving its data management application to AWS. The company wants to transition to an event-driven architecture. The architecture needs to be more distributed and to use serverless concepts while performing the different aspects of the workflow. The company also wants to... The best-matching choice is: Build out the workflow in AWS Glue. Use AWS Glue to invoke AWS Lambda functions to process the workflow steps.. AWS Glue is a serverless data integration service that makes it easy for analytics users to discover, prepare, move, and integrate data from multiple sources.\nUPD260411: AWS Glue is a serverless data integration service that makes it easy for analytics users to discover, prepare, move, and integrate data from multiple sources. You can use it for analytics, machine learning, and application development. It also includes additional productivity and data ops tooling for authoring, running jobs, and implementing business workflows. (https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -195,7 +267,16 @@
       "glue",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "AWS Glue is a serverless data integration service that makes it easy for analytics users to discover, prepare, move, and integrate data from multiple sources. You can use it for analytics, machine learning, and application development. It also includes additional productivity and data ops tooling for authoring, running jobs, and implementing business workflows.",
+        "source": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+      }
+    ]
   },
   {
     "itemId": "91434a1b-acf6-48fe-8c4b-113541650fc8",
@@ -209,13 +290,22 @@
       "Set up Amazon CloudFront with UDP turned on. Configure an origin in each Region.",
       "Set up a VPC peering mesh between each Region. Turn on UDP for each VPC."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #352). Correct choice: A.",
+    "explanation": "A company is designing the network for an online multi-player game. The game uses the UDP networking protocol and will be deployed in eight AWS Regions. The network architecture needs to minimize latency and packet loss to give end users a high-quality gaming experience.... The best-matching choice is: Setup a transit gateway in each Region. Create inter-Region peering attachments between each transit gateway.. Transit gateway Maximum Transmission Unit (MTU) — The maximum transmission unit (MTU) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection.\nUPD260411: Transit gateway Maximum Transmission Unit (MTU) — The maximum transmission unit (MTU) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection. The larger the MTU of a connection, the more data that can be passed in a single packet. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect, Transit Gateway Connect, and peering attachments (intra-Region, inter-Region, and Cloud WAN peering attachments). Traffic over VPN... (https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "transit-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Transit gateway Maximum Transmission Unit (MTU) — The maximum transmission unit (MTU) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection. The larger the MTU of a connection, the more data that can be passed in a single packet. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect, Transit Gateway Connect, and peering attachments (intra-Region, inter-Region, and Cloud WAN peering attachments). Traffic over VPN...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "2dffa60e-3227-4e6c-af7d-8091bf0c499c",
@@ -229,7 +319,7 @@
       "Use Amazon S3 Intelligent-Tiering access tiers.",
       "Use two large EC2 instances to host the database in active-passive mode."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #353). Correct choice: A.",
+    "explanation": "A company hosts a three-tier web application on Amazon EC2 instances in a single Availability Zone. The web application uses a self-managed MySQL database that is hosted on an EC2 instance to store data in an Amazon Elastic Block Store (Amazon EBS) volume. The... The best-matching choice is: Use a Multi-AZ deployment of an Amazon RDS for MySQL DB instance with an io2 Block Express EBS volume.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -240,7 +330,16 @@
       "ec2",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "679a6b3c-f29c-4c48-8fd2-e3e1721ae7ca",
@@ -254,7 +353,7 @@
       "Resize the RDS DB instance class to accept more connections.",
       "Migrate the database to Amazon DynamoDB with on-demand scaling."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #354). Correct choice: A.",
+    "explanation": "A company hosts a serverless application on AWS. The application uses Amazon API Gateway, AWS Lambda, and an Amazon RDS for PostgreSQL database. The company notices an increase in application errors that result from database connection timeouts during times of peak traffic or unpredictable... The best-matching choice is: Reduce the Lambda concurrency rate.. The disadvantage to running a database on Amazon EC2 is that you're more prone to user errors.\nUPD260411: The disadvantage to running a database on Amazon EC2 is that you're more prone to user errors. For example, when you update the operating system or database software manually, you might accidentally cause application downtime. You might spend hours checking every change to identify and fix an issue. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -266,7 +365,16 @@
       "serverless",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "The disadvantage to running a database on Amazon EC2 is that you're more prone to user errors. For example, when you update the operating system or database software manually, you might accidentally cause application downtime. You might spend hours checking every change to identify and fix an issue.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "205ff946-98a3-4c42-8c7b-016a1280a784",
@@ -280,13 +388,22 @@
       "Use Amazon Lightsail with AWS Auto Scaling.",
       "Use AWS Batch on Amazon EC2."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #355). Correct choice: A.",
+    "explanation": "A company is migrating an old application to AWS. The application runs a batch job every hour and is CPU intensive. The batch job takes 15 minutes on average with an on-premises server. The server has 64 virtual CPU (vCPU) and 512 GiB of... The best-matching choice is: Use AWS Lambda with functional scaling.. AWS Lambda is a compute service that runs code without the need to manage servers.\nUPD260411: AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function . (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "lambda"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "AWS Lambda is a compute service that runs code without the need to manage servers. Your code runs, scaling up and down automatically, with pay-per-use pricing. To get started, see Create your first function .",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "0d530406-b44f-4930-a40f-61a5b88c1cf3",
@@ -300,14 +417,23 @@
       "Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.",
       "Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #356). Correct choice: A.",
+    "explanation": "A company stores its data objects in Amazon S3 Standard storage. A solutions architect has found that 75% of the data is rarely accessed after 30 days. The company needs all the data to remain immediately accessible with the same high availability and resiliency... The best-matching choice is: Move the data objects to S3 Glacier Deep Archive after 30 days.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "285f76f3-81e9-41be-af26-97f251cbfe1a",
@@ -321,7 +447,7 @@
       "Use a Lambda@Edge function with an external image management library. Associate the Lambda@Edge function with the CloudFront behaviors that serve the images.",
       "Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #358). Correct choice: A.",
+    "explanation": "A social media company runs its application on Amazon EC2 instances behind an Application Load Balancer (ALB). The ALB is the origin for an Amazon CloudFront distribution. The application has more than a billion images stored in an Amazon S3 bucket and processes thousands... The best-matching choice is: Install an external image management library on an EC2 instance. Use the image management library to process the images.. You upload your files to your origin servers. Your files, also known as objects , typically include web pages, images, and media files, but can be anything that can be served over HTTP. If you're using an Amazon S3 bucket as an origin server, you can make the objects in your...\nUPD260411: You upload your files to your origin servers. Your files, also known as objects , typically include web pages, images, and media files, but can be anything that can be served over HTTP. If you're using an Amazon S3 bucket as an origin server, you can make the objects in your bucket publicly readable, so that anyone who knows the CloudFront URLs for your objects can access them. You also have the option of keeping objects private and controlling who accesses them. See Serve private content with signed URLs and si... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -331,21 +457,30 @@
       "cloudfront",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "You upload your files to your origin servers. Your files, also known as objects , typically include web pages, images, and media files, but can be anything that can be served over HTTP. If you're using an Amazon S3 bucket as an origin server, you can make the objects in your bucket publicly readable, so that anyone who knows the CloudFront URLs for your objects can access them. You also have the option of keeping objects private and controlling who accesses them. See Serve private content with signed URLs and si...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "0a89a370-daf3-4235-942b-a4fe858c22a3",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital\u2019s compliance team must ensure that all protected health\ninformation (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.\nWhich solution will meet these requirements?",
+    "question": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital’s compliance team must ensure that all protected health\ninformation (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create a public SSL/TLS certicate in AWS Certicate Manager (ACM). Associate the certicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
     "incorrectAnswers": [
       "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with S3 managed encryption keys (SSE-S3). Assign the compliance team to manage the SSE-S3 keys.",
       "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.",
       "Use the aws:SecureTransport condition on S3 bucket policies to allow only encrypted connections over HTTPS (TLS). Use Amazon Macie to protect the sensitive data that is stored in Amazon S3. Assign the compliance team to manage Macie."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #359). Correct choice: A.",
+    "explanation": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital’s compliance team must ensure that all protected health information (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest. Which... The best-matching choice is: Create a public SSL/TLS certicate in AWS Certicate Manager (ACM). Associate the certicate with Amazon S3. Configure default encryption for each S3 bucket to use server-side encryption with AWS KMS keys (SSE-KMS). Assign the compliance team to manage the KMS keys.. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
@@ -353,7 +488,16 @@
       "s3",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "e29a487f-236d-40d4-b17d-a2b87d6727fb",
@@ -367,7 +511,7 @@
       "Use a gateway endpoint.",
       "Add an Amazon Simple Queue Service (Amazon SQS) queue between the two REST APIs."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #360). Correct choice: A.",
+    "explanation": "A company uses Amazon API Gateway to run a private gateway with two REST APIs in the same VPC. The BuyStock RESTful web service calls the CheckFunds RESTful web service to ensure that enough funds are available before a stock can be purchased. The... The best-matching choice is: Add an X-API-Key header in the HTTP header for authorization.. Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale.\nUPD260411: Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale. API developers can create APIs that access AWS or other web services, as well as data stored in the AWS Cloud . As an API Gateway API developer, you can create APIs for use in your own client applications. Or you can make your APIs available to third-party app developers. For more information, see Who uses API Gateway? . (https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -375,7 +519,16 @@
       "api-gateway",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale. API developers can create APIs that access AWS or other web services, as well as data stored in the AWS Cloud . As an API Gateway API developer, you can create APIs for use in your own client applications. Or you can make your APIs available to third-party app developers. For more information, see Who uses API Gateway? .",
+        "source": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "894ba84e-1c51-4a58-a39a-85eaadd8b591",
@@ -389,7 +542,7 @@
       "Use Amazon DynamoDB with DynamoDB Accelerator (DAX) for data that is frequently accessed. Export the data to an Amazon S3 bucket by using DynamoDB table export. Run one-time queries on the data in Amazon S3 by using Amazon Athena.",
       "Use Amazon DynamoDB for data that is frequently accessed. Turn on streaming to Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to read the data from Kinesis Data Streams. Store the records in an Amazon S3 bucket."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #361). Correct choice: A.",
+    "explanation": "A company hosts a multiplayer gaming application on AWS. The company wants the application to read data with sub-millisecond latency and run one-time queries on historical data. Which solution will meet these requirements with the LEAST operational overhead? The best-matching choice is: Use Amazon RDS for data that is frequently accessed. Run a periodic custom script to export the data to an Amazon S3 bucket.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -398,7 +551,16 @@
       "rds",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "afd17edf-4f54-44fb-8c5e-5c1905b52f51",
@@ -412,13 +574,22 @@
       "Amazon Simple Notification Service (Amazon SNS) standard topics",
       "Amazon Simple Queue Service (Amazon SQS) FIFO queues"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #363). Correct choice: A.",
+    "explanation": "A company is building a game system that needs to send unique events to separate leaderboard, matchmaking, and authentication services concurrently. The company needs an AWS event-driven system that guarantees the order of the events. Which solution will meet these requirements? The best-matching choice is: Amazon EventBridge event bus. EventBridge is a serverless service that uses events to connect application components together, making it easier for you to build scalable event-driven applications.\nUPD260411: EventBridge is a serverless service that uses events to connect application components together, making it easier for you to build scalable event-driven applications. Event-driven architecture is a style of building loosely-coupled software systems that work together by emitting and responding to events. Event-driven architecture can help you boost agility and build reliable, scalable applications. (https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
       "eventbridge"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "EventBridge is a serverless service that uses events to connect application components together, making it easier for you to build scalable event-driven applications. Event-driven architecture is a style of building loosely-coupled software systems that work together by emitting and responding to events. Event-driven architecture can help you boost agility and build reliable, scalable applications.",
+        "source": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+      }
+    ]
   },
   {
     "itemId": "489e266b-b5c1-424f-b094-46e935c2daa6",
@@ -432,13 +603,22 @@
       "Automated backups",
       "Multi-AZ deployments"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #365). Correct choice: A.",
+    "explanation": "A company runs a web application that is backed by Amazon RDS. A new database administrator caused data loss by accidentally editing information in a database table. To help recover from this type of incident, the company wants the ability to restore the database... The best-matching choice is: Read replicas. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:40Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   }
 ]

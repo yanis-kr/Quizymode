@@ -11,13 +11,22 @@
       "Elastic Load Balancing",
       "Amazon VPC"
     ],
-    "explanation": "Amazon Route 53 is AWS's DNS service for routing users to applications.",
+    "explanation": "Amazon Route 53 is AWS's DNS service for routing users to applications.\nUPD260411: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "route53"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:15Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "6cbd25a9-d45c-495d-a672-39a77472804c",
@@ -31,7 +40,7 @@
       "Amazon S3",
       "AWS Step Functions"
     ],
-    "explanation": "Elastic Load Balancing distributes application traffic across targets in one or more AZs.",
+    "explanation": "Elastic Load Balancing distributes application traffic across targets in one or more AZs.\nUPD260411: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -39,7 +48,16 @@
       "step-functions",
       "route53"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:15Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "b410980a-475f-48bb-a6b6-1b5c3ff88e36",
@@ -53,7 +71,7 @@
       "Amazon S3",
       "Amazon CloudFront"
     ],
-    "explanation": "Amazon EBS creates block storage volumes that can be attached to EC2 instances.",
+    "explanation": "Amazon EBS creates block storage volumes that can be attached to EC2 instances.\nUPD260411: Amazon Elastic Compute Cloud — A service that lets you launch and manage virtual machines (Amazon EC2 instances) in the AWS Cloud. You can attach EBS volumes to those instances and use them in the same way you would use a local hard drive, for example to store files or to install applications. For more information, see What is Amazon EC2? (https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -61,7 +79,16 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:15Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Compute Cloud — A service that lets you launch and manage virtual machines (Amazon EC2 instances) in the AWS Cloud. You can attach EBS volumes to those instances and use them in the same way you would use a local hard drive, for example to store files or to install applications. For more information, see What is Amazon EC2?",
+        "source": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+      }
+    ]
   },
   {
     "itemId": "6d9c773e-66c5-43b1-9dbd-e63f5b8b0a0d",
@@ -75,13 +102,22 @@
       "Amazon S3",
       "Amazon DynamoDB"
     ],
-    "explanation": "Amazon EFS provides shared file storage for AWS compute services.",
+    "explanation": "Amazon EFS provides shared file storage for AWS compute services.\nUPD260411: Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo... (https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "efs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:16Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo...",
+        "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+      }
+    ]
   },
   {
     "itemId": "37ff4240-90b6-4081-b834-1eda92ac44cd",
@@ -95,13 +131,22 @@
       "Amazon Route 53",
       "Amazon RDS"
     ],
-    "explanation": "AWS Auto Scaling monitors applications and automatically adjusts capacity.",
+    "explanation": "AWS Auto Scaling monitors applications and automatically adjusts capacity.\nUPD260411: Amazon EC2 Auto Scaling also provides several ways for you to scale your Auto Scaling groups. Using auto scaling allows you to maintain application availability and reduce costs by adding capacity to handle peak loads and removing capacity when demand is lower. You can also manually adjust the size of your Auto Scaling group as needed. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "auto-scaling"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:16Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EC2 Auto Scaling also provides several ways for you to scale your Auto Scaling groups. Using auto scaling allows you to maintain application availability and reduce costs by adding capacity to handle peak loads and removing capacity when demand is lower. You can also manually adjust the size of your Auto Scaling group as needed.",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "f3a9c221-4a2b-44fc-8159-4a11f2880763",
@@ -115,7 +160,7 @@
       "Amazon RDS",
       "Amazon EFS"
     ],
-    "explanation": "Amazon DynamoDB is a fully managed distributed NoSQL database.",
+    "explanation": "Amazon DynamoDB is a fully managed distributed NoSQL database.\nUPD260411: Amazon DynamoDB is a serverless, fully managed, distributed NoSQL database with single-digit millisecond performance at any scale. (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -123,7 +168,16 @@
       "dynamodb",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:16Z",
+        "conclusion": "correct",
+        "explanation": "Amazon DynamoDB is a serverless, fully managed, distributed NoSQL database with single-digit millisecond performance at any scale.",
+        "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "e17ec24a-14f8-4d0b-9b68-3ede1ad76273",
@@ -137,7 +191,7 @@
       "Amazon S3",
       "Amazon EBS"
     ],
-    "explanation": "Amazon Aurora is AWS's high-performance relational database service for MySQL and PostgreSQL compatibility.",
+    "explanation": "Amazon Aurora is AWS's high-performance relational database service for MySQL and PostgreSQL compatibility.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -146,7 +200,16 @@
       "mysql",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:17Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "99008e5d-b346-4962-a0e4-12a2b84e91e4",
@@ -160,7 +223,7 @@
       "Amazon SNS",
       "AWS Shield"
     ],
-    "explanation": "AWS CloudFormation speeds cloud provisioning with infrastructure as code.",
+    "explanation": "AWS CloudFormation speeds cloud provisioning with infrastructure as code.\nUPD260411: AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr... (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
@@ -169,7 +232,16 @@
       "shield",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:17Z",
+        "conclusion": "correct",
+        "explanation": "AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr...",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
   },
   {
     "itemId": "de1088b8-8a96-4c26-bc69-4fbcebb4d02a",
@@ -183,13 +255,22 @@
       "Amazon CloudFront",
       "AWS Direct Connect"
     ],
-    "explanation": "A NAT gateway allows outbound connections from private subnets while blocking unsolicited inbound connections.",
+    "explanation": "A NAT gateway allows outbound connections from private subnets while blocking unsolicited inbound connections.\nUPD260411: Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route... (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "nat-gateway"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:18Z",
+        "conclusion": "correct",
+        "explanation": "Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "b7b5d12c-55a7-4eff-b349-b2bad29e45c4",
@@ -203,13 +284,22 @@
       "S3 Glacier Deep Archive",
       "S3 Express One Zone"
     ],
-    "explanation": "S3 Intelligent-Tiering automatically reduces storage cost for unknown or changing access patterns.",
+    "explanation": "S3 Intelligent-Tiering automatically reduces storage cost for unknown or changing access patterns.\nUPD260411: S3 Intelligent-Tiering is the recommended storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period, such as data lakes, data analytics, and new applications. (https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:18Z",
+        "conclusion": "correct",
+        "explanation": "S3 Intelligent-Tiering is the recommended storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period, such as data lakes, data analytics, and new applications.",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html"
+      }
+    ]
   },
   {
     "itemId": "833092c9-4dd8-4863-b94c-d8f648d09859",
@@ -223,13 +313,22 @@
       "Amazon EFS",
       "AWS Lambda"
     ],
-    "explanation": "Amazon SQS is AWS's fully managed message queuing service.",
+    "explanation": "Amazon SQS is AWS's fully managed message queuing service.\nUPD260411: Amazon SQS decouples and scales distributed software systems and components as a queue service. It processes messages through a single subscriber typically, ideal for workflows where order and loss prevention are critical. For wider distribution, integrating Amazon SQS with Amazon SNS enables a fanout messaging pattern , effectively pushing messages to multiple subscribers at once. (https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:18Z",
+        "conclusion": "correct",
+        "explanation": "Amazon SQS decouples and scales distributed software systems and components as a queue service. It processes messages through a single subscriber typically, ideal for workflows where order and loss prevention are critical. For wider distribution, integrating Amazon SQS with Amazon SNS enables a fanout messaging pattern , effectively pushing messages to multiple subscribers at once.",
+        "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "3b482677-bf30-4e50-a37a-926f7e6c1b6d",
@@ -243,12 +342,21 @@
       "Amazon VPC",
       "Amazon Aurora"
     ],
-    "explanation": "Amazon CloudFront is AWS's content delivery network.",
+    "explanation": "Amazon CloudFront is AWS's content delivery network.\nUPD260411: CloudFront speeds up the distribution of your content by routing each user request through the AWS backbone network to the edge location that can best serve your content. Typically, this is a CloudFront edge server that provides the fastest delivery to the viewer. Using the AWS network dramatically reduces the number of networks that your users' requests must pass through, which improves performance. Users get lower latency—the time it takes to load the first byte of the file—and higher data transfer rates. (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:19Z",
+        "conclusion": "correct",
+        "explanation": "CloudFront speeds up the distribution of your content by routing each user request through the AWS backbone network to the edge location that can best serve your content. Typically, this is a CloudFront edge server that provides the fastest delivery to the viewer. Using the AWS network dramatically reduces the number of networks that your users' requests must pass through, which improves performance. Users get lower latency—the time it takes to load the first byte of the file—and higher data transfer rates.",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   }
 ]

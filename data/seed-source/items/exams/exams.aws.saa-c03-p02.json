@@ -11,13 +11,22 @@
       "Schedule AWS Snowball Edge Storage Optimized device jobs daily to transfer data from each site to the closest Region. Use S3 Cross- Region Replication to copy objects to the destination S3 bucket.",
       "Upload the data from each site to an Amazon EC2 instance in the closest Region. Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. At regular intervals, take an EBS snapshot and copy it to the Region that contains the destination S3 bucket. Restore the EBS volume in that Region."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #1). Correct choice: A.",
+    "explanation": "A company collects data for temperature, humidity, and atmospheric pressure in cities across multiple continents. The average volume of data that the company collects from each site daily is 500 GB. Each site has a high-speed Internet connection. The company wants to aggregate the... The best-matching choice is: Turn on S3 Transfer Acceleration on the destination S3 bucket. Use multipart uploads to directly upload site data to the destination S3 bucket.. Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client and an S3 general purpose bucket.\nUPD260411: Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client and an S3 general purpose bucket. Transfer Acceleration is designed to optimize transfer speeds from across the world into S3 general purpose buckets. Transfer Acceleration takes advantage of the globally distributed edge locations in Amazon CloudFront. As the data arrives at an edge location, the data is routed to Amazon S3 over an optimized network path. (https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:19Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client and an S3 general purpose bucket. Transfer Acceleration is designed to optimize transfer speeds from across the world into S3 general purpose buckets. Transfer Acceleration takes advantage of the globally distributed edge locations in Amazon CloudFront. As the data arrives at an edge location, the data is routed to Amazon S3 over an optimized network path.",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html"
+      }
+    ]
   },
   {
     "itemId": "aa922de7-47d2-4c53-889b-884a50de781c",
@@ -31,7 +40,7 @@
       "Use Amazon CloudWatch Logs to store the logs. Run SQL queries as needed from the Amazon CloudWatch console.",
       "Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Amazon EMR to run the SQL queries as needed."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #2). Correct choice: C.",
+    "explanation": "A company needs the ability to analyze the log files of its proprietary application. The logs are stored in JSON format in an Amazon S3 bucket. Queries will be simple and will run on-demand. A solutions architect needs to perform the analysis with minimal... The best-matching choice is: Use Amazon Athena directly with Amazon S3 to run the queries as needed.. Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL .\nUPD260411: Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds. (https://docs.aws.amazon.com/athena/latest/ug/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -39,7 +48,16 @@
       "s3",
       "athena"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:19Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds.",
+        "source": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "3d64fd86-cd66-45a3-b7c4-eed24f492a65",
@@ -53,7 +71,7 @@
       "Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.",
       "Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #3). Correct choice: A.",
+    "explanation": "A company uses AWS Organizations to manage multiple AWS accounts for different departments. The management account has an Amazon S3 bucket that contains project reports. The company wants to limit access to this S3 bucket to only users of accounts within the organization in... The best-matching choice is: Add the aws:PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.. AWS services that support these attributes might allow you to create multiple key names that differ only by case.\nUPD260411: AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures. (https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -61,7 +79,16 @@
       "s3",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:20Z",
+        "conclusion": "correct",
+        "explanation": "AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures.",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html"
+      }
+    ]
   },
   {
     "itemId": "7306f136-abeb-4807-a65a-dbfb74260ac0",
@@ -75,7 +102,7 @@
       "Create an instance profile on Amazon EC2 to allow S3 access.",
       "Create an Amazon API Gateway API with a private link to access the S3 endpoint."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #4). Correct choice: A.",
+    "explanation": "An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet. Which solution will provide private network connectivity... The best-matching choice is: Create a gateway VPC endpoint to the S3 bucket.. Amazon S3 supports both gateway endpoints and interface endpoints.\nUPD260411: Amazon S3 supports both gateway endpoints and interface endpoints. With a gateway endpoint, you can access Amazon S3 from your VPC, without requiring an internet gateway or NAT device for your VPC, and with no additional cost. However, gateway endpoints do not allow access from on-premises networks, from peered VPCs in other AWS Regions, or through a transit gateway. For those scenarios, you must use an interface endpoint, which is available for an additional cost. For more information, see Types of VPC endpoint... (https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -85,7 +112,16 @@
       "vpc",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:20Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 supports both gateway endpoints and interface endpoints. With a gateway endpoint, you can access Amazon S3 from your VPC, without requiring an internet gateway or NAT device for your VPC, and with no additional cost. However, gateway endpoints do not allow access from on-premises networks, from peered VPCs in other AWS Regions, or through a transit gateway. For those scenarios, you must use an interface endpoint, which is available for an additional cost. For more information, see Types of VPC endpoint...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"
+      }
+    ]
   },
   {
     "itemId": "0f88b7dc-d9a9-402c-9aa9-1dd20660b027",
@@ -99,7 +135,7 @@
       "Configure the Application Load Balancer to direct a user to the server with the documents",
       "Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #5). Correct choice: C.",
+    "explanation": "A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created a second EC2 instance and EBS volume in... The best-matching choice is: Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS. Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other.\nUPD260411: Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -109,28 +145,46 @@
       "ec2",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:20Z",
+        "conclusion": "correct",
+        "explanation": "Route 53 — Provides a reliable and cost-effective way to route visitors to websites by translating domain names (such as www.example.com ) into the numeric IP addresses (such as 192.0.2.1 ) that computers use to connect to each other. AWS assigns URLs to your resources, such as load balancers. However, you might want a URL that is easy for users to remember. For example, you can map your domain name to a load balancer. For more information, see Routing traffic to an ELB load balancer in the Amazon Route 53 Devel...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "94f7f557-ab90-4225-9049-dcc4c2ac52c0",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company uses NFS to store large video files in on-premises network attached storage. Each video le ranges in size from 1 MB to 500 GB. The\ntotal storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the\nvideo files as soon as possible while using the least possible network bandwidth.\nWhich solution will meet these requirements?",
+    "question": "A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The\ntotal storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the\nvideo files as soon as possible while using the least possible network bandwidth.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.",
     "incorrectAnswers": [
-      "Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all les locally to the S3 bucket.",
-      "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS fifile share on the S3 File Gateway. Point the new fifile share to the S3 bucket. Transfer the data from the existing NFS fifile share to the S3 File Gateway.",
-      "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS fifile share on the S3 File Gateway. Point the new fifile share to the S3 bucket. Transfer the data from the existing NFS fifile share to the S3 File Gateway."
+      "Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.",
+      "Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.",
+      "Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #6). Correct choice: B.",
+    "explanation": "A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video... The best-matching choice is: Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.. Amazon S3 adapter — Use for programmatic data transfer in to and out of AWS using the Amazon S3 API for Snowball Edge, which supports a subset of Amazon S3 API operations.\nUPD260411: Amazon S3 adapter — Use for programmatic data transfer in to and out of AWS using the Amazon S3 API for Snowball Edge, which supports a subset of Amazon S3 API operations. In this role, data is transferred to the Snow device by AWS on your behalf and the device is shipped to you (for an export job), or AWS ships an empty Snow device to you and you transfer data from your on-premises sources to the device and ship it back to AWS (for an import job) (https://docs.aws.amazon.com/snowball/latest/developer-guide/whatisedge.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "snowball"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:21Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 adapter — Use for programmatic data transfer in to and out of AWS using the Amazon S3 API for Snowball Edge, which supports a subset of Amazon S3 API operations. In this role, data is transferred to the Snow device by AWS on your behalf and the device is shipped to you (for an export job), or AWS ships an empty Snow device to you and you transfer data from your on-premises sources to the device and ship it back to AWS (for an import job)",
+        "source": "https://docs.aws.amazon.com/snowball/latest/developer-guide/whatisedge.html"
+      }
+    ]
   },
   {
     "itemId": "c6a258e3-be77-4c3b-bc0a-5e7ffc474b54",
@@ -144,14 +198,23 @@
       "Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.",
       "Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #7). Correct choice: D.",
+    "explanation": "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability.... The best-matching choice is: Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.. Amazon Simple Notification Service (Amazon SNS) is a fully managed service that provides message delivery from publishers (producers) to subscribers (consumers).\nUPD260411: Amazon Simple Notification Service (Amazon SNS) is a fully managed service that provides message delivery from publishers (producers) to subscribers (consumers). Publishers communicate asynchronously with subscribers by sending messages to a topic , which is a logical access point and communication channel. (https://docs.aws.amazon.com/sns/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
       "sqs",
       "sns"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:21Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Simple Notification Service (Amazon SNS) is a fully managed service that provides message delivery from publishers (producers) to subscribers (consumers). Publishers communicate asynchronously with subscribers by sending messages to a topic , which is a logical access point and communication channel.",
+        "source": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "1ebc6193-6da0-429a-8ed8-8a7585110198",
@@ -165,7 +228,7 @@
       "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.",
       "Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #8). Correct choice: B.",
+    "explanation": "A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with a solution that maximizes resiliency and scalability.... The best-matching choice is: Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.. You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales.\nUPD260411: You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales. This provides high availability and resiliency by protecting your applications from failures in a single location. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -174,28 +237,46 @@
       "auto-scaling",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:21Z",
+        "conclusion": "correct",
+        "explanation": "You can specify multiple Availability Zones for your Auto Scaling group, and Amazon EC2 Auto Scaling balances your instances evenly across the Availability Zones as the group scales. This provides high availability and resiliency by protecting your applications from failures in a single location.",
+        "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      }
+    ]
   },
   {
     "itemId": "d0468f74-015b-47e7-a32c-20c4ebb06108",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company is running an SMB le server in its data center. The le server stores large les that are accessed frequently for the rst few days after\nthe les are created. After 7 days the les are rarely accessed.\nThe total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available\nstorage space without losing low-latency access to the most recently accessed les. The solutions architect must also provide le lifecycle\nmanagement to avoid future storage issues.\nWhich solution will meet these requirements?",
+    "question": "A company is running an SMB file server in its data center. The le server stores large les that are accessed frequently for the rst few days after\nthe les are created. After 7 days the les are rarely accessed.\nThe total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available\nstorage space without losing low-latency access to the most recently accessed les. The solutions architect must also provide le lifecycle\nmanagement to avoid future storage issues.\nWhich solution will meet these requirements?",
     "correctAnswer": "Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
     "incorrectAnswers": [
-      "Use AWS DataSync to copy data that is older than 7 days from the SMB le server to AWS.",
+      "Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.",
       "Create an Amazon FSx for Windows File Server le system to extend the company's storage space.",
       "Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #9). Correct choice: B.",
+    "explanation": "A company is running an SMB file server in its data center. The le server stores large les that are accessed frequently for the rst few days after the les are created. After 7 days the les are rarely accessed. The total data size... The best-matching choice is: Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.. Transition actions – These actions define when objects transition to another storage class.\nUPD260411: Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:21Z",
+        "conclusion": "correct",
+        "explanation": "Transition actions – These actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after creating them, or archive objects to the S3 Glacier Flexible Retrieval storage class one year after creating them. For more information, see Understanding and managing Amazon S3 storage classes . There are costs associated with lifecycle transition requests. For pricing information, see Amazon S3 pricing .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+      }
+    ]
   },
   {
     "itemId": "c4f5193d-05c1-4461-a601-df1d88156f9c",
@@ -209,7 +290,7 @@
       "Use an API Gateway authorizer to block any requests while the application processes an order.",
       "Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. Configure the SQS standard queue to invoke an AWS Lambda function for processing."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #10). Correct choice: B.",
+    "explanation": "A company is building an ecommerce web application on AWS. The application sends information about new orders to an Amazon API Gateway REST API to process. The company wants to ensure that orders are processed in the order that they are received. Which solution... The best-matching choice is: Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing.. Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year.\nUPD260411: Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -218,7 +299,16 @@
       "api-gateway",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:22Z",
+        "conclusion": "correct",
+        "explanation": "Long-running workflows: Use durable Lambda functions to build stateful, multi-step workflows that can run for up to one year. Perfect for order processing, approval workflows, human-in-the-loop processes, and complex data pipelines that need to remember their progress.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "fe7a3a9c-0c25-4f2c-b77f-25ee575f34ef",
@@ -232,7 +322,7 @@
       "Create an Amazon S3 bucket to store objects that are encrypted with an AWS Key Management Service (AWS KMS) encryption key. Migrate the credential file to the S3 bucket. Point the application to the S3 bucket.",
       "Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential file to the new EBS volume. Point the application to the new EBS volume."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #11). Correct choice: A.",
+    "explanation": "A company has an application that runs on Amazon EC2 instances and uses an Amazon Aurora database. The EC2 instances connect to the database by using user names and passwords that are stored locally in a le. The company wants to minimize the operational... The best-matching choice is: Use AWS Secrets Manager. Turn on automatic rotation.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -242,7 +332,16 @@
       "ec2",
       "secrets-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:22Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "b0d4f00f-cdd4-4577-abf4-895fa589d46b",
@@ -256,7 +355,7 @@
       "Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.",
       "Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #12). Correct choice: A.",
+    "explanation": "A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and... The best-matching choice is: Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route traffic to the CloudFront distribution.. Protect your recursive DNS queries within the VPC Resolver.\nUPD260411: Protect your recursive DNS queries within the VPC Resolver. Create domain lists and build firewall rules that filter outbound DNS traffic against these rules. (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -267,7 +366,16 @@
       "route53",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:22Z",
+        "conclusion": "correct",
+        "explanation": "Protect your recursive DNS queries within the VPC Resolver. Create domain lists and build firewall rules that filter outbound DNS traffic against these rules.",
+        "source": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "1d4d7487-380a-4cc1-a242-39d8de285023",
@@ -281,7 +389,7 @@
       "Store the credentials in an Amazon S3 bucket that has server-side encryption (SSE) enabled. Use Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to invoke an AWS Lambda function to rotate the credentials.",
       "Encrypt the credentials as secrets by using AWS Key Management Service (AWS KMS) multi-Region customer managed keys. Store the secrets in an Amazon DynamoDB global table. Use an AWS Lambda function to retrieve the secrets from DynamoDB. Use the RDS API to rotate the secrets."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #13). Correct choice: A.",
+    "explanation": "A company performs monthly maintenance on its AWS infrastructure. During these maintenance activities, the company needs to rotate the credentials for its Amazon RDS for MySQL databases across multiple AWS Regions. Which solution will meet these requirements with the LEAST operational overhead? The best-matching choice is: Store the credentials as secrets in AWS Secrets Manager. Use multi-Region secret replication for the required Regions. Configure Secrets Manager to rotate the secrets on a schedule.. Amazon cloud computing resources are housed in highly available data center facilities in different areas of the world (for example, North America, Europe, or Asia).\nUPD260411: Amazon cloud computing resources are housed in highly available data center facilities in different areas of the world (for example, North America, Europe, or Asia). Each data center location is called an AWS Region. With Amazon RDS, you can create your DB instances in multiple Regions. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -291,7 +399,16 @@
       "secrets-manager",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:22Z",
+        "conclusion": "correct",
+        "explanation": "Amazon cloud computing resources are housed in highly available data center facilities in different areas of the world (for example, North America, Europe, or Asia). Each data center location is called an AWS Region. With Amazon RDS, you can create your DB instances in multiple Regions.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "0bb0e78c-42c2-49d6-a42d-db0880521020",
@@ -305,7 +422,7 @@
       "Use Amazon RDS with a Single-AZ deployment Configure Amazon RDS to add reader instances in a different Availability Zone.",
       "Use Amazon ElastiCache for Memcached with EC2 Spot Instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #14). Correct choice: C.",
+    "explanation": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the... The best-matching choice is: Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto Scaling with Aurora Replicas.. Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.\nUPD260411: Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer as your incoming traffic changes over time. It can automatically scale to the vast majority of workloads. (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -317,28 +434,46 @@
       "alb",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:22Z",
+        "conclusion": "correct",
+        "explanation": "Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer as your incoming traffic changes over time. It can automatically scale to the vast majority of workloads.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "11f384e1-3866-4570-8dd7-470809571050",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company recently migrated to AWS and wants to implement a solution to protect the traffic that ows in and out of the production VPC. The\ncompany had an inspection server in its on-premises data center. The inspection server performed specific operations such as traffic ow\ninspection and traffic ltering. The company wants to have the same functionalities in the AWS Cloud.\nWhich solution will meet these requirements?",
-    "correctAnswer": "Use AWS Network Firewall to create the required rules for traffic inspection and traffic ltering for the production VPC.",
+    "question": "A company recently migrated to AWS and wants to implement a solution to protect the traffic that ows in and out of the production VPC. The\ncompany had an inspection server in its on-premises data center. The inspection server performed specific operations such as traffic flow\ninspection and traffic filtering. The company wants to have the same functionalities in the AWS Cloud.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS Network Firewall to create the required rules for traffic inspection and traffic filtering for the production VPC.",
     "incorrectAnswers": [
-      "Use Amazon GuardDuty for traffic inspection and traffic ltering in the production VPC.",
-      "Use Trac Mirroring to mirror traffic from the production VPC for traffic inspection and ltering.",
-      "Use AWS Firewall Manager to create the required rules for traffic inspection and traffic ltering for the production VPC."
+      "Use Amazon GuardDuty for traffic inspection and traffic filtering in the production VPC.",
+      "Use Traffic Mirroring to mirror traffic from the production VPC for traffic inspection and ltering.",
+      "Use AWS Firewall Manager to create the required rules for traffic inspection and traffic filtering for the production VPC."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #15). Correct choice: C.",
+    "explanation": "A company recently migrated to AWS and wants to implement a solution to protect the traffic that ows in and out of the production VPC. The company had an inspection server in its on-premises data center. The inspection server performed specific operations such as... The best-matching choice is: Use AWS Network Firewall to create the required rules for traffic inspection and traffic filtering for the production VPC.. Firewall state table – Table where Network Firewall tracks and maintains information about network traffic flows.\nUPD260411: Firewall state table – Table where Network Firewall tracks and maintains information about network traffic flows. The firewall state table only tracks flows that are processed by stateful rules. When traffic matches the criteria in a stateful rule, the firewall creates a flow entry in the firewall state table. These entries persist until they are either removed using a flow flush operation, naturally terminate, or time out due to inactivity. You can manage the firewall state table using specific operations. This... (https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "aws-security",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "Firewall state table – Table where Network Firewall tracks and maintains information about network traffic flows. The firewall state table only tracks flows that are processed by stateful rules. When traffic matches the criteria in a stateful rule, the firewall creates a flow entry in the firewall state table. These entries persist until they are either removed using a flow flush operation, naturally terminate, or time out due to inactivity. You can manage the firewall state table using specific operations. This...",
+        "source": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+      }
+    ]
   },
   {
     "itemId": "c973ba19-2c2b-4a75-9513-b6d9d6274d8a",
@@ -349,10 +484,10 @@
     "correctAnswer": "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate users and groups.",
     "incorrectAnswers": [
       "Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate IAM roles.",
-      "Create an AWS Glue table and crawler for the data in Amazon S3. Create an AWS Glue extraffict, transform, and load (ETL) job to produce reports. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.",
+      "Create an AWS Glue table and crawler for the data in Amazon S3. Create an AWS Glue extract, transform, and load (ETL) job to produce reports. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.",
       "Create an AWS Glue table and crawler for the data in Amazon S3. Use Amazon Athena Federated Query to access data within Amazon RDS for PostgreSQL. Generate reports by using Amazon Athena. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #16). Correct choice: B.",
+    "explanation": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the... The best-matching choice is: Create an analysis in Amazon QuickSight. Connect all the data sources and create new datasets. Publish dashboards to visualize the data. Share the dashboards with the appropriate users and groups.. Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports.\nUPD260411: Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage . (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -363,7 +498,16 @@
       "quicksight",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "Each DB instance has minimum and maximum storage requirements depending on the storage type and the database engine it supports. It's important to have sufficient storage so that your databases have room to grow. Also, sufficient storage makes sure that features for the DB engine have room to write content or log entries. For more information, see Amazon RDS DB instance storage .",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "1491c213-3ecb-418a-a52d-1b1ec72f94cf",
@@ -377,7 +521,7 @@
       "Create an IAM group that grants access to the S3 bucket. Attach the group to the EC2 instances.",
       "Create an IAM user that grants access to the S3 bucket. Attach the user account to the EC2 instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #17). Correct choice: A.",
+    "explanation": "A company is implementing a new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket. What should the solutions... The best-matching choice is: Create an IAM role that grants access to the S3 bucket. Attach the role to the EC2 instances.. In the following figure, a developer runs an application on an Amazon EC2 instance that requires access to the S3 bucket named amzn-s3-demo-bucket-photos .\nUPD260411: In the following figure, a developer runs an application on an Amazon EC2 instance that requires access to the S3 bucket named amzn-s3-demo-bucket-photos . An administrator creates the Get-pics service role and attaches the role to the Amazon EC2 instance. The role includes a permissions policy that grants read-only access to the specified S3 bucket. It also includes a trust policy that allows the Amazon EC2 instance to assume the role and retrieve the temporary credentials. When the application runs on the inst... (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -386,28 +530,46 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "In the following figure, a developer runs an application on an Amazon EC2 instance that requires access to the S3 bucket named amzn-s3-demo-bucket-photos . An administrator creates the Get-pics service role and attaches the role to the Amazon EC2 instance. The role includes a permissions policy that grants read-only access to the specified S3 bucket. It also includes a trust policy that allows the Amazon EC2 instance to assume the role and retrieve the temporary credentials. When the application runs on the inst...",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html"
+      }
+    ]
   },
   {
     "itemId": "f8134692-3915-404a-90b9-0a8a73e4bab9",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application\nservers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual rewall appliance\nfrom AWS Marketplace in an inspection VPC. The appliance is congured with an IP interface that can accept IP packets.\nA solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the\nweb server.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "question": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application\nservers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual rewall appliance\nfrom AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets.\nA solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the\nweb server.\nWhich solution will meet these requirements with the LEAST operational overhead?",
     "correctAnswer": "Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.",
     "incorrectAnswers": [
       "Create a Network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
       "Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
-      "Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway."
+      "Deploy a transit gateway in the inspection VPC. Configure route tables to route the incoming packets through the transit gateway."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #19). Correct choice: D.",
+    "explanation": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a... The best-matching choice is: Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.. Gateway Load Balancers use Gateway Load Balancer endpoints to securely exchange traffic across VPC boundaries.\nUPD260411: Gateway Load Balancers use Gateway Load Balancer endpoints to securely exchange traffic across VPC boundaries. A Gateway Load Balancer endpoint is a VPC endpoint that provides private connectivity between virtual appliances in the service provider VPC and application servers in the service consumer VPC. You deploy the Gateway Load Balancer in the same VPC as the virtual appliances. You register the virtual appliances with a target group for the Gateway Load Balancer. (https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "vpc",
       "gwlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "Gateway Load Balancers use Gateway Load Balancer endpoints to securely exchange traffic across VPC boundaries. A Gateway Load Balancer endpoint is a VPC endpoint that provides private connectivity between virtual appliances in the service provider VPC and application servers in the service consumer VPC. You deploy the Gateway Load Balancer in the same VPC as the virtual appliances. You register the virtual appliances with a target group for the Gateway Load Balancer.",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "b289200d-33e3-43a8-831d-97a3eda71904",
@@ -421,7 +583,7 @@
       "Configure the production EBS volumes to use the EBS Multi-Attach feature. Take EBS snapshots of the production EBS volumes. Attach the production EBS volumes to the EC2 instances in the test environment.",
       "Take EBS snapshots of the production EBS volumes. Create and initialize new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment before restoring the volumes from the production EBS snapshots."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #20). Correct choice: D.",
+    "explanation": "A company wants to improve its ability to clone large amounts of production data into a test environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data... The best-matching choice is: Take EBS snapshots of the production EBS volumes. Turn on the EBS fast snapshot restore feature on the EBS snapshots. Restore the snapshots into new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment.. Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances.\nUPD260411: Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources: (https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -429,7 +591,16 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources:",
+        "source": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+      }
+    ]
   },
   {
     "itemId": "0ad5dc16-7e84-4f63-9f51-42092c932748",
@@ -443,7 +614,7 @@
       "Deploy the full website on Amazon EC2 instances that run in Auto Scaling groups across multiple Availability Zones. Add an Application Load Balancer (ALB) to distribute the website traffic. Add another ALB for the backend APIs. Store the data in Amazon RDS for MySQL.",
       "Migrate the full application to run in containers. Host the containers on Amazon Elastic Kubernetes Service (Amazon EKS). Use the Kubernetes Cluster Autoscaler to increase and decrease the number of pods to process bursts in traffic. Store the data in Amazon RDS for MySQL."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #21). Correct choice: D.",
+    "explanation": "An ecommerce company wants to launch a one-deal-a-day website on AWS. Each day will feature exactly one product on sale for a period of 24 hours. The company wants to be able to handle millions of requests each hour with millisecond latency during peak... The best-matching choice is: Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -455,6 +626,15 @@
       "api-gateway",
       "cloudfront"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:23Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
   }
 ]

@@ -11,7 +11,7 @@
       "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon S3 Use Amazon Redshift for analysis.",
       "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon Kinesis. Use Amazon QuickSight tor analysis."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #641). Correct choice: A.",
+    "explanation": "A company wants to monitor its AWS costs for nancial review. The cloud operations team is designing an architecture in the AWS Organizations management account to query AWS Cost and Usage Reports for all member accounts. The team must run this query once a... The best-matching choice is: Enable Cost and Usage Reports in the management account. Deliver reports to Amazon Kinesis. Use Amazon EMR for analysis.. Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.\nUPD260411: Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor... (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -20,7 +20,16 @@
       "emr",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor...",
+        "source": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+      }
+    ]
   },
   {
     "itemId": "6dfe2f11-fc59-40bb-b51d-ffc42641acc6",
@@ -32,9 +41,9 @@
     "incorrectAnswers": [
       "Attach an Application Load Balancer to the Auto Scaling group.",
       "Deploy an Amazon Route 53 record set with a weighted policy to route traffic appropriately.",
-      "Deploy a NAT instance that is congured with port forwarding to the EC2 instances in the Auto Scaling group."
+      "Deploy a NAT instance that is configured with port forwarding to the EC2 instances in the Auto Scaling group."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #642). Correct choice: A.",
+    "explanation": "A company wants to run a gaming application on Amazon EC2 instances that are part of an Auto Scaling group in the AWS Cloud. The application will transmit data by using UDP packets. The company wants to ensure that the application can scale out... The best-matching choice is: Attach a Network Load Balancer to the Auto Scaling group.. To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone.\nUPD260411: To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone. For example, if one or more target groups does not have a healthy target in an Availability Zone, we remove the IP address for the corresponding subnet from DNS, but the load balancer nodes in the other Availability Zones are still available to route traffic. If a client doesn't honor the time-to-live (... (https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -43,7 +52,16 @@
       "auto-scaling",
       "nlb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone. For example, if one or more target groups does not have a healthy target in an Availability Zone, we remove the IP address for the corresponding subnet from DNS, but the load balancer nodes in the other Availability Zones are still available to route traffic. If a client doesn't honor the time-to-live (...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "b6830ce7-f2e0-4521-ac5a-fcd41be061b5",
@@ -57,7 +75,7 @@
       "Store the logs in Amazon OpenSearch Service. Use OpenSearch Service for analysis.",
       "Store the logs in an Amazon EMR cluster Use a supported open-source framework for SQL-based analysis."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #643). Correct choice: A.",
+    "explanation": "A company runs several websites on AWS for its different brands. Each website generates tens of gigabytes of web traffic logs each day. A solutions architect needs to design a scalable solution to give the company's developers the ability to analyze traffic patterns across... The best-matching choice is: Store the logs in Amazon S3. Use Amazon Athena tor analysis.. Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL .\nUPD260411: Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds. (https://docs.aws.amazon.com/athena/latest/ug/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -65,7 +83,16 @@
       "s3",
       "athena"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds.",
+        "source": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "1cc64262-2a12-46a9-a1b1-4c539801035c",
@@ -79,13 +106,22 @@
       "Use the default AWS Key Management Service (AWS KMS) managed key store.",
       "Use a custom key store backed by an AWS CloudHSM cluster."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #645). Correct choice: A.",
+    "explanation": "A company is required to use cryptographic keys in its on-premises key manager. The key manager is outside of the AWS Cloud because of regulatory and compliance requirements. The company wants to manage encryption and decryption by using cryptographic keys that are retained outside... The best-matching choice is: Use AWS CloudHSM key store backed by a CloudHSM cluster.. AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.\nUPD260411: AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS. (https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
       "kms"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS.",
+        "source": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+      }
+    ]
   },
   {
     "itemId": "3178717c-97c6-4b4c-8735-99f1b3b482f3",
@@ -99,7 +135,7 @@
       "Use Amazon FSx for Lustre as a shared le system. Link the le system to an Amazon S3 bucket for postprocessing.",
       "Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #646). Correct choice: A.",
+    "explanation": "A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to a shared le system to enable distributed processing of large datasets. Datasets... The best-matching choice is: Use Amazon Elastic File System (Amazon EFS) as a shared le system. Access the dataset from Amazon EFS.. Amazon EFS provides the throughput, IOPS, and low latency needed for a broad range of workloads.\nUPD260411: Amazon EFS provides the throughput, IOPS, and low latency needed for a broad range of workloads. EFS file systems can grow to petabyte scale, drive high levels of throughput, and allow massively parallel access from compute instances to your data. For most workloads, we recommend using the default modes, which are the General Purpose performance mode and the Elastic throughput modes. (https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -107,7 +143,16 @@
       "efs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EFS provides the throughput, IOPS, and low latency needed for a broad range of workloads. EFS file systems can grow to petabyte scale, drive high levels of throughput, and allow massively parallel access from compute instances to your data. For most workloads, we recommend using the default modes, which are the General Purpose performance mode and the Elastic throughput modes.",
+        "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+      }
+    ]
   },
   {
     "itemId": "00b01550-b47f-404e-ab13-b08e8a733b76",
@@ -121,13 +166,22 @@
       "Create an Amazon CloudFront distribution that includes multiple origins.",
       "Create an Application Load Balancer that uses path-based routing."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #647). Correct choice: A.",
+    "explanation": "A gaming company is building an application with Voice over IP capabilities. The application will serve traffic to users across the world. The application needs to be highly available with an automated failover across AWS Regions. The company wants to minimize the latency of... The best-matching choice is: Use AWS Global Accelerator with health checks.. The static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic.\nUPD260411: The static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you delete an accelerator, you lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them. You can use IAM policies, like tag-based permissions with Global Accelerator, to limit the users who have permissions to delete an accelerator. For more information, see ABAC with Global Accelerator . (https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
       "global-accelerator"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "The static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you delete an accelerator, you lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them. You can use IAM policies, like tag-based permissions with Global Accelerator, to limit the users who have permissions to delete an accelerator. For more information, see ABAC with Global Accelerator .",
+        "source": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+      }
+    ]
   },
   {
     "itemId": "06255d32-941b-47c2-aace-40c57d7e68a9",
@@ -141,13 +195,22 @@
       "Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.",
       "Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #648). Correct choice: A.",
+    "explanation": "A weather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high performance computing (HPC) environment in its data center and wants to expand its forecasting capabilities. A solutions architect must identify a highly available cloud... The best-matching choice is: Use Amazon FSx for Lustre scratch le systems.. The primary resources in Amazon FSx are file systems and backups .\nUPD260411: The primary resources in Amazon FSx are file systems and backups . A file system is where you store and access your files and folders. A file system is made up of one or more Windows file servers and storage volumes. When you create a file system, you specify an amount of storage capacity (in GiB), SSD IOPS, and throughput capacity (in MBps). You can modify these properties as your needs change after you create the file system. For more information, see Managing storage capacity , Managing SSD IOPS , and Managin... (https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "fsx"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "The primary resources in Amazon FSx are file systems and backups . A file system is where you store and access your files and folders. A file system is made up of one or more Windows file servers and storage volumes. When you create a file system, you specify an amount of storage capacity (in GiB), SSD IOPS, and throughput capacity (in MBps). You can modify these properties as your needs change after you create the file system. For more information, see Managing storage capacity , Managing SSD IOPS , and Managin...",
+        "source": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "53151581-6508-4ec1-9cee-2bced6181f97",
@@ -161,7 +224,7 @@
       "Configure the General Purpose SSD (gp3) EBS volume storage type and provision 15,000 IOPS.",
       "Configure the EBS magnetic volume type to achieve maximum IOPS."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #649). Correct choice: A.",
+    "explanation": "An ecommerce company runs a PostgreSQL database on premises. The database stores data by using high IOPS Amazon Elastic Block Store (Amazon EBS) block storage. The daily peak I/O transactions per second do not exceed 15,000 IOPS. The company wants to migrate the database... The best-matching choice is: Configure the General Purpose SSD (gp2) EBS volume storage type and provision 15,000 IOPS.. Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the AWS Cloud.\nUPD260411: Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the AWS Cloud. Unlike in an on-premises server, CPU, memory, storage, and IOPS are separated so that you can scale them independently. AWS manages the hardware layers, which eliminates some of the burden of managing an on-premises database server. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -171,7 +234,16 @@
       "ebs",
       "postgresql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the AWS Cloud. Unlike in an on-premises server, CPU, memory, storage, and IOPS are separated so that you can scale them independently. AWS manages the hardware layers, which eliminates some of the burden of managing an on-premises database server.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "b4fda056-511b-40cc-a3d9-d3b2c1d44647",
@@ -185,14 +257,23 @@
       "Migrate to Amazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes",
       "Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #650). Correct choice: A.",
+    "explanation": "A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to AWS. The company's online application uses the database to process transactions. The data analysis team uses the same production database to run reports for analytical processing. The company wants to... The best-matching choice is: Migrate to Amazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "ac043173-2d6c-49d4-a9bf-a08b6a85039b",
@@ -206,14 +287,23 @@
       "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.",
       "Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #651). Correct choice: A.",
+    "explanation": "A company stores a large volume of image les in an Amazon S3 bucket. The images need to be readily available for the rst 180 days. The images are infrequently accessed for the next 180 days. After 360 days, the images need to be... The best-matching choice is: Transition the objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 180 days. S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.. The S3 Standard-IA and S3 One Zone-IA storage classes are designed for long-lived and infrequently accessed data.\nUPD260411: The S3 Standard-IA and S3 One Zone-IA storage classes are designed for long-lived and infrequently accessed data. (IA stands for infrequent access .) S3 Standard-IA and S3 One Zone-IA objects are available for millisecond access (similar to the S3 Standard storage class). Amazon S3 charges a retrieval fee for these objects, so they are most suitable for infrequently accessed data. For pricing information, see Amazon S3 pricing . (https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "The S3 Standard-IA and S3 One Zone-IA storage classes are designed for long-lived and infrequently accessed data. (IA stands for infrequent access .) S3 Standard-IA and S3 One Zone-IA objects are available for millisecond access (similar to the S3 Standard storage class). Amazon S3 charges a retrieval fee for these objects, so they are most suitable for infrequently accessed data. For pricing information, see Amazon S3 pricing .",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      }
+    ]
   },
   {
     "itemId": "2f7f62eb-5843-4507-9982-82e51d163426",
@@ -227,14 +317,23 @@
       "Configure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.",
       "Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #652). Correct choice: A.",
+    "explanation": "A company has a large data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions architect is designing an Amazon EMR cluster conguration to support this critical data workload. Which solution will... The best-matching choice is: Configure a long-running cluster that runs the primary node and core nodes on On-Demand Instances and the task nodes on Spot Instances.. Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.\nUPD260411: Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor... (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
       "aws-analytics",
       "emr"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor...",
+        "source": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+      }
+    ]
   },
   {
     "itemId": "89dd90ba-db43-4bcd-8324-e3341ac2b163",
@@ -248,7 +347,7 @@
       "Create an AWS CloudFormation stack to deploy an AWS Lambda function. Configure the Lambda function to look up the appropriate cost center from the RDS database and to tag resources. Create an Amazon EventBridge scheduled rule to invoke the CloudFormation stack.",
       "Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #653). Correct choice: A.",
+    "explanation": "A company maintains an Amazon RDS database that maps users to cost centers. The company has accounts in an organization in AWS Organizations. The company needs a solution that will tag all resources that are created in a specific AWS account in the organization.... The best-matching choice is: Move the specific AWS account to a new organizational unit (OU) in Organizations from the management account. Create a service control policy (SCP) that requires all existing resources to have the correct cost center tag before the resources are created. Apply the SCP to the new OU.. A DB instance is an isolated database environment in the AWS Cloud.\nUPD260411: A DB instance is an isolated database environment in the AWS Cloud. The basic building block of Amazon RDS is the DB instance. Your DB instance can contain one or more user-created databases. The following diagram shows a virtual private cloud (VPC) that contains two Availability Zones, with each AZ containing two DB instances. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -257,7 +356,16 @@
       "rds",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "A DB instance is an isolated database environment in the AWS Cloud. The basic building block of Amazon RDS is the DB instance. Your DB instance can contain one or more user-created databases. The following diagram shows a virtual private cloud (VPC) that contains two Availability Zones, with each AZ containing two DB instances.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "b7d8986f-a3a1-4a79-b174-9736d3971c5e",
@@ -269,9 +377,9 @@
     "incorrectAnswers": [
       "Use AWS Lambda to host the static content and the PHP application. Use an Amazon API Gateway REST API to proxy requests to the Lambda function. Set the API Gateway CORS conguration to respond to the domain name. Configure Amazon ElastiCache for Redis to handle session information.",
       "Keep the backend code on the EC2 instance. Create an Amazon ElastiCache for Redis cluster that has Multi-AZ enabled. Configure the ElastiCache for Redis cluster in cluster mode. Copy the frontend resources to Amazon S3. Configure the backend code to reference the EC2 instance.",
-      "Configure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is congured to host the static content. Configure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
+      "Configure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is configured to host the static content. Configure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #654). Correct choice: A.",
+    "explanation": "A company recently migrated its web application to the AWS Cloud. The company uses an Amazon EC2 instance to run multiple processes to host the application. The processes include an Apache web server that serves static content. The Apache web server makes requests to... The best-matching choice is: Use AWS Elastic Beanstalk to host the static content and the PHP application. Configure Elastic Beanstalk to deploy its EC2 instance into a public subnet. Assign a public IP address.. Welcome to the Amazon ElastiCache User Guide .\nUPD260411: Welcome to the Amazon ElastiCache User Guide . Amazon ElastiCache is a web service that makes it easy to set up, manage, and scale a distributed in-memory data store or cache environment in the cloud. It provides a high-performance, scalable, and cost-effective caching solution. At the same time, it helps remove the complexity associated with deploying and managing a distributed cache environment. (https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -281,7 +389,16 @@
       "ec2",
       "elastic-beanstalk"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Welcome to the Amazon ElastiCache User Guide . Amazon ElastiCache is a web service that makes it easy to set up, manage, and scale a distributed in-memory data store or cache environment in the cloud. It provides a high-performance, scalable, and cost-effective caching solution. At the same time, it helps remove the complexity associated with deploying and managing a distributed cache environment.",
+        "source": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+      }
+    ]
   },
   {
     "itemId": "37f7f10f-af6e-437d-aad2-099e927151ea",
@@ -295,7 +412,7 @@
       "Store images in Amazon S3 Standard. Use S3 Standard to directly deliver images by using a static website.",
       "Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #656). Correct choice: A.",
+    "explanation": "A company runs a website that stores images of historical events. Website users need the ability to search and view images based on the year that the event in the image occurred. On average, users request each image only once or twice a year.... The best-matching choice is: Store images in Amazon Elastic Block Store (Amazon EBS). Use a web server that runs on Amazon EC2.. Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances.\nUPD260411: Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources: (https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -303,7 +420,16 @@
       "ebs",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Block Store (Amazon EBS) provides scalable, high-performance block storage resources that can be used with Amazon Elastic Compute Cloud (Amazon EC2) instances. With Amazon Elastic Block Store, you can create and manage the following block storage resources:",
+        "source": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+      }
+    ]
   },
   {
     "itemId": "9ddf1de9-0550-4763-b4c5-fcdfffdbd5b2",
@@ -317,7 +443,7 @@
       "Create an AWS managed prex list. Use an AWS Security Hub policy to enforce the security group update across the organization. Use an AWS Lambda function to update the prex list automatically when the CIDR ranges change.",
       "Create security groups in a central administrative AWS account. Create an AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #657). Correct choice: A.",
+    "explanation": "A company has multiple AWS accounts in an organization in AWS Organizations that different business units use. The company has multiple oces around the world. The company needs to update security group rules to allow new oce CIDR ranges or to remove old CIDR... The best-matching choice is: Create VPC security groups in the organization's management account. Update the security groups when a CIDR range update is necessary.. You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements.\nUPD260411: You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements. Create a central log of all actions performed across your organization using AWS CloudTrail . View and enforce standard resource configurations across accounts and AWS Regions using AWS Config . Automatically apply regular backups using AWS Backup . Use AWS Control Tower to apply pre-packaged governance rules for security, operations, and compliance for your AWS wo... (https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -325,7 +451,16 @@
       "vpc",
       "organizations"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "You can apply service control policies (SCPs) to ensure that your users perform only the actions that meet your security and compliance requirements. Create a central log of all actions performed across your organization using AWS CloudTrail . View and enforce standard resource configurations across accounts and AWS Regions using AWS Config . Automatically apply regular backups using AWS Backup . Use AWS Control Tower to apply pre-packaged governance rules for security, operations, and compliance for your AWS wo...",
+        "source": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
+      }
+    ]
   },
   {
     "itemId": "7ab823cf-b926-4431-a13b-0b50ddac800d",
@@ -339,7 +474,7 @@
       "AWS Snowball Edge Storage Optimized",
       "AWS Storage Gateway"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #659). Correct choice: A.",
+    "explanation": "A company is relocating its data center and wants to securely transfer 50 TB of data to AWS within 2 weeks. The existing data center has a Site-to- Site VPN connection to AWS that is 90% utilized. Which AWS service should a solutions architect... The best-matching choice is: AWS DataSync with a VPC endpoint. Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use.\nUPD260411: Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -349,7 +484,16 @@
       "site-to-site-vpn",
       "datasync"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
   },
   {
     "itemId": "5e6e995f-89ef-4226-a861-0743417395b5",
@@ -363,7 +507,7 @@
       "Configure a dynamic scaling policy for the Auto Scaling group to launch new instances based on CPU utilization.",
       "Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #660). Correct choice: A.",
+    "explanation": "A company hosts an application on Amazon EC2 On-Demand Instances in an Auto Scaling group. Application peak hours occur at the same time each day. Application users report slow application performance at the start of peak hours. The application performs normally 2-3 hours after... The best-matching choice is: Configure an Application Load Balancer to distribute traffic properly to the instances.. An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model.\nUPD260411: An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve... (https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -372,7 +516,16 @@
       "auto-scaling",
       "alb"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Routing is performed independently for each target group, eve...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      }
+    ]
   },
   {
     "itemId": "e7b887e1-c42c-4b2f-84d6-567ab2a9c5a3",
@@ -386,7 +539,7 @@
       "Use a custom proxy that runs on Amazon EC2 as an intermediary to the database. Change the applications to use the custom proxy endpoint.",
       "Use an AWS Lambda function to provide connection pooling with a target group conguration for the database. Change the applications to use the Lambda function."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #661). Correct choice: A.",
+    "explanation": "A company runs applications on AWS that connect to the company's Amazon RDS database. The applications scale on weekends and at peak times of the year. The company wants to scale the database more effectively for its applications that connect to the database. Which... The best-matching choice is: Use Amazon DynamoDB with connection pooling with a target group conguration for the database. Change the applications to use the DynamoDB endpoint.. Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers.\nUPD260411: Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers. With DynamoDB global tables , your applications can respond to events and serve traffic from your chosen AWS Regions with fast, local read and write performance. DynamoDB is suitable for applications with the most stringent availability requirements. It removes the operational burden of manually scaling instances for incr... (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -394,7 +547,16 @@
       "dynamodb",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Financial service applications – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers. With DynamoDB global tables , your applications can respond to events and serve traffic from your chosen AWS Regions with fast, local read and write performance. DynamoDB is suitable for applications with the most stringent availability requirements. It removes the operational burden of manually scaling instances for incr...",
+        "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+      }
+    ]
   },
   {
     "itemId": "f79e5123-7410-4ee5-b551-07486922c8df",
@@ -408,7 +570,7 @@
       "Delete all expired and unused snapshots to reduce snapshot costs.",
       "Delete all nonessential snapshots. Use Amazon Data Lifecycle Manager to create and manage the snapshots according to the company's snapshot policy requirements."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #662). Correct choice: A.",
+    "explanation": "A company uses AWS Cost Explorer to monitor its AWS costs. The company notices that Amazon Elastic Block Store (Amazon EBS) storage and snapshot costs increase every month. However, the company does not purchase additional EBS storage every month. The company wants to optimize... The best-matching choice is: Use logs in Amazon CloudWatch Logs to monitor the storage utilization of Amazon EBS. Use Amazon EBS Elastic Volumes to reduce the size of the EBS volumes.. When you first sign up for Cost Explorer, AWS prepares the data about your costs for the current month and the last 13 months, and then calculates the forecast for the next 18 months.\nUPD260411: When you first sign up for Cost Explorer, AWS prepares the data about your costs for the current month and the last 13 months, and then calculates the forecast for the next 18 months. The current month's data is available for viewing in about 24 hours. The rest of your data takes a few days longer. Cost Explorer refreshes your cost data at least once every 24 hours. However, this depends on your upstream data from your billing applications, and some data might be updated later than 24 hours. After you sign up, C... (https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-management",
@@ -416,7 +578,16 @@
       "ebs",
       "cloudwatch"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "When you first sign up for Cost Explorer, AWS prepares the data about your costs for the current month and the last 13 months, and then calculates the forecast for the next 18 months. The current month's data is available for viewing in about 24 hours. The rest of your data takes a few days longer. Cost Explorer refreshes your cost data at least once every 24 hours. However, this depends on your upstream data from your billing applications, and some data might be updated later than 24 hours. After you sign up, C...",
+        "source": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+      }
+    ]
   },
   {
     "itemId": "b6e91793-57f7-4919-8dae-a72173691cbf",
@@ -430,7 +601,7 @@
       "Create an S3 bucket policy that restricts bucket access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in.",
       "Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #663). Correct choice: A.",
+    "explanation": "A company is developing a new application on AWS. The application consists of an Amazon Elastic Container Service (Amazon ECS) cluster, an Amazon S3 bucket that contains assets for the application, and an Amazon RDS for MySQL database that contains the dataset for the... The best-matching choice is: Create a new AWS Key Management Service (AWS KMS) customer managed key to encrypt both the S3 bucket and the RDS for MySQL database. Ensure that the KMS key policy includes encrypt and decrypt permissions for the ECS task execution role.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -442,6 +613,15 @@
       "kms",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:45Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   }
 ]

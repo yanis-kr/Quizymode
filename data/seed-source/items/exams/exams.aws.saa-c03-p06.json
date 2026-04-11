@@ -11,7 +11,7 @@
       "Persist the customer data to Lambda local storage. Configure new Lambda functions to scan the local storage to save the customer data to the database.",
       "Store the customer data in an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Create a new Lambda function that polls the queue and stores the customer data in the database."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #87). Correct choice: A.",
+    "explanation": "A company hosts an application on AWS Lambda functions that are invoked by an Amazon API Gateway API. The Lambda functions save customer data to an Amazon Aurora MySQL database. Whenever the company upgrades the database, the Lambda functions fail to establish database connections... The best-matching choice is: Provision an Amazon RDS proxy to sit between the Lambda functions and the database. Configure the Lambda functions to connect to the RDS proxy.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -22,7 +22,16 @@
       "api-gateway",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "3e109d3e-6cea-4a31-b3a7-6fc66344dedc",
@@ -36,13 +45,22 @@
       "Configure cross-account access for the marketing rm so that the marketing rm has access to the company's S3 bucket.",
       "Configure the company's S3 bucket to use S3 Intelligent-Tiering. Sync the S3 bucket to one of the marketing rm's S3 buckets."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #88). Correct choice: A.",
+    "explanation": "A survey company has gathered data for several years from areas in the United States. The company hosts the data in an Amazon S3 bucket that is 3 TB in size and growing. The company has started to share the data with a European... The best-matching choice is: Configure the Requester Pays feature on the company's S3 bucket.. Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications.\nUPD260411: Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c... (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon S3 Express One Zone is a high-performance, single-zone Amazon S3 storage class that is purpose-built to deliver consistent, single-digit millisecond data access for your most latency-sensitive applications. S3 Express One Zone is the lowest latency cloud object storage class available today, with data access speeds up to 10x faster and with request costs 50 percent lower than S3 Standard. S3 Express One Zone is the first S3 storage class where you can select a single Availability Zone with the option to c...",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "eb97a423-6611-4422-a3de-b7779861dd77",
@@ -56,7 +74,7 @@
       "Add an S3 Lifecycle policy to the audit team's IAM user accounts to deny the s3:DeleteObject action during audit dates.",
       "Use AWS Key Management Service (AWS KMS) to encrypt the S3 bucket and restrict audit team IAM user accounts from accessing the KMS key."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #89). Correct choice: A.",
+    "explanation": "A company uses Amazon S3 to store its condential audit documents. The S3 bucket uses bucket policies to restrict access to audit team IAM user credentials according to the principle of least privilege. Company managers are worried about accidental deletion of documents in the... The best-matching choice is: Enable the versioning and MFA Delete features on the S3 bucket.. AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available.\nUPD260411: AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr... (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
@@ -64,7 +82,16 @@
       "s3",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr...",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
   },
   {
     "itemId": "f4521df8-014b-4b87-a474-c61c2ce81cfc",
@@ -78,14 +105,23 @@
       "Instruct the development team to manually export the entries in the database at the end of each day.",
       "Use Amazon ElastiCache to cache the common queries that the script runs against the database."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #90). Correct choice: A.",
+    "explanation": "A company is using a SQL database to store movie data that is publicly accessible. The database runs on an Amazon RDS Single-AZ DB instance. A script runs queries at random intervals each day to record the number of new movies that have been... The best-matching choice is: Modify the DB instance to be a Multi-AZ deployment.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
       "databases",
       "rds"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "87e3cdd6-2dff-4939-9655-e1369e8cdc63",
@@ -99,7 +135,7 @@
       "Create an S3 bucket in the same AWS Region as the EC2 instances.",
       "Configure a NAT gateway in the same subnet as the EC2 instances."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #91). Correct choice: A.",
+    "explanation": "A company has applications that run on Amazon EC2 instances in a VPC. One of the applications needs to call the Amazon S3 API to store and read objects. According to the company's security regulations, no traffic from the applications is allowed to travel... The best-matching choice is: Configure an S3 gateway endpoint.. Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud.\nUPD260411: Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r... (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -109,7 +145,16 @@
       "vpc",
       "vpc-endpoint"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can r...",
+        "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      }
+    ]
   },
   {
     "itemId": "0e3c7f8d-31d2-40e2-929f-19040e050074",
@@ -123,7 +168,7 @@
       "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Use the standby instance for the staging database.",
       "Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #93). Correct choice: A.",
+    "explanation": "A company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase the application's elasticity and availability. The current architecture shows heavy read activity on the database during times of normal operation. Every... The best-matching choice is: Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility.. Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.\nUPD260411: Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times... (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -131,7 +176,16 @@
       "aurora",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL. You already know how MySQL and PostgreSQL combine the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. The code, tools, and applications you use today with your existing MySQL and PostgreSQL databases can be used with Aurora. With some workloads, Aurora can deliver up to five times the throughput of MySQL and up to three times...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+      }
+    ]
   },
   {
     "itemId": "12814299-9d2d-4406-8f97-23c09815f75b",
@@ -145,7 +199,7 @@
       "Configure Amazon S3 to send an event notication to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON le in Amazon DynamoDB.",
       "Configure Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service, now EventBridge) to send an event to Amazon Kinesis Data Streams when a new le is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON le in an Amazon Aurora DB cluster."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #94). Correct choice: A.",
+    "explanation": "A company is designing an application where users upload small les into Amazon S3. After a user uploads a le, the le requires one-time simple processing to transform the data and save the data in JSON format for later analysis. Each le must be... The best-matching choice is: Configure Amazon EMR to read text les from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON le in an Amazon Aurora DB cluster.. Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.\nUPD260411: Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor... (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -155,7 +209,16 @@
       "s3",
       "emr"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EMR, which was previously called Amazon Elastic MapReduce, is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data. Using these frameworks and related open-source projects, you can process data for analytics purposes and business intelligence workloads. Amazon EMR also lets you transform and move large amounts of data into and out of other AWS data stores and databases, such as Amazon Simple Stor...",
+        "source": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+      }
+    ]
   },
   {
     "itemId": "e585cbc3-7e8d-4e85-949d-ff3af7a27bfa",
@@ -169,7 +232,7 @@
       "Create read replicas for the database. Configure the read replicas with half of the compute and storage resources as the source database.",
       "Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #95). Correct choice: A.",
+    "explanation": "An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The operations team has isolated an application performance slowdown and wants to separate read traffic from write traffic. A solutions... The best-matching choice is: Change the existing database to a Multi-AZ deployment. Serve the read requests from the primary Availability Zone.. The following diagram depicts a Multi-AZ DB instance deployment, where Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone.\nUPD260411: The following diagram depicts a Multi-AZ DB instance deployment, where Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone. The replica database doesn't serve read traffic. (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-database",
@@ -177,7 +240,16 @@
       "rds",
       "mysql"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "The following diagram depicts a Multi-AZ DB instance deployment, where Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone. The replica database doesn't serve read traffic.",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "bac7305e-1f91-4beb-a4f0-4a8114428a21",
@@ -191,7 +263,7 @@
       "Users can terminate an EC2 instance in the us-east-1 Region when the user's source IP is 10.100.100.254.",
       "Users cannot terminate an EC2 instance in the us-east-1 Region when the user's source IP is 10.100.100.254."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #96). Correct choice: A.",
+    "explanation": "An Amazon EC2 administrator created the following policy associated with an IAM group containing several users: What is the effect of this policy? The best-matching choice is: Users can terminate an EC2 instance in any AWS Region except us-east-1.. The context key that you specify in a policy condition can be a global condition context key or a service-specific context key.\nUPD260411: The context key that you specify in a policy condition can be a global condition context key or a service-specific context key. Global condition context keys have the aws: prefix. Service-specific context keys have the service's prefix. For example, Amazon EC2 lets you write a condition using the ec2:InstanceType context key, which is unique to that service. To view service-specific IAM context keys with the iam: prefix, see IAM and AWS STS condition context keys . (https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-compute",
@@ -199,7 +271,16 @@
       "ec2",
       "iam"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "The context key that you specify in a policy condition can be a global condition context key or a service-specific context key. Global condition context keys have the aws: prefix. Service-specific context keys have the service's prefix. For example, Amazon EC2 lets you write a condition using the ec2:InstanceType context key, which is unique to that service. To view service-specific IAM context keys with the iam: prefix, see IAM and AWS STS condition context keys .",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html"
+      }
+    ]
   },
   {
     "itemId": "40631f3a-1d18-4943-b29f-6a72815c3500",
@@ -209,18 +290,27 @@
     "question": "A company has a large Microsoft SharePoint deployment running on-premises that requires Microsoft Windows shared le storage. The company\nwants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and\nintegrated with Active Directory for access control.\nWhich solution will satisfy these requirements?",
     "correctAnswer": "Configure Amazon EFS storage and set the Active Directory domain for authentication.",
     "incorrectAnswers": [
-      "Create an SMB fifile share on an AWS Storage Gateway le gateway in two Availability Zones.",
+      "Create an SMB file share on an AWS Storage Gateway le gateway in two Availability Zones.",
       "Create an Amazon S3 bucket and congure Microsoft Windows Server to mount it as a volume.",
       "Create an Amazon FSx for Windows File Server le system on AWS and set the Active Directory domain for authentication."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #97). Correct choice: A.",
+    "explanation": "A company has a large Microsoft SharePoint deployment running on-premises that requires Microsoft Windows shared le storage. The company wants to migrate this workload to the AWS Cloud and is considering various storage options. The storage solution must be highly available and integrated with... The best-matching choice is: Configure Amazon EFS storage and set the Active Directory domain for authentication.. AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available.\nUPD260411: AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr... (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "aws-security",
       "efs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr...",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
   },
   {
     "itemId": "818660f8-3be1-47c0-8e73-2e22d9588be0",
@@ -234,7 +324,7 @@
       "Increase the visibility timeout in the SQS queue to a value that is greater than the total of the function timeout and the batch window timeout.",
       "Modify the Lambda function to delete each message from the SQS queue immediately after the message is read before processing."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #98). Correct choice: A.",
+    "explanation": "An image-processing company has a web application that users use to upload images. The application uploads the images into an Amazon S3 bucket. The company has set up S3 event notications to publish the object creation events to an Amazon Simple Queue Service (Amazon... The best-matching choice is: Set up long polling in the SQS queue by increasing the ReceiveMessage wait time to 30 seconds.. You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code.\nUPD260411: You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -243,7 +333,16 @@
       "lambda",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "70d5381f-cc10-418c-8d91-51eacdc28bef",
@@ -251,13 +350,13 @@
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
     "question": "A company is implementing a shared storage solution for a gaming application that is hosted in an on-premises data center. The company needs\nthe ability to use Lustre clients to access data. The solution must be fully managed.\nWhich solution meets these requirements?",
-    "correctAnswer": "Create an AWS Storage Gateway le gateway. Create a fifile share that uses the required client protocol. Connect the application server to the fifile share.",
+    "correctAnswer": "Create an AWS Storage Gateway le gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.",
     "incorrectAnswers": [
-      "Create an Amazon EC2 Windows instance. Install and congure a Windows fifile share role on the instance. Connect the application server to the fifile share.",
+      "Create an Amazon EC2 Windows instance. Install and congure a Windows file share role on the instance. Connect the application server to the file share.",
       "Create an Amazon Elastic File System (Amazon EFS) le system, and congure it to support Lustre. Attach the le system to the origin server. Connect the application server to the le system.",
       "Create an Amazon FSx for Lustre le system. Attach the le system to the origin server. Connect the application server to the le system."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #99). Correct choice: A.",
+    "explanation": "A company is implementing a shared storage solution for a gaming application that is hosted in an on-premises data center. The company needs the ability to use Lustre clients to access data. The solution must be fully managed. Which solution meets these requirements? The best-matching choice is: Create an AWS Storage Gateway le gateway. Create a file share that uses the required client protocol. Connect the application server to the file share.. Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance.\nUPD260411: Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo... (https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -265,7 +364,16 @@
       "fsx",
       "ec2"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo...",
+        "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+      }
+    ]
   },
   {
     "itemId": "5a827fb9-9b13-4dd8-8f91-7038937a4c3e",
@@ -279,7 +387,7 @@
       "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon S3.",
       "Create an AWS Key Management Service (AWS KMS) customer managed key. Allow the EC2 role to use the KMS key for encryption operations. Store the encrypted data on Amazon Elastic Block Store (Amazon EBS) volumes."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #100). Correct choice: A.",
+    "explanation": "A company's containerized application runs on an Amazon EC2 instance. The application needs to download security certicates before it can communicate with other business applications. The company wants a highly secure solution to encrypt and decrypt the certicates in near real time. The solution... The best-matching choice is: Create AWS Secrets Manager secrets for encrypted certicates. Manually update the certicates as needed. Control access to the data by using ne-grained IAM access.. If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out.\nUPD260411: If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out. Secrets Manager logs all events as management events. AWS CloudTrail stores the first copy of all management events for free. However, you can incur charges for Amazon S3 for log storage and for Amazon SNS if you enable notification. Also, if you set up additional trails, the additional copies of management events can incur costs. For more information, see AWS CloudTrail pricing . (https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-security",
@@ -288,7 +396,16 @@
       "iam",
       "secrets-manager"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "If you enable AWS CloudTrail on your account, you can obtain logs of the API calls that Secrets Manager sends out. Secrets Manager logs all events as management events. AWS CloudTrail stores the first copy of all management events for free. However, you can incur charges for Amazon S3 for log storage and for Amazon SNS if you enable notification. Also, if you set up additional trails, the additional copies of management events can incur costs. For more information, see AWS CloudTrail pricing .",
+        "source": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+      }
+    ]
   },
   {
     "itemId": "d0134712-2e5f-4446-8788-81d3f52f94bf",
@@ -302,7 +419,7 @@
       "Create three NAT instances, one for each private subnet in each AZ. Create a private route table for each AZ that forwards non-VPC traffic to the NAT instance in its AZ.",
       "Create a second internet gateway on one of the private subnets. Update the route table for the private subnets that forward non-VPC traffic to the private internet gateway."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #101). Correct choice: D.",
+    "explanation": "A solutions architect is designing a VPC with public and private subnets. The VPC and subnets use IPv4 CIDR blocks. There is one public subnet and one private subnet in each of three Availability Zones (AZs) for high availability. An internet gateway is used... The best-matching choice is: Create an egress-only internet gateway on one of the public subnets. Update the route table for the private subnets that forward non-VPC traffic to the egress-only Internet gateway.. Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet.\nUPD260411: Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route... (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-networking",
@@ -310,21 +427,30 @@
       "ec2",
       "vpc"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:31Z",
+        "conclusion": "correct",
+        "explanation": "Public – (Default) Instances in private subnets can connect to the internet through a public NAT gateway, but the instances can't receive unsolicited inbound connections from the internet. You create a public NAT gateway in a public subnet and must associate an Elastic IP address with the NAT gateway at creation. You route traffic from the NAT gateway to the internet gateway for the VPC. Alternatively, you can use a public NAT gateway to connect to other VPCs or your on-premises network. In this case, you route...",
+        "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+      }
+    ]
   },
   {
     "itemId": "34f305b8-7fc6-4d07-a399-ce4fba4e54d4",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "saa-c03",
-    "question": "A company has an AWS Glue extraffict, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an\nAmazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during\neach run.\nWhat should the solutions architect do to prevent AWS Glue from reprocessing old data?",
+    "question": "A company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an\nAmazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during\neach run.\nWhat should the solutions architect do to prevent AWS Glue from reprocessing old data?",
     "correctAnswer": "Edit the job to use job bookmarks.",
     "incorrectAnswers": [
       "Edit the job to delete data after the data is processed.",
       "Edit the job by setting the NumberOfWorkers eld to 1.",
       "Use a FindMatches machine learning (ML) transform."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #103). Correct choice: A.",
+    "explanation": "A company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an Amazon S3 bucket. New data is added to the S3 bucket every day. A solutions... The best-matching choice is: Edit the job to use job bookmarks.. Also, AWS Glue makes it easy to integrate data across your architecture.\nUPD260411: Also, AWS Glue makes it easy to integrate data across your architecture. It integrates with AWS analytics services and Amazon S3 data lakes. AWS Glue has integration interfaces and job-authoring tools that are easy to use for all users, from developers to business users, with tailored solutions for varied technical skill sets. (https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-analytics",
@@ -332,7 +458,16 @@
       "s3",
       "glue"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "Also, AWS Glue makes it easy to integrate data across your architecture. It integrates with AWS analytics services and Amazon S3 data lakes. AWS Glue has integration interfaces and job-authoring tools that are easy to use for all users, from developers to business users, with tailored solutions for varied technical skill sets.",
+        "source": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+      }
+    ]
   },
   {
     "itemId": "8e135490-e62d-4ecb-ab7b-d8a3a17e49f8",
@@ -346,7 +481,7 @@
       "Add a resource-based policy to the function with lambda:* as the action and Service: events.amazonaws.com as the principal.",
       "Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service: events.amazonaws.com as the principal."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #105). Correct choice: A.",
+    "explanation": "A company is preparing to deploy a new serverless workload. A solutions architect must use the principle of least privilege to congure permissions that will be used to run an AWS Lambda function. An Amazon EventBridge (note: outdated alias \"Amazon CloudWatch Events\"; same service... The best-matching choice is: Add an execution role to the function with lambda:InvokeFunction as the action and * as the principal.. You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code.\nUPD260411: You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code. (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -356,7 +491,16 @@
       "cloudwatch",
       "serverless"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "You control security and access through Lambda permissions , using execution roles to manage what AWS services your functions can interact with and what resource policies can interact with your code.",
+        "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      }
+    ]
   },
   {
     "itemId": "6e70f360-d98e-4485-9e3c-f07fd7932311",
@@ -370,14 +514,23 @@
       "Server-side encryption with AWS KMS keys (SSE-KMS) with manual rotation",
       "Server-side encryption with AWS KMS keys (SSE-KMS) with automatic rotation"
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #106). Correct choice: A.",
+    "explanation": "A company is preparing to store condential data in Amazon S3. For compliance reasons, the data must be encrypted at rest. Encryption key usage must be logged for auditing purposes. Keys must be rotated every year. Which solution meets these requirements and is the... The best-matching choice is: Server-side encryption with customer-provided keys (SSE-C). AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available.\nUPD260411: AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr... (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "aws-security",
       "s3"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr...",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
   },
   {
     "itemId": "17230f85-fc32-494d-81d6-f69de3b07f2d",
@@ -391,7 +544,7 @@
       "Use Amazon QuickSight with Amazon Redshift.",
       "Use Amazon API Gateway with Amazon Kinesis Data Analytics (note: outdated; now Amazon Managed Service for Apache Flink for SQL/streaming analytics workloads)."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #107). Correct choice: A.",
+    "explanation": "A bicycle sharing company is developing a multi-tier architecture to traffick the location of its bicycles during peak operating hours. The company wants to use these data points in its existing analytics platform. A solutions architect must determine the most viable multi-tier option to... The best-matching choice is: Use Amazon Athena with Amazon S3.. Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL .\nUPD260411: Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds. (https://docs.aws.amazon.com/athena/latest/ug/what-is.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
@@ -399,7 +552,16 @@
       "s3",
       "athena"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL . With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad-hoc queries and get results in seconds.",
+        "source": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+      }
+    ]
   },
   {
     "itemId": "fbd1f052-337b-4d84-8e91-5f1196f51dce",
@@ -413,7 +575,7 @@
       "Subscribe to an RDS event notication and send an Amazon Simple Queue Service (Amazon SQS) queue fanned out to multiple Amazon Simple Notification Service (Amazon SNS) topics. Use AWS Lambda functions to update the targets.",
       "Subscribe to an RDS event notication and send an Amazon Simple Notification Service (Amazon SNS) topic fanned out to multiple Amazon Simple Queue Service (Amazon SQS) queues. Use AWS Lambda functions to update the targets."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #108). Correct choice: A.",
+    "explanation": "A company has an automobile sales website that stores its listings in a database on Amazon RDS. When an automobile is sold, the listing needs to be removed from the website and the data must be sent to multiple target systems. Which design should... The best-matching choice is: Create an AWS Lambda function triggered when the database on Amazon RDS is updated to send the information to an Amazon Simple Queue Service (Amazon SQS) queue for the targets to consume.. Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters.\nUPD260411: Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an... (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-integration",
@@ -423,7 +585,16 @@
       "lambda",
       "sqs"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "Amazon RDS is responsible for hosting the software components and infrastructure of DB instances and DB clusters. You are responsible for query tuning, which is the process of adjusting SQL queries to improve performance. Query performance is highly dependent on database design, data size, data distribution, application workload, and query patterns, which can vary greatly. Monitoring and tuning are highly individualized processes that you own for your RDS databases. You can use Amazon RDS Performance Insights an...",
+        "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      }
+    ]
   },
   {
     "itemId": "ab4151bb-53ed-479f-a327-3ac61e5db8f4",
@@ -433,17 +604,26 @@
     "question": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded\nto Amazon S3 to remain unchangeable for a nonspecific amount of time until the company decides to modify the objects. Only specific users in\nthe company's AWS account can have the ability 10 delete the objects.\nWhat should a solutions architect do to meet these requirements?",
     "correctAnswer": "Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.",
     "incorrectAnswers": [
-      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket\u2019s default retention mode for new objects.",
+      "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket’s default retention mode for new objects.",
       "Create an S3 bucket. Use AWS CloudTrail to traffick any S3 API events that modify the objects. Upon notication, restore the modied objects from any backup versions that the company has.",
       "Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects."
     ],
-    "explanation": "SAA-C03 practice scenario (extract question #109). Correct choice: A.",
+    "explanation": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3 to remain unchangeable for a nonspecific amount of time until the company decides to modify the... The best-matching choice is: Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.. S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely.\nUPD260411: S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely. You can use Object Lock to help meet regulatory requirements that require write-once-read-many (WORM) storage or to simply add another layer of protection against object changes and deletions. (https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)",
     "keywords": [
       "aws-saa-c03",
       "aws-storage",
       "s3",
       "glacier"
     ],
-    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution"
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:32Z",
+        "conclusion": "correct",
+        "explanation": "S3 Object Lock – Prevent Amazon S3 objects from being deleted or overwritten for a fixed amount of time or indefinitely. You can use Object Lock to help meet regulatory requirements that require write-once-read-many (WORM) storage or to simply add another layer of protection against object changes and deletions.",
+        "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      }
+    ]
   }
 ]
