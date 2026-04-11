@@ -466,12 +466,10 @@ internal sealed class ItemQueryBuilder
             effectiveKeywordIds.Add(chosen.Id);
         }
 
-        // AND semantics: item must have ALL effective keywords
-        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
-        {
-            Guid captured = keywordId;
-            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
-        }
+        // AND semantics: one correlated COUNT is cheaper than N separate EXISTS subqueries
+        List<Guid> distinctKeywordIds = effectiveKeywordIds.Distinct().ToList();
+        int requiredCount = distinctKeywordIds.Count;
+        query = query.Where(i => i.ItemKeywords.Count(ik => distinctKeywordIds.Contains(ik.KeywordId)) == requiredCount);
 
         return Result.Success(query);
     }
@@ -531,12 +529,10 @@ internal sealed class ItemQueryBuilder
             effectiveKeywordIds.Add(chosen.Id);
         }
 
-        // AND semantics: item must have ALL effective keywords
-        foreach (Guid keywordId in effectiveKeywordIds.Distinct())
-        {
-            Guid captured = keywordId;
-            query = query.Where(i => i.ItemKeywords.Any(ik => ik.KeywordId == captured));
-        }
+        // AND semantics: one correlated COUNT is cheaper than N separate EXISTS subqueries
+        List<Guid> distinctKeywordIds = effectiveKeywordIds.Distinct().ToList();
+        int requiredCount = distinctKeywordIds.Count;
+        query = query.Where(i => i.ItemKeywords.Count(ik => distinctKeywordIds.Contains(ik.KeywordId)) == requiredCount);
 
         return Result.Success(query);
     }

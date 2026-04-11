@@ -1059,6 +1059,19 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 ---
 
+## AC 8. Performance characteristics
+
+### AC 8.1 Database query behaviour
+
+- **AC 8.1.1** `GET /collections` retrieves item counts for all user collections in a single batched `GROUP BY` query, not a correlated subquery per collection.
+- **AC 8.1.2** `GET /ideas` and related idea-board endpoints aggregate rating counts and averages in SQL (a `GROUP BY` projection); rating rows are not loaded into application memory for aggregation.
+- **AC 8.1.3** Multi-keyword item filtering (`?keywords=a,b`) uses a single correlated `COUNT` subquery with AND semantics, not one `EXISTS` subquery per keyword.
+- **AC 8.1.4** Admin page-view analytics computes authenticated/anonymous page-view and session counts in a single `GROUP BY IsAuthenticated` query, not four separate count queries.
+- **AC 8.1.5** All read-only item, comment, and rating queries use `AsNoTracking()` so EF Core does not maintain change-tracking state for entities that are never modified.
+- **AC 8.1.6** The database has indexes on `CollectionItems(CollectionId)`, `CollectionItems(ItemId)`, `LOWER(Keywords.Name)`, and `LOWER(Categories.Name)` to support efficient joins and case-insensitive name lookups.
+
+---
+
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).

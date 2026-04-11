@@ -50,6 +50,7 @@ internal sealed class ItemQueryExecutor
         GetItems.QueryRequest request)
     {
         List<Item> allItems = await query
+            .AsNoTracking()
             .Include(i => i.ItemKeywords)
                 .ThenInclude(ik => ik.Keyword)
             .Include(i => i.Category)
@@ -67,6 +68,7 @@ internal sealed class ItemQueryExecutor
         GetItems.QueryRequest request)
     {
         return await query
+            .AsNoTracking()
             .Include(i => i.ItemKeywords)
                 .ThenInclude(ik => ik.Keyword)
             .Include(i => i.Category)
@@ -81,6 +83,7 @@ internal sealed class ItemQueryExecutor
         bool isRandom)
     {
         List<Item> allItems = await query
+            .AsNoTracking()
             .Include(i => i.ItemKeywords)
                 .ThenInclude(ik => ik.Keyword)
             .Include(i => i.Category)

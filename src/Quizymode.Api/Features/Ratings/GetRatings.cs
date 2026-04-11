@@ -54,6 +54,7 @@ public static class GetRatings
         try
         {
             IQueryable<Rating> query = db.Ratings
+                .AsNoTracking()
                 .Where(r => r.ItemId == request.ItemId);
 
             // Only count ratings that have stars (not null)

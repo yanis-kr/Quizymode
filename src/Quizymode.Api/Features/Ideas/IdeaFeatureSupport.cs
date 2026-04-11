@@ -68,28 +68,31 @@ internal static partial class IdeaFeatureSupport
             .Select(group => new { group.Key, Count = group.Count() })
             .ToDictionaryAsync(row => row.Key, row => row.Count, cancellationToken);
 
-        List<IdeaRating> ratings = await db.IdeaRatings
-            .Where(rating => ideaIds.Contains(rating.IdeaId))
+        // Aggregate rating stats in SQL — avoid loading every rating row into memory
+        var ratingStats = await db.IdeaRatings
+            .Where(rating => ideaIds.Contains(rating.IdeaId) && rating.Stars.HasValue)
+            .GroupBy(rating => rating.IdeaId)
+            .Select(g => new
+            {
+                IdeaId = g.Key,
+                Count = g.Count(),
+                Average = g.Average(r => r.Stars!.Value)
+            })
             .ToListAsync(cancellationToken);
 
-        Dictionary<Guid, int> ratingCounts = ratings
-            .Where(static rating => rating.Stars.HasValue)
-            .GroupBy(static rating => rating.IdeaId)
-            .ToDictionary(group => group.Key, group => group.Count());
-
-        Dictionary<Guid, double?> averageRatings = ratings
-            .Where(static rating => rating.Stars.HasValue)
-            .GroupBy(static rating => rating.IdeaId)
-            .ToDictionary(
-                group => group.Key,
-                group => (double?)Math.Round(group.Average(rating => rating.Stars!.Value), 2));
+        Dictionary<Guid, int> ratingCounts = ratingStats.ToDictionary(x => x.IdeaId, x => x.Count);
+        Dictionary<Guid, double?> averageRatings = ratingStats.ToDictionary(
+            x => x.IdeaId,
+            x => (double?)Math.Round(x.Average, 2));
 
         Dictionary<Guid, int?> myRatings = [];
         if (userContext.IsAuthenticated && !string.IsNullOrWhiteSpace(userContext.UserId))
         {
-            myRatings = ratings
-                .Where(rating => string.Equals(rating.CreatedBy, userContext.UserId, StringComparison.Ordinal))
-                .ToDictionary(rating => rating.IdeaId, rating => rating.Stars);
+            string currentUserId = userContext.UserId;
+            myRatings = await db.IdeaRatings
+                .Where(rating => ideaIds.Contains(rating.IdeaId) && rating.CreatedBy == currentUserId)
+                .Select(rating => new { rating.IdeaId, rating.Stars })
+                .ToDictionaryAsync(x => x.IdeaId, x => x.Stars, cancellationToken);
         }
 
         Dictionary<string, string> displayNames = await ResolveDisplayNamesAsync(
