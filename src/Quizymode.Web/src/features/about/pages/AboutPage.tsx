@@ -1,4 +1,5 @@
 import { SEO } from "@/components/SEO";
+import { USER_GUIDE_URL } from "@/utils/userGuideLink";
 
 const AboutPage = () => {
   return (
@@ -28,28 +29,18 @@ const AboutPage = () => {
         <p className="mt-6 text-sm text-slate-600">
           New to Quizymode?{" "}
           <a
-            href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md"
+            href={USER_GUIDE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
           >
-            Read the User Guide
+            Open the User Guide
           </a>{" "}
-          or{" "}
-          <a
-            href="https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
-          >
-            browse the Mobile User Guide
-          </a>{" "}
-          for a full walkthrough.
+          for a desktop or mobile walkthrough with a built-in view switcher.
         </p>
 
-        {/* Version — small, unobtrusive, at the bottom */}
         <p className="mt-2 text-xs text-slate-400">
-          Version {__APP_VERSION__} &middot; Deployed{" "}
+          Version {__APP_VERSION__} &middot; Build {__BUILD_LABEL__} &middot; Deployed{" "}
           {new Date(`${__BUILD_TIME__}T00:00:00`).toLocaleDateString(undefined, {
             year: "numeric",
             month: "short",

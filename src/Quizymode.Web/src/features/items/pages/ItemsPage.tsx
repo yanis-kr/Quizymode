@@ -65,7 +65,7 @@ const ItemsPage = () => {
 
   if (mode === null) {
     return (
-      <div className="px-4 py-6 sm:px-0">
+      <div className="py-4 sm:py-6">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             {category ? `Category: ${category}` : "Get Random Items"}
@@ -114,7 +114,7 @@ const ItemsPage = () => {
     );
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="py-4 sm:py-6">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           {mode === "explore" ? "Flashcards Mode" : "Quiz Mode"}

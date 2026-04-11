@@ -1,12 +1,6 @@
-const desktopGuideUrl =
-  "https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.md";
-const mobileGuideUrl =
-  "https://github.com/yanis-kr/Quizymode/blob/main/docs/user-guide/user-guide.mobile.md";
-
-const mobileBrowserPattern =
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i;
+export const USER_GUIDE_URL = "https://yanis-kr.github.io/Quizymode/";
 
 export function getUserGuideUrl(userAgent: string): string {
-  return mobileBrowserPattern.test(userAgent) ? mobileGuideUrl : desktopGuideUrl;
+  void userAgent;
+  return USER_GUIDE_URL;
 }
-

@@ -287,7 +287,7 @@ const Layout = ({ children }: LayoutProps) => {
         {isFullBleedPage ? (
           children
         ) : (
-          <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-4 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8">
+          <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-2 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8">
             {children}
           </div>
         )}

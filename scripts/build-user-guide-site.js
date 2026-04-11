@@ -1,0 +1,675 @@
+#!/usr/bin/env node
+
+import fs from "fs";
+import path from "path";
+import {
+  gatherAvailableScreenshots,
+  getDescription,
+  label,
+  projectRoot,
+  resolveGuideConfig,
+  sections,
+} from "./generate-user-guide.js";
+
+function parseArgs(argv) {
+  const options = {
+    baseUrl:
+      process.env.USER_GUIDE_BASE_URL ??
+      process.env.PLAYWRIGHT_BASE_URL ??
+      "https://www.quizymode.com/",
+    outputDir:
+      process.env.USER_GUIDE_SITE_OUTPUT_DIR ??
+      path.join(projectRoot, ".artifacts", "user-guide-pages"),
+    deployedBuildVersion:
+      process.env.USER_GUIDE_DEPLOYED_BUILD_VERSION ?? "",
+    generatedAt:
+      process.env.USER_GUIDE_GENERATED_AT ?? new Date().toISOString(),
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+
+    if (arg === "--base-url" && argv[index + 1]) {
+      options.baseUrl = argv[index + 1];
+      index += 1;
+      continue;
+    }
+
+    if (arg === "--output-dir" && argv[index + 1]) {
+      options.outputDir = argv[index + 1];
+      index += 1;
+      continue;
+    }
+
+    if (arg === "--deployed-build-version" && argv[index + 1]) {
+      options.deployedBuildVersion = argv[index + 1];
+      index += 1;
+      continue;
+    }
+
+    if (arg === "--generated-at" && argv[index + 1]) {
+      options.generatedAt = argv[index + 1];
+      index += 1;
+      continue;
+    }
+
+    if (arg.startsWith("--base-url=")) {
+      options.baseUrl = arg.slice("--base-url=".length);
+      continue;
+    }
+
+    if (arg.startsWith("--output-dir=")) {
+      options.outputDir = arg.slice("--output-dir=".length);
+      continue;
+    }
+
+    if (arg.startsWith("--deployed-build-version=")) {
+      options.deployedBuildVersion = arg.slice("--deployed-build-version=".length);
+      continue;
+    }
+
+    if (arg.startsWith("--generated-at=")) {
+      options.generatedAt = arg.slice("--generated-at=".length);
+    }
+  }
+
+  return {
+    ...options,
+    outputDir: path.resolve(options.outputDir),
+    baseUrl: options.baseUrl.endsWith("/") ? options.baseUrl : `${options.baseUrl}/`,
+  };
+}
+
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function emptyDir(dirPath) {
+  fs.rmSync(dirPath, { recursive: true, force: true });
+  ensureDir(dirPath);
+}
+
+function copyPngs(sourceDir, targetDir) {
+  ensureDir(targetDir);
+
+  if (!fs.existsSync(sourceDir)) {
+    return [];
+  }
+
+  const files = fs
+    .readdirSync(sourceDir)
+    .filter((file) => file.endsWith(".png"))
+    .sort();
+
+  for (const file of files) {
+    fs.copyFileSync(path.join(sourceDir, file), path.join(targetDir, file));
+  }
+
+  return files;
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function renderInlineMarkup(value) {
+  return escapeHtml(value).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+function toAnchor(value) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function buildManifest() {
+  const desktopConfig = resolveGuideConfig("desktop");
+  const mobileConfig = resolveGuideConfig("mobile");
+  const desktopShots = gatherAvailableScreenshots(desktopConfig.screenshotDir);
+  const mobileShots = gatherAvailableScreenshots(mobileConfig.screenshotDir);
+
+  return sections
+    .map((section) => ({
+      title: section.title,
+      anchor: toAnchor(section.title),
+      steps: section.slugs
+        .filter((slug) => desktopShots.has(slug) || mobileShots.has(slug))
+        .map((slug) => ({
+          slug,
+          title: label(slug),
+          descriptions: {
+            desktop: getDescription("desktop", slug),
+            mobile: getDescription("mobile", slug),
+          },
+          images: {
+            desktop: desktopShots.has(slug) ? `assets/desktop/${slug}.png` : "",
+            mobile: mobileShots.has(slug) ? `assets/mobile/${slug}.png` : "",
+          },
+        })),
+    }))
+    .filter((section) => section.steps.length > 0);
+}
+
+function buildHeaderMeta(options) {
+  const meta = [
+    `Source site: ${options.baseUrl}`,
+    `Generated: ${new Date(options.generatedAt).toLocaleString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "short",
+    })}`,
+  ];
+
+  if (options.deployedBuildVersion) {
+    meta.push(`Live build: ${options.deployedBuildVersion}`);
+  }
+
+  return meta;
+}
+
+function buildIndexHtml(manifest, options) {
+  const headerMeta = buildHeaderMeta(options)
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("\n");
+  const toc = manifest
+    .map(
+      (section) =>
+        `<li><a href="#${section.anchor}">${escapeHtml(section.title)}</a></li>`
+    )
+    .join("\n");
+
+  const sectionsHtml = manifest
+    .map((section) => {
+      const stepsHtml = section.steps
+        .map((step) => {
+          const initialSrc = step.images.desktop || step.images.mobile;
+          const initialDescription =
+            step.descriptions.desktop || step.descriptions.mobile || "";
+
+          return `
+            <article class="guide-step" id="${escapeHtml(step.slug)}">
+              <header class="guide-step__header">
+                <h3>${escapeHtml(step.title)}</h3>
+                <p
+                  class="guide-step__description"
+                  data-desktop-description="${escapeHtml(step.descriptions.desktop)}"
+                  data-mobile-description="${escapeHtml(step.descriptions.mobile)}"
+                >
+                  ${renderInlineMarkup(initialDescription)}
+                </p>
+              </header>
+              <figure class="guide-step__figure">
+                <img
+                  alt="${escapeHtml(step.title)} screenshot"
+                  class="guide-step__image"
+                  data-desktop-src="${escapeHtml(step.images.desktop)}"
+                  data-mobile-src="${escapeHtml(step.images.mobile)}"
+                  loading="lazy"
+                  src="${escapeHtml(initialSrc)}"
+                />
+                <figcaption class="guide-step__meta">
+                  <span class="guide-step__slug">${escapeHtml(step.slug)}</span>
+                  <span class="guide-step__availability" hidden></span>
+                </figcaption>
+              </figure>
+            </article>
+          `.trim();
+        })
+        .join("\n");
+
+      return `
+        <section class="guide-section" id="${section.anchor}" aria-labelledby="${section.anchor}-title">
+          <div class="guide-section__heading">
+            <h2 id="${section.anchor}-title">${escapeHtml(section.title)}</h2>
+          </div>
+          <div class="guide-step-grid">
+            ${stepsHtml}
+          </div>
+        </section>
+      `.trim();
+    })
+    .join("\n");
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quizymode user guide with a switchable desktop and mobile walkthrough sourced from the live production site." />
+    <title>Quizymode User Guide</title>
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="page-header__copy">
+          <p class="eyebrow">Quizymode Guide</p>
+          <h1>Desktop and mobile walkthroughs in one place</h1>
+          <p class="lede">
+            These screenshots are captured from the live production site after deployment. Use the switch to compare the same scenario in desktop or mobile mode.
+          </p>
+        </div>
+        <div class="page-header__controls">
+          <div class="mode-switch" role="group" aria-label="Guide viewport mode">
+            <button type="button" class="mode-switch__button" data-mode="desktop">Desktop</button>
+            <button type="button" class="mode-switch__button" data-mode="mobile">Mobile</button>
+          </div>
+          <p class="mode-switch__status" aria-live="polite">
+            Showing <strong id="current-mode-label">Desktop</strong> screenshots
+          </p>
+          <ul class="guide-meta">
+            ${headerMeta}
+          </ul>
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="Guide sections">
+        <h2>Sections</h2>
+        <ul>
+          ${toc}
+        </ul>
+      </nav>
+
+      <main class="guide-content">
+        ${sectionsHtml}
+      </main>
+    </div>
+
+    <script src="assets/site.js"></script>
+  </body>
+</html>`;
+}
+
+const siteCss = `:root {
+  --bg: #f4efe2;
+  --panel: rgba(255, 252, 244, 0.92);
+  --panel-strong: #fffaf0;
+  --text: #1f2933;
+  --muted: #5f6b76;
+  --accent: #c65d3b;
+  --accent-soft: rgba(198, 93, 59, 0.14);
+  --line: rgba(31, 41, 51, 0.14);
+  --shadow: 0 24px 70px rgba(68, 52, 31, 0.12);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 164, 0.55), transparent 28%),
+    linear-gradient(180deg, #f7f0df 0%, #efe4cf 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.page-header,
+.toc,
+.guide-section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.page-header {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.3fr 1fr;
+  padding: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.page-header h1,
+.toc h2,
+.guide-section h2,
+.guide-step h3 {
+  margin: 0;
+  line-height: 1.05;
+}
+
+.page-header h1 {
+  font-size: clamp(2.3rem, 3.8vw, 3.7rem);
+}
+
+.lede {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.page-header__controls {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.mode-switch {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(198, 93, 59, 0.18);
+}
+
+.mode-switch__button {
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 18px;
+}
+
+.mode-switch__button[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fffaf6;
+}
+
+.mode-switch__status,
+.guide-meta,
+.guide-step__description,
+.guide-step__meta {
+  color: var(--muted);
+}
+
+.mode-switch__status,
+.guide-meta {
+  margin: 0;
+}
+
+.guide-meta {
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.toc {
+  margin-top: 24px;
+  padding: 18px 24px;
+}
+
+.toc ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.toc a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.guide-content {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.guide-section {
+  padding: 24px;
+}
+
+.guide-section__heading {
+  margin-bottom: 18px;
+}
+
+.guide-section h2 {
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.guide-step-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.guide-step {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--panel-strong);
+  border: 1px solid rgba(31, 41, 51, 0.1);
+}
+
+.guide-step h3 {
+  font-size: 1.2rem;
+}
+
+.guide-step__description {
+  margin: 10px 0 0;
+  line-height: 1.6;
+}
+
+.guide-step__figure {
+  margin: 0;
+}
+
+.guide-step__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  background: #fff;
+}
+
+.guide-step__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.guide-step__slug {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.guide-step__availability:not([hidden]) {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .guide-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 899px) {
+  .page-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+    padding-top: 20px;
+  }
+
+  .page-header,
+  .guide-section,
+  .toc {
+    padding: 18px;
+  }
+
+  .mode-switch {
+    width: 100%;
+  }
+
+  .mode-switch__button {
+    flex: 1;
+  }
+
+  .guide-step {
+    padding: 14px;
+  }
+
+  .guide-step__meta {
+    flex-direction: column;
+  }
+}`;
+
+const siteJs = `(() => {
+  const storageKey = "quizymode-user-guide-mode";
+  const modeButtons = Array.from(document.querySelectorAll("[data-mode]"));
+  const modeLabel = document.getElementById("current-mode-label");
+  const mobileQuery = window.matchMedia("(max-width: 767px)");
+  const articles = Array.from(document.querySelectorAll(".guide-step"));
+
+  function renderInlineMarkup(value) {
+    return value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;")
+      .replace(/\\*\\*(.+?)\\*\\*/g, "<strong>$1</strong>");
+  }
+
+  function getPreferredMode() {
+    const stored = window.localStorage.getItem(storageKey);
+    if (stored === "desktop" || stored === "mobile") {
+      return stored;
+    }
+
+    return mobileQuery.matches ? "mobile" : "desktop";
+  }
+
+  function setMode(mode, persist) {
+    document.documentElement.dataset.mode = mode;
+
+    if (modeLabel) {
+      modeLabel.textContent = mode === "mobile" ? "Mobile" : "Desktop";
+    }
+
+    for (const button of modeButtons) {
+      button.setAttribute(
+        "aria-pressed",
+        button.dataset.mode === mode ? "true" : "false"
+      );
+    }
+
+    for (const article of articles) {
+      const image = article.querySelector(".guide-step__image");
+      const description = article.querySelector(".guide-step__description");
+      const availability = article.querySelector(".guide-step__availability");
+
+      if (!image || !description || !availability) {
+        continue;
+      }
+
+      const preferredSrc =
+        mode === "mobile"
+          ? image.dataset.mobileSrc || image.dataset.desktopSrc || ""
+          : image.dataset.desktopSrc || image.dataset.mobileSrc || "";
+      const fallbackUsed =
+        mode === "mobile"
+          ? !image.dataset.mobileSrc && Boolean(image.dataset.desktopSrc)
+          : !image.dataset.desktopSrc && Boolean(image.dataset.mobileSrc);
+      const preferredDescription =
+        mode === "mobile"
+          ? description.dataset.mobileDescription || description.dataset.desktopDescription || ""
+          : description.dataset.desktopDescription || description.dataset.mobileDescription || "";
+
+      image.src = preferredSrc;
+      description.innerHTML = renderInlineMarkup(preferredDescription);
+
+      if (fallbackUsed) {
+        availability.hidden = false;
+        availability.textContent =
+          mode === "mobile"
+            ? "Showing desktop image until a mobile capture is available"
+            : "Showing mobile image until a desktop capture is available";
+      } else {
+        availability.hidden = true;
+        availability.textContent = "";
+      }
+    }
+
+    if (persist) {
+      window.localStorage.setItem(storageKey, mode);
+    }
+  }
+
+  for (const button of modeButtons) {
+    button.addEventListener("click", () => {
+      const nextMode = button.dataset.mode === "mobile" ? "mobile" : "desktop";
+      setMode(nextMode, true);
+    });
+  }
+
+  setMode(getPreferredMode(), false);
+})();`;
+
+function writeSiteFiles(outputDir, manifest, options) {
+  const assetsDir = path.join(outputDir, "assets");
+  ensureDir(assetsDir);
+
+  fs.writeFileSync(path.join(outputDir, "index.html"), buildIndexHtml(manifest, options), "utf8");
+  fs.writeFileSync(path.join(assetsDir, "site.css"), siteCss, "utf8");
+  fs.writeFileSync(path.join(assetsDir, "site.js"), siteJs, "utf8");
+  fs.writeFileSync(path.join(outputDir, ".nojekyll"), "", "utf8");
+}
+
+const options = parseArgs(process.argv.slice(2));
+const manifest = buildManifest();
+
+if (manifest.length === 0) {
+  console.error("No user-guide screenshots were found. Capture screenshots before building the site.");
+  process.exit(1);
+}
+
+emptyDir(options.outputDir);
+
+const desktopConfig = resolveGuideConfig("desktop");
+const mobileConfig = resolveGuideConfig("mobile");
+copyPngs(desktopConfig.screenshotDir, path.join(options.outputDir, "assets", "desktop"));
+copyPngs(mobileConfig.screenshotDir, path.join(options.outputDir, "assets", "mobile"));
+writeSiteFiles(options.outputDir, manifest, options);
+
+console.log(`User guide site written to ${options.outputDir}`);

@@ -1,4 +1,4 @@
-import { test, type Page, type TestInfo } from "@playwright/test";
+import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import path from "path";
 import fs from "fs";
 
@@ -148,13 +148,9 @@ const BULK_AI_RESPONSE = JSON.stringify(
 );
 
 async function safeGoto(page: Page, url: string) {
-  try {
-    await page.goto(url, { waitUntil: "load", timeout: 20_000 });
-    await waitForUiToSettle(page);
-    return true;
-  } catch {
-    return false;
-  }
+  await page.goto(url, { waitUntil: "load", timeout: 20_000 });
+  await waitForUiToSettle(page);
+  await expect(page.locator("body")).toBeVisible();
 }
 
 async function signInWithEnvCredentials(page: Page) {
@@ -207,6 +203,14 @@ async function waitForUiToSettle(page: Page) {
 }
 
 function getScreenshotDir(testInfo: TestInfo) {
+  const configuredRoot = process.env.USER_GUIDE_SCREENSHOT_ROOT;
+  if (configuredRoot) {
+    return path.resolve(
+      configuredRoot,
+      testInfo.project.name === "screenshots-mobile" ? "mobile" : "desktop"
+    );
+  }
+
   return path.resolve(
     process.cwd(),
     testInfo.project.name === "screenshots-mobile"
@@ -311,7 +315,9 @@ async function waitForAnyVisible(
     await page.waitForTimeout(200);
   }
 
-  return null;
+  throw new Error(
+    `Timed out after ${timeout}ms waiting for one of: ${selectors.join(", ")}`
+  );
 }
 
 async function capture(
@@ -337,13 +343,13 @@ async function captureCurrentPage(page: Page, testInfo: TestInfo, slug: string) 
   const screenshotDir = getScreenshotDir(testInfo);
   fs.mkdirSync(screenshotDir, { recursive: true });
   await waitForUiToSettle(page);
+  await expect(page.locator("#root")).toBeVisible();
   await openMobileMenuIfNeeded(page, testInfo, slug);
-  await page
-    .screenshot({
-      path: path.join(screenshotDir, `${slug}.png`),
-      fullPage: true,
-    })
-    .catch(() => {});
+  await page.screenshot({
+    path: path.join(screenshotDir, `${slug}.png`),
+    fullPage: true,
+    scale: "css",
+  });
 }
 
 async function clickMode(page: Page, modeName: string) {

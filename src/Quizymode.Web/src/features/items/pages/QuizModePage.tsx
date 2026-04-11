@@ -699,7 +699,7 @@ const QuizModePage = () => {
     );
   if (items.length === 0) {
     return (
-      <div className="px-4 py-6 sm:px-0">
+      <div className="py-4 sm:py-6">
         <div className="text-center py-12">
           <p className="text-gray-500 mb-4">No items found.</p>
           <Link
@@ -744,7 +744,7 @@ const QuizModePage = () => {
     : null;
 
   return (
-    <div className="px-4 py-3 sm:px-0">
+    <div className="py-3 sm:py-4">
       <ScopeSecondaryBar
         scopeType={collectionId ? "collection" : "category"}
         activeMode="quiz"

@@ -6,32 +6,64 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, "..");
+export const projectRoot = path.resolve(__dirname, "..");
 
-const guideConfigs = {
-  desktop: {
-    key: "desktop",
-    screenshotDir: path.join(projectRoot, "docs/user-guide/screenshots/user"),
-    outputFile: path.join(projectRoot, "docs/user-guide/user-guide.md"),
-    title: "Quizymode User Guide",
-    intro:
-      "This guide provides an overview of the main screens available to signed-in users on desktop and larger screens.",
-    refreshCommand:
-      "`npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all`",
-  },
-  mobile: {
-    key: "mobile",
-    screenshotDir: path.join(projectRoot, "docs/user-guide/screenshots/mobile"),
-    outputFile: path.join(projectRoot, "docs/user-guide/user-guide.mobile.md"),
-    title: "Quizymode Mobile User Guide",
-    intro:
-      "This guide mirrors the main signed-in Quizymode walkthrough on a phone-sized screen, highlighting mobile navigation, stacked layouts, and full-screen overlays.",
-    refreshCommand:
-      "`npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all`",
-  },
-};
+const refreshCommand =
+  "`npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all`";
 
-const baseDescriptions = {
+export function resolveScreenshotDir(guideKey) {
+  const screenshotRoot = process.env.USER_GUIDE_SCREENSHOT_ROOT;
+  if (screenshotRoot) {
+    return path.resolve(
+      screenshotRoot,
+      guideKey === "mobile" ? "mobile" : "desktop"
+    );
+  }
+
+  return path.join(
+    projectRoot,
+    guideKey === "mobile"
+      ? "docs/user-guide/screenshots/mobile"
+      : "docs/user-guide/screenshots/user"
+  );
+}
+
+export function resolveGuideConfig(guideKey) {
+  if (guideKey === "desktop") {
+    return {
+      key: "desktop",
+      screenshotDir: resolveScreenshotDir("desktop"),
+      outputFile: path.join(projectRoot, "docs/user-guide/user-guide.md"),
+      title: "Quizymode User Guide",
+      intro:
+        "This guide provides an overview of the main screens available to signed-in users on desktop and larger screens.",
+      refreshCommand,
+    };
+  }
+
+  if (guideKey === "mobile") {
+    return {
+      key: "mobile",
+      screenshotDir: resolveScreenshotDir("mobile"),
+      outputFile: path.join(projectRoot, "docs/user-guide/user-guide.mobile.md"),
+      title: "Quizymode Mobile User Guide",
+      intro:
+        "This guide mirrors the main signed-in Quizymode walkthrough on a phone-sized screen, highlighting mobile navigation, stacked layouts, and full-screen overlays.",
+      refreshCommand,
+    };
+  }
+
+  throw new Error(`Unknown guide "${guideKey}"`);
+}
+
+export function getGuideConfigs() {
+  return {
+    desktop: resolveGuideConfig("desktop"),
+    mobile: resolveGuideConfig("mobile"),
+  };
+}
+
+export const baseDescriptions = {
   home: `The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.`,
   categories: `The Categories page lists all public subject areas available in Quizymode. You can search categories by name and sort by name, number of items, or average rating. Clicking a category opens its Sets view, where you can drill down through topics and subtopics to find exactly the items you want to study.`,
   "nav-geography": `Clicking a category card (here: Geography) opens the Sets view for that subject area. Each card represents a primary topic (rank-1 keyword) such as Capitals, Physical Geography, or Flags. The breadcrumb at the top shows your current position in the hierarchy and lets you navigate back at any time.`,
@@ -72,7 +104,7 @@ const baseDescriptions = {
   "study-guide-import-first-prompt": `A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI: the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.`,
 };
 
-const mobileDescriptionOverrides = {
+export const mobileDescriptionOverrides = {
   home: `On mobile, the home page keeps the same hero and discovery content but compresses it into a narrow, scroll-first layout. The primary navigation moves behind the hamburger menu, so the screen emphasizes the category cards, featured sets, and footer actions rather than the full desktop nav bar.`,
   categories: `The Categories page keeps the same search and sort tools on mobile, but the controls stack vertically and the results fill the screen one card at a time. This makes category browsing feel more like a feed, with each tap moving deeper into the taxonomy.`,
   "nav-geography": `On mobile, opening Geography keeps the breadcrumb trail but the topic cards stack and wrap to fit the narrow screen. The focus shifts to one tap target at a time, which makes drilling into the taxonomy easier with a thumb.`,
@@ -113,7 +145,7 @@ const mobileDescriptionOverrides = {
   "study-guide-import-first-prompt": `On mobile, a single prompt set fills most of the screen as a narrow, scrollable block of instructions and source text. The screenshot highlights how the generated prompt remains usable even when the viewport is constrained.`,
 };
 
-const sections = [
+export const sections = [
   { title: "Home", slugs: ["home"] },
   {
     title: "Browsing the Taxonomy",
@@ -183,7 +215,7 @@ const sections = [
   },
 ];
 
-function parseArgs(argv) {
+export function parseArgs(argv) {
   let guide = "desktop";
   let all = false;
 
@@ -208,19 +240,19 @@ function parseArgs(argv) {
   return { all, guide };
 }
 
-function label(slug) {
+export function label(slug) {
   return slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
 
-function relativeScreenshotPath(outputFile, screenshotDir, slug) {
+export function relativeScreenshotPath(outputFile, screenshotDir, slug) {
   const abs = path.join(screenshotDir, `${slug}.png`);
   return path.relative(path.dirname(outputFile), abs).replace(/\\/g, "/");
 }
 
-function gatherAvailableScreenshots(screenshotDir) {
+export function gatherAvailableScreenshots(screenshotDir) {
   return new Set(
     fs.existsSync(screenshotDir)
       ? fs
@@ -231,7 +263,7 @@ function gatherAvailableScreenshots(screenshotDir) {
   );
 }
 
-function getDescription(guideKey, slug) {
+export function getDescription(guideKey, slug) {
   if (guideKey === "mobile" && mobileDescriptionOverrides[slug]) {
     return mobileDescriptionOverrides[slug];
   }
@@ -239,7 +271,7 @@ function getDescription(guideKey, slug) {
   return baseDescriptions[slug] ?? "";
 }
 
-function buildGuide(config) {
+export function buildGuide(config) {
   const available = gatherAvailableScreenshots(config.screenshotDir);
   const lines = [];
 
@@ -295,16 +327,30 @@ function buildGuide(config) {
 
 const args = parseArgs(process.argv.slice(2));
 
-if (args.all) {
-  buildGuide(guideConfigs.desktop);
-  buildGuide(guideConfigs.mobile);
-  process.exit(0);
+function isDirectExecution() {
+  if (!process.argv[1]) {
+    return false;
+  }
+
+  return path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 }
 
-const config = guideConfigs[args.guide];
-if (!config) {
-  console.error(`Unknown guide "${args.guide}". Expected one of: ${Object.keys(guideConfigs).join(", ")}`);
-  process.exit(1);
-}
+if (isDirectExecution()) {
+  const guideConfigs = getGuideConfigs();
 
-buildGuide(config);
+  if (args.all) {
+    buildGuide(guideConfigs.desktop);
+    buildGuide(guideConfigs.mobile);
+    process.exit(0);
+  }
+
+  const config = guideConfigs[args.guide];
+  if (!config) {
+    console.error(
+      `Unknown guide "${args.guide}". Expected one of: ${Object.keys(guideConfigs).join(", ")}`
+    );
+    process.exit(1);
+  }
+
+  buildGuide(config);
+}

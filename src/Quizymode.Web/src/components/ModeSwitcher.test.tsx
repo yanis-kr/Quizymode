@@ -72,4 +72,61 @@ describe("ModeSwitcher", () => {
     );
     expect(screen.getByRole("tablist", { name: /view mode/i })).toBeInTheDocument();
   });
+
+  describe("mobile single-row layout", () => {
+    it("container does not have flex-wrap so buttons cannot wrap to a second row", () => {
+      const { container } = render(
+        <ModeSwitcher
+          availableModes={["sets", "list", "explore", "quiz"]}
+          activeMode="sets"
+          onChange={() => {}}
+        />
+      );
+      const tablist = container.firstChild as HTMLElement;
+      expect(tablist.className).toContain("flex");
+      expect(tablist.className).not.toMatch(/\bflex-wrap\b/);
+    });
+
+    it("container has overflow-x-auto so buttons scroll rather than wrap on very narrow screens", () => {
+      const { container } = render(
+        <ModeSwitcher
+          availableModes={["sets", "list", "explore", "quiz"]}
+          activeMode="sets"
+          onChange={() => {}}
+        />
+      );
+      const tablist = container.firstChild as HTMLElement;
+      expect(tablist.className).toContain("overflow-x-auto");
+    });
+
+    it("every button has whitespace-nowrap so button labels never break across lines", () => {
+      render(
+        <ModeSwitcher
+          availableModes={["sets", "list", "explore", "quiz"]}
+          activeMode="list"
+          onChange={() => {}}
+        />
+      );
+      const tabs = screen.getAllByRole("tab");
+      for (const tab of tabs) {
+        expect(tab.className).toContain("whitespace-nowrap");
+      }
+    });
+
+    it("all four mode buttons are siblings in the same flex row (not nested in sub-containers)", () => {
+      const { container } = render(
+        <ModeSwitcher
+          availableModes={["sets", "list", "explore", "quiz"]}
+          activeMode="quiz"
+          onChange={() => {}}
+        />
+      );
+      const tablist = container.firstChild as HTMLElement;
+      // Direct children of the tablist are the buttons themselves
+      const directButtonChildren = Array.from(tablist.children).filter(
+        (el) => el.getAttribute("role") === "tab"
+      );
+      expect(directButtonChildren).toHaveLength(4);
+    });
+  });
 });
