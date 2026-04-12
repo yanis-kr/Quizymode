@@ -28,7 +28,7 @@ describe("isSpeechSynthesisSupported", () => {
   });
 
   it("returns false when speechSynthesis is absent", () => {
-    const win = window as Record<string, unknown>;
+    const win = window as unknown as Record<string, unknown>;
     const original = win.speechSynthesis;
     delete win.speechSynthesis;
     expect(isSpeechSynthesisSupported()).toBe(false);
@@ -40,7 +40,7 @@ describe("isSpeechSynthesisSupported", () => {
       value: makeSpeechMock(),
       configurable: true,
     });
-    const win = window as Record<string, unknown>;
+    const win = window as unknown as Record<string, unknown>;
     const original = win.SpeechSynthesisUtterance;
     delete win.SpeechSynthesisUtterance;
     expect(isSpeechSynthesisSupported()).toBe(false);
@@ -88,7 +88,7 @@ describe("speakText", () => {
   });
 
   it("is a no-op when API is not available", () => {
-    const win = window as Record<string, unknown>;
+    const win = window as unknown as Record<string, unknown>;
     delete win.speechSynthesis;
     speakText("Should not crash");
     expect(cancelMock).not.toHaveBeenCalled();
@@ -121,7 +121,7 @@ describe("stopSpeaking", () => {
   });
 
   it("is a no-op when API is not available", () => {
-    const win = window as Record<string, unknown>;
+    const win = window as unknown as Record<string, unknown>;
     delete win.speechSynthesis;
     expect(() => stopSpeaking()).not.toThrow();
     expect(cancelMock).not.toHaveBeenCalled();
