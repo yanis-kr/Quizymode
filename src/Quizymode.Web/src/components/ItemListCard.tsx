@@ -13,6 +13,12 @@ interface ItemListCardProps {
   /** When true, shows full ratings (set stars) and comments link */
   showRatingsAndComments?: boolean;
   returnUrl?: string;
+  /**
+   * Controls answer visibility. When false the answer is hidden; when true it is
+   * revealed with a green highlight (like a correct answer in quiz mode). When
+   * undefined the answer is shown without any highlight (legacy/default behaviour).
+   */
+  showAnswer?: boolean;
 }
 
 const ItemListCard = ({
@@ -22,6 +28,7 @@ const ItemListCard = ({
   actions,
   showRatingsAndComments,
   returnUrl,
+  showAnswer,
 }: ItemListCardProps) => {
   return (
     <div className="bg-white shadow rounded-lg p-6">
@@ -39,9 +46,17 @@ const ItemListCard = ({
           </div>
           {actions && <div className="flex flex-wrap items-center justify-end gap-1 sm:gap-2">{actions}</div>}
         </div>
-        <p className="text-sm text-gray-700">
-          <strong>Answer:</strong> {item.correctAnswer}
-        </p>
+        {showAnswer !== false && (
+          <p
+            className={`text-sm ${
+              showAnswer === true
+                ? "rounded-md bg-green-100 px-2 py-1 text-green-900"
+                : "text-gray-700"
+            }`}
+          >
+            <strong>Answer:</strong> {item.correctAnswer}
+          </p>
+        )}
 
         <KeywordsAndCollectionsSection
           keywords={item.keywords}

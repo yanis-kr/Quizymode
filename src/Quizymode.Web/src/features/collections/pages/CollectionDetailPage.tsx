@@ -14,6 +14,8 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
+import { useShowAnswers } from "@/hooks/useShowAnswers";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +29,7 @@ const CollectionDetailPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [itemsPage, setItemsPage] = useState(1);
   const { pageSize, updatePageSize } = usePageSize();
+  const { showAnswers, toggleShowAnswers } = useShowAnswers();
   const [showDetails, setShowDetails] = useState(false);
 
   const {
@@ -373,7 +376,29 @@ const CollectionDetailPage = () => {
           <p className="text-slate-700">No items in this collection.</p>
         </div>
       ) : (
-        <ItemListSection
+        <>
+          <div className="mb-1 flex items-center py-1">
+            <button
+              type="button"
+              onClick={toggleShowAnswers}
+              title={showAnswers ? "Hide answers" : "Show answers"}
+              className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+                showAnswers
+                  ? "border-green-300 bg-green-50 text-green-700 hover:bg-green-100"
+                  : "border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
+              }`}
+            >
+              {showAnswers ? (
+                <EyeSlashIcon className="h-4 w-4 shrink-0" />
+              ) : (
+                <EyeIcon className="h-4 w-4 shrink-0" />
+              )}
+              <span className="hidden sm:inline">
+                {showAnswers ? "Hide answers" : "Show answers"}
+              </span>
+            </button>
+          </div>
+          <ItemListSection
             items={paginatedItems}
             totalCount={totalCount}
             page={itemsPage}
@@ -382,6 +407,7 @@ const CollectionDetailPage = () => {
             onNextPage={() => handlePageChange(Math.min(totalPages, itemsPage + 1))}
             showRatingsAndComments
             returnUrl={collectionReturnUrl}
+            showAnswers={showAnswers}
             onKeywordClick={(keywordName, item) => {
               if (!item?.category) return;
               const path = buildCategoryPath(
@@ -420,6 +446,7 @@ const CollectionDetailPage = () => {
               </>
             )}
           />
+        </>
       )}
 
       {manageCollectionsItemId && (

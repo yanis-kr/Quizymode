@@ -845,6 +845,15 @@ User settings are key-value pairs stored per user (e.g. **PageSize** for default
 - **AC 4.7.10a** [Anyone] **Given** I am on the Collection detail page or Categories items list, **when** the per-page dropdown is shown, **then** the available options are 5, 10, 25, 50, 100; the Collection detail page initialises to the authenticated user's saved PageSize (or 10 for anonymous), and selecting a new value persists the change to user settings.
 - **AC 4.7.9** [Authenticated] **Given** I see the content-compliance warning on add/import flows, **when** I choose **don't show again**, **then** the app persists that preference in `PUT /users/settings` and hides the warning on subsequent visits for that user.
 
+**Hide answers by default**
+
+- **AC 4.7.11** [Anyone] **Given** I open the Categories items list or Collection detail list, **when** the list loads, **then** answer text is hidden by default (no answer text shown on item cards).
+- **AC 4.7.12** [Anyone] **Given** I am in a list view (Categories items list or Collection detail), **when** the list is visible, **then** a compact **Show answers / Hide answers** toggle button appears in the control bar between the Filters button and the Map/Sort controls (Categories) or at the top of the item list (Collection detail). On mobile only an eye icon is shown; on desktop the label "Show answers" or "Hide answers" is also displayed.
+- **AC 4.7.13** [Anyone] **Given** I click the toggle to show answers, **when** the answers are revealed, **then** every answer text on visible item cards is shown with a light green background (`bg-green-100`) matching the correct-answer highlight style used in quiz mode.
+- **AC 4.7.14** [Anyone] **Given** I toggle show/hide answers and then navigate to another list page without leaving list mode, **when** the new list loads, **then** the toggle retains its previous state (persisted in `sessionStorage` for anonymous users; persisted via `PUT /users/settings` key `HideAnswers` for authenticated users).
+- **AC 4.7.15** [Authenticated] **Given** I am authenticated, **when** I toggle the answer visibility in a list view, **then** the setting is persisted as `HideAnswers` via `PUT /users/settings`; value `"true"` means hide, `"false"` means show. The default value (when the setting is absent) is `"true"` (hidden).
+- **AC 4.7.16** [Anonymous] **Given** I am not authenticated, **when** I toggle the answer visibility, **then** the preference is stored in `sessionStorage` only and reverts to hidden on a new browser session.
+
 **Content-compliance warning**
 
 - **AC 4.7.10** [Authenticated] **Given** I open item creation or import flows (for example Add Items, Create Item, Generate One AI Batch, Upload items to collection, or Study Guide prompt-set import), **when** I have not previously dismissed the warning, **then** the UI shows a warning reminding me not to upload infringing or unauthorized personal/confidential content, to review AI-generated content, and linking to the current Terms of Service and Privacy Policy.
