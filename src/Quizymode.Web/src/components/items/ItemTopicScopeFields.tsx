@@ -75,7 +75,7 @@ export function ItemTopicScopeFields({
           }
           disabled={disabled}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900"
         >
           <option value="">Select a category</option>
           {categories.map((cat) => (
@@ -101,7 +101,7 @@ export function ItemTopicScopeFields({
             onScopeChange({ rank1: v, rank2: "" });
           }}
           disabled={disabled || !category || isLoadingRank1}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900"
         >
           <option value="">
             {isLoadingRank1 ? "Loading…" : "— Select primary topic —"}
@@ -135,7 +135,7 @@ export function ItemTopicScopeFields({
           value={rank2SelectValue}
           onChange={(e) => onScopeChange({ rank2: e.target.value })}
           disabled={disabled || !rank1.trim() || isLoadingRank2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900"
         >
           <option value="">
             {isLoadingRank2 ? "Loading…" : "— Select subtopic —"}

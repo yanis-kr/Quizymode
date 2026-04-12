@@ -1104,6 +1104,15 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 9.3.2** [Anonymous, Authenticated] If `window.speechSynthesis` or `SpeechSynthesisUtterance` is unavailable, the speaker buttons are not rendered and the application does not throw.
 - **AC 9.3.3** [Anonymous, Authenticated] No backend calls, database fields, or cloud services are involved in TTS playback; all processing is client-side only.
 
+### AC 9.4 List mode "Listen All"
+
+- **AC 9.4.1** [Anonymous, Authenticated] In list mode (category items view and collection detail view), a "Listen All" button appears in the control bar when `window.speechSynthesis` is available.
+- **AC 9.4.2** [Anonymous, Authenticated] Pressing "Listen All" begins sequential TTS playback: speaks the question, pauses 2 seconds, then speaks the correct answer (regardless of the "Show/Hide answers" toggle), then moves to the next item, repeating until all items in the current list are read.
+- **AC 9.4.3** [Anonymous, Authenticated] While playback is active, the button label changes to "Pause". Pressing it cancels in-progress speech and pauses playback; the button changes to "Resume".
+- **AC 9.4.4** [Anonymous, Authenticated] Pressing "Resume" restarts playback from the beginning of the item that was paused on.
+- **AC 9.4.5** [Anonymous, Authenticated] When the last item's answer has been spoken, playback stops automatically and the button returns to "Listen All".
+- **AC 9.4.6** [Anonymous, Authenticated] Navigating away from the list view cancels any in-progress "Listen All" playback.
+
 ---
 
 ## Unclarities / questions for product owner

@@ -15,6 +15,8 @@ import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 import { useShowAnswers } from "@/hooks/useShowAnswers";
+import { useListenAll } from "@/hooks/useListenAll";
+import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -103,6 +105,7 @@ const CollectionDetailPage = () => {
     enabled: !!id && isOwner,
   });
   const allItems = itemsData?.items || [];
+  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(allItems);
 
   const totalCount = allItems.length;
   const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
@@ -376,7 +379,7 @@ const CollectionDetailPage = () => {
         </div>
       ) : (
         <>
-          <div className="mb-1 flex items-center py-1">
+          <div className="mb-1 flex items-center gap-2 py-1">
             <button
               type="button"
               onClick={toggleShowAnswers}
@@ -396,6 +399,37 @@ const CollectionDetailPage = () => {
                 {showAnswers ? "Hide answers" : "Show answers"}
               </span>
             </button>
+            {ttsSupported && (
+              <button
+                type="button"
+                onClick={handleListenAll}
+                title={
+                  listenAllState === "idle"
+                    ? "Listen to all items (TTS)"
+                    : listenAllState === "playing"
+                    ? "Pause"
+                    : "Resume"
+                }
+                className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+                  listenAllState !== "idle"
+                    ? "border-indigo-300 bg-indigo-50 text-indigo-700 hover:bg-indigo-100"
+                    : "border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
+                }`}
+              >
+                {listenAllState === "playing" ? (
+                  <PauseIcon className="h-4 w-4 shrink-0" />
+                ) : (
+                  <SpeakerWaveIcon className="h-4 w-4 shrink-0" />
+                )}
+                <span className="hidden sm:inline">
+                  {listenAllState === "idle"
+                    ? "Listen All"
+                    : listenAllState === "playing"
+                    ? "Pause"
+                    : "Resume"}
+                </span>
+              </button>
+            )}
           </div>
           <ItemListSection
             items={paginatedItems}
