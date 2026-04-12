@@ -3,6 +3,8 @@
  */
 import type { ItemResponse } from "@/types/api";
 import { TextWithLinks } from "@/components/TextWithLinks";
+import { SpeakButton } from "@/components/SpeakButton";
+import { useSpeech } from "@/hooks/useSpeech";
 
 export interface QuizRendererProps {
   item: ItemResponse;
@@ -21,10 +23,20 @@ export function QuizRenderer({
   onAnswerSelect,
   stats,
 }: QuizRendererProps) {
+  const { speak, isSupported } = useSpeech();
+
   return (
     <div className="space-y-3">
       <div>
-        <h3 className="text-base font-medium text-gray-900 mb-1">Question</h3>
+        <div className="flex items-center gap-1.5 mb-1">
+          <h3 className="text-base font-medium text-gray-900">Question</h3>
+          <SpeakButton
+            text={item.question}
+            onSpeak={speak}
+            isSupported={isSupported}
+            label="Read question aloud"
+          />
+        </div>
         <p className="text-gray-700">{item.question}</p>
       </div>
 
@@ -65,9 +77,17 @@ export function QuizRenderer({
 
       {showAnswer && (
         <div className="p-3 bg-blue-50 rounded-lg">
-          <p className="text-sm font-medium text-blue-900">
-            Correct Answer: {item.correctAnswer}
-          </p>
+          <div className="flex items-center gap-1.5">
+            <p className="text-sm font-medium text-blue-900">
+              Correct Answer: {item.correctAnswer}
+            </p>
+            <SpeakButton
+              text={item.correctAnswer}
+              onSpeak={speak}
+              isSupported={isSupported}
+              label="Read answer aloud"
+            />
+          </div>
           {item.explanation && (
             <p className="text-sm text-blue-700 mt-1"><TextWithLinks text={item.explanation} /></p>
           )}
