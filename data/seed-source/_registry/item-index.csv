@@ -1388,6 +1388,7 @@ fbff8205-f39c-445e-a983-3a287a6ff547,exams,aws,saa-c03,A meteorological startup 
 878ea60f-0244-4b6b-85a0-636d553d3b7f,exams,aws,saa-c03,A nancial services company launched a new applicat,data/seed-source/items/exams/exams.aws.saa-c03-p26.json
 ce603532-f7f0-47fe-9171-7c89c753c4e0,exams,aws,saa-c03,A payment processing company records all voice com,data/seed-source/items/exams/exams.aws.saa-c03-p19.json
 3a91f7e4-3626-478b-ba15-8ecb8b6d33e9,exams,aws,saa-c03,A rapidly growing ecommerce company is running its,data/seed-source/items/exams/exams.aws.saa-c03-p13.json
+04c23690-bec2-472c-b8a8-bdba31718e0c,exams,aws,saa-c03,A read-heavy traffic spike is overloading a single,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 b965ed8f-6091-43a7-b3b0-0458eff896ec,exams,aws,saa-c03,A recent analysis of a company's IT expenses highl,data/seed-source/items/exams/exams.aws.saa-c03-p25.json
 b47a4f7e-4fcb-4d65-8363-c49e93007443,exams,aws,saa-c03,A reporting team receives les each day in an Amazo,data/seed-source/items/exams/exams.aws.saa-c03-p08.json
 d43c35ca-2664-4cb3-a19a-d4770edd31ee,exams,aws,saa-c03,A research company runs experiments that are power,data/seed-source/items/exams/exams.aws.saa-c03-p14.json
@@ -1451,6 +1452,7 @@ ac39950d-3e61-4714-890f-7d59939787f7,exams,aws,saa-c03,A solutions architect nee
 bac7305e-1f91-4beb-a4f0-4a8114428a21,exams,aws,saa-c03,An Amazon EC2 administrator created the following ,data/seed-source/items/exams/exams.aws.saa-c03-p06.json
 96f16a12-f200-4196-941a-2349c5f7eb40,exams,aws,saa-c03,An Amazon EC2 instance is located in a private sub,data/seed-source/items/exams/exams.aws.saa-c03-p13.json
 02cc15c1-49d3-4c4e-99e0-b6ac9db7de2f,exams,aws,saa-c03,An Amazon EventBridge rule targets a third-party A,data/seed-source/items/exams/exams.aws.saa-c03-p26.json
+4c3bfafb-7f3a-46d6-bf06-6b70e57eddf2,exams,aws,saa-c03,An Auto Scaling fleet has reached maximum size and,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 d4adaa26-48b6-4e14-bdea-e44748fed946,exams,aws,saa-c03,An IAM user made several conguration changes to AW,data/seed-source/items/exams/exams.aws.saa-c03-p19.json
 021a26b7-46fe-45c8-8620-831efe5a8a5a,exams,aws,saa-c03,An IoT company is releasing a mattress that has se,data/seed-source/items/exams/exams.aws.saa-c03-p22.json
 e585cbc3-7e8d-4e85-949d-ff3af7a27bfa,exams,aws,saa-c03,An application allows users at a company's headqua,data/seed-source/items/exams/exams.aws.saa-c03-p06.json
@@ -1483,22 +1485,84 @@ ab900fad-dc79-4d96-bf71-b5230d9805fa,exams,aws,saa-c03,An entertainment company 
 60e3f546-6d83-4f79-8c27-45bd328972cd,exams,aws,saa-c03,An online photo-sharing company stores its photos ,data/seed-source/items/exams/exams.aws.saa-c03-p29.json
 403aa8e3-fc46-43d6-bb2e-caae8dfdccf7,exams,aws,saa-c03,An online retail company has more than 50 million ,data/seed-source/items/exams/exams.aws.saa-c03-p10.json
 cf58afd7-ad7a-4a0d-aadc-1686ce79d1ec,exams,aws,saa-c03,"As part of budget planning, management wants a rep",data/seed-source/items/exams/exams.aws.saa-c03-p14.json
+a95c8b09-4ff0-433a-8f76-32db71f10c61,exams,aws,saa-c03,For a MongoDB workload on EC2 that needs consisten,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+c514bed1-bb34-44b9-b7bb-2e0b128f2d99,exams,aws,saa-c03,"For a brand-new AWS account, which two security ac",data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+5745cd9f-fe0c-4786-9ede-fb2fa195acfe,exams,aws,saa-c03,For a globally public media library of images and ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+9354ef87-b23a-470a-a2e6-ef4b0ecddf67,exams,aws,saa-c03,For a growing library of photos and videos that mu,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+8a235ce0-8f69-47df-8e74-c35903392bd0,exams,aws,saa-c03,"For a multi-tier EC2 application, which design bes",data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+c9c01b3c-bc5e-405f-8c22-ab9d1110ff74,exams,aws,saa-c03,For a serverless application that must call AWS se,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+710340d9-c3cb-4181-8f73-3fc12a4267c7,exams,aws,saa-c03,For an EC2-hosted MongoDB workload dominated by la,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+f4481582-67f8-4f37-ab1e-56356f8cd901,exams,aws,saa-c03,For an RDS for MySQL workload suffering slow reads,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+5af92d85-b9e3-45d7-94e3-e4cb59df9360,exams,aws,saa-c03,For an analytics dashboard with bursty relational ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+61caa21c-0ea9-44fc-b238-4f2a3df6108e,exams,aws,saa-c03,For an internet-facing EC2 instance in a public su,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+27c5db63-f976-40eb-b838-14c7017dd4d8,exams,aws,saa-c03,How should you automate response to future AWS har,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+9d132365-4a81-40af-b73a-1ee19f82de49,exams,aws,saa-c03,How should you cut over from third-party SSL certi,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+af5544d0-0340-4e85-9404-2e3b32ecb3a7,exams,aws,saa-c03,How should you handle both predictable launches an,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+73ea8356-fb37-4bb8-936d-9f0366f07441,exams,aws,saa-c03,How should you mitigate and observe SQL injection ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+6dbe4e47-58b6-4561-9623-d517bdf1eb29,exams,aws,saa-c03,How should you redesign a critical S3 dataset to r,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+11e5f994-530c-474a-a783-e99d0bcab968,exams,aws,saa-c03,If an EC2 instance behind an ALB fails health chec,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+b7815681-4fb4-446e-83c3-14f0bcaa46d4,exams,aws,saa-c03,If cross-account role switching works but EC2 acce,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+aced8295-6a70-467c-9d93-dc7d140de04e,exams,aws,saa-c03,If low cost matters most and the business can tole,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+05d3c11a-94f0-4ef7-a337-f5865f87d431,exams,aws,saa-c03,If you want hybrid connectivity while optimizing c,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+4a18769f-f7dd-4495-a270-eb6fe4b7f16a,exams,aws,saa-c03,"In Amazon RDS for MySQL Multi-AZ deployments, how ",data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 f439c838-36df-4d42-a6ac-cc1761d9e985,exams,aws,saa-c03,Organizers for a global event want to put daily re,data/seed-source/items/exams/exams.aws.saa-c03-p09.json
+7dfdd4ef-fa54-41dc-9d85-d4adcbdd5979,exams,aws,saa-c03,Reports from Amazon Redshift must be stored in S3 ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 3ff7e2af-a7fc-4f72-b3c4-a061aa71b179,exams,aws,saa-c03,The customers of a nance company request appointme,data/seed-source/items/exams/exams.aws.saa-c03-p10.json
 8a8e6492-e365-477a-afc6-647762985d56,exams,aws,saa-c03,The following IAM policy is attached to an IAM gro,data/seed-source/items/exams/exams.aws.saa-c03-p20.json
+acdc7e0b-f745-4934-8265-070ea83ff3fc,exams,aws,saa-c03,To reduce ongoing RDS costs without removing requi,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+5b7e4947-854a-4388-82cd-5bc6d8ab611d,exams,aws,saa-c03,Twelve EC2 instances need a shared file repository,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+97ed3c36-16b9-4fd0-a28a-43396d03f48d,exams,aws,saa-c03,Users still see insecure warnings after you attach,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+c3f3599d-2fd7-4135-b3f3-9824c9b0ebdc,exams,aws,saa-c03,What AWS service is best for directing mobile user,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+822f3469-adc5-4bbe-a77c-099b90020559,exams,aws,saa-c03,What does an AWS Site-to-Site VPN provide for hybr,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+bf8d95c7-c02f-4984-aba7-ee8c772f5210,exams,aws,saa-c03,What hybrid connectivity design best combines high,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+d12c8e1e-5523-45b6-8b19-e5da0bf42911,exams,aws,saa-c03,What is a managed way to normalize and enrich stre,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+266ba24d-c6c1-48a2-abd7-86783be5ef7b,exams,aws,saa-c03,What is the best centralized store for application,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+8e6481d1-b013-4755-b584-5ff4a2e1bf24,exams,aws,saa-c03,What is the best low-operations way to route a glo,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+691aa92f-ce2f-48d1-82da-10a6db578678,exams,aws,saa-c03,What is the best scalable private-network design f,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+96d97e2d-cc65-411c-ab2e-ff1d8e6e5a52,exams,aws,saa-c03,What is the best way to reduce rising costs in a h,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+1592a8c7-2440-4784-b99b-c0dcfd8756b6,exams,aws,saa-c03,What is the lowest-operations way to ingest massiv,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+e6c866bb-26e3-4ff9-98bf-db7441ed3ff4,exams,aws,saa-c03,What is the most cost-effective fully serverless b,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+e81d02fd-d0c3-4993-b726-9b37dacb4692,exams,aws,saa-c03,What is the most cost-effective way to automate da,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+6a00db40-745a-434f-bb18-c40f409fc535,exams,aws,saa-c03,What is the most cost-effective way to extend one ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+ba48a81e-59ee-4aad-93e1-3c1810602437,exams,aws,saa-c03,What is the most resilient replacement for a singl,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+7bbb2882-c13c-40b2-b5c9-1842f8711b62,exams,aws,saa-c03,What is the most secure way for an EC2 application,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+24f80910-6204-4977-90e0-fd441be1ec97,exams,aws,saa-c03,What is the recommended least-privilege pattern fo,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+dc412526-f44f-4317-b4cb-044f755b19d0,exams,aws,saa-c03,What is the simplest way to keep data on an EC2 ro,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 de1088b8-8a96-4c26-bc69-4fbcebb4d02a,exams,aws,saa-c03,What lets instances in a private subnet reach the ,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+9fe5c132-0568-47f5-b887-1f71b65e3589,exams,aws,saa-c03,What must be included in an EC2 launch template so,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 3e10e638-eee4-4c49-9615-c6875b42dc1b,exams,aws,saa-c03,What should a solutions architect do to ensure tha,data/seed-source/items/exams/exams.aws.saa-c03-p16.json
+5788ff75-affc-4f60-a806-fb54ac7e83f6,exams,aws,saa-c03,What should you place in front of a Singapore-host,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+17b064c9-170f-487f-bd8c-8daf8975bbd0,exams,aws,saa-c03,Which AWS Organizations policy type limits the max,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+3445bf34-1fd6-48af-8427-97aa0903bf28,exams,aws,saa-c03,Which AWS database service best fits ad hoc analyt,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 f3a9c221-4a2b-44fc-8159-4a11f2880763,exams,aws,saa-c03,Which AWS database service is a fully managed serv,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+9485fd90-60f6-49bb-95d9-3f7f07797db8,exams,aws,saa-c03,Which AWS relational database option best fits an ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 e17ec24a-14f8-4d0b-9b68-3ede1ad76273,exams,aws,saa-c03,Which AWS relational database service is compatibl,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+77c673f9-a228-43fb-af3c-5aa43d7c9c0d,exams,aws,saa-c03,Which AWS relational database service is the best ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 37ff4240-90b6-4081-b834-1eda92ac44cd,exams,aws,saa-c03,Which AWS service automatically adjusts capacity t,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 6cbd25a9-d45c-495d-a672-39a77472804c,exams,aws,saa-c03,Which AWS service distributes incoming traffic acr,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+fb9c8ed5-9bb6-47d2-9bd3-eb82aef5a3c7,exams,aws,saa-c03,Which AWS service gives auditors on-demand access ,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+16d94d5c-30fe-4d9c-8303-ec7f8ab0f6c5,exams,aws,saa-c03,Which AWS service gives centralized workforce acce,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 3b482677-bf30-4e50-a37a-926f7e6c1b6d,exams,aws,saa-c03,Which AWS service is a content delivery network fo,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 99008e5d-b346-4962-a0e4-12a2b84e91e4,exams,aws,saa-c03,Which AWS service is used for infrastructure as co,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 2d3cab62-2904-4ac3-863d-9b1f0509ecc7,exams,aws,saa-c03,Which AWS service provides DNS routing for interne,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 833092c9-4dd8-4863-b94c-d8f648d09859,exams,aws,saa-c03,"Which AWS service sends, stores, and receives mess",data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+ea276863-588a-4491-bb07-cf1291a15a6b,exams,aws,saa-c03,Which AWS service should you use across multiple a,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+507f916d-06c6-493f-b7ef-71dbbe9f25b2,exams,aws,saa-c03,Which AWS service uses threat detection and behavi,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+e4702581-b76d-4f1a-a74e-89be143feafc,exams,aws,saa-c03,Which AWS services are the standard low-cost patte,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 6d9c773e-66c5-43b1-9dbd-e63f5b8b0a0d,exams,aws,saa-c03,Which AWS storage service provides a shared file s,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
 b410980a-475f-48bb-a6b6-1b5c3ff88e36,exams,aws,saa-c03,Which AWS storage service provides block volumes t,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+0bd30f55-0784-485c-9a96-a3445e4c617c,exams,aws,saa-c03,Which Amazon Cognito capabilities should you choos,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 b7b5d12c-55a7-4eff-b349-b2bad29e45c4,exams,aws,saa-c03,Which Amazon S3 storage class is designed for data,data/seed-source/items/exams/exams.aws.saa-c03-p01.json
+31dfb0c9-599e-4b67-8058-e5704fba2ce0,exams,aws,saa-c03,Which EC2 feature replaces old launch configuratio,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+f1ab8975-d23a-4f61-b39e-641842df208c,exams,aws,saa-c03,Which Elastic Load Balancing option should you cho,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+defb9e77-c27d-4a6b-a38f-79091b7f5ab0,exams,aws,saa-c03,Which IPv6 component allows outbound internet acce,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+532fe44f-2067-43bc-b8a1-052901bde1bb,exams,aws,saa-c03,Which S3 storage class is the best fit for archive,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+f7e39d31-686e-4b24-80cd-563092990b30,exams,aws,saa-c03,Which architecture best supports a global web appl,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+402b6a49-28b8-4d80-b2b2-3953e14c2651,exams,aws,saa-c03,Which service best routes users to the nearest hea,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+9f044add-e116-4b7c-9d3b-f4993b80a6fd,exams,aws,saa-c03,Which statement about EC2 security groups is corre,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+9c6a7827-73cf-4fcd-a5de-fabbe2739ccb,exams,aws,saa-c03,Which storage combination best supports a language,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+ce59a99a-95f1-40b0-8972-58140d2f963e,exams,aws,saa-c03,Which storage service is best for a massively para,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
+59441c41-c8cd-4215-91c7-bc98eac5a742,exams,aws,saa-c03,Why might an application keep sending duplicate SN,data/seed-source/items/exams/exams.aws.saa-c03-p32.json
 1b4ef870-f355-4c0e-90ab-335495037ba7,exams,aws,sap-c02,Which AWS DNS service routes end users to internet,data/seed-source/items/exams/exams.aws.sap-c02.json
 5cc25e9f-1c21-4c6d-a87b-6e81145ea872,exams,aws,sap-c02,Which AWS relational database service automates pr,data/seed-source/items/exams/exams.aws.sap-c02.json
 30c2b1fe-9b9d-4f6d-a92a-177c13189aa8,exams,aws,sap-c02,Which AWS service automatically adjusts capacity t,data/seed-source/items/exams/exams.aws.sap-c02.json
