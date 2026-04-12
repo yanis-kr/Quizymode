@@ -1085,6 +1085,27 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 ---
 
+## AC 9. Text-to-speech (browser TTS)
+
+### AC 9.1 Quiz mode playback
+
+- **AC 9.1.1** [Anonymous, Authenticated] A speaker-icon button appears next to the "Question" heading in Quiz mode. Clicking it speaks the question text via the browser Web Speech API.
+- **AC 9.1.2** [Anonymous, Authenticated] When the answer is revealed in Quiz mode, a speaker-icon button appears next to the "Correct Answer" label. Clicking it speaks the answer text.
+- **AC 9.1.3** [Anonymous, Authenticated] Starting a new TTS utterance cancels any utterance already in progress so speech does not overlap.
+
+### AC 9.2 Explore (flashcard) mode playback
+
+- **AC 9.2.1** [Anonymous, Authenticated] A speaker-icon button appears in the question-face header of the flashcard in Explore mode. Clicking it speaks the question text without flipping the card.
+- **AC 9.2.2** [Anonymous, Authenticated] A speaker-icon button appears in the answer-face header of the flashcard in Explore mode. Clicking it speaks the answer text without flipping the card back.
+
+### AC 9.3 Lifecycle and fallback
+
+- **AC 9.3.1** [Anonymous, Authenticated] When the user navigates away from a Quiz or Explore page, any in-progress speech is cancelled immediately.
+- **AC 9.3.2** [Anonymous, Authenticated] If `window.speechSynthesis` or `SpeechSynthesisUtterance` is unavailable, the speaker buttons are not rendered and the application does not throw.
+- **AC 9.3.3** [Anonymous, Authenticated] No backend calls, database fields, or cloud services are involved in TTS playback; all processing is client-side only.
+
+---
+
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).

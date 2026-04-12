@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
 import { TextWithLinks } from "@/components/TextWithLinks";
+import { SpeakButton } from "@/components/SpeakButton";
+import { useSpeech } from "@/hooks/useSpeech";
 
 /** Characters beyond which the explanation is truncated with a "Show more" toggle. */
 const EXPLANATION_CLAMP_THRESHOLD = 220;
@@ -16,6 +18,7 @@ export interface ExploreRendererProps {
 export function ExploreRenderer({ item }: ExploreRendererProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [explanationExpanded, setExplanationExpanded] = useState(false);
+  const { speak, isSupported } = useSpeech();
 
   useEffect(() => {
     setIsFlipped(false);
@@ -44,15 +47,24 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
           aria-hidden={isFlipped}
           data-testid="flashcard-front"
         >
+          {/* Label row with speak button — sits outside the flip button so there is no nested-button issue */}
+          <div className="flex items-center justify-between px-6 pt-6 pb-0">
+            <p className="text-sm font-medium text-gray-500">Question</p>
+            <SpeakButton
+              text={item.question}
+              onSpeak={speak}
+              isSupported={isSupported}
+              label="Read question aloud"
+            />
+          </div>
           <button
             type="button"
             onClick={() => setIsFlipped(true)}
             aria-expanded={false}
             aria-label="Show answer and explanation"
-            className="w-full rounded-xl p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+            className="w-full rounded-b-xl px-6 pb-6 pt-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           >
-            <p className="text-sm font-medium text-gray-500">Question</p>
-            <p className="mt-2 flex-1 text-lg text-gray-900">{item.question}</p>
+            <p className="flex-1 text-lg text-gray-900">{item.question}</p>
             <p className="mt-4 text-xs text-gray-400">Click the card to reveal the answer</p>
           </button>
         </div>
@@ -65,16 +77,25 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
           aria-hidden={!isFlipped}
           data-testid="flashcard-back"
         >
+          {/* Label row with speak button — sits outside the flip button */}
+          <div className="flex items-center justify-between px-6 pt-6 pb-0">
+            <p className="text-sm font-medium text-gray-500">Answer</p>
+            <SpeakButton
+              text={item.correctAnswer}
+              onSpeak={speak}
+              isSupported={isSupported}
+              label="Read answer aloud"
+            />
+          </div>
           {/* Tapping the answer section flips back to the question */}
           <button
             type="button"
             onClick={() => setIsFlipped(false)}
             aria-expanded={isFlipped}
             aria-label="Show question"
-            className="w-full rounded-t-xl px-6 pb-2 pt-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+            className="w-full rounded-none px-6 pb-2 pt-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           >
-            <p className="text-sm font-medium text-gray-500">Answer</p>
-            <p className="mt-2 text-lg font-semibold text-gray-900">{item.correctAnswer}</p>
+            <p className="text-lg font-semibold text-gray-900">{item.correctAnswer}</p>
             <p className="mt-2 text-xs text-gray-400">Click to show question</p>
           </button>
 
