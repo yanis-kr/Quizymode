@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
  * Compact control bar that replaces the inline FilterSection header.
  * Shows a filter trigger button (with active badge) and optional secondary actions.
  */
-import { FunnelIcon } from "@heroicons/react/24/outline";
+import { FunnelIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 interface SortOptionItem {
   value: string;
@@ -20,6 +20,9 @@ interface FilterControlBarProps {
   sortBy?: string;
   onSortChange?: (sort: string) => void;
   sortOptions?: SortOptionItem[];
+  /** When provided, renders a compact "Show / Hide answers" toggle after the filter button. */
+  showAnswers?: boolean;
+  onToggleShowAnswers?: () => void;
 }
 
 export function FilterControlBar({
@@ -31,6 +34,8 @@ export function FilterControlBar({
   sortBy,
   onSortChange,
   sortOptions,
+  showAnswers,
+  onToggleShowAnswers,
 }: FilterControlBarProps) {
   const showSort = sortBy != null && onSortChange != null && sortOptions != null && sortOptions.length > 0;
 
@@ -54,6 +59,26 @@ export function FilterControlBar({
           </span>
         )}
       </button>
+
+      {onToggleShowAnswers != null && (
+        <button
+          type="button"
+          onClick={onToggleShowAnswers}
+          title={showAnswers ? "Hide answers" : "Show answers"}
+          className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+            showAnswers
+              ? "border-green-300 bg-green-50 text-green-700 hover:bg-green-100"
+              : "border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
+          }`}
+        >
+          {showAnswers ? (
+            <EyeSlashIcon className="h-4 w-4 shrink-0" />
+          ) : (
+            <EyeIcon className="h-4 w-4 shrink-0" />
+          )}
+          <span className="hidden sm:inline">{showAnswers ? "Hide answers" : "Show answers"}</span>
+        </button>
+      )}
 
       {middleSlot}
 

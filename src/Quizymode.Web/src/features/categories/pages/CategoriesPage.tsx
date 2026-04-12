@@ -15,6 +15,7 @@ import { ScopePathHeader } from "@/components/ScopePathHeader";
 import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
+import { useShowAnswers } from "@/hooks/useShowAnswers";
 import { SEO } from "@/components/SEO";
 import {
   categoryNameToSlug,
@@ -82,6 +83,7 @@ const CategoriesPage = () => {
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const { pageSize: userPageSize } = usePageSize();
   const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
+  const { showAnswers, toggleShowAnswers } = useShowAnswers();
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
   const location = useLocation();
@@ -884,6 +886,8 @@ const CategoriesPage = () => {
               }
               activeFilterCount={activeScopeFilters.size}
               onOpenFilters={() => setShowFilters(true)}
+              showAnswers={showAnswers}
+              onToggleShowAnswers={toggleShowAnswers}
               middleSlot={
                 isAuthenticated && categoryName ? (
                   <Link
@@ -1090,6 +1094,7 @@ const CategoriesPage = () => {
                 }
                 showRatingsAndComments
                 returnUrl={listItemsReturnUrl}
+                showAnswers={showAnswers}
                 onKeywordClick={(keywordName) => {
                   const isSelected = filterKeywordsFromQuery.some(
                     (k) => k.toLowerCase() === keywordName.toLowerCase()
