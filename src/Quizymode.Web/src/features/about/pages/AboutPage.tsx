@@ -39,6 +39,18 @@ const AboutPage = () => {
           for a desktop or mobile walkthrough with a built-in view switcher.
         </p>
 
+        <p className="mt-4 text-sm text-slate-600">
+          Read more about the story behind Quizymode:{" "}
+          <a
+            href="https://medium.com/@yanis.krumins/quizymode-today-a-study-app-a-content-tool-and-a-useful-engineering-sandbox-f7aeb25e6683"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-800"
+          >
+            Quizymode today — a study app, a content tool, and a useful engineering sandbox
+          </a>
+        </p>
+
         <p className="mt-2 text-xs text-slate-400">
           Version {__APP_VERSION__} &middot; Build {__BUILD_LABEL__} &middot; Deployed{" "}
           {new Date(`${__BUILD_TIME__}T00:00:00`).toLocaleDateString(undefined, {

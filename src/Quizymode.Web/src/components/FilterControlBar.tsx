@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
  * Compact control bar that replaces the inline FilterSection header.
  * Shows a filter trigger button (with active badge) and optional secondary actions.
  */
-import { FunnelIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+import { FunnelIcon, EyeIcon, EyeSlashIcon, SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
+import type { ListenAllState } from "@/hooks/useListenAll";
 
 interface SortOptionItem {
   value: string;
@@ -23,6 +24,9 @@ interface FilterControlBarProps {
   /** When provided, renders a compact "Show / Hide answers" toggle after the filter button. */
   showAnswers?: boolean;
   onToggleShowAnswers?: () => void;
+  /** When provided, renders a "Listen All / Pause / Resume" TTS button. */
+  listenAllState?: ListenAllState;
+  onListenAll?: () => void;
 }
 
 export function FilterControlBar({
@@ -36,6 +40,8 @@ export function FilterControlBar({
   sortOptions,
   showAnswers,
   onToggleShowAnswers,
+  listenAllState,
+  onListenAll,
 }: FilterControlBarProps) {
   const showSort = sortBy != null && onSortChange != null && sortOptions != null && sortOptions.length > 0;
 
@@ -77,6 +83,38 @@ export function FilterControlBar({
             <EyeIcon className="h-4 w-4 shrink-0" />
           )}
           <span className="hidden sm:inline">{showAnswers ? "Hide answers" : "Show answers"}</span>
+        </button>
+      )}
+
+      {onListenAll != null && listenAllState != null && (
+        <button
+          type="button"
+          onClick={onListenAll}
+          title={
+            listenAllState === "idle"
+              ? "Listen to all items (TTS)"
+              : listenAllState === "playing"
+              ? "Pause"
+              : "Resume"
+          }
+          className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+            listenAllState !== "idle"
+              ? "border-indigo-300 bg-indigo-50 text-indigo-700 hover:bg-indigo-100"
+              : "border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
+          }`}
+        >
+          {listenAllState === "playing" ? (
+            <PauseIcon className="h-4 w-4 shrink-0" />
+          ) : (
+            <SpeakerWaveIcon className="h-4 w-4 shrink-0" />
+          )}
+          <span className="hidden sm:inline">
+            {listenAllState === "idle"
+              ? "Listen All"
+              : listenAllState === "playing"
+              ? "Pause"
+              : "Resume"}
+          </span>
         </button>
       )}
 

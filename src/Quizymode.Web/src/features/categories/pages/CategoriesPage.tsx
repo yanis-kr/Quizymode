@@ -16,6 +16,7 @@ import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
 import { useShowAnswers } from "@/hooks/useShowAnswers";
+import { useListenAll } from "@/hooks/useListenAll";
 import { SEO } from "@/components/SEO";
 import {
   categoryNameToSlug,
@@ -528,6 +529,8 @@ const CategoriesPage = () => {
     ? Math.ceil(scopeFilteredItems.length / pageSize) || 1
     : itemsData?.totalPages ?? 1;
 
+  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(scopeFilteredItems);
+
   /** All unique keyword names across loaded items, for the in-memory keyword search combobox. */
   const allItemKeywords = useMemo(() => {
     const names = (itemsData?.items ?? []).flatMap(
@@ -888,6 +891,8 @@ const CategoriesPage = () => {
               onOpenFilters={() => setShowFilters(true)}
               showAnswers={showAnswers}
               onToggleShowAnswers={toggleShowAnswers}
+              listenAllState={ttsSupported ? listenAllState : undefined}
+              onListenAll={ttsSupported ? handleListenAll : undefined}
               middleSlot={
                 isAuthenticated && categoryName ? (
                   <Link
