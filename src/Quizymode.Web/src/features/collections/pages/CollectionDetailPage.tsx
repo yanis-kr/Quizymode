@@ -445,9 +445,9 @@ const CollectionDetailPage = () => {
               if (!item?.category) return;
               const path = buildCategoryPath(
                 categoryNameToSlug(item.category),
-                [keywordName]
+                []
               );
-              navigate(`${path}?view=items&page=1`);
+              navigate(`${path}?view=items&page=1&keywords=${encodeURIComponent(keywordName)}`);
             }}
             renderActions={(item) => (
               <>
