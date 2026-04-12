@@ -84,7 +84,9 @@ const CategoriesPage = () => {
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const { pageSize: userPageSize } = usePageSize();
   const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
-  const { showAnswers, toggleShowAnswers } = useShowAnswers();
+  const showAnswersParam = searchParams.get("showAnswers");
+  const showAnswersOverride = showAnswersParam === "true" ? true : showAnswersParam === "false" ? false : undefined;
+  const { showAnswers, toggleShowAnswers } = useShowAnswers(showAnswersOverride);
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
   const location = useLocation();
