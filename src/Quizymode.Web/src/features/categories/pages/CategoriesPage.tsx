@@ -26,6 +26,7 @@ import {
 } from "@/utils/categorySlug";
 import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
+import { KeywordFilterCombobox } from "@/components/KeywordFilterCombobox";
 import { FilterControlBar } from "@/components/FilterControlBar";
 import CategoriesMapModal from "@/components/CategoriesMapModal";
 import { FilterBottomSheet } from "@/components/FilterBottomSheet";
@@ -525,6 +526,14 @@ const CategoriesPage = () => {
     ? Math.ceil(scopeFilteredItems.length / pageSize) || 1
     : itemsData?.totalPages ?? 1;
 
+  /** All unique keyword names across loaded items, for the in-memory keyword search combobox. */
+  const allItemKeywords = useMemo(() => {
+    const names = (itemsData?.items ?? []).flatMap(
+      (item) => (item.keywords ?? []).map((kw) => kw.name)
+    );
+    return Array.from(new Set(names)).sort();
+  }, [itemsData?.items]);
+
   useEffect(() => {
     setSortBy(sortFromUrl);
     setCategoriesPage(categoriesPageFromUrl);
@@ -916,12 +925,28 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
-                {filterKeywordsFromQuery.length > 0 && (
-                  <div>
-                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
-                      Active keyword filters
-                    </label>
-                    <div className="flex flex-wrap gap-1.5">
+                <div>
+                  <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                    Keywords
+                  </label>
+                  <KeywordFilterCombobox
+                    options={allItemKeywords.filter(
+                      (k) =>
+                        !filterKeywordsFromQuery.some(
+                          (s) => s.toLowerCase() === k.toLowerCase()
+                        )
+                    )}
+                    onAdd={(kw) =>
+                      navigateToItems(
+                        scopePathWithNav,
+                        true,
+                        undefined,
+                        dedupeKeywords([...filterKeywordsFromQuery, kw])
+                      )
+                    }
+                  />
+                  {filterKeywordsFromQuery.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
                       {filterKeywordsFromQuery.map((kw) => (
                         <button
                           key={kw}
@@ -934,8 +959,8 @@ const CategoriesPage = () => {
                         </button>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>

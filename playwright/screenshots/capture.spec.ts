@@ -183,6 +183,11 @@ async function waitForUiToSettle(page: Page) {
   await page.waitForLoadState("domcontentloaded").catch(() => {});
   await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
 
+  // Require the page to be spinner-free for 3 consecutive 200 ms polls (600 ms
+  // total) before declaring it settled. A single clean check can land in the
+  // brief gap between two sequential loading phases (e.g. auth resolve → data
+  // fetch), which would capture a blank screen or a spinner mid-transition.
+  let cleanStreak = 0;
   const startedAt = Date.now();
   while (Date.now() - startedAt < 15_000) {
     const hasVisibleSpinner = await page
@@ -196,7 +201,12 @@ async function waitForUiToSettle(page: Page) {
       .catch(() => false);
 
     if (!hasVisibleSpinner) {
-      break;
+      cleanStreak += 1;
+      if (cleanStreak >= 3) {
+        break;
+      }
+    } else {
+      cleanStreak = 0;
     }
 
     await page.waitForTimeout(200);

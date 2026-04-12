@@ -1,6 +1,6 @@
 /**
- * Mobile-first bottom sheet for filter content. Slides up from the bottom on mobile;
- * appears as a centered modal on larger screens.
+ * Filter dialog anchored to the top of the viewport so it is immediately visible
+ * without any page scrolling.
  */
 import { useEffect, type ReactNode } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -33,7 +33,7 @@ export function FilterBottomSheet({
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex flex-col justify-end sm:items-center sm:justify-center"
+      className="fixed inset-0 z-[200] flex flex-col items-center justify-start pt-4"
       aria-modal="true"
       role="dialog"
       aria-label="Filters"
@@ -44,13 +44,8 @@ export function FilterBottomSheet({
         onClick={onClose}
       />
 
-      {/* Sheet */}
-      <div className="relative w-full bg-white shadow-2xl rounded-t-3xl sm:rounded-2xl sm:max-w-lg sm:mx-4 max-h-[85dvh] flex flex-col">
-        {/* Drag handle (mobile only) */}
-        <div className="flex justify-center pt-2.5 pb-0.5 sm:hidden">
-          <div className="w-9 h-1 rounded-full bg-gray-300" />
-        </div>
-
+      {/* Dialog */}
+      <div className="relative w-full bg-white shadow-2xl rounded-2xl mx-4 max-w-lg max-h-[85dvh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-2.5 border-b border-gray-100">
           <h2 className="text-base font-semibold text-gray-900">Filters</h2>
