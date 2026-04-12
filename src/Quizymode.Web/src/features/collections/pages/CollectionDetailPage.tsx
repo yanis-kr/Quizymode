@@ -30,7 +30,9 @@ const CollectionDetailPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [itemsPage, setItemsPage] = useState(1);
   const { pageSize, updatePageSize } = usePageSize();
-  const { showAnswers, toggleShowAnswers } = useShowAnswers();
+  const showAnswersParam = searchParams.get("showAnswers");
+  const showAnswersOverride = showAnswersParam === "true" ? true : showAnswersParam === "false" ? false : undefined;
+  const { showAnswers, toggleShowAnswers } = useShowAnswers(showAnswersOverride);
   const [showDetails, setShowDetails] = useState(false);
 
   const {
@@ -373,7 +375,7 @@ const CollectionDetailPage = () => {
         </div>
       )}
 
-      {paginatedItems.length === 0 ? (
+      {allItems.length === 0 ? (
         <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
           <p className="text-slate-700">No items in this collection.</p>
         </div>
@@ -445,9 +447,9 @@ const CollectionDetailPage = () => {
               if (!item?.category) return;
               const path = buildCategoryPath(
                 categoryNameToSlug(item.category),
-                [keywordName]
+                []
               );
-              navigate(`${path}?view=items&page=1`);
+              navigate(`${path}?view=items&page=1&keywords=${encodeURIComponent(keywordName)}`);
             }}
             renderActions={(item) => (
               <>

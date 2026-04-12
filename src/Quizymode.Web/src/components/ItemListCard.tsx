@@ -38,9 +38,8 @@ const ItemListCard = ({
         </h3>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-sm text-gray-500">{item.category}</p>
-            <p className="mt-1 text-sm text-gray-500">
-              {item.isPrivate ? "Private" : "Public"}
+            <p className="text-sm text-gray-500">
+              {item.category}{item.isPrivate ? " (p)" : ""}
             </p>
             <ItemAverageStars itemId={item.id} />
           </div>

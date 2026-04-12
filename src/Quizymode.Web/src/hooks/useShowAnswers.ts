@@ -9,14 +9,17 @@ const SETTING_KEY = "HideAnswers";
 /**
  * Manages the "show answers" toggle in list mode.
  *
- * - Authenticated users: default driven by "HideAnswers" user setting (default "true" = hidden).
+ * - urlOverride: when provided (parsed from ?showAnswers=true|false), takes precedence over the
+ *   stored preference for the initial render and suppresses the settings-sync effect.
+ *   After mount the toggle works normally and continues to save/restore preferences.
+ * - Authenticated users: default driven by "HideAnswers" user setting; absent = show.
  *   Toggling updates the persistent setting so the preference is remembered across sessions.
- * - Anonymous users: default always hidden; toggle stored in sessionStorage for the current session.
+ * - Anonymous users: default show; toggle stored in sessionStorage for the current session.
  *
  * Toggle value persists when navigating between list pages (categories, collection detail).
  * It can be lost when switching to explore/quiz views (acceptable per spec).
  */
-export const useShowAnswers = () => {
+export const useShowAnswers = (urlOverride?: boolean) => {
   const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
 
@@ -29,26 +32,29 @@ export const useShowAnswers = () => {
   });
 
   const getInitialShowAnswers = (): boolean => {
+    if (urlOverride !== undefined) return urlOverride;
     if (!isAuthenticated) {
-      return sessionStorage.getItem(SESSION_KEY) === "true";
+      // Default show; only hide if user explicitly toggled off in this session
+      return sessionStorage.getItem(SESSION_KEY) !== "false";
     }
     if (settingsData) {
-      // HideAnswers="false" means user wants to see answers
-      return settingsData.settings[SETTING_KEY] === "false";
+      // HideAnswers="true" means user explicitly wants to hide; anything else = show
+      return settingsData.settings[SETTING_KEY] !== "true";
     }
-    return false; // default: hidden while loading
+    return true; // default: show while setting is loading
   };
 
   const [showAnswers, setShowAnswers] = useState<boolean>(getInitialShowAnswers);
 
-  // Sync once settings load for auth users who didn't have cached data on mount
+  // Sync once settings load for auth users who didn't have cached data on mount.
+  // Skipped when urlOverride is set — the URL param wins for the initial state.
   const [syncedFromSetting, setSyncedFromSetting] = useState(
-    () => !isAuthenticated || settingsData !== undefined
+    () => urlOverride !== undefined || !isAuthenticated || settingsData !== undefined
   );
 
   useEffect(() => {
     if (!syncedFromSetting && settingsData !== undefined) {
-      setShowAnswers(settingsData.settings[SETTING_KEY] === "false");
+      setShowAnswers(settingsData.settings[SETTING_KEY] !== "true");
       setSyncedFromSetting(true);
     }
   }, [syncedFromSetting, settingsData]);
