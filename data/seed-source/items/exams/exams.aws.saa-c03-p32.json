@@ -1,0 +1,1474 @@
+[
+  {
+    "itemId": "9485fd90-60f6-49bb-95d9-3f7f07797db8",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS relational database option best fits an unpredictable startup workload that should pause when idle, resume quickly, and scale without manual capacity changes?",
+    "correctAnswer": "Amazon Aurora Serverless v2",
+    "incorrectAnswers": [
+      "Amazon RDS for MySQL on a fixed instance size",
+      "Amazon DynamoDB on-demand",
+      "Amazon Redshift Serverless"
+    ],
+    "explanation": "Aurora Serverless v2 can automatically scale compute capacity and can pause and resume for lightly used relational workloads.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora",
+      "serverless",
+      "aurora-serverless-v2"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2-auto-pause.html"
+  },
+  {
+    "itemId": "6a00db40-745a-434f-bb18-c40f409fc535",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the most cost-effective way to extend one existing Direct Connect connection to multiple AWS accounts and VPCs?",
+    "correctAnswer": "Use a Direct Connect gateway associated with a transit gateway that connects the VPCs",
+    "incorrectAnswers": [
+      "Create a separate Direct Connect connection for every AWS account",
+      "Use only VPC peering between all accounts and backhaul traffic through one VPC",
+      "Use an internet gateway and IP allowlists for private connectivity"
+    ],
+    "explanation": "A Direct Connect gateway with a transit gateway lets one dedicated connection scale across many VPCs and accounts.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "direct-connect",
+      "transit-gateway",
+      "direct-connect-gateway"
+    ],
+    "source": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html"
+  },
+  {
+    "itemId": "532fe44f-2067-43bc-b8a1-052901bde1bb",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which S3 storage class is the best fit for archived data now needing millisecond retrieval while keeping storage costs lower than standard classes?",
+    "correctAnswer": "S3 Glacier Instant Retrieval",
+    "incorrectAnswers": [
+      "S3 Glacier Flexible Retrieval",
+      "S3 Standard",
+      "S3 Deep Archive"
+    ],
+    "explanation": "S3 Glacier Instant Retrieval is designed for archive data that still needs immediate access.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "glacier",
+      "glacier-instant-retrieval"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html"
+  },
+  {
+    "itemId": "c9c01b3c-bc5e-405f-8c22-ab9d1110ff74",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a serverless application that must call AWS services without hard-coded credentials, what is the recommended credential approach?",
+    "correctAnswer": "Use an IAM execution role and temporary credentials supplied by AWS",
+    "incorrectAnswers": [
+      "Store access keys in environment variables",
+      "Embed an IAM user access key in application code",
+      "Keep encrypted static credentials in Amazon S3"
+    ],
+    "explanation": "AWS-managed temporary credentials from an execution role avoid long-lived secrets in code.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "serverless",
+      "iam-roles"
+    ],
+    "source": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html"
+  },
+  {
+    "itemId": "4c3bfafb-7f3a-46d6-bf06-6b70e57eddf2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "An Auto Scaling fleet has reached maximum size and requests are still being dropped. Without increasing EC2 spend, what should you add to avoid losing requests?",
+    "correctAnswer": "An Amazon SQS queue to buffer and decouple incoming work",
+    "incorrectAnswers": [
+      "A larger Application Load Balancer only",
+      "A NAT gateway in each Availability Zone",
+      "A bastion host for the web tier"
+    ],
+    "explanation": "SQS absorbs spikes and lets workers process requests asynchronously instead of dropping them at peak load.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-integration",
+      "ec2",
+      "auto-scaling",
+      "sqs"
+    ],
+    "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+  },
+  {
+    "itemId": "9f044add-e116-4b7c-9d3b-f4993b80a6fd",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which statement about EC2 security groups is correct?",
+    "correctAnswer": "Security groups are stateful and are applied at the instance or ENI level; you can attach multiple groups to a resource",
+    "incorrectAnswers": [
+      "Security groups are stateless and work only at the subnet level",
+      "Security groups replace route tables for subnet filtering",
+      "A resource can have only one security group at a time"
+    ],
+    "explanation": "Security groups are stateful virtual firewalls associated with instances or ENIs, and multiple groups can be attached.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "security-groups"
+    ],
+    "source": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+  },
+  {
+    "itemId": "8a235ce0-8f69-47df-8e74-c35903392bd0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a multi-tier EC2 application, which design best allows public web access, restricts app-tier traffic to the web tier, and avoids opening SSH ports?",
+    "correctAnswer": "Allow HTTP from 0.0.0.0/0 to the web tier, allow app-tier traffic only from the web-tier security group, and use Session Manager for administration",
+    "incorrectAnswers": [
+      "Allow HTTP only from an office CIDR, open SSH on port 22 everywhere, and expose the app tier to the internet",
+      "Use a public subnet for every tier and manage all access with NACLs only",
+      "Open a custom inbound port from the internet directly to the app tier and use shared SSH keys"
+    ],
+    "explanation": "This keeps the web tier internet reachable, the app tier private behind security group references, and admin access keyless through Session Manager.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-management",
+      "ec2",
+      "systems-manager",
+      "session-manager"
+    ],
+    "source": "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html"
+  },
+  {
+    "itemId": "6dbe4e47-58b6-4561-9623-d517bdf1eb29",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "How should you redesign a critical S3 dataset to reduce the impact of a single-Region outage?",
+    "correctAnswer": "Replicate the data to another Region and use an S3 Multi-Region Access Point for regional failover access",
+    "incorrectAnswers": [
+      "Store the bucket in one Region with versioning only",
+      "Attach the bucket to an Auto Scaling group",
+      "Use a larger bucket in the same Region with lifecycle rules"
+    ],
+    "explanation": "Multi-Region Access Points route to the closest active bucket, and replication ensures the data exists in more than one Region.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "multi-region-access-point"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html"
+  },
+  {
+    "itemId": "05d3c11a-94f0-4ef7-a337-f5865f87d431",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "If you want hybrid connectivity while optimizing cost and using your current internet links, which AWS networking option should you choose?",
+    "correctAnswer": "AWS Site-to-Site VPN",
+    "incorrectAnswers": [
+      "AWS Direct Connect",
+      "AWS Outposts rack",
+      "VPC peering"
+    ],
+    "explanation": "Site-to-Site VPN is the AWS option that explicitly uses existing internet connectivity.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "site-to-site-vpn"
+    ],
+    "source": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+  },
+  {
+    "itemId": "8e6481d1-b013-4755-b584-5ff4a2e1bf24",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the best low-operations way to route a global live-streaming audience to the best regional endpoint?",
+    "correctAnswer": "Deploy endpoints in multiple Regions and place AWS Global Accelerator in front of them",
+    "incorrectAnswers": [
+      "Use one Region and add larger instances",
+      "Use only Transit Gateway route tables for viewer routing",
+      "Rely on VPC peering and BGP metrics from user devices"
+    ],
+    "explanation": "Global Accelerator steers users to the optimal healthy endpoint over the AWS global network.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "global-accelerator"
+    ],
+    "source": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+  },
+  {
+    "itemId": "73ea8356-fb37-4bb8-936d-9f0366f07441",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "How should you mitigate and observe SQL injection and cross-site scripting attacks against an ALB-backed application?",
+    "correctAnswer": "Associate AWS WAF with the ALB using SQLi and XSS rules, and enable WAF logging for monitoring",
+    "incorrectAnswers": [
+      "Block all traffic with NACLs and disable application logs",
+      "Use Shield Advanced alone for application-layer filtering",
+      "Turn on GuardDuty only and remove the ALB"
+    ],
+    "explanation": "AWS WAF is the service built to filter common web exploits such as SQLi and XSS, and logging captures attack details.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "alb",
+      "waf",
+      "aws-waf"
+    ],
+    "source": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-sqli-match.html"
+  },
+  {
+    "itemId": "4a18769f-f7dd-4495-a270-eb6fe4b7f16a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "In Amazon RDS for MySQL Multi-AZ deployments, how is replication between the primary and standby managed?",
+    "correctAnswer": "It is synchronous replication",
+    "incorrectAnswers": [
+      "It is asynchronous replication only during maintenance windows",
+      "It uses eventual consistency through S3 exports",
+      "It depends on application-managed binlog shipping"
+    ],
+    "explanation": "The standby is kept synchronized synchronously so failover can meet aggressive recovery goals.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "mysql",
+      "rds-mysql"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html"
+  },
+  {
+    "itemId": "7dfdd4ef-fa54-41dc-9d85-d4adcbdd5979",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Reports from Amazon Redshift must be stored in S3 for instant access and can be recreated if lost. Which storage class fits best?",
+    "correctAnswer": "S3 One Zone-IA",
+    "incorrectAnswers": [
+      "S3 Glacier Flexible Retrieval",
+      "S3 Deep Archive",
+      "S3 Standard for every report forever"
+    ],
+    "explanation": "One Zone-IA is appropriate for re-creatable, infrequently accessed objects that still need immediate retrieval.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-database",
+      "databases",
+      "redshift",
+      "s3",
+      "one-zone-ia"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html"
+  },
+  {
+    "itemId": "b7815681-4fb4-446e-83c3-14f0bcaa46d4",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "If cross-account role switching works but EC2 access in the target account is still denied, what should you check next?",
+    "correctAnswer": "Verify that the assumed role has an IAM permissions policy that allows the required EC2 actions",
+    "incorrectAnswers": [
+      "Delete the trust relationship and recreate it",
+      "Attach the permissions to the source user only",
+      "Move the EC2 instances into a public subnet"
+    ],
+    "explanation": "Trust controls who may assume the role, but the role policy controls what the assumed role can do.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-security",
+      "ec2",
+      "iam",
+      "assume-role"
+    ],
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html"
+  },
+  {
+    "itemId": "97ed3c36-16b9-4fd0-a28a-43396d03f48d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Users still see insecure warnings after you attach an ACM certificate to an ALB. What should you verify first?",
+    "correctAnswer": "Confirm the ALB listener is using HTTPS on port 443 and the ACM certificate is issued and attached to that listener",
+    "incorrectAnswers": [
+      "Replace ACM with a self-signed certificate in IAM",
+      "Force the target group to use HTTPS only and ignore the listener",
+      "Allow inbound traffic on port 80 only"
+    ],
+    "explanation": "The certificate must be valid and attached to an HTTPS listener that clients actually use.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-security",
+      "alb",
+      "https"
+    ],
+    "source": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+  },
+  {
+    "itemId": "c514bed1-bb34-44b9-b7bb-2e0b128f2d99",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a brand-new AWS account, which two security actions should be done first?",
+    "correctAnswer": "Enable MFA on the root user and create least-privilege IAM users or roles for day-to-day work",
+    "incorrectAnswers": [
+      "Disable the root user completely and share root credentials with team leads",
+      "Use the root user for regular administration",
+      "Create one administrator IAM user for everyone to share"
+    ],
+    "explanation": "AWS recommends protecting the root user with MFA and using IAM identities for routine access.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "root-user"
+    ],
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html"
+  },
+  {
+    "itemId": "aced8295-6a70-467c-9d93-dc7d140de04e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "If low cost matters most and the business can tolerate relaxed RTO and RPO, which disaster recovery pattern is the best fit?",
+    "correctAnswer": "Backup and restore",
+    "incorrectAnswers": [
+      "Multi-site active-active",
+      "Hot standby in every Region",
+      "Synchronous dual-write across Regions"
+    ],
+    "explanation": "Backup and restore is the lowest-cost DR pattern when recovery objectives are relatively relaxed.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "disaster-recovery"
+    ],
+    "source": "https://docs.aws.amazon.com/prescriptive-guidance/latest/backup-recovery/strategy.html"
+  },
+  {
+    "itemId": "bf8d95c7-c02f-4984-aba7-ee8c772f5210",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What hybrid connectivity design best combines high availability, dynamic routing, and backup paths for on-premises to AWS networking?",
+    "correctAnswer": "Use multiple Direct Connect links with BGP and Site-to-Site VPN as backup connectivity",
+    "incorrectAnswers": [
+      "Use one Direct Connect link with static routes only",
+      "Use only internet gateways for all private hybrid traffic",
+      "Rely on VPC peering for direct on-premises connectivity"
+    ],
+    "explanation": "Redundant Direct Connect plus VPN backup avoids single points of failure and supports dynamic routing.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "direct-connect",
+      "site-to-site-vpn"
+    ],
+    "source": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html"
+  },
+  {
+    "itemId": "5745cd9f-fe0c-4786-9ede-fb2fa195acfe",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a globally public media library of images and videos at minimal cost, which hosting pattern fits best?",
+    "correctAnswer": "Store the files in Amazon S3 and deliver them through Amazon CloudFront",
+    "incorrectAnswers": [
+      "Run a public NFS server on one EC2 instance",
+      "Store the files on EBS and expose them through SSH",
+      "Use AWS Backup vaults as the public distribution layer"
+    ],
+    "explanation": "S3 plus CloudFront is the common low-cost pattern for global public object delivery.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "cloudfront",
+      "media-delivery"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+    "itemId": "27c5db63-f976-40eb-b838-14c7017dd4d8",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "How should you automate response to future AWS hardware maintenance events that require an EC2 stop and start?",
+    "correctAnswer": "Use AWS Health events with an EventBridge rule that triggers Systems Manager Automation",
+    "incorrectAnswers": [
+      "Poll the console manually every hour",
+      "Use a cron job inside the instance only",
+      "Depend on the ALB to reboot the instance automatically"
+    ],
+    "explanation": "AWS Health can emit scheduled change events, and EventBridge can trigger automated remediation workflows.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-integration",
+      "ec2",
+      "eventbridge",
+      "systems-manager",
+      "aws-health"
+    ],
+    "source": "https://docs.aws.amazon.com/health/latest/ug/automating-instance-actions.html"
+  },
+  {
+    "itemId": "ce59a99a-95f1-40b0-8972-58140d2f963e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which storage service is best for a massively parallel file-processing workload needing low latency and very high throughput?",
+    "correctAnswer": "Amazon FSx for Lustre",
+    "incorrectAnswers": [
+      "Amazon S3 Glacier Deep Archive",
+      "Amazon EFS One Zone only",
+      "Amazon DynamoDB Streams"
+    ],
+    "explanation": "FSx for Lustre is designed as a high-performance parallel file system for throughput-intensive processing.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "fsx"
+    ],
+    "source": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/performance.html"
+  },
+  {
+    "itemId": "59441c41-c8cd-4215-91c7-bc98eac5a742",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Why might an application keep sending duplicate SNS notifications for the same SQS-backed booking messages?",
+    "correctAnswer": "The consumer is not deleting messages before the visibility timeout expires, so the messages are processed again",
+    "incorrectAnswers": [
+      "SNS automatically replays every email notification four times by design",
+      "The ALB duplicates all booking requests before they reach SQS",
+      "Route 53 health checks resend SQS messages after three hours"
+    ],
+    "explanation": "If messages are not deleted successfully, they become visible again and can trigger duplicate processing.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-integration",
+      "sqs",
+      "sns",
+      "visibility-timeout"
+    ],
+    "source": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+  },
+  {
+    "itemId": "822f3469-adc5-4bbe-a77c-099b90020559",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What does an AWS Site-to-Site VPN provide for hybrid connectivity?",
+    "correctAnswer": "Encrypted IPsec connectivity over the existing internet connection between on-premises networks and a VPC",
+    "incorrectAnswers": [
+      "A dedicated private circuit that bypasses the internet entirely",
+      "Free unlimited data transfer between every network",
+      "A replacement for IAM roles and trust policies"
+    ],
+    "explanation": "Site-to-Site VPN uses IPsec tunnels across existing internet connectivity and is typically cheaper than dedicated circuits.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "vpc",
+      "site-to-site-vpn",
+      "vpn"
+    ],
+    "source": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+  },
+  {
+    "itemId": "d12c8e1e-5523-45b6-8b19-e5da0bf42911",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is a managed way to normalize and enrich streaming sensor data before landing it in S3?",
+    "correctAnswer": "Use Amazon MSK for ingestion and AWS Glue Streaming ETL to transform and write to S3",
+    "incorrectAnswers": [
+      "Use API Gateway and a single Lambda function for all sustained ingestion",
+      "Use AppSync as the primary machine-ingestion layer",
+      "Schedule batch Glue jobs to poll data once per day"
+    ],
+    "explanation": "MSK handles durable streaming ingestion, and Glue Streaming ETL can transform and deliver the records continuously.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-storage",
+      "s3",
+      "glue",
+      "msk"
+    ],
+    "source": "https://docs.aws.amazon.com/glue/latest/dg/add-job-streaming.html"
+  },
+  {
+    "itemId": "a95c8b09-4ff0-433a-8f76-32db71f10c61",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a MongoDB workload on EC2 that needs consistently high IOPS, which EBS volume type is the best fit?",
+    "correctAnswer": "Provisioned IOPS SSD (io2)",
+    "incorrectAnswers": [
+      "Throughput Optimized HDD (st1)",
+      "Cold HDD (sc1)",
+      "Magnetic standard volumes"
+    ],
+    "explanation": "io2 is the premium EBS option for sustained high-IOPS workloads.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "io2"
+    ],
+    "source": "https://docs.aws.amazon.com/pdfs/whitepapers/latest/determining-iops-needs-oracle-db-on-aws/determining-iops-needs-oracle-db-on-aws.pdf"
+  },
+  {
+    "itemId": "691aa92f-ce2f-48d1-82da-10a6db578678",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the best scalable private-network design for encrypted EC2-to-EC2 traffic between two AWS Regions?",
+    "correctAnswer": "Use AWS Transit Gateway inter-Region peering between the regional VPC attachments",
+    "incorrectAnswers": [
+      "Expose both VPCs through internet gateways and restrict them with security groups",
+      "Use only one NAT gateway and route inter-Region traffic through it",
+      "Send traffic through a public CloudFront distribution"
+    ],
+    "explanation": "Transit Gateway inter-Region peering keeps traffic on the AWS network, is encrypted, and scales better than point-to-point meshes.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "ec2",
+      "vpc",
+      "transit-gateway"
+    ],
+    "source": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html"
+  },
+  {
+    "itemId": "31dfb0c9-599e-4b67-8058-e5704fba2ce0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which EC2 feature replaces old launch configurations and adds versioning plus default-template behavior?",
+    "correctAnswer": "Launch templates",
+    "incorrectAnswers": [
+      "Elastic Beanstalk environments",
+      "Security group rule sets",
+      "Customer managed KMS keys"
+    ],
+    "explanation": "Launch templates support versioning and are the modern replacement for launch configurations.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "launch-template"
+    ],
+    "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html"
+  },
+  {
+    "itemId": "9c6a7827-73cf-4fcd-a5de-fabbe2739ccb",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which storage combination best supports a language-learning app with bursty user traffic and durable progress tracking?",
+    "correctAnswer": "Amazon S3 for static assets and Amazon DynamoDB for user progress data",
+    "incorrectAnswers": [
+      "Amazon EBS for static assets and Amazon Redshift for user sessions",
+      "Amazon Glacier Flexible Retrieval for hot data and Amazon EMR for profiles",
+      "Amazon FSx for Lustre for user profiles and Amazon MQ for content storage"
+    ],
+    "explanation": "S3 is ideal for static content, while DynamoDB scales automatically for high-volume key-value state.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-database",
+      "databases",
+      "dynamodb",
+      "s3"
+    ],
+    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+  },
+  {
+    "itemId": "11e5f994-530c-474a-a783-e99d0bcab968",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "If an EC2 instance behind an ALB fails health checks and ELB health checks are enabled for the Auto Scaling group, what happens?",
+    "correctAnswer": "The Auto Scaling group replaces the unhealthy instance",
+    "incorrectAnswers": [
+      "The ALB automatically resizes the instance",
+      "The RDS database fails over to another Region",
+      "The instance is detached but kept serving traffic"
+    ],
+    "explanation": "With ELB health checks integrated, Auto Scaling terminates and replaces unhealthy instances.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "auto-scaling",
+      "alb",
+      "health-checks"
+    ],
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "itemId": "507f916d-06c6-493f-b7ef-71dbbe9f25b2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service uses threat detection and behavioral analysis to spot suspicious IAM and network activity?",
+    "correctAnswer": "Amazon GuardDuty",
+    "incorrectAnswers": [
+      "AWS Artifact",
+      "Amazon QuickSight",
+      "AWS Resource Explorer"
+    ],
+    "explanation": "GuardDuty analyzes multiple telemetry sources to detect anomalous and potentially malicious behavior.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "guardduty"
+    ],
+    "source": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html"
+  },
+  {
+    "itemId": "266ba24d-c6c1-48a2-abd7-86783be5ef7b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the best centralized store for application configuration values when some values are sensitive and versioning is required?",
+    "correctAnswer": "AWS Systems Manager Parameter Store with SecureString for sensitive values",
+    "incorrectAnswers": [
+      "A shared spreadsheet in Amazon WorkDocs",
+      "Plaintext environment variables committed to source control",
+      "Manual editing of ECS task definitions for every change"
+    ],
+    "explanation": "Parameter Store supports hierarchical config data, encrypted SecureString values, and parameter versioning.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "aws-management",
+      "systems-manager",
+      "parameter-store"
+    ],
+    "source": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"
+  },
+  {
+    "itemId": "fb9c8ed5-9bb6-47d2-9bd3-eb82aef5a3c7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service gives auditors on-demand access to AWS compliance reports and agreements?",
+    "correctAnswer": "AWS Artifact",
+    "incorrectAnswers": [
+      "Amazon Inspector",
+      "AWS License Manager",
+      "AWS Shield Advanced"
+    ],
+    "explanation": "AWS Artifact is the self-service portal for compliance reports and agreements.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "shield",
+      "artifact"
+    ],
+    "source": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html"
+  },
+  {
+    "itemId": "3445bf34-1fd6-48af-8427-97aa0903bf28",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS database service best fits ad hoc analytics on large semi-structured datasets with SQL-style querying and scalable warehouse behavior?",
+    "correctAnswer": "Amazon Redshift",
+    "incorrectAnswers": [
+      "Amazon ElastiCache for Redis",
+      "Amazon Neptune",
+      "Amazon MQ"
+    ],
+    "explanation": "Redshift supports semi-structured data with SUPER and is designed for large-scale analytical querying.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "redshift"
+    ],
+    "source": "https://docs.aws.amazon.com/redshift/latest/dg/super-overview.html"
+  },
+  {
+    "itemId": "c3f3599d-2fd7-4135-b3f3-9824c9b0ebdc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What AWS service is best for directing mobile users over optimized network paths to the nearest healthy application endpoint?",
+    "correctAnswer": "AWS Global Accelerator",
+    "incorrectAnswers": [
+      "Amazon Kinesis Data Streams",
+      "AWS Storage Gateway",
+      "Amazon Simple Email Service"
+    ],
+    "explanation": "Global Accelerator improves path selection and regional failover for globally distributed users.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "global-accelerator"
+    ],
+    "source": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+  },
+  {
+    "itemId": "af5544d0-0340-4e85-9404-2e3b32ecb3a7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "How should you handle both predictable launches and unexpected traffic spikes on EC2 while minimizing cost?",
+    "correctAnswer": "Use EC2 Auto Scaling with both scheduled scaling and dynamic scaling policies",
+    "incorrectAnswers": [
+      "Run one very large instance at all times",
+      "Scale manually after alarms fire",
+      "Use a fixed number of Spot Instances only"
+    ],
+    "explanation": "Scheduled scaling covers known patterns, and dynamic scaling handles surprise spikes.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "auto-scaling",
+      "scheduled-scaling"
+    ],
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "itemId": "61caa21c-0ea9-44fc-b238-4f2a3df6108e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For an internet-facing EC2 instance in a public subnet, which item is not strictly required if the instance already has a public IP address?",
+    "correctAnswer": "An Elastic IP address",
+    "incorrectAnswers": [
+      "An internet gateway",
+      "A route to the internet gateway",
+      "Security group rules that allow the needed traffic"
+    ],
+    "explanation": "A public IPv4 address can be auto-assigned, so an Elastic IP is optional rather than mandatory.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-networking",
+      "ec2",
+      "elastic-ip"
+    ],
+    "source": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html"
+  },
+  {
+    "itemId": "e6c866bb-26e3-4ff9-98bf-db7441ed3ff4",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the most cost-effective fully serverless backend pattern for a mobile game?",
+    "correctAnswer": "Use API Gateway, AWS Lambda, and Amazon DynamoDB",
+    "incorrectAnswers": [
+      "Run the backend on always-on EC2 instances and self-managed MongoDB",
+      "Use Redshift for player sessions and Direct Connect for clients",
+      "Store state only on EBS volumes attached to one instance"
+    ],
+    "explanation": "API Gateway, Lambda, and DynamoDB are managed, elastic, and aligned with pay-for-use serverless design.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "dynamodb",
+      "lambda",
+      "api-gateway",
+      "serverless"
+    ],
+    "source": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+  },
+  {
+    "itemId": "77c673f9-a228-43fb-af3c-5aa43d7c9c0d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS relational database service is the best default fit for an on-premises booking database moving to AWS with high availability and low admin overhead?",
+    "correctAnswer": "Amazon Aurora",
+    "incorrectAnswers": [
+      "Amazon EMR",
+      "Amazon Neptune",
+      "Amazon SimpleDB"
+    ],
+    "explanation": "Aurora is a managed relational database with strong availability and performance characteristics for transactional workloads.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2-auto-pause.html"
+  },
+  {
+    "itemId": "9fe5c132-0568-47f5-b887-1f71b65e3589",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What must be included in an EC2 launch template so instances can securely access S3 and DynamoDB after launch?",
+    "correctAnswer": "An IAM instance profile that contains the required role permissions",
+    "incorrectAnswers": [
+      "An SSH key pair with administrator privileges",
+      "A hard-coded access key and secret key",
+      "A NAT gateway ID"
+    ],
+    "explanation": "The launch template should reference an instance profile so new instances receive temporary credentials automatically.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "aws-storage",
+      "databases",
+      "dynamodb",
+      "s3",
+      "ec2",
+      "iam",
+      "instance-profile"
+    ],
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html"
+  },
+  {
+    "itemId": "17b064c9-170f-487f-bd8c-8daf8975bbd0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS Organizations policy type limits the maximum permissions that identities in member accounts can ever receive?",
+    "correctAnswer": "A service control policy (SCP)",
+    "incorrectAnswers": [
+      "A bucket policy",
+      "A permissions boundary on the root user",
+      "A network ACL"
+    ],
+    "explanation": "SCPs set the permission guardrails for principals in organization accounts.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-management",
+      "organizations",
+      "scp"
+    ],
+    "source": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+  },
+  {
+    "itemId": "ea276863-588a-4491-bb07-cf1291a15a6b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service should you use across multiple accounts to see who changed resources, when the changes happened, and what API calls were made?",
+    "correctAnswer": "AWS CloudTrail with an organization trail",
+    "incorrectAnswers": [
+      "Amazon Inspector",
+      "AWS Trusted Advisor",
+      "Amazon EventBridge Scheduler"
+    ],
+    "explanation": "CloudTrail records API activity and organization trails scale that auditing across accounts.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-management",
+      "cloudtrail"
+    ],
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-trail-organization.html"
+  },
+  {
+    "itemId": "1592a8c7-2440-4784-b99b-c0dcfd8756b6",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the lowest-operations way to ingest massive JSON event streams, transform them near real time, and land them in S3?",
+    "correctAnswer": "Use Amazon Data Firehose with data transformation and delivery to S3",
+    "incorrectAnswers": [
+      "Run a fleet of EC2 ingestion servers and write files manually",
+      "Upload files to EBS and sync them nightly to S3",
+      "Use Amazon SES as the ingestion service"
+    ],
+    "explanation": "Data Firehose is managed, scales automatically, can transform records, and delivers directly to S3.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-analytics",
+      "s3",
+      "firehose"
+    ],
+    "source": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+  },
+  {
+    "itemId": "f4481582-67f8-4f37-ab1e-56356f8cd901",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For an RDS for MySQL workload suffering slow reads and connection pressure during peaks, what is the best combined improvement without redesigning the app?",
+    "correctAnswer": "Scale up the DB instance, add read replicas for read traffic, and use Multi-AZ for availability",
+    "incorrectAnswers": [
+      "Migrate immediately to DynamoDB with no compatibility changes",
+      "Replace the database with S3 and Athena for transactional reads",
+      "Turn off high availability to reduce connection pressure"
+    ],
+    "explanation": "This improves capacity, offloads reads, and raises availability without changing the application model.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "mysql",
+      "multi-az"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+  },
+  {
+    "itemId": "0bd30f55-0784-485c-9a96-a3445e4c617c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which Amazon Cognito capabilities should you choose for email-and-password sign-in, social login, optional MFA, and custom user attributes?",
+    "correctAnswer": "Cognito User Pools with social identity provider federation, optional MFA, and custom attributes",
+    "incorrectAnswers": [
+      "Cognito Identity Pools alone for all user authentication and attributes",
+      "AWS Directory Service as the public customer sign-in store",
+      "IAM users with long-lived passwords"
+    ],
+    "explanation": "User Pools provide native user directories, custom attributes, MFA, and federation with social providers.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "cognito",
+      "cognito-user-pools"
+    ],
+    "source": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+  },
+  {
+    "itemId": "5af92d85-b9e3-45d7-94e3-e4cb59df9360",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For an analytics dashboard with bursty relational traffic and frequent repeated queries, what architecture best balances latency, elasticity, and low operations?",
+    "correctAnswer": "Use Amazon Aurora Serverless v2 for the database and ElastiCache for Redis to cache hot query results",
+    "incorrectAnswers": [
+      "Use Neptune for the transactional store and no cache",
+      "Use provisioned RDS only and scale everything manually",
+      "Use Redshift reserved nodes as the primary transactional database"
+    ],
+    "explanation": "Aurora Serverless v2 handles bursty relational demand, while Redis reduces repeated query load.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "aurora",
+      "elasticache",
+      "serverless"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2-auto-pause.html"
+  },
+  {
+    "itemId": "e4702581-b76d-4f1a-a74e-89be143feafc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS services are the standard low-cost pattern for a globally distributed static website?",
+    "correctAnswer": "Amazon S3 and Amazon CloudFront",
+    "incorrectAnswers": [
+      "Amazon EBS and AWS Direct Connect",
+      "Amazon RDS and Amazon MQ",
+      "Amazon MSK and AWS Glue"
+    ],
+    "explanation": "S3 hosts static assets economically and CloudFront accelerates delivery worldwide.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-networking",
+      "s3",
+      "cloudfront",
+      "static-website"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+    "itemId": "16d94d5c-30fe-4d9c-8303-ec7f8ab0f6c5",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which AWS service gives centralized workforce access across multiple AWS accounts with identity-provider integration and temporary credentials?",
+    "correctAnswer": "AWS IAM Identity Center",
+    "incorrectAnswers": [
+      "IAM users in every account",
+      "Amazon Cognito Identity Pools for workforce access",
+      "AWS Certificate Manager"
+    ],
+    "explanation": "IAM Identity Center is the low-operations service for centralized human access across accounts.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "iam-identity-center"
+    ],
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_federation_common_scenarios.html"
+  },
+  {
+    "itemId": "96d97e2d-cc65-411c-ab2e-ff1d8e6e5a52",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the best way to reduce rising costs in a high-traffic AWS application stack without undercutting resilience?",
+    "correctAnswer": "Move reporting reads to RDS read replicas, right-size storage, and use scheduled Auto Scaling for predictable batch peaks",
+    "incorrectAnswers": [
+      "Put all workloads on larger always-on instances",
+      "Disable RDS backups and Performance Insights entirely",
+      "Duplicate all historical data into another production database"
+    ],
+    "explanation": "These changes target waste in database reads, overprovisioned storage, and predictable compute cycles.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "auto-scaling",
+      "scheduled-scaling"
+    ],
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "itemId": "24f80910-6204-4977-90e0-fd441be1ec97",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the recommended least-privilege pattern for cross-account human access without long-term credentials?",
+    "correctAnswer": "Use cross-account IAM roles that users assume through AWS STS with tightly scoped permissions",
+    "incorrectAnswers": [
+      "Create matching IAM users with static keys in every account",
+      "Grant broad resource-based permissions to entire accounts by default",
+      "Share the same administrator role credentials across accounts"
+    ],
+    "explanation": "Assumed roles provide temporary credentials and are the standard cross-account access pattern.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "iam",
+      "cross-account"
+    ],
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html"
+  },
+  {
+    "itemId": "acdc7e0b-f745-4934-8265-070ea83ff3fc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "To reduce ongoing RDS costs without removing required protection, what should you do first?",
+    "correctAnswer": "Right-size storage and performance settings, remove unneeded snapshots, and archive cold data out of the production database",
+    "incorrectAnswers": [
+      "Turn off backups entirely and keep all historical data in the primary database",
+      "Shut the production database down every night",
+      "Replace the relational database with a bastion host"
+    ],
+    "explanation": "Database costs often fall by tuning provisioned storage, cleaning up retained backups, and moving cold data to lower-cost storage.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "cost-optimization"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html"
+  },
+  {
+    "itemId": "9d132365-4a81-40af-b73a-1ee19f82de49",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "How should you cut over from third-party SSL certificates to ACM with the least customer risk?",
+    "correctAnswer": "Provision and validate the ACM certificates first, attach them to the endpoints, test, then switch traffic before retiring the old certificates",
+    "incorrectAnswers": [
+      "Delete the old certificates first and request ACM certificates afterward",
+      "Replace certificates directly on backend instances only",
+      "Move the application to HTTP during the certificate transition"
+    ],
+    "explanation": "The safe transition pattern is to validate and attach ACM certificates before the final cutover.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-security",
+      "acm"
+    ],
+    "source": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+  },
+  {
+    "itemId": "5b7e4947-854a-4388-82cd-5bc6d8ab611d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Twelve EC2 instances need a shared file repository with minimal administration. Which service is the best fit?",
+    "correctAnswer": "Amazon EFS",
+    "incorrectAnswers": [
+      "Amazon S3 Glacier Deep Archive",
+      "Amazon EBS Multi-Attach for all workloads",
+      "Amazon DynamoDB"
+    ],
+    "explanation": "EFS is a managed shared file system that multiple EC2 instances can mount concurrently.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "efs",
+      "ec2"
+    ],
+    "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+  },
+  {
+    "itemId": "5788ff75-affc-4f60-a806-fb54ac7e83f6",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What should you place in front of a Singapore-hosted web application to deliver static images globally with lower latency and less origin load?",
+    "correctAnswer": "Amazon CloudFront",
+    "incorrectAnswers": [
+      "AWS Direct Connect",
+      "Amazon Route 53 Resolver",
+      "Amazon EMR"
+    ],
+    "explanation": "CloudFront caches static content at edge locations close to users.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+    "itemId": "7bbb2882-c13c-40b2-b5c9-1842f8711b62",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the most secure way for an EC2 application to connect to a MySQL RDS database with credentials and encrypted transport?",
+    "correctAnswer": "Store the database credentials in AWS Secrets Manager and connect over SSL/TLS with certificate verification using the RDS CA bundle",
+    "incorrectAnswers": [
+      "Store the password in user data and disable SSL verification",
+      "Use a plaintext config file and trust the default MySQL client settings",
+      "Open the database publicly and rely on a security group alone"
+    ],
+    "explanation": "Secrets Manager protects credentials, and SSL/TLS with identity verification protects the database connection.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "aws-compute",
+      "databases",
+      "rds",
+      "ec2",
+      "secrets-manager",
+      "mysql"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToInstanceSSL.CLI.html"
+  },
+  {
+    "itemId": "402b6a49-28b8-4d80-b2b2-3953e14c2651",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which service best routes users to the nearest healthy AWS Region and fails over automatically if a Region becomes unavailable?",
+    "correctAnswer": "AWS Global Accelerator",
+    "incorrectAnswers": [
+      "Amazon S3 Batch Operations",
+      "AWS Glue",
+      "Amazon MQ"
+    ],
+    "explanation": "Global Accelerator routes users to optimal healthy regional endpoints over the AWS global network.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "global-accelerator"
+    ],
+    "source": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+  },
+  {
+    "itemId": "e81d02fd-d0c3-4993-b726-9b37dacb4692",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the most cost-effective way to automate daily backups for all EBS volumes?",
+    "correctAnswer": "Use AWS Backup with a scheduled backup plan for tagged EBS volumes",
+    "incorrectAnswers": [
+      "Create manual snapshots for each volume every day",
+      "Copy every volume to Amazon S3 by script",
+      "Use only AMIs without any backup plan"
+    ],
+    "explanation": "AWS Backup centralizes scheduled EBS backups and retention policies.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "ebs",
+      "aws-backup"
+    ],
+    "source": "https://docs.aws.amazon.com/hands-on/latest/amazon-ebs-backup-and-restore-using-aws-backup/amazon-ebs-backup-and-restore-using-aws-backup.html"
+  },
+  {
+    "itemId": "04c23690-bec2-472c-b8a8-bdba31718e0c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A read-heavy traffic spike is overloading a single RDS instance. What is the best single step to scale with minimal downtime?",
+    "correctAnswer": "Add RDS read replicas and send read traffic to them",
+    "incorrectAnswers": [
+      "Convert immediately to DynamoDB with DAX",
+      "Rely only on a Multi-AZ standby for extra read capacity",
+      "Move the database to Amazon S3 for direct querying"
+    ],
+    "explanation": "Read replicas are purpose-built for scaling read workloads while leaving the writer in place.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-database",
+      "databases",
+      "rds",
+      "read-replica"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+  },
+  {
+    "itemId": "dc412526-f44f-4317-b4cb-044f755b19d0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the simplest way to keep data on an EC2 root EBS volume after the instance is terminated?",
+    "correctAnswer": "Set the root EBS volume DeleteOnTermination attribute to false",
+    "incorrectAnswers": [
+      "Use an instance store root volume",
+      "Place the root volume in Amazon EFS",
+      "Enable termination protection only"
+    ],
+    "explanation": "DeleteOnTermination controls whether the root EBS volume is deleted when the instance is terminated.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2"
+    ],
+    "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-root-volume-delete-on-termination.html"
+  },
+  {
+    "itemId": "f7e39d31-686e-4b24-80cd-563092990b30",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which architecture best supports a global web application with sudden traffic spikes, low latency, and automatic scaling?",
+    "correctAnswer": "Use Global Accelerator, CloudFront with S3 for static assets, and EC2 Auto Scaling behind an ALB",
+    "incorrectAnswers": [
+      "Run oversized EC2 instances in one Availability Zone and scale manually",
+      "Use an NLB only and remove edge caching",
+      "Deploy the whole workload in one Region without acceleration or caching"
+    ],
+    "explanation": "This combination improves global path selection, edge delivery, and elastic compute scaling.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "aws-compute",
+      "s3",
+      "ec2",
+      "auto-scaling",
+      "cloudfront",
+      "alb",
+      "global-accelerator"
+    ],
+    "source": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+  },
+  {
+    "itemId": "ba48a81e-59ee-4aad-93e1-3c1810602437",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "What is the most resilient replacement for a single large EC2 instance backing a production application?",
+    "correctAnswer": "Run multiple EC2 instances across Availability Zones behind a load balancer and keep the database highly available",
+    "incorrectAnswers": [
+      "Keep one larger EC2 instance and enable detailed monitoring only",
+      "Use one EC2 instance with frequent manual snapshots",
+      "Place the application and database on the same instance to simplify recovery"
+    ],
+    "explanation": "Eliminating the single-instance compute tier removes a major single point of failure.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-compute",
+      "ec2",
+      "high-availability"
+    ],
+    "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "itemId": "9354ef87-b23a-470a-a2e6-ef4b0ecddf67",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For a growing library of photos and videos that must remain instantly accessible while controlling cost, which AWS storage choice fits best?",
+    "correctAnswer": "Amazon S3 Standard-IA",
+    "incorrectAnswers": [
+      "S3 Glacier Flexible Retrieval",
+      "Amazon EBS gp3 volumes on one EC2 instance",
+      "Amazon DynamoDB"
+    ],
+    "explanation": "S3 Standard-IA keeps objects immediately available while lowering storage cost for infrequently accessed data.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "s3-standard-ia"
+    ],
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html"
+  },
+  {
+    "itemId": "f1ab8975-d23a-4f61-b39e-641842df208c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which Elastic Load Balancing option should you choose for very high-throughput Layer 4 TCP traffic?",
+    "correctAnswer": "Network Load Balancer",
+    "incorrectAnswers": [
+      "Application Load Balancer",
+      "Classic Load Balancer",
+      "Gateway Load Balancer"
+    ],
+    "explanation": "NLB is built for Layer 4 TCP and UDP traffic at very high scale.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "nlb",
+      "network-load-balancer"
+    ],
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+  },
+  {
+    "itemId": "710340d9-c3cb-4181-8f73-3fc12a4267c7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "For an EC2-hosted MongoDB workload dominated by large sequential I/O, which EC2 and EBS pairing is the best fit?",
+    "correctAnswer": "A storage-optimized EC2 instance with Throughput Optimized HDD (st1) EBS volumes",
+    "incorrectAnswers": [
+      "A burstable EC2 instance with Cold HDD (sc1)",
+      "A compute-optimized EC2 instance with EFS",
+      "A memory-optimized EC2 instance with S3 Glacier"
+    ],
+    "explanation": "st1 volumes are designed for large, throughput-intensive sequential workloads, especially with storage-optimized instances.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "st1"
+    ],
+    "source": "https://docs.aws.amazon.com/pdfs/whitepapers/latest/determining-iops-needs-oracle-db-on-aws/determining-iops-needs-oracle-db-on-aws.pdf"
+  },
+  {
+    "itemId": "defb9e77-c27d-4a6b-a38f-79091b7f5ab0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "Which IPv6 component allows outbound internet access while blocking unsolicited inbound IPv6 connections?",
+    "correctAnswer": "An egress-only internet gateway",
+    "incorrectAnswers": [
+      "An internet gateway alone",
+      "A NAT gateway for IPv6",
+      "A virtual private gateway"
+    ],
+    "explanation": "An egress-only internet gateway is specifically for outbound-only IPv6 internet access.",
+    "keywords": [
+      "practice1",
+      "aws-saa-c03",
+      "aws-networking",
+      "nat-gateway",
+      "ipv6"
+    ],
+    "source": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+  }
+]

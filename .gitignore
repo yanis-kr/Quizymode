@@ -393,3 +393,6 @@ playwright/logs/
 .cursor-aws-factcheck-progress.json
 .cursor-aws-factcheck-summary.json
 .cursor-aws-factcheck-summary.md
+.codex-temp/ps_aws_stems.json
+.codex-temp/ps_aws_parsed.json
+docs/medium-article-draft.md
