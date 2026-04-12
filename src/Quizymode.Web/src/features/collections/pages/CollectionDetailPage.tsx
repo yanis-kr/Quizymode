@@ -9,13 +9,12 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { EyeIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, EyeSlashIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 import { useShowAnswers } from "@/hooks/useShowAnswers";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
