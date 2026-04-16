@@ -732,6 +732,47 @@ On the Categories page (Sets view and List view), a **filter dialog** lets the u
 
 ---
 
+### AC 3.11 Languages taxonomy and language learning item conventions
+
+**Context:** The `languages` category is structured to support language learning experiences across multiple world languages. The taxonomy uses a two-tier keyword hierarchy; item-level keywords (additional keywords beyond the two navigation slugs) carry frequency and situational metadata.
+
+**Taxonomy structure:**
+
+- Each promoted language (English, Spanish, French, German, Italian, Russian, Japanese, Latvian, Ukrainian, Bulgarian, Latin, Romanian) has its own **rank-1 keyword** under the `languages` category.
+- Each language has a consistent set of **rank-2 subtopics**: `core`, `phrases`, `vocab`, `grammar`, `idioms`, `conversation`. Some languages have additional subtopics (e.g. `hiragana`, `katakana`, `kanji` for Japanese; `expressions` for Latin).
+- Less-developed languages (Chinese, Korean, Arabic, Portuguese) remain grouped under the `other-langs` rank-1 keyword and can be promoted as content grows.
+- Cross-language sections (`travel`, `vocab`, `idioms`, `grammar`, `esl`, `general`, `mixed`) coexist alongside per-language content.
+
+**Rank-2 subtopic definitions:**
+
+| Subtopic | Scope |
+|---|---|
+| `core` | Essential beginner content: numbers 1–20, greetings, yes/no, please/thank you, introductions, water/bread |
+| `phrases` | Situational phrases: café/restaurant orders, directions, prices/shopping, hotel check-in, emergency |
+| `vocab` | Thematic vocabulary lists |
+| `grammar` | Grammar rules and patterns |
+| `idioms` | Common idioms and expressions |
+| `conversation` | Conversational practice dialogs and patterns |
+| `expressions` (Latin only) | Famous Latin expressions with English translation and context |
+
+**Item-level keyword conventions for language learning items:**
+
+Items in the `languages` category should use item-level keywords (the `keywords` array in seed data / additional keywords in the UI) to carry:
+
+- **Frequency tiers:** `freq-100` (top ~100 essential items per language), `freq-500`, `freq-1000` — used to filter curated vocabulary sets without constraining navigation paths to exact counts.
+- **Situational tags:** `situation:cafe`, `situation:directions`, `situation:prices`, `situation:greetings`, `situation:intro`, `situation:hotel`, `situation:emergency` — allow cross-language situational filtering.
+- **CEFR levels:** `cefr:a1`, `cefr:a2`, `cefr:b1`, `cefr:b2`, `cefr:c1`, `cefr:c2` — indicate difficulty level.
+
+These item-level keywords are **not** navigation keywords. They are stored as public taxonomy-matched keywords when they match the taxonomy slug list, or as private pending keywords otherwise. They are available as item tag filters in Discover and the Categories keyword filter.
+
+**ACs:**
+
+- **AC 3.11.1** [Anyone] **Given** a user browses `/categories/languages/{language}/core`, **when** the scope loads, **then** it shows items whose `navigationKeyword1` = that language and `navigationKeyword2` = `core`; items tagged `freq-100` are retrievable by adding `?keywords=freq-100` as an item tag filter.
+- **AC 3.11.2** [Anyone] **Given** a user browses `/categories/languages/latin/expressions`, **when** the scope loads, **then** it shows items in the famous Latin expressions set; each item's question is the Latin phrase and the correct answer is the English translation with context.
+- **AC 3.11.3** [Anyone] **Given** `other-langs` rank-1 still exists (for Chinese, Korean, Arabic, Portuguese), **when** items reference `navigationKeyword1 = "other-langs"`, **then** those items remain accessible at `/categories/languages/other-langs/{lang}`; Italian, Russian, and Japanese are no longer valid rank-2 options under `other-langs` and existing items referencing those paths should be migrated to their new promoted rank-1 paths.
+
+---
+
 ## 4. Users and auth
 
 Authentication uses **email + password** with secure password hashing and short-lived access tokens. Authorization is role-based (`User`, `Admin`) and relies on the global invariants in **Access and ownership**. This section describes **how users sign up, sign in, manage sessions, and view/update their profile**.

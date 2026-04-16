@@ -1,0 +1,177 @@
+[
+  {
+    "itemId": "fdb7d10f-b32e-4d9d-a416-27ace9518013",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in French?",
+    "correctAnswer": "Bonjour",
+    "incorrectAnswers": [
+      "Au revoir",
+      "Merci",
+      "S'il vous plaît"
+    ],
+    "explanation": "'Bonjour' (good day) is the standard greeting. 'Salut' is informal. 'Bonsoir' is for evenings.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour"
+  },
+  {
+    "itemId": "c4a0fd12-9abd-4a98-815e-9c6753f901bc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in French?",
+    "correctAnswer": "Merci",
+    "incorrectAnswers": [
+      "S'il vous plaît",
+      "Pardon",
+      "De rien"
+    ],
+    "explanation": "'Merci' = thank you. 'Merci beaucoup' = thank you very much. 'De rien' = you're welcome.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/merci"
+  },
+  {
+    "itemId": "cdde6ddc-c1bc-45ee-8254-0bf83eab8519",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in French?",
+    "correctAnswer": "S'il vous plaît (formal) / S'il te plaît (informal)",
+    "incorrectAnswers": [
+      "Merci",
+      "Pardon",
+      "Avec plaisir"
+    ],
+    "explanation": "'S'il vous plaît' (formal) and 's'il te plaît' (informal) both mean please. Often abbreviated to 'SVP'.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/s-il-vous-plait"
+  },
+  {
+    "itemId": "313d574b-a142-40e7-be1d-388f8c54f05b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in French?",
+    "correctAnswer": "Je m'appelle...",
+    "incorrectAnswers": [
+      "J'habite à...",
+      "Je suis de...",
+      "J'aime..."
+    ],
+    "explanation": "'Je m'appelle [name]' — 'I call myself [name]' — the standard introduction.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/s-appeler"
+  },
+  {
+    "itemId": "0e0e9b31-bfa4-4e39-9f89-c7bc2e246f0f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in French?",
+    "correctAnswer": "un, deux, trois",
+    "incorrectAnswers": [
+      "uno, dos, tres",
+      "ein, zwei, drei",
+      "unu, doi, trei"
+    ],
+    "explanation": "French numbers 1-3: un (1), deux (2), trois (3). Note: quatre (4), cinq (5) follow.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.frenchpod101.com/french-numbers/"
+  },
+  {
+    "itemId": "57a70696-fa11-4b30-b06d-6df99a6f5738",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in French?",
+    "correctAnswer": "Au revoir",
+    "incorrectAnswers": [
+      "Bonjour",
+      "Bonsoir",
+      "À tout à l'heure"
+    ],
+    "explanation": "'Au revoir' = goodbye (until we see again). 'À bientôt' = see you soon, 'à demain' = see you tomorrow.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/au-revoir"
+  },
+  {
+    "itemId": "3a1e5d92-96d8-4bfa-b7b5-9f479f74b3a0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in French?",
+    "correctAnswer": "Excusez-moi / Pardon",
+    "incorrectAnswers": [
+      "Merci",
+      "S'il vous plaît",
+      "De rien"
+    ],
+    "explanation": "'Excusez-moi' = excuse me (to get attention). 'Pardon' = sorry/excuse me. 'Je suis désolé(e)' = I'm sorry.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/excuser"
+  },
+  {
+    "itemId": "a3b76282-8cc5-4811-b9a4-ce907e44adf3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'yes' and 'no' in French?",
+    "correctAnswer": "Oui / Non",
+    "incorrectAnswers": [
+      "Si / Non",
+      "Sì / No",
+      "Ja / Nein"
+    ],
+    "explanation": "'Oui' = yes, 'Non' = no. Note: 'si' is used to contradict a negative statement (the 'yes, I do!' response).",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/oui"
+  },
+  {
+    "itemId": "2d57f98f-3a2d-4357-bba9-0b27dee7c1ea",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in French?",
+    "correctAnswer": "l'eau",
+    "incorrectAnswers": [
+      "le pain",
+      "le lait",
+      "le vin"
+    ],
+    "explanation": "'L'eau' (water) is feminine: 'une bouteille d'eau'. 'Le pain' = bread, 'le lait' = milk.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/eau"
+  }
+]

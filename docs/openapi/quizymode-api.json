@@ -1015,6 +1015,74 @@
         }
       }
     },
+    "/admin/seed-sync/local/preview": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Preview a local filesystem seed sync (Admin only)",
+        "description": "Reads seed items from the server's local seed-dev path and returns the upsert delta without applying it.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.LocalRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.PreviewResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/admin/seed-sync/local/apply": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Apply a local filesystem seed sync (Admin only)",
+        "description": "Reads seed items from the server's local seed-dev path and upserts them.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.LocalRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.ApplyResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/admin/keywords/{id}": {
       "put": {
         "tags": [
@@ -5039,6 +5107,14 @@
           },
           "changes": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.HistoryItemResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.SeedSyncAdmin.LocalRequest": {
+        "type": "object",
+        "properties": {
+          "deltaPreviewLimit": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },

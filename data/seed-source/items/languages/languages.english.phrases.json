@@ -1,0 +1,142 @@
+[
+  {
+    "itemId": "6c54b273-d7b3-47d3-afb5-f33b3e787d78",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you politely order food at a restaurant in English?",
+    "correctAnswer": "I'd like the [dish], please.",
+    "incorrectAnswers": [
+      "Give me the [dish].",
+      "I want [dish].",
+      "Bring me [dish]."
+    ],
+    "explanation": "'I'd like...' (I would like) is the polite form for ordering. 'I want' is grammatically correct but can sound blunt.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/would-like"
+  },
+  {
+    "itemId": "f2379035-4442-409c-a951-6bf012e73e43",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in English (British)?",
+    "correctAnswer": "Could we have the bill, please?",
+    "incorrectAnswers": [
+      "Can we get the check?",
+      "Give us the receipt.",
+      "Pay time, please."
+    ],
+    "explanation": "British English: 'the bill'. American English: 'the check'. Both are widely understood.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/bill"
+  },
+  {
+    "itemId": "eb2a9e08-a889-4151-85b5-17d3a547f537",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in English?",
+    "correctAnswer": "How much is this? / How much does this cost?",
+    "incorrectAnswers": [
+      "What is the price for this?",
+      "Cost me how much?",
+      "Is this expensive?"
+    ],
+    "explanation": "Both 'How much is this?' and 'How much does this cost?' are natural and common. 'What is the price?' is correct but slightly formal.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/how-much"
+  },
+  {
+    "itemId": "c6644412-99a1-4d0d-b1bb-bb20f61b37e8",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for directions to the train station?",
+    "correctAnswer": "Excuse me, how do I get to the train station?",
+    "incorrectAnswers": [
+      "Where train station is?",
+      "Tell me train station.",
+      "Train station — which way?"
+    ],
+    "explanation": "The polite formula: 'Excuse me, [question].' Starting with 'Excuse me' is standard when approaching a stranger.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/excuse-me"
+  },
+  {
+    "itemId": "a7f5e613-427e-4a35-bcac-0dbd4bc9f5ed",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Is this seat taken?' in English?",
+    "correctAnswer": "Is this seat taken? / Is anyone sitting here?",
+    "incorrectAnswers": [
+      "Can I sit here, yes?",
+      "This seat is empty?",
+      "Nobody here?"
+    ],
+    "explanation": "'Is this seat taken?' is the standard polite question. 'Is anyone sitting here?' is equally natural.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/taken"
+  },
+  {
+    "itemId": "625cf1e4-d32d-4e23-99bc-9b0a4e5a1204",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "What is the polite way to get a shopkeeper's attention?",
+    "correctAnswer": "Excuse me, could you help me?",
+    "incorrectAnswers": [
+      "Hey you!",
+      "Come here, please.",
+      "I need help now."
+    ],
+    "explanation": "'Excuse me' + a polite question is the standard way. 'Hey' alone can sound rude to strangers.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/excuse-me"
+  },
+  {
+    "itemId": "9c121840-3777-480c-806e-f6d21de65cd3",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I'd like to check in' at a hotel?",
+    "correctAnswer": "I'd like to check in, please. I have a reservation.",
+    "incorrectAnswers": [
+      "Give me my room.",
+      "I'm here. My room?",
+      "Checking in now."
+    ],
+    "explanation": "State your purpose ('check in') and your reservation. Adding 'I have a reservation under [name]' speeds up the process.",
+    "keywords": [
+      "freq-100",
+      "situation-hotel",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/check-in"
+  }
+]

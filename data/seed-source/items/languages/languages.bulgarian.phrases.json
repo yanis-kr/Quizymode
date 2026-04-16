@@ -1,0 +1,120 @@
+[
+  {
+    "itemId": "c2d29c21-89c1-4157-8af4-907b7d7032c6",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Bulgarian?",
+    "correctAnswer": "Къде е тоалетната? (Kade e toaletnata?)",
+    "incorrectAnswers": [
+      "Какво е тоалетната? (Kakvo e toaletnata?)",
+      "Кога е отворено? (Koga e otvoreno?)",
+      "Колко струва? (Kolko struva?)"
+    ],
+    "explanation": "'Kade e' = 'where is'. 'Kade e toaletnata?' is the essential travel phrase.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  },
+  {
+    "itemId": "41f094ce-7ee6-43ad-a1d1-cfe2f291d136",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Bulgarian?",
+    "correctAnswer": "Колко струва това? (Kolko struva tova?)",
+    "incorrectAnswers": [
+      "Какво е това? (Kakvo e tova?)",
+      "Къде да купя? (Kade da kupya?)",
+      "Има ли отстъпка? (Ima li otstapka?)"
+    ],
+    "explanation": "'Kolko struva tova?' — 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  },
+  {
+    "itemId": "5ca17265-9dfc-4ad9-ab81-cb307227438e",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Bulgarian?",
+    "correctAnswer": "Едно кафе, моля. (Edno kafe, molya.)",
+    "incorrectAnswers": [
+      "Искам кафе! (Iskam kafe!)",
+      "Дайте кафе. (Dayte kafe.)",
+      "Кафе веднага. (Kafe vednaga.)"
+    ],
+    "explanation": "'Edno kafe, molya' — 'One coffee, please' — the standard polite café order.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  },
+  {
+    "itemId": "5d14c8a2-34d6-4d37-acf4-77485859ad8b",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Bulgarian?",
+    "correctAnswer": "Сметката, моля. (Smetkata, molya.)",
+    "incorrectAnswers": [
+      "Менюто, моля. (Menyuto, molya.)",
+      "Още едно. (Oshte edno.)",
+      "Беше вкусно. (Beshe vkusno.)"
+    ],
+    "explanation": "'Smetkata, molya' — 'The bill, please' — clean and polite.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  },
+  {
+    "itemId": "1ba374bd-cf5f-401a-b1de-182ee8a79fdb",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Bulgarian?",
+    "correctAnswer": "Не разбирам. (Ne razbiram.)",
+    "incorrectAnswers": [
+      "Не знам. (Ne znam.)",
+      "Не чувам. (Ne chuvam.)",
+      "Не говоря. (Ne govorya.)"
+    ],
+    "explanation": "'Ne razbiram' — 'I don't understand' — the first rescue phrase for any learner.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  },
+  {
+    "itemId": "df263cb4-61bf-4043-a8ac-b4702949b422",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Bulgarian?",
+    "correctAnswer": "Говорите ли английски? (Govorite li angliyski?)",
+    "incorrectAnswers": [
+      "Разбирате ли английски? (Razbirate li angliyski?)",
+      "Знаете ли английски? (Znaete li angliyski?)",
+      "Учите ли английски? (Uchite li angliyski?)"
+    ],
+    "explanation": "'Govorite li angliyski?' — 'Do you speak English?' — polite formal form.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
+  }
+]

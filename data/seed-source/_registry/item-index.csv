@@ -3618,6 +3618,28 @@ bde6493c-5a9d-4d43-8fa2-868cc13202e2,humanities,visual-art,painting,Painting is 
 3e7a0da3-b875-49c4-ab2a-8dd713dd968b,humanities,visual-art,sculpture,What makes sculpture different from most painting?,data/seed-source/items/humanities/humanities.visual-art.sculpture.json
 64061a84-d0d3-4bc8-abb7-fc705c73332a,humanities,visual-art,techniques,What does perspective help create in painting?,data/seed-source/items/humanities/humanities.visual-art.techniques.json
 074f29e1-8818-4cb1-b322-30bfbde9d38b,humanities,visual-art,techniques,What is chiaroscuro?,data/seed-source/items/humanities/humanities.visual-art.techniques.json
+c6ff0de9-caee-4c32-bde1-19c98b952fe1,languages,bulgarian,core,"How do you count 1, 2, 3 in Bulgarian?",data/seed-source/items/languages/languages.bulgarian.core.json
+f646534c-f7bb-4fb0-92d1-b663bdb161b1,languages,bulgarian,core,How do you say 'excuse me / sorry' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+20c399ba-1b07-4359-babb-70c22701e289,languages,bulgarian,core,How do you say 'goodbye' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+9971d90c-36e4-4154-a951-ac175a53c245,languages,bulgarian,core,How do you say 'hello' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+289f8d31-55a9-4f34-8014-755c0d1ebdb2,languages,bulgarian,core,How do you say 'my name is' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+fe63eb24-a045-4832-9c7f-72b3d474d110,languages,bulgarian,core,How do you say 'please' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+59243156-e197-43ba-a338-4ee98584075e,languages,bulgarian,core,How do you say 'thank you' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.core.json
+7614f5ae-7ed5-4509-8df9-fceab6117719,languages,bulgarian,core,"In Bulgarian, a head nod usually means what?",data/seed-source/items/languages/languages.bulgarian.core.json
+41f094ce-7ee6-43ad-a1d1-cfe2f291d136,languages,bulgarian,phrases,How do you ask 'How much does this cost?' in Bulga,data/seed-source/items/languages/languages.bulgarian.phrases.json
+c2d29c21-89c1-4157-8af4-907b7d7032c6,languages,bulgarian,phrases,How do you ask 'Where is the bathroom?' in Bulgari,data/seed-source/items/languages/languages.bulgarian.phrases.json
+5d14c8a2-34d6-4d37-acf4-77485859ad8b,languages,bulgarian,phrases,How do you ask for the bill in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.phrases.json
+5ca17265-9dfc-4ad9-ab81-cb307227438e,languages,bulgarian,phrases,"How do you order 'a coffee, please' in Bulgarian?",data/seed-source/items/languages/languages.bulgarian.phrases.json
+df263cb4-61bf-4043-a8ac-b4702949b422,languages,bulgarian,phrases,How do you say 'Do you speak English?' in Bulgaria,data/seed-source/items/languages/languages.bulgarian.phrases.json
+1ba374bd-cf5f-401a-b1de-182ee8a79fdb,languages,bulgarian,phrases,How do you say 'I don't understand' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.phrases.json
+1fa2dced-fc2e-479f-b27d-baa80887cde5,languages,english,core,How do you introduce yourself in English?,data/seed-source/items/languages/languages.english.core.json
+d5c26205-1d99-437d-95a6-d34b357d1ff9,languages,english,core,How do you politely ask someone to wait?,data/seed-source/items/languages/languages.english.core.json
+7b8c288f-8d7c-4160-a770-8a6535af88e1,languages,english,core,"What does 'Could you repeat that, please?' ask for",data/seed-source/items/languages/languages.english.core.json
+e396d4b4-821f-44df-9c7b-392b989248f7,languages,english,core,What is the difference between 'Can I...?' and 'Ma,data/seed-source/items/languages/languages.english.core.json
+d065facc-bf80-45f5-9ccf-f7dcbe0f2cdb,languages,english,core,What is the polite response to 'Thank you'?,data/seed-source/items/languages/languages.english.core.json
+34dea3fb-4272-44cd-9749-6c0130ec2176,languages,english,core,Which greeting is appropriate at any time of day i,data/seed-source/items/languages/languages.english.core.json
+828d2d69-b157-4628-97e0-cd626e13abf9,languages,english,core,Which phrase best expresses disagreement politely?,data/seed-source/items/languages/languages.english.core.json
+c000288c-4f0b-4dd6-b162-6bbc6e03f5fe,languages,english,core,"Which phrase means 'I don't know' in a polite, neu",data/seed-source/items/languages/languages.english.core.json
 2e661b5d-1ebe-4166-a10a-7501e19f2e16,languages,english,grammar,"After most prepositions, which verb form is usuall",data/seed-source/items/languages/languages.english.grammar.json
 365c7730-60e5-4e8e-b0bf-705f38687786,languages,english,grammar,"For one-syllable adjectives, what is the usual com",data/seed-source/items/languages/languages.english.grammar.json
 a998b6bf-eb74-4782-a0bd-b9b358a4bd83,languages,english,grammar,"In a first conditional sentence, what tense is typ",data/seed-source/items/languages/languages.english.grammar.json
@@ -3630,6 +3652,13 @@ b1407449-778d-4fc6-96cb-27fe41817a92,languages,english,idioms,"If the ball is in
 04efab10-edc0-46c2-8a6f-ff554885f753,languages,english,idioms,"If you are under the weather, how do you most like",data/seed-source/items/languages/languages.english.idioms.json
 474dfcce-390c-44af-8ee4-9b10798d4b3a,languages,english,idioms,"If you break the ice at a meeting, what did you he",data/seed-source/items/languages/languages.english.idioms.json
 f198947e-aa5c-43b4-b9a6-c748a83fd013,languages,english,idioms,"If you hit the nail on the head, what did you do?",data/seed-source/items/languages/languages.english.idioms.json
+eb2a9e08-a889-4151-85b5-17d3a547f537,languages,english,phrases,How do you ask 'How much does this cost?' in Engli,data/seed-source/items/languages/languages.english.phrases.json
+a7f5e613-427e-4a35-bcac-0dbd4bc9f5ed,languages,english,phrases,How do you ask 'Is this seat taken?' in English?,data/seed-source/items/languages/languages.english.phrases.json
+c6644412-99a1-4d0d-b1bb-bb20f61b37e8,languages,english,phrases,How do you ask for directions to the train station,data/seed-source/items/languages/languages.english.phrases.json
+f2379035-4442-409c-a951-6bf012e73e43,languages,english,phrases,How do you ask for the bill in English (British)?,data/seed-source/items/languages/languages.english.phrases.json
+6c54b273-d7b3-47d3-afb5-f33b3e787d78,languages,english,phrases,How do you politely order food at a restaurant in ,data/seed-source/items/languages/languages.english.phrases.json
+9c121840-3777-480c-806e-f6d21de65cd3,languages,english,phrases,How do you say 'I'd like to check in' at a hotel?,data/seed-source/items/languages/languages.english.phrases.json
+625cf1e4-d32d-4e23-99bc-9b0a4e5a1204,languages,english,phrases,What is the polite way to get a shopkeeper's atten,data/seed-source/items/languages/languages.english.phrases.json
 1f07a886-44ab-449a-96b0-c75d0b085e9f,languages,english,pronunciation,"In many American accents, how is the r in car ofte",data/seed-source/items/languages/languages.english.pronunciation.json
 b063e050-b93d-4af2-aafe-81173238d761,languages,english,pronunciation,"In many English accents, is the letter k pronounce",data/seed-source/items/languages/languages.english.pronunciation.json
 00a310c3-430c-41f0-9353-20dd6f958b03,languages,english,pronunciation,"When a word is both a noun and a verb, like record",data/seed-source/items/languages/languages.english.pronunciation.json
@@ -3696,6 +3725,15 @@ a216d1cb-7f69-4873-b4f5-0e812b7ffdf1,languages,french,conversation,"Which inform
 59494a8d-eb25-4e04-b3ff-9b6914ffe1c9,languages,french,conversation,Which phrase is a simple apology after a small mis,data/seed-source/items/languages/languages.french.conversation.json
 bdaf27ff-1089-4053-b34f-7bf986d52647,languages,french,conversation,"Which phrase politely says ""Excuse me"" before you ",data/seed-source/items/languages/languages.french.conversation.json
 5044c1f8-f39f-420c-aeb5-b5c1dedcce86,languages,french,conversation,"Which reply is a simple way to say ""Nice to meet y",data/seed-source/items/languages/languages.french.conversation.json
+0e0e9b31-bfa4-4e39-9f89-c7bc2e246f0f,languages,french,core,"How do you count 1, 2, 3 in French?",data/seed-source/items/languages/languages.french.core.json
+3a1e5d92-96d8-4bfa-b7b5-9f479f74b3a0,languages,french,core,How do you say 'excuse me / sorry' in French?,data/seed-source/items/languages/languages.french.core.json
+57a70696-fa11-4b30-b06d-6df99a6f5738,languages,french,core,How do you say 'goodbye' in French?,data/seed-source/items/languages/languages.french.core.json
+fdb7d10f-b32e-4d9d-a416-27ace9518013,languages,french,core,How do you say 'hello' in French?,data/seed-source/items/languages/languages.french.core.json
+313d574b-a142-40e7-be1d-388f8c54f05b,languages,french,core,How do you say 'my name is' in French?,data/seed-source/items/languages/languages.french.core.json
+cdde6ddc-c1bc-45ee-8254-0bf83eab8519,languages,french,core,How do you say 'please' in French?,data/seed-source/items/languages/languages.french.core.json
+c4a0fd12-9abd-4a98-815e-9c6753f901bc,languages,french,core,How do you say 'thank you' in French?,data/seed-source/items/languages/languages.french.core.json
+2d57f98f-3a2d-4357-bba9-0b27dee7c1ea,languages,french,core,How do you say 'water' in French?,data/seed-source/items/languages/languages.french.core.json
+a3b76282-8cc5-4811-b9a4-ce907e44adf3,languages,french,core,How do you say 'yes' and 'no' in French?,data/seed-source/items/languages/languages.french.core.json
 000a7d01-cff5-49a7-9416-ec70c8d574b6,languages,french,grammar,"For regular -er verbs in the present tense, which ",data/seed-source/items/languages/languages.french.grammar.json
 6a8976bf-b62f-434e-ba53-42d6fb6c9153,languages,french,grammar,Which adjective form matches a feminine singular n,data/seed-source/items/languages/languages.french.grammar.json
 f0b6bac9-0bb2-4bb4-997d-2dbff51f6408,languages,french,grammar,Which article is correct for a feminine singular n,data/seed-source/items/languages/languages.french.grammar.json
@@ -3708,6 +3746,13 @@ e7318129-2724-430d-8928-db315f50ff2f,languages,french,listening,"Which final con
 28d6268e-2689-452a-a6fa-2c195b04f56a,languages,french,listening,"Which letters are often linked in speech in ""les a",data/seed-source/items/languages/languages.french.listening.json
 d869a114-4c9d-43b5-b886-d601aeacf993,languages,french,listening,Which pair differs clearly for most learners becau,data/seed-source/items/languages/languages.french.listening.json
 7ae1f477-7d8c-427e-9cf0-7f436ab8a21f,languages,french,listening,Which pair is a common listening challenge because,data/seed-source/items/languages/languages.french.listening.json
+bdc1eda3-3f2c-4e67-94de-9203251eb932,languages,french,phrases,How do you ask 'How much does this cost?' in Frenc,data/seed-source/items/languages/languages.french.phrases.json
+8f46907d-1f90-4c76-9b4a-e5b00902490d,languages,french,phrases,How do you ask 'Where is the bathroom?' in French?,data/seed-source/items/languages/languages.french.phrases.json
+8f852d1a-17c4-4429-981e-e535efdf70e1,languages,french,phrases,How do you ask for the bill in a French restaurant,data/seed-source/items/languages/languages.french.phrases.json
+2f638e19-3631-459a-b9d4-27e3af167b59,languages,french,phrases,"How do you order 'a coffee, please' in French?",data/seed-source/items/languages/languages.french.phrases.json
+e0050064-70c9-4d09-9910-b6aae0b7d2ce,languages,french,phrases,How do you say 'Do you speak English?' in French?,data/seed-source/items/languages/languages.french.phrases.json
+a0074107-9f67-4ba0-90c2-2ef568d6cfeb,languages,french,phrases,How do you say 'I don't understand' in French?,data/seed-source/items/languages/languages.french.phrases.json
+87ceb115-8170-4c22-a720-e24dbcfe5c0a,languages,french,phrases,How do you say 'Turn left' in French?,data/seed-source/items/languages/languages.french.phrases.json
 23d8a71e-246e-401b-8dd4-4a8d58a41625,languages,french,travel,"At a hotel desk, which phrase asks if they have a ",data/seed-source/items/languages/languages.french.travel.json
 6232bd22-3ff0-4dcf-8ee0-fa00a89eff26,languages,french,travel,"In French, at the airport, which word usually mean",data/seed-source/items/languages/languages.french.travel.json
 9d6bef9a-21d7-4a22-b878-df930adb2b33,languages,french,travel,"In French, which phrase politely asks where the ne",data/seed-source/items/languages/languages.french.travel.json
@@ -3738,6 +3783,15 @@ f4dd142b-b1f9-4ea3-9bfe-8206e783d52d,languages,german,conversation,What does 'Ja
 69ff63bf-1987-4ea0-af16-090715587ba6,languages,german,conversation,What does 'Nein' mean?,data/seed-source/items/languages/languages.german.conversation.json
 dcebe718-bf0b-4b74-a3a9-c609f3680900,languages,german,conversation,What is a common informal way to ask 'How are you?,data/seed-source/items/languages/languages.german.conversation.json
 0861ca28-857f-4195-8c56-363a6af51141,languages,german,conversation,"When you meet someone formally, which polite prono",data/seed-source/items/languages/languages.german.conversation.json
+9a0684f9-eec9-4030-83a9-60609170e26f,languages,german,core,"How do you count 1, 2, 3 in German?",data/seed-source/items/languages/languages.german.core.json
+beacee62-86bd-4294-953a-b9fd599464de,languages,german,core,How do you say 'I don't understand' in German?,data/seed-source/items/languages/languages.german.core.json
+311ea0cb-427b-4107-93e2-2008b20d6ce1,languages,german,core,How do you say 'excuse me / sorry' in German?,data/seed-source/items/languages/languages.german.core.json
+c62be141-e27f-49fd-ace9-3c83ab183c1a,languages,german,core,How do you say 'goodbye' in German?,data/seed-source/items/languages/languages.german.core.json
+bb879d7d-4b3d-443a-bd76-7fc0fd26ebec,languages,german,core,How do you say 'hello' in German?,data/seed-source/items/languages/languages.german.core.json
+ace421f2-464f-4c76-be46-d49c36fbb015,languages,german,core,How do you say 'my name is' in German?,data/seed-source/items/languages/languages.german.core.json
+a5e7515b-3299-471d-a913-8a192ad25c69,languages,german,core,How do you say 'please' in German?,data/seed-source/items/languages/languages.german.core.json
+31c5f5fa-edc0-4f2a-a08f-6e3f476b5106,languages,german,core,How do you say 'thank you' in German?,data/seed-source/items/languages/languages.german.core.json
+ce3ee515-c506-4db5-9370-1b51d5f052bb,languages,german,core,How do you say 'water' in German?,data/seed-source/items/languages/languages.german.core.json
 51a28ff5-09ee-49f7-bc7a-724f4130e665,languages,german,grammar,In a basic clause with a modal verb and an infinit,data/seed-source/items/languages/languages.german.grammar.json
 2829b157-2209-4c6e-95b1-26b848ed06c7,languages,german,grammar,"In a normal German statement, where does the main ",data/seed-source/items/languages/languages.german.grammar.json
 7596f221-e08a-44ab-8de9-fc925be305ce,languages,german,grammar,"In a simple yes-or-no question, where does the ver",data/seed-source/items/languages/languages.german.grammar.json
@@ -3750,6 +3804,13 @@ b717d7cf-d063-458d-ac57-b2ca3d016009,languages,german,listening,"In many German 
 463e6870-4db9-4bd2-85e8-963dcec921a4,languages,german,listening,The polite 'Sie' (you) and 'sie' (they) can sound ,data/seed-source/items/languages/languages.german.listening.json
 0a2b60a6-fe02-42ef-899b-23ff972e5e22,languages,german,listening,What does 'dreizehn' mean when you hear a number?,data/seed-source/items/languages/languages.german.listening.json
 53f03d09-f70b-4ae4-b5b4-e7daaa4ec596,languages,german,listening,Why can separable verbs be tricky in spoken German,data/seed-source/items/languages/languages.german.listening.json
+718b5d57-2f06-4c73-b199-c585c58dd5dd,languages,german,phrases,How do you ask 'How much does this cost?' in Germa,data/seed-source/items/languages/languages.german.phrases.json
+c16ea07e-65b8-4d70-852c-80be0ba6f7ea,languages,german,phrases,How do you ask 'Where is the bathroom?' in German?,data/seed-source/items/languages/languages.german.phrases.json
+c207f96d-a39c-4efd-862e-5e0d8d6c6177,languages,german,phrases,How do you ask for the bill in a German restaurant,data/seed-source/items/languages/languages.german.phrases.json
+13d33296-bbef-47e1-a9ea-2399bd1376bf,languages,german,phrases,"How do you order 'a coffee, please' in German?",data/seed-source/items/languages/languages.german.phrases.json
+2665a822-f8f0-4145-8f52-7a4fba065e9e,languages,german,phrases,"How do you say 'A table for two, please' in German",data/seed-source/items/languages/languages.german.phrases.json
+f87a86f3-6207-4ac8-9f2b-6ca52c4ba00c,languages,german,phrases,How do you say 'Do you speak English?' in German?,data/seed-source/items/languages/languages.german.phrases.json
+8cf0157f-de41-4b67-9064-2a512d823a9b,languages,german,phrases,How do you say 'Turn left' in German?,data/seed-source/items/languages/languages.german.phrases.json
 7703c695-db47-40ad-a919-b90ff94a0368,languages,german,travel,What does 'Entschuldigung' often mean in a busy pl,data/seed-source/items/languages/languages.german.travel.json
 ead826e5-a6e6-4166-b753-c445953e96af,languages,german,travel,What does 'Wo ist ...?' mean?,data/seed-source/items/languages/languages.german.travel.json
 99b1bf1c-3301-4fe8-a5fb-8569cf73f2a7,languages,german,travel,What does 'der Anschluss' often mean when you chan,data/seed-source/items/languages/languages.german.travel.json
@@ -3834,6 +3895,121 @@ ccd54e61-474a-48c5-9459-5154c3f91f1a,languages,idioms,spanish,"The Spanish expre
 5d55bfda-2c4a-4a93-a1db-843cd4190c58,languages,idioms,spanish,"What does ""Costar un ojo de la cara"" usually expre",data/seed-source/items/languages/languages.idioms.spanish.json
 399247d3-4a25-49ed-bdad-dce74358dd8c,languages,idioms,spanish,"What does ""Dar en el clavo"" mean in everyday Spani",data/seed-source/items/languages/languages.idioms.spanish.json
 4a69d28b-e707-47b8-8f6e-0d125351f404,languages,idioms,spanish,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.idioms.spanish.json
+0c0482c8-862f-4593-905a-0b3edb8ef14b,languages,italian,core,How do you say 'yes' in Italian?,data/seed-source/items/languages/languages.italian.core.json
+a05d5e9c-9ccc-4db6-9d8f-e8e9b04c84a9,languages,italian,core,What does 'Ciao' often mean in everyday Italian?,data/seed-source/items/languages/languages.italian.core.json
+53b1281e-d373-4150-a6bc-09e03dc4d66b,languages,italian,core,What does 'Grazie' mean?,data/seed-source/items/languages/languages.italian.core.json
+3745203e-596c-43ba-9c68-f5fa715244a5,languages,italian,core,What does 'acqua' mean?,data/seed-source/items/languages/languages.italian.core.json
+0eeede75-d35c-4e30-86e0-8d8caea6f041,languages,italian,core,What does 'arrivederci' mean?,data/seed-source/items/languages/languages.italian.core.json
+f7c3e81c-7a5d-4e25-82fd-e3c8358d9d42,languages,italian,core,What does 'dove' mean in a travel question?,data/seed-source/items/languages/languages.italian.core.json
+4b157145-2a6d-402b-bcc8-4f9d0d66a67c,languages,italian,core,What does 'io sono' mean in a simple introduction?,data/seed-source/items/languages/languages.italian.core.json
+b27c3077-6eed-49a0-a7df-c417148db72c,languages,italian,core,What does 'mi chiamo' mean?,data/seed-source/items/languages/languages.italian.core.json
+4b267a65-36f2-4379-bb0e-b8a02c620e94,languages,italian,core,What does 'per favore' mean?,data/seed-source/items/languages/languages.italian.core.json
+a018a74d-c323-4aff-8dc5-2d117f5cdb5f,languages,italian,core,Which indefinite article often matches a singular ,data/seed-source/items/languages/languages.italian.core.json
+1d45525d-92de-4cb9-a175-51d063ad0bdb,languages,italian,phrases,How do you ask 'How much does this cost?' in Itali,data/seed-source/items/languages/languages.italian.phrases.json
+3ad6661d-086e-41d3-bd50-14c9a2969c07,languages,italian,phrases,How do you ask 'Where is the bathroom?' in Italian,data/seed-source/items/languages/languages.italian.phrases.json
+e565cde7-29fe-4c21-b45d-1f1ee58dda0f,languages,italian,phrases,How do you ask 'Where is the train station?' in It,data/seed-source/items/languages/languages.italian.phrases.json
+095cf27a-d56c-44c7-8a9d-37b56b29332a,languages,italian,phrases,How do you ask for the bill at a restaurant in Ita,data/seed-source/items/languages/languages.italian.phrases.json
+835c7888-7d6d-4f0f-b640-61eeaab0b00d,languages,italian,phrases,"How do you say 'A table for two, please' in Italia",data/seed-source/items/languages/languages.italian.phrases.json
+35d510e1-c38a-4dca-85ba-8937f95ea3f9,languages,italian,phrases,How do you say 'Can you help me?' in Italian?,data/seed-source/items/languages/languages.italian.phrases.json
+bc82d0da-1a05-4e42-990b-7c97587147e7,languages,italian,phrases,How do you say 'I don't understand' in Italian?,data/seed-source/items/languages/languages.italian.phrases.json
+dfbbd0f9-7e02-40e9-b458-6316b7a54e82,languages,italian,phrases,"How do you say 'I would like a coffee, please' in ",data/seed-source/items/languages/languages.italian.phrases.json
+e35eaa33-0d2d-450f-81b1-0d34e1a4e64f,languages,japanese,core,How do you count 1-3 in Japanese?,data/seed-source/items/languages/languages.japanese.core.json
+1d60d963-a433-4a5f-b8d4-d368f9816805,languages,japanese,core,How do you say 'excuse me / sorry' in Japanese?,data/seed-source/items/languages/languages.japanese.core.json
+1038b02a-e493-4d25-b439-b3078293bb96,languages,japanese,core,"In a simple polite sentence, what does 'です' (desu)",data/seed-source/items/languages/languages.japanese.core.json
+c4536a4a-a6f2-476f-929f-7ff6b670c4b8,languages,japanese,core,What does 'ありがとう' (arigatou) mean?,data/seed-source/items/languages/languages.japanese.core.json
+f8fe72fd-6c7e-4b45-8aad-b34163b9753a,languages,japanese,core,What does 'いいえ' (iie) mean?,data/seed-source/items/languages/languages.japanese.core.json
+a19115f0-9b6b-4b66-84bc-90c783bf60bb,languages,japanese,core,What does 'こんにちは' (konnichiwa) mean in the daytime,data/seed-source/items/languages/languages.japanese.core.json
+0f28de7c-a613-4dd5-b1dd-16991548246a,languages,japanese,core,What does 'さようなら' (sayounara) mean?,data/seed-source/items/languages/languages.japanese.core.json
+023e346f-e012-4668-bb45-474fc8aa8318,languages,japanese,core,What does 'はい' (hai) often mean in a simple reply?,data/seed-source/items/languages/languages.japanese.core.json
+40834ed4-6929-4849-8c16-79b77e1ce73c,languages,japanese,core,What does 'わたしのなまえは' (watashi no namae wa) introdu,data/seed-source/items/languages/languages.japanese.core.json
+f61b3399-7243-453c-96b4-86c842442875,languages,japanese,core,What does '水' (mizu) mean?,data/seed-source/items/languages/languages.japanese.core.json
+d0f68ee1-5329-4af6-93d3-acb62e2eabd6,languages,japanese,phrases,How do you ask 'How much is this?' in Japanese?,data/seed-source/items/languages/languages.japanese.phrases.json
+7efc053b-9a3a-4114-b34e-948264d91d22,languages,japanese,phrases,How do you ask 'Where is the bathroom?' in Japanes,data/seed-source/items/languages/languages.japanese.phrases.json
+6f42301c-5174-47ce-a5fd-2020fb0f1fa7,languages,japanese,phrases,How do you ask for the bill at a Japanese restaura,data/seed-source/items/languages/languages.japanese.phrases.json
+4abd785a-50bc-481f-a342-90e1a2b0c5ef,languages,japanese,phrases,How do you say 'Do you speak English?' in Japanese,data/seed-source/items/languages/languages.japanese.phrases.json
+681505d1-50e1-4b3e-bc60-076208225bf4,languages,japanese,phrases,How do you say 'I don't understand' in Japanese?,data/seed-source/items/languages/languages.japanese.phrases.json
+2af74938-b753-40cf-9280-f80c124522b3,languages,japanese,phrases,"How do you say 'I would like one coffee, please' i",data/seed-source/items/languages/languages.japanese.phrases.json
+421e645b-728b-4ceb-9dbe-b3e90d8d2912,languages,japanese,phrases,How do you say 'Turn left' in Japanese?,data/seed-source/items/languages/languages.japanese.phrases.json
+e7219fc5-cdd1-4e86-9200-4286dbc08951,languages,latin,expressions,What does 'Ad hoc' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+c04a74f8-c1dd-4b5a-8144-1633cd0301b7,languages,latin,expressions,What does 'Ad infinitum' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+42a8fca9-c4d5-482d-8d82-e13fc4a4a6f2,languages,latin,expressions,What does 'Ad nauseam' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+69bfa210-11b1-4af6-8d65-f06bf74c42ae,languages,latin,expressions,What does 'Alea iacta est' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+a35beaf7-5bda-4018-841b-8d6b53b0a032,languages,latin,expressions,What does 'Alma mater' mean literally?,data/seed-source/items/languages/languages.latin.expressions.json
+c786426f-9992-42f1-9bc5-b85bdf0e0dcd,languages,latin,expressions,What does 'Amor vincit omnia' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+703c22ea-7f13-41b9-aa49-779187757344,languages,latin,expressions,What does 'Anno Domini' (A.D.) mean?,data/seed-source/items/languages/languages.latin.expressions.json
+54fe7428-ad38-404f-875c-b6cf682ab2f6,languages,latin,expressions,"What does 'Ars longa, vita brevis' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+75787934-6d5c-4ea3-bf8e-5cb6a01e8bef,languages,latin,expressions,What does 'Audaces fortuna iuvat' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+cf79fdc0-377f-41c5-9013-d9650113a71f,languages,latin,expressions,What does 'Bona fide' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+8d95f0bb-a390-497b-9999-8f37794f1963,languages,latin,expressions,What does 'Carpe diem' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+bfeeb804-f157-40e0-80a5-de848b372b4e,languages,latin,expressions,What does 'Carpe noctem' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+73bc0b36-a94d-43d6-bcbc-9746b99fc932,languages,latin,expressions,What does 'Cave canem' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+5a122392-413e-4111-89df-05bda3b18142,languages,latin,expressions,What does 'Caveat emptor' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+9dca3fb6-a65b-4613-ad4f-3042c68752f9,languages,latin,expressions,"What does 'Cogito, ergo sum' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+2a30d3f0-a928-4074-ab7f-591436911854,languages,latin,expressions,What does 'Cum laude' mean in academic contexts?,data/seed-source/items/languages/languages.latin.expressions.json
+9d657284-8f58-4cad-b110-3b6cda3e8ae7,languages,latin,expressions,What does 'Curriculum vitae' (CV) mean?,data/seed-source/items/languages/languages.latin.expressions.json
+e0e8dc3b-5d59-4b95-a4e3-5370a67c6576,languages,latin,expressions,What does 'De gustibus non est disputandum' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b6266cfb-d399-4e54-94a4-f1b1d42e151e,languages,latin,expressions,What does 'Deus ex machina' mean literally?,data/seed-source/items/languages/languages.latin.expressions.json
+7b295001-9868-4bfc-9dc6-968552c96b1d,languages,latin,expressions,"What does 'Dum spiro, spero' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+1e86d590-0d98-4b87-b84b-f6a83acd1190,languages,latin,expressions,What does 'E pluribus unum' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+905a6085-3158-4e4d-b9e2-09719728349a,languages,latin,expressions,What does 'Errare humanum est' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+ff1a718f-8f8b-46b7-88f8-ea05a8f39b2e,languages,latin,expressions,"What does 'Et tu, Brute?' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+df70c96c-97e8-4b0d-8287-c017cf7bc109,languages,latin,expressions,What does 'Ex libris' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+7137c7d8-15c2-4bdf-bb55-782f07c803be,languages,latin,expressions,What does 'Festina lente' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+a529822a-3beb-46b1-827d-7caab4ccf5db,languages,latin,expressions,What does 'Fortes fortuna adiuvat' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+a26a0883-944e-47f7-b6ea-5daa1018c0f2,languages,latin,expressions,What does 'Habeas corpus' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b48f4c77-4c33-40da-95aa-4b14fa208fdf,languages,latin,expressions,What does 'Homo sapiens' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+fd4fbc2d-e75d-4cb2-8451-3c8574346025,languages,latin,expressions,What does 'Ignorantia legis neminem excusat' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+654e0a66-8619-4fc7-a6a4-d9ac31c5eb7a,languages,latin,expressions,What does 'In absentia' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+be9d521f-dde0-4c35-8e7d-663e00432934,languages,latin,expressions,What does 'In vino veritas' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+d6e81010-a1ed-48d3-8a8f-8a0137cfccef,languages,latin,expressions,What does 'Ipso facto' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+20b3af51-a565-4cdd-9709-cbbf3b05ca20,languages,latin,expressions,What does 'Lupus in fabula' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+ae99eba2-e88b-4bd2-ad54-4d548d5ab956,languages,latin,expressions,What does 'Lux et veritas' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b6a9e7f2-1e77-40e5-a30a-5e171765aa5f,languages,latin,expressions,What does 'Magna Carta' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+3ebd7598-bbfa-4823-807f-375a9260730c,languages,latin,expressions,What does 'Mea culpa' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b5b4d31d-361d-45a6-94a5-4c8b6189763f,languages,latin,expressions,What does 'Memento mori' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+2519ba62-8aa1-45d1-b220-e3629c2c1663,languages,latin,expressions,What does 'Mens sana in corpore sano' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+bd139ae8-ad4a-499e-97f4-0fc9d271b56e,languages,latin,expressions,What does 'Nemo iudex in causa sua' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+126a2772-7ff3-4196-8ed8-68315548a99b,languages,latin,expressions,What does 'Nolens volens' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+ff341388-0429-46f5-90bb-c0f2e49f5099,languages,latin,expressions,What does 'Non sequitur' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+bbf8ff71-81aa-414e-b89f-0bec1a657e61,languages,latin,expressions,What does 'Nota bene' (N.B.) mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b1b8a88b-d40d-45e1-8fa4-7953e04bb223,languages,latin,expressions,What does 'Ora et labora' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+9a40d949-76a0-435d-8e9b-a0db6036220f,languages,latin,expressions,What does 'Panem et circenses' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+786dd876-26a4-42db-8bab-7b8a167768c9,languages,latin,expressions,What does 'Pax Romana' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+a489e70d-1e65-493c-b61b-3b48cc2f2917,languages,latin,expressions,What does 'Per aspera ad astra' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+9db0665d-0545-4ad3-b825-25a3b9053ef0,languages,latin,expressions,What does 'Persona non grata' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+35d591d1-c1cc-4cd8-82ab-3e7ad723c7bb,languages,latin,expressions,What does 'Prima facie' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+274ea6d1-eaf9-413c-9752-d51cbfe5ac99,languages,latin,expressions,What does 'Pro bono' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+ca582662-309c-459a-9347-412d465dbd7e,languages,latin,expressions,What does 'Quid pro quo' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+0ce4f112-1dbe-44b3-a4b5-a60350f68a6f,languages,latin,expressions,What does 'Requiescat in pace' (R.I.P.) mean?,data/seed-source/items/languages/languages.latin.expressions.json
+85251d4a-25ee-4a24-977b-74312f25d01f,languages,latin,expressions,What does 'Semper fidelis' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+30215ffa-c8b9-4f06-b023-af09cf3678a5,languages,latin,expressions,What does 'Sic semper tyrannis' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+c5fe02b0-3f99-4d9b-9c37-dcffad45a39f,languages,latin,expressions,What does 'Sic transit gloria mundi' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+73b6e8c9-30dd-4465-b1bd-0a5b4da3c586,languages,latin,expressions,What does 'Sine qua non' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+f226b8a5-12d0-44fc-9ce9-05e20e567cfb,languages,latin,expressions,What does 'Status quo' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+389d2373-44dd-4904-8d37-cfe90f266cf1,languages,latin,expressions,What does 'Sui generis' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+322550d1-a114-4b5c-9d42-7f57387cb5c9,languages,latin,expressions,What does 'Tabula rasa' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+31be388b-2baf-4310-b77a-779c196ee5f0,languages,latin,expressions,What does 'Tempus fugit' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+b2a46353-bd64-4f93-b554-3385342a4b3a,languages,latin,expressions,What does 'Terra incognita' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+0c58402e-21f1-409d-8ba8-39664beab459,languages,latin,expressions,"What does 'Veni, vidi, vici' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+c0f0e449-7415-4a1d-8587-097d2d232129,languages,latin,expressions,What does 'Veritas vos liberabit' mean?,data/seed-source/items/languages/languages.latin.expressions.json
+4981b175-767b-4e27-8ef3-0d2f956426d7,languages,latin,expressions,"What does 'Vox populi, vox Dei' mean?",data/seed-source/items/languages/languages.latin.expressions.json
+e6ad4cc5-1ec1-4657-99ac-d1863cd22835,languages,latvian,core,"How do you count 1, 2, 3 in Latvian?",data/seed-source/items/languages/languages.latvian.core.json
+97889d19-d889-4e26-bd95-7c50ed3251b2,languages,latvian,core,How do you say 'excuse me / sorry' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+e00c234b-35a6-41c3-af07-8d628084f263,languages,latvian,core,How do you say 'good morning' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+833c0c13-9fd3-4e12-a8ae-2528bbfde861,languages,latvian,core,How do you say 'goodbye' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+b1c89049-45d9-4979-a2d0-070ad60309be,languages,latvian,core,How do you say 'hello' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+47e7fc00-a6a0-4492-a218-2cb3068170c3,languages,latvian,core,How do you say 'my name is' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+ea92802c-7656-4f2e-9e7e-7a971ad0a175,languages,latvian,core,How do you say 'please' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+72c56fb4-cc46-491a-b44e-c969eea7e043,languages,latvian,core,How do you say 'thank you' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+692f2583-1eb3-4b07-b3e8-1d0631657b4f,languages,latvian,core,How do you say 'water' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+19844266-7f72-44b4-9e6a-f00d5095bfa5,languages,latvian,core,How do you say 'yes' in Latvian?,data/seed-source/items/languages/languages.latvian.core.json
+247b27f8-625b-4a86-9ecd-8e4cae05b3ab,languages,latvian,phrases,How do you ask 'How much does this cost?' in Latvi,data/seed-source/items/languages/languages.latvian.phrases.json
+39a066da-db1d-4937-9676-d688299b1dac,languages,latvian,phrases,How do you ask 'Where is the bathroom?' in Latvian,data/seed-source/items/languages/languages.latvian.phrases.json
+2bdacffd-cb83-489f-bdad-57537629a798,languages,latvian,phrases,How do you ask 'Where is the bus stop?' in Latvian,data/seed-source/items/languages/languages.latvian.phrases.json
+673bc0cc-1522-4284-b0c4-4fca61806687,languages,latvian,phrases,How do you ask for the bill in Latvian?,data/seed-source/items/languages/languages.latvian.phrases.json
+cb57a1e3-fcef-4219-8735-bbf5abd8e291,languages,latvian,phrases,"How do you order 'a coffee, please' in Latvian?",data/seed-source/items/languages/languages.latvian.phrases.json
+f96f5cb3-4f7d-456c-8f5e-ddab9e55f65b,languages,latvian,phrases,How do you say 'Do you speak English?' in Latvian?,data/seed-source/items/languages/languages.latvian.phrases.json
+32fb729a-6bf2-4446-937b-de0867adbc61,languages,latvian,phrases,How do you say 'I don't understand' in Latvian?,data/seed-source/items/languages/languages.latvian.phrases.json
 da2cf1e7-262c-4a4b-988d-a57fa402b3c6,languages,other-langs,arabic,How is Arabic usually written on a page for Modern,data/seed-source/items/languages/languages.other-langs.arabic.json
 e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2,languages,other-langs,arabic,What does 'شكرا' (shukran) mean?,data/seed-source/items/languages/languages.other-langs.arabic.json
 54924c48-413d-4417-b7a4-e73ab3cfeb71,languages,other-langs,arabic,What does 'لا' (la) often mean?,data/seed-source/items/languages/languages.other-langs.arabic.json
@@ -3846,18 +4022,6 @@ f92fde2e-e99f-4a37-8378-346f35a3356c,languages,other-langs,chinese,What does '�
 96680d43-1589-4954-9604-65fd6938209b,languages,other-langs,chinese,What does '谢谢' (xièxie) mean?,data/seed-source/items/languages/languages.other-langs.chinese.json
 6590fdb0-5a3f-4689-be24-91bd576a4b9d,languages,other-langs,chinese,What is a common neutral measure word for many eve,data/seed-source/items/languages/languages.other-langs.chinese.json
 a3999239-02a7-4ebb-b851-ec02b315f14e,languages,other-langs,chinese,Why do tones matter in Mandarin for words like 'mā,data/seed-source/items/languages/languages.other-langs.chinese.json
-e9a08222-f47b-4126-9356-0af9943fe7b4,languages,other-langs,italian,What does 'Ciao' often mean in everyday Italian?,data/seed-source/items/languages/languages.other-langs.italian.json
-f9c4c131-be48-45f6-ae33-1f1a74456d2a,languages,other-langs,italian,What does 'Grazie' mean?,data/seed-source/items/languages/languages.other-langs.italian.json
-7feb2989-6d5c-4883-9463-e9665a5714a4,languages,other-langs,italian,What does 'acqua' mean?,data/seed-source/items/languages/languages.other-langs.italian.json
-1d623e8c-1597-4058-a062-3950f9a15b61,languages,other-langs,italian,What does 'dove' mean in a travel question?,data/seed-source/items/languages/languages.other-langs.italian.json
-7e2eb366-7fcc-4dc5-a338-0ffebe61f694,languages,other-langs,italian,What does 'io sono' mean in a simple introduction?,data/seed-source/items/languages/languages.other-langs.italian.json
-0aba6eba-8287-498e-a594-9dfe6355fa47,languages,other-langs,italian,Which indefinite article often matches a singular ,data/seed-source/items/languages/languages.other-langs.italian.json
-b2f82723-d0d5-4ce1-a59a-92c22d4d929a,languages,other-langs,japanese,"In a simple polite sentence, what does 'です' (desu)",data/seed-source/items/languages/languages.other-langs.japanese.json
-93e9d35a-11bd-47f1-90f9-f5638d79667e,languages,other-langs,japanese,What does 'ありがとう' (arigatou) mean?,data/seed-source/items/languages/languages.other-langs.japanese.json
-4985624c-f413-4201-994e-5e8a6a2fbce7,languages,other-langs,japanese,What does 'いいえ' (iie) mean?,data/seed-source/items/languages/languages.other-langs.japanese.json
-562bda8d-55c9-4588-951a-b50a1c58c092,languages,other-langs,japanese,What does 'こんにちは' (konnichiwa) mean in the daytime,data/seed-source/items/languages/languages.other-langs.japanese.json
-a29b0a39-6ee7-4316-8eef-50f26040d212,languages,other-langs,japanese,What does 'はい' (hai) often mean in a simple reply?,data/seed-source/items/languages/languages.other-langs.japanese.json
-d26c79c1-06fb-4cf9-884a-67fe28eb5999,languages,other-langs,japanese,What does '水' (mizu) mean?,data/seed-source/items/languages/languages.other-langs.japanese.json
 e8b57986-46e7-4ef9-9416-a8db4dbf19a2,languages,other-langs,korean,What does '감사합니다' (gamsahamnida) mean?,data/seed-source/items/languages/languages.other-langs.korean.json
 c16b8527-7ba4-49f8-865c-e0d4673103b5,languages,other-langs,korean,What does '네' (ne) often mean in a simple reply?,data/seed-source/items/languages/languages.other-langs.korean.json
 754de738-3ace-405b-b102-c747f064e1eb,languages,other-langs,korean,What does '물' (mul) mean?,data/seed-source/items/languages/languages.other-langs.korean.json
@@ -3870,18 +4034,54 @@ c4a82bbc-7446-412a-bd31-976879e01988,languages,other-langs,portuguese,What does 
 95b3555d-8e50-4ed2-bfe0-254c3ccb8eee,languages,other-langs,portuguese,What does 'onde' mean in a simple question?,data/seed-source/items/languages/languages.other-langs.portuguese.json
 e8ce776e-71ba-4ea9-b128-caa5378edf17,languages,other-langs,portuguese,What does 'por favor' mean?,data/seed-source/items/languages/languages.other-langs.portuguese.json
 481361a8-a904-4bd1-8e12-de0794e162e0,languages,other-langs,portuguese,What does 'água' mean?,data/seed-source/items/languages/languages.other-langs.portuguese.json
-9032b887-7502-4b3f-a9d3-3f184dd28c27,languages,other-langs,russian,Russian nouns change endings for roles in a senten,data/seed-source/items/languages/languages.other-langs.russian.json
-3de7cba4-eade-4a5f-b0c5-5fa7aaf27bdd,languages,other-langs,russian,What does 'Здравствуйте' (Zdravstvuyte) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
-d0d6d522-2693-41ed-97a5-7fe600affbbe,languages,other-langs,russian,What does 'Спасибо' (Spasibo) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
-a7134ba0-2a1a-413e-a82d-4ef9cd465a5c,languages,other-langs,russian,What does 'вода' (voda) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
-0a3a42ee-704e-4692-a637-c628d32fb0ff,languages,other-langs,russian,What does 'да' (da) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
-5453b98a-8a6d-4e0d-80f8-8ccc79b4bd54,languages,other-langs,russian,What does 'нет' (net) mean?,data/seed-source/items/languages/languages.other-langs.russian.json
+093a0d32-1559-4c9b-acfd-9db4a3e0be75,languages,romanian,core,"How do you count 1, 2, 3 in Romanian?",data/seed-source/items/languages/languages.romanian.core.json
+214772e6-c9aa-437d-b91a-8870902a7281,languages,romanian,core,How do you say 'excuse me / sorry' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+c7f4a7de-f138-420c-b384-24f9669b175c,languages,romanian,core,How do you say 'goodbye' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+fd3a4532-9601-49da-bbe7-fb75f4b0c6f2,languages,romanian,core,How do you say 'hello' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+244d1f4b-4ae0-41ac-a409-ef9559561d9e,languages,romanian,core,How do you say 'my name is' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+d00ce95d-2e8e-4dd2-ab56-8609d023dd92,languages,romanian,core,How do you say 'please' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+5984e113-1653-419f-974d-82bc8e115def,languages,romanian,core,How do you say 'thank you' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+82216237-9fc7-4e4d-867b-b50c3039d548,languages,romanian,core,How do you say 'water' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+466d011d-5b8d-4e33-9d0b-59d8dc397504,languages,romanian,core,How do you say 'yes' and 'no' in Romanian?,data/seed-source/items/languages/languages.romanian.core.json
+476d6a26-3d53-4630-85ed-7d51f7610f95,languages,romanian,phrases,How do you ask 'How much does this cost?' in Roman,data/seed-source/items/languages/languages.romanian.phrases.json
+30055b5b-4f4e-4d74-af74-2cb78f4465ad,languages,romanian,phrases,How do you ask 'Where is the bathroom?' in Romania,data/seed-source/items/languages/languages.romanian.phrases.json
+09e19b07-4844-4f98-8973-98b16cc039fc,languages,romanian,phrases,How do you ask for the bill in Romanian?,data/seed-source/items/languages/languages.romanian.phrases.json
+1b6a597d-a05b-42d9-a589-203495ce6282,languages,romanian,phrases,"How do you order 'a coffee, please' in Romanian?",data/seed-source/items/languages/languages.romanian.phrases.json
+dc08dae1-d87a-48c5-888a-af4736ab279b,languages,romanian,phrases,How do you say 'Do you speak English?' in Romanian,data/seed-source/items/languages/languages.romanian.phrases.json
+7336bc25-7a65-4a9e-9811-23186eb9fd52,languages,romanian,phrases,How do you say 'I don't understand' in Romanian?,data/seed-source/items/languages/languages.romanian.phrases.json
+87518db7-16df-41a4-8e8f-ba9fc3ca449a,languages,russian,core,How do you say 'excuse me' or 'sorry' in Russian?,data/seed-source/items/languages/languages.russian.core.json
+3ee8e3ba-8738-4d08-b87a-9f5737fded67,languages,russian,core,How do you say 'my name is' in Russian?,data/seed-source/items/languages/languages.russian.core.json
+faea7db1-29b4-4aa5-bdd0-5b2f955e725a,languages,russian,core,How do you say 'please' in Russian?,data/seed-source/items/languages/languages.russian.core.json
+fd4340ec-9077-481a-813d-1579c4e88f49,languages,russian,core,Russian nouns change endings for roles in a senten,data/seed-source/items/languages/languages.russian.core.json
+acc641ce-c3e6-4162-b2a2-182b2c46d079,languages,russian,core,What does 'Здравствуйте' (Zdravstvuyte) mean?,data/seed-source/items/languages/languages.russian.core.json
+7d258b45-b275-47df-ab8e-3b8168ee9844,languages,russian,core,What does 'Спасибо' (Spasibo) mean?,data/seed-source/items/languages/languages.russian.core.json
+041ba051-e8be-475b-bcf1-a25daeba9b08,languages,russian,core,What does 'вода' (voda) mean?,data/seed-source/items/languages/languages.russian.core.json
+5b918956-204f-406b-b5f3-5368e450b7fa,languages,russian,core,What does 'да' (da) mean?,data/seed-source/items/languages/languages.russian.core.json
+b04e4cca-683d-44bf-98ea-51379fac01ed,languages,russian,core,What does 'до свидания' (do svidaniya) mean?,data/seed-source/items/languages/languages.russian.core.json
+3684f8ab-13fd-4d49-a089-120bafa2f258,languages,russian,core,What does 'нет' (net) mean?,data/seed-source/items/languages/languages.russian.core.json
+96f88677-d08b-42fc-b072-9568bb4682e0,languages,russian,phrases,How do you ask 'How much does this cost?' in Russi,data/seed-source/items/languages/languages.russian.phrases.json
+f399315e-76e0-485c-b14e-909a898f1f18,languages,russian,phrases,How do you ask 'Where is the bathroom?' in Russian,data/seed-source/items/languages/languages.russian.phrases.json
+248d9883-a6cb-4ceb-a6dc-4d29a80d832b,languages,russian,phrases,How do you ask 'Where is the metro station?' in Ru,data/seed-source/items/languages/languages.russian.phrases.json
+02627f80-ad3a-46a2-8866-2944e86f3842,languages,russian,phrases,How do you ask for the bill in a Russian restauran,data/seed-source/items/languages/languages.russian.phrases.json
+6efedf53-6c05-4b85-97d2-8e36797e94ec,languages,russian,phrases,How do you say 'Do you speak English?' in Russian?,data/seed-source/items/languages/languages.russian.phrases.json
+50bf3ef0-3fbb-4b98-a69a-801e394c6ead,languages,russian,phrases,How do you say 'I don't understand' in Russian?,data/seed-source/items/languages/languages.russian.phrases.json
+fa0a26a8-03ac-4d75-a584-09f42db4ad50,languages,russian,phrases,"How do you say 'I would like a coffee, please' in ",data/seed-source/items/languages/languages.russian.phrases.json
 0f1b739a-eab6-4f6e-af13-73abc040d9bc,languages,spanish,conversation,"In Spanish, which phrase politely asks someone to ",data/seed-source/items/languages/languages.spanish.conversation.json
 41e6fa1f-d2ce-49b1-82f9-4a3da0963c2c,languages,spanish,conversation,Which phrase is a common morning greeting?,data/seed-source/items/languages/languages.spanish.conversation.json
 365d18e4-bbea-44f5-ae61-f29e86a2b5e1,languages,spanish,conversation,"Which phrase is a simple way to say ""I am sorry"" a",data/seed-source/items/languages/languages.spanish.conversation.json
 21755aef-9be5-4af7-9e2f-956d9886dab5,languages,spanish,conversation,"Which phrase means ""Excuse me"" when you need to ge",data/seed-source/items/languages/languages.spanish.conversation.json
 ce421721-50da-4f0d-87cc-09964db2cd1e,languages,spanish,conversation,"Which question asks ""How are you?"" in an informal ",data/seed-source/items/languages/languages.spanish.conversation.json
 8a067dc6-b0d1-4453-98d2-9f5868dcd5a5,languages,spanish,conversation,"Which reply is a simple way to say ""Nice to meet y",data/seed-source/items/languages/languages.spanish.conversation.json
+7722b9ba-107e-43aa-a8e9-1c47cc6fdabc,languages,spanish,core,"How do you count 1, 2, 3 in Spanish?",data/seed-source/items/languages/languages.spanish.core.json
+87ef9abd-da11-4c4f-bb31-c3fb665bf03a,languages,spanish,core,How do you say 'I don't understand' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+3cd0d1d9-d54a-4956-ba9a-c8706b4dfba3,languages,spanish,core,How do you say 'excuse me / sorry' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+5299843f-7052-40f3-b466-1e990646a0bb,languages,spanish,core,How do you say 'good morning' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+1e47f36c-9a12-4127-bae5-1c9759f79451,languages,spanish,core,How do you say 'goodbye' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+96addc76-22d6-427c-aa28-7ac2c4c9ab94,languages,spanish,core,How do you say 'hello' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+b1d19c29-3fcf-48aa-aa48-be56e217ffdf,languages,spanish,core,How do you say 'my name is' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+a4b7d0ff-9953-4972-b85e-49671741b8bb,languages,spanish,core,How do you say 'please' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+f9a9f00f-bc29-424f-a354-0ae13979f2dc,languages,spanish,core,How do you say 'thank you' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
+da6ab309-5c3b-4791-9f0e-a02858a09688,languages,spanish,core,How do you say 'water' in Spanish?,data/seed-source/items/languages/languages.spanish.core.json
 136d2831-cb45-44d1-aa53-2dd221074292,languages,spanish,grammar,"After ""para"" meaning ""in order to,"" which verb for",data/seed-source/items/languages/languages.spanish.grammar.json
 6cfbd85c-7fa0-4387-b25c-473d989dc113,languages,spanish,grammar,"For the verb ""hablar,"" which form matches ""nosotro",data/seed-source/items/languages/languages.spanish.grammar.json
 346501f4-5c44-4ac8-97fa-1a58afc0960a,languages,spanish,grammar,"In standard Spanish, which article is commonly use",data/seed-source/items/languages/languages.spanish.grammar.json
@@ -3894,6 +4094,14 @@ c59a2c34-bfb8-4d89-879f-dc1c04c82656,languages,spanish,listening,What most often
 ade26931-4293-4839-81d7-8080851d8aea,languages,spanish,listening,"Which letter is silent at the start of ""hombre""?",data/seed-source/items/languages/languages.spanish.listening.json
 d18e9bf3-6612-4ea8-a7c5-dbb9f3a2b6d9,languages,spanish,listening,Which pair is a common listening challenge because,data/seed-source/items/languages/languages.spanish.listening.json
 24d5963a-994b-4283-9496-036b69fa42e4,languages,spanish,listening,Which spelling is the standard Spanish word for a ,data/seed-source/items/languages/languages.spanish.listening.json
+0ab1b67a-b51b-4a72-864c-5e49c88205b9,languages,spanish,phrases,How do you ask 'How much does this cost?' in Spani,data/seed-source/items/languages/languages.spanish.phrases.json
+07893eba-365b-4bac-99a2-1e5668c95ecd,languages,spanish,phrases,How do you ask 'Is there a hospital nearby?' in Sp,data/seed-source/items/languages/languages.spanish.phrases.json
+183f611b-36bb-4e3c-8fde-c0cdafbebc3a,languages,spanish,phrases,How do you ask 'Where is the bathroom?' in Spanish,data/seed-source/items/languages/languages.spanish.phrases.json
+164538ef-366b-42b9-a76e-30a8e1fe1bb3,languages,spanish,phrases,How do you ask for the bill in Spanish?,data/seed-source/items/languages/languages.spanish.phrases.json
+74505ee7-78ac-488f-891e-24a44b7743de,languages,spanish,phrases,"How do you order 'a coffee, please' in Spanish?",data/seed-source/items/languages/languages.spanish.phrases.json
+5289748a-ad56-4b09-a964-beca2d7db4d6,languages,spanish,phrases,"How do you say 'A table for two, please' in Spanis",data/seed-source/items/languages/languages.spanish.phrases.json
+83645b16-6388-4423-bd8b-6a3f9894b172,languages,spanish,phrases,How do you say 'Do you speak English?' in Spanish?,data/seed-source/items/languages/languages.spanish.phrases.json
+992cc6ed-d6bc-4519-a37d-32a14628af6f,languages,spanish,phrases,How do you say 'Turn left / right' in Spanish?,data/seed-source/items/languages/languages.spanish.phrases.json
 5d07508f-c098-4436-84a8-842495012ba7,languages,spanish,travel,"At a hotel front desk, which phrase asks if they h",data/seed-source/items/languages/languages.spanish.travel.json
 413355fe-20cf-4b09-884a-84f78146b081,languages,spanish,travel,"In Spanish, at the airport, which word usually mea",data/seed-source/items/languages/languages.spanish.travel.json
 b51fa688-05db-4ec9-bf37-71626125c57a,languages,spanish,travel,"In Spanish, which phrase politely asks where the n",data/seed-source/items/languages/languages.spanish.travel.json
@@ -3948,6 +4156,21 @@ d0fe205e-e0db-4132-a5ba-32bacec7e8f0,languages,travel,restaurant,"In many countr
 ceb8b1a5-3285-4a79-b4cd-4bbd3b315640,languages,travel,shopping,"What does ""duty"" often refer to in ""duty-free"" sho",data/seed-source/items/languages/languages.travel.shopping.json
 a801e250-8190-4448-b6c4-7a25d20059a1,languages,travel,shopping,"What does ""on sale"" often mean in a shop window?",data/seed-source/items/languages/languages.travel.shopping.json
 26b0bdfa-0a46-4825-aefb-205fd25cf16b,languages,travel,shopping,"What is a ""receipt"" in a store?",data/seed-source/items/languages/languages.travel.shopping.json
+b4b1e4b6-d3b3-4d6a-886f-9e74df86349c,languages,ukrainian,core,"How do you count 1, 2, 3 in Ukrainian?",data/seed-source/items/languages/languages.ukrainian.core.json
+a2e9a031-72d4-4a01-b0a5-ad9d12060aaf,languages,ukrainian,core,How do you say 'excuse me / sorry' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+1c0e2af1-ef48-4b66-a17e-315ce100e3d6,languages,ukrainian,core,How do you say 'goodbye' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+68f1adfc-40d1-44eb-8935-d3cf12f613e5,languages,ukrainian,core,How do you say 'hello' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+8190bc9f-8481-437c-966a-f006fe9280f9,languages,ukrainian,core,How do you say 'my name is' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+35b5e958-0a70-4973-9f6b-d8da889ba7f8,languages,ukrainian,core,How do you say 'please' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+b7c9b3d3-2e21-458d-87c7-4d996ae9166d,languages,ukrainian,core,How do you say 'thank you' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+9e24b95a-e0e1-49c5-a9f1-a465a087d20b,languages,ukrainian,core,How do you say 'water' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+800df241-eff3-4859-9d5d-7783ae8e1cc5,languages,ukrainian,core,How do you say 'yes' and 'no' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
+cd66b651-37dd-412b-bf95-3c5a4eb0dc19,languages,ukrainian,phrases,How do you ask 'How much does this cost?' in Ukrai,data/seed-source/items/languages/languages.ukrainian.phrases.json
+b641b5d4-e9b8-4475-a2e2-d1faaf278dbb,languages,ukrainian,phrases,How do you ask 'Where is the bathroom?' in Ukraini,data/seed-source/items/languages/languages.ukrainian.phrases.json
+448531bb-ed29-4fca-b786-3d3f0f4a0961,languages,ukrainian,phrases,How do you ask for the bill in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.phrases.json
+6c158605-0c0a-47f3-9c15-342ff45a30f6,languages,ukrainian,phrases,"How do you order 'a coffee, please' in Ukrainian?",data/seed-source/items/languages/languages.ukrainian.phrases.json
+923aec94-a593-499e-b77c-fa279df39e29,languages,ukrainian,phrases,How do you say 'Do you speak English?' in Ukrainia,data/seed-source/items/languages/languages.ukrainian.phrases.json
+0fabe614-4def-4f20-97d5-644d868bd121,languages,ukrainian,phrases,How do you say 'I don't understand' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.phrases.json
 a95052bb-5bc5-4087-8bcc-4d73448c686f,languages,vocab,academic,Which word means a possible explanation that you t,data/seed-source/items/languages/languages.vocab.academic.json
 474d80ca-e4ca-4ce6-88c0-6bd52757b007,languages,vocab,academic,Which word means a short restatement of the main p,data/seed-source/items/languages/languages.vocab.academic.json
 d8ae14f2-60ab-4f13-95cd-9c5fea586c7d,languages,vocab,academic,Which word means the reason something happens or e,data/seed-source/items/languages/languages.vocab.academic.json

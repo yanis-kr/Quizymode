@@ -1,0 +1,177 @@
+[
+  {
+    "itemId": "bb879d7d-4b3d-443a-bd76-7fc0fd26ebec",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in German?",
+    "correctAnswer": "Hallo / Guten Tag",
+    "incorrectAnswers": [
+      "Auf Wiedersehen",
+      "Danke",
+      "Bitte"
+    ],
+    "explanation": "'Hallo' is casual; 'Guten Tag' (good day) is formal. 'Guten Morgen' = good morning, 'Guten Abend' = good evening.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/hallo"
+  },
+  {
+    "itemId": "31c5f5fa-edc0-4f2a-a08f-6e3f476b5106",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in German?",
+    "correctAnswer": "Danke",
+    "incorrectAnswers": [
+      "Bitte",
+      "Entschuldigung",
+      "Hallo"
+    ],
+    "explanation": "'Danke' = thank you. 'Danke schön' = thank you kindly. 'Bitte' = please AND you're welcome.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/danke"
+  },
+  {
+    "itemId": "a5e7515b-3299-471d-a913-8a192ad25c69",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in German?",
+    "correctAnswer": "Bitte",
+    "incorrectAnswers": [
+      "Danke",
+      "Entschuldigung",
+      "Ja"
+    ],
+    "explanation": "'Bitte' is both please and you're welcome. Context determines meaning.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/bitte"
+  },
+  {
+    "itemId": "ace421f2-464f-4c76-be46-d49c36fbb015",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in German?",
+    "correctAnswer": "Ich heiße...",
+    "incorrectAnswers": [
+      "Ich wohne in...",
+      "Ich bin aus...",
+      "Ich mag..."
+    ],
+    "explanation": "'Ich heiße [name]' — 'I am called [name]'. 'Ich bin [name]' (I am) is also used.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/heissen"
+  },
+  {
+    "itemId": "9a0684f9-eec9-4030-83a9-60609170e26f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in German?",
+    "correctAnswer": "ein, zwei, drei",
+    "incorrectAnswers": [
+      "uno, dos, tres",
+      "un, deux, trois",
+      "unu, doi, trei"
+    ],
+    "explanation": "German numbers: ein (1), zwei (2), drei (3). Note: 'ein' changes form as article — 'einen', 'einem', etc.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://germanpod101.com/german-numbers/"
+  },
+  {
+    "itemId": "c62be141-e27f-49fd-ace9-3c83ab183c1a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in German?",
+    "correctAnswer": "Auf Wiedersehen",
+    "incorrectAnswers": [
+      "Hallo",
+      "Guten Tag",
+      "Bis bald"
+    ],
+    "explanation": "'Auf Wiedersehen' = goodbye (formal). 'Tschüss' = bye (informal). 'Bis bald' = see you soon.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/auf-wiedersehen"
+  },
+  {
+    "itemId": "311ea0cb-427b-4107-93e2-2008b20d6ce1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in German?",
+    "correctAnswer": "Entschuldigung",
+    "incorrectAnswers": [
+      "Danke",
+      "Bitte",
+      "Hallo"
+    ],
+    "explanation": "'Entschuldigung' = excuse me / sorry (to get attention or apologize). 'Es tut mir leid' = I'm sorry (deeper apology).",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/entschuldigung"
+  },
+  {
+    "itemId": "beacee62-86bd-4294-953a-b9fd599464de",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'I don't understand' in German?",
+    "correctAnswer": "Ich verstehe nicht.",
+    "incorrectAnswers": [
+      "Ich weiß nicht.",
+      "Ich höre nicht.",
+      "Ich spreche kein Deutsch."
+    ],
+    "explanation": "'Ich verstehe nicht' — the essential rescue phrase. 'Ich weiß nicht' = I don't know.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/verstehen"
+  },
+  {
+    "itemId": "ce3ee515-c506-4db5-9370-1b51d5f052bb",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in German?",
+    "correctAnswer": "Wasser",
+    "incorrectAnswers": [
+      "Brot",
+      "Milch",
+      "Wein"
+    ],
+    "explanation": "'Wasser' (das Wasser) = water. 'Brot' = bread, 'Milch' = milk. All neuter or feminine.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser"
+  }
+]

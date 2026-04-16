@@ -1,0 +1,197 @@
+[
+  {
+    "itemId": "96addc76-22d6-427c-aa28-7ac2c4c9ab94",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in Spanish?",
+    "correctAnswer": "Hola",
+    "incorrectAnswers": [
+      "Adiós",
+      "Gracias",
+      "Por favor"
+    ],
+    "explanation": "'Hola' is the universal Spanish greeting, used at any time of day.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hola"
+  },
+  {
+    "itemId": "f9a9f00f-bc29-424f-a354-0ae13979f2dc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in Spanish?",
+    "correctAnswer": "Gracias",
+    "incorrectAnswers": [
+      "Por favor",
+      "Lo siento",
+      "De nada"
+    ],
+    "explanation": "'Gracias' is the standard thank you. 'Muchas gracias' = thank you very much.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/gracias"
+  },
+  {
+    "itemId": "a4b7d0ff-9953-4972-b85e-49671741b8bb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in Spanish?",
+    "correctAnswer": "Por favor",
+    "incorrectAnswers": [
+      "Gracias",
+      "Lo siento",
+      "De nada"
+    ],
+    "explanation": "'Por favor' = please. 'De nada' = you're welcome.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/por-favor"
+  },
+  {
+    "itemId": "b1d19c29-3fcf-48aa-aa48-be56e217ffdf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in Spanish?",
+    "correctAnswer": "Me llamo...",
+    "incorrectAnswers": [
+      "Yo soy...",
+      "Vivo en...",
+      "Soy de..."
+    ],
+    "explanation": "'Me llamo [name]' = 'I call myself [name]'. Both 'me llamo' and 'soy' are used for introductions.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/llamarse"
+  },
+  {
+    "itemId": "7722b9ba-107e-43aa-a8e9-1c47cc6fdabc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in Spanish?",
+    "correctAnswer": "uno, dos, tres",
+    "incorrectAnswers": [
+      "un, deux, trois",
+      "unu, doi, trei",
+      "ein, zwei, drei"
+    ],
+    "explanation": "Spanish numbers 1-3: uno (1), dos (2), tres (3).",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/guide/counting-in-spanish"
+  },
+  {
+    "itemId": "1e47f36c-9a12-4127-bae5-1c9759f79451",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in Spanish?",
+    "correctAnswer": "Adiós",
+    "incorrectAnswers": [
+      "Hola",
+      "Hasta luego",
+      "Buenas noches"
+    ],
+    "explanation": "'Adiós' is the formal farewell. 'Hasta luego' (see you later) and 'hasta mañana' (see you tomorrow) are also common.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/adios"
+  },
+  {
+    "itemId": "5299843f-7052-40f3-b466-1e990646a0bb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'good morning' in Spanish?",
+    "correctAnswer": "Buenos días",
+    "incorrectAnswers": [
+      "Buenas tardes",
+      "Buenas noches",
+      "Buen provecho"
+    ],
+    "explanation": "'Buenos días' = good morning; 'buenas tardes' = good afternoon; 'buenas noches' = good evening/night.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/buenos-dias"
+  },
+  {
+    "itemId": "3cd0d1d9-d54a-4956-ba9a-c8706b4dfba3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in Spanish?",
+    "correctAnswer": "Perdón / Disculpe",
+    "incorrectAnswers": [
+      "Gracias",
+      "Por favor",
+      "De nada"
+    ],
+    "explanation": "'Perdón' = pardon/sorry. 'Disculpe' = excuse me (to get attention). 'Lo siento' = I'm sorry (apology).",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/perdon"
+  },
+  {
+    "itemId": "87ef9abd-da11-4c4f-bb31-c3fb665bf03a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'I don't understand' in Spanish?",
+    "correctAnswer": "No entiendo",
+    "incorrectAnswers": [
+      "No sé",
+      "No hablo español",
+      "No escucho"
+    ],
+    "explanation": "'No entiendo' — essential phrase for any learner. 'No sé' = I don't know.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/entender"
+  },
+  {
+    "itemId": "da6ab309-5c3b-4791-9f0e-a02858a09688",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in Spanish?",
+    "correctAnswer": "agua",
+    "incorrectAnswers": [
+      "pan",
+      "leche",
+      "vino"
+    ],
+    "explanation": "'Agua' (water) is feminine but takes masculine article el — 'el agua fría'. A common gender trap.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/agua"
+  }
+]

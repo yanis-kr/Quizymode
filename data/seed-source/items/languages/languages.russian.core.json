@@ -1,0 +1,196 @@
+[
+  {
+    "itemId": "acc641ce-c3e6-4162-b2a2-182b2c46d079",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Здравствуйте' (Zdravstvuyte) mean?",
+    "correctAnswer": "hello (polite)",
+    "incorrectAnswers": [
+      "goodbye",
+      "thank you",
+      "please"
+    ],
+    "explanation": "'Zdravstvuyte' is a common polite greeting for strangers and formal settings.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/hello"
+  },
+  {
+    "itemId": "7d258b45-b275-47df-ab8e-3b8168ee9844",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Спасибо' (Spasibo) mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "welcome"
+    ],
+    "explanation": "'Spasibo' is the everyday thank you.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/thank-you"
+  },
+  {
+    "itemId": "041ba051-e8be-475b-bcf1-a25daeba9b08",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'вода' (voda) mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "soup"
+    ],
+    "explanation": "'Voda' means water and is very common in daily speech.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/water"
+  },
+  {
+    "itemId": "5b918956-204f-406b-b5f3-5368e450b7fa",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'да' (da) mean?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Da' is the basic word for yes.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/yes"
+  },
+  {
+    "itemId": "3684f8ab-13fd-4d49-a089-120bafa2f258",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'нет' (net) mean?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Net' is the basic word for no.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/no"
+  },
+  {
+    "itemId": "fd4340ec-9077-481a-813d-1579c4e88f49",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Russian nouns change endings for roles in a sentence. What is this system usually called?",
+    "correctAnswer": "cases",
+    "incorrectAnswers": [
+      "tones",
+      "articles only",
+      "silent letters only"
+    ],
+    "explanation": "Russian uses case endings to show subject, object, and other roles, which learners study step by step.",
+    "keywords": [
+      "freq-500",
+      "cefr-a2"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson6_main.php"
+  },
+  {
+    "itemId": "faea7db1-29b4-4aa5-bdd0-5b2f955e725a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in Russian?",
+    "correctAnswer": "пожалуйста (pozhaluysta)",
+    "incorrectAnswers": [
+      "спасибо (spasibo)",
+      "привет (privet)",
+      "извините (izvinite)"
+    ],
+    "explanation": "'Pozhaluysta' means please and is also used to say 'you're welcome'.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/please"
+  },
+  {
+    "itemId": "3ee8e3ba-8738-4d08-b87a-9f5737fded67",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in Russian?",
+    "correctAnswer": "меня зовут (menya zovut)",
+    "incorrectAnswers": [
+      "я живу (ya zhivu)",
+      "я говорю (ya govoryu)",
+      "как дела (kak dela)"
+    ],
+    "explanation": "'Menya zovut' literally means 'they call me' — the standard way to introduce your name.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson1_main.php"
+  },
+  {
+    "itemId": "b04e4cca-683d-44bf-98ea-51379fac01ed",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What does 'до свидания' (do svidaniya) mean?",
+    "correctAnswer": "goodbye",
+    "incorrectAnswers": [
+      "hello",
+      "good morning",
+      "see you soon"
+    ],
+    "explanation": "'Do svidaniya' is the formal farewell, literally 'until the meeting'.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/goodbye"
+  },
+  {
+    "itemId": "87518db7-16df-41a4-8e8f-ba9fc3ca449a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me' or 'sorry' in Russian?",
+    "correctAnswer": "извините (izvinite)",
+    "incorrectAnswers": [
+      "спасибо (spasibo)",
+      "пожалуйста (pozhaluysta)",
+      "привет (privet)"
+    ],
+    "explanation": "'Izvinite' is used both to apologize and to politely get someone's attention.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/excuse"
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "itemId": "34dea3fb-4272-44cd-9749-6c0130ec2176",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "Which greeting is appropriate at any time of day in English?",
+    "correctAnswer": "Hello",
+    "incorrectAnswers": [
+      "Good morning",
+      "Good evening",
+      "Good night"
+    ],
+    "explanation": "'Hello' works any time. 'Good morning', 'good afternoon', 'good evening' are time-specific. 'Good night' is a farewell, not a greeting.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/hello"
+  },
+  {
+    "itemId": "d065facc-bf80-45f5-9ccf-f7dcbe0f2cdb",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "What is the polite response to 'Thank you'?",
+    "correctAnswer": "You're welcome",
+    "incorrectAnswers": [
+      "No problem always",
+      "Thank you too",
+      "It's okay"
+    ],
+    "explanation": "'You're welcome' is the classic polite response. 'No problem', 'not at all', 'my pleasure' are also common modern alternatives.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/you-re-welcome"
+  },
+  {
+    "itemId": "1fa2dced-fc2e-479f-b27d-baa80887cde5",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "How do you introduce yourself in English?",
+    "correctAnswer": "My name is [name]. / I'm [name].",
+    "incorrectAnswers": [
+      "I call myself [name].",
+      "I am named [name].",
+      "Name is [name]."
+    ],
+    "explanation": "'My name is...' and 'I'm...' are both correct and natural. 'I call myself' is technically correct but unusual in native speech.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/introduction"
+  },
+  {
+    "itemId": "7b8c288f-8d7c-4160-a770-8a6535af88e1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "What does 'Could you repeat that, please?' ask for?",
+    "correctAnswer": "To say something again",
+    "incorrectAnswers": [
+      "To speak louder",
+      "To speak slower",
+      "To translate"
+    ],
+    "explanation": "'Could you repeat that?' asks for a repetition. 'Could you speak more slowly?' and 'Could you speak louder?' are separate useful phrases.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/repeat"
+  },
+  {
+    "itemId": "828d2d69-b157-4628-97e0-cd626e13abf9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "Which phrase best expresses disagreement politely?",
+    "correctAnswer": "I'm not sure I agree.",
+    "incorrectAnswers": [
+      "That's wrong.",
+      "You're mistaken.",
+      "No, that's incorrect."
+    ],
+    "explanation": "'I'm not sure I agree' softens disagreement. In English, hedging phrases like 'I'm not sure' make disagreement more polite.",
+    "keywords": [
+      "freq-100",
+      "cefr-a2"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/agree"
+  },
+  {
+    "itemId": "e396d4b4-821f-44df-9c7b-392b989248f7",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "What is the difference between 'Can I...?' and 'May I...?'",
+    "correctAnswer": "'May I...?' is more polite/formal for requesting permission",
+    "incorrectAnswers": [
+      "They are completely interchangeable always",
+      "'Can I...?' is more formal",
+      "'May I...?' is only used for physical ability"
+    ],
+    "explanation": "Traditionally, 'may' requests permission politely; 'can' asks about ability. In practice, 'can' is widely accepted for permission in conversational English.",
+    "keywords": [
+      "freq-100",
+      "cefr-a2"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/may"
+  },
+  {
+    "itemId": "d5c26205-1d99-437d-95a6-d34b357d1ff9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "How do you politely ask someone to wait?",
+    "correctAnswer": "Just a moment, please.",
+    "incorrectAnswers": [
+      "Wait now.",
+      "Hold your horses.",
+      "Stop — I'm busy."
+    ],
+    "explanation": "'Just a moment, please' and 'one moment, please' are polite and neutral. 'Hold your horses' is informal/humorous.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/moment"
+  },
+  {
+    "itemId": "c000288c-4f0b-4dd6-b162-6bbc6e03f5fe",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "core",
+    "question": "Which phrase means 'I don't know' in a polite, neutral way?",
+    "correctAnswer": "I'm not sure.",
+    "incorrectAnswers": [
+      "No idea.",
+      "How should I know?",
+      "I haven't a clue."
+    ],
+    "explanation": "'I'm not sure' is neutral and safe. 'No idea' and 'I haven't a clue' are informal. 'How should I know?' can sound rude.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/sure"
+  }
+]

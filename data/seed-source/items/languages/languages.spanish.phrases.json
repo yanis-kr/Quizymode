@@ -1,0 +1,161 @@
+[
+  {
+    "itemId": "183f611b-36bb-4e3c-8fde-c0cdafbebc3a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Spanish?",
+    "correctAnswer": "¿Dónde está el baño?",
+    "incorrectAnswers": [
+      "¿Cuándo está el baño?",
+      "¿Qué es el baño?",
+      "¿Cómo está el baño?"
+    ],
+    "explanation": "'¿Dónde está?' = 'Where is?'. Replace 'el baño' with any place: la estación, el hotel, etc.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/where%20is%20the%20bathroom"
+  },
+  {
+    "itemId": "0ab1b67a-b51b-4a72-864c-5e49c88205b9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Spanish?",
+    "correctAnswer": "¿Cuánto cuesta esto?",
+    "incorrectAnswers": [
+      "¿Qué es esto?",
+      "¿Dónde compro esto?",
+      "¿Hay descuento?"
+    ],
+    "explanation": "'¿Cuánto cuesta?' — 'How much does it cost?' — the key phrase for any market or shop.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/how%20much%20does%20this%20cost"
+  },
+  {
+    "itemId": "74505ee7-78ac-488f-891e-24a44b7743de",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Spanish?",
+    "correctAnswer": "Un café, por favor.",
+    "incorrectAnswers": [
+      "Quiero café ahora.",
+      "Dame café.",
+      "Café rápido."
+    ],
+    "explanation": "'Un [item], por favor' — 'One [item], please' — the polite café order pattern.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/a%20coffee%20please"
+  },
+  {
+    "itemId": "164538ef-366b-42b9-a76e-30a8e1fe1bb3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Spanish?",
+    "correctAnswer": "La cuenta, por favor.",
+    "incorrectAnswers": [
+      "El menú, por favor.",
+      "Más comida, por favor.",
+      "Estaba delicioso."
+    ],
+    "explanation": "'La cuenta, por favor' — 'The bill, please' — the standard way to end a meal.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/the%20bill%20please"
+  },
+  {
+    "itemId": "83645b16-6388-4423-bd8b-6a3f9894b172",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Spanish?",
+    "correctAnswer": "¿Habla usted inglés?",
+    "incorrectAnswers": [
+      "¿Entiende inglés?",
+      "¿Sabe inglés?",
+      "¿Estudia inglés?"
+    ],
+    "explanation": "'¿Habla usted inglés?' is polite formal. Informal: '¿Hablas inglés?' (using tú).",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/do%20you%20speak%20english"
+  },
+  {
+    "itemId": "992cc6ed-d6bc-4519-a37d-32a14628af6f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Turn left / right' in Spanish?",
+    "correctAnswer": "Gire a la izquierda / a la derecha.",
+    "incorrectAnswers": [
+      "Siga recto.",
+      "Dé la vuelta.",
+      "Pare aquí."
+    ],
+    "explanation": "'Izquierda' = left, 'derecha' = right, 'recto' = straight ahead. The three directions for navigation.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/turn%20left"
+  },
+  {
+    "itemId": "5289748a-ad56-4b09-a964-beca2d7db4d6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'A table for two, please' in Spanish?",
+    "correctAnswer": "Una mesa para dos, por favor.",
+    "incorrectAnswers": [
+      "Dos personas, aquí.",
+      "Queremos sentarnos juntos.",
+      "Mesa grande, por favor."
+    ],
+    "explanation": "'Una mesa para [number], por favor' — swap 'dos' with any number: tres, cuatro, etc.",
+    "keywords": [
+      "freq-100",
+      "situation-cafe",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/a%20table%20for%20two"
+  },
+  {
+    "itemId": "07893eba-365b-4bac-99a2-1e5668c95ecd",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Is there a hospital nearby?' in Spanish?",
+    "correctAnswer": "¿Hay un hospital cerca?",
+    "incorrectAnswers": [
+      "¿Dónde está el médico?",
+      "¿Necesito un doctor?",
+      "¿Cuándo abre el hospital?"
+    ],
+    "explanation": "'¿Hay...?' = 'Is there...?' — very versatile: ¿Hay un banco cerca? ¿Hay WiFi aquí?",
+    "keywords": [
+      "freq-100",
+      "situation-emergency",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/is%20there%20a%20hospital%20nearby"
+  }
+]

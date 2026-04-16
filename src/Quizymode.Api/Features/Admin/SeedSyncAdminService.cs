@@ -14,10 +14,12 @@ internal sealed class SeedSyncAdminService(
     ApplicationDbContext db,
     ITaxonomyRegistry taxonomyRegistry,
     IGitHubSeedSource gitHubSeedSource,
+    LocalSeedLoader localSeedLoader,
     IUserContext userContext)
 {
     private const string SeederUserId = "seeder";
     private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
+    private readonly LocalSeedLoader _localSeedLoader = localSeedLoader;
     private readonly IUserContext _userContext = userContext;
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewAsync(
@@ -68,6 +70,32 @@ internal sealed class SeedSyncAdminService(
         CancellationToken cancellationToken)
     {
         Result<LoadedGitHubSeedManifest> loadResult = await _gitHubSeedSource.LoadManifestAsync(request, cancellationToken);
+        if (loadResult.IsFailure)
+        {
+            return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
+        }
+
+        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+    }
+
+    public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewLocalAsync(
+        SeedSyncAdmin.LocalRequest request,
+        CancellationToken cancellationToken)
+    {
+        Result<LoadedLocalSeedManifest> loadResult = await _localSeedLoader.LoadManifestAsync(request.DeltaPreviewLimit, cancellationToken);
+        if (loadResult.IsFailure)
+        {
+            return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
+        }
+
+        return await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+    }
+
+    public async Task<Result<SeedSyncAdmin.ApplyResponse>> ApplyLocalAsync(
+        SeedSyncAdmin.LocalRequest request,
+        CancellationToken cancellationToken)
+    {
+        Result<LoadedLocalSeedManifest> loadResult = await _localSeedLoader.LoadManifestAsync(request.DeltaPreviewLimit, cancellationToken);
         if (loadResult.IsFailure)
         {
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);

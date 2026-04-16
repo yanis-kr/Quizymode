@@ -1,0 +1,197 @@
+[
+  {
+    "itemId": "b1c89049-45d9-4979-a2d0-070ad60309be",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in Latvian?",
+    "correctAnswer": "Sveiki",
+    "incorrectAnswers": [
+      "Ardievu",
+      "Paldies",
+      "Lūdzu"
+    ],
+    "explanation": "'Sveiki' is the standard greeting. 'Sveiks' is used to one male, 'sveika' to one female.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "72c56fb4-cc46-491a-b44e-c969eea7e043",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in Latvian?",
+    "correctAnswer": "Paldies",
+    "incorrectAnswers": [
+      "Lūdzu",
+      "Atvainojiet",
+      "Sveiki"
+    ],
+    "explanation": "'Paldies' is the everyday thank you. It comes from 'God bless' historically.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "ea92802c-7656-4f2e-9e7e-7a971ad0a175",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in Latvian?",
+    "correctAnswer": "Lūdzu",
+    "incorrectAnswers": [
+      "Paldies",
+      "Atvainojiet",
+      "Sveiki"
+    ],
+    "explanation": "'Lūdzu' means please and is also used to say 'you're welcome'.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "19844266-7f72-44b4-9e6a-f00d5095bfa5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'yes' in Latvian?",
+    "correctAnswer": "Jā",
+    "incorrectAnswers": [
+      "Nē",
+      "Varbūt",
+      "Lūdzu"
+    ],
+    "explanation": "'Jā' is yes (long vowel, like 'yaa'). 'Nē' is no.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "833c0c13-9fd3-4e12-a8ae-2528bbfde861",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in Latvian?",
+    "correctAnswer": "Ardievu",
+    "incorrectAnswers": [
+      "Sveiki",
+      "Paldies",
+      "Uz redzēšanos"
+    ],
+    "explanation": "'Ardievu' is formal goodbye. 'Uz redzēšanos' (until we see each other) is also common.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "47e7fc00-a6a0-4492-a218-2cb3068170c3",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in Latvian?",
+    "correctAnswer": "Mani sauc...",
+    "incorrectAnswers": [
+      "Es esmu...",
+      "Es dzīvoju...",
+      "Man ir..."
+    ],
+    "explanation": "'Mani sauc [name]' — literally 'they call me [name]' — is the standard self-introduction.",
+    "keywords": [
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "97889d19-d889-4e26-bd95-7c50ed3251b2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in Latvian?",
+    "correctAnswer": "Atvainojiet",
+    "incorrectAnswers": [
+      "Paldies",
+      "Lūdzu",
+      "Sveiki"
+    ],
+    "explanation": "'Atvainojiet' is the polite form for 'excuse me' or 'sorry' (formal). Informally: 'atvainies'.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "e6ad4cc5-1ec1-4657-99ac-d1863cd22835",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in Latvian?",
+    "correctAnswer": "viens, divi, trīs",
+    "incorrectAnswers": [
+      "un, divi, tre",
+      "ein, zwei, drei",
+      "un, deux, trois"
+    ],
+    "explanation": "Latvian numbers 1-3: viens (1), divi (2), trīs (3). Note the long vowel in trīs.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/numbers/latvian.htm"
+  },
+  {
+    "itemId": "692f2583-1eb3-4b07-b3e8-1d0631657b4f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in Latvian?",
+    "correctAnswer": "ūdens",
+    "incorrectAnswers": [
+      "maize",
+      "piens",
+      "sula"
+    ],
+    "explanation": "'Ūdens' is water. 'Maize' is bread, 'piens' is milk — essential food/drink words.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "e00c234b-35a6-41c3-af07-8d628084f263",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'good morning' in Latvian?",
+    "correctAnswer": "Labrīt",
+    "incorrectAnswers": [
+      "Labvakar",
+      "Labnakti",
+      "Labdien"
+    ],
+    "explanation": "'Labrīt' = good morning, 'Labdien' = good day/afternoon, 'Labvakar' = good evening, 'Labnakti' = good night.",
+    "keywords": [
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  }
+]
