@@ -9,7 +9,7 @@
     "incorrectAnswers": [
       "Au revoir",
       "Merci",
-      "S'il vous plaît"
+      "S'il vous pla\u00eet"
     ],
     "explanation": "'Bonjour' (good day) is the standard greeting. 'Salut' is informal. 'Bonsoir' is for evenings.",
     "keywords": [
@@ -27,7 +27,7 @@
     "question": "How do you say 'thank you' in French?",
     "correctAnswer": "Merci",
     "incorrectAnswers": [
-      "S'il vous plaît",
+      "S'il vous pla\u00eet",
       "Pardon",
       "De rien"
     ],
@@ -45,13 +45,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in French?",
-    "correctAnswer": "S'il vous plaît (formal) / S'il te plaît (informal)",
+    "correctAnswer": "S'il vous pla\u00eet (formal) / S'il te pla\u00eet (informal)",
     "incorrectAnswers": [
       "Merci",
       "Pardon",
       "Avec plaisir"
     ],
-    "explanation": "'S'il vous plaît' (formal) and 's'il te plaît' (informal) both mean please. Often abbreviated to 'SVP'.",
+    "explanation": "'S'il vous pla\u00eet' (formal) and 's'il te pla\u00eet' (informal) both mean please. Often abbreviated to 'SVP'.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -66,11 +66,11 @@
     "question": "How do you say 'my name is' in French?",
     "correctAnswer": "Je m'appelle...",
     "incorrectAnswers": [
-      "J'habite à...",
+      "J'habite \u00e0...",
       "Je suis de...",
       "J'aime..."
     ],
-    "explanation": "'Je m'appelle [name]' — 'I call myself [name]' — the standard introduction.",
+    "explanation": "'Je m'appelle [name]' \u2014 'I call myself [name]' \u2014 the standard introduction.",
     "keywords": [
       "freq-100",
       "situation-intro",
@@ -107,9 +107,9 @@
     "incorrectAnswers": [
       "Bonjour",
       "Bonsoir",
-      "À tout à l'heure"
+      "\u00c0 tout \u00e0 l'heure"
     ],
-    "explanation": "'Au revoir' = goodbye (until we see again). 'À bientôt' = see you soon, 'à demain' = see you tomorrow.",
+    "explanation": "'Au revoir' = goodbye (until we see again). '\u00c0 bient\u00f4t' = see you soon, '\u00e0 demain' = see you tomorrow.",
     "keywords": [
       "freq-100",
       "situation-greetings",
@@ -126,10 +126,10 @@
     "correctAnswer": "Excusez-moi / Pardon",
     "incorrectAnswers": [
       "Merci",
-      "S'il vous plaît",
+      "S'il vous pla\u00eet",
       "De rien"
     ],
-    "explanation": "'Excusez-moi' = excuse me (to get attention). 'Pardon' = sorry/excuse me. 'Je suis désolé(e)' = I'm sorry.",
+    "explanation": "'Excusez-moi' = excuse me (to get attention). 'Pardon' = sorry/excuse me. 'Je suis d\u00e9sol\u00e9(e)' = I'm sorry.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -145,7 +145,7 @@
     "correctAnswer": "Oui / Non",
     "incorrectAnswers": [
       "Si / Non",
-      "Sì / No",
+      "S\u00ec / No",
       "Ja / Nein"
     ],
     "explanation": "'Oui' = yes, 'Non' = no. Note: 'si' is used to contradict a negative statement (the 'yes, I do!' response).",
@@ -173,5 +173,6032 @@
       "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/eau"
+  },
+  {
+    "itemId": "fd4e52f2-0b53-4365-a821-1aa3c88ee597",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'four'?",
+    "correctAnswer": "quatre",
+    "incorrectAnswers": [
+      "cinq",
+      "six",
+      "sept"
+    ],
+    "explanation": "'quatre' is the word for 'four'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quatre"
+  },
+  {
+    "itemId": "6dcfbe8a-e963-48ad-b9b4-69143666d8a5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'five' in everyday use?",
+    "correctAnswer": "cinq",
+    "incorrectAnswers": [
+      "six",
+      "sept",
+      "huit"
+    ],
+    "explanation": "'cinq' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/cinq"
+  },
+  {
+    "itemId": "defe21a0-46f8-4df2-b99c-b62fba1b1488",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'six'.",
+    "correctAnswer": "six",
+    "incorrectAnswers": [
+      "sept",
+      "huit",
+      "neuf"
+    ],
+    "explanation": "'six' is the word for 'six'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/six"
+  },
+  {
+    "itemId": "bf380f11-80ff-41c9-acda-738b8e68436e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'seven'?",
+    "correctAnswer": "sept",
+    "incorrectAnswers": [
+      "huit",
+      "neuf",
+      "dix"
+    ],
+    "explanation": "'sept' is the word for 'seven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/sept"
+  },
+  {
+    "itemId": "e321208f-5d9f-4430-98b6-b2e3882fc029",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'eight'?",
+    "correctAnswer": "huit",
+    "incorrectAnswers": [
+      "neuf",
+      "dix",
+      "onze"
+    ],
+    "explanation": "'huit' is the word for 'eight'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/huit"
+  },
+  {
+    "itemId": "e02d3d3b-c7d6-4566-a522-6a7843c6c8e3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'nine' in everyday use?",
+    "correctAnswer": "neuf",
+    "incorrectAnswers": [
+      "dix",
+      "onze",
+      "douze"
+    ],
+    "explanation": "'neuf' is the word for 'nine'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/neuf"
+  },
+  {
+    "itemId": "db90122b-12bd-4e87-bfab-e50d7e4abbe7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'ten'.",
+    "correctAnswer": "dix",
+    "incorrectAnswers": [
+      "onze",
+      "douze",
+      "treize"
+    ],
+    "explanation": "'dix' is the word for 'ten'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/dix"
+  },
+  {
+    "itemId": "cff81fad-904e-45cb-a4c5-4bd689de7adf",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'eleven'?",
+    "correctAnswer": "onze",
+    "incorrectAnswers": [
+      "douze",
+      "treize",
+      "quatorze"
+    ],
+    "explanation": "'onze' is the word for 'eleven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/onze"
+  },
+  {
+    "itemId": "5b91a7ef-fa48-49ef-8c6a-e443b2a88061",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'twelve'?",
+    "correctAnswer": "douze",
+    "incorrectAnswers": [
+      "treize",
+      "quatorze",
+      "quinze"
+    ],
+    "explanation": "'douze' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/douze"
+  },
+  {
+    "itemId": "d30ca7cd-75bd-42d7-bbb8-33769de8e09b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'thirteen' in everyday use?",
+    "correctAnswer": "treize",
+    "incorrectAnswers": [
+      "quatorze",
+      "quinze",
+      "seize"
+    ],
+    "explanation": "'treize' is the word for 'thirteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/treize"
+  },
+  {
+    "itemId": "43aae63c-55a3-4c59-954d-acca0e6d49ef",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'fourteen'.",
+    "correctAnswer": "quatorze",
+    "incorrectAnswers": [
+      "quinze",
+      "seize",
+      "dix-sept"
+    ],
+    "explanation": "'quatorze' is the word for 'fourteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quatorze"
+  },
+  {
+    "itemId": "227f0573-f734-4fc9-9d75-0e826a925c73",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'fifteen'?",
+    "correctAnswer": "quinze",
+    "incorrectAnswers": [
+      "seize",
+      "dix-sept",
+      "dix-huit"
+    ],
+    "explanation": "'quinze' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quinze"
+  },
+  {
+    "itemId": "056c8208-6ee8-4576-8e17-1d618663bb19",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'sixteen'?",
+    "correctAnswer": "seize",
+    "incorrectAnswers": [
+      "dix-sept",
+      "dix-huit",
+      "dix-neuf"
+    ],
+    "explanation": "'seize' is the word for 'sixteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/seize"
+  },
+  {
+    "itemId": "128bfd3f-0fc5-408b-8120-dc9d3d7ef7fd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'seventeen' in everyday use?",
+    "correctAnswer": "dix-sept",
+    "incorrectAnswers": [
+      "dix-huit",
+      "dix-neuf",
+      "vingt"
+    ],
+    "explanation": "'dix-sept' is the word for 'seventeen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/dix-sept"
+  },
+  {
+    "itemId": "b2e53b49-bd81-4b83-bd49-3e35fa1fce32",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'eighteen'.",
+    "correctAnswer": "dix-huit",
+    "incorrectAnswers": [
+      "dix-neuf",
+      "vingt",
+      "trente"
+    ],
+    "explanation": "'dix-huit' is the word for 'eighteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/dix-huit"
+  },
+  {
+    "itemId": "fb0225d8-3ac7-4530-aab8-d2a4156e022a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'nineteen'?",
+    "correctAnswer": "dix-neuf",
+    "incorrectAnswers": [
+      "vingt",
+      "trente",
+      "quarante"
+    ],
+    "explanation": "'dix-neuf' is the word for 'nineteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/dix-neuf"
+  },
+  {
+    "itemId": "16de09b1-a3b4-4183-b67e-3221e434172c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'twenty'?",
+    "correctAnswer": "vingt",
+    "incorrectAnswers": [
+      "trente",
+      "quarante",
+      "cinquante"
+    ],
+    "explanation": "'vingt' is the word for 'twenty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/vingt"
+  },
+  {
+    "itemId": "8cb000ce-cdf4-43fe-9f6d-9cebb3168689",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'thirty' in everyday use?",
+    "correctAnswer": "trente",
+    "incorrectAnswers": [
+      "quarante",
+      "cinquante",
+      "soixante"
+    ],
+    "explanation": "'trente' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/trente"
+  },
+  {
+    "itemId": "b062e52d-ea0b-418a-acd5-9b957c68fe45",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'forty'.",
+    "correctAnswer": "quarante",
+    "incorrectAnswers": [
+      "cinquante",
+      "soixante",
+      "soixante-dix"
+    ],
+    "explanation": "'quarante' is the word for 'forty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quarante"
+  },
+  {
+    "itemId": "5a342695-0375-4b9b-95c3-c6d5841a1175",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'fifty'?",
+    "correctAnswer": "cinquante",
+    "incorrectAnswers": [
+      "soixante",
+      "soixante-dix",
+      "quatre-vingts"
+    ],
+    "explanation": "'cinquante' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/cinquante"
+  },
+  {
+    "itemId": "ed10f3cb-c156-4991-bdbb-acd9933ec02a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'sixty'?",
+    "correctAnswer": "soixante",
+    "incorrectAnswers": [
+      "soixante-dix",
+      "quatre-vingts",
+      "quatre-vingt-dix"
+    ],
+    "explanation": "'soixante' is the word for 'sixty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/soixante"
+  },
+  {
+    "itemId": "2d0c5ccd-5a6f-440b-af85-67b9db6aec3d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'seventy' in everyday use?",
+    "correctAnswer": "soixante-dix",
+    "incorrectAnswers": [
+      "quatre-vingts",
+      "quatre-vingt-dix",
+      "cent"
+    ],
+    "explanation": "'soixante-dix' is the word for 'seventy'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/soixante-dix"
+  },
+  {
+    "itemId": "890f82f8-c255-41bf-a71b-d617b3356057",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'eighty'.",
+    "correctAnswer": "quatre-vingts",
+    "incorrectAnswers": [
+      "quatre-vingt-dix",
+      "cent",
+      "quatre"
+    ],
+    "explanation": "'quatre-vingts' is the word for 'eighty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quatre-vingts"
+  },
+  {
+    "itemId": "fad994a4-5409-49f3-84c5-5336f3be323a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'ninety'?",
+    "correctAnswer": "quatre-vingt-dix",
+    "incorrectAnswers": [
+      "cent",
+      "quatre",
+      "cinq"
+    ],
+    "explanation": "'quatre-vingt-dix' is the word for 'ninety'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quatre-vingt-dix"
+  },
+  {
+    "itemId": "e514ab70-3a94-4a24-a27a-954c171d341c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'one hundred'?",
+    "correctAnswer": "cent",
+    "incorrectAnswers": [
+      "quatre",
+      "cinq",
+      "six"
+    ],
+    "explanation": "'cent' is the word for 'one hundred'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/cent"
+  },
+  {
+    "itemId": "58d3cf6b-5f74-4951-a8cd-32dedfd9da02",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'first'?",
+    "correctAnswer": "premier",
+    "incorrectAnswers": [
+      "deuxi\u00e8me",
+      "troisi\u00e8me",
+      "moiti\u00e9"
+    ],
+    "explanation": "'premier' is the word for 'first'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/premier"
+  },
+  {
+    "itemId": "d52b4fcd-2df5-4fa7-895c-34d15cc3be71",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'second' in everyday use?",
+    "correctAnswer": "deuxi\u00e8me",
+    "incorrectAnswers": [
+      "troisi\u00e8me",
+      "moiti\u00e9",
+      "quart"
+    ],
+    "explanation": "'deuxi\u00e8me' is the word for 'second'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/deuxi%C3%A8me"
+  },
+  {
+    "itemId": "1b71ccba-0ce7-4c8e-8919-f0753aa76df7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'third'.",
+    "correctAnswer": "troisi\u00e8me",
+    "incorrectAnswers": [
+      "moiti\u00e9",
+      "quart",
+      "premier"
+    ],
+    "explanation": "'troisi\u00e8me' is the word for 'third'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/troisi%C3%A8me"
+  },
+  {
+    "itemId": "98fa48a7-e36c-4ff3-9761-fd4892f8cae0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'a half'?",
+    "correctAnswer": "moiti\u00e9",
+    "incorrectAnswers": [
+      "quart",
+      "premier",
+      "deuxi\u00e8me"
+    ],
+    "explanation": "'moiti\u00e9' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/moiti%C3%A9"
+  },
+  {
+    "itemId": "7a9a70ea-e713-4b14-921f-47de8e158c72",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'a quarter'?",
+    "correctAnswer": "quart",
+    "incorrectAnswers": [
+      "premier",
+      "deuxi\u00e8me",
+      "troisi\u00e8me"
+    ],
+    "explanation": "'quart' is the word for 'a quarter'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/quart"
+  },
+  {
+    "itemId": "31626e36-d521-471a-bc62-eb9c164504b6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'Monday'?",
+    "correctAnswer": "lundi",
+    "incorrectAnswers": [
+      "mardi",
+      "mercredi",
+      "jeudi"
+    ],
+    "explanation": "'lundi' means 'Monday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/lundi"
+  },
+  {
+    "itemId": "7ed89531-a7f0-4330-8d5f-842bebb6618f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'Tuesday' in everyday use?",
+    "correctAnswer": "mardi",
+    "incorrectAnswers": [
+      "mercredi",
+      "jeudi",
+      "vendredi"
+    ],
+    "explanation": "'mardi' means 'Tuesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/mardi"
+  },
+  {
+    "itemId": "945225ee-6522-4ea2-b90a-1db25b440012",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'Wednesday'.",
+    "correctAnswer": "mercredi",
+    "incorrectAnswers": [
+      "jeudi",
+      "vendredi",
+      "samedi"
+    ],
+    "explanation": "'mercredi' means 'Wednesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/mercredi"
+  },
+  {
+    "itemId": "fcc8c312-22e5-4a09-badb-0573240a8ad1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'Thursday'?",
+    "correctAnswer": "jeudi",
+    "incorrectAnswers": [
+      "vendredi",
+      "samedi",
+      "dimanche"
+    ],
+    "explanation": "'jeudi' means 'Thursday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/jeudi"
+  },
+  {
+    "itemId": "1aa4f7c4-1b08-4649-b980-b79eff2b0348",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'Friday'?",
+    "correctAnswer": "vendredi",
+    "incorrectAnswers": [
+      "samedi",
+      "dimanche",
+      "lundi"
+    ],
+    "explanation": "'vendredi' means 'Friday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/vendredi"
+  },
+  {
+    "itemId": "a797c9cb-07a4-4929-9592-e5b022625469",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'Saturday' in everyday use?",
+    "correctAnswer": "samedi",
+    "incorrectAnswers": [
+      "dimanche",
+      "lundi",
+      "mardi"
+    ],
+    "explanation": "'samedi' means 'Saturday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/samedi"
+  },
+  {
+    "itemId": "ff476bd3-7e73-43b2-bd8c-2162c6fc4a40",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'Sunday'.",
+    "correctAnswer": "dimanche",
+    "incorrectAnswers": [
+      "lundi",
+      "mardi",
+      "mercredi"
+    ],
+    "explanation": "'dimanche' means 'Sunday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/dimanche"
+  },
+  {
+    "itemId": "d52fb604-74f4-4515-8d4c-fde22e13fced",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'January'?",
+    "correctAnswer": "janvier",
+    "incorrectAnswers": [
+      "f\u00e9vrier",
+      "mars",
+      "avril"
+    ],
+    "explanation": "'janvier' means 'January'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/janvier"
+  },
+  {
+    "itemId": "28cca3b1-96d8-40b9-bacc-25b325fdd695",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'February' in everyday use?",
+    "correctAnswer": "f\u00e9vrier",
+    "incorrectAnswers": [
+      "mars",
+      "avril",
+      "mai"
+    ],
+    "explanation": "'f\u00e9vrier' means 'February'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/f%C3%A9vrier"
+  },
+  {
+    "itemId": "5830f608-61c5-44dd-b9ed-630bf247e2d3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'March'.",
+    "correctAnswer": "mars",
+    "incorrectAnswers": [
+      "avril",
+      "mai",
+      "juin"
+    ],
+    "explanation": "'mars' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/mars"
+  },
+  {
+    "itemId": "76d57dd0-d809-4f8c-b60f-b6e305d4e3f3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'April'?",
+    "correctAnswer": "avril",
+    "incorrectAnswers": [
+      "mai",
+      "juin",
+      "juillet"
+    ],
+    "explanation": "'avril' means 'April'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/avril"
+  },
+  {
+    "itemId": "4890885f-ba64-4eb9-82ad-bd6ae17d5e20",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'May'?",
+    "correctAnswer": "mai",
+    "incorrectAnswers": [
+      "juin",
+      "juillet",
+      "ao\u00fbt"
+    ],
+    "explanation": "'mai' means 'May'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/mai"
+  },
+  {
+    "itemId": "b57927ba-0be7-4f1c-b87e-d5a801505a92",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'June' in everyday use?",
+    "correctAnswer": "juin",
+    "incorrectAnswers": [
+      "juillet",
+      "ao\u00fbt",
+      "septembre"
+    ],
+    "explanation": "'juin' means 'June'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/juin"
+  },
+  {
+    "itemId": "c4c29f44-08a0-406c-8643-bcb697c99ed7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'July'.",
+    "correctAnswer": "juillet",
+    "incorrectAnswers": [
+      "ao\u00fbt",
+      "septembre",
+      "octobre"
+    ],
+    "explanation": "'juillet' means 'July'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/juillet"
+  },
+  {
+    "itemId": "fefd9982-cd22-425c-a71d-7f169e16441b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'August'?",
+    "correctAnswer": "ao\u00fbt",
+    "incorrectAnswers": [
+      "septembre",
+      "octobre",
+      "novembre"
+    ],
+    "explanation": "'ao\u00fbt' means 'August'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/ao%C3%BBt"
+  },
+  {
+    "itemId": "e43ed6f5-08a6-4c9f-bc51-517d96f1efd6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'September'?",
+    "correctAnswer": "septembre",
+    "incorrectAnswers": [
+      "octobre",
+      "novembre",
+      "d\u00e9cembre"
+    ],
+    "explanation": "'septembre' means 'September'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/septembre"
+  },
+  {
+    "itemId": "9b111849-4153-406d-8801-a50cca62215e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'October' in everyday use?",
+    "correctAnswer": "octobre",
+    "incorrectAnswers": [
+      "novembre",
+      "d\u00e9cembre",
+      "janvier"
+    ],
+    "explanation": "'octobre' means 'October'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/octobre"
+  },
+  {
+    "itemId": "c2dc27ff-905d-4b72-992e-e106d0277f9a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'November'.",
+    "correctAnswer": "novembre",
+    "incorrectAnswers": [
+      "d\u00e9cembre",
+      "janvier",
+      "f\u00e9vrier"
+    ],
+    "explanation": "'novembre' means 'November'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/novembre"
+  },
+  {
+    "itemId": "ac0d5d94-6539-4aff-883d-c6515f4861b2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'December'?",
+    "correctAnswer": "d\u00e9cembre",
+    "incorrectAnswers": [
+      "janvier",
+      "f\u00e9vrier",
+      "mars"
+    ],
+    "explanation": "'d\u00e9cembre' means 'December'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/d%C3%A9cembre"
+  },
+  {
+    "itemId": "0299867b-3853-4bc7-98a6-9a5cdee393bd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'spring'?",
+    "correctAnswer": "printemps",
+    "incorrectAnswers": [
+      "\u00e9t\u00e9",
+      "automne",
+      "hiver"
+    ],
+    "explanation": "'printemps' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/printemps"
+  },
+  {
+    "itemId": "b1d10025-5e12-463a-b0c5-0e32a58f6e2c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'summer' in everyday use?",
+    "correctAnswer": "\u00e9t\u00e9",
+    "incorrectAnswers": [
+      "automne",
+      "hiver",
+      "printemps"
+    ],
+    "explanation": "'\u00e9t\u00e9' means 'summer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A9t%C3%A9"
+  },
+  {
+    "itemId": "00d2f84c-fe6b-4169-928b-51c1d14397fa",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'autumn'.",
+    "correctAnswer": "automne",
+    "incorrectAnswers": [
+      "hiver",
+      "printemps",
+      "\u00e9t\u00e9"
+    ],
+    "explanation": "'automne' means 'autumn'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/automne"
+  },
+  {
+    "itemId": "2ff38adb-1f07-4af6-a6fb-f13c93c2dc5e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'winter'?",
+    "correctAnswer": "hiver",
+    "incorrectAnswers": [
+      "printemps",
+      "\u00e9t\u00e9",
+      "automne"
+    ],
+    "explanation": "'hiver' means 'winter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/hiver"
+  },
+  {
+    "itemId": "0d564174-e495-4b5a-a595-1c5cef4a1afb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'morning'?",
+    "correctAnswer": "matin",
+    "incorrectAnswers": [
+      "apr\u00e8s-midi",
+      "soir",
+      "heure"
+    ],
+    "explanation": "'matin' means 'morning'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/matin"
+  },
+  {
+    "itemId": "56f8608d-92b9-4b63-b3e4-bd08bf0f45b4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'afternoon' in everyday use?",
+    "correctAnswer": "apr\u00e8s-midi",
+    "incorrectAnswers": [
+      "soir",
+      "heure",
+      "minute"
+    ],
+    "explanation": "'apr\u00e8s-midi' means 'afternoon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/apr%C3%A8s-midi"
+  },
+  {
+    "itemId": "e9cb0d64-5bf3-48e4-b158-3b6befa8fdfd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'evening'.",
+    "correctAnswer": "soir",
+    "incorrectAnswers": [
+      "heure",
+      "minute",
+      "semaine"
+    ],
+    "explanation": "'soir' means 'evening'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/soir"
+  },
+  {
+    "itemId": "799c8075-b9e2-4194-b93f-4dfa032d92ef",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'hour'?",
+    "correctAnswer": "heure",
+    "incorrectAnswers": [
+      "minute",
+      "semaine",
+      "mois"
+    ],
+    "explanation": "'heure' means 'hour'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/heure"
+  },
+  {
+    "itemId": "7e2f8eef-1368-4dc7-b0fb-0f72cea37156",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'minute'?",
+    "correctAnswer": "minute",
+    "incorrectAnswers": [
+      "semaine",
+      "mois",
+      "ann\u00e9e"
+    ],
+    "explanation": "'minute' means 'minute'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/minute"
+  },
+  {
+    "itemId": "0a3a7184-cc08-43df-886a-a1f3246cbc19",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'week' in everyday use?",
+    "correctAnswer": "semaine",
+    "incorrectAnswers": [
+      "mois",
+      "ann\u00e9e",
+      "matin"
+    ],
+    "explanation": "'semaine' means 'week'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/semaine"
+  },
+  {
+    "itemId": "cce706c8-1fb4-4334-b2b4-fed87871230a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'month'.",
+    "correctAnswer": "mois",
+    "incorrectAnswers": [
+      "ann\u00e9e",
+      "matin",
+      "apr\u00e8s-midi"
+    ],
+    "explanation": "'mois' means 'month'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/mois"
+  },
+  {
+    "itemId": "b832c289-33fa-47c0-a254-ae32309204f5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'year'?",
+    "correctAnswer": "ann\u00e9e",
+    "incorrectAnswers": [
+      "matin",
+      "apr\u00e8s-midi",
+      "soir"
+    ],
+    "explanation": "'ann\u00e9e' means 'year'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/ann%C3%A9e"
+  },
+  {
+    "itemId": "8645e930-adcb-4c0a-8234-6e6e41639f54",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'today'?",
+    "correctAnswer": "aujourd'hui",
+    "incorrectAnswers": [
+      "demain",
+      "hier",
+      "maintenant"
+    ],
+    "explanation": "'aujourd'hui' is the word for 'today'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/aujourd%27hui"
+  },
+  {
+    "itemId": "b6037067-cfa9-4a42-a390-5f9dfb14922d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'tomorrow' in everyday use?",
+    "correctAnswer": "demain",
+    "incorrectAnswers": [
+      "hier",
+      "maintenant",
+      "plus tard"
+    ],
+    "explanation": "'demain' is the word for 'tomorrow'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/demain"
+  },
+  {
+    "itemId": "7b6efc6b-3cfc-48dc-bb05-964c83d113df",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'yesterday'.",
+    "correctAnswer": "hier",
+    "incorrectAnswers": [
+      "maintenant",
+      "plus tard",
+      "avant"
+    ],
+    "explanation": "'hier' is the word for 'yesterday'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/hier"
+  },
+  {
+    "itemId": "54eb8465-b2eb-4e22-a75e-655d8fda4140",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'now'?",
+    "correctAnswer": "maintenant",
+    "incorrectAnswers": [
+      "plus tard",
+      "avant",
+      "aujourd'hui"
+    ],
+    "explanation": "'maintenant' is the word for 'now'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/maintenant"
+  },
+  {
+    "itemId": "fc0ece50-6280-4608-9bfb-b5bb1e0d8897",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'later'?",
+    "correctAnswer": "plus tard",
+    "incorrectAnswers": [
+      "avant",
+      "aujourd'hui",
+      "demain"
+    ],
+    "explanation": "'plus tard' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/plus%20tard"
+  },
+  {
+    "itemId": "9d707de9-72ae-4f9f-b1b7-42ba366f66ca",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'before' in everyday use?",
+    "correctAnswer": "avant",
+    "incorrectAnswers": [
+      "aujourd'hui",
+      "demain",
+      "hier"
+    ],
+    "explanation": "'avant' is the word for 'before'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/avant"
+  },
+  {
+    "itemId": "181d983c-21e9-4812-b219-af3c83408877",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'red'?",
+    "correctAnswer": "rouge",
+    "incorrectAnswers": [
+      "bleu",
+      "vert",
+      "jaune"
+    ],
+    "explanation": "'rouge' means 'red'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/rouge"
+  },
+  {
+    "itemId": "301ab677-fdb9-4411-a855-92dc3d8341f2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'blue' in everyday use?",
+    "correctAnswer": "bleu",
+    "incorrectAnswers": [
+      "vert",
+      "jaune",
+      "noir"
+    ],
+    "explanation": "'bleu' means 'blue'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/bleu"
+  },
+  {
+    "itemId": "4488cfb4-d88d-4e1c-990f-deb7837b22cb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'green'.",
+    "correctAnswer": "vert",
+    "incorrectAnswers": [
+      "jaune",
+      "noir",
+      "blanc"
+    ],
+    "explanation": "'vert' means 'green'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/vert"
+  },
+  {
+    "itemId": "d21a57b3-aa73-472f-b209-bc9c04fc2e1a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'yellow'?",
+    "correctAnswer": "jaune",
+    "incorrectAnswers": [
+      "noir",
+      "blanc",
+      "gris"
+    ],
+    "explanation": "'jaune' means 'yellow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/jaune"
+  },
+  {
+    "itemId": "52d9ef19-65c2-449f-9e55-c872ff8cbb5e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'black'?",
+    "correctAnswer": "noir",
+    "incorrectAnswers": [
+      "blanc",
+      "gris",
+      "brun"
+    ],
+    "explanation": "'noir' means 'black'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/noir"
+  },
+  {
+    "itemId": "2103eb2b-13a5-4af0-9ca0-b96759cd1339",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'white' in everyday use?",
+    "correctAnswer": "blanc",
+    "incorrectAnswers": [
+      "gris",
+      "brun",
+      "orange"
+    ],
+    "explanation": "'blanc' means 'white'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/blanc"
+  },
+  {
+    "itemId": "e23170a2-1c23-4eaf-8676-883f8ccf14ef",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'gray'.",
+    "correctAnswer": "gris",
+    "incorrectAnswers": [
+      "brun",
+      "orange",
+      "rose"
+    ],
+    "explanation": "'gris' means 'gray'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/gris"
+  },
+  {
+    "itemId": "02a48cdc-3f35-47b0-9226-ab7ba69c3a43",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'brown'?",
+    "correctAnswer": "brun",
+    "incorrectAnswers": [
+      "orange",
+      "rose",
+      "violet"
+    ],
+    "explanation": "'brun' means 'brown'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/brun"
+  },
+  {
+    "itemId": "575a1e00-c763-4380-a3e8-061a64c609c5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'orange'?",
+    "correctAnswer": "orange",
+    "incorrectAnswers": [
+      "rose",
+      "violet",
+      "clair"
+    ],
+    "explanation": "'orange' means 'orange'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/orange"
+  },
+  {
+    "itemId": "cc4167d8-f8e0-41eb-b171-5e92353592a7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'pink' in everyday use?",
+    "correctAnswer": "rose",
+    "incorrectAnswers": [
+      "violet",
+      "clair",
+      "fonc\u00e9"
+    ],
+    "explanation": "'rose' means 'pink'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/rose"
+  },
+  {
+    "itemId": "a341a010-8135-4d7b-93a0-f6e6661a1865",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'purple'.",
+    "correctAnswer": "violet",
+    "incorrectAnswers": [
+      "clair",
+      "fonc\u00e9",
+      "rouge"
+    ],
+    "explanation": "'violet' means 'purple'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/violet"
+  },
+  {
+    "itemId": "9b19aecf-bd0b-42ae-ba66-b789eb127175",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'light'?",
+    "correctAnswer": "clair",
+    "incorrectAnswers": [
+      "fonc\u00e9",
+      "rouge",
+      "bleu"
+    ],
+    "explanation": "'clair' means 'light'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/clair"
+  },
+  {
+    "itemId": "b2b3c2bf-8223-4a9b-9b38-bbc7ad5d822e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'dark'?",
+    "correctAnswer": "fonc\u00e9",
+    "incorrectAnswers": [
+      "rouge",
+      "bleu",
+      "vert"
+    ],
+    "explanation": "'fonc\u00e9' means 'dark'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/fren/fonc%C3%A9"
+  },
+  {
+    "itemId": "dd2bec02-c64e-469a-84fa-6e6597783f01",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'mother'?",
+    "correctAnswer": "m\u00e8re",
+    "incorrectAnswers": [
+      "p\u00e8re",
+      "fr\u00e8re",
+      "s\u0153ur"
+    ],
+    "explanation": "'m\u00e8re' means 'mother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/m%C3%A8re"
+  },
+  {
+    "itemId": "eacdf55c-f574-4662-992a-517029b34d19",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'father' in everyday use?",
+    "correctAnswer": "p\u00e8re",
+    "incorrectAnswers": [
+      "fr\u00e8re",
+      "s\u0153ur",
+      "fils"
+    ],
+    "explanation": "'p\u00e8re' means 'father'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/p%C3%A8re"
+  },
+  {
+    "itemId": "8b5088a1-87eb-4d3b-a8fd-5ab8f2625d09",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'brother'.",
+    "correctAnswer": "fr\u00e8re",
+    "incorrectAnswers": [
+      "s\u0153ur",
+      "fils",
+      "fille"
+    ],
+    "explanation": "'fr\u00e8re' means 'brother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/fr%C3%A8re"
+  },
+  {
+    "itemId": "96ccb400-be69-4a0a-bdee-d11ed921aa1c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'sister'?",
+    "correctAnswer": "s\u0153ur",
+    "incorrectAnswers": [
+      "fils",
+      "fille",
+      "mari"
+    ],
+    "explanation": "'s\u0153ur' means 'sister'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/s%C5%93ur"
+  },
+  {
+    "itemId": "7ff1c3d8-4bbb-478d-a775-738e73fc3243",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'son'?",
+    "correctAnswer": "fils",
+    "incorrectAnswers": [
+      "fille",
+      "mari",
+      "femme"
+    ],
+    "explanation": "'fils' means 'son'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/fils"
+  },
+  {
+    "itemId": "c711e91a-9351-4b46-9071-c563e8657d4a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'daughter' in everyday use?",
+    "correctAnswer": "fille",
+    "incorrectAnswers": [
+      "mari",
+      "femme",
+      "ami"
+    ],
+    "explanation": "'fille' means 'daughter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/fille"
+  },
+  {
+    "itemId": "5125cc71-8eb0-499c-815c-78df744fee91",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'husband'.",
+    "correctAnswer": "mari",
+    "incorrectAnswers": [
+      "femme",
+      "ami",
+      "voisin"
+    ],
+    "explanation": "'mari' means 'husband'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/mari"
+  },
+  {
+    "itemId": "65afd2be-2583-44ab-844b-dc8832a6d299",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'wife'?",
+    "correctAnswer": "femme",
+    "incorrectAnswers": [
+      "ami",
+      "voisin",
+      "enfant"
+    ],
+    "explanation": "'femme' means 'wife'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/femme"
+  },
+  {
+    "itemId": "ca00d747-72d1-43eb-b614-dbc12e41fa95",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'friend'?",
+    "correctAnswer": "ami",
+    "incorrectAnswers": [
+      "voisin",
+      "enfant",
+      "b\u00e9b\u00e9"
+    ],
+    "explanation": "'ami' means 'friend'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/ami"
+  },
+  {
+    "itemId": "a3fe4ff5-0a8b-43f2-81fa-fb0ba8224f82",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'neighbor' in everyday use?",
+    "correctAnswer": "voisin",
+    "incorrectAnswers": [
+      "enfant",
+      "b\u00e9b\u00e9",
+      "homme"
+    ],
+    "explanation": "'voisin' means 'neighbor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/voisin"
+  },
+  {
+    "itemId": "c76f405f-c6e4-4c3f-a01b-cd69d80b479d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'child'.",
+    "correctAnswer": "enfant",
+    "incorrectAnswers": [
+      "b\u00e9b\u00e9",
+      "homme",
+      "femme"
+    ],
+    "explanation": "'enfant' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/enfant"
+  },
+  {
+    "itemId": "0252decd-1706-4ff5-a8ba-f3267056b4a3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'baby'?",
+    "correctAnswer": "b\u00e9b\u00e9",
+    "incorrectAnswers": [
+      "homme",
+      "femme",
+      "personne"
+    ],
+    "explanation": "'b\u00e9b\u00e9' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/b%C3%A9b%C3%A9"
+  },
+  {
+    "itemId": "68daa7c7-649d-4be5-91b3-c65c46ec8f44",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'man'?",
+    "correctAnswer": "homme",
+    "incorrectAnswers": [
+      "femme",
+      "personne",
+      "m\u00e8re"
+    ],
+    "explanation": "'homme' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/homme"
+  },
+  {
+    "itemId": "baf6b324-6023-48c1-a518-26c8198f33c3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'woman' in everyday use?",
+    "correctAnswer": "femme",
+    "incorrectAnswers": [
+      "personne",
+      "m\u00e8re",
+      "p\u00e8re"
+    ],
+    "explanation": "'femme' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/femme"
+  },
+  {
+    "itemId": "8b8410e3-1a4f-466c-a644-10fe054de9b5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'person'.",
+    "correctAnswer": "personne",
+    "incorrectAnswers": [
+      "m\u00e8re",
+      "p\u00e8re",
+      "fr\u00e8re"
+    ],
+    "explanation": "'personne' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/fren/personne"
+  },
+  {
+    "itemId": "fd96d5e0-a237-451b-9d67-b1e0131ff56c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'head'?",
+    "correctAnswer": "t\u00eate",
+    "incorrectAnswers": [
+      "main",
+      "pied",
+      "\u0153il"
+    ],
+    "explanation": "'t\u00eate' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/t%C3%AAte"
+  },
+  {
+    "itemId": "618feb95-3ee6-439a-8505-527dd7060758",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'hand' in everyday use?",
+    "correctAnswer": "main",
+    "incorrectAnswers": [
+      "pied",
+      "\u0153il",
+      "oreille"
+    ],
+    "explanation": "'main' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/main"
+  },
+  {
+    "itemId": "d7dcb397-8039-46a4-8bb0-efc07bf8593b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'foot'.",
+    "correctAnswer": "pied",
+    "incorrectAnswers": [
+      "\u0153il",
+      "oreille",
+      "nez"
+    ],
+    "explanation": "'pied' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/pied"
+  },
+  {
+    "itemId": "72390eb1-13fe-49e1-9e11-58970362a904",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'eye'?",
+    "correctAnswer": "\u0153il",
+    "incorrectAnswers": [
+      "oreille",
+      "nez",
+      "bouche"
+    ],
+    "explanation": "'\u0153il' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/%C5%93il"
+  },
+  {
+    "itemId": "569cfd97-e747-47f0-b7ee-48f62c9e0181",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'ear'?",
+    "correctAnswer": "oreille",
+    "incorrectAnswers": [
+      "nez",
+      "bouche",
+      "c\u0153ur"
+    ],
+    "explanation": "'oreille' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/oreille"
+  },
+  {
+    "itemId": "b8d7bae1-63a9-4669-8787-50dfeb66add1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'nose' in everyday use?",
+    "correctAnswer": "nez",
+    "incorrectAnswers": [
+      "bouche",
+      "c\u0153ur",
+      "estomac"
+    ],
+    "explanation": "'nez' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/nez"
+  },
+  {
+    "itemId": "13149dea-1cde-4f4f-987b-d77f288c1b99",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'mouth'.",
+    "correctAnswer": "bouche",
+    "incorrectAnswers": [
+      "c\u0153ur",
+      "estomac",
+      "bras"
+    ],
+    "explanation": "'bouche' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/bouche"
+  },
+  {
+    "itemId": "62798ee7-5345-4481-af19-529f3e6e8d37",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'heart'?",
+    "correctAnswer": "c\u0153ur",
+    "incorrectAnswers": [
+      "estomac",
+      "bras",
+      "jambe"
+    ],
+    "explanation": "'c\u0153ur' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/c%C5%93ur"
+  },
+  {
+    "itemId": "0ac6a7fd-1d63-47ca-856a-8d57101a7aea",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'stomach'?",
+    "correctAnswer": "estomac",
+    "incorrectAnswers": [
+      "bras",
+      "jambe",
+      "doigt"
+    ],
+    "explanation": "'estomac' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/estomac"
+  },
+  {
+    "itemId": "3625ddfa-a777-468a-8e17-d829f3426a15",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'arm' in everyday use?",
+    "correctAnswer": "bras",
+    "incorrectAnswers": [
+      "jambe",
+      "doigt",
+      "dos"
+    ],
+    "explanation": "'bras' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/bras"
+  },
+  {
+    "itemId": "8c1a970f-cbc8-4871-bfcf-a991dbed87b6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'leg'.",
+    "correctAnswer": "jambe",
+    "incorrectAnswers": [
+      "doigt",
+      "dos",
+      "t\u00eate"
+    ],
+    "explanation": "'jambe' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/jambe"
+  },
+  {
+    "itemId": "983b0309-0e94-49a2-a8d9-961213eb9aff",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'finger'?",
+    "correctAnswer": "doigt",
+    "incorrectAnswers": [
+      "dos",
+      "t\u00eate",
+      "main"
+    ],
+    "explanation": "'doigt' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/doigt"
+  },
+  {
+    "itemId": "87a2e39a-bb2c-43a6-8c3e-cd0036679383",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'back'?",
+    "correctAnswer": "dos",
+    "incorrectAnswers": [
+      "t\u00eate",
+      "main",
+      "pied"
+    ],
+    "explanation": "'dos' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/fren/dos"
+  },
+  {
+    "itemId": "37c99f6c-b02d-4d20-8ee5-ac56dc76fa13",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'bread'?",
+    "correctAnswer": "pain",
+    "incorrectAnswers": [
+      "lait",
+      "\u0153uf",
+      "viande"
+    ],
+    "explanation": "'pain' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/pain"
+  },
+  {
+    "itemId": "aac30e25-6402-4aac-957d-98b385f08e45",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'milk' in everyday use?",
+    "correctAnswer": "lait",
+    "incorrectAnswers": [
+      "\u0153uf",
+      "viande",
+      "poisson"
+    ],
+    "explanation": "'lait' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/lait"
+  },
+  {
+    "itemId": "8ac827c2-f96f-4a58-8a8f-cf14bed014ea",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'egg'.",
+    "correctAnswer": "\u0153uf",
+    "incorrectAnswers": [
+      "viande",
+      "poisson",
+      "fruit"
+    ],
+    "explanation": "'\u0153uf' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/%C5%93uf"
+  },
+  {
+    "itemId": "b0376c14-7d7e-4793-ba4f-ef804e53775e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'meat'?",
+    "correctAnswer": "viande",
+    "incorrectAnswers": [
+      "poisson",
+      "fruit",
+      "l\u00e9gume"
+    ],
+    "explanation": "'viande' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/viande"
+  },
+  {
+    "itemId": "8ccbf978-0342-4109-8d00-0d9964b00217",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'fish'?",
+    "correctAnswer": "poisson",
+    "incorrectAnswers": [
+      "fruit",
+      "l\u00e9gume",
+      "riz"
+    ],
+    "explanation": "'poisson' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/poisson"
+  },
+  {
+    "itemId": "633bb612-5b79-4e25-b711-1b23854267f5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'fruit' in everyday use?",
+    "correctAnswer": "fruit",
+    "incorrectAnswers": [
+      "l\u00e9gume",
+      "riz",
+      "p\u00e2tes"
+    ],
+    "explanation": "'fruit' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/fruit"
+  },
+  {
+    "itemId": "a2cc0310-d5c8-456b-be9c-7c3b1804476b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'vegetable'.",
+    "correctAnswer": "l\u00e9gume",
+    "incorrectAnswers": [
+      "riz",
+      "p\u00e2tes",
+      "fromage"
+    ],
+    "explanation": "'l\u00e9gume' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/l%C3%A9gume"
+  },
+  {
+    "itemId": "06db3a7c-b18e-461e-85ea-07bf72217f9d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'rice'?",
+    "correctAnswer": "riz",
+    "incorrectAnswers": [
+      "p\u00e2tes",
+      "fromage",
+      "caf\u00e9"
+    ],
+    "explanation": "'riz' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/riz"
+  },
+  {
+    "itemId": "0a05877d-31da-4f8f-8598-ef96a950a161",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'pasta'?",
+    "correctAnswer": "p\u00e2tes",
+    "incorrectAnswers": [
+      "fromage",
+      "caf\u00e9",
+      "th\u00e9"
+    ],
+    "explanation": "'p\u00e2tes' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/p%C3%A2tes"
+  },
+  {
+    "itemId": "315bbaaa-1dd9-4789-a5bb-8a1ccb926596",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'cheese' in everyday use?",
+    "correctAnswer": "fromage",
+    "incorrectAnswers": [
+      "caf\u00e9",
+      "th\u00e9",
+      "jus"
+    ],
+    "explanation": "'fromage' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/fromage"
+  },
+  {
+    "itemId": "65de0009-d5e6-414b-9e52-da0edf74b4f4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'coffee'.",
+    "correctAnswer": "caf\u00e9",
+    "incorrectAnswers": [
+      "th\u00e9",
+      "jus",
+      "bi\u00e8re"
+    ],
+    "explanation": "'caf\u00e9' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/caf%C3%A9"
+  },
+  {
+    "itemId": "6806f9ea-f26a-4cd6-8fb3-c501f7f94582",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'tea'?",
+    "correctAnswer": "th\u00e9",
+    "incorrectAnswers": [
+      "jus",
+      "bi\u00e8re",
+      "vin"
+    ],
+    "explanation": "'th\u00e9' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/th%C3%A9"
+  },
+  {
+    "itemId": "5121ba20-69ef-4f38-bb22-752243bf9f19",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'juice'?",
+    "correctAnswer": "jus",
+    "incorrectAnswers": [
+      "bi\u00e8re",
+      "vin",
+      "huile"
+    ],
+    "explanation": "'jus' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/jus"
+  },
+  {
+    "itemId": "e3b0ef01-2ed6-413a-8ff2-78f7f33d6004",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'beer' in everyday use?",
+    "correctAnswer": "bi\u00e8re",
+    "incorrectAnswers": [
+      "vin",
+      "huile",
+      "sel"
+    ],
+    "explanation": "'bi\u00e8re' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/bi%C3%A8re"
+  },
+  {
+    "itemId": "dff1f25d-7a35-42f6-b49d-802dd16cbdab",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'wine'.",
+    "correctAnswer": "vin",
+    "incorrectAnswers": [
+      "huile",
+      "sel",
+      "sucre"
+    ],
+    "explanation": "'vin' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/vin"
+  },
+  {
+    "itemId": "0dadaa62-e652-49a4-bd2e-fa09919a8270",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'oil'?",
+    "correctAnswer": "huile",
+    "incorrectAnswers": [
+      "sel",
+      "sucre",
+      "pain"
+    ],
+    "explanation": "'huile' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/huile"
+  },
+  {
+    "itemId": "224696bc-1846-4c9d-91ce-fe5a56f4b32d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'salt'?",
+    "correctAnswer": "sel",
+    "incorrectAnswers": [
+      "sucre",
+      "pain",
+      "lait"
+    ],
+    "explanation": "'sel' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/sel"
+  },
+  {
+    "itemId": "7cb5ce99-b91d-47be-b78f-feff80a04019",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'sugar' in everyday use?",
+    "correctAnswer": "sucre",
+    "incorrectAnswers": [
+      "pain",
+      "lait",
+      "\u0153uf"
+    ],
+    "explanation": "'sucre' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/sucre"
+  },
+  {
+    "itemId": "b3e44635-fc2f-42a2-bdee-b89d7e630ec4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'dog'?",
+    "correctAnswer": "chien",
+    "incorrectAnswers": [
+      "chat",
+      "oiseau",
+      "cheval"
+    ],
+    "explanation": "'chien' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/chien"
+  },
+  {
+    "itemId": "d490d034-c86d-46b5-8287-7730c9d97f95",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'cat' in everyday use?",
+    "correctAnswer": "chat",
+    "incorrectAnswers": [
+      "oiseau",
+      "cheval",
+      "vache"
+    ],
+    "explanation": "'chat' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/chat"
+  },
+  {
+    "itemId": "12ecc1c8-ec43-44a6-ba1b-c5167bf4b8fd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'bird'.",
+    "correctAnswer": "oiseau",
+    "incorrectAnswers": [
+      "cheval",
+      "vache",
+      "cochon"
+    ],
+    "explanation": "'oiseau' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/oiseau"
+  },
+  {
+    "itemId": "65cb932a-d9d1-48e9-92dc-05da456c3806",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'horse'?",
+    "correctAnswer": "cheval",
+    "incorrectAnswers": [
+      "vache",
+      "cochon",
+      "poulet"
+    ],
+    "explanation": "'cheval' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/cheval"
+  },
+  {
+    "itemId": "1dde4b72-b4c6-4d4d-b76b-d17d30d126c9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'cow'?",
+    "correctAnswer": "vache",
+    "incorrectAnswers": [
+      "cochon",
+      "poulet",
+      "souris"
+    ],
+    "explanation": "'vache' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/vache"
+  },
+  {
+    "itemId": "3413eed9-d587-4dc2-89a7-a6fdc69db226",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'pig' in everyday use?",
+    "correctAnswer": "cochon",
+    "incorrectAnswers": [
+      "poulet",
+      "souris",
+      "lapin"
+    ],
+    "explanation": "'cochon' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/cochon"
+  },
+  {
+    "itemId": "4fe6a12f-001f-41a9-b93d-073bc1f1c92f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'chicken'.",
+    "correctAnswer": "poulet",
+    "incorrectAnswers": [
+      "souris",
+      "lapin",
+      "chien"
+    ],
+    "explanation": "'poulet' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/poulet"
+  },
+  {
+    "itemId": "c0bf0407-c398-4407-ac5b-c5818e33a5d9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'mouse'?",
+    "correctAnswer": "souris",
+    "incorrectAnswers": [
+      "lapin",
+      "chien",
+      "chat"
+    ],
+    "explanation": "'souris' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/souris"
+  },
+  {
+    "itemId": "0d5caf2f-ed07-40ca-a86a-385b611bf2fc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'rabbit'?",
+    "correctAnswer": "lapin",
+    "incorrectAnswers": [
+      "chien",
+      "chat",
+      "oiseau"
+    ],
+    "explanation": "'lapin' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/fren/lapin"
+  },
+  {
+    "itemId": "b408f5f6-f6af-4c5c-85af-647eae000e87",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'house'?",
+    "correctAnswer": "maison",
+    "incorrectAnswers": [
+      "chambre",
+      "porte",
+      "fen\u00eatre"
+    ],
+    "explanation": "'maison' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/maison"
+  },
+  {
+    "itemId": "9438db9c-2026-4b0d-aa3e-b1b5efd80dce",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'room' in everyday use?",
+    "correctAnswer": "chambre",
+    "incorrectAnswers": [
+      "porte",
+      "fen\u00eatre",
+      "lit"
+    ],
+    "explanation": "'chambre' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/chambre"
+  },
+  {
+    "itemId": "5127de2d-841a-4b67-b055-d6b71be819da",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'door'.",
+    "correctAnswer": "porte",
+    "incorrectAnswers": [
+      "fen\u00eatre",
+      "lit",
+      "table"
+    ],
+    "explanation": "'porte' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/porte"
+  },
+  {
+    "itemId": "acc76eac-80e3-4d4d-8006-e2defe95a5a9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'window'?",
+    "correctAnswer": "fen\u00eatre",
+    "incorrectAnswers": [
+      "lit",
+      "table",
+      "chaise"
+    ],
+    "explanation": "'fen\u00eatre' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/fen%C3%AAtre"
+  },
+  {
+    "itemId": "fa4f52d0-6ac3-4f56-a8ba-600efe63be5b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'bed'?",
+    "correctAnswer": "lit",
+    "incorrectAnswers": [
+      "table",
+      "chaise",
+      "cuisine"
+    ],
+    "explanation": "'lit' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/lit"
+  },
+  {
+    "itemId": "c5ec0ea8-d2e6-4265-bf8e-cd799afb5316",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'table' in everyday use?",
+    "correctAnswer": "table",
+    "incorrectAnswers": [
+      "chaise",
+      "cuisine",
+      "salle de bains"
+    ],
+    "explanation": "'table' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/table"
+  },
+  {
+    "itemId": "a3a62cfd-8038-4a5f-8482-1fccdf092356",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'chair'.",
+    "correctAnswer": "chaise",
+    "incorrectAnswers": [
+      "cuisine",
+      "salle de bains",
+      "jardin"
+    ],
+    "explanation": "'chaise' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/chaise"
+  },
+  {
+    "itemId": "58ccd595-24c4-42ac-9f4d-a66e984d7a5f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'kitchen'?",
+    "correctAnswer": "cuisine",
+    "incorrectAnswers": [
+      "salle de bains",
+      "jardin",
+      "sol"
+    ],
+    "explanation": "'cuisine' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/cuisine"
+  },
+  {
+    "itemId": "cf813d63-e5b2-4005-ab2a-9de64970e32d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'bathroom'?",
+    "correctAnswer": "salle de bains",
+    "incorrectAnswers": [
+      "jardin",
+      "sol",
+      "mur"
+    ],
+    "explanation": "'salle de bains' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/salle%20de%20bains"
+  },
+  {
+    "itemId": "2bc7550d-b90c-4931-a286-89884b46e3ef",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'garden' in everyday use?",
+    "correctAnswer": "jardin",
+    "incorrectAnswers": [
+      "sol",
+      "mur",
+      "toit"
+    ],
+    "explanation": "'jardin' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/jardin"
+  },
+  {
+    "itemId": "b5e442f6-67a9-4a15-a446-9067c332bf5a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'floor'.",
+    "correctAnswer": "sol",
+    "incorrectAnswers": [
+      "mur",
+      "toit",
+      "lampe"
+    ],
+    "explanation": "'sol' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/sol"
+  },
+  {
+    "itemId": "e81fcf10-f75d-4d1c-aefd-dc43cdccf695",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'wall'?",
+    "correctAnswer": "mur",
+    "incorrectAnswers": [
+      "toit",
+      "lampe",
+      "maison"
+    ],
+    "explanation": "'mur' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/mur"
+  },
+  {
+    "itemId": "c28efc32-5b29-47f0-af8e-8043b7fcbc12",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'roof'?",
+    "correctAnswer": "toit",
+    "incorrectAnswers": [
+      "lampe",
+      "maison",
+      "chambre"
+    ],
+    "explanation": "'toit' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/toit"
+  },
+  {
+    "itemId": "cad83a3d-eae9-41ff-b9b7-cb48292f5348",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'lamp' in everyday use?",
+    "correctAnswer": "lampe",
+    "incorrectAnswers": [
+      "maison",
+      "chambre",
+      "porte"
+    ],
+    "explanation": "'lampe' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/fren/lampe"
+  },
+  {
+    "itemId": "c983502b-15e9-42ef-a124-25549dd772b4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'shirt'?",
+    "correctAnswer": "chemise",
+    "incorrectAnswers": [
+      "pantalon",
+      "robe",
+      "chaussures"
+    ],
+    "explanation": "'chemise' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/chemise"
+  },
+  {
+    "itemId": "5491af47-a327-49ea-a93d-cbb2db78bfd4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'pants' in everyday use?",
+    "correctAnswer": "pantalon",
+    "incorrectAnswers": [
+      "robe",
+      "chaussures",
+      "chaussettes"
+    ],
+    "explanation": "'pantalon' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/pantalon"
+  },
+  {
+    "itemId": "58656501-bf14-428c-a3bf-81b0697d0b3e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'dress'.",
+    "correctAnswer": "robe",
+    "incorrectAnswers": [
+      "chaussures",
+      "chaussettes",
+      "veste"
+    ],
+    "explanation": "'robe' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/robe"
+  },
+  {
+    "itemId": "5890c1dc-b773-4292-bdff-77211a429b77",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'shoes'?",
+    "correctAnswer": "chaussures",
+    "incorrectAnswers": [
+      "chaussettes",
+      "veste",
+      "chapeau"
+    ],
+    "explanation": "'chaussures' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/chaussures"
+  },
+  {
+    "itemId": "09f49e8f-65f1-4038-b362-820b90135f52",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'socks'?",
+    "correctAnswer": "chaussettes",
+    "incorrectAnswers": [
+      "veste",
+      "chapeau",
+      "sac"
+    ],
+    "explanation": "'chaussettes' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/chaussettes"
+  },
+  {
+    "itemId": "3a405592-e225-411f-b2ae-2563e56adee9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'jacket' in everyday use?",
+    "correctAnswer": "veste",
+    "incorrectAnswers": [
+      "chapeau",
+      "sac",
+      "manteau"
+    ],
+    "explanation": "'veste' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/veste"
+  },
+  {
+    "itemId": "e9de7c5f-9b74-4f08-9582-d50e77b611c5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'hat'.",
+    "correctAnswer": "chapeau",
+    "incorrectAnswers": [
+      "sac",
+      "manteau",
+      "chemise"
+    ],
+    "explanation": "'chapeau' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/chapeau"
+  },
+  {
+    "itemId": "90a1cd0e-f077-4061-9ddb-e073bb9088b7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'bag'?",
+    "correctAnswer": "sac",
+    "incorrectAnswers": [
+      "manteau",
+      "chemise",
+      "pantalon"
+    ],
+    "explanation": "'sac' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/sac"
+  },
+  {
+    "itemId": "4428dbad-e1fd-4e7d-9d38-5fb73d707af9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'coat'?",
+    "correctAnswer": "manteau",
+    "incorrectAnswers": [
+      "chemise",
+      "pantalon",
+      "robe"
+    ],
+    "explanation": "'manteau' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/manteau"
+  },
+  {
+    "itemId": "565e5b6e-a7fc-4332-a58f-7b21fdf59c2e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'car'?",
+    "correctAnswer": "voiture",
+    "incorrectAnswers": [
+      "bus",
+      "train",
+      "avion"
+    ],
+    "explanation": "'voiture' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/voiture"
+  },
+  {
+    "itemId": "4b72d9e9-4634-4b67-9d55-b3997b33f9ca",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'bus' in everyday use?",
+    "correctAnswer": "bus",
+    "incorrectAnswers": [
+      "train",
+      "avion",
+      "v\u00e9lo"
+    ],
+    "explanation": "'bus' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/bus"
+  },
+  {
+    "itemId": "f9967891-bdc7-4f9f-874f-cda9cc2b3eb3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'train'.",
+    "correctAnswer": "train",
+    "incorrectAnswers": [
+      "avion",
+      "v\u00e9lo",
+      "bateau"
+    ],
+    "explanation": "'train' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/train"
+  },
+  {
+    "itemId": "697c71f6-6670-4dbe-a4af-29df87e168c1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'plane'?",
+    "correctAnswer": "avion",
+    "incorrectAnswers": [
+      "v\u00e9lo",
+      "bateau",
+      "taxi"
+    ],
+    "explanation": "'avion' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/avion"
+  },
+  {
+    "itemId": "95c66f31-4f04-45b4-8423-aa35ab555961",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'bicycle'?",
+    "correctAnswer": "v\u00e9lo",
+    "incorrectAnswers": [
+      "bateau",
+      "taxi",
+      "m\u00e9tro"
+    ],
+    "explanation": "'v\u00e9lo' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/v%C3%A9lo"
+  },
+  {
+    "itemId": "5892e2ee-0889-4f95-883c-4f0d3cf7773c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'boat' in everyday use?",
+    "correctAnswer": "bateau",
+    "incorrectAnswers": [
+      "taxi",
+      "m\u00e9tro",
+      "voiture"
+    ],
+    "explanation": "'bateau' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/bateau"
+  },
+  {
+    "itemId": "100b0fe8-06a4-4bb3-962d-8c3164023bbc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'taxi'.",
+    "correctAnswer": "taxi",
+    "incorrectAnswers": [
+      "m\u00e9tro",
+      "voiture",
+      "bus"
+    ],
+    "explanation": "'taxi' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/taxi"
+  },
+  {
+    "itemId": "36700273-88c9-4b69-9bee-7ccb1a522903",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'metro'?",
+    "correctAnswer": "m\u00e9tro",
+    "incorrectAnswers": [
+      "voiture",
+      "bus",
+      "train"
+    ],
+    "explanation": "'m\u00e9tro' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/m%C3%A9tro"
+  },
+  {
+    "itemId": "8e7c35d1-7422-49b3-83ee-0079a7e256d9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'sun'?",
+    "correctAnswer": "soleil",
+    "incorrectAnswers": [
+      "lune",
+      "\u00e9toile",
+      "pluie"
+    ],
+    "explanation": "'soleil' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/soleil"
+  },
+  {
+    "itemId": "dc882a97-df2d-4b7f-8df8-ce395e76d1b1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'moon' in everyday use?",
+    "correctAnswer": "lune",
+    "incorrectAnswers": [
+      "\u00e9toile",
+      "pluie",
+      "neige"
+    ],
+    "explanation": "'lune' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/lune"
+  },
+  {
+    "itemId": "13fce0fc-cec2-4093-a2d0-6b2d88917386",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'star'.",
+    "correctAnswer": "\u00e9toile",
+    "incorrectAnswers": [
+      "pluie",
+      "neige",
+      "vent"
+    ],
+    "explanation": "'\u00e9toile' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A9toile"
+  },
+  {
+    "itemId": "fb0e9345-316e-4396-85e1-f0d0a1d4be12",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'rain'?",
+    "correctAnswer": "pluie",
+    "incorrectAnswers": [
+      "neige",
+      "vent",
+      "nuage"
+    ],
+    "explanation": "'pluie' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/pluie"
+  },
+  {
+    "itemId": "6794fe87-0e56-4956-961d-264137a3a4ea",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'snow'?",
+    "correctAnswer": "neige",
+    "incorrectAnswers": [
+      "vent",
+      "nuage",
+      "montagne"
+    ],
+    "explanation": "'neige' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/neige"
+  },
+  {
+    "itemId": "4ecf671e-7a61-4e41-9cae-1959dd8397ac",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'wind' in everyday use?",
+    "correctAnswer": "vent",
+    "incorrectAnswers": [
+      "nuage",
+      "montagne",
+      "rivi\u00e8re"
+    ],
+    "explanation": "'vent' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/vent"
+  },
+  {
+    "itemId": "2ee62208-0a88-4c54-9321-6031d5374f2b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'cloud'.",
+    "correctAnswer": "nuage",
+    "incorrectAnswers": [
+      "montagne",
+      "rivi\u00e8re",
+      "mer"
+    ],
+    "explanation": "'nuage' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/nuage"
+  },
+  {
+    "itemId": "4fb3d91b-71ed-4cca-9c2e-fc66e3e7ca87",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'mountain'?",
+    "correctAnswer": "montagne",
+    "incorrectAnswers": [
+      "rivi\u00e8re",
+      "mer",
+      "plage"
+    ],
+    "explanation": "'montagne' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/montagne"
+  },
+  {
+    "itemId": "b6dc1e68-5706-496f-b8e8-d4b84ab37a41",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'river'?",
+    "correctAnswer": "rivi\u00e8re",
+    "incorrectAnswers": [
+      "mer",
+      "plage",
+      "for\u00eat"
+    ],
+    "explanation": "'rivi\u00e8re' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/rivi%C3%A8re"
+  },
+  {
+    "itemId": "c19bfd5c-155f-49f1-bc9f-9ee1c18b38f7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'sea' in everyday use?",
+    "correctAnswer": "mer",
+    "incorrectAnswers": [
+      "plage",
+      "for\u00eat",
+      "arbre"
+    ],
+    "explanation": "'mer' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/mer"
+  },
+  {
+    "itemId": "963b4e27-57d5-4f13-8a70-98020e6b8959",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'beach'.",
+    "correctAnswer": "plage",
+    "incorrectAnswers": [
+      "for\u00eat",
+      "arbre",
+      "fleur"
+    ],
+    "explanation": "'plage' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/plage"
+  },
+  {
+    "itemId": "45108f58-08e6-4214-9275-1ee1f4515e7e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'forest'?",
+    "correctAnswer": "for\u00eat",
+    "incorrectAnswers": [
+      "arbre",
+      "fleur",
+      "temps"
+    ],
+    "explanation": "'for\u00eat' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/for%C3%AAt"
+  },
+  {
+    "itemId": "df07d57d-7d39-4ffa-b02a-5f535f2dc4c3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'tree'?",
+    "correctAnswer": "arbre",
+    "incorrectAnswers": [
+      "fleur",
+      "temps",
+      "soleil"
+    ],
+    "explanation": "'arbre' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/arbre"
+  },
+  {
+    "itemId": "47ac6e9e-a381-4562-85e4-896990c3ab4d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'flower' in everyday use?",
+    "correctAnswer": "fleur",
+    "incorrectAnswers": [
+      "temps",
+      "soleil",
+      "lune"
+    ],
+    "explanation": "'fleur' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/fleur"
+  },
+  {
+    "itemId": "0fd68107-49cf-401b-98dd-b6b5713b4de9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'weather'.",
+    "correctAnswer": "temps",
+    "incorrectAnswers": [
+      "soleil",
+      "lune",
+      "\u00e9toile"
+    ],
+    "explanation": "'temps' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/temps"
+  },
+  {
+    "itemId": "0bde6813-d198-47c9-a625-ffa28b7503dc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'be'?",
+    "correctAnswer": "\u00eatre",
+    "incorrectAnswers": [
+      "avoir",
+      "vouloir",
+      "avoir besoin de"
+    ],
+    "explanation": "'\u00eatre' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%AAtre"
+  },
+  {
+    "itemId": "0a12682f-bc2c-4ac3-bcad-b6acceaf7ab6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'have' in everyday use?",
+    "correctAnswer": "avoir",
+    "incorrectAnswers": [
+      "vouloir",
+      "avoir besoin de",
+      "aller"
+    ],
+    "explanation": "'avoir' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/avoir"
+  },
+  {
+    "itemId": "bdffd985-3560-4de2-a60e-6d49cb32dd70",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'want'.",
+    "correctAnswer": "vouloir",
+    "incorrectAnswers": [
+      "avoir besoin de",
+      "aller",
+      "venir"
+    ],
+    "explanation": "'vouloir' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/vouloir"
+  },
+  {
+    "itemId": "738d6256-4540-4541-a10c-5cba805aa1be",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'need'?",
+    "correctAnswer": "avoir besoin de",
+    "incorrectAnswers": [
+      "aller",
+      "venir",
+      "manger"
+    ],
+    "explanation": "'avoir besoin de' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/avoir%20besoin%20de"
+  },
+  {
+    "itemId": "ef91d670-11da-4e60-bf63-688e636dc44c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'go'?",
+    "correctAnswer": "aller",
+    "incorrectAnswers": [
+      "venir",
+      "manger",
+      "boire"
+    ],
+    "explanation": "'aller' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/aller"
+  },
+  {
+    "itemId": "f3826bed-087c-4f64-a893-6289256004c0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'come' in everyday use?",
+    "correctAnswer": "venir",
+    "incorrectAnswers": [
+      "manger",
+      "boire",
+      "dormir"
+    ],
+    "explanation": "'venir' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/venir"
+  },
+  {
+    "itemId": "f849d3a8-9c55-4593-ad48-329d5c8b645f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'eat'.",
+    "correctAnswer": "manger",
+    "incorrectAnswers": [
+      "boire",
+      "dormir",
+      "se r\u00e9veiller"
+    ],
+    "explanation": "'manger' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/manger"
+  },
+  {
+    "itemId": "4ed5a727-fd27-41b3-9937-464b4dceec1b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'drink'?",
+    "correctAnswer": "boire",
+    "incorrectAnswers": [
+      "dormir",
+      "se r\u00e9veiller",
+      "travailler"
+    ],
+    "explanation": "'boire' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/boire"
+  },
+  {
+    "itemId": "9f5bbaf9-1a0a-4616-a72c-3a6a59388973",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'sleep'?",
+    "correctAnswer": "dormir",
+    "incorrectAnswers": [
+      "se r\u00e9veiller",
+      "travailler",
+      "parler"
+    ],
+    "explanation": "'dormir' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/dormir"
+  },
+  {
+    "itemId": "ea626ece-0e17-4f62-a1d7-112f728d193c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'wake up' in everyday use?",
+    "correctAnswer": "se r\u00e9veiller",
+    "incorrectAnswers": [
+      "travailler",
+      "parler",
+      "entendre"
+    ],
+    "explanation": "'se r\u00e9veiller' is the infinitive 'to wake up'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/se%20r%C3%A9veiller"
+  },
+  {
+    "itemId": "e77bc22f-a0ab-4ec4-830d-e35d2a0ccb06",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'work'.",
+    "correctAnswer": "travailler",
+    "incorrectAnswers": [
+      "parler",
+      "entendre",
+      "voir"
+    ],
+    "explanation": "'travailler' is the infinitive 'to work'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/travailler"
+  },
+  {
+    "itemId": "350a1a9c-2c34-4bb4-a1aa-fecbe299c747",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'speak'?",
+    "correctAnswer": "parler",
+    "incorrectAnswers": [
+      "entendre",
+      "voir",
+      "lire"
+    ],
+    "explanation": "'parler' is the infinitive 'to speak'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/parler"
+  },
+  {
+    "itemId": "de2f602d-7528-41d8-b853-ddc06774ba27",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'hear'?",
+    "correctAnswer": "entendre",
+    "incorrectAnswers": [
+      "voir",
+      "lire",
+      "\u00e9crire"
+    ],
+    "explanation": "'entendre' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/entendre"
+  },
+  {
+    "itemId": "fa901a90-e42a-46a3-b288-642d4a6db8bb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'see' in everyday use?",
+    "correctAnswer": "voir",
+    "incorrectAnswers": [
+      "lire",
+      "\u00e9crire",
+      "acheter"
+    ],
+    "explanation": "'voir' is the infinitive 'to see'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/voir"
+  },
+  {
+    "itemId": "84303f17-5c2f-417a-8140-e3cbbf9905be",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'read'.",
+    "correctAnswer": "lire",
+    "incorrectAnswers": [
+      "\u00e9crire",
+      "acheter",
+      "payer"
+    ],
+    "explanation": "'lire' is the infinitive 'to read'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/lire"
+  },
+  {
+    "itemId": "ba0ff2e9-dfcd-4ad1-8129-36295f98d447",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'write'?",
+    "correctAnswer": "\u00e9crire",
+    "incorrectAnswers": [
+      "acheter",
+      "payer",
+      "ouvrir"
+    ],
+    "explanation": "'\u00e9crire' is the infinitive 'to write'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A9crire"
+  },
+  {
+    "itemId": "89b53001-fec1-49de-b1f0-9ed0bc140f9a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'buy'?",
+    "correctAnswer": "acheter",
+    "incorrectAnswers": [
+      "payer",
+      "ouvrir",
+      "fermer"
+    ],
+    "explanation": "'acheter' is the infinitive 'to buy'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/acheter"
+  },
+  {
+    "itemId": "69ce409b-04ad-41ea-afb9-975aec0ea0d6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'pay' in everyday use?",
+    "correctAnswer": "payer",
+    "incorrectAnswers": [
+      "ouvrir",
+      "fermer",
+      "donner"
+    ],
+    "explanation": "'payer' is the infinitive 'to pay'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/payer"
+  },
+  {
+    "itemId": "109d9554-2843-4612-be1e-f084c1316d9f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'open'.",
+    "correctAnswer": "ouvrir",
+    "incorrectAnswers": [
+      "fermer",
+      "donner",
+      "prendre"
+    ],
+    "explanation": "'ouvrir' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/ouvrir"
+  },
+  {
+    "itemId": "4184921e-2018-4998-938f-c896f375305a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'close'?",
+    "correctAnswer": "fermer",
+    "incorrectAnswers": [
+      "donner",
+      "prendre",
+      "savoir"
+    ],
+    "explanation": "'fermer' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/fermer"
+  },
+  {
+    "itemId": "a90ee2ad-fc36-4096-a76f-a7569513f22f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'give'?",
+    "correctAnswer": "donner",
+    "incorrectAnswers": [
+      "prendre",
+      "savoir",
+      "aimer"
+    ],
+    "explanation": "'donner' is the infinitive 'to give'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/donner"
+  },
+  {
+    "itemId": "9558ff92-8106-40bc-b6fe-92705ad4195c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'take' in everyday use?",
+    "correctAnswer": "prendre",
+    "incorrectAnswers": [
+      "savoir",
+      "aimer",
+      "aimer"
+    ],
+    "explanation": "'prendre' is the infinitive 'to take'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/prendre"
+  },
+  {
+    "itemId": "cdf8398b-e037-45e4-9ba0-197bd77d8b9e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'know'.",
+    "correctAnswer": "savoir",
+    "incorrectAnswers": [
+      "aimer",
+      "aimer",
+      "aider"
+    ],
+    "explanation": "'savoir' is the infinitive 'to know'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/savoir"
+  },
+  {
+    "itemId": "86b4e574-de00-4205-9c41-e557cb9d175b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'like'?",
+    "correctAnswer": "aimer",
+    "incorrectAnswers": [
+      "aimer",
+      "aider",
+      "apprendre"
+    ],
+    "explanation": "'aimer' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/aimer"
+  },
+  {
+    "itemId": "34382f19-cc98-41a2-907d-424e6a21b97b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'love'?",
+    "correctAnswer": "aimer",
+    "incorrectAnswers": [
+      "aider",
+      "apprendre",
+      "\u00eatre"
+    ],
+    "explanation": "'aimer' is the infinitive 'to love'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/aimer"
+  },
+  {
+    "itemId": "ca3632a8-4e09-4aa7-b7f1-eff31ae6bd21",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'help' in everyday use?",
+    "correctAnswer": "aider",
+    "incorrectAnswers": [
+      "apprendre",
+      "\u00eatre",
+      "avoir"
+    ],
+    "explanation": "'aider' is the infinitive 'to help'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/aider"
+  },
+  {
+    "itemId": "d16e674e-5f58-40c1-b441-e4f8a2e918ce",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'learn'.",
+    "correctAnswer": "apprendre",
+    "incorrectAnswers": [
+      "\u00eatre",
+      "avoir",
+      "vouloir"
+    ],
+    "explanation": "'apprendre' is the infinitive 'to learn'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/fren/apprendre"
+  },
+  {
+    "itemId": "ff444877-92c0-402f-95dc-30c1e87eba5f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'big'?",
+    "correctAnswer": "grand",
+    "incorrectAnswers": [
+      "petit",
+      "nouveau",
+      "vieux"
+    ],
+    "explanation": "'grand' means 'big'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/grand"
+  },
+  {
+    "itemId": "7b96c082-03eb-4f53-81c3-836391d92b89",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'small' in everyday use?",
+    "correctAnswer": "petit",
+    "incorrectAnswers": [
+      "nouveau",
+      "vieux",
+      "bon"
+    ],
+    "explanation": "'petit' means 'small'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/petit"
+  },
+  {
+    "itemId": "47e9c807-5f05-4d0c-9bf6-f7380e4f578e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'new'.",
+    "correctAnswer": "nouveau",
+    "incorrectAnswers": [
+      "vieux",
+      "bon",
+      "mauvais"
+    ],
+    "explanation": "'nouveau' means 'new'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/nouveau"
+  },
+  {
+    "itemId": "3cb154b4-9c82-4d02-be19-8bc6d2296f74",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'old'?",
+    "correctAnswer": "vieux",
+    "incorrectAnswers": [
+      "bon",
+      "mauvais",
+      "chaud"
+    ],
+    "explanation": "'vieux' means 'old'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/vieux"
+  },
+  {
+    "itemId": "0284281f-9f7e-4d26-b262-77d91ded28d1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'good'?",
+    "correctAnswer": "bon",
+    "incorrectAnswers": [
+      "mauvais",
+      "chaud",
+      "froid"
+    ],
+    "explanation": "'bon' means 'good'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/bon"
+  },
+  {
+    "itemId": "4d9f3320-73c9-4b76-915d-05c779133cd1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'bad' in everyday use?",
+    "correctAnswer": "mauvais",
+    "incorrectAnswers": [
+      "chaud",
+      "froid",
+      "rapide"
+    ],
+    "explanation": "'mauvais' means 'bad'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/mauvais"
+  },
+  {
+    "itemId": "71e049ac-cf0e-4804-850b-022bdffa441f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'hot'.",
+    "correctAnswer": "chaud",
+    "incorrectAnswers": [
+      "froid",
+      "rapide",
+      "lent"
+    ],
+    "explanation": "'chaud' means 'hot'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/chaud"
+  },
+  {
+    "itemId": "0a7845d2-bfc7-4b05-b6b1-199337591523",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'cold'?",
+    "correctAnswer": "froid",
+    "incorrectAnswers": [
+      "rapide",
+      "lent",
+      "facile"
+    ],
+    "explanation": "'froid' means 'cold'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/froid"
+  },
+  {
+    "itemId": "c36cf617-dcc6-4271-881e-aa8aec6e234f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'fast'?",
+    "correctAnswer": "rapide",
+    "incorrectAnswers": [
+      "lent",
+      "facile",
+      "difficile"
+    ],
+    "explanation": "'rapide' means 'fast'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/rapide"
+  },
+  {
+    "itemId": "72af9232-d881-44f1-b81f-ac00d09dcee5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'slow' in everyday use?",
+    "correctAnswer": "lent",
+    "incorrectAnswers": [
+      "facile",
+      "difficile",
+      "propre"
+    ],
+    "explanation": "'lent' means 'slow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/lent"
+  },
+  {
+    "itemId": "1f2b1de4-34f8-4d2b-88a8-ee64261a25c5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'easy'.",
+    "correctAnswer": "facile",
+    "incorrectAnswers": [
+      "difficile",
+      "propre",
+      "sale"
+    ],
+    "explanation": "'facile' means 'easy'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/facile"
+  },
+  {
+    "itemId": "b8575253-3cfa-4a35-884b-8aa3ed8a9078",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'difficult'?",
+    "correctAnswer": "difficile",
+    "incorrectAnswers": [
+      "propre",
+      "sale",
+      "bon march\u00e9"
+    ],
+    "explanation": "'difficile' means 'difficult'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/difficile"
+  },
+  {
+    "itemId": "62e86906-5a92-4d0d-9200-c4ea27edc778",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'clean'?",
+    "correctAnswer": "propre",
+    "incorrectAnswers": [
+      "sale",
+      "bon march\u00e9",
+      "cher"
+    ],
+    "explanation": "'propre' means 'clean'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/propre"
+  },
+  {
+    "itemId": "d7a1fade-9f53-4cff-a938-128cb3a26c85",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'dirty' in everyday use?",
+    "correctAnswer": "sale",
+    "incorrectAnswers": [
+      "bon march\u00e9",
+      "cher",
+      "beau"
+    ],
+    "explanation": "'sale' means 'dirty'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/sale"
+  },
+  {
+    "itemId": "0427e34b-5161-4e55-bcb0-b275011cadf2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'cheap'.",
+    "correctAnswer": "bon march\u00e9",
+    "incorrectAnswers": [
+      "cher",
+      "beau",
+      "laid"
+    ],
+    "explanation": "'bon march\u00e9' means 'cheap'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/bon%20march%C3%A9"
+  },
+  {
+    "itemId": "c055c22d-fe27-4177-b004-41aeb140ba46",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'expensive'?",
+    "correctAnswer": "cher",
+    "incorrectAnswers": [
+      "beau",
+      "laid",
+      "long"
+    ],
+    "explanation": "'cher' means 'expensive'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/cher"
+  },
+  {
+    "itemId": "52d33b70-c460-4bab-86f9-b125da1ab410",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'beautiful'?",
+    "correctAnswer": "beau",
+    "incorrectAnswers": [
+      "laid",
+      "long",
+      "court"
+    ],
+    "explanation": "'beau' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/beau"
+  },
+  {
+    "itemId": "e3effd40-e589-4b2c-9d8a-aff01271df7a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'ugly' in everyday use?",
+    "correctAnswer": "laid",
+    "incorrectAnswers": [
+      "long",
+      "court",
+      "ouvert"
+    ],
+    "explanation": "'laid' means 'ugly'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/laid"
+  },
+  {
+    "itemId": "62b404d7-67e6-4f12-a31c-891e0e9b648b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'long'.",
+    "correctAnswer": "long",
+    "incorrectAnswers": [
+      "court",
+      "ouvert",
+      "ferm\u00e9"
+    ],
+    "explanation": "'long' means 'long'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/long"
+  },
+  {
+    "itemId": "2c2f7d34-69a8-4a48-88c0-64e80d167a68",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'short'?",
+    "correctAnswer": "court",
+    "incorrectAnswers": [
+      "ouvert",
+      "ferm\u00e9",
+      "droit"
+    ],
+    "explanation": "'court' means 'short'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/court"
+  },
+  {
+    "itemId": "ea1ef90f-5895-42e2-861c-f4794f7b105c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'open'?",
+    "correctAnswer": "ouvert",
+    "incorrectAnswers": [
+      "ferm\u00e9",
+      "droit",
+      "gauche"
+    ],
+    "explanation": "'ouvert' means 'open'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/ouvert"
+  },
+  {
+    "itemId": "86a20309-4719-43e3-b2ab-afe862f2ee53",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'closed' in everyday use?",
+    "correctAnswer": "ferm\u00e9",
+    "incorrectAnswers": [
+      "droit",
+      "gauche",
+      "m\u00eame"
+    ],
+    "explanation": "'ferm\u00e9' means 'closed'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/ferm%C3%A9"
+  },
+  {
+    "itemId": "e6c34266-272a-4c17-af7b-d9923c784b14",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'right'.",
+    "correctAnswer": "droit",
+    "incorrectAnswers": [
+      "gauche",
+      "m\u00eame",
+      "diff\u00e9rent"
+    ],
+    "explanation": "'droit' means 'right'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/droit"
+  },
+  {
+    "itemId": "c41b38b9-01ef-41c3-876e-4964a35b143a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'left'?",
+    "correctAnswer": "gauche",
+    "incorrectAnswers": [
+      "m\u00eame",
+      "diff\u00e9rent",
+      "grand"
+    ],
+    "explanation": "'gauche' means 'left'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/gauche"
+  },
+  {
+    "itemId": "cbc6a0d0-01a5-45ef-abe6-b2888422ec87",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'same'?",
+    "correctAnswer": "m\u00eame",
+    "incorrectAnswers": [
+      "diff\u00e9rent",
+      "grand",
+      "petit"
+    ],
+    "explanation": "'m\u00eame' means 'same'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/m%C3%AAme"
+  },
+  {
+    "itemId": "b8f5fe54-f6f3-4031-b6f7-b8bb1fe489dd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'different' in everyday use?",
+    "correctAnswer": "diff\u00e9rent",
+    "incorrectAnswers": [
+      "grand",
+      "petit",
+      "nouveau"
+    ],
+    "explanation": "'diff\u00e9rent' means 'different'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective"
+    ],
+    "source": "https://www.wordreference.com/fren/diff%C3%A9rent"
+  },
+  {
+    "itemId": "f75fa298-e095-4e12-a9be-e81f24119ece",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'who'?",
+    "correctAnswer": "qui",
+    "incorrectAnswers": [
+      "quoi",
+      "quand",
+      "pourquoi"
+    ],
+    "explanation": "'qui' is the word for 'who'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/qui"
+  },
+  {
+    "itemId": "686d6537-d392-4a66-b315-b08e66fcca15",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'what' in everyday use?",
+    "correctAnswer": "quoi",
+    "incorrectAnswers": [
+      "quand",
+      "pourquoi",
+      "comment"
+    ],
+    "explanation": "'quoi' is the word for 'what'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/quoi"
+  },
+  {
+    "itemId": "ccb1f427-d94d-40f7-bf9c-e8dd2e5014ff",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'when'.",
+    "correctAnswer": "quand",
+    "incorrectAnswers": [
+      "pourquoi",
+      "comment",
+      "combien"
+    ],
+    "explanation": "'quand' is the word for 'when'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/quand"
+  },
+  {
+    "itemId": "4575f593-b6de-4d05-99ed-a193c2da721e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'why'?",
+    "correctAnswer": "pourquoi",
+    "incorrectAnswers": [
+      "comment",
+      "combien",
+      "combien de"
+    ],
+    "explanation": "'pourquoi' is the word for 'why'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/pourquoi"
+  },
+  {
+    "itemId": "def47ff6-f047-4474-b0a7-170a202ff997",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'how'?",
+    "correctAnswer": "comment",
+    "incorrectAnswers": [
+      "combien",
+      "combien de",
+      "qui"
+    ],
+    "explanation": "'comment' is the word for 'how'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/comment"
+  },
+  {
+    "itemId": "d838419a-5989-4f62-921d-877008566579",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'how much' in everyday use?",
+    "correctAnswer": "combien",
+    "incorrectAnswers": [
+      "combien de",
+      "qui",
+      "quoi"
+    ],
+    "explanation": "'combien' is the word for 'how much'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/combien"
+  },
+  {
+    "itemId": "a2542ddb-3f1a-4a2b-91c8-fde3af984694",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'how many'.",
+    "correctAnswer": "combien de",
+    "incorrectAnswers": [
+      "qui",
+      "quoi",
+      "quand"
+    ],
+    "explanation": "'combien de' is the word for 'how many'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/combien%20de"
+  },
+  {
+    "itemId": "b1ee2d12-156e-407b-9d27-d889353dc6c1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'and'?",
+    "correctAnswer": "et",
+    "incorrectAnswers": [
+      "ou",
+      "mais",
+      "parce que"
+    ],
+    "explanation": "'et' is the word for 'and'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction"
+    ],
+    "source": "https://www.wordreference.com/fren/et"
+  },
+  {
+    "itemId": "2b9d7fa8-0316-4d8b-95bd-05b373aea409",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'or' in everyday use?",
+    "correctAnswer": "ou",
+    "incorrectAnswers": [
+      "mais",
+      "parce que",
+      "si"
+    ],
+    "explanation": "'ou' is the word for 'or'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction"
+    ],
+    "source": "https://www.wordreference.com/fren/ou"
+  },
+  {
+    "itemId": "10481797-412e-4705-a42a-75193127375b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'but'.",
+    "correctAnswer": "mais",
+    "incorrectAnswers": [
+      "parce que",
+      "si",
+      "et"
+    ],
+    "explanation": "'mais' is the word for 'but'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction"
+    ],
+    "source": "https://www.wordreference.com/fren/mais"
+  },
+  {
+    "itemId": "f61f2fcf-b599-4904-9e1d-b1fe543ce60a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'because'?",
+    "correctAnswer": "parce que",
+    "incorrectAnswers": [
+      "si",
+      "et",
+      "ou"
+    ],
+    "explanation": "'parce que' is the word for 'because'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction"
+    ],
+    "source": "https://www.wordreference.com/fren/parce%20que"
+  },
+  {
+    "itemId": "7600e122-24d2-45f2-b565-230d2a363054",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'if'?",
+    "correctAnswer": "si",
+    "incorrectAnswers": [
+      "et",
+      "ou",
+      "mais"
+    ],
+    "explanation": "'si' is the word for 'if'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction"
+    ],
+    "source": "https://www.wordreference.com/fren/si"
+  },
+  {
+    "itemId": "34e8caf7-89e3-4cce-b34b-05ebdf5bcc73",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'very'?",
+    "correctAnswer": "tr\u00e8s",
+    "incorrectAnswers": [
+      "aussi",
+      "seulement",
+      "ici"
+    ],
+    "explanation": "'tr\u00e8s' is the word for 'very'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/tr%C3%A8s"
+  },
+  {
+    "itemId": "c25c3966-3598-407d-b40c-13d4aab66e92",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'also' in everyday use?",
+    "correctAnswer": "aussi",
+    "incorrectAnswers": [
+      "seulement",
+      "ici",
+      "l\u00e0"
+    ],
+    "explanation": "'aussi' is the word for 'also'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/aussi"
+  },
+  {
+    "itemId": "bf6b8cb2-506e-4246-9e55-df433baee596",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'only'.",
+    "correctAnswer": "seulement",
+    "incorrectAnswers": [
+      "ici",
+      "l\u00e0",
+      "toujours"
+    ],
+    "explanation": "'seulement' is the word for 'only'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/seulement"
+  },
+  {
+    "itemId": "29c60122-00ba-49a6-8594-13754ab1da1e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'here'?",
+    "correctAnswer": "ici",
+    "incorrectAnswers": [
+      "l\u00e0",
+      "toujours",
+      "jamais"
+    ],
+    "explanation": "'ici' is the word for 'here'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/ici"
+  },
+  {
+    "itemId": "6670fe50-da0b-4f37-ac70-1ccbe2f3cefb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'there'?",
+    "correctAnswer": "l\u00e0",
+    "incorrectAnswers": [
+      "toujours",
+      "jamais",
+      "tr\u00e8s"
+    ],
+    "explanation": "'l\u00e0' is the word for 'there'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/l%C3%A0"
+  },
+  {
+    "itemId": "381ba60a-2ae3-400d-83a6-39506b18f4c8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'always' in everyday use?",
+    "correctAnswer": "toujours",
+    "incorrectAnswers": [
+      "jamais",
+      "tr\u00e8s",
+      "aussi"
+    ],
+    "explanation": "'toujours' is the word for 'always'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/toujours"
+  },
+  {
+    "itemId": "a5135dd1-fdc0-4fec-9fac-028b4da84489",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'never'.",
+    "correctAnswer": "jamais",
+    "incorrectAnswers": [
+      "tr\u00e8s",
+      "aussi",
+      "seulement"
+    ],
+    "explanation": "'jamais' is the word for 'never'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb"
+    ],
+    "source": "https://www.wordreference.com/fren/jamais"
+  },
+  {
+    "itemId": "acbbadde-ebe2-4004-a9d5-1c2f41e2ecf4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'I'?",
+    "correctAnswer": "je",
+    "incorrectAnswers": [
+      "tu",
+      "il",
+      "elle"
+    ],
+    "explanation": "'je' is used for 'I'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/je"
+  },
+  {
+    "itemId": "ce296603-30bc-4249-a1db-e009dcf277a2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'you' in everyday use?",
+    "correctAnswer": "tu",
+    "incorrectAnswers": [
+      "il",
+      "elle",
+      "nous"
+    ],
+    "explanation": "'tu' is used for 'you'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/tu"
+  },
+  {
+    "itemId": "1fce4e54-ceae-4800-8305-e2f9a724a878",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'he'.",
+    "correctAnswer": "il",
+    "incorrectAnswers": [
+      "elle",
+      "nous",
+      "vous"
+    ],
+    "explanation": "'il' is used for 'he'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/il"
+  },
+  {
+    "itemId": "1bc96600-06d1-4cec-8968-28b74f2e8296",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'she'?",
+    "correctAnswer": "elle",
+    "incorrectAnswers": [
+      "nous",
+      "vous",
+      "ils"
+    ],
+    "explanation": "'elle' is used for 'she'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/elle"
+  },
+  {
+    "itemId": "542199f2-f367-4306-92aa-ea515c1a77c3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'we'?",
+    "correctAnswer": "nous",
+    "incorrectAnswers": [
+      "vous",
+      "ils",
+      "je"
+    ],
+    "explanation": "'nous' is used for 'we'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/nous"
+  },
+  {
+    "itemId": "2c6f0bdf-7034-450b-a73a-ea52e7032daf",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'you (plural)' in everyday use?",
+    "correctAnswer": "vous",
+    "incorrectAnswers": [
+      "ils",
+      "je",
+      "tu"
+    ],
+    "explanation": "'vous' is used for 'you (plural)'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/vous"
+  },
+  {
+    "itemId": "83555c2b-a8bb-472b-a83c-b09a583d41cb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'they'.",
+    "correctAnswer": "ils",
+    "incorrectAnswers": [
+      "je",
+      "tu",
+      "il"
+    ],
+    "explanation": "'ils' is used for 'they'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/ils"
+  },
+  {
+    "itemId": "ea4c7d7a-6428-45db-8b27-b4e355b08f80",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'my'?",
+    "correctAnswer": "mon",
+    "incorrectAnswers": [
+      "ton",
+      "notre",
+      "leur"
+    ],
+    "explanation": "'mon' is used for 'my'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/mon"
+  },
+  {
+    "itemId": "96b5f052-4ef9-4310-83e8-490fe9c1ec34",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'your' in everyday use?",
+    "correctAnswer": "ton",
+    "incorrectAnswers": [
+      "notre",
+      "leur",
+      "mon"
+    ],
+    "explanation": "'ton' is used for 'your'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/ton"
+  },
+  {
+    "itemId": "fc078898-3287-45a9-a938-29d9d6a8f9f7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'our'.",
+    "correctAnswer": "notre",
+    "incorrectAnswers": [
+      "leur",
+      "mon",
+      "ton"
+    ],
+    "explanation": "'notre' is used for 'our'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/notre"
+  },
+  {
+    "itemId": "89e71f9c-c68e-4aa6-96f1-4bc967f35bcd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'their'?",
+    "correctAnswer": "leur",
+    "incorrectAnswers": [
+      "mon",
+      "ton",
+      "notre"
+    ],
+    "explanation": "'leur' is used for 'their'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/leur"
+  },
+  {
+    "itemId": "ac27268c-a704-4d6f-bc90-3315136b113d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'doctor'?",
+    "correctAnswer": "m\u00e9decin",
+    "incorrectAnswers": [
+      "h\u00f4pital",
+      "pharmacie",
+      "douleur"
+    ],
+    "explanation": "'m\u00e9decin' means 'doctor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/m%C3%A9decin"
+  },
+  {
+    "itemId": "9e49bc49-7e4a-4ee5-af56-949ba992cad8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'hospital' in everyday use?",
+    "correctAnswer": "h\u00f4pital",
+    "incorrectAnswers": [
+      "pharmacie",
+      "douleur",
+      "aide"
+    ],
+    "explanation": "'h\u00f4pital' means 'hospital'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/h%C3%B4pital"
+  },
+  {
+    "itemId": "180cc6f1-878f-4840-9de6-d0c0d8b12a5e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'pharmacy'.",
+    "correctAnswer": "pharmacie",
+    "incorrectAnswers": [
+      "douleur",
+      "aide",
+      "police"
+    ],
+    "explanation": "'pharmacie' means 'pharmacy'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/pharmacie"
+  },
+  {
+    "itemId": "473e2379-c2d6-4ec4-b35d-a8185003898e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'pain'?",
+    "correctAnswer": "douleur",
+    "incorrectAnswers": [
+      "aide",
+      "police",
+      "feu"
+    ],
+    "explanation": "'douleur' means 'pain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/douleur"
+  },
+  {
+    "itemId": "53f3e592-709b-4c9f-9ca2-5f18408569f2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'help'?",
+    "correctAnswer": "aide",
+    "incorrectAnswers": [
+      "police",
+      "feu",
+      "malade"
+    ],
+    "explanation": "'aide' means 'help'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/aide"
+  },
+  {
+    "itemId": "c59850f9-45c4-4b39-9075-a657c0315c27",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'police' in everyday use?",
+    "correctAnswer": "police",
+    "incorrectAnswers": [
+      "feu",
+      "malade",
+      "m\u00e9dicament"
+    ],
+    "explanation": "'police' means 'police'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/police"
+  },
+  {
+    "itemId": "d01d9d7b-8a16-4ec3-ac7f-7e32c4a05a97",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'fire'.",
+    "correctAnswer": "feu",
+    "incorrectAnswers": [
+      "malade",
+      "m\u00e9dicament",
+      "m\u00e9decin"
+    ],
+    "explanation": "'feu' means 'fire'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/feu"
+  },
+  {
+    "itemId": "3e710783-f35d-452d-8e32-2b8a64a641ff",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'sick'?",
+    "correctAnswer": "malade",
+    "incorrectAnswers": [
+      "m\u00e9dicament",
+      "m\u00e9decin",
+      "h\u00f4pital"
+    ],
+    "explanation": "'malade' means 'sick'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/malade"
+  },
+  {
+    "itemId": "316a49ba-d7c2-4f7d-8fce-1669644504d7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'medicine'?",
+    "correctAnswer": "m\u00e9dicament",
+    "incorrectAnswers": [
+      "m\u00e9decin",
+      "h\u00f4pital",
+      "pharmacie"
+    ],
+    "explanation": "'m\u00e9dicament' means 'medicine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/m%C3%A9dicament"
+  },
+  {
+    "itemId": "3b6bd0b3-652a-484f-8146-19f8bb5afed1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'school'?",
+    "correctAnswer": "\u00e9cole",
+    "incorrectAnswers": [
+      "professeur",
+      "\u00e9tudiant",
+      "livre"
+    ],
+    "explanation": "'\u00e9cole' means 'school'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A9cole"
+  },
+  {
+    "itemId": "a2d8f32e-7293-425e-8494-a2c70f549e98",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'teacher' in everyday use?",
+    "correctAnswer": "professeur",
+    "incorrectAnswers": [
+      "\u00e9tudiant",
+      "livre",
+      "stylo"
+    ],
+    "explanation": "'professeur' means 'teacher'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/professeur"
+  },
+  {
+    "itemId": "955766b7-2e74-4dd7-9479-8ce23516db90",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'student'.",
+    "correctAnswer": "\u00e9tudiant",
+    "incorrectAnswers": [
+      "livre",
+      "stylo",
+      "papier"
+    ],
+    "explanation": "'\u00e9tudiant' means 'student'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A9tudiant"
+  },
+  {
+    "itemId": "887ff10f-f473-4ed7-b114-bf647a73e968",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'book'?",
+    "correctAnswer": "livre",
+    "incorrectAnswers": [
+      "stylo",
+      "papier",
+      "classe"
+    ],
+    "explanation": "'livre' means 'book'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/livre"
+  },
+  {
+    "itemId": "ded7f5df-a452-49b6-8963-58cee32a958e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'pen'?",
+    "correctAnswer": "stylo",
+    "incorrectAnswers": [
+      "papier",
+      "classe",
+      "bureau"
+    ],
+    "explanation": "'stylo' means 'pen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/stylo"
+  },
+  {
+    "itemId": "c28c1d70-b1af-4dd1-8e61-35f7ccf23f22",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'paper' in everyday use?",
+    "correctAnswer": "papier",
+    "incorrectAnswers": [
+      "classe",
+      "bureau",
+      "argent"
+    ],
+    "explanation": "'papier' means 'paper'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/papier"
+  },
+  {
+    "itemId": "92bcdf6e-fa45-4b11-8594-3014cf2c7b7c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'class'.",
+    "correctAnswer": "classe",
+    "incorrectAnswers": [
+      "bureau",
+      "argent",
+      "magasin"
+    ],
+    "explanation": "'classe' means 'class'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/classe"
+  },
+  {
+    "itemId": "98ec6a09-7831-445d-acaf-e271f80eab60",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'office'?",
+    "correctAnswer": "bureau",
+    "incorrectAnswers": [
+      "argent",
+      "magasin",
+      "prix"
+    ],
+    "explanation": "'bureau' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/bureau"
+  },
+  {
+    "itemId": "4a8471b0-2c28-4c0d-b628-05c801e818a8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'money'?",
+    "correctAnswer": "argent",
+    "incorrectAnswers": [
+      "magasin",
+      "prix",
+      "travail"
+    ],
+    "explanation": "'argent' means 'money'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/argent"
+  },
+  {
+    "itemId": "4a7b1335-427d-4262-be50-156fe3002d5d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'shop' in everyday use?",
+    "correctAnswer": "magasin",
+    "incorrectAnswers": [
+      "prix",
+      "travail",
+      "\u00e9cole"
+    ],
+    "explanation": "'magasin' means 'shop'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/magasin"
+  },
+  {
+    "itemId": "0205c97f-ebda-4273-afbc-ab5d98a24090",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'price'.",
+    "correctAnswer": "prix",
+    "incorrectAnswers": [
+      "travail",
+      "\u00e9cole",
+      "professeur"
+    ],
+    "explanation": "'prix' means 'price'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/prix"
+  },
+  {
+    "itemId": "4669774c-e1ac-4495-8130-95c140e81aba",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'job'?",
+    "correctAnswer": "travail",
+    "incorrectAnswers": [
+      "\u00e9cole",
+      "professeur",
+      "\u00e9tudiant"
+    ],
+    "explanation": "'travail' means 'job'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/travail"
+  },
+  {
+    "itemId": "d7acc132-938b-431d-b083-fd5f49c52b21",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'age'?",
+    "correctAnswer": "\u00e2ge",
+    "incorrectAnswers": [
+      "adresse",
+      "t\u00e9l\u00e9phone",
+      "internet"
+    ],
+    "explanation": "'\u00e2ge' means 'age'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%A2ge"
+  },
+  {
+    "itemId": "e8f68e2c-6355-44ff-8588-f59b3de8a85a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Which French word means 'address' in everyday use?",
+    "correctAnswer": "adresse",
+    "incorrectAnswers": [
+      "t\u00e9l\u00e9phone",
+      "internet",
+      "courriel"
+    ],
+    "explanation": "'adresse' means 'address'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/adresse"
+  },
+  {
+    "itemId": "2b3c4c9c-fa31-4330-8823-c9514d6f2598",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'phone'.",
+    "correctAnswer": "t\u00e9l\u00e9phone",
+    "incorrectAnswers": [
+      "internet",
+      "courriel",
+      "\u00e2ge"
+    ],
+    "explanation": "'t\u00e9l\u00e9phone' means 'phone'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/t%C3%A9l%C3%A9phone"
+  },
+  {
+    "itemId": "8a229388-1eff-495c-980d-4f9f9c8f41a6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday French word for 'internet'?",
+    "correctAnswer": "internet",
+    "incorrectAnswers": [
+      "courriel",
+      "\u00e2ge",
+      "adresse"
+    ],
+    "explanation": "'internet' means 'internet'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/internet"
+  },
+  {
+    "itemId": "11577d50-b691-48bb-b2d5-a8395f031e47",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "In beginner French, how do you say 'email'?",
+    "correctAnswer": "courriel",
+    "incorrectAnswers": [
+      "\u00e2ge",
+      "adresse",
+      "t\u00e9l\u00e9phone"
+    ],
+    "explanation": "'courriel' means 'email'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/courriel"
+  },
+  {
+    "itemId": "8f7a620f-5d8a-4580-9c4b-58156c9915b2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "core",
+    "question": "Choose the French word for 'where'.",
+    "correctAnswer": "o\u00f9",
+    "incorrectAnswers": [
+      "ton",
+      "notre",
+      "leur"
+    ],
+    "explanation": "'o\u00f9' is the word for 'where'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun"
+    ],
+    "source": "https://www.wordreference.com/fren/o%C3%B9"
   }
 ]
