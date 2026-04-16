@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Services;
@@ -17,8 +19,14 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
     public SeedSyncAdminTests()
     {
+        Mock<IWebHostEnvironment> webHostEnvironment = new();
+        webHostEnvironment.Setup(env => env.ContentRootPath).Returns("/nonexistent");
+        LocalSeedLoader localSeedLoader = new(
+            webHostEnvironment.Object,
+            NullLogger<LocalSeedLoader>.Instance);
+
         Mock<IUserContext> userContext = new();
-        _service = new SeedSyncAdminService(DbContext, TaxonomyRegistry, _gitHubSeedSource, userContext.Object);
+        _service = new SeedSyncAdminService(DbContext, TaxonomyRegistry, _gitHubSeedSource, localSeedLoader, userContext.Object);
     }
 
     [Fact]
