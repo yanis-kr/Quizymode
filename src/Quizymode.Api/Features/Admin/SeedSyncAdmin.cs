@@ -49,6 +49,8 @@ public static class SeedSyncAdmin
         string GitRef,
         int DeltaPreviewLimit = 200);
 
+    public sealed record LocalRequest(int DeltaPreviewLimit = 200);
+
     public sealed record ChangeResponse(
         Guid ItemId,
         string Action,
@@ -372,6 +374,22 @@ public static class SeedSyncAdmin
                 .RequireAuthorization("Admin")
                 .Produces<HistoryResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
+
+            app.MapPost("admin/seed-sync/local/preview", LocalPreviewHandler)
+                .WithTags("Admin")
+                .WithSummary("Preview a local filesystem seed sync (Admin only)")
+                .WithDescription("Reads seed items from the server's local seed-dev path and returns the upsert delta without applying it.")
+                .RequireAuthorization("Admin")
+                .Produces<PreviewResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest);
+
+            app.MapPost("admin/seed-sync/local/apply", LocalApplyHandler)
+                .WithTags("Admin")
+                .WithSummary("Apply a local filesystem seed sync (Admin only)")
+                .WithDescription("Reads seed items from the server's local seed-dev path and upserts them.")
+                .RequireAuthorization("Admin")
+                .Produces<ApplyResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest);
         }
 
         private static async Task<IResult> PreviewHandler(
@@ -405,6 +423,38 @@ public static class SeedSyncAdmin
             }
 
             Result<ApplyResponse> result = await service.ApplyAsync(request, cancellationToken);
+            return result.Match(
+                value => Results.Ok(value),
+                _ => CustomResults.Problem(result));
+        }
+
+        private static async Task<IResult> LocalPreviewHandler(
+            LocalRequest request,
+            SeedSyncAdminService service,
+            CancellationToken cancellationToken)
+        {
+            if (request.DeltaPreviewLimit < 0 || request.DeltaPreviewLimit > 500)
+            {
+                return Results.BadRequest("DeltaPreviewLimit must be between 0 and 500.");
+            }
+
+            Result<PreviewResponse> result = await service.PreviewLocalAsync(request, cancellationToken);
+            return result.Match(
+                value => Results.Ok(value),
+                _ => CustomResults.Problem(result));
+        }
+
+        private static async Task<IResult> LocalApplyHandler(
+            LocalRequest request,
+            SeedSyncAdminService service,
+            CancellationToken cancellationToken)
+        {
+            if (request.DeltaPreviewLimit < 0 || request.DeltaPreviewLimit > 500)
+            {
+                return Results.BadRequest("DeltaPreviewLimit must be between 0 and 500.");
+            }
+
+            Result<ApplyResponse> result = await service.ApplyLocalAsync(request, cancellationToken);
             return result.Match(
                 value => Results.Ok(value),
                 _ => CustomResults.Problem(result));
@@ -445,6 +495,7 @@ public static class SeedSyncAdmin
         {
             services.AddScoped<IValidator<Request>, Validator>();
             services.AddScoped<SeedSyncAdminService>();
+            services.AddScoped<LocalSeedLoader>();
         }
     }
 }

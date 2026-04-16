@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "6d7e8f9a-0b1c-2345-6123-901234567890",
+    "itemId": "2af74938-b753-40cf-9280-f80c124522b3",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'[Item] o hitotsu kudasai' — 'Please give me one [item]' — is the standard café order pattern.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
   },
   {
-    "itemId": "7e8f9a0b-1c2d-3456-7234-012345678901",
+    "itemId": "7efc053b-9a3a-4114-b34e-948264d91d22",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Doko desu ka' means 'where is'. Replace 'toire' with any destination.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/where-is-japanese/"
   },
   {
-    "itemId": "8f9a0b1c-2d3e-4567-8345-123456789012",
+    "itemId": "d0f68ee1-5329-4af6-93d3-acb62e2eabd6",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Ikura desu ka' — 'How much is it?' — is essential for shopping and markets.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://jisho.org/word/%E3%81%84%E3%81%8F%E3%82%89"
   },
   {
-    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "itemId": "6f42301c-5174-47ce-a5fd-2020fb0f1fa7",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Okaikei o onegaishimasu' — 'The bill, please' — is the polite restaurant phrase.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
   },
   {
-    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "itemId": "681505d1-50e1-4b3e-bc60-076208225bf4",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely — locals will often switch to simpler Japanese.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://jisho.org/word/%E3%82%8F%E3%81%8B%E3%82%8B"
   },
   {
-    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "itemId": "4abd785a-50bc-481f-a342-90e1a2b0c5ef",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -113,12 +113,12 @@
     "explanation": "'Eigo o hanasemasu ka?' — 'Can you speak English?' — a key phrase when you need help.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/do-you-speak-english-japanese/"
   },
   {
-    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "itemId": "421e645b-728b-4ceb-9dbe-b3e90d8d2912",
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
@@ -132,8 +132,8 @@
     "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead — the three direction words.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-directions/"
   }

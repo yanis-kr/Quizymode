@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "ff01aa02-bb03-cc04-dd05-ee0607080900",
+    "itemId": "c16ea07e-65b8-4d70-852c-80be0ba6f7ea",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'Wo ist' = 'Where is'. Replace 'die Toilette' with any destination: der Bahnhof, das Hotel, etc.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/wo"
   },
   {
-    "itemId": "ff02aa03-bb04-cc05-dd06-ee0708091001",
+    "itemId": "718b5d57-2f06-4c73-b199-c585c58dd5dd",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Wie viel kostet das?' — 'How much does this cost?' — the key shopping phrase.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/wie-viel"
   },
   {
-    "itemId": "ff03aa04-bb05-cc06-dd07-ee0809101102",
+    "itemId": "13d33296-bbef-47e1-a9ea-2399bd1376bf",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Einen [item], bitte' — 'One [item], please'. Note the accusative 'einen' for masculine nouns.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.germanpod101.com/german-phrases/"
   },
   {
-    "itemId": "ff04aa05-bb06-cc07-dd08-ee0910111203",
+    "itemId": "c207f96d-a39c-4efd-862e-5e0d8d6c6177",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Die Rechnung, bitte' — 'The bill, please'. In Austria/Bavaria you may also hear 'Zahlen, bitte'.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/rechnung"
   },
   {
-    "itemId": "ff05aa06-bb07-cc08-dd09-ee1011121304",
+    "itemId": "f87a86f3-6207-4ac8-9f2b-6ca52c4ba00c",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Sprechen Sie Englisch?' — formal. Informal: 'Sprichst du Englisch?'",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/sprechen"
   },
   {
-    "itemId": "ff06aa07-bb08-cc09-dd10-ee1112131405",
+    "itemId": "8cf0157f-de41-4b67-9064-2a512d823a9b",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -113,13 +113,13 @@
     "explanation": "'Links' = left, 'rechts' = right, 'geradeaus' = straight ahead — the three key direction words.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/links"
   },
   {
-    "itemId": "ff07aa08-bb09-cc10-dd11-ee1213141506",
+    "itemId": "2665a822-f8f0-4145-8f52-7a4fba065e9e",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
@@ -133,8 +133,8 @@
     "explanation": "'Einen Tisch für [number] Personen, bitte' — swap the number as needed.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/tisch"
   }

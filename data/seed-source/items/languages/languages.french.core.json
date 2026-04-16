@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "cc01dd02-ee03-ff04-aa05-bb0607080900",
+    "itemId": "fdb7d10f-b32e-4d9d-a416-27ace9518013",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -14,13 +14,13 @@
     "explanation": "'Bonjour' (good day) is the standard greeting. 'Salut' is informal. 'Bonsoir' is for evenings.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/bonjour"
   },
   {
-    "itemId": "cc02dd03-ee04-ff05-aa06-bb0708091001",
+    "itemId": "c4a0fd12-9abd-4a98-815e-9c6753f901bc",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -34,13 +34,13 @@
     "explanation": "'Merci' = thank you. 'Merci beaucoup' = thank you very much. 'De rien' = you're welcome.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/merci"
   },
   {
-    "itemId": "cc03dd04-ee05-ff06-aa07-bb0809101102",
+    "itemId": "cdde6ddc-c1bc-45ee-8254-0bf83eab8519",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -54,12 +54,12 @@
     "explanation": "'S'il vous plaît' (formal) and 's'il te plaît' (informal) both mean please. Often abbreviated to 'SVP'.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/s-il-vous-plait"
   },
   {
-    "itemId": "cc04dd05-ee06-ff07-aa08-bb0910111203",
+    "itemId": "313d574b-a142-40e7-be1d-388f8c54f05b",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -73,13 +73,13 @@
     "explanation": "'Je m'appelle [name]' — 'I call myself [name]' — the standard introduction.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/s-appeler"
   },
   {
-    "itemId": "cc05dd06-ee07-ff08-aa09-bb1011121304",
+    "itemId": "0e0e9b31-bfa4-4e39-9f89-c7bc2e246f0f",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -93,12 +93,12 @@
     "explanation": "French numbers 1-3: un (1), deux (2), trois (3). Note: quatre (4), cinq (5) follow.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.frenchpod101.com/french-numbers/"
   },
   {
-    "itemId": "cc06dd07-ee08-ff09-aa10-bb1112131405",
+    "itemId": "57a70696-fa11-4b30-b06d-6df99a6f5738",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -112,13 +112,13 @@
     "explanation": "'Au revoir' = goodbye (until we see again). 'À bientôt' = see you soon, 'à demain' = see you tomorrow.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/au-revoir"
   },
   {
-    "itemId": "cc07dd08-ee09-ff10-aa11-bb1213141506",
+    "itemId": "3a1e5d92-96d8-4bfa-b7b5-9f479f74b3a0",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -132,12 +132,12 @@
     "explanation": "'Excusez-moi' = excuse me (to get attention). 'Pardon' = sorry/excuse me. 'Je suis désolé(e)' = I'm sorry.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/excuser"
   },
   {
-    "itemId": "cc08dd09-ee10-ff11-aa12-bb1314151607",
+    "itemId": "a3b76282-8cc5-4811-b9a4-ce907e44adf3",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -151,12 +151,12 @@
     "explanation": "'Oui' = yes, 'Non' = no. Note: 'si' is used to contradict a negative statement (the 'yes, I do!' response).",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/oui"
   },
   {
-    "itemId": "cc09dd10-ee11-ff12-aa13-bb1415161708",
+    "itemId": "2d57f98f-3a2d-4357-bba9-0b27dee7c1ea",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "core",
@@ -170,7 +170,7 @@
     "explanation": "'L'eau' (water) is feminine: 'une bouteille d'eau'. 'Le pain' = bread, 'le lait' = milk.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/eau"
   }

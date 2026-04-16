@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "itemId": "b641b5d4-e9b8-4475-a2e2-d1faaf278dbb",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'De' means 'where'. 'De tualet?' is the most practical travel phrase.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   },
   {
-    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "itemId": "cd66b651-37dd-412b-bf95-3c5a4eb0dc19",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Skilky tse koshtuye?' — 'How much does this cost?' — essential for markets.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   },
   {
-    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "itemId": "6c158605-0c0a-47f3-9c15-342ff45a30f6",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'[Item], bud laska' — '[Item], please' — the polite café order pattern.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   },
   {
-    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "itemId": "448531bb-ed29-4fca-b786-3d3f0f4a0961",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Rakhunok' = the bill/check. Add 'bud laska' to make it polite.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   },
   {
-    "itemId": "3e4f5a6b-7c8d-9012-3890-678901234567",
+    "itemId": "0fabe614-4def-4f20-97d5-644d868bd121",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Ya ne rozumiyu' — the essential phrase for when you've lost the thread.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   },
   {
-    "itemId": "4f5a6b7c-8d9e-0123-4901-789012345678",
+    "itemId": "923aec94-a593-499e-b77c-fa279df39e29",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
@@ -113,7 +113,7 @@
     "explanation": "Polite plural form 'Vy hovoryte angliyiyskoyu?' — informal: 'Ty hovorysh angliyiyskoyu?'",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
   }

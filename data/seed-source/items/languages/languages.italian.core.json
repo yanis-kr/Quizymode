@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "e9a08222-f47b-4126-9356-0af9943fe7b4",
+    "itemId": "a05d5e9c-9ccc-4db6-9d8f-e8e9b04c84a9",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -14,13 +14,13 @@
     "explanation": "'Ciao' is a common informal greeting and goodbye, depending on context.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/ciao"
   },
   {
-    "itemId": "f9c4c131-be48-45f6-ae33-1f1a74456d2a",
+    "itemId": "53b1281e-d373-4150-a6bc-09e03dc4d66b",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -34,13 +34,13 @@
     "explanation": "'Grazie' is the standard way to say thank you.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://www.treccani.it/vocabolario/grazie/"
   },
   {
-    "itemId": "7feb2989-6d5c-4883-9463-e9665a5714a4",
+    "itemId": "3745203e-596c-43ba-9c68-f5fa715244a5",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -54,12 +54,12 @@
     "explanation": "'Acqua' means water, a very common word in daily life.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/acqua"
   },
   {
-    "itemId": "7e2eb366-7fcc-4dc5-a338-0ffebe61f694",
+    "itemId": "4b157145-2a6d-402b-bcc8-4f9d0d66a67c",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -73,13 +73,13 @@
     "explanation": "'Io sono' uses 'essere' for 'I am', often used in introductions.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/sono"
   },
   {
-    "itemId": "0aba6eba-8287-498e-a594-9dfe6355fa47",
+    "itemId": "a018a74d-c323-4aff-8dc5-2d117f5cdb5f",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -93,12 +93,12 @@
     "explanation": "'Un libro' is a common pattern: masculine singular indefinite article 'un' before most consonants.",
     "keywords": [
       "freq-500",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.treccani.it/vocabolario/un/"
   },
   {
-    "itemId": "1d623e8c-1597-4058-a062-3950f9a15b61",
+    "itemId": "f7c3e81c-7a5d-4e25-82fd-e3c8358d9d42",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -112,13 +112,13 @@
     "explanation": "'Dove' asks where something is, useful for directions.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
   },
   {
-    "itemId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "itemId": "0c0482c8-862f-4593-905a-0b3edb8ef14b",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -132,12 +132,12 @@
     "explanation": "'Sì' (with accent) is the standard word for yes. 'No' stays the same as in English.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/si"
   },
   {
-    "itemId": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "itemId": "4b267a65-36f2-4379-bb0e-b8a02c620e94",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -151,12 +151,12 @@
     "explanation": "'Per favore' literally means 'as a favour' and is the standard polite 'please'.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/per-favore"
   },
   {
-    "itemId": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "itemId": "b27c3077-6eed-49a0-a7df-c417148db72c",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -170,13 +170,13 @@
     "explanation": "'Mi chiamo' literally means 'I call myself' — used to introduce your name.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/chiamarsi"
   },
   {
-    "itemId": "d4e5f6a7-b8c9-0123-defa-234567890123",
+    "itemId": "0eeede75-d35c-4e30-86e0-8d8caea6f041",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "core",
@@ -190,8 +190,8 @@
     "explanation": "'Arrivederci' is a formal farewell — 'until we see each other again'. Use 'ciao' informally.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/arrivederci"
   }

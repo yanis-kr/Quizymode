@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "dd01ee02-ff03-aa04-bb05-cc0607080900",
+    "itemId": "8f46907d-1f90-4c76-9b4a-e5b00902490d",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'Où sont les toilettes ?' — 'Where are the toilets?' — the essential travel phrase.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/ou"
   },
   {
-    "itemId": "dd02ee03-ff04-aa05-bb06-cc0708091001",
+    "itemId": "bdc1eda3-3f2c-4e67-94de-9203251eb932",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Combien ça coûte ?' — 'How much does it cost?' — used in any shop or market.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/combien"
   },
   {
-    "itemId": "dd03ee04-ff05-aa06-bb07-cc0809101102",
+    "itemId": "2f638e19-3631-459a-b9d4-27e3af167b59",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Un [item], s'il vous plaît' — the standard polite café order.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.bbc.co.uk/languages/french/talk/index.shtml"
   },
   {
-    "itemId": "dd04ee05-ff06-aa07-bb08-cc0910111203",
+    "itemId": "8f852d1a-17c4-4429-981e-e535efdf70e1",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'L'addition, s'il vous plaît' — 'The bill, please' — note 'addition' not 'compte' for a restaurant bill.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/addition"
   },
   {
-    "itemId": "dd05ee06-ff07-aa08-bb09-cc1011121304",
+    "itemId": "e0050064-70c9-4d09-9910-b6aae0b7d2ce",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Parlez-vous anglais ?' — formal. Informal: 'Tu parles anglais ?'",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/parler"
   },
   {
-    "itemId": "dd06ee07-ff08-aa09-bb10-cc1112131405",
+    "itemId": "87ceb115-8170-4c22-a720-e24dbcfe5c0a",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -113,13 +113,13 @@
     "explanation": "'Gauche' = left, 'droite' = right, 'tout droit' = straight ahead — the three navigation words.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche"
   },
   {
-    "itemId": "dd07ee08-ff09-aa10-bb11-cc1213141506",
+    "itemId": "a0074107-9f67-4ba0-90c2-2ef568d6cfeb",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
@@ -133,7 +133,7 @@
     "explanation": "'Je ne comprends pas' — the essential rescue phrase when you're lost in conversation.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/comprendre"
   }

@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "3de7cba4-eade-4a5f-b0c5-5fa7aaf27bdd",
+    "itemId": "acc641ce-c3e6-4162-b2a2-182b2c46d079",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -14,13 +14,13 @@
     "explanation": "'Zdravstvuyte' is a common polite greeting for strangers and formal settings.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/hello"
   },
   {
-    "itemId": "d0d6d522-2693-41ed-97a5-7fe600affbbe",
+    "itemId": "7d258b45-b275-47df-ab8e-3b8168ee9844",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -34,13 +34,13 @@
     "explanation": "'Spasibo' is the everyday thank you.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/thank-you"
   },
   {
-    "itemId": "a7134ba0-2a1a-413e-a82d-4ef9cd465a5c",
+    "itemId": "041ba051-e8be-475b-bcf1-a25daeba9b08",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -54,12 +54,12 @@
     "explanation": "'Voda' means water and is very common in daily speech.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/water"
   },
   {
-    "itemId": "0a3a42ee-704e-4692-a637-c628d32fb0ff",
+    "itemId": "5b918956-204f-406b-b5f3-5368e450b7fa",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -73,12 +73,12 @@
     "explanation": "'Da' is the basic word for yes.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/yes"
   },
   {
-    "itemId": "5453b98a-8a6d-4e0d-80f8-8ccc79b4bd54",
+    "itemId": "3684f8ab-13fd-4d49-a089-120bafa2f258",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -92,12 +92,12 @@
     "explanation": "'Net' is the basic word for no.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/no"
   },
   {
-    "itemId": "9032b887-7502-4b3f-a9d3-3f184dd28c27",
+    "itemId": "fd4340ec-9077-481a-813d-1579c4e88f49",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -111,12 +111,12 @@
     "explanation": "Russian uses case endings to show subject, object, and other roles, which learners study step by step.",
     "keywords": [
       "freq-500",
-      "cefr:a2"
+      "cefr-a2"
     ],
     "source": "https://www.russianlessons.net/lessons/lesson6_main.php"
   },
   {
-    "itemId": "e5f6a7b8-c9d0-1234-efab-345678901234",
+    "itemId": "faea7db1-29b4-4aa5-bdd0-5b2f955e725a",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -130,12 +130,12 @@
     "explanation": "'Pozhaluysta' means please and is also used to say 'you're welcome'.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/please"
   },
   {
-    "itemId": "f6a7b8c9-d0e1-2345-fabc-456789012345",
+    "itemId": "3ee8e3ba-8738-4d08-b87a-9f5737fded67",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -149,13 +149,13 @@
     "explanation": "'Menya zovut' literally means 'they call me' — the standard way to introduce your name.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://www.russianlessons.net/lessons/lesson1_main.php"
   },
   {
-    "itemId": "a7b8c9d0-e1f2-3456-abcd-567890123456",
+    "itemId": "b04e4cca-683d-44bf-98ea-51379fac01ed",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -169,13 +169,13 @@
     "explanation": "'Do svidaniya' is the formal farewell, literally 'until the meeting'.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/goodbye"
   },
   {
-    "itemId": "b8c9d0e1-f2a3-4567-bcde-678901234567",
+    "itemId": "87518db7-16df-41a4-8e8f-ba9fc3ca449a",
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
@@ -189,7 +189,7 @@
     "explanation": "'Izvinite' is used both to apologize and to politely get someone's attention.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english-russian/excuse"
   }

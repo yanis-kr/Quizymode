@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "1a2b3c4d-5e6f-7890-1234-abcdef012345",
+    "itemId": "dfbbd0f9-7e02-40e9-b458-6316b7a54e82",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'Vorrei' (I would like) is the polite conditional form, preferred in cafés and restaurants.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.treccani.it/vocabolario/volere/"
   },
   {
-    "itemId": "2b3c4d5e-6f7a-8901-2345-bcdef0123456",
+    "itemId": "3ad6661d-086e-41d3-bd50-14c9a2969c07",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Dov'è' = 'Where is', 'il bagno' = 'the bathroom'. One of the most essential travel phrases.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
   },
   {
-    "itemId": "3c4d5e6f-7a8b-9012-3456-cdef01234567",
+    "itemId": "1d45525d-92de-4cb9-a175-51d063ad0bdb",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Quanto costa?' is the go-to phrase at markets, shops, and cafés.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/quanto"
   },
   {
-    "itemId": "4d5e6f7a-8b9c-0123-4567-def012345678",
+    "itemId": "095cf27a-d56c-44c7-8a9d-37b56b29332a",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Il conto' means the bill/check. Saying it with 'per favore' is the polite way to ask.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/conto"
   },
   {
-    "itemId": "5e6f7a8b-9c0d-1234-5678-ef0123456789",
+    "itemId": "35d510e1-c38a-4dca-85ba-8937f95ea3f9",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Può aiutarmi?' uses the polite 'Lei' form ('può' = can you) — best for asking strangers.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/aiutare"
   },
   {
-    "itemId": "6f7a8b9c-0d1e-2345-6789-f01234567890",
+    "itemId": "bc82d0da-1a05-4e42-990b-7c97587147e7",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -113,12 +113,12 @@
     "explanation": "'Non capisco' is the first phrase to use when you're lost in conversation.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/capire"
   },
   {
-    "itemId": "7a8b9c0d-1e2f-3456-789a-012345678901",
+    "itemId": "e565cde7-29fe-4c21-b45d-1f1ee58dda0f",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -132,13 +132,13 @@
     "explanation": "'Dov'è la stazione?' — replace 'stazione' with any destination (hotel, museum, etc.).",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/stazione"
   },
   {
-    "itemId": "8b9c0d1e-2f3a-4567-89ab-123456789012",
+    "itemId": "835c7888-7d6d-4f0f-b640-61eeaab0b00d",
     "category": "languages",
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
@@ -152,8 +152,8 @@
     "explanation": "'Un tavolo per due' — swap 'due' with any number: tre, quattro, etc.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/italian-english/tavolo"
   }

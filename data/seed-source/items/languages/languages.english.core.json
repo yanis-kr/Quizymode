@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "11aa22bb-33cc-44dd-55ee-66ff77889900",
+    "itemId": "34dea3fb-4272-44cd-9749-6c0130ec2176",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -14,13 +14,13 @@
     "explanation": "'Hello' works any time. 'Good morning', 'good afternoon', 'good evening' are time-specific. 'Good night' is a farewell, not a greeting.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/hello"
   },
   {
-    "itemId": "22bb33cc-44dd-55ee-66ff-778899001011",
+    "itemId": "d065facc-bf80-45f5-9ccf-f7dcbe0f2cdb",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -34,13 +34,13 @@
     "explanation": "'You're welcome' is the classic polite response. 'No problem', 'not at all', 'my pleasure' are also common modern alternatives.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/you-re-welcome"
   },
   {
-    "itemId": "33cc44dd-55ee-66ff-7788-990011223344",
+    "itemId": "1fa2dced-fc2e-479f-b27d-baa80887cde5",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -54,13 +54,13 @@
     "explanation": "'My name is...' and 'I'm...' are both correct and natural. 'I call myself' is technically correct but unusual in native speech.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/introduction"
   },
   {
-    "itemId": "44dd55ee-66ff-7788-9900-112233445566",
+    "itemId": "7b8c288f-8d7c-4160-a770-8a6535af88e1",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -74,12 +74,12 @@
     "explanation": "'Could you repeat that?' asks for a repetition. 'Could you speak more slowly?' and 'Could you speak louder?' are separate useful phrases.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/repeat"
   },
   {
-    "itemId": "55ee66ff-7788-9900-1122-334455667788",
+    "itemId": "828d2d69-b157-4628-97e0-cd626e13abf9",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -93,12 +93,12 @@
     "explanation": "'I'm not sure I agree' softens disagreement. In English, hedging phrases like 'I'm not sure' make disagreement more polite.",
     "keywords": [
       "freq-100",
-      "cefr:a2"
+      "cefr-a2"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/agree"
   },
   {
-    "itemId": "66ff7788-9900-1122-3344-556677889900",
+    "itemId": "e396d4b4-821f-44df-9c7b-392b989248f7",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -112,12 +112,12 @@
     "explanation": "Traditionally, 'may' requests permission politely; 'can' asks about ability. In practice, 'can' is widely accepted for permission in conversational English.",
     "keywords": [
       "freq-100",
-      "cefr:a2"
+      "cefr-a2"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/may"
   },
   {
-    "itemId": "77889900-1122-3344-5566-778899001122",
+    "itemId": "d5c26205-1d99-437d-95a6-d34b357d1ff9",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -131,12 +131,12 @@
     "explanation": "'Just a moment, please' and 'one moment, please' are polite and neutral. 'Hold your horses' is informal/humorous.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/moment"
   },
   {
-    "itemId": "8899aabb-ccdd-eeff-0011-223344556677",
+    "itemId": "c000288c-4f0b-4dd6-b162-6bbc6e03f5fe",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "core",
@@ -150,7 +150,7 @@
     "explanation": "'I'm not sure' is neutral and safe. 'No idea' and 'I haven't a clue' are informal. 'How should I know?' can sound rude.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/sure"
   }

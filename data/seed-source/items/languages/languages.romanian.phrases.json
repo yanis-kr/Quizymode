@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "8f9a0b1c-2d3e-4567-8345-123456789012",
+    "itemId": "30055b5b-4f4e-4d74-af74-2cb78f4465ad",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'Unde este' = 'where is'. Replace 'toaleta' with any destination: gara (train station), hotelul (hotel), etc.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   },
   {
-    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "itemId": "476d6a26-3d53-4630-85ed-7d51f7610f95",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Cât costă asta?' — 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   },
   {
-    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "itemId": "1b6a597d-a05b-42d9-a589-203495ce6282",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Un [item], vă rog' — 'One [item], please' — the polite café order pattern.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   },
   {
-    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "itemId": "09e19b07-4844-4f98-8973-98b16cc039fc",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Nota de plată, vă rog' — 'The bill, please'. 'Nota' comes from Italian nota.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   },
   {
-    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "itemId": "7336bc25-7a65-4a9e-9811-23186eb9fd52",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Nu înțeleg' — 'I don't understand' — the rescue phrase every traveller needs.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   },
   {
-    "itemId": "3e4f5a6b-7c8d-9012-3890-678901234567",
+    "itemId": "dc08dae1-d87a-48c5-888a-af4736ab279b",
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "phrases",
@@ -113,7 +113,7 @@
     "explanation": "'Vorbiți englezește?' — 'Do you speak English?' — formal plural form.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/romanian.htm"
   }

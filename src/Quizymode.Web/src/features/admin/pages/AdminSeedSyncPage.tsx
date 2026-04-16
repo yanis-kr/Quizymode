@@ -8,11 +8,14 @@ import {
 import { useAuth } from "@/contexts/AuthContext";
 import {
   adminApi,
+  type LocalSeedSyncRequest,
   type SeedSyncApplyResponse,
   type SeedSyncHistoryResponse,
   type SeedSyncPreviewResponse,
   type SeedSyncRequest,
 } from "@/api/admin";
+
+type SyncSource = "github" | "local";
 
 function extractErrorMessage(error: unknown): string {
   const fallback = "The request failed. Check the repository settings and try again.";
@@ -362,6 +365,7 @@ function HistoryPanel({ history }: { history: SeedSyncHistoryResponse }) {
 const AdminSeedSyncPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
+  const [syncSource, setSyncSource] = useState<SyncSource>("github");
   const [repositoryOwner, setRepositoryOwner] = useState("yanis-kr");
   const [repositoryName, setRepositoryName] = useState("Quizymode");
   const [gitRef, setGitRef] = useState("main");
@@ -406,6 +410,34 @@ const AdminSeedSyncPage = () => {
     },
   });
 
+  const localPreviewMutation = useMutation({
+    mutationFn: (request: LocalSeedSyncRequest) => adminApi.previewLocalSeedSync(request),
+    onSuccess: (response) => {
+      setLocalError(null);
+      setApplyResponse(null);
+      setPreviewResponse(response);
+    },
+    onError: (error) => {
+      setPreviewResponse(null);
+      setApplyResponse(null);
+      setLocalError(extractErrorMessage(error));
+    },
+  });
+
+  const localApplyMutation = useMutation({
+    mutationFn: (request: LocalSeedSyncRequest) => adminApi.applyLocalSeedSync(request),
+    onSuccess: (response) => {
+      setLocalError(null);
+      setPreviewResponse(null);
+      setApplyResponse(response);
+      queryClient.invalidateQueries({ queryKey: ["admin", "seed-sync-history"] });
+    },
+    onError: (error) => {
+      setApplyResponse(null);
+      setLocalError(extractErrorMessage(error));
+    },
+  });
+
   const historyQuery = useQuery({
     queryKey: ["admin", "seed-sync-history"],
     queryFn: () => adminApi.getSeedSyncHistory(),
@@ -416,7 +448,7 @@ const AdminSeedSyncPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  const buildRequest = (): SeedSyncRequest => {
+  const buildGitHubRequest = (): SeedSyncRequest => {
     resetResults();
 
     const owner = repositoryOwner.trim();
@@ -441,9 +473,24 @@ const AdminSeedSyncPage = () => {
     };
   };
 
+  const buildLocalRequest = (): LocalSeedSyncRequest => {
+    resetResults();
+
+    const limit = Number(deltaPreviewLimit.trim());
+    if (!Number.isInteger(limit) || limit < 0 || limit > 500) {
+      throw new Error("Delta preview limit must be an integer between 0 and 500.");
+    }
+
+    return { deltaPreviewLimit: limit };
+  };
+
   const handlePreview = () => {
     try {
-      previewMutation.mutate(buildRequest());
+      if (syncSource === "local") {
+        localPreviewMutation.mutate(buildLocalRequest());
+      } else {
+        previewMutation.mutate(buildGitHubRequest());
+      }
     } catch (error) {
       setLocalError(extractErrorMessage(error));
     }
@@ -451,13 +498,21 @@ const AdminSeedSyncPage = () => {
 
   const handleApply = () => {
     try {
-      applyMutation.mutate(buildRequest());
+      if (syncSource === "local") {
+        localApplyMutation.mutate(buildLocalRequest());
+      } else {
+        applyMutation.mutate(buildGitHubRequest());
+      }
     } catch (error) {
       setLocalError(extractErrorMessage(error));
     }
   };
 
-  const isWorking = previewMutation.isPending || applyMutation.isPending;
+  const isWorking =
+    previewMutation.isPending ||
+    applyMutation.isPending ||
+    localPreviewMutation.isPending ||
+    localApplyMutation.isPending;
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -472,63 +527,111 @@ const AdminSeedSyncPage = () => {
 
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Seed Sync</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Preview or apply repo-managed items and public collections directly from
-        GitHub. The API fetches the exact ref you provide and never infers
-        deletes from missing rows.
+        Preview or apply repo-managed items directly from GitHub or from the
+        server's local source registry. The API never infers deletes from missing
+        rows.
       </p>
 
-      <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
-        Use an immutable commit SHA for production whenever possible. Branch refs
-        are convenient for testing, but commit-based syncs are easier to audit and
-        roll back.
+      <div className="mb-6 flex gap-2">
+        <button
+          type="button"
+          onClick={() => { setSyncSource("github"); resetResults(); }}
+          className={`rounded-md px-4 py-2 text-sm font-medium border ${
+            syncSource === "github"
+              ? "bg-indigo-600 text-white border-indigo-600"
+              : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
+          }`}
+        >
+          GitHub
+        </button>
+        <button
+          type="button"
+          onClick={() => { setSyncSource("local"); resetResults(); }}
+          className={`rounded-md px-4 py-2 text-sm font-medium border ${
+            syncSource === "local"
+              ? "bg-indigo-600 text-white border-indigo-600"
+              : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
+          }`}
+        >
+          Local filesystem
+        </button>
       </div>
+
+      {syncSource === "github" && (
+        <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+          Use an immutable commit SHA for production whenever possible. Branch refs
+          are convenient for testing, but commit-based syncs are easier to audit and
+          roll back.
+        </div>
+      )}
+
+      {syncSource === "local" && (
+        <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          Reads all items from the server's local{" "}
+          <span className="font-mono">data/seed-source/items/</span> directory —
+          the full source registry, no filtering. Useful for validating new seed
+          files before pushing to GitHub. Only available in dev environments with
+          the repository checked out.
+        </div>
+      )}
 
       <div className="bg-white shadow rounded-lg p-6">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <label className="block">
-              <span className="text-sm font-medium text-gray-700">
-                Repository owner
-              </span>
-              <input
-                value={repositoryOwner}
-                onChange={(event) => {
-                  setRepositoryOwner(event.target.value);
-                  resetResults();
-                }}
-                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
-                placeholder="Quizymode"
-              />
-            </label>
+            {syncSource === "github" && (
+              <>
+                <label className="block">
+                  <span className="text-sm font-medium text-gray-700">
+                    Repository owner
+                  </span>
+                  <input
+                    value={repositoryOwner}
+                    onChange={(event) => {
+                      setRepositoryOwner(event.target.value);
+                      resetResults();
+                    }}
+                    className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+                    placeholder="Quizymode"
+                  />
+                </label>
 
-            <label className="block">
-              <span className="text-sm font-medium text-gray-700">
-                Repository name
-              </span>
-              <input
-                value={repositoryName}
-                onChange={(event) => {
-                  setRepositoryName(event.target.value);
-                  resetResults();
-                }}
-                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
-                placeholder="Quizymode"
-              />
-            </label>
+                <label className="block">
+                  <span className="text-sm font-medium text-gray-700">
+                    Repository name
+                  </span>
+                  <input
+                    value={repositoryName}
+                    onChange={(event) => {
+                      setRepositoryName(event.target.value);
+                      resetResults();
+                    }}
+                    className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+                    placeholder="Quizymode"
+                  />
+                </label>
 
-            <label className="block md:col-span-2">
-              <span className="text-sm font-medium text-gray-700">Git ref</span>
-              <input
-                value={gitRef}
-                onChange={(event) => {
-                  setGitRef(event.target.value);
-                  resetResults();
-                }}
-                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm"
-                placeholder="main or a commit SHA"
-              />
-            </label>
+                <label className="block md:col-span-2">
+                  <span className="text-sm font-medium text-gray-700">Git ref</span>
+                  <input
+                    value={gitRef}
+                    onChange={(event) => {
+                      setGitRef(event.target.value);
+                      resetResults();
+                    }}
+                    className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 font-mono text-sm"
+                    placeholder="main or a commit SHA"
+                  />
+                </label>
+              </>
+            )}
 
+            {syncSource === "local" && (
+              <div className="md:col-span-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-600">
+                Source:{" "}
+                <span className="font-mono">data/seed-source/items/</span> —
+                full local registry, all files loaded, no filtering.
+              </div>
+            )}
           </div>
 
           <div className="space-y-4">
@@ -552,20 +655,13 @@ const AdminSeedSyncPage = () => {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-4 text-sm text-gray-600">
-              <p>
-                The sync reads canonical JSON directly from GitHub. Local seed-dev
-                startup seeding still uses checked-out local files.
-              </p>
-            </div>
-
             <button
               type="button"
               onClick={handlePreview}
               disabled={isWorking}
               className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
             >
-              {previewMutation.isPending ? "Previewing..." : "Preview sync"}
+              {(previewMutation.isPending || localPreviewMutation.isPending) ? "Previewing..." : "Preview sync"}
             </button>
 
             <button
@@ -574,7 +670,7 @@ const AdminSeedSyncPage = () => {
               disabled={isWorking}
               className="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
             >
-              {applyMutation.isPending ? "Applying..." : "Apply sync"}
+              {(applyMutation.isPending || localApplyMutation.isPending) ? "Applying..." : "Apply sync"}
             </button>
           </div>
         </div>

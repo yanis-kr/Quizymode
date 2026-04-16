@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "ee01ff02-aa03-bb04-cc05-dd0607080900",
+    "itemId": "bb879d7d-4b3d-443a-bd76-7fc0fd26ebec",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -14,13 +14,13 @@
     "explanation": "'Hallo' is casual; 'Guten Tag' (good day) is formal. 'Guten Morgen' = good morning, 'Guten Abend' = good evening.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/hallo"
   },
   {
-    "itemId": "ee02ff03-aa04-bb05-cc06-dd0708091001",
+    "itemId": "31c5f5fa-edc0-4f2a-a08f-6e3f476b5106",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -34,13 +34,13 @@
     "explanation": "'Danke' = thank you. 'Danke schön' = thank you kindly. 'Bitte' = please AND you're welcome.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/danke"
   },
   {
-    "itemId": "ee03ff04-aa05-bb06-cc07-dd0809101102",
+    "itemId": "a5e7515b-3299-471d-a913-8a192ad25c69",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -54,12 +54,12 @@
     "explanation": "'Bitte' is both please and you're welcome. Context determines meaning.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/bitte"
   },
   {
-    "itemId": "ee04ff05-aa06-bb07-cc08-dd0910111203",
+    "itemId": "ace421f2-464f-4c76-be46-d49c36fbb015",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -73,13 +73,13 @@
     "explanation": "'Ich heiße [name]' — 'I am called [name]'. 'Ich bin [name]' (I am) is also used.",
     "keywords": [
       "freq-100",
-      "situation:intro",
-      "cefr:a1"
+      "situation-intro",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/heissen"
   },
   {
-    "itemId": "ee05ff06-aa07-bb08-cc09-dd1011121304",
+    "itemId": "9a0684f9-eec9-4030-83a9-60609170e26f",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -93,12 +93,12 @@
     "explanation": "German numbers: ein (1), zwei (2), drei (3). Note: 'ein' changes form as article — 'einen', 'einem', etc.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://germanpod101.com/german-numbers/"
   },
   {
-    "itemId": "ee06ff07-aa08-bb09-cc10-dd1112131405",
+    "itemId": "c62be141-e27f-49fd-ace9-3c83ab183c1a",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -112,13 +112,13 @@
     "explanation": "'Auf Wiedersehen' = goodbye (formal). 'Tschüss' = bye (informal). 'Bis bald' = see you soon.",
     "keywords": [
       "freq-100",
-      "situation:greetings",
-      "cefr:a1"
+      "situation-greetings",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/auf-wiedersehen"
   },
   {
-    "itemId": "ee07ff08-aa09-bb10-cc11-dd1213141506",
+    "itemId": "311ea0cb-427b-4107-93e2-2008b20d6ce1",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -132,12 +132,12 @@
     "explanation": "'Entschuldigung' = excuse me / sorry (to get attention or apologize). 'Es tut mir leid' = I'm sorry (deeper apology).",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/entschuldigung"
   },
   {
-    "itemId": "ee08ff09-aa10-bb11-cc12-dd1314151607",
+    "itemId": "beacee62-86bd-4294-953a-b9fd599464de",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -151,12 +151,12 @@
     "explanation": "'Ich verstehe nicht' — the essential rescue phrase. 'Ich weiß nicht' = I don't know.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/verstehen"
   },
   {
-    "itemId": "ee09ff10-aa11-bb12-cc13-dd1415161708",
+    "itemId": "ce3ee515-c506-4db5-9370-1b51d5f052bb",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
@@ -170,7 +170,7 @@
     "explanation": "'Wasser' (das Wasser) = water. 'Brot' = bread, 'Milch' = milk. All neuter or feminine.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/wasser"
   }

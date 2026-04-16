@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "3c4d5e6f-7a8b-9012-3890-678901234567",
+    "itemId": "c2d29c21-89c1-4157-8af4-907b7d7032c6",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'Kade e' = 'where is'. 'Kade e toaletnata?' is the essential travel phrase.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   },
   {
-    "itemId": "4d5e6f7a-8b9c-0123-4901-789012345678",
+    "itemId": "41f094ce-7ee6-43ad-a1d1-cfe2f291d136",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "'Kolko struva tova?' — 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   },
   {
-    "itemId": "5e6f7a8b-9c0d-1234-5012-890123456789",
+    "itemId": "5ca17265-9dfc-4ad9-ab81-cb307227438e",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "'Edno kafe, molya' — 'One coffee, please' — the standard polite café order.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   },
   {
-    "itemId": "6f7a8b9c-0d1e-2345-6123-901234567890",
+    "itemId": "5d14c8a2-34d6-4d37-acf4-77485859ad8b",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "'Smetkata, molya' — 'The bill, please' — clean and polite.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   },
   {
-    "itemId": "7a8b9c0d-1e2f-3456-7234-012345678901",
+    "itemId": "1ba374bd-cf5f-401a-b1de-182ee8a79fdb",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -94,12 +94,12 @@
     "explanation": "'Ne razbiram' — 'I don't understand' — the first rescue phrase for any learner.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   },
   {
-    "itemId": "8b9c0d1e-2f3a-4567-8345-123456789012",
+    "itemId": "df263cb4-61bf-4043-a8ac-b4702949b422",
     "category": "languages",
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
@@ -113,7 +113,7 @@
     "explanation": "'Govorite li angliyski?' — 'Do you speak English?' — polite formal form.",
     "keywords": [
       "freq-100",
-      "cefr:a1"
+      "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/bulgarian.htm"
   }

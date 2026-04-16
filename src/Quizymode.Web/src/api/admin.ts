@@ -205,6 +205,10 @@ export interface SeedSyncRequest {
   deltaPreviewLimit?: number;
 }
 
+export interface LocalSeedSyncRequest {
+  deltaPreviewLimit?: number;
+}
+
 export interface SeedSyncChangeResponse {
   itemId: string;
   action: string;
@@ -589,6 +593,26 @@ export const adminApi = {
   ): Promise<SeedSyncApplyResponse> => {
     const response = await apiClient.post<SeedSyncApplyResponse>(
       "/admin/seed-sync/apply",
+      data
+    );
+    return response.data;
+  },
+
+  previewLocalSeedSync: async (
+    data: LocalSeedSyncRequest
+  ): Promise<SeedSyncPreviewResponse> => {
+    const response = await apiClient.post<SeedSyncPreviewResponse>(
+      "/admin/seed-sync/local/preview",
+      data
+    );
+    return response.data;
+  },
+
+  applyLocalSeedSync: async (
+    data: LocalSeedSyncRequest
+  ): Promise<SeedSyncApplyResponse> => {
+    const response = await apiClient.post<SeedSyncApplyResponse>(
+      "/admin/seed-sync/local/apply",
       data
     );
     return response.data;

@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "aabbccdd-eeff-0011-2233-445566778899",
+    "itemId": "6c54b273-d7b3-47d3-afb5-f33b3e787d78",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -14,13 +14,13 @@
     "explanation": "'I'd like...' (I would like) is the polite form for ordering. 'I want' is grammatically correct but can sound blunt.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/would-like"
   },
   {
-    "itemId": "bbccddee-ff00-1122-3344-556677889900",
+    "itemId": "f2379035-4442-409c-a951-6bf012e73e43",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -34,13 +34,13 @@
     "explanation": "British English: 'the bill'. American English: 'the check'. Both are widely understood.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/bill"
   },
   {
-    "itemId": "ccddeeff-0011-2233-4455-667788990011",
+    "itemId": "eb2a9e08-a889-4151-85b5-17d3a547f537",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -54,13 +54,13 @@
     "explanation": "Both 'How much is this?' and 'How much does this cost?' are natural and common. 'What is the price?' is correct but slightly formal.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/how-much"
   },
   {
-    "itemId": "ddeeff00-1122-3344-5566-778899001122",
+    "itemId": "c6644412-99a1-4d0d-b1bb-bb20f61b37e8",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -74,13 +74,13 @@
     "explanation": "The polite formula: 'Excuse me, [question].' Starting with 'Excuse me' is standard when approaching a stranger.",
     "keywords": [
       "freq-100",
-      "situation:directions",
-      "cefr:a1"
+      "situation-directions",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/excuse-me"
   },
   {
-    "itemId": "eeff0011-2233-4455-6677-889900112233",
+    "itemId": "a7f5e613-427e-4a35-bcac-0dbd4bc9f5ed",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -94,13 +94,13 @@
     "explanation": "'Is this seat taken?' is the standard polite question. 'Is anyone sitting here?' is equally natural.",
     "keywords": [
       "freq-100",
-      "situation:cafe",
-      "cefr:a1"
+      "situation-cafe",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/taken"
   },
   {
-    "itemId": "ff001122-3344-5566-7788-990011223344",
+    "itemId": "625cf1e4-d32d-4e23-99bc-9b0a4e5a1204",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -114,13 +114,13 @@
     "explanation": "'Excuse me' + a polite question is the standard way. 'Hey' alone can sound rude to strangers.",
     "keywords": [
       "freq-100",
-      "situation:prices",
-      "cefr:a1"
+      "situation-prices",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/excuse-me"
   },
   {
-    "itemId": "00112233-4455-6677-8899-001122334455",
+    "itemId": "9c121840-3777-480c-806e-f6d21de65cd3",
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "phrases",
@@ -134,8 +134,8 @@
     "explanation": "State your purpose ('check in') and your reservation. Adding 'I have a reservation under [name]' speeds up the process.",
     "keywords": [
       "freq-100",
-      "situation:hotel",
-      "cefr:a1"
+      "situation-hotel",
+      "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/check-in"
   }
