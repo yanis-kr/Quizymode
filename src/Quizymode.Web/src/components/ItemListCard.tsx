@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/types/api";
 import ItemRatingsComments from "./ItemRatingsComments";
+import { SpeakButton } from "@/components/SpeakButton";
+import { useSpeech } from "@/hooks/useSpeech";
 
 interface ItemListCardProps {
   item: ItemResponse;
@@ -30,12 +32,22 @@ const ItemListCard = ({
   returnUrl,
   showAnswer,
 }: ItemListCardProps) => {
+  const { speak, isSupported } = useSpeech();
+
   return (
     <div className="bg-white shadow rounded-lg p-6">
       <div className="space-y-3">
-        <h3 className="text-lg font-medium text-gray-900">
-          {item.question}
-        </h3>
+        <div className="flex items-start gap-2">
+          <h3 className="flex-1 text-lg font-medium text-gray-900">
+            {item.question}
+          </h3>
+          <SpeakButton
+            text={item.question}
+            onSpeak={speak}
+            isSupported={isSupported}
+            label="Read question aloud"
+          />
+        </div>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-sm text-gray-500">
@@ -46,15 +58,23 @@ const ItemListCard = ({
           {actions && <div className="flex flex-wrap items-center justify-end gap-1 sm:gap-2">{actions}</div>}
         </div>
         {showAnswer !== false && (
-          <p
-            className={`text-sm ${
-              showAnswer === true
-                ? "rounded-md bg-green-100 px-2 py-1 text-green-900"
-                : "text-gray-700"
-            }`}
-          >
-            <strong>Answer:</strong> {item.correctAnswer}
-          </p>
+          <div className="flex items-start gap-2">
+            <p
+              className={`flex-1 text-sm ${
+                showAnswer === true
+                  ? "rounded-md bg-green-100 px-2 py-1 text-green-900"
+                  : "text-gray-700"
+              }`}
+            >
+              <strong>Answer:</strong> {item.correctAnswer}
+            </p>
+            <SpeakButton
+              text={item.correctAnswer}
+              onSpeak={speak}
+              isSupported={isSupported}
+              label="Read answer aloud"
+            />
+          </div>
         )}
 
         <KeywordsAndCollectionsSection
