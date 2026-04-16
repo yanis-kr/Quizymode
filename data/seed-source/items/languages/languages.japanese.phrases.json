@@ -1,0 +1,140 @@
+[
+  {
+    "itemId": "6d7e8f9a-0b1c-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I would like one coffee, please' in Japanese?",
+    "correctAnswer": "コーヒーをひとつください。(Kōhī o hitotsu kudasai.)",
+    "incorrectAnswers": [
+      "コーヒーがほしい。(Kōhī ga hoshii.)",
+      "コーヒーをのむ。(Kōhī o nomu.)",
+      "コーヒーください、はやく。(Kōhī kudasai, hayaku.)"
+    ],
+    "explanation": "'[Item] o hitotsu kudasai' — 'Please give me one [item]' — is the standard café order pattern.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
+  },
+  {
+    "itemId": "7e8f9a0b-1c2d-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Japanese?",
+    "correctAnswer": "トイレはどこですか。(Toire wa doko desu ka.)",
+    "incorrectAnswers": [
+      "トイレがありますか。(Toire ga arimasu ka.)",
+      "トイレはいつですか。(Toire wa itsu desu ka.)",
+      "トイレに行く。(Toire ni iku.)"
+    ],
+    "explanation": "'Doko desu ka' means 'where is'. Replace 'toire' with any destination.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/where-is-japanese/"
+  },
+  {
+    "itemId": "8f9a0b1c-2d3e-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much is this?' in Japanese?",
+    "correctAnswer": "これはいくらですか。(Kore wa ikura desu ka.)",
+    "incorrectAnswers": [
+      "これは何ですか。(Kore wa nan desu ka.)",
+      "これはどこですか。(Kore wa doko desu ka.)",
+      "これはいつですか。(Kore wa itsu desu ka.)"
+    ],
+    "explanation": "'Ikura desu ka' — 'How much is it?' — is essential for shopping and markets.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://jisho.org/word/%E3%81%84%E3%81%8F%E3%82%89"
+  },
+  {
+    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill at a Japanese restaurant?",
+    "correctAnswer": "お会計をお願いします。(Okaikei o onegaishimasu.)",
+    "incorrectAnswers": [
+      "もっと食べます。(Motto tabemasu.)",
+      "メニューをください。(Menyū o kudasai.)",
+      "おいしいです。(Oishii desu.)"
+    ],
+    "explanation": "'Okaikei o onegaishimasu' — 'The bill, please' — is the polite restaurant phrase.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
+  },
+  {
+    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Japanese?",
+    "correctAnswer": "わかりません。(Wakarimasen.)",
+    "incorrectAnswers": [
+      "しりません。(Shirimasen.)",
+      "ありません。(Arimasen.)",
+      "できません。(Dekimasen.)"
+    ],
+    "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely — locals will often switch to simpler Japanese.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://jisho.org/word/%E3%82%8F%E3%81%8B%E3%82%8B"
+  },
+  {
+    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Japanese?",
+    "correctAnswer": "英語を話せますか。(Eigo o hanasemasu ka.)",
+    "incorrectAnswers": [
+      "英語がわかりますか。(Eigo ga wakarimasu ka.)",
+      "英語を勉強しますか。(Eigo o benkyō shimasu ka.)",
+      "英語は難しいですか。(Eigo wa muzukashii desu ka.)"
+    ],
+    "explanation": "'Eigo o hanasemasu ka?' — 'Can you speak English?' — a key phrase when you need help.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/do-you-speak-english-japanese/"
+  },
+  {
+    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Turn left' in Japanese?",
+    "correctAnswer": "左に曲がってください。(Hidari ni magatte kudasai.)",
+    "incorrectAnswers": [
+      "右に曲がってください。(Migi ni magatte kudasai.)",
+      "まっすぐ行ってください。(Massugu itte kudasai.)",
+      "止まってください。(Tomatte kudasai.)"
+    ],
+    "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead — the three direction words.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/japanese-directions/"
+  }
+]

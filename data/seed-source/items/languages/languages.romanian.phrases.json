@@ -1,0 +1,120 @@
+[
+  {
+    "itemId": "8f9a0b1c-2d3e-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Romanian?",
+    "correctAnswer": "Unde este toaleta?",
+    "incorrectAnswers": [
+      "Ce este toaleta?",
+      "Când este deschisă?",
+      "Cât costă toaleta?"
+    ],
+    "explanation": "'Unde este' = 'where is'. Replace 'toaleta' with any destination: gara (train station), hotelul (hotel), etc.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Romanian?",
+    "correctAnswer": "Cât costă asta?",
+    "incorrectAnswers": [
+      "Ce este asta?",
+      "Unde cumpăr asta?",
+      "Aveți reduceri?"
+    ],
+    "explanation": "'Cât costă asta?' — 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Romanian?",
+    "correctAnswer": "Un cafea, vă rog.",
+    "incorrectAnswers": [
+      "Vreau cafea acum!",
+      "Dați-mi cafea.",
+      "Cafea imediat."
+    ],
+    "explanation": "'Un [item], vă rog' — 'One [item], please' — the polite café order pattern.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Romanian?",
+    "correctAnswer": "Nota de plată, vă rog.",
+    "incorrectAnswers": [
+      "Meniul, vă rog.",
+      "Mai mult, vă rog.",
+      "A fost delicios."
+    ],
+    "explanation": "'Nota de plată, vă rog' — 'The bill, please'. 'Nota' comes from Italian nota.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Romanian?",
+    "correctAnswer": "Nu înțeleg.",
+    "incorrectAnswers": [
+      "Nu știu.",
+      "Nu aud.",
+      "Nu vorbesc română."
+    ],
+    "explanation": "'Nu înțeleg' — 'I don't understand' — the rescue phrase every traveller needs.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "3e4f5a6b-7c8d-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Romanian?",
+    "correctAnswer": "Vorbiți englezește?",
+    "incorrectAnswers": [
+      "Înțelegeți englezește?",
+      "Știți englezește?",
+      "Învățați englezește?"
+    ],
+    "explanation": "'Vorbiți englezește?' — 'Do you speak English?' — formal plural form.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  }
+]

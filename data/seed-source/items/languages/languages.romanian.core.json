@@ -1,0 +1,177 @@
+[
+  {
+    "itemId": "9c0d1e2f-3a4b-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in Romanian?",
+    "correctAnswer": "Bună ziua (formal) / Salut (informal)",
+    "incorrectAnswers": [
+      "La revedere",
+      "Mulțumesc",
+      "Vă rog"
+    ],
+    "explanation": "'Bună ziua' = good day (formal). 'Salut' is casual hello. 'Bună' alone works in neutral contexts.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0d1e2f3a-4b5c-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in Romanian?",
+    "correctAnswer": "Mulțumesc",
+    "incorrectAnswers": [
+      "Vă rog",
+      "Scuzați-mă",
+      "Bună ziua"
+    ],
+    "explanation": "'Mulțumesc' is the standard thank you. 'Mulțumesc frumos' = thank you very much (literally 'thank you beautifully').",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1e2f3a4b-5c6d-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in Romanian?",
+    "correctAnswer": "Vă rog (formal) / Te rog (informal)",
+    "incorrectAnswers": [
+      "Mulțumesc",
+      "Scuzați-mă",
+      "Da"
+    ],
+    "explanation": "'Vă rog' is formal, 'te rog' informal. Both mean 'I beg you' — the polite please.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "2f3a4b5c-6d7e-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'yes' and 'no' in Romanian?",
+    "correctAnswer": "Da / Nu",
+    "incorrectAnswers": [
+      "Sì / No",
+      "Oui / Non",
+      "Так / Ні"
+    ],
+    "explanation": "'Da' = yes, 'Nu' = no. Romanian is a Romance language so many words resemble Italian/Spanish.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "3a4b5c6d-7e8f-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in Romanian?",
+    "correctAnswer": "La revedere",
+    "incorrectAnswers": [
+      "Bună ziua",
+      "Mulțumesc",
+      "Salut"
+    ],
+    "explanation": "'La revedere' — 'until we see again' — formal goodbye. 'Pa' or 'pa-pa' is informal.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "4b5c6d7e-8f9a-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in Romanian?",
+    "correctAnswer": "Mă numesc...",
+    "incorrectAnswers": [
+      "Locuiesc în...",
+      "Sunt din...",
+      "Îmi place..."
+    ],
+    "explanation": "'Mă numesc [name]' — 'I name myself [name]' — the standard introduction. Romanian origin is Latin 'nominare'.",
+    "keywords": [
+      "freq-100",
+      "situation:intro",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "5c6d7e8f-9a0b-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in Romanian?",
+    "correctAnswer": "unu, doi, trei",
+    "incorrectAnswers": [
+      "un, deux, trois",
+      "uno, dos, tres",
+      "un, dwa, trzy"
+    ],
+    "explanation": "Romanian numbers: unu (1), doi (2), trei (3). Very similar to other Romance languages.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/numbers/romanian.htm"
+  },
+  {
+    "itemId": "6d7e8f9a-0b1c-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in Romanian?",
+    "correctAnswer": "apă",
+    "incorrectAnswers": [
+      "pâine",
+      "lapte",
+      "vin"
+    ],
+    "explanation": "'Apă' means water (from Latin 'aqua'). 'Pâine' = bread, 'lapte' = milk, 'vin' = wine.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "7e8f9a0b-1c2d-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in Romanian?",
+    "correctAnswer": "Scuzați-mă (formal) / Scuze (informal)",
+    "incorrectAnswers": [
+      "Mulțumesc",
+      "Vă rog",
+      "Bună"
+    ],
+    "explanation": "'Scuzați-mă' (formal) or 'scuze' (informal) — used to get attention or apologize.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  }
+]

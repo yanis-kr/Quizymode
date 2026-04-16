@@ -1,0 +1,120 @@
+[
+  {
+    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Ukrainian?",
+    "correctAnswer": "Де туалет? (De tualet?)",
+    "incorrectAnswers": [
+      "Що таке туалет? (Shcho take tualet?)",
+      "Коли відкрито? (Koly vidkryto?)",
+      "Скільки коштує? (Skilky koshtuye?)"
+    ],
+    "explanation": "'De' means 'where'. 'De tualet?' is the most practical travel phrase.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  },
+  {
+    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Ukrainian?",
+    "correctAnswer": "Скільки це коштує? (Skilky tse koshtuye?)",
+    "incorrectAnswers": [
+      "Що це таке? (Shcho tse take?)",
+      "Де це купити? (De tse kupyty?)",
+      "Чи є знижка? (Chy ye znyzhka?)"
+    ],
+    "explanation": "'Skilky tse koshtuye?' — 'How much does this cost?' — essential for markets.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  },
+  {
+    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Ukrainian?",
+    "correctAnswer": "Каву, будь ласка. (Kavu, bud laska.)",
+    "incorrectAnswers": [
+      "Каву зараз! (Kavu zaraz!)",
+      "Хочу каву. (Khochu kavu.)",
+      "Давайте каву. (Davayte kavu.)"
+    ],
+    "explanation": "'[Item], bud laska' — '[Item], please' — the polite café order pattern.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  },
+  {
+    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Ukrainian?",
+    "correctAnswer": "Рахунок, будь ласка. (Rakhunok, bud laska.)",
+    "incorrectAnswers": [
+      "Меню, будь ласка. (Menyu, bud laska.)",
+      "Ще одну страву. (Shche odnu stravu.)",
+      "Дякую за їжу. (Dyakuyu za yizhu.)"
+    ],
+    "explanation": "'Rakhunok' = the bill/check. Add 'bud laska' to make it polite.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  },
+  {
+    "itemId": "3e4f5a6b-7c8d-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Ukrainian?",
+    "correctAnswer": "Я не розумію. (Ya ne rozumiyu.)",
+    "incorrectAnswers": [
+      "Я не знаю. (Ya ne znayu.)",
+      "Я не чую. (Ya ne chuyu.)",
+      "Я не говорю. (Ya ne hovoryu.)"
+    ],
+    "explanation": "'Ya ne rozumiyu' — the essential phrase for when you've lost the thread.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  },
+  {
+    "itemId": "4f5a6b7c-8d9e-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Ukrainian?",
+    "correctAnswer": "Ви говорите англійською? (Vy hovoryte angliyiyskoyu?)",
+    "incorrectAnswers": [
+      "Ви розумієте мене? (Vy rozumiyete mene?)",
+      "Ви знаєте англійську? (Vy znayete angliysku?)",
+      "Говоріть повільніше. (Hovorit povil'nishe.)"
+    ],
+    "explanation": "Polite plural form 'Vy hovoryte angliyiyskoyu?' — informal: 'Ty hovorysh angliyiyskoyu?'",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
+  }
+]

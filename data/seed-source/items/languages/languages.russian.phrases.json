@@ -1,0 +1,140 @@
+[
+  {
+    "itemId": "9c0d1e2f-3a4b-5678-9abc-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I would like a coffee, please' in Russian?",
+    "correctAnswer": "Я бы хотел(а) кофе, пожалуйста. (Ya by khotel(a) kofe, pozhaluysta.)",
+    "incorrectAnswers": [
+      "Дай мне кофе. (Day mne kofe.)",
+      "Кофе сейчас! (Kofe seychas!)",
+      "Я пью кофе. (Ya pyu kofe.)"
+    ],
+    "explanation": "'Ya by khotel(a)' is the polite conditional 'I would like'. Add -a for female speaker.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson9_main.php"
+  },
+  {
+    "itemId": "0d1e2f3a-4b5c-6789-0bcd-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Russian?",
+    "correctAnswer": "Где туалет? (Gde tualet?)",
+    "incorrectAnswers": [
+      "Что такое туалет? (Chto takoye tualet?)",
+      "Когда открыт туалет? (Kogda otkryt tualet?)",
+      "Есть ли туалет? (Yest li tualet?)"
+    ],
+    "explanation": "'Gde' means 'where'. 'Gde tualet?' is the most practical phrase for any traveller.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/where"
+  },
+  {
+    "itemId": "1e2f3a4b-5c6d-7890-1cde-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Russian?",
+    "correctAnswer": "Сколько это стоит? (Skolko eto stoit?)",
+    "incorrectAnswers": [
+      "Что это такое? (Chto eto takoye?)",
+      "Где это купить? (Gde eto kupit?)",
+      "Можно скидку? (Mozhno skidku?)"
+    ],
+    "explanation": "'Skolko eto stoit?' — literally 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/how-much"
+  },
+  {
+    "itemId": "2f3a4b5c-6d7e-8901-2def-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in a Russian restaurant?",
+    "correctAnswer": "Счёт, пожалуйста. (Schyot, pozhaluysta.)",
+    "incorrectAnswers": [
+      "Дайте меню. (Dayte menyu.)",
+      "Ещё одно блюдо. (Yeshchyo odno blyudo.)",
+      "Где касса? (Gde kassa?)"
+    ],
+    "explanation": "'Schyot' means 'the bill/check'. Adding 'pozhaluysta' makes it polite.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/bill"
+  },
+  {
+    "itemId": "3a4b5c6d-7e8f-9012-3ef0-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Russian?",
+    "correctAnswer": "Я не понимаю. (Ya ne ponimayu.)",
+    "incorrectAnswers": [
+      "Я не знаю. (Ya ne znayu.)",
+      "Я не говорю. (Ya ne govoryu.)",
+      "Я не слышу. (Ya ne slyshu.)"
+    ],
+    "explanation": "'Ya ne ponimayu' is essential when you need to signal you've lost the thread.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson4_main.php"
+  },
+  {
+    "itemId": "4b5c6d7e-8f9a-0123-4f01-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the metro station?' in Russian?",
+    "correctAnswer": "Где метро? (Gde metro?)",
+    "incorrectAnswers": [
+      "Как добраться? (Kak dobratsa?)",
+      "Далеко ли отсюда? (Daleko li otsyuda?)",
+      "Остановите здесь. (Ostanovite zdes.)"
+    ],
+    "explanation": "'Gde metro?' — swap 'metro' for any destination: vokzal (station), aeroporty (airport), etc.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/metro"
+  },
+  {
+    "itemId": "5c6d7e8f-9a0b-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Russian?",
+    "correctAnswer": "Вы говорите по-английски? (Vy govorite po-angliyski?)",
+    "incorrectAnswers": [
+      "Вы понимаете меня? (Vy ponimaete menya?)",
+      "Вы знаете английский? (Vy znaete angliyskiy?)",
+      "Говорите медленно. (Govorite medlenno.)"
+    ],
+    "explanation": "'Vy govorite po-angliyski?' is the polite form — use 'ty' form with friends.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson3_main.php"
+  }
+]

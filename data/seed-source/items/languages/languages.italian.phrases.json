@@ -1,0 +1,160 @@
+[
+  {
+    "itemId": "1a2b3c4d-5e6f-7890-1234-abcdef012345",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I would like a coffee, please' in Italian?",
+    "correctAnswer": "Vorrei un caffè, per favore.",
+    "incorrectAnswers": [
+      "Voglio caffè adesso.",
+      "Dammi il caffè.",
+      "Un caffè, naturalmente."
+    ],
+    "explanation": "'Vorrei' (I would like) is the polite conditional form, preferred in cafés and restaurants.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/volere/"
+  },
+  {
+    "itemId": "2b3c4d5e-6f7a-8901-2345-bcdef0123456",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Italian?",
+    "correctAnswer": "Dov'è il bagno?",
+    "incorrectAnswers": [
+      "Che cos'è il bagno?",
+      "Come si chiama il bagno?",
+      "Quando apre il bagno?"
+    ],
+    "explanation": "'Dov'è' = 'Where is', 'il bagno' = 'the bathroom'. One of the most essential travel phrases.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
+  },
+  {
+    "itemId": "3c4d5e6f-7a8b-9012-3456-cdef01234567",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Italian?",
+    "correctAnswer": "Quanto costa?",
+    "incorrectAnswers": [
+      "Cosa è questo?",
+      "Dove compro questo?",
+      "Posso avere uno sconto?"
+    ],
+    "explanation": "'Quanto costa?' is the go-to phrase at markets, shops, and cafés.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/quanto"
+  },
+  {
+    "itemId": "4d5e6f7a-8b9c-0123-4567-def012345678",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill at a restaurant in Italian?",
+    "correctAnswer": "Il conto, per favore.",
+    "incorrectAnswers": [
+      "La ricevuta, subito.",
+      "Vorrei pagare domani.",
+      "Dov'è il menu?"
+    ],
+    "explanation": "'Il conto' means the bill/check. Saying it with 'per favore' is the polite way to ask.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/conto"
+  },
+  {
+    "itemId": "5e6f7a8b-9c0d-1234-5678-ef0123456789",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Can you help me?' in Italian?",
+    "correctAnswer": "Può aiutarmi?",
+    "incorrectAnswers": [
+      "Aiuto adesso!",
+      "Voglio aiuto.",
+      "Tu aiuti me?"
+    ],
+    "explanation": "'Può aiutarmi?' uses the polite 'Lei' form ('può' = can you) — best for asking strangers.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/aiutare"
+  },
+  {
+    "itemId": "6f7a8b9c-0d1e-2345-6789-f01234567890",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Italian?",
+    "correctAnswer": "Non capisco.",
+    "incorrectAnswers": [
+      "Non parlo italiano.",
+      "Non so niente.",
+      "Parli più piano."
+    ],
+    "explanation": "'Non capisco' is the first phrase to use when you're lost in conversation.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/capire"
+  },
+  {
+    "itemId": "7a8b9c0d-1e2f-3456-789a-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the train station?' in Italian?",
+    "correctAnswer": "Dov'è la stazione?",
+    "incorrectAnswers": [
+      "Come si va alla stazione?",
+      "Quando parte il treno?",
+      "Quanto costa il treno?"
+    ],
+    "explanation": "'Dov'è la stazione?' — replace 'stazione' with any destination (hotel, museum, etc.).",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/stazione"
+  },
+  {
+    "itemId": "8b9c0d1e-2f3a-4567-89ab-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'A table for two, please' in Italian?",
+    "correctAnswer": "Un tavolo per due, per favore.",
+    "incorrectAnswers": [
+      "Due persone mangiano.",
+      "Vogliamo sederci insieme.",
+      "Tavolo grande, subito."
+    ],
+    "explanation": "'Un tavolo per due' — swap 'due' with any number: tre, quattro, etc.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/tavolo"
+  }
+]

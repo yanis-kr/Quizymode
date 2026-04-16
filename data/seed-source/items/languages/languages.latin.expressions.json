@@ -1,0 +1,1269 @@
+[
+  {
+    "itemId": "4f5a6b7c-8d9e-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Carpe diem' mean?",
+    "correctAnswer": "Seize the day",
+    "incorrectAnswers": [
+      "Fish of the day",
+      "Time flies",
+      "Live for tomorrow"
+    ],
+    "explanation": "From Horace's Odes (23 BC): 'carpe diem, quam minimum credula postero' — seize the day, trust little in tomorrow.",
+    "keywords": [
+      "freq-100",
+      "horace",
+      "cefr:a1"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Carpe_diem"
+  },
+  {
+    "itemId": "5a6b7c8d-9e0f-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Veni, vidi, vici' mean?",
+    "correctAnswer": "I came, I saw, I conquered",
+    "incorrectAnswers": [
+      "I came, I saw, I left",
+      "We came, we saw, we conquered",
+      "I came, I won, I returned"
+    ],
+    "explanation": "Julius Caesar's famously terse dispatch to Rome after his swift victory at Zela (47 BC).",
+    "keywords": [
+      "freq-100",
+      "caesar",
+      "cefr:a1"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Veni,_vidi,_vici"
+  },
+  {
+    "itemId": "6b7c8d9e-0f1a-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Cogito, ergo sum' mean?",
+    "correctAnswer": "I think, therefore I am",
+    "incorrectAnswers": [
+      "I doubt, therefore I wonder",
+      "I know, therefore I exist",
+      "I speak, therefore I am"
+    ],
+    "explanation": "Descartes' foundational philosophical proposition, originally in Latin in 'Principles of Philosophy' (1644).",
+    "keywords": [
+      "freq-100",
+      "descartes",
+      "philosophy"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cogito,_ergo_sum"
+  },
+  {
+    "itemId": "7c8d9e0f-1a2b-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'In vino veritas' mean?",
+    "correctAnswer": "In wine there is truth",
+    "incorrectAnswers": [
+      "Wine is the truth",
+      "Truth is like wine",
+      "In wine there is strength"
+    ],
+    "explanation": "Attributed to Pliny the Elder. The idea: wine loosens inhibitions and reveals what people truly think.",
+    "keywords": [
+      "freq-100",
+      "pliny",
+      "proverb"
+    ],
+    "source": "https://en.wikipedia.org/wiki/In_vino_veritas"
+  },
+  {
+    "itemId": "8d9e0f1a-2b3c-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Per aspera ad astra' mean?",
+    "correctAnswer": "Through hardships to the stars",
+    "incorrectAnswers": [
+      "From the earth to the stars",
+      "Beyond the stars",
+      "Stars guide the way"
+    ],
+    "explanation": "Motto of many institutions (NASA, Royal Air Force). From Seneca. Often written 'ad astra per aspera'.",
+    "keywords": [
+      "freq-100",
+      "seneca",
+      "motto"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Per_aspera_ad_astra"
+  },
+  {
+    "itemId": "9e0f1a2b-3c4d-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Mea culpa' mean?",
+    "correctAnswer": "My fault / my blame",
+    "incorrectAnswers": [
+      "My honour",
+      "My word",
+      "My mistake is forgiven"
+    ],
+    "explanation": "From the Roman Catholic confiteor: 'mea culpa, mea culpa, mea maxima culpa' — an admission of guilt.",
+    "keywords": [
+      "freq-100",
+      "church",
+      "apology"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Mea_culpa"
+  },
+  {
+    "itemId": "0f1a2b3c-4d5e-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Alea iacta est' mean?",
+    "correctAnswer": "The die is cast",
+    "incorrectAnswers": [
+      "The game is over",
+      "The odds are set",
+      "Fortune favours the bold"
+    ],
+    "explanation": "Caesar's words when crossing the Rubicon (49 BC), committing to civil war. A point of no return.",
+    "keywords": [
+      "freq-100",
+      "caesar",
+      "decision"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Alea_iacta_est"
+  },
+  {
+    "itemId": "1a2b3c4d-5e6f-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Et tu, Brute?' mean?",
+    "correctAnswer": "And you, Brutus?",
+    "incorrectAnswers": [
+      "You too shall fall, Brutus",
+      "Even you betray Rome?",
+      "Are you with me, Brutus?"
+    ],
+    "explanation": "Shakespeare's version of Caesar's last words, expressing ultimate betrayal by a trusted friend.",
+    "keywords": [
+      "freq-100",
+      "caesar",
+      "shakespeare",
+      "betrayal"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Et_tu,_Brute%3F"
+  },
+  {
+    "itemId": "2b3c4d5e-6f7a-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'E pluribus unum' mean?",
+    "correctAnswer": "Out of many, one",
+    "incorrectAnswers": [
+      "One nation, united",
+      "Many from one",
+      "United we stand"
+    ],
+    "explanation": "The motto on the Great Seal of the United States, referring to the union of the original 13 states.",
+    "keywords": [
+      "freq-100",
+      "usa",
+      "motto"
+    ],
+    "source": "https://en.wikipedia.org/wiki/E_pluribus_unum"
+  },
+  {
+    "itemId": "3c4d5e6f-7a8b-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Tempus fugit' mean?",
+    "correctAnswer": "Time flies",
+    "incorrectAnswers": [
+      "Time heals all",
+      "Time is money",
+      "Time stands still"
+    ],
+    "explanation": "From Virgil's Georgics: 'sed fugit interea fugit irreparabile tempus' — time slips away irreversibly.",
+    "keywords": [
+      "freq-100",
+      "virgil",
+      "time"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Tempus_fugit"
+  },
+  {
+    "itemId": "4d5e6f7a-8b9c-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Amor vincit omnia' mean?",
+    "correctAnswer": "Love conquers all",
+    "incorrectAnswers": [
+      "Love is blind",
+      "Love is eternal",
+      "Love defeats death"
+    ],
+    "explanation": "From Virgil's Eclogues: 'omnia vincit Amor; et nos cedamus Amori' — Love conquers all; let us too yield to Love.",
+    "keywords": [
+      "freq-100",
+      "virgil",
+      "love"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Amor_vincit_omnia"
+  },
+  {
+    "itemId": "5e6f7a8b-9c0d-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Caveat emptor' mean?",
+    "correctAnswer": "Let the buyer beware",
+    "incorrectAnswers": [
+      "Let the seller beware",
+      "Buyer always wins",
+      "Beware of strangers"
+    ],
+    "explanation": "A legal maxim: the buyer is responsible for checking quality before purchase. Still used in contract law.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "commerce"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Caveat_emptor"
+  },
+  {
+    "itemId": "6f7a8b9c-0d1e-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Habeas corpus' mean?",
+    "correctAnswer": "You shall have the body (a legal writ requiring a person's release)",
+    "incorrectAnswers": [
+      "You have spoken",
+      "Bring the evidence",
+      "The body of evidence"
+    ],
+    "explanation": "A foundational writ in common law requiring authorities to produce an imprisoned person before a court.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "rights"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Habeas_corpus"
+  },
+  {
+    "itemId": "7a8b9c0d-1e2f-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Panem et circenses' mean?",
+    "correctAnswer": "Bread and circuses",
+    "incorrectAnswers": [
+      "Bread and wine",
+      "Peace and prosperity",
+      "Food for the gods"
+    ],
+    "explanation": "Juvenal's critique of Roman politics: keep the populace fed and entertained, and they won't revolt.",
+    "keywords": [
+      "freq-100",
+      "juvenal",
+      "politics"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bread_and_circuses"
+  },
+  {
+    "itemId": "8b9c0d1e-2f3a-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Memento mori' mean?",
+    "correctAnswer": "Remember that you will die",
+    "incorrectAnswers": [
+      "Remember the fallen",
+      "Live each day fully",
+      "Death is a memory"
+    ],
+    "explanation": "A stoic and medieval reminder of mortality, used to inspire humility and philosophical reflection.",
+    "keywords": [
+      "freq-100",
+      "stoicism",
+      "philosophy"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Memento_mori"
+  },
+  {
+    "itemId": "9c0d1e2f-3a4b-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Sic transit gloria mundi' mean?",
+    "correctAnswer": "Thus passes the glory of the world",
+    "incorrectAnswers": [
+      "Glory travels through the world",
+      "So goes the world's fame",
+      "Transit is the glory of Rome"
+    ],
+    "explanation": "Spoken during papal coronations as burning flax was extinguished — worldly glory is fleeting.",
+    "keywords": [
+      "freq-100",
+      "vanity",
+      "church"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sic_transit_gloria_mundi"
+  },
+  {
+    "itemId": "0d1e2f3a-4b5c-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Dum spiro, spero' mean?",
+    "correctAnswer": "While I breathe, I hope",
+    "incorrectAnswers": [
+      "While I live, I fight",
+      "As long as I breathe, I exist",
+      "Where there is breath, there is life"
+    ],
+    "explanation": "Attributed to Cicero. Motto of South Carolina. A phrase of resilience used in many coat-of-arms.",
+    "keywords": [
+      "freq-100",
+      "cicero",
+      "motto",
+      "hope"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Dum_spiro,_spero"
+  },
+  {
+    "itemId": "1e2f3a4b-5c6d-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Fortes fortuna adiuvat' mean?",
+    "correctAnswer": "Fortune favours the bold",
+    "incorrectAnswers": [
+      "Fortune belongs to the brave alone",
+      "Strong men make their own fortune",
+      "Fortune smiles on the patient"
+    ],
+    "explanation": "From Terence's Phormio (161 BC). Also used by Pliny the Elder and Virgil in various forms.",
+    "keywords": [
+      "freq-100",
+      "terence",
+      "proverb",
+      "courage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Fortune_favours_the_bold"
+  },
+  {
+    "itemId": "2f3a4b5c-6d7e-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ignorantia legis neminem excusat' mean?",
+    "correctAnswer": "Ignorance of the law excuses no one",
+    "incorrectAnswers": [
+      "The law is for the ignorant",
+      "No one is above the law",
+      "Only the ignorant break the law"
+    ],
+    "explanation": "Foundational legal principle: claiming you didn't know a law existed is not a valid defence.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "legal-maxim"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ignorantia_juris_non_excusat"
+  },
+  {
+    "itemId": "3a4b5c6d-7e8f-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Deus ex machina' mean literally?",
+    "correctAnswer": "God from the machine",
+    "incorrectAnswers": [
+      "God of all machines",
+      "Machine made by God",
+      "Divine mechanism"
+    ],
+    "explanation": "An implausible plot device that resolves a story's conflict artificially — from ancient theatre where actors playing gods were lowered by crane.",
+    "keywords": [
+      "freq-100",
+      "theatre",
+      "literature"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deus_ex_machina"
+  },
+  {
+    "itemId": "4b5c6d7e-8f9a-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'In absentia' mean?",
+    "correctAnswer": "In (one's) absence",
+    "incorrectAnswers": [
+      "Absent without leave",
+      "Missing from the record",
+      "Not accounted for"
+    ],
+    "explanation": "Used in legal and academic contexts: a trial or degree awarded 'in absentia' occurs while the person is absent.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "legal-term"
+    ],
+    "source": "https://en.wikipedia.org/wiki/In_absentia"
+  },
+  {
+    "itemId": "5c6d7e8f-9a0b-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Magna Carta' mean?",
+    "correctAnswer": "Great Charter",
+    "incorrectAnswers": [
+      "Great Kingdom",
+      "Big Document",
+      "The Greatest Law"
+    ],
+    "explanation": "The 1215 document signed by King John of England — 'Magna Carta Libertatum' (Great Charter of Liberties) — a cornerstone of constitutional law.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "history"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Magna_Carta"
+  },
+  {
+    "itemId": "6d7e8f9a-0b1c-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ora et labora' mean?",
+    "correctAnswer": "Pray and work",
+    "incorrectAnswers": [
+      "Think and act",
+      "Speak and listen",
+      "Live and learn"
+    ],
+    "explanation": "The Benedictine motto attributed to St Benedict — the rule of monastic life balancing prayer and labour.",
+    "keywords": [
+      "freq-100",
+      "benedictine",
+      "motto",
+      "church"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ora_et_labora"
+  },
+  {
+    "itemId": "7e8f9a0b-1c2d-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Vox populi, vox Dei' mean?",
+    "correctAnswer": "The voice of the people is the voice of God",
+    "incorrectAnswers": [
+      "God speaks through priests",
+      "The people always speak truth",
+      "Kings rule by divine right"
+    ],
+    "explanation": "Medieval Latin proverb about popular opinion carrying divine authority — cited both to support democracy and to warn against mob rule.",
+    "keywords": [
+      "freq-100",
+      "politics",
+      "democracy"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Vox_populi"
+  },
+  {
+    "itemId": "8f9a0b1c-2d3e-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Nemo iudex in causa sua' mean?",
+    "correctAnswer": "No one should be a judge in their own case",
+    "incorrectAnswers": [
+      "No judge is impartial",
+      "Every person is their own judge",
+      "A judge must be above all cases"
+    ],
+    "explanation": "A cornerstone of natural justice: you cannot fairly judge a case in which you have a personal interest.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "legal-maxim",
+      "fairness"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Nemo_iudex_in_causa_sua"
+  },
+  {
+    "itemId": "9a0b1c2d-3e4f-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Lupus in fabula' mean?",
+    "correctAnswer": "Speak of the wolf (talk of the devil)",
+    "incorrectAnswers": [
+      "A wolf in sheep's clothing",
+      "Beware the wolf",
+      "The wolf is in the story"
+    ],
+    "explanation": "The Roman equivalent of 'speak of the devil' — said when someone arrives just as they were being discussed.",
+    "keywords": [
+      "freq-100",
+      "idiom",
+      "proverb"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Lupus_in_fabula"
+  },
+  {
+    "itemId": "0b1c2d3e-4f5a-6789-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Nolens volens' mean?",
+    "correctAnswer": "Whether willing or not / willy-nilly",
+    "incorrectAnswers": [
+      "Willing and able",
+      "Not wanting, not having",
+      "Reluctantly wanting"
+    ],
+    "explanation": "Literally 'not willing, willing' — used to describe something that happens regardless of one's wishes.",
+    "keywords": [
+      "freq-100",
+      "idiom"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Nolens_volens"
+  },
+  {
+    "itemId": "1c2d3e4f-5a6b-7890-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Alma mater' mean literally?",
+    "correctAnswer": "Nourishing mother",
+    "incorrectAnswers": [
+      "Great school",
+      "Loving teacher",
+      "Wise mother"
+    ],
+    "explanation": "Used by Romans for nurturing goddesses; today it means a university or school one attended — the institution that 'nourished' you.",
+    "keywords": [
+      "freq-100",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Alma_mater"
+  },
+  {
+    "itemId": "2d3e4f5a-6b7c-8901-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Status quo' mean?",
+    "correctAnswer": "The existing state of affairs",
+    "incorrectAnswers": [
+      "A high social status",
+      "The legal standard",
+      "A temporary situation"
+    ],
+    "explanation": "Short for 'status quo ante' — the state in which. Used to describe the current situation that one may wish to preserve or change.",
+    "keywords": [
+      "freq-100",
+      "politics",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Status_quo"
+  },
+  {
+    "itemId": "3e4f5a6b-7c8d-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Bona fide' mean?",
+    "correctAnswer": "In good faith / genuine",
+    "incorrectAnswers": [
+      "In good health",
+      "A good outcome",
+      "A faithful friend"
+    ],
+    "explanation": "'Bona fide' = 'with good faith'. Used in law, business, and everyday speech to mean authentic or sincere.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bona_fide"
+  },
+  {
+    "itemId": "4f5a6b7c-8d9e-0123-4091-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ars longa, vita brevis' mean?",
+    "correctAnswer": "Art is long, life is short",
+    "incorrectAnswers": [
+      "Life is art, art is short",
+      "Long work, brief reward",
+      "Great art outlasts its creator"
+    ],
+    "explanation": "Latin translation of Hippocrates' Greek aphorism — mastering a craft takes longer than one life allows.",
+    "keywords": [
+      "freq-100",
+      "hippocrates",
+      "art",
+      "medicine"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ars_longa,_vita_brevis"
+  },
+  {
+    "itemId": "5a6b7c8d-9e0f-1034-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Quid pro quo' mean?",
+    "correctAnswer": "Something for something / a favour for a favour",
+    "incorrectAnswers": [
+      "What comes around goes around",
+      "A deal is a deal",
+      "No free lunch"
+    ],
+    "explanation": "'Quid pro quo' = 'what for what'. An exchange of equal value, used in law and everyday negotiations.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Quid_pro_quo"
+  },
+  {
+    "itemId": "6b7c8d9e-0f1a-2045-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Tabula rasa' mean?",
+    "correctAnswer": "Blank slate",
+    "incorrectAnswers": [
+      "A wiped table",
+      "A clean record",
+      "Fresh paper"
+    ],
+    "explanation": "Literally 'scraped tablet' — wax tablets in Rome were reused by scraping. Locke used it for the mind at birth: empty, awaiting experience.",
+    "keywords": [
+      "freq-100",
+      "locke",
+      "philosophy",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Tabula_rasa"
+  },
+  {
+    "itemId": "7c8d9e0f-1a2b-3056-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Semper fidelis' mean?",
+    "correctAnswer": "Always faithful",
+    "incorrectAnswers": [
+      "Always victorious",
+      "Forever loyal to the king",
+      "Always and forever"
+    ],
+    "explanation": "Motto of the United States Marine Corps (USMC). Also motto of several cities and families.",
+    "keywords": [
+      "freq-100",
+      "motto",
+      "military"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Semper_fidelis"
+  },
+  {
+    "itemId": "8d9e0f1a-2b3c-4067-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Carpe noctem' mean?",
+    "correctAnswer": "Seize the night",
+    "incorrectAnswers": [
+      "Seize the day",
+      "Chase the darkness",
+      "Capture the stars"
+    ],
+    "explanation": "A modern counterpart to 'carpe diem'. Less classical but widely used to mean making the most of the night.",
+    "keywords": [
+      "freq-500",
+      "modern-latin"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Carpe_diem"
+  },
+  {
+    "itemId": "9e0f1a2b-3c4d-5078-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Homo sapiens' mean?",
+    "correctAnswer": "Wise (knowing) man",
+    "incorrectAnswers": [
+      "Modern man",
+      "Thinking animal",
+      "Standing upright man"
+    ],
+    "explanation": "The scientific name for modern humans, coined by Linnaeus in 1758. 'Homo' = man, 'sapiens' = wise/knowing.",
+    "keywords": [
+      "freq-100",
+      "science",
+      "taxonomy"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Homo_sapiens"
+  },
+  {
+    "itemId": "0f1a2b3c-4d5e-6089-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Anno Domini' (A.D.) mean?",
+    "correctAnswer": "In the year of the Lord",
+    "incorrectAnswers": [
+      "After death",
+      "Age of discovery",
+      "Ancient date"
+    ],
+    "explanation": "'Anno Domini' marks years in the Christian era. A common misconception is that A.D. means 'after death'.",
+    "keywords": [
+      "freq-100",
+      "calendar",
+      "church"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Anno_Domini"
+  },
+  {
+    "itemId": "1a2b3c4d-5e6f-7090-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Lux et veritas' mean?",
+    "correctAnswer": "Light and truth",
+    "incorrectAnswers": [
+      "Light of the world",
+      "Truth above all",
+      "Enlightened truth"
+    ],
+    "explanation": "Motto of Yale University and other institutions. A call to illuminate the world with honest knowledge.",
+    "keywords": [
+      "freq-100",
+      "motto",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Lux_et_veritas"
+  },
+  {
+    "itemId": "2b3c4d5e-6f7a-8001-2789-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Cave canem' mean?",
+    "correctAnswer": "Beware of the dog",
+    "incorrectAnswers": [
+      "Enter the cave",
+      "Beware of strangers",
+      "Guard the cave"
+    ],
+    "explanation": "Found on Roman mosaic thresholds — a practical warning sign used in Pompeii and elsewhere, identical in function to modern signs.",
+    "keywords": [
+      "freq-100",
+      "pompeii",
+      "everyday-latin"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Cave_canem"
+  },
+  {
+    "itemId": "3c4d5e6f-7a8b-9102-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Sic semper tyrannis' mean?",
+    "correctAnswer": "Thus always to tyrants",
+    "incorrectAnswers": [
+      "Death to all rulers",
+      "Thus speaks the tyrant",
+      "Tyrants shall always fall"
+    ],
+    "explanation": "Motto of Virginia; shouted by Brutus at Caesar's assassination (according to some accounts) and by John Wilkes Booth after shooting Lincoln.",
+    "keywords": [
+      "freq-100",
+      "motto",
+      "politics",
+      "history"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sic_semper_tyrannis"
+  },
+  {
+    "itemId": "4d5e6f7a-8b9c-0213-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'De gustibus non est disputandum' mean?",
+    "correctAnswer": "There is no disputing about taste",
+    "incorrectAnswers": [
+      "Taste cannot be taught",
+      "Good taste is universal",
+      "All tastes are equal"
+    ],
+    "explanation": "Often shortened to 'de gustibus'. Tastes are subjective — it's pointless to argue about personal preferences.",
+    "keywords": [
+      "freq-100",
+      "proverb",
+      "aesthetics"
+    ],
+    "source": "https://en.wikipedia.org/wiki/De_gustibus_non_est_disputandum"
+  },
+  {
+    "itemId": "5e6f7a8b-9c0d-1324-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Veritas vos liberabit' mean?",
+    "correctAnswer": "The truth will set you free",
+    "incorrectAnswers": [
+      "Truth is freedom",
+      "Only truth sets you free from lies",
+      "You are free if you know the truth"
+    ],
+    "explanation": "John 8:32 in the Vulgate Bible. Motto of Johns Hopkins University, the CIA, and others.",
+    "keywords": [
+      "freq-100",
+      "motto",
+      "bible",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Veritas_vos_liberabit"
+  },
+  {
+    "itemId": "6f7a8b9c-0d1e-2435-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Mens sana in corpore sano' mean?",
+    "correctAnswer": "A healthy mind in a healthy body",
+    "incorrectAnswers": [
+      "A strong body needs a strong mind",
+      "Health is the greatest wealth",
+      "The mind rules the body"
+    ],
+    "explanation": "From Juvenal's Satires. Often misquoted as a fitness motto — Juvenal meant it as what to pray for: both physical and mental health.",
+    "keywords": [
+      "freq-100",
+      "juvenal",
+      "health",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Mens_sana_in_corpore_sano"
+  },
+  {
+    "itemId": "7a8b9c0d-1e2f-3546-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Sui generis' mean?",
+    "correctAnswer": "Of its own kind / unique",
+    "incorrectAnswers": [
+      "Self-made",
+      "Belonging to no one",
+      "One of a series"
+    ],
+    "explanation": "Used in law, biology, and general speech for something that is so unique it belongs to its own category.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sui_generis"
+  },
+  {
+    "itemId": "8b9c0d1e-2f3a-4657-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Non sequitur' mean?",
+    "correctAnswer": "It does not follow (an illogical conclusion)",
+    "incorrectAnswers": [
+      "It is not sequential",
+      "A non-event",
+      "Without purpose"
+    ],
+    "explanation": "A logical fallacy where a conclusion does not follow from the premises. Also used loosely for any irrelevant statement.",
+    "keywords": [
+      "freq-100",
+      "logic",
+      "rhetoric"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Non_sequitur_(logic)"
+  },
+  {
+    "itemId": "9c0d1e2f-3a4b-5768-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Terra incognita' mean?",
+    "correctAnswer": "Unknown territory / uncharted land",
+    "incorrectAnswers": [
+      "Forbidden territory",
+      "Land of the ancients",
+      "Unexplored sea"
+    ],
+    "explanation": "Used on old maps for unexplored regions. Now used metaphorically for any unfamiliar domain.",
+    "keywords": [
+      "freq-100",
+      "exploration",
+      "geography"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Terra_incognita"
+  },
+  {
+    "itemId": "0d1e2f3a-4b5c-6879-0567-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Errare humanum est' mean?",
+    "correctAnswer": "To err is human",
+    "incorrectAnswers": [
+      "Errors make us stronger",
+      "Humans always make mistakes",
+      "Only humans can correct errors"
+    ],
+    "explanation": "Often extended: 'errare humanum est, perseverare autem diabolicum' — to err is human, to persist in error is diabolical. Attributed to Seneca.",
+    "keywords": [
+      "freq-100",
+      "seneca",
+      "proverb"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Errare_humanum_est"
+  },
+  {
+    "itemId": "1e2f3a4b-5c6d-7980-1678-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Festina lente' mean?",
+    "correctAnswer": "Make haste slowly",
+    "incorrectAnswers": [
+      "Slow down to rest",
+      "Celebrate with patience",
+      "Rush with care"
+    ],
+    "explanation": "Augustus Caesar's favourite saying — moving quickly but without recklessness. Still good management advice.",
+    "keywords": [
+      "freq-100",
+      "augustus",
+      "wisdom"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Festina_lente"
+  },
+  {
+    "itemId": "2f3a4b5c-6d7e-8901-2089-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ipso facto' mean?",
+    "correctAnswer": "By the fact itself",
+    "incorrectAnswers": [
+      "Obviously true",
+      "Proven by evidence",
+      "By legal definition"
+    ],
+    "explanation": "Used when something is a direct, obvious consequence of a fact. 'He was convicted; ipso facto, he lost his licence.'",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ipso_facto"
+  },
+  {
+    "itemId": "3a4b5c6d-7e8f-9012-3190-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ad infinitum' mean?",
+    "correctAnswer": "To infinity / endlessly",
+    "incorrectAnswers": [
+      "Towards infinity — but stopping",
+      "A very large number",
+      "Beyond the end"
+    ],
+    "explanation": "Used to describe something that continues or repeats without end: 'the argument went on ad infinitum'.",
+    "keywords": [
+      "freq-100",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ad_infinitum"
+  },
+  {
+    "itemId": "4b5c6d7e-8f9a-0123-4201-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Nota bene' (N.B.) mean?",
+    "correctAnswer": "Note well (pay attention to this)",
+    "incorrectAnswers": [
+      "Noted below",
+      "Not applicable",
+      "New business"
+    ],
+    "explanation": "'Nota bene' instructs the reader to pay special attention to what follows. Still used in academic writing as 'N.B.'",
+    "keywords": [
+      "freq-100",
+      "academic",
+      "abbreviation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Nota_bene"
+  },
+  {
+    "itemId": "5c6d7e8f-9a0b-1234-5312-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ad hoc' mean?",
+    "correctAnswer": "For this (purpose) — improvised for a specific case",
+    "incorrectAnswers": [
+      "Generally applicable",
+      "Based on precedent",
+      "Planned in advance"
+    ],
+    "explanation": "'Ad hoc' solutions are created for the specific situation at hand, not intended for broader use.",
+    "keywords": [
+      "freq-100",
+      "common-usage",
+      "law"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ad_hoc"
+  },
+  {
+    "itemId": "6d7e8f9a-0b1c-2345-6423-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Cum laude' mean in academic contexts?",
+    "correctAnswer": "With praise / with honour",
+    "incorrectAnswers": [
+      "With loudness",
+      "With great difficulty",
+      "By the people"
+    ],
+    "explanation": "'Cum laude' = with praise. Academic honours: cum laude, magna cum laude (great praise), summa cum laude (highest praise).",
+    "keywords": [
+      "freq-100",
+      "education",
+      "academic"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_honours"
+  },
+  {
+    "itemId": "7e8f9a0b-1c2d-3456-7534-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Pro bono' mean?",
+    "correctAnswer": "For the good (free professional work)",
+    "incorrectAnswers": [
+      "For a bonus",
+      "In exchange for goods",
+      "For the public record"
+    ],
+    "explanation": "Short for 'pro bono publico' — for the public good. Lawyers and doctors do pro bono work without charging fees.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pro_bono"
+  },
+  {
+    "itemId": "8f9a0b1c-2d3e-4567-8645-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Pax Romana' mean?",
+    "correctAnswer": "Roman Peace",
+    "incorrectAnswers": [
+      "Roman Victory",
+      "Peace of the Senate",
+      "Roman Empire"
+    ],
+    "explanation": "The ~200-year period (27 BC – 180 AD) of relative peace across the Roman Empire. The term 'pax' is now used for other periods: Pax Britannica, Pax Americana.",
+    "keywords": [
+      "freq-100",
+      "history",
+      "roman-empire"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Pax_Romana"
+  },
+  {
+    "itemId": "9a0b1c2d-3e4f-5678-9756-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Sine qua non' mean?",
+    "correctAnswer": "Without which not (an indispensable condition)",
+    "incorrectAnswers": [
+      "One and only one",
+      "Beyond all doubt",
+      "Without exception"
+    ],
+    "explanation": "'Sine qua non' = an essential element, without which something cannot exist or happen. Used in law and everyday English.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sine_qua_non"
+  },
+  {
+    "itemId": "0b1c2d3e-4f5a-6789-0867-345678901234",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ad nauseam' mean?",
+    "correctAnswer": "To the point of nausea / excessively repeated",
+    "incorrectAnswers": [
+      "Until the end",
+      "Without any purpose",
+      "Causing headaches"
+    ],
+    "explanation": "When something is repeated or argued 'ad nauseam', it has been done to a sickening excess.",
+    "keywords": [
+      "freq-100",
+      "common-usage",
+      "rhetoric"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ad_nauseam"
+  },
+  {
+    "itemId": "1c2d3e4f-5a6b-7890-1978-456789012345",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Persona non grata' mean?",
+    "correctAnswer": "An unwelcome person",
+    "incorrectAnswers": [
+      "A person of importance",
+      "A fictional character",
+      "A person without identity"
+    ],
+    "explanation": "A diplomatic term for someone who is no longer welcome in a country. Used for expelled diplomats and, figuratively, for socially unwelcome people.",
+    "keywords": [
+      "freq-100",
+      "diplomacy",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Persona_non_grata"
+  },
+  {
+    "itemId": "2d3e4f5a-6b7c-8901-2089-567890123456",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Curriculum vitae' (CV) mean?",
+    "correctAnswer": "Course of life",
+    "incorrectAnswers": [
+      "Career history",
+      "Life in the curriculum",
+      "Vital records"
+    ],
+    "explanation": "'Curriculum vitae' literally means 'the course of one's life' — a document summarising education, work, and achievements.",
+    "keywords": [
+      "freq-100",
+      "common-usage",
+      "education"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Curriculum_vitae"
+  },
+  {
+    "itemId": "3e4f5a6b-7c8d-9012-3190-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Prima facie' mean?",
+    "correctAnswer": "At first sight / on the face of it",
+    "incorrectAnswers": [
+      "First and foremost",
+      "Proven beyond doubt",
+      "The primary case"
+    ],
+    "explanation": "A 'prima facie' case is one that appears valid on initial examination, before deeper investigation.",
+    "keywords": [
+      "freq-100",
+      "law",
+      "common-usage"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Prima_facie"
+  },
+  {
+    "itemId": "4f5a6b7c-8d9e-0123-4291-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Requiescat in pace' (R.I.P.) mean?",
+    "correctAnswer": "May they rest in peace",
+    "incorrectAnswers": [
+      "Return in peace",
+      "Rest is peaceful",
+      "Remember in peace"
+    ],
+    "explanation": "The full Latin behind 'R.I.P.' — a prayer inscribed on tombstones from early Christian tradition.",
+    "keywords": [
+      "freq-100",
+      "church",
+      "memorial"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Requiescat_in_pace"
+  },
+  {
+    "itemId": "5a6b7c8d-9e0f-1234-5312-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Audaces fortuna iuvat' mean?",
+    "correctAnswer": "Fortune favours the bold",
+    "incorrectAnswers": [
+      "Fortune favours the cautious",
+      "Boldness brings disaster",
+      "The brave make their own fortune"
+    ],
+    "explanation": "Virgil's Aeneid version of 'fortune favours the bold'. Pliny the Elder reportedly said it before sailing toward Vesuvius.",
+    "keywords": [
+      "freq-100",
+      "virgil",
+      "courage",
+      "proverb"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Fortune_favours_the_bold"
+  },
+  {
+    "itemId": "6b7c8d9e-0f1a-2345-6423-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "expressions",
+    "question": "What does 'Ex libris' mean?",
+    "correctAnswer": "From the books (of) — a book ownership label",
+    "incorrectAnswers": [
+      "In the library",
+      "Outside the library",
+      "From memory"
+    ],
+    "explanation": "'Ex libris [Name]' — 'from the books of [Name]' — traditionally a bookplate pasted inside a book's cover to mark ownership.",
+    "keywords": [
+      "freq-500",
+      "books",
+      "ownership"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bookplate"
+  }
+]

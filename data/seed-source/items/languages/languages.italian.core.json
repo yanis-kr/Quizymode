@@ -1,0 +1,198 @@
+[
+  {
+    "itemId": "e9a08222-f47b-4126-9356-0af9943fe7b4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Ciao' often mean in everyday Italian?",
+    "correctAnswer": "hi or bye (informal)",
+    "incorrectAnswers": [
+      "please",
+      "excuse me",
+      "you are welcome"
+    ],
+    "explanation": "'Ciao' is a common informal greeting and goodbye, depending on context.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/ciao"
+  },
+  {
+    "itemId": "f9c4c131-be48-45f6-ae33-1f1a74456d2a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Grazie' mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "hello"
+    ],
+    "explanation": "'Grazie' is the standard way to say thank you.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/grazie/"
+  },
+  {
+    "itemId": "7feb2989-6d5c-4883-9463-e9665a5714a4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'acqua' mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "wine"
+    ],
+    "explanation": "'Acqua' means water, a very common word in daily life.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/acqua"
+  },
+  {
+    "itemId": "7e2eb366-7fcc-4dc5-a338-0ffebe61f694",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'io sono' mean in a simple introduction?",
+    "correctAnswer": "I am",
+    "incorrectAnswers": [
+      "you are",
+      "we are",
+      "they are"
+    ],
+    "explanation": "'Io sono' uses 'essere' for 'I am', often used in introductions.",
+    "keywords": [
+      "freq-100",
+      "situation:intro",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/sono"
+  },
+  {
+    "itemId": "0aba6eba-8287-498e-a594-9dfe6355fa47",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which indefinite article often matches a singular masculine noun like 'libro'?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "una",
+      "il",
+      "la"
+    ],
+    "explanation": "'Un libro' is a common pattern: masculine singular indefinite article 'un' before most consonants.",
+    "keywords": [
+      "freq-500",
+      "cefr:a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/un/"
+  },
+  {
+    "itemId": "1d623e8c-1597-4058-a062-3950f9a15b61",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'dove' mean in a travel question?",
+    "correctAnswer": "where",
+    "incorrectAnswers": [
+      "when",
+      "why",
+      "how"
+    ],
+    "explanation": "'Dove' asks where something is, useful for directions.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
+  },
+  {
+    "itemId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'yes' in Italian?",
+    "correctAnswer": "sì",
+    "incorrectAnswers": [
+      "no",
+      "forse",
+      "bene"
+    ],
+    "explanation": "'Sì' (with accent) is the standard word for yes. 'No' stays the same as in English.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/si"
+  },
+  {
+    "itemId": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'per favore' mean?",
+    "correctAnswer": "please",
+    "incorrectAnswers": [
+      "thank you",
+      "excuse me",
+      "sorry"
+    ],
+    "explanation": "'Per favore' literally means 'as a favour' and is the standard polite 'please'.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/per-favore"
+  },
+  {
+    "itemId": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'mi chiamo' mean?",
+    "correctAnswer": "my name is",
+    "incorrectAnswers": [
+      "I live in",
+      "I am from",
+      "I like"
+    ],
+    "explanation": "'Mi chiamo' literally means 'I call myself' — used to introduce your name.",
+    "keywords": [
+      "freq-100",
+      "situation:intro",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/chiamarsi"
+  },
+  {
+    "itemId": "d4e5f6a7-b8c9-0123-defa-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'arrivederci' mean?",
+    "correctAnswer": "goodbye (formal)",
+    "incorrectAnswers": [
+      "hello",
+      "see you tomorrow",
+      "good morning"
+    ],
+    "explanation": "'Arrivederci' is a formal farewell — 'until we see each other again'. Use 'ciao' informally.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/arrivederci"
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "itemId": "dd01ee02-ff03-aa04-bb05-cc0607080900",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in French?",
+    "correctAnswer": "Où sont les toilettes ?",
+    "incorrectAnswers": [
+      "Quand sont les toilettes ?",
+      "Qu'est-ce que les toilettes ?",
+      "Comment sont les toilettes ?"
+    ],
+    "explanation": "'Où sont les toilettes ?' — 'Where are the toilets?' — the essential travel phrase.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/ou"
+  },
+  {
+    "itemId": "dd02ee03-ff04-aa05-bb06-cc0708091001",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in French?",
+    "correctAnswer": "Combien ça coûte ?",
+    "incorrectAnswers": [
+      "Qu'est-ce que c'est ?",
+      "Où puis-je acheter ça ?",
+      "Y a-t-il une réduction ?"
+    ],
+    "explanation": "'Combien ça coûte ?' — 'How much does it cost?' — used in any shop or market.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/combien"
+  },
+  {
+    "itemId": "dd03ee04-ff05-aa06-bb07-cc0809101102",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in French?",
+    "correctAnswer": "Un café, s'il vous plaît.",
+    "incorrectAnswers": [
+      "Je veux un café !",
+      "Donnez-moi un café.",
+      "Café vite, s'il vous plaît."
+    ],
+    "explanation": "'Un [item], s'il vous plaît' — the standard polite café order.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.bbc.co.uk/languages/french/talk/index.shtml"
+  },
+  {
+    "itemId": "dd04ee05-ff06-aa07-bb08-cc0910111203",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in a French restaurant?",
+    "correctAnswer": "L'addition, s'il vous plaît.",
+    "incorrectAnswers": [
+      "Le menu, s'il vous plaît.",
+      "Encore une fois, s'il vous plaît.",
+      "C'était délicieux, merci."
+    ],
+    "explanation": "'L'addition, s'il vous plaît' — 'The bill, please' — note 'addition' not 'compte' for a restaurant bill.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/addition"
+  },
+  {
+    "itemId": "dd05ee06-ff07-aa08-bb09-cc1011121304",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in French?",
+    "correctAnswer": "Parlez-vous anglais ?",
+    "incorrectAnswers": [
+      "Comprenez-vous l'anglais ?",
+      "Savez-vous l'anglais ?",
+      "Apprenez-vous l'anglais ?"
+    ],
+    "explanation": "'Parlez-vous anglais ?' — formal. Informal: 'Tu parles anglais ?'",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/parler"
+  },
+  {
+    "itemId": "dd06ee07-ff08-aa09-bb10-cc1112131405",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Turn left' in French?",
+    "correctAnswer": "Tournez à gauche.",
+    "incorrectAnswers": [
+      "Tournez à droite.",
+      "Allez tout droit.",
+      "Arrêtez-vous ici."
+    ],
+    "explanation": "'Gauche' = left, 'droite' = right, 'tout droit' = straight ahead — the three navigation words.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche"
+  },
+  {
+    "itemId": "dd07ee08-ff09-aa10-bb11-cc1213141506",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in French?",
+    "correctAnswer": "Je ne comprends pas.",
+    "incorrectAnswers": [
+      "Je ne sais pas.",
+      "Je n'entends pas.",
+      "Je ne parle pas français."
+    ],
+    "explanation": "'Je ne comprends pas' — the essential rescue phrase when you're lost in conversation.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/comprendre"
+  }
+]

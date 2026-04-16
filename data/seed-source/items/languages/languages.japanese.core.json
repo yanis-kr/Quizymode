@@ -1,0 +1,196 @@
+[
+  {
+    "itemId": "562bda8d-55c9-4588-951a-b50a1c58c092",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'こんにちは' (konnichiwa) mean in the daytime?",
+    "correctAnswer": "hello / good afternoon (common greeting)",
+    "incorrectAnswers": [
+      "good night only",
+      "thank you",
+      "excuse me"
+    ],
+    "explanation": "'Konnichiwa' is a standard daytime greeting learners meet early.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/hello"
+  },
+  {
+    "itemId": "93e9d35a-11bd-47f1-90f9-f5638d79667e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'ありがとう' (arigatou) mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "goodbye"
+    ],
+    "explanation": "'Arigatou' is a very common way to say thank you in casual speech.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/thank-you"
+  },
+  {
+    "itemId": "d26c79c1-06fb-4cf9-884a-67fe28eb5999",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does '水' (mizu) mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "fire",
+      "rice",
+      "salt"
+    ],
+    "explanation": "The kanji '水' with reading 'mizu' means water in basic vocabulary.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://jisho.org/word/%E6%B0%B4"
+  },
+  {
+    "itemId": "a29b0a39-6ee7-4316-8eef-50f26040d212",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'はい' (hai) often mean in a simple reply?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Hai' is a polite, common way to say yes.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/yes"
+  },
+  {
+    "itemId": "4985624c-f413-4201-994e-5e8a6a2fbce7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'いいえ' (iie) mean?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Iie' is a basic way to say no in polite speech.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/no"
+  },
+  {
+    "itemId": "b2f82723-d0d5-4ce1-a59a-92c22d4d929a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In a simple polite sentence, what does 'です' (desu) often do at the end?",
+    "correctAnswer": "marks a polite statement (like 'is' in many patterns)",
+    "incorrectAnswers": [
+      "makes every sentence a question",
+      "means only 'was'",
+      "removes politeness"
+    ],
+    "explanation": "'Desu' is a core polite copula ending for many beginner patterns.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/polite-form-desu-masu/"
+  },
+  {
+    "itemId": "c9d0e1f2-a3b4-5678-cdef-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in Japanese?",
+    "correctAnswer": "すみません (sumimasen)",
+    "incorrectAnswers": [
+      "ありがとう (arigatou)",
+      "さようなら (sayounara)",
+      "おはよう (ohayou)"
+    ],
+    "explanation": "'Sumimasen' is used both to apologize and to politely get someone's attention.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/sumimasen/"
+  },
+  {
+    "itemId": "d0e1f2a3-b4c5-6789-defa-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'わたしのなまえは' (watashi no namae wa) introduce?",
+    "correctAnswer": "my name is (name introduction)",
+    "incorrectAnswers": [
+      "I am from (place)",
+      "I like (something)",
+      "I don't understand"
+    ],
+    "explanation": "'Watashi no namae wa [name] desu' — 'My name is [name]' — is a core A1 introduction phrase.",
+    "keywords": [
+      "freq-100",
+      "situation:intro",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/japanese-self-introduction/"
+  },
+  {
+    "itemId": "e1f2a3b4-c5d6-7890-efab-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What does 'さようなら' (sayounara) mean?",
+    "correctAnswer": "goodbye (formal / permanent-sounding)",
+    "incorrectAnswers": [
+      "see you tomorrow",
+      "good morning",
+      "please"
+    ],
+    "explanation": "'Sayounara' is a formal farewell. For 'see you later', Japanese speakers often use 'ja ne' or 'mata ne'.",
+    "keywords": [
+      "freq-100",
+      "situation:greetings",
+      "cefr:a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-japanese/goodbye"
+  },
+  {
+    "itemId": "f2a3b4c5-d6e7-8901-fabc-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1-3 in Japanese?",
+    "correctAnswer": "ichi, ni, san",
+    "incorrectAnswers": [
+      "un, deux, trois",
+      "uno, dos, tres",
+      "ein, zwei, drei"
+    ],
+    "explanation": "The native Japanese/Sino-Japanese numbers 1-3 are ichi (1), ni (2), san (3).",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.tofugu.com/japanese/japanese-numbers/"
+  }
+]

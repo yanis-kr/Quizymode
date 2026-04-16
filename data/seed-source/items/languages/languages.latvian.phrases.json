@@ -1,0 +1,140 @@
+[
+  {
+    "itemId": "3c4d5e6f-7a8b-9012-3890-678901234567",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Latvian?",
+    "correctAnswer": "Kur ir tualete?",
+    "incorrectAnswers": [
+      "Kas ir tualete?",
+      "Kad ir tualete?",
+      "Cik maksā tualete?"
+    ],
+    "explanation": "'Kur ir' = 'where is'. Replace 'tualete' with any destination: stacija, viesnīca, etc.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "4d5e6f7a-8b9c-0123-4901-789012345678",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Latvian?",
+    "correctAnswer": "Cik tas maksā?",
+    "incorrectAnswers": [
+      "Kas tas ir?",
+      "Kur to pirkt?",
+      "Vai tas ir labs?"
+    ],
+    "explanation": "'Cik tas maksā?' — 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "freq-100",
+      "situation:prices",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "5e6f7a8b-9c0d-1234-5012-890123456789",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Latvian?",
+    "correctAnswer": "Vienu kafiju, lūdzu.",
+    "incorrectAnswers": [
+      "Kafija, ātrāk!",
+      "Es gribu kafiju.",
+      "Kafija ir laba."
+    ],
+    "explanation": "'Vienu [item], lūdzu' — 'One [item], please' — the standard café order pattern.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "6f7a8b9c-0d1e-2345-6123-901234567890",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Latvian?",
+    "correctAnswer": "Rēķinu, lūdzu.",
+    "incorrectAnswers": [
+      "Ēdienkarti, lūdzu.",
+      "Vēl vienu, lūdzu.",
+      "Paldies par ēdienu."
+    ],
+    "explanation": "'Rēķinu, lūdzu' — 'The bill, please' — straightforward and polite.",
+    "keywords": [
+      "freq-100",
+      "situation:cafe",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "7a8b9c0d-1e2f-3456-7234-012345678901",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Latvian?",
+    "correctAnswer": "Es nesaprotu.",
+    "incorrectAnswers": [
+      "Es nezinu.",
+      "Es nedzirdu.",
+      "Es nerunāju latviski."
+    ],
+    "explanation": "'Es nesaprotu' — 'I don't understand' — the essential phrase when you're lost.",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "8b9c0d1e-2f3a-4567-8345-123456789012",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Latvian?",
+    "correctAnswer": "Vai jūs runājat angliski?",
+    "incorrectAnswers": [
+      "Vai jūs saprotat angliski?",
+      "Vai jūs zināt angliski?",
+      "Vai jūs mācāties angliski?"
+    ],
+    "explanation": "'Vai jūs runājat angliski?' — the polite plural/formal form. Informal: 'Vai tu runā angliski?'",
+    "keywords": [
+      "freq-100",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "9c0d1e2f-3a4b-5678-9456-234567890123",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bus stop?' in Latvian?",
+    "correctAnswer": "Kur ir autobusa pietura?",
+    "incorrectAnswers": [
+      "Kur iet autobuss?",
+      "Kad nāk autobuss?",
+      "Cik maksā autobuss?"
+    ],
+    "explanation": "'Autobusa pietura' = bus stop. 'Tramvaja pietura' = tram stop, 'trolejbusa pietura' = trolleybus stop.",
+    "keywords": [
+      "freq-100",
+      "situation:directions",
+      "cefr:a1"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  }
+]

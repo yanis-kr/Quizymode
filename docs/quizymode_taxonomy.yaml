@@ -906,6 +906,8 @@ languages:
       description: English
       keywords:
         general-english: English
+        core: Essential words
+        phrases: Common phrases
         grammar: Grammar rules
         vocab: Word building
         idioms: Common idioms
@@ -916,6 +918,8 @@ languages:
       description: Spanish
       keywords:
         general-spanish: Spanish
+        core: Essential words
+        phrases: Common phrases
         grammar: Grammar rules
         vocab: Word building
         travel: Travel phrases
@@ -926,6 +930,8 @@ languages:
       description: French
       keywords:
         general-french: French
+        core: Essential words
+        phrases: Common phrases
         grammar: Grammar rules
         vocab: Word building
         travel: Travel phrases
@@ -936,23 +942,101 @@ languages:
       description: German
       keywords:
         general-german: German
+        core: Essential words
+        phrases: Common phrases
         grammar: Grammar rules
         vocab: Word building
         travel: Travel phrases
         conversation: Everyday talk
         cases: Case system
         listening: Listening
+    italian:
+      description: Italian
+      keywords:
+        general-italian: Italian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    russian:
+      description: Russian
+      keywords:
+        general-russian: Russian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    japanese:
+      description: Japanese
+      keywords:
+        general-japanese: Japanese
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        hiragana: Hiragana script
+        katakana: Katakana script
+        kanji: Basic kanji
+        idioms: Expressions
+    latvian:
+      description: Latvian
+      keywords:
+        general-latvian: Latvian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    ukrainian:
+      description: Ukrainian
+      keywords:
+        general-ukrainian: Ukrainian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    bulgarian:
+      description: Bulgarian
+      keywords:
+        general-bulgarian: Bulgarian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    romanian:
+      description: Romanian
+      keywords:
+        general-romanian: Romanian
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+    latin:
+      description: Latin
+      keywords:
+        general-latin: Latin
+        expressions: Famous expressions
+        vocab: Word building
+        grammar: Grammar rules
     other-langs:
       description: More languages
       keywords:
         general-other-langs: More languages
-        italian: Italian
         portuguese: Portuguese
-        japanese: Japanese
         chinese: Chinese
         korean: Korean
         arabic: Arabic
-        russian: Russian
     esl:
       description: English learners
       keywords:
