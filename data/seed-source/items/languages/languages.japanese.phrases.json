@@ -5,16 +5,16 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I would like one coffee, please' in Japanese?",
-    "correctAnswer": "コーヒーをひとつください。(Kōhī o hitotsu kudasai.)",
+    "correctAnswer": "\u30b3\u30fc\u30d2\u30fc\u3092\u3072\u3068\u3064\u304f\u3060\u3055\u3044\u3002(K\u014dh\u012b o hitotsu kudasai.)",
     "incorrectAnswers": [
-      "コーヒーがほしい。(Kōhī ga hoshii.)",
-      "コーヒーをのむ。(Kōhī o nomu.)",
-      "コーヒーください、はやく。(Kōhī kudasai, hayaku.)"
+      "\u30b3\u30fc\u30d2\u30fc\u304c\u307b\u3057\u3044\u3002(K\u014dh\u012b ga hoshii.)",
+      "\u30b3\u30fc\u30d2\u30fc\u3092\u306e\u3080\u3002(K\u014dh\u012b o nomu.)",
+      "\u30b3\u30fc\u30d2\u30fc\u304f\u3060\u3055\u3044\u3001\u306f\u3084\u304f\u3002(K\u014dh\u012b kudasai, hayaku.)"
     ],
-    "explanation": "'[Item] o hitotsu kudasai' — 'Please give me one [item]' — is the standard café order pattern.",
+    "explanation": "'[Item] o hitotsu kudasai' \u2014 'Please give me one [item]' \u2014 is the standard caf\u00e9 order pattern.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
@@ -25,11 +25,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Japanese?",
-    "correctAnswer": "トイレはどこですか。(Toire wa doko desu ka.)",
+    "correctAnswer": "\u30c8\u30a4\u30ec\u306f\u3069\u3053\u3067\u3059\u304b\u3002(Toire wa doko desu ka.)",
     "incorrectAnswers": [
-      "トイレがありますか。(Toire ga arimasu ka.)",
-      "トイレはいつですか。(Toire wa itsu desu ka.)",
-      "トイレに行く。(Toire ni iku.)"
+      "\u30c8\u30a4\u30ec\u304c\u3042\u308a\u307e\u3059\u304b\u3002(Toire ga arimasu ka.)",
+      "\u30c8\u30a4\u30ec\u306f\u3044\u3064\u3067\u3059\u304b\u3002(Toire wa itsu desu ka.)",
+      "\u30c8\u30a4\u30ec\u306b\u884c\u304f\u3002(Toire ni iku.)"
     ],
     "explanation": "'Doko desu ka' means 'where is'. Replace 'toire' with any destination.",
     "keywords": [
@@ -45,13 +45,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much is this?' in Japanese?",
-    "correctAnswer": "これはいくらですか。(Kore wa ikura desu ka.)",
+    "correctAnswer": "\u3053\u308c\u306f\u3044\u304f\u3089\u3067\u3059\u304b\u3002(Kore wa ikura desu ka.)",
     "incorrectAnswers": [
-      "これは何ですか。(Kore wa nan desu ka.)",
-      "これはどこですか。(Kore wa doko desu ka.)",
-      "これはいつですか。(Kore wa itsu desu ka.)"
+      "\u3053\u308c\u306f\u4f55\u3067\u3059\u304b\u3002(Kore wa nan desu ka.)",
+      "\u3053\u308c\u306f\u3069\u3053\u3067\u3059\u304b\u3002(Kore wa doko desu ka.)",
+      "\u3053\u308c\u306f\u3044\u3064\u3067\u3059\u304b\u3002(Kore wa itsu desu ka.)"
     ],
-    "explanation": "'Ikura desu ka' — 'How much is it?' — is essential for shopping and markets.",
+    "explanation": "'Ikura desu ka' \u2014 'How much is it?' \u2014 is essential for shopping and markets.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -65,16 +65,16 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill at a Japanese restaurant?",
-    "correctAnswer": "お会計をお願いします。(Okaikei o onegaishimasu.)",
+    "correctAnswer": "\u304a\u4f1a\u8a08\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002(Okaikei o onegaishimasu.)",
     "incorrectAnswers": [
-      "もっと食べます。(Motto tabemasu.)",
-      "メニューをください。(Menyū o kudasai.)",
-      "おいしいです。(Oishii desu.)"
+      "\u3082\u3063\u3068\u98df\u3079\u307e\u3059\u3002(Motto tabemasu.)",
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002(Meny\u016b o kudasai.)",
+      "\u304a\u3044\u3057\u3044\u3067\u3059\u3002(Oishii desu.)"
     ],
-    "explanation": "'Okaikei o onegaishimasu' — 'The bill, please' — is the polite restaurant phrase.",
+    "explanation": "'Okaikei o onegaishimasu' \u2014 'The bill, please' \u2014 is the polite restaurant phrase.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-restaurant-phrases/"
@@ -85,13 +85,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Japanese?",
-    "correctAnswer": "わかりません。(Wakarimasen.)",
+    "correctAnswer": "\u308f\u304b\u308a\u307e\u305b\u3093\u3002(Wakarimasen.)",
     "incorrectAnswers": [
-      "しりません。(Shirimasen.)",
-      "ありません。(Arimasen.)",
-      "できません。(Dekimasen.)"
+      "\u3057\u308a\u307e\u305b\u3093\u3002(Shirimasen.)",
+      "\u3042\u308a\u307e\u305b\u3093\u3002(Arimasen.)",
+      "\u3067\u304d\u307e\u305b\u3093\u3002(Dekimasen.)"
     ],
-    "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely — locals will often switch to simpler Japanese.",
+    "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely \u2014 locals will often switch to simpler Japanese.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,13 +104,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Japanese?",
-    "correctAnswer": "英語を話せますか。(Eigo o hanasemasu ka.)",
+    "correctAnswer": "\u82f1\u8a9e\u3092\u8a71\u305b\u307e\u3059\u304b\u3002(Eigo o hanasemasu ka.)",
     "incorrectAnswers": [
-      "英語がわかりますか。(Eigo ga wakarimasu ka.)",
-      "英語を勉強しますか。(Eigo o benkyō shimasu ka.)",
-      "英語は難しいですか。(Eigo wa muzukashii desu ka.)"
+      "\u82f1\u8a9e\u304c\u308f\u304b\u308a\u307e\u3059\u304b\u3002(Eigo ga wakarimasu ka.)",
+      "\u82f1\u8a9e\u3092\u52c9\u5f37\u3057\u307e\u3059\u304b\u3002(Eigo o benky\u014d shimasu ka.)",
+      "\u82f1\u8a9e\u306f\u96e3\u3057\u3044\u3067\u3059\u304b\u3002(Eigo wa muzukashii desu ka.)"
     ],
-    "explanation": "'Eigo o hanasemasu ka?' — 'Can you speak English?' — a key phrase when you need help.",
+    "explanation": "'Eigo o hanasemasu ka?' \u2014 'Can you speak English?' \u2014 a key phrase when you need help.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -123,18 +123,3878 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left' in Japanese?",
-    "correctAnswer": "左に曲がってください。(Hidari ni magatte kudasai.)",
+    "correctAnswer": "\u5de6\u306b\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Hidari ni magatte kudasai.)",
     "incorrectAnswers": [
-      "右に曲がってください。(Migi ni magatte kudasai.)",
-      "まっすぐ行ってください。(Massugu itte kudasai.)",
-      "止まってください。(Tomatte kudasai.)"
+      "\u53f3\u306b\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Migi ni magatte kudasai.)",
+      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Massugu itte kudasai.)",
+      "\u6b62\u307e\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Tomatte kudasai.)"
     ],
-    "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead — the three direction words.",
+    "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead \u2014 the three direction words.",
     "keywords": [
       "freq-100",
       "situation-directions",
       "cefr-a1"
     ],
     "source": "https://www.tofugu.com/japanese/japanese-directions/"
+  },
+  {
+    "itemId": "cf073bb0-3fe2-4fbe-a89a-16bfdc7ecdd8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Good evening.'?",
+    "correctAnswer": "\u3053\u3093\u3070\u3093\u306f\u3002",
+    "incorrectAnswers": [
+      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
+      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%82%93%E3%81%B0%E3%82%93%E3%81%AF%E3%80%82"
+  },
+  {
+    "itemId": "3fad7de6-dceb-4166-aa90-58c01ef4d45b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'How are you?'?",
+    "correctAnswer": "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u307e\u305f\u3042\u3068\u3067\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E5%85%83%E6%B0%97%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "12099d96-4df3-4ab5-97e9-5c93604e1b26",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u307e\u305f\u3042\u3068\u3067\u3002",
+      "\u307e\u305f\u660e\u65e5\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E5%85%83%E6%B0%97%E3%81%A7%E3%81%99%E3%80%81%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "fb0079d4-f217-4df7-bf60-429c4c1ea20a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Very well, thanks.'?",
+    "correctAnswer": "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u307e\u305f\u3042\u3068\u3067\u3002",
+      "\u307e\u305f\u660e\u65e5\u3002",
+      "\u3088\u3044\u4e00\u65e5\u3092\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A8%E3%81%A6%E3%82%82%E5%85%83%E6%B0%97%E3%81%A7%E3%81%99%E3%80%81%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4eb05b9a-1fb9-43ff-890e-97489a7a63d2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'See you later.'?",
+    "correctAnswer": "\u307e\u305f\u3042\u3068\u3067\u3002",
+    "incorrectAnswers": [
+      "\u307e\u305f\u660e\u65e5\u3002",
+      "\u3088\u3044\u4e00\u65e5\u3092\u3002",
+      "\u3088\u3046\u3053\u305d\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%BE%E3%81%9F%E3%81%82%E3%81%A8%E3%81%A7%E3%80%82"
+  },
+  {
+    "itemId": "250f4fc1-09de-4350-a001-9308f5738a85",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'See you tomorrow.'?",
+    "correctAnswer": "\u307e\u305f\u660e\u65e5\u3002",
+    "incorrectAnswers": [
+      "\u3088\u3044\u4e00\u65e5\u3092\u3002",
+      "\u3088\u3046\u3053\u305d\u3002",
+      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%BE%E3%81%9F%E6%98%8E%E6%97%A5%E3%80%82"
+  },
+  {
+    "itemId": "c9348435-52d9-411d-b9a2-7d442c43ebeb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Have a good day.'.",
+    "correctAnswer": "\u3088\u3044\u4e00\u65e5\u3092\u3002",
+    "incorrectAnswers": [
+      "\u3088\u3046\u3053\u305d\u3002",
+      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
+      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%82%88%E3%81%84%E4%B8%80%E6%97%A5%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "52c3f1e1-d139-4098-9584-d682c66e92ae",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Welcome.'?",
+    "correctAnswer": "\u3088\u3046\u3053\u305d\u3002",
+    "incorrectAnswers": [
+      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
+      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
+      "\u307e\u305f\u3059\u3050\u306b\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%82%88%E3%81%86%E3%81%93%E3%81%9D%E3%80%82"
+  },
+  {
+    "itemId": "9af7a792-462d-46ef-a583-46254542ac9c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
+    "incorrectAnswers": [
+      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
+      "\u307e\u305f\u3059\u3050\u306b\u3002",
+      "\u3088\u3044\u591c\u3092\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%AF%E3%81%98%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6%E3%80%82"
+  },
+  {
+    "itemId": "a977bc04-6132-438d-baa8-9e8d87474909",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Nice to see you again.'?",
+    "correctAnswer": "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u307e\u305f\u3059\u3050\u306b\u3002",
+      "\u3088\u3044\u591c\u3092\u3002",
+      "\u3053\u3093\u3070\u3093\u306f\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%BE%E3%81%9F%E3%81%8A%E4%BC%9A%E3%81%84%E3%81%A7%E3%81%8D%E3%81%A6%E3%81%86%E3%82%8C%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4da254b9-9dab-425b-b8e5-0121b0b8d6de",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'See you soon.'.",
+    "correctAnswer": "\u307e\u305f\u3059\u3050\u306b\u3002",
+    "incorrectAnswers": [
+      "\u3088\u3044\u591c\u3092\u3002",
+      "\u3053\u3093\u3070\u3093\u306f\u3002",
+      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%BE%E3%81%9F%E3%81%99%E3%81%90%E3%81%AB%E3%80%82"
+  },
+  {
+    "itemId": "ceb2c093-9f41-48bb-99f3-bd70b0412d41",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Have a nice evening.'?",
+    "correctAnswer": "\u3088\u3044\u591c\u3092\u3002",
+    "incorrectAnswers": [
+      "\u3053\u3093\u3070\u3093\u306f\u3002",
+      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
+      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%82%88%E3%81%84%E5%A4%9C%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "f010ed4a-2172-4563-8b43-559c9fbe7cb9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'What is your name?'?",
+    "correctAnswer": "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
+      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E5%90%8D%E5%89%8D%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "87fab7de-1a06-4562-bc2e-0517f331dba2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I am from the United States.'?",
+    "correctAnswer": "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%87%BA%E8%BA%AB%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "13780224-a80c-41c9-abed-55b86a22df80",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I live in Chicago.'.",
+    "correctAnswer": "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%B7%E3%82%AB%E3%82%B4%E3%81%AB%E4%BD%8F%E3%82%93%E3%81%A7%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "33a99d0e-09ef-4d42-83fa-9504913d159e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am twenty years old.'?",
+    "correctAnswer": "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
+      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E4%BA%8C%E5%8D%81%E6%AD%B3%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1abf7126-804c-4f21-838a-85add573c199",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'This is my friend.'?",
+    "correctAnswer": "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
+      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%A1%E3%82%89%E3%81%AF%E7%A7%81%E3%81%AE%E5%8F%8B%E3%81%A0%E3%81%A1%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4a399f5b-fa46-4b91-bbef-074dc12c35b0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'This is my sister.'?",
+    "correctAnswer": "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
+      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%A1%E3%82%89%E3%81%AF%E7%A7%81%E3%81%AE%E5%A7%89%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ae953f21-37c0-4580-91b6-993d0332065b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I am married.'.",
+    "correctAnswer": "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
+      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
+      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E7%B5%90%E5%A9%9A%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4371b7c3-8d35-4500-ad1e-e7c8b5a4ec7c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am a student.'?",
+    "correctAnswer": "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
+      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
+      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f..."
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E5%AD%A6%E7%94%9F%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ef092492-6d95-4abc-9ac6-23f7dd948fec",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
+      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
+      "\u79c1\u306e\u4f4f\u6240\u306f..."
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E4%BC%91%E6%9A%87%E3%81%A7%E3%81%93%E3%81%93%E3%81%AB%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "19378ad5-9d03-402e-9345-08e68781d2b7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
+      "\u79c1\u306e\u4f4f\u6240\u306f...",
+      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E5%90%8D%E5%AD%97%E3%81%AF%E3%82%AC%E3%83%AB%E3%82%B7%E3%82%A2%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "83f682fd-70c4-4bee-863d-e0d819fc9d62",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'My phone number is...'.",
+    "correctAnswer": "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
+    "incorrectAnswers": [
+      "\u79c1\u306e\u4f4f\u6240\u306f...",
+      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
+      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AE%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%E3%81%AF..."
+  },
+  {
+    "itemId": "44514a90-898f-4cd4-bf31-ab738901c965",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'My address is...'?",
+    "correctAnswer": "\u79c1\u306e\u4f4f\u6240\u306f...",
+    "incorrectAnswers": [
+      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
+      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
+      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AE%E4%BD%8F%E6%89%80%E3%81%AF..."
+  },
+  {
+    "itemId": "dda36cd8-2b0a-40fa-9c2e-378795d8fdaa",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need water.'?",
+    "correctAnswer": "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%B4%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4a5e1ef7-64a5-48cf-9466-7128bbf96703",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I need a map.'?",
+    "correctAnswer": "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E5%9C%B0%E5%9B%B3%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a240a94e-2401-4e19-81be-a43bde64accf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need a taxi.'.",
+    "correctAnswer": "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "403138f1-3a83-4582-9f77-8e31d484a182",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need a room.'?",
+    "correctAnswer": "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "457af26f-9cf8-4590-9c48-e9ef35cc4c49",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/Wi-Fi%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "ef293f00-e8d0-42a1-a570-d37e7c9fb23d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Do you have bread?'?",
+    "correctAnswer": "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%91%E3%83%B3%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "147ab502-e8db-4ad7-8596-44df54e4c76d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Can I have the menu?'.",
+    "correctAnswer": "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "636dbe3b-797f-45e8-9a91-1724711bcde6",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%B4%E3%82%92%E4%B8%80%E6%9C%AC%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "bab48063-9647-4b24-8f27-c479e4a88133",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E8%A2%8B%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "2c3ab975-f923-4ab4-99d2-b386c9110de3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I need more time.'?",
+    "correctAnswer": "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%A3%E3%81%A8%E6%99%82%E9%96%93%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "46fd5dee-b21c-4c01-8959-545d83e526fc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need the receipt.'.",
+    "correctAnswer": "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%AC%E3%82%B7%E3%83%BC%E3%83%88%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "85309628-0227-48fc-9e83-a0f0082f48b9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%99%E3%82%B8%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3%E3%81%AE%E9%A3%9F%E3%81%B9%E7%89%A9%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "6e162561-f22d-4dd7-bc3d-5c14faf76ccf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Where is the bank?'?",
+    "correctAnswer": "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E9%8A%80%E8%A1%8C%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "3eec4ae9-a01e-45b2-8cf1-75dc68f6b686",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Where is the museum?'?",
+    "correctAnswer": "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E7%BE%8E%E8%A1%93%E9%A4%A8%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1a9abaa1-6257-4af2-ab27-1afdbf38ff28",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Where is the city center?'.",
+    "correctAnswer": "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E4%B8%AD%E5%BF%83%E9%83%A8%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "0646fa6d-cc3b-4a89-9721-52c057fac860",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9%E5%81%9C%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "a5c1cb9e-4c48-47e0-9ef7-154e6559307b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Go straight.'?",
+    "correctAnswer": "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u9060\u3044\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E3%81%BE%E3%81%A3%E3%81%99%E3%81%90%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "9b8d8c20-25b4-4f82-8e2c-710f2ed5c399",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Take the first street.'?",
+    "correctAnswer": "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u9060\u3044\u3067\u3059\u304b\u3002",
+      "\u8fd1\u3044\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E4%B8%80%E3%81%A4%E7%9B%AE%E3%81%AE%E9%80%9A%E3%82%8A%E3%82%92%E6%9B%B2%E3%81%8C%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "d52ddb2a-4614-44bc-a8ad-91f4af4c2aa6",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Take the second street.'.",
+    "correctAnswer": "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u9060\u3044\u3067\u3059\u304b\u3002",
+      "\u8fd1\u3044\u3067\u3059\u304b\u3002",
+      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%8C%E3%81%A4%E7%9B%AE%E3%81%AE%E9%80%9A%E3%82%8A%E3%82%92%E6%9B%B2%E3%81%8C%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "d2b8b2aa-7850-42b1-81f1-4a80f9cf4bb9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Is it far?'?",
+    "correctAnswer": "\u9060\u3044\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u8fd1\u3044\u3067\u3059\u304b\u3002",
+      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
+      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E9%81%A0%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "0882901c-ffc6-4acc-b977-1f743add631e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is it near?'?",
+    "correctAnswer": "\u8fd1\u3044\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
+      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E8%BF%91%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "04d23f3b-9df7-4d41-92a9-bf242707c88d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I am lost.'?",
+    "correctAnswer": "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E9%81%93%E3%81%AB%E8%BF%B7%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "19da19b5-5bfa-4c26-8a5d-4d7396276be5",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9B%E3%83%86%E3%83%AB%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "bf0c9048-ae74-49e8-81d2-2d135e9ea81d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Please show me on the map.'?",
+    "correctAnswer": "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://jisho.org/search/%E5%9C%B0%E5%9B%B3%E3%81%A7%E8%A6%8B%E3%81%9B%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "5a65815f-7a99-4cda-a7a7-5df060f2e08d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E8%A8%80%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "866353a9-5de6-41e6-8b34-130dcd0ce9fb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%A3%E3%81%A8%E3%82%86%E3%81%A3%E3%81%8F%E3%82%8A%E8%A9%B1%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "fc523014-cb95-4813-a341-bab90429ffe4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'How do you spell your name?'.",
+    "correctAnswer": "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E5%90%8D%E5%89%8D%E3%81%AF%E3%81%A9%E3%81%86%E6%9B%B8%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "bc0a7780-c50b-4839-856a-94b6ba9883e4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The total is ten euros.'?",
+    "correctAnswer": "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
+      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E5%90%88%E8%A8%88%E3%81%AF%E5%8D%81%E3%83%A6%E3%83%BC%E3%83%AD%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "6c127880-34bf-4dbf-a6c0-496f8721e413",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
+      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
+      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%8C%E5%8D%81%E3%83%A6%E3%83%BC%E3%83%AD%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5e251bab-6042-4c83-9040-a8c742636b21",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Room number twelve.'?",
+    "correctAnswer": "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
+      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E7%95%AA%E5%8F%B7%E3%81%AF%E5%8D%81%E4%BA%8C%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "65bd0da3-2b15-483f-9ac6-7266e2eeacfc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Platform number four.'.",
+    "correctAnswer": "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E5%9B%9B%E7%95%AA%E3%83%9B%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f7999f50-4d73-4837-8389-a6f22cc4de9c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'A table for three, please.'?",
+    "correctAnswer": "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E4%B8%89%E4%BA%BA%E7%94%A8%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "d8ab15c8-4b57-4bca-bac7-83f3d506c9aa",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
+      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E4%BA%8C%E6%9E%9A%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "bce7c155-ff21-423c-b9bb-b556f4117d8a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can you write it down?'?",
+    "correctAnswer": "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
+      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "10f72dc0-37f6-45de-8adc-7fd6147b2069",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'What is today's date?'.",
+    "correctAnswer": "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E6%97%A5%E3%81%AF%E4%BD%95%E6%97%A5%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "09160400-dde6-4f06-9023-cc23654892bc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'One moment, please.'?",
+    "correctAnswer": "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E5%BE%85%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "a3f45ab2-54f5-4358-906c-d5fa3cbe5d31",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I am hungry.'?",
+    "correctAnswer": "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%85%B9%E3%81%8C%E3%81%99%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "c8eadc3a-a164-44c6-90aa-813a735511bc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I am thirsty.'?",
+    "correctAnswer": "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
+      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%81%AE%E3%81%A9%E3%81%8C%E3%81%8B%E3%82%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "c26f6ea6-4bc5-44be-86d5-b541393d92c3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The menu, please.'.",
+    "correctAnswer": "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
+      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "7de04d6c-08eb-4792-9703-3fa9be6f768d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am vegetarian.'?",
+    "correctAnswer": "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%83%99%E3%82%B8%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1853c77e-eef8-4552-bc87-c7dc1afec8c8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'No meat, please.'?",
+    "correctAnswer": "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E8%82%89%E3%81%AA%E3%81%97%E3%81%A7%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "7189ef55-b4dd-4ae6-b5f1-35a608e0a6f9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Without sugar, please.'?",
+    "correctAnswer": "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
+      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E7%A0%82%E7%B3%96%E3%81%AA%E3%81%97%E3%81%A7%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "7636c421-77f7-4305-b28f-0a4fbe934673",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'With milk, please.'.",
+    "correctAnswer": "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
+      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
+      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9F%E3%83%AB%E3%82%AF%E5%85%A5%E3%82%8A%E3%81%A7%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "10804182-09d4-46f2-86d2-e7b1c1c49899",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'It was delicious.'?",
+    "correctAnswer": "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
+      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
+      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A8%E3%81%A6%E3%82%82%E3%81%8A%E3%81%84%E3%81%97%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "b3f3d5ff-7e00-463b-b81b-4766581a7edd",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'This is very good.'?",
+    "correctAnswer": "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
+      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%82%8C%E3%81%AF%E3%81%A8%E3%81%A6%E3%82%82%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "c559ff2d-2f17-47c2-a884-e216a23dc72c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'The soup is cold.'?",
+    "correctAnswer": "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B9%E3%83%BC%E3%83%97%E3%81%8C%E5%86%B7%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "9c49985b-8786-4f3c-bcbc-e845ae5f8b18",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
+      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E3%83%8A%E3%83%83%E3%83%84%E3%81%AE%E3%82%A2%E3%83%AC%E3%83%AB%E3%82%AE%E3%83%BC%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8d805af3-c578-47fb-9348-52659f3c897d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
+      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
+      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%B4%E3%82%92%E4%B8%80%E6%9C%AC%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "33c92b97-c410-4dfd-97da-292631908f03",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
+      "\u9ad8\u3059\u304e\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E5%88%A5%E3%81%AE%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1088a76e-c168-4544-8b80-1efd80c6760c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
+      "\u9ad8\u3059\u304e\u307e\u3059\u3002",
+      "\u5b89\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E5%88%A5%E3%81%AE%E8%89%B2%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1363774f-6843-4d6e-b567-97b47f39ddf4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Can I try it on?'.",
+    "correctAnswer": "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u9ad8\u3059\u304e\u307e\u3059\u3002",
+      "\u5b89\u3044\u3067\u3059\u3002",
+      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E8%A9%A6%E7%9D%80%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "95a5f734-eb7a-4ec8-b2b2-38de3a6fbbd2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'It is too expensive.'?",
+    "correctAnswer": "\u9ad8\u3059\u304e\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5b89\u3044\u3067\u3059\u3002",
+      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E9%AB%98%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "9fa7ccf6-1a50-4aea-b2ce-292b74eb09b4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It is cheap.'?",
+    "correctAnswer": "\u5b89\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E5%AE%89%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "eb3a93fb-1f7f-4d9c-a892-1a8e5cd1dd01",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I will take it.'?",
+    "correctAnswer": "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
+      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%82%8C%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "35ae709b-103f-4db3-aa7b-c5acb5f78579",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Where is the checkout?'.",
+    "correctAnswer": "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
+      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%AC%E3%82%B8%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "ba0bdc8a-3f47-44af-b26d-79084726fda1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am just looking.'?",
+    "correctAnswer": "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E8%A6%8B%E3%81%A6%E3%81%84%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "63012683-f2e3-48ed-8cba-50e7067b2232",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AF%E4%BD%BF%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "c134c07f-1199-41a5-87a0-3a7c0f0e9704",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I need a receipt.'?",
+    "correctAnswer": "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
+      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%83%AC%E3%82%B7%E3%83%BC%E3%83%88%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "589448b5-b0f3-49f2-948b-20e7db3fbd36",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'This size is too small.'.",
+    "correctAnswer": "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
+      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E5%B0%8F%E3%81%95%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "4d23e21e-805b-496b-a543-105500539b90",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'This size is too big.'?",
+    "correctAnswer": "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E5%A4%A7%E3%81%8D%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8474fe08-e6f0-4e8c-9439-14f04b104853",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
+      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E7%A9%BA%E6%B8%AF%E3%81%BE%E3%81%A7%E3%81%AE%E5%88%87%E7%AC%A6%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "cf5d2e5f-0700-47be-9818-38bf9a9581fa",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
+      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E4%B8%AD%E5%BF%83%E9%83%A8%E3%81%BE%E3%81%A7%E3%81%AE%E5%88%87%E7%AC%A6%E3%82%92%E4%B8%80%E6%9E%9A%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "65ce0dff-e5c6-4fe4-9ff3-1d35177f70d4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
+      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E5%BE%80%E5%BE%A9%E5%88%87%E7%AC%A6%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "303aa82b-c798-456a-9607-00bc99720a6f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Which platform is it?'?",
+    "correctAnswer": "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E4%BD%95%E7%95%AA%E3%83%9B%E3%83%BC%E3%83%A0%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "785fd2b9-dfcf-4616-80b1-1c99335967cf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is this seat free?'?",
+    "correctAnswer": "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
+      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E5%B8%AD%E3%81%AF%E7%A9%BA%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1aa79a67-c6ab-48b4-83fc-cf22dff28efa",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Please call a taxi.'?",
+    "correctAnswer": "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
+      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
+      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC%E3%82%92%E5%91%BC%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "bb5b85f2-4afb-47bc-9ede-1ff2bfde85f9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
+      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
+      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E3%83%90%E3%82%B9%E3%81%AF%E4%B8%AD%E5%BF%83%E9%83%A8%E3%81%AB%E8%A1%8C%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "7daffccc-894e-4334-b060-8611dfca2084",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
+      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
+      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E7%A9%BA%E6%B8%AF%E3%81%AB%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "2d62db5b-ea52-4636-94b1-1535772b8d2d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'We get off here.'?",
+    "correctAnswer": "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
+      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
+      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%93%E3%81%A7%E9%99%8D%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f81d5632-2372-4c5e-b6c7-8fef64a33b8b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I missed the bus.'?",
+    "correctAnswer": "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
+      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
+      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9%E3%81%AB%E4%B9%97%E3%82%8A%E9%81%85%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "7931aab0-9494-4ca8-a363-66d6fe9f78b0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Where can I buy a ticket?'.",
+    "correctAnswer": "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
+      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E5%88%87%E7%AC%A6%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E8%B2%B7%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1f6a9a26-6b77-4fd2-a284-fca522a2fc09",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The bus arrives at noon.'?",
+    "correctAnswer": "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
+      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9%E3%81%AF%E6%AD%A3%E5%8D%88%E3%81%AB%E7%9D%80%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5863f82b-b917-4fbc-8609-9b8c84199bc8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I have a reservation.'?",
+    "correctAnswer": "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%88%E7%B4%84%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f7ef6ef1-6983-4336-b724-03318199ebeb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Do you have a single room?'?",
+    "correctAnswer": "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%AB%E3%83%BC%E3%83%A0%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "53e08e55-fff7-4b00-b720-8dd00dfb9d04",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Do you have a double room?'.",
+    "correctAnswer": "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%83%80%E3%83%96%E3%83%AB%E3%83%AB%E3%83%BC%E3%83%A0%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "3348cc86-f15e-47a4-8690-8c4c32cb459f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
+      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/Wi-Fi%E3%81%AE%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "27bf5ca8-e1c6-40ed-9289-4133d3a04398",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
+      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
+      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E3%81%AB%E5%95%8F%E9%A1%8C%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "52775992-0992-4878-a12e-72461d4390b2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'The shower does not work.'?",
+    "correctAnswer": "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
+    "incorrectAnswers": [
+      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
+      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B7%E3%83%A3%E3%83%AF%E3%83%BC%E3%81%8C%E5%8B%95%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82"
+  },
+  {
+    "itemId": "549dd382-2027-4b3c-920a-a6138a0edef4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The room is too cold.'.",
+    "correctAnswer": "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E3%81%8C%E5%AF%92%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "2102557b-d545-4738-badc-8f9d275297f7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need clean towels.'?",
+    "correctAnswer": "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E3%82%BF%E3%82%AA%E3%83%AB%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a13659e4-1708-429d-b2d0-cf83ca178d90",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
+      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%9D%E9%A3%9F%E3%81%AF%E3%81%A4%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "80a9b9da-f56a-4168-90ca-6572898937c7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can I have another key?'?",
+    "correctAnswer": "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
+      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%86%E4%B8%80%E3%81%A4%E9%8D%B5%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "fb6f9435-964f-4905-b27b-a05df4c4ba8f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
+      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%81%8C%E5%A3%8A%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "00c7602f-dc28-49dd-8eb2-66eeb67b0b1a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%9D%E9%A3%9F%E3%81%AF%E4%B8%83%E6%99%82%E3%81%AB%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5d6e3771-c9c9-4d32-9cb2-11316593767c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I feel sick.'?",
+    "correctAnswer": "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
+      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "b11eeffe-5327-41c9-b4cb-e55c7fc0359a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I have a headache.'?",
+    "correctAnswer": "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%A0%AD%E3%81%8C%E7%97%9B%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "94dfd731-1cc6-4f33-9b0d-3a7c4954baea",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I have a fever.'.",
+    "correctAnswer": "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%86%B1%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f9771833-597c-4621-9fc6-cde0ee766454",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need a doctor.'?",
+    "correctAnswer": "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8C%BB%E8%80%85%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1b83ba90-f60e-4d5c-b6a2-2f1582046c75",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Where is the pharmacy?'?",
+    "correctAnswer": "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
+      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%96%AC%E5%B1%80%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "c1df2a54-3f0f-4341-9f9c-8e882c7fc0ad",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I am allergic to penicillin.'?",
+    "correctAnswer": "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
+      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9A%E3%83%8B%E3%82%B7%E3%83%AA%E3%83%B3%E3%81%AE%E3%82%A2%E3%83%AC%E3%83%AB%E3%82%AE%E3%83%BC%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "c4bbe008-b9a6-404f-aedd-413fc21b6d49",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'My stomach hurts.'.",
+    "correctAnswer": "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
+      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%85%B9%E3%81%8C%E7%97%9B%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f0e3b45b-2e69-43bc-8585-8f9041cecb6d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need medicine.'?",
+    "correctAnswer": "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
+      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%96%AC%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "6fa08ee0-cd8e-4c1b-9614-2f256959c85f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I feel dizzy.'?",
+    "correctAnswer": "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%82%81%E3%81%BE%E3%81%84%E3%81%8C%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0f2d35b8-86f2-44cc-bdb6-f3860834b89e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I have a cold.'?",
+    "correctAnswer": "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
+      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%A2%A8%E9%82%AA%E3%82%92%E3%81%B2%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "c907925c-98c3-48e9-a1c0-49f3423b1d4d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need a hospital.'.",
+    "correctAnswer": "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
+      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
+      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%97%85%E9%99%A2%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0066be52-10a5-439b-b609-61b0562cf995",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I feel better now.'?",
+    "correctAnswer": "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
+      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
+      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%81%AF%E5%B0%91%E3%81%97%E3%82%88%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "92b14b3c-113c-488d-a351-3ae693c82385",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'What time is it?'?",
+    "correctAnswer": "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
+      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
+      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E4%BD%95%E6%99%82%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "4817167d-c29e-40eb-ae12-4e47dcde37fe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Today is Monday.'?",
+    "correctAnswer": "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
+      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
+      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E6%97%A5%E3%81%AF%E6%9C%88%E6%9B%9C%E6%97%A5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "bc4258f3-8538-4d81-947b-6ce773da61b3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Tomorrow I will travel.'.",
+    "correctAnswer": "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
+      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
+      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%98%8E%E6%97%A5%E6%97%85%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1dc43849-5cd7-4cd4-a6d4-edaf0b764c9d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Yesterday I worked.'?",
+    "correctAnswer": "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
+      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
+      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%98%A8%E6%97%A5%E5%83%8D%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "d14aff8d-902d-4ee5-9672-0560c35cd6a2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It opens at nine.'?",
+    "correctAnswer": "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
+      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
+      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%B9%9D%E6%99%82%E3%81%AB%E9%96%8B%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f5cae932-5fe5-4f31-a578-6d53e29da801",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It closes at six.'?",
+    "correctAnswer": "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
+      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
+      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E5%85%AD%E6%99%82%E3%81%AB%E9%96%89%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1b16e248-bbe4-491f-b62f-f004c1932322",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I arrive later.'.",
+    "correctAnswer": "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
+      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
+      "\u9045\u3059\u304e\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E3%81%82%E3%81%A8%E3%81%A7%E6%9D%A5%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "30b6131c-52df-4ca4-b70c-bd0b3db44f0d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I will come back soon.'?",
+    "correctAnswer": "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
+      "\u9045\u3059\u304e\u307e\u3059\u3002",
+      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E3%81%99%E3%81%90%E6%88%BB%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f234b18f-1143-48ea-bfe7-a274f7148197",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need five minutes.'?",
+    "correctAnswer": "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u9045\u3059\u304e\u307e\u3059\u3002",
+      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
+      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%94%E5%88%86%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "22da5ca4-4476-4e8f-983c-9a0160db916c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is too late.'?",
+    "correctAnswer": "\u9045\u3059\u304e\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
+      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
+      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E9%81%85%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "37083803-f0ad-49e5-a584-d0fcbd895b84",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'This week is busy.'.",
+    "correctAnswer": "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
+      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
+      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E9%80%B1%E3%81%AF%E5%BF%99%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "e792fac2-6306-44a2-9ce3-008197da30b1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Next month I am free.'?",
+    "correctAnswer": "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
+      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
+      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%9D%A5%E6%9C%88%E3%81%AF%E6%9A%87%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8536d07a-1646-463c-b1c8-4ba98629ffac",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'What is the weather like?'?",
+    "correctAnswer": "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u6691\u3044\u3067\u3059\u3002",
+      "\u5bd2\u3044\u3067\u3059\u3002",
+      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%A4%A9%E6%B0%97%E3%81%AF%E3%81%A9%E3%81%86%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1a01b55d-3e0f-4aa9-aec4-8571de7844de",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is hot.'?",
+    "correctAnswer": "\u6691\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5bd2\u3044\u3067\u3059\u3002",
+      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%9A%91%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f2bb2d97-aa0c-4808-b4af-ddc284524ccb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'It is cold.'.",
+    "correctAnswer": "\u5bd2\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
+      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%AF%92%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5b7b03ea-d9b4-4d16-b1a9-2a358a073afe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'It is raining.'?",
+    "correctAnswer": "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
+      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%A8%E3%81%8C%E9%99%8D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a53e5383-8cbb-425e-bdc5-2c49c1b17131",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It is windy.'?",
+    "correctAnswer": "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%A2%A8%E3%81%8C%E5%BC%B7%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8cc8fb92-a49e-4725-9719-3cbfe596c00e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is sunny.'?",
+    "correctAnswer": "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
+      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%99%B4%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8de80a67-2149-4e0d-8c38-2586f735d7eb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'It is snowing.'.",
+    "correctAnswer": "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
+      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%AA%E3%81%8C%E9%99%8D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ee114822-3082-48a2-ba73-697ffdb3036d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'What a beautiful day!'?",
+    "correctAnswer": "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
+    "incorrectAnswers": [
+      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
+      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E3%81%AA%E3%82%93%E3%81%A6%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%97%A5%E3%81%A7%E3%81%97%E3%82%87%E3%81%86%E3%80%82"
+  },
+  {
+    "itemId": "181b3a65-f5b3-4c24-927b-59143203a8cf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It is cloudy.'?",
+    "correctAnswer": "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
+      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%9B%87%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "20438109-60b7-401f-84ef-917509c36828",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I need an umbrella.'?",
+    "correctAnswer": "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
+      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%82%98%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "9f6f64d9-663b-4742-8cf2-d833252f81c4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The weather is nice today.'.",
+    "correctAnswer": "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
+      "\u6691\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E6%97%A5%E3%81%AF%E5%A4%A9%E6%B0%97%E3%81%8C%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "17a88f80-24fd-4867-95ca-ba4e766f39ad",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The sky is clear.'?",
+    "correctAnswer": "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
+      "\u6691\u3044\u3067\u3059\u3002",
+      "\u5bd2\u3044\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E7%A9%BA%E3%81%8C%E6%99%B4%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ea940432-1cb0-44a5-bc00-50b8dc3c1c2d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Help!'?",
+    "correctAnswer": "\u52a9\u3051\u3066!",
+    "incorrectAnswers": [
+      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8A%A9%E3%81%91%E3%81%A6%21"
+  },
+  {
+    "itemId": "8e005b42-ad23-41fb-8dc0-d9577c7e611e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Call the police!'?",
+    "correctAnswer": "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
+      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%AD%A6%E5%AF%9F%E3%82%92%E5%91%BC%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "217d27f1-6a90-4939-b0cb-4dbd596ba998",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I have lost my passport.'.",
+    "correctAnswer": "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
+      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%83%91%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "03d97e1a-aabf-4761-afbe-935ee76939b7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'My wallet was stolen.'?",
+    "correctAnswer": "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u706b\u4e8b\u3067\u3059\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%B2%A1%E5%B8%83%E3%82%92%E7%9B%97%E3%81%BE%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "94c10663-c1eb-4c6c-95fa-cccb200d93af",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need an ambulance.'?",
+    "correctAnswer": "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u706b\u4e8b\u3067\u3059\u3002",
+      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E6%95%91%E6%80%A5%E8%BB%8A%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "dc05497f-96f7-4a56-a604-c7aad463c10d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Call a doctor!'?",
+    "correctAnswer": "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u706b\u4e8b\u3067\u3059\u3002",
+      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8C%BB%E8%80%85%E3%82%92%E5%91%BC%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "6edea21a-9eb1-4f70-8e12-0a63efd6981e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'There is a fire.'.",
+    "correctAnswer": "\u706b\u4e8b\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%81%AB%E4%BA%8B%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f5d57b6e-36ea-4e2e-9551-b53f6f1a1dfe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need help now.'?",
+    "correctAnswer": "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%81%99%E3%81%90%E5%8A%A9%E3%81%91%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "7d5cdeeb-5113-417e-bc82-f96a6a2b4093",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I lost my phone.'?",
+    "correctAnswer": "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
+      "\u7dca\u6025\u3067\u3059\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%BB%E8%A9%B1%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "acd780e9-c85b-4641-bb54-c30ff0ec7bdf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I lost my bag.'?",
+    "correctAnswer": "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
+      "\u7dca\u6025\u3067\u3059\u3002",
+      "\u52a9\u3051\u3066!"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8B%E3%81%B0%E3%82%93%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "d084b7dd-5b53-40ef-a290-526c15214630",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'My friend is hurt.'.",
+    "correctAnswer": "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
+    "incorrectAnswers": [
+      "\u7dca\u6025\u3067\u3059\u3002",
+      "\u52a9\u3051\u3066!",
+      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%8B%E3%81%A0%E3%81%A1%E3%81%8C%E3%81%91%E3%81%8C%E3%82%92%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "f3b8728a-097c-4ca7-afcf-18d3a5441660",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'This is an emergency.'?",
+    "correctAnswer": "\u7dca\u6025\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u52a9\u3051\u3066!",
+      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%B7%8A%E6%80%A5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a8bcba69-58ff-4290-9e34-7f3151fe6cfb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Happy birthday!'?",
+    "correctAnswer": "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "69af4cda-6946-4799-ae3c-146b5faa2927",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Congratulations!'?",
+    "correctAnswer": "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
+      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5c979104-99c6-4038-b5f7-339e430d6b5e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Good luck!'.",
+    "correctAnswer": "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
+      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "5dfa5b9b-a395-4459-a1af-7a9b7a98f60b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'You're welcome.'?",
+    "correctAnswer": "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
+    "incorrectAnswers": [
+      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
+      "\u53ec\u3057\u4e0a\u304c\u308c\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A9%E3%81%86%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%A6%E3%80%82"
+  },
+  {
+    "itemId": "b75852f0-1358-44ee-a495-eda206942fbe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Don't mention it.'?",
+    "correctAnswer": "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
+      "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
+      "\u3088\u3044\u65c5\u3092\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%97%E3%81%AB%E3%81%97%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "fe188cf2-d2fa-46ed-a390-e16a7c3e9d54",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I'm sorry to hear that.'?",
+    "correctAnswer": "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
+      "\u3088\u3044\u65c5\u3092\u3002",
+      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%9D%E3%82%8C%E3%81%AF%E6%AE%8B%E5%BF%B5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ac3fcab4-9853-4a38-a15c-5902b08769af",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Enjoy your meal.'.",
+    "correctAnswer": "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
+    "incorrectAnswers": [
+      "\u3088\u3044\u65c5\u3092\u3002",
+      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
+      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%AC%E3%81%97%E4%B8%8A%E3%81%8C%E3%82%8C%E3%80%82"
+  },
+  {
+    "itemId": "a2d16525-20ad-43ea-8d96-b3cfd4ba8d61",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Have a nice trip.'?",
+    "correctAnswer": "\u3088\u3044\u65c5\u3092\u3002",
+    "incorrectAnswers": [
+      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
+      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
+      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%82%88%E3%81%84%E6%97%85%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "8319589e-ba52-4af7-b7bc-94fb70709d48",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'See you on Monday.'?",
+    "correctAnswer": "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
+      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
+      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%88%E6%9B%9C%E6%97%A5%E3%81%AB%E3%81%BE%E3%81%9F%E4%BC%9A%E3%81%84%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%80%82"
+  },
+  {
+    "itemId": "61cfe9a7-ab91-49e3-93a7-91fd3fa4e0a8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Welcome to our city.'?",
+    "correctAnswer": "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
+    "incorrectAnswers": [
+      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
+      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%9F%E3%81%A1%E3%81%AE%E7%94%BA%E3%81%B8%E3%82%88%E3%81%86%E3%81%93%E3%81%9D%E3%80%82"
+  },
+  {
+    "itemId": "ddb19b38-e381-497e-82ea-4e6e73491428",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Happy holidays!'.",
+    "correctAnswer": "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
+    "incorrectAnswers": [
+      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%A5%BD%E3%81%97%E3%81%84%E4%BC%91%E6%97%A5%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "1ae57113-7aff-4d7a-a370-4dff5b1c6f39",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Have fun!'?",
+    "correctAnswer": "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%A5%BD%E3%81%97%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "bdc638e7-154c-4bb4-8ad5-1870e97a45b2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I work in an office.'?",
+    "correctAnswer": "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
+      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%81%A7%E5%83%8D%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "28de62f0-8921-43a3-9c81-bd3e33593668",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I work as a teacher.'?",
+    "correctAnswer": "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
+      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E5%85%88%E7%94%9F%E3%81%A8%E3%81%97%E3%81%A6%E5%83%8D%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "e29f2972-f3ee-44fc-b75b-688286e817e0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I study every day.'.",
+    "correctAnswer": "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%AF%8E%E6%97%A5%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0e8243f0-6f32-4b08-9b67-88b112acf051",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am learning the language.'?",
+    "correctAnswer": "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
+      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%81%9D%E3%81%AE%E8%A8%80%E8%AA%9E%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1ab88640-04c2-492e-b874-3e7dc2aa1d11",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Please write it down.'?",
+    "correctAnswer": "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
+      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "8f53e8fb-1304-45dc-bdc1-afd694d23674",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'The class starts now.'?",
+    "correctAnswer": "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%8E%88%E6%A5%AD%E3%81%AF%E4%BB%8A%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "bb35947a-21e4-490a-8059-900e0e69aaa4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need a pen.'.",
+    "correctAnswer": "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9A%E3%83%B3%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "243dac8e-0666-4ee1-8a63-0c6b13194538",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I have homework.'?",
+    "correctAnswer": "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
+      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E5%AE%BF%E9%A1%8C%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "54e16d88-3f3a-4628-b481-a6e634538e73",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I have an exam tomorrow.'?",
+    "correctAnswer": "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
+      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%98%8E%E6%97%A5%E8%A9%A6%E9%A8%93%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "286e140d-4fec-412b-aa1d-9c4b3856d5fe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Where is the classroom?'?",
+    "correctAnswer": "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
+      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
+      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%95%99%E5%AE%A4%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "624d5268-830f-4291-80d8-51f7c23a6cf7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The book is on the table.'.",
+    "correctAnswer": "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
+      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%AC%E3%81%AF%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E4%B8%8A%E3%81%AB%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "61af0d9c-0658-49ab-8dc3-149beb819517",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'My teacher is very kind.'?",
+    "correctAnswer": "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AE%E5%85%88%E7%94%9F%E3%81%AF%E3%81%A8%E3%81%A6%E3%82%82%E8%A6%AA%E5%88%87%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "28cbae53-65a8-4533-982c-226bfbef0391",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I speak a little of the language.'?",
+    "correctAnswer": "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
+      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%92%E5%B0%91%E3%81%97%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "fdab6f08-7713-4e4b-ac76-a14b30863b7b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Please say that again.'?",
+    "correctAnswer": "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
+      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
+      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E8%A8%80%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "9f7b7b43-3f0e-4c02-b7b1-11e1f4655316",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'What does this word mean?'.",
+    "correctAnswer": "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
+      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
+      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E8%A8%80%E8%91%89%E3%81%AF%E3%81%A9%E3%81%86%E3%81%84%E3%81%86%E6%84%8F%E5%91%B3%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "0761800b-b50c-4c7a-ad96-e4e35847b157",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I do not know this word.'?",
+    "correctAnswer": "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
+    "incorrectAnswers": [
+      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
+      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
+      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E8%A8%80%E8%91%89%E3%82%92%E7%9F%A5%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82"
+  },
+  {
+    "itemId": "97993596-444a-4897-b5a5-49aff521a1cc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is this correct?'?",
+    "correctAnswer": "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
+      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
+      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%82%8C%E3%81%AF%E6%AD%A3%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "2e8fb38f-f5c2-4aa6-95e0-81181c1f8704",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can you explain it?'?",
+    "correctAnswer": "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
+      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E8%AA%AC%E6%98%8E%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "d49b74bd-97ca-462b-a4a1-f8dc4321b9a9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I understand now.'.",
+    "correctAnswer": "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%82%8F%E3%81%8B%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1cc6f2e1-33c7-42f2-851a-17b76bb5e700",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Please use simple words.'?",
+    "correctAnswer": "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
+      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%B0%A1%E5%8D%98%E3%81%AA%E8%A8%80%E8%91%89%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "dfd82fcd-e46b-4518-aef9-f793c920b812",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I am practicing every day.'?",
+    "correctAnswer": "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%AF%8E%E6%97%A5%E7%B7%B4%E7%BF%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0013a578-9e88-44c3-8b53-88824875d5fd",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Please read this sentence.'?",
+    "correctAnswer": "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "incorrectAnswers": [
+      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E6%96%87%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "823f7b8c-1b5b-42a8-801e-5812e5c6376f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'How do you write that word?'.",
+    "correctAnswer": "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
+      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%9D%E3%81%AE%E8%A8%80%E8%91%89%E3%81%AF%E3%81%A9%E3%81%86%E6%9B%B8%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "b6e841c1-e973-45fb-bf0c-7aa76b92e8e0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am learning slowly.'?",
+    "correctAnswer": "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
+    "incorrectAnswers": [
+      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
+      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%86%E3%81%A3%E3%81%8F%E3%82%8A%E5%AD%A6%E3%82%93%E3%81%A7%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "961a4c1a-79aa-4efa-8476-b5c32438be5f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Where are you from?'?",
+    "correctAnswer": "\u3069\u3061\u3089\u304b\u3089\u6765\u307e\u3057\u305f\u304b\u3002",
+    "incorrectAnswers": [
+      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
+      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
+      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A9%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8B%E3%80%82"
   }
 ]
