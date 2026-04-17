@@ -205,7 +205,7 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("CollectionItems");
+                    b.ToTable("CollectionItems", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionRating", b =>
@@ -524,6 +524,9 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
+                    b.Property<string>("CorrectAnswerSpeech")
+                        .HasColumnType("jsonb");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -548,6 +551,11 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
+
+                    b.Property<string>("IncorrectAnswerSpeech")
+                        .IsRequired()
+                        .HasDefaultValueSql("'{}'::jsonb")
+                        .HasColumnType("jsonb");
 
                     b.Property<string>("IncorrectAnswers")
                         .IsRequired()
@@ -574,6 +582,9 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
+                    b.Property<string>("QuestionSpeech")
+                        .HasColumnType("jsonb");
+
                     b.Property<bool>("ReadyForReview")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -584,8 +595,8 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("character varying(500)");
 
                     b.Property<string>("Source")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
 
                     b.Property<Guid?>("UploadId")
                         .HasColumnType("uuid");

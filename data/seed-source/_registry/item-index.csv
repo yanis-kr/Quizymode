@@ -3632,6 +3632,12 @@ c2d29c21-89c1-4157-8af4-907b7d7032c6,languages,bulgarian,phrases,How do you ask 
 5ca17265-9dfc-4ad9-ab81-cb307227438e,languages,bulgarian,phrases,"How do you order 'a coffee, please' in Bulgarian?",data/seed-source/items/languages/languages.bulgarian.phrases.json
 df263cb4-61bf-4043-a8ac-b4702949b422,languages,bulgarian,phrases,How do you say 'Do you speak English?' in Bulgaria,data/seed-source/items/languages/languages.bulgarian.phrases.json
 1ba374bd-cf5f-401a-b1de-182ee8a79fdb,languages,bulgarian,phrases,How do you say 'I don't understand' in Bulgarian?,data/seed-source/items/languages/languages.bulgarian.phrases.json
+13e2a859-0e69-4d41-8856-a4d66569447c,languages,english,conversation,"If you did not hear a question, what is a polite f",data/seed-source/items/languages/languages.english.conversation.json
+56913daa-fa00-491c-bba6-b6bfa50593c9,languages,english,conversation,"If you need a moment to think, which filler is neu",data/seed-source/items/languages/languages.english.conversation.json
+2bab5d77-035b-4073-81d3-3c1a76168e48,languages,english,conversation,"In a short phone call, what is a clear opening?",data/seed-source/items/languages/languages.english.conversation.json
+cf9ba17d-3360-489b-b244-cc4767753a4d,languages,english,conversation,What does clear speech usually need from word stre,data/seed-source/items/languages/languages.english.conversation.json
+a1d7f43b-e5ac-4308-bddc-12d3fd64c869,languages,english,conversation,"When you agree politely, which phrase is common in",data/seed-source/items/languages/languages.english.conversation.json
+3b576f1b-0f72-49ef-84c7-9aa8634953c7,languages,english,conversation,Which intonation pattern is typical for a yes/no q,data/seed-source/items/languages/languages.english.conversation.json
 1fa2dced-fc2e-479f-b27d-baa80887cde5,languages,english,core,How do you introduce yourself in English?,data/seed-source/items/languages/languages.english.core.json
 d5c26205-1d99-437d-95a6-d34b357d1ff9,languages,english,core,How do you politely ask someone to wait?,data/seed-source/items/languages/languages.english.core.json
 7b8c288f-8d7c-4160-a770-8a6535af88e1,languages,english,core,"What does 'Could you repeat that, please?' ask for",data/seed-source/items/languages/languages.english.core.json
@@ -3639,19 +3645,109 @@ e396d4b4-821f-44df-9c7b-392b989248f7,languages,english,core,What is the differen
 d065facc-bf80-45f5-9ccf-f7dcbe0f2cdb,languages,english,core,What is the polite response to 'Thank you'?,data/seed-source/items/languages/languages.english.core.json
 34dea3fb-4272-44cd-9749-6c0130ec2176,languages,english,core,Which greeting is appropriate at any time of day i,data/seed-source/items/languages/languages.english.core.json
 828d2d69-b157-4628-97e0-cd626e13abf9,languages,english,core,Which phrase best expresses disagreement politely?,data/seed-source/items/languages/languages.english.core.json
+b64d50ea-b3ea-48eb-8c8e-dc977fcf1675,languages,english,core,"Which phrase is a simple, polite greeting in Engli",data/seed-source/items/languages/languages.english.core.2.json
 c000288c-4f0b-4dd6-b162-6bbc6e03f5fe,languages,english,core,"Which phrase means 'I don't know' in a polite, neu",data/seed-source/items/languages/languages.english.core.json
+588a00b8-8947-4e3c-a474-a83d6e8448fd,languages,english,core,Which question asks for someone's name?,data/seed-source/items/languages/languages.english.core.2.json
+b369cd81-1a57-4fa4-819f-a48c271c2c61,languages,english,core,Which verb form fits I: I ___ a student.,data/seed-source/items/languages/languages.english.core.2.json
+8f33de37-8094-49da-97b5-eeb65465f0c9,languages,english,core,Which word means the opposite of night?,data/seed-source/items/languages/languages.english.core.2.json
+7e71e50e-ea82-4f03-83e6-342ccd273c59,languages,english,core,Which word means you feel thankful to someone?,data/seed-source/items/languages/languages.english.core.2.json
+2a4ae5c1-b083-489f-95ca-30ad25dfed84,languages,english,core,Which word names clear liquid you drink?,data/seed-source/items/languages/languages.english.core.2.json
 2e661b5d-1ebe-4166-a10a-7501e19f2e16,languages,english,grammar,"After most prepositions, which verb form is usuall",data/seed-source/items/languages/languages.english.grammar.json
 365c7730-60e5-4e8e-b0bf-705f38687786,languages,english,grammar,"For one-syllable adjectives, what is the usual com",data/seed-source/items/languages/languages.english.grammar.json
+cff586a0-60d1-4e5e-a3b3-d3a8e8ab6aa4,languages,english,grammar,"In ""She speaks clearly,"" which word tells how she ",data/seed-source/items/languages/languages.english.grammar.4.json
+ebf16173-4047-487f-8947-03fd15eb8004,languages,english,grammar,"In ""They walk to school,"" which word shows an acti",data/seed-source/items/languages/languages.english.grammar.4.json
+d037849a-4ce1-41a4-be5a-552e9ffce563,languages,english,grammar,"In ""This is my book,"" which word points to somethi",data/seed-source/items/languages/languages.english.grammar.4.json
+f7d1d463-ebf8-493b-899e-8c54798dd406,languages,english,grammar,"In ""We waited before class,"" which word shows a re",data/seed-source/items/languages/languages.english.grammar.4.json
 a998b6bf-eb74-4782-a0bd-b9b358a4bd83,languages,english,grammar,"In a first conditional sentence, what tense is typ",data/seed-source/items/languages/languages.english.grammar.json
 6bfb030e-3993-482e-8489-1ae9c5cb173a,languages,english,grammar,"In present simple, what form does a regular verb u",data/seed-source/items/languages/languages.english.grammar.json
+e8158a89-525e-4c6b-a25c-b81a73b842e0,languages,english,grammar,"In the list ""bread, milk, and eggs,"" what separate",data/seed-source/items/languages/languages.english.grammar.5.json
+3273e414-7ea4-4345-8d55-04999ccfaf4d,languages,english,grammar,"In the sentence ""The small dog sleeps,"" which word",data/seed-source/items/languages/languages.english.grammar.4.json
+b55c1823-6de4-4fcc-99ef-249ae42c1669,languages,english,grammar,What is the usual word order in a simple English s,data/seed-source/items/languages/languages.english.grammar.6.json
+abc68386-7cb3-428a-ad89-255ac5c77489,languages,english,grammar,What usually surrounds the exact words a person sa,data/seed-source/items/languages/languages.english.grammar.5.json
 2a47b0bb-8e75-4a98-afcb-9267e35e57a3,languages,english,grammar,Which article fits best before a word that starts ,data/seed-source/items/languages/languages.english.grammar.json
+51603289-c70d-4693-bf37-a157683d16cd,languages,english,grammar,Which form is correct in present simple for we?,data/seed-source/items/languages/languages.english.grammar.2.json
+d2e92382-adaf-475a-a2d8-a021930d7a30,languages,english,grammar,Which group is a full sentence in standard written,data/seed-source/items/languages/languages.english.grammar.6.json
+0fa862c6-fed2-4d69-9644-6a35c491be20,languages,english,grammar,Which mark ends a direct yes-or-no question?,data/seed-source/items/languages/languages.english.grammar.5.json
+e1393356-6d6d-4ab1-8946-e08ffc6d25c1,languages,english,grammar,Which mark usually ends a normal statement in Engl,data/seed-source/items/languages/languages.english.grammar.5.json
+69876d67-9b1a-401c-a36f-88c95cb33bfe,languages,english,grammar,Which option correctly joins two full ideas with a,data/seed-source/items/languages/languages.english.grammar.6.json
+34edc9f9-1906-4dd7-9c0e-9df33f5d14ba,languages,english,grammar,"Which pair matches ""bring"" for movement toward the",data/seed-source/items/languages/languages.english.grammar.8.json
 4c83e138-1c22-4058-a7a7-7801f885bc06,languages,english,grammar,Which pattern is the usual shape of present perfec,data/seed-source/items/languages/languages.english.grammar.json
+a1f93849-9c6f-468f-aad2-f0bbac80be38,languages,english,grammar,Which preposition fits time on a clock: ___ 3 o'cl,data/seed-source/items/languages/languages.english.grammar.2.json
+c8d28540-8ec3-4f88-8eec-a76a44064a79,languages,english,grammar,Which pronoun agrees with a singular person when y,data/seed-source/items/languages/languages.english.grammar.3.json
+6f4813c0-82d3-45ed-b264-86f682f747e1,languages,english,grammar,Which question has standard word order?,data/seed-source/items/languages/languages.english.grammar.2.json
+4baaf2ab-b9aa-4fb8-8514-0d1959835246,languages,english,grammar,Which sentence is a common imperative that gives a,data/seed-source/items/languages/languages.english.grammar.6.json
+47841da3-53be-44ab-bc80-0db69a6c88b3,languages,english,grammar,Which sentence is a yes/no question in standard En,data/seed-source/items/languages/languages.english.grammar.6.json
+71831b1b-cfbc-4bb5-bb84-ad16e770d8a4,languages,english,grammar,"Which sentence matches plural ""these""?",data/seed-source/items/languages/languages.english.grammar.3.json
+1ded1e5f-3a6a-480a-ba6a-e1dde214af75,languages,english,grammar,Which sentence talks about a plan or prediction wi,data/seed-source/items/languages/languages.english.grammar.7.json
+25df5254-b177-4323-a161-d6140ed6c6ec,languages,english,grammar,"Which sentence uses ""fewer"" for things you can cou",data/seed-source/items/languages/languages.english.grammar.8.json
+8538b208-9162-4a1d-bf8f-643c3e0effcb,languages,english,grammar,"Which sentence uses ""listen"" with the right partne",data/seed-source/items/languages/languages.english.grammar.8.json
+2a49e215-435b-4b06-b0e6-e03576ec975c,languages,english,grammar,"Which sentence uses ""say"" in a typical pattern?",data/seed-source/items/languages/languages.english.grammar.8.json
+869512d6-4a0f-4ef8-b19d-2f7e4039b3e5,languages,english,grammar,Which sentence uses a correctly?,data/seed-source/items/languages/languages.english.grammar.2.json
+a35ff9c6-b2ac-4a29-8ad6-bdb05a795615,languages,english,grammar,Which sentence uses present perfect for life exper,data/seed-source/items/languages/languages.english.grammar.7.json
+2e3e9009-bb75-4a38-acdd-ee881ed69586,languages,english,grammar,"Which sentence uses the apostrophe correctly for """,data/seed-source/items/languages/languages.english.grammar.5.json
+ea120941-b678-460a-90ad-13df1c5f935a,languages,english,grammar,Which sentence uses the past of go?,data/seed-source/items/languages/languages.english.grammar.2.json
+0b92b134-5398-4d86-aa1c-06beb2db453a,languages,english,grammar,"Which sentence uses the possessive ""its"" correctly",data/seed-source/items/languages/languages.english.grammar.8.json
+ed99a7d1-9a83-4ba9-b448-1edbf1744565,languages,english,grammar,Which sentence uses the present continuous for som,data/seed-source/items/languages/languages.english.grammar.7.json
+a988818a-20f0-4ede-8906-2929aa2fe61d,languages,english,grammar,Which sentence uses the present simple for a habit,data/seed-source/items/languages/languages.english.grammar.7.json
+c1661f4d-084f-4b7a-8aa8-58cb202fe7ad,languages,english,grammar,Which shows singular possession for one student?,data/seed-source/items/languages/languages.english.grammar.5.json
+c431b342-5ce8-4547-bb45-996db0d7f5f9,languages,english,grammar,Which verb agrees with the compound subject joined,data/seed-source/items/languages/languages.english.grammar.3.json
+8d04712d-4a47-4e83-9e1e-db25d844c292,languages,english,grammar,"Which verb agrees with the plural subject? ""The ke",data/seed-source/items/languages/languages.english.grammar.3.json
+6a8de004-427a-46e9-9986-3873b303bf8f,languages,english,grammar,"Which verb fits best with a state verb like ""know""",data/seed-source/items/languages/languages.english.grammar.7.json
+e242a262-6b3e-4063-ab72-f5c8ea65c45c,languages,english,grammar,"Which verb fits? ""Each student ___ a notebook.""",data/seed-source/items/languages/languages.english.grammar.3.json
+901c74dc-9e72-4d7f-ae37-5a7504856d5c,languages,english,grammar,"Which verb fits? ""She ___ English and Spanish.""",data/seed-source/items/languages/languages.english.grammar.3.json
+9d8bf647-a302-43a2-a86d-6597669f4fbd,languages,english,grammar,Which verb form best completes this past sentence?,data/seed-source/items/languages/languages.english.grammar.7.json
+49eee48a-e6cd-47c9-8781-90ecc1e0f15b,languages,english,grammar,Which word completes the negative: She ___ not lik,data/seed-source/items/languages/languages.english.grammar.2.json
+427bca72-280a-4415-ba57-6de089671852,languages,english,grammar,"Which word completes this sentence? ""She speaks En",data/seed-source/items/languages/languages.english.grammar.8.json
+1ac0d639-02f1-48e8-a75e-786e2d372da6,languages,english,grammar,"Which word describes the noun ""cake"" in ""The choco",data/seed-source/items/languages/languages.english.grammar.4.json
+7ed27592-bef7-459c-ba1e-ef60e17ac636,languages,english,grammar,"Why is ""Although it was late"" not a sentence on it",data/seed-source/items/languages/languages.english.grammar.6.json
+03704cee-a4e0-49e0-9c67-e5399a179c7e,languages,english,idioms,"""A friend in need is a friend indeed"" highlights w",data/seed-source/items/languages/languages.english.idioms.4.json
+3b2f31f9-3396-4d22-ac22-ed089746ae2a,languages,english,idioms,"""Don't count your chickens before they hatch"" warn",data/seed-source/items/languages/languages.english.idioms.5.json
+31fe32ad-369d-4de8-a378-504e37182ca9,languages,english,idioms,"""You reap what you sow"" connects results to what e",data/seed-source/items/languages/languages.english.idioms.4.json
+c1143583-10c0-40c8-9b0a-565ac68ef6cf,languages,english,idioms,"If a friend says ""Let's hang out this weekend,"" wh",data/seed-source/items/languages/languages.english.idioms.6.json
+0769fdbc-1f77-48af-84e2-b99c8c9e0af3,languages,english,idioms,"If a person says ""No worries"" to calm you, what is",data/seed-source/items/languages/languages.english.idioms.6.json
+342653a5-81a0-4b92-970d-c58f1378b931,languages,english,idioms,"If a task is ""a piece of cake,"" what is it like?",data/seed-source/items/languages/languages.english.idioms.2.json
+0788ba00-0ebc-47ce-be49-df17e0ca0df8,languages,english,idioms,"If someone ""está en las nubes,"" what is the usual ",data/seed-source/items/languages/languages.english.idioms.7.json
+5fccacce-d77f-42d7-9782-d2ef1581237f,languages,english,idioms,"If someone says ""I'm in,"" what are they often expr",data/seed-source/items/languages/languages.english.idioms.6.json
+7e6767d6-8b7d-4061-840e-74779bded7cd,languages,english,idioms,"If someone says ""Look before you leap,"" what are t",data/seed-source/items/languages/languages.english.idioms.5.json
+12ddeb28-d957-4fc3-9ead-17a0a9a472e4,languages,english,idioms,"If something ""coûte les yeux de la tête,"" what doe",data/seed-source/items/languages/languages.english.idioms.3.json
+69f8f9a0-4fb6-4e7f-8b62-bd757f169f2e,languages,english,idioms,"If something happens ""once in a blue moon,"" how of",data/seed-source/items/languages/languages.english.idioms.2.json
 c4f45bfd-7a90-45ba-8bb8-2a5a600e5cee,languages,english,idioms,"If something happens once in a blue moon, how ofte",data/seed-source/items/languages/languages.english.idioms.json
 1c33dd6e-57d0-4b45-936c-42e6f0c63662,languages,english,idioms,"If something is a piece of cake, what does that us",data/seed-source/items/languages/languages.english.idioms.json
 b1407449-778d-4fc6-96cb-27fe41817a92,languages,english,idioms,"If the ball is in your court, who must act next?",data/seed-source/items/languages/languages.english.idioms.json
+bac2021e-61bd-40da-a2e6-7da3b258647a,languages,english,idioms,"If you ""hit the nail on the head,"" what did you do",data/seed-source/items/languages/languages.english.idioms.2.json
+93dd2e3a-2c92-4dfc-9fe9-fca6f94a5281,languages,english,idioms,"If you ""mettez les pieds dans le plat,"" what did y",data/seed-source/items/languages/languages.english.idioms.3.json
+7a1b134d-2549-4138-becd-c67c0769e348,languages,english,idioms,"If you ""spill the beans,"" what did you do?",data/seed-source/items/languages/languages.english.idioms.2.json
 04efab10-edc0-46c2-8a6f-ff554885f753,languages,english,idioms,"If you are under the weather, how do you most like",data/seed-source/items/languages/languages.english.idioms.json
 474dfcce-390c-44af-8ee4-9b10798d4b3a,languages,english,idioms,"If you break the ice at a meeting, what did you he",data/seed-source/items/languages/languages.english.idioms.json
 f198947e-aa5c-43b4-b9a6-c748a83fd013,languages,english,idioms,"If you hit the nail on the head, what did you do?",data/seed-source/items/languages/languages.english.idioms.json
+033dba0b-f69c-49fa-acaf-6c85cd48f75e,languages,english,idioms,"In French, what does ""avoir un coup de foudre"" usu",data/seed-source/items/languages/languages.english.idioms.3.json
+920f22ad-bd73-4e25-85d4-3843dbcd9ef1,languages,english,idioms,"In casual English, if someone says an idea sounds ",data/seed-source/items/languages/languages.english.idioms.6.json
+c752ca41-93b7-4ce0-a868-929c107811c9,languages,english,idioms,"In casual English, what does it mean when somethin",data/seed-source/items/languages/languages.english.idioms.6.json
+b7aaef25-9881-4750-a75d-00f65c3c447a,languages,english,idioms,"In casual French, what does ""poser un lapin à quel",data/seed-source/items/languages/languages.english.idioms.3.json
+6515ccb4-0931-4165-93d9-c96c43ff182c,languages,english,idioms,"In everyday English, what does the idiom ""break th",data/seed-source/items/languages/languages.english.idioms.2.json
+43acd3ea-ab39-4e36-93ea-4fbd27ee3cb4,languages,english,idioms,"Someone says they are ""under the weather."" What do",data/seed-source/items/languages/languages.english.idioms.2.json
+ccd54e61-474a-48c5-9459-5154c3f91f1a,languages,english,idioms,"The Spanish expression ""No hay mal que por bien no",data/seed-source/items/languages/languages.english.idioms.7.json
+0e9d0b22-219e-44cc-bf9e-695e01dde4e6,languages,english,idioms,"The Spanish idiom ""Ser pan comido"" matches which E",data/seed-source/items/languages/languages.english.idioms.7.json
+5e66944b-97e8-43df-88c4-31237e066de2,languages,english,idioms,"The proverb ""Don't put all your eggs in one basket",data/seed-source/items/languages/languages.english.idioms.4.json
+bec5d9a5-891e-4755-83a9-7e363fc0eb2e,languages,english,idioms,"The proverb ""Honesty is the best policy"" praises w",data/seed-source/items/languages/languages.english.idioms.4.json
+f9ef0c7d-7f99-40f1-9678-17213e2f4f9a,languages,english,idioms,"The proverb ""Practice makes perfect"" supports whic",data/seed-source/items/languages/languages.english.idioms.4.json
+eff8398b-973a-4549-87b6-b56c400081d9,languages,english,idioms,"The saying ""Better late than never"" stresses which",data/seed-source/items/languages/languages.english.idioms.5.json
+e02b4cfd-5f0d-4ea4-87e1-d59c2fad6ba3,languages,english,idioms,"The saying ""Rome wasn't built in a day"" is used wh",data/seed-source/items/languages/languages.english.idioms.5.json
+61216b7c-c02a-4b88-bbef-efb3975f00f1,languages,english,idioms,"The saying ""The early bird catches the worm"" is mo",data/seed-source/items/languages/languages.english.idioms.5.json
+ad5baaee-899a-43ba-a68e-501331f54860,languages,english,idioms,"What does ""Actions speak louder than words"" ask yo",data/seed-source/items/languages/languages.english.idioms.4.json
+5d55bfda-2c4a-4a93-a1db-843cd4190c58,languages,english,idioms,"What does ""Costar un ojo de la cara"" usually expre",data/seed-source/items/languages/languages.english.idioms.7.json
+399247d3-4a25-49ed-bdad-dce74358dd8c,languages,english,idioms,"What does ""Dar en el clavo"" mean in everyday Spani",data/seed-source/items/languages/languages.english.idioms.7.json
+8bd70c5c-c9de-4d17-ae35-d4510ada88d2,languages,english,idioms,"What does ""avoir la gueule de bois"" refer to?",data/seed-source/items/languages/languages.english.idioms.3.json
+4a69d28b-e707-47b8-8f6e-0d125351f404,languages,english,idioms,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.english.idioms.7.json
+23e2a1fc-8024-4717-935e-3ace496da249,languages,english,idioms,"When English speakers say ""You can't judge a book ",data/seed-source/items/languages/languages.english.idioms.5.json
+ab81d1f3-f16f-4b48-92ac-87be23ce000b,languages,english,idioms,"When French speakers say ""C'est la vie,"" what tone",data/seed-source/items/languages/languages.english.idioms.3.json
+1e778fbe-d086-4f54-933f-6b5ced1e2504,languages,english,idioms,"When someone says ""I'm beat"" after a long day, wha",data/seed-source/items/languages/languages.english.idioms.6.json
+8f0954f9-6cfd-41cb-894a-b2ac0611e45c,languages,english,listening,"If a speaker says ""Could you..."", what kind of fun",data/seed-source/items/languages/languages.english.listening.json
+41d3b8b1-86bc-471e-b0f3-7e814224e9aa,languages,english,listening,"If audio gives a phone number, what kind of listen",data/seed-source/items/languages/languages.english.listening.json
+98bcc298-36cd-40ac-930d-c33ff4802999,languages,english,listening,What helps listeners follow a longer talk?,data/seed-source/items/languages/languages.english.listening.json
+5a30bc5d-41e3-4cf6-bc78-17512802d3eb,languages,english,listening,"When you listen for the main topic, what are you t",data/seed-source/items/languages/languages.english.listening.json
+8eef2b84-2c66-4792-94ae-e367dd115367,languages,english,listening,Which pair differs mainly by one sound: ship and s,data/seed-source/items/languages/languages.english.listening.json
+afd1965b-3c58-475c-8f42-9011f49265d1,languages,english,listening,Why do many learners watch short clips with subtit,data/seed-source/items/languages/languages.english.listening.json
 eb2a9e08-a889-4151-85b5-17d3a547f537,languages,english,phrases,How do you ask 'How much does this cost?' in Engli,data/seed-source/items/languages/languages.english.phrases.json
 a7f5e613-427e-4a35-bcac-0dbd4bc9f5ed,languages,english,phrases,How do you ask 'Is this seat taken?' in English?,data/seed-source/items/languages/languages.english.phrases.json
 c6644412-99a1-4d0d-b1bb-bb20f61b37e8,languages,english,phrases,How do you ask for directions to the train station,data/seed-source/items/languages/languages.english.phrases.json
@@ -3665,16 +3761,100 @@ b063e050-b93d-4af2-aafe-81173238d761,languages,english,pronunciation,"In many En
 aaf0df03-8a64-4d07-a886-ecfaac59442f,languages,english,pronunciation,Which pair shows two different th sounds in thin a,data/seed-source/items/languages/languages.english.pronunciation.json
 8b4eb76d-a8e1-4d4c-a236-60e0c86e173e,languages,english,pronunciation,Which sound is the usual vowel in many unstressed ,data/seed-source/items/languages/languages.english.pronunciation.json
 8a387625-4095-4156-9ff7-8fcdb8cc255c,languages,english,pronunciation,Which syllable is usually stressed in the word pho,data/seed-source/items/languages/languages.english.pronunciation.json
+5551a68e-33eb-401b-87b1-321955710f59,languages,english,reading,"Before you read, what can a title help you predict",data/seed-source/items/languages/languages.english.reading.2.json
 0e90efd9-d2da-4606-8531-8a40ef9e3f7e,languages,english,reading,"If a fact is stated directly in the text, what kin",data/seed-source/items/languages/languages.english.reading.json
+599ddbd7-e978-4802-9299-49d799d8426e,languages,english,reading,"If a text has photos near the words, what can phot",data/seed-source/items/languages/languages.english.reading.2.json
+295c0c31-cca5-4ec1-abc5-990cdec4c37b,languages,english,reading,"If a word is new, what is a safe first step?",data/seed-source/items/languages/languages.english.reading.2.json
+be5a9e03-b07c-429b-a3bc-6d3774816534,languages,english,reading,"If you underline the topic sentence, what idea doe",data/seed-source/items/languages/languages.english.reading.2.json
 9a88e9bd-1593-4f24-be87-2b9c72cad353,languages,english,reading,"In many academic paragraphs, where does the topic ",data/seed-source/items/languages/languages.english.reading.json
 7d1a0482-e13d-4ce1-92b7-1463e73566db,languages,english,reading,What is the main idea of a paragraph?,data/seed-source/items/languages/languages.english.reading.json
+79fce207-e189-4fd4-9dc1-be7d93725b9b,languages,english,reading,"When you get a long writing assignment, what is a ",data/seed-source/items/languages/languages.english.reading.2.json
 f7e64a2b-bfab-4195-bb79-3eb407f88e21,languages,english,reading,"When you guess a new word from nearby words, what ",data/seed-source/items/languages/languages.english.reading.json
+3653347d-70bc-4bc7-8780-1335df5f6cee,languages,english,reading,"When you look for a bus time in a schedule, what s",data/seed-source/items/languages/languages.english.reading.2.json
 e1611cf4-e76f-4787-a5c3-d68d39155097,languages,english,reading,"When you scan a timetable, what are you usually lo",data/seed-source/items/languages/languages.english.reading.json
 bbb24eb0-fa15-4289-bf0b-24ae6889ab26,languages,english,reading,"When you skim a page, what are you mainly trying t",data/seed-source/items/languages/languages.english.reading.json
+2dd50ce7-6c8b-468c-aa0a-3534469ecf30,languages,english,travel,"At a hotel front desk, what does ""check-in"" usuall",data/seed-source/items/languages/languages.english.travel.4.json
+5a6a4503-0222-4192-b07d-62332ffcf2d5,languages,english,travel,"At an airport, what is a ""boarding pass"" mainly fo",data/seed-source/items/languages/languages.english.travel.json
+3181fcb1-7b22-4443-b532-113d360848ac,languages,english,travel,"If a cashier asks ""Cash or card?"" what are they as",data/seed-source/items/languages/languages.english.travel.6.json
+d7e35ea3-6d2f-4ef5-a5f8-29fd1411ad17,languages,english,travel,"If a hotel says ""no vacancy,"" what does it mean?",data/seed-source/items/languages/languages.english.travel.4.json
+01f95f1d-483c-42d9-9fcf-efd5ab015500,languages,english,travel,"If a place is ""near"" the station, what does that u",data/seed-source/items/languages/languages.english.travel.2.json
+898f56a3-b8b7-4ec2-886a-9f7aebb9b2b4,languages,english,travel,"If a sign says ""baggage claim,"" where are you most",data/seed-source/items/languages/languages.english.travel.json
+2776a629-e140-448b-a7be-af321c7776e9,languages,english,travel,"If a sign says ""carry-on,"" what kind of bag does i",data/seed-source/items/languages/languages.english.travel.json
+2d9caef7-53e9-4a6e-9aef-1ae3ea4648d7,languages,english,travel,"If someone says ""Go straight ahead,"" what should y",data/seed-source/items/languages/languages.english.travel.2.json
+8376c2f2-80ef-4ca5-925a-2d50a704c2b4,languages,english,travel,"If you are ""lost,"" what do you need most help with",data/seed-source/items/languages/languages.english.travel.2.json
+7c10ad9f-b9d1-4d93-8a49-e0bebd9ea903,languages,english,travel,"If you ask ""Do you have this in stock?"" what do yo",data/seed-source/items/languages/languages.english.travel.6.json
+24d68f7c-45bd-4eee-8e0b-4e59a429c4d4,languages,english,travel,"If you ask for a ""wake-up call,"" what service do y",data/seed-source/items/languages/languages.english.travel.4.json
+68269c5d-961a-4db1-97c4-81133ab0f459,languages,english,travel,"If you ask for a different ""size"" in a clothing sh",data/seed-source/items/languages/languages.english.travel.6.json
+54aadcb3-7d7c-4579-8c60-40dfa4a9125b,languages,english,travel,"If you ask for tap water, what do you usually want",data/seed-source/items/languages/languages.english.travel.5.json
+96c5fc36-df6a-4278-9321-511f86428c67,languages,english,travel,"If you ask for the ""nearest hospital,"" what are yo",data/seed-source/items/languages/languages.english.travel.3.json
+aeb34b3f-2412-4680-9213-8c2caa698f18,languages,english,travel,"If you say ""I need a doctor,"" what kind of help ar",data/seed-source/items/languages/languages.english.travel.3.json
+96b08548-2fb2-480f-b5c4-9d75a07e460f,languages,english,travel,"If you shout ""Help!"" in English, what is the usual",data/seed-source/items/languages/languages.english.travel.3.json
+0077d1c6-0ca9-4632-bcf8-d8a7de761900,languages,english,travel,"If you tell a server you have a ""food allergy,"" wh",data/seed-source/items/languages/languages.english.travel.5.json
+7c8959d3-3e26-4ca8-9629-9fbbb8e6b954,languages,english,travel,"In English, what does ""bill"" or ""check"" mean at th",data/seed-source/items/languages/languages.english.travel.5.json
+2fe43b1a-afc9-402a-b34e-4a3c286b0180,languages,english,travel,"In a restaurant, what is a ""reservation""?",data/seed-source/items/languages/languages.english.travel.5.json
+1baf3c72-303a-47d7-9d31-600ef9d78eb3,languages,english,travel,"In airport English, what does ""gate"" usually mean?",data/seed-source/items/languages/languages.english.travel.json
+d0fe205e-e0db-4132-a5ba-32bacec7e8f0,languages,english,travel,"In many countries, what is a ""tip"" in a restaurant",data/seed-source/items/languages/languages.english.travel.5.json
+b6cef39f-7ca9-4231-837f-58ba832ea659,languages,english,travel,"In many hotels, what is a ""key card"" usually used ",data/seed-source/items/languages/languages.english.travel.4.json
+042c5446-9f75-4080-a181-d2faea7d2fbe,languages,english,travel,"In many places, what number should you call for po",data/seed-source/items/languages/languages.english.travel.3.json
+9a7353bf-7899-447f-9cce-c461dac8ba1c,languages,english,travel,"In travel English, what does ""nonstop"" mean about ",data/seed-source/items/languages/languages.english.travel.json
+b7b6f0fd-f2dc-4664-a37e-0fb90e49f950,languages,english,travel,"What does ""allergy"" mean in a medical emergency?",data/seed-source/items/languages/languages.english.travel.3.json
+3337e6d8-cb5e-4edc-afe0-d88397b73c5a,languages,english,travel,"What does ""check-out time"" usually tell you?",data/seed-source/items/languages/languages.english.travel.4.json
+195ffa9c-0f31-4fa3-ba7d-b4e2b31233d6,languages,english,travel,"What does ""corner"" mean in street directions?",data/seed-source/items/languages/languages.english.travel.2.json
+ceb8b1a5-3285-4a79-b4cd-4bbd3b315640,languages,english,travel,"What does ""duty"" often refer to in ""duty-free"" sho",data/seed-source/items/languages/languages.english.travel.6.json
+62d69fe0-4979-4272-8ae2-63e0c8c18c0b,languages,english,travel,"What does ""housekeeping"" most often mean in a hote",data/seed-source/items/languages/languages.english.travel.4.json
+c6847978-8bf5-4c36-b708-822bde4b707d,languages,english,travel,"What does ""lost"" mean when you say ""I lost my pass",data/seed-source/items/languages/languages.english.travel.3.json
+a801e250-8190-4448-b6c4-7a25d20059a1,languages,english,travel,"What does ""on sale"" often mean in a shop window?",data/seed-source/items/languages/languages.english.travel.6.json
+387e8d1a-7dd7-42e4-9a0b-42f3a5098842,languages,english,travel,"What does ""takeout"" or ""takeaway"" mean in restaura",data/seed-source/items/languages/languages.english.travel.5.json
+413be3b6-6710-4673-bc1e-ca094c73639f,languages,english,travel,"What does ""turn left"" mean when you follow spoken ",data/seed-source/items/languages/languages.english.travel.2.json
+992f217b-f626-4d4a-a034-d11ec6f3bf7a,languages,english,travel,"What is a ""landmark"" when you ask for directions?",data/seed-source/items/languages/languages.english.travel.2.json
+26b0bdfa-0a46-4825-aefb-205fd25cf16b,languages,english,travel,"What is a ""receipt"" in a store?",data/seed-source/items/languages/languages.english.travel.6.json
+4726e894-56db-4853-b742-ac6c5da73ee0,languages,english,travel,"What is the usual meaning of ""duty-free"" in an air",data/seed-source/items/languages/languages.english.travel.json
+db43aab2-753c-4343-9047-216364abbc1e,languages,english,vocab,"In ESL vocabulary, which word means a mother or fa",data/seed-source/items/languages/languages.english.vocab.2.json
+d856359d-f44a-4dec-8356-c7be023239ee,languages,english,vocab,"In beginner English vocabulary, which word means a",data/seed-source/items/languages/languages.english.vocab.4.json
+5f189856-d527-4673-a4d0-c7d9ed8a74b3,languages,english,vocab,"The Greek root ""bio-"" often relates to which idea?",data/seed-source/items/languages/languages.english.vocab.6.json
+482a07c3-bb08-4320-808b-e2125c25ed28,languages,english,vocab,"The Greek root ""geo-"" often relates to which idea?",data/seed-source/items/languages/languages.english.vocab.6.json
+f164bd7a-4800-4d1c-aaa9-87532b234590,languages,english,vocab,"The Greek root ""graph"" often relates to which idea",data/seed-source/items/languages/languages.english.vocab.6.json
+24603326-a4da-40c0-86ff-37b955cf18db,languages,english,vocab,"The Greek root ""tele-"" often relates to which idea",data/seed-source/items/languages/languages.english.vocab.6.json
+f5a9b015-3bc5-4d34-95a8-a247acfa1375,languages,english,vocab,"The Latin root ""aud"" often relates to which idea?",data/seed-source/items/languages/languages.english.vocab.6.json
+8dcf8006-0d84-4e72-b8d7-d83dc52acd4e,languages,english,vocab,"The Latin root ""dict"" often relates to which idea?",data/seed-source/items/languages/languages.english.vocab.6.json
+ea1371be-b4ad-4696-848e-f36559ee805a,languages,english,vocab,Which pair is closest for a polite request starter,data/seed-source/items/languages/languages.english.vocab.7.json
+b57f6035-34b3-42a6-bf07-3e57e0de1839,languages,english,vocab,Which pair is closest in everyday meaning?,data/seed-source/items/languages/languages.english.vocab.7.json
+e305ba53-7aa7-43c1-80a2-b10eba1ab0d7,languages,english,vocab,Which pair is closest when you describe a good moo,data/seed-source/items/languages/languages.english.vocab.7.json
+205163de-ffbf-4550-a740-e6bfeb4fef2f,languages,english,vocab,"Which pair is closest when you mean ""many"" in simp",data/seed-source/items/languages/languages.english.vocab.7.json
+fb8e0736-2ce3-4b10-ac08-d7da7f8be9f6,languages,english,vocab,Which pair is closest when you mean to get somethi,data/seed-source/items/languages/languages.english.vocab.7.json
+a76805bc-fed7-4c64-9046-06a5c8cc41c4,languages,english,vocab,Which pair is closest when you talk about size?,data/seed-source/items/languages/languages.english.vocab.7.json
 05a1df0d-6a99-4da9-9ec7-a350b166883d,languages,english,vocab,Which spelling shows location or place?,data/seed-source/items/languages/languages.english.vocab.json
+5eebfc6b-69c5-4fcc-b534-0bf72f25a162,languages,english,vocab,Which verb means to move on your feet at a slow sp,data/seed-source/items/languages/languages.english.vocab.4.json
 cae2f5f6-9e09-4c46-b916-958cf97e70f5,languages,english,vocab,Which word fits countable nouns when you compare s,data/seed-source/items/languages/languages.english.vocab.json
+50e55c38-df66-441b-a7fc-3c1389dc341f,languages,english,vocab,Which word is a basic color like the sky on a clea,data/seed-source/items/languages/languages.english.vocab.4.json
 01d3aa5a-a41e-4cb7-af4f-f651ea1c14ad,languages,english,vocab,Which word matches completing or matching somethin,data/seed-source/items/languages/languages.english.vocab.json
+2d94dc25-14a4-4752-9e8e-fb524111c659,languages,english,vocab,Which word means a formal meeting to discuss share,data/seed-source/items/languages/languages.english.vocab.5.json
+8af6a925-39f9-4342-a32b-6d2a73113321,languages,english,vocab,Which word means a person who buys goods or servic,data/seed-source/items/languages/languages.english.vocab.5.json
+e9d46b7e-873d-4315-a473-e79b2d2d4d7e,languages,english,vocab,"Which word means a place to stay away from home, o",data/seed-source/items/languages/languages.english.vocab.8.json
+cc441e42-4adb-4cec-825d-96e500bbdbcc,languages,english,vocab,Which word means a place where officers check pass,data/seed-source/items/languages/languages.english.vocab.8.json
+614bce23-d649-4e92-bbfc-fcc1a7383959,languages,english,vocab,Which word means a place where people learn togeth,data/seed-source/items/languages/languages.english.vocab.2.json
+c29e3327-ae15-497d-b93e-481ed9b9e397,languages,english,vocab,Which word means a planned path from one place to ,data/seed-source/items/languages/languages.english.vocab.8.json
+a95052bb-5bc5-4087-8bcc-4d73448c686f,languages,english,vocab,Which word means a possible explanation that you t,data/seed-source/items/languages/languages.english.vocab.3.json
+474d80ca-e4ca-4ce6-88c0-6bd52757b007,languages,english,vocab,Which word means a short restatement of the main p,data/seed-source/items/languages/languages.english.vocab.3.json
+ca385d2c-b07a-4785-a736-ca43d67c887c,languages,english,vocab,Which word means a time limit for finishing work?,data/seed-source/items/languages/languages.english.vocab.5.json
+640f2879-00dd-4c4a-999a-5bde296c6241,languages,english,vocab,Which word means a worker who answers to a manager,data/seed-source/items/languages/languages.english.vocab.5.json
+f83ffe83-2296-46a4-8b2b-aae8ae4f16f4,languages,english,vocab,Which word means a written plan that shows income ,data/seed-source/items/languages/languages.english.vocab.5.json
+97c4ba88-0b76-4d74-bfb5-3f0d4005775c,languages,english,vocab,Which word means bags you take on a trip?,data/seed-source/items/languages/languages.english.vocab.8.json
+6b3902f0-5317-45a0-a1cf-3e70b7273c13,languages,english,vocab,Which word means feeling worry or fear about somet,data/seed-source/items/languages/languages.english.vocab.2.json
+879328bf-aa3c-4a9f-a407-b8570b877db7,languages,english,vocab,Which word means money a company earns from sales?,data/seed-source/items/languages/languages.english.vocab.5.json
+bf9c6352-2362-4f6c-a1bf-c78844ef1615,languages,english,vocab,Which word means not expensive?,data/seed-source/items/languages/languages.english.vocab.2.json
+de1e5d99-3623-490e-8212-1d4a2419134d,languages,english,vocab,Which word means the document that lets you board ,data/seed-source/items/languages/languages.english.vocab.8.json
+70da6924-3496-41c5-b45d-227a8812a6f3,languages,english,vocab,Which word means the meal you eat in the middle of,data/seed-source/items/languages/languages.english.vocab.2.json
+ffdafa16-fc47-4ff8-9750-d67b26cf5c80,languages,english,vocab,"Which word means the opposite of ""hot"" for weather",data/seed-source/items/languages/languages.english.vocab.4.json
+d8ae14f2-60ab-4f13-95cd-9c5fea586c7d,languages,english,vocab,Which word means the reason something happens or e,data/seed-source/items/languages/languages.english.vocab.3.json
+84f48ee2-9e9e-47bb-afb8-659db15d9f92,languages,english,vocab,Which word means the result or outcome of an actio,data/seed-source/items/languages/languages.english.vocab.3.json
+c3a98435-6d6b-4759-8ddc-c1ac028d70c6,languages,english,vocab,Which word means the room where food is cooked?,data/seed-source/items/languages/languages.english.vocab.2.json
+b83c633c-9f68-4539-af16-da34ffff9f1e,languages,english,vocab,"Which word means the time when a bus, train, or pl",data/seed-source/items/languages/languages.english.vocab.8.json
+a4b249bd-dc1e-4d7b-9629-26b54023a7dc,languages,english,vocab,Which word means to look at something closely to u,data/seed-source/items/languages/languages.english.vocab.3.json
+d86ab9d3-3af7-4f90-a4a3-9411f3a677db,languages,english,vocab,Which word means to say what something means in si,data/seed-source/items/languages/languages.english.vocab.3.json
+b5801423-5da4-429f-b8b5-dc37e41cc417,languages,english,vocab,Which word names a place where people go when they,data/seed-source/items/languages/languages.english.vocab.4.json
 0363b722-cc3d-4684-a02d-467169e29150,languages,english,vocab,Which word names paper and pens for writing?,data/seed-source/items/languages/languages.english.vocab.json
+8250f01c-d3c3-4a39-a1ab-c12db91da621,languages,english,vocab,Which word names something you read that has many ,data/seed-source/items/languages/languages.english.vocab.4.json
 f2f6f11e-0779-47a4-b225-f8d469135eab,languages,english,vocab,Which word usually means a basic rule or belief?,data/seed-source/items/languages/languages.english.vocab.json
 51b1ee71-2e58-434b-a04d-0e052ce63fe6,languages,english,vocab,Which word usually works as a verb meaning to infl,data/seed-source/items/languages/languages.english.vocab.json
 47de8744-2a7f-4d22-9390-4c666830a140,languages,english,writing,"In a basic essay, what does a thesis statement usu",data/seed-source/items/languages/languages.english.writing.json
@@ -3683,42 +3863,6 @@ f2f6f11e-0779-47a4-b225-f8d469135eab,languages,english,vocab,Which word usually 
 7589315c-3c20-4795-b999-df5ff37e88d7,languages,english,writing,What is parallel structure in a list?,data/seed-source/items/languages/languages.english.writing.json
 3fd2fa79-49ad-45d4-8c3a-ff9669922615,languages,english,writing,When is active voice often clearer than passive vo,data/seed-source/items/languages/languages.english.writing.json
 41cdf6c5-6967-41d9-8b4a-29ee92d65cb6,languages,english,writing,Why do many style guides suggest the serial (Oxfor,data/seed-source/items/languages/languages.english.writing.json
-b64d50ea-b3ea-48eb-8c8e-dc977fcf1675,languages,esl,beginner,"Which phrase is a simple, polite greeting in Engli",data/seed-source/items/languages/languages.esl.beginner.json
-588a00b8-8947-4e3c-a474-a83d6e8448fd,languages,esl,beginner,Which question asks for someone's name?,data/seed-source/items/languages/languages.esl.beginner.json
-b369cd81-1a57-4fa4-819f-a48c271c2c61,languages,esl,beginner,Which verb form fits I: I ___ a student.,data/seed-source/items/languages/languages.esl.beginner.json
-8f33de37-8094-49da-97b5-eeb65465f0c9,languages,esl,beginner,Which word means the opposite of night?,data/seed-source/items/languages/languages.esl.beginner.json
-7e71e50e-ea82-4f03-83e6-342ccd273c59,languages,esl,beginner,Which word means you feel thankful to someone?,data/seed-source/items/languages/languages.esl.beginner.json
-2a4ae5c1-b083-489f-95ca-30ad25dfed84,languages,esl,beginner,Which word names clear liquid you drink?,data/seed-source/items/languages/languages.esl.beginner.json
-51603289-c70d-4693-bf37-a157683d16cd,languages,esl,grammar,Which form is correct in present simple for we?,data/seed-source/items/languages/languages.esl.grammar.json
-a1f93849-9c6f-468f-aad2-f0bbac80be38,languages,esl,grammar,Which preposition fits time on a clock: ___ 3 o'cl,data/seed-source/items/languages/languages.esl.grammar.json
-6f4813c0-82d3-45ed-b264-86f682f747e1,languages,esl,grammar,Which question has standard word order?,data/seed-source/items/languages/languages.esl.grammar.json
-869512d6-4a0f-4ef8-b19d-2f7e4039b3e5,languages,esl,grammar,Which sentence uses a correctly?,data/seed-source/items/languages/languages.esl.grammar.json
-ea120941-b678-460a-90ad-13df1c5f935a,languages,esl,grammar,Which sentence uses the past of go?,data/seed-source/items/languages/languages.esl.grammar.json
-49eee48a-e6cd-47c9-8781-90ecc1e0f15b,languages,esl,grammar,Which word completes the negative: She ___ not lik,data/seed-source/items/languages/languages.esl.grammar.json
-8f0954f9-6cfd-41cb-894a-b2ac0611e45c,languages,esl,listening,"If a speaker says ""Could you..."", what kind of fun",data/seed-source/items/languages/languages.esl.listening.json
-41d3b8b1-86bc-471e-b0f3-7e814224e9aa,languages,esl,listening,"If audio gives a phone number, what kind of listen",data/seed-source/items/languages/languages.esl.listening.json
-98bcc298-36cd-40ac-930d-c33ff4802999,languages,esl,listening,What helps listeners follow a longer talk?,data/seed-source/items/languages/languages.esl.listening.json
-5a30bc5d-41e3-4cf6-bc78-17512802d3eb,languages,esl,listening,"When you listen for the main topic, what are you t",data/seed-source/items/languages/languages.esl.listening.json
-8eef2b84-2c66-4792-94ae-e367dd115367,languages,esl,listening,Which pair differs mainly by one sound: ship and s,data/seed-source/items/languages/languages.esl.listening.json
-afd1965b-3c58-475c-8f42-9011f49265d1,languages,esl,listening,Why do many learners watch short clips with subtit,data/seed-source/items/languages/languages.esl.listening.json
-5551a68e-33eb-401b-87b1-321955710f59,languages,esl,reading,"Before you read, what can a title help you predict",data/seed-source/items/languages/languages.esl.reading.json
-599ddbd7-e978-4802-9299-49d799d8426e,languages,esl,reading,"If a text has photos near the words, what can phot",data/seed-source/items/languages/languages.esl.reading.json
-295c0c31-cca5-4ec1-abc5-990cdec4c37b,languages,esl,reading,"If a word is new, what is a safe first step?",data/seed-source/items/languages/languages.esl.reading.json
-be5a9e03-b07c-429b-a3bc-6d3774816534,languages,esl,reading,"If you underline the topic sentence, what idea doe",data/seed-source/items/languages/languages.esl.reading.json
-79fce207-e189-4fd4-9dc1-be7d93725b9b,languages,esl,reading,"When you get a long writing assignment, what is a ",data/seed-source/items/languages/languages.esl.reading.json
-3653347d-70bc-4bc7-8780-1335df5f6cee,languages,esl,reading,"When you look for a bus time in a schedule, what s",data/seed-source/items/languages/languages.esl.reading.json
-13e2a859-0e69-4d41-8856-a4d66569447c,languages,esl,speaking,"If you did not hear a question, what is a polite f",data/seed-source/items/languages/languages.esl.speaking.json
-56913daa-fa00-491c-bba6-b6bfa50593c9,languages,esl,speaking,"If you need a moment to think, which filler is neu",data/seed-source/items/languages/languages.esl.speaking.json
-2bab5d77-035b-4073-81d3-3c1a76168e48,languages,esl,speaking,"In a short phone call, what is a clear opening?",data/seed-source/items/languages/languages.esl.speaking.json
-cf9ba17d-3360-489b-b244-cc4767753a4d,languages,esl,speaking,What does clear speech usually need from word stre,data/seed-source/items/languages/languages.esl.speaking.json
-a1d7f43b-e5ac-4308-bddc-12d3fd64c869,languages,esl,speaking,"When you agree politely, which phrase is common in",data/seed-source/items/languages/languages.esl.speaking.json
-3b576f1b-0f72-49ef-84c7-9aa8634953c7,languages,esl,speaking,Which intonation pattern is typical for a yes/no q,data/seed-source/items/languages/languages.esl.speaking.json
-db43aab2-753c-4343-9047-216364abbc1e,languages,esl,vocab,"In ESL vocabulary, which word means a mother or fa",data/seed-source/items/languages/languages.esl.vocab.json
-614bce23-d649-4e92-bbfc-fcc1a7383959,languages,esl,vocab,Which word means a place where people learn togeth,data/seed-source/items/languages/languages.esl.vocab.json
-6b3902f0-5317-45a0-a1cf-3e70b7273c13,languages,esl,vocab,Which word means feeling worry or fear about somet,data/seed-source/items/languages/languages.esl.vocab.json
-bf9c6352-2362-4f6c-a1bf-c78844ef1615,languages,esl,vocab,Which word means not expensive?,data/seed-source/items/languages/languages.esl.vocab.json
-70da6924-3496-41c5-b45d-227a8812a6f3,languages,esl,vocab,Which word means the meal you eat in the middle of,data/seed-source/items/languages/languages.esl.vocab.json
-c3a98435-6d6b-4759-8ddc-c1ac028d70c6,languages,esl,vocab,Which word means the room where food is cooked?,data/seed-source/items/languages/languages.esl.vocab.json
 e7f09660-9f94-442a-ab84-4614dc3b2f12,languages,french,conversation,"In French, which phrase politely asks someone to r",data/seed-source/items/languages/languages.french.conversation.json
 a216d1cb-7f69-4873-b4f5-0e812b7ffdf1,languages,french,conversation,"Which informal question asks ""How are you?"" to som",data/seed-source/items/languages/languages.french.conversation.json
 5d8bdbfb-3114-48ae-8824-27526a0dc81e,languages,french,conversation,Which phrase is a common daytime greeting?,data/seed-source/items/languages/languages.french.conversation.json
@@ -4791,78 +4935,6 @@ c303992e-eb65-4052-a558-56d3bed18400,languages,german,vocab,What does 'Guten Mor
 50f64e5a-a62e-4d56-aacf-e0c50896c084,languages,german,vocab,What does 'das Brot' mean?,data/seed-source/items/languages/languages.german.vocab.json
 ee25f181-6977-4528-a65b-7155d25bc453,languages,german,vocab,What does 'das Wasser' mean?,data/seed-source/items/languages/languages.german.vocab.json
 7a9eabed-1834-4ded-8f0d-040aec5fdfab,languages,german,vocab,What does 'die Familie' mean?,data/seed-source/items/languages/languages.german.vocab.json
-c8d28540-8ec3-4f88-8eec-a76a44064a79,languages,grammar,agreement,Which pronoun agrees with a singular person when y,data/seed-source/items/languages/languages.grammar.agreement.json
-71831b1b-cfbc-4bb5-bb84-ad16e770d8a4,languages,grammar,agreement,"Which sentence matches plural ""these""?",data/seed-source/items/languages/languages.grammar.agreement.json
-c431b342-5ce8-4547-bb45-996db0d7f5f9,languages,grammar,agreement,Which verb agrees with the compound subject joined,data/seed-source/items/languages/languages.grammar.agreement.json
-8d04712d-4a47-4e83-9e1e-db25d844c292,languages,grammar,agreement,"Which verb agrees with the plural subject? ""The ke",data/seed-source/items/languages/languages.grammar.agreement.json
-e242a262-6b3e-4063-ab72-f5c8ea65c45c,languages,grammar,agreement,"Which verb fits? ""Each student ___ a notebook.""",data/seed-source/items/languages/languages.grammar.agreement.json
-901c74dc-9e72-4d7f-ae37-5a7504856d5c,languages,grammar,agreement,"Which verb fits? ""She ___ English and Spanish.""",data/seed-source/items/languages/languages.grammar.agreement.json
-cff586a0-60d1-4e5e-a3b3-d3a8e8ab6aa4,languages,grammar,parts-of-speech,"In ""She speaks clearly,"" which word tells how she ",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-ebf16173-4047-487f-8947-03fd15eb8004,languages,grammar,parts-of-speech,"In ""They walk to school,"" which word shows an acti",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-d037849a-4ce1-41a4-be5a-552e9ffce563,languages,grammar,parts-of-speech,"In ""This is my book,"" which word points to somethi",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-f7d1d463-ebf8-493b-899e-8c54798dd406,languages,grammar,parts-of-speech,"In ""We waited before class,"" which word shows a re",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-3273e414-7ea4-4345-8d55-04999ccfaf4d,languages,grammar,parts-of-speech,"In the sentence ""The small dog sleeps,"" which word",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-1ac0d639-02f1-48e8-a75e-786e2d372da6,languages,grammar,parts-of-speech,"Which word describes the noun ""cake"" in ""The choco",data/seed-source/items/languages/languages.grammar.parts-of-speech.json
-e8158a89-525e-4c6b-a25c-b81a73b842e0,languages,grammar,punctuation,"In the list ""bread, milk, and eggs,"" what separate",data/seed-source/items/languages/languages.grammar.punctuation.json
-abc68386-7cb3-428a-ad89-255ac5c77489,languages,grammar,punctuation,What usually surrounds the exact words a person sa,data/seed-source/items/languages/languages.grammar.punctuation.json
-0fa862c6-fed2-4d69-9644-6a35c491be20,languages,grammar,punctuation,Which mark ends a direct yes-or-no question?,data/seed-source/items/languages/languages.grammar.punctuation.json
-e1393356-6d6d-4ab1-8946-e08ffc6d25c1,languages,grammar,punctuation,Which mark usually ends a normal statement in Engl,data/seed-source/items/languages/languages.grammar.punctuation.json
-2e3e9009-bb75-4a38-acdd-ee881ed69586,languages,grammar,punctuation,"Which sentence uses the apostrophe correctly for """,data/seed-source/items/languages/languages.grammar.punctuation.json
-c1661f4d-084f-4b7a-8aa8-58cb202fe7ad,languages,grammar,punctuation,Which shows singular possession for one student?,data/seed-source/items/languages/languages.grammar.punctuation.json
-b55c1823-6de4-4fcc-99ef-249ae42c1669,languages,grammar,sentence-form,What is the usual word order in a simple English s,data/seed-source/items/languages/languages.grammar.sentence-form.json
-d2e92382-adaf-475a-a2d8-a021930d7a30,languages,grammar,sentence-form,Which group is a full sentence in standard written,data/seed-source/items/languages/languages.grammar.sentence-form.json
-69876d67-9b1a-401c-a36f-88c95cb33bfe,languages,grammar,sentence-form,Which option correctly joins two full ideas with a,data/seed-source/items/languages/languages.grammar.sentence-form.json
-4baaf2ab-b9aa-4fb8-8514-0d1959835246,languages,grammar,sentence-form,Which sentence is a common imperative that gives a,data/seed-source/items/languages/languages.grammar.sentence-form.json
-47841da3-53be-44ab-bc80-0db69a6c88b3,languages,grammar,sentence-form,Which sentence is a yes/no question in standard En,data/seed-source/items/languages/languages.grammar.sentence-form.json
-7ed27592-bef7-459c-ba1e-ef60e17ac636,languages,grammar,sentence-form,"Why is ""Although it was late"" not a sentence on it",data/seed-source/items/languages/languages.grammar.sentence-form.json
-1ded1e5f-3a6a-480a-ba6a-e1dde214af75,languages,grammar,tenses,Which sentence talks about a plan or prediction wi,data/seed-source/items/languages/languages.grammar.tenses.json
-a35ff9c6-b2ac-4a29-8ad6-bdb05a795615,languages,grammar,tenses,Which sentence uses present perfect for life exper,data/seed-source/items/languages/languages.grammar.tenses.json
-ed99a7d1-9a83-4ba9-b448-1edbf1744565,languages,grammar,tenses,Which sentence uses the present continuous for som,data/seed-source/items/languages/languages.grammar.tenses.json
-a988818a-20f0-4ede-8906-2929aa2fe61d,languages,grammar,tenses,Which sentence uses the present simple for a habit,data/seed-source/items/languages/languages.grammar.tenses.json
-6a8de004-427a-46e9-9986-3873b303bf8f,languages,grammar,tenses,"Which verb fits best with a state verb like ""know""",data/seed-source/items/languages/languages.grammar.tenses.json
-9d8bf647-a302-43a2-a86d-6597669f4fbd,languages,grammar,tenses,Which verb form best completes this past sentence?,data/seed-source/items/languages/languages.grammar.tenses.json
-34edc9f9-1906-4dd7-9c0e-9df33f5d14ba,languages,grammar,usage,"Which pair matches ""bring"" for movement toward the",data/seed-source/items/languages/languages.grammar.usage.json
-25df5254-b177-4323-a161-d6140ed6c6ec,languages,grammar,usage,"Which sentence uses ""fewer"" for things you can cou",data/seed-source/items/languages/languages.grammar.usage.json
-8538b208-9162-4a1d-bf8f-643c3e0effcb,languages,grammar,usage,"Which sentence uses ""listen"" with the right partne",data/seed-source/items/languages/languages.grammar.usage.json
-2a49e215-435b-4b06-b0e6-e03576ec975c,languages,grammar,usage,"Which sentence uses ""say"" in a typical pattern?",data/seed-source/items/languages/languages.grammar.usage.json
-0b92b134-5398-4d86-aa1c-06beb2db453a,languages,grammar,usage,"Which sentence uses the possessive ""its"" correctly",data/seed-source/items/languages/languages.grammar.usage.json
-427bca72-280a-4415-ba57-6de089671852,languages,grammar,usage,"Which word completes this sentence? ""She speaks En",data/seed-source/items/languages/languages.grammar.usage.json
-342653a5-81a0-4b92-970d-c58f1378b931,languages,idioms,english,"If a task is ""a piece of cake,"" what is it like?",data/seed-source/items/languages/languages.idioms.english.json
-69f8f9a0-4fb6-4e7f-8b62-bd757f169f2e,languages,idioms,english,"If something happens ""once in a blue moon,"" how of",data/seed-source/items/languages/languages.idioms.english.json
-bac2021e-61bd-40da-a2e6-7da3b258647a,languages,idioms,english,"If you ""hit the nail on the head,"" what did you do",data/seed-source/items/languages/languages.idioms.english.json
-7a1b134d-2549-4138-becd-c67c0769e348,languages,idioms,english,"If you ""spill the beans,"" what did you do?",data/seed-source/items/languages/languages.idioms.english.json
-6515ccb4-0931-4165-93d9-c96c43ff182c,languages,idioms,english,"In everyday English, what does the idiom ""break th",data/seed-source/items/languages/languages.idioms.english.json
-43acd3ea-ab39-4e36-93ea-4fbd27ee3cb4,languages,idioms,english,"Someone says they are ""under the weather."" What do",data/seed-source/items/languages/languages.idioms.english.json
-12ddeb28-d957-4fc3-9ead-17a0a9a472e4,languages,idioms,french,"If something ""coûte les yeux de la tête,"" what doe",data/seed-source/items/languages/languages.idioms.french.json
-93dd2e3a-2c92-4dfc-9fe9-fca6f94a5281,languages,idioms,french,"If you ""mettez les pieds dans le plat,"" what did y",data/seed-source/items/languages/languages.idioms.french.json
-033dba0b-f69c-49fa-acaf-6c85cd48f75e,languages,idioms,french,"In French, what does ""avoir un coup de foudre"" usu",data/seed-source/items/languages/languages.idioms.french.json
-b7aaef25-9881-4750-a75d-00f65c3c447a,languages,idioms,french,"In casual French, what does ""poser un lapin à quel",data/seed-source/items/languages/languages.idioms.french.json
-8bd70c5c-c9de-4d17-ae35-d4510ada88d2,languages,idioms,french,"What does ""avoir la gueule de bois"" refer to?",data/seed-source/items/languages/languages.idioms.french.json
-ab81d1f3-f16f-4b48-92ac-87be23ce000b,languages,idioms,french,"When French speakers say ""C'est la vie,"" what tone",data/seed-source/items/languages/languages.idioms.french.json
-03704cee-a4e0-49e0-9c67-e5399a179c7e,languages,idioms,proverbs,"""A friend in need is a friend indeed"" highlights w",data/seed-source/items/languages/languages.idioms.proverbs.json
-31fe32ad-369d-4de8-a378-504e37182ca9,languages,idioms,proverbs,"""You reap what you sow"" connects results to what e",data/seed-source/items/languages/languages.idioms.proverbs.json
-5e66944b-97e8-43df-88c4-31237e066de2,languages,idioms,proverbs,"The proverb ""Don't put all your eggs in one basket",data/seed-source/items/languages/languages.idioms.proverbs.json
-bec5d9a5-891e-4755-83a9-7e363fc0eb2e,languages,idioms,proverbs,"The proverb ""Honesty is the best policy"" praises w",data/seed-source/items/languages/languages.idioms.proverbs.json
-f9ef0c7d-7f99-40f1-9678-17213e2f4f9a,languages,idioms,proverbs,"The proverb ""Practice makes perfect"" supports whic",data/seed-source/items/languages/languages.idioms.proverbs.json
-ad5baaee-899a-43ba-a68e-501331f54860,languages,idioms,proverbs,"What does ""Actions speak louder than words"" ask yo",data/seed-source/items/languages/languages.idioms.proverbs.json
-3b2f31f9-3396-4d22-ac22-ed089746ae2a,languages,idioms,sayings,"""Don't count your chickens before they hatch"" warn",data/seed-source/items/languages/languages.idioms.sayings.json
-7e6767d6-8b7d-4061-840e-74779bded7cd,languages,idioms,sayings,"If someone says ""Look before you leap,"" what are t",data/seed-source/items/languages/languages.idioms.sayings.json
-eff8398b-973a-4549-87b6-b56c400081d9,languages,idioms,sayings,"The saying ""Better late than never"" stresses which",data/seed-source/items/languages/languages.idioms.sayings.json
-e02b4cfd-5f0d-4ea4-87e1-d59c2fad6ba3,languages,idioms,sayings,"The saying ""Rome wasn't built in a day"" is used wh",data/seed-source/items/languages/languages.idioms.sayings.json
-61216b7c-c02a-4b88-bbef-efb3975f00f1,languages,idioms,sayings,"The saying ""The early bird catches the worm"" is mo",data/seed-source/items/languages/languages.idioms.sayings.json
-23e2a1fc-8024-4717-935e-3ace496da249,languages,idioms,sayings,"When English speakers say ""You can't judge a book ",data/seed-source/items/languages/languages.idioms.sayings.json
-c1143583-10c0-40c8-9b0a-565ac68ef6cf,languages,idioms,slang,"If a friend says ""Let's hang out this weekend,"" wh",data/seed-source/items/languages/languages.idioms.slang.json
-0769fdbc-1f77-48af-84e2-b99c8c9e0af3,languages,idioms,slang,"If a person says ""No worries"" to calm you, what is",data/seed-source/items/languages/languages.idioms.slang.json
-5fccacce-d77f-42d7-9782-d2ef1581237f,languages,idioms,slang,"If someone says ""I'm in,"" what are they often expr",data/seed-source/items/languages/languages.idioms.slang.json
-920f22ad-bd73-4e25-85d4-3843dbcd9ef1,languages,idioms,slang,"In casual English, if someone says an idea sounds ",data/seed-source/items/languages/languages.idioms.slang.json
-c752ca41-93b7-4ce0-a868-929c107811c9,languages,idioms,slang,"In casual English, what does it mean when somethin",data/seed-source/items/languages/languages.idioms.slang.json
-1e778fbe-d086-4f54-933f-6b5ced1e2504,languages,idioms,slang,"When someone says ""I'm beat"" after a long day, wha",data/seed-source/items/languages/languages.idioms.slang.json
-0788ba00-0ebc-47ce-be49-df17e0ca0df8,languages,idioms,spanish,"If someone ""está en las nubes,"" what is the usual ",data/seed-source/items/languages/languages.idioms.spanish.json
-ccd54e61-474a-48c5-9459-5154c3f91f1a,languages,idioms,spanish,"The Spanish expression ""No hay mal que por bien no",data/seed-source/items/languages/languages.idioms.spanish.json
-0e9d0b22-219e-44cc-bf9e-695e01dde4e6,languages,idioms,spanish,"The Spanish idiom ""Ser pan comido"" matches which E",data/seed-source/items/languages/languages.idioms.spanish.json
-5d55bfda-2c4a-4a93-a1db-843cd4190c58,languages,idioms,spanish,"What does ""Costar un ojo de la cara"" usually expre",data/seed-source/items/languages/languages.idioms.spanish.json
-399247d3-4a25-49ed-bdad-dce74358dd8c,languages,idioms,spanish,"What does ""Dar en el clavo"" mean in everyday Spani",data/seed-source/items/languages/languages.idioms.spanish.json
-4a69d28b-e707-47b8-8f6e-0d125351f404,languages,idioms,spanish,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.idioms.spanish.json
 952a38bd-2e19-41da-8ff3-373179273e08,languages,italian,core,Choose the Italian word for 'July'.,data/seed-source/items/languages/languages.italian.core.json
 a7d1fa53-7f61-4840-8e38-80dcad6c344a,languages,italian,core,Choose the Italian word for 'March'.,data/seed-source/items/languages/languages.italian.core.json
 cef38c2c-fa9b-4854-8c4f-cee9f7218587,languages,italian,core,Choose the Italian word for 'November'.,data/seed-source/items/languages/languages.italian.core.json
@@ -7501,42 +7573,6 @@ b1933550-8af6-4905-be0a-e148729ba871,languages,spanish,vocab,"What is the usual 
 26240437-a9b5-490f-b3b6-c3e5fe1a4d29,languages,spanish,vocab,"What is the usual Spanish word for ""thank you""?",data/seed-source/items/languages/languages.spanish.vocab.json
 f6c1c116-beae-44cb-be7f-8c2829111de8,languages,spanish,vocab,"What is the usual Spanish word for ""today""?",data/seed-source/items/languages/languages.spanish.vocab.json
 b8bf43f4-702d-4a31-b9a2-c4ad7de0ac0a,languages,spanish,vocab,"What is the usual Spanish word for ""water""?",data/seed-source/items/languages/languages.spanish.vocab.json
-5a6a4503-0222-4192-b07d-62332ffcf2d5,languages,travel,airport,"At an airport, what is a ""boarding pass"" mainly fo",data/seed-source/items/languages/languages.travel.airport.json
-898f56a3-b8b7-4ec2-886a-9f7aebb9b2b4,languages,travel,airport,"If a sign says ""baggage claim,"" where are you most",data/seed-source/items/languages/languages.travel.airport.json
-2776a629-e140-448b-a7be-af321c7776e9,languages,travel,airport,"If a sign says ""carry-on,"" what kind of bag does i",data/seed-source/items/languages/languages.travel.airport.json
-1baf3c72-303a-47d7-9d31-600ef9d78eb3,languages,travel,airport,"In airport English, what does ""gate"" usually mean?",data/seed-source/items/languages/languages.travel.airport.json
-9a7353bf-7899-447f-9cce-c461dac8ba1c,languages,travel,airport,"In travel English, what does ""nonstop"" mean about ",data/seed-source/items/languages/languages.travel.airport.json
-4726e894-56db-4853-b742-ac6c5da73ee0,languages,travel,airport,"What is the usual meaning of ""duty-free"" in an air",data/seed-source/items/languages/languages.travel.airport.json
-01f95f1d-483c-42d9-9fcf-efd5ab015500,languages,travel,directions,"If a place is ""near"" the station, what does that u",data/seed-source/items/languages/languages.travel.directions.json
-2d9caef7-53e9-4a6e-9aef-1ae3ea4648d7,languages,travel,directions,"If someone says ""Go straight ahead,"" what should y",data/seed-source/items/languages/languages.travel.directions.json
-8376c2f2-80ef-4ca5-925a-2d50a704c2b4,languages,travel,directions,"If you are ""lost,"" what do you need most help with",data/seed-source/items/languages/languages.travel.directions.json
-195ffa9c-0f31-4fa3-ba7d-b4e2b31233d6,languages,travel,directions,"What does ""corner"" mean in street directions?",data/seed-source/items/languages/languages.travel.directions.json
-413be3b6-6710-4673-bc1e-ca094c73639f,languages,travel,directions,"What does ""turn left"" mean when you follow spoken ",data/seed-source/items/languages/languages.travel.directions.json
-992f217b-f626-4d4a-a034-d11ec6f3bf7a,languages,travel,directions,"What is a ""landmark"" when you ask for directions?",data/seed-source/items/languages/languages.travel.directions.json
-96c5fc36-df6a-4278-9321-511f86428c67,languages,travel,emergency,"If you ask for the ""nearest hospital,"" what are yo",data/seed-source/items/languages/languages.travel.emergency.json
-aeb34b3f-2412-4680-9213-8c2caa698f18,languages,travel,emergency,"If you say ""I need a doctor,"" what kind of help ar",data/seed-source/items/languages/languages.travel.emergency.json
-96b08548-2fb2-480f-b5c4-9d75a07e460f,languages,travel,emergency,"If you shout ""Help!"" in English, what is the usual",data/seed-source/items/languages/languages.travel.emergency.json
-042c5446-9f75-4080-a181-d2faea7d2fbe,languages,travel,emergency,"In many places, what number should you call for po",data/seed-source/items/languages/languages.travel.emergency.json
-b7b6f0fd-f2dc-4664-a37e-0fb90e49f950,languages,travel,emergency,"What does ""allergy"" mean in a medical emergency?",data/seed-source/items/languages/languages.travel.emergency.json
-c6847978-8bf5-4c36-b708-822bde4b707d,languages,travel,emergency,"What does ""lost"" mean when you say ""I lost my pass",data/seed-source/items/languages/languages.travel.emergency.json
-2dd50ce7-6c8b-468c-aa0a-3534469ecf30,languages,travel,hotel,"At a hotel front desk, what does ""check-in"" usuall",data/seed-source/items/languages/languages.travel.hotel.json
-d7e35ea3-6d2f-4ef5-a5f8-29fd1411ad17,languages,travel,hotel,"If a hotel says ""no vacancy,"" what does it mean?",data/seed-source/items/languages/languages.travel.hotel.json
-24d68f7c-45bd-4eee-8e0b-4e59a429c4d4,languages,travel,hotel,"If you ask for a ""wake-up call,"" what service do y",data/seed-source/items/languages/languages.travel.hotel.json
-b6cef39f-7ca9-4231-837f-58ba832ea659,languages,travel,hotel,"In many hotels, what is a ""key card"" usually used ",data/seed-source/items/languages/languages.travel.hotel.json
-3337e6d8-cb5e-4edc-afe0-d88397b73c5a,languages,travel,hotel,"What does ""check-out time"" usually tell you?",data/seed-source/items/languages/languages.travel.hotel.json
-62d69fe0-4979-4272-8ae2-63e0c8c18c0b,languages,travel,hotel,"What does ""housekeeping"" most often mean in a hote",data/seed-source/items/languages/languages.travel.hotel.json
-54aadcb3-7d7c-4579-8c60-40dfa4a9125b,languages,travel,restaurant,"If you ask for tap water, what do you usually want",data/seed-source/items/languages/languages.travel.restaurant.json
-0077d1c6-0ca9-4632-bcf8-d8a7de761900,languages,travel,restaurant,"If you tell a server you have a ""food allergy,"" wh",data/seed-source/items/languages/languages.travel.restaurant.json
-7c8959d3-3e26-4ca8-9629-9fbbb8e6b954,languages,travel,restaurant,"In English, what does ""bill"" or ""check"" mean at th",data/seed-source/items/languages/languages.travel.restaurant.json
-2fe43b1a-afc9-402a-b34e-4a3c286b0180,languages,travel,restaurant,"In a restaurant, what is a ""reservation""?",data/seed-source/items/languages/languages.travel.restaurant.json
-d0fe205e-e0db-4132-a5ba-32bacec7e8f0,languages,travel,restaurant,"In many countries, what is a ""tip"" in a restaurant",data/seed-source/items/languages/languages.travel.restaurant.json
-387e8d1a-7dd7-42e4-9a0b-42f3a5098842,languages,travel,restaurant,"What does ""takeout"" or ""takeaway"" mean in restaura",data/seed-source/items/languages/languages.travel.restaurant.json
-3181fcb1-7b22-4443-b532-113d360848ac,languages,travel,shopping,"If a cashier asks ""Cash or card?"" what are they as",data/seed-source/items/languages/languages.travel.shopping.json
-7c10ad9f-b9d1-4d93-8a49-e0bebd9ea903,languages,travel,shopping,"If you ask ""Do you have this in stock?"" what do yo",data/seed-source/items/languages/languages.travel.shopping.json
-68269c5d-961a-4db1-97c4-81133ab0f459,languages,travel,shopping,"If you ask for a different ""size"" in a clothing sh",data/seed-source/items/languages/languages.travel.shopping.json
-ceb8b1a5-3285-4a79-b4cd-4bbd3b315640,languages,travel,shopping,"What does ""duty"" often refer to in ""duty-free"" sho",data/seed-source/items/languages/languages.travel.shopping.json
-a801e250-8190-4448-b6c4-7a25d20059a1,languages,travel,shopping,"What does ""on sale"" often mean in a shop window?",data/seed-source/items/languages/languages.travel.shopping.json
-26b0bdfa-0a46-4825-aefb-205fd25cf16b,languages,travel,shopping,"What is a ""receipt"" in a store?",data/seed-source/items/languages/languages.travel.shopping.json
 b4b1e4b6-d3b3-4d6a-886f-9e74df86349c,languages,ukrainian,core,"How do you count 1, 2, 3 in Ukrainian?",data/seed-source/items/languages/languages.ukrainian.core.json
 a2e9a031-72d4-4a01-b0a5-ad9d12060aaf,languages,ukrainian,core,How do you say 'excuse me / sorry' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
 1c0e2af1-ef48-4b66-a17e-315ce100e3d6,languages,ukrainian,core,How do you say 'goodbye' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.core.json
@@ -7552,42 +7588,6 @@ b641b5d4-e9b8-4475-a2e2-d1faaf278dbb,languages,ukrainian,phrases,How do you ask 
 6c158605-0c0a-47f3-9c15-342ff45a30f6,languages,ukrainian,phrases,"How do you order 'a coffee, please' in Ukrainian?",data/seed-source/items/languages/languages.ukrainian.phrases.json
 923aec94-a593-499e-b77c-fa279df39e29,languages,ukrainian,phrases,How do you say 'Do you speak English?' in Ukrainia,data/seed-source/items/languages/languages.ukrainian.phrases.json
 0fabe614-4def-4f20-97d5-644d868bd121,languages,ukrainian,phrases,How do you say 'I don't understand' in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.phrases.json
-a95052bb-5bc5-4087-8bcc-4d73448c686f,languages,vocab,academic,Which word means a possible explanation that you t,data/seed-source/items/languages/languages.vocab.academic.json
-474d80ca-e4ca-4ce6-88c0-6bd52757b007,languages,vocab,academic,Which word means a short restatement of the main p,data/seed-source/items/languages/languages.vocab.academic.json
-d8ae14f2-60ab-4f13-95cd-9c5fea586c7d,languages,vocab,academic,Which word means the reason something happens or e,data/seed-source/items/languages/languages.vocab.academic.json
-84f48ee2-9e9e-47bb-afb8-659db15d9f92,languages,vocab,academic,Which word means the result or outcome of an actio,data/seed-source/items/languages/languages.vocab.academic.json
-a4b249bd-dc1e-4d7b-9629-26b54023a7dc,languages,vocab,academic,Which word means to look at something closely to u,data/seed-source/items/languages/languages.vocab.academic.json
-d86ab9d3-3af7-4f90-a4a3-9411f3a677db,languages,vocab,academic,Which word means to say what something means in si,data/seed-source/items/languages/languages.vocab.academic.json
-d856359d-f44a-4dec-8356-c7be023239ee,languages,vocab,beginner,"In beginner English vocabulary, which word means a",data/seed-source/items/languages/languages.vocab.beginner.json
-5eebfc6b-69c5-4fcc-b534-0bf72f25a162,languages,vocab,beginner,Which verb means to move on your feet at a slow sp,data/seed-source/items/languages/languages.vocab.beginner.json
-50e55c38-df66-441b-a7fc-3c1389dc341f,languages,vocab,beginner,Which word is a basic color like the sky on a clea,data/seed-source/items/languages/languages.vocab.beginner.json
-ffdafa16-fc47-4ff8-9750-d67b26cf5c80,languages,vocab,beginner,"Which word means the opposite of ""hot"" for weather",data/seed-source/items/languages/languages.vocab.beginner.json
-b5801423-5da4-429f-b8b5-dc37e41cc417,languages,vocab,beginner,Which word names a place where people go when they,data/seed-source/items/languages/languages.vocab.beginner.json
-8250f01c-d3c3-4a39-a1ab-c12db91da621,languages,vocab,beginner,Which word names something you read that has many ,data/seed-source/items/languages/languages.vocab.beginner.json
-2d94dc25-14a4-4752-9e8e-fb524111c659,languages,vocab,business,Which word means a formal meeting to discuss share,data/seed-source/items/languages/languages.vocab.business.json
-8af6a925-39f9-4342-a32b-6d2a73113321,languages,vocab,business,Which word means a person who buys goods or servic,data/seed-source/items/languages/languages.vocab.business.json
-ca385d2c-b07a-4785-a736-ca43d67c887c,languages,vocab,business,Which word means a time limit for finishing work?,data/seed-source/items/languages/languages.vocab.business.json
-640f2879-00dd-4c4a-999a-5bde296c6241,languages,vocab,business,Which word means a worker who answers to a manager,data/seed-source/items/languages/languages.vocab.business.json
-f83ffe83-2296-46a4-8b2b-aae8ae4f16f4,languages,vocab,business,Which word means a written plan that shows income ,data/seed-source/items/languages/languages.vocab.business.json
-879328bf-aa3c-4a9f-a407-b8570b877db7,languages,vocab,business,Which word means money a company earns from sales?,data/seed-source/items/languages/languages.vocab.business.json
-5f189856-d527-4673-a4d0-c7d9ed8a74b3,languages,vocab,roots,"The Greek root ""bio-"" often relates to which idea?",data/seed-source/items/languages/languages.vocab.roots.json
-482a07c3-bb08-4320-808b-e2125c25ed28,languages,vocab,roots,"The Greek root ""geo-"" often relates to which idea?",data/seed-source/items/languages/languages.vocab.roots.json
-f164bd7a-4800-4d1c-aaa9-87532b234590,languages,vocab,roots,"The Greek root ""graph"" often relates to which idea",data/seed-source/items/languages/languages.vocab.roots.json
-24603326-a4da-40c0-86ff-37b955cf18db,languages,vocab,roots,"The Greek root ""tele-"" often relates to which idea",data/seed-source/items/languages/languages.vocab.roots.json
-f5a9b015-3bc5-4d34-95a8-a247acfa1375,languages,vocab,roots,"The Latin root ""aud"" often relates to which idea?",data/seed-source/items/languages/languages.vocab.roots.json
-8dcf8006-0d84-4e72-b8d7-d83dc52acd4e,languages,vocab,roots,"The Latin root ""dict"" often relates to which idea?",data/seed-source/items/languages/languages.vocab.roots.json
-ea1371be-b4ad-4696-848e-f36559ee805a,languages,vocab,synonyms,Which pair is closest for a polite request starter,data/seed-source/items/languages/languages.vocab.synonyms.json
-b57f6035-34b3-42a6-bf07-3e57e0de1839,languages,vocab,synonyms,Which pair is closest in everyday meaning?,data/seed-source/items/languages/languages.vocab.synonyms.json
-e305ba53-7aa7-43c1-80a2-b10eba1ab0d7,languages,vocab,synonyms,Which pair is closest when you describe a good moo,data/seed-source/items/languages/languages.vocab.synonyms.json
-205163de-ffbf-4550-a740-e6bfeb4fef2f,languages,vocab,synonyms,"Which pair is closest when you mean ""many"" in simp",data/seed-source/items/languages/languages.vocab.synonyms.json
-fb8e0736-2ce3-4b10-ac08-d7da7f8be9f6,languages,vocab,synonyms,Which pair is closest when you mean to get somethi,data/seed-source/items/languages/languages.vocab.synonyms.json
-a76805bc-fed7-4c64-9046-06a5c8cc41c4,languages,vocab,synonyms,Which pair is closest when you talk about size?,data/seed-source/items/languages/languages.vocab.synonyms.json
-e9d46b7e-873d-4315-a473-e79b2d2d4d7e,languages,vocab,travel,"Which word means a place to stay away from home, o",data/seed-source/items/languages/languages.vocab.travel.json
-cc441e42-4adb-4cec-825d-96e500bbdbcc,languages,vocab,travel,Which word means a place where officers check pass,data/seed-source/items/languages/languages.vocab.travel.json
-c29e3327-ae15-497d-b93e-481ed9b9e397,languages,vocab,travel,Which word means a planned path from one place to ,data/seed-source/items/languages/languages.vocab.travel.json
-97c4ba88-0b76-4d74-bfb5-3f0d4005775c,languages,vocab,travel,Which word means bags you take on a trip?,data/seed-source/items/languages/languages.vocab.travel.json
-de1e5d99-3623-490e-8212-1d4a2419134d,languages,vocab,travel,Which word means the document that lets you board ,data/seed-source/items/languages/languages.vocab.travel.json
-b83c633c-9f68-4539-af16-da34ffff9f1e,languages,vocab,travel,"Which word means the time when a bus, train, or pl",data/seed-source/items/languages/languages.vocab.travel.json
 6909e3a5-5e95-4db9-bdac-d2deea3b2571,nature,animals,birds,"In wildlife study, penguins are native to which he",data/seed-source/items/nature/nature.animals.birds.json
 91a8169e-8f88-4375-bc07-24f52f5784c3,nature,animals,birds,Which bird is the largest living bird species?,data/seed-source/items/nature/nature.animals.birds.json
 57f9731c-b519-4458-960e-0abfa88a631a,nature,animals,birds,Which bird of prey is famous for extreme speed dur,data/seed-source/items/nature/nature.animals.birds.json

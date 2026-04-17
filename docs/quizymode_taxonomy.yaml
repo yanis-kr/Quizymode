@@ -894,14 +894,6 @@ geography:
 languages:
   description: Grammar, vocabulary, and language skills across major world languages.
   keywords:
-    general:
-      description: Mixed language
-      keywords:
-        general: Mixed language
-        basics: Core language
-        mixed: Cross language
-        conversation: Speaking basics
-        reading: Reading skills
     english:
       description: English
       keywords:
@@ -914,6 +906,9 @@ languages:
         reading: Reading skills
         writing: Writing skills
         pronunciation: Sound practice
+        listening: Listening
+        conversation: Everyday talk
+        travel: Travel phrases
     spanish:
       description: Spanish
       keywords:
@@ -960,6 +955,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     russian:
       description: Russian
       keywords:
@@ -970,6 +966,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     japanese:
       description: Japanese
       keywords:
@@ -978,6 +975,8 @@ languages:
         phrases: Common phrases
         grammar: Grammar rules
         vocab: Word building
+        conversation: Everyday talk
+        travel: Travel phrases
         hiragana: Hiragana script
         katakana: Katakana script
         kanji: Basic kanji
@@ -992,6 +991,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     ukrainian:
       description: Ukrainian
       keywords:
@@ -1002,6 +1002,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     bulgarian:
       description: Bulgarian
       keywords:
@@ -1012,6 +1013,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     romanian:
       description: Romanian
       keywords:
@@ -1022,6 +1024,7 @@ languages:
         vocab: Word building
         idioms: Expressions
         conversation: Everyday talk
+        travel: Travel phrases
     latin:
       description: Latin
       keywords:
@@ -1030,72 +1033,14 @@ languages:
         vocab: Word building
         grammar: Grammar rules
     other-langs:
-      description: More languages
+      description: Catch-all languages
       keywords:
-        general-other-langs: More languages
+        general-other-langs: Catch-all languages
+        mixed: Cross language
         portuguese: Portuguese
         chinese: Chinese
         korean: Korean
         arabic: Arabic
-    esl:
-      description: English learners
-      keywords:
-        general-esl: English learners
-        beginner: Starting ESL
-        grammar: Grammar help
-        vocab: Useful words
-        reading: Simple reading
-        speaking: Speak English
-        listening: Hear English
-    grammar:
-      description: Grammar
-      keywords:
-        general-grammar: Grammar
-        parts-of-speech: Word types
-        tenses: Time forms
-        sentence-form: Sentence form
-        punctuation: Writing marks
-        agreement: Word matching
-        usage: Correct use
-    vocab:
-      description: Vocabulary
-      keywords:
-        general-vocab: Vocabulary
-        beginner: Starter words
-        academic: School words
-        business: Work words
-        travel: Trip words
-        roots: Word roots
-        synonyms: Similar words
-    idioms:
-      description: Idioms
-      keywords:
-        general-idioms: Idioms
-        english: English idioms
-        spanish: Spanish idioms
-        french: French idioms
-        sayings: Common sayings
-        slang: Casual speech
-        proverbs: Wise sayings
-    travel:
-      description: Travel talk
-      keywords:
-        general-travel: Travel talk
-        airport: Airport help
-        hotel: Hotel talk
-        restaurant: Food orders
-        directions: Ask the way
-        shopping: Store talk
-        emergency: Urgent help
-    mixed:
-      description: Mixed sets
-      keywords:
-        general-mixed: Mixed sets
-        beginner: Starter mix
-        grammar: Grammar mix
-        vocab: Word mix
-        travel: Travel mix
-        conversation: Speaking mix
 humanities:
   description: Literature, philosophy, art, music, and the cultural study of human thought.
   keywords:

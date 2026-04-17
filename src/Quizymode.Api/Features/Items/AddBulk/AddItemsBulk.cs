@@ -1,9 +1,11 @@
 using FluentValidation;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
 
@@ -19,7 +21,10 @@ public static class AddItemsBulk
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        string? Source = null);
+        string? Source = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -103,11 +108,23 @@ public static class AddItemsBulk
                 .MaximumLength(1000)
                 .WithMessage("Question must not exceed 1000 characters");
 
+            RuleFor(x => x.QuestionSpeech)
+                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 1000)
+                .WithMessage("QuestionSpeech.Pronunciation must not exceed 1000 characters")
+                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
+                .WithMessage("QuestionSpeech.LanguageCode must be a valid BCP-47 style language tag");
+
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()
                 .WithMessage("CorrectAnswer is required")
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters");
+
+            RuleFor(x => x.CorrectAnswerSpeech)
+                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
+                .WithMessage("CorrectAnswerSpeech.Pronunciation must not exceed 500 characters")
+                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
+                .WithMessage("CorrectAnswerSpeech.LanguageCode must be a valid BCP-47 style language tag");
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
@@ -118,13 +135,25 @@ public static class AddItemsBulk
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
+            RuleFor(x => x.IncorrectAnswerSpeech)
+                .Must((request, speechByIndex) =>
+                    speechByIndex is null
+                    || speechByIndex.Keys.All(index => index >= 0 && index < (request.IncorrectAnswers?.Count ?? 0)))
+                .WithMessage("IncorrectAnswerSpeech keys must match existing incorrect answer indexes")
+                .Must(speechByIndex =>
+                    speechByIndex is null
+                    || speechByIndex.Values.All(support =>
+                        (string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
+                        && ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode)))
+                .WithMessage("IncorrectAnswerSpeech entries must use valid pronunciation lengths and language codes");
+
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
                 .WithMessage("Explanation must not exceed 4000 characters");
 
             RuleFor(x => x.Source)
-                .MaximumLength(200)
-                .WithMessage("Source must not exceed 200 characters");
+                .MaximumLength(1000)
+                .WithMessage("Source must not exceed 1000 characters");
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)

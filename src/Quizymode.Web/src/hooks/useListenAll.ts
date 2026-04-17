@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { isSpeechSynthesisSupported } from "@/utils/speechSynthesis";
+import { createSpeechUtterance, isSpeechSynthesisSupported } from "@/utils/speechSynthesis";
+import type { ItemSpeechSupport } from "@/types/api";
 
 interface ListenItem {
   question: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
 }
 
 export type ListenAllState = "idle" | "playing" | "paused";
@@ -54,13 +57,33 @@ export function useListenAll(items: ListenItem[]) {
     setCurrentIndex(idx);
     const item = items[idx];
 
-    const questionUtterance = new SpeechSynthesisUtterance(item.question.trim());
+    const questionUtterance = createSpeechUtterance({
+      text: item.question,
+      pronunciation: item.questionSpeech?.pronunciation,
+      languageCode: item.questionSpeech?.languageCode,
+    });
+    if (!questionUtterance) {
+      indexRef.current = idx + 1;
+      speakNextRef.current();
+      return;
+    }
+
     questionUtterance.onend = () => {
       if (stateRef.current !== "playing") return;
       // 2-second pause between question and answer
       timerRef.current = setTimeout(() => {
         if (stateRef.current !== "playing") return;
-        const answerUtterance = new SpeechSynthesisUtterance(item.correctAnswer.trim());
+        const answerUtterance = createSpeechUtterance({
+          text: item.correctAnswer,
+          pronunciation: item.correctAnswerSpeech?.pronunciation,
+          languageCode: item.correctAnswerSpeech?.languageCode,
+        });
+        if (!answerUtterance) {
+          indexRef.current = idx + 1;
+          timerRef.current = setTimeout(() => speakNextRef.current(), 800);
+          return;
+        }
+
         answerUtterance.onend = () => {
           if (stateRef.current !== "playing") return;
           indexRef.current = idx + 1;

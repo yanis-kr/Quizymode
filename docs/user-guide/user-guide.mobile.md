@@ -1,5 +1,7 @@
 # Quizymode Mobile User Guide
 
+**App:** [www.quizymode.com](https://www.quizymode.com)
+
 This guide mirrors the main signed-in Quizymode walkthrough on a phone-sized screen, highlighting mobile navigation, stacked layouts, and full-screen overlays.
 _Screenshots are generated automatically - run `npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all` from the repo root to refresh both guides._
 

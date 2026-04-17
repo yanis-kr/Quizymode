@@ -1,0 +1,116 @@
+[
+  {
+    "itemId": "3181fcb1-7b22-4443-b532-113d360848ac",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "If a cashier asks \"Cash or card?\" what are they asking?",
+    "correctAnswer": "How you want to pay for your purchase.",
+    "incorrectAnswers": [
+      "What time you will return tomorrow.",
+      "The size of your bag only.",
+      "Whether you need a taxi."
+    ],
+    "explanation": "Travelers hear this phrase in shops where both payment types are common.",
+    "keywords": [
+      "travel",
+      "payment"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/cash"
+  },
+  {
+    "itemId": "26b0bdfa-0a46-4825-aefb-205fd25cf16b",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "What is a \"receipt\" in a store?",
+    "correctAnswer": "A small paper or email that proves what you bought and how much you paid.",
+    "incorrectAnswers": [
+      "A coupon for a free meal.",
+      "A map of the whole mall.",
+      "A gift card with no balance."
+    ],
+    "explanation": "Keep receipts for returns, taxes, or travel expense reports.",
+    "keywords": [
+      "travel",
+      "receipt"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/receipt"
+  },
+  {
+    "itemId": "68269c5d-961a-4db1-97c4-81133ab0f459",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "If you ask for a different \"size\" in a clothing shop, what are you trying to change?",
+    "correctAnswer": "The fit of the item, such as small, medium, or large.",
+    "incorrectAnswers": [
+      "The color of the shop lights.",
+      "The price label only.",
+      "The store opening hours."
+    ],
+    "explanation": "Travelers use size words when clothes from a new country fit differently.",
+    "keywords": [
+      "travel",
+      "size"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/size"
+  },
+  {
+    "itemId": "a801e250-8190-4448-b6c4-7a25d20059a1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "What does \"on sale\" often mean in a shop window?",
+    "correctAnswer": "The price is lower than usual for a time.",
+    "incorrectAnswers": [
+      "The item is not allowed to be sold.",
+      "The shop is closed today.",
+      "You must buy two to enter."
+    ],
+    "explanation": "Travelers watch for \"sale\" signs when they want to save money.",
+    "keywords": [
+      "travel",
+      "discount"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/sale_1"
+  },
+  {
+    "itemId": "7c10ad9f-b9d1-4d93-8a49-e0bebd9ea903",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "If you ask \"Do you have this in stock?\" what do you want to know?",
+    "correctAnswer": "Whether the store can sell it right now from the store supply.",
+    "incorrectAnswers": [
+      "Whether the item is illegal.",
+      "Whether the shop opens at night.",
+      "Whether you need a passport to enter."
+    ],
+    "explanation": "\"In stock\" means the item is available now, not only on a website later.",
+    "keywords": [
+      "travel",
+      "availability"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/in-stock"
+  },
+  {
+    "itemId": "ceb8b1a5-3285-4a79-b4cd-4bbd3b315640",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "What does \"duty\" often refer to in \"duty-free\" shopping?",
+    "correctAnswer": "A tax that some goods usually pay when they cross a border.",
+    "incorrectAnswers": [
+      "A fee for using a credit card.",
+      "A tip for the cashier.",
+      "A parking charge at the mall."
+    ],
+    "explanation": "Travelers meet \"duty-free\" in airports and border shops where some taxes do not apply.",
+    "keywords": [
+      "travel",
+      "tax"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/duty"
+  }
+]

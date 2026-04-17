@@ -62,6 +62,32 @@ const ItemListSection = ({
           />
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <div className="mb-6 rounded-lg bg-white p-4 shadow">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={onPrevPage}
+              disabled={page === 1}
+              className="rounded-md bg-gray-200 px-4 py-2 text-sm text-gray-700 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Previous
+            </button>
+            <span className="text-sm text-gray-500">
+              Page {page} of {totalPages}
+            </span>
+            <button
+              type="button"
+              onClick={onNextPage}
+              disabled={page === totalPages}
+              className="rounded-md bg-indigo-600 px-4 py-2 text-sm text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

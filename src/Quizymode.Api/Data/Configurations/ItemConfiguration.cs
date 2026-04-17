@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Quizymode.Api.Shared.Models;
+using System.Text.Json;
 
 namespace Quizymode.Api.Data.Configurations;
 
@@ -27,21 +28,55 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .IsRequired()
             .HasMaxLength(1000);
 
+        builder.Property(x => x.QuestionSpeech)
+            .HasColumnType("jsonb")
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null!),
+                v => JsonSerializer.Deserialize<ItemSpeechSupport>(v, (JsonSerializerOptions?)null!),
+                new Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer<ItemSpeechSupport?>(
+                    (left, right) => SpeechSupportEquals(left, right),
+                    value => SpeechSupportHash(value),
+                    value => CloneSpeechSupport(value)))
+            .IsRequired(false);
+
         builder.Property(x => x.CorrectAnswer)
             .IsRequired()
             .HasMaxLength(500);
+
+        builder.Property(x => x.CorrectAnswerSpeech)
+            .HasColumnType("jsonb")
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null!),
+                v => JsonSerializer.Deserialize<ItemSpeechSupport>(v, (JsonSerializerOptions?)null!),
+                new Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer<ItemSpeechSupport?>(
+                    (left, right) => SpeechSupportEquals(left, right),
+                    value => SpeechSupportHash(value),
+                    value => CloneSpeechSupport(value)))
+            .IsRequired(false);
 
         // Map List<string> to JSONB column
         // EF Core with Npgsql requires explicit conversion for JSONB
         builder.Property(x => x.IncorrectAnswers)
             .HasColumnType("jsonb")
             .HasConversion(
-                v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null!),
-                v => System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null!) ?? new List<string>(),
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null!),
+                v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions?)null!) ?? new List<string>(),
                 new Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer<List<string>>(
                     (c1, c2) => c1 != null && c2 != null && c1.SequenceEqual(c2),
                     c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
                     c => c.ToList()))
+            .IsRequired();
+
+        builder.Property(x => x.IncorrectAnswerSpeech)
+            .HasColumnType("jsonb")
+            .HasDefaultValueSql("'{}'::jsonb")
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null!),
+                v => JsonSerializer.Deserialize<Dictionary<int, ItemSpeechSupport>>(v, (JsonSerializerOptions?)null!) ?? new Dictionary<int, ItemSpeechSupport>(),
+                new Microsoft.EntityFrameworkCore.ChangeTracking.ValueComparer<Dictionary<int, ItemSpeechSupport>>(
+                    (left, right) => SpeechSupportDictionaryEquals(left, right),
+                    value => SpeechSupportDictionaryHash(value),
+                    value => CloneSpeechSupportDictionary(value)))
             .IsRequired();
 
         builder.Property(x => x.Explanation)
@@ -65,7 +100,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             .HasDefaultValue(false);
 
         builder.Property(x => x.Source)
-            .HasMaxLength(200);
+            .HasMaxLength(1000);
 
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
@@ -119,5 +154,101 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.HasIndex(x => new { x.CategoryId, x.IsPrivate });
         builder.HasIndex(x => new { x.IsPrivate, x.CreatedBy });
         builder.HasIndex(x => x.IsRepoManaged);
+    }
+
+    private static bool SpeechSupportEquals(ItemSpeechSupport? left, ItemSpeechSupport? right)
+    {
+        if (left is null || right is null)
+        {
+            return left is null && right is null;
+        }
+
+        return string.Equals(left.Pronunciation, right.Pronunciation, StringComparison.Ordinal)
+            && string.Equals(left.LanguageCode, right.LanguageCode, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static int SpeechSupportHash(ItemSpeechSupport? value)
+    {
+        if (value is null)
+        {
+            return 0;
+        }
+
+        int pronunciationHash = value.Pronunciation is null
+            ? 0
+            : value.Pronunciation.GetHashCode(StringComparison.Ordinal);
+        int languageHash = value.LanguageCode is null
+            ? 0
+            : value.LanguageCode.ToUpperInvariant().GetHashCode(StringComparison.Ordinal);
+
+        return HashCode.Combine(pronunciationHash, languageHash);
+    }
+
+    private static ItemSpeechSupport? CloneSpeechSupport(ItemSpeechSupport? value)
+    {
+        if (value is null)
+        {
+            return null;
+        }
+
+        return new ItemSpeechSupport
+        {
+            Pronunciation = value.Pronunciation,
+            LanguageCode = value.LanguageCode
+        };
+    }
+
+    private static bool SpeechSupportDictionaryEquals(
+        Dictionary<int, ItemSpeechSupport>? left,
+        Dictionary<int, ItemSpeechSupport>? right)
+    {
+        if (left is null || right is null)
+        {
+            return left is null && right is null;
+        }
+
+        if (left.Count != right.Count)
+        {
+            return false;
+        }
+
+        foreach ((int key, ItemSpeechSupport value) in left)
+        {
+            if (!right.TryGetValue(key, out ItemSpeechSupport? rightValue))
+            {
+                return false;
+            }
+
+            if (!SpeechSupportEquals(value, rightValue))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static int SpeechSupportDictionaryHash(Dictionary<int, ItemSpeechSupport>? value)
+    {
+        if (value is null)
+        {
+            return 0;
+        }
+
+        int hash = 0;
+        foreach ((int key, ItemSpeechSupport support) in value.OrderBy(pair => pair.Key))
+        {
+            hash = HashCode.Combine(hash, key, SpeechSupportHash(support));
+        }
+
+        return hash;
+    }
+
+    private static Dictionary<int, ItemSpeechSupport> CloneSpeechSupportDictionary(
+        Dictionary<int, ItemSpeechSupport> value)
+    {
+        return value.ToDictionary(
+            pair => pair.Key,
+            pair => CloneSpeechSupport(pair.Value)!);
     }
 }

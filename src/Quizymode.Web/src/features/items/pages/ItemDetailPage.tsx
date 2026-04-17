@@ -17,6 +17,8 @@ import { TextWithLinks } from "@/components/TextWithLinks";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
+import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { getIndexedSpeech } from "@/utils/itemSpeech";
 
 const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -188,11 +190,13 @@ const ItemDetailPage = () => {
             <div>
               <h2 className="text-sm font-medium text-gray-500 mb-1">Question</h2>
               <p className="text-gray-900">{item.question}</p>
+              <PronunciationHint text={item.question} speech={item.questionSpeech} />
             </div>
 
             <div>
               <h2 className="text-sm font-medium text-gray-500 mb-1">Answer</h2>
               <p className="text-gray-900 font-medium">{item.correctAnswer}</p>
+              <PronunciationHint text={item.correctAnswer} speech={item.correctAnswerSpeech} />
             </div>
 
             {item.incorrectAnswers && item.incorrectAnswers.length > 0 && (
@@ -200,7 +204,14 @@ const ItemDetailPage = () => {
                 <h2 className="text-sm font-medium text-gray-500 mb-1">Incorrect options</h2>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   {item.incorrectAnswers.map((a, i) => (
-                    <li key={i}>{a}</li>
+                    <li key={i}>
+                      <span>{a}</span>
+                      <PronunciationHint
+                        text={a}
+                        speech={getIndexedSpeech(item.incorrectAnswerSpeech, i)}
+                        className="mt-1 text-sm text-gray-500 italic"
+                      />
+                    </li>
                   ))}
                 </ul>
               </div>

@@ -6,6 +6,7 @@ import type { ItemResponse, KeywordResponse, ItemCollectionResponse } from "@/ty
 import ItemRatingsComments from "./ItemRatingsComments";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
+import { PronunciationHint } from "@/components/items/PronunciationHint";
 
 interface ItemListCardProps {
   item: ItemResponse;
@@ -38,11 +39,13 @@ const ItemListCard = ({
     <div className="bg-white shadow rounded-lg p-6">
       <div className="space-y-3">
         <div className="flex items-start gap-2">
-          <h3 className="flex-1 text-lg font-medium text-gray-900">
-            {item.question}
-          </h3>
+          <div className="flex-1">
+            <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
+            <PronunciationHint text={item.question} speech={item.questionSpeech} />
+          </div>
           <SpeakButton
             text={item.question}
+            speech={item.questionSpeech}
             onSpeak={speak}
             isSupported={isSupported}
             label="Read question aloud"
@@ -59,17 +62,25 @@ const ItemListCard = ({
         </div>
         {showAnswer !== false && (
           <div className="flex items-start gap-2">
-            <p
+            <div
               className={`flex-1 text-sm ${
                 showAnswer === true
                   ? "rounded-md bg-green-100 px-2 py-1 text-green-900"
                   : "text-gray-700"
               }`}
             >
-              <strong>Answer:</strong> {item.correctAnswer}
-            </p>
+              <p>
+                <strong>Answer:</strong> {item.correctAnswer}
+              </p>
+              <PronunciationHint
+                text={item.correctAnswer}
+                speech={item.correctAnswerSpeech}
+                className="mt-1 text-sm text-gray-500 italic"
+              />
+            </div>
             <SpeakButton
               text={item.correctAnswer}
+              speech={item.correctAnswerSpeech}
               onSpeak={speak}
               isSupported={isSupported}
               label="Read answer aloud"

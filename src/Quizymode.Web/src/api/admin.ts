@@ -1,13 +1,16 @@
 import { apiClient } from "./client";
-import type { BulkCreateItemsRequest } from "@/types/api";
+import type { BulkCreateItemsRequest, ItemSpeechSupport } from "@/types/api";
 
 interface ReviewBoardItemResponse {
   id: string;
   category: string;
   isPrivate: boolean;
   question: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers: string[];
+  incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
   explanation: string;
   createdBy: string;
   createdAt: string;
@@ -44,12 +47,22 @@ export interface KeywordReviewResponse {
   reviewedBy?: string | null;
 }
 
-interface DatabaseSizeResponse {
+export interface DatabaseSizeTableResponse {
+  tableName: string;
+  sizeBytes: number;
+  sizeMegabytes: number;
+  sizeGigabytes: number;
+}
+
+export interface DatabaseSizeResponse {
   sizeBytes: number;
   sizeMegabytes: number;
   sizeGigabytes: number;
   freeTierLimitMegabytes: number;
   usagePercentage: number;
+  itemCount: number;
+  keywordCount: number;
+  topTables: DatabaseSizeTableResponse[];
 }
 
 interface AuditLogResponse {

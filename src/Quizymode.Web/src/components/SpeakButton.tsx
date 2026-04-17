@@ -1,8 +1,11 @@
 import { SpeakerWaveIcon } from "@heroicons/react/24/outline";
+import type { ItemSpeechSupport } from "@/types/api";
+import type { SpeakableText } from "@/utils/itemSpeech";
 
 interface SpeakButtonProps {
   text: string;
-  onSpeak: (text: string) => void;
+  speech?: ItemSpeechSupport | null;
+  onSpeak: (text: string | SpeakableText) => void;
   isSupported: boolean;
   label?: string;
 }
@@ -13,6 +16,7 @@ interface SpeakButtonProps {
  */
 export function SpeakButton({
   text,
+  speech,
   onSpeak,
   isSupported,
   label = "Read aloud",
@@ -24,7 +28,11 @@ export function SpeakButton({
       type="button"
       onClick={(e) => {
         e.stopPropagation();
-        onSpeak(text);
+        onSpeak({
+          text,
+          pronunciation: speech?.pronunciation ?? null,
+          languageCode: speech?.languageCode ?? null,
+        });
       }}
       title={label}
       aria-label={label}

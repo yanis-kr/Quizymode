@@ -396,3 +396,7 @@ playwright/logs/
 .codex-temp/ps_aws_stems.json
 .codex-temp/ps_aws_parsed.json
 docs/medium-article-draft.md
+scripts/patch-home-collection-order-2026-04-16.sql
+scripts/latvian_seed_terms.py
+scripts/generate_language_seed_expansion.py
+/.codex-temp

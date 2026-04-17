@@ -140,13 +140,6 @@ for (const category of taxonomy) {
       priority: 0.7,
     });
 
-    for (const keyword of group.keywords) {
-      dynamicPaths.push({
-        path: `${l1Path}/${encodeURIComponent(keyword)}`,
-        changefreq: "weekly",
-        priority: 0.6,
-      });
-    }
   }
 }
 

@@ -1,0 +1,122 @@
+[
+  {
+    "itemId": "a4b249bd-dc1e-4d7b-9629-26b54023a7dc",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means to look at something closely to understand it?",
+    "correctAnswer": "analyze",
+    "incorrectAnswers": [
+      "ignore",
+      "guess randomly",
+      "delete"
+    ],
+    "explanation": "To analyze means to study the parts of something in an organized way.",
+    "keywords": [
+      "analyze",
+      "study",
+      "academic-words"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/analyze"
+  },
+  {
+    "itemId": "474d80ca-e4ca-4ce6-88c0-6bd52757b007",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means a short restatement of the main points of a text?",
+    "correctAnswer": "summary",
+    "incorrectAnswers": [
+      "title page",
+      "margin doodle",
+      "random footnote"
+    ],
+    "explanation": "A summary gives the main ideas in fewer words than the original.",
+    "keywords": [
+      "summary",
+      "reading",
+      "academic-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/summary"
+  },
+  {
+    "itemId": "a95052bb-5bc5-4087-8bcc-4d73448c686f",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means a possible explanation that you test with evidence?",
+    "correctAnswer": "hypothesis",
+    "incorrectAnswers": [
+      "rumor",
+      "joke",
+      "recipe"
+    ],
+    "explanation": "In school science, a hypothesis is a testable idea you can support or challenge with data.",
+    "keywords": [
+      "hypothesis",
+      "science",
+      "academic-words"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/hypothesis"
+  },
+  {
+    "itemId": "d8ae14f2-60ab-4f13-95cd-9c5fea586c7d",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means the reason something happens or exists?",
+    "correctAnswer": "cause",
+    "incorrectAnswers": [
+      "color",
+      "shape",
+      "volume"
+    ],
+    "explanation": "A cause is what makes an effect happen, often used in essays and experiments.",
+    "keywords": [
+      "cause",
+      "reason",
+      "academic-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/cause"
+  },
+  {
+    "itemId": "84f48ee2-9e9e-47bb-afb8-659db15d9f92",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means the result or outcome of an action?",
+    "correctAnswer": "effect",
+    "incorrectAnswers": [
+      "folder",
+      "stapler",
+      "eraser"
+    ],
+    "explanation": "An effect is what happens because of a cause; the pair \"cause and effect\" is common in class writing.",
+    "keywords": [
+      "effect",
+      "result",
+      "academic-words"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/effect"
+  },
+  {
+    "itemId": "d86ab9d3-3af7-4f90-a4a3-9411f3a677db",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "vocab",
+    "question": "Which word means to say what something means in simpler words?",
+    "correctAnswer": "paraphrase",
+    "incorrectAnswers": [
+      "plagiarize",
+      "shout",
+      "erase"
+    ],
+    "explanation": "To paraphrase is to restate an idea in your own words while keeping the same meaning.",
+    "keywords": [
+      "paraphrase",
+      "writing",
+      "academic-words"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/paraphrase"
+  }
+]

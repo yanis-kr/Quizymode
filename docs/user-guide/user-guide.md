@@ -1,5 +1,7 @@
 # Quizymode User Guide
 
+**App:** [www.quizymode.com](https://www.quizymode.com)
+
 This guide provides an overview of the main screens available to signed-in users on desktop and larger screens.
 _Screenshots are generated automatically - run `npx playwright test --project=screenshots --project=screenshots-mobile && node scripts/generate-user-guide.js --all` from the repo root to refresh both guides._
 
@@ -17,7 +19,7 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 
 ### Home
 
-The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Ideas, and About from anywhere in the app.
+The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
 
 ![Home](screenshots/user/home.png "Home")
 
@@ -117,7 +119,7 @@ On the item detail page, signed-in users can rate an item by clicking one of the
 
 ### Item Comment Added
 
-From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread right away with your name and timestamp.
+From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread immediately with your name and timestamp.
 
 ![Item Comment Added](screenshots/user/item-comment-added.png "Item Comment Added")
 

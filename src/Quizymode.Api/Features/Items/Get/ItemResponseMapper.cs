@@ -33,7 +33,10 @@ internal sealed class ItemResponseMapper
             item.Source,
             item.UploadId?.ToString(),
             item.FactualRisk,
-            item.ReviewComments);
+            item.ReviewComments,
+            item.QuestionSpeech,
+            item.CorrectAnswerSpeech,
+            item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)

@@ -27,7 +27,10 @@ public static class UpdateItem
         bool IsPrivate,
         List<KeywordRequest>? Keywords = null,
         bool? ReadyForReview = null,
-        string? Source = null);
+        string? Source = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record Response(
         string Id,
@@ -38,7 +41,10 @@ public static class UpdateItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? Source);
+        string? Source,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -66,11 +72,23 @@ public static class UpdateItem
                 .MaximumLength(1000)
                 .WithMessage("Question must not exceed 1000 characters");
 
+            RuleFor(x => x.QuestionSpeech)
+                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 1000)
+                .WithMessage("QuestionSpeech.Pronunciation must not exceed 1000 characters")
+                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
+                .WithMessage("QuestionSpeech.LanguageCode must be a valid BCP-47 style language tag");
+
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()
                 .WithMessage("CorrectAnswer is required")
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters");
+
+            RuleFor(x => x.CorrectAnswerSpeech)
+                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
+                .WithMessage("CorrectAnswerSpeech.Pronunciation must not exceed 500 characters")
+                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
+                .WithMessage("CorrectAnswerSpeech.LanguageCode must be a valid BCP-47 style language tag");
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
@@ -80,6 +98,18 @@ public static class UpdateItem
                 .ForEach(rule => rule
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
+
+            RuleFor(x => x.IncorrectAnswerSpeech)
+                .Must((request, speechByIndex) =>
+                    speechByIndex is null
+                    || speechByIndex.Keys.All(index => index >= 0 && index < (request.IncorrectAnswers?.Count ?? 0)))
+                .WithMessage("IncorrectAnswerSpeech keys must match existing incorrect answer indexes")
+                .Must(speechByIndex =>
+                    speechByIndex is null
+                    || speechByIndex.Values.All(support =>
+                        (string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
+                        && ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode)))
+                .WithMessage("IncorrectAnswerSpeech entries must use valid pronunciation lengths and language codes");
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
@@ -92,8 +122,8 @@ public static class UpdateItem
                     .SetValidator(new KeywordRequestValidator()));
 
             RuleFor(x => x.Source)
-                .MaximumLength(200)
-                .WithMessage("Source must not exceed 200 characters");
+                .MaximumLength(1000)
+                .WithMessage("Source must not exceed 1000 characters");
 
         }
     }
@@ -245,8 +275,14 @@ public static class UpdateItem
 
             // Update item properties
             item.Question = request.Question;
+            item.QuestionSpeech = ItemSpeechSupportHelper.Normalize(request.QuestionSpeech, 1000);
             item.CorrectAnswer = request.CorrectAnswer;
+            item.CorrectAnswerSpeech = ItemSpeechSupportHelper.Normalize(request.CorrectAnswerSpeech, 500);
             item.IncorrectAnswers = request.IncorrectAnswers;
+            item.IncorrectAnswerSpeech = ItemSpeechSupportHelper.NormalizeDictionary(
+                request.IncorrectAnswerSpeech,
+                request.IncorrectAnswers.Count,
+                500);
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
             item.CategoryId = category.Id;
@@ -349,7 +385,10 @@ public static class UpdateItem
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.Source);
+                item.Source,
+                item.QuestionSpeech,
+                item.CorrectAnswerSpeech,
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
 
             return Result.Success(response);
         }

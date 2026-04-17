@@ -1,0 +1,88 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a" />
+      <stop offset="0.45" stop-color="#1e3a8a" stop-opacity="0.6" />
+      <stop offset="1" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Decorative glows -->
+  <circle cx="980" cy="110" r="260" fill="#3b82f6" fill-opacity="0.10" />
+  <circle cx="160" cy="520" r="220" fill="#6366f1" fill-opacity="0.08" />
+  <ellipse cx="600" cy="315" rx="520" ry="200" fill="#1e40af" fill-opacity="0.07" />
+
+  <!-- Diagonal stripe accent -->
+  <rect x="-60" y="0" width="180" height="630" fill="white" fill-opacity="0.025" transform="skewX(-18)" />
+
+  <!-- Brand name -->
+  <text
+    x="90"
+    y="260"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="92"
+    font-weight="800"
+    letter-spacing="-2"
+    fill="white"
+  >Quizymode</text>
+
+  <!-- Indigo underline accent -->
+  <rect x="90" y="276" width="600" height="5" rx="3" fill="url(#btnGrad)" />
+
+  <!-- Tagline -->
+  <text
+    x="90"
+    y="348"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="32"
+    font-weight="400"
+    fill="#94a3b8"
+  >Smart Flashcards &amp; Learning Quizzes</text>
+
+  <!-- Feature pills -->
+  <rect x="90" y="400" width="182" height="44" rx="22" fill="#1e3a8a" fill-opacity="0.7" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5" />
+  <text x="181" y="427" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#93c5fd" text-anchor="middle">Flashcards</text>
+
+  <rect x="288" y="400" width="150" height="44" rx="22" fill="#1e3a8a" fill-opacity="0.7" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5" />
+  <text x="363" y="427" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#93c5fd" text-anchor="middle">Quizzes</text>
+
+  <rect x="454" y="400" width="200" height="44" rx="22" fill="#1e3a8a" fill-opacity="0.7" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5" />
+  <text x="554" y="427" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#93c5fd" text-anchor="middle">Collections</text>
+
+  <rect x="670" y="400" width="190" height="44" rx="22" fill="#1e3a8a" fill-opacity="0.7" stroke="#3b82f6" stroke-opacity="0.4" stroke-width="1.5" />
+  <text x="765" y="427" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#93c5fd" text-anchor="middle">Free to use</text>
+
+  <!-- Domain -->
+  <text
+    x="90"
+    y="570"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="24"
+    font-weight="500"
+    fill="#475569"
+  >www.quizymode.com</text>
+
+  <!-- Right-side decorative card mock -->
+  <rect x="860" y="200" width="260" height="160" rx="20" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1.5" />
+  <rect x="882" y="224" width="140" height="12" rx="6" fill="#334155" />
+  <rect x="882" y="248" width="216" height="10" rx="5" fill="#1e3a8a" fill-opacity="0.6" />
+  <rect x="882" y="268" width="180" height="10" rx="5" fill="#1e3a8a" fill-opacity="0.4" />
+  <rect x="882" y="302" width="80" height="32" rx="12" fill="#2563eb" fill-opacity="0.85" />
+  <text x="922" y="322" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white" text-anchor="middle">Quiz it</text>
+
+  <rect x="860" y="384" width="260" height="100" rx="20" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-opacity="0.6" stroke-width="1.5" />
+  <rect x="882" y="404" width="120" height="10" rx="5" fill="#334155" fill-opacity="0.7" />
+  <rect x="882" y="424" width="200" height="10" rx="5" fill="#1e3a8a" fill-opacity="0.4" />
+  <rect x="882" y="444" width="160" height="10" rx="5" fill="#1e3a8a" fill-opacity="0.3" />
+</svg>

@@ -1,0 +1,116 @@
+[
+  {
+    "itemId": "2fe43b1a-afc9-402a-b34e-4a3c286b0180",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "In a restaurant, what is a \"reservation\"?",
+    "correctAnswer": "A booked table or time so the restaurant keeps a place for you.",
+    "incorrectAnswers": [
+      "A list of foods you dislike.",
+      "A free ticket to the kitchen.",
+      "A payment you make after you leave."
+    ],
+    "explanation": "Travelers often call ahead to make a reservation at busy restaurants.",
+    "keywords": [
+      "travel",
+      "booking"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/reservation"
+  },
+  {
+    "itemId": "7c8959d3-3e26-4ca8-9629-9fbbb8e6b954",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "In English, what does \"bill\" or \"check\" mean at the end of a meal?",
+    "correctAnswer": "The paper or screen that shows what you owe.",
+    "incorrectAnswers": [
+      "The menu only.",
+      "A free dessert coupon.",
+      "The chef's phone number."
+    ],
+    "explanation": "People ask for the bill when they want to pay and leave.",
+    "keywords": [
+      "travel",
+      "payment"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/bill"
+  },
+  {
+    "itemId": "d0fe205e-e0db-4132-a5ba-32bacec7e8f0",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "In many countries, what is a \"tip\" in a restaurant?",
+    "correctAnswer": "Extra money you give staff for good service.",
+    "incorrectAnswers": [
+      "A tax added only by the government.",
+      "A refund of the meal price.",
+      "A free second drink."
+    ],
+    "explanation": "Travelers should learn local rules because tipping customs change by country.",
+    "keywords": [
+      "travel",
+      "tipping"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/tip"
+  },
+  {
+    "itemId": "0077d1c6-0ca9-4632-bcf8-d8a7de761900",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "If you tell a server you have a \"food allergy,\" what are you trying to do?",
+    "correctAnswer": "Warn the kitchen so they avoid ingredients that can harm you.",
+    "incorrectAnswers": [
+      "Ask for a cheaper meal.",
+      "Request a table outside only.",
+      "Compliment the chef's uniform."
+    ],
+    "explanation": "Clear allergy language helps staff keep food safe for travelers.",
+    "keywords": [
+      "travel",
+      "allergy"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/allergy"
+  },
+  {
+    "itemId": "387e8d1a-7dd7-42e4-9a0b-42f3a5098842",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "What does \"takeout\" or \"takeaway\" mean in restaurant English?",
+    "correctAnswer": "Food you order to eat somewhere else, not at the table.",
+    "incorrectAnswers": [
+      "Food you must cook inside the store.",
+      "A free sample from the chef.",
+      "A drink you cannot carry outside."
+    ],
+    "explanation": "Travelers use these words when they want packed food for a hotel room or trip.",
+    "keywords": [
+      "travel",
+      "takeout"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/takeout"
+  },
+  {
+    "itemId": "54aadcb3-7d7c-4579-8c60-40dfa4a9125b",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "travel",
+    "question": "If you ask for tap water, what do you usually want?",
+    "correctAnswer": "Plain water from the building's pipes, often free.",
+    "incorrectAnswers": [
+      "Sparkling water in a glass bottle.",
+      "Hot tea with sugar.",
+      "Juice mixed with soda."
+    ],
+    "explanation": "In some places tap water is safe and common; in others travelers prefer sealed bottles.",
+    "keywords": [
+      "travel",
+      "water"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/tap_1"
+  }
+]

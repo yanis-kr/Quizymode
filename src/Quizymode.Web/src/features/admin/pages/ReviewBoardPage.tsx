@@ -5,6 +5,9 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { getIndexedSpeech } from "@/utils/itemSpeech";
+import type { ItemSpeechSupport } from "@/types/api";
 
 const ReviewBoardPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -86,8 +89,11 @@ function ReviewBoardItemCard({
     category: string;
     isPrivate: boolean;
     question: string;
+    questionSpeech?: ItemSpeechSupport | null;
     correctAnswer: string;
+    correctAnswerSpeech?: ItemSpeechSupport | null;
     incorrectAnswers: string[];
+    incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
     explanation: string;
     createdBy: string;
     createdAt: string;
@@ -114,13 +120,31 @@ function ReviewBoardItemCard({
             <h3 className="text-lg font-medium text-gray-900">
               {item.question}
             </h3>
+            <PronunciationHint text={item.question} speech={item.questionSpeech} />
             <p className="mt-2 text-sm text-gray-500">
               Answer: {item.correctAnswer}
             </p>
+            <PronunciationHint
+              text={item.correctAnswer}
+              speech={item.correctAnswerSpeech}
+              className="mt-1 text-sm text-gray-500 italic"
+            />
             {item.incorrectAnswers.length > 0 && (
-              <p className="mt-1 text-sm text-gray-500">
-                Incorrect: {item.incorrectAnswers.join(", ")}
-              </p>
+              <div className="mt-1 text-sm text-gray-500">
+                <p>Incorrect:</p>
+                <ul className="mt-1 list-disc list-inside space-y-1">
+                  {item.incorrectAnswers.map((answer, index) => (
+                    <li key={`${item.id}-incorrect-${index}`}>
+                      <span>{answer}</span>
+                      <PronunciationHint
+                        text={answer}
+                        speech={getIndexedSpeech(item.incorrectAnswerSpeech, index)}
+                        className="mt-1 text-sm text-gray-500 italic"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
             {item.explanation && (
               <p className="mt-1 text-sm text-gray-600">

@@ -38,9 +38,11 @@ internal sealed class DatabaseSeederHostedService(
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedSyncAdminService seedSyncAdminService = scope.ServiceProvider.GetRequiredService<SeedSyncAdminService>();
+            LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService = scope.ServiceProvider.GetRequiredService<LanguagesTaxonomyNormalizationService>();
 
             await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
+            await languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
             await SeedIdeasAsync(db, cancellationToken);
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
@@ -261,7 +263,10 @@ internal sealed class DatabaseSeederHostedService(
                     item.IncorrectAnswers,
                     item.Explanation,
                     item.Keywords,
-                    item.Source));
+                    item.Source,
+                    item.QuestionSpeech,
+                    item.CorrectAnswerSpeech,
+                    item.IncorrectAnswerSpeech));
             }
         }
 
@@ -571,6 +576,9 @@ internal sealed class RepoManagedItemSeedData
     public string? Explanation { get; set; }
     public List<string>? Keywords { get; set; }
     public string? Source { get; set; }
+    public ItemSpeechSupport? QuestionSpeech { get; set; }
+    public ItemSpeechSupport? CorrectAnswerSpeech { get; set; }
+    public Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech { get; set; }
 
     [JsonPropertyName("navigationKeyword1")]
     public string NavigationKeyword1 { get; set; } = string.Empty;

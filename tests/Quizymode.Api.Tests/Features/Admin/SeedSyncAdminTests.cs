@@ -26,7 +26,16 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             NullLogger<LocalSeedLoader>.Instance);
 
         Mock<IUserContext> userContext = new();
-        _service = new SeedSyncAdminService(DbContext, TaxonomyRegistry, _gitHubSeedSource, localSeedLoader, userContext.Object);
+        LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService = new(
+            DbContext,
+            NullLogger<LanguagesTaxonomyNormalizationService>.Instance);
+        _service = new SeedSyncAdminService(
+            DbContext,
+            TaxonomyRegistry,
+            _gitHubSeedSource,
+            localSeedLoader,
+            userContext.Object,
+            languagesTaxonomyNormalizationService);
     }
 
     [Fact]
@@ -113,6 +122,37 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
         DbContext.Keywords.Should().Contain(k => k.Name == "eurozone" && !k.IsPrivate);
         DbContext.Keywords.Should().Contain(k => k.Name == "mediterranean" && !k.IsPrivate);
+    }
+
+    [Fact]
+    public async Task ApplyAsync_UpsertsRepoManagedSpeechMetadata()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Guid itemId = Guid.Parse("33333333-3333-3333-3333-333333333334");
+        SeedSyncAdmin.Request request = BuildRequest(
+            [
+                BuildItem(
+                    itemId,
+                    "How do you say black in beginner Japanese?",
+                    "黒い",
+                    ["白い"],
+                    questionSpeech: new ItemSpeechSupport { Pronunciation = "how do you say black in beginner japanese", LanguageCode = "en-US" },
+                    correctAnswerSpeech: new ItemSpeechSupport { Pronunciation = "kuroi", LanguageCode = "ja-JP" },
+                    incorrectAnswerSpeech: new Dictionary<int, ItemSpeechSupport>
+                    {
+                        [0] = new() { Pronunciation = "shiroi", LanguageCode = "ja-JP" }
+                    })
+            ]);
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(request, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+
+        Item item = await DbContext.Items.SingleAsync(i => i.Id == itemId);
+        item.CorrectAnswerSpeech!.Pronunciation.Should().Be("kuroi");
+        item.CorrectAnswerSpeech.LanguageCode.Should().Be("ja-JP");
+        item.IncorrectAnswerSpeech.Should().ContainKey(0);
     }
 
     [Fact]
@@ -229,6 +269,30 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
     }
 
     [Fact]
+    public async Task PreviewAsync_AllowsLongSourceUrlsWithinExpandedLimit()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        string longSourceUrl = "https://www.wordreference.com/search?q=%D0%9F%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%8D%D1%82%D0%BE%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0.";
+        longSourceUrl.Length.Should().BeGreaterThan(200);
+
+        SeedSyncAdmin.Request request = BuildRequest(
+            [
+                BuildItem(
+                    Guid.Parse("99999999-9999-9999-9999-999999999999"),
+                    "What is the capital of France?",
+                    "Paris",
+                    ["Lyon", "Marseille", "Nice"],
+                    source: longSourceUrl)
+            ]);
+
+        Result<SeedSyncAdmin.PreviewResponse> result = await _service.PreviewAsync(request, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.CreatedCount.Should().Be(1);
+    }
+
+    [Fact]
     public async Task ApplyAsync_ReturnsValidationError_WhenItemIdAlreadyBelongsToNonRepoManagedItem()
     {
         await EnsureGeographyPublicWithNavAsync("seeder");
@@ -297,7 +361,11 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         string correctAnswer,
         List<string> incorrectAnswers,
         string? explanation = null,
-        List<string>? keywords = null)
+        List<string>? keywords = null,
+        string? source = null,
+        ItemSpeechSupport? questionSpeech = null,
+        ItemSpeechSupport? correctAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? incorrectAnswerSpeech = null)
     {
         return new SeedSyncAdmin.SeedItemRequest(
             ItemId: itemId,
@@ -309,7 +377,10 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             IncorrectAnswers: incorrectAnswers,
             Explanation: explanation,
             Keywords: keywords,
-            Source: "seed-test");
+            Source: source ?? "seed-test",
+            QuestionSpeech: questionSpeech,
+            CorrectAnswerSpeech: correctAnswerSpeech,
+            IncorrectAnswerSpeech: incorrectAnswerSpeech);
     }
 
     private sealed class FakeGitHubSeedSource : IGitHubSeedSource

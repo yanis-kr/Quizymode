@@ -41,7 +41,13 @@ public sealed class UpdateItemTests : ItemTestFixture
             IncorrectAnswers: new List<string> { "Lyon", "Marseille" },
             Explanation: "New explanation",
             IsPrivate: false,
-            ReadyForReview: null);
+            ReadyForReview: null,
+            QuestionSpeech: new ItemSpeechSupport { Pronunciation = "what is the capital of france", LanguageCode = "en-US" },
+            CorrectAnswerSpeech: new ItemSpeechSupport { Pronunciation = "pah-ree", LanguageCode = "fr-FR" },
+            IncorrectAnswerSpeech: new Dictionary<int, ItemSpeechSupport>
+            {
+                [1] = new() { Pronunciation = "mar-say", LanguageCode = "fr-FR" }
+            });
 
         // Act
         Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
@@ -61,11 +67,16 @@ public sealed class UpdateItemTests : ItemTestFixture
         result.Value.IncorrectAnswers.Should().HaveCount(2);
         result.Value.IncorrectAnswers.Should().Contain("Lyon");
         result.Value.IncorrectAnswers.Should().Contain("Marseille");
+        result.Value.CorrectAnswerSpeech!.Pronunciation.Should().Be("pah-ree");
+        result.Value.IncorrectAnswerSpeech!.Should().ContainKey(1);
 
         Item? updatedItem = await DbContext.Items.FindAsync([itemId]);
         updatedItem.Should().NotBeNull();
         updatedItem!.Explanation.Should().Be("New explanation");
         updatedItem.IncorrectAnswers.Should().HaveCount(2);
+        updatedItem.QuestionSpeech!.LanguageCode.Should().Be("en-US");
+        updatedItem.CorrectAnswerSpeech!.Pronunciation.Should().Be("pah-ree");
+        updatedItem.IncorrectAnswerSpeech.Should().ContainKey(1);
 
         // Verify audit logging was called
         _auditServiceMock.Verify(

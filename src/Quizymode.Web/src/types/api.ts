@@ -35,6 +35,11 @@ export interface KeywordResponse {
   isPrivate: boolean;
 }
 
+export interface ItemSpeechSupport {
+  pronunciation?: string | null;
+  languageCode?: string | null;
+}
+
 export interface ItemCollectionResponse {
   id: string;
   name: string;
@@ -46,8 +51,11 @@ export interface ItemResponse {
   category: string;
   isPrivate: boolean;
   question: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers: string[];
+  incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
   explanation: string;
   createdAt: string;
   createdBy?: string | null;
@@ -162,8 +170,11 @@ export interface CreateItemRequest {
   navigationKeyword2: string;
   isPrivate: boolean;
   question: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers: string[];
+  incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
@@ -177,8 +188,11 @@ export interface UpdateItemRequest {
   navigationKeyword2?: string;
   isPrivate?: boolean;
   question?: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer?: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers?: string[];
+  incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;

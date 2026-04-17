@@ -30,6 +30,10 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         Item item = await CreateItemWithCategoryAsync(
             itemId, "geography", "What is the capital of France?", "Paris",
             new List<string> { "Lyon", "Marseille" }, "Paris is the capital", false, "test");
+        item.QuestionSpeech = new ItemSpeechSupport { Pronunciation = "what is the capital of france", LanguageCode = "en-US" };
+        item.CorrectAnswerSpeech = new ItemSpeechSupport { Pronunciation = "pah-ree", LanguageCode = "fr-FR" };
+        item.IncorrectAnswerSpeech[0] = new ItemSpeechSupport { Pronunciation = "lee-yon", LanguageCode = "fr-FR" };
+        await DbContext.SaveChangesAsync();
 
         // Act
         Result<GetItemById.Response> result = await GetItemById.HandleAsync(
@@ -44,6 +48,9 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         result.Value.Id.Should().Be(itemId.ToString());
         result.Value.Question.Should().Be("What is the capital of France?");
         result.Value.CorrectAnswer.Should().Be("Paris");
+        result.Value.QuestionSpeech!.LanguageCode.Should().Be("en-US");
+        result.Value.CorrectAnswerSpeech!.Pronunciation.Should().Be("pah-ree");
+        result.Value.IncorrectAnswerSpeech!.Should().ContainKey(0);
     }
 
     [Fact]

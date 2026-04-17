@@ -15,12 +15,14 @@ internal sealed class SeedSyncAdminService(
     ITaxonomyRegistry taxonomyRegistry,
     IGitHubSeedSource gitHubSeedSource,
     LocalSeedLoader localSeedLoader,
-    IUserContext userContext)
+    IUserContext userContext,
+    LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService)
 {
     private const string SeederUserId = "seeder";
     private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
     private readonly LocalSeedLoader _localSeedLoader = localSeedLoader;
     private readonly IUserContext _userContext = userContext;
+    private readonly LanguagesTaxonomyNormalizationService _languagesTaxonomyNormalizationService = languagesTaxonomyNormalizationService;
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewAsync(
         SeedSyncAdmin.Request request,
@@ -114,6 +116,8 @@ internal sealed class SeedSyncAdminService(
 
         try
         {
+            await _languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
+
             Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken);
             if (planResult.IsFailure)
             {
@@ -539,8 +543,11 @@ internal sealed class SeedSyncAdminService(
         item.IsPrivate = false;
         item.IsRepoManaged = true;
         item.Question = change.Item.Question;
+        item.QuestionSpeech = change.Item.QuestionSpeech;
         item.CorrectAnswer = change.Item.CorrectAnswer;
+        item.CorrectAnswerSpeech = change.Item.CorrectAnswerSpeech;
         item.IncorrectAnswers = change.Item.IncorrectAnswers;
+        item.IncorrectAnswerSpeech = change.Item.IncorrectAnswerSpeech;
         item.Explanation = change.Item.Explanation;
         item.Source = change.Item.Source;
         item.CategoryId = change.Navigation.Category.Id;
@@ -772,6 +779,12 @@ internal sealed class SeedSyncAdminService(
         List<string> incorrectAnswers = item.IncorrectAnswers.Select(answer => answer.Trim()).ToList();
         string explanation = (item.Explanation ?? string.Empty).Trim();
         string? source = string.IsNullOrWhiteSpace(item.Source) ? null : item.Source.Trim();
+        ItemSpeechSupport? questionSpeech = ItemSpeechSupportHelper.Normalize(item.QuestionSpeech, 1000);
+        ItemSpeechSupport? correctAnswerSpeech = ItemSpeechSupportHelper.Normalize(item.CorrectAnswerSpeech, 500);
+        Dictionary<int, ItemSpeechSupport> incorrectAnswerSpeech = ItemSpeechSupportHelper.NormalizeDictionary(
+            item.IncorrectAnswerSpeech,
+            incorrectAnswers.Count,
+            500);
         List<string> keywords = NormalizeKeywords(item.Keywords, category, nav1, nav2);
 
         return new NormalizedSeedItem(
@@ -780,8 +793,11 @@ internal sealed class SeedSyncAdminService(
             nav1,
             nav2,
             question,
+            questionSpeech,
             correctAnswer,
+            correctAnswerSpeech,
             incorrectAnswers,
+            incorrectAnswerSpeech,
             explanation,
             keywords,
             source);
@@ -872,9 +888,24 @@ internal sealed class SeedSyncAdminService(
             changed.Add("correctAnswer");
         }
 
+        if (!ItemSpeechSupportHelper.AreEquivalent(existing.QuestionSpeech, incoming.QuestionSpeech))
+        {
+            changed.Add("questionSpeech");
+        }
+
+        if (!ItemSpeechSupportHelper.AreEquivalent(existing.CorrectAnswerSpeech, incoming.CorrectAnswerSpeech))
+        {
+            changed.Add("correctAnswerSpeech");
+        }
+
         if (!existing.IncorrectAnswers.SequenceEqual(incoming.IncorrectAnswers))
         {
             changed.Add("incorrectAnswers");
+        }
+
+        if (!ItemSpeechSupportHelper.AreEquivalent(existing.IncorrectAnswerSpeech, incoming.IncorrectAnswerSpeech))
+        {
+            changed.Add("incorrectAnswerSpeech");
         }
 
         if (!string.Equals(existing.Explanation, incoming.Explanation, StringComparison.Ordinal))
@@ -952,8 +983,11 @@ internal sealed class SeedSyncAdminService(
             nav1,
             nav2,
             item.Question.Trim(),
+            ItemSpeechSupportHelper.Normalize(item.QuestionSpeech, 1000),
             item.CorrectAnswer.Trim(),
+            ItemSpeechSupportHelper.Normalize(item.CorrectAnswerSpeech, 500),
             item.IncorrectAnswers.Select(answer => answer.Trim()).ToList(),
+            ItemSpeechSupportHelper.NormalizeDictionary(item.IncorrectAnswerSpeech, item.IncorrectAnswers.Count, 500),
             item.Explanation.Trim(),
             string.IsNullOrWhiteSpace(item.Source) ? null : item.Source.Trim(),
             extras);
@@ -983,8 +1017,11 @@ internal sealed class SeedSyncAdminService(
         string NavigationKeyword1,
         string NavigationKeyword2,
         string Question,
+        ItemSpeechSupport? QuestionSpeech,
         string CorrectAnswer,
+        ItemSpeechSupport? CorrectAnswerSpeech,
         List<string> IncorrectAnswers,
+        Dictionary<int, ItemSpeechSupport> IncorrectAnswerSpeech,
         string Explanation,
         List<string> Keywords,
         string? Source);
@@ -994,8 +1031,11 @@ internal sealed class SeedSyncAdminService(
         string NavigationKeyword1,
         string NavigationKeyword2,
         string Question,
+        ItemSpeechSupport? QuestionSpeech,
         string CorrectAnswer,
+        ItemSpeechSupport? CorrectAnswerSpeech,
         List<string> IncorrectAnswers,
+        Dictionary<int, ItemSpeechSupport> IncorrectAnswerSpeech,
         string Explanation,
         string? Source,
         List<string> Keywords);

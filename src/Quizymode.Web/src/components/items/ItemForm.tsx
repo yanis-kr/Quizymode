@@ -2,7 +2,7 @@
  * Shared form for creating and editing quiz items. Used by CreateItemPage and EditItemPage.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { KeywordRequest } from "@/types/api";
+import type { ItemSpeechSupport, KeywordRequest } from "@/types/api";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import { NAV_KEYWORD_MAX_LEN } from "@/utils/navigationKeywordRules";
@@ -19,8 +19,11 @@ export interface ItemFormValues {
   /** Whether the owner is requesting admin review to make the item public. */
   readyForReview: boolean;
   question: string;
+  questionSpeech: ItemSpeechSupport;
   correctAnswer: string;
+  correctAnswerSpeech: ItemSpeechSupport;
   incorrectAnswers: string[];
+  incorrectAnswerSpeech: Record<number, ItemSpeechSupport>;
   explanation: string;
   keywords: KeywordRequest[];
   source: string;
@@ -143,6 +146,29 @@ export function ItemForm({
     const newAnswers = [...values.incorrectAnswers];
     newAnswers[index] = value;
     onChange({ ...values, incorrectAnswers: newAnswers });
+  };
+
+  const updateSpeechSupport = (
+    current: ItemSpeechSupport | undefined,
+    key: keyof ItemSpeechSupport,
+    value: string
+  ): ItemSpeechSupport => ({
+    ...(current ?? {}),
+    [key]: value,
+  });
+
+  const handleIncorrectAnswerSpeechChange = (
+    index: number,
+    key: keyof ItemSpeechSupport,
+    value: string
+  ) => {
+    onChange({
+      ...values,
+      incorrectAnswerSpeech: {
+        ...values.incorrectAnswerSpeech,
+        [index]: updateSpeechSupport(values.incorrectAnswerSpeech[index], key, value),
+      },
+    });
   };
 
   return (
@@ -372,6 +398,50 @@ export function ItemForm({
           rows={3}
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-1">
+              Question pronunciation
+            </label>
+            <input
+              type="text"
+              value={values.questionSpeech.pronunciation ?? ""}
+              onChange={(e) =>
+                onChange({
+                  ...values,
+                  questionSpeech: updateSpeechSupport(
+                    values.questionSpeech,
+                    "pronunciation",
+                    e.target.value
+                  ),
+                })
+              }
+              placeholder="kuroi"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-1">
+              Question language code
+            </label>
+            <input
+              type="text"
+              value={values.questionSpeech.languageCode ?? ""}
+              onChange={(e) =>
+                onChange({
+                  ...values,
+                  questionSpeech: updateSpeechSupport(
+                    values.questionSpeech,
+                    "languageCode",
+                    e.target.value
+                  ),
+                })
+              }
+              placeholder="ja-JP"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+        </div>
       </div>
 
       <div>
@@ -387,6 +457,50 @@ export function ItemForm({
           required
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-1">
+              Answer pronunciation
+            </label>
+            <input
+              type="text"
+              value={values.correctAnswerSpeech.pronunciation ?? ""}
+              onChange={(e) =>
+                onChange({
+                  ...values,
+                  correctAnswerSpeech: updateSpeechSupport(
+                    values.correctAnswerSpeech,
+                    "pronunciation",
+                    e.target.value
+                  ),
+                })
+              }
+              placeholder="kuroi"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-gray-500 mb-1">
+              Answer language code
+            </label>
+            <input
+              type="text"
+              value={values.correctAnswerSpeech.languageCode ?? ""}
+              onChange={(e) =>
+                onChange({
+                  ...values,
+                  correctAnswerSpeech: updateSpeechSupport(
+                    values.correctAnswerSpeech,
+                    "languageCode",
+                    e.target.value
+                  ),
+                })
+              }
+              placeholder="ja-JP"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+        </div>
       </div>
 
       <div>
@@ -394,16 +508,47 @@ export function ItemForm({
           Incorrect Answers (at least 1 required) *
         </label>
         {values.incorrectAnswers.map((answer, index) => (
-          <input
-            key={index}
-            type="text"
-            value={answer}
-            onChange={(e) =>
-              handleIncorrectAnswerChange(index, e.target.value)
-            }
-            placeholder={`Incorrect answer ${index + 1}`}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm mb-2 bg-white text-gray-900 placeholder:text-gray-500"
-          />
+          <div key={index} className="mb-3 rounded-lg border border-gray-200 p-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) =>
+                handleIncorrectAnswerChange(index, e.target.value)
+              }
+              placeholder={`Incorrect answer ${index + 1}`}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Pronunciation
+                </label>
+                <input
+                  type="text"
+                  value={values.incorrectAnswerSpeech[index]?.pronunciation ?? ""}
+                  onChange={(e) =>
+                    handleIncorrectAnswerSpeechChange(index, "pronunciation", e.target.value)
+                  }
+                  placeholder="Optional"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Language code
+                </label>
+                <input
+                  type="text"
+                  value={values.incorrectAnswerSpeech[index]?.languageCode ?? ""}
+                  onChange={(e) =>
+                    handleIncorrectAnswerSpeechChange(index, "languageCode", e.target.value)
+                  }
+                  placeholder="Optional"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
@@ -429,7 +574,7 @@ export function ItemForm({
           type="text"
           value={values.source}
           onChange={(e) => onChange({ ...values, source: e.target.value })}
-          maxLength={200}
+          maxLength={1000}
           placeholder="e.g., ChatGPT, Claude, Manual"
           className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
         />

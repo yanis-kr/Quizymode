@@ -37,7 +37,13 @@ public sealed class AddItemTests : ItemTestFixture
             Question: "What is the capital of France?",
             CorrectAnswer: "Paris",
             IncorrectAnswers: new List<string> { "Lyon", "Marseille", "Nice" },
-            Explanation: "Paris is the capital of France");
+            Explanation: "Paris is the capital of France",
+            QuestionSpeech: new ItemSpeechSupport { Pronunciation = "wat is the capital of frans", LanguageCode = "en-US" },
+            CorrectAnswerSpeech: new ItemSpeechSupport { Pronunciation = "pah-ree", LanguageCode = "fr-FR" },
+            IncorrectAnswerSpeech: new Dictionary<int, ItemSpeechSupport>
+            {
+                [0] = new() { Pronunciation = "lee-yon", LanguageCode = "fr-FR" }
+            });
 
         // Act
         Result<AddItem.Response> result = await AddItemHandler.HandleAsync(
@@ -55,10 +61,16 @@ public sealed class AddItemTests : ItemTestFixture
         result.Value.Should().NotBeNull();
         result.Value.Question.Should().Be(request.Question);
         result.Value.CorrectAnswer.Should().Be(request.CorrectAnswer);
+        result.Value.QuestionSpeech!.Pronunciation.Should().Be("wat is the capital of frans");
+        result.Value.CorrectAnswerSpeech!.LanguageCode.Should().Be("fr-FR");
+        result.Value.IncorrectAnswerSpeech!.Should().ContainKey(0);
 
         Item? item = await DbContext.Items.FirstOrDefaultAsync(i => i.Question == request.Question);
         item.Should().NotBeNull();
         item!.Question.Should().Be(request.Question);
+        item.QuestionSpeech!.Pronunciation.Should().Be("wat is the capital of frans");
+        item.CorrectAnswerSpeech!.Pronunciation.Should().Be("pah-ree");
+        item.IncorrectAnswerSpeech.Should().ContainKey(0);
 
         // Verify audit logging was called
         string expectedUserId = _userContextMock.Object.UserId ?? throw new InvalidOperationException("User ID is required");
@@ -156,6 +168,27 @@ public sealed class AddItemTests : ItemTestFixture
         // Assert
         result.IsValid.Should().BeFalse();
         result.Errors.Should().Contain(e => e.PropertyName == "IncorrectAnswers");
+    }
+
+    [Fact]
+    public void Validator_SourceUpTo1000Characters_IsAllowed()
+    {
+        AddItem.Request request = new(
+            Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
+            IsPrivate: false,
+            Question: "What is the capital of France?",
+            CorrectAnswer: "Paris",
+            IncorrectAnswers: new List<string> { "Lyon" },
+            Explanation: "",
+            Source: new string('s', 1000));
+
+        AddItem.Validator validator = new();
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        result.IsValid.Should().BeTrue();
     }
 
 

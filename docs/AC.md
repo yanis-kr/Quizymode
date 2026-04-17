@@ -707,6 +707,7 @@ On the Categories page (Sets view and List view), a **filter dialog** lets the u
 
 - **AC 3.9.5** [Anyone] **Given** the filter dialog is visible, **when** I add **scope filters**, **then** I can add one or more of: **item type** (e.g. all / public / private), **search** (text), and **rating** (min, max, include unrated, only unrated). Each added scope filter is shown with a remove control. When I click **Apply**, the selected scope filters are reflected in the URL (e.g. `filterType`, `search`, `ratingMin`, `ratingMax`, `ratingUnrated`, `ratingOnlyUnrated`) and applied to the scope. Item type is sent to the items API where supported; search and rating may be applied client-side to the current result set where applicable.
 - **AC 3.9.6** [Anyone] **Given** I am on the Categories List view with scope filters applied (e.g. search or rating), **when** the list is loaded, **then** the items shown are narrowed by those filters; pagination applies to the filtered set. Changing or clearing scope filters and applying updates the list accordingly.
+- **AC 3.9.6a** [Anyone] **Given** I am paging through list-mode items in Categories or Collection detail, **when** the current page renders, **then** I see paging controls above the list and a **Previous / Next** pager below the list so I can continue navigating without scrolling back to the top.
 
 **URL and scope**
 
@@ -739,9 +740,10 @@ On the Categories page (Sets view and List view), a **filter dialog** lets the u
 **Taxonomy structure:**
 
 - Each promoted language (English, Spanish, French, German, Italian, Russian, Japanese, Latvian, Ukrainian, Bulgarian, Latin, Romanian) has its own **rank-1 keyword** under the `languages` category.
-- Each language has a consistent set of **rank-2 subtopics**: `core`, `phrases`, `vocab`, `grammar`, `idioms`, `conversation`. Some languages have additional subtopics (e.g. `hiragana`, `katakana`, `kanji` for Japanese; `expressions` for Latin).
-- Less-developed languages (Chinese, Korean, Arabic, Portuguese) remain grouped under the `other-langs` rank-1 keyword and can be promoted as content grows.
-- Cross-language sections (`travel`, `vocab`, `idioms`, `grammar`, `esl`, `general`, `mixed`) coexist alongside per-language content.
+- The `languages` category exposes only **language-name rank-1 keywords** plus one catch-all rank-1 bucket: `other-langs`.
+- Each promoted language keeps language-specific rank-2 subtopics such as `core`, `phrases`, `vocab`, `grammar`, `idioms`, `conversation`, and `travel` where applicable. Some languages have additional subtopics (for example `hiragana`, `katakana`, `kanji` for Japanese; `expressions` for Latin; `reading`, `writing`, `pronunciation`, and `listening` for English).
+- Less-developed or uncategorized language content stays under the `other-langs` rank-1 keyword and can be promoted later as content grows.
+- Legacy non-language rank-1 buckets under `languages` (`esl`, `travel`, `vocab`, `grammar`, `idioms`, `general`, `mixed`) are not valid browse roots anymore. Existing rows using those paths must be migrated to a language-specific path (usually `english/...`) or to `other-langs/mixed`.
 
 **Rank-2 subtopic definitions:**
 
@@ -770,6 +772,7 @@ These item-level keywords are **not** navigation keywords. They are stored as pu
 - **AC 3.11.1** [Anyone] **Given** a user browses `/categories/languages/{language}/core`, **when** the scope loads, **then** it shows items whose `navigationKeyword1` = that language and `navigationKeyword2` = `core`; items tagged `freq-100` are retrievable by adding `?keywords=freq-100` as an item tag filter.
 - **AC 3.11.2** [Anyone] **Given** a user browses `/categories/languages/latin/expressions`, **when** the scope loads, **then** it shows items in the famous Latin expressions set; each item's question is the Latin phrase and the correct answer is the English translation with context.
 - **AC 3.11.3** [Anyone] **Given** `other-langs` rank-1 still exists (for Chinese, Korean, Arabic, Portuguese), **when** items reference `navigationKeyword1 = "other-langs"`, **then** those items remain accessible at `/categories/languages/other-langs/{lang}`; Italian, Russian, and Japanese are no longer valid rank-2 options under `other-langs` and existing items referencing those paths should be migrated to their new promoted rank-1 paths.
+- **AC 3.11.4** [Admin/System] **Given** the API starts or an admin seed-sync apply runs, **when** legacy `languages` items still use retired rank-1 paths such as `esl`, `travel`, `vocab`, `grammar`, `idioms`, `general`, or `mixed`, **then** the database normalizes those items to the current language-first taxonomy before continuing so browse counts and navigation remain aligned with `GET /taxonomy`.
 
 ---
 
@@ -954,6 +957,18 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 ## 5. Admin
 
+### AC 5.0 Admin: database size monitoring
+
+**API**
+
+- **AC 5.0.1** [Admin] **Given** I am an admin, **when** I call `GET /admin/database/size`, **then** the API returns the current PostgreSQL database size in bytes/MB/GB, usage percentage against the 500 MB free-tier budget, exact total counts for `Items` and `Keywords`, and a `topTables` list containing the 5 largest user tables ordered by total relation size.
+
+**UI**
+
+- **AC 5.0.2** [Admin] **Given** I open `/admin/database-size`, **when** the page loads, **then** I see the current database size summary, the total item count, the total keyword count, and a visible list of the top 5 largest tables by size so I can quickly spot where storage is concentrated.
+
+---
+
 ### AC 5.1 Admin: per-user study guide settings
 
 **API**
@@ -1134,11 +1149,13 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 9.1.1** [Anonymous, Authenticated] A speaker-icon button appears next to the "Question" heading in Quiz mode. Clicking it speaks the question text via the browser Web Speech API.
 - **AC 9.1.2** [Anonymous, Authenticated] When the answer is revealed in Quiz mode, a speaker-icon button appears next to the "Correct Answer" label. Clicking it speaks the answer text.
 - **AC 9.1.3** [Anonymous, Authenticated] Starting a new TTS utterance cancels any utterance already in progress so speech does not overlap.
+- **AC 9.1.4** [Anonymous, Authenticated] Clicking the same speaker button again while its text is still playing stops that utterance instead of restarting it.
 
 ### AC 9.2 Explore (flashcard) mode playback
 
 - **AC 9.2.1** [Anonymous, Authenticated] A speaker-icon button appears in the question-face header of the flashcard in Explore mode. Clicking it speaks the question text without flipping the card.
 - **AC 9.2.2** [Anonymous, Authenticated] A speaker-icon button appears in the answer-face header of the flashcard in Explore mode. Clicking it speaks the answer text without flipping the card back.
+- **AC 9.2.3** [Anonymous, Authenticated] Clicking the same speaker button again while its text is still playing stops that utterance instead of restarting it.
 
 ### AC 9.3 Lifecycle and fallback
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { SEO } from "@/components/SEO";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -39,6 +40,8 @@ const LoginPage = () => {
   };
 
   return (
+    <>
+      <SEO title="Sign In" noindex />
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
@@ -109,6 +112,7 @@ const LoginPage = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

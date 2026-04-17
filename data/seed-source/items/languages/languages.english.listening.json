@@ -1,0 +1,122 @@
+[
+  {
+    "itemId": "5a30bc5d-41e3-4cf6-bc78-17512802d3eb",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "When you listen for the main topic, what are you trying to catch first?",
+    "correctAnswer": "The big idea, not every small word.",
+    "incorrectAnswers": [
+      "Every spelling in your head.",
+      "Only the speaker's age.",
+      "The color of the room."
+    ],
+    "explanation": "Listening for gist means focusing on overall meaning before details.",
+    "keywords": [
+      "gist",
+      "listening-skills",
+      "esl-listening"
+    ],
+    "source": "https://www.britishcouncil.org/learnenglish/listening"
+  },
+  {
+    "itemId": "41d3b8b1-86bc-471e-b0f3-7e814224e9aa",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "If audio gives a phone number, what kind of listening is that?",
+    "correctAnswer": "listening for specific information",
+    "incorrectAnswers": [
+      "listening only for jokes",
+      "ignoring numbers",
+      "guessing the speaker's hometown"
+    ],
+    "explanation": "You scan the audio for exact details like digits.",
+    "keywords": [
+      "detail",
+      "numbers",
+      "esl-listening"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/listen"
+  },
+  {
+    "itemId": "8eef2b84-2c66-4792-94ae-e367dd115367",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "Which pair differs mainly by one sound: ship and sheep?",
+    "correctAnswer": "The vowel sound in the middle.",
+    "incorrectAnswers": [
+      "The letter h",
+      "The final p",
+      "The number of syllables"
+    ],
+    "explanation": "Ship and sheep are a classic minimal pair for the short /ɪ/ and long /iː/ vowels.",
+    "keywords": [
+      "minimal-pairs",
+      "vowel-sounds",
+      "esl-listening"
+    ],
+    "source": "https://dictionary.cambridge.org/pronunciation/english/ship"
+  },
+  {
+    "itemId": "afd1965b-3c58-475c-8f42-9011f49265d1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "Why do many learners watch short clips with subtitles at first?",
+    "correctAnswer": "To connect sounds with written words.",
+    "incorrectAnswers": [
+      "To remove all listening.",
+      "To avoid English audio.",
+      "To read only silently forever."
+    ],
+    "explanation": "Subtitles can support listening by linking what you hear to what you see.",
+    "keywords": [
+      "subtitles",
+      "listening-practice",
+      "esl-listening"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/subtitle"
+  },
+  {
+    "itemId": "8f0954f9-6cfd-41cb-894a-b2ac0611e45c",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "If a speaker says \"Could you...\", what kind of function is common?",
+    "correctAnswer": "a polite request",
+    "incorrectAnswers": [
+      "a weather report",
+      "a math proof",
+      "a command to leave"
+    ],
+    "explanation": "Could you is often used to ask for help politely.",
+    "keywords": [
+      "requests",
+      "politeness",
+      "esl-listening"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/could"
+  },
+  {
+    "itemId": "98bcc298-36cd-40ac-930d-c33ff4802999",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "listening",
+    "question": "What helps listeners follow a longer talk?",
+    "correctAnswer": "Signal words like first, next, and finally.",
+    "incorrectAnswers": [
+      "Random silence only.",
+      "Ignoring order words.",
+      "Avoiding all transitions."
+    ],
+    "explanation": "Order words show how ideas connect, which helps listening comprehension.",
+    "keywords": [
+      "discourse-markers",
+      "organization",
+      "esl-listening"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/discourse-markers"
+  }
+]

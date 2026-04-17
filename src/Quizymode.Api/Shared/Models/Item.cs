@@ -10,10 +10,16 @@ public sealed class Item
 
     public string Question { get; set; } = string.Empty;
 
+    public ItemSpeechSupport? QuestionSpeech { get; set; }
+
     public string CorrectAnswer { get; set; } = string.Empty;
+
+    public ItemSpeechSupport? CorrectAnswerSpeech { get; set; }
 
     // Stored as JSONB in PostgreSQL - EF Core handles this automatically
     public List<string> IncorrectAnswers { get; set; } = new(); // 0..4
+
+    public Dictionary<int, ItemSpeechSupport> IncorrectAnswerSpeech { get; set; } = new();
 
     public string Explanation { get; set; } = string.Empty;
 

@@ -25,7 +25,10 @@ public static class GetItemById
         string? UploadId = null,
         List<string> NavigationBreadcrumb = null!, // Navigation path for breadcrumbs: e.g. [rank1, rank2] or ["other"] when item has no rank1/rank2 keyword. Use "other" in URLs; display as "Others".
         decimal? FactualRisk = null,
-        string? ReviewComments = null);
+        string? ReviewComments = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -160,7 +163,10 @@ public static class GetItemById
                 item.UploadId?.ToString(),
                 navigationBreadcrumb,
                 item.FactualRisk,
-                item.ReviewComments);
+                item.ReviewComments,
+                item.QuestionSpeech,
+                item.CorrectAnswerSpeech,
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
 
             return Result.Success(response);
         }

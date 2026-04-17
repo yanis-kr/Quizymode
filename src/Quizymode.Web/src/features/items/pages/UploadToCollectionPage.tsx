@@ -32,7 +32,7 @@ Requirements:
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–5 "incorrectAnswers" (each max 200 characters)
-  - "source" (optional, max 200 characters - e.g., "ChatGPT", "Claude", "Manual")
+  - "source" (optional, max 1000 characters - e.g., a direct reference URL)
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`;

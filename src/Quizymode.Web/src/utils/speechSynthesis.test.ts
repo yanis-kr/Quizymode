@@ -8,6 +8,9 @@ import {
 const makeSpeechMock = () => ({
   cancel: vi.fn(),
   speak: vi.fn(),
+  speaking: false,
+  pending: false,
+  paused: false,
 });
 
 describe("isSpeechSynthesisSupported", () => {
@@ -78,6 +81,18 @@ describe("speakText", () => {
   it("cancels existing speech then speaks", () => {
     speakText("Hello world");
     expect(cancelMock).toHaveBeenCalledOnce();
+    expect(speakMock).toHaveBeenCalledOnce();
+  });
+
+  it("cancels without restarting when the same text is already playing", () => {
+    const speechSynthesisMock = window.speechSynthesis as SpeechSynthesis;
+
+    speakText("Hello world");
+    Object.assign(speechSynthesisMock, { speaking: true });
+
+    speakText("Hello world");
+
+    expect(cancelMock).toHaveBeenCalledTimes(2);
     expect(speakMock).toHaveBeenCalledOnce();
   });
 
