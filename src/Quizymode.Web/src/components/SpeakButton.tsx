@@ -1,39 +1,43 @@
 import { SpeakerWaveIcon } from "@heroicons/react/24/outline";
 import type { ItemSpeechSupport } from "@/types/api";
-import type { SpeakableText } from "@/utils/itemSpeech";
+import { toSpeakableText } from "@/utils/itemSpeech";
+import { parseForeignPhrases, hasForeignPhrases } from "@/utils/foreignPhrase";
+import { speakText, speakPhrases } from "@/utils/speechSynthesis";
 
 interface SpeakButtonProps {
   text: string;
   speech?: ItemSpeechSupport | null;
-  onSpeak: (text: string | SpeakableText) => void;
   isSupported: boolean;
   label?: string;
 }
 
 /**
  * A compact icon button that reads `text` aloud via browser TTS.
+ * Automatically handles inline foreign-phrase markup ({{lang|native|...}}) by
+ * speaking each segment in its own language voice.
  * Renders nothing when the Web Speech API is not available.
  */
 export function SpeakButton({
   text,
   speech,
-  onSpeak,
   isSupported,
   label = "Read aloud",
 }: SpeakButtonProps) {
   if (!isSupported) return null;
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasForeignPhrases(text)) {
+      speakPhrases(parseForeignPhrases(text), text);
+    } else {
+      speakText(toSpeakableText(text, speech));
+    }
+  };
+
   return (
     <button
       type="button"
-      onClick={(e) => {
-        e.stopPropagation();
-        onSpeak({
-          text,
-          pronunciation: speech?.pronunciation ?? null,
-          languageCode: speech?.languageCode ?? null,
-        });
-      }}
+      onClick={handleClick}
       title={label}
       aria-label={label}
       className="inline-flex items-center justify-center rounded p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus-visible:ring-1 focus-visible:ring-indigo-500"

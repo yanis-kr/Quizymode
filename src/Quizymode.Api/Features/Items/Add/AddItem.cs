@@ -73,11 +73,7 @@ public static class AddItem
                 .MaximumLength(1000)
                 .WithMessage("Question must not exceed 1000 characters");
 
-            RuleFor(x => x.QuestionSpeech)
-                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 1000)
-                .WithMessage("QuestionSpeech.Pronunciation must not exceed 1000 characters")
-                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
-                .WithMessage("QuestionSpeech.LanguageCode must be a valid BCP-47 style language tag");
+            this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
 
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()
@@ -85,11 +81,7 @@ public static class AddItem
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters");
 
-            RuleFor(x => x.CorrectAnswerSpeech)
-                .Must(support => support is null || string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
-                .WithMessage("CorrectAnswerSpeech.Pronunciation must not exceed 500 characters")
-                .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
-                .WithMessage("CorrectAnswerSpeech.LanguageCode must be a valid BCP-47 style language tag");
+            this.AddSpeechSupportRules(x => x.CorrectAnswerSpeech, 500, "CorrectAnswerSpeech");
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
@@ -100,17 +92,7 @@ public static class AddItem
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
-            RuleFor(x => x.IncorrectAnswerSpeech)
-                .Must((request, speechByIndex) =>
-                    speechByIndex is null
-                    || speechByIndex.Keys.All(index => index >= 0 && index < (request.IncorrectAnswers?.Count ?? 0)))
-                .WithMessage("IncorrectAnswerSpeech keys must match existing incorrect answer indexes")
-                .Must(speechByIndex =>
-                    speechByIndex is null
-                    || speechByIndex.Values.All(support =>
-                        (string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
-                        && ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode)))
-                .WithMessage("IncorrectAnswerSpeech entries must use valid pronunciation lengths and language codes");
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)

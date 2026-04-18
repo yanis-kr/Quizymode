@@ -2,10 +2,10 @@
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
 import type { ItemResponse } from "@/types/api";
-import { TextWithLinks } from "@/components/TextWithLinks";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
 
 export interface QuizRendererProps {
@@ -25,7 +25,7 @@ export function QuizRenderer({
   onAnswerSelect,
   stats,
 }: QuizRendererProps) {
-  const { speak, isSupported } = useSpeech();
+  const { isSupported } = useSpeech();
 
   return (
     <div className="space-y-3">
@@ -35,12 +35,11 @@ export function QuizRenderer({
           <SpeakButton
             text={item.question}
             speech={item.questionSpeech}
-            onSpeak={speak}
             isSupported={isSupported}
             label="Read question aloud"
           />
         </div>
-        <p className="text-gray-700">{item.question}</p>
+        <p className="text-gray-700"><ForeignPhraseText text={item.question} /></p>
         <PronunciationHint text={item.question} speech={item.questionSpeech} />
       </div>
 
@@ -79,7 +78,8 @@ export function QuizRenderer({
                 }`}
               >
                 <div>
-                  <span className="font-medium">{letter}.</span> {option}
+                  <span className="font-medium">{letter}.</span>{" "}
+                  <ForeignPhraseText text={option} />
                   <PronunciationHint
                     text={option}
                     speech={optionSpeech}
@@ -101,7 +101,6 @@ export function QuizRenderer({
             <SpeakButton
               text={item.correctAnswer}
               speech={item.correctAnswerSpeech}
-              onSpeak={speak}
               isSupported={isSupported}
               label="Read answer aloud"
             />
@@ -112,7 +111,7 @@ export function QuizRenderer({
             className="mt-1 text-sm text-blue-700 italic"
           />
           {item.explanation && (
-            <p className="text-sm text-blue-700 mt-1"><TextWithLinks text={item.explanation} /></p>
+            <p className="text-sm text-blue-700 mt-1"><ForeignPhraseText text={item.explanation} linkify /></p>
           )}
         </div>
       )}

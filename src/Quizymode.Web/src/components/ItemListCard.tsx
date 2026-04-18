@@ -7,6 +7,7 @@ import ItemRatingsComments from "./ItemRatingsComments";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 
 interface ItemListCardProps {
   item: ItemResponse;
@@ -33,20 +34,19 @@ const ItemListCard = ({
   returnUrl,
   showAnswer,
 }: ItemListCardProps) => {
-  const { speak, isSupported } = useSpeech();
+  const { isSupported } = useSpeech();
 
   return (
     <div className="bg-white shadow rounded-lg p-6">
       <div className="space-y-3">
         <div className="flex items-start gap-2">
           <div className="flex-1">
-            <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
+            <h3 className="text-lg font-medium text-gray-900"><ForeignPhraseText text={item.question} /></h3>
             <PronunciationHint text={item.question} speech={item.questionSpeech} />
           </div>
           <SpeakButton
             text={item.question}
             speech={item.questionSpeech}
-            onSpeak={speak}
             isSupported={isSupported}
             label="Read question aloud"
           />
@@ -70,7 +70,7 @@ const ItemListCard = ({
               }`}
             >
               <p>
-                <strong>Answer:</strong> {item.correctAnswer}
+                <strong>Answer:</strong> <ForeignPhraseText text={item.correctAnswer} />
               </p>
               <PronunciationHint
                 text={item.correctAnswer}
@@ -81,7 +81,6 @@ const ItemListCard = ({
             <SpeakButton
               text={item.correctAnswer}
               speech={item.correctAnswerSpeech}
-              onSpeak={speak}
               isSupported={isSupported}
               label="Read answer aloud"
             />

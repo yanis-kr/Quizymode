@@ -776,6 +776,21 @@ These item-level keywords are **not** navigation keywords. They are stored as pu
 
 ---
 
+### AC 3.12 Item pronunciation and language-aware speech
+
+**Context:** Items can carry optional per-field speech metadata (`pronunciation`, `languageCode`) to support native-script content and browser text-to-speech (TTS). This is designed for items whose question or answer _is_ a foreign-language word or phrase, not for items that already describe that word in English.
+
+**ACs:**
+
+- **AC 3.12.1** [Anyone] **Given** an item has speech metadata on question, correct answer, or an incorrect answer — each field carrying an optional `pronunciation` string and an optional BCP-47 `languageCode` — **when** the browser supports the Web Speech API, **then** the Speak button reads the field's text using a voice matching `languageCode`; if no matching voice is available and `pronunciation` is set, the `pronunciation` string is spoken instead; if neither applies, standard English TTS is used.
+- **AC 3.12.2** [Anyone] **Given** an item field has a `pronunciation` value that differs from the displayed text (e.g. romaji under a kanji question), **when** the field is rendered in Explore card view, Quiz option, or Item Detail, **then** a muted hint line showing the pronunciation is displayed directly beneath the field text.
+- **AC 3.12.3** [Authenticated] **Given** I use Create Item or Edit Item, **when** the form loads, **then** optional pronunciation and language-code inputs are available for question, correct answer, and each incorrect answer; leaving them blank persists no speech metadata.
+- **AC 3.12.4** [Admin/Seed] **Given** a repo-managed seed JSON file includes `questionSpeech`, `correctAnswerSpeech`, or `incorrectAnswerSpeech` fields, **when** seed-sync apply runs, **then** those fields are normalised (trimmed, truncated to limits) and persisted; a seed file that omits these fields does not clear existing speech metadata on a re-sync.
+- **AC 3.12.5** [Design intent] Speech metadata should be set only when the question or answer **is** a native-script word or phrase (e.g. `"黒い"`). Items whose question is already a full English sentence wrapping a foreign word (e.g. `"What does '黒い' mean?"`) should omit `languageCode` — the TTS already reads the sentence correctly as English — and may omit `pronunciation` too.
+- **AC 3.12.6** [Anyone] **Given** a text field (question, answer, explanation) contains inline foreign-phrase markup in the format `{{lang|native|translit|pronunciation}}`, **when** the text is rendered in any item view (Explore, Quiz, Item List, Item Detail), **then**: (a) the native script is displayed inline where the markup appears; (b) if `translit` or `pronunciation` is non-empty, a muted hint line is rendered beneath showing `translit · pronunciation` (or whichever parts are present); (c) the surrounding English text is shown as-is; (d) the Speak button reads each segment in its correct language — English segments with the default voice and foreign segments with the voice matching `lang` (BCP-47); (e) text without any markup is rendered and spoken identically to before this feature. The format is: `lang` = BCP-47 tag (e.g. `ja-JP`, `ru-RU`), `native` = text displayed and spoken in target language, `translit` = romanization (optional, shown in hint), `pronunciation` = English-speaker-friendly guide with stressed syllable in CAPS (optional, shown in hint after `·`).
+
+---
+
 ## 4. Users and auth
 
 Authentication uses **email + password** with secure password hashing and short-lived access tokens. Authorization is role-based (`User`, `Admin`) and relies on the global invariants in **Access and ownership**. This section describes **how users sign up, sign in, manage sessions, and view/update their profile**.

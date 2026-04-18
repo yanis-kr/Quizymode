@@ -13,7 +13,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { TextWithLinks } from "@/components/TextWithLinks";
+import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
@@ -189,13 +189,13 @@ const ItemDetailPage = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-sm font-medium text-gray-500 mb-1">Question</h2>
-              <p className="text-gray-900">{item.question}</p>
+              <p className="text-gray-900"><ForeignPhraseText text={item.question} /></p>
               <PronunciationHint text={item.question} speech={item.questionSpeech} />
             </div>
 
             <div>
               <h2 className="text-sm font-medium text-gray-500 mb-1">Answer</h2>
-              <p className="text-gray-900 font-medium">{item.correctAnswer}</p>
+              <p className="text-gray-900 font-medium"><ForeignPhraseText text={item.correctAnswer} /></p>
               <PronunciationHint text={item.correctAnswer} speech={item.correctAnswerSpeech} />
             </div>
 
@@ -205,7 +205,7 @@ const ItemDetailPage = () => {
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   {item.incorrectAnswers.map((a, i) => (
                     <li key={i}>
-                      <span>{a}</span>
+                      <ForeignPhraseText text={a} />
                       <PronunciationHint
                         text={a}
                         speech={getIndexedSpeech(item.incorrectAnswerSpeech, i)}
@@ -220,7 +220,7 @@ const ItemDetailPage = () => {
             {item.explanation && (
               <div>
                 <h2 className="text-sm font-medium text-gray-500 mb-1">Explanation</h2>
-                <p className="text-gray-700"><TextWithLinks text={item.explanation} /></p>
+                <p className="text-gray-700"><ForeignPhraseText text={item.explanation} linkify /></p>
               </div>
             )}
 

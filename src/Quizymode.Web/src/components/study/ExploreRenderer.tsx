@@ -4,10 +4,10 @@
 import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import type { ItemResponse } from "@/types/api";
-import { TextWithLinks } from "@/components/TextWithLinks";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 
 /** Characters beyond which the explanation is truncated with a "Show more" toggle. */
 const EXPLANATION_CLAMP_THRESHOLD = 220;
@@ -19,7 +19,7 @@ export interface ExploreRendererProps {
 export function ExploreRenderer({ item }: ExploreRendererProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [explanationExpanded, setExplanationExpanded] = useState(false);
-  const { speak, isSupported } = useSpeech();
+  const { isSupported } = useSpeech();
 
   useEffect(() => {
     setIsFlipped(false);
@@ -54,7 +54,6 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
             <SpeakButton
               text={item.question}
               speech={item.questionSpeech}
-              onSpeak={speak}
               isSupported={isSupported}
               label="Read question aloud"
             />
@@ -67,7 +66,9 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
             className="w-full rounded-b-xl px-6 pb-6 pt-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           >
             <div className="flex-1">
-              <p className="text-lg text-gray-900">{item.question}</p>
+              <p className="text-lg text-gray-900">
+                <ForeignPhraseText text={item.question} />
+              </p>
               <PronunciationHint text={item.question} speech={item.questionSpeech} />
             </div>
             <p className="mt-4 text-xs text-gray-400">Click the card to reveal the answer</p>
@@ -88,7 +89,6 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
             <SpeakButton
               text={item.correctAnswer}
               speech={item.correctAnswerSpeech}
-              onSpeak={speak}
               isSupported={isSupported}
               label="Read answer aloud"
             />
@@ -102,7 +102,9 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
             className="w-full rounded-none px-6 pb-2 pt-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           >
             <div>
-              <p className="text-lg font-semibold text-gray-900">{item.correctAnswer}</p>
+              <p className="text-lg font-semibold text-gray-900">
+                <ForeignPhraseText text={item.correctAnswer} />
+              </p>
               <PronunciationHint text={item.correctAnswer} speech={item.correctAnswerSpeech} />
             </div>
             <p className="mt-2 text-xs text-gray-400">Click to show question</p>
@@ -116,7 +118,7 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
                   isLongExplanation && !explanationExpanded ? "line-clamp-3" : ""
                 }`}
               >
-                <TextWithLinks text={explanationTrimmed} />
+                <ForeignPhraseText text={explanationTrimmed} linkify />
               </p>
               {isLongExplanation && (
                 <button

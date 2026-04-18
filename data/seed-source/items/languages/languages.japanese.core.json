@@ -4,7 +4,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u3053\u3093\u306b\u3061\u306f' (konnichiwa) mean in the daytime?",
+    "question": "What does '{{ja-JP|\u3053\u3093\u306b\u3061\u306f|konnichiwa|kon-NEE-chee-wah}}' mean in the daytime?",
     "correctAnswer": "hello / good afternoon (common greeting)",
     "incorrectAnswers": [
       "good night only",
@@ -25,7 +25,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u3042\u308a\u304c\u3068\u3046' (arigatou) mean?",
+    "question": "What does '{{ja-JP|\u3042\u308a\u304c\u3068\u3046|arigatou|ah-ree-GAH-toh}}' mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
@@ -46,7 +46,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u6c34' (mizu) mean?",
+    "question": "What does '{{ja-JP|\u6c34|mizu|MEE-zoo}}' mean?",
     "correctAnswer": "water",
     "incorrectAnswers": [
       "fire",
@@ -66,7 +66,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u306f\u3044' (hai) often mean in a simple reply?",
+    "question": "What does '{{ja-JP|\u306f\u3044|hai|HY}}' often mean in a simple reply?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",
@@ -86,7 +86,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u3044\u3044\u3048' (iie) mean?",
+    "question": "What does '{{ja-JP|\u3044\u3044\u3048|iie|EE-eh}}' mean?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes",
@@ -127,11 +127,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Japanese?",
-    "correctAnswer": "\u3059\u307f\u307e\u305b\u3093 (sumimasen)",
+    "correctAnswer": "{{ja-JP|\u3059\u307f\u307e\u305b\u3093|sumimasen|soo-mee-MAH-sen}}",
     "incorrectAnswers": [
-      "\u3042\u308a\u304c\u3068\u3046 (arigatou)",
-      "\u3055\u3088\u3046\u306a\u3089 (sayounara)",
-      "\u304a\u306f\u3088\u3046 (ohayou)"
+      "{{ja-JP|\u3042\u308a\u304c\u3068\u3046|arigatou|ah-ree-GAH-toh}}",
+      "{{ja-JP|\u3055\u3088\u3046\u306a\u3089|sayounara|sah-yoh-NAH-rah}}",
+      "{{ja-JP|\u304a\u306f\u3088\u3046|ohayou|oh-hah-YOH}}"
     ],
     "explanation": "'Sumimasen' is used both to apologize and to politely get someone's attention.",
     "keywords": [
@@ -168,7 +168,7 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "core",
-    "question": "What does '\u3055\u3088\u3046\u306a\u3089' (sayounara) mean?",
+    "question": "What does '{{ja-JP|\u3055\u3088\u3046\u306a\u3089|sayounara|sah-yoh-NAH-rah}}' mean?",
     "correctAnswer": "goodbye (formal / permanent-sounding)",
     "incorrectAnswers": [
       "see you tomorrow",

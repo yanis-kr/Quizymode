@@ -4,9 +4,27 @@
  */
 
 import type { SpeakableText } from "@/utils/itemSpeech";
+import { type Segment } from "@/utils/foreignPhrase";
 
 let activeUtterance: SpeechSynthesisUtterance | null = null;
 let activeTextKey: string | null = null;
+
+// Voice list is populated asynchronously on most browsers.
+// Cache it once and refresh when voiceschanged fires.
+let cachedVoices: SpeechSynthesisVoice[] = [];
+let voicesListenerAttached = false;
+
+function getAvailableVoices(): SpeechSynthesisVoice[] {
+  if (!isSpeechSynthesisSupported()) return [];
+  if (!voicesListenerAttached) {
+    voicesListenerAttached = true;
+    cachedVoices = window.speechSynthesis.getVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", () => {
+      cachedVoices = window.speechSynthesis.getVoices();
+    });
+  }
+  return cachedVoices;
+}
 
 function clearActiveSpeech(expectedUtterance?: SpeechSynthesisUtterance): void {
   if (expectedUtterance && activeUtterance !== expectedUtterance) {
@@ -47,9 +65,7 @@ export function createSpeechUtterance(input: string | SpeakableText): SpeechSynt
     utterance.lang = requestedLanguage;
   }
 
-  const speechSynthesis = window.speechSynthesis;
-  const voices =
-    typeof speechSynthesis.getVoices === "function" ? speechSynthesis.getVoices() : [];
+  const voices = getAvailableVoices();
   const resolvedVoice = findVoiceForLanguage(voices, requestedLanguage);
 
   if (resolvedVoice) {
@@ -116,6 +132,54 @@ export function stopSpeaking(): void {
   if (!isSpeechSynthesisSupported()) return;
   window.speechSynthesis.cancel();
   clearActiveSpeech();
+}
+
+/**
+ * Speaks an array of parsed segments in sequence, giving each plain segment an
+ * English voice and each foreign segment its target language voice (falling back
+ * to the pronunciation hint if no matching voice is available).
+ *
+ * Clicking the same button again while speaking cancels playback (toggle behaviour).
+ * `toggleKey` should be the original raw text string so the same button always
+ * toggles the same speech session.
+ */
+export function speakPhrases(segments: Segment[], toggleKey: string): void {
+  if (!isSpeechSynthesisSupported()) return;
+
+  const synthesis = window.speechSynthesis;
+  const isSameActive =
+    activeTextKey === toggleKey &&
+    (synthesis.speaking || synthesis.pending || synthesis.paused);
+
+  synthesis.cancel();
+  clearActiveSpeech();
+
+  if (isSameActive) return;
+
+  const utterances: SpeechSynthesisUtterance[] = [];
+  for (const seg of segments) {
+    const u =
+      seg.type === "foreign"
+        ? createSpeechUtterance({
+            text: seg.text,
+            languageCode: seg.lang,
+            pronunciation: seg.pronunciation ?? seg.translit,
+          })
+        : createSpeechUtterance(seg.text);
+    if (u) utterances.push(u);
+  }
+
+  if (utterances.length === 0) return;
+
+  activeTextKey = toggleKey;
+  activeUtterance = utterances[0];
+  const last = utterances[utterances.length - 1];
+  last.onend = () => clearActiveSpeech(last);
+  last.onerror = () => clearActiveSpeech(last);
+
+  for (const u of utterances) {
+    synthesis.speak(u);
+  }
 }
 
 function findVoiceForLanguage(

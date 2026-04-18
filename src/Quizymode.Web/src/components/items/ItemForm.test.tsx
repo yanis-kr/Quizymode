@@ -18,8 +18,6 @@ const defaultValues = {
   explanation: "",
   keywords: [] as { name: string; isPrivate: boolean }[],
   source: "",
-  factualRisk: "",
-  reviewComments: "",
 };
 
 describe("ItemForm", () => {

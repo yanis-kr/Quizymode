@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using FluentValidation;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Shared.Helpers;
@@ -130,5 +132,51 @@ internal static partial class ItemSpeechSupportHelper
         }
 
         return true;
+    }
+}
+
+/// <summary>
+/// FluentValidation extension methods for reusing speech-support validation rules across
+/// AddItem, UpdateItem, AddItemsBulk, and SeedSyncAdmin validators.
+/// </summary>
+internal static class ItemSpeechSupportValidatorExtensions
+{
+    /// <summary>Adds pronunciation-length and BCP-47 language-code rules for a nullable speech-support field.</summary>
+    internal static void AddSpeechSupportRules<T>(
+        this AbstractValidator<T> validator,
+        Expression<Func<T, ItemSpeechSupport?>> expression,
+        int maxPronunciationLength,
+        string fieldName)
+    {
+        validator.RuleFor(expression)
+            .Must(support => support is null
+                || string.IsNullOrWhiteSpace(support.Pronunciation)
+                || support.Pronunciation.Trim().Length <= maxPronunciationLength)
+            .WithMessage($"{fieldName}.Pronunciation must not exceed {maxPronunciationLength} characters");
+
+        validator.RuleFor(expression)
+            .Must(support => support is null || ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode))
+            .WithMessage($"{fieldName}.LanguageCode must be a valid BCP-47 style language tag");
+    }
+
+    /// <summary>Adds index-range and per-entry validation rules for an indexed incorrect-answer speech map.</summary>
+    internal static void AddIncorrectAnswerSpeechRules<T>(
+        this AbstractValidator<T> validator,
+        Expression<Func<T, Dictionary<int, ItemSpeechSupport>?>> expression,
+        Func<T, int> getAnswerCount)
+    {
+        validator.RuleFor(expression)
+            .Must((request, speechByIndex) =>
+                speechByIndex is null
+                || speechByIndex.Keys.All(index => index >= 0 && index < getAnswerCount(request)))
+            .WithMessage("IncorrectAnswerSpeech keys must match existing incorrect answer indexes");
+
+        validator.RuleFor(expression)
+            .Must(speechByIndex =>
+                speechByIndex is null
+                || speechByIndex.Values.All(support =>
+                    (string.IsNullOrWhiteSpace(support.Pronunciation) || support.Pronunciation.Trim().Length <= 500)
+                    && ItemSpeechSupportHelper.IsValidLanguageCode(support.LanguageCode)))
+            .WithMessage("IncorrectAnswerSpeech entries must use valid pronunciation lengths and language codes");
     }
 }
