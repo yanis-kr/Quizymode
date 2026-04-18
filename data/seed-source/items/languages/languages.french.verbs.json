@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "In French, what is the infinitive that means \"to eat\"?",
-    "correctAnswer": "{{fr-FR|manger||}}",
+    "correctAnswer": "{{fr-FR|manger||man-GER}}",
     "incorrectAnswers": [
-      "{{fr-FR|courir||}}",
-      "{{fr-FR|boire||}}",
-      "{{fr-FR|vivre||}}"
+      "{{fr-FR|courir||coo-RIR}}",
+      "{{fr-FR|boire||bwah-RE}}",
+      "{{fr-FR|vivre||vi-VRE}}"
     ],
     "explanation": "\"Manger\" is the infinitive for to eat.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "For \"avoir\" in the present, which form matches \"ils / elles\"?",
-    "correctAnswer": "{{fr-FR|ont||}}",
+    "correctAnswer": "{{fr-FR|ont||ONT}}",
     "incorrectAnswers": [
-      "{{fr-FR|ai||}}",
-      "{{fr-FR|as||}}",
-      "{{fr-FR|avons||}}"
+      "{{fr-FR|ai||EH}}",
+      "{{fr-FR|as||AS}}",
+      "{{fr-FR|avons||a-VONS}}"
     ],
     "explanation": "\"Avoir\" is irregular; the third-person plural present form is \"ont\".",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "Which form completes this line: \"Je ___ de Paris\" (I am from Paris)?",
-    "correctAnswer": "{{fr-FR|suis||}}",
+    "correctAnswer": "{{fr-FR|suis||SUIS}}",
     "incorrectAnswers": [
-      "{{fr-FR|es||}}",
-      "{{fr-FR|est||}}",
-      "{{fr-FR|sommes||}}"
+      "{{fr-FR|es||ES}}",
+      "{{fr-FR|est||EST}}",
+      "{{fr-FR|sommes||som-MES}}"
     ],
     "explanation": "Origin with \"être\" uses \"je suis de...\" for I am from.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "Which form is correct for \"nous\" with the verb \"parler\" in the present tense?",
-    "correctAnswer": "{{fr-FR|parlons||}}",
+    "correctAnswer": "{{fr-FR|parlons||par-LONS}}",
     "incorrectAnswers": [
-      "{{fr-FR|parlez||}}",
-      "{{fr-FR|parlent||}}",
-      "{{fr-FR|parle||}}"
+      "{{fr-FR|parlez||par-LEZ}}",
+      "{{fr-FR|parlent||par-LENT}}",
+      "{{fr-FR|parle||par-LE}}"
     ],
     "explanation": "Regular -er verbs take \"-ons\" for \"nous\" in the present tense.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "In French, which infinitive means \"to want\"?",
-    "correctAnswer": "{{fr-FR|vouloir||}}",
+    "correctAnswer": "{{fr-FR|vouloir||vool-WAHR}}",
     "incorrectAnswers": [
-      "{{fr-FR|pouvoir||}}",
-      "{{fr-FR|devoir||}}",
-      "{{fr-FR|savoir||}}"
+      "{{fr-FR|pouvoir||poov-WAHR}}",
+      "{{fr-FR|devoir||dev-WAHR}}",
+      "{{fr-FR|savoir||sav-WAHR}}"
     ],
     "explanation": "\"Vouloir\" is the infinitive that commonly expresses wanting.",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "verbs",
     "question": "In the present tense, which \"faire\" form matches \"il / elle / on\"?",
-    "correctAnswer": "{{fr-FR|fait||}}",
+    "correctAnswer": "{{fr-FR|fait||FEHT}}",
     "incorrectAnswers": [
-      "{{fr-FR|fais||}}",
-      "{{fr-FR|faisons||}}",
-      "{{fr-FR|font||}}"
+      "{{fr-FR|fais||FEHS}}",
+      "{{fr-FR|faisons||feh-SONS}}",
+      "{{fr-FR|font||FONT}}"
     ],
     "explanation": "\"Faire\" is irregular; the third-person singular present form is \"fait\".",
     "keywords": [

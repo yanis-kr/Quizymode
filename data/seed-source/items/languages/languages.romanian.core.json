@@ -5,11 +5,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in Romanian?",
-    "correctAnswer": "{{ro-RO|Bună ziua||}} / {{ro-RO|Salut||}}",
+    "correctAnswer": "{{ro-RO|Bună ziua||BU-na ZIUA}} / {{ro-RO|Salut||SA-lut}}",
     "incorrectAnswers": [
-      "{{ro-RO|Mulțumesc||}}",
-      "{{ro-RO|Vă rog||}} / {{ro-RO|Te rog||}}",
-      "{{ro-RO|Da||}}"
+      "{{ro-RO|Mulțumesc||mul-TU-mesc}}",
+      "{{ro-RO|Vă rog||VA ROG}} / {{ro-RO|Te rog||TE ROG}}",
+      "{{ro-RO|Da||DA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -26,11 +26,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in Romanian?",
-    "correctAnswer": "{{ro-RO|Mulțumesc||}}",
+    "correctAnswer": "{{ro-RO|Mulțumesc||mul-TU-mesc}}",
     "incorrectAnswers": [
-      "{{ro-RO|Vă rog||}} / {{ro-RO|Te rog||}}",
-      "{{ro-RO|Da||}}",
-      "{{ro-RO|La revedere||}}"
+      "{{ro-RO|Vă rog||VA ROG}} / {{ro-RO|Te rog||TE ROG}}",
+      "{{ro-RO|Da||DA}}",
+      "{{ro-RO|La revedere||LA re-ve-DE-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -47,11 +47,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in Romanian?",
-    "correctAnswer": "{{ro-RO|Vă rog||}} / {{ro-RO|Te rog||}}",
+    "correctAnswer": "{{ro-RO|Vă rog||VA ROG}} / {{ro-RO|Te rog||TE ROG}}",
     "incorrectAnswers": [
-      "{{ro-RO|Da||}}",
-      "{{ro-RO|La revedere||}}",
-      "{{ro-RO|Mă numesc...||}}"
+      "{{ro-RO|Da||DA}}",
+      "{{ro-RO|La revedere||LA re-ve-DE-re}}",
+      "{{ro-RO|Mă numesc...||MA nu-MESC...}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -67,11 +67,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'yes' in Romanian?",
-    "correctAnswer": "{{ro-RO|Da||}}",
+    "correctAnswer": "{{ro-RO|Da||DA}}",
     "incorrectAnswers": [
-      "{{ro-RO|La revedere||}}",
-      "{{ro-RO|Mă numesc...||}}",
-      "{{ro-RO|Scuzați-mă||}}"
+      "{{ro-RO|La revedere||LA re-ve-DE-re}}",
+      "{{ro-RO|Mă numesc...||MA nu-MESC...}}",
+      "{{ro-RO|Scuzați-mă||scu-ZA-ti-MA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -87,11 +87,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in Romanian?",
-    "correctAnswer": "{{ro-RO|La revedere||}}",
+    "correctAnswer": "{{ro-RO|La revedere||LA re-ve-DE-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|Mă numesc...||}}",
-      "{{ro-RO|Scuzați-mă||}}",
-      "{{ro-RO|unu, doi, trei||}}"
+      "{{ro-RO|Mă numesc...||MA nu-MESC...}}",
+      "{{ro-RO|Scuzați-mă||scu-ZA-ti-MA}}",
+      "{{ro-RO|unu, doi, trei||U-nu, DOI, TREI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -108,11 +108,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in Romanian?",
-    "correctAnswer": "{{ro-RO|Mă numesc...||}}",
+    "correctAnswer": "{{ro-RO|Mă numesc...||MA nu-MESC...}}",
     "incorrectAnswers": [
-      "{{ro-RO|Scuzați-mă||}}",
-      "{{ro-RO|unu, doi, trei||}}",
-      "{{ro-RO|apă||}}"
+      "{{ro-RO|Scuzați-mă||scu-ZA-ti-MA}}",
+      "{{ro-RO|unu, doi, trei||U-nu, DOI, TREI}}",
+      "{{ro-RO|apă||A-pa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -129,11 +129,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Romanian?",
-    "correctAnswer": "{{ro-RO|Scuzați-mă||}}",
+    "correctAnswer": "{{ro-RO|Scuzați-mă||scu-ZA-ti-MA}}",
     "incorrectAnswers": [
-      "{{ro-RO|unu, doi, trei||}}",
-      "{{ro-RO|apă||}}",
-      "{{ro-RO|Bună dimineața||}}"
+      "{{ro-RO|unu, doi, trei||U-nu, DOI, TREI}}",
+      "{{ro-RO|apă||A-pa}}",
+      "{{ro-RO|Bună dimineața||BU-na di-mi-NEA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -150,11 +150,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in Romanian?",
-    "correctAnswer": "{{ro-RO|unu, doi, trei||}}",
+    "correctAnswer": "{{ro-RO|unu, doi, trei||U-nu, DOI, TREI}}",
     "incorrectAnswers": [
-      "{{ro-RO|apă||}}",
-      "{{ro-RO|Bună dimineața||}}",
-      "{{ro-RO|patru||}}"
+      "{{ro-RO|apă||A-pa}}",
+      "{{ro-RO|Bună dimineața||BU-na di-mi-NEA-ta}}",
+      "{{ro-RO|patru||PA-tru}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -170,11 +170,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'water' in Romanian?",
-    "correctAnswer": "{{ro-RO|apă||}}",
+    "correctAnswer": "{{ro-RO|apă||A-pa}}",
     "incorrectAnswers": [
-      "{{ro-RO|Bună dimineața||}}",
-      "{{ro-RO|patru||}}",
-      "{{ro-RO|cinci||}}"
+      "{{ro-RO|Bună dimineața||BU-na di-mi-NEA-ta}}",
+      "{{ro-RO|patru||PA-tru}}",
+      "{{ro-RO|cinci||CHEEN-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -190,11 +190,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'good morning' in Romanian?",
-    "correctAnswer": "{{ro-RO|Bună dimineața||}}",
+    "correctAnswer": "{{ro-RO|Bună dimineața||BU-na di-mi-NEA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|patru||}}",
-      "{{ro-RO|cinci||}}",
-      "{{ro-RO|șase||}}"
+      "{{ro-RO|patru||PA-tru}}",
+      "{{ro-RO|cinci||CHEEN-chee}}",
+      "{{ro-RO|șase||SA-se}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -211,11 +211,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'four'?",
-    "correctAnswer": "{{ro-RO|patru||}}",
+    "correctAnswer": "{{ro-RO|patru||PA-tru}}",
     "incorrectAnswers": [
-      "{{ro-RO|cinci||}}",
-      "{{ro-RO|șase||}}",
-      "{{ro-RO|șapte||}}"
+      "{{ro-RO|cinci||CHEEN-chee}}",
+      "{{ro-RO|șase||SA-se}}",
+      "{{ro-RO|șapte||SAP-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -233,11 +233,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'five' in everyday use?",
-    "correctAnswer": "{{ro-RO|cinci||}}",
+    "correctAnswer": "{{ro-RO|cinci||CHEEN-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|șase||}}",
-      "{{ro-RO|șapte||}}",
-      "{{ro-RO|opt||}}"
+      "{{ro-RO|șase||SA-se}}",
+      "{{ro-RO|șapte||SAP-te}}",
+      "{{ro-RO|opt||OPT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -255,11 +255,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'six'.",
-    "correctAnswer": "{{ro-RO|șase||}}",
+    "correctAnswer": "{{ro-RO|șase||SA-se}}",
     "incorrectAnswers": [
-      "{{ro-RO|șapte||}}",
-      "{{ro-RO|opt||}}",
-      "{{ro-RO|nouă||}}"
+      "{{ro-RO|șapte||SAP-te}}",
+      "{{ro-RO|opt||OPT}}",
+      "{{ro-RO|nouă||NOUA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -277,11 +277,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'seven'?",
-    "correctAnswer": "{{ro-RO|șapte||}}",
+    "correctAnswer": "{{ro-RO|șapte||SAP-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|opt||}}",
-      "{{ro-RO|nouă||}}",
-      "{{ro-RO|zece||}}"
+      "{{ro-RO|opt||OPT}}",
+      "{{ro-RO|nouă||NOUA}}",
+      "{{ro-RO|zece||ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -299,11 +299,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'eight'?",
-    "correctAnswer": "{{ro-RO|opt||}}",
+    "correctAnswer": "{{ro-RO|opt||OPT}}",
     "incorrectAnswers": [
-      "{{ro-RO|nouă||}}",
-      "{{ro-RO|zece||}}",
-      "{{ro-RO|unsprezece||}}"
+      "{{ro-RO|nouă||NOUA}}",
+      "{{ro-RO|zece||ZE-che}}",
+      "{{ro-RO|unsprezece||uns-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -321,11 +321,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'nine' in everyday use?",
-    "correctAnswer": "{{ro-RO|nouă||}}",
+    "correctAnswer": "{{ro-RO|nouă||NOUA}}",
     "incorrectAnswers": [
-      "{{ro-RO|zece||}}",
-      "{{ro-RO|unsprezece||}}",
-      "{{ro-RO|doisprezece||}}"
+      "{{ro-RO|zece||ZE-che}}",
+      "{{ro-RO|unsprezece||uns-pre-ZE-che}}",
+      "{{ro-RO|doisprezece||dois-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'ten'.",
-    "correctAnswer": "{{ro-RO|zece||}}",
+    "correctAnswer": "{{ro-RO|zece||ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|unsprezece||}}",
-      "{{ro-RO|doisprezece||}}",
-      "{{ro-RO|treisprezece||}}"
+      "{{ro-RO|unsprezece||uns-pre-ZE-che}}",
+      "{{ro-RO|doisprezece||dois-pre-ZE-che}}",
+      "{{ro-RO|treisprezece||treis-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -365,11 +365,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'eleven'?",
-    "correctAnswer": "{{ro-RO|unsprezece||}}",
+    "correctAnswer": "{{ro-RO|unsprezece||uns-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|doisprezece||}}",
-      "{{ro-RO|treisprezece||}}",
-      "{{ro-RO|paisprezece||}}"
+      "{{ro-RO|doisprezece||dois-pre-ZE-che}}",
+      "{{ro-RO|treisprezece||treis-pre-ZE-che}}",
+      "{{ro-RO|paisprezece||pais-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -387,11 +387,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'twelve'?",
-    "correctAnswer": "{{ro-RO|doisprezece||}}",
+    "correctAnswer": "{{ro-RO|doisprezece||dois-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|treisprezece||}}",
-      "{{ro-RO|paisprezece||}}",
-      "{{ro-RO|cincisprezece||}}"
+      "{{ro-RO|treisprezece||treis-pre-ZE-che}}",
+      "{{ro-RO|paisprezece||pais-pre-ZE-che}}",
+      "{{ro-RO|cincisprezece||cheen-chees-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -409,11 +409,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'thirteen' in everyday use?",
-    "correctAnswer": "{{ro-RO|treisprezece||}}",
+    "correctAnswer": "{{ro-RO|treisprezece||treis-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|paisprezece||}}",
-      "{{ro-RO|cincisprezece||}}",
-      "{{ro-RO|șaisprezece||}}"
+      "{{ro-RO|paisprezece||pais-pre-ZE-che}}",
+      "{{ro-RO|cincisprezece||cheen-chees-pre-ZE-che}}",
+      "{{ro-RO|șaisprezece||sais-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -431,11 +431,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'fourteen'.",
-    "correctAnswer": "{{ro-RO|paisprezece||}}",
+    "correctAnswer": "{{ro-RO|paisprezece||pais-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|cincisprezece||}}",
-      "{{ro-RO|șaisprezece||}}",
-      "{{ro-RO|șaptesprezece||}}"
+      "{{ro-RO|cincisprezece||cheen-chees-pre-ZE-che}}",
+      "{{ro-RO|șaisprezece||sais-pre-ZE-che}}",
+      "{{ro-RO|șaptesprezece||sap-tes-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -453,11 +453,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'fifteen'?",
-    "correctAnswer": "{{ro-RO|cincisprezece||}}",
+    "correctAnswer": "{{ro-RO|cincisprezece||cheen-chees-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|șaisprezece||}}",
-      "{{ro-RO|șaptesprezece||}}",
-      "{{ro-RO|optsprezece||}}"
+      "{{ro-RO|șaisprezece||sais-pre-ZE-che}}",
+      "{{ro-RO|șaptesprezece||sap-tes-pre-ZE-che}}",
+      "{{ro-RO|optsprezece||opts-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -475,11 +475,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'sixteen'?",
-    "correctAnswer": "{{ro-RO|șaisprezece||}}",
+    "correctAnswer": "{{ro-RO|șaisprezece||sais-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|șaptesprezece||}}",
-      "{{ro-RO|optsprezece||}}",
-      "{{ro-RO|nouăsprezece||}}"
+      "{{ro-RO|șaptesprezece||sap-tes-pre-ZE-che}}",
+      "{{ro-RO|optsprezece||opts-pre-ZE-che}}",
+      "{{ro-RO|nouăsprezece||nouas-pre-ZE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -497,11 +497,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'seventeen' in everyday use?",
-    "correctAnswer": "{{ro-RO|șaptesprezece||}}",
+    "correctAnswer": "{{ro-RO|șaptesprezece||sap-tes-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|optsprezece||}}",
-      "{{ro-RO|nouăsprezece||}}",
-      "{{ro-RO|douăzeci||}}"
+      "{{ro-RO|optsprezece||opts-pre-ZE-che}}",
+      "{{ro-RO|nouăsprezece||nouas-pre-ZE-che}}",
+      "{{ro-RO|douăzeci||doua-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -519,11 +519,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'eighteen'.",
-    "correctAnswer": "{{ro-RO|optsprezece||}}",
+    "correctAnswer": "{{ro-RO|optsprezece||opts-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|nouăsprezece||}}",
-      "{{ro-RO|douăzeci||}}",
-      "{{ro-RO|treizeci||}}"
+      "{{ro-RO|nouăsprezece||nouas-pre-ZE-che}}",
+      "{{ro-RO|douăzeci||doua-ZE-chee}}",
+      "{{ro-RO|treizeci||trei-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -541,11 +541,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'nineteen'?",
-    "correctAnswer": "{{ro-RO|nouăsprezece||}}",
+    "correctAnswer": "{{ro-RO|nouăsprezece||nouas-pre-ZE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|douăzeci||}}",
-      "{{ro-RO|treizeci||}}",
-      "{{ro-RO|patruzeci||}}"
+      "{{ro-RO|douăzeci||doua-ZE-chee}}",
+      "{{ro-RO|treizeci||trei-ZE-chee}}",
+      "{{ro-RO|patruzeci||pa-tru-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'twenty'?",
-    "correctAnswer": "{{ro-RO|douăzeci||}}",
+    "correctAnswer": "{{ro-RO|douăzeci||doua-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|treizeci||}}",
-      "{{ro-RO|patruzeci||}}",
-      "{{ro-RO|cincizeci||}}"
+      "{{ro-RO|treizeci||trei-ZE-chee}}",
+      "{{ro-RO|patruzeci||pa-tru-ZE-chee}}",
+      "{{ro-RO|cincizeci||cheen-chee-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -585,11 +585,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'thirty' in everyday use?",
-    "correctAnswer": "{{ro-RO|treizeci||}}",
+    "correctAnswer": "{{ro-RO|treizeci||trei-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|patruzeci||}}",
-      "{{ro-RO|cincizeci||}}",
-      "{{ro-RO|șaizeci||}}"
+      "{{ro-RO|patruzeci||pa-tru-ZE-chee}}",
+      "{{ro-RO|cincizeci||cheen-chee-ZE-chee}}",
+      "{{ro-RO|șaizeci||sai-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -607,11 +607,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'forty'.",
-    "correctAnswer": "{{ro-RO|patruzeci||}}",
+    "correctAnswer": "{{ro-RO|patruzeci||pa-tru-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|cincizeci||}}",
-      "{{ro-RO|șaizeci||}}",
-      "{{ro-RO|șaptezeci||}}"
+      "{{ro-RO|cincizeci||cheen-chee-ZE-chee}}",
+      "{{ro-RO|șaizeci||sai-ZE-chee}}",
+      "{{ro-RO|șaptezeci||sap-te-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -629,11 +629,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'fifty'?",
-    "correctAnswer": "{{ro-RO|cincizeci||}}",
+    "correctAnswer": "{{ro-RO|cincizeci||cheen-chee-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|șaizeci||}}",
-      "{{ro-RO|șaptezeci||}}",
-      "{{ro-RO|optzeci||}}"
+      "{{ro-RO|șaizeci||sai-ZE-chee}}",
+      "{{ro-RO|șaptezeci||sap-te-ZE-chee}}",
+      "{{ro-RO|optzeci||opt-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -651,11 +651,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'sixty'?",
-    "correctAnswer": "{{ro-RO|șaizeci||}}",
+    "correctAnswer": "{{ro-RO|șaizeci||sai-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|șaptezeci||}}",
-      "{{ro-RO|optzeci||}}",
-      "{{ro-RO|nouăzeci||}}"
+      "{{ro-RO|șaptezeci||sap-te-ZE-chee}}",
+      "{{ro-RO|optzeci||opt-ZE-chee}}",
+      "{{ro-RO|nouăzeci||noua-ZE-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -673,11 +673,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'seventy' in everyday use?",
-    "correctAnswer": "{{ro-RO|șaptezeci||}}",
+    "correctAnswer": "{{ro-RO|șaptezeci||sap-te-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|optzeci||}}",
-      "{{ro-RO|nouăzeci||}}",
-      "{{ro-RO|o sută||}}"
+      "{{ro-RO|optzeci||opt-ZE-chee}}",
+      "{{ro-RO|nouăzeci||noua-ZE-chee}}",
+      "{{ro-RO|o sută||O SU-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -695,11 +695,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'eighty'.",
-    "correctAnswer": "{{ro-RO|optzeci||}}",
+    "correctAnswer": "{{ro-RO|optzeci||opt-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|nouăzeci||}}",
-      "{{ro-RO|o sută||}}",
-      "{{ro-RO|primul||}}"
+      "{{ro-RO|nouăzeci||noua-ZE-chee}}",
+      "{{ro-RO|o sută||O SU-ta}}",
+      "{{ro-RO|primul||PRI-mul}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -717,11 +717,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'ninety'?",
-    "correctAnswer": "{{ro-RO|nouăzeci||}}",
+    "correctAnswer": "{{ro-RO|nouăzeci||noua-ZE-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|o sută||}}",
-      "{{ro-RO|primul||}}",
-      "{{ro-RO|al doilea||}}"
+      "{{ro-RO|o sută||O SU-ta}}",
+      "{{ro-RO|primul||PRI-mul}}",
+      "{{ro-RO|al doilea||AL doi-LEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -739,11 +739,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'one hundred'?",
-    "correctAnswer": "{{ro-RO|o sută||}}",
+    "correctAnswer": "{{ro-RO|o sută||O SU-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|primul||}}",
-      "{{ro-RO|al doilea||}}",
-      "{{ro-RO|al treilea||}}"
+      "{{ro-RO|primul||PRI-mul}}",
+      "{{ro-RO|al doilea||AL doi-LEA}}",
+      "{{ro-RO|al treilea||AL trei-LEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -761,11 +761,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'first'?",
-    "correctAnswer": "{{ro-RO|primul||}}",
+    "correctAnswer": "{{ro-RO|primul||PRI-mul}}",
     "incorrectAnswers": [
-      "{{ro-RO|al doilea||}}",
-      "{{ro-RO|al treilea||}}",
-      "{{ro-RO|jumătate||}}"
+      "{{ro-RO|al doilea||AL doi-LEA}}",
+      "{{ro-RO|al treilea||AL trei-LEA}}",
+      "{{ro-RO|jumătate||ju-ma-TA-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'second' in everyday use?",
-    "correctAnswer": "{{ro-RO|al doilea||}}",
+    "correctAnswer": "{{ro-RO|al doilea||AL doi-LEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|al treilea||}}",
-      "{{ro-RO|jumătate||}}",
-      "{{ro-RO|sfert||}}"
+      "{{ro-RO|al treilea||AL trei-LEA}}",
+      "{{ro-RO|jumătate||ju-ma-TA-te}}",
+      "{{ro-RO|sfert||SFERT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -805,11 +805,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'third'.",
-    "correctAnswer": "{{ro-RO|al treilea||}}",
+    "correctAnswer": "{{ro-RO|al treilea||AL trei-LEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|jumătate||}}",
-      "{{ro-RO|sfert||}}",
-      "{{ro-RO|luni||}}"
+      "{{ro-RO|jumătate||ju-ma-TA-te}}",
+      "{{ro-RO|sfert||SFERT}}",
+      "{{ro-RO|luni||LU-ni}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -827,11 +827,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'a half'?",
-    "correctAnswer": "{{ro-RO|jumătate||}}",
+    "correctAnswer": "{{ro-RO|jumătate||ju-ma-TA-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|sfert||}}",
-      "{{ro-RO|luni||}}",
-      "{{ro-RO|marți||}}"
+      "{{ro-RO|sfert||SFERT}}",
+      "{{ro-RO|luni||LU-ni}}",
+      "{{ro-RO|marți||MAR-ti}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -849,11 +849,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'a quarter'?",
-    "correctAnswer": "{{ro-RO|sfert||}}",
+    "correctAnswer": "{{ro-RO|sfert||SFERT}}",
     "incorrectAnswers": [
-      "{{ro-RO|luni||}}",
-      "{{ro-RO|marți||}}",
-      "{{ro-RO|miercuri||}}"
+      "{{ro-RO|luni||LU-ni}}",
+      "{{ro-RO|marți||MAR-ti}}",
+      "{{ro-RO|miercuri||mier-CU-ri}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -871,11 +871,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'Monday'?",
-    "correctAnswer": "{{ro-RO|luni||}}",
+    "correctAnswer": "{{ro-RO|luni||LU-ni}}",
     "incorrectAnswers": [
-      "{{ro-RO|marți||}}",
-      "{{ro-RO|miercuri||}}",
-      "{{ro-RO|joi||}}"
+      "{{ro-RO|marți||MAR-ti}}",
+      "{{ro-RO|miercuri||mier-CU-ri}}",
+      "{{ro-RO|joi||JOI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -893,11 +893,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'Tuesday' in everyday use?",
-    "correctAnswer": "{{ro-RO|marți||}}",
+    "correctAnswer": "{{ro-RO|marți||MAR-ti}}",
     "incorrectAnswers": [
-      "{{ro-RO|miercuri||}}",
-      "{{ro-RO|joi||}}",
-      "{{ro-RO|vineri||}}"
+      "{{ro-RO|miercuri||mier-CU-ri}}",
+      "{{ro-RO|joi||JOI}}",
+      "{{ro-RO|vineri||vi-NE-ri}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -915,11 +915,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'Wednesday'.",
-    "correctAnswer": "{{ro-RO|miercuri||}}",
+    "correctAnswer": "{{ro-RO|miercuri||mier-CU-ri}}",
     "incorrectAnswers": [
-      "{{ro-RO|joi||}}",
-      "{{ro-RO|vineri||}}",
-      "{{ro-RO|sâmbătă||}}"
+      "{{ro-RO|joi||JOI}}",
+      "{{ro-RO|vineri||vi-NE-ri}}",
+      "{{ro-RO|sâmbătă||sam-BA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -937,11 +937,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'Thursday'?",
-    "correctAnswer": "{{ro-RO|joi||}}",
+    "correctAnswer": "{{ro-RO|joi||JOI}}",
     "incorrectAnswers": [
-      "{{ro-RO|vineri||}}",
-      "{{ro-RO|sâmbătă||}}",
-      "{{ro-RO|duminică||}}"
+      "{{ro-RO|vineri||vi-NE-ri}}",
+      "{{ro-RO|sâmbătă||sam-BA-ta}}",
+      "{{ro-RO|duminică||du-mi-NI-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -959,11 +959,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'Friday'?",
-    "correctAnswer": "{{ro-RO|vineri||}}",
+    "correctAnswer": "{{ro-RO|vineri||vi-NE-ri}}",
     "incorrectAnswers": [
-      "{{ro-RO|sâmbătă||}}",
-      "{{ro-RO|duminică||}}",
-      "{{ro-RO|ianuarie||}}"
+      "{{ro-RO|sâmbătă||sam-BA-ta}}",
+      "{{ro-RO|duminică||du-mi-NI-ca}}",
+      "{{ro-RO|ianuarie||ia-NUA-rie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -981,11 +981,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'Saturday' in everyday use?",
-    "correctAnswer": "{{ro-RO|sâmbătă||}}",
+    "correctAnswer": "{{ro-RO|sâmbătă||sam-BA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|duminică||}}",
-      "{{ro-RO|ianuarie||}}",
-      "{{ro-RO|februarie||}}"
+      "{{ro-RO|duminică||du-mi-NI-ca}}",
+      "{{ro-RO|ianuarie||ia-NUA-rie}}",
+      "{{ro-RO|februarie||fe-BRUA-rie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'Sunday'.",
-    "correctAnswer": "{{ro-RO|duminică||}}",
+    "correctAnswer": "{{ro-RO|duminică||du-mi-NI-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|ianuarie||}}",
-      "{{ro-RO|februarie||}}",
-      "{{ro-RO|martie||}}"
+      "{{ro-RO|ianuarie||ia-NUA-rie}}",
+      "{{ro-RO|februarie||fe-BRUA-rie}}",
+      "{{ro-RO|martie||mar-TIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1025,11 +1025,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'January'?",
-    "correctAnswer": "{{ro-RO|ianuarie||}}",
+    "correctAnswer": "{{ro-RO|ianuarie||ia-NUA-rie}}",
     "incorrectAnswers": [
-      "{{ro-RO|februarie||}}",
-      "{{ro-RO|martie||}}",
-      "{{ro-RO|aprilie||}}"
+      "{{ro-RO|februarie||fe-BRUA-rie}}",
+      "{{ro-RO|martie||mar-TIE}}",
+      "{{ro-RO|aprilie||a-PRI-lie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1047,11 +1047,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'February' in everyday use?",
-    "correctAnswer": "{{ro-RO|februarie||}}",
+    "correctAnswer": "{{ro-RO|februarie||fe-BRUA-rie}}",
     "incorrectAnswers": [
-      "{{ro-RO|martie||}}",
-      "{{ro-RO|aprilie||}}",
-      "{{ro-RO|mai||}}"
+      "{{ro-RO|martie||mar-TIE}}",
+      "{{ro-RO|aprilie||a-PRI-lie}}",
+      "{{ro-RO|mai||MAI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1069,11 +1069,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'March'.",
-    "correctAnswer": "{{ro-RO|martie||}}",
+    "correctAnswer": "{{ro-RO|martie||mar-TIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|aprilie||}}",
-      "{{ro-RO|mai||}}",
-      "{{ro-RO|iunie||}}"
+      "{{ro-RO|aprilie||a-PRI-lie}}",
+      "{{ro-RO|mai||MAI}}",
+      "{{ro-RO|iunie||iu-NIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1091,11 +1091,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'April'?",
-    "correctAnswer": "{{ro-RO|aprilie||}}",
+    "correctAnswer": "{{ro-RO|aprilie||a-PRI-lie}}",
     "incorrectAnswers": [
-      "{{ro-RO|mai||}}",
-      "{{ro-RO|iunie||}}",
-      "{{ro-RO|iulie||}}"
+      "{{ro-RO|mai||MAI}}",
+      "{{ro-RO|iunie||iu-NIE}}",
+      "{{ro-RO|iulie||iu-LIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1113,11 +1113,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'May'?",
-    "correctAnswer": "{{ro-RO|mai||}}",
+    "correctAnswer": "{{ro-RO|mai||MAI}}",
     "incorrectAnswers": [
-      "{{ro-RO|iunie||}}",
-      "{{ro-RO|iulie||}}",
-      "{{ro-RO|august||}}"
+      "{{ro-RO|iunie||iu-NIE}}",
+      "{{ro-RO|iulie||iu-LIE}}",
+      "{{ro-RO|august||AU-gust}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1135,11 +1135,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'June' in everyday use?",
-    "correctAnswer": "{{ro-RO|iunie||}}",
+    "correctAnswer": "{{ro-RO|iunie||iu-NIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|iulie||}}",
-      "{{ro-RO|august||}}",
-      "{{ro-RO|septembrie||}}"
+      "{{ro-RO|iulie||iu-LIE}}",
+      "{{ro-RO|august||AU-gust}}",
+      "{{ro-RO|septembrie||sep-TEM-brie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1157,11 +1157,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'July'.",
-    "correctAnswer": "{{ro-RO|iulie||}}",
+    "correctAnswer": "{{ro-RO|iulie||iu-LIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|august||}}",
-      "{{ro-RO|septembrie||}}",
-      "{{ro-RO|octombrie||}}"
+      "{{ro-RO|august||AU-gust}}",
+      "{{ro-RO|septembrie||sep-TEM-brie}}",
+      "{{ro-RO|octombrie||oc-TOM-brie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1179,11 +1179,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'August'?",
-    "correctAnswer": "{{ro-RO|august||}}",
+    "correctAnswer": "{{ro-RO|august||AU-gust}}",
     "incorrectAnswers": [
-      "{{ro-RO|septembrie||}}",
-      "{{ro-RO|octombrie||}}",
-      "{{ro-RO|noiembrie||}}"
+      "{{ro-RO|septembrie||sep-TEM-brie}}",
+      "{{ro-RO|octombrie||oc-TOM-brie}}",
+      "{{ro-RO|noiembrie||noiem-BRIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1201,11 +1201,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'September'?",
-    "correctAnswer": "{{ro-RO|septembrie||}}",
+    "correctAnswer": "{{ro-RO|septembrie||sep-TEM-brie}}",
     "incorrectAnswers": [
-      "{{ro-RO|octombrie||}}",
-      "{{ro-RO|noiembrie||}}",
-      "{{ro-RO|decembrie||}}"
+      "{{ro-RO|octombrie||oc-TOM-brie}}",
+      "{{ro-RO|noiembrie||noiem-BRIE}}",
+      "{{ro-RO|decembrie||de-CHEM-brie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'October' in everyday use?",
-    "correctAnswer": "{{ro-RO|octombrie||}}",
+    "correctAnswer": "{{ro-RO|octombrie||oc-TOM-brie}}",
     "incorrectAnswers": [
-      "{{ro-RO|noiembrie||}}",
-      "{{ro-RO|decembrie||}}",
-      "{{ro-RO|primăvară||}}"
+      "{{ro-RO|noiembrie||noiem-BRIE}}",
+      "{{ro-RO|decembrie||de-CHEM-brie}}",
+      "{{ro-RO|primăvară||pri-ma-VA-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1245,11 +1245,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'November'.",
-    "correctAnswer": "{{ro-RO|noiembrie||}}",
+    "correctAnswer": "{{ro-RO|noiembrie||noiem-BRIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|decembrie||}}",
-      "{{ro-RO|primăvară||}}",
-      "{{ro-RO|vară||}}"
+      "{{ro-RO|decembrie||de-CHEM-brie}}",
+      "{{ro-RO|primăvară||pri-ma-VA-ra}}",
+      "{{ro-RO|vară||VA-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1267,11 +1267,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'December'?",
-    "correctAnswer": "{{ro-RO|decembrie||}}",
+    "correctAnswer": "{{ro-RO|decembrie||de-CHEM-brie}}",
     "incorrectAnswers": [
-      "{{ro-RO|primăvară||}}",
-      "{{ro-RO|vară||}}",
-      "{{ro-RO|toamnă||}}"
+      "{{ro-RO|primăvară||pri-ma-VA-ra}}",
+      "{{ro-RO|vară||VA-ra}}",
+      "{{ro-RO|toamnă||TOAM-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1289,11 +1289,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'spring'?",
-    "correctAnswer": "{{ro-RO|primăvară||}}",
+    "correctAnswer": "{{ro-RO|primăvară||pri-ma-VA-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|vară||}}",
-      "{{ro-RO|toamnă||}}",
-      "{{ro-RO|iarnă||}}"
+      "{{ro-RO|vară||VA-ra}}",
+      "{{ro-RO|toamnă||TOAM-na}}",
+      "{{ro-RO|iarnă||IAR-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1311,11 +1311,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'summer' in everyday use?",
-    "correctAnswer": "{{ro-RO|vară||}}",
+    "correctAnswer": "{{ro-RO|vară||VA-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|toamnă||}}",
-      "{{ro-RO|iarnă||}}",
-      "{{ro-RO|dimineață||}}"
+      "{{ro-RO|toamnă||TOAM-na}}",
+      "{{ro-RO|iarnă||IAR-na}}",
+      "{{ro-RO|dimineață||di-mi-NEA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1333,11 +1333,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'autumn'.",
-    "correctAnswer": "{{ro-RO|toamnă||}}",
+    "correctAnswer": "{{ro-RO|toamnă||TOAM-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|iarnă||}}",
-      "{{ro-RO|dimineață||}}",
-      "{{ro-RO|după-amiază||}}"
+      "{{ro-RO|iarnă||IAR-na}}",
+      "{{ro-RO|dimineață||di-mi-NEA-ta}}",
+      "{{ro-RO|după-amiază||DU-pa-a-MIA-za}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1355,11 +1355,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'winter'?",
-    "correctAnswer": "{{ro-RO|iarnă||}}",
+    "correctAnswer": "{{ro-RO|iarnă||IAR-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|dimineață||}}",
-      "{{ro-RO|după-amiază||}}",
-      "{{ro-RO|seară||}}"
+      "{{ro-RO|dimineață||di-mi-NEA-ta}}",
+      "{{ro-RO|după-amiază||DU-pa-a-MIA-za}}",
+      "{{ro-RO|seară||SEA-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1377,11 +1377,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'morning'?",
-    "correctAnswer": "{{ro-RO|dimineață||}}",
+    "correctAnswer": "{{ro-RO|dimineață||di-mi-NEA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|după-amiază||}}",
-      "{{ro-RO|seară||}}",
-      "{{ro-RO|oră||}}"
+      "{{ro-RO|după-amiază||DU-pa-a-MIA-za}}",
+      "{{ro-RO|seară||SEA-ra}}",
+      "{{ro-RO|oră||O-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1399,11 +1399,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'afternoon' in everyday use?",
-    "correctAnswer": "{{ro-RO|după-amiază||}}",
+    "correctAnswer": "{{ro-RO|după-amiază||DU-pa-a-MIA-za}}",
     "incorrectAnswers": [
-      "{{ro-RO|seară||}}",
-      "{{ro-RO|oră||}}",
-      "{{ro-RO|minut||}}"
+      "{{ro-RO|seară||SEA-ra}}",
+      "{{ro-RO|oră||O-ra}}",
+      "{{ro-RO|minut||MI-nut}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1421,11 +1421,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'evening'.",
-    "correctAnswer": "{{ro-RO|seară||}}",
+    "correctAnswer": "{{ro-RO|seară||SEA-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|oră||}}",
-      "{{ro-RO|minut||}}",
-      "{{ro-RO|săptămână||}}"
+      "{{ro-RO|oră||O-ra}}",
+      "{{ro-RO|minut||MI-nut}}",
+      "{{ro-RO|săptămână||sap-ta-MA-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'hour'?",
-    "correctAnswer": "{{ro-RO|oră||}}",
+    "correctAnswer": "{{ro-RO|oră||O-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|minut||}}",
-      "{{ro-RO|săptămână||}}",
-      "{{ro-RO|lună||}}"
+      "{{ro-RO|minut||MI-nut}}",
+      "{{ro-RO|săptămână||sap-ta-MA-na}}",
+      "{{ro-RO|lună||LU-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1465,11 +1465,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'minute'?",
-    "correctAnswer": "{{ro-RO|minut||}}",
+    "correctAnswer": "{{ro-RO|minut||MI-nut}}",
     "incorrectAnswers": [
-      "{{ro-RO|săptămână||}}",
-      "{{ro-RO|lună||}}",
-      "{{ro-RO|an||}}"
+      "{{ro-RO|săptămână||sap-ta-MA-na}}",
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|an||AN}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1487,11 +1487,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'week' in everyday use?",
-    "correctAnswer": "{{ro-RO|săptămână||}}",
+    "correctAnswer": "{{ro-RO|săptămână||sap-ta-MA-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|lună||}}",
-      "{{ro-RO|an||}}",
-      "{{ro-RO|astăzi||}}"
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|an||AN}}",
+      "{{ro-RO|astăzi||as-TA-zi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1509,11 +1509,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'month'.",
-    "correctAnswer": "{{ro-RO|lună||}}",
+    "correctAnswer": "{{ro-RO|lună||LU-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|an||}}",
-      "{{ro-RO|astăzi||}}",
-      "{{ro-RO|mâine||}}"
+      "{{ro-RO|an||AN}}",
+      "{{ro-RO|astăzi||as-TA-zi}}",
+      "{{ro-RO|mâine||MAI-ne}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1531,11 +1531,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'year'?",
-    "correctAnswer": "{{ro-RO|an||}}",
+    "correctAnswer": "{{ro-RO|an||AN}}",
     "incorrectAnswers": [
-      "{{ro-RO|astăzi||}}",
-      "{{ro-RO|mâine||}}",
-      "{{ro-RO|ieri||}}"
+      "{{ro-RO|astăzi||as-TA-zi}}",
+      "{{ro-RO|mâine||MAI-ne}}",
+      "{{ro-RO|ieri||IE-ri}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1553,11 +1553,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'today'?",
-    "correctAnswer": "{{ro-RO|astăzi||}}",
+    "correctAnswer": "{{ro-RO|astăzi||as-TA-zi}}",
     "incorrectAnswers": [
-      "{{ro-RO|mâine||}}",
-      "{{ro-RO|ieri||}}",
-      "{{ro-RO|acum||}}"
+      "{{ro-RO|mâine||MAI-ne}}",
+      "{{ro-RO|ieri||IE-ri}}",
+      "{{ro-RO|acum||A-cum}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1575,11 +1575,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'tomorrow' in everyday use?",
-    "correctAnswer": "{{ro-RO|mâine||}}",
+    "correctAnswer": "{{ro-RO|mâine||MAI-ne}}",
     "incorrectAnswers": [
-      "{{ro-RO|ieri||}}",
-      "{{ro-RO|acum||}}",
-      "{{ro-RO|mai târziu||}}"
+      "{{ro-RO|ieri||IE-ri}}",
+      "{{ro-RO|acum||A-cum}}",
+      "{{ro-RO|mai târziu||MAI tar-ZIU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1597,11 +1597,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'yesterday'.",
-    "correctAnswer": "{{ro-RO|ieri||}}",
+    "correctAnswer": "{{ro-RO|ieri||IE-ri}}",
     "incorrectAnswers": [
-      "{{ro-RO|acum||}}",
-      "{{ro-RO|mai târziu||}}",
-      "{{ro-RO|înainte||}}"
+      "{{ro-RO|acum||A-cum}}",
+      "{{ro-RO|mai târziu||MAI tar-ZIU}}",
+      "{{ro-RO|înainte||i-NAIN-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1619,11 +1619,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'now'?",
-    "correctAnswer": "{{ro-RO|acum||}}",
+    "correctAnswer": "{{ro-RO|acum||A-cum}}",
     "incorrectAnswers": [
-      "{{ro-RO|mai târziu||}}",
-      "{{ro-RO|înainte||}}",
-      "{{ro-RO|roșu||}}"
+      "{{ro-RO|mai târziu||MAI tar-ZIU}}",
+      "{{ro-RO|înainte||i-NAIN-te}}",
+      "{{ro-RO|roșu||RO-su}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1641,11 +1641,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'later'?",
-    "correctAnswer": "{{ro-RO|mai târziu||}}",
+    "correctAnswer": "{{ro-RO|mai târziu||MAI tar-ZIU}}",
     "incorrectAnswers": [
-      "{{ro-RO|înainte||}}",
-      "{{ro-RO|roșu||}}",
-      "{{ro-RO|albastru||}}"
+      "{{ro-RO|înainte||i-NAIN-te}}",
+      "{{ro-RO|roșu||RO-su}}",
+      "{{ro-RO|albastru||al-BAS-tru}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'before' in everyday use?",
-    "correctAnswer": "{{ro-RO|înainte||}}",
+    "correctAnswer": "{{ro-RO|înainte||i-NAIN-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|roșu||}}",
-      "{{ro-RO|albastru||}}",
-      "{{ro-RO|verde||}}"
+      "{{ro-RO|roșu||RO-su}}",
+      "{{ro-RO|albastru||al-BAS-tru}}",
+      "{{ro-RO|verde||VER-de}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1685,11 +1685,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'red'?",
-    "correctAnswer": "{{ro-RO|roșu||}}",
+    "correctAnswer": "{{ro-RO|roșu||RO-su}}",
     "incorrectAnswers": [
-      "{{ro-RO|albastru||}}",
-      "{{ro-RO|verde||}}",
-      "{{ro-RO|galben||}}"
+      "{{ro-RO|albastru||al-BAS-tru}}",
+      "{{ro-RO|verde||VER-de}}",
+      "{{ro-RO|galben||GAL-ben}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1707,11 +1707,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'blue' in everyday use?",
-    "correctAnswer": "{{ro-RO|albastru||}}",
+    "correctAnswer": "{{ro-RO|albastru||al-BAS-tru}}",
     "incorrectAnswers": [
-      "{{ro-RO|verde||}}",
-      "{{ro-RO|galben||}}",
-      "{{ro-RO|negru||}}"
+      "{{ro-RO|verde||VER-de}}",
+      "{{ro-RO|galben||GAL-ben}}",
+      "{{ro-RO|negru||NE-gru}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1729,11 +1729,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'green'.",
-    "correctAnswer": "{{ro-RO|verde||}}",
+    "correctAnswer": "{{ro-RO|verde||VER-de}}",
     "incorrectAnswers": [
-      "{{ro-RO|galben||}}",
-      "{{ro-RO|negru||}}",
-      "{{ro-RO|alb||}}"
+      "{{ro-RO|galben||GAL-ben}}",
+      "{{ro-RO|negru||NE-gru}}",
+      "{{ro-RO|alb||ALB}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1751,11 +1751,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'yellow'?",
-    "correctAnswer": "{{ro-RO|galben||}}",
+    "correctAnswer": "{{ro-RO|galben||GAL-ben}}",
     "incorrectAnswers": [
-      "{{ro-RO|negru||}}",
-      "{{ro-RO|alb||}}",
-      "{{ro-RO|gri||}}"
+      "{{ro-RO|negru||NE-gru}}",
+      "{{ro-RO|alb||ALB}}",
+      "{{ro-RO|gri||GRI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1773,11 +1773,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'black'?",
-    "correctAnswer": "{{ro-RO|negru||}}",
+    "correctAnswer": "{{ro-RO|negru||NE-gru}}",
     "incorrectAnswers": [
-      "{{ro-RO|alb||}}",
-      "{{ro-RO|gri||}}",
-      "{{ro-RO|maro||}}"
+      "{{ro-RO|alb||ALB}}",
+      "{{ro-RO|gri||GRI}}",
+      "{{ro-RO|maro||MA-ro}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1795,11 +1795,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'white' in everyday use?",
-    "correctAnswer": "{{ro-RO|alb||}}",
+    "correctAnswer": "{{ro-RO|alb||ALB}}",
     "incorrectAnswers": [
-      "{{ro-RO|gri||}}",
-      "{{ro-RO|maro||}}",
-      "{{ro-RO|portocaliu||}}"
+      "{{ro-RO|gri||GRI}}",
+      "{{ro-RO|maro||MA-ro}}",
+      "{{ro-RO|portocaliu||por-to-CA-liu}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1817,11 +1817,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'gray'.",
-    "correctAnswer": "{{ro-RO|gri||}}",
+    "correctAnswer": "{{ro-RO|gri||GRI}}",
     "incorrectAnswers": [
-      "{{ro-RO|maro||}}",
-      "{{ro-RO|portocaliu||}}",
-      "{{ro-RO|roz||}}"
+      "{{ro-RO|maro||MA-ro}}",
+      "{{ro-RO|portocaliu||por-to-CA-liu}}",
+      "{{ro-RO|roz||ROZ}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1839,11 +1839,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'brown'?",
-    "correctAnswer": "{{ro-RO|maro||}}",
+    "correctAnswer": "{{ro-RO|maro||MA-ro}}",
     "incorrectAnswers": [
-      "{{ro-RO|portocaliu||}}",
-      "{{ro-RO|roz||}}",
-      "{{ro-RO|mov||}}"
+      "{{ro-RO|portocaliu||por-to-CA-liu}}",
+      "{{ro-RO|roz||ROZ}}",
+      "{{ro-RO|mov||MOV}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1861,11 +1861,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'orange'?",
-    "correctAnswer": "{{ro-RO|portocaliu||}}",
+    "correctAnswer": "{{ro-RO|portocaliu||por-to-CA-liu}}",
     "incorrectAnswers": [
-      "{{ro-RO|roz||}}",
-      "{{ro-RO|mov||}}",
-      "{{ro-RO|deschis||}}"
+      "{{ro-RO|roz||ROZ}}",
+      "{{ro-RO|mov||MOV}}",
+      "{{ro-RO|deschis||DES-chis}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'pink' in everyday use?",
-    "correctAnswer": "{{ro-RO|roz||}}",
+    "correctAnswer": "{{ro-RO|roz||ROZ}}",
     "incorrectAnswers": [
-      "{{ro-RO|mov||}}",
-      "{{ro-RO|deschis||}}",
-      "{{ro-RO|închis||}}"
+      "{{ro-RO|mov||MOV}}",
+      "{{ro-RO|deschis||DES-chis}}",
+      "{{ro-RO|închis||IN-chis}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1905,11 +1905,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'purple'.",
-    "correctAnswer": "{{ro-RO|mov||}}",
+    "correctAnswer": "{{ro-RO|mov||MOV}}",
     "incorrectAnswers": [
-      "{{ro-RO|deschis||}}",
-      "{{ro-RO|închis||}}",
-      "{{ro-RO|mamă||}}"
+      "{{ro-RO|deschis||DES-chis}}",
+      "{{ro-RO|închis||IN-chis}}",
+      "{{ro-RO|mamă||MA-ma}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1927,11 +1927,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'light'?",
-    "correctAnswer": "{{ro-RO|deschis||}}",
+    "correctAnswer": "{{ro-RO|deschis||DES-chis}}",
     "incorrectAnswers": [
-      "{{ro-RO|închis||}}",
-      "{{ro-RO|mamă||}}",
-      "{{ro-RO|tată||}}"
+      "{{ro-RO|închis||IN-chis}}",
+      "{{ro-RO|mamă||MA-ma}}",
+      "{{ro-RO|tată||TA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1949,11 +1949,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'dark'?",
-    "correctAnswer": "{{ro-RO|închis||}}",
+    "correctAnswer": "{{ro-RO|închis||IN-chis}}",
     "incorrectAnswers": [
-      "{{ro-RO|mamă||}}",
-      "{{ro-RO|tată||}}",
-      "{{ro-RO|frate||}}"
+      "{{ro-RO|mamă||MA-ma}}",
+      "{{ro-RO|tată||TA-ta}}",
+      "{{ro-RO|frate||FRA-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1971,11 +1971,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'mother'?",
-    "correctAnswer": "{{ro-RO|mamă||}}",
+    "correctAnswer": "{{ro-RO|mamă||MA-ma}}",
     "incorrectAnswers": [
-      "{{ro-RO|tată||}}",
-      "{{ro-RO|frate||}}",
-      "{{ro-RO|soră||}}"
+      "{{ro-RO|tată||TA-ta}}",
+      "{{ro-RO|frate||FRA-te}}",
+      "{{ro-RO|soră||SO-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -1993,11 +1993,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'father' in everyday use?",
-    "correctAnswer": "{{ro-RO|tată||}}",
+    "correctAnswer": "{{ro-RO|tată||TA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|frate||}}",
-      "{{ro-RO|soră||}}",
-      "{{ro-RO|fiu||}}"
+      "{{ro-RO|frate||FRA-te}}",
+      "{{ro-RO|soră||SO-ra}}",
+      "{{ro-RO|fiu||FIU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2015,11 +2015,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'brother'.",
-    "correctAnswer": "{{ro-RO|frate||}}",
+    "correctAnswer": "{{ro-RO|frate||FRA-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|soră||}}",
-      "{{ro-RO|fiu||}}",
-      "{{ro-RO|fiică||}}"
+      "{{ro-RO|soră||SO-ra}}",
+      "{{ro-RO|fiu||FIU}}",
+      "{{ro-RO|fiică||FII-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2037,11 +2037,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'sister'?",
-    "correctAnswer": "{{ro-RO|soră||}}",
+    "correctAnswer": "{{ro-RO|soră||SO-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|fiu||}}",
-      "{{ro-RO|fiică||}}",
-      "{{ro-RO|soț||}}"
+      "{{ro-RO|fiu||FIU}}",
+      "{{ro-RO|fiică||FII-ca}}",
+      "{{ro-RO|soț||SOT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2059,11 +2059,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'son'?",
-    "correctAnswer": "{{ro-RO|fiu||}}",
+    "correctAnswer": "{{ro-RO|fiu||FIU}}",
     "incorrectAnswers": [
-      "{{ro-RO|fiică||}}",
-      "{{ro-RO|soț||}}",
-      "{{ro-RO|soție||}}"
+      "{{ro-RO|fiică||FII-ca}}",
+      "{{ro-RO|soț||SOT}}",
+      "{{ro-RO|soție||so-TIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2081,11 +2081,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'daughter' in everyday use?",
-    "correctAnswer": "{{ro-RO|fiică||}}",
+    "correctAnswer": "{{ro-RO|fiică||FII-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|soț||}}",
-      "{{ro-RO|soție||}}",
-      "{{ro-RO|prieten||}}"
+      "{{ro-RO|soț||SOT}}",
+      "{{ro-RO|soție||so-TIE}}",
+      "{{ro-RO|prieten||PRIE-ten}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'husband'.",
-    "correctAnswer": "{{ro-RO|soț||}}",
+    "correctAnswer": "{{ro-RO|soț||SOT}}",
     "incorrectAnswers": [
-      "{{ro-RO|soție||}}",
-      "{{ro-RO|prieten||}}",
-      "{{ro-RO|vecin||}}"
+      "{{ro-RO|soție||so-TIE}}",
+      "{{ro-RO|prieten||PRIE-ten}}",
+      "{{ro-RO|vecin||VE-cheen}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2125,11 +2125,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'wife'?",
-    "correctAnswer": "{{ro-RO|soție||}}",
+    "correctAnswer": "{{ro-RO|soție||so-TIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|prieten||}}",
-      "{{ro-RO|vecin||}}",
-      "{{ro-RO|copil||}}"
+      "{{ro-RO|prieten||PRIE-ten}}",
+      "{{ro-RO|vecin||VE-cheen}}",
+      "{{ro-RO|copil||CO-pil}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2147,11 +2147,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'friend'?",
-    "correctAnswer": "{{ro-RO|prieten||}}",
+    "correctAnswer": "{{ro-RO|prieten||PRIE-ten}}",
     "incorrectAnswers": [
-      "{{ro-RO|vecin||}}",
-      "{{ro-RO|copil||}}",
-      "{{ro-RO|bebeluș||}}"
+      "{{ro-RO|vecin||VE-cheen}}",
+      "{{ro-RO|copil||CO-pil}}",
+      "{{ro-RO|bebeluș||be-BE-lus}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2169,11 +2169,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'neighbor' in everyday use?",
-    "correctAnswer": "{{ro-RO|vecin||}}",
+    "correctAnswer": "{{ro-RO|vecin||VE-cheen}}",
     "incorrectAnswers": [
-      "{{ro-RO|copil||}}",
-      "{{ro-RO|bebeluș||}}",
-      "{{ro-RO|bărbat||}}"
+      "{{ro-RO|copil||CO-pil}}",
+      "{{ro-RO|bebeluș||be-BE-lus}}",
+      "{{ro-RO|bărbat||BAR-bat}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2191,11 +2191,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'child'.",
-    "correctAnswer": "{{ro-RO|copil||}}",
+    "correctAnswer": "{{ro-RO|copil||CO-pil}}",
     "incorrectAnswers": [
-      "{{ro-RO|bebeluș||}}",
-      "{{ro-RO|bărbat||}}",
-      "{{ro-RO|femeie||}}"
+      "{{ro-RO|bebeluș||be-BE-lus}}",
+      "{{ro-RO|bărbat||BAR-bat}}",
+      "{{ro-RO|femeie||fe-MEIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2213,11 +2213,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'baby'?",
-    "correctAnswer": "{{ro-RO|bebeluș||}}",
+    "correctAnswer": "{{ro-RO|bebeluș||be-BE-lus}}",
     "incorrectAnswers": [
-      "{{ro-RO|bărbat||}}",
-      "{{ro-RO|femeie||}}",
-      "{{ro-RO|persoană||}}"
+      "{{ro-RO|bărbat||BAR-bat}}",
+      "{{ro-RO|femeie||fe-MEIE}}",
+      "{{ro-RO|persoană||per-SOA-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2235,11 +2235,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'man'?",
-    "correctAnswer": "{{ro-RO|bărbat||}}",
+    "correctAnswer": "{{ro-RO|bărbat||BAR-bat}}",
     "incorrectAnswers": [
-      "{{ro-RO|femeie||}}",
-      "{{ro-RO|persoană||}}",
-      "{{ro-RO|cap||}}"
+      "{{ro-RO|femeie||fe-MEIE}}",
+      "{{ro-RO|persoană||per-SOA-na}}",
+      "{{ro-RO|cap||CAP}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2257,11 +2257,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'woman' in everyday use?",
-    "correctAnswer": "{{ro-RO|femeie||}}",
+    "correctAnswer": "{{ro-RO|femeie||fe-MEIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|persoană||}}",
-      "{{ro-RO|cap||}}",
-      "{{ro-RO|mână||}}"
+      "{{ro-RO|persoană||per-SOA-na}}",
+      "{{ro-RO|cap||CAP}}",
+      "{{ro-RO|mână||MA-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2279,11 +2279,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'person'.",
-    "correctAnswer": "{{ro-RO|persoană||}}",
+    "correctAnswer": "{{ro-RO|persoană||per-SOA-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|cap||}}",
-      "{{ro-RO|mână||}}",
-      "{{ro-RO|picior||}}"
+      "{{ro-RO|cap||CAP}}",
+      "{{ro-RO|mână||MA-na}}",
+      "{{ro-RO|picior||PI-cheeor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2301,11 +2301,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'head'?",
-    "correctAnswer": "{{ro-RO|cap||}}",
+    "correctAnswer": "{{ro-RO|cap||CAP}}",
     "incorrectAnswers": [
-      "{{ro-RO|mână||}}",
-      "{{ro-RO|picior||}}",
-      "{{ro-RO|ochi||}}"
+      "{{ro-RO|mână||MA-na}}",
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|ochi||O-chi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'hand' in everyday use?",
-    "correctAnswer": "{{ro-RO|mână||}}",
+    "correctAnswer": "{{ro-RO|mână||MA-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|picior||}}",
-      "{{ro-RO|ochi||}}",
-      "{{ro-RO|ureche||}}"
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|ochi||O-chi}}",
+      "{{ro-RO|ureche||u-RE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2345,11 +2345,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'foot'.",
-    "correctAnswer": "{{ro-RO|picior||}}",
+    "correctAnswer": "{{ro-RO|picior||PI-cheeor}}",
     "incorrectAnswers": [
-      "{{ro-RO|ochi||}}",
-      "{{ro-RO|ureche||}}",
-      "{{ro-RO|nas||}}"
+      "{{ro-RO|ochi||O-chi}}",
+      "{{ro-RO|ureche||u-RE-che}}",
+      "{{ro-RO|nas||NAS}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2367,11 +2367,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'eye'?",
-    "correctAnswer": "{{ro-RO|ochi||}}",
+    "correctAnswer": "{{ro-RO|ochi||O-chi}}",
     "incorrectAnswers": [
-      "{{ro-RO|ureche||}}",
-      "{{ro-RO|nas||}}",
-      "{{ro-RO|gură||}}"
+      "{{ro-RO|ureche||u-RE-che}}",
+      "{{ro-RO|nas||NAS}}",
+      "{{ro-RO|gură||GU-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2389,11 +2389,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'ear'?",
-    "correctAnswer": "{{ro-RO|ureche||}}",
+    "correctAnswer": "{{ro-RO|ureche||u-RE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|nas||}}",
-      "{{ro-RO|gură||}}",
-      "{{ro-RO|inimă||}}"
+      "{{ro-RO|nas||NAS}}",
+      "{{ro-RO|gură||GU-ra}}",
+      "{{ro-RO|inimă||i-NI-ma}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2411,11 +2411,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'nose' in everyday use?",
-    "correctAnswer": "{{ro-RO|nas||}}",
+    "correctAnswer": "{{ro-RO|nas||NAS}}",
     "incorrectAnswers": [
-      "{{ro-RO|gură||}}",
-      "{{ro-RO|inimă||}}",
-      "{{ro-RO|stomac||}}"
+      "{{ro-RO|gură||GU-ra}}",
+      "{{ro-RO|inimă||i-NI-ma}}",
+      "{{ro-RO|stomac||STO-mac}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2433,11 +2433,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'mouth'.",
-    "correctAnswer": "{{ro-RO|gură||}}",
+    "correctAnswer": "{{ro-RO|gură||GU-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|inimă||}}",
-      "{{ro-RO|stomac||}}",
-      "{{ro-RO|braț||}}"
+      "{{ro-RO|inimă||i-NI-ma}}",
+      "{{ro-RO|stomac||STO-mac}}",
+      "{{ro-RO|braț||BRAT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2455,11 +2455,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'heart'?",
-    "correctAnswer": "{{ro-RO|inimă||}}",
+    "correctAnswer": "{{ro-RO|inimă||i-NI-ma}}",
     "incorrectAnswers": [
-      "{{ro-RO|stomac||}}",
-      "{{ro-RO|braț||}}",
-      "{{ro-RO|picior||}}"
+      "{{ro-RO|stomac||STO-mac}}",
+      "{{ro-RO|braț||BRAT}}",
+      "{{ro-RO|picior||PI-cheeor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2477,11 +2477,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'stomach'?",
-    "correctAnswer": "{{ro-RO|stomac||}}",
+    "correctAnswer": "{{ro-RO|stomac||STO-mac}}",
     "incorrectAnswers": [
-      "{{ro-RO|braț||}}",
-      "{{ro-RO|picior||}}",
-      "{{ro-RO|deget||}}"
+      "{{ro-RO|braț||BRAT}}",
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|deget||DE-jet}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2499,11 +2499,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'arm' in everyday use?",
-    "correctAnswer": "{{ro-RO|braț||}}",
+    "correctAnswer": "{{ro-RO|braț||BRAT}}",
     "incorrectAnswers": [
-      "{{ro-RO|picior||}}",
-      "{{ro-RO|deget||}}",
-      "{{ro-RO|spate||}}"
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|deget||DE-jet}}",
+      "{{ro-RO|spate||SPA-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2521,11 +2521,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'leg'.",
-    "correctAnswer": "{{ro-RO|picior||}}",
+    "correctAnswer": "{{ro-RO|picior||PI-cheeor}}",
     "incorrectAnswers": [
-      "{{ro-RO|deget||}}",
-      "{{ro-RO|spate||}}",
-      "{{ro-RO|pâine||}}"
+      "{{ro-RO|deget||DE-jet}}",
+      "{{ro-RO|spate||SPA-te}}",
+      "{{ro-RO|pâine||PAI-ne}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'finger'?",
-    "correctAnswer": "{{ro-RO|deget||}}",
+    "correctAnswer": "{{ro-RO|deget||DE-jet}}",
     "incorrectAnswers": [
-      "{{ro-RO|spate||}}",
-      "{{ro-RO|pâine||}}",
-      "{{ro-RO|lapte||}}"
+      "{{ro-RO|spate||SPA-te}}",
+      "{{ro-RO|pâine||PAI-ne}}",
+      "{{ro-RO|lapte||LAP-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2565,11 +2565,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'back'?",
-    "correctAnswer": "{{ro-RO|spate||}}",
+    "correctAnswer": "{{ro-RO|spate||SPA-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|pâine||}}",
-      "{{ro-RO|lapte||}}",
-      "{{ro-RO|ou||}}"
+      "{{ro-RO|pâine||PAI-ne}}",
+      "{{ro-RO|lapte||LAP-te}}",
+      "{{ro-RO|ou||OU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2587,11 +2587,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'bread'?",
-    "correctAnswer": "{{ro-RO|pâine||}}",
+    "correctAnswer": "{{ro-RO|pâine||PAI-ne}}",
     "incorrectAnswers": [
-      "{{ro-RO|lapte||}}",
-      "{{ro-RO|ou||}}",
-      "{{ro-RO|carne||}}"
+      "{{ro-RO|lapte||LAP-te}}",
+      "{{ro-RO|ou||OU}}",
+      "{{ro-RO|carne||CAR-ne}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2609,11 +2609,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'milk' in everyday use?",
-    "correctAnswer": "{{ro-RO|lapte||}}",
+    "correctAnswer": "{{ro-RO|lapte||LAP-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|ou||}}",
-      "{{ro-RO|carne||}}",
-      "{{ro-RO|pește||}}"
+      "{{ro-RO|ou||OU}}",
+      "{{ro-RO|carne||CAR-ne}}",
+      "{{ro-RO|pește||PES-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2631,11 +2631,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'egg'.",
-    "correctAnswer": "{{ro-RO|ou||}}",
+    "correctAnswer": "{{ro-RO|ou||OU}}",
     "incorrectAnswers": [
-      "{{ro-RO|carne||}}",
-      "{{ro-RO|pește||}}",
-      "{{ro-RO|fruct||}}"
+      "{{ro-RO|carne||CAR-ne}}",
+      "{{ro-RO|pește||PES-te}}",
+      "{{ro-RO|fruct||FRUCT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2653,11 +2653,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'meat'?",
-    "correctAnswer": "{{ro-RO|carne||}}",
+    "correctAnswer": "{{ro-RO|carne||CAR-ne}}",
     "incorrectAnswers": [
-      "{{ro-RO|pește||}}",
-      "{{ro-RO|fruct||}}",
-      "{{ro-RO|legumă||}}"
+      "{{ro-RO|pește||PES-te}}",
+      "{{ro-RO|fruct||FRUCT}}",
+      "{{ro-RO|legumă||le-GU-ma}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2675,11 +2675,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'fish'?",
-    "correctAnswer": "{{ro-RO|pește||}}",
+    "correctAnswer": "{{ro-RO|pește||PES-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|fruct||}}",
-      "{{ro-RO|legumă||}}",
-      "{{ro-RO|orez||}}"
+      "{{ro-RO|fruct||FRUCT}}",
+      "{{ro-RO|legumă||le-GU-ma}}",
+      "{{ro-RO|orez||o-REZ}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2697,11 +2697,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'fruit' in everyday use?",
-    "correctAnswer": "{{ro-RO|fruct||}}",
+    "correctAnswer": "{{ro-RO|fruct||FRUCT}}",
     "incorrectAnswers": [
-      "{{ro-RO|legumă||}}",
-      "{{ro-RO|orez||}}",
-      "{{ro-RO|paste||}}"
+      "{{ro-RO|legumă||le-GU-ma}}",
+      "{{ro-RO|orez||o-REZ}}",
+      "{{ro-RO|paste||PAS-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2719,11 +2719,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'vegetable'.",
-    "correctAnswer": "{{ro-RO|legumă||}}",
+    "correctAnswer": "{{ro-RO|legumă||le-GU-ma}}",
     "incorrectAnswers": [
-      "{{ro-RO|orez||}}",
-      "{{ro-RO|paste||}}",
-      "{{ro-RO|brânză||}}"
+      "{{ro-RO|orez||o-REZ}}",
+      "{{ro-RO|paste||PAS-te}}",
+      "{{ro-RO|brânză||BRAN-za}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2741,11 +2741,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'rice'?",
-    "correctAnswer": "{{ro-RO|orez||}}",
+    "correctAnswer": "{{ro-RO|orez||o-REZ}}",
     "incorrectAnswers": [
-      "{{ro-RO|paste||}}",
-      "{{ro-RO|brânză||}}",
-      "{{ro-RO|cafea||}}"
+      "{{ro-RO|paste||PAS-te}}",
+      "{{ro-RO|brânză||BRAN-za}}",
+      "{{ro-RO|cafea||ca-FEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'pasta'?",
-    "correctAnswer": "{{ro-RO|paste||}}",
+    "correctAnswer": "{{ro-RO|paste||PAS-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|brânză||}}",
-      "{{ro-RO|cafea||}}",
-      "{{ro-RO|ceai||}}"
+      "{{ro-RO|brânză||BRAN-za}}",
+      "{{ro-RO|cafea||ca-FEA}}",
+      "{{ro-RO|ceai||CHEAI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2785,11 +2785,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'cheese' in everyday use?",
-    "correctAnswer": "{{ro-RO|brânză||}}",
+    "correctAnswer": "{{ro-RO|brânză||BRAN-za}}",
     "incorrectAnswers": [
-      "{{ro-RO|cafea||}}",
-      "{{ro-RO|ceai||}}",
-      "{{ro-RO|suc||}}"
+      "{{ro-RO|cafea||ca-FEA}}",
+      "{{ro-RO|ceai||CHEAI}}",
+      "{{ro-RO|suc||SUC}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2807,11 +2807,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'coffee'.",
-    "correctAnswer": "{{ro-RO|cafea||}}",
+    "correctAnswer": "{{ro-RO|cafea||ca-FEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|ceai||}}",
-      "{{ro-RO|suc||}}",
-      "{{ro-RO|bere||}}"
+      "{{ro-RO|ceai||CHEAI}}",
+      "{{ro-RO|suc||SUC}}",
+      "{{ro-RO|bere||BE-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2829,11 +2829,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'tea'?",
-    "correctAnswer": "{{ro-RO|ceai||}}",
+    "correctAnswer": "{{ro-RO|ceai||CHEAI}}",
     "incorrectAnswers": [
-      "{{ro-RO|suc||}}",
-      "{{ro-RO|bere||}}",
-      "{{ro-RO|vin||}}"
+      "{{ro-RO|suc||SUC}}",
+      "{{ro-RO|bere||BE-re}}",
+      "{{ro-RO|vin||VIN}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2851,11 +2851,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'juice'?",
-    "correctAnswer": "{{ro-RO|suc||}}",
+    "correctAnswer": "{{ro-RO|suc||SUC}}",
     "incorrectAnswers": [
-      "{{ro-RO|bere||}}",
-      "{{ro-RO|vin||}}",
-      "{{ro-RO|ulei||}}"
+      "{{ro-RO|bere||BE-re}}",
+      "{{ro-RO|vin||VIN}}",
+      "{{ro-RO|ulei||U-lei}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2873,11 +2873,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'beer' in everyday use?",
-    "correctAnswer": "{{ro-RO|bere||}}",
+    "correctAnswer": "{{ro-RO|bere||BE-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|vin||}}",
-      "{{ro-RO|ulei||}}",
-      "{{ro-RO|sare||}}"
+      "{{ro-RO|vin||VIN}}",
+      "{{ro-RO|ulei||U-lei}}",
+      "{{ro-RO|sare||SA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2895,11 +2895,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'wine'.",
-    "correctAnswer": "{{ro-RO|vin||}}",
+    "correctAnswer": "{{ro-RO|vin||VIN}}",
     "incorrectAnswers": [
-      "{{ro-RO|ulei||}}",
-      "{{ro-RO|sare||}}",
-      "{{ro-RO|zahăr||}}"
+      "{{ro-RO|ulei||U-lei}}",
+      "{{ro-RO|sare||SA-re}}",
+      "{{ro-RO|zahăr||ZA-har}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2917,11 +2917,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'oil'?",
-    "correctAnswer": "{{ro-RO|ulei||}}",
+    "correctAnswer": "{{ro-RO|ulei||U-lei}}",
     "incorrectAnswers": [
-      "{{ro-RO|sare||}}",
-      "{{ro-RO|zahăr||}}",
-      "{{ro-RO|câine||}}"
+      "{{ro-RO|sare||SA-re}}",
+      "{{ro-RO|zahăr||ZA-har}}",
+      "{{ro-RO|câine||CAI-ne}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2939,11 +2939,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'salt'?",
-    "correctAnswer": "{{ro-RO|sare||}}",
+    "correctAnswer": "{{ro-RO|sare||SA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|zahăr||}}",
-      "{{ro-RO|câine||}}",
-      "{{ro-RO|pisică||}}"
+      "{{ro-RO|zahăr||ZA-har}}",
+      "{{ro-RO|câine||CAI-ne}}",
+      "{{ro-RO|pisică||pi-SI-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2961,11 +2961,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'sugar' in everyday use?",
-    "correctAnswer": "{{ro-RO|zahăr||}}",
+    "correctAnswer": "{{ro-RO|zahăr||ZA-har}}",
     "incorrectAnswers": [
-      "{{ro-RO|câine||}}",
-      "{{ro-RO|pisică||}}",
-      "{{ro-RO|pasăre||}}"
+      "{{ro-RO|câine||CAI-ne}}",
+      "{{ro-RO|pisică||pi-SI-ca}}",
+      "{{ro-RO|pasăre||pa-SA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'dog'?",
-    "correctAnswer": "{{ro-RO|câine||}}",
+    "correctAnswer": "{{ro-RO|câine||CAI-ne}}",
     "incorrectAnswers": [
-      "{{ro-RO|pisică||}}",
-      "{{ro-RO|pasăre||}}",
-      "{{ro-RO|cal||}}"
+      "{{ro-RO|pisică||pi-SI-ca}}",
+      "{{ro-RO|pasăre||pa-SA-re}}",
+      "{{ro-RO|cal||CAL}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3005,11 +3005,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'cat' in everyday use?",
-    "correctAnswer": "{{ro-RO|pisică||}}",
+    "correctAnswer": "{{ro-RO|pisică||pi-SI-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|pasăre||}}",
-      "{{ro-RO|cal||}}",
-      "{{ro-RO|vacă||}}"
+      "{{ro-RO|pasăre||pa-SA-re}}",
+      "{{ro-RO|cal||CAL}}",
+      "{{ro-RO|vacă||VA-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3027,11 +3027,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'bird'.",
-    "correctAnswer": "{{ro-RO|pasăre||}}",
+    "correctAnswer": "{{ro-RO|pasăre||pa-SA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|cal||}}",
-      "{{ro-RO|vacă||}}",
-      "{{ro-RO|porc||}}"
+      "{{ro-RO|cal||CAL}}",
+      "{{ro-RO|vacă||VA-ca}}",
+      "{{ro-RO|porc||PORC}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3049,11 +3049,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'horse'?",
-    "correctAnswer": "{{ro-RO|cal||}}",
+    "correctAnswer": "{{ro-RO|cal||CAL}}",
     "incorrectAnswers": [
-      "{{ro-RO|vacă||}}",
-      "{{ro-RO|porc||}}",
-      "{{ro-RO|pui||}}"
+      "{{ro-RO|vacă||VA-ca}}",
+      "{{ro-RO|porc||PORC}}",
+      "{{ro-RO|pui||PUI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3071,11 +3071,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'cow'?",
-    "correctAnswer": "{{ro-RO|vacă||}}",
+    "correctAnswer": "{{ro-RO|vacă||VA-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|porc||}}",
-      "{{ro-RO|pui||}}",
-      "{{ro-RO|șoarece||}}"
+      "{{ro-RO|porc||PORC}}",
+      "{{ro-RO|pui||PUI}}",
+      "{{ro-RO|șoarece||soa-RE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3093,11 +3093,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'pig' in everyday use?",
-    "correctAnswer": "{{ro-RO|porc||}}",
+    "correctAnswer": "{{ro-RO|porc||PORC}}",
     "incorrectAnswers": [
-      "{{ro-RO|pui||}}",
-      "{{ro-RO|șoarece||}}",
-      "{{ro-RO|iepure||}}"
+      "{{ro-RO|pui||PUI}}",
+      "{{ro-RO|șoarece||soa-RE-che}}",
+      "{{ro-RO|iepure||ie-PU-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3115,11 +3115,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'chicken'.",
-    "correctAnswer": "{{ro-RO|pui||}}",
+    "correctAnswer": "{{ro-RO|pui||PUI}}",
     "incorrectAnswers": [
-      "{{ro-RO|șoarece||}}",
-      "{{ro-RO|iepure||}}",
-      "{{ro-RO|casă||}}"
+      "{{ro-RO|șoarece||soa-RE-che}}",
+      "{{ro-RO|iepure||ie-PU-re}}",
+      "{{ro-RO|casă||CA-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3137,11 +3137,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'mouse'?",
-    "correctAnswer": "{{ro-RO|șoarece||}}",
+    "correctAnswer": "{{ro-RO|șoarece||soa-RE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|iepure||}}",
-      "{{ro-RO|casă||}}",
-      "{{ro-RO|cameră||}}"
+      "{{ro-RO|iepure||ie-PU-re}}",
+      "{{ro-RO|casă||CA-sa}}",
+      "{{ro-RO|cameră||ca-ME-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3159,11 +3159,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'rabbit'?",
-    "correctAnswer": "{{ro-RO|iepure||}}",
+    "correctAnswer": "{{ro-RO|iepure||ie-PU-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|casă||}}",
-      "{{ro-RO|cameră||}}",
-      "{{ro-RO|ușă||}}"
+      "{{ro-RO|casă||CA-sa}}",
+      "{{ro-RO|cameră||ca-ME-ra}}",
+      "{{ro-RO|ușă||U-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3181,11 +3181,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'house'?",
-    "correctAnswer": "{{ro-RO|casă||}}",
+    "correctAnswer": "{{ro-RO|casă||CA-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|cameră||}}",
-      "{{ro-RO|ușă||}}",
-      "{{ro-RO|fereastră||}}"
+      "{{ro-RO|cameră||ca-ME-ra}}",
+      "{{ro-RO|ușă||U-sa}}",
+      "{{ro-RO|fereastră||fe-REAS-tra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'room' in everyday use?",
-    "correctAnswer": "{{ro-RO|cameră||}}",
+    "correctAnswer": "{{ro-RO|cameră||ca-ME-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|ușă||}}",
-      "{{ro-RO|fereastră||}}",
-      "{{ro-RO|pat||}}"
+      "{{ro-RO|ușă||U-sa}}",
+      "{{ro-RO|fereastră||fe-REAS-tra}}",
+      "{{ro-RO|pat||PAT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3225,11 +3225,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'door'.",
-    "correctAnswer": "{{ro-RO|ușă||}}",
+    "correctAnswer": "{{ro-RO|ușă||U-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|fereastră||}}",
-      "{{ro-RO|pat||}}",
-      "{{ro-RO|masă||}}"
+      "{{ro-RO|fereastră||fe-REAS-tra}}",
+      "{{ro-RO|pat||PAT}}",
+      "{{ro-RO|masă||MA-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3247,11 +3247,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'window'?",
-    "correctAnswer": "{{ro-RO|fereastră||}}",
+    "correctAnswer": "{{ro-RO|fereastră||fe-REAS-tra}}",
     "incorrectAnswers": [
-      "{{ro-RO|pat||}}",
-      "{{ro-RO|masă||}}",
-      "{{ro-RO|scaun||}}"
+      "{{ro-RO|pat||PAT}}",
+      "{{ro-RO|masă||MA-sa}}",
+      "{{ro-RO|scaun||SCAUN}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3269,11 +3269,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'bed'?",
-    "correctAnswer": "{{ro-RO|pat||}}",
+    "correctAnswer": "{{ro-RO|pat||PAT}}",
     "incorrectAnswers": [
-      "{{ro-RO|masă||}}",
-      "{{ro-RO|scaun||}}",
-      "{{ro-RO|bucătărie||}}"
+      "{{ro-RO|masă||MA-sa}}",
+      "{{ro-RO|scaun||SCAUN}}",
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3291,11 +3291,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'table' in everyday use?",
-    "correctAnswer": "{{ro-RO|masă||}}",
+    "correctAnswer": "{{ro-RO|masă||MA-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|scaun||}}",
-      "{{ro-RO|bucătărie||}}",
-      "{{ro-RO|baie||}}"
+      "{{ro-RO|scaun||SCAUN}}",
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
+      "{{ro-RO|baie||BAIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3313,11 +3313,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'chair'.",
-    "correctAnswer": "{{ro-RO|scaun||}}",
+    "correctAnswer": "{{ro-RO|scaun||SCAUN}}",
     "incorrectAnswers": [
-      "{{ro-RO|bucătărie||}}",
-      "{{ro-RO|baie||}}",
-      "{{ro-RO|grădină||}}"
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
+      "{{ro-RO|baie||BAIE}}",
+      "{{ro-RO|grădină||gra-DI-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3335,11 +3335,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'kitchen'?",
-    "correctAnswer": "{{ro-RO|bucătărie||}}",
+    "correctAnswer": "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
     "incorrectAnswers": [
-      "{{ro-RO|baie||}}",
-      "{{ro-RO|grădină||}}",
-      "{{ro-RO|podea||}}"
+      "{{ro-RO|baie||BAIE}}",
+      "{{ro-RO|grădină||gra-DI-na}}",
+      "{{ro-RO|podea||po-DEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3357,11 +3357,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'bathroom'?",
-    "correctAnswer": "{{ro-RO|baie||}}",
+    "correctAnswer": "{{ro-RO|baie||BAIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|grădină||}}",
-      "{{ro-RO|podea||}}",
-      "{{ro-RO|perete||}}"
+      "{{ro-RO|grădină||gra-DI-na}}",
+      "{{ro-RO|podea||po-DEA}}",
+      "{{ro-RO|perete||pe-RE-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3379,11 +3379,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'garden' in everyday use?",
-    "correctAnswer": "{{ro-RO|grădină||}}",
+    "correctAnswer": "{{ro-RO|grădină||gra-DI-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|podea||}}",
-      "{{ro-RO|perete||}}",
-      "{{ro-RO|acoperiș||}}"
+      "{{ro-RO|podea||po-DEA}}",
+      "{{ro-RO|perete||pe-RE-te}}",
+      "{{ro-RO|acoperiș||a-co-PE-ris}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3401,11 +3401,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'floor'.",
-    "correctAnswer": "{{ro-RO|podea||}}",
+    "correctAnswer": "{{ro-RO|podea||po-DEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|perete||}}",
-      "{{ro-RO|acoperiș||}}",
-      "{{ro-RO|lampă||}}"
+      "{{ro-RO|perete||pe-RE-te}}",
+      "{{ro-RO|acoperiș||a-co-PE-ris}}",
+      "{{ro-RO|lampă||LAM-pa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'wall'?",
-    "correctAnswer": "{{ro-RO|perete||}}",
+    "correctAnswer": "{{ro-RO|perete||pe-RE-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|acoperiș||}}",
-      "{{ro-RO|lampă||}}",
-      "{{ro-RO|cămașă||}}"
+      "{{ro-RO|acoperiș||a-co-PE-ris}}",
+      "{{ro-RO|lampă||LAM-pa}}",
+      "{{ro-RO|cămașă||ca-MA-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3445,11 +3445,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'roof'?",
-    "correctAnswer": "{{ro-RO|acoperiș||}}",
+    "correctAnswer": "{{ro-RO|acoperiș||a-co-PE-ris}}",
     "incorrectAnswers": [
-      "{{ro-RO|lampă||}}",
-      "{{ro-RO|cămașă||}}",
-      "{{ro-RO|pantaloni||}}"
+      "{{ro-RO|lampă||LAM-pa}}",
+      "{{ro-RO|cămașă||ca-MA-sa}}",
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3467,11 +3467,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'lamp' in everyday use?",
-    "correctAnswer": "{{ro-RO|lampă||}}",
+    "correctAnswer": "{{ro-RO|lampă||LAM-pa}}",
     "incorrectAnswers": [
-      "{{ro-RO|cămașă||}}",
-      "{{ro-RO|pantaloni||}}",
-      "{{ro-RO|rochie||}}"
+      "{{ro-RO|cămașă||ca-MA-sa}}",
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
+      "{{ro-RO|rochie||ro-CHIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3489,11 +3489,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'shirt'?",
-    "correctAnswer": "{{ro-RO|cămașă||}}",
+    "correctAnswer": "{{ro-RO|cămașă||ca-MA-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|pantaloni||}}",
-      "{{ro-RO|rochie||}}",
-      "{{ro-RO|pantofi||}}"
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
+      "{{ro-RO|rochie||ro-CHIE}}",
+      "{{ro-RO|pantofi||pan-TO-fi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3511,11 +3511,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'pants' in everyday use?",
-    "correctAnswer": "{{ro-RO|pantaloni||}}",
+    "correctAnswer": "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
     "incorrectAnswers": [
-      "{{ro-RO|rochie||}}",
-      "{{ro-RO|pantofi||}}",
-      "{{ro-RO|șosete||}}"
+      "{{ro-RO|rochie||ro-CHIE}}",
+      "{{ro-RO|pantofi||pan-TO-fi}}",
+      "{{ro-RO|șosete||so-SE-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3533,11 +3533,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'dress'.",
-    "correctAnswer": "{{ro-RO|rochie||}}",
+    "correctAnswer": "{{ro-RO|rochie||ro-CHIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|pantofi||}}",
-      "{{ro-RO|șosete||}}",
-      "{{ro-RO|jachetă||}}"
+      "{{ro-RO|pantofi||pan-TO-fi}}",
+      "{{ro-RO|șosete||so-SE-te}}",
+      "{{ro-RO|jachetă||ja-CHE-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3555,11 +3555,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'shoes'?",
-    "correctAnswer": "{{ro-RO|pantofi||}}",
+    "correctAnswer": "{{ro-RO|pantofi||pan-TO-fi}}",
     "incorrectAnswers": [
-      "{{ro-RO|șosete||}}",
-      "{{ro-RO|jachetă||}}",
-      "{{ro-RO|pălărie||}}"
+      "{{ro-RO|șosete||so-SE-te}}",
+      "{{ro-RO|jachetă||ja-CHE-ta}}",
+      "{{ro-RO|pălărie||pa-LA-rie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3577,11 +3577,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'socks'?",
-    "correctAnswer": "{{ro-RO|șosete||}}",
+    "correctAnswer": "{{ro-RO|șosete||so-SE-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|jachetă||}}",
-      "{{ro-RO|pălărie||}}",
-      "{{ro-RO|geantă||}}"
+      "{{ro-RO|jachetă||ja-CHE-ta}}",
+      "{{ro-RO|pălărie||pa-LA-rie}}",
+      "{{ro-RO|geantă||JEAN-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3599,11 +3599,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'jacket' in everyday use?",
-    "correctAnswer": "{{ro-RO|jachetă||}}",
+    "correctAnswer": "{{ro-RO|jachetă||ja-CHE-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|pălărie||}}",
-      "{{ro-RO|geantă||}}",
-      "{{ro-RO|palton||}}"
+      "{{ro-RO|pălărie||pa-LA-rie}}",
+      "{{ro-RO|geantă||JEAN-ta}}",
+      "{{ro-RO|palton||PAL-ton}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3621,11 +3621,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'hat'.",
-    "correctAnswer": "{{ro-RO|pălărie||}}",
+    "correctAnswer": "{{ro-RO|pălărie||pa-LA-rie}}",
     "incorrectAnswers": [
-      "{{ro-RO|geantă||}}",
-      "{{ro-RO|palton||}}",
-      "{{ro-RO|mașină||}}"
+      "{{ro-RO|geantă||JEAN-ta}}",
+      "{{ro-RO|palton||PAL-ton}}",
+      "{{ro-RO|mașină||ma-SI-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'bag'?",
-    "correctAnswer": "{{ro-RO|geantă||}}",
+    "correctAnswer": "{{ro-RO|geantă||JEAN-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|palton||}}",
-      "{{ro-RO|mașină||}}",
-      "{{ro-RO|autobuz||}}"
+      "{{ro-RO|palton||PAL-ton}}",
+      "{{ro-RO|mașină||ma-SI-na}}",
+      "{{ro-RO|autobuz||au-TO-buz}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3665,11 +3665,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'coat'?",
-    "correctAnswer": "{{ro-RO|palton||}}",
+    "correctAnswer": "{{ro-RO|palton||PAL-ton}}",
     "incorrectAnswers": [
-      "{{ro-RO|mașină||}}",
-      "{{ro-RO|autobuz||}}",
-      "{{ro-RO|tren||}}"
+      "{{ro-RO|mașină||ma-SI-na}}",
+      "{{ro-RO|autobuz||au-TO-buz}}",
+      "{{ro-RO|tren||TREN}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3687,11 +3687,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'car'?",
-    "correctAnswer": "{{ro-RO|mașină||}}",
+    "correctAnswer": "{{ro-RO|mașină||ma-SI-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|autobuz||}}",
-      "{{ro-RO|tren||}}",
-      "{{ro-RO|avion||}}"
+      "{{ro-RO|autobuz||au-TO-buz}}",
+      "{{ro-RO|tren||TREN}}",
+      "{{ro-RO|avion||A-vion}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3709,11 +3709,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'bus' in everyday use?",
-    "correctAnswer": "{{ro-RO|autobuz||}}",
+    "correctAnswer": "{{ro-RO|autobuz||au-TO-buz}}",
     "incorrectAnswers": [
-      "{{ro-RO|tren||}}",
-      "{{ro-RO|avion||}}",
-      "{{ro-RO|bicicletă||}}"
+      "{{ro-RO|tren||TREN}}",
+      "{{ro-RO|avion||A-vion}}",
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3731,11 +3731,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'train'.",
-    "correctAnswer": "{{ro-RO|tren||}}",
+    "correctAnswer": "{{ro-RO|tren||TREN}}",
     "incorrectAnswers": [
-      "{{ro-RO|avion||}}",
-      "{{ro-RO|bicicletă||}}",
-      "{{ro-RO|barcă||}}"
+      "{{ro-RO|avion||A-vion}}",
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
+      "{{ro-RO|barcă||BAR-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3753,11 +3753,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'plane'?",
-    "correctAnswer": "{{ro-RO|avion||}}",
+    "correctAnswer": "{{ro-RO|avion||A-vion}}",
     "incorrectAnswers": [
-      "{{ro-RO|bicicletă||}}",
-      "{{ro-RO|barcă||}}",
-      "{{ro-RO|taxi||}}"
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
+      "{{ro-RO|barcă||BAR-ca}}",
+      "{{ro-RO|taxi||TA-xi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3775,11 +3775,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'bicycle'?",
-    "correctAnswer": "{{ro-RO|bicicletă||}}",
+    "correctAnswer": "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|barcă||}}",
-      "{{ro-RO|taxi||}}",
-      "{{ro-RO|metrou||}}"
+      "{{ro-RO|barcă||BAR-ca}}",
+      "{{ro-RO|taxi||TA-xi}}",
+      "{{ro-RO|metrou||ME-trou}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3797,11 +3797,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'boat' in everyday use?",
-    "correctAnswer": "{{ro-RO|barcă||}}",
+    "correctAnswer": "{{ro-RO|barcă||BAR-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|taxi||}}",
-      "{{ro-RO|metrou||}}",
-      "{{ro-RO|soare||}}"
+      "{{ro-RO|taxi||TA-xi}}",
+      "{{ro-RO|metrou||ME-trou}}",
+      "{{ro-RO|soare||SOA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3819,11 +3819,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'taxi'.",
-    "correctAnswer": "{{ro-RO|taxi||}}",
+    "correctAnswer": "{{ro-RO|taxi||TA-xi}}",
     "incorrectAnswers": [
-      "{{ro-RO|metrou||}}",
-      "{{ro-RO|soare||}}",
-      "{{ro-RO|lună||}}"
+      "{{ro-RO|metrou||ME-trou}}",
+      "{{ro-RO|soare||SOA-re}}",
+      "{{ro-RO|lună||LU-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3841,11 +3841,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'metro'?",
-    "correctAnswer": "{{ro-RO|metrou||}}",
+    "correctAnswer": "{{ro-RO|metrou||ME-trou}}",
     "incorrectAnswers": [
-      "{{ro-RO|soare||}}",
-      "{{ro-RO|lună||}}",
-      "{{ro-RO|stea||}}"
+      "{{ro-RO|soare||SOA-re}}",
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|stea||STEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'sun'?",
-    "correctAnswer": "{{ro-RO|soare||}}",
+    "correctAnswer": "{{ro-RO|soare||SOA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|lună||}}",
-      "{{ro-RO|stea||}}",
-      "{{ro-RO|ploaie||}}"
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|stea||STEA}}",
+      "{{ro-RO|ploaie||PLOAIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3885,11 +3885,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'moon' in everyday use?",
-    "correctAnswer": "{{ro-RO|lună||}}",
+    "correctAnswer": "{{ro-RO|lună||LU-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|stea||}}",
-      "{{ro-RO|ploaie||}}",
-      "{{ro-RO|zăpadă||}}"
+      "{{ro-RO|stea||STEA}}",
+      "{{ro-RO|ploaie||PLOAIE}}",
+      "{{ro-RO|zăpadă||za-PA-da}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3907,11 +3907,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'star'.",
-    "correctAnswer": "{{ro-RO|stea||}}",
+    "correctAnswer": "{{ro-RO|stea||STEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|ploaie||}}",
-      "{{ro-RO|zăpadă||}}",
-      "{{ro-RO|vânt||}}"
+      "{{ro-RO|ploaie||PLOAIE}}",
+      "{{ro-RO|zăpadă||za-PA-da}}",
+      "{{ro-RO|vânt||VANT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3929,11 +3929,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'rain'?",
-    "correctAnswer": "{{ro-RO|ploaie||}}",
+    "correctAnswer": "{{ro-RO|ploaie||PLOAIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|zăpadă||}}",
-      "{{ro-RO|vânt||}}",
-      "{{ro-RO|nor||}}"
+      "{{ro-RO|zăpadă||za-PA-da}}",
+      "{{ro-RO|vânt||VANT}}",
+      "{{ro-RO|nor||NOR}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3951,11 +3951,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'snow'?",
-    "correctAnswer": "{{ro-RO|zăpadă||}}",
+    "correctAnswer": "{{ro-RO|zăpadă||za-PA-da}}",
     "incorrectAnswers": [
-      "{{ro-RO|vânt||}}",
-      "{{ro-RO|nor||}}",
-      "{{ro-RO|munte||}}"
+      "{{ro-RO|vânt||VANT}}",
+      "{{ro-RO|nor||NOR}}",
+      "{{ro-RO|munte||MUN-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3973,11 +3973,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'wind' in everyday use?",
-    "correctAnswer": "{{ro-RO|vânt||}}",
+    "correctAnswer": "{{ro-RO|vânt||VANT}}",
     "incorrectAnswers": [
-      "{{ro-RO|nor||}}",
-      "{{ro-RO|munte||}}",
-      "{{ro-RO|râu||}}"
+      "{{ro-RO|nor||NOR}}",
+      "{{ro-RO|munte||MUN-te}}",
+      "{{ro-RO|râu||RAU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -3995,11 +3995,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'cloud'.",
-    "correctAnswer": "{{ro-RO|nor||}}",
+    "correctAnswer": "{{ro-RO|nor||NOR}}",
     "incorrectAnswers": [
-      "{{ro-RO|munte||}}",
-      "{{ro-RO|râu||}}",
-      "{{ro-RO|mare||}}"
+      "{{ro-RO|munte||MUN-te}}",
+      "{{ro-RO|râu||RAU}}",
+      "{{ro-RO|mare||MA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4017,11 +4017,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'mountain'?",
-    "correctAnswer": "{{ro-RO|munte||}}",
+    "correctAnswer": "{{ro-RO|munte||MUN-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|râu||}}",
-      "{{ro-RO|mare||}}",
-      "{{ro-RO|plajă||}}"
+      "{{ro-RO|râu||RAU}}",
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|plajă||PLA-ja}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4039,11 +4039,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'river'?",
-    "correctAnswer": "{{ro-RO|râu||}}",
+    "correctAnswer": "{{ro-RO|râu||RAU}}",
     "incorrectAnswers": [
-      "{{ro-RO|mare||}}",
-      "{{ro-RO|plajă||}}",
-      "{{ro-RO|pădure||}}"
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|plajă||PLA-ja}}",
+      "{{ro-RO|pădure||pa-DU-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4061,11 +4061,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'sea' in everyday use?",
-    "correctAnswer": "{{ro-RO|mare||}}",
+    "correctAnswer": "{{ro-RO|mare||MA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|plajă||}}",
-      "{{ro-RO|pădure||}}",
-      "{{ro-RO|copac||}}"
+      "{{ro-RO|plajă||PLA-ja}}",
+      "{{ro-RO|pădure||pa-DU-re}}",
+      "{{ro-RO|copac||CO-pac}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4083,11 +4083,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'beach'.",
-    "correctAnswer": "{{ro-RO|plajă||}}",
+    "correctAnswer": "{{ro-RO|plajă||PLA-ja}}",
     "incorrectAnswers": [
-      "{{ro-RO|pădure||}}",
-      "{{ro-RO|copac||}}",
-      "{{ro-RO|floare||}}"
+      "{{ro-RO|pădure||pa-DU-re}}",
+      "{{ro-RO|copac||CO-pac}}",
+      "{{ro-RO|floare||FLOA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4105,11 +4105,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'forest'?",
-    "correctAnswer": "{{ro-RO|pădure||}}",
+    "correctAnswer": "{{ro-RO|pădure||pa-DU-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|copac||}}",
-      "{{ro-RO|floare||}}",
-      "{{ro-RO|vreme||}}"
+      "{{ro-RO|copac||CO-pac}}",
+      "{{ro-RO|floare||FLOA-re}}",
+      "{{ro-RO|vreme||VRE-me}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4127,11 +4127,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'tree'?",
-    "correctAnswer": "{{ro-RO|copac||}}",
+    "correctAnswer": "{{ro-RO|copac||CO-pac}}",
     "incorrectAnswers": [
-      "{{ro-RO|floare||}}",
-      "{{ro-RO|vreme||}}",
-      "{{ro-RO|a fi||}}"
+      "{{ro-RO|floare||FLOA-re}}",
+      "{{ro-RO|vreme||VRE-me}}",
+      "{{ro-RO|a fi||A FI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4149,11 +4149,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'flower' in everyday use?",
-    "correctAnswer": "{{ro-RO|floare||}}",
+    "correctAnswer": "{{ro-RO|floare||FLOA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|vreme||}}",
-      "{{ro-RO|a fi||}}",
-      "{{ro-RO|a avea||}}"
+      "{{ro-RO|vreme||VRE-me}}",
+      "{{ro-RO|a fi||A FI}}",
+      "{{ro-RO|a avea||A a-VEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4171,11 +4171,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'weather'.",
-    "correctAnswer": "{{ro-RO|vreme||}}",
+    "correctAnswer": "{{ro-RO|vreme||VRE-me}}",
     "incorrectAnswers": [
-      "{{ro-RO|a fi||}}",
-      "{{ro-RO|a avea||}}",
-      "{{ro-RO|a vrea||}}"
+      "{{ro-RO|a fi||A FI}}",
+      "{{ro-RO|a avea||A a-VEA}}",
+      "{{ro-RO|a vrea||A VREA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4193,11 +4193,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'be'?",
-    "correctAnswer": "{{ro-RO|a fi||}}",
+    "correctAnswer": "{{ro-RO|a fi||A FI}}",
     "incorrectAnswers": [
-      "{{ro-RO|a avea||}}",
-      "{{ro-RO|a vrea||}}",
-      "{{ro-RO|a avea nevoie||}}"
+      "{{ro-RO|a avea||A a-VEA}}",
+      "{{ro-RO|a vrea||A VREA}}",
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4214,11 +4214,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'have' in everyday use?",
-    "correctAnswer": "{{ro-RO|a avea||}}",
+    "correctAnswer": "{{ro-RO|a avea||A a-VEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a vrea||}}",
-      "{{ro-RO|a avea nevoie||}}",
-      "{{ro-RO|a merge||}}"
+      "{{ro-RO|a vrea||A VREA}}",
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
+      "{{ro-RO|a merge||A MER-je}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4235,11 +4235,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'want'.",
-    "correctAnswer": "{{ro-RO|a vrea||}}",
+    "correctAnswer": "{{ro-RO|a vrea||A VREA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a avea nevoie||}}",
-      "{{ro-RO|a merge||}}",
-      "{{ro-RO|a veni||}}"
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
+      "{{ro-RO|a merge||A MER-je}}",
+      "{{ro-RO|a veni||A VE-ni}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4256,11 +4256,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'need'?",
-    "correctAnswer": "{{ro-RO|a avea nevoie||}}",
+    "correctAnswer": "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|a merge||}}",
-      "{{ro-RO|a veni||}}",
-      "{{ro-RO|a mânca||}}"
+      "{{ro-RO|a merge||A MER-je}}",
+      "{{ro-RO|a veni||A VE-ni}}",
+      "{{ro-RO|a mânca||A MAN-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4277,11 +4277,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'go'?",
-    "correctAnswer": "{{ro-RO|a merge||}}",
+    "correctAnswer": "{{ro-RO|a merge||A MER-je}}",
     "incorrectAnswers": [
-      "{{ro-RO|a veni||}}",
-      "{{ro-RO|a mânca||}}",
-      "{{ro-RO|a bea||}}"
+      "{{ro-RO|a veni||A VE-ni}}",
+      "{{ro-RO|a mânca||A MAN-ca}}",
+      "{{ro-RO|a bea||A BEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4298,11 +4298,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'come' in everyday use?",
-    "correctAnswer": "{{ro-RO|a veni||}}",
+    "correctAnswer": "{{ro-RO|a veni||A VE-ni}}",
     "incorrectAnswers": [
-      "{{ro-RO|a mânca||}}",
-      "{{ro-RO|a bea||}}",
-      "{{ro-RO|a dormi||}}"
+      "{{ro-RO|a mânca||A MAN-ca}}",
+      "{{ro-RO|a bea||A BEA}}",
+      "{{ro-RO|a dormi||A DOR-mi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4319,11 +4319,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'eat'.",
-    "correctAnswer": "{{ro-RO|a mânca||}}",
+    "correctAnswer": "{{ro-RO|a mânca||A MAN-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|a bea||}}",
-      "{{ro-RO|a dormi||}}",
-      "{{ro-RO|a se trezi||}}"
+      "{{ro-RO|a bea||A BEA}}",
+      "{{ro-RO|a dormi||A DOR-mi}}",
+      "{{ro-RO|a se trezi||A SE TRE-zi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4340,11 +4340,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'drink'?",
-    "correctAnswer": "{{ro-RO|a bea||}}",
+    "correctAnswer": "{{ro-RO|a bea||A BEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a dormi||}}",
-      "{{ro-RO|a se trezi||}}",
-      "{{ro-RO|a lucra||}}"
+      "{{ro-RO|a dormi||A DOR-mi}}",
+      "{{ro-RO|a se trezi||A SE TRE-zi}}",
+      "{{ro-RO|a lucra||A LU-cra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4361,11 +4361,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'sleep'?",
-    "correctAnswer": "{{ro-RO|a dormi||}}",
+    "correctAnswer": "{{ro-RO|a dormi||A DOR-mi}}",
     "incorrectAnswers": [
-      "{{ro-RO|a se trezi||}}",
-      "{{ro-RO|a lucra||}}",
-      "{{ro-RO|a vorbi||}}"
+      "{{ro-RO|a se trezi||A SE TRE-zi}}",
+      "{{ro-RO|a lucra||A LU-cra}}",
+      "{{ro-RO|a vorbi||A VOR-bi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4382,11 +4382,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'wake up' in everyday use?",
-    "correctAnswer": "{{ro-RO|a se trezi||}}",
+    "correctAnswer": "{{ro-RO|a se trezi||A SE TRE-zi}}",
     "incorrectAnswers": [
-      "{{ro-RO|a lucra||}}",
-      "{{ro-RO|a vorbi||}}",
-      "{{ro-RO|a auzi||}}"
+      "{{ro-RO|a lucra||A LU-cra}}",
+      "{{ro-RO|a vorbi||A VOR-bi}}",
+      "{{ro-RO|a auzi||A AU-zi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4403,11 +4403,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'work'.",
-    "correctAnswer": "{{ro-RO|a lucra||}}",
+    "correctAnswer": "{{ro-RO|a lucra||A LU-cra}}",
     "incorrectAnswers": [
-      "{{ro-RO|a vorbi||}}",
-      "{{ro-RO|a auzi||}}",
-      "{{ro-RO|a vedea||}}"
+      "{{ro-RO|a vorbi||A VOR-bi}}",
+      "{{ro-RO|a auzi||A AU-zi}}",
+      "{{ro-RO|a vedea||A ve-DEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4424,11 +4424,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'speak'?",
-    "correctAnswer": "{{ro-RO|a vorbi||}}",
+    "correctAnswer": "{{ro-RO|a vorbi||A VOR-bi}}",
     "incorrectAnswers": [
-      "{{ro-RO|a auzi||}}",
-      "{{ro-RO|a vedea||}}",
-      "{{ro-RO|a citi||}}"
+      "{{ro-RO|a auzi||A AU-zi}}",
+      "{{ro-RO|a vedea||A ve-DEA}}",
+      "{{ro-RO|a citi||A CHEE-ti}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4445,11 +4445,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'hear'?",
-    "correctAnswer": "{{ro-RO|a auzi||}}",
+    "correctAnswer": "{{ro-RO|a auzi||A AU-zi}}",
     "incorrectAnswers": [
-      "{{ro-RO|a vedea||}}",
-      "{{ro-RO|a citi||}}",
-      "{{ro-RO|a scrie||}}"
+      "{{ro-RO|a vedea||A ve-DEA}}",
+      "{{ro-RO|a citi||A CHEE-ti}}",
+      "{{ro-RO|a scrie||A SCRIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4466,11 +4466,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'see' in everyday use?",
-    "correctAnswer": "{{ro-RO|a vedea||}}",
+    "correctAnswer": "{{ro-RO|a vedea||A ve-DEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a citi||}}",
-      "{{ro-RO|a scrie||}}",
-      "{{ro-RO|a cumpăra||}}"
+      "{{ro-RO|a citi||A CHEE-ti}}",
+      "{{ro-RO|a scrie||A SCRIE}}",
+      "{{ro-RO|a cumpăra||A cum-PA-ra}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4487,11 +4487,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'read'.",
-    "correctAnswer": "{{ro-RO|a citi||}}",
+    "correctAnswer": "{{ro-RO|a citi||A CHEE-ti}}",
     "incorrectAnswers": [
-      "{{ro-RO|a scrie||}}",
-      "{{ro-RO|a cumpăra||}}",
-      "{{ro-RO|a plăti||}}"
+      "{{ro-RO|a scrie||A SCRIE}}",
+      "{{ro-RO|a cumpăra||A cum-PA-ra}}",
+      "{{ro-RO|a plăti||A PLA-ti}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4508,11 +4508,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'write'?",
-    "correctAnswer": "{{ro-RO|a scrie||}}",
+    "correctAnswer": "{{ro-RO|a scrie||A SCRIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|a cumpăra||}}",
-      "{{ro-RO|a plăti||}}",
-      "{{ro-RO|a deschide||}}"
+      "{{ro-RO|a cumpăra||A cum-PA-ra}}",
+      "{{ro-RO|a plăti||A PLA-ti}}",
+      "{{ro-RO|a deschide||A des-CHI-de}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4529,11 +4529,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'buy'?",
-    "correctAnswer": "{{ro-RO|a cumpăra||}}",
+    "correctAnswer": "{{ro-RO|a cumpăra||A cum-PA-ra}}",
     "incorrectAnswers": [
-      "{{ro-RO|a plăti||}}",
-      "{{ro-RO|a deschide||}}",
-      "{{ro-RO|a închide||}}"
+      "{{ro-RO|a plăti||A PLA-ti}}",
+      "{{ro-RO|a deschide||A des-CHI-de}}",
+      "{{ro-RO|a închide||A in-CHI-de}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4550,11 +4550,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'pay' in everyday use?",
-    "correctAnswer": "{{ro-RO|a plăti||}}",
+    "correctAnswer": "{{ro-RO|a plăti||A PLA-ti}}",
     "incorrectAnswers": [
-      "{{ro-RO|a deschide||}}",
-      "{{ro-RO|a închide||}}",
-      "{{ro-RO|a da||}}"
+      "{{ro-RO|a deschide||A des-CHI-de}}",
+      "{{ro-RO|a închide||A in-CHI-de}}",
+      "{{ro-RO|a da||A DA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4571,11 +4571,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'open'.",
-    "correctAnswer": "{{ro-RO|a deschide||}}",
+    "correctAnswer": "{{ro-RO|a deschide||A des-CHI-de}}",
     "incorrectAnswers": [
-      "{{ro-RO|a închide||}}",
-      "{{ro-RO|a da||}}",
-      "{{ro-RO|a lua||}}"
+      "{{ro-RO|a închide||A in-CHI-de}}",
+      "{{ro-RO|a da||A DA}}",
+      "{{ro-RO|a lua||A LUA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4592,11 +4592,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'close'?",
-    "correctAnswer": "{{ro-RO|a închide||}}",
+    "correctAnswer": "{{ro-RO|a închide||A in-CHI-de}}",
     "incorrectAnswers": [
-      "{{ro-RO|a da||}}",
-      "{{ro-RO|a lua||}}",
-      "{{ro-RO|a ști||}}"
+      "{{ro-RO|a da||A DA}}",
+      "{{ro-RO|a lua||A LUA}}",
+      "{{ro-RO|a ști||A STI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4613,11 +4613,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'give'?",
-    "correctAnswer": "{{ro-RO|a da||}}",
+    "correctAnswer": "{{ro-RO|a da||A DA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a lua||}}",
-      "{{ro-RO|a ști||}}",
-      "{{ro-RO|a plăcea||}}"
+      "{{ro-RO|a lua||A LUA}}",
+      "{{ro-RO|a ști||A STI}}",
+      "{{ro-RO|a plăcea||A pla-CHEA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4634,11 +4634,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'take' in everyday use?",
-    "correctAnswer": "{{ro-RO|a lua||}}",
+    "correctAnswer": "{{ro-RO|a lua||A LUA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a ști||}}",
-      "{{ro-RO|a plăcea||}}",
-      "{{ro-RO|a iubi||}}"
+      "{{ro-RO|a ști||A STI}}",
+      "{{ro-RO|a plăcea||A pla-CHEA}}",
+      "{{ro-RO|a iubi||A IU-bi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4655,11 +4655,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'know'.",
-    "correctAnswer": "{{ro-RO|a ști||}}",
+    "correctAnswer": "{{ro-RO|a ști||A STI}}",
     "incorrectAnswers": [
-      "{{ro-RO|a plăcea||}}",
-      "{{ro-RO|a iubi||}}",
-      "{{ro-RO|a ajuta||}}"
+      "{{ro-RO|a plăcea||A pla-CHEA}}",
+      "{{ro-RO|a iubi||A IU-bi}}",
+      "{{ro-RO|a ajuta||A a-JU-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4676,11 +4676,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'like'?",
-    "correctAnswer": "{{ro-RO|a plăcea||}}",
+    "correctAnswer": "{{ro-RO|a plăcea||A pla-CHEA}}",
     "incorrectAnswers": [
-      "{{ro-RO|a iubi||}}",
-      "{{ro-RO|a ajuta||}}",
-      "{{ro-RO|a învăța||}}"
+      "{{ro-RO|a iubi||A IU-bi}}",
+      "{{ro-RO|a ajuta||A a-JU-ta}}",
+      "{{ro-RO|a învăța||A in-VA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4697,11 +4697,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'love'?",
-    "correctAnswer": "{{ro-RO|a iubi||}}",
+    "correctAnswer": "{{ro-RO|a iubi||A IU-bi}}",
     "incorrectAnswers": [
-      "{{ro-RO|a ajuta||}}",
-      "{{ro-RO|a învăța||}}",
-      "{{ro-RO|mare||}}"
+      "{{ro-RO|a ajuta||A a-JU-ta}}",
+      "{{ro-RO|a învăța||A in-VA-ta}}",
+      "{{ro-RO|mare||MA-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4718,11 +4718,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'help' in everyday use?",
-    "correctAnswer": "{{ro-RO|a ajuta||}}",
+    "correctAnswer": "{{ro-RO|a ajuta||A a-JU-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|a învăța||}}",
-      "{{ro-RO|mare||}}",
-      "{{ro-RO|mic||}}"
+      "{{ro-RO|a învăța||A in-VA-ta}}",
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|mic||MIC}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4739,11 +4739,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'learn'.",
-    "correctAnswer": "{{ro-RO|a învăța||}}",
+    "correctAnswer": "{{ro-RO|a învăța||A in-VA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|mare||}}",
-      "{{ro-RO|mic||}}",
-      "{{ro-RO|nou||}}"
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|mic||MIC}}",
+      "{{ro-RO|nou||NOU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4760,11 +4760,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'big'?",
-    "correctAnswer": "{{ro-RO|mare||}}",
+    "correctAnswer": "{{ro-RO|mare||MA-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|mic||}}",
-      "{{ro-RO|nou||}}",
-      "{{ro-RO|vechi||}}"
+      "{{ro-RO|mic||MIC}}",
+      "{{ro-RO|nou||NOU}}",
+      "{{ro-RO|vechi||VE-chi}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4781,11 +4781,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'small' in everyday use?",
-    "correctAnswer": "{{ro-RO|mic||}}",
+    "correctAnswer": "{{ro-RO|mic||MIC}}",
     "incorrectAnswers": [
-      "{{ro-RO|nou||}}",
-      "{{ro-RO|vechi||}}",
-      "{{ro-RO|bun||}}"
+      "{{ro-RO|nou||NOU}}",
+      "{{ro-RO|vechi||VE-chi}}",
+      "{{ro-RO|bun||BUN}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4802,11 +4802,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'new'.",
-    "correctAnswer": "{{ro-RO|nou||}}",
+    "correctAnswer": "{{ro-RO|nou||NOU}}",
     "incorrectAnswers": [
-      "{{ro-RO|vechi||}}",
-      "{{ro-RO|bun||}}",
-      "{{ro-RO|rău||}}"
+      "{{ro-RO|vechi||VE-chi}}",
+      "{{ro-RO|bun||BUN}}",
+      "{{ro-RO|rău||RAU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4823,11 +4823,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'old'?",
-    "correctAnswer": "{{ro-RO|vechi||}}",
+    "correctAnswer": "{{ro-RO|vechi||VE-chi}}",
     "incorrectAnswers": [
-      "{{ro-RO|bun||}}",
-      "{{ro-RO|rău||}}",
-      "{{ro-RO|fierbinte||}}"
+      "{{ro-RO|bun||BUN}}",
+      "{{ro-RO|rău||RAU}}",
+      "{{ro-RO|fierbinte||fier-BIN-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4844,11 +4844,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'good'?",
-    "correctAnswer": "{{ro-RO|bun||}}",
+    "correctAnswer": "{{ro-RO|bun||BUN}}",
     "incorrectAnswers": [
-      "{{ro-RO|rău||}}",
-      "{{ro-RO|fierbinte||}}",
-      "{{ro-RO|rece||}}"
+      "{{ro-RO|rău||RAU}}",
+      "{{ro-RO|fierbinte||fier-BIN-te}}",
+      "{{ro-RO|rece||RE-che}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4865,11 +4865,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'bad' in everyday use?",
-    "correctAnswer": "{{ro-RO|rău||}}",
+    "correctAnswer": "{{ro-RO|rău||RAU}}",
     "incorrectAnswers": [
-      "{{ro-RO|fierbinte||}}",
-      "{{ro-RO|rece||}}",
-      "{{ro-RO|rapid||}}"
+      "{{ro-RO|fierbinte||fier-BIN-te}}",
+      "{{ro-RO|rece||RE-che}}",
+      "{{ro-RO|rapid||RA-pid}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4886,11 +4886,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'hot'.",
-    "correctAnswer": "{{ro-RO|fierbinte||}}",
+    "correctAnswer": "{{ro-RO|fierbinte||fier-BIN-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|rece||}}",
-      "{{ro-RO|rapid||}}",
-      "{{ro-RO|lent||}}"
+      "{{ro-RO|rece||RE-che}}",
+      "{{ro-RO|rapid||RA-pid}}",
+      "{{ro-RO|lent||LENT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4907,11 +4907,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'cold'?",
-    "correctAnswer": "{{ro-RO|rece||}}",
+    "correctAnswer": "{{ro-RO|rece||RE-che}}",
     "incorrectAnswers": [
-      "{{ro-RO|rapid||}}",
-      "{{ro-RO|lent||}}",
-      "{{ro-RO|ușor||}}"
+      "{{ro-RO|rapid||RA-pid}}",
+      "{{ro-RO|lent||LENT}}",
+      "{{ro-RO|ușor||U-sor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4928,11 +4928,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'fast'?",
-    "correctAnswer": "{{ro-RO|rapid||}}",
+    "correctAnswer": "{{ro-RO|rapid||RA-pid}}",
     "incorrectAnswers": [
-      "{{ro-RO|lent||}}",
-      "{{ro-RO|ușor||}}",
-      "{{ro-RO|dificil||}}"
+      "{{ro-RO|lent||LENT}}",
+      "{{ro-RO|ușor||U-sor}}",
+      "{{ro-RO|dificil||di-FI-cheel}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4949,11 +4949,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'slow' in everyday use?",
-    "correctAnswer": "{{ro-RO|lent||}}",
+    "correctAnswer": "{{ro-RO|lent||LENT}}",
     "incorrectAnswers": [
-      "{{ro-RO|ușor||}}",
-      "{{ro-RO|dificil||}}",
-      "{{ro-RO|curat||}}"
+      "{{ro-RO|ușor||U-sor}}",
+      "{{ro-RO|dificil||di-FI-cheel}}",
+      "{{ro-RO|curat||CU-rat}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4970,11 +4970,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'easy'.",
-    "correctAnswer": "{{ro-RO|ușor||}}",
+    "correctAnswer": "{{ro-RO|ușor||U-sor}}",
     "incorrectAnswers": [
-      "{{ro-RO|dificil||}}",
-      "{{ro-RO|curat||}}",
-      "{{ro-RO|murdar||}}"
+      "{{ro-RO|dificil||di-FI-cheel}}",
+      "{{ro-RO|curat||CU-rat}}",
+      "{{ro-RO|murdar||MUR-dar}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -4991,11 +4991,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'difficult'?",
-    "correctAnswer": "{{ro-RO|dificil||}}",
+    "correctAnswer": "{{ro-RO|dificil||di-FI-cheel}}",
     "incorrectAnswers": [
-      "{{ro-RO|curat||}}",
-      "{{ro-RO|murdar||}}",
-      "{{ro-RO|ieftin||}}"
+      "{{ro-RO|curat||CU-rat}}",
+      "{{ro-RO|murdar||MUR-dar}}",
+      "{{ro-RO|ieftin||IEF-tin}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5012,11 +5012,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'clean'?",
-    "correctAnswer": "{{ro-RO|curat||}}",
+    "correctAnswer": "{{ro-RO|curat||CU-rat}}",
     "incorrectAnswers": [
-      "{{ro-RO|murdar||}}",
-      "{{ro-RO|ieftin||}}",
-      "{{ro-RO|scump||}}"
+      "{{ro-RO|murdar||MUR-dar}}",
+      "{{ro-RO|ieftin||IEF-tin}}",
+      "{{ro-RO|scump||SCUMP}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5033,11 +5033,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'dirty' in everyday use?",
-    "correctAnswer": "{{ro-RO|murdar||}}",
+    "correctAnswer": "{{ro-RO|murdar||MUR-dar}}",
     "incorrectAnswers": [
-      "{{ro-RO|ieftin||}}",
-      "{{ro-RO|scump||}}",
-      "{{ro-RO|frumos||}}"
+      "{{ro-RO|ieftin||IEF-tin}}",
+      "{{ro-RO|scump||SCUMP}}",
+      "{{ro-RO|frumos||FRU-mos}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5054,11 +5054,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'cheap'.",
-    "correctAnswer": "{{ro-RO|ieftin||}}",
+    "correctAnswer": "{{ro-RO|ieftin||IEF-tin}}",
     "incorrectAnswers": [
-      "{{ro-RO|scump||}}",
-      "{{ro-RO|frumos||}}",
-      "{{ro-RO|urât||}}"
+      "{{ro-RO|scump||SCUMP}}",
+      "{{ro-RO|frumos||FRU-mos}}",
+      "{{ro-RO|urât||U-rat}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5075,11 +5075,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'expensive'?",
-    "correctAnswer": "{{ro-RO|scump||}}",
+    "correctAnswer": "{{ro-RO|scump||SCUMP}}",
     "incorrectAnswers": [
-      "{{ro-RO|frumos||}}",
-      "{{ro-RO|urât||}}",
-      "{{ro-RO|lung||}}"
+      "{{ro-RO|frumos||FRU-mos}}",
+      "{{ro-RO|urât||U-rat}}",
+      "{{ro-RO|lung||LUNG}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5096,11 +5096,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'beautiful'?",
-    "correctAnswer": "{{ro-RO|frumos||}}",
+    "correctAnswer": "{{ro-RO|frumos||FRU-mos}}",
     "incorrectAnswers": [
-      "{{ro-RO|urât||}}",
-      "{{ro-RO|lung||}}",
-      "{{ro-RO|scurt||}}"
+      "{{ro-RO|urât||U-rat}}",
+      "{{ro-RO|lung||LUNG}}",
+      "{{ro-RO|scurt||SCURT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5117,11 +5117,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'ugly' in everyday use?",
-    "correctAnswer": "{{ro-RO|urât||}}",
+    "correctAnswer": "{{ro-RO|urât||U-rat}}",
     "incorrectAnswers": [
-      "{{ro-RO|lung||}}",
-      "{{ro-RO|scurt||}}",
-      "{{ro-RO|deschis||}}"
+      "{{ro-RO|lung||LUNG}}",
+      "{{ro-RO|scurt||SCURT}}",
+      "{{ro-RO|deschis||DES-chis}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5138,11 +5138,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'long'.",
-    "correctAnswer": "{{ro-RO|lung||}}",
+    "correctAnswer": "{{ro-RO|lung||LUNG}}",
     "incorrectAnswers": [
-      "{{ro-RO|scurt||}}",
-      "{{ro-RO|deschis||}}",
-      "{{ro-RO|închis||}}"
+      "{{ro-RO|scurt||SCURT}}",
+      "{{ro-RO|deschis||DES-chis}}",
+      "{{ro-RO|închis||IN-chis}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5159,11 +5159,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'short'?",
-    "correctAnswer": "{{ro-RO|scurt||}}",
+    "correctAnswer": "{{ro-RO|scurt||SCURT}}",
     "incorrectAnswers": [
-      "{{ro-RO|deschis||}}",
-      "{{ro-RO|închis||}}",
-      "{{ro-RO|dreapta||}}"
+      "{{ro-RO|deschis||DES-chis}}",
+      "{{ro-RO|închis||IN-chis}}",
+      "{{ro-RO|dreapta||DREAP-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5180,11 +5180,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'open'?",
-    "correctAnswer": "{{ro-RO|deschis||}}",
+    "correctAnswer": "{{ro-RO|deschis||DES-chis}}",
     "incorrectAnswers": [
-      "{{ro-RO|închis||}}",
-      "{{ro-RO|dreapta||}}",
-      "{{ro-RO|stânga||}}"
+      "{{ro-RO|închis||IN-chis}}",
+      "{{ro-RO|dreapta||DREAP-ta}}",
+      "{{ro-RO|stânga||STAN-ga}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5201,11 +5201,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'closed' in everyday use?",
-    "correctAnswer": "{{ro-RO|închis||}}",
+    "correctAnswer": "{{ro-RO|închis||IN-chis}}",
     "incorrectAnswers": [
-      "{{ro-RO|dreapta||}}",
-      "{{ro-RO|stânga||}}",
-      "{{ro-RO|același||}}"
+      "{{ro-RO|dreapta||DREAP-ta}}",
+      "{{ro-RO|stânga||STAN-ga}}",
+      "{{ro-RO|același||a-che-LA-si}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5222,11 +5222,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'right'.",
-    "correctAnswer": "{{ro-RO|dreapta||}}",
+    "correctAnswer": "{{ro-RO|dreapta||DREAP-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|stânga||}}",
-      "{{ro-RO|același||}}",
-      "{{ro-RO|diferit||}}"
+      "{{ro-RO|stânga||STAN-ga}}",
+      "{{ro-RO|același||a-che-LA-si}}",
+      "{{ro-RO|diferit||di-FE-rit}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5243,11 +5243,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'left'?",
-    "correctAnswer": "{{ro-RO|stânga||}}",
+    "correctAnswer": "{{ro-RO|stânga||STAN-ga}}",
     "incorrectAnswers": [
-      "{{ro-RO|același||}}",
-      "{{ro-RO|diferit||}}",
-      "{{ro-RO|cine||}}"
+      "{{ro-RO|același||a-che-LA-si}}",
+      "{{ro-RO|diferit||di-FE-rit}}",
+      "{{ro-RO|cine||CHEE-ne}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5264,11 +5264,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'same'?",
-    "correctAnswer": "{{ro-RO|același||}}",
+    "correctAnswer": "{{ro-RO|același||a-che-LA-si}}",
     "incorrectAnswers": [
-      "{{ro-RO|diferit||}}",
-      "{{ro-RO|cine||}}",
-      "{{ro-RO|ce||}}"
+      "{{ro-RO|diferit||di-FE-rit}}",
+      "{{ro-RO|cine||CHEE-ne}}",
+      "{{ro-RO|ce||CHE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5285,11 +5285,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'different' in everyday use?",
-    "correctAnswer": "{{ro-RO|diferit||}}",
+    "correctAnswer": "{{ro-RO|diferit||di-FE-rit}}",
     "incorrectAnswers": [
-      "{{ro-RO|cine||}}",
-      "{{ro-RO|ce||}}",
-      "{{ro-RO|când||}}"
+      "{{ro-RO|cine||CHEE-ne}}",
+      "{{ro-RO|ce||CHE}}",
+      "{{ro-RO|când||CAND}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5306,11 +5306,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'who'?",
-    "correctAnswer": "{{ro-RO|cine||}}",
+    "correctAnswer": "{{ro-RO|cine||CHEE-ne}}",
     "incorrectAnswers": [
-      "{{ro-RO|ce||}}",
-      "{{ro-RO|când||}}",
-      "{{ro-RO|de ce||}}"
+      "{{ro-RO|ce||CHE}}",
+      "{{ro-RO|când||CAND}}",
+      "{{ro-RO|de ce||DE CHE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5327,11 +5327,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'what' in everyday use?",
-    "correctAnswer": "{{ro-RO|ce||}}",
+    "correctAnswer": "{{ro-RO|ce||CHE}}",
     "incorrectAnswers": [
-      "{{ro-RO|când||}}",
-      "{{ro-RO|de ce||}}",
-      "{{ro-RO|cum||}}"
+      "{{ro-RO|când||CAND}}",
+      "{{ro-RO|de ce||DE CHE}}",
+      "{{ro-RO|cum||CUM}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5348,11 +5348,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'when'.",
-    "correctAnswer": "{{ro-RO|când||}}",
+    "correctAnswer": "{{ro-RO|când||CAND}}",
     "incorrectAnswers": [
-      "{{ro-RO|de ce||}}",
-      "{{ro-RO|cum||}}",
-      "{{ro-RO|cât||}}"
+      "{{ro-RO|de ce||DE CHE}}",
+      "{{ro-RO|cum||CUM}}",
+      "{{ro-RO|cât||CAT}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5369,11 +5369,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'why'?",
-    "correctAnswer": "{{ro-RO|de ce||}}",
+    "correctAnswer": "{{ro-RO|de ce||DE CHE}}",
     "incorrectAnswers": [
-      "{{ro-RO|cum||}}",
-      "{{ro-RO|cât||}}",
-      "{{ro-RO|câți||}}"
+      "{{ro-RO|cum||CUM}}",
+      "{{ro-RO|cât||CAT}}",
+      "{{ro-RO|câți||CA-ti}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5390,11 +5390,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'how'?",
-    "correctAnswer": "{{ro-RO|cum||}}",
+    "correctAnswer": "{{ro-RO|cum||CUM}}",
     "incorrectAnswers": [
-      "{{ro-RO|cât||}}",
-      "{{ro-RO|câți||}}",
-      "{{ro-RO|și||}}"
+      "{{ro-RO|cât||CAT}}",
+      "{{ro-RO|câți||CA-ti}}",
+      "{{ro-RO|și||SI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5411,11 +5411,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'how much' in everyday use?",
-    "correctAnswer": "{{ro-RO|cât||}}",
+    "correctAnswer": "{{ro-RO|cât||CAT}}",
     "incorrectAnswers": [
-      "{{ro-RO|câți||}}",
-      "{{ro-RO|și||}}",
-      "{{ro-RO|sau||}}"
+      "{{ro-RO|câți||CA-ti}}",
+      "{{ro-RO|și||SI}}",
+      "{{ro-RO|sau||SAU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5432,11 +5432,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'how many'.",
-    "correctAnswer": "{{ro-RO|câți||}}",
+    "correctAnswer": "{{ro-RO|câți||CA-ti}}",
     "incorrectAnswers": [
-      "{{ro-RO|și||}}",
-      "{{ro-RO|sau||}}",
-      "{{ro-RO|dar||}}"
+      "{{ro-RO|și||SI}}",
+      "{{ro-RO|sau||SAU}}",
+      "{{ro-RO|dar||DAR}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5453,11 +5453,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'and'?",
-    "correctAnswer": "{{ro-RO|și||}}",
+    "correctAnswer": "{{ro-RO|și||SI}}",
     "incorrectAnswers": [
-      "{{ro-RO|sau||}}",
-      "{{ro-RO|dar||}}",
-      "{{ro-RO|pentru că||}}"
+      "{{ro-RO|sau||SAU}}",
+      "{{ro-RO|dar||DAR}}",
+      "{{ro-RO|pentru că||PEN-tru CA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5474,11 +5474,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'or' in everyday use?",
-    "correctAnswer": "{{ro-RO|sau||}}",
+    "correctAnswer": "{{ro-RO|sau||SAU}}",
     "incorrectAnswers": [
-      "{{ro-RO|dar||}}",
-      "{{ro-RO|pentru că||}}",
-      "{{ro-RO|dacă||}}"
+      "{{ro-RO|dar||DAR}}",
+      "{{ro-RO|pentru că||PEN-tru CA}}",
+      "{{ro-RO|dacă||DA-ca}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5495,11 +5495,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'but'.",
-    "correctAnswer": "{{ro-RO|dar||}}",
+    "correctAnswer": "{{ro-RO|dar||DAR}}",
     "incorrectAnswers": [
-      "{{ro-RO|pentru că||}}",
-      "{{ro-RO|dacă||}}",
-      "{{ro-RO|foarte||}}"
+      "{{ro-RO|pentru că||PEN-tru CA}}",
+      "{{ro-RO|dacă||DA-ca}}",
+      "{{ro-RO|foarte||FOAR-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5516,11 +5516,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'because'?",
-    "correctAnswer": "{{ro-RO|pentru că||}}",
+    "correctAnswer": "{{ro-RO|pentru că||PEN-tru CA}}",
     "incorrectAnswers": [
-      "{{ro-RO|dacă||}}",
-      "{{ro-RO|foarte||}}",
-      "{{ro-RO|de asemenea||}}"
+      "{{ro-RO|dacă||DA-ca}}",
+      "{{ro-RO|foarte||FOAR-te}}",
+      "{{ro-RO|de asemenea||DE a-se-ME-nea}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5537,11 +5537,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'if'?",
-    "correctAnswer": "{{ro-RO|dacă||}}",
+    "correctAnswer": "{{ro-RO|dacă||DA-ca}}",
     "incorrectAnswers": [
-      "{{ro-RO|foarte||}}",
-      "{{ro-RO|de asemenea||}}",
-      "{{ro-RO|numai||}}"
+      "{{ro-RO|foarte||FOAR-te}}",
+      "{{ro-RO|de asemenea||DE a-se-ME-nea}}",
+      "{{ro-RO|numai||NU-mai}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5558,11 +5558,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'very'?",
-    "correctAnswer": "{{ro-RO|foarte||}}",
+    "correctAnswer": "{{ro-RO|foarte||FOAR-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|de asemenea||}}",
-      "{{ro-RO|numai||}}",
-      "{{ro-RO|aici||}}"
+      "{{ro-RO|de asemenea||DE a-se-ME-nea}}",
+      "{{ro-RO|numai||NU-mai}}",
+      "{{ro-RO|aici||AI-chee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5579,11 +5579,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'also' in everyday use?",
-    "correctAnswer": "{{ro-RO|de asemenea||}}",
+    "correctAnswer": "{{ro-RO|de asemenea||DE a-se-ME-nea}}",
     "incorrectAnswers": [
-      "{{ro-RO|numai||}}",
-      "{{ro-RO|aici||}}",
-      "{{ro-RO|acolo||}}"
+      "{{ro-RO|numai||NU-mai}}",
+      "{{ro-RO|aici||AI-chee}}",
+      "{{ro-RO|acolo||a-CO-lo}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5600,11 +5600,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'only'.",
-    "correctAnswer": "{{ro-RO|numai||}}",
+    "correctAnswer": "{{ro-RO|numai||NU-mai}}",
     "incorrectAnswers": [
-      "{{ro-RO|aici||}}",
-      "{{ro-RO|acolo||}}",
-      "{{ro-RO|întotdeauna||}}"
+      "{{ro-RO|aici||AI-chee}}",
+      "{{ro-RO|acolo||a-CO-lo}}",
+      "{{ro-RO|întotdeauna||in-tot-DEAU-na}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5621,11 +5621,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'here'?",
-    "correctAnswer": "{{ro-RO|aici||}}",
+    "correctAnswer": "{{ro-RO|aici||AI-chee}}",
     "incorrectAnswers": [
-      "{{ro-RO|acolo||}}",
-      "{{ro-RO|întotdeauna||}}",
-      "{{ro-RO|niciodată||}}"
+      "{{ro-RO|acolo||a-CO-lo}}",
+      "{{ro-RO|întotdeauna||in-tot-DEAU-na}}",
+      "{{ro-RO|niciodată||ni-cheeo-DA-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5642,11 +5642,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'there'?",
-    "correctAnswer": "{{ro-RO|acolo||}}",
+    "correctAnswer": "{{ro-RO|acolo||a-CO-lo}}",
     "incorrectAnswers": [
-      "{{ro-RO|întotdeauna||}}",
-      "{{ro-RO|niciodată||}}",
-      "{{ro-RO|eu||}}"
+      "{{ro-RO|întotdeauna||in-tot-DEAU-na}}",
+      "{{ro-RO|niciodată||ni-cheeo-DA-ta}}",
+      "{{ro-RO|eu||EU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5663,11 +5663,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'always' in everyday use?",
-    "correctAnswer": "{{ro-RO|întotdeauna||}}",
+    "correctAnswer": "{{ro-RO|întotdeauna||in-tot-DEAU-na}}",
     "incorrectAnswers": [
-      "{{ro-RO|niciodată||}}",
-      "{{ro-RO|eu||}}",
-      "{{ro-RO|tu||}}"
+      "{{ro-RO|niciodată||ni-cheeo-DA-ta}}",
+      "{{ro-RO|eu||EU}}",
+      "{{ro-RO|tu||TU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5684,11 +5684,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'never'.",
-    "correctAnswer": "{{ro-RO|niciodată||}}",
+    "correctAnswer": "{{ro-RO|niciodată||ni-cheeo-DA-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|eu||}}",
-      "{{ro-RO|tu||}}",
-      "{{ro-RO|el||}}"
+      "{{ro-RO|eu||EU}}",
+      "{{ro-RO|tu||TU}}",
+      "{{ro-RO|el||EL}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5705,11 +5705,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'I'?",
-    "correctAnswer": "{{ro-RO|eu||}}",
+    "correctAnswer": "{{ro-RO|eu||EU}}",
     "incorrectAnswers": [
-      "{{ro-RO|tu||}}",
-      "{{ro-RO|el||}}",
-      "{{ro-RO|ea||}}"
+      "{{ro-RO|tu||TU}}",
+      "{{ro-RO|el||EL}}",
+      "{{ro-RO|ea||EA}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5726,11 +5726,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'you' in everyday use?",
-    "correctAnswer": "{{ro-RO|tu||}}",
+    "correctAnswer": "{{ro-RO|tu||TU}}",
     "incorrectAnswers": [
-      "{{ro-RO|el||}}",
-      "{{ro-RO|ea||}}",
-      "{{ro-RO|noi||}}"
+      "{{ro-RO|el||EL}}",
+      "{{ro-RO|ea||EA}}",
+      "{{ro-RO|noi||NOI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5747,11 +5747,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'he'.",
-    "correctAnswer": "{{ro-RO|el||}}",
+    "correctAnswer": "{{ro-RO|el||EL}}",
     "incorrectAnswers": [
-      "{{ro-RO|ea||}}",
-      "{{ro-RO|noi||}}",
-      "{{ro-RO|voi||}}"
+      "{{ro-RO|ea||EA}}",
+      "{{ro-RO|noi||NOI}}",
+      "{{ro-RO|voi||VOI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5768,11 +5768,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'she'?",
-    "correctAnswer": "{{ro-RO|ea||}}",
+    "correctAnswer": "{{ro-RO|ea||EA}}",
     "incorrectAnswers": [
-      "{{ro-RO|noi||}}",
-      "{{ro-RO|voi||}}",
-      "{{ro-RO|ei||}}"
+      "{{ro-RO|noi||NOI}}",
+      "{{ro-RO|voi||VOI}}",
+      "{{ro-RO|ei||EI}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5789,11 +5789,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'we'?",
-    "correctAnswer": "{{ro-RO|noi||}}",
+    "correctAnswer": "{{ro-RO|noi||NOI}}",
     "incorrectAnswers": [
-      "{{ro-RO|voi||}}",
-      "{{ro-RO|ei||}}",
-      "{{ro-RO|meu||}}"
+      "{{ro-RO|voi||VOI}}",
+      "{{ro-RO|ei||EI}}",
+      "{{ro-RO|meu||MEU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5810,11 +5810,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'you (plural)' in everyday use?",
-    "correctAnswer": "{{ro-RO|voi||}}",
+    "correctAnswer": "{{ro-RO|voi||VOI}}",
     "incorrectAnswers": [
-      "{{ro-RO|ei||}}",
-      "{{ro-RO|meu||}}",
-      "{{ro-RO|tău||}}"
+      "{{ro-RO|ei||EI}}",
+      "{{ro-RO|meu||MEU}}",
+      "{{ro-RO|tău||TAU}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5831,11 +5831,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'they'.",
-    "correctAnswer": "{{ro-RO|ei||}}",
+    "correctAnswer": "{{ro-RO|ei||EI}}",
     "incorrectAnswers": [
-      "{{ro-RO|meu||}}",
-      "{{ro-RO|tău||}}",
-      "{{ro-RO|nostru||}}"
+      "{{ro-RO|meu||MEU}}",
+      "{{ro-RO|tău||TAU}}",
+      "{{ro-RO|nostru||NOS-tru}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5852,11 +5852,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'my'?",
-    "correctAnswer": "{{ro-RO|meu||}}",
+    "correctAnswer": "{{ro-RO|meu||MEU}}",
     "incorrectAnswers": [
-      "{{ro-RO|tău||}}",
-      "{{ro-RO|nostru||}}",
-      "{{ro-RO|lor||}}"
+      "{{ro-RO|tău||TAU}}",
+      "{{ro-RO|nostru||NOS-tru}}",
+      "{{ro-RO|lor||LOR}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5873,11 +5873,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'your' in everyday use?",
-    "correctAnswer": "{{ro-RO|tău||}}",
+    "correctAnswer": "{{ro-RO|tău||TAU}}",
     "incorrectAnswers": [
-      "{{ro-RO|nostru||}}",
-      "{{ro-RO|lor||}}",
-      "{{ro-RO|doctor||}}"
+      "{{ro-RO|nostru||NOS-tru}}",
+      "{{ro-RO|lor||LOR}}",
+      "{{ro-RO|doctor||DOC-tor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5894,11 +5894,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'our'.",
-    "correctAnswer": "{{ro-RO|nostru||}}",
+    "correctAnswer": "{{ro-RO|nostru||NOS-tru}}",
     "incorrectAnswers": [
-      "{{ro-RO|lor||}}",
-      "{{ro-RO|doctor||}}",
-      "{{ro-RO|spital||}}"
+      "{{ro-RO|lor||LOR}}",
+      "{{ro-RO|doctor||DOC-tor}}",
+      "{{ro-RO|spital||SPI-tal}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5915,11 +5915,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'their'?",
-    "correctAnswer": "{{ro-RO|lor||}}",
+    "correctAnswer": "{{ro-RO|lor||LOR}}",
     "incorrectAnswers": [
-      "{{ro-RO|doctor||}}",
-      "{{ro-RO|spital||}}",
-      "{{ro-RO|farmacie||}}"
+      "{{ro-RO|doctor||DOC-tor}}",
+      "{{ro-RO|spital||SPI-tal}}",
+      "{{ro-RO|farmacie||far-MA-cheee}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5936,11 +5936,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'doctor'?",
-    "correctAnswer": "{{ro-RO|doctor||}}",
+    "correctAnswer": "{{ro-RO|doctor||DOC-tor}}",
     "incorrectAnswers": [
-      "{{ro-RO|spital||}}",
-      "{{ro-RO|farmacie||}}",
-      "{{ro-RO|durere||}}"
+      "{{ro-RO|spital||SPI-tal}}",
+      "{{ro-RO|farmacie||far-MA-cheee}}",
+      "{{ro-RO|durere||du-RE-re}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5958,11 +5958,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'hospital' in everyday use?",
-    "correctAnswer": "{{ro-RO|spital||}}",
+    "correctAnswer": "{{ro-RO|spital||SPI-tal}}",
     "incorrectAnswers": [
-      "{{ro-RO|farmacie||}}",
-      "{{ro-RO|durere||}}",
-      "{{ro-RO|ajutor||}}"
+      "{{ro-RO|farmacie||far-MA-cheee}}",
+      "{{ro-RO|durere||du-RE-re}}",
+      "{{ro-RO|ajutor||a-JU-tor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -5980,11 +5980,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'pharmacy'.",
-    "correctAnswer": "{{ro-RO|farmacie||}}",
+    "correctAnswer": "{{ro-RO|farmacie||far-MA-cheee}}",
     "incorrectAnswers": [
-      "{{ro-RO|durere||}}",
-      "{{ro-RO|ajutor||}}",
-      "{{ro-RO|poliție||}}"
+      "{{ro-RO|durere||du-RE-re}}",
+      "{{ro-RO|ajutor||a-JU-tor}}",
+      "{{ro-RO|poliție||po-LI-tie}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6002,11 +6002,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'pain'?",
-    "correctAnswer": "{{ro-RO|durere||}}",
+    "correctAnswer": "{{ro-RO|durere||du-RE-re}}",
     "incorrectAnswers": [
-      "{{ro-RO|ajutor||}}",
-      "{{ro-RO|poliție||}}",
-      "{{ro-RO|foc||}}"
+      "{{ro-RO|ajutor||a-JU-tor}}",
+      "{{ro-RO|poliție||po-LI-tie}}",
+      "{{ro-RO|foc||FOC}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6024,11 +6024,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'help'?",
-    "correctAnswer": "{{ro-RO|ajutor||}}",
+    "correctAnswer": "{{ro-RO|ajutor||a-JU-tor}}",
     "incorrectAnswers": [
-      "{{ro-RO|poliție||}}",
-      "{{ro-RO|foc||}}",
-      "{{ro-RO|bolnav||}}"
+      "{{ro-RO|poliție||po-LI-tie}}",
+      "{{ro-RO|foc||FOC}}",
+      "{{ro-RO|bolnav||BOL-nav}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6046,11 +6046,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'police' in everyday use?",
-    "correctAnswer": "{{ro-RO|poliție||}}",
+    "correctAnswer": "{{ro-RO|poliție||po-LI-tie}}",
     "incorrectAnswers": [
-      "{{ro-RO|foc||}}",
-      "{{ro-RO|bolnav||}}",
-      "{{ro-RO|medicament||}}"
+      "{{ro-RO|foc||FOC}}",
+      "{{ro-RO|bolnav||BOL-nav}}",
+      "{{ro-RO|medicament||me-di-CA-ment}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6068,11 +6068,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'fire'.",
-    "correctAnswer": "{{ro-RO|foc||}}",
+    "correctAnswer": "{{ro-RO|foc||FOC}}",
     "incorrectAnswers": [
-      "{{ro-RO|bolnav||}}",
-      "{{ro-RO|medicament||}}",
-      "{{ro-RO|școală||}}"
+      "{{ro-RO|bolnav||BOL-nav}}",
+      "{{ro-RO|medicament||me-di-CA-ment}}",
+      "{{ro-RO|școală||SCOA-la}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6090,11 +6090,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'sick'?",
-    "correctAnswer": "{{ro-RO|bolnav||}}",
+    "correctAnswer": "{{ro-RO|bolnav||BOL-nav}}",
     "incorrectAnswers": [
-      "{{ro-RO|medicament||}}",
-      "{{ro-RO|școală||}}",
-      "{{ro-RO|profesor||}}"
+      "{{ro-RO|medicament||me-di-CA-ment}}",
+      "{{ro-RO|școală||SCOA-la}}",
+      "{{ro-RO|profesor||pro-FE-sor}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6112,11 +6112,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'medicine'?",
-    "correctAnswer": "{{ro-RO|medicament||}}",
+    "correctAnswer": "{{ro-RO|medicament||me-di-CA-ment}}",
     "incorrectAnswers": [
-      "{{ro-RO|școală||}}",
-      "{{ro-RO|profesor||}}",
-      "{{ro-RO|student||}}"
+      "{{ro-RO|școală||SCOA-la}}",
+      "{{ro-RO|profesor||pro-FE-sor}}",
+      "{{ro-RO|student||STU-dent}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6134,11 +6134,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'school'?",
-    "correctAnswer": "{{ro-RO|școală||}}",
+    "correctAnswer": "{{ro-RO|școală||SCOA-la}}",
     "incorrectAnswers": [
-      "{{ro-RO|profesor||}}",
-      "{{ro-RO|student||}}",
-      "{{ro-RO|carte||}}"
+      "{{ro-RO|profesor||pro-FE-sor}}",
+      "{{ro-RO|student||STU-dent}}",
+      "{{ro-RO|carte||CAR-te}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6156,11 +6156,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'teacher' in everyday use?",
-    "correctAnswer": "{{ro-RO|profesor||}}",
+    "correctAnswer": "{{ro-RO|profesor||pro-FE-sor}}",
     "incorrectAnswers": [
-      "{{ro-RO|student||}}",
-      "{{ro-RO|carte||}}",
-      "{{ro-RO|pix||}}"
+      "{{ro-RO|student||STU-dent}}",
+      "{{ro-RO|carte||CAR-te}}",
+      "{{ro-RO|pix||PIX}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6178,11 +6178,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'student'.",
-    "correctAnswer": "{{ro-RO|student||}}",
+    "correctAnswer": "{{ro-RO|student||STU-dent}}",
     "incorrectAnswers": [
-      "{{ro-RO|carte||}}",
-      "{{ro-RO|pix||}}",
-      "{{ro-RO|hârtie||}}"
+      "{{ro-RO|carte||CAR-te}}",
+      "{{ro-RO|pix||PIX}}",
+      "{{ro-RO|hârtie||har-TIE}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6200,11 +6200,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'book'?",
-    "correctAnswer": "{{ro-RO|carte||}}",
+    "correctAnswer": "{{ro-RO|carte||CAR-te}}",
     "incorrectAnswers": [
-      "{{ro-RO|pix||}}",
-      "{{ro-RO|hârtie||}}",
-      "{{ro-RO|clasă||}}"
+      "{{ro-RO|pix||PIX}}",
+      "{{ro-RO|hârtie||har-TIE}}",
+      "{{ro-RO|clasă||CLA-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6222,11 +6222,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'pen'?",
-    "correctAnswer": "{{ro-RO|pix||}}",
+    "correctAnswer": "{{ro-RO|pix||PIX}}",
     "incorrectAnswers": [
-      "{{ro-RO|hârtie||}}",
-      "{{ro-RO|clasă||}}",
-      "{{ro-RO|birou||}}"
+      "{{ro-RO|hârtie||har-TIE}}",
+      "{{ro-RO|clasă||CLA-sa}}",
+      "{{ro-RO|birou||BI-rou}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6244,11 +6244,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'paper' in everyday use?",
-    "correctAnswer": "{{ro-RO|hârtie||}}",
+    "correctAnswer": "{{ro-RO|hârtie||har-TIE}}",
     "incorrectAnswers": [
-      "{{ro-RO|clasă||}}",
-      "{{ro-RO|birou||}}",
-      "{{ro-RO|bani||}}"
+      "{{ro-RO|clasă||CLA-sa}}",
+      "{{ro-RO|birou||BI-rou}}",
+      "{{ro-RO|bani||BA-ni}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6266,11 +6266,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'class'.",
-    "correctAnswer": "{{ro-RO|clasă||}}",
+    "correctAnswer": "{{ro-RO|clasă||CLA-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|birou||}}",
-      "{{ro-RO|bani||}}",
-      "{{ro-RO|magazin||}}"
+      "{{ro-RO|birou||BI-rou}}",
+      "{{ro-RO|bani||BA-ni}}",
+      "{{ro-RO|magazin||ma-GA-zin}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6288,11 +6288,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'office'?",
-    "correctAnswer": "{{ro-RO|birou||}}",
+    "correctAnswer": "{{ro-RO|birou||BI-rou}}",
     "incorrectAnswers": [
-      "{{ro-RO|bani||}}",
-      "{{ro-RO|magazin||}}",
-      "{{ro-RO|preț||}}"
+      "{{ro-RO|bani||BA-ni}}",
+      "{{ro-RO|magazin||ma-GA-zin}}",
+      "{{ro-RO|preț||PRET}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6310,11 +6310,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'money'?",
-    "correctAnswer": "{{ro-RO|bani||}}",
+    "correctAnswer": "{{ro-RO|bani||BA-ni}}",
     "incorrectAnswers": [
-      "{{ro-RO|magazin||}}",
-      "{{ro-RO|preț||}}",
-      "{{ro-RO|serviciu||}}"
+      "{{ro-RO|magazin||ma-GA-zin}}",
+      "{{ro-RO|preț||PRET}}",
+      "{{ro-RO|serviciu||ser-VI-cheeu}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6332,11 +6332,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'shop' in everyday use?",
-    "correctAnswer": "{{ro-RO|magazin||}}",
+    "correctAnswer": "{{ro-RO|magazin||ma-GA-zin}}",
     "incorrectAnswers": [
-      "{{ro-RO|preț||}}",
-      "{{ro-RO|serviciu||}}",
-      "{{ro-RO|vârstă||}}"
+      "{{ro-RO|preț||PRET}}",
+      "{{ro-RO|serviciu||ser-VI-cheeu}}",
+      "{{ro-RO|vârstă||VARS-ta}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6354,11 +6354,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'price'.",
-    "correctAnswer": "{{ro-RO|preț||}}",
+    "correctAnswer": "{{ro-RO|preț||PRET}}",
     "incorrectAnswers": [
-      "{{ro-RO|serviciu||}}",
-      "{{ro-RO|vârstă||}}",
-      "{{ro-RO|adresă||}}"
+      "{{ro-RO|serviciu||ser-VI-cheeu}}",
+      "{{ro-RO|vârstă||VARS-ta}}",
+      "{{ro-RO|adresă||a-DRE-sa}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6376,11 +6376,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'job'?",
-    "correctAnswer": "{{ro-RO|serviciu||}}",
+    "correctAnswer": "{{ro-RO|serviciu||ser-VI-cheeu}}",
     "incorrectAnswers": [
-      "{{ro-RO|vârstă||}}",
-      "{{ro-RO|adresă||}}",
-      "{{ro-RO|telefon||}}"
+      "{{ro-RO|vârstă||VARS-ta}}",
+      "{{ro-RO|adresă||a-DRE-sa}}",
+      "{{ro-RO|telefon||te-LE-fon}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6398,11 +6398,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'age'?",
-    "correctAnswer": "{{ro-RO|vârstă||}}",
+    "correctAnswer": "{{ro-RO|vârstă||VARS-ta}}",
     "incorrectAnswers": [
-      "{{ro-RO|adresă||}}",
-      "{{ro-RO|telefon||}}",
-      "{{ro-RO|internet||}}"
+      "{{ro-RO|adresă||a-DRE-sa}}",
+      "{{ro-RO|telefon||te-LE-fon}}",
+      "{{ro-RO|internet||in-TER-net}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6420,11 +6420,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Which Romanian word means 'address' in everyday use?",
-    "correctAnswer": "{{ro-RO|adresă||}}",
+    "correctAnswer": "{{ro-RO|adresă||a-DRE-sa}}",
     "incorrectAnswers": [
-      "{{ro-RO|telefon||}}",
-      "{{ro-RO|internet||}}",
-      "{{ro-RO|email||}}"
+      "{{ro-RO|telefon||te-LE-fon}}",
+      "{{ro-RO|internet||in-TER-net}}",
+      "{{ro-RO|email||E-mail}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6442,11 +6442,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "Choose the Romanian word for 'phone'.",
-    "correctAnswer": "{{ro-RO|telefon||}}",
+    "correctAnswer": "{{ro-RO|telefon||te-LE-fon}}",
     "incorrectAnswers": [
-      "{{ro-RO|internet||}}",
-      "{{ro-RO|email||}}",
-      "{{ro-RO|Bună ziua||}} / {{ro-RO|Salut||}}"
+      "{{ro-RO|internet||in-TER-net}}",
+      "{{ro-RO|email||E-mail}}",
+      "{{ro-RO|Bună ziua||BU-na ZIUA}} / {{ro-RO|Salut||SA-lut}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6464,11 +6464,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Romanian word for 'internet'?",
-    "correctAnswer": "{{ro-RO|internet||}}",
+    "correctAnswer": "{{ro-RO|internet||in-TER-net}}",
     "incorrectAnswers": [
-      "{{ro-RO|email||}}",
-      "{{ro-RO|Bună ziua||}} / {{ro-RO|Salut||}}",
-      "{{ro-RO|Mulțumesc||}}"
+      "{{ro-RO|email||E-mail}}",
+      "{{ro-RO|Bună ziua||BU-na ZIUA}} / {{ro-RO|Salut||SA-lut}}",
+      "{{ro-RO|Mulțumesc||mul-TU-mesc}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [
@@ -6486,11 +6486,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "In beginner Romanian, how do you say 'email'?",
-    "correctAnswer": "{{ro-RO|email||}}",
+    "correctAnswer": "{{ro-RO|email||E-mail}}",
     "incorrectAnswers": [
-      "{{ro-RO|Bună ziua||}} / {{ro-RO|Salut||}}",
-      "{{ro-RO|Mulțumesc||}}",
-      "{{ro-RO|Vă rog||}} / {{ro-RO|Te rog||}}"
+      "{{ro-RO|Bună ziua||BU-na ZIUA}} / {{ro-RO|Salut||SA-lut}}",
+      "{{ro-RO|Mulțumesc||mul-TU-mesc}}",
+      "{{ro-RO|Vă rog||VA ROG}} / {{ro-RO|Te rog||TE ROG}}"
     ],
     "explanation": "A common romanian word or expression for beginner use.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Spanish?",
-    "correctAnswer": "{{es-ES|¿Dónde está el baño?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el baño?||DON-de ES-ta EL BA-no?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Cuándo está el baño?||}}",
-      "{{es-ES|¿Qué es el baño?||}}",
-      "{{es-ES|¿Cómo está el baño?||}}"
+      "{{es-ES|¿Cuándo está el baño?||CUAN-do ES-ta EL BA-no?}}",
+      "{{es-ES|¿Qué es el baño?||QUE ES EL BA-no?}}",
+      "{{es-ES|¿Cómo está el baño?||CO-mo ES-ta EL BA-no?}}"
     ],
     "explanation": "'¿Dónde está?' = 'Where is?'. Replace 'el baño' with any place: la estación, el hotel, etc.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Spanish?",
-    "correctAnswer": "{{es-ES|¿Cuánto cuesta esto?||}}",
+    "correctAnswer": "{{es-ES|¿Cuánto cuesta esto?||CUAN-to CUES-ta ES-to?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué es esto?||}}",
-      "{{es-ES|¿Dónde compro esto?||}}",
-      "{{es-ES|¿Hay descuento?||}}"
+      "{{es-ES|¿Qué es esto?||QUE ES ES-to?}}",
+      "{{es-ES|¿Dónde compro esto?||DON-de COM-pro ES-to?}}",
+      "{{es-ES|¿Hay descuento?||HAY des-CUEN-to?}}"
     ],
     "explanation": "'¿Cuánto cuesta?' — 'How much does it cost?' — the key phrase for any market or shop.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in Spanish?",
-    "correctAnswer": "{{es-ES|Un café, por favor.||}}",
+    "correctAnswer": "{{es-ES|Un café, por favor.||UN CA-fe, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Quiero café ahora.||}}",
-      "{{es-ES|Dame café.||}}",
-      "{{es-ES|Café rápido.||}}"
+      "{{es-ES|Quiero café ahora.||QUIE-ro CA-fe a-HO-ra.}}",
+      "{{es-ES|Dame café.||DA-me CA-fe.}}",
+      "{{es-ES|Café rápido.||CA-fe ra-PI-do.}}"
     ],
     "explanation": "'Un [item], por favor' — 'One [item], please' — the polite café order pattern.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in Spanish?",
-    "correctAnswer": "{{es-ES|La cuenta, por favor.||}}",
+    "correctAnswer": "{{es-ES|La cuenta, por favor.||LA CUEN-ta, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|El menú, por favor.||}}",
-      "{{es-ES|Más comida, por favor.||}}",
-      "{{es-ES|Estaba delicioso.||}}"
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Más comida, por favor.||MAS co-MI-da, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}"
     ],
     "explanation": "'La cuenta, por favor' — 'The bill, please' — the standard way to end a meal.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Spanish?",
-    "correctAnswer": "{{es-ES|¿Habla usted inglés?||}}",
+    "correctAnswer": "{{es-ES|¿Habla usted inglés?||HA-bla us-TED IN-gles?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Entiende inglés?||}}",
-      "{{es-ES|¿Sabe inglés?||}}",
-      "{{es-ES|¿Estudia inglés?||}}"
+      "{{es-ES|¿Entiende inglés?||en-TIEN-de IN-gles?}}",
+      "{{es-ES|¿Sabe inglés?||SA-be IN-gles?}}",
+      "{{es-ES|¿Estudia inglés?||es-TU-dia IN-gles?}}"
     ],
     "explanation": "'¿Habla usted inglés?' is polite formal. Informal: '¿Hablas inglés?' (using tú).",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left / right' in Spanish?",
-    "correctAnswer": "{{es-ES|Gire a la izquierda||}} / {{es-ES|a la derecha.||}}",
+    "correctAnswer": "{{es-ES|Gire a la izquierda||GI-re A LA iz-KIER-da}} / {{es-ES|a la derecha.||A LA de-RE-cha.}}",
     "incorrectAnswers": [
-      "{{es-ES|Siga recto.||}}",
-      "{{es-ES|Dé la vuelta.||}}",
-      "{{es-ES|Pare aquí.||}}"
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Dé la vuelta.||DE LA BUEL-ta.}}",
+      "{{es-ES|Pare aquí.||PA-re A-ki.}}"
     ],
     "explanation": "'Izquierda' = left, 'derecha' = right, 'recto' = straight ahead. The three directions for navigation.",
     "keywords": [
@@ -124,11 +124,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'A table for two, please' in Spanish?",
-    "correctAnswer": "{{es-ES|Una mesa para dos, por favor.||}}",
+    "correctAnswer": "{{es-ES|Una mesa para dos, por favor.||U-na ME-sa PA-ra DOS, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Dos personas, aquí.||}}",
-      "{{es-ES|Queremos sentarnos juntos.||}}",
-      "{{es-ES|Mesa grande, por favor.||}}"
+      "{{es-ES|Dos personas, aquí.||DOS per-SO-nas, A-ki.}}",
+      "{{es-ES|Queremos sentarnos juntos.||que-RE-mos sen-TAR-nos HUN-tos.}}",
+      "{{es-ES|Mesa grande, por favor.||ME-sa GRAN-de, POR fa-BOR.}}"
     ],
     "explanation": "'Una mesa para [number], por favor' — swap 'dos' with any number: tres, cuatro, etc.",
     "keywords": [
@@ -144,11 +144,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Is there a hospital nearby?' in Spanish?",
-    "correctAnswer": "{{es-ES|¿Hay un hospital cerca?||}}",
+    "correctAnswer": "{{es-ES|¿Hay un hospital cerca?||HAY UN hos-pi-TAL SEHR-ca?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está el médico?||}}",
-      "{{es-ES|¿Necesito un doctor?||}}",
-      "{{es-ES|¿Cuándo abre el hospital?||}}"
+      "{{es-ES|¿Dónde está el médico?||DON-de ES-ta EL me-DI-co?}}",
+      "{{es-ES|¿Necesito un doctor?||ne-seh-SI-to UN doc-TOR?}}",
+      "{{es-ES|¿Cuándo abre el hospital?||CUAN-do A-bre EL hos-pi-TAL?}}"
     ],
     "explanation": "'¿Hay...?' = 'Is there...?' — very versatile: ¿Hay un banco cerca? ¿Hay WiFi aquí?",
     "keywords": [
@@ -164,11 +164,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Good evening.'?",
-    "correctAnswer": "{{es-ES|Buenas noches.||}}",
+    "correctAnswer": "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Cómo está?||}}",
-      "{{es-ES|Estoy bien, gracias.||}}",
-      "{{es-ES|Muy bien, gracias.||}}"
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -184,11 +184,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'How are you?'?",
-    "correctAnswer": "{{es-ES|¿Cómo está?||}}",
+    "correctAnswer": "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy bien, gracias.||}}",
-      "{{es-ES|Muy bien, gracias.||}}",
-      "{{es-ES|Hasta luego.||}}"
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -204,11 +204,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "{{es-ES|Estoy bien, gracias.||}}",
+    "correctAnswer": "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
     "incorrectAnswers": [
-      "{{es-ES|Muy bien, gracias.||}}",
-      "{{es-ES|Hasta luego.||}}",
-      "{{es-ES|Hasta mañana.||}}"
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -224,11 +224,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Very well, thanks.'?",
-    "correctAnswer": "{{es-ES|Muy bien, gracias.||}}",
+    "correctAnswer": "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hasta luego.||}}",
-      "{{es-ES|Hasta mañana.||}}",
-      "{{es-ES|Que tenga un buen día.||}}"
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -244,11 +244,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'See you later.'?",
-    "correctAnswer": "{{es-ES|Hasta luego.||}}",
+    "correctAnswer": "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hasta mañana.||}}",
-      "{{es-ES|Que tenga un buen día.||}}",
-      "{{es-ES|Bienvenido.||}}"
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -264,11 +264,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'See you tomorrow.'?",
-    "correctAnswer": "{{es-ES|Hasta mañana.||}}",
+    "correctAnswer": "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Que tenga un buen día.||}}",
-      "{{es-ES|Bienvenido.||}}",
-      "{{es-ES|Mucho gusto.||}}"
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -284,11 +284,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Have a good day.'.",
-    "correctAnswer": "{{es-ES|Que tenga un buen día.||}}",
+    "correctAnswer": "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
     "incorrectAnswers": [
-      "{{es-ES|Bienvenido.||}}",
-      "{{es-ES|Mucho gusto.||}}",
-      "{{es-ES|Me alegra verle de nuevo.||}}"
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -304,11 +304,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Welcome.'?",
-    "correctAnswer": "{{es-ES|Bienvenido.||}}",
+    "correctAnswer": "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mucho gusto.||}}",
-      "{{es-ES|Me alegra verle de nuevo.||}}",
-      "{{es-ES|Hasta pronto.||}}"
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -324,11 +324,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "{{es-ES|Mucho gusto.||}}",
+    "correctAnswer": "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me alegra verle de nuevo.||}}",
-      "{{es-ES|Hasta pronto.||}}",
-      "{{es-ES|Que tenga una buena noche.||}}"
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -344,11 +344,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Nice to see you again.'?",
-    "correctAnswer": "{{es-ES|Me alegra verle de nuevo.||}}",
+    "correctAnswer": "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hasta pronto.||}}",
-      "{{es-ES|Que tenga una buena noche.||}}",
-      "{{es-ES|Buenas noches.||}}"
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -364,11 +364,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'See you soon.'.",
-    "correctAnswer": "{{es-ES|Hasta pronto.||}}",
+    "correctAnswer": "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Que tenga una buena noche.||}}",
-      "{{es-ES|Buenas noches.||}}",
-      "{{es-ES|¿Cómo está?||}}"
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -384,11 +384,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Have a nice evening.'?",
-    "correctAnswer": "{{es-ES|Que tenga una buena noche.||}}",
+    "correctAnswer": "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
     "incorrectAnswers": [
-      "{{es-ES|Buenas noches.||}}",
-      "{{es-ES|¿Cómo está?||}}",
-      "{{es-ES|Estoy bien, gracias.||}}"
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -404,11 +404,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'What is your name?'?",
-    "correctAnswer": "{{es-ES|¿Cómo se llama?||}}",
+    "correctAnswer": "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
     "incorrectAnswers": [
-      "{{es-ES|Soy de Estados Unidos.||}}",
-      "{{es-ES|Vivo en Chicago.||}}",
-      "{{es-ES|Tengo veinte años.||}}"
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -424,11 +424,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I am from the United States.'?",
-    "correctAnswer": "{{es-ES|Soy de Estados Unidos.||}}",
+    "correctAnswer": "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
     "incorrectAnswers": [
-      "{{es-ES|Vivo en Chicago.||}}",
-      "{{es-ES|Tengo veinte años.||}}",
-      "{{es-ES|Este es mi amigo.||}}"
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -444,11 +444,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I live in Chicago.'.",
-    "correctAnswer": "{{es-ES|Vivo en Chicago.||}}",
+    "correctAnswer": "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo veinte años.||}}",
-      "{{es-ES|Este es mi amigo.||}}",
-      "{{es-ES|Esta es mi hermana.||}}"
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -464,11 +464,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am twenty years old.'?",
-    "correctAnswer": "{{es-ES|Tengo veinte años.||}}",
+    "correctAnswer": "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
     "incorrectAnswers": [
-      "{{es-ES|Este es mi amigo.||}}",
-      "{{es-ES|Esta es mi hermana.||}}",
-      "{{es-ES|Estoy casado/casada.||}}"
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -484,11 +484,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'This is my friend.'?",
-    "correctAnswer": "{{es-ES|Este es mi amigo.||}}",
+    "correctAnswer": "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esta es mi hermana.||}}",
-      "{{es-ES|Estoy casado/casada.||}}",
-      "{{es-ES|Soy estudiante.||}}"
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -504,11 +504,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'This is my sister.'?",
-    "correctAnswer": "{{es-ES|Esta es mi hermana.||}}",
+    "correctAnswer": "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy casado/casada.||}}",
-      "{{es-ES|Soy estudiante.||}}",
-      "{{es-ES|Estoy aquí de vacaciones.||}}"
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -524,11 +524,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I am married.'.",
-    "correctAnswer": "{{es-ES|Estoy casado/casada.||}}",
+    "correctAnswer": "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|Soy estudiante.||}}",
-      "{{es-ES|Estoy aquí de vacaciones.||}}",
-      "{{es-ES|Mi apellido es García.||}}"
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -544,11 +544,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am a student.'?",
-    "correctAnswer": "{{es-ES|Soy estudiante.||}}",
+    "correctAnswer": "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy aquí de vacaciones.||}}",
-      "{{es-ES|Mi apellido es García.||}}",
-      "{{es-ES|Mi número de teléfono es...||}}"
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -564,11 +564,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "{{es-ES|Estoy aquí de vacaciones.||}}",
+    "correctAnswer": "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mi apellido es García.||}}",
-      "{{es-ES|Mi número de teléfono es...||}}",
-      "{{es-ES|Mi dirección es...||}}"
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -584,11 +584,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "{{es-ES|Mi apellido es García.||}}",
+    "correctAnswer": "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mi número de teléfono es...||}}",
-      "{{es-ES|Mi dirección es...||}}",
-      "{{es-ES|¿Cómo se llama?||}}"
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -604,11 +604,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'My phone number is...'.",
-    "correctAnswer": "{{es-ES|Mi número de teléfono es...||}}",
+    "correctAnswer": "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
     "incorrectAnswers": [
-      "{{es-ES|Mi dirección es...||}}",
-      "{{es-ES|¿Cómo se llama?||}}",
-      "{{es-ES|Soy de Estados Unidos.||}}"
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -624,11 +624,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'My address is...'?",
-    "correctAnswer": "{{es-ES|Mi dirección es...||}}",
+    "correctAnswer": "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Cómo se llama?||}}",
-      "{{es-ES|Soy de Estados Unidos.||}}",
-      "{{es-ES|Vivo en Chicago.||}}"
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -644,11 +644,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I need water.'?",
-    "correctAnswer": "{{es-ES|Necesito agua.||}}",
+    "correctAnswer": "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un mapa.||}}",
-      "{{es-ES|Necesito un taxi.||}}",
-      "{{es-ES|Necesito una habitación.||}}"
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -664,11 +664,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I need a map.'?",
-    "correctAnswer": "{{es-ES|Necesito un mapa.||}}",
+    "correctAnswer": "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un taxi.||}}",
-      "{{es-ES|Necesito una habitación.||}}",
-      "{{es-ES|¿Tiene wifi?||}}"
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -684,11 +684,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I need a taxi.'.",
-    "correctAnswer": "{{es-ES|Necesito un taxi.||}}",
+    "correctAnswer": "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito una habitación.||}}",
-      "{{es-ES|¿Tiene wifi?||}}",
-      "{{es-ES|¿Tiene pan?||}}"
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -704,11 +704,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I need a room.'?",
-    "correctAnswer": "{{es-ES|Necesito una habitación.||}}",
+    "correctAnswer": "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene wifi?||}}",
-      "{{es-ES|¿Tiene pan?||}}",
-      "{{es-ES|¿Me trae el menú, por favor?||}}"
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -724,11 +724,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "{{es-ES|¿Tiene wifi?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene pan?||}}",
-      "{{es-ES|¿Me trae el menú, por favor?||}}",
-      "{{es-ES|¿Me trae una botella de agua?||}}"
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -744,11 +744,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Do you have bread?'?",
-    "correctAnswer": "{{es-ES|¿Tiene pan?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Me trae el menú, por favor?||}}",
-      "{{es-ES|¿Me trae una botella de agua?||}}",
-      "{{es-ES|Deme una bolsa, por favor.||}}"
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -764,11 +764,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Can I have the menu?'.",
-    "correctAnswer": "{{es-ES|¿Me trae el menú, por favor?||}}",
+    "correctAnswer": "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Me trae una botella de agua?||}}",
-      "{{es-ES|Deme una bolsa, por favor.||}}",
-      "{{es-ES|Necesito más tiempo.||}}"
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -784,11 +784,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "{{es-ES|¿Me trae una botella de agua?||}}",
+    "correctAnswer": "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
     "incorrectAnswers": [
-      "{{es-ES|Deme una bolsa, por favor.||}}",
-      "{{es-ES|Necesito más tiempo.||}}",
-      "{{es-ES|Necesito el recibo.||}}"
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -804,11 +804,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "{{es-ES|Deme una bolsa, por favor.||}}",
+    "correctAnswer": "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito más tiempo.||}}",
-      "{{es-ES|Necesito el recibo.||}}",
-      "{{es-ES|¿Tiene comida vegetariana?||}}"
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -824,11 +824,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I need more time.'?",
-    "correctAnswer": "{{es-ES|Necesito más tiempo.||}}",
+    "correctAnswer": "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito el recibo.||}}",
-      "{{es-ES|¿Tiene comida vegetariana?||}}",
-      "{{es-ES|Necesito agua.||}}"
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -844,11 +844,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I need the receipt.'.",
-    "correctAnswer": "{{es-ES|Necesito el recibo.||}}",
+    "correctAnswer": "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene comida vegetariana?||}}",
-      "{{es-ES|Necesito agua.||}}",
-      "{{es-ES|Necesito un mapa.||}}"
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -864,11 +864,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "{{es-ES|¿Tiene comida vegetariana?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito agua.||}}",
-      "{{es-ES|Necesito un mapa.||}}",
-      "{{es-ES|Necesito un taxi.||}}"
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -884,11 +884,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Where is the bank?'?",
-    "correctAnswer": "{{es-ES|¿Dónde está el banco?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está el museo?||}}",
-      "{{es-ES|¿Dónde está el centro?||}}",
-      "{{es-ES|¿Dónde está la parada de autobús?||}}"
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -904,11 +904,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Where is the museum?'?",
-    "correctAnswer": "{{es-ES|¿Dónde está el museo?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está el centro?||}}",
-      "{{es-ES|¿Dónde está la parada de autobús?||}}",
-      "{{es-ES|Siga recto.||}}"
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -924,11 +924,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Where is the city center?'.",
-    "correctAnswer": "{{es-ES|¿Dónde está el centro?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está la parada de autobús?||}}",
-      "{{es-ES|Siga recto.||}}",
-      "{{es-ES|Tome la primera calle.||}}"
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -944,11 +944,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "{{es-ES|¿Dónde está la parada de autobús?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
     "incorrectAnswers": [
-      "{{es-ES|Siga recto.||}}",
-      "{{es-ES|Tome la primera calle.||}}",
-      "{{es-ES|Tome la segunda calle.||}}"
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -964,11 +964,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Go straight.'?",
-    "correctAnswer": "{{es-ES|Siga recto.||}}",
+    "correctAnswer": "{{es-ES|Siga recto.||SI-ga REC-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tome la primera calle.||}}",
-      "{{es-ES|Tome la segunda calle.||}}",
-      "{{es-ES|¿Está lejos?||}}"
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -984,11 +984,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Take the first street.'?",
-    "correctAnswer": "{{es-ES|Tome la primera calle.||}}",
+    "correctAnswer": "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tome la segunda calle.||}}",
-      "{{es-ES|¿Está lejos?||}}",
-      "{{es-ES|¿Está cerca?||}}"
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1004,11 +1004,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Take the second street.'.",
-    "correctAnswer": "{{es-ES|Tome la segunda calle.||}}",
+    "correctAnswer": "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Está lejos?||}}",
-      "{{es-ES|¿Está cerca?||}}",
-      "{{es-ES|Estoy perdido/perdida.||}}"
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1024,11 +1024,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Is it far?'?",
-    "correctAnswer": "{{es-ES|¿Está lejos?||}}",
+    "correctAnswer": "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Está cerca?||}}",
-      "{{es-ES|Estoy perdido/perdida.||}}",
-      "{{es-ES|Buscamos el hotel.||}}"
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1044,11 +1044,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Is it near?'?",
-    "correctAnswer": "{{es-ES|¿Está cerca?||}}",
+    "correctAnswer": "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy perdido/perdida.||}}",
-      "{{es-ES|Buscamos el hotel.||}}",
-      "{{es-ES|Muéstreme en el mapa, por favor.||}}"
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1064,11 +1064,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I am lost.'?",
-    "correctAnswer": "{{es-ES|Estoy perdido/perdida.||}}",
+    "correctAnswer": "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|Buscamos el hotel.||}}",
-      "{{es-ES|Muéstreme en el mapa, por favor.||}}",
-      "{{es-ES|¿Dónde está el banco?||}}"
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1084,11 +1084,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "{{es-ES|Buscamos el hotel.||}}",
+    "correctAnswer": "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
     "incorrectAnswers": [
-      "{{es-ES|Muéstreme en el mapa, por favor.||}}",
-      "{{es-ES|¿Dónde está el banco?||}}",
-      "{{es-ES|¿Dónde está el museo?||}}"
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1104,11 +1104,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Please show me on the map.'?",
-    "correctAnswer": "{{es-ES|Muéstreme en el mapa, por favor.||}}",
+    "correctAnswer": "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está el banco?||}}",
-      "{{es-ES|¿Dónde está el museo?||}}",
-      "{{es-ES|¿Dónde está el centro?||}}"
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1124,11 +1124,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "{{es-ES|¿Puede repetir eso?||}}",
+    "correctAnswer": "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Puede hablar más despacio?||}}",
-      "{{es-ES|¿Cómo se deletrea su nombre?||}}",
-      "{{es-ES|Son diez euros en total.||}}"
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1144,11 +1144,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "{{es-ES|¿Puede hablar más despacio?||}}",
+    "correctAnswer": "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Cómo se deletrea su nombre?||}}",
-      "{{es-ES|Son diez euros en total.||}}",
-      "{{es-ES|Cuesta veinte euros.||}}"
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1164,11 +1164,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'How do you spell your name?'.",
-    "correctAnswer": "{{es-ES|¿Cómo se deletrea su nombre?||}}",
+    "correctAnswer": "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
     "incorrectAnswers": [
-      "{{es-ES|Son diez euros en total.||}}",
-      "{{es-ES|Cuesta veinte euros.||}}",
-      "{{es-ES|Habitación número doce.||}}"
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1184,11 +1184,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'The total is ten euros.'?",
-    "correctAnswer": "{{es-ES|Son diez euros en total.||}}",
+    "correctAnswer": "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
     "incorrectAnswers": [
-      "{{es-ES|Cuesta veinte euros.||}}",
-      "{{es-ES|Habitación número doce.||}}",
-      "{{es-ES|Andén número cuatro.||}}"
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1204,11 +1204,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "{{es-ES|Cuesta veinte euros.||}}",
+    "correctAnswer": "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
     "incorrectAnswers": [
-      "{{es-ES|Habitación número doce.||}}",
-      "{{es-ES|Andén número cuatro.||}}",
-      "{{es-ES|Una mesa para tres, por favor.||}}"
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1224,11 +1224,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Room number twelve.'?",
-    "correctAnswer": "{{es-ES|Habitación número doce.||}}",
+    "correctAnswer": "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
     "incorrectAnswers": [
-      "{{es-ES|Andén número cuatro.||}}",
-      "{{es-ES|Una mesa para tres, por favor.||}}",
-      "{{es-ES|Dos billetes, por favor.||}}"
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1244,11 +1244,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Platform number four.'.",
-    "correctAnswer": "{{es-ES|Andén número cuatro.||}}",
+    "correctAnswer": "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
     "incorrectAnswers": [
-      "{{es-ES|Una mesa para tres, por favor.||}}",
-      "{{es-ES|Dos billetes, por favor.||}}",
-      "{{es-ES|¿Puede escribirlo?||}}"
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1264,11 +1264,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'A table for three, please.'?",
-    "correctAnswer": "{{es-ES|Una mesa para tres, por favor.||}}",
+    "correctAnswer": "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Dos billetes, por favor.||}}",
-      "{{es-ES|¿Puede escribirlo?||}}",
-      "{{es-ES|¿Qué fecha es hoy?||}}"
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1284,11 +1284,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "{{es-ES|Dos billetes, por favor.||}}",
+    "correctAnswer": "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Puede escribirlo?||}}",
-      "{{es-ES|¿Qué fecha es hoy?||}}",
-      "{{es-ES|Un momento, por favor.||}}"
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1304,11 +1304,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Can you write it down?'?",
-    "correctAnswer": "{{es-ES|¿Puede escribirlo?||}}",
+    "correctAnswer": "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué fecha es hoy?||}}",
-      "{{es-ES|Un momento, por favor.||}}",
-      "{{es-ES|¿Puede repetir eso?||}}"
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1324,11 +1324,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'What is today's date?'.",
-    "correctAnswer": "{{es-ES|¿Qué fecha es hoy?||}}",
+    "correctAnswer": "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
     "incorrectAnswers": [
-      "{{es-ES|Un momento, por favor.||}}",
-      "{{es-ES|¿Puede repetir eso?||}}",
-      "{{es-ES|¿Puede hablar más despacio?||}}"
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1344,11 +1344,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'One moment, please.'?",
-    "correctAnswer": "{{es-ES|Un momento, por favor.||}}",
+    "correctAnswer": "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Puede repetir eso?||}}",
-      "{{es-ES|¿Puede hablar más despacio?||}}",
-      "{{es-ES|¿Cómo se deletrea su nombre?||}}"
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1364,11 +1364,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I am hungry.'?",
-    "correctAnswer": "{{es-ES|Tengo hambre.||}}",
+    "correctAnswer": "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo sed.||}}",
-      "{{es-ES|El menú, por favor.||}}",
-      "{{es-ES|Soy vegetariano/vegetariana.||}}"
+      "{{es-ES|Tengo sed.||TEN-go SED.}}",
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1384,11 +1384,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I am thirsty.'?",
-    "correctAnswer": "{{es-ES|Tengo sed.||}}",
+    "correctAnswer": "{{es-ES|Tengo sed.||TEN-go SED.}}",
     "incorrectAnswers": [
-      "{{es-ES|El menú, por favor.||}}",
-      "{{es-ES|Soy vegetariano/vegetariana.||}}",
-      "{{es-ES|Sin carne, por favor.||}}"
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1404,11 +1404,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'The menu, please.'.",
-    "correctAnswer": "{{es-ES|El menú, por favor.||}}",
+    "correctAnswer": "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Soy vegetariano/vegetariana.||}}",
-      "{{es-ES|Sin carne, por favor.||}}",
-      "{{es-ES|Sin azúcar, por favor.||}}"
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1424,11 +1424,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am vegetarian.'?",
-    "correctAnswer": "{{es-ES|Soy vegetariano/vegetariana.||}}",
+    "correctAnswer": "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Sin carne, por favor.||}}",
-      "{{es-ES|Sin azúcar, por favor.||}}",
-      "{{es-ES|Con leche, por favor.||}}"
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1444,11 +1444,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'No meat, please.'?",
-    "correctAnswer": "{{es-ES|Sin carne, por favor.||}}",
+    "correctAnswer": "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Sin azúcar, por favor.||}}",
-      "{{es-ES|Con leche, por favor.||}}",
-      "{{es-ES|Estaba delicioso.||}}"
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1464,11 +1464,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Without sugar, please.'?",
-    "correctAnswer": "{{es-ES|Sin azúcar, por favor.||}}",
+    "correctAnswer": "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Con leche, por favor.||}}",
-      "{{es-ES|Estaba delicioso.||}}",
-      "{{es-ES|Esto está muy bueno.||}}"
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1484,11 +1484,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'With milk, please.'.",
-    "correctAnswer": "{{es-ES|Con leche, por favor.||}}",
+    "correctAnswer": "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Estaba delicioso.||}}",
-      "{{es-ES|Esto está muy bueno.||}}",
-      "{{es-ES|La sopa está fría.||}}"
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1504,11 +1504,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'It was delicious.'?",
-    "correctAnswer": "{{es-ES|Estaba delicioso.||}}",
+    "correctAnswer": "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esto está muy bueno.||}}",
-      "{{es-ES|La sopa está fría.||}}",
-      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||}}"
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1524,11 +1524,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'This is very good.'?",
-    "correctAnswer": "{{es-ES|Esto está muy bueno.||}}",
+    "correctAnswer": "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
     "incorrectAnswers": [
-      "{{es-ES|La sopa está fría.||}}",
-      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||}}",
-      "{{es-ES|Una botella de agua, por favor.||}}"
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1544,11 +1544,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'The soup is cold.'?",
-    "correctAnswer": "{{es-ES|La sopa está fría.||}}",
+    "correctAnswer": "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
     "incorrectAnswers": [
-      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||}}",
-      "{{es-ES|Una botella de agua, por favor.||}}",
-      "{{es-ES|Tengo hambre.||}}"
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1564,11 +1564,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "{{es-ES|Soy alérgico/alérgica a los frutos secos.||}}",
+    "correctAnswer": "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
     "incorrectAnswers": [
-      "{{es-ES|Una botella de agua, por favor.||}}",
-      "{{es-ES|Tengo hambre.||}}",
-      "{{es-ES|Tengo sed.||}}"
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
+      "{{es-ES|Tengo sed.||TEN-go SED.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1584,11 +1584,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "{{es-ES|Una botella de agua, por favor.||}}",
+    "correctAnswer": "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo hambre.||}}",
-      "{{es-ES|Tengo sed.||}}",
-      "{{es-ES|El menú, por favor.||}}"
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
+      "{{es-ES|Tengo sed.||TEN-go SED.}}",
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1604,11 +1604,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "{{es-ES|¿Tiene esto en otra talla?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene esto en otro color?||}}",
-      "{{es-ES|¿Puedo probármelo?||}}",
-      "{{es-ES|Es demasiado caro.||}}"
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1624,11 +1624,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "{{es-ES|¿Tiene esto en otro color?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Puedo probármelo?||}}",
-      "{{es-ES|Es demasiado caro.||}}",
-      "{{es-ES|Es barato.||}}"
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
+      "{{es-ES|Es barato.||ES ba-RA-to.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1644,11 +1644,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Can I try it on?'.",
-    "correctAnswer": "{{es-ES|¿Puedo probármelo?||}}",
+    "correctAnswer": "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
     "incorrectAnswers": [
-      "{{es-ES|Es demasiado caro.||}}",
-      "{{es-ES|Es barato.||}}",
-      "{{es-ES|Me lo llevo.||}}"
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
+      "{{es-ES|Es barato.||ES ba-RA-to.}}",
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1664,11 +1664,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'It is too expensive.'?",
-    "correctAnswer": "{{es-ES|Es demasiado caro.||}}",
+    "correctAnswer": "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
     "incorrectAnswers": [
-      "{{es-ES|Es barato.||}}",
-      "{{es-ES|Me lo llevo.||}}",
-      "{{es-ES|¿Dónde está la caja?||}}"
+      "{{es-ES|Es barato.||ES ba-RA-to.}}",
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1684,11 +1684,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'It is cheap.'?",
-    "correctAnswer": "{{es-ES|Es barato.||}}",
+    "correctAnswer": "{{es-ES|Es barato.||ES ba-RA-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me lo llevo.||}}",
-      "{{es-ES|¿Dónde está la caja?||}}",
-      "{{es-ES|Solo estoy mirando.||}}"
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1704,11 +1704,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I will take it.'?",
-    "correctAnswer": "{{es-ES|Me lo llevo.||}}",
+    "correctAnswer": "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está la caja?||}}",
-      "{{es-ES|Solo estoy mirando.||}}",
-      "{{es-ES|¿Acepta tarjeta?||}}"
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1724,11 +1724,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Where is the checkout?'.",
-    "correctAnswer": "{{es-ES|¿Dónde está la caja?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
     "incorrectAnswers": [
-      "{{es-ES|Solo estoy mirando.||}}",
-      "{{es-ES|¿Acepta tarjeta?||}}",
-      "{{es-ES|Necesito un recibo.||}}"
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1744,11 +1744,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am just looking.'?",
-    "correctAnswer": "{{es-ES|Solo estoy mirando.||}}",
+    "correctAnswer": "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Acepta tarjeta?||}}",
-      "{{es-ES|Necesito un recibo.||}}",
-      "{{es-ES|Esta talla es demasiado pequeña.||}}"
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1764,11 +1764,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "{{es-ES|¿Acepta tarjeta?||}}",
+    "correctAnswer": "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un recibo.||}}",
-      "{{es-ES|Esta talla es demasiado pequeña.||}}",
-      "{{es-ES|Esta talla es demasiado grande.||}}"
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1784,11 +1784,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I need a receipt.'?",
-    "correctAnswer": "{{es-ES|Necesito un recibo.||}}",
+    "correctAnswer": "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esta talla es demasiado pequeña.||}}",
-      "{{es-ES|Esta talla es demasiado grande.||}}",
-      "{{es-ES|¿Tiene esto en otra talla?||}}"
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1804,11 +1804,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'This size is too small.'.",
-    "correctAnswer": "{{es-ES|Esta talla es demasiado pequeña.||}}",
+    "correctAnswer": "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esta talla es demasiado grande.||}}",
-      "{{es-ES|¿Tiene esto en otra talla?||}}",
-      "{{es-ES|¿Tiene esto en otro color?||}}"
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1824,11 +1824,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'This size is too big.'?",
-    "correctAnswer": "{{es-ES|Esta talla es demasiado grande.||}}",
+    "correctAnswer": "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene esto en otra talla?||}}",
-      "{{es-ES|¿Tiene esto en otro color?||}}",
-      "{{es-ES|¿Puedo probármelo?||}}"
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1844,11 +1844,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "{{es-ES|Necesito un billete al aeropuerto.||}}",
+    "correctAnswer": "{{es-ES|Necesito un billete al aeropuerto.||ne-seh-SI-to UN BIYE-te AL ae-ro-PUER-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Un billete al centro, por favor.||}}",
-      "{{es-ES|Un billete de ida y vuelta, por favor.||}}",
-      "{{es-ES|¿Qué andén es?||}}"
+      "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}",
+      "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1864,11 +1864,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "{{es-ES|Un billete al centro, por favor.||}}",
+    "correctAnswer": "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Un billete de ida y vuelta, por favor.||}}",
-      "{{es-ES|¿Qué andén es?||}}",
-      "{{es-ES|¿Está libre este asiento?||}}"
+      "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1884,11 +1884,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "{{es-ES|Un billete de ida y vuelta, por favor.||}}",
+    "correctAnswer": "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué andén es?||}}",
-      "{{es-ES|¿Está libre este asiento?||}}",
-      "{{es-ES|Llame a un taxi, por favor.||}}"
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1904,11 +1904,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Which platform is it?'?",
-    "correctAnswer": "{{es-ES|¿Qué andén es?||}}",
+    "correctAnswer": "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Está libre este asiento?||}}",
-      "{{es-ES|Llame a un taxi, por favor.||}}",
-      "{{es-ES|¿Este autobús va al centro?||}}"
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1924,11 +1924,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Is this seat free?'?",
-    "correctAnswer": "{{es-ES|¿Está libre este asiento?||}}",
+    "correctAnswer": "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
     "incorrectAnswers": [
-      "{{es-ES|Llame a un taxi, por favor.||}}",
-      "{{es-ES|¿Este autobús va al centro?||}}",
-      "{{es-ES|Quiero ir al aeropuerto.||}}"
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1944,11 +1944,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Please call a taxi.'?",
-    "correctAnswer": "{{es-ES|Llame a un taxi, por favor.||}}",
+    "correctAnswer": "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Este autobús va al centro?||}}",
-      "{{es-ES|Quiero ir al aeropuerto.||}}",
-      "{{es-ES|Bajamos aquí.||}}"
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1964,11 +1964,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "{{es-ES|¿Este autobús va al centro?||}}",
+    "correctAnswer": "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
     "incorrectAnswers": [
-      "{{es-ES|Quiero ir al aeropuerto.||}}",
-      "{{es-ES|Bajamos aquí.||}}",
-      "{{es-ES|Perdí el autobús.||}}"
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}",
+      "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1984,11 +1984,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "{{es-ES|Quiero ir al aeropuerto.||}}",
+    "correctAnswer": "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Bajamos aquí.||}}",
-      "{{es-ES|Perdí el autobús.||}}",
-      "{{es-ES|¿Dónde puedo comprar un billete?||}}"
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}",
+      "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}",
+      "{{es-ES|¿Dónde puedo comprar un billete?||DON-de PUE-do com-PRAR UN BIYE-te?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2004,11 +2004,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'We get off here.'?",
-    "correctAnswer": "{{es-ES|Bajamos aquí.||}}",
+    "correctAnswer": "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}",
     "incorrectAnswers": [
-      "{{es-ES|Perdí el autobús.||}}",
-      "{{es-ES|¿Dónde puedo comprar un billete?||}}",
-      "{{es-ES|El autobús llega al mediodía.||}}"
+      "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}",
+      "{{es-ES|¿Dónde puedo comprar un billete?||DON-de PUE-do com-PRAR UN BIYE-te?}}",
+      "{{es-ES|El autobús llega al mediodía.||EL au-TO-bus YE-ga AL me-DIO-dia.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2024,11 +2024,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I missed the bus.'?",
-    "correctAnswer": "{{es-ES|Perdí el autobús.||}}",
+    "correctAnswer": "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde puedo comprar un billete?||}}",
-      "{{es-ES|El autobús llega al mediodía.||}}",
-      "{{es-ES|Necesito un billete al aeropuerto.||}}"
+      "{{es-ES|¿Dónde puedo comprar un billete?||DON-de PUE-do com-PRAR UN BIYE-te?}}",
+      "{{es-ES|El autobús llega al mediodía.||EL au-TO-bus YE-ga AL me-DIO-dia.}}",
+      "{{es-ES|Necesito un billete al aeropuerto.||ne-seh-SI-to UN BIYE-te AL ae-ro-PUER-to.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2044,11 +2044,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "{{es-ES|¿Dónde puedo comprar un billete?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde puedo comprar un billete?||DON-de PUE-do com-PRAR UN BIYE-te?}}",
     "incorrectAnswers": [
-      "{{es-ES|El autobús llega al mediodía.||}}",
-      "{{es-ES|Necesito un billete al aeropuerto.||}}",
-      "{{es-ES|Un billete al centro, por favor.||}}"
+      "{{es-ES|El autobús llega al mediodía.||EL au-TO-bus YE-ga AL me-DIO-dia.}}",
+      "{{es-ES|Necesito un billete al aeropuerto.||ne-seh-SI-to UN BIYE-te AL ae-ro-PUER-to.}}",
+      "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2064,11 +2064,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "{{es-ES|El autobús llega al mediodía.||}}",
+    "correctAnswer": "{{es-ES|El autobús llega al mediodía.||EL au-TO-bus YE-ga AL me-DIO-dia.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un billete al aeropuerto.||}}",
-      "{{es-ES|Un billete al centro, por favor.||}}",
-      "{{es-ES|Un billete de ida y vuelta, por favor.||}}"
+      "{{es-ES|Necesito un billete al aeropuerto.||ne-seh-SI-to UN BIYE-te AL ae-ro-PUER-to.}}",
+      "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}",
+      "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2084,11 +2084,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I have a reservation.'?",
-    "correctAnswer": "{{es-ES|Tengo una reserva.||}}",
+    "correctAnswer": "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene una habitación individual?||}}",
-      "{{es-ES|¿Tiene una habitación doble?||}}",
-      "{{es-ES|La contraseña del wifi, por favor.||}}"
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2104,11 +2104,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Do you have a single room?'?",
-    "correctAnswer": "{{es-ES|¿Tiene una habitación individual?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Tiene una habitación doble?||}}",
-      "{{es-ES|La contraseña del wifi, por favor.||}}",
-      "{{es-ES|Hay un problema con la habitación.||}}"
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2124,11 +2124,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Do you have a double room?'.",
-    "correctAnswer": "{{es-ES|¿Tiene una habitación doble?||}}",
+    "correctAnswer": "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
     "incorrectAnswers": [
-      "{{es-ES|La contraseña del wifi, por favor.||}}",
-      "{{es-ES|Hay un problema con la habitación.||}}",
-      "{{es-ES|La ducha no funciona.||}}"
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2144,11 +2144,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "{{es-ES|La contraseña del wifi, por favor.||}}",
+    "correctAnswer": "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hay un problema con la habitación.||}}",
-      "{{es-ES|La ducha no funciona.||}}",
-      "{{es-ES|La habitación está demasiado fría.||}}"
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2164,11 +2164,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "{{es-ES|Hay un problema con la habitación.||}}",
+    "correctAnswer": "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
     "incorrectAnswers": [
-      "{{es-ES|La ducha no funciona.||}}",
-      "{{es-ES|La habitación está demasiado fría.||}}",
-      "{{es-ES|Necesito toallas limpias.||}}"
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2184,11 +2184,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'The shower does not work.'?",
-    "correctAnswer": "{{es-ES|La ducha no funciona.||}}",
+    "correctAnswer": "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|La habitación está demasiado fría.||}}",
-      "{{es-ES|Necesito toallas limpias.||}}",
-      "{{es-ES|¿Está incluido el desayuno?||}}"
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2204,11 +2204,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'The room is too cold.'.",
-    "correctAnswer": "{{es-ES|La habitación está demasiado fría.||}}",
+    "correctAnswer": "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito toallas limpias.||}}",
-      "{{es-ES|¿Está incluido el desayuno?||}}",
-      "{{es-ES|¿Me puede dar otra llave?||}}"
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2224,11 +2224,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I need clean towels.'?",
-    "correctAnswer": "{{es-ES|Necesito toallas limpias.||}}",
+    "correctAnswer": "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Está incluido el desayuno?||}}",
-      "{{es-ES|¿Me puede dar otra llave?||}}",
-      "{{es-ES|El aire acondicionado está roto.||}}"
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2244,11 +2244,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "{{es-ES|¿Está incluido el desayuno?||}}",
+    "correctAnswer": "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Me puede dar otra llave?||}}",
-      "{{es-ES|El aire acondicionado está roto.||}}",
-      "{{es-ES|El desayuno empieza a las siete.||}}"
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2264,11 +2264,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Can I have another key?'?",
-    "correctAnswer": "{{es-ES|¿Me puede dar otra llave?||}}",
+    "correctAnswer": "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
     "incorrectAnswers": [
-      "{{es-ES|El aire acondicionado está roto.||}}",
-      "{{es-ES|El desayuno empieza a las siete.||}}",
-      "{{es-ES|Tengo una reserva.||}}"
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2284,11 +2284,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "{{es-ES|El aire acondicionado está roto.||}}",
+    "correctAnswer": "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|El desayuno empieza a las siete.||}}",
-      "{{es-ES|Tengo una reserva.||}}",
-      "{{es-ES|¿Tiene una habitación individual?||}}"
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2304,11 +2304,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "{{es-ES|El desayuno empieza a las siete.||}}",
+    "correctAnswer": "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo una reserva.||}}",
-      "{{es-ES|¿Tiene una habitación individual?||}}",
-      "{{es-ES|¿Tiene una habitación doble?||}}"
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2324,11 +2324,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I feel sick.'?",
-    "correctAnswer": "{{es-ES|Me siento mal.||}}",
+    "correctAnswer": "{{es-ES|Me siento mal.||ME SIEN-to MAL.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me duele la cabeza.||}}",
-      "{{es-ES|Tengo fiebre.||}}",
-      "{{es-ES|Necesito un médico.||}}"
+      "{{es-ES|Me duele la cabeza.||ME DUE-le LA ca-BE-za.}}",
+      "{{es-ES|Tengo fiebre.||TEN-go FIE-bre.}}",
+      "{{es-ES|Necesito un médico.||ne-seh-SI-to UN me-DI-co.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2344,11 +2344,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I have a headache.'?",
-    "correctAnswer": "{{es-ES|Me duele la cabeza.||}}",
+    "correctAnswer": "{{es-ES|Me duele la cabeza.||ME DUE-le LA ca-BE-za.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo fiebre.||}}",
-      "{{es-ES|Necesito un médico.||}}",
-      "{{es-ES|¿Dónde está la farmacia?||}}"
+      "{{es-ES|Tengo fiebre.||TEN-go FIE-bre.}}",
+      "{{es-ES|Necesito un médico.||ne-seh-SI-to UN me-DI-co.}}",
+      "{{es-ES|¿Dónde está la farmacia?||DON-de ES-ta LA far-MA-seea?}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2364,11 +2364,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I have a fever.'.",
-    "correctAnswer": "{{es-ES|Tengo fiebre.||}}",
+    "correctAnswer": "{{es-ES|Tengo fiebre.||TEN-go FIE-bre.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un médico.||}}",
-      "{{es-ES|¿Dónde está la farmacia?||}}",
-      "{{es-ES|Soy alérgico/alérgica a la penicilina.||}}"
+      "{{es-ES|Necesito un médico.||ne-seh-SI-to UN me-DI-co.}}",
+      "{{es-ES|¿Dónde está la farmacia?||DON-de ES-ta LA far-MA-seea?}}",
+      "{{es-ES|Soy alérgico/alérgica a la penicilina.||SOY a-ler-HEE-co/a-ler-HEE-ca A LA pe-ni-see-LI-na.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2384,11 +2384,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I need a doctor.'?",
-    "correctAnswer": "{{es-ES|Necesito un médico.||}}",
+    "correctAnswer": "{{es-ES|Necesito un médico.||ne-seh-SI-to UN me-DI-co.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está la farmacia?||}}",
-      "{{es-ES|Soy alérgico/alérgica a la penicilina.||}}",
-      "{{es-ES|Me duele el estómago.||}}"
+      "{{es-ES|¿Dónde está la farmacia?||DON-de ES-ta LA far-MA-seea?}}",
+      "{{es-ES|Soy alérgico/alérgica a la penicilina.||SOY a-ler-HEE-co/a-ler-HEE-ca A LA pe-ni-see-LI-na.}}",
+      "{{es-ES|Me duele el estómago.||ME DUE-le EL es-to-MA-go.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2404,11 +2404,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "{{es-ES|¿Dónde está la farmacia?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está la farmacia?||DON-de ES-ta LA far-MA-seea?}}",
     "incorrectAnswers": [
-      "{{es-ES|Soy alérgico/alérgica a la penicilina.||}}",
-      "{{es-ES|Me duele el estómago.||}}",
-      "{{es-ES|Necesito medicina.||}}"
+      "{{es-ES|Soy alérgico/alérgica a la penicilina.||SOY a-ler-HEE-co/a-ler-HEE-ca A LA pe-ni-see-LI-na.}}",
+      "{{es-ES|Me duele el estómago.||ME DUE-le EL es-to-MA-go.}}",
+      "{{es-ES|Necesito medicina.||ne-seh-SI-to me-di-SEE-na.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2424,11 +2424,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "{{es-ES|Soy alérgico/alérgica a la penicilina.||}}",
+    "correctAnswer": "{{es-ES|Soy alérgico/alérgica a la penicilina.||SOY a-ler-HEE-co/a-ler-HEE-ca A LA pe-ni-see-LI-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me duele el estómago.||}}",
-      "{{es-ES|Necesito medicina.||}}",
-      "{{es-ES|Me siento mareado/mareada.||}}"
+      "{{es-ES|Me duele el estómago.||ME DUE-le EL es-to-MA-go.}}",
+      "{{es-ES|Necesito medicina.||ne-seh-SI-to me-di-SEE-na.}}",
+      "{{es-ES|Me siento mareado/mareada.||ME SIEN-to ma-REA-do/ma-REA-da.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2444,11 +2444,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'My stomach hurts.'.",
-    "correctAnswer": "{{es-ES|Me duele el estómago.||}}",
+    "correctAnswer": "{{es-ES|Me duele el estómago.||ME DUE-le EL es-to-MA-go.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito medicina.||}}",
-      "{{es-ES|Me siento mareado/mareada.||}}",
-      "{{es-ES|Tengo un resfriado.||}}"
+      "{{es-ES|Necesito medicina.||ne-seh-SI-to me-di-SEE-na.}}",
+      "{{es-ES|Me siento mareado/mareada.||ME SIEN-to ma-REA-do/ma-REA-da.}}",
+      "{{es-ES|Tengo un resfriado.||TEN-go UN res-FRIA-do.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2464,11 +2464,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I need medicine.'?",
-    "correctAnswer": "{{es-ES|Necesito medicina.||}}",
+    "correctAnswer": "{{es-ES|Necesito medicina.||ne-seh-SI-to me-di-SEE-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me siento mareado/mareada.||}}",
-      "{{es-ES|Tengo un resfriado.||}}",
-      "{{es-ES|Necesito un hospital.||}}"
+      "{{es-ES|Me siento mareado/mareada.||ME SIEN-to ma-REA-do/ma-REA-da.}}",
+      "{{es-ES|Tengo un resfriado.||TEN-go UN res-FRIA-do.}}",
+      "{{es-ES|Necesito un hospital.||ne-seh-SI-to UN hos-pi-TAL.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2484,11 +2484,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "{{es-ES|Me siento mareado/mareada.||}}",
+    "correctAnswer": "{{es-ES|Me siento mareado/mareada.||ME SIEN-to ma-REA-do/ma-REA-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo un resfriado.||}}",
-      "{{es-ES|Necesito un hospital.||}}",
-      "{{es-ES|Me siento mejor ahora.||}}"
+      "{{es-ES|Tengo un resfriado.||TEN-go UN res-FRIA-do.}}",
+      "{{es-ES|Necesito un hospital.||ne-seh-SI-to UN hos-pi-TAL.}}",
+      "{{es-ES|Me siento mejor ahora.||ME SIEN-to me-HOR a-HO-ra.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2504,11 +2504,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I have a cold.'?",
-    "correctAnswer": "{{es-ES|Tengo un resfriado.||}}",
+    "correctAnswer": "{{es-ES|Tengo un resfriado.||TEN-go UN res-FRIA-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un hospital.||}}",
-      "{{es-ES|Me siento mejor ahora.||}}",
-      "{{es-ES|Me siento mal.||}}"
+      "{{es-ES|Necesito un hospital.||ne-seh-SI-to UN hos-pi-TAL.}}",
+      "{{es-ES|Me siento mejor ahora.||ME SIEN-to me-HOR a-HO-ra.}}",
+      "{{es-ES|Me siento mal.||ME SIEN-to MAL.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2524,11 +2524,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I need a hospital.'.",
-    "correctAnswer": "{{es-ES|Necesito un hospital.||}}",
+    "correctAnswer": "{{es-ES|Necesito un hospital.||ne-seh-SI-to UN hos-pi-TAL.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me siento mejor ahora.||}}",
-      "{{es-ES|Me siento mal.||}}",
-      "{{es-ES|Me duele la cabeza.||}}"
+      "{{es-ES|Me siento mejor ahora.||ME SIEN-to me-HOR a-HO-ra.}}",
+      "{{es-ES|Me siento mal.||ME SIEN-to MAL.}}",
+      "{{es-ES|Me duele la cabeza.||ME DUE-le LA ca-BE-za.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2544,11 +2544,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I feel better now.'?",
-    "correctAnswer": "{{es-ES|Me siento mejor ahora.||}}",
+    "correctAnswer": "{{es-ES|Me siento mejor ahora.||ME SIEN-to me-HOR a-HO-ra.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me siento mal.||}}",
-      "{{es-ES|Me duele la cabeza.||}}",
-      "{{es-ES|Tengo fiebre.||}}"
+      "{{es-ES|Me siento mal.||ME SIEN-to MAL.}}",
+      "{{es-ES|Me duele la cabeza.||ME DUE-le LA ca-BE-za.}}",
+      "{{es-ES|Tengo fiebre.||TEN-go FIE-bre.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2564,11 +2564,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'What time is it?'?",
-    "correctAnswer": "{{es-ES|¿Qué hora es?||}}",
+    "correctAnswer": "{{es-ES|¿Qué hora es?||QUE HO-ra ES?}}",
     "incorrectAnswers": [
-      "{{es-ES|Hoy es lunes.||}}",
-      "{{es-ES|Mañana viajaré.||}}",
-      "{{es-ES|Ayer trabajé.||}}"
+      "{{es-ES|Hoy es lunes.||HOY ES LU-nes.}}",
+      "{{es-ES|Mañana viajaré.||ma-NA-na bia-HA-re.}}",
+      "{{es-ES|Ayer trabajé.||AYER tra-BA-he.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2584,11 +2584,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Today is Monday.'?",
-    "correctAnswer": "{{es-ES|Hoy es lunes.||}}",
+    "correctAnswer": "{{es-ES|Hoy es lunes.||HOY ES LU-nes.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mañana viajaré.||}}",
-      "{{es-ES|Ayer trabajé.||}}",
-      "{{es-ES|Abre a las nueve.||}}"
+      "{{es-ES|Mañana viajaré.||ma-NA-na bia-HA-re.}}",
+      "{{es-ES|Ayer trabajé.||AYER tra-BA-he.}}",
+      "{{es-ES|Abre a las nueve.||A-bre A LAS NUE-be.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2604,11 +2604,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "{{es-ES|Mañana viajaré.||}}",
+    "correctAnswer": "{{es-ES|Mañana viajaré.||ma-NA-na bia-HA-re.}}",
     "incorrectAnswers": [
-      "{{es-ES|Ayer trabajé.||}}",
-      "{{es-ES|Abre a las nueve.||}}",
-      "{{es-ES|Cierra a las seis.||}}"
+      "{{es-ES|Ayer trabajé.||AYER tra-BA-he.}}",
+      "{{es-ES|Abre a las nueve.||A-bre A LAS NUE-be.}}",
+      "{{es-ES|Cierra a las seis.||CIER-ra A LAS SEIS.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2624,11 +2624,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "{{es-ES|Ayer trabajé.||}}",
+    "correctAnswer": "{{es-ES|Ayer trabajé.||AYER tra-BA-he.}}",
     "incorrectAnswers": [
-      "{{es-ES|Abre a las nueve.||}}",
-      "{{es-ES|Cierra a las seis.||}}",
-      "{{es-ES|Llego más tarde.||}}"
+      "{{es-ES|Abre a las nueve.||A-bre A LAS NUE-be.}}",
+      "{{es-ES|Cierra a las seis.||CIER-ra A LAS SEIS.}}",
+      "{{es-ES|Llego más tarde.||LLE-go MAS TAR-de.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2644,11 +2644,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'It opens at nine.'?",
-    "correctAnswer": "{{es-ES|Abre a las nueve.||}}",
+    "correctAnswer": "{{es-ES|Abre a las nueve.||A-bre A LAS NUE-be.}}",
     "incorrectAnswers": [
-      "{{es-ES|Cierra a las seis.||}}",
-      "{{es-ES|Llego más tarde.||}}",
-      "{{es-ES|Volveré pronto.||}}"
+      "{{es-ES|Cierra a las seis.||CIER-ra A LAS SEIS.}}",
+      "{{es-ES|Llego más tarde.||LLE-go MAS TAR-de.}}",
+      "{{es-ES|Volveré pronto.||vol-BE-re PRON-to.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2664,11 +2664,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'It closes at six.'?",
-    "correctAnswer": "{{es-ES|Cierra a las seis.||}}",
+    "correctAnswer": "{{es-ES|Cierra a las seis.||CIER-ra A LAS SEIS.}}",
     "incorrectAnswers": [
-      "{{es-ES|Llego más tarde.||}}",
-      "{{es-ES|Volveré pronto.||}}",
-      "{{es-ES|Necesito cinco minutos.||}}"
+      "{{es-ES|Llego más tarde.||LLE-go MAS TAR-de.}}",
+      "{{es-ES|Volveré pronto.||vol-BE-re PRON-to.}}",
+      "{{es-ES|Necesito cinco minutos.||ne-seh-SI-to SEEN-co mi-NU-tos.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2684,11 +2684,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I arrive later.'.",
-    "correctAnswer": "{{es-ES|Llego más tarde.||}}",
+    "correctAnswer": "{{es-ES|Llego más tarde.||LLE-go MAS TAR-de.}}",
     "incorrectAnswers": [
-      "{{es-ES|Volveré pronto.||}}",
-      "{{es-ES|Necesito cinco minutos.||}}",
-      "{{es-ES|Es demasiado tarde.||}}"
+      "{{es-ES|Volveré pronto.||vol-BE-re PRON-to.}}",
+      "{{es-ES|Necesito cinco minutos.||ne-seh-SI-to SEEN-co mi-NU-tos.}}",
+      "{{es-ES|Es demasiado tarde.||ES de-ma-SIA-do TAR-de.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2704,11 +2704,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I will come back soon.'?",
-    "correctAnswer": "{{es-ES|Volveré pronto.||}}",
+    "correctAnswer": "{{es-ES|Volveré pronto.||vol-BE-re PRON-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito cinco minutos.||}}",
-      "{{es-ES|Es demasiado tarde.||}}",
-      "{{es-ES|Esta semana está ocupada.||}}"
+      "{{es-ES|Necesito cinco minutos.||ne-seh-SI-to SEEN-co mi-NU-tos.}}",
+      "{{es-ES|Es demasiado tarde.||ES de-ma-SIA-do TAR-de.}}",
+      "{{es-ES|Esta semana está ocupada.||ES-ta se-MA-na ES-ta o-cu-PA-da.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2724,11 +2724,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I need five minutes.'?",
-    "correctAnswer": "{{es-ES|Necesito cinco minutos.||}}",
+    "correctAnswer": "{{es-ES|Necesito cinco minutos.||ne-seh-SI-to SEEN-co mi-NU-tos.}}",
     "incorrectAnswers": [
-      "{{es-ES|Es demasiado tarde.||}}",
-      "{{es-ES|Esta semana está ocupada.||}}",
-      "{{es-ES|El mes que viene estoy libre.||}}"
+      "{{es-ES|Es demasiado tarde.||ES de-ma-SIA-do TAR-de.}}",
+      "{{es-ES|Esta semana está ocupada.||ES-ta se-MA-na ES-ta o-cu-PA-da.}}",
+      "{{es-ES|El mes que viene estoy libre.||EL MES KE BIE-ne es-TOY LI-bre.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2744,11 +2744,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'It is too late.'?",
-    "correctAnswer": "{{es-ES|Es demasiado tarde.||}}",
+    "correctAnswer": "{{es-ES|Es demasiado tarde.||ES de-ma-SIA-do TAR-de.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esta semana está ocupada.||}}",
-      "{{es-ES|El mes que viene estoy libre.||}}",
-      "{{es-ES|¿Qué hora es?||}}"
+      "{{es-ES|Esta semana está ocupada.||ES-ta se-MA-na ES-ta o-cu-PA-da.}}",
+      "{{es-ES|El mes que viene estoy libre.||EL MES KE BIE-ne es-TOY LI-bre.}}",
+      "{{es-ES|¿Qué hora es?||QUE HO-ra ES?}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2764,11 +2764,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'This week is busy.'.",
-    "correctAnswer": "{{es-ES|Esta semana está ocupada.||}}",
+    "correctAnswer": "{{es-ES|Esta semana está ocupada.||ES-ta se-MA-na ES-ta o-cu-PA-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|El mes que viene estoy libre.||}}",
-      "{{es-ES|¿Qué hora es?||}}",
-      "{{es-ES|Hoy es lunes.||}}"
+      "{{es-ES|El mes que viene estoy libre.||EL MES KE BIE-ne es-TOY LI-bre.}}",
+      "{{es-ES|¿Qué hora es?||QUE HO-ra ES?}}",
+      "{{es-ES|Hoy es lunes.||HOY ES LU-nes.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2784,11 +2784,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Next month I am free.'?",
-    "correctAnswer": "{{es-ES|El mes que viene estoy libre.||}}",
+    "correctAnswer": "{{es-ES|El mes que viene estoy libre.||EL MES KE BIE-ne es-TOY LI-bre.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué hora es?||}}",
-      "{{es-ES|Hoy es lunes.||}}",
-      "{{es-ES|Mañana viajaré.||}}"
+      "{{es-ES|¿Qué hora es?||QUE HO-ra ES?}}",
+      "{{es-ES|Hoy es lunes.||HOY ES LU-nes.}}",
+      "{{es-ES|Mañana viajaré.||ma-NA-na bia-HA-re.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2804,11 +2804,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'What is the weather like?'?",
-    "correctAnswer": "{{es-ES|¿Qué tiempo hace?||}}",
+    "correctAnswer": "{{es-ES|¿Qué tiempo hace?||QUE TIEM-po ha-SEH?}}",
     "incorrectAnswers": [
-      "{{es-ES|Hace calor.||}}",
-      "{{es-ES|Hace frío.||}}",
-      "{{es-ES|Está lloviendo.||}}"
+      "{{es-ES|Hace calor.||ha-SEH ca-LOR.}}",
+      "{{es-ES|Hace frío.||ha-SEH FRIO.}}",
+      "{{es-ES|Está lloviendo.||ES-ta yo-BIEN-do.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2824,11 +2824,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'It is hot.'?",
-    "correctAnswer": "{{es-ES|Hace calor.||}}",
+    "correctAnswer": "{{es-ES|Hace calor.||ha-SEH ca-LOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hace frío.||}}",
-      "{{es-ES|Está lloviendo.||}}",
-      "{{es-ES|Hace viento.||}}"
+      "{{es-ES|Hace frío.||ha-SEH FRIO.}}",
+      "{{es-ES|Está lloviendo.||ES-ta yo-BIEN-do.}}",
+      "{{es-ES|Hace viento.||ha-SEH BIEN-to.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2844,11 +2844,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'It is cold.'.",
-    "correctAnswer": "{{es-ES|Hace frío.||}}",
+    "correctAnswer": "{{es-ES|Hace frío.||ha-SEH FRIO.}}",
     "incorrectAnswers": [
-      "{{es-ES|Está lloviendo.||}}",
-      "{{es-ES|Hace viento.||}}",
-      "{{es-ES|Hace sol.||}}"
+      "{{es-ES|Está lloviendo.||ES-ta yo-BIEN-do.}}",
+      "{{es-ES|Hace viento.||ha-SEH BIEN-to.}}",
+      "{{es-ES|Hace sol.||ha-SEH SOL.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2864,11 +2864,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'It is raining.'?",
-    "correctAnswer": "{{es-ES|Está lloviendo.||}}",
+    "correctAnswer": "{{es-ES|Está lloviendo.||ES-ta yo-BIEN-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hace viento.||}}",
-      "{{es-ES|Hace sol.||}}",
-      "{{es-ES|Está nevando.||}}"
+      "{{es-ES|Hace viento.||ha-SEH BIEN-to.}}",
+      "{{es-ES|Hace sol.||ha-SEH SOL.}}",
+      "{{es-ES|Está nevando.||ES-ta ne-BAN-do.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2884,11 +2884,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'It is windy.'?",
-    "correctAnswer": "{{es-ES|Hace viento.||}}",
+    "correctAnswer": "{{es-ES|Hace viento.||ha-SEH BIEN-to.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hace sol.||}}",
-      "{{es-ES|Está nevando.||}}",
-      "{{es-ES|¡Qué día tan bonito!||}}"
+      "{{es-ES|Hace sol.||ha-SEH SOL.}}",
+      "{{es-ES|Está nevando.||ES-ta ne-BAN-do.}}",
+      "{{es-ES|¡Qué día tan bonito!||QUE DIA TAN bo-NI-to!}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2904,11 +2904,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'It is sunny.'?",
-    "correctAnswer": "{{es-ES|Hace sol.||}}",
+    "correctAnswer": "{{es-ES|Hace sol.||ha-SEH SOL.}}",
     "incorrectAnswers": [
-      "{{es-ES|Está nevando.||}}",
-      "{{es-ES|¡Qué día tan bonito!||}}",
-      "{{es-ES|Está nublado.||}}"
+      "{{es-ES|Está nevando.||ES-ta ne-BAN-do.}}",
+      "{{es-ES|¡Qué día tan bonito!||QUE DIA TAN bo-NI-to!}}",
+      "{{es-ES|Está nublado.||ES-ta nu-BLA-do.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2924,11 +2924,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'It is snowing.'.",
-    "correctAnswer": "{{es-ES|Está nevando.||}}",
+    "correctAnswer": "{{es-ES|Está nevando.||ES-ta ne-BAN-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Qué día tan bonito!||}}",
-      "{{es-ES|Está nublado.||}}",
-      "{{es-ES|Necesito un paraguas.||}}"
+      "{{es-ES|¡Qué día tan bonito!||QUE DIA TAN bo-NI-to!}}",
+      "{{es-ES|Está nublado.||ES-ta nu-BLA-do.}}",
+      "{{es-ES|Necesito un paraguas.||ne-seh-SI-to UN pa-RA-guas.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2944,11 +2944,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'What a beautiful day!'?",
-    "correctAnswer": "{{es-ES|¡Qué día tan bonito!||}}",
+    "correctAnswer": "{{es-ES|¡Qué día tan bonito!||QUE DIA TAN bo-NI-to!}}",
     "incorrectAnswers": [
-      "{{es-ES|Está nublado.||}}",
-      "{{es-ES|Necesito un paraguas.||}}",
-      "{{es-ES|Hace buen tiempo hoy.||}}"
+      "{{es-ES|Está nublado.||ES-ta nu-BLA-do.}}",
+      "{{es-ES|Necesito un paraguas.||ne-seh-SI-to UN pa-RA-guas.}}",
+      "{{es-ES|Hace buen tiempo hoy.||ha-SEH BUEN TIEM-po HOY.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2964,11 +2964,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'It is cloudy.'?",
-    "correctAnswer": "{{es-ES|Está nublado.||}}",
+    "correctAnswer": "{{es-ES|Está nublado.||ES-ta nu-BLA-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un paraguas.||}}",
-      "{{es-ES|Hace buen tiempo hoy.||}}",
-      "{{es-ES|El cielo está despejado.||}}"
+      "{{es-ES|Necesito un paraguas.||ne-seh-SI-to UN pa-RA-guas.}}",
+      "{{es-ES|Hace buen tiempo hoy.||ha-SEH BUEN TIEM-po HOY.}}",
+      "{{es-ES|El cielo está despejado.||EL SEEE-lo ES-ta des-pe-HA-do.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2984,11 +2984,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I need an umbrella.'?",
-    "correctAnswer": "{{es-ES|Necesito un paraguas.||}}",
+    "correctAnswer": "{{es-ES|Necesito un paraguas.||ne-seh-SI-to UN pa-RA-guas.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hace buen tiempo hoy.||}}",
-      "{{es-ES|El cielo está despejado.||}}",
-      "{{es-ES|¿Qué tiempo hace?||}}"
+      "{{es-ES|Hace buen tiempo hoy.||ha-SEH BUEN TIEM-po HOY.}}",
+      "{{es-ES|El cielo está despejado.||EL SEEE-lo ES-ta des-pe-HA-do.}}",
+      "{{es-ES|¿Qué tiempo hace?||QUE TIEM-po ha-SEH?}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3004,11 +3004,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'The weather is nice today.'.",
-    "correctAnswer": "{{es-ES|Hace buen tiempo hoy.||}}",
+    "correctAnswer": "{{es-ES|Hace buen tiempo hoy.||ha-SEH BUEN TIEM-po HOY.}}",
     "incorrectAnswers": [
-      "{{es-ES|El cielo está despejado.||}}",
-      "{{es-ES|¿Qué tiempo hace?||}}",
-      "{{es-ES|Hace calor.||}}"
+      "{{es-ES|El cielo está despejado.||EL SEEE-lo ES-ta des-pe-HA-do.}}",
+      "{{es-ES|¿Qué tiempo hace?||QUE TIEM-po ha-SEH?}}",
+      "{{es-ES|Hace calor.||ha-SEH ca-LOR.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3024,11 +3024,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'The sky is clear.'?",
-    "correctAnswer": "{{es-ES|El cielo está despejado.||}}",
+    "correctAnswer": "{{es-ES|El cielo está despejado.||EL SEEE-lo ES-ta des-pe-HA-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué tiempo hace?||}}",
-      "{{es-ES|Hace calor.||}}",
-      "{{es-ES|Hace frío.||}}"
+      "{{es-ES|¿Qué tiempo hace?||QUE TIEM-po ha-SEH?}}",
+      "{{es-ES|Hace calor.||ha-SEH ca-LOR.}}",
+      "{{es-ES|Hace frío.||ha-SEH FRIO.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3044,11 +3044,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Help!'?",
-    "correctAnswer": "{{es-ES|¡Ayuda!||}}",
+    "correctAnswer": "{{es-ES|¡Ayuda!||AYU-da!}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Llame a la policía!||}}",
-      "{{es-ES|He perdido mi pasaporte.||}}",
-      "{{es-ES|Me robaron la cartera.||}}"
+      "{{es-ES|¡Llame a la policía!||LLA-me A LA po-LI-seea!}}",
+      "{{es-ES|He perdido mi pasaporte.||HE per-DI-do MI pa-sa-POR-te.}}",
+      "{{es-ES|Me robaron la cartera.||ME ro-BA-ron LA car-TE-ra.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3064,11 +3064,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Call the police!'?",
-    "correctAnswer": "{{es-ES|¡Llame a la policía!||}}",
+    "correctAnswer": "{{es-ES|¡Llame a la policía!||LLA-me A LA po-LI-seea!}}",
     "incorrectAnswers": [
-      "{{es-ES|He perdido mi pasaporte.||}}",
-      "{{es-ES|Me robaron la cartera.||}}",
-      "{{es-ES|Necesito una ambulancia.||}}"
+      "{{es-ES|He perdido mi pasaporte.||HE per-DI-do MI pa-sa-POR-te.}}",
+      "{{es-ES|Me robaron la cartera.||ME ro-BA-ron LA car-TE-ra.}}",
+      "{{es-ES|Necesito una ambulancia.||ne-seh-SI-to U-na am-bu-LAN-seea.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3084,11 +3084,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I have lost my passport.'.",
-    "correctAnswer": "{{es-ES|He perdido mi pasaporte.||}}",
+    "correctAnswer": "{{es-ES|He perdido mi pasaporte.||HE per-DI-do MI pa-sa-POR-te.}}",
     "incorrectAnswers": [
-      "{{es-ES|Me robaron la cartera.||}}",
-      "{{es-ES|Necesito una ambulancia.||}}",
-      "{{es-ES|¡Llame a un médico!||}}"
+      "{{es-ES|Me robaron la cartera.||ME ro-BA-ron LA car-TE-ra.}}",
+      "{{es-ES|Necesito una ambulancia.||ne-seh-SI-to U-na am-bu-LAN-seea.}}",
+      "{{es-ES|¡Llame a un médico!||LLA-me A UN me-DI-co!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3104,11 +3104,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "{{es-ES|Me robaron la cartera.||}}",
+    "correctAnswer": "{{es-ES|Me robaron la cartera.||ME ro-BA-ron LA car-TE-ra.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito una ambulancia.||}}",
-      "{{es-ES|¡Llame a un médico!||}}",
-      "{{es-ES|Hay un incendio.||}}"
+      "{{es-ES|Necesito una ambulancia.||ne-seh-SI-to U-na am-bu-LAN-seea.}}",
+      "{{es-ES|¡Llame a un médico!||LLA-me A UN me-DI-co!}}",
+      "{{es-ES|Hay un incendio.||HAY UN in-SEHN-dio.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3124,11 +3124,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "{{es-ES|Necesito una ambulancia.||}}",
+    "correctAnswer": "{{es-ES|Necesito una ambulancia.||ne-seh-SI-to U-na am-bu-LAN-seea.}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Llame a un médico!||}}",
-      "{{es-ES|Hay un incendio.||}}",
-      "{{es-ES|Necesito ayuda ahora.||}}"
+      "{{es-ES|¡Llame a un médico!||LLA-me A UN me-DI-co!}}",
+      "{{es-ES|Hay un incendio.||HAY UN in-SEHN-dio.}}",
+      "{{es-ES|Necesito ayuda ahora.||ne-seh-SI-to AYU-da a-HO-ra.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3144,11 +3144,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Call a doctor!'?",
-    "correctAnswer": "{{es-ES|¡Llame a un médico!||}}",
+    "correctAnswer": "{{es-ES|¡Llame a un médico!||LLA-me A UN me-DI-co!}}",
     "incorrectAnswers": [
-      "{{es-ES|Hay un incendio.||}}",
-      "{{es-ES|Necesito ayuda ahora.||}}",
-      "{{es-ES|Perdí mi teléfono.||}}"
+      "{{es-ES|Hay un incendio.||HAY UN in-SEHN-dio.}}",
+      "{{es-ES|Necesito ayuda ahora.||ne-seh-SI-to AYU-da a-HO-ra.}}",
+      "{{es-ES|Perdí mi teléfono.||PER-di MI te-le-FO-no.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3164,11 +3164,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'There is a fire.'.",
-    "correctAnswer": "{{es-ES|Hay un incendio.||}}",
+    "correctAnswer": "{{es-ES|Hay un incendio.||HAY UN in-SEHN-dio.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito ayuda ahora.||}}",
-      "{{es-ES|Perdí mi teléfono.||}}",
-      "{{es-ES|Perdí mi bolso.||}}"
+      "{{es-ES|Necesito ayuda ahora.||ne-seh-SI-to AYU-da a-HO-ra.}}",
+      "{{es-ES|Perdí mi teléfono.||PER-di MI te-le-FO-no.}}",
+      "{{es-ES|Perdí mi bolso.||PER-di MI BOL-so.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3184,11 +3184,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I need help now.'?",
-    "correctAnswer": "{{es-ES|Necesito ayuda ahora.||}}",
+    "correctAnswer": "{{es-ES|Necesito ayuda ahora.||ne-seh-SI-to AYU-da a-HO-ra.}}",
     "incorrectAnswers": [
-      "{{es-ES|Perdí mi teléfono.||}}",
-      "{{es-ES|Perdí mi bolso.||}}",
-      "{{es-ES|Mi amigo está herido.||}}"
+      "{{es-ES|Perdí mi teléfono.||PER-di MI te-le-FO-no.}}",
+      "{{es-ES|Perdí mi bolso.||PER-di MI BOL-so.}}",
+      "{{es-ES|Mi amigo está herido.||MI a-MI-go ES-ta he-RI-do.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3204,11 +3204,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I lost my phone.'?",
-    "correctAnswer": "{{es-ES|Perdí mi teléfono.||}}",
+    "correctAnswer": "{{es-ES|Perdí mi teléfono.||PER-di MI te-le-FO-no.}}",
     "incorrectAnswers": [
-      "{{es-ES|Perdí mi bolso.||}}",
-      "{{es-ES|Mi amigo está herido.||}}",
-      "{{es-ES|Esto es una emergencia.||}}"
+      "{{es-ES|Perdí mi bolso.||PER-di MI BOL-so.}}",
+      "{{es-ES|Mi amigo está herido.||MI a-MI-go ES-ta he-RI-do.}}",
+      "{{es-ES|Esto es una emergencia.||ES-to ES U-na e-mer-HEHN-seea.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3224,11 +3224,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I lost my bag.'?",
-    "correctAnswer": "{{es-ES|Perdí mi bolso.||}}",
+    "correctAnswer": "{{es-ES|Perdí mi bolso.||PER-di MI BOL-so.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mi amigo está herido.||}}",
-      "{{es-ES|Esto es una emergencia.||}}",
-      "{{es-ES|¡Ayuda!||}}"
+      "{{es-ES|Mi amigo está herido.||MI a-MI-go ES-ta he-RI-do.}}",
+      "{{es-ES|Esto es una emergencia.||ES-to ES U-na e-mer-HEHN-seea.}}",
+      "{{es-ES|¡Ayuda!||AYU-da!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3244,11 +3244,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'My friend is hurt.'.",
-    "correctAnswer": "{{es-ES|Mi amigo está herido.||}}",
+    "correctAnswer": "{{es-ES|Mi amigo está herido.||MI a-MI-go ES-ta he-RI-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Esto es una emergencia.||}}",
-      "{{es-ES|¡Ayuda!||}}",
-      "{{es-ES|¡Llame a la policía!||}}"
+      "{{es-ES|Esto es una emergencia.||ES-to ES U-na e-mer-HEHN-seea.}}",
+      "{{es-ES|¡Ayuda!||AYU-da!}}",
+      "{{es-ES|¡Llame a la policía!||LLA-me A LA po-LI-seea!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3264,11 +3264,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'This is an emergency.'?",
-    "correctAnswer": "{{es-ES|Esto es una emergencia.||}}",
+    "correctAnswer": "{{es-ES|Esto es una emergencia.||ES-to ES U-na e-mer-HEHN-seea.}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Ayuda!||}}",
-      "{{es-ES|¡Llame a la policía!||}}",
-      "{{es-ES|He perdido mi pasaporte.||}}"
+      "{{es-ES|¡Ayuda!||AYU-da!}}",
+      "{{es-ES|¡Llame a la policía!||LLA-me A LA po-LI-seea!}}",
+      "{{es-ES|He perdido mi pasaporte.||HE per-DI-do MI pa-sa-POR-te.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3284,11 +3284,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Happy birthday!'?",
-    "correctAnswer": "{{es-ES|¡Feliz cumpleaños!||}}",
+    "correctAnswer": "{{es-ES|¡Feliz cumpleaños!||fe-LIZ cum-PLEA-nos!}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Felicidades!||}}",
-      "{{es-ES|¡Buena suerte!||}}",
-      "{{es-ES|De nada.||}}"
+      "{{es-ES|¡Felicidades!||fe-li-see-DA-des!}}",
+      "{{es-ES|¡Buena suerte!||BUE-na SUER-te!}}",
+      "{{es-ES|De nada.||DE NA-da.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3304,11 +3304,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Congratulations!'?",
-    "correctAnswer": "{{es-ES|¡Felicidades!||}}",
+    "correctAnswer": "{{es-ES|¡Felicidades!||fe-li-see-DA-des!}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Buena suerte!||}}",
-      "{{es-ES|De nada.||}}",
-      "{{es-ES|No es nada.||}}"
+      "{{es-ES|¡Buena suerte!||BUE-na SUER-te!}}",
+      "{{es-ES|De nada.||DE NA-da.}}",
+      "{{es-ES|No es nada.||NO ES NA-da.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3324,11 +3324,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Good luck!'.",
-    "correctAnswer": "{{es-ES|¡Buena suerte!||}}",
+    "correctAnswer": "{{es-ES|¡Buena suerte!||BUE-na SUER-te!}}",
     "incorrectAnswers": [
-      "{{es-ES|De nada.||}}",
-      "{{es-ES|No es nada.||}}",
-      "{{es-ES|Siento oír eso.||}}"
+      "{{es-ES|De nada.||DE NA-da.}}",
+      "{{es-ES|No es nada.||NO ES NA-da.}}",
+      "{{es-ES|Siento oír eso.||SIEN-to OIR E-so.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3344,11 +3344,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'You're welcome.'?",
-    "correctAnswer": "{{es-ES|De nada.||}}",
+    "correctAnswer": "{{es-ES|De nada.||DE NA-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|No es nada.||}}",
-      "{{es-ES|Siento oír eso.||}}",
-      "{{es-ES|Buen provecho.||}}"
+      "{{es-ES|No es nada.||NO ES NA-da.}}",
+      "{{es-ES|Siento oír eso.||SIEN-to OIR E-so.}}",
+      "{{es-ES|Buen provecho.||BUEN pro-BE-cho.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3364,11 +3364,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Don't mention it.'?",
-    "correctAnswer": "{{es-ES|No es nada.||}}",
+    "correctAnswer": "{{es-ES|No es nada.||NO ES NA-da.}}",
     "incorrectAnswers": [
-      "{{es-ES|Siento oír eso.||}}",
-      "{{es-ES|Buen provecho.||}}",
-      "{{es-ES|Buen viaje.||}}"
+      "{{es-ES|Siento oír eso.||SIEN-to OIR E-so.}}",
+      "{{es-ES|Buen provecho.||BUEN pro-BE-cho.}}",
+      "{{es-ES|Buen viaje.||BUEN BIA-he.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3384,11 +3384,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "{{es-ES|Siento oír eso.||}}",
+    "correctAnswer": "{{es-ES|Siento oír eso.||SIEN-to OIR E-so.}}",
     "incorrectAnswers": [
-      "{{es-ES|Buen provecho.||}}",
-      "{{es-ES|Buen viaje.||}}",
-      "{{es-ES|Nos vemos el lunes.||}}"
+      "{{es-ES|Buen provecho.||BUEN pro-BE-cho.}}",
+      "{{es-ES|Buen viaje.||BUEN BIA-he.}}",
+      "{{es-ES|Nos vemos el lunes.||NOS BE-mos EL LU-nes.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3404,11 +3404,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "{{es-ES|Buen provecho.||}}",
+    "correctAnswer": "{{es-ES|Buen provecho.||BUEN pro-BE-cho.}}",
     "incorrectAnswers": [
-      "{{es-ES|Buen viaje.||}}",
-      "{{es-ES|Nos vemos el lunes.||}}",
-      "{{es-ES|Bienvenido a nuestra ciudad.||}}"
+      "{{es-ES|Buen viaje.||BUEN BIA-he.}}",
+      "{{es-ES|Nos vemos el lunes.||NOS BE-mos EL LU-nes.}}",
+      "{{es-ES|Bienvenido a nuestra ciudad.||bien-be-NI-do A NUES-tra seeu-DAD.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3424,11 +3424,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Have a nice trip.'?",
-    "correctAnswer": "{{es-ES|Buen viaje.||}}",
+    "correctAnswer": "{{es-ES|Buen viaje.||BUEN BIA-he.}}",
     "incorrectAnswers": [
-      "{{es-ES|Nos vemos el lunes.||}}",
-      "{{es-ES|Bienvenido a nuestra ciudad.||}}",
-      "{{es-ES|¡Felices fiestas!||}}"
+      "{{es-ES|Nos vemos el lunes.||NOS BE-mos EL LU-nes.}}",
+      "{{es-ES|Bienvenido a nuestra ciudad.||bien-be-NI-do A NUES-tra seeu-DAD.}}",
+      "{{es-ES|¡Felices fiestas!||fe-LI-sehs FIES-tas!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3444,11 +3444,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'See you on Monday.'?",
-    "correctAnswer": "{{es-ES|Nos vemos el lunes.||}}",
+    "correctAnswer": "{{es-ES|Nos vemos el lunes.||NOS BE-mos EL LU-nes.}}",
     "incorrectAnswers": [
-      "{{es-ES|Bienvenido a nuestra ciudad.||}}",
-      "{{es-ES|¡Felices fiestas!||}}",
-      "{{es-ES|Diviértase.||}}"
+      "{{es-ES|Bienvenido a nuestra ciudad.||bien-be-NI-do A NUES-tra seeu-DAD.}}",
+      "{{es-ES|¡Felices fiestas!||fe-LI-sehs FIES-tas!}}",
+      "{{es-ES|Diviértase.||di-bier-TA-se.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3464,11 +3464,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Welcome to our city.'?",
-    "correctAnswer": "{{es-ES|Bienvenido a nuestra ciudad.||}}",
+    "correctAnswer": "{{es-ES|Bienvenido a nuestra ciudad.||bien-be-NI-do A NUES-tra seeu-DAD.}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Felices fiestas!||}}",
-      "{{es-ES|Diviértase.||}}",
-      "{{es-ES|¡Feliz cumpleaños!||}}"
+      "{{es-ES|¡Felices fiestas!||fe-LI-sehs FIES-tas!}}",
+      "{{es-ES|Diviértase.||di-bier-TA-se.}}",
+      "{{es-ES|¡Feliz cumpleaños!||fe-LIZ cum-PLEA-nos!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3484,11 +3484,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'Happy holidays!'.",
-    "correctAnswer": "{{es-ES|¡Felices fiestas!||}}",
+    "correctAnswer": "{{es-ES|¡Felices fiestas!||fe-LI-sehs FIES-tas!}}",
     "incorrectAnswers": [
-      "{{es-ES|Diviértase.||}}",
-      "{{es-ES|¡Feliz cumpleaños!||}}",
-      "{{es-ES|¡Felicidades!||}}"
+      "{{es-ES|Diviértase.||di-bier-TA-se.}}",
+      "{{es-ES|¡Feliz cumpleaños!||fe-LIZ cum-PLEA-nos!}}",
+      "{{es-ES|¡Felicidades!||fe-li-see-DA-des!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3504,11 +3504,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Have fun!'?",
-    "correctAnswer": "{{es-ES|Diviértase.||}}",
+    "correctAnswer": "{{es-ES|Diviértase.||di-bier-TA-se.}}",
     "incorrectAnswers": [
-      "{{es-ES|¡Feliz cumpleaños!||}}",
-      "{{es-ES|¡Felicidades!||}}",
-      "{{es-ES|¡Buena suerte!||}}"
+      "{{es-ES|¡Feliz cumpleaños!||fe-LIZ cum-PLEA-nos!}}",
+      "{{es-ES|¡Felicidades!||fe-li-see-DA-des!}}",
+      "{{es-ES|¡Buena suerte!||BUE-na SUER-te!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3524,11 +3524,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I work in an office.'?",
-    "correctAnswer": "{{es-ES|Trabajo en una oficina.||}}",
+    "correctAnswer": "{{es-ES|Trabajo en una oficina.||tra-BA-ho EN U-na o-fi-SEE-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|Trabajo como profesor/profesora.||}}",
-      "{{es-ES|Estudio todos los días.||}}",
-      "{{es-ES|Estoy aprendiendo el idioma.||}}"
+      "{{es-ES|Trabajo como profesor/profesora.||tra-BA-ho CO-mo pro-fe-SOR/pro-fe-SO-ra.}}",
+      "{{es-ES|Estudio todos los días.||es-TU-dio TO-dos LOS DIAS.}}",
+      "{{es-ES|Estoy aprendiendo el idioma.||es-TOY a-pren-DIEN-do EL i-DIO-ma.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3544,11 +3544,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'I work as a teacher.'?",
-    "correctAnswer": "{{es-ES|Trabajo como profesor/profesora.||}}",
+    "correctAnswer": "{{es-ES|Trabajo como profesor/profesora.||tra-BA-ho CO-mo pro-fe-SOR/pro-fe-SO-ra.}}",
     "incorrectAnswers": [
-      "{{es-ES|Estudio todos los días.||}}",
-      "{{es-ES|Estoy aprendiendo el idioma.||}}",
-      "{{es-ES|Escríbalo, por favor.||}}"
+      "{{es-ES|Estudio todos los días.||es-TU-dio TO-dos LOS DIAS.}}",
+      "{{es-ES|Estoy aprendiendo el idioma.||es-TOY a-pren-DIEN-do EL i-DIO-ma.}}",
+      "{{es-ES|Escríbalo, por favor.||es-cri-BA-lo, POR fa-BOR.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3564,11 +3564,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I study every day.'.",
-    "correctAnswer": "{{es-ES|Estudio todos los días.||}}",
+    "correctAnswer": "{{es-ES|Estudio todos los días.||es-TU-dio TO-dos LOS DIAS.}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy aprendiendo el idioma.||}}",
-      "{{es-ES|Escríbalo, por favor.||}}",
-      "{{es-ES|La clase empieza ahora.||}}"
+      "{{es-ES|Estoy aprendiendo el idioma.||es-TOY a-pren-DIEN-do EL i-DIO-ma.}}",
+      "{{es-ES|Escríbalo, por favor.||es-cri-BA-lo, POR fa-BOR.}}",
+      "{{es-ES|La clase empieza ahora.||LA CLA-se em-PIE-za a-HO-ra.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3584,11 +3584,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am learning the language.'?",
-    "correctAnswer": "{{es-ES|Estoy aprendiendo el idioma.||}}",
+    "correctAnswer": "{{es-ES|Estoy aprendiendo el idioma.||es-TOY a-pren-DIEN-do EL i-DIO-ma.}}",
     "incorrectAnswers": [
-      "{{es-ES|Escríbalo, por favor.||}}",
-      "{{es-ES|La clase empieza ahora.||}}",
-      "{{es-ES|Necesito un bolígrafo.||}}"
+      "{{es-ES|Escríbalo, por favor.||es-cri-BA-lo, POR fa-BOR.}}",
+      "{{es-ES|La clase empieza ahora.||LA CLA-se em-PIE-za a-HO-ra.}}",
+      "{{es-ES|Necesito un bolígrafo.||ne-seh-SI-to UN bo-li-GRA-fo.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3604,11 +3604,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Please write it down.'?",
-    "correctAnswer": "{{es-ES|Escríbalo, por favor.||}}",
+    "correctAnswer": "{{es-ES|Escríbalo, por favor.||es-cri-BA-lo, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|La clase empieza ahora.||}}",
-      "{{es-ES|Necesito un bolígrafo.||}}",
-      "{{es-ES|Tengo deberes.||}}"
+      "{{es-ES|La clase empieza ahora.||LA CLA-se em-PIE-za a-HO-ra.}}",
+      "{{es-ES|Necesito un bolígrafo.||ne-seh-SI-to UN bo-li-GRA-fo.}}",
+      "{{es-ES|Tengo deberes.||TEN-go de-BE-res.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3624,11 +3624,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'The class starts now.'?",
-    "correctAnswer": "{{es-ES|La clase empieza ahora.||}}",
+    "correctAnswer": "{{es-ES|La clase empieza ahora.||LA CLA-se em-PIE-za a-HO-ra.}}",
     "incorrectAnswers": [
-      "{{es-ES|Necesito un bolígrafo.||}}",
-      "{{es-ES|Tengo deberes.||}}",
-      "{{es-ES|Tengo un examen mañana.||}}"
+      "{{es-ES|Necesito un bolígrafo.||ne-seh-SI-to UN bo-li-GRA-fo.}}",
+      "{{es-ES|Tengo deberes.||TEN-go de-BE-res.}}",
+      "{{es-ES|Tengo un examen mañana.||TEN-go UN e-XA-men ma-NA-na.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3644,11 +3644,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I need a pen.'.",
-    "correctAnswer": "{{es-ES|Necesito un bolígrafo.||}}",
+    "correctAnswer": "{{es-ES|Necesito un bolígrafo.||ne-seh-SI-to UN bo-li-GRA-fo.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo deberes.||}}",
-      "{{es-ES|Tengo un examen mañana.||}}",
-      "{{es-ES|¿Dónde está el aula?||}}"
+      "{{es-ES|Tengo deberes.||TEN-go de-BE-res.}}",
+      "{{es-ES|Tengo un examen mañana.||TEN-go UN e-XA-men ma-NA-na.}}",
+      "{{es-ES|¿Dónde está el aula?||DON-de ES-ta EL AU-la?}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3664,11 +3664,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I have homework.'?",
-    "correctAnswer": "{{es-ES|Tengo deberes.||}}",
+    "correctAnswer": "{{es-ES|Tengo deberes.||TEN-go de-BE-res.}}",
     "incorrectAnswers": [
-      "{{es-ES|Tengo un examen mañana.||}}",
-      "{{es-ES|¿Dónde está el aula?||}}",
-      "{{es-ES|El libro está sobre la mesa.||}}"
+      "{{es-ES|Tengo un examen mañana.||TEN-go UN e-XA-men ma-NA-na.}}",
+      "{{es-ES|¿Dónde está el aula?||DON-de ES-ta EL AU-la?}}",
+      "{{es-ES|El libro está sobre la mesa.||EL LI-bro ES-ta SO-bre LA ME-sa.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3684,11 +3684,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "{{es-ES|Tengo un examen mañana.||}}",
+    "correctAnswer": "{{es-ES|Tengo un examen mañana.||TEN-go UN e-XA-men ma-NA-na.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Dónde está el aula?||}}",
-      "{{es-ES|El libro está sobre la mesa.||}}",
-      "{{es-ES|Mi profesor es muy amable.||}}"
+      "{{es-ES|¿Dónde está el aula?||DON-de ES-ta EL AU-la?}}",
+      "{{es-ES|El libro está sobre la mesa.||EL LI-bro ES-ta SO-bre LA ME-sa.}}",
+      "{{es-ES|Mi profesor es muy amable.||MI pro-fe-SOR ES MUY a-MA-ble.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3704,11 +3704,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Where is the classroom?'?",
-    "correctAnswer": "{{es-ES|¿Dónde está el aula?||}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el aula?||DON-de ES-ta EL AU-la?}}",
     "incorrectAnswers": [
-      "{{es-ES|El libro está sobre la mesa.||}}",
-      "{{es-ES|Mi profesor es muy amable.||}}",
-      "{{es-ES|Trabajo en una oficina.||}}"
+      "{{es-ES|El libro está sobre la mesa.||EL LI-bro ES-ta SO-bre LA ME-sa.}}",
+      "{{es-ES|Mi profesor es muy amable.||MI pro-fe-SOR ES MUY a-MA-ble.}}",
+      "{{es-ES|Trabajo en una oficina.||tra-BA-ho EN U-na o-fi-SEE-na.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3724,11 +3724,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'The book is on the table.'.",
-    "correctAnswer": "{{es-ES|El libro está sobre la mesa.||}}",
+    "correctAnswer": "{{es-ES|El libro está sobre la mesa.||EL LI-bro ES-ta SO-bre LA ME-sa.}}",
     "incorrectAnswers": [
-      "{{es-ES|Mi profesor es muy amable.||}}",
-      "{{es-ES|Trabajo en una oficina.||}}",
-      "{{es-ES|Trabajo como profesor/profesora.||}}"
+      "{{es-ES|Mi profesor es muy amable.||MI pro-fe-SOR ES MUY a-MA-ble.}}",
+      "{{es-ES|Trabajo en una oficina.||tra-BA-ho EN U-na o-fi-SEE-na.}}",
+      "{{es-ES|Trabajo como profesor/profesora.||tra-BA-ho CO-mo pro-fe-SOR/pro-fe-SO-ra.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3744,11 +3744,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "{{es-ES|Mi profesor es muy amable.||}}",
+    "correctAnswer": "{{es-ES|Mi profesor es muy amable.||MI pro-fe-SOR ES MUY a-MA-ble.}}",
     "incorrectAnswers": [
-      "{{es-ES|Trabajo en una oficina.||}}",
-      "{{es-ES|Trabajo como profesor/profesora.||}}",
-      "{{es-ES|Estudio todos los días.||}}"
+      "{{es-ES|Trabajo en una oficina.||tra-BA-ho EN U-na o-fi-SEE-na.}}",
+      "{{es-ES|Trabajo como profesor/profesora.||tra-BA-ho CO-mo pro-fe-SOR/pro-fe-SO-ra.}}",
+      "{{es-ES|Estudio todos los días.||es-TU-dio TO-dos LOS DIAS.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3764,11 +3764,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "{{es-ES|Hablo un poco del idioma.||}}",
+    "correctAnswer": "{{es-ES|Hablo un poco del idioma.||HA-blo UN PO-co DEL i-DIO-ma.}}",
     "incorrectAnswers": [
-      "{{es-ES|Dígalo otra vez, por favor.||}}",
-      "{{es-ES|¿Qué significa esta palabra?||}}",
-      "{{es-ES|No conozco esta palabra.||}}"
+      "{{es-ES|Dígalo otra vez, por favor.||di-GA-lo O-tra BEZ, POR fa-BOR.}}",
+      "{{es-ES|¿Qué significa esta palabra?||QUE sig-ni-FI-ca ES-ta pa-LA-bra?}}",
+      "{{es-ES|No conozco esta palabra.||NO co-NOZ-co ES-ta pa-LA-bra.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3784,11 +3784,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Please say that again.'?",
-    "correctAnswer": "{{es-ES|Dígalo otra vez, por favor.||}}",
+    "correctAnswer": "{{es-ES|Dígalo otra vez, por favor.||di-GA-lo O-tra BEZ, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Qué significa esta palabra?||}}",
-      "{{es-ES|No conozco esta palabra.||}}",
-      "{{es-ES|¿Es correcto esto?||}}"
+      "{{es-ES|¿Qué significa esta palabra?||QUE sig-ni-FI-ca ES-ta pa-LA-bra?}}",
+      "{{es-ES|No conozco esta palabra.||NO co-NOZ-co ES-ta pa-LA-bra.}}",
+      "{{es-ES|¿Es correcto esto?||ES cor-REC-to ES-to?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3804,11 +3804,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'What does this word mean?'.",
-    "correctAnswer": "{{es-ES|¿Qué significa esta palabra?||}}",
+    "correctAnswer": "{{es-ES|¿Qué significa esta palabra?||QUE sig-ni-FI-ca ES-ta pa-LA-bra?}}",
     "incorrectAnswers": [
-      "{{es-ES|No conozco esta palabra.||}}",
-      "{{es-ES|¿Es correcto esto?||}}",
-      "{{es-ES|¿Puede explicarlo?||}}"
+      "{{es-ES|No conozco esta palabra.||NO co-NOZ-co ES-ta pa-LA-bra.}}",
+      "{{es-ES|¿Es correcto esto?||ES cor-REC-to ES-to?}}",
+      "{{es-ES|¿Puede explicarlo?||PUE-de ex-pli-CAR-lo?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3824,11 +3824,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I do not know this word.'?",
-    "correctAnswer": "{{es-ES|No conozco esta palabra.||}}",
+    "correctAnswer": "{{es-ES|No conozco esta palabra.||NO co-NOZ-co ES-ta pa-LA-bra.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Es correcto esto?||}}",
-      "{{es-ES|¿Puede explicarlo?||}}",
-      "{{es-ES|Ahora entiendo.||}}"
+      "{{es-ES|¿Es correcto esto?||ES cor-REC-to ES-to?}}",
+      "{{es-ES|¿Puede explicarlo?||PUE-de ex-pli-CAR-lo?}}",
+      "{{es-ES|Ahora entiendo.||a-HO-ra en-TIEN-do.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3844,11 +3844,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'Is this correct?'?",
-    "correctAnswer": "{{es-ES|¿Es correcto esto?||}}",
+    "correctAnswer": "{{es-ES|¿Es correcto esto?||ES cor-REC-to ES-to?}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Puede explicarlo?||}}",
-      "{{es-ES|Ahora entiendo.||}}",
-      "{{es-ES|Use palabras sencillas, por favor.||}}"
+      "{{es-ES|¿Puede explicarlo?||PUE-de ex-pli-CAR-lo?}}",
+      "{{es-ES|Ahora entiendo.||a-HO-ra en-TIEN-do.}}",
+      "{{es-ES|Use palabras sencillas, por favor.||U-se pa-LA-bras SEN-seeyas, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3864,11 +3864,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Can you explain it?'?",
-    "correctAnswer": "{{es-ES|¿Puede explicarlo?||}}",
+    "correctAnswer": "{{es-ES|¿Puede explicarlo?||PUE-de ex-pli-CAR-lo?}}",
     "incorrectAnswers": [
-      "{{es-ES|Ahora entiendo.||}}",
-      "{{es-ES|Use palabras sencillas, por favor.||}}",
-      "{{es-ES|Practico todos los días.||}}"
+      "{{es-ES|Ahora entiendo.||a-HO-ra en-TIEN-do.}}",
+      "{{es-ES|Use palabras sencillas, por favor.||U-se pa-LA-bras SEN-seeyas, POR fa-BOR.}}",
+      "{{es-ES|Practico todos los días.||prac-TI-co TO-dos LOS DIAS.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3884,11 +3884,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'I understand now.'.",
-    "correctAnswer": "{{es-ES|Ahora entiendo.||}}",
+    "correctAnswer": "{{es-ES|Ahora entiendo.||a-HO-ra en-TIEN-do.}}",
     "incorrectAnswers": [
-      "{{es-ES|Use palabras sencillas, por favor.||}}",
-      "{{es-ES|Practico todos los días.||}}",
-      "{{es-ES|Lea esta frase, por favor.||}}"
+      "{{es-ES|Use palabras sencillas, por favor.||U-se pa-LA-bras SEN-seeyas, POR fa-BOR.}}",
+      "{{es-ES|Practico todos los días.||prac-TI-co TO-dos LOS DIAS.}}",
+      "{{es-ES|Lea esta frase, por favor.||LEA ES-ta FRA-se, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3904,11 +3904,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'Please use simple words.'?",
-    "correctAnswer": "{{es-ES|Use palabras sencillas, por favor.||}}",
+    "correctAnswer": "{{es-ES|Use palabras sencillas, por favor.||U-se pa-LA-bras SEN-seeyas, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|Practico todos los días.||}}",
-      "{{es-ES|Lea esta frase, por favor.||}}",
-      "{{es-ES|¿Cómo se escribe esa palabra?||}}"
+      "{{es-ES|Practico todos los días.||prac-TI-co TO-dos LOS DIAS.}}",
+      "{{es-ES|Lea esta frase, por favor.||LEA ES-ta FRA-se, POR fa-BOR.}}",
+      "{{es-ES|¿Cómo se escribe esa palabra?||CO-mo SE es-CRI-be E-sa pa-LA-bra?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3924,11 +3924,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "In beginner Spanish, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "{{es-ES|Practico todos los días.||}}",
+    "correctAnswer": "{{es-ES|Practico todos los días.||prac-TI-co TO-dos LOS DIAS.}}",
     "incorrectAnswers": [
-      "{{es-ES|Lea esta frase, por favor.||}}",
-      "{{es-ES|¿Cómo se escribe esa palabra?||}}",
-      "{{es-ES|Estoy aprendiendo despacio.||}}"
+      "{{es-ES|Lea esta frase, por favor.||LEA ES-ta FRA-se, POR fa-BOR.}}",
+      "{{es-ES|¿Cómo se escribe esa palabra?||CO-mo SE es-CRI-be E-sa pa-LA-bra?}}",
+      "{{es-ES|Estoy aprendiendo despacio.||es-TOY a-pren-DIEN-do des-PA-seeo.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3944,11 +3944,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Which Spanish phrase means 'Please read this sentence.'?",
-    "correctAnswer": "{{es-ES|Lea esta frase, por favor.||}}",
+    "correctAnswer": "{{es-ES|Lea esta frase, por favor.||LEA ES-ta FRA-se, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "{{es-ES|¿Cómo se escribe esa palabra?||}}",
-      "{{es-ES|Estoy aprendiendo despacio.||}}",
-      "{{es-ES|Hablo un poco del idioma.||}}"
+      "{{es-ES|¿Cómo se escribe esa palabra?||CO-mo SE es-CRI-be E-sa pa-LA-bra?}}",
+      "{{es-ES|Estoy aprendiendo despacio.||es-TOY a-pren-DIEN-do des-PA-seeo.}}",
+      "{{es-ES|Hablo un poco del idioma.||HA-blo UN PO-co DEL i-DIO-ma.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3964,11 +3964,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Spanish phrase for 'How do you write that word?'.",
-    "correctAnswer": "{{es-ES|¿Cómo se escribe esa palabra?||}}",
+    "correctAnswer": "{{es-ES|¿Cómo se escribe esa palabra?||CO-mo SE es-CRI-be E-sa pa-LA-bra?}}",
     "incorrectAnswers": [
-      "{{es-ES|Estoy aprendiendo despacio.||}}",
-      "{{es-ES|Hablo un poco del idioma.||}}",
-      "{{es-ES|Dígalo otra vez, por favor.||}}"
+      "{{es-ES|Estoy aprendiendo despacio.||es-TOY a-pren-DIEN-do des-PA-seeo.}}",
+      "{{es-ES|Hablo un poco del idioma.||HA-blo UN PO-co DEL i-DIO-ma.}}",
+      "{{es-ES|Dígalo otra vez, por favor.||di-GA-lo O-tra BEZ, POR fa-BOR.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3984,11 +3984,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Spanish sentence for 'I am learning slowly.'?",
-    "correctAnswer": "{{es-ES|Estoy aprendiendo despacio.||}}",
+    "correctAnswer": "{{es-ES|Estoy aprendiendo despacio.||es-TOY a-pren-DIEN-do des-PA-seeo.}}",
     "incorrectAnswers": [
-      "{{es-ES|Hablo un poco del idioma.||}}",
-      "{{es-ES|Dígalo otra vez, por favor.||}}",
-      "{{es-ES|¿Qué significa esta palabra?||}}"
+      "{{es-ES|Hablo un poco del idioma.||HA-blo UN PO-co DEL i-DIO-ma.}}",
+      "{{es-ES|Dígalo otra vez, por favor.||di-GA-lo O-tra BEZ, POR fa-BOR.}}",
+      "{{es-ES|¿Qué significa esta palabra?||QUE sig-ni-FI-ca ES-ta pa-LA-bra?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which pair is a common listening challenge because the vowels sound close for many learners?",
-    "correctAnswer": "{{fr-FR|dessus||}} and {{fr-FR|dessous||}}",
+    "correctAnswer": "{{fr-FR|dessus||des-SUS}} and {{fr-FR|dessous||des-SOOS}}",
     "incorrectAnswers": [
-      "{{fr-FR|table||}} and {{fr-FR|chaise||}}",
-      "{{fr-FR|lune||}} and {{fr-FR|soleil||}}",
-      "{{fr-FR|fenêtre||}} and {{fr-FR|porte||}}"
+      "{{fr-FR|table||ta-BLE}} and {{fr-FR|chaise||sheh-SE}}",
+      "{{fr-FR|lune||lu-NE}} and {{fr-FR|soleil||so-LEHL}}",
+      "{{fr-FR|fenêtre||fe-ne-TRE}} and {{fr-FR|porte||por-TE}}"
     ],
     "explanation": "\"Dessus\" (above) and \"dessous\" (below) sound similar at first; the final consonant sound helps tell them apart with practice.",
     "keywords": [
@@ -25,9 +25,9 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which letters are often linked in speech in \"les amis\"?",
-    "correctAnswer": "The -s on \"{{fr-FR|les||}}\" links to the next vowel sound.",
+    "correctAnswer": "The -s on \"{{fr-FR|les||LES}}\" links to the next vowel sound.",
     "incorrectAnswers": [
-      "{{fr-FR|No||}} letters ever link in French.",
+      "{{fr-FR|No||NO}} letters ever link in French.",
       "Only consonants at the end of verbs link.",
       "Linking never happens before a vowel."
     ],
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which pair differs clearly for most learners because \"u\" and \"ou\" are different vowels?",
-    "correctAnswer": "{{fr-FR|tu||}} and {{fr-FR|tout||}}",
+    "correctAnswer": "{{fr-FR|tu||TU}} and {{fr-FR|tout||TOOT}}",
     "incorrectAnswers": [
-      "{{fr-FR|pas||}} and {{fr-FR|pas||}}",
-      "{{fr-FR|oui||}} and {{fr-FR|oui||}}",
-      "{{fr-FR|merci||}} and {{fr-FR|merci||}}"
+      "{{fr-FR|pas||PAS}} and {{fr-FR|pas||PAS}}",
+      "{{fr-FR|oui||o-WAH}} and {{fr-FR|oui||o-WAH}}",
+      "{{fr-FR|merci||mer-CI}} and {{fr-FR|merci||mer-CI}}"
     ],
     "explanation": "French \"u\" and \"ou\" are different rounded vowels; mixing them is a common listening and speaking mistake for beginners.",
     "keywords": [

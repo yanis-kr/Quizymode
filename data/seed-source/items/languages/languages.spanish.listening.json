@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "Which pair is a common listening challenge because the difference is mainly one r sound versus a rolled or long r?",
-    "correctAnswer": "{{es-ES|pero||}} and {{es-ES|perro||}}",
+    "correctAnswer": "{{es-ES|pero||PE-ro}} and {{es-ES|perro||PER-ro}}",
     "incorrectAnswers": [
-      "{{es-ES|casa||}} and {{es-ES|casa||}}",
-      "{{es-ES|sol||}} and {{es-ES|luna||}}",
-      "{{es-ES|mesa||}} and {{es-ES|silla||}}"
+      "{{es-ES|casa||CA-sa}} and {{es-ES|casa||CA-sa}}",
+      "{{es-ES|sol||SOL}} and {{es-ES|luna||LU-na}}",
+      "{{es-ES|mesa||ME-sa}} and {{es-ES|silla||SIYA}}"
     ],
     "explanation": "\"Pero\" (but) and \"perro\" (dog) sound similar to beginners; the r sounds make the difference clear once you train your ear.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "Which spelling is the standard Spanish word for a medical doctor, including its accent mark?",
-    "correctAnswer": "{{es-ES|médico||}}",
+    "correctAnswer": "{{es-ES|médico||me-DI-co}}",
     "incorrectAnswers": [
-      "{{es-ES|medico||}}",
-      "{{es-ES|medicina||}}",
-      "{{es-ES|hospital||}}"
+      "{{es-ES|medico||me-DI-co}}",
+      "{{es-ES|medicina||me-di-SEE-na}}",
+      "{{es-ES|hospital||hos-pi-TAL}}"
     ],
     "explanation": "The accent marks stress on the first syllable and matches the standard spelling of the noun for a doctor.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "In much of Spain, which pair is easier to tell apart by ear because \"z\" and \"c\" before \"a\" use different consonant sounds?",
-    "correctAnswer": "{{es-ES|casa||}} and {{es-ES|caza||}}",
+    "correctAnswer": "{{es-ES|casa||CA-sa}} and {{es-ES|caza||CA-za}}",
     "incorrectAnswers": [
-      "{{es-ES|pero||}} and {{es-ES|perro||}}",
-      "{{es-ES|sol||}} and {{es-ES|luna||}}",
-      "{{es-ES|mesa||}} and {{es-ES|silla||}}"
+      "{{es-ES|pero||PE-ro}} and {{es-ES|perro||PER-ro}}",
+      "{{es-ES|sol||SOL}} and {{es-ES|luna||LU-na}}",
+      "{{es-ES|mesa||ME-sa}} and {{es-ES|silla||SIYA}}"
     ],
     "explanation": "In standard Spain Spanish, \"caza\" uses a \"th\"-like sound for z, while \"casa\" uses a \"k\" sound before \"a,\" so listeners can separate them.",
     "keywords": [

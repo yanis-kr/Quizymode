@@ -5,11 +5,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Привіт|Pryvit|}}",
+    "correctAnswer": "{{uk-UA|Привіт|Pryvit|pry-VIT}}",
     "incorrectAnswers": [
-      "{{uk-UA|До побачення|Do pobachennya|}}",
-      "{{uk-UA|Дякую|Dyakuyu|}}",
-      "{{uk-UA|Будь ласка|Bud laska|}}"
+      "{{uk-UA|До побачення|Do pobachennya|DO po-ba-CHEN-nya}}",
+      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
+      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}"
     ],
     "explanation": "'Pryvit' is the casual hello. Formal: 'Dobroho dnya' (good day).",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Дякую|Dyakuyu|}}",
+    "correctAnswer": "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
     "incorrectAnswers": [
-      "{{uk-UA|Будь ласка|Bud laska|}}",
-      "{{uk-UA|Вибачте|Vybachte|}}",
-      "{{uk-UA|Привіт|Pryvit|}}"
+      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
+      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
+      "{{uk-UA|Привіт|Pryvit|pry-VIT}}"
     ],
     "explanation": "'Dyakuyu' is the everyday thank you. 'Dyakuyu duzhe' = thank you very much.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Будь ласка|Bud laska|}}",
+    "correctAnswer": "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
     "incorrectAnswers": [
-      "{{uk-UA|Дякую|Dyakuyu|}}",
-      "{{uk-UA|Вибачте|Vybachte|}}",
-      "{{uk-UA|Так|Tak|}}"
+      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
+      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
+      "{{uk-UA|Так|Tak|TAK}}"
     ],
     "explanation": "'Bud laska' means please and is also used for 'you're welcome' and 'here you go'.",
     "keywords": [
@@ -64,7 +64,7 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'yes' and 'no' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Так|Tak|}} / {{uk-UA|Ні|Ni|}}",
+    "correctAnswer": "{{uk-UA|Так|Tak|TAK}} / {{uk-UA|Ні|Ni|NI}}",
     "incorrectAnswers": [
       "Да / Нет",
       "Oui / Non",
@@ -83,11 +83,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|До побачення|Do pobachennya|}}",
+    "correctAnswer": "{{uk-UA|До побачення|Do pobachennya|DO po-ba-CHEN-nya}}",
     "incorrectAnswers": [
-      "{{uk-UA|Привіт|Pryvit|}}",
-      "{{uk-UA|Дякую|Dyakuyu|}}",
-      "{{uk-UA|Вибачте|Vybachte|}}"
+      "{{uk-UA|Привіт|Pryvit|pry-VIT}}",
+      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
+      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}"
     ],
     "explanation": "'Do pobachennya' — 'until we see each other' — is the formal goodbye. Informal: 'Buvay'.",
     "keywords": [
@@ -103,11 +103,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Мене звати...|Mene zvaty...|}}",
+    "correctAnswer": "{{uk-UA|Мене звати...|Mene zvaty...|ME-ne ZVA-ty...}}",
     "incorrectAnswers": [
-      "{{uk-UA|Я живу в...|Ya zhyvu v...|}}",
-      "{{uk-UA|Я з...|Ya z...|}}",
-      "{{uk-UA|Мені подобається...|Meni podobayetsya...|}}"
+      "{{uk-UA|Я живу в...|Ya zhyvu v...|YA ZHY-vu V...}}",
+      "{{uk-UA|Я з...|Ya z...|YA Z...}}",
+      "{{uk-UA|Мені подобається...|Meni podobayetsya...|ME-ni po-do-BAYE-tsya...}}"
     ],
     "explanation": "'Mene zvaty [name]' — 'My name is [name]' — the standard self-introduction.",
     "keywords": [
@@ -123,11 +123,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in Ukrainian?",
-    "correctAnswer": "{{uk-UA|один, два, три|odyn, dva, try|}}",
+    "correctAnswer": "{{uk-UA|один, два, три|odyn, dva, try|o-DYN, DVA, TRY}}",
     "incorrectAnswers": [
       "un, dwa, trzy",
       "viens, divi, trīs",
-      "{{uk-UA|один, два, тры|Russian|}}"
+      "{{uk-UA|один, два, тры|Russian|rus-SIAN}}"
     ],
     "explanation": "Ukrainian: odyn (1), dva (2), try (3). Compare to Russian odin/dva/tri — similar but distinct.",
     "keywords": [
@@ -142,11 +142,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'water' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|вода|voda|}}",
+    "correctAnswer": "{{uk-UA|вода|voda|VO-da}}",
     "incorrectAnswers": [
-      "{{uk-UA|хліб|khlib|}}",
-      "{{uk-UA|молоко|moloko|}}",
-      "{{uk-UA|сік|sik|}}"
+      "{{uk-UA|хліб|khlib|KHLIB}}",
+      "{{uk-UA|молоко|moloko|mo-LO-ko}}",
+      "{{uk-UA|сік|sik|SIK}}"
     ],
     "explanation": "'Voda' means water — same root as Russian. 'Khlib' is bread, 'moloko' is milk.",
     "keywords": [
@@ -161,11 +161,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Вибачте|Vybachte|}}",
+    "correctAnswer": "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
     "incorrectAnswers": [
-      "{{uk-UA|Дякую|Dyakuyu|}}",
-      "{{uk-UA|Будь ласка|Bud laska|}}",
-      "{{uk-UA|Привіт|Pryvit|}}"
+      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
+      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
+      "{{uk-UA|Привіт|Pryvit|pry-VIT}}"
     ],
     "explanation": "'Vybachte' is formal excuse me/sorry. Informal: 'Vybachay'. Used to get attention or apologize.",
     "keywords": [

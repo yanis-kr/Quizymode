@@ -5,7 +5,7 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What does '{{ru-RU|Здравствуйте|zdravstvuyte|ZDRAHST-vooy-tyeh}}' mean?",
-    "correctAnswer": "{{ru-RU|hello|polite|}}",
+    "correctAnswer": "{{ru-RU|hello|polite|po-LI-te}}",
     "incorrectAnswers": [
       "goodbye",
       "thank you",
@@ -210,11 +210,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'four'?",
-    "correctAnswer": "{{ru-RU|четыре|chetyre|}}",
+    "correctAnswer": "{{ru-RU|четыре|chetyre|che-TY-re}}",
     "incorrectAnswers": [
-      "{{ru-RU|пять|pyat|}}",
-      "{{ru-RU|шесть|shest|}}",
-      "{{ru-RU|семь|sem|}}"
+      "{{ru-RU|пять|pyat|PYAT}}",
+      "{{ru-RU|шесть|shest|SHEST}}",
+      "{{ru-RU|семь|sem|SEM}}"
     ],
     "explanation": "'четыре' is the word for 'four'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -232,11 +232,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'five' in everyday use?",
-    "correctAnswer": "{{ru-RU|пять|pyat|}}",
+    "correctAnswer": "{{ru-RU|пять|pyat|PYAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|шесть|shest|}}",
-      "{{ru-RU|семь|sem|}}",
-      "{{ru-RU|восемь|vosem|}}"
+      "{{ru-RU|шесть|shest|SHEST}}",
+      "{{ru-RU|семь|sem|SEM}}",
+      "{{ru-RU|восемь|vosem|vo-SEM}}"
     ],
     "explanation": "'пять' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -254,11 +254,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'six'.",
-    "correctAnswer": "{{ru-RU|шесть|shest|}}",
+    "correctAnswer": "{{ru-RU|шесть|shest|SHEST}}",
     "incorrectAnswers": [
-      "{{ru-RU|семь|sem|}}",
-      "{{ru-RU|восемь|vosem|}}",
-      "{{ru-RU|девять|devyat|}}"
+      "{{ru-RU|семь|sem|SEM}}",
+      "{{ru-RU|восемь|vosem|vo-SEM}}",
+      "{{ru-RU|девять|devyat|de-VYAT}}"
     ],
     "explanation": "'шесть' is the word for 'six'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -276,11 +276,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'seven'?",
-    "correctAnswer": "{{ru-RU|семь|sem|}}",
+    "correctAnswer": "{{ru-RU|семь|sem|SEM}}",
     "incorrectAnswers": [
-      "{{ru-RU|восемь|vosem|}}",
-      "{{ru-RU|девять|devyat|}}",
-      "{{ru-RU|десять|desyat|}}"
+      "{{ru-RU|восемь|vosem|vo-SEM}}",
+      "{{ru-RU|девять|devyat|de-VYAT}}",
+      "{{ru-RU|десять|desyat|de-SYAT}}"
     ],
     "explanation": "'семь' is the word for 'seven'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -298,11 +298,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'eight'?",
-    "correctAnswer": "{{ru-RU|восемь|vosem|}}",
+    "correctAnswer": "{{ru-RU|восемь|vosem|vo-SEM}}",
     "incorrectAnswers": [
-      "{{ru-RU|девять|devyat|}}",
-      "{{ru-RU|десять|desyat|}}",
-      "{{ru-RU|одиннадцать|odinnadtsat|}}"
+      "{{ru-RU|девять|devyat|de-VYAT}}",
+      "{{ru-RU|десять|desyat|de-SYAT}}",
+      "{{ru-RU|одиннадцать|odinnadtsat|o-din-NAD-tsat}}"
     ],
     "explanation": "'восемь' is the word for 'eight'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -320,11 +320,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'nine' in everyday use?",
-    "correctAnswer": "{{ru-RU|девять|devyat|}}",
+    "correctAnswer": "{{ru-RU|девять|devyat|de-VYAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|десять|desyat|}}",
-      "{{ru-RU|одиннадцать|odinnadtsat|}}",
-      "{{ru-RU|двенадцать|dvenadtsat|}}"
+      "{{ru-RU|десять|desyat|de-SYAT}}",
+      "{{ru-RU|одиннадцать|odinnadtsat|o-din-NAD-tsat}}",
+      "{{ru-RU|двенадцать|dvenadtsat|dve-NAD-tsat}}"
     ],
     "explanation": "'девять' is the word for 'nine'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -342,11 +342,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'ten'.",
-    "correctAnswer": "{{ru-RU|десять|desyat|}}",
+    "correctAnswer": "{{ru-RU|десять|desyat|de-SYAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|одиннадцать|odinnadtsat|}}",
-      "{{ru-RU|двенадцать|dvenadtsat|}}",
-      "{{ru-RU|тринадцать|trinadtsat|}}"
+      "{{ru-RU|одиннадцать|odinnadtsat|o-din-NAD-tsat}}",
+      "{{ru-RU|двенадцать|dvenadtsat|dve-NAD-tsat}}",
+      "{{ru-RU|тринадцать|trinadtsat|tri-NAD-tsat}}"
     ],
     "explanation": "'десять' is the word for 'ten'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -364,11 +364,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'eleven'?",
-    "correctAnswer": "{{ru-RU|одиннадцать|odinnadtsat|}}",
+    "correctAnswer": "{{ru-RU|одиннадцать|odinnadtsat|o-din-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|двенадцать|dvenadtsat|}}",
-      "{{ru-RU|тринадцать|trinadtsat|}}",
-      "{{ru-RU|четырнадцать|chetyrnadtsat|}}"
+      "{{ru-RU|двенадцать|dvenadtsat|dve-NAD-tsat}}",
+      "{{ru-RU|тринадцать|trinadtsat|tri-NAD-tsat}}",
+      "{{ru-RU|четырнадцать|chetyrnadtsat|che-tyr-NAD-tsat}}"
     ],
     "explanation": "'одиннадцать' is the word for 'eleven'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -386,11 +386,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'twelve'?",
-    "correctAnswer": "{{ru-RU|двенадцать|dvenadtsat|}}",
+    "correctAnswer": "{{ru-RU|двенадцать|dvenadtsat|dve-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|тринадцать|trinadtsat|}}",
-      "{{ru-RU|четырнадцать|chetyrnadtsat|}}",
-      "{{ru-RU|пятнадцать|pyatnadtsat|}}"
+      "{{ru-RU|тринадцать|trinadtsat|tri-NAD-tsat}}",
+      "{{ru-RU|четырнадцать|chetyrnadtsat|che-tyr-NAD-tsat}}",
+      "{{ru-RU|пятнадцать|pyatnadtsat|pyat-NAD-tsat}}"
     ],
     "explanation": "'двенадцать' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -408,11 +408,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'thirteen' in everyday use?",
-    "correctAnswer": "{{ru-RU|тринадцать|trinadtsat|}}",
+    "correctAnswer": "{{ru-RU|тринадцать|trinadtsat|tri-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|четырнадцать|chetyrnadtsat|}}",
-      "{{ru-RU|пятнадцать|pyatnadtsat|}}",
-      "{{ru-RU|шестнадцать|shestnadtsat|}}"
+      "{{ru-RU|четырнадцать|chetyrnadtsat|che-tyr-NAD-tsat}}",
+      "{{ru-RU|пятнадцать|pyatnadtsat|pyat-NAD-tsat}}",
+      "{{ru-RU|шестнадцать|shestnadtsat|shest-NAD-tsat}}"
     ],
     "explanation": "'тринадцать' is the word for 'thirteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -430,11 +430,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'fourteen'.",
-    "correctAnswer": "{{ru-RU|четырнадцать|chetyrnadtsat|}}",
+    "correctAnswer": "{{ru-RU|четырнадцать|chetyrnadtsat|che-tyr-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|пятнадцать|pyatnadtsat|}}",
-      "{{ru-RU|шестнадцать|shestnadtsat|}}",
-      "{{ru-RU|семнадцать|semnadtsat|}}"
+      "{{ru-RU|пятнадцать|pyatnadtsat|pyat-NAD-tsat}}",
+      "{{ru-RU|шестнадцать|shestnadtsat|shest-NAD-tsat}}",
+      "{{ru-RU|семнадцать|semnadtsat|sem-NAD-tsat}}"
     ],
     "explanation": "'четырнадцать' is the word for 'fourteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -452,11 +452,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'fifteen'?",
-    "correctAnswer": "{{ru-RU|пятнадцать|pyatnadtsat|}}",
+    "correctAnswer": "{{ru-RU|пятнадцать|pyatnadtsat|pyat-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|шестнадцать|shestnadtsat|}}",
-      "{{ru-RU|семнадцать|semnadtsat|}}",
-      "{{ru-RU|восемнадцать|vosemnadtsat|}}"
+      "{{ru-RU|шестнадцать|shestnadtsat|shest-NAD-tsat}}",
+      "{{ru-RU|семнадцать|semnadtsat|sem-NAD-tsat}}",
+      "{{ru-RU|восемнадцать|vosemnadtsat|vo-sem-NAD-tsat}}"
     ],
     "explanation": "'пятнадцать' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -474,11 +474,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'sixteen'?",
-    "correctAnswer": "{{ru-RU|шестнадцать|shestnadtsat|}}",
+    "correctAnswer": "{{ru-RU|шестнадцать|shestnadtsat|shest-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|семнадцать|semnadtsat|}}",
-      "{{ru-RU|восемнадцать|vosemnadtsat|}}",
-      "{{ru-RU|девятнадцать|devyatnadtsat|}}"
+      "{{ru-RU|семнадцать|semnadtsat|sem-NAD-tsat}}",
+      "{{ru-RU|восемнадцать|vosemnadtsat|vo-sem-NAD-tsat}}",
+      "{{ru-RU|девятнадцать|devyatnadtsat|de-vyat-NAD-tsat}}"
     ],
     "explanation": "'шестнадцать' is the word for 'sixteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -496,11 +496,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'seventeen' in everyday use?",
-    "correctAnswer": "{{ru-RU|семнадцать|semnadtsat|}}",
+    "correctAnswer": "{{ru-RU|семнадцать|semnadtsat|sem-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|восемнадцать|vosemnadtsat|}}",
-      "{{ru-RU|девятнадцать|devyatnadtsat|}}",
-      "{{ru-RU|двадцать|dvadtsat|}}"
+      "{{ru-RU|восемнадцать|vosemnadtsat|vo-sem-NAD-tsat}}",
+      "{{ru-RU|девятнадцать|devyatnadtsat|de-vyat-NAD-tsat}}",
+      "{{ru-RU|двадцать|dvadtsat|dvad-TSAT}}"
     ],
     "explanation": "'семнадцать' is the word for 'seventeen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -518,11 +518,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'eighteen'.",
-    "correctAnswer": "{{ru-RU|восемнадцать|vosemnadtsat|}}",
+    "correctAnswer": "{{ru-RU|восемнадцать|vosemnadtsat|vo-sem-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|девятнадцать|devyatnadtsat|}}",
-      "{{ru-RU|двадцать|dvadtsat|}}",
-      "{{ru-RU|тридцать|tridtsat|}}"
+      "{{ru-RU|девятнадцать|devyatnadtsat|de-vyat-NAD-tsat}}",
+      "{{ru-RU|двадцать|dvadtsat|dvad-TSAT}}",
+      "{{ru-RU|тридцать|tridtsat|trid-TSAT}}"
     ],
     "explanation": "'восемнадцать' is the word for 'eighteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -540,11 +540,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'nineteen'?",
-    "correctAnswer": "{{ru-RU|девятнадцать|devyatnadtsat|}}",
+    "correctAnswer": "{{ru-RU|девятнадцать|devyatnadtsat|de-vyat-NAD-tsat}}",
     "incorrectAnswers": [
-      "{{ru-RU|двадцать|dvadtsat|}}",
-      "{{ru-RU|тридцать|tridtsat|}}",
-      "{{ru-RU|сорок|sorok|}}"
+      "{{ru-RU|двадцать|dvadtsat|dvad-TSAT}}",
+      "{{ru-RU|тридцать|tridtsat|trid-TSAT}}",
+      "{{ru-RU|сорок|sorok|so-ROK}}"
     ],
     "explanation": "'девятнадцать' is the word for 'nineteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -562,11 +562,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'twenty'?",
-    "correctAnswer": "{{ru-RU|двадцать|dvadtsat|}}",
+    "correctAnswer": "{{ru-RU|двадцать|dvadtsat|dvad-TSAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|тридцать|tridtsat|}}",
-      "{{ru-RU|сорок|sorok|}}",
-      "{{ru-RU|пятьдесят|pyatdesyat|}}"
+      "{{ru-RU|тридцать|tridtsat|trid-TSAT}}",
+      "{{ru-RU|сорок|sorok|so-ROK}}",
+      "{{ru-RU|пятьдесят|pyatdesyat|pyat-DE-syat}}"
     ],
     "explanation": "'двадцать' is the word for 'twenty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -584,11 +584,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'thirty' in everyday use?",
-    "correctAnswer": "{{ru-RU|тридцать|tridtsat|}}",
+    "correctAnswer": "{{ru-RU|тридцать|tridtsat|trid-TSAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|сорок|sorok|}}",
-      "{{ru-RU|пятьдесят|pyatdesyat|}}",
-      "{{ru-RU|шестьдесят|shestdesyat|}}"
+      "{{ru-RU|сорок|sorok|so-ROK}}",
+      "{{ru-RU|пятьдесят|pyatdesyat|pyat-DE-syat}}",
+      "{{ru-RU|шестьдесят|shestdesyat|shest-DE-syat}}"
     ],
     "explanation": "'тридцать' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -606,11 +606,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'forty'.",
-    "correctAnswer": "{{ru-RU|сорок|sorok|}}",
+    "correctAnswer": "{{ru-RU|сорок|sorok|so-ROK}}",
     "incorrectAnswers": [
-      "{{ru-RU|пятьдесят|pyatdesyat|}}",
-      "{{ru-RU|шестьдесят|shestdesyat|}}",
-      "{{ru-RU|семьдесят|semdesyat|}}"
+      "{{ru-RU|пятьдесят|pyatdesyat|pyat-DE-syat}}",
+      "{{ru-RU|шестьдесят|shestdesyat|shest-DE-syat}}",
+      "{{ru-RU|семьдесят|semdesyat|sem-DE-syat}}"
     ],
     "explanation": "'сорок' is the word for 'forty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -628,11 +628,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'fifty'?",
-    "correctAnswer": "{{ru-RU|пятьдесят|pyatdesyat|}}",
+    "correctAnswer": "{{ru-RU|пятьдесят|pyatdesyat|pyat-DE-syat}}",
     "incorrectAnswers": [
-      "{{ru-RU|шестьдесят|shestdesyat|}}",
-      "{{ru-RU|семьдесят|semdesyat|}}",
-      "{{ru-RU|восемьдесят|vosemdesyat|}}"
+      "{{ru-RU|шестьдесят|shestdesyat|shest-DE-syat}}",
+      "{{ru-RU|семьдесят|semdesyat|sem-DE-syat}}",
+      "{{ru-RU|восемьдесят|vosemdesyat|vo-sem-DE-syat}}"
     ],
     "explanation": "'пятьдесят' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -650,11 +650,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'sixty'?",
-    "correctAnswer": "{{ru-RU|шестьдесят|shestdesyat|}}",
+    "correctAnswer": "{{ru-RU|шестьдесят|shestdesyat|shest-DE-syat}}",
     "incorrectAnswers": [
-      "{{ru-RU|семьдесят|semdesyat|}}",
-      "{{ru-RU|восемьдесят|vosemdesyat|}}",
-      "{{ru-RU|девяносто|devyanosto|}}"
+      "{{ru-RU|семьдесят|semdesyat|sem-DE-syat}}",
+      "{{ru-RU|восемьдесят|vosemdesyat|vo-sem-DE-syat}}",
+      "{{ru-RU|девяносто|devyanosto|de-vya-NOS-to}}"
     ],
     "explanation": "'шестьдесят' is the word for 'sixty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -672,11 +672,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'seventy' in everyday use?",
-    "correctAnswer": "{{ru-RU|семьдесят|semdesyat|}}",
+    "correctAnswer": "{{ru-RU|семьдесят|semdesyat|sem-DE-syat}}",
     "incorrectAnswers": [
-      "{{ru-RU|восемьдесят|vosemdesyat|}}",
-      "{{ru-RU|девяносто|devyanosto|}}",
-      "{{ru-RU|сто|sto|}}"
+      "{{ru-RU|восемьдесят|vosemdesyat|vo-sem-DE-syat}}",
+      "{{ru-RU|девяносто|devyanosto|de-vya-NOS-to}}",
+      "{{ru-RU|сто|sto|STO}}"
     ],
     "explanation": "'семьдесят' is the word for 'seventy'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -694,11 +694,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'eighty'.",
-    "correctAnswer": "{{ru-RU|восемьдесят|vosemdesyat|}}",
+    "correctAnswer": "{{ru-RU|восемьдесят|vosemdesyat|vo-sem-DE-syat}}",
     "incorrectAnswers": [
-      "{{ru-RU|девяносто|devyanosto|}}",
-      "{{ru-RU|сто|sto|}}",
-      "{{ru-RU|четыре|chetyre|}}"
+      "{{ru-RU|девяносто|devyanosto|de-vya-NOS-to}}",
+      "{{ru-RU|сто|sto|STO}}",
+      "{{ru-RU|четыре|chetyre|che-TY-re}}"
     ],
     "explanation": "'восемьдесят' is the word for 'eighty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -716,11 +716,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'ninety'?",
-    "correctAnswer": "{{ru-RU|девяносто|devyanosto|}}",
+    "correctAnswer": "{{ru-RU|девяносто|devyanosto|de-vya-NOS-to}}",
     "incorrectAnswers": [
-      "{{ru-RU|сто|sto|}}",
-      "{{ru-RU|четыре|chetyre|}}",
-      "{{ru-RU|пять|pyat|}}"
+      "{{ru-RU|сто|sto|STO}}",
+      "{{ru-RU|четыре|chetyre|che-TY-re}}",
+      "{{ru-RU|пять|pyat|PYAT}}"
     ],
     "explanation": "'девяносто' is the word for 'ninety'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -738,11 +738,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'one hundred'?",
-    "correctAnswer": "{{ru-RU|сто|sto|}}",
+    "correctAnswer": "{{ru-RU|сто|sto|STO}}",
     "incorrectAnswers": [
-      "{{ru-RU|четыре|chetyre|}}",
-      "{{ru-RU|пять|pyat|}}",
-      "{{ru-RU|шесть|shest|}}"
+      "{{ru-RU|четыре|chetyre|che-TY-re}}",
+      "{{ru-RU|пять|pyat|PYAT}}",
+      "{{ru-RU|шесть|shest|SHEST}}"
     ],
     "explanation": "'сто' is the word for 'one hundred'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -760,11 +760,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'first'?",
-    "correctAnswer": "{{ru-RU|первый|pervyy|}}",
+    "correctAnswer": "{{ru-RU|первый|pervyy|PER-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|второй|vtoroy|}}",
-      "{{ru-RU|третий|tretiy|}}",
-      "{{ru-RU|половина|polovina|}}"
+      "{{ru-RU|второй|vtoroy|VTO-roy}}",
+      "{{ru-RU|третий|tretiy|TRE-tiy}}",
+      "{{ru-RU|половина|polovina|po-lo-VI-na}}"
     ],
     "explanation": "'первый' is the word for 'first'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -782,11 +782,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'second' in everyday use?",
-    "correctAnswer": "{{ru-RU|второй|vtoroy|}}",
+    "correctAnswer": "{{ru-RU|второй|vtoroy|VTO-roy}}",
     "incorrectAnswers": [
-      "{{ru-RU|третий|tretiy|}}",
-      "{{ru-RU|половина|polovina|}}",
-      "{{ru-RU|четверть|chetvert|}}"
+      "{{ru-RU|третий|tretiy|TRE-tiy}}",
+      "{{ru-RU|половина|polovina|po-lo-VI-na}}",
+      "{{ru-RU|четверть|chetvert|chet-VERT}}"
     ],
     "explanation": "'второй' is the word for 'second'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -804,11 +804,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'third'.",
-    "correctAnswer": "{{ru-RU|третий|tretiy|}}",
+    "correctAnswer": "{{ru-RU|третий|tretiy|TRE-tiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|половина|polovina|}}",
-      "{{ru-RU|четверть|chetvert|}}",
-      "{{ru-RU|первый|pervyy|}}"
+      "{{ru-RU|половина|polovina|po-lo-VI-na}}",
+      "{{ru-RU|четверть|chetvert|chet-VERT}}",
+      "{{ru-RU|первый|pervyy|PER-vyy}}"
     ],
     "explanation": "'третий' is the word for 'third'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -826,11 +826,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'a half'?",
-    "correctAnswer": "{{ru-RU|половина|polovina|}}",
+    "correctAnswer": "{{ru-RU|половина|polovina|po-lo-VI-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|четверть|chetvert|}}",
-      "{{ru-RU|первый|pervyy|}}",
-      "{{ru-RU|второй|vtoroy|}}"
+      "{{ru-RU|четверть|chetvert|chet-VERT}}",
+      "{{ru-RU|первый|pervyy|PER-vyy}}",
+      "{{ru-RU|второй|vtoroy|VTO-roy}}"
     ],
     "explanation": "'половина' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -848,11 +848,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'a quarter'?",
-    "correctAnswer": "{{ru-RU|четверть|chetvert|}}",
+    "correctAnswer": "{{ru-RU|четверть|chetvert|chet-VERT}}",
     "incorrectAnswers": [
-      "{{ru-RU|первый|pervyy|}}",
-      "{{ru-RU|второй|vtoroy|}}",
-      "{{ru-RU|третий|tretiy|}}"
+      "{{ru-RU|первый|pervyy|PER-vyy}}",
+      "{{ru-RU|второй|vtoroy|VTO-roy}}",
+      "{{ru-RU|третий|tretiy|TRE-tiy}}"
     ],
     "explanation": "'четверть' is the word for 'a quarter'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -870,11 +870,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'Monday'?",
-    "correctAnswer": "{{ru-RU|понедельник|ponedelnik|}}",
+    "correctAnswer": "{{ru-RU|понедельник|ponedelnik|po-ne-DEL-nik}}",
     "incorrectAnswers": [
-      "{{ru-RU|вторник|vtornik|}}",
-      "{{ru-RU|среда|sreda|}}",
-      "{{ru-RU|четверг|chetverg|}}"
+      "{{ru-RU|вторник|vtornik|vtor-NIK}}",
+      "{{ru-RU|среда|sreda|SRE-da}}",
+      "{{ru-RU|четверг|chetverg|chet-VERG}}"
     ],
     "explanation": "'понедельник' means 'Monday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -892,11 +892,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'Tuesday' in everyday use?",
-    "correctAnswer": "{{ru-RU|вторник|vtornik|}}",
+    "correctAnswer": "{{ru-RU|вторник|vtornik|vtor-NIK}}",
     "incorrectAnswers": [
-      "{{ru-RU|среда|sreda|}}",
-      "{{ru-RU|четверг|chetverg|}}",
-      "{{ru-RU|пятница|pyatnitsa|}}"
+      "{{ru-RU|среда|sreda|SRE-da}}",
+      "{{ru-RU|четверг|chetverg|chet-VERG}}",
+      "{{ru-RU|пятница|pyatnitsa|pyat-NI-tsa}}"
     ],
     "explanation": "'вторник' means 'Tuesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -914,11 +914,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'Wednesday'.",
-    "correctAnswer": "{{ru-RU|среда|sreda|}}",
+    "correctAnswer": "{{ru-RU|среда|sreda|SRE-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|четверг|chetverg|}}",
-      "{{ru-RU|пятница|pyatnitsa|}}",
-      "{{ru-RU|суббота|subbota|}}"
+      "{{ru-RU|четверг|chetverg|chet-VERG}}",
+      "{{ru-RU|пятница|pyatnitsa|pyat-NI-tsa}}",
+      "{{ru-RU|суббота|subbota|sub-BO-ta}}"
     ],
     "explanation": "'среда' means 'Wednesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -936,11 +936,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'Thursday'?",
-    "correctAnswer": "{{ru-RU|четверг|chetverg|}}",
+    "correctAnswer": "{{ru-RU|четверг|chetverg|chet-VERG}}",
     "incorrectAnswers": [
-      "{{ru-RU|пятница|pyatnitsa|}}",
-      "{{ru-RU|суббота|subbota|}}",
-      "{{ru-RU|воскресенье|voskresene|}}"
+      "{{ru-RU|пятница|pyatnitsa|pyat-NI-tsa}}",
+      "{{ru-RU|суббота|subbota|sub-BO-ta}}",
+      "{{ru-RU|воскресенье|voskresene|vos-kre-SE-ne}}"
     ],
     "explanation": "'четверг' means 'Thursday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -958,11 +958,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'Friday'?",
-    "correctAnswer": "{{ru-RU|пятница|pyatnitsa|}}",
+    "correctAnswer": "{{ru-RU|пятница|pyatnitsa|pyat-NI-tsa}}",
     "incorrectAnswers": [
-      "{{ru-RU|суббота|subbota|}}",
-      "{{ru-RU|воскресенье|voskresene|}}",
-      "{{ru-RU|понедельник|ponedelnik|}}"
+      "{{ru-RU|суббота|subbota|sub-BO-ta}}",
+      "{{ru-RU|воскресенье|voskresene|vos-kre-SE-ne}}",
+      "{{ru-RU|понедельник|ponedelnik|po-ne-DEL-nik}}"
     ],
     "explanation": "'пятница' means 'Friday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -980,11 +980,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'Saturday' in everyday use?",
-    "correctAnswer": "{{ru-RU|суббота|subbota|}}",
+    "correctAnswer": "{{ru-RU|суббота|subbota|sub-BO-ta}}",
     "incorrectAnswers": [
-      "{{ru-RU|воскресенье|voskresene|}}",
-      "{{ru-RU|понедельник|ponedelnik|}}",
-      "{{ru-RU|вторник|vtornik|}}"
+      "{{ru-RU|воскресенье|voskresene|vos-kre-SE-ne}}",
+      "{{ru-RU|понедельник|ponedelnik|po-ne-DEL-nik}}",
+      "{{ru-RU|вторник|vtornik|vtor-NIK}}"
     ],
     "explanation": "'суббота' means 'Saturday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1002,11 +1002,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'Sunday'.",
-    "correctAnswer": "{{ru-RU|воскресенье|voskresene|}}",
+    "correctAnswer": "{{ru-RU|воскресенье|voskresene|vos-kre-SE-ne}}",
     "incorrectAnswers": [
-      "{{ru-RU|понедельник|ponedelnik|}}",
-      "{{ru-RU|вторник|vtornik|}}",
-      "{{ru-RU|среда|sreda|}}"
+      "{{ru-RU|понедельник|ponedelnik|po-ne-DEL-nik}}",
+      "{{ru-RU|вторник|vtornik|vtor-NIK}}",
+      "{{ru-RU|среда|sreda|SRE-da}}"
     ],
     "explanation": "'воскресенье' means 'Sunday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1024,11 +1024,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'January'?",
-    "correctAnswer": "{{ru-RU|январь|yanvar|}}",
+    "correctAnswer": "{{ru-RU|январь|yanvar|yan-VAR}}",
     "incorrectAnswers": [
-      "{{ru-RU|февраль|fevral|}}",
-      "{{ru-RU|март|mart|}}",
-      "{{ru-RU|апрель|aprel|}}"
+      "{{ru-RU|февраль|fevral|fe-VRAL}}",
+      "{{ru-RU|март|mart|MART}}",
+      "{{ru-RU|апрель|aprel|a-PREL}}"
     ],
     "explanation": "'январь' means 'January'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1046,11 +1046,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'February' in everyday use?",
-    "correctAnswer": "{{ru-RU|февраль|fevral|}}",
+    "correctAnswer": "{{ru-RU|февраль|fevral|fe-VRAL}}",
     "incorrectAnswers": [
-      "{{ru-RU|март|mart|}}",
-      "{{ru-RU|апрель|aprel|}}",
-      "{{ru-RU|май|may|}}"
+      "{{ru-RU|март|mart|MART}}",
+      "{{ru-RU|апрель|aprel|a-PREL}}",
+      "{{ru-RU|май|may|MAY}}"
     ],
     "explanation": "'февраль' means 'February'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1068,11 +1068,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'March'.",
-    "correctAnswer": "{{ru-RU|март|mart|}}",
+    "correctAnswer": "{{ru-RU|март|mart|MART}}",
     "incorrectAnswers": [
-      "{{ru-RU|апрель|aprel|}}",
-      "{{ru-RU|май|may|}}",
-      "{{ru-RU|июнь|iyun|}}"
+      "{{ru-RU|апрель|aprel|a-PREL}}",
+      "{{ru-RU|май|may|MAY}}",
+      "{{ru-RU|июнь|iyun|IYUN}}"
     ],
     "explanation": "'март' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1090,11 +1090,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'April'?",
-    "correctAnswer": "{{ru-RU|апрель|aprel|}}",
+    "correctAnswer": "{{ru-RU|апрель|aprel|a-PREL}}",
     "incorrectAnswers": [
-      "{{ru-RU|май|may|}}",
-      "{{ru-RU|июнь|iyun|}}",
-      "{{ru-RU|июль|iyul|}}"
+      "{{ru-RU|май|may|MAY}}",
+      "{{ru-RU|июнь|iyun|IYUN}}",
+      "{{ru-RU|июль|iyul|IYUL}}"
     ],
     "explanation": "'апрель' means 'April'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1112,11 +1112,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'May'?",
-    "correctAnswer": "{{ru-RU|май|may|}}",
+    "correctAnswer": "{{ru-RU|май|may|MAY}}",
     "incorrectAnswers": [
-      "{{ru-RU|июнь|iyun|}}",
-      "{{ru-RU|июль|iyul|}}",
-      "{{ru-RU|август|avgust|}}"
+      "{{ru-RU|июнь|iyun|IYUN}}",
+      "{{ru-RU|июль|iyul|IYUL}}",
+      "{{ru-RU|август|avgust|av-GUST}}"
     ],
     "explanation": "'май' means 'May'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1134,11 +1134,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'June' in everyday use?",
-    "correctAnswer": "{{ru-RU|июнь|iyun|}}",
+    "correctAnswer": "{{ru-RU|июнь|iyun|IYUN}}",
     "incorrectAnswers": [
-      "{{ru-RU|июль|iyul|}}",
-      "{{ru-RU|август|avgust|}}",
-      "{{ru-RU|сентябрь|sentyabr|}}"
+      "{{ru-RU|июль|iyul|IYUL}}",
+      "{{ru-RU|август|avgust|av-GUST}}",
+      "{{ru-RU|сентябрь|sentyabr|sen-TYABR}}"
     ],
     "explanation": "'июнь' means 'June'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1156,11 +1156,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'July'.",
-    "correctAnswer": "{{ru-RU|июль|iyul|}}",
+    "correctAnswer": "{{ru-RU|июль|iyul|IYUL}}",
     "incorrectAnswers": [
-      "{{ru-RU|август|avgust|}}",
-      "{{ru-RU|сентябрь|sentyabr|}}",
-      "{{ru-RU|октябрь|oktyabr|}}"
+      "{{ru-RU|август|avgust|av-GUST}}",
+      "{{ru-RU|сентябрь|sentyabr|sen-TYABR}}",
+      "{{ru-RU|октябрь|oktyabr|ok-TYABR}}"
     ],
     "explanation": "'июль' means 'July'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1178,11 +1178,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'August'?",
-    "correctAnswer": "{{ru-RU|август|avgust|}}",
+    "correctAnswer": "{{ru-RU|август|avgust|av-GUST}}",
     "incorrectAnswers": [
-      "{{ru-RU|сентябрь|sentyabr|}}",
-      "{{ru-RU|октябрь|oktyabr|}}",
-      "{{ru-RU|ноябрь|noyabr|}}"
+      "{{ru-RU|сентябрь|sentyabr|sen-TYABR}}",
+      "{{ru-RU|октябрь|oktyabr|ok-TYABR}}",
+      "{{ru-RU|ноябрь|noyabr|NOYABR}}"
     ],
     "explanation": "'август' means 'August'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1200,11 +1200,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'September'?",
-    "correctAnswer": "{{ru-RU|сентябрь|sentyabr|}}",
+    "correctAnswer": "{{ru-RU|сентябрь|sentyabr|sen-TYABR}}",
     "incorrectAnswers": [
-      "{{ru-RU|октябрь|oktyabr|}}",
-      "{{ru-RU|ноябрь|noyabr|}}",
-      "{{ru-RU|декабрь|dekabr|}}"
+      "{{ru-RU|октябрь|oktyabr|ok-TYABR}}",
+      "{{ru-RU|ноябрь|noyabr|NOYABR}}",
+      "{{ru-RU|декабрь|dekabr|de-KABR}}"
     ],
     "explanation": "'сентябрь' means 'September'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1222,11 +1222,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'October' in everyday use?",
-    "correctAnswer": "{{ru-RU|октябрь|oktyabr|}}",
+    "correctAnswer": "{{ru-RU|октябрь|oktyabr|ok-TYABR}}",
     "incorrectAnswers": [
-      "{{ru-RU|ноябрь|noyabr|}}",
-      "{{ru-RU|декабрь|dekabr|}}",
-      "{{ru-RU|январь|yanvar|}}"
+      "{{ru-RU|ноябрь|noyabr|NOYABR}}",
+      "{{ru-RU|декабрь|dekabr|de-KABR}}",
+      "{{ru-RU|январь|yanvar|yan-VAR}}"
     ],
     "explanation": "'октябрь' means 'October'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1244,11 +1244,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'November'.",
-    "correctAnswer": "{{ru-RU|ноябрь|noyabr|}}",
+    "correctAnswer": "{{ru-RU|ноябрь|noyabr|NOYABR}}",
     "incorrectAnswers": [
-      "{{ru-RU|декабрь|dekabr|}}",
-      "{{ru-RU|январь|yanvar|}}",
-      "{{ru-RU|февраль|fevral|}}"
+      "{{ru-RU|декабрь|dekabr|de-KABR}}",
+      "{{ru-RU|январь|yanvar|yan-VAR}}",
+      "{{ru-RU|февраль|fevral|fe-VRAL}}"
     ],
     "explanation": "'ноябрь' means 'November'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1266,11 +1266,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'December'?",
-    "correctAnswer": "{{ru-RU|декабрь|dekabr|}}",
+    "correctAnswer": "{{ru-RU|декабрь|dekabr|de-KABR}}",
     "incorrectAnswers": [
-      "{{ru-RU|январь|yanvar|}}",
-      "{{ru-RU|февраль|fevral|}}",
-      "{{ru-RU|март|mart|}}"
+      "{{ru-RU|январь|yanvar|yan-VAR}}",
+      "{{ru-RU|февраль|fevral|fe-VRAL}}",
+      "{{ru-RU|март|mart|MART}}"
     ],
     "explanation": "'декабрь' means 'December'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1288,11 +1288,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'spring'?",
-    "correctAnswer": "{{ru-RU|весна|vesna|}}",
+    "correctAnswer": "{{ru-RU|весна|vesna|VES-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|лето|leto|}}",
-      "{{ru-RU|осень|osen|}}",
-      "{{ru-RU|зима|zima|}}"
+      "{{ru-RU|лето|leto|LE-to}}",
+      "{{ru-RU|осень|osen|o-SEN}}",
+      "{{ru-RU|зима|zima|ZI-ma}}"
     ],
     "explanation": "'весна' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1310,11 +1310,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'summer' in everyday use?",
-    "correctAnswer": "{{ru-RU|лето|leto|}}",
+    "correctAnswer": "{{ru-RU|лето|leto|LE-to}}",
     "incorrectAnswers": [
-      "{{ru-RU|осень|osen|}}",
-      "{{ru-RU|зима|zima|}}",
-      "{{ru-RU|весна|vesna|}}"
+      "{{ru-RU|осень|osen|o-SEN}}",
+      "{{ru-RU|зима|zima|ZI-ma}}",
+      "{{ru-RU|весна|vesna|VES-na}}"
     ],
     "explanation": "'лето' means 'summer'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1332,11 +1332,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'autumn'.",
-    "correctAnswer": "{{ru-RU|осень|osen|}}",
+    "correctAnswer": "{{ru-RU|осень|osen|o-SEN}}",
     "incorrectAnswers": [
-      "{{ru-RU|зима|zima|}}",
-      "{{ru-RU|весна|vesna|}}",
-      "{{ru-RU|лето|leto|}}"
+      "{{ru-RU|зима|zima|ZI-ma}}",
+      "{{ru-RU|весна|vesna|VES-na}}",
+      "{{ru-RU|лето|leto|LE-to}}"
     ],
     "explanation": "'осень' means 'autumn'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1354,11 +1354,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'winter'?",
-    "correctAnswer": "{{ru-RU|зима|zima|}}",
+    "correctAnswer": "{{ru-RU|зима|zima|ZI-ma}}",
     "incorrectAnswers": [
-      "{{ru-RU|весна|vesna|}}",
-      "{{ru-RU|лето|leto|}}",
-      "{{ru-RU|осень|osen|}}"
+      "{{ru-RU|весна|vesna|VES-na}}",
+      "{{ru-RU|лето|leto|LE-to}}",
+      "{{ru-RU|осень|osen|o-SEN}}"
     ],
     "explanation": "'зима' means 'winter'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1376,11 +1376,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'morning'?",
-    "correctAnswer": "{{ru-RU|утро|utro|}}",
+    "correctAnswer": "{{ru-RU|утро|utro|U-tro}}",
     "incorrectAnswers": [
-      "{{ru-RU|день|den|}}",
-      "{{ru-RU|вечер|vecher|}}",
-      "{{ru-RU|час|chas|}}"
+      "{{ru-RU|день|den|DEN}}",
+      "{{ru-RU|вечер|vecher|ve-CHER}}",
+      "{{ru-RU|час|chas|CHAS}}"
     ],
     "explanation": "'утро' means 'morning'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1398,11 +1398,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'afternoon' in everyday use?",
-    "correctAnswer": "{{ru-RU|день|den|}}",
+    "correctAnswer": "{{ru-RU|день|den|DEN}}",
     "incorrectAnswers": [
-      "{{ru-RU|вечер|vecher|}}",
-      "{{ru-RU|час|chas|}}",
-      "{{ru-RU|минута|minuta|}}"
+      "{{ru-RU|вечер|vecher|ve-CHER}}",
+      "{{ru-RU|час|chas|CHAS}}",
+      "{{ru-RU|минута|minuta|mi-NU-ta}}"
     ],
     "explanation": "'день' means 'afternoon'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1420,11 +1420,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'evening'.",
-    "correctAnswer": "{{ru-RU|вечер|vecher|}}",
+    "correctAnswer": "{{ru-RU|вечер|vecher|ve-CHER}}",
     "incorrectAnswers": [
-      "{{ru-RU|час|chas|}}",
-      "{{ru-RU|минута|minuta|}}",
-      "{{ru-RU|неделя|nedelya|}}"
+      "{{ru-RU|час|chas|CHAS}}",
+      "{{ru-RU|минута|minuta|mi-NU-ta}}",
+      "{{ru-RU|неделя|nedelya|ne-DE-lya}}"
     ],
     "explanation": "'вечер' means 'evening'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1442,11 +1442,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'hour'?",
-    "correctAnswer": "{{ru-RU|час|chas|}}",
+    "correctAnswer": "{{ru-RU|час|chas|CHAS}}",
     "incorrectAnswers": [
-      "{{ru-RU|минута|minuta|}}",
-      "{{ru-RU|неделя|nedelya|}}",
-      "{{ru-RU|месяц|mesyats|}}"
+      "{{ru-RU|минута|minuta|mi-NU-ta}}",
+      "{{ru-RU|неделя|nedelya|ne-DE-lya}}",
+      "{{ru-RU|месяц|mesyats|me-SYATS}}"
     ],
     "explanation": "'час' means 'hour'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1464,11 +1464,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'minute'?",
-    "correctAnswer": "{{ru-RU|минута|minuta|}}",
+    "correctAnswer": "{{ru-RU|минута|minuta|mi-NU-ta}}",
     "incorrectAnswers": [
-      "{{ru-RU|неделя|nedelya|}}",
-      "{{ru-RU|месяц|mesyats|}}",
-      "{{ru-RU|год|god|}}"
+      "{{ru-RU|неделя|nedelya|ne-DE-lya}}",
+      "{{ru-RU|месяц|mesyats|me-SYATS}}",
+      "{{ru-RU|год|god|GOD}}"
     ],
     "explanation": "'минута' means 'minute'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1486,11 +1486,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'week' in everyday use?",
-    "correctAnswer": "{{ru-RU|неделя|nedelya|}}",
+    "correctAnswer": "{{ru-RU|неделя|nedelya|ne-DE-lya}}",
     "incorrectAnswers": [
-      "{{ru-RU|месяц|mesyats|}}",
-      "{{ru-RU|год|god|}}",
-      "{{ru-RU|утро|utro|}}"
+      "{{ru-RU|месяц|mesyats|me-SYATS}}",
+      "{{ru-RU|год|god|GOD}}",
+      "{{ru-RU|утро|utro|U-tro}}"
     ],
     "explanation": "'неделя' means 'week'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1508,11 +1508,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'month'.",
-    "correctAnswer": "{{ru-RU|месяц|mesyats|}}",
+    "correctAnswer": "{{ru-RU|месяц|mesyats|me-SYATS}}",
     "incorrectAnswers": [
-      "{{ru-RU|год|god|}}",
-      "{{ru-RU|утро|utro|}}",
-      "{{ru-RU|день|den|}}"
+      "{{ru-RU|год|god|GOD}}",
+      "{{ru-RU|утро|utro|U-tro}}",
+      "{{ru-RU|день|den|DEN}}"
     ],
     "explanation": "'месяц' means 'month'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1530,11 +1530,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'year'?",
-    "correctAnswer": "{{ru-RU|год|god|}}",
+    "correctAnswer": "{{ru-RU|год|god|GOD}}",
     "incorrectAnswers": [
-      "{{ru-RU|утро|utro|}}",
-      "{{ru-RU|день|den|}}",
-      "{{ru-RU|вечер|vecher|}}"
+      "{{ru-RU|утро|utro|U-tro}}",
+      "{{ru-RU|день|den|DEN}}",
+      "{{ru-RU|вечер|vecher|ve-CHER}}"
     ],
     "explanation": "'год' means 'year'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1552,11 +1552,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'today'?",
-    "correctAnswer": "{{ru-RU|сегодня|segodnya|}}",
+    "correctAnswer": "{{ru-RU|сегодня|segodnya|se-GOD-nya}}",
     "incorrectAnswers": [
-      "{{ru-RU|завтра|zavtra|}}",
-      "{{ru-RU|вчера|vchera|}}",
-      "{{ru-RU|сейчас|seychas|}}"
+      "{{ru-RU|завтра|zavtra|ZAV-tra}}",
+      "{{ru-RU|вчера|vchera|VCHE-ra}}",
+      "{{ru-RU|сейчас|seychas|sey-CHAS}}"
     ],
     "explanation": "'сегодня' is the word for 'today'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1574,11 +1574,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'tomorrow' in everyday use?",
-    "correctAnswer": "{{ru-RU|завтра|zavtra|}}",
+    "correctAnswer": "{{ru-RU|завтра|zavtra|ZAV-tra}}",
     "incorrectAnswers": [
-      "{{ru-RU|вчера|vchera|}}",
-      "{{ru-RU|сейчас|seychas|}}",
-      "{{ru-RU|позже|pozzhe|}}"
+      "{{ru-RU|вчера|vchera|VCHE-ra}}",
+      "{{ru-RU|сейчас|seychas|sey-CHAS}}",
+      "{{ru-RU|позже|pozzhe|POZZ-he}}"
     ],
     "explanation": "'завтра' is the word for 'tomorrow'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1596,11 +1596,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'yesterday'.",
-    "correctAnswer": "{{ru-RU|вчера|vchera|}}",
+    "correctAnswer": "{{ru-RU|вчера|vchera|VCHE-ra}}",
     "incorrectAnswers": [
-      "{{ru-RU|сейчас|seychas|}}",
-      "{{ru-RU|позже|pozzhe|}}",
-      "{{ru-RU|раньше|ranshe|}}"
+      "{{ru-RU|сейчас|seychas|sey-CHAS}}",
+      "{{ru-RU|позже|pozzhe|POZZ-he}}",
+      "{{ru-RU|раньше|ranshe|RAN-she}}"
     ],
     "explanation": "'вчера' is the word for 'yesterday'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1618,11 +1618,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'now'?",
-    "correctAnswer": "{{ru-RU|сейчас|seychas|}}",
+    "correctAnswer": "{{ru-RU|сейчас|seychas|sey-CHAS}}",
     "incorrectAnswers": [
-      "{{ru-RU|позже|pozzhe|}}",
-      "{{ru-RU|раньше|ranshe|}}",
-      "{{ru-RU|сегодня|segodnya|}}"
+      "{{ru-RU|позже|pozzhe|POZZ-he}}",
+      "{{ru-RU|раньше|ranshe|RAN-she}}",
+      "{{ru-RU|сегодня|segodnya|se-GOD-nya}}"
     ],
     "explanation": "'сейчас' is the word for 'now'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1640,11 +1640,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'later'?",
-    "correctAnswer": "{{ru-RU|позже|pozzhe|}}",
+    "correctAnswer": "{{ru-RU|позже|pozzhe|POZZ-he}}",
     "incorrectAnswers": [
-      "{{ru-RU|раньше|ranshe|}}",
-      "{{ru-RU|сегодня|segodnya|}}",
-      "{{ru-RU|завтра|zavtra|}}"
+      "{{ru-RU|раньше|ranshe|RAN-she}}",
+      "{{ru-RU|сегодня|segodnya|se-GOD-nya}}",
+      "{{ru-RU|завтра|zavtra|ZAV-tra}}"
     ],
     "explanation": "'позже' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1662,11 +1662,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'before' in everyday use?",
-    "correctAnswer": "{{ru-RU|раньше|ranshe|}}",
+    "correctAnswer": "{{ru-RU|раньше|ranshe|RAN-she}}",
     "incorrectAnswers": [
-      "{{ru-RU|сегодня|segodnya|}}",
-      "{{ru-RU|завтра|zavtra|}}",
-      "{{ru-RU|вчера|vchera|}}"
+      "{{ru-RU|сегодня|segodnya|se-GOD-nya}}",
+      "{{ru-RU|завтра|zavtra|ZAV-tra}}",
+      "{{ru-RU|вчера|vchera|VCHE-ra}}"
     ],
     "explanation": "'раньше' is the word for 'before'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1684,11 +1684,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'red'?",
-    "correctAnswer": "{{ru-RU|красный|krasnyy|}}",
+    "correctAnswer": "{{ru-RU|красный|krasnyy|KRAS-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|синий|siniy|}}",
-      "{{ru-RU|зелёный|zelyonyy|}}",
-      "{{ru-RU|жёлтый|zhyoltyy|}}"
+      "{{ru-RU|синий|siniy|SI-niy}}",
+      "{{ru-RU|зелёный|zelyonyy|ze-LYO-nyy}}",
+      "{{ru-RU|жёлтый|zhyoltyy|ZHYOL-tyy}}"
     ],
     "explanation": "'красный' means 'red'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1706,11 +1706,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'blue' in everyday use?",
-    "correctAnswer": "{{ru-RU|синий|siniy|}}",
+    "correctAnswer": "{{ru-RU|синий|siniy|SI-niy}}",
     "incorrectAnswers": [
-      "{{ru-RU|зелёный|zelyonyy|}}",
-      "{{ru-RU|жёлтый|zhyoltyy|}}",
-      "{{ru-RU|чёрный|chyornyy|}}"
+      "{{ru-RU|зелёный|zelyonyy|ze-LYO-nyy}}",
+      "{{ru-RU|жёлтый|zhyoltyy|ZHYOL-tyy}}",
+      "{{ru-RU|чёрный|chyornyy|CHYOR-nyy}}"
     ],
     "explanation": "'синий' means 'blue'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1728,11 +1728,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'green'.",
-    "correctAnswer": "{{ru-RU|зелёный|zelyonyy|}}",
+    "correctAnswer": "{{ru-RU|зелёный|zelyonyy|ze-LYO-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|жёлтый|zhyoltyy|}}",
-      "{{ru-RU|чёрный|chyornyy|}}",
-      "{{ru-RU|белый|belyy|}}"
+      "{{ru-RU|жёлтый|zhyoltyy|ZHYOL-tyy}}",
+      "{{ru-RU|чёрный|chyornyy|CHYOR-nyy}}",
+      "{{ru-RU|белый|belyy|BE-lyy}}"
     ],
     "explanation": "'зелёный' means 'green'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1750,11 +1750,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'yellow'?",
-    "correctAnswer": "{{ru-RU|жёлтый|zhyoltyy|}}",
+    "correctAnswer": "{{ru-RU|жёлтый|zhyoltyy|ZHYOL-tyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|чёрный|chyornyy|}}",
-      "{{ru-RU|белый|belyy|}}",
-      "{{ru-RU|серый|seryy|}}"
+      "{{ru-RU|чёрный|chyornyy|CHYOR-nyy}}",
+      "{{ru-RU|белый|belyy|BE-lyy}}",
+      "{{ru-RU|серый|seryy|SE-ryy}}"
     ],
     "explanation": "'жёлтый' means 'yellow'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1772,11 +1772,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'black'?",
-    "correctAnswer": "{{ru-RU|чёрный|chyornyy|}}",
+    "correctAnswer": "{{ru-RU|чёрный|chyornyy|CHYOR-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|белый|belyy|}}",
-      "{{ru-RU|серый|seryy|}}",
-      "{{ru-RU|коричневый|korichnevyy|}}"
+      "{{ru-RU|белый|belyy|BE-lyy}}",
+      "{{ru-RU|серый|seryy|SE-ryy}}",
+      "{{ru-RU|коричневый|korichnevyy|ko-rich-NE-vyy}}"
     ],
     "explanation": "'чёрный' means 'black'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1794,11 +1794,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'white' in everyday use?",
-    "correctAnswer": "{{ru-RU|белый|belyy|}}",
+    "correctAnswer": "{{ru-RU|белый|belyy|BE-lyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|серый|seryy|}}",
-      "{{ru-RU|коричневый|korichnevyy|}}",
-      "{{ru-RU|оранжевый|oranzhevyy|}}"
+      "{{ru-RU|серый|seryy|SE-ryy}}",
+      "{{ru-RU|коричневый|korichnevyy|ko-rich-NE-vyy}}",
+      "{{ru-RU|оранжевый|oranzhevyy|o-ranz-HE-vyy}}"
     ],
     "explanation": "'белый' means 'white'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1816,11 +1816,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'gray'.",
-    "correctAnswer": "{{ru-RU|серый|seryy|}}",
+    "correctAnswer": "{{ru-RU|серый|seryy|SE-ryy}}",
     "incorrectAnswers": [
-      "{{ru-RU|коричневый|korichnevyy|}}",
-      "{{ru-RU|оранжевый|oranzhevyy|}}",
-      "{{ru-RU|розовый|rozovyy|}}"
+      "{{ru-RU|коричневый|korichnevyy|ko-rich-NE-vyy}}",
+      "{{ru-RU|оранжевый|oranzhevyy|o-ranz-HE-vyy}}",
+      "{{ru-RU|розовый|rozovyy|ro-ZO-vyy}}"
     ],
     "explanation": "'серый' means 'gray'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1838,11 +1838,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'brown'?",
-    "correctAnswer": "{{ru-RU|коричневый|korichnevyy|}}",
+    "correctAnswer": "{{ru-RU|коричневый|korichnevyy|ko-rich-NE-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|оранжевый|oranzhevyy|}}",
-      "{{ru-RU|розовый|rozovyy|}}",
-      "{{ru-RU|фиолетовый|fioletovyy|}}"
+      "{{ru-RU|оранжевый|oranzhevyy|o-ranz-HE-vyy}}",
+      "{{ru-RU|розовый|rozovyy|ro-ZO-vyy}}",
+      "{{ru-RU|фиолетовый|fioletovyy|fio-le-TO-vyy}}"
     ],
     "explanation": "'коричневый' means 'brown'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1860,11 +1860,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'orange'?",
-    "correctAnswer": "{{ru-RU|оранжевый|oranzhevyy|}}",
+    "correctAnswer": "{{ru-RU|оранжевый|oranzhevyy|o-ranz-HE-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|розовый|rozovyy|}}",
-      "{{ru-RU|фиолетовый|fioletovyy|}}",
-      "{{ru-RU|светлый|svetlyy|}}"
+      "{{ru-RU|розовый|rozovyy|ro-ZO-vyy}}",
+      "{{ru-RU|фиолетовый|fioletovyy|fio-le-TO-vyy}}",
+      "{{ru-RU|светлый|svetlyy|SVET-lyy}}"
     ],
     "explanation": "'оранжевый' means 'orange'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1882,11 +1882,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'pink' in everyday use?",
-    "correctAnswer": "{{ru-RU|розовый|rozovyy|}}",
+    "correctAnswer": "{{ru-RU|розовый|rozovyy|ro-ZO-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|фиолетовый|fioletovyy|}}",
-      "{{ru-RU|светлый|svetlyy|}}",
-      "{{ru-RU|тёмный|tyomnyy|}}"
+      "{{ru-RU|фиолетовый|fioletovyy|fio-le-TO-vyy}}",
+      "{{ru-RU|светлый|svetlyy|SVET-lyy}}",
+      "{{ru-RU|тёмный|tyomnyy|TYOM-nyy}}"
     ],
     "explanation": "'розовый' means 'pink'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1904,11 +1904,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'purple'.",
-    "correctAnswer": "{{ru-RU|фиолетовый|fioletovyy|}}",
+    "correctAnswer": "{{ru-RU|фиолетовый|fioletovyy|fio-le-TO-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|светлый|svetlyy|}}",
-      "{{ru-RU|тёмный|tyomnyy|}}",
-      "{{ru-RU|красный|krasnyy|}}"
+      "{{ru-RU|светлый|svetlyy|SVET-lyy}}",
+      "{{ru-RU|тёмный|tyomnyy|TYOM-nyy}}",
+      "{{ru-RU|красный|krasnyy|KRAS-nyy}}"
     ],
     "explanation": "'фиолетовый' means 'purple'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1926,11 +1926,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'light'?",
-    "correctAnswer": "{{ru-RU|светлый|svetlyy|}}",
+    "correctAnswer": "{{ru-RU|светлый|svetlyy|SVET-lyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|тёмный|tyomnyy|}}",
-      "{{ru-RU|красный|krasnyy|}}",
-      "{{ru-RU|синий|siniy|}}"
+      "{{ru-RU|тёмный|tyomnyy|TYOM-nyy}}",
+      "{{ru-RU|красный|krasnyy|KRAS-nyy}}",
+      "{{ru-RU|синий|siniy|SI-niy}}"
     ],
     "explanation": "'светлый' means 'light'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1948,11 +1948,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'dark'?",
-    "correctAnswer": "{{ru-RU|тёмный|tyomnyy|}}",
+    "correctAnswer": "{{ru-RU|тёмный|tyomnyy|TYOM-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|красный|krasnyy|}}",
-      "{{ru-RU|синий|siniy|}}",
-      "{{ru-RU|зелёный|zelyonyy|}}"
+      "{{ru-RU|красный|krasnyy|KRAS-nyy}}",
+      "{{ru-RU|синий|siniy|SI-niy}}",
+      "{{ru-RU|зелёный|zelyonyy|ze-LYO-nyy}}"
     ],
     "explanation": "'тёмный' means 'dark'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1970,11 +1970,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'mother'?",
-    "correctAnswer": "{{ru-RU|мать|mat|}}",
+    "correctAnswer": "{{ru-RU|мать|mat|MAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|отец|otets|}}",
-      "{{ru-RU|брат|brat|}}",
-      "{{ru-RU|сестра|sestra|}}"
+      "{{ru-RU|отец|otets|o-TETS}}",
+      "{{ru-RU|брат|brat|BRAT}}",
+      "{{ru-RU|сестра|sestra|SES-tra}}"
     ],
     "explanation": "'мать' means 'mother'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1992,11 +1992,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'father' in everyday use?",
-    "correctAnswer": "{{ru-RU|отец|otets|}}",
+    "correctAnswer": "{{ru-RU|отец|otets|o-TETS}}",
     "incorrectAnswers": [
-      "{{ru-RU|брат|brat|}}",
-      "{{ru-RU|сестра|sestra|}}",
-      "{{ru-RU|сын|syn|}}"
+      "{{ru-RU|брат|brat|BRAT}}",
+      "{{ru-RU|сестра|sestra|SES-tra}}",
+      "{{ru-RU|сын|syn|SYN}}"
     ],
     "explanation": "'отец' means 'father'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2014,11 +2014,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'brother'.",
-    "correctAnswer": "{{ru-RU|брат|brat|}}",
+    "correctAnswer": "{{ru-RU|брат|brat|BRAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|сестра|sestra|}}",
-      "{{ru-RU|сын|syn|}}",
-      "{{ru-RU|дочь|doch|}}"
+      "{{ru-RU|сестра|sestra|SES-tra}}",
+      "{{ru-RU|сын|syn|SYN}}",
+      "{{ru-RU|дочь|doch|DOCH}}"
     ],
     "explanation": "'брат' means 'brother'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2036,11 +2036,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'sister'?",
-    "correctAnswer": "{{ru-RU|сестра|sestra|}}",
+    "correctAnswer": "{{ru-RU|сестра|sestra|SES-tra}}",
     "incorrectAnswers": [
-      "{{ru-RU|сын|syn|}}",
-      "{{ru-RU|дочь|doch|}}",
-      "{{ru-RU|муж|muzh|}}"
+      "{{ru-RU|сын|syn|SYN}}",
+      "{{ru-RU|дочь|doch|DOCH}}",
+      "{{ru-RU|муж|muzh|MUZH}}"
     ],
     "explanation": "'сестра' means 'sister'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2058,11 +2058,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'son'?",
-    "correctAnswer": "{{ru-RU|сын|syn|}}",
+    "correctAnswer": "{{ru-RU|сын|syn|SYN}}",
     "incorrectAnswers": [
-      "{{ru-RU|дочь|doch|}}",
-      "{{ru-RU|муж|muzh|}}",
-      "{{ru-RU|жена|zhena|}}"
+      "{{ru-RU|дочь|doch|DOCH}}",
+      "{{ru-RU|муж|muzh|MUZH}}",
+      "{{ru-RU|жена|zhena|ZHE-na}}"
     ],
     "explanation": "'сын' means 'son'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2080,11 +2080,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'daughter' in everyday use?",
-    "correctAnswer": "{{ru-RU|дочь|doch|}}",
+    "correctAnswer": "{{ru-RU|дочь|doch|DOCH}}",
     "incorrectAnswers": [
-      "{{ru-RU|муж|muzh|}}",
-      "{{ru-RU|жена|zhena|}}",
-      "{{ru-RU|друг|drug|}}"
+      "{{ru-RU|муж|muzh|MUZH}}",
+      "{{ru-RU|жена|zhena|ZHE-na}}",
+      "{{ru-RU|друг|drug|DRUG}}"
     ],
     "explanation": "'дочь' means 'daughter'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2102,11 +2102,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'husband'.",
-    "correctAnswer": "{{ru-RU|муж|muzh|}}",
+    "correctAnswer": "{{ru-RU|муж|muzh|MUZH}}",
     "incorrectAnswers": [
-      "{{ru-RU|жена|zhena|}}",
-      "{{ru-RU|друг|drug|}}",
-      "{{ru-RU|сосед|sosed|}}"
+      "{{ru-RU|жена|zhena|ZHE-na}}",
+      "{{ru-RU|друг|drug|DRUG}}",
+      "{{ru-RU|сосед|sosed|so-SED}}"
     ],
     "explanation": "'муж' means 'husband'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2124,11 +2124,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'wife'?",
-    "correctAnswer": "{{ru-RU|жена|zhena|}}",
+    "correctAnswer": "{{ru-RU|жена|zhena|ZHE-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|друг|drug|}}",
-      "{{ru-RU|сосед|sosed|}}",
-      "{{ru-RU|ребёнок|rebyonok|}}"
+      "{{ru-RU|друг|drug|DRUG}}",
+      "{{ru-RU|сосед|sosed|so-SED}}",
+      "{{ru-RU|ребёнок|rebyonok|re-BYO-nok}}"
     ],
     "explanation": "'жена' means 'wife'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2146,11 +2146,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'friend'?",
-    "correctAnswer": "{{ru-RU|друг|drug|}}",
+    "correctAnswer": "{{ru-RU|друг|drug|DRUG}}",
     "incorrectAnswers": [
-      "{{ru-RU|сосед|sosed|}}",
-      "{{ru-RU|ребёнок|rebyonok|}}",
-      "{{ru-RU|малыш|malysh|}}"
+      "{{ru-RU|сосед|sosed|so-SED}}",
+      "{{ru-RU|ребёнок|rebyonok|re-BYO-nok}}",
+      "{{ru-RU|малыш|malysh|ma-LYSH}}"
     ],
     "explanation": "'друг' means 'friend'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2168,11 +2168,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'neighbor' in everyday use?",
-    "correctAnswer": "{{ru-RU|сосед|sosed|}}",
+    "correctAnswer": "{{ru-RU|сосед|sosed|so-SED}}",
     "incorrectAnswers": [
-      "{{ru-RU|ребёнок|rebyonok|}}",
-      "{{ru-RU|малыш|malysh|}}",
-      "{{ru-RU|мужчина|muzhchina|}}"
+      "{{ru-RU|ребёнок|rebyonok|re-BYO-nok}}",
+      "{{ru-RU|малыш|malysh|ma-LYSH}}",
+      "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}"
     ],
     "explanation": "'сосед' means 'neighbor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2190,11 +2190,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'child'.",
-    "correctAnswer": "{{ru-RU|ребёнок|rebyonok|}}",
+    "correctAnswer": "{{ru-RU|ребёнок|rebyonok|re-BYO-nok}}",
     "incorrectAnswers": [
-      "{{ru-RU|малыш|malysh|}}",
-      "{{ru-RU|мужчина|muzhchina|}}",
-      "{{ru-RU|женщина|zhenshchina|}}"
+      "{{ru-RU|малыш|malysh|ma-LYSH}}",
+      "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}"
     ],
     "explanation": "'ребёнок' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2212,11 +2212,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'baby'?",
-    "correctAnswer": "{{ru-RU|малыш|malysh|}}",
+    "correctAnswer": "{{ru-RU|малыш|malysh|ma-LYSH}}",
     "incorrectAnswers": [
-      "{{ru-RU|мужчина|muzhchina|}}",
-      "{{ru-RU|женщина|zhenshchina|}}",
-      "{{ru-RU|человек|chelovek|}}"
+      "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
+      "{{ru-RU|человек|chelovek|che-LO-vek}}"
     ],
     "explanation": "'малыш' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2234,11 +2234,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'man'?",
-    "correctAnswer": "{{ru-RU|мужчина|muzhchina|}}",
+    "correctAnswer": "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|женщина|zhenshchina|}}",
-      "{{ru-RU|человек|chelovek|}}",
-      "{{ru-RU|мать|mat|}}"
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
+      "{{ru-RU|человек|chelovek|che-LO-vek}}",
+      "{{ru-RU|мать|mat|MAT}}"
     ],
     "explanation": "'мужчина' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2256,11 +2256,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'woman' in everyday use?",
-    "correctAnswer": "{{ru-RU|женщина|zhenshchina|}}",
+    "correctAnswer": "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|человек|chelovek|}}",
-      "{{ru-RU|мать|mat|}}",
-      "{{ru-RU|отец|otets|}}"
+      "{{ru-RU|человек|chelovek|che-LO-vek}}",
+      "{{ru-RU|мать|mat|MAT}}",
+      "{{ru-RU|отец|otets|o-TETS}}"
     ],
     "explanation": "'женщина' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2278,11 +2278,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'person'.",
-    "correctAnswer": "{{ru-RU|человек|chelovek|}}",
+    "correctAnswer": "{{ru-RU|человек|chelovek|che-LO-vek}}",
     "incorrectAnswers": [
-      "{{ru-RU|мать|mat|}}",
-      "{{ru-RU|отец|otets|}}",
-      "{{ru-RU|брат|brat|}}"
+      "{{ru-RU|мать|mat|MAT}}",
+      "{{ru-RU|отец|otets|o-TETS}}",
+      "{{ru-RU|брат|brat|BRAT}}"
     ],
     "explanation": "'человек' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2300,11 +2300,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'head'?",
-    "correctAnswer": "{{ru-RU|голова|golova|}}",
+    "correctAnswer": "{{ru-RU|голова|golova|go-LO-va}}",
     "incorrectAnswers": [
-      "{{ru-RU|ладонь|ladon|}}",
-      "{{ru-RU|ступня|stupnya|}}",
-      "{{ru-RU|глаз|glaz|}}"
+      "{{ru-RU|ладонь|ladon|la-DON}}",
+      "{{ru-RU|ступня|stupnya|STUP-nya}}",
+      "{{ru-RU|глаз|glaz|GLAZ}}"
     ],
     "explanation": "'голова' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2322,11 +2322,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'hand' in everyday use?",
-    "correctAnswer": "{{ru-RU|ладонь|ladon|}}",
+    "correctAnswer": "{{ru-RU|ладонь|ladon|la-DON}}",
     "incorrectAnswers": [
-      "{{ru-RU|ступня|stupnya|}}",
-      "{{ru-RU|глаз|glaz|}}",
-      "{{ru-RU|ухо|ukho|}}"
+      "{{ru-RU|ступня|stupnya|STUP-nya}}",
+      "{{ru-RU|глаз|glaz|GLAZ}}",
+      "{{ru-RU|ухо|ukho|UK-ho}}"
     ],
     "explanation": "'ладонь' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2344,11 +2344,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'foot'.",
-    "correctAnswer": "{{ru-RU|ступня|stupnya|}}",
+    "correctAnswer": "{{ru-RU|ступня|stupnya|STUP-nya}}",
     "incorrectAnswers": [
-      "{{ru-RU|глаз|glaz|}}",
-      "{{ru-RU|ухо|ukho|}}",
-      "{{ru-RU|нос|nos|}}"
+      "{{ru-RU|глаз|glaz|GLAZ}}",
+      "{{ru-RU|ухо|ukho|UK-ho}}",
+      "{{ru-RU|нос|nos|NOS}}"
     ],
     "explanation": "'ступня' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2366,11 +2366,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'eye'?",
-    "correctAnswer": "{{ru-RU|глаз|glaz|}}",
+    "correctAnswer": "{{ru-RU|глаз|glaz|GLAZ}}",
     "incorrectAnswers": [
-      "{{ru-RU|ухо|ukho|}}",
-      "{{ru-RU|нос|nos|}}",
-      "{{ru-RU|рот|rot|}}"
+      "{{ru-RU|ухо|ukho|UK-ho}}",
+      "{{ru-RU|нос|nos|NOS}}",
+      "{{ru-RU|рот|rot|ROT}}"
     ],
     "explanation": "'глаз' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2388,11 +2388,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'ear'?",
-    "correctAnswer": "{{ru-RU|ухо|ukho|}}",
+    "correctAnswer": "{{ru-RU|ухо|ukho|UK-ho}}",
     "incorrectAnswers": [
-      "{{ru-RU|нос|nos|}}",
-      "{{ru-RU|рот|rot|}}",
-      "{{ru-RU|сердце|serdtse|}}"
+      "{{ru-RU|нос|nos|NOS}}",
+      "{{ru-RU|рот|rot|ROT}}",
+      "{{ru-RU|сердце|serdtse|SERD-tse}}"
     ],
     "explanation": "'ухо' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2410,11 +2410,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'nose' in everyday use?",
-    "correctAnswer": "{{ru-RU|нос|nos|}}",
+    "correctAnswer": "{{ru-RU|нос|nos|NOS}}",
     "incorrectAnswers": [
-      "{{ru-RU|рот|rot|}}",
-      "{{ru-RU|сердце|serdtse|}}",
-      "{{ru-RU|желудок|zheludok|}}"
+      "{{ru-RU|рот|rot|ROT}}",
+      "{{ru-RU|сердце|serdtse|SERD-tse}}",
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}"
     ],
     "explanation": "'нос' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2432,11 +2432,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'mouth'.",
-    "correctAnswer": "{{ru-RU|рот|rot|}}",
+    "correctAnswer": "{{ru-RU|рот|rot|ROT}}",
     "incorrectAnswers": [
-      "{{ru-RU|сердце|serdtse|}}",
-      "{{ru-RU|желудок|zheludok|}}",
-      "{{ru-RU|рука|ruka|}}"
+      "{{ru-RU|сердце|serdtse|SERD-tse}}",
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
+      "{{ru-RU|рука|ruka|RU-ka}}"
     ],
     "explanation": "'рот' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2454,11 +2454,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'heart'?",
-    "correctAnswer": "{{ru-RU|сердце|serdtse|}}",
+    "correctAnswer": "{{ru-RU|сердце|serdtse|SERD-tse}}",
     "incorrectAnswers": [
-      "{{ru-RU|желудок|zheludok|}}",
-      "{{ru-RU|рука|ruka|}}",
-      "{{ru-RU|нога|noga|}}"
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
+      "{{ru-RU|рука|ruka|RU-ka}}",
+      "{{ru-RU|нога|noga|NO-ga}}"
     ],
     "explanation": "'сердце' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2476,11 +2476,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'stomach'?",
-    "correctAnswer": "{{ru-RU|желудок|zheludok|}}",
+    "correctAnswer": "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
     "incorrectAnswers": [
-      "{{ru-RU|рука|ruka|}}",
-      "{{ru-RU|нога|noga|}}",
-      "{{ru-RU|палец|palets|}}"
+      "{{ru-RU|рука|ruka|RU-ka}}",
+      "{{ru-RU|нога|noga|NO-ga}}",
+      "{{ru-RU|палец|palets|pa-LETS}}"
     ],
     "explanation": "'желудок' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2498,11 +2498,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'arm' in everyday use?",
-    "correctAnswer": "{{ru-RU|рука|ruka|}}",
+    "correctAnswer": "{{ru-RU|рука|ruka|RU-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|нога|noga|}}",
-      "{{ru-RU|палец|palets|}}",
-      "{{ru-RU|спина|spina|}}"
+      "{{ru-RU|нога|noga|NO-ga}}",
+      "{{ru-RU|палец|palets|pa-LETS}}",
+      "{{ru-RU|спина|spina|SPI-na}}"
     ],
     "explanation": "'рука' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2520,11 +2520,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'leg'.",
-    "correctAnswer": "{{ru-RU|нога|noga|}}",
+    "correctAnswer": "{{ru-RU|нога|noga|NO-ga}}",
     "incorrectAnswers": [
-      "{{ru-RU|палец|palets|}}",
-      "{{ru-RU|спина|spina|}}",
-      "{{ru-RU|голова|golova|}}"
+      "{{ru-RU|палец|palets|pa-LETS}}",
+      "{{ru-RU|спина|spina|SPI-na}}",
+      "{{ru-RU|голова|golova|go-LO-va}}"
     ],
     "explanation": "'нога' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2542,11 +2542,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'finger'?",
-    "correctAnswer": "{{ru-RU|палец|palets|}}",
+    "correctAnswer": "{{ru-RU|палец|palets|pa-LETS}}",
     "incorrectAnswers": [
-      "{{ru-RU|спина|spina|}}",
-      "{{ru-RU|голова|golova|}}",
-      "{{ru-RU|ладонь|ladon|}}"
+      "{{ru-RU|спина|spina|SPI-na}}",
+      "{{ru-RU|голова|golova|go-LO-va}}",
+      "{{ru-RU|ладонь|ladon|la-DON}}"
     ],
     "explanation": "'палец' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2564,11 +2564,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'back'?",
-    "correctAnswer": "{{ru-RU|спина|spina|}}",
+    "correctAnswer": "{{ru-RU|спина|spina|SPI-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|голова|golova|}}",
-      "{{ru-RU|ладонь|ladon|}}",
-      "{{ru-RU|ступня|stupnya|}}"
+      "{{ru-RU|голова|golova|go-LO-va}}",
+      "{{ru-RU|ладонь|ladon|la-DON}}",
+      "{{ru-RU|ступня|stupnya|STUP-nya}}"
     ],
     "explanation": "'спина' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2586,11 +2586,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'bread'?",
-    "correctAnswer": "{{ru-RU|хлеб|khleb|}}",
+    "correctAnswer": "{{ru-RU|хлеб|khleb|KHLEB}}",
     "incorrectAnswers": [
-      "{{ru-RU|молоко|moloko|}}",
-      "{{ru-RU|яйцо|yaytso|}}",
-      "{{ru-RU|мясо|myaso|}}"
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}",
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}",
+      "{{ru-RU|мясо|myaso|MYA-so}}"
     ],
     "explanation": "'хлеб' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2608,11 +2608,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'milk' in everyday use?",
-    "correctAnswer": "{{ru-RU|молоко|moloko|}}",
+    "correctAnswer": "{{ru-RU|молоко|moloko|mo-LO-ko}}",
     "incorrectAnswers": [
-      "{{ru-RU|яйцо|yaytso|}}",
-      "{{ru-RU|мясо|myaso|}}",
-      "{{ru-RU|рыба|ryba|}}"
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}",
+      "{{ru-RU|мясо|myaso|MYA-so}}",
+      "{{ru-RU|рыба|ryba|RY-ba}}"
     ],
     "explanation": "'молоко' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2630,11 +2630,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'egg'.",
-    "correctAnswer": "{{ru-RU|яйцо|yaytso|}}",
+    "correctAnswer": "{{ru-RU|яйцо|yaytso|YAY-tso}}",
     "incorrectAnswers": [
-      "{{ru-RU|мясо|myaso|}}",
-      "{{ru-RU|рыба|ryba|}}",
-      "{{ru-RU|фрукт|frukt|}}"
+      "{{ru-RU|мясо|myaso|MYA-so}}",
+      "{{ru-RU|рыба|ryba|RY-ba}}",
+      "{{ru-RU|фрукт|frukt|FRUKT}}"
     ],
     "explanation": "'яйцо' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2652,11 +2652,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'meat'?",
-    "correctAnswer": "{{ru-RU|мясо|myaso|}}",
+    "correctAnswer": "{{ru-RU|мясо|myaso|MYA-so}}",
     "incorrectAnswers": [
-      "{{ru-RU|рыба|ryba|}}",
-      "{{ru-RU|фрукт|frukt|}}",
-      "{{ru-RU|овощ|ovoshch|}}"
+      "{{ru-RU|рыба|ryba|RY-ba}}",
+      "{{ru-RU|фрукт|frukt|FRUKT}}",
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}"
     ],
     "explanation": "'мясо' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2674,11 +2674,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'fish'?",
-    "correctAnswer": "{{ru-RU|рыба|ryba|}}",
+    "correctAnswer": "{{ru-RU|рыба|ryba|RY-ba}}",
     "incorrectAnswers": [
-      "{{ru-RU|фрукт|frukt|}}",
-      "{{ru-RU|овощ|ovoshch|}}",
-      "{{ru-RU|рис|ris|}}"
+      "{{ru-RU|фрукт|frukt|FRUKT}}",
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
+      "{{ru-RU|рис|ris|RIS}}"
     ],
     "explanation": "'рыба' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2696,11 +2696,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'fruit' in everyday use?",
-    "correctAnswer": "{{ru-RU|фрукт|frukt|}}",
+    "correctAnswer": "{{ru-RU|фрукт|frukt|FRUKT}}",
     "incorrectAnswers": [
-      "{{ru-RU|овощ|ovoshch|}}",
-      "{{ru-RU|рис|ris|}}",
-      "{{ru-RU|макароны|makarony|}}"
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
+      "{{ru-RU|рис|ris|RIS}}",
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}"
     ],
     "explanation": "'фрукт' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2718,11 +2718,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'vegetable'.",
-    "correctAnswer": "{{ru-RU|овощ|ovoshch|}}",
+    "correctAnswer": "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
     "incorrectAnswers": [
-      "{{ru-RU|рис|ris|}}",
-      "{{ru-RU|макароны|makarony|}}",
-      "{{ru-RU|сыр|syr|}}"
+      "{{ru-RU|рис|ris|RIS}}",
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
+      "{{ru-RU|сыр|syr|SYR}}"
     ],
     "explanation": "'овощ' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2740,11 +2740,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'rice'?",
-    "correctAnswer": "{{ru-RU|рис|ris|}}",
+    "correctAnswer": "{{ru-RU|рис|ris|RIS}}",
     "incorrectAnswers": [
-      "{{ru-RU|макароны|makarony|}}",
-      "{{ru-RU|сыр|syr|}}",
-      "{{ru-RU|кофе|kofe|}}"
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
+      "{{ru-RU|сыр|syr|SYR}}",
+      "{{ru-RU|кофе|kofe|KO-fe}}"
     ],
     "explanation": "'рис' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2762,11 +2762,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'pasta'?",
-    "correctAnswer": "{{ru-RU|макароны|makarony|}}",
+    "correctAnswer": "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
     "incorrectAnswers": [
-      "{{ru-RU|сыр|syr|}}",
-      "{{ru-RU|кофе|kofe|}}",
-      "{{ru-RU|чай|chay|}}"
+      "{{ru-RU|сыр|syr|SYR}}",
+      "{{ru-RU|кофе|kofe|KO-fe}}",
+      "{{ru-RU|чай|chay|CHAY}}"
     ],
     "explanation": "'макароны' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2784,11 +2784,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'cheese' in everyday use?",
-    "correctAnswer": "{{ru-RU|сыр|syr|}}",
+    "correctAnswer": "{{ru-RU|сыр|syr|SYR}}",
     "incorrectAnswers": [
-      "{{ru-RU|кофе|kofe|}}",
-      "{{ru-RU|чай|chay|}}",
-      "{{ru-RU|сок|sok|}}"
+      "{{ru-RU|кофе|kofe|KO-fe}}",
+      "{{ru-RU|чай|chay|CHAY}}",
+      "{{ru-RU|сок|sok|SOK}}"
     ],
     "explanation": "'сыр' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2806,11 +2806,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'coffee'.",
-    "correctAnswer": "{{ru-RU|кофе|kofe|}}",
+    "correctAnswer": "{{ru-RU|кофе|kofe|KO-fe}}",
     "incorrectAnswers": [
-      "{{ru-RU|чай|chay|}}",
-      "{{ru-RU|сок|sok|}}",
-      "{{ru-RU|пиво|pivo|}}"
+      "{{ru-RU|чай|chay|CHAY}}",
+      "{{ru-RU|сок|sok|SOK}}",
+      "{{ru-RU|пиво|pivo|PI-vo}}"
     ],
     "explanation": "'кофе' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2828,11 +2828,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'tea'?",
-    "correctAnswer": "{{ru-RU|чай|chay|}}",
+    "correctAnswer": "{{ru-RU|чай|chay|CHAY}}",
     "incorrectAnswers": [
-      "{{ru-RU|сок|sok|}}",
-      "{{ru-RU|пиво|pivo|}}",
-      "{{ru-RU|вино|vino|}}"
+      "{{ru-RU|сок|sok|SOK}}",
+      "{{ru-RU|пиво|pivo|PI-vo}}",
+      "{{ru-RU|вино|vino|VI-no}}"
     ],
     "explanation": "'чай' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2850,11 +2850,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'juice'?",
-    "correctAnswer": "{{ru-RU|сок|sok|}}",
+    "correctAnswer": "{{ru-RU|сок|sok|SOK}}",
     "incorrectAnswers": [
-      "{{ru-RU|пиво|pivo|}}",
-      "{{ru-RU|вино|vino|}}",
-      "{{ru-RU|масло|maslo|}}"
+      "{{ru-RU|пиво|pivo|PI-vo}}",
+      "{{ru-RU|вино|vino|VI-no}}",
+      "{{ru-RU|масло|maslo|MAS-lo}}"
     ],
     "explanation": "'сок' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2872,11 +2872,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'beer' in everyday use?",
-    "correctAnswer": "{{ru-RU|пиво|pivo|}}",
+    "correctAnswer": "{{ru-RU|пиво|pivo|PI-vo}}",
     "incorrectAnswers": [
-      "{{ru-RU|вино|vino|}}",
-      "{{ru-RU|масло|maslo|}}",
-      "{{ru-RU|соль|sol|}}"
+      "{{ru-RU|вино|vino|VI-no}}",
+      "{{ru-RU|масло|maslo|MAS-lo}}",
+      "{{ru-RU|соль|sol|SOL}}"
     ],
     "explanation": "'пиво' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2894,11 +2894,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'wine'.",
-    "correctAnswer": "{{ru-RU|вино|vino|}}",
+    "correctAnswer": "{{ru-RU|вино|vino|VI-no}}",
     "incorrectAnswers": [
-      "{{ru-RU|масло|maslo|}}",
-      "{{ru-RU|соль|sol|}}",
-      "{{ru-RU|сахар|sakhar|}}"
+      "{{ru-RU|масло|maslo|MAS-lo}}",
+      "{{ru-RU|соль|sol|SOL}}",
+      "{{ru-RU|сахар|sakhar|sak-HAR}}"
     ],
     "explanation": "'вино' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2916,11 +2916,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'oil'?",
-    "correctAnswer": "{{ru-RU|масло|maslo|}}",
+    "correctAnswer": "{{ru-RU|масло|maslo|MAS-lo}}",
     "incorrectAnswers": [
-      "{{ru-RU|соль|sol|}}",
-      "{{ru-RU|сахар|sakhar|}}",
-      "{{ru-RU|хлеб|khleb|}}"
+      "{{ru-RU|соль|sol|SOL}}",
+      "{{ru-RU|сахар|sakhar|sak-HAR}}",
+      "{{ru-RU|хлеб|khleb|KHLEB}}"
     ],
     "explanation": "'масло' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2938,11 +2938,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'salt'?",
-    "correctAnswer": "{{ru-RU|соль|sol|}}",
+    "correctAnswer": "{{ru-RU|соль|sol|SOL}}",
     "incorrectAnswers": [
-      "{{ru-RU|сахар|sakhar|}}",
-      "{{ru-RU|хлеб|khleb|}}",
-      "{{ru-RU|молоко|moloko|}}"
+      "{{ru-RU|сахар|sakhar|sak-HAR}}",
+      "{{ru-RU|хлеб|khleb|KHLEB}}",
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}"
     ],
     "explanation": "'соль' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2960,11 +2960,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'sugar' in everyday use?",
-    "correctAnswer": "{{ru-RU|сахар|sakhar|}}",
+    "correctAnswer": "{{ru-RU|сахар|sakhar|sak-HAR}}",
     "incorrectAnswers": [
-      "{{ru-RU|хлеб|khleb|}}",
-      "{{ru-RU|молоко|moloko|}}",
-      "{{ru-RU|яйцо|yaytso|}}"
+      "{{ru-RU|хлеб|khleb|KHLEB}}",
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}",
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}"
     ],
     "explanation": "'сахар' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2982,11 +2982,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'dog'?",
-    "correctAnswer": "{{ru-RU|собака|sobaka|}}",
+    "correctAnswer": "{{ru-RU|собака|sobaka|so-BA-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|кошка|koshka|}}",
-      "{{ru-RU|птица|ptitsa|}}",
-      "{{ru-RU|лошадь|loshad|}}"
+      "{{ru-RU|кошка|koshka|KOSH-ka}}",
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}",
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}"
     ],
     "explanation": "'собака' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3004,11 +3004,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'cat' in everyday use?",
-    "correctAnswer": "{{ru-RU|кошка|koshka|}}",
+    "correctAnswer": "{{ru-RU|кошка|koshka|KOSH-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|птица|ptitsa|}}",
-      "{{ru-RU|лошадь|loshad|}}",
-      "{{ru-RU|корова|korova|}}"
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}",
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}",
+      "{{ru-RU|корова|korova|ko-RO-va}}"
     ],
     "explanation": "'кошка' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3026,11 +3026,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'bird'.",
-    "correctAnswer": "{{ru-RU|птица|ptitsa|}}",
+    "correctAnswer": "{{ru-RU|птица|ptitsa|PTI-tsa}}",
     "incorrectAnswers": [
-      "{{ru-RU|лошадь|loshad|}}",
-      "{{ru-RU|корова|korova|}}",
-      "{{ru-RU|свинья|svinya|}}"
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}",
+      "{{ru-RU|корова|korova|ko-RO-va}}",
+      "{{ru-RU|свинья|svinya|SVI-nya}}"
     ],
     "explanation": "'птица' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3048,11 +3048,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'horse'?",
-    "correctAnswer": "{{ru-RU|лошадь|loshad|}}",
+    "correctAnswer": "{{ru-RU|лошадь|loshad|lo-SHAD}}",
     "incorrectAnswers": [
-      "{{ru-RU|корова|korova|}}",
-      "{{ru-RU|свинья|svinya|}}",
-      "{{ru-RU|курица|kuritsa|}}"
+      "{{ru-RU|корова|korova|ko-RO-va}}",
+      "{{ru-RU|свинья|svinya|SVI-nya}}",
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}"
     ],
     "explanation": "'лошадь' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3070,11 +3070,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'cow'?",
-    "correctAnswer": "{{ru-RU|корова|korova|}}",
+    "correctAnswer": "{{ru-RU|корова|korova|ko-RO-va}}",
     "incorrectAnswers": [
-      "{{ru-RU|свинья|svinya|}}",
-      "{{ru-RU|курица|kuritsa|}}",
-      "{{ru-RU|мышь|mysh|}}"
+      "{{ru-RU|свинья|svinya|SVI-nya}}",
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
+      "{{ru-RU|мышь|mysh|MYSH}}"
     ],
     "explanation": "'корова' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3092,11 +3092,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'pig' in everyday use?",
-    "correctAnswer": "{{ru-RU|свинья|svinya|}}",
+    "correctAnswer": "{{ru-RU|свинья|svinya|SVI-nya}}",
     "incorrectAnswers": [
-      "{{ru-RU|курица|kuritsa|}}",
-      "{{ru-RU|мышь|mysh|}}",
-      "{{ru-RU|кролик|krolik|}}"
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
+      "{{ru-RU|мышь|mysh|MYSH}}",
+      "{{ru-RU|кролик|krolik|kro-LIK}}"
     ],
     "explanation": "'свинья' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3114,11 +3114,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'chicken'.",
-    "correctAnswer": "{{ru-RU|курица|kuritsa|}}",
+    "correctAnswer": "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
     "incorrectAnswers": [
-      "{{ru-RU|мышь|mysh|}}",
-      "{{ru-RU|кролик|krolik|}}",
-      "{{ru-RU|собака|sobaka|}}"
+      "{{ru-RU|мышь|mysh|MYSH}}",
+      "{{ru-RU|кролик|krolik|kro-LIK}}",
+      "{{ru-RU|собака|sobaka|so-BA-ka}}"
     ],
     "explanation": "'курица' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3136,11 +3136,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'mouse'?",
-    "correctAnswer": "{{ru-RU|мышь|mysh|}}",
+    "correctAnswer": "{{ru-RU|мышь|mysh|MYSH}}",
     "incorrectAnswers": [
-      "{{ru-RU|кролик|krolik|}}",
-      "{{ru-RU|собака|sobaka|}}",
-      "{{ru-RU|кошка|koshka|}}"
+      "{{ru-RU|кролик|krolik|kro-LIK}}",
+      "{{ru-RU|собака|sobaka|so-BA-ka}}",
+      "{{ru-RU|кошка|koshka|KOSH-ka}}"
     ],
     "explanation": "'мышь' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3158,11 +3158,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'rabbit'?",
-    "correctAnswer": "{{ru-RU|кролик|krolik|}}",
+    "correctAnswer": "{{ru-RU|кролик|krolik|kro-LIK}}",
     "incorrectAnswers": [
-      "{{ru-RU|собака|sobaka|}}",
-      "{{ru-RU|кошка|koshka|}}",
-      "{{ru-RU|птица|ptitsa|}}"
+      "{{ru-RU|собака|sobaka|so-BA-ka}}",
+      "{{ru-RU|кошка|koshka|KOSH-ka}}",
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}"
     ],
     "explanation": "'кролик' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3180,11 +3180,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'house'?",
-    "correctAnswer": "{{ru-RU|дом|dom|}}",
+    "correctAnswer": "{{ru-RU|дом|dom|DOM}}",
     "incorrectAnswers": [
-      "{{ru-RU|комната|komnata|}}",
-      "{{ru-RU|дверь|dver|}}",
-      "{{ru-RU|окно|okno|}}"
+      "{{ru-RU|комната|komnata|kom-NA-ta}}",
+      "{{ru-RU|дверь|dver|DVER}}",
+      "{{ru-RU|окно|okno|OK-no}}"
     ],
     "explanation": "'дом' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3202,11 +3202,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'room' in everyday use?",
-    "correctAnswer": "{{ru-RU|комната|komnata|}}",
+    "correctAnswer": "{{ru-RU|комната|komnata|kom-NA-ta}}",
     "incorrectAnswers": [
-      "{{ru-RU|дверь|dver|}}",
-      "{{ru-RU|окно|okno|}}",
-      "{{ru-RU|кровать|krovat|}}"
+      "{{ru-RU|дверь|dver|DVER}}",
+      "{{ru-RU|окно|okno|OK-no}}",
+      "{{ru-RU|кровать|krovat|kro-VAT}}"
     ],
     "explanation": "'комната' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3224,11 +3224,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'door'.",
-    "correctAnswer": "{{ru-RU|дверь|dver|}}",
+    "correctAnswer": "{{ru-RU|дверь|dver|DVER}}",
     "incorrectAnswers": [
-      "{{ru-RU|окно|okno|}}",
-      "{{ru-RU|кровать|krovat|}}",
-      "{{ru-RU|стол|stol|}}"
+      "{{ru-RU|окно|okno|OK-no}}",
+      "{{ru-RU|кровать|krovat|kro-VAT}}",
+      "{{ru-RU|стол|stol|STOL}}"
     ],
     "explanation": "'дверь' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3246,11 +3246,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'window'?",
-    "correctAnswer": "{{ru-RU|окно|okno|}}",
+    "correctAnswer": "{{ru-RU|окно|okno|OK-no}}",
     "incorrectAnswers": [
-      "{{ru-RU|кровать|krovat|}}",
-      "{{ru-RU|стол|stol|}}",
-      "{{ru-RU|стул|stul|}}"
+      "{{ru-RU|кровать|krovat|kro-VAT}}",
+      "{{ru-RU|стол|stol|STOL}}",
+      "{{ru-RU|стул|stul|STUL}}"
     ],
     "explanation": "'окно' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3268,11 +3268,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'bed'?",
-    "correctAnswer": "{{ru-RU|кровать|krovat|}}",
+    "correctAnswer": "{{ru-RU|кровать|krovat|kro-VAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|стол|stol|}}",
-      "{{ru-RU|стул|stul|}}",
-      "{{ru-RU|кухня|kukhnya|}}"
+      "{{ru-RU|стол|stol|STOL}}",
+      "{{ru-RU|стул|stul|STUL}}",
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}"
     ],
     "explanation": "'кровать' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3290,11 +3290,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'table' in everyday use?",
-    "correctAnswer": "{{ru-RU|стол|stol|}}",
+    "correctAnswer": "{{ru-RU|стол|stol|STOL}}",
     "incorrectAnswers": [
-      "{{ru-RU|стул|stul|}}",
-      "{{ru-RU|кухня|kukhnya|}}",
-      "{{ru-RU|ванная|vannaya|}}"
+      "{{ru-RU|стул|stul|STUL}}",
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
+      "{{ru-RU|ванная|vannaya|VAN-naya}}"
     ],
     "explanation": "'стол' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3312,11 +3312,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'chair'.",
-    "correctAnswer": "{{ru-RU|стул|stul|}}",
+    "correctAnswer": "{{ru-RU|стул|stul|STUL}}",
     "incorrectAnswers": [
-      "{{ru-RU|кухня|kukhnya|}}",
-      "{{ru-RU|ванная|vannaya|}}",
-      "{{ru-RU|сад|sad|}}"
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
+      "{{ru-RU|ванная|vannaya|VAN-naya}}",
+      "{{ru-RU|сад|sad|SAD}}"
     ],
     "explanation": "'стул' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3334,11 +3334,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'kitchen'?",
-    "correctAnswer": "{{ru-RU|кухня|kukhnya|}}",
+    "correctAnswer": "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
     "incorrectAnswers": [
-      "{{ru-RU|ванная|vannaya|}}",
-      "{{ru-RU|сад|sad|}}",
-      "{{ru-RU|пол|pol|}}"
+      "{{ru-RU|ванная|vannaya|VAN-naya}}",
+      "{{ru-RU|сад|sad|SAD}}",
+      "{{ru-RU|пол|pol|POL}}"
     ],
     "explanation": "'кухня' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3356,11 +3356,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'bathroom'?",
-    "correctAnswer": "{{ru-RU|ванная|vannaya|}}",
+    "correctAnswer": "{{ru-RU|ванная|vannaya|VAN-naya}}",
     "incorrectAnswers": [
-      "{{ru-RU|сад|sad|}}",
-      "{{ru-RU|пол|pol|}}",
-      "{{ru-RU|стена|stena|}}"
+      "{{ru-RU|сад|sad|SAD}}",
+      "{{ru-RU|пол|pol|POL}}",
+      "{{ru-RU|стена|stena|STE-na}}"
     ],
     "explanation": "'ванная' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3378,11 +3378,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'garden' in everyday use?",
-    "correctAnswer": "{{ru-RU|сад|sad|}}",
+    "correctAnswer": "{{ru-RU|сад|sad|SAD}}",
     "incorrectAnswers": [
-      "{{ru-RU|пол|pol|}}",
-      "{{ru-RU|стена|stena|}}",
-      "{{ru-RU|крыша|krysha|}}"
+      "{{ru-RU|пол|pol|POL}}",
+      "{{ru-RU|стена|stena|STE-na}}",
+      "{{ru-RU|крыша|krysha|KRY-sha}}"
     ],
     "explanation": "'сад' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3400,11 +3400,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'floor'.",
-    "correctAnswer": "{{ru-RU|пол|pol|}}",
+    "correctAnswer": "{{ru-RU|пол|pol|POL}}",
     "incorrectAnswers": [
-      "{{ru-RU|стена|stena|}}",
-      "{{ru-RU|крыша|krysha|}}",
-      "{{ru-RU|лампа|lampa|}}"
+      "{{ru-RU|стена|stena|STE-na}}",
+      "{{ru-RU|крыша|krysha|KRY-sha}}",
+      "{{ru-RU|лампа|lampa|LAM-pa}}"
     ],
     "explanation": "'пол' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3422,11 +3422,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'wall'?",
-    "correctAnswer": "{{ru-RU|стена|stena|}}",
+    "correctAnswer": "{{ru-RU|стена|stena|STE-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|крыша|krysha|}}",
-      "{{ru-RU|лампа|lampa|}}",
-      "{{ru-RU|дом|dom|}}"
+      "{{ru-RU|крыша|krysha|KRY-sha}}",
+      "{{ru-RU|лампа|lampa|LAM-pa}}",
+      "{{ru-RU|дом|dom|DOM}}"
     ],
     "explanation": "'стена' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3444,11 +3444,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'roof'?",
-    "correctAnswer": "{{ru-RU|крыша|krysha|}}",
+    "correctAnswer": "{{ru-RU|крыша|krysha|KRY-sha}}",
     "incorrectAnswers": [
-      "{{ru-RU|лампа|lampa|}}",
-      "{{ru-RU|дом|dom|}}",
-      "{{ru-RU|комната|komnata|}}"
+      "{{ru-RU|лампа|lampa|LAM-pa}}",
+      "{{ru-RU|дом|dom|DOM}}",
+      "{{ru-RU|комната|komnata|kom-NA-ta}}"
     ],
     "explanation": "'крыша' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3466,11 +3466,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'lamp' in everyday use?",
-    "correctAnswer": "{{ru-RU|лампа|lampa|}}",
+    "correctAnswer": "{{ru-RU|лампа|lampa|LAM-pa}}",
     "incorrectAnswers": [
-      "{{ru-RU|дом|dom|}}",
-      "{{ru-RU|комната|komnata|}}",
-      "{{ru-RU|дверь|dver|}}"
+      "{{ru-RU|дом|dom|DOM}}",
+      "{{ru-RU|комната|komnata|kom-NA-ta}}",
+      "{{ru-RU|дверь|dver|DVER}}"
     ],
     "explanation": "'лампа' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3488,11 +3488,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'shirt'?",
-    "correctAnswer": "{{ru-RU|рубашка|rubashka|}}",
+    "correctAnswer": "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|брюки|bryuki|}}",
-      "{{ru-RU|платье|plate|}}",
-      "{{ru-RU|туфли|tufli|}}"
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}",
+      "{{ru-RU|платье|plate|PLA-te}}",
+      "{{ru-RU|туфли|tufli|TU-fli}}"
     ],
     "explanation": "'рубашка' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3510,11 +3510,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'pants' in everyday use?",
-    "correctAnswer": "{{ru-RU|брюки|bryuki|}}",
+    "correctAnswer": "{{ru-RU|брюки|bryuki|BRYU-ki}}",
     "incorrectAnswers": [
-      "{{ru-RU|платье|plate|}}",
-      "{{ru-RU|туфли|tufli|}}",
-      "{{ru-RU|носки|noski|}}"
+      "{{ru-RU|платье|plate|PLA-te}}",
+      "{{ru-RU|туфли|tufli|TU-fli}}",
+      "{{ru-RU|носки|noski|NOS-ki}}"
     ],
     "explanation": "'брюки' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3532,11 +3532,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'dress'.",
-    "correctAnswer": "{{ru-RU|платье|plate|}}",
+    "correctAnswer": "{{ru-RU|платье|plate|PLA-te}}",
     "incorrectAnswers": [
-      "{{ru-RU|туфли|tufli|}}",
-      "{{ru-RU|носки|noski|}}",
-      "{{ru-RU|куртка|kurtka|}}"
+      "{{ru-RU|туфли|tufli|TU-fli}}",
+      "{{ru-RU|носки|noski|NOS-ki}}",
+      "{{ru-RU|куртка|kurtka|KURT-ka}}"
     ],
     "explanation": "'платье' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3554,11 +3554,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'shoes'?",
-    "correctAnswer": "{{ru-RU|туфли|tufli|}}",
+    "correctAnswer": "{{ru-RU|туфли|tufli|TU-fli}}",
     "incorrectAnswers": [
-      "{{ru-RU|носки|noski|}}",
-      "{{ru-RU|куртка|kurtka|}}",
-      "{{ru-RU|шляпа|shlyapa|}}"
+      "{{ru-RU|носки|noski|NOS-ki}}",
+      "{{ru-RU|куртка|kurtka|KURT-ka}}",
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}"
     ],
     "explanation": "'туфли' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3576,11 +3576,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'socks'?",
-    "correctAnswer": "{{ru-RU|носки|noski|}}",
+    "correctAnswer": "{{ru-RU|носки|noski|NOS-ki}}",
     "incorrectAnswers": [
-      "{{ru-RU|куртка|kurtka|}}",
-      "{{ru-RU|шляпа|shlyapa|}}",
-      "{{ru-RU|сумка|sumka|}}"
+      "{{ru-RU|куртка|kurtka|KURT-ka}}",
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
+      "{{ru-RU|сумка|sumka|SUM-ka}}"
     ],
     "explanation": "'носки' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3598,11 +3598,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'jacket' in everyday use?",
-    "correctAnswer": "{{ru-RU|куртка|kurtka|}}",
+    "correctAnswer": "{{ru-RU|куртка|kurtka|KURT-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|шляпа|shlyapa|}}",
-      "{{ru-RU|сумка|sumka|}}",
-      "{{ru-RU|пальто|palto|}}"
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
+      "{{ru-RU|сумка|sumka|SUM-ka}}",
+      "{{ru-RU|пальто|palto|PAL-to}}"
     ],
     "explanation": "'куртка' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3620,11 +3620,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'hat'.",
-    "correctAnswer": "{{ru-RU|шляпа|shlyapa|}}",
+    "correctAnswer": "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
     "incorrectAnswers": [
-      "{{ru-RU|сумка|sumka|}}",
-      "{{ru-RU|пальто|palto|}}",
-      "{{ru-RU|рубашка|rubashka|}}"
+      "{{ru-RU|сумка|sumka|SUM-ka}}",
+      "{{ru-RU|пальто|palto|PAL-to}}",
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}"
     ],
     "explanation": "'шляпа' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3642,11 +3642,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'bag'?",
-    "correctAnswer": "{{ru-RU|сумка|sumka|}}",
+    "correctAnswer": "{{ru-RU|сумка|sumka|SUM-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|пальто|palto|}}",
-      "{{ru-RU|рубашка|rubashka|}}",
-      "{{ru-RU|брюки|bryuki|}}"
+      "{{ru-RU|пальто|palto|PAL-to}}",
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}"
     ],
     "explanation": "'сумка' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3664,11 +3664,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'coat'?",
-    "correctAnswer": "{{ru-RU|пальто|palto|}}",
+    "correctAnswer": "{{ru-RU|пальто|palto|PAL-to}}",
     "incorrectAnswers": [
-      "{{ru-RU|рубашка|rubashka|}}",
-      "{{ru-RU|брюки|bryuki|}}",
-      "{{ru-RU|платье|plate|}}"
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}",
+      "{{ru-RU|платье|plate|PLA-te}}"
     ],
     "explanation": "'пальто' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3686,11 +3686,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'car'?",
-    "correctAnswer": "{{ru-RU|машина|mashina|}}",
+    "correctAnswer": "{{ru-RU|машина|mashina|ma-SHI-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|автобус|avtobus|}}",
-      "{{ru-RU|поезд|poezd|}}",
-      "{{ru-RU|самолёт|samolyot|}}"
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}",
+      "{{ru-RU|поезд|poezd|POEZD}}",
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}"
     ],
     "explanation": "'машина' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3708,11 +3708,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'bus' in everyday use?",
-    "correctAnswer": "{{ru-RU|автобус|avtobus|}}",
+    "correctAnswer": "{{ru-RU|автобус|avtobus|av-TO-bus}}",
     "incorrectAnswers": [
-      "{{ru-RU|поезд|poezd|}}",
-      "{{ru-RU|самолёт|samolyot|}}",
-      "{{ru-RU|велосипед|velosiped|}}"
+      "{{ru-RU|поезд|poezd|POEZD}}",
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}"
     ],
     "explanation": "'автобус' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3730,11 +3730,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'train'.",
-    "correctAnswer": "{{ru-RU|поезд|poezd|}}",
+    "correctAnswer": "{{ru-RU|поезд|poezd|POEZD}}",
     "incorrectAnswers": [
-      "{{ru-RU|самолёт|samolyot|}}",
-      "{{ru-RU|велосипед|velosiped|}}",
-      "{{ru-RU|лодка|lodka|}}"
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{ru-RU|лодка|lodka|LOD-ka}}"
     ],
     "explanation": "'поезд' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3752,11 +3752,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'plane'?",
-    "correctAnswer": "{{ru-RU|самолёт|samolyot|}}",
+    "correctAnswer": "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
     "incorrectAnswers": [
-      "{{ru-RU|велосипед|velosiped|}}",
-      "{{ru-RU|лодка|lodka|}}",
-      "{{ru-RU|такси|taksi|}}"
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{ru-RU|лодка|lodka|LOD-ka}}",
+      "{{ru-RU|такси|taksi|TAK-si}}"
     ],
     "explanation": "'самолёт' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3774,11 +3774,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'bicycle'?",
-    "correctAnswer": "{{ru-RU|велосипед|velosiped|}}",
+    "correctAnswer": "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
     "incorrectAnswers": [
-      "{{ru-RU|лодка|lodka|}}",
-      "{{ru-RU|такси|taksi|}}",
-      "{{ru-RU|метро|metro|}}"
+      "{{ru-RU|лодка|lodka|LOD-ka}}",
+      "{{ru-RU|такси|taksi|TAK-si}}",
+      "{{ru-RU|метро|metro|ME-tro}}"
     ],
     "explanation": "'велосипед' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3796,11 +3796,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'boat' in everyday use?",
-    "correctAnswer": "{{ru-RU|лодка|lodka|}}",
+    "correctAnswer": "{{ru-RU|лодка|lodka|LOD-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|такси|taksi|}}",
-      "{{ru-RU|метро|metro|}}",
-      "{{ru-RU|машина|mashina|}}"
+      "{{ru-RU|такси|taksi|TAK-si}}",
+      "{{ru-RU|метро|metro|ME-tro}}",
+      "{{ru-RU|машина|mashina|ma-SHI-na}}"
     ],
     "explanation": "'лодка' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3818,11 +3818,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'taxi'.",
-    "correctAnswer": "{{ru-RU|такси|taksi|}}",
+    "correctAnswer": "{{ru-RU|такси|taksi|TAK-si}}",
     "incorrectAnswers": [
-      "{{ru-RU|метро|metro|}}",
-      "{{ru-RU|машина|mashina|}}",
-      "{{ru-RU|автобус|avtobus|}}"
+      "{{ru-RU|метро|metro|ME-tro}}",
+      "{{ru-RU|машина|mashina|ma-SHI-na}}",
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}"
     ],
     "explanation": "'такси' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3840,11 +3840,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'metro'?",
-    "correctAnswer": "{{ru-RU|метро|metro|}}",
+    "correctAnswer": "{{ru-RU|метро|metro|ME-tro}}",
     "incorrectAnswers": [
-      "{{ru-RU|машина|mashina|}}",
-      "{{ru-RU|автобус|avtobus|}}",
-      "{{ru-RU|поезд|poezd|}}"
+      "{{ru-RU|машина|mashina|ma-SHI-na}}",
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}",
+      "{{ru-RU|поезд|poezd|POEZD}}"
     ],
     "explanation": "'метро' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3862,11 +3862,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'sun'?",
-    "correctAnswer": "{{ru-RU|солнце|solntse|}}",
+    "correctAnswer": "{{ru-RU|солнце|solntse|SOLN-tse}}",
     "incorrectAnswers": [
-      "{{ru-RU|луна|luna|}}",
-      "{{ru-RU|звезда|zvezda|}}",
-      "{{ru-RU|дождь|dozhd|}}"
+      "{{ru-RU|луна|luna|LU-na}}",
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
+      "{{ru-RU|дождь|dozhd|DOZHD}}"
     ],
     "explanation": "'солнце' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3884,11 +3884,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'moon' in everyday use?",
-    "correctAnswer": "{{ru-RU|луна|luna|}}",
+    "correctAnswer": "{{ru-RU|луна|luna|LU-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|звезда|zvezda|}}",
-      "{{ru-RU|дождь|dozhd|}}",
-      "{{ru-RU|снег|sneg|}}"
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
+      "{{ru-RU|дождь|dozhd|DOZHD}}",
+      "{{ru-RU|снег|sneg|SNEG}}"
     ],
     "explanation": "'луна' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3906,11 +3906,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'star'.",
-    "correctAnswer": "{{ru-RU|звезда|zvezda|}}",
+    "correctAnswer": "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|дождь|dozhd|}}",
-      "{{ru-RU|снег|sneg|}}",
-      "{{ru-RU|ветер|veter|}}"
+      "{{ru-RU|дождь|dozhd|DOZHD}}",
+      "{{ru-RU|снег|sneg|SNEG}}",
+      "{{ru-RU|ветер|veter|ve-TER}}"
     ],
     "explanation": "'звезда' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3928,11 +3928,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'rain'?",
-    "correctAnswer": "{{ru-RU|дождь|dozhd|}}",
+    "correctAnswer": "{{ru-RU|дождь|dozhd|DOZHD}}",
     "incorrectAnswers": [
-      "{{ru-RU|снег|sneg|}}",
-      "{{ru-RU|ветер|veter|}}",
-      "{{ru-RU|облако|oblako|}}"
+      "{{ru-RU|снег|sneg|SNEG}}",
+      "{{ru-RU|ветер|veter|ve-TER}}",
+      "{{ru-RU|облако|oblako|o-BLA-ko}}"
     ],
     "explanation": "'дождь' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3950,11 +3950,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'snow'?",
-    "correctAnswer": "{{ru-RU|снег|sneg|}}",
+    "correctAnswer": "{{ru-RU|снег|sneg|SNEG}}",
     "incorrectAnswers": [
-      "{{ru-RU|ветер|veter|}}",
-      "{{ru-RU|облако|oblako|}}",
-      "{{ru-RU|гора|gora|}}"
+      "{{ru-RU|ветер|veter|ve-TER}}",
+      "{{ru-RU|облако|oblako|o-BLA-ko}}",
+      "{{ru-RU|гора|gora|GO-ra}}"
     ],
     "explanation": "'снег' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3972,11 +3972,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'wind' in everyday use?",
-    "correctAnswer": "{{ru-RU|ветер|veter|}}",
+    "correctAnswer": "{{ru-RU|ветер|veter|ve-TER}}",
     "incorrectAnswers": [
-      "{{ru-RU|облако|oblako|}}",
-      "{{ru-RU|гора|gora|}}",
-      "{{ru-RU|река|reka|}}"
+      "{{ru-RU|облако|oblako|o-BLA-ko}}",
+      "{{ru-RU|гора|gora|GO-ra}}",
+      "{{ru-RU|река|reka|RE-ka}}"
     ],
     "explanation": "'ветер' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3994,11 +3994,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'cloud'.",
-    "correctAnswer": "{{ru-RU|облако|oblako|}}",
+    "correctAnswer": "{{ru-RU|облако|oblako|o-BLA-ko}}",
     "incorrectAnswers": [
-      "{{ru-RU|гора|gora|}}",
-      "{{ru-RU|река|reka|}}",
-      "{{ru-RU|море|more|}}"
+      "{{ru-RU|гора|gora|GO-ra}}",
+      "{{ru-RU|река|reka|RE-ka}}",
+      "{{ru-RU|море|more|MO-re}}"
     ],
     "explanation": "'облако' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4016,11 +4016,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'mountain'?",
-    "correctAnswer": "{{ru-RU|гора|gora|}}",
+    "correctAnswer": "{{ru-RU|гора|gora|GO-ra}}",
     "incorrectAnswers": [
-      "{{ru-RU|река|reka|}}",
-      "{{ru-RU|море|more|}}",
-      "{{ru-RU|пляж|plyazh|}}"
+      "{{ru-RU|река|reka|RE-ka}}",
+      "{{ru-RU|море|more|MO-re}}",
+      "{{ru-RU|пляж|plyazh|PLYAZH}}"
     ],
     "explanation": "'гора' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4038,11 +4038,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'river'?",
-    "correctAnswer": "{{ru-RU|река|reka|}}",
+    "correctAnswer": "{{ru-RU|река|reka|RE-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|море|more|}}",
-      "{{ru-RU|пляж|plyazh|}}",
-      "{{ru-RU|лес|les|}}"
+      "{{ru-RU|море|more|MO-re}}",
+      "{{ru-RU|пляж|plyazh|PLYAZH}}",
+      "{{ru-RU|лес|les|LES}}"
     ],
     "explanation": "'река' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4060,11 +4060,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'sea' in everyday use?",
-    "correctAnswer": "{{ru-RU|море|more|}}",
+    "correctAnswer": "{{ru-RU|море|more|MO-re}}",
     "incorrectAnswers": [
-      "{{ru-RU|пляж|plyazh|}}",
-      "{{ru-RU|лес|les|}}",
-      "{{ru-RU|дерево|derevo|}}"
+      "{{ru-RU|пляж|plyazh|PLYAZH}}",
+      "{{ru-RU|лес|les|LES}}",
+      "{{ru-RU|дерево|derevo|de-RE-vo}}"
     ],
     "explanation": "'море' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4082,11 +4082,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'beach'.",
-    "correctAnswer": "{{ru-RU|пляж|plyazh|}}",
+    "correctAnswer": "{{ru-RU|пляж|plyazh|PLYAZH}}",
     "incorrectAnswers": [
-      "{{ru-RU|лес|les|}}",
-      "{{ru-RU|дерево|derevo|}}",
-      "{{ru-RU|цветок|tsvetok|}}"
+      "{{ru-RU|лес|les|LES}}",
+      "{{ru-RU|дерево|derevo|de-RE-vo}}",
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}"
     ],
     "explanation": "'пляж' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4104,11 +4104,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'forest'?",
-    "correctAnswer": "{{ru-RU|лес|les|}}",
+    "correctAnswer": "{{ru-RU|лес|les|LES}}",
     "incorrectAnswers": [
-      "{{ru-RU|дерево|derevo|}}",
-      "{{ru-RU|цветок|tsvetok|}}",
-      "{{ru-RU|погода|pogoda|}}"
+      "{{ru-RU|дерево|derevo|de-RE-vo}}",
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
+      "{{ru-RU|погода|pogoda|po-GO-da}}"
     ],
     "explanation": "'лес' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4126,11 +4126,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'tree'?",
-    "correctAnswer": "{{ru-RU|дерево|derevo|}}",
+    "correctAnswer": "{{ru-RU|дерево|derevo|de-RE-vo}}",
     "incorrectAnswers": [
-      "{{ru-RU|цветок|tsvetok|}}",
-      "{{ru-RU|погода|pogoda|}}",
-      "{{ru-RU|солнце|solntse|}}"
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
+      "{{ru-RU|погода|pogoda|po-GO-da}}",
+      "{{ru-RU|солнце|solntse|SOLN-tse}}"
     ],
     "explanation": "'дерево' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4148,11 +4148,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'flower' in everyday use?",
-    "correctAnswer": "{{ru-RU|цветок|tsvetok|}}",
+    "correctAnswer": "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
     "incorrectAnswers": [
-      "{{ru-RU|погода|pogoda|}}",
-      "{{ru-RU|солнце|solntse|}}",
-      "{{ru-RU|луна|luna|}}"
+      "{{ru-RU|погода|pogoda|po-GO-da}}",
+      "{{ru-RU|солнце|solntse|SOLN-tse}}",
+      "{{ru-RU|луна|luna|LU-na}}"
     ],
     "explanation": "'цветок' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4170,11 +4170,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'weather'.",
-    "correctAnswer": "{{ru-RU|погода|pogoda|}}",
+    "correctAnswer": "{{ru-RU|погода|pogoda|po-GO-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|солнце|solntse|}}",
-      "{{ru-RU|луна|luna|}}",
-      "{{ru-RU|звезда|zvezda|}}"
+      "{{ru-RU|солнце|solntse|SOLN-tse}}",
+      "{{ru-RU|луна|luna|LU-na}}",
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}"
     ],
     "explanation": "'погода' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4192,11 +4192,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'be'?",
-    "correctAnswer": "{{ru-RU|быть|byt|}}",
+    "correctAnswer": "{{ru-RU|быть|byt|BYT}}",
     "incorrectAnswers": [
-      "{{ru-RU|иметь|imet|}}",
-      "{{ru-RU|хотеть|khotet|}}",
-      "{{ru-RU|нуждаться|nuzhdatsya|}}"
+      "{{ru-RU|иметь|imet|i-MET}}",
+      "{{ru-RU|хотеть|khotet|kho-TET}}",
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}"
     ],
     "explanation": "'быть' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4213,11 +4213,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'have' in everyday use?",
-    "correctAnswer": "{{ru-RU|иметь|imet|}}",
+    "correctAnswer": "{{ru-RU|иметь|imet|i-MET}}",
     "incorrectAnswers": [
-      "{{ru-RU|хотеть|khotet|}}",
-      "{{ru-RU|нуждаться|nuzhdatsya|}}",
-      "{{ru-RU|идти|idti|}}"
+      "{{ru-RU|хотеть|khotet|kho-TET}}",
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
+      "{{ru-RU|идти|idti|ID-ti}}"
     ],
     "explanation": "'иметь' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4234,11 +4234,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'want'.",
-    "correctAnswer": "{{ru-RU|хотеть|khotet|}}",
+    "correctAnswer": "{{ru-RU|хотеть|khotet|kho-TET}}",
     "incorrectAnswers": [
-      "{{ru-RU|нуждаться|nuzhdatsya|}}",
-      "{{ru-RU|идти|idti|}}",
-      "{{ru-RU|приходить|prikhodit|}}"
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
+      "{{ru-RU|идти|idti|ID-ti}}",
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}"
     ],
     "explanation": "'хотеть' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4255,11 +4255,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'need'?",
-    "correctAnswer": "{{ru-RU|нуждаться|nuzhdatsya|}}",
+    "correctAnswer": "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
     "incorrectAnswers": [
-      "{{ru-RU|идти|idti|}}",
-      "{{ru-RU|приходить|prikhodit|}}",
-      "{{ru-RU|есть|est|}}"
+      "{{ru-RU|идти|idti|ID-ti}}",
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
+      "{{ru-RU|есть|est|EST}}"
     ],
     "explanation": "'нуждаться' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4276,11 +4276,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'go'?",
-    "correctAnswer": "{{ru-RU|идти|idti|}}",
+    "correctAnswer": "{{ru-RU|идти|idti|ID-ti}}",
     "incorrectAnswers": [
-      "{{ru-RU|приходить|prikhodit|}}",
-      "{{ru-RU|есть|est|}}",
-      "{{ru-RU|пить|pit|}}"
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
+      "{{ru-RU|есть|est|EST}}",
+      "{{ru-RU|пить|pit|PIT}}"
     ],
     "explanation": "'идти' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4297,11 +4297,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'come' in everyday use?",
-    "correctAnswer": "{{ru-RU|приходить|prikhodit|}}",
+    "correctAnswer": "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
     "incorrectAnswers": [
-      "{{ru-RU|есть|est|}}",
-      "{{ru-RU|пить|pit|}}",
-      "{{ru-RU|спать|spat|}}"
+      "{{ru-RU|есть|est|EST}}",
+      "{{ru-RU|пить|pit|PIT}}",
+      "{{ru-RU|спать|spat|SPAT}}"
     ],
     "explanation": "'приходить' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4318,11 +4318,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'eat'.",
-    "correctAnswer": "{{ru-RU|есть|est|}}",
+    "correctAnswer": "{{ru-RU|есть|est|EST}}",
     "incorrectAnswers": [
-      "{{ru-RU|пить|pit|}}",
-      "{{ru-RU|спать|spat|}}",
-      "{{ru-RU|просыпаться|prosypatsya|}}"
+      "{{ru-RU|пить|pit|PIT}}",
+      "{{ru-RU|спать|spat|SPAT}}",
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}"
     ],
     "explanation": "'есть' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4339,11 +4339,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'drink'?",
-    "correctAnswer": "{{ru-RU|пить|pit|}}",
+    "correctAnswer": "{{ru-RU|пить|pit|PIT}}",
     "incorrectAnswers": [
-      "{{ru-RU|спать|spat|}}",
-      "{{ru-RU|просыпаться|prosypatsya|}}",
-      "{{ru-RU|работать|rabotat|}}"
+      "{{ru-RU|спать|spat|SPAT}}",
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}",
+      "{{ru-RU|работать|rabotat|ra-BO-tat}}"
     ],
     "explanation": "'пить' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4360,11 +4360,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'sleep'?",
-    "correctAnswer": "{{ru-RU|спать|spat|}}",
+    "correctAnswer": "{{ru-RU|спать|spat|SPAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|просыпаться|prosypatsya|}}",
-      "{{ru-RU|работать|rabotat|}}",
-      "{{ru-RU|говорить|govorit|}}"
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}",
+      "{{ru-RU|работать|rabotat|ra-BO-tat}}",
+      "{{ru-RU|говорить|govorit|go-VO-rit}}"
     ],
     "explanation": "'спать' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4381,11 +4381,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'wake up' in everyday use?",
-    "correctAnswer": "{{ru-RU|просыпаться|prosypatsya|}}",
+    "correctAnswer": "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}",
     "incorrectAnswers": [
-      "{{ru-RU|работать|rabotat|}}",
-      "{{ru-RU|говорить|govorit|}}",
-      "{{ru-RU|слышать|slyshat|}}"
+      "{{ru-RU|работать|rabotat|ra-BO-tat}}",
+      "{{ru-RU|говорить|govorit|go-VO-rit}}",
+      "{{ru-RU|слышать|slyshat|sly-SHAT}}"
     ],
     "explanation": "'просыпаться' is the infinitive 'to wake up'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4402,11 +4402,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'work'.",
-    "correctAnswer": "{{ru-RU|работать|rabotat|}}",
+    "correctAnswer": "{{ru-RU|работать|rabotat|ra-BO-tat}}",
     "incorrectAnswers": [
-      "{{ru-RU|говорить|govorit|}}",
-      "{{ru-RU|слышать|slyshat|}}",
-      "{{ru-RU|видеть|videt|}}"
+      "{{ru-RU|говорить|govorit|go-VO-rit}}",
+      "{{ru-RU|слышать|slyshat|sly-SHAT}}",
+      "{{ru-RU|видеть|videt|vi-DET}}"
     ],
     "explanation": "'работать' is the infinitive 'to work'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4423,11 +4423,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'speak'?",
-    "correctAnswer": "{{ru-RU|говорить|govorit|}}",
+    "correctAnswer": "{{ru-RU|говорить|govorit|go-VO-rit}}",
     "incorrectAnswers": [
-      "{{ru-RU|слышать|slyshat|}}",
-      "{{ru-RU|видеть|videt|}}",
-      "{{ru-RU|читать|chitat|}}"
+      "{{ru-RU|слышать|slyshat|sly-SHAT}}",
+      "{{ru-RU|видеть|videt|vi-DET}}",
+      "{{ru-RU|читать|chitat|chi-TAT}}"
     ],
     "explanation": "'говорить' is the infinitive 'to speak'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4444,11 +4444,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'hear'?",
-    "correctAnswer": "{{ru-RU|слышать|slyshat|}}",
+    "correctAnswer": "{{ru-RU|слышать|slyshat|sly-SHAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|видеть|videt|}}",
-      "{{ru-RU|читать|chitat|}}",
-      "{{ru-RU|писать|pisat|}}"
+      "{{ru-RU|видеть|videt|vi-DET}}",
+      "{{ru-RU|читать|chitat|chi-TAT}}",
+      "{{ru-RU|писать|pisat|pi-SAT}}"
     ],
     "explanation": "'слышать' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4465,11 +4465,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'see' in everyday use?",
-    "correctAnswer": "{{ru-RU|видеть|videt|}}",
+    "correctAnswer": "{{ru-RU|видеть|videt|vi-DET}}",
     "incorrectAnswers": [
-      "{{ru-RU|читать|chitat|}}",
-      "{{ru-RU|писать|pisat|}}",
-      "{{ru-RU|покупать|pokupat|}}"
+      "{{ru-RU|читать|chitat|chi-TAT}}",
+      "{{ru-RU|писать|pisat|pi-SAT}}",
+      "{{ru-RU|покупать|pokupat|po-KU-pat}}"
     ],
     "explanation": "'видеть' is the infinitive 'to see'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4486,11 +4486,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'read'.",
-    "correctAnswer": "{{ru-RU|читать|chitat|}}",
+    "correctAnswer": "{{ru-RU|читать|chitat|chi-TAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|писать|pisat|}}",
-      "{{ru-RU|покупать|pokupat|}}",
-      "{{ru-RU|платить|platit|}}"
+      "{{ru-RU|писать|pisat|pi-SAT}}",
+      "{{ru-RU|покупать|pokupat|po-KU-pat}}",
+      "{{ru-RU|платить|platit|pla-TIT}}"
     ],
     "explanation": "'читать' is the infinitive 'to read'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4507,11 +4507,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'write'?",
-    "correctAnswer": "{{ru-RU|писать|pisat|}}",
+    "correctAnswer": "{{ru-RU|писать|pisat|pi-SAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|покупать|pokupat|}}",
-      "{{ru-RU|платить|platit|}}",
-      "{{ru-RU|открывать|otkryvat|}}"
+      "{{ru-RU|покупать|pokupat|po-KU-pat}}",
+      "{{ru-RU|платить|platit|pla-TIT}}",
+      "{{ru-RU|открывать|otkryvat|ot-KRY-vat}}"
     ],
     "explanation": "'писать' is the infinitive 'to write'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4528,11 +4528,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'buy'?",
-    "correctAnswer": "{{ru-RU|покупать|pokupat|}}",
+    "correctAnswer": "{{ru-RU|покупать|pokupat|po-KU-pat}}",
     "incorrectAnswers": [
-      "{{ru-RU|платить|platit|}}",
-      "{{ru-RU|открывать|otkryvat|}}",
-      "{{ru-RU|закрывать|zakryvat|}}"
+      "{{ru-RU|платить|platit|pla-TIT}}",
+      "{{ru-RU|открывать|otkryvat|ot-KRY-vat}}",
+      "{{ru-RU|закрывать|zakryvat|za-KRY-vat}}"
     ],
     "explanation": "'покупать' is the infinitive 'to buy'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4549,11 +4549,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'pay' in everyday use?",
-    "correctAnswer": "{{ru-RU|платить|platit|}}",
+    "correctAnswer": "{{ru-RU|платить|platit|pla-TIT}}",
     "incorrectAnswers": [
-      "{{ru-RU|открывать|otkryvat|}}",
-      "{{ru-RU|закрывать|zakryvat|}}",
-      "{{ru-RU|давать|davat|}}"
+      "{{ru-RU|открывать|otkryvat|ot-KRY-vat}}",
+      "{{ru-RU|закрывать|zakryvat|za-KRY-vat}}",
+      "{{ru-RU|давать|davat|da-VAT}}"
     ],
     "explanation": "'платить' is the infinitive 'to pay'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4570,11 +4570,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'open'.",
-    "correctAnswer": "{{ru-RU|открывать|otkryvat|}}",
+    "correctAnswer": "{{ru-RU|открывать|otkryvat|ot-KRY-vat}}",
     "incorrectAnswers": [
-      "{{ru-RU|закрывать|zakryvat|}}",
-      "{{ru-RU|давать|davat|}}",
-      "{{ru-RU|брать|brat|}}"
+      "{{ru-RU|закрывать|zakryvat|za-KRY-vat}}",
+      "{{ru-RU|давать|davat|da-VAT}}",
+      "{{ru-RU|брать|brat|BRAT}}"
     ],
     "explanation": "'открывать' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4591,11 +4591,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'close'?",
-    "correctAnswer": "{{ru-RU|закрывать|zakryvat|}}",
+    "correctAnswer": "{{ru-RU|закрывать|zakryvat|za-KRY-vat}}",
     "incorrectAnswers": [
-      "{{ru-RU|давать|davat|}}",
-      "{{ru-RU|брать|brat|}}",
-      "{{ru-RU|знать|znat|}}"
+      "{{ru-RU|давать|davat|da-VAT}}",
+      "{{ru-RU|брать|brat|BRAT}}",
+      "{{ru-RU|знать|znat|ZNAT}}"
     ],
     "explanation": "'закрывать' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4612,11 +4612,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'give'?",
-    "correctAnswer": "{{ru-RU|давать|davat|}}",
+    "correctAnswer": "{{ru-RU|давать|davat|da-VAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|брать|brat|}}",
-      "{{ru-RU|знать|znat|}}",
-      "{{ru-RU|нравиться|nravitsya|}}"
+      "{{ru-RU|брать|brat|BRAT}}",
+      "{{ru-RU|знать|znat|ZNAT}}",
+      "{{ru-RU|нравиться|nravitsya|nra-VI-tsya}}"
     ],
     "explanation": "'давать' is the infinitive 'to give'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4633,11 +4633,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'take' in everyday use?",
-    "correctAnswer": "{{ru-RU|брать|brat|}}",
+    "correctAnswer": "{{ru-RU|брать|brat|BRAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|знать|znat|}}",
-      "{{ru-RU|нравиться|nravitsya|}}",
-      "{{ru-RU|любить|lyubit|}}"
+      "{{ru-RU|знать|znat|ZNAT}}",
+      "{{ru-RU|нравиться|nravitsya|nra-VI-tsya}}",
+      "{{ru-RU|любить|lyubit|lyu-BIT}}"
     ],
     "explanation": "'брать' is the infinitive 'to take'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4654,11 +4654,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'know'.",
-    "correctAnswer": "{{ru-RU|знать|znat|}}",
+    "correctAnswer": "{{ru-RU|знать|znat|ZNAT}}",
     "incorrectAnswers": [
-      "{{ru-RU|нравиться|nravitsya|}}",
-      "{{ru-RU|любить|lyubit|}}",
-      "{{ru-RU|помогать|pomogat|}}"
+      "{{ru-RU|нравиться|nravitsya|nra-VI-tsya}}",
+      "{{ru-RU|любить|lyubit|lyu-BIT}}",
+      "{{ru-RU|помогать|pomogat|po-MO-gat}}"
     ],
     "explanation": "'знать' is the infinitive 'to know'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4675,11 +4675,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'like'?",
-    "correctAnswer": "{{ru-RU|нравиться|nravitsya|}}",
+    "correctAnswer": "{{ru-RU|нравиться|nravitsya|nra-VI-tsya}}",
     "incorrectAnswers": [
-      "{{ru-RU|любить|lyubit|}}",
-      "{{ru-RU|помогать|pomogat|}}",
-      "{{ru-RU|учить|uchit|}}"
+      "{{ru-RU|любить|lyubit|lyu-BIT}}",
+      "{{ru-RU|помогать|pomogat|po-MO-gat}}",
+      "{{ru-RU|учить|uchit|u-CHIT}}"
     ],
     "explanation": "'нравиться' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4696,11 +4696,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'love'?",
-    "correctAnswer": "{{ru-RU|любить|lyubit|}}",
+    "correctAnswer": "{{ru-RU|любить|lyubit|lyu-BIT}}",
     "incorrectAnswers": [
-      "{{ru-RU|помогать|pomogat|}}",
-      "{{ru-RU|учить|uchit|}}",
-      "{{ru-RU|быть|byt|}}"
+      "{{ru-RU|помогать|pomogat|po-MO-gat}}",
+      "{{ru-RU|учить|uchit|u-CHIT}}",
+      "{{ru-RU|быть|byt|BYT}}"
     ],
     "explanation": "'любить' is the infinitive 'to love'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4717,11 +4717,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'help' in everyday use?",
-    "correctAnswer": "{{ru-RU|помогать|pomogat|}}",
+    "correctAnswer": "{{ru-RU|помогать|pomogat|po-MO-gat}}",
     "incorrectAnswers": [
-      "{{ru-RU|учить|uchit|}}",
-      "{{ru-RU|быть|byt|}}",
-      "{{ru-RU|иметь|imet|}}"
+      "{{ru-RU|учить|uchit|u-CHIT}}",
+      "{{ru-RU|быть|byt|BYT}}",
+      "{{ru-RU|иметь|imet|i-MET}}"
     ],
     "explanation": "'помогать' is the infinitive 'to help'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4738,11 +4738,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'learn'.",
-    "correctAnswer": "{{ru-RU|учить|uchit|}}",
+    "correctAnswer": "{{ru-RU|учить|uchit|u-CHIT}}",
     "incorrectAnswers": [
-      "{{ru-RU|быть|byt|}}",
-      "{{ru-RU|иметь|imet|}}",
-      "{{ru-RU|хотеть|khotet|}}"
+      "{{ru-RU|быть|byt|BYT}}",
+      "{{ru-RU|иметь|imet|i-MET}}",
+      "{{ru-RU|хотеть|khotet|kho-TET}}"
     ],
     "explanation": "'учить' is the infinitive 'to learn'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4759,11 +4759,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'big'?",
-    "correctAnswer": "{{ru-RU|большой|bolshoy|}}",
+    "correctAnswer": "{{ru-RU|большой|bolshoy|BOL-shoy}}",
     "incorrectAnswers": [
-      "{{ru-RU|маленький|malenkiy|}}",
-      "{{ru-RU|новый|novyy|}}",
-      "{{ru-RU|старый|staryy|}}"
+      "{{ru-RU|маленький|malenkiy|ma-LEN-kiy}}",
+      "{{ru-RU|новый|novyy|NO-vyy}}",
+      "{{ru-RU|старый|staryy|STA-ryy}}"
     ],
     "explanation": "'большой' means 'big'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4780,11 +4780,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'small' in everyday use?",
-    "correctAnswer": "{{ru-RU|маленький|malenkiy|}}",
+    "correctAnswer": "{{ru-RU|маленький|malenkiy|ma-LEN-kiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|новый|novyy|}}",
-      "{{ru-RU|старый|staryy|}}",
-      "{{ru-RU|хороший|khoroshiy|}}"
+      "{{ru-RU|новый|novyy|NO-vyy}}",
+      "{{ru-RU|старый|staryy|STA-ryy}}",
+      "{{ru-RU|хороший|khoroshiy|kho-RO-shiy}}"
     ],
     "explanation": "'маленький' means 'small'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4801,11 +4801,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'new'.",
-    "correctAnswer": "{{ru-RU|новый|novyy|}}",
+    "correctAnswer": "{{ru-RU|новый|novyy|NO-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|старый|staryy|}}",
-      "{{ru-RU|хороший|khoroshiy|}}",
-      "{{ru-RU|плохой|plokhoy|}}"
+      "{{ru-RU|старый|staryy|STA-ryy}}",
+      "{{ru-RU|хороший|khoroshiy|kho-RO-shiy}}",
+      "{{ru-RU|плохой|plokhoy|PLOK-hoy}}"
     ],
     "explanation": "'новый' means 'new'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4822,11 +4822,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'old'?",
-    "correctAnswer": "{{ru-RU|старый|staryy|}}",
+    "correctAnswer": "{{ru-RU|старый|staryy|STA-ryy}}",
     "incorrectAnswers": [
-      "{{ru-RU|хороший|khoroshiy|}}",
-      "{{ru-RU|плохой|plokhoy|}}",
-      "{{ru-RU|горячий|goryachiy|}}"
+      "{{ru-RU|хороший|khoroshiy|kho-RO-shiy}}",
+      "{{ru-RU|плохой|plokhoy|PLOK-hoy}}",
+      "{{ru-RU|горячий|goryachiy|go-RYA-chiy}}"
     ],
     "explanation": "'старый' means 'old'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4843,11 +4843,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'good'?",
-    "correctAnswer": "{{ru-RU|хороший|khoroshiy|}}",
+    "correctAnswer": "{{ru-RU|хороший|khoroshiy|kho-RO-shiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|плохой|plokhoy|}}",
-      "{{ru-RU|горячий|goryachiy|}}",
-      "{{ru-RU|холодный|kholodnyy|}}"
+      "{{ru-RU|плохой|plokhoy|PLOK-hoy}}",
+      "{{ru-RU|горячий|goryachiy|go-RYA-chiy}}",
+      "{{ru-RU|холодный|kholodnyy|kho-LOD-nyy}}"
     ],
     "explanation": "'хороший' means 'good'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4864,11 +4864,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'bad' in everyday use?",
-    "correctAnswer": "{{ru-RU|плохой|plokhoy|}}",
+    "correctAnswer": "{{ru-RU|плохой|plokhoy|PLOK-hoy}}",
     "incorrectAnswers": [
-      "{{ru-RU|горячий|goryachiy|}}",
-      "{{ru-RU|холодный|kholodnyy|}}",
-      "{{ru-RU|быстрый|bystryy|}}"
+      "{{ru-RU|горячий|goryachiy|go-RYA-chiy}}",
+      "{{ru-RU|холодный|kholodnyy|kho-LOD-nyy}}",
+      "{{ru-RU|быстрый|bystryy|BYS-tryy}}"
     ],
     "explanation": "'плохой' means 'bad'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4885,11 +4885,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'hot'.",
-    "correctAnswer": "{{ru-RU|горячий|goryachiy|}}",
+    "correctAnswer": "{{ru-RU|горячий|goryachiy|go-RYA-chiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|холодный|kholodnyy|}}",
-      "{{ru-RU|быстрый|bystryy|}}",
-      "{{ru-RU|медленный|medlennyy|}}"
+      "{{ru-RU|холодный|kholodnyy|kho-LOD-nyy}}",
+      "{{ru-RU|быстрый|bystryy|BYS-tryy}}",
+      "{{ru-RU|медленный|medlennyy|med-LEN-nyy}}"
     ],
     "explanation": "'горячий' means 'hot'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4906,11 +4906,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'cold'?",
-    "correctAnswer": "{{ru-RU|холодный|kholodnyy|}}",
+    "correctAnswer": "{{ru-RU|холодный|kholodnyy|kho-LOD-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|быстрый|bystryy|}}",
-      "{{ru-RU|медленный|medlennyy|}}",
-      "{{ru-RU|лёгкий|lyogkiy|}}"
+      "{{ru-RU|быстрый|bystryy|BYS-tryy}}",
+      "{{ru-RU|медленный|medlennyy|med-LEN-nyy}}",
+      "{{ru-RU|лёгкий|lyogkiy|LYOG-kiy}}"
     ],
     "explanation": "'холодный' means 'cold'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4927,11 +4927,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'fast'?",
-    "correctAnswer": "{{ru-RU|быстрый|bystryy|}}",
+    "correctAnswer": "{{ru-RU|быстрый|bystryy|BYS-tryy}}",
     "incorrectAnswers": [
-      "{{ru-RU|медленный|medlennyy|}}",
-      "{{ru-RU|лёгкий|lyogkiy|}}",
-      "{{ru-RU|трудный|trudnyy|}}"
+      "{{ru-RU|медленный|medlennyy|med-LEN-nyy}}",
+      "{{ru-RU|лёгкий|lyogkiy|LYOG-kiy}}",
+      "{{ru-RU|трудный|trudnyy|TRUD-nyy}}"
     ],
     "explanation": "'быстрый' means 'fast'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4948,11 +4948,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'slow' in everyday use?",
-    "correctAnswer": "{{ru-RU|медленный|medlennyy|}}",
+    "correctAnswer": "{{ru-RU|медленный|medlennyy|med-LEN-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|лёгкий|lyogkiy|}}",
-      "{{ru-RU|трудный|trudnyy|}}",
-      "{{ru-RU|чистый|chistyy|}}"
+      "{{ru-RU|лёгкий|lyogkiy|LYOG-kiy}}",
+      "{{ru-RU|трудный|trudnyy|TRUD-nyy}}",
+      "{{ru-RU|чистый|chistyy|CHIS-tyy}}"
     ],
     "explanation": "'медленный' means 'slow'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4969,11 +4969,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'easy'.",
-    "correctAnswer": "{{ru-RU|лёгкий|lyogkiy|}}",
+    "correctAnswer": "{{ru-RU|лёгкий|lyogkiy|LYOG-kiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|трудный|trudnyy|}}",
-      "{{ru-RU|чистый|chistyy|}}",
-      "{{ru-RU|грязный|gryaznyy|}}"
+      "{{ru-RU|трудный|trudnyy|TRUD-nyy}}",
+      "{{ru-RU|чистый|chistyy|CHIS-tyy}}",
+      "{{ru-RU|грязный|gryaznyy|GRYAZ-nyy}}"
     ],
     "explanation": "'лёгкий' means 'easy'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4990,11 +4990,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'difficult'?",
-    "correctAnswer": "{{ru-RU|трудный|trudnyy|}}",
+    "correctAnswer": "{{ru-RU|трудный|trudnyy|TRUD-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|чистый|chistyy|}}",
-      "{{ru-RU|грязный|gryaznyy|}}",
-      "{{ru-RU|дешёвый|deshyovyy|}}"
+      "{{ru-RU|чистый|chistyy|CHIS-tyy}}",
+      "{{ru-RU|грязный|gryaznyy|GRYAZ-nyy}}",
+      "{{ru-RU|дешёвый|deshyovyy|de-SHYO-vyy}}"
     ],
     "explanation": "'трудный' means 'difficult'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5011,11 +5011,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'clean'?",
-    "correctAnswer": "{{ru-RU|чистый|chistyy|}}",
+    "correctAnswer": "{{ru-RU|чистый|chistyy|CHIS-tyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|грязный|gryaznyy|}}",
-      "{{ru-RU|дешёвый|deshyovyy|}}",
-      "{{ru-RU|дорогой|dorogoy|}}"
+      "{{ru-RU|грязный|gryaznyy|GRYAZ-nyy}}",
+      "{{ru-RU|дешёвый|deshyovyy|de-SHYO-vyy}}",
+      "{{ru-RU|дорогой|dorogoy|do-RO-goy}}"
     ],
     "explanation": "'чистый' means 'clean'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5032,11 +5032,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'dirty' in everyday use?",
-    "correctAnswer": "{{ru-RU|грязный|gryaznyy|}}",
+    "correctAnswer": "{{ru-RU|грязный|gryaznyy|GRYAZ-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|дешёвый|deshyovyy|}}",
-      "{{ru-RU|дорогой|dorogoy|}}",
-      "{{ru-RU|красивый|krasivyy|}}"
+      "{{ru-RU|дешёвый|deshyovyy|de-SHYO-vyy}}",
+      "{{ru-RU|дорогой|dorogoy|do-RO-goy}}",
+      "{{ru-RU|красивый|krasivyy|kra-SI-vyy}}"
     ],
     "explanation": "'грязный' means 'dirty'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5053,11 +5053,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'cheap'.",
-    "correctAnswer": "{{ru-RU|дешёвый|deshyovyy|}}",
+    "correctAnswer": "{{ru-RU|дешёвый|deshyovyy|de-SHYO-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|дорогой|dorogoy|}}",
-      "{{ru-RU|красивый|krasivyy|}}",
-      "{{ru-RU|некрасивый|nekrasivyy|}}"
+      "{{ru-RU|дорогой|dorogoy|do-RO-goy}}",
+      "{{ru-RU|красивый|krasivyy|kra-SI-vyy}}",
+      "{{ru-RU|некрасивый|nekrasivyy|ne-kra-SI-vyy}}"
     ],
     "explanation": "'дешёвый' means 'cheap'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5074,11 +5074,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'expensive'?",
-    "correctAnswer": "{{ru-RU|дорогой|dorogoy|}}",
+    "correctAnswer": "{{ru-RU|дорогой|dorogoy|do-RO-goy}}",
     "incorrectAnswers": [
-      "{{ru-RU|красивый|krasivyy|}}",
-      "{{ru-RU|некрасивый|nekrasivyy|}}",
-      "{{ru-RU|длинный|dlinnyy|}}"
+      "{{ru-RU|красивый|krasivyy|kra-SI-vyy}}",
+      "{{ru-RU|некрасивый|nekrasivyy|ne-kra-SI-vyy}}",
+      "{{ru-RU|длинный|dlinnyy|DLIN-nyy}}"
     ],
     "explanation": "'дорогой' means 'expensive'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5095,11 +5095,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'beautiful'?",
-    "correctAnswer": "{{ru-RU|красивый|krasivyy|}}",
+    "correctAnswer": "{{ru-RU|красивый|krasivyy|kra-SI-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|некрасивый|nekrasivyy|}}",
-      "{{ru-RU|длинный|dlinnyy|}}",
-      "{{ru-RU|короткий|korotkiy|}}"
+      "{{ru-RU|некрасивый|nekrasivyy|ne-kra-SI-vyy}}",
+      "{{ru-RU|длинный|dlinnyy|DLIN-nyy}}",
+      "{{ru-RU|короткий|korotkiy|ko-ROT-kiy}}"
     ],
     "explanation": "'красивый' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5116,11 +5116,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'ugly' in everyday use?",
-    "correctAnswer": "{{ru-RU|некрасивый|nekrasivyy|}}",
+    "correctAnswer": "{{ru-RU|некрасивый|nekrasivyy|ne-kra-SI-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|длинный|dlinnyy|}}",
-      "{{ru-RU|короткий|korotkiy|}}",
-      "{{ru-RU|открытый|otkrytyy|}}"
+      "{{ru-RU|длинный|dlinnyy|DLIN-nyy}}",
+      "{{ru-RU|короткий|korotkiy|ko-ROT-kiy}}",
+      "{{ru-RU|открытый|otkrytyy|ot-KRY-tyy}}"
     ],
     "explanation": "'некрасивый' means 'ugly'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5137,11 +5137,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'long'.",
-    "correctAnswer": "{{ru-RU|длинный|dlinnyy|}}",
+    "correctAnswer": "{{ru-RU|длинный|dlinnyy|DLIN-nyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|короткий|korotkiy|}}",
-      "{{ru-RU|открытый|otkrytyy|}}",
-      "{{ru-RU|закрытый|zakrytyy|}}"
+      "{{ru-RU|короткий|korotkiy|ko-ROT-kiy}}",
+      "{{ru-RU|открытый|otkrytyy|ot-KRY-tyy}}",
+      "{{ru-RU|закрытый|zakrytyy|za-KRY-tyy}}"
     ],
     "explanation": "'длинный' means 'long'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5158,11 +5158,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'short'?",
-    "correctAnswer": "{{ru-RU|короткий|korotkiy|}}",
+    "correctAnswer": "{{ru-RU|короткий|korotkiy|ko-ROT-kiy}}",
     "incorrectAnswers": [
-      "{{ru-RU|открытый|otkrytyy|}}",
-      "{{ru-RU|закрытый|zakrytyy|}}",
-      "{{ru-RU|правый|pravyy|}}"
+      "{{ru-RU|открытый|otkrytyy|ot-KRY-tyy}}",
+      "{{ru-RU|закрытый|zakrytyy|za-KRY-tyy}}",
+      "{{ru-RU|правый|pravyy|PRA-vyy}}"
     ],
     "explanation": "'короткий' means 'short'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5179,11 +5179,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'open'?",
-    "correctAnswer": "{{ru-RU|открытый|otkrytyy|}}",
+    "correctAnswer": "{{ru-RU|открытый|otkrytyy|ot-KRY-tyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|закрытый|zakrytyy|}}",
-      "{{ru-RU|правый|pravyy|}}",
-      "{{ru-RU|левый|levyy|}}"
+      "{{ru-RU|закрытый|zakrytyy|za-KRY-tyy}}",
+      "{{ru-RU|правый|pravyy|PRA-vyy}}",
+      "{{ru-RU|левый|levyy|LE-vyy}}"
     ],
     "explanation": "'открытый' means 'open'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5200,11 +5200,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'closed' in everyday use?",
-    "correctAnswer": "{{ru-RU|закрытый|zakrytyy|}}",
+    "correctAnswer": "{{ru-RU|закрытый|zakrytyy|za-KRY-tyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|правый|pravyy|}}",
-      "{{ru-RU|левый|levyy|}}",
-      "{{ru-RU|одинаковый|odinakovyy|}}"
+      "{{ru-RU|правый|pravyy|PRA-vyy}}",
+      "{{ru-RU|левый|levyy|LE-vyy}}",
+      "{{ru-RU|одинаковый|odinakovyy|o-di-na-KO-vyy}}"
     ],
     "explanation": "'закрытый' means 'closed'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5221,11 +5221,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'right'.",
-    "correctAnswer": "{{ru-RU|правый|pravyy|}}",
+    "correctAnswer": "{{ru-RU|правый|pravyy|PRA-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|левый|levyy|}}",
-      "{{ru-RU|одинаковый|odinakovyy|}}",
-      "{{ru-RU|другой|drugoy|}}"
+      "{{ru-RU|левый|levyy|LE-vyy}}",
+      "{{ru-RU|одинаковый|odinakovyy|o-di-na-KO-vyy}}",
+      "{{ru-RU|другой|drugoy|DRU-goy}}"
     ],
     "explanation": "'правый' means 'right'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5242,11 +5242,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'left'?",
-    "correctAnswer": "{{ru-RU|левый|levyy|}}",
+    "correctAnswer": "{{ru-RU|левый|levyy|LE-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|одинаковый|odinakovyy|}}",
-      "{{ru-RU|другой|drugoy|}}",
-      "{{ru-RU|большой|bolshoy|}}"
+      "{{ru-RU|одинаковый|odinakovyy|o-di-na-KO-vyy}}",
+      "{{ru-RU|другой|drugoy|DRU-goy}}",
+      "{{ru-RU|большой|bolshoy|BOL-shoy}}"
     ],
     "explanation": "'левый' means 'left'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5263,11 +5263,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'same'?",
-    "correctAnswer": "{{ru-RU|одинаковый|odinakovyy|}}",
+    "correctAnswer": "{{ru-RU|одинаковый|odinakovyy|o-di-na-KO-vyy}}",
     "incorrectAnswers": [
-      "{{ru-RU|другой|drugoy|}}",
-      "{{ru-RU|большой|bolshoy|}}",
-      "{{ru-RU|маленький|malenkiy|}}"
+      "{{ru-RU|другой|drugoy|DRU-goy}}",
+      "{{ru-RU|большой|bolshoy|BOL-shoy}}",
+      "{{ru-RU|маленький|malenkiy|ma-LEN-kiy}}"
     ],
     "explanation": "'одинаковый' means 'same'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5284,11 +5284,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'different' in everyday use?",
-    "correctAnswer": "{{ru-RU|другой|drugoy|}}",
+    "correctAnswer": "{{ru-RU|другой|drugoy|DRU-goy}}",
     "incorrectAnswers": [
-      "{{ru-RU|большой|bolshoy|}}",
-      "{{ru-RU|маленький|malenkiy|}}",
-      "{{ru-RU|новый|novyy|}}"
+      "{{ru-RU|большой|bolshoy|BOL-shoy}}",
+      "{{ru-RU|маленький|malenkiy|ma-LEN-kiy}}",
+      "{{ru-RU|новый|novyy|NO-vyy}}"
     ],
     "explanation": "'другой' means 'different'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5305,11 +5305,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'who'?",
-    "correctAnswer": "{{ru-RU|кто|kto|}}",
+    "correctAnswer": "{{ru-RU|кто|kto|KTO}}",
     "incorrectAnswers": [
-      "{{ru-RU|что|chto|}}",
-      "{{ru-RU|когда|kogda|}}",
-      "{{ru-RU|почему|pochemu|}}"
+      "{{ru-RU|что|chto|CHTO}}",
+      "{{ru-RU|когда|kogda|KOG-da}}",
+      "{{ru-RU|почему|pochemu|po-CHE-mu}}"
     ],
     "explanation": "'кто' is the word for 'who'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5326,11 +5326,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'what' in everyday use?",
-    "correctAnswer": "{{ru-RU|что|chto|}}",
+    "correctAnswer": "{{ru-RU|что|chto|CHTO}}",
     "incorrectAnswers": [
-      "{{ru-RU|когда|kogda|}}",
-      "{{ru-RU|почему|pochemu|}}",
-      "{{ru-RU|как|kak|}}"
+      "{{ru-RU|когда|kogda|KOG-da}}",
+      "{{ru-RU|почему|pochemu|po-CHE-mu}}",
+      "{{ru-RU|как|kak|KAK}}"
     ],
     "explanation": "'что' is the word for 'what'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5347,11 +5347,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'when'.",
-    "correctAnswer": "{{ru-RU|когда|kogda|}}",
+    "correctAnswer": "{{ru-RU|когда|kogda|KOG-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|почему|pochemu|}}",
-      "{{ru-RU|как|kak|}}",
-      "{{ru-RU|сколько|skolko|}}"
+      "{{ru-RU|почему|pochemu|po-CHE-mu}}",
+      "{{ru-RU|как|kak|KAK}}",
+      "{{ru-RU|сколько|skolko|SKOL-ko}}"
     ],
     "explanation": "'когда' is the word for 'when'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5368,11 +5368,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'why'?",
-    "correctAnswer": "{{ru-RU|почему|pochemu|}}",
+    "correctAnswer": "{{ru-RU|почему|pochemu|po-CHE-mu}}",
     "incorrectAnswers": [
-      "{{ru-RU|как|kak|}}",
-      "{{ru-RU|сколько|skolko|}}",
-      "{{ru-RU|как много|kak mnogo|}}"
+      "{{ru-RU|как|kak|KAK}}",
+      "{{ru-RU|сколько|skolko|SKOL-ko}}",
+      "{{ru-RU|как много|kak mnogo|KAK MNO-go}}"
     ],
     "explanation": "'почему' is the word for 'why'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5389,11 +5389,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'how'?",
-    "correctAnswer": "{{ru-RU|как|kak|}}",
+    "correctAnswer": "{{ru-RU|как|kak|KAK}}",
     "incorrectAnswers": [
-      "{{ru-RU|сколько|skolko|}}",
-      "{{ru-RU|как много|kak mnogo|}}",
-      "{{ru-RU|кто|kto|}}"
+      "{{ru-RU|сколько|skolko|SKOL-ko}}",
+      "{{ru-RU|как много|kak mnogo|KAK MNO-go}}",
+      "{{ru-RU|кто|kto|KTO}}"
     ],
     "explanation": "'как' is the word for 'how'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5410,11 +5410,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'how much' in everyday use?",
-    "correctAnswer": "{{ru-RU|сколько|skolko|}}",
+    "correctAnswer": "{{ru-RU|сколько|skolko|SKOL-ko}}",
     "incorrectAnswers": [
-      "{{ru-RU|как много|kak mnogo|}}",
-      "{{ru-RU|кто|kto|}}",
-      "{{ru-RU|что|chto|}}"
+      "{{ru-RU|как много|kak mnogo|KAK MNO-go}}",
+      "{{ru-RU|кто|kto|KTO}}",
+      "{{ru-RU|что|chto|CHTO}}"
     ],
     "explanation": "'сколько' is the word for 'how much'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5431,11 +5431,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'how many'.",
-    "correctAnswer": "{{ru-RU|как много|kak mnogo|}}",
+    "correctAnswer": "{{ru-RU|как много|kak mnogo|KAK MNO-go}}",
     "incorrectAnswers": [
-      "{{ru-RU|кто|kto|}}",
-      "{{ru-RU|что|chto|}}",
-      "{{ru-RU|когда|kogda|}}"
+      "{{ru-RU|кто|kto|KTO}}",
+      "{{ru-RU|что|chto|CHTO}}",
+      "{{ru-RU|когда|kogda|KOG-da}}"
     ],
     "explanation": "'как много' is the word for 'how many'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5452,11 +5452,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'and'?",
-    "correctAnswer": "{{ru-RU|и|i|}}",
+    "correctAnswer": "{{ru-RU|и|i|I}}",
     "incorrectAnswers": [
-      "{{ru-RU|или|ili|}}",
-      "{{ru-RU|но|no|}}",
-      "{{ru-RU|потому что|potomu chto|}}"
+      "{{ru-RU|или|ili|I-li}}",
+      "{{ru-RU|но|no|NO}}",
+      "{{ru-RU|потому что|potomu chto|po-TO-mu CHTO}}"
     ],
     "explanation": "'и' is the word for 'and'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5473,11 +5473,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'or' in everyday use?",
-    "correctAnswer": "{{ru-RU|или|ili|}}",
+    "correctAnswer": "{{ru-RU|или|ili|I-li}}",
     "incorrectAnswers": [
-      "{{ru-RU|но|no|}}",
-      "{{ru-RU|потому что|potomu chto|}}",
-      "{{ru-RU|если|esli|}}"
+      "{{ru-RU|но|no|NO}}",
+      "{{ru-RU|потому что|potomu chto|po-TO-mu CHTO}}",
+      "{{ru-RU|если|esli|ES-li}}"
     ],
     "explanation": "'или' is the word for 'or'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5494,11 +5494,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'but'.",
-    "correctAnswer": "{{ru-RU|но|no|}}",
+    "correctAnswer": "{{ru-RU|но|no|NO}}",
     "incorrectAnswers": [
-      "{{ru-RU|потому что|potomu chto|}}",
-      "{{ru-RU|если|esli|}}",
-      "{{ru-RU|и|i|}}"
+      "{{ru-RU|потому что|potomu chto|po-TO-mu CHTO}}",
+      "{{ru-RU|если|esli|ES-li}}",
+      "{{ru-RU|и|i|I}}"
     ],
     "explanation": "'но' is the word for 'but'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5515,11 +5515,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'because'?",
-    "correctAnswer": "{{ru-RU|потому что|potomu chto|}}",
+    "correctAnswer": "{{ru-RU|потому что|potomu chto|po-TO-mu CHTO}}",
     "incorrectAnswers": [
-      "{{ru-RU|если|esli|}}",
-      "{{ru-RU|и|i|}}",
-      "{{ru-RU|или|ili|}}"
+      "{{ru-RU|если|esli|ES-li}}",
+      "{{ru-RU|и|i|I}}",
+      "{{ru-RU|или|ili|I-li}}"
     ],
     "explanation": "'потому что' is the word for 'because'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5536,11 +5536,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'if'?",
-    "correctAnswer": "{{ru-RU|если|esli|}}",
+    "correctAnswer": "{{ru-RU|если|esli|ES-li}}",
     "incorrectAnswers": [
-      "{{ru-RU|и|i|}}",
-      "{{ru-RU|или|ili|}}",
-      "{{ru-RU|но|no|}}"
+      "{{ru-RU|и|i|I}}",
+      "{{ru-RU|или|ili|I-li}}",
+      "{{ru-RU|но|no|NO}}"
     ],
     "explanation": "'если' is the word for 'if'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5557,11 +5557,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'very'?",
-    "correctAnswer": "{{ru-RU|очень|ochen|}}",
+    "correctAnswer": "{{ru-RU|очень|ochen|o-CHEN}}",
     "incorrectAnswers": [
-      "{{ru-RU|тоже|tozhe|}}",
-      "{{ru-RU|только|tolko|}}",
-      "{{ru-RU|здесь|zdes|}}"
+      "{{ru-RU|тоже|tozhe|TOZ-he}}",
+      "{{ru-RU|только|tolko|TOL-ko}}",
+      "{{ru-RU|здесь|zdes|ZDES}}"
     ],
     "explanation": "'очень' is the word for 'very'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5578,11 +5578,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'also' in everyday use?",
-    "correctAnswer": "{{ru-RU|тоже|tozhe|}}",
+    "correctAnswer": "{{ru-RU|тоже|tozhe|TOZ-he}}",
     "incorrectAnswers": [
-      "{{ru-RU|только|tolko|}}",
-      "{{ru-RU|здесь|zdes|}}",
-      "{{ru-RU|там|tam|}}"
+      "{{ru-RU|только|tolko|TOL-ko}}",
+      "{{ru-RU|здесь|zdes|ZDES}}",
+      "{{ru-RU|там|tam|TAM}}"
     ],
     "explanation": "'тоже' is the word for 'also'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5599,11 +5599,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'only'.",
-    "correctAnswer": "{{ru-RU|только|tolko|}}",
+    "correctAnswer": "{{ru-RU|только|tolko|TOL-ko}}",
     "incorrectAnswers": [
-      "{{ru-RU|здесь|zdes|}}",
-      "{{ru-RU|там|tam|}}",
-      "{{ru-RU|всегда|vsegda|}}"
+      "{{ru-RU|здесь|zdes|ZDES}}",
+      "{{ru-RU|там|tam|TAM}}",
+      "{{ru-RU|всегда|vsegda|VSEG-da}}"
     ],
     "explanation": "'только' is the word for 'only'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5620,11 +5620,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'here'?",
-    "correctAnswer": "{{ru-RU|здесь|zdes|}}",
+    "correctAnswer": "{{ru-RU|здесь|zdes|ZDES}}",
     "incorrectAnswers": [
-      "{{ru-RU|там|tam|}}",
-      "{{ru-RU|всегда|vsegda|}}",
-      "{{ru-RU|никогда|nikogda|}}"
+      "{{ru-RU|там|tam|TAM}}",
+      "{{ru-RU|всегда|vsegda|VSEG-da}}",
+      "{{ru-RU|никогда|nikogda|ni-KOG-da}}"
     ],
     "explanation": "'здесь' is the word for 'here'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5641,11 +5641,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'there'?",
-    "correctAnswer": "{{ru-RU|там|tam|}}",
+    "correctAnswer": "{{ru-RU|там|tam|TAM}}",
     "incorrectAnswers": [
-      "{{ru-RU|всегда|vsegda|}}",
-      "{{ru-RU|никогда|nikogda|}}",
-      "{{ru-RU|очень|ochen|}}"
+      "{{ru-RU|всегда|vsegda|VSEG-da}}",
+      "{{ru-RU|никогда|nikogda|ni-KOG-da}}",
+      "{{ru-RU|очень|ochen|o-CHEN}}"
     ],
     "explanation": "'там' is the word for 'there'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5662,11 +5662,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'always' in everyday use?",
-    "correctAnswer": "{{ru-RU|всегда|vsegda|}}",
+    "correctAnswer": "{{ru-RU|всегда|vsegda|VSEG-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|никогда|nikogda|}}",
-      "{{ru-RU|очень|ochen|}}",
-      "{{ru-RU|тоже|tozhe|}}"
+      "{{ru-RU|никогда|nikogda|ni-KOG-da}}",
+      "{{ru-RU|очень|ochen|o-CHEN}}",
+      "{{ru-RU|тоже|tozhe|TOZ-he}}"
     ],
     "explanation": "'всегда' is the word for 'always'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5683,11 +5683,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'never'.",
-    "correctAnswer": "{{ru-RU|никогда|nikogda|}}",
+    "correctAnswer": "{{ru-RU|никогда|nikogda|ni-KOG-da}}",
     "incorrectAnswers": [
-      "{{ru-RU|очень|ochen|}}",
-      "{{ru-RU|тоже|tozhe|}}",
-      "{{ru-RU|только|tolko|}}"
+      "{{ru-RU|очень|ochen|o-CHEN}}",
+      "{{ru-RU|тоже|tozhe|TOZ-he}}",
+      "{{ru-RU|только|tolko|TOL-ko}}"
     ],
     "explanation": "'никогда' is the word for 'never'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5704,11 +5704,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'I'?",
-    "correctAnswer": "{{ru-RU|я|ya|}}",
+    "correctAnswer": "{{ru-RU|я|ya|YA}}",
     "incorrectAnswers": [
-      "{{ru-RU|ты|ty|}}",
-      "{{ru-RU|он|on|}}",
-      "{{ru-RU|она|ona|}}"
+      "{{ru-RU|ты|ty|TY}}",
+      "{{ru-RU|он|on|ON}}",
+      "{{ru-RU|она|ona|O-na}}"
     ],
     "explanation": "'я' is used for 'I'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5725,11 +5725,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'you' in everyday use?",
-    "correctAnswer": "{{ru-RU|ты|ty|}}",
+    "correctAnswer": "{{ru-RU|ты|ty|TY}}",
     "incorrectAnswers": [
-      "{{ru-RU|он|on|}}",
-      "{{ru-RU|она|ona|}}",
-      "{{ru-RU|мы|my|}}"
+      "{{ru-RU|он|on|ON}}",
+      "{{ru-RU|она|ona|O-na}}",
+      "{{ru-RU|мы|my|MY}}"
     ],
     "explanation": "'ты' is used for 'you'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5746,11 +5746,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'he'.",
-    "correctAnswer": "{{ru-RU|он|on|}}",
+    "correctAnswer": "{{ru-RU|он|on|ON}}",
     "incorrectAnswers": [
-      "{{ru-RU|она|ona|}}",
-      "{{ru-RU|мы|my|}}",
-      "{{ru-RU|вы|vy|}}"
+      "{{ru-RU|она|ona|O-na}}",
+      "{{ru-RU|мы|my|MY}}",
+      "{{ru-RU|вы|vy|VY}}"
     ],
     "explanation": "'он' is used for 'he'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5767,11 +5767,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'she'?",
-    "correctAnswer": "{{ru-RU|она|ona|}}",
+    "correctAnswer": "{{ru-RU|она|ona|O-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|мы|my|}}",
-      "{{ru-RU|вы|vy|}}",
-      "{{ru-RU|они|oni|}}"
+      "{{ru-RU|мы|my|MY}}",
+      "{{ru-RU|вы|vy|VY}}",
+      "{{ru-RU|они|oni|O-ni}}"
     ],
     "explanation": "'она' is used for 'she'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5788,11 +5788,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'we'?",
-    "correctAnswer": "{{ru-RU|мы|my|}}",
+    "correctAnswer": "{{ru-RU|мы|my|MY}}",
     "incorrectAnswers": [
-      "{{ru-RU|вы|vy|}}",
-      "{{ru-RU|они|oni|}}",
-      "{{ru-RU|я|ya|}}"
+      "{{ru-RU|вы|vy|VY}}",
+      "{{ru-RU|они|oni|O-ni}}",
+      "{{ru-RU|я|ya|YA}}"
     ],
     "explanation": "'мы' is used for 'we'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5809,11 +5809,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'you (plural)' in everyday use?",
-    "correctAnswer": "{{ru-RU|вы|vy|}}",
+    "correctAnswer": "{{ru-RU|вы|vy|VY}}",
     "incorrectAnswers": [
-      "{{ru-RU|они|oni|}}",
-      "{{ru-RU|я|ya|}}",
-      "{{ru-RU|ты|ty|}}"
+      "{{ru-RU|они|oni|O-ni}}",
+      "{{ru-RU|я|ya|YA}}",
+      "{{ru-RU|ты|ty|TY}}"
     ],
     "explanation": "'вы' is used for 'you (plural)'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5830,11 +5830,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'they'.",
-    "correctAnswer": "{{ru-RU|они|oni|}}",
+    "correctAnswer": "{{ru-RU|они|oni|O-ni}}",
     "incorrectAnswers": [
-      "{{ru-RU|я|ya|}}",
-      "{{ru-RU|ты|ty|}}",
-      "{{ru-RU|он|on|}}"
+      "{{ru-RU|я|ya|YA}}",
+      "{{ru-RU|ты|ty|TY}}",
+      "{{ru-RU|он|on|ON}}"
     ],
     "explanation": "'они' is used for 'they'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5851,11 +5851,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'my'?",
-    "correctAnswer": "{{ru-RU|мой|moy|}}",
+    "correctAnswer": "{{ru-RU|мой|moy|MOY}}",
     "incorrectAnswers": [
-      "{{ru-RU|твой|tvoy|}}",
-      "{{ru-RU|наш|nash|}}",
-      "{{ru-RU|их|ikh|}}"
+      "{{ru-RU|твой|tvoy|TVOY}}",
+      "{{ru-RU|наш|nash|NASH}}",
+      "{{ru-RU|их|ikh|IKH}}"
     ],
     "explanation": "'мой' is used for 'my'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5872,11 +5872,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'your' in everyday use?",
-    "correctAnswer": "{{ru-RU|твой|tvoy|}}",
+    "correctAnswer": "{{ru-RU|твой|tvoy|TVOY}}",
     "incorrectAnswers": [
-      "{{ru-RU|наш|nash|}}",
-      "{{ru-RU|их|ikh|}}",
-      "{{ru-RU|мой|moy|}}"
+      "{{ru-RU|наш|nash|NASH}}",
+      "{{ru-RU|их|ikh|IKH}}",
+      "{{ru-RU|мой|moy|MOY}}"
     ],
     "explanation": "'твой' is used for 'your'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5893,11 +5893,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'our'.",
-    "correctAnswer": "{{ru-RU|наш|nash|}}",
+    "correctAnswer": "{{ru-RU|наш|nash|NASH}}",
     "incorrectAnswers": [
-      "{{ru-RU|их|ikh|}}",
-      "{{ru-RU|мой|moy|}}",
-      "{{ru-RU|твой|tvoy|}}"
+      "{{ru-RU|их|ikh|IKH}}",
+      "{{ru-RU|мой|moy|MOY}}",
+      "{{ru-RU|твой|tvoy|TVOY}}"
     ],
     "explanation": "'наш' is used for 'our'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5914,11 +5914,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'their'?",
-    "correctAnswer": "{{ru-RU|их|ikh|}}",
+    "correctAnswer": "{{ru-RU|их|ikh|IKH}}",
     "incorrectAnswers": [
-      "{{ru-RU|мой|moy|}}",
-      "{{ru-RU|твой|tvoy|}}",
-      "{{ru-RU|наш|nash|}}"
+      "{{ru-RU|мой|moy|MOY}}",
+      "{{ru-RU|твой|tvoy|TVOY}}",
+      "{{ru-RU|наш|nash|NASH}}"
     ],
     "explanation": "'их' is used for 'their'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5935,11 +5935,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'doctor'?",
-    "correctAnswer": "{{ru-RU|врач|vrach|}}",
+    "correctAnswer": "{{ru-RU|врач|vrach|VRACH}}",
     "incorrectAnswers": [
-      "{{ru-RU|больница|bolnitsa|}}",
-      "{{ru-RU|аптека|apteka|}}",
-      "{{ru-RU|боль|bol|}}"
+      "{{ru-RU|больница|bolnitsa|bol-NI-tsa}}",
+      "{{ru-RU|аптека|apteka|ap-TE-ka}}",
+      "{{ru-RU|боль|bol|BOL}}"
     ],
     "explanation": "'врач' means 'doctor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -5957,11 +5957,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'hospital' in everyday use?",
-    "correctAnswer": "{{ru-RU|больница|bolnitsa|}}",
+    "correctAnswer": "{{ru-RU|больница|bolnitsa|bol-NI-tsa}}",
     "incorrectAnswers": [
-      "{{ru-RU|аптека|apteka|}}",
-      "{{ru-RU|боль|bol|}}",
-      "{{ru-RU|помощь|pomoshch|}}"
+      "{{ru-RU|аптека|apteka|ap-TE-ka}}",
+      "{{ru-RU|боль|bol|BOL}}",
+      "{{ru-RU|помощь|pomoshch|po-MOSHCH}}"
     ],
     "explanation": "'больница' means 'hospital'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -5979,11 +5979,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'pharmacy'.",
-    "correctAnswer": "{{ru-RU|аптека|apteka|}}",
+    "correctAnswer": "{{ru-RU|аптека|apteka|ap-TE-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|боль|bol|}}",
-      "{{ru-RU|помощь|pomoshch|}}",
-      "{{ru-RU|полиция|politsiya|}}"
+      "{{ru-RU|боль|bol|BOL}}",
+      "{{ru-RU|помощь|pomoshch|po-MOSHCH}}",
+      "{{ru-RU|полиция|politsiya|po-LI-tsiya}}"
     ],
     "explanation": "'аптека' means 'pharmacy'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6001,11 +6001,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'pain'?",
-    "correctAnswer": "{{ru-RU|боль|bol|}}",
+    "correctAnswer": "{{ru-RU|боль|bol|BOL}}",
     "incorrectAnswers": [
-      "{{ru-RU|помощь|pomoshch|}}",
-      "{{ru-RU|полиция|politsiya|}}",
-      "{{ru-RU|пожар|pozhar|}}"
+      "{{ru-RU|помощь|pomoshch|po-MOSHCH}}",
+      "{{ru-RU|полиция|politsiya|po-LI-tsiya}}",
+      "{{ru-RU|пожар|pozhar|poz-HAR}}"
     ],
     "explanation": "'боль' means 'pain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6023,11 +6023,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'help'?",
-    "correctAnswer": "{{ru-RU|помощь|pomoshch|}}",
+    "correctAnswer": "{{ru-RU|помощь|pomoshch|po-MOSHCH}}",
     "incorrectAnswers": [
-      "{{ru-RU|полиция|politsiya|}}",
-      "{{ru-RU|пожар|pozhar|}}",
-      "{{ru-RU|больной|bolnoy|}}"
+      "{{ru-RU|полиция|politsiya|po-LI-tsiya}}",
+      "{{ru-RU|пожар|pozhar|poz-HAR}}",
+      "{{ru-RU|больной|bolnoy|BOL-noy}}"
     ],
     "explanation": "'помощь' means 'help'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6045,11 +6045,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'police' in everyday use?",
-    "correctAnswer": "{{ru-RU|полиция|politsiya|}}",
+    "correctAnswer": "{{ru-RU|полиция|politsiya|po-LI-tsiya}}",
     "incorrectAnswers": [
-      "{{ru-RU|пожар|pozhar|}}",
-      "{{ru-RU|больной|bolnoy|}}",
-      "{{ru-RU|лекарство|lekarstvo|}}"
+      "{{ru-RU|пожар|pozhar|poz-HAR}}",
+      "{{ru-RU|больной|bolnoy|BOL-noy}}",
+      "{{ru-RU|лекарство|lekarstvo|le-KARST-vo}}"
     ],
     "explanation": "'полиция' means 'police'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6067,11 +6067,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'fire'.",
-    "correctAnswer": "{{ru-RU|пожар|pozhar|}}",
+    "correctAnswer": "{{ru-RU|пожар|pozhar|poz-HAR}}",
     "incorrectAnswers": [
-      "{{ru-RU|больной|bolnoy|}}",
-      "{{ru-RU|лекарство|lekarstvo|}}",
-      "{{ru-RU|врач|vrach|}}"
+      "{{ru-RU|больной|bolnoy|BOL-noy}}",
+      "{{ru-RU|лекарство|lekarstvo|le-KARST-vo}}",
+      "{{ru-RU|врач|vrach|VRACH}}"
     ],
     "explanation": "'пожар' means 'fire'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6089,11 +6089,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'sick'?",
-    "correctAnswer": "{{ru-RU|больной|bolnoy|}}",
+    "correctAnswer": "{{ru-RU|больной|bolnoy|BOL-noy}}",
     "incorrectAnswers": [
-      "{{ru-RU|лекарство|lekarstvo|}}",
-      "{{ru-RU|врач|vrach|}}",
-      "{{ru-RU|больница|bolnitsa|}}"
+      "{{ru-RU|лекарство|lekarstvo|le-KARST-vo}}",
+      "{{ru-RU|врач|vrach|VRACH}}",
+      "{{ru-RU|больница|bolnitsa|bol-NI-tsa}}"
     ],
     "explanation": "'больной' means 'sick'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6111,11 +6111,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'medicine'?",
-    "correctAnswer": "{{ru-RU|лекарство|lekarstvo|}}",
+    "correctAnswer": "{{ru-RU|лекарство|lekarstvo|le-KARST-vo}}",
     "incorrectAnswers": [
-      "{{ru-RU|врач|vrach|}}",
-      "{{ru-RU|больница|bolnitsa|}}",
-      "{{ru-RU|аптека|apteka|}}"
+      "{{ru-RU|врач|vrach|VRACH}}",
+      "{{ru-RU|больница|bolnitsa|bol-NI-tsa}}",
+      "{{ru-RU|аптека|apteka|ap-TE-ka}}"
     ],
     "explanation": "'лекарство' means 'medicine'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6133,11 +6133,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'school'?",
-    "correctAnswer": "{{ru-RU|школа|shkola|}}",
+    "correctAnswer": "{{ru-RU|школа|shkola|SHKO-la}}",
     "incorrectAnswers": [
-      "{{ru-RU|учитель|uchitel|}}",
-      "{{ru-RU|студент|student|}}",
-      "{{ru-RU|книга|kniga|}}"
+      "{{ru-RU|учитель|uchitel|u-CHI-tel}}",
+      "{{ru-RU|студент|student|stu-DENT}}",
+      "{{ru-RU|книга|kniga|KNI-ga}}"
     ],
     "explanation": "'школа' means 'school'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6155,11 +6155,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'teacher' in everyday use?",
-    "correctAnswer": "{{ru-RU|учитель|uchitel|}}",
+    "correctAnswer": "{{ru-RU|учитель|uchitel|u-CHI-tel}}",
     "incorrectAnswers": [
-      "{{ru-RU|студент|student|}}",
-      "{{ru-RU|книга|kniga|}}",
-      "{{ru-RU|ручка|ruchka|}}"
+      "{{ru-RU|студент|student|stu-DENT}}",
+      "{{ru-RU|книга|kniga|KNI-ga}}",
+      "{{ru-RU|ручка|ruchka|RUCH-ka}}"
     ],
     "explanation": "'учитель' means 'teacher'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6177,11 +6177,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'student'.",
-    "correctAnswer": "{{ru-RU|студент|student|}}",
+    "correctAnswer": "{{ru-RU|студент|student|stu-DENT}}",
     "incorrectAnswers": [
-      "{{ru-RU|книга|kniga|}}",
-      "{{ru-RU|ручка|ruchka|}}",
-      "{{ru-RU|бумага|bumaga|}}"
+      "{{ru-RU|книга|kniga|KNI-ga}}",
+      "{{ru-RU|ручка|ruchka|RUCH-ka}}",
+      "{{ru-RU|бумага|bumaga|bu-MA-ga}}"
     ],
     "explanation": "'студент' means 'student'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6199,11 +6199,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'book'?",
-    "correctAnswer": "{{ru-RU|книга|kniga|}}",
+    "correctAnswer": "{{ru-RU|книга|kniga|KNI-ga}}",
     "incorrectAnswers": [
-      "{{ru-RU|ручка|ruchka|}}",
-      "{{ru-RU|бумага|bumaga|}}",
-      "{{ru-RU|класс|klass|}}"
+      "{{ru-RU|ручка|ruchka|RUCH-ka}}",
+      "{{ru-RU|бумага|bumaga|bu-MA-ga}}",
+      "{{ru-RU|класс|klass|KLASS}}"
     ],
     "explanation": "'книга' means 'book'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6221,11 +6221,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'pen'?",
-    "correctAnswer": "{{ru-RU|ручка|ruchka|}}",
+    "correctAnswer": "{{ru-RU|ручка|ruchka|RUCH-ka}}",
     "incorrectAnswers": [
-      "{{ru-RU|бумага|bumaga|}}",
-      "{{ru-RU|класс|klass|}}",
-      "{{ru-RU|офис|ofis|}}"
+      "{{ru-RU|бумага|bumaga|bu-MA-ga}}",
+      "{{ru-RU|класс|klass|KLASS}}",
+      "{{ru-RU|офис|ofis|o-FIS}}"
     ],
     "explanation": "'ручка' means 'pen'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6243,11 +6243,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'paper' in everyday use?",
-    "correctAnswer": "{{ru-RU|бумага|bumaga|}}",
+    "correctAnswer": "{{ru-RU|бумага|bumaga|bu-MA-ga}}",
     "incorrectAnswers": [
-      "{{ru-RU|класс|klass|}}",
-      "{{ru-RU|офис|ofis|}}",
-      "{{ru-RU|деньги|dengi|}}"
+      "{{ru-RU|класс|klass|KLASS}}",
+      "{{ru-RU|офис|ofis|o-FIS}}",
+      "{{ru-RU|деньги|dengi|DEN-gi}}"
     ],
     "explanation": "'бумага' means 'paper'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6265,11 +6265,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'class'.",
-    "correctAnswer": "{{ru-RU|класс|klass|}}",
+    "correctAnswer": "{{ru-RU|класс|klass|KLASS}}",
     "incorrectAnswers": [
-      "{{ru-RU|офис|ofis|}}",
-      "{{ru-RU|деньги|dengi|}}",
-      "{{ru-RU|магазин|magazin|}}"
+      "{{ru-RU|офис|ofis|o-FIS}}",
+      "{{ru-RU|деньги|dengi|DEN-gi}}",
+      "{{ru-RU|магазин|magazin|ma-GA-zin}}"
     ],
     "explanation": "'класс' means 'class'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6287,11 +6287,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'office'?",
-    "correctAnswer": "{{ru-RU|офис|ofis|}}",
+    "correctAnswer": "{{ru-RU|офис|ofis|o-FIS}}",
     "incorrectAnswers": [
-      "{{ru-RU|деньги|dengi|}}",
-      "{{ru-RU|магазин|magazin|}}",
-      "{{ru-RU|цена|tsena|}}"
+      "{{ru-RU|деньги|dengi|DEN-gi}}",
+      "{{ru-RU|магазин|magazin|ma-GA-zin}}",
+      "{{ru-RU|цена|tsena|TSE-na}}"
     ],
     "explanation": "'офис' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6309,11 +6309,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'money'?",
-    "correctAnswer": "{{ru-RU|деньги|dengi|}}",
+    "correctAnswer": "{{ru-RU|деньги|dengi|DEN-gi}}",
     "incorrectAnswers": [
-      "{{ru-RU|магазин|magazin|}}",
-      "{{ru-RU|цена|tsena|}}",
-      "{{ru-RU|работа|rabota|}}"
+      "{{ru-RU|магазин|magazin|ma-GA-zin}}",
+      "{{ru-RU|цена|tsena|TSE-na}}",
+      "{{ru-RU|работа|rabota|ra-BO-ta}}"
     ],
     "explanation": "'деньги' means 'money'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6331,11 +6331,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'shop' in everyday use?",
-    "correctAnswer": "{{ru-RU|магазин|magazin|}}",
+    "correctAnswer": "{{ru-RU|магазин|magazin|ma-GA-zin}}",
     "incorrectAnswers": [
-      "{{ru-RU|цена|tsena|}}",
-      "{{ru-RU|работа|rabota|}}",
-      "{{ru-RU|школа|shkola|}}"
+      "{{ru-RU|цена|tsena|TSE-na}}",
+      "{{ru-RU|работа|rabota|ra-BO-ta}}",
+      "{{ru-RU|школа|shkola|SHKO-la}}"
     ],
     "explanation": "'магазин' means 'shop'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6353,11 +6353,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'price'.",
-    "correctAnswer": "{{ru-RU|цена|tsena|}}",
+    "correctAnswer": "{{ru-RU|цена|tsena|TSE-na}}",
     "incorrectAnswers": [
-      "{{ru-RU|работа|rabota|}}",
-      "{{ru-RU|школа|shkola|}}",
-      "{{ru-RU|учитель|uchitel|}}"
+      "{{ru-RU|работа|rabota|ra-BO-ta}}",
+      "{{ru-RU|школа|shkola|SHKO-la}}",
+      "{{ru-RU|учитель|uchitel|u-CHI-tel}}"
     ],
     "explanation": "'цена' means 'price'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6375,11 +6375,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'job'?",
-    "correctAnswer": "{{ru-RU|работа|rabota|}}",
+    "correctAnswer": "{{ru-RU|работа|rabota|ra-BO-ta}}",
     "incorrectAnswers": [
-      "{{ru-RU|школа|shkola|}}",
-      "{{ru-RU|учитель|uchitel|}}",
-      "{{ru-RU|студент|student|}}"
+      "{{ru-RU|школа|shkola|SHKO-la}}",
+      "{{ru-RU|учитель|uchitel|u-CHI-tel}}",
+      "{{ru-RU|студент|student|stu-DENT}}"
     ],
     "explanation": "'работа' means 'job'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6397,11 +6397,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'age'?",
-    "correctAnswer": "{{ru-RU|возраст|vozrast|}}",
+    "correctAnswer": "{{ru-RU|возраст|vozrast|voz-RAST}}",
     "incorrectAnswers": [
-      "{{ru-RU|адрес|adres|}}",
-      "{{ru-RU|телефон|telefon|}}",
-      "{{ru-RU|интернет|internet|}}"
+      "{{ru-RU|адрес|adres|a-DRES}}",
+      "{{ru-RU|телефон|telefon|te-LE-fon}}",
+      "{{ru-RU|интернет|internet|in-TER-net}}"
     ],
     "explanation": "'возраст' means 'age'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6419,11 +6419,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Which Russian word means 'address' in everyday use?",
-    "correctAnswer": "{{ru-RU|адрес|adres|}}",
+    "correctAnswer": "{{ru-RU|адрес|adres|a-DRES}}",
     "incorrectAnswers": [
-      "{{ru-RU|телефон|telefon|}}",
-      "{{ru-RU|интернет|internet|}}",
-      "{{ru-RU|электронная почта|elektronnaya pochta|}}"
+      "{{ru-RU|телефон|telefon|te-LE-fon}}",
+      "{{ru-RU|интернет|internet|in-TER-net}}",
+      "{{ru-RU|электронная почта|elektronnaya pochta|e-lek-TRON-naya POCH-ta}}"
     ],
     "explanation": "'адрес' means 'address'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6441,11 +6441,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "Choose the Russian word for 'phone'.",
-    "correctAnswer": "{{ru-RU|телефон|telefon|}}",
+    "correctAnswer": "{{ru-RU|телефон|telefon|te-LE-fon}}",
     "incorrectAnswers": [
-      "{{ru-RU|интернет|internet|}}",
-      "{{ru-RU|электронная почта|elektronnaya pochta|}}",
-      "{{ru-RU|возраст|vozrast|}}"
+      "{{ru-RU|интернет|internet|in-TER-net}}",
+      "{{ru-RU|электронная почта|elektronnaya pochta|e-lek-TRON-naya POCH-ta}}",
+      "{{ru-RU|возраст|vozrast|voz-RAST}}"
     ],
     "explanation": "'телефон' means 'phone'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6463,11 +6463,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Russian word for 'internet'?",
-    "correctAnswer": "{{ru-RU|интернет|internet|}}",
+    "correctAnswer": "{{ru-RU|интернет|internet|in-TER-net}}",
     "incorrectAnswers": [
-      "{{ru-RU|электронная почта|elektronnaya pochta|}}",
-      "{{ru-RU|возраст|vozrast|}}",
-      "{{ru-RU|адрес|adres|}}"
+      "{{ru-RU|электронная почта|elektronnaya pochta|e-lek-TRON-naya POCH-ta}}",
+      "{{ru-RU|возраст|vozrast|voz-RAST}}",
+      "{{ru-RU|адрес|adres|a-DRES}}"
     ],
     "explanation": "'интернет' means 'internet'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6485,11 +6485,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "core",
     "question": "In beginner Russian, how do you say 'email'?",
-    "correctAnswer": "{{ru-RU|электронная почта|elektronnaya pochta|}}",
+    "correctAnswer": "{{ru-RU|электронная почта|elektronnaya pochta|e-lek-TRON-naya POCH-ta}}",
     "incorrectAnswers": [
-      "{{ru-RU|возраст|vozrast|}}",
-      "{{ru-RU|адрес|adres|}}",
-      "{{ru-RU|телефон|telefon|}}"
+      "{{ru-RU|возраст|vozrast|voz-RAST}}",
+      "{{ru-RU|адрес|adres|a-DRES}}",
+      "{{ru-RU|телефон|telefon|te-LE-fon}}"
     ],
     "explanation": "'электронная почта' means 'email'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [

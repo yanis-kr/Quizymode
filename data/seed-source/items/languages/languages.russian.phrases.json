@@ -5,11 +5,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I would like a coffee, please' in Russian?",
-    "correctAnswer": "{{ru-RU|Я бы хотел(а) кофе, пожалуйста.|Ya by khotel(a) kofe, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Я бы хотел(а) кофе, пожалуйста.|Ya by khotel(a) kofe, pozhaluysta.|YA BY kho-TEL(A) KO-fe, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Дай мне кофе.|Day mne kofe.|}}",
-      "{{ru-RU|Кофе сейчас!|Kofe seychas!|}}",
-      "{{ru-RU|Я пью кофе.|Ya pyu kofe.|}}"
+      "{{ru-RU|Дай мне кофе.|Day mne kofe.|DAY MNE KO-fe.}}",
+      "{{ru-RU|Кофе сейчас!|Kofe seychas!|KO-fe sey-CHAS!}}",
+      "{{ru-RU|Я пью кофе.|Ya pyu kofe.|YA PYU KO-fe.}}"
     ],
     "explanation": "'Ya by khotel(a)' is the polite conditional 'I would like'. Add -a for female speaker.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Russian?",
-    "correctAnswer": "{{ru-RU|Где туалет?|Gde tualet?|}}",
+    "correctAnswer": "{{ru-RU|Где туалет?|Gde tualet?|GDE tua-LET?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Что такое туалет?|Chto takoye tualet?|}}",
-      "{{ru-RU|Когда открыт туалет?|Kogda otkryt tualet?|}}",
-      "{{ru-RU|Есть ли туалет?|Yest li tualet?|}}"
+      "{{ru-RU|Что такое туалет?|Chto takoye tualet?|CHTO TA-koye tua-LET?}}",
+      "{{ru-RU|Когда открыт туалет?|Kogda otkryt tualet?|KOG-da ot-KRYT tua-LET?}}",
+      "{{ru-RU|Есть ли туалет?|Yest li tualet?|YEST LI tua-LET?}}"
     ],
     "explanation": "'Gde' means 'where'. 'Gde tualet?' is the most practical phrase for any traveller.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Russian?",
-    "correctAnswer": "{{ru-RU|Сколько это стоит?|Skolko eto stoit?|}}",
+    "correctAnswer": "{{ru-RU|Сколько это стоит?|Skolko eto stoit?|SKOL-ko E-to STOIT?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Что это такое?|Chto eto takoye?|}}",
-      "{{ru-RU|Где это купить?|Gde eto kupit?|}}",
-      "{{ru-RU|Можно скидку?|Mozhno skidku?|}}"
+      "{{ru-RU|Что это такое?|Chto eto takoye?|CHTO E-to TA-koye?}}",
+      "{{ru-RU|Где это купить?|Gde eto kupit?|GDE E-to ku-PIT?}}",
+      "{{ru-RU|Можно скидку?|Mozhno skidku?|MOZH-no SKID-ku?}}"
     ],
     "explanation": "'Skolko eto stoit?' — literally 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in a Russian restaurant?",
-    "correctAnswer": "{{ru-RU|Счёт, пожалуйста.|Schyot, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Счёт, пожалуйста.|Schyot, pozhaluysta.|SCHYOT, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Дайте меню.|Dayte menyu.|}}",
-      "{{ru-RU|Ещё одно блюдо.|Yeshchyo odno blyudo.|}}",
-      "{{ru-RU|Где касса?|Gde kassa?|}}"
+      "{{ru-RU|Дайте меню.|Dayte menyu.|DAY-te ME-nyu.}}",
+      "{{ru-RU|Ещё одно блюдо.|Yeshchyo odno blyudo.|YESH-chyo OD-no BLYU-do.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}"
     ],
     "explanation": "'Schyot' means 'the bill/check'. Adding 'pozhaluysta' makes it polite.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Russian?",
-    "correctAnswer": "{{ru-RU|Я не понимаю.|Ya ne ponimayu.|}}",
+    "correctAnswer": "{{ru-RU|Я не понимаю.|Ya ne ponimayu.|YA NE po-NI-mayu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я не знаю.|Ya ne znayu.|}}",
-      "{{ru-RU|Я не говорю.|Ya ne govoryu.|}}",
-      "{{ru-RU|Я не слышу.|Ya ne slyshu.|}}"
+      "{{ru-RU|Я не знаю.|Ya ne znayu.|YA NE ZNAYU.}}",
+      "{{ru-RU|Я не говорю.|Ya ne govoryu.|YA NE go-VO-ryu.}}",
+      "{{ru-RU|Я не слышу.|Ya ne slyshu.|YA NE SLY-shu.}}"
     ],
     "explanation": "'Ya ne ponimayu' is essential when you need to signal you've lost the thread.",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the metro station?' in Russian?",
-    "correctAnswer": "{{ru-RU|Где метро?|Gde metro?|}}",
+    "correctAnswer": "{{ru-RU|Где метро?|Gde metro?|GDE ME-tro?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как добраться?|Kak dobratsa?|}}",
-      "{{ru-RU|Далеко ли отсюда?|Daleko li otsyuda?|}}",
-      "{{ru-RU|Остановите здесь.|Ostanovite zdes.|}}"
+      "{{ru-RU|Как добраться?|Kak dobratsa?|KAK do-BRA-tsa?}}",
+      "{{ru-RU|Далеко ли отсюда?|Daleko li otsyuda?|da-LE-ko LI o-TSYU-da?}}",
+      "{{ru-RU|Остановите здесь.|Ostanovite zdes.|os-ta-no-VI-te ZDES.}}"
     ],
     "explanation": "'Gde metro?' — swap 'metro' for any destination: vokzal (station), aeroporty (airport), etc.",
     "keywords": [
@@ -124,11 +124,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Russian?",
-    "correctAnswer": "{{ru-RU|Вы говорите по-английски?|Vy govorite po-angliyski?|}}",
+    "correctAnswer": "{{ru-RU|Вы говорите по-английски?|Vy govorite po-angliyski?|VY go-vo-RI-te PO-an-GLIYS-ki?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вы понимаете меня?|Vy ponimaete menya?|}}",
-      "{{ru-RU|Вы знаете английский?|Vy znaete angliyskiy?|}}",
-      "{{ru-RU|Говорите медленно.|Govorite medlenno.|}}"
+      "{{ru-RU|Вы понимаете меня?|Vy ponimaete menya?|VY po-ni-MAE-te ME-nya?}}",
+      "{{ru-RU|Вы знаете английский?|Vy znaete angliyskiy?|VY ZNAE-te an-GLIYS-kiy?}}",
+      "{{ru-RU|Говорите медленно.|Govorite medlenno.|go-vo-RI-te med-LEN-no.}}"
     ],
     "explanation": "'Vy govorite po-angliyski?' is the polite form — use 'ty' form with friends.",
     "keywords": [
@@ -143,11 +143,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Good evening.'?",
-    "correctAnswer": "{{ru-RU|Добрый вечер.|Dobryy vecher.|}}",
+    "correctAnswer": "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как дела?|Kak dela?|}}",
-      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|}}",
-      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|}}"
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -163,11 +163,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'How are you?'?",
-    "correctAnswer": "{{ru-RU|Как дела?|Kak dela?|}}",
+    "correctAnswer": "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|}}",
-      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|}}",
-      "{{ru-RU|До скорого.|Do skorogo.|}}"
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -183,11 +183,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|}}",
+    "correctAnswer": "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|}}",
-      "{{ru-RU|До скорого.|Do skorogo.|}}",
-      "{{ru-RU|До завтра.|Do zavtra.|}}"
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -203,11 +203,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Very well, thanks.'?",
-    "correctAnswer": "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|}}",
+    "correctAnswer": "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
     "incorrectAnswers": [
-      "{{ru-RU|До скорого.|Do skorogo.|}}",
-      "{{ru-RU|До завтра.|Do zavtra.|}}",
-      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|}}"
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -223,11 +223,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'See you later.'?",
-    "correctAnswer": "{{ru-RU|До скорого.|Do skorogo.|}}",
+    "correctAnswer": "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
     "incorrectAnswers": [
-      "{{ru-RU|До завтра.|Do zavtra.|}}",
-      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|}}",
-      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|}}"
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -243,11 +243,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'See you tomorrow.'?",
-    "correctAnswer": "{{ru-RU|До завтра.|Do zavtra.|}}",
+    "correctAnswer": "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|}}",
-      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|}}",
-      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|}}"
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -263,11 +263,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Have a good day.'.",
-    "correctAnswer": "{{ru-RU|Хорошего дня.|Khoroshego dnya.|}}",
+    "correctAnswer": "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|}}",
-      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|}}",
-      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|}}"
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -283,11 +283,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Welcome.'?",
-    "correctAnswer": "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|}}",
+    "correctAnswer": "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|}}",
-      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|}}",
-      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|}}"
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -303,11 +303,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|}}",
+    "correctAnswer": "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|}}",
-      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|}}",
-      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|}}"
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -323,11 +323,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Nice to see you again.'?",
-    "correctAnswer": "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|}}",
+    "correctAnswer": "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
     "incorrectAnswers": [
-      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|}}",
-      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|}}",
-      "{{ru-RU|Добрый вечер.|Dobryy vecher.|}}"
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'See you soon.'.",
-    "correctAnswer": "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|}}",
+    "correctAnswer": "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|}}",
-      "{{ru-RU|Добрый вечер.|Dobryy vecher.|}}",
-      "{{ru-RU|Как дела?|Kak dela?|}}"
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -363,11 +363,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Have a nice evening.'?",
-    "correctAnswer": "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|}}",
+    "correctAnswer": "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Добрый вечер.|Dobryy vecher.|}}",
-      "{{ru-RU|Как дела?|Kak dela?|}}",
-      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|}}"
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -383,11 +383,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'What is your name?'?",
-    "correctAnswer": "{{ru-RU|Как вас зовут?|Kak vas zovut?|}}",
+    "correctAnswer": "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я из США.|Ya iz SShA.|}}",
-      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|}}",
-      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|}}"
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -403,11 +403,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I am from the United States.'?",
-    "correctAnswer": "{{ru-RU|Я из США.|Ya iz SShA.|}}",
+    "correctAnswer": "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|}}",
-      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|}}",
-      "{{ru-RU|Это мой друг.|Eto moy drug.|}}"
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -423,11 +423,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I live in Chicago.'.",
-    "correctAnswer": "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|}}",
+    "correctAnswer": "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|}}",
-      "{{ru-RU|Это мой друг.|Eto moy drug.|}}",
-      "{{ru-RU|Это моя сестра.|Eto moya sestra.|}}"
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -443,11 +443,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am twenty years old.'?",
-    "correctAnswer": "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|}}",
+    "correctAnswer": "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это мой друг.|Eto moy drug.|}}",
-      "{{ru-RU|Это моя сестра.|Eto moya sestra.|}}",
-      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|}}"
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -463,11 +463,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'This is my friend.'?",
-    "correctAnswer": "{{ru-RU|Это мой друг.|Eto moy drug.|}}",
+    "correctAnswer": "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это моя сестра.|Eto moya sestra.|}}",
-      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|}}",
-      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|}}"
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -483,11 +483,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'This is my sister.'?",
-    "correctAnswer": "{{ru-RU|Это моя сестра.|Eto moya sestra.|}}",
+    "correctAnswer": "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|}}",
-      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|}}",
-      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|}}"
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -503,11 +503,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I am married.'.",
-    "correctAnswer": "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|}}",
+    "correctAnswer": "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|}}",
-      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|}}",
-      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|}}"
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -523,11 +523,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am a student.'?",
-    "correctAnswer": "{{ru-RU|Я студент/студентка.|Ya student/studentka.|}}",
+    "correctAnswer": "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|}}",
-      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|}}",
-      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|}}"
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -543,11 +543,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|}}",
+    "correctAnswer": "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|}}",
-      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|}}",
-      "{{ru-RU|Мой адрес...|Moy adres...|}}"
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|}}",
+    "correctAnswer": "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|}}",
-      "{{ru-RU|Мой адрес...|Moy adres...|}}",
-      "{{ru-RU|Как вас зовут?|Kak vas zovut?|}}"
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -583,11 +583,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'My phone number is...'.",
-    "correctAnswer": "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|}}",
+    "correctAnswer": "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мой адрес...|Moy adres...|}}",
-      "{{ru-RU|Как вас зовут?|Kak vas zovut?|}}",
-      "{{ru-RU|Я из США.|Ya iz SShA.|}}"
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -603,11 +603,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'My address is...'?",
-    "correctAnswer": "{{ru-RU|Мой адрес...|Moy adres...|}}",
+    "correctAnswer": "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как вас зовут?|Kak vas zovut?|}}",
-      "{{ru-RU|Я из США.|Ya iz SShA.|}}",
-      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|}}"
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -623,11 +623,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I need water.'?",
-    "correctAnswer": "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|}}",
-      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|}}",
-      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|}}"
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -643,11 +643,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I need a map.'?",
-    "correctAnswer": "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|}}",
-      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|}}",
-      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|}}"
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -663,11 +663,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I need a taxi.'.",
-    "correctAnswer": "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|}}",
-      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|}}",
-      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|}}"
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -683,11 +683,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I need a room.'?",
-    "correctAnswer": "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|}}",
-      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|}}",
-      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|}}"
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -703,11 +703,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|}}",
-      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|}}",
-      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|}}"
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -723,11 +723,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Do you have bread?'?",
-    "correctAnswer": "{{ru-RU|У вас есть хлеб?|U vas est khleb?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|}}",
-      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|}}",
-      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|}}"
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -743,11 +743,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Can I have the menu?'.",
-    "correctAnswer": "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|}}",
+    "correctAnswer": "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|}}",
-      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|}}",
-      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|}}"
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -763,11 +763,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|}}",
+    "correctAnswer": "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|}}",
-      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|}}",
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}"
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|}}",
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
-      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|}}"
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -803,11 +803,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I need more time.'?",
-    "correctAnswer": "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
-      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|}}",
-      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|}}"
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -823,11 +823,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I need the receipt.'.",
-    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|}}",
-      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|}}",
-      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|}}"
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -843,11 +843,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|}}",
-      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|}}",
-      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|}}"
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -863,11 +863,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Where is the bank?'?",
-    "correctAnswer": "{{ru-RU|Где банк?|Gde bank?|}}",
+    "correctAnswer": "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где музей?|Gde muzey?|}}",
-      "{{ru-RU|Где центр города?|Gde tsentr goroda?|}}",
-      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|}}"
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -883,11 +883,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Where is the museum?'?",
-    "correctAnswer": "{{ru-RU|Где музей?|Gde muzey?|}}",
+    "correctAnswer": "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где центр города?|Gde tsentr goroda?|}}",
-      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|}}",
-      "{{ru-RU|Идите прямо.|Idite pryamo.|}}"
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -903,11 +903,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Where is the city center?'.",
-    "correctAnswer": "{{ru-RU|Где центр города?|Gde tsentr goroda?|}}",
+    "correctAnswer": "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|}}",
-      "{{ru-RU|Идите прямо.|Idite pryamo.|}}",
-      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|}}"
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -923,11 +923,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|}}",
+    "correctAnswer": "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Идите прямо.|Idite pryamo.|}}",
-      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|}}",
-      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|}}"
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -943,11 +943,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Go straight.'?",
-    "correctAnswer": "{{ru-RU|Идите прямо.|Idite pryamo.|}}",
+    "correctAnswer": "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|}}",
-      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|}}",
-      "{{ru-RU|Это далеко?|Eto daleko?|}}"
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -963,11 +963,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Take the first street.'?",
-    "correctAnswer": "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|}}",
+    "correctAnswer": "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|}}",
-      "{{ru-RU|Это далеко?|Eto daleko?|}}",
-      "{{ru-RU|Это близко?|Eto blizko?|}}"
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -983,11 +983,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Take the second street.'.",
-    "correctAnswer": "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|}}",
+    "correctAnswer": "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это далеко?|Eto daleko?|}}",
-      "{{ru-RU|Это близко?|Eto blizko?|}}",
-      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|}}"
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Is it far?'?",
-    "correctAnswer": "{{ru-RU|Это далеко?|Eto daleko?|}}",
+    "correctAnswer": "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это близко?|Eto blizko?|}}",
-      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|}}",
-      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|}}"
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1023,11 +1023,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Is it near?'?",
-    "correctAnswer": "{{ru-RU|Это близко?|Eto blizko?|}}",
+    "correctAnswer": "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|}}",
-      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|}}",
-      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|}}"
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1043,11 +1043,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I am lost.'?",
-    "correctAnswer": "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|}}",
+    "correctAnswer": "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|}}",
-      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|}}",
-      "{{ru-RU|Где банк?|Gde bank?|}}"
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1063,11 +1063,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|}}",
+    "correctAnswer": "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|}}",
-      "{{ru-RU|Где банк?|Gde bank?|}}",
-      "{{ru-RU|Где музей?|Gde muzey?|}}"
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1083,11 +1083,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Please show me on the map.'?",
-    "correctAnswer": "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где банк?|Gde bank?|}}",
-      "{{ru-RU|Где музей?|Gde muzey?|}}",
-      "{{ru-RU|Где центр города?|Gde tsentr goroda?|}}"
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1103,11 +1103,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "{{ru-RU|Можете повторить?|Mozhete povtorit?|}}",
+    "correctAnswer": "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|}}",
-      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|}}",
-      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|}}"
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1123,11 +1123,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|}}",
+    "correctAnswer": "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|}}",
-      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|}}",
-      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|}}"
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1143,11 +1143,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'How do you spell your name?'.",
-    "correctAnswer": "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|}}",
+    "correctAnswer": "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|}}",
-      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|}}",
-      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|}}"
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1163,11 +1163,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'The total is ten euros.'?",
-    "correctAnswer": "{{ru-RU|Всего десять евро.|Vsego desyat evro.|}}",
+    "correctAnswer": "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|}}",
-      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|}}",
-      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|}}"
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1183,11 +1183,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|}}",
+    "correctAnswer": "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|}}",
-      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|}}",
-      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|}}"
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1203,11 +1203,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Room number twelve.'?",
-    "correctAnswer": "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|}}",
+    "correctAnswer": "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|}}",
-      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|}}",
-      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|}}"
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Platform number four.'.",
-    "correctAnswer": "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|}}",
+    "correctAnswer": "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|}}",
-      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|}}",
-      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|}}"
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1243,11 +1243,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'A table for three, please.'?",
-    "correctAnswer": "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|}}",
-      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|}}",
-      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|}}"
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1263,11 +1263,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|}}",
-      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|}}",
-      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|}}"
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1283,11 +1283,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Can you write it down?'?",
-    "correctAnswer": "{{ru-RU|Можете это написать?|Mozhete eto napisat?|}}",
+    "correctAnswer": "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|}}",
-      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|}}",
-      "{{ru-RU|Можете повторить?|Mozhete povtorit?|}}"
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1303,11 +1303,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'What is today's date?'.",
-    "correctAnswer": "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|}}",
+    "correctAnswer": "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|}}",
-      "{{ru-RU|Можете повторить?|Mozhete povtorit?|}}",
-      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|}}"
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1323,11 +1323,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'One moment, please.'?",
-    "correctAnswer": "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можете повторить?|Mozhete povtorit?|}}",
-      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|}}",
-      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|}}"
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1343,11 +1343,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I am hungry.'?",
-    "correctAnswer": "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|}}",
+    "correctAnswer": "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я хочу пить.|Ya khochu pit.|}}",
-      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|}}",
-      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|}}"
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1363,11 +1363,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I am thirsty.'?",
-    "correctAnswer": "{{ru-RU|Я хочу пить.|Ya khochu pit.|}}",
+    "correctAnswer": "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|}}",
-      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|}}",
-      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|}}"
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1383,11 +1383,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'The menu, please.'.",
-    "correctAnswer": "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|}}",
-      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|}}",
-      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|}}"
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1403,11 +1403,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am vegetarian.'?",
-    "correctAnswer": "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|}}",
+    "correctAnswer": "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|}}",
-      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|}}",
-      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|}}"
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1423,11 +1423,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'No meat, please.'?",
-    "correctAnswer": "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|}}",
-      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|}}",
-      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|}}"
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Without sugar, please.'?",
-    "correctAnswer": "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|}}",
-      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|}}",
-      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|}}"
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1463,11 +1463,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'With milk, please.'.",
-    "correctAnswer": "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|}}",
-      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|}}",
-      "{{ru-RU|Суп холодный.|Sup kholodnyy.|}}"
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1483,11 +1483,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'It was delicious.'?",
-    "correctAnswer": "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|}}",
+    "correctAnswer": "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|}}",
-      "{{ru-RU|Суп холодный.|Sup kholodnyy.|}}",
-      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|}}"
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1503,11 +1503,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'This is very good.'?",
-    "correctAnswer": "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|}}",
+    "correctAnswer": "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Суп холодный.|Sup kholodnyy.|}}",
-      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|}}",
-      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|}}"
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1523,11 +1523,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'The soup is cold.'?",
-    "correctAnswer": "{{ru-RU|Суп холодный.|Sup kholodnyy.|}}",
+    "correctAnswer": "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|}}",
-      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|}}",
-      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|}}"
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1543,11 +1543,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|}}",
+    "correctAnswer": "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|}}",
-      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|}}",
-      "{{ru-RU|Я хочу пить.|Ya khochu pit.|}}"
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1563,11 +1563,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|}}",
-      "{{ru-RU|Я хочу пить.|Ya khochu pit.|}}",
-      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|}}"
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1583,11 +1583,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|}}",
-      "{{ru-RU|Можно примерить?|Mozhno primerit?|}}",
-      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|}}"
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1603,11 +1603,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можно примерить?|Mozhno primerit?|}}",
-      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|}}",
-      "{{ru-RU|Это дёшево.|Eto dyoshevo.|}}"
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1623,11 +1623,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Can I try it on?'.",
-    "correctAnswer": "{{ru-RU|Можно примерить?|Mozhno primerit?|}}",
+    "correctAnswer": "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|}}",
-      "{{ru-RU|Это дёшево.|Eto dyoshevo.|}}",
-      "{{ru-RU|Я это возьму.|Ya eto vozmu.|}}"
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1643,11 +1643,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'It is too expensive.'?",
-    "correctAnswer": "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|}}",
+    "correctAnswer": "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это дёшево.|Eto dyoshevo.|}}",
-      "{{ru-RU|Я это возьму.|Ya eto vozmu.|}}",
-      "{{ru-RU|Где касса?|Gde kassa?|}}"
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'It is cheap.'?",
-    "correctAnswer": "{{ru-RU|Это дёшево.|Eto dyoshevo.|}}",
+    "correctAnswer": "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я это возьму.|Ya eto vozmu.|}}",
-      "{{ru-RU|Где касса?|Gde kassa?|}}",
-      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|}}"
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1683,11 +1683,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I will take it.'?",
-    "correctAnswer": "{{ru-RU|Я это возьму.|Ya eto vozmu.|}}",
+    "correctAnswer": "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где касса?|Gde kassa?|}}",
-      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|}}",
-      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|}}"
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1703,11 +1703,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Where is the checkout?'.",
-    "correctAnswer": "{{ru-RU|Где касса?|Gde kassa?|}}",
+    "correctAnswer": "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|}}",
-      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|}}",
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}"
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1723,11 +1723,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am just looking.'?",
-    "correctAnswer": "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|}}",
+    "correctAnswer": "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|}}",
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
-      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|}}"
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1743,11 +1743,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|}}",
+    "correctAnswer": "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
-      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|}}",
-      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|}}"
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1763,11 +1763,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I need a receipt.'?",
-    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|}}",
-      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|}}",
-      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|}}"
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1783,11 +1783,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'This size is too small.'.",
-    "correctAnswer": "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|}}",
+    "correctAnswer": "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|}}",
-      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|}}",
-      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|}}"
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1803,11 +1803,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'This size is too big.'?",
-    "correctAnswer": "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|}}",
+    "correctAnswer": "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|}}",
-      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|}}",
-      "{{ru-RU|Можно примерить?|Mozhno primerit?|}}"
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1823,11 +1823,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|MNE nuz-HEN bi-LET V ae-RO-port.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|}}",
-      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|}}",
-      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|}}"
+      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1843,11 +1843,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|}}",
-      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|}}",
-      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|}}"
+      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1863,11 +1863,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|}}",
-      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|}}",
-      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|}}"
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Which platform is it?'?",
-    "correctAnswer": "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|}}",
+    "correctAnswer": "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|}}",
-      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|}}",
-      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|}}"
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1903,11 +1903,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Is this seat free?'?",
-    "correctAnswer": "{{ru-RU|Это место свободно?|Eto mesto svobodno?|}}",
+    "correctAnswer": "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|}}",
-      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|}}",
-      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|}}"
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1923,11 +1923,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Please call a taxi.'?",
-    "correctAnswer": "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|}}",
-      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|}}",
-      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|}}"
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1943,11 +1943,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|}}",
+    "correctAnswer": "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|}}",
-      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|}}",
-      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|}}"
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1963,11 +1963,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|}}",
+    "correctAnswer": "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|}}",
-      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|}}",
-      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|}}"
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}",
+      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1983,11 +1983,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'We get off here.'?",
-    "correctAnswer": "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|}}",
+    "correctAnswer": "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|}}",
-      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|}}",
-      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|}}"
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}",
+      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}",
+      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|av-TO-bus pri-BY-vaet V pol-DEN.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2003,11 +2003,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I missed the bus.'?",
-    "correctAnswer": "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|}}",
+    "correctAnswer": "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|}}",
-      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|}}",
-      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|}}"
+      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}",
+      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|av-TO-bus pri-BY-vaet V pol-DEN.}}",
+      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|MNE nuz-HEN bi-LET V ae-RO-port.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2023,11 +2023,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|}}",
+    "correctAnswer": "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|}}",
-      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|}}",
-      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|}}"
+      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|av-TO-bus pri-BY-vaet V pol-DEN.}}",
+      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|MNE nuz-HEN bi-LET V ae-RO-port.}}",
+      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2043,11 +2043,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|}}",
+    "correctAnswer": "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|av-TO-bus pri-BY-vaet V pol-DEN.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|}}",
-      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|}}",
-      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|}}"
+      "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|MNE nuz-HEN bi-LET V ae-RO-port.}}",
+      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2063,11 +2063,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I have a reservation.'?",
-    "correctAnswer": "{{ru-RU|У меня есть бронь.|U menya est bron.|}}",
+    "correctAnswer": "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|}}",
-      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|}}",
-      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|}}"
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2083,11 +2083,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Do you have a single room?'?",
-    "correctAnswer": "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
     "incorrectAnswers": [
-      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|}}",
-      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|}}",
-      "{{ru-RU|С номером проблема.|S nomerom problema.|}}"
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Do you have a double room?'.",
-    "correctAnswer": "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|}}",
+    "correctAnswer": "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|}}",
-      "{{ru-RU|С номером проблема.|S nomerom problema.|}}",
-      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|}}"
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2123,11 +2123,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|С номером проблема.|S nomerom problema.|}}",
-      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|}}",
-      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|}}"
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2143,11 +2143,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "{{ru-RU|С номером проблема.|S nomerom problema.|}}",
+    "correctAnswer": "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|}}",
-      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|}}",
-      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|}}"
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2163,11 +2163,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'The shower does not work.'?",
-    "correctAnswer": "{{ru-RU|Душ не работает.|Dush ne rabotaet.|}}",
+    "correctAnswer": "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
     "incorrectAnswers": [
-      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|}}",
-      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|}}",
-      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|}}"
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2183,11 +2183,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'The room is too cold.'.",
-    "correctAnswer": "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|}}",
+    "correctAnswer": "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|}}",
-      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|}}",
-      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|}}"
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2203,11 +2203,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I need clean towels.'?",
-    "correctAnswer": "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|}}",
-      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|}}",
-      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|}}"
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2223,11 +2223,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|}}",
+    "correctAnswer": "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|}}",
-      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|}}",
-      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|}}"
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2243,11 +2243,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Can I have another key?'?",
-    "correctAnswer": "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|}}",
+    "correctAnswer": "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|}}",
-      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|}}",
-      "{{ru-RU|У меня есть бронь.|U menya est bron.|}}"
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2263,11 +2263,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|}}",
+    "correctAnswer": "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|}}",
-      "{{ru-RU|У меня есть бронь.|U menya est bron.|}}",
-      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|}}"
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2283,11 +2283,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|}}",
+    "correctAnswer": "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня есть бронь.|U menya est bron.|}}",
-      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|}}",
-      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|}}"
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2303,11 +2303,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I feel sick.'?",
-    "correctAnswer": "{{ru-RU|Мне плохо.|Mne plokho.|}}",
+    "correctAnswer": "{{ru-RU|Мне плохо.|Mne plokho.|MNE PLOK-ho.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня болит голова.|U menya bolit golova.|}}",
-      "{{ru-RU|У меня температура.|U menya temperatura.|}}",
-      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|}}"
+      "{{ru-RU|У меня болит голова.|U menya bolit golova.|U ME-nya bo-LIT go-LO-va.}}",
+      "{{ru-RU|У меня температура.|U menya temperatura.|U ME-nya tem-pe-ra-TU-ra.}}",
+      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|MNE nuz-HEN VRACH.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I have a headache.'?",
-    "correctAnswer": "{{ru-RU|У меня болит голова.|U menya bolit golova.|}}",
+    "correctAnswer": "{{ru-RU|У меня болит голова.|U menya bolit golova.|U ME-nya bo-LIT go-LO-va.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня температура.|U menya temperatura.|}}",
-      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|}}",
-      "{{ru-RU|Где аптека?|Gde apteka?|}}"
+      "{{ru-RU|У меня температура.|U menya temperatura.|U ME-nya tem-pe-ra-TU-ra.}}",
+      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|MNE nuz-HEN VRACH.}}",
+      "{{ru-RU|Где аптека?|Gde apteka?|GDE ap-TE-ka?}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2343,11 +2343,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I have a fever.'.",
-    "correctAnswer": "{{ru-RU|У меня температура.|U menya temperatura.|}}",
+    "correctAnswer": "{{ru-RU|У меня температура.|U menya temperatura.|U ME-nya tem-pe-ra-TU-ra.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|}}",
-      "{{ru-RU|Где аптека?|Gde apteka?|}}",
-      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|}}"
+      "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|MNE nuz-HEN VRACH.}}",
+      "{{ru-RU|Где аптека?|Gde apteka?|GDE ap-TE-ka?}}",
+      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|U ME-nya al-LER-giya NA pe-ni-TSIL-lin.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2363,11 +2363,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I need a doctor.'?",
-    "correctAnswer": "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен врач.|Mne nuzhen vrach.|MNE nuz-HEN VRACH.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где аптека?|Gde apteka?|}}",
-      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|}}",
-      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|}}"
+      "{{ru-RU|Где аптека?|Gde apteka?|GDE ap-TE-ka?}}",
+      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|U ME-nya al-LER-giya NA pe-ni-TSIL-lin.}}",
+      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|U ME-nya bo-LIT zhi-VOT.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2383,11 +2383,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "{{ru-RU|Где аптека?|Gde apteka?|}}",
+    "correctAnswer": "{{ru-RU|Где аптека?|Gde apteka?|GDE ap-TE-ka?}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|}}",
-      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|}}",
-      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|}}"
+      "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|U ME-nya al-LER-giya NA pe-ni-TSIL-lin.}}",
+      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|U ME-nya bo-LIT zhi-VOT.}}",
+      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|MNE NUZH-no le-KARST-vo.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2403,11 +2403,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|}}",
+    "correctAnswer": "{{ru-RU|У меня аллергия на пенициллин.|U menya allergiya na penitsillin.|U ME-nya al-LER-giya NA pe-ni-TSIL-lin.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|}}",
-      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|}}",
-      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|}}"
+      "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|U ME-nya bo-LIT zhi-VOT.}}",
+      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|MNE NUZH-no le-KARST-vo.}}",
+      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|U ME-nya kruz-HI-tsya go-LO-va.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2423,11 +2423,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'My stomach hurts.'.",
-    "correctAnswer": "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|}}",
+    "correctAnswer": "{{ru-RU|У меня болит живот.|U menya bolit zhivot.|U ME-nya bo-LIT zhi-VOT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|}}",
-      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|}}",
-      "{{ru-RU|У меня простуда.|U menya prostuda.|}}"
+      "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|MNE NUZH-no le-KARST-vo.}}",
+      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|U ME-nya kruz-HI-tsya go-LO-va.}}",
+      "{{ru-RU|У меня простуда.|U menya prostuda.|U ME-nya pros-TU-da.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2443,11 +2443,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I need medicine.'?",
-    "correctAnswer": "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужно лекарство.|Mne nuzhno lekarstvo.|MNE NUZH-no le-KARST-vo.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|}}",
-      "{{ru-RU|У меня простуда.|U menya prostuda.|}}",
-      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|}}"
+      "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|U ME-nya kruz-HI-tsya go-LO-va.}}",
+      "{{ru-RU|У меня простуда.|U menya prostuda.|U ME-nya pros-TU-da.}}",
+      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|MNE NUZH-na bol-NI-tsa.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2463,11 +2463,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|}}",
+    "correctAnswer": "{{ru-RU|У меня кружится голова.|U menya kruzhitsya golova.|U ME-nya kruz-HI-tsya go-LO-va.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня простуда.|U menya prostuda.|}}",
-      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|}}",
-      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|}}"
+      "{{ru-RU|У меня простуда.|U menya prostuda.|U ME-nya pros-TU-da.}}",
+      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|MNE NUZH-na bol-NI-tsa.}}",
+      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|MNE UZ-he LUCH-she.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2483,11 +2483,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I have a cold.'?",
-    "correctAnswer": "{{ru-RU|У меня простуда.|U menya prostuda.|}}",
+    "correctAnswer": "{{ru-RU|У меня простуда.|U menya prostuda.|U ME-nya pros-TU-da.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|}}",
-      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|}}",
-      "{{ru-RU|Мне плохо.|Mne plokho.|}}"
+      "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|MNE NUZH-na bol-NI-tsa.}}",
+      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|MNE UZ-he LUCH-she.}}",
+      "{{ru-RU|Мне плохо.|Mne plokho.|MNE PLOK-ho.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2503,11 +2503,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I need a hospital.'.",
-    "correctAnswer": "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна больница.|Mne nuzhna bolnitsa.|MNE NUZH-na bol-NI-tsa.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|}}",
-      "{{ru-RU|Мне плохо.|Mne plokho.|}}",
-      "{{ru-RU|У меня болит голова.|U menya bolit golova.|}}"
+      "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|MNE UZ-he LUCH-she.}}",
+      "{{ru-RU|Мне плохо.|Mne plokho.|MNE PLOK-ho.}}",
+      "{{ru-RU|У меня болит голова.|U menya bolit golova.|U ME-nya bo-LIT go-LO-va.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2523,11 +2523,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I feel better now.'?",
-    "correctAnswer": "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|}}",
+    "correctAnswer": "{{ru-RU|Мне уже лучше.|Mne uzhe luchshe.|MNE UZ-he LUCH-she.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне плохо.|Mne plokho.|}}",
-      "{{ru-RU|У меня болит голова.|U menya bolit golova.|}}",
-      "{{ru-RU|У меня температура.|U menya temperatura.|}}"
+      "{{ru-RU|Мне плохо.|Mne plokho.|MNE PLOK-ho.}}",
+      "{{ru-RU|У меня болит голова.|U menya bolit golova.|U ME-nya bo-LIT go-LO-va.}}",
+      "{{ru-RU|У меня температура.|U menya temperatura.|U ME-nya tem-pe-ra-TU-ra.}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'What time is it?'?",
-    "correctAnswer": "{{ru-RU|Который час?|Kotoryy chas?|}}",
+    "correctAnswer": "{{ru-RU|Который час?|Kotoryy chas?|ko-TO-ryy CHAS?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|}}",
-      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|}}",
-      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|}}"
+      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|se-GOD-nya po-ne-DEL-nik.}}",
+      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|ZAV-tra YA BU-du pu-te-shest-VO-vat.}}",
+      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|VCHE-ra YA ra-BO-tal/ra-bo-TA-la.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2563,11 +2563,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Today is Monday.'?",
-    "correctAnswer": "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|}}",
+    "correctAnswer": "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|se-GOD-nya po-ne-DEL-nik.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|}}",
-      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|}}",
-      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|}}"
+      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|ZAV-tra YA BU-du pu-te-shest-VO-vat.}}",
+      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|VCHE-ra YA ra-BO-tal/ra-bo-TA-la.}}",
+      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|ot-kry-VAE-tsya V de-VYAT.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2583,11 +2583,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|}}",
+    "correctAnswer": "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|ZAV-tra YA BU-du pu-te-shest-VO-vat.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|}}",
-      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|}}",
-      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|}}"
+      "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|VCHE-ra YA ra-BO-tal/ra-bo-TA-la.}}",
+      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|ot-kry-VAE-tsya V de-VYAT.}}",
+      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|za-kry-VAE-tsya V SHEST.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2603,11 +2603,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|}}",
+    "correctAnswer": "{{ru-RU|Вчера я работал/работала.|Vchera ya rabotal/rabotala.|VCHE-ra YA ra-BO-tal/ra-bo-TA-la.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|}}",
-      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|}}",
-      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|}}"
+      "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|ot-kry-VAE-tsya V de-VYAT.}}",
+      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|za-kry-VAE-tsya V SHEST.}}",
+      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|YA PRI-du POZZ-he.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2623,11 +2623,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'It opens at nine.'?",
-    "correctAnswer": "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|}}",
+    "correctAnswer": "{{ru-RU|Открывается в девять.|Otkryvaetsya v devyat.|ot-kry-VAE-tsya V de-VYAT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|}}",
-      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|}}",
-      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|}}"
+      "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|za-kry-VAE-tsya V SHEST.}}",
+      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|YA PRI-du POZZ-he.}}",
+      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|YA SKO-ro ver-NUS.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2643,11 +2643,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'It closes at six.'?",
-    "correctAnswer": "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|}}",
+    "correctAnswer": "{{ru-RU|Закрывается в шесть.|Zakryvaetsya v shest.|za-kry-VAE-tsya V SHEST.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|}}",
-      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|}}",
-      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|}}"
+      "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|YA PRI-du POZZ-he.}}",
+      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|YA SKO-ro ver-NUS.}}",
+      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|MNE NUZH-no PYAT mi-NUT.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2663,11 +2663,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I arrive later.'.",
-    "correctAnswer": "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|}}",
+    "correctAnswer": "{{ru-RU|Я приду позже.|Ya pridu pozzhe.|YA PRI-du POZZ-he.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|}}",
-      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|}}",
-      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|}}"
+      "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|YA SKO-ro ver-NUS.}}",
+      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|MNE NUZH-no PYAT mi-NUT.}}",
+      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|slish-KOM POZD-no.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2683,11 +2683,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I will come back soon.'?",
-    "correctAnswer": "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|}}",
+    "correctAnswer": "{{ru-RU|Я скоро вернусь.|Ya skoro vernus.|YA SKO-ro ver-NUS.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|}}",
-      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|}}",
-      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|}}"
+      "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|MNE NUZH-no PYAT mi-NUT.}}",
+      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|slish-KOM POZD-no.}}",
+      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|E-ta ne-DE-lya o-CHEN za-NYA-taya.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2703,11 +2703,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I need five minutes.'?",
-    "correctAnswer": "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужно пять минут.|Mne nuzhno pyat minut.|MNE NUZH-no PYAT mi-NUT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|}}",
-      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|}}",
-      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|}}"
+      "{{ru-RU|Слишком поздно.|Slishkom pozdno.|slish-KOM POZD-no.}}",
+      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|E-ta ne-DE-lya o-CHEN za-NYA-taya.}}",
+      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|V sle-DUYUSH-chem me-SYA-tse YA svo-BO-den/svo-BOD-na.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2723,11 +2723,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'It is too late.'?",
-    "correctAnswer": "{{ru-RU|Слишком поздно.|Slishkom pozdno.|}}",
+    "correctAnswer": "{{ru-RU|Слишком поздно.|Slishkom pozdno.|slish-KOM POZD-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|}}",
-      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|}}",
-      "{{ru-RU|Который час?|Kotoryy chas?|}}"
+      "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|E-ta ne-DE-lya o-CHEN za-NYA-taya.}}",
+      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|V sle-DUYUSH-chem me-SYA-tse YA svo-BO-den/svo-BOD-na.}}",
+      "{{ru-RU|Который час?|Kotoryy chas?|ko-TO-ryy CHAS?}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2743,11 +2743,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'This week is busy.'.",
-    "correctAnswer": "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|}}",
+    "correctAnswer": "{{ru-RU|Эта неделя очень занятая.|Eta nedelya ochen zanyataya.|E-ta ne-DE-lya o-CHEN za-NYA-taya.}}",
     "incorrectAnswers": [
-      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|}}",
-      "{{ru-RU|Который час?|Kotoryy chas?|}}",
-      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|}}"
+      "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|V sle-DUYUSH-chem me-SYA-tse YA svo-BO-den/svo-BOD-na.}}",
+      "{{ru-RU|Который час?|Kotoryy chas?|ko-TO-ryy CHAS?}}",
+      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|se-GOD-nya po-ne-DEL-nik.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Next month I am free.'?",
-    "correctAnswer": "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|}}",
+    "correctAnswer": "{{ru-RU|В следующем месяце я свободен/свободна.|V sleduyushchem mesyatse ya svoboden/svobodna.|V sle-DUYUSH-chem me-SYA-tse YA svo-BO-den/svo-BOD-na.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Который час?|Kotoryy chas?|}}",
-      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|}}",
-      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|}}"
+      "{{ru-RU|Который час?|Kotoryy chas?|ko-TO-ryy CHAS?}}",
+      "{{ru-RU|Сегодня понедельник.|Segodnya ponedelnik.|se-GOD-nya po-ne-DEL-nik.}}",
+      "{{ru-RU|Завтра я буду путешествовать.|Zavtra ya budu puteshestvovat.|ZAV-tra YA BU-du pu-te-shest-VO-vat.}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2783,11 +2783,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'What is the weather like?'?",
-    "correctAnswer": "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|}}",
+    "correctAnswer": "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|KA-kaya se-GOD-nya po-GO-da?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Жарко.|Zharko.|}}",
-      "{{ru-RU|Холодно.|Kholodno.|}}",
-      "{{ru-RU|Идёт дождь.|Idyot dozhd.|}}"
+      "{{ru-RU|Жарко.|Zharko.|ZHAR-ko.}}",
+      "{{ru-RU|Холодно.|Kholodno.|kho-LOD-no.}}",
+      "{{ru-RU|Идёт дождь.|Idyot dozhd.|i-DYOT DOZHD.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2803,11 +2803,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'It is hot.'?",
-    "correctAnswer": "{{ru-RU|Жарко.|Zharko.|}}",
+    "correctAnswer": "{{ru-RU|Жарко.|Zharko.|ZHAR-ko.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Холодно.|Kholodno.|}}",
-      "{{ru-RU|Идёт дождь.|Idyot dozhd.|}}",
-      "{{ru-RU|Ветрено.|Vetreno.|}}"
+      "{{ru-RU|Холодно.|Kholodno.|kho-LOD-no.}}",
+      "{{ru-RU|Идёт дождь.|Idyot dozhd.|i-DYOT DOZHD.}}",
+      "{{ru-RU|Ветрено.|Vetreno.|ve-TRE-no.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2823,11 +2823,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'It is cold.'.",
-    "correctAnswer": "{{ru-RU|Холодно.|Kholodno.|}}",
+    "correctAnswer": "{{ru-RU|Холодно.|Kholodno.|kho-LOD-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Идёт дождь.|Idyot dozhd.|}}",
-      "{{ru-RU|Ветрено.|Vetreno.|}}",
-      "{{ru-RU|Солнечно.|Solnechno.|}}"
+      "{{ru-RU|Идёт дождь.|Idyot dozhd.|i-DYOT DOZHD.}}",
+      "{{ru-RU|Ветрено.|Vetreno.|ve-TRE-no.}}",
+      "{{ru-RU|Солнечно.|Solnechno.|sol-NECH-no.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2843,11 +2843,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'It is raining.'?",
-    "correctAnswer": "{{ru-RU|Идёт дождь.|Idyot dozhd.|}}",
+    "correctAnswer": "{{ru-RU|Идёт дождь.|Idyot dozhd.|i-DYOT DOZHD.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Ветрено.|Vetreno.|}}",
-      "{{ru-RU|Солнечно.|Solnechno.|}}",
-      "{{ru-RU|Идёт снег.|Idyot sneg.|}}"
+      "{{ru-RU|Ветрено.|Vetreno.|ve-TRE-no.}}",
+      "{{ru-RU|Солнечно.|Solnechno.|sol-NECH-no.}}",
+      "{{ru-RU|Идёт снег.|Idyot sneg.|i-DYOT SNEG.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2863,11 +2863,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'It is windy.'?",
-    "correctAnswer": "{{ru-RU|Ветрено.|Vetreno.|}}",
+    "correctAnswer": "{{ru-RU|Ветрено.|Vetreno.|ve-TRE-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Солнечно.|Solnechno.|}}",
-      "{{ru-RU|Идёт снег.|Idyot sneg.|}}",
-      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|}}"
+      "{{ru-RU|Солнечно.|Solnechno.|sol-NECH-no.}}",
+      "{{ru-RU|Идёт снег.|Idyot sneg.|i-DYOT SNEG.}}",
+      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|KA-koy kra-SI-vyy DEN!}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2883,11 +2883,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'It is sunny.'?",
-    "correctAnswer": "{{ru-RU|Солнечно.|Solnechno.|}}",
+    "correctAnswer": "{{ru-RU|Солнечно.|Solnechno.|sol-NECH-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Идёт снег.|Idyot sneg.|}}",
-      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|}}",
-      "{{ru-RU|Облачно.|Oblachno.|}}"
+      "{{ru-RU|Идёт снег.|Idyot sneg.|i-DYOT SNEG.}}",
+      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|KA-koy kra-SI-vyy DEN!}}",
+      "{{ru-RU|Облачно.|Oblachno.|o-BLACH-no.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2903,11 +2903,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'It is snowing.'.",
-    "correctAnswer": "{{ru-RU|Идёт снег.|Idyot sneg.|}}",
+    "correctAnswer": "{{ru-RU|Идёт снег.|Idyot sneg.|i-DYOT SNEG.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|}}",
-      "{{ru-RU|Облачно.|Oblachno.|}}",
-      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|}}"
+      "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|KA-koy kra-SI-vyy DEN!}}",
+      "{{ru-RU|Облачно.|Oblachno.|o-BLACH-no.}}",
+      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|MNE nuz-HEN zon-TIK.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2923,11 +2923,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'What a beautiful day!'?",
-    "correctAnswer": "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|}}",
+    "correctAnswer": "{{ru-RU|Какой красивый день!|Kakoy krasivyy den!|KA-koy kra-SI-vyy DEN!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Облачно.|Oblachno.|}}",
-      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|}}",
-      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|}}"
+      "{{ru-RU|Облачно.|Oblachno.|o-BLACH-no.}}",
+      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|MNE nuz-HEN zon-TIK.}}",
+      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|se-GOD-nya kho-RO-shaya po-GO-da.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2943,11 +2943,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'It is cloudy.'?",
-    "correctAnswer": "{{ru-RU|Облачно.|Oblachno.|}}",
+    "correctAnswer": "{{ru-RU|Облачно.|Oblachno.|o-BLACH-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|}}",
-      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|}}",
-      "{{ru-RU|Небо ясное.|Nebo yasnoe.|}}"
+      "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|MNE nuz-HEN zon-TIK.}}",
+      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|se-GOD-nya kho-RO-shaya po-GO-da.}}",
+      "{{ru-RU|Небо ясное.|Nebo yasnoe.|NE-bo YAS-noe.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2963,11 +2963,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I need an umbrella.'?",
-    "correctAnswer": "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужен зонтик.|Mne nuzhen zontik.|MNE nuz-HEN zon-TIK.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|}}",
-      "{{ru-RU|Небо ясное.|Nebo yasnoe.|}}",
-      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|}}"
+      "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|se-GOD-nya kho-RO-shaya po-GO-da.}}",
+      "{{ru-RU|Небо ясное.|Nebo yasnoe.|NE-bo YAS-noe.}}",
+      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|KA-kaya se-GOD-nya po-GO-da?}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'The weather is nice today.'.",
-    "correctAnswer": "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|}}",
+    "correctAnswer": "{{ru-RU|Сегодня хорошая погода.|Segodnya khoroshaya pogoda.|se-GOD-nya kho-RO-shaya po-GO-da.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Небо ясное.|Nebo yasnoe.|}}",
-      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|}}",
-      "{{ru-RU|Жарко.|Zharko.|}}"
+      "{{ru-RU|Небо ясное.|Nebo yasnoe.|NE-bo YAS-noe.}}",
+      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|KA-kaya se-GOD-nya po-GO-da?}}",
+      "{{ru-RU|Жарко.|Zharko.|ZHAR-ko.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3003,11 +3003,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'The sky is clear.'?",
-    "correctAnswer": "{{ru-RU|Небо ясное.|Nebo yasnoe.|}}",
+    "correctAnswer": "{{ru-RU|Небо ясное.|Nebo yasnoe.|NE-bo YAS-noe.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|}}",
-      "{{ru-RU|Жарко.|Zharko.|}}",
-      "{{ru-RU|Холодно.|Kholodno.|}}"
+      "{{ru-RU|Какая сегодня погода?|Kakaya segodnya pogoda?|KA-kaya se-GOD-nya po-GO-da?}}",
+      "{{ru-RU|Жарко.|Zharko.|ZHAR-ko.}}",
+      "{{ru-RU|Холодно.|Kholodno.|kho-LOD-no.}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3023,11 +3023,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Help!'?",
-    "correctAnswer": "{{ru-RU|Помогите!|Pomogite!|}}",
+    "correctAnswer": "{{ru-RU|Помогите!|Pomogite!|po-mo-GI-te!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|}}",
-      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|}}",
-      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|}}"
+      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|vy-zo-VI-te po-LI-tsiyu!}}",
+      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|YA po-TE-ryal(A) pas-PORT.}}",
+      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|U ME-nya u-KRA-li ko-SHE-lyok.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3043,11 +3043,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Call the police!'?",
-    "correctAnswer": "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|}}",
+    "correctAnswer": "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|vy-zo-VI-te po-LI-tsiyu!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|}}",
-      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|}}",
-      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|}}"
+      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|YA po-TE-ryal(A) pas-PORT.}}",
+      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|U ME-nya u-KRA-li ko-SHE-lyok.}}",
+      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|MNE NUZH-na SKO-raya po-MOSHCH.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3063,11 +3063,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I have lost my passport.'.",
-    "correctAnswer": "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|}}",
+    "correctAnswer": "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|YA po-TE-ryal(A) pas-PORT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|}}",
-      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|}}",
-      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|}}"
+      "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|U ME-nya u-KRA-li ko-SHE-lyok.}}",
+      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|MNE NUZH-na SKO-raya po-MOSHCH.}}",
+      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|vy-zo-VI-te VRA-cha!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3083,11 +3083,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|}}",
+    "correctAnswer": "{{ru-RU|У меня украли кошелёк.|U menya ukrali koshelyok.|U ME-nya u-KRA-li ko-SHE-lyok.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|}}",
-      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|}}",
-      "{{ru-RU|Пожар!|Pozhar!|}}"
+      "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|MNE NUZH-na SKO-raya po-MOSHCH.}}",
+      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|vy-zo-VI-te VRA-cha!}}",
+      "{{ru-RU|Пожар!|Pozhar!|poz-HAR!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3103,11 +3103,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна скорая помощь.|Mne nuzhna skoraya pomoshch.|MNE NUZH-na SKO-raya po-MOSHCH.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|}}",
-      "{{ru-RU|Пожар!|Pozhar!|}}",
-      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|}}"
+      "{{ru-RU|Вызовите врача!|Vyzovite vracha!|vy-zo-VI-te VRA-cha!}}",
+      "{{ru-RU|Пожар!|Pozhar!|poz-HAR!}}",
+      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|MNE NUZH-na po-MOSHCH sey-CHAS.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3123,11 +3123,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Call a doctor!'?",
-    "correctAnswer": "{{ru-RU|Вызовите врача!|Vyzovite vracha!|}}",
+    "correctAnswer": "{{ru-RU|Вызовите врача!|Vyzovite vracha!|vy-zo-VI-te VRA-cha!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Пожар!|Pozhar!|}}",
-      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|}}",
-      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|}}"
+      "{{ru-RU|Пожар!|Pozhar!|poz-HAR!}}",
+      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|MNE NUZH-na po-MOSHCH sey-CHAS.}}",
+      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|YA po-TE-ryal(A) te-LE-fon.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3143,11 +3143,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'There is a fire.'.",
-    "correctAnswer": "{{ru-RU|Пожар!|Pozhar!|}}",
+    "correctAnswer": "{{ru-RU|Пожар!|Pozhar!|poz-HAR!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|}}",
-      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|}}",
-      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|}}"
+      "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|MNE NUZH-na po-MOSHCH sey-CHAS.}}",
+      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|YA po-TE-ryal(A) te-LE-fon.}}",
+      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|YA po-TE-ryal(A) SUM-ku.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3163,11 +3163,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I need help now.'?",
-    "correctAnswer": "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна помощь сейчас.|Mne nuzhna pomoshch seychas.|MNE NUZH-na po-MOSHCH sey-CHAS.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|}}",
-      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|}}",
-      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|}}"
+      "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|YA po-TE-ryal(A) te-LE-fon.}}",
+      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|YA po-TE-ryal(A) SUM-ku.}}",
+      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|MOY DRUG ra-NEN.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3183,11 +3183,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I lost my phone.'?",
-    "correctAnswer": "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|}}",
+    "correctAnswer": "{{ru-RU|Я потерял(а) телефон.|Ya poteryal(a) telefon.|YA po-TE-ryal(A) te-LE-fon.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|}}",
-      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|}}",
-      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|}}"
+      "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|YA po-TE-ryal(A) SUM-ku.}}",
+      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|MOY DRUG ra-NEN.}}",
+      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|E-to chrez-vy-CHAY-naya si-TUA-tsiya.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I lost my bag.'?",
-    "correctAnswer": "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|}}",
+    "correctAnswer": "{{ru-RU|Я потерял(а) сумку.|Ya poteryal(a) sumku.|YA po-TE-ryal(A) SUM-ku.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|}}",
-      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|}}",
-      "{{ru-RU|Помогите!|Pomogite!|}}"
+      "{{ru-RU|Мой друг ранен.|Moy drug ranen.|MOY DRUG ra-NEN.}}",
+      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|E-to chrez-vy-CHAY-naya si-TUA-tsiya.}}",
+      "{{ru-RU|Помогите!|Pomogite!|po-mo-GI-te!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3223,11 +3223,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'My friend is hurt.'.",
-    "correctAnswer": "{{ru-RU|Мой друг ранен.|Moy drug ranen.|}}",
+    "correctAnswer": "{{ru-RU|Мой друг ранен.|Moy drug ranen.|MOY DRUG ra-NEN.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|}}",
-      "{{ru-RU|Помогите!|Pomogite!|}}",
-      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|}}"
+      "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|E-to chrez-vy-CHAY-naya si-TUA-tsiya.}}",
+      "{{ru-RU|Помогите!|Pomogite!|po-mo-GI-te!}}",
+      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|vy-zo-VI-te po-LI-tsiyu!}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3243,11 +3243,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'This is an emergency.'?",
-    "correctAnswer": "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|}}",
+    "correctAnswer": "{{ru-RU|Это чрезвычайная ситуация.|Eto chrezvychaynaya situatsiya.|E-to chrez-vy-CHAY-naya si-TUA-tsiya.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Помогите!|Pomogite!|}}",
-      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|}}",
-      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|}}"
+      "{{ru-RU|Помогите!|Pomogite!|po-mo-GI-te!}}",
+      "{{ru-RU|Вызовите полицию!|Vyzovite politsiyu!|vy-zo-VI-te po-LI-tsiyu!}}",
+      "{{ru-RU|Я потерял(а) паспорт.|Ya poteryal(a) pasport.|YA po-TE-ryal(A) pas-PORT.}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3263,11 +3263,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Happy birthday!'?",
-    "correctAnswer": "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|}}",
+    "correctAnswer": "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|S DNYOM rozh-DE-niya!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Поздравляю!|Pozdravlyayu!|}}",
-      "{{ru-RU|Удачи!|Udachi!|}}",
-      "{{ru-RU|Пожалуйста.|Pozhaluysta.|}}"
+      "{{ru-RU|Поздравляю!|Pozdravlyayu!|poz-DRAV-lyayu!}}",
+      "{{ru-RU|Удачи!|Udachi!|u-DA-chi!}}",
+      "{{ru-RU|Пожалуйста.|Pozhaluysta.|poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3283,11 +3283,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Congratulations!'?",
-    "correctAnswer": "{{ru-RU|Поздравляю!|Pozdravlyayu!|}}",
+    "correctAnswer": "{{ru-RU|Поздравляю!|Pozdravlyayu!|poz-DRAV-lyayu!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Удачи!|Udachi!|}}",
-      "{{ru-RU|Пожалуйста.|Pozhaluysta.|}}",
-      "{{ru-RU|Не за что.|Ne za chto.|}}"
+      "{{ru-RU|Удачи!|Udachi!|u-DA-chi!}}",
+      "{{ru-RU|Пожалуйста.|Pozhaluysta.|poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Не за что.|Ne za chto.|NE ZA CHTO.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3303,11 +3303,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Good luck!'.",
-    "correctAnswer": "{{ru-RU|Удачи!|Udachi!|}}",
+    "correctAnswer": "{{ru-RU|Удачи!|Udachi!|u-DA-chi!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Пожалуйста.|Pozhaluysta.|}}",
-      "{{ru-RU|Не за что.|Ne za chto.|}}",
-      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|}}"
+      "{{ru-RU|Пожалуйста.|Pozhaluysta.|poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Не за что.|Ne za chto.|NE ZA CHTO.}}",
+      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|MNE ZHAL E-to sly-SHAT.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3323,11 +3323,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'You're welcome.'?",
-    "correctAnswer": "{{ru-RU|Пожалуйста.|Pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Пожалуйста.|Pozhaluysta.|poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Не за что.|Ne za chto.|}}",
-      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|}}",
-      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|}}"
+      "{{ru-RU|Не за что.|Ne za chto.|NE ZA CHTO.}}",
+      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|MNE ZHAL E-to sly-SHAT.}}",
+      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|priyat-NO-go ap-pe-TI-ta.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3343,11 +3343,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Don't mention it.'?",
-    "correctAnswer": "{{ru-RU|Не за что.|Ne za chto.|}}",
+    "correctAnswer": "{{ru-RU|Не за что.|Ne za chto.|NE ZA CHTO.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|}}",
-      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|}}",
-      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|}}"
+      "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|MNE ZHAL E-to sly-SHAT.}}",
+      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|priyat-NO-go ap-pe-TI-ta.}}",
+      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|schast-li-VO-go PU-ti.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3363,11 +3363,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|}}",
+    "correctAnswer": "{{ru-RU|Мне жаль это слышать.|Mne zhal eto slyshat.|MNE ZHAL E-to sly-SHAT.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|}}",
-      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|}}",
-      "{{ru-RU|До понедельника.|Do ponedelnika.|}}"
+      "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|priyat-NO-go ap-pe-TI-ta.}}",
+      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|schast-li-VO-go PU-ti.}}",
+      "{{ru-RU|До понедельника.|Do ponedelnika.|DO po-ne-del-NI-ka.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3383,11 +3383,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|}}",
+    "correctAnswer": "{{ru-RU|Приятного аппетита.|Priyatnogo appetita.|priyat-NO-go ap-pe-TI-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|}}",
-      "{{ru-RU|До понедельника.|Do ponedelnika.|}}",
-      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|}}"
+      "{{ru-RU|Счастливого пути.|Schastlivogo puti.|schast-li-VO-go PU-ti.}}",
+      "{{ru-RU|До понедельника.|Do ponedelnika.|DO po-ne-del-NI-ka.}}",
+      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|DO-bro poz-ha-LO-vat V NASH go-ROD.}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3403,11 +3403,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Have a nice trip.'?",
-    "correctAnswer": "{{ru-RU|Счастливого пути.|Schastlivogo puti.|}}",
+    "correctAnswer": "{{ru-RU|Счастливого пути.|Schastlivogo puti.|schast-li-VO-go PU-ti.}}",
     "incorrectAnswers": [
-      "{{ru-RU|До понедельника.|Do ponedelnika.|}}",
-      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|}}",
-      "{{ru-RU|С праздником!|S prazdnikom!|}}"
+      "{{ru-RU|До понедельника.|Do ponedelnika.|DO po-ne-del-NI-ka.}}",
+      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|DO-bro poz-ha-LO-vat V NASH go-ROD.}}",
+      "{{ru-RU|С праздником!|S prazdnikom!|S prazd-NI-kom!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'See you on Monday.'?",
-    "correctAnswer": "{{ru-RU|До понедельника.|Do ponedelnika.|}}",
+    "correctAnswer": "{{ru-RU|До понедельника.|Do ponedelnika.|DO po-ne-del-NI-ka.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|}}",
-      "{{ru-RU|С праздником!|S prazdnikom!|}}",
-      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|}}"
+      "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|DO-bro poz-ha-LO-vat V NASH go-ROD.}}",
+      "{{ru-RU|С праздником!|S prazdnikom!|S prazd-NI-kom!}}",
+      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|kho-RO-sho pro-VES-ti VRE-mya!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3443,11 +3443,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Welcome to our city.'?",
-    "correctAnswer": "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|}}",
+    "correctAnswer": "{{ru-RU|Добро пожаловать в наш город.|Dobro pozhalovat v nash gorod.|DO-bro poz-ha-LO-vat V NASH go-ROD.}}",
     "incorrectAnswers": [
-      "{{ru-RU|С праздником!|S prazdnikom!|}}",
-      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|}}",
-      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|}}"
+      "{{ru-RU|С праздником!|S prazdnikom!|S prazd-NI-kom!}}",
+      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|kho-RO-sho pro-VES-ti VRE-mya!}}",
+      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|S DNYOM rozh-DE-niya!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3463,11 +3463,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'Happy holidays!'.",
-    "correctAnswer": "{{ru-RU|С праздником!|S prazdnikom!|}}",
+    "correctAnswer": "{{ru-RU|С праздником!|S prazdnikom!|S prazd-NI-kom!}}",
     "incorrectAnswers": [
-      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|}}",
-      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|}}",
-      "{{ru-RU|Поздравляю!|Pozdravlyayu!|}}"
+      "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|kho-RO-sho pro-VES-ti VRE-mya!}}",
+      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|S DNYOM rozh-DE-niya!}}",
+      "{{ru-RU|Поздравляю!|Pozdravlyayu!|poz-DRAV-lyayu!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3483,11 +3483,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Have fun!'?",
-    "correctAnswer": "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|}}",
+    "correctAnswer": "{{ru-RU|Хорошо провести время!|Khorosho provesti vremya!|kho-RO-sho pro-VES-ti VRE-mya!}}",
     "incorrectAnswers": [
-      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|}}",
-      "{{ru-RU|Поздравляю!|Pozdravlyayu!|}}",
-      "{{ru-RU|Удачи!|Udachi!|}}"
+      "{{ru-RU|С днём рождения!|S dnyom rozhdeniya!|S DNYOM rozh-DE-niya!}}",
+      "{{ru-RU|Поздравляю!|Pozdravlyayu!|poz-DRAV-lyayu!}}",
+      "{{ru-RU|Удачи!|Udachi!|u-DA-chi!}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3503,11 +3503,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I work in an office.'?",
-    "correctAnswer": "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|}}",
+    "correctAnswer": "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|YA ra-BO-tayu V o-FI-se.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|}}",
-      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|}}",
-      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|}}"
+      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|YA ra-BO-tayu u-chi-TE-lem/u-chi-tel-NI-tsey.}}",
+      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|YA u-CHUS KAZH-dyy DEN.}}",
+      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|YA U-chu ya-ZYK.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3523,11 +3523,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'I work as a teacher.'?",
-    "correctAnswer": "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|}}",
+    "correctAnswer": "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|YA ra-BO-tayu u-chi-TE-lem/u-chi-tel-NI-tsey.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|}}",
-      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|}}",
-      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|}}"
+      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|YA u-CHUS KAZH-dyy DEN.}}",
+      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|YA U-chu ya-ZYK.}}",
+      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|za-pi-SHI-te E-to, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3543,11 +3543,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I study every day.'.",
-    "correctAnswer": "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|}}",
+    "correctAnswer": "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|YA u-CHUS KAZH-dyy DEN.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|}}",
-      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|}}",
-      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|}}"
+      "{{ru-RU|Я учу язык.|Ya uchu yazyk.|YA U-chu ya-ZYK.}}",
+      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|za-pi-SHI-te E-to, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|u-ROK na-chi-NAE-tsya sey-CHAS.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3563,11 +3563,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am learning the language.'?",
-    "correctAnswer": "{{ru-RU|Я учу язык.|Ya uchu yazyk.|}}",
+    "correctAnswer": "{{ru-RU|Я учу язык.|Ya uchu yazyk.|YA U-chu ya-ZYK.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|}}",
-      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|}}",
-      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|}}"
+      "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|za-pi-SHI-te E-to, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|u-ROK na-chi-NAE-tsya sey-CHAS.}}",
+      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|MNE NUZH-na RUCH-ka.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3583,11 +3583,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Please write it down.'?",
-    "correctAnswer": "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Запишите это, пожалуйста.|Zapishite eto, pozhaluysta.|za-pi-SHI-te E-to, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|}}",
-      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|}}",
-      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|}}"
+      "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|u-ROK na-chi-NAE-tsya sey-CHAS.}}",
+      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|MNE NUZH-na RUCH-ka.}}",
+      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|U ME-nya EST do-MASH-nee za-DA-nie.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3603,11 +3603,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'The class starts now.'?",
-    "correctAnswer": "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|}}",
+    "correctAnswer": "{{ru-RU|Урок начинается сейчас.|Urok nachinaetsya seychas.|u-ROK na-chi-NAE-tsya sey-CHAS.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|}}",
-      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|}}",
-      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|}}"
+      "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|MNE NUZH-na RUCH-ka.}}",
+      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|U ME-nya EST do-MASH-nee za-DA-nie.}}",
+      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|ZAV-tra U ME-nya ek-ZA-men.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3623,11 +3623,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I need a pen.'.",
-    "correctAnswer": "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|}}",
+    "correctAnswer": "{{ru-RU|Мне нужна ручка.|Mne nuzhna ruchka.|MNE NUZH-na RUCH-ka.}}",
     "incorrectAnswers": [
-      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|}}",
-      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|}}",
-      "{{ru-RU|Где класс?|Gde klass?|}}"
+      "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|U ME-nya EST do-MASH-nee za-DA-nie.}}",
+      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|ZAV-tra U ME-nya ek-ZA-men.}}",
+      "{{ru-RU|Где класс?|Gde klass?|GDE KLASS?}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I have homework.'?",
-    "correctAnswer": "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|}}",
+    "correctAnswer": "{{ru-RU|У меня есть домашнее задание.|U menya est domashnee zadanie.|U ME-nya EST do-MASH-nee za-DA-nie.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|}}",
-      "{{ru-RU|Где класс?|Gde klass?|}}",
-      "{{ru-RU|Книга на столе.|Kniga na stole.|}}"
+      "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|ZAV-tra U ME-nya ek-ZA-men.}}",
+      "{{ru-RU|Где класс?|Gde klass?|GDE KLASS?}}",
+      "{{ru-RU|Книга на столе.|Kniga na stole.|KNI-ga NA STO-le.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3663,11 +3663,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|}}",
+    "correctAnswer": "{{ru-RU|Завтра у меня экзамен.|Zavtra u menya ekzamen.|ZAV-tra U ME-nya ek-ZA-men.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Где класс?|Gde klass?|}}",
-      "{{ru-RU|Книга на столе.|Kniga na stole.|}}",
-      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|}}"
+      "{{ru-RU|Где класс?|Gde klass?|GDE KLASS?}}",
+      "{{ru-RU|Книга на столе.|Kniga na stole.|KNI-ga NA STO-le.}}",
+      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|MOY u-CHI-tel o-CHEN DO-bryy.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3683,11 +3683,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Where is the classroom?'?",
-    "correctAnswer": "{{ru-RU|Где класс?|Gde klass?|}}",
+    "correctAnswer": "{{ru-RU|Где класс?|Gde klass?|GDE KLASS?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Книга на столе.|Kniga na stole.|}}",
-      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|}}",
-      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|}}"
+      "{{ru-RU|Книга на столе.|Kniga na stole.|KNI-ga NA STO-le.}}",
+      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|MOY u-CHI-tel o-CHEN DO-bryy.}}",
+      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|YA ra-BO-tayu V o-FI-se.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3703,11 +3703,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'The book is on the table.'.",
-    "correctAnswer": "{{ru-RU|Книга на столе.|Kniga na stole.|}}",
+    "correctAnswer": "{{ru-RU|Книга на столе.|Kniga na stole.|KNI-ga NA STO-le.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|}}",
-      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|}}",
-      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|}}"
+      "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|MOY u-CHI-tel o-CHEN DO-bryy.}}",
+      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|YA ra-BO-tayu V o-FI-se.}}",
+      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|YA ra-BO-tayu u-chi-TE-lem/u-chi-tel-NI-tsey.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3723,11 +3723,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|}}",
+    "correctAnswer": "{{ru-RU|Мой учитель очень добрый.|Moy uchitel ochen dobryy.|MOY u-CHI-tel o-CHEN DO-bryy.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|}}",
-      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|}}",
-      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|}}"
+      "{{ru-RU|Я работаю в офисе.|Ya rabotayu v ofise.|YA ra-BO-tayu V o-FI-se.}}",
+      "{{ru-RU|Я работаю учителем/учительницей.|Ya rabotayu uchitelem/uchitelnitsey.|YA ra-BO-tayu u-chi-TE-lem/u-chi-tel-NI-tsey.}}",
+      "{{ru-RU|Я учусь каждый день.|Ya uchus kazhdyy den.|YA u-CHUS KAZH-dyy DEN.}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3743,11 +3743,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|}}",
+    "correctAnswer": "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|YA nem-NO-go go-VO-ryu PO-RUSS-ki.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|}}",
-      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|}}",
-      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|}}"
+      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|skaz-HI-te E-to ESH-chyo RAZ, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|CHTO zna-CHIT E-to SLO-vo?}}",
+      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|YA NE ZNAYU e-TO-go SLO-va.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3763,11 +3763,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Please say that again.'?",
-    "correctAnswer": "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|skaz-HI-te E-to ESH-chyo RAZ, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|}}",
-      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|}}",
-      "{{ru-RU|Это правильно?|Eto pravilno?|}}"
+      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|CHTO zna-CHIT E-to SLO-vo?}}",
+      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|YA NE ZNAYU e-TO-go SLO-va.}}",
+      "{{ru-RU|Это правильно?|Eto pravilno?|E-to pra-VIL-no?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3783,11 +3783,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'What does this word mean?'.",
-    "correctAnswer": "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|}}",
+    "correctAnswer": "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|CHTO zna-CHIT E-to SLO-vo?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|}}",
-      "{{ru-RU|Это правильно?|Eto pravilno?|}}",
-      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|}}"
+      "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|YA NE ZNAYU e-TO-go SLO-va.}}",
+      "{{ru-RU|Это правильно?|Eto pravilno?|E-to pra-VIL-no?}}",
+      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|moz-HE-te o-BYAS-nit?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3803,11 +3803,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I do not know this word.'?",
-    "correctAnswer": "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|}}",
+    "correctAnswer": "{{ru-RU|Я не знаю этого слова.|Ya ne znayu etogo slova.|YA NE ZNAYU e-TO-go SLO-va.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Это правильно?|Eto pravilno?|}}",
-      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|}}",
-      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|}}"
+      "{{ru-RU|Это правильно?|Eto pravilno?|E-to pra-VIL-no?}}",
+      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|moz-HE-te o-BYAS-nit?}}",
+      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|te-PER YA po-NI-mayu.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3823,11 +3823,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Is this correct?'?",
-    "correctAnswer": "{{ru-RU|Это правильно?|Eto pravilno?|}}",
+    "correctAnswer": "{{ru-RU|Это правильно?|Eto pravilno?|E-to pra-VIL-no?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|}}",
-      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|}}",
-      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|}}"
+      "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|moz-HE-te o-BYAS-nit?}}",
+      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|te-PER YA po-NI-mayu.}}",
+      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|poz-ha-LUYS-ta, go-vo-RI-te pros-TY-mi slo-VA-mi.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3843,11 +3843,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Can you explain it?'?",
-    "correctAnswer": "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|}}",
+    "correctAnswer": "{{ru-RU|Можете объяснить?|Mozhete obyasnit?|moz-HE-te o-BYAS-nit?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|}}",
-      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|}}",
-      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|}}"
+      "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|te-PER YA po-NI-mayu.}}",
+      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|poz-ha-LUYS-ta, go-vo-RI-te pros-TY-mi slo-VA-mi.}}",
+      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|YA prak-TI-kuyus KAZH-dyy DEN.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'I understand now.'.",
-    "correctAnswer": "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|}}",
+    "correctAnswer": "{{ru-RU|Теперь я понимаю.|Teper ya ponimayu.|te-PER YA po-NI-mayu.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|}}",
-      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|}}",
-      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|}}"
+      "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|poz-ha-LUYS-ta, go-vo-RI-te pros-TY-mi slo-VA-mi.}}",
+      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|YA prak-TI-kuyus KAZH-dyy DEN.}}",
+      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|pro-chi-TAY-te E-to pred-loz-HE-nie, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3883,11 +3883,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'Please use simple words.'?",
-    "correctAnswer": "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|}}",
+    "correctAnswer": "{{ru-RU|Пожалуйста, говорите простыми словами.|Pozhaluysta, govorite prostymi slovami.|poz-ha-LUYS-ta, go-vo-RI-te pros-TY-mi slo-VA-mi.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|}}",
-      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|}}",
-      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|}}"
+      "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|YA prak-TI-kuyus KAZH-dyy DEN.}}",
+      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|pro-chi-TAY-te E-to pred-loz-HE-nie, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|KAK pi-SHE-tsya E-to SLO-vo?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3903,11 +3903,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|}}",
+    "correctAnswer": "{{ru-RU|Я практикуюсь каждый день.|Ya praktikuyus kazhdyy den.|YA prak-TI-kuyus KAZH-dyy DEN.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|}}",
-      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|}}",
-      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|}}"
+      "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|pro-chi-TAY-te E-to pred-loz-HE-nie, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|KAK pi-SHE-tsya E-to SLO-vo?}}",
+      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|YA u-CHUS med-LEN-no.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3923,11 +3923,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Which Russian phrase means 'Please read this sentence.'?",
-    "correctAnswer": "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|}}",
+    "correctAnswer": "{{ru-RU|Прочитайте это предложение, пожалуйста.|Prochitayte eto predlozhenie, pozhaluysta.|pro-chi-TAY-te E-to pred-loz-HE-nie, poz-ha-LUYS-ta.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|}}",
-      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|}}",
-      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|}}"
+      "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|KAK pi-SHE-tsya E-to SLO-vo?}}",
+      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|YA u-CHUS med-LEN-no.}}",
+      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|YA nem-NO-go go-VO-ryu PO-RUSS-ki.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3943,11 +3943,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Russian phrase for 'How do you write that word?'.",
-    "correctAnswer": "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|}}",
+    "correctAnswer": "{{ru-RU|Как пишется это слово?|Kak pishetsya eto slovo?|KAK pi-SHE-tsya E-to SLO-vo?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|}}",
-      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|}}",
-      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|}}"
+      "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|YA u-CHUS med-LEN-no.}}",
+      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|YA nem-NO-go go-VO-ryu PO-RUSS-ki.}}",
+      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|skaz-HI-te E-to ESH-chyo RAZ, poz-ha-LUYS-ta.}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3963,11 +3963,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Russian sentence for 'I am learning slowly.'?",
-    "correctAnswer": "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|}}",
+    "correctAnswer": "{{ru-RU|Я учусь медленно.|Ya uchus medlenno.|YA u-CHUS med-LEN-no.}}",
     "incorrectAnswers": [
-      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|}}",
-      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|}}",
-      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|}}"
+      "{{ru-RU|Я немного говорю по-русски.|Ya nemnogo govoryu po-russki.|YA nem-NO-go go-VO-ryu PO-RUSS-ki.}}",
+      "{{ru-RU|Скажите это ещё раз, пожалуйста.|Skazhite eto eshchyo raz, pozhaluysta.|skaz-HI-te E-to ESH-chyo RAZ, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Что значит это слово?|Chto znachit eto slovo?|CHTO zna-CHIT E-to SLO-vo?}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3983,11 +3983,11 @@
     "navigationKeyword1": "russian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Russian, how do you say 'Where are you from?'?",
-    "correctAnswer": "{{ru-RU|Откуда вы?|Otkuda vy?|}}",
+    "correctAnswer": "{{ru-RU|Откуда вы?|Otkuda vy?|ot-KU-da VY?}}",
     "incorrectAnswers": [
-      "{{ru-RU|Как вас зовут?|Kak vas zovut?|}}",
-      "{{ru-RU|Я из США.|Ya iz SShA.|}}",
-      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|}}"
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [

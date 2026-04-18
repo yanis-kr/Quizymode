@@ -5,11 +5,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Здравейте|Zdraveyte|}} / {{bg-BG|Здравей|Zdravey|}}",
+    "correctAnswer": "{{bg-BG|Здравейте|Zdraveyte|zdra-VEY-te}} / {{bg-BG|Здравей|Zdravey|ZDRA-vey}}",
     "incorrectAnswers": [
-      "{{bg-BG|Благодаря|Blagodarya|}}",
-      "{{bg-BG|Моля|Molya|}}",
-      "{{bg-BG|Да|Da|}}"
+      "{{bg-BG|Благодаря|Blagodarya|bla-go-DA-rya}}",
+      "{{bg-BG|Моля|Molya|MO-lya}}",
+      "{{bg-BG|Да|Da|DA}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -26,11 +26,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Благодаря|Blagodarya|}}",
+    "correctAnswer": "{{bg-BG|Благодаря|Blagodarya|bla-go-DA-rya}}",
     "incorrectAnswers": [
-      "{{bg-BG|Моля|Molya|}}",
-      "{{bg-BG|Да|Da|}}",
-      "{{bg-BG|Довиждане|Dovizhdane|}}"
+      "{{bg-BG|Моля|Molya|MO-lya}}",
+      "{{bg-BG|Да|Da|DA}}",
+      "{{bg-BG|Довиждане|Dovizhdane|do-vizh-DA-ne}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -47,11 +47,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Моля|Molya|}}",
+    "correctAnswer": "{{bg-BG|Моля|Molya|MO-lya}}",
     "incorrectAnswers": [
-      "{{bg-BG|Да|Da|}}",
-      "{{bg-BG|Довиждане|Dovizhdane|}}",
-      "{{bg-BG|Казвам се...|Kazvam se...|}}"
+      "{{bg-BG|Да|Da|DA}}",
+      "{{bg-BG|Довиждане|Dovizhdane|do-vizh-DA-ne}}",
+      "{{bg-BG|Казвам се...|Kazvam se...|kaz-VAM SE...}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -67,11 +67,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'yes' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Да|Da|}}",
+    "correctAnswer": "{{bg-BG|Да|Da|DA}}",
     "incorrectAnswers": [
-      "{{bg-BG|Довиждане|Dovizhdane|}}",
-      "{{bg-BG|Казвам се...|Kazvam se...|}}",
-      "{{bg-BG|Извинете|Izvinete|}}"
+      "{{bg-BG|Довиждане|Dovizhdane|do-vizh-DA-ne}}",
+      "{{bg-BG|Казвам се...|Kazvam se...|kaz-VAM SE...}}",
+      "{{bg-BG|Извинете|Izvinete|iz-vi-NE-te}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -87,11 +87,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Довиждане|Dovizhdane|}}",
+    "correctAnswer": "{{bg-BG|Довиждане|Dovizhdane|do-vizh-DA-ne}}",
     "incorrectAnswers": [
-      "{{bg-BG|Казвам се...|Kazvam se...|}}",
-      "{{bg-BG|Извинете|Izvinete|}}",
-      "{{bg-BG|едно, две, три|edno, dve, tri|}}"
+      "{{bg-BG|Казвам се...|Kazvam se...|kaz-VAM SE...}}",
+      "{{bg-BG|Извинете|Izvinete|iz-vi-NE-te}}",
+      "{{bg-BG|едно, две, три|edno, dve, tri|ED-no, DVE, TRI}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -108,11 +108,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Казвам се...|Kazvam se...|}}",
+    "correctAnswer": "{{bg-BG|Казвам се...|Kazvam se...|kaz-VAM SE...}}",
     "incorrectAnswers": [
-      "{{bg-BG|Извинете|Izvinete|}}",
-      "{{bg-BG|едно, две, три|edno, dve, tri|}}",
-      "{{bg-BG|вода|voda|}}"
+      "{{bg-BG|Извинете|Izvinete|iz-vi-NE-te}}",
+      "{{bg-BG|едно, две, три|edno, dve, tri|ED-no, DVE, TRI}}",
+      "{{bg-BG|вода|voda|VO-da}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -129,11 +129,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Извинете|Izvinete|}}",
+    "correctAnswer": "{{bg-BG|Извинете|Izvinete|iz-vi-NE-te}}",
     "incorrectAnswers": [
-      "{{bg-BG|едно, две, три|edno, dve, tri|}}",
-      "{{bg-BG|вода|voda|}}",
-      "{{bg-BG|Добро утро|Dobro utro|}}"
+      "{{bg-BG|едно, две, три|edno, dve, tri|ED-no, DVE, TRI}}",
+      "{{bg-BG|вода|voda|VO-da}}",
+      "{{bg-BG|Добро утро|Dobro utro|DO-bro U-tro}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -150,11 +150,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in Bulgarian?",
-    "correctAnswer": "{{bg-BG|едно, две, три|edno, dve, tri|}}",
+    "correctAnswer": "{{bg-BG|едно, две, три|edno, dve, tri|ED-no, DVE, TRI}}",
     "incorrectAnswers": [
-      "{{bg-BG|вода|voda|}}",
-      "{{bg-BG|Добро утро|Dobro utro|}}",
-      "{{bg-BG|четири|chetiri|}}"
+      "{{bg-BG|вода|voda|VO-da}}",
+      "{{bg-BG|Добро утро|Dobro utro|DO-bro U-tro}}",
+      "{{bg-BG|четири|chetiri|che-TI-ri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -170,11 +170,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'water' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|вода|voda|}}",
+    "correctAnswer": "{{bg-BG|вода|voda|VO-da}}",
     "incorrectAnswers": [
-      "{{bg-BG|Добро утро|Dobro utro|}}",
-      "{{bg-BG|четири|chetiri|}}",
-      "{{bg-BG|пет|pet|}}"
+      "{{bg-BG|Добро утро|Dobro utro|DO-bro U-tro}}",
+      "{{bg-BG|четири|chetiri|che-TI-ri}}",
+      "{{bg-BG|пет|pet|PET}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -190,11 +190,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'good morning' in Bulgarian?",
-    "correctAnswer": "{{bg-BG|Добро утро|Dobro utro|}}",
+    "correctAnswer": "{{bg-BG|Добро утро|Dobro utro|DO-bro U-tro}}",
     "incorrectAnswers": [
-      "{{bg-BG|четири|chetiri|}}",
-      "{{bg-BG|пет|pet|}}",
-      "{{bg-BG|шест|shest|}}"
+      "{{bg-BG|четири|chetiri|che-TI-ri}}",
+      "{{bg-BG|пет|pet|PET}}",
+      "{{bg-BG|шест|shest|SHEST}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -211,11 +211,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'four'?",
-    "correctAnswer": "{{bg-BG|четири|chetiri|}}",
+    "correctAnswer": "{{bg-BG|четири|chetiri|che-TI-ri}}",
     "incorrectAnswers": [
-      "{{bg-BG|пет|pet|}}",
-      "{{bg-BG|шест|shest|}}",
-      "{{bg-BG|седем|sedem|}}"
+      "{{bg-BG|пет|pet|PET}}",
+      "{{bg-BG|шест|shest|SHEST}}",
+      "{{bg-BG|седем|sedem|se-DEM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -233,11 +233,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'five' in everyday use?",
-    "correctAnswer": "{{bg-BG|пет|pet|}}",
+    "correctAnswer": "{{bg-BG|пет|pet|PET}}",
     "incorrectAnswers": [
-      "{{bg-BG|шест|shest|}}",
-      "{{bg-BG|седем|sedem|}}",
-      "{{bg-BG|осем|osem|}}"
+      "{{bg-BG|шест|shest|SHEST}}",
+      "{{bg-BG|седем|sedem|se-DEM}}",
+      "{{bg-BG|осем|osem|o-SEM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -255,11 +255,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'six'.",
-    "correctAnswer": "{{bg-BG|шест|shest|}}",
+    "correctAnswer": "{{bg-BG|шест|shest|SHEST}}",
     "incorrectAnswers": [
-      "{{bg-BG|седем|sedem|}}",
-      "{{bg-BG|осем|osem|}}",
-      "{{bg-BG|девет|devet|}}"
+      "{{bg-BG|седем|sedem|se-DEM}}",
+      "{{bg-BG|осем|osem|o-SEM}}",
+      "{{bg-BG|девет|devet|de-VET}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -277,11 +277,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'seven'?",
-    "correctAnswer": "{{bg-BG|седем|sedem|}}",
+    "correctAnswer": "{{bg-BG|седем|sedem|se-DEM}}",
     "incorrectAnswers": [
-      "{{bg-BG|осем|osem|}}",
-      "{{bg-BG|девет|devet|}}",
-      "{{bg-BG|десет|deset|}}"
+      "{{bg-BG|осем|osem|o-SEM}}",
+      "{{bg-BG|девет|devet|de-VET}}",
+      "{{bg-BG|десет|deset|de-SET}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -299,11 +299,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'eight'?",
-    "correctAnswer": "{{bg-BG|осем|osem|}}",
+    "correctAnswer": "{{bg-BG|осем|osem|o-SEM}}",
     "incorrectAnswers": [
-      "{{bg-BG|девет|devet|}}",
-      "{{bg-BG|десет|deset|}}",
-      "{{bg-BG|единадесет|edinadeset|}}"
+      "{{bg-BG|девет|devet|de-VET}}",
+      "{{bg-BG|десет|deset|de-SET}}",
+      "{{bg-BG|единадесет|edinadeset|e-di-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -321,11 +321,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'nine' in everyday use?",
-    "correctAnswer": "{{bg-BG|девет|devet|}}",
+    "correctAnswer": "{{bg-BG|девет|devet|de-VET}}",
     "incorrectAnswers": [
-      "{{bg-BG|десет|deset|}}",
-      "{{bg-BG|единадесет|edinadeset|}}",
-      "{{bg-BG|дванадесет|dvanadeset|}}"
+      "{{bg-BG|десет|deset|de-SET}}",
+      "{{bg-BG|единадесет|edinadeset|e-di-na-DE-set}}",
+      "{{bg-BG|дванадесет|dvanadeset|dva-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'ten'.",
-    "correctAnswer": "{{bg-BG|десет|deset|}}",
+    "correctAnswer": "{{bg-BG|десет|deset|de-SET}}",
     "incorrectAnswers": [
-      "{{bg-BG|единадесет|edinadeset|}}",
-      "{{bg-BG|дванадесет|dvanadeset|}}",
-      "{{bg-BG|тринадесет|trinadeset|}}"
+      "{{bg-BG|единадесет|edinadeset|e-di-na-DE-set}}",
+      "{{bg-BG|дванадесет|dvanadeset|dva-na-DE-set}}",
+      "{{bg-BG|тринадесет|trinadeset|tri-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -365,11 +365,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'eleven'?",
-    "correctAnswer": "{{bg-BG|единадесет|edinadeset|}}",
+    "correctAnswer": "{{bg-BG|единадесет|edinadeset|e-di-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|дванадесет|dvanadeset|}}",
-      "{{bg-BG|тринадесет|trinadeset|}}",
-      "{{bg-BG|четиринадесет|chetirinadeset|}}"
+      "{{bg-BG|дванадесет|dvanadeset|dva-na-DE-set}}",
+      "{{bg-BG|тринадесет|trinadeset|tri-na-DE-set}}",
+      "{{bg-BG|четиринадесет|chetirinadeset|che-ti-ri-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -387,11 +387,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'twelve'?",
-    "correctAnswer": "{{bg-BG|дванадесет|dvanadeset|}}",
+    "correctAnswer": "{{bg-BG|дванадесет|dvanadeset|dva-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|тринадесет|trinadeset|}}",
-      "{{bg-BG|четиринадесет|chetirinadeset|}}",
-      "{{bg-BG|петнадесет|petnadeset|}}"
+      "{{bg-BG|тринадесет|trinadeset|tri-na-DE-set}}",
+      "{{bg-BG|четиринадесет|chetirinadeset|che-ti-ri-na-DE-set}}",
+      "{{bg-BG|петнадесет|petnadeset|pet-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -409,11 +409,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'thirteen' in everyday use?",
-    "correctAnswer": "{{bg-BG|тринадесет|trinadeset|}}",
+    "correctAnswer": "{{bg-BG|тринадесет|trinadeset|tri-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|четиринадесет|chetirinadeset|}}",
-      "{{bg-BG|петнадесет|petnadeset|}}",
-      "{{bg-BG|шестнадесет|shestnadeset|}}"
+      "{{bg-BG|четиринадесет|chetirinadeset|che-ti-ri-na-DE-set}}",
+      "{{bg-BG|петнадесет|petnadeset|pet-na-DE-set}}",
+      "{{bg-BG|шестнадесет|shestnadeset|shest-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -431,11 +431,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'fourteen'.",
-    "correctAnswer": "{{bg-BG|четиринадесет|chetirinadeset|}}",
+    "correctAnswer": "{{bg-BG|четиринадесет|chetirinadeset|che-ti-ri-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|петнадесет|petnadeset|}}",
-      "{{bg-BG|шестнадесет|shestnadeset|}}",
-      "{{bg-BG|седемнадесет|sedemnadeset|}}"
+      "{{bg-BG|петнадесет|petnadeset|pet-na-DE-set}}",
+      "{{bg-BG|шестнадесет|shestnadeset|shest-na-DE-set}}",
+      "{{bg-BG|седемнадесет|sedemnadeset|se-dem-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -453,11 +453,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'fifteen'?",
-    "correctAnswer": "{{bg-BG|петнадесет|petnadeset|}}",
+    "correctAnswer": "{{bg-BG|петнадесет|petnadeset|pet-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|шестнадесет|shestnadeset|}}",
-      "{{bg-BG|седемнадесет|sedemnadeset|}}",
-      "{{bg-BG|осемнадесет|osemnadeset|}}"
+      "{{bg-BG|шестнадесет|shestnadeset|shest-na-DE-set}}",
+      "{{bg-BG|седемнадесет|sedemnadeset|se-dem-na-DE-set}}",
+      "{{bg-BG|осемнадесет|osemnadeset|o-sem-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -475,11 +475,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'sixteen'?",
-    "correctAnswer": "{{bg-BG|шестнадесет|shestnadeset|}}",
+    "correctAnswer": "{{bg-BG|шестнадесет|shestnadeset|shest-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|седемнадесет|sedemnadeset|}}",
-      "{{bg-BG|осемнадесет|osemnadeset|}}",
-      "{{bg-BG|деветнадесет|devetnadeset|}}"
+      "{{bg-BG|седемнадесет|sedemnadeset|se-dem-na-DE-set}}",
+      "{{bg-BG|осемнадесет|osemnadeset|o-sem-na-DE-set}}",
+      "{{bg-BG|деветнадесет|devetnadeset|de-vet-na-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -497,11 +497,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'seventeen' in everyday use?",
-    "correctAnswer": "{{bg-BG|седемнадесет|sedemnadeset|}}",
+    "correctAnswer": "{{bg-BG|седемнадесет|sedemnadeset|se-dem-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|осемнадесет|osemnadeset|}}",
-      "{{bg-BG|деветнадесет|devetnadeset|}}",
-      "{{bg-BG|двадесет|dvadeset|}}"
+      "{{bg-BG|осемнадесет|osemnadeset|o-sem-na-DE-set}}",
+      "{{bg-BG|деветнадесет|devetnadeset|de-vet-na-DE-set}}",
+      "{{bg-BG|двадесет|dvadeset|dva-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -519,11 +519,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'eighteen'.",
-    "correctAnswer": "{{bg-BG|осемнадесет|osemnadeset|}}",
+    "correctAnswer": "{{bg-BG|осемнадесет|osemnadeset|o-sem-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|деветнадесет|devetnadeset|}}",
-      "{{bg-BG|двадесет|dvadeset|}}",
-      "{{bg-BG|тридесет|trideset|}}"
+      "{{bg-BG|деветнадесет|devetnadeset|de-vet-na-DE-set}}",
+      "{{bg-BG|двадесет|dvadeset|dva-DE-set}}",
+      "{{bg-BG|тридесет|trideset|tri-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -541,11 +541,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'nineteen'?",
-    "correctAnswer": "{{bg-BG|деветнадесет|devetnadeset|}}",
+    "correctAnswer": "{{bg-BG|деветнадесет|devetnadeset|de-vet-na-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|двадесет|dvadeset|}}",
-      "{{bg-BG|тридесет|trideset|}}",
-      "{{bg-BG|четиридесет|chetirideset|}}"
+      "{{bg-BG|двадесет|dvadeset|dva-DE-set}}",
+      "{{bg-BG|тридесет|trideset|tri-DE-set}}",
+      "{{bg-BG|четиридесет|chetirideset|che-ti-ri-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'twenty'?",
-    "correctAnswer": "{{bg-BG|двадесет|dvadeset|}}",
+    "correctAnswer": "{{bg-BG|двадесет|dvadeset|dva-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|тридесет|trideset|}}",
-      "{{bg-BG|четиридесет|chetirideset|}}",
-      "{{bg-BG|петдесет|petdeset|}}"
+      "{{bg-BG|тридесет|trideset|tri-DE-set}}",
+      "{{bg-BG|четиридесет|chetirideset|che-ti-ri-DE-set}}",
+      "{{bg-BG|петдесет|petdeset|pet-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -585,11 +585,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'thirty' in everyday use?",
-    "correctAnswer": "{{bg-BG|тридесет|trideset|}}",
+    "correctAnswer": "{{bg-BG|тридесет|trideset|tri-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|четиридесет|chetirideset|}}",
-      "{{bg-BG|петдесет|petdeset|}}",
-      "{{bg-BG|шестдесет|shestdeset|}}"
+      "{{bg-BG|четиридесет|chetirideset|che-ti-ri-DE-set}}",
+      "{{bg-BG|петдесет|petdeset|pet-DE-set}}",
+      "{{bg-BG|шестдесет|shestdeset|shest-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -607,11 +607,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'forty'.",
-    "correctAnswer": "{{bg-BG|четиридесет|chetirideset|}}",
+    "correctAnswer": "{{bg-BG|четиридесет|chetirideset|che-ti-ri-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|петдесет|petdeset|}}",
-      "{{bg-BG|шестдесет|shestdeset|}}",
-      "{{bg-BG|седемдесет|sedemdeset|}}"
+      "{{bg-BG|петдесет|petdeset|pet-DE-set}}",
+      "{{bg-BG|шестдесет|shestdeset|shest-DE-set}}",
+      "{{bg-BG|седемдесет|sedemdeset|se-dem-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -629,11 +629,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'fifty'?",
-    "correctAnswer": "{{bg-BG|петдесет|petdeset|}}",
+    "correctAnswer": "{{bg-BG|петдесет|petdeset|pet-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|шестдесет|shestdeset|}}",
-      "{{bg-BG|седемдесет|sedemdeset|}}",
-      "{{bg-BG|осемдесет|osemdeset|}}"
+      "{{bg-BG|шестдесет|shestdeset|shest-DE-set}}",
+      "{{bg-BG|седемдесет|sedemdeset|se-dem-DE-set}}",
+      "{{bg-BG|осемдесет|osemdeset|o-sem-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -651,11 +651,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'sixty'?",
-    "correctAnswer": "{{bg-BG|шестдесет|shestdeset|}}",
+    "correctAnswer": "{{bg-BG|шестдесет|shestdeset|shest-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|седемдесет|sedemdeset|}}",
-      "{{bg-BG|осемдесет|osemdeset|}}",
-      "{{bg-BG|деветдесет|devetdeset|}}"
+      "{{bg-BG|седемдесет|sedemdeset|se-dem-DE-set}}",
+      "{{bg-BG|осемдесет|osemdeset|o-sem-DE-set}}",
+      "{{bg-BG|деветдесет|devetdeset|de-vet-DE-set}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -673,11 +673,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'seventy' in everyday use?",
-    "correctAnswer": "{{bg-BG|седемдесет|sedemdeset|}}",
+    "correctAnswer": "{{bg-BG|седемдесет|sedemdeset|se-dem-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|осемдесет|osemdeset|}}",
-      "{{bg-BG|деветдесет|devetdeset|}}",
-      "{{bg-BG|сто|sto|}}"
+      "{{bg-BG|осемдесет|osemdeset|o-sem-DE-set}}",
+      "{{bg-BG|деветдесет|devetdeset|de-vet-DE-set}}",
+      "{{bg-BG|сто|sto|STO}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -695,11 +695,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'eighty'.",
-    "correctAnswer": "{{bg-BG|осемдесет|osemdeset|}}",
+    "correctAnswer": "{{bg-BG|осемдесет|osemdeset|o-sem-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|деветдесет|devetdeset|}}",
-      "{{bg-BG|сто|sto|}}",
-      "{{bg-BG|първи|parvi|}}"
+      "{{bg-BG|деветдесет|devetdeset|de-vet-DE-set}}",
+      "{{bg-BG|сто|sto|STO}}",
+      "{{bg-BG|първи|parvi|PAR-vi}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -717,11 +717,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'ninety'?",
-    "correctAnswer": "{{bg-BG|деветдесет|devetdeset|}}",
+    "correctAnswer": "{{bg-BG|деветдесет|devetdeset|de-vet-DE-set}}",
     "incorrectAnswers": [
-      "{{bg-BG|сто|sto|}}",
-      "{{bg-BG|първи|parvi|}}",
-      "{{bg-BG|втори|vtori|}}"
+      "{{bg-BG|сто|sto|STO}}",
+      "{{bg-BG|първи|parvi|PAR-vi}}",
+      "{{bg-BG|втори|vtori|VTO-ri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -739,11 +739,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'one hundred'?",
-    "correctAnswer": "{{bg-BG|сто|sto|}}",
+    "correctAnswer": "{{bg-BG|сто|sto|STO}}",
     "incorrectAnswers": [
-      "{{bg-BG|първи|parvi|}}",
-      "{{bg-BG|втори|vtori|}}",
-      "{{bg-BG|трети|treti|}}"
+      "{{bg-BG|първи|parvi|PAR-vi}}",
+      "{{bg-BG|втори|vtori|VTO-ri}}",
+      "{{bg-BG|трети|treti|TRE-ti}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -761,11 +761,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'first'?",
-    "correctAnswer": "{{bg-BG|първи|parvi|}}",
+    "correctAnswer": "{{bg-BG|първи|parvi|PAR-vi}}",
     "incorrectAnswers": [
-      "{{bg-BG|втори|vtori|}}",
-      "{{bg-BG|трети|treti|}}",
-      "{{bg-BG|половина|polovina|}}"
+      "{{bg-BG|втори|vtori|VTO-ri}}",
+      "{{bg-BG|трети|treti|TRE-ti}}",
+      "{{bg-BG|половина|polovina|po-lo-VI-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'second' in everyday use?",
-    "correctAnswer": "{{bg-BG|втори|vtori|}}",
+    "correctAnswer": "{{bg-BG|втори|vtori|VTO-ri}}",
     "incorrectAnswers": [
-      "{{bg-BG|трети|treti|}}",
-      "{{bg-BG|половина|polovina|}}",
-      "{{bg-BG|четвърт|chetvart|}}"
+      "{{bg-BG|трети|treti|TRE-ti}}",
+      "{{bg-BG|половина|polovina|po-lo-VI-na}}",
+      "{{bg-BG|четвърт|chetvart|chet-VART}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -805,11 +805,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'third'.",
-    "correctAnswer": "{{bg-BG|трети|treti|}}",
+    "correctAnswer": "{{bg-BG|трети|treti|TRE-ti}}",
     "incorrectAnswers": [
-      "{{bg-BG|половина|polovina|}}",
-      "{{bg-BG|четвърт|chetvart|}}",
-      "{{bg-BG|понеделник|ponedelnik|}}"
+      "{{bg-BG|половина|polovina|po-lo-VI-na}}",
+      "{{bg-BG|четвърт|chetvart|chet-VART}}",
+      "{{bg-BG|понеделник|ponedelnik|po-ne-DEL-nik}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -827,11 +827,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'a half'?",
-    "correctAnswer": "{{bg-BG|половина|polovina|}}",
+    "correctAnswer": "{{bg-BG|половина|polovina|po-lo-VI-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|четвърт|chetvart|}}",
-      "{{bg-BG|понеделник|ponedelnik|}}",
-      "{{bg-BG|вторник|vtornik|}}"
+      "{{bg-BG|четвърт|chetvart|chet-VART}}",
+      "{{bg-BG|понеделник|ponedelnik|po-ne-DEL-nik}}",
+      "{{bg-BG|вторник|vtornik|vtor-NIK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -849,11 +849,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'a quarter'?",
-    "correctAnswer": "{{bg-BG|четвърт|chetvart|}}",
+    "correctAnswer": "{{bg-BG|четвърт|chetvart|chet-VART}}",
     "incorrectAnswers": [
-      "{{bg-BG|понеделник|ponedelnik|}}",
-      "{{bg-BG|вторник|vtornik|}}",
-      "{{bg-BG|сряда|sryada|}}"
+      "{{bg-BG|понеделник|ponedelnik|po-ne-DEL-nik}}",
+      "{{bg-BG|вторник|vtornik|vtor-NIK}}",
+      "{{bg-BG|сряда|sryada|SRYA-da}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -871,11 +871,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'Monday'?",
-    "correctAnswer": "{{bg-BG|понеделник|ponedelnik|}}",
+    "correctAnswer": "{{bg-BG|понеделник|ponedelnik|po-ne-DEL-nik}}",
     "incorrectAnswers": [
-      "{{bg-BG|вторник|vtornik|}}",
-      "{{bg-BG|сряда|sryada|}}",
-      "{{bg-BG|четвъртък|chetvartak|}}"
+      "{{bg-BG|вторник|vtornik|vtor-NIK}}",
+      "{{bg-BG|сряда|sryada|SRYA-da}}",
+      "{{bg-BG|четвъртък|chetvartak|chet-VAR-tak}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -893,11 +893,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'Tuesday' in everyday use?",
-    "correctAnswer": "{{bg-BG|вторник|vtornik|}}",
+    "correctAnswer": "{{bg-BG|вторник|vtornik|vtor-NIK}}",
     "incorrectAnswers": [
-      "{{bg-BG|сряда|sryada|}}",
-      "{{bg-BG|четвъртък|chetvartak|}}",
-      "{{bg-BG|петък|petak|}}"
+      "{{bg-BG|сряда|sryada|SRYA-da}}",
+      "{{bg-BG|четвъртък|chetvartak|chet-VAR-tak}}",
+      "{{bg-BG|петък|petak|pe-TAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -915,11 +915,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'Wednesday'.",
-    "correctAnswer": "{{bg-BG|сряда|sryada|}}",
+    "correctAnswer": "{{bg-BG|сряда|sryada|SRYA-da}}",
     "incorrectAnswers": [
-      "{{bg-BG|четвъртък|chetvartak|}}",
-      "{{bg-BG|петък|petak|}}",
-      "{{bg-BG|събота|sabota|}}"
+      "{{bg-BG|четвъртък|chetvartak|chet-VAR-tak}}",
+      "{{bg-BG|петък|petak|pe-TAK}}",
+      "{{bg-BG|събота|sabota|sa-BO-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -937,11 +937,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'Thursday'?",
-    "correctAnswer": "{{bg-BG|четвъртък|chetvartak|}}",
+    "correctAnswer": "{{bg-BG|четвъртък|chetvartak|chet-VAR-tak}}",
     "incorrectAnswers": [
-      "{{bg-BG|петък|petak|}}",
-      "{{bg-BG|събота|sabota|}}",
-      "{{bg-BG|неделя|nedelya|}}"
+      "{{bg-BG|петък|petak|pe-TAK}}",
+      "{{bg-BG|събота|sabota|sa-BO-ta}}",
+      "{{bg-BG|неделя|nedelya|ne-DE-lya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -959,11 +959,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'Friday'?",
-    "correctAnswer": "{{bg-BG|петък|petak|}}",
+    "correctAnswer": "{{bg-BG|петък|petak|pe-TAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|събота|sabota|}}",
-      "{{bg-BG|неделя|nedelya|}}",
-      "{{bg-BG|януари|yanuari|}}"
+      "{{bg-BG|събота|sabota|sa-BO-ta}}",
+      "{{bg-BG|неделя|nedelya|ne-DE-lya}}",
+      "{{bg-BG|януари|yanuari|ya-NUA-ri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -981,11 +981,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'Saturday' in everyday use?",
-    "correctAnswer": "{{bg-BG|събота|sabota|}}",
+    "correctAnswer": "{{bg-BG|събота|sabota|sa-BO-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|неделя|nedelya|}}",
-      "{{bg-BG|януари|yanuari|}}",
-      "{{bg-BG|февруари|fevruari|}}"
+      "{{bg-BG|неделя|nedelya|ne-DE-lya}}",
+      "{{bg-BG|януари|yanuari|ya-NUA-ri}}",
+      "{{bg-BG|февруари|fevruari|fe-VRUA-ri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'Sunday'.",
-    "correctAnswer": "{{bg-BG|неделя|nedelya|}}",
+    "correctAnswer": "{{bg-BG|неделя|nedelya|ne-DE-lya}}",
     "incorrectAnswers": [
-      "{{bg-BG|януари|yanuari|}}",
-      "{{bg-BG|февруари|fevruari|}}",
-      "{{bg-BG|март|mart|}}"
+      "{{bg-BG|януари|yanuari|ya-NUA-ri}}",
+      "{{bg-BG|февруари|fevruari|fe-VRUA-ri}}",
+      "{{bg-BG|март|mart|MART}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1025,11 +1025,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'January'?",
-    "correctAnswer": "{{bg-BG|януари|yanuari|}}",
+    "correctAnswer": "{{bg-BG|януари|yanuari|ya-NUA-ri}}",
     "incorrectAnswers": [
-      "{{bg-BG|февруари|fevruari|}}",
-      "{{bg-BG|март|mart|}}",
-      "{{bg-BG|април|april|}}"
+      "{{bg-BG|февруари|fevruari|fe-VRUA-ri}}",
+      "{{bg-BG|март|mart|MART}}",
+      "{{bg-BG|април|april|a-PRIL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1047,11 +1047,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'February' in everyday use?",
-    "correctAnswer": "{{bg-BG|февруари|fevruari|}}",
+    "correctAnswer": "{{bg-BG|февруари|fevruari|fe-VRUA-ri}}",
     "incorrectAnswers": [
-      "{{bg-BG|март|mart|}}",
-      "{{bg-BG|април|april|}}",
-      "{{bg-BG|май|may|}}"
+      "{{bg-BG|март|mart|MART}}",
+      "{{bg-BG|април|april|a-PRIL}}",
+      "{{bg-BG|май|may|MAY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1069,11 +1069,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'March'.",
-    "correctAnswer": "{{bg-BG|март|mart|}}",
+    "correctAnswer": "{{bg-BG|март|mart|MART}}",
     "incorrectAnswers": [
-      "{{bg-BG|април|april|}}",
-      "{{bg-BG|май|may|}}",
-      "{{bg-BG|юни|yuni|}}"
+      "{{bg-BG|април|april|a-PRIL}}",
+      "{{bg-BG|май|may|MAY}}",
+      "{{bg-BG|юни|yuni|YU-ni}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1091,11 +1091,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'April'?",
-    "correctAnswer": "{{bg-BG|април|april|}}",
+    "correctAnswer": "{{bg-BG|април|april|a-PRIL}}",
     "incorrectAnswers": [
-      "{{bg-BG|май|may|}}",
-      "{{bg-BG|юни|yuni|}}",
-      "{{bg-BG|юли|yuli|}}"
+      "{{bg-BG|май|may|MAY}}",
+      "{{bg-BG|юни|yuni|YU-ni}}",
+      "{{bg-BG|юли|yuli|YU-li}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1113,11 +1113,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'May'?",
-    "correctAnswer": "{{bg-BG|май|may|}}",
+    "correctAnswer": "{{bg-BG|май|may|MAY}}",
     "incorrectAnswers": [
-      "{{bg-BG|юни|yuni|}}",
-      "{{bg-BG|юли|yuli|}}",
-      "{{bg-BG|август|avgust|}}"
+      "{{bg-BG|юни|yuni|YU-ni}}",
+      "{{bg-BG|юли|yuli|YU-li}}",
+      "{{bg-BG|август|avgust|av-GUST}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1135,11 +1135,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'June' in everyday use?",
-    "correctAnswer": "{{bg-BG|юни|yuni|}}",
+    "correctAnswer": "{{bg-BG|юни|yuni|YU-ni}}",
     "incorrectAnswers": [
-      "{{bg-BG|юли|yuli|}}",
-      "{{bg-BG|август|avgust|}}",
-      "{{bg-BG|септември|septemvri|}}"
+      "{{bg-BG|юли|yuli|YU-li}}",
+      "{{bg-BG|август|avgust|av-GUST}}",
+      "{{bg-BG|септември|septemvri|sep-TEM-vri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1157,11 +1157,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'July'.",
-    "correctAnswer": "{{bg-BG|юли|yuli|}}",
+    "correctAnswer": "{{bg-BG|юли|yuli|YU-li}}",
     "incorrectAnswers": [
-      "{{bg-BG|август|avgust|}}",
-      "{{bg-BG|септември|septemvri|}}",
-      "{{bg-BG|октомври|oktomvri|}}"
+      "{{bg-BG|август|avgust|av-GUST}}",
+      "{{bg-BG|септември|septemvri|sep-TEM-vri}}",
+      "{{bg-BG|октомври|oktomvri|ok-TOM-vri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1179,11 +1179,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'August'?",
-    "correctAnswer": "{{bg-BG|август|avgust|}}",
+    "correctAnswer": "{{bg-BG|август|avgust|av-GUST}}",
     "incorrectAnswers": [
-      "{{bg-BG|септември|septemvri|}}",
-      "{{bg-BG|октомври|oktomvri|}}",
-      "{{bg-BG|ноември|noemvri|}}"
+      "{{bg-BG|септември|septemvri|sep-TEM-vri}}",
+      "{{bg-BG|октомври|oktomvri|ok-TOM-vri}}",
+      "{{bg-BG|ноември|noemvri|NOEM-vri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1201,11 +1201,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'September'?",
-    "correctAnswer": "{{bg-BG|септември|septemvri|}}",
+    "correctAnswer": "{{bg-BG|септември|septemvri|sep-TEM-vri}}",
     "incorrectAnswers": [
-      "{{bg-BG|октомври|oktomvri|}}",
-      "{{bg-BG|ноември|noemvri|}}",
-      "{{bg-BG|декември|dekemvri|}}"
+      "{{bg-BG|октомври|oktomvri|ok-TOM-vri}}",
+      "{{bg-BG|ноември|noemvri|NOEM-vri}}",
+      "{{bg-BG|декември|dekemvri|de-KEM-vri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'October' in everyday use?",
-    "correctAnswer": "{{bg-BG|октомври|oktomvri|}}",
+    "correctAnswer": "{{bg-BG|октомври|oktomvri|ok-TOM-vri}}",
     "incorrectAnswers": [
-      "{{bg-BG|ноември|noemvri|}}",
-      "{{bg-BG|декември|dekemvri|}}",
-      "{{bg-BG|пролет|prolet|}}"
+      "{{bg-BG|ноември|noemvri|NOEM-vri}}",
+      "{{bg-BG|декември|dekemvri|de-KEM-vri}}",
+      "{{bg-BG|пролет|prolet|pro-LET}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1245,11 +1245,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'November'.",
-    "correctAnswer": "{{bg-BG|ноември|noemvri|}}",
+    "correctAnswer": "{{bg-BG|ноември|noemvri|NOEM-vri}}",
     "incorrectAnswers": [
-      "{{bg-BG|декември|dekemvri|}}",
-      "{{bg-BG|пролет|prolet|}}",
-      "{{bg-BG|лято|lyato|}}"
+      "{{bg-BG|декември|dekemvri|de-KEM-vri}}",
+      "{{bg-BG|пролет|prolet|pro-LET}}",
+      "{{bg-BG|лято|lyato|LYA-to}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1267,11 +1267,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'December'?",
-    "correctAnswer": "{{bg-BG|декември|dekemvri|}}",
+    "correctAnswer": "{{bg-BG|декември|dekemvri|de-KEM-vri}}",
     "incorrectAnswers": [
-      "{{bg-BG|пролет|prolet|}}",
-      "{{bg-BG|лято|lyato|}}",
-      "{{bg-BG|есен|esen|}}"
+      "{{bg-BG|пролет|prolet|pro-LET}}",
+      "{{bg-BG|лято|lyato|LYA-to}}",
+      "{{bg-BG|есен|esen|e-SEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1289,11 +1289,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'spring'?",
-    "correctAnswer": "{{bg-BG|пролет|prolet|}}",
+    "correctAnswer": "{{bg-BG|пролет|prolet|pro-LET}}",
     "incorrectAnswers": [
-      "{{bg-BG|лято|lyato|}}",
-      "{{bg-BG|есен|esen|}}",
-      "{{bg-BG|зима|zima|}}"
+      "{{bg-BG|лято|lyato|LYA-to}}",
+      "{{bg-BG|есен|esen|e-SEN}}",
+      "{{bg-BG|зима|zima|ZI-ma}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1311,11 +1311,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'summer' in everyday use?",
-    "correctAnswer": "{{bg-BG|лято|lyato|}}",
+    "correctAnswer": "{{bg-BG|лято|lyato|LYA-to}}",
     "incorrectAnswers": [
-      "{{bg-BG|есен|esen|}}",
-      "{{bg-BG|зима|zima|}}",
-      "{{bg-BG|сутрин|sutrin|}}"
+      "{{bg-BG|есен|esen|e-SEN}}",
+      "{{bg-BG|зима|zima|ZI-ma}}",
+      "{{bg-BG|сутрин|sutrin|su-TRIN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1333,11 +1333,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'autumn'.",
-    "correctAnswer": "{{bg-BG|есен|esen|}}",
+    "correctAnswer": "{{bg-BG|есен|esen|e-SEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|зима|zima|}}",
-      "{{bg-BG|сутрин|sutrin|}}",
-      "{{bg-BG|следобед|sledobed|}}"
+      "{{bg-BG|зима|zima|ZI-ma}}",
+      "{{bg-BG|сутрин|sutrin|su-TRIN}}",
+      "{{bg-BG|следобед|sledobed|sle-DO-bed}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1355,11 +1355,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'winter'?",
-    "correctAnswer": "{{bg-BG|зима|zima|}}",
+    "correctAnswer": "{{bg-BG|зима|zima|ZI-ma}}",
     "incorrectAnswers": [
-      "{{bg-BG|сутрин|sutrin|}}",
-      "{{bg-BG|следобед|sledobed|}}",
-      "{{bg-BG|вечер|vecher|}}"
+      "{{bg-BG|сутрин|sutrin|su-TRIN}}",
+      "{{bg-BG|следобед|sledobed|sle-DO-bed}}",
+      "{{bg-BG|вечер|vecher|ve-CHER}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1377,11 +1377,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'morning'?",
-    "correctAnswer": "{{bg-BG|сутрин|sutrin|}}",
+    "correctAnswer": "{{bg-BG|сутрин|sutrin|su-TRIN}}",
     "incorrectAnswers": [
-      "{{bg-BG|следобед|sledobed|}}",
-      "{{bg-BG|вечер|vecher|}}",
-      "{{bg-BG|час|chas|}}"
+      "{{bg-BG|следобед|sledobed|sle-DO-bed}}",
+      "{{bg-BG|вечер|vecher|ve-CHER}}",
+      "{{bg-BG|час|chas|CHAS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1399,11 +1399,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'afternoon' in everyday use?",
-    "correctAnswer": "{{bg-BG|следобед|sledobed|}}",
+    "correctAnswer": "{{bg-BG|следобед|sledobed|sle-DO-bed}}",
     "incorrectAnswers": [
-      "{{bg-BG|вечер|vecher|}}",
-      "{{bg-BG|час|chas|}}",
-      "{{bg-BG|минута|minuta|}}"
+      "{{bg-BG|вечер|vecher|ve-CHER}}",
+      "{{bg-BG|час|chas|CHAS}}",
+      "{{bg-BG|минута|minuta|mi-NU-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1421,11 +1421,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'evening'.",
-    "correctAnswer": "{{bg-BG|вечер|vecher|}}",
+    "correctAnswer": "{{bg-BG|вечер|vecher|ve-CHER}}",
     "incorrectAnswers": [
-      "{{bg-BG|час|chas|}}",
-      "{{bg-BG|минута|minuta|}}",
-      "{{bg-BG|седмица|sedmitsa|}}"
+      "{{bg-BG|час|chas|CHAS}}",
+      "{{bg-BG|минута|minuta|mi-NU-ta}}",
+      "{{bg-BG|седмица|sedmitsa|sed-MI-tsa}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'hour'?",
-    "correctAnswer": "{{bg-BG|час|chas|}}",
+    "correctAnswer": "{{bg-BG|час|chas|CHAS}}",
     "incorrectAnswers": [
-      "{{bg-BG|минута|minuta|}}",
-      "{{bg-BG|седмица|sedmitsa|}}",
-      "{{bg-BG|месец|mesets|}}"
+      "{{bg-BG|минута|minuta|mi-NU-ta}}",
+      "{{bg-BG|седмица|sedmitsa|sed-MI-tsa}}",
+      "{{bg-BG|месец|mesets|me-SETS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1465,11 +1465,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'minute'?",
-    "correctAnswer": "{{bg-BG|минута|minuta|}}",
+    "correctAnswer": "{{bg-BG|минута|minuta|mi-NU-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|седмица|sedmitsa|}}",
-      "{{bg-BG|месец|mesets|}}",
-      "{{bg-BG|година|godina|}}"
+      "{{bg-BG|седмица|sedmitsa|sed-MI-tsa}}",
+      "{{bg-BG|месец|mesets|me-SETS}}",
+      "{{bg-BG|година|godina|go-DI-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1487,11 +1487,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'week' in everyday use?",
-    "correctAnswer": "{{bg-BG|седмица|sedmitsa|}}",
+    "correctAnswer": "{{bg-BG|седмица|sedmitsa|sed-MI-tsa}}",
     "incorrectAnswers": [
-      "{{bg-BG|месец|mesets|}}",
-      "{{bg-BG|година|godina|}}",
-      "{{bg-BG|днес|dnes|}}"
+      "{{bg-BG|месец|mesets|me-SETS}}",
+      "{{bg-BG|година|godina|go-DI-na}}",
+      "{{bg-BG|днес|dnes|DNES}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1509,11 +1509,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'month'.",
-    "correctAnswer": "{{bg-BG|месец|mesets|}}",
+    "correctAnswer": "{{bg-BG|месец|mesets|me-SETS}}",
     "incorrectAnswers": [
-      "{{bg-BG|година|godina|}}",
-      "{{bg-BG|днес|dnes|}}",
-      "{{bg-BG|утре|utre|}}"
+      "{{bg-BG|година|godina|go-DI-na}}",
+      "{{bg-BG|днес|dnes|DNES}}",
+      "{{bg-BG|утре|utre|U-tre}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1531,11 +1531,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'year'?",
-    "correctAnswer": "{{bg-BG|година|godina|}}",
+    "correctAnswer": "{{bg-BG|година|godina|go-DI-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|днес|dnes|}}",
-      "{{bg-BG|утре|utre|}}",
-      "{{bg-BG|вчера|vchera|}}"
+      "{{bg-BG|днес|dnes|DNES}}",
+      "{{bg-BG|утре|utre|U-tre}}",
+      "{{bg-BG|вчера|vchera|VCHE-ra}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1553,11 +1553,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'today'?",
-    "correctAnswer": "{{bg-BG|днес|dnes|}}",
+    "correctAnswer": "{{bg-BG|днес|dnes|DNES}}",
     "incorrectAnswers": [
-      "{{bg-BG|утре|utre|}}",
-      "{{bg-BG|вчера|vchera|}}",
-      "{{bg-BG|сега|sega|}}"
+      "{{bg-BG|утре|utre|U-tre}}",
+      "{{bg-BG|вчера|vchera|VCHE-ra}}",
+      "{{bg-BG|сега|sega|SE-ga}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1575,11 +1575,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'tomorrow' in everyday use?",
-    "correctAnswer": "{{bg-BG|утре|utre|}}",
+    "correctAnswer": "{{bg-BG|утре|utre|U-tre}}",
     "incorrectAnswers": [
-      "{{bg-BG|вчера|vchera|}}",
-      "{{bg-BG|сега|sega|}}",
-      "{{bg-BG|по-късно|po-kasno|}}"
+      "{{bg-BG|вчера|vchera|VCHE-ra}}",
+      "{{bg-BG|сега|sega|SE-ga}}",
+      "{{bg-BG|по-късно|po-kasno|PO-KAS-no}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1597,11 +1597,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'yesterday'.",
-    "correctAnswer": "{{bg-BG|вчера|vchera|}}",
+    "correctAnswer": "{{bg-BG|вчера|vchera|VCHE-ra}}",
     "incorrectAnswers": [
-      "{{bg-BG|сега|sega|}}",
-      "{{bg-BG|по-късно|po-kasno|}}",
-      "{{bg-BG|преди|predi|}}"
+      "{{bg-BG|сега|sega|SE-ga}}",
+      "{{bg-BG|по-късно|po-kasno|PO-KAS-no}}",
+      "{{bg-BG|преди|predi|PRE-di}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1619,11 +1619,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'now'?",
-    "correctAnswer": "{{bg-BG|сега|sega|}}",
+    "correctAnswer": "{{bg-BG|сега|sega|SE-ga}}",
     "incorrectAnswers": [
-      "{{bg-BG|по-късно|po-kasno|}}",
-      "{{bg-BG|преди|predi|}}",
-      "{{bg-BG|червен|cherven|}}"
+      "{{bg-BG|по-късно|po-kasno|PO-KAS-no}}",
+      "{{bg-BG|преди|predi|PRE-di}}",
+      "{{bg-BG|червен|cherven|cher-VEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1641,11 +1641,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'later'?",
-    "correctAnswer": "{{bg-BG|по-късно|po-kasno|}}",
+    "correctAnswer": "{{bg-BG|по-късно|po-kasno|PO-KAS-no}}",
     "incorrectAnswers": [
-      "{{bg-BG|преди|predi|}}",
-      "{{bg-BG|червен|cherven|}}",
-      "{{bg-BG|син|sin|}}"
+      "{{bg-BG|преди|predi|PRE-di}}",
+      "{{bg-BG|червен|cherven|cher-VEN}}",
+      "{{bg-BG|син|sin|SIN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'before' in everyday use?",
-    "correctAnswer": "{{bg-BG|преди|predi|}}",
+    "correctAnswer": "{{bg-BG|преди|predi|PRE-di}}",
     "incorrectAnswers": [
-      "{{bg-BG|червен|cherven|}}",
-      "{{bg-BG|син|sin|}}",
-      "{{bg-BG|зелен|zelen|}}"
+      "{{bg-BG|червен|cherven|cher-VEN}}",
+      "{{bg-BG|син|sin|SIN}}",
+      "{{bg-BG|зелен|zelen|ze-LEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1685,11 +1685,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'red'?",
-    "correctAnswer": "{{bg-BG|червен|cherven|}}",
+    "correctAnswer": "{{bg-BG|червен|cherven|cher-VEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|син|sin|}}",
-      "{{bg-BG|зелен|zelen|}}",
-      "{{bg-BG|жълт|zhalt|}}"
+      "{{bg-BG|син|sin|SIN}}",
+      "{{bg-BG|зелен|zelen|ze-LEN}}",
+      "{{bg-BG|жълт|zhalt|ZHALT}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1707,11 +1707,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'blue' in everyday use?",
-    "correctAnswer": "{{bg-BG|син|sin|}}",
+    "correctAnswer": "{{bg-BG|син|sin|SIN}}",
     "incorrectAnswers": [
-      "{{bg-BG|зелен|zelen|}}",
-      "{{bg-BG|жълт|zhalt|}}",
-      "{{bg-BG|черен|cheren|}}"
+      "{{bg-BG|зелен|zelen|ze-LEN}}",
+      "{{bg-BG|жълт|zhalt|ZHALT}}",
+      "{{bg-BG|черен|cheren|che-REN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1729,11 +1729,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'green'.",
-    "correctAnswer": "{{bg-BG|зелен|zelen|}}",
+    "correctAnswer": "{{bg-BG|зелен|zelen|ze-LEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|жълт|zhalt|}}",
-      "{{bg-BG|черен|cheren|}}",
-      "{{bg-BG|бял|byal|}}"
+      "{{bg-BG|жълт|zhalt|ZHALT}}",
+      "{{bg-BG|черен|cheren|che-REN}}",
+      "{{bg-BG|бял|byal|BYAL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1751,11 +1751,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'yellow'?",
-    "correctAnswer": "{{bg-BG|жълт|zhalt|}}",
+    "correctAnswer": "{{bg-BG|жълт|zhalt|ZHALT}}",
     "incorrectAnswers": [
-      "{{bg-BG|черен|cheren|}}",
-      "{{bg-BG|бял|byal|}}",
-      "{{bg-BG|сив|siv|}}"
+      "{{bg-BG|черен|cheren|che-REN}}",
+      "{{bg-BG|бял|byal|BYAL}}",
+      "{{bg-BG|сив|siv|SIV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1773,11 +1773,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'black'?",
-    "correctAnswer": "{{bg-BG|черен|cheren|}}",
+    "correctAnswer": "{{bg-BG|черен|cheren|che-REN}}",
     "incorrectAnswers": [
-      "{{bg-BG|бял|byal|}}",
-      "{{bg-BG|сив|siv|}}",
-      "{{bg-BG|кафяв|kafyav|}}"
+      "{{bg-BG|бял|byal|BYAL}}",
+      "{{bg-BG|сив|siv|SIV}}",
+      "{{bg-BG|кафяв|kafyav|ka-FYAV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1795,11 +1795,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'white' in everyday use?",
-    "correctAnswer": "{{bg-BG|бял|byal|}}",
+    "correctAnswer": "{{bg-BG|бял|byal|BYAL}}",
     "incorrectAnswers": [
-      "{{bg-BG|сив|siv|}}",
-      "{{bg-BG|кафяв|kafyav|}}",
-      "{{bg-BG|оранжев|oranzhev|}}"
+      "{{bg-BG|сив|siv|SIV}}",
+      "{{bg-BG|кафяв|kafyav|ka-FYAV}}",
+      "{{bg-BG|оранжев|oranzhev|o-RANZ-hev}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1817,11 +1817,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'gray'.",
-    "correctAnswer": "{{bg-BG|сив|siv|}}",
+    "correctAnswer": "{{bg-BG|сив|siv|SIV}}",
     "incorrectAnswers": [
-      "{{bg-BG|кафяв|kafyav|}}",
-      "{{bg-BG|оранжев|oranzhev|}}",
-      "{{bg-BG|розов|rozov|}}"
+      "{{bg-BG|кафяв|kafyav|ka-FYAV}}",
+      "{{bg-BG|оранжев|oranzhev|o-RANZ-hev}}",
+      "{{bg-BG|розов|rozov|ro-ZOV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1839,11 +1839,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'brown'?",
-    "correctAnswer": "{{bg-BG|кафяв|kafyav|}}",
+    "correctAnswer": "{{bg-BG|кафяв|kafyav|ka-FYAV}}",
     "incorrectAnswers": [
-      "{{bg-BG|оранжев|oranzhev|}}",
-      "{{bg-BG|розов|rozov|}}",
-      "{{bg-BG|лилав|lilav|}}"
+      "{{bg-BG|оранжев|oranzhev|o-RANZ-hev}}",
+      "{{bg-BG|розов|rozov|ro-ZOV}}",
+      "{{bg-BG|лилав|lilav|li-LAV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1861,11 +1861,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'orange'?",
-    "correctAnswer": "{{bg-BG|оранжев|oranzhev|}}",
+    "correctAnswer": "{{bg-BG|оранжев|oranzhev|o-RANZ-hev}}",
     "incorrectAnswers": [
-      "{{bg-BG|розов|rozov|}}",
-      "{{bg-BG|лилав|lilav|}}",
-      "{{bg-BG|светъл|svetal|}}"
+      "{{bg-BG|розов|rozov|ro-ZOV}}",
+      "{{bg-BG|лилав|lilav|li-LAV}}",
+      "{{bg-BG|светъл|svetal|sve-TAL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'pink' in everyday use?",
-    "correctAnswer": "{{bg-BG|розов|rozov|}}",
+    "correctAnswer": "{{bg-BG|розов|rozov|ro-ZOV}}",
     "incorrectAnswers": [
-      "{{bg-BG|лилав|lilav|}}",
-      "{{bg-BG|светъл|svetal|}}",
-      "{{bg-BG|тъмен|tamen|}}"
+      "{{bg-BG|лилав|lilav|li-LAV}}",
+      "{{bg-BG|светъл|svetal|sve-TAL}}",
+      "{{bg-BG|тъмен|tamen|ta-MEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1905,11 +1905,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'purple'.",
-    "correctAnswer": "{{bg-BG|лилав|lilav|}}",
+    "correctAnswer": "{{bg-BG|лилав|lilav|li-LAV}}",
     "incorrectAnswers": [
-      "{{bg-BG|светъл|svetal|}}",
-      "{{bg-BG|тъмен|tamen|}}",
-      "{{bg-BG|майка|mayka|}}"
+      "{{bg-BG|светъл|svetal|sve-TAL}}",
+      "{{bg-BG|тъмен|tamen|ta-MEN}}",
+      "{{bg-BG|майка|mayka|MAY-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1927,11 +1927,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'light'?",
-    "correctAnswer": "{{bg-BG|светъл|svetal|}}",
+    "correctAnswer": "{{bg-BG|светъл|svetal|sve-TAL}}",
     "incorrectAnswers": [
-      "{{bg-BG|тъмен|tamen|}}",
-      "{{bg-BG|майка|mayka|}}",
-      "{{bg-BG|баща|bashta|}}"
+      "{{bg-BG|тъмен|tamen|ta-MEN}}",
+      "{{bg-BG|майка|mayka|MAY-ka}}",
+      "{{bg-BG|баща|bashta|BASH-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1949,11 +1949,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'dark'?",
-    "correctAnswer": "{{bg-BG|тъмен|tamen|}}",
+    "correctAnswer": "{{bg-BG|тъмен|tamen|ta-MEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|майка|mayka|}}",
-      "{{bg-BG|баща|bashta|}}",
-      "{{bg-BG|брат|brat|}}"
+      "{{bg-BG|майка|mayka|MAY-ka}}",
+      "{{bg-BG|баща|bashta|BASH-ta}}",
+      "{{bg-BG|брат|brat|BRAT}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1971,11 +1971,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'mother'?",
-    "correctAnswer": "{{bg-BG|майка|mayka|}}",
+    "correctAnswer": "{{bg-BG|майка|mayka|MAY-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|баща|bashta|}}",
-      "{{bg-BG|брат|brat|}}",
-      "{{bg-BG|сестра|sestra|}}"
+      "{{bg-BG|баща|bashta|BASH-ta}}",
+      "{{bg-BG|брат|brat|BRAT}}",
+      "{{bg-BG|сестра|sestra|SES-tra}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -1993,11 +1993,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'father' in everyday use?",
-    "correctAnswer": "{{bg-BG|баща|bashta|}}",
+    "correctAnswer": "{{bg-BG|баща|bashta|BASH-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|брат|brat|}}",
-      "{{bg-BG|сестра|sestra|}}",
-      "{{bg-BG|син|sin|}}"
+      "{{bg-BG|брат|brat|BRAT}}",
+      "{{bg-BG|сестра|sestra|SES-tra}}",
+      "{{bg-BG|син|sin|SIN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2015,11 +2015,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'brother'.",
-    "correctAnswer": "{{bg-BG|брат|brat|}}",
+    "correctAnswer": "{{bg-BG|брат|brat|BRAT}}",
     "incorrectAnswers": [
-      "{{bg-BG|сестра|sestra|}}",
-      "{{bg-BG|син|sin|}}",
-      "{{bg-BG|дъщеря|dashterya|}}"
+      "{{bg-BG|сестра|sestra|SES-tra}}",
+      "{{bg-BG|син|sin|SIN}}",
+      "{{bg-BG|дъщеря|dashterya|dash-TE-rya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2037,11 +2037,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'sister'?",
-    "correctAnswer": "{{bg-BG|сестра|sestra|}}",
+    "correctAnswer": "{{bg-BG|сестра|sestra|SES-tra}}",
     "incorrectAnswers": [
-      "{{bg-BG|син|sin|}}",
-      "{{bg-BG|дъщеря|dashterya|}}",
-      "{{bg-BG|съпруг|saprug|}}"
+      "{{bg-BG|син|sin|SIN}}",
+      "{{bg-BG|дъщеря|dashterya|dash-TE-rya}}",
+      "{{bg-BG|съпруг|saprug|sa-PRUG}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2059,11 +2059,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'son'?",
-    "correctAnswer": "{{bg-BG|син|sin|}}",
+    "correctAnswer": "{{bg-BG|син|sin|SIN}}",
     "incorrectAnswers": [
-      "{{bg-BG|дъщеря|dashterya|}}",
-      "{{bg-BG|съпруг|saprug|}}",
-      "{{bg-BG|съпруга|sapruga|}}"
+      "{{bg-BG|дъщеря|dashterya|dash-TE-rya}}",
+      "{{bg-BG|съпруг|saprug|sa-PRUG}}",
+      "{{bg-BG|съпруга|sapruga|sa-PRU-ga}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2081,11 +2081,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'daughter' in everyday use?",
-    "correctAnswer": "{{bg-BG|дъщеря|dashterya|}}",
+    "correctAnswer": "{{bg-BG|дъщеря|dashterya|dash-TE-rya}}",
     "incorrectAnswers": [
-      "{{bg-BG|съпруг|saprug|}}",
-      "{{bg-BG|съпруга|sapruga|}}",
-      "{{bg-BG|приятел|priyatel|}}"
+      "{{bg-BG|съпруг|saprug|sa-PRUG}}",
+      "{{bg-BG|съпруга|sapruga|sa-PRU-ga}}",
+      "{{bg-BG|приятел|priyatel|priya-TEL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'husband'.",
-    "correctAnswer": "{{bg-BG|съпруг|saprug|}}",
+    "correctAnswer": "{{bg-BG|съпруг|saprug|sa-PRUG}}",
     "incorrectAnswers": [
-      "{{bg-BG|съпруга|sapruga|}}",
-      "{{bg-BG|приятел|priyatel|}}",
-      "{{bg-BG|съсед|sased|}}"
+      "{{bg-BG|съпруга|sapruga|sa-PRU-ga}}",
+      "{{bg-BG|приятел|priyatel|priya-TEL}}",
+      "{{bg-BG|съсед|sased|sa-SED}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2125,11 +2125,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'wife'?",
-    "correctAnswer": "{{bg-BG|съпруга|sapruga|}}",
+    "correctAnswer": "{{bg-BG|съпруга|sapruga|sa-PRU-ga}}",
     "incorrectAnswers": [
-      "{{bg-BG|приятел|priyatel|}}",
-      "{{bg-BG|съсед|sased|}}",
-      "{{bg-BG|дете|dete|}}"
+      "{{bg-BG|приятел|priyatel|priya-TEL}}",
+      "{{bg-BG|съсед|sased|sa-SED}}",
+      "{{bg-BG|дете|dete|DE-te}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2147,11 +2147,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'friend'?",
-    "correctAnswer": "{{bg-BG|приятел|priyatel|}}",
+    "correctAnswer": "{{bg-BG|приятел|priyatel|priya-TEL}}",
     "incorrectAnswers": [
-      "{{bg-BG|съсед|sased|}}",
-      "{{bg-BG|дете|dete|}}",
-      "{{bg-BG|бебе|bebe|}}"
+      "{{bg-BG|съсед|sased|sa-SED}}",
+      "{{bg-BG|дете|dete|DE-te}}",
+      "{{bg-BG|бебе|bebe|BE-be}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2169,11 +2169,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'neighbor' in everyday use?",
-    "correctAnswer": "{{bg-BG|съсед|sased|}}",
+    "correctAnswer": "{{bg-BG|съсед|sased|sa-SED}}",
     "incorrectAnswers": [
-      "{{bg-BG|дете|dete|}}",
-      "{{bg-BG|бебе|bebe|}}",
-      "{{bg-BG|мъж|mazh|}}"
+      "{{bg-BG|дете|dete|DE-te}}",
+      "{{bg-BG|бебе|bebe|BE-be}}",
+      "{{bg-BG|мъж|mazh|MAZH}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2191,11 +2191,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'child'.",
-    "correctAnswer": "{{bg-BG|дете|dete|}}",
+    "correctAnswer": "{{bg-BG|дете|dete|DE-te}}",
     "incorrectAnswers": [
-      "{{bg-BG|бебе|bebe|}}",
-      "{{bg-BG|мъж|mazh|}}",
-      "{{bg-BG|жена|zhena|}}"
+      "{{bg-BG|бебе|bebe|BE-be}}",
+      "{{bg-BG|мъж|mazh|MAZH}}",
+      "{{bg-BG|жена|zhena|ZHE-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2213,11 +2213,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'baby'?",
-    "correctAnswer": "{{bg-BG|бебе|bebe|}}",
+    "correctAnswer": "{{bg-BG|бебе|bebe|BE-be}}",
     "incorrectAnswers": [
-      "{{bg-BG|мъж|mazh|}}",
-      "{{bg-BG|жена|zhena|}}",
-      "{{bg-BG|човек|chovek|}}"
+      "{{bg-BG|мъж|mazh|MAZH}}",
+      "{{bg-BG|жена|zhena|ZHE-na}}",
+      "{{bg-BG|човек|chovek|cho-VEK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2235,11 +2235,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'man'?",
-    "correctAnswer": "{{bg-BG|мъж|mazh|}}",
+    "correctAnswer": "{{bg-BG|мъж|mazh|MAZH}}",
     "incorrectAnswers": [
-      "{{bg-BG|жена|zhena|}}",
-      "{{bg-BG|човек|chovek|}}",
-      "{{bg-BG|глава|glava|}}"
+      "{{bg-BG|жена|zhena|ZHE-na}}",
+      "{{bg-BG|човек|chovek|cho-VEK}}",
+      "{{bg-BG|глава|glava|GLA-va}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2257,11 +2257,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'woman' in everyday use?",
-    "correctAnswer": "{{bg-BG|жена|zhena|}}",
+    "correctAnswer": "{{bg-BG|жена|zhena|ZHE-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|човек|chovek|}}",
-      "{{bg-BG|глава|glava|}}",
-      "{{bg-BG|ръка|raka|}}"
+      "{{bg-BG|човек|chovek|cho-VEK}}",
+      "{{bg-BG|глава|glava|GLA-va}}",
+      "{{bg-BG|ръка|raka|RA-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2279,11 +2279,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'person'.",
-    "correctAnswer": "{{bg-BG|човек|chovek|}}",
+    "correctAnswer": "{{bg-BG|човек|chovek|cho-VEK}}",
     "incorrectAnswers": [
-      "{{bg-BG|глава|glava|}}",
-      "{{bg-BG|ръка|raka|}}",
-      "{{bg-BG|стъпало|stapalo|}}"
+      "{{bg-BG|глава|glava|GLA-va}}",
+      "{{bg-BG|ръка|raka|RA-ka}}",
+      "{{bg-BG|стъпало|stapalo|sta-PA-lo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2301,11 +2301,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'head'?",
-    "correctAnswer": "{{bg-BG|глава|glava|}}",
+    "correctAnswer": "{{bg-BG|глава|glava|GLA-va}}",
     "incorrectAnswers": [
-      "{{bg-BG|ръка|raka|}}",
-      "{{bg-BG|стъпало|stapalo|}}",
-      "{{bg-BG|око|oko|}}"
+      "{{bg-BG|ръка|raka|RA-ka}}",
+      "{{bg-BG|стъпало|stapalo|sta-PA-lo}}",
+      "{{bg-BG|око|oko|O-ko}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'hand' in everyday use?",
-    "correctAnswer": "{{bg-BG|ръка|raka|}}",
+    "correctAnswer": "{{bg-BG|ръка|raka|RA-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|стъпало|stapalo|}}",
-      "{{bg-BG|око|oko|}}",
-      "{{bg-BG|ухо|uho|}}"
+      "{{bg-BG|стъпало|stapalo|sta-PA-lo}}",
+      "{{bg-BG|око|oko|O-ko}}",
+      "{{bg-BG|ухо|uho|U-ho}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2345,11 +2345,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'foot'.",
-    "correctAnswer": "{{bg-BG|стъпало|stapalo|}}",
+    "correctAnswer": "{{bg-BG|стъпало|stapalo|sta-PA-lo}}",
     "incorrectAnswers": [
-      "{{bg-BG|око|oko|}}",
-      "{{bg-BG|ухо|uho|}}",
-      "{{bg-BG|нос|nos|}}"
+      "{{bg-BG|око|oko|O-ko}}",
+      "{{bg-BG|ухо|uho|U-ho}}",
+      "{{bg-BG|нос|nos|NOS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2367,11 +2367,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'eye'?",
-    "correctAnswer": "{{bg-BG|око|oko|}}",
+    "correctAnswer": "{{bg-BG|око|oko|O-ko}}",
     "incorrectAnswers": [
-      "{{bg-BG|ухо|uho|}}",
-      "{{bg-BG|нос|nos|}}",
-      "{{bg-BG|уста|usta|}}"
+      "{{bg-BG|ухо|uho|U-ho}}",
+      "{{bg-BG|нос|nos|NOS}}",
+      "{{bg-BG|уста|usta|US-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2389,11 +2389,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'ear'?",
-    "correctAnswer": "{{bg-BG|ухо|uho|}}",
+    "correctAnswer": "{{bg-BG|ухо|uho|U-ho}}",
     "incorrectAnswers": [
-      "{{bg-BG|нос|nos|}}",
-      "{{bg-BG|уста|usta|}}",
-      "{{bg-BG|сърце|sartse|}}"
+      "{{bg-BG|нос|nos|NOS}}",
+      "{{bg-BG|уста|usta|US-ta}}",
+      "{{bg-BG|сърце|sartse|SAR-tse}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2411,11 +2411,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'nose' in everyday use?",
-    "correctAnswer": "{{bg-BG|нос|nos|}}",
+    "correctAnswer": "{{bg-BG|нос|nos|NOS}}",
     "incorrectAnswers": [
-      "{{bg-BG|уста|usta|}}",
-      "{{bg-BG|сърце|sartse|}}",
-      "{{bg-BG|стомах|stomah|}}"
+      "{{bg-BG|уста|usta|US-ta}}",
+      "{{bg-BG|сърце|sartse|SAR-tse}}",
+      "{{bg-BG|стомах|stomah|sto-MAH}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2433,11 +2433,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'mouth'.",
-    "correctAnswer": "{{bg-BG|уста|usta|}}",
+    "correctAnswer": "{{bg-BG|уста|usta|US-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|сърце|sartse|}}",
-      "{{bg-BG|стомах|stomah|}}",
-      "{{bg-BG|ръка|raka|}}"
+      "{{bg-BG|сърце|sartse|SAR-tse}}",
+      "{{bg-BG|стомах|stomah|sto-MAH}}",
+      "{{bg-BG|ръка|raka|RA-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2455,11 +2455,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'heart'?",
-    "correctAnswer": "{{bg-BG|сърце|sartse|}}",
+    "correctAnswer": "{{bg-BG|сърце|sartse|SAR-tse}}",
     "incorrectAnswers": [
-      "{{bg-BG|стомах|stomah|}}",
-      "{{bg-BG|ръка|raka|}}",
-      "{{bg-BG|крак|krak|}}"
+      "{{bg-BG|стомах|stomah|sto-MAH}}",
+      "{{bg-BG|ръка|raka|RA-ka}}",
+      "{{bg-BG|крак|krak|KRAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2477,11 +2477,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'stomach'?",
-    "correctAnswer": "{{bg-BG|стомах|stomah|}}",
+    "correctAnswer": "{{bg-BG|стомах|stomah|sto-MAH}}",
     "incorrectAnswers": [
-      "{{bg-BG|ръка|raka|}}",
-      "{{bg-BG|крак|krak|}}",
-      "{{bg-BG|пръст|prast|}}"
+      "{{bg-BG|ръка|raka|RA-ka}}",
+      "{{bg-BG|крак|krak|KRAK}}",
+      "{{bg-BG|пръст|prast|PRAST}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2499,11 +2499,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'arm' in everyday use?",
-    "correctAnswer": "{{bg-BG|ръка|raka|}}",
+    "correctAnswer": "{{bg-BG|ръка|raka|RA-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|крак|krak|}}",
-      "{{bg-BG|пръст|prast|}}",
-      "{{bg-BG|гръб|grab|}}"
+      "{{bg-BG|крак|krak|KRAK}}",
+      "{{bg-BG|пръст|prast|PRAST}}",
+      "{{bg-BG|гръб|grab|GRAB}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2521,11 +2521,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'leg'.",
-    "correctAnswer": "{{bg-BG|крак|krak|}}",
+    "correctAnswer": "{{bg-BG|крак|krak|KRAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|пръст|prast|}}",
-      "{{bg-BG|гръб|grab|}}",
-      "{{bg-BG|хляб|hlyab|}}"
+      "{{bg-BG|пръст|prast|PRAST}}",
+      "{{bg-BG|гръб|grab|GRAB}}",
+      "{{bg-BG|хляб|hlyab|HLYAB}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'finger'?",
-    "correctAnswer": "{{bg-BG|пръст|prast|}}",
+    "correctAnswer": "{{bg-BG|пръст|prast|PRAST}}",
     "incorrectAnswers": [
-      "{{bg-BG|гръб|grab|}}",
-      "{{bg-BG|хляб|hlyab|}}",
-      "{{bg-BG|мляко|mlyako|}}"
+      "{{bg-BG|гръб|grab|GRAB}}",
+      "{{bg-BG|хляб|hlyab|HLYAB}}",
+      "{{bg-BG|мляко|mlyako|MLYA-ko}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2565,11 +2565,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'back'?",
-    "correctAnswer": "{{bg-BG|гръб|grab|}}",
+    "correctAnswer": "{{bg-BG|гръб|grab|GRAB}}",
     "incorrectAnswers": [
-      "{{bg-BG|хляб|hlyab|}}",
-      "{{bg-BG|мляко|mlyako|}}",
-      "{{bg-BG|яйце|yaytse|}}"
+      "{{bg-BG|хляб|hlyab|HLYAB}}",
+      "{{bg-BG|мляко|mlyako|MLYA-ko}}",
+      "{{bg-BG|яйце|yaytse|YAY-tse}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2587,11 +2587,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'bread'?",
-    "correctAnswer": "{{bg-BG|хляб|hlyab|}}",
+    "correctAnswer": "{{bg-BG|хляб|hlyab|HLYAB}}",
     "incorrectAnswers": [
-      "{{bg-BG|мляко|mlyako|}}",
-      "{{bg-BG|яйце|yaytse|}}",
-      "{{bg-BG|месо|meso|}}"
+      "{{bg-BG|мляко|mlyako|MLYA-ko}}",
+      "{{bg-BG|яйце|yaytse|YAY-tse}}",
+      "{{bg-BG|месо|meso|ME-so}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2609,11 +2609,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'milk' in everyday use?",
-    "correctAnswer": "{{bg-BG|мляко|mlyako|}}",
+    "correctAnswer": "{{bg-BG|мляко|mlyako|MLYA-ko}}",
     "incorrectAnswers": [
-      "{{bg-BG|яйце|yaytse|}}",
-      "{{bg-BG|месо|meso|}}",
-      "{{bg-BG|риба|riba|}}"
+      "{{bg-BG|яйце|yaytse|YAY-tse}}",
+      "{{bg-BG|месо|meso|ME-so}}",
+      "{{bg-BG|риба|riba|RI-ba}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2631,11 +2631,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'egg'.",
-    "correctAnswer": "{{bg-BG|яйце|yaytse|}}",
+    "correctAnswer": "{{bg-BG|яйце|yaytse|YAY-tse}}",
     "incorrectAnswers": [
-      "{{bg-BG|месо|meso|}}",
-      "{{bg-BG|риба|riba|}}",
-      "{{bg-BG|плод|plod|}}"
+      "{{bg-BG|месо|meso|ME-so}}",
+      "{{bg-BG|риба|riba|RI-ba}}",
+      "{{bg-BG|плод|plod|PLOD}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2653,11 +2653,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'meat'?",
-    "correctAnswer": "{{bg-BG|месо|meso|}}",
+    "correctAnswer": "{{bg-BG|месо|meso|ME-so}}",
     "incorrectAnswers": [
-      "{{bg-BG|риба|riba|}}",
-      "{{bg-BG|плод|plod|}}",
-      "{{bg-BG|зеленчук|zelenchuk|}}"
+      "{{bg-BG|риба|riba|RI-ba}}",
+      "{{bg-BG|плод|plod|PLOD}}",
+      "{{bg-BG|зеленчук|zelenchuk|ze-LEN-chuk}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2675,11 +2675,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'fish'?",
-    "correctAnswer": "{{bg-BG|риба|riba|}}",
+    "correctAnswer": "{{bg-BG|риба|riba|RI-ba}}",
     "incorrectAnswers": [
-      "{{bg-BG|плод|plod|}}",
-      "{{bg-BG|зеленчук|zelenchuk|}}",
-      "{{bg-BG|ориз|oriz|}}"
+      "{{bg-BG|плод|plod|PLOD}}",
+      "{{bg-BG|зеленчук|zelenchuk|ze-LEN-chuk}}",
+      "{{bg-BG|ориз|oriz|o-RIZ}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2697,11 +2697,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'fruit' in everyday use?",
-    "correctAnswer": "{{bg-BG|плод|plod|}}",
+    "correctAnswer": "{{bg-BG|плод|plod|PLOD}}",
     "incorrectAnswers": [
-      "{{bg-BG|зеленчук|zelenchuk|}}",
-      "{{bg-BG|ориз|oriz|}}",
-      "{{bg-BG|паста|pasta|}}"
+      "{{bg-BG|зеленчук|zelenchuk|ze-LEN-chuk}}",
+      "{{bg-BG|ориз|oriz|o-RIZ}}",
+      "{{bg-BG|паста|pasta|PAS-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2719,11 +2719,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'vegetable'.",
-    "correctAnswer": "{{bg-BG|зеленчук|zelenchuk|}}",
+    "correctAnswer": "{{bg-BG|зеленчук|zelenchuk|ze-LEN-chuk}}",
     "incorrectAnswers": [
-      "{{bg-BG|ориз|oriz|}}",
-      "{{bg-BG|паста|pasta|}}",
-      "{{bg-BG|сирене|sirene|}}"
+      "{{bg-BG|ориз|oriz|o-RIZ}}",
+      "{{bg-BG|паста|pasta|PAS-ta}}",
+      "{{bg-BG|сирене|sirene|si-RE-ne}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2741,11 +2741,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'rice'?",
-    "correctAnswer": "{{bg-BG|ориз|oriz|}}",
+    "correctAnswer": "{{bg-BG|ориз|oriz|o-RIZ}}",
     "incorrectAnswers": [
-      "{{bg-BG|паста|pasta|}}",
-      "{{bg-BG|сирене|sirene|}}",
-      "{{bg-BG|кафе|kafe|}}"
+      "{{bg-BG|паста|pasta|PAS-ta}}",
+      "{{bg-BG|сирене|sirene|si-RE-ne}}",
+      "{{bg-BG|кафе|kafe|KA-fe}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'pasta'?",
-    "correctAnswer": "{{bg-BG|паста|pasta|}}",
+    "correctAnswer": "{{bg-BG|паста|pasta|PAS-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|сирене|sirene|}}",
-      "{{bg-BG|кафе|kafe|}}",
-      "{{bg-BG|чай|chay|}}"
+      "{{bg-BG|сирене|sirene|si-RE-ne}}",
+      "{{bg-BG|кафе|kafe|KA-fe}}",
+      "{{bg-BG|чай|chay|CHAY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2785,11 +2785,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'cheese' in everyday use?",
-    "correctAnswer": "{{bg-BG|сирене|sirene|}}",
+    "correctAnswer": "{{bg-BG|сирене|sirene|si-RE-ne}}",
     "incorrectAnswers": [
-      "{{bg-BG|кафе|kafe|}}",
-      "{{bg-BG|чай|chay|}}",
-      "{{bg-BG|сок|sok|}}"
+      "{{bg-BG|кафе|kafe|KA-fe}}",
+      "{{bg-BG|чай|chay|CHAY}}",
+      "{{bg-BG|сок|sok|SOK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2807,11 +2807,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'coffee'.",
-    "correctAnswer": "{{bg-BG|кафе|kafe|}}",
+    "correctAnswer": "{{bg-BG|кафе|kafe|KA-fe}}",
     "incorrectAnswers": [
-      "{{bg-BG|чай|chay|}}",
-      "{{bg-BG|сок|sok|}}",
-      "{{bg-BG|бира|bira|}}"
+      "{{bg-BG|чай|chay|CHAY}}",
+      "{{bg-BG|сок|sok|SOK}}",
+      "{{bg-BG|бира|bira|BI-ra}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2829,11 +2829,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'tea'?",
-    "correctAnswer": "{{bg-BG|чай|chay|}}",
+    "correctAnswer": "{{bg-BG|чай|chay|CHAY}}",
     "incorrectAnswers": [
-      "{{bg-BG|сок|sok|}}",
-      "{{bg-BG|бира|bira|}}",
-      "{{bg-BG|вино|vino|}}"
+      "{{bg-BG|сок|sok|SOK}}",
+      "{{bg-BG|бира|bira|BI-ra}}",
+      "{{bg-BG|вино|vino|VI-no}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2851,11 +2851,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'juice'?",
-    "correctAnswer": "{{bg-BG|сок|sok|}}",
+    "correctAnswer": "{{bg-BG|сок|sok|SOK}}",
     "incorrectAnswers": [
-      "{{bg-BG|бира|bira|}}",
-      "{{bg-BG|вино|vino|}}",
-      "{{bg-BG|олио|olio|}}"
+      "{{bg-BG|бира|bira|BI-ra}}",
+      "{{bg-BG|вино|vino|VI-no}}",
+      "{{bg-BG|олио|olio|O-lio}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2873,11 +2873,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'beer' in everyday use?",
-    "correctAnswer": "{{bg-BG|бира|bira|}}",
+    "correctAnswer": "{{bg-BG|бира|bira|BI-ra}}",
     "incorrectAnswers": [
-      "{{bg-BG|вино|vino|}}",
-      "{{bg-BG|олио|olio|}}",
-      "{{bg-BG|сол|sol|}}"
+      "{{bg-BG|вино|vino|VI-no}}",
+      "{{bg-BG|олио|olio|O-lio}}",
+      "{{bg-BG|сол|sol|SOL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2895,11 +2895,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'wine'.",
-    "correctAnswer": "{{bg-BG|вино|vino|}}",
+    "correctAnswer": "{{bg-BG|вино|vino|VI-no}}",
     "incorrectAnswers": [
-      "{{bg-BG|олио|olio|}}",
-      "{{bg-BG|сол|sol|}}",
-      "{{bg-BG|захар|zahar|}}"
+      "{{bg-BG|олио|olio|O-lio}}",
+      "{{bg-BG|сол|sol|SOL}}",
+      "{{bg-BG|захар|zahar|za-HAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2917,11 +2917,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'oil'?",
-    "correctAnswer": "{{bg-BG|олио|olio|}}",
+    "correctAnswer": "{{bg-BG|олио|olio|O-lio}}",
     "incorrectAnswers": [
-      "{{bg-BG|сол|sol|}}",
-      "{{bg-BG|захар|zahar|}}",
-      "{{bg-BG|куче|kuche|}}"
+      "{{bg-BG|сол|sol|SOL}}",
+      "{{bg-BG|захар|zahar|za-HAR}}",
+      "{{bg-BG|куче|kuche|KU-che}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2939,11 +2939,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'salt'?",
-    "correctAnswer": "{{bg-BG|сол|sol|}}",
+    "correctAnswer": "{{bg-BG|сол|sol|SOL}}",
     "incorrectAnswers": [
-      "{{bg-BG|захар|zahar|}}",
-      "{{bg-BG|куче|kuche|}}",
-      "{{bg-BG|котка|kotka|}}"
+      "{{bg-BG|захар|zahar|za-HAR}}",
+      "{{bg-BG|куче|kuche|KU-che}}",
+      "{{bg-BG|котка|kotka|KOT-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2961,11 +2961,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'sugar' in everyday use?",
-    "correctAnswer": "{{bg-BG|захар|zahar|}}",
+    "correctAnswer": "{{bg-BG|захар|zahar|za-HAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|куче|kuche|}}",
-      "{{bg-BG|котка|kotka|}}",
-      "{{bg-BG|птица|ptitsa|}}"
+      "{{bg-BG|куче|kuche|KU-che}}",
+      "{{bg-BG|котка|kotka|KOT-ka}}",
+      "{{bg-BG|птица|ptitsa|PTI-tsa}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'dog'?",
-    "correctAnswer": "{{bg-BG|куче|kuche|}}",
+    "correctAnswer": "{{bg-BG|куче|kuche|KU-che}}",
     "incorrectAnswers": [
-      "{{bg-BG|котка|kotka|}}",
-      "{{bg-BG|птица|ptitsa|}}",
-      "{{bg-BG|кон|kon|}}"
+      "{{bg-BG|котка|kotka|KOT-ka}}",
+      "{{bg-BG|птица|ptitsa|PTI-tsa}}",
+      "{{bg-BG|кон|kon|KON}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3005,11 +3005,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'cat' in everyday use?",
-    "correctAnswer": "{{bg-BG|котка|kotka|}}",
+    "correctAnswer": "{{bg-BG|котка|kotka|KOT-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|птица|ptitsa|}}",
-      "{{bg-BG|кон|kon|}}",
-      "{{bg-BG|крава|krava|}}"
+      "{{bg-BG|птица|ptitsa|PTI-tsa}}",
+      "{{bg-BG|кон|kon|KON}}",
+      "{{bg-BG|крава|krava|KRA-va}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3027,11 +3027,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'bird'.",
-    "correctAnswer": "{{bg-BG|птица|ptitsa|}}",
+    "correctAnswer": "{{bg-BG|птица|ptitsa|PTI-tsa}}",
     "incorrectAnswers": [
-      "{{bg-BG|кон|kon|}}",
-      "{{bg-BG|крава|krava|}}",
-      "{{bg-BG|прасе|prase|}}"
+      "{{bg-BG|кон|kon|KON}}",
+      "{{bg-BG|крава|krava|KRA-va}}",
+      "{{bg-BG|прасе|prase|PRA-se}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3049,11 +3049,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'horse'?",
-    "correctAnswer": "{{bg-BG|кон|kon|}}",
+    "correctAnswer": "{{bg-BG|кон|kon|KON}}",
     "incorrectAnswers": [
-      "{{bg-BG|крава|krava|}}",
-      "{{bg-BG|прасе|prase|}}",
-      "{{bg-BG|пиле|pile|}}"
+      "{{bg-BG|крава|krava|KRA-va}}",
+      "{{bg-BG|прасе|prase|PRA-se}}",
+      "{{bg-BG|пиле|pile|PI-le}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3071,11 +3071,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'cow'?",
-    "correctAnswer": "{{bg-BG|крава|krava|}}",
+    "correctAnswer": "{{bg-BG|крава|krava|KRA-va}}",
     "incorrectAnswers": [
-      "{{bg-BG|прасе|prase|}}",
-      "{{bg-BG|пиле|pile|}}",
-      "{{bg-BG|мишка|mishka|}}"
+      "{{bg-BG|прасе|prase|PRA-se}}",
+      "{{bg-BG|пиле|pile|PI-le}}",
+      "{{bg-BG|мишка|mishka|MISH-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3093,11 +3093,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'pig' in everyday use?",
-    "correctAnswer": "{{bg-BG|прасе|prase|}}",
+    "correctAnswer": "{{bg-BG|прасе|prase|PRA-se}}",
     "incorrectAnswers": [
-      "{{bg-BG|пиле|pile|}}",
-      "{{bg-BG|мишка|mishka|}}",
-      "{{bg-BG|заек|zaek|}}"
+      "{{bg-BG|пиле|pile|PI-le}}",
+      "{{bg-BG|мишка|mishka|MISH-ka}}",
+      "{{bg-BG|заек|zaek|ZAEK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3115,11 +3115,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'chicken'.",
-    "correctAnswer": "{{bg-BG|пиле|pile|}}",
+    "correctAnswer": "{{bg-BG|пиле|pile|PI-le}}",
     "incorrectAnswers": [
-      "{{bg-BG|мишка|mishka|}}",
-      "{{bg-BG|заек|zaek|}}",
-      "{{bg-BG|къща|kashta|}}"
+      "{{bg-BG|мишка|mishka|MISH-ka}}",
+      "{{bg-BG|заек|zaek|ZAEK}}",
+      "{{bg-BG|къща|kashta|KASH-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3137,11 +3137,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'mouse'?",
-    "correctAnswer": "{{bg-BG|мишка|mishka|}}",
+    "correctAnswer": "{{bg-BG|мишка|mishka|MISH-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|заек|zaek|}}",
-      "{{bg-BG|къща|kashta|}}",
-      "{{bg-BG|стая|staya|}}"
+      "{{bg-BG|заек|zaek|ZAEK}}",
+      "{{bg-BG|къща|kashta|KASH-ta}}",
+      "{{bg-BG|стая|staya|STAYA}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3159,11 +3159,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'rabbit'?",
-    "correctAnswer": "{{bg-BG|заек|zaek|}}",
+    "correctAnswer": "{{bg-BG|заек|zaek|ZAEK}}",
     "incorrectAnswers": [
-      "{{bg-BG|къща|kashta|}}",
-      "{{bg-BG|стая|staya|}}",
-      "{{bg-BG|врата|vrata|}}"
+      "{{bg-BG|къща|kashta|KASH-ta}}",
+      "{{bg-BG|стая|staya|STAYA}}",
+      "{{bg-BG|врата|vrata|VRA-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3181,11 +3181,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'house'?",
-    "correctAnswer": "{{bg-BG|къща|kashta|}}",
+    "correctAnswer": "{{bg-BG|къща|kashta|KASH-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|стая|staya|}}",
-      "{{bg-BG|врата|vrata|}}",
-      "{{bg-BG|прозорец|prozorets|}}"
+      "{{bg-BG|стая|staya|STAYA}}",
+      "{{bg-BG|врата|vrata|VRA-ta}}",
+      "{{bg-BG|прозорец|prozorets|pro-ZO-rets}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'room' in everyday use?",
-    "correctAnswer": "{{bg-BG|стая|staya|}}",
+    "correctAnswer": "{{bg-BG|стая|staya|STAYA}}",
     "incorrectAnswers": [
-      "{{bg-BG|врата|vrata|}}",
-      "{{bg-BG|прозорец|prozorets|}}",
-      "{{bg-BG|легло|leglo|}}"
+      "{{bg-BG|врата|vrata|VRA-ta}}",
+      "{{bg-BG|прозорец|prozorets|pro-ZO-rets}}",
+      "{{bg-BG|легло|leglo|LE-glo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3225,11 +3225,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'door'.",
-    "correctAnswer": "{{bg-BG|врата|vrata|}}",
+    "correctAnswer": "{{bg-BG|врата|vrata|VRA-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|прозорец|prozorets|}}",
-      "{{bg-BG|легло|leglo|}}",
-      "{{bg-BG|маса|masa|}}"
+      "{{bg-BG|прозорец|prozorets|pro-ZO-rets}}",
+      "{{bg-BG|легло|leglo|LE-glo}}",
+      "{{bg-BG|маса|masa|MA-sa}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3247,11 +3247,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'window'?",
-    "correctAnswer": "{{bg-BG|прозорец|prozorets|}}",
+    "correctAnswer": "{{bg-BG|прозорец|prozorets|pro-ZO-rets}}",
     "incorrectAnswers": [
-      "{{bg-BG|легло|leglo|}}",
-      "{{bg-BG|маса|masa|}}",
-      "{{bg-BG|стол|stol|}}"
+      "{{bg-BG|легло|leglo|LE-glo}}",
+      "{{bg-BG|маса|masa|MA-sa}}",
+      "{{bg-BG|стол|stol|STOL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3269,11 +3269,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'bed'?",
-    "correctAnswer": "{{bg-BG|легло|leglo|}}",
+    "correctAnswer": "{{bg-BG|легло|leglo|LE-glo}}",
     "incorrectAnswers": [
-      "{{bg-BG|маса|masa|}}",
-      "{{bg-BG|стол|stol|}}",
-      "{{bg-BG|кухня|kuhnya|}}"
+      "{{bg-BG|маса|masa|MA-sa}}",
+      "{{bg-BG|стол|stol|STOL}}",
+      "{{bg-BG|кухня|kuhnya|KUH-nya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3291,11 +3291,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'table' in everyday use?",
-    "correctAnswer": "{{bg-BG|маса|masa|}}",
+    "correctAnswer": "{{bg-BG|маса|masa|MA-sa}}",
     "incorrectAnswers": [
-      "{{bg-BG|стол|stol|}}",
-      "{{bg-BG|кухня|kuhnya|}}",
-      "{{bg-BG|баня|banya|}}"
+      "{{bg-BG|стол|stol|STOL}}",
+      "{{bg-BG|кухня|kuhnya|KUH-nya}}",
+      "{{bg-BG|баня|banya|BA-nya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3313,11 +3313,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'chair'.",
-    "correctAnswer": "{{bg-BG|стол|stol|}}",
+    "correctAnswer": "{{bg-BG|стол|stol|STOL}}",
     "incorrectAnswers": [
-      "{{bg-BG|кухня|kuhnya|}}",
-      "{{bg-BG|баня|banya|}}",
-      "{{bg-BG|градина|gradina|}}"
+      "{{bg-BG|кухня|kuhnya|KUH-nya}}",
+      "{{bg-BG|баня|banya|BA-nya}}",
+      "{{bg-BG|градина|gradina|gra-DI-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3335,11 +3335,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'kitchen'?",
-    "correctAnswer": "{{bg-BG|кухня|kuhnya|}}",
+    "correctAnswer": "{{bg-BG|кухня|kuhnya|KUH-nya}}",
     "incorrectAnswers": [
-      "{{bg-BG|баня|banya|}}",
-      "{{bg-BG|градина|gradina|}}",
-      "{{bg-BG|под|pod|}}"
+      "{{bg-BG|баня|banya|BA-nya}}",
+      "{{bg-BG|градина|gradina|gra-DI-na}}",
+      "{{bg-BG|под|pod|POD}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3357,11 +3357,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'bathroom'?",
-    "correctAnswer": "{{bg-BG|баня|banya|}}",
+    "correctAnswer": "{{bg-BG|баня|banya|BA-nya}}",
     "incorrectAnswers": [
-      "{{bg-BG|градина|gradina|}}",
-      "{{bg-BG|под|pod|}}",
-      "{{bg-BG|стена|stena|}}"
+      "{{bg-BG|градина|gradina|gra-DI-na}}",
+      "{{bg-BG|под|pod|POD}}",
+      "{{bg-BG|стена|stena|STE-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3379,11 +3379,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'garden' in everyday use?",
-    "correctAnswer": "{{bg-BG|градина|gradina|}}",
+    "correctAnswer": "{{bg-BG|градина|gradina|gra-DI-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|под|pod|}}",
-      "{{bg-BG|стена|stena|}}",
-      "{{bg-BG|покрив|pokriv|}}"
+      "{{bg-BG|под|pod|POD}}",
+      "{{bg-BG|стена|stena|STE-na}}",
+      "{{bg-BG|покрив|pokriv|po-KRIV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3401,11 +3401,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'floor'.",
-    "correctAnswer": "{{bg-BG|под|pod|}}",
+    "correctAnswer": "{{bg-BG|под|pod|POD}}",
     "incorrectAnswers": [
-      "{{bg-BG|стена|stena|}}",
-      "{{bg-BG|покрив|pokriv|}}",
-      "{{bg-BG|лампа|lampa|}}"
+      "{{bg-BG|стена|stena|STE-na}}",
+      "{{bg-BG|покрив|pokriv|po-KRIV}}",
+      "{{bg-BG|лампа|lampa|LAM-pa}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'wall'?",
-    "correctAnswer": "{{bg-BG|стена|stena|}}",
+    "correctAnswer": "{{bg-BG|стена|stena|STE-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|покрив|pokriv|}}",
-      "{{bg-BG|лампа|lampa|}}",
-      "{{bg-BG|риза|riza|}}"
+      "{{bg-BG|покрив|pokriv|po-KRIV}}",
+      "{{bg-BG|лампа|lampa|LAM-pa}}",
+      "{{bg-BG|риза|riza|RI-za}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3445,11 +3445,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'roof'?",
-    "correctAnswer": "{{bg-BG|покрив|pokriv|}}",
+    "correctAnswer": "{{bg-BG|покрив|pokriv|po-KRIV}}",
     "incorrectAnswers": [
-      "{{bg-BG|лампа|lampa|}}",
-      "{{bg-BG|риза|riza|}}",
-      "{{bg-BG|панталони|pantaloni|}}"
+      "{{bg-BG|лампа|lampa|LAM-pa}}",
+      "{{bg-BG|риза|riza|RI-za}}",
+      "{{bg-BG|панталони|pantaloni|pan-ta-LO-ni}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3467,11 +3467,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'lamp' in everyday use?",
-    "correctAnswer": "{{bg-BG|лампа|lampa|}}",
+    "correctAnswer": "{{bg-BG|лампа|lampa|LAM-pa}}",
     "incorrectAnswers": [
-      "{{bg-BG|риза|riza|}}",
-      "{{bg-BG|панталони|pantaloni|}}",
-      "{{bg-BG|рокля|roklya|}}"
+      "{{bg-BG|риза|riza|RI-za}}",
+      "{{bg-BG|панталони|pantaloni|pan-ta-LO-ni}}",
+      "{{bg-BG|рокля|roklya|RO-klya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3489,11 +3489,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'shirt'?",
-    "correctAnswer": "{{bg-BG|риза|riza|}}",
+    "correctAnswer": "{{bg-BG|риза|riza|RI-za}}",
     "incorrectAnswers": [
-      "{{bg-BG|панталони|pantaloni|}}",
-      "{{bg-BG|рокля|roklya|}}",
-      "{{bg-BG|обувки|obuvki|}}"
+      "{{bg-BG|панталони|pantaloni|pan-ta-LO-ni}}",
+      "{{bg-BG|рокля|roklya|RO-klya}}",
+      "{{bg-BG|обувки|obuvki|o-BUV-ki}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3511,11 +3511,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'pants' in everyday use?",
-    "correctAnswer": "{{bg-BG|панталони|pantaloni|}}",
+    "correctAnswer": "{{bg-BG|панталони|pantaloni|pan-ta-LO-ni}}",
     "incorrectAnswers": [
-      "{{bg-BG|рокля|roklya|}}",
-      "{{bg-BG|обувки|obuvki|}}",
-      "{{bg-BG|чорапи|chorapi|}}"
+      "{{bg-BG|рокля|roklya|RO-klya}}",
+      "{{bg-BG|обувки|obuvki|o-BUV-ki}}",
+      "{{bg-BG|чорапи|chorapi|cho-RA-pi}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3533,11 +3533,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'dress'.",
-    "correctAnswer": "{{bg-BG|рокля|roklya|}}",
+    "correctAnswer": "{{bg-BG|рокля|roklya|RO-klya}}",
     "incorrectAnswers": [
-      "{{bg-BG|обувки|obuvki|}}",
-      "{{bg-BG|чорапи|chorapi|}}",
-      "{{bg-BG|яке|yake|}}"
+      "{{bg-BG|обувки|obuvki|o-BUV-ki}}",
+      "{{bg-BG|чорапи|chorapi|cho-RA-pi}}",
+      "{{bg-BG|яке|yake|YA-ke}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3555,11 +3555,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'shoes'?",
-    "correctAnswer": "{{bg-BG|обувки|obuvki|}}",
+    "correctAnswer": "{{bg-BG|обувки|obuvki|o-BUV-ki}}",
     "incorrectAnswers": [
-      "{{bg-BG|чорапи|chorapi|}}",
-      "{{bg-BG|яке|yake|}}",
-      "{{bg-BG|шапка|shapka|}}"
+      "{{bg-BG|чорапи|chorapi|cho-RA-pi}}",
+      "{{bg-BG|яке|yake|YA-ke}}",
+      "{{bg-BG|шапка|shapka|SHAP-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3577,11 +3577,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'socks'?",
-    "correctAnswer": "{{bg-BG|чорапи|chorapi|}}",
+    "correctAnswer": "{{bg-BG|чорапи|chorapi|cho-RA-pi}}",
     "incorrectAnswers": [
-      "{{bg-BG|яке|yake|}}",
-      "{{bg-BG|шапка|shapka|}}",
-      "{{bg-BG|чанта|chanta|}}"
+      "{{bg-BG|яке|yake|YA-ke}}",
+      "{{bg-BG|шапка|shapka|SHAP-ka}}",
+      "{{bg-BG|чанта|chanta|CHAN-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3599,11 +3599,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'jacket' in everyday use?",
-    "correctAnswer": "{{bg-BG|яке|yake|}}",
+    "correctAnswer": "{{bg-BG|яке|yake|YA-ke}}",
     "incorrectAnswers": [
-      "{{bg-BG|шапка|shapka|}}",
-      "{{bg-BG|чанта|chanta|}}",
-      "{{bg-BG|палто|palto|}}"
+      "{{bg-BG|шапка|shapka|SHAP-ka}}",
+      "{{bg-BG|чанта|chanta|CHAN-ta}}",
+      "{{bg-BG|палто|palto|PAL-to}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3621,11 +3621,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'hat'.",
-    "correctAnswer": "{{bg-BG|шапка|shapka|}}",
+    "correctAnswer": "{{bg-BG|шапка|shapka|SHAP-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|чанта|chanta|}}",
-      "{{bg-BG|палто|palto|}}",
-      "{{bg-BG|кола|kola|}}"
+      "{{bg-BG|чанта|chanta|CHAN-ta}}",
+      "{{bg-BG|палто|palto|PAL-to}}",
+      "{{bg-BG|кола|kola|KO-la}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'bag'?",
-    "correctAnswer": "{{bg-BG|чанта|chanta|}}",
+    "correctAnswer": "{{bg-BG|чанта|chanta|CHAN-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|палто|palto|}}",
-      "{{bg-BG|кола|kola|}}",
-      "{{bg-BG|автобус|avtobus|}}"
+      "{{bg-BG|палто|palto|PAL-to}}",
+      "{{bg-BG|кола|kola|KO-la}}",
+      "{{bg-BG|автобус|avtobus|av-TO-bus}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3665,11 +3665,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'coat'?",
-    "correctAnswer": "{{bg-BG|палто|palto|}}",
+    "correctAnswer": "{{bg-BG|палто|palto|PAL-to}}",
     "incorrectAnswers": [
-      "{{bg-BG|кола|kola|}}",
-      "{{bg-BG|автобус|avtobus|}}",
-      "{{bg-BG|влак|vlak|}}"
+      "{{bg-BG|кола|kola|KO-la}}",
+      "{{bg-BG|автобус|avtobus|av-TO-bus}}",
+      "{{bg-BG|влак|vlak|VLAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3687,11 +3687,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'car'?",
-    "correctAnswer": "{{bg-BG|кола|kola|}}",
+    "correctAnswer": "{{bg-BG|кола|kola|KO-la}}",
     "incorrectAnswers": [
-      "{{bg-BG|автобус|avtobus|}}",
-      "{{bg-BG|влак|vlak|}}",
-      "{{bg-BG|самолет|samolet|}}"
+      "{{bg-BG|автобус|avtobus|av-TO-bus}}",
+      "{{bg-BG|влак|vlak|VLAK}}",
+      "{{bg-BG|самолет|samolet|sa-MO-let}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3709,11 +3709,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'bus' in everyday use?",
-    "correctAnswer": "{{bg-BG|автобус|avtobus|}}",
+    "correctAnswer": "{{bg-BG|автобус|avtobus|av-TO-bus}}",
     "incorrectAnswers": [
-      "{{bg-BG|влак|vlak|}}",
-      "{{bg-BG|самолет|samolet|}}",
-      "{{bg-BG|велосипед|velosiped|}}"
+      "{{bg-BG|влак|vlak|VLAK}}",
+      "{{bg-BG|самолет|samolet|sa-MO-let}}",
+      "{{bg-BG|велосипед|velosiped|ve-lo-SI-ped}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3731,11 +3731,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'train'.",
-    "correctAnswer": "{{bg-BG|влак|vlak|}}",
+    "correctAnswer": "{{bg-BG|влак|vlak|VLAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|самолет|samolet|}}",
-      "{{bg-BG|велосипед|velosiped|}}",
-      "{{bg-BG|лодка|lodka|}}"
+      "{{bg-BG|самолет|samolet|sa-MO-let}}",
+      "{{bg-BG|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{bg-BG|лодка|lodka|LOD-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3753,11 +3753,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'plane'?",
-    "correctAnswer": "{{bg-BG|самолет|samolet|}}",
+    "correctAnswer": "{{bg-BG|самолет|samolet|sa-MO-let}}",
     "incorrectAnswers": [
-      "{{bg-BG|велосипед|velosiped|}}",
-      "{{bg-BG|лодка|lodka|}}",
-      "{{bg-BG|такси|taksi|}}"
+      "{{bg-BG|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{bg-BG|лодка|lodka|LOD-ka}}",
+      "{{bg-BG|такси|taksi|TAK-si}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3775,11 +3775,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'bicycle'?",
-    "correctAnswer": "{{bg-BG|велосипед|velosiped|}}",
+    "correctAnswer": "{{bg-BG|велосипед|velosiped|ve-lo-SI-ped}}",
     "incorrectAnswers": [
-      "{{bg-BG|лодка|lodka|}}",
-      "{{bg-BG|такси|taksi|}}",
-      "{{bg-BG|метро|metro|}}"
+      "{{bg-BG|лодка|lodka|LOD-ka}}",
+      "{{bg-BG|такси|taksi|TAK-si}}",
+      "{{bg-BG|метро|metro|ME-tro}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3797,11 +3797,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'boat' in everyday use?",
-    "correctAnswer": "{{bg-BG|лодка|lodka|}}",
+    "correctAnswer": "{{bg-BG|лодка|lodka|LOD-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|такси|taksi|}}",
-      "{{bg-BG|метро|metro|}}",
-      "{{bg-BG|слънце|slantse|}}"
+      "{{bg-BG|такси|taksi|TAK-si}}",
+      "{{bg-BG|метро|metro|ME-tro}}",
+      "{{bg-BG|слънце|slantse|SLAN-tse}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3819,11 +3819,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'taxi'.",
-    "correctAnswer": "{{bg-BG|такси|taksi|}}",
+    "correctAnswer": "{{bg-BG|такси|taksi|TAK-si}}",
     "incorrectAnswers": [
-      "{{bg-BG|метро|metro|}}",
-      "{{bg-BG|слънце|slantse|}}",
-      "{{bg-BG|луна|luna|}}"
+      "{{bg-BG|метро|metro|ME-tro}}",
+      "{{bg-BG|слънце|slantse|SLAN-tse}}",
+      "{{bg-BG|луна|luna|LU-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3841,11 +3841,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'metro'?",
-    "correctAnswer": "{{bg-BG|метро|metro|}}",
+    "correctAnswer": "{{bg-BG|метро|metro|ME-tro}}",
     "incorrectAnswers": [
-      "{{bg-BG|слънце|slantse|}}",
-      "{{bg-BG|луна|luna|}}",
-      "{{bg-BG|звезда|zvezda|}}"
+      "{{bg-BG|слънце|slantse|SLAN-tse}}",
+      "{{bg-BG|луна|luna|LU-na}}",
+      "{{bg-BG|звезда|zvezda|ZVEZ-da}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'sun'?",
-    "correctAnswer": "{{bg-BG|слънце|slantse|}}",
+    "correctAnswer": "{{bg-BG|слънце|slantse|SLAN-tse}}",
     "incorrectAnswers": [
-      "{{bg-BG|луна|luna|}}",
-      "{{bg-BG|звезда|zvezda|}}",
-      "{{bg-BG|дъжд|dazhd|}}"
+      "{{bg-BG|луна|luna|LU-na}}",
+      "{{bg-BG|звезда|zvezda|ZVEZ-da}}",
+      "{{bg-BG|дъжд|dazhd|DAZHD}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3885,11 +3885,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'moon' in everyday use?",
-    "correctAnswer": "{{bg-BG|луна|luna|}}",
+    "correctAnswer": "{{bg-BG|луна|luna|LU-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|звезда|zvezda|}}",
-      "{{bg-BG|дъжд|dazhd|}}",
-      "{{bg-BG|сняг|snyag|}}"
+      "{{bg-BG|звезда|zvezda|ZVEZ-da}}",
+      "{{bg-BG|дъжд|dazhd|DAZHD}}",
+      "{{bg-BG|сняг|snyag|SNYAG}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3907,11 +3907,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'star'.",
-    "correctAnswer": "{{bg-BG|звезда|zvezda|}}",
+    "correctAnswer": "{{bg-BG|звезда|zvezda|ZVEZ-da}}",
     "incorrectAnswers": [
-      "{{bg-BG|дъжд|dazhd|}}",
-      "{{bg-BG|сняг|snyag|}}",
-      "{{bg-BG|вятър|vyatar|}}"
+      "{{bg-BG|дъжд|dazhd|DAZHD}}",
+      "{{bg-BG|сняг|snyag|SNYAG}}",
+      "{{bg-BG|вятър|vyatar|vya-TAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3929,11 +3929,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'rain'?",
-    "correctAnswer": "{{bg-BG|дъжд|dazhd|}}",
+    "correctAnswer": "{{bg-BG|дъжд|dazhd|DAZHD}}",
     "incorrectAnswers": [
-      "{{bg-BG|сняг|snyag|}}",
-      "{{bg-BG|вятър|vyatar|}}",
-      "{{bg-BG|облак|oblak|}}"
+      "{{bg-BG|сняг|snyag|SNYAG}}",
+      "{{bg-BG|вятър|vyatar|vya-TAR}}",
+      "{{bg-BG|облак|oblak|o-BLAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3951,11 +3951,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'snow'?",
-    "correctAnswer": "{{bg-BG|сняг|snyag|}}",
+    "correctAnswer": "{{bg-BG|сняг|snyag|SNYAG}}",
     "incorrectAnswers": [
-      "{{bg-BG|вятър|vyatar|}}",
-      "{{bg-BG|облак|oblak|}}",
-      "{{bg-BG|планина|planina|}}"
+      "{{bg-BG|вятър|vyatar|vya-TAR}}",
+      "{{bg-BG|облак|oblak|o-BLAK}}",
+      "{{bg-BG|планина|planina|pla-NI-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3973,11 +3973,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'wind' in everyday use?",
-    "correctAnswer": "{{bg-BG|вятър|vyatar|}}",
+    "correctAnswer": "{{bg-BG|вятър|vyatar|vya-TAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|облак|oblak|}}",
-      "{{bg-BG|планина|planina|}}",
-      "{{bg-BG|река|reka|}}"
+      "{{bg-BG|облак|oblak|o-BLAK}}",
+      "{{bg-BG|планина|planina|pla-NI-na}}",
+      "{{bg-BG|река|reka|RE-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -3995,11 +3995,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'cloud'.",
-    "correctAnswer": "{{bg-BG|облак|oblak|}}",
+    "correctAnswer": "{{bg-BG|облак|oblak|o-BLAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|планина|planina|}}",
-      "{{bg-BG|река|reka|}}",
-      "{{bg-BG|море|more|}}"
+      "{{bg-BG|планина|planina|pla-NI-na}}",
+      "{{bg-BG|река|reka|RE-ka}}",
+      "{{bg-BG|море|more|MO-re}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4017,11 +4017,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'mountain'?",
-    "correctAnswer": "{{bg-BG|планина|planina|}}",
+    "correctAnswer": "{{bg-BG|планина|planina|pla-NI-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|река|reka|}}",
-      "{{bg-BG|море|more|}}",
-      "{{bg-BG|плаж|plazh|}}"
+      "{{bg-BG|река|reka|RE-ka}}",
+      "{{bg-BG|море|more|MO-re}}",
+      "{{bg-BG|плаж|plazh|PLAZH}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4039,11 +4039,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'river'?",
-    "correctAnswer": "{{bg-BG|река|reka|}}",
+    "correctAnswer": "{{bg-BG|река|reka|RE-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|море|more|}}",
-      "{{bg-BG|плаж|plazh|}}",
-      "{{bg-BG|гора|gora|}}"
+      "{{bg-BG|море|more|MO-re}}",
+      "{{bg-BG|плаж|plazh|PLAZH}}",
+      "{{bg-BG|гора|gora|GO-ra}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4061,11 +4061,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'sea' in everyday use?",
-    "correctAnswer": "{{bg-BG|море|more|}}",
+    "correctAnswer": "{{bg-BG|море|more|MO-re}}",
     "incorrectAnswers": [
-      "{{bg-BG|плаж|plazh|}}",
-      "{{bg-BG|гора|gora|}}",
-      "{{bg-BG|дърво|darvo|}}"
+      "{{bg-BG|плаж|plazh|PLAZH}}",
+      "{{bg-BG|гора|gora|GO-ra}}",
+      "{{bg-BG|дърво|darvo|DAR-vo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4083,11 +4083,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'beach'.",
-    "correctAnswer": "{{bg-BG|плаж|plazh|}}",
+    "correctAnswer": "{{bg-BG|плаж|plazh|PLAZH}}",
     "incorrectAnswers": [
-      "{{bg-BG|гора|gora|}}",
-      "{{bg-BG|дърво|darvo|}}",
-      "{{bg-BG|цвете|tsvete|}}"
+      "{{bg-BG|гора|gora|GO-ra}}",
+      "{{bg-BG|дърво|darvo|DAR-vo}}",
+      "{{bg-BG|цвете|tsvete|TSVE-te}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4105,11 +4105,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'forest'?",
-    "correctAnswer": "{{bg-BG|гора|gora|}}",
+    "correctAnswer": "{{bg-BG|гора|gora|GO-ra}}",
     "incorrectAnswers": [
-      "{{bg-BG|дърво|darvo|}}",
-      "{{bg-BG|цвете|tsvete|}}",
-      "{{bg-BG|време|vreme|}}"
+      "{{bg-BG|дърво|darvo|DAR-vo}}",
+      "{{bg-BG|цвете|tsvete|TSVE-te}}",
+      "{{bg-BG|време|vreme|VRE-me}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4127,11 +4127,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'tree'?",
-    "correctAnswer": "{{bg-BG|дърво|darvo|}}",
+    "correctAnswer": "{{bg-BG|дърво|darvo|DAR-vo}}",
     "incorrectAnswers": [
-      "{{bg-BG|цвете|tsvete|}}",
-      "{{bg-BG|време|vreme|}}",
-      "{{bg-BG|бъда|bada|}}"
+      "{{bg-BG|цвете|tsvete|TSVE-te}}",
+      "{{bg-BG|време|vreme|VRE-me}}",
+      "{{bg-BG|бъда|bada|BA-da}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4149,11 +4149,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'flower' in everyday use?",
-    "correctAnswer": "{{bg-BG|цвете|tsvete|}}",
+    "correctAnswer": "{{bg-BG|цвете|tsvete|TSVE-te}}",
     "incorrectAnswers": [
-      "{{bg-BG|време|vreme|}}",
-      "{{bg-BG|бъда|bada|}}",
-      "{{bg-BG|имам|imam|}}"
+      "{{bg-BG|време|vreme|VRE-me}}",
+      "{{bg-BG|бъда|bada|BA-da}}",
+      "{{bg-BG|имам|imam|i-MAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4171,11 +4171,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'weather'.",
-    "correctAnswer": "{{bg-BG|време|vreme|}}",
+    "correctAnswer": "{{bg-BG|време|vreme|VRE-me}}",
     "incorrectAnswers": [
-      "{{bg-BG|бъда|bada|}}",
-      "{{bg-BG|имам|imam|}}",
-      "{{bg-BG|искам|iskam|}}"
+      "{{bg-BG|бъда|bada|BA-da}}",
+      "{{bg-BG|имам|imam|i-MAM}}",
+      "{{bg-BG|искам|iskam|is-KAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4193,11 +4193,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'be'?",
-    "correctAnswer": "{{bg-BG|бъда|bada|}}",
+    "correctAnswer": "{{bg-BG|бъда|bada|BA-da}}",
     "incorrectAnswers": [
-      "{{bg-BG|имам|imam|}}",
-      "{{bg-BG|искам|iskam|}}",
-      "{{bg-BG|трябва|tryabva|}}"
+      "{{bg-BG|имам|imam|i-MAM}}",
+      "{{bg-BG|искам|iskam|is-KAM}}",
+      "{{bg-BG|трябва|tryabva|TRYAB-va}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4214,11 +4214,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'have' in everyday use?",
-    "correctAnswer": "{{bg-BG|имам|imam|}}",
+    "correctAnswer": "{{bg-BG|имам|imam|i-MAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|искам|iskam|}}",
-      "{{bg-BG|трябва|tryabva|}}",
-      "{{bg-BG|отивам|otivam|}}"
+      "{{bg-BG|искам|iskam|is-KAM}}",
+      "{{bg-BG|трябва|tryabva|TRYAB-va}}",
+      "{{bg-BG|отивам|otivam|o-TI-vam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4235,11 +4235,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'want'.",
-    "correctAnswer": "{{bg-BG|искам|iskam|}}",
+    "correctAnswer": "{{bg-BG|искам|iskam|is-KAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|трябва|tryabva|}}",
-      "{{bg-BG|отивам|otivam|}}",
-      "{{bg-BG|идвам|idvam|}}"
+      "{{bg-BG|трябва|tryabva|TRYAB-va}}",
+      "{{bg-BG|отивам|otivam|o-TI-vam}}",
+      "{{bg-BG|идвам|idvam|id-VAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4256,11 +4256,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'need'?",
-    "correctAnswer": "{{bg-BG|трябва|tryabva|}}",
+    "correctAnswer": "{{bg-BG|трябва|tryabva|TRYAB-va}}",
     "incorrectAnswers": [
-      "{{bg-BG|отивам|otivam|}}",
-      "{{bg-BG|идвам|idvam|}}",
-      "{{bg-BG|ям|yam|}}"
+      "{{bg-BG|отивам|otivam|o-TI-vam}}",
+      "{{bg-BG|идвам|idvam|id-VAM}}",
+      "{{bg-BG|ям|yam|YAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4277,11 +4277,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'go'?",
-    "correctAnswer": "{{bg-BG|отивам|otivam|}}",
+    "correctAnswer": "{{bg-BG|отивам|otivam|o-TI-vam}}",
     "incorrectAnswers": [
-      "{{bg-BG|идвам|idvam|}}",
-      "{{bg-BG|ям|yam|}}",
-      "{{bg-BG|пия|piya|}}"
+      "{{bg-BG|идвам|idvam|id-VAM}}",
+      "{{bg-BG|ям|yam|YAM}}",
+      "{{bg-BG|пия|piya|PIYA}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4298,11 +4298,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'come' in everyday use?",
-    "correctAnswer": "{{bg-BG|идвам|idvam|}}",
+    "correctAnswer": "{{bg-BG|идвам|idvam|id-VAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|ям|yam|}}",
-      "{{bg-BG|пия|piya|}}",
-      "{{bg-BG|спя|spya|}}"
+      "{{bg-BG|ям|yam|YAM}}",
+      "{{bg-BG|пия|piya|PIYA}}",
+      "{{bg-BG|спя|spya|SPYA}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4319,11 +4319,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'eat'.",
-    "correctAnswer": "{{bg-BG|ям|yam|}}",
+    "correctAnswer": "{{bg-BG|ям|yam|YAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|пия|piya|}}",
-      "{{bg-BG|спя|spya|}}",
-      "{{bg-BG|събуждам се|sabuzhdam se|}}"
+      "{{bg-BG|пия|piya|PIYA}}",
+      "{{bg-BG|спя|spya|SPYA}}",
+      "{{bg-BG|събуждам се|sabuzhdam se|sa-BUZH-dam SE}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4340,11 +4340,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'drink'?",
-    "correctAnswer": "{{bg-BG|пия|piya|}}",
+    "correctAnswer": "{{bg-BG|пия|piya|PIYA}}",
     "incorrectAnswers": [
-      "{{bg-BG|спя|spya|}}",
-      "{{bg-BG|събуждам се|sabuzhdam se|}}",
-      "{{bg-BG|работя|rabotya|}}"
+      "{{bg-BG|спя|spya|SPYA}}",
+      "{{bg-BG|събуждам се|sabuzhdam se|sa-BUZH-dam SE}}",
+      "{{bg-BG|работя|rabotya|ra-BO-tya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4361,11 +4361,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'sleep'?",
-    "correctAnswer": "{{bg-BG|спя|spya|}}",
+    "correctAnswer": "{{bg-BG|спя|spya|SPYA}}",
     "incorrectAnswers": [
-      "{{bg-BG|събуждам се|sabuzhdam se|}}",
-      "{{bg-BG|работя|rabotya|}}",
-      "{{bg-BG|говоря|govorya|}}"
+      "{{bg-BG|събуждам се|sabuzhdam se|sa-BUZH-dam SE}}",
+      "{{bg-BG|работя|rabotya|ra-BO-tya}}",
+      "{{bg-BG|говоря|govorya|go-VO-rya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4382,11 +4382,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'wake up' in everyday use?",
-    "correctAnswer": "{{bg-BG|събуждам се|sabuzhdam se|}}",
+    "correctAnswer": "{{bg-BG|събуждам се|sabuzhdam se|sa-BUZH-dam SE}}",
     "incorrectAnswers": [
-      "{{bg-BG|работя|rabotya|}}",
-      "{{bg-BG|говоря|govorya|}}",
-      "{{bg-BG|чувам|chuvam|}}"
+      "{{bg-BG|работя|rabotya|ra-BO-tya}}",
+      "{{bg-BG|говоря|govorya|go-VO-rya}}",
+      "{{bg-BG|чувам|chuvam|chu-VAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4403,11 +4403,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'work'.",
-    "correctAnswer": "{{bg-BG|работя|rabotya|}}",
+    "correctAnswer": "{{bg-BG|работя|rabotya|ra-BO-tya}}",
     "incorrectAnswers": [
-      "{{bg-BG|говоря|govorya|}}",
-      "{{bg-BG|чувам|chuvam|}}",
-      "{{bg-BG|виждам|vizhdam|}}"
+      "{{bg-BG|говоря|govorya|go-VO-rya}}",
+      "{{bg-BG|чувам|chuvam|chu-VAM}}",
+      "{{bg-BG|виждам|vizhdam|vizh-DAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4424,11 +4424,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'speak'?",
-    "correctAnswer": "{{bg-BG|говоря|govorya|}}",
+    "correctAnswer": "{{bg-BG|говоря|govorya|go-VO-rya}}",
     "incorrectAnswers": [
-      "{{bg-BG|чувам|chuvam|}}",
-      "{{bg-BG|виждам|vizhdam|}}",
-      "{{bg-BG|чета|cheta|}}"
+      "{{bg-BG|чувам|chuvam|chu-VAM}}",
+      "{{bg-BG|виждам|vizhdam|vizh-DAM}}",
+      "{{bg-BG|чета|cheta|CHE-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4445,11 +4445,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'hear'?",
-    "correctAnswer": "{{bg-BG|чувам|chuvam|}}",
+    "correctAnswer": "{{bg-BG|чувам|chuvam|chu-VAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|виждам|vizhdam|}}",
-      "{{bg-BG|чета|cheta|}}",
-      "{{bg-BG|пиша|pisha|}}"
+      "{{bg-BG|виждам|vizhdam|vizh-DAM}}",
+      "{{bg-BG|чета|cheta|CHE-ta}}",
+      "{{bg-BG|пиша|pisha|PI-sha}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4466,11 +4466,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'see' in everyday use?",
-    "correctAnswer": "{{bg-BG|виждам|vizhdam|}}",
+    "correctAnswer": "{{bg-BG|виждам|vizhdam|vizh-DAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|чета|cheta|}}",
-      "{{bg-BG|пиша|pisha|}}",
-      "{{bg-BG|купувам|kupuvam|}}"
+      "{{bg-BG|чета|cheta|CHE-ta}}",
+      "{{bg-BG|пиша|pisha|PI-sha}}",
+      "{{bg-BG|купувам|kupuvam|ku-PU-vam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4487,11 +4487,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'read'.",
-    "correctAnswer": "{{bg-BG|чета|cheta|}}",
+    "correctAnswer": "{{bg-BG|чета|cheta|CHE-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|пиша|pisha|}}",
-      "{{bg-BG|купувам|kupuvam|}}",
-      "{{bg-BG|плащам|plashtam|}}"
+      "{{bg-BG|пиша|pisha|PI-sha}}",
+      "{{bg-BG|купувам|kupuvam|ku-PU-vam}}",
+      "{{bg-BG|плащам|plashtam|plash-TAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4508,11 +4508,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'write'?",
-    "correctAnswer": "{{bg-BG|пиша|pisha|}}",
+    "correctAnswer": "{{bg-BG|пиша|pisha|PI-sha}}",
     "incorrectAnswers": [
-      "{{bg-BG|купувам|kupuvam|}}",
-      "{{bg-BG|плащам|plashtam|}}",
-      "{{bg-BG|отварям|otvaryam|}}"
+      "{{bg-BG|купувам|kupuvam|ku-PU-vam}}",
+      "{{bg-BG|плащам|plashtam|plash-TAM}}",
+      "{{bg-BG|отварям|otvaryam|ot-VA-ryam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4529,11 +4529,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'buy'?",
-    "correctAnswer": "{{bg-BG|купувам|kupuvam|}}",
+    "correctAnswer": "{{bg-BG|купувам|kupuvam|ku-PU-vam}}",
     "incorrectAnswers": [
-      "{{bg-BG|плащам|plashtam|}}",
-      "{{bg-BG|отварям|otvaryam|}}",
-      "{{bg-BG|затварям|zatvaryam|}}"
+      "{{bg-BG|плащам|plashtam|plash-TAM}}",
+      "{{bg-BG|отварям|otvaryam|ot-VA-ryam}}",
+      "{{bg-BG|затварям|zatvaryam|zat-VA-ryam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4550,11 +4550,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'pay' in everyday use?",
-    "correctAnswer": "{{bg-BG|плащам|plashtam|}}",
+    "correctAnswer": "{{bg-BG|плащам|plashtam|plash-TAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|отварям|otvaryam|}}",
-      "{{bg-BG|затварям|zatvaryam|}}",
-      "{{bg-BG|давам|davam|}}"
+      "{{bg-BG|отварям|otvaryam|ot-VA-ryam}}",
+      "{{bg-BG|затварям|zatvaryam|zat-VA-ryam}}",
+      "{{bg-BG|давам|davam|da-VAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4571,11 +4571,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'open'.",
-    "correctAnswer": "{{bg-BG|отварям|otvaryam|}}",
+    "correctAnswer": "{{bg-BG|отварям|otvaryam|ot-VA-ryam}}",
     "incorrectAnswers": [
-      "{{bg-BG|затварям|zatvaryam|}}",
-      "{{bg-BG|давам|davam|}}",
-      "{{bg-BG|вземам|vzemam|}}"
+      "{{bg-BG|затварям|zatvaryam|zat-VA-ryam}}",
+      "{{bg-BG|давам|davam|da-VAM}}",
+      "{{bg-BG|вземам|vzemam|vze-MAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4592,11 +4592,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'close'?",
-    "correctAnswer": "{{bg-BG|затварям|zatvaryam|}}",
+    "correctAnswer": "{{bg-BG|затварям|zatvaryam|zat-VA-ryam}}",
     "incorrectAnswers": [
-      "{{bg-BG|давам|davam|}}",
-      "{{bg-BG|вземам|vzemam|}}",
-      "{{bg-BG|знам|znam|}}"
+      "{{bg-BG|давам|davam|da-VAM}}",
+      "{{bg-BG|вземам|vzemam|vze-MAM}}",
+      "{{bg-BG|знам|znam|ZNAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4613,11 +4613,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'give'?",
-    "correctAnswer": "{{bg-BG|давам|davam|}}",
+    "correctAnswer": "{{bg-BG|давам|davam|da-VAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|вземам|vzemam|}}",
-      "{{bg-BG|знам|znam|}}",
-      "{{bg-BG|харесвам|haresvam|}}"
+      "{{bg-BG|вземам|vzemam|vze-MAM}}",
+      "{{bg-BG|знам|znam|ZNAM}}",
+      "{{bg-BG|харесвам|haresvam|ha-RES-vam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4634,11 +4634,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'take' in everyday use?",
-    "correctAnswer": "{{bg-BG|вземам|vzemam|}}",
+    "correctAnswer": "{{bg-BG|вземам|vzemam|vze-MAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|знам|znam|}}",
-      "{{bg-BG|харесвам|haresvam|}}",
-      "{{bg-BG|обичам|obicham|}}"
+      "{{bg-BG|знам|znam|ZNAM}}",
+      "{{bg-BG|харесвам|haresvam|ha-RES-vam}}",
+      "{{bg-BG|обичам|obicham|o-BI-cham}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4655,11 +4655,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'know'.",
-    "correctAnswer": "{{bg-BG|знам|znam|}}",
+    "correctAnswer": "{{bg-BG|знам|znam|ZNAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|харесвам|haresvam|}}",
-      "{{bg-BG|обичам|obicham|}}",
-      "{{bg-BG|помагам|pomagam|}}"
+      "{{bg-BG|харесвам|haresvam|ha-RES-vam}}",
+      "{{bg-BG|обичам|obicham|o-BI-cham}}",
+      "{{bg-BG|помагам|pomagam|po-MA-gam}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4676,11 +4676,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'like'?",
-    "correctAnswer": "{{bg-BG|харесвам|haresvam|}}",
+    "correctAnswer": "{{bg-BG|харесвам|haresvam|ha-RES-vam}}",
     "incorrectAnswers": [
-      "{{bg-BG|обичам|obicham|}}",
-      "{{bg-BG|помагам|pomagam|}}",
-      "{{bg-BG|уча|ucha|}}"
+      "{{bg-BG|обичам|obicham|o-BI-cham}}",
+      "{{bg-BG|помагам|pomagam|po-MA-gam}}",
+      "{{bg-BG|уча|ucha|U-cha}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4697,11 +4697,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'love'?",
-    "correctAnswer": "{{bg-BG|обичам|obicham|}}",
+    "correctAnswer": "{{bg-BG|обичам|obicham|o-BI-cham}}",
     "incorrectAnswers": [
-      "{{bg-BG|помагам|pomagam|}}",
-      "{{bg-BG|уча|ucha|}}",
-      "{{bg-BG|голям|golyam|}}"
+      "{{bg-BG|помагам|pomagam|po-MA-gam}}",
+      "{{bg-BG|уча|ucha|U-cha}}",
+      "{{bg-BG|голям|golyam|go-LYAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4718,11 +4718,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'help' in everyday use?",
-    "correctAnswer": "{{bg-BG|помагам|pomagam|}}",
+    "correctAnswer": "{{bg-BG|помагам|pomagam|po-MA-gam}}",
     "incorrectAnswers": [
-      "{{bg-BG|уча|ucha|}}",
-      "{{bg-BG|голям|golyam|}}",
-      "{{bg-BG|малък|malak|}}"
+      "{{bg-BG|уча|ucha|U-cha}}",
+      "{{bg-BG|голям|golyam|go-LYAM}}",
+      "{{bg-BG|малък|malak|ma-LAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4739,11 +4739,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'learn'.",
-    "correctAnswer": "{{bg-BG|уча|ucha|}}",
+    "correctAnswer": "{{bg-BG|уча|ucha|U-cha}}",
     "incorrectAnswers": [
-      "{{bg-BG|голям|golyam|}}",
-      "{{bg-BG|малък|malak|}}",
-      "{{bg-BG|нов|nov|}}"
+      "{{bg-BG|голям|golyam|go-LYAM}}",
+      "{{bg-BG|малък|malak|ma-LAK}}",
+      "{{bg-BG|нов|nov|NOV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4760,11 +4760,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'big'?",
-    "correctAnswer": "{{bg-BG|голям|golyam|}}",
+    "correctAnswer": "{{bg-BG|голям|golyam|go-LYAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|малък|malak|}}",
-      "{{bg-BG|нов|nov|}}",
-      "{{bg-BG|стар|star|}}"
+      "{{bg-BG|малък|malak|ma-LAK}}",
+      "{{bg-BG|нов|nov|NOV}}",
+      "{{bg-BG|стар|star|STAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4781,11 +4781,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'small' in everyday use?",
-    "correctAnswer": "{{bg-BG|малък|malak|}}",
+    "correctAnswer": "{{bg-BG|малък|malak|ma-LAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|нов|nov|}}",
-      "{{bg-BG|стар|star|}}",
-      "{{bg-BG|добър|dobar|}}"
+      "{{bg-BG|нов|nov|NOV}}",
+      "{{bg-BG|стар|star|STAR}}",
+      "{{bg-BG|добър|dobar|do-BAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4802,11 +4802,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'new'.",
-    "correctAnswer": "{{bg-BG|нов|nov|}}",
+    "correctAnswer": "{{bg-BG|нов|nov|NOV}}",
     "incorrectAnswers": [
-      "{{bg-BG|стар|star|}}",
-      "{{bg-BG|добър|dobar|}}",
-      "{{bg-BG|лош|losh|}}"
+      "{{bg-BG|стар|star|STAR}}",
+      "{{bg-BG|добър|dobar|do-BAR}}",
+      "{{bg-BG|лош|losh|LOSH}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4823,11 +4823,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'old'?",
-    "correctAnswer": "{{bg-BG|стар|star|}}",
+    "correctAnswer": "{{bg-BG|стар|star|STAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|добър|dobar|}}",
-      "{{bg-BG|лош|losh|}}",
-      "{{bg-BG|горещ|goresht|}}"
+      "{{bg-BG|добър|dobar|do-BAR}}",
+      "{{bg-BG|лош|losh|LOSH}}",
+      "{{bg-BG|горещ|goresht|go-RESHT}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4844,11 +4844,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'good'?",
-    "correctAnswer": "{{bg-BG|добър|dobar|}}",
+    "correctAnswer": "{{bg-BG|добър|dobar|do-BAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|лош|losh|}}",
-      "{{bg-BG|горещ|goresht|}}",
-      "{{bg-BG|студен|studen|}}"
+      "{{bg-BG|лош|losh|LOSH}}",
+      "{{bg-BG|горещ|goresht|go-RESHT}}",
+      "{{bg-BG|студен|studen|stu-DEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4865,11 +4865,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'bad' in everyday use?",
-    "correctAnswer": "{{bg-BG|лош|losh|}}",
+    "correctAnswer": "{{bg-BG|лош|losh|LOSH}}",
     "incorrectAnswers": [
-      "{{bg-BG|горещ|goresht|}}",
-      "{{bg-BG|студен|studen|}}",
-      "{{bg-BG|бърз|barz|}}"
+      "{{bg-BG|горещ|goresht|go-RESHT}}",
+      "{{bg-BG|студен|studen|stu-DEN}}",
+      "{{bg-BG|бърз|barz|BARZ}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4886,11 +4886,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'hot'.",
-    "correctAnswer": "{{bg-BG|горещ|goresht|}}",
+    "correctAnswer": "{{bg-BG|горещ|goresht|go-RESHT}}",
     "incorrectAnswers": [
-      "{{bg-BG|студен|studen|}}",
-      "{{bg-BG|бърз|barz|}}",
-      "{{bg-BG|бавен|baven|}}"
+      "{{bg-BG|студен|studen|stu-DEN}}",
+      "{{bg-BG|бърз|barz|BARZ}}",
+      "{{bg-BG|бавен|baven|ba-VEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4907,11 +4907,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'cold'?",
-    "correctAnswer": "{{bg-BG|студен|studen|}}",
+    "correctAnswer": "{{bg-BG|студен|studen|stu-DEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|бърз|barz|}}",
-      "{{bg-BG|бавен|baven|}}",
-      "{{bg-BG|лесен|lesen|}}"
+      "{{bg-BG|бърз|barz|BARZ}}",
+      "{{bg-BG|бавен|baven|ba-VEN}}",
+      "{{bg-BG|лесен|lesen|le-SEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4928,11 +4928,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'fast'?",
-    "correctAnswer": "{{bg-BG|бърз|barz|}}",
+    "correctAnswer": "{{bg-BG|бърз|barz|BARZ}}",
     "incorrectAnswers": [
-      "{{bg-BG|бавен|baven|}}",
-      "{{bg-BG|лесен|lesen|}}",
-      "{{bg-BG|труден|truden|}}"
+      "{{bg-BG|бавен|baven|ba-VEN}}",
+      "{{bg-BG|лесен|lesen|le-SEN}}",
+      "{{bg-BG|труден|truden|tru-DEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4949,11 +4949,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'slow' in everyday use?",
-    "correctAnswer": "{{bg-BG|бавен|baven|}}",
+    "correctAnswer": "{{bg-BG|бавен|baven|ba-VEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|лесен|lesen|}}",
-      "{{bg-BG|труден|truden|}}",
-      "{{bg-BG|чист|chist|}}"
+      "{{bg-BG|лесен|lesen|le-SEN}}",
+      "{{bg-BG|труден|truden|tru-DEN}}",
+      "{{bg-BG|чист|chist|CHIST}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4970,11 +4970,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'easy'.",
-    "correctAnswer": "{{bg-BG|лесен|lesen|}}",
+    "correctAnswer": "{{bg-BG|лесен|lesen|le-SEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|труден|truden|}}",
-      "{{bg-BG|чист|chist|}}",
-      "{{bg-BG|мръсен|mrasen|}}"
+      "{{bg-BG|труден|truden|tru-DEN}}",
+      "{{bg-BG|чист|chist|CHIST}}",
+      "{{bg-BG|мръсен|mrasen|mra-SEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -4991,11 +4991,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'difficult'?",
-    "correctAnswer": "{{bg-BG|труден|truden|}}",
+    "correctAnswer": "{{bg-BG|труден|truden|tru-DEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|чист|chist|}}",
-      "{{bg-BG|мръсен|mrasen|}}",
-      "{{bg-BG|евтин|evtin|}}"
+      "{{bg-BG|чист|chist|CHIST}}",
+      "{{bg-BG|мръсен|mrasen|mra-SEN}}",
+      "{{bg-BG|евтин|evtin|ev-TIN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5012,11 +5012,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'clean'?",
-    "correctAnswer": "{{bg-BG|чист|chist|}}",
+    "correctAnswer": "{{bg-BG|чист|chist|CHIST}}",
     "incorrectAnswers": [
-      "{{bg-BG|мръсен|mrasen|}}",
-      "{{bg-BG|евтин|evtin|}}",
-      "{{bg-BG|скъп|skap|}}"
+      "{{bg-BG|мръсен|mrasen|mra-SEN}}",
+      "{{bg-BG|евтин|evtin|ev-TIN}}",
+      "{{bg-BG|скъп|skap|SKAP}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5033,11 +5033,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'dirty' in everyday use?",
-    "correctAnswer": "{{bg-BG|мръсен|mrasen|}}",
+    "correctAnswer": "{{bg-BG|мръсен|mrasen|mra-SEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|евтин|evtin|}}",
-      "{{bg-BG|скъп|skap|}}",
-      "{{bg-BG|красив|krasiv|}}"
+      "{{bg-BG|евтин|evtin|ev-TIN}}",
+      "{{bg-BG|скъп|skap|SKAP}}",
+      "{{bg-BG|красив|krasiv|kra-SIV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5054,11 +5054,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'cheap'.",
-    "correctAnswer": "{{bg-BG|евтин|evtin|}}",
+    "correctAnswer": "{{bg-BG|евтин|evtin|ev-TIN}}",
     "incorrectAnswers": [
-      "{{bg-BG|скъп|skap|}}",
-      "{{bg-BG|красив|krasiv|}}",
-      "{{bg-BG|грозен|grozen|}}"
+      "{{bg-BG|скъп|skap|SKAP}}",
+      "{{bg-BG|красив|krasiv|kra-SIV}}",
+      "{{bg-BG|грозен|grozen|gro-ZEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5075,11 +5075,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'expensive'?",
-    "correctAnswer": "{{bg-BG|скъп|skap|}}",
+    "correctAnswer": "{{bg-BG|скъп|skap|SKAP}}",
     "incorrectAnswers": [
-      "{{bg-BG|красив|krasiv|}}",
-      "{{bg-BG|грозен|grozen|}}",
-      "{{bg-BG|дълъг|dalag|}}"
+      "{{bg-BG|красив|krasiv|kra-SIV}}",
+      "{{bg-BG|грозен|grozen|gro-ZEN}}",
+      "{{bg-BG|дълъг|dalag|da-LAG}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5096,11 +5096,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'beautiful'?",
-    "correctAnswer": "{{bg-BG|красив|krasiv|}}",
+    "correctAnswer": "{{bg-BG|красив|krasiv|kra-SIV}}",
     "incorrectAnswers": [
-      "{{bg-BG|грозен|grozen|}}",
-      "{{bg-BG|дълъг|dalag|}}",
-      "{{bg-BG|къс|kas|}}"
+      "{{bg-BG|грозен|grozen|gro-ZEN}}",
+      "{{bg-BG|дълъг|dalag|da-LAG}}",
+      "{{bg-BG|къс|kas|KAS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5117,11 +5117,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'ugly' in everyday use?",
-    "correctAnswer": "{{bg-BG|грозен|grozen|}}",
+    "correctAnswer": "{{bg-BG|грозен|grozen|gro-ZEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|дълъг|dalag|}}",
-      "{{bg-BG|къс|kas|}}",
-      "{{bg-BG|отворен|otvoren|}}"
+      "{{bg-BG|дълъг|dalag|da-LAG}}",
+      "{{bg-BG|къс|kas|KAS}}",
+      "{{bg-BG|отворен|otvoren|ot-VO-ren}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5138,11 +5138,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'long'.",
-    "correctAnswer": "{{bg-BG|дълъг|dalag|}}",
+    "correctAnswer": "{{bg-BG|дълъг|dalag|da-LAG}}",
     "incorrectAnswers": [
-      "{{bg-BG|къс|kas|}}",
-      "{{bg-BG|отворен|otvoren|}}",
-      "{{bg-BG|затворен|zatvoren|}}"
+      "{{bg-BG|къс|kas|KAS}}",
+      "{{bg-BG|отворен|otvoren|ot-VO-ren}}",
+      "{{bg-BG|затворен|zatvoren|zat-VO-ren}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5159,11 +5159,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'short'?",
-    "correctAnswer": "{{bg-BG|къс|kas|}}",
+    "correctAnswer": "{{bg-BG|къс|kas|KAS}}",
     "incorrectAnswers": [
-      "{{bg-BG|отворен|otvoren|}}",
-      "{{bg-BG|затворен|zatvoren|}}",
-      "{{bg-BG|десен|desen|}}"
+      "{{bg-BG|отворен|otvoren|ot-VO-ren}}",
+      "{{bg-BG|затворен|zatvoren|zat-VO-ren}}",
+      "{{bg-BG|десен|desen|de-SEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5180,11 +5180,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'open'?",
-    "correctAnswer": "{{bg-BG|отворен|otvoren|}}",
+    "correctAnswer": "{{bg-BG|отворен|otvoren|ot-VO-ren}}",
     "incorrectAnswers": [
-      "{{bg-BG|затворен|zatvoren|}}",
-      "{{bg-BG|десен|desen|}}",
-      "{{bg-BG|ляв|lyav|}}"
+      "{{bg-BG|затворен|zatvoren|zat-VO-ren}}",
+      "{{bg-BG|десен|desen|de-SEN}}",
+      "{{bg-BG|ляв|lyav|LYAV}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5201,11 +5201,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'closed' in everyday use?",
-    "correctAnswer": "{{bg-BG|затворен|zatvoren|}}",
+    "correctAnswer": "{{bg-BG|затворен|zatvoren|zat-VO-ren}}",
     "incorrectAnswers": [
-      "{{bg-BG|десен|desen|}}",
-      "{{bg-BG|ляв|lyav|}}",
-      "{{bg-BG|същият|sashtiyat|}}"
+      "{{bg-BG|десен|desen|de-SEN}}",
+      "{{bg-BG|ляв|lyav|LYAV}}",
+      "{{bg-BG|същият|sashtiyat|sash-TIYAT}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5222,11 +5222,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'right'.",
-    "correctAnswer": "{{bg-BG|десен|desen|}}",
+    "correctAnswer": "{{bg-BG|десен|desen|de-SEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|ляв|lyav|}}",
-      "{{bg-BG|същият|sashtiyat|}}",
-      "{{bg-BG|различен|razlichen|}}"
+      "{{bg-BG|ляв|lyav|LYAV}}",
+      "{{bg-BG|същият|sashtiyat|sash-TIYAT}}",
+      "{{bg-BG|различен|razlichen|raz-LI-chen}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5243,11 +5243,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'left'?",
-    "correctAnswer": "{{bg-BG|ляв|lyav|}}",
+    "correctAnswer": "{{bg-BG|ляв|lyav|LYAV}}",
     "incorrectAnswers": [
-      "{{bg-BG|същият|sashtiyat|}}",
-      "{{bg-BG|различен|razlichen|}}",
-      "{{bg-BG|кой|koy|}}"
+      "{{bg-BG|същият|sashtiyat|sash-TIYAT}}",
+      "{{bg-BG|различен|razlichen|raz-LI-chen}}",
+      "{{bg-BG|кой|koy|KOY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5264,11 +5264,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'same'?",
-    "correctAnswer": "{{bg-BG|същият|sashtiyat|}}",
+    "correctAnswer": "{{bg-BG|същият|sashtiyat|sash-TIYAT}}",
     "incorrectAnswers": [
-      "{{bg-BG|различен|razlichen|}}",
-      "{{bg-BG|кой|koy|}}",
-      "{{bg-BG|какво|kakvo|}}"
+      "{{bg-BG|различен|razlichen|raz-LI-chen}}",
+      "{{bg-BG|кой|koy|KOY}}",
+      "{{bg-BG|какво|kakvo|KAK-vo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5285,11 +5285,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'different' in everyday use?",
-    "correctAnswer": "{{bg-BG|различен|razlichen|}}",
+    "correctAnswer": "{{bg-BG|различен|razlichen|raz-LI-chen}}",
     "incorrectAnswers": [
-      "{{bg-BG|кой|koy|}}",
-      "{{bg-BG|какво|kakvo|}}",
-      "{{bg-BG|кога|koga|}}"
+      "{{bg-BG|кой|koy|KOY}}",
+      "{{bg-BG|какво|kakvo|KAK-vo}}",
+      "{{bg-BG|кога|koga|KO-ga}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5306,11 +5306,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'who'?",
-    "correctAnswer": "{{bg-BG|кой|koy|}}",
+    "correctAnswer": "{{bg-BG|кой|koy|KOY}}",
     "incorrectAnswers": [
-      "{{bg-BG|какво|kakvo|}}",
-      "{{bg-BG|кога|koga|}}",
-      "{{bg-BG|защо|zashto|}}"
+      "{{bg-BG|какво|kakvo|KAK-vo}}",
+      "{{bg-BG|кога|koga|KO-ga}}",
+      "{{bg-BG|защо|zashto|ZASH-to}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5327,11 +5327,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'what' in everyday use?",
-    "correctAnswer": "{{bg-BG|какво|kakvo|}}",
+    "correctAnswer": "{{bg-BG|какво|kakvo|KAK-vo}}",
     "incorrectAnswers": [
-      "{{bg-BG|кога|koga|}}",
-      "{{bg-BG|защо|zashto|}}",
-      "{{bg-BG|как|kak|}}"
+      "{{bg-BG|кога|koga|KO-ga}}",
+      "{{bg-BG|защо|zashto|ZASH-to}}",
+      "{{bg-BG|как|kak|KAK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5348,11 +5348,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'when'.",
-    "correctAnswer": "{{bg-BG|кога|koga|}}",
+    "correctAnswer": "{{bg-BG|кога|koga|KO-ga}}",
     "incorrectAnswers": [
-      "{{bg-BG|защо|zashto|}}",
-      "{{bg-BG|как|kak|}}",
-      "{{bg-BG|колко|kolko|}}"
+      "{{bg-BG|защо|zashto|ZASH-to}}",
+      "{{bg-BG|как|kak|KAK}}",
+      "{{bg-BG|колко|kolko|KOL-ko}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5369,11 +5369,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'why'?",
-    "correctAnswer": "{{bg-BG|защо|zashto|}}",
+    "correctAnswer": "{{bg-BG|защо|zashto|ZASH-to}}",
     "incorrectAnswers": [
-      "{{bg-BG|как|kak|}}",
-      "{{bg-BG|колко|kolko|}}",
-      "{{bg-BG|и|i|}}"
+      "{{bg-BG|как|kak|KAK}}",
+      "{{bg-BG|колко|kolko|KOL-ko}}",
+      "{{bg-BG|и|i|I}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5390,11 +5390,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'how'?",
-    "correctAnswer": "{{bg-BG|как|kak|}}",
+    "correctAnswer": "{{bg-BG|как|kak|KAK}}",
     "incorrectAnswers": [
-      "{{bg-BG|колко|kolko|}}",
-      "{{bg-BG|и|i|}}",
-      "{{bg-BG|или|ili|}}"
+      "{{bg-BG|колко|kolko|KOL-ko}}",
+      "{{bg-BG|и|i|I}}",
+      "{{bg-BG|или|ili|I-li}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5411,11 +5411,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'how much' in everyday use?",
-    "correctAnswer": "{{bg-BG|колко|kolko|}}",
+    "correctAnswer": "{{bg-BG|колко|kolko|KOL-ko}}",
     "incorrectAnswers": [
-      "{{bg-BG|и|i|}}",
-      "{{bg-BG|или|ili|}}",
-      "{{bg-BG|но|no|}}"
+      "{{bg-BG|и|i|I}}",
+      "{{bg-BG|или|ili|I-li}}",
+      "{{bg-BG|но|no|NO}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5432,11 +5432,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'how many'.",
-    "correctAnswer": "{{bg-BG|колко|kolko|}}",
+    "correctAnswer": "{{bg-BG|колко|kolko|KOL-ko}}",
     "incorrectAnswers": [
-      "{{bg-BG|и|i|}}",
-      "{{bg-BG|или|ili|}}",
-      "{{bg-BG|но|no|}}"
+      "{{bg-BG|и|i|I}}",
+      "{{bg-BG|или|ili|I-li}}",
+      "{{bg-BG|но|no|NO}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5453,11 +5453,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'and'?",
-    "correctAnswer": "{{bg-BG|и|i|}}",
+    "correctAnswer": "{{bg-BG|и|i|I}}",
     "incorrectAnswers": [
-      "{{bg-BG|или|ili|}}",
-      "{{bg-BG|но|no|}}",
-      "{{bg-BG|защото|zashtoto|}}"
+      "{{bg-BG|или|ili|I-li}}",
+      "{{bg-BG|но|no|NO}}",
+      "{{bg-BG|защото|zashtoto|zash-TO-to}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5474,11 +5474,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'or' in everyday use?",
-    "correctAnswer": "{{bg-BG|или|ili|}}",
+    "correctAnswer": "{{bg-BG|или|ili|I-li}}",
     "incorrectAnswers": [
-      "{{bg-BG|но|no|}}",
-      "{{bg-BG|защото|zashtoto|}}",
-      "{{bg-BG|ако|ako|}}"
+      "{{bg-BG|но|no|NO}}",
+      "{{bg-BG|защото|zashtoto|zash-TO-to}}",
+      "{{bg-BG|ако|ako|A-ko}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5495,11 +5495,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'but'.",
-    "correctAnswer": "{{bg-BG|но|no|}}",
+    "correctAnswer": "{{bg-BG|но|no|NO}}",
     "incorrectAnswers": [
-      "{{bg-BG|защото|zashtoto|}}",
-      "{{bg-BG|ако|ako|}}",
-      "{{bg-BG|много|mnogo|}}"
+      "{{bg-BG|защото|zashtoto|zash-TO-to}}",
+      "{{bg-BG|ако|ako|A-ko}}",
+      "{{bg-BG|много|mnogo|MNO-go}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5516,11 +5516,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'because'?",
-    "correctAnswer": "{{bg-BG|защото|zashtoto|}}",
+    "correctAnswer": "{{bg-BG|защото|zashtoto|zash-TO-to}}",
     "incorrectAnswers": [
-      "{{bg-BG|ако|ako|}}",
-      "{{bg-BG|много|mnogo|}}",
-      "{{bg-BG|също|sashto|}}"
+      "{{bg-BG|ако|ako|A-ko}}",
+      "{{bg-BG|много|mnogo|MNO-go}}",
+      "{{bg-BG|също|sashto|SASH-to}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5537,11 +5537,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'if'?",
-    "correctAnswer": "{{bg-BG|ако|ako|}}",
+    "correctAnswer": "{{bg-BG|ако|ako|A-ko}}",
     "incorrectAnswers": [
-      "{{bg-BG|много|mnogo|}}",
-      "{{bg-BG|също|sashto|}}",
-      "{{bg-BG|само|samo|}}"
+      "{{bg-BG|много|mnogo|MNO-go}}",
+      "{{bg-BG|също|sashto|SASH-to}}",
+      "{{bg-BG|само|samo|SA-mo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5558,11 +5558,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'very'?",
-    "correctAnswer": "{{bg-BG|много|mnogo|}}",
+    "correctAnswer": "{{bg-BG|много|mnogo|MNO-go}}",
     "incorrectAnswers": [
-      "{{bg-BG|също|sashto|}}",
-      "{{bg-BG|само|samo|}}",
-      "{{bg-BG|тук|tuk|}}"
+      "{{bg-BG|също|sashto|SASH-to}}",
+      "{{bg-BG|само|samo|SA-mo}}",
+      "{{bg-BG|тук|tuk|TUK}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5579,11 +5579,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'also' in everyday use?",
-    "correctAnswer": "{{bg-BG|също|sashto|}}",
+    "correctAnswer": "{{bg-BG|също|sashto|SASH-to}}",
     "incorrectAnswers": [
-      "{{bg-BG|само|samo|}}",
-      "{{bg-BG|тук|tuk|}}",
-      "{{bg-BG|там|tam|}}"
+      "{{bg-BG|само|samo|SA-mo}}",
+      "{{bg-BG|тук|tuk|TUK}}",
+      "{{bg-BG|там|tam|TAM}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5600,11 +5600,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'only'.",
-    "correctAnswer": "{{bg-BG|само|samo|}}",
+    "correctAnswer": "{{bg-BG|само|samo|SA-mo}}",
     "incorrectAnswers": [
-      "{{bg-BG|тук|tuk|}}",
-      "{{bg-BG|там|tam|}}",
-      "{{bg-BG|винаги|vinagi|}}"
+      "{{bg-BG|тук|tuk|TUK}}",
+      "{{bg-BG|там|tam|TAM}}",
+      "{{bg-BG|винаги|vinagi|vi-NA-gi}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5621,11 +5621,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'here'?",
-    "correctAnswer": "{{bg-BG|тук|tuk|}}",
+    "correctAnswer": "{{bg-BG|тук|tuk|TUK}}",
     "incorrectAnswers": [
-      "{{bg-BG|там|tam|}}",
-      "{{bg-BG|винаги|vinagi|}}",
-      "{{bg-BG|никога|nikoga|}}"
+      "{{bg-BG|там|tam|TAM}}",
+      "{{bg-BG|винаги|vinagi|vi-NA-gi}}",
+      "{{bg-BG|никога|nikoga|ni-KO-ga}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5642,11 +5642,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'there'?",
-    "correctAnswer": "{{bg-BG|там|tam|}}",
+    "correctAnswer": "{{bg-BG|там|tam|TAM}}",
     "incorrectAnswers": [
-      "{{bg-BG|винаги|vinagi|}}",
-      "{{bg-BG|никога|nikoga|}}",
-      "{{bg-BG|аз|az|}}"
+      "{{bg-BG|винаги|vinagi|vi-NA-gi}}",
+      "{{bg-BG|никога|nikoga|ni-KO-ga}}",
+      "{{bg-BG|аз|az|AZ}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5663,11 +5663,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'always' in everyday use?",
-    "correctAnswer": "{{bg-BG|винаги|vinagi|}}",
+    "correctAnswer": "{{bg-BG|винаги|vinagi|vi-NA-gi}}",
     "incorrectAnswers": [
-      "{{bg-BG|никога|nikoga|}}",
-      "{{bg-BG|аз|az|}}",
-      "{{bg-BG|ти|ti|}}"
+      "{{bg-BG|никога|nikoga|ni-KO-ga}}",
+      "{{bg-BG|аз|az|AZ}}",
+      "{{bg-BG|ти|ti|TI}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5684,11 +5684,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'never'.",
-    "correctAnswer": "{{bg-BG|никога|nikoga|}}",
+    "correctAnswer": "{{bg-BG|никога|nikoga|ni-KO-ga}}",
     "incorrectAnswers": [
-      "{{bg-BG|аз|az|}}",
-      "{{bg-BG|ти|ti|}}",
-      "{{bg-BG|той|toy|}}"
+      "{{bg-BG|аз|az|AZ}}",
+      "{{bg-BG|ти|ti|TI}}",
+      "{{bg-BG|той|toy|TOY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5705,11 +5705,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'I'?",
-    "correctAnswer": "{{bg-BG|аз|az|}}",
+    "correctAnswer": "{{bg-BG|аз|az|AZ}}",
     "incorrectAnswers": [
-      "{{bg-BG|ти|ti|}}",
-      "{{bg-BG|той|toy|}}",
-      "{{bg-BG|тя|tya|}}"
+      "{{bg-BG|ти|ti|TI}}",
+      "{{bg-BG|той|toy|TOY}}",
+      "{{bg-BG|тя|tya|TYA}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5726,11 +5726,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'you' in everyday use?",
-    "correctAnswer": "{{bg-BG|ти|ti|}}",
+    "correctAnswer": "{{bg-BG|ти|ti|TI}}",
     "incorrectAnswers": [
-      "{{bg-BG|той|toy|}}",
-      "{{bg-BG|тя|tya|}}",
-      "{{bg-BG|ние|nie|}}"
+      "{{bg-BG|той|toy|TOY}}",
+      "{{bg-BG|тя|tya|TYA}}",
+      "{{bg-BG|ние|nie|NIE}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5747,11 +5747,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'he'.",
-    "correctAnswer": "{{bg-BG|той|toy|}}",
+    "correctAnswer": "{{bg-BG|той|toy|TOY}}",
     "incorrectAnswers": [
-      "{{bg-BG|тя|tya|}}",
-      "{{bg-BG|ние|nie|}}",
-      "{{bg-BG|вие|vie|}}"
+      "{{bg-BG|тя|tya|TYA}}",
+      "{{bg-BG|ние|nie|NIE}}",
+      "{{bg-BG|вие|vie|VIE}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5768,11 +5768,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'she'?",
-    "correctAnswer": "{{bg-BG|тя|tya|}}",
+    "correctAnswer": "{{bg-BG|тя|tya|TYA}}",
     "incorrectAnswers": [
-      "{{bg-BG|ние|nie|}}",
-      "{{bg-BG|вие|vie|}}",
-      "{{bg-BG|те|te|}}"
+      "{{bg-BG|ние|nie|NIE}}",
+      "{{bg-BG|вие|vie|VIE}}",
+      "{{bg-BG|те|te|TE}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5789,11 +5789,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'we'?",
-    "correctAnswer": "{{bg-BG|ние|nie|}}",
+    "correctAnswer": "{{bg-BG|ние|nie|NIE}}",
     "incorrectAnswers": [
-      "{{bg-BG|вие|vie|}}",
-      "{{bg-BG|те|te|}}",
-      "{{bg-BG|мой|moy|}}"
+      "{{bg-BG|вие|vie|VIE}}",
+      "{{bg-BG|те|te|TE}}",
+      "{{bg-BG|мой|moy|MOY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5810,11 +5810,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'you (plural)' in everyday use?",
-    "correctAnswer": "{{bg-BG|вие|vie|}}",
+    "correctAnswer": "{{bg-BG|вие|vie|VIE}}",
     "incorrectAnswers": [
-      "{{bg-BG|те|te|}}",
-      "{{bg-BG|мой|moy|}}",
-      "{{bg-BG|твой|tvoy|}}"
+      "{{bg-BG|те|te|TE}}",
+      "{{bg-BG|мой|moy|MOY}}",
+      "{{bg-BG|твой|tvoy|TVOY}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5831,11 +5831,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'they'.",
-    "correctAnswer": "{{bg-BG|те|te|}}",
+    "correctAnswer": "{{bg-BG|те|te|TE}}",
     "incorrectAnswers": [
-      "{{bg-BG|мой|moy|}}",
-      "{{bg-BG|твой|tvoy|}}",
-      "{{bg-BG|наш|nash|}}"
+      "{{bg-BG|мой|moy|MOY}}",
+      "{{bg-BG|твой|tvoy|TVOY}}",
+      "{{bg-BG|наш|nash|NASH}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5852,11 +5852,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'my'?",
-    "correctAnswer": "{{bg-BG|мой|moy|}}",
+    "correctAnswer": "{{bg-BG|мой|moy|MOY}}",
     "incorrectAnswers": [
-      "{{bg-BG|твой|tvoy|}}",
-      "{{bg-BG|наш|nash|}}",
-      "{{bg-BG|техен|tehen|}}"
+      "{{bg-BG|твой|tvoy|TVOY}}",
+      "{{bg-BG|наш|nash|NASH}}",
+      "{{bg-BG|техен|tehen|te-HEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5873,11 +5873,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'your' in everyday use?",
-    "correctAnswer": "{{bg-BG|твой|tvoy|}}",
+    "correctAnswer": "{{bg-BG|твой|tvoy|TVOY}}",
     "incorrectAnswers": [
-      "{{bg-BG|наш|nash|}}",
-      "{{bg-BG|техен|tehen|}}",
-      "{{bg-BG|лекар|lekar|}}"
+      "{{bg-BG|наш|nash|NASH}}",
+      "{{bg-BG|техен|tehen|te-HEN}}",
+      "{{bg-BG|лекар|lekar|le-KAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5894,11 +5894,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'our'.",
-    "correctAnswer": "{{bg-BG|наш|nash|}}",
+    "correctAnswer": "{{bg-BG|наш|nash|NASH}}",
     "incorrectAnswers": [
-      "{{bg-BG|техен|tehen|}}",
-      "{{bg-BG|лекар|lekar|}}",
-      "{{bg-BG|болница|bolnitsa|}}"
+      "{{bg-BG|техен|tehen|te-HEN}}",
+      "{{bg-BG|лекар|lekar|le-KAR}}",
+      "{{bg-BG|болница|bolnitsa|bol-NI-tsa}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5915,11 +5915,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'their'?",
-    "correctAnswer": "{{bg-BG|техен|tehen|}}",
+    "correctAnswer": "{{bg-BG|техен|tehen|te-HEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|лекар|lekar|}}",
-      "{{bg-BG|болница|bolnitsa|}}",
-      "{{bg-BG|аптека|apteka|}}"
+      "{{bg-BG|лекар|lekar|le-KAR}}",
+      "{{bg-BG|болница|bolnitsa|bol-NI-tsa}}",
+      "{{bg-BG|аптека|apteka|ap-TE-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5936,11 +5936,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'doctor'?",
-    "correctAnswer": "{{bg-BG|лекар|lekar|}}",
+    "correctAnswer": "{{bg-BG|лекар|lekar|le-KAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|болница|bolnitsa|}}",
-      "{{bg-BG|аптека|apteka|}}",
-      "{{bg-BG|болка|bolka|}}"
+      "{{bg-BG|болница|bolnitsa|bol-NI-tsa}}",
+      "{{bg-BG|аптека|apteka|ap-TE-ka}}",
+      "{{bg-BG|болка|bolka|BOL-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5958,11 +5958,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'hospital' in everyday use?",
-    "correctAnswer": "{{bg-BG|болница|bolnitsa|}}",
+    "correctAnswer": "{{bg-BG|болница|bolnitsa|bol-NI-tsa}}",
     "incorrectAnswers": [
-      "{{bg-BG|аптека|apteka|}}",
-      "{{bg-BG|болка|bolka|}}",
-      "{{bg-BG|помощ|pomosht|}}"
+      "{{bg-BG|аптека|apteka|ap-TE-ka}}",
+      "{{bg-BG|болка|bolka|BOL-ka}}",
+      "{{bg-BG|помощ|pomosht|po-MOSHT}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -5980,11 +5980,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'pharmacy'.",
-    "correctAnswer": "{{bg-BG|аптека|apteka|}}",
+    "correctAnswer": "{{bg-BG|аптека|apteka|ap-TE-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|болка|bolka|}}",
-      "{{bg-BG|помощ|pomosht|}}",
-      "{{bg-BG|полиция|politsiya|}}"
+      "{{bg-BG|болка|bolka|BOL-ka}}",
+      "{{bg-BG|помощ|pomosht|po-MOSHT}}",
+      "{{bg-BG|полиция|politsiya|po-LI-tsiya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6002,11 +6002,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'pain'?",
-    "correctAnswer": "{{bg-BG|болка|bolka|}}",
+    "correctAnswer": "{{bg-BG|болка|bolka|BOL-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|помощ|pomosht|}}",
-      "{{bg-BG|полиция|politsiya|}}",
-      "{{bg-BG|пожар|pozhar|}}"
+      "{{bg-BG|помощ|pomosht|po-MOSHT}}",
+      "{{bg-BG|полиция|politsiya|po-LI-tsiya}}",
+      "{{bg-BG|пожар|pozhar|poz-HAR}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6024,11 +6024,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'help'?",
-    "correctAnswer": "{{bg-BG|помощ|pomosht|}}",
+    "correctAnswer": "{{bg-BG|помощ|pomosht|po-MOSHT}}",
     "incorrectAnswers": [
-      "{{bg-BG|полиция|politsiya|}}",
-      "{{bg-BG|пожар|pozhar|}}",
-      "{{bg-BG|болен|bolen|}}"
+      "{{bg-BG|полиция|politsiya|po-LI-tsiya}}",
+      "{{bg-BG|пожар|pozhar|poz-HAR}}",
+      "{{bg-BG|болен|bolen|bo-LEN}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6046,11 +6046,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'police' in everyday use?",
-    "correctAnswer": "{{bg-BG|полиция|politsiya|}}",
+    "correctAnswer": "{{bg-BG|полиция|politsiya|po-LI-tsiya}}",
     "incorrectAnswers": [
-      "{{bg-BG|пожар|pozhar|}}",
-      "{{bg-BG|болен|bolen|}}",
-      "{{bg-BG|лекарство|lekarstvo|}}"
+      "{{bg-BG|пожар|pozhar|poz-HAR}}",
+      "{{bg-BG|болен|bolen|bo-LEN}}",
+      "{{bg-BG|лекарство|lekarstvo|le-KARST-vo}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6068,11 +6068,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'fire'.",
-    "correctAnswer": "{{bg-BG|пожар|pozhar|}}",
+    "correctAnswer": "{{bg-BG|пожар|pozhar|poz-HAR}}",
     "incorrectAnswers": [
-      "{{bg-BG|болен|bolen|}}",
-      "{{bg-BG|лекарство|lekarstvo|}}",
-      "{{bg-BG|училище|uchilishte|}}"
+      "{{bg-BG|болен|bolen|bo-LEN}}",
+      "{{bg-BG|лекарство|lekarstvo|le-KARST-vo}}",
+      "{{bg-BG|училище|uchilishte|u-chi-LISH-te}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6090,11 +6090,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'sick'?",
-    "correctAnswer": "{{bg-BG|болен|bolen|}}",
+    "correctAnswer": "{{bg-BG|болен|bolen|bo-LEN}}",
     "incorrectAnswers": [
-      "{{bg-BG|лекарство|lekarstvo|}}",
-      "{{bg-BG|училище|uchilishte|}}",
-      "{{bg-BG|учител|uchitel|}}"
+      "{{bg-BG|лекарство|lekarstvo|le-KARST-vo}}",
+      "{{bg-BG|училище|uchilishte|u-chi-LISH-te}}",
+      "{{bg-BG|учител|uchitel|u-CHI-tel}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6112,11 +6112,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'medicine'?",
-    "correctAnswer": "{{bg-BG|лекарство|lekarstvo|}}",
+    "correctAnswer": "{{bg-BG|лекарство|lekarstvo|le-KARST-vo}}",
     "incorrectAnswers": [
-      "{{bg-BG|училище|uchilishte|}}",
-      "{{bg-BG|учител|uchitel|}}",
-      "{{bg-BG|ученик|uchenik|}}"
+      "{{bg-BG|училище|uchilishte|u-chi-LISH-te}}",
+      "{{bg-BG|учител|uchitel|u-CHI-tel}}",
+      "{{bg-BG|ученик|uchenik|u-CHE-nik}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6134,11 +6134,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'school'?",
-    "correctAnswer": "{{bg-BG|училище|uchilishte|}}",
+    "correctAnswer": "{{bg-BG|училище|uchilishte|u-chi-LISH-te}}",
     "incorrectAnswers": [
-      "{{bg-BG|учител|uchitel|}}",
-      "{{bg-BG|ученик|uchenik|}}",
-      "{{bg-BG|книга|kniga|}}"
+      "{{bg-BG|учител|uchitel|u-CHI-tel}}",
+      "{{bg-BG|ученик|uchenik|u-CHE-nik}}",
+      "{{bg-BG|книга|kniga|KNI-ga}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6156,11 +6156,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'teacher' in everyday use?",
-    "correctAnswer": "{{bg-BG|учител|uchitel|}}",
+    "correctAnswer": "{{bg-BG|учител|uchitel|u-CHI-tel}}",
     "incorrectAnswers": [
-      "{{bg-BG|ученик|uchenik|}}",
-      "{{bg-BG|книга|kniga|}}",
-      "{{bg-BG|химикалка|himikalka|}}"
+      "{{bg-BG|ученик|uchenik|u-CHE-nik}}",
+      "{{bg-BG|книга|kniga|KNI-ga}}",
+      "{{bg-BG|химикалка|himikalka|hi-mi-KAL-ka}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6178,11 +6178,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'student'.",
-    "correctAnswer": "{{bg-BG|ученик|uchenik|}}",
+    "correctAnswer": "{{bg-BG|ученик|uchenik|u-CHE-nik}}",
     "incorrectAnswers": [
-      "{{bg-BG|книга|kniga|}}",
-      "{{bg-BG|химикалка|himikalka|}}",
-      "{{bg-BG|хартия|hartiya|}}"
+      "{{bg-BG|книга|kniga|KNI-ga}}",
+      "{{bg-BG|химикалка|himikalka|hi-mi-KAL-ka}}",
+      "{{bg-BG|хартия|hartiya|HAR-tiya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6200,11 +6200,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'book'?",
-    "correctAnswer": "{{bg-BG|книга|kniga|}}",
+    "correctAnswer": "{{bg-BG|книга|kniga|KNI-ga}}",
     "incorrectAnswers": [
-      "{{bg-BG|химикалка|himikalka|}}",
-      "{{bg-BG|хартия|hartiya|}}",
-      "{{bg-BG|час|chas|}}"
+      "{{bg-BG|химикалка|himikalka|hi-mi-KAL-ka}}",
+      "{{bg-BG|хартия|hartiya|HAR-tiya}}",
+      "{{bg-BG|час|chas|CHAS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6222,11 +6222,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'pen'?",
-    "correctAnswer": "{{bg-BG|химикалка|himikalka|}}",
+    "correctAnswer": "{{bg-BG|химикалка|himikalka|hi-mi-KAL-ka}}",
     "incorrectAnswers": [
-      "{{bg-BG|хартия|hartiya|}}",
-      "{{bg-BG|час|chas|}}",
-      "{{bg-BG|офис|ofis|}}"
+      "{{bg-BG|хартия|hartiya|HAR-tiya}}",
+      "{{bg-BG|час|chas|CHAS}}",
+      "{{bg-BG|офис|ofis|o-FIS}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6244,11 +6244,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'paper' in everyday use?",
-    "correctAnswer": "{{bg-BG|хартия|hartiya|}}",
+    "correctAnswer": "{{bg-BG|хартия|hartiya|HAR-tiya}}",
     "incorrectAnswers": [
-      "{{bg-BG|час|chas|}}",
-      "{{bg-BG|офис|ofis|}}",
-      "{{bg-BG|пари|pari|}}"
+      "{{bg-BG|час|chas|CHAS}}",
+      "{{bg-BG|офис|ofis|o-FIS}}",
+      "{{bg-BG|пари|pari|PA-ri}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6266,11 +6266,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'class'.",
-    "correctAnswer": "{{bg-BG|час|chas|}}",
+    "correctAnswer": "{{bg-BG|час|chas|CHAS}}",
     "incorrectAnswers": [
-      "{{bg-BG|офис|ofis|}}",
-      "{{bg-BG|пари|pari|}}",
-      "{{bg-BG|магазин|magazin|}}"
+      "{{bg-BG|офис|ofis|o-FIS}}",
+      "{{bg-BG|пари|pari|PA-ri}}",
+      "{{bg-BG|магазин|magazin|ma-GA-zin}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6288,11 +6288,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'office'?",
-    "correctAnswer": "{{bg-BG|офис|ofis|}}",
+    "correctAnswer": "{{bg-BG|офис|ofis|o-FIS}}",
     "incorrectAnswers": [
-      "{{bg-BG|пари|pari|}}",
-      "{{bg-BG|магазин|magazin|}}",
-      "{{bg-BG|цена|tsena|}}"
+      "{{bg-BG|пари|pari|PA-ri}}",
+      "{{bg-BG|магазин|magazin|ma-GA-zin}}",
+      "{{bg-BG|цена|tsena|TSE-na}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6310,11 +6310,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'money'?",
-    "correctAnswer": "{{bg-BG|пари|pari|}}",
+    "correctAnswer": "{{bg-BG|пари|pari|PA-ri}}",
     "incorrectAnswers": [
-      "{{bg-BG|магазин|magazin|}}",
-      "{{bg-BG|цена|tsena|}}",
-      "{{bg-BG|работа|rabota|}}"
+      "{{bg-BG|магазин|magazin|ma-GA-zin}}",
+      "{{bg-BG|цена|tsena|TSE-na}}",
+      "{{bg-BG|работа|rabota|ra-BO-ta}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6332,11 +6332,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'shop' in everyday use?",
-    "correctAnswer": "{{bg-BG|магазин|magazin|}}",
+    "correctAnswer": "{{bg-BG|магазин|magazin|ma-GA-zin}}",
     "incorrectAnswers": [
-      "{{bg-BG|цена|tsena|}}",
-      "{{bg-BG|работа|rabota|}}",
-      "{{bg-BG|възраст|vazrast|}}"
+      "{{bg-BG|цена|tsena|TSE-na}}",
+      "{{bg-BG|работа|rabota|ra-BO-ta}}",
+      "{{bg-BG|възраст|vazrast|vaz-RAST}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6354,11 +6354,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'price'.",
-    "correctAnswer": "{{bg-BG|цена|tsena|}}",
+    "correctAnswer": "{{bg-BG|цена|tsena|TSE-na}}",
     "incorrectAnswers": [
-      "{{bg-BG|работа|rabota|}}",
-      "{{bg-BG|възраст|vazrast|}}",
-      "{{bg-BG|адрес|adres|}}"
+      "{{bg-BG|работа|rabota|ra-BO-ta}}",
+      "{{bg-BG|възраст|vazrast|vaz-RAST}}",
+      "{{bg-BG|адрес|adres|a-DRES}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6376,11 +6376,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'job'?",
-    "correctAnswer": "{{bg-BG|работа|rabota|}}",
+    "correctAnswer": "{{bg-BG|работа|rabota|ra-BO-ta}}",
     "incorrectAnswers": [
-      "{{bg-BG|възраст|vazrast|}}",
-      "{{bg-BG|адрес|adres|}}",
-      "{{bg-BG|телефон|telefon|}}"
+      "{{bg-BG|възраст|vazrast|vaz-RAST}}",
+      "{{bg-BG|адрес|adres|a-DRES}}",
+      "{{bg-BG|телефон|telefon|te-LE-fon}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6398,11 +6398,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'age'?",
-    "correctAnswer": "{{bg-BG|възраст|vazrast|}}",
+    "correctAnswer": "{{bg-BG|възраст|vazrast|vaz-RAST}}",
     "incorrectAnswers": [
-      "{{bg-BG|адрес|adres|}}",
-      "{{bg-BG|телефон|telefon|}}",
-      "{{bg-BG|интернет|internet|}}"
+      "{{bg-BG|адрес|adres|a-DRES}}",
+      "{{bg-BG|телефон|telefon|te-LE-fon}}",
+      "{{bg-BG|интернет|internet|in-TER-net}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6420,11 +6420,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Which Bulgarian word means 'address' in everyday use?",
-    "correctAnswer": "{{bg-BG|адрес|adres|}}",
+    "correctAnswer": "{{bg-BG|адрес|adres|a-DRES}}",
     "incorrectAnswers": [
-      "{{bg-BG|телефон|telefon|}}",
-      "{{bg-BG|интернет|internet|}}",
-      "{{bg-BG|имейл|imeyl|}}"
+      "{{bg-BG|телефон|telefon|te-LE-fon}}",
+      "{{bg-BG|интернет|internet|in-TER-net}}",
+      "{{bg-BG|имейл|imeyl|i-MEYL}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6442,11 +6442,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "Choose the Bulgarian word for 'phone'.",
-    "correctAnswer": "{{bg-BG|телефон|telefon|}}",
+    "correctAnswer": "{{bg-BG|телефон|telefon|te-LE-fon}}",
     "incorrectAnswers": [
-      "{{bg-BG|интернет|internet|}}",
-      "{{bg-BG|имейл|imeyl|}}",
-      "{{bg-BG|Здравейте|Zdraveyte|}} / {{bg-BG|Здравей|Zdravey|}}"
+      "{{bg-BG|интернет|internet|in-TER-net}}",
+      "{{bg-BG|имейл|imeyl|i-MEYL}}",
+      "{{bg-BG|Здравейте|Zdraveyte|zdra-VEY-te}} / {{bg-BG|Здравей|Zdravey|ZDRA-vey}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6464,11 +6464,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "What is the everyday Bulgarian word for 'internet'?",
-    "correctAnswer": "{{bg-BG|интернет|internet|}}",
+    "correctAnswer": "{{bg-BG|интернет|internet|in-TER-net}}",
     "incorrectAnswers": [
-      "{{bg-BG|имейл|imeyl|}}",
-      "{{bg-BG|Здравейте|Zdraveyte|}} / {{bg-BG|Здравей|Zdravey|}}",
-      "{{bg-BG|Благодаря|Blagodarya|}}"
+      "{{bg-BG|имейл|imeyl|i-MEYL}}",
+      "{{bg-BG|Здравейте|Zdraveyte|zdra-VEY-te}} / {{bg-BG|Здравей|Zdravey|ZDRA-vey}}",
+      "{{bg-BG|Благодаря|Blagodarya|bla-go-DA-rya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [
@@ -6486,11 +6486,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In beginner Bulgarian, how do you say 'email'?",
-    "correctAnswer": "{{bg-BG|имейл|imeyl|}}",
+    "correctAnswer": "{{bg-BG|имейл|imeyl|i-MEYL}}",
     "incorrectAnswers": [
-      "{{bg-BG|Здравейте|Zdraveyte|}} / {{bg-BG|Здравей|Zdravey|}}",
-      "{{bg-BG|Благодаря|Blagodarya|}}",
-      "{{bg-BG|Моля|Molya|}}"
+      "{{bg-BG|Здравейте|Zdraveyte|zdra-VEY-te}} / {{bg-BG|Здравей|Zdravey|ZDRA-vey}}",
+      "{{bg-BG|Благодаря|Blagodarya|bla-go-DA-rya}}",
+      "{{bg-BG|Моля|Molya|MO-lya}}"
     ],
     "explanation": "A common bulgarian word or expression for beginner use.",
     "keywords": [

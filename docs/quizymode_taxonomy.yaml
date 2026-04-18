@@ -4,7 +4,6 @@ exams:
     general:
       description: Mixed exams
       keywords:
-        general: Mixed exams
         mixed: Any exam mix
         timed: Timed practice
         basics: Core review
@@ -171,7 +170,6 @@ tech:
     general:
       description: Mixed tech
       keywords:
-        general: Mixed tech
         basics: Core concepts
         mixed: Cross topic
         tools: Common tools
@@ -297,7 +295,6 @@ business:
     general:
       description: Mixed business
       keywords:
-        general: Mixed business
         basics: Core concepts
         mixed: Cross topic
         case-study: Real cases
@@ -417,7 +414,6 @@ science:
     general:
       description: Mixed science
       keywords:
-        general: Mixed science
         basics: Core science
         lab-skills: Lab work
         mixed: Cross topic
@@ -656,7 +652,6 @@ history:
     general:
       description: Mixed history
       keywords:
-        general: Mixed history
         timelines: Time order
         key-dates: Major dates
         themes: Big themes
@@ -777,7 +772,6 @@ geography:
     general:
       description: Mixed geo
       keywords:
-        general: Mixed geo
         maps: Map basics
         mixed: Cross topic
         location: Where places are
@@ -1047,7 +1041,6 @@ humanities:
     general:
       description: Mixed hum
       keywords:
-        general: Mixed hum
         themes: Big ideas
         terms: Core terms
         mixed: Cross topic
@@ -1167,7 +1160,6 @@ civics:
     general:
       description: Mixed civics
       keywords:
-        general: Mixed civics
         basics: Core civics
         terms: Key terms
         mixed: Cross topic
@@ -1288,7 +1280,6 @@ sports:
     general:
       description: Mixed sports
       keywords:
-        general: Mixed sports
         basics: Core sports
         mixed: Cross sport
         teams: Famous teams
@@ -1410,7 +1401,6 @@ nature:
     general:
       description: Mixed nature
       keywords:
-        general: Mixed nature
         basics: Core nature
         mixed: Cross topic
     survival:
@@ -1472,7 +1462,6 @@ trivia:
     general:
       description: Mixed trivia
       keywords:
-        general: Mixed trivia
         random: Random facts
         mixed: Cross topic
         easy: Easy fun
@@ -1586,7 +1575,7 @@ trivia:
         party: Party quiz
         family: Family fun
         random: Random mix
-concerns:
+_notes:
 - niche exam families like lsat mcat bar pmp scrum and real-estate are not first-class yet
 - rare languages fit under other-langs until one earns enough volume for its own l1
 - cross-disciplinary topics like biostats legal-history sports-business and econ-history will use general or mixed

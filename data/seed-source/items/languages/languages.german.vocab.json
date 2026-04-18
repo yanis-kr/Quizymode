@@ -42,7 +42,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
-    "question": "What does '{{de-DE|Danke||}}' mean?",
+    "question": "What does '{{de-DE|Danke||DAN-ke}}' mean?",
     "correctAnswer": "thank you",
     "incorrectAnswers": [
       "please",
@@ -61,7 +61,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "vocab",
-    "question": "What does '{{de-DE|Bitte||}}' often mean when someone offers you something?",
+    "question": "What does '{{de-DE|Bitte||BIT-te}}' often mean when someone offers you something?",
     "correctAnswer": "please (or here you go)",
     "incorrectAnswers": [
       "sorry",

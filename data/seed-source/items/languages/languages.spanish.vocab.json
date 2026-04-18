@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"water\"?",
-    "correctAnswer": "{{es-ES|agua||}}",
+    "correctAnswer": "{{es-ES|agua||A-gua}}",
     "incorrectAnswers": [
-      "{{es-ES|leche||}}",
-      "{{es-ES|pan||}}",
-      "{{es-ES|jugo||}}"
+      "{{es-ES|leche||LE-che}}",
+      "{{es-ES|pan||PAN}}",
+      "{{es-ES|jugo||HU-go}}"
     ],
     "explanation": "\"Agua\" is the everyday word for water.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"bread\"?",
-    "correctAnswer": "{{es-ES|pan||}}",
+    "correctAnswer": "{{es-ES|pan||PAN}}",
     "incorrectAnswers": [
-      "{{es-ES|queso||}}",
-      "{{es-ES|arroz||}}",
-      "{{es-ES|carne||}}"
+      "{{es-ES|queso||KE-so}}",
+      "{{es-ES|arroz||ar-ROZ}}",
+      "{{es-ES|carne||CAR-ne}}"
     ],
     "explanation": "\"Pan\" is the common word for bread.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"friend\" when you mean a male friend?",
-    "correctAnswer": "{{es-ES|amigo||}}",
+    "correctAnswer": "{{es-ES|amigo||a-MI-go}}",
     "incorrectAnswers": [
-      "{{es-ES|hermano||}}",
-      "{{es-ES|vecino||}}",
-      "{{es-ES|jefe||}}"
+      "{{es-ES|hermano||her-MA-no}}",
+      "{{es-ES|vecino||be-SEE-no}}",
+      "{{es-ES|jefe||HE-fe}}"
     ],
     "explanation": "\"Amigo\" means (male) friend; \"amiga\" is used for a female friend.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"thank you\"?",
-    "correctAnswer": "{{es-ES|gracias||}}",
+    "correctAnswer": "{{es-ES|gracias||GRA-seeas}}",
     "incorrectAnswers": [
-      "{{es-ES|por favor||}}",
-      "{{es-ES|disculpe||}}",
-      "{{es-ES|hola||}}"
+      "{{es-ES|por favor||POR fa-BOR}}",
+      "{{es-ES|disculpe||dis-CUL-pe}}",
+      "{{es-ES|hola||HO-la}}"
     ],
     "explanation": "\"Gracias\" is the standard way to say thank you.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"today\"?",
-    "correctAnswer": "{{es-ES|hoy||}}",
+    "correctAnswer": "{{es-ES|hoy||HOY}}",
     "incorrectAnswers": [
-      "{{es-ES|mañana||}}",
-      "{{es-ES|ayer||}}",
-      "{{es-ES|ahora||}}"
+      "{{es-ES|mañana||ma-NA-na}}",
+      "{{es-ES|ayer||AYER}}",
+      "{{es-ES|ahora||a-HO-ra}}"
     ],
     "explanation": "\"Hoy\" means today.",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "vocab",
     "question": "What is the usual Spanish word for \"big\"?",
-    "correctAnswer": "{{es-ES|grande||}}",
+    "correctAnswer": "{{es-ES|grande||GRAN-de}}",
     "incorrectAnswers": [
-      "{{es-ES|pequeño||}}",
-      "{{es-ES|nuevo||}}",
-      "{{es-ES|bueno||}}"
+      "{{es-ES|pequeño||pe-KE-no}}",
+      "{{es-ES|nuevo||NUE-bo}}",
+      "{{es-ES|bueno||BUE-no}}"
     ],
     "explanation": "\"Grande\" is a very common adjective meaning big or large.",
     "keywords": [

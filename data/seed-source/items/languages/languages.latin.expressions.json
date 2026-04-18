@@ -4,7 +4,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Carpe diem||}}' mean?",
+    "question": "What does '{{la|Carpe diem||CAR-pe DI-em}}' mean?",
     "correctAnswer": "Seize the day",
     "incorrectAnswers": [
       "In wine, truth",
@@ -24,7 +24,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In vino veritas||}}' mean?",
+    "question": "What does '{{la|In vino veritas||IN VI-no VE-ri-tas}}' mean?",
     "correctAnswer": "In wine, truth",
     "incorrectAnswers": [
       "Time flies",
@@ -45,7 +45,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Tempus fugit||}}' mean?",
+    "question": "What does '{{la|Tempus fugit||TEM-pus FU-git}}' mean?",
     "correctAnswer": "Time flies",
     "incorrectAnswers": [
       "My fault",
@@ -65,7 +65,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Mea culpa||}}' mean?",
+    "question": "What does '{{la|Mea culpa||ME-a CUL-pa}}' mean?",
     "correctAnswer": "My fault",
     "incorrectAnswers": [
       "Make haste slowly",
@@ -85,7 +85,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Festina lente||}}' mean?",
+    "question": "What does '{{la|Festina lente||FES-ti-na LEN-te}}' mean?",
     "correctAnswer": "Make haste slowly",
     "incorrectAnswers": [
       "Dare to know; dare to be wise",
@@ -105,7 +105,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sapere aude||}}' mean?",
+    "question": "What does '{{la|Sapere aude||SA-pe-re AU-de}}' mean?",
     "correctAnswer": "Dare to know; dare to be wise",
     "incorrectAnswers": [
       "I came, I saw, I conquered",
@@ -125,7 +125,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Veni, vidi, vici||}}' mean?",
+    "question": "What does '{{la|Veni, vidi, vici||VE-ni, VI-di, VI-ci}}' mean?",
     "correctAnswer": "I came, I saw, I conquered",
     "incorrectAnswers": [
       "The die is cast",
@@ -146,7 +146,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Alea iacta est||}}' mean?",
+    "question": "What does '{{la|Alea iacta est||A-le-a i-AC-ta EST}}' mean?",
     "correctAnswer": "The die is cast",
     "incorrectAnswers": [
       "Remember that you must die",
@@ -167,7 +167,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Memento mori||}}' mean?",
+    "question": "What does '{{la|Memento mori||me-MEN-to MO-ri}}' mean?",
     "correctAnswer": "Remember that you must die",
     "incorrectAnswers": [
       "Love conquers all",
@@ -187,7 +187,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Amor vincit omnia||}}' mean?",
+    "question": "What does '{{la|Amor vincit omnia||A-mor VIN-cit OM-ni-a}}' mean?",
     "correctAnswer": "Love conquers all",
     "incorrectAnswers": [
       "Fortune favors the bold",
@@ -208,7 +208,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Audentes fortuna iuvat||}}' mean?",
+    "question": "What does '{{la|Audentes fortuna iuvat||au-DEN-tes FOR-tu-na I-u-vat}}' mean?",
     "correctAnswer": "Fortune favors the bold",
     "incorrectAnswers": [
       "While I breathe, I hope",
@@ -229,7 +229,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Dum spiro spero||}}' mean?",
+    "question": "What does '{{la|Dum spiro spero||DUM SPI-ro SPE-ro}}' mean?",
     "correctAnswer": "While I breathe, I hope",
     "incorrectAnswers": [
       "To the stars through hardships",
@@ -250,7 +250,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ad astra per aspera||}}' mean?",
+    "question": "What does '{{la|Ad astra per aspera||AD AS-tra PER AS-pe-ra}}' mean?",
     "correctAnswer": "To the stars through hardships",
     "incorrectAnswers": [
       "If you want peace, prepare for war",
@@ -272,7 +272,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Si vis pacem, para bellum||}}' mean?",
+    "question": "What does '{{la|Si vis pacem, para bellum||SI VIS PA-cem, PA-ra BEL-lum}}' mean?",
     "correctAnswer": "If you want peace, prepare for war",
     "incorrectAnswers": [
       "Man is a wolf to man",
@@ -294,7 +294,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Homo homini lupus||}}' mean?",
+    "question": "What does '{{la|Homo homini lupus||HO-mo HO-mi-ni LU-pus}}' mean?",
     "correctAnswer": "Man is a wolf to man",
     "incorrectAnswers": [
       "There is no disputing about taste",
@@ -315,7 +315,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|De gustibus non est disputandum||}}' mean?",
+    "question": "What does '{{la|De gustibus non est disputandum||DE GUS-ti-bus NON EST dis-pu-TAN-dum}}' mean?",
     "correctAnswer": "There is no disputing about taste",
     "incorrectAnswers": [
       "Spoken words fly away, written words remain",
@@ -337,7 +337,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Verba volant, scripta manent||}}' mean?",
+    "question": "What does '{{la|Verba volant, scripta manent||VER-ba VO-lant, SCRIP-ta MA-nent}}' mean?",
     "correctAnswer": "Spoken words fly away, written words remain",
     "incorrectAnswers": [
       "Art is long, life is short",
@@ -359,7 +359,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ars longa, vita brevis||}}' mean?",
+    "question": "What does '{{la|Ars longa, vita brevis||ARS LON-ga, VI-ta BRE-vis}}' mean?",
     "correctAnswer": "Art is long, life is short",
     "incorrectAnswers": [
       "Work conquers all",
@@ -381,7 +381,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Labor omnia vincit||}}' mean?",
+    "question": "What does '{{la|Labor omnia vincit||LA-bor OM-ni-a VIN-cit}}' mean?",
     "correctAnswer": "Work conquers all",
     "incorrectAnswers": [
       "To err is human",
@@ -402,7 +402,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Errare humanum est||}}' mean?",
+    "question": "What does '{{la|Errare humanum est||ER-ra-re HU-ma-num EST}}' mean?",
     "correctAnswer": "To err is human",
     "incorrectAnswers": [
       "Never despair",
@@ -423,7 +423,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nil desperandum||}}' mean?",
+    "question": "What does '{{la|Nil desperandum||NIL des-pe-RAN-dum}}' mean?",
     "correctAnswer": "Never despair",
     "incorrectAnswers": [
       "Who benefits?",
@@ -443,7 +443,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Cui bono?||}}' mean?",
+    "question": "What does '{{la|Cui bono?||CUI BO-no?}}' mean?",
     "correctAnswer": "Who benefits?",
     "incorrectAnswers": [
       "Let the buyer beware",
@@ -463,7 +463,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Caveat emptor||}}' mean?",
+    "question": "What does '{{la|Caveat emptor||CA-ve-at EMP-tor}}' mean?",
     "correctAnswer": "Let the buyer beware",
     "incorrectAnswers": [
       "Blank slate",
@@ -483,7 +483,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Tabula rasa||}}' mean?",
+    "question": "What does '{{la|Tabula rasa||TA-bu-la RA-sa}}' mean?",
     "correctAnswer": "Blank slate",
     "incorrectAnswers": [
       "An unwelcome person",
@@ -503,7 +503,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Persona non grata||}}' mean?",
+    "question": "What does '{{la|Persona non grata||PER-so-na NON GRA-ta}}' mean?",
     "correctAnswer": "An unwelcome person",
     "incorrectAnswers": [
       "The existing state of things",
@@ -524,7 +524,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Status quo||}}' mean?",
+    "question": "What does '{{la|Status quo||STA-tus KWO}}' mean?",
     "correctAnswer": "The existing state of things",
     "incorrectAnswers": [
       "An indispensable condition",
@@ -544,7 +544,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sine qua non||}}' mean?",
+    "question": "What does '{{la|Sine qua non||SI-ne KWA NON}}' mean?",
     "correctAnswer": "An indispensable condition",
     "incorrectAnswers": [
       "Unknown land",
@@ -565,7 +565,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Terra incognita||}}' mean?",
+    "question": "What does '{{la|Terra incognita||TER-ra in-COG-ni-ta}}' mean?",
     "correctAnswer": "Unknown land",
     "incorrectAnswers": [
       "Into the middle of things",
@@ -585,7 +585,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In medias res||}}' mean?",
+    "question": "What does '{{la|In medias res||IN ME-di-as RES}}' mean?",
     "correctAnswer": "Into the middle of things",
     "incorrectAnswers": [
       "Here and now",
@@ -606,7 +606,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Hic et nunc||}}' mean?",
+    "question": "What does '{{la|Hic et nunc||HIC ET NUNC}}' mean?",
     "correctAnswer": "Here and now",
     "incorrectAnswers": [
       "For this specific purpose",
@@ -627,7 +627,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ad hoc||}}' mean?",
+    "question": "What does '{{la|Ad hoc||AD HOC}}' mean?",
     "correctAnswer": "For this specific purpose",
     "incorrectAnswers": [
       "At pleasure; as desired",
@@ -647,7 +647,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ad libitum||}}' mean?",
+    "question": "What does '{{la|Ad libitum||AD LI-bi-tum}}' mean?",
     "correctAnswer": "At pleasure; as desired",
     "incorrectAnswers": [
       "To infinity; endlessly",
@@ -667,7 +667,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ad infinitum||}}' mean?",
+    "question": "What does '{{la|Ad infinitum||AD in-FI-ni-tum}}' mean?",
     "correctAnswer": "To infinity; endlessly",
     "incorrectAnswers": [
       "To the point of nausea",
@@ -687,7 +687,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ad nauseam||}}' mean?",
+    "question": "What does '{{la|Ad nauseam||AD NAU-se-am}}' mean?",
     "correctAnswer": "To the point of nausea",
     "incorrectAnswers": [
       "Known beforehand; independent of experience",
@@ -707,7 +707,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|A priori||}}' mean?",
+    "question": "What does '{{la|A priori||A PRI-o-ri}}' mean?",
     "correctAnswer": "Known beforehand; independent of experience",
     "incorrectAnswers": [
       "Known from what comes later; from experience",
@@ -727,7 +727,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|A posteriori||}}' mean?",
+    "question": "What does '{{la|A posteriori||A pos-te-RI-o-ri}}' mean?",
     "correctAnswer": "Known from what comes later; from experience",
     "incorrectAnswers": [
       "By itself; in itself",
@@ -747,7 +747,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Per se||}}' mean?",
+    "question": "What does '{{la|Per se||PER SE}}' mean?",
     "correctAnswer": "By itself; in itself",
     "incorrectAnswers": [
       "Note well",
@@ -767,7 +767,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nota bene||}}' mean?",
+    "question": "What does '{{la|Nota bene||NO-ta BE-ne}}' mean?",
     "correctAnswer": "Note well",
     "incorrectAnswers": [
       "And the rest",
@@ -787,7 +787,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Et cetera||}}' mean?",
+    "question": "What does '{{la|Et cetera||ET CE-te-ra}}' mean?",
     "correctAnswer": "And the rest",
     "incorrectAnswers": [
       "That is",
@@ -807,7 +807,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Id est||}}' mean?",
+    "question": "What does '{{la|Id est||ID EST}}' mean?",
     "correctAnswer": "That is",
     "incorrectAnswers": [
       "For example",
@@ -827,7 +827,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Exempli gratia||}}' mean?",
+    "question": "What does '{{la|Exempli gratia||e-XEM-pli GRA-ti-a}}' mean?",
     "correctAnswer": "For example",
     "incorrectAnswers": [
       "Among other things",
@@ -847,7 +847,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Inter alia||}}' mean?",
+    "question": "What does '{{la|Inter alia||IN-ter A-li-a}}' mean?",
     "correctAnswer": "Among other things",
     "incorrectAnswers": [
       "In good faith; genuine",
@@ -867,7 +867,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Bona fide||}}' mean?",
+    "question": "What does '{{la|Bona fide||BO-na FI-de}}' mean?",
     "correctAnswer": "In good faith; genuine",
     "incorrectAnswers": [
       "In bad faith",
@@ -887,7 +887,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Mala fide||}}' mean?",
+    "question": "What does '{{la|Mala fide||MA-la FI-de}}' mean?",
     "correctAnswer": "In bad faith",
     "incorrectAnswers": [
       "In fact; in practice",
@@ -907,7 +907,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|De facto||}}' mean?",
+    "question": "What does '{{la|De facto||DE FAC-to}}' mean?",
     "correctAnswer": "In fact; in practice",
     "incorrectAnswers": [
       "By law; by right",
@@ -927,7 +927,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|De jure||}}' mean?",
+    "question": "What does '{{la|De jure||DE JU-re}}' mean?",
     "correctAnswer": "By law; by right",
     "incorrectAnswers": [
       "At first appearance",
@@ -947,7 +947,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Prima facie||}}' mean?",
+    "question": "What does '{{la|Prima facie||PRI-ma FA-ci-e}}' mean?",
     "correctAnswer": "At first appearance",
     "incorrectAnswers": [
       "Something for something",
@@ -967,7 +967,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quid pro quo||}}' mean?",
+    "question": "What does '{{la|Quid pro quo||KWID PRO KWO}}' mean?",
     "correctAnswer": "Something for something",
     "incorrectAnswers": [
       "For the public good",
@@ -988,7 +988,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pro bono||}}' mean?",
+    "question": "What does '{{la|Pro bono||PRO BO-no}}' mean?",
     "correctAnswer": "For the public good",
     "incorrectAnswers": [
       "Method of operating",
@@ -1008,7 +1008,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Modus operandi||}}' mean?",
+    "question": "What does '{{la|Modus operandi||MO-dus o-pe-RAN-di}}' mean?",
     "correctAnswer": "Method of operating",
     "incorrectAnswers": [
       "Way of living; practical arrangement",
@@ -1028,7 +1028,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Modus vivendi||}}' mean?",
+    "question": "What does '{{la|Modus vivendi||MO-dus vi-VEN-di}}' mean?",
     "correctAnswer": "Way of living; practical arrangement",
     "incorrectAnswers": [
       "By the fact itself",
@@ -1048,7 +1048,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ipso facto||}}' mean?",
+    "question": "What does '{{la|Ipso facto||IP-so FAC-to}}' mean?",
     "correctAnswer": "By the fact itself",
     "incorrectAnswers": [
       "With the necessary changes having been made",
@@ -1068,7 +1068,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Mutatis mutandis||}}' mean?",
+    "question": "What does '{{la|Mutatis mutandis||MU-ta-tis mu-TAN-dis}}' mean?",
     "correctAnswer": "With the necessary changes having been made",
     "incorrectAnswers": [
       "Reduction to absurdity",
@@ -1088,7 +1088,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Reductio ad absurdum||}}' mean?",
+    "question": "What does '{{la|Reductio ad absurdum||re-DUC-ti-o AD ab-SUR-dum}}' mean?",
     "correctAnswer": "Reduction to absurdity",
     "incorrectAnswers": [
       "It does not follow",
@@ -1109,7 +1109,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Non sequitur||}}' mean?",
+    "question": "What does '{{la|Non sequitur||NON SE-kwi-tur}}' mean?",
     "correctAnswer": "It does not follow",
     "incorrectAnswers": [
       "Argument to the person",
@@ -1129,7 +1129,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Argumentum ad hominem||}}' mean?",
+    "question": "What does '{{la|Argumentum ad hominem||ar-gu-MEN-tum AD HO-mi-nem}}' mean?",
     "correctAnswer": "Argument to the person",
     "incorrectAnswers": [
       "After this, therefore because of this",
@@ -1150,7 +1150,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Post hoc ergo propter hoc||}}' mean?",
+    "question": "What does '{{la|Post hoc ergo propter hoc||POST HOC ER-go PROP-ter HOC}}' mean?",
     "correctAnswer": "After this, therefore because of this",
     "incorrectAnswers": [
       "No third is given",
@@ -1172,7 +1172,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Tertium non datur||}}' mean?",
+    "question": "What does '{{la|Tertium non datur||TER-ti-um NON DA-tur}}' mean?",
     "correctAnswer": "No third is given",
     "incorrectAnswers": [
       "Virtue stands in the middle",
@@ -1193,7 +1193,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In medio stat virtus||}}' mean?",
+    "question": "What does '{{la|In medio stat virtus||IN ME-di-o STAT VIR-tus}}' mean?",
     "correctAnswer": "Virtue stands in the middle",
     "incorrectAnswers": [
       "Repetition is the mother of learning",
@@ -1215,7 +1215,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Repetitio est mater studiorum||}}' mean?",
+    "question": "What does '{{la|Repetitio est mater studiorum||re-pe-TI-ti-o EST MA-ter stu-DI-o-rum}}' mean?",
     "correctAnswer": "Repetition is the mother of learning",
     "incorrectAnswers": [
       "Knowledge is power",
@@ -1237,7 +1237,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Scientia potentia est||}}' mean?",
+    "question": "What does '{{la|Scientia potentia est||sci-EN-ti-a po-TEN-ti-a EST}}' mean?",
     "correctAnswer": "Knowledge is power",
     "incorrectAnswers": [
       "Each person is the maker of his own fortune",
@@ -1258,7 +1258,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Faber est suae quisque fortunae||}}' mean?",
+    "question": "What does '{{la|Faber est suae quisque fortunae||FA-ber EST SU-ae KWIS-kwe FOR-tu-nae}}' mean?",
     "correctAnswer": "Each person is the maker of his own fortune",
     "incorrectAnswers": [
       "Know yourself",
@@ -1280,7 +1280,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nosce te ipsum||}}' mean?",
+    "question": "What does '{{la|Nosce te ipsum||NOS-ce TE IP-sum}}' mean?",
     "correctAnswer": "Know yourself",
     "incorrectAnswers": [
       "Nothing in excess",
@@ -1301,7 +1301,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ne quid nimis||}}' mean?",
+    "question": "What does '{{la|Ne quid nimis||NE KWID NI-mis}}' mean?",
     "correctAnswer": "Nothing in excess",
     "incorrectAnswers": [
       "Be astonished at nothing",
@@ -1322,7 +1322,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nil admirari||}}' mean?",
+    "question": "What does '{{la|Nil admirari||NIL ad-MI-ra-ri}}' mean?",
     "correctAnswer": "Be astonished at nothing",
     "incorrectAnswers": [
       "I shall not wholly die",
@@ -1342,7 +1342,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Non omnis moriar||}}' mean?",
+    "question": "What does '{{la|Non omnis moriar||NON OM-nis MO-ri-ar}}' mean?",
     "correctAnswer": "I shall not wholly die",
     "incorrectAnswers": [
       "All things change, and we change with them",
@@ -1363,7 +1363,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Omnia mutantur, nos et mutamur in illis||}}' mean?",
+    "question": "What does '{{la|Omnia mutantur, nos et mutamur in illis||OM-ni-a mu-TAN-tur, NOS ET MU-ta-mur IN IL-lis}}' mean?",
     "correctAnswer": "All things change, and we change with them",
     "incorrectAnswers": [
       "Times change, and we change with them",
@@ -1385,7 +1385,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Tempora mutantur, nos et mutamur in illis||}}' mean?",
+    "question": "What does '{{la|Tempora mutantur, nos et mutamur in illis||TEM-po-ra mu-TAN-tur, NOS ET MU-ta-mur IN IL-lis}}' mean?",
     "correctAnswer": "Times change, and we change with them",
     "incorrectAnswers": [
       "Where it is well, there is the homeland",
@@ -1407,7 +1407,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ubi bene, ibi patria||}}' mean?",
+    "question": "What does '{{la|Ubi bene, ibi patria||U-bi BE-ne, I-bi PA-tri-a}}' mean?",
     "correctAnswer": "Where it is well, there is the homeland",
     "incorrectAnswers": [
       "So many heads, so many opinions",
@@ -1429,7 +1429,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quot capita, tot sensus||}}' mean?",
+    "question": "What does '{{la|Quot capita, tot sensus||KWOT CA-pi-ta, TOT SEN-sus}}' mean?",
     "correctAnswer": "So many heads, so many opinions",
     "incorrectAnswers": [
       "A sound mind in a sound body",
@@ -1451,7 +1451,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Mens sana in corpore sano||}}' mean?",
+    "question": "What does '{{la|Mens sana in corpore sano||MENS SA-na IN COR-po-re SA-no}}' mean?",
     "correctAnswer": "A sound mind in a sound body",
     "incorrectAnswers": [
       "All excellent things are rare",
@@ -1473,7 +1473,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Omnia praeclara rara||}}' mean?",
+    "question": "What does '{{la|Omnia praeclara rara||OM-ni-a PRAE-cla-ra RA-ra}}' mean?",
     "correctAnswer": "All excellent things are rare",
     "incorrectAnswers": [
       "Happy is that person",
@@ -1494,7 +1494,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Beatus ille||}}' mean?",
+    "question": "What does '{{la|Beatus ille||BE-a-tus IL-le}}' mean?",
     "correctAnswer": "Happy is that person",
     "incorrectAnswers": [
       "The drop hollows the stone",
@@ -1514,7 +1514,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Gutta cavat lapidem||}}' mean?",
+    "question": "What does '{{la|Gutta cavat lapidem||GUT-ta CA-vat LA-pi-dem}}' mean?",
     "correctAnswer": "The drop hollows the stone",
     "incorrectAnswers": [
       "The end crowns the work",
@@ -1535,7 +1535,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Finis coronat opus||}}' mean?",
+    "question": "What does '{{la|Finis coronat opus||FI-nis CO-ro-nat O-pus}}' mean?",
     "correctAnswer": "The end crowns the work",
     "incorrectAnswers": [
       "Hold the matter, the words will follow",
@@ -1556,7 +1556,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Rem tene, verba sequentur||}}' mean?",
+    "question": "What does '{{la|Rem tene, verba sequentur||REM TE-ne, VER-ba se-KWEN-tur}}' mean?",
     "correctAnswer": "Hold the matter, the words will follow",
     "incorrectAnswers": [
       "History is the teacher of life",
@@ -1578,7 +1578,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Historia magistra vitae||}}' mean?",
+    "question": "What does '{{la|Historia magistra vitae||his-TO-ri-a ma-GIS-tra VI-tae}}' mean?",
     "correctAnswer": "History is the teacher of life",
     "incorrectAnswers": [
       "Learned ignorance",
@@ -1599,7 +1599,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Docta ignorantia||}}' mean?",
+    "question": "What does '{{la|Docta ignorantia||DOC-ta ig-no-RAN-ti-a}}' mean?",
     "correctAnswer": "Learned ignorance",
     "incorrectAnswers": [
       "The negative way",
@@ -1619,7 +1619,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Via negativa||}}' mean?",
+    "question": "What does '{{la|Via negativa||VI-a ne-GA-ti-va}}' mean?",
     "correctAnswer": "The negative way",
     "incorrectAnswers": [
       "It is solved by walking",
@@ -1639,7 +1639,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Solvitur ambulando||}}' mean?",
+    "question": "What does '{{la|Solvitur ambulando||SOL-vi-tur am-bu-LAN-do}}' mean?",
     "correctAnswer": "It is solved by walking",
     "incorrectAnswers": [
       "The master said it",
@@ -1659,7 +1659,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Magister dixit||}}' mean?",
+    "question": "What does '{{la|Magister dixit||ma-GIS-ter DI-xit}}' mean?",
     "correctAnswer": "The master said it",
     "incorrectAnswers": [
       "True art is to conceal art",
@@ -1679,7 +1679,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ars est celare artem||}}' mean?",
+    "question": "What does '{{la|Ars est celare artem||ARS EST CE-la-re AR-tem}}' mean?",
     "correctAnswer": "True art is to conceal art",
     "incorrectAnswers": [
       "Art for art's sake",
@@ -1701,7 +1701,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ars gratia artis||}}' mean?",
+    "question": "What does '{{la|Ars gratia artis||ARS GRA-ti-a AR-tis}}' mean?",
     "correctAnswer": "Art for art's sake",
     "incorrectAnswers": [
       "As is painting, so is poetry",
@@ -1722,7 +1722,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ut pictura poesis||}}' mean?",
+    "question": "What does '{{la|Ut pictura poesis||UT PIC-tu-ra POE-sis}}' mean?",
     "correctAnswer": "As is painting, so is poetry",
     "incorrectAnswers": [
       "A rare bird",
@@ -1743,7 +1743,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Rara avis||}}' mean?",
+    "question": "What does '{{la|Rara avis||RA-ra A-vis}}' mean?",
     "correctAnswer": "A rare bird",
     "incorrectAnswers": [
       "Wonderful to say",
@@ -1763,7 +1763,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Mirabile dictu||}}' mean?",
+    "question": "What does '{{la|Mirabile dictu||mi-RA-bi-le DIC-tu}}' mean?",
     "correctAnswer": "Wonderful to say",
     "incorrectAnswers": [
       "Much in little",
@@ -1783,7 +1783,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Multum in parvo||}}' mean?",
+    "question": "What does '{{la|Multum in parvo||MUL-tum IN PAR-vo}}' mean?",
     "correctAnswer": "Much in little",
     "incorrectAnswers": [
       "In its original place",
@@ -1804,7 +1804,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In situ||}}' mean?",
+    "question": "What does '{{la|In situ||IN SI-tu}}' mean?",
     "correctAnswer": "In its original place",
     "incorrectAnswers": [
       "In glass; in the lab",
@@ -1824,7 +1824,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In vitro||}}' mean?",
+    "question": "What does '{{la|In vitro||IN VI-tro}}' mean?",
     "correctAnswer": "In glass; in the lab",
     "incorrectAnswers": [
       "In the living organism",
@@ -1844,7 +1844,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In vivo||}}' mean?",
+    "question": "What does '{{la|In vivo||IN VI-vo}}' mean?",
     "correctAnswer": "In the living organism",
     "incorrectAnswers": [
       "Slip of the tongue",
@@ -1864,7 +1864,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Lapsus linguae||}}' mean?",
+    "question": "What does '{{la|Lapsus linguae||LAP-sus LIN-gwae}}' mean?",
     "correctAnswer": "Slip of the tongue",
     "incorrectAnswers": [
       "Slip of the pen",
@@ -1884,7 +1884,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Lapsus calami||}}' mean?",
+    "question": "What does '{{la|Lapsus calami||LAP-sus CA-la-mi}}' mean?",
     "correctAnswer": "Slip of the pen",
     "incorrectAnswers": [
       "Word for word",
@@ -1904,7 +1904,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Verbatim||}}' mean?",
+    "question": "What does '{{la|Verbatim||VER-ba-tim}}' mean?",
     "correctAnswer": "Word for word",
     "incorrectAnswers": [
       "Out of the moment; off the cuff",
@@ -1923,7 +1923,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex tempore||}}' mean?",
+    "question": "What does '{{la|Ex tempore||EX TEM-po-re}}' mean?",
     "correctAnswer": "Out of the moment; off the cuff",
     "incorrectAnswers": [
       "Course of life",
@@ -1943,7 +1943,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Curriculum vitae||}}' mean?",
+    "question": "What does '{{la|Curriculum vitae||cur-RI-cu-lum VI-tae}}' mean?",
     "correctAnswer": "Course of life",
     "incorrectAnswers": [
       "Nourishing mother",
@@ -1963,7 +1963,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Alma mater||}}' mean?",
+    "question": "What does '{{la|Alma mater||AL-ma MA-ter}}' mean?",
     "correctAnswer": "Nourishing mother",
     "incorrectAnswers": [
       "With praise",
@@ -1983,7 +1983,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Cum laude||}}' mean?",
+    "question": "What does '{{la|Cum laude||CUM LAU-de}}' mean?",
     "correctAnswer": "With praise",
     "incorrectAnswers": [
       "With great praise",
@@ -2003,7 +2003,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Magna cum laude||}}' mean?",
+    "question": "What does '{{la|Magna cum laude||MAG-na CUM LAU-de}}' mean?",
     "correctAnswer": "With great praise",
     "incorrectAnswers": [
       "With highest praise",
@@ -2024,7 +2024,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Summa cum laude||}}' mean?",
+    "question": "What does '{{la|Summa cum laude||SUM-ma CUM LAU-de}}' mean?",
     "correctAnswer": "With highest praise",
     "incorrectAnswers": [
       "Which was to be demonstrated",
@@ -2045,7 +2045,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quod erat demonstrandum||}}' mean?",
+    "question": "What does '{{la|Quod erat demonstrandum||KWOD E-rat de-mons-TRAN-dum}}' mean?",
     "correctAnswer": "Which was to be demonstrated",
     "incorrectAnswers": [
       "The voice of the people",
@@ -2066,7 +2066,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Vox populi||}}' mean?",
+    "question": "What does '{{la|Vox populi||VOX PO-pu-li}}' mean?",
     "correctAnswer": "The voice of the people",
     "incorrectAnswers": [
       "Bread and circuses",
@@ -2086,7 +2086,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Panem et circenses||}}' mean?",
+    "question": "What does '{{la|Panem et circenses||PA-nem ET cir-CEN-ses}}' mean?",
     "correctAnswer": "Bread and circuses",
     "incorrectAnswers": [
       "Divide and rule",
@@ -2107,7 +2107,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Divide et impera||}}' mean?",
+    "question": "What does '{{la|Divide et impera||DI-vi-de ET IM-pe-ra}}' mean?",
     "correctAnswer": "Divide and rule",
     "incorrectAnswers": [
       "An occasion for war",
@@ -2128,7 +2128,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Casus belli||}}' mean?",
+    "question": "What does '{{la|Casus belli||CA-sus BEL-li}}' mean?",
     "correctAnswer": "An occasion for war",
     "incorrectAnswers": [
       "Let justice be done, though the heavens fall",
@@ -2148,7 +2148,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Fiat iustitia, ruat caelum||}}' mean?",
+    "question": "What does '{{la|Fiat iustitia, ruat caelum||FI-at i-us-TI-ti-a, RU-at CAE-lum}}' mean?",
     "correctAnswer": "Let justice be done, though the heavens fall",
     "incorrectAnswers": [
       "Let there be light",
@@ -2170,7 +2170,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Fiat lux||}}' mean?",
+    "question": "What does '{{la|Fiat lux||FI-at LUX}}' mean?",
     "correctAnswer": "Let there be light",
     "incorrectAnswers": [
       "Out of many, one",
@@ -2190,7 +2190,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|E pluribus unum||}}' mean?",
+    "question": "What does '{{la|E pluribus unum||E PLU-ri-bus U-num}}' mean?",
     "correctAnswer": "Out of many, one",
     "incorrectAnswers": [
       "To be rather than to seem",
@@ -2211,7 +2211,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Esse quam videri||}}' mean?",
+    "question": "What does '{{la|Esse quam videri||ES-se KWAM VI-de-ri}}' mean?",
     "correctAnswer": "To be rather than to seem",
     "incorrectAnswers": [
       "Peace be with you",
@@ -2232,7 +2232,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pax vobiscum||}}' mean?",
+    "question": "What does '{{la|Pax vobiscum||PAX vo-BIS-cum}}' mean?",
     "correctAnswer": "Peace be with you",
     "incorrectAnswers": [
       "Pray and work",
@@ -2252,7 +2252,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ora et labora||}}' mean?",
+    "question": "What does '{{la|Ora et labora||O-ra ET LA-bo-ra}}' mean?",
     "correctAnswer": "Pray and work",
     "incorrectAnswers": [
       "May he or she rest in peace",
@@ -2273,7 +2273,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Requiescat in pace||}}' mean?",
+    "question": "What does '{{la|Requiescat in pace||re-kwi-ES-cat IN PA-ce}}' mean?",
     "correctAnswer": "May he or she rest in peace",
     "incorrectAnswers": [
       "Hail and farewell",
@@ -2294,7 +2294,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ave atque vale||}}' mean?",
+    "question": "What does '{{la|Ave atque vale||A-ve AT-kwe VA-le}}' mean?",
     "correctAnswer": "Hail and farewell",
     "incorrectAnswers": [
       "From the beginning",
@@ -2315,7 +2315,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ab initio||}}' mean?",
+    "question": "What does '{{la|Ab initio||AB i-NI-ti-o}}' mean?",
     "correctAnswer": "From the beginning",
     "incorrectAnswers": [
       "Out of nothing",
@@ -2335,7 +2335,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex nihilo||}}' mean?",
+    "question": "What does '{{la|Ex nihilo||EX NI-hi-lo}}' mean?",
     "correctAnswer": "Out of nothing",
     "incorrectAnswers": [
       "From the books of",
@@ -2355,7 +2355,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex libris||}}' mean?",
+    "question": "What does '{{la|Ex libris||EX LI-bris}}' mean?",
     "correctAnswer": "From the books of",
     "incorrectAnswers": [
       "From the office",
@@ -2375,7 +2375,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex officio||}}' mean?",
+    "question": "What does '{{la|Ex officio||EX of-FI-ci-o}}' mean?",
     "correctAnswer": "From the office",
     "incorrectAnswers": [
       "From after the fact",
@@ -2395,7 +2395,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex post facto||}}' mean?",
+    "question": "What does '{{la|Ex post facto||EX POST FAC-to}}' mean?",
     "correctAnswer": "From after the fact",
     "incorrectAnswers": [
       "From the chair",
@@ -2416,7 +2416,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex cathedra||}}' mean?",
+    "question": "What does '{{la|Ex cathedra||EX CA-the-dra}}' mean?",
     "correctAnswer": "From the chair",
     "incorrectAnswers": [
       "On equal footing",
@@ -2436,7 +2436,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ex aequo||}}' mean?",
+    "question": "What does '{{la|Ex aequo||EX AE-kwo}}' mean?",
     "correctAnswer": "On equal footing",
     "incorrectAnswers": [
       "In absence",
@@ -2456,7 +2456,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In absentia||}}' mean?",
+    "question": "What does '{{la|In absentia||IN ab-SEN-ti-a}}' mean?",
     "correctAnswer": "In absence",
     "incorrectAnswers": [
       "In private; in chambers",
@@ -2476,7 +2476,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In camera||}}' mean?",
+    "question": "What does '{{la|In camera||IN CA-me-ra}}' mean?",
     "correctAnswer": "In private; in chambers",
     "incorrectAnswers": [
       "At the point of death; in extreme circumstances",
@@ -2496,7 +2496,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In extremis||}}' mean?",
+    "question": "What does '{{la|In extremis||IN EX-tre-mis}}' mean?",
     "correctAnswer": "At the point of death; in extreme circumstances",
     "incorrectAnswers": [
       "In memory of",
@@ -2516,7 +2516,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In memoriam||}}' mean?",
+    "question": "What does '{{la|In memoriam||IN me-MO-ri-am}}' mean?",
     "correctAnswer": "In memory of",
     "incorrectAnswers": [
       "In the place of a parent",
@@ -2536,7 +2536,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In loco parentis||}}' mean?",
+    "question": "What does '{{la|In loco parentis||IN LO-co pa-REN-tis}}' mean?",
     "correctAnswer": "In the place of a parent",
     "incorrectAnswers": [
       "When in doubt, for the accused",
@@ -2557,7 +2557,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In dubio pro reo||}}' mean?",
+    "question": "What does '{{la|In dubio pro reo||IN DU-bi-o PRO RE-o}}' mean?",
     "correctAnswer": "When in doubt, for the accused",
     "incorrectAnswers": [
       "You shall have the body",
@@ -2579,7 +2579,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Habeas corpus||}}' mean?",
+    "question": "What does '{{la|Habeas corpus||HA-be-as COR-pus}}' mean?",
     "correctAnswer": "You shall have the body",
     "incorrectAnswers": [
       "Under judgment",
@@ -2599,7 +2599,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sub iudice||}}' mean?",
+    "question": "What does '{{la|Sub iudice||SUB i-U-di-ce}}' mean?",
     "correctAnswer": "Under judgment",
     "incorrectAnswers": [
       "The thing speaks for itself",
@@ -2619,7 +2619,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Res ipsa loquitur||}}' mean?",
+    "question": "What does '{{la|Res ipsa loquitur||RES IP-sa LO-kwi-tur}}' mean?",
     "correctAnswer": "The thing speaks for itself",
     "incorrectAnswers": [
       "Body of the crime",
@@ -2640,7 +2640,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Corpus delicti||}}' mean?",
+    "question": "What does '{{la|Corpus delicti||COR-pus de-LIC-ti}}' mean?",
     "correctAnswer": "Body of the crime",
     "incorrectAnswers": [
       "With permission being given",
@@ -2660,7 +2660,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Data venia||}}' mean?",
+    "question": "What does '{{la|Data venia||DA-ta VE-ni-a}}' mean?",
     "correctAnswer": "With permission being given",
     "incorrectAnswers": [
       "God willing",
@@ -2680,7 +2680,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Deo volente||}}' mean?",
+    "question": "What does '{{la|Deo volente||DE-o vo-LEN-te}}' mean?",
     "correctAnswer": "God willing",
     "incorrectAnswers": [
       "The Lord be with you",
@@ -2700,7 +2700,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Dominus vobiscum||}}' mean?",
+    "question": "What does '{{la|Dominus vobiscum||DO-mi-nus vo-BIS-cum}}' mean?",
     "correctAnswer": "The Lord be with you",
     "incorrectAnswers": [
       "Behold the man",
@@ -2720,7 +2720,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ecce homo||}}' mean?",
+    "question": "What does '{{la|Ecce homo||EC-ce HO-mo}}' mean?",
     "correctAnswer": "Behold the man",
     "incorrectAnswers": [
       "Ignorance of the law excuses not",
@@ -2740,7 +2740,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ignorantia legis non excusat||}}' mean?",
+    "question": "What does '{{la|Ignorantia legis non excusat||ig-no-RAN-ti-a LE-gis NON EX-cu-sat}}' mean?",
     "correctAnswer": "Ignorance of the law excuses not",
     "incorrectAnswers": [
       "No one is judge in his own case",
@@ -2762,7 +2762,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nemo iudex in causa sua||}}' mean?",
+    "question": "What does '{{la|Nemo iudex in causa sua||NE-mo I-u-dex IN CAU-sa SU-a}}' mean?",
     "correctAnswer": "No one is judge in his own case",
     "incorrectAnswers": [
       "No one gives what he does not have",
@@ -2784,7 +2784,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nemo dat quod non habet||}}' mean?",
+    "question": "What does '{{la|Nemo dat quod non habet||NE-mo DAT KWOD NON HA-bet}}' mean?",
     "correctAnswer": "No one gives what he does not have",
     "incorrectAnswers": [
       "No penalty without law",
@@ -2806,7 +2806,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nulla poena sine lege||}}' mean?",
+    "question": "What does '{{la|Nulla poena sine lege||NUL-la POE-na SI-ne LE-ge}}' mean?",
     "correctAnswer": "No penalty without law",
     "incorrectAnswers": [
       "Agreements must be kept",
@@ -2828,7 +2828,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pacta sunt servanda||}}' mean?",
+    "question": "What does '{{la|Pacta sunt servanda||PAC-ta SUNT ser-VAN-da}}' mean?",
     "correctAnswer": "Agreements must be kept",
     "incorrectAnswers": [
       "The burden of proof",
@@ -2849,7 +2849,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Onus probandi||}}' mean?",
+    "question": "What does '{{la|Onus probandi||O-nus pro-BAN-di}}' mean?",
     "correctAnswer": "The burden of proof",
     "incorrectAnswers": [
       "He who acts through another acts himself",
@@ -2869,7 +2869,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Qui facit per alium facit per se||}}' mean?",
+    "question": "What does '{{la|Qui facit per alium facit per se||KWI FA-cit PER A-li-um FA-cit PER SE}}' mean?",
     "correctAnswer": "He who acts through another acts himself",
     "incorrectAnswers": [
       "He who is silent is taken to agree",
@@ -2891,7 +2891,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Qui tacet consentire videtur||}}' mean?",
+    "question": "What does '{{la|Qui tacet consentire videtur||KWI TA-cet con-SEN-ti-re VI-de-tur}}' mean?",
     "correctAnswer": "He who is silent is taken to agree",
     "incorrectAnswers": [
       "Things thus standing",
@@ -2913,7 +2913,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Rebus sic stantibus||}}' mean?",
+    "question": "What does '{{la|Rebus sic stantibus||RE-bus SIC STAN-ti-bus}}' mean?",
     "correctAnswer": "Things thus standing",
     "incorrectAnswers": [
       "The welfare of the people is the supreme law",
@@ -2934,7 +2934,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Salus populi suprema lex||}}' mean?",
+    "question": "What does '{{la|Salus populi suprema lex||SA-lus PO-pu-li SU-pre-ma LEX}}' mean?",
     "correctAnswer": "The welfare of the people is the supreme law",
     "incorrectAnswers": [
       "Use your own so as not to harm another's",
@@ -2956,7 +2956,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sic utere tuo ut alienum non laedas||}}' mean?",
+    "question": "What does '{{la|Sic utere tuo ut alienum non laedas||SIC U-te-re TU-o UT a-LI-e-num NON LAE-das}}' mean?",
     "correctAnswer": "Use your own so as not to harm another's",
     "incorrectAnswers": [
       "Without a day fixed",
@@ -2978,7 +2978,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sine die||}}' mean?",
+    "question": "What does '{{la|Sine die||SI-ne DI-e}}' mean?",
     "correctAnswer": "Without a day fixed",
     "incorrectAnswers": [
       "Of its own kind",
@@ -2998,7 +2998,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sui generis||}}' mean?",
+    "question": "What does '{{la|Sui generis||SUI GE-ne-ris}}' mean?",
     "correctAnswer": "Of its own kind",
     "incorrectAnswers": [
       "For the sake of form",
@@ -3018,7 +3018,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pro forma||}}' mean?",
+    "question": "What does '{{la|Pro forma||PRO FOR-ma}}' mean?",
     "correctAnswer": "For the sake of form",
     "incorrectAnswers": [
       "In proportion",
@@ -3038,7 +3038,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pro rata||}}' mean?",
+    "question": "What does '{{la|Pro rata||PRO RA-ta}}' mean?",
     "correctAnswer": "In proportion",
     "incorrectAnswers": [
       "For the time being",
@@ -3058,7 +3058,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pro tempore||}}' mean?",
+    "question": "What does '{{la|Pro tempore||PRO TEM-po-re}}' mean?",
     "correctAnswer": "For the time being",
     "incorrectAnswers": [
       "As much as is enough",
@@ -3078,7 +3078,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quantum satis||}}' mean?",
+    "question": "What does '{{la|Quantum satis||KWAN-tum SA-tis}}' mean?",
     "correctAnswer": "As much as is enough",
     "incorrectAnswers": [
       "Now is the time to drink",
@@ -3098,7 +3098,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nunc est bibendum||}}' mean?",
+    "question": "What does '{{la|Nunc est bibendum||NUNC EST bi-BEN-dum}}' mean?",
     "correctAnswer": "Now is the time to drink",
     "incorrectAnswers": [
       "Oh the times! Oh the customs!",
@@ -3119,7 +3119,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|O tempora! O mores!||}}' mean?",
+    "question": "What does '{{la|O tempora! O mores!||O TEM-po-ra! O MO-res!}}' mean?",
     "correctAnswer": "Oh the times! Oh the customs!",
     "incorrectAnswers": [
       "Who will guard the guards themselves?",
@@ -3140,7 +3140,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quis custodiet ipsos custodes?||}}' mean?",
+    "question": "What does '{{la|Quis custodiet ipsos custodes?||KWIS cus-TO-di-et IP-sos CUS-to-des?}}' mean?",
     "correctAnswer": "Who will guard the guards themselves?",
     "incorrectAnswers": [
       "In blazing offense; in the very act",
@@ -3162,7 +3162,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|In flagrante delicto||}}' mean?",
+    "question": "What does '{{la|In flagrante delicto||IN fla-GRAN-te de-LIC-to}}' mean?",
     "correctAnswer": "In blazing offense; in the very act",
     "incorrectAnswers": [
       "Beware of the dog",
@@ -3183,7 +3183,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Cave canem||}}' mean?",
+    "question": "What does '{{la|Cave canem||CA-ve CA-nem}}' mean?",
     "correctAnswer": "Beware of the dog",
     "incorrectAnswers": [
       "You too, Brutus?",
@@ -3203,7 +3203,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Et tu, Brute?||}}' mean?",
+    "question": "What does '{{la|Et tu, Brute?||ET TU, BRU-te?}}' mean?",
     "correctAnswer": "You too, Brutus?",
     "incorrectAnswers": [
       "Hail, Caesar, those who are about to die salute you",
@@ -3224,7 +3224,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ave Caesar, morituri te salutant||}}' mean?",
+    "question": "What does '{{la|Ave Caesar, morituri te salutant||A-ve CAE-sar, mo-RI-tu-ri TE SA-lu-tant}}' mean?",
     "correctAnswer": "Hail, Caesar, those who are about to die salute you",
     "incorrectAnswers": [
       "It is sweet and fitting to die for one's country",
@@ -3246,7 +3246,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Dulce et decorum est pro patria mori||}}' mean?",
+    "question": "What does '{{la|Dulce et decorum est pro patria mori||DUL-ce ET DE-co-rum EST PRO PA-tri-a MO-ri}}' mean?",
     "correctAnswer": "It is sweet and fitting to die for one's country",
     "incorrectAnswers": [
       "I hate and I love",
@@ -3268,7 +3268,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Odi et amo||}}' mean?",
+    "question": "What does '{{la|Odi et amo||O-di ET A-mo}}' mean?",
     "correctAnswer": "I hate and I love",
     "incorrectAnswers": [
       "I fear the Greeks, even when bearing gifts",
@@ -3289,7 +3289,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Timeo Danaos et dona ferentes||}}' mean?",
+    "question": "What does '{{la|Timeo Danaos et dona ferentes||TI-me-o DA-na-os ET DO-na fe-REN-tes}}' mean?",
     "correctAnswer": "I fear the Greeks, even when bearing gifts",
     "incorrectAnswers": [
       "Where are you going?",
@@ -3311,7 +3311,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quo vadis?||}}' mean?",
+    "question": "What does '{{la|Quo vadis?||KWO VA-dis?}}' mean?",
     "correctAnswer": "Where are you going?",
     "incorrectAnswers": [
       "How long, then?",
@@ -3331,7 +3331,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quousque tandem?||}}' mean?",
+    "question": "What does '{{la|Quousque tandem?||kwo-US-kwe TAN-dem?}}' mean?",
     "correctAnswer": "How long, then?",
     "incorrectAnswers": [
       "Always faithful",
@@ -3351,7 +3351,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Semper fidelis||}}' mean?",
+    "question": "What does '{{la|Semper fidelis||SEM-per FI-de-lis}}' mean?",
     "correctAnswer": "Always faithful",
     "incorrectAnswers": [
       "Always ready",
@@ -3371,7 +3371,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Semper paratus||}}' mean?",
+    "question": "What does '{{la|Semper paratus||SEM-per PA-ra-tus}}' mean?",
     "correctAnswer": "Always ready",
     "incorrectAnswers": [
       "Thus always to tyrants",
@@ -3391,7 +3391,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sic semper tyrannis||}}' mean?",
+    "question": "What does '{{la|Sic semper tyrannis||SIC SEM-per ty-RAN-nis}}' mean?",
     "correctAnswer": "Thus always to tyrants",
     "incorrectAnswers": [
       "Thus passes the glory of the world",
@@ -3412,7 +3412,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sic transit gloria mundi||}}' mean?",
+    "question": "What does '{{la|Sic transit gloria mundi||SIC TRAN-sit GLO-ri-a MUN-di}}' mean?",
     "correctAnswer": "Thus passes the glory of the world",
     "incorrectAnswers": [
       "If you seek his monument, look around you",
@@ -3434,7 +3434,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Si monumentum requiris, circumspice||}}' mean?",
+    "question": "What does '{{la|Si monumentum requiris, circumspice||SI mo-nu-MEN-tum RE-kwi-ris, cir-CUMS-pi-ce}}' mean?",
     "correctAnswer": "If you seek his monument, look around you",
     "incorrectAnswers": [
       "If you had kept silent, you would have remained a philosopher",
@@ -3456,7 +3456,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Si tacuisses, philosophus mansisses||}}' mean?",
+    "question": "What does '{{la|Si tacuisses, philosophus mansisses||SI ta-CUIS-ses, phi-LO-so-phus man-SIS-ses}}' mean?",
     "correctAnswer": "If you had kept silent, you would have remained a philosopher",
     "incorrectAnswers": [
       "The highest good",
@@ -3478,7 +3478,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Summum bonum||}}' mean?",
+    "question": "What does '{{la|Summum bonum||SUM-mum BO-num}}' mean?",
     "correctAnswer": "The highest good",
     "incorrectAnswers": [
       "Extreme law is extreme injustice",
@@ -3498,7 +3498,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Summum ius, summa iniuria||}}' mean?",
+    "question": "What does '{{la|Summum ius, summa iniuria||SUM-mum I-us, SUM-ma i-ni-U-ri-a}}' mean?",
     "correctAnswer": "Extreme law is extreme injustice",
     "incorrectAnswers": [
       "The last argument",
@@ -3520,7 +3520,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ultima ratio||}}' mean?",
+    "question": "What does '{{la|Ultima ratio||UL-ti-ma RA-ti-o}}' mean?",
     "correctAnswer": "The last argument",
     "incorrectAnswers": [
       "To the city and to the world",
@@ -3540,7 +3540,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Urbi et orbi||}}' mean?",
+    "question": "What does '{{la|Urbi et orbi||UR-bi ET OR-bi}}' mean?",
     "correctAnswer": "To the city and to the world",
     "incorrectAnswers": [
       "Go with me",
@@ -3561,7 +3561,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Vade mecum||}}' mean?",
+    "question": "What does '{{la|Vade mecum||VA-de ME-cum}}' mean?",
     "correctAnswer": "Go with me",
     "incorrectAnswers": [
       "The truth will set you free",
@@ -3581,7 +3581,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Veritas vos liberabit||}}' mean?",
+    "question": "What does '{{la|Veritas vos liberabit||VE-ri-tas VOS li-BE-ra-bit}}' mean?",
     "correctAnswer": "The truth will set you free",
     "incorrectAnswers": [
       "The voice of one crying in the wilderness",
@@ -3602,7 +3602,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Vox clamantis in deserto||}}' mean?",
+    "question": "What does '{{la|Vox clamantis in deserto||VOX cla-MAN-tis IN de-SER-to}}' mean?",
     "correctAnswer": "The voice of one crying in the wilderness",
     "incorrectAnswers": [
       "Let the reader beware",
@@ -3624,7 +3624,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Caveat lector||}}' mean?",
+    "question": "What does '{{la|Caveat lector||CA-ve-at LEC-tor}}' mean?",
     "correctAnswer": "Let the reader beware",
     "incorrectAnswers": [
       "Let the doer beware",
@@ -3644,7 +3644,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Caveat actor||}}' mean?",
+    "question": "What does '{{la|Caveat actor||CA-ve-at AC-tor}}' mean?",
     "correctAnswer": "Let the doer beware",
     "incorrectAnswers": [
       "God from the machine",
@@ -3664,7 +3664,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Deus ex machina||}}' mean?",
+    "question": "What does '{{la|Deus ex machina||DEUS EX MA-chi-na}}' mean?",
     "correctAnswer": "God from the machine",
     "incorrectAnswers": [
       "It seemed otherwise to the gods",
@@ -3685,7 +3685,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Dis aliter visum||}}' mean?",
+    "question": "What does '{{la|Dis aliter visum||DIS A-li-ter VI-sum}}' mean?",
     "correctAnswer": "It seemed otherwise to the gods",
     "incorrectAnswers": [
       "I am human; I think nothing human is alien to me",
@@ -3706,7 +3706,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Homo sum: humani nihil a me alienum puto||}}' mean?",
+    "question": "What does '{{la|Homo sum: humani nihil a me alienum puto||HO-mo SUM: HU-ma-ni NI-hil A ME a-LI-e-num PU-to}}' mean?",
     "correctAnswer": "I am human; I think nothing human is alien to me",
     "incorrectAnswers": [
       "Foolish fire",
@@ -3728,7 +3728,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ignis fatuus||}}' mean?",
+    "question": "What does '{{la|Ignis fatuus||IG-nis FA-tu-us}}' mean?",
     "correctAnswer": "Foolish fire",
     "incorrectAnswers": [
       "Let it be printed",
@@ -3748,7 +3748,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Imprimatur||}}' mean?",
+    "question": "What does '{{la|Imprimatur||im-PRI-ma-tur}}' mean?",
     "correctAnswer": "Let it be printed",
     "incorrectAnswers": [
       "Law of retaliation",
@@ -3767,7 +3767,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Lex talionis||}}' mean?",
+    "question": "What does '{{la|Lex talionis||LEX ta-LI-o-nis}}' mean?",
     "correctAnswer": "Law of retaliation",
     "incorrectAnswers": [
       "One hand washes the other",
@@ -3787,7 +3787,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Manus manum lavat||}}' mean?",
+    "question": "What does '{{la|Manus manum lavat||MA-nus MA-num LA-vat}}' mean?",
     "correctAnswer": "One hand washes the other",
     "incorrectAnswers": [
       "Physician, heal yourself",
@@ -3808,7 +3808,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Medice, cura te ipsum||}}' mean?",
+    "question": "What does '{{la|Medice, cura te ipsum||ME-di-ce, CU-ra TE IP-sum}}' mean?",
     "correctAnswer": "Physician, heal yourself",
     "incorrectAnswers": [
       "Nothing new under the sun",
@@ -3830,7 +3830,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nihil novi sub sole||}}' mean?",
+    "question": "What does '{{la|Nihil novi sub sole||NI-hil NO-vi SUB SO-le}}' mean?",
     "correctAnswer": "Nothing new under the sun",
     "incorrectAnswers": [
       "Willing or unwilling",
@@ -3852,7 +3852,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Nolens volens||}}' mean?",
+    "question": "What does '{{la|Nolens volens||NO-lens VO-lens}}' mean?",
     "correctAnswer": "Willing or unwilling",
     "incorrectAnswers": [
       "A new order of the ages",
@@ -3872,7 +3872,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Novus ordo seclorum||}}' mean?",
+    "question": "What does '{{la|Novus ordo seclorum||NO-vus OR-do SE-clo-rum}}' mean?",
     "correctAnswer": "A new order of the ages",
     "incorrectAnswers": [
       "No prize without dust",
@@ -3893,7 +3893,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Palma non sine pulvere||}}' mean?",
+    "question": "What does '{{la|Palma non sine pulvere||PAL-ma NON SI-ne PUL-ve-re}}' mean?",
     "correctAnswer": "No prize without dust",
     "incorrectAnswers": [
       "Parent of the fatherland",
@@ -3915,7 +3915,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Parens patriae||}}' mean?",
+    "question": "What does '{{la|Parens patriae||PA-rens PA-tri-ae}}' mean?",
     "correctAnswer": "Parent of the fatherland",
     "incorrectAnswers": [
       "Money does not stink",
@@ -3935,7 +3935,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pecunia non olet||}}' mean?",
+    "question": "What does '{{la|Pecunia non olet||pe-CU-ni-a NON O-let}}' mean?",
     "correctAnswer": "Money does not stink",
     "incorrectAnswers": [
       "Through narrow things to great things",
@@ -3956,7 +3956,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Per angusta ad augusta||}}' mean?",
+    "question": "What does '{{la|Per angusta ad augusta||PER an-GUS-ta AD au-GUS-ta}}' mean?",
     "correctAnswer": "Through narrow things to great things",
     "incorrectAnswers": [
       "Bridge of asses",
@@ -3978,7 +3978,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Pons asinorum||}}' mean?",
+    "question": "What does '{{la|Pons asinorum||PONS a-SI-no-rum}}' mean?",
     "correctAnswer": "Bridge of asses",
     "incorrectAnswers": [
       "Do not move settled things",
@@ -3998,7 +3998,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Quieta non movere||}}' mean?",
+    "question": "What does '{{la|Quieta non movere||KWI-e-ta NON MO-ve-re}}' mean?",
     "correctAnswer": "Do not move settled things",
     "incorrectAnswers": [
       "To tell the truth through laughter",
@@ -4019,7 +4019,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Ridendo dicere verum||}}' mean?",
+    "question": "What does '{{la|Ridendo dicere verum||ri-DEN-do DI-ce-re VE-rum}}' mean?",
     "correctAnswer": "To tell the truth through laughter",
     "incorrectAnswers": [
       "Silence is golden",
@@ -4040,7 +4040,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Silentium est aureum||}}' mean?",
+    "question": "What does '{{la|Silentium est aureum||si-LEN-ti-um EST AU-reum}}' mean?",
     "correctAnswer": "Silence is golden",
     "incorrectAnswers": [
       "Without anger and partiality",
@@ -4061,7 +4061,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sine ira et studio||}}' mean?",
+    "question": "What does '{{la|Sine ira et studio||SI-ne I-ra ET STU-di-o}}' mean?",
     "correctAnswer": "Without anger and partiality",
     "incorrectAnswers": [
       "May the earth lie light upon you",
@@ -4083,7 +4083,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sit tibi terra levis||}}' mean?",
+    "question": "What does '{{la|Sit tibi terra levis||SIT TI-bi TER-ra LE-vis}}' mean?",
     "correctAnswer": "May the earth lie light upon you",
     "incorrectAnswers": [
       "Under the rose",
@@ -4105,7 +4105,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Sub rosa||}}' mean?",
+    "question": "What does '{{la|Sub rosa||SUB RO-sa}}' mean?",
     "correctAnswer": "Under the rose",
     "incorrectAnswers": [
       "Farewell; be well",
@@ -4125,7 +4125,7 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "expressions",
-    "question": "What does '{{la|Vale||}}' mean?",
+    "question": "What does '{{la|Vale||VA-le}}' mean?",
     "correctAnswer": "Farewell; be well",
     "incorrectAnswers": [
       "Seize the day",

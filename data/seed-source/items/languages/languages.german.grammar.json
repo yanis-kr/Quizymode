@@ -61,12 +61,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article matches a singular masculine noun like '{{de-DE|Mann||}}' in the nominative case?",
-    "correctAnswer": "{{de-DE|der||}}",
+    "question": "Which article matches a singular masculine noun like '{{de-DE|Mann||MANN}}' in the nominative case?",
+    "correctAnswer": "{{de-DE|der||DER}}",
     "incorrectAnswers": [
-      "{{de-DE|die||}}",
-      "{{de-DE|das||}}",
-      "{{de-DE|den||}}"
+      "{{de-DE|die||DEE}}",
+      "{{de-DE|das||DAS}}",
+      "{{de-DE|den||DEN}}"
     ],
     "explanation": "Masculine singular nominative often uses 'der', as in 'der Mann'.",
     "keywords": [
@@ -80,12 +80,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article matches a singular neuter noun like '{{de-DE|Kind||}}' in the nominative case?",
-    "correctAnswer": "{{de-DE|das||}}",
+    "question": "Which article matches a singular neuter noun like '{{de-DE|Kind||KIND}}' in the nominative case?",
+    "correctAnswer": "{{de-DE|das||DAS}}",
     "incorrectAnswers": [
-      "{{de-DE|der||}}",
-      "{{de-DE|die||}}",
-      "{{de-DE|den||}}"
+      "{{de-DE|der||DER}}",
+      "{{de-DE|die||DEE}}",
+      "{{de-DE|den||DEN}}"
     ],
     "explanation": "Neuter singular nominative often uses 'das', as in 'das Kind'.",
     "keywords": [
@@ -99,12 +99,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "What is the usual first-person singular present form of '{{de-DE|sein||}}' (to be)?",
-    "correctAnswer": "{{de-DE|ich bin||}}",
+    "question": "What is the usual first-person singular present form of '{{de-DE|sein||SEYEN}}' (to be)?",
+    "correctAnswer": "{{de-DE|ich bin||ICH BIN}}",
     "incorrectAnswers": [
-      "{{de-DE|ich bist||}}",
-      "{{de-DE|ich sind||}}",
-      "{{de-DE|ich war||}}"
+      "{{de-DE|ich bist||ICH BISHT}}",
+      "{{de-DE|ich sind||ICH SIND}}",
+      "{{de-DE|ich war||ICH VAR}}"
     ],
     "explanation": "'Ich bin' is the common present form meaning 'I am'.",
     "keywords": [

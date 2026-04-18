@@ -48,6 +48,7 @@ function parseTaxonomy(yamlText) {
     const key = match[1].trim();
 
     if (indent === 0) {
+      if (key.startsWith("_")) continue;
       currentCategory = { slug: key, groups: [] };
       categories.push(currentCategory);
       currentL1 = null;

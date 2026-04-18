@@ -23,7 +23,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "cases",
-    "question": "Which case often marks a direct object after many common verbs like '{{de-DE|sehen||}}'?",
+    "question": "Which case often marks a direct object after many common verbs like '{{de-DE|sehen||SE-hen}}'?",
     "correctAnswer": "accusative",
     "incorrectAnswers": [
       "only dative",
@@ -61,12 +61,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "cases",
-    "question": "For a singular masculine noun as direct object, which article often replaces '{{de-DE|der||}}'?",
-    "correctAnswer": "{{de-DE|den||}}",
+    "question": "For a singular masculine noun as direct object, which article often replaces '{{de-DE|der||DER}}'?",
+    "correctAnswer": "{{de-DE|den||DEN}}",
     "incorrectAnswers": [
-      "{{de-DE|dem||}}",
-      "{{de-DE|des||}}",
-      "{{de-DE|das||}}"
+      "{{de-DE|dem||DEM}}",
+      "{{de-DE|des||DES}}",
+      "{{de-DE|das||DAS}}"
     ],
     "explanation": "Masculine accusative often uses 'den', as in 'Ich sehe den Mann.'",
     "keywords": [
@@ -81,11 +81,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "cases",
     "question": "For feminine singular nouns in accusative, which article is common?",
-    "correctAnswer": "{{de-DE|die||}}",
+    "correctAnswer": "{{de-DE|die||DEE}}",
     "incorrectAnswers": [
-      "{{de-DE|der||}}",
-      "{{de-DE|das||}}",
-      "{{de-DE|den||}}"
+      "{{de-DE|der||DER}}",
+      "{{de-DE|das||DAS}}",
+      "{{de-DE|den||DEN}}"
     ],
     "explanation": "Feminine singular accusative often stays 'die', as in 'Ich sehe die Frau.'",
     "keywords": [

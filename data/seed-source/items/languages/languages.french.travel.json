@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "You want a one-way train ticket. Which short phrase asks for that?",
-    "correctAnswer": "{{fr-FR|Un aller simple, s'il vous plaît.||}}",
+    "correctAnswer": "{{fr-FR|Un aller simple, s'il vous plaît.||UN al-LER sim-PLE, S'IL VOOS PLEHT.}}",
     "incorrectAnswers": [
-      "{{fr-FR|Une table pour deux, s'il vous plaît.||}}",
-      "{{fr-FR|L'addition, s'il vous plaît.||}}",
-      "{{fr-FR|Où sont les toilettes ?||}}"
+      "{{fr-FR|Une table pour deux, s'il vous plaît.||u-NE ta-BLE POOR DUH, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|L'addition, s'il vous plaît.||l'ad-di-TION, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Où sont les toilettes ?||OU SONT LES twah-let-TES ?}}"
     ],
     "explanation": "\"Aller simple\" is a common label for a one-way ticket in travel French.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, at the airport, which word usually means \"passport\"?",
-    "correctAnswer": "{{fr-FR|passeport||}}",
+    "correctAnswer": "{{fr-FR|passeport||pas-se-PORT}}",
     "incorrectAnswers": [
-      "{{fr-FR|valise||}}",
-      "{{fr-FR|vol||}}",
-      "{{fr-FR|porte||}}"
+      "{{fr-FR|valise||va-li-SE}}",
+      "{{fr-FR|vol||VOL}}",
+      "{{fr-FR|porte||por-TE}}"
     ],
     "explanation": "\"Passeport\" is the standard word for passport.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "Which word often means \"train station\" in city travel signs?",
-    "correctAnswer": "{{fr-FR|gare||}}",
+    "correctAnswer": "{{fr-FR|gare||ga-RE}}",
     "incorrectAnswers": [
-      "{{fr-FR|rue||}}",
-      "{{fr-FR|place||}}",
-      "{{fr-FR|hôtel||}}"
+      "{{fr-FR|rue||RUE}}",
+      "{{fr-FR|place||pla-CE}}",
+      "{{fr-FR|hôtel||ho-TEL}}"
     ],
     "explanation": "\"Gare\" is the common word for a station, especially a train station.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "{{fr-FR|Où est la banque la plus proche ?||}}",
+    "correctAnswer": "{{fr-FR|Où est la banque la plus proche ?||OU EST LA ban-QUE LA PLUS pro-SHE ?}}",
     "incorrectAnswers": [
-      "{{fr-FR|C'est combien ?||}}",
-      "{{fr-FR|Avez-vous un menu en anglais ?||}}",
-      "{{fr-FR|Je voudrais le plat du jour.||}}"
+      "{{fr-FR|C'est combien ?||C'EST com-BIEN ?}}",
+      "{{fr-FR|Avez-vous un menu en anglais ?||a-VEZ-VOOS UN me-NU EN an-GLEHS ?}}",
+      "{{fr-FR|Je voudrais le plat du jour.||JE voo-DREHS LE PLAT DU ZHOOR.}}"
     ],
     "explanation": "\"Où est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, which word means \"left\" when you give or follow directions?",
-    "correctAnswer": "{{fr-FR|gauche||}}",
+    "correctAnswer": "{{fr-FR|gauche||goh-SHE}}",
     "incorrectAnswers": [
-      "{{fr-FR|droite||}}",
-      "{{fr-FR|tout droit||}}",
-      "{{fr-FR|près||}}"
+      "{{fr-FR|droite||drwah-TE}}",
+      "{{fr-FR|tout droit||TOOT DRWAHT}}",
+      "{{fr-FR|près||PRES}}"
     ],
     "explanation": "\"Gauche\" means left; \"à gauche\" is a common direction phrase.",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "At a hotel desk, which phrase asks if they have a free room?",
-    "correctAnswer": "{{fr-FR|Avez-vous une chambre libre ?||}}",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre libre ?||a-VEZ-VOOS u-NE sham-BRE li-BRE ?}}",
     "incorrectAnswers": [
-      "{{fr-FR|À quelle heure est le vol ?||}}",
-      "{{fr-FR|Un café au lait, s'il vous plaît.||}}",
-      "{{fr-FR|Combien coûte l'entrée ?||}}"
+      "{{fr-FR|À quelle heure est le vol ?||A quel-LE huh-RE EST LE VOL ?}}",
+      "{{fr-FR|Un café au lait, s'il vous plaît.||UN ca-FE OH LEHT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Combien coûte l'entrée ?||com-BIEN coo-TE l'en-TREE ?}}"
     ],
     "explanation": "\"Chambre\" means room; \"libre\" often signals that a room is available.",
     "keywords": [

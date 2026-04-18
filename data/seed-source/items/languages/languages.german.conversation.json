@@ -5,11 +5,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
     "question": "What is a common informal way to ask 'How are you?'",
-    "correctAnswer": "{{de-DE|Wie geht's?||}}",
+    "correctAnswer": "{{de-DE|Wie geht's?||WEE GEHT'S?}}",
     "incorrectAnswers": [
-      "{{de-DE|Wo kommst du her?||}}",
-      "{{de-DE|Wie viel kostet das?||}}",
-      "{{de-DE|Was ist dein Beruf?||}}"
+      "{{de-DE|Wo kommst du her?||WO KOMMSHT DU HER?}}",
+      "{{de-DE|Wie viel kostet das?||WEE VEEL KOSH-tet DAS?}}",
+      "{{de-DE|Was ist dein Beruf?||WAS ISHT DEYEN be-RUF?}}"
     ],
     "explanation": "'Wie geht's?' is a very common short question about how someone is doing.",
     "keywords": [
@@ -23,7 +23,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does '{{de-DE|Auf Wiedersehen||}}' mean?",
+    "question": "What does '{{de-DE|Auf Wiedersehen||AUF WEE-der-se-hen}}' mean?",
     "correctAnswer": "goodbye (formal)",
     "incorrectAnswers": [
       "nice to meet you",
@@ -43,11 +43,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
     "question": "When you meet someone formally, which polite pronoun often replaces 'du'?",
-    "correctAnswer": "{{de-DE|Sie||}}",
+    "correctAnswer": "{{de-DE|Sie||SEE}}",
     "incorrectAnswers": [
-      "{{de-DE|ihr||}}",
-      "{{de-DE|man||}}",
-      "{{de-DE|es||}}"
+      "{{de-DE|ihr||IHR}}",
+      "{{de-DE|man||MAN}}",
+      "{{de-DE|es||ES}}"
     ],
     "explanation": "'Sie' with a capital S is the polite you for adults you do not call 'du'.",
     "keywords": [
@@ -61,7 +61,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does '{{de-DE|Guten Tag||}}' mean?",
+    "question": "What does '{{de-DE|Guten Tag||GU-ten TAG}}' mean?",
     "correctAnswer": "good day / hello (daytime)",
     "incorrectAnswers": [
       "good evening only",
@@ -80,7 +80,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does '{{de-DE|Ja||}}' mean?",
+    "question": "What does '{{de-DE|Ja||JA}}' mean?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",
