@@ -22,11 +22,19 @@ internal sealed class TestModelCustomizer : ModelCustomizer
         {
             foreach (Microsoft.EntityFrameworkCore.Metadata.IMutableProperty property in entityType.GetProperties())
             {
-                // Remove gen_random_uuid() default
+                // Replace PostgreSQL-only SQL defaults with SQLite-safe equivalents.
                 string? defaultValueSql = property.GetDefaultValueSql();
-                if (defaultValueSql is not null && defaultValueSql.Contains("gen_random_uuid()"))
+                if (defaultValueSql is not null)
                 {
-                    property.SetDefaultValueSql(null);
+                    if (defaultValueSql.Contains("gen_random_uuid()", StringComparison.OrdinalIgnoreCase))
+                    {
+                        property.SetDefaultValueSql(null);
+                    }
+                    else if (defaultValueSql.Contains("::jsonb", StringComparison.OrdinalIgnoreCase))
+                    {
+                        property.SetDefaultValueSql(null);
+                        property.SetDefaultValue(null);
+                    }
                 }
 
                 // Convert PostgreSQL-specific column types to SQLite-compatible types
