@@ -5,13 +5,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in French?",
-    "correctAnswer": "O\u00f9 sont les toilettes ?",
+    "correctAnswer": "{{fr-FR|Où sont les toilettes ?||}}",
     "incorrectAnswers": [
-      "Quand sont les toilettes ?",
-      "Qu'est-ce que les toilettes ?",
-      "Comment sont les toilettes ?"
+      "{{fr-FR|Quand sont les toilettes ?||}}",
+      "{{fr-FR|Qu'est-ce que les toilettes ?||}}",
+      "{{fr-FR|Comment sont les toilettes ?||}}"
     ],
-    "explanation": "'O\u00f9 sont les toilettes ?' \u2014 'Where are the toilets?' \u2014 the essential travel phrase.",
+    "explanation": "'Où sont les toilettes ?' — 'Where are the toilets?' — the essential travel phrase.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -25,13 +25,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in French?",
-    "correctAnswer": "Combien \u00e7a co\u00fbte ?",
+    "correctAnswer": "{{fr-FR|Combien ça coûte ?||}}",
     "incorrectAnswers": [
-      "Qu'est-ce que c'est ?",
-      "O\u00f9 puis-je acheter \u00e7a ?",
-      "Y a-t-il une r\u00e9duction ?"
+      "{{fr-FR|Qu'est-ce que c'est ?||}}",
+      "{{fr-FR|Où puis-je acheter ça ?||}}",
+      "{{fr-FR|Y a-t-il une réduction ?||}}"
     ],
-    "explanation": "'Combien \u00e7a co\u00fbte ?' \u2014 'How much does it cost?' \u2014 used in any shop or market.",
+    "explanation": "'Combien ça coûte ?' — 'How much does it cost?' — used in any shop or market.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -45,13 +45,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in French?",
-    "correctAnswer": "Un caf\u00e9, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Un café, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Je veux un caf\u00e9 !",
-      "Donnez-moi un caf\u00e9.",
-      "Caf\u00e9 vite, s'il vous pla\u00eet."
+      "{{fr-FR|Je veux un café !||}}",
+      "{{fr-FR|Donnez-moi un café.||}}",
+      "{{fr-FR|Café vite, s'il vous plaît.||}}"
     ],
-    "explanation": "'Un [item], s'il vous pla\u00eet' \u2014 the standard polite caf\u00e9 order.",
+    "explanation": "'Un [item], s'il vous plaît' — the standard polite café order.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -65,13 +65,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in a French restaurant?",
-    "correctAnswer": "L'addition, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|L'addition, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Le menu, s'il vous pla\u00eet.",
-      "Encore une fois, s'il vous pla\u00eet.",
-      "C'\u00e9tait d\u00e9licieux, merci."
+      "{{fr-FR|Le menu, s'il vous plaît.||}}",
+      "{{fr-FR|Encore une fois, s'il vous plaît.||}}",
+      "{{fr-FR|C'était délicieux, merci.||}}"
     ],
-    "explanation": "'L'addition, s'il vous pla\u00eet' \u2014 'The bill, please' \u2014 note 'addition' not 'compte' for a restaurant bill.",
+    "explanation": "'L'addition, s'il vous plaît' — 'The bill, please' — note 'addition' not 'compte' for a restaurant bill.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -85,13 +85,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in French?",
-    "correctAnswer": "Parlez-vous anglais ?",
+    "correctAnswer": "{{fr-FR|Parlez-vous anglais ?||}}",
     "incorrectAnswers": [
-      "Comprenez-vous l'anglais ?",
-      "Savez-vous l'anglais ?",
-      "Apprenez-vous l'anglais ?"
+      "{{fr-FR|Comprenez-vous l'anglais ?||}}",
+      "{{fr-FR|Savez-vous l'anglais ?||}}",
+      "{{fr-FR|Apprenez-vous l'anglais ?||}}"
     ],
-    "explanation": "'Parlez-vous anglais ?' \u2014 formal. Informal: 'Tu parles anglais ?'",
+    "explanation": "'Parlez-vous anglais ?' — formal. Informal: 'Tu parles anglais ?'",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,13 +104,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left' in French?",
-    "correctAnswer": "Tournez \u00e0 gauche.",
+    "correctAnswer": "{{fr-FR|Tournez à gauche.||}}",
     "incorrectAnswers": [
-      "Tournez \u00e0 droite.",
-      "Allez tout droit.",
-      "Arr\u00eatez-vous ici."
+      "{{fr-FR|Tournez à droite.||}}",
+      "{{fr-FR|Allez tout droit.||}}",
+      "{{fr-FR|Arrêtez-vous ici.||}}"
     ],
-    "explanation": "'Gauche' = left, 'droite' = right, 'tout droit' = straight ahead \u2014 the three navigation words.",
+    "explanation": "'Gauche' = left, 'droite' = right, 'tout droit' = straight ahead — the three navigation words.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -124,13 +124,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in French?",
-    "correctAnswer": "Je ne comprends pas.",
+    "correctAnswer": "{{fr-FR|Je ne comprends pas.||}}",
     "incorrectAnswers": [
-      "Je ne sais pas.",
-      "Je n'entends pas.",
-      "Je ne parle pas fran\u00e7ais."
+      "{{fr-FR|Je ne sais pas.||}}",
+      "{{fr-FR|Je n'entends pas.||}}",
+      "{{fr-FR|Je ne parle pas français.||}}"
     ],
-    "explanation": "'Je ne comprends pas' \u2014 the essential rescue phrase when you're lost in conversation.",
+    "explanation": "'Je ne comprends pas' — the essential rescue phrase when you're lost in conversation.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -143,11 +143,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Good evening.'?",
-    "correctAnswer": "Bonsoir.",
+    "correctAnswer": "{{fr-FR|Bonsoir.||}}",
     "incorrectAnswers": [
-      "Comment allez-vous ?",
-      "Je vais bien, merci.",
-      "Tr\u00e8s bien, merci."
+      "{{fr-FR|Comment allez-vous ?||}}",
+      "{{fr-FR|Je vais bien, merci.||}}",
+      "{{fr-FR|Très bien, merci.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -163,11 +163,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'How are you?'?",
-    "correctAnswer": "Comment allez-vous ?",
+    "correctAnswer": "{{fr-FR|Comment allez-vous ?||}}",
     "incorrectAnswers": [
-      "Je vais bien, merci.",
-      "Tr\u00e8s bien, merci.",
-      "\u00c0 plus tard."
+      "{{fr-FR|Je vais bien, merci.||}}",
+      "{{fr-FR|Très bien, merci.||}}",
+      "{{fr-FR|À plus tard.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -183,11 +183,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "Je vais bien, merci.",
+    "correctAnswer": "{{fr-FR|Je vais bien, merci.||}}",
     "incorrectAnswers": [
-      "Tr\u00e8s bien, merci.",
-      "\u00c0 plus tard.",
-      "\u00c0 demain."
+      "{{fr-FR|Très bien, merci.||}}",
+      "{{fr-FR|À plus tard.||}}",
+      "{{fr-FR|À demain.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -203,11 +203,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Very well, thanks.'?",
-    "correctAnswer": "Tr\u00e8s bien, merci.",
+    "correctAnswer": "{{fr-FR|Très bien, merci.||}}",
     "incorrectAnswers": [
-      "\u00c0 plus tard.",
-      "\u00c0 demain.",
-      "Bonne journ\u00e9e."
+      "{{fr-FR|À plus tard.||}}",
+      "{{fr-FR|À demain.||}}",
+      "{{fr-FR|Bonne journée.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -223,11 +223,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'See you later.'?",
-    "correctAnswer": "\u00c0 plus tard.",
+    "correctAnswer": "{{fr-FR|À plus tard.||}}",
     "incorrectAnswers": [
-      "\u00c0 demain.",
-      "Bonne journ\u00e9e.",
-      "Bienvenue."
+      "{{fr-FR|À demain.||}}",
+      "{{fr-FR|Bonne journée.||}}",
+      "{{fr-FR|Bienvenue.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -243,11 +243,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'See you tomorrow.'?",
-    "correctAnswer": "\u00c0 demain.",
+    "correctAnswer": "{{fr-FR|À demain.||}}",
     "incorrectAnswers": [
-      "Bonne journ\u00e9e.",
-      "Bienvenue.",
-      "Enchant\u00e9(e)."
+      "{{fr-FR|Bonne journée.||}}",
+      "{{fr-FR|Bienvenue.||}}",
+      "{{fr-FR|Enchanté(e).||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -263,11 +263,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Have a good day.'.",
-    "correctAnswer": "Bonne journ\u00e9e.",
+    "correctAnswer": "{{fr-FR|Bonne journée.||}}",
     "incorrectAnswers": [
-      "Bienvenue.",
-      "Enchant\u00e9(e).",
-      "Ravi de vous revoir."
+      "{{fr-FR|Bienvenue.||}}",
+      "{{fr-FR|Enchanté(e).||}}",
+      "{{fr-FR|Ravi de vous revoir.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -283,11 +283,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Welcome.'?",
-    "correctAnswer": "Bienvenue.",
+    "correctAnswer": "{{fr-FR|Bienvenue.||}}",
     "incorrectAnswers": [
-      "Enchant\u00e9(e).",
-      "Ravi de vous revoir.",
-      "\u00c0 bient\u00f4t."
+      "{{fr-FR|Enchanté(e).||}}",
+      "{{fr-FR|Ravi de vous revoir.||}}",
+      "{{fr-FR|À bientôt.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -303,11 +303,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "Enchant\u00e9(e).",
+    "correctAnswer": "{{fr-FR|Enchanté(e).||}}",
     "incorrectAnswers": [
-      "Ravi de vous revoir.",
-      "\u00c0 bient\u00f4t.",
-      "Bonne soir\u00e9e."
+      "{{fr-FR|Ravi de vous revoir.||}}",
+      "{{fr-FR|À bientôt.||}}",
+      "{{fr-FR|Bonne soirée.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -323,11 +323,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Nice to see you again.'?",
-    "correctAnswer": "Ravi de vous revoir.",
+    "correctAnswer": "{{fr-FR|Ravi de vous revoir.||}}",
     "incorrectAnswers": [
-      "\u00c0 bient\u00f4t.",
-      "Bonne soir\u00e9e.",
-      "Bonsoir."
+      "{{fr-FR|À bientôt.||}}",
+      "{{fr-FR|Bonne soirée.||}}",
+      "{{fr-FR|Bonsoir.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'See you soon.'.",
-    "correctAnswer": "\u00c0 bient\u00f4t.",
+    "correctAnswer": "{{fr-FR|À bientôt.||}}",
     "incorrectAnswers": [
-      "Bonne soir\u00e9e.",
-      "Bonsoir.",
-      "Comment allez-vous ?"
+      "{{fr-FR|Bonne soirée.||}}",
+      "{{fr-FR|Bonsoir.||}}",
+      "{{fr-FR|Comment allez-vous ?||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -363,11 +363,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Have a nice evening.'?",
-    "correctAnswer": "Bonne soir\u00e9e.",
+    "correctAnswer": "{{fr-FR|Bonne soirée.||}}",
     "incorrectAnswers": [
-      "Bonsoir.",
-      "Comment allez-vous ?",
-      "Je vais bien, merci."
+      "{{fr-FR|Bonsoir.||}}",
+      "{{fr-FR|Comment allez-vous ?||}}",
+      "{{fr-FR|Je vais bien, merci.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -383,11 +383,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'What is your name?'?",
-    "correctAnswer": "Comment vous appelez-vous ?",
+    "correctAnswer": "{{fr-FR|Comment vous appelez-vous ?||}}",
     "incorrectAnswers": [
-      "Je viens des \u00c9tats-Unis.",
-      "J'habite \u00e0 Chicago.",
-      "J'ai vingt ans."
+      "{{fr-FR|Je viens des États-Unis.||}}",
+      "{{fr-FR|J'habite à Chicago.||}}",
+      "{{fr-FR|J'ai vingt ans.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -403,11 +403,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I am from the United States.'?",
-    "correctAnswer": "Je viens des \u00c9tats-Unis.",
+    "correctAnswer": "{{fr-FR|Je viens des États-Unis.||}}",
     "incorrectAnswers": [
-      "J'habite \u00e0 Chicago.",
-      "J'ai vingt ans.",
-      "Voici mon ami."
+      "{{fr-FR|J'habite à Chicago.||}}",
+      "{{fr-FR|J'ai vingt ans.||}}",
+      "{{fr-FR|Voici mon ami.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -423,11 +423,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I live in Chicago.'.",
-    "correctAnswer": "J'habite \u00e0 Chicago.",
+    "correctAnswer": "{{fr-FR|J'habite à Chicago.||}}",
     "incorrectAnswers": [
-      "J'ai vingt ans.",
-      "Voici mon ami.",
-      "Voici ma s\u0153ur."
+      "{{fr-FR|J'ai vingt ans.||}}",
+      "{{fr-FR|Voici mon ami.||}}",
+      "{{fr-FR|Voici ma sœur.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -443,11 +443,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am twenty years old.'?",
-    "correctAnswer": "J'ai vingt ans.",
+    "correctAnswer": "{{fr-FR|J'ai vingt ans.||}}",
     "incorrectAnswers": [
-      "Voici mon ami.",
-      "Voici ma s\u0153ur.",
-      "Je suis mari\u00e9(e)."
+      "{{fr-FR|Voici mon ami.||}}",
+      "{{fr-FR|Voici ma sœur.||}}",
+      "{{fr-FR|Je suis marié(e).||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -463,11 +463,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'This is my friend.'?",
-    "correctAnswer": "Voici mon ami.",
+    "correctAnswer": "{{fr-FR|Voici mon ami.||}}",
     "incorrectAnswers": [
-      "Voici ma s\u0153ur.",
-      "Je suis mari\u00e9(e).",
-      "Je suis \u00e9tudiant/\u00e9tudiante."
+      "{{fr-FR|Voici ma sœur.||}}",
+      "{{fr-FR|Je suis marié(e).||}}",
+      "{{fr-FR|Je suis étudiant/étudiante.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -483,11 +483,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'This is my sister.'?",
-    "correctAnswer": "Voici ma s\u0153ur.",
+    "correctAnswer": "{{fr-FR|Voici ma sœur.||}}",
     "incorrectAnswers": [
-      "Je suis mari\u00e9(e).",
-      "Je suis \u00e9tudiant/\u00e9tudiante.",
-      "Je suis ici en vacances."
+      "{{fr-FR|Je suis marié(e).||}}",
+      "{{fr-FR|Je suis étudiant/étudiante.||}}",
+      "{{fr-FR|Je suis ici en vacances.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -503,11 +503,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I am married.'.",
-    "correctAnswer": "Je suis mari\u00e9(e).",
+    "correctAnswer": "{{fr-FR|Je suis marié(e).||}}",
     "incorrectAnswers": [
-      "Je suis \u00e9tudiant/\u00e9tudiante.",
-      "Je suis ici en vacances.",
-      "Mon nom de famille est Garcia."
+      "{{fr-FR|Je suis étudiant/étudiante.||}}",
+      "{{fr-FR|Je suis ici en vacances.||}}",
+      "{{fr-FR|Mon nom de famille est Garcia.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -523,11 +523,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am a student.'?",
-    "correctAnswer": "Je suis \u00e9tudiant/\u00e9tudiante.",
+    "correctAnswer": "{{fr-FR|Je suis étudiant/étudiante.||}}",
     "incorrectAnswers": [
-      "Je suis ici en vacances.",
-      "Mon nom de famille est Garcia.",
-      "Mon num\u00e9ro de t\u00e9l\u00e9phone est..."
+      "{{fr-FR|Je suis ici en vacances.||}}",
+      "{{fr-FR|Mon nom de famille est Garcia.||}}",
+      "{{fr-FR|Mon numéro de téléphone est...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -543,11 +543,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "Je suis ici en vacances.",
+    "correctAnswer": "{{fr-FR|Je suis ici en vacances.||}}",
     "incorrectAnswers": [
-      "Mon nom de famille est Garcia.",
-      "Mon num\u00e9ro de t\u00e9l\u00e9phone est...",
-      "Mon adresse est..."
+      "{{fr-FR|Mon nom de famille est Garcia.||}}",
+      "{{fr-FR|Mon numéro de téléphone est...||}}",
+      "{{fr-FR|Mon adresse est...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "Mon nom de famille est Garcia.",
+    "correctAnswer": "{{fr-FR|Mon nom de famille est Garcia.||}}",
     "incorrectAnswers": [
-      "Mon num\u00e9ro de t\u00e9l\u00e9phone est...",
-      "Mon adresse est...",
-      "Comment vous appelez-vous ?"
+      "{{fr-FR|Mon numéro de téléphone est...||}}",
+      "{{fr-FR|Mon adresse est...||}}",
+      "{{fr-FR|Comment vous appelez-vous ?||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -583,11 +583,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'My phone number is...'.",
-    "correctAnswer": "Mon num\u00e9ro de t\u00e9l\u00e9phone est...",
+    "correctAnswer": "{{fr-FR|Mon numéro de téléphone est...||}}",
     "incorrectAnswers": [
-      "Mon adresse est...",
-      "Comment vous appelez-vous ?",
-      "Je viens des \u00c9tats-Unis."
+      "{{fr-FR|Mon adresse est...||}}",
+      "{{fr-FR|Comment vous appelez-vous ?||}}",
+      "{{fr-FR|Je viens des États-Unis.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -603,11 +603,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'My address is...'?",
-    "correctAnswer": "Mon adresse est...",
+    "correctAnswer": "{{fr-FR|Mon adresse est...||}}",
     "incorrectAnswers": [
-      "Comment vous appelez-vous ?",
-      "Je viens des \u00c9tats-Unis.",
-      "J'habite \u00e0 Chicago."
+      "{{fr-FR|Comment vous appelez-vous ?||}}",
+      "{{fr-FR|Je viens des États-Unis.||}}",
+      "{{fr-FR|J'habite à Chicago.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -623,11 +623,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I need water.'?",
-    "correctAnswer": "J'ai besoin d'eau.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'eau.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un plan.",
-      "J'ai besoin d'un taxi.",
-      "J'ai besoin d'une chambre."
+      "{{fr-FR|J'ai besoin d'un plan.||}}",
+      "{{fr-FR|J'ai besoin d'un taxi.||}}",
+      "{{fr-FR|J'ai besoin d'une chambre.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -643,11 +643,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I need a map.'?",
-    "correctAnswer": "J'ai besoin d'un plan.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un plan.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un taxi.",
-      "J'ai besoin d'une chambre.",
-      "Avez-vous le Wi-Fi ?"
+      "{{fr-FR|J'ai besoin d'un taxi.||}}",
+      "{{fr-FR|J'ai besoin d'une chambre.||}}",
+      "{{fr-FR|Avez-vous le Wi-Fi ?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -663,11 +663,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I need a taxi.'.",
-    "correctAnswer": "J'ai besoin d'un taxi.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un taxi.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'une chambre.",
-      "Avez-vous le Wi-Fi ?",
-      "Avez-vous du pain ?"
+      "{{fr-FR|J'ai besoin d'une chambre.||}}",
+      "{{fr-FR|Avez-vous le Wi-Fi ?||}}",
+      "{{fr-FR|Avez-vous du pain ?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -683,11 +683,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I need a room.'?",
-    "correctAnswer": "J'ai besoin d'une chambre.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'une chambre.||}}",
     "incorrectAnswers": [
-      "Avez-vous le Wi-Fi ?",
-      "Avez-vous du pain ?",
-      "Le menu, s'il vous pla\u00eet."
+      "{{fr-FR|Avez-vous le Wi-Fi ?||}}",
+      "{{fr-FR|Avez-vous du pain ?||}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -703,11 +703,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "Avez-vous le Wi-Fi ?",
+    "correctAnswer": "{{fr-FR|Avez-vous le Wi-Fi ?||}}",
     "incorrectAnswers": [
-      "Avez-vous du pain ?",
-      "Le menu, s'il vous pla\u00eet.",
-      "Puis-je avoir une bouteille d'eau ?"
+      "{{fr-FR|Avez-vous du pain ?||}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||}}",
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -723,11 +723,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Do you have bread?'?",
-    "correctAnswer": "Avez-vous du pain ?",
+    "correctAnswer": "{{fr-FR|Avez-vous du pain ?||}}",
     "incorrectAnswers": [
-      "Le menu, s'il vous pla\u00eet.",
-      "Puis-je avoir une bouteille d'eau ?",
-      "Donnez-moi un sac, s'il vous pla\u00eet."
+      "{{fr-FR|Le menu, s'il vous plaît.||}}",
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||}}",
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -743,11 +743,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Can I have the menu?'.",
-    "correctAnswer": "Le menu, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Le menu, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Puis-je avoir une bouteille d'eau ?",
-      "Donnez-moi un sac, s'il vous pla\u00eet.",
-      "J'ai besoin de plus de temps."
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||}}",
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||}}",
+      "{{fr-FR|J'ai besoin de plus de temps.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -763,11 +763,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "Puis-je avoir une bouteille d'eau ?",
+    "correctAnswer": "{{fr-FR|Puis-je avoir une bouteille d'eau ?||}}",
     "incorrectAnswers": [
-      "Donnez-moi un sac, s'il vous pla\u00eet.",
-      "J'ai besoin de plus de temps.",
-      "J'ai besoin du re\u00e7u."
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||}}",
+      "{{fr-FR|J'ai besoin de plus de temps.||}}",
+      "{{fr-FR|J'ai besoin du reçu.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "Donnez-moi un sac, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "J'ai besoin de plus de temps.",
-      "J'ai besoin du re\u00e7u.",
-      "Avez-vous de la nourriture v\u00e9g\u00e9tarienne ?"
+      "{{fr-FR|J'ai besoin de plus de temps.||}}",
+      "{{fr-FR|J'ai besoin du reçu.||}}",
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -803,11 +803,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I need more time.'?",
-    "correctAnswer": "J'ai besoin de plus de temps.",
+    "correctAnswer": "{{fr-FR|J'ai besoin de plus de temps.||}}",
     "incorrectAnswers": [
-      "J'ai besoin du re\u00e7u.",
-      "Avez-vous de la nourriture v\u00e9g\u00e9tarienne ?",
-      "J'ai besoin d'eau."
+      "{{fr-FR|J'ai besoin du reçu.||}}",
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||}}",
+      "{{fr-FR|J'ai besoin d'eau.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -823,11 +823,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I need the receipt.'.",
-    "correctAnswer": "J'ai besoin du re\u00e7u.",
+    "correctAnswer": "{{fr-FR|J'ai besoin du reçu.||}}",
     "incorrectAnswers": [
-      "Avez-vous de la nourriture v\u00e9g\u00e9tarienne ?",
-      "J'ai besoin d'eau.",
-      "J'ai besoin d'un plan."
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||}}",
+      "{{fr-FR|J'ai besoin d'eau.||}}",
+      "{{fr-FR|J'ai besoin d'un plan.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -843,11 +843,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "Avez-vous de la nourriture v\u00e9g\u00e9tarienne ?",
+    "correctAnswer": "{{fr-FR|Avez-vous de la nourriture végétarienne ?||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'eau.",
-      "J'ai besoin d'un plan.",
-      "J'ai besoin d'un taxi."
+      "{{fr-FR|J'ai besoin d'eau.||}}",
+      "{{fr-FR|J'ai besoin d'un plan.||}}",
+      "{{fr-FR|J'ai besoin d'un taxi.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -863,11 +863,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Where is the bank?'?",
-    "correctAnswer": "O\u00f9 est la banque ?",
+    "correctAnswer": "{{fr-FR|Où est la banque ?||}}",
     "incorrectAnswers": [
-      "O\u00f9 est le mus\u00e9e ?",
-      "O\u00f9 est le centre-ville ?",
-      "O\u00f9 est l'arr\u00eat de bus ?"
+      "{{fr-FR|Où est le musée ?||}}",
+      "{{fr-FR|Où est le centre-ville ?||}}",
+      "{{fr-FR|Où est l'arrêt de bus ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -883,11 +883,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Where is the museum?'?",
-    "correctAnswer": "O\u00f9 est le mus\u00e9e ?",
+    "correctAnswer": "{{fr-FR|Où est le musée ?||}}",
     "incorrectAnswers": [
-      "O\u00f9 est le centre-ville ?",
-      "O\u00f9 est l'arr\u00eat de bus ?",
-      "Allez tout droit."
+      "{{fr-FR|Où est le centre-ville ?||}}",
+      "{{fr-FR|Où est l'arrêt de bus ?||}}",
+      "{{fr-FR|Allez tout droit.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -903,11 +903,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Where is the city center?'.",
-    "correctAnswer": "O\u00f9 est le centre-ville ?",
+    "correctAnswer": "{{fr-FR|Où est le centre-ville ?||}}",
     "incorrectAnswers": [
-      "O\u00f9 est l'arr\u00eat de bus ?",
-      "Allez tout droit.",
-      "Prenez la premi\u00e8re rue."
+      "{{fr-FR|Où est l'arrêt de bus ?||}}",
+      "{{fr-FR|Allez tout droit.||}}",
+      "{{fr-FR|Prenez la première rue.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -923,11 +923,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "O\u00f9 est l'arr\u00eat de bus ?",
+    "correctAnswer": "{{fr-FR|Où est l'arrêt de bus ?||}}",
     "incorrectAnswers": [
-      "Allez tout droit.",
-      "Prenez la premi\u00e8re rue.",
-      "Prenez la deuxi\u00e8me rue."
+      "{{fr-FR|Allez tout droit.||}}",
+      "{{fr-FR|Prenez la première rue.||}}",
+      "{{fr-FR|Prenez la deuxième rue.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -943,11 +943,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Go straight.'?",
-    "correctAnswer": "Allez tout droit.",
+    "correctAnswer": "{{fr-FR|Allez tout droit.||}}",
     "incorrectAnswers": [
-      "Prenez la premi\u00e8re rue.",
-      "Prenez la deuxi\u00e8me rue.",
-      "C'est loin ?"
+      "{{fr-FR|Prenez la première rue.||}}",
+      "{{fr-FR|Prenez la deuxième rue.||}}",
+      "{{fr-FR|C'est loin ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -963,11 +963,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Take the first street.'?",
-    "correctAnswer": "Prenez la premi\u00e8re rue.",
+    "correctAnswer": "{{fr-FR|Prenez la première rue.||}}",
     "incorrectAnswers": [
-      "Prenez la deuxi\u00e8me rue.",
-      "C'est loin ?",
-      "C'est pr\u00e8s ?"
+      "{{fr-FR|Prenez la deuxième rue.||}}",
+      "{{fr-FR|C'est loin ?||}}",
+      "{{fr-FR|C'est près ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -983,11 +983,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Take the second street.'.",
-    "correctAnswer": "Prenez la deuxi\u00e8me rue.",
+    "correctAnswer": "{{fr-FR|Prenez la deuxième rue.||}}",
     "incorrectAnswers": [
-      "C'est loin ?",
-      "C'est pr\u00e8s ?",
-      "Je suis perdu(e)."
+      "{{fr-FR|C'est loin ?||}}",
+      "{{fr-FR|C'est près ?||}}",
+      "{{fr-FR|Je suis perdu(e).||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Is it far?'?",
-    "correctAnswer": "C'est loin ?",
+    "correctAnswer": "{{fr-FR|C'est loin ?||}}",
     "incorrectAnswers": [
-      "C'est pr\u00e8s ?",
-      "Je suis perdu(e).",
-      "Nous cherchons l'h\u00f4tel."
+      "{{fr-FR|C'est près ?||}}",
+      "{{fr-FR|Je suis perdu(e).||}}",
+      "{{fr-FR|Nous cherchons l'hôtel.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1023,11 +1023,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Is it near?'?",
-    "correctAnswer": "C'est pr\u00e8s ?",
+    "correctAnswer": "{{fr-FR|C'est près ?||}}",
     "incorrectAnswers": [
-      "Je suis perdu(e).",
-      "Nous cherchons l'h\u00f4tel.",
-      "Montrez-moi sur la carte, s'il vous pla\u00eet."
+      "{{fr-FR|Je suis perdu(e).||}}",
+      "{{fr-FR|Nous cherchons l'hôtel.||}}",
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1043,11 +1043,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I am lost.'?",
-    "correctAnswer": "Je suis perdu(e).",
+    "correctAnswer": "{{fr-FR|Je suis perdu(e).||}}",
     "incorrectAnswers": [
-      "Nous cherchons l'h\u00f4tel.",
-      "Montrez-moi sur la carte, s'il vous pla\u00eet.",
-      "O\u00f9 est la banque ?"
+      "{{fr-FR|Nous cherchons l'hôtel.||}}",
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||}}",
+      "{{fr-FR|Où est la banque ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1063,11 +1063,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "Nous cherchons l'h\u00f4tel.",
+    "correctAnswer": "{{fr-FR|Nous cherchons l'hôtel.||}}",
     "incorrectAnswers": [
-      "Montrez-moi sur la carte, s'il vous pla\u00eet.",
-      "O\u00f9 est la banque ?",
-      "O\u00f9 est le mus\u00e9e ?"
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||}}",
+      "{{fr-FR|Où est la banque ?||}}",
+      "{{fr-FR|Où est le musée ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1083,11 +1083,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Please show me on the map.'?",
-    "correctAnswer": "Montrez-moi sur la carte, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "O\u00f9 est la banque ?",
-      "O\u00f9 est le mus\u00e9e ?",
-      "O\u00f9 est le centre-ville ?"
+      "{{fr-FR|Où est la banque ?||}}",
+      "{{fr-FR|Où est le musée ?||}}",
+      "{{fr-FR|Où est le centre-ville ?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1103,11 +1103,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "Pouvez-vous r\u00e9p\u00e9ter cela ?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous répéter cela ?||}}",
     "incorrectAnswers": [
-      "Pouvez-vous parler plus lentement ?",
-      "Comment \u00e9pelle-t-on votre nom ?",
-      "Le total est de dix euros."
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||}}",
+      "{{fr-FR|Comment épelle-t-on votre nom ?||}}",
+      "{{fr-FR|Le total est de dix euros.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1123,11 +1123,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "Pouvez-vous parler plus lentement ?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous parler plus lentement ?||}}",
     "incorrectAnswers": [
-      "Comment \u00e9pelle-t-on votre nom ?",
-      "Le total est de dix euros.",
-      "Cela co\u00fbte vingt euros."
+      "{{fr-FR|Comment épelle-t-on votre nom ?||}}",
+      "{{fr-FR|Le total est de dix euros.||}}",
+      "{{fr-FR|Cela coûte vingt euros.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1143,11 +1143,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'How do you spell your name?'.",
-    "correctAnswer": "Comment \u00e9pelle-t-on votre nom ?",
+    "correctAnswer": "{{fr-FR|Comment épelle-t-on votre nom ?||}}",
     "incorrectAnswers": [
-      "Le total est de dix euros.",
-      "Cela co\u00fbte vingt euros.",
-      "Chambre num\u00e9ro douze."
+      "{{fr-FR|Le total est de dix euros.||}}",
+      "{{fr-FR|Cela coûte vingt euros.||}}",
+      "{{fr-FR|Chambre numéro douze.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1163,11 +1163,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'The total is ten euros.'?",
-    "correctAnswer": "Le total est de dix euros.",
+    "correctAnswer": "{{fr-FR|Le total est de dix euros.||}}",
     "incorrectAnswers": [
-      "Cela co\u00fbte vingt euros.",
-      "Chambre num\u00e9ro douze.",
-      "Quai num\u00e9ro quatre."
+      "{{fr-FR|Cela coûte vingt euros.||}}",
+      "{{fr-FR|Chambre numéro douze.||}}",
+      "{{fr-FR|Quai numéro quatre.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1183,11 +1183,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "Cela co\u00fbte vingt euros.",
+    "correctAnswer": "{{fr-FR|Cela coûte vingt euros.||}}",
     "incorrectAnswers": [
-      "Chambre num\u00e9ro douze.",
-      "Quai num\u00e9ro quatre.",
-      "Une table pour trois, s'il vous pla\u00eet."
+      "{{fr-FR|Chambre numéro douze.||}}",
+      "{{fr-FR|Quai numéro quatre.||}}",
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1203,11 +1203,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Room number twelve.'?",
-    "correctAnswer": "Chambre num\u00e9ro douze.",
+    "correctAnswer": "{{fr-FR|Chambre numéro douze.||}}",
     "incorrectAnswers": [
-      "Quai num\u00e9ro quatre.",
-      "Une table pour trois, s'il vous pla\u00eet.",
-      "Deux billets, s'il vous pla\u00eet."
+      "{{fr-FR|Quai numéro quatre.||}}",
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||}}",
+      "{{fr-FR|Deux billets, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Platform number four.'.",
-    "correctAnswer": "Quai num\u00e9ro quatre.",
+    "correctAnswer": "{{fr-FR|Quai numéro quatre.||}}",
     "incorrectAnswers": [
-      "Une table pour trois, s'il vous pla\u00eet.",
-      "Deux billets, s'il vous pla\u00eet.",
-      "Pouvez-vous l'\u00e9crire ?"
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||}}",
+      "{{fr-FR|Deux billets, s'il vous plaît.||}}",
+      "{{fr-FR|Pouvez-vous l'écrire ?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1243,11 +1243,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'A table for three, please.'?",
-    "correctAnswer": "Une table pour trois, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Une table pour trois, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Deux billets, s'il vous pla\u00eet.",
-      "Pouvez-vous l'\u00e9crire ?",
-      "Quelle est la date d'aujourd'hui ?"
+      "{{fr-FR|Deux billets, s'il vous plaît.||}}",
+      "{{fr-FR|Pouvez-vous l'écrire ?||}}",
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1263,11 +1263,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "Deux billets, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Deux billets, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Pouvez-vous l'\u00e9crire ?",
-      "Quelle est la date d'aujourd'hui ?",
-      "Un moment, s'il vous pla\u00eet."
+      "{{fr-FR|Pouvez-vous l'écrire ?||}}",
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||}}",
+      "{{fr-FR|Un moment, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1283,11 +1283,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Can you write it down?'?",
-    "correctAnswer": "Pouvez-vous l'\u00e9crire ?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous l'écrire ?||}}",
     "incorrectAnswers": [
-      "Quelle est la date d'aujourd'hui ?",
-      "Un moment, s'il vous pla\u00eet.",
-      "Pouvez-vous r\u00e9p\u00e9ter cela ?"
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||}}",
+      "{{fr-FR|Un moment, s'il vous plaît.||}}",
+      "{{fr-FR|Pouvez-vous répéter cela ?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1303,11 +1303,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'What is today's date?'.",
-    "correctAnswer": "Quelle est la date d'aujourd'hui ?",
+    "correctAnswer": "{{fr-FR|Quelle est la date d'aujourd'hui ?||}}",
     "incorrectAnswers": [
-      "Un moment, s'il vous pla\u00eet.",
-      "Pouvez-vous r\u00e9p\u00e9ter cela ?",
-      "Pouvez-vous parler plus lentement ?"
+      "{{fr-FR|Un moment, s'il vous plaît.||}}",
+      "{{fr-FR|Pouvez-vous répéter cela ?||}}",
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1323,11 +1323,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'One moment, please.'?",
-    "correctAnswer": "Un moment, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Un moment, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Pouvez-vous r\u00e9p\u00e9ter cela ?",
-      "Pouvez-vous parler plus lentement ?",
-      "Comment \u00e9pelle-t-on votre nom ?"
+      "{{fr-FR|Pouvez-vous répéter cela ?||}}",
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||}}",
+      "{{fr-FR|Comment épelle-t-on votre nom ?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1343,11 +1343,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I am hungry.'?",
-    "correctAnswer": "J'ai faim.",
+    "correctAnswer": "{{fr-FR|J'ai faim.||}}",
     "incorrectAnswers": [
-      "J'ai soif.",
-      "Le menu, s'il vous pla\u00eet.",
-      "Je suis v\u00e9g\u00e9tarien/v\u00e9g\u00e9tarienne."
+      "{{fr-FR|J'ai soif.||}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||}}",
+      "{{fr-FR|Je suis végétarien/végétarienne.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1363,11 +1363,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I am thirsty.'?",
-    "correctAnswer": "J'ai soif.",
+    "correctAnswer": "{{fr-FR|J'ai soif.||}}",
     "incorrectAnswers": [
-      "Le menu, s'il vous pla\u00eet.",
-      "Je suis v\u00e9g\u00e9tarien/v\u00e9g\u00e9tarienne.",
-      "Sans viande, s'il vous pla\u00eet."
+      "{{fr-FR|Le menu, s'il vous plaît.||}}",
+      "{{fr-FR|Je suis végétarien/végétarienne.||}}",
+      "{{fr-FR|Sans viande, s'il vous plaît.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1383,11 +1383,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'The menu, please.'.",
-    "correctAnswer": "Le menu, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Le menu, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Je suis v\u00e9g\u00e9tarien/v\u00e9g\u00e9tarienne.",
-      "Sans viande, s'il vous pla\u00eet.",
-      "Sans sucre, s'il vous pla\u00eet."
+      "{{fr-FR|Je suis végétarien/végétarienne.||}}",
+      "{{fr-FR|Sans viande, s'il vous plaît.||}}",
+      "{{fr-FR|Sans sucre, s'il vous plaît.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1403,11 +1403,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am vegetarian.'?",
-    "correctAnswer": "Je suis v\u00e9g\u00e9tarien/v\u00e9g\u00e9tarienne.",
+    "correctAnswer": "{{fr-FR|Je suis végétarien/végétarienne.||}}",
     "incorrectAnswers": [
-      "Sans viande, s'il vous pla\u00eet.",
-      "Sans sucre, s'il vous pla\u00eet.",
-      "Avec du lait, s'il vous pla\u00eet."
+      "{{fr-FR|Sans viande, s'il vous plaît.||}}",
+      "{{fr-FR|Sans sucre, s'il vous plaît.||}}",
+      "{{fr-FR|Avec du lait, s'il vous plaît.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1423,11 +1423,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'No meat, please.'?",
-    "correctAnswer": "Sans viande, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Sans viande, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Sans sucre, s'il vous pla\u00eet.",
-      "Avec du lait, s'il vous pla\u00eet.",
-      "C'\u00e9tait d\u00e9licieux."
+      "{{fr-FR|Sans sucre, s'il vous plaît.||}}",
+      "{{fr-FR|Avec du lait, s'il vous plaît.||}}",
+      "{{fr-FR|C'était délicieux.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Without sugar, please.'?",
-    "correctAnswer": "Sans sucre, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Sans sucre, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Avec du lait, s'il vous pla\u00eet.",
-      "C'\u00e9tait d\u00e9licieux.",
-      "C'est tr\u00e8s bon."
+      "{{fr-FR|Avec du lait, s'il vous plaît.||}}",
+      "{{fr-FR|C'était délicieux.||}}",
+      "{{fr-FR|C'est très bon.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1463,11 +1463,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'With milk, please.'.",
-    "correctAnswer": "Avec du lait, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Avec du lait, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "C'\u00e9tait d\u00e9licieux.",
-      "C'est tr\u00e8s bon.",
-      "La soupe est froide."
+      "{{fr-FR|C'était délicieux.||}}",
+      "{{fr-FR|C'est très bon.||}}",
+      "{{fr-FR|La soupe est froide.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1483,11 +1483,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'It was delicious.'?",
-    "correctAnswer": "C'\u00e9tait d\u00e9licieux.",
+    "correctAnswer": "{{fr-FR|C'était délicieux.||}}",
     "incorrectAnswers": [
-      "C'est tr\u00e8s bon.",
-      "La soupe est froide.",
-      "Je suis allergique aux noix."
+      "{{fr-FR|C'est très bon.||}}",
+      "{{fr-FR|La soupe est froide.||}}",
+      "{{fr-FR|Je suis allergique aux noix.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1503,11 +1503,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'This is very good.'?",
-    "correctAnswer": "C'est tr\u00e8s bon.",
+    "correctAnswer": "{{fr-FR|C'est très bon.||}}",
     "incorrectAnswers": [
-      "La soupe est froide.",
-      "Je suis allergique aux noix.",
-      "Une bouteille d'eau, s'il vous pla\u00eet."
+      "{{fr-FR|La soupe est froide.||}}",
+      "{{fr-FR|Je suis allergique aux noix.||}}",
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1523,11 +1523,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'The soup is cold.'?",
-    "correctAnswer": "La soupe est froide.",
+    "correctAnswer": "{{fr-FR|La soupe est froide.||}}",
     "incorrectAnswers": [
-      "Je suis allergique aux noix.",
-      "Une bouteille d'eau, s'il vous pla\u00eet.",
-      "J'ai faim."
+      "{{fr-FR|Je suis allergique aux noix.||}}",
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||}}",
+      "{{fr-FR|J'ai faim.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1543,11 +1543,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "Je suis allergique aux noix.",
+    "correctAnswer": "{{fr-FR|Je suis allergique aux noix.||}}",
     "incorrectAnswers": [
-      "Une bouteille d'eau, s'il vous pla\u00eet.",
-      "J'ai faim.",
-      "J'ai soif."
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||}}",
+      "{{fr-FR|J'ai faim.||}}",
+      "{{fr-FR|J'ai soif.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1563,11 +1563,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "Une bouteille d'eau, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "J'ai faim.",
-      "J'ai soif.",
-      "Le menu, s'il vous pla\u00eet."
+      "{{fr-FR|J'ai faim.||}}",
+      "{{fr-FR|J'ai soif.||}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1583,11 +1583,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "Avez-vous ceci dans une autre taille ?",
+    "correctAnswer": "{{fr-FR|Avez-vous ceci dans une autre taille ?||}}",
     "incorrectAnswers": [
-      "Avez-vous ceci dans une autre couleur ?",
-      "Puis-je l'essayer ?",
-      "C'est trop cher."
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||}}",
+      "{{fr-FR|Puis-je l'essayer ?||}}",
+      "{{fr-FR|C'est trop cher.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1603,11 +1603,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "Avez-vous ceci dans une autre couleur ?",
+    "correctAnswer": "{{fr-FR|Avez-vous ceci dans une autre couleur ?||}}",
     "incorrectAnswers": [
-      "Puis-je l'essayer ?",
-      "C'est trop cher.",
-      "C'est bon march\u00e9."
+      "{{fr-FR|Puis-je l'essayer ?||}}",
+      "{{fr-FR|C'est trop cher.||}}",
+      "{{fr-FR|C'est bon marché.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1623,11 +1623,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Can I try it on?'.",
-    "correctAnswer": "Puis-je l'essayer ?",
+    "correctAnswer": "{{fr-FR|Puis-je l'essayer ?||}}",
     "incorrectAnswers": [
-      "C'est trop cher.",
-      "C'est bon march\u00e9.",
-      "Je le prends."
+      "{{fr-FR|C'est trop cher.||}}",
+      "{{fr-FR|C'est bon marché.||}}",
+      "{{fr-FR|Je le prends.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1643,11 +1643,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'It is too expensive.'?",
-    "correctAnswer": "C'est trop cher.",
+    "correctAnswer": "{{fr-FR|C'est trop cher.||}}",
     "incorrectAnswers": [
-      "C'est bon march\u00e9.",
-      "Je le prends.",
-      "O\u00f9 est la caisse ?"
+      "{{fr-FR|C'est bon marché.||}}",
+      "{{fr-FR|Je le prends.||}}",
+      "{{fr-FR|Où est la caisse ?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'It is cheap.'?",
-    "correctAnswer": "C'est bon march\u00e9.",
+    "correctAnswer": "{{fr-FR|C'est bon marché.||}}",
     "incorrectAnswers": [
-      "Je le prends.",
-      "O\u00f9 est la caisse ?",
-      "Je regarde seulement."
+      "{{fr-FR|Je le prends.||}}",
+      "{{fr-FR|Où est la caisse ?||}}",
+      "{{fr-FR|Je regarde seulement.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1683,11 +1683,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I will take it.'?",
-    "correctAnswer": "Je le prends.",
+    "correctAnswer": "{{fr-FR|Je le prends.||}}",
     "incorrectAnswers": [
-      "O\u00f9 est la caisse ?",
-      "Je regarde seulement.",
-      "Acceptez-vous les cartes ?"
+      "{{fr-FR|Où est la caisse ?||}}",
+      "{{fr-FR|Je regarde seulement.||}}",
+      "{{fr-FR|Acceptez-vous les cartes ?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1703,11 +1703,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Where is the checkout?'.",
-    "correctAnswer": "O\u00f9 est la caisse ?",
+    "correctAnswer": "{{fr-FR|Où est la caisse ?||}}",
     "incorrectAnswers": [
-      "Je regarde seulement.",
-      "Acceptez-vous les cartes ?",
-      "J'ai besoin d'un re\u00e7u."
+      "{{fr-FR|Je regarde seulement.||}}",
+      "{{fr-FR|Acceptez-vous les cartes ?||}}",
+      "{{fr-FR|J'ai besoin d'un reçu.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1723,11 +1723,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am just looking.'?",
-    "correctAnswer": "Je regarde seulement.",
+    "correctAnswer": "{{fr-FR|Je regarde seulement.||}}",
     "incorrectAnswers": [
-      "Acceptez-vous les cartes ?",
-      "J'ai besoin d'un re\u00e7u.",
-      "Cette taille est trop petite."
+      "{{fr-FR|Acceptez-vous les cartes ?||}}",
+      "{{fr-FR|J'ai besoin d'un reçu.||}}",
+      "{{fr-FR|Cette taille est trop petite.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1743,11 +1743,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "Acceptez-vous les cartes ?",
+    "correctAnswer": "{{fr-FR|Acceptez-vous les cartes ?||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un re\u00e7u.",
-      "Cette taille est trop petite.",
-      "Cette taille est trop grande."
+      "{{fr-FR|J'ai besoin d'un reçu.||}}",
+      "{{fr-FR|Cette taille est trop petite.||}}",
+      "{{fr-FR|Cette taille est trop grande.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1763,11 +1763,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I need a receipt.'?",
-    "correctAnswer": "J'ai besoin d'un re\u00e7u.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un reçu.||}}",
     "incorrectAnswers": [
-      "Cette taille est trop petite.",
-      "Cette taille est trop grande.",
-      "Avez-vous ceci dans une autre taille ?"
+      "{{fr-FR|Cette taille est trop petite.||}}",
+      "{{fr-FR|Cette taille est trop grande.||}}",
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1783,11 +1783,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'This size is too small.'.",
-    "correctAnswer": "Cette taille est trop petite.",
+    "correctAnswer": "{{fr-FR|Cette taille est trop petite.||}}",
     "incorrectAnswers": [
-      "Cette taille est trop grande.",
-      "Avez-vous ceci dans une autre taille ?",
-      "Avez-vous ceci dans une autre couleur ?"
+      "{{fr-FR|Cette taille est trop grande.||}}",
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||}}",
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1803,11 +1803,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'This size is too big.'?",
-    "correctAnswer": "Cette taille est trop grande.",
+    "correctAnswer": "{{fr-FR|Cette taille est trop grande.||}}",
     "incorrectAnswers": [
-      "Avez-vous ceci dans une autre taille ?",
-      "Avez-vous ceci dans une autre couleur ?",
-      "Puis-je l'essayer ?"
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||}}",
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||}}",
+      "{{fr-FR|Puis-je l'essayer ?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1823,11 +1823,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "J'ai besoin d'un billet pour l'a\u00e9roport.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||}}",
     "incorrectAnswers": [
-      "Un billet pour le centre-ville, s'il vous pla\u00eet.",
-      "Un aller-retour, s'il vous pla\u00eet.",
-      "C'est quel quai ?"
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||}}",
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||}}",
+      "{{fr-FR|C'est quel quai ?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1843,11 +1843,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "Un billet pour le centre-ville, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Un aller-retour, s'il vous pla\u00eet.",
-      "C'est quel quai ?",
-      "Cette place est libre ?"
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||}}",
+      "{{fr-FR|C'est quel quai ?||}}",
+      "{{fr-FR|Cette place est libre ?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1863,11 +1863,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "Un aller-retour, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Un aller-retour, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "C'est quel quai ?",
-      "Cette place est libre ?",
-      "Appelez un taxi, s'il vous pla\u00eet."
+      "{{fr-FR|C'est quel quai ?||}}",
+      "{{fr-FR|Cette place est libre ?||}}",
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Which platform is it?'?",
-    "correctAnswer": "C'est quel quai ?",
+    "correctAnswer": "{{fr-FR|C'est quel quai ?||}}",
     "incorrectAnswers": [
-      "Cette place est libre ?",
-      "Appelez un taxi, s'il vous pla\u00eet.",
-      "Ce bus va au centre-ville ?"
+      "{{fr-FR|Cette place est libre ?||}}",
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||}}",
+      "{{fr-FR|Ce bus va au centre-ville ?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1903,11 +1903,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Is this seat free?'?",
-    "correctAnswer": "Cette place est libre ?",
+    "correctAnswer": "{{fr-FR|Cette place est libre ?||}}",
     "incorrectAnswers": [
-      "Appelez un taxi, s'il vous pla\u00eet.",
-      "Ce bus va au centre-ville ?",
-      "Je veux aller \u00e0 l'a\u00e9roport."
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||}}",
+      "{{fr-FR|Ce bus va au centre-ville ?||}}",
+      "{{fr-FR|Je veux aller à l'aéroport.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1923,11 +1923,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Please call a taxi.'?",
-    "correctAnswer": "Appelez un taxi, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Appelez un taxi, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Ce bus va au centre-ville ?",
-      "Je veux aller \u00e0 l'a\u00e9roport.",
-      "Nous descendons ici."
+      "{{fr-FR|Ce bus va au centre-ville ?||}}",
+      "{{fr-FR|Je veux aller à l'aéroport.||}}",
+      "{{fr-FR|Nous descendons ici.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1943,11 +1943,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "Ce bus va au centre-ville ?",
+    "correctAnswer": "{{fr-FR|Ce bus va au centre-ville ?||}}",
     "incorrectAnswers": [
-      "Je veux aller \u00e0 l'a\u00e9roport.",
-      "Nous descendons ici.",
-      "J'ai rat\u00e9 le bus."
+      "{{fr-FR|Je veux aller à l'aéroport.||}}",
+      "{{fr-FR|Nous descendons ici.||}}",
+      "{{fr-FR|J'ai raté le bus.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1963,11 +1963,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "Je veux aller \u00e0 l'a\u00e9roport.",
+    "correctAnswer": "{{fr-FR|Je veux aller à l'aéroport.||}}",
     "incorrectAnswers": [
-      "Nous descendons ici.",
-      "J'ai rat\u00e9 le bus.",
-      "O\u00f9 puis-je acheter un billet ?"
+      "{{fr-FR|Nous descendons ici.||}}",
+      "{{fr-FR|J'ai raté le bus.||}}",
+      "{{fr-FR|Où puis-je acheter un billet ?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1983,11 +1983,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'We get off here.'?",
-    "correctAnswer": "Nous descendons ici.",
+    "correctAnswer": "{{fr-FR|Nous descendons ici.||}}",
     "incorrectAnswers": [
-      "J'ai rat\u00e9 le bus.",
-      "O\u00f9 puis-je acheter un billet ?",
-      "Le bus arrive \u00e0 midi."
+      "{{fr-FR|J'ai raté le bus.||}}",
+      "{{fr-FR|Où puis-je acheter un billet ?||}}",
+      "{{fr-FR|Le bus arrive à midi.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2003,11 +2003,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I missed the bus.'?",
-    "correctAnswer": "J'ai rat\u00e9 le bus.",
+    "correctAnswer": "{{fr-FR|J'ai raté le bus.||}}",
     "incorrectAnswers": [
-      "O\u00f9 puis-je acheter un billet ?",
-      "Le bus arrive \u00e0 midi.",
-      "J'ai besoin d'un billet pour l'a\u00e9roport."
+      "{{fr-FR|Où puis-je acheter un billet ?||}}",
+      "{{fr-FR|Le bus arrive à midi.||}}",
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2023,11 +2023,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "O\u00f9 puis-je acheter un billet ?",
+    "correctAnswer": "{{fr-FR|Où puis-je acheter un billet ?||}}",
     "incorrectAnswers": [
-      "Le bus arrive \u00e0 midi.",
-      "J'ai besoin d'un billet pour l'a\u00e9roport.",
-      "Un billet pour le centre-ville, s'il vous pla\u00eet."
+      "{{fr-FR|Le bus arrive à midi.||}}",
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||}}",
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2043,11 +2043,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "Le bus arrive \u00e0 midi.",
+    "correctAnswer": "{{fr-FR|Le bus arrive à midi.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un billet pour l'a\u00e9roport.",
-      "Un billet pour le centre-ville, s'il vous pla\u00eet.",
-      "Un aller-retour, s'il vous pla\u00eet."
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||}}",
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||}}",
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2063,11 +2063,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I have a reservation.'?",
-    "correctAnswer": "J'ai une r\u00e9servation.",
+    "correctAnswer": "{{fr-FR|J'ai une réservation.||}}",
     "incorrectAnswers": [
-      "Avez-vous une chambre simple ?",
-      "Avez-vous une chambre double ?",
-      "Le mot de passe du Wi-Fi, s'il vous pla\u00eet."
+      "{{fr-FR|Avez-vous une chambre simple ?||}}",
+      "{{fr-FR|Avez-vous une chambre double ?||}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2083,11 +2083,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Do you have a single room?'?",
-    "correctAnswer": "Avez-vous une chambre simple ?",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre simple ?||}}",
     "incorrectAnswers": [
-      "Avez-vous une chambre double ?",
-      "Le mot de passe du Wi-Fi, s'il vous pla\u00eet.",
-      "Il y a un probl\u00e8me avec la chambre."
+      "{{fr-FR|Avez-vous une chambre double ?||}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Do you have a double room?'.",
-    "correctAnswer": "Avez-vous une chambre double ?",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre double ?||}}",
     "incorrectAnswers": [
-      "Le mot de passe du Wi-Fi, s'il vous pla\u00eet.",
-      "Il y a un probl\u00e8me avec la chambre.",
-      "La douche ne marche pas."
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||}}",
+      "{{fr-FR|La douche ne marche pas.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2123,11 +2123,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "Le mot de passe du Wi-Fi, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Il y a un probl\u00e8me avec la chambre.",
-      "La douche ne marche pas.",
-      "La chambre est trop froide."
+      "{{fr-FR|Il y a un problème avec la chambre.||}}",
+      "{{fr-FR|La douche ne marche pas.||}}",
+      "{{fr-FR|La chambre est trop froide.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2143,11 +2143,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "Il y a un probl\u00e8me avec la chambre.",
+    "correctAnswer": "{{fr-FR|Il y a un problème avec la chambre.||}}",
     "incorrectAnswers": [
-      "La douche ne marche pas.",
-      "La chambre est trop froide.",
-      "J'ai besoin de serviettes propres."
+      "{{fr-FR|La douche ne marche pas.||}}",
+      "{{fr-FR|La chambre est trop froide.||}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2163,11 +2163,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'The shower does not work.'?",
-    "correctAnswer": "La douche ne marche pas.",
+    "correctAnswer": "{{fr-FR|La douche ne marche pas.||}}",
     "incorrectAnswers": [
-      "La chambre est trop froide.",
-      "J'ai besoin de serviettes propres.",
-      "Le petit d\u00e9jeuner est-il compris ?"
+      "{{fr-FR|La chambre est trop froide.||}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2183,11 +2183,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'The room is too cold.'.",
-    "correctAnswer": "La chambre est trop froide.",
+    "correctAnswer": "{{fr-FR|La chambre est trop froide.||}}",
     "incorrectAnswers": [
-      "J'ai besoin de serviettes propres.",
-      "Le petit d\u00e9jeuner est-il compris ?",
-      "Puis-je avoir une autre cl\u00e9 ?"
+      "{{fr-FR|J'ai besoin de serviettes propres.||}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2203,11 +2203,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I need clean towels.'?",
-    "correctAnswer": "J'ai besoin de serviettes propres.",
+    "correctAnswer": "{{fr-FR|J'ai besoin de serviettes propres.||}}",
     "incorrectAnswers": [
-      "Le petit d\u00e9jeuner est-il compris ?",
-      "Puis-je avoir une autre cl\u00e9 ?",
-      "La climatisation est en panne."
+      "{{fr-FR|Le petit déjeuner est-il compris ?||}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||}}",
+      "{{fr-FR|La climatisation est en panne.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2223,11 +2223,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "Le petit d\u00e9jeuner est-il compris ?",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner est-il compris ?||}}",
     "incorrectAnswers": [
-      "Puis-je avoir une autre cl\u00e9 ?",
-      "La climatisation est en panne.",
-      "Le petit d\u00e9jeuner commence \u00e0 sept heures."
+      "{{fr-FR|Puis-je avoir une autre clé ?||}}",
+      "{{fr-FR|La climatisation est en panne.||}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2243,11 +2243,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Can I have another key?'?",
-    "correctAnswer": "Puis-je avoir une autre cl\u00e9 ?",
+    "correctAnswer": "{{fr-FR|Puis-je avoir une autre clé ?||}}",
     "incorrectAnswers": [
-      "La climatisation est en panne.",
-      "Le petit d\u00e9jeuner commence \u00e0 sept heures.",
-      "J'ai une r\u00e9servation."
+      "{{fr-FR|La climatisation est en panne.||}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||}}",
+      "{{fr-FR|J'ai une réservation.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2263,11 +2263,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "La climatisation est en panne.",
+    "correctAnswer": "{{fr-FR|La climatisation est en panne.||}}",
     "incorrectAnswers": [
-      "Le petit d\u00e9jeuner commence \u00e0 sept heures.",
-      "J'ai une r\u00e9servation.",
-      "Avez-vous une chambre simple ?"
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||}}",
+      "{{fr-FR|J'ai une réservation.||}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2283,11 +2283,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "Le petit d\u00e9jeuner commence \u00e0 sept heures.",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner commence à sept heures.||}}",
     "incorrectAnswers": [
-      "J'ai une r\u00e9servation.",
-      "Avez-vous une chambre simple ?",
-      "Avez-vous une chambre double ?"
+      "{{fr-FR|J'ai une réservation.||}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||}}",
+      "{{fr-FR|Avez-vous une chambre double ?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2303,11 +2303,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I feel sick.'?",
-    "correctAnswer": "Je me sens mal.",
+    "correctAnswer": "{{fr-FR|Je me sens mal.||}}",
     "incorrectAnswers": [
-      "J'ai mal \u00e0 la t\u00eate.",
-      "J'ai de la fi\u00e8vre.",
-      "J'ai besoin d'un m\u00e9decin."
+      "{{fr-FR|J'ai mal à la tête.||}}",
+      "{{fr-FR|J'ai de la fièvre.||}}",
+      "{{fr-FR|J'ai besoin d'un médecin.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I have a headache.'?",
-    "correctAnswer": "J'ai mal \u00e0 la t\u00eate.",
+    "correctAnswer": "{{fr-FR|J'ai mal à la tête.||}}",
     "incorrectAnswers": [
-      "J'ai de la fi\u00e8vre.",
-      "J'ai besoin d'un m\u00e9decin.",
-      "O\u00f9 est la pharmacie ?"
+      "{{fr-FR|J'ai de la fièvre.||}}",
+      "{{fr-FR|J'ai besoin d'un médecin.||}}",
+      "{{fr-FR|Où est la pharmacie ?||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2343,11 +2343,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I have a fever.'.",
-    "correctAnswer": "J'ai de la fi\u00e8vre.",
+    "correctAnswer": "{{fr-FR|J'ai de la fièvre.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un m\u00e9decin.",
-      "O\u00f9 est la pharmacie ?",
-      "Je suis allergique \u00e0 la p\u00e9nicilline."
+      "{{fr-FR|J'ai besoin d'un médecin.||}}",
+      "{{fr-FR|Où est la pharmacie ?||}}",
+      "{{fr-FR|Je suis allergique à la pénicilline.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2363,11 +2363,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I need a doctor.'?",
-    "correctAnswer": "J'ai besoin d'un m\u00e9decin.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un médecin.||}}",
     "incorrectAnswers": [
-      "O\u00f9 est la pharmacie ?",
-      "Je suis allergique \u00e0 la p\u00e9nicilline.",
-      "J'ai mal \u00e0 l'estomac."
+      "{{fr-FR|Où est la pharmacie ?||}}",
+      "{{fr-FR|Je suis allergique à la pénicilline.||}}",
+      "{{fr-FR|J'ai mal à l'estomac.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2383,11 +2383,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "O\u00f9 est la pharmacie ?",
+    "correctAnswer": "{{fr-FR|Où est la pharmacie ?||}}",
     "incorrectAnswers": [
-      "Je suis allergique \u00e0 la p\u00e9nicilline.",
-      "J'ai mal \u00e0 l'estomac.",
-      "J'ai besoin de m\u00e9dicaments."
+      "{{fr-FR|Je suis allergique à la pénicilline.||}}",
+      "{{fr-FR|J'ai mal à l'estomac.||}}",
+      "{{fr-FR|J'ai besoin de médicaments.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2403,11 +2403,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "Je suis allergique \u00e0 la p\u00e9nicilline.",
+    "correctAnswer": "{{fr-FR|Je suis allergique à la pénicilline.||}}",
     "incorrectAnswers": [
-      "J'ai mal \u00e0 l'estomac.",
-      "J'ai besoin de m\u00e9dicaments.",
-      "J'ai des vertiges."
+      "{{fr-FR|J'ai mal à l'estomac.||}}",
+      "{{fr-FR|J'ai besoin de médicaments.||}}",
+      "{{fr-FR|J'ai des vertiges.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2423,11 +2423,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'My stomach hurts.'.",
-    "correctAnswer": "J'ai mal \u00e0 l'estomac.",
+    "correctAnswer": "{{fr-FR|J'ai mal à l'estomac.||}}",
     "incorrectAnswers": [
-      "J'ai besoin de m\u00e9dicaments.",
-      "J'ai des vertiges.",
-      "J'ai un rhume."
+      "{{fr-FR|J'ai besoin de médicaments.||}}",
+      "{{fr-FR|J'ai des vertiges.||}}",
+      "{{fr-FR|J'ai un rhume.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2443,11 +2443,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I need medicine.'?",
-    "correctAnswer": "J'ai besoin de m\u00e9dicaments.",
+    "correctAnswer": "{{fr-FR|J'ai besoin de médicaments.||}}",
     "incorrectAnswers": [
-      "J'ai des vertiges.",
-      "J'ai un rhume.",
-      "J'ai besoin d'un h\u00f4pital."
+      "{{fr-FR|J'ai des vertiges.||}}",
+      "{{fr-FR|J'ai un rhume.||}}",
+      "{{fr-FR|J'ai besoin d'un hôpital.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2463,11 +2463,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "J'ai des vertiges.",
+    "correctAnswer": "{{fr-FR|J'ai des vertiges.||}}",
     "incorrectAnswers": [
-      "J'ai un rhume.",
-      "J'ai besoin d'un h\u00f4pital.",
-      "Je me sens mieux maintenant."
+      "{{fr-FR|J'ai un rhume.||}}",
+      "{{fr-FR|J'ai besoin d'un hôpital.||}}",
+      "{{fr-FR|Je me sens mieux maintenant.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2483,11 +2483,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I have a cold.'?",
-    "correctAnswer": "J'ai un rhume.",
+    "correctAnswer": "{{fr-FR|J'ai un rhume.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un h\u00f4pital.",
-      "Je me sens mieux maintenant.",
-      "Je me sens mal."
+      "{{fr-FR|J'ai besoin d'un hôpital.||}}",
+      "{{fr-FR|Je me sens mieux maintenant.||}}",
+      "{{fr-FR|Je me sens mal.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2503,11 +2503,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I need a hospital.'.",
-    "correctAnswer": "J'ai besoin d'un h\u00f4pital.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un hôpital.||}}",
     "incorrectAnswers": [
-      "Je me sens mieux maintenant.",
-      "Je me sens mal.",
-      "J'ai mal \u00e0 la t\u00eate."
+      "{{fr-FR|Je me sens mieux maintenant.||}}",
+      "{{fr-FR|Je me sens mal.||}}",
+      "{{fr-FR|J'ai mal à la tête.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2523,11 +2523,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I feel better now.'?",
-    "correctAnswer": "Je me sens mieux maintenant.",
+    "correctAnswer": "{{fr-FR|Je me sens mieux maintenant.||}}",
     "incorrectAnswers": [
-      "Je me sens mal.",
-      "J'ai mal \u00e0 la t\u00eate.",
-      "J'ai de la fi\u00e8vre."
+      "{{fr-FR|Je me sens mal.||}}",
+      "{{fr-FR|J'ai mal à la tête.||}}",
+      "{{fr-FR|J'ai de la fièvre.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'What time is it?'?",
-    "correctAnswer": "Quelle heure est-il ?",
+    "correctAnswer": "{{fr-FR|Quelle heure est-il ?||}}",
     "incorrectAnswers": [
-      "Aujourd'hui, c'est lundi.",
-      "Demain, je voyagerai.",
-      "Hier, j'ai travaill\u00e9."
+      "{{fr-FR|Aujourd'hui, c'est lundi.||}}",
+      "{{fr-FR|Demain, je voyagerai.||}}",
+      "{{fr-FR|Hier, j'ai travaillé.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2563,11 +2563,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Today is Monday.'?",
-    "correctAnswer": "Aujourd'hui, c'est lundi.",
+    "correctAnswer": "{{fr-FR|Aujourd'hui, c'est lundi.||}}",
     "incorrectAnswers": [
-      "Demain, je voyagerai.",
-      "Hier, j'ai travaill\u00e9.",
-      "\u00c7a ouvre \u00e0 neuf heures."
+      "{{fr-FR|Demain, je voyagerai.||}}",
+      "{{fr-FR|Hier, j'ai travaillé.||}}",
+      "{{fr-FR|Ça ouvre à neuf heures.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2583,11 +2583,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "Demain, je voyagerai.",
+    "correctAnswer": "{{fr-FR|Demain, je voyagerai.||}}",
     "incorrectAnswers": [
-      "Hier, j'ai travaill\u00e9.",
-      "\u00c7a ouvre \u00e0 neuf heures.",
-      "\u00c7a ferme \u00e0 six heures."
+      "{{fr-FR|Hier, j'ai travaillé.||}}",
+      "{{fr-FR|Ça ouvre à neuf heures.||}}",
+      "{{fr-FR|Ça ferme à six heures.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2603,11 +2603,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "Hier, j'ai travaill\u00e9.",
+    "correctAnswer": "{{fr-FR|Hier, j'ai travaillé.||}}",
     "incorrectAnswers": [
-      "\u00c7a ouvre \u00e0 neuf heures.",
-      "\u00c7a ferme \u00e0 six heures.",
-      "J'arrive plus tard."
+      "{{fr-FR|Ça ouvre à neuf heures.||}}",
+      "{{fr-FR|Ça ferme à six heures.||}}",
+      "{{fr-FR|J'arrive plus tard.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2623,11 +2623,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'It opens at nine.'?",
-    "correctAnswer": "\u00c7a ouvre \u00e0 neuf heures.",
+    "correctAnswer": "{{fr-FR|Ça ouvre à neuf heures.||}}",
     "incorrectAnswers": [
-      "\u00c7a ferme \u00e0 six heures.",
-      "J'arrive plus tard.",
-      "Je reviendrai bient\u00f4t."
+      "{{fr-FR|Ça ferme à six heures.||}}",
+      "{{fr-FR|J'arrive plus tard.||}}",
+      "{{fr-FR|Je reviendrai bientôt.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2643,11 +2643,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'It closes at six.'?",
-    "correctAnswer": "\u00c7a ferme \u00e0 six heures.",
+    "correctAnswer": "{{fr-FR|Ça ferme à six heures.||}}",
     "incorrectAnswers": [
-      "J'arrive plus tard.",
-      "Je reviendrai bient\u00f4t.",
-      "J'ai besoin de cinq minutes."
+      "{{fr-FR|J'arrive plus tard.||}}",
+      "{{fr-FR|Je reviendrai bientôt.||}}",
+      "{{fr-FR|J'ai besoin de cinq minutes.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2663,11 +2663,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I arrive later.'.",
-    "correctAnswer": "J'arrive plus tard.",
+    "correctAnswer": "{{fr-FR|J'arrive plus tard.||}}",
     "incorrectAnswers": [
-      "Je reviendrai bient\u00f4t.",
-      "J'ai besoin de cinq minutes.",
-      "Il est trop tard."
+      "{{fr-FR|Je reviendrai bientôt.||}}",
+      "{{fr-FR|J'ai besoin de cinq minutes.||}}",
+      "{{fr-FR|Il est trop tard.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2683,11 +2683,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I will come back soon.'?",
-    "correctAnswer": "Je reviendrai bient\u00f4t.",
+    "correctAnswer": "{{fr-FR|Je reviendrai bientôt.||}}",
     "incorrectAnswers": [
-      "J'ai besoin de cinq minutes.",
-      "Il est trop tard.",
-      "Cette semaine est charg\u00e9e."
+      "{{fr-FR|J'ai besoin de cinq minutes.||}}",
+      "{{fr-FR|Il est trop tard.||}}",
+      "{{fr-FR|Cette semaine est chargée.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2703,11 +2703,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I need five minutes.'?",
-    "correctAnswer": "J'ai besoin de cinq minutes.",
+    "correctAnswer": "{{fr-FR|J'ai besoin de cinq minutes.||}}",
     "incorrectAnswers": [
-      "Il est trop tard.",
-      "Cette semaine est charg\u00e9e.",
-      "Le mois prochain, je suis libre."
+      "{{fr-FR|Il est trop tard.||}}",
+      "{{fr-FR|Cette semaine est chargée.||}}",
+      "{{fr-FR|Le mois prochain, je suis libre.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2723,11 +2723,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'It is too late.'?",
-    "correctAnswer": "Il est trop tard.",
+    "correctAnswer": "{{fr-FR|Il est trop tard.||}}",
     "incorrectAnswers": [
-      "Cette semaine est charg\u00e9e.",
-      "Le mois prochain, je suis libre.",
-      "Quelle heure est-il ?"
+      "{{fr-FR|Cette semaine est chargée.||}}",
+      "{{fr-FR|Le mois prochain, je suis libre.||}}",
+      "{{fr-FR|Quelle heure est-il ?||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2743,11 +2743,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'This week is busy.'.",
-    "correctAnswer": "Cette semaine est charg\u00e9e.",
+    "correctAnswer": "{{fr-FR|Cette semaine est chargée.||}}",
     "incorrectAnswers": [
-      "Le mois prochain, je suis libre.",
-      "Quelle heure est-il ?",
-      "Aujourd'hui, c'est lundi."
+      "{{fr-FR|Le mois prochain, je suis libre.||}}",
+      "{{fr-FR|Quelle heure est-il ?||}}",
+      "{{fr-FR|Aujourd'hui, c'est lundi.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Next month I am free.'?",
-    "correctAnswer": "Le mois prochain, je suis libre.",
+    "correctAnswer": "{{fr-FR|Le mois prochain, je suis libre.||}}",
     "incorrectAnswers": [
-      "Quelle heure est-il ?",
-      "Aujourd'hui, c'est lundi.",
-      "Demain, je voyagerai."
+      "{{fr-FR|Quelle heure est-il ?||}}",
+      "{{fr-FR|Aujourd'hui, c'est lundi.||}}",
+      "{{fr-FR|Demain, je voyagerai.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2783,11 +2783,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'What is the weather like?'?",
-    "correctAnswer": "Quel temps fait-il ?",
+    "correctAnswer": "{{fr-FR|Quel temps fait-il ?||}}",
     "incorrectAnswers": [
-      "Il fait chaud.",
-      "Il fait froid.",
-      "Il pleut."
+      "{{fr-FR|Il fait chaud.||}}",
+      "{{fr-FR|Il fait froid.||}}",
+      "{{fr-FR|Il pleut.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2803,11 +2803,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'It is hot.'?",
-    "correctAnswer": "Il fait chaud.",
+    "correctAnswer": "{{fr-FR|Il fait chaud.||}}",
     "incorrectAnswers": [
-      "Il fait froid.",
-      "Il pleut.",
-      "Il y a du vent."
+      "{{fr-FR|Il fait froid.||}}",
+      "{{fr-FR|Il pleut.||}}",
+      "{{fr-FR|Il y a du vent.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2823,11 +2823,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'It is cold.'.",
-    "correctAnswer": "Il fait froid.",
+    "correctAnswer": "{{fr-FR|Il fait froid.||}}",
     "incorrectAnswers": [
-      "Il pleut.",
-      "Il y a du vent.",
-      "Il y a du soleil."
+      "{{fr-FR|Il pleut.||}}",
+      "{{fr-FR|Il y a du vent.||}}",
+      "{{fr-FR|Il y a du soleil.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2843,11 +2843,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'It is raining.'?",
-    "correctAnswer": "Il pleut.",
+    "correctAnswer": "{{fr-FR|Il pleut.||}}",
     "incorrectAnswers": [
-      "Il y a du vent.",
-      "Il y a du soleil.",
-      "Il neige."
+      "{{fr-FR|Il y a du vent.||}}",
+      "{{fr-FR|Il y a du soleil.||}}",
+      "{{fr-FR|Il neige.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2863,11 +2863,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'It is windy.'?",
-    "correctAnswer": "Il y a du vent.",
+    "correctAnswer": "{{fr-FR|Il y a du vent.||}}",
     "incorrectAnswers": [
-      "Il y a du soleil.",
-      "Il neige.",
-      "Quelle belle journ\u00e9e !"
+      "{{fr-FR|Il y a du soleil.||}}",
+      "{{fr-FR|Il neige.||}}",
+      "{{fr-FR|Quelle belle journée !||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2883,11 +2883,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'It is sunny.'?",
-    "correctAnswer": "Il y a du soleil.",
+    "correctAnswer": "{{fr-FR|Il y a du soleil.||}}",
     "incorrectAnswers": [
-      "Il neige.",
-      "Quelle belle journ\u00e9e !",
-      "C'est nuageux."
+      "{{fr-FR|Il neige.||}}",
+      "{{fr-FR|Quelle belle journée !||}}",
+      "{{fr-FR|C'est nuageux.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2903,11 +2903,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'It is snowing.'.",
-    "correctAnswer": "Il neige.",
+    "correctAnswer": "{{fr-FR|Il neige.||}}",
     "incorrectAnswers": [
-      "Quelle belle journ\u00e9e !",
-      "C'est nuageux.",
-      "J'ai besoin d'un parapluie."
+      "{{fr-FR|Quelle belle journée !||}}",
+      "{{fr-FR|C'est nuageux.||}}",
+      "{{fr-FR|J'ai besoin d'un parapluie.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2923,11 +2923,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'What a beautiful day!'?",
-    "correctAnswer": "Quelle belle journ\u00e9e !",
+    "correctAnswer": "{{fr-FR|Quelle belle journée !||}}",
     "incorrectAnswers": [
-      "C'est nuageux.",
-      "J'ai besoin d'un parapluie.",
-      "Il fait beau aujourd'hui."
+      "{{fr-FR|C'est nuageux.||}}",
+      "{{fr-FR|J'ai besoin d'un parapluie.||}}",
+      "{{fr-FR|Il fait beau aujourd'hui.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2943,11 +2943,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'It is cloudy.'?",
-    "correctAnswer": "C'est nuageux.",
+    "correctAnswer": "{{fr-FR|C'est nuageux.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un parapluie.",
-      "Il fait beau aujourd'hui.",
-      "Le ciel est d\u00e9gag\u00e9."
+      "{{fr-FR|J'ai besoin d'un parapluie.||}}",
+      "{{fr-FR|Il fait beau aujourd'hui.||}}",
+      "{{fr-FR|Le ciel est dégagé.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2963,11 +2963,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I need an umbrella.'?",
-    "correctAnswer": "J'ai besoin d'un parapluie.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un parapluie.||}}",
     "incorrectAnswers": [
-      "Il fait beau aujourd'hui.",
-      "Le ciel est d\u00e9gag\u00e9.",
-      "Quel temps fait-il ?"
+      "{{fr-FR|Il fait beau aujourd'hui.||}}",
+      "{{fr-FR|Le ciel est dégagé.||}}",
+      "{{fr-FR|Quel temps fait-il ?||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'The weather is nice today.'.",
-    "correctAnswer": "Il fait beau aujourd'hui.",
+    "correctAnswer": "{{fr-FR|Il fait beau aujourd'hui.||}}",
     "incorrectAnswers": [
-      "Le ciel est d\u00e9gag\u00e9.",
-      "Quel temps fait-il ?",
-      "Il fait chaud."
+      "{{fr-FR|Le ciel est dégagé.||}}",
+      "{{fr-FR|Quel temps fait-il ?||}}",
+      "{{fr-FR|Il fait chaud.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3003,11 +3003,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'The sky is clear.'?",
-    "correctAnswer": "Le ciel est d\u00e9gag\u00e9.",
+    "correctAnswer": "{{fr-FR|Le ciel est dégagé.||}}",
     "incorrectAnswers": [
-      "Quel temps fait-il ?",
-      "Il fait chaud.",
-      "Il fait froid."
+      "{{fr-FR|Quel temps fait-il ?||}}",
+      "{{fr-FR|Il fait chaud.||}}",
+      "{{fr-FR|Il fait froid.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3023,11 +3023,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Help!'?",
-    "correctAnswer": "Au secours !",
+    "correctAnswer": "{{fr-FR|Au secours !||}}",
     "incorrectAnswers": [
-      "Appelez la police !",
-      "J'ai perdu mon passeport.",
-      "On m'a vol\u00e9 mon portefeuille."
+      "{{fr-FR|Appelez la police !||}}",
+      "{{fr-FR|J'ai perdu mon passeport.||}}",
+      "{{fr-FR|On m'a volé mon portefeuille.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3043,11 +3043,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Call the police!'?",
-    "correctAnswer": "Appelez la police !",
+    "correctAnswer": "{{fr-FR|Appelez la police !||}}",
     "incorrectAnswers": [
-      "J'ai perdu mon passeport.",
-      "On m'a vol\u00e9 mon portefeuille.",
-      "J'ai besoin d'une ambulance."
+      "{{fr-FR|J'ai perdu mon passeport.||}}",
+      "{{fr-FR|On m'a volé mon portefeuille.||}}",
+      "{{fr-FR|J'ai besoin d'une ambulance.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3063,11 +3063,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I have lost my passport.'.",
-    "correctAnswer": "J'ai perdu mon passeport.",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon passeport.||}}",
     "incorrectAnswers": [
-      "On m'a vol\u00e9 mon portefeuille.",
-      "J'ai besoin d'une ambulance.",
-      "Appelez un m\u00e9decin !"
+      "{{fr-FR|On m'a volé mon portefeuille.||}}",
+      "{{fr-FR|J'ai besoin d'une ambulance.||}}",
+      "{{fr-FR|Appelez un médecin !||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3083,11 +3083,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "On m'a vol\u00e9 mon portefeuille.",
+    "correctAnswer": "{{fr-FR|On m'a volé mon portefeuille.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'une ambulance.",
-      "Appelez un m\u00e9decin !",
-      "Il y a un incendie."
+      "{{fr-FR|J'ai besoin d'une ambulance.||}}",
+      "{{fr-FR|Appelez un médecin !||}}",
+      "{{fr-FR|Il y a un incendie.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3103,11 +3103,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "J'ai besoin d'une ambulance.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'une ambulance.||}}",
     "incorrectAnswers": [
-      "Appelez un m\u00e9decin !",
-      "Il y a un incendie.",
-      "J'ai besoin d'aide maintenant."
+      "{{fr-FR|Appelez un médecin !||}}",
+      "{{fr-FR|Il y a un incendie.||}}",
+      "{{fr-FR|J'ai besoin d'aide maintenant.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3123,11 +3123,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Call a doctor!'?",
-    "correctAnswer": "Appelez un m\u00e9decin !",
+    "correctAnswer": "{{fr-FR|Appelez un médecin !||}}",
     "incorrectAnswers": [
-      "Il y a un incendie.",
-      "J'ai besoin d'aide maintenant.",
-      "J'ai perdu mon t\u00e9l\u00e9phone."
+      "{{fr-FR|Il y a un incendie.||}}",
+      "{{fr-FR|J'ai besoin d'aide maintenant.||}}",
+      "{{fr-FR|J'ai perdu mon téléphone.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3143,11 +3143,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'There is a fire.'.",
-    "correctAnswer": "Il y a un incendie.",
+    "correctAnswer": "{{fr-FR|Il y a un incendie.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'aide maintenant.",
-      "J'ai perdu mon t\u00e9l\u00e9phone.",
-      "J'ai perdu mon sac."
+      "{{fr-FR|J'ai besoin d'aide maintenant.||}}",
+      "{{fr-FR|J'ai perdu mon téléphone.||}}",
+      "{{fr-FR|J'ai perdu mon sac.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3163,11 +3163,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I need help now.'?",
-    "correctAnswer": "J'ai besoin d'aide maintenant.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'aide maintenant.||}}",
     "incorrectAnswers": [
-      "J'ai perdu mon t\u00e9l\u00e9phone.",
-      "J'ai perdu mon sac.",
-      "Mon ami est bless\u00e9."
+      "{{fr-FR|J'ai perdu mon téléphone.||}}",
+      "{{fr-FR|J'ai perdu mon sac.||}}",
+      "{{fr-FR|Mon ami est blessé.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3183,11 +3183,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I lost my phone.'?",
-    "correctAnswer": "J'ai perdu mon t\u00e9l\u00e9phone.",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon téléphone.||}}",
     "incorrectAnswers": [
-      "J'ai perdu mon sac.",
-      "Mon ami est bless\u00e9.",
-      "C'est une urgence."
+      "{{fr-FR|J'ai perdu mon sac.||}}",
+      "{{fr-FR|Mon ami est blessé.||}}",
+      "{{fr-FR|C'est une urgence.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I lost my bag.'?",
-    "correctAnswer": "J'ai perdu mon sac.",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon sac.||}}",
     "incorrectAnswers": [
-      "Mon ami est bless\u00e9.",
-      "C'est une urgence.",
-      "Au secours !"
+      "{{fr-FR|Mon ami est blessé.||}}",
+      "{{fr-FR|C'est une urgence.||}}",
+      "{{fr-FR|Au secours !||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3223,11 +3223,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'My friend is hurt.'.",
-    "correctAnswer": "Mon ami est bless\u00e9.",
+    "correctAnswer": "{{fr-FR|Mon ami est blessé.||}}",
     "incorrectAnswers": [
-      "C'est une urgence.",
-      "Au secours !",
-      "Appelez la police !"
+      "{{fr-FR|C'est une urgence.||}}",
+      "{{fr-FR|Au secours !||}}",
+      "{{fr-FR|Appelez la police !||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3243,11 +3243,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'This is an emergency.'?",
-    "correctAnswer": "C'est une urgence.",
+    "correctAnswer": "{{fr-FR|C'est une urgence.||}}",
     "incorrectAnswers": [
-      "Au secours !",
-      "Appelez la police !",
-      "J'ai perdu mon passeport."
+      "{{fr-FR|Au secours !||}}",
+      "{{fr-FR|Appelez la police !||}}",
+      "{{fr-FR|J'ai perdu mon passeport.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3263,11 +3263,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Happy birthday!'?",
-    "correctAnswer": "Joyeux anniversaire !",
+    "correctAnswer": "{{fr-FR|Joyeux anniversaire !||}}",
     "incorrectAnswers": [
-      "F\u00e9licitations !",
-      "Bonne chance !",
-      "De rien."
+      "{{fr-FR|Félicitations !||}}",
+      "{{fr-FR|Bonne chance !||}}",
+      "{{fr-FR|De rien.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3283,11 +3283,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Congratulations!'?",
-    "correctAnswer": "F\u00e9licitations !",
+    "correctAnswer": "{{fr-FR|Félicitations !||}}",
     "incorrectAnswers": [
-      "Bonne chance !",
-      "De rien.",
-      "Ce n'est rien."
+      "{{fr-FR|Bonne chance !||}}",
+      "{{fr-FR|De rien.||}}",
+      "{{fr-FR|Ce n'est rien.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3303,11 +3303,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Good luck!'.",
-    "correctAnswer": "Bonne chance !",
+    "correctAnswer": "{{fr-FR|Bonne chance !||}}",
     "incorrectAnswers": [
-      "De rien.",
-      "Ce n'est rien.",
-      "Je suis d\u00e9sol\u00e9 de l'apprendre."
+      "{{fr-FR|De rien.||}}",
+      "{{fr-FR|Ce n'est rien.||}}",
+      "{{fr-FR|Je suis désolé de l'apprendre.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3323,11 +3323,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'You're welcome.'?",
-    "correctAnswer": "De rien.",
+    "correctAnswer": "{{fr-FR|De rien.||}}",
     "incorrectAnswers": [
-      "Ce n'est rien.",
-      "Je suis d\u00e9sol\u00e9 de l'apprendre.",
-      "Bon app\u00e9tit."
+      "{{fr-FR|Ce n'est rien.||}}",
+      "{{fr-FR|Je suis désolé de l'apprendre.||}}",
+      "{{fr-FR|Bon appétit.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3343,11 +3343,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Don't mention it.'?",
-    "correctAnswer": "Ce n'est rien.",
+    "correctAnswer": "{{fr-FR|Ce n'est rien.||}}",
     "incorrectAnswers": [
-      "Je suis d\u00e9sol\u00e9 de l'apprendre.",
-      "Bon app\u00e9tit.",
-      "Bon voyage."
+      "{{fr-FR|Je suis désolé de l'apprendre.||}}",
+      "{{fr-FR|Bon appétit.||}}",
+      "{{fr-FR|Bon voyage.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3363,11 +3363,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "Je suis d\u00e9sol\u00e9 de l'apprendre.",
+    "correctAnswer": "{{fr-FR|Je suis désolé de l'apprendre.||}}",
     "incorrectAnswers": [
-      "Bon app\u00e9tit.",
-      "Bon voyage.",
-      "On se voit lundi."
+      "{{fr-FR|Bon appétit.||}}",
+      "{{fr-FR|Bon voyage.||}}",
+      "{{fr-FR|On se voit lundi.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3383,11 +3383,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "Bon app\u00e9tit.",
+    "correctAnswer": "{{fr-FR|Bon appétit.||}}",
     "incorrectAnswers": [
-      "Bon voyage.",
-      "On se voit lundi.",
-      "Bienvenue dans notre ville."
+      "{{fr-FR|Bon voyage.||}}",
+      "{{fr-FR|On se voit lundi.||}}",
+      "{{fr-FR|Bienvenue dans notre ville.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3403,11 +3403,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Have a nice trip.'?",
-    "correctAnswer": "Bon voyage.",
+    "correctAnswer": "{{fr-FR|Bon voyage.||}}",
     "incorrectAnswers": [
-      "On se voit lundi.",
-      "Bienvenue dans notre ville.",
-      "Bonnes f\u00eates !"
+      "{{fr-FR|On se voit lundi.||}}",
+      "{{fr-FR|Bienvenue dans notre ville.||}}",
+      "{{fr-FR|Bonnes fêtes !||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'See you on Monday.'?",
-    "correctAnswer": "On se voit lundi.",
+    "correctAnswer": "{{fr-FR|On se voit lundi.||}}",
     "incorrectAnswers": [
-      "Bienvenue dans notre ville.",
-      "Bonnes f\u00eates !",
-      "Amusez-vous bien !"
+      "{{fr-FR|Bienvenue dans notre ville.||}}",
+      "{{fr-FR|Bonnes fêtes !||}}",
+      "{{fr-FR|Amusez-vous bien !||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3443,11 +3443,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Welcome to our city.'?",
-    "correctAnswer": "Bienvenue dans notre ville.",
+    "correctAnswer": "{{fr-FR|Bienvenue dans notre ville.||}}",
     "incorrectAnswers": [
-      "Bonnes f\u00eates !",
-      "Amusez-vous bien !",
-      "Joyeux anniversaire !"
+      "{{fr-FR|Bonnes fêtes !||}}",
+      "{{fr-FR|Amusez-vous bien !||}}",
+      "{{fr-FR|Joyeux anniversaire !||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3463,11 +3463,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'Happy holidays!'.",
-    "correctAnswer": "Bonnes f\u00eates !",
+    "correctAnswer": "{{fr-FR|Bonnes fêtes !||}}",
     "incorrectAnswers": [
-      "Amusez-vous bien !",
-      "Joyeux anniversaire !",
-      "F\u00e9licitations !"
+      "{{fr-FR|Amusez-vous bien !||}}",
+      "{{fr-FR|Joyeux anniversaire !||}}",
+      "{{fr-FR|Félicitations !||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3483,11 +3483,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Have fun!'?",
-    "correctAnswer": "Amusez-vous bien !",
+    "correctAnswer": "{{fr-FR|Amusez-vous bien !||}}",
     "incorrectAnswers": [
-      "Joyeux anniversaire !",
-      "F\u00e9licitations !",
-      "Bonne chance !"
+      "{{fr-FR|Joyeux anniversaire !||}}",
+      "{{fr-FR|Félicitations !||}}",
+      "{{fr-FR|Bonne chance !||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3503,11 +3503,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I work in an office.'?",
-    "correctAnswer": "Je travaille dans un bureau.",
+    "correctAnswer": "{{fr-FR|Je travaille dans un bureau.||}}",
     "incorrectAnswers": [
-      "Je travaille comme professeur.",
-      "J'\u00e9tudie tous les jours.",
-      "J'apprends la langue."
+      "{{fr-FR|Je travaille comme professeur.||}}",
+      "{{fr-FR|J'étudie tous les jours.||}}",
+      "{{fr-FR|J'apprends la langue.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3523,11 +3523,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'I work as a teacher.'?",
-    "correctAnswer": "Je travaille comme professeur.",
+    "correctAnswer": "{{fr-FR|Je travaille comme professeur.||}}",
     "incorrectAnswers": [
-      "J'\u00e9tudie tous les jours.",
-      "J'apprends la langue.",
-      "\u00c9crivez-le, s'il vous pla\u00eet."
+      "{{fr-FR|J'étudie tous les jours.||}}",
+      "{{fr-FR|J'apprends la langue.||}}",
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3543,11 +3543,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I study every day.'.",
-    "correctAnswer": "J'\u00e9tudie tous les jours.",
+    "correctAnswer": "{{fr-FR|J'étudie tous les jours.||}}",
     "incorrectAnswers": [
-      "J'apprends la langue.",
-      "\u00c9crivez-le, s'il vous pla\u00eet.",
-      "Le cours commence maintenant."
+      "{{fr-FR|J'apprends la langue.||}}",
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||}}",
+      "{{fr-FR|Le cours commence maintenant.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3563,11 +3563,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am learning the language.'?",
-    "correctAnswer": "J'apprends la langue.",
+    "correctAnswer": "{{fr-FR|J'apprends la langue.||}}",
     "incorrectAnswers": [
-      "\u00c9crivez-le, s'il vous pla\u00eet.",
-      "Le cours commence maintenant.",
-      "J'ai besoin d'un stylo."
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||}}",
+      "{{fr-FR|Le cours commence maintenant.||}}",
+      "{{fr-FR|J'ai besoin d'un stylo.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3583,11 +3583,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Please write it down.'?",
-    "correctAnswer": "\u00c9crivez-le, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Écrivez-le, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Le cours commence maintenant.",
-      "J'ai besoin d'un stylo.",
-      "J'ai des devoirs."
+      "{{fr-FR|Le cours commence maintenant.||}}",
+      "{{fr-FR|J'ai besoin d'un stylo.||}}",
+      "{{fr-FR|J'ai des devoirs.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3603,11 +3603,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'The class starts now.'?",
-    "correctAnswer": "Le cours commence maintenant.",
+    "correctAnswer": "{{fr-FR|Le cours commence maintenant.||}}",
     "incorrectAnswers": [
-      "J'ai besoin d'un stylo.",
-      "J'ai des devoirs.",
-      "J'ai un examen demain."
+      "{{fr-FR|J'ai besoin d'un stylo.||}}",
+      "{{fr-FR|J'ai des devoirs.||}}",
+      "{{fr-FR|J'ai un examen demain.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3623,11 +3623,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I need a pen.'.",
-    "correctAnswer": "J'ai besoin d'un stylo.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un stylo.||}}",
     "incorrectAnswers": [
-      "J'ai des devoirs.",
-      "J'ai un examen demain.",
-      "O\u00f9 est la salle de classe ?"
+      "{{fr-FR|J'ai des devoirs.||}}",
+      "{{fr-FR|J'ai un examen demain.||}}",
+      "{{fr-FR|Où est la salle de classe ?||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I have homework.'?",
-    "correctAnswer": "J'ai des devoirs.",
+    "correctAnswer": "{{fr-FR|J'ai des devoirs.||}}",
     "incorrectAnswers": [
-      "J'ai un examen demain.",
-      "O\u00f9 est la salle de classe ?",
-      "Le livre est sur la table."
+      "{{fr-FR|J'ai un examen demain.||}}",
+      "{{fr-FR|Où est la salle de classe ?||}}",
+      "{{fr-FR|Le livre est sur la table.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3663,11 +3663,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "J'ai un examen demain.",
+    "correctAnswer": "{{fr-FR|J'ai un examen demain.||}}",
     "incorrectAnswers": [
-      "O\u00f9 est la salle de classe ?",
-      "Le livre est sur la table.",
-      "Mon professeur est tr\u00e8s gentil."
+      "{{fr-FR|Où est la salle de classe ?||}}",
+      "{{fr-FR|Le livre est sur la table.||}}",
+      "{{fr-FR|Mon professeur est très gentil.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3683,11 +3683,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Where is the classroom?'?",
-    "correctAnswer": "O\u00f9 est la salle de classe ?",
+    "correctAnswer": "{{fr-FR|Où est la salle de classe ?||}}",
     "incorrectAnswers": [
-      "Le livre est sur la table.",
-      "Mon professeur est tr\u00e8s gentil.",
-      "Je travaille dans un bureau."
+      "{{fr-FR|Le livre est sur la table.||}}",
+      "{{fr-FR|Mon professeur est très gentil.||}}",
+      "{{fr-FR|Je travaille dans un bureau.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3703,11 +3703,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'The book is on the table.'.",
-    "correctAnswer": "Le livre est sur la table.",
+    "correctAnswer": "{{fr-FR|Le livre est sur la table.||}}",
     "incorrectAnswers": [
-      "Mon professeur est tr\u00e8s gentil.",
-      "Je travaille dans un bureau.",
-      "Je travaille comme professeur."
+      "{{fr-FR|Mon professeur est très gentil.||}}",
+      "{{fr-FR|Je travaille dans un bureau.||}}",
+      "{{fr-FR|Je travaille comme professeur.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3723,11 +3723,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "Mon professeur est tr\u00e8s gentil.",
+    "correctAnswer": "{{fr-FR|Mon professeur est très gentil.||}}",
     "incorrectAnswers": [
-      "Je travaille dans un bureau.",
-      "Je travaille comme professeur.",
-      "J'\u00e9tudie tous les jours."
+      "{{fr-FR|Je travaille dans un bureau.||}}",
+      "{{fr-FR|Je travaille comme professeur.||}}",
+      "{{fr-FR|J'étudie tous les jours.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3743,11 +3743,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "Je parle un peu la langue.",
+    "correctAnswer": "{{fr-FR|Je parle un peu la langue.||}}",
     "incorrectAnswers": [
-      "Dites-le encore une fois, s'il vous pla\u00eet.",
-      "Que veut dire ce mot ?",
-      "Je ne connais pas ce mot."
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||}}",
+      "{{fr-FR|Que veut dire ce mot ?||}}",
+      "{{fr-FR|Je ne connais pas ce mot.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3763,11 +3763,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Please say that again.'?",
-    "correctAnswer": "Dites-le encore une fois, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Que veut dire ce mot ?",
-      "Je ne connais pas ce mot.",
-      "Est-ce correct ?"
+      "{{fr-FR|Que veut dire ce mot ?||}}",
+      "{{fr-FR|Je ne connais pas ce mot.||}}",
+      "{{fr-FR|Est-ce correct ?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3783,11 +3783,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'What does this word mean?'.",
-    "correctAnswer": "Que veut dire ce mot ?",
+    "correctAnswer": "{{fr-FR|Que veut dire ce mot ?||}}",
     "incorrectAnswers": [
-      "Je ne connais pas ce mot.",
-      "Est-ce correct ?",
-      "Pouvez-vous l'expliquer ?"
+      "{{fr-FR|Je ne connais pas ce mot.||}}",
+      "{{fr-FR|Est-ce correct ?||}}",
+      "{{fr-FR|Pouvez-vous l'expliquer ?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3803,11 +3803,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I do not know this word.'?",
-    "correctAnswer": "Je ne connais pas ce mot.",
+    "correctAnswer": "{{fr-FR|Je ne connais pas ce mot.||}}",
     "incorrectAnswers": [
-      "Est-ce correct ?",
-      "Pouvez-vous l'expliquer ?",
-      "Je comprends maintenant."
+      "{{fr-FR|Est-ce correct ?||}}",
+      "{{fr-FR|Pouvez-vous l'expliquer ?||}}",
+      "{{fr-FR|Je comprends maintenant.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3823,11 +3823,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Is this correct?'?",
-    "correctAnswer": "Est-ce correct ?",
+    "correctAnswer": "{{fr-FR|Est-ce correct ?||}}",
     "incorrectAnswers": [
-      "Pouvez-vous l'expliquer ?",
-      "Je comprends maintenant.",
-      "Utilisez des mots simples, s'il vous pla\u00eet."
+      "{{fr-FR|Pouvez-vous l'expliquer ?||}}",
+      "{{fr-FR|Je comprends maintenant.||}}",
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3843,11 +3843,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Can you explain it?'?",
-    "correctAnswer": "Pouvez-vous l'expliquer ?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous l'expliquer ?||}}",
     "incorrectAnswers": [
-      "Je comprends maintenant.",
-      "Utilisez des mots simples, s'il vous pla\u00eet.",
-      "Je m'entra\u00eene tous les jours."
+      "{{fr-FR|Je comprends maintenant.||}}",
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||}}",
+      "{{fr-FR|Je m'entraîne tous les jours.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'I understand now.'.",
-    "correctAnswer": "Je comprends maintenant.",
+    "correctAnswer": "{{fr-FR|Je comprends maintenant.||}}",
     "incorrectAnswers": [
-      "Utilisez des mots simples, s'il vous pla\u00eet.",
-      "Je m'entra\u00eene tous les jours.",
-      "Lisez cette phrase, s'il vous pla\u00eet."
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||}}",
+      "{{fr-FR|Je m'entraîne tous les jours.||}}",
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3883,11 +3883,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'Please use simple words.'?",
-    "correctAnswer": "Utilisez des mots simples, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Je m'entra\u00eene tous les jours.",
-      "Lisez cette phrase, s'il vous pla\u00eet.",
-      "Comment \u00e9crit-on ce mot ?"
+      "{{fr-FR|Je m'entraîne tous les jours.||}}",
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||}}",
+      "{{fr-FR|Comment écrit-on ce mot ?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3903,11 +3903,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "Je m'entra\u00eene tous les jours.",
+    "correctAnswer": "{{fr-FR|Je m'entraîne tous les jours.||}}",
     "incorrectAnswers": [
-      "Lisez cette phrase, s'il vous pla\u00eet.",
-      "Comment \u00e9crit-on ce mot ?",
-      "J'apprends lentement."
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||}}",
+      "{{fr-FR|Comment écrit-on ce mot ?||}}",
+      "{{fr-FR|J'apprends lentement.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3923,11 +3923,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Which French phrase means 'Please read this sentence.'?",
-    "correctAnswer": "Lisez cette phrase, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Lisez cette phrase, s'il vous plaît.||}}",
     "incorrectAnswers": [
-      "Comment \u00e9crit-on ce mot ?",
-      "J'apprends lentement.",
-      "Je parle un peu la langue."
+      "{{fr-FR|Comment écrit-on ce mot ?||}}",
+      "{{fr-FR|J'apprends lentement.||}}",
+      "{{fr-FR|Je parle un peu la langue.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3943,11 +3943,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct French phrase for 'How do you write that word?'.",
-    "correctAnswer": "Comment \u00e9crit-on ce mot ?",
+    "correctAnswer": "{{fr-FR|Comment écrit-on ce mot ?||}}",
     "incorrectAnswers": [
-      "J'apprends lentement.",
-      "Je parle un peu la langue.",
-      "Dites-le encore une fois, s'il vous pla\u00eet."
+      "{{fr-FR|J'apprends lentement.||}}",
+      "{{fr-FR|Je parle un peu la langue.||}}",
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3963,11 +3963,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "What is the natural French sentence for 'I am learning slowly.'?",
-    "correctAnswer": "J'apprends lentement.",
+    "correctAnswer": "{{fr-FR|J'apprends lentement.||}}",
     "incorrectAnswers": [
-      "Je parle un peu la langue.",
-      "Dites-le encore une fois, s'il vous pla\u00eet.",
-      "Que veut dire ce mot ?"
+      "{{fr-FR|Je parle un peu la langue.||}}",
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||}}",
+      "{{fr-FR|Que veut dire ce mot ?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3983,11 +3983,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "In beginner French, how do you say 'Where are you from?'?",
-    "correctAnswer": "D'o\u00f9 venez-vous ?",
+    "correctAnswer": "{{fr-FR|D'où venez-vous ?||}}",
     "incorrectAnswers": [
-      "Comment vous appelez-vous ?",
-      "Je viens des \u00c9tats-Unis.",
-      "J'habite \u00e0 Chicago."
+      "{{fr-FR|Comment vous appelez-vous ?||}}",
+      "{{fr-FR|Je viens des États-Unis.||}}",
+      "{{fr-FR|J'habite à Chicago.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Bulgarian?",
-    "correctAnswer": "Къде е тоалетната? (Kade e toaletnata?)",
+    "correctAnswer": "{{bg-BG|Къде е тоалетната?|Kade e toaletnata?|}}",
     "incorrectAnswers": [
-      "Какво е тоалетната? (Kakvo e toaletnata?)",
-      "Кога е отворено? (Koga e otvoreno?)",
-      "Колко струва? (Kolko struva?)"
+      "{{bg-BG|Какво е тоалетната?|Kakvo e toaletnata?|}}",
+      "{{bg-BG|Кога е отворено?|Koga e otvoreno?|}}",
+      "{{bg-BG|Колко струва?|Kolko struva?|}}"
     ],
     "explanation": "'Kade e' = 'where is'. 'Kade e toaletnata?' is the essential travel phrase.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Bulgarian?",
-    "correctAnswer": "Колко струва това? (Kolko struva tova?)",
+    "correctAnswer": "{{bg-BG|Колко струва това?|Kolko struva tova?|}}",
     "incorrectAnswers": [
-      "Какво е това? (Kakvo e tova?)",
-      "Къде да купя? (Kade da kupya?)",
-      "Има ли отстъпка? (Ima li otstapka?)"
+      "{{bg-BG|Какво е това?|Kakvo e tova?|}}",
+      "{{bg-BG|Къде да купя?|Kade da kupya?|}}",
+      "{{bg-BG|Има ли отстъпка?|Ima li otstapka?|}}"
     ],
     "explanation": "'Kolko struva tova?' — 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in Bulgarian?",
-    "correctAnswer": "Едно кафе, моля. (Edno kafe, molya.)",
+    "correctAnswer": "{{bg-BG|Едно кафе, моля.|Edno kafe, molya.|}}",
     "incorrectAnswers": [
-      "Искам кафе! (Iskam kafe!)",
-      "Дайте кафе. (Dayte kafe.)",
-      "Кафе веднага. (Kafe vednaga.)"
+      "{{bg-BG|Искам кафе!|Iskam kafe!|}}",
+      "{{bg-BG|Дайте кафе.|Dayte kafe.|}}",
+      "{{bg-BG|Кафе веднага.|Kafe vednaga.|}}"
     ],
     "explanation": "'Edno kafe, molya' — 'One coffee, please' — the standard polite café order.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in Bulgarian?",
-    "correctAnswer": "Сметката, моля. (Smetkata, molya.)",
+    "correctAnswer": "{{bg-BG|Сметката, моля.|Smetkata, molya.|}}",
     "incorrectAnswers": [
-      "Менюто, моля. (Menyuto, molya.)",
-      "Още едно. (Oshte edno.)",
-      "Беше вкусно. (Beshe vkusno.)"
+      "{{bg-BG|Менюто, моля.|Menyuto, molya.|}}",
+      "{{bg-BG|Още едно.|Oshte edno.|}}",
+      "{{bg-BG|Беше вкусно.|Beshe vkusno.|}}"
     ],
     "explanation": "'Smetkata, molya' — 'The bill, please' — clean and polite.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Bulgarian?",
-    "correctAnswer": "Не разбирам. (Ne razbiram.)",
+    "correctAnswer": "{{bg-BG|Не разбирам.|Ne razbiram.|}}",
     "incorrectAnswers": [
-      "Не знам. (Ne znam.)",
-      "Не чувам. (Ne chuvam.)",
-      "Не говоря. (Ne govorya.)"
+      "{{bg-BG|Не знам.|Ne znam.|}}",
+      "{{bg-BG|Не чувам.|Ne chuvam.|}}",
+      "{{bg-BG|Не говоря.|Ne govorya.|}}"
     ],
     "explanation": "'Ne razbiram' — 'I don't understand' — the first rescue phrase for any learner.",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Bulgarian?",
-    "correctAnswer": "Говорите ли английски? (Govorite li angliyski?)",
+    "correctAnswer": "{{bg-BG|Говорите ли английски?|Govorite li angliyski?|}}",
     "incorrectAnswers": [
-      "Разбирате ли английски? (Razbirate li angliyski?)",
-      "Знаете ли английски? (Znaete li angliyski?)",
-      "Учите ли английски? (Uchite li angliyski?)"
+      "{{bg-BG|Разбирате ли английски?|Razbirate li angliyski?|}}",
+      "{{bg-BG|Знаете ли английски?|Znaete li angliyski?|}}",
+      "{{bg-BG|Учите ли английски?|Uchite li angliyski?|}}"
     ],
     "explanation": "'Govorite li angliyski?' — 'Do you speak English?' — polite formal form.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in Romanian?",
-    "correctAnswer": "Bună ziua (formal) / Salut (informal)",
+    "correctAnswer": "{{ro-RO|Bună ziua||}} (formal) / {{ro-RO|Salut||}} (informal)",
     "incorrectAnswers": [
-      "La revedere",
-      "Mulțumesc",
-      "Vă rog"
+      "{{ro-RO|La revedere||}}",
+      "{{ro-RO|Mulțumesc||}}",
+      "{{ro-RO|Vă rog||}}"
     ],
     "explanation": "'Bună ziua' = good day (formal). 'Salut' is casual hello. 'Bună' alone works in neutral contexts.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in Romanian?",
-    "correctAnswer": "Mulțumesc",
+    "correctAnswer": "{{ro-RO|Mulțumesc||}}",
     "incorrectAnswers": [
-      "Vă rog",
-      "Scuzați-mă",
-      "Bună ziua"
+      "{{ro-RO|Vă rog||}}",
+      "{{ro-RO|Scuzați-mă||}}",
+      "{{ro-RO|Bună ziua||}}"
     ],
     "explanation": "'Mulțumesc' is the standard thank you. 'Mulțumesc frumos' = thank you very much (literally 'thank you beautifully').",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in Romanian?",
-    "correctAnswer": "Vă rog (formal) / Te rog (informal)",
+    "correctAnswer": "{{ro-RO|Vă rog||}} (formal) / {{ro-RO|Te rog||}} (informal)",
     "incorrectAnswers": [
-      "Mulțumesc",
-      "Scuzați-mă",
-      "Da"
+      "{{ro-RO|Mulțumesc||}}",
+      "{{ro-RO|Scuzați-mă||}}",
+      "{{ro-RO|Da||}}"
     ],
     "explanation": "'Vă rog' is formal, 'te rog' informal. Both mean 'I beg you' — the polite please.",
     "keywords": [
@@ -64,9 +64,9 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'yes' and 'no' in Romanian?",
-    "correctAnswer": "Da / Nu",
+    "correctAnswer": "{{ro-RO|Da||}} / {{ro-RO|Nu||}}",
     "incorrectAnswers": [
-      "Sì / No",
+      "{{ro-RO|Sì||}} / {{ro-RO|No||}}",
       "Oui / Non",
       "Так / Ні"
     ],
@@ -83,11 +83,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in Romanian?",
-    "correctAnswer": "La revedere",
+    "correctAnswer": "{{ro-RO|La revedere||}}",
     "incorrectAnswers": [
-      "Bună ziua",
-      "Mulțumesc",
-      "Salut"
+      "{{ro-RO|Bună ziua||}}",
+      "{{ro-RO|Mulțumesc||}}",
+      "{{ro-RO|Salut||}}"
     ],
     "explanation": "'La revedere' — 'until we see again' — formal goodbye. 'Pa' or 'pa-pa' is informal.",
     "keywords": [
@@ -103,11 +103,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in Romanian?",
-    "correctAnswer": "Mă numesc...",
+    "correctAnswer": "{{ro-RO|Mă numesc...||}}",
     "incorrectAnswers": [
-      "Locuiesc în...",
-      "Sunt din...",
-      "Îmi place..."
+      "{{ro-RO|Locuiesc în...||}}",
+      "{{ro-RO|Sunt din...||}}",
+      "{{ro-RO|Îmi place...||}}"
     ],
     "explanation": "'Mă numesc [name]' — 'I name myself [name]' — the standard introduction. Romanian origin is Latin 'nominare'.",
     "keywords": [
@@ -123,11 +123,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in Romanian?",
-    "correctAnswer": "unu, doi, trei",
+    "correctAnswer": "{{ro-RO|unu, doi, trei||}}",
     "incorrectAnswers": [
-      "un, deux, trois",
-      "uno, dos, tres",
-      "un, dwa, trzy"
+      "{{ro-RO|un, deux, trois||}}",
+      "{{ro-RO|uno, dos, tres||}}",
+      "{{ro-RO|un, dwa, trzy||}}"
     ],
     "explanation": "Romanian numbers: unu (1), doi (2), trei (3). Very similar to other Romance languages.",
     "keywords": [
@@ -142,11 +142,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'water' in Romanian?",
-    "correctAnswer": "apă",
+    "correctAnswer": "{{ro-RO|apă||}}",
     "incorrectAnswers": [
-      "pâine",
-      "lapte",
-      "vin"
+      "{{ro-RO|pâine||}}",
+      "{{ro-RO|lapte||}}",
+      "{{ro-RO|vin||}}"
     ],
     "explanation": "'Apă' means water (from Latin 'aqua'). 'Pâine' = bread, 'lapte' = milk, 'vin' = wine.",
     "keywords": [
@@ -161,11 +161,11 @@
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Romanian?",
-    "correctAnswer": "Scuzați-mă (formal) / Scuze (informal)",
+    "correctAnswer": "{{ro-RO|Scuzați-mă||}} (formal) / {{ro-RO|Scuze||}} (informal)",
     "incorrectAnswers": [
-      "Mulțumesc",
-      "Vă rog",
-      "Bună"
+      "{{ro-RO|Mulțumesc||}}",
+      "{{ro-RO|Vă rog||}}",
+      "{{ro-RO|Bună||}}"
     ],
     "explanation": "'Scuzați-mă' (formal) or 'scuze' (informal) — used to get attention or apologize.",
     "keywords": [

@@ -77,6 +77,14 @@ const ItemListCard = ({
                 speech={item.correctAnswerSpeech}
                 className="mt-1 text-sm text-gray-500 italic"
               />
+              {item.explanation?.trim() && (
+                <div className="mt-2 border-t border-green-200 pt-2 text-gray-800">
+                  <p>
+                    <strong>Explanation:</strong>{" "}
+                    <ForeignPhraseText text={item.explanation} linkify />
+                  </p>
+                </div>
+              )}
             </div>
             <SpeakButton
               text={item.correctAnswer}

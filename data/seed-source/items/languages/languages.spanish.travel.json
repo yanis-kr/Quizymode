@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "You want a single ticket for a train. Which short phrase asks for that?",
-    "correctAnswer": "Un billete sencillo, por favor.",
+    "correctAnswer": "{{es-ES|Un billete sencillo, por favor.||}}",
     "incorrectAnswers": [
-      "Una mesa para dos, por favor.",
-      "La cuenta, por favor.",
-      "\u00bfD\u00f3nde est\u00e1 el ba\u00f1o?"
+      "{{es-ES|Una mesa para dos, por favor.||}}",
+      "{{es-ES|La cuenta, por favor.||}}",
+      "{{es-ES|¿Dónde está el baño?||}}"
     ],
     "explanation": "\"Billete\" (or \"boleto\" in many regions) with \"sencillo\" signals a one-way or single ticket in travel contexts.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, at the airport, which word usually means \"passport\"?",
-    "correctAnswer": "pasaporte",
+    "correctAnswer": "{{es-ES|pasaporte||}}",
     "incorrectAnswers": [
-      "maleta",
-      "vuelo",
-      "puerta"
+      "{{es-ES|maleta||}}",
+      "{{es-ES|vuelo||}}",
+      "{{es-ES|puerta||}}"
     ],
     "explanation": "\"Pasaporte\" is the standard word for passport.",
     "keywords": [
@@ -45,13 +45,13 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "You need the main train station. Which word often means \"station\" in this context?",
-    "correctAnswer": "estaci\u00f3n",
+    "correctAnswer": "{{es-ES|estación||}}",
     "incorrectAnswers": [
-      "calle",
-      "plaza",
-      "hotel"
+      "{{es-ES|calle||}}",
+      "{{es-ES|plaza||}}",
+      "{{es-ES|hotel||}}"
     ],
-    "explanation": "\"Estaci\u00f3n\" is the common word for a station, including train stations.",
+    "explanation": "\"Estación\" is the common word for a station, including train stations.",
     "keywords": [
       "station",
       "train",
@@ -65,13 +65,13 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "\u00bfD\u00f3nde est\u00e1 el banco m\u00e1s cercano?",
+    "correctAnswer": "{{es-ES|¿Dónde está el banco más cercano?||}}",
     "incorrectAnswers": [
-      "\u00bfCu\u00e1nto cuesta?",
-      "\u00bfTiene men\u00fa en ingl\u00e9s?",
-      "Quisiera el men\u00fa del d\u00eda."
+      "{{es-ES|¿Cuánto cuesta?||}}",
+      "{{es-ES|¿Tiene menú en inglés?||}}",
+      "{{es-ES|Quisiera el menú del día.||}}"
     ],
-    "explanation": "\"\u00bfD\u00f3nde est\u00e1...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
+    "explanation": "\"¿Dónde está...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
     "keywords": [
       "bank",
       "directions",
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, which word means \"left\" when you give or follow directions?",
-    "correctAnswer": "izquierda",
+    "correctAnswer": "{{es-ES|izquierda||}}",
     "incorrectAnswers": [
-      "derecha",
-      "recto",
-      "cerca"
+      "{{es-ES|derecha||}}",
+      "{{es-ES|recto||}}",
+      "{{es-ES|cerca||}}"
     ],
     "explanation": "\"Izquierda\" means left; \"a la izquierda\" is a common direction phrase.",
     "keywords": [
@@ -105,13 +105,13 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "At a hotel front desk, which phrase asks if they have a free room?",
-    "correctAnswer": "\u00bfTienen una habitaci\u00f3n libre?",
+    "correctAnswer": "{{es-ES|¿Tienen una habitación libre?||}}",
     "incorrectAnswers": [
-      "\u00bfA qu\u00e9 hora sale el vuelo?",
-      "Un caf\u00e9 con leche, por favor.",
-      "\u00bfCu\u00e1nto cuesta la entrada?"
+      "{{es-ES|¿A qué hora sale el vuelo?||}}",
+      "{{es-ES|Un café con leche, por favor.||}}",
+      "{{es-ES|¿Cuánto cuesta la entrada?||}}"
     ],
-    "explanation": "\"Habitaci\u00f3n\" means room; \"libre\" or \"disponible\" often signals availability.",
+    "explanation": "\"Habitación\" means room; \"libre\" or \"disponible\" often signals availability.",
     "keywords": [
       "hotel",
       "room",

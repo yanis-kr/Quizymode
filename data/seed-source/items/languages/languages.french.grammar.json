@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
     "question": "Which article is correct for a feminine singular noun like \"maison\"?",
-    "correctAnswer": "la",
+    "correctAnswer": "{{fr-FR|la||}}",
     "incorrectAnswers": [
-      "le",
-      "les",
-      "l'"
+      "{{fr-FR|le||}}",
+      "{{fr-FR|les||}}",
+      "{{fr-FR|l'||}}"
     ],
     "explanation": "\"Maison\" is feminine singular, so it takes \"la\" when the next word begins with a consonant sound.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
     "question": "Which sentence shows the usual placement of \"ne\" and \"pas\" for \"I do not speak\"?",
-    "correctAnswer": "Je ne parle pas.",
+    "correctAnswer": "{{fr-FR|Je ne parle pas.||}}",
     "incorrectAnswers": [
-      "Je parle pas ne.",
-      "Ne je parle pas.",
-      "Je pas parle ne."
+      "{{fr-FR|Je parle pas ne.||}}",
+      "{{fr-FR|Ne je parle pas.||}}",
+      "{{fr-FR|Je pas parle ne.||}}"
     ],
     "explanation": "Standard French places \"ne\" before the verb and \"pas\" after it in simple negatives.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
     "question": "Which adjective form matches a feminine singular noun: \"une robe ___\"?",
-    "correctAnswer": "blanche",
+    "correctAnswer": "{{fr-FR|blanche||}}",
     "incorrectAnswers": [
-      "blanc",
-      "blancs",
-      "blanches"
+      "{{fr-FR|blanc||}}",
+      "{{fr-FR|blancs||}}",
+      "{{fr-FR|blanches||}}"
     ],
     "explanation": "\"Robe\" is feminine singular, so the adjective agrees: \"blanche\" ends with -e and matches feminine singular.",
     "keywords": [
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "Which subject pronoun fits this sentence: \"___ suis \u00e9tudiant\"?",
-    "correctAnswer": "Je",
+    "question": "Which subject pronoun fits this sentence: \"___ suis étudiant\"?",
+    "correctAnswer": "{{fr-FR|Je||}}",
     "incorrectAnswers": [
-      "Tu",
-      "Il",
-      "Nous"
+      "{{fr-FR|Tu||}}",
+      "{{fr-FR|Il||}}",
+      "{{fr-FR|Nous||}}"
     ],
-    "explanation": "\"Suis\" is the first-person singular form of \"\u00eatre,\" so it goes with \"je\".",
+    "explanation": "\"Suis\" is the first-person singular form of \"être,\" so it goes with \"je\".",
     "keywords": [
       "subject-pronouns",
       "to-be",
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
     "question": "For regular -er verbs in the present tense, which ending goes with \"nous\"?",
-    "correctAnswer": "-ons",
+    "correctAnswer": "{{fr-FR|-ons||}}",
     "incorrectAnswers": [
-      "-ez",
-      "-ent",
-      "-es"
+      "{{fr-FR|-ez||}}",
+      "{{fr-FR|-ent||}}",
+      "{{fr-FR|-es||}}"
     ],
     "explanation": "Regular verbs like \"parler\" add \"-ons\" for \"nous\": \"nous parlons\".",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
     "question": "Which contraction is normal before a vowel sound for \"the man\"?",
-    "correctAnswer": "l'homme",
+    "correctAnswer": "{{fr-FR|l'homme||}}",
     "incorrectAnswers": [
-      "le homme",
-      "la homme",
-      "les homme"
+      "{{fr-FR|le homme||}}",
+      "{{fr-FR|la homme||}}",
+      "{{fr-FR|les homme||}}"
     ],
     "explanation": "French uses \"l'\" before a vowel sound to avoid a rough break between words.",
     "keywords": [

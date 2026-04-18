@@ -5,11 +5,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in German?",
-    "correctAnswer": "Wo ist die Toilette?",
+    "correctAnswer": "{{de-DE|Wo ist die Toilette?||}}",
     "incorrectAnswers": [
-      "Wann ist die Toilette?",
-      "Was ist die Toilette?",
-      "Wie ist die Toilette?"
+      "{{de-DE|Wann ist die Toilette?||}}",
+      "{{de-DE|Was ist die Toilette?||}}",
+      "{{de-DE|Wie ist die Toilette?||}}"
     ],
     "explanation": "'Wo ist' = 'Where is'. Replace 'die Toilette' with any destination: der Bahnhof, das Hotel, etc.",
     "keywords": [
@@ -25,13 +25,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in German?",
-    "correctAnswer": "Wie viel kostet das?",
+    "correctAnswer": "{{de-DE|Wie viel kostet das?||}}",
     "incorrectAnswers": [
-      "Was ist das?",
-      "Wo kann ich das kaufen?",
-      "Gibt es einen Rabatt?"
+      "{{de-DE|Was ist das?||}}",
+      "{{de-DE|Wo kann ich das kaufen?||}}",
+      "{{de-DE|Gibt es einen Rabatt?||}}"
     ],
-    "explanation": "'Wie viel kostet das?' \u2014 'How much does this cost?' \u2014 the key shopping phrase.",
+    "explanation": "'Wie viel kostet das?' — 'How much does this cost?' — the key shopping phrase.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -45,13 +45,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in German?",
-    "correctAnswer": "Einen Kaffee, bitte.",
+    "correctAnswer": "{{de-DE|Einen Kaffee, bitte.||}}",
     "incorrectAnswers": [
-      "Ich will Kaffee!",
-      "Gib mir Kaffee.",
-      "Kaffee sofort, bitte."
+      "{{de-DE|Ich will Kaffee!||}}",
+      "{{de-DE|Gib mir Kaffee.||}}",
+      "{{de-DE|Kaffee sofort, bitte.||}}"
     ],
-    "explanation": "'Einen [item], bitte' \u2014 'One [item], please'. Note the accusative 'einen' for masculine nouns.",
+    "explanation": "'Einen [item], bitte' — 'One [item], please'. Note the accusative 'einen' for masculine nouns.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -65,13 +65,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in a German restaurant?",
-    "correctAnswer": "Die Rechnung, bitte.",
+    "correctAnswer": "{{de-DE|Die Rechnung, bitte.||}}",
     "incorrectAnswers": [
-      "Die Speisekarte, bitte.",
-      "Noch einmal, bitte.",
-      "Es war sehr lecker."
+      "{{de-DE|Die Speisekarte, bitte.||}}",
+      "{{de-DE|Noch einmal, bitte.||}}",
+      "{{de-DE|Es war sehr lecker.||}}"
     ],
-    "explanation": "'Die Rechnung, bitte' \u2014 'The bill, please'. In Austria/Bavaria you may also hear 'Zahlen, bitte'.",
+    "explanation": "'Die Rechnung, bitte' — 'The bill, please'. In Austria/Bavaria you may also hear 'Zahlen, bitte'.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -85,13 +85,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in German?",
-    "correctAnswer": "Sprechen Sie Englisch?",
+    "correctAnswer": "{{de-DE|Sprechen Sie Englisch?||}}",
     "incorrectAnswers": [
-      "Verstehen Sie Englisch?",
-      "Kennen Sie Englisch?",
-      "Lernen Sie Englisch?"
+      "{{de-DE|Verstehen Sie Englisch?||}}",
+      "{{de-DE|Kennen Sie Englisch?||}}",
+      "{{de-DE|Lernen Sie Englisch?||}}"
     ],
-    "explanation": "'Sprechen Sie Englisch?' \u2014 formal. Informal: 'Sprichst du Englisch?'",
+    "explanation": "'Sprechen Sie Englisch?' — formal. Informal: 'Sprichst du Englisch?'",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,13 +104,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left' in German?",
-    "correctAnswer": "Biegen Sie links ab.",
+    "correctAnswer": "{{de-DE|Biegen Sie links ab.||}}",
     "incorrectAnswers": [
-      "Biegen Sie rechts ab.",
-      "Fahren Sie geradeaus.",
-      "Halten Sie hier an."
+      "{{de-DE|Biegen Sie rechts ab.||}}",
+      "{{de-DE|Fahren Sie geradeaus.||}}",
+      "{{de-DE|Halten Sie hier an.||}}"
     ],
-    "explanation": "'Links' = left, 'rechts' = right, 'geradeaus' = straight ahead \u2014 the three key direction words.",
+    "explanation": "'Links' = left, 'rechts' = right, 'geradeaus' = straight ahead — the three key direction words.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -124,13 +124,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'A table for two, please' in German?",
-    "correctAnswer": "Einen Tisch f\u00fcr zwei Personen, bitte.",
+    "correctAnswer": "{{de-DE|Einen Tisch für zwei Personen, bitte.||}}",
     "incorrectAnswers": [
-      "Zwei Leute m\u00f6chten sitzen.",
-      "Wir brauchen einen gro\u00dfen Tisch.",
-      "Tisch f\u00fcr uns beide."
+      "{{de-DE|Zwei Leute möchten sitzen.||}}",
+      "{{de-DE|Wir brauchen einen großen Tisch.||}}",
+      "{{de-DE|Tisch für uns beide.||}}"
     ],
-    "explanation": "'Einen Tisch f\u00fcr [number] Personen, bitte' \u2014 swap the number as needed.",
+    "explanation": "'Einen Tisch für [number] Personen, bitte' — swap the number as needed.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -144,11 +144,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Good evening.'?",
-    "correctAnswer": "Guten Abend.",
+    "correctAnswer": "{{de-DE|Guten Abend.||}}",
     "incorrectAnswers": [
-      "Wie geht es Ihnen?",
-      "Mir geht es gut, danke.",
-      "Sehr gut, danke."
+      "{{de-DE|Wie geht es Ihnen?||}}",
+      "{{de-DE|Mir geht es gut, danke.||}}",
+      "{{de-DE|Sehr gut, danke.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -164,11 +164,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'How are you?'?",
-    "correctAnswer": "Wie geht es Ihnen?",
+    "correctAnswer": "{{de-DE|Wie geht es Ihnen?||}}",
     "incorrectAnswers": [
-      "Mir geht es gut, danke.",
-      "Sehr gut, danke.",
-      "Bis sp\u00e4ter."
+      "{{de-DE|Mir geht es gut, danke.||}}",
+      "{{de-DE|Sehr gut, danke.||}}",
+      "{{de-DE|Bis später.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -184,11 +184,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "Mir geht es gut, danke.",
+    "correctAnswer": "{{de-DE|Mir geht es gut, danke.||}}",
     "incorrectAnswers": [
-      "Sehr gut, danke.",
-      "Bis sp\u00e4ter.",
-      "Bis morgen."
+      "{{de-DE|Sehr gut, danke.||}}",
+      "{{de-DE|Bis später.||}}",
+      "{{de-DE|Bis morgen.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -204,11 +204,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Very well, thanks.'?",
-    "correctAnswer": "Sehr gut, danke.",
+    "correctAnswer": "{{de-DE|Sehr gut, danke.||}}",
     "incorrectAnswers": [
-      "Bis sp\u00e4ter.",
-      "Bis morgen.",
-      "Sch\u00f6nen Tag noch."
+      "{{de-DE|Bis später.||}}",
+      "{{de-DE|Bis morgen.||}}",
+      "{{de-DE|Schönen Tag noch.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -224,11 +224,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'See you later.'?",
-    "correctAnswer": "Bis sp\u00e4ter.",
+    "correctAnswer": "{{de-DE|Bis später.||}}",
     "incorrectAnswers": [
-      "Bis morgen.",
-      "Sch\u00f6nen Tag noch.",
-      "Willkommen."
+      "{{de-DE|Bis morgen.||}}",
+      "{{de-DE|Schönen Tag noch.||}}",
+      "{{de-DE|Willkommen.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -244,11 +244,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'See you tomorrow.'?",
-    "correctAnswer": "Bis morgen.",
+    "correctAnswer": "{{de-DE|Bis morgen.||}}",
     "incorrectAnswers": [
-      "Sch\u00f6nen Tag noch.",
-      "Willkommen.",
-      "Freut mich."
+      "{{de-DE|Schönen Tag noch.||}}",
+      "{{de-DE|Willkommen.||}}",
+      "{{de-DE|Freut mich.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -264,11 +264,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Have a good day.'.",
-    "correctAnswer": "Sch\u00f6nen Tag noch.",
+    "correctAnswer": "{{de-DE|Schönen Tag noch.||}}",
     "incorrectAnswers": [
-      "Willkommen.",
-      "Freut mich.",
-      "Sch\u00f6n, Sie wiederzusehen."
+      "{{de-DE|Willkommen.||}}",
+      "{{de-DE|Freut mich.||}}",
+      "{{de-DE|Schön, Sie wiederzusehen.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -284,11 +284,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Welcome.'?",
-    "correctAnswer": "Willkommen.",
+    "correctAnswer": "{{de-DE|Willkommen.||}}",
     "incorrectAnswers": [
-      "Freut mich.",
-      "Sch\u00f6n, Sie wiederzusehen.",
-      "Bis bald."
+      "{{de-DE|Freut mich.||}}",
+      "{{de-DE|Schön, Sie wiederzusehen.||}}",
+      "{{de-DE|Bis bald.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -304,11 +304,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "Freut mich.",
+    "correctAnswer": "{{de-DE|Freut mich.||}}",
     "incorrectAnswers": [
-      "Sch\u00f6n, Sie wiederzusehen.",
-      "Bis bald.",
-      "Sch\u00f6nen Abend."
+      "{{de-DE|Schön, Sie wiederzusehen.||}}",
+      "{{de-DE|Bis bald.||}}",
+      "{{de-DE|Schönen Abend.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -324,11 +324,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Nice to see you again.'?",
-    "correctAnswer": "Sch\u00f6n, Sie wiederzusehen.",
+    "correctAnswer": "{{de-DE|Schön, Sie wiederzusehen.||}}",
     "incorrectAnswers": [
-      "Bis bald.",
-      "Sch\u00f6nen Abend.",
-      "Guten Abend."
+      "{{de-DE|Bis bald.||}}",
+      "{{de-DE|Schönen Abend.||}}",
+      "{{de-DE|Guten Abend.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -344,11 +344,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'See you soon.'.",
-    "correctAnswer": "Bis bald.",
+    "correctAnswer": "{{de-DE|Bis bald.||}}",
     "incorrectAnswers": [
-      "Sch\u00f6nen Abend.",
-      "Guten Abend.",
-      "Wie geht es Ihnen?"
+      "{{de-DE|Schönen Abend.||}}",
+      "{{de-DE|Guten Abend.||}}",
+      "{{de-DE|Wie geht es Ihnen?||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -364,11 +364,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Have a nice evening.'?",
-    "correctAnswer": "Sch\u00f6nen Abend.",
+    "correctAnswer": "{{de-DE|Schönen Abend.||}}",
     "incorrectAnswers": [
-      "Guten Abend.",
-      "Wie geht es Ihnen?",
-      "Mir geht es gut, danke."
+      "{{de-DE|Guten Abend.||}}",
+      "{{de-DE|Wie geht es Ihnen?||}}",
+      "{{de-DE|Mir geht es gut, danke.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -384,11 +384,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'What is your name?'?",
-    "correctAnswer": "Wie hei\u00dfen Sie?",
+    "correctAnswer": "{{de-DE|Wie heißen Sie?||}}",
     "incorrectAnswers": [
-      "Ich komme aus den USA.",
-      "Ich wohne in Chicago.",
-      "Ich bin zwanzig Jahre alt."
+      "{{de-DE|Ich komme aus den USA.||}}",
+      "{{de-DE|Ich wohne in Chicago.||}}",
+      "{{de-DE|Ich bin zwanzig Jahre alt.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -404,11 +404,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I am from the United States.'?",
-    "correctAnswer": "Ich komme aus den USA.",
+    "correctAnswer": "{{de-DE|Ich komme aus den USA.||}}",
     "incorrectAnswers": [
-      "Ich wohne in Chicago.",
-      "Ich bin zwanzig Jahre alt.",
-      "Das ist mein Freund."
+      "{{de-DE|Ich wohne in Chicago.||}}",
+      "{{de-DE|Ich bin zwanzig Jahre alt.||}}",
+      "{{de-DE|Das ist mein Freund.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -424,11 +424,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I live in Chicago.'.",
-    "correctAnswer": "Ich wohne in Chicago.",
+    "correctAnswer": "{{de-DE|Ich wohne in Chicago.||}}",
     "incorrectAnswers": [
-      "Ich bin zwanzig Jahre alt.",
-      "Das ist mein Freund.",
-      "Das ist meine Schwester."
+      "{{de-DE|Ich bin zwanzig Jahre alt.||}}",
+      "{{de-DE|Das ist mein Freund.||}}",
+      "{{de-DE|Das ist meine Schwester.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -444,11 +444,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am twenty years old.'?",
-    "correctAnswer": "Ich bin zwanzig Jahre alt.",
+    "correctAnswer": "{{de-DE|Ich bin zwanzig Jahre alt.||}}",
     "incorrectAnswers": [
-      "Das ist mein Freund.",
-      "Das ist meine Schwester.",
-      "Ich bin verheiratet."
+      "{{de-DE|Das ist mein Freund.||}}",
+      "{{de-DE|Das ist meine Schwester.||}}",
+      "{{de-DE|Ich bin verheiratet.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -464,11 +464,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'This is my friend.'?",
-    "correctAnswer": "Das ist mein Freund.",
+    "correctAnswer": "{{de-DE|Das ist mein Freund.||}}",
     "incorrectAnswers": [
-      "Das ist meine Schwester.",
-      "Ich bin verheiratet.",
-      "Ich bin Student/Studentin."
+      "{{de-DE|Das ist meine Schwester.||}}",
+      "{{de-DE|Ich bin verheiratet.||}}",
+      "{{de-DE|Ich bin Student/Studentin.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -484,11 +484,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'This is my sister.'?",
-    "correctAnswer": "Das ist meine Schwester.",
+    "correctAnswer": "{{de-DE|Das ist meine Schwester.||}}",
     "incorrectAnswers": [
-      "Ich bin verheiratet.",
-      "Ich bin Student/Studentin.",
-      "Ich bin hier im Urlaub."
+      "{{de-DE|Ich bin verheiratet.||}}",
+      "{{de-DE|Ich bin Student/Studentin.||}}",
+      "{{de-DE|Ich bin hier im Urlaub.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -504,11 +504,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I am married.'.",
-    "correctAnswer": "Ich bin verheiratet.",
+    "correctAnswer": "{{de-DE|Ich bin verheiratet.||}}",
     "incorrectAnswers": [
-      "Ich bin Student/Studentin.",
-      "Ich bin hier im Urlaub.",
-      "Mein Nachname ist Garcia."
+      "{{de-DE|Ich bin Student/Studentin.||}}",
+      "{{de-DE|Ich bin hier im Urlaub.||}}",
+      "{{de-DE|Mein Nachname ist Garcia.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -524,11 +524,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am a student.'?",
-    "correctAnswer": "Ich bin Student/Studentin.",
+    "correctAnswer": "{{de-DE|Ich bin Student/Studentin.||}}",
     "incorrectAnswers": [
-      "Ich bin hier im Urlaub.",
-      "Mein Nachname ist Garcia.",
-      "Meine Telefonnummer ist..."
+      "{{de-DE|Ich bin hier im Urlaub.||}}",
+      "{{de-DE|Mein Nachname ist Garcia.||}}",
+      "{{de-DE|Meine Telefonnummer ist...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -544,11 +544,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "Ich bin hier im Urlaub.",
+    "correctAnswer": "{{de-DE|Ich bin hier im Urlaub.||}}",
     "incorrectAnswers": [
-      "Mein Nachname ist Garcia.",
-      "Meine Telefonnummer ist...",
-      "Meine Adresse ist..."
+      "{{de-DE|Mein Nachname ist Garcia.||}}",
+      "{{de-DE|Meine Telefonnummer ist...||}}",
+      "{{de-DE|Meine Adresse ist...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -564,11 +564,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "Mein Nachname ist Garcia.",
+    "correctAnswer": "{{de-DE|Mein Nachname ist Garcia.||}}",
     "incorrectAnswers": [
-      "Meine Telefonnummer ist...",
-      "Meine Adresse ist...",
-      "Wie hei\u00dfen Sie?"
+      "{{de-DE|Meine Telefonnummer ist...||}}",
+      "{{de-DE|Meine Adresse ist...||}}",
+      "{{de-DE|Wie heißen Sie?||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -584,11 +584,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'My phone number is...'.",
-    "correctAnswer": "Meine Telefonnummer ist...",
+    "correctAnswer": "{{de-DE|Meine Telefonnummer ist...||}}",
     "incorrectAnswers": [
-      "Meine Adresse ist...",
-      "Wie hei\u00dfen Sie?",
-      "Ich komme aus den USA."
+      "{{de-DE|Meine Adresse ist...||}}",
+      "{{de-DE|Wie heißen Sie?||}}",
+      "{{de-DE|Ich komme aus den USA.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -604,11 +604,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'My address is...'?",
-    "correctAnswer": "Meine Adresse ist...",
+    "correctAnswer": "{{de-DE|Meine Adresse ist...||}}",
     "incorrectAnswers": [
-      "Wie hei\u00dfen Sie?",
-      "Ich komme aus den USA.",
-      "Ich wohne in Chicago."
+      "{{de-DE|Wie heißen Sie?||}}",
+      "{{de-DE|Ich komme aus den USA.||}}",
+      "{{de-DE|Ich wohne in Chicago.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -624,11 +624,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I need water.'?",
-    "correctAnswer": "Ich brauche Wasser.",
+    "correctAnswer": "{{de-DE|Ich brauche Wasser.||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Stadtplan.",
-      "Ich brauche ein Taxi.",
-      "Ich brauche ein Zimmer."
+      "{{de-DE|Ich brauche einen Stadtplan.||}}",
+      "{{de-DE|Ich brauche ein Taxi.||}}",
+      "{{de-DE|Ich brauche ein Zimmer.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -644,11 +644,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I need a map.'?",
-    "correctAnswer": "Ich brauche einen Stadtplan.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Stadtplan.||}}",
     "incorrectAnswers": [
-      "Ich brauche ein Taxi.",
-      "Ich brauche ein Zimmer.",
-      "Haben Sie WLAN?"
+      "{{de-DE|Ich brauche ein Taxi.||}}",
+      "{{de-DE|Ich brauche ein Zimmer.||}}",
+      "{{de-DE|Haben Sie WLAN?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -664,11 +664,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I need a taxi.'.",
-    "correctAnswer": "Ich brauche ein Taxi.",
+    "correctAnswer": "{{de-DE|Ich brauche ein Taxi.||}}",
     "incorrectAnswers": [
-      "Ich brauche ein Zimmer.",
-      "Haben Sie WLAN?",
-      "Haben Sie Brot?"
+      "{{de-DE|Ich brauche ein Zimmer.||}}",
+      "{{de-DE|Haben Sie WLAN?||}}",
+      "{{de-DE|Haben Sie Brot?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -684,11 +684,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I need a room.'?",
-    "correctAnswer": "Ich brauche ein Zimmer.",
+    "correctAnswer": "{{de-DE|Ich brauche ein Zimmer.||}}",
     "incorrectAnswers": [
-      "Haben Sie WLAN?",
-      "Haben Sie Brot?",
-      "Kann ich die Speisekarte haben?"
+      "{{de-DE|Haben Sie WLAN?||}}",
+      "{{de-DE|Haben Sie Brot?||}}",
+      "{{de-DE|Kann ich die Speisekarte haben?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -704,11 +704,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "Haben Sie WLAN?",
+    "correctAnswer": "{{de-DE|Haben Sie WLAN?||}}",
     "incorrectAnswers": [
-      "Haben Sie Brot?",
-      "Kann ich die Speisekarte haben?",
-      "Kann ich eine Flasche Wasser haben?"
+      "{{de-DE|Haben Sie Brot?||}}",
+      "{{de-DE|Kann ich die Speisekarte haben?||}}",
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -724,11 +724,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Do you have bread?'?",
-    "correctAnswer": "Haben Sie Brot?",
+    "correctAnswer": "{{de-DE|Haben Sie Brot?||}}",
     "incorrectAnswers": [
-      "Kann ich die Speisekarte haben?",
-      "Kann ich eine Flasche Wasser haben?",
-      "Geben Sie mir bitte eine T\u00fcte."
+      "{{de-DE|Kann ich die Speisekarte haben?||}}",
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||}}",
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -744,11 +744,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Can I have the menu?'.",
-    "correctAnswer": "Kann ich die Speisekarte haben?",
+    "correctAnswer": "{{de-DE|Kann ich die Speisekarte haben?||}}",
     "incorrectAnswers": [
-      "Kann ich eine Flasche Wasser haben?",
-      "Geben Sie mir bitte eine T\u00fcte.",
-      "Ich brauche mehr Zeit."
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||}}",
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||}}",
+      "{{de-DE|Ich brauche mehr Zeit.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -764,11 +764,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "Kann ich eine Flasche Wasser haben?",
+    "correctAnswer": "{{de-DE|Kann ich eine Flasche Wasser haben?||}}",
     "incorrectAnswers": [
-      "Geben Sie mir bitte eine T\u00fcte.",
-      "Ich brauche mehr Zeit.",
-      "Ich brauche den Beleg."
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||}}",
+      "{{de-DE|Ich brauche mehr Zeit.||}}",
+      "{{de-DE|Ich brauche den Beleg.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -784,11 +784,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "Geben Sie mir bitte eine T\u00fcte.",
+    "correctAnswer": "{{de-DE|Geben Sie mir bitte eine Tüte.||}}",
     "incorrectAnswers": [
-      "Ich brauche mehr Zeit.",
-      "Ich brauche den Beleg.",
-      "Haben Sie vegetarisches Essen?"
+      "{{de-DE|Ich brauche mehr Zeit.||}}",
+      "{{de-DE|Ich brauche den Beleg.||}}",
+      "{{de-DE|Haben Sie vegetarisches Essen?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -804,11 +804,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I need more time.'?",
-    "correctAnswer": "Ich brauche mehr Zeit.",
+    "correctAnswer": "{{de-DE|Ich brauche mehr Zeit.||}}",
     "incorrectAnswers": [
-      "Ich brauche den Beleg.",
-      "Haben Sie vegetarisches Essen?",
-      "Ich brauche Wasser."
+      "{{de-DE|Ich brauche den Beleg.||}}",
+      "{{de-DE|Haben Sie vegetarisches Essen?||}}",
+      "{{de-DE|Ich brauche Wasser.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -824,11 +824,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I need the receipt.'.",
-    "correctAnswer": "Ich brauche den Beleg.",
+    "correctAnswer": "{{de-DE|Ich brauche den Beleg.||}}",
     "incorrectAnswers": [
-      "Haben Sie vegetarisches Essen?",
-      "Ich brauche Wasser.",
-      "Ich brauche einen Stadtplan."
+      "{{de-DE|Haben Sie vegetarisches Essen?||}}",
+      "{{de-DE|Ich brauche Wasser.||}}",
+      "{{de-DE|Ich brauche einen Stadtplan.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -844,11 +844,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "Haben Sie vegetarisches Essen?",
+    "correctAnswer": "{{de-DE|Haben Sie vegetarisches Essen?||}}",
     "incorrectAnswers": [
-      "Ich brauche Wasser.",
-      "Ich brauche einen Stadtplan.",
-      "Ich brauche ein Taxi."
+      "{{de-DE|Ich brauche Wasser.||}}",
+      "{{de-DE|Ich brauche einen Stadtplan.||}}",
+      "{{de-DE|Ich brauche ein Taxi.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -864,11 +864,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Where is the bank?'?",
-    "correctAnswer": "Wo ist die Bank?",
+    "correctAnswer": "{{de-DE|Wo ist die Bank?||}}",
     "incorrectAnswers": [
-      "Wo ist das Museum?",
-      "Wo ist das Stadtzentrum?",
-      "Wo ist die Bushaltestelle?"
+      "{{de-DE|Wo ist das Museum?||}}",
+      "{{de-DE|Wo ist das Stadtzentrum?||}}",
+      "{{de-DE|Wo ist die Bushaltestelle?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -884,11 +884,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Where is the museum?'?",
-    "correctAnswer": "Wo ist das Museum?",
+    "correctAnswer": "{{de-DE|Wo ist das Museum?||}}",
     "incorrectAnswers": [
-      "Wo ist das Stadtzentrum?",
-      "Wo ist die Bushaltestelle?",
-      "Gehen Sie geradeaus."
+      "{{de-DE|Wo ist das Stadtzentrum?||}}",
+      "{{de-DE|Wo ist die Bushaltestelle?||}}",
+      "{{de-DE|Gehen Sie geradeaus.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -904,11 +904,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Where is the city center?'.",
-    "correctAnswer": "Wo ist das Stadtzentrum?",
+    "correctAnswer": "{{de-DE|Wo ist das Stadtzentrum?||}}",
     "incorrectAnswers": [
-      "Wo ist die Bushaltestelle?",
-      "Gehen Sie geradeaus.",
-      "Nehmen Sie die erste Stra\u00dfe."
+      "{{de-DE|Wo ist die Bushaltestelle?||}}",
+      "{{de-DE|Gehen Sie geradeaus.||}}",
+      "{{de-DE|Nehmen Sie die erste Straße.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -924,11 +924,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "Wo ist die Bushaltestelle?",
+    "correctAnswer": "{{de-DE|Wo ist die Bushaltestelle?||}}",
     "incorrectAnswers": [
-      "Gehen Sie geradeaus.",
-      "Nehmen Sie die erste Stra\u00dfe.",
-      "Nehmen Sie die zweite Stra\u00dfe."
+      "{{de-DE|Gehen Sie geradeaus.||}}",
+      "{{de-DE|Nehmen Sie die erste Straße.||}}",
+      "{{de-DE|Nehmen Sie die zweite Straße.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -944,11 +944,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Go straight.'?",
-    "correctAnswer": "Gehen Sie geradeaus.",
+    "correctAnswer": "{{de-DE|Gehen Sie geradeaus.||}}",
     "incorrectAnswers": [
-      "Nehmen Sie die erste Stra\u00dfe.",
-      "Nehmen Sie die zweite Stra\u00dfe.",
-      "Ist es weit?"
+      "{{de-DE|Nehmen Sie die erste Straße.||}}",
+      "{{de-DE|Nehmen Sie die zweite Straße.||}}",
+      "{{de-DE|Ist es weit?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -964,11 +964,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Take the first street.'?",
-    "correctAnswer": "Nehmen Sie die erste Stra\u00dfe.",
+    "correctAnswer": "{{de-DE|Nehmen Sie die erste Straße.||}}",
     "incorrectAnswers": [
-      "Nehmen Sie die zweite Stra\u00dfe.",
-      "Ist es weit?",
-      "Ist es nah?"
+      "{{de-DE|Nehmen Sie die zweite Straße.||}}",
+      "{{de-DE|Ist es weit?||}}",
+      "{{de-DE|Ist es nah?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -984,11 +984,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Take the second street.'.",
-    "correctAnswer": "Nehmen Sie die zweite Stra\u00dfe.",
+    "correctAnswer": "{{de-DE|Nehmen Sie die zweite Straße.||}}",
     "incorrectAnswers": [
-      "Ist es weit?",
-      "Ist es nah?",
-      "Ich habe mich verlaufen."
+      "{{de-DE|Ist es weit?||}}",
+      "{{de-DE|Ist es nah?||}}",
+      "{{de-DE|Ich habe mich verlaufen.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1004,11 +1004,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Is it far?'?",
-    "correctAnswer": "Ist es weit?",
+    "correctAnswer": "{{de-DE|Ist es weit?||}}",
     "incorrectAnswers": [
-      "Ist es nah?",
-      "Ich habe mich verlaufen.",
-      "Wir suchen das Hotel."
+      "{{de-DE|Ist es nah?||}}",
+      "{{de-DE|Ich habe mich verlaufen.||}}",
+      "{{de-DE|Wir suchen das Hotel.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1024,11 +1024,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Is it near?'?",
-    "correctAnswer": "Ist es nah?",
+    "correctAnswer": "{{de-DE|Ist es nah?||}}",
     "incorrectAnswers": [
-      "Ich habe mich verlaufen.",
-      "Wir suchen das Hotel.",
-      "Zeigen Sie es mir bitte auf der Karte."
+      "{{de-DE|Ich habe mich verlaufen.||}}",
+      "{{de-DE|Wir suchen das Hotel.||}}",
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1044,11 +1044,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I am lost.'?",
-    "correctAnswer": "Ich habe mich verlaufen.",
+    "correctAnswer": "{{de-DE|Ich habe mich verlaufen.||}}",
     "incorrectAnswers": [
-      "Wir suchen das Hotel.",
-      "Zeigen Sie es mir bitte auf der Karte.",
-      "Wo ist die Bank?"
+      "{{de-DE|Wir suchen das Hotel.||}}",
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||}}",
+      "{{de-DE|Wo ist die Bank?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1064,11 +1064,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "Wir suchen das Hotel.",
+    "correctAnswer": "{{de-DE|Wir suchen das Hotel.||}}",
     "incorrectAnswers": [
-      "Zeigen Sie es mir bitte auf der Karte.",
-      "Wo ist die Bank?",
-      "Wo ist das Museum?"
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||}}",
+      "{{de-DE|Wo ist die Bank?||}}",
+      "{{de-DE|Wo ist das Museum?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1084,11 +1084,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Please show me on the map.'?",
-    "correctAnswer": "Zeigen Sie es mir bitte auf der Karte.",
+    "correctAnswer": "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||}}",
     "incorrectAnswers": [
-      "Wo ist die Bank?",
-      "Wo ist das Museum?",
-      "Wo ist das Stadtzentrum?"
+      "{{de-DE|Wo ist die Bank?||}}",
+      "{{de-DE|Wo ist das Museum?||}}",
+      "{{de-DE|Wo ist das Stadtzentrum?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1104,11 +1104,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "K\u00f6nnen Sie das wiederholen?",
+    "correctAnswer": "{{de-DE|Können Sie das wiederholen?||}}",
     "incorrectAnswers": [
-      "K\u00f6nnen Sie langsamer sprechen?",
-      "Wie buchstabiert man Ihren Namen?",
-      "Das macht insgesamt zehn Euro."
+      "{{de-DE|Können Sie langsamer sprechen?||}}",
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||}}",
+      "{{de-DE|Das macht insgesamt zehn Euro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1124,11 +1124,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "K\u00f6nnen Sie langsamer sprechen?",
+    "correctAnswer": "{{de-DE|Können Sie langsamer sprechen?||}}",
     "incorrectAnswers": [
-      "Wie buchstabiert man Ihren Namen?",
-      "Das macht insgesamt zehn Euro.",
-      "Es kostet zwanzig Euro."
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||}}",
+      "{{de-DE|Das macht insgesamt zehn Euro.||}}",
+      "{{de-DE|Es kostet zwanzig Euro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1144,11 +1144,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'How do you spell your name?'.",
-    "correctAnswer": "Wie buchstabiert man Ihren Namen?",
+    "correctAnswer": "{{de-DE|Wie buchstabiert man Ihren Namen?||}}",
     "incorrectAnswers": [
-      "Das macht insgesamt zehn Euro.",
-      "Es kostet zwanzig Euro.",
-      "Zimmer Nummer zw\u00f6lf."
+      "{{de-DE|Das macht insgesamt zehn Euro.||}}",
+      "{{de-DE|Es kostet zwanzig Euro.||}}",
+      "{{de-DE|Zimmer Nummer zwölf.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1164,11 +1164,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'The total is ten euros.'?",
-    "correctAnswer": "Das macht insgesamt zehn Euro.",
+    "correctAnswer": "{{de-DE|Das macht insgesamt zehn Euro.||}}",
     "incorrectAnswers": [
-      "Es kostet zwanzig Euro.",
-      "Zimmer Nummer zw\u00f6lf.",
-      "Bahnsteig Nummer vier."
+      "{{de-DE|Es kostet zwanzig Euro.||}}",
+      "{{de-DE|Zimmer Nummer zwölf.||}}",
+      "{{de-DE|Bahnsteig Nummer vier.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1184,11 +1184,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "Es kostet zwanzig Euro.",
+    "correctAnswer": "{{de-DE|Es kostet zwanzig Euro.||}}",
     "incorrectAnswers": [
-      "Zimmer Nummer zw\u00f6lf.",
-      "Bahnsteig Nummer vier.",
-      "Einen Tisch f\u00fcr drei Personen, bitte."
+      "{{de-DE|Zimmer Nummer zwölf.||}}",
+      "{{de-DE|Bahnsteig Nummer vier.||}}",
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1204,11 +1204,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Room number twelve.'?",
-    "correctAnswer": "Zimmer Nummer zw\u00f6lf.",
+    "correctAnswer": "{{de-DE|Zimmer Nummer zwölf.||}}",
     "incorrectAnswers": [
-      "Bahnsteig Nummer vier.",
-      "Einen Tisch f\u00fcr drei Personen, bitte.",
-      "Zwei Fahrkarten, bitte."
+      "{{de-DE|Bahnsteig Nummer vier.||}}",
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||}}",
+      "{{de-DE|Zwei Fahrkarten, bitte.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1224,11 +1224,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Platform number four.'.",
-    "correctAnswer": "Bahnsteig Nummer vier.",
+    "correctAnswer": "{{de-DE|Bahnsteig Nummer vier.||}}",
     "incorrectAnswers": [
-      "Einen Tisch f\u00fcr drei Personen, bitte.",
-      "Zwei Fahrkarten, bitte.",
-      "K\u00f6nnen Sie es aufschreiben?"
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||}}",
+      "{{de-DE|Zwei Fahrkarten, bitte.||}}",
+      "{{de-DE|Können Sie es aufschreiben?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1244,11 +1244,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'A table for three, please.'?",
-    "correctAnswer": "Einen Tisch f\u00fcr drei Personen, bitte.",
+    "correctAnswer": "{{de-DE|Einen Tisch für drei Personen, bitte.||}}",
     "incorrectAnswers": [
-      "Zwei Fahrkarten, bitte.",
-      "K\u00f6nnen Sie es aufschreiben?",
-      "Welches Datum haben wir heute?"
+      "{{de-DE|Zwei Fahrkarten, bitte.||}}",
+      "{{de-DE|Können Sie es aufschreiben?||}}",
+      "{{de-DE|Welches Datum haben wir heute?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1264,11 +1264,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "Zwei Fahrkarten, bitte.",
+    "correctAnswer": "{{de-DE|Zwei Fahrkarten, bitte.||}}",
     "incorrectAnswers": [
-      "K\u00f6nnen Sie es aufschreiben?",
-      "Welches Datum haben wir heute?",
-      "Einen Moment, bitte."
+      "{{de-DE|Können Sie es aufschreiben?||}}",
+      "{{de-DE|Welches Datum haben wir heute?||}}",
+      "{{de-DE|Einen Moment, bitte.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1284,11 +1284,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Can you write it down?'?",
-    "correctAnswer": "K\u00f6nnen Sie es aufschreiben?",
+    "correctAnswer": "{{de-DE|Können Sie es aufschreiben?||}}",
     "incorrectAnswers": [
-      "Welches Datum haben wir heute?",
-      "Einen Moment, bitte.",
-      "K\u00f6nnen Sie das wiederholen?"
+      "{{de-DE|Welches Datum haben wir heute?||}}",
+      "{{de-DE|Einen Moment, bitte.||}}",
+      "{{de-DE|Können Sie das wiederholen?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1304,11 +1304,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'What is today's date?'.",
-    "correctAnswer": "Welches Datum haben wir heute?",
+    "correctAnswer": "{{de-DE|Welches Datum haben wir heute?||}}",
     "incorrectAnswers": [
-      "Einen Moment, bitte.",
-      "K\u00f6nnen Sie das wiederholen?",
-      "K\u00f6nnen Sie langsamer sprechen?"
+      "{{de-DE|Einen Moment, bitte.||}}",
+      "{{de-DE|Können Sie das wiederholen?||}}",
+      "{{de-DE|Können Sie langsamer sprechen?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1324,11 +1324,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'One moment, please.'?",
-    "correctAnswer": "Einen Moment, bitte.",
+    "correctAnswer": "{{de-DE|Einen Moment, bitte.||}}",
     "incorrectAnswers": [
-      "K\u00f6nnen Sie das wiederholen?",
-      "K\u00f6nnen Sie langsamer sprechen?",
-      "Wie buchstabiert man Ihren Namen?"
+      "{{de-DE|Können Sie das wiederholen?||}}",
+      "{{de-DE|Können Sie langsamer sprechen?||}}",
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1344,11 +1344,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I am hungry.'?",
-    "correctAnswer": "Ich habe Hunger.",
+    "correctAnswer": "{{de-DE|Ich habe Hunger.||}}",
     "incorrectAnswers": [
-      "Ich habe Durst.",
-      "Die Speisekarte, bitte.",
-      "Ich bin Vegetarier/Vegetarierin."
+      "{{de-DE|Ich habe Durst.||}}",
+      "{{de-DE|Die Speisekarte, bitte.||}}",
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1364,11 +1364,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I am thirsty.'?",
-    "correctAnswer": "Ich habe Durst.",
+    "correctAnswer": "{{de-DE|Ich habe Durst.||}}",
     "incorrectAnswers": [
-      "Die Speisekarte, bitte.",
-      "Ich bin Vegetarier/Vegetarierin.",
-      "Ohne Fleisch, bitte."
+      "{{de-DE|Die Speisekarte, bitte.||}}",
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||}}",
+      "{{de-DE|Ohne Fleisch, bitte.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1384,11 +1384,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'The menu, please.'.",
-    "correctAnswer": "Die Speisekarte, bitte.",
+    "correctAnswer": "{{de-DE|Die Speisekarte, bitte.||}}",
     "incorrectAnswers": [
-      "Ich bin Vegetarier/Vegetarierin.",
-      "Ohne Fleisch, bitte.",
-      "Ohne Zucker, bitte."
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||}}",
+      "{{de-DE|Ohne Fleisch, bitte.||}}",
+      "{{de-DE|Ohne Zucker, bitte.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1404,11 +1404,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am vegetarian.'?",
-    "correctAnswer": "Ich bin Vegetarier/Vegetarierin.",
+    "correctAnswer": "{{de-DE|Ich bin Vegetarier/Vegetarierin.||}}",
     "incorrectAnswers": [
-      "Ohne Fleisch, bitte.",
-      "Ohne Zucker, bitte.",
-      "Mit Milch, bitte."
+      "{{de-DE|Ohne Fleisch, bitte.||}}",
+      "{{de-DE|Ohne Zucker, bitte.||}}",
+      "{{de-DE|Mit Milch, bitte.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1424,11 +1424,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'No meat, please.'?",
-    "correctAnswer": "Ohne Fleisch, bitte.",
+    "correctAnswer": "{{de-DE|Ohne Fleisch, bitte.||}}",
     "incorrectAnswers": [
-      "Ohne Zucker, bitte.",
-      "Mit Milch, bitte.",
-      "Es war lecker."
+      "{{de-DE|Ohne Zucker, bitte.||}}",
+      "{{de-DE|Mit Milch, bitte.||}}",
+      "{{de-DE|Es war lecker.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1444,11 +1444,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Without sugar, please.'?",
-    "correctAnswer": "Ohne Zucker, bitte.",
+    "correctAnswer": "{{de-DE|Ohne Zucker, bitte.||}}",
     "incorrectAnswers": [
-      "Mit Milch, bitte.",
-      "Es war lecker.",
-      "Das ist sehr gut."
+      "{{de-DE|Mit Milch, bitte.||}}",
+      "{{de-DE|Es war lecker.||}}",
+      "{{de-DE|Das ist sehr gut.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1464,11 +1464,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'With milk, please.'.",
-    "correctAnswer": "Mit Milch, bitte.",
+    "correctAnswer": "{{de-DE|Mit Milch, bitte.||}}",
     "incorrectAnswers": [
-      "Es war lecker.",
-      "Das ist sehr gut.",
-      "Die Suppe ist kalt."
+      "{{de-DE|Es war lecker.||}}",
+      "{{de-DE|Das ist sehr gut.||}}",
+      "{{de-DE|Die Suppe ist kalt.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1484,11 +1484,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'It was delicious.'?",
-    "correctAnswer": "Es war lecker.",
+    "correctAnswer": "{{de-DE|Es war lecker.||}}",
     "incorrectAnswers": [
-      "Das ist sehr gut.",
-      "Die Suppe ist kalt.",
-      "Ich bin gegen N\u00fcsse allergisch."
+      "{{de-DE|Das ist sehr gut.||}}",
+      "{{de-DE|Die Suppe ist kalt.||}}",
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1504,11 +1504,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'This is very good.'?",
-    "correctAnswer": "Das ist sehr gut.",
+    "correctAnswer": "{{de-DE|Das ist sehr gut.||}}",
     "incorrectAnswers": [
-      "Die Suppe ist kalt.",
-      "Ich bin gegen N\u00fcsse allergisch.",
-      "Eine Flasche Wasser, bitte."
+      "{{de-DE|Die Suppe ist kalt.||}}",
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||}}",
+      "{{de-DE|Eine Flasche Wasser, bitte.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1524,11 +1524,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'The soup is cold.'?",
-    "correctAnswer": "Die Suppe ist kalt.",
+    "correctAnswer": "{{de-DE|Die Suppe ist kalt.||}}",
     "incorrectAnswers": [
-      "Ich bin gegen N\u00fcsse allergisch.",
-      "Eine Flasche Wasser, bitte.",
-      "Ich habe Hunger."
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||}}",
+      "{{de-DE|Eine Flasche Wasser, bitte.||}}",
+      "{{de-DE|Ich habe Hunger.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1544,11 +1544,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "Ich bin gegen N\u00fcsse allergisch.",
+    "correctAnswer": "{{de-DE|Ich bin gegen Nüsse allergisch.||}}",
     "incorrectAnswers": [
-      "Eine Flasche Wasser, bitte.",
-      "Ich habe Hunger.",
-      "Ich habe Durst."
+      "{{de-DE|Eine Flasche Wasser, bitte.||}}",
+      "{{de-DE|Ich habe Hunger.||}}",
+      "{{de-DE|Ich habe Durst.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1564,11 +1564,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "Eine Flasche Wasser, bitte.",
+    "correctAnswer": "{{de-DE|Eine Flasche Wasser, bitte.||}}",
     "incorrectAnswers": [
-      "Ich habe Hunger.",
-      "Ich habe Durst.",
-      "Die Speisekarte, bitte."
+      "{{de-DE|Ich habe Hunger.||}}",
+      "{{de-DE|Ich habe Durst.||}}",
+      "{{de-DE|Die Speisekarte, bitte.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1584,11 +1584,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "Haben Sie das in einer anderen Gr\u00f6\u00dfe?",
+    "correctAnswer": "{{de-DE|Haben Sie das in einer anderen Größe?||}}",
     "incorrectAnswers": [
-      "Haben Sie das in einer anderen Farbe?",
-      "Kann ich das anprobieren?",
-      "Es ist zu teuer."
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||}}",
+      "{{de-DE|Kann ich das anprobieren?||}}",
+      "{{de-DE|Es ist zu teuer.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1604,11 +1604,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "Haben Sie das in einer anderen Farbe?",
+    "correctAnswer": "{{de-DE|Haben Sie das in einer anderen Farbe?||}}",
     "incorrectAnswers": [
-      "Kann ich das anprobieren?",
-      "Es ist zu teuer.",
-      "Es ist billig."
+      "{{de-DE|Kann ich das anprobieren?||}}",
+      "{{de-DE|Es ist zu teuer.||}}",
+      "{{de-DE|Es ist billig.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1624,11 +1624,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Can I try it on?'.",
-    "correctAnswer": "Kann ich das anprobieren?",
+    "correctAnswer": "{{de-DE|Kann ich das anprobieren?||}}",
     "incorrectAnswers": [
-      "Es ist zu teuer.",
-      "Es ist billig.",
-      "Ich nehme es."
+      "{{de-DE|Es ist zu teuer.||}}",
+      "{{de-DE|Es ist billig.||}}",
+      "{{de-DE|Ich nehme es.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1644,11 +1644,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'It is too expensive.'?",
-    "correctAnswer": "Es ist zu teuer.",
+    "correctAnswer": "{{de-DE|Es ist zu teuer.||}}",
     "incorrectAnswers": [
-      "Es ist billig.",
-      "Ich nehme es.",
-      "Wo ist die Kasse?"
+      "{{de-DE|Es ist billig.||}}",
+      "{{de-DE|Ich nehme es.||}}",
+      "{{de-DE|Wo ist die Kasse?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1664,11 +1664,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'It is cheap.'?",
-    "correctAnswer": "Es ist billig.",
+    "correctAnswer": "{{de-DE|Es ist billig.||}}",
     "incorrectAnswers": [
-      "Ich nehme es.",
-      "Wo ist die Kasse?",
-      "Ich schaue mich nur um."
+      "{{de-DE|Ich nehme es.||}}",
+      "{{de-DE|Wo ist die Kasse?||}}",
+      "{{de-DE|Ich schaue mich nur um.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1684,11 +1684,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I will take it.'?",
-    "correctAnswer": "Ich nehme es.",
+    "correctAnswer": "{{de-DE|Ich nehme es.||}}",
     "incorrectAnswers": [
-      "Wo ist die Kasse?",
-      "Ich schaue mich nur um.",
-      "Akzeptieren Sie Karten?"
+      "{{de-DE|Wo ist die Kasse?||}}",
+      "{{de-DE|Ich schaue mich nur um.||}}",
+      "{{de-DE|Akzeptieren Sie Karten?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1704,11 +1704,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Where is the checkout?'.",
-    "correctAnswer": "Wo ist die Kasse?",
+    "correctAnswer": "{{de-DE|Wo ist die Kasse?||}}",
     "incorrectAnswers": [
-      "Ich schaue mich nur um.",
-      "Akzeptieren Sie Karten?",
-      "Ich brauche einen Beleg."
+      "{{de-DE|Ich schaue mich nur um.||}}",
+      "{{de-DE|Akzeptieren Sie Karten?||}}",
+      "{{de-DE|Ich brauche einen Beleg.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1724,11 +1724,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am just looking.'?",
-    "correctAnswer": "Ich schaue mich nur um.",
+    "correctAnswer": "{{de-DE|Ich schaue mich nur um.||}}",
     "incorrectAnswers": [
-      "Akzeptieren Sie Karten?",
-      "Ich brauche einen Beleg.",
-      "Diese Gr\u00f6\u00dfe ist zu klein."
+      "{{de-DE|Akzeptieren Sie Karten?||}}",
+      "{{de-DE|Ich brauche einen Beleg.||}}",
+      "{{de-DE|Diese Größe ist zu klein.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1744,11 +1744,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "Akzeptieren Sie Karten?",
+    "correctAnswer": "{{de-DE|Akzeptieren Sie Karten?||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Beleg.",
-      "Diese Gr\u00f6\u00dfe ist zu klein.",
-      "Diese Gr\u00f6\u00dfe ist zu gro\u00df."
+      "{{de-DE|Ich brauche einen Beleg.||}}",
+      "{{de-DE|Diese Größe ist zu klein.||}}",
+      "{{de-DE|Diese Größe ist zu groß.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1764,11 +1764,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I need a receipt.'?",
-    "correctAnswer": "Ich brauche einen Beleg.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Beleg.||}}",
     "incorrectAnswers": [
-      "Diese Gr\u00f6\u00dfe ist zu klein.",
-      "Diese Gr\u00f6\u00dfe ist zu gro\u00df.",
-      "Haben Sie das in einer anderen Gr\u00f6\u00dfe?"
+      "{{de-DE|Diese Größe ist zu klein.||}}",
+      "{{de-DE|Diese Größe ist zu groß.||}}",
+      "{{de-DE|Haben Sie das in einer anderen Größe?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1784,11 +1784,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'This size is too small.'.",
-    "correctAnswer": "Diese Gr\u00f6\u00dfe ist zu klein.",
+    "correctAnswer": "{{de-DE|Diese Größe ist zu klein.||}}",
     "incorrectAnswers": [
-      "Diese Gr\u00f6\u00dfe ist zu gro\u00df.",
-      "Haben Sie das in einer anderen Gr\u00f6\u00dfe?",
-      "Haben Sie das in einer anderen Farbe?"
+      "{{de-DE|Diese Größe ist zu groß.||}}",
+      "{{de-DE|Haben Sie das in einer anderen Größe?||}}",
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1804,11 +1804,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'This size is too big.'?",
-    "correctAnswer": "Diese Gr\u00f6\u00dfe ist zu gro\u00df.",
+    "correctAnswer": "{{de-DE|Diese Größe ist zu groß.||}}",
     "incorrectAnswers": [
-      "Haben Sie das in einer anderen Gr\u00f6\u00dfe?",
-      "Haben Sie das in einer anderen Farbe?",
-      "Kann ich das anprobieren?"
+      "{{de-DE|Haben Sie das in einer anderen Größe?||}}",
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||}}",
+      "{{de-DE|Kann ich das anprobieren?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1824,11 +1824,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "Ich brauche eine Fahrkarte zum Flughafen.",
+    "correctAnswer": "{{de-DE|Ich brauche eine Fahrkarte zum Flughafen.||}}",
     "incorrectAnswers": [
-      "Eine Fahrkarte ins Stadtzentrum, bitte.",
-      "Eine Hin- und R\u00fcckfahrkarte, bitte.",
-      "Welcher Bahnsteig ist das?"
+      "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||}}",
+      "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||}}",
+      "{{de-DE|Welcher Bahnsteig ist das?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1844,11 +1844,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "Eine Fahrkarte ins Stadtzentrum, bitte.",
+    "correctAnswer": "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||}}",
     "incorrectAnswers": [
-      "Eine Hin- und R\u00fcckfahrkarte, bitte.",
-      "Welcher Bahnsteig ist das?",
-      "Ist dieser Platz frei?"
+      "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||}}",
+      "{{de-DE|Welcher Bahnsteig ist das?||}}",
+      "{{de-DE|Ist dieser Platz frei?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1864,11 +1864,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "Eine Hin- und R\u00fcckfahrkarte, bitte.",
+    "correctAnswer": "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||}}",
     "incorrectAnswers": [
-      "Welcher Bahnsteig ist das?",
-      "Ist dieser Platz frei?",
-      "Rufen Sie bitte ein Taxi."
+      "{{de-DE|Welcher Bahnsteig ist das?||}}",
+      "{{de-DE|Ist dieser Platz frei?||}}",
+      "{{de-DE|Rufen Sie bitte ein Taxi.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1884,11 +1884,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Which platform is it?'?",
-    "correctAnswer": "Welcher Bahnsteig ist das?",
+    "correctAnswer": "{{de-DE|Welcher Bahnsteig ist das?||}}",
     "incorrectAnswers": [
-      "Ist dieser Platz frei?",
-      "Rufen Sie bitte ein Taxi.",
-      "F\u00e4hrt dieser Bus ins Zentrum?"
+      "{{de-DE|Ist dieser Platz frei?||}}",
+      "{{de-DE|Rufen Sie bitte ein Taxi.||}}",
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1904,11 +1904,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Is this seat free?'?",
-    "correctAnswer": "Ist dieser Platz frei?",
+    "correctAnswer": "{{de-DE|Ist dieser Platz frei?||}}",
     "incorrectAnswers": [
-      "Rufen Sie bitte ein Taxi.",
-      "F\u00e4hrt dieser Bus ins Zentrum?",
-      "Ich m\u00f6chte zum Flughafen fahren."
+      "{{de-DE|Rufen Sie bitte ein Taxi.||}}",
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||}}",
+      "{{de-DE|Ich möchte zum Flughafen fahren.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1924,11 +1924,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Please call a taxi.'?",
-    "correctAnswer": "Rufen Sie bitte ein Taxi.",
+    "correctAnswer": "{{de-DE|Rufen Sie bitte ein Taxi.||}}",
     "incorrectAnswers": [
-      "F\u00e4hrt dieser Bus ins Zentrum?",
-      "Ich m\u00f6chte zum Flughafen fahren.",
-      "Wir steigen hier aus."
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||}}",
+      "{{de-DE|Ich möchte zum Flughafen fahren.||}}",
+      "{{de-DE|Wir steigen hier aus.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1944,11 +1944,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "F\u00e4hrt dieser Bus ins Zentrum?",
+    "correctAnswer": "{{de-DE|Fährt dieser Bus ins Zentrum?||}}",
     "incorrectAnswers": [
-      "Ich m\u00f6chte zum Flughafen fahren.",
-      "Wir steigen hier aus.",
-      "Ich habe den Bus verpasst."
+      "{{de-DE|Ich möchte zum Flughafen fahren.||}}",
+      "{{de-DE|Wir steigen hier aus.||}}",
+      "{{de-DE|Ich habe den Bus verpasst.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1964,11 +1964,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "Ich m\u00f6chte zum Flughafen fahren.",
+    "correctAnswer": "{{de-DE|Ich möchte zum Flughafen fahren.||}}",
     "incorrectAnswers": [
-      "Wir steigen hier aus.",
-      "Ich habe den Bus verpasst.",
-      "Wo kann ich eine Fahrkarte kaufen?"
+      "{{de-DE|Wir steigen hier aus.||}}",
+      "{{de-DE|Ich habe den Bus verpasst.||}}",
+      "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1984,11 +1984,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'We get off here.'?",
-    "correctAnswer": "Wir steigen hier aus.",
+    "correctAnswer": "{{de-DE|Wir steigen hier aus.||}}",
     "incorrectAnswers": [
-      "Ich habe den Bus verpasst.",
-      "Wo kann ich eine Fahrkarte kaufen?",
-      "Der Bus kommt um zw\u00f6lf Uhr an."
+      "{{de-DE|Ich habe den Bus verpasst.||}}",
+      "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||}}",
+      "{{de-DE|Der Bus kommt um zwölf Uhr an.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2004,11 +2004,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I missed the bus.'?",
-    "correctAnswer": "Ich habe den Bus verpasst.",
+    "correctAnswer": "{{de-DE|Ich habe den Bus verpasst.||}}",
     "incorrectAnswers": [
-      "Wo kann ich eine Fahrkarte kaufen?",
-      "Der Bus kommt um zw\u00f6lf Uhr an.",
-      "Ich brauche eine Fahrkarte zum Flughafen."
+      "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||}}",
+      "{{de-DE|Der Bus kommt um zwölf Uhr an.||}}",
+      "{{de-DE|Ich brauche eine Fahrkarte zum Flughafen.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2024,11 +2024,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "Wo kann ich eine Fahrkarte kaufen?",
+    "correctAnswer": "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||}}",
     "incorrectAnswers": [
-      "Der Bus kommt um zw\u00f6lf Uhr an.",
-      "Ich brauche eine Fahrkarte zum Flughafen.",
-      "Eine Fahrkarte ins Stadtzentrum, bitte."
+      "{{de-DE|Der Bus kommt um zwölf Uhr an.||}}",
+      "{{de-DE|Ich brauche eine Fahrkarte zum Flughafen.||}}",
+      "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2044,11 +2044,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "Der Bus kommt um zw\u00f6lf Uhr an.",
+    "correctAnswer": "{{de-DE|Der Bus kommt um zwölf Uhr an.||}}",
     "incorrectAnswers": [
-      "Ich brauche eine Fahrkarte zum Flughafen.",
-      "Eine Fahrkarte ins Stadtzentrum, bitte.",
-      "Eine Hin- und R\u00fcckfahrkarte, bitte."
+      "{{de-DE|Ich brauche eine Fahrkarte zum Flughafen.||}}",
+      "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||}}",
+      "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2064,11 +2064,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I have a reservation.'?",
-    "correctAnswer": "Ich habe eine Reservierung.",
+    "correctAnswer": "{{de-DE|Ich habe eine Reservierung.||}}",
     "incorrectAnswers": [
-      "Haben Sie ein Einzelzimmer?",
-      "Haben Sie ein Doppelzimmer?",
-      "Das WLAN-Passwort, bitte."
+      "{{de-DE|Haben Sie ein Einzelzimmer?||}}",
+      "{{de-DE|Haben Sie ein Doppelzimmer?||}}",
+      "{{de-DE|Das WLAN-Passwort, bitte.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2084,11 +2084,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Do you have a single room?'?",
-    "correctAnswer": "Haben Sie ein Einzelzimmer?",
+    "correctAnswer": "{{de-DE|Haben Sie ein Einzelzimmer?||}}",
     "incorrectAnswers": [
-      "Haben Sie ein Doppelzimmer?",
-      "Das WLAN-Passwort, bitte.",
-      "Es gibt ein Problem mit dem Zimmer."
+      "{{de-DE|Haben Sie ein Doppelzimmer?||}}",
+      "{{de-DE|Das WLAN-Passwort, bitte.||}}",
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2104,11 +2104,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Do you have a double room?'.",
-    "correctAnswer": "Haben Sie ein Doppelzimmer?",
+    "correctAnswer": "{{de-DE|Haben Sie ein Doppelzimmer?||}}",
     "incorrectAnswers": [
-      "Das WLAN-Passwort, bitte.",
-      "Es gibt ein Problem mit dem Zimmer.",
-      "Die Dusche funktioniert nicht."
+      "{{de-DE|Das WLAN-Passwort, bitte.||}}",
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||}}",
+      "{{de-DE|Die Dusche funktioniert nicht.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2124,11 +2124,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "Das WLAN-Passwort, bitte.",
+    "correctAnswer": "{{de-DE|Das WLAN-Passwort, bitte.||}}",
     "incorrectAnswers": [
-      "Es gibt ein Problem mit dem Zimmer.",
-      "Die Dusche funktioniert nicht.",
-      "Das Zimmer ist zu kalt."
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||}}",
+      "{{de-DE|Die Dusche funktioniert nicht.||}}",
+      "{{de-DE|Das Zimmer ist zu kalt.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2144,11 +2144,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "Es gibt ein Problem mit dem Zimmer.",
+    "correctAnswer": "{{de-DE|Es gibt ein Problem mit dem Zimmer.||}}",
     "incorrectAnswers": [
-      "Die Dusche funktioniert nicht.",
-      "Das Zimmer ist zu kalt.",
-      "Ich brauche saubere Handt\u00fccher."
+      "{{de-DE|Die Dusche funktioniert nicht.||}}",
+      "{{de-DE|Das Zimmer ist zu kalt.||}}",
+      "{{de-DE|Ich brauche saubere Handtücher.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2164,11 +2164,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'The shower does not work.'?",
-    "correctAnswer": "Die Dusche funktioniert nicht.",
+    "correctAnswer": "{{de-DE|Die Dusche funktioniert nicht.||}}",
     "incorrectAnswers": [
-      "Das Zimmer ist zu kalt.",
-      "Ich brauche saubere Handt\u00fccher.",
-      "Ist das Fr\u00fchst\u00fcck inbegriffen?"
+      "{{de-DE|Das Zimmer ist zu kalt.||}}",
+      "{{de-DE|Ich brauche saubere Handtücher.||}}",
+      "{{de-DE|Ist das Frühstück inbegriffen?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2184,11 +2184,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'The room is too cold.'.",
-    "correctAnswer": "Das Zimmer ist zu kalt.",
+    "correctAnswer": "{{de-DE|Das Zimmer ist zu kalt.||}}",
     "incorrectAnswers": [
-      "Ich brauche saubere Handt\u00fccher.",
-      "Ist das Fr\u00fchst\u00fcck inbegriffen?",
-      "Kann ich noch einen Schl\u00fcssel haben?"
+      "{{de-DE|Ich brauche saubere Handtücher.||}}",
+      "{{de-DE|Ist das Frühstück inbegriffen?||}}",
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2204,11 +2204,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I need clean towels.'?",
-    "correctAnswer": "Ich brauche saubere Handt\u00fccher.",
+    "correctAnswer": "{{de-DE|Ich brauche saubere Handtücher.||}}",
     "incorrectAnswers": [
-      "Ist das Fr\u00fchst\u00fcck inbegriffen?",
-      "Kann ich noch einen Schl\u00fcssel haben?",
-      "Die Klimaanlage ist kaputt."
+      "{{de-DE|Ist das Frühstück inbegriffen?||}}",
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||}}",
+      "{{de-DE|Die Klimaanlage ist kaputt.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2224,11 +2224,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "Ist das Fr\u00fchst\u00fcck inbegriffen?",
+    "correctAnswer": "{{de-DE|Ist das Frühstück inbegriffen?||}}",
     "incorrectAnswers": [
-      "Kann ich noch einen Schl\u00fcssel haben?",
-      "Die Klimaanlage ist kaputt.",
-      "Das Fr\u00fchst\u00fcck beginnt um sieben."
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||}}",
+      "{{de-DE|Die Klimaanlage ist kaputt.||}}",
+      "{{de-DE|Das Frühstück beginnt um sieben.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2244,11 +2244,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Can I have another key?'?",
-    "correctAnswer": "Kann ich noch einen Schl\u00fcssel haben?",
+    "correctAnswer": "{{de-DE|Kann ich noch einen Schlüssel haben?||}}",
     "incorrectAnswers": [
-      "Die Klimaanlage ist kaputt.",
-      "Das Fr\u00fchst\u00fcck beginnt um sieben.",
-      "Ich habe eine Reservierung."
+      "{{de-DE|Die Klimaanlage ist kaputt.||}}",
+      "{{de-DE|Das Frühstück beginnt um sieben.||}}",
+      "{{de-DE|Ich habe eine Reservierung.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2264,11 +2264,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "Die Klimaanlage ist kaputt.",
+    "correctAnswer": "{{de-DE|Die Klimaanlage ist kaputt.||}}",
     "incorrectAnswers": [
-      "Das Fr\u00fchst\u00fcck beginnt um sieben.",
-      "Ich habe eine Reservierung.",
-      "Haben Sie ein Einzelzimmer?"
+      "{{de-DE|Das Frühstück beginnt um sieben.||}}",
+      "{{de-DE|Ich habe eine Reservierung.||}}",
+      "{{de-DE|Haben Sie ein Einzelzimmer?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2284,11 +2284,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "Das Fr\u00fchst\u00fcck beginnt um sieben.",
+    "correctAnswer": "{{de-DE|Das Frühstück beginnt um sieben.||}}",
     "incorrectAnswers": [
-      "Ich habe eine Reservierung.",
-      "Haben Sie ein Einzelzimmer?",
-      "Haben Sie ein Doppelzimmer?"
+      "{{de-DE|Ich habe eine Reservierung.||}}",
+      "{{de-DE|Haben Sie ein Einzelzimmer?||}}",
+      "{{de-DE|Haben Sie ein Doppelzimmer?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2304,11 +2304,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I feel sick.'?",
-    "correctAnswer": "Mir ist schlecht.",
+    "correctAnswer": "{{de-DE|Mir ist schlecht.||}}",
     "incorrectAnswers": [
-      "Ich habe Kopfschmerzen.",
-      "Ich habe Fieber.",
-      "Ich brauche einen Arzt."
+      "{{de-DE|Ich habe Kopfschmerzen.||}}",
+      "{{de-DE|Ich habe Fieber.||}}",
+      "{{de-DE|Ich brauche einen Arzt.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2324,11 +2324,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I have a headache.'?",
-    "correctAnswer": "Ich habe Kopfschmerzen.",
+    "correctAnswer": "{{de-DE|Ich habe Kopfschmerzen.||}}",
     "incorrectAnswers": [
-      "Ich habe Fieber.",
-      "Ich brauche einen Arzt.",
-      "Wo ist die Apotheke?"
+      "{{de-DE|Ich habe Fieber.||}}",
+      "{{de-DE|Ich brauche einen Arzt.||}}",
+      "{{de-DE|Wo ist die Apotheke?||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2344,11 +2344,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I have a fever.'.",
-    "correctAnswer": "Ich habe Fieber.",
+    "correctAnswer": "{{de-DE|Ich habe Fieber.||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Arzt.",
-      "Wo ist die Apotheke?",
-      "Ich bin gegen Penicillin allergisch."
+      "{{de-DE|Ich brauche einen Arzt.||}}",
+      "{{de-DE|Wo ist die Apotheke?||}}",
+      "{{de-DE|Ich bin gegen Penicillin allergisch.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2364,11 +2364,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I need a doctor.'?",
-    "correctAnswer": "Ich brauche einen Arzt.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Arzt.||}}",
     "incorrectAnswers": [
-      "Wo ist die Apotheke?",
-      "Ich bin gegen Penicillin allergisch.",
-      "Ich habe Magenschmerzen."
+      "{{de-DE|Wo ist die Apotheke?||}}",
+      "{{de-DE|Ich bin gegen Penicillin allergisch.||}}",
+      "{{de-DE|Ich habe Magenschmerzen.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2384,11 +2384,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "Wo ist die Apotheke?",
+    "correctAnswer": "{{de-DE|Wo ist die Apotheke?||}}",
     "incorrectAnswers": [
-      "Ich bin gegen Penicillin allergisch.",
-      "Ich habe Magenschmerzen.",
-      "Ich brauche Medizin."
+      "{{de-DE|Ich bin gegen Penicillin allergisch.||}}",
+      "{{de-DE|Ich habe Magenschmerzen.||}}",
+      "{{de-DE|Ich brauche Medizin.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2404,11 +2404,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "Ich bin gegen Penicillin allergisch.",
+    "correctAnswer": "{{de-DE|Ich bin gegen Penicillin allergisch.||}}",
     "incorrectAnswers": [
-      "Ich habe Magenschmerzen.",
-      "Ich brauche Medizin.",
-      "Mir ist schwindelig."
+      "{{de-DE|Ich habe Magenschmerzen.||}}",
+      "{{de-DE|Ich brauche Medizin.||}}",
+      "{{de-DE|Mir ist schwindelig.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2424,11 +2424,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'My stomach hurts.'.",
-    "correctAnswer": "Ich habe Magenschmerzen.",
+    "correctAnswer": "{{de-DE|Ich habe Magenschmerzen.||}}",
     "incorrectAnswers": [
-      "Ich brauche Medizin.",
-      "Mir ist schwindelig.",
-      "Ich bin erk\u00e4ltet."
+      "{{de-DE|Ich brauche Medizin.||}}",
+      "{{de-DE|Mir ist schwindelig.||}}",
+      "{{de-DE|Ich bin erkältet.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2444,11 +2444,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I need medicine.'?",
-    "correctAnswer": "Ich brauche Medizin.",
+    "correctAnswer": "{{de-DE|Ich brauche Medizin.||}}",
     "incorrectAnswers": [
-      "Mir ist schwindelig.",
-      "Ich bin erk\u00e4ltet.",
-      "Ich brauche ein Krankenhaus."
+      "{{de-DE|Mir ist schwindelig.||}}",
+      "{{de-DE|Ich bin erkältet.||}}",
+      "{{de-DE|Ich brauche ein Krankenhaus.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2464,11 +2464,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "Mir ist schwindelig.",
+    "correctAnswer": "{{de-DE|Mir ist schwindelig.||}}",
     "incorrectAnswers": [
-      "Ich bin erk\u00e4ltet.",
-      "Ich brauche ein Krankenhaus.",
-      "Mir geht es jetzt besser."
+      "{{de-DE|Ich bin erkältet.||}}",
+      "{{de-DE|Ich brauche ein Krankenhaus.||}}",
+      "{{de-DE|Mir geht es jetzt besser.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2484,11 +2484,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I have a cold.'?",
-    "correctAnswer": "Ich bin erk\u00e4ltet.",
+    "correctAnswer": "{{de-DE|Ich bin erkältet.||}}",
     "incorrectAnswers": [
-      "Ich brauche ein Krankenhaus.",
-      "Mir geht es jetzt besser.",
-      "Mir ist schlecht."
+      "{{de-DE|Ich brauche ein Krankenhaus.||}}",
+      "{{de-DE|Mir geht es jetzt besser.||}}",
+      "{{de-DE|Mir ist schlecht.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2504,11 +2504,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I need a hospital.'.",
-    "correctAnswer": "Ich brauche ein Krankenhaus.",
+    "correctAnswer": "{{de-DE|Ich brauche ein Krankenhaus.||}}",
     "incorrectAnswers": [
-      "Mir geht es jetzt besser.",
-      "Mir ist schlecht.",
-      "Ich habe Kopfschmerzen."
+      "{{de-DE|Mir geht es jetzt besser.||}}",
+      "{{de-DE|Mir ist schlecht.||}}",
+      "{{de-DE|Ich habe Kopfschmerzen.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2524,11 +2524,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I feel better now.'?",
-    "correctAnswer": "Mir geht es jetzt besser.",
+    "correctAnswer": "{{de-DE|Mir geht es jetzt besser.||}}",
     "incorrectAnswers": [
-      "Mir ist schlecht.",
-      "Ich habe Kopfschmerzen.",
-      "Ich habe Fieber."
+      "{{de-DE|Mir ist schlecht.||}}",
+      "{{de-DE|Ich habe Kopfschmerzen.||}}",
+      "{{de-DE|Ich habe Fieber.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2544,11 +2544,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'What time is it?'?",
-    "correctAnswer": "Wie sp\u00e4t ist es?",
+    "correctAnswer": "{{de-DE|Wie spät ist es?||}}",
     "incorrectAnswers": [
-      "Heute ist Montag.",
-      "Morgen werde ich reisen.",
-      "Gestern habe ich gearbeitet."
+      "{{de-DE|Heute ist Montag.||}}",
+      "{{de-DE|Morgen werde ich reisen.||}}",
+      "{{de-DE|Gestern habe ich gearbeitet.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2564,11 +2564,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Today is Monday.'?",
-    "correctAnswer": "Heute ist Montag.",
+    "correctAnswer": "{{de-DE|Heute ist Montag.||}}",
     "incorrectAnswers": [
-      "Morgen werde ich reisen.",
-      "Gestern habe ich gearbeitet.",
-      "Es \u00f6ffnet um neun Uhr."
+      "{{de-DE|Morgen werde ich reisen.||}}",
+      "{{de-DE|Gestern habe ich gearbeitet.||}}",
+      "{{de-DE|Es öffnet um neun Uhr.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2584,11 +2584,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "Morgen werde ich reisen.",
+    "correctAnswer": "{{de-DE|Morgen werde ich reisen.||}}",
     "incorrectAnswers": [
-      "Gestern habe ich gearbeitet.",
-      "Es \u00f6ffnet um neun Uhr.",
-      "Es schlie\u00dft um sechs Uhr."
+      "{{de-DE|Gestern habe ich gearbeitet.||}}",
+      "{{de-DE|Es öffnet um neun Uhr.||}}",
+      "{{de-DE|Es schließt um sechs Uhr.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2604,11 +2604,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "Gestern habe ich gearbeitet.",
+    "correctAnswer": "{{de-DE|Gestern habe ich gearbeitet.||}}",
     "incorrectAnswers": [
-      "Es \u00f6ffnet um neun Uhr.",
-      "Es schlie\u00dft um sechs Uhr.",
-      "Ich komme sp\u00e4ter an."
+      "{{de-DE|Es öffnet um neun Uhr.||}}",
+      "{{de-DE|Es schließt um sechs Uhr.||}}",
+      "{{de-DE|Ich komme später an.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2624,11 +2624,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'It opens at nine.'?",
-    "correctAnswer": "Es \u00f6ffnet um neun Uhr.",
+    "correctAnswer": "{{de-DE|Es öffnet um neun Uhr.||}}",
     "incorrectAnswers": [
-      "Es schlie\u00dft um sechs Uhr.",
-      "Ich komme sp\u00e4ter an.",
-      "Ich komme bald zur\u00fcck."
+      "{{de-DE|Es schließt um sechs Uhr.||}}",
+      "{{de-DE|Ich komme später an.||}}",
+      "{{de-DE|Ich komme bald zurück.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2644,11 +2644,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'It closes at six.'?",
-    "correctAnswer": "Es schlie\u00dft um sechs Uhr.",
+    "correctAnswer": "{{de-DE|Es schließt um sechs Uhr.||}}",
     "incorrectAnswers": [
-      "Ich komme sp\u00e4ter an.",
-      "Ich komme bald zur\u00fcck.",
-      "Ich brauche f\u00fcnf Minuten."
+      "{{de-DE|Ich komme später an.||}}",
+      "{{de-DE|Ich komme bald zurück.||}}",
+      "{{de-DE|Ich brauche fünf Minuten.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2664,11 +2664,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I arrive later.'.",
-    "correctAnswer": "Ich komme sp\u00e4ter an.",
+    "correctAnswer": "{{de-DE|Ich komme später an.||}}",
     "incorrectAnswers": [
-      "Ich komme bald zur\u00fcck.",
-      "Ich brauche f\u00fcnf Minuten.",
-      "Es ist zu sp\u00e4t."
+      "{{de-DE|Ich komme bald zurück.||}}",
+      "{{de-DE|Ich brauche fünf Minuten.||}}",
+      "{{de-DE|Es ist zu spät.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2684,11 +2684,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I will come back soon.'?",
-    "correctAnswer": "Ich komme bald zur\u00fcck.",
+    "correctAnswer": "{{de-DE|Ich komme bald zurück.||}}",
     "incorrectAnswers": [
-      "Ich brauche f\u00fcnf Minuten.",
-      "Es ist zu sp\u00e4t.",
-      "Diese Woche ist viel los."
+      "{{de-DE|Ich brauche fünf Minuten.||}}",
+      "{{de-DE|Es ist zu spät.||}}",
+      "{{de-DE|Diese Woche ist viel los.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2704,11 +2704,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I need five minutes.'?",
-    "correctAnswer": "Ich brauche f\u00fcnf Minuten.",
+    "correctAnswer": "{{de-DE|Ich brauche fünf Minuten.||}}",
     "incorrectAnswers": [
-      "Es ist zu sp\u00e4t.",
-      "Diese Woche ist viel los.",
-      "N\u00e4chsten Monat habe ich frei."
+      "{{de-DE|Es ist zu spät.||}}",
+      "{{de-DE|Diese Woche ist viel los.||}}",
+      "{{de-DE|Nächsten Monat habe ich frei.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2724,11 +2724,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'It is too late.'?",
-    "correctAnswer": "Es ist zu sp\u00e4t.",
+    "correctAnswer": "{{de-DE|Es ist zu spät.||}}",
     "incorrectAnswers": [
-      "Diese Woche ist viel los.",
-      "N\u00e4chsten Monat habe ich frei.",
-      "Wie sp\u00e4t ist es?"
+      "{{de-DE|Diese Woche ist viel los.||}}",
+      "{{de-DE|Nächsten Monat habe ich frei.||}}",
+      "{{de-DE|Wie spät ist es?||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2744,11 +2744,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'This week is busy.'.",
-    "correctAnswer": "Diese Woche ist viel los.",
+    "correctAnswer": "{{de-DE|Diese Woche ist viel los.||}}",
     "incorrectAnswers": [
-      "N\u00e4chsten Monat habe ich frei.",
-      "Wie sp\u00e4t ist es?",
-      "Heute ist Montag."
+      "{{de-DE|Nächsten Monat habe ich frei.||}}",
+      "{{de-DE|Wie spät ist es?||}}",
+      "{{de-DE|Heute ist Montag.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2764,11 +2764,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Next month I am free.'?",
-    "correctAnswer": "N\u00e4chsten Monat habe ich frei.",
+    "correctAnswer": "{{de-DE|Nächsten Monat habe ich frei.||}}",
     "incorrectAnswers": [
-      "Wie sp\u00e4t ist es?",
-      "Heute ist Montag.",
-      "Morgen werde ich reisen."
+      "{{de-DE|Wie spät ist es?||}}",
+      "{{de-DE|Heute ist Montag.||}}",
+      "{{de-DE|Morgen werde ich reisen.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2784,11 +2784,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'What is the weather like?'?",
-    "correctAnswer": "Wie ist das Wetter?",
+    "correctAnswer": "{{de-DE|Wie ist das Wetter?||}}",
     "incorrectAnswers": [
-      "Es ist hei\u00df.",
-      "Es ist kalt.",
-      "Es regnet."
+      "{{de-DE|Es ist heiß.||}}",
+      "{{de-DE|Es ist kalt.||}}",
+      "{{de-DE|Es regnet.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2804,11 +2804,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'It is hot.'?",
-    "correctAnswer": "Es ist hei\u00df.",
+    "correctAnswer": "{{de-DE|Es ist heiß.||}}",
     "incorrectAnswers": [
-      "Es ist kalt.",
-      "Es regnet.",
-      "Es ist windig."
+      "{{de-DE|Es ist kalt.||}}",
+      "{{de-DE|Es regnet.||}}",
+      "{{de-DE|Es ist windig.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2824,11 +2824,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'It is cold.'.",
-    "correctAnswer": "Es ist kalt.",
+    "correctAnswer": "{{de-DE|Es ist kalt.||}}",
     "incorrectAnswers": [
-      "Es regnet.",
-      "Es ist windig.",
-      "Es ist sonnig."
+      "{{de-DE|Es regnet.||}}",
+      "{{de-DE|Es ist windig.||}}",
+      "{{de-DE|Es ist sonnig.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2844,11 +2844,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'It is raining.'?",
-    "correctAnswer": "Es regnet.",
+    "correctAnswer": "{{de-DE|Es regnet.||}}",
     "incorrectAnswers": [
-      "Es ist windig.",
-      "Es ist sonnig.",
-      "Es schneit."
+      "{{de-DE|Es ist windig.||}}",
+      "{{de-DE|Es ist sonnig.||}}",
+      "{{de-DE|Es schneit.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2864,11 +2864,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'It is windy.'?",
-    "correctAnswer": "Es ist windig.",
+    "correctAnswer": "{{de-DE|Es ist windig.||}}",
     "incorrectAnswers": [
-      "Es ist sonnig.",
-      "Es schneit.",
-      "Was f\u00fcr ein sch\u00f6ner Tag!"
+      "{{de-DE|Es ist sonnig.||}}",
+      "{{de-DE|Es schneit.||}}",
+      "{{de-DE|Was für ein schöner Tag!||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2884,11 +2884,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'It is sunny.'?",
-    "correctAnswer": "Es ist sonnig.",
+    "correctAnswer": "{{de-DE|Es ist sonnig.||}}",
     "incorrectAnswers": [
-      "Es schneit.",
-      "Was f\u00fcr ein sch\u00f6ner Tag!",
-      "Es ist bew\u00f6lkt."
+      "{{de-DE|Es schneit.||}}",
+      "{{de-DE|Was für ein schöner Tag!||}}",
+      "{{de-DE|Es ist bewölkt.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2904,11 +2904,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'It is snowing.'.",
-    "correctAnswer": "Es schneit.",
+    "correctAnswer": "{{de-DE|Es schneit.||}}",
     "incorrectAnswers": [
-      "Was f\u00fcr ein sch\u00f6ner Tag!",
-      "Es ist bew\u00f6lkt.",
-      "Ich brauche einen Regenschirm."
+      "{{de-DE|Was für ein schöner Tag!||}}",
+      "{{de-DE|Es ist bewölkt.||}}",
+      "{{de-DE|Ich brauche einen Regenschirm.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2924,11 +2924,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'What a beautiful day!'?",
-    "correctAnswer": "Was f\u00fcr ein sch\u00f6ner Tag!",
+    "correctAnswer": "{{de-DE|Was für ein schöner Tag!||}}",
     "incorrectAnswers": [
-      "Es ist bew\u00f6lkt.",
-      "Ich brauche einen Regenschirm.",
-      "Heute ist das Wetter sch\u00f6n."
+      "{{de-DE|Es ist bewölkt.||}}",
+      "{{de-DE|Ich brauche einen Regenschirm.||}}",
+      "{{de-DE|Heute ist das Wetter schön.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2944,11 +2944,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'It is cloudy.'?",
-    "correctAnswer": "Es ist bew\u00f6lkt.",
+    "correctAnswer": "{{de-DE|Es ist bewölkt.||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Regenschirm.",
-      "Heute ist das Wetter sch\u00f6n.",
-      "Der Himmel ist klar."
+      "{{de-DE|Ich brauche einen Regenschirm.||}}",
+      "{{de-DE|Heute ist das Wetter schön.||}}",
+      "{{de-DE|Der Himmel ist klar.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2964,11 +2964,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I need an umbrella.'?",
-    "correctAnswer": "Ich brauche einen Regenschirm.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Regenschirm.||}}",
     "incorrectAnswers": [
-      "Heute ist das Wetter sch\u00f6n.",
-      "Der Himmel ist klar.",
-      "Wie ist das Wetter?"
+      "{{de-DE|Heute ist das Wetter schön.||}}",
+      "{{de-DE|Der Himmel ist klar.||}}",
+      "{{de-DE|Wie ist das Wetter?||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2984,11 +2984,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'The weather is nice today.'.",
-    "correctAnswer": "Heute ist das Wetter sch\u00f6n.",
+    "correctAnswer": "{{de-DE|Heute ist das Wetter schön.||}}",
     "incorrectAnswers": [
-      "Der Himmel ist klar.",
-      "Wie ist das Wetter?",
-      "Es ist hei\u00df."
+      "{{de-DE|Der Himmel ist klar.||}}",
+      "{{de-DE|Wie ist das Wetter?||}}",
+      "{{de-DE|Es ist heiß.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3004,11 +3004,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'The sky is clear.'?",
-    "correctAnswer": "Der Himmel ist klar.",
+    "correctAnswer": "{{de-DE|Der Himmel ist klar.||}}",
     "incorrectAnswers": [
-      "Wie ist das Wetter?",
-      "Es ist hei\u00df.",
-      "Es ist kalt."
+      "{{de-DE|Wie ist das Wetter?||}}",
+      "{{de-DE|Es ist heiß.||}}",
+      "{{de-DE|Es ist kalt.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3024,11 +3024,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Help!'?",
-    "correctAnswer": "Hilfe!",
+    "correctAnswer": "{{de-DE|Hilfe!||}}",
     "incorrectAnswers": [
-      "Rufen Sie die Polizei!",
-      "Ich habe meinen Pass verloren.",
-      "Meine Brieftasche wurde gestohlen."
+      "{{de-DE|Rufen Sie die Polizei!||}}",
+      "{{de-DE|Ich habe meinen Pass verloren.||}}",
+      "{{de-DE|Meine Brieftasche wurde gestohlen.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3044,11 +3044,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Call the police!'?",
-    "correctAnswer": "Rufen Sie die Polizei!",
+    "correctAnswer": "{{de-DE|Rufen Sie die Polizei!||}}",
     "incorrectAnswers": [
-      "Ich habe meinen Pass verloren.",
-      "Meine Brieftasche wurde gestohlen.",
-      "Ich brauche einen Krankenwagen."
+      "{{de-DE|Ich habe meinen Pass verloren.||}}",
+      "{{de-DE|Meine Brieftasche wurde gestohlen.||}}",
+      "{{de-DE|Ich brauche einen Krankenwagen.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3064,11 +3064,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I have lost my passport.'.",
-    "correctAnswer": "Ich habe meinen Pass verloren.",
+    "correctAnswer": "{{de-DE|Ich habe meinen Pass verloren.||}}",
     "incorrectAnswers": [
-      "Meine Brieftasche wurde gestohlen.",
-      "Ich brauche einen Krankenwagen.",
-      "Rufen Sie einen Arzt!"
+      "{{de-DE|Meine Brieftasche wurde gestohlen.||}}",
+      "{{de-DE|Ich brauche einen Krankenwagen.||}}",
+      "{{de-DE|Rufen Sie einen Arzt!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3084,11 +3084,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "Meine Brieftasche wurde gestohlen.",
+    "correctAnswer": "{{de-DE|Meine Brieftasche wurde gestohlen.||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Krankenwagen.",
-      "Rufen Sie einen Arzt!",
-      "Es gibt ein Feuer."
+      "{{de-DE|Ich brauche einen Krankenwagen.||}}",
+      "{{de-DE|Rufen Sie einen Arzt!||}}",
+      "{{de-DE|Es gibt ein Feuer.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3104,11 +3104,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "Ich brauche einen Krankenwagen.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Krankenwagen.||}}",
     "incorrectAnswers": [
-      "Rufen Sie einen Arzt!",
-      "Es gibt ein Feuer.",
-      "Ich brauche jetzt Hilfe."
+      "{{de-DE|Rufen Sie einen Arzt!||}}",
+      "{{de-DE|Es gibt ein Feuer.||}}",
+      "{{de-DE|Ich brauche jetzt Hilfe.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3124,11 +3124,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Call a doctor!'?",
-    "correctAnswer": "Rufen Sie einen Arzt!",
+    "correctAnswer": "{{de-DE|Rufen Sie einen Arzt!||}}",
     "incorrectAnswers": [
-      "Es gibt ein Feuer.",
-      "Ich brauche jetzt Hilfe.",
-      "Ich habe mein Telefon verloren."
+      "{{de-DE|Es gibt ein Feuer.||}}",
+      "{{de-DE|Ich brauche jetzt Hilfe.||}}",
+      "{{de-DE|Ich habe mein Telefon verloren.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3144,11 +3144,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'There is a fire.'.",
-    "correctAnswer": "Es gibt ein Feuer.",
+    "correctAnswer": "{{de-DE|Es gibt ein Feuer.||}}",
     "incorrectAnswers": [
-      "Ich brauche jetzt Hilfe.",
-      "Ich habe mein Telefon verloren.",
-      "Ich habe meine Tasche verloren."
+      "{{de-DE|Ich brauche jetzt Hilfe.||}}",
+      "{{de-DE|Ich habe mein Telefon verloren.||}}",
+      "{{de-DE|Ich habe meine Tasche verloren.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3164,11 +3164,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I need help now.'?",
-    "correctAnswer": "Ich brauche jetzt Hilfe.",
+    "correctAnswer": "{{de-DE|Ich brauche jetzt Hilfe.||}}",
     "incorrectAnswers": [
-      "Ich habe mein Telefon verloren.",
-      "Ich habe meine Tasche verloren.",
-      "Mein Freund ist verletzt."
+      "{{de-DE|Ich habe mein Telefon verloren.||}}",
+      "{{de-DE|Ich habe meine Tasche verloren.||}}",
+      "{{de-DE|Mein Freund ist verletzt.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3184,11 +3184,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I lost my phone.'?",
-    "correctAnswer": "Ich habe mein Telefon verloren.",
+    "correctAnswer": "{{de-DE|Ich habe mein Telefon verloren.||}}",
     "incorrectAnswers": [
-      "Ich habe meine Tasche verloren.",
-      "Mein Freund ist verletzt.",
-      "Das ist ein Notfall."
+      "{{de-DE|Ich habe meine Tasche verloren.||}}",
+      "{{de-DE|Mein Freund ist verletzt.||}}",
+      "{{de-DE|Das ist ein Notfall.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3204,11 +3204,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I lost my bag.'?",
-    "correctAnswer": "Ich habe meine Tasche verloren.",
+    "correctAnswer": "{{de-DE|Ich habe meine Tasche verloren.||}}",
     "incorrectAnswers": [
-      "Mein Freund ist verletzt.",
-      "Das ist ein Notfall.",
-      "Hilfe!"
+      "{{de-DE|Mein Freund ist verletzt.||}}",
+      "{{de-DE|Das ist ein Notfall.||}}",
+      "{{de-DE|Hilfe!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3224,11 +3224,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'My friend is hurt.'.",
-    "correctAnswer": "Mein Freund ist verletzt.",
+    "correctAnswer": "{{de-DE|Mein Freund ist verletzt.||}}",
     "incorrectAnswers": [
-      "Das ist ein Notfall.",
-      "Hilfe!",
-      "Rufen Sie die Polizei!"
+      "{{de-DE|Das ist ein Notfall.||}}",
+      "{{de-DE|Hilfe!||}}",
+      "{{de-DE|Rufen Sie die Polizei!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3244,11 +3244,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'This is an emergency.'?",
-    "correctAnswer": "Das ist ein Notfall.",
+    "correctAnswer": "{{de-DE|Das ist ein Notfall.||}}",
     "incorrectAnswers": [
-      "Hilfe!",
-      "Rufen Sie die Polizei!",
-      "Ich habe meinen Pass verloren."
+      "{{de-DE|Hilfe!||}}",
+      "{{de-DE|Rufen Sie die Polizei!||}}",
+      "{{de-DE|Ich habe meinen Pass verloren.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3264,11 +3264,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Happy birthday!'?",
-    "correctAnswer": "Alles Gute zum Geburtstag!",
+    "correctAnswer": "{{de-DE|Alles Gute zum Geburtstag!||}}",
     "incorrectAnswers": [
-      "Herzlichen Gl\u00fcckwunsch!",
-      "Viel Gl\u00fcck!",
-      "Gern geschehen."
+      "{{de-DE|Herzlichen Glückwunsch!||}}",
+      "{{de-DE|Viel Glück!||}}",
+      "{{de-DE|Gern geschehen.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3284,11 +3284,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Congratulations!'?",
-    "correctAnswer": "Herzlichen Gl\u00fcckwunsch!",
+    "correctAnswer": "{{de-DE|Herzlichen Glückwunsch!||}}",
     "incorrectAnswers": [
-      "Viel Gl\u00fcck!",
-      "Gern geschehen.",
-      "Keine Ursache."
+      "{{de-DE|Viel Glück!||}}",
+      "{{de-DE|Gern geschehen.||}}",
+      "{{de-DE|Keine Ursache.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3304,11 +3304,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Good luck!'.",
-    "correctAnswer": "Viel Gl\u00fcck!",
+    "correctAnswer": "{{de-DE|Viel Glück!||}}",
     "incorrectAnswers": [
-      "Gern geschehen.",
-      "Keine Ursache.",
-      "Es tut mir leid, das zu h\u00f6ren."
+      "{{de-DE|Gern geschehen.||}}",
+      "{{de-DE|Keine Ursache.||}}",
+      "{{de-DE|Es tut mir leid, das zu hören.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3324,11 +3324,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'You're welcome.'?",
-    "correctAnswer": "Gern geschehen.",
+    "correctAnswer": "{{de-DE|Gern geschehen.||}}",
     "incorrectAnswers": [
-      "Keine Ursache.",
-      "Es tut mir leid, das zu h\u00f6ren.",
-      "Guten Appetit."
+      "{{de-DE|Keine Ursache.||}}",
+      "{{de-DE|Es tut mir leid, das zu hören.||}}",
+      "{{de-DE|Guten Appetit.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3344,11 +3344,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Don't mention it.'?",
-    "correctAnswer": "Keine Ursache.",
+    "correctAnswer": "{{de-DE|Keine Ursache.||}}",
     "incorrectAnswers": [
-      "Es tut mir leid, das zu h\u00f6ren.",
-      "Guten Appetit.",
-      "Gute Reise."
+      "{{de-DE|Es tut mir leid, das zu hören.||}}",
+      "{{de-DE|Guten Appetit.||}}",
+      "{{de-DE|Gute Reise.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3364,11 +3364,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "Es tut mir leid, das zu h\u00f6ren.",
+    "correctAnswer": "{{de-DE|Es tut mir leid, das zu hören.||}}",
     "incorrectAnswers": [
-      "Guten Appetit.",
-      "Gute Reise.",
-      "Bis Montag."
+      "{{de-DE|Guten Appetit.||}}",
+      "{{de-DE|Gute Reise.||}}",
+      "{{de-DE|Bis Montag.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3384,11 +3384,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "Guten Appetit.",
+    "correctAnswer": "{{de-DE|Guten Appetit.||}}",
     "incorrectAnswers": [
-      "Gute Reise.",
-      "Bis Montag.",
-      "Willkommen in unserer Stadt."
+      "{{de-DE|Gute Reise.||}}",
+      "{{de-DE|Bis Montag.||}}",
+      "{{de-DE|Willkommen in unserer Stadt.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3404,11 +3404,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Have a nice trip.'?",
-    "correctAnswer": "Gute Reise.",
+    "correctAnswer": "{{de-DE|Gute Reise.||}}",
     "incorrectAnswers": [
-      "Bis Montag.",
-      "Willkommen in unserer Stadt.",
-      "Sch\u00f6ne Feiertage!"
+      "{{de-DE|Bis Montag.||}}",
+      "{{de-DE|Willkommen in unserer Stadt.||}}",
+      "{{de-DE|Schöne Feiertage!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3424,11 +3424,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'See you on Monday.'?",
-    "correctAnswer": "Bis Montag.",
+    "correctAnswer": "{{de-DE|Bis Montag.||}}",
     "incorrectAnswers": [
-      "Willkommen in unserer Stadt.",
-      "Sch\u00f6ne Feiertage!",
-      "Viel Spa\u00df!"
+      "{{de-DE|Willkommen in unserer Stadt.||}}",
+      "{{de-DE|Schöne Feiertage!||}}",
+      "{{de-DE|Viel Spaß!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3444,11 +3444,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Welcome to our city.'?",
-    "correctAnswer": "Willkommen in unserer Stadt.",
+    "correctAnswer": "{{de-DE|Willkommen in unserer Stadt.||}}",
     "incorrectAnswers": [
-      "Sch\u00f6ne Feiertage!",
-      "Viel Spa\u00df!",
-      "Alles Gute zum Geburtstag!"
+      "{{de-DE|Schöne Feiertage!||}}",
+      "{{de-DE|Viel Spaß!||}}",
+      "{{de-DE|Alles Gute zum Geburtstag!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3464,11 +3464,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'Happy holidays!'.",
-    "correctAnswer": "Sch\u00f6ne Feiertage!",
+    "correctAnswer": "{{de-DE|Schöne Feiertage!||}}",
     "incorrectAnswers": [
-      "Viel Spa\u00df!",
-      "Alles Gute zum Geburtstag!",
-      "Herzlichen Gl\u00fcckwunsch!"
+      "{{de-DE|Viel Spaß!||}}",
+      "{{de-DE|Alles Gute zum Geburtstag!||}}",
+      "{{de-DE|Herzlichen Glückwunsch!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3484,11 +3484,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Have fun!'?",
-    "correctAnswer": "Viel Spa\u00df!",
+    "correctAnswer": "{{de-DE|Viel Spaß!||}}",
     "incorrectAnswers": [
-      "Alles Gute zum Geburtstag!",
-      "Herzlichen Gl\u00fcckwunsch!",
-      "Viel Gl\u00fcck!"
+      "{{de-DE|Alles Gute zum Geburtstag!||}}",
+      "{{de-DE|Herzlichen Glückwunsch!||}}",
+      "{{de-DE|Viel Glück!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3504,11 +3504,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I work in an office.'?",
-    "correctAnswer": "Ich arbeite in einem B\u00fcro.",
+    "correctAnswer": "{{de-DE|Ich arbeite in einem Büro.||}}",
     "incorrectAnswers": [
-      "Ich arbeite als Lehrer/Lehrerin.",
-      "Ich lerne jeden Tag.",
-      "Ich lerne die Sprache."
+      "{{de-DE|Ich arbeite als Lehrer/Lehrerin.||}}",
+      "{{de-DE|Ich lerne jeden Tag.||}}",
+      "{{de-DE|Ich lerne die Sprache.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3524,11 +3524,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'I work as a teacher.'?",
-    "correctAnswer": "Ich arbeite als Lehrer/Lehrerin.",
+    "correctAnswer": "{{de-DE|Ich arbeite als Lehrer/Lehrerin.||}}",
     "incorrectAnswers": [
-      "Ich lerne jeden Tag.",
-      "Ich lerne die Sprache.",
-      "Schreiben Sie es bitte auf."
+      "{{de-DE|Ich lerne jeden Tag.||}}",
+      "{{de-DE|Ich lerne die Sprache.||}}",
+      "{{de-DE|Schreiben Sie es bitte auf.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3544,11 +3544,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I study every day.'.",
-    "correctAnswer": "Ich lerne jeden Tag.",
+    "correctAnswer": "{{de-DE|Ich lerne jeden Tag.||}}",
     "incorrectAnswers": [
-      "Ich lerne die Sprache.",
-      "Schreiben Sie es bitte auf.",
-      "Der Unterricht beginnt jetzt."
+      "{{de-DE|Ich lerne die Sprache.||}}",
+      "{{de-DE|Schreiben Sie es bitte auf.||}}",
+      "{{de-DE|Der Unterricht beginnt jetzt.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3564,11 +3564,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am learning the language.'?",
-    "correctAnswer": "Ich lerne die Sprache.",
+    "correctAnswer": "{{de-DE|Ich lerne die Sprache.||}}",
     "incorrectAnswers": [
-      "Schreiben Sie es bitte auf.",
-      "Der Unterricht beginnt jetzt.",
-      "Ich brauche einen Stift."
+      "{{de-DE|Schreiben Sie es bitte auf.||}}",
+      "{{de-DE|Der Unterricht beginnt jetzt.||}}",
+      "{{de-DE|Ich brauche einen Stift.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3584,11 +3584,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Please write it down.'?",
-    "correctAnswer": "Schreiben Sie es bitte auf.",
+    "correctAnswer": "{{de-DE|Schreiben Sie es bitte auf.||}}",
     "incorrectAnswers": [
-      "Der Unterricht beginnt jetzt.",
-      "Ich brauche einen Stift.",
-      "Ich habe Hausaufgaben."
+      "{{de-DE|Der Unterricht beginnt jetzt.||}}",
+      "{{de-DE|Ich brauche einen Stift.||}}",
+      "{{de-DE|Ich habe Hausaufgaben.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3604,11 +3604,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'The class starts now.'?",
-    "correctAnswer": "Der Unterricht beginnt jetzt.",
+    "correctAnswer": "{{de-DE|Der Unterricht beginnt jetzt.||}}",
     "incorrectAnswers": [
-      "Ich brauche einen Stift.",
-      "Ich habe Hausaufgaben.",
-      "Ich habe morgen eine Pr\u00fcfung."
+      "{{de-DE|Ich brauche einen Stift.||}}",
+      "{{de-DE|Ich habe Hausaufgaben.||}}",
+      "{{de-DE|Ich habe morgen eine Prüfung.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3624,11 +3624,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I need a pen.'.",
-    "correctAnswer": "Ich brauche einen Stift.",
+    "correctAnswer": "{{de-DE|Ich brauche einen Stift.||}}",
     "incorrectAnswers": [
-      "Ich habe Hausaufgaben.",
-      "Ich habe morgen eine Pr\u00fcfung.",
-      "Wo ist das Klassenzimmer?"
+      "{{de-DE|Ich habe Hausaufgaben.||}}",
+      "{{de-DE|Ich habe morgen eine Prüfung.||}}",
+      "{{de-DE|Wo ist das Klassenzimmer?||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3644,11 +3644,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I have homework.'?",
-    "correctAnswer": "Ich habe Hausaufgaben.",
+    "correctAnswer": "{{de-DE|Ich habe Hausaufgaben.||}}",
     "incorrectAnswers": [
-      "Ich habe morgen eine Pr\u00fcfung.",
-      "Wo ist das Klassenzimmer?",
-      "Das Buch liegt auf dem Tisch."
+      "{{de-DE|Ich habe morgen eine Prüfung.||}}",
+      "{{de-DE|Wo ist das Klassenzimmer?||}}",
+      "{{de-DE|Das Buch liegt auf dem Tisch.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3664,11 +3664,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "Ich habe morgen eine Pr\u00fcfung.",
+    "correctAnswer": "{{de-DE|Ich habe morgen eine Prüfung.||}}",
     "incorrectAnswers": [
-      "Wo ist das Klassenzimmer?",
-      "Das Buch liegt auf dem Tisch.",
-      "Mein Lehrer ist sehr nett."
+      "{{de-DE|Wo ist das Klassenzimmer?||}}",
+      "{{de-DE|Das Buch liegt auf dem Tisch.||}}",
+      "{{de-DE|Mein Lehrer ist sehr nett.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3684,11 +3684,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Where is the classroom?'?",
-    "correctAnswer": "Wo ist das Klassenzimmer?",
+    "correctAnswer": "{{de-DE|Wo ist das Klassenzimmer?||}}",
     "incorrectAnswers": [
-      "Das Buch liegt auf dem Tisch.",
-      "Mein Lehrer ist sehr nett.",
-      "Ich arbeite in einem B\u00fcro."
+      "{{de-DE|Das Buch liegt auf dem Tisch.||}}",
+      "{{de-DE|Mein Lehrer ist sehr nett.||}}",
+      "{{de-DE|Ich arbeite in einem Büro.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3704,11 +3704,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'The book is on the table.'.",
-    "correctAnswer": "Das Buch liegt auf dem Tisch.",
+    "correctAnswer": "{{de-DE|Das Buch liegt auf dem Tisch.||}}",
     "incorrectAnswers": [
-      "Mein Lehrer ist sehr nett.",
-      "Ich arbeite in einem B\u00fcro.",
-      "Ich arbeite als Lehrer/Lehrerin."
+      "{{de-DE|Mein Lehrer ist sehr nett.||}}",
+      "{{de-DE|Ich arbeite in einem Büro.||}}",
+      "{{de-DE|Ich arbeite als Lehrer/Lehrerin.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3724,11 +3724,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "Mein Lehrer ist sehr nett.",
+    "correctAnswer": "{{de-DE|Mein Lehrer ist sehr nett.||}}",
     "incorrectAnswers": [
-      "Ich arbeite in einem B\u00fcro.",
-      "Ich arbeite als Lehrer/Lehrerin.",
-      "Ich lerne jeden Tag."
+      "{{de-DE|Ich arbeite in einem Büro.||}}",
+      "{{de-DE|Ich arbeite als Lehrer/Lehrerin.||}}",
+      "{{de-DE|Ich lerne jeden Tag.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3744,11 +3744,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "Ich spreche ein bisschen Deutsch.",
+    "correctAnswer": "{{de-DE|Ich spreche ein bisschen Deutsch.||}}",
     "incorrectAnswers": [
-      "Bitte sagen Sie das noch einmal.",
-      "Was bedeutet dieses Wort?",
-      "Ich kenne dieses Wort nicht."
+      "{{de-DE|Bitte sagen Sie das noch einmal.||}}",
+      "{{de-DE|Was bedeutet dieses Wort?||}}",
+      "{{de-DE|Ich kenne dieses Wort nicht.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3764,11 +3764,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Please say that again.'?",
-    "correctAnswer": "Bitte sagen Sie das noch einmal.",
+    "correctAnswer": "{{de-DE|Bitte sagen Sie das noch einmal.||}}",
     "incorrectAnswers": [
-      "Was bedeutet dieses Wort?",
-      "Ich kenne dieses Wort nicht.",
-      "Ist das richtig?"
+      "{{de-DE|Was bedeutet dieses Wort?||}}",
+      "{{de-DE|Ich kenne dieses Wort nicht.||}}",
+      "{{de-DE|Ist das richtig?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3784,11 +3784,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'What does this word mean?'.",
-    "correctAnswer": "Was bedeutet dieses Wort?",
+    "correctAnswer": "{{de-DE|Was bedeutet dieses Wort?||}}",
     "incorrectAnswers": [
-      "Ich kenne dieses Wort nicht.",
-      "Ist das richtig?",
-      "K\u00f6nnen Sie es erkl\u00e4ren?"
+      "{{de-DE|Ich kenne dieses Wort nicht.||}}",
+      "{{de-DE|Ist das richtig?||}}",
+      "{{de-DE|Können Sie es erklären?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3804,11 +3804,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I do not know this word.'?",
-    "correctAnswer": "Ich kenne dieses Wort nicht.",
+    "correctAnswer": "{{de-DE|Ich kenne dieses Wort nicht.||}}",
     "incorrectAnswers": [
-      "Ist das richtig?",
-      "K\u00f6nnen Sie es erkl\u00e4ren?",
-      "Jetzt verstehe ich."
+      "{{de-DE|Ist das richtig?||}}",
+      "{{de-DE|Können Sie es erklären?||}}",
+      "{{de-DE|Jetzt verstehe ich.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3824,11 +3824,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Is this correct?'?",
-    "correctAnswer": "Ist das richtig?",
+    "correctAnswer": "{{de-DE|Ist das richtig?||}}",
     "incorrectAnswers": [
-      "K\u00f6nnen Sie es erkl\u00e4ren?",
-      "Jetzt verstehe ich.",
-      "Benutzen Sie bitte einfache W\u00f6rter."
+      "{{de-DE|Können Sie es erklären?||}}",
+      "{{de-DE|Jetzt verstehe ich.||}}",
+      "{{de-DE|Benutzen Sie bitte einfache Wörter.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3844,11 +3844,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Can you explain it?'?",
-    "correctAnswer": "K\u00f6nnen Sie es erkl\u00e4ren?",
+    "correctAnswer": "{{de-DE|Können Sie es erklären?||}}",
     "incorrectAnswers": [
-      "Jetzt verstehe ich.",
-      "Benutzen Sie bitte einfache W\u00f6rter.",
-      "Ich \u00fcbe jeden Tag."
+      "{{de-DE|Jetzt verstehe ich.||}}",
+      "{{de-DE|Benutzen Sie bitte einfache Wörter.||}}",
+      "{{de-DE|Ich übe jeden Tag.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3864,11 +3864,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'I understand now.'.",
-    "correctAnswer": "Jetzt verstehe ich.",
+    "correctAnswer": "{{de-DE|Jetzt verstehe ich.||}}",
     "incorrectAnswers": [
-      "Benutzen Sie bitte einfache W\u00f6rter.",
-      "Ich \u00fcbe jeden Tag.",
-      "Lesen Sie bitte diesen Satz."
+      "{{de-DE|Benutzen Sie bitte einfache Wörter.||}}",
+      "{{de-DE|Ich übe jeden Tag.||}}",
+      "{{de-DE|Lesen Sie bitte diesen Satz.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3884,11 +3884,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'Please use simple words.'?",
-    "correctAnswer": "Benutzen Sie bitte einfache W\u00f6rter.",
+    "correctAnswer": "{{de-DE|Benutzen Sie bitte einfache Wörter.||}}",
     "incorrectAnswers": [
-      "Ich \u00fcbe jeden Tag.",
-      "Lesen Sie bitte diesen Satz.",
-      "Wie schreibt man dieses Wort?"
+      "{{de-DE|Ich übe jeden Tag.||}}",
+      "{{de-DE|Lesen Sie bitte diesen Satz.||}}",
+      "{{de-DE|Wie schreibt man dieses Wort?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3904,11 +3904,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "Ich \u00fcbe jeden Tag.",
+    "correctAnswer": "{{de-DE|Ich übe jeden Tag.||}}",
     "incorrectAnswers": [
-      "Lesen Sie bitte diesen Satz.",
-      "Wie schreibt man dieses Wort?",
-      "Ich lerne langsam."
+      "{{de-DE|Lesen Sie bitte diesen Satz.||}}",
+      "{{de-DE|Wie schreibt man dieses Wort?||}}",
+      "{{de-DE|Ich lerne langsam.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3924,11 +3924,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Which German phrase means 'Please read this sentence.'?",
-    "correctAnswer": "Lesen Sie bitte diesen Satz.",
+    "correctAnswer": "{{de-DE|Lesen Sie bitte diesen Satz.||}}",
     "incorrectAnswers": [
-      "Wie schreibt man dieses Wort?",
-      "Ich lerne langsam.",
-      "Ich spreche ein bisschen Deutsch."
+      "{{de-DE|Wie schreibt man dieses Wort?||}}",
+      "{{de-DE|Ich lerne langsam.||}}",
+      "{{de-DE|Ich spreche ein bisschen Deutsch.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3944,11 +3944,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct German phrase for 'How do you write that word?'.",
-    "correctAnswer": "Wie schreibt man dieses Wort?",
+    "correctAnswer": "{{de-DE|Wie schreibt man dieses Wort?||}}",
     "incorrectAnswers": [
-      "Ich lerne langsam.",
-      "Ich spreche ein bisschen Deutsch.",
-      "Bitte sagen Sie das noch einmal."
+      "{{de-DE|Ich lerne langsam.||}}",
+      "{{de-DE|Ich spreche ein bisschen Deutsch.||}}",
+      "{{de-DE|Bitte sagen Sie das noch einmal.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3964,11 +3964,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "What is the natural German sentence for 'I am learning slowly.'?",
-    "correctAnswer": "Ich lerne langsam.",
+    "correctAnswer": "{{de-DE|Ich lerne langsam.||}}",
     "incorrectAnswers": [
-      "Ich spreche ein bisschen Deutsch.",
-      "Bitte sagen Sie das noch einmal.",
-      "Was bedeutet dieses Wort?"
+      "{{de-DE|Ich spreche ein bisschen Deutsch.||}}",
+      "{{de-DE|Bitte sagen Sie das noch einmal.||}}",
+      "{{de-DE|Was bedeutet dieses Wort?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3984,11 +3984,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "phrases",
     "question": "In beginner German, how do you say 'Where are you from?'?",
-    "correctAnswer": "Woher kommen Sie?",
+    "correctAnswer": "{{de-DE|Woher kommen Sie?||}}",
     "incorrectAnswers": [
-      "Wie hei\u00dfen Sie?",
-      "Ich komme aus den USA.",
-      "Ich wohne in Chicago."
+      "{{de-DE|Wie heißen Sie?||}}",
+      "{{de-DE|Ich komme aus den USA.||}}",
+      "{{de-DE|Ich wohne in Chicago.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [

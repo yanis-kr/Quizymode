@@ -5,11 +5,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in German?",
-    "correctAnswer": "Hallo / Guten Tag",
+    "correctAnswer": "{{de-DE|Hallo||}} / {{de-DE|Guten Tag||}}",
     "incorrectAnswers": [
-      "Auf Wiedersehen",
-      "Danke",
-      "Bitte"
+      "{{de-DE|Auf Wiedersehen||}}",
+      "{{de-DE|Danke||}}",
+      "{{de-DE|Bitte||}}"
     ],
     "explanation": "'Hallo' is casual; 'Guten Tag' (good day) is formal. 'Guten Morgen' = good morning, 'Guten Abend' = good evening.",
     "keywords": [
@@ -26,13 +26,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in German?",
-    "correctAnswer": "Danke",
+    "correctAnswer": "{{de-DE|Danke||}}",
     "incorrectAnswers": [
-      "Bitte",
-      "Entschuldigung",
-      "Hallo"
+      "{{de-DE|Bitte||}}",
+      "{{de-DE|Entschuldigung||}}",
+      "{{de-DE|Hallo||}}"
     ],
-    "explanation": "'Danke' = thank you. 'Danke sch\u00f6n' = thank you kindly. 'Bitte' = please AND you're welcome.",
+    "explanation": "'Danke' = thank you. 'Danke schön' = thank you kindly. 'Bitte' = please AND you're welcome.",
     "keywords": [
       "freq-100",
       "situation-greetings",
@@ -47,11 +47,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in German?",
-    "correctAnswer": "Bitte",
+    "correctAnswer": "{{de-DE|Bitte||}}",
     "incorrectAnswers": [
-      "Danke",
-      "Entschuldigung",
-      "Ja"
+      "{{de-DE|Danke||}}",
+      "{{de-DE|Entschuldigung||}}",
+      "{{de-DE|Ja||}}"
     ],
     "explanation": "'Bitte' is both please and you're welcome. Context determines meaning.",
     "keywords": [
@@ -67,13 +67,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in German?",
-    "correctAnswer": "Ich hei\u00dfe...",
+    "correctAnswer": "{{de-DE|Ich heiße...||}}",
     "incorrectAnswers": [
-      "Ich wohne in...",
-      "Ich bin aus...",
-      "Ich mag..."
+      "{{de-DE|Ich wohne in...||}}",
+      "{{de-DE|Ich bin aus...||}}",
+      "{{de-DE|Ich mag...||}}"
     ],
-    "explanation": "'Ich hei\u00dfe [name]' \u2014 'I am called [name]'. 'Ich bin [name]' (I am) is also used.",
+    "explanation": "'Ich heiße [name]' — 'I am called [name]'. 'Ich bin [name]' (I am) is also used.",
     "keywords": [
       "freq-100",
       "situation-intro",
@@ -88,13 +88,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in German?",
-    "correctAnswer": "ein, zwei, drei",
+    "correctAnswer": "{{de-DE|ein, zwei, drei||}}",
     "incorrectAnswers": [
-      "uno, dos, tres",
-      "un, deux, trois",
-      "unu, doi, trei"
+      "{{de-DE|uno, dos, tres||}}",
+      "{{de-DE|un, deux, trois||}}",
+      "{{de-DE|unu, doi, trei||}}"
     ],
-    "explanation": "German numbers: ein (1), zwei (2), drei (3). Note: 'ein' changes form as article \u2014 'einen', 'einem', etc.",
+    "explanation": "German numbers: ein (1), zwei (2), drei (3). Note: 'ein' changes form as article — 'einen', 'einem', etc.",
     "keywords": [
       "freq-100",
       "cefr-a1",
@@ -108,13 +108,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in German?",
-    "correctAnswer": "Auf Wiedersehen",
+    "correctAnswer": "{{de-DE|Auf Wiedersehen||}}",
     "incorrectAnswers": [
-      "Hallo",
-      "Guten Tag",
-      "Bis bald"
+      "{{de-DE|Hallo||}}",
+      "{{de-DE|Guten Tag||}}",
+      "{{de-DE|Bis bald||}}"
     ],
-    "explanation": "'Auf Wiedersehen' = goodbye (formal). 'Tsch\u00fcss' = bye (informal). 'Bis bald' = see you soon.",
+    "explanation": "'Auf Wiedersehen' = goodbye (formal). 'Tschüss' = bye (informal). 'Bis bald' = see you soon.",
     "keywords": [
       "freq-100",
       "situation-greetings",
@@ -129,11 +129,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in German?",
-    "correctAnswer": "Entschuldigung",
+    "correctAnswer": "{{de-DE|Entschuldigung||}}",
     "incorrectAnswers": [
-      "Danke",
-      "Bitte",
-      "Hallo"
+      "{{de-DE|Danke||}}",
+      "{{de-DE|Bitte||}}",
+      "{{de-DE|Hallo||}}"
     ],
     "explanation": "'Entschuldigung' = excuse me / sorry (to get attention or apologize). 'Es tut mir leid' = I'm sorry (deeper apology).",
     "keywords": [
@@ -150,13 +150,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'I don't understand' in German?",
-    "correctAnswer": "Ich verstehe nicht.",
+    "correctAnswer": "{{de-DE|Ich verstehe nicht.||}}",
     "incorrectAnswers": [
-      "Ich wei\u00df nicht.",
-      "Ich h\u00f6re nicht.",
-      "Ich spreche kein Deutsch."
+      "{{de-DE|Ich weiß nicht.||}}",
+      "{{de-DE|Ich höre nicht.||}}",
+      "{{de-DE|Ich spreche kein Deutsch.||}}"
     ],
-    "explanation": "'Ich verstehe nicht' \u2014 the essential rescue phrase. 'Ich wei\u00df nicht' = I don't know.",
+    "explanation": "'Ich verstehe nicht' — the essential rescue phrase. 'Ich weiß nicht' = I don't know.",
     "keywords": [
       "freq-100",
       "cefr-a1",
@@ -170,11 +170,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "How do you say 'water' in German?",
-    "correctAnswer": "Wasser",
+    "correctAnswer": "{{de-DE|Wasser||}}",
     "incorrectAnswers": [
-      "Brot",
-      "Milch",
-      "Wein"
+      "{{de-DE|Brot||}}",
+      "{{de-DE|Milch||}}",
+      "{{de-DE|Wein||}}"
     ],
     "explanation": "'Wasser' (das Wasser) = water. 'Brot' = bread, 'Milch' = milk. All neuter or feminine.",
     "keywords": [
@@ -190,11 +190,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'four'?",
-    "correctAnswer": "vier",
+    "correctAnswer": "{{de-DE|vier||}}",
     "incorrectAnswers": [
-      "f\u00fcnf",
-      "sechs",
-      "sieben"
+      "{{de-DE|fünf||}}",
+      "{{de-DE|sechs||}}",
+      "{{de-DE|sieben||}}"
     ],
     "explanation": "'vier' is the word for 'four'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -212,13 +212,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'five' in everyday use?",
-    "correctAnswer": "f\u00fcnf",
+    "correctAnswer": "{{de-DE|fünf||}}",
     "incorrectAnswers": [
-      "sechs",
-      "sieben",
-      "acht"
+      "{{de-DE|sechs||}}",
+      "{{de-DE|sieben||}}",
+      "{{de-DE|acht||}}"
     ],
-    "explanation": "'f\u00fcnf' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'fünf' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -234,11 +234,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'six'.",
-    "correctAnswer": "sechs",
+    "correctAnswer": "{{de-DE|sechs||}}",
     "incorrectAnswers": [
-      "sieben",
-      "acht",
-      "neun"
+      "{{de-DE|sieben||}}",
+      "{{de-DE|acht||}}",
+      "{{de-DE|neun||}}"
     ],
     "explanation": "'sechs' is the word for 'six'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -256,11 +256,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'seven'?",
-    "correctAnswer": "sieben",
+    "correctAnswer": "{{de-DE|sieben||}}",
     "incorrectAnswers": [
-      "acht",
-      "neun",
-      "zehn"
+      "{{de-DE|acht||}}",
+      "{{de-DE|neun||}}",
+      "{{de-DE|zehn||}}"
     ],
     "explanation": "'sieben' is the word for 'seven'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -278,11 +278,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'eight'?",
-    "correctAnswer": "acht",
+    "correctAnswer": "{{de-DE|acht||}}",
     "incorrectAnswers": [
-      "neun",
-      "zehn",
-      "elf"
+      "{{de-DE|neun||}}",
+      "{{de-DE|zehn||}}",
+      "{{de-DE|elf||}}"
     ],
     "explanation": "'acht' is the word for 'eight'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -300,11 +300,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'nine' in everyday use?",
-    "correctAnswer": "neun",
+    "correctAnswer": "{{de-DE|neun||}}",
     "incorrectAnswers": [
-      "zehn",
-      "elf",
-      "zw\u00f6lf"
+      "{{de-DE|zehn||}}",
+      "{{de-DE|elf||}}",
+      "{{de-DE|zwölf||}}"
     ],
     "explanation": "'neun' is the word for 'nine'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -322,11 +322,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'ten'.",
-    "correctAnswer": "zehn",
+    "correctAnswer": "{{de-DE|zehn||}}",
     "incorrectAnswers": [
-      "elf",
-      "zw\u00f6lf",
-      "dreizehn"
+      "{{de-DE|elf||}}",
+      "{{de-DE|zwölf||}}",
+      "{{de-DE|dreizehn||}}"
     ],
     "explanation": "'zehn' is the word for 'ten'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -344,11 +344,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'eleven'?",
-    "correctAnswer": "elf",
+    "correctAnswer": "{{de-DE|elf||}}",
     "incorrectAnswers": [
-      "zw\u00f6lf",
-      "dreizehn",
-      "vierzehn"
+      "{{de-DE|zwölf||}}",
+      "{{de-DE|dreizehn||}}",
+      "{{de-DE|vierzehn||}}"
     ],
     "explanation": "'elf' is the word for 'eleven'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -366,13 +366,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'twelve'?",
-    "correctAnswer": "zw\u00f6lf",
+    "correctAnswer": "{{de-DE|zwölf||}}",
     "incorrectAnswers": [
-      "dreizehn",
-      "vierzehn",
-      "f\u00fcnfzehn"
+      "{{de-DE|dreizehn||}}",
+      "{{de-DE|vierzehn||}}",
+      "{{de-DE|fünfzehn||}}"
     ],
-    "explanation": "'zw\u00f6lf' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'zwölf' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -388,11 +388,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'thirteen' in everyday use?",
-    "correctAnswer": "dreizehn",
+    "correctAnswer": "{{de-DE|dreizehn||}}",
     "incorrectAnswers": [
-      "vierzehn",
-      "f\u00fcnfzehn",
-      "sechzehn"
+      "{{de-DE|vierzehn||}}",
+      "{{de-DE|fünfzehn||}}",
+      "{{de-DE|sechzehn||}}"
     ],
     "explanation": "'dreizehn' is the word for 'thirteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -410,11 +410,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'fourteen'.",
-    "correctAnswer": "vierzehn",
+    "correctAnswer": "{{de-DE|vierzehn||}}",
     "incorrectAnswers": [
-      "f\u00fcnfzehn",
-      "sechzehn",
-      "siebzehn"
+      "{{de-DE|fünfzehn||}}",
+      "{{de-DE|sechzehn||}}",
+      "{{de-DE|siebzehn||}}"
     ],
     "explanation": "'vierzehn' is the word for 'fourteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -432,13 +432,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'fifteen'?",
-    "correctAnswer": "f\u00fcnfzehn",
+    "correctAnswer": "{{de-DE|fünfzehn||}}",
     "incorrectAnswers": [
-      "sechzehn",
-      "siebzehn",
-      "achtzehn"
+      "{{de-DE|sechzehn||}}",
+      "{{de-DE|siebzehn||}}",
+      "{{de-DE|achtzehn||}}"
     ],
-    "explanation": "'f\u00fcnfzehn' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'fünfzehn' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -454,11 +454,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'sixteen'?",
-    "correctAnswer": "sechzehn",
+    "correctAnswer": "{{de-DE|sechzehn||}}",
     "incorrectAnswers": [
-      "siebzehn",
-      "achtzehn",
-      "neunzehn"
+      "{{de-DE|siebzehn||}}",
+      "{{de-DE|achtzehn||}}",
+      "{{de-DE|neunzehn||}}"
     ],
     "explanation": "'sechzehn' is the word for 'sixteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -476,11 +476,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'seventeen' in everyday use?",
-    "correctAnswer": "siebzehn",
+    "correctAnswer": "{{de-DE|siebzehn||}}",
     "incorrectAnswers": [
-      "achtzehn",
-      "neunzehn",
-      "zwanzig"
+      "{{de-DE|achtzehn||}}",
+      "{{de-DE|neunzehn||}}",
+      "{{de-DE|zwanzig||}}"
     ],
     "explanation": "'siebzehn' is the word for 'seventeen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -498,11 +498,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'eighteen'.",
-    "correctAnswer": "achtzehn",
+    "correctAnswer": "{{de-DE|achtzehn||}}",
     "incorrectAnswers": [
-      "neunzehn",
-      "zwanzig",
-      "drei\u00dfig"
+      "{{de-DE|neunzehn||}}",
+      "{{de-DE|zwanzig||}}",
+      "{{de-DE|dreißig||}}"
     ],
     "explanation": "'achtzehn' is the word for 'eighteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -520,11 +520,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'nineteen'?",
-    "correctAnswer": "neunzehn",
+    "correctAnswer": "{{de-DE|neunzehn||}}",
     "incorrectAnswers": [
-      "zwanzig",
-      "drei\u00dfig",
-      "vierzig"
+      "{{de-DE|zwanzig||}}",
+      "{{de-DE|dreißig||}}",
+      "{{de-DE|vierzig||}}"
     ],
     "explanation": "'neunzehn' is the word for 'nineteen'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -542,11 +542,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'twenty'?",
-    "correctAnswer": "zwanzig",
+    "correctAnswer": "{{de-DE|zwanzig||}}",
     "incorrectAnswers": [
-      "drei\u00dfig",
-      "vierzig",
-      "f\u00fcnfzig"
+      "{{de-DE|dreißig||}}",
+      "{{de-DE|vierzig||}}",
+      "{{de-DE|fünfzig||}}"
     ],
     "explanation": "'zwanzig' is the word for 'twenty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -564,13 +564,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'thirty' in everyday use?",
-    "correctAnswer": "drei\u00dfig",
+    "correctAnswer": "{{de-DE|dreißig||}}",
     "incorrectAnswers": [
-      "vierzig",
-      "f\u00fcnfzig",
-      "sechzig"
+      "{{de-DE|vierzig||}}",
+      "{{de-DE|fünfzig||}}",
+      "{{de-DE|sechzig||}}"
     ],
-    "explanation": "'drei\u00dfig' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'dreißig' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -586,11 +586,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'forty'.",
-    "correctAnswer": "vierzig",
+    "correctAnswer": "{{de-DE|vierzig||}}",
     "incorrectAnswers": [
-      "f\u00fcnfzig",
-      "sechzig",
-      "siebzig"
+      "{{de-DE|fünfzig||}}",
+      "{{de-DE|sechzig||}}",
+      "{{de-DE|siebzig||}}"
     ],
     "explanation": "'vierzig' is the word for 'forty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -608,13 +608,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'fifty'?",
-    "correctAnswer": "f\u00fcnfzig",
+    "correctAnswer": "{{de-DE|fünfzig||}}",
     "incorrectAnswers": [
-      "sechzig",
-      "siebzig",
-      "achtzig"
+      "{{de-DE|sechzig||}}",
+      "{{de-DE|siebzig||}}",
+      "{{de-DE|achtzig||}}"
     ],
-    "explanation": "'f\u00fcnfzig' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'fünfzig' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -630,11 +630,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'sixty'?",
-    "correctAnswer": "sechzig",
+    "correctAnswer": "{{de-DE|sechzig||}}",
     "incorrectAnswers": [
-      "siebzig",
-      "achtzig",
-      "neunzig"
+      "{{de-DE|siebzig||}}",
+      "{{de-DE|achtzig||}}",
+      "{{de-DE|neunzig||}}"
     ],
     "explanation": "'sechzig' is the word for 'sixty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -652,11 +652,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'seventy' in everyday use?",
-    "correctAnswer": "siebzig",
+    "correctAnswer": "{{de-DE|siebzig||}}",
     "incorrectAnswers": [
-      "achtzig",
-      "neunzig",
-      "hundert"
+      "{{de-DE|achtzig||}}",
+      "{{de-DE|neunzig||}}",
+      "{{de-DE|hundert||}}"
     ],
     "explanation": "'siebzig' is the word for 'seventy'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -674,11 +674,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'eighty'.",
-    "correctAnswer": "achtzig",
+    "correctAnswer": "{{de-DE|achtzig||}}",
     "incorrectAnswers": [
-      "neunzig",
-      "hundert",
-      "vier"
+      "{{de-DE|neunzig||}}",
+      "{{de-DE|hundert||}}",
+      "{{de-DE|vier||}}"
     ],
     "explanation": "'achtzig' is the word for 'eighty'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -696,11 +696,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'ninety'?",
-    "correctAnswer": "neunzig",
+    "correctAnswer": "{{de-DE|neunzig||}}",
     "incorrectAnswers": [
-      "hundert",
-      "vier",
-      "f\u00fcnf"
+      "{{de-DE|hundert||}}",
+      "{{de-DE|vier||}}",
+      "{{de-DE|fünf||}}"
     ],
     "explanation": "'neunzig' is the word for 'ninety'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -718,11 +718,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'one hundred'?",
-    "correctAnswer": "hundert",
+    "correctAnswer": "{{de-DE|hundert||}}",
     "incorrectAnswers": [
-      "vier",
-      "f\u00fcnf",
-      "sechs"
+      "{{de-DE|vier||}}",
+      "{{de-DE|fünf||}}",
+      "{{de-DE|sechs||}}"
     ],
     "explanation": "'hundert' is the word for 'one hundred'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -740,11 +740,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'first'?",
-    "correctAnswer": "erste",
+    "correctAnswer": "{{de-DE|erste||}}",
     "incorrectAnswers": [
-      "zweite",
-      "dritte",
-      "die H\u00e4lfte"
+      "{{de-DE|zweite||}}",
+      "{{de-DE|dritte||}}",
+      "{{de-DE|die Hälfte||}}"
     ],
     "explanation": "'erste' is the word for 'first'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -762,11 +762,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'second' in everyday use?",
-    "correctAnswer": "zweite",
+    "correctAnswer": "{{de-DE|zweite||}}",
     "incorrectAnswers": [
-      "dritte",
-      "die H\u00e4lfte",
-      "das Viertel"
+      "{{de-DE|dritte||}}",
+      "{{de-DE|die Hälfte||}}",
+      "{{de-DE|das Viertel||}}"
     ],
     "explanation": "'zweite' is the word for 'second'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -784,11 +784,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'third'.",
-    "correctAnswer": "dritte",
+    "correctAnswer": "{{de-DE|dritte||}}",
     "incorrectAnswers": [
-      "die H\u00e4lfte",
-      "das Viertel",
-      "erste"
+      "{{de-DE|die Hälfte||}}",
+      "{{de-DE|das Viertel||}}",
+      "{{de-DE|erste||}}"
     ],
     "explanation": "'dritte' is the word for 'third'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -806,13 +806,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'a half'?",
-    "correctAnswer": "die H\u00e4lfte",
+    "correctAnswer": "{{de-DE|die Hälfte||}}",
     "incorrectAnswers": [
-      "das Viertel",
-      "erste",
-      "zweite"
+      "{{de-DE|das Viertel||}}",
+      "{{de-DE|erste||}}",
+      "{{de-DE|zweite||}}"
     ],
-    "explanation": "'die H\u00e4lfte' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
+    "explanation": "'die Hälfte' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
       "freq-1000",
       "cefr-a2",
@@ -828,11 +828,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'a quarter'?",
-    "correctAnswer": "das Viertel",
+    "correctAnswer": "{{de-DE|das Viertel||}}",
     "incorrectAnswers": [
-      "erste",
-      "zweite",
-      "dritte"
+      "{{de-DE|erste||}}",
+      "{{de-DE|zweite||}}",
+      "{{de-DE|dritte||}}"
     ],
     "explanation": "'das Viertel' is the word for 'a quarter'. Say it with nearby numbers to make it easier to remember.",
     "keywords": [
@@ -850,11 +850,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'Monday'?",
-    "correctAnswer": "Montag",
+    "correctAnswer": "{{de-DE|Montag||}}",
     "incorrectAnswers": [
-      "Dienstag",
-      "Mittwoch",
-      "Donnerstag"
+      "{{de-DE|Dienstag||}}",
+      "{{de-DE|Mittwoch||}}",
+      "{{de-DE|Donnerstag||}}"
     ],
     "explanation": "'Montag' means 'Monday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -872,11 +872,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'Tuesday' in everyday use?",
-    "correctAnswer": "Dienstag",
+    "correctAnswer": "{{de-DE|Dienstag||}}",
     "incorrectAnswers": [
-      "Mittwoch",
-      "Donnerstag",
-      "Freitag"
+      "{{de-DE|Mittwoch||}}",
+      "{{de-DE|Donnerstag||}}",
+      "{{de-DE|Freitag||}}"
     ],
     "explanation": "'Dienstag' means 'Tuesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -894,11 +894,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'Wednesday'.",
-    "correctAnswer": "Mittwoch",
+    "correctAnswer": "{{de-DE|Mittwoch||}}",
     "incorrectAnswers": [
-      "Donnerstag",
-      "Freitag",
-      "Samstag"
+      "{{de-DE|Donnerstag||}}",
+      "{{de-DE|Freitag||}}",
+      "{{de-DE|Samstag||}}"
     ],
     "explanation": "'Mittwoch' means 'Wednesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -916,11 +916,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'Thursday'?",
-    "correctAnswer": "Donnerstag",
+    "correctAnswer": "{{de-DE|Donnerstag||}}",
     "incorrectAnswers": [
-      "Freitag",
-      "Samstag",
-      "Sonntag"
+      "{{de-DE|Freitag||}}",
+      "{{de-DE|Samstag||}}",
+      "{{de-DE|Sonntag||}}"
     ],
     "explanation": "'Donnerstag' means 'Thursday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -938,11 +938,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'Friday'?",
-    "correctAnswer": "Freitag",
+    "correctAnswer": "{{de-DE|Freitag||}}",
     "incorrectAnswers": [
-      "Samstag",
-      "Sonntag",
-      "Montag"
+      "{{de-DE|Samstag||}}",
+      "{{de-DE|Sonntag||}}",
+      "{{de-DE|Montag||}}"
     ],
     "explanation": "'Freitag' means 'Friday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -960,11 +960,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'Saturday' in everyday use?",
-    "correctAnswer": "Samstag",
+    "correctAnswer": "{{de-DE|Samstag||}}",
     "incorrectAnswers": [
-      "Sonntag",
-      "Montag",
-      "Dienstag"
+      "{{de-DE|Sonntag||}}",
+      "{{de-DE|Montag||}}",
+      "{{de-DE|Dienstag||}}"
     ],
     "explanation": "'Samstag' means 'Saturday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -982,11 +982,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'Sunday'.",
-    "correctAnswer": "Sonntag",
+    "correctAnswer": "{{de-DE|Sonntag||}}",
     "incorrectAnswers": [
-      "Montag",
-      "Dienstag",
-      "Mittwoch"
+      "{{de-DE|Montag||}}",
+      "{{de-DE|Dienstag||}}",
+      "{{de-DE|Mittwoch||}}"
     ],
     "explanation": "'Sonntag' means 'Sunday'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1004,11 +1004,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'January'?",
-    "correctAnswer": "Januar",
+    "correctAnswer": "{{de-DE|Januar||}}",
     "incorrectAnswers": [
-      "Februar",
-      "M\u00e4rz",
-      "April"
+      "{{de-DE|Februar||}}",
+      "{{de-DE|März||}}",
+      "{{de-DE|April||}}"
     ],
     "explanation": "'Januar' means 'January'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1026,11 +1026,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'February' in everyday use?",
-    "correctAnswer": "Februar",
+    "correctAnswer": "{{de-DE|Februar||}}",
     "incorrectAnswers": [
-      "M\u00e4rz",
-      "April",
-      "Mai"
+      "{{de-DE|März||}}",
+      "{{de-DE|April||}}",
+      "{{de-DE|Mai||}}"
     ],
     "explanation": "'Februar' means 'February'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1048,13 +1048,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'March'.",
-    "correctAnswer": "M\u00e4rz",
+    "correctAnswer": "{{de-DE|März||}}",
     "incorrectAnswers": [
-      "April",
-      "Mai",
-      "Juni"
+      "{{de-DE|April||}}",
+      "{{de-DE|Mai||}}",
+      "{{de-DE|Juni||}}"
     ],
-    "explanation": "'M\u00e4rz' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'März' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -1070,11 +1070,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'April'?",
-    "correctAnswer": "April",
+    "correctAnswer": "{{de-DE|April||}}",
     "incorrectAnswers": [
-      "Mai",
-      "Juni",
-      "Juli"
+      "{{de-DE|Mai||}}",
+      "{{de-DE|Juni||}}",
+      "{{de-DE|Juli||}}"
     ],
     "explanation": "'April' means 'April'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1092,11 +1092,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'May'?",
-    "correctAnswer": "Mai",
+    "correctAnswer": "{{de-DE|Mai||}}",
     "incorrectAnswers": [
-      "Juni",
-      "Juli",
-      "August"
+      "{{de-DE|Juni||}}",
+      "{{de-DE|Juli||}}",
+      "{{de-DE|August||}}"
     ],
     "explanation": "'Mai' means 'May'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1114,11 +1114,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'June' in everyday use?",
-    "correctAnswer": "Juni",
+    "correctAnswer": "{{de-DE|Juni||}}",
     "incorrectAnswers": [
-      "Juli",
-      "August",
-      "September"
+      "{{de-DE|Juli||}}",
+      "{{de-DE|August||}}",
+      "{{de-DE|September||}}"
     ],
     "explanation": "'Juni' means 'June'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1136,11 +1136,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'July'.",
-    "correctAnswer": "Juli",
+    "correctAnswer": "{{de-DE|Juli||}}",
     "incorrectAnswers": [
-      "August",
-      "September",
-      "Oktober"
+      "{{de-DE|August||}}",
+      "{{de-DE|September||}}",
+      "{{de-DE|Oktober||}}"
     ],
     "explanation": "'Juli' means 'July'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1158,11 +1158,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'August'?",
-    "correctAnswer": "August",
+    "correctAnswer": "{{de-DE|August||}}",
     "incorrectAnswers": [
-      "September",
-      "Oktober",
-      "November"
+      "{{de-DE|September||}}",
+      "{{de-DE|Oktober||}}",
+      "{{de-DE|November||}}"
     ],
     "explanation": "'August' means 'August'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1180,11 +1180,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'September'?",
-    "correctAnswer": "September",
+    "correctAnswer": "{{de-DE|September||}}",
     "incorrectAnswers": [
-      "Oktober",
-      "November",
-      "Dezember"
+      "{{de-DE|Oktober||}}",
+      "{{de-DE|November||}}",
+      "{{de-DE|Dezember||}}"
     ],
     "explanation": "'September' means 'September'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1202,11 +1202,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'October' in everyday use?",
-    "correctAnswer": "Oktober",
+    "correctAnswer": "{{de-DE|Oktober||}}",
     "incorrectAnswers": [
-      "November",
-      "Dezember",
-      "Januar"
+      "{{de-DE|November||}}",
+      "{{de-DE|Dezember||}}",
+      "{{de-DE|Januar||}}"
     ],
     "explanation": "'Oktober' means 'October'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1224,11 +1224,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'November'.",
-    "correctAnswer": "November",
+    "correctAnswer": "{{de-DE|November||}}",
     "incorrectAnswers": [
-      "Dezember",
-      "Januar",
-      "Februar"
+      "{{de-DE|Dezember||}}",
+      "{{de-DE|Januar||}}",
+      "{{de-DE|Februar||}}"
     ],
     "explanation": "'November' means 'November'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1246,11 +1246,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'December'?",
-    "correctAnswer": "Dezember",
+    "correctAnswer": "{{de-DE|Dezember||}}",
     "incorrectAnswers": [
-      "Januar",
-      "Februar",
-      "M\u00e4rz"
+      "{{de-DE|Januar||}}",
+      "{{de-DE|Februar||}}",
+      "{{de-DE|März||}}"
     ],
     "explanation": "'Dezember' means 'December'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1268,13 +1268,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'spring'?",
-    "correctAnswer": "Fr\u00fchling",
+    "correctAnswer": "{{de-DE|Frühling||}}",
     "incorrectAnswers": [
-      "Sommer",
-      "Herbst",
-      "Winter"
+      "{{de-DE|Sommer||}}",
+      "{{de-DE|Herbst||}}",
+      "{{de-DE|Winter||}}"
     ],
-    "explanation": "'Fr\u00fchling' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Frühling' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -1290,11 +1290,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'summer' in everyday use?",
-    "correctAnswer": "Sommer",
+    "correctAnswer": "{{de-DE|Sommer||}}",
     "incorrectAnswers": [
-      "Herbst",
-      "Winter",
-      "Fr\u00fchling"
+      "{{de-DE|Herbst||}}",
+      "{{de-DE|Winter||}}",
+      "{{de-DE|Frühling||}}"
     ],
     "explanation": "'Sommer' means 'summer'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1312,11 +1312,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'autumn'.",
-    "correctAnswer": "Herbst",
+    "correctAnswer": "{{de-DE|Herbst||}}",
     "incorrectAnswers": [
-      "Winter",
-      "Fr\u00fchling",
-      "Sommer"
+      "{{de-DE|Winter||}}",
+      "{{de-DE|Frühling||}}",
+      "{{de-DE|Sommer||}}"
     ],
     "explanation": "'Herbst' means 'autumn'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1334,11 +1334,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'winter'?",
-    "correctAnswer": "Winter",
+    "correctAnswer": "{{de-DE|Winter||}}",
     "incorrectAnswers": [
-      "Fr\u00fchling",
-      "Sommer",
-      "Herbst"
+      "{{de-DE|Frühling||}}",
+      "{{de-DE|Sommer||}}",
+      "{{de-DE|Herbst||}}"
     ],
     "explanation": "'Winter' means 'winter'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1356,11 +1356,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'morning'?",
-    "correctAnswer": "Morgen",
+    "correctAnswer": "{{de-DE|Morgen||}}",
     "incorrectAnswers": [
-      "Nachmittag",
-      "Abend",
-      "Stunde"
+      "{{de-DE|Nachmittag||}}",
+      "{{de-DE|Abend||}}",
+      "{{de-DE|Stunde||}}"
     ],
     "explanation": "'Morgen' means 'morning'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1378,11 +1378,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'afternoon' in everyday use?",
-    "correctAnswer": "Nachmittag",
+    "correctAnswer": "{{de-DE|Nachmittag||}}",
     "incorrectAnswers": [
-      "Abend",
-      "Stunde",
-      "Minute"
+      "{{de-DE|Abend||}}",
+      "{{de-DE|Stunde||}}",
+      "{{de-DE|Minute||}}"
     ],
     "explanation": "'Nachmittag' means 'afternoon'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1400,11 +1400,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'evening'.",
-    "correctAnswer": "Abend",
+    "correctAnswer": "{{de-DE|Abend||}}",
     "incorrectAnswers": [
-      "Stunde",
-      "Minute",
-      "Woche"
+      "{{de-DE|Stunde||}}",
+      "{{de-DE|Minute||}}",
+      "{{de-DE|Woche||}}"
     ],
     "explanation": "'Abend' means 'evening'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1422,11 +1422,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'hour'?",
-    "correctAnswer": "Stunde",
+    "correctAnswer": "{{de-DE|Stunde||}}",
     "incorrectAnswers": [
-      "Minute",
-      "Woche",
-      "Monat"
+      "{{de-DE|Minute||}}",
+      "{{de-DE|Woche||}}",
+      "{{de-DE|Monat||}}"
     ],
     "explanation": "'Stunde' means 'hour'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1444,11 +1444,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'minute'?",
-    "correctAnswer": "Minute",
+    "correctAnswer": "{{de-DE|Minute||}}",
     "incorrectAnswers": [
-      "Woche",
-      "Monat",
-      "Jahr"
+      "{{de-DE|Woche||}}",
+      "{{de-DE|Monat||}}",
+      "{{de-DE|Jahr||}}"
     ],
     "explanation": "'Minute' means 'minute'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1466,11 +1466,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'week' in everyday use?",
-    "correctAnswer": "Woche",
+    "correctAnswer": "{{de-DE|Woche||}}",
     "incorrectAnswers": [
-      "Monat",
-      "Jahr",
-      "Morgen"
+      "{{de-DE|Monat||}}",
+      "{{de-DE|Jahr||}}",
+      "{{de-DE|Morgen||}}"
     ],
     "explanation": "'Woche' means 'week'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1488,11 +1488,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'month'.",
-    "correctAnswer": "Monat",
+    "correctAnswer": "{{de-DE|Monat||}}",
     "incorrectAnswers": [
-      "Jahr",
-      "Morgen",
-      "Nachmittag"
+      "{{de-DE|Jahr||}}",
+      "{{de-DE|Morgen||}}",
+      "{{de-DE|Nachmittag||}}"
     ],
     "explanation": "'Monat' means 'month'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1510,11 +1510,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'year'?",
-    "correctAnswer": "Jahr",
+    "correctAnswer": "{{de-DE|Jahr||}}",
     "incorrectAnswers": [
-      "Morgen",
-      "Nachmittag",
-      "Abend"
+      "{{de-DE|Morgen||}}",
+      "{{de-DE|Nachmittag||}}",
+      "{{de-DE|Abend||}}"
     ],
     "explanation": "'Jahr' means 'year'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1532,11 +1532,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'today'?",
-    "correctAnswer": "heute",
+    "correctAnswer": "{{de-DE|heute||}}",
     "incorrectAnswers": [
-      "morgen",
-      "gestern",
-      "jetzt"
+      "{{de-DE|morgen||}}",
+      "{{de-DE|gestern||}}",
+      "{{de-DE|jetzt||}}"
     ],
     "explanation": "'heute' is the word for 'today'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1554,11 +1554,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'tomorrow' in everyday use?",
-    "correctAnswer": "morgen",
+    "correctAnswer": "{{de-DE|morgen||}}",
     "incorrectAnswers": [
-      "gestern",
-      "jetzt",
-      "sp\u00e4ter"
+      "{{de-DE|gestern||}}",
+      "{{de-DE|jetzt||}}",
+      "{{de-DE|später||}}"
     ],
     "explanation": "'morgen' is the word for 'tomorrow'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1576,11 +1576,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'yesterday'.",
-    "correctAnswer": "gestern",
+    "correctAnswer": "{{de-DE|gestern||}}",
     "incorrectAnswers": [
-      "jetzt",
-      "sp\u00e4ter",
-      "vorher"
+      "{{de-DE|jetzt||}}",
+      "{{de-DE|später||}}",
+      "{{de-DE|vorher||}}"
     ],
     "explanation": "'gestern' is the word for 'yesterday'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1598,11 +1598,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'now'?",
-    "correctAnswer": "jetzt",
+    "correctAnswer": "{{de-DE|jetzt||}}",
     "incorrectAnswers": [
-      "sp\u00e4ter",
-      "vorher",
-      "heute"
+      "{{de-DE|später||}}",
+      "{{de-DE|vorher||}}",
+      "{{de-DE|heute||}}"
     ],
     "explanation": "'jetzt' is the word for 'now'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1620,13 +1620,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'later'?",
-    "correctAnswer": "sp\u00e4ter",
+    "correctAnswer": "{{de-DE|später||}}",
     "incorrectAnswers": [
-      "vorher",
-      "heute",
-      "morgen"
+      "{{de-DE|vorher||}}",
+      "{{de-DE|heute||}}",
+      "{{de-DE|morgen||}}"
     ],
-    "explanation": "'sp\u00e4ter' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
+    "explanation": "'später' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -1642,11 +1642,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'before' in everyday use?",
-    "correctAnswer": "vorher",
+    "correctAnswer": "{{de-DE|vorher||}}",
     "incorrectAnswers": [
-      "heute",
-      "morgen",
-      "gestern"
+      "{{de-DE|heute||}}",
+      "{{de-DE|morgen||}}",
+      "{{de-DE|gestern||}}"
     ],
     "explanation": "'vorher' is the word for 'before'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -1664,11 +1664,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'red'?",
-    "correctAnswer": "rot",
+    "correctAnswer": "{{de-DE|rot||}}",
     "incorrectAnswers": [
-      "blau",
-      "gr\u00fcn",
-      "gelb"
+      "{{de-DE|blau||}}",
+      "{{de-DE|grün||}}",
+      "{{de-DE|gelb||}}"
     ],
     "explanation": "'rot' means 'red'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1686,11 +1686,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'blue' in everyday use?",
-    "correctAnswer": "blau",
+    "correctAnswer": "{{de-DE|blau||}}",
     "incorrectAnswers": [
-      "gr\u00fcn",
-      "gelb",
-      "schwarz"
+      "{{de-DE|grün||}}",
+      "{{de-DE|gelb||}}",
+      "{{de-DE|schwarz||}}"
     ],
     "explanation": "'blau' means 'blue'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1708,13 +1708,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'green'.",
-    "correctAnswer": "gr\u00fcn",
+    "correctAnswer": "{{de-DE|grün||}}",
     "incorrectAnswers": [
-      "gelb",
-      "schwarz",
-      "wei\u00df"
+      "{{de-DE|gelb||}}",
+      "{{de-DE|schwarz||}}",
+      "{{de-DE|weiß||}}"
     ],
-    "explanation": "'gr\u00fcn' means 'green'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'grün' means 'green'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -1730,11 +1730,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'yellow'?",
-    "correctAnswer": "gelb",
+    "correctAnswer": "{{de-DE|gelb||}}",
     "incorrectAnswers": [
-      "schwarz",
-      "wei\u00df",
-      "grau"
+      "{{de-DE|schwarz||}}",
+      "{{de-DE|weiß||}}",
+      "{{de-DE|grau||}}"
     ],
     "explanation": "'gelb' means 'yellow'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1752,11 +1752,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'black'?",
-    "correctAnswer": "schwarz",
+    "correctAnswer": "{{de-DE|schwarz||}}",
     "incorrectAnswers": [
-      "wei\u00df",
-      "grau",
-      "braun"
+      "{{de-DE|weiß||}}",
+      "{{de-DE|grau||}}",
+      "{{de-DE|braun||}}"
     ],
     "explanation": "'schwarz' means 'black'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1774,13 +1774,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'white' in everyday use?",
-    "correctAnswer": "wei\u00df",
+    "correctAnswer": "{{de-DE|weiß||}}",
     "incorrectAnswers": [
-      "grau",
-      "braun",
-      "orange"
+      "{{de-DE|grau||}}",
+      "{{de-DE|braun||}}",
+      "{{de-DE|orange||}}"
     ],
-    "explanation": "'wei\u00df' means 'white'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'weiß' means 'white'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -1796,11 +1796,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'gray'.",
-    "correctAnswer": "grau",
+    "correctAnswer": "{{de-DE|grau||}}",
     "incorrectAnswers": [
-      "braun",
-      "orange",
-      "rosa"
+      "{{de-DE|braun||}}",
+      "{{de-DE|orange||}}",
+      "{{de-DE|rosa||}}"
     ],
     "explanation": "'grau' means 'gray'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1818,11 +1818,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'brown'?",
-    "correctAnswer": "braun",
+    "correctAnswer": "{{de-DE|braun||}}",
     "incorrectAnswers": [
-      "orange",
-      "rosa",
-      "lila"
+      "{{de-DE|orange||}}",
+      "{{de-DE|rosa||}}",
+      "{{de-DE|lila||}}"
     ],
     "explanation": "'braun' means 'brown'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1840,11 +1840,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'orange'?",
-    "correctAnswer": "orange",
+    "correctAnswer": "{{de-DE|orange||}}",
     "incorrectAnswers": [
-      "rosa",
-      "lila",
-      "hell"
+      "{{de-DE|rosa||}}",
+      "{{de-DE|lila||}}",
+      "{{de-DE|hell||}}"
     ],
     "explanation": "'orange' means 'orange'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1862,11 +1862,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'pink' in everyday use?",
-    "correctAnswer": "rosa",
+    "correctAnswer": "{{de-DE|rosa||}}",
     "incorrectAnswers": [
-      "lila",
-      "hell",
-      "dunkel"
+      "{{de-DE|lila||}}",
+      "{{de-DE|hell||}}",
+      "{{de-DE|dunkel||}}"
     ],
     "explanation": "'rosa' means 'pink'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1884,11 +1884,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'purple'.",
-    "correctAnswer": "lila",
+    "correctAnswer": "{{de-DE|lila||}}",
     "incorrectAnswers": [
-      "hell",
-      "dunkel",
-      "rot"
+      "{{de-DE|hell||}}",
+      "{{de-DE|dunkel||}}",
+      "{{de-DE|rot||}}"
     ],
     "explanation": "'lila' means 'purple'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1906,11 +1906,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'light'?",
-    "correctAnswer": "hell",
+    "correctAnswer": "{{de-DE|hell||}}",
     "incorrectAnswers": [
-      "dunkel",
-      "rot",
-      "blau"
+      "{{de-DE|dunkel||}}",
+      "{{de-DE|rot||}}",
+      "{{de-DE|blau||}}"
     ],
     "explanation": "'hell' means 'light'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1928,11 +1928,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'dark'?",
-    "correctAnswer": "dunkel",
+    "correctAnswer": "{{de-DE|dunkel||}}",
     "incorrectAnswers": [
-      "rot",
-      "blau",
-      "gr\u00fcn"
+      "{{de-DE|rot||}}",
+      "{{de-DE|blau||}}",
+      "{{de-DE|grün||}}"
     ],
     "explanation": "'dunkel' means 'dark'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -1950,11 +1950,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'mother'?",
-    "correctAnswer": "Mutter",
+    "correctAnswer": "{{de-DE|Mutter||}}",
     "incorrectAnswers": [
-      "Vater",
-      "Bruder",
-      "Schwester"
+      "{{de-DE|Vater||}}",
+      "{{de-DE|Bruder||}}",
+      "{{de-DE|Schwester||}}"
     ],
     "explanation": "'Mutter' means 'mother'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1972,11 +1972,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'father' in everyday use?",
-    "correctAnswer": "Vater",
+    "correctAnswer": "{{de-DE|Vater||}}",
     "incorrectAnswers": [
-      "Bruder",
-      "Schwester",
-      "Sohn"
+      "{{de-DE|Bruder||}}",
+      "{{de-DE|Schwester||}}",
+      "{{de-DE|Sohn||}}"
     ],
     "explanation": "'Vater' means 'father'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -1994,11 +1994,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'brother'.",
-    "correctAnswer": "Bruder",
+    "correctAnswer": "{{de-DE|Bruder||}}",
     "incorrectAnswers": [
-      "Schwester",
-      "Sohn",
-      "Tochter"
+      "{{de-DE|Schwester||}}",
+      "{{de-DE|Sohn||}}",
+      "{{de-DE|Tochter||}}"
     ],
     "explanation": "'Bruder' means 'brother'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2016,11 +2016,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'sister'?",
-    "correctAnswer": "Schwester",
+    "correctAnswer": "{{de-DE|Schwester||}}",
     "incorrectAnswers": [
-      "Sohn",
-      "Tochter",
-      "Ehemann"
+      "{{de-DE|Sohn||}}",
+      "{{de-DE|Tochter||}}",
+      "{{de-DE|Ehemann||}}"
     ],
     "explanation": "'Schwester' means 'sister'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2038,11 +2038,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'son'?",
-    "correctAnswer": "Sohn",
+    "correctAnswer": "{{de-DE|Sohn||}}",
     "incorrectAnswers": [
-      "Tochter",
-      "Ehemann",
-      "Ehefrau"
+      "{{de-DE|Tochter||}}",
+      "{{de-DE|Ehemann||}}",
+      "{{de-DE|Ehefrau||}}"
     ],
     "explanation": "'Sohn' means 'son'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2060,11 +2060,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'daughter' in everyday use?",
-    "correctAnswer": "Tochter",
+    "correctAnswer": "{{de-DE|Tochter||}}",
     "incorrectAnswers": [
-      "Ehemann",
-      "Ehefrau",
-      "Freund"
+      "{{de-DE|Ehemann||}}",
+      "{{de-DE|Ehefrau||}}",
+      "{{de-DE|Freund||}}"
     ],
     "explanation": "'Tochter' means 'daughter'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2082,11 +2082,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'husband'.",
-    "correctAnswer": "Ehemann",
+    "correctAnswer": "{{de-DE|Ehemann||}}",
     "incorrectAnswers": [
-      "Ehefrau",
-      "Freund",
-      "Nachbar"
+      "{{de-DE|Ehefrau||}}",
+      "{{de-DE|Freund||}}",
+      "{{de-DE|Nachbar||}}"
     ],
     "explanation": "'Ehemann' means 'husband'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2104,11 +2104,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'wife'?",
-    "correctAnswer": "Ehefrau",
+    "correctAnswer": "{{de-DE|Ehefrau||}}",
     "incorrectAnswers": [
-      "Freund",
-      "Nachbar",
-      "Kind"
+      "{{de-DE|Freund||}}",
+      "{{de-DE|Nachbar||}}",
+      "{{de-DE|Kind||}}"
     ],
     "explanation": "'Ehefrau' means 'wife'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2126,11 +2126,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'friend'?",
-    "correctAnswer": "Freund",
+    "correctAnswer": "{{de-DE|Freund||}}",
     "incorrectAnswers": [
-      "Nachbar",
-      "Kind",
-      "Baby"
+      "{{de-DE|Nachbar||}}",
+      "{{de-DE|Kind||}}",
+      "{{de-DE|Baby||}}"
     ],
     "explanation": "'Freund' means 'friend'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2148,11 +2148,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'neighbor' in everyday use?",
-    "correctAnswer": "Nachbar",
+    "correctAnswer": "{{de-DE|Nachbar||}}",
     "incorrectAnswers": [
-      "Kind",
-      "Baby",
-      "Mann"
+      "{{de-DE|Kind||}}",
+      "{{de-DE|Baby||}}",
+      "{{de-DE|Mann||}}"
     ],
     "explanation": "'Nachbar' means 'neighbor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2170,11 +2170,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'child'.",
-    "correctAnswer": "Kind",
+    "correctAnswer": "{{de-DE|Kind||}}",
     "incorrectAnswers": [
-      "Baby",
-      "Mann",
-      "Frau"
+      "{{de-DE|Baby||}}",
+      "{{de-DE|Mann||}}",
+      "{{de-DE|Frau||}}"
     ],
     "explanation": "'Kind' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2192,11 +2192,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'baby'?",
-    "correctAnswer": "Baby",
+    "correctAnswer": "{{de-DE|Baby||}}",
     "incorrectAnswers": [
-      "Mann",
-      "Frau",
-      "Person"
+      "{{de-DE|Mann||}}",
+      "{{de-DE|Frau||}}",
+      "{{de-DE|Person||}}"
     ],
     "explanation": "'Baby' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2214,11 +2214,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'man'?",
-    "correctAnswer": "Mann",
+    "correctAnswer": "{{de-DE|Mann||}}",
     "incorrectAnswers": [
-      "Frau",
-      "Person",
-      "Mutter"
+      "{{de-DE|Frau||}}",
+      "{{de-DE|Person||}}",
+      "{{de-DE|Mutter||}}"
     ],
     "explanation": "'Mann' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2236,11 +2236,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'woman' in everyday use?",
-    "correctAnswer": "Frau",
+    "correctAnswer": "{{de-DE|Frau||}}",
     "incorrectAnswers": [
-      "Person",
-      "Mutter",
-      "Vater"
+      "{{de-DE|Person||}}",
+      "{{de-DE|Mutter||}}",
+      "{{de-DE|Vater||}}"
     ],
     "explanation": "'Frau' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2258,11 +2258,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'person'.",
-    "correctAnswer": "Person",
+    "correctAnswer": "{{de-DE|Person||}}",
     "incorrectAnswers": [
-      "Mutter",
-      "Vater",
-      "Bruder"
+      "{{de-DE|Mutter||}}",
+      "{{de-DE|Vater||}}",
+      "{{de-DE|Bruder||}}"
     ],
     "explanation": "'Person' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2280,11 +2280,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'head'?",
-    "correctAnswer": "Kopf",
+    "correctAnswer": "{{de-DE|Kopf||}}",
     "incorrectAnswers": [
-      "Hand",
-      "Fu\u00df",
-      "Auge"
+      "{{de-DE|Hand||}}",
+      "{{de-DE|Fuß||}}",
+      "{{de-DE|Auge||}}"
     ],
     "explanation": "'Kopf' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2302,11 +2302,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'hand' in everyday use?",
-    "correctAnswer": "Hand",
+    "correctAnswer": "{{de-DE|Hand||}}",
     "incorrectAnswers": [
-      "Fu\u00df",
-      "Auge",
-      "Ohr"
+      "{{de-DE|Fuß||}}",
+      "{{de-DE|Auge||}}",
+      "{{de-DE|Ohr||}}"
     ],
     "explanation": "'Hand' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2324,13 +2324,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'foot'.",
-    "correctAnswer": "Fu\u00df",
+    "correctAnswer": "{{de-DE|Fuß||}}",
     "incorrectAnswers": [
-      "Auge",
-      "Ohr",
-      "Nase"
+      "{{de-DE|Auge||}}",
+      "{{de-DE|Ohr||}}",
+      "{{de-DE|Nase||}}"
     ],
-    "explanation": "'Fu\u00df' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Fuß' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -2346,11 +2346,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'eye'?",
-    "correctAnswer": "Auge",
+    "correctAnswer": "{{de-DE|Auge||}}",
     "incorrectAnswers": [
-      "Ohr",
-      "Nase",
-      "Mund"
+      "{{de-DE|Ohr||}}",
+      "{{de-DE|Nase||}}",
+      "{{de-DE|Mund||}}"
     ],
     "explanation": "'Auge' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2368,11 +2368,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'ear'?",
-    "correctAnswer": "Ohr",
+    "correctAnswer": "{{de-DE|Ohr||}}",
     "incorrectAnswers": [
-      "Nase",
-      "Mund",
-      "Herz"
+      "{{de-DE|Nase||}}",
+      "{{de-DE|Mund||}}",
+      "{{de-DE|Herz||}}"
     ],
     "explanation": "'Ohr' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2390,11 +2390,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'nose' in everyday use?",
-    "correctAnswer": "Nase",
+    "correctAnswer": "{{de-DE|Nase||}}",
     "incorrectAnswers": [
-      "Mund",
-      "Herz",
-      "Magen"
+      "{{de-DE|Mund||}}",
+      "{{de-DE|Herz||}}",
+      "{{de-DE|Magen||}}"
     ],
     "explanation": "'Nase' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2412,11 +2412,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'mouth'.",
-    "correctAnswer": "Mund",
+    "correctAnswer": "{{de-DE|Mund||}}",
     "incorrectAnswers": [
-      "Herz",
-      "Magen",
-      "Arm"
+      "{{de-DE|Herz||}}",
+      "{{de-DE|Magen||}}",
+      "{{de-DE|Arm||}}"
     ],
     "explanation": "'Mund' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2434,11 +2434,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'heart'?",
-    "correctAnswer": "Herz",
+    "correctAnswer": "{{de-DE|Herz||}}",
     "incorrectAnswers": [
-      "Magen",
-      "Arm",
-      "Bein"
+      "{{de-DE|Magen||}}",
+      "{{de-DE|Arm||}}",
+      "{{de-DE|Bein||}}"
     ],
     "explanation": "'Herz' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2456,11 +2456,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'stomach'?",
-    "correctAnswer": "Magen",
+    "correctAnswer": "{{de-DE|Magen||}}",
     "incorrectAnswers": [
-      "Arm",
-      "Bein",
-      "Finger"
+      "{{de-DE|Arm||}}",
+      "{{de-DE|Bein||}}",
+      "{{de-DE|Finger||}}"
     ],
     "explanation": "'Magen' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2478,11 +2478,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'arm' in everyday use?",
-    "correctAnswer": "Arm",
+    "correctAnswer": "{{de-DE|Arm||}}",
     "incorrectAnswers": [
-      "Bein",
-      "Finger",
-      "R\u00fccken"
+      "{{de-DE|Bein||}}",
+      "{{de-DE|Finger||}}",
+      "{{de-DE|Rücken||}}"
     ],
     "explanation": "'Arm' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2500,11 +2500,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'leg'.",
-    "correctAnswer": "Bein",
+    "correctAnswer": "{{de-DE|Bein||}}",
     "incorrectAnswers": [
-      "Finger",
-      "R\u00fccken",
-      "Kopf"
+      "{{de-DE|Finger||}}",
+      "{{de-DE|Rücken||}}",
+      "{{de-DE|Kopf||}}"
     ],
     "explanation": "'Bein' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2522,11 +2522,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'finger'?",
-    "correctAnswer": "Finger",
+    "correctAnswer": "{{de-DE|Finger||}}",
     "incorrectAnswers": [
-      "R\u00fccken",
-      "Kopf",
-      "Hand"
+      "{{de-DE|Rücken||}}",
+      "{{de-DE|Kopf||}}",
+      "{{de-DE|Hand||}}"
     ],
     "explanation": "'Finger' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2544,13 +2544,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'back'?",
-    "correctAnswer": "R\u00fccken",
+    "correctAnswer": "{{de-DE|Rücken||}}",
     "incorrectAnswers": [
-      "Kopf",
-      "Hand",
-      "Fu\u00df"
+      "{{de-DE|Kopf||}}",
+      "{{de-DE|Hand||}}",
+      "{{de-DE|Fuß||}}"
     ],
-    "explanation": "'R\u00fccken' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Rücken' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -2566,11 +2566,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'bread'?",
-    "correctAnswer": "Brot",
+    "correctAnswer": "{{de-DE|Brot||}}",
     "incorrectAnswers": [
-      "Milch",
-      "Ei",
-      "Fleisch"
+      "{{de-DE|Milch||}}",
+      "{{de-DE|Ei||}}",
+      "{{de-DE|Fleisch||}}"
     ],
     "explanation": "'Brot' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2588,11 +2588,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'milk' in everyday use?",
-    "correctAnswer": "Milch",
+    "correctAnswer": "{{de-DE|Milch||}}",
     "incorrectAnswers": [
-      "Ei",
-      "Fleisch",
-      "Fisch"
+      "{{de-DE|Ei||}}",
+      "{{de-DE|Fleisch||}}",
+      "{{de-DE|Fisch||}}"
     ],
     "explanation": "'Milch' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2610,11 +2610,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'egg'.",
-    "correctAnswer": "Ei",
+    "correctAnswer": "{{de-DE|Ei||}}",
     "incorrectAnswers": [
-      "Fleisch",
-      "Fisch",
-      "Obst"
+      "{{de-DE|Fleisch||}}",
+      "{{de-DE|Fisch||}}",
+      "{{de-DE|Obst||}}"
     ],
     "explanation": "'Ei' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2632,11 +2632,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'meat'?",
-    "correctAnswer": "Fleisch",
+    "correctAnswer": "{{de-DE|Fleisch||}}",
     "incorrectAnswers": [
-      "Fisch",
-      "Obst",
-      "Gem\u00fcse"
+      "{{de-DE|Fisch||}}",
+      "{{de-DE|Obst||}}",
+      "{{de-DE|Gemüse||}}"
     ],
     "explanation": "'Fleisch' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2654,11 +2654,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'fish'?",
-    "correctAnswer": "Fisch",
+    "correctAnswer": "{{de-DE|Fisch||}}",
     "incorrectAnswers": [
-      "Obst",
-      "Gem\u00fcse",
-      "Reis"
+      "{{de-DE|Obst||}}",
+      "{{de-DE|Gemüse||}}",
+      "{{de-DE|Reis||}}"
     ],
     "explanation": "'Fisch' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2676,11 +2676,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'fruit' in everyday use?",
-    "correctAnswer": "Obst",
+    "correctAnswer": "{{de-DE|Obst||}}",
     "incorrectAnswers": [
-      "Gem\u00fcse",
-      "Reis",
-      "Nudeln"
+      "{{de-DE|Gemüse||}}",
+      "{{de-DE|Reis||}}",
+      "{{de-DE|Nudeln||}}"
     ],
     "explanation": "'Obst' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2698,13 +2698,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'vegetable'.",
-    "correctAnswer": "Gem\u00fcse",
+    "correctAnswer": "{{de-DE|Gemüse||}}",
     "incorrectAnswers": [
-      "Reis",
-      "Nudeln",
-      "K\u00e4se"
+      "{{de-DE|Reis||}}",
+      "{{de-DE|Nudeln||}}",
+      "{{de-DE|Käse||}}"
     ],
-    "explanation": "'Gem\u00fcse' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Gemüse' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -2720,11 +2720,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'rice'?",
-    "correctAnswer": "Reis",
+    "correctAnswer": "{{de-DE|Reis||}}",
     "incorrectAnswers": [
-      "Nudeln",
-      "K\u00e4se",
-      "Kaffee"
+      "{{de-DE|Nudeln||}}",
+      "{{de-DE|Käse||}}",
+      "{{de-DE|Kaffee||}}"
     ],
     "explanation": "'Reis' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2742,11 +2742,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'pasta'?",
-    "correctAnswer": "Nudeln",
+    "correctAnswer": "{{de-DE|Nudeln||}}",
     "incorrectAnswers": [
-      "K\u00e4se",
-      "Kaffee",
-      "Tee"
+      "{{de-DE|Käse||}}",
+      "{{de-DE|Kaffee||}}",
+      "{{de-DE|Tee||}}"
     ],
     "explanation": "'Nudeln' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2764,13 +2764,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'cheese' in everyday use?",
-    "correctAnswer": "K\u00e4se",
+    "correctAnswer": "{{de-DE|Käse||}}",
     "incorrectAnswers": [
-      "Kaffee",
-      "Tee",
-      "Saft"
+      "{{de-DE|Kaffee||}}",
+      "{{de-DE|Tee||}}",
+      "{{de-DE|Saft||}}"
     ],
-    "explanation": "'K\u00e4se' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Käse' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -2786,11 +2786,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'coffee'.",
-    "correctAnswer": "Kaffee",
+    "correctAnswer": "{{de-DE|Kaffee||}}",
     "incorrectAnswers": [
-      "Tee",
-      "Saft",
-      "Bier"
+      "{{de-DE|Tee||}}",
+      "{{de-DE|Saft||}}",
+      "{{de-DE|Bier||}}"
     ],
     "explanation": "'Kaffee' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2808,11 +2808,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'tea'?",
-    "correctAnswer": "Tee",
+    "correctAnswer": "{{de-DE|Tee||}}",
     "incorrectAnswers": [
-      "Saft",
-      "Bier",
-      "Wein"
+      "{{de-DE|Saft||}}",
+      "{{de-DE|Bier||}}",
+      "{{de-DE|Wein||}}"
     ],
     "explanation": "'Tee' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2830,11 +2830,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'juice'?",
-    "correctAnswer": "Saft",
+    "correctAnswer": "{{de-DE|Saft||}}",
     "incorrectAnswers": [
-      "Bier",
-      "Wein",
-      "\u00d6l"
+      "{{de-DE|Bier||}}",
+      "{{de-DE|Wein||}}",
+      "{{de-DE|Öl||}}"
     ],
     "explanation": "'Saft' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2852,11 +2852,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'beer' in everyday use?",
-    "correctAnswer": "Bier",
+    "correctAnswer": "{{de-DE|Bier||}}",
     "incorrectAnswers": [
-      "Wein",
-      "\u00d6l",
-      "Salz"
+      "{{de-DE|Wein||}}",
+      "{{de-DE|Öl||}}",
+      "{{de-DE|Salz||}}"
     ],
     "explanation": "'Bier' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2874,11 +2874,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'wine'.",
-    "correctAnswer": "Wein",
+    "correctAnswer": "{{de-DE|Wein||}}",
     "incorrectAnswers": [
-      "\u00d6l",
-      "Salz",
-      "Zucker"
+      "{{de-DE|Öl||}}",
+      "{{de-DE|Salz||}}",
+      "{{de-DE|Zucker||}}"
     ],
     "explanation": "'Wein' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2896,13 +2896,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'oil'?",
-    "correctAnswer": "\u00d6l",
+    "correctAnswer": "{{de-DE|Öl||}}",
     "incorrectAnswers": [
-      "Salz",
-      "Zucker",
-      "Brot"
+      "{{de-DE|Salz||}}",
+      "{{de-DE|Zucker||}}",
+      "{{de-DE|Brot||}}"
     ],
-    "explanation": "'\u00d6l' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Öl' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -2918,11 +2918,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'salt'?",
-    "correctAnswer": "Salz",
+    "correctAnswer": "{{de-DE|Salz||}}",
     "incorrectAnswers": [
-      "Zucker",
-      "Brot",
-      "Milch"
+      "{{de-DE|Zucker||}}",
+      "{{de-DE|Brot||}}",
+      "{{de-DE|Milch||}}"
     ],
     "explanation": "'Salz' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2940,11 +2940,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'sugar' in everyday use?",
-    "correctAnswer": "Zucker",
+    "correctAnswer": "{{de-DE|Zucker||}}",
     "incorrectAnswers": [
-      "Brot",
-      "Milch",
-      "Ei"
+      "{{de-DE|Brot||}}",
+      "{{de-DE|Milch||}}",
+      "{{de-DE|Ei||}}"
     ],
     "explanation": "'Zucker' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2962,11 +2962,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'dog'?",
-    "correctAnswer": "Hund",
+    "correctAnswer": "{{de-DE|Hund||}}",
     "incorrectAnswers": [
-      "Katze",
-      "Vogel",
-      "Pferd"
+      "{{de-DE|Katze||}}",
+      "{{de-DE|Vogel||}}",
+      "{{de-DE|Pferd||}}"
     ],
     "explanation": "'Hund' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -2984,11 +2984,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'cat' in everyday use?",
-    "correctAnswer": "Katze",
+    "correctAnswer": "{{de-DE|Katze||}}",
     "incorrectAnswers": [
-      "Vogel",
-      "Pferd",
-      "Kuh"
+      "{{de-DE|Vogel||}}",
+      "{{de-DE|Pferd||}}",
+      "{{de-DE|Kuh||}}"
     ],
     "explanation": "'Katze' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3006,11 +3006,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'bird'.",
-    "correctAnswer": "Vogel",
+    "correctAnswer": "{{de-DE|Vogel||}}",
     "incorrectAnswers": [
-      "Pferd",
-      "Kuh",
-      "Schwein"
+      "{{de-DE|Pferd||}}",
+      "{{de-DE|Kuh||}}",
+      "{{de-DE|Schwein||}}"
     ],
     "explanation": "'Vogel' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3028,11 +3028,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'horse'?",
-    "correctAnswer": "Pferd",
+    "correctAnswer": "{{de-DE|Pferd||}}",
     "incorrectAnswers": [
-      "Kuh",
-      "Schwein",
-      "Huhn"
+      "{{de-DE|Kuh||}}",
+      "{{de-DE|Schwein||}}",
+      "{{de-DE|Huhn||}}"
     ],
     "explanation": "'Pferd' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3050,11 +3050,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'cow'?",
-    "correctAnswer": "Kuh",
+    "correctAnswer": "{{de-DE|Kuh||}}",
     "incorrectAnswers": [
-      "Schwein",
-      "Huhn",
-      "Maus"
+      "{{de-DE|Schwein||}}",
+      "{{de-DE|Huhn||}}",
+      "{{de-DE|Maus||}}"
     ],
     "explanation": "'Kuh' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3072,11 +3072,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'pig' in everyday use?",
-    "correctAnswer": "Schwein",
+    "correctAnswer": "{{de-DE|Schwein||}}",
     "incorrectAnswers": [
-      "Huhn",
-      "Maus",
-      "Kaninchen"
+      "{{de-DE|Huhn||}}",
+      "{{de-DE|Maus||}}",
+      "{{de-DE|Kaninchen||}}"
     ],
     "explanation": "'Schwein' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3094,11 +3094,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'chicken'.",
-    "correctAnswer": "Huhn",
+    "correctAnswer": "{{de-DE|Huhn||}}",
     "incorrectAnswers": [
-      "Maus",
-      "Kaninchen",
-      "Hund"
+      "{{de-DE|Maus||}}",
+      "{{de-DE|Kaninchen||}}",
+      "{{de-DE|Hund||}}"
     ],
     "explanation": "'Huhn' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3116,11 +3116,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'mouse'?",
-    "correctAnswer": "Maus",
+    "correctAnswer": "{{de-DE|Maus||}}",
     "incorrectAnswers": [
-      "Kaninchen",
-      "Hund",
-      "Katze"
+      "{{de-DE|Kaninchen||}}",
+      "{{de-DE|Hund||}}",
+      "{{de-DE|Katze||}}"
     ],
     "explanation": "'Maus' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3138,11 +3138,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'rabbit'?",
-    "correctAnswer": "Kaninchen",
+    "correctAnswer": "{{de-DE|Kaninchen||}}",
     "incorrectAnswers": [
-      "Hund",
-      "Katze",
-      "Vogel"
+      "{{de-DE|Hund||}}",
+      "{{de-DE|Katze||}}",
+      "{{de-DE|Vogel||}}"
     ],
     "explanation": "'Kaninchen' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3160,11 +3160,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'house'?",
-    "correctAnswer": "Haus",
+    "correctAnswer": "{{de-DE|Haus||}}",
     "incorrectAnswers": [
-      "Zimmer",
-      "T\u00fcr",
-      "Fenster"
+      "{{de-DE|Zimmer||}}",
+      "{{de-DE|Tür||}}",
+      "{{de-DE|Fenster||}}"
     ],
     "explanation": "'Haus' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3182,11 +3182,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'room' in everyday use?",
-    "correctAnswer": "Zimmer",
+    "correctAnswer": "{{de-DE|Zimmer||}}",
     "incorrectAnswers": [
-      "T\u00fcr",
-      "Fenster",
-      "Bett"
+      "{{de-DE|Tür||}}",
+      "{{de-DE|Fenster||}}",
+      "{{de-DE|Bett||}}"
     ],
     "explanation": "'Zimmer' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3204,13 +3204,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'door'.",
-    "correctAnswer": "T\u00fcr",
+    "correctAnswer": "{{de-DE|Tür||}}",
     "incorrectAnswers": [
-      "Fenster",
-      "Bett",
-      "Tisch"
+      "{{de-DE|Fenster||}}",
+      "{{de-DE|Bett||}}",
+      "{{de-DE|Tisch||}}"
     ],
-    "explanation": "'T\u00fcr' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Tür' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -3226,11 +3226,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'window'?",
-    "correctAnswer": "Fenster",
+    "correctAnswer": "{{de-DE|Fenster||}}",
     "incorrectAnswers": [
-      "Bett",
-      "Tisch",
-      "Stuhl"
+      "{{de-DE|Bett||}}",
+      "{{de-DE|Tisch||}}",
+      "{{de-DE|Stuhl||}}"
     ],
     "explanation": "'Fenster' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3248,11 +3248,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'bed'?",
-    "correctAnswer": "Bett",
+    "correctAnswer": "{{de-DE|Bett||}}",
     "incorrectAnswers": [
-      "Tisch",
-      "Stuhl",
-      "K\u00fcche"
+      "{{de-DE|Tisch||}}",
+      "{{de-DE|Stuhl||}}",
+      "{{de-DE|Küche||}}"
     ],
     "explanation": "'Bett' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3270,11 +3270,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'table' in everyday use?",
-    "correctAnswer": "Tisch",
+    "correctAnswer": "{{de-DE|Tisch||}}",
     "incorrectAnswers": [
-      "Stuhl",
-      "K\u00fcche",
-      "Badezimmer"
+      "{{de-DE|Stuhl||}}",
+      "{{de-DE|Küche||}}",
+      "{{de-DE|Badezimmer||}}"
     ],
     "explanation": "'Tisch' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3292,11 +3292,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'chair'.",
-    "correctAnswer": "Stuhl",
+    "correctAnswer": "{{de-DE|Stuhl||}}",
     "incorrectAnswers": [
-      "K\u00fcche",
-      "Badezimmer",
-      "Garten"
+      "{{de-DE|Küche||}}",
+      "{{de-DE|Badezimmer||}}",
+      "{{de-DE|Garten||}}"
     ],
     "explanation": "'Stuhl' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3314,13 +3314,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'kitchen'?",
-    "correctAnswer": "K\u00fcche",
+    "correctAnswer": "{{de-DE|Küche||}}",
     "incorrectAnswers": [
-      "Badezimmer",
-      "Garten",
-      "Boden"
+      "{{de-DE|Badezimmer||}}",
+      "{{de-DE|Garten||}}",
+      "{{de-DE|Boden||}}"
     ],
-    "explanation": "'K\u00fcche' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Küche' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -3336,11 +3336,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'bathroom'?",
-    "correctAnswer": "Badezimmer",
+    "correctAnswer": "{{de-DE|Badezimmer||}}",
     "incorrectAnswers": [
-      "Garten",
-      "Boden",
-      "Wand"
+      "{{de-DE|Garten||}}",
+      "{{de-DE|Boden||}}",
+      "{{de-DE|Wand||}}"
     ],
     "explanation": "'Badezimmer' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3358,11 +3358,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'garden' in everyday use?",
-    "correctAnswer": "Garten",
+    "correctAnswer": "{{de-DE|Garten||}}",
     "incorrectAnswers": [
-      "Boden",
-      "Wand",
-      "Dach"
+      "{{de-DE|Boden||}}",
+      "{{de-DE|Wand||}}",
+      "{{de-DE|Dach||}}"
     ],
     "explanation": "'Garten' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3380,11 +3380,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'floor'.",
-    "correctAnswer": "Boden",
+    "correctAnswer": "{{de-DE|Boden||}}",
     "incorrectAnswers": [
-      "Wand",
-      "Dach",
-      "Lampe"
+      "{{de-DE|Wand||}}",
+      "{{de-DE|Dach||}}",
+      "{{de-DE|Lampe||}}"
     ],
     "explanation": "'Boden' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3402,11 +3402,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'wall'?",
-    "correctAnswer": "Wand",
+    "correctAnswer": "{{de-DE|Wand||}}",
     "incorrectAnswers": [
-      "Dach",
-      "Lampe",
-      "Haus"
+      "{{de-DE|Dach||}}",
+      "{{de-DE|Lampe||}}",
+      "{{de-DE|Haus||}}"
     ],
     "explanation": "'Wand' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3424,11 +3424,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'roof'?",
-    "correctAnswer": "Dach",
+    "correctAnswer": "{{de-DE|Dach||}}",
     "incorrectAnswers": [
-      "Lampe",
-      "Haus",
-      "Zimmer"
+      "{{de-DE|Lampe||}}",
+      "{{de-DE|Haus||}}",
+      "{{de-DE|Zimmer||}}"
     ],
     "explanation": "'Dach' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3446,11 +3446,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'lamp' in everyday use?",
-    "correctAnswer": "Lampe",
+    "correctAnswer": "{{de-DE|Lampe||}}",
     "incorrectAnswers": [
-      "Haus",
-      "Zimmer",
-      "T\u00fcr"
+      "{{de-DE|Haus||}}",
+      "{{de-DE|Zimmer||}}",
+      "{{de-DE|Tür||}}"
     ],
     "explanation": "'Lampe' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3468,11 +3468,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'shirt'?",
-    "correctAnswer": "Hemd",
+    "correctAnswer": "{{de-DE|Hemd||}}",
     "incorrectAnswers": [
-      "Hose",
-      "Kleid",
-      "Schuhe"
+      "{{de-DE|Hose||}}",
+      "{{de-DE|Kleid||}}",
+      "{{de-DE|Schuhe||}}"
     ],
     "explanation": "'Hemd' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3490,11 +3490,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'pants' in everyday use?",
-    "correctAnswer": "Hose",
+    "correctAnswer": "{{de-DE|Hose||}}",
     "incorrectAnswers": [
-      "Kleid",
-      "Schuhe",
-      "Socken"
+      "{{de-DE|Kleid||}}",
+      "{{de-DE|Schuhe||}}",
+      "{{de-DE|Socken||}}"
     ],
     "explanation": "'Hose' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3512,11 +3512,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'dress'.",
-    "correctAnswer": "Kleid",
+    "correctAnswer": "{{de-DE|Kleid||}}",
     "incorrectAnswers": [
-      "Schuhe",
-      "Socken",
-      "Jacke"
+      "{{de-DE|Schuhe||}}",
+      "{{de-DE|Socken||}}",
+      "{{de-DE|Jacke||}}"
     ],
     "explanation": "'Kleid' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3534,11 +3534,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'shoes'?",
-    "correctAnswer": "Schuhe",
+    "correctAnswer": "{{de-DE|Schuhe||}}",
     "incorrectAnswers": [
-      "Socken",
-      "Jacke",
-      "Hut"
+      "{{de-DE|Socken||}}",
+      "{{de-DE|Jacke||}}",
+      "{{de-DE|Hut||}}"
     ],
     "explanation": "'Schuhe' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3556,11 +3556,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'socks'?",
-    "correctAnswer": "Socken",
+    "correctAnswer": "{{de-DE|Socken||}}",
     "incorrectAnswers": [
-      "Jacke",
-      "Hut",
-      "Tasche"
+      "{{de-DE|Jacke||}}",
+      "{{de-DE|Hut||}}",
+      "{{de-DE|Tasche||}}"
     ],
     "explanation": "'Socken' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3578,11 +3578,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'jacket' in everyday use?",
-    "correctAnswer": "Jacke",
+    "correctAnswer": "{{de-DE|Jacke||}}",
     "incorrectAnswers": [
-      "Hut",
-      "Tasche",
-      "Mantel"
+      "{{de-DE|Hut||}}",
+      "{{de-DE|Tasche||}}",
+      "{{de-DE|Mantel||}}"
     ],
     "explanation": "'Jacke' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3600,11 +3600,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'hat'.",
-    "correctAnswer": "Hut",
+    "correctAnswer": "{{de-DE|Hut||}}",
     "incorrectAnswers": [
-      "Tasche",
-      "Mantel",
-      "Hemd"
+      "{{de-DE|Tasche||}}",
+      "{{de-DE|Mantel||}}",
+      "{{de-DE|Hemd||}}"
     ],
     "explanation": "'Hut' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3622,11 +3622,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'bag'?",
-    "correctAnswer": "Tasche",
+    "correctAnswer": "{{de-DE|Tasche||}}",
     "incorrectAnswers": [
-      "Mantel",
-      "Hemd",
-      "Hose"
+      "{{de-DE|Mantel||}}",
+      "{{de-DE|Hemd||}}",
+      "{{de-DE|Hose||}}"
     ],
     "explanation": "'Tasche' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3644,11 +3644,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'coat'?",
-    "correctAnswer": "Mantel",
+    "correctAnswer": "{{de-DE|Mantel||}}",
     "incorrectAnswers": [
-      "Hemd",
-      "Hose",
-      "Kleid"
+      "{{de-DE|Hemd||}}",
+      "{{de-DE|Hose||}}",
+      "{{de-DE|Kleid||}}"
     ],
     "explanation": "'Mantel' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3666,11 +3666,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'car'?",
-    "correctAnswer": "Auto",
+    "correctAnswer": "{{de-DE|Auto||}}",
     "incorrectAnswers": [
-      "Bus",
-      "Zug",
-      "Flugzeug"
+      "{{de-DE|Bus||}}",
+      "{{de-DE|Zug||}}",
+      "{{de-DE|Flugzeug||}}"
     ],
     "explanation": "'Auto' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3688,11 +3688,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'bus' in everyday use?",
-    "correctAnswer": "Bus",
+    "correctAnswer": "{{de-DE|Bus||}}",
     "incorrectAnswers": [
-      "Zug",
-      "Flugzeug",
-      "Fahrrad"
+      "{{de-DE|Zug||}}",
+      "{{de-DE|Flugzeug||}}",
+      "{{de-DE|Fahrrad||}}"
     ],
     "explanation": "'Bus' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3710,11 +3710,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'train'.",
-    "correctAnswer": "Zug",
+    "correctAnswer": "{{de-DE|Zug||}}",
     "incorrectAnswers": [
-      "Flugzeug",
-      "Fahrrad",
-      "Boot"
+      "{{de-DE|Flugzeug||}}",
+      "{{de-DE|Fahrrad||}}",
+      "{{de-DE|Boot||}}"
     ],
     "explanation": "'Zug' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3732,11 +3732,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'plane'?",
-    "correctAnswer": "Flugzeug",
+    "correctAnswer": "{{de-DE|Flugzeug||}}",
     "incorrectAnswers": [
-      "Fahrrad",
-      "Boot",
-      "Taxi"
+      "{{de-DE|Fahrrad||}}",
+      "{{de-DE|Boot||}}",
+      "{{de-DE|Taxi||}}"
     ],
     "explanation": "'Flugzeug' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3754,11 +3754,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'bicycle'?",
-    "correctAnswer": "Fahrrad",
+    "correctAnswer": "{{de-DE|Fahrrad||}}",
     "incorrectAnswers": [
-      "Boot",
-      "Taxi",
-      "U-Bahn"
+      "{{de-DE|Boot||}}",
+      "{{de-DE|Taxi||}}",
+      "{{de-DE|U-Bahn||}}"
     ],
     "explanation": "'Fahrrad' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3776,11 +3776,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'boat' in everyday use?",
-    "correctAnswer": "Boot",
+    "correctAnswer": "{{de-DE|Boot||}}",
     "incorrectAnswers": [
-      "Taxi",
-      "U-Bahn",
-      "Auto"
+      "{{de-DE|Taxi||}}",
+      "{{de-DE|U-Bahn||}}",
+      "{{de-DE|Auto||}}"
     ],
     "explanation": "'Boot' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3798,11 +3798,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'taxi'.",
-    "correctAnswer": "Taxi",
+    "correctAnswer": "{{de-DE|Taxi||}}",
     "incorrectAnswers": [
-      "U-Bahn",
-      "Auto",
-      "Bus"
+      "{{de-DE|U-Bahn||}}",
+      "{{de-DE|Auto||}}",
+      "{{de-DE|Bus||}}"
     ],
     "explanation": "'Taxi' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3820,11 +3820,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'metro'?",
-    "correctAnswer": "U-Bahn",
+    "correctAnswer": "{{de-DE|U-Bahn||}}",
     "incorrectAnswers": [
-      "Auto",
-      "Bus",
-      "Zug"
+      "{{de-DE|Auto||}}",
+      "{{de-DE|Bus||}}",
+      "{{de-DE|Zug||}}"
     ],
     "explanation": "'U-Bahn' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3842,11 +3842,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'sun'?",
-    "correctAnswer": "Sonne",
+    "correctAnswer": "{{de-DE|Sonne||}}",
     "incorrectAnswers": [
-      "Mond",
-      "Stern",
-      "Regen"
+      "{{de-DE|Mond||}}",
+      "{{de-DE|Stern||}}",
+      "{{de-DE|Regen||}}"
     ],
     "explanation": "'Sonne' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3864,11 +3864,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'moon' in everyday use?",
-    "correctAnswer": "Mond",
+    "correctAnswer": "{{de-DE|Mond||}}",
     "incorrectAnswers": [
-      "Stern",
-      "Regen",
-      "Schnee"
+      "{{de-DE|Stern||}}",
+      "{{de-DE|Regen||}}",
+      "{{de-DE|Schnee||}}"
     ],
     "explanation": "'Mond' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3886,11 +3886,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'star'.",
-    "correctAnswer": "Stern",
+    "correctAnswer": "{{de-DE|Stern||}}",
     "incorrectAnswers": [
-      "Regen",
-      "Schnee",
-      "Wind"
+      "{{de-DE|Regen||}}",
+      "{{de-DE|Schnee||}}",
+      "{{de-DE|Wind||}}"
     ],
     "explanation": "'Stern' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3908,11 +3908,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'rain'?",
-    "correctAnswer": "Regen",
+    "correctAnswer": "{{de-DE|Regen||}}",
     "incorrectAnswers": [
-      "Schnee",
-      "Wind",
-      "Wolke"
+      "{{de-DE|Schnee||}}",
+      "{{de-DE|Wind||}}",
+      "{{de-DE|Wolke||}}"
     ],
     "explanation": "'Regen' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3930,11 +3930,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'snow'?",
-    "correctAnswer": "Schnee",
+    "correctAnswer": "{{de-DE|Schnee||}}",
     "incorrectAnswers": [
-      "Wind",
-      "Wolke",
-      "Berg"
+      "{{de-DE|Wind||}}",
+      "{{de-DE|Wolke||}}",
+      "{{de-DE|Berg||}}"
     ],
     "explanation": "'Schnee' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3952,11 +3952,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'wind' in everyday use?",
-    "correctAnswer": "Wind",
+    "correctAnswer": "{{de-DE|Wind||}}",
     "incorrectAnswers": [
-      "Wolke",
-      "Berg",
-      "Fluss"
+      "{{de-DE|Wolke||}}",
+      "{{de-DE|Berg||}}",
+      "{{de-DE|Fluss||}}"
     ],
     "explanation": "'Wind' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3974,11 +3974,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'cloud'.",
-    "correctAnswer": "Wolke",
+    "correctAnswer": "{{de-DE|Wolke||}}",
     "incorrectAnswers": [
-      "Berg",
-      "Fluss",
-      "Meer"
+      "{{de-DE|Berg||}}",
+      "{{de-DE|Fluss||}}",
+      "{{de-DE|Meer||}}"
     ],
     "explanation": "'Wolke' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -3996,11 +3996,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'mountain'?",
-    "correctAnswer": "Berg",
+    "correctAnswer": "{{de-DE|Berg||}}",
     "incorrectAnswers": [
-      "Fluss",
-      "Meer",
-      "Strand"
+      "{{de-DE|Fluss||}}",
+      "{{de-DE|Meer||}}",
+      "{{de-DE|Strand||}}"
     ],
     "explanation": "'Berg' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4018,11 +4018,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'river'?",
-    "correctAnswer": "Fluss",
+    "correctAnswer": "{{de-DE|Fluss||}}",
     "incorrectAnswers": [
-      "Meer",
-      "Strand",
-      "Wald"
+      "{{de-DE|Meer||}}",
+      "{{de-DE|Strand||}}",
+      "{{de-DE|Wald||}}"
     ],
     "explanation": "'Fluss' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4040,11 +4040,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'sea' in everyday use?",
-    "correctAnswer": "Meer",
+    "correctAnswer": "{{de-DE|Meer||}}",
     "incorrectAnswers": [
-      "Strand",
-      "Wald",
-      "Baum"
+      "{{de-DE|Strand||}}",
+      "{{de-DE|Wald||}}",
+      "{{de-DE|Baum||}}"
     ],
     "explanation": "'Meer' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4062,11 +4062,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'beach'.",
-    "correctAnswer": "Strand",
+    "correctAnswer": "{{de-DE|Strand||}}",
     "incorrectAnswers": [
-      "Wald",
-      "Baum",
-      "Blume"
+      "{{de-DE|Wald||}}",
+      "{{de-DE|Baum||}}",
+      "{{de-DE|Blume||}}"
     ],
     "explanation": "'Strand' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4084,11 +4084,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'forest'?",
-    "correctAnswer": "Wald",
+    "correctAnswer": "{{de-DE|Wald||}}",
     "incorrectAnswers": [
-      "Baum",
-      "Blume",
-      "Wetter"
+      "{{de-DE|Baum||}}",
+      "{{de-DE|Blume||}}",
+      "{{de-DE|Wetter||}}"
     ],
     "explanation": "'Wald' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4106,11 +4106,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'tree'?",
-    "correctAnswer": "Baum",
+    "correctAnswer": "{{de-DE|Baum||}}",
     "incorrectAnswers": [
-      "Blume",
-      "Wetter",
-      "Sonne"
+      "{{de-DE|Blume||}}",
+      "{{de-DE|Wetter||}}",
+      "{{de-DE|Sonne||}}"
     ],
     "explanation": "'Baum' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4128,11 +4128,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'flower' in everyday use?",
-    "correctAnswer": "Blume",
+    "correctAnswer": "{{de-DE|Blume||}}",
     "incorrectAnswers": [
-      "Wetter",
-      "Sonne",
-      "Mond"
+      "{{de-DE|Wetter||}}",
+      "{{de-DE|Sonne||}}",
+      "{{de-DE|Mond||}}"
     ],
     "explanation": "'Blume' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4150,11 +4150,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'weather'.",
-    "correctAnswer": "Wetter",
+    "correctAnswer": "{{de-DE|Wetter||}}",
     "incorrectAnswers": [
-      "Sonne",
-      "Mond",
-      "Stern"
+      "{{de-DE|Sonne||}}",
+      "{{de-DE|Mond||}}",
+      "{{de-DE|Stern||}}"
     ],
     "explanation": "'Wetter' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -4172,11 +4172,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'be'?",
-    "correctAnswer": "sein",
+    "correctAnswer": "{{de-DE|sein||}}",
     "incorrectAnswers": [
-      "haben",
-      "wollen",
-      "brauchen"
+      "{{de-DE|haben||}}",
+      "{{de-DE|wollen||}}",
+      "{{de-DE|brauchen||}}"
     ],
     "explanation": "'sein' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4193,11 +4193,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'have' in everyday use?",
-    "correctAnswer": "haben",
+    "correctAnswer": "{{de-DE|haben||}}",
     "incorrectAnswers": [
-      "wollen",
-      "brauchen",
-      "gehen"
+      "{{de-DE|wollen||}}",
+      "{{de-DE|brauchen||}}",
+      "{{de-DE|gehen||}}"
     ],
     "explanation": "'haben' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4214,11 +4214,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'want'.",
-    "correctAnswer": "wollen",
+    "correctAnswer": "{{de-DE|wollen||}}",
     "incorrectAnswers": [
-      "brauchen",
-      "gehen",
-      "kommen"
+      "{{de-DE|brauchen||}}",
+      "{{de-DE|gehen||}}",
+      "{{de-DE|kommen||}}"
     ],
     "explanation": "'wollen' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4235,11 +4235,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'need'?",
-    "correctAnswer": "brauchen",
+    "correctAnswer": "{{de-DE|brauchen||}}",
     "incorrectAnswers": [
-      "gehen",
-      "kommen",
-      "essen"
+      "{{de-DE|gehen||}}",
+      "{{de-DE|kommen||}}",
+      "{{de-DE|essen||}}"
     ],
     "explanation": "'brauchen' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4256,11 +4256,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'go'?",
-    "correctAnswer": "gehen",
+    "correctAnswer": "{{de-DE|gehen||}}",
     "incorrectAnswers": [
-      "kommen",
-      "essen",
-      "trinken"
+      "{{de-DE|kommen||}}",
+      "{{de-DE|essen||}}",
+      "{{de-DE|trinken||}}"
     ],
     "explanation": "'gehen' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4277,11 +4277,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'come' in everyday use?",
-    "correctAnswer": "kommen",
+    "correctAnswer": "{{de-DE|kommen||}}",
     "incorrectAnswers": [
-      "essen",
-      "trinken",
-      "schlafen"
+      "{{de-DE|essen||}}",
+      "{{de-DE|trinken||}}",
+      "{{de-DE|schlafen||}}"
     ],
     "explanation": "'kommen' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4298,11 +4298,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'eat'.",
-    "correctAnswer": "essen",
+    "correctAnswer": "{{de-DE|essen||}}",
     "incorrectAnswers": [
-      "trinken",
-      "schlafen",
-      "aufwachen"
+      "{{de-DE|trinken||}}",
+      "{{de-DE|schlafen||}}",
+      "{{de-DE|aufwachen||}}"
     ],
     "explanation": "'essen' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4319,11 +4319,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'drink'?",
-    "correctAnswer": "trinken",
+    "correctAnswer": "{{de-DE|trinken||}}",
     "incorrectAnswers": [
-      "schlafen",
-      "aufwachen",
-      "arbeiten"
+      "{{de-DE|schlafen||}}",
+      "{{de-DE|aufwachen||}}",
+      "{{de-DE|arbeiten||}}"
     ],
     "explanation": "'trinken' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4340,11 +4340,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'sleep'?",
-    "correctAnswer": "schlafen",
+    "correctAnswer": "{{de-DE|schlafen||}}",
     "incorrectAnswers": [
-      "aufwachen",
-      "arbeiten",
-      "sprechen"
+      "{{de-DE|aufwachen||}}",
+      "{{de-DE|arbeiten||}}",
+      "{{de-DE|sprechen||}}"
     ],
     "explanation": "'schlafen' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4361,11 +4361,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'wake up' in everyday use?",
-    "correctAnswer": "aufwachen",
+    "correctAnswer": "{{de-DE|aufwachen||}}",
     "incorrectAnswers": [
-      "arbeiten",
-      "sprechen",
-      "h\u00f6ren"
+      "{{de-DE|arbeiten||}}",
+      "{{de-DE|sprechen||}}",
+      "{{de-DE|hören||}}"
     ],
     "explanation": "'aufwachen' is the infinitive 'to wake up'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4382,11 +4382,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'work'.",
-    "correctAnswer": "arbeiten",
+    "correctAnswer": "{{de-DE|arbeiten||}}",
     "incorrectAnswers": [
-      "sprechen",
-      "h\u00f6ren",
-      "sehen"
+      "{{de-DE|sprechen||}}",
+      "{{de-DE|hören||}}",
+      "{{de-DE|sehen||}}"
     ],
     "explanation": "'arbeiten' is the infinitive 'to work'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4403,11 +4403,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'speak'?",
-    "correctAnswer": "sprechen",
+    "correctAnswer": "{{de-DE|sprechen||}}",
     "incorrectAnswers": [
-      "h\u00f6ren",
-      "sehen",
-      "lesen"
+      "{{de-DE|hören||}}",
+      "{{de-DE|sehen||}}",
+      "{{de-DE|lesen||}}"
     ],
     "explanation": "'sprechen' is the infinitive 'to speak'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4424,13 +4424,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'hear'?",
-    "correctAnswer": "h\u00f6ren",
+    "correctAnswer": "{{de-DE|hören||}}",
     "incorrectAnswers": [
-      "sehen",
-      "lesen",
-      "schreiben"
+      "{{de-DE|sehen||}}",
+      "{{de-DE|lesen||}}",
+      "{{de-DE|schreiben||}}"
     ],
-    "explanation": "'h\u00f6ren' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
+    "explanation": "'hören' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -4445,11 +4445,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'see' in everyday use?",
-    "correctAnswer": "sehen",
+    "correctAnswer": "{{de-DE|sehen||}}",
     "incorrectAnswers": [
-      "lesen",
-      "schreiben",
-      "kaufen"
+      "{{de-DE|lesen||}}",
+      "{{de-DE|schreiben||}}",
+      "{{de-DE|kaufen||}}"
     ],
     "explanation": "'sehen' is the infinitive 'to see'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4466,11 +4466,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'read'.",
-    "correctAnswer": "lesen",
+    "correctAnswer": "{{de-DE|lesen||}}",
     "incorrectAnswers": [
-      "schreiben",
-      "kaufen",
-      "bezahlen"
+      "{{de-DE|schreiben||}}",
+      "{{de-DE|kaufen||}}",
+      "{{de-DE|bezahlen||}}"
     ],
     "explanation": "'lesen' is the infinitive 'to read'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4487,11 +4487,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'write'?",
-    "correctAnswer": "schreiben",
+    "correctAnswer": "{{de-DE|schreiben||}}",
     "incorrectAnswers": [
-      "kaufen",
-      "bezahlen",
-      "\u00f6ffnen"
+      "{{de-DE|kaufen||}}",
+      "{{de-DE|bezahlen||}}",
+      "{{de-DE|öffnen||}}"
     ],
     "explanation": "'schreiben' is the infinitive 'to write'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4508,11 +4508,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'buy'?",
-    "correctAnswer": "kaufen",
+    "correctAnswer": "{{de-DE|kaufen||}}",
     "incorrectAnswers": [
-      "bezahlen",
-      "\u00f6ffnen",
-      "schlie\u00dfen"
+      "{{de-DE|bezahlen||}}",
+      "{{de-DE|öffnen||}}",
+      "{{de-DE|schließen||}}"
     ],
     "explanation": "'kaufen' is the infinitive 'to buy'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4529,11 +4529,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'pay' in everyday use?",
-    "correctAnswer": "bezahlen",
+    "correctAnswer": "{{de-DE|bezahlen||}}",
     "incorrectAnswers": [
-      "\u00f6ffnen",
-      "schlie\u00dfen",
-      "geben"
+      "{{de-DE|öffnen||}}",
+      "{{de-DE|schließen||}}",
+      "{{de-DE|geben||}}"
     ],
     "explanation": "'bezahlen' is the infinitive 'to pay'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4550,13 +4550,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'open'.",
-    "correctAnswer": "\u00f6ffnen",
+    "correctAnswer": "{{de-DE|öffnen||}}",
     "incorrectAnswers": [
-      "schlie\u00dfen",
-      "geben",
-      "nehmen"
+      "{{de-DE|schließen||}}",
+      "{{de-DE|geben||}}",
+      "{{de-DE|nehmen||}}"
     ],
-    "explanation": "'\u00f6ffnen' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
+    "explanation": "'öffnen' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -4571,13 +4571,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'close'?",
-    "correctAnswer": "schlie\u00dfen",
+    "correctAnswer": "{{de-DE|schließen||}}",
     "incorrectAnswers": [
-      "geben",
-      "nehmen",
-      "wissen"
+      "{{de-DE|geben||}}",
+      "{{de-DE|nehmen||}}",
+      "{{de-DE|wissen||}}"
     ],
-    "explanation": "'schlie\u00dfen' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
+    "explanation": "'schließen' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -4592,11 +4592,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'give'?",
-    "correctAnswer": "geben",
+    "correctAnswer": "{{de-DE|geben||}}",
     "incorrectAnswers": [
-      "nehmen",
-      "wissen",
-      "m\u00f6gen"
+      "{{de-DE|nehmen||}}",
+      "{{de-DE|wissen||}}",
+      "{{de-DE|mögen||}}"
     ],
     "explanation": "'geben' is the infinitive 'to give'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4613,11 +4613,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'take' in everyday use?",
-    "correctAnswer": "nehmen",
+    "correctAnswer": "{{de-DE|nehmen||}}",
     "incorrectAnswers": [
-      "wissen",
-      "m\u00f6gen",
-      "lieben"
+      "{{de-DE|wissen||}}",
+      "{{de-DE|mögen||}}",
+      "{{de-DE|lieben||}}"
     ],
     "explanation": "'nehmen' is the infinitive 'to take'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4634,11 +4634,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'know'.",
-    "correctAnswer": "wissen",
+    "correctAnswer": "{{de-DE|wissen||}}",
     "incorrectAnswers": [
-      "m\u00f6gen",
-      "lieben",
-      "helfen"
+      "{{de-DE|mögen||}}",
+      "{{de-DE|lieben||}}",
+      "{{de-DE|helfen||}}"
     ],
     "explanation": "'wissen' is the infinitive 'to know'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4655,13 +4655,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'like'?",
-    "correctAnswer": "m\u00f6gen",
+    "correctAnswer": "{{de-DE|mögen||}}",
     "incorrectAnswers": [
-      "lieben",
-      "helfen",
-      "lernen"
+      "{{de-DE|lieben||}}",
+      "{{de-DE|helfen||}}",
+      "{{de-DE|lernen||}}"
     ],
-    "explanation": "'m\u00f6gen' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
+    "explanation": "'mögen' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
       "freq-500",
       "cefr-a1",
@@ -4676,11 +4676,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'love'?",
-    "correctAnswer": "lieben",
+    "correctAnswer": "{{de-DE|lieben||}}",
     "incorrectAnswers": [
-      "helfen",
-      "lernen",
-      "sein"
+      "{{de-DE|helfen||}}",
+      "{{de-DE|lernen||}}",
+      "{{de-DE|sein||}}"
     ],
     "explanation": "'lieben' is the infinitive 'to love'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4697,11 +4697,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'help' in everyday use?",
-    "correctAnswer": "helfen",
+    "correctAnswer": "{{de-DE|helfen||}}",
     "incorrectAnswers": [
-      "lernen",
-      "sein",
-      "haben"
+      "{{de-DE|lernen||}}",
+      "{{de-DE|sein||}}",
+      "{{de-DE|haben||}}"
     ],
     "explanation": "'helfen' is the infinitive 'to help'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4718,11 +4718,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'learn'.",
-    "correctAnswer": "lernen",
+    "correctAnswer": "{{de-DE|lernen||}}",
     "incorrectAnswers": [
-      "sein",
-      "haben",
-      "wollen"
+      "{{de-DE|sein||}}",
+      "{{de-DE|haben||}}",
+      "{{de-DE|wollen||}}"
     ],
     "explanation": "'lernen' is the infinitive 'to learn'. Learn the infinitive first, then add conjugations later.",
     "keywords": [
@@ -4739,13 +4739,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'big'?",
-    "correctAnswer": "gro\u00df",
+    "correctAnswer": "{{de-DE|groß||}}",
     "incorrectAnswers": [
-      "klein",
-      "neu",
-      "alt"
+      "{{de-DE|klein||}}",
+      "{{de-DE|neu||}}",
+      "{{de-DE|alt||}}"
     ],
-    "explanation": "'gro\u00df' means 'big'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'groß' means 'big'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -4760,11 +4760,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'small' in everyday use?",
-    "correctAnswer": "klein",
+    "correctAnswer": "{{de-DE|klein||}}",
     "incorrectAnswers": [
-      "neu",
-      "alt",
-      "gut"
+      "{{de-DE|neu||}}",
+      "{{de-DE|alt||}}",
+      "{{de-DE|gut||}}"
     ],
     "explanation": "'klein' means 'small'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4781,11 +4781,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'new'.",
-    "correctAnswer": "neu",
+    "correctAnswer": "{{de-DE|neu||}}",
     "incorrectAnswers": [
-      "alt",
-      "gut",
-      "schlecht"
+      "{{de-DE|alt||}}",
+      "{{de-DE|gut||}}",
+      "{{de-DE|schlecht||}}"
     ],
     "explanation": "'neu' means 'new'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4802,11 +4802,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'old'?",
-    "correctAnswer": "alt",
+    "correctAnswer": "{{de-DE|alt||}}",
     "incorrectAnswers": [
-      "gut",
-      "schlecht",
-      "hei\u00df"
+      "{{de-DE|gut||}}",
+      "{{de-DE|schlecht||}}",
+      "{{de-DE|heiß||}}"
     ],
     "explanation": "'alt' means 'old'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4823,11 +4823,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'good'?",
-    "correctAnswer": "gut",
+    "correctAnswer": "{{de-DE|gut||}}",
     "incorrectAnswers": [
-      "schlecht",
-      "hei\u00df",
-      "kalt"
+      "{{de-DE|schlecht||}}",
+      "{{de-DE|heiß||}}",
+      "{{de-DE|kalt||}}"
     ],
     "explanation": "'gut' means 'good'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4844,11 +4844,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'bad' in everyday use?",
-    "correctAnswer": "schlecht",
+    "correctAnswer": "{{de-DE|schlecht||}}",
     "incorrectAnswers": [
-      "hei\u00df",
-      "kalt",
-      "schnell"
+      "{{de-DE|heiß||}}",
+      "{{de-DE|kalt||}}",
+      "{{de-DE|schnell||}}"
     ],
     "explanation": "'schlecht' means 'bad'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4865,13 +4865,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'hot'.",
-    "correctAnswer": "hei\u00df",
+    "correctAnswer": "{{de-DE|heiß||}}",
     "incorrectAnswers": [
-      "kalt",
-      "schnell",
-      "langsam"
+      "{{de-DE|kalt||}}",
+      "{{de-DE|schnell||}}",
+      "{{de-DE|langsam||}}"
     ],
-    "explanation": "'hei\u00df' means 'hot'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'heiß' means 'hot'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -4886,11 +4886,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'cold'?",
-    "correctAnswer": "kalt",
+    "correctAnswer": "{{de-DE|kalt||}}",
     "incorrectAnswers": [
-      "schnell",
-      "langsam",
-      "leicht"
+      "{{de-DE|schnell||}}",
+      "{{de-DE|langsam||}}",
+      "{{de-DE|leicht||}}"
     ],
     "explanation": "'kalt' means 'cold'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4907,11 +4907,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'fast'?",
-    "correctAnswer": "schnell",
+    "correctAnswer": "{{de-DE|schnell||}}",
     "incorrectAnswers": [
-      "langsam",
-      "leicht",
-      "schwierig"
+      "{{de-DE|langsam||}}",
+      "{{de-DE|leicht||}}",
+      "{{de-DE|schwierig||}}"
     ],
     "explanation": "'schnell' means 'fast'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4928,11 +4928,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'slow' in everyday use?",
-    "correctAnswer": "langsam",
+    "correctAnswer": "{{de-DE|langsam||}}",
     "incorrectAnswers": [
-      "leicht",
-      "schwierig",
-      "sauber"
+      "{{de-DE|leicht||}}",
+      "{{de-DE|schwierig||}}",
+      "{{de-DE|sauber||}}"
     ],
     "explanation": "'langsam' means 'slow'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4949,11 +4949,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'easy'.",
-    "correctAnswer": "leicht",
+    "correctAnswer": "{{de-DE|leicht||}}",
     "incorrectAnswers": [
-      "schwierig",
-      "sauber",
-      "schmutzig"
+      "{{de-DE|schwierig||}}",
+      "{{de-DE|sauber||}}",
+      "{{de-DE|schmutzig||}}"
     ],
     "explanation": "'leicht' means 'easy'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4970,11 +4970,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'difficult'?",
-    "correctAnswer": "schwierig",
+    "correctAnswer": "{{de-DE|schwierig||}}",
     "incorrectAnswers": [
-      "sauber",
-      "schmutzig",
-      "billig"
+      "{{de-DE|sauber||}}",
+      "{{de-DE|schmutzig||}}",
+      "{{de-DE|billig||}}"
     ],
     "explanation": "'schwierig' means 'difficult'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -4991,11 +4991,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'clean'?",
-    "correctAnswer": "sauber",
+    "correctAnswer": "{{de-DE|sauber||}}",
     "incorrectAnswers": [
-      "schmutzig",
-      "billig",
-      "teuer"
+      "{{de-DE|schmutzig||}}",
+      "{{de-DE|billig||}}",
+      "{{de-DE|teuer||}}"
     ],
     "explanation": "'sauber' means 'clean'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5012,11 +5012,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'dirty' in everyday use?",
-    "correctAnswer": "schmutzig",
+    "correctAnswer": "{{de-DE|schmutzig||}}",
     "incorrectAnswers": [
-      "billig",
-      "teuer",
-      "sch\u00f6n"
+      "{{de-DE|billig||}}",
+      "{{de-DE|teuer||}}",
+      "{{de-DE|schön||}}"
     ],
     "explanation": "'schmutzig' means 'dirty'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5033,11 +5033,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'cheap'.",
-    "correctAnswer": "billig",
+    "correctAnswer": "{{de-DE|billig||}}",
     "incorrectAnswers": [
-      "teuer",
-      "sch\u00f6n",
-      "h\u00e4sslich"
+      "{{de-DE|teuer||}}",
+      "{{de-DE|schön||}}",
+      "{{de-DE|hässlich||}}"
     ],
     "explanation": "'billig' means 'cheap'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5054,11 +5054,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'expensive'?",
-    "correctAnswer": "teuer",
+    "correctAnswer": "{{de-DE|teuer||}}",
     "incorrectAnswers": [
-      "sch\u00f6n",
-      "h\u00e4sslich",
-      "lang"
+      "{{de-DE|schön||}}",
+      "{{de-DE|hässlich||}}",
+      "{{de-DE|lang||}}"
     ],
     "explanation": "'teuer' means 'expensive'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5075,13 +5075,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'beautiful'?",
-    "correctAnswer": "sch\u00f6n",
+    "correctAnswer": "{{de-DE|schön||}}",
     "incorrectAnswers": [
-      "h\u00e4sslich",
-      "lang",
-      "kurz"
+      "{{de-DE|hässlich||}}",
+      "{{de-DE|lang||}}",
+      "{{de-DE|kurz||}}"
     ],
-    "explanation": "'sch\u00f6n' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'schön' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -5096,13 +5096,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'ugly' in everyday use?",
-    "correctAnswer": "h\u00e4sslich",
+    "correctAnswer": "{{de-DE|hässlich||}}",
     "incorrectAnswers": [
-      "lang",
-      "kurz",
-      "offen"
+      "{{de-DE|lang||}}",
+      "{{de-DE|kurz||}}",
+      "{{de-DE|offen||}}"
     ],
-    "explanation": "'h\u00e4sslich' means 'ugly'. In real sentences, adjectives often change for gender or number.",
+    "explanation": "'hässlich' means 'ugly'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -5117,11 +5117,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'long'.",
-    "correctAnswer": "lang",
+    "correctAnswer": "{{de-DE|lang||}}",
     "incorrectAnswers": [
-      "kurz",
-      "offen",
-      "geschlossen"
+      "{{de-DE|kurz||}}",
+      "{{de-DE|offen||}}",
+      "{{de-DE|geschlossen||}}"
     ],
     "explanation": "'lang' means 'long'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5138,11 +5138,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'short'?",
-    "correctAnswer": "kurz",
+    "correctAnswer": "{{de-DE|kurz||}}",
     "incorrectAnswers": [
-      "offen",
-      "geschlossen",
-      "rechts"
+      "{{de-DE|offen||}}",
+      "{{de-DE|geschlossen||}}",
+      "{{de-DE|rechts||}}"
     ],
     "explanation": "'kurz' means 'short'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5159,11 +5159,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'open'?",
-    "correctAnswer": "offen",
+    "correctAnswer": "{{de-DE|offen||}}",
     "incorrectAnswers": [
-      "geschlossen",
-      "rechts",
-      "links"
+      "{{de-DE|geschlossen||}}",
+      "{{de-DE|rechts||}}",
+      "{{de-DE|links||}}"
     ],
     "explanation": "'offen' means 'open'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5180,11 +5180,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'closed' in everyday use?",
-    "correctAnswer": "geschlossen",
+    "correctAnswer": "{{de-DE|geschlossen||}}",
     "incorrectAnswers": [
-      "rechts",
-      "links",
-      "gleich"
+      "{{de-DE|rechts||}}",
+      "{{de-DE|links||}}",
+      "{{de-DE|gleich||}}"
     ],
     "explanation": "'geschlossen' means 'closed'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5201,11 +5201,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'right'.",
-    "correctAnswer": "rechts",
+    "correctAnswer": "{{de-DE|rechts||}}",
     "incorrectAnswers": [
-      "links",
-      "gleich",
-      "anders"
+      "{{de-DE|links||}}",
+      "{{de-DE|gleich||}}",
+      "{{de-DE|anders||}}"
     ],
     "explanation": "'rechts' means 'right'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5222,11 +5222,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'left'?",
-    "correctAnswer": "links",
+    "correctAnswer": "{{de-DE|links||}}",
     "incorrectAnswers": [
-      "gleich",
-      "anders",
-      "gro\u00df"
+      "{{de-DE|gleich||}}",
+      "{{de-DE|anders||}}",
+      "{{de-DE|groß||}}"
     ],
     "explanation": "'links' means 'left'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5243,11 +5243,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'same'?",
-    "correctAnswer": "gleich",
+    "correctAnswer": "{{de-DE|gleich||}}",
     "incorrectAnswers": [
-      "anders",
-      "gro\u00df",
-      "klein"
+      "{{de-DE|anders||}}",
+      "{{de-DE|groß||}}",
+      "{{de-DE|klein||}}"
     ],
     "explanation": "'gleich' means 'same'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5264,11 +5264,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'different' in everyday use?",
-    "correctAnswer": "anders",
+    "correctAnswer": "{{de-DE|anders||}}",
     "incorrectAnswers": [
-      "gro\u00df",
-      "klein",
-      "neu"
+      "{{de-DE|groß||}}",
+      "{{de-DE|klein||}}",
+      "{{de-DE|neu||}}"
     ],
     "explanation": "'anders' means 'different'. In real sentences, adjectives often change for gender or number.",
     "keywords": [
@@ -5285,11 +5285,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'who'?",
-    "correctAnswer": "wer",
+    "correctAnswer": "{{de-DE|wer||}}",
     "incorrectAnswers": [
-      "was",
-      "wann",
-      "warum"
+      "{{de-DE|was||}}",
+      "{{de-DE|wann||}}",
+      "{{de-DE|warum||}}"
     ],
     "explanation": "'wer' is the word for 'who'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5306,11 +5306,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'what' in everyday use?",
-    "correctAnswer": "was",
+    "correctAnswer": "{{de-DE|was||}}",
     "incorrectAnswers": [
-      "wann",
-      "warum",
-      "wie"
+      "{{de-DE|wann||}}",
+      "{{de-DE|warum||}}",
+      "{{de-DE|wie||}}"
     ],
     "explanation": "'was' is the word for 'what'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5327,11 +5327,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'when'.",
-    "correctAnswer": "wann",
+    "correctAnswer": "{{de-DE|wann||}}",
     "incorrectAnswers": [
-      "warum",
-      "wie",
-      "wie viel"
+      "{{de-DE|warum||}}",
+      "{{de-DE|wie||}}",
+      "{{de-DE|wie viel||}}"
     ],
     "explanation": "'wann' is the word for 'when'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5348,11 +5348,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'why'?",
-    "correctAnswer": "warum",
+    "correctAnswer": "{{de-DE|warum||}}",
     "incorrectAnswers": [
-      "wie",
-      "wie viel",
-      "wie viele"
+      "{{de-DE|wie||}}",
+      "{{de-DE|wie viel||}}",
+      "{{de-DE|wie viele||}}"
     ],
     "explanation": "'warum' is the word for 'why'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5369,11 +5369,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'how'?",
-    "correctAnswer": "wie",
+    "correctAnswer": "{{de-DE|wie||}}",
     "incorrectAnswers": [
-      "wie viel",
-      "wie viele",
-      "wer"
+      "{{de-DE|wie viel||}}",
+      "{{de-DE|wie viele||}}",
+      "{{de-DE|wer||}}"
     ],
     "explanation": "'wie' is the word for 'how'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5390,11 +5390,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'how much' in everyday use?",
-    "correctAnswer": "wie viel",
+    "correctAnswer": "{{de-DE|wie viel||}}",
     "incorrectAnswers": [
-      "wie viele",
-      "wer",
-      "was"
+      "{{de-DE|wie viele||}}",
+      "{{de-DE|wer||}}",
+      "{{de-DE|was||}}"
     ],
     "explanation": "'wie viel' is the word for 'how much'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5411,11 +5411,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'how many'.",
-    "correctAnswer": "wie viele",
+    "correctAnswer": "{{de-DE|wie viele||}}",
     "incorrectAnswers": [
-      "wer",
-      "was",
-      "wann"
+      "{{de-DE|wer||}}",
+      "{{de-DE|was||}}",
+      "{{de-DE|wann||}}"
     ],
     "explanation": "'wie viele' is the word for 'how many'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5432,11 +5432,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'and'?",
-    "correctAnswer": "und",
+    "correctAnswer": "{{de-DE|und||}}",
     "incorrectAnswers": [
-      "oder",
-      "aber",
-      "weil"
+      "{{de-DE|oder||}}",
+      "{{de-DE|aber||}}",
+      "{{de-DE|weil||}}"
     ],
     "explanation": "'und' is the word for 'and'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5453,11 +5453,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'or' in everyday use?",
-    "correctAnswer": "oder",
+    "correctAnswer": "{{de-DE|oder||}}",
     "incorrectAnswers": [
-      "aber",
-      "weil",
-      "wenn"
+      "{{de-DE|aber||}}",
+      "{{de-DE|weil||}}",
+      "{{de-DE|wenn||}}"
     ],
     "explanation": "'oder' is the word for 'or'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5474,11 +5474,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'but'.",
-    "correctAnswer": "aber",
+    "correctAnswer": "{{de-DE|aber||}}",
     "incorrectAnswers": [
-      "weil",
-      "wenn",
-      "und"
+      "{{de-DE|weil||}}",
+      "{{de-DE|wenn||}}",
+      "{{de-DE|und||}}"
     ],
     "explanation": "'aber' is the word for 'but'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5495,11 +5495,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'because'?",
-    "correctAnswer": "weil",
+    "correctAnswer": "{{de-DE|weil||}}",
     "incorrectAnswers": [
-      "wenn",
-      "und",
-      "oder"
+      "{{de-DE|wenn||}}",
+      "{{de-DE|und||}}",
+      "{{de-DE|oder||}}"
     ],
     "explanation": "'weil' is the word for 'because'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5516,11 +5516,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'if'?",
-    "correctAnswer": "wenn",
+    "correctAnswer": "{{de-DE|wenn||}}",
     "incorrectAnswers": [
-      "und",
-      "oder",
-      "aber"
+      "{{de-DE|und||}}",
+      "{{de-DE|oder||}}",
+      "{{de-DE|aber||}}"
     ],
     "explanation": "'wenn' is the word for 'if'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5537,11 +5537,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'very'?",
-    "correctAnswer": "sehr",
+    "correctAnswer": "{{de-DE|sehr||}}",
     "incorrectAnswers": [
-      "auch",
-      "nur",
-      "hier"
+      "{{de-DE|auch||}}",
+      "{{de-DE|nur||}}",
+      "{{de-DE|hier||}}"
     ],
     "explanation": "'sehr' is the word for 'very'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5558,11 +5558,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'also' in everyday use?",
-    "correctAnswer": "auch",
+    "correctAnswer": "{{de-DE|auch||}}",
     "incorrectAnswers": [
-      "nur",
-      "hier",
-      "da"
+      "{{de-DE|nur||}}",
+      "{{de-DE|hier||}}",
+      "{{de-DE|da||}}"
     ],
     "explanation": "'auch' is the word for 'also'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5579,11 +5579,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'only'.",
-    "correctAnswer": "nur",
+    "correctAnswer": "{{de-DE|nur||}}",
     "incorrectAnswers": [
-      "hier",
-      "da",
-      "immer"
+      "{{de-DE|hier||}}",
+      "{{de-DE|da||}}",
+      "{{de-DE|immer||}}"
     ],
     "explanation": "'nur' is the word for 'only'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5600,11 +5600,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'here'?",
-    "correctAnswer": "hier",
+    "correctAnswer": "{{de-DE|hier||}}",
     "incorrectAnswers": [
-      "da",
-      "immer",
-      "nie"
+      "{{de-DE|da||}}",
+      "{{de-DE|immer||}}",
+      "{{de-DE|nie||}}"
     ],
     "explanation": "'hier' is the word for 'here'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5621,11 +5621,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'there'?",
-    "correctAnswer": "da",
+    "correctAnswer": "{{de-DE|da||}}",
     "incorrectAnswers": [
-      "immer",
-      "nie",
-      "sehr"
+      "{{de-DE|immer||}}",
+      "{{de-DE|nie||}}",
+      "{{de-DE|sehr||}}"
     ],
     "explanation": "'da' is the word for 'there'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5642,11 +5642,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'always' in everyday use?",
-    "correctAnswer": "immer",
+    "correctAnswer": "{{de-DE|immer||}}",
     "incorrectAnswers": [
-      "nie",
-      "sehr",
-      "auch"
+      "{{de-DE|nie||}}",
+      "{{de-DE|sehr||}}",
+      "{{de-DE|auch||}}"
     ],
     "explanation": "'immer' is the word for 'always'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5663,11 +5663,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'never'.",
-    "correctAnswer": "nie",
+    "correctAnswer": "{{de-DE|nie||}}",
     "incorrectAnswers": [
-      "sehr",
-      "auch",
-      "nur"
+      "{{de-DE|sehr||}}",
+      "{{de-DE|auch||}}",
+      "{{de-DE|nur||}}"
     ],
     "explanation": "'nie' is the word for 'never'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [
@@ -5684,11 +5684,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'I'?",
-    "correctAnswer": "ich",
+    "correctAnswer": "{{de-DE|ich||}}",
     "incorrectAnswers": [
-      "du",
-      "er",
-      "sie"
+      "{{de-DE|du||}}",
+      "{{de-DE|er||}}",
+      "{{de-DE|sie||}}"
     ],
     "explanation": "'ich' is used for 'I'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5705,11 +5705,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'you' in everyday use?",
-    "correctAnswer": "du",
+    "correctAnswer": "{{de-DE|du||}}",
     "incorrectAnswers": [
-      "er",
-      "sie",
-      "wir"
+      "{{de-DE|er||}}",
+      "{{de-DE|sie||}}",
+      "{{de-DE|wir||}}"
     ],
     "explanation": "'du' is used for 'you'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5726,11 +5726,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'he'.",
-    "correctAnswer": "er",
+    "correctAnswer": "{{de-DE|er||}}",
     "incorrectAnswers": [
-      "sie",
-      "wir",
-      "ihr"
+      "{{de-DE|sie||}}",
+      "{{de-DE|wir||}}",
+      "{{de-DE|ihr||}}"
     ],
     "explanation": "'er' is used for 'he'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5747,11 +5747,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'she'?",
-    "correctAnswer": "sie",
+    "correctAnswer": "{{de-DE|sie||}}",
     "incorrectAnswers": [
-      "wir",
-      "ihr",
-      "sie"
+      "{{de-DE|wir||}}",
+      "{{de-DE|ihr||}}",
+      "{{de-DE|sie||}}"
     ],
     "explanation": "'sie' is used for 'she'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5768,11 +5768,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'we'?",
-    "correctAnswer": "wir",
+    "correctAnswer": "{{de-DE|wir||}}",
     "incorrectAnswers": [
-      "ihr",
-      "sie",
-      "ich"
+      "{{de-DE|ihr||}}",
+      "{{de-DE|sie||}}",
+      "{{de-DE|ich||}}"
     ],
     "explanation": "'wir' is used for 'we'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5789,11 +5789,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'you (plural)' in everyday use?",
-    "correctAnswer": "ihr",
+    "correctAnswer": "{{de-DE|ihr||}}",
     "incorrectAnswers": [
-      "sie",
-      "ich",
-      "du"
+      "{{de-DE|sie||}}",
+      "{{de-DE|ich||}}",
+      "{{de-DE|du||}}"
     ],
     "explanation": "'ihr' is used for 'you (plural)'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5810,11 +5810,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'they'.",
-    "correctAnswer": "sie",
+    "correctAnswer": "{{de-DE|sie||}}",
     "incorrectAnswers": [
-      "ich",
-      "du",
-      "er"
+      "{{de-DE|ich||}}",
+      "{{de-DE|du||}}",
+      "{{de-DE|er||}}"
     ],
     "explanation": "'sie' is used for 'they'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5831,11 +5831,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'my'?",
-    "correctAnswer": "mein",
+    "correctAnswer": "{{de-DE|mein||}}",
     "incorrectAnswers": [
-      "dein",
-      "unser",
-      "ihr"
+      "{{de-DE|dein||}}",
+      "{{de-DE|unser||}}",
+      "{{de-DE|ihr||}}"
     ],
     "explanation": "'mein' is used for 'my'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5852,11 +5852,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'your' in everyday use?",
-    "correctAnswer": "dein",
+    "correctAnswer": "{{de-DE|dein||}}",
     "incorrectAnswers": [
-      "unser",
-      "ihr",
-      "mein"
+      "{{de-DE|unser||}}",
+      "{{de-DE|ihr||}}",
+      "{{de-DE|mein||}}"
     ],
     "explanation": "'dein' is used for 'your'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5873,11 +5873,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'our'.",
-    "correctAnswer": "unser",
+    "correctAnswer": "{{de-DE|unser||}}",
     "incorrectAnswers": [
-      "ihr",
-      "mein",
-      "dein"
+      "{{de-DE|ihr||}}",
+      "{{de-DE|mein||}}",
+      "{{de-DE|dein||}}"
     ],
     "explanation": "'unser' is used for 'our'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5894,11 +5894,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'their'?",
-    "correctAnswer": "ihr",
+    "correctAnswer": "{{de-DE|ihr||}}",
     "incorrectAnswers": [
-      "mein",
-      "dein",
-      "unser"
+      "{{de-DE|mein||}}",
+      "{{de-DE|dein||}}",
+      "{{de-DE|unser||}}"
     ],
     "explanation": "'ihr' is used for 'their'. Beginners see it often in introductions and short descriptions.",
     "keywords": [
@@ -5915,11 +5915,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'doctor'?",
-    "correctAnswer": "Arzt",
+    "correctAnswer": "{{de-DE|Arzt||}}",
     "incorrectAnswers": [
-      "Krankenhaus",
-      "Apotheke",
-      "Schmerz"
+      "{{de-DE|Krankenhaus||}}",
+      "{{de-DE|Apotheke||}}",
+      "{{de-DE|Schmerz||}}"
     ],
     "explanation": "'Arzt' means 'doctor'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -5937,11 +5937,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'hospital' in everyday use?",
-    "correctAnswer": "Krankenhaus",
+    "correctAnswer": "{{de-DE|Krankenhaus||}}",
     "incorrectAnswers": [
-      "Apotheke",
-      "Schmerz",
-      "Hilfe"
+      "{{de-DE|Apotheke||}}",
+      "{{de-DE|Schmerz||}}",
+      "{{de-DE|Hilfe||}}"
     ],
     "explanation": "'Krankenhaus' means 'hospital'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -5959,11 +5959,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'pharmacy'.",
-    "correctAnswer": "Apotheke",
+    "correctAnswer": "{{de-DE|Apotheke||}}",
     "incorrectAnswers": [
-      "Schmerz",
-      "Hilfe",
-      "Polizei"
+      "{{de-DE|Schmerz||}}",
+      "{{de-DE|Hilfe||}}",
+      "{{de-DE|Polizei||}}"
     ],
     "explanation": "'Apotheke' means 'pharmacy'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -5981,11 +5981,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'pain'?",
-    "correctAnswer": "Schmerz",
+    "correctAnswer": "{{de-DE|Schmerz||}}",
     "incorrectAnswers": [
-      "Hilfe",
-      "Polizei",
-      "Feuer"
+      "{{de-DE|Hilfe||}}",
+      "{{de-DE|Polizei||}}",
+      "{{de-DE|Feuer||}}"
     ],
     "explanation": "'Schmerz' means 'pain'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6003,11 +6003,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'help'?",
-    "correctAnswer": "Hilfe",
+    "correctAnswer": "{{de-DE|Hilfe||}}",
     "incorrectAnswers": [
-      "Polizei",
-      "Feuer",
-      "krank"
+      "{{de-DE|Polizei||}}",
+      "{{de-DE|Feuer||}}",
+      "{{de-DE|krank||}}"
     ],
     "explanation": "'Hilfe' means 'help'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6025,11 +6025,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'police' in everyday use?",
-    "correctAnswer": "Polizei",
+    "correctAnswer": "{{de-DE|Polizei||}}",
     "incorrectAnswers": [
-      "Feuer",
-      "krank",
-      "Medizin"
+      "{{de-DE|Feuer||}}",
+      "{{de-DE|krank||}}",
+      "{{de-DE|Medizin||}}"
     ],
     "explanation": "'Polizei' means 'police'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6047,11 +6047,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'fire'.",
-    "correctAnswer": "Feuer",
+    "correctAnswer": "{{de-DE|Feuer||}}",
     "incorrectAnswers": [
-      "krank",
-      "Medizin",
-      "Arzt"
+      "{{de-DE|krank||}}",
+      "{{de-DE|Medizin||}}",
+      "{{de-DE|Arzt||}}"
     ],
     "explanation": "'Feuer' means 'fire'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6069,11 +6069,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'sick'?",
-    "correctAnswer": "krank",
+    "correctAnswer": "{{de-DE|krank||}}",
     "incorrectAnswers": [
-      "Medizin",
-      "Arzt",
-      "Krankenhaus"
+      "{{de-DE|Medizin||}}",
+      "{{de-DE|Arzt||}}",
+      "{{de-DE|Krankenhaus||}}"
     ],
     "explanation": "'krank' means 'sick'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6091,11 +6091,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'medicine'?",
-    "correctAnswer": "Medizin",
+    "correctAnswer": "{{de-DE|Medizin||}}",
     "incorrectAnswers": [
-      "Arzt",
-      "Krankenhaus",
-      "Apotheke"
+      "{{de-DE|Arzt||}}",
+      "{{de-DE|Krankenhaus||}}",
+      "{{de-DE|Apotheke||}}"
     ],
     "explanation": "'Medizin' means 'medicine'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6113,11 +6113,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'school'?",
-    "correctAnswer": "Schule",
+    "correctAnswer": "{{de-DE|Schule||}}",
     "incorrectAnswers": [
-      "Lehrer",
-      "Student",
-      "Buch"
+      "{{de-DE|Lehrer||}}",
+      "{{de-DE|Student||}}",
+      "{{de-DE|Buch||}}"
     ],
     "explanation": "'Schule' means 'school'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6135,11 +6135,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'teacher' in everyday use?",
-    "correctAnswer": "Lehrer",
+    "correctAnswer": "{{de-DE|Lehrer||}}",
     "incorrectAnswers": [
-      "Student",
-      "Buch",
-      "Stift"
+      "{{de-DE|Student||}}",
+      "{{de-DE|Buch||}}",
+      "{{de-DE|Stift||}}"
     ],
     "explanation": "'Lehrer' means 'teacher'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6157,11 +6157,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'student'.",
-    "correctAnswer": "Student",
+    "correctAnswer": "{{de-DE|Student||}}",
     "incorrectAnswers": [
-      "Buch",
-      "Stift",
-      "Papier"
+      "{{de-DE|Buch||}}",
+      "{{de-DE|Stift||}}",
+      "{{de-DE|Papier||}}"
     ],
     "explanation": "'Student' means 'student'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6179,11 +6179,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'book'?",
-    "correctAnswer": "Buch",
+    "correctAnswer": "{{de-DE|Buch||}}",
     "incorrectAnswers": [
-      "Stift",
-      "Papier",
-      "Klasse"
+      "{{de-DE|Stift||}}",
+      "{{de-DE|Papier||}}",
+      "{{de-DE|Klasse||}}"
     ],
     "explanation": "'Buch' means 'book'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6201,11 +6201,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'pen'?",
-    "correctAnswer": "Stift",
+    "correctAnswer": "{{de-DE|Stift||}}",
     "incorrectAnswers": [
-      "Papier",
-      "Klasse",
-      "B\u00fcro"
+      "{{de-DE|Papier||}}",
+      "{{de-DE|Klasse||}}",
+      "{{de-DE|Büro||}}"
     ],
     "explanation": "'Stift' means 'pen'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6223,11 +6223,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'paper' in everyday use?",
-    "correctAnswer": "Papier",
+    "correctAnswer": "{{de-DE|Papier||}}",
     "incorrectAnswers": [
-      "Klasse",
-      "B\u00fcro",
-      "Geld"
+      "{{de-DE|Klasse||}}",
+      "{{de-DE|Büro||}}",
+      "{{de-DE|Geld||}}"
     ],
     "explanation": "'Papier' means 'paper'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6245,11 +6245,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'class'.",
-    "correctAnswer": "Klasse",
+    "correctAnswer": "{{de-DE|Klasse||}}",
     "incorrectAnswers": [
-      "B\u00fcro",
-      "Geld",
-      "Laden"
+      "{{de-DE|Büro||}}",
+      "{{de-DE|Geld||}}",
+      "{{de-DE|Laden||}}"
     ],
     "explanation": "'Klasse' means 'class'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6267,13 +6267,13 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'office'?",
-    "correctAnswer": "B\u00fcro",
+    "correctAnswer": "{{de-DE|Büro||}}",
     "incorrectAnswers": [
-      "Geld",
-      "Laden",
-      "Preis"
+      "{{de-DE|Geld||}}",
+      "{{de-DE|Laden||}}",
+      "{{de-DE|Preis||}}"
     ],
-    "explanation": "'B\u00fcro' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "explanation": "'Büro' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
       "freq-1000",
       "cefr-a1",
@@ -6289,11 +6289,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'money'?",
-    "correctAnswer": "Geld",
+    "correctAnswer": "{{de-DE|Geld||}}",
     "incorrectAnswers": [
-      "Laden",
-      "Preis",
-      "Arbeit"
+      "{{de-DE|Laden||}}",
+      "{{de-DE|Preis||}}",
+      "{{de-DE|Arbeit||}}"
     ],
     "explanation": "'Geld' means 'money'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6311,11 +6311,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'shop' in everyday use?",
-    "correctAnswer": "Laden",
+    "correctAnswer": "{{de-DE|Laden||}}",
     "incorrectAnswers": [
-      "Preis",
-      "Arbeit",
-      "Schule"
+      "{{de-DE|Preis||}}",
+      "{{de-DE|Arbeit||}}",
+      "{{de-DE|Schule||}}"
     ],
     "explanation": "'Laden' means 'shop'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6333,11 +6333,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'price'.",
-    "correctAnswer": "Preis",
+    "correctAnswer": "{{de-DE|Preis||}}",
     "incorrectAnswers": [
-      "Arbeit",
-      "Schule",
-      "Lehrer"
+      "{{de-DE|Arbeit||}}",
+      "{{de-DE|Schule||}}",
+      "{{de-DE|Lehrer||}}"
     ],
     "explanation": "'Preis' means 'price'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6355,11 +6355,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'job'?",
-    "correctAnswer": "Arbeit",
+    "correctAnswer": "{{de-DE|Arbeit||}}",
     "incorrectAnswers": [
-      "Schule",
-      "Lehrer",
-      "Student"
+      "{{de-DE|Schule||}}",
+      "{{de-DE|Lehrer||}}",
+      "{{de-DE|Student||}}"
     ],
     "explanation": "'Arbeit' means 'job'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6377,11 +6377,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'age'?",
-    "correctAnswer": "Alter",
+    "correctAnswer": "{{de-DE|Alter||}}",
     "incorrectAnswers": [
-      "Adresse",
-      "Telefon",
-      "Internet"
+      "{{de-DE|Adresse||}}",
+      "{{de-DE|Telefon||}}",
+      "{{de-DE|Internet||}}"
     ],
     "explanation": "'Alter' means 'age'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6399,11 +6399,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Which German word means 'address' in everyday use?",
-    "correctAnswer": "Adresse",
+    "correctAnswer": "{{de-DE|Adresse||}}",
     "incorrectAnswers": [
-      "Telefon",
-      "Internet",
-      "E-Mail"
+      "{{de-DE|Telefon||}}",
+      "{{de-DE|Internet||}}",
+      "{{de-DE|E-Mail||}}"
     ],
     "explanation": "'Adresse' means 'address'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6421,11 +6421,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'phone'.",
-    "correctAnswer": "Telefon",
+    "correctAnswer": "{{de-DE|Telefon||}}",
     "incorrectAnswers": [
-      "Internet",
-      "E-Mail",
-      "Alter"
+      "{{de-DE|Internet||}}",
+      "{{de-DE|E-Mail||}}",
+      "{{de-DE|Alter||}}"
     ],
     "explanation": "'Telefon' means 'phone'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6443,11 +6443,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "What is the everyday German word for 'internet'?",
-    "correctAnswer": "Internet",
+    "correctAnswer": "{{de-DE|Internet||}}",
     "incorrectAnswers": [
-      "E-Mail",
-      "Alter",
-      "Adresse"
+      "{{de-DE|E-Mail||}}",
+      "{{de-DE|Alter||}}",
+      "{{de-DE|Adresse||}}"
     ],
     "explanation": "'Internet' means 'internet'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6465,11 +6465,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "In beginner German, how do you say 'email'?",
-    "correctAnswer": "E-Mail",
+    "correctAnswer": "{{de-DE|E-Mail||}}",
     "incorrectAnswers": [
-      "Alter",
-      "Adresse",
-      "Telefon"
+      "{{de-DE|Alter||}}",
+      "{{de-DE|Adresse||}}",
+      "{{de-DE|Telefon||}}"
     ],
     "explanation": "'E-Mail' means 'email'. Learn it as a chunk you can reuse in simple everyday sentences.",
     "keywords": [
@@ -6487,11 +6487,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "core",
     "question": "Choose the German word for 'where'.",
-    "correctAnswer": "wo",
+    "correctAnswer": "{{de-DE|wo||}}",
     "incorrectAnswers": [
-      "was",
-      "wann",
-      "warum"
+      "{{de-DE|was||}}",
+      "{{de-DE|wann||}}",
+      "{{de-DE|warum||}}"
     ],
     "explanation": "'wo' is the word for 'where'. These short function words appear everywhere, so they are worth memorizing early.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "Which pair is a common listening challenge because the difference is mainly one r sound versus a rolled or long r?",
-    "correctAnswer": "pero and perro",
+    "correctAnswer": "{{es-ES|pero||}} and {{es-ES|perro||}}",
     "incorrectAnswers": [
-      "casa and casa",
-      "sol and luna",
-      "mesa and silla"
+      "{{es-ES|casa||}} and {{es-ES|casa||}}",
+      "{{es-ES|sol||}} and {{es-ES|luna||}}",
+      "{{es-ES|mesa||}} and {{es-ES|silla||}}"
     ],
     "explanation": "\"Pero\" (but) and \"perro\" (dog) sound similar to beginners; the r sounds make the difference clear once you train your ear.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "Which spelling is the standard Spanish word for a medical doctor, including its accent mark?",
-    "correctAnswer": "m\u00e9dico",
+    "correctAnswer": "{{es-ES|médico||}}",
     "incorrectAnswers": [
-      "medico",
-      "medicina",
-      "hospital"
+      "{{es-ES|medico||}}",
+      "{{es-ES|medicina||}}",
+      "{{es-ES|hospital||}}"
     ],
     "explanation": "The accent marks stress on the first syllable and matches the standard spelling of the noun for a doctor.",
     "keywords": [
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
-    "question": "In \"tel\u00e9fono,\" which syllable carries the main stress?",
+    "question": "In \"teléfono,\" which syllable carries the main stress?",
     "correctAnswer": "the second syllable",
     "incorrectAnswers": [
       "the first syllable",
       "the third syllable",
       "the last syllable only"
     ],
-    "explanation": "The accent on \"\u00e9\" marks stress on the second syllable: te-L\u00c9-fo-no.",
+    "explanation": "The accent on \"é\" marks stress on the second syllable: te-LÉ-fo-no.",
     "keywords": [
       "stress",
       "accent-marks",
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
     "question": "In much of Spain, which pair is easier to tell apart by ear because \"z\" and \"c\" before \"a\" use different consonant sounds?",
-    "correctAnswer": "casa and caza",
+    "correctAnswer": "{{es-ES|casa||}} and {{es-ES|caza||}}",
     "incorrectAnswers": [
-      "pero and perro",
-      "sol and luna",
-      "mesa and silla"
+      "{{es-ES|pero||}} and {{es-ES|perro||}}",
+      "{{es-ES|sol||}} and {{es-ES|luna||}}",
+      "{{es-ES|mesa||}} and {{es-ES|silla||}}"
     ],
     "explanation": "In standard Spain Spanish, \"caza\" uses a \"th\"-like sound for z, while \"casa\" uses a \"k\" sound before \"a,\" so listeners can separate them.",
     "keywords": [
@@ -104,7 +104,7 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "listening",
-    "question": "What most often changes between the yes-no question \"\u00bfHablas ingl\u00e9s?\" and the statement \"Hablas ingl\u00e9s\" when the words stay the same?",
+    "question": "What most often changes between the yes-no question \"¿Hablas inglés?\" and the statement \"Hablas inglés\" when the words stay the same?",
     "correctAnswer": "intonation",
     "incorrectAnswers": [
       "word order",

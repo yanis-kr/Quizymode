@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which pair is a common listening challenge because the vowels sound close for many learners?",
-    "correctAnswer": "dessus and dessous",
+    "correctAnswer": "{{fr-FR|dessus||}} and {{fr-FR|dessous||}}",
     "incorrectAnswers": [
-      "table and chaise",
-      "lune and soleil",
-      "fen\u00eatre and porte"
+      "{{fr-FR|table||}} and {{fr-FR|chaise||}}",
+      "{{fr-FR|lune||}} and {{fr-FR|soleil||}}",
+      "{{fr-FR|fenêtre||}} and {{fr-FR|porte||}}"
     ],
     "explanation": "\"Dessus\" (above) and \"dessous\" (below) sound similar at first; the final consonant sound helps tell them apart with practice.",
     "keywords": [
@@ -25,9 +25,9 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which letters are often linked in speech in \"les amis\"?",
-    "correctAnswer": "The -s on \"les\" links to the next vowel sound.",
+    "correctAnswer": "The -s on \"{{fr-FR|les||}}\" links to the next vowel sound.",
     "incorrectAnswers": [
-      "No letters ever link in French.",
+      "{{fr-FR|No||}} letters ever link in French.",
       "Only consonants at the end of verbs link.",
       "Linking never happens before a vowel."
     ],
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "listening",
     "question": "Which pair differs clearly for most learners because \"u\" and \"ou\" are different vowels?",
-    "correctAnswer": "tu and tout",
+    "correctAnswer": "{{fr-FR|tu||}} and {{fr-FR|tout||}}",
     "incorrectAnswers": [
-      "pas and pas",
-      "oui and oui",
-      "merci and merci"
+      "{{fr-FR|pas||}} and {{fr-FR|pas||}}",
+      "{{fr-FR|oui||}} and {{fr-FR|oui||}}",
+      "{{fr-FR|merci||}} and {{fr-FR|merci||}}"
     ],
     "explanation": "French \"u\" and \"ou\" are different rounded vowels; mixing them is a common listening and speaking mistake for beginners.",
     "keywords": [

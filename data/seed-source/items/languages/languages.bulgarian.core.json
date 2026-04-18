@@ -5,11 +5,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'hello' in Bulgarian?",
-    "correctAnswer": "Здравейте (Zdraveyte) — formal / Здравей (Zdravey) — informal",
+    "correctAnswer": "{{bg-BG|Здравейте (Zdraveyte) — formal|Zdraveyte (Zdraveyte) — formal|}} / {{bg-BG|Здравей (Zdravey) — informal|Zdravey (Zdravey) — informal|}}",
     "incorrectAnswers": [
-      "Довиждане (Dovizhdane)",
-      "Благодаря (Blagodarya)",
-      "Моля (Molya)"
+      "{{bg-BG|Довиждане|Dovizhdane|}}",
+      "{{bg-BG|Благодаря|Blagodarya|}}",
+      "{{bg-BG|Моля|Molya|}}"
     ],
     "explanation": "'Zdraveyte' is formal; 'zdravey' is informal. The -te suffix marks formal/plural in Bulgarian.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'thank you' in Bulgarian?",
-    "correctAnswer": "Благодаря (Blagodarya)",
+    "correctAnswer": "{{bg-BG|Благодаря|Blagodarya|}}",
     "incorrectAnswers": [
-      "Моля (Molya)",
-      "Извинете (Izvinete)",
-      "Здравейте (Zdraveyte)"
+      "{{bg-BG|Моля|Molya|}}",
+      "{{bg-BG|Извинете|Izvinete|}}",
+      "{{bg-BG|Здравейте|Zdraveyte|}}"
     ],
     "explanation": "'Blagodarya' is the standard thank you. 'Blagodarya mnogo' = thank you very much.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'please' in Bulgarian?",
-    "correctAnswer": "Моля (Molya)",
+    "correctAnswer": "{{bg-BG|Моля|Molya|}}",
     "incorrectAnswers": [
-      "Благодаря (Blagodarya)",
-      "Извинете (Izvinete)",
-      "Да (Da)"
+      "{{bg-BG|Благодаря|Blagodarya|}}",
+      "{{bg-BG|Извинете|Izvinete|}}",
+      "{{bg-BG|Да|Da|}}"
     ],
     "explanation": "'Molya' means please and is also used for 'you're welcome' and answering a phone.",
     "keywords": [
@@ -64,7 +64,7 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "In Bulgarian, a head nod usually means what?",
-    "correctAnswer": "no (unlike most countries)",
+    "correctAnswer": "{{bg-BG|no|unlike most countries|}}",
     "incorrectAnswers": [
       "yes",
       "maybe",
@@ -83,11 +83,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'goodbye' in Bulgarian?",
-    "correctAnswer": "Довиждане (Dovizhdane)",
+    "correctAnswer": "{{bg-BG|Довиждане|Dovizhdane|}}",
     "incorrectAnswers": [
-      "Здравейте (Zdraveyte)",
-      "Благодаря (Blagodarya)",
-      "Моля (Molya)"
+      "{{bg-BG|Здравейте|Zdraveyte|}}",
+      "{{bg-BG|Благодаря|Blagodarya|}}",
+      "{{bg-BG|Моля|Molya|}}"
     ],
     "explanation": "'Dovizhdane' — 'until we see each other' — is the formal goodbye. Informal: 'Chao' (yes, same as Italian!).",
     "keywords": [
@@ -103,11 +103,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'my name is' in Bulgarian?",
-    "correctAnswer": "Казвам се... (Kazvam se...)",
+    "correctAnswer": "{{bg-BG|Казвам се...|Kazvam se...|}}",
     "incorrectAnswers": [
-      "Живея в... (Zhiveya v...)",
-      "Аз съм от... (Az sam ot...)",
-      "Харесвам... (Kharesvm...)"
+      "{{bg-BG|Живея в...|Zhiveya v...|}}",
+      "{{bg-BG|Аз съм от...|Az sam ot...|}}",
+      "{{bg-BG|Харесвам...|Kharesvm...|}}"
     ],
     "explanation": "'Kazvam se [name]' — 'I call myself [name]' — standard Bulgarian self-introduction.",
     "keywords": [
@@ -123,9 +123,9 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you count 1, 2, 3 in Bulgarian?",
-    "correctAnswer": "едно, две, три (edno, dve, tri)",
+    "correctAnswer": "{{bg-BG|едно, две, три|edno, dve, tri|}}",
     "incorrectAnswers": [
-      "один, два, три (Russian)",
+      "{{bg-BG|один, два, три|Russian|}}",
       "uno, dos, tres",
       "un, deux, trois"
     ],
@@ -142,11 +142,11 @@
     "navigationKeyword1": "bulgarian",
     "navigationKeyword2": "core",
     "question": "How do you say 'excuse me / sorry' in Bulgarian?",
-    "correctAnswer": "Извинете (Izvinete)",
+    "correctAnswer": "{{bg-BG|Извинете|Izvinete|}}",
     "incorrectAnswers": [
-      "Благодаря (Blagodarya)",
-      "Моля (Molya)",
-      "Здравейте (Zdraveyte)"
+      "{{bg-BG|Благодаря|Blagodarya|}}",
+      "{{bg-BG|Моля|Molya|}}",
+      "{{bg-BG|Здравейте|Zdraveyte|}}"
     ],
     "explanation": "'Izvinete' is formal. Informal: 'izvini'. Used to get attention or to apologize.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
     "question": "What is a common informal way to ask 'How are you?'",
-    "correctAnswer": "Wie geht's?",
+    "correctAnswer": "{{de-DE|Wie geht's?||}}",
     "incorrectAnswers": [
-      "Wo kommst du her?",
-      "Wie viel kostet das?",
-      "Was ist dein Beruf?"
+      "{{de-DE|Wo kommst du her?||}}",
+      "{{de-DE|Wie viel kostet das?||}}",
+      "{{de-DE|Was ist dein Beruf?||}}"
     ],
     "explanation": "'Wie geht's?' is a very common short question about how someone is doing.",
     "keywords": [
@@ -23,7 +23,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does 'Auf Wiedersehen' mean?",
+    "question": "What does '{{de-DE|Auf Wiedersehen||}}' mean?",
     "correctAnswer": "goodbye (formal)",
     "incorrectAnswers": [
       "nice to meet you",
@@ -43,11 +43,11 @@
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
     "question": "When you meet someone formally, which polite pronoun often replaces 'du'?",
-    "correctAnswer": "Sie",
+    "correctAnswer": "{{de-DE|Sie||}}",
     "incorrectAnswers": [
-      "ihr",
-      "man",
-      "es"
+      "{{de-DE|ihr||}}",
+      "{{de-DE|man||}}",
+      "{{de-DE|es||}}"
     ],
     "explanation": "'Sie' with a capital S is the polite you for adults you do not call 'du'.",
     "keywords": [
@@ -61,7 +61,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does 'Guten Tag' mean?",
+    "question": "What does '{{de-DE|Guten Tag||}}' mean?",
     "correctAnswer": "good day / hello (daytime)",
     "incorrectAnswers": [
       "good evening only",
@@ -80,7 +80,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "conversation",
-    "question": "What does 'Ja' mean?",
+    "question": "What does '{{de-DE|Ja||}}' mean?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no",

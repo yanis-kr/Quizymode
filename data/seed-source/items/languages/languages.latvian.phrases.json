@@ -5,13 +5,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Latvian?",
-    "correctAnswer": "Kur ir tualete?",
+    "correctAnswer": "{{lv-LV|Kur ir tualete?||}}",
     "incorrectAnswers": [
-      "Kas ir tualete?",
-      "Kad ir tualete?",
-      "Cik maks\u0101 tualete?"
+      "{{lv-LV|Kas ir tualete?||}}",
+      "{{lv-LV|Kad ir tualete?||}}",
+      "{{lv-LV|Cik maksā tualete?||}}"
     ],
-    "explanation": "'Kur ir' = 'where is'. Replace 'tualete' with any destination: stacija, viesn\u012bca, etc.",
+    "explanation": "'Kur ir' = 'where is'. Replace 'tualete' with any destination: stacija, viesnīca, etc.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -25,13 +25,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Latvian?",
-    "correctAnswer": "Cik tas maks\u0101?",
+    "correctAnswer": "{{lv-LV|Cik tas maksā?||}}",
     "incorrectAnswers": [
-      "Kas tas ir?",
-      "Kur to pirkt?",
-      "Vai tas ir labs?"
+      "{{lv-LV|Kas tas ir?||}}",
+      "{{lv-LV|Kur to pirkt?||}}",
+      "{{lv-LV|Vai tas ir labs?||}}"
     ],
-    "explanation": "'Cik tas maks\u0101?' \u2014 'How much does this cost?' \u2014 essential for markets and shops.",
+    "explanation": "'Cik tas maksā?' — 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -45,13 +45,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in Latvian?",
-    "correctAnswer": "Vienu kafiju, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Vienu kafiju, lūdzu.||}}",
     "incorrectAnswers": [
-      "Kafija, \u0101tr\u0101k!",
-      "Es gribu kafiju.",
-      "Kafija ir laba."
+      "{{lv-LV|Kafija, ātrāk!||}}",
+      "{{lv-LV|Es gribu kafiju.||}}",
+      "{{lv-LV|Kafija ir laba.||}}"
     ],
-    "explanation": "'Vienu [item], l\u016bdzu' \u2014 'One [item], please' \u2014 the standard caf\u00e9 order pattern.",
+    "explanation": "'Vienu [item], lūdzu' — 'One [item], please' — the standard café order pattern.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -65,13 +65,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in Latvian?",
-    "correctAnswer": "R\u0113\u0137inu, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Rēķinu, lūdzu.||}}",
     "incorrectAnswers": [
-      "\u0112dienkarti, l\u016bdzu.",
-      "V\u0113l vienu, l\u016bdzu.",
-      "Paldies par \u0113dienu."
+      "{{lv-LV|Ēdienkarti, lūdzu.||}}",
+      "{{lv-LV|Vēl vienu, lūdzu.||}}",
+      "{{lv-LV|Paldies par ēdienu.||}}"
     ],
-    "explanation": "'R\u0113\u0137inu, l\u016bdzu' \u2014 'The bill, please' \u2014 straightforward and polite.",
+    "explanation": "'Rēķinu, lūdzu' — 'The bill, please' — straightforward and polite.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -85,13 +85,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Latvian?",
-    "correctAnswer": "Es nesaprotu.",
+    "correctAnswer": "{{lv-LV|Es nesaprotu.||}}",
     "incorrectAnswers": [
-      "Es nezinu.",
-      "Es nedzirdu.",
-      "Es nerun\u0101ju latviski."
+      "{{lv-LV|Es nezinu.||}}",
+      "{{lv-LV|Es nedzirdu.||}}",
+      "{{lv-LV|Es nerunāju latviski.||}}"
     ],
-    "explanation": "'Es nesaprotu' \u2014 'I don't understand' \u2014 the essential phrase when you're lost.",
+    "explanation": "'Es nesaprotu' — 'I don't understand' — the essential phrase when you're lost.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,13 +104,13 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Latvian?",
-    "correctAnswer": "Vai j\u016bs run\u0101jat angliski?",
+    "correctAnswer": "{{lv-LV|Vai jūs runājat angliski?||}}",
     "incorrectAnswers": [
-      "Vai j\u016bs saprotat angliski?",
-      "Vai j\u016bs zin\u0101t angliski?",
-      "Vai j\u016bs m\u0101c\u0101ties angliski?"
+      "{{lv-LV|Vai jūs saprotat angliski?||}}",
+      "{{lv-LV|Vai jūs zināt angliski?||}}",
+      "{{lv-LV|Vai jūs mācāties angliski?||}}"
     ],
-    "explanation": "'Vai j\u016bs run\u0101jat angliski?' \u2014 the polite plural/formal form. Informal: 'Vai tu run\u0101 angliski?'",
+    "explanation": "'Vai jūs runājat angliski?' — the polite plural/formal form. Informal: 'Vai tu runā angliski?'",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -123,11 +123,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bus stop?' in Latvian?",
-    "correctAnswer": "Kur ir autobusa pietura?",
+    "correctAnswer": "{{lv-LV|Kur ir autobusa pietura?||}}",
     "incorrectAnswers": [
-      "Kur iet autobuss?",
-      "Kad n\u0101k autobuss?",
-      "Cik maks\u0101 autobuss?"
+      "{{lv-LV|Kur iet autobuss?||}}",
+      "{{lv-LV|Kad nāk autobuss?||}}",
+      "{{lv-LV|Cik maksā autobuss?||}}"
     ],
     "explanation": "'Autobusa pietura' = bus stop. 'Tramvaja pietura' = tram stop, 'trolejbusa pietura' = trolleybus stop.",
     "keywords": [
@@ -143,11 +143,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Good evening.'?",
-    "correctAnswer": "Labvakar.",
+    "correctAnswer": "{{lv-LV|Labvakar.||}}",
     "incorrectAnswers": [
-      "K\u0101 jums kl\u0101jas?",
-      "Man ir labi, paldies.",
-      "\u013boti labi, paldies."
+      "{{lv-LV|Kā jums klājas?||}}",
+      "{{lv-LV|Man ir labi, paldies.||}}",
+      "{{lv-LV|Ļoti labi, paldies.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -163,11 +163,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'How are you?'?",
-    "correctAnswer": "K\u0101 jums kl\u0101jas?",
+    "correctAnswer": "{{lv-LV|Kā jums klājas?||}}",
     "incorrectAnswers": [
-      "Man ir labi, paldies.",
-      "\u013boti labi, paldies.",
-      "Tiksimies v\u0113l\u0101k."
+      "{{lv-LV|Man ir labi, paldies.||}}",
+      "{{lv-LV|Ļoti labi, paldies.||}}",
+      "{{lv-LV|Tiksimies vēlāk.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -183,11 +183,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "Man ir labi, paldies.",
+    "correctAnswer": "{{lv-LV|Man ir labi, paldies.||}}",
     "incorrectAnswers": [
-      "\u013boti labi, paldies.",
-      "Tiksimies v\u0113l\u0101k.",
-      "Uz redz\u0113\u0161anos r\u012bt."
+      "{{lv-LV|Ļoti labi, paldies.||}}",
+      "{{lv-LV|Tiksimies vēlāk.||}}",
+      "{{lv-LV|Uz redzēšanos rīt.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -203,11 +203,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Very well, thanks.'?",
-    "correctAnswer": "\u013boti labi, paldies.",
+    "correctAnswer": "{{lv-LV|Ļoti labi, paldies.||}}",
     "incorrectAnswers": [
-      "Tiksimies v\u0113l\u0101k.",
-      "Uz redz\u0113\u0161anos r\u012bt.",
-      "Lai jums jauka diena."
+      "{{lv-LV|Tiksimies vēlāk.||}}",
+      "{{lv-LV|Uz redzēšanos rīt.||}}",
+      "{{lv-LV|Lai jums jauka diena.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -223,11 +223,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'See you later.'?",
-    "correctAnswer": "Tiksimies v\u0113l\u0101k.",
+    "correctAnswer": "{{lv-LV|Tiksimies vēlāk.||}}",
     "incorrectAnswers": [
-      "Uz redz\u0113\u0161anos r\u012bt.",
-      "Lai jums jauka diena.",
-      "Laipni l\u016bdzam."
+      "{{lv-LV|Uz redzēšanos rīt.||}}",
+      "{{lv-LV|Lai jums jauka diena.||}}",
+      "{{lv-LV|Laipni lūdzam.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -243,11 +243,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'See you tomorrow.'?",
-    "correctAnswer": "Uz redz\u0113\u0161anos r\u012bt.",
+    "correctAnswer": "{{lv-LV|Uz redzēšanos rīt.||}}",
     "incorrectAnswers": [
-      "Lai jums jauka diena.",
-      "Laipni l\u016bdzam.",
-      "Prieks iepaz\u012bties."
+      "{{lv-LV|Lai jums jauka diena.||}}",
+      "{{lv-LV|Laipni lūdzam.||}}",
+      "{{lv-LV|Prieks iepazīties.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -263,11 +263,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Have a good day.'.",
-    "correctAnswer": "Lai jums jauka diena.",
+    "correctAnswer": "{{lv-LV|Lai jums jauka diena.||}}",
     "incorrectAnswers": [
-      "Laipni l\u016bdzam.",
-      "Prieks iepaz\u012bties.",
-      "Prieks j\u016bs atkal redz\u0113t."
+      "{{lv-LV|Laipni lūdzam.||}}",
+      "{{lv-LV|Prieks iepazīties.||}}",
+      "{{lv-LV|Prieks jūs atkal redzēt.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -283,11 +283,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Welcome.'?",
-    "correctAnswer": "Laipni l\u016bdzam.",
+    "correctAnswer": "{{lv-LV|Laipni lūdzam.||}}",
     "incorrectAnswers": [
-      "Prieks iepaz\u012bties.",
-      "Prieks j\u016bs atkal redz\u0113t.",
-      "Tiksimies dr\u012bz."
+      "{{lv-LV|Prieks iepazīties.||}}",
+      "{{lv-LV|Prieks jūs atkal redzēt.||}}",
+      "{{lv-LV|Tiksimies drīz.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -303,11 +303,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "Prieks iepaz\u012bties.",
+    "correctAnswer": "{{lv-LV|Prieks iepazīties.||}}",
     "incorrectAnswers": [
-      "Prieks j\u016bs atkal redz\u0113t.",
-      "Tiksimies dr\u012bz.",
-      "Lai jums jauks vakars."
+      "{{lv-LV|Prieks jūs atkal redzēt.||}}",
+      "{{lv-LV|Tiksimies drīz.||}}",
+      "{{lv-LV|Lai jums jauks vakars.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -323,11 +323,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Nice to see you again.'?",
-    "correctAnswer": "Prieks j\u016bs atkal redz\u0113t.",
+    "correctAnswer": "{{lv-LV|Prieks jūs atkal redzēt.||}}",
     "incorrectAnswers": [
-      "Tiksimies dr\u012bz.",
-      "Lai jums jauks vakars.",
-      "Labvakar."
+      "{{lv-LV|Tiksimies drīz.||}}",
+      "{{lv-LV|Lai jums jauks vakars.||}}",
+      "{{lv-LV|Labvakar.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'See you soon.'.",
-    "correctAnswer": "Tiksimies dr\u012bz.",
+    "correctAnswer": "{{lv-LV|Tiksimies drīz.||}}",
     "incorrectAnswers": [
-      "Lai jums jauks vakars.",
-      "Labvakar.",
-      "K\u0101 jums kl\u0101jas?"
+      "{{lv-LV|Lai jums jauks vakars.||}}",
+      "{{lv-LV|Labvakar.||}}",
+      "{{lv-LV|Kā jums klājas?||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -363,11 +363,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Have a nice evening.'?",
-    "correctAnswer": "Lai jums jauks vakars.",
+    "correctAnswer": "{{lv-LV|Lai jums jauks vakars.||}}",
     "incorrectAnswers": [
-      "Labvakar.",
-      "K\u0101 jums kl\u0101jas?",
-      "Man ir labi, paldies."
+      "{{lv-LV|Labvakar.||}}",
+      "{{lv-LV|Kā jums klājas?||}}",
+      "{{lv-LV|Man ir labi, paldies.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -383,11 +383,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'What is your name?'?",
-    "correctAnswer": "K\u0101 j\u016bs sauc?",
+    "correctAnswer": "{{lv-LV|Kā jūs sauc?||}}",
     "incorrectAnswers": [
-      "Es esmu no ASV.",
-      "Es dz\u012bvoju R\u012bg\u0101.",
-      "Man ir divdesmit gadi."
+      "{{lv-LV|Es esmu no ASV.||}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||}}",
+      "{{lv-LV|Man ir divdesmit gadi.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -403,11 +403,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I am from the United States.'?",
-    "correctAnswer": "Es esmu no ASV.",
+    "correctAnswer": "{{lv-LV|Es esmu no ASV.||}}",
     "incorrectAnswers": [
-      "Es dz\u012bvoju R\u012bg\u0101.",
-      "Man ir divdesmit gadi.",
-      "\u0160is ir mans draugs."
+      "{{lv-LV|Es dzīvoju Rīgā.||}}",
+      "{{lv-LV|Man ir divdesmit gadi.||}}",
+      "{{lv-LV|Šis ir mans draugs.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -423,11 +423,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I live in Chicago.'.",
-    "correctAnswer": "Es dz\u012bvoju R\u012bg\u0101.",
+    "correctAnswer": "{{lv-LV|Es dzīvoju Rīgā.||}}",
     "incorrectAnswers": [
-      "Man ir divdesmit gadi.",
-      "\u0160is ir mans draugs.",
-      "\u0160\u012b ir mana m\u0101sa."
+      "{{lv-LV|Man ir divdesmit gadi.||}}",
+      "{{lv-LV|Šis ir mans draugs.||}}",
+      "{{lv-LV|Šī ir mana māsa.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -443,11 +443,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am twenty years old.'?",
-    "correctAnswer": "Man ir divdesmit gadi.",
+    "correctAnswer": "{{lv-LV|Man ir divdesmit gadi.||}}",
     "incorrectAnswers": [
-      "\u0160is ir mans draugs.",
-      "\u0160\u012b ir mana m\u0101sa.",
-      "Es esmu prec\u0113jies/prec\u0113jusies."
+      "{{lv-LV|Šis ir mans draugs.||}}",
+      "{{lv-LV|Šī ir mana māsa.||}}",
+      "{{lv-LV|Es esmu precējies/precējusies.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -463,11 +463,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'This is my friend.'?",
-    "correctAnswer": "\u0160is ir mans draugs.",
+    "correctAnswer": "{{lv-LV|Šis ir mans draugs.||}}",
     "incorrectAnswers": [
-      "\u0160\u012b ir mana m\u0101sa.",
-      "Es esmu prec\u0113jies/prec\u0113jusies.",
-      "Es esmu students/studente."
+      "{{lv-LV|Šī ir mana māsa.||}}",
+      "{{lv-LV|Es esmu precējies/precējusies.||}}",
+      "{{lv-LV|Es esmu students/studente.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -483,11 +483,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'This is my sister.'?",
-    "correctAnswer": "\u0160\u012b ir mana m\u0101sa.",
+    "correctAnswer": "{{lv-LV|Šī ir mana māsa.||}}",
     "incorrectAnswers": [
-      "Es esmu prec\u0113jies/prec\u0113jusies.",
-      "Es esmu students/studente.",
-      "Es esmu \u0161eit atva\u013cin\u0101jum\u0101."
+      "{{lv-LV|Es esmu precējies/precējusies.||}}",
+      "{{lv-LV|Es esmu students/studente.||}}",
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -503,11 +503,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I am married.'.",
-    "correctAnswer": "Es esmu prec\u0113jies/prec\u0113jusies.",
+    "correctAnswer": "{{lv-LV|Es esmu precējies/precējusies.||}}",
     "incorrectAnswers": [
-      "Es esmu students/studente.",
-      "Es esmu \u0161eit atva\u013cin\u0101jum\u0101.",
-      "Mans uzv\u0101rds ir Garsija."
+      "{{lv-LV|Es esmu students/studente.||}}",
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||}}",
+      "{{lv-LV|Mans uzvārds ir Garsija.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -523,11 +523,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am a student.'?",
-    "correctAnswer": "Es esmu students/studente.",
+    "correctAnswer": "{{lv-LV|Es esmu students/studente.||}}",
     "incorrectAnswers": [
-      "Es esmu \u0161eit atva\u013cin\u0101jum\u0101.",
-      "Mans uzv\u0101rds ir Garsija.",
-      "Mans telefona numurs ir..."
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||}}",
+      "{{lv-LV|Mans uzvārds ir Garsija.||}}",
+      "{{lv-LV|Mans telefona numurs ir...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -543,11 +543,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "Es esmu \u0161eit atva\u013cin\u0101jum\u0101.",
+    "correctAnswer": "{{lv-LV|Es esmu šeit atvaļinājumā.||}}",
     "incorrectAnswers": [
-      "Mans uzv\u0101rds ir Garsija.",
-      "Mans telefona numurs ir...",
-      "Mana adrese ir..."
+      "{{lv-LV|Mans uzvārds ir Garsija.||}}",
+      "{{lv-LV|Mans telefona numurs ir...||}}",
+      "{{lv-LV|Mana adrese ir...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "Mans uzv\u0101rds ir Garsija.",
+    "correctAnswer": "{{lv-LV|Mans uzvārds ir Garsija.||}}",
     "incorrectAnswers": [
-      "Mans telefona numurs ir...",
-      "Mana adrese ir...",
-      "K\u0101 j\u016bs sauc?"
+      "{{lv-LV|Mans telefona numurs ir...||}}",
+      "{{lv-LV|Mana adrese ir...||}}",
+      "{{lv-LV|Kā jūs sauc?||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -583,11 +583,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'My phone number is...'.",
-    "correctAnswer": "Mans telefona numurs ir...",
+    "correctAnswer": "{{lv-LV|Mans telefona numurs ir...||}}",
     "incorrectAnswers": [
-      "Mana adrese ir...",
-      "K\u0101 j\u016bs sauc?",
-      "Es esmu no ASV."
+      "{{lv-LV|Mana adrese ir...||}}",
+      "{{lv-LV|Kā jūs sauc?||}}",
+      "{{lv-LV|Es esmu no ASV.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -603,11 +603,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'My address is...'?",
-    "correctAnswer": "Mana adrese ir...",
+    "correctAnswer": "{{lv-LV|Mana adrese ir...||}}",
     "incorrectAnswers": [
-      "K\u0101 j\u016bs sauc?",
-      "Es esmu no ASV.",
-      "Es dz\u012bvoju R\u012bg\u0101."
+      "{{lv-LV|Kā jūs sauc?||}}",
+      "{{lv-LV|Es esmu no ASV.||}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -623,11 +623,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I need water.'?",
-    "correctAnswer": "Man vajag \u016bdeni.",
+    "correctAnswer": "{{lv-LV|Man vajag ūdeni.||}}",
     "incorrectAnswers": [
-      "Man vajag karti.",
-      "Man vajag taksometru.",
-      "Man vajag istabu."
+      "{{lv-LV|Man vajag karti.||}}",
+      "{{lv-LV|Man vajag taksometru.||}}",
+      "{{lv-LV|Man vajag istabu.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -643,11 +643,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I need a map.'?",
-    "correctAnswer": "Man vajag karti.",
+    "correctAnswer": "{{lv-LV|Man vajag karti.||}}",
     "incorrectAnswers": [
-      "Man vajag taksometru.",
-      "Man vajag istabu.",
-      "Vai jums ir Wi-Fi?"
+      "{{lv-LV|Man vajag taksometru.||}}",
+      "{{lv-LV|Man vajag istabu.||}}",
+      "{{lv-LV|Vai jums ir Wi-Fi?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -663,11 +663,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I need a taxi.'.",
-    "correctAnswer": "Man vajag taksometru.",
+    "correctAnswer": "{{lv-LV|Man vajag taksometru.||}}",
     "incorrectAnswers": [
-      "Man vajag istabu.",
-      "Vai jums ir Wi-Fi?",
-      "Vai jums ir maize?"
+      "{{lv-LV|Man vajag istabu.||}}",
+      "{{lv-LV|Vai jums ir Wi-Fi?||}}",
+      "{{lv-LV|Vai jums ir maize?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -683,11 +683,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I need a room.'?",
-    "correctAnswer": "Man vajag istabu.",
+    "correctAnswer": "{{lv-LV|Man vajag istabu.||}}",
     "incorrectAnswers": [
-      "Vai jums ir Wi-Fi?",
-      "Vai jums ir maize?",
-      "Vai es varu dab\u016bt \u0113dienkarti?"
+      "{{lv-LV|Vai jums ir Wi-Fi?||}}",
+      "{{lv-LV|Vai jums ir maize?||}}",
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -703,11 +703,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "Vai jums ir Wi-Fi?",
+    "correctAnswer": "{{lv-LV|Vai jums ir Wi-Fi?||}}",
     "incorrectAnswers": [
-      "Vai jums ir maize?",
-      "Vai es varu dab\u016bt \u0113dienkarti?",
-      "Vai es varu dab\u016bt pudeli \u016bdens?"
+      "{{lv-LV|Vai jums ir maize?||}}",
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||}}",
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -723,11 +723,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Do you have bread?'?",
-    "correctAnswer": "Vai jums ir maize?",
+    "correctAnswer": "{{lv-LV|Vai jums ir maize?||}}",
     "incorrectAnswers": [
-      "Vai es varu dab\u016bt \u0113dienkarti?",
-      "Vai es varu dab\u016bt pudeli \u016bdens?",
-      "Iedodiet man maisi\u0146u, l\u016bdzu."
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||}}",
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||}}",
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -743,11 +743,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Can I have the menu?'.",
-    "correctAnswer": "Vai es varu dab\u016bt \u0113dienkarti?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt ēdienkarti?||}}",
     "incorrectAnswers": [
-      "Vai es varu dab\u016bt pudeli \u016bdens?",
-      "Iedodiet man maisi\u0146u, l\u016bdzu.",
-      "Man vajag vair\u0101k laika."
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||}}",
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||}}",
+      "{{lv-LV|Man vajag vairāk laika.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -763,11 +763,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "Vai es varu dab\u016bt pudeli \u016bdens?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt pudeli ūdens?||}}",
     "incorrectAnswers": [
-      "Iedodiet man maisi\u0146u, l\u016bdzu.",
-      "Man vajag vair\u0101k laika.",
-      "Man vajag \u010deku."
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||}}",
+      "{{lv-LV|Man vajag vairāk laika.||}}",
+      "{{lv-LV|Man vajag čeku.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "Iedodiet man maisi\u0146u, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Iedodiet man maisiņu, lūdzu.||}}",
     "incorrectAnswers": [
-      "Man vajag vair\u0101k laika.",
-      "Man vajag \u010deku.",
-      "Vai jums ir ve\u0123et\u0101ri \u0113dieni?"
+      "{{lv-LV|Man vajag vairāk laika.||}}",
+      "{{lv-LV|Man vajag čeku.||}}",
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -803,11 +803,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I need more time.'?",
-    "correctAnswer": "Man vajag vair\u0101k laika.",
+    "correctAnswer": "{{lv-LV|Man vajag vairāk laika.||}}",
     "incorrectAnswers": [
-      "Man vajag \u010deku.",
-      "Vai jums ir ve\u0123et\u0101ri \u0113dieni?",
-      "Man vajag \u016bdeni."
+      "{{lv-LV|Man vajag čeku.||}}",
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||}}",
+      "{{lv-LV|Man vajag ūdeni.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -823,11 +823,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I need the receipt.'.",
-    "correctAnswer": "Man vajag \u010deku.",
+    "correctAnswer": "{{lv-LV|Man vajag čeku.||}}",
     "incorrectAnswers": [
-      "Vai jums ir ve\u0123et\u0101ri \u0113dieni?",
-      "Man vajag \u016bdeni.",
-      "Man vajag karti."
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||}}",
+      "{{lv-LV|Man vajag ūdeni.||}}",
+      "{{lv-LV|Man vajag karti.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -843,11 +843,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "Vai jums ir ve\u0123et\u0101ri \u0113dieni?",
+    "correctAnswer": "{{lv-LV|Vai jums ir veģetāri ēdieni?||}}",
     "incorrectAnswers": [
-      "Man vajag \u016bdeni.",
-      "Man vajag karti.",
-      "Man vajag taksometru."
+      "{{lv-LV|Man vajag ūdeni.||}}",
+      "{{lv-LV|Man vajag karti.||}}",
+      "{{lv-LV|Man vajag taksometru.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -863,11 +863,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Where is the bank?'?",
-    "correctAnswer": "Kur ir banka?",
+    "correctAnswer": "{{lv-LV|Kur ir banka?||}}",
     "incorrectAnswers": [
-      "Kur ir muzejs?",
-      "Kur ir pils\u0113tas centrs?",
-      "Kur ir tramvaja pietura?"
+      "{{lv-LV|Kur ir muzejs?||}}",
+      "{{lv-LV|Kur ir pilsētas centrs?||}}",
+      "{{lv-LV|Kur ir tramvaja pietura?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -883,11 +883,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Where is the museum?'?",
-    "correctAnswer": "Kur ir muzejs?",
+    "correctAnswer": "{{lv-LV|Kur ir muzejs?||}}",
     "incorrectAnswers": [
-      "Kur ir pils\u0113tas centrs?",
-      "Kur ir tramvaja pietura?",
-      "Ejiet taisni."
+      "{{lv-LV|Kur ir pilsētas centrs?||}}",
+      "{{lv-LV|Kur ir tramvaja pietura?||}}",
+      "{{lv-LV|Ejiet taisni.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -903,11 +903,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Where is the city center?'.",
-    "correctAnswer": "Kur ir pils\u0113tas centrs?",
+    "correctAnswer": "{{lv-LV|Kur ir pilsētas centrs?||}}",
     "incorrectAnswers": [
-      "Kur ir tramvaja pietura?",
-      "Ejiet taisni.",
-      "Nogriezieties pirmaj\u0101 iel\u0101."
+      "{{lv-LV|Kur ir tramvaja pietura?||}}",
+      "{{lv-LV|Ejiet taisni.||}}",
+      "{{lv-LV|Nogriezieties pirmajā ielā.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -923,11 +923,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Where is the tram stop?'?",
-    "correctAnswer": "Kur ir tramvaja pietura?",
+    "correctAnswer": "{{lv-LV|Kur ir tramvaja pietura?||}}",
     "incorrectAnswers": [
-      "Ejiet taisni.",
-      "Nogriezieties pirmaj\u0101 iel\u0101.",
-      "Nogriezieties otraj\u0101 iel\u0101."
+      "{{lv-LV|Ejiet taisni.||}}",
+      "{{lv-LV|Nogriezieties pirmajā ielā.||}}",
+      "{{lv-LV|Nogriezieties otrajā ielā.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -943,11 +943,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Go straight.'?",
-    "correctAnswer": "Ejiet taisni.",
+    "correctAnswer": "{{lv-LV|Ejiet taisni.||}}",
     "incorrectAnswers": [
-      "Nogriezieties pirmaj\u0101 iel\u0101.",
-      "Nogriezieties otraj\u0101 iel\u0101.",
-      "Vai tas ir t\u0101lu?"
+      "{{lv-LV|Nogriezieties pirmajā ielā.||}}",
+      "{{lv-LV|Nogriezieties otrajā ielā.||}}",
+      "{{lv-LV|Vai tas ir tālu?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -963,11 +963,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Take the first street.'?",
-    "correctAnswer": "Nogriezieties pirmaj\u0101 iel\u0101.",
+    "correctAnswer": "{{lv-LV|Nogriezieties pirmajā ielā.||}}",
     "incorrectAnswers": [
-      "Nogriezieties otraj\u0101 iel\u0101.",
-      "Vai tas ir t\u0101lu?",
-      "Vai tas ir tuvu?"
+      "{{lv-LV|Nogriezieties otrajā ielā.||}}",
+      "{{lv-LV|Vai tas ir tālu?||}}",
+      "{{lv-LV|Vai tas ir tuvu?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -983,11 +983,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Take the second street.'.",
-    "correctAnswer": "Nogriezieties otraj\u0101 iel\u0101.",
+    "correctAnswer": "{{lv-LV|Nogriezieties otrajā ielā.||}}",
     "incorrectAnswers": [
-      "Vai tas ir t\u0101lu?",
-      "Vai tas ir tuvu?",
-      "Es esmu apmald\u012bjies/apmald\u012bjusies."
+      "{{lv-LV|Vai tas ir tālu?||}}",
+      "{{lv-LV|Vai tas ir tuvu?||}}",
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Is it far?'?",
-    "correctAnswer": "Vai tas ir t\u0101lu?",
+    "correctAnswer": "{{lv-LV|Vai tas ir tālu?||}}",
     "incorrectAnswers": [
-      "Vai tas ir tuvu?",
-      "Es esmu apmald\u012bjies/apmald\u012bjusies.",
-      "M\u0113s mekl\u0113jam viesn\u012bcu."
+      "{{lv-LV|Vai tas ir tuvu?||}}",
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||}}",
+      "{{lv-LV|Mēs meklējam viesnīcu.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1023,11 +1023,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Is it near?'?",
-    "correctAnswer": "Vai tas ir tuvu?",
+    "correctAnswer": "{{lv-LV|Vai tas ir tuvu?||}}",
     "incorrectAnswers": [
-      "Es esmu apmald\u012bjies/apmald\u012bjusies.",
-      "M\u0113s mekl\u0113jam viesn\u012bcu.",
-      "L\u016bdzu, par\u0101diet man kart\u0113."
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||}}",
+      "{{lv-LV|Mēs meklējam viesnīcu.||}}",
+      "{{lv-LV|Lūdzu, parādiet man kartē.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1043,11 +1043,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I am lost.'?",
-    "correctAnswer": "Es esmu apmald\u012bjies/apmald\u012bjusies.",
+    "correctAnswer": "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||}}",
     "incorrectAnswers": [
-      "M\u0113s mekl\u0113jam viesn\u012bcu.",
-      "L\u016bdzu, par\u0101diet man kart\u0113.",
-      "Kur ir banka?"
+      "{{lv-LV|Mēs meklējam viesnīcu.||}}",
+      "{{lv-LV|Lūdzu, parādiet man kartē.||}}",
+      "{{lv-LV|Kur ir banka?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1063,11 +1063,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "M\u0113s mekl\u0113jam viesn\u012bcu.",
+    "correctAnswer": "{{lv-LV|Mēs meklējam viesnīcu.||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, par\u0101diet man kart\u0113.",
-      "Kur ir banka?",
-      "Kur ir muzejs?"
+      "{{lv-LV|Lūdzu, parādiet man kartē.||}}",
+      "{{lv-LV|Kur ir banka?||}}",
+      "{{lv-LV|Kur ir muzejs?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1083,11 +1083,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Please show me on the map.'?",
-    "correctAnswer": "L\u016bdzu, par\u0101diet man kart\u0113.",
+    "correctAnswer": "{{lv-LV|Lūdzu, parādiet man kartē.||}}",
     "incorrectAnswers": [
-      "Kur ir banka?",
-      "Kur ir muzejs?",
-      "Kur ir pils\u0113tas centrs?"
+      "{{lv-LV|Kur ir banka?||}}",
+      "{{lv-LV|Kur ir muzejs?||}}",
+      "{{lv-LV|Kur ir pilsētas centrs?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1103,11 +1103,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "Vai varat to atk\u0101rtot?",
+    "correctAnswer": "{{lv-LV|Vai varat to atkārtot?||}}",
     "incorrectAnswers": [
-      "Vai varat run\u0101t l\u0113n\u0101k?",
-      "K\u0101 j\u016bs rakst\u0101t savu v\u0101rdu?",
-      "Kop\u0101 ir desmit eiro."
+      "{{lv-LV|Vai varat runāt lēnāk?||}}",
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||}}",
+      "{{lv-LV|Kopā ir desmit eiro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1123,11 +1123,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "Vai varat run\u0101t l\u0113n\u0101k?",
+    "correctAnswer": "{{lv-LV|Vai varat runāt lēnāk?||}}",
     "incorrectAnswers": [
-      "K\u0101 j\u016bs rakst\u0101t savu v\u0101rdu?",
-      "Kop\u0101 ir desmit eiro.",
-      "Tas maks\u0101 divdesmit eiro."
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||}}",
+      "{{lv-LV|Kopā ir desmit eiro.||}}",
+      "{{lv-LV|Tas maksā divdesmit eiro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1143,11 +1143,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'How do you spell your name?'.",
-    "correctAnswer": "K\u0101 j\u016bs rakst\u0101t savu v\u0101rdu?",
+    "correctAnswer": "{{lv-LV|Kā jūs rakstāt savu vārdu?||}}",
     "incorrectAnswers": [
-      "Kop\u0101 ir desmit eiro.",
-      "Tas maks\u0101 divdesmit eiro.",
-      "Numurs divpadsmit."
+      "{{lv-LV|Kopā ir desmit eiro.||}}",
+      "{{lv-LV|Tas maksā divdesmit eiro.||}}",
+      "{{lv-LV|Numurs divpadsmit.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1163,11 +1163,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'The total is ten euros.'?",
-    "correctAnswer": "Kop\u0101 ir desmit eiro.",
+    "correctAnswer": "{{lv-LV|Kopā ir desmit eiro.||}}",
     "incorrectAnswers": [
-      "Tas maks\u0101 divdesmit eiro.",
-      "Numurs divpadsmit.",
-      "Ceturtais perons."
+      "{{lv-LV|Tas maksā divdesmit eiro.||}}",
+      "{{lv-LV|Numurs divpadsmit.||}}",
+      "{{lv-LV|Ceturtais perons.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1183,11 +1183,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "Tas maks\u0101 divdesmit eiro.",
+    "correctAnswer": "{{lv-LV|Tas maksā divdesmit eiro.||}}",
     "incorrectAnswers": [
-      "Numurs divpadsmit.",
-      "Ceturtais perons.",
-      "Galdi\u0146u trim cilv\u0113kiem, l\u016bdzu."
+      "{{lv-LV|Numurs divpadsmit.||}}",
+      "{{lv-LV|Ceturtais perons.||}}",
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1203,11 +1203,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Room number twelve.'?",
-    "correctAnswer": "Numurs divpadsmit.",
+    "correctAnswer": "{{lv-LV|Numurs divpadsmit.||}}",
     "incorrectAnswers": [
-      "Ceturtais perons.",
-      "Galdi\u0146u trim cilv\u0113kiem, l\u016bdzu.",
-      "Divas bi\u013cetes, l\u016bdzu."
+      "{{lv-LV|Ceturtais perons.||}}",
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||}}",
+      "{{lv-LV|Divas biļetes, lūdzu.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Platform number four.'.",
-    "correctAnswer": "Ceturtais perons.",
+    "correctAnswer": "{{lv-LV|Ceturtais perons.||}}",
     "incorrectAnswers": [
-      "Galdi\u0146u trim cilv\u0113kiem, l\u016bdzu.",
-      "Divas bi\u013cetes, l\u016bdzu.",
-      "Vai varat to uzrakst\u012bt?"
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||}}",
+      "{{lv-LV|Divas biļetes, lūdzu.||}}",
+      "{{lv-LV|Vai varat to uzrakstīt?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1243,11 +1243,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'A table for three, please.'?",
-    "correctAnswer": "Galdi\u0146u trim cilv\u0113kiem, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||}}",
     "incorrectAnswers": [
-      "Divas bi\u013cetes, l\u016bdzu.",
-      "Vai varat to uzrakst\u012bt?",
-      "K\u0101ds \u0161odien ir datums?"
+      "{{lv-LV|Divas biļetes, lūdzu.||}}",
+      "{{lv-LV|Vai varat to uzrakstīt?||}}",
+      "{{lv-LV|Kāds šodien ir datums?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1263,11 +1263,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "Divas bi\u013cetes, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Divas biļetes, lūdzu.||}}",
     "incorrectAnswers": [
-      "Vai varat to uzrakst\u012bt?",
-      "K\u0101ds \u0161odien ir datums?",
-      "Vienu br\u012bdi, l\u016bdzu."
+      "{{lv-LV|Vai varat to uzrakstīt?||}}",
+      "{{lv-LV|Kāds šodien ir datums?||}}",
+      "{{lv-LV|Vienu brīdi, lūdzu.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1283,11 +1283,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Can you write it down?'?",
-    "correctAnswer": "Vai varat to uzrakst\u012bt?",
+    "correctAnswer": "{{lv-LV|Vai varat to uzrakstīt?||}}",
     "incorrectAnswers": [
-      "K\u0101ds \u0161odien ir datums?",
-      "Vienu br\u012bdi, l\u016bdzu.",
-      "Vai varat to atk\u0101rtot?"
+      "{{lv-LV|Kāds šodien ir datums?||}}",
+      "{{lv-LV|Vienu brīdi, lūdzu.||}}",
+      "{{lv-LV|Vai varat to atkārtot?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1303,11 +1303,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'What is today's date?'.",
-    "correctAnswer": "K\u0101ds \u0161odien ir datums?",
+    "correctAnswer": "{{lv-LV|Kāds šodien ir datums?||}}",
     "incorrectAnswers": [
-      "Vienu br\u012bdi, l\u016bdzu.",
-      "Vai varat to atk\u0101rtot?",
-      "Vai varat run\u0101t l\u0113n\u0101k?"
+      "{{lv-LV|Vienu brīdi, lūdzu.||}}",
+      "{{lv-LV|Vai varat to atkārtot?||}}",
+      "{{lv-LV|Vai varat runāt lēnāk?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1323,11 +1323,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'One moment, please.'?",
-    "correctAnswer": "Vienu br\u012bdi, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Vienu brīdi, lūdzu.||}}",
     "incorrectAnswers": [
-      "Vai varat to atk\u0101rtot?",
-      "Vai varat run\u0101t l\u0113n\u0101k?",
-      "K\u0101 j\u016bs rakst\u0101t savu v\u0101rdu?"
+      "{{lv-LV|Vai varat to atkārtot?||}}",
+      "{{lv-LV|Vai varat runāt lēnāk?||}}",
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1343,11 +1343,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I am hungry.'?",
-    "correctAnswer": "Es esmu izsalcis/izsalkusi.",
+    "correctAnswer": "{{lv-LV|Es esmu izsalcis/izsalkusi.||}}",
     "incorrectAnswers": [
-      "Es esmu izsl\u0101pis/izsl\u0101pusi.",
-      "\u0112dienkarti, l\u016bdzu.",
-      "Es esmu ve\u0123et\u0101rietis/ve\u0123et\u0101riete."
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||}}",
+      "{{lv-LV|Ēdienkarti, lūdzu.||}}",
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1363,11 +1363,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I am thirsty.'?",
-    "correctAnswer": "Es esmu izsl\u0101pis/izsl\u0101pusi.",
+    "correctAnswer": "{{lv-LV|Es esmu izslāpis/izslāpusi.||}}",
     "incorrectAnswers": [
-      "\u0112dienkarti, l\u016bdzu.",
-      "Es esmu ve\u0123et\u0101rietis/ve\u0123et\u0101riete.",
-      "Bez ga\u013cas, l\u016bdzu."
+      "{{lv-LV|Ēdienkarti, lūdzu.||}}",
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||}}",
+      "{{lv-LV|Bez gaļas, lūdzu.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1383,11 +1383,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'The menu, please.'.",
-    "correctAnswer": "\u0112dienkarti, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Ēdienkarti, lūdzu.||}}",
     "incorrectAnswers": [
-      "Es esmu ve\u0123et\u0101rietis/ve\u0123et\u0101riete.",
-      "Bez ga\u013cas, l\u016bdzu.",
-      "Bez cukura, l\u016bdzu."
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||}}",
+      "{{lv-LV|Bez gaļas, lūdzu.||}}",
+      "{{lv-LV|Bez cukura, lūdzu.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1403,11 +1403,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am vegetarian.'?",
-    "correctAnswer": "Es esmu ve\u0123et\u0101rietis/ve\u0123et\u0101riete.",
+    "correctAnswer": "{{lv-LV|Es esmu veģetārietis/veģetāriete.||}}",
     "incorrectAnswers": [
-      "Bez ga\u013cas, l\u016bdzu.",
-      "Bez cukura, l\u016bdzu.",
-      "Ar pienu, l\u016bdzu."
+      "{{lv-LV|Bez gaļas, lūdzu.||}}",
+      "{{lv-LV|Bez cukura, lūdzu.||}}",
+      "{{lv-LV|Ar pienu, lūdzu.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1423,11 +1423,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'No meat, please.'?",
-    "correctAnswer": "Bez ga\u013cas, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Bez gaļas, lūdzu.||}}",
     "incorrectAnswers": [
-      "Bez cukura, l\u016bdzu.",
-      "Ar pienu, l\u016bdzu.",
-      "Tas bija gar\u0161\u012bgi."
+      "{{lv-LV|Bez cukura, lūdzu.||}}",
+      "{{lv-LV|Ar pienu, lūdzu.||}}",
+      "{{lv-LV|Tas bija garšīgi.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Without sugar, please.'?",
-    "correctAnswer": "Bez cukura, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Bez cukura, lūdzu.||}}",
     "incorrectAnswers": [
-      "Ar pienu, l\u016bdzu.",
-      "Tas bija gar\u0161\u012bgi.",
-      "Tas ir \u013coti gar\u0161\u012bgs."
+      "{{lv-LV|Ar pienu, lūdzu.||}}",
+      "{{lv-LV|Tas bija garšīgi.||}}",
+      "{{lv-LV|Tas ir ļoti garšīgs.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1463,11 +1463,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'With milk, please.'.",
-    "correctAnswer": "Ar pienu, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Ar pienu, lūdzu.||}}",
     "incorrectAnswers": [
-      "Tas bija gar\u0161\u012bgi.",
-      "Tas ir \u013coti gar\u0161\u012bgs.",
-      "Zupa ir auksta."
+      "{{lv-LV|Tas bija garšīgi.||}}",
+      "{{lv-LV|Tas ir ļoti garšīgs.||}}",
+      "{{lv-LV|Zupa ir auksta.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1483,11 +1483,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'It was delicious.'?",
-    "correctAnswer": "Tas bija gar\u0161\u012bgi.",
+    "correctAnswer": "{{lv-LV|Tas bija garšīgi.||}}",
     "incorrectAnswers": [
-      "Tas ir \u013coti gar\u0161\u012bgs.",
-      "Zupa ir auksta.",
-      "Man ir aler\u0123ija pret riekstiem."
+      "{{lv-LV|Tas ir ļoti garšīgs.||}}",
+      "{{lv-LV|Zupa ir auksta.||}}",
+      "{{lv-LV|Man ir alerģija pret riekstiem.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1503,11 +1503,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'This is very good.'?",
-    "correctAnswer": "Tas ir \u013coti gar\u0161\u012bgs.",
+    "correctAnswer": "{{lv-LV|Tas ir ļoti garšīgs.||}}",
     "incorrectAnswers": [
-      "Zupa ir auksta.",
-      "Man ir aler\u0123ija pret riekstiem.",
-      "Pudeli \u016bdens, l\u016bdzu."
+      "{{lv-LV|Zupa ir auksta.||}}",
+      "{{lv-LV|Man ir alerģija pret riekstiem.||}}",
+      "{{lv-LV|Pudeli ūdens, lūdzu.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1523,11 +1523,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'The soup is cold.'?",
-    "correctAnswer": "Zupa ir auksta.",
+    "correctAnswer": "{{lv-LV|Zupa ir auksta.||}}",
     "incorrectAnswers": [
-      "Man ir aler\u0123ija pret riekstiem.",
-      "Pudeli \u016bdens, l\u016bdzu.",
-      "Es esmu izsalcis/izsalkusi."
+      "{{lv-LV|Man ir alerģija pret riekstiem.||}}",
+      "{{lv-LV|Pudeli ūdens, lūdzu.||}}",
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1543,11 +1543,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "Man ir aler\u0123ija pret riekstiem.",
+    "correctAnswer": "{{lv-LV|Man ir alerģija pret riekstiem.||}}",
     "incorrectAnswers": [
-      "Pudeli \u016bdens, l\u016bdzu.",
-      "Es esmu izsalcis/izsalkusi.",
-      "Es esmu izsl\u0101pis/izsl\u0101pusi."
+      "{{lv-LV|Pudeli ūdens, lūdzu.||}}",
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||}}",
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1563,11 +1563,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "Pudeli \u016bdens, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Pudeli ūdens, lūdzu.||}}",
     "incorrectAnswers": [
-      "Es esmu izsalcis/izsalkusi.",
-      "Es esmu izsl\u0101pis/izsl\u0101pusi.",
-      "\u0112dienkarti, l\u016bdzu."
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||}}",
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||}}",
+      "{{lv-LV|Ēdienkarti, lūdzu.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1583,11 +1583,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "Vai jums ir tas cit\u0101 izm\u0113r\u0101?",
+    "correctAnswer": "{{lv-LV|Vai jums ir tas citā izmērā?||}}",
     "incorrectAnswers": [
-      "Vai jums ir tas cit\u0101 kr\u0101s\u0101?",
-      "Vai es varu to pielaikot?",
-      "Tas ir p\u0101r\u0101k d\u0101rgs."
+      "{{lv-LV|Vai jums ir tas citā krāsā?||}}",
+      "{{lv-LV|Vai es varu to pielaikot?||}}",
+      "{{lv-LV|Tas ir pārāk dārgs.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1603,11 +1603,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "Vai jums ir tas cit\u0101 kr\u0101s\u0101?",
+    "correctAnswer": "{{lv-LV|Vai jums ir tas citā krāsā?||}}",
     "incorrectAnswers": [
-      "Vai es varu to pielaikot?",
-      "Tas ir p\u0101r\u0101k d\u0101rgs.",
-      "Tas ir l\u0113ts."
+      "{{lv-LV|Vai es varu to pielaikot?||}}",
+      "{{lv-LV|Tas ir pārāk dārgs.||}}",
+      "{{lv-LV|Tas ir lēts.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1623,11 +1623,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Can I try it on?'.",
-    "correctAnswer": "Vai es varu to pielaikot?",
+    "correctAnswer": "{{lv-LV|Vai es varu to pielaikot?||}}",
     "incorrectAnswers": [
-      "Tas ir p\u0101r\u0101k d\u0101rgs.",
-      "Tas ir l\u0113ts.",
-      "Es to \u0146em\u0161u."
+      "{{lv-LV|Tas ir pārāk dārgs.||}}",
+      "{{lv-LV|Tas ir lēts.||}}",
+      "{{lv-LV|Es to ņemšu.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1643,11 +1643,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'It is too expensive.'?",
-    "correctAnswer": "Tas ir p\u0101r\u0101k d\u0101rgs.",
+    "correctAnswer": "{{lv-LV|Tas ir pārāk dārgs.||}}",
     "incorrectAnswers": [
-      "Tas ir l\u0113ts.",
-      "Es to \u0146em\u0161u.",
-      "Kur ir kase?"
+      "{{lv-LV|Tas ir lēts.||}}",
+      "{{lv-LV|Es to ņemšu.||}}",
+      "{{lv-LV|Kur ir kase?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'It is cheap.'?",
-    "correctAnswer": "Tas ir l\u0113ts.",
+    "correctAnswer": "{{lv-LV|Tas ir lēts.||}}",
     "incorrectAnswers": [
-      "Es to \u0146em\u0161u.",
-      "Kur ir kase?",
-      "Es tikai skatos."
+      "{{lv-LV|Es to ņemšu.||}}",
+      "{{lv-LV|Kur ir kase?||}}",
+      "{{lv-LV|Es tikai skatos.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1683,11 +1683,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I will take it.'?",
-    "correctAnswer": "Es to \u0146em\u0161u.",
+    "correctAnswer": "{{lv-LV|Es to ņemšu.||}}",
     "incorrectAnswers": [
-      "Kur ir kase?",
-      "Es tikai skatos.",
-      "Vai j\u016bs pie\u0146emat kartes?"
+      "{{lv-LV|Kur ir kase?||}}",
+      "{{lv-LV|Es tikai skatos.||}}",
+      "{{lv-LV|Vai jūs pieņemat kartes?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1703,11 +1703,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Where is the checkout?'.",
-    "correctAnswer": "Kur ir kase?",
+    "correctAnswer": "{{lv-LV|Kur ir kase?||}}",
     "incorrectAnswers": [
-      "Es tikai skatos.",
-      "Vai j\u016bs pie\u0146emat kartes?",
-      "Vai es varu dab\u016bt \u010deku?"
+      "{{lv-LV|Es tikai skatos.||}}",
+      "{{lv-LV|Vai jūs pieņemat kartes?||}}",
+      "{{lv-LV|Vai es varu dabūt čeku?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1723,11 +1723,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am just looking.'?",
-    "correctAnswer": "Es tikai skatos.",
+    "correctAnswer": "{{lv-LV|Es tikai skatos.||}}",
     "incorrectAnswers": [
-      "Vai j\u016bs pie\u0146emat kartes?",
-      "Vai es varu dab\u016bt \u010deku?",
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k mazs."
+      "{{lv-LV|Vai jūs pieņemat kartes?||}}",
+      "{{lv-LV|Vai es varu dabūt čeku?||}}",
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1743,11 +1743,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "Vai j\u016bs pie\u0146emat kartes?",
+    "correctAnswer": "{{lv-LV|Vai jūs pieņemat kartes?||}}",
     "incorrectAnswers": [
-      "Vai es varu dab\u016bt \u010deku?",
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k mazs.",
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k liels."
+      "{{lv-LV|Vai es varu dabūt čeku?||}}",
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||}}",
+      "{{lv-LV|Šis izmērs ir pārāk liels.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1763,11 +1763,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I need a receipt.'?",
-    "correctAnswer": "Vai es varu dab\u016bt \u010deku?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt čeku?||}}",
     "incorrectAnswers": [
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k mazs.",
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k liels.",
-      "Vai jums ir tas cit\u0101 izm\u0113r\u0101?"
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||}}",
+      "{{lv-LV|Šis izmērs ir pārāk liels.||}}",
+      "{{lv-LV|Vai jums ir tas citā izmērā?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1783,11 +1783,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'This size is too small.'.",
-    "correctAnswer": "\u0160is izm\u0113rs ir p\u0101r\u0101k mazs.",
+    "correctAnswer": "{{lv-LV|Šis izmērs ir pārāk mazs.||}}",
     "incorrectAnswers": [
-      "\u0160is izm\u0113rs ir p\u0101r\u0101k liels.",
-      "Vai jums ir tas cit\u0101 izm\u0113r\u0101?",
-      "Vai jums ir tas cit\u0101 kr\u0101s\u0101?"
+      "{{lv-LV|Šis izmērs ir pārāk liels.||}}",
+      "{{lv-LV|Vai jums ir tas citā izmērā?||}}",
+      "{{lv-LV|Vai jums ir tas citā krāsā?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1803,11 +1803,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'This size is too big.'?",
-    "correctAnswer": "\u0160is izm\u0113rs ir p\u0101r\u0101k liels.",
+    "correctAnswer": "{{lv-LV|Šis izmērs ir pārāk liels.||}}",
     "incorrectAnswers": [
-      "Vai jums ir tas cit\u0101 izm\u0113r\u0101?",
-      "Vai jums ir tas cit\u0101 kr\u0101s\u0101?",
-      "Vai es varu to pielaikot?"
+      "{{lv-LV|Vai jums ir tas citā izmērā?||}}",
+      "{{lv-LV|Vai jums ir tas citā krāsā?||}}",
+      "{{lv-LV|Vai es varu to pielaikot?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1823,11 +1823,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "Man vajag bi\u013ceti uz lidostu.",
+    "correctAnswer": "{{lv-LV|Man vajag biļeti uz lidostu.||}}",
     "incorrectAnswers": [
-      "Vienu bi\u013ceti uz centru, l\u016bdzu.",
-      "Bi\u013ceti turp un atpaka\u013c, l\u016bdzu.",
-      "No kura perona tas atiet?"
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||}}",
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||}}",
+      "{{lv-LV|No kura perona tas atiet?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1843,11 +1843,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "Vienu bi\u013ceti uz centru, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Vienu biļeti uz centru, lūdzu.||}}",
     "incorrectAnswers": [
-      "Bi\u013ceti turp un atpaka\u013c, l\u016bdzu.",
-      "No kura perona tas atiet?",
-      "Vai \u0161\u012b vieta ir br\u012bva?"
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||}}",
+      "{{lv-LV|No kura perona tas atiet?||}}",
+      "{{lv-LV|Vai šī vieta ir brīva?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1863,11 +1863,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "Bi\u013ceti turp un atpaka\u013c, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||}}",
     "incorrectAnswers": [
-      "No kura perona tas atiet?",
-      "Vai \u0161\u012b vieta ir br\u012bva?",
-      "L\u016bdzu, izsauciet taksometru."
+      "{{lv-LV|No kura perona tas atiet?||}}",
+      "{{lv-LV|Vai šī vieta ir brīva?||}}",
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Which platform is it?'?",
-    "correctAnswer": "No kura perona tas atiet?",
+    "correctAnswer": "{{lv-LV|No kura perona tas atiet?||}}",
     "incorrectAnswers": [
-      "Vai \u0161\u012b vieta ir br\u012bva?",
-      "L\u016bdzu, izsauciet taksometru.",
-      "Vai \u0161is autobuss brauc uz centru?"
+      "{{lv-LV|Vai šī vieta ir brīva?||}}",
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||}}",
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1903,11 +1903,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Is this seat free?'?",
-    "correctAnswer": "Vai \u0161\u012b vieta ir br\u012bva?",
+    "correctAnswer": "{{lv-LV|Vai šī vieta ir brīva?||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, izsauciet taksometru.",
-      "Vai \u0161is autobuss brauc uz centru?",
-      "Es gribu doties uz lidostu."
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||}}",
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||}}",
+      "{{lv-LV|Es gribu doties uz lidostu.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1923,11 +1923,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Please call a taxi.'?",
-    "correctAnswer": "L\u016bdzu, izsauciet taksometru.",
+    "correctAnswer": "{{lv-LV|Lūdzu, izsauciet taksometru.||}}",
     "incorrectAnswers": [
-      "Vai \u0161is autobuss brauc uz centru?",
-      "Es gribu doties uz lidostu.",
-      "M\u0113s izk\u0101pjam \u0161eit."
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||}}",
+      "{{lv-LV|Es gribu doties uz lidostu.||}}",
+      "{{lv-LV|Mēs izkāpjam šeit.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1943,11 +1943,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "Vai \u0161is autobuss brauc uz centru?",
+    "correctAnswer": "{{lv-LV|Vai šis autobuss brauc uz centru?||}}",
     "incorrectAnswers": [
-      "Es gribu doties uz lidostu.",
-      "M\u0113s izk\u0101pjam \u0161eit.",
-      "Es nokav\u0113ju autobusu."
+      "{{lv-LV|Es gribu doties uz lidostu.||}}",
+      "{{lv-LV|Mēs izkāpjam šeit.||}}",
+      "{{lv-LV|Es nokavēju autobusu.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1963,11 +1963,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "Es gribu doties uz lidostu.",
+    "correctAnswer": "{{lv-LV|Es gribu doties uz lidostu.||}}",
     "incorrectAnswers": [
-      "M\u0113s izk\u0101pjam \u0161eit.",
-      "Es nokav\u0113ju autobusu.",
-      "Kur es varu nopirkt bi\u013ceti?"
+      "{{lv-LV|Mēs izkāpjam šeit.||}}",
+      "{{lv-LV|Es nokavēju autobusu.||}}",
+      "{{lv-LV|Kur es varu nopirkt biļeti?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1983,11 +1983,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'We get off here.'?",
-    "correctAnswer": "M\u0113s izk\u0101pjam \u0161eit.",
+    "correctAnswer": "{{lv-LV|Mēs izkāpjam šeit.||}}",
     "incorrectAnswers": [
-      "Es nokav\u0113ju autobusu.",
-      "Kur es varu nopirkt bi\u013ceti?",
-      "Autobuss pien\u0101k pusdienlaik\u0101."
+      "{{lv-LV|Es nokavēju autobusu.||}}",
+      "{{lv-LV|Kur es varu nopirkt biļeti?||}}",
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2003,11 +2003,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I missed the bus.'?",
-    "correctAnswer": "Es nokav\u0113ju autobusu.",
+    "correctAnswer": "{{lv-LV|Es nokavēju autobusu.||}}",
     "incorrectAnswers": [
-      "Kur es varu nopirkt bi\u013ceti?",
-      "Autobuss pien\u0101k pusdienlaik\u0101.",
-      "Man vajag bi\u013ceti uz lidostu."
+      "{{lv-LV|Kur es varu nopirkt biļeti?||}}",
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||}}",
+      "{{lv-LV|Man vajag biļeti uz lidostu.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2023,11 +2023,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "Kur es varu nopirkt bi\u013ceti?",
+    "correctAnswer": "{{lv-LV|Kur es varu nopirkt biļeti?||}}",
     "incorrectAnswers": [
-      "Autobuss pien\u0101k pusdienlaik\u0101.",
-      "Man vajag bi\u013ceti uz lidostu.",
-      "Vienu bi\u013ceti uz centru, l\u016bdzu."
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||}}",
+      "{{lv-LV|Man vajag biļeti uz lidostu.||}}",
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2043,11 +2043,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "Autobuss pien\u0101k pusdienlaik\u0101.",
+    "correctAnswer": "{{lv-LV|Autobuss pienāk pusdienlaikā.||}}",
     "incorrectAnswers": [
-      "Man vajag bi\u013ceti uz lidostu.",
-      "Vienu bi\u013ceti uz centru, l\u016bdzu.",
-      "Bi\u013ceti turp un atpaka\u013c, l\u016bdzu."
+      "{{lv-LV|Man vajag biļeti uz lidostu.||}}",
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||}}",
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2063,11 +2063,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I have a reservation.'?",
-    "correctAnswer": "Man ir rezerv\u0101cija.",
+    "correctAnswer": "{{lv-LV|Man ir rezervācija.||}}",
     "incorrectAnswers": [
-      "Vai jums ir vienviet\u012bga istaba?",
-      "Vai jums ir divviet\u012bga istaba?",
-      "Wi-Fi parole, l\u016bdzu."
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||}}",
+      "{{lv-LV|Vai jums ir divvietīga istaba?||}}",
+      "{{lv-LV|Wi-Fi parole, lūdzu.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2083,11 +2083,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Do you have a single room?'?",
-    "correctAnswer": "Vai jums ir vienviet\u012bga istaba?",
+    "correctAnswer": "{{lv-LV|Vai jums ir vienvietīga istaba?||}}",
     "incorrectAnswers": [
-      "Vai jums ir divviet\u012bga istaba?",
-      "Wi-Fi parole, l\u016bdzu.",
-      "Ar istabu ir probl\u0113ma."
+      "{{lv-LV|Vai jums ir divvietīga istaba?||}}",
+      "{{lv-LV|Wi-Fi parole, lūdzu.||}}",
+      "{{lv-LV|Ar istabu ir problēma.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Do you have a double room?'.",
-    "correctAnswer": "Vai jums ir divviet\u012bga istaba?",
+    "correctAnswer": "{{lv-LV|Vai jums ir divvietīga istaba?||}}",
     "incorrectAnswers": [
-      "Wi-Fi parole, l\u016bdzu.",
-      "Ar istabu ir probl\u0113ma.",
-      "Du\u0161a nedarbojas."
+      "{{lv-LV|Wi-Fi parole, lūdzu.||}}",
+      "{{lv-LV|Ar istabu ir problēma.||}}",
+      "{{lv-LV|Duša nedarbojas.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2123,11 +2123,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "Wi-Fi parole, l\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Wi-Fi parole, lūdzu.||}}",
     "incorrectAnswers": [
-      "Ar istabu ir probl\u0113ma.",
-      "Du\u0161a nedarbojas.",
-      "Istaba ir p\u0101r\u0101k auksta."
+      "{{lv-LV|Ar istabu ir problēma.||}}",
+      "{{lv-LV|Duša nedarbojas.||}}",
+      "{{lv-LV|Istaba ir pārāk auksta.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2143,11 +2143,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "Ar istabu ir probl\u0113ma.",
+    "correctAnswer": "{{lv-LV|Ar istabu ir problēma.||}}",
     "incorrectAnswers": [
-      "Du\u0161a nedarbojas.",
-      "Istaba ir p\u0101r\u0101k auksta.",
-      "Man vajag t\u012brus dvie\u013cus."
+      "{{lv-LV|Duša nedarbojas.||}}",
+      "{{lv-LV|Istaba ir pārāk auksta.||}}",
+      "{{lv-LV|Man vajag tīrus dvieļus.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2163,11 +2163,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'The shower does not work.'?",
-    "correctAnswer": "Du\u0161a nedarbojas.",
+    "correctAnswer": "{{lv-LV|Duša nedarbojas.||}}",
     "incorrectAnswers": [
-      "Istaba ir p\u0101r\u0101k auksta.",
-      "Man vajag t\u012brus dvie\u013cus.",
-      "Vai brokastis ir iek\u013cautas?"
+      "{{lv-LV|Istaba ir pārāk auksta.||}}",
+      "{{lv-LV|Man vajag tīrus dvieļus.||}}",
+      "{{lv-LV|Vai brokastis ir iekļautas?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2183,11 +2183,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'The room is too cold.'.",
-    "correctAnswer": "Istaba ir p\u0101r\u0101k auksta.",
+    "correctAnswer": "{{lv-LV|Istaba ir pārāk auksta.||}}",
     "incorrectAnswers": [
-      "Man vajag t\u012brus dvie\u013cus.",
-      "Vai brokastis ir iek\u013cautas?",
-      "Vai es varu dab\u016bt citu atsl\u0113gu?"
+      "{{lv-LV|Man vajag tīrus dvieļus.||}}",
+      "{{lv-LV|Vai brokastis ir iekļautas?||}}",
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2203,11 +2203,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I need clean towels.'?",
-    "correctAnswer": "Man vajag t\u012brus dvie\u013cus.",
+    "correctAnswer": "{{lv-LV|Man vajag tīrus dvieļus.||}}",
     "incorrectAnswers": [
-      "Vai brokastis ir iek\u013cautas?",
-      "Vai es varu dab\u016bt citu atsl\u0113gu?",
-      "Gaisa kondicionieris ir sal\u016bzis."
+      "{{lv-LV|Vai brokastis ir iekļautas?||}}",
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||}}",
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2223,11 +2223,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "Vai brokastis ir iek\u013cautas?",
+    "correctAnswer": "{{lv-LV|Vai brokastis ir iekļautas?||}}",
     "incorrectAnswers": [
-      "Vai es varu dab\u016bt citu atsl\u0113gu?",
-      "Gaisa kondicionieris ir sal\u016bzis.",
-      "Brokastis s\u0101kas septi\u0146os."
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||}}",
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||}}",
+      "{{lv-LV|Brokastis sākas septiņos.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2243,11 +2243,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Can I have another key?'?",
-    "correctAnswer": "Vai es varu dab\u016bt citu atsl\u0113gu?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt citu atslēgu?||}}",
     "incorrectAnswers": [
-      "Gaisa kondicionieris ir sal\u016bzis.",
-      "Brokastis s\u0101kas septi\u0146os.",
-      "Man ir rezerv\u0101cija."
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||}}",
+      "{{lv-LV|Brokastis sākas septiņos.||}}",
+      "{{lv-LV|Man ir rezervācija.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2263,11 +2263,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "Gaisa kondicionieris ir sal\u016bzis.",
+    "correctAnswer": "{{lv-LV|Gaisa kondicionieris ir salūzis.||}}",
     "incorrectAnswers": [
-      "Brokastis s\u0101kas septi\u0146os.",
-      "Man ir rezerv\u0101cija.",
-      "Vai jums ir vienviet\u012bga istaba?"
+      "{{lv-LV|Brokastis sākas septiņos.||}}",
+      "{{lv-LV|Man ir rezervācija.||}}",
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2283,11 +2283,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "Brokastis s\u0101kas septi\u0146os.",
+    "correctAnswer": "{{lv-LV|Brokastis sākas septiņos.||}}",
     "incorrectAnswers": [
-      "Man ir rezerv\u0101cija.",
-      "Vai jums ir vienviet\u012bga istaba?",
-      "Vai jums ir divviet\u012bga istaba?"
+      "{{lv-LV|Man ir rezervācija.||}}",
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||}}",
+      "{{lv-LV|Vai jums ir divvietīga istaba?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2303,11 +2303,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I feel sick.'?",
-    "correctAnswer": "Es j\u016btos slims/slima.",
+    "correctAnswer": "{{lv-LV|Es jūtos slims/slima.||}}",
     "incorrectAnswers": [
-      "Man s\u0101p galva.",
-      "Man ir drudzis.",
-      "Man vajag \u0101rstu."
+      "{{lv-LV|Man sāp galva.||}}",
+      "{{lv-LV|Man ir drudzis.||}}",
+      "{{lv-LV|Man vajag ārstu.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I have a headache.'?",
-    "correctAnswer": "Man s\u0101p galva.",
+    "correctAnswer": "{{lv-LV|Man sāp galva.||}}",
     "incorrectAnswers": [
-      "Man ir drudzis.",
-      "Man vajag \u0101rstu.",
-      "Kur ir aptieka?"
+      "{{lv-LV|Man ir drudzis.||}}",
+      "{{lv-LV|Man vajag ārstu.||}}",
+      "{{lv-LV|Kur ir aptieka?||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2343,11 +2343,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I have a fever.'.",
-    "correctAnswer": "Man ir drudzis.",
+    "correctAnswer": "{{lv-LV|Man ir drudzis.||}}",
     "incorrectAnswers": [
-      "Man vajag \u0101rstu.",
-      "Kur ir aptieka?",
-      "Man ir aler\u0123ija pret penicil\u012bnu."
+      "{{lv-LV|Man vajag ārstu.||}}",
+      "{{lv-LV|Kur ir aptieka?||}}",
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2363,11 +2363,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I need a doctor.'?",
-    "correctAnswer": "Man vajag \u0101rstu.",
+    "correctAnswer": "{{lv-LV|Man vajag ārstu.||}}",
     "incorrectAnswers": [
-      "Kur ir aptieka?",
-      "Man ir aler\u0123ija pret penicil\u012bnu.",
-      "Man s\u0101p v\u0113ders."
+      "{{lv-LV|Kur ir aptieka?||}}",
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||}}",
+      "{{lv-LV|Man sāp vēders.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2383,11 +2383,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "Kur ir aptieka?",
+    "correctAnswer": "{{lv-LV|Kur ir aptieka?||}}",
     "incorrectAnswers": [
-      "Man ir aler\u0123ija pret penicil\u012bnu.",
-      "Man s\u0101p v\u0113ders.",
-      "Man vajag z\u0101les."
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||}}",
+      "{{lv-LV|Man sāp vēders.||}}",
+      "{{lv-LV|Man vajag zāles.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2403,11 +2403,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "Man ir aler\u0123ija pret penicil\u012bnu.",
+    "correctAnswer": "{{lv-LV|Man ir alerģija pret penicilīnu.||}}",
     "incorrectAnswers": [
-      "Man s\u0101p v\u0113ders.",
-      "Man vajag z\u0101les.",
-      "Man reibst galva."
+      "{{lv-LV|Man sāp vēders.||}}",
+      "{{lv-LV|Man vajag zāles.||}}",
+      "{{lv-LV|Man reibst galva.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2423,11 +2423,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'My stomach hurts.'.",
-    "correctAnswer": "Man s\u0101p v\u0113ders.",
+    "correctAnswer": "{{lv-LV|Man sāp vēders.||}}",
     "incorrectAnswers": [
-      "Man vajag z\u0101les.",
-      "Man reibst galva.",
-      "Man ir saaukst\u0113\u0161an\u0101s."
+      "{{lv-LV|Man vajag zāles.||}}",
+      "{{lv-LV|Man reibst galva.||}}",
+      "{{lv-LV|Man ir saaukstēšanās.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2443,11 +2443,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I need medicine.'?",
-    "correctAnswer": "Man vajag z\u0101les.",
+    "correctAnswer": "{{lv-LV|Man vajag zāles.||}}",
     "incorrectAnswers": [
-      "Man reibst galva.",
-      "Man ir saaukst\u0113\u0161an\u0101s.",
-      "Man vajag slimn\u012bcu."
+      "{{lv-LV|Man reibst galva.||}}",
+      "{{lv-LV|Man ir saaukstēšanās.||}}",
+      "{{lv-LV|Man vajag slimnīcu.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2463,11 +2463,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "Man reibst galva.",
+    "correctAnswer": "{{lv-LV|Man reibst galva.||}}",
     "incorrectAnswers": [
-      "Man ir saaukst\u0113\u0161an\u0101s.",
-      "Man vajag slimn\u012bcu.",
-      "Tagad es j\u016btos lab\u0101k."
+      "{{lv-LV|Man ir saaukstēšanās.||}}",
+      "{{lv-LV|Man vajag slimnīcu.||}}",
+      "{{lv-LV|Tagad es jūtos labāk.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2483,11 +2483,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I have a cold.'?",
-    "correctAnswer": "Man ir saaukst\u0113\u0161an\u0101s.",
+    "correctAnswer": "{{lv-LV|Man ir saaukstēšanās.||}}",
     "incorrectAnswers": [
-      "Man vajag slimn\u012bcu.",
-      "Tagad es j\u016btos lab\u0101k.",
-      "Es j\u016btos slims/slima."
+      "{{lv-LV|Man vajag slimnīcu.||}}",
+      "{{lv-LV|Tagad es jūtos labāk.||}}",
+      "{{lv-LV|Es jūtos slims/slima.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2503,11 +2503,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I need a hospital.'.",
-    "correctAnswer": "Man vajag slimn\u012bcu.",
+    "correctAnswer": "{{lv-LV|Man vajag slimnīcu.||}}",
     "incorrectAnswers": [
-      "Tagad es j\u016btos lab\u0101k.",
-      "Es j\u016btos slims/slima.",
-      "Man s\u0101p galva."
+      "{{lv-LV|Tagad es jūtos labāk.||}}",
+      "{{lv-LV|Es jūtos slims/slima.||}}",
+      "{{lv-LV|Man sāp galva.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2523,11 +2523,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I feel better now.'?",
-    "correctAnswer": "Tagad es j\u016btos lab\u0101k.",
+    "correctAnswer": "{{lv-LV|Tagad es jūtos labāk.||}}",
     "incorrectAnswers": [
-      "Es j\u016btos slims/slima.",
-      "Man s\u0101p galva.",
-      "Man ir drudzis."
+      "{{lv-LV|Es jūtos slims/slima.||}}",
+      "{{lv-LV|Man sāp galva.||}}",
+      "{{lv-LV|Man ir drudzis.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'What time is it?'?",
-    "correctAnswer": "Cik ir pulkstenis?",
+    "correctAnswer": "{{lv-LV|Cik ir pulkstenis?||}}",
     "incorrectAnswers": [
-      "\u0160odien ir pirmdiena.",
-      "R\u012bt es ce\u013co\u0161u.",
-      "Vakar es str\u0101d\u0101ju."
+      "{{lv-LV|Šodien ir pirmdiena.||}}",
+      "{{lv-LV|Rīt es ceļošu.||}}",
+      "{{lv-LV|Vakar es strādāju.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2563,11 +2563,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Today is Monday.'?",
-    "correctAnswer": "\u0160odien ir pirmdiena.",
+    "correctAnswer": "{{lv-LV|Šodien ir pirmdiena.||}}",
     "incorrectAnswers": [
-      "R\u012bt es ce\u013co\u0161u.",
-      "Vakar es str\u0101d\u0101ju.",
-      "Tas atveras devi\u0146os."
+      "{{lv-LV|Rīt es ceļošu.||}}",
+      "{{lv-LV|Vakar es strādāju.||}}",
+      "{{lv-LV|Tas atveras deviņos.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2583,11 +2583,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "R\u012bt es ce\u013co\u0161u.",
+    "correctAnswer": "{{lv-LV|Rīt es ceļošu.||}}",
     "incorrectAnswers": [
-      "Vakar es str\u0101d\u0101ju.",
-      "Tas atveras devi\u0146os.",
-      "Tas aizveras se\u0161os."
+      "{{lv-LV|Vakar es strādāju.||}}",
+      "{{lv-LV|Tas atveras deviņos.||}}",
+      "{{lv-LV|Tas aizveras sešos.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2603,11 +2603,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "Vakar es str\u0101d\u0101ju.",
+    "correctAnswer": "{{lv-LV|Vakar es strādāju.||}}",
     "incorrectAnswers": [
-      "Tas atveras devi\u0146os.",
-      "Tas aizveras se\u0161os.",
-      "Es ierad\u012b\u0161os v\u0113l\u0101k."
+      "{{lv-LV|Tas atveras deviņos.||}}",
+      "{{lv-LV|Tas aizveras sešos.||}}",
+      "{{lv-LV|Es ieradīšos vēlāk.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2623,11 +2623,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'It opens at nine.'?",
-    "correctAnswer": "Tas atveras devi\u0146os.",
+    "correctAnswer": "{{lv-LV|Tas atveras deviņos.||}}",
     "incorrectAnswers": [
-      "Tas aizveras se\u0161os.",
-      "Es ierad\u012b\u0161os v\u0113l\u0101k.",
-      "Es dr\u012bz atgriez\u012b\u0161os."
+      "{{lv-LV|Tas aizveras sešos.||}}",
+      "{{lv-LV|Es ieradīšos vēlāk.||}}",
+      "{{lv-LV|Es drīz atgriezīšos.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2643,11 +2643,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'It closes at six.'?",
-    "correctAnswer": "Tas aizveras se\u0161os.",
+    "correctAnswer": "{{lv-LV|Tas aizveras sešos.||}}",
     "incorrectAnswers": [
-      "Es ierad\u012b\u0161os v\u0113l\u0101k.",
-      "Es dr\u012bz atgriez\u012b\u0161os.",
-      "Man vajag piecas min\u016btes."
+      "{{lv-LV|Es ieradīšos vēlāk.||}}",
+      "{{lv-LV|Es drīz atgriezīšos.||}}",
+      "{{lv-LV|Man vajag piecas minūtes.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2663,11 +2663,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I arrive later.'.",
-    "correctAnswer": "Es ierad\u012b\u0161os v\u0113l\u0101k.",
+    "correctAnswer": "{{lv-LV|Es ieradīšos vēlāk.||}}",
     "incorrectAnswers": [
-      "Es dr\u012bz atgriez\u012b\u0161os.",
-      "Man vajag piecas min\u016btes.",
-      "Ir p\u0101r\u0101k v\u0113lu."
+      "{{lv-LV|Es drīz atgriezīšos.||}}",
+      "{{lv-LV|Man vajag piecas minūtes.||}}",
+      "{{lv-LV|Ir pārāk vēlu.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2683,11 +2683,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I will come back soon.'?",
-    "correctAnswer": "Es dr\u012bz atgriez\u012b\u0161os.",
+    "correctAnswer": "{{lv-LV|Es drīz atgriezīšos.||}}",
     "incorrectAnswers": [
-      "Man vajag piecas min\u016btes.",
-      "Ir p\u0101r\u0101k v\u0113lu.",
-      "\u0160\u012b ned\u0113\u013ca ir aiz\u0146emta."
+      "{{lv-LV|Man vajag piecas minūtes.||}}",
+      "{{lv-LV|Ir pārāk vēlu.||}}",
+      "{{lv-LV|Šī nedēļa ir aizņemta.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2703,11 +2703,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I need five minutes.'?",
-    "correctAnswer": "Man vajag piecas min\u016btes.",
+    "correctAnswer": "{{lv-LV|Man vajag piecas minūtes.||}}",
     "incorrectAnswers": [
-      "Ir p\u0101r\u0101k v\u0113lu.",
-      "\u0160\u012b ned\u0113\u013ca ir aiz\u0146emta.",
-      "N\u0101kamaj\u0101 m\u0113nes\u012b esmu br\u012bvs/br\u012bva."
+      "{{lv-LV|Ir pārāk vēlu.||}}",
+      "{{lv-LV|Šī nedēļa ir aizņemta.||}}",
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2723,11 +2723,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'It is too late.'?",
-    "correctAnswer": "Ir p\u0101r\u0101k v\u0113lu.",
+    "correctAnswer": "{{lv-LV|Ir pārāk vēlu.||}}",
     "incorrectAnswers": [
-      "\u0160\u012b ned\u0113\u013ca ir aiz\u0146emta.",
-      "N\u0101kamaj\u0101 m\u0113nes\u012b esmu br\u012bvs/br\u012bva.",
-      "Cik ir pulkstenis?"
+      "{{lv-LV|Šī nedēļa ir aizņemta.||}}",
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||}}",
+      "{{lv-LV|Cik ir pulkstenis?||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2743,11 +2743,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'This week is busy.'.",
-    "correctAnswer": "\u0160\u012b ned\u0113\u013ca ir aiz\u0146emta.",
+    "correctAnswer": "{{lv-LV|Šī nedēļa ir aizņemta.||}}",
     "incorrectAnswers": [
-      "N\u0101kamaj\u0101 m\u0113nes\u012b esmu br\u012bvs/br\u012bva.",
-      "Cik ir pulkstenis?",
-      "\u0160odien ir pirmdiena."
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||}}",
+      "{{lv-LV|Cik ir pulkstenis?||}}",
+      "{{lv-LV|Šodien ir pirmdiena.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Next month I am free.'?",
-    "correctAnswer": "N\u0101kamaj\u0101 m\u0113nes\u012b esmu br\u012bvs/br\u012bva.",
+    "correctAnswer": "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||}}",
     "incorrectAnswers": [
-      "Cik ir pulkstenis?",
-      "\u0160odien ir pirmdiena.",
-      "R\u012bt es ce\u013co\u0161u."
+      "{{lv-LV|Cik ir pulkstenis?||}}",
+      "{{lv-LV|Šodien ir pirmdiena.||}}",
+      "{{lv-LV|Rīt es ceļošu.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2783,11 +2783,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'What is the weather like?'?",
-    "correctAnswer": "K\u0101ds ir laiks?",
+    "correctAnswer": "{{lv-LV|Kāds ir laiks?||}}",
     "incorrectAnswers": [
-      "Ir karsts.",
-      "Ir auksts.",
-      "L\u012bst."
+      "{{lv-LV|Ir karsts.||}}",
+      "{{lv-LV|Ir auksts.||}}",
+      "{{lv-LV|Līst.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2803,11 +2803,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'It is hot.'?",
-    "correctAnswer": "Ir karsts.",
+    "correctAnswer": "{{lv-LV|Ir karsts.||}}",
     "incorrectAnswers": [
-      "Ir auksts.",
-      "L\u012bst.",
-      "Ir v\u0113jains."
+      "{{lv-LV|Ir auksts.||}}",
+      "{{lv-LV|Līst.||}}",
+      "{{lv-LV|Ir vējains.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2823,11 +2823,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'It is cold.'.",
-    "correctAnswer": "Ir auksts.",
+    "correctAnswer": "{{lv-LV|Ir auksts.||}}",
     "incorrectAnswers": [
-      "L\u012bst.",
-      "Ir v\u0113jains.",
-      "Sp\u012bd saule."
+      "{{lv-LV|Līst.||}}",
+      "{{lv-LV|Ir vējains.||}}",
+      "{{lv-LV|Spīd saule.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2843,11 +2843,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'It is raining.'?",
-    "correctAnswer": "L\u012bst.",
+    "correctAnswer": "{{lv-LV|Līst.||}}",
     "incorrectAnswers": [
-      "Ir v\u0113jains.",
-      "Sp\u012bd saule.",
-      "Snieg."
+      "{{lv-LV|Ir vējains.||}}",
+      "{{lv-LV|Spīd saule.||}}",
+      "{{lv-LV|Snieg.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2863,11 +2863,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'It is windy.'?",
-    "correctAnswer": "Ir v\u0113jains.",
+    "correctAnswer": "{{lv-LV|Ir vējains.||}}",
     "incorrectAnswers": [
-      "Sp\u012bd saule.",
-      "Snieg.",
-      "Cik skaista diena!"
+      "{{lv-LV|Spīd saule.||}}",
+      "{{lv-LV|Snieg.||}}",
+      "{{lv-LV|Cik skaista diena!||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2883,11 +2883,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'It is sunny.'?",
-    "correctAnswer": "Sp\u012bd saule.",
+    "correctAnswer": "{{lv-LV|Spīd saule.||}}",
     "incorrectAnswers": [
-      "Snieg.",
-      "Cik skaista diena!",
-      "Ir apm\u0101cies."
+      "{{lv-LV|Snieg.||}}",
+      "{{lv-LV|Cik skaista diena!||}}",
+      "{{lv-LV|Ir apmācies.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2903,11 +2903,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'It is snowing.'.",
-    "correctAnswer": "Snieg.",
+    "correctAnswer": "{{lv-LV|Snieg.||}}",
     "incorrectAnswers": [
-      "Cik skaista diena!",
-      "Ir apm\u0101cies.",
-      "Man vajag lietussargu."
+      "{{lv-LV|Cik skaista diena!||}}",
+      "{{lv-LV|Ir apmācies.||}}",
+      "{{lv-LV|Man vajag lietussargu.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2923,11 +2923,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'What a beautiful day!'?",
-    "correctAnswer": "Cik skaista diena!",
+    "correctAnswer": "{{lv-LV|Cik skaista diena!||}}",
     "incorrectAnswers": [
-      "Ir apm\u0101cies.",
-      "Man vajag lietussargu.",
-      "\u0160odien ir jauks laiks."
+      "{{lv-LV|Ir apmācies.||}}",
+      "{{lv-LV|Man vajag lietussargu.||}}",
+      "{{lv-LV|Šodien ir jauks laiks.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2943,11 +2943,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'It is cloudy.'?",
-    "correctAnswer": "Ir apm\u0101cies.",
+    "correctAnswer": "{{lv-LV|Ir apmācies.||}}",
     "incorrectAnswers": [
-      "Man vajag lietussargu.",
-      "\u0160odien ir jauks laiks.",
-      "Debesis ir skaidras."
+      "{{lv-LV|Man vajag lietussargu.||}}",
+      "{{lv-LV|Šodien ir jauks laiks.||}}",
+      "{{lv-LV|Debesis ir skaidras.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2963,11 +2963,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I need an umbrella.'?",
-    "correctAnswer": "Man vajag lietussargu.",
+    "correctAnswer": "{{lv-LV|Man vajag lietussargu.||}}",
     "incorrectAnswers": [
-      "\u0160odien ir jauks laiks.",
-      "Debesis ir skaidras.",
-      "K\u0101ds ir laiks?"
+      "{{lv-LV|Šodien ir jauks laiks.||}}",
+      "{{lv-LV|Debesis ir skaidras.||}}",
+      "{{lv-LV|Kāds ir laiks?||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'The weather is nice today.'.",
-    "correctAnswer": "\u0160odien ir jauks laiks.",
+    "correctAnswer": "{{lv-LV|Šodien ir jauks laiks.||}}",
     "incorrectAnswers": [
-      "Debesis ir skaidras.",
-      "K\u0101ds ir laiks?",
-      "Ir karsts."
+      "{{lv-LV|Debesis ir skaidras.||}}",
+      "{{lv-LV|Kāds ir laiks?||}}",
+      "{{lv-LV|Ir karsts.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3003,11 +3003,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'The sky is clear.'?",
-    "correctAnswer": "Debesis ir skaidras.",
+    "correctAnswer": "{{lv-LV|Debesis ir skaidras.||}}",
     "incorrectAnswers": [
-      "K\u0101ds ir laiks?",
-      "Ir karsts.",
-      "Ir auksts."
+      "{{lv-LV|Kāds ir laiks?||}}",
+      "{{lv-LV|Ir karsts.||}}",
+      "{{lv-LV|Ir auksts.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3023,11 +3023,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Help!'?",
-    "correctAnswer": "Pal\u012bg\u0101!",
+    "correctAnswer": "{{lv-LV|Palīgā!||}}",
     "incorrectAnswers": [
-      "Zvaniet policijai!",
-      "Es esmu pazaud\u0113jis/pazaud\u0113jusi savu pasi.",
-      "Man nozaga maku."
+      "{{lv-LV|Zvaniet policijai!||}}",
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||}}",
+      "{{lv-LV|Man nozaga maku.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3043,11 +3043,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Call the police!'?",
-    "correctAnswer": "Zvaniet policijai!",
+    "correctAnswer": "{{lv-LV|Zvaniet policijai!||}}",
     "incorrectAnswers": [
-      "Es esmu pazaud\u0113jis/pazaud\u0113jusi savu pasi.",
-      "Man nozaga maku.",
-      "Man vajag \u0101tro pal\u012bdz\u012bbu."
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||}}",
+      "{{lv-LV|Man nozaga maku.||}}",
+      "{{lv-LV|Man vajag ātro palīdzību.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3063,11 +3063,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I have lost my passport.'.",
-    "correctAnswer": "Es esmu pazaud\u0113jis/pazaud\u0113jusi savu pasi.",
+    "correctAnswer": "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||}}",
     "incorrectAnswers": [
-      "Man nozaga maku.",
-      "Man vajag \u0101tro pal\u012bdz\u012bbu.",
-      "Zvaniet \u0101rstam!"
+      "{{lv-LV|Man nozaga maku.||}}",
+      "{{lv-LV|Man vajag ātro palīdzību.||}}",
+      "{{lv-LV|Zvaniet ārstam!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3083,11 +3083,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "Man nozaga maku.",
+    "correctAnswer": "{{lv-LV|Man nozaga maku.||}}",
     "incorrectAnswers": [
-      "Man vajag \u0101tro pal\u012bdz\u012bbu.",
-      "Zvaniet \u0101rstam!",
-      "Ir ugunsgr\u0113ks."
+      "{{lv-LV|Man vajag ātro palīdzību.||}}",
+      "{{lv-LV|Zvaniet ārstam!||}}",
+      "{{lv-LV|Ir ugunsgrēks.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3103,11 +3103,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "Man vajag \u0101tro pal\u012bdz\u012bbu.",
+    "correctAnswer": "{{lv-LV|Man vajag ātro palīdzību.||}}",
     "incorrectAnswers": [
-      "Zvaniet \u0101rstam!",
-      "Ir ugunsgr\u0113ks.",
-      "Man t\u016bl\u012bt vajag pal\u012bdz\u012bbu."
+      "{{lv-LV|Zvaniet ārstam!||}}",
+      "{{lv-LV|Ir ugunsgrēks.||}}",
+      "{{lv-LV|Man tūlīt vajag palīdzību.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3123,11 +3123,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Call a doctor!'?",
-    "correctAnswer": "Zvaniet \u0101rstam!",
+    "correctAnswer": "{{lv-LV|Zvaniet ārstam!||}}",
     "incorrectAnswers": [
-      "Ir ugunsgr\u0113ks.",
-      "Man t\u016bl\u012bt vajag pal\u012bdz\u012bbu.",
-      "Es pazaud\u0113ju telefonu."
+      "{{lv-LV|Ir ugunsgrēks.||}}",
+      "{{lv-LV|Man tūlīt vajag palīdzību.||}}",
+      "{{lv-LV|Es pazaudēju telefonu.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3143,11 +3143,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'There is a fire.'.",
-    "correctAnswer": "Ir ugunsgr\u0113ks.",
+    "correctAnswer": "{{lv-LV|Ir ugunsgrēks.||}}",
     "incorrectAnswers": [
-      "Man t\u016bl\u012bt vajag pal\u012bdz\u012bbu.",
-      "Es pazaud\u0113ju telefonu.",
-      "Es pazaud\u0113ju somu."
+      "{{lv-LV|Man tūlīt vajag palīdzību.||}}",
+      "{{lv-LV|Es pazaudēju telefonu.||}}",
+      "{{lv-LV|Es pazaudēju somu.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3163,11 +3163,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I need help now.'?",
-    "correctAnswer": "Man t\u016bl\u012bt vajag pal\u012bdz\u012bbu.",
+    "correctAnswer": "{{lv-LV|Man tūlīt vajag palīdzību.||}}",
     "incorrectAnswers": [
-      "Es pazaud\u0113ju telefonu.",
-      "Es pazaud\u0113ju somu.",
-      "Mans draugs ir ievainots."
+      "{{lv-LV|Es pazaudēju telefonu.||}}",
+      "{{lv-LV|Es pazaudēju somu.||}}",
+      "{{lv-LV|Mans draugs ir ievainots.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3183,11 +3183,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I lost my phone.'?",
-    "correctAnswer": "Es pazaud\u0113ju telefonu.",
+    "correctAnswer": "{{lv-LV|Es pazaudēju telefonu.||}}",
     "incorrectAnswers": [
-      "Es pazaud\u0113ju somu.",
-      "Mans draugs ir ievainots.",
-      "T\u0101 ir \u0101rk\u0101rtas situ\u0101cija."
+      "{{lv-LV|Es pazaudēju somu.||}}",
+      "{{lv-LV|Mans draugs ir ievainots.||}}",
+      "{{lv-LV|Tā ir ārkārtas situācija.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I lost my bag.'?",
-    "correctAnswer": "Es pazaud\u0113ju somu.",
+    "correctAnswer": "{{lv-LV|Es pazaudēju somu.||}}",
     "incorrectAnswers": [
-      "Mans draugs ir ievainots.",
-      "T\u0101 ir \u0101rk\u0101rtas situ\u0101cija.",
-      "Pal\u012bg\u0101!"
+      "{{lv-LV|Mans draugs ir ievainots.||}}",
+      "{{lv-LV|Tā ir ārkārtas situācija.||}}",
+      "{{lv-LV|Palīgā!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3223,11 +3223,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'My friend is hurt.'.",
-    "correctAnswer": "Mans draugs ir ievainots.",
+    "correctAnswer": "{{lv-LV|Mans draugs ir ievainots.||}}",
     "incorrectAnswers": [
-      "T\u0101 ir \u0101rk\u0101rtas situ\u0101cija.",
-      "Pal\u012bg\u0101!",
-      "Zvaniet policijai!"
+      "{{lv-LV|Tā ir ārkārtas situācija.||}}",
+      "{{lv-LV|Palīgā!||}}",
+      "{{lv-LV|Zvaniet policijai!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3243,11 +3243,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'This is an emergency.'?",
-    "correctAnswer": "T\u0101 ir \u0101rk\u0101rtas situ\u0101cija.",
+    "correctAnswer": "{{lv-LV|Tā ir ārkārtas situācija.||}}",
     "incorrectAnswers": [
-      "Pal\u012bg\u0101!",
-      "Zvaniet policijai!",
-      "Es esmu pazaud\u0113jis/pazaud\u0113jusi savu pasi."
+      "{{lv-LV|Palīgā!||}}",
+      "{{lv-LV|Zvaniet policijai!||}}",
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3263,11 +3263,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Happy birthday!'?",
-    "correctAnswer": "Daudz laimes dzim\u0161anas dien\u0101!",
+    "correctAnswer": "{{lv-LV|Daudz laimes dzimšanas dienā!||}}",
     "incorrectAnswers": [
-      "Apsveicu!",
-      "Veiksmi!",
-      "L\u016bdzu."
+      "{{lv-LV|Apsveicu!||}}",
+      "{{lv-LV|Veiksmi!||}}",
+      "{{lv-LV|Lūdzu.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3283,11 +3283,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Congratulations!'?",
-    "correctAnswer": "Apsveicu!",
+    "correctAnswer": "{{lv-LV|Apsveicu!||}}",
     "incorrectAnswers": [
-      "Veiksmi!",
-      "L\u016bdzu.",
-      "Nav par ko."
+      "{{lv-LV|Veiksmi!||}}",
+      "{{lv-LV|Lūdzu.||}}",
+      "{{lv-LV|Nav par ko.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3303,11 +3303,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Good luck!'.",
-    "correctAnswer": "Veiksmi!",
+    "correctAnswer": "{{lv-LV|Veiksmi!||}}",
     "incorrectAnswers": [
-      "L\u016bdzu.",
-      "Nav par ko.",
-      "Man \u017e\u0113l to dzird\u0113t."
+      "{{lv-LV|Lūdzu.||}}",
+      "{{lv-LV|Nav par ko.||}}",
+      "{{lv-LV|Man žēl to dzirdēt.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3323,11 +3323,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'You're welcome.'?",
-    "correctAnswer": "L\u016bdzu.",
+    "correctAnswer": "{{lv-LV|Lūdzu.||}}",
     "incorrectAnswers": [
-      "Nav par ko.",
-      "Man \u017e\u0113l to dzird\u0113t.",
-      "Labu apet\u012bti!"
+      "{{lv-LV|Nav par ko.||}}",
+      "{{lv-LV|Man žēl to dzirdēt.||}}",
+      "{{lv-LV|Labu apetīti!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3343,11 +3343,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Don't mention it.'?",
-    "correctAnswer": "Nav par ko.",
+    "correctAnswer": "{{lv-LV|Nav par ko.||}}",
     "incorrectAnswers": [
-      "Man \u017e\u0113l to dzird\u0113t.",
-      "Labu apet\u012bti!",
-      "Lai jums labs ce\u013cojums."
+      "{{lv-LV|Man žēl to dzirdēt.||}}",
+      "{{lv-LV|Labu apetīti!||}}",
+      "{{lv-LV|Lai jums labs ceļojums.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3363,11 +3363,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "Man \u017e\u0113l to dzird\u0113t.",
+    "correctAnswer": "{{lv-LV|Man žēl to dzirdēt.||}}",
     "incorrectAnswers": [
-      "Labu apet\u012bti!",
-      "Lai jums labs ce\u013cojums.",
-      "Tiksimies pirmdien."
+      "{{lv-LV|Labu apetīti!||}}",
+      "{{lv-LV|Lai jums labs ceļojums.||}}",
+      "{{lv-LV|Tiksimies pirmdien.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3383,11 +3383,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "Labu apet\u012bti!",
+    "correctAnswer": "{{lv-LV|Labu apetīti!||}}",
     "incorrectAnswers": [
-      "Lai jums labs ce\u013cojums.",
-      "Tiksimies pirmdien.",
-      "Laipni l\u016bdzam m\u016bsu pils\u0113t\u0101."
+      "{{lv-LV|Lai jums labs ceļojums.||}}",
+      "{{lv-LV|Tiksimies pirmdien.||}}",
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3403,11 +3403,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Have a nice trip.'?",
-    "correctAnswer": "Lai jums labs ce\u013cojums.",
+    "correctAnswer": "{{lv-LV|Lai jums labs ceļojums.||}}",
     "incorrectAnswers": [
-      "Tiksimies pirmdien.",
-      "Laipni l\u016bdzam m\u016bsu pils\u0113t\u0101.",
-      "Priec\u012bgus sv\u0113tkus!"
+      "{{lv-LV|Tiksimies pirmdien.||}}",
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||}}",
+      "{{lv-LV|Priecīgus svētkus!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'See you on Monday.'?",
-    "correctAnswer": "Tiksimies pirmdien.",
+    "correctAnswer": "{{lv-LV|Tiksimies pirmdien.||}}",
     "incorrectAnswers": [
-      "Laipni l\u016bdzam m\u016bsu pils\u0113t\u0101.",
-      "Priec\u012bgus sv\u0113tkus!",
-      "Labi pavadiet laiku!"
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||}}",
+      "{{lv-LV|Priecīgus svētkus!||}}",
+      "{{lv-LV|Labi pavadiet laiku!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3443,11 +3443,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Welcome to our city.'?",
-    "correctAnswer": "Laipni l\u016bdzam m\u016bsu pils\u0113t\u0101.",
+    "correctAnswer": "{{lv-LV|Laipni lūdzam mūsu pilsētā.||}}",
     "incorrectAnswers": [
-      "Priec\u012bgus sv\u0113tkus!",
-      "Labi pavadiet laiku!",
-      "Daudz laimes dzim\u0161anas dien\u0101!"
+      "{{lv-LV|Priecīgus svētkus!||}}",
+      "{{lv-LV|Labi pavadiet laiku!||}}",
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3463,11 +3463,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'Happy holidays!'.",
-    "correctAnswer": "Priec\u012bgus sv\u0113tkus!",
+    "correctAnswer": "{{lv-LV|Priecīgus svētkus!||}}",
     "incorrectAnswers": [
-      "Labi pavadiet laiku!",
-      "Daudz laimes dzim\u0161anas dien\u0101!",
-      "Apsveicu!"
+      "{{lv-LV|Labi pavadiet laiku!||}}",
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||}}",
+      "{{lv-LV|Apsveicu!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3483,11 +3483,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Have fun!'?",
-    "correctAnswer": "Labi pavadiet laiku!",
+    "correctAnswer": "{{lv-LV|Labi pavadiet laiku!||}}",
     "incorrectAnswers": [
-      "Daudz laimes dzim\u0161anas dien\u0101!",
-      "Apsveicu!",
-      "Veiksmi!"
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||}}",
+      "{{lv-LV|Apsveicu!||}}",
+      "{{lv-LV|Veiksmi!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3503,11 +3503,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I work in an office.'?",
-    "correctAnswer": "Es str\u0101d\u0101ju biroj\u0101.",
+    "correctAnswer": "{{lv-LV|Es strādāju birojā.||}}",
     "incorrectAnswers": [
-      "Es str\u0101d\u0101ju par skolot\u0101ju.",
-      "Es m\u0101cos katru dienu.",
-      "Es m\u0101cos valodu."
+      "{{lv-LV|Es strādāju par skolotāju.||}}",
+      "{{lv-LV|Es mācos katru dienu.||}}",
+      "{{lv-LV|Es mācos valodu.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3523,11 +3523,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'I work as a teacher.'?",
-    "correctAnswer": "Es str\u0101d\u0101ju par skolot\u0101ju.",
+    "correctAnswer": "{{lv-LV|Es strādāju par skolotāju.||}}",
     "incorrectAnswers": [
-      "Es m\u0101cos katru dienu.",
-      "Es m\u0101cos valodu.",
-      "L\u016bdzu, uzrakstiet to."
+      "{{lv-LV|Es mācos katru dienu.||}}",
+      "{{lv-LV|Es mācos valodu.||}}",
+      "{{lv-LV|Lūdzu, uzrakstiet to.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3543,11 +3543,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I study every day.'.",
-    "correctAnswer": "Es m\u0101cos katru dienu.",
+    "correctAnswer": "{{lv-LV|Es mācos katru dienu.||}}",
     "incorrectAnswers": [
-      "Es m\u0101cos valodu.",
-      "L\u016bdzu, uzrakstiet to.",
-      "Stunda s\u0101kas tagad."
+      "{{lv-LV|Es mācos valodu.||}}",
+      "{{lv-LV|Lūdzu, uzrakstiet to.||}}",
+      "{{lv-LV|Stunda sākas tagad.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3563,11 +3563,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am learning the language.'?",
-    "correctAnswer": "Es m\u0101cos valodu.",
+    "correctAnswer": "{{lv-LV|Es mācos valodu.||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, uzrakstiet to.",
-      "Stunda s\u0101kas tagad.",
-      "Man vajag pildspalvu."
+      "{{lv-LV|Lūdzu, uzrakstiet to.||}}",
+      "{{lv-LV|Stunda sākas tagad.||}}",
+      "{{lv-LV|Man vajag pildspalvu.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3583,11 +3583,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Please write it down.'?",
-    "correctAnswer": "L\u016bdzu, uzrakstiet to.",
+    "correctAnswer": "{{lv-LV|Lūdzu, uzrakstiet to.||}}",
     "incorrectAnswers": [
-      "Stunda s\u0101kas tagad.",
-      "Man vajag pildspalvu.",
-      "Man ir m\u0101jasdarbs."
+      "{{lv-LV|Stunda sākas tagad.||}}",
+      "{{lv-LV|Man vajag pildspalvu.||}}",
+      "{{lv-LV|Man ir mājasdarbs.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3603,11 +3603,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'The class starts now.'?",
-    "correctAnswer": "Stunda s\u0101kas tagad.",
+    "correctAnswer": "{{lv-LV|Stunda sākas tagad.||}}",
     "incorrectAnswers": [
-      "Man vajag pildspalvu.",
-      "Man ir m\u0101jasdarbs.",
-      "Man r\u012bt ir eks\u0101mens."
+      "{{lv-LV|Man vajag pildspalvu.||}}",
+      "{{lv-LV|Man ir mājasdarbs.||}}",
+      "{{lv-LV|Man rīt ir eksāmens.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3623,11 +3623,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I need a pen.'.",
-    "correctAnswer": "Man vajag pildspalvu.",
+    "correctAnswer": "{{lv-LV|Man vajag pildspalvu.||}}",
     "incorrectAnswers": [
-      "Man ir m\u0101jasdarbs.",
-      "Man r\u012bt ir eks\u0101mens.",
-      "Kur ir klase?"
+      "{{lv-LV|Man ir mājasdarbs.||}}",
+      "{{lv-LV|Man rīt ir eksāmens.||}}",
+      "{{lv-LV|Kur ir klase?||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I have homework.'?",
-    "correctAnswer": "Man ir m\u0101jasdarbs.",
+    "correctAnswer": "{{lv-LV|Man ir mājasdarbs.||}}",
     "incorrectAnswers": [
-      "Man r\u012bt ir eks\u0101mens.",
-      "Kur ir klase?",
-      "Gr\u0101mata ir uz galda."
+      "{{lv-LV|Man rīt ir eksāmens.||}}",
+      "{{lv-LV|Kur ir klase?||}}",
+      "{{lv-LV|Grāmata ir uz galda.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3663,11 +3663,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "Man r\u012bt ir eks\u0101mens.",
+    "correctAnswer": "{{lv-LV|Man rīt ir eksāmens.||}}",
     "incorrectAnswers": [
-      "Kur ir klase?",
-      "Gr\u0101mata ir uz galda.",
-      "Mans skolot\u0101js ir \u013coti laipns."
+      "{{lv-LV|Kur ir klase?||}}",
+      "{{lv-LV|Grāmata ir uz galda.||}}",
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3683,11 +3683,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Where is the classroom?'?",
-    "correctAnswer": "Kur ir klase?",
+    "correctAnswer": "{{lv-LV|Kur ir klase?||}}",
     "incorrectAnswers": [
-      "Gr\u0101mata ir uz galda.",
-      "Mans skolot\u0101js ir \u013coti laipns.",
-      "Es str\u0101d\u0101ju biroj\u0101."
+      "{{lv-LV|Grāmata ir uz galda.||}}",
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||}}",
+      "{{lv-LV|Es strādāju birojā.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3703,11 +3703,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'The book is on the table.'.",
-    "correctAnswer": "Gr\u0101mata ir uz galda.",
+    "correctAnswer": "{{lv-LV|Grāmata ir uz galda.||}}",
     "incorrectAnswers": [
-      "Mans skolot\u0101js ir \u013coti laipns.",
-      "Es str\u0101d\u0101ju biroj\u0101.",
-      "Es str\u0101d\u0101ju par skolot\u0101ju."
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||}}",
+      "{{lv-LV|Es strādāju birojā.||}}",
+      "{{lv-LV|Es strādāju par skolotāju.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3723,11 +3723,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "Mans skolot\u0101js ir \u013coti laipns.",
+    "correctAnswer": "{{lv-LV|Mans skolotājs ir ļoti laipns.||}}",
     "incorrectAnswers": [
-      "Es str\u0101d\u0101ju biroj\u0101.",
-      "Es str\u0101d\u0101ju par skolot\u0101ju.",
-      "Es m\u0101cos katru dienu."
+      "{{lv-LV|Es strādāju birojā.||}}",
+      "{{lv-LV|Es strādāju par skolotāju.||}}",
+      "{{lv-LV|Es mācos katru dienu.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3743,11 +3743,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "Es mazliet run\u0101ju \u0161aj\u0101 valod\u0101.",
+    "correctAnswer": "{{lv-LV|Es mazliet runāju šajā valodā.||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, pasakiet to v\u0113lreiz.",
-      "Ko noz\u012bm\u0113 \u0161is v\u0101rds?",
-      "Es nezinu \u0161o v\u0101rdu."
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||}}",
+      "{{lv-LV|Ko nozīmē šis vārds?||}}",
+      "{{lv-LV|Es nezinu šo vārdu.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3763,11 +3763,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Please say that again.'?",
-    "correctAnswer": "L\u016bdzu, pasakiet to v\u0113lreiz.",
+    "correctAnswer": "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||}}",
     "incorrectAnswers": [
-      "Ko noz\u012bm\u0113 \u0161is v\u0101rds?",
-      "Es nezinu \u0161o v\u0101rdu.",
-      "Vai tas ir pareizi?"
+      "{{lv-LV|Ko nozīmē šis vārds?||}}",
+      "{{lv-LV|Es nezinu šo vārdu.||}}",
+      "{{lv-LV|Vai tas ir pareizi?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3783,11 +3783,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'What does this word mean?'.",
-    "correctAnswer": "Ko noz\u012bm\u0113 \u0161is v\u0101rds?",
+    "correctAnswer": "{{lv-LV|Ko nozīmē šis vārds?||}}",
     "incorrectAnswers": [
-      "Es nezinu \u0161o v\u0101rdu.",
-      "Vai tas ir pareizi?",
-      "Vai varat to paskaidrot?"
+      "{{lv-LV|Es nezinu šo vārdu.||}}",
+      "{{lv-LV|Vai tas ir pareizi?||}}",
+      "{{lv-LV|Vai varat to paskaidrot?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3803,11 +3803,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I do not know this word.'?",
-    "correctAnswer": "Es nezinu \u0161o v\u0101rdu.",
+    "correctAnswer": "{{lv-LV|Es nezinu šo vārdu.||}}",
     "incorrectAnswers": [
-      "Vai tas ir pareizi?",
-      "Vai varat to paskaidrot?",
-      "Tagad es saprotu."
+      "{{lv-LV|Vai tas ir pareizi?||}}",
+      "{{lv-LV|Vai varat to paskaidrot?||}}",
+      "{{lv-LV|Tagad es saprotu.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3823,11 +3823,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Is this correct?'?",
-    "correctAnswer": "Vai tas ir pareizi?",
+    "correctAnswer": "{{lv-LV|Vai tas ir pareizi?||}}",
     "incorrectAnswers": [
-      "Vai varat to paskaidrot?",
-      "Tagad es saprotu.",
-      "L\u016bdzu, lietojiet vienk\u0101r\u0161us v\u0101rdus."
+      "{{lv-LV|Vai varat to paskaidrot?||}}",
+      "{{lv-LV|Tagad es saprotu.||}}",
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3843,11 +3843,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Can you explain it?'?",
-    "correctAnswer": "Vai varat to paskaidrot?",
+    "correctAnswer": "{{lv-LV|Vai varat to paskaidrot?||}}",
     "incorrectAnswers": [
-      "Tagad es saprotu.",
-      "L\u016bdzu, lietojiet vienk\u0101r\u0161us v\u0101rdus.",
-      "Es praktiz\u0113ju katru dienu."
+      "{{lv-LV|Tagad es saprotu.||}}",
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||}}",
+      "{{lv-LV|Es praktizēju katru dienu.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'I understand now.'.",
-    "correctAnswer": "Tagad es saprotu.",
+    "correctAnswer": "{{lv-LV|Tagad es saprotu.||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, lietojiet vienk\u0101r\u0161us v\u0101rdus.",
-      "Es praktiz\u0113ju katru dienu.",
-      "L\u016bdzu, izlasiet \u0161o teikumu."
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||}}",
+      "{{lv-LV|Es praktizēju katru dienu.||}}",
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3883,11 +3883,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'Please use simple words.'?",
-    "correctAnswer": "L\u016bdzu, lietojiet vienk\u0101r\u0161us v\u0101rdus.",
+    "correctAnswer": "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||}}",
     "incorrectAnswers": [
-      "Es praktiz\u0113ju katru dienu.",
-      "L\u016bdzu, izlasiet \u0161o teikumu.",
-      "K\u0101 raksta \u0161o v\u0101rdu?"
+      "{{lv-LV|Es praktizēju katru dienu.||}}",
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||}}",
+      "{{lv-LV|Kā raksta šo vārdu?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3903,11 +3903,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "Es praktiz\u0113ju katru dienu.",
+    "correctAnswer": "{{lv-LV|Es praktizēju katru dienu.||}}",
     "incorrectAnswers": [
-      "L\u016bdzu, izlasiet \u0161o teikumu.",
-      "K\u0101 raksta \u0161o v\u0101rdu?",
-      "Es m\u0101cos l\u0113n\u0101m."
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||}}",
+      "{{lv-LV|Kā raksta šo vārdu?||}}",
+      "{{lv-LV|Es mācos lēnām.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3923,11 +3923,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Which Latvian phrase means 'Please read this sentence.'?",
-    "correctAnswer": "L\u016bdzu, izlasiet \u0161o teikumu.",
+    "correctAnswer": "{{lv-LV|Lūdzu, izlasiet šo teikumu.||}}",
     "incorrectAnswers": [
-      "K\u0101 raksta \u0161o v\u0101rdu?",
-      "Es m\u0101cos l\u0113n\u0101m.",
-      "Es mazliet run\u0101ju \u0161aj\u0101 valod\u0101."
+      "{{lv-LV|Kā raksta šo vārdu?||}}",
+      "{{lv-LV|Es mācos lēnām.||}}",
+      "{{lv-LV|Es mazliet runāju šajā valodā.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3943,11 +3943,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Latvian phrase for 'How do you write that word?'.",
-    "correctAnswer": "K\u0101 raksta \u0161o v\u0101rdu?",
+    "correctAnswer": "{{lv-LV|Kā raksta šo vārdu?||}}",
     "incorrectAnswers": [
-      "Es m\u0101cos l\u0113n\u0101m.",
-      "Es mazliet run\u0101ju \u0161aj\u0101 valod\u0101.",
-      "L\u016bdzu, pasakiet to v\u0113lreiz."
+      "{{lv-LV|Es mācos lēnām.||}}",
+      "{{lv-LV|Es mazliet runāju šajā valodā.||}}",
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3963,11 +3963,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Latvian sentence for 'I am learning slowly.'?",
-    "correctAnswer": "Es m\u0101cos l\u0113n\u0101m.",
+    "correctAnswer": "{{lv-LV|Es mācos lēnām.||}}",
     "incorrectAnswers": [
-      "Es mazliet run\u0101ju \u0161aj\u0101 valod\u0101.",
-      "L\u016bdzu, pasakiet to v\u0113lreiz.",
-      "Ko noz\u012bm\u0113 \u0161is v\u0101rds?"
+      "{{lv-LV|Es mazliet runāju šajā valodā.||}}",
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||}}",
+      "{{lv-LV|Ko nozīmē šis vārds?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3983,11 +3983,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Latvian, how do you say 'Where are you from?'?",
-    "correctAnswer": "No kurienes j\u016bs esat?",
+    "correctAnswer": "{{lv-LV|No kurienes jūs esat?||}}",
     "incorrectAnswers": [
-      "K\u0101 j\u016bs sauc?",
-      "Es esmu no ASV.",
-      "Es dz\u012bvoju R\u012bg\u0101."
+      "{{lv-LV|Kā jūs sauc?||}}",
+      "{{lv-LV|Es esmu no ASV.||}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [

@@ -5,13 +5,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I would like a coffee, please' in Italian?",
-    "correctAnswer": "Vorrei un caff\u00e8, per favore.",
+    "correctAnswer": "{{it-IT|Vorrei un caffè, per favore.||}}",
     "incorrectAnswers": [
-      "Voglio caff\u00e8 adesso.",
-      "Dammi il caff\u00e8.",
-      "Un caff\u00e8, naturalmente."
+      "{{it-IT|Voglio caffè adesso.||}}",
+      "{{it-IT|Dammi il caffè.||}}",
+      "{{it-IT|Un caffè, naturalmente.||}}"
     ],
-    "explanation": "'Vorrei' (I would like) is the polite conditional form, preferred in caf\u00e9s and restaurants.",
+    "explanation": "'Vorrei' (I would like) is the polite conditional form, preferred in cafés and restaurants.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -25,13 +25,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Italian?",
-    "correctAnswer": "Dov'\u00e8 il bagno?",
+    "correctAnswer": "{{it-IT|Dov'è il bagno?||}}",
     "incorrectAnswers": [
-      "Che cos'\u00e8 il bagno?",
-      "Come si chiama il bagno?",
-      "Quando apre il bagno?"
+      "{{it-IT|Che cos'è il bagno?||}}",
+      "{{it-IT|Come si chiama il bagno?||}}",
+      "{{it-IT|Quando apre il bagno?||}}"
     ],
-    "explanation": "'Dov'\u00e8' = 'Where is', 'il bagno' = 'the bathroom'. One of the most essential travel phrases.",
+    "explanation": "'Dov'è' = 'Where is', 'il bagno' = 'the bathroom'. One of the most essential travel phrases.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -45,13 +45,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Italian?",
-    "correctAnswer": "Quanto costa?",
+    "correctAnswer": "{{it-IT|Quanto costa?||}}",
     "incorrectAnswers": [
-      "Cosa \u00e8 questo?",
-      "Dove compro questo?",
-      "Posso avere uno sconto?"
+      "{{it-IT|Cosa è questo?||}}",
+      "{{it-IT|Dove compro questo?||}}",
+      "{{it-IT|Posso avere uno sconto?||}}"
     ],
-    "explanation": "'Quanto costa?' is the go-to phrase at markets, shops, and caf\u00e9s.",
+    "explanation": "'Quanto costa?' is the go-to phrase at markets, shops, and cafés.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -65,11 +65,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill at a restaurant in Italian?",
-    "correctAnswer": "Il conto, per favore.",
+    "correctAnswer": "{{it-IT|Il conto, per favore.||}}",
     "incorrectAnswers": [
-      "La ricevuta, subito.",
-      "Vorrei pagare domani.",
-      "Dov'\u00e8 il menu?"
+      "{{it-IT|La ricevuta, subito.||}}",
+      "{{it-IT|Vorrei pagare domani.||}}",
+      "{{it-IT|Dov'è il menu?||}}"
     ],
     "explanation": "'Il conto' means the bill/check. Saying it with 'per favore' is the polite way to ask.",
     "keywords": [
@@ -85,13 +85,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Can you help me?' in Italian?",
-    "correctAnswer": "Pu\u00f2 aiutarmi?",
+    "correctAnswer": "{{it-IT|Può aiutarmi?||}}",
     "incorrectAnswers": [
-      "Aiuto adesso!",
-      "Voglio aiuto.",
-      "Tu aiuti me?"
+      "{{it-IT|Aiuto adesso!||}}",
+      "{{it-IT|Voglio aiuto.||}}",
+      "{{it-IT|Tu aiuti me?||}}"
     ],
-    "explanation": "'Pu\u00f2 aiutarmi?' uses the polite 'Lei' form ('pu\u00f2' = can you) \u2014 best for asking strangers.",
+    "explanation": "'Può aiutarmi?' uses the polite 'Lei' form ('può' = can you) — best for asking strangers.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,11 +104,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Italian?",
-    "correctAnswer": "Non capisco.",
+    "correctAnswer": "{{it-IT|Non capisco.||}}",
     "incorrectAnswers": [
-      "Non parlo italiano.",
-      "Non so niente.",
-      "Parli pi\u00f9 piano."
+      "{{it-IT|Non parlo italiano.||}}",
+      "{{it-IT|Non so niente.||}}",
+      "{{it-IT|Parli più piano.||}}"
     ],
     "explanation": "'Non capisco' is the first phrase to use when you're lost in conversation.",
     "keywords": [
@@ -123,13 +123,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the train station?' in Italian?",
-    "correctAnswer": "Dov'\u00e8 la stazione?",
+    "correctAnswer": "{{it-IT|Dov'è la stazione?||}}",
     "incorrectAnswers": [
-      "Come si va alla stazione?",
-      "Quando parte il treno?",
-      "Quanto costa il treno?"
+      "{{it-IT|Come si va alla stazione?||}}",
+      "{{it-IT|Quando parte il treno?||}}",
+      "{{it-IT|Quanto costa il treno?||}}"
     ],
-    "explanation": "'Dov'\u00e8 la stazione?' \u2014 replace 'stazione' with any destination (hotel, museum, etc.).",
+    "explanation": "'Dov'è la stazione?' — replace 'stazione' with any destination (hotel, museum, etc.).",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -143,13 +143,13 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'A table for two, please' in Italian?",
-    "correctAnswer": "Un tavolo per due, per favore.",
+    "correctAnswer": "{{it-IT|Un tavolo per due, per favore.||}}",
     "incorrectAnswers": [
-      "Due persone mangiano.",
-      "Vogliamo sederci insieme.",
-      "Tavolo grande, subito."
+      "{{it-IT|Due persone mangiano.||}}",
+      "{{it-IT|Vogliamo sederci insieme.||}}",
+      "{{it-IT|Tavolo grande, subito.||}}"
     ],
-    "explanation": "'Un tavolo per due' \u2014 swap 'due' with any number: tre, quattro, etc.",
+    "explanation": "'Un tavolo per due' — swap 'due' with any number: tre, quattro, etc.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -163,11 +163,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Good evening.'?",
-    "correctAnswer": "Buonasera.",
+    "correctAnswer": "{{it-IT|Buonasera.||}}",
     "incorrectAnswers": [
-      "Come sta?",
-      "Sto bene, grazie.",
-      "Molto bene, grazie."
+      "{{it-IT|Come sta?||}}",
+      "{{it-IT|Sto bene, grazie.||}}",
+      "{{it-IT|Molto bene, grazie.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -183,11 +183,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'How are you?'?",
-    "correctAnswer": "Come sta?",
+    "correctAnswer": "{{it-IT|Come sta?||}}",
     "incorrectAnswers": [
-      "Sto bene, grazie.",
-      "Molto bene, grazie.",
-      "A pi\u00f9 tardi."
+      "{{it-IT|Sto bene, grazie.||}}",
+      "{{it-IT|Molto bene, grazie.||}}",
+      "{{it-IT|A più tardi.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -203,11 +203,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "Sto bene, grazie.",
+    "correctAnswer": "{{it-IT|Sto bene, grazie.||}}",
     "incorrectAnswers": [
-      "Molto bene, grazie.",
-      "A pi\u00f9 tardi.",
-      "A domani."
+      "{{it-IT|Molto bene, grazie.||}}",
+      "{{it-IT|A più tardi.||}}",
+      "{{it-IT|A domani.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -223,11 +223,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Very well, thanks.'?",
-    "correctAnswer": "Molto bene, grazie.",
+    "correctAnswer": "{{it-IT|Molto bene, grazie.||}}",
     "incorrectAnswers": [
-      "A pi\u00f9 tardi.",
-      "A domani.",
-      "Buona giornata."
+      "{{it-IT|A più tardi.||}}",
+      "{{it-IT|A domani.||}}",
+      "{{it-IT|Buona giornata.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -243,11 +243,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'See you later.'?",
-    "correctAnswer": "A pi\u00f9 tardi.",
+    "correctAnswer": "{{it-IT|A più tardi.||}}",
     "incorrectAnswers": [
-      "A domani.",
-      "Buona giornata.",
-      "Benvenuto."
+      "{{it-IT|A domani.||}}",
+      "{{it-IT|Buona giornata.||}}",
+      "{{it-IT|Benvenuto.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -263,11 +263,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'See you tomorrow.'?",
-    "correctAnswer": "A domani.",
+    "correctAnswer": "{{it-IT|A domani.||}}",
     "incorrectAnswers": [
-      "Buona giornata.",
-      "Benvenuto.",
-      "Piacere di conoscerLa."
+      "{{it-IT|Buona giornata.||}}",
+      "{{it-IT|Benvenuto.||}}",
+      "{{it-IT|Piacere di conoscerLa.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -283,11 +283,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Have a good day.'.",
-    "correctAnswer": "Buona giornata.",
+    "correctAnswer": "{{it-IT|Buona giornata.||}}",
     "incorrectAnswers": [
-      "Benvenuto.",
-      "Piacere di conoscerLa.",
-      "Mi fa piacere rivederLa."
+      "{{it-IT|Benvenuto.||}}",
+      "{{it-IT|Piacere di conoscerLa.||}}",
+      "{{it-IT|Mi fa piacere rivederLa.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -303,11 +303,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Welcome.'?",
-    "correctAnswer": "Benvenuto.",
+    "correctAnswer": "{{it-IT|Benvenuto.||}}",
     "incorrectAnswers": [
-      "Piacere di conoscerLa.",
-      "Mi fa piacere rivederLa.",
-      "A presto."
+      "{{it-IT|Piacere di conoscerLa.||}}",
+      "{{it-IT|Mi fa piacere rivederLa.||}}",
+      "{{it-IT|A presto.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -323,11 +323,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "Piacere di conoscerLa.",
+    "correctAnswer": "{{it-IT|Piacere di conoscerLa.||}}",
     "incorrectAnswers": [
-      "Mi fa piacere rivederLa.",
-      "A presto.",
-      "Buona serata."
+      "{{it-IT|Mi fa piacere rivederLa.||}}",
+      "{{it-IT|A presto.||}}",
+      "{{it-IT|Buona serata.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Nice to see you again.'?",
-    "correctAnswer": "Mi fa piacere rivederLa.",
+    "correctAnswer": "{{it-IT|Mi fa piacere rivederLa.||}}",
     "incorrectAnswers": [
-      "A presto.",
-      "Buona serata.",
-      "Buonasera."
+      "{{it-IT|A presto.||}}",
+      "{{it-IT|Buona serata.||}}",
+      "{{it-IT|Buonasera.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -363,11 +363,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'See you soon.'.",
-    "correctAnswer": "A presto.",
+    "correctAnswer": "{{it-IT|A presto.||}}",
     "incorrectAnswers": [
-      "Buona serata.",
-      "Buonasera.",
-      "Come sta?"
+      "{{it-IT|Buona serata.||}}",
+      "{{it-IT|Buonasera.||}}",
+      "{{it-IT|Come sta?||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -383,11 +383,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Have a nice evening.'?",
-    "correctAnswer": "Buona serata.",
+    "correctAnswer": "{{it-IT|Buona serata.||}}",
     "incorrectAnswers": [
-      "Buonasera.",
-      "Come sta?",
-      "Sto bene, grazie."
+      "{{it-IT|Buonasera.||}}",
+      "{{it-IT|Come sta?||}}",
+      "{{it-IT|Sto bene, grazie.||}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -403,11 +403,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'What is your name?'?",
-    "correctAnswer": "Come si chiama?",
+    "correctAnswer": "{{it-IT|Come si chiama?||}}",
     "incorrectAnswers": [
-      "Vengo dagli Stati Uniti.",
-      "Abito a Chicago.",
-      "Ho vent'anni."
+      "{{it-IT|Vengo dagli Stati Uniti.||}}",
+      "{{it-IT|Abito a Chicago.||}}",
+      "{{it-IT|Ho vent'anni.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -423,11 +423,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I am from the United States.'?",
-    "correctAnswer": "Vengo dagli Stati Uniti.",
+    "correctAnswer": "{{it-IT|Vengo dagli Stati Uniti.||}}",
     "incorrectAnswers": [
-      "Abito a Chicago.",
-      "Ho vent'anni.",
-      "Questo \u00e8 il mio amico."
+      "{{it-IT|Abito a Chicago.||}}",
+      "{{it-IT|Ho vent'anni.||}}",
+      "{{it-IT|Questo è il mio amico.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -443,11 +443,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I live in Chicago.'.",
-    "correctAnswer": "Abito a Chicago.",
+    "correctAnswer": "{{it-IT|Abito a Chicago.||}}",
     "incorrectAnswers": [
-      "Ho vent'anni.",
-      "Questo \u00e8 il mio amico.",
-      "Questa \u00e8 mia sorella."
+      "{{it-IT|Ho vent'anni.||}}",
+      "{{it-IT|Questo è il mio amico.||}}",
+      "{{it-IT|Questa è mia sorella.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -463,11 +463,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am twenty years old.'?",
-    "correctAnswer": "Ho vent'anni.",
+    "correctAnswer": "{{it-IT|Ho vent'anni.||}}",
     "incorrectAnswers": [
-      "Questo \u00e8 il mio amico.",
-      "Questa \u00e8 mia sorella.",
-      "Sono sposato/sposata."
+      "{{it-IT|Questo è il mio amico.||}}",
+      "{{it-IT|Questa è mia sorella.||}}",
+      "{{it-IT|Sono sposato/sposata.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -483,11 +483,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'This is my friend.'?",
-    "correctAnswer": "Questo \u00e8 il mio amico.",
+    "correctAnswer": "{{it-IT|Questo è il mio amico.||}}",
     "incorrectAnswers": [
-      "Questa \u00e8 mia sorella.",
-      "Sono sposato/sposata.",
-      "Sono studente/studentessa."
+      "{{it-IT|Questa è mia sorella.||}}",
+      "{{it-IT|Sono sposato/sposata.||}}",
+      "{{it-IT|Sono studente/studentessa.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -503,11 +503,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'This is my sister.'?",
-    "correctAnswer": "Questa \u00e8 mia sorella.",
+    "correctAnswer": "{{it-IT|Questa è mia sorella.||}}",
     "incorrectAnswers": [
-      "Sono sposato/sposata.",
-      "Sono studente/studentessa.",
-      "Sono qui in vacanza."
+      "{{it-IT|Sono sposato/sposata.||}}",
+      "{{it-IT|Sono studente/studentessa.||}}",
+      "{{it-IT|Sono qui in vacanza.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -523,11 +523,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I am married.'.",
-    "correctAnswer": "Sono sposato/sposata.",
+    "correctAnswer": "{{it-IT|Sono sposato/sposata.||}}",
     "incorrectAnswers": [
-      "Sono studente/studentessa.",
-      "Sono qui in vacanza.",
-      "Il mio cognome \u00e8 Garcia."
+      "{{it-IT|Sono studente/studentessa.||}}",
+      "{{it-IT|Sono qui in vacanza.||}}",
+      "{{it-IT|Il mio cognome è Garcia.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -543,11 +543,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am a student.'?",
-    "correctAnswer": "Sono studente/studentessa.",
+    "correctAnswer": "{{it-IT|Sono studente/studentessa.||}}",
     "incorrectAnswers": [
-      "Sono qui in vacanza.",
-      "Il mio cognome \u00e8 Garcia.",
-      "Il mio numero di telefono \u00e8..."
+      "{{it-IT|Sono qui in vacanza.||}}",
+      "{{it-IT|Il mio cognome è Garcia.||}}",
+      "{{it-IT|Il mio numero di telefono è...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "Sono qui in vacanza.",
+    "correctAnswer": "{{it-IT|Sono qui in vacanza.||}}",
     "incorrectAnswers": [
-      "Il mio cognome \u00e8 Garcia.",
-      "Il mio numero di telefono \u00e8...",
-      "Il mio indirizzo \u00e8..."
+      "{{it-IT|Il mio cognome è Garcia.||}}",
+      "{{it-IT|Il mio numero di telefono è...||}}",
+      "{{it-IT|Il mio indirizzo è...||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -583,11 +583,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "Il mio cognome \u00e8 Garcia.",
+    "correctAnswer": "{{it-IT|Il mio cognome è Garcia.||}}",
     "incorrectAnswers": [
-      "Il mio numero di telefono \u00e8...",
-      "Il mio indirizzo \u00e8...",
-      "Come si chiama?"
+      "{{it-IT|Il mio numero di telefono è...||}}",
+      "{{it-IT|Il mio indirizzo è...||}}",
+      "{{it-IT|Come si chiama?||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -603,11 +603,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'My phone number is...'.",
-    "correctAnswer": "Il mio numero di telefono \u00e8...",
+    "correctAnswer": "{{it-IT|Il mio numero di telefono è...||}}",
     "incorrectAnswers": [
-      "Il mio indirizzo \u00e8...",
-      "Come si chiama?",
-      "Vengo dagli Stati Uniti."
+      "{{it-IT|Il mio indirizzo è...||}}",
+      "{{it-IT|Come si chiama?||}}",
+      "{{it-IT|Vengo dagli Stati Uniti.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -623,11 +623,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'My address is...'?",
-    "correctAnswer": "Il mio indirizzo \u00e8...",
+    "correctAnswer": "{{it-IT|Il mio indirizzo è...||}}",
     "incorrectAnswers": [
-      "Come si chiama?",
-      "Vengo dagli Stati Uniti.",
-      "Abito a Chicago."
+      "{{it-IT|Come si chiama?||}}",
+      "{{it-IT|Vengo dagli Stati Uniti.||}}",
+      "{{it-IT|Abito a Chicago.||}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -643,11 +643,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I need water.'?",
-    "correctAnswer": "Ho bisogno di acqua.",
+    "correctAnswer": "{{it-IT|Ho bisogno di acqua.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di una mappa.",
-      "Ho bisogno di un taxi.",
-      "Ho bisogno di una stanza."
+      "{{it-IT|Ho bisogno di una mappa.||}}",
+      "{{it-IT|Ho bisogno di un taxi.||}}",
+      "{{it-IT|Ho bisogno di una stanza.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -663,11 +663,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I need a map.'?",
-    "correctAnswer": "Ho bisogno di una mappa.",
+    "correctAnswer": "{{it-IT|Ho bisogno di una mappa.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un taxi.",
-      "Ho bisogno di una stanza.",
-      "Ha il Wi-Fi?"
+      "{{it-IT|Ho bisogno di un taxi.||}}",
+      "{{it-IT|Ho bisogno di una stanza.||}}",
+      "{{it-IT|Ha il Wi-Fi?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -683,11 +683,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I need a taxi.'.",
-    "correctAnswer": "Ho bisogno di un taxi.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un taxi.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di una stanza.",
-      "Ha il Wi-Fi?",
-      "Ha del pane?"
+      "{{it-IT|Ho bisogno di una stanza.||}}",
+      "{{it-IT|Ha il Wi-Fi?||}}",
+      "{{it-IT|Ha del pane?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -703,11 +703,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I need a room.'?",
-    "correctAnswer": "Ho bisogno di una stanza.",
+    "correctAnswer": "{{it-IT|Ho bisogno di una stanza.||}}",
     "incorrectAnswers": [
-      "Ha il Wi-Fi?",
-      "Ha del pane?",
-      "Posso avere il menu, per favore?"
+      "{{it-IT|Ha il Wi-Fi?||}}",
+      "{{it-IT|Ha del pane?||}}",
+      "{{it-IT|Posso avere il menu, per favore?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -723,11 +723,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "Ha il Wi-Fi?",
+    "correctAnswer": "{{it-IT|Ha il Wi-Fi?||}}",
     "incorrectAnswers": [
-      "Ha del pane?",
-      "Posso avere il menu, per favore?",
-      "Posso avere una bottiglia d'acqua?"
+      "{{it-IT|Ha del pane?||}}",
+      "{{it-IT|Posso avere il menu, per favore?||}}",
+      "{{it-IT|Posso avere una bottiglia d'acqua?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -743,11 +743,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Do you have bread?'?",
-    "correctAnswer": "Ha del pane?",
+    "correctAnswer": "{{it-IT|Ha del pane?||}}",
     "incorrectAnswers": [
-      "Posso avere il menu, per favore?",
-      "Posso avere una bottiglia d'acqua?",
-      "Mi dia una borsa, per favore."
+      "{{it-IT|Posso avere il menu, per favore?||}}",
+      "{{it-IT|Posso avere una bottiglia d'acqua?||}}",
+      "{{it-IT|Mi dia una borsa, per favore.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -763,11 +763,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Can I have the menu?'.",
-    "correctAnswer": "Posso avere il menu, per favore?",
+    "correctAnswer": "{{it-IT|Posso avere il menu, per favore?||}}",
     "incorrectAnswers": [
-      "Posso avere una bottiglia d'acqua?",
-      "Mi dia una borsa, per favore.",
-      "Ho bisogno di pi\u00f9 tempo."
+      "{{it-IT|Posso avere una bottiglia d'acqua?||}}",
+      "{{it-IT|Mi dia una borsa, per favore.||}}",
+      "{{it-IT|Ho bisogno di più tempo.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "Posso avere una bottiglia d'acqua?",
+    "correctAnswer": "{{it-IT|Posso avere una bottiglia d'acqua?||}}",
     "incorrectAnswers": [
-      "Mi dia una borsa, per favore.",
-      "Ho bisogno di pi\u00f9 tempo.",
-      "Ho bisogno della ricevuta."
+      "{{it-IT|Mi dia una borsa, per favore.||}}",
+      "{{it-IT|Ho bisogno di più tempo.||}}",
+      "{{it-IT|Ho bisogno della ricevuta.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -803,11 +803,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "Mi dia una borsa, per favore.",
+    "correctAnswer": "{{it-IT|Mi dia una borsa, per favore.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di pi\u00f9 tempo.",
-      "Ho bisogno della ricevuta.",
-      "Ha cibo vegetariano?"
+      "{{it-IT|Ho bisogno di più tempo.||}}",
+      "{{it-IT|Ho bisogno della ricevuta.||}}",
+      "{{it-IT|Ha cibo vegetariano?||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -823,11 +823,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I need more time.'?",
-    "correctAnswer": "Ho bisogno di pi\u00f9 tempo.",
+    "correctAnswer": "{{it-IT|Ho bisogno di più tempo.||}}",
     "incorrectAnswers": [
-      "Ho bisogno della ricevuta.",
-      "Ha cibo vegetariano?",
-      "Ho bisogno di acqua."
+      "{{it-IT|Ho bisogno della ricevuta.||}}",
+      "{{it-IT|Ha cibo vegetariano?||}}",
+      "{{it-IT|Ho bisogno di acqua.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -843,11 +843,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I need the receipt.'.",
-    "correctAnswer": "Ho bisogno della ricevuta.",
+    "correctAnswer": "{{it-IT|Ho bisogno della ricevuta.||}}",
     "incorrectAnswers": [
-      "Ha cibo vegetariano?",
-      "Ho bisogno di acqua.",
-      "Ho bisogno di una mappa."
+      "{{it-IT|Ha cibo vegetariano?||}}",
+      "{{it-IT|Ho bisogno di acqua.||}}",
+      "{{it-IT|Ho bisogno di una mappa.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -863,11 +863,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "Ha cibo vegetariano?",
+    "correctAnswer": "{{it-IT|Ha cibo vegetariano?||}}",
     "incorrectAnswers": [
-      "Ho bisogno di acqua.",
-      "Ho bisogno di una mappa.",
-      "Ho bisogno di un taxi."
+      "{{it-IT|Ho bisogno di acqua.||}}",
+      "{{it-IT|Ho bisogno di una mappa.||}}",
+      "{{it-IT|Ho bisogno di un taxi.||}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -883,11 +883,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Where is the bank?'?",
-    "correctAnswer": "Dov'\u00e8 la banca?",
+    "correctAnswer": "{{it-IT|Dov'è la banca?||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 il museo?",
-      "Dov'\u00e8 il centro?",
-      "Dov'\u00e8 la fermata dell'autobus?"
+      "{{it-IT|Dov'è il museo?||}}",
+      "{{it-IT|Dov'è il centro?||}}",
+      "{{it-IT|Dov'è la fermata dell'autobus?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -903,11 +903,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Where is the museum?'?",
-    "correctAnswer": "Dov'\u00e8 il museo?",
+    "correctAnswer": "{{it-IT|Dov'è il museo?||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 il centro?",
-      "Dov'\u00e8 la fermata dell'autobus?",
-      "Vada dritto."
+      "{{it-IT|Dov'è il centro?||}}",
+      "{{it-IT|Dov'è la fermata dell'autobus?||}}",
+      "{{it-IT|Vada dritto.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -923,11 +923,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Where is the city center?'.",
-    "correctAnswer": "Dov'\u00e8 il centro?",
+    "correctAnswer": "{{it-IT|Dov'è il centro?||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 la fermata dell'autobus?",
-      "Vada dritto.",
-      "Prenda la prima strada."
+      "{{it-IT|Dov'è la fermata dell'autobus?||}}",
+      "{{it-IT|Vada dritto.||}}",
+      "{{it-IT|Prenda la prima strada.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -943,11 +943,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "Dov'\u00e8 la fermata dell'autobus?",
+    "correctAnswer": "{{it-IT|Dov'è la fermata dell'autobus?||}}",
     "incorrectAnswers": [
-      "Vada dritto.",
-      "Prenda la prima strada.",
-      "Prenda la seconda strada."
+      "{{it-IT|Vada dritto.||}}",
+      "{{it-IT|Prenda la prima strada.||}}",
+      "{{it-IT|Prenda la seconda strada.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -963,11 +963,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Go straight.'?",
-    "correctAnswer": "Vada dritto.",
+    "correctAnswer": "{{it-IT|Vada dritto.||}}",
     "incorrectAnswers": [
-      "Prenda la prima strada.",
-      "Prenda la seconda strada.",
-      "\u00c8 lontano?"
+      "{{it-IT|Prenda la prima strada.||}}",
+      "{{it-IT|Prenda la seconda strada.||}}",
+      "{{it-IT|È lontano?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -983,11 +983,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Take the first street.'?",
-    "correctAnswer": "Prenda la prima strada.",
+    "correctAnswer": "{{it-IT|Prenda la prima strada.||}}",
     "incorrectAnswers": [
-      "Prenda la seconda strada.",
-      "\u00c8 lontano?",
-      "\u00c8 vicino?"
+      "{{it-IT|Prenda la seconda strada.||}}",
+      "{{it-IT|È lontano?||}}",
+      "{{it-IT|È vicino?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Take the second street.'.",
-    "correctAnswer": "Prenda la seconda strada.",
+    "correctAnswer": "{{it-IT|Prenda la seconda strada.||}}",
     "incorrectAnswers": [
-      "\u00c8 lontano?",
-      "\u00c8 vicino?",
-      "Mi sono perso/persa."
+      "{{it-IT|È lontano?||}}",
+      "{{it-IT|È vicino?||}}",
+      "{{it-IT|Mi sono perso/persa.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1023,11 +1023,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Is it far?'?",
-    "correctAnswer": "\u00c8 lontano?",
+    "correctAnswer": "{{it-IT|È lontano?||}}",
     "incorrectAnswers": [
-      "\u00c8 vicino?",
-      "Mi sono perso/persa.",
-      "Cerchiamo l'hotel."
+      "{{it-IT|È vicino?||}}",
+      "{{it-IT|Mi sono perso/persa.||}}",
+      "{{it-IT|Cerchiamo l'hotel.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1043,11 +1043,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Is it near?'?",
-    "correctAnswer": "\u00c8 vicino?",
+    "correctAnswer": "{{it-IT|È vicino?||}}",
     "incorrectAnswers": [
-      "Mi sono perso/persa.",
-      "Cerchiamo l'hotel.",
-      "Mi mostri sulla mappa, per favore."
+      "{{it-IT|Mi sono perso/persa.||}}",
+      "{{it-IT|Cerchiamo l'hotel.||}}",
+      "{{it-IT|Mi mostri sulla mappa, per favore.||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1063,11 +1063,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I am lost.'?",
-    "correctAnswer": "Mi sono perso/persa.",
+    "correctAnswer": "{{it-IT|Mi sono perso/persa.||}}",
     "incorrectAnswers": [
-      "Cerchiamo l'hotel.",
-      "Mi mostri sulla mappa, per favore.",
-      "Dov'\u00e8 la banca?"
+      "{{it-IT|Cerchiamo l'hotel.||}}",
+      "{{it-IT|Mi mostri sulla mappa, per favore.||}}",
+      "{{it-IT|Dov'è la banca?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1083,11 +1083,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "Cerchiamo l'hotel.",
+    "correctAnswer": "{{it-IT|Cerchiamo l'hotel.||}}",
     "incorrectAnswers": [
-      "Mi mostri sulla mappa, per favore.",
-      "Dov'\u00e8 la banca?",
-      "Dov'\u00e8 il museo?"
+      "{{it-IT|Mi mostri sulla mappa, per favore.||}}",
+      "{{it-IT|Dov'è la banca?||}}",
+      "{{it-IT|Dov'è il museo?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1103,11 +1103,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Please show me on the map.'?",
-    "correctAnswer": "Mi mostri sulla mappa, per favore.",
+    "correctAnswer": "{{it-IT|Mi mostri sulla mappa, per favore.||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 la banca?",
-      "Dov'\u00e8 il museo?",
-      "Dov'\u00e8 il centro?"
+      "{{it-IT|Dov'è la banca?||}}",
+      "{{it-IT|Dov'è il museo?||}}",
+      "{{it-IT|Dov'è il centro?||}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1123,11 +1123,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "Pu\u00f2 ripetere?",
+    "correctAnswer": "{{it-IT|Può ripetere?||}}",
     "incorrectAnswers": [
-      "Pu\u00f2 parlare pi\u00f9 lentamente?",
-      "Come si scrive il suo nome?",
-      "Il totale \u00e8 di dieci euro."
+      "{{it-IT|Può parlare più lentamente?||}}",
+      "{{it-IT|Come si scrive il suo nome?||}}",
+      "{{it-IT|Il totale è di dieci euro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1143,11 +1143,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "Pu\u00f2 parlare pi\u00f9 lentamente?",
+    "correctAnswer": "{{it-IT|Può parlare più lentamente?||}}",
     "incorrectAnswers": [
-      "Come si scrive il suo nome?",
-      "Il totale \u00e8 di dieci euro.",
-      "Costa venti euro."
+      "{{it-IT|Come si scrive il suo nome?||}}",
+      "{{it-IT|Il totale è di dieci euro.||}}",
+      "{{it-IT|Costa venti euro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1163,11 +1163,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'How do you spell your name?'.",
-    "correctAnswer": "Come si scrive il suo nome?",
+    "correctAnswer": "{{it-IT|Come si scrive il suo nome?||}}",
     "incorrectAnswers": [
-      "Il totale \u00e8 di dieci euro.",
-      "Costa venti euro.",
-      "Camera numero dodici."
+      "{{it-IT|Il totale è di dieci euro.||}}",
+      "{{it-IT|Costa venti euro.||}}",
+      "{{it-IT|Camera numero dodici.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1183,11 +1183,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'The total is ten euros.'?",
-    "correctAnswer": "Il totale \u00e8 di dieci euro.",
+    "correctAnswer": "{{it-IT|Il totale è di dieci euro.||}}",
     "incorrectAnswers": [
-      "Costa venti euro.",
-      "Camera numero dodici.",
-      "Binario numero quattro."
+      "{{it-IT|Costa venti euro.||}}",
+      "{{it-IT|Camera numero dodici.||}}",
+      "{{it-IT|Binario numero quattro.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1203,11 +1203,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "Costa venti euro.",
+    "correctAnswer": "{{it-IT|Costa venti euro.||}}",
     "incorrectAnswers": [
-      "Camera numero dodici.",
-      "Binario numero quattro.",
-      "Un tavolo per tre, per favore."
+      "{{it-IT|Camera numero dodici.||}}",
+      "{{it-IT|Binario numero quattro.||}}",
+      "{{it-IT|Un tavolo per tre, per favore.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Room number twelve.'?",
-    "correctAnswer": "Camera numero dodici.",
+    "correctAnswer": "{{it-IT|Camera numero dodici.||}}",
     "incorrectAnswers": [
-      "Binario numero quattro.",
-      "Un tavolo per tre, per favore.",
-      "Due biglietti, per favore."
+      "{{it-IT|Binario numero quattro.||}}",
+      "{{it-IT|Un tavolo per tre, per favore.||}}",
+      "{{it-IT|Due biglietti, per favore.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1243,11 +1243,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Platform number four.'.",
-    "correctAnswer": "Binario numero quattro.",
+    "correctAnswer": "{{it-IT|Binario numero quattro.||}}",
     "incorrectAnswers": [
-      "Un tavolo per tre, per favore.",
-      "Due biglietti, per favore.",
-      "Pu\u00f2 scriverlo?"
+      "{{it-IT|Un tavolo per tre, per favore.||}}",
+      "{{it-IT|Due biglietti, per favore.||}}",
+      "{{it-IT|Può scriverlo?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1263,11 +1263,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'A table for three, please.'?",
-    "correctAnswer": "Un tavolo per tre, per favore.",
+    "correctAnswer": "{{it-IT|Un tavolo per tre, per favore.||}}",
     "incorrectAnswers": [
-      "Due biglietti, per favore.",
-      "Pu\u00f2 scriverlo?",
-      "Qual \u00e8 la data di oggi?"
+      "{{it-IT|Due biglietti, per favore.||}}",
+      "{{it-IT|Può scriverlo?||}}",
+      "{{it-IT|Qual è la data di oggi?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1283,11 +1283,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "Due biglietti, per favore.",
+    "correctAnswer": "{{it-IT|Due biglietti, per favore.||}}",
     "incorrectAnswers": [
-      "Pu\u00f2 scriverlo?",
-      "Qual \u00e8 la data di oggi?",
-      "Un momento, per favore."
+      "{{it-IT|Può scriverlo?||}}",
+      "{{it-IT|Qual è la data di oggi?||}}",
+      "{{it-IT|Un momento, per favore.||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1303,11 +1303,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Can you write it down?'?",
-    "correctAnswer": "Pu\u00f2 scriverlo?",
+    "correctAnswer": "{{it-IT|Può scriverlo?||}}",
     "incorrectAnswers": [
-      "Qual \u00e8 la data di oggi?",
-      "Un momento, per favore.",
-      "Pu\u00f2 ripetere?"
+      "{{it-IT|Qual è la data di oggi?||}}",
+      "{{it-IT|Un momento, per favore.||}}",
+      "{{it-IT|Può ripetere?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1323,11 +1323,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'What is today's date?'.",
-    "correctAnswer": "Qual \u00e8 la data di oggi?",
+    "correctAnswer": "{{it-IT|Qual è la data di oggi?||}}",
     "incorrectAnswers": [
-      "Un momento, per favore.",
-      "Pu\u00f2 ripetere?",
-      "Pu\u00f2 parlare pi\u00f9 lentamente?"
+      "{{it-IT|Un momento, per favore.||}}",
+      "{{it-IT|Può ripetere?||}}",
+      "{{it-IT|Può parlare più lentamente?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1343,11 +1343,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'One moment, please.'?",
-    "correctAnswer": "Un momento, per favore.",
+    "correctAnswer": "{{it-IT|Un momento, per favore.||}}",
     "incorrectAnswers": [
-      "Pu\u00f2 ripetere?",
-      "Pu\u00f2 parlare pi\u00f9 lentamente?",
-      "Come si scrive il suo nome?"
+      "{{it-IT|Può ripetere?||}}",
+      "{{it-IT|Può parlare più lentamente?||}}",
+      "{{it-IT|Come si scrive il suo nome?||}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1363,11 +1363,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I am hungry.'?",
-    "correctAnswer": "Ho fame.",
+    "correctAnswer": "{{it-IT|Ho fame.||}}",
     "incorrectAnswers": [
-      "Ho sete.",
-      "Il menu, per favore.",
-      "Sono vegetariano/vegetariana."
+      "{{it-IT|Ho sete.||}}",
+      "{{it-IT|Il menu, per favore.||}}",
+      "{{it-IT|Sono vegetariano/vegetariana.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1383,11 +1383,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I am thirsty.'?",
-    "correctAnswer": "Ho sete.",
+    "correctAnswer": "{{it-IT|Ho sete.||}}",
     "incorrectAnswers": [
-      "Il menu, per favore.",
-      "Sono vegetariano/vegetariana.",
-      "Senza carne, per favore."
+      "{{it-IT|Il menu, per favore.||}}",
+      "{{it-IT|Sono vegetariano/vegetariana.||}}",
+      "{{it-IT|Senza carne, per favore.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1403,11 +1403,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'The menu, please.'.",
-    "correctAnswer": "Il menu, per favore.",
+    "correctAnswer": "{{it-IT|Il menu, per favore.||}}",
     "incorrectAnswers": [
-      "Sono vegetariano/vegetariana.",
-      "Senza carne, per favore.",
-      "Senza zucchero, per favore."
+      "{{it-IT|Sono vegetariano/vegetariana.||}}",
+      "{{it-IT|Senza carne, per favore.||}}",
+      "{{it-IT|Senza zucchero, per favore.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1423,11 +1423,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am vegetarian.'?",
-    "correctAnswer": "Sono vegetariano/vegetariana.",
+    "correctAnswer": "{{it-IT|Sono vegetariano/vegetariana.||}}",
     "incorrectAnswers": [
-      "Senza carne, per favore.",
-      "Senza zucchero, per favore.",
-      "Con il latte, per favore."
+      "{{it-IT|Senza carne, per favore.||}}",
+      "{{it-IT|Senza zucchero, per favore.||}}",
+      "{{it-IT|Con il latte, per favore.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'No meat, please.'?",
-    "correctAnswer": "Senza carne, per favore.",
+    "correctAnswer": "{{it-IT|Senza carne, per favore.||}}",
     "incorrectAnswers": [
-      "Senza zucchero, per favore.",
-      "Con il latte, per favore.",
-      "Era delizioso."
+      "{{it-IT|Senza zucchero, per favore.||}}",
+      "{{it-IT|Con il latte, per favore.||}}",
+      "{{it-IT|Era delizioso.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1463,11 +1463,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Without sugar, please.'?",
-    "correctAnswer": "Senza zucchero, per favore.",
+    "correctAnswer": "{{it-IT|Senza zucchero, per favore.||}}",
     "incorrectAnswers": [
-      "Con il latte, per favore.",
-      "Era delizioso.",
-      "Questo \u00e8 molto buono."
+      "{{it-IT|Con il latte, per favore.||}}",
+      "{{it-IT|Era delizioso.||}}",
+      "{{it-IT|Questo è molto buono.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1483,11 +1483,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'With milk, please.'.",
-    "correctAnswer": "Con il latte, per favore.",
+    "correctAnswer": "{{it-IT|Con il latte, per favore.||}}",
     "incorrectAnswers": [
-      "Era delizioso.",
-      "Questo \u00e8 molto buono.",
-      "La zuppa \u00e8 fredda."
+      "{{it-IT|Era delizioso.||}}",
+      "{{it-IT|Questo è molto buono.||}}",
+      "{{it-IT|La zuppa è fredda.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1503,11 +1503,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'It was delicious.'?",
-    "correctAnswer": "Era delizioso.",
+    "correctAnswer": "{{it-IT|Era delizioso.||}}",
     "incorrectAnswers": [
-      "Questo \u00e8 molto buono.",
-      "La zuppa \u00e8 fredda.",
-      "Sono allergico/allergica alla frutta secca."
+      "{{it-IT|Questo è molto buono.||}}",
+      "{{it-IT|La zuppa è fredda.||}}",
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1523,11 +1523,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'This is very good.'?",
-    "correctAnswer": "Questo \u00e8 molto buono.",
+    "correctAnswer": "{{it-IT|Questo è molto buono.||}}",
     "incorrectAnswers": [
-      "La zuppa \u00e8 fredda.",
-      "Sono allergico/allergica alla frutta secca.",
-      "Una bottiglia d'acqua, per favore."
+      "{{it-IT|La zuppa è fredda.||}}",
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||}}",
+      "{{it-IT|Una bottiglia d'acqua, per favore.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1543,11 +1543,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'The soup is cold.'?",
-    "correctAnswer": "La zuppa \u00e8 fredda.",
+    "correctAnswer": "{{it-IT|La zuppa è fredda.||}}",
     "incorrectAnswers": [
-      "Sono allergico/allergica alla frutta secca.",
-      "Una bottiglia d'acqua, per favore.",
-      "Ho fame."
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||}}",
+      "{{it-IT|Una bottiglia d'acqua, per favore.||}}",
+      "{{it-IT|Ho fame.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1563,11 +1563,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "Sono allergico/allergica alla frutta secca.",
+    "correctAnswer": "{{it-IT|Sono allergico/allergica alla frutta secca.||}}",
     "incorrectAnswers": [
-      "Una bottiglia d'acqua, per favore.",
-      "Ho fame.",
-      "Ho sete."
+      "{{it-IT|Una bottiglia d'acqua, per favore.||}}",
+      "{{it-IT|Ho fame.||}}",
+      "{{it-IT|Ho sete.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1583,11 +1583,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "Una bottiglia d'acqua, per favore.",
+    "correctAnswer": "{{it-IT|Una bottiglia d'acqua, per favore.||}}",
     "incorrectAnswers": [
-      "Ho fame.",
-      "Ho sete.",
-      "Il menu, per favore."
+      "{{it-IT|Ho fame.||}}",
+      "{{it-IT|Ho sete.||}}",
+      "{{it-IT|Il menu, per favore.||}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1603,11 +1603,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "Ha questo in un'altra taglia?",
+    "correctAnswer": "{{it-IT|Ha questo in un'altra taglia?||}}",
     "incorrectAnswers": [
-      "Ha questo in un altro colore?",
-      "Posso provarlo?",
-      "\u00c8 troppo caro."
+      "{{it-IT|Ha questo in un altro colore?||}}",
+      "{{it-IT|Posso provarlo?||}}",
+      "{{it-IT|È troppo caro.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1623,11 +1623,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "Ha questo in un altro colore?",
+    "correctAnswer": "{{it-IT|Ha questo in un altro colore?||}}",
     "incorrectAnswers": [
-      "Posso provarlo?",
-      "\u00c8 troppo caro.",
-      "\u00c8 economico."
+      "{{it-IT|Posso provarlo?||}}",
+      "{{it-IT|È troppo caro.||}}",
+      "{{it-IT|È economico.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1643,11 +1643,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Can I try it on?'.",
-    "correctAnswer": "Posso provarlo?",
+    "correctAnswer": "{{it-IT|Posso provarlo?||}}",
     "incorrectAnswers": [
-      "\u00c8 troppo caro.",
-      "\u00c8 economico.",
-      "Lo prendo."
+      "{{it-IT|È troppo caro.||}}",
+      "{{it-IT|È economico.||}}",
+      "{{it-IT|Lo prendo.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'It is too expensive.'?",
-    "correctAnswer": "\u00c8 troppo caro.",
+    "correctAnswer": "{{it-IT|È troppo caro.||}}",
     "incorrectAnswers": [
-      "\u00c8 economico.",
-      "Lo prendo.",
-      "Dov'\u00e8 la cassa?"
+      "{{it-IT|È economico.||}}",
+      "{{it-IT|Lo prendo.||}}",
+      "{{it-IT|Dov'è la cassa?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1683,11 +1683,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'It is cheap.'?",
-    "correctAnswer": "\u00c8 economico.",
+    "correctAnswer": "{{it-IT|È economico.||}}",
     "incorrectAnswers": [
-      "Lo prendo.",
-      "Dov'\u00e8 la cassa?",
-      "Sto solo guardando."
+      "{{it-IT|Lo prendo.||}}",
+      "{{it-IT|Dov'è la cassa?||}}",
+      "{{it-IT|Sto solo guardando.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1703,11 +1703,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I will take it.'?",
-    "correctAnswer": "Lo prendo.",
+    "correctAnswer": "{{it-IT|Lo prendo.||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 la cassa?",
-      "Sto solo guardando.",
-      "Accetta carte?"
+      "{{it-IT|Dov'è la cassa?||}}",
+      "{{it-IT|Sto solo guardando.||}}",
+      "{{it-IT|Accetta carte?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1723,11 +1723,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Where is the checkout?'.",
-    "correctAnswer": "Dov'\u00e8 la cassa?",
+    "correctAnswer": "{{it-IT|Dov'è la cassa?||}}",
     "incorrectAnswers": [
-      "Sto solo guardando.",
-      "Accetta carte?",
-      "Ho bisogno di una ricevuta."
+      "{{it-IT|Sto solo guardando.||}}",
+      "{{it-IT|Accetta carte?||}}",
+      "{{it-IT|Ho bisogno di una ricevuta.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1743,11 +1743,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am just looking.'?",
-    "correctAnswer": "Sto solo guardando.",
+    "correctAnswer": "{{it-IT|Sto solo guardando.||}}",
     "incorrectAnswers": [
-      "Accetta carte?",
-      "Ho bisogno di una ricevuta.",
-      "Questa taglia \u00e8 troppo piccola."
+      "{{it-IT|Accetta carte?||}}",
+      "{{it-IT|Ho bisogno di una ricevuta.||}}",
+      "{{it-IT|Questa taglia è troppo piccola.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1763,11 +1763,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "Accetta carte?",
+    "correctAnswer": "{{it-IT|Accetta carte?||}}",
     "incorrectAnswers": [
-      "Ho bisogno di una ricevuta.",
-      "Questa taglia \u00e8 troppo piccola.",
-      "Questa taglia \u00e8 troppo grande."
+      "{{it-IT|Ho bisogno di una ricevuta.||}}",
+      "{{it-IT|Questa taglia è troppo piccola.||}}",
+      "{{it-IT|Questa taglia è troppo grande.||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1783,11 +1783,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I need a receipt.'?",
-    "correctAnswer": "Ho bisogno di una ricevuta.",
+    "correctAnswer": "{{it-IT|Ho bisogno di una ricevuta.||}}",
     "incorrectAnswers": [
-      "Questa taglia \u00e8 troppo piccola.",
-      "Questa taglia \u00e8 troppo grande.",
-      "Ha questo in un'altra taglia?"
+      "{{it-IT|Questa taglia è troppo piccola.||}}",
+      "{{it-IT|Questa taglia è troppo grande.||}}",
+      "{{it-IT|Ha questo in un'altra taglia?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1803,11 +1803,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'This size is too small.'.",
-    "correctAnswer": "Questa taglia \u00e8 troppo piccola.",
+    "correctAnswer": "{{it-IT|Questa taglia è troppo piccola.||}}",
     "incorrectAnswers": [
-      "Questa taglia \u00e8 troppo grande.",
-      "Ha questo in un'altra taglia?",
-      "Ha questo in un altro colore?"
+      "{{it-IT|Questa taglia è troppo grande.||}}",
+      "{{it-IT|Ha questo in un'altra taglia?||}}",
+      "{{it-IT|Ha questo in un altro colore?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1823,11 +1823,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'This size is too big.'?",
-    "correctAnswer": "Questa taglia \u00e8 troppo grande.",
+    "correctAnswer": "{{it-IT|Questa taglia è troppo grande.||}}",
     "incorrectAnswers": [
-      "Ha questo in un'altra taglia?",
-      "Ha questo in un altro colore?",
-      "Posso provarlo?"
+      "{{it-IT|Ha questo in un'altra taglia?||}}",
+      "{{it-IT|Ha questo in un altro colore?||}}",
+      "{{it-IT|Posso provarlo?||}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1843,11 +1843,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "Ho bisogno di un biglietto per l'aeroporto.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un biglietto per l'aeroporto.||}}",
     "incorrectAnswers": [
-      "Un biglietto per il centro, per favore.",
-      "Un biglietto di andata e ritorno, per favore.",
-      "Qual \u00e8 il binario?"
+      "{{it-IT|Un biglietto per il centro, per favore.||}}",
+      "{{it-IT|Un biglietto di andata e ritorno, per favore.||}}",
+      "{{it-IT|Qual è il binario?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1863,11 +1863,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "Un biglietto per il centro, per favore.",
+    "correctAnswer": "{{it-IT|Un biglietto per il centro, per favore.||}}",
     "incorrectAnswers": [
-      "Un biglietto di andata e ritorno, per favore.",
-      "Qual \u00e8 il binario?",
-      "Questo posto \u00e8 libero?"
+      "{{it-IT|Un biglietto di andata e ritorno, per favore.||}}",
+      "{{it-IT|Qual è il binario?||}}",
+      "{{it-IT|Questo posto è libero?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "Un biglietto di andata e ritorno, per favore.",
+    "correctAnswer": "{{it-IT|Un biglietto di andata e ritorno, per favore.||}}",
     "incorrectAnswers": [
-      "Qual \u00e8 il binario?",
-      "Questo posto \u00e8 libero?",
-      "Chiami un taxi, per favore."
+      "{{it-IT|Qual è il binario?||}}",
+      "{{it-IT|Questo posto è libero?||}}",
+      "{{it-IT|Chiami un taxi, per favore.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1903,11 +1903,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Which platform is it?'?",
-    "correctAnswer": "Qual \u00e8 il binario?",
+    "correctAnswer": "{{it-IT|Qual è il binario?||}}",
     "incorrectAnswers": [
-      "Questo posto \u00e8 libero?",
-      "Chiami un taxi, per favore.",
-      "Questo autobus va in centro?"
+      "{{it-IT|Questo posto è libero?||}}",
+      "{{it-IT|Chiami un taxi, per favore.||}}",
+      "{{it-IT|Questo autobus va in centro?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1923,11 +1923,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Is this seat free?'?",
-    "correctAnswer": "Questo posto \u00e8 libero?",
+    "correctAnswer": "{{it-IT|Questo posto è libero?||}}",
     "incorrectAnswers": [
-      "Chiami un taxi, per favore.",
-      "Questo autobus va in centro?",
-      "Voglio andare all'aeroporto."
+      "{{it-IT|Chiami un taxi, per favore.||}}",
+      "{{it-IT|Questo autobus va in centro?||}}",
+      "{{it-IT|Voglio andare all'aeroporto.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1943,11 +1943,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Please call a taxi.'?",
-    "correctAnswer": "Chiami un taxi, per favore.",
+    "correctAnswer": "{{it-IT|Chiami un taxi, per favore.||}}",
     "incorrectAnswers": [
-      "Questo autobus va in centro?",
-      "Voglio andare all'aeroporto.",
-      "Scendiamo qui."
+      "{{it-IT|Questo autobus va in centro?||}}",
+      "{{it-IT|Voglio andare all'aeroporto.||}}",
+      "{{it-IT|Scendiamo qui.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1963,11 +1963,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "Questo autobus va in centro?",
+    "correctAnswer": "{{it-IT|Questo autobus va in centro?||}}",
     "incorrectAnswers": [
-      "Voglio andare all'aeroporto.",
-      "Scendiamo qui.",
-      "Ho perso l'autobus."
+      "{{it-IT|Voglio andare all'aeroporto.||}}",
+      "{{it-IT|Scendiamo qui.||}}",
+      "{{it-IT|Ho perso l'autobus.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1983,11 +1983,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "Voglio andare all'aeroporto.",
+    "correctAnswer": "{{it-IT|Voglio andare all'aeroporto.||}}",
     "incorrectAnswers": [
-      "Scendiamo qui.",
-      "Ho perso l'autobus.",
-      "Dove posso comprare un biglietto?"
+      "{{it-IT|Scendiamo qui.||}}",
+      "{{it-IT|Ho perso l'autobus.||}}",
+      "{{it-IT|Dove posso comprare un biglietto?||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2003,11 +2003,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'We get off here.'?",
-    "correctAnswer": "Scendiamo qui.",
+    "correctAnswer": "{{it-IT|Scendiamo qui.||}}",
     "incorrectAnswers": [
-      "Ho perso l'autobus.",
-      "Dove posso comprare un biglietto?",
-      "L'autobus arriva a mezzogiorno."
+      "{{it-IT|Ho perso l'autobus.||}}",
+      "{{it-IT|Dove posso comprare un biglietto?||}}",
+      "{{it-IT|L'autobus arriva a mezzogiorno.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2023,11 +2023,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I missed the bus.'?",
-    "correctAnswer": "Ho perso l'autobus.",
+    "correctAnswer": "{{it-IT|Ho perso l'autobus.||}}",
     "incorrectAnswers": [
-      "Dove posso comprare un biglietto?",
-      "L'autobus arriva a mezzogiorno.",
-      "Ho bisogno di un biglietto per l'aeroporto."
+      "{{it-IT|Dove posso comprare un biglietto?||}}",
+      "{{it-IT|L'autobus arriva a mezzogiorno.||}}",
+      "{{it-IT|Ho bisogno di un biglietto per l'aeroporto.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2043,11 +2043,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "Dove posso comprare un biglietto?",
+    "correctAnswer": "{{it-IT|Dove posso comprare un biglietto?||}}",
     "incorrectAnswers": [
-      "L'autobus arriva a mezzogiorno.",
-      "Ho bisogno di un biglietto per l'aeroporto.",
-      "Un biglietto per il centro, per favore."
+      "{{it-IT|L'autobus arriva a mezzogiorno.||}}",
+      "{{it-IT|Ho bisogno di un biglietto per l'aeroporto.||}}",
+      "{{it-IT|Un biglietto per il centro, per favore.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2063,11 +2063,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "L'autobus arriva a mezzogiorno.",
+    "correctAnswer": "{{it-IT|L'autobus arriva a mezzogiorno.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un biglietto per l'aeroporto.",
-      "Un biglietto per il centro, per favore.",
-      "Un biglietto di andata e ritorno, per favore."
+      "{{it-IT|Ho bisogno di un biglietto per l'aeroporto.||}}",
+      "{{it-IT|Un biglietto per il centro, per favore.||}}",
+      "{{it-IT|Un biglietto di andata e ritorno, per favore.||}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2083,11 +2083,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I have a reservation.'?",
-    "correctAnswer": "Ho una prenotazione.",
+    "correctAnswer": "{{it-IT|Ho una prenotazione.||}}",
     "incorrectAnswers": [
-      "Ha una camera singola?",
-      "Ha una camera doppia?",
-      "La password del Wi-Fi, per favore."
+      "{{it-IT|Ha una camera singola?||}}",
+      "{{it-IT|Ha una camera doppia?||}}",
+      "{{it-IT|La password del Wi-Fi, per favore.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Do you have a single room?'?",
-    "correctAnswer": "Ha una camera singola?",
+    "correctAnswer": "{{it-IT|Ha una camera singola?||}}",
     "incorrectAnswers": [
-      "Ha una camera doppia?",
-      "La password del Wi-Fi, per favore.",
-      "C'\u00e8 un problema con la camera."
+      "{{it-IT|Ha una camera doppia?||}}",
+      "{{it-IT|La password del Wi-Fi, per favore.||}}",
+      "{{it-IT|C'è un problema con la camera.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2123,11 +2123,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Do you have a double room?'.",
-    "correctAnswer": "Ha una camera doppia?",
+    "correctAnswer": "{{it-IT|Ha una camera doppia?||}}",
     "incorrectAnswers": [
-      "La password del Wi-Fi, per favore.",
-      "C'\u00e8 un problema con la camera.",
-      "La doccia non funziona."
+      "{{it-IT|La password del Wi-Fi, per favore.||}}",
+      "{{it-IT|C'è un problema con la camera.||}}",
+      "{{it-IT|La doccia non funziona.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2143,11 +2143,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "La password del Wi-Fi, per favore.",
+    "correctAnswer": "{{it-IT|La password del Wi-Fi, per favore.||}}",
     "incorrectAnswers": [
-      "C'\u00e8 un problema con la camera.",
-      "La doccia non funziona.",
-      "La camera \u00e8 troppo fredda."
+      "{{it-IT|C'è un problema con la camera.||}}",
+      "{{it-IT|La doccia non funziona.||}}",
+      "{{it-IT|La camera è troppo fredda.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2163,11 +2163,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "C'\u00e8 un problema con la camera.",
+    "correctAnswer": "{{it-IT|C'è un problema con la camera.||}}",
     "incorrectAnswers": [
-      "La doccia non funziona.",
-      "La camera \u00e8 troppo fredda.",
-      "Ho bisogno di asciugamani puliti."
+      "{{it-IT|La doccia non funziona.||}}",
+      "{{it-IT|La camera è troppo fredda.||}}",
+      "{{it-IT|Ho bisogno di asciugamani puliti.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2183,11 +2183,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'The shower does not work.'?",
-    "correctAnswer": "La doccia non funziona.",
+    "correctAnswer": "{{it-IT|La doccia non funziona.||}}",
     "incorrectAnswers": [
-      "La camera \u00e8 troppo fredda.",
-      "Ho bisogno di asciugamani puliti.",
-      "La colazione \u00e8 inclusa?"
+      "{{it-IT|La camera è troppo fredda.||}}",
+      "{{it-IT|Ho bisogno di asciugamani puliti.||}}",
+      "{{it-IT|La colazione è inclusa?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2203,11 +2203,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'The room is too cold.'.",
-    "correctAnswer": "La camera \u00e8 troppo fredda.",
+    "correctAnswer": "{{it-IT|La camera è troppo fredda.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di asciugamani puliti.",
-      "La colazione \u00e8 inclusa?",
-      "Posso avere un'altra chiave?"
+      "{{it-IT|Ho bisogno di asciugamani puliti.||}}",
+      "{{it-IT|La colazione è inclusa?||}}",
+      "{{it-IT|Posso avere un'altra chiave?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2223,11 +2223,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I need clean towels.'?",
-    "correctAnswer": "Ho bisogno di asciugamani puliti.",
+    "correctAnswer": "{{it-IT|Ho bisogno di asciugamani puliti.||}}",
     "incorrectAnswers": [
-      "La colazione \u00e8 inclusa?",
-      "Posso avere un'altra chiave?",
-      "L'aria condizionata \u00e8 rotta."
+      "{{it-IT|La colazione è inclusa?||}}",
+      "{{it-IT|Posso avere un'altra chiave?||}}",
+      "{{it-IT|L'aria condizionata è rotta.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2243,11 +2243,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "La colazione \u00e8 inclusa?",
+    "correctAnswer": "{{it-IT|La colazione è inclusa?||}}",
     "incorrectAnswers": [
-      "Posso avere un'altra chiave?",
-      "L'aria condizionata \u00e8 rotta.",
-      "La colazione comincia alle sette."
+      "{{it-IT|Posso avere un'altra chiave?||}}",
+      "{{it-IT|L'aria condizionata è rotta.||}}",
+      "{{it-IT|La colazione comincia alle sette.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2263,11 +2263,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Can I have another key?'?",
-    "correctAnswer": "Posso avere un'altra chiave?",
+    "correctAnswer": "{{it-IT|Posso avere un'altra chiave?||}}",
     "incorrectAnswers": [
-      "L'aria condizionata \u00e8 rotta.",
-      "La colazione comincia alle sette.",
-      "Ho una prenotazione."
+      "{{it-IT|L'aria condizionata è rotta.||}}",
+      "{{it-IT|La colazione comincia alle sette.||}}",
+      "{{it-IT|Ho una prenotazione.||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2283,11 +2283,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "L'aria condizionata \u00e8 rotta.",
+    "correctAnswer": "{{it-IT|L'aria condizionata è rotta.||}}",
     "incorrectAnswers": [
-      "La colazione comincia alle sette.",
-      "Ho una prenotazione.",
-      "Ha una camera singola?"
+      "{{it-IT|La colazione comincia alle sette.||}}",
+      "{{it-IT|Ho una prenotazione.||}}",
+      "{{it-IT|Ha una camera singola?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2303,11 +2303,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "La colazione comincia alle sette.",
+    "correctAnswer": "{{it-IT|La colazione comincia alle sette.||}}",
     "incorrectAnswers": [
-      "Ho una prenotazione.",
-      "Ha una camera singola?",
-      "Ha una camera doppia?"
+      "{{it-IT|Ho una prenotazione.||}}",
+      "{{it-IT|Ha una camera singola?||}}",
+      "{{it-IT|Ha una camera doppia?||}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I feel sick.'?",
-    "correctAnswer": "Mi sento male.",
+    "correctAnswer": "{{it-IT|Mi sento male.||}}",
     "incorrectAnswers": [
-      "Ho mal di testa.",
-      "Ho la febbre.",
-      "Ho bisogno di un medico."
+      "{{it-IT|Ho mal di testa.||}}",
+      "{{it-IT|Ho la febbre.||}}",
+      "{{it-IT|Ho bisogno di un medico.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2343,11 +2343,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I have a headache.'?",
-    "correctAnswer": "Ho mal di testa.",
+    "correctAnswer": "{{it-IT|Ho mal di testa.||}}",
     "incorrectAnswers": [
-      "Ho la febbre.",
-      "Ho bisogno di un medico.",
-      "Dov'\u00e8 la farmacia?"
+      "{{it-IT|Ho la febbre.||}}",
+      "{{it-IT|Ho bisogno di un medico.||}}",
+      "{{it-IT|Dov'è la farmacia?||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2363,11 +2363,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I have a fever.'.",
-    "correctAnswer": "Ho la febbre.",
+    "correctAnswer": "{{it-IT|Ho la febbre.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un medico.",
-      "Dov'\u00e8 la farmacia?",
-      "Sono allergico/allergica alla penicillina."
+      "{{it-IT|Ho bisogno di un medico.||}}",
+      "{{it-IT|Dov'è la farmacia?||}}",
+      "{{it-IT|Sono allergico/allergica alla penicillina.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2383,11 +2383,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I need a doctor.'?",
-    "correctAnswer": "Ho bisogno di un medico.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un medico.||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 la farmacia?",
-      "Sono allergico/allergica alla penicillina.",
-      "Mi fa male lo stomaco."
+      "{{it-IT|Dov'è la farmacia?||}}",
+      "{{it-IT|Sono allergico/allergica alla penicillina.||}}",
+      "{{it-IT|Mi fa male lo stomaco.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2403,11 +2403,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "Dov'\u00e8 la farmacia?",
+    "correctAnswer": "{{it-IT|Dov'è la farmacia?||}}",
     "incorrectAnswers": [
-      "Sono allergico/allergica alla penicillina.",
-      "Mi fa male lo stomaco.",
-      "Ho bisogno di medicine."
+      "{{it-IT|Sono allergico/allergica alla penicillina.||}}",
+      "{{it-IT|Mi fa male lo stomaco.||}}",
+      "{{it-IT|Ho bisogno di medicine.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2423,11 +2423,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "Sono allergico/allergica alla penicillina.",
+    "correctAnswer": "{{it-IT|Sono allergico/allergica alla penicillina.||}}",
     "incorrectAnswers": [
-      "Mi fa male lo stomaco.",
-      "Ho bisogno di medicine.",
-      "Mi sento stordito/stordita."
+      "{{it-IT|Mi fa male lo stomaco.||}}",
+      "{{it-IT|Ho bisogno di medicine.||}}",
+      "{{it-IT|Mi sento stordito/stordita.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2443,11 +2443,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'My stomach hurts.'.",
-    "correctAnswer": "Mi fa male lo stomaco.",
+    "correctAnswer": "{{it-IT|Mi fa male lo stomaco.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di medicine.",
-      "Mi sento stordito/stordita.",
-      "Ho il raffreddore."
+      "{{it-IT|Ho bisogno di medicine.||}}",
+      "{{it-IT|Mi sento stordito/stordita.||}}",
+      "{{it-IT|Ho il raffreddore.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2463,11 +2463,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I need medicine.'?",
-    "correctAnswer": "Ho bisogno di medicine.",
+    "correctAnswer": "{{it-IT|Ho bisogno di medicine.||}}",
     "incorrectAnswers": [
-      "Mi sento stordito/stordita.",
-      "Ho il raffreddore.",
-      "Ho bisogno di un ospedale."
+      "{{it-IT|Mi sento stordito/stordita.||}}",
+      "{{it-IT|Ho il raffreddore.||}}",
+      "{{it-IT|Ho bisogno di un ospedale.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2483,11 +2483,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "Mi sento stordito/stordita.",
+    "correctAnswer": "{{it-IT|Mi sento stordito/stordita.||}}",
     "incorrectAnswers": [
-      "Ho il raffreddore.",
-      "Ho bisogno di un ospedale.",
-      "Mi sento meglio adesso."
+      "{{it-IT|Ho il raffreddore.||}}",
+      "{{it-IT|Ho bisogno di un ospedale.||}}",
+      "{{it-IT|Mi sento meglio adesso.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2503,11 +2503,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I have a cold.'?",
-    "correctAnswer": "Ho il raffreddore.",
+    "correctAnswer": "{{it-IT|Ho il raffreddore.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un ospedale.",
-      "Mi sento meglio adesso.",
-      "Mi sento male."
+      "{{it-IT|Ho bisogno di un ospedale.||}}",
+      "{{it-IT|Mi sento meglio adesso.||}}",
+      "{{it-IT|Mi sento male.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2523,11 +2523,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I need a hospital.'.",
-    "correctAnswer": "Ho bisogno di un ospedale.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un ospedale.||}}",
     "incorrectAnswers": [
-      "Mi sento meglio adesso.",
-      "Mi sento male.",
-      "Ho mal di testa."
+      "{{it-IT|Mi sento meglio adesso.||}}",
+      "{{it-IT|Mi sento male.||}}",
+      "{{it-IT|Ho mal di testa.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I feel better now.'?",
-    "correctAnswer": "Mi sento meglio adesso.",
+    "correctAnswer": "{{it-IT|Mi sento meglio adesso.||}}",
     "incorrectAnswers": [
-      "Mi sento male.",
-      "Ho mal di testa.",
-      "Ho la febbre."
+      "{{it-IT|Mi sento male.||}}",
+      "{{it-IT|Ho mal di testa.||}}",
+      "{{it-IT|Ho la febbre.||}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2563,11 +2563,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'What time is it?'?",
-    "correctAnswer": "Che ora \u00e8?",
+    "correctAnswer": "{{it-IT|Che ora è?||}}",
     "incorrectAnswers": [
-      "Oggi \u00e8 luned\u00ec.",
-      "Domani viagger\u00f2.",
-      "Ieri ho lavorato."
+      "{{it-IT|Oggi è lunedì.||}}",
+      "{{it-IT|Domani viaggerò.||}}",
+      "{{it-IT|Ieri ho lavorato.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2583,11 +2583,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Today is Monday.'?",
-    "correctAnswer": "Oggi \u00e8 luned\u00ec.",
+    "correctAnswer": "{{it-IT|Oggi è lunedì.||}}",
     "incorrectAnswers": [
-      "Domani viagger\u00f2.",
-      "Ieri ho lavorato.",
-      "Apre alle nove."
+      "{{it-IT|Domani viaggerò.||}}",
+      "{{it-IT|Ieri ho lavorato.||}}",
+      "{{it-IT|Apre alle nove.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2603,11 +2603,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "Domani viagger\u00f2.",
+    "correctAnswer": "{{it-IT|Domani viaggerò.||}}",
     "incorrectAnswers": [
-      "Ieri ho lavorato.",
-      "Apre alle nove.",
-      "Chiude alle sei."
+      "{{it-IT|Ieri ho lavorato.||}}",
+      "{{it-IT|Apre alle nove.||}}",
+      "{{it-IT|Chiude alle sei.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2623,11 +2623,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "Ieri ho lavorato.",
+    "correctAnswer": "{{it-IT|Ieri ho lavorato.||}}",
     "incorrectAnswers": [
-      "Apre alle nove.",
-      "Chiude alle sei.",
-      "Arrivo pi\u00f9 tardi."
+      "{{it-IT|Apre alle nove.||}}",
+      "{{it-IT|Chiude alle sei.||}}",
+      "{{it-IT|Arrivo più tardi.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2643,11 +2643,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'It opens at nine.'?",
-    "correctAnswer": "Apre alle nove.",
+    "correctAnswer": "{{it-IT|Apre alle nove.||}}",
     "incorrectAnswers": [
-      "Chiude alle sei.",
-      "Arrivo pi\u00f9 tardi.",
-      "Torner\u00f2 presto."
+      "{{it-IT|Chiude alle sei.||}}",
+      "{{it-IT|Arrivo più tardi.||}}",
+      "{{it-IT|Tornerò presto.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2663,11 +2663,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'It closes at six.'?",
-    "correctAnswer": "Chiude alle sei.",
+    "correctAnswer": "{{it-IT|Chiude alle sei.||}}",
     "incorrectAnswers": [
-      "Arrivo pi\u00f9 tardi.",
-      "Torner\u00f2 presto.",
-      "Ho bisogno di cinque minuti."
+      "{{it-IT|Arrivo più tardi.||}}",
+      "{{it-IT|Tornerò presto.||}}",
+      "{{it-IT|Ho bisogno di cinque minuti.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2683,11 +2683,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I arrive later.'.",
-    "correctAnswer": "Arrivo pi\u00f9 tardi.",
+    "correctAnswer": "{{it-IT|Arrivo più tardi.||}}",
     "incorrectAnswers": [
-      "Torner\u00f2 presto.",
-      "Ho bisogno di cinque minuti.",
-      "\u00c8 troppo tardi."
+      "{{it-IT|Tornerò presto.||}}",
+      "{{it-IT|Ho bisogno di cinque minuti.||}}",
+      "{{it-IT|È troppo tardi.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2703,11 +2703,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I will come back soon.'?",
-    "correctAnswer": "Torner\u00f2 presto.",
+    "correctAnswer": "{{it-IT|Tornerò presto.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di cinque minuti.",
-      "\u00c8 troppo tardi.",
-      "Questa settimana \u00e8 impegnata."
+      "{{it-IT|Ho bisogno di cinque minuti.||}}",
+      "{{it-IT|È troppo tardi.||}}",
+      "{{it-IT|Questa settimana è impegnata.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2723,11 +2723,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I need five minutes.'?",
-    "correctAnswer": "Ho bisogno di cinque minuti.",
+    "correctAnswer": "{{it-IT|Ho bisogno di cinque minuti.||}}",
     "incorrectAnswers": [
-      "\u00c8 troppo tardi.",
-      "Questa settimana \u00e8 impegnata.",
-      "Il mese prossimo sono libero/libera."
+      "{{it-IT|È troppo tardi.||}}",
+      "{{it-IT|Questa settimana è impegnata.||}}",
+      "{{it-IT|Il mese prossimo sono libero/libera.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2743,11 +2743,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'It is too late.'?",
-    "correctAnswer": "\u00c8 troppo tardi.",
+    "correctAnswer": "{{it-IT|È troppo tardi.||}}",
     "incorrectAnswers": [
-      "Questa settimana \u00e8 impegnata.",
-      "Il mese prossimo sono libero/libera.",
-      "Che ora \u00e8?"
+      "{{it-IT|Questa settimana è impegnata.||}}",
+      "{{it-IT|Il mese prossimo sono libero/libera.||}}",
+      "{{it-IT|Che ora è?||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'This week is busy.'.",
-    "correctAnswer": "Questa settimana \u00e8 impegnata.",
+    "correctAnswer": "{{it-IT|Questa settimana è impegnata.||}}",
     "incorrectAnswers": [
-      "Il mese prossimo sono libero/libera.",
-      "Che ora \u00e8?",
-      "Oggi \u00e8 luned\u00ec."
+      "{{it-IT|Il mese prossimo sono libero/libera.||}}",
+      "{{it-IT|Che ora è?||}}",
+      "{{it-IT|Oggi è lunedì.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2783,11 +2783,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Next month I am free.'?",
-    "correctAnswer": "Il mese prossimo sono libero/libera.",
+    "correctAnswer": "{{it-IT|Il mese prossimo sono libero/libera.||}}",
     "incorrectAnswers": [
-      "Che ora \u00e8?",
-      "Oggi \u00e8 luned\u00ec.",
-      "Domani viagger\u00f2."
+      "{{it-IT|Che ora è?||}}",
+      "{{it-IT|Oggi è lunedì.||}}",
+      "{{it-IT|Domani viaggerò.||}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2803,11 +2803,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'What is the weather like?'?",
-    "correctAnswer": "Che tempo fa?",
+    "correctAnswer": "{{it-IT|Che tempo fa?||}}",
     "incorrectAnswers": [
-      "Fa caldo.",
-      "Fa freddo.",
-      "Sta piovendo."
+      "{{it-IT|Fa caldo.||}}",
+      "{{it-IT|Fa freddo.||}}",
+      "{{it-IT|Sta piovendo.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2823,11 +2823,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'It is hot.'?",
-    "correctAnswer": "Fa caldo.",
+    "correctAnswer": "{{it-IT|Fa caldo.||}}",
     "incorrectAnswers": [
-      "Fa freddo.",
-      "Sta piovendo.",
-      "C'\u00e8 vento."
+      "{{it-IT|Fa freddo.||}}",
+      "{{it-IT|Sta piovendo.||}}",
+      "{{it-IT|C'è vento.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2843,11 +2843,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'It is cold.'.",
-    "correctAnswer": "Fa freddo.",
+    "correctAnswer": "{{it-IT|Fa freddo.||}}",
     "incorrectAnswers": [
-      "Sta piovendo.",
-      "C'\u00e8 vento.",
-      "C'\u00e8 il sole."
+      "{{it-IT|Sta piovendo.||}}",
+      "{{it-IT|C'è vento.||}}",
+      "{{it-IT|C'è il sole.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2863,11 +2863,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'It is raining.'?",
-    "correctAnswer": "Sta piovendo.",
+    "correctAnswer": "{{it-IT|Sta piovendo.||}}",
     "incorrectAnswers": [
-      "C'\u00e8 vento.",
-      "C'\u00e8 il sole.",
-      "Sta nevicando."
+      "{{it-IT|C'è vento.||}}",
+      "{{it-IT|C'è il sole.||}}",
+      "{{it-IT|Sta nevicando.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2883,11 +2883,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'It is windy.'?",
-    "correctAnswer": "C'\u00e8 vento.",
+    "correctAnswer": "{{it-IT|C'è vento.||}}",
     "incorrectAnswers": [
-      "C'\u00e8 il sole.",
-      "Sta nevicando.",
-      "Che bella giornata!"
+      "{{it-IT|C'è il sole.||}}",
+      "{{it-IT|Sta nevicando.||}}",
+      "{{it-IT|Che bella giornata!||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2903,11 +2903,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'It is sunny.'?",
-    "correctAnswer": "C'\u00e8 il sole.",
+    "correctAnswer": "{{it-IT|C'è il sole.||}}",
     "incorrectAnswers": [
-      "Sta nevicando.",
-      "Che bella giornata!",
-      "\u00c8 nuvoloso."
+      "{{it-IT|Sta nevicando.||}}",
+      "{{it-IT|Che bella giornata!||}}",
+      "{{it-IT|È nuvoloso.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2923,11 +2923,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'It is snowing.'.",
-    "correctAnswer": "Sta nevicando.",
+    "correctAnswer": "{{it-IT|Sta nevicando.||}}",
     "incorrectAnswers": [
-      "Che bella giornata!",
-      "\u00c8 nuvoloso.",
-      "Ho bisogno di un ombrello."
+      "{{it-IT|Che bella giornata!||}}",
+      "{{it-IT|È nuvoloso.||}}",
+      "{{it-IT|Ho bisogno di un ombrello.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2943,11 +2943,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'What a beautiful day!'?",
-    "correctAnswer": "Che bella giornata!",
+    "correctAnswer": "{{it-IT|Che bella giornata!||}}",
     "incorrectAnswers": [
-      "\u00c8 nuvoloso.",
-      "Ho bisogno di un ombrello.",
-      "Oggi fa bel tempo."
+      "{{it-IT|È nuvoloso.||}}",
+      "{{it-IT|Ho bisogno di un ombrello.||}}",
+      "{{it-IT|Oggi fa bel tempo.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2963,11 +2963,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'It is cloudy.'?",
-    "correctAnswer": "\u00c8 nuvoloso.",
+    "correctAnswer": "{{it-IT|È nuvoloso.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un ombrello.",
-      "Oggi fa bel tempo.",
-      "Il cielo \u00e8 sereno."
+      "{{it-IT|Ho bisogno di un ombrello.||}}",
+      "{{it-IT|Oggi fa bel tempo.||}}",
+      "{{it-IT|Il cielo è sereno.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I need an umbrella.'?",
-    "correctAnswer": "Ho bisogno di un ombrello.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un ombrello.||}}",
     "incorrectAnswers": [
-      "Oggi fa bel tempo.",
-      "Il cielo \u00e8 sereno.",
-      "Che tempo fa?"
+      "{{it-IT|Oggi fa bel tempo.||}}",
+      "{{it-IT|Il cielo è sereno.||}}",
+      "{{it-IT|Che tempo fa?||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3003,11 +3003,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'The weather is nice today.'.",
-    "correctAnswer": "Oggi fa bel tempo.",
+    "correctAnswer": "{{it-IT|Oggi fa bel tempo.||}}",
     "incorrectAnswers": [
-      "Il cielo \u00e8 sereno.",
-      "Che tempo fa?",
-      "Fa caldo."
+      "{{it-IT|Il cielo è sereno.||}}",
+      "{{it-IT|Che tempo fa?||}}",
+      "{{it-IT|Fa caldo.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3023,11 +3023,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'The sky is clear.'?",
-    "correctAnswer": "Il cielo \u00e8 sereno.",
+    "correctAnswer": "{{it-IT|Il cielo è sereno.||}}",
     "incorrectAnswers": [
-      "Che tempo fa?",
-      "Fa caldo.",
-      "Fa freddo."
+      "{{it-IT|Che tempo fa?||}}",
+      "{{it-IT|Fa caldo.||}}",
+      "{{it-IT|Fa freddo.||}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3043,11 +3043,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Help!'?",
-    "correctAnswer": "Aiuto!",
+    "correctAnswer": "{{it-IT|Aiuto!||}}",
     "incorrectAnswers": [
-      "Chiami la polizia!",
-      "Ho perso il mio passaporto.",
-      "Mi hanno rubato il portafoglio."
+      "{{it-IT|Chiami la polizia!||}}",
+      "{{it-IT|Ho perso il mio passaporto.||}}",
+      "{{it-IT|Mi hanno rubato il portafoglio.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3063,11 +3063,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Call the police!'?",
-    "correctAnswer": "Chiami la polizia!",
+    "correctAnswer": "{{it-IT|Chiami la polizia!||}}",
     "incorrectAnswers": [
-      "Ho perso il mio passaporto.",
-      "Mi hanno rubato il portafoglio.",
-      "Ho bisogno di un'ambulanza."
+      "{{it-IT|Ho perso il mio passaporto.||}}",
+      "{{it-IT|Mi hanno rubato il portafoglio.||}}",
+      "{{it-IT|Ho bisogno di un'ambulanza.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3083,11 +3083,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I have lost my passport.'.",
-    "correctAnswer": "Ho perso il mio passaporto.",
+    "correctAnswer": "{{it-IT|Ho perso il mio passaporto.||}}",
     "incorrectAnswers": [
-      "Mi hanno rubato il portafoglio.",
-      "Ho bisogno di un'ambulanza.",
-      "Chiami un medico!"
+      "{{it-IT|Mi hanno rubato il portafoglio.||}}",
+      "{{it-IT|Ho bisogno di un'ambulanza.||}}",
+      "{{it-IT|Chiami un medico!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3103,11 +3103,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "Mi hanno rubato il portafoglio.",
+    "correctAnswer": "{{it-IT|Mi hanno rubato il portafoglio.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di un'ambulanza.",
-      "Chiami un medico!",
-      "C'\u00e8 un incendio."
+      "{{it-IT|Ho bisogno di un'ambulanza.||}}",
+      "{{it-IT|Chiami un medico!||}}",
+      "{{it-IT|C'è un incendio.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3123,11 +3123,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "Ho bisogno di un'ambulanza.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un'ambulanza.||}}",
     "incorrectAnswers": [
-      "Chiami un medico!",
-      "C'\u00e8 un incendio.",
-      "Ho bisogno di aiuto adesso."
+      "{{it-IT|Chiami un medico!||}}",
+      "{{it-IT|C'è un incendio.||}}",
+      "{{it-IT|Ho bisogno di aiuto adesso.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3143,11 +3143,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Call a doctor!'?",
-    "correctAnswer": "Chiami un medico!",
+    "correctAnswer": "{{it-IT|Chiami un medico!||}}",
     "incorrectAnswers": [
-      "C'\u00e8 un incendio.",
-      "Ho bisogno di aiuto adesso.",
-      "Ho perso il telefono."
+      "{{it-IT|C'è un incendio.||}}",
+      "{{it-IT|Ho bisogno di aiuto adesso.||}}",
+      "{{it-IT|Ho perso il telefono.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3163,11 +3163,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'There is a fire.'.",
-    "correctAnswer": "C'\u00e8 un incendio.",
+    "correctAnswer": "{{it-IT|C'è un incendio.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di aiuto adesso.",
-      "Ho perso il telefono.",
-      "Ho perso la borsa."
+      "{{it-IT|Ho bisogno di aiuto adesso.||}}",
+      "{{it-IT|Ho perso il telefono.||}}",
+      "{{it-IT|Ho perso la borsa.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3183,11 +3183,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I need help now.'?",
-    "correctAnswer": "Ho bisogno di aiuto adesso.",
+    "correctAnswer": "{{it-IT|Ho bisogno di aiuto adesso.||}}",
     "incorrectAnswers": [
-      "Ho perso il telefono.",
-      "Ho perso la borsa.",
-      "Il mio amico \u00e8 ferito."
+      "{{it-IT|Ho perso il telefono.||}}",
+      "{{it-IT|Ho perso la borsa.||}}",
+      "{{it-IT|Il mio amico è ferito.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I lost my phone.'?",
-    "correctAnswer": "Ho perso il telefono.",
+    "correctAnswer": "{{it-IT|Ho perso il telefono.||}}",
     "incorrectAnswers": [
-      "Ho perso la borsa.",
-      "Il mio amico \u00e8 ferito.",
-      "Questa \u00e8 un'emergenza."
+      "{{it-IT|Ho perso la borsa.||}}",
+      "{{it-IT|Il mio amico è ferito.||}}",
+      "{{it-IT|Questa è un'emergenza.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3223,11 +3223,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I lost my bag.'?",
-    "correctAnswer": "Ho perso la borsa.",
+    "correctAnswer": "{{it-IT|Ho perso la borsa.||}}",
     "incorrectAnswers": [
-      "Il mio amico \u00e8 ferito.",
-      "Questa \u00e8 un'emergenza.",
-      "Aiuto!"
+      "{{it-IT|Il mio amico è ferito.||}}",
+      "{{it-IT|Questa è un'emergenza.||}}",
+      "{{it-IT|Aiuto!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3243,11 +3243,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'My friend is hurt.'.",
-    "correctAnswer": "Il mio amico \u00e8 ferito.",
+    "correctAnswer": "{{it-IT|Il mio amico è ferito.||}}",
     "incorrectAnswers": [
-      "Questa \u00e8 un'emergenza.",
-      "Aiuto!",
-      "Chiami la polizia!"
+      "{{it-IT|Questa è un'emergenza.||}}",
+      "{{it-IT|Aiuto!||}}",
+      "{{it-IT|Chiami la polizia!||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3263,11 +3263,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'This is an emergency.'?",
-    "correctAnswer": "Questa \u00e8 un'emergenza.",
+    "correctAnswer": "{{it-IT|Questa è un'emergenza.||}}",
     "incorrectAnswers": [
-      "Aiuto!",
-      "Chiami la polizia!",
-      "Ho perso il mio passaporto."
+      "{{it-IT|Aiuto!||}}",
+      "{{it-IT|Chiami la polizia!||}}",
+      "{{it-IT|Ho perso il mio passaporto.||}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3283,11 +3283,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Happy birthday!'?",
-    "correctAnswer": "Buon compleanno!",
+    "correctAnswer": "{{it-IT|Buon compleanno!||}}",
     "incorrectAnswers": [
-      "Congratulazioni!",
-      "Buona fortuna!",
-      "Prego."
+      "{{it-IT|Congratulazioni!||}}",
+      "{{it-IT|Buona fortuna!||}}",
+      "{{it-IT|Prego.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3303,11 +3303,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Congratulations!'?",
-    "correctAnswer": "Congratulazioni!",
+    "correctAnswer": "{{it-IT|Congratulazioni!||}}",
     "incorrectAnswers": [
-      "Buona fortuna!",
-      "Prego.",
-      "Di niente."
+      "{{it-IT|Buona fortuna!||}}",
+      "{{it-IT|Prego.||}}",
+      "{{it-IT|Di niente.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3323,11 +3323,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Good luck!'.",
-    "correctAnswer": "Buona fortuna!",
+    "correctAnswer": "{{it-IT|Buona fortuna!||}}",
     "incorrectAnswers": [
-      "Prego.",
-      "Di niente.",
-      "Mi dispiace sentirlo."
+      "{{it-IT|Prego.||}}",
+      "{{it-IT|Di niente.||}}",
+      "{{it-IT|Mi dispiace sentirlo.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3343,11 +3343,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'You're welcome.'?",
-    "correctAnswer": "Prego.",
+    "correctAnswer": "{{it-IT|Prego.||}}",
     "incorrectAnswers": [
-      "Di niente.",
-      "Mi dispiace sentirlo.",
-      "Buon appetito."
+      "{{it-IT|Di niente.||}}",
+      "{{it-IT|Mi dispiace sentirlo.||}}",
+      "{{it-IT|Buon appetito.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3363,11 +3363,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Don't mention it.'?",
-    "correctAnswer": "Di niente.",
+    "correctAnswer": "{{it-IT|Di niente.||}}",
     "incorrectAnswers": [
-      "Mi dispiace sentirlo.",
-      "Buon appetito.",
-      "Buon viaggio."
+      "{{it-IT|Mi dispiace sentirlo.||}}",
+      "{{it-IT|Buon appetito.||}}",
+      "{{it-IT|Buon viaggio.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3383,11 +3383,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "Mi dispiace sentirlo.",
+    "correctAnswer": "{{it-IT|Mi dispiace sentirlo.||}}",
     "incorrectAnswers": [
-      "Buon appetito.",
-      "Buon viaggio.",
-      "Ci vediamo luned\u00ec."
+      "{{it-IT|Buon appetito.||}}",
+      "{{it-IT|Buon viaggio.||}}",
+      "{{it-IT|Ci vediamo lunedì.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3403,11 +3403,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "Buon appetito.",
+    "correctAnswer": "{{it-IT|Buon appetito.||}}",
     "incorrectAnswers": [
-      "Buon viaggio.",
-      "Ci vediamo luned\u00ec.",
-      "Benvenuto nella nostra citt\u00e0."
+      "{{it-IT|Buon viaggio.||}}",
+      "{{it-IT|Ci vediamo lunedì.||}}",
+      "{{it-IT|Benvenuto nella nostra città.||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Have a nice trip.'?",
-    "correctAnswer": "Buon viaggio.",
+    "correctAnswer": "{{it-IT|Buon viaggio.||}}",
     "incorrectAnswers": [
-      "Ci vediamo luned\u00ec.",
-      "Benvenuto nella nostra citt\u00e0.",
-      "Buone feste!"
+      "{{it-IT|Ci vediamo lunedì.||}}",
+      "{{it-IT|Benvenuto nella nostra città.||}}",
+      "{{it-IT|Buone feste!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3443,11 +3443,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'See you on Monday.'?",
-    "correctAnswer": "Ci vediamo luned\u00ec.",
+    "correctAnswer": "{{it-IT|Ci vediamo lunedì.||}}",
     "incorrectAnswers": [
-      "Benvenuto nella nostra citt\u00e0.",
-      "Buone feste!",
-      "Si diverta!"
+      "{{it-IT|Benvenuto nella nostra città.||}}",
+      "{{it-IT|Buone feste!||}}",
+      "{{it-IT|Si diverta!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3463,11 +3463,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Welcome to our city.'?",
-    "correctAnswer": "Benvenuto nella nostra citt\u00e0.",
+    "correctAnswer": "{{it-IT|Benvenuto nella nostra città.||}}",
     "incorrectAnswers": [
-      "Buone feste!",
-      "Si diverta!",
-      "Buon compleanno!"
+      "{{it-IT|Buone feste!||}}",
+      "{{it-IT|Si diverta!||}}",
+      "{{it-IT|Buon compleanno!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3483,11 +3483,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'Happy holidays!'.",
-    "correctAnswer": "Buone feste!",
+    "correctAnswer": "{{it-IT|Buone feste!||}}",
     "incorrectAnswers": [
-      "Si diverta!",
-      "Buon compleanno!",
-      "Congratulazioni!"
+      "{{it-IT|Si diverta!||}}",
+      "{{it-IT|Buon compleanno!||}}",
+      "{{it-IT|Congratulazioni!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3503,11 +3503,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Have fun!'?",
-    "correctAnswer": "Si diverta!",
+    "correctAnswer": "{{it-IT|Si diverta!||}}",
     "incorrectAnswers": [
-      "Buon compleanno!",
-      "Congratulazioni!",
-      "Buona fortuna!"
+      "{{it-IT|Buon compleanno!||}}",
+      "{{it-IT|Congratulazioni!||}}",
+      "{{it-IT|Buona fortuna!||}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3523,11 +3523,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I work in an office.'?",
-    "correctAnswer": "Lavoro in un ufficio.",
+    "correctAnswer": "{{it-IT|Lavoro in un ufficio.||}}",
     "incorrectAnswers": [
-      "Lavoro come insegnante.",
-      "Studio ogni giorno.",
-      "Sto imparando la lingua."
+      "{{it-IT|Lavoro come insegnante.||}}",
+      "{{it-IT|Studio ogni giorno.||}}",
+      "{{it-IT|Sto imparando la lingua.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3543,11 +3543,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'I work as a teacher.'?",
-    "correctAnswer": "Lavoro come insegnante.",
+    "correctAnswer": "{{it-IT|Lavoro come insegnante.||}}",
     "incorrectAnswers": [
-      "Studio ogni giorno.",
-      "Sto imparando la lingua.",
-      "Lo scriva, per favore."
+      "{{it-IT|Studio ogni giorno.||}}",
+      "{{it-IT|Sto imparando la lingua.||}}",
+      "{{it-IT|Lo scriva, per favore.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3563,11 +3563,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I study every day.'.",
-    "correctAnswer": "Studio ogni giorno.",
+    "correctAnswer": "{{it-IT|Studio ogni giorno.||}}",
     "incorrectAnswers": [
-      "Sto imparando la lingua.",
-      "Lo scriva, per favore.",
-      "La lezione comincia adesso."
+      "{{it-IT|Sto imparando la lingua.||}}",
+      "{{it-IT|Lo scriva, per favore.||}}",
+      "{{it-IT|La lezione comincia adesso.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3583,11 +3583,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am learning the language.'?",
-    "correctAnswer": "Sto imparando la lingua.",
+    "correctAnswer": "{{it-IT|Sto imparando la lingua.||}}",
     "incorrectAnswers": [
-      "Lo scriva, per favore.",
-      "La lezione comincia adesso.",
-      "Ho bisogno di una penna."
+      "{{it-IT|Lo scriva, per favore.||}}",
+      "{{it-IT|La lezione comincia adesso.||}}",
+      "{{it-IT|Ho bisogno di una penna.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3603,11 +3603,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Please write it down.'?",
-    "correctAnswer": "Lo scriva, per favore.",
+    "correctAnswer": "{{it-IT|Lo scriva, per favore.||}}",
     "incorrectAnswers": [
-      "La lezione comincia adesso.",
-      "Ho bisogno di una penna.",
-      "Ho dei compiti."
+      "{{it-IT|La lezione comincia adesso.||}}",
+      "{{it-IT|Ho bisogno di una penna.||}}",
+      "{{it-IT|Ho dei compiti.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3623,11 +3623,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'The class starts now.'?",
-    "correctAnswer": "La lezione comincia adesso.",
+    "correctAnswer": "{{it-IT|La lezione comincia adesso.||}}",
     "incorrectAnswers": [
-      "Ho bisogno di una penna.",
-      "Ho dei compiti.",
-      "Ho un esame domani."
+      "{{it-IT|Ho bisogno di una penna.||}}",
+      "{{it-IT|Ho dei compiti.||}}",
+      "{{it-IT|Ho un esame domani.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I need a pen.'.",
-    "correctAnswer": "Ho bisogno di una penna.",
+    "correctAnswer": "{{it-IT|Ho bisogno di una penna.||}}",
     "incorrectAnswers": [
-      "Ho dei compiti.",
-      "Ho un esame domani.",
-      "Dov'\u00e8 l'aula?"
+      "{{it-IT|Ho dei compiti.||}}",
+      "{{it-IT|Ho un esame domani.||}}",
+      "{{it-IT|Dov'è l'aula?||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3663,11 +3663,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I have homework.'?",
-    "correctAnswer": "Ho dei compiti.",
+    "correctAnswer": "{{it-IT|Ho dei compiti.||}}",
     "incorrectAnswers": [
-      "Ho un esame domani.",
-      "Dov'\u00e8 l'aula?",
-      "Il libro \u00e8 sul tavolo."
+      "{{it-IT|Ho un esame domani.||}}",
+      "{{it-IT|Dov'è l'aula?||}}",
+      "{{it-IT|Il libro è sul tavolo.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3683,11 +3683,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "Ho un esame domani.",
+    "correctAnswer": "{{it-IT|Ho un esame domani.||}}",
     "incorrectAnswers": [
-      "Dov'\u00e8 l'aula?",
-      "Il libro \u00e8 sul tavolo.",
-      "Il mio insegnante \u00e8 molto gentile."
+      "{{it-IT|Dov'è l'aula?||}}",
+      "{{it-IT|Il libro è sul tavolo.||}}",
+      "{{it-IT|Il mio insegnante è molto gentile.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3703,11 +3703,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Where is the classroom?'?",
-    "correctAnswer": "Dov'\u00e8 l'aula?",
+    "correctAnswer": "{{it-IT|Dov'è l'aula?||}}",
     "incorrectAnswers": [
-      "Il libro \u00e8 sul tavolo.",
-      "Il mio insegnante \u00e8 molto gentile.",
-      "Lavoro in un ufficio."
+      "{{it-IT|Il libro è sul tavolo.||}}",
+      "{{it-IT|Il mio insegnante è molto gentile.||}}",
+      "{{it-IT|Lavoro in un ufficio.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3723,11 +3723,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'The book is on the table.'.",
-    "correctAnswer": "Il libro \u00e8 sul tavolo.",
+    "correctAnswer": "{{it-IT|Il libro è sul tavolo.||}}",
     "incorrectAnswers": [
-      "Il mio insegnante \u00e8 molto gentile.",
-      "Lavoro in un ufficio.",
-      "Lavoro come insegnante."
+      "{{it-IT|Il mio insegnante è molto gentile.||}}",
+      "{{it-IT|Lavoro in un ufficio.||}}",
+      "{{it-IT|Lavoro come insegnante.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3743,11 +3743,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "Il mio insegnante \u00e8 molto gentile.",
+    "correctAnswer": "{{it-IT|Il mio insegnante è molto gentile.||}}",
     "incorrectAnswers": [
-      "Lavoro in un ufficio.",
-      "Lavoro come insegnante.",
-      "Studio ogni giorno."
+      "{{it-IT|Lavoro in un ufficio.||}}",
+      "{{it-IT|Lavoro come insegnante.||}}",
+      "{{it-IT|Studio ogni giorno.||}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3763,11 +3763,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "Parlo un po' la lingua.",
+    "correctAnswer": "{{it-IT|Parlo un po' la lingua.||}}",
     "incorrectAnswers": [
-      "Lo dica di nuovo, per favore.",
-      "Che cosa significa questa parola?",
-      "Non conosco questa parola."
+      "{{it-IT|Lo dica di nuovo, per favore.||}}",
+      "{{it-IT|Che cosa significa questa parola?||}}",
+      "{{it-IT|Non conosco questa parola.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3783,11 +3783,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Please say that again.'?",
-    "correctAnswer": "Lo dica di nuovo, per favore.",
+    "correctAnswer": "{{it-IT|Lo dica di nuovo, per favore.||}}",
     "incorrectAnswers": [
-      "Che cosa significa questa parola?",
-      "Non conosco questa parola.",
-      "\u00c8 corretto?"
+      "{{it-IT|Che cosa significa questa parola?||}}",
+      "{{it-IT|Non conosco questa parola.||}}",
+      "{{it-IT|È corretto?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3803,11 +3803,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'What does this word mean?'.",
-    "correctAnswer": "Che cosa significa questa parola?",
+    "correctAnswer": "{{it-IT|Che cosa significa questa parola?||}}",
     "incorrectAnswers": [
-      "Non conosco questa parola.",
-      "\u00c8 corretto?",
-      "Pu\u00f2 spiegarlo?"
+      "{{it-IT|Non conosco questa parola.||}}",
+      "{{it-IT|È corretto?||}}",
+      "{{it-IT|Può spiegarlo?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3823,11 +3823,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I do not know this word.'?",
-    "correctAnswer": "Non conosco questa parola.",
+    "correctAnswer": "{{it-IT|Non conosco questa parola.||}}",
     "incorrectAnswers": [
-      "\u00c8 corretto?",
-      "Pu\u00f2 spiegarlo?",
-      "Adesso capisco."
+      "{{it-IT|È corretto?||}}",
+      "{{it-IT|Può spiegarlo?||}}",
+      "{{it-IT|Adesso capisco.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3843,11 +3843,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'Is this correct?'?",
-    "correctAnswer": "\u00c8 corretto?",
+    "correctAnswer": "{{it-IT|È corretto?||}}",
     "incorrectAnswers": [
-      "Pu\u00f2 spiegarlo?",
-      "Adesso capisco.",
-      "Usi parole semplici, per favore."
+      "{{it-IT|Può spiegarlo?||}}",
+      "{{it-IT|Adesso capisco.||}}",
+      "{{it-IT|Usi parole semplici, per favore.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Can you explain it?'?",
-    "correctAnswer": "Pu\u00f2 spiegarlo?",
+    "correctAnswer": "{{it-IT|Può spiegarlo?||}}",
     "incorrectAnswers": [
-      "Adesso capisco.",
-      "Usi parole semplici, per favore.",
-      "Mi esercito ogni giorno."
+      "{{it-IT|Adesso capisco.||}}",
+      "{{it-IT|Usi parole semplici, per favore.||}}",
+      "{{it-IT|Mi esercito ogni giorno.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3883,11 +3883,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'I understand now.'.",
-    "correctAnswer": "Adesso capisco.",
+    "correctAnswer": "{{it-IT|Adesso capisco.||}}",
     "incorrectAnswers": [
-      "Usi parole semplici, per favore.",
-      "Mi esercito ogni giorno.",
-      "Legga questa frase, per favore."
+      "{{it-IT|Usi parole semplici, per favore.||}}",
+      "{{it-IT|Mi esercito ogni giorno.||}}",
+      "{{it-IT|Legga questa frase, per favore.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3903,11 +3903,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'Please use simple words.'?",
-    "correctAnswer": "Usi parole semplici, per favore.",
+    "correctAnswer": "{{it-IT|Usi parole semplici, per favore.||}}",
     "incorrectAnswers": [
-      "Mi esercito ogni giorno.",
-      "Legga questa frase, per favore.",
-      "Come si scrive quella parola?"
+      "{{it-IT|Mi esercito ogni giorno.||}}",
+      "{{it-IT|Legga questa frase, per favore.||}}",
+      "{{it-IT|Come si scrive quella parola?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3923,11 +3923,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "In beginner Italian, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "Mi esercito ogni giorno.",
+    "correctAnswer": "{{it-IT|Mi esercito ogni giorno.||}}",
     "incorrectAnswers": [
-      "Legga questa frase, per favore.",
-      "Come si scrive quella parola?",
-      "Sto imparando lentamente."
+      "{{it-IT|Legga questa frase, per favore.||}}",
+      "{{it-IT|Come si scrive quella parola?||}}",
+      "{{it-IT|Sto imparando lentamente.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3943,11 +3943,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Which Italian phrase means 'Please read this sentence.'?",
-    "correctAnswer": "Legga questa frase, per favore.",
+    "correctAnswer": "{{it-IT|Legga questa frase, per favore.||}}",
     "incorrectAnswers": [
-      "Come si scrive quella parola?",
-      "Sto imparando lentamente.",
-      "Parlo un po' la lingua."
+      "{{it-IT|Come si scrive quella parola?||}}",
+      "{{it-IT|Sto imparando lentamente.||}}",
+      "{{it-IT|Parlo un po' la lingua.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3963,11 +3963,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Italian phrase for 'How do you write that word?'.",
-    "correctAnswer": "Come si scrive quella parola?",
+    "correctAnswer": "{{it-IT|Come si scrive quella parola?||}}",
     "incorrectAnswers": [
-      "Sto imparando lentamente.",
-      "Parlo un po' la lingua.",
-      "Lo dica di nuovo, per favore."
+      "{{it-IT|Sto imparando lentamente.||}}",
+      "{{it-IT|Parlo un po' la lingua.||}}",
+      "{{it-IT|Lo dica di nuovo, per favore.||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3983,11 +3983,11 @@
     "navigationKeyword1": "italian",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Italian sentence for 'I am learning slowly.'?",
-    "correctAnswer": "Sto imparando lentamente.",
+    "correctAnswer": "{{it-IT|Sto imparando lentamente.||}}",
     "incorrectAnswers": [
-      "Parlo un po' la lingua.",
-      "Lo dica di nuovo, per favore.",
-      "Che cosa significa questa parola?"
+      "{{it-IT|Parlo un po' la lingua.||}}",
+      "{{it-IT|Lo dica di nuovo, per favore.||}}",
+      "{{it-IT|Che cosa significa questa parola?||}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [

@@ -61,12 +61,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article matches a singular masculine noun like 'Mann' in the nominative case?",
-    "correctAnswer": "der",
+    "question": "Which article matches a singular masculine noun like '{{de-DE|Mann||}}' in the nominative case?",
+    "correctAnswer": "{{de-DE|der||}}",
     "incorrectAnswers": [
-      "die",
-      "das",
-      "den"
+      "{{de-DE|die||}}",
+      "{{de-DE|das||}}",
+      "{{de-DE|den||}}"
     ],
     "explanation": "Masculine singular nominative often uses 'der', as in 'der Mann'.",
     "keywords": [
@@ -80,12 +80,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article matches a singular neuter noun like 'Kind' in the nominative case?",
-    "correctAnswer": "das",
+    "question": "Which article matches a singular neuter noun like '{{de-DE|Kind||}}' in the nominative case?",
+    "correctAnswer": "{{de-DE|das||}}",
     "incorrectAnswers": [
-      "der",
-      "die",
-      "den"
+      "{{de-DE|der||}}",
+      "{{de-DE|die||}}",
+      "{{de-DE|den||}}"
     ],
     "explanation": "Neuter singular nominative often uses 'das', as in 'das Kind'.",
     "keywords": [
@@ -99,12 +99,12 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "What is the usual first-person singular present form of 'sein' (to be)?",
-    "correctAnswer": "ich bin",
+    "question": "What is the usual first-person singular present form of '{{de-DE|sein||}}' (to be)?",
+    "correctAnswer": "{{de-DE|ich bin||}}",
     "incorrectAnswers": [
-      "ich bist",
-      "ich sind",
-      "ich war"
+      "{{de-DE|ich bist||}}",
+      "{{de-DE|ich sind||}}",
+      "{{de-DE|ich war||}}"
     ],
     "explanation": "'Ich bin' is the common present form meaning 'I am'.",
     "keywords": [
