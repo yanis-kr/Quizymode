@@ -118,7 +118,10 @@ function escapeHtml(value) {
 }
 
 function renderInlineMarkup(value) {
-  return escapeHtml(value).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  return escapeHtml(value)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+    .replace(/(^|[\s(])((https?:\/\/)[^\s<)"]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
 }
 
 function toAnchor(value) {
@@ -157,20 +160,21 @@ function buildManifest() {
 }
 
 function buildHeaderMeta(options) {
+  const url = escapeHtml(options.baseUrl);
   const meta = [
-    `Source site: ${options.baseUrl}`,
-    `Generated: ${new Date(options.generatedAt).toLocaleString("en-US", {
+    `Source site: <a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`,
+    `Generated: ${escapeHtml(new Date(options.generatedAt).toLocaleString("en-US", {
       year: "numeric",
       month: "short",
       day: "numeric",
       hour: "numeric",
       minute: "2-digit",
       timeZoneName: "short",
-    })}`,
+    }))}`,
   ];
 
   if (options.deployedBuildVersion) {
-    meta.push(`Live build: ${options.deployedBuildVersion}`);
+    meta.push(`Live build: ${escapeHtml(options.deployedBuildVersion)}`);
   }
 
   return meta;
@@ -178,7 +182,7 @@ function buildHeaderMeta(options) {
 
 function buildIndexHtml(manifest, options) {
   const headerMeta = buildHeaderMeta(options)
-    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .map((item) => `<li>${item}</li>`)
     .join("\n");
   const toc = manifest
     .map(
@@ -324,6 +328,19 @@ body {
 
 a {
   color: inherit;
+}
+
+.guide-step__description a,
+.guide-meta a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-all;
+}
+
+.guide-step__description a:hover,
+.guide-meta a:hover {
+  opacity: 0.75;
 }
 
 .page-shell {
@@ -618,7 +635,9 @@ const siteJs = `(() => {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;")
-      .replace(/\\*\\*(.+?)\\*\\*/g, "<strong>$1</strong>");
+      .replace(/\\*\\*(.+?)\\*\\*/g, "<strong>$1</strong>")
+      .replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^)]+)\\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      .replace(/(^|[\\s(])((https?:\\/\\/)[^\\s<)"]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>');
   }
 
   function getPreferredMode() {
