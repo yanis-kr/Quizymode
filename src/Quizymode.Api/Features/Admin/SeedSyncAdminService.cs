@@ -495,7 +495,8 @@ internal sealed class SeedSyncAdminService(
             .ToListAsync(cancellationToken);
 
         Dictionary<string, Keyword> map = existing
-            .ToDictionary(keyword => keyword.Name.ToLower(), keyword => keyword, StringComparer.OrdinalIgnoreCase);
+            .GroupBy(keyword => keyword.Name.ToLower(), StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 
         foreach (string requiredName in requiredNames.OrderBy(name => name, StringComparer.OrdinalIgnoreCase))
         {

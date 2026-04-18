@@ -61,13 +61,11 @@ internal sealed class LanguagesTaxonomyNormalizationService(
             return;
         }
 
-        Dictionary<string, Keyword> publicKeywordMap = await db.Keywords
+        Dictionary<string, Keyword> publicKeywordMap = (await db.Keywords
             .Where(keyword => !keyword.IsPrivate)
-            .ToDictionaryAsync(
-                keyword => keyword.Name.ToLower(),
-                keyword => keyword,
-                StringComparer.OrdinalIgnoreCase,
-                cancellationToken);
+            .ToListAsync(cancellationToken))
+            .GroupBy(keyword => keyword.Name.ToLower(), StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(group => group.Key, group => group.First(), StringComparer.OrdinalIgnoreCase);
 
         List<Item> languageItems = await db.Items
             .Where(item => item.CategoryId == languagesCategory.Id)
