@@ -5,13 +5,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I would like one coffee, please' in Japanese?",
-    "correctAnswer": "\u30b3\u30fc\u30d2\u30fc\u3092\u3072\u3068\u3064\u304f\u3060\u3055\u3044\u3002(K\u014dh\u012b o hitotsu kudasai.)",
+    "correctAnswer": "{{ja-JP|コーヒーをひとつください。|Kōhī o hitotsu kudasai|}}",
     "incorrectAnswers": [
-      "\u30b3\u30fc\u30d2\u30fc\u304c\u307b\u3057\u3044\u3002(K\u014dh\u012b ga hoshii.)",
-      "\u30b3\u30fc\u30d2\u30fc\u3092\u306e\u3080\u3002(K\u014dh\u012b o nomu.)",
-      "\u30b3\u30fc\u30d2\u30fc\u304f\u3060\u3055\u3044\u3001\u306f\u3084\u304f\u3002(K\u014dh\u012b kudasai, hayaku.)"
+      "{{ja-JP|コーヒーがほしい。|Kōhī ga hoshii|}}",
+      "{{ja-JP|コーヒーをのむ。|Kōhī o nomu|}}",
+      "{{ja-JP|コーヒーください、はやく。|Kōhī kudasai, hayaku|}}"
     ],
-    "explanation": "'[Item] o hitotsu kudasai' \u2014 'Please give me one [item]' \u2014 is the standard caf\u00e9 order pattern.",
+    "explanation": "'[Item] o hitotsu kudasai' — 'Please give me one [item]' — is the standard café order pattern.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -25,11 +25,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Japanese?",
-    "correctAnswer": "\u30c8\u30a4\u30ec\u306f\u3069\u3053\u3067\u3059\u304b\u3002(Toire wa doko desu ka.)",
+    "correctAnswer": "{{ja-JP|トイレはどこですか。|Toire wa doko desu ka|}}",
     "incorrectAnswers": [
-      "\u30c8\u30a4\u30ec\u304c\u3042\u308a\u307e\u3059\u304b\u3002(Toire ga arimasu ka.)",
-      "\u30c8\u30a4\u30ec\u306f\u3044\u3064\u3067\u3059\u304b\u3002(Toire wa itsu desu ka.)",
-      "\u30c8\u30a4\u30ec\u306b\u884c\u304f\u3002(Toire ni iku.)"
+      "{{ja-JP|トイレがありますか。|Toire ga arimasu ka|}}",
+      "{{ja-JP|トイレはいつですか。|Toire wa itsu desu ka|}}",
+      "{{ja-JP|トイレに行く。|Toire ni iku|}}"
     ],
     "explanation": "'Doko desu ka' means 'where is'. Replace 'toire' with any destination.",
     "keywords": [
@@ -45,13 +45,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much is this?' in Japanese?",
-    "correctAnswer": "\u3053\u308c\u306f\u3044\u304f\u3089\u3067\u3059\u304b\u3002(Kore wa ikura desu ka.)",
+    "correctAnswer": "{{ja-JP|これはいくらですか。|Kore wa ikura desu ka|}}",
     "incorrectAnswers": [
-      "\u3053\u308c\u306f\u4f55\u3067\u3059\u304b\u3002(Kore wa nan desu ka.)",
-      "\u3053\u308c\u306f\u3069\u3053\u3067\u3059\u304b\u3002(Kore wa doko desu ka.)",
-      "\u3053\u308c\u306f\u3044\u3064\u3067\u3059\u304b\u3002(Kore wa itsu desu ka.)"
+      "{{ja-JP|これは何ですか。|Kore wa nan desu ka|}}",
+      "{{ja-JP|これはどこですか。|Kore wa doko desu ka|}}",
+      "{{ja-JP|これはいつですか。|Kore wa itsu desu ka|}}"
     ],
-    "explanation": "'Ikura desu ka' \u2014 'How much is it?' \u2014 is essential for shopping and markets.",
+    "explanation": "'Ikura desu ka' — 'How much is it?' — is essential for shopping and markets.",
     "keywords": [
       "freq-100",
       "situation-prices",
@@ -65,13 +65,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill at a Japanese restaurant?",
-    "correctAnswer": "\u304a\u4f1a\u8a08\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002(Okaikei o onegaishimasu.)",
+    "correctAnswer": "{{ja-JP|お会計をお願いします。|Okaikei o onegaishimasu|}}",
     "incorrectAnswers": [
-      "\u3082\u3063\u3068\u98df\u3079\u307e\u3059\u3002(Motto tabemasu.)",
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002(Meny\u016b o kudasai.)",
-      "\u304a\u3044\u3057\u3044\u3067\u3059\u3002(Oishii desu.)"
+      "{{ja-JP|もっと食べます。|Motto tabemasu|}}",
+      "{{ja-JP|メニューをください。|Menyū o kudasai|}}",
+      "{{ja-JP|おいしいです。|Oishii desu|}}"
     ],
-    "explanation": "'Okaikei o onegaishimasu' \u2014 'The bill, please' \u2014 is the polite restaurant phrase.",
+    "explanation": "'Okaikei o onegaishimasu' — 'The bill, please' — is the polite restaurant phrase.",
     "keywords": [
       "freq-100",
       "situation-food",
@@ -85,13 +85,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Japanese?",
-    "correctAnswer": "\u308f\u304b\u308a\u307e\u305b\u3093\u3002(Wakarimasen.)",
+    "correctAnswer": "{{ja-JP|わかりません。|Wakarimasen|}}",
     "incorrectAnswers": [
-      "\u3057\u308a\u307e\u305b\u3093\u3002(Shirimasen.)",
-      "\u3042\u308a\u307e\u305b\u3093\u3002(Arimasen.)",
-      "\u3067\u304d\u307e\u305b\u3093\u3002(Dekimasen.)"
+      "{{ja-JP|しりません。|Shirimasen|}}",
+      "{{ja-JP|ありません。|Arimasen|}}",
+      "{{ja-JP|できません。|Dekimasen|}}"
     ],
-    "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely \u2014 locals will often switch to simpler Japanese.",
+    "explanation": "'Wakarimasen' is polite 'I don't understand'. Use it freely — locals will often switch to simpler Japanese.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -104,13 +104,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Japanese?",
-    "correctAnswer": "\u82f1\u8a9e\u3092\u8a71\u305b\u307e\u3059\u304b\u3002(Eigo o hanasemasu ka.)",
+    "correctAnswer": "{{ja-JP|英語を話せますか。|Eigo o hanasemasu ka|}}",
     "incorrectAnswers": [
-      "\u82f1\u8a9e\u304c\u308f\u304b\u308a\u307e\u3059\u304b\u3002(Eigo ga wakarimasu ka.)",
-      "\u82f1\u8a9e\u3092\u52c9\u5f37\u3057\u307e\u3059\u304b\u3002(Eigo o benky\u014d shimasu ka.)",
-      "\u82f1\u8a9e\u306f\u96e3\u3057\u3044\u3067\u3059\u304b\u3002(Eigo wa muzukashii desu ka.)"
+      "{{ja-JP|英語がわかりますか。|Eigo ga wakarimasu ka|}}",
+      "{{ja-JP|英語を勉強しますか。|Eigo o benkyō shimasu ka|}}",
+      "{{ja-JP|英語は難しいですか。|Eigo wa muzukashii desu ka|}}"
     ],
-    "explanation": "'Eigo o hanasemasu ka?' \u2014 'Can you speak English?' \u2014 a key phrase when you need help.",
+    "explanation": "'Eigo o hanasemasu ka?' — 'Can you speak English?' — a key phrase when you need help.",
     "keywords": [
       "freq-100",
       "cefr-a1"
@@ -123,13 +123,13 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left' in Japanese?",
-    "correctAnswer": "\u5de6\u306b\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Hidari ni magatte kudasai.)",
+    "correctAnswer": "{{ja-JP|左に曲がってください。|Hidari ni magatte kudasai|}}",
     "incorrectAnswers": [
-      "\u53f3\u306b\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Migi ni magatte kudasai.)",
-      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Massugu itte kudasai.)",
-      "\u6b62\u307e\u3063\u3066\u304f\u3060\u3055\u3044\u3002(Tomatte kudasai.)"
+      "{{ja-JP|右に曲がってください。|Migi ni magatte kudasai|}}",
+      "{{ja-JP|まっすぐ行ってください。|Massugu itte kudasai|}}",
+      "{{ja-JP|止まってください。|Tomatte kudasai|}}"
     ],
-    "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead \u2014 the three direction words.",
+    "explanation": "'Hidari' = left, 'migi' = right, 'massugu' = straight ahead — the three direction words.",
     "keywords": [
       "freq-100",
       "situation-directions",
@@ -143,11 +143,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Good evening.'?",
-    "correctAnswer": "\u3053\u3093\u3070\u3093\u306f\u3002",
+    "correctAnswer": "{{ja-JP|こんばんは。|Konbanwa.|}}",
     "incorrectAnswers": [
-      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
-      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+      "{{ja-JP|お元気ですか。|Ogenki desu ka.|}}",
+      "{{ja-JP|元気です、ありがとうございます。|Genki desu, arigatou gozaimasu.|}}",
+      "{{ja-JP|とても元気です、ありがとうございます。|Totemo genki desu, arigatou gozaimasu.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -163,11 +163,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'How are you?'?",
-    "correctAnswer": "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|お元気ですか。|Ogenki desu ka.|}}",
     "incorrectAnswers": [
-      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u307e\u305f\u3042\u3068\u3067\u3002"
+      "{{ja-JP|元気です、ありがとうございます。|Genki desu, arigatou gozaimasu.|}}",
+      "{{ja-JP|とても元気です、ありがとうございます。|Totemo genki desu, arigatou gozaimasu.|}}",
+      "{{ja-JP|またあとで。|Mata ato de.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -183,11 +183,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I am fine, thank you.'.",
-    "correctAnswer": "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|元気です、ありがとうございます。|Genki desu, arigatou gozaimasu.|}}",
     "incorrectAnswers": [
-      "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u307e\u305f\u3042\u3068\u3067\u3002",
-      "\u307e\u305f\u660e\u65e5\u3002"
+      "{{ja-JP|とても元気です、ありがとうございます。|Totemo genki desu, arigatou gozaimasu.|}}",
+      "{{ja-JP|またあとで。|Mata ato de.|}}",
+      "{{ja-JP|また明日。|Mata ashita.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -203,11 +203,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Very well, thanks.'?",
-    "correctAnswer": "\u3068\u3066\u3082\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|とても元気です、ありがとうございます。|Totemo genki desu, arigatou gozaimasu.|}}",
     "incorrectAnswers": [
-      "\u307e\u305f\u3042\u3068\u3067\u3002",
-      "\u307e\u305f\u660e\u65e5\u3002",
-      "\u3088\u3044\u4e00\u65e5\u3092\u3002"
+      "{{ja-JP|またあとで。|Mata ato de.|}}",
+      "{{ja-JP|また明日。|Mata ashita.|}}",
+      "{{ja-JP|よい一日を。|Yoi ichinichi wo.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -223,11 +223,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'See you later.'?",
-    "correctAnswer": "\u307e\u305f\u3042\u3068\u3067\u3002",
+    "correctAnswer": "{{ja-JP|またあとで。|Mata ato de.|}}",
     "incorrectAnswers": [
-      "\u307e\u305f\u660e\u65e5\u3002",
-      "\u3088\u3044\u4e00\u65e5\u3092\u3002",
-      "\u3088\u3046\u3053\u305d\u3002"
+      "{{ja-JP|また明日。|Mata ashita.|}}",
+      "{{ja-JP|よい一日を。|Yoi ichinichi wo.|}}",
+      "{{ja-JP|ようこそ。|Youkoso.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -243,11 +243,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'See you tomorrow.'?",
-    "correctAnswer": "\u307e\u305f\u660e\u65e5\u3002",
+    "correctAnswer": "{{ja-JP|また明日。|Mata ashita.|}}",
     "incorrectAnswers": [
-      "\u3088\u3044\u4e00\u65e5\u3092\u3002",
-      "\u3088\u3046\u3053\u305d\u3002",
-      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002"
+      "{{ja-JP|よい一日を。|Yoi ichinichi wo.|}}",
+      "{{ja-JP|ようこそ。|Youkoso.|}}",
+      "{{ja-JP|はじめまして。|Hajimemashite.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -263,11 +263,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Have a good day.'.",
-    "correctAnswer": "\u3088\u3044\u4e00\u65e5\u3092\u3002",
+    "correctAnswer": "{{ja-JP|よい一日を。|Yoi ichinichi wo.|}}",
     "incorrectAnswers": [
-      "\u3088\u3046\u3053\u305d\u3002",
-      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
-      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002"
+      "{{ja-JP|ようこそ。|Youkoso.|}}",
+      "{{ja-JP|はじめまして。|Hajimemashite.|}}",
+      "{{ja-JP|またお会いできてうれしいです。|Mata oai dekite ureshii desu.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -283,11 +283,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Welcome.'?",
-    "correctAnswer": "\u3088\u3046\u3053\u305d\u3002",
+    "correctAnswer": "{{ja-JP|ようこそ。|Youkoso.|}}",
     "incorrectAnswers": [
-      "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
-      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
-      "\u307e\u305f\u3059\u3050\u306b\u3002"
+      "{{ja-JP|はじめまして。|Hajimemashite.|}}",
+      "{{ja-JP|またお会いできてうれしいです。|Mata oai dekite ureshii desu.|}}",
+      "{{ja-JP|またすぐに。|Mata sugu ni.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -303,11 +303,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Nice to meet you.'?",
-    "correctAnswer": "\u306f\u3058\u3081\u307e\u3057\u3066\u3002",
+    "correctAnswer": "{{ja-JP|はじめまして。|Hajimemashite.|}}",
     "incorrectAnswers": [
-      "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
-      "\u307e\u305f\u3059\u3050\u306b\u3002",
-      "\u3088\u3044\u591c\u3092\u3002"
+      "{{ja-JP|またお会いできてうれしいです。|Mata oai dekite ureshii desu.|}}",
+      "{{ja-JP|またすぐに。|Mata sugu ni.|}}",
+      "{{ja-JP|よい夜を。|Yoi yoru wo.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -323,11 +323,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Nice to see you again.'?",
-    "correctAnswer": "\u307e\u305f\u304a\u4f1a\u3044\u3067\u304d\u3066\u3046\u308c\u3057\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|またお会いできてうれしいです。|Mata oai dekite ureshii desu.|}}",
     "incorrectAnswers": [
-      "\u307e\u305f\u3059\u3050\u306b\u3002",
-      "\u3088\u3044\u591c\u3092\u3002",
-      "\u3053\u3093\u3070\u3093\u306f\u3002"
+      "{{ja-JP|またすぐに。|Mata sugu ni.|}}",
+      "{{ja-JP|よい夜を。|Yoi yoru wo.|}}",
+      "{{ja-JP|こんばんは。|Konbanwa.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -343,11 +343,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'See you soon.'.",
-    "correctAnswer": "\u307e\u305f\u3059\u3050\u306b\u3002",
+    "correctAnswer": "{{ja-JP|またすぐに。|Mata sugu ni.|}}",
     "incorrectAnswers": [
-      "\u3088\u3044\u591c\u3092\u3002",
-      "\u3053\u3093\u3070\u3093\u306f\u3002",
-      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002"
+      "{{ja-JP|よい夜を。|Yoi yoru wo.|}}",
+      "{{ja-JP|こんばんは。|Konbanwa.|}}",
+      "{{ja-JP|お元気ですか。|Ogenki desu ka.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -363,11 +363,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Have a nice evening.'?",
-    "correctAnswer": "\u3088\u3044\u591c\u3092\u3002",
+    "correctAnswer": "{{ja-JP|よい夜を。|Yoi yoru wo.|}}",
     "incorrectAnswers": [
-      "\u3053\u3093\u3070\u3093\u306f\u3002",
-      "\u304a\u5143\u6c17\u3067\u3059\u304b\u3002",
-      "\u5143\u6c17\u3067\u3059\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+      "{{ja-JP|こんばんは。|Konbanwa.|}}",
+      "{{ja-JP|お元気ですか。|Ogenki desu ka.|}}",
+      "{{ja-JP|元気です、ありがとうございます。|Genki desu, arigatou gozaimasu.|}}"
     ],
     "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
     "keywords": [
@@ -383,11 +383,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'What is your name?'?",
-    "correctAnswer": "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
-      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002"
+      "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|}}",
+      "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|}}",
+      "{{ja-JP|私は二十歳です。|Watashi wa hatachi desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -403,11 +403,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I am from the United States.'?",
-    "correctAnswer": "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002"
+      "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|}}",
+      "{{ja-JP|私は二十歳です。|Watashi wa hatachi desu.|}}",
+      "{{ja-JP|こちらは私の友だちです。|Kochira wa watashi no tomodachi desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -423,11 +423,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I live in Chicago.'.",
-    "correctAnswer": "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002"
+      "{{ja-JP|私は二十歳です。|Watashi wa hatachi desu.|}}",
+      "{{ja-JP|こちらは私の友だちです。|Kochira wa watashi no tomodachi desu.|}}",
+      "{{ja-JP|こちらは私の姉です。|Kochira wa watashi no ane desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -443,11 +443,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am twenty years old.'?",
-    "correctAnswer": "\u79c1\u306f\u4e8c\u5341\u6b73\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は二十歳です。|Watashi wa hatachi desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
-      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|こちらは私の友だちです。|Kochira wa watashi no tomodachi desu.|}}",
+      "{{ja-JP|こちらは私の姉です。|Kochira wa watashi no ane desu.|}}",
+      "{{ja-JP|私は結婚しています。|Watashi wa kekkon shite imasu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -463,11 +463,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'This is my friend.'?",
-    "correctAnswer": "\u3053\u3061\u3089\u306f\u79c1\u306e\u53cb\u3060\u3061\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|こちらは私の友だちです。|Kochira wa watashi no tomodachi desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
-      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002"
+      "{{ja-JP|こちらは私の姉です。|Kochira wa watashi no ane desu.|}}",
+      "{{ja-JP|私は結婚しています。|Watashi wa kekkon shite imasu.|}}",
+      "{{ja-JP|私は学生です。|Watashi wa gakusei desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -483,11 +483,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'This is my sister.'?",
-    "correctAnswer": "\u3053\u3061\u3089\u306f\u79c1\u306e\u59c9\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|こちらは私の姉です。|Kochira wa watashi no ane desu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
-      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002"
+      "{{ja-JP|私は結婚しています。|Watashi wa kekkon shite imasu.|}}",
+      "{{ja-JP|私は学生です。|Watashi wa gakusei desu.|}}",
+      "{{ja-JP|私は休暇でここにいます。|Watashi wa kyuuka de koko ni imasu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -503,11 +503,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I am married.'.",
-    "correctAnswer": "\u79c1\u306f\u7d50\u5a5a\u3057\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は結婚しています。|Watashi wa kekkon shite imasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
-      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
-      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002"
+      "{{ja-JP|私は学生です。|Watashi wa gakusei desu.|}}",
+      "{{ja-JP|私は休暇でここにいます。|Watashi wa kyuuka de koko ni imasu.|}}",
+      "{{ja-JP|名字はガルシアです。|Myouji wa Garushia desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -523,11 +523,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am a student.'?",
-    "correctAnswer": "\u79c1\u306f\u5b66\u751f\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は学生です。|Watashi wa gakusei desu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
-      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
-      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f..."
+      "{{ja-JP|私は休暇でここにいます。|Watashi wa kyuuka de koko ni imasu.|}}",
+      "{{ja-JP|名字はガルシアです。|Myouji wa Garushia desu.|}}",
+      "{{ja-JP|私の電話番号は...|Watashi no denwa bangou wa...|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -543,11 +543,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I am here on vacation.'?",
-    "correctAnswer": "\u79c1\u306f\u4f11\u6687\u3067\u3053\u3053\u306b\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は休暇でここにいます。|Watashi wa kyuuka de koko ni imasu.|}}",
     "incorrectAnswers": [
-      "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
-      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
-      "\u79c1\u306e\u4f4f\u6240\u306f..."
+      "{{ja-JP|名字はガルシアです。|Myouji wa Garushia desu.|}}",
+      "{{ja-JP|私の電話番号は...|Watashi no denwa bangou wa...|}}",
+      "{{ja-JP|私の住所は...|Watashi no juusho wa...|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -563,11 +563,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'My surname is Garcia.'?",
-    "correctAnswer": "\u540d\u5b57\u306f\u30ac\u30eb\u30b7\u30a2\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|名字はガルシアです。|Myouji wa Garushia desu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
-      "\u79c1\u306e\u4f4f\u6240\u306f...",
-      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002"
+      "{{ja-JP|私の電話番号は...|Watashi no denwa bangou wa...|}}",
+      "{{ja-JP|私の住所は...|Watashi no juusho wa...|}}",
+      "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -583,11 +583,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'My phone number is...'.",
-    "correctAnswer": "\u79c1\u306e\u96fb\u8a71\u756a\u53f7\u306f...",
+    "correctAnswer": "{{ja-JP|私の電話番号は...|Watashi no denwa bangou wa...|}}",
     "incorrectAnswers": [
-      "\u79c1\u306e\u4f4f\u6240\u306f...",
-      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
-      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002"
+      "{{ja-JP|私の住所は...|Watashi no juusho wa...|}}",
+      "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|}}",
+      "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -603,11 +603,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'My address is...'?",
-    "correctAnswer": "\u79c1\u306e\u4f4f\u6240\u306f...",
+    "correctAnswer": "{{ja-JP|私の住所は...|Watashi no juusho wa...|}}",
     "incorrectAnswers": [
-      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
-      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
-      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002"
+      "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|}}",
+      "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|}}",
+      "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
@@ -623,11 +623,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I need water.'?",
-    "correctAnswer": "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|水が必要です。|Mizu ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|地図が必要です。|Chizu ga hitsuyou desu.|}}",
+      "{{ja-JP|タクシーが必要です。|Takushii ga hitsuyou desu.|}}",
+      "{{ja-JP|部屋が必要です。|Heya ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -643,11 +643,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I need a map.'?",
-    "correctAnswer": "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|地図が必要です。|Chizu ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|タクシーが必要です。|Takushii ga hitsuyou desu.|}}",
+      "{{ja-JP|部屋が必要です。|Heya ga hitsuyou desu.|}}",
+      "{{ja-JP|Wi-Fiはありますか。|Wi-Fi wa arimasu ka.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -663,11 +663,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I need a taxi.'.",
-    "correctAnswer": "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|タクシーが必要です。|Takushii ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|部屋が必要です。|Heya ga hitsuyou desu.|}}",
+      "{{ja-JP|Wi-Fiはありますか。|Wi-Fi wa arimasu ka.|}}",
+      "{{ja-JP|パンはありますか。|Pan wa arimasu ka.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -683,11 +683,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I need a room.'?",
-    "correctAnswer": "\u90e8\u5c4b\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|部屋が必要です。|Heya ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|Wi-Fiはありますか。|Wi-Fi wa arimasu ka.|}}",
+      "{{ja-JP|パンはありますか。|Pan wa arimasu ka.|}}",
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -703,11 +703,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Do you have WiFi?'?",
-    "correctAnswer": "Wi-Fi\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|Wi-Fiはありますか。|Wi-Fi wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|パンはありますか。|Pan wa arimasu ka.|}}",
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -723,11 +723,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Do you have bread?'?",
-    "correctAnswer": "\u30d1\u30f3\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|パンはありますか。|Pan wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
-      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
+      "{{ja-JP|袋をください。|Fukuro wo kudasai.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -743,11 +743,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Can I have the menu?'.",
-    "correctAnswer": "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
-      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
+      "{{ja-JP|袋をください。|Fukuro wo kudasai.|}}",
+      "{{ja-JP|もっと時間が必要です。|Motto jikan ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -763,11 +763,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Can I have a bottle of water?'?",
-    "correctAnswer": "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
     "incorrectAnswers": [
-      "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|袋をください。|Fukuro wo kudasai.|}}",
+      "{{ja-JP|もっと時間が必要です。|Motto jikan ga hitsuyou desu.|}}",
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -783,11 +783,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Please give me a bag.'?",
-    "correctAnswer": "\u888b\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|袋をください。|Fukuro wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|もっと時間が必要です。|Motto jikan ga hitsuyou desu.|}}",
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
+      "{{ja-JP|ベジタリアンの食べ物はありますか。|Bejitarian no tabemono wa arimasu ka.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -803,11 +803,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I need more time.'?",
-    "correctAnswer": "\u3082\u3063\u3068\u6642\u9593\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|もっと時間が必要です。|Motto jikan ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
+      "{{ja-JP|ベジタリアンの食べ物はありますか。|Bejitarian no tabemono wa arimasu ka.|}}",
+      "{{ja-JP|水が必要です。|Mizu ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -823,11 +823,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I need the receipt.'.",
-    "correctAnswer": "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|ベジタリアンの食べ物はありますか。|Bejitarian no tabemono wa arimasu ka.|}}",
+      "{{ja-JP|水が必要です。|Mizu ga hitsuyou desu.|}}",
+      "{{ja-JP|地図が必要です。|Chizu ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -843,11 +843,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Do you have vegetarian food?'?",
-    "correctAnswer": "\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u306e\u98df\u3079\u7269\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|ベジタリアンの食べ物はありますか。|Bejitarian no tabemono wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u6c34\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u5730\u56f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u30bf\u30af\u30b7\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|水が必要です。|Mizu ga hitsuyou desu.|}}",
+      "{{ja-JP|地図が必要です。|Chizu ga hitsuyou desu.|}}",
+      "{{ja-JP|タクシーが必要です。|Takushii ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
     "keywords": [
@@ -863,11 +863,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Where is the bank?'?",
-    "correctAnswer": "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|銀行はどこですか。|Ginkou wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|美術館はどこですか。|Bijutsukan wa doko desu ka.|}}",
+      "{{ja-JP|中心部はどこですか。|Chuushinbu wa doko desu ka.|}}",
+      "{{ja-JP|バス停はどこですか。|Basutei wa doko desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -883,11 +883,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Where is the museum?'?",
-    "correctAnswer": "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|美術館はどこですか。|Bijutsukan wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|中心部はどこですか。|Chuushinbu wa doko desu ka.|}}",
+      "{{ja-JP|バス停はどこですか。|Basutei wa doko desu ka.|}}",
+      "{{ja-JP|まっすぐ行ってください。|Massugu itte kudasai.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -903,11 +903,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Where is the city center?'.",
-    "correctAnswer": "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|中心部はどこですか。|Chuushinbu wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|バス停はどこですか。|Basutei wa doko desu ka.|}}",
+      "{{ja-JP|まっすぐ行ってください。|Massugu itte kudasai.|}}",
+      "{{ja-JP|一つ目の通りを曲がってください。|Hitotsume no toori wo magatte kudasai.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -923,11 +923,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Where is the bus stop?'?",
-    "correctAnswer": "\u30d0\u30b9\u505c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|バス停はどこですか。|Basutei wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|まっすぐ行ってください。|Massugu itte kudasai.|}}",
+      "{{ja-JP|一つ目の通りを曲がってください。|Hitotsume no toori wo magatte kudasai.|}}",
+      "{{ja-JP|二つ目の通りを曲がってください。|Futatsume no toori wo magatte kudasai.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -943,11 +943,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Go straight.'?",
-    "correctAnswer": "\u307e\u3063\u3059\u3050\u884c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|まっすぐ行ってください。|Massugu itte kudasai.|}}",
     "incorrectAnswers": [
-      "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u9060\u3044\u3067\u3059\u304b\u3002"
+      "{{ja-JP|一つ目の通りを曲がってください。|Hitotsume no toori wo magatte kudasai.|}}",
+      "{{ja-JP|二つ目の通りを曲がってください。|Futatsume no toori wo magatte kudasai.|}}",
+      "{{ja-JP|遠いですか。|Tooi desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -963,11 +963,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Take the first street.'?",
-    "correctAnswer": "\u4e00\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|一つ目の通りを曲がってください。|Hitotsume no toori wo magatte kudasai.|}}",
     "incorrectAnswers": [
-      "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u9060\u3044\u3067\u3059\u304b\u3002",
-      "\u8fd1\u3044\u3067\u3059\u304b\u3002"
+      "{{ja-JP|二つ目の通りを曲がってください。|Futatsume no toori wo magatte kudasai.|}}",
+      "{{ja-JP|遠いですか。|Tooi desu ka.|}}",
+      "{{ja-JP|近いですか。|Chikai desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -983,11 +983,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Take the second street.'.",
-    "correctAnswer": "\u4e8c\u3064\u76ee\u306e\u901a\u308a\u3092\u66f2\u304c\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|二つ目の通りを曲がってください。|Futatsume no toori wo magatte kudasai.|}}",
     "incorrectAnswers": [
-      "\u9060\u3044\u3067\u3059\u304b\u3002",
-      "\u8fd1\u3044\u3067\u3059\u304b\u3002",
-      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002"
+      "{{ja-JP|遠いですか。|Tooi desu ka.|}}",
+      "{{ja-JP|近いですか。|Chikai desu ka.|}}",
+      "{{ja-JP|道に迷いました。|Michi ni mayoimashita.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1003,11 +1003,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Is it far?'?",
-    "correctAnswer": "\u9060\u3044\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|遠いですか。|Tooi desu ka.|}}",
     "incorrectAnswers": [
-      "\u8fd1\u3044\u3067\u3059\u304b\u3002",
-      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
-      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|近いですか。|Chikai desu ka.|}}",
+      "{{ja-JP|道に迷いました。|Michi ni mayoimashita.|}}",
+      "{{ja-JP|ホテルを探しています。|Hoteru wo sagashite imasu.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1023,11 +1023,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Is it near?'?",
-    "correctAnswer": "\u8fd1\u3044\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|近いですか。|Chikai desu ka.|}}",
     "incorrectAnswers": [
-      "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
-      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|道に迷いました。|Michi ni mayoimashita.|}}",
+      "{{ja-JP|ホテルを探しています。|Hoteru wo sagashite imasu.|}}",
+      "{{ja-JP|地図で見せてください。|Chizu de misete kudasai.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1043,11 +1043,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I am lost.'?",
-    "correctAnswer": "\u9053\u306b\u8ff7\u3044\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|道に迷いました。|Michi ni mayoimashita.|}}",
     "incorrectAnswers": [
-      "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|ホテルを探しています。|Hoteru wo sagashite imasu.|}}",
+      "{{ja-JP|地図で見せてください。|Chizu de misete kudasai.|}}",
+      "{{ja-JP|銀行はどこですか。|Ginkou wa doko desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1063,11 +1063,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'We are looking for the hotel.'.",
-    "correctAnswer": "\u30db\u30c6\u30eb\u3092\u63a2\u3057\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ホテルを探しています。|Hoteru wo sagashite imasu.|}}",
     "incorrectAnswers": [
-      "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|地図で見せてください。|Chizu de misete kudasai.|}}",
+      "{{ja-JP|銀行はどこですか。|Ginkou wa doko desu ka.|}}",
+      "{{ja-JP|美術館はどこですか。|Bijutsukan wa doko desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1083,11 +1083,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Please show me on the map.'?",
-    "correctAnswer": "\u5730\u56f3\u3067\u898b\u305b\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|地図で見せてください。|Chizu de misete kudasai.|}}",
     "incorrectAnswers": [
-      "\u9280\u884c\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u7f8e\u8853\u9928\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u4e2d\u5fc3\u90e8\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|銀行はどこですか。|Ginkou wa doko desu ka.|}}",
+      "{{ja-JP|美術館はどこですか。|Bijutsukan wa doko desu ka.|}}",
+      "{{ja-JP|中心部はどこですか。|Chuushinbu wa doko desu ka.|}}"
     ],
     "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
     "keywords": [
@@ -1103,11 +1103,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Can you repeat that?'?",
-    "correctAnswer": "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
     "incorrectAnswers": [
-      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
-      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002"
+      "{{ja-JP|もっとゆっくり話してください。|Motto yukkuri hanashite kudasai.|}}",
+      "{{ja-JP|お名前はどう書きますか。|Onamae wa dou kakimasu ka.|}}",
+      "{{ja-JP|合計は十ユーロです。|Goukei wa juu Yuuro desu.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1123,11 +1123,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Can you speak more slowly?'?",
-    "correctAnswer": "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|もっとゆっくり話してください。|Motto yukkuri hanashite kudasai.|}}",
     "incorrectAnswers": [
-      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
-      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
-      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002"
+      "{{ja-JP|お名前はどう書きますか。|Onamae wa dou kakimasu ka.|}}",
+      "{{ja-JP|合計は十ユーロです。|Goukei wa juu Yuuro desu.|}}",
+      "{{ja-JP|二十ユーロです。|Nijuu Yuuro desu.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1143,11 +1143,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'How do you spell your name?'.",
-    "correctAnswer": "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|お名前はどう書きますか。|Onamae wa dou kakimasu ka.|}}",
     "incorrectAnswers": [
-      "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
-      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
-      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002"
+      "{{ja-JP|合計は十ユーロです。|Goukei wa juu Yuuro desu.|}}",
+      "{{ja-JP|二十ユーロです。|Nijuu Yuuro desu.|}}",
+      "{{ja-JP|部屋番号は十二です。|Heya bangou wa juuni desu.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1163,11 +1163,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'The total is ten euros.'?",
-    "correctAnswer": "\u5408\u8a08\u306f\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|合計は十ユーロです。|Goukei wa juu Yuuro desu.|}}",
     "incorrectAnswers": [
-      "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
-      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
-      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002"
+      "{{ja-JP|二十ユーロです。|Nijuu Yuuro desu.|}}",
+      "{{ja-JP|部屋番号は十二です。|Heya bangou wa juuni desu.|}}",
+      "{{ja-JP|四番ホームです。|Yonban hoomu desu.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1183,11 +1183,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'It costs twenty euros.'?",
-    "correctAnswer": "\u4e8c\u5341\u30e6\u30fc\u30ed\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|二十ユーロです。|Nijuu Yuuro desu.|}}",
     "incorrectAnswers": [
-      "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
-      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
-      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+      "{{ja-JP|部屋番号は十二です。|Heya bangou wa juuni desu.|}}",
+      "{{ja-JP|四番ホームです。|Yonban hoomu desu.|}}",
+      "{{ja-JP|三人用のテーブルをお願いします。|Sannin you no tēburu wo onegaishimasu.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1203,11 +1203,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Room number twelve.'?",
-    "correctAnswer": "\u90e8\u5c4b\u756a\u53f7\u306f\u5341\u4e8c\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|部屋番号は十二です。|Heya bangou wa juuni desu.|}}",
     "incorrectAnswers": [
-      "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
-      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|四番ホームです。|Yonban hoomu desu.|}}",
+      "{{ja-JP|三人用のテーブルをお願いします。|Sannin you no tēburu wo onegaishimasu.|}}",
+      "{{ja-JP|チケットを二枚ください。|Chiketto wo nimai kudasai.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1223,11 +1223,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Platform number four.'.",
-    "correctAnswer": "\u56db\u756a\u30db\u30fc\u30e0\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|四番ホームです。|Yonban hoomu desu.|}}",
     "incorrectAnswers": [
-      "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|三人用のテーブルをお願いします。|Sannin you no tēburu wo onegaishimasu.|}}",
+      "{{ja-JP|チケットを二枚ください。|Chiketto wo nimai kudasai.|}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1243,11 +1243,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'A table for three, please.'?",
-    "correctAnswer": "\u4e09\u4eba\u7528\u306e\u30c6\u30fc\u30d6\u30eb\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|三人用のテーブルをお願いします。|Sannin you no tēburu wo onegaishimasu.|}}",
     "incorrectAnswers": [
-      "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002"
+      "{{ja-JP|チケットを二枚ください。|Chiketto wo nimai kudasai.|}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}",
+      "{{ja-JP|今日は何日ですか。|Kyou wa nan nichi desu ka.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1263,11 +1263,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Two tickets, please.'?",
-    "correctAnswer": "\u30c1\u30b1\u30c3\u30c8\u3092\u4e8c\u679a\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|チケットを二枚ください。|Chiketto wo nimai kudasai.|}}",
     "incorrectAnswers": [
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
-      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}",
+      "{{ja-JP|今日は何日ですか。|Kyou wa nan nichi desu ka.|}}",
+      "{{ja-JP|ちょっと待ってください。|Chotto matte kudasai.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1283,11 +1283,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Can you write it down?'?",
-    "correctAnswer": "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|書いてください。|Kaite kudasai.|}}",
     "incorrectAnswers": [
-      "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
-      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|今日は何日ですか。|Kyou wa nan nichi desu ka.|}}",
+      "{{ja-JP|ちょっと待ってください。|Chotto matte kudasai.|}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1303,11 +1303,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'What is today's date?'.",
-    "correctAnswer": "\u4eca\u65e5\u306f\u4f55\u65e5\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|今日は何日ですか。|Kyou wa nan nichi desu ka.|}}",
     "incorrectAnswers": [
-      "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|ちょっと待ってください。|Chotto matte kudasai.|}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
+      "{{ja-JP|もっとゆっくり話してください。|Motto yukkuri hanashite kudasai.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1323,11 +1323,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'One moment, please.'?",
-    "correctAnswer": "\u3061\u3087\u3063\u3068\u5f85\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|ちょっと待ってください。|Chotto matte kudasai.|}}",
     "incorrectAnswers": [
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3082\u3063\u3068\u3086\u3063\u304f\u308a\u8a71\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u540d\u524d\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002"
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
+      "{{ja-JP|もっとゆっくり話してください。|Motto yukkuri hanashite kudasai.|}}",
+      "{{ja-JP|お名前はどう書きますか。|Onamae wa dou kakimasu ka.|}}"
     ],
     "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
     "keywords": [
@@ -1343,11 +1343,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I am hungry.'?",
-    "correctAnswer": "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|お腹がすきました。|Onaka ga sukimashita.|}}",
     "incorrectAnswers": [
-      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002"
+      "{{ja-JP|のどがかわきました。|Nodo ga kawakimashita.|}}",
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
+      "{{ja-JP|私はベジタリアンです。|Watashi wa bejitarian desu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1363,11 +1363,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I am thirsty.'?",
-    "correctAnswer": "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|のどがかわきました。|Nodo ga kawakimashita.|}}",
     "incorrectAnswers": [
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
-      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
+      "{{ja-JP|私はベジタリアンです。|Watashi wa bejitarian desu.|}}",
+      "{{ja-JP|肉なしでお願いします。|Niku nashi de onegaishimasu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1383,11 +1383,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'The menu, please.'.",
-    "correctAnswer": "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
-      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+      "{{ja-JP|私はベジタリアンです。|Watashi wa bejitarian desu.|}}",
+      "{{ja-JP|肉なしでお願いします。|Niku nashi de onegaishimasu.|}}",
+      "{{ja-JP|砂糖なしでお願いします。|Satou nashi de onegaishimasu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1403,11 +1403,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am vegetarian.'?",
-    "correctAnswer": "\u79c1\u306f\u30d9\u30b8\u30bf\u30ea\u30a2\u30f3\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はベジタリアンです。|Watashi wa bejitarian desu.|}}",
     "incorrectAnswers": [
-      "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+      "{{ja-JP|肉なしでお願いします。|Niku nashi de onegaishimasu.|}}",
+      "{{ja-JP|砂糖なしでお願いします。|Satou nashi de onegaishimasu.|}}",
+      "{{ja-JP|ミルク入りでお願いします。|Miruku iri de onegaishimasu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1423,11 +1423,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'No meat, please.'?",
-    "correctAnswer": "\u8089\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|肉なしでお願いします。|Niku nashi de onegaishimasu.|}}",
     "incorrectAnswers": [
-      "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002"
+      "{{ja-JP|砂糖なしでお願いします。|Satou nashi de onegaishimasu.|}}",
+      "{{ja-JP|ミルク入りでお願いします。|Miruku iri de onegaishimasu.|}}",
+      "{{ja-JP|とてもおいしかったです。|Totemo oishikatta desu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1443,11 +1443,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Without sugar, please.'?",
-    "correctAnswer": "\u7802\u7cd6\u306a\u3057\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|砂糖なしでお願いします。|Satou nashi de onegaishimasu.|}}",
     "incorrectAnswers": [
-      "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
-      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002"
+      "{{ja-JP|ミルク入りでお願いします。|Miruku iri de onegaishimasu.|}}",
+      "{{ja-JP|とてもおいしかったです。|Totemo oishikatta desu.|}}",
+      "{{ja-JP|これはとてもおいしいです。|Kore wa totemo oishii desu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1463,11 +1463,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'With milk, please.'.",
-    "correctAnswer": "\u30df\u30eb\u30af\u5165\u308a\u3067\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ミルク入りでお願いします。|Miruku iri de onegaishimasu.|}}",
     "incorrectAnswers": [
-      "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
-      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
-      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002"
+      "{{ja-JP|とてもおいしかったです。|Totemo oishikatta desu.|}}",
+      "{{ja-JP|これはとてもおいしいです。|Kore wa totemo oishii desu.|}}",
+      "{{ja-JP|スープが冷たいです。|Suupu ga tsumetai desu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1483,11 +1483,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'It was delicious.'?",
-    "correctAnswer": "\u3068\u3066\u3082\u304a\u3044\u3057\u304b\u3063\u305f\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|とてもおいしかったです。|Totemo oishikatta desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
-      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
-      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|これはとてもおいしいです。|Kore wa totemo oishii desu.|}}",
+      "{{ja-JP|スープが冷たいです。|Suupu ga tsumetai desu.|}}",
+      "{{ja-JP|ナッツのアレルギーがあります。|Nattsu no arerugii ga arimasu.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1503,11 +1503,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'This is very good.'?",
-    "correctAnswer": "\u3053\u308c\u306f\u3068\u3066\u3082\u304a\u3044\u3057\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|これはとてもおいしいです。|Kore wa totemo oishii desu.|}}",
     "incorrectAnswers": [
-      "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
-      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|スープが冷たいです。|Suupu ga tsumetai desu.|}}",
+      "{{ja-JP|ナッツのアレルギーがあります。|Nattsu no arerugii ga arimasu.|}}",
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1523,11 +1523,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'The soup is cold.'?",
-    "correctAnswer": "\u30b9\u30fc\u30d7\u304c\u51b7\u305f\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|スープが冷たいです。|Suupu ga tsumetai desu.|}}",
     "incorrectAnswers": [
-      "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002"
+      "{{ja-JP|ナッツのアレルギーがあります。|Nattsu no arerugii ga arimasu.|}}",
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
+      "{{ja-JP|お腹がすきました。|Onaka ga sukimashita.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1543,11 +1543,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I am allergic to nuts.'.",
-    "correctAnswer": "\u30ca\u30c3\u30c4\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ナッツのアレルギーがあります。|Nattsu no arerugii ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
-      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002"
+      "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
+      "{{ja-JP|お腹がすきました。|Onaka ga sukimashita.|}}",
+      "{{ja-JP|のどがかわきました。|Nodo ga kawakimashita.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1563,11 +1563,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'A bottle of water, please.'?",
-    "correctAnswer": "\u6c34\u3092\u4e00\u672c\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|水を一本ください。|Mizu wo ippon kudasai.|}}",
     "incorrectAnswers": [
-      "\u304a\u8179\u304c\u3059\u304d\u307e\u3057\u305f\u3002",
-      "\u306e\u3069\u304c\u304b\u308f\u304d\u307e\u3057\u305f\u3002",
-      "\u30e1\u30cb\u30e5\u30fc\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|お腹がすきました。|Onaka ga sukimashita.|}}",
+      "{{ja-JP|のどがかわきました。|Nodo ga kawakimashita.|}}",
+      "{{ja-JP|メニューをください。|Menyuu wo kudasai.|}}"
     ],
     "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
     "keywords": [
@@ -1583,11 +1583,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Do you have this in another size?'?",
-    "correctAnswer": "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|別のサイズはありますか。|Betsu no saizu wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
-      "\u9ad8\u3059\u304e\u307e\u3059\u3002"
+      "{{ja-JP|別の色はありますか。|Betsu no iro wa arimasu ka.|}}",
+      "{{ja-JP|試着できますか。|Shichaku dekimasu ka.|}}",
+      "{{ja-JP|高すぎます。|Taka sugimasu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1603,11 +1603,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Do you have this in another color?'?",
-    "correctAnswer": "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|別の色はありますか。|Betsu no iro wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
-      "\u9ad8\u3059\u304e\u307e\u3059\u3002",
-      "\u5b89\u3044\u3067\u3059\u3002"
+      "{{ja-JP|試着できますか。|Shichaku dekimasu ka.|}}",
+      "{{ja-JP|高すぎます。|Taka sugimasu.|}}",
+      "{{ja-JP|安いです。|Yasui desu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1623,11 +1623,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Can I try it on?'.",
-    "correctAnswer": "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|試着できますか。|Shichaku dekimasu ka.|}}",
     "incorrectAnswers": [
-      "\u9ad8\u3059\u304e\u307e\u3059\u3002",
-      "\u5b89\u3044\u3067\u3059\u3002",
-      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|高すぎます。|Taka sugimasu.|}}",
+      "{{ja-JP|安いです。|Yasui desu.|}}",
+      "{{ja-JP|これをください。|Kore wo kudasai.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1643,11 +1643,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'It is too expensive.'?",
-    "correctAnswer": "\u9ad8\u3059\u304e\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|高すぎます。|Taka sugimasu.|}}",
     "incorrectAnswers": [
-      "\u5b89\u3044\u3067\u3059\u3002",
-      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|安いです。|Yasui desu.|}}",
+      "{{ja-JP|これをください。|Kore wo kudasai.|}}",
+      "{{ja-JP|レジはどこですか。|Reji wa doko desu ka.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1663,11 +1663,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'It is cheap.'?",
-    "correctAnswer": "\u5b89\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|安いです。|Yasui desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002"
+      "{{ja-JP|これをください。|Kore wo kudasai.|}}",
+      "{{ja-JP|レジはどこですか。|Reji wa doko desu ka.|}}",
+      "{{ja-JP|見ているだけです。|Mite iru dake desu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1683,11 +1683,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I will take it.'?",
-    "correctAnswer": "\u3053\u308c\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|これをください。|Kore wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
-      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002"
+      "{{ja-JP|レジはどこですか。|Reji wa doko desu ka.|}}",
+      "{{ja-JP|見ているだけです。|Mite iru dake desu.|}}",
+      "{{ja-JP|カードは使えますか。|Kaado wa tsukaemasu ka.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1703,11 +1703,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Where is the checkout?'.",
-    "correctAnswer": "\u30ec\u30b8\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|レジはどこですか。|Reji wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
-      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|見ているだけです。|Mite iru dake desu.|}}",
+      "{{ja-JP|カードは使えますか。|Kaado wa tsukaemasu ka.|}}",
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1723,11 +1723,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am just looking.'?",
-    "correctAnswer": "\u898b\u3066\u3044\u308b\u3060\u3051\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|見ているだけです。|Mite iru dake desu.|}}",
     "incorrectAnswers": [
-      "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002"
+      "{{ja-JP|カードは使えますか。|Kaado wa tsukaemasu ka.|}}",
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
+      "{{ja-JP|このサイズは小さすぎます。|Kono saizu wa chiisa sugimasu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1743,11 +1743,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Do you accept cards?'?",
-    "correctAnswer": "\u30ab\u30fc\u30c9\u306f\u4f7f\u3048\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|カードは使えますか。|Kaado wa tsukaemasu ka.|}}",
     "incorrectAnswers": [
-      "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002"
+      "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
+      "{{ja-JP|このサイズは小さすぎます。|Kono saizu wa chiisa sugimasu.|}}",
+      "{{ja-JP|このサイズは大きすぎます。|Kono saizu wa ooki sugimasu.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1763,11 +1763,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I need a receipt.'?",
-    "correctAnswer": "\u30ec\u30b7\u30fc\u30c8\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|レシートが必要です。|Reshiito ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
-      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|このサイズは小さすぎます。|Kono saizu wa chiisa sugimasu.|}}",
+      "{{ja-JP|このサイズは大きすぎます。|Kono saizu wa ooki sugimasu.|}}",
+      "{{ja-JP|別のサイズはありますか。|Betsu no saizu wa arimasu ka.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1783,11 +1783,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'This size is too small.'.",
-    "correctAnswer": "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5c0f\u3055\u3059\u304e\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|このサイズは小さすぎます。|Kono saizu wa chiisa sugimasu.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
-      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|このサイズは大きすぎます。|Kono saizu wa ooki sugimasu.|}}",
+      "{{ja-JP|別のサイズはありますか。|Betsu no saizu wa arimasu ka.|}}",
+      "{{ja-JP|別の色はありますか。|Betsu no iro wa arimasu ka.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1803,11 +1803,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'This size is too big.'?",
-    "correctAnswer": "\u3053\u306e\u30b5\u30a4\u30ba\u306f\u5927\u304d\u3059\u304e\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|このサイズは大きすぎます。|Kono saizu wa ooki sugimasu.|}}",
     "incorrectAnswers": [
-      "\u5225\u306e\u30b5\u30a4\u30ba\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u5225\u306e\u8272\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u8a66\u7740\u3067\u304d\u307e\u3059\u304b\u3002"
+      "{{ja-JP|別のサイズはありますか。|Betsu no saizu wa arimasu ka.|}}",
+      "{{ja-JP|別の色はありますか。|Betsu no iro wa arimasu ka.|}}",
+      "{{ja-JP|試着できますか。|Shichaku dekimasu ka.|}}"
     ],
     "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
     "keywords": [
@@ -1823,11 +1823,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I need a ticket to the airport.'?",
-    "correctAnswer": "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
-      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002"
+      "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|}}",
+      "{{ja-JP|往復切符をください。|Oufuku kippu wo kudasai.|}}",
+      "{{ja-JP|何番ホームですか。|Nanban hoomu desu ka.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1843,11 +1843,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'One ticket to the city center, please.'?",
-    "correctAnswer": "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|}}",
     "incorrectAnswers": [
-      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
-      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002"
+      "{{ja-JP|往復切符をください。|Oufuku kippu wo kudasai.|}}",
+      "{{ja-JP|何番ホームですか。|Nanban hoomu desu ka.|}}",
+      "{{ja-JP|この席は空いていますか。|Kono seki wa aite imasu ka.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1863,11 +1863,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'A round-trip ticket, please.'.",
-    "correctAnswer": "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|往復切符をください。|Oufuku kippu wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
-      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
-      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|何番ホームですか。|Nanban hoomu desu ka.|}}",
+      "{{ja-JP|この席は空いていますか。|Kono seki wa aite imasu ka.|}}",
+      "{{ja-JP|タクシーを呼んでください。|Takushii wo yonde kudasai.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1883,11 +1883,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Which platform is it?'?",
-    "correctAnswer": "\u4f55\u756a\u30db\u30fc\u30e0\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|何番ホームですか。|Nanban hoomu desu ka.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
-      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002"
+      "{{ja-JP|この席は空いていますか。|Kono seki wa aite imasu ka.|}}",
+      "{{ja-JP|タクシーを呼んでください。|Takushii wo yonde kudasai.|}}",
+      "{{ja-JP|このバスは中心部に行きますか。|Kono basu wa chuushinbu ni ikimasu ka.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1903,11 +1903,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Is this seat free?'?",
-    "correctAnswer": "\u3053\u306e\u5e2d\u306f\u7a7a\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|この席は空いていますか。|Kono seki wa aite imasu ka.|}}",
     "incorrectAnswers": [
-      "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
-      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002"
+      "{{ja-JP|タクシーを呼んでください。|Takushii wo yonde kudasai.|}}",
+      "{{ja-JP|このバスは中心部に行きますか。|Kono basu wa chuushinbu ni ikimasu ka.|}}",
+      "{{ja-JP|空港に行きたいです。|Kuukou ni ikitai desu.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1923,11 +1923,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Please call a taxi.'?",
-    "correctAnswer": "\u30bf\u30af\u30b7\u30fc\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|タクシーを呼んでください。|Takushii wo yonde kudasai.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
-      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
-      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002"
+      "{{ja-JP|このバスは中心部に行きますか。|Kono basu wa chuushinbu ni ikimasu ka.|}}",
+      "{{ja-JP|空港に行きたいです。|Kuukou ni ikitai desu.|}}",
+      "{{ja-JP|ここで降ります。|Koko de orimasu.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1943,11 +1943,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Does this bus go downtown?'.",
-    "correctAnswer": "\u3053\u306e\u30d0\u30b9\u306f\u4e2d\u5fc3\u90e8\u306b\u884c\u304d\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|このバスは中心部に行きますか。|Kono basu wa chuushinbu ni ikimasu ka.|}}",
     "incorrectAnswers": [
-      "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
-      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
-      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002"
+      "{{ja-JP|空港に行きたいです。|Kuukou ni ikitai desu.|}}",
+      "{{ja-JP|ここで降ります。|Koko de orimasu.|}}",
+      "{{ja-JP|バスに乗り遅れました。|Basu ni noriokuremashita.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1963,11 +1963,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I want to go to the airport.'?",
-    "correctAnswer": "\u7a7a\u6e2f\u306b\u884c\u304d\u305f\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|空港に行きたいです。|Kuukou ni ikitai desu.|}}",
     "incorrectAnswers": [
-      "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
-      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
-      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002"
+      "{{ja-JP|ここで降ります。|Koko de orimasu.|}}",
+      "{{ja-JP|バスに乗り遅れました。|Basu ni noriokuremashita.|}}",
+      "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -1983,11 +1983,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'We get off here.'?",
-    "correctAnswer": "\u3053\u3053\u3067\u964d\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ここで降ります。|Koko de orimasu.|}}",
     "incorrectAnswers": [
-      "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
-      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
-      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002"
+      "{{ja-JP|バスに乗り遅れました。|Basu ni noriokuremashita.|}}",
+      "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|}}",
+      "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2003,11 +2003,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I missed the bus.'?",
-    "correctAnswer": "\u30d0\u30b9\u306b\u4e57\u308a\u9045\u308c\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|バスに乗り遅れました。|Basu ni noriokuremashita.|}}",
     "incorrectAnswers": [
-      "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
-      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
-      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|}}",
+      "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|}}",
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2023,11 +2023,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Where can I buy a ticket?'.",
-    "correctAnswer": "\u5207\u7b26\u306f\u3069\u3053\u3067\u8cb7\u3048\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|}}",
     "incorrectAnswers": [
-      "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
-      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|}}",
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|}}",
+      "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2043,11 +2043,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'The bus arrives at noon.'?",
-    "correctAnswer": "\u30d0\u30b9\u306f\u6b63\u5348\u306b\u7740\u304d\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|}}",
     "incorrectAnswers": [
-      "\u7a7a\u6e2f\u307e\u3067\u306e\u5207\u7b26\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4e2d\u5fc3\u90e8\u307e\u3067\u306e\u5207\u7b26\u3092\u4e00\u679a\u304f\u3060\u3055\u3044\u3002",
-      "\u5f80\u5fa9\u5207\u7b26\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|}}",
+      "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|}}",
+      "{{ja-JP|往復切符をください。|Oufuku kippu wo kudasai.|}}"
     ],
     "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
     "keywords": [
@@ -2063,11 +2063,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I have a reservation.'?",
-    "correctAnswer": "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|予約があります。|Yoyaku ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002"
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|}}",
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|}}",
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2083,11 +2083,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Do you have a single room?'?",
-    "correctAnswer": "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|}}",
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|}}",
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2103,11 +2103,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Do you have a double room?'.",
-    "correctAnswer": "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|}}",
     "incorrectAnswers": [
-      "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
-      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002"
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|}}",
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|}}",
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2123,11 +2123,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'The WiFi password, please.'?",
-    "correctAnswer": "Wi-Fi\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|}}",
     "incorrectAnswers": [
-      "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
-      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002"
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|}}",
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|}}",
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2143,11 +2143,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'There is a problem with the room.'?",
-    "correctAnswer": "\u90e8\u5c4b\u306b\u554f\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
-      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
-      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|}}",
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|}}",
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2163,11 +2163,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'The shower does not work.'?",
-    "correctAnswer": "\u30b7\u30e3\u30ef\u30fc\u304c\u52d5\u304d\u307e\u305b\u3093\u3002",
+    "correctAnswer": "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|}}",
     "incorrectAnswers": [
-      "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
-      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002"
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|}}",
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|}}",
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2183,11 +2183,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'The room is too cold.'.",
-    "correctAnswer": "\u90e8\u5c4b\u304c\u5bd2\u3059\u304e\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|}}",
     "incorrectAnswers": [
-      "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
-      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|}}",
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|}}",
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2203,11 +2203,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I need clean towels.'?",
-    "correctAnswer": "\u304d\u308c\u3044\u306a\u30bf\u30aa\u30eb\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
-      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|}}",
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|}}",
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2223,11 +2223,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Is breakfast included?'?",
-    "correctAnswer": "\u671d\u98df\u306f\u3064\u3044\u3066\u3044\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|}}",
     "incorrectAnswers": [
-      "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
-      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002"
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|}}",
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|}}",
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2243,11 +2243,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Can I have another key?'?",
-    "correctAnswer": "\u3082\u3046\u4e00\u3064\u9375\u3092\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|}}",
     "incorrectAnswers": [
-      "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
-      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|}}",
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|}}",
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2263,11 +2263,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'The air conditioner is broken.'.",
-    "correctAnswer": "\u30a8\u30a2\u30b3\u30f3\u304c\u58ca\u308c\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|}}",
     "incorrectAnswers": [
-      "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
-      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|}}",
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|}}",
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2283,11 +2283,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Breakfast starts at seven.'?",
-    "correctAnswer": "\u671d\u98df\u306f\u4e03\u6642\u306b\u59cb\u307e\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|}}",
     "incorrectAnswers": [
-      "\u4e88\u7d04\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u30b7\u30f3\u30b0\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002",
-      "\u30c0\u30d6\u30eb\u30eb\u30fc\u30e0\u306f\u3042\u308a\u307e\u3059\u304b\u3002"
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|}}",
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|}}",
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|}}"
     ],
     "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
     "keywords": [
@@ -2303,11 +2303,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I feel sick.'?",
-    "correctAnswer": "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|}}",
     "incorrectAnswers": [
-      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
-      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|}}",
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|}}",
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2323,11 +2323,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I have a headache.'?",
-    "correctAnswer": "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|頭が痛いです。|Atama ga itai desu.|}}",
     "incorrectAnswers": [
-      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|}}",
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|}}",
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2343,11 +2343,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I have a fever.'.",
-    "correctAnswer": "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|熱があります。|Netsu ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|}}",
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|}}",
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2363,11 +2363,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I need a doctor.'?",
-    "correctAnswer": "\u533b\u8005\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002"
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|}}",
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|}}",
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2383,11 +2383,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Where is the pharmacy?'?",
-    "correctAnswer": "\u85ac\u5c40\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
-      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|}}",
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|}}",
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2403,11 +2403,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I am allergic to penicillin.'?",
-    "correctAnswer": "\u30da\u30cb\u30b7\u30ea\u30f3\u306e\u30a2\u30ec\u30eb\u30ae\u30fc\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
-      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002"
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|}}",
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|}}",
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2423,11 +2423,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'My stomach hurts.'.",
-    "correctAnswer": "\u304a\u8179\u304c\u75db\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|}}",
     "incorrectAnswers": [
-      "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
-      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|}}",
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|}}",
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2443,11 +2443,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I need medicine.'?",
-    "correctAnswer": "\u85ac\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
-      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|}}",
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|}}",
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2463,11 +2463,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I feel dizzy.'?",
-    "correctAnswer": "\u3081\u307e\u3044\u304c\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|めまいがします。|Memai ga shimasu.|}}",
     "incorrectAnswers": [
-      "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002"
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|}}",
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|}}",
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2483,11 +2483,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I have a cold.'?",
-    "correctAnswer": "\u98a8\u90aa\u3092\u3072\u3044\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|}}",
     "incorrectAnswers": [
-      "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
-      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002"
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|}}",
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|}}",
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2503,11 +2503,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I need a hospital.'.",
-    "correctAnswer": "\u75c5\u9662\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
-      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
-      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002"
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|}}",
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|}}",
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2523,11 +2523,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I feel better now.'?",
-    "correctAnswer": "\u4eca\u306f\u5c11\u3057\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|}}",
     "incorrectAnswers": [
-      "\u6c17\u5206\u304c\u60aa\u3044\u3067\u3059\u3002",
-      "\u982d\u304c\u75db\u3044\u3067\u3059\u3002",
-      "\u71b1\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|}}",
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|}}",
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|}}"
     ],
     "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
     "keywords": [
@@ -2543,11 +2543,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'What time is it?'?",
-    "correctAnswer": "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|今何時ですか。|Ima nanji desu ka.|}}",
     "incorrectAnswers": [
-      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
-      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
-      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002"
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|}}",
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|}}",
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2563,11 +2563,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Today is Monday.'?",
-    "correctAnswer": "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|}}",
     "incorrectAnswers": [
-      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
-      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
-      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002"
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|}}",
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|}}",
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2583,11 +2583,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Tomorrow I will travel.'.",
-    "correctAnswer": "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|}}",
     "incorrectAnswers": [
-      "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
-      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
-      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002"
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|}}",
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|}}",
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2603,11 +2603,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Yesterday I worked.'?",
-    "correctAnswer": "\u6628\u65e5\u50cd\u304d\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|}}",
     "incorrectAnswers": [
-      "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
-      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
-      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002"
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|}}",
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|}}",
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2623,11 +2623,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'It opens at nine.'?",
-    "correctAnswer": "\u4e5d\u6642\u306b\u958b\u304d\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|九時に開きます。|Kuji ni akimasu.|}}",
     "incorrectAnswers": [
-      "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
-      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
-      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002"
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|}}",
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|}}",
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2643,11 +2643,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'It closes at six.'?",
-    "correctAnswer": "\u516d\u6642\u306b\u9589\u307e\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|}}",
     "incorrectAnswers": [
-      "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
-      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
-      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|}}",
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|}}",
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2663,11 +2663,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I arrive later.'.",
-    "correctAnswer": "\u3042\u3068\u3067\u6765\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|あとで来ます。|Ato de kimasu.|}}",
     "incorrectAnswers": [
-      "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
-      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
-      "\u9045\u3059\u304e\u307e\u3059\u3002"
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|}}",
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|}}",
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2683,11 +2683,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I will come back soon.'?",
-    "correctAnswer": "\u3059\u3050\u623b\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|}}",
     "incorrectAnswers": [
-      "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
-      "\u9045\u3059\u304e\u307e\u3059\u3002",
-      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002"
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|}}",
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|}}",
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2703,11 +2703,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I need five minutes.'?",
-    "correctAnswer": "\u4e94\u5206\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u9045\u3059\u304e\u307e\u3059\u3002",
-      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
-      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002"
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|}}",
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|}}",
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2723,11 +2723,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'It is too late.'?",
-    "correctAnswer": "\u9045\u3059\u304e\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|遅すぎます。|Oso sugimasu.|}}",
     "incorrectAnswers": [
-      "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
-      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
-      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002"
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|}}",
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|}}",
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2743,11 +2743,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'This week is busy.'.",
-    "correctAnswer": "\u4eca\u9031\u306f\u5fd9\u3057\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|}}",
     "incorrectAnswers": [
-      "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
-      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
-      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002"
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|}}",
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|}}",
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2763,11 +2763,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Next month I am free.'?",
-    "correctAnswer": "\u6765\u6708\u306f\u6687\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|}}",
     "incorrectAnswers": [
-      "\u4eca\u4f55\u6642\u3067\u3059\u304b\u3002",
-      "\u4eca\u65e5\u306f\u6708\u66dc\u65e5\u3067\u3059\u3002",
-      "\u660e\u65e5\u65c5\u884c\u3057\u307e\u3059\u3002"
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|}}",
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|}}",
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|}}"
     ],
     "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
     "keywords": [
@@ -2783,11 +2783,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'What is the weather like?'?",
-    "correctAnswer": "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|}}",
     "incorrectAnswers": [
-      "\u6691\u3044\u3067\u3059\u3002",
-      "\u5bd2\u3044\u3067\u3059\u3002",
-      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|暑いです。|Atsui desu.|}}",
+      "{{ja-JP|寒いです。|Samui desu.|}}",
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2803,11 +2803,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'It is hot.'?",
-    "correctAnswer": "\u6691\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|暑いです。|Atsui desu.|}}",
     "incorrectAnswers": [
-      "\u5bd2\u3044\u3067\u3059\u3002",
-      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002"
+      "{{ja-JP|寒いです。|Samui desu.|}}",
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|}}",
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2823,11 +2823,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'It is cold.'.",
-    "correctAnswer": "\u5bd2\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|寒いです。|Samui desu.|}}",
     "incorrectAnswers": [
-      "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
-      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|}}",
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|}}",
+      "{{ja-JP|晴れています。|Harete imasu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2843,11 +2843,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'It is raining.'?",
-    "correctAnswer": "\u96e8\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|雨が降っています。|Ame ga futte imasu.|}}",
     "incorrectAnswers": [
-      "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
-      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|}}",
+      "{{ja-JP|晴れています。|Harete imasu.|}}",
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2863,11 +2863,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'It is windy.'?",
-    "correctAnswer": "\u98a8\u304c\u5f37\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|}}",
     "incorrectAnswers": [
-      "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002"
+      "{{ja-JP|晴れています。|Harete imasu.|}}",
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|}}",
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2883,11 +2883,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'It is sunny.'?",
-    "correctAnswer": "\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|晴れています。|Harete imasu.|}}",
     "incorrectAnswers": [
-      "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
-      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|}}",
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|}}",
+      "{{ja-JP|曇っています。|Kumotte imasu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2903,11 +2903,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'It is snowing.'.",
-    "correctAnswer": "\u96ea\u304c\u964d\u3063\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|}}",
     "incorrectAnswers": [
-      "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
-      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|}}",
+      "{{ja-JP|曇っています。|Kumotte imasu.|}}",
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2923,11 +2923,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'What a beautiful day!'?",
-    "correctAnswer": "\u306a\u3093\u3066\u304d\u308c\u3044\u306a\u65e5\u3067\u3057\u3087\u3046\u3002",
+    "correctAnswer": "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|}}",
     "incorrectAnswers": [
-      "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
-      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002"
+      "{{ja-JP|曇っています。|Kumotte imasu.|}}",
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|}}",
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2943,11 +2943,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'It is cloudy.'?",
-    "correctAnswer": "\u66c7\u3063\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|曇っています。|Kumotte imasu.|}}",
     "incorrectAnswers": [
-      "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
-      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|}}",
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|}}",
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2963,11 +2963,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I need an umbrella.'?",
-    "correctAnswer": "\u5098\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
-      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002"
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|}}",
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|}}",
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -2983,11 +2983,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'The weather is nice today.'.",
-    "correctAnswer": "\u4eca\u65e5\u306f\u5929\u6c17\u304c\u3044\u3044\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|}}",
     "incorrectAnswers": [
-      "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
-      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
-      "\u6691\u3044\u3067\u3059\u3002"
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|}}",
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|}}",
+      "{{ja-JP|暑いです。|Atsui desu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3003,11 +3003,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'The sky is clear.'?",
-    "correctAnswer": "\u7a7a\u304c\u6674\u308c\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|空が晴れています。|Sora ga harete imasu.|}}",
     "incorrectAnswers": [
-      "\u5929\u6c17\u306f\u3069\u3046\u3067\u3059\u304b\u3002",
-      "\u6691\u3044\u3067\u3059\u3002",
-      "\u5bd2\u3044\u3067\u3059\u3002"
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|}}",
+      "{{ja-JP|暑いです。|Atsui desu.|}}",
+      "{{ja-JP|寒いです。|Samui desu.|}}"
     ],
     "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
     "keywords": [
@@ -3023,11 +3023,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Help!'?",
-    "correctAnswer": "\u52a9\u3051\u3066!",
+    "correctAnswer": "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
     "incorrectAnswers": [
-      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002"
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|}}",
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|}}",
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3043,11 +3043,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Call the police!'?",
-    "correctAnswer": "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|}}",
     "incorrectAnswers": [
-      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
-      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|}}",
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|}}",
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3063,11 +3063,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I have lost my passport.'.",
-    "correctAnswer": "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|}}",
     "incorrectAnswers": [
-      "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
-      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|}}",
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|}}",
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3083,11 +3083,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'My wallet was stolen.'?",
-    "correctAnswer": "\u8ca1\u5e03\u3092\u76d7\u307e\u308c\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|}}",
     "incorrectAnswers": [
-      "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u706b\u4e8b\u3067\u3059\u3002"
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|}}",
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|}}",
+      "{{ja-JP|火事です。|Kaji desu.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3103,11 +3103,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I need an ambulance.'?",
-    "correctAnswer": "\u6551\u6025\u8eca\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u706b\u4e8b\u3067\u3059\u3002",
-      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|}}",
+      "{{ja-JP|火事です。|Kaji desu.|}}",
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3123,11 +3123,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Call a doctor!'?",
-    "correctAnswer": "\u533b\u8005\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|}}",
     "incorrectAnswers": [
-      "\u706b\u4e8b\u3067\u3059\u3002",
-      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+      "{{ja-JP|火事です。|Kaji desu.|}}",
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|}}",
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3143,11 +3143,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'There is a fire.'.",
-    "correctAnswer": "\u706b\u4e8b\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|火事です。|Kaji desu.|}}",
     "incorrectAnswers": [
-      "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|}}",
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|}}",
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3163,11 +3163,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I need help now.'?",
-    "correctAnswer": "\u4eca\u3059\u3050\u52a9\u3051\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002"
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|}}",
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|}}",
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3183,11 +3183,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I lost my phone.'?",
-    "correctAnswer": "\u96fb\u8a71\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|}}",
     "incorrectAnswers": [
-      "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
-      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
-      "\u7dca\u6025\u3067\u3059\u3002"
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|}}",
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|}}",
+      "{{ja-JP|緊急です。|Kinkyuu desu.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3203,11 +3203,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I lost my bag.'?",
-    "correctAnswer": "\u304b\u3070\u3093\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|}}",
     "incorrectAnswers": [
-      "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
-      "\u7dca\u6025\u3067\u3059\u3002",
-      "\u52a9\u3051\u3066!"
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|}}",
+      "{{ja-JP|緊急です。|Kinkyuu desu.|}}",
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3223,11 +3223,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'My friend is hurt.'.",
-    "correctAnswer": "\u53cb\u3060\u3061\u304c\u3051\u304c\u3092\u3057\u307e\u3057\u305f\u3002",
+    "correctAnswer": "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|}}",
     "incorrectAnswers": [
-      "\u7dca\u6025\u3067\u3059\u3002",
-      "\u52a9\u3051\u3066!",
-      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|緊急です。|Kinkyuu desu.|}}",
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3243,11 +3243,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'This is an emergency.'?",
-    "correctAnswer": "\u7dca\u6025\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|緊急です。|Kinkyuu desu.|}}",
     "incorrectAnswers": [
-      "\u52a9\u3051\u3066!",
-      "\u8b66\u5bdf\u3092\u547c\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u30d1\u30b9\u30dd\u30fc\u30c8\u3092\u306a\u304f\u3057\u307e\u3057\u305f\u3002"
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|}}",
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|}}"
     ],
     "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
     "keywords": [
@@ -3263,11 +3263,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Happy birthday!'?",
-    "correctAnswer": "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|}}",
     "incorrectAnswers": [
-      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002"
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|}}",
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|}}",
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3283,11 +3283,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Congratulations!'?",
-    "correctAnswer": "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|}}",
     "incorrectAnswers": [
-      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
-      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|}}",
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|}}",
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3303,11 +3303,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Good luck!'.",
-    "correctAnswer": "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|頑張ってください。|Ganbatte kudasai.|}}",
     "incorrectAnswers": [
-      "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
-      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002"
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|}}",
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|}}",
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3323,11 +3323,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'You're welcome.'?",
-    "correctAnswer": "\u3069\u3046\u3044\u305f\u3057\u307e\u3057\u3066\u3002",
+    "correctAnswer": "{{ja-JP|どういたしまして。|Dou itashimashite.|}}",
     "incorrectAnswers": [
-      "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
-      "\u53ec\u3057\u4e0a\u304c\u308c\u3002"
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|}}",
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|}}",
+      "{{ja-JP|召し上がれ。|Meshiagare.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3343,11 +3343,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Don't mention it.'?",
-    "correctAnswer": "\u6c17\u306b\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|}}",
     "incorrectAnswers": [
-      "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
-      "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
-      "\u3088\u3044\u65c5\u3092\u3002"
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|}}",
+      "{{ja-JP|召し上がれ。|Meshiagare.|}}",
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3363,11 +3363,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I'm sorry to hear that.'?",
-    "correctAnswer": "\u305d\u308c\u306f\u6b8b\u5ff5\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|それは残念です。|Sore wa zannen desu.|}}",
     "incorrectAnswers": [
-      "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
-      "\u3088\u3044\u65c5\u3092\u3002",
-      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002"
+      "{{ja-JP|召し上がれ。|Meshiagare.|}}",
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|}}",
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3383,11 +3383,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Enjoy your meal.'.",
-    "correctAnswer": "\u53ec\u3057\u4e0a\u304c\u308c\u3002",
+    "correctAnswer": "{{ja-JP|召し上がれ。|Meshiagare.|}}",
     "incorrectAnswers": [
-      "\u3088\u3044\u65c5\u3092\u3002",
-      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
-      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002"
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|}}",
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|}}",
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3403,11 +3403,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Have a nice trip.'?",
-    "correctAnswer": "\u3088\u3044\u65c5\u3092\u3002",
+    "correctAnswer": "{{ja-JP|よい旅を。|Yoi tabi wo.|}}",
     "incorrectAnswers": [
-      "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
-      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
-      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002"
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|}}",
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|}}",
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3423,11 +3423,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'See you on Monday.'?",
-    "correctAnswer": "\u6708\u66dc\u65e5\u306b\u307e\u305f\u4f1a\u3044\u307e\u3057\u3087\u3046\u3002",
+    "correctAnswer": "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|}}",
     "incorrectAnswers": [
-      "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
-      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
-      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|}}",
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|}}",
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3443,11 +3443,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Welcome to our city.'?",
-    "correctAnswer": "\u79c1\u305f\u3061\u306e\u753a\u3078\u3088\u3046\u3053\u305d\u3002",
+    "correctAnswer": "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|}}",
     "incorrectAnswers": [
-      "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
-      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|}}",
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|}}",
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3463,11 +3463,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'Happy holidays!'.",
-    "correctAnswer": "\u697d\u3057\u3044\u4f11\u65e5\u3092\u3002",
+    "correctAnswer": "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|}}",
     "incorrectAnswers": [
-      "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002"
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|}}",
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|}}",
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3483,11 +3483,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Have fun!'?",
-    "correctAnswer": "\u697d\u3057\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|}}",
     "incorrectAnswers": [
-      "\u304a\u8a95\u751f\u65e5\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u304a\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002",
-      "\u9811\u5f35\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|}}",
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|}}",
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|}}"
     ],
     "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
     "keywords": [
@@ -3503,11 +3503,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I work in an office.'?",
-    "correctAnswer": "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
-      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|}}",
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|}}",
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3523,11 +3523,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'I work as a teacher.'?",
-    "correctAnswer": "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
-      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|}}",
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3543,11 +3543,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I study every day.'.",
-    "correctAnswer": "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002"
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}",
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3563,11 +3563,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am learning the language.'?",
-    "correctAnswer": "\u79c1\u306f\u305d\u306e\u8a00\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|}}",
     "incorrectAnswers": [
-      "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
-      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002"
+      "{{ja-JP|書いてください。|Kaite kudasai.|}}",
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|}}",
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3583,11 +3583,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Please write it down.'?",
-    "correctAnswer": "\u66f8\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|書いてください。|Kaite kudasai.|}}",
     "incorrectAnswers": [
-      "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
-      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|}}",
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|}}",
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3603,11 +3603,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'The class starts now.'?",
-    "correctAnswer": "\u6388\u696d\u306f\u4eca\u59cb\u307e\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|}}",
     "incorrectAnswers": [
-      "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
-      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|}}",
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|}}",
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3623,11 +3623,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I need a pen.'.",
-    "correctAnswer": "\u30da\u30f3\u304c\u5fc5\u8981\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|}}",
     "incorrectAnswers": [
-      "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002"
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|}}",
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|}}",
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3643,11 +3643,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I have homework.'?",
-    "correctAnswer": "\u5bbf\u984c\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|宿題があります。|Shukudai ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
-      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002"
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|}}",
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|}}",
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3663,11 +3663,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I have an exam tomorrow.'?",
-    "correctAnswer": "\u660e\u65e5\u8a66\u9a13\u304c\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|}}",
     "incorrectAnswers": [
-      "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
-      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
-      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002"
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|}}",
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|}}",
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3683,11 +3683,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Where is the classroom?'?",
-    "correctAnswer": "\u6559\u5ba4\u306f\u3069\u3053\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|}}",
     "incorrectAnswers": [
-      "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
-      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
-      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|}}",
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|}}",
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3703,11 +3703,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'The book is on the table.'.",
-    "correctAnswer": "\u672c\u306f\u30c6\u30fc\u30d6\u30eb\u306e\u4e0a\u306b\u3042\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
-      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|}}",
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|}}",
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3723,11 +3723,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'My teacher is very kind.'?",
-    "correctAnswer": "\u79c1\u306e\u5148\u751f\u306f\u3068\u3066\u3082\u89aa\u5207\u3067\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u30aa\u30d5\u30a3\u30b9\u3067\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u5148\u751f\u3068\u3057\u3066\u50cd\u3044\u3066\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u6bce\u65e5\u52c9\u5f37\u3057\u307e\u3059\u3002"
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|}}",
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|}}",
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|}}"
     ],
     "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
     "keywords": [
@@ -3743,11 +3743,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I speak a little of the language.'?",
-    "correctAnswer": "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|}}",
     "incorrectAnswers": [
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
-      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002"
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|}}",
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3763,11 +3763,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Please say that again.'?",
-    "correctAnswer": "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
-      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
-      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002"
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|}}",
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|}}",
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3783,11 +3783,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'What does this word mean?'.",
-    "correctAnswer": "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
-      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
-      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002"
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|}}",
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|}}",
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3803,11 +3803,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I do not know this word.'?",
-    "correctAnswer": "\u3053\u306e\u8a00\u8449\u3092\u77e5\u308a\u307e\u305b\u3093\u3002",
+    "correctAnswer": "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|}}",
     "incorrectAnswers": [
-      "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
-      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
-      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002"
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|}}",
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|}}",
+      "{{ja-JP|今わかります。|Ima wakarimasu.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3823,11 +3823,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Is this correct?'?",
-    "correctAnswer": "\u3053\u308c\u306f\u6b63\u3057\u3044\u3067\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|}}",
     "incorrectAnswers": [
-      "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
-      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
-      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|}}",
+      "{{ja-JP|今わかります。|Ima wakarimasu.|}}",
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3843,11 +3843,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Can you explain it?'?",
-    "correctAnswer": "\u8aac\u660e\u3057\u3066\u3082\u3089\u3048\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|}}",
     "incorrectAnswers": [
-      "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
-      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002"
+      "{{ja-JP|今わかります。|Ima wakarimasu.|}}",
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|}}",
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3863,11 +3863,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'I understand now.'.",
-    "correctAnswer": "\u4eca\u308f\u304b\u308a\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|今わかります。|Ima wakarimasu.|}}",
     "incorrectAnswers": [
-      "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|}}",
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|}}",
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3883,11 +3883,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'Please use simple words.'?",
-    "correctAnswer": "\u7c21\u5358\u306a\u8a00\u8449\u3092\u4f7f\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
-      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002"
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|}}",
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|}}",
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3903,11 +3903,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'I am practicing every day.'?",
-    "correctAnswer": "\u79c1\u306f\u6bce\u65e5\u7df4\u7fd2\u3057\u3066\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|}}",
     "incorrectAnswers": [
-      "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
-      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
-      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002"
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|}}",
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|}}",
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3923,11 +3923,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Which Japanese phrase means 'Please read this sentence.'?",
-    "correctAnswer": "\u3053\u306e\u6587\u3092\u8aad\u3093\u3067\u304f\u3060\u3055\u3044\u3002",
+    "correctAnswer": "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|}}",
     "incorrectAnswers": [
-      "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
-      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002"
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|}}",
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|}}",
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3943,11 +3943,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "Choose the correct Japanese phrase for 'How do you write that word?'.",
-    "correctAnswer": "\u305d\u306e\u8a00\u8449\u306f\u3069\u3046\u66f8\u304d\u307e\u3059\u304b\u3002",
+    "correctAnswer": "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
-      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002"
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|}}",
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3963,11 +3963,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "What is the natural Japanese sentence for 'I am learning slowly.'?",
-    "correctAnswer": "\u79c1\u306f\u3086\u3063\u304f\u308a\u5b66\u3093\u3067\u3044\u307e\u3059\u3002",
+    "correctAnswer": "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|}}",
     "incorrectAnswers": [
-      "\u79c1\u306f\u65e5\u672c\u8a9e\u3092\u5c11\u3057\u8a71\u3057\u307e\u3059\u3002",
-      "\u3082\u3046\u4e00\u5ea6\u8a00\u3063\u3066\u304f\u3060\u3055\u3044\u3002",
-      "\u3053\u306e\u8a00\u8449\u306f\u3069\u3046\u3044\u3046\u610f\u5473\u3067\u3059\u304b\u3002"
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|}}",
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|}}"
     ],
     "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
     "keywords": [
@@ -3983,11 +3983,11 @@
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "phrases",
     "question": "In beginner Japanese, how do you say 'Where are you from?'?",
-    "correctAnswer": "\u3069\u3061\u3089\u304b\u3089\u6765\u307e\u3057\u305f\u304b\u3002",
+    "correctAnswer": "{{ja-JP|どちらから来ましたか。|Dochira kara kimashita ka.|}}",
     "incorrectAnswers": [
-      "\u304a\u540d\u524d\u306f\u4f55\u3067\u3059\u304b\u3002",
-      "\u79c1\u306f\u30a2\u30e1\u30ea\u30ab\u51fa\u8eab\u3067\u3059\u3002",
-      "\u79c1\u306f\u30b7\u30ab\u30b4\u306b\u4f4f\u3093\u3067\u3044\u307e\u3059\u3002"
+      "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|}}",
+      "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|}}",
+      "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|}}"
     ],
     "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
     "keywords": [
