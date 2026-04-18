@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
+import { SEO } from "@/components/SEO";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -148,6 +149,8 @@ const SignUpPage = () => {
   }
 
   return (
+    <>
+      <SEO title="Sign Up" noindex />
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
@@ -272,6 +275,7 @@ const SignUpPage = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

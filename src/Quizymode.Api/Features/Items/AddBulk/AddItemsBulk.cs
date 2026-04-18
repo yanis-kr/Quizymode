@@ -1,9 +1,11 @@
 using FluentValidation;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
 
@@ -19,7 +21,10 @@ public static class AddItemsBulk
         List<string> IncorrectAnswers,
         string Explanation,
         List<KeywordRequest>? Keywords = null,
-        string? Source = null);
+        string? Source = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -103,11 +108,15 @@ public static class AddItemsBulk
                 .MaximumLength(1000)
                 .WithMessage("Question must not exceed 1000 characters");
 
+            this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
+
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()
                 .WithMessage("CorrectAnswer is required")
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters");
+
+            this.AddSpeechSupportRules(x => x.CorrectAnswerSpeech, 500, "CorrectAnswerSpeech");
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
@@ -118,13 +127,15 @@ public static class AddItemsBulk
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers.Count);
+
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
                 .WithMessage("Explanation must not exceed 4000 characters");
 
             RuleFor(x => x.Source)
-                .MaximumLength(200)
-                .WithMessage("Source must not exceed 200 characters");
+                .MaximumLength(1000)
+                .WithMessage("Source must not exceed 1000 characters");
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)

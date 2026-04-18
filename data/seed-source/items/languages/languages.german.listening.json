@@ -4,7 +4,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
-    "question": "'Bett' and 'Beet' differ by vowel length. What does 'Bett' mean?",
+    "question": "'{{de-DE|Bett||BETT}}' and 'Beet' differ by vowel length. What does '{{de-DE|Bett||BETT}}' mean?",
     "correctAnswer": "a bed for sleeping",
     "incorrectAnswers": [
       "a garden plot (that is closer to 'Beet')",
@@ -42,7 +42,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
-    "question": "The polite 'Sie' (you) and 'sie' (they) can sound the same. What usually tells them apart?",
+    "question": "The polite '{{de-DE|Sie||SEE}}' (you) and '{{de-DE|sie||SEE}}' (they) can sound the same. What usually tells them apart?",
     "correctAnswer": "context and verb forms",
     "incorrectAnswers": [
       "they always sound different",
@@ -61,7 +61,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
-    "question": "What does 'dreizehn' mean when you hear a number?",
+    "question": "What does '{{de-DE|dreizehn||DREYE-tsehn}}' mean when you hear a number?",
     "correctAnswer": "13",
     "incorrectAnswers": [
       "30",
@@ -87,7 +87,7 @@
       "the verb is always silent",
       "prefixes are never used"
     ],
-    "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe fr\u00fch auf.'",
+    "explanation": "In main clauses, the spoken line may end with a separable prefix, for example 'Ich stehe früh auf.'",
     "keywords": [
       "separable-verbs",
       "german-listening"
@@ -99,7 +99,7 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "listening",
-    "question": "At the ends of words like 'Tag' and 'Abend', how do many German consonants often sound?",
+    "question": "At the ends of words like 'Tag' and '{{de-DE|Abend||A-bend}}', how do many German consonants often sound?",
     "correctAnswer": "voiceless (like t or p) in many accents",
     "incorrectAnswers": [
       "always like English z",

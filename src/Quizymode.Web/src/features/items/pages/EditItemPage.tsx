@@ -11,6 +11,10 @@ import { ItemForm } from "@/components/items/ItemForm";
 import type { KeywordRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
+import {
+  normalizeSpeechSupportInput,
+  normalizeSpeechSupportMapInput,
+} from "@/utils/itemSpeech";
 
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,8 +27,11 @@ const EditItemPage = () => {
     navigationRank1: "",
     navigationRank2: "",
     question: "",
+    questionSpeech: {},
     correctAnswer: "",
+    correctAnswerSpeech: {},
     incorrectAnswers: ["", "", ""],
+    incorrectAnswerSpeech: {},
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
@@ -91,11 +98,14 @@ const EditItemPage = () => {
         navigationRank1: breadcrumb[0] ?? "",
         navigationRank2: breadcrumb[1] ?? "",
         question: itemData.question || "",
+        questionSpeech: itemData.questionSpeech ?? {},
         correctAnswer: itemData.correctAnswer || "",
+        correctAnswerSpeech: itemData.correctAnswerSpeech ?? {},
         incorrectAnswers:
           itemData.incorrectAnswers && itemData.incorrectAnswers.length > 0
             ? [...itemData.incorrectAnswers, "", "", ""].slice(0, 3)
             : ["", "", ""],
+        incorrectAnswerSpeech: itemData.incorrectAnswerSpeech ?? {},
         explanation: itemData.explanation || "",
         keywords: itemData.keywords
           ? itemData.keywords
@@ -168,8 +178,11 @@ const EditItemPage = () => {
       navigationKeyword2: formData.navigationRank2.trim(),
       isPrivate: formData.isPrivate,
       question: formData.question.trim(),
+      questionSpeech: normalizeSpeechSupportInput(formData.questionSpeech),
       correctAnswer: formData.correctAnswer.trim(),
+      correctAnswerSpeech: normalizeSpeechSupportInput(formData.correctAnswerSpeech),
       incorrectAnswers: filteredIncorrectAnswers,
+      incorrectAnswerSpeech: normalizeSpeechSupportMapInput(formData.incorrectAnswerSpeech),
       explanation: formData.explanation.trim(),
       keywords: otherKeywords,
       source: formData.source.trim() || undefined,

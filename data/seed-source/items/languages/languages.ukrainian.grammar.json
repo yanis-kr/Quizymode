@@ -1,0 +1,577 @@
+[
+  {
+    "itemId": "f0238f97-7336-4d46-b1c6-d2b1355220e6",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Ukrainian, what usually replaces English articles like \"a\" and \"the\"?",
+    "correctAnswer": "no article is used",
+    "incorrectAnswers": [
+      "an article is added after every noun",
+      "an article always comes before the verb",
+      "the article changes by tense"
+    ],
+    "explanation": "Ukrainian has no separate definite or indefinite articles.",
+    "keywords": [
+      "articles",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "c3c0cd80-c8fd-4a8e-b81d-25a3820404d8",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "How many grammatical genders do beginners usually learn first in Ukrainian?",
+    "correctAnswer": "three",
+    "incorrectAnswers": [
+      "one",
+      "two",
+      "five"
+    ],
+    "explanation": "Ukrainian commonly uses masculine, feminine, and neuter gender.",
+    "keywords": [
+      "gender",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "e6af2537-3ec5-453e-a912-9a79c9965e59",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a helpful beginner word order in Ukrainian?",
+    "correctAnswer": "subject-verb-object",
+    "incorrectAnswers": [
+      "verb-subject-object only",
+      "article-noun-verb only",
+      "adjective-article-verb only"
+    ],
+    "explanation": "Ukrainian word order is flexible, but subject-verb-object is a useful starting pattern.",
+    "keywords": [
+      "word-order",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "ecc29ea3-2df4-4840-831b-47f6e1c99ced",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "How many main cases are beginners often told to expect in Ukrainian?",
+    "correctAnswer": "seven",
+    "incorrectAnswers": [
+      "two",
+      "three",
+      "four"
+    ],
+    "explanation": "Ukrainian commonly teaches seven cases, including the vocative.",
+    "keywords": [
+      "cases",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "9ec4021e-9a80-42ff-b5c9-086aebb2edfb",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What do Ukrainian nouns usually change for?",
+    "correctAnswer": "case and number",
+    "incorrectAnswers": [
+      "punctuation only",
+      "article shape",
+      "capital letters only"
+    ],
+    "explanation": "Ukrainian nouns change form for case and number.",
+    "keywords": [
+      "cases",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "779806d4-baa6-4240-88e0-bf71eea85304",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case usually marks the subject in Ukrainian?",
+    "correctAnswer": "the nominative",
+    "incorrectAnswers": [
+      "the accusative",
+      "the genitive",
+      "the locative"
+    ],
+    "explanation": "Ukrainian usually uses the nominative for the subject.",
+    "keywords": [
+      "nominative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "91314f7d-ff66-4dfb-a7fd-69e1046adc23",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case usually marks the direct object in Ukrainian?",
+    "correctAnswer": "the accusative",
+    "incorrectAnswers": [
+      "the nominative",
+      "the imperative",
+      "the article case"
+    ],
+    "explanation": "Ukrainian commonly uses the accusative for a direct object.",
+    "keywords": [
+      "accusative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "45506239-e05c-4387-90cb-ca9e59da5b99",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often shows possession in Ukrainian?",
+    "correctAnswer": "the genitive",
+    "incorrectAnswers": [
+      "the future case",
+      "the vocative",
+      "the article case"
+    ],
+    "explanation": "Ukrainian often uses the genitive for possession and many \"of\" meanings.",
+    "keywords": [
+      "genitive",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "3f5b2c71-5647-4ca9-9c08-5ee186c4a246",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often marks the recipient in Ukrainian?",
+    "correctAnswer": "the dative",
+    "incorrectAnswers": [
+      "the nominative",
+      "the accusative only",
+      "the superlative"
+    ],
+    "explanation": "Ukrainian often uses the dative for the recipient.",
+    "keywords": [
+      "dative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "b3b73325-273b-41f9-a91a-7087cbf993d5",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often marks location with prepositions in Ukrainian?",
+    "correctAnswer": "the locative",
+    "incorrectAnswers": [
+      "the imperative",
+      "the article case",
+      "the infinitive"
+    ],
+    "explanation": "Ukrainian often uses the locative with place prepositions.",
+    "keywords": [
+      "locative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "8cb89def-0e0f-4c8e-a616-7a0b779b18cb",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often means \"with\" in Ukrainian?",
+    "correctAnswer": "the instrumental",
+    "incorrectAnswers": [
+      "the nominative",
+      "the vocative",
+      "the article case"
+    ],
+    "explanation": "Ukrainian often uses the instrumental for \"with\" meanings.",
+    "keywords": [
+      "instrumental",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "b98f4874-e1e7-4859-b0ab-fa8892a9f082",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What do Ukrainian adjectives usually do?",
+    "correctAnswer": "agree with the noun in gender, number, and case",
+    "incorrectAnswers": [
+      "stay the same always",
+      "agree only with the verb",
+      "agree only in the plural"
+    ],
+    "explanation": "Ukrainian adjectives usually match the noun they describe.",
+    "keywords": [
+      "adjective-agreement",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "9bd594bc-d1c8-4770-b13b-c50cc33880db",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Where do Ukrainian adjectives usually go?",
+    "correctAnswer": "before the noun",
+    "incorrectAnswers": [
+      "after the noun only",
+      "inside the verb",
+      "after punctuation only"
+    ],
+    "explanation": "Ukrainian adjectives usually come before the noun.",
+    "keywords": [
+      "adjectives",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "a21d4b61-98bc-4143-8cc3-6924df458d00",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What ending do many Ukrainian infinitives have?",
+    "correctAnswer": "-ty in transliteration",
+    "incorrectAnswers": [
+      "-ing",
+      "-ly",
+      "-ment"
+    ],
+    "explanation": "Many Ukrainian infinitives end in a form transliterated as -ty.",
+    "keywords": [
+      "infinitive",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "957aa536-eb0d-4b55-9188-3ec2acb0215e",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Where does \"ne\" usually go in a basic Ukrainian negative sentence?",
+    "correctAnswer": "before the word it negates",
+    "incorrectAnswers": [
+      "after the article only",
+      "inside the noun ending",
+      "after the final period only"
+    ],
+    "explanation": "Ukrainian usually places \"ne\" before the word it negates, often before the verb.",
+    "keywords": [
+      "negation",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "4f4cfed2-d4e1-4ad9-b241-82193697ca22",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens to the present-tense verb \"to be\" in simple Ukrainian statements?",
+    "correctAnswer": "it is often omitted",
+    "incorrectAnswers": [
+      "it must appear twice",
+      "it turns into an article",
+      "it always moves to the end"
+    ],
+    "explanation": "Simple present statements often omit the verb \"to be.\"",
+    "keywords": [
+      "to-be",
+      "present-tense",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "2f6899cd-248e-401c-b387-ee112aacc542",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "In singular past tense Ukrainian, what often changes with the subject?",
+    "correctAnswer": "the verb ending can show gender",
+    "incorrectAnswers": [
+      "the article changes",
+      "the noun disappears",
+      "the punctuation changes"
+    ],
+    "explanation": "Ukrainian singular past tense often reflects masculine, feminine, or neuter gender.",
+    "keywords": [
+      "past-tense",
+      "gender",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "702d3471-3485-4990-a7f4-f90944a64638",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Can Ukrainian often omit the subject pronoun when context is clear?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in dictionaries",
+      "only in commands"
+    ],
+    "explanation": "Ukrainian can often omit the subject pronoun when the meaning is already clear.",
+    "keywords": [
+      "subject-pronouns",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "25d59262-fb5e-4e57-9010-0bf42de74109",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "How are many yes-or-no questions formed in beginner Ukrainian?",
+    "correctAnswer": "with intonation or a question particle",
+    "incorrectAnswers": [
+      "with do-support",
+      "with an article only",
+      "by removing the verb every time"
+    ],
+    "explanation": "Ukrainian often uses intonation, and it can also use question particles such as \"chy.\"",
+    "keywords": [
+      "questions",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "f6189c94-a45a-43bc-ac9d-1943e5167e1d",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "Where does a Ukrainian question word usually go?",
+    "correctAnswer": "near the start of the sentence",
+    "incorrectAnswers": [
+      "inside the noun ending",
+      "after the final period",
+      "after every adjective"
+    ],
+    "explanation": "Ukrainian question words usually appear near the beginning of the sentence.",
+    "keywords": [
+      "questions",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "da73f53f-18a2-4339-badc-061d99388001",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What do Ukrainian present-tense verb endings usually show?",
+    "correctAnswer": "person and number",
+    "incorrectAnswers": [
+      "article type",
+      "noun color",
+      "comma placement only"
+    ],
+    "explanation": "Ukrainian present-tense endings usually show person and number.",
+    "keywords": [
+      "present-tense",
+      "verbs",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "fea32e22-852e-4c79-8999-5a8a1a56a082",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens to Ukrainian plural nouns?",
+    "correctAnswer": "they take a plural ending",
+    "incorrectAnswers": [
+      "they keep the singular shape always",
+      "they gain an article",
+      "they erase the verb"
+    ],
+    "explanation": "Ukrainian usually shows plural meaning with changed endings.",
+    "keywords": [
+      "plural",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "b5199140-e087-445c-a5a6-2549cb5b54d0",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a useful beginner rule for Ukrainian place expressions?",
+    "correctAnswer": "prepositions often work together with cases",
+    "incorrectAnswers": [
+      "prepositions never matter",
+      "prepositions replace nouns",
+      "prepositions replace verbs"
+    ],
+    "explanation": "Ukrainian prepositions often go with specific cases.",
+    "keywords": [
+      "prepositions",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "d444b9a7-a8a3-4628-8d1d-51849fa7cd83",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "When movement goes into a place in Ukrainian, which case often appears after a matching preposition?",
+    "correctAnswer": "the accusative",
+    "incorrectAnswers": [
+      "the article case",
+      "the imperative",
+      "the nominative only"
+    ],
+    "explanation": "Ukrainian often uses the accusative for movement toward a place.",
+    "keywords": [
+      "prepositions",
+      "accusative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "bbabd004-a6d9-4b57-9eab-3e2f39c0dfb5",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "When something is located in a place in Ukrainian, which case often appears after a matching preposition?",
+    "correctAnswer": "the locative",
+    "incorrectAnswers": [
+      "the nominative only",
+      "the future case",
+      "the article case"
+    ],
+    "explanation": "Ukrainian often uses the locative for location in a place.",
+    "keywords": [
+      "prepositions",
+      "locative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "ccfa6b4a-ac4c-461e-8c19-b7eee47d0dcd",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Ukrainian possession words?",
+    "correctAnswer": "possessive pronouns usually come before the noun",
+    "incorrectAnswers": [
+      "they always come after punctuation",
+      "they replace the verb",
+      "they never change"
+    ],
+    "explanation": "Ukrainian possessive pronouns usually come before the noun.",
+    "keywords": [
+      "possessives",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "34068775-6b98-4e7b-9e46-62470bf54cfb",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What direct-address form do learners often meet in Ukrainian?",
+    "correctAnswer": "the vocative",
+    "incorrectAnswers": [
+      "the article case",
+      "the comparative",
+      "the passive noun"
+    ],
+    "explanation": "Ukrainian uses a vocative form for direct address.",
+    "keywords": [
+      "vocative",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "5d2ba38c-166b-4afc-b276-f4fd84f21bbe",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What usually matters more than a fixed article system in Ukrainian?",
+    "correctAnswer": "case endings",
+    "incorrectAnswers": [
+      "articles",
+      "silent letters only",
+      "capitalization only"
+    ],
+    "explanation": "Ukrainian relies heavily on endings to show grammatical role.",
+    "keywords": [
+      "cases",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  },
+  {
+    "itemId": "51ba0e0e-b70e-475f-9d5a-eec8d7455d18",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner summary of Ukrainian grammar?",
+    "correctAnswer": "learn the case system early because it carries a lot of meaning",
+    "incorrectAnswers": [
+      "skip nouns completely",
+      "learn punctuation before words",
+      "ignore endings and memorize only verbs"
+    ],
+    "explanation": "Early progress in Ukrainian depends a lot on understanding noun and adjective endings.",
+    "keywords": [
+      "cases",
+      "ukrainian-grammar"
+    ],
+    "source": "https://learnukrainian.org/ukrainian-grammar"
+  },
+  {
+    "itemId": "46526cb5-dba6-41c1-a66e-21eb1c9f4080",
+    "category": "languages",
+    "navigationKeyword1": "ukrainian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a useful beginner rule for comparison in Ukrainian?",
+    "correctAnswer": "the language has its own comparative forms rather than English-style articles",
+    "incorrectAnswers": [
+      "comparison uses articles only",
+      "comparison deletes adjectives",
+      "comparison never changes words"
+    ],
+    "explanation": "Ukrainian adjectives can form their own comparatives.",
+    "keywords": [
+      "comparatives",
+      "ukrainian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ukrainian_grammar"
+  }
+]

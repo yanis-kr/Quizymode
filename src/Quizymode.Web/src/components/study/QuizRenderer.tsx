@@ -2,9 +2,11 @@
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
 import type { ItemResponse } from "@/types/api";
-import { TextWithLinks } from "@/components/TextWithLinks";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
+import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { ForeignPhraseText } from "@/components/ForeignPhraseText";
+import { getIndexedSpeech } from "@/utils/itemSpeech";
 
 export interface QuizRendererProps {
   item: ItemResponse;
@@ -23,7 +25,7 @@ export function QuizRenderer({
   onAnswerSelect,
   stats,
 }: QuizRendererProps) {
-  const { speak, isSupported } = useSpeech();
+  const { isSupported } = useSpeech();
 
   return (
     <div className="space-y-3">
@@ -32,12 +34,13 @@ export function QuizRenderer({
           <h3 className="text-base font-medium text-gray-900">Question</h3>
           <SpeakButton
             text={item.question}
-            onSpeak={speak}
+            speech={item.questionSpeech}
             isSupported={isSupported}
             label="Read question aloud"
           />
         </div>
-        <p className="text-gray-700">{item.question}</p>
+        <p className="text-gray-700"><ForeignPhraseText text={item.question} /></p>
+        <PronunciationHint text={item.question} speech={item.questionSpeech} />
       </div>
 
       <div>
@@ -49,6 +52,12 @@ export function QuizRenderer({
             const letter = String.fromCharCode(65 + index);
             const isCorrect = option === item.correctAnswer;
             const isSelected = selectedAnswer === option;
+            const optionSpeech = isCorrect
+              ? item.correctAnswerSpeech
+              : getIndexedSpeech(
+                  item.incorrectAnswerSpeech,
+                  item.incorrectAnswers.findIndex((candidate) => candidate === option)
+                );
             let bgColor = "bg-white hover:bg-gray-50";
             if (showAnswer) {
               if (isCorrect) {
@@ -68,7 +77,15 @@ export function QuizRenderer({
                   showAnswer ? "cursor-default" : "cursor-pointer"
                 }`}
               >
-                <span className="font-medium">{letter}.</span> {option}
+                <div>
+                  <span className="font-medium">{letter}.</span>{" "}
+                  <ForeignPhraseText text={option} />
+                  <PronunciationHint
+                    text={option}
+                    speech={optionSpeech}
+                    className="mt-1 text-sm text-gray-500 italic"
+                  />
+                </div>
               </button>
             );
           })}
@@ -83,13 +100,18 @@ export function QuizRenderer({
             </p>
             <SpeakButton
               text={item.correctAnswer}
-              onSpeak={speak}
+              speech={item.correctAnswerSpeech}
               isSupported={isSupported}
               label="Read answer aloud"
             />
           </div>
+          <PronunciationHint
+            text={item.correctAnswer}
+            speech={item.correctAnswerSpeech}
+            className="mt-1 text-sm text-blue-700 italic"
+          />
           {item.explanation && (
-            <p className="text-sm text-blue-700 mt-1"><TextWithLinks text={item.explanation} /></p>
+            <p className="text-sm text-blue-700 mt-1"><ForeignPhraseText text={item.explanation} linkify /></p>
           )}
         </div>
       )}

@@ -1,0 +1,428 @@
+[
+  {
+    "itemId": "2d105187-4d57-4df6-80f1-a54e61c8dcd8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you say 'I would like a coffee, please' in Russian?",
+    "correctAnswer": "{{ru-RU|Я бы хотел(а) кофе, пожалуйста.|Ya by khotel(a) kofe, pozhaluysta.|YA BY kho-TEL(A) KO-fe, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Дай мне кофе.|Day mne kofe.|DAY MNE KO-fe.}}",
+      "{{ru-RU|Кофе сейчас!|Kofe seychas!|KO-fe sey-CHAS!}}",
+      "{{ru-RU|Я пью кофе.|Ya pyu kofe.|YA PYU KO-fe.}}"
+    ],
+    "explanation": "'Ya by khotel(a)' is the polite conditional 'I would like'. Add -a for female speaker.",
+    "keywords": [
+      "freq-100",
+      "situation-food",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson9_main.php"
+  },
+  {
+    "itemId": "344f6271-85eb-401b-91ff-31c8a8a042e9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bathroom?' in Russian?",
+    "correctAnswer": "{{ru-RU|Где туалет?|Gde tualet?|GDE tua-LET?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Что такое туалет?|Chto takoye tualet?|CHTO TA-koye tua-LET?}}",
+      "{{ru-RU|Когда открыт туалет?|Kogda otkryt tualet?|KOG-da ot-KRYT tua-LET?}}",
+      "{{ru-RU|Есть ли туалет?|Yest li tualet?|YEST LI tua-LET?}}"
+    ],
+    "explanation": "'Gde' means 'where'. 'Gde tualet?' is the most practical phrase for any traveller.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/where"
+  },
+  {
+    "itemId": "8a4a2074-62d4-4873-98d8-10c69f484901",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'How much does this cost?' in Russian?",
+    "correctAnswer": "{{ru-RU|Сколько это стоит?|Skolko eto stoit?|SKOL-ko E-to STOIT?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Что это такое?|Chto eto takoye?|CHTO E-to TA-koye?}}",
+      "{{ru-RU|Где это купить?|Gde eto kupit?|GDE E-to ku-PIT?}}",
+      "{{ru-RU|Можно скидку?|Mozhno skidku?|MOZH-no SKID-ku?}}"
+    ],
+    "explanation": "'Skolko eto stoit?' — literally 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/how-much"
+  },
+  {
+    "itemId": "1ff57733-276f-4e96-b2f8-5f499958b35b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask for the bill in a Russian restaurant?",
+    "correctAnswer": "{{ru-RU|Счёт, пожалуйста.|Schyot, pozhaluysta.|SCHYOT, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Дайте меню.|Dayte menyu.|DAY-te ME-nyu.}}",
+      "{{ru-RU|Ещё одно блюдо.|Yeshchyo odno blyudo.|YESH-chyo OD-no BLYU-do.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}"
+    ],
+    "explanation": "'Schyot' means 'the bill/check'. Adding 'pozhaluysta' makes it polite.",
+    "keywords": [
+      "freq-100",
+      "situation-food",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/bill"
+  },
+  {
+    "itemId": "4c588291-ee12-4747-8f52-c8359c01a8c8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you say 'I don't understand' in Russian?",
+    "correctAnswer": "{{ru-RU|Я не понимаю.|Ya ne ponimayu.|YA NE po-NI-mayu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я не знаю.|Ya ne znayu.|YA NE ZNAYU.}}",
+      "{{ru-RU|Я не говорю.|Ya ne govoryu.|YA NE go-VO-ryu.}}",
+      "{{ru-RU|Я не слышу.|Ya ne slyshu.|YA NE SLY-shu.}}"
+    ],
+    "explanation": "'Ya ne ponimayu' is essential when you need to signal you've lost the thread.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson4_main.php"
+  },
+  {
+    "itemId": "79f50f30-afbc-44a4-b44e-be954c41c0eb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the metro station?' in Russian?",
+    "correctAnswer": "{{ru-RU|Где метро?|Gde metro?|GDE ME-tro?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как добраться?|Kak dobratsa?|KAK do-BRA-tsa?}}",
+      "{{ru-RU|Далеко ли отсюда?|Daleko li otsyuda?|da-LE-ko LI o-TSYU-da?}}",
+      "{{ru-RU|Остановите здесь.|Ostanovite zdes.|os-ta-no-VI-te ZDES.}}"
+    ],
+    "explanation": "'Gde metro?' — swap 'metro' for any destination: vokzal (station), aeroporty (airport), etc.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/metro"
+  },
+  {
+    "itemId": "4ab68720-bef1-43d9-8087-35ecd6a3dca1",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "How do you say 'Do you speak English?' in Russian?",
+    "correctAnswer": "{{ru-RU|Вы говорите по-английски?|Vy govorite po-angliyski?|VY go-vo-RI-te PO-an-GLIYS-ki?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Вы понимаете меня?|Vy ponimaete menya?|VY po-ni-MAE-te ME-nya?}}",
+      "{{ru-RU|Вы знаете английский?|Vy znaete angliyskiy?|VY ZNAE-te an-GLIYS-kiy?}}",
+      "{{ru-RU|Говорите медленно.|Govorite medlenno.|go-vo-RI-te med-LEN-no.}}"
+    ],
+    "explanation": "'Vy govorite po-angliyski?' is the polite form — use 'ty' form with friends.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson3_main.php"
+  },
+  {
+    "itemId": "0f1d9ca9-e891-45fe-8400-e25891408cd3",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Russian, how do you say 'Good evening.'?",
+    "correctAnswer": "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%87%D0%B5%D1%80."
+  },
+  {
+    "itemId": "cec5284e-0019-4e19-88e3-8d07de455c30",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Russian, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B1%D1%80%D0%BE%D0%BD%D1%8C."
+  },
+  {
+    "itemId": "491324a7-080b-4490-89d2-613a8e4a6549",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Which Russian phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%3F"
+  },
+  {
+    "itemId": "57eae47f-2b64-4673-b262-6da92c9689ae",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Russian phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B4%D0%B2%D1%83%D1%85%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%3F"
+  },
+  {
+    "itemId": "5d7d056c-05ed-41ee-9513-e3ab6a9002a0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Russian sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{ru-RU|Пароль от Wi-Fi, пожалуйста.|Parol ot Wi-Fi, pozhaluysta.|pa-ROL OT WI-FI, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D0%B0%D1%80%D0%BE%D0%BB%D1%8C%20%D0%BE%D1%82%20Wi-Fi%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "a8b96ba2-b859-4f43-b4d1-294927fe0ff2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Russian, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{ru-RU|С номером проблема.|S nomerom problema.|S no-ME-rom pro-BLE-ma.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A1%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0."
+  },
+  {
+    "itemId": "bade64f7-fc9b-4b19-9974-05d08e62d159",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Which Russian phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{ru-RU|Душ не работает.|Dush ne rabotaet.|DUSH NE ra-BO-taet.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D1%83%D1%88%20%D0%BD%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82."
+  },
+  {
+    "itemId": "4bb35452-c8bd-4339-a0f8-c6923b0fd81b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Russian phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{ru-RU|В номере слишком холодно.|V nomere slishkom kholodno.|V no-ME-re slish-KOM kho-LOD-no.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%92%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B5%20%D1%81%D0%BB%D0%B8%D1%88%D0%BA%D0%BE%D0%BC%20%D1%85%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D0%BE."
+  },
+  {
+    "itemId": "9f8c4a19-227f-4a9c-9246-e5e199a873fb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Russian sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{ru-RU|Мне нужны чистые полотенца.|Mne nuzhny chistye polotentsa.|MNE NUZH-ny CHIS-tye po-lo-TEN-tsa.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D1%8B%20%D1%87%D0%B8%D1%81%D1%82%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%BE%D1%82%D0%B5%D0%BD%D1%86%D0%B0."
+  },
+  {
+    "itemId": "4ac935ef-7f03-4785-b5d8-ecbad1eddaa5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Russian, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{ru-RU|Завтрак включён?|Zavtrak vklyuchyon?|zav-TRAK vklyu-CHYON?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%97%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%20%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D1%91%D0%BD%3F"
+  },
+  {
+    "itemId": "ba2cf1ae-56a5-4f66-9673-e5b6961b88b3",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Which Russian phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{ru-RU|Можно ещё один ключ?|Mozhno eshchyo odin klyuch?|MOZH-no ESH-chyo o-DIN KLYUCH?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B5%D1%89%D1%91%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%BA%D0%BB%D1%8E%D1%87%3F"
+  },
+  {
+    "itemId": "7f9f7200-2c7d-4524-9430-95c68cba50a7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Russian phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{ru-RU|Кондиционер не работает.|Konditsioner ne rabotaet.|kon-di-TSIO-ner NE ra-BO-taet.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%20%D0%BD%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82."
+  },
+  {
+    "itemId": "82b7d4c3-3b8f-40ae-bb8f-23712b074635",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Russian sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{ru-RU|Завтрак начинается в семь.|Zavtrak nachinaetsya v sem.|zav-TRAK na-chi-NAE-tsya V SEM.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У меня есть бронь.|U menya est bron.|U ME-nya EST BRON.}}",
+      "{{ru-RU|У вас есть одноместный номер?|U vas est odnomestnyy nomer?|U VAS EST od-no-MEST-nyy no-MER?}}",
+      "{{ru-RU|У вас есть двухместный номер?|U vas est dvukhmestnyy nomer?|U VAS EST dvukh-MEST-nyy no-MER?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "russian-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%97%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%20%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%20%D1%81%D0%B5%D0%BC%D1%8C."
+  }
+]

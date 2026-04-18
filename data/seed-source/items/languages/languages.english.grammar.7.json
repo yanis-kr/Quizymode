@@ -1,0 +1,122 @@
+[
+  {
+    "itemId": "a988818a-20f0-4ede-8906-2929aa2fe61d",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses the present simple for a habit or routine?",
+    "correctAnswer": "I brush my teeth every night.",
+    "incorrectAnswers": [
+      "I am brushing my teeth right now.",
+      "I brushed my teeth yesterday.",
+      "I will brush my teeth later."
+    ],
+    "explanation": "Present simple often shows habits with time words like \"every night.\" The other choices focus on now, past, or future.",
+    "keywords": [
+      "present-simple",
+      "habits",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple"
+  },
+  {
+    "itemId": "9d8bf647-a302-43a2-a86d-6597669f4fbd",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb form best completes this past sentence? \"Yesterday, she ___ her friend at the cafe.\"",
+    "correctAnswer": "met",
+    "incorrectAnswers": [
+      "meets",
+      "is meeting",
+      "will meet"
+    ],
+    "explanation": "\"Yesterday\" places the action in the past, so the past form \"met\" fits.",
+    "keywords": [
+      "past-simple",
+      "time-forms",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/past-simple"
+  },
+  {
+    "itemId": "1ded1e5f-3a6a-480a-ba6a-e1dde214af75",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence talks about a plan or prediction with \"will\"?",
+    "correctAnswer": "I will call you after work.",
+    "incorrectAnswers": [
+      "I call you every day.",
+      "I called you yesterday.",
+      "I am calling you now."
+    ],
+    "explanation": "\"Will\" + base verb is a common way to express a future intention or offer.",
+    "keywords": [
+      "future",
+      "will",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/future-will"
+  },
+  {
+    "itemId": "ed99a7d1-9a83-4ba9-b448-1edbf1744565",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses the present continuous for something happening around now?",
+    "correctAnswer": "She is studying for an exam tonight.",
+    "incorrectAnswers": [
+      "She studies English every Monday.",
+      "She studied last year.",
+      "She will study tomorrow."
+    ],
+    "explanation": "The present continuous (am/is/are + -ing) often describes an action in progress now or in a current period.",
+    "keywords": [
+      "present-continuous",
+      "time-forms",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-continuous"
+  },
+  {
+    "itemId": "a35ff9c6-b2ac-4a29-8ad6-bdb05a795615",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses present perfect for life experience up to now?",
+    "correctAnswer": "I have visited two countries in Europe.",
+    "incorrectAnswers": [
+      "I visit Europe every year.",
+      "I visited Spain in 2010.",
+      "I am visiting Europe next summer."
+    ],
+    "explanation": "\"Have/has\" + past participle often marks experience without a single finished past time.",
+    "keywords": [
+      "present-perfect",
+      "experience",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-perfect"
+  },
+  {
+    "itemId": "6a8de004-427a-46e9-9986-3873b303bf8f",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb fits best with a state verb like \"know\" in present meaning?",
+    "correctAnswer": "I know the answer.",
+    "incorrectAnswers": [
+      "I am knowing the answer.",
+      "I was knowing the answer.",
+      "I will knowing the answer."
+    ],
+    "explanation": "Verbs like \"know\" and \"like\" usually use simple present, not continuous forms, in standard English.",
+    "keywords": [
+      "stative-verbs",
+      "present-simple",
+      "time-forms"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/know-from-english-grammar-today"
+  }
+]

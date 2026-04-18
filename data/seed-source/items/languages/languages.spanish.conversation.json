@@ -5,13 +5,13 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which phrase is a common morning greeting?",
-    "correctAnswer": "Buenos d\u00edas.",
+    "correctAnswer": "{{es-ES|Buenos días.||BUE-nos DIAS.}}",
     "incorrectAnswers": [
-      "Buenas noches.",
-      "Hasta luego.",
-      "Mucho gusto."
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}"
     ],
-    "explanation": "\"Buenos d\u00edas\" is the usual greeting for much of the morning and early day.",
+    "explanation": "\"Buenos días\" is the usual greeting for much of the morning and early day.",
     "keywords": [
       "good-morning",
       "greetings",
@@ -25,13 +25,13 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which question asks \"How are you?\" in an informal way?",
-    "correctAnswer": "\u00bfC\u00f3mo est\u00e1s?",
+    "correctAnswer": "{{es-ES|¿Cómo estás?||CO-mo ES-tas?}}",
     "incorrectAnswers": [
-      "\u00bfC\u00f3mo se llama usted?",
-      "\u00bfDe d\u00f3nde es?",
-      "\u00bfCu\u00e1ntos a\u00f1os tiene?"
+      "{{es-ES|¿Cómo se llama usted?||CO-mo SE YA-ma us-TED?}}",
+      "{{es-ES|¿De dónde es?||DE DON-de ES?}}",
+      "{{es-ES|¿Cuántos años tiene?||CUAN-tos A-nos TIE-ne?}}"
     ],
-    "explanation": "\"\u00bfC\u00f3mo est\u00e1s?\" uses the informal \"t\u00fa\" form to ask how someone is.",
+    "explanation": "\"¿Cómo estás?\" uses the informal \"tú\" form to ask how someone is.",
     "keywords": [
       "how-are-you",
       "greetings",
@@ -45,11 +45,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which phrase means \"Excuse me\" when you need to get past someone politely?",
-    "correctAnswer": "Con permiso.",
+    "correctAnswer": "{{es-ES|Con permiso.||CON per-MI-so.}}",
     "incorrectAnswers": [
-      "Encantado.",
-      "Feliz cumplea\u00f1os.",
-      "Buen provecho."
+      "{{es-ES|Encantado.||en-can-TA-do.}}",
+      "{{es-ES|Feliz cumpleaños.||fe-LIZ cum-PLEA-nos.}}",
+      "{{es-ES|Buen provecho.||BUEN pro-BE-cho.}}"
     ],
     "explanation": "\"Con permiso\" is a polite way to say excuse me in many passing situations.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which reply is a simple way to say \"Nice to meet you\" after an introduction?",
-    "correctAnswer": "Mucho gusto.",
+    "correctAnswer": "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
     "incorrectAnswers": [
-      "Hasta ma\u00f1ana.",
-      "Lo siento.",
-      "Tengo prisa."
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+      "{{es-ES|Lo siento.||LO SIEN-to.}}",
+      "{{es-ES|Tengo prisa.||TEN-go PRI-sa.}}"
     ],
     "explanation": "\"Mucho gusto\" is a standard polite phrase when you meet someone.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "In Spanish, which phrase politely asks someone to repeat what they said?",
-    "correctAnswer": "\u00bfPuede repetir, por favor?",
+    "correctAnswer": "{{es-ES|¿Puede repetir, por favor?||PUE-de re-pe-TIR, POR fa-BOR?}}",
     "incorrectAnswers": [
-      "No me gusta.",
-      "Estoy cansado.",
-      "Hace mucho calor."
+      "{{es-ES|No me gusta.||NO ME GUS-ta.}}",
+      "{{es-ES|Estoy cansado.||es-TOY can-SA-do.}}",
+      "{{es-ES|Hace mucho calor.||ha-SEH MU-cho ca-LOR.}}"
     ],
     "explanation": "\"Repetir\" means to repeat; adding \"por favor\" keeps the request polite.",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "conversation",
     "question": "Which phrase is a simple way to say \"I am sorry\" after a small mistake?",
-    "correctAnswer": "Lo siento.",
+    "correctAnswer": "{{es-ES|Lo siento.||LO SIEN-to.}}",
     "incorrectAnswers": [
-      "De nada.",
-      "Por supuesto.",
-      "Felicitaciones."
+      "{{es-ES|De nada.||DE NA-da.}}",
+      "{{es-ES|Por supuesto.||POR su-PUES-to.}}",
+      "{{es-ES|Felicitaciones.||fe-li-see-ta-SEEO-nes.}}"
     ],
     "explanation": "\"Lo siento\" is a common apology for small everyday mistakes.",
     "keywords": [

@@ -5,11 +5,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Ukrainian?",
-    "correctAnswer": "Де туалет? (De tualet?)",
+    "correctAnswer": "{{uk-UA|Де туалет?|De tualet?|DE tua-LET?}}",
     "incorrectAnswers": [
-      "Що таке туалет? (Shcho take tualet?)",
-      "Коли відкрито? (Koly vidkryto?)",
-      "Скільки коштує? (Skilky koshtuye?)"
+      "{{uk-UA|Що таке туалет?|Shcho take tualet?|SHCHO TA-ke tua-LET?}}",
+      "{{uk-UA|Коли відкрито?|Koly vidkryto?|KO-ly vid-KRY-to?}}",
+      "{{uk-UA|Скільки коштує?|Skilky koshtuye?|SKIL-ky KOSH-tuye?}}"
     ],
     "explanation": "'De' means 'where'. 'De tualet?' is the most practical travel phrase.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Ukrainian?",
-    "correctAnswer": "Скільки це коштує? (Skilky tse koshtuye?)",
+    "correctAnswer": "{{uk-UA|Скільки це коштує?|Skilky tse koshtuye?|SKIL-ky TSE KOSH-tuye?}}",
     "incorrectAnswers": [
-      "Що це таке? (Shcho tse take?)",
-      "Де це купити? (De tse kupyty?)",
-      "Чи є знижка? (Chy ye znyzhka?)"
+      "{{uk-UA|Що це таке?|Shcho tse take?|SHCHO TSE TA-ke?}}",
+      "{{uk-UA|Де це купити?|De tse kupyty?|DE TSE ku-PY-ty?}}",
+      "{{uk-UA|Чи є знижка?|Chy ye znyzhka?|CHY YE ZNYZH-ka?}}"
     ],
     "explanation": "'Skilky tse koshtuye?' — 'How much does this cost?' — essential for markets.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in Ukrainian?",
-    "correctAnswer": "Каву, будь ласка. (Kavu, bud laska.)",
+    "correctAnswer": "{{uk-UA|Каву, будь ласка.|Kavu, bud laska.|KA-vu, BUD LAS-ka.}}",
     "incorrectAnswers": [
-      "Каву зараз! (Kavu zaraz!)",
-      "Хочу каву. (Khochu kavu.)",
-      "Давайте каву. (Davayte kavu.)"
+      "{{uk-UA|Каву зараз!|Kavu zaraz!|KA-vu za-RAZ!}}",
+      "{{uk-UA|Хочу каву.|Khochu kavu.|KHO-chu KA-vu.}}",
+      "{{uk-UA|Давайте каву.|Davayte kavu.|da-VAY-te KA-vu.}}"
     ],
     "explanation": "'[Item], bud laska' — '[Item], please' — the polite café order pattern.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in Ukrainian?",
-    "correctAnswer": "Рахунок, будь ласка. (Rakhunok, bud laska.)",
+    "correctAnswer": "{{uk-UA|Рахунок, будь ласка.|Rakhunok, bud laska.|rak-HU-nok, BUD LAS-ka.}}",
     "incorrectAnswers": [
-      "Меню, будь ласка. (Menyu, bud laska.)",
-      "Ще одну страву. (Shche odnu stravu.)",
-      "Дякую за їжу. (Dyakuyu za yizhu.)"
+      "{{uk-UA|Меню, будь ласка.|Menyu, bud laska.|ME-nyu, BUD LAS-ka.}}",
+      "{{uk-UA|Ще одну страву.|Shche odnu stravu.|SHCHE OD-nu STRA-vu.}}",
+      "{{uk-UA|Дякую за їжу.|Dyakuyu za yizhu.|DYA-kuyu ZA YIZ-hu.}}"
     ],
     "explanation": "'Rakhunok' = the bill/check. Add 'bud laska' to make it polite.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Ukrainian?",
-    "correctAnswer": "Я не розумію. (Ya ne rozumiyu.)",
+    "correctAnswer": "{{uk-UA|Я не розумію.|Ya ne rozumiyu.|YA NE ro-ZU-miyu.}}",
     "incorrectAnswers": [
-      "Я не знаю. (Ya ne znayu.)",
-      "Я не чую. (Ya ne chuyu.)",
-      "Я не говорю. (Ya ne hovoryu.)"
+      "{{uk-UA|Я не знаю.|Ya ne znayu.|YA NE ZNAYU.}}",
+      "{{uk-UA|Я не чую.|Ya ne chuyu.|YA NE CHUYU.}}",
+      "{{uk-UA|Я не говорю.|Ya ne hovoryu.|YA NE ho-VO-ryu.}}"
     ],
     "explanation": "'Ya ne rozumiyu' — the essential phrase for when you've lost the thread.",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Ukrainian?",
-    "correctAnswer": "Ви говорите англійською? (Vy hovoryte angliyiyskoyu?)",
+    "correctAnswer": "{{uk-UA|Ви говорите англійською?|Vy hovoryte angliyiyskoyu?|VY ho-vo-RY-te an-GLIYIYS-koyu?}}",
     "incorrectAnswers": [
-      "Ви розумієте мене? (Vy rozumiyete mene?)",
-      "Ви знаєте англійську? (Vy znayete angliysku?)",
-      "Говоріть повільніше. (Hovorit povil'nishe.)"
+      "{{uk-UA|Ви розумієте мене?|Vy rozumiyete mene?|VY ro-zu-MIYE-te ME-ne?}}",
+      "{{uk-UA|Ви знаєте англійську?|Vy znayete angliysku?|VY ZNAYE-te an-GLIYS-ku?}}",
+      "{{uk-UA|Говоріть повільніше.|Hovorit povil'nishe.|ho-VO-rit po-vil'-NI-she.}}"
     ],
     "explanation": "Polite plural form 'Vy hovoryte angliyiyskoyu?' — informal: 'Ty hovorysh angliyiyskoyu?'",
     "keywords": [

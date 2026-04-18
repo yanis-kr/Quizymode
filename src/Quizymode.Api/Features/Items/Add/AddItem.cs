@@ -1,9 +1,11 @@
 using FluentValidation;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Add;
 
@@ -25,7 +27,10 @@ public static class AddItem
         List<KeywordRequest>? Keywords = null,
         bool ReadyForReview = false,
         string? Source = null,
-        Guid? UploadId = null);
+        Guid? UploadId = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record Response(
         string Id,
@@ -37,7 +42,10 @@ public static class AddItem
         string Explanation,
         DateTime CreatedAt,
         string? Source,
-        string? UploadId = null);
+        string? UploadId = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -65,11 +73,15 @@ public static class AddItem
                 .MaximumLength(1000)
                 .WithMessage("Question must not exceed 1000 characters");
 
+            this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
+
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()
                 .WithMessage("CorrectAnswer is required")
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters");
+
+            this.AddSpeechSupportRules(x => x.CorrectAnswerSpeech, 500, "CorrectAnswerSpeech");
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
@@ -79,6 +91,8 @@ public static class AddItem
                 .ForEach(rule => rule
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
+
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
@@ -91,8 +105,8 @@ public static class AddItem
                     .SetValidator(new KeywordRequestValidator()));
 
             RuleFor(x => x.Source)
-                .MaximumLength(200)
-                .WithMessage("Source must not exceed 200 characters");
+                .MaximumLength(1000)
+                .WithMessage("Source must not exceed 1000 characters");
 
         }
     }

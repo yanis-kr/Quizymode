@@ -62,9 +62,9 @@ internal static class StudyGuideItemValidator
             decimal? factualRisk = GetDecimal(element, "factualRisk");
             string? reviewComments = GetString(element, "reviewComments");
 
-            if (source is not null && source.Length > 200)
+            if (source is not null && source.Length > 1000)
             {
-                source = source[..200];
+                source = source[..1000];
             }
 
             if (reviewComments is not null && reviewComments.Length > 500)

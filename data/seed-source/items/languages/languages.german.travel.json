@@ -1,6 +1,6 @@
 [
   {
-    "itemId": "4f60a13f-69df-451a-ba3c-69bb255b67b7",
+    "itemId": "349daedc-6851-4aac-82db-a9aa4de6794b",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
@@ -14,12 +14,13 @@
     "explanation": "'Bahnhof' is the common word for a train station.",
     "keywords": [
       "train-station",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/bahnhof"
   },
   {
-    "itemId": "35504b2c-7e9a-4f22-8a03-87170cfc0b02",
+    "itemId": "a6848ca1-bd95-4234-aadb-e605f3807000",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
@@ -33,12 +34,13 @@
     "explanation": "'Fahrkarte' is a common word for a travel ticket, especially on trains and similar transport.",
     "keywords": [
       "ticket",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://www.duden.de/rechtschreibung/Fahrkarte"
   },
   {
-    "itemId": "ead826e5-a6e6-4166-b753-c445953e96af",
+    "itemId": "97e3e73e-07be-4b80-b5a1-91fcde5431de",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
@@ -52,12 +54,13 @@
     "explanation": "'Wo' asks where something is, so 'Wo ist ...?' means 'Where is ...?'",
     "keywords": [
       "where",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://www.deutsch.info/en/vocabulary/"
   },
   {
-    "itemId": "ad0590a4-13d3-44ce-93a7-3920c0886d6f",
+    "itemId": "839f3c80-1b73-4b5d-bf8a-2b458b61517a",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
@@ -71,16 +74,17 @@
     "explanation": "'Abfahrt' refers to departure, often seen on schedules and signs.",
     "keywords": [
       "departure",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/abfahrt"
   },
   {
-    "itemId": "7703c695-db47-40ad-a919-b90ff94a0368",
+    "itemId": "85dcb0cf-793a-426e-867d-257dfc5449ee",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
-    "question": "What does 'Entschuldigung' often mean in a busy place?",
+    "question": "What does '{{de-DE|Entschuldigung||ent-SHUL-di-gung}}' often mean in a busy place?",
     "correctAnswer": "excuse me / sorry",
     "incorrectAnswers": [
       "welcome",
@@ -90,12 +94,13 @@
     "explanation": "'Entschuldigung' is useful to get attention politely or to apologize briefly.",
     "keywords": [
       "excuse-me",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://www.goethe.de/en/spr/englisch.html"
   },
   {
-    "itemId": "99b1bf1c-3301-4fe8-a5fb-8569cf73f2a7",
+    "itemId": "4e980cf1-7beb-411b-9e08-4f4c4424fcc2",
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "travel",
@@ -109,8 +114,305 @@
     "explanation": "'Anschluss' can mean a connecting train or transfer in travel speech.",
     "keywords": [
       "connection",
-      "german-travel"
+      "german-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/german-english/anschluss"
+  },
+  {
+    "itemId": "49446beb-fad1-4347-a1ee-c93a3ea96cf7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bathroom?' in German?",
+    "correctAnswer": "{{de-DE|Wo ist die Toilette?||WO ISHT DEE TOI-let-te?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wann ist die Toilette?||WANN ISHT DEE TOI-let-te?}}",
+      "{{de-DE|Was ist die Toilette?||WAS ISHT DEE TOI-let-te?}}",
+      "{{de-DE|Wie ist die Toilette?||WEE ISHT DEE TOI-let-te?}}"
+    ],
+    "explanation": "'Wo ist' = 'Where is'. Replace 'die Toilette' with any destination: der Bahnhof, das Hotel, etc.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wo"
+  },
+  {
+    "itemId": "2b136f09-f8af-45df-aecf-408a9b4e3cd5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'How much does this cost?' in German?",
+    "correctAnswer": "{{de-DE|Wie viel kostet das?||WEE VEEL KOSH-tet DAS?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Was ist das?||WAS ISHT DAS?}}",
+      "{{de-DE|Wo kann ich das kaufen?||WO KANN ICH DAS KOW-fen?}}",
+      "{{de-DE|Gibt es einen Rabatt?||GIBT ES EYE-nen RA-batt?}}"
+    ],
+    "explanation": "'Wie viel kostet das?' — 'How much does this cost?' — the key shopping phrase.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wie-viel"
+  },
+  {
+    "itemId": "1d8adef8-d572-4e79-841f-3250d0257c5d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "In beginner German, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{de-DE|Ich habe eine Reservierung.||ICH HA-be EYE-ne RE-ser-vee-rung.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie ein Einzelzimmer?||HA-ben SEE EYEN EIN-tsel-tsim-mer?}}",
+      "{{de-DE|Haben Sie ein Doppelzimmer?||HA-ben SEE EYEN DOP-pel-tsim-mer?}}",
+      "{{de-DE|Das WLAN-Passwort, bitte.||DAS WLAN-PASS-vort, BIT-te.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20habe%20eine%20Reservierung."
+  },
+  {
+    "itemId": "45a6e196-19ad-48b2-84b3-92fc4e5531c5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Which German phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{de-DE|Haben Sie ein Einzelzimmer?||HA-ben SEE EYEN EIN-tsel-tsim-mer?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie ein Doppelzimmer?||HA-ben SEE EYEN DOP-pel-tsim-mer?}}",
+      "{{de-DE|Das WLAN-Passwort, bitte.||DAS WLAN-PASS-vort, BIT-te.}}",
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||ES GIBT EYEN PRO-blem MIT DEM ZIM-mer.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20ein%20Einzelzimmer%3F"
+  },
+  {
+    "itemId": "95ad63c1-a07c-49de-b331-b30c4a6087a9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct German phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{de-DE|Haben Sie ein Doppelzimmer?||HA-ben SEE EYEN DOP-pel-tsim-mer?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das WLAN-Passwort, bitte.||DAS WLAN-PASS-vort, BIT-te.}}",
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||ES GIBT EYEN PRO-blem MIT DEM ZIM-mer.}}",
+      "{{de-DE|Die Dusche funktioniert nicht.||DEE DU-she FUNK-tio-neert NICHT.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20ein%20Doppelzimmer%3F"
+  },
+  {
+    "itemId": "a072ec22-3f9b-41e9-820c-6cd967688773",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural German sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{de-DE|Das WLAN-Passwort, bitte.||DAS WLAN-PASS-vort, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Es gibt ein Problem mit dem Zimmer.||ES GIBT EYEN PRO-blem MIT DEM ZIM-mer.}}",
+      "{{de-DE|Die Dusche funktioniert nicht.||DEE DU-she FUNK-tio-neert NICHT.}}",
+      "{{de-DE|Das Zimmer ist zu kalt.||DAS ZIM-mer ISHT TSU KALT.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20WLAN-Passwort%2C%20bitte."
+  },
+  {
+    "itemId": "6378ba0a-347b-47a9-a13d-cba8f2042cb8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "In beginner German, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{de-DE|Es gibt ein Problem mit dem Zimmer.||ES GIBT EYEN PRO-blem MIT DEM ZIM-mer.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Die Dusche funktioniert nicht.||DEE DU-she FUNK-tio-neert NICHT.}}",
+      "{{de-DE|Das Zimmer ist zu kalt.||DAS ZIM-mer ISHT TSU KALT.}}",
+      "{{de-DE|Ich brauche saubere Handtücher.||ICH BROW-che SOW-be-re HAND-tu-cher.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Es%20gibt%20ein%20Problem%20mit%20dem%20Zimmer."
+  },
+  {
+    "itemId": "4dd7241b-60cb-4072-b495-74e49c545234",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Which German phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{de-DE|Die Dusche funktioniert nicht.||DEE DU-she FUNK-tio-neert NICHT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das Zimmer ist zu kalt.||DAS ZIM-mer ISHT TSU KALT.}}",
+      "{{de-DE|Ich brauche saubere Handtücher.||ICH BROW-che SOW-be-re HAND-tu-cher.}}",
+      "{{de-DE|Ist das Frühstück inbegriffen?||ISHT DAS FRUHSH-tuck IN-be-grif-fen?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Die%20Dusche%20funktioniert%20nicht."
+  },
+  {
+    "itemId": "3ba44649-2d25-4b80-aa06-50b6358bf00f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct German phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{de-DE|Das Zimmer ist zu kalt.||DAS ZIM-mer ISHT TSU KALT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche saubere Handtücher.||ICH BROW-che SOW-be-re HAND-tu-cher.}}",
+      "{{de-DE|Ist das Frühstück inbegriffen?||ISHT DAS FRUHSH-tuck IN-be-grif-fen?}}",
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||KANN ICH NOCH EYE-nen SCHLUS-sel HA-ben?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20Zimmer%20ist%20zu%20kalt."
+  },
+  {
+    "itemId": "ceb342ca-1da8-4f6a-98d9-d8ec6e4196e3",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural German sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{de-DE|Ich brauche saubere Handtücher.||ICH BROW-che SOW-be-re HAND-tu-cher.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ist das Frühstück inbegriffen?||ISHT DAS FRUHSH-tuck IN-be-grif-fen?}}",
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||KANN ICH NOCH EYE-nen SCHLUS-sel HA-ben?}}",
+      "{{de-DE|Die Klimaanlage ist kaputt.||DEE KLI-maan-la-ge ISHT KA-putt.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20saubere%20Handt%C3%BCcher."
+  },
+  {
+    "itemId": "984bd4bb-84d9-4518-8d38-e72556592dad",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "In beginner German, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{de-DE|Ist das Frühstück inbegriffen?||ISHT DAS FRUHSH-tuck IN-be-grif-fen?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kann ich noch einen Schlüssel haben?||KANN ICH NOCH EYE-nen SCHLUS-sel HA-ben?}}",
+      "{{de-DE|Die Klimaanlage ist kaputt.||DEE KLI-maan-la-ge ISHT KA-putt.}}",
+      "{{de-DE|Das Frühstück beginnt um sieben.||DAS FRUHSH-tuck be-GINNT UM SEE-ben.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ist%20das%20Fr%C3%BChst%C3%BCck%20inbegriffen%3F"
+  },
+  {
+    "itemId": "e936c2d7-25c4-47f1-a702-58c94dbc4f10",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Which German phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{de-DE|Kann ich noch einen Schlüssel haben?||KANN ICH NOCH EYE-nen SCHLUS-sel HA-ben?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Die Klimaanlage ist kaputt.||DEE KLI-maan-la-ge ISHT KA-putt.}}",
+      "{{de-DE|Das Frühstück beginnt um sieben.||DAS FRUHSH-tuck be-GINNT UM SEE-ben.}}",
+      "{{de-DE|Ich habe eine Reservierung.||ICH HA-be EYE-ne RE-ser-vee-rung.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kann%20ich%20noch%20einen%20Schl%C3%BCssel%20haben%3F"
+  },
+  {
+    "itemId": "0b8ae1c3-edda-4c8b-a8e4-c16db96373d6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct German phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{de-DE|Die Klimaanlage ist kaputt.||DEE KLI-maan-la-ge ISHT KA-putt.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das Frühstück beginnt um sieben.||DAS FRUHSH-tuck be-GINNT UM SEE-ben.}}",
+      "{{de-DE|Ich habe eine Reservierung.||ICH HA-be EYE-ne RE-ser-vee-rung.}}",
+      "{{de-DE|Haben Sie ein Einzelzimmer?||HA-ben SEE EYEN EIN-tsel-tsim-mer?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Die%20Klimaanlage%20ist%20kaputt."
+  },
+  {
+    "itemId": "60a7f3e7-d823-4cb8-8d38-6fb41e877b67",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural German sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{de-DE|Das Frühstück beginnt um sieben.||DAS FRUHSH-tuck be-GINNT UM SEE-ben.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich habe eine Reservierung.||ICH HA-be EYE-ne RE-ser-vee-rung.}}",
+      "{{de-DE|Haben Sie ein Einzelzimmer?||HA-ben SEE EYEN EIN-tsel-tsim-mer?}}",
+      "{{de-DE|Haben Sie ein Doppelzimmer?||HA-ben SEE EYEN DOP-pel-tsim-mer?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "german-travel"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20Fr%C3%BChst%C3%BCck%20beginnt%20um%20sieben."
   }
 ]

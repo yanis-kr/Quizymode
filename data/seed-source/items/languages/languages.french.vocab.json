@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"water\"?",
-    "correctAnswer": "eau",
+    "correctAnswer": "{{fr-FR|eau||OH}}",
     "incorrectAnswers": [
-      "lait",
-      "pain",
-      "vin"
+      "{{fr-FR|lait||LEHT}}",
+      "{{fr-FR|pain||PEHN}}",
+      "{{fr-FR|vin||VIN}}"
     ],
     "explanation": "\"Eau\" is the everyday word for water.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"bread\"?",
-    "correctAnswer": "pain",
+    "correctAnswer": "{{fr-FR|pain||PEHN}}",
     "incorrectAnswers": [
-      "fromage",
-      "viande",
-      "riz"
+      "{{fr-FR|fromage||fro-ma-GE}}",
+      "{{fr-FR|viande||vian-DE}}",
+      "{{fr-FR|riz||RIZ}}"
     ],
     "explanation": "\"Pain\" is the common word for bread.",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for a male friend?",
-    "correctAnswer": "ami",
+    "correctAnswer": "{{fr-FR|ami||a-MI}}",
     "incorrectAnswers": [
-      "fr\u00e8re",
-      "voisin",
-      "chef"
+      "{{fr-FR|frère||fre-RE}}",
+      "{{fr-FR|voisin||vwah-SIN}}",
+      "{{fr-FR|chef||SHEF}}"
     ],
     "explanation": "\"Ami\" means (male) friend; \"amie\" is used for a female friend.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"thank you\"?",
-    "correctAnswer": "merci",
+    "correctAnswer": "{{fr-FR|merci||mer-CI}}",
     "incorrectAnswers": [
-      "s'il vous pla\u00eet",
-      "pardon",
-      "bonjour"
+      "{{fr-FR|s'il vous plaît||S'IL VOOS PLEHT}}",
+      "{{fr-FR|pardon||par-DON}}",
+      "{{fr-FR|bonjour||bonz-HOOR}}"
     ],
     "explanation": "\"Merci\" is the standard way to say thank you.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"today\"?",
-    "correctAnswer": "aujourd'hui",
+    "correctAnswer": "{{fr-FR|aujourd'hui||ohz-hoord'-HUI}}",
     "incorrectAnswers": [
-      "demain",
-      "hier",
-      "maintenant"
+      "{{fr-FR|demain||de-MEHN}}",
+      "{{fr-FR|hier||HIER}}",
+      "{{fr-FR|maintenant||mehn-te-NANT}}"
     ],
     "explanation": "\"Aujourd'hui\" means today.",
     "keywords": [
@@ -105,11 +105,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "vocab",
     "question": "What is the usual French word for \"big\"?",
-    "correctAnswer": "grand",
+    "correctAnswer": "{{fr-FR|grand||GRAND}}",
     "incorrectAnswers": [
-      "petit",
-      "nouveau",
-      "bon"
+      "{{fr-FR|petit||pe-TIT}}",
+      "{{fr-FR|nouveau||noo-VOH}}",
+      "{{fr-FR|bon||BON}}"
     ],
     "explanation": "\"Grand\" is a very common adjective meaning big when describing many nouns (agreement rules still apply).",
     "keywords": [

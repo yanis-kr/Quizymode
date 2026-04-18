@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.ReviewBoard;
 
@@ -20,7 +21,10 @@ public static class GetReviewBoardItems
         string CreatedBy,
         DateTime CreatedAt,
         decimal? FactualRisk = null,
-        string? ReviewComments = null);
+        string? ReviewComments = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -72,7 +76,10 @@ public static class GetReviewBoardItems
                     i.CreatedBy,
                     i.CreatedAt,
                     i.FactualRisk,
-                    i.ReviewComments);
+                    i.ReviewComments,
+                    i.QuestionSpeech,
+                    i.CorrectAnswerSpeech,
+                    i.IncorrectAnswerSpeech.Count > 0 ? i.IncorrectAnswerSpeech : null);
             }).ToList();
 
             return Result.Success(new Response(itemResponses));

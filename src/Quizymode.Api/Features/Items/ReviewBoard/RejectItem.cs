@@ -20,7 +20,10 @@ public static class RejectItem
         List<string> IncorrectAnswers,
         string Explanation,
         DateTime CreatedAt,
-        string? ReviewComments);
+        string? ReviewComments,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -103,7 +106,10 @@ public static class RejectItem
                 item.IncorrectAnswers,
                 item.Explanation,
                 item.CreatedAt,
-                item.ReviewComments);
+                item.ReviewComments,
+                item.QuestionSpeech,
+                item.CorrectAnswerSpeech,
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
 
             return Result.Success(response);
         }

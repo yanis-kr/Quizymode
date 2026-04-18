@@ -45,7 +45,23 @@ describe("adminApi", () => {
   });
 
   it("getDatabaseSize calls GET /admin/database/size", async () => {
-    const data = { sizeBytes: 1000, sizeMegabytes: 0.001, sizeGigabytes: 0, freeTierLimitMegabytes: 500, usagePercentage: 0 };
+    const data = {
+      sizeBytes: 1000,
+      sizeMegabytes: 0.001,
+      sizeGigabytes: 0,
+      freeTierLimitMegabytes: 500,
+      usagePercentage: 0,
+      itemCount: 12,
+      keywordCount: 3,
+      topTables: [
+        {
+          tableName: "Items",
+          sizeBytes: 600,
+          sizeMegabytes: 0.0006,
+          sizeGigabytes: 0,
+        },
+      ],
+    };
     mockGet.mockResolvedValueOnce({ data });
     const result = await adminApi.getDatabaseSize();
     expect(mockGet).toHaveBeenCalledWith("/admin/database/size");

@@ -646,7 +646,7 @@
           "Admin"
         ],
         "summary": "Get current database size (Admin only)",
-        "description": "Returns the current PostgreSQL database size and usage percentage relative to the 500MB free tier limit",
+        "description": "Returns the current PostgreSQL database size, item and keyword totals, and the largest tables relative to the 500MB free tier limit",
         "responses": {
           "200": {
             "description": "OK",
@@ -4495,7 +4495,10 @@
           "sizeMegabytes",
           "sizeGigabytes",
           "freeTierLimitMegabytes",
-          "usagePercentage"
+          "usagePercentage",
+          "itemCount",
+          "keywordCount",
+          "topTables"
         ],
         "type": "object",
         "properties": {
@@ -4512,6 +4515,38 @@
             "$ref": "#/components/schemas/System.Double"
           },
           "usagePercentage": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "keywordCount": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "topTables": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse": {
+        "required": [
+          "tableName",
+          "sizeBytes",
+          "sizeMegabytes",
+          "sizeGigabytes"
+        ],
+        "type": "object",
+        "properties": {
+          "tableName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sizeBytes": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "sizeMegabytes": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "sizeGigabytes": {
             "$ref": "#/components/schemas/System.Double"
           }
         }
@@ -6809,6 +6844,36 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -6867,6 +6932,36 @@
               },
               {
                 "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
           }
@@ -6929,6 +7024,36 @@
               },
               {
                 "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
           }
@@ -7142,6 +7267,36 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -7335,6 +7490,36 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -7374,6 +7559,36 @@
           },
           "createdAt": {
             "$ref": "#/components/schemas/System.DateTime"
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -7437,6 +7652,36 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -7496,6 +7741,36 @@
               },
               {
                 "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
           }
@@ -7626,6 +7901,36 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
           }
         }
       },
@@ -7674,6 +7979,36 @@
               },
               {
                 "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "questionSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "correctAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "incorrectAnswerSpeech": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
           }
@@ -8878,8 +9213,39 @@
         },
         "description": "Response DTO containing the updated setting information."
       },
+      "Quizymode.Api.Shared.Models.ItemSpeechSupport": {
+        "type": "object",
+        "properties": {
+          "pronunciation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "languageCode": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
       "System.Boolean": {
         "type": "boolean"
+      },
+      "System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
+        }
       },
       "System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String": {
         "type": "object",
@@ -8897,6 +9263,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse"
         }
       },
       "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {

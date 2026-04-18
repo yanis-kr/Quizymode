@@ -101,8 +101,14 @@ internal static class AddItemHandler
                 IsRepoManaged = false,
                 IsPrivate = effectiveIsPrivate,
                 Question = request.Question,
+                QuestionSpeech = ItemSpeechSupportHelper.Normalize(request.QuestionSpeech, 1000),
                 CorrectAnswer = request.CorrectAnswer,
+                CorrectAnswerSpeech = ItemSpeechSupportHelper.Normalize(request.CorrectAnswerSpeech, 500),
                 IncorrectAnswers = request.IncorrectAnswers,
+                IncorrectAnswerSpeech = ItemSpeechSupportHelper.NormalizeDictionary(
+                    request.IncorrectAnswerSpeech,
+                    request.IncorrectAnswers.Count,
+                    500),
                 Explanation = request.Explanation,
                 FuzzySignature = fuzzySignature,
                 FuzzyBucket = fuzzyBucket,
@@ -198,7 +204,10 @@ internal static class AddItemHandler
                 item.Explanation,
                 item.CreatedAt,
                 item.Source,
-                item.UploadId?.ToString());
+                item.UploadId?.ToString(),
+                item.QuestionSpeech,
+                item.CorrectAnswerSpeech,
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
 
             return Result.Success(response);
         }

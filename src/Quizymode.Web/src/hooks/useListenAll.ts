@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { isSpeechSynthesisSupported } from "@/utils/speechSynthesis";
+import { createSpeechUtterances, isSpeechSynthesisSupported } from "@/utils/speechSynthesis";
+import type { ItemSpeechSupport } from "@/types/api";
 
 interface ListenItem {
   question: string;
+  questionSpeech?: ItemSpeechSupport | null;
   correctAnswer: string;
+  correctAnswerSpeech?: ItemSpeechSupport | null;
 }
 
 export type ListenAllState = "idle" | "playing" | "paused";
@@ -54,24 +57,53 @@ export function useListenAll(items: ListenItem[]) {
     setCurrentIndex(idx);
     const item = items[idx];
 
-    const questionUtterance = new SpeechSynthesisUtterance(item.question.trim());
-    questionUtterance.onend = () => {
+    const questionUtterances = createSpeechUtterances({
+      text: item.question,
+      pronunciation: item.questionSpeech?.pronunciation,
+      languageCode: item.questionSpeech?.languageCode,
+    });
+    if (questionUtterances.length === 0) {
+      indexRef.current = idx + 1;
+      speakNextRef.current();
+      return;
+    }
+
+    const lastQuestionUtterance = questionUtterances[questionUtterances.length - 1];
+    lastQuestionUtterance.onend = () => {
       if (stateRef.current !== "playing") return;
       // 2-second pause between question and answer
       timerRef.current = setTimeout(() => {
         if (stateRef.current !== "playing") return;
-        const answerUtterance = new SpeechSynthesisUtterance(item.correctAnswer.trim());
-        answerUtterance.onend = () => {
+        const answerUtterances = createSpeechUtterances({
+          text: item.correctAnswer,
+          pronunciation: item.correctAnswerSpeech?.pronunciation,
+          languageCode: item.correctAnswerSpeech?.languageCode,
+        });
+        if (answerUtterances.length === 0) {
+          indexRef.current = idx + 1;
+          timerRef.current = setTimeout(() => speakNextRef.current(), 800);
+          return;
+        }
+
+        const lastAnswerUtterance = answerUtterances[answerUtterances.length - 1];
+        lastAnswerUtterance.onend = () => {
           if (stateRef.current !== "playing") return;
           indexRef.current = idx + 1;
           // Brief gap before next item
           timerRef.current = setTimeout(() => speakNextRef.current(), 800);
         };
-        window.speechSynthesis.speak(answerUtterance);
+        lastAnswerUtterance.onerror = lastAnswerUtterance.onend;
+
+        for (const utterance of answerUtterances) {
+          window.speechSynthesis.speak(utterance);
+        }
       }, 2000);
     };
+    lastQuestionUtterance.onerror = lastQuestionUtterance.onend;
 
-    window.speechSynthesis.speak(questionUtterance);
+    for (const utterance of questionUtterances) {
+      window.speechSynthesis.speak(utterance);
+    }
   };
 
   const start = useCallback(() => {

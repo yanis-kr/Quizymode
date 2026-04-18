@@ -5,11 +5,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in Latvian?",
-    "correctAnswer": "Kur ir tualete?",
+    "correctAnswer": "{{lv-LV|Kur ir tualete?||KUR IR TUA-le-te?}}",
     "incorrectAnswers": [
-      "Kas ir tualete?",
-      "Kad ir tualete?",
-      "Cik maksā tualete?"
+      "{{lv-LV|Kas ir tualete?||KAS IR TUA-le-te?}}",
+      "{{lv-LV|Kad ir tualete?||KAD IR TUA-le-te?}}",
+      "{{lv-LV|Cik maksā tualete?||CIK MAK-sa TUA-le-te?}}"
     ],
     "explanation": "'Kur ir' = 'where is'. Replace 'tualete' with any destination: stacija, viesnīca, etc.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in Latvian?",
-    "correctAnswer": "Cik tas maksā?",
+    "correctAnswer": "{{lv-LV|Cik tas maksā?||CIK TAS MAK-sa?}}",
     "incorrectAnswers": [
-      "Kas tas ir?",
-      "Kur to pirkt?",
-      "Vai tas ir labs?"
+      "{{lv-LV|Kas tas ir?||KAS TAS IR?}}",
+      "{{lv-LV|Kur to pirkt?||KUR TO PIRKT?}}",
+      "{{lv-LV|Vai tas ir labs?||VAI TAS IR LABS?}}"
     ],
     "explanation": "'Cik tas maksā?' — 'How much does this cost?' — essential for markets and shops.",
     "keywords": [
@@ -45,16 +45,16 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in Latvian?",
-    "correctAnswer": "Vienu kafiju, lūdzu.",
+    "correctAnswer": "{{lv-LV|Vienu kafiju, lūdzu.||VIE-nu KA-fi-ju, LUD-zu.}}",
     "incorrectAnswers": [
-      "Kafija, ātrāk!",
-      "Es gribu kafiju.",
-      "Kafija ir laba."
+      "{{lv-LV|Kafija, ātrāk!||KA-fi-ja, A-trak!}}",
+      "{{lv-LV|Es gribu kafiju.||ES GRI-bu KA-fi-ju.}}",
+      "{{lv-LV|Kafija ir laba.||KA-fi-ja IR LA-ba.}}"
     ],
     "explanation": "'Vienu [item], lūdzu' — 'One [item], please' — the standard café order pattern.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/latvian.htm"
@@ -65,16 +65,16 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in Latvian?",
-    "correctAnswer": "Rēķinu, lūdzu.",
+    "correctAnswer": "{{lv-LV|Rēķinu, lūdzu.||RE-ki-nu, LUD-zu.}}",
     "incorrectAnswers": [
-      "Ēdienkarti, lūdzu.",
-      "Vēl vienu, lūdzu.",
-      "Paldies par ēdienu."
+      "{{lv-LV|Ēdienkarti, lūdzu.||E-dien-kar-ti, LUD-zu.}}",
+      "{{lv-LV|Vēl vienu, lūdzu.||VEL VIE-nu, LUD-zu.}}",
+      "{{lv-LV|Paldies par ēdienu.||PAL-dies PAR E-die-nu.}}"
     ],
     "explanation": "'Rēķinu, lūdzu' — 'The bill, please' — straightforward and polite.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/latvian.htm"
@@ -85,11 +85,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in Latvian?",
-    "correctAnswer": "Es nesaprotu.",
+    "correctAnswer": "{{lv-LV|Es nesaprotu.||ES NE-sa-pro-tu.}}",
     "incorrectAnswers": [
-      "Es nezinu.",
-      "Es nedzirdu.",
-      "Es nerunāju latviski."
+      "{{lv-LV|Es nezinu.||ES NE-zi-nu.}}",
+      "{{lv-LV|Es nedzirdu.||ES NED-zir-du.}}",
+      "{{lv-LV|Es nerunāju latviski.||ES NE-ru-na-ju LAT-vis-ki.}}"
     ],
     "explanation": "'Es nesaprotu' — 'I don't understand' — the essential phrase when you're lost.",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in Latvian?",
-    "correctAnswer": "Vai jūs runājat angliski?",
+    "correctAnswer": "{{lv-LV|Vai jūs runājat angliski?||VAI JUS RU-na-jat AN-glis-ki?}}",
     "incorrectAnswers": [
-      "Vai jūs saprotat angliski?",
-      "Vai jūs zināt angliski?",
-      "Vai jūs mācāties angliski?"
+      "{{lv-LV|Vai jūs saprotat angliski?||VAI JUS SA-pro-tat AN-glis-ki?}}",
+      "{{lv-LV|Vai jūs zināt angliski?||VAI JUS ZI-nat AN-glis-ki?}}",
+      "{{lv-LV|Vai jūs mācāties angliski?||VAI JUS MA-ca-ties AN-glis-ki?}}"
     ],
     "explanation": "'Vai jūs runājat angliski?' — the polite plural/formal form. Informal: 'Vai tu runā angliski?'",
     "keywords": [
@@ -123,11 +123,11 @@
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bus stop?' in Latvian?",
-    "correctAnswer": "Kur ir autobusa pietura?",
+    "correctAnswer": "{{lv-LV|Kur ir autobusa pietura?||KUR IR AU-to-bu-sa PIE-tu-ra?}}",
     "incorrectAnswers": [
-      "Kur iet autobuss?",
-      "Kad nāk autobuss?",
-      "Cik maksā autobuss?"
+      "{{lv-LV|Kur iet autobuss?||KUR IET AU-to-buss?}}",
+      "{{lv-LV|Kad nāk autobuss?||KAD NAK AU-to-buss?}}",
+      "{{lv-LV|Cik maksā autobuss?||CIK MAK-sa AU-to-buss?}}"
     ],
     "explanation": "'Autobusa pietura' = bus stop. 'Tramvaja pietura' = tram stop, 'trolejbusa pietura' = trolleybus stop.",
     "keywords": [
@@ -136,5 +136,3865 @@
       "cefr-a1"
     ],
     "source": "https://www.omniglot.com/language/phrases/latvian.htm"
+  },
+  {
+    "itemId": "3fd35377-32db-44cb-b0c8-b1b4082bf5e4",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Good evening.'?",
+    "correctAnswer": "{{lv-LV|Labvakar.||LAB-va-kar.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kā jums klājas?||KA JUMS KLA-jas?}}",
+      "{{lv-LV|Man ir labi, paldies.||MAN IR LA-bi, PAL-dies.}}",
+      "{{lv-LV|Ļoti labi, paldies.||LO-ti LA-bi, PAL-dies.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Labvakar."
+  },
+  {
+    "itemId": "22b6836e-944e-423e-a0b8-f8eab9dbfe79",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'How are you?'?",
+    "correctAnswer": "{{lv-LV|Kā jums klājas?||KA JUMS KLA-jas?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir labi, paldies.||MAN IR LA-bi, PAL-dies.}}",
+      "{{lv-LV|Ļoti labi, paldies.||LO-ti LA-bi, PAL-dies.}}",
+      "{{lv-LV|Tiksimies vēlāk.||TIK-si-mies VE-lak.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81%20jums%20kl%C4%81jas%3F"
+  },
+  {
+    "itemId": "6277b859-ec78-4d22-be5b-5000cf0be98a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{lv-LV|Man ir labi, paldies.||MAN IR LA-bi, PAL-dies.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ļoti labi, paldies.||LO-ti LA-bi, PAL-dies.}}",
+      "{{lv-LV|Tiksimies vēlāk.||TIK-si-mies VE-lak.}}",
+      "{{lv-LV|Uz redzēšanos rīt.||UZ RED-ze-sa-nos RIT.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20labi%2C%20paldies."
+  },
+  {
+    "itemId": "c7b2deba-9e00-431b-94ec-9d0753e0a9d2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{lv-LV|Ļoti labi, paldies.||LO-ti LA-bi, PAL-dies.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tiksimies vēlāk.||TIK-si-mies VE-lak.}}",
+      "{{lv-LV|Uz redzēšanos rīt.||UZ RED-ze-sa-nos RIT.}}",
+      "{{lv-LV|Lai jums jauka diena.||LAI JUMS JAU-ka DIE-na.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%BBoti%20labi%2C%20paldies."
+  },
+  {
+    "itemId": "6852bbab-3c01-4d09-a081-a4069f9591a8",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'See you later.'?",
+    "correctAnswer": "{{lv-LV|Tiksimies vēlāk.||TIK-si-mies VE-lak.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Uz redzēšanos rīt.||UZ RED-ze-sa-nos RIT.}}",
+      "{{lv-LV|Lai jums jauka diena.||LAI JUMS JAU-ka DIE-na.}}",
+      "{{lv-LV|Laipni lūdzam.||LAIP-ni LUD-zam.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tiksimies%20v%C4%93l%C4%81k."
+  },
+  {
+    "itemId": "183783e6-b646-4671-a313-33170bc32d19",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{lv-LV|Uz redzēšanos rīt.||UZ RED-ze-sa-nos RIT.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lai jums jauka diena.||LAI JUMS JAU-ka DIE-na.}}",
+      "{{lv-LV|Laipni lūdzam.||LAIP-ni LUD-zam.}}",
+      "{{lv-LV|Prieks iepazīties.||PRIEKS IE-pa-zi-ties.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Uz%20redz%C4%93%C5%A1anos%20r%C4%ABt."
+  },
+  {
+    "itemId": "716f4cc1-f8fc-4d02-8ca5-e65a64e46b8f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Have a good day.'.",
+    "correctAnswer": "{{lv-LV|Lai jums jauka diena.||LAI JUMS JAU-ka DIE-na.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Laipni lūdzam.||LAIP-ni LUD-zam.}}",
+      "{{lv-LV|Prieks iepazīties.||PRIEKS IE-pa-zi-ties.}}",
+      "{{lv-LV|Prieks jūs atkal redzēt.||PRIEKS JUS AT-kal RED-zet.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Lai%20jums%20jauka%20diena."
+  },
+  {
+    "itemId": "13aebe51-d104-4ac3-8da6-d0bb81d1d468",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Welcome.'?",
+    "correctAnswer": "{{lv-LV|Laipni lūdzam.||LAIP-ni LUD-zam.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Prieks iepazīties.||PRIEKS IE-pa-zi-ties.}}",
+      "{{lv-LV|Prieks jūs atkal redzēt.||PRIEKS JUS AT-kal RED-zet.}}",
+      "{{lv-LV|Tiksimies drīz.||TIK-si-mies DRIZ.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Laipni%20l%C5%ABdzam."
+  },
+  {
+    "itemId": "330190eb-c34f-413d-834f-0b314c615004",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{lv-LV|Prieks iepazīties.||PRIEKS IE-pa-zi-ties.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Prieks jūs atkal redzēt.||PRIEKS JUS AT-kal RED-zet.}}",
+      "{{lv-LV|Tiksimies drīz.||TIK-si-mies DRIZ.}}",
+      "{{lv-LV|Lai jums jauks vakars.||LAI JUMS JAUKS VA-kars.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Prieks%20iepaz%C4%ABties."
+  },
+  {
+    "itemId": "9560d5d3-0e7a-48fb-b4a6-0e5d19c4141d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{lv-LV|Prieks jūs atkal redzēt.||PRIEKS JUS AT-kal RED-zet.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tiksimies drīz.||TIK-si-mies DRIZ.}}",
+      "{{lv-LV|Lai jums jauks vakars.||LAI JUMS JAUKS VA-kars.}}",
+      "{{lv-LV|Labvakar.||LAB-va-kar.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Prieks%20j%C5%ABs%20atkal%20redz%C4%93t."
+  },
+  {
+    "itemId": "8c150df6-4312-4ec5-a45c-bad4b3ef3ca1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'See you soon.'.",
+    "correctAnswer": "{{lv-LV|Tiksimies drīz.||TIK-si-mies DRIZ.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lai jums jauks vakars.||LAI JUMS JAUKS VA-kars.}}",
+      "{{lv-LV|Labvakar.||LAB-va-kar.}}",
+      "{{lv-LV|Kā jums klājas?||KA JUMS KLA-jas?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tiksimies%20dr%C4%ABz."
+  },
+  {
+    "itemId": "d229eda5-89ca-4511-a90d-2c7aca30d7cf",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{lv-LV|Lai jums jauks vakars.||LAI JUMS JAUKS VA-kars.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Labvakar.||LAB-va-kar.}}",
+      "{{lv-LV|Kā jums klājas?||KA JUMS KLA-jas?}}",
+      "{{lv-LV|Man ir labi, paldies.||MAN IR LA-bi, PAL-dies.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Lai%20jums%20jauks%20vakars."
+  },
+  {
+    "itemId": "2a7b755a-b58c-4a5b-9ea6-62585b729896",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'What is your name?'?",
+    "correctAnswer": "{{lv-LV|Kā jūs sauc?||KA JUS SAUC?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu no ASV.||ES ES-mu NO ASV.}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||ES DZI-vo-ju RI-ga.}}",
+      "{{lv-LV|Man ir divdesmit gadi.||MAN IR DIV-des-mit GA-di.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81%20j%C5%ABs%20sauc%3F"
+  },
+  {
+    "itemId": "1248b587-1a26-434a-a46b-f818160698f5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{lv-LV|Es esmu no ASV.||ES ES-mu NO ASV.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es dzīvoju Rīgā.||ES DZI-vo-ju RI-ga.}}",
+      "{{lv-LV|Man ir divdesmit gadi.||MAN IR DIV-des-mit GA-di.}}",
+      "{{lv-LV|Šis ir mans draugs.||SIS IR MANS DRAUGS.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20no%20ASV."
+  },
+  {
+    "itemId": "ea634be9-9758-446f-b5a6-bdadbe58bf2f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{lv-LV|Es dzīvoju Rīgā.||ES DZI-vo-ju RI-ga.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir divdesmit gadi.||MAN IR DIV-des-mit GA-di.}}",
+      "{{lv-LV|Šis ir mans draugs.||SIS IR MANS DRAUGS.}}",
+      "{{lv-LV|Šī ir mana māsa.||SI IR MA-na MA-sa.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20dz%C4%ABvoju%20R%C4%ABg%C4%81."
+  },
+  {
+    "itemId": "a8ff2d00-480f-42e0-a665-b8fbda745f01",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{lv-LV|Man ir divdesmit gadi.||MAN IR DIV-des-mit GA-di.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šis ir mans draugs.||SIS IR MANS DRAUGS.}}",
+      "{{lv-LV|Šī ir mana māsa.||SI IR MA-na MA-sa.}}",
+      "{{lv-LV|Es esmu precējies/precējusies.||ES ES-mu PRE-ce-jies/PRE-ce-ju-sies.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20divdesmit%20gadi."
+  },
+  {
+    "itemId": "f8657a9f-8afd-402e-9e45-87a1aeda292c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{lv-LV|Šis ir mans draugs.||SIS IR MANS DRAUGS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šī ir mana māsa.||SI IR MA-na MA-sa.}}",
+      "{{lv-LV|Es esmu precējies/precējusies.||ES ES-mu PRE-ce-jies/PRE-ce-ju-sies.}}",
+      "{{lv-LV|Es esmu students/studente.||ES ES-mu STU-dents/STU-den-te.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0is%20ir%20mans%20draugs."
+  },
+  {
+    "itemId": "979d7ffc-40f4-49a4-836b-9dbb887e1326",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'This is my sister.'?",
+    "correctAnswer": "{{lv-LV|Šī ir mana māsa.||SI IR MA-na MA-sa.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu precējies/precējusies.||ES ES-mu PRE-ce-jies/PRE-ce-ju-sies.}}",
+      "{{lv-LV|Es esmu students/studente.||ES ES-mu STU-dents/STU-den-te.}}",
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||ES ES-mu SEIT AT-va-li-na-ju-ma.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0%C4%AB%20ir%20mana%20m%C4%81sa."
+  },
+  {
+    "itemId": "837bbebb-902c-4a24-8d06-f1edd69f49ab",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I am married.'.",
+    "correctAnswer": "{{lv-LV|Es esmu precējies/precējusies.||ES ES-mu PRE-ce-jies/PRE-ce-ju-sies.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu students/studente.||ES ES-mu STU-dents/STU-den-te.}}",
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||ES ES-mu SEIT AT-va-li-na-ju-ma.}}",
+      "{{lv-LV|Mans uzvārds ir Garsija.||MANS UZ-vards IR GAR-si-ja.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20prec%C4%93jies/prec%C4%93jusies."
+  },
+  {
+    "itemId": "9fb740b9-4a29-469e-9b48-c483c641b172",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am a student.'?",
+    "correctAnswer": "{{lv-LV|Es esmu students/studente.||ES ES-mu STU-dents/STU-den-te.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu šeit atvaļinājumā.||ES ES-mu SEIT AT-va-li-na-ju-ma.}}",
+      "{{lv-LV|Mans uzvārds ir Garsija.||MANS UZ-vards IR GAR-si-ja.}}",
+      "{{lv-LV|Mans telefona numurs ir...||MANS TE-le-fo-na NU-murs IR...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20students/studente."
+  },
+  {
+    "itemId": "c2626b34-84b9-4363-ad19-49cbc5e92a09",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{lv-LV|Es esmu šeit atvaļinājumā.||ES ES-mu SEIT AT-va-li-na-ju-ma.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mans uzvārds ir Garsija.||MANS UZ-vards IR GAR-si-ja.}}",
+      "{{lv-LV|Mans telefona numurs ir...||MANS TE-le-fo-na NU-murs IR...}}",
+      "{{lv-LV|Mana adrese ir...||MA-na A-dre-se IR...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20%C5%A1eit%20atva%C4%BCin%C4%81jum%C4%81."
+  },
+  {
+    "itemId": "eefd57ca-0aca-421c-a37f-6ca53d7ca913",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{lv-LV|Mans uzvārds ir Garsija.||MANS UZ-vards IR GAR-si-ja.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mans telefona numurs ir...||MANS TE-le-fo-na NU-murs IR...}}",
+      "{{lv-LV|Mana adrese ir...||MA-na A-dre-se IR...}}",
+      "{{lv-LV|Kā jūs sauc?||KA JUS SAUC?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Mans%20uzv%C4%81rds%20ir%20Garsija."
+  },
+  {
+    "itemId": "d1c1bff9-56a0-4a15-be96-0de8eae74370",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'My phone number is...'.",
+    "correctAnswer": "{{lv-LV|Mans telefona numurs ir...||MANS TE-le-fo-na NU-murs IR...}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mana adrese ir...||MA-na A-dre-se IR...}}",
+      "{{lv-LV|Kā jūs sauc?||KA JUS SAUC?}}",
+      "{{lv-LV|Es esmu no ASV.||ES ES-mu NO ASV.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Mans%20telefona%20numurs%20ir..."
+  },
+  {
+    "itemId": "c92cb8cf-3b9d-4c0a-a952-068fd7ec77bd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'My address is...'?",
+    "correctAnswer": "{{lv-LV|Mana adrese ir...||MA-na A-dre-se IR...}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kā jūs sauc?||KA JUS SAUC?}}",
+      "{{lv-LV|Es esmu no ASV.||ES ES-mu NO ASV.}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||ES DZI-vo-ju RI-ga.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Mana%20adrese%20ir..."
+  },
+  {
+    "itemId": "c86be4ec-368e-4ab8-aae3-6fefa0f97d52",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I need water.'?",
+    "correctAnswer": "{{lv-LV|Man vajag ūdeni.||MAN VA-jag U-de-ni.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag karti.||MAN VA-jag KAR-ti.}}",
+      "{{lv-LV|Man vajag taksometru.||MAN VA-jag TAK-so-me-tru.}}",
+      "{{lv-LV|Man vajag istabu.||MAN VA-jag IS-ta-bu.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20%C5%ABdeni."
+  },
+  {
+    "itemId": "289e5d2a-0ead-4279-ad78-c022b2cbc881",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I need a map.'?",
+    "correctAnswer": "{{lv-LV|Man vajag karti.||MAN VA-jag KAR-ti.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag taksometru.||MAN VA-jag TAK-so-me-tru.}}",
+      "{{lv-LV|Man vajag istabu.||MAN VA-jag IS-ta-bu.}}",
+      "{{lv-LV|Vai jums ir Wi-Fi?||VAI JUMS IR WI-FI?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20karti."
+  },
+  {
+    "itemId": "f39b1bd6-98f9-4d69-b52f-4a14087b4864",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{lv-LV|Man vajag taksometru.||MAN VA-jag TAK-so-me-tru.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag istabu.||MAN VA-jag IS-ta-bu.}}",
+      "{{lv-LV|Vai jums ir Wi-Fi?||VAI JUMS IR WI-FI?}}",
+      "{{lv-LV|Vai jums ir maize?||VAI JUMS IR MAI-ze?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20taksometru."
+  },
+  {
+    "itemId": "6ca67729-7ce5-4984-812c-4f738aa9ab23",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I need a room.'?",
+    "correctAnswer": "{{lv-LV|Man vajag istabu.||MAN VA-jag IS-ta-bu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir Wi-Fi?||VAI JUMS IR WI-FI?}}",
+      "{{lv-LV|Vai jums ir maize?||VAI JUMS IR MAI-ze?}}",
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||VAI ES VA-ru DA-but E-dien-kar-ti?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20istabu."
+  },
+  {
+    "itemId": "d5a44994-390e-44b3-a880-484e967036e2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir Wi-Fi?||VAI JUMS IR WI-FI?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir maize?||VAI JUMS IR MAI-ze?}}",
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||VAI ES VA-ru DA-but E-dien-kar-ti?}}",
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||VAI ES VA-ru DA-but PU-de-li U-dens?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20Wi-Fi%3F"
+  },
+  {
+    "itemId": "f4570b05-5e7c-4435-9d24-15c3067b3da5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir maize?||VAI JUMS IR MAI-ze?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai es varu dabūt ēdienkarti?||VAI ES VA-ru DA-but E-dien-kar-ti?}}",
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||VAI ES VA-ru DA-but PU-de-li U-dens?}}",
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||IE-do-diet MAN MAI-si-nu, LUD-zu.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20maize%3F"
+  },
+  {
+    "itemId": "3ca85d99-e06c-4f58-804d-a437ecf20acf",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt ēdienkarti?||VAI ES VA-ru DA-but E-dien-kar-ti?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai es varu dabūt pudeli ūdens?||VAI ES VA-ru DA-but PU-de-li U-dens?}}",
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||IE-do-diet MAN MAI-si-nu, LUD-zu.}}",
+      "{{lv-LV|Man vajag vairāk laika.||MAN VA-jag VAI-rak LAI-ka.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20es%20varu%20dab%C5%ABt%20%C4%93dienkarti%3F"
+  },
+  {
+    "itemId": "de640c11-d987-4a3c-90d2-f3e9658d2443",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt pudeli ūdens?||VAI ES VA-ru DA-but PU-de-li U-dens?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Iedodiet man maisiņu, lūdzu.||IE-do-diet MAN MAI-si-nu, LUD-zu.}}",
+      "{{lv-LV|Man vajag vairāk laika.||MAN VA-jag VAI-rak LAI-ka.}}",
+      "{{lv-LV|Man vajag čeku.||MAN VA-jag CE-ku.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20es%20varu%20dab%C5%ABt%20pudeli%20%C5%ABdens%3F"
+  },
+  {
+    "itemId": "4d0ecf23-c66e-4368-8174-1050f531c1fe",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{lv-LV|Iedodiet man maisiņu, lūdzu.||IE-do-diet MAN MAI-si-nu, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag vairāk laika.||MAN VA-jag VAI-rak LAI-ka.}}",
+      "{{lv-LV|Man vajag čeku.||MAN VA-jag CE-ku.}}",
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||VAI JUMS IR VE-ge-ta-ri E-die-ni?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Iedodiet%20man%20maisi%C5%86u%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "23bbb717-bb66-463a-8767-843c0634551d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I need more time.'?",
+    "correctAnswer": "{{lv-LV|Man vajag vairāk laika.||MAN VA-jag VAI-rak LAI-ka.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag čeku.||MAN VA-jag CE-ku.}}",
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||VAI JUMS IR VE-ge-ta-ri E-die-ni?}}",
+      "{{lv-LV|Man vajag ūdeni.||MAN VA-jag U-de-ni.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20vair%C4%81k%20laika."
+  },
+  {
+    "itemId": "9735f872-868c-4731-8a56-f098b9928eef",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{lv-LV|Man vajag čeku.||MAN VA-jag CE-ku.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir veģetāri ēdieni?||VAI JUMS IR VE-ge-ta-ri E-die-ni?}}",
+      "{{lv-LV|Man vajag ūdeni.||MAN VA-jag U-de-ni.}}",
+      "{{lv-LV|Man vajag karti.||MAN VA-jag KAR-ti.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20%C4%8Deku."
+  },
+  {
+    "itemId": "348dee47-5360-4298-9a88-c675fc35ce50",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir veģetāri ēdieni?||VAI JUMS IR VE-ge-ta-ri E-die-ni?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag ūdeni.||MAN VA-jag U-de-ni.}}",
+      "{{lv-LV|Man vajag karti.||MAN VA-jag KAR-ti.}}",
+      "{{lv-LV|Man vajag taksometru.||MAN VA-jag TAK-so-me-tru.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20ve%C4%A3et%C4%81ri%20%C4%93dieni%3F"
+  },
+  {
+    "itemId": "681f6353-4f03-4a91-8bac-21d338d65772",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{lv-LV|Kur ir banka?||KUR IR BAN-ka?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir muzejs?||KUR IR MU-zejs?}}",
+      "{{lv-LV|Kur ir pilsētas centrs?||KUR IR PIL-se-tas CENTRS?}}",
+      "{{lv-LV|Kur ir tramvaja pietura?||KUR IR TRAM-va-ja PIE-tu-ra?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20banka%3F"
+  },
+  {
+    "itemId": "066edc62-7d88-4f76-8a78-a1213ed200df",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{lv-LV|Kur ir muzejs?||KUR IR MU-zejs?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir pilsētas centrs?||KUR IR PIL-se-tas CENTRS?}}",
+      "{{lv-LV|Kur ir tramvaja pietura?||KUR IR TRAM-va-ja PIE-tu-ra?}}",
+      "{{lv-LV|Ejiet taisni.||E-jiet TAIS-ni.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20muzejs%3F"
+  },
+  {
+    "itemId": "b204b954-7663-40e7-b97e-c14c763f0620",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{lv-LV|Kur ir pilsētas centrs?||KUR IR PIL-se-tas CENTRS?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir tramvaja pietura?||KUR IR TRAM-va-ja PIE-tu-ra?}}",
+      "{{lv-LV|Ejiet taisni.||E-jiet TAIS-ni.}}",
+      "{{lv-LV|Nogriezieties pirmajā ielā.||NO-grie-zie-ties PIR-ma-ja IE-la.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20pils%C4%93tas%20centrs%3F"
+  },
+  {
+    "itemId": "6cffdb5d-76ea-4bc5-81d2-e8cb22c24476",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Where is the tram stop?'?",
+    "correctAnswer": "{{lv-LV|Kur ir tramvaja pietura?||KUR IR TRAM-va-ja PIE-tu-ra?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ejiet taisni.||E-jiet TAIS-ni.}}",
+      "{{lv-LV|Nogriezieties pirmajā ielā.||NO-grie-zie-ties PIR-ma-ja IE-la.}}",
+      "{{lv-LV|Nogriezieties otrajā ielā.||NO-grie-zie-ties O-tra-ja IE-la.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20tramvaja%20pietura%3F"
+  },
+  {
+    "itemId": "daffd3d2-3829-4102-9623-0c42eb4fbbc7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Go straight.'?",
+    "correctAnswer": "{{lv-LV|Ejiet taisni.||E-jiet TAIS-ni.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Nogriezieties pirmajā ielā.||NO-grie-zie-ties PIR-ma-ja IE-la.}}",
+      "{{lv-LV|Nogriezieties otrajā ielā.||NO-grie-zie-ties O-tra-ja IE-la.}}",
+      "{{lv-LV|Vai tas ir tālu?||VAI TAS IR TA-lu?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ejiet%20taisni."
+  },
+  {
+    "itemId": "aee30777-db4e-41e6-a143-3ff4c2660a06",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Take the first street.'?",
+    "correctAnswer": "{{lv-LV|Nogriezieties pirmajā ielā.||NO-grie-zie-ties PIR-ma-ja IE-la.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Nogriezieties otrajā ielā.||NO-grie-zie-ties O-tra-ja IE-la.}}",
+      "{{lv-LV|Vai tas ir tālu?||VAI TAS IR TA-lu?}}",
+      "{{lv-LV|Vai tas ir tuvu?||VAI TAS IR TU-vu?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Nogriezieties%20pirmaj%C4%81%20iel%C4%81."
+  },
+  {
+    "itemId": "f913e397-4e8e-432a-bc01-5c069a909288",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Take the second street.'.",
+    "correctAnswer": "{{lv-LV|Nogriezieties otrajā ielā.||NO-grie-zie-ties O-tra-ja IE-la.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai tas ir tālu?||VAI TAS IR TA-lu?}}",
+      "{{lv-LV|Vai tas ir tuvu?||VAI TAS IR TU-vu?}}",
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||ES ES-mu AP-mal-di-jies/AP-mal-di-ju-sies.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Nogriezieties%20otraj%C4%81%20iel%C4%81."
+  },
+  {
+    "itemId": "3ee929f0-a6cf-4798-8183-49b17c694fef",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Is it far?'?",
+    "correctAnswer": "{{lv-LV|Vai tas ir tālu?||VAI TAS IR TA-lu?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai tas ir tuvu?||VAI TAS IR TU-vu?}}",
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||ES ES-mu AP-mal-di-jies/AP-mal-di-ju-sies.}}",
+      "{{lv-LV|Mēs meklējam viesnīcu.||MES ME-kle-jam VIES-ni-cu.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20tas%20ir%20t%C4%81lu%3F"
+  },
+  {
+    "itemId": "8c5acc38-adf3-4b79-aacd-b2affaab12ce",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Is it near?'?",
+    "correctAnswer": "{{lv-LV|Vai tas ir tuvu?||VAI TAS IR TU-vu?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||ES ES-mu AP-mal-di-jies/AP-mal-di-ju-sies.}}",
+      "{{lv-LV|Mēs meklējam viesnīcu.||MES ME-kle-jam VIES-ni-cu.}}",
+      "{{lv-LV|Lūdzu, parādiet man kartē.||LUD-zu, PA-ra-diet MAN KAR-te.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20tas%20ir%20tuvu%3F"
+  },
+  {
+    "itemId": "d6e22a48-a378-4f40-9689-38c3e7ef088f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I am lost.'?",
+    "correctAnswer": "{{lv-LV|Es esmu apmaldījies/apmaldījusies.||ES ES-mu AP-mal-di-jies/AP-mal-di-ju-sies.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mēs meklējam viesnīcu.||MES ME-kle-jam VIES-ni-cu.}}",
+      "{{lv-LV|Lūdzu, parādiet man kartē.||LUD-zu, PA-ra-diet MAN KAR-te.}}",
+      "{{lv-LV|Kur ir banka?||KUR IR BAN-ka?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20apmald%C4%ABjies/apmald%C4%ABjusies."
+  },
+  {
+    "itemId": "7207308e-bd24-44af-8534-590cfb0edf6b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{lv-LV|Mēs meklējam viesnīcu.||MES ME-kle-jam VIES-ni-cu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, parādiet man kartē.||LUD-zu, PA-ra-diet MAN KAR-te.}}",
+      "{{lv-LV|Kur ir banka?||KUR IR BAN-ka?}}",
+      "{{lv-LV|Kur ir muzejs?||KUR IR MU-zejs?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/M%C4%93s%20mekl%C4%93jam%20viesn%C4%ABcu."
+  },
+  {
+    "itemId": "229a07b9-4644-4a06-9d03-599512df1166",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, parādiet man kartē.||LUD-zu, PA-ra-diet MAN KAR-te.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir banka?||KUR IR BAN-ka?}}",
+      "{{lv-LV|Kur ir muzejs?||KUR IR MU-zejs?}}",
+      "{{lv-LV|Kur ir pilsētas centrs?||KUR IR PIL-se-tas CENTRS?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20par%C4%81diet%20man%20kart%C4%93."
+  },
+  {
+    "itemId": "7687224c-9cdb-4e36-8971-ed82d54c5e36",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{lv-LV|Vai varat to atkārtot?||VAI VA-rat TO AT-kar-tot?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai varat runāt lēnāk?||VAI VA-rat RU-nat LE-nak?}}",
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||KA JUS RAKS-tat SA-vu VAR-du?}}",
+      "{{lv-LV|Kopā ir desmit eiro.||KO-pa IR DES-mit EI-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20varat%20to%20atk%C4%81rtot%3F"
+  },
+  {
+    "itemId": "79fbbea9-e33c-4d0c-907b-559a09152ce6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{lv-LV|Vai varat runāt lēnāk?||VAI VA-rat RU-nat LE-nak?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||KA JUS RAKS-tat SA-vu VAR-du?}}",
+      "{{lv-LV|Kopā ir desmit eiro.||KO-pa IR DES-mit EI-ro.}}",
+      "{{lv-LV|Tas maksā divdesmit eiro.||TAS MAK-sa DIV-des-mit EI-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20varat%20run%C4%81t%20l%C4%93n%C4%81k%3F"
+  },
+  {
+    "itemId": "d625c123-24a6-4d2d-a3f5-f918a0034566",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{lv-LV|Kā jūs rakstāt savu vārdu?||KA JUS RAKS-tat SA-vu VAR-du?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kopā ir desmit eiro.||KO-pa IR DES-mit EI-ro.}}",
+      "{{lv-LV|Tas maksā divdesmit eiro.||TAS MAK-sa DIV-des-mit EI-ro.}}",
+      "{{lv-LV|Numurs divpadsmit.||NU-murs DIV-pads-mit.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81%20j%C5%ABs%20rakst%C4%81t%20savu%20v%C4%81rdu%3F"
+  },
+  {
+    "itemId": "d2930c97-0853-496d-ba71-b1f8d2a7c672",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{lv-LV|Kopā ir desmit eiro.||KO-pa IR DES-mit EI-ro.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas maksā divdesmit eiro.||TAS MAK-sa DIV-des-mit EI-ro.}}",
+      "{{lv-LV|Numurs divpadsmit.||NU-murs DIV-pads-mit.}}",
+      "{{lv-LV|Ceturtais perons.||CE-tur-tais PE-rons.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kop%C4%81%20ir%20desmit%20eiro."
+  },
+  {
+    "itemId": "75e3544b-3c1b-47c4-ae0d-2d91dcadbf3d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{lv-LV|Tas maksā divdesmit eiro.||TAS MAK-sa DIV-des-mit EI-ro.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Numurs divpadsmit.||NU-murs DIV-pads-mit.}}",
+      "{{lv-LV|Ceturtais perons.||CE-tur-tais PE-rons.}}",
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||GAL-di-nu TRIM CIL-ve-kiem, LUD-zu.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20maks%C4%81%20divdesmit%20eiro."
+  },
+  {
+    "itemId": "1c9631f3-7d21-4811-8b25-d611190d19bb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{lv-LV|Numurs divpadsmit.||NU-murs DIV-pads-mit.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ceturtais perons.||CE-tur-tais PE-rons.}}",
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||GAL-di-nu TRIM CIL-ve-kiem, LUD-zu.}}",
+      "{{lv-LV|Divas biļetes, lūdzu.||DI-vas BI-le-tes, LUD-zu.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Numurs%20divpadsmit."
+  },
+  {
+    "itemId": "f39fd0d7-97c6-4c86-ad5a-aae39133782e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Platform number four.'.",
+    "correctAnswer": "{{lv-LV|Ceturtais perons.||CE-tur-tais PE-rons.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||GAL-di-nu TRIM CIL-ve-kiem, LUD-zu.}}",
+      "{{lv-LV|Divas biļetes, lūdzu.||DI-vas BI-le-tes, LUD-zu.}}",
+      "{{lv-LV|Vai varat to uzrakstīt?||VAI VA-rat TO UZ-raks-tit?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ceturtais%20perons."
+  },
+  {
+    "itemId": "7d2d8313-eb00-46aa-abbe-92994318e568",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{lv-LV|Galdiņu trim cilvēkiem, lūdzu.||GAL-di-nu TRIM CIL-ve-kiem, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Divas biļetes, lūdzu.||DI-vas BI-le-tes, LUD-zu.}}",
+      "{{lv-LV|Vai varat to uzrakstīt?||VAI VA-rat TO UZ-raks-tit?}}",
+      "{{lv-LV|Kāds šodien ir datums?||KADS SO-dien IR DA-tums?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Galdi%C5%86u%20trim%20cilv%C4%93kiem%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "b00e2a1c-b20b-4021-a378-b89725976cc5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{lv-LV|Divas biļetes, lūdzu.||DI-vas BI-le-tes, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai varat to uzrakstīt?||VAI VA-rat TO UZ-raks-tit?}}",
+      "{{lv-LV|Kāds šodien ir datums?||KADS SO-dien IR DA-tums?}}",
+      "{{lv-LV|Vienu brīdi, lūdzu.||VIE-nu BRI-di, LUD-zu.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Divas%20bi%C4%BCetes%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "e7fe5f63-4c1d-4bd8-91e1-72cf329ea4e8",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{lv-LV|Vai varat to uzrakstīt?||VAI VA-rat TO UZ-raks-tit?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kāds šodien ir datums?||KADS SO-dien IR DA-tums?}}",
+      "{{lv-LV|Vienu brīdi, lūdzu.||VIE-nu BRI-di, LUD-zu.}}",
+      "{{lv-LV|Vai varat to atkārtot?||VAI VA-rat TO AT-kar-tot?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20varat%20to%20uzrakst%C4%ABt%3F"
+  },
+  {
+    "itemId": "09a72cfa-f7cf-4b1f-8041-46c261a29d21",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'What is today's date?'.",
+    "correctAnswer": "{{lv-LV|Kāds šodien ir datums?||KADS SO-dien IR DA-tums?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vienu brīdi, lūdzu.||VIE-nu BRI-di, LUD-zu.}}",
+      "{{lv-LV|Vai varat to atkārtot?||VAI VA-rat TO AT-kar-tot?}}",
+      "{{lv-LV|Vai varat runāt lēnāk?||VAI VA-rat RU-nat LE-nak?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81ds%20%C5%A1odien%20ir%20datums%3F"
+  },
+  {
+    "itemId": "b122c338-4041-4535-a7b3-a63cabc08b2b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'One moment, please.'?",
+    "correctAnswer": "{{lv-LV|Vienu brīdi, lūdzu.||VIE-nu BRI-di, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai varat to atkārtot?||VAI VA-rat TO AT-kar-tot?}}",
+      "{{lv-LV|Vai varat runāt lēnāk?||VAI VA-rat RU-nat LE-nak?}}",
+      "{{lv-LV|Kā jūs rakstāt savu vārdu?||KA JUS RAKS-tat SA-vu VAR-du?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vienu%20br%C4%ABdi%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "91938a68-9bdd-4ecb-acae-1fd2f42e82ad",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{lv-LV|Es esmu izsalcis/izsalkusi.||ES ES-mu IZ-sal-cis/IZ-sal-ku-si.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||ES ES-mu IZS-la-pis/IZS-la-pu-si.}}",
+      "{{lv-LV|Ēdienkarti, lūdzu.||E-dien-kar-ti, LUD-zu.}}",
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||ES ES-mu VE-ge-ta-rie-tis/VE-ge-ta-rie-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20izsalcis/izsalkusi."
+  },
+  {
+    "itemId": "0a813dfa-22d4-4a66-b13e-c1a78faa3049",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{lv-LV|Es esmu izslāpis/izslāpusi.||ES ES-mu IZS-la-pis/IZS-la-pu-si.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ēdienkarti, lūdzu.||E-dien-kar-ti, LUD-zu.}}",
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||ES ES-mu VE-ge-ta-rie-tis/VE-ge-ta-rie-te.}}",
+      "{{lv-LV|Bez gaļas, lūdzu.||BEZ GA-las, LUD-zu.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20izsl%C4%81pis/izsl%C4%81pusi."
+  },
+  {
+    "itemId": "f366e5cf-6c51-4971-bd3a-046392b7a3b6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'The menu, please.'.",
+    "correctAnswer": "{{lv-LV|Ēdienkarti, lūdzu.||E-dien-kar-ti, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu veģetārietis/veģetāriete.||ES ES-mu VE-ge-ta-rie-tis/VE-ge-ta-rie-te.}}",
+      "{{lv-LV|Bez gaļas, lūdzu.||BEZ GA-las, LUD-zu.}}",
+      "{{lv-LV|Bez cukura, lūdzu.||BEZ CU-ku-ra, LUD-zu.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%92dienkarti%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "c5884b45-b878-42af-a247-da7ec4a9e352",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{lv-LV|Es esmu veģetārietis/veģetāriete.||ES ES-mu VE-ge-ta-rie-tis/VE-ge-ta-rie-te.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Bez gaļas, lūdzu.||BEZ GA-las, LUD-zu.}}",
+      "{{lv-LV|Bez cukura, lūdzu.||BEZ CU-ku-ra, LUD-zu.}}",
+      "{{lv-LV|Ar pienu, lūdzu.||AR PIE-nu, LUD-zu.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20ve%C4%A3et%C4%81rietis/ve%C4%A3et%C4%81riete."
+  },
+  {
+    "itemId": "8a9c6872-cf7f-4b06-88a4-8411b2f85d3b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{lv-LV|Bez gaļas, lūdzu.||BEZ GA-las, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Bez cukura, lūdzu.||BEZ CU-ku-ra, LUD-zu.}}",
+      "{{lv-LV|Ar pienu, lūdzu.||AR PIE-nu, LUD-zu.}}",
+      "{{lv-LV|Tas bija garšīgi.||TAS BI-ja GAR-si-gi.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Bez%20ga%C4%BCas%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "6da71d2c-ee56-4adf-9629-2c395adbe112",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{lv-LV|Bez cukura, lūdzu.||BEZ CU-ku-ra, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ar pienu, lūdzu.||AR PIE-nu, LUD-zu.}}",
+      "{{lv-LV|Tas bija garšīgi.||TAS BI-ja GAR-si-gi.}}",
+      "{{lv-LV|Tas ir ļoti garšīgs.||TAS IR LO-ti GAR-sigs.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Bez%20cukura%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "185a8629-b421-4b0c-a500-b341008fd968",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'With milk, please.'.",
+    "correctAnswer": "{{lv-LV|Ar pienu, lūdzu.||AR PIE-nu, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas bija garšīgi.||TAS BI-ja GAR-si-gi.}}",
+      "{{lv-LV|Tas ir ļoti garšīgs.||TAS IR LO-ti GAR-sigs.}}",
+      "{{lv-LV|Zupa ir auksta.||ZU-pa IR AUKS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ar%20pienu%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "6316e3a2-35e4-406a-ab54-e5080677a4fe",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'It was delicious.'?",
+    "correctAnswer": "{{lv-LV|Tas bija garšīgi.||TAS BI-ja GAR-si-gi.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas ir ļoti garšīgs.||TAS IR LO-ti GAR-sigs.}}",
+      "{{lv-LV|Zupa ir auksta.||ZU-pa IR AUKS-ta.}}",
+      "{{lv-LV|Man ir alerģija pret riekstiem.||MAN IR A-ler-gi-ja PRET RIEKS-tiem.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20bija%20gar%C5%A1%C4%ABgi."
+  },
+  {
+    "itemId": "12db2a32-3b3c-4c62-9e0f-5563d0a0e1c7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'This is very good.'?",
+    "correctAnswer": "{{lv-LV|Tas ir ļoti garšīgs.||TAS IR LO-ti GAR-sigs.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Zupa ir auksta.||ZU-pa IR AUKS-ta.}}",
+      "{{lv-LV|Man ir alerģija pret riekstiem.||MAN IR A-ler-gi-ja PRET RIEKS-tiem.}}",
+      "{{lv-LV|Pudeli ūdens, lūdzu.||PU-de-li U-dens, LUD-zu.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20ir%20%C4%BCoti%20gar%C5%A1%C4%ABgs."
+  },
+  {
+    "itemId": "0b05750c-7c57-4d10-91e7-993ea5643efb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{lv-LV|Zupa ir auksta.||ZU-pa IR AUKS-ta.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir alerģija pret riekstiem.||MAN IR A-ler-gi-ja PRET RIEKS-tiem.}}",
+      "{{lv-LV|Pudeli ūdens, lūdzu.||PU-de-li U-dens, LUD-zu.}}",
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||ES ES-mu IZ-sal-cis/IZ-sal-ku-si.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Zupa%20ir%20auksta."
+  },
+  {
+    "itemId": "649e4b09-d77e-478b-bbf7-efb4e2dabdad",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{lv-LV|Man ir alerģija pret riekstiem.||MAN IR A-ler-gi-ja PRET RIEKS-tiem.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Pudeli ūdens, lūdzu.||PU-de-li U-dens, LUD-zu.}}",
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||ES ES-mu IZ-sal-cis/IZ-sal-ku-si.}}",
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||ES ES-mu IZS-la-pis/IZS-la-pu-si.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20aler%C4%A3ija%20pret%20riekstiem."
+  },
+  {
+    "itemId": "d17a418a-7b4b-4101-a365-e85a8f9e76b5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{lv-LV|Pudeli ūdens, lūdzu.||PU-de-li U-dens, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu izsalcis/izsalkusi.||ES ES-mu IZ-sal-cis/IZ-sal-ku-si.}}",
+      "{{lv-LV|Es esmu izslāpis/izslāpusi.||ES ES-mu IZS-la-pis/IZS-la-pu-si.}}",
+      "{{lv-LV|Ēdienkarti, lūdzu.||E-dien-kar-ti, LUD-zu.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Pudeli%20%C5%ABdens%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "436fc74d-d6ed-46ad-9187-d93a7cfc38a0",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir tas citā izmērā?||VAI JUMS IR TAS CI-ta IZ-me-ra?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir tas citā krāsā?||VAI JUMS IR TAS CI-ta KRA-sa?}}",
+      "{{lv-LV|Vai es varu to pielaikot?||VAI ES VA-ru TO PIE-lai-kot?}}",
+      "{{lv-LV|Tas ir pārāk dārgs.||TAS IR PA-rak DARGS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20tas%20cit%C4%81%20izm%C4%93r%C4%81%3F"
+  },
+  {
+    "itemId": "58a80b77-e3f5-4012-b2c1-93350e145ac8",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir tas citā krāsā?||VAI JUMS IR TAS CI-ta KRA-sa?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai es varu to pielaikot?||VAI ES VA-ru TO PIE-lai-kot?}}",
+      "{{lv-LV|Tas ir pārāk dārgs.||TAS IR PA-rak DARGS.}}",
+      "{{lv-LV|Tas ir lēts.||TAS IR LETS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20tas%20cit%C4%81%20kr%C4%81s%C4%81%3F"
+  },
+  {
+    "itemId": "9d551464-ebd5-418c-85fa-baa8310587c1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{lv-LV|Vai es varu to pielaikot?||VAI ES VA-ru TO PIE-lai-kot?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas ir pārāk dārgs.||TAS IR PA-rak DARGS.}}",
+      "{{lv-LV|Tas ir lēts.||TAS IR LETS.}}",
+      "{{lv-LV|Es to ņemšu.||ES TO NEM-su.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20es%20varu%20to%20pielaikot%3F"
+  },
+  {
+    "itemId": "d77f6f87-07cd-4de0-b011-215fccce95e2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{lv-LV|Tas ir pārāk dārgs.||TAS IR PA-rak DARGS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas ir lēts.||TAS IR LETS.}}",
+      "{{lv-LV|Es to ņemšu.||ES TO NEM-su.}}",
+      "{{lv-LV|Kur ir kase?||KUR IR KA-se?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20ir%20p%C4%81r%C4%81k%20d%C4%81rgs."
+  },
+  {
+    "itemId": "3f404dcd-6909-461f-834d-27baa4b4e79d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{lv-LV|Tas ir lēts.||TAS IR LETS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es to ņemšu.||ES TO NEM-su.}}",
+      "{{lv-LV|Kur ir kase?||KUR IR KA-se?}}",
+      "{{lv-LV|Es tikai skatos.||ES TI-kai SKA-tos.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20ir%20l%C4%93ts."
+  },
+  {
+    "itemId": "76c76ca5-db92-44fc-b25c-fab7ca1e03c5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I will take it.'?",
+    "correctAnswer": "{{lv-LV|Es to ņemšu.||ES TO NEM-su.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir kase?||KUR IR KA-se?}}",
+      "{{lv-LV|Es tikai skatos.||ES TI-kai SKA-tos.}}",
+      "{{lv-LV|Vai jūs pieņemat kartes?||VAI JUS PIE-ne-mat KAR-tes?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20to%20%C5%86em%C5%A1u."
+  },
+  {
+    "itemId": "99ad2a04-1275-4dad-8fec-2635ddd76bf7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{lv-LV|Kur ir kase?||KUR IR KA-se?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es tikai skatos.||ES TI-kai SKA-tos.}}",
+      "{{lv-LV|Vai jūs pieņemat kartes?||VAI JUS PIE-ne-mat KAR-tes?}}",
+      "{{lv-LV|Vai es varu dabūt čeku?||VAI ES VA-ru DA-but CE-ku?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20kase%3F"
+  },
+  {
+    "itemId": "64e67867-9740-446c-a96a-ce77cb75a45b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am just looking.'?",
+    "correctAnswer": "{{lv-LV|Es tikai skatos.||ES TI-kai SKA-tos.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jūs pieņemat kartes?||VAI JUS PIE-ne-mat KAR-tes?}}",
+      "{{lv-LV|Vai es varu dabūt čeku?||VAI ES VA-ru DA-but CE-ku?}}",
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||SIS IZ-mers IR PA-rak MAZS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20tikai%20skatos."
+  },
+  {
+    "itemId": "e149eb62-1890-4331-ab46-e29ec5c3cb8c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{lv-LV|Vai jūs pieņemat kartes?||VAI JUS PIE-ne-mat KAR-tes?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai es varu dabūt čeku?||VAI ES VA-ru DA-but CE-ku?}}",
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||SIS IZ-mers IR PA-rak MAZS.}}",
+      "{{lv-LV|Šis izmērs ir pārāk liels.||SIS IZ-mers IR PA-rak LIELS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20j%C5%ABs%20pie%C5%86emat%20kartes%3F"
+  },
+  {
+    "itemId": "f73a9b15-86b8-4263-833c-530777a9a4ce",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt čeku?||VAI ES VA-ru DA-but CE-ku?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šis izmērs ir pārāk mazs.||SIS IZ-mers IR PA-rak MAZS.}}",
+      "{{lv-LV|Šis izmērs ir pārāk liels.||SIS IZ-mers IR PA-rak LIELS.}}",
+      "{{lv-LV|Vai jums ir tas citā izmērā?||VAI JUMS IR TAS CI-ta IZ-me-ra?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20es%20varu%20dab%C5%ABt%20%C4%8Deku%3F"
+  },
+  {
+    "itemId": "26c8bc10-9e7a-4d67-a4b8-52f4821fce48",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'This size is too small.'.",
+    "correctAnswer": "{{lv-LV|Šis izmērs ir pārāk mazs.||SIS IZ-mers IR PA-rak MAZS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šis izmērs ir pārāk liels.||SIS IZ-mers IR PA-rak LIELS.}}",
+      "{{lv-LV|Vai jums ir tas citā izmērā?||VAI JUMS IR TAS CI-ta IZ-me-ra?}}",
+      "{{lv-LV|Vai jums ir tas citā krāsā?||VAI JUMS IR TAS CI-ta KRA-sa?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0is%20izm%C4%93rs%20ir%20p%C4%81r%C4%81k%20mazs."
+  },
+  {
+    "itemId": "d8ea731e-29d3-4d2a-9dbf-89a9521c612c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'This size is too big.'?",
+    "correctAnswer": "{{lv-LV|Šis izmērs ir pārāk liels.||SIS IZ-mers IR PA-rak LIELS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir tas citā izmērā?||VAI JUMS IR TAS CI-ta IZ-me-ra?}}",
+      "{{lv-LV|Vai jums ir tas citā krāsā?||VAI JUMS IR TAS CI-ta KRA-sa?}}",
+      "{{lv-LV|Vai es varu to pielaikot?||VAI ES VA-ru TO PIE-lai-kot?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0is%20izm%C4%93rs%20ir%20p%C4%81r%C4%81k%20liels."
+  },
+  {
+    "itemId": "1719f1ab-e5cd-4c5d-b397-ad9b1669a4dc",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{lv-LV|Man vajag biļeti uz lidostu.||MAN VA-jag BI-le-ti UZ LI-dos-tu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||VIE-nu BI-le-ti UZ CEN-tru, LUD-zu.}}",
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||BI-le-ti TURP UN AT-pa-kal, LUD-zu.}}",
+      "{{lv-LV|No kura perona tas atiet?||NO KU-ra PE-ro-na TAS A-tiet?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20bi%C4%BCeti%20uz%20lidostu."
+  },
+  {
+    "itemId": "f64c2cdc-5ae5-40ee-9f98-1b0fd42c5dd4",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{lv-LV|Vienu biļeti uz centru, lūdzu.||VIE-nu BI-le-ti UZ CEN-tru, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||BI-le-ti TURP UN AT-pa-kal, LUD-zu.}}",
+      "{{lv-LV|No kura perona tas atiet?||NO KU-ra PE-ro-na TAS A-tiet?}}",
+      "{{lv-LV|Vai šī vieta ir brīva?||VAI SI VIE-ta IR BRI-va?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vienu%20bi%C4%BCeti%20uz%20centru%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "2befa903-b7ec-4fd0-8a26-95f70dd3fd9a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||BI-le-ti TURP UN AT-pa-kal, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|No kura perona tas atiet?||NO KU-ra PE-ro-na TAS A-tiet?}}",
+      "{{lv-LV|Vai šī vieta ir brīva?||VAI SI VIE-ta IR BRI-va?}}",
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||LUD-zu, IZ-sau-ciet TAK-so-me-tru.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Bi%C4%BCeti%20turp%20un%20atpaka%C4%BC%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "0cf88258-1c73-48f3-976a-f60446f99331",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{lv-LV|No kura perona tas atiet?||NO KU-ra PE-ro-na TAS A-tiet?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai šī vieta ir brīva?||VAI SI VIE-ta IR BRI-va?}}",
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||LUD-zu, IZ-sau-ciet TAK-so-me-tru.}}",
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||VAI SIS AU-to-buss BRAUC UZ CEN-tru?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/No%20kura%20perona%20tas%20atiet%3F"
+  },
+  {
+    "itemId": "661b070e-0fb5-45a7-9d84-4971679e663d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{lv-LV|Vai šī vieta ir brīva?||VAI SI VIE-ta IR BRI-va?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, izsauciet taksometru.||LUD-zu, IZ-sau-ciet TAK-so-me-tru.}}",
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||VAI SIS AU-to-buss BRAUC UZ CEN-tru?}}",
+      "{{lv-LV|Es gribu doties uz lidostu.||ES GRI-bu DO-ties UZ LI-dos-tu.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20%C5%A1%C4%AB%20vieta%20ir%20br%C4%ABva%3F"
+  },
+  {
+    "itemId": "f9e9fc03-605e-4fe0-bd59-cfd9f835cf4e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, izsauciet taksometru.||LUD-zu, IZ-sau-ciet TAK-so-me-tru.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai šis autobuss brauc uz centru?||VAI SIS AU-to-buss BRAUC UZ CEN-tru?}}",
+      "{{lv-LV|Es gribu doties uz lidostu.||ES GRI-bu DO-ties UZ LI-dos-tu.}}",
+      "{{lv-LV|Mēs izkāpjam šeit.||MES IZ-kap-jam SEIT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20izsauciet%20taksometru."
+  },
+  {
+    "itemId": "4ed1b250-8306-41fa-a17b-49345f075b53",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{lv-LV|Vai šis autobuss brauc uz centru?||VAI SIS AU-to-buss BRAUC UZ CEN-tru?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es gribu doties uz lidostu.||ES GRI-bu DO-ties UZ LI-dos-tu.}}",
+      "{{lv-LV|Mēs izkāpjam šeit.||MES IZ-kap-jam SEIT.}}",
+      "{{lv-LV|Es nokavēju autobusu.||ES NO-ka-ve-ju AU-to-bu-su.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20%C5%A1is%20autobuss%20brauc%20uz%20centru%3F"
+  },
+  {
+    "itemId": "09d90c2d-3fcd-478b-980a-aa523fb3d00c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{lv-LV|Es gribu doties uz lidostu.||ES GRI-bu DO-ties UZ LI-dos-tu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mēs izkāpjam šeit.||MES IZ-kap-jam SEIT.}}",
+      "{{lv-LV|Es nokavēju autobusu.||ES NO-ka-ve-ju AU-to-bu-su.}}",
+      "{{lv-LV|Kur es varu nopirkt biļeti?||KUR ES VA-ru NO-pirkt BI-le-ti?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20gribu%20doties%20uz%20lidostu."
+  },
+  {
+    "itemId": "8e4c1930-f0f5-482f-bca7-beb74bd91c64",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'We get off here.'?",
+    "correctAnswer": "{{lv-LV|Mēs izkāpjam šeit.||MES IZ-kap-jam SEIT.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es nokavēju autobusu.||ES NO-ka-ve-ju AU-to-bu-su.}}",
+      "{{lv-LV|Kur es varu nopirkt biļeti?||KUR ES VA-ru NO-pirkt BI-le-ti?}}",
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||AU-to-buss PIE-nak PUS-dien-lai-ka.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/M%C4%93s%20izk%C4%81pjam%20%C5%A1eit."
+  },
+  {
+    "itemId": "9ffc5b02-4e19-4922-887b-d3902c66a50f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I missed the bus.'?",
+    "correctAnswer": "{{lv-LV|Es nokavēju autobusu.||ES NO-ka-ve-ju AU-to-bu-su.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur es varu nopirkt biļeti?||KUR ES VA-ru NO-pirkt BI-le-ti?}}",
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||AU-to-buss PIE-nak PUS-dien-lai-ka.}}",
+      "{{lv-LV|Man vajag biļeti uz lidostu.||MAN VA-jag BI-le-ti UZ LI-dos-tu.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20nokav%C4%93ju%20autobusu."
+  },
+  {
+    "itemId": "eebb4fcb-b546-4c6a-9a09-43e629e5747a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Where can I buy a ticket?'.",
+    "correctAnswer": "{{lv-LV|Kur es varu nopirkt biļeti?||KUR ES VA-ru NO-pirkt BI-le-ti?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Autobuss pienāk pusdienlaikā.||AU-to-buss PIE-nak PUS-dien-lai-ka.}}",
+      "{{lv-LV|Man vajag biļeti uz lidostu.||MAN VA-jag BI-le-ti UZ LI-dos-tu.}}",
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||VIE-nu BI-le-ti UZ CEN-tru, LUD-zu.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20es%20varu%20nopirkt%20bi%C4%BCeti%3F"
+  },
+  {
+    "itemId": "c4982d6c-29f7-45cf-88d4-5bb7717b1e35",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'The bus arrives at noon.'?",
+    "correctAnswer": "{{lv-LV|Autobuss pienāk pusdienlaikā.||AU-to-buss PIE-nak PUS-dien-lai-ka.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag biļeti uz lidostu.||MAN VA-jag BI-le-ti UZ LI-dos-tu.}}",
+      "{{lv-LV|Vienu biļeti uz centru, lūdzu.||VIE-nu BI-le-ti UZ CEN-tru, LUD-zu.}}",
+      "{{lv-LV|Biļeti turp un atpakaļ, lūdzu.||BI-le-ti TURP UN AT-pa-kal, LUD-zu.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Autobuss%20pien%C4%81k%20pusdienlaik%C4%81."
+  },
+  {
+    "itemId": "d61e2585-3344-4863-9da5-b62618b880bb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{lv-LV|Man ir rezervācija.||MAN IR RE-zer-va-ci-ja.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||VAI JUMS IR VIEN-vie-ti-ga IS-ta-ba?}}",
+      "{{lv-LV|Vai jums ir divvietīga istaba?||VAI JUMS IR DIV-vie-ti-ga IS-ta-ba?}}",
+      "{{lv-LV|Wi-Fi parole, lūdzu.||WI-FI PA-ro-le, LUD-zu.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20rezerv%C4%81cija."
+  },
+  {
+    "itemId": "ebb9fc3e-4028-4ed6-906a-759fd5aa1e5c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{lv-LV|Vai jums ir vienvietīga istaba?||VAI JUMS IR VIEN-vie-ti-ga IS-ta-ba?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai jums ir divvietīga istaba?||VAI JUMS IR DIV-vie-ti-ga IS-ta-ba?}}",
+      "{{lv-LV|Wi-Fi parole, lūdzu.||WI-FI PA-ro-le, LUD-zu.}}",
+      "{{lv-LV|Ar istabu ir problēma.||AR IS-ta-bu IR PRO-ble-ma.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20vienviet%C4%ABga%20istaba%3F"
+  },
+  {
+    "itemId": "bd5b27ef-5348-4686-900b-e3ee6b5bc57a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{lv-LV|Vai jums ir divvietīga istaba?||VAI JUMS IR DIV-vie-ti-ga IS-ta-ba?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Wi-Fi parole, lūdzu.||WI-FI PA-ro-le, LUD-zu.}}",
+      "{{lv-LV|Ar istabu ir problēma.||AR IS-ta-bu IR PRO-ble-ma.}}",
+      "{{lv-LV|Duša nedarbojas.||DU-sa NE-dar-bo-jas.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20jums%20ir%20divviet%C4%ABga%20istaba%3F"
+  },
+  {
+    "itemId": "d4e1d3e7-35ee-4404-bff5-58ebeb43efaf",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{lv-LV|Wi-Fi parole, lūdzu.||WI-FI PA-ro-le, LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ar istabu ir problēma.||AR IS-ta-bu IR PRO-ble-ma.}}",
+      "{{lv-LV|Duša nedarbojas.||DU-sa NE-dar-bo-jas.}}",
+      "{{lv-LV|Istaba ir pārāk auksta.||IS-ta-ba IR PA-rak AUKS-ta.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Wi-Fi%20parole%2C%20l%C5%ABdzu."
+  },
+  {
+    "itemId": "c1a4664e-0365-4ed7-b5c4-68e28cc22f68",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{lv-LV|Ar istabu ir problēma.||AR IS-ta-bu IR PRO-ble-ma.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Duša nedarbojas.||DU-sa NE-dar-bo-jas.}}",
+      "{{lv-LV|Istaba ir pārāk auksta.||IS-ta-ba IR PA-rak AUKS-ta.}}",
+      "{{lv-LV|Man vajag tīrus dvieļus.||MAN VA-jag TI-rus DVIE-lus.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ar%20istabu%20ir%20probl%C4%93ma."
+  },
+  {
+    "itemId": "7ad85bea-c014-4269-a2fe-410b3f23fb7c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{lv-LV|Duša nedarbojas.||DU-sa NE-dar-bo-jas.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Istaba ir pārāk auksta.||IS-ta-ba IR PA-rak AUKS-ta.}}",
+      "{{lv-LV|Man vajag tīrus dvieļus.||MAN VA-jag TI-rus DVIE-lus.}}",
+      "{{lv-LV|Vai brokastis ir iekļautas?||VAI BRO-kas-tis IR IE-klau-tas?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Du%C5%A1a%20nedarbojas."
+  },
+  {
+    "itemId": "b9d6b1ae-c24c-49b8-8a2f-6c69515d0677",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{lv-LV|Istaba ir pārāk auksta.||IS-ta-ba IR PA-rak AUKS-ta.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag tīrus dvieļus.||MAN VA-jag TI-rus DVIE-lus.}}",
+      "{{lv-LV|Vai brokastis ir iekļautas?||VAI BRO-kas-tis IR IE-klau-tas?}}",
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||VAI ES VA-ru DA-but CI-tu ATS-le-gu?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Istaba%20ir%20p%C4%81r%C4%81k%20auksta."
+  },
+  {
+    "itemId": "7c938991-e916-4737-98e0-92be7734de8e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{lv-LV|Man vajag tīrus dvieļus.||MAN VA-jag TI-rus DVIE-lus.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai brokastis ir iekļautas?||VAI BRO-kas-tis IR IE-klau-tas?}}",
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||VAI ES VA-ru DA-but CI-tu ATS-le-gu?}}",
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||GAI-sa KON-di-cio-nie-ris IR SA-lu-zis.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20t%C4%ABrus%20dvie%C4%BCus."
+  },
+  {
+    "itemId": "ee9a54e7-0d73-48b4-8044-92936ccd0d90",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{lv-LV|Vai brokastis ir iekļautas?||VAI BRO-kas-tis IR IE-klau-tas?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai es varu dabūt citu atslēgu?||VAI ES VA-ru DA-but CI-tu ATS-le-gu?}}",
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||GAI-sa KON-di-cio-nie-ris IR SA-lu-zis.}}",
+      "{{lv-LV|Brokastis sākas septiņos.||BRO-kas-tis SA-kas SEP-ti-nos.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20brokastis%20ir%20iek%C4%BCautas%3F"
+  },
+  {
+    "itemId": "ce59491f-a794-4c9c-a216-58cce33fbbf9",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{lv-LV|Vai es varu dabūt citu atslēgu?||VAI ES VA-ru DA-but CI-tu ATS-le-gu?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Gaisa kondicionieris ir salūzis.||GAI-sa KON-di-cio-nie-ris IR SA-lu-zis.}}",
+      "{{lv-LV|Brokastis sākas septiņos.||BRO-kas-tis SA-kas SEP-ti-nos.}}",
+      "{{lv-LV|Man ir rezervācija.||MAN IR RE-zer-va-ci-ja.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20es%20varu%20dab%C5%ABt%20citu%20atsl%C4%93gu%3F"
+  },
+  {
+    "itemId": "8c0e4136-6b3f-46db-bd10-2eca996ae01c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{lv-LV|Gaisa kondicionieris ir salūzis.||GAI-sa KON-di-cio-nie-ris IR SA-lu-zis.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Brokastis sākas septiņos.||BRO-kas-tis SA-kas SEP-ti-nos.}}",
+      "{{lv-LV|Man ir rezervācija.||MAN IR RE-zer-va-ci-ja.}}",
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||VAI JUMS IR VIEN-vie-ti-ga IS-ta-ba?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Gaisa%20kondicionieris%20ir%20sal%C5%ABzis."
+  },
+  {
+    "itemId": "cdab2422-b56d-4007-baf7-b3244c592869",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{lv-LV|Brokastis sākas septiņos.||BRO-kas-tis SA-kas SEP-ti-nos.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir rezervācija.||MAN IR RE-zer-va-ci-ja.}}",
+      "{{lv-LV|Vai jums ir vienvietīga istaba?||VAI JUMS IR VIEN-vie-ti-ga IS-ta-ba?}}",
+      "{{lv-LV|Vai jums ir divvietīga istaba?||VAI JUMS IR DIV-vie-ti-ga IS-ta-ba?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Brokastis%20s%C4%81kas%20septi%C5%86os."
+  },
+  {
+    "itemId": "694ba88a-626f-4856-9d48-fafe28dd2f99",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I feel sick.'?",
+    "correctAnswer": "{{lv-LV|Es jūtos slims/slima.||ES JU-tos SLIMS/SLI-ma.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man sāp galva.||MAN SAP GAL-va.}}",
+      "{{lv-LV|Man ir drudzis.||MAN IR DRUD-zis.}}",
+      "{{lv-LV|Man vajag ārstu.||MAN VA-jag ARS-tu.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20j%C5%ABtos%20slims/slima."
+  },
+  {
+    "itemId": "f13a67cb-d166-4293-81e6-db4e4f445595",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I have a headache.'?",
+    "correctAnswer": "{{lv-LV|Man sāp galva.||MAN SAP GAL-va.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir drudzis.||MAN IR DRUD-zis.}}",
+      "{{lv-LV|Man vajag ārstu.||MAN VA-jag ARS-tu.}}",
+      "{{lv-LV|Kur ir aptieka?||KUR IR AP-tie-ka?}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20s%C4%81p%20galva."
+  },
+  {
+    "itemId": "c725bbf9-5ae5-41f1-8b0b-51697834f2eb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I have a fever.'.",
+    "correctAnswer": "{{lv-LV|Man ir drudzis.||MAN IR DRUD-zis.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag ārstu.||MAN VA-jag ARS-tu.}}",
+      "{{lv-LV|Kur ir aptieka?||KUR IR AP-tie-ka?}}",
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||MAN IR A-ler-gi-ja PRET PE-ni-ci-li-nu.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20drudzis."
+  },
+  {
+    "itemId": "7c7591f3-3e2c-4758-8078-ae5f4ef5029c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I need a doctor.'?",
+    "correctAnswer": "{{lv-LV|Man vajag ārstu.||MAN VA-jag ARS-tu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir aptieka?||KUR IR AP-tie-ka?}}",
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||MAN IR A-ler-gi-ja PRET PE-ni-ci-li-nu.}}",
+      "{{lv-LV|Man sāp vēders.||MAN SAP VE-ders.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20%C4%81rstu."
+  },
+  {
+    "itemId": "d35ef205-e9bb-45d7-86d9-4af2923b4d9e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Where is the pharmacy?'?",
+    "correctAnswer": "{{lv-LV|Kur ir aptieka?||KUR IR AP-tie-ka?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir alerģija pret penicilīnu.||MAN IR A-ler-gi-ja PRET PE-ni-ci-li-nu.}}",
+      "{{lv-LV|Man sāp vēders.||MAN SAP VE-ders.}}",
+      "{{lv-LV|Man vajag zāles.||MAN VA-jag ZA-les.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20aptieka%3F"
+  },
+  {
+    "itemId": "35af3b20-c5fa-468c-8f19-655c1b0420ef",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I am allergic to penicillin.'?",
+    "correctAnswer": "{{lv-LV|Man ir alerģija pret penicilīnu.||MAN IR A-ler-gi-ja PRET PE-ni-ci-li-nu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man sāp vēders.||MAN SAP VE-ders.}}",
+      "{{lv-LV|Man vajag zāles.||MAN VA-jag ZA-les.}}",
+      "{{lv-LV|Man reibst galva.||MAN REIBST GAL-va.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20aler%C4%A3ija%20pret%20penicil%C4%ABnu."
+  },
+  {
+    "itemId": "462835c1-b380-4e10-8144-70fed89f7713",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'My stomach hurts.'.",
+    "correctAnswer": "{{lv-LV|Man sāp vēders.||MAN SAP VE-ders.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag zāles.||MAN VA-jag ZA-les.}}",
+      "{{lv-LV|Man reibst galva.||MAN REIBST GAL-va.}}",
+      "{{lv-LV|Man ir saaukstēšanās.||MAN IR SAAUKS-te-sa-nas.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20s%C4%81p%20v%C4%93ders."
+  },
+  {
+    "itemId": "dff429a1-8c58-4f8b-995f-7166659b886b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I need medicine.'?",
+    "correctAnswer": "{{lv-LV|Man vajag zāles.||MAN VA-jag ZA-les.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man reibst galva.||MAN REIBST GAL-va.}}",
+      "{{lv-LV|Man ir saaukstēšanās.||MAN IR SAAUKS-te-sa-nas.}}",
+      "{{lv-LV|Man vajag slimnīcu.||MAN VA-jag SLIM-ni-cu.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20z%C4%81les."
+  },
+  {
+    "itemId": "6e4e07d7-d360-4156-9373-c2bb412866a7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I feel dizzy.'?",
+    "correctAnswer": "{{lv-LV|Man reibst galva.||MAN REIBST GAL-va.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir saaukstēšanās.||MAN IR SAAUKS-te-sa-nas.}}",
+      "{{lv-LV|Man vajag slimnīcu.||MAN VA-jag SLIM-ni-cu.}}",
+      "{{lv-LV|Tagad es jūtos labāk.||TA-gad ES JU-tos LA-bak.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20reibst%20galva."
+  },
+  {
+    "itemId": "bc270903-7590-4e80-94fa-c08941f95342",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I have a cold.'?",
+    "correctAnswer": "{{lv-LV|Man ir saaukstēšanās.||MAN IR SAAUKS-te-sa-nas.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag slimnīcu.||MAN VA-jag SLIM-ni-cu.}}",
+      "{{lv-LV|Tagad es jūtos labāk.||TA-gad ES JU-tos LA-bak.}}",
+      "{{lv-LV|Es jūtos slims/slima.||ES JU-tos SLIMS/SLI-ma.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20saaukst%C4%93%C5%A1an%C4%81s."
+  },
+  {
+    "itemId": "cae6a3be-5c21-4860-b0e2-ec477627b344",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I need a hospital.'.",
+    "correctAnswer": "{{lv-LV|Man vajag slimnīcu.||MAN VA-jag SLIM-ni-cu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tagad es jūtos labāk.||TA-gad ES JU-tos LA-bak.}}",
+      "{{lv-LV|Es jūtos slims/slima.||ES JU-tos SLIMS/SLI-ma.}}",
+      "{{lv-LV|Man sāp galva.||MAN SAP GAL-va.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20slimn%C4%ABcu."
+  },
+  {
+    "itemId": "e5cae76b-2679-445f-867a-c66df6caf182",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I feel better now.'?",
+    "correctAnswer": "{{lv-LV|Tagad es jūtos labāk.||TA-gad ES JU-tos LA-bak.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es jūtos slims/slima.||ES JU-tos SLIMS/SLI-ma.}}",
+      "{{lv-LV|Man sāp galva.||MAN SAP GAL-va.}}",
+      "{{lv-LV|Man ir drudzis.||MAN IR DRUD-zis.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tagad%20es%20j%C5%ABtos%20lab%C4%81k."
+  },
+  {
+    "itemId": "4afe3ea8-beb5-43fd-99bc-887bd4ef36f3",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'What time is it?'?",
+    "correctAnswer": "{{lv-LV|Cik ir pulkstenis?||CIK IR PULKS-te-nis?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šodien ir pirmdiena.||SO-dien IR PIRM-die-na.}}",
+      "{{lv-LV|Rīt es ceļošu.||RIT ES CE-lo-su.}}",
+      "{{lv-LV|Vakar es strādāju.||VA-kar ES STRA-da-ju.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Cik%20ir%20pulkstenis%3F"
+  },
+  {
+    "itemId": "44beba7a-637d-45af-9f56-94e9656d966e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Today is Monday.'?",
+    "correctAnswer": "{{lv-LV|Šodien ir pirmdiena.||SO-dien IR PIRM-die-na.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Rīt es ceļošu.||RIT ES CE-lo-su.}}",
+      "{{lv-LV|Vakar es strādāju.||VA-kar ES STRA-da-ju.}}",
+      "{{lv-LV|Tas atveras deviņos.||TAS AT-ve-ras DE-vi-nos.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0odien%20ir%20pirmdiena."
+  },
+  {
+    "itemId": "6ebe4749-55c2-47ce-a3af-ca5eab35a7dd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Tomorrow I will travel.'.",
+    "correctAnswer": "{{lv-LV|Rīt es ceļošu.||RIT ES CE-lo-su.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vakar es strādāju.||VA-kar ES STRA-da-ju.}}",
+      "{{lv-LV|Tas atveras deviņos.||TAS AT-ve-ras DE-vi-nos.}}",
+      "{{lv-LV|Tas aizveras sešos.||TAS AIZ-ve-ras SE-sos.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/R%C4%ABt%20es%20ce%C4%BCo%C5%A1u."
+  },
+  {
+    "itemId": "fc37891b-d8ad-49fc-8995-ec51bc03846d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Yesterday I worked.'?",
+    "correctAnswer": "{{lv-LV|Vakar es strādāju.||VA-kar ES STRA-da-ju.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas atveras deviņos.||TAS AT-ve-ras DE-vi-nos.}}",
+      "{{lv-LV|Tas aizveras sešos.||TAS AIZ-ve-ras SE-sos.}}",
+      "{{lv-LV|Es ieradīšos vēlāk.||ES IE-ra-di-sos VE-lak.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vakar%20es%20str%C4%81d%C4%81ju."
+  },
+  {
+    "itemId": "0bb37cb0-102f-4013-bb67-c13c7d9a9511",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'It opens at nine.'?",
+    "correctAnswer": "{{lv-LV|Tas atveras deviņos.||TAS AT-ve-ras DE-vi-nos.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tas aizveras sešos.||TAS AIZ-ve-ras SE-sos.}}",
+      "{{lv-LV|Es ieradīšos vēlāk.||ES IE-ra-di-sos VE-lak.}}",
+      "{{lv-LV|Es drīz atgriezīšos.||ES DRIZ AT-grie-zi-sos.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20atveras%20devi%C5%86os."
+  },
+  {
+    "itemId": "fc0ec028-b12c-4e59-871e-7ec2af1f33a9",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'It closes at six.'?",
+    "correctAnswer": "{{lv-LV|Tas aizveras sešos.||TAS AIZ-ve-ras SE-sos.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es ieradīšos vēlāk.||ES IE-ra-di-sos VE-lak.}}",
+      "{{lv-LV|Es drīz atgriezīšos.||ES DRIZ AT-grie-zi-sos.}}",
+      "{{lv-LV|Man vajag piecas minūtes.||MAN VA-jag PIE-cas MI-nu-tes.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tas%20aizveras%20se%C5%A1os."
+  },
+  {
+    "itemId": "780f3290-8ec4-4f7b-b657-a667fdef042f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I arrive later.'.",
+    "correctAnswer": "{{lv-LV|Es ieradīšos vēlāk.||ES IE-ra-di-sos VE-lak.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es drīz atgriezīšos.||ES DRIZ AT-grie-zi-sos.}}",
+      "{{lv-LV|Man vajag piecas minūtes.||MAN VA-jag PIE-cas MI-nu-tes.}}",
+      "{{lv-LV|Ir pārāk vēlu.||IR PA-rak VE-lu.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20ierad%C4%AB%C5%A1os%20v%C4%93l%C4%81k."
+  },
+  {
+    "itemId": "815c7dd8-b7a3-487f-bb86-0de9896fee7f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I will come back soon.'?",
+    "correctAnswer": "{{lv-LV|Es drīz atgriezīšos.||ES DRIZ AT-grie-zi-sos.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag piecas minūtes.||MAN VA-jag PIE-cas MI-nu-tes.}}",
+      "{{lv-LV|Ir pārāk vēlu.||IR PA-rak VE-lu.}}",
+      "{{lv-LV|Šī nedēļa ir aizņemta.||SI NE-de-la IR AIZ-nem-ta.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20dr%C4%ABz%20atgriez%C4%AB%C5%A1os."
+  },
+  {
+    "itemId": "feb7cbae-1f37-4771-93ac-63ae897c4562",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I need five minutes.'?",
+    "correctAnswer": "{{lv-LV|Man vajag piecas minūtes.||MAN VA-jag PIE-cas MI-nu-tes.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir pārāk vēlu.||IR PA-rak VE-lu.}}",
+      "{{lv-LV|Šī nedēļa ir aizņemta.||SI NE-de-la IR AIZ-nem-ta.}}",
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||NA-ka-ma-ja ME-ne-si ES-mu BRIVS/BRI-va.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20piecas%20min%C5%ABtes."
+  },
+  {
+    "itemId": "a9ff2799-687e-45f0-a73a-3237a0f3c930",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'It is too late.'?",
+    "correctAnswer": "{{lv-LV|Ir pārāk vēlu.||IR PA-rak VE-lu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šī nedēļa ir aizņemta.||SI NE-de-la IR AIZ-nem-ta.}}",
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||NA-ka-ma-ja ME-ne-si ES-mu BRIVS/BRI-va.}}",
+      "{{lv-LV|Cik ir pulkstenis?||CIK IR PULKS-te-nis?}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20p%C4%81r%C4%81k%20v%C4%93lu."
+  },
+  {
+    "itemId": "2419ea34-34fc-485b-81ee-fa9d689ac772",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'This week is busy.'.",
+    "correctAnswer": "{{lv-LV|Šī nedēļa ir aizņemta.||SI NE-de-la IR AIZ-nem-ta.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||NA-ka-ma-ja ME-ne-si ES-mu BRIVS/BRI-va.}}",
+      "{{lv-LV|Cik ir pulkstenis?||CIK IR PULKS-te-nis?}}",
+      "{{lv-LV|Šodien ir pirmdiena.||SO-dien IR PIRM-die-na.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0%C4%AB%20ned%C4%93%C4%BCa%20ir%20aiz%C5%86emta."
+  },
+  {
+    "itemId": "46c24cf2-09f1-42b3-aa0e-23405e299f0f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Next month I am free.'?",
+    "correctAnswer": "{{lv-LV|Nākamajā mēnesī esmu brīvs/brīva.||NA-ka-ma-ja ME-ne-si ES-mu BRIVS/BRI-va.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Cik ir pulkstenis?||CIK IR PULKS-te-nis?}}",
+      "{{lv-LV|Šodien ir pirmdiena.||SO-dien IR PIRM-die-na.}}",
+      "{{lv-LV|Rīt es ceļošu.||RIT ES CE-lo-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/N%C4%81kamaj%C4%81%20m%C4%93nes%C4%AB%20esmu%20br%C4%ABvs/br%C4%ABva."
+  },
+  {
+    "itemId": "b08f3a00-756e-439b-99f1-700fb1147812",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'What is the weather like?'?",
+    "correctAnswer": "{{lv-LV|Kāds ir laiks?||KADS IR LAIKS?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir karsts.||IR KARSTS.}}",
+      "{{lv-LV|Ir auksts.||IR AUKSTS.}}",
+      "{{lv-LV|Līst.||LIST.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81ds%20ir%20laiks%3F"
+  },
+  {
+    "itemId": "c8ba97d0-eb89-4454-84b5-f82a4a831898",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'It is hot.'?",
+    "correctAnswer": "{{lv-LV|Ir karsts.||IR KARSTS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir auksts.||IR AUKSTS.}}",
+      "{{lv-LV|Līst.||LIST.}}",
+      "{{lv-LV|Ir vējains.||IR VE-jains.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20karsts."
+  },
+  {
+    "itemId": "90015310-7544-4ffc-a2ed-5783e13ec61b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'It is cold.'.",
+    "correctAnswer": "{{lv-LV|Ir auksts.||IR AUKSTS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Līst.||LIST.}}",
+      "{{lv-LV|Ir vējains.||IR VE-jains.}}",
+      "{{lv-LV|Spīd saule.||SPID SAU-le.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20auksts."
+  },
+  {
+    "itemId": "70dedab2-11be-4136-9dde-7166e02486eb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'It is raining.'?",
+    "correctAnswer": "{{lv-LV|Līst.||LIST.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir vējains.||IR VE-jains.}}",
+      "{{lv-LV|Spīd saule.||SPID SAU-le.}}",
+      "{{lv-LV|Snieg.||SNIEG.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C4%ABst."
+  },
+  {
+    "itemId": "31a7dd46-0544-453d-9c93-362dd401b31b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'It is windy.'?",
+    "correctAnswer": "{{lv-LV|Ir vējains.||IR VE-jains.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Spīd saule.||SPID SAU-le.}}",
+      "{{lv-LV|Snieg.||SNIEG.}}",
+      "{{lv-LV|Cik skaista diena!||CIK SKAIS-ta DIE-na!}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20v%C4%93jains."
+  },
+  {
+    "itemId": "60215136-356a-4399-8219-abd9dfc69616",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'It is sunny.'?",
+    "correctAnswer": "{{lv-LV|Spīd saule.||SPID SAU-le.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Snieg.||SNIEG.}}",
+      "{{lv-LV|Cik skaista diena!||CIK SKAIS-ta DIE-na!}}",
+      "{{lv-LV|Ir apmācies.||IR AP-ma-cies.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Sp%C4%ABd%20saule."
+  },
+  {
+    "itemId": "5a11114a-81f7-4fb7-ae17-488aa27c81b9",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'It is snowing.'.",
+    "correctAnswer": "{{lv-LV|Snieg.||SNIEG.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Cik skaista diena!||CIK SKAIS-ta DIE-na!}}",
+      "{{lv-LV|Ir apmācies.||IR AP-ma-cies.}}",
+      "{{lv-LV|Man vajag lietussargu.||MAN VA-jag LIE-tus-sar-gu.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Snieg."
+  },
+  {
+    "itemId": "93b08b47-ae35-421f-85ef-7647a6755c9a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'What a beautiful day!'?",
+    "correctAnswer": "{{lv-LV|Cik skaista diena!||CIK SKAIS-ta DIE-na!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir apmācies.||IR AP-ma-cies.}}",
+      "{{lv-LV|Man vajag lietussargu.||MAN VA-jag LIE-tus-sar-gu.}}",
+      "{{lv-LV|Šodien ir jauks laiks.||SO-dien IR JAUKS LAIKS.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Cik%20skaista%20diena%21"
+  },
+  {
+    "itemId": "cbf08ace-1ed1-4077-b7f1-01e7a69fe72c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'It is cloudy.'?",
+    "correctAnswer": "{{lv-LV|Ir apmācies.||IR AP-ma-cies.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag lietussargu.||MAN VA-jag LIE-tus-sar-gu.}}",
+      "{{lv-LV|Šodien ir jauks laiks.||SO-dien IR JAUKS LAIKS.}}",
+      "{{lv-LV|Debesis ir skaidras.||DE-be-sis IR SKAI-dras.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20apm%C4%81cies."
+  },
+  {
+    "itemId": "43cdabf0-f225-4a25-9a88-01fabdcb03cc",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I need an umbrella.'?",
+    "correctAnswer": "{{lv-LV|Man vajag lietussargu.||MAN VA-jag LIE-tus-sar-gu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Šodien ir jauks laiks.||SO-dien IR JAUKS LAIKS.}}",
+      "{{lv-LV|Debesis ir skaidras.||DE-be-sis IR SKAI-dras.}}",
+      "{{lv-LV|Kāds ir laiks?||KADS IR LAIKS?}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20lietussargu."
+  },
+  {
+    "itemId": "b57c9859-aace-491c-97e2-5171131bf2fd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'The weather is nice today.'.",
+    "correctAnswer": "{{lv-LV|Šodien ir jauks laiks.||SO-dien IR JAUKS LAIKS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Debesis ir skaidras.||DE-be-sis IR SKAI-dras.}}",
+      "{{lv-LV|Kāds ir laiks?||KADS IR LAIKS?}}",
+      "{{lv-LV|Ir karsts.||IR KARSTS.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A0odien%20ir%20jauks%20laiks."
+  },
+  {
+    "itemId": "54ac3053-57e5-4a2b-a8c9-5f8bcb075d76",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'The sky is clear.'?",
+    "correctAnswer": "{{lv-LV|Debesis ir skaidras.||DE-be-sis IR SKAI-dras.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kāds ir laiks?||KADS IR LAIKS?}}",
+      "{{lv-LV|Ir karsts.||IR KARSTS.}}",
+      "{{lv-LV|Ir auksts.||IR AUKSTS.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Debesis%20ir%20skaidras."
+  },
+  {
+    "itemId": "ee819a4b-ac09-49ff-b930-e634a93d8c39",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Help!'?",
+    "correctAnswer": "{{lv-LV|Palīgā!||PA-li-ga!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Zvaniet policijai!||ZVA-niet PO-li-ci-jai!}}",
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||ES ES-mu PA-zau-de-jis/PA-zau-de-ju-si SA-vu PA-si.}}",
+      "{{lv-LV|Man nozaga maku.||MAN NO-za-ga MA-ku.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Pal%C4%ABg%C4%81%21"
+  },
+  {
+    "itemId": "690145e3-802a-42f0-9b21-16f2afc19c02",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Call the police!'?",
+    "correctAnswer": "{{lv-LV|Zvaniet policijai!||ZVA-niet PO-li-ci-jai!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||ES ES-mu PA-zau-de-jis/PA-zau-de-ju-si SA-vu PA-si.}}",
+      "{{lv-LV|Man nozaga maku.||MAN NO-za-ga MA-ku.}}",
+      "{{lv-LV|Man vajag ātro palīdzību.||MAN VA-jag A-tro PA-lid-zi-bu.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Zvaniet%20policijai%21"
+  },
+  {
+    "itemId": "11bb8f93-c40e-454d-ae13-5ab7b6a3d4c5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I have lost my passport.'.",
+    "correctAnswer": "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||ES ES-mu PA-zau-de-jis/PA-zau-de-ju-si SA-vu PA-si.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man nozaga maku.||MAN NO-za-ga MA-ku.}}",
+      "{{lv-LV|Man vajag ātro palīdzību.||MAN VA-jag A-tro PA-lid-zi-bu.}}",
+      "{{lv-LV|Zvaniet ārstam!||ZVA-niet ARS-tam!}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20esmu%20pazaud%C4%93jis/pazaud%C4%93jusi%20savu%20pasi."
+  },
+  {
+    "itemId": "7aad0e1f-a4bc-4e49-a26a-bc7a52dc4ae1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'My wallet was stolen.'?",
+    "correctAnswer": "{{lv-LV|Man nozaga maku.||MAN NO-za-ga MA-ku.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag ātro palīdzību.||MAN VA-jag A-tro PA-lid-zi-bu.}}",
+      "{{lv-LV|Zvaniet ārstam!||ZVA-niet ARS-tam!}}",
+      "{{lv-LV|Ir ugunsgrēks.||IR U-guns-greks.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20nozaga%20maku."
+  },
+  {
+    "itemId": "78c7d9cb-5159-43b5-9fe6-262c310ce925",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I need an ambulance.'?",
+    "correctAnswer": "{{lv-LV|Man vajag ātro palīdzību.||MAN VA-jag A-tro PA-lid-zi-bu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Zvaniet ārstam!||ZVA-niet ARS-tam!}}",
+      "{{lv-LV|Ir ugunsgrēks.||IR U-guns-greks.}}",
+      "{{lv-LV|Man tūlīt vajag palīdzību.||MAN TU-lit VA-jag PA-lid-zi-bu.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20%C4%81tro%20pal%C4%ABdz%C4%ABbu."
+  },
+  {
+    "itemId": "0764195a-7264-4b10-b8c8-36db7974421e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Call a doctor!'?",
+    "correctAnswer": "{{lv-LV|Zvaniet ārstam!||ZVA-niet ARS-tam!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ir ugunsgrēks.||IR U-guns-greks.}}",
+      "{{lv-LV|Man tūlīt vajag palīdzību.||MAN TU-lit VA-jag PA-lid-zi-bu.}}",
+      "{{lv-LV|Es pazaudēju telefonu.||ES PA-zau-de-ju TE-le-fo-nu.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Zvaniet%20%C4%81rstam%21"
+  },
+  {
+    "itemId": "3f0189fa-1430-4ab2-be74-9eb6108fe8d0",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'There is a fire.'.",
+    "correctAnswer": "{{lv-LV|Ir ugunsgrēks.||IR U-guns-greks.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man tūlīt vajag palīdzību.||MAN TU-lit VA-jag PA-lid-zi-bu.}}",
+      "{{lv-LV|Es pazaudēju telefonu.||ES PA-zau-de-ju TE-le-fo-nu.}}",
+      "{{lv-LV|Es pazaudēju somu.||ES PA-zau-de-ju SO-mu.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ir%20ugunsgr%C4%93ks."
+  },
+  {
+    "itemId": "f2684976-61e3-4da6-8651-234875d191d6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I need help now.'?",
+    "correctAnswer": "{{lv-LV|Man tūlīt vajag palīdzību.||MAN TU-lit VA-jag PA-lid-zi-bu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es pazaudēju telefonu.||ES PA-zau-de-ju TE-le-fo-nu.}}",
+      "{{lv-LV|Es pazaudēju somu.||ES PA-zau-de-ju SO-mu.}}",
+      "{{lv-LV|Mans draugs ir ievainots.||MANS DRAUGS IR IE-vai-nots.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20t%C5%ABl%C4%ABt%20vajag%20pal%C4%ABdz%C4%ABbu."
+  },
+  {
+    "itemId": "279a0de1-177c-4ebe-94f5-f77ba3eb2d3d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I lost my phone.'?",
+    "correctAnswer": "{{lv-LV|Es pazaudēju telefonu.||ES PA-zau-de-ju TE-le-fo-nu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es pazaudēju somu.||ES PA-zau-de-ju SO-mu.}}",
+      "{{lv-LV|Mans draugs ir ievainots.||MANS DRAUGS IR IE-vai-nots.}}",
+      "{{lv-LV|Tā ir ārkārtas situācija.||TA IR AR-kar-tas SI-tua-ci-ja.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20pazaud%C4%93ju%20telefonu."
+  },
+  {
+    "itemId": "213bfcff-3402-4c9f-bbfd-09edc2410483",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I lost my bag.'?",
+    "correctAnswer": "{{lv-LV|Es pazaudēju somu.||ES PA-zau-de-ju SO-mu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mans draugs ir ievainots.||MANS DRAUGS IR IE-vai-nots.}}",
+      "{{lv-LV|Tā ir ārkārtas situācija.||TA IR AR-kar-tas SI-tua-ci-ja.}}",
+      "{{lv-LV|Palīgā!||PA-li-ga!}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20pazaud%C4%93ju%20somu."
+  },
+  {
+    "itemId": "158d7af7-7e8a-4e5c-859e-74559e622632",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'My friend is hurt.'.",
+    "correctAnswer": "{{lv-LV|Mans draugs ir ievainots.||MANS DRAUGS IR IE-vai-nots.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tā ir ārkārtas situācija.||TA IR AR-kar-tas SI-tua-ci-ja.}}",
+      "{{lv-LV|Palīgā!||PA-li-ga!}}",
+      "{{lv-LV|Zvaniet policijai!||ZVA-niet PO-li-ci-jai!}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Mans%20draugs%20ir%20ievainots."
+  },
+  {
+    "itemId": "5f6fd8a1-2e0a-49b2-acfc-1024baee6466",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'This is an emergency.'?",
+    "correctAnswer": "{{lv-LV|Tā ir ārkārtas situācija.||TA IR AR-kar-tas SI-tua-ci-ja.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Palīgā!||PA-li-ga!}}",
+      "{{lv-LV|Zvaniet policijai!||ZVA-niet PO-li-ci-jai!}}",
+      "{{lv-LV|Es esmu pazaudējis/pazaudējusi savu pasi.||ES ES-mu PA-zau-de-jis/PA-zau-de-ju-si SA-vu PA-si.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/T%C4%81%20ir%20%C4%81rk%C4%81rtas%20situ%C4%81cija."
+  },
+  {
+    "itemId": "87034026-6e87-4af5-9b70-20d10f13bede",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Happy birthday!'?",
+    "correctAnswer": "{{lv-LV|Daudz laimes dzimšanas dienā!||DAUDZ LAI-mes DZIM-sa-nas DIE-na!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Apsveicu!||APS-vei-cu!}}",
+      "{{lv-LV|Veiksmi!||VEIKS-mi!}}",
+      "{{lv-LV|Lūdzu.||LUD-zu.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Daudz%20laimes%20dzim%C5%A1anas%20dien%C4%81%21"
+  },
+  {
+    "itemId": "5a4090df-f7fd-4a2c-b587-38f81d1afd52",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Congratulations!'?",
+    "correctAnswer": "{{lv-LV|Apsveicu!||APS-vei-cu!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Veiksmi!||VEIKS-mi!}}",
+      "{{lv-LV|Lūdzu.||LUD-zu.}}",
+      "{{lv-LV|Nav par ko.||NAV PAR KO.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Apsveicu%21"
+  },
+  {
+    "itemId": "820654ca-66e5-419f-ac1f-458dda00361a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Good luck!'.",
+    "correctAnswer": "{{lv-LV|Veiksmi!||VEIKS-mi!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu.||LUD-zu.}}",
+      "{{lv-LV|Nav par ko.||NAV PAR KO.}}",
+      "{{lv-LV|Man žēl to dzirdēt.||MAN ZEL TO DZIR-det.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Veiksmi%21"
+  },
+  {
+    "itemId": "7a9f4370-6c9d-46c6-a75b-753b0416a1fb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'You're welcome.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu.||LUD-zu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Nav par ko.||NAV PAR KO.}}",
+      "{{lv-LV|Man žēl to dzirdēt.||MAN ZEL TO DZIR-det.}}",
+      "{{lv-LV|Labu apetīti!||LA-bu A-pe-ti-ti!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu."
+  },
+  {
+    "itemId": "a0b66550-e1d7-4edb-a21d-d6e0fa0cf6e8",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Don't mention it.'?",
+    "correctAnswer": "{{lv-LV|Nav par ko.||NAV PAR KO.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man žēl to dzirdēt.||MAN ZEL TO DZIR-det.}}",
+      "{{lv-LV|Labu apetīti!||LA-bu A-pe-ti-ti!}}",
+      "{{lv-LV|Lai jums labs ceļojums.||LAI JUMS LABS CE-lo-jums.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Nav%20par%20ko."
+  },
+  {
+    "itemId": "96d49c40-7278-4325-b14b-90d96bf89e21",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I'm sorry to hear that.'?",
+    "correctAnswer": "{{lv-LV|Man žēl to dzirdēt.||MAN ZEL TO DZIR-det.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Labu apetīti!||LA-bu A-pe-ti-ti!}}",
+      "{{lv-LV|Lai jums labs ceļojums.||LAI JUMS LABS CE-lo-jums.}}",
+      "{{lv-LV|Tiksimies pirmdien.||TIK-si-mies PIRM-dien.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20%C5%BE%C4%93l%20to%20dzird%C4%93t."
+  },
+  {
+    "itemId": "e6f14ffd-ec9c-4ce2-8afc-34cfd61e9a54",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Enjoy your meal.'.",
+    "correctAnswer": "{{lv-LV|Labu apetīti!||LA-bu A-pe-ti-ti!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lai jums labs ceļojums.||LAI JUMS LABS CE-lo-jums.}}",
+      "{{lv-LV|Tiksimies pirmdien.||TIK-si-mies PIRM-dien.}}",
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||LAIP-ni LUD-zam MU-su PIL-se-ta.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Labu%20apet%C4%ABti%21"
+  },
+  {
+    "itemId": "728bb670-86d7-4973-a5a1-dfb0c63c0aa6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Have a nice trip.'?",
+    "correctAnswer": "{{lv-LV|Lai jums labs ceļojums.||LAI JUMS LABS CE-lo-jums.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tiksimies pirmdien.||TIK-si-mies PIRM-dien.}}",
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||LAIP-ni LUD-zam MU-su PIL-se-ta.}}",
+      "{{lv-LV|Priecīgus svētkus!||PRIE-ci-gus SVET-kus!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Lai%20jums%20labs%20ce%C4%BCojums."
+  },
+  {
+    "itemId": "5603c3f0-38bc-4b16-8d6a-be63ffad6919",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'See you on Monday.'?",
+    "correctAnswer": "{{lv-LV|Tiksimies pirmdien.||TIK-si-mies PIRM-dien.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Laipni lūdzam mūsu pilsētā.||LAIP-ni LUD-zam MU-su PIL-se-ta.}}",
+      "{{lv-LV|Priecīgus svētkus!||PRIE-ci-gus SVET-kus!}}",
+      "{{lv-LV|Labi pavadiet laiku!||LA-bi PA-va-diet LAI-ku!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tiksimies%20pirmdien."
+  },
+  {
+    "itemId": "bb5a81e8-8242-4380-b45c-885f997923ab",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Welcome to our city.'?",
+    "correctAnswer": "{{lv-LV|Laipni lūdzam mūsu pilsētā.||LAIP-ni LUD-zam MU-su PIL-se-ta.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Priecīgus svētkus!||PRIE-ci-gus SVET-kus!}}",
+      "{{lv-LV|Labi pavadiet laiku!||LA-bi PA-va-diet LAI-ku!}}",
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||DAUDZ LAI-mes DZIM-sa-nas DIE-na!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Laipni%20l%C5%ABdzam%20m%C5%ABsu%20pils%C4%93t%C4%81."
+  },
+  {
+    "itemId": "e85af315-9b9b-47e0-8315-532456145913",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'Happy holidays!'.",
+    "correctAnswer": "{{lv-LV|Priecīgus svētkus!||PRIE-ci-gus SVET-kus!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Labi pavadiet laiku!||LA-bi PA-va-diet LAI-ku!}}",
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||DAUDZ LAI-mes DZIM-sa-nas DIE-na!}}",
+      "{{lv-LV|Apsveicu!||APS-vei-cu!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Priec%C4%ABgus%20sv%C4%93tkus%21"
+  },
+  {
+    "itemId": "f4a4dae5-6b7b-4460-9ed9-1dd968dbd985",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Have fun!'?",
+    "correctAnswer": "{{lv-LV|Labi pavadiet laiku!||LA-bi PA-va-diet LAI-ku!}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Daudz laimes dzimšanas dienā!||DAUDZ LAI-mes DZIM-sa-nas DIE-na!}}",
+      "{{lv-LV|Apsveicu!||APS-vei-cu!}}",
+      "{{lv-LV|Veiksmi!||VEIKS-mi!}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Labi%20pavadiet%20laiku%21"
+  },
+  {
+    "itemId": "e9070e9c-36ab-49ae-911b-24f6f545dda1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I work in an office.'?",
+    "correctAnswer": "{{lv-LV|Es strādāju birojā.||ES STRA-da-ju BI-ro-ja.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es strādāju par skolotāju.||ES STRA-da-ju PAR SKO-lo-ta-ju.}}",
+      "{{lv-LV|Es mācos katru dienu.||ES MA-cos KA-tru DIE-nu.}}",
+      "{{lv-LV|Es mācos valodu.||ES MA-cos VA-lo-du.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20str%C4%81d%C4%81ju%20biroj%C4%81."
+  },
+  {
+    "itemId": "2430f7ff-4f72-41da-9bc2-1a727a802c51",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'I work as a teacher.'?",
+    "correctAnswer": "{{lv-LV|Es strādāju par skolotāju.||ES STRA-da-ju PAR SKO-lo-ta-ju.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es mācos katru dienu.||ES MA-cos KA-tru DIE-nu.}}",
+      "{{lv-LV|Es mācos valodu.||ES MA-cos VA-lo-du.}}",
+      "{{lv-LV|Lūdzu, uzrakstiet to.||LUD-zu, UZ-raks-tiet TO.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20str%C4%81d%C4%81ju%20par%20skolot%C4%81ju."
+  },
+  {
+    "itemId": "08c2c6c1-df47-4a30-9b06-5312015c0caf",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I study every day.'.",
+    "correctAnswer": "{{lv-LV|Es mācos katru dienu.||ES MA-cos KA-tru DIE-nu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es mācos valodu.||ES MA-cos VA-lo-du.}}",
+      "{{lv-LV|Lūdzu, uzrakstiet to.||LUD-zu, UZ-raks-tiet TO.}}",
+      "{{lv-LV|Stunda sākas tagad.||STUN-da SA-kas TA-gad.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20m%C4%81cos%20katru%20dienu."
+  },
+  {
+    "itemId": "024bc79f-bb5c-46b7-b201-161420b26a49",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am learning the language.'?",
+    "correctAnswer": "{{lv-LV|Es mācos valodu.||ES MA-cos VA-lo-du.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, uzrakstiet to.||LUD-zu, UZ-raks-tiet TO.}}",
+      "{{lv-LV|Stunda sākas tagad.||STUN-da SA-kas TA-gad.}}",
+      "{{lv-LV|Man vajag pildspalvu.||MAN VA-jag PILDS-pal-vu.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20m%C4%81cos%20valodu."
+  },
+  {
+    "itemId": "5b0eb9d6-8c0d-4480-97dd-c668d0889c5e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Please write it down.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, uzrakstiet to.||LUD-zu, UZ-raks-tiet TO.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Stunda sākas tagad.||STUN-da SA-kas TA-gad.}}",
+      "{{lv-LV|Man vajag pildspalvu.||MAN VA-jag PILDS-pal-vu.}}",
+      "{{lv-LV|Man ir mājasdarbs.||MAN IR MA-jas-darbs.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20uzrakstiet%20to."
+  },
+  {
+    "itemId": "d72c9ac4-b411-4b7f-9815-d0f42b614b7b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'The class starts now.'?",
+    "correctAnswer": "{{lv-LV|Stunda sākas tagad.||STUN-da SA-kas TA-gad.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man vajag pildspalvu.||MAN VA-jag PILDS-pal-vu.}}",
+      "{{lv-LV|Man ir mājasdarbs.||MAN IR MA-jas-darbs.}}",
+      "{{lv-LV|Man rīt ir eksāmens.||MAN RIT IR EK-sa-mens.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Stunda%20s%C4%81kas%20tagad."
+  },
+  {
+    "itemId": "cf5025e7-81a7-4d76-90e6-70f14d083a14",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I need a pen.'.",
+    "correctAnswer": "{{lv-LV|Man vajag pildspalvu.||MAN VA-jag PILDS-pal-vu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man ir mājasdarbs.||MAN IR MA-jas-darbs.}}",
+      "{{lv-LV|Man rīt ir eksāmens.||MAN RIT IR EK-sa-mens.}}",
+      "{{lv-LV|Kur ir klase?||KUR IR KLA-se?}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20vajag%20pildspalvu."
+  },
+  {
+    "itemId": "3f80f44e-f7bd-4e28-9817-05e95978367d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I have homework.'?",
+    "correctAnswer": "{{lv-LV|Man ir mājasdarbs.||MAN IR MA-jas-darbs.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Man rīt ir eksāmens.||MAN RIT IR EK-sa-mens.}}",
+      "{{lv-LV|Kur ir klase?||KUR IR KLA-se?}}",
+      "{{lv-LV|Grāmata ir uz galda.||GRA-ma-ta IR UZ GAL-da.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20ir%20m%C4%81jasdarbs."
+  },
+  {
+    "itemId": "ec650e4d-1918-447e-bff1-15d788f3d66a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I have an exam tomorrow.'?",
+    "correctAnswer": "{{lv-LV|Man rīt ir eksāmens.||MAN RIT IR EK-sa-mens.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kur ir klase?||KUR IR KLA-se?}}",
+      "{{lv-LV|Grāmata ir uz galda.||GRA-ma-ta IR UZ GAL-da.}}",
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||MANS SKO-lo-tajs IR LO-ti LAIPNS.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Man%20r%C4%ABt%20ir%20eks%C4%81mens."
+  },
+  {
+    "itemId": "db151a44-b530-438d-a43f-555100506cf6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Where is the classroom?'?",
+    "correctAnswer": "{{lv-LV|Kur ir klase?||KUR IR KLA-se?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Grāmata ir uz galda.||GRA-ma-ta IR UZ GAL-da.}}",
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||MANS SKO-lo-tajs IR LO-ti LAIPNS.}}",
+      "{{lv-LV|Es strādāju birojā.||ES STRA-da-ju BI-ro-ja.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Kur%20ir%20klase%3F"
+  },
+  {
+    "itemId": "45dbe327-7b0e-4507-a2d5-fa3a2a53c415",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'The book is on the table.'.",
+    "correctAnswer": "{{lv-LV|Grāmata ir uz galda.||GRA-ma-ta IR UZ GAL-da.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Mans skolotājs ir ļoti laipns.||MANS SKO-lo-tajs IR LO-ti LAIPNS.}}",
+      "{{lv-LV|Es strādāju birojā.||ES STRA-da-ju BI-ro-ja.}}",
+      "{{lv-LV|Es strādāju par skolotāju.||ES STRA-da-ju PAR SKO-lo-ta-ju.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Gr%C4%81mata%20ir%20uz%20galda."
+  },
+  {
+    "itemId": "82f9a6f3-b411-4fbb-b3d6-f7a45b3c4228",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'My teacher is very kind.'?",
+    "correctAnswer": "{{lv-LV|Mans skolotājs ir ļoti laipns.||MANS SKO-lo-tajs IR LO-ti LAIPNS.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es strādāju birojā.||ES STRA-da-ju BI-ro-ja.}}",
+      "{{lv-LV|Es strādāju par skolotāju.||ES STRA-da-ju PAR SKO-lo-ta-ju.}}",
+      "{{lv-LV|Es mācos katru dienu.||ES MA-cos KA-tru DIE-nu.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Mans%20skolot%C4%81js%20ir%20%C4%BCoti%20laipns."
+  },
+  {
+    "itemId": "bdb87764-bcfd-4940-b9fa-db3e7923c7d2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I speak a little of the language.'?",
+    "correctAnswer": "{{lv-LV|Es mazliet runāju šajā valodā.||ES MAZ-liet RU-na-ju SA-ja VA-lo-da.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||LUD-zu, PA-sa-kiet TO VEL-reiz.}}",
+      "{{lv-LV|Ko nozīmē šis vārds?||KO NO-zi-me SIS VARDS?}}",
+      "{{lv-LV|Es nezinu šo vārdu.||ES NE-zi-nu SO VAR-du.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20mazliet%20run%C4%81ju%20%C5%A1aj%C4%81%20valod%C4%81."
+  },
+  {
+    "itemId": "9c2c3224-ffb8-48b3-b14a-ea818d9ca65a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Please say that again.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||LUD-zu, PA-sa-kiet TO VEL-reiz.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Ko nozīmē šis vārds?||KO NO-zi-me SIS VARDS?}}",
+      "{{lv-LV|Es nezinu šo vārdu.||ES NE-zi-nu SO VAR-du.}}",
+      "{{lv-LV|Vai tas ir pareizi?||VAI TAS IR PA-rei-zi?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20pasakiet%20to%20v%C4%93lreiz."
+  },
+  {
+    "itemId": "458bd9b6-1784-4251-aca6-9ebe35f54c74",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'What does this word mean?'.",
+    "correctAnswer": "{{lv-LV|Ko nozīmē šis vārds?||KO NO-zi-me SIS VARDS?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es nezinu šo vārdu.||ES NE-zi-nu SO VAR-du.}}",
+      "{{lv-LV|Vai tas ir pareizi?||VAI TAS IR PA-rei-zi?}}",
+      "{{lv-LV|Vai varat to paskaidrot?||VAI VA-rat TO PAS-kai-drot?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Ko%20noz%C4%ABm%C4%93%20%C5%A1is%20v%C4%81rds%3F"
+  },
+  {
+    "itemId": "c35b0b2f-c6a9-417d-8989-091c864909f2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I do not know this word.'?",
+    "correctAnswer": "{{lv-LV|Es nezinu šo vārdu.||ES NE-zi-nu SO VAR-du.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai tas ir pareizi?||VAI TAS IR PA-rei-zi?}}",
+      "{{lv-LV|Vai varat to paskaidrot?||VAI VA-rat TO PAS-kai-drot?}}",
+      "{{lv-LV|Tagad es saprotu.||TA-gad ES SA-pro-tu.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20nezinu%20%C5%A1o%20v%C4%81rdu."
+  },
+  {
+    "itemId": "fdb46888-9038-4bc9-8598-5dbb581b1fab",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Is this correct?'?",
+    "correctAnswer": "{{lv-LV|Vai tas ir pareizi?||VAI TAS IR PA-rei-zi?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Vai varat to paskaidrot?||VAI VA-rat TO PAS-kai-drot?}}",
+      "{{lv-LV|Tagad es saprotu.||TA-gad ES SA-pro-tu.}}",
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||LUD-zu, LIE-to-jiet VIEN-kar-sus VAR-dus.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20tas%20ir%20pareizi%3F"
+  },
+  {
+    "itemId": "0c551153-4bf8-44e9-9a4a-05dc5fd751ce",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Can you explain it?'?",
+    "correctAnswer": "{{lv-LV|Vai varat to paskaidrot?||VAI VA-rat TO PAS-kai-drot?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Tagad es saprotu.||TA-gad ES SA-pro-tu.}}",
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||LUD-zu, LIE-to-jiet VIEN-kar-sus VAR-dus.}}",
+      "{{lv-LV|Es praktizēju katru dienu.||ES PRAK-ti-ze-ju KA-tru DIE-nu.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Vai%20varat%20to%20paskaidrot%3F"
+  },
+  {
+    "itemId": "fd400141-91b2-44f2-b01c-d74821134fe2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'I understand now.'.",
+    "correctAnswer": "{{lv-LV|Tagad es saprotu.||TA-gad ES SA-pro-tu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||LUD-zu, LIE-to-jiet VIEN-kar-sus VAR-dus.}}",
+      "{{lv-LV|Es praktizēju katru dienu.||ES PRAK-ti-ze-ju KA-tru DIE-nu.}}",
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||LUD-zu, IZ-la-siet SO TEI-ku-mu.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Tagad%20es%20saprotu."
+  },
+  {
+    "itemId": "529076e3-5cd7-435a-903e-9c0b4a1fb532",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'Please use simple words.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, lietojiet vienkāršus vārdus.||LUD-zu, LIE-to-jiet VIEN-kar-sus VAR-dus.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es praktizēju katru dienu.||ES PRAK-ti-ze-ju KA-tru DIE-nu.}}",
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||LUD-zu, IZ-la-siet SO TEI-ku-mu.}}",
+      "{{lv-LV|Kā raksta šo vārdu?||KA RAKS-ta SO VAR-du?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20lietojiet%20vienk%C4%81r%C5%A1us%20v%C4%81rdus."
+  },
+  {
+    "itemId": "7a294dd6-6fed-4e9e-968f-278ab1656af3",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'I am practicing every day.'?",
+    "correctAnswer": "{{lv-LV|Es praktizēju katru dienu.||ES PRAK-ti-ze-ju KA-tru DIE-nu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Lūdzu, izlasiet šo teikumu.||LUD-zu, IZ-la-siet SO TEI-ku-mu.}}",
+      "{{lv-LV|Kā raksta šo vārdu?||KA RAKS-ta SO VAR-du?}}",
+      "{{lv-LV|Es mācos lēnām.||ES MA-cos LE-nam.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20praktiz%C4%93ju%20katru%20dienu."
+  },
+  {
+    "itemId": "ff5663a3-2daf-42ae-a810-991dabb35381",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Latvian phrase means 'Please read this sentence.'?",
+    "correctAnswer": "{{lv-LV|Lūdzu, izlasiet šo teikumu.||LUD-zu, IZ-la-siet SO TEI-ku-mu.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kā raksta šo vārdu?||KA RAKS-ta SO VAR-du?}}",
+      "{{lv-LV|Es mācos lēnām.||ES MA-cos LE-nam.}}",
+      "{{lv-LV|Es mazliet runāju šajā valodā.||ES MAZ-liet RU-na-ju SA-ja VA-lo-da.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/L%C5%ABdzu%2C%20izlasiet%20%C5%A1o%20teikumu."
+  },
+  {
+    "itemId": "eef16645-fec8-4392-8b59-b4ccc730ec67",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Latvian phrase for 'How do you write that word?'.",
+    "correctAnswer": "{{lv-LV|Kā raksta šo vārdu?||KA RAKS-ta SO VAR-du?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es mācos lēnām.||ES MA-cos LE-nam.}}",
+      "{{lv-LV|Es mazliet runāju šajā valodā.||ES MAZ-liet RU-na-ju SA-ja VA-lo-da.}}",
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||LUD-zu, PA-sa-kiet TO VEL-reiz.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/K%C4%81%20raksta%20%C5%A1o%20v%C4%81rdu%3F"
+  },
+  {
+    "itemId": "b28f07a0-fb89-418f-a0e4-059b97552c66",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Latvian sentence for 'I am learning slowly.'?",
+    "correctAnswer": "{{lv-LV|Es mācos lēnām.||ES MA-cos LE-nam.}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Es mazliet runāju šajā valodā.||ES MAZ-liet RU-na-ju SA-ja VA-lo-da.}}",
+      "{{lv-LV|Lūdzu, pasakiet to vēlreiz.||LUD-zu, PA-sa-kiet TO VEL-reiz.}}",
+      "{{lv-LV|Ko nozīmē šis vārds?||KO NO-zi-me SIS VARDS?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/Es%20m%C4%81cos%20l%C4%93n%C4%81m."
+  },
+  {
+    "itemId": "05a6183a-6053-48bd-a12c-d80a57aceda7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Latvian, how do you say 'Where are you from?'?",
+    "correctAnswer": "{{lv-LV|No kurienes jūs esat?||NO KU-rie-nes JUS E-sat?}}",
+    "incorrectAnswers": [
+      "{{lv-LV|Kā jūs sauc?||KA JUS SAUC?}}",
+      "{{lv-LV|Es esmu no ASV.||ES ES-mu NO ASV.}}",
+      "{{lv-LV|Es dzīvoju Rīgā.||ES DZI-vo-ju RI-ga.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/No%20kurienes%20j%C5%ABs%20esat%3F"
   }
 ]

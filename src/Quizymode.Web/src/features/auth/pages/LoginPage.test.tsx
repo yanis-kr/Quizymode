@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import LoginPage from "./LoginPage";
 
 const mockLogin = vi.fn();
@@ -24,9 +25,11 @@ vi.mock("react-router-dom", async (importOriginal) => {
 
 function renderPage() {
   return render(
-    <MemoryRouter>
-      <LoginPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <LoginPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 }
 

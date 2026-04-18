@@ -1,0 +1,428 @@
+[
+  {
+    "itemId": "c2be124e-bac5-4673-b89a-d698a8bb47b5",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bathroom?' in Romanian?",
+    "correctAnswer": "{{ro-RO|Unde este toaleta?||UN-de ES-te toa-LE-ta?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Cât costă asta?||CAT COS-ta AS-ta?}}",
+      "{{ro-RO|O cafea, vă rog.||O ca-FEA, VA ROG.}}",
+      "{{ro-RO|Nota de plată, vă rog.||NO-ta DE PLA-ta, VA ROG.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "90e9a54e-db8b-4296-a656-975a7d9da022",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'How much does this cost?' in Romanian?",
+    "correctAnswer": "{{ro-RO|Cât costă asta?||CAT COS-ta AS-ta?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|O cafea, vă rog.||O ca-FEA, VA ROG.}}",
+      "{{ro-RO|Nota de plată, vă rog.||NO-ta DE PLA-ta, VA ROG.}}",
+      "{{ro-RO|Nu înțeleg.||NU in-TE-leg.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "99572892-5194-4737-98a3-7bac2f821fc7",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you order 'a coffee, please' in Romanian?",
+    "correctAnswer": "{{ro-RO|O cafea, vă rog.||O ca-FEA, VA ROG.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Nota de plată, vă rog.||NO-ta DE PLA-ta, VA ROG.}}",
+      "{{ro-RO|Nu înțeleg.||NU in-TE-leg.}}",
+      "{{ro-RO|Vorbiți engleză?||vor-BI-ti en-GLE-za?}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "situation-food",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1a62a00d-4141-4c0a-83d1-52b741b27d66",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask for the bill in Romanian?",
+    "correctAnswer": "{{ro-RO|Nota de plată, vă rog.||NO-ta DE PLA-ta, VA ROG.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Nu înțeleg.||NU in-TE-leg.}}",
+      "{{ro-RO|Vorbiți engleză?||vor-BI-ti en-GLE-za?}}",
+      "{{ro-RO|Unde este stația de autobuz?||UN-de ES-te STA-tia DE au-TO-buz?}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "situation-food",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "6c42a170-efb1-424f-a024-0a4bb33fc766",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you say 'I don't understand' in Romanian?",
+    "correctAnswer": "{{ro-RO|Nu înțeleg.||NU in-TE-leg.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Vorbiți engleză?||vor-BI-ti en-GLE-za?}}",
+      "{{ro-RO|Unde este stația de autobuz?||UN-de ES-te STA-tia DE au-TO-buz?}}",
+      "{{ro-RO|Bună seara.||BU-na SEA-ra.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ea42376f-928a-44bd-90ff-8115b416db30",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you say 'Do you speak English?' in Romanian?",
+    "correctAnswer": "{{ro-RO|Vorbiți engleză?||vor-BI-ti en-GLE-za?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Unde este stația de autobuz?||UN-de ES-te STA-tia DE au-TO-buz?}}",
+      "{{ro-RO|Bună seara.||BU-na SEA-ra.}}",
+      "{{ro-RO|Ce mai faceți?||CE MAI fa-CHE-ti?}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "977efef2-ffbb-49b3-bc7d-8103a45d8f7a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bus stop?' in Romanian?",
+    "correctAnswer": "{{ro-RO|Unde este stația de autobuz?||UN-de ES-te STA-tia DE au-TO-buz?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Bună seara.||BU-na SEA-ra.}}",
+      "{{ro-RO|Ce mai faceți?||CE MAI fa-CHE-ti?}}",
+      "{{ro-RO|Sunt bine, mulțumesc.||SUNT BI-ne, mul-TU-mesc.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "6178c8e9-5847-426a-b373-4486359241d2",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Romanian, how do you say 'Good evening.'?",
+    "correctAnswer": "{{ro-RO|Bună seara.||BU-na SEA-ra.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Ce mai faceți?||CE MAI fa-CHE-ti?}}",
+      "{{ro-RO|Sunt bine, mulțumesc.||SUNT BI-ne, mul-TU-mesc.}}",
+      "{{ro-RO|Foarte bine, mulțumesc.||FOAR-te BI-ne, mul-TU-mesc.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "30c8d959-1a2f-4bec-ab8e-44070e5362af",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Romanian, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{ro-RO|Am o rezervare.||AM O re-zer-VA-re.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Aveți o cameră single?||a-VE-ti O ca-ME-ra SIN-gle?}}",
+      "{{ro-RO|Aveți o cameră dublă?||a-VE-ti O ca-ME-ra DU-bla?}}",
+      "{{ro-RO|Parola de la WiFi, vă rog.||pa-RO-la DE LA WI-fi, VA ROG.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "604422b3-05cf-4066-9e19-5d37a235e0d4",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Which Romanian phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{ro-RO|Aveți o cameră single?||a-VE-ti O ca-ME-ra SIN-gle?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Aveți o cameră dublă?||a-VE-ti O ca-ME-ra DU-bla?}}",
+      "{{ro-RO|Parola de la WiFi, vă rog.||pa-RO-la DE LA WI-fi, VA ROG.}}",
+      "{{ro-RO|Este o problemă cu camera.||ES-te O pro-BLE-ma CU ca-ME-ra.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "4faa2bef-e1fa-4e37-8b81-4ed17ec3b46d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Romanian phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{ro-RO|Aveți o cameră dublă?||a-VE-ti O ca-ME-ra DU-bla?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Parola de la WiFi, vă rog.||pa-RO-la DE LA WI-fi, VA ROG.}}",
+      "{{ro-RO|Este o problemă cu camera.||ES-te O pro-BLE-ma CU ca-ME-ra.}}",
+      "{{ro-RO|Dușul nu funcționează.||DU-sul NU func-tio-NEA-za.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "39253785-c703-4931-9e35-7b9732b811f3",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Romanian sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{ro-RO|Parola de la WiFi, vă rog.||pa-RO-la DE LA WI-fi, VA ROG.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Este o problemă cu camera.||ES-te O pro-BLE-ma CU ca-ME-ra.}}",
+      "{{ro-RO|Dușul nu funcționează.||DU-sul NU func-tio-NEA-za.}}",
+      "{{ro-RO|Camera este prea rece.||ca-ME-ra ES-te PREA RE-che.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "2a324fb6-dff6-4296-8d04-57069d9ee17d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Romanian, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{ro-RO|Este o problemă cu camera.||ES-te O pro-BLE-ma CU ca-ME-ra.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Dușul nu funcționează.||DU-sul NU func-tio-NEA-za.}}",
+      "{{ro-RO|Camera este prea rece.||ca-ME-ra ES-te PREA RE-che.}}",
+      "{{ro-RO|Am nevoie de prosoape curate.||AM ne-VOIE DE pro-SOA-pe cu-RA-te.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "6a036fdf-622e-4d01-8e42-66707f163377",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Which Romanian phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{ro-RO|Dușul nu funcționează.||DU-sul NU func-tio-NEA-za.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Camera este prea rece.||ca-ME-ra ES-te PREA RE-che.}}",
+      "{{ro-RO|Am nevoie de prosoape curate.||AM ne-VOIE DE pro-SOA-pe cu-RA-te.}}",
+      "{{ro-RO|Micul dejun este inclus?||MI-cul DE-jun ES-te IN-clus?}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "dcdf9d48-b22f-4221-bd6e-956330a8a346",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Romanian phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{ro-RO|Camera este prea rece.||ca-ME-ra ES-te PREA RE-che.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Am nevoie de prosoape curate.||AM ne-VOIE DE pro-SOA-pe cu-RA-te.}}",
+      "{{ro-RO|Micul dejun este inclus?||MI-cul DE-jun ES-te IN-clus?}}",
+      "{{ro-RO|Pot să primesc încă o cheie?||POT SA pri-MESC IN-ca O CHEIE?}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "775419b8-a372-4e11-93fd-c5cb4c3f5209",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Romanian sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{ro-RO|Am nevoie de prosoape curate.||AM ne-VOIE DE pro-SOA-pe cu-RA-te.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Micul dejun este inclus?||MI-cul DE-jun ES-te IN-clus?}}",
+      "{{ro-RO|Pot să primesc încă o cheie?||POT SA pri-MESC IN-ca O CHEIE?}}",
+      "{{ro-RO|Aerul condiționat este stricat.||AE-rul con-di-TIO-nat ES-te STRI-cat.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "9850767a-fc77-4078-9f91-7d39fc07393a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Romanian, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{ro-RO|Micul dejun este inclus?||MI-cul DE-jun ES-te IN-clus?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Pot să primesc încă o cheie?||POT SA pri-MESC IN-ca O CHEIE?}}",
+      "{{ro-RO|Aerul condiționat este stricat.||AE-rul con-di-TIO-nat ES-te STRI-cat.}}",
+      "{{ro-RO|Micul dejun începe la șapte.||MI-cul DE-jun in-CHE-pe LA SAP-te.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "00086cc5-6027-42b5-9dc7-9a43a98f22ed",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Which Romanian phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{ro-RO|Pot să primesc încă o cheie?||POT SA pri-MESC IN-ca O CHEIE?}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Aerul condiționat este stricat.||AE-rul con-di-TIO-nat ES-te STRI-cat.}}",
+      "{{ro-RO|Micul dejun începe la șapte.||MI-cul DE-jun in-CHE-pe LA SAP-te.}}",
+      "{{ro-RO|Mă simt rău.||MA SIMT RAU.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "5d144c78-ad77-4c58-b620-b96762733279",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Romanian phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{ro-RO|Aerul condiționat este stricat.||AE-rul con-di-TIO-nat ES-te STRI-cat.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Micul dejun începe la șapte.||MI-cul DE-jun in-CHE-pe LA SAP-te.}}",
+      "{{ro-RO|Mă simt rău.||MA SIMT RAU.}}",
+      "{{ro-RO|Am durere de cap.||AM du-RE-re DE CAP.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d47f11af-3228-4635-a8bd-698469968fe0",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Romanian sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{ro-RO|Micul dejun începe la șapte.||MI-cul DE-jun in-CHE-pe LA SAP-te.}}",
+    "incorrectAnswers": [
+      "{{ro-RO|Mă simt rău.||MA SIMT RAU.}}",
+      "{{ro-RO|Am durere de cap.||AM du-RE-re DE CAP.}}",
+      "{{ro-RO|Am febră.||AM FE-bra.}}"
+    ],
+    "explanation": "A common romanian phrase for beginner and travel use.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "romanian-travel"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  }
+]

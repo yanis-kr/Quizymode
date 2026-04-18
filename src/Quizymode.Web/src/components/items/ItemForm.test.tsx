@@ -10,13 +10,14 @@ const defaultValues = {
   navigationRank2: "",
   readyForReview: false,
   question: "",
+  questionSpeech: {},
   correctAnswer: "",
+  correctAnswerSpeech: {},
   incorrectAnswers: ["", "", ""],
+  incorrectAnswerSpeech: {},
   explanation: "",
   keywords: [] as { name: string; isPrivate: boolean }[],
   source: "",
-  factualRisk: "",
-  reviewComments: "",
 };
 
 describe("ItemForm", () => {

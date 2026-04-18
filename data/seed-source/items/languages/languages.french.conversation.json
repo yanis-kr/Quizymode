@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which phrase is a common daytime greeting?",
-    "correctAnswer": "Bonjour.",
+    "correctAnswer": "{{fr-FR|Bonjour.||bonz-HOOR.}}",
     "incorrectAnswers": [
-      "Bonne nuit.",
-      "\u00c0 bient\u00f4t.",
-      "Enchant\u00e9."
+      "{{fr-FR|Bonne nuit.||bon-NE NUIT.}}",
+      "{{fr-FR|À bientôt.||A bien-TOT.}}",
+      "{{fr-FR|Enchanté.||en-shan-TE.}}"
     ],
     "explanation": "\"Bonjour\" is the usual general greeting during the day.",
     "keywords": [
@@ -25,13 +25,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which informal question asks \"How are you?\" to someone you call \"tu\"?",
-    "correctAnswer": "Comment \u00e7a va ?",
+    "correctAnswer": "{{fr-FR|Comment ça va ?||com-MENT CA VA ?}}",
     "incorrectAnswers": [
-      "Comment vous appelez-vous ?",
-      "D'o\u00f9 venez-vous ?",
-      "Quel \u00e2ge avez-vous ?"
+      "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}",
+      "{{fr-FR|D'où venez-vous ?||D'OO ve-NEZ-VOOS ?}}",
+      "{{fr-FR|Quel âge avez-vous ?||QUEL a-GE a-VEZ-VOOS ?}}"
     ],
-    "explanation": "\"Comment \u00e7a va ?\" is a very common informal check-in among friends.",
+    "explanation": "\"Comment ça va ?\" is a very common informal check-in among friends.",
     "keywords": [
       "how-are-you",
       "greetings",
@@ -45,11 +45,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which phrase politely says \"Excuse me\" before you ask a stranger for help?",
-    "correctAnswer": "Excusez-moi.",
+    "correctAnswer": "{{fr-FR|Excusez-moi.||ex-cu-SEZ-MWAH.}}",
     "incorrectAnswers": [
-      "F\u00e9licitations.",
-      "Bon app\u00e9tit.",
-      "\u00c0 demain."
+      "{{fr-FR|Félicitations.||fe-li-ci-ta-TIONS.}}",
+      "{{fr-FR|Bon appétit.||BON ap-pe-TIT.}}",
+      "{{fr-FR|À demain.||A de-MEHN.}}"
     ],
     "explanation": "\"Excusez-moi\" is a polite way to get attention before a question.",
     "keywords": [
@@ -65,13 +65,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which reply is a simple way to say \"Nice to meet you\" in a first meeting?",
-    "correctAnswer": "Enchant\u00e9.",
+    "correctAnswer": "{{fr-FR|Enchanté.||en-shan-TE.}}",
     "incorrectAnswers": [
-      "\u00c0 tout \u00e0 l'heure.",
-      "Je suis d\u00e9sol\u00e9.",
-      "Je me d\u00e9p\u00eache."
+      "{{fr-FR|À tout à l'heure.||A TOOT A l'huh-RE.}}",
+      "{{fr-FR|Je suis désolé.||JE SUIS de-so-LE.}}",
+      "{{fr-FR|Je me dépêche.||JE ME de-pe-SHE.}}"
     ],
-    "explanation": "\"Enchant\u00e9\" (or \"Enchant\u00e9e\" for feminine speakers) is a common polite phrase after introductions.",
+    "explanation": "\"Enchanté\" (or \"Enchantée\" for feminine speakers) is a common polite phrase after introductions.",
     "keywords": [
       "nice-to-meet-you",
       "introductions",
@@ -85,13 +85,13 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "In French, which phrase politely asks someone to repeat what they said?",
-    "correctAnswer": "Pouvez-vous r\u00e9p\u00e9ter, s'il vous pla\u00eet ?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous répéter, s'il vous plaît ?||poo-VEZ-VOOS re-pe-TER, S'IL VOOS PLEHT ?}}",
     "incorrectAnswers": [
-      "Je n'aime pas \u00e7a.",
-      "Je suis fatigu\u00e9.",
-      "Il fait tr\u00e8s froid."
+      "{{fr-FR|Je n'aime pas ça.||JE n'eh-ME PAS CA.}}",
+      "{{fr-FR|Je suis fatigué.||JE SUIS fa-ti-GUE.}}",
+      "{{fr-FR|Il fait très froid.||IL FEHT TRES FRWAHD.}}"
     ],
-    "explanation": "\"R\u00e9p\u00e9ter\" means to repeat; adding \"s'il vous pla\u00eet\" keeps the request polite.",
+    "explanation": "\"Répéter\" means to repeat; adding \"s'il vous plaît\" keeps the request polite.",
     "keywords": [
       "repeat",
       "clarification",
@@ -105,11 +105,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "conversation",
     "question": "Which phrase is a simple apology after a small mistake?",
-    "correctAnswer": "Pardon.",
+    "correctAnswer": "{{fr-FR|Pardon.||par-DON.}}",
     "incorrectAnswers": [
-      "De rien.",
-      "Bien s\u00fbr.",
-      "Toutes mes f\u00e9licitations."
+      "{{fr-FR|De rien.||DE RIEN.}}",
+      "{{fr-FR|Bien sûr.||BIEN SUR.}}",
+      "{{fr-FR|Toutes mes félicitations.||too-TES MES fe-li-ci-ta-TIONS.}}"
     ],
     "explanation": "\"Pardon\" is a quick everyday apology for small mistakes.",
     "keywords": [

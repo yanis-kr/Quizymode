@@ -16,6 +16,10 @@ import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
+import {
+  normalizeSpeechSupportInput,
+  normalizeSpeechSupportMapInput,
+} from "@/utils/itemSpeech";
 
 interface ApiValidationError {
   errorMessage?: string;
@@ -54,6 +58,9 @@ function buildInitialFormData(
     }),
     source: "",
     readyForReview: false,
+    questionSpeech: {},
+    correctAnswerSpeech: {},
+    incorrectAnswerSpeech: {},
   };
 }
 
@@ -189,8 +196,11 @@ function CreateItemEditor({
       navigationKeyword2: formData.navigationRank2.trim(),
       isPrivate: formData.isPrivate,
       question: formData.question.trim(),
+      questionSpeech: normalizeSpeechSupportInput(formData.questionSpeech),
       correctAnswer: formData.correctAnswer.trim(),
+      correctAnswerSpeech: normalizeSpeechSupportInput(formData.correctAnswerSpeech),
       incorrectAnswers: filteredIncorrectAnswers,
+      incorrectAnswerSpeech: normalizeSpeechSupportMapInput(formData.incorrectAnswerSpeech),
       explanation: formData.explanation.trim(),
       keywords: otherKeywords.length > 0 ? otherKeywords : undefined,
       source: formData.source.trim() || undefined,

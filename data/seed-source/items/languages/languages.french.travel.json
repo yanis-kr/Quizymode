@@ -1,122 +1,424 @@
 [
   {
-    "itemId": "ea0065ae-018d-4f3a-96c5-048d5d4f705a",
+    "itemId": "3024dbb6-c9c3-4d09-bf4d-9427d216a6da",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "You want a one-way train ticket. Which short phrase asks for that?",
-    "correctAnswer": "Un aller simple, s'il vous pla\u00eet.",
+    "correctAnswer": "{{fr-FR|Un aller simple, s'il vous plaît.||UN al-LER sim-PLE, S'IL VOOS PLEHT.}}",
     "incorrectAnswers": [
-      "Une table pour deux, s'il vous pla\u00eet.",
-      "L'addition, s'il vous pla\u00eet.",
-      "O\u00f9 sont les toilettes ?"
+      "{{fr-FR|Une table pour deux, s'il vous plaît.||u-NE ta-BLE POOR DUH, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|L'addition, s'il vous plaît.||l'ad-di-TION, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Où sont les toilettes ?||OU SONT LES twah-let-TES ?}}"
     ],
     "explanation": "\"Aller simple\" is a common label for a one-way ticket in travel French.",
     "keywords": [
       "ticket",
       "train",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/aller-simple"
   },
   {
-    "itemId": "6232bd22-3ff0-4dcf-8ee0-fa00a89eff26",
+    "itemId": "e28d7b3f-a2f6-446d-b740-8582cc17aa1a",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, at the airport, which word usually means \"passport\"?",
-    "correctAnswer": "passeport",
+    "correctAnswer": "{{fr-FR|passeport||pas-se-PORT}}",
     "incorrectAnswers": [
-      "valise",
-      "vol",
-      "porte"
+      "{{fr-FR|valise||va-li-SE}}",
+      "{{fr-FR|vol||VOL}}",
+      "{{fr-FR|porte||por-TE}}"
     ],
     "explanation": "\"Passeport\" is the standard word for passport.",
     "keywords": [
       "passport",
       "airport",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/passeport"
   },
   {
-    "itemId": "7a118463-4f0b-4fff-a70b-82c4bbf0b9b0",
+    "itemId": "44bcbb64-b1d4-49f5-9c44-8b66350748c5",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "Which word often means \"train station\" in city travel signs?",
-    "correctAnswer": "gare",
+    "correctAnswer": "{{fr-FR|gare||ga-RE}}",
     "incorrectAnswers": [
-      "rue",
-      "place",
-      "h\u00f4tel"
+      "{{fr-FR|rue||RUE}}",
+      "{{fr-FR|place||pla-CE}}",
+      "{{fr-FR|hôtel||ho-TEL}}"
     ],
     "explanation": "\"Gare\" is the common word for a station, especially a train station.",
     "keywords": [
       "station",
       "train",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/gare"
   },
   {
-    "itemId": "9d6bef9a-21d7-4a22-b878-df930adb2b33",
+    "itemId": "ef90c4cc-cc1c-43de-8d78-8fb43c611542",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "O\u00f9 est la banque la plus proche ?",
+    "correctAnswer": "{{fr-FR|Où est la banque la plus proche ?||OU EST LA ban-QUE LA PLUS pro-SHE ?}}",
     "incorrectAnswers": [
-      "C'est combien ?",
-      "Avez-vous un menu en anglais ?",
-      "Je voudrais le plat du jour."
+      "{{fr-FR|C'est combien ?||C'EST com-BIEN ?}}",
+      "{{fr-FR|Avez-vous un menu en anglais ?||a-VEZ-VOOS UN me-NU EN an-GLEHS ?}}",
+      "{{fr-FR|Je voudrais le plat du jour.||JE voo-DREHS LE PLAT DU ZHOOR.}}"
     ],
-    "explanation": "\"O\u00f9 est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
+    "explanation": "\"Où est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
     "keywords": [
       "bank",
       "directions",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/banque"
   },
   {
-    "itemId": "7679e97e-0049-4f6f-84d0-12d82ffe35aa",
+    "itemId": "0772ab56-5db4-473d-bc60-3ff2f92c39ab",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, which word means \"left\" when you give or follow directions?",
-    "correctAnswer": "gauche",
+    "correctAnswer": "{{fr-FR|gauche||goh-SHE}}",
     "incorrectAnswers": [
-      "droite",
-      "tout droit",
-      "pr\u00e8s"
+      "{{fr-FR|droite||drwah-TE}}",
+      "{{fr-FR|tout droit||TOOT DRWAHT}}",
+      "{{fr-FR|près||PRES}}"
     ],
-    "explanation": "\"Gauche\" means left; \"\u00e0 gauche\" is a common direction phrase.",
+    "explanation": "\"Gauche\" means left; \"à gauche\" is a common direction phrase.",
     "keywords": [
       "left",
       "directions",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche"
   },
   {
-    "itemId": "23d8a71e-246e-401b-8dd4-4a8d58a41625",
+    "itemId": "978726d7-c454-4d6f-a85f-a50b76090541",
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "At a hotel desk, which phrase asks if they have a free room?",
-    "correctAnswer": "Avez-vous une chambre libre ?",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre libre ?||a-VEZ-VOOS u-NE sham-BRE li-BRE ?}}",
     "incorrectAnswers": [
-      "\u00c0 quelle heure est le vol ?",
-      "Un caf\u00e9 au lait, s'il vous pla\u00eet.",
-      "Combien co\u00fbte l'entr\u00e9e ?"
+      "{{fr-FR|À quelle heure est le vol ?||A quel-LE huh-RE EST LE VOL ?}}",
+      "{{fr-FR|Un café au lait, s'il vous plaît.||UN ca-FE OH LEHT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Combien coûte l'entrée ?||com-BIEN coo-TE l'en-TREE ?}}"
     ],
     "explanation": "\"Chambre\" means room; \"libre\" often signals that a room is available.",
     "keywords": [
       "hotel",
       "room",
-      "french-travel"
+      "french-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/chambre"
+  },
+  {
+    "itemId": "b6993987-80cc-478e-8787-30cbc34e8f91",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bathroom?' in French?",
+    "correctAnswer": "{{fr-FR|Où sont les toilettes ?||OU SONT LES twah-let-TES ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quand sont les toilettes ?||QUAND SONT LES twah-let-TES ?}}",
+      "{{fr-FR|Qu'est-ce que les toilettes ?||qu-'EST-CE QUE LES twah-let-TES ?}}",
+      "{{fr-FR|Comment sont les toilettes ?||com-MENT SONT LES twah-let-TES ?}}"
+    ],
+    "explanation": "'Où sont les toilettes ?' — 'Where are the toilets?' — the essential travel phrase.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/ou"
+  },
+  {
+    "itemId": "3ef7853d-812b-4d4a-9d6c-6e91f143c107",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'How much does this cost?' in French?",
+    "correctAnswer": "{{fr-FR|Combien ça coûte ?||com-BIEN CA coo-TE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Qu'est-ce que c'est ?||qu-'EST-CE QUE C'EST ?}}",
+      "{{fr-FR|Où puis-je acheter ça ?||OU PUIS-ZHE a-she-TER CA ?}}",
+      "{{fr-FR|Y a-t-il une réduction ?||Y A-T-IL u-NE re-duc-TION ?}}"
+    ],
+    "explanation": "'Combien ça coûte ?' — 'How much does it cost?' — used in any shop or market.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/combien"
+  },
+  {
+    "itemId": "bfceb3b5-ef62-46a3-88b1-0983a2428236",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "In beginner French, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20une%20r%C3%A9servation."
+  },
+  {
+    "itemId": "8ac2ef7a-14b8-48fb-b48b-5e0eca876051",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which French phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20une%20chambre%20simple%20%3F"
+  },
+  {
+    "itemId": "cf5d3c0c-b4f1-44be-a207-03a864a31309",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct French phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20une%20chambre%20double%20%3F"
+  },
+  {
+    "itemId": "20e9f078-88ee-4232-a6bb-5debe9d8b1a2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural French sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20mot%20de%20passe%20du%20Wi-Fi%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "292f2b28-028f-4931-8e1c-fd703532ccd9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "In beginner French, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20y%20a%20un%20probl%C3%A8me%20avec%20la%20chambre."
+  },
+  {
+    "itemId": "f68ab4ea-3330-4fd1-8d00-24aea437dbfc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which French phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20douche%20ne%20marche%20pas."
+  },
+  {
+    "itemId": "89ad9275-0b3d-4682-95c5-cf8c399a5be8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct French phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20chambre%20est%20trop%20froide."
+  },
+  {
+    "itemId": "91f0c837-8d9b-491e-9045-6dabd8c71040",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural French sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20de%20serviettes%20propres."
+  },
+  {
+    "itemId": "e266664f-ad3e-42c4-bc87-a3899276b4e6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "In beginner French, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20petit%20d%C3%A9jeuner%20est-il%20compris%20%3F"
+  },
+  {
+    "itemId": "1df72ad0-35a3-463e-89bc-0023a1d1dd5e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Which French phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Puis-je%20avoir%20une%20autre%20cl%C3%A9%20%3F"
+  },
+  {
+    "itemId": "b5f9b8d9-9f45-4a33-a397-7c232fd7447c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct French phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20climatisation%20est%20en%20panne."
+  },
+  {
+    "itemId": "d44dc596-19af-4ffa-8e3b-994128c4b7ff",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural French sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "french-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20petit%20d%C3%A9jeuner%20commence%20%C3%A0%20sept%20heures."
   }
 ]

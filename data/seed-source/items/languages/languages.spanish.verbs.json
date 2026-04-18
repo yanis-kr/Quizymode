@@ -5,11 +5,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
     "question": "In Spanish, what is the infinitive that means \"to eat\"?",
-    "correctAnswer": "comer",
+    "correctAnswer": "{{es-ES|comer||co-MER}}",
     "incorrectAnswers": [
-      "correr",
-      "beber",
-      "vivir"
+      "{{es-ES|correr||cor-RER}}",
+      "{{es-ES|beber||be-BER}}",
+      "{{es-ES|vivir||bi-BIR}}"
     ],
     "explanation": "\"Comer\" is the infinitive for to eat.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
     "question": "For \"tener\" in the present, which form matches \"ellos\" (they)?",
-    "correctAnswer": "tienen",
+    "correctAnswer": "{{es-ES|tienen||TIE-nen}}",
     "incorrectAnswers": [
-      "tengo",
-      "tienes",
-      "tenemos"
+      "{{es-ES|tengo||TEN-go}}",
+      "{{es-ES|tienes||TIE-nes}}",
+      "{{es-ES|tenemos||te-NE-mos}}"
     ],
     "explanation": "\"Tener\" is irregular; the third-person plural present form is \"tienen\".",
     "keywords": [
@@ -45,11 +45,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
     "question": "Which form completes this line: \"Yo ___ de Madrid\" (I am from Madrid)?",
-    "correctAnswer": "soy",
+    "correctAnswer": "{{es-ES|soy||SOY}}",
     "incorrectAnswers": [
-      "estoy",
-      "eres",
-      "somos"
+      "{{es-ES|estoy||es-TOY}}",
+      "{{es-ES|eres||E-res}}",
+      "{{es-ES|somos||SO-mos}}"
     ],
     "explanation": "Origin uses \"ser\": \"yo soy de...\" means I am from.",
     "keywords": [
@@ -65,11 +65,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
     "question": "Which form is correct for \"nosotros\" with the verb \"beber\" in the present tense?",
-    "correctAnswer": "bebemos",
+    "correctAnswer": "{{es-ES|bebemos||be-BE-mos}}",
     "incorrectAnswers": [
-      "beb\u00e9is",
-      "beben",
-      "bebo"
+      "{{es-ES|bebéis||BE-beis}}",
+      "{{es-ES|beben||BE-ben}}",
+      "{{es-ES|bebo||BE-bo}}"
     ],
     "explanation": "Regular -er verbs take \"-emos\" for \"we\" in the present tense.",
     "keywords": [
@@ -85,11 +85,11 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
     "question": "In Spanish, which infinitive means \"to want\"?",
-    "correctAnswer": "querer",
+    "correctAnswer": "{{es-ES|querer||ke-RER}}",
     "incorrectAnswers": [
-      "poder",
-      "deber",
-      "saber"
+      "{{es-ES|poder||po-DER}}",
+      "{{es-ES|deber||de-BER}}",
+      "{{es-ES|saber||sa-BER}}"
     ],
     "explanation": "\"Querer\" is the infinitive that commonly expresses wanting.",
     "keywords": [
@@ -104,12 +104,12 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "verbs",
-    "question": "In the present tense, which \"hacer\" form matches \"\u00e9l / ella\"?",
-    "correctAnswer": "hace",
+    "question": "In the present tense, which \"hacer\" form matches \"él / ella\"?",
+    "correctAnswer": "{{es-ES|hace||ha-SEH}}",
     "incorrectAnswers": [
-      "hago",
-      "haces",
-      "hacen"
+      "{{es-ES|hago||HA-go}}",
+      "{{es-ES|haces||HA-sehs}}",
+      "{{es-ES|hacen||HA-sehn}}"
     ],
     "explanation": "\"Hacer\" is irregular; the third-person singular present form is \"hace\".",
     "keywords": [

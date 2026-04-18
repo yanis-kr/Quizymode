@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Admin;
 
@@ -18,7 +19,10 @@ public static class SeedSyncAdmin
         List<string> IncorrectAnswers,
         string? Explanation = null,
         List<string>? Keywords = null,
-        string? Source = null);
+        string? Source = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record SeedCollectionRequest(
         Guid CollectionId,
@@ -285,6 +289,9 @@ public static class SeedSyncAdmin
                 .MaximumLength(500)
                 .WithMessage("CorrectAnswer must not exceed 500 characters.");
 
+            this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
+            this.AddSpeechSupportRules(x => x.CorrectAnswerSpeech, 500, "CorrectAnswerSpeech");
+
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
                 .WithMessage("IncorrectAnswers is required.")
@@ -296,15 +303,17 @@ public static class SeedSyncAdmin
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters."));
 
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers.Count);
+
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
                 .When(x => x.Explanation is not null)
                 .WithMessage("Explanation must not exceed 4000 characters.");
 
             RuleFor(x => x.Source)
-                .MaximumLength(200)
+                .MaximumLength(1000)
                 .When(x => x.Source is not null)
-                .WithMessage("Source must not exceed 200 characters.");
+                .WithMessage("Source must not exceed 1000 characters.");
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)

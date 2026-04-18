@@ -1,122 +1,424 @@
 [
   {
-    "itemId": "5256ed1a-0dfa-4f73-bc5c-3877d0ec4426",
+    "itemId": "7e064b89-5a77-4a0f-891e-10e1cd263cf2",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "You want a single ticket for a train. Which short phrase asks for that?",
-    "correctAnswer": "Un billete sencillo, por favor.",
+    "correctAnswer": "{{es-ES|Un billete sencillo, por favor.||UN BIYE-te SEN-seeyo, POR fa-BOR.}}",
     "incorrectAnswers": [
-      "Una mesa para dos, por favor.",
-      "La cuenta, por favor.",
-      "\u00bfD\u00f3nde est\u00e1 el ba\u00f1o?"
+      "{{es-ES|Una mesa para dos, por favor.||U-na ME-sa PA-ra DOS, POR fa-BOR.}}",
+      "{{es-ES|La cuenta, por favor.||LA CUEN-ta, POR fa-BOR.}}",
+      "{{es-ES|¿Dónde está el baño?||DON-de ES-ta EL BA-no?}}"
     ],
     "explanation": "\"Billete\" (or \"boleto\" in many regions) with \"sencillo\" signals a one-way or single ticket in travel contexts.",
     "keywords": [
       "ticket",
       "train",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/billete"
   },
   {
-    "itemId": "413355fe-20cf-4b09-884a-84f78146b081",
+    "itemId": "9b32f0dd-3129-43ec-af28-931f6e63dd9e",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, at the airport, which word usually means \"passport\"?",
-    "correctAnswer": "pasaporte",
+    "correctAnswer": "{{es-ES|pasaporte||pa-sa-POR-te}}",
     "incorrectAnswers": [
-      "maleta",
-      "vuelo",
-      "puerta"
+      "{{es-ES|maleta||ma-LE-ta}}",
+      "{{es-ES|vuelo||BUE-lo}}",
+      "{{es-ES|puerta||PUER-ta}}"
     ],
     "explanation": "\"Pasaporte\" is the standard word for passport.",
     "keywords": [
       "passport",
       "airport",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pasaporte"
   },
   {
-    "itemId": "5baca5d3-7d31-47a8-8433-dcd5612b7e40",
+    "itemId": "3e09633d-2b6d-4651-a99a-f9af5978d147",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "You need the main train station. Which word often means \"station\" in this context?",
-    "correctAnswer": "estaci\u00f3n",
+    "correctAnswer": "{{es-ES|estación||es-TA-seeon}}",
     "incorrectAnswers": [
-      "calle",
-      "plaza",
-      "hotel"
+      "{{es-ES|calle||CAYE}}",
+      "{{es-ES|plaza||PLA-za}}",
+      "{{es-ES|hotel||ho-TEL}}"
     ],
-    "explanation": "\"Estaci\u00f3n\" is the common word for a station, including train stations.",
+    "explanation": "\"Estación\" is the common word for a station, including train stations.",
     "keywords": [
       "station",
       "train",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/estaci%C3%B3n"
   },
   {
-    "itemId": "b51fa688-05db-4ec9-bf37-71626125c57a",
+    "itemId": "bc4a563a-b341-4a1d-b17a-035218060bdd",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "\u00bfD\u00f3nde est\u00e1 el banco m\u00e1s cercano?",
+    "correctAnswer": "{{es-ES|¿Dónde está el banco más cercano?||DON-de ES-ta EL BAN-co MAS sehr-CA-no?}}",
     "incorrectAnswers": [
-      "\u00bfCu\u00e1nto cuesta?",
-      "\u00bfTiene men\u00fa en ingl\u00e9s?",
-      "Quisiera el men\u00fa del d\u00eda."
+      "{{es-ES|¿Cuánto cuesta?||CUAN-to CUES-ta?}}",
+      "{{es-ES|¿Tiene menú en inglés?||TIE-ne ME-nu EN IN-gles?}}",
+      "{{es-ES|Quisiera el menú del día.||qui-SIE-ra EL ME-nu DEL DIA.}}"
     ],
-    "explanation": "\"\u00bfD\u00f3nde est\u00e1...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
+    "explanation": "\"¿Dónde está...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
     "keywords": [
       "bank",
       "directions",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/banco"
   },
   {
-    "itemId": "ee1b00b2-028f-4fb7-953b-1c6812a14781",
+    "itemId": "147073dc-bee9-4de5-b72e-ed38ab91450b",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, which word means \"left\" when you give or follow directions?",
-    "correctAnswer": "izquierda",
+    "correctAnswer": "{{es-ES|izquierda||iz-KIER-da}}",
     "incorrectAnswers": [
-      "derecha",
-      "recto",
-      "cerca"
+      "{{es-ES|derecha||de-RE-cha}}",
+      "{{es-ES|recto||REC-to}}",
+      "{{es-ES|cerca||SEHR-ca}}"
     ],
     "explanation": "\"Izquierda\" means left; \"a la izquierda\" is a common direction phrase.",
     "keywords": [
       "left",
       "directions",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/izquierda"
   },
   {
-    "itemId": "5d07508f-c098-4436-84a8-842495012ba7",
+    "itemId": "d976f3a2-2d63-4fa8-9f00-58f2c9853436",
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "At a hotel front desk, which phrase asks if they have a free room?",
-    "correctAnswer": "\u00bfTienen una habitaci\u00f3n libre?",
+    "correctAnswer": "{{es-ES|¿Tienen una habitación libre?||TIE-nen U-na ha-bi-TA-seeon LI-bre?}}",
     "incorrectAnswers": [
-      "\u00bfA qu\u00e9 hora sale el vuelo?",
-      "Un caf\u00e9 con leche, por favor.",
-      "\u00bfCu\u00e1nto cuesta la entrada?"
+      "{{es-ES|¿A qué hora sale el vuelo?||A KE HO-ra SA-le EL BUE-lo?}}",
+      "{{es-ES|Un café con leche, por favor.||UN CA-fe CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|¿Cuánto cuesta la entrada?||CUAN-to CUES-ta LA en-TRA-da?}}"
     ],
-    "explanation": "\"Habitaci\u00f3n\" means room; \"libre\" or \"disponible\" often signals availability.",
+    "explanation": "\"Habitación\" means room; \"libre\" or \"disponible\" often signals availability.",
     "keywords": [
       "hotel",
       "room",
-      "spanish-travel"
+      "spanish-travel",
+      "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/habitaci%C3%B3n"
+  },
+  {
+    "itemId": "f7254223-7527-4bb4-941f-14207a87f0f9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'Where is the bathroom?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Dónde está el baño?||DON-de ES-ta EL BA-no?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Cuándo está el baño?||CUAN-do ES-ta EL BA-no?}}",
+      "{{es-ES|¿Qué es el baño?||QUE ES EL BA-no?}}",
+      "{{es-ES|¿Cómo está el baño?||CO-mo ES-ta EL BA-no?}}"
+    ],
+    "explanation": "'¿Dónde está?' = 'Where is?'. Replace 'el baño' with any place: la estación, el hotel, etc.",
+    "keywords": [
+      "freq-100",
+      "situation-directions",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/where%20is%20the%20bathroom"
+  },
+  {
+    "itemId": "c1c03aa9-f2c4-44a6-b48b-f88c6dec1130",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "How do you ask 'How much does this cost?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Cuánto cuesta esto?||CUAN-to CUES-ta ES-to?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Qué es esto?||QUE ES ES-to?}}",
+      "{{es-ES|¿Dónde compro esto?||DON-de COM-pro ES-to?}}",
+      "{{es-ES|¿Hay descuento?||HAY des-CUEN-to?}}"
+    ],
+    "explanation": "'¿Cuánto cuesta?' — 'How much does it cost?' — the key phrase for any market or shop.",
+    "keywords": [
+      "freq-100",
+      "situation-prices",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/how%20much%20does%20this%20cost"
+  },
+  {
+    "itemId": "9181e327-bba4-4fa3-ad8a-26ec60cb5ab0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Spanish, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tengo%20una%20reserva."
+  },
+  {
+    "itemId": "4bcc5cc5-fab3-4e7c-ae52-fe12f8bc0629",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Which Spanish phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20una%20habitaci%C3%B3n%20individual%3F"
+  },
+  {
+    "itemId": "a8c176b6-c393-4378-86a8-211401983566",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Spanish phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}",
+    "incorrectAnswers": [
+      "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20una%20habitaci%C3%B3n%20doble%3F"
+  },
+  {
+    "itemId": "6de5d054-de29-4c3c-98fe-3188be1d97d0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Spanish sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{es-ES|La contraseña del wifi, por favor.||LA con-tra-SE-na DEL WI-fi, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/La%20contrase%C3%B1a%20del%20wifi%2C%20por%20favor."
+  },
+  {
+    "itemId": "d4cf3801-eccc-4b33-ac00-8238cdf2beca",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Spanish, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{es-ES|Hay un problema con la habitación.||HAY UN pro-BLE-ma CON LA ha-bi-TA-seeon.}}",
+    "incorrectAnswers": [
+      "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/Hay%20un%20problema%20con%20la%20habitaci%C3%B3n."
+  },
+  {
+    "itemId": "a5b0f4e5-2971-411d-aec4-9606a1499af8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Which Spanish phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{es-ES|La ducha no funciona.||LA DU-cha NO fun-SEEO-na.}}",
+    "incorrectAnswers": [
+      "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/La%20ducha%20no%20funciona."
+  },
+  {
+    "itemId": "58f84854-dc2a-4b95-b9ff-13c7789f5550",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Spanish phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{es-ES|La habitación está demasiado fría.||LA ha-bi-TA-seeon ES-ta de-ma-SIA-do FRIA.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/La%20habitaci%C3%B3n%20est%C3%A1%20demasiado%20fr%C3%ADa."
+  },
+  {
+    "itemId": "8bca2b73-32ec-48f0-98a7-45697198f21e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Spanish sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{es-ES|Necesito toallas limpias.||ne-seh-SI-to TOAYAS LIM-pias.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20toallas%20limpias."
+  },
+  {
+    "itemId": "2200fd9f-7100-4fde-b64b-e1506f98f322",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "In beginner Spanish, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{es-ES|¿Está incluido el desayuno?||ES-ta in-CLUI-do EL de-SAYU-no?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFEst%C3%A1%20incluido%20el%20desayuno%3F"
+  },
+  {
+    "itemId": "fe14959b-822f-491a-b802-f0edae51ff2a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Which Spanish phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{es-ES|¿Me puede dar otra llave?||ME PUE-de DAR O-tra YA-be?}}",
+    "incorrectAnswers": [
+      "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFMe%20puede%20dar%20otra%20llave%3F"
+  },
+  {
+    "itemId": "ad59753f-f637-4948-9269-ad1e007916e0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "Choose the correct Spanish phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{es-ES|El aire acondicionado está roto.||EL AI-re a-con-di-seeo-NA-do ES-ta RO-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/El%20aire%20acondicionado%20est%C3%A1%20roto."
+  },
+  {
+    "itemId": "543f467b-64ba-4fdf-baf9-52a69e46d0a8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "travel",
+    "question": "What is the natural Spanish sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{es-ES|El desayuno empieza a las siete.||EL de-SAYU-no em-PIE-za A LAS SIE-te.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tengo una reserva.||TEN-go U-na re-SER-ba.}}",
+      "{{es-ES|¿Tiene una habitación individual?||TIE-ne U-na ha-bi-TA-seeon in-di-bi-DUAL?}}",
+      "{{es-ES|¿Tiene una habitación doble?||TIE-ne U-na ha-bi-TA-seeon DO-ble?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel",
+      "spanish-travel"
+    ],
+    "source": "https://www.spanishdict.com/translate/El%20desayuno%20empieza%20a%20las%20siete."
   }
 ]

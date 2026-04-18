@@ -300,6 +300,8 @@ export function buildGuide(config) {
 
   lines.push(`# ${config.title}`);
   lines.push("");
+  lines.push("**App:** [www.quizymode.com](https://www.quizymode.com)");
+  lines.push("");
   lines.push(config.intro);
   lines.push(
     `_Screenshots are generated automatically - run ${config.refreshCommand} from the repo root to refresh both guides._`

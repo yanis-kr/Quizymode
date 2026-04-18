@@ -24,8 +24,10 @@ public sealed class GetTaxonomyTests : ItemTestFixture
         GetTaxonomy.L1Dto famousPeopleGroup = trivia.Groups.Single(group => group.Slug == "famous-people");
 
         generalGroup.ItemCount.Should().Be(5);
-        generalGroup.Keywords.Single(keyword => keyword.Slug == "general").ItemCount.Should().Be(0);
         generalGroup.Keywords.Single(keyword => keyword.Slug == "mixed").ItemCount.Should().Be(5);
+        generalGroup.Keywords.Single(keyword => keyword.Slug == "random").ItemCount.Should().Be(0);
+        generalGroup.Keywords.Single(keyword => keyword.Slug == "easy").ItemCount.Should().Be(0);
+        generalGroup.Keywords.Single(keyword => keyword.Slug == "hard").ItemCount.Should().Be(0);
 
         famousPeopleGroup.ItemCount.Should().Be(1);
         famousPeopleGroup.Keywords.Single(keyword => keyword.Slug == "mixed").ItemCount.Should().Be(1);

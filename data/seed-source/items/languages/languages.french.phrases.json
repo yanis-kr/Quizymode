@@ -5,11 +5,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'Where is the bathroom?' in French?",
-    "correctAnswer": "Où sont les toilettes ?",
+    "correctAnswer": "{{fr-FR|Où sont les toilettes ?||OU SONT LES twah-let-TES ?}}",
     "incorrectAnswers": [
-      "Quand sont les toilettes ?",
-      "Qu'est-ce que les toilettes ?",
-      "Comment sont les toilettes ?"
+      "{{fr-FR|Quand sont les toilettes ?||QUAND SONT LES twah-let-TES ?}}",
+      "{{fr-FR|Qu'est-ce que les toilettes ?||qu-'EST-CE QUE LES twah-let-TES ?}}",
+      "{{fr-FR|Comment sont les toilettes ?||com-MENT SONT LES twah-let-TES ?}}"
     ],
     "explanation": "'Où sont les toilettes ?' — 'Where are the toilets?' — the essential travel phrase.",
     "keywords": [
@@ -25,11 +25,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask 'How much does this cost?' in French?",
-    "correctAnswer": "Combien ça coûte ?",
+    "correctAnswer": "{{fr-FR|Combien ça coûte ?||com-BIEN CA coo-TE ?}}",
     "incorrectAnswers": [
-      "Qu'est-ce que c'est ?",
-      "Où puis-je acheter ça ?",
-      "Y a-t-il une réduction ?"
+      "{{fr-FR|Qu'est-ce que c'est ?||qu-'EST-CE QUE C'EST ?}}",
+      "{{fr-FR|Où puis-je acheter ça ?||OU PUIS-ZHE a-she-TER CA ?}}",
+      "{{fr-FR|Y a-t-il une réduction ?||Y A-T-IL u-NE re-duc-TION ?}}"
     ],
     "explanation": "'Combien ça coûte ?' — 'How much does it cost?' — used in any shop or market.",
     "keywords": [
@@ -45,16 +45,16 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you order 'a coffee, please' in French?",
-    "correctAnswer": "Un café, s'il vous plaît.",
+    "correctAnswer": "{{fr-FR|Un café, s'il vous plaît.||UN ca-FE, S'IL VOOS PLEHT.}}",
     "incorrectAnswers": [
-      "Je veux un café !",
-      "Donnez-moi un café.",
-      "Café vite, s'il vous plaît."
+      "{{fr-FR|Je veux un café !||JE VUH UN ca-FE !}}",
+      "{{fr-FR|Donnez-moi un café.||don-NEZ-MWAH UN ca-FE.}}",
+      "{{fr-FR|Café vite, s'il vous plaît.||ca-FE vi-TE, S'IL VOOS PLEHT.}}"
     ],
     "explanation": "'Un [item], s'il vous plaît' — the standard polite café order.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://www.bbc.co.uk/languages/french/talk/index.shtml"
@@ -65,16 +65,16 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you ask for the bill in a French restaurant?",
-    "correctAnswer": "L'addition, s'il vous plaît.",
+    "correctAnswer": "{{fr-FR|L'addition, s'il vous plaît.||l'ad-di-TION, S'IL VOOS PLEHT.}}",
     "incorrectAnswers": [
-      "Le menu, s'il vous plaît.",
-      "Encore une fois, s'il vous plaît.",
-      "C'était délicieux, merci."
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Encore une fois, s'il vous plaît.||en-co-RE u-NE FWAHS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|C'était délicieux, merci.||c'e-TEHT de-li-CIUH, mer-CI.}}"
     ],
     "explanation": "'L'addition, s'il vous plaît' — 'The bill, please' — note 'addition' not 'compte' for a restaurant bill.",
     "keywords": [
       "freq-100",
-      "situation-cafe",
+      "situation-food",
       "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/addition"
@@ -85,11 +85,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Do you speak English?' in French?",
-    "correctAnswer": "Parlez-vous anglais ?",
+    "correctAnswer": "{{fr-FR|Parlez-vous anglais ?||par-LEZ-VOOS an-GLEHS ?}}",
     "incorrectAnswers": [
-      "Comprenez-vous l'anglais ?",
-      "Savez-vous l'anglais ?",
-      "Apprenez-vous l'anglais ?"
+      "{{fr-FR|Comprenez-vous l'anglais ?||com-pre-NEZ-VOOS l'an-GLEHS ?}}",
+      "{{fr-FR|Savez-vous l'anglais ?||sa-VEZ-VOOS l'an-GLEHS ?}}",
+      "{{fr-FR|Apprenez-vous l'anglais ?||ap-pre-NEZ-VOOS l'an-GLEHS ?}}"
     ],
     "explanation": "'Parlez-vous anglais ?' — formal. Informal: 'Tu parles anglais ?'",
     "keywords": [
@@ -104,11 +104,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'Turn left' in French?",
-    "correctAnswer": "Tournez à gauche.",
+    "correctAnswer": "{{fr-FR|Tournez à gauche.||toor-NEZ A goh-SHE.}}",
     "incorrectAnswers": [
-      "Tournez à droite.",
-      "Allez tout droit.",
-      "Arrêtez-vous ici."
+      "{{fr-FR|Tournez à droite.||toor-NEZ A drwah-TE.}}",
+      "{{fr-FR|Allez tout droit.||al-LEZ TOOT DRWAHT.}}",
+      "{{fr-FR|Arrêtez-vous ici.||ar-re-TEZ-VOOS i-CI.}}"
     ],
     "explanation": "'Gauche' = left, 'droite' = right, 'tout droit' = straight ahead — the three navigation words.",
     "keywords": [
@@ -124,11 +124,11 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "phrases",
     "question": "How do you say 'I don't understand' in French?",
-    "correctAnswer": "Je ne comprends pas.",
+    "correctAnswer": "{{fr-FR|Je ne comprends pas.||JE NE com-PRENDS PAS.}}",
     "incorrectAnswers": [
-      "Je ne sais pas.",
-      "Je n'entends pas.",
-      "Je ne parle pas français."
+      "{{fr-FR|Je ne sais pas.||JE NE SEHS PAS.}}",
+      "{{fr-FR|Je n'entends pas.||JE n'en-TENDS PAS.}}",
+      "{{fr-FR|Je ne parle pas français.||JE NE par-LE PAS fran-CEHS.}}"
     ],
     "explanation": "'Je ne comprends pas' — the essential rescue phrase when you're lost in conversation.",
     "keywords": [
@@ -136,5 +136,3865 @@
       "cefr-a1"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/comprendre"
+  },
+  {
+    "itemId": "5b6728db-e3cb-4d95-9d41-fc83836116f9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Good evening.'?",
+    "correctAnswer": "{{fr-FR|Bonsoir.||bons-WAHR.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Comment allez-vous ?||com-MENT al-LEZ-VOOS ?}}",
+      "{{fr-FR|Je vais bien, merci.||JE VEHS BIEN, mer-CI.}}",
+      "{{fr-FR|Très bien, merci.||TRES BIEN, mer-CI.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bonsoir."
+  },
+  {
+    "itemId": "352265ee-2bd3-4a26-9848-92d5888c3560",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'How are you?'?",
+    "correctAnswer": "{{fr-FR|Comment allez-vous ?||com-MENT al-LEZ-VOOS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je vais bien, merci.||JE VEHS BIEN, mer-CI.}}",
+      "{{fr-FR|Très bien, merci.||TRES BIEN, mer-CI.}}",
+      "{{fr-FR|À plus tard.||A PLUS TARD.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Comment%20allez-vous%20%3F"
+  },
+  {
+    "itemId": "c766c67f-4049-47ea-ab66-1cce2cc77606",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{fr-FR|Je vais bien, merci.||JE VEHS BIEN, mer-CI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Très bien, merci.||TRES BIEN, mer-CI.}}",
+      "{{fr-FR|À plus tard.||A PLUS TARD.}}",
+      "{{fr-FR|À demain.||A de-MEHN.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20vais%20bien%2C%20merci."
+  },
+  {
+    "itemId": "83e7974b-a4d7-4712-bdb1-52d03ab121fc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{fr-FR|Très bien, merci.||TRES BIEN, mer-CI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|À plus tard.||A PLUS TARD.}}",
+      "{{fr-FR|À demain.||A de-MEHN.}}",
+      "{{fr-FR|Bonne journée.||bon-NE zhoor-NEE.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Tr%C3%A8s%20bien%2C%20merci."
+  },
+  {
+    "itemId": "6a0997c5-78f4-436c-a540-d6543322b55b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'See you later.'?",
+    "correctAnswer": "{{fr-FR|À plus tard.||A PLUS TARD.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|À demain.||A de-MEHN.}}",
+      "{{fr-FR|Bonne journée.||bon-NE zhoor-NEE.}}",
+      "{{fr-FR|Bienvenue.||bien-ve-NUE.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%80%20plus%20tard."
+  },
+  {
+    "itemId": "7b7d2c64-e594-4d24-991f-1245b5df58b2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{fr-FR|À demain.||A de-MEHN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bonne journée.||bon-NE zhoor-NEE.}}",
+      "{{fr-FR|Bienvenue.||bien-ve-NUE.}}",
+      "{{fr-FR|Enchanté(e).||en-shan-TE(E).}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%80%20demain."
+  },
+  {
+    "itemId": "ed9072c4-0d42-46bc-bd45-adff4382dd10",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Have a good day.'.",
+    "correctAnswer": "{{fr-FR|Bonne journée.||bon-NE zhoor-NEE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bienvenue.||bien-ve-NUE.}}",
+      "{{fr-FR|Enchanté(e).||en-shan-TE(E).}}",
+      "{{fr-FR|Ravi de vous revoir.||ra-VI DE VOOS rev-WAHR.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bonne%20journ%C3%A9e."
+  },
+  {
+    "itemId": "b0f3361b-19d1-4187-8254-fdf22e32d2e2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Welcome.'?",
+    "correctAnswer": "{{fr-FR|Bienvenue.||bien-ve-NUE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Enchanté(e).||en-shan-TE(E).}}",
+      "{{fr-FR|Ravi de vous revoir.||ra-VI DE VOOS rev-WAHR.}}",
+      "{{fr-FR|À bientôt.||A bien-TOT.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bienvenue."
+  },
+  {
+    "itemId": "bff961fd-35f7-48e3-80a6-dc72345bb192",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{fr-FR|Enchanté(e).||en-shan-TE(E).}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Ravi de vous revoir.||ra-VI DE VOOS rev-WAHR.}}",
+      "{{fr-FR|À bientôt.||A bien-TOT.}}",
+      "{{fr-FR|Bonne soirée.||bon-NE swah-REE.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Enchant%C3%A9%28e%29."
+  },
+  {
+    "itemId": "f5734fde-912c-448f-82bb-61d2942a654f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{fr-FR|Ravi de vous revoir.||ra-VI DE VOOS rev-WAHR.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|À bientôt.||A bien-TOT.}}",
+      "{{fr-FR|Bonne soirée.||bon-NE swah-REE.}}",
+      "{{fr-FR|Bonsoir.||bons-WAHR.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Ravi%20de%20vous%20revoir."
+  },
+  {
+    "itemId": "1ad9476b-abd6-4ce1-a742-25ea7fa2634d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'See you soon.'.",
+    "correctAnswer": "{{fr-FR|À bientôt.||A bien-TOT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bonne soirée.||bon-NE swah-REE.}}",
+      "{{fr-FR|Bonsoir.||bons-WAHR.}}",
+      "{{fr-FR|Comment allez-vous ?||com-MENT al-LEZ-VOOS ?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%80%20bient%C3%B4t."
+  },
+  {
+    "itemId": "3ee83a3d-1df0-4941-80d2-6de2754d59a9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{fr-FR|Bonne soirée.||bon-NE swah-REE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bonsoir.||bons-WAHR.}}",
+      "{{fr-FR|Comment allez-vous ?||com-MENT al-LEZ-VOOS ?}}",
+      "{{fr-FR|Je vais bien, merci.||JE VEHS BIEN, mer-CI.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bonne%20soir%C3%A9e."
+  },
+  {
+    "itemId": "98e4c2cb-a490-4b8b-876b-fbde1b39ab6d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'What is your name?'?",
+    "correctAnswer": "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je viens des États-Unis.||JE VIENS DES e-TATS-u-NIS.}}",
+      "{{fr-FR|J'habite à Chicago.||j'ha-bi-TE A chi-ca-GO.}}",
+      "{{fr-FR|J'ai vingt ans.||J'EH VINGT ANS.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Comment%20vous%20appelez-vous%20%3F"
+  },
+  {
+    "itemId": "aed11c37-6ad3-4b6e-b08a-7ee1b5c2ee4b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{fr-FR|Je viens des États-Unis.||JE VIENS DES e-TATS-u-NIS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'habite à Chicago.||j'ha-bi-TE A chi-ca-GO.}}",
+      "{{fr-FR|J'ai vingt ans.||J'EH VINGT ANS.}}",
+      "{{fr-FR|Voici mon ami.||vwah-CI MON a-MI.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20viens%20des%20%C3%89tats-Unis."
+  },
+  {
+    "itemId": "bea3ceb5-7dec-463a-a4a0-2d430201b065",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{fr-FR|J'habite à Chicago.||j'ha-bi-TE A chi-ca-GO.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai vingt ans.||J'EH VINGT ANS.}}",
+      "{{fr-FR|Voici mon ami.||vwah-CI MON a-MI.}}",
+      "{{fr-FR|Voici ma sœur.||vwah-CI MA SOUHR.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27habite%20%C3%A0%20Chicago."
+  },
+  {
+    "itemId": "1e5e24d8-b684-40b1-85d9-f5747953d4c3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{fr-FR|J'ai vingt ans.||J'EH VINGT ANS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Voici mon ami.||vwah-CI MON a-MI.}}",
+      "{{fr-FR|Voici ma sœur.||vwah-CI MA SOUHR.}}",
+      "{{fr-FR|Je suis marié(e).||JE SUIS ma-RIE(E).}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20vingt%20ans."
+  },
+  {
+    "itemId": "7cbc9329-b726-4adc-8a93-4013e416ddee",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{fr-FR|Voici mon ami.||vwah-CI MON a-MI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Voici ma sœur.||vwah-CI MA SOUHR.}}",
+      "{{fr-FR|Je suis marié(e).||JE SUIS ma-RIE(E).}}",
+      "{{fr-FR|Je suis étudiant/étudiante.||JE SUIS e-tu-DIANT/e-tu-dian-TE.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Voici%20mon%20ami."
+  },
+  {
+    "itemId": "a00986f5-b863-4b27-8553-fd40268464e3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'This is my sister.'?",
+    "correctAnswer": "{{fr-FR|Voici ma sœur.||vwah-CI MA SOUHR.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis marié(e).||JE SUIS ma-RIE(E).}}",
+      "{{fr-FR|Je suis étudiant/étudiante.||JE SUIS e-tu-DIANT/e-tu-dian-TE.}}",
+      "{{fr-FR|Je suis ici en vacances.||JE SUIS i-CI EN va-can-CES.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Voici%20ma%20s%C5%93ur."
+  },
+  {
+    "itemId": "8c963af7-d2a3-451f-89e3-276555426252",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I am married.'.",
+    "correctAnswer": "{{fr-FR|Je suis marié(e).||JE SUIS ma-RIE(E).}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis étudiant/étudiante.||JE SUIS e-tu-DIANT/e-tu-dian-TE.}}",
+      "{{fr-FR|Je suis ici en vacances.||JE SUIS i-CI EN va-can-CES.}}",
+      "{{fr-FR|Mon nom de famille est Garcia.||MON NOM DE fa-mil-LE EST gar-CIA.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20mari%C3%A9%28e%29."
+  },
+  {
+    "itemId": "7baeefc7-bded-42b7-ab6e-ca219380e81f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am a student.'?",
+    "correctAnswer": "{{fr-FR|Je suis étudiant/étudiante.||JE SUIS e-tu-DIANT/e-tu-dian-TE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis ici en vacances.||JE SUIS i-CI EN va-can-CES.}}",
+      "{{fr-FR|Mon nom de famille est Garcia.||MON NOM DE fa-mil-LE EST gar-CIA.}}",
+      "{{fr-FR|Mon numéro de téléphone est...||MON nu-me-RO DE te-le-pho-NE EST...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20%C3%A9tudiant/%C3%A9tudiante."
+  },
+  {
+    "itemId": "a794a3ee-929d-4556-8509-ed8fc345177f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{fr-FR|Je suis ici en vacances.||JE SUIS i-CI EN va-can-CES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Mon nom de famille est Garcia.||MON NOM DE fa-mil-LE EST gar-CIA.}}",
+      "{{fr-FR|Mon numéro de téléphone est...||MON nu-me-RO DE te-le-pho-NE EST...}}",
+      "{{fr-FR|Mon adresse est...||MON a-dres-SE EST...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20ici%20en%20vacances."
+  },
+  {
+    "itemId": "3dd301d4-2fc5-4b26-8abf-d2d0a762962c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{fr-FR|Mon nom de famille est Garcia.||MON NOM DE fa-mil-LE EST gar-CIA.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Mon numéro de téléphone est...||MON nu-me-RO DE te-le-pho-NE EST...}}",
+      "{{fr-FR|Mon adresse est...||MON a-dres-SE EST...}}",
+      "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Mon%20nom%20de%20famille%20est%20Garcia."
+  },
+  {
+    "itemId": "9bc6a384-e807-4492-a7f8-c4a138d64f62",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'My phone number is...'.",
+    "correctAnswer": "{{fr-FR|Mon numéro de téléphone est...||MON nu-me-RO DE te-le-pho-NE EST...}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Mon adresse est...||MON a-dres-SE EST...}}",
+      "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}",
+      "{{fr-FR|Je viens des États-Unis.||JE VIENS DES e-TATS-u-NIS.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Mon%20num%C3%A9ro%20de%20t%C3%A9l%C3%A9phone%20est..."
+  },
+  {
+    "itemId": "ee48da03-f244-47fc-aaf6-912577dca47a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'My address is...'?",
+    "correctAnswer": "{{fr-FR|Mon adresse est...||MON a-dres-SE EST...}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}",
+      "{{fr-FR|Je viens des États-Unis.||JE VIENS DES e-TATS-u-NIS.}}",
+      "{{fr-FR|J'habite à Chicago.||j'ha-bi-TE A chi-ca-GO.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/Mon%20adresse%20est..."
+  },
+  {
+    "itemId": "9c48e73b-3053-421f-9e48-a5d38bbeff7d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I need water.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'eau.||J'EH bes-WAHN D'OH.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un plan.||J'EH bes-WAHN D'UN PLAN.}}",
+      "{{fr-FR|J'ai besoin d'un taxi.||J'EH bes-WAHN D'UN ta-XI.}}",
+      "{{fr-FR|J'ai besoin d'une chambre.||J'EH bes-WAHN d'u-NE sham-BRE.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27eau."
+  },
+  {
+    "itemId": "0a0abe58-443c-4765-89ea-20dc62db10e3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I need a map.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un plan.||J'EH bes-WAHN D'UN PLAN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un taxi.||J'EH bes-WAHN D'UN ta-XI.}}",
+      "{{fr-FR|J'ai besoin d'une chambre.||J'EH bes-WAHN d'u-NE sham-BRE.}}",
+      "{{fr-FR|Avez-vous le Wi-Fi ?||a-VEZ-VOOS LE WI-FI ?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20plan."
+  },
+  {
+    "itemId": "cf0dfd83-49d1-499d-b3b1-e2185a8194c1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un taxi.||J'EH bes-WAHN D'UN ta-XI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'une chambre.||J'EH bes-WAHN d'u-NE sham-BRE.}}",
+      "{{fr-FR|Avez-vous le Wi-Fi ?||a-VEZ-VOOS LE WI-FI ?}}",
+      "{{fr-FR|Avez-vous du pain ?||a-VEZ-VOOS DU PEHN ?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20taxi."
+  },
+  {
+    "itemId": "2367bd27-71b2-4697-8051-c0768518bed9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I need a room.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'une chambre.||J'EH bes-WAHN d'u-NE sham-BRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous le Wi-Fi ?||a-VEZ-VOOS LE WI-FI ?}}",
+      "{{fr-FR|Avez-vous du pain ?||a-VEZ-VOOS DU PEHN ?}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27une%20chambre."
+  },
+  {
+    "itemId": "7426d14d-a9b2-4285-a3dc-7bf446081432",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous le Wi-Fi ?||a-VEZ-VOOS LE WI-FI ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous du pain ?||a-VEZ-VOOS DU PEHN ?}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||PUIS-ZHE av-WAHR u-NE boo-tehl-LE D'OH ?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20le%20Wi-Fi%20%3F"
+  },
+  {
+    "itemId": "fec10b66-2c20-4e8e-aff4-9db3103dbe45",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous du pain ?||a-VEZ-VOOS DU PEHN ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||PUIS-ZHE av-WAHR u-NE boo-tehl-LE D'OH ?}}",
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||don-NEZ-MWAH UN SAC, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20du%20pain%20%3F"
+  },
+  {
+    "itemId": "521ccecc-ccbe-4b45-a0c0-af2d81718faa",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Puis-je avoir une bouteille d'eau ?||PUIS-ZHE av-WAHR u-NE boo-tehl-LE D'OH ?}}",
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||don-NEZ-MWAH UN SAC, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|J'ai besoin de plus de temps.||J'EH bes-WAHN DE PLUS DE TEMPS.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20menu%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "a245d2cf-b6fb-4423-88fc-d10932748fdb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{fr-FR|Puis-je avoir une bouteille d'eau ?||PUIS-ZHE av-WAHR u-NE boo-tehl-LE D'OH ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||don-NEZ-MWAH UN SAC, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|J'ai besoin de plus de temps.||J'EH bes-WAHN DE PLUS DE TEMPS.}}",
+      "{{fr-FR|J'ai besoin du reçu.||J'EH bes-WAHN DU re-CU.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Puis-je%20avoir%20une%20bouteille%20d%27eau%20%3F"
+  },
+  {
+    "itemId": "2da1a3d5-fb9b-44a9-b51b-31363a4bb279",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{fr-FR|Donnez-moi un sac, s'il vous plaît.||don-NEZ-MWAH UN SAC, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin de plus de temps.||J'EH bes-WAHN DE PLUS DE TEMPS.}}",
+      "{{fr-FR|J'ai besoin du reçu.||J'EH bes-WAHN DU re-CU.}}",
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||a-VEZ-VOOS DE LA noor-ri-tu-RE ve-ge-ta-rien-NE ?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Donnez-moi%20un%20sac%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "bec81470-dcea-4505-987d-c3730560cb0b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I need more time.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin de plus de temps.||J'EH bes-WAHN DE PLUS DE TEMPS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin du reçu.||J'EH bes-WAHN DU re-CU.}}",
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||a-VEZ-VOOS DE LA noor-ri-tu-RE ve-ge-ta-rien-NE ?}}",
+      "{{fr-FR|J'ai besoin d'eau.||J'EH bes-WAHN D'OH.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20de%20plus%20de%20temps."
+  },
+  {
+    "itemId": "99de300d-ca3f-4e13-9fe3-38a1acef5141",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{fr-FR|J'ai besoin du reçu.||J'EH bes-WAHN DU re-CU.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous de la nourriture végétarienne ?||a-VEZ-VOOS DE LA noor-ri-tu-RE ve-ge-ta-rien-NE ?}}",
+      "{{fr-FR|J'ai besoin d'eau.||J'EH bes-WAHN D'OH.}}",
+      "{{fr-FR|J'ai besoin d'un plan.||J'EH bes-WAHN D'UN PLAN.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20du%20re%C3%A7u."
+  },
+  {
+    "itemId": "e171c802-e01a-4e5d-81c9-3c2a10fe4f5e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous de la nourriture végétarienne ?||a-VEZ-VOOS DE LA noor-ri-tu-RE ve-ge-ta-rien-NE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'eau.||J'EH bes-WAHN D'OH.}}",
+      "{{fr-FR|J'ai besoin d'un plan.||J'EH bes-WAHN D'UN PLAN.}}",
+      "{{fr-FR|J'ai besoin d'un taxi.||J'EH bes-WAHN D'UN ta-XI.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20de%20la%20nourriture%20v%C3%A9g%C3%A9tarienne%20%3F"
+  },
+  {
+    "itemId": "26756aad-25be-467d-8440-3436d7e0d2b5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{fr-FR|Où est la banque ?||OU EST LA ban-QUE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est le musée ?||OU EST LE mu-SEE ?}}",
+      "{{fr-FR|Où est le centre-ville ?||OU EST LE cen-TRE-vil-LE ?}}",
+      "{{fr-FR|Où est l'arrêt de bus ?||OU EST l'ar-RET DE BUS ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20la%20banque%20%3F"
+  },
+  {
+    "itemId": "b353ce49-6ac0-44f3-8a02-a8294a77278e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{fr-FR|Où est le musée ?||OU EST LE mu-SEE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est le centre-ville ?||OU EST LE cen-TRE-vil-LE ?}}",
+      "{{fr-FR|Où est l'arrêt de bus ?||OU EST l'ar-RET DE BUS ?}}",
+      "{{fr-FR|Allez tout droit.||al-LEZ TOOT DRWAHT.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20le%20mus%C3%A9e%20%3F"
+  },
+  {
+    "itemId": "2f04f039-86cd-4064-856a-999876d6f756",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{fr-FR|Où est le centre-ville ?||OU EST LE cen-TRE-vil-LE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est l'arrêt de bus ?||OU EST l'ar-RET DE BUS ?}}",
+      "{{fr-FR|Allez tout droit.||al-LEZ TOOT DRWAHT.}}",
+      "{{fr-FR|Prenez la première rue.||pre-NEZ LA pre-mie-RE RUE.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20le%20centre-ville%20%3F"
+  },
+  {
+    "itemId": "38860247-5ecc-4c41-b613-fbb3f9870f9e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "{{fr-FR|Où est l'arrêt de bus ?||OU EST l'ar-RET DE BUS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Allez tout droit.||al-LEZ TOOT DRWAHT.}}",
+      "{{fr-FR|Prenez la première rue.||pre-NEZ LA pre-mie-RE RUE.}}",
+      "{{fr-FR|Prenez la deuxième rue.||pre-NEZ LA du-hie-ME RUE.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20l%27arr%C3%AAt%20de%20bus%20%3F"
+  },
+  {
+    "itemId": "1cf21527-dad0-4bc8-bb29-9b5ce017182d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Go straight.'?",
+    "correctAnswer": "{{fr-FR|Allez tout droit.||al-LEZ TOOT DRWAHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Prenez la première rue.||pre-NEZ LA pre-mie-RE RUE.}}",
+      "{{fr-FR|Prenez la deuxième rue.||pre-NEZ LA du-hie-ME RUE.}}",
+      "{{fr-FR|C'est loin ?||C'EST LWAHN ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Allez%20tout%20droit."
+  },
+  {
+    "itemId": "a1988b9b-1177-4839-a1b1-9d60e82086f8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Take the first street.'?",
+    "correctAnswer": "{{fr-FR|Prenez la première rue.||pre-NEZ LA pre-mie-RE RUE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Prenez la deuxième rue.||pre-NEZ LA du-hie-ME RUE.}}",
+      "{{fr-FR|C'est loin ?||C'EST LWAHN ?}}",
+      "{{fr-FR|C'est près ?||C'EST PRES ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Prenez%20la%20premi%C3%A8re%20rue."
+  },
+  {
+    "itemId": "39ee1e62-07c5-402b-882d-033fb1db95f1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Take the second street.'.",
+    "correctAnswer": "{{fr-FR|Prenez la deuxième rue.||pre-NEZ LA du-hie-ME RUE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est loin ?||C'EST LWAHN ?}}",
+      "{{fr-FR|C'est près ?||C'EST PRES ?}}",
+      "{{fr-FR|Je suis perdu(e).||JE SUIS per-DU(E).}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Prenez%20la%20deuxi%C3%A8me%20rue."
+  },
+  {
+    "itemId": "f6c5bce1-470e-48e3-bb24-84e62ab1b93b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Is it far?'?",
+    "correctAnswer": "{{fr-FR|C'est loin ?||C'EST LWAHN ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est près ?||C'EST PRES ?}}",
+      "{{fr-FR|Je suis perdu(e).||JE SUIS per-DU(E).}}",
+      "{{fr-FR|Nous cherchons l'hôtel.||NOOS sher-SHONS l'ho-TEL.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20loin%20%3F"
+  },
+  {
+    "itemId": "46e0f9e5-ac98-4224-8a76-e63e065d3493",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Is it near?'?",
+    "correctAnswer": "{{fr-FR|C'est près ?||C'EST PRES ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis perdu(e).||JE SUIS per-DU(E).}}",
+      "{{fr-FR|Nous cherchons l'hôtel.||NOOS sher-SHONS l'ho-TEL.}}",
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||mon-TREZ-MWAH SUR LA car-TE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20pr%C3%A8s%20%3F"
+  },
+  {
+    "itemId": "d9c31354-43d2-4951-bc90-7687e6c4c427",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I am lost.'?",
+    "correctAnswer": "{{fr-FR|Je suis perdu(e).||JE SUIS per-DU(E).}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Nous cherchons l'hôtel.||NOOS sher-SHONS l'ho-TEL.}}",
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||mon-TREZ-MWAH SUR LA car-TE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Où est la banque ?||OU EST LA ban-QUE ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20perdu%28e%29."
+  },
+  {
+    "itemId": "d9377e4d-641f-41d9-8f30-953d66fa7ab2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{fr-FR|Nous cherchons l'hôtel.||NOOS sher-SHONS l'ho-TEL.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||mon-TREZ-MWAH SUR LA car-TE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Où est la banque ?||OU EST LA ban-QUE ?}}",
+      "{{fr-FR|Où est le musée ?||OU EST LE mu-SEE ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Nous%20cherchons%20l%27h%C3%B4tel."
+  },
+  {
+    "itemId": "eb538e15-7e04-49f5-a45b-ff0747c3d4b9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{fr-FR|Montrez-moi sur la carte, s'il vous plaît.||mon-TREZ-MWAH SUR LA car-TE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est la banque ?||OU EST LA ban-QUE ?}}",
+      "{{fr-FR|Où est le musée ?||OU EST LE mu-SEE ?}}",
+      "{{fr-FR|Où est le centre-ville ?||OU EST LE cen-TRE-vil-LE ?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/fren/Montrez-moi%20sur%20la%20carte%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "ef04c510-0a65-4763-9697-4c93e4f9918c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous répéter cela ?||poo-VEZ-VOOS re-pe-TER ce-LA ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||poo-VEZ-VOOS par-LER PLUS len-te-MENT ?}}",
+      "{{fr-FR|Comment épelle-t-on votre nom ?||com-MENT e-pel-LE-T-ON vo-TRE NOM ?}}",
+      "{{fr-FR|Le total est de dix euros.||LE to-TAL EST DE DIX uh-ROS.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Pouvez-vous%20r%C3%A9p%C3%A9ter%20cela%20%3F"
+  },
+  {
+    "itemId": "4d3ad724-7426-42f4-99f3-d486dfa6d0db",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous parler plus lentement ?||poo-VEZ-VOOS par-LER PLUS len-te-MENT ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Comment épelle-t-on votre nom ?||com-MENT e-pel-LE-T-ON vo-TRE NOM ?}}",
+      "{{fr-FR|Le total est de dix euros.||LE to-TAL EST DE DIX uh-ROS.}}",
+      "{{fr-FR|Cela coûte vingt euros.||ce-LA coo-TE VINGT uh-ROS.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Pouvez-vous%20parler%20plus%20lentement%20%3F"
+  },
+  {
+    "itemId": "d4779bb9-c0a3-4eb3-9092-e08ef0d202fd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{fr-FR|Comment épelle-t-on votre nom ?||com-MENT e-pel-LE-T-ON vo-TRE NOM ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le total est de dix euros.||LE to-TAL EST DE DIX uh-ROS.}}",
+      "{{fr-FR|Cela coûte vingt euros.||ce-LA coo-TE VINGT uh-ROS.}}",
+      "{{fr-FR|Chambre numéro douze.||cham-BRE nu-me-RO doo-ZE.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Comment%20%C3%A9pelle-t-on%20votre%20nom%20%3F"
+  },
+  {
+    "itemId": "208ece6e-da19-4da6-8814-aa2c5f88855f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{fr-FR|Le total est de dix euros.||LE to-TAL EST DE DIX uh-ROS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Cela coûte vingt euros.||ce-LA coo-TE VINGT uh-ROS.}}",
+      "{{fr-FR|Chambre numéro douze.||cham-BRE nu-me-RO doo-ZE.}}",
+      "{{fr-FR|Quai numéro quatre.||QUEH nu-me-RO qua-TRE.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20total%20est%20de%20dix%20euros."
+  },
+  {
+    "itemId": "b035159e-9856-4c95-bfce-c7a7a04af197",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{fr-FR|Cela coûte vingt euros.||ce-LA coo-TE VINGT uh-ROS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Chambre numéro douze.||cham-BRE nu-me-RO doo-ZE.}}",
+      "{{fr-FR|Quai numéro quatre.||QUEH nu-me-RO qua-TRE.}}",
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||u-NE ta-BLE POOR TRWAHS, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Cela%20co%C3%BBte%20vingt%20euros."
+  },
+  {
+    "itemId": "ee682e24-5cd5-4f79-abe2-429e18180ce9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{fr-FR|Chambre numéro douze.||cham-BRE nu-me-RO doo-ZE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quai numéro quatre.||QUEH nu-me-RO qua-TRE.}}",
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||u-NE ta-BLE POOR TRWAHS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Deux billets, s'il vous plaît.||DUH bil-LETS, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Chambre%20num%C3%A9ro%20douze."
+  },
+  {
+    "itemId": "798e6fd4-8234-4058-a389-410ea64d1b27",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Platform number four.'.",
+    "correctAnswer": "{{fr-FR|Quai numéro quatre.||QUEH nu-me-RO qua-TRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Une table pour trois, s'il vous plaît.||u-NE ta-BLE POOR TRWAHS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Deux billets, s'il vous plaît.||DUH bil-LETS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Pouvez-vous l'écrire ?||poo-VEZ-VOOS l'e-cri-RE ?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Quai%20num%C3%A9ro%20quatre."
+  },
+  {
+    "itemId": "c61accd6-eca1-4344-893d-2a9d6ac6a4af",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{fr-FR|Une table pour trois, s'il vous plaît.||u-NE ta-BLE POOR TRWAHS, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Deux billets, s'il vous plaît.||DUH bil-LETS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Pouvez-vous l'écrire ?||poo-VEZ-VOOS l'e-cri-RE ?}}",
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||quel-LE EST LA da-TE d'ohz-hoord'-HUI ?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Une%20table%20pour%20trois%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "5d1f1826-b32a-4cda-9ee2-eba21e83cb7c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{fr-FR|Deux billets, s'il vous plaît.||DUH bil-LETS, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Pouvez-vous l'écrire ?||poo-VEZ-VOOS l'e-cri-RE ?}}",
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||quel-LE EST LA da-TE d'ohz-hoord'-HUI ?}}",
+      "{{fr-FR|Un moment, s'il vous plaît.||UN mo-MENT, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Deux%20billets%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "141897f6-2b5c-4193-af5f-7885dd43370c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous l'écrire ?||poo-VEZ-VOOS l'e-cri-RE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quelle est la date d'aujourd'hui ?||quel-LE EST LA da-TE d'ohz-hoord'-HUI ?}}",
+      "{{fr-FR|Un moment, s'il vous plaît.||UN mo-MENT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Pouvez-vous répéter cela ?||poo-VEZ-VOOS re-pe-TER ce-LA ?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Pouvez-vous%20l%27%C3%A9crire%20%3F"
+  },
+  {
+    "itemId": "75adb0f5-f861-4578-a1a0-7dd6e994f6e2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'What is today's date?'.",
+    "correctAnswer": "{{fr-FR|Quelle est la date d'aujourd'hui ?||quel-LE EST LA da-TE d'ohz-hoord'-HUI ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Un moment, s'il vous plaît.||UN mo-MENT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Pouvez-vous répéter cela ?||poo-VEZ-VOOS re-pe-TER ce-LA ?}}",
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||poo-VEZ-VOOS par-LER PLUS len-te-MENT ?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Quelle%20est%20la%20date%20d%27aujourd%27hui%20%3F"
+  },
+  {
+    "itemId": "4bb80101-4251-4e59-928b-20c9f6315e74",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'One moment, please.'?",
+    "correctAnswer": "{{fr-FR|Un moment, s'il vous plaît.||UN mo-MENT, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Pouvez-vous répéter cela ?||poo-VEZ-VOOS re-pe-TER ce-LA ?}}",
+      "{{fr-FR|Pouvez-vous parler plus lentement ?||poo-VEZ-VOOS par-LER PLUS len-te-MENT ?}}",
+      "{{fr-FR|Comment épelle-t-on votre nom ?||com-MENT e-pel-LE-T-ON vo-TRE NOM ?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/fren/Un%20moment%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "5354f9cd-4eaa-4d09-bc05-1659fbd1d3d2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{fr-FR|J'ai faim.||J'EH FEHM.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai soif.||J'EH SWAHF.}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Je suis végétarien/végétarienne.||JE SUIS ve-ge-ta-RIEN/ve-ge-ta-rien-NE.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20faim."
+  },
+  {
+    "itemId": "8b03e39a-5f5e-4907-ac0c-2df7ed5061e8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{fr-FR|J'ai soif.||J'EH SWAHF.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Je suis végétarien/végétarienne.||JE SUIS ve-ge-ta-RIEN/ve-ge-ta-rien-NE.}}",
+      "{{fr-FR|Sans viande, s'il vous plaît.||SANS vian-DE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20soif."
+  },
+  {
+    "itemId": "5df18822-1e1b-40c1-94b4-f85f8fe6225e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'The menu, please.'.",
+    "correctAnswer": "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis végétarien/végétarienne.||JE SUIS ve-ge-ta-RIEN/ve-ge-ta-rien-NE.}}",
+      "{{fr-FR|Sans viande, s'il vous plaît.||SANS vian-DE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Sans sucre, s'il vous plaît.||SANS su-CRE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20menu%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "1b6d106f-aa3a-48ae-b120-f425af14187f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{fr-FR|Je suis végétarien/végétarienne.||JE SUIS ve-ge-ta-RIEN/ve-ge-ta-rien-NE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Sans viande, s'il vous plaît.||SANS vian-DE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Sans sucre, s'il vous plaît.||SANS su-CRE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Avec du lait, s'il vous plaît.||a-VEC DU LEHT, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20v%C3%A9g%C3%A9tarien/v%C3%A9g%C3%A9tarienne."
+  },
+  {
+    "itemId": "dacaa98c-6e12-4bd6-8156-b9fea6d0ec5d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{fr-FR|Sans viande, s'il vous plaît.||SANS vian-DE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Sans sucre, s'il vous plaît.||SANS su-CRE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Avec du lait, s'il vous plaît.||a-VEC DU LEHT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|C'était délicieux.||c'e-TEHT de-li-CIUH.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Sans%20viande%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "12a7968f-7aeb-4da8-98f0-ab68d1065b30",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{fr-FR|Sans sucre, s'il vous plaît.||SANS su-CRE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avec du lait, s'il vous plaît.||a-VEC DU LEHT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|C'était délicieux.||c'e-TEHT de-li-CIUH.}}",
+      "{{fr-FR|C'est très bon.||C'EST TRES BON.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Sans%20sucre%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "38a97c3b-783a-444b-ada1-a0d9629da6bf",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'With milk, please.'.",
+    "correctAnswer": "{{fr-FR|Avec du lait, s'il vous plaît.||a-VEC DU LEHT, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'était délicieux.||c'e-TEHT de-li-CIUH.}}",
+      "{{fr-FR|C'est très bon.||C'EST TRES BON.}}",
+      "{{fr-FR|La soupe est froide.||LA soo-PE EST frwah-DE.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Avec%20du%20lait%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "9441046a-6b0f-42cc-a614-d3887d1c6c49",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'It was delicious.'?",
+    "correctAnswer": "{{fr-FR|C'était délicieux.||c'e-TEHT de-li-CIUH.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est très bon.||C'EST TRES BON.}}",
+      "{{fr-FR|La soupe est froide.||LA soo-PE EST frwah-DE.}}",
+      "{{fr-FR|Je suis allergique aux noix.||JE SUIS al-ler-gi-QUE OHX NWAHX.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27%C3%A9tait%20d%C3%A9licieux."
+  },
+  {
+    "itemId": "e0aa9060-b6ea-425b-88a5-7d57257f3a05",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'This is very good.'?",
+    "correctAnswer": "{{fr-FR|C'est très bon.||C'EST TRES BON.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La soupe est froide.||LA soo-PE EST frwah-DE.}}",
+      "{{fr-FR|Je suis allergique aux noix.||JE SUIS al-ler-gi-QUE OHX NWAHX.}}",
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||u-NE boo-tehl-LE D'OH, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20tr%C3%A8s%20bon."
+  },
+  {
+    "itemId": "84853fc4-2331-48fa-b59f-2b9ffe7f7f9a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{fr-FR|La soupe est froide.||LA soo-PE EST frwah-DE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis allergique aux noix.||JE SUIS al-ler-gi-QUE OHX NWAHX.}}",
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||u-NE boo-tehl-LE D'OH, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|J'ai faim.||J'EH FEHM.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20soupe%20est%20froide."
+  },
+  {
+    "itemId": "7a4fce40-48b0-4a09-8a2e-d5ce32997656",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{fr-FR|Je suis allergique aux noix.||JE SUIS al-ler-gi-QUE OHX NWAHX.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||u-NE boo-tehl-LE D'OH, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|J'ai faim.||J'EH FEHM.}}",
+      "{{fr-FR|J'ai soif.||J'EH SWAHF.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20allergique%20aux%20noix."
+  },
+  {
+    "itemId": "d9d417cb-b1f6-405f-a5bc-163da2ad0ce6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{fr-FR|Une bouteille d'eau, s'il vous plaît.||u-NE boo-tehl-LE D'OH, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai faim.||J'EH FEHM.}}",
+      "{{fr-FR|J'ai soif.||J'EH SWAHF.}}",
+      "{{fr-FR|Le menu, s'il vous plaît.||LE me-NU, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/fren/Une%20bouteille%20d%27eau%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "42219f5c-28b0-4fda-b92b-e007756550f7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous ceci dans une autre taille ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE tehl-LE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE coo-LUHR ?}}",
+      "{{fr-FR|Puis-je l'essayer ?||PUIS-ZHE l'es-SAYER ?}}",
+      "{{fr-FR|C'est trop cher.||C'EST TROP SHER.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20ceci%20dans%20une%20autre%20taille%20%3F"
+  },
+  {
+    "itemId": "81ce896d-6e5b-4cd3-88c8-1550dd3e9453",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous ceci dans une autre couleur ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE coo-LUHR ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Puis-je l'essayer ?||PUIS-ZHE l'es-SAYER ?}}",
+      "{{fr-FR|C'est trop cher.||C'EST TROP SHER.}}",
+      "{{fr-FR|C'est bon marché.||C'EST BON mar-SHE.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20ceci%20dans%20une%20autre%20couleur%20%3F"
+  },
+  {
+    "itemId": "b3efee36-7ab2-4738-9b47-faa6a6b8e494",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{fr-FR|Puis-je l'essayer ?||PUIS-ZHE l'es-SAYER ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est trop cher.||C'EST TROP SHER.}}",
+      "{{fr-FR|C'est bon marché.||C'EST BON mar-SHE.}}",
+      "{{fr-FR|Je le prends.||JE LE PRENDS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Puis-je%20l%27essayer%20%3F"
+  },
+  {
+    "itemId": "f7006fd2-96f2-4a18-8389-aa94f25be1f6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{fr-FR|C'est trop cher.||C'EST TROP SHER.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est bon marché.||C'EST BON mar-SHE.}}",
+      "{{fr-FR|Je le prends.||JE LE PRENDS.}}",
+      "{{fr-FR|Où est la caisse ?||OU EST LA cehs-SE ?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20trop%20cher."
+  },
+  {
+    "itemId": "c3dfb5dc-e9d3-4b0c-aa15-679d61e47091",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{fr-FR|C'est bon marché.||C'EST BON mar-SHE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je le prends.||JE LE PRENDS.}}",
+      "{{fr-FR|Où est la caisse ?||OU EST LA cehs-SE ?}}",
+      "{{fr-FR|Je regarde seulement.||JE re-gar-DE suh-le-MENT.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20bon%20march%C3%A9."
+  },
+  {
+    "itemId": "40917a25-e398-424f-a5a0-3451dc585f66",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I will take it.'?",
+    "correctAnswer": "{{fr-FR|Je le prends.||JE LE PRENDS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est la caisse ?||OU EST LA cehs-SE ?}}",
+      "{{fr-FR|Je regarde seulement.||JE re-gar-DE suh-le-MENT.}}",
+      "{{fr-FR|Acceptez-vous les cartes ?||ac-cep-TEZ-VOOS LES car-TES ?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20le%20prends."
+  },
+  {
+    "itemId": "06d88dec-de04-4c02-96e2-606050275577",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{fr-FR|Où est la caisse ?||OU EST LA cehs-SE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je regarde seulement.||JE re-gar-DE suh-le-MENT.}}",
+      "{{fr-FR|Acceptez-vous les cartes ?||ac-cep-TEZ-VOOS LES car-TES ?}}",
+      "{{fr-FR|J'ai besoin d'un reçu.||J'EH bes-WAHN D'UN re-CU.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20la%20caisse%20%3F"
+  },
+  {
+    "itemId": "7b18f8c7-b0e6-40f9-9307-77f2add0479e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am just looking.'?",
+    "correctAnswer": "{{fr-FR|Je regarde seulement.||JE re-gar-DE suh-le-MENT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Acceptez-vous les cartes ?||ac-cep-TEZ-VOOS LES car-TES ?}}",
+      "{{fr-FR|J'ai besoin d'un reçu.||J'EH bes-WAHN D'UN re-CU.}}",
+      "{{fr-FR|Cette taille est trop petite.||cet-TE tehl-LE EST TROP pe-ti-TE.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20regarde%20seulement."
+  },
+  {
+    "itemId": "0a688797-f689-4feb-b5dc-e5916f8b46c9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{fr-FR|Acceptez-vous les cartes ?||ac-cep-TEZ-VOOS LES car-TES ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un reçu.||J'EH bes-WAHN D'UN re-CU.}}",
+      "{{fr-FR|Cette taille est trop petite.||cet-TE tehl-LE EST TROP pe-ti-TE.}}",
+      "{{fr-FR|Cette taille est trop grande.||cet-TE tehl-LE EST TROP gran-DE.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Acceptez-vous%20les%20cartes%20%3F"
+  },
+  {
+    "itemId": "81508c72-25cd-49da-b327-69d7bc138abd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un reçu.||J'EH bes-WAHN D'UN re-CU.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Cette taille est trop petite.||cet-TE tehl-LE EST TROP pe-ti-TE.}}",
+      "{{fr-FR|Cette taille est trop grande.||cet-TE tehl-LE EST TROP gran-DE.}}",
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE tehl-LE ?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20re%C3%A7u."
+  },
+  {
+    "itemId": "c60972e2-f563-4b1c-958c-521c73a8b462",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'This size is too small.'.",
+    "correctAnswer": "{{fr-FR|Cette taille est trop petite.||cet-TE tehl-LE EST TROP pe-ti-TE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Cette taille est trop grande.||cet-TE tehl-LE EST TROP gran-DE.}}",
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE tehl-LE ?}}",
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE coo-LUHR ?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Cette%20taille%20est%20trop%20petite."
+  },
+  {
+    "itemId": "d73d4d85-372d-46e0-9586-c186cc4e5612",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'This size is too big.'?",
+    "correctAnswer": "{{fr-FR|Cette taille est trop grande.||cet-TE tehl-LE EST TROP gran-DE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous ceci dans une autre taille ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE tehl-LE ?}}",
+      "{{fr-FR|Avez-vous ceci dans une autre couleur ?||a-VEZ-VOOS ce-CI DANS u-NE oh-TRE coo-LUHR ?}}",
+      "{{fr-FR|Puis-je l'essayer ?||PUIS-ZHE l'es-SAYER ?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/fren/Cette%20taille%20est%20trop%20grande."
+  },
+  {
+    "itemId": "10e45664-c4af-49f8-a694-ce9780849e83",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||J'EH bes-WAHN D'UN bil-LET POOR l'ae-ro-PORT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||UN bil-LET POOR LE cen-TRE-vil-LE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||UN al-LER-re-TOOR, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|C'est quel quai ?||C'EST QUEL QUEH ?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20billet%20pour%20l%27a%C3%A9roport."
+  },
+  {
+    "itemId": "703a7857-d8c9-4bf7-b758-f7279d015065",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||UN bil-LET POOR LE cen-TRE-vil-LE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||UN al-LER-re-TOOR, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|C'est quel quai ?||C'EST QUEL QUEH ?}}",
+      "{{fr-FR|Cette place est libre ?||cet-TE pla-CE EST li-BRE ?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Un%20billet%20pour%20le%20centre-ville%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "9c80709f-b9c5-4a62-9b25-4157cfdb6c35",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{fr-FR|Un aller-retour, s'il vous plaît.||UN al-LER-re-TOOR, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est quel quai ?||C'EST QUEL QUEH ?}}",
+      "{{fr-FR|Cette place est libre ?||cet-TE pla-CE EST li-BRE ?}}",
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||ap-pe-LEZ UN ta-XI, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Un%20aller-retour%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "b340d1ca-e1c1-4c9a-ba3b-09cef91e1d3a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{fr-FR|C'est quel quai ?||C'EST QUEL QUEH ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Cette place est libre ?||cet-TE pla-CE EST li-BRE ?}}",
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||ap-pe-LEZ UN ta-XI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Ce bus va au centre-ville ?||CE BUS VA OH cen-TRE-vil-LE ?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20quel%20quai%20%3F"
+  },
+  {
+    "itemId": "e3db52ff-d996-40f7-bba4-eedd61f09479",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{fr-FR|Cette place est libre ?||cet-TE pla-CE EST li-BRE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Appelez un taxi, s'il vous plaît.||ap-pe-LEZ UN ta-XI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Ce bus va au centre-ville ?||CE BUS VA OH cen-TRE-vil-LE ?}}",
+      "{{fr-FR|Je veux aller à l'aéroport.||JE VUH al-LER A l'ae-ro-PORT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Cette%20place%20est%20libre%20%3F"
+  },
+  {
+    "itemId": "793374c7-1bea-4f43-a477-a6e4e2a057ed",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{fr-FR|Appelez un taxi, s'il vous plaît.||ap-pe-LEZ UN ta-XI, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Ce bus va au centre-ville ?||CE BUS VA OH cen-TRE-vil-LE ?}}",
+      "{{fr-FR|Je veux aller à l'aéroport.||JE VUH al-LER A l'ae-ro-PORT.}}",
+      "{{fr-FR|Nous descendons ici.||NOOS des-cen-DONS i-CI.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Appelez%20un%20taxi%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "8a5d243b-9cfb-486c-b31c-e0d1c2b5b4b3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{fr-FR|Ce bus va au centre-ville ?||CE BUS VA OH cen-TRE-vil-LE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je veux aller à l'aéroport.||JE VUH al-LER A l'ae-ro-PORT.}}",
+      "{{fr-FR|Nous descendons ici.||NOOS des-cen-DONS i-CI.}}",
+      "{{fr-FR|J'ai raté le bus.||J'EH ra-TE LE BUS.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Ce%20bus%20va%20au%20centre-ville%20%3F"
+  },
+  {
+    "itemId": "c0ce26a8-3ae9-4b93-a9c9-4cc62a604b0b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{fr-FR|Je veux aller à l'aéroport.||JE VUH al-LER A l'ae-ro-PORT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Nous descendons ici.||NOOS des-cen-DONS i-CI.}}",
+      "{{fr-FR|J'ai raté le bus.||J'EH ra-TE LE BUS.}}",
+      "{{fr-FR|Où puis-je acheter un billet ?||OU PUIS-ZHE a-she-TER UN bil-LET ?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20veux%20aller%20%C3%A0%20l%27a%C3%A9roport."
+  },
+  {
+    "itemId": "e7b9ad06-79ea-4be5-88d9-bbe913830ff4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'We get off here.'?",
+    "correctAnswer": "{{fr-FR|Nous descendons ici.||NOOS des-cen-DONS i-CI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai raté le bus.||J'EH ra-TE LE BUS.}}",
+      "{{fr-FR|Où puis-je acheter un billet ?||OU PUIS-ZHE a-she-TER UN bil-LET ?}}",
+      "{{fr-FR|Le bus arrive à midi.||LE BUS ar-ri-VE A mi-DI.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Nous%20descendons%20ici."
+  },
+  {
+    "itemId": "ab5387d9-ce29-4752-9115-8745fefefc3f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I missed the bus.'?",
+    "correctAnswer": "{{fr-FR|J'ai raté le bus.||J'EH ra-TE LE BUS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où puis-je acheter un billet ?||OU PUIS-ZHE a-she-TER UN bil-LET ?}}",
+      "{{fr-FR|Le bus arrive à midi.||LE BUS ar-ri-VE A mi-DI.}}",
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||J'EH bes-WAHN D'UN bil-LET POOR l'ae-ro-PORT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20rat%C3%A9%20le%20bus."
+  },
+  {
+    "itemId": "f4ece9e6-4a35-4e10-9576-dc68a93e0456",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Where can I buy a ticket?'.",
+    "correctAnswer": "{{fr-FR|Où puis-je acheter un billet ?||OU PUIS-ZHE a-she-TER UN bil-LET ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le bus arrive à midi.||LE BUS ar-ri-VE A mi-DI.}}",
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||J'EH bes-WAHN D'UN bil-LET POOR l'ae-ro-PORT.}}",
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||UN bil-LET POOR LE cen-TRE-vil-LE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20puis-je%20acheter%20un%20billet%20%3F"
+  },
+  {
+    "itemId": "a2d3c746-5ba0-4f6c-8989-63be243877c6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'The bus arrives at noon.'?",
+    "correctAnswer": "{{fr-FR|Le bus arrive à midi.||LE BUS ar-ri-VE A mi-DI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un billet pour l'aéroport.||J'EH bes-WAHN D'UN bil-LET POOR l'ae-ro-PORT.}}",
+      "{{fr-FR|Un billet pour le centre-ville, s'il vous plaît.||UN bil-LET POOR LE cen-TRE-vil-LE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Un aller-retour, s'il vous plaît.||UN al-LER-re-TOOR, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20bus%20arrive%20%C3%A0%20midi."
+  },
+  {
+    "itemId": "98ac7aff-94d9-47cf-9c8e-fbbba073611e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20une%20r%C3%A9servation."
+  },
+  {
+    "itemId": "df707e6e-c5cd-4694-908a-98a602f72f32",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20une%20chambre%20simple%20%3F"
+  },
+  {
+    "itemId": "66578167-8320-47f6-8afc-d5bf0929d42a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Avez-vous%20une%20chambre%20double%20%3F"
+  },
+  {
+    "itemId": "93c56fa9-468e-4506-9322-9c32c3c2e3cf",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{fr-FR|Le mot de passe du Wi-Fi, s'il vous plaît.||LE MOT DE pas-SE DU WI-FI, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20mot%20de%20passe%20du%20Wi-Fi%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "c49c171e-546d-4d5b-870a-883ef5de6e27",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{fr-FR|Il y a un problème avec la chambre.||IL Y A UN pro-ble-ME a-VEC LA sham-BRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20y%20a%20un%20probl%C3%A8me%20avec%20la%20chambre."
+  },
+  {
+    "itemId": "c2dde0bd-07f7-40cd-b3da-c0f71a291b21",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{fr-FR|La douche ne marche pas.||LA doo-SHE NE mar-SHE PAS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20douche%20ne%20marche%20pas."
+  },
+  {
+    "itemId": "77e3f7c8-3b58-4db9-b25c-ef146aacd144",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{fr-FR|La chambre est trop froide.||LA sham-BRE EST TROP frwah-DE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20chambre%20est%20trop%20froide."
+  },
+  {
+    "itemId": "6555098a-d742-4656-8151-aa0e6d5a88bc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin de serviettes propres.||J'EH bes-WAHN DE ser-viet-TES pro-PRES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20de%20serviettes%20propres."
+  },
+  {
+    "itemId": "64a7ff17-7c97-47de-9cf5-7a0870515220",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner est-il compris ?||LE pe-TIT dez-huh-NER EST-IL com-PRIS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20petit%20d%C3%A9jeuner%20est-il%20compris%20%3F"
+  },
+  {
+    "itemId": "4490fba8-fcff-488f-8456-87e612edb2d9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{fr-FR|Puis-je avoir une autre clé ?||PUIS-ZHE av-WAHR u-NE oh-TRE CLE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Puis-je%20avoir%20une%20autre%20cl%C3%A9%20%3F"
+  },
+  {
+    "itemId": "e96589b7-8df5-4dc0-aad6-e189f88e098b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{fr-FR|La climatisation est en panne.||LA cli-ma-ti-sa-TION EST EN pan-NE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/La%20climatisation%20est%20en%20panne."
+  },
+  {
+    "itemId": "6c837ca4-4cc1-4206-b3fc-bb69b369db0b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{fr-FR|Le petit déjeuner commence à sept heures.||LE pe-TIT dez-huh-NER com-men-CE A SEPT huh-RES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai une réservation.||J'EH u-NE re-ser-va-TION.}}",
+      "{{fr-FR|Avez-vous une chambre simple ?||a-VEZ-VOOS u-NE sham-BRE sim-PLE ?}}",
+      "{{fr-FR|Avez-vous une chambre double ?||a-VEZ-VOOS u-NE sham-BRE doo-BLE ?}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20petit%20d%C3%A9jeuner%20commence%20%C3%A0%20sept%20heures."
+  },
+  {
+    "itemId": "6699ef4a-0b81-46ce-8cc6-c367100fc5fd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I feel sick.'?",
+    "correctAnswer": "{{fr-FR|Je me sens mal.||JE ME SENS MAL.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai mal à la tête.||J'EH MAL A LA te-TE.}}",
+      "{{fr-FR|J'ai de la fièvre.||J'EH DE LA fie-VRE.}}",
+      "{{fr-FR|J'ai besoin d'un médecin.||J'EH bes-WAHN D'UN me-de-CIN.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20me%20sens%20mal."
+  },
+  {
+    "itemId": "a30a7f48-f27c-4d73-86fe-29d892537ebc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I have a headache.'?",
+    "correctAnswer": "{{fr-FR|J'ai mal à la tête.||J'EH MAL A LA te-TE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai de la fièvre.||J'EH DE LA fie-VRE.}}",
+      "{{fr-FR|J'ai besoin d'un médecin.||J'EH bes-WAHN D'UN me-de-CIN.}}",
+      "{{fr-FR|Où est la pharmacie ?||OU EST LA phar-ma-CIE ?}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20mal%20%C3%A0%20la%20t%C3%AAte."
+  },
+  {
+    "itemId": "cf8f11d2-c91a-4540-8596-e1a56fe44858",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I have a fever.'.",
+    "correctAnswer": "{{fr-FR|J'ai de la fièvre.||J'EH DE LA fie-VRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un médecin.||J'EH bes-WAHN D'UN me-de-CIN.}}",
+      "{{fr-FR|Où est la pharmacie ?||OU EST LA phar-ma-CIE ?}}",
+      "{{fr-FR|Je suis allergique à la pénicilline.||JE SUIS al-ler-gi-QUE A LA pe-ni-cil-li-NE.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20de%20la%20fi%C3%A8vre."
+  },
+  {
+    "itemId": "660b0a17-28bf-4e72-a4a2-57c6a92594aa",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I need a doctor.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un médecin.||J'EH bes-WAHN D'UN me-de-CIN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est la pharmacie ?||OU EST LA phar-ma-CIE ?}}",
+      "{{fr-FR|Je suis allergique à la pénicilline.||JE SUIS al-ler-gi-QUE A LA pe-ni-cil-li-NE.}}",
+      "{{fr-FR|J'ai mal à l'estomac.||J'EH MAL A l'es-to-MAC.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20m%C3%A9decin."
+  },
+  {
+    "itemId": "afe55b38-673b-478d-bd88-05c9792dd802",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Where is the pharmacy?'?",
+    "correctAnswer": "{{fr-FR|Où est la pharmacie ?||OU EST LA phar-ma-CIE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis allergique à la pénicilline.||JE SUIS al-ler-gi-QUE A LA pe-ni-cil-li-NE.}}",
+      "{{fr-FR|J'ai mal à l'estomac.||J'EH MAL A l'es-to-MAC.}}",
+      "{{fr-FR|J'ai besoin de médicaments.||J'EH bes-WAHN DE me-di-ca-MENTS.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20la%20pharmacie%20%3F"
+  },
+  {
+    "itemId": "cf27f9a3-f81c-4609-bd03-c8fab7f374ed",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I am allergic to penicillin.'?",
+    "correctAnswer": "{{fr-FR|Je suis allergique à la pénicilline.||JE SUIS al-ler-gi-QUE A LA pe-ni-cil-li-NE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai mal à l'estomac.||J'EH MAL A l'es-to-MAC.}}",
+      "{{fr-FR|J'ai besoin de médicaments.||J'EH bes-WAHN DE me-di-ca-MENTS.}}",
+      "{{fr-FR|J'ai des vertiges.||J'EH DES ver-ti-GES.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20allergique%20%C3%A0%20la%20p%C3%A9nicilline."
+  },
+  {
+    "itemId": "d4a8a596-6a0b-4d53-8306-02a96ebf54c4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'My stomach hurts.'.",
+    "correctAnswer": "{{fr-FR|J'ai mal à l'estomac.||J'EH MAL A l'es-to-MAC.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin de médicaments.||J'EH bes-WAHN DE me-di-ca-MENTS.}}",
+      "{{fr-FR|J'ai des vertiges.||J'EH DES ver-ti-GES.}}",
+      "{{fr-FR|J'ai un rhume.||J'EH UN rhu-ME.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20mal%20%C3%A0%20l%27estomac."
+  },
+  {
+    "itemId": "04bcf479-1a5f-4bf3-a8d2-1773565fbe9c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I need medicine.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin de médicaments.||J'EH bes-WAHN DE me-di-ca-MENTS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai des vertiges.||J'EH DES ver-ti-GES.}}",
+      "{{fr-FR|J'ai un rhume.||J'EH UN rhu-ME.}}",
+      "{{fr-FR|J'ai besoin d'un hôpital.||J'EH bes-WAHN D'UN ho-pi-TAL.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20de%20m%C3%A9dicaments."
+  },
+  {
+    "itemId": "b3283e0c-3d32-42bd-ba29-66c9156761a6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I feel dizzy.'?",
+    "correctAnswer": "{{fr-FR|J'ai des vertiges.||J'EH DES ver-ti-GES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai un rhume.||J'EH UN rhu-ME.}}",
+      "{{fr-FR|J'ai besoin d'un hôpital.||J'EH bes-WAHN D'UN ho-pi-TAL.}}",
+      "{{fr-FR|Je me sens mieux maintenant.||JE ME SENS MIUH mehn-te-NANT.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20des%20vertiges."
+  },
+  {
+    "itemId": "eaf1dbdc-339d-405e-943a-010e409444b6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I have a cold.'?",
+    "correctAnswer": "{{fr-FR|J'ai un rhume.||J'EH UN rhu-ME.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un hôpital.||J'EH bes-WAHN D'UN ho-pi-TAL.}}",
+      "{{fr-FR|Je me sens mieux maintenant.||JE ME SENS MIUH mehn-te-NANT.}}",
+      "{{fr-FR|Je me sens mal.||JE ME SENS MAL.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20un%20rhume."
+  },
+  {
+    "itemId": "699bca33-f3b9-41dd-ade7-f6e2210ddaa7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I need a hospital.'.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un hôpital.||J'EH bes-WAHN D'UN ho-pi-TAL.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je me sens mieux maintenant.||JE ME SENS MIUH mehn-te-NANT.}}",
+      "{{fr-FR|Je me sens mal.||JE ME SENS MAL.}}",
+      "{{fr-FR|J'ai mal à la tête.||J'EH MAL A LA te-TE.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20h%C3%B4pital."
+  },
+  {
+    "itemId": "034d402d-86fa-4d58-8b45-d9f7a10ec922",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I feel better now.'?",
+    "correctAnswer": "{{fr-FR|Je me sens mieux maintenant.||JE ME SENS MIUH mehn-te-NANT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je me sens mal.||JE ME SENS MAL.}}",
+      "{{fr-FR|J'ai mal à la tête.||J'EH MAL A LA te-TE.}}",
+      "{{fr-FR|J'ai de la fièvre.||J'EH DE LA fie-VRE.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20me%20sens%20mieux%20maintenant."
+  },
+  {
+    "itemId": "f111c060-5272-4a99-9bd1-144a2bb253ad",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'What time is it?'?",
+    "correctAnswer": "{{fr-FR|Quelle heure est-il ?||quel-LE huh-RE EST-IL ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Aujourd'hui, c'est lundi.||auz-hoord'-HUI, C'EST lun-DI.}}",
+      "{{fr-FR|Demain, je voyagerai.||de-MEHN, ZHE voya-ge-REH.}}",
+      "{{fr-FR|Hier, j'ai travaillé.||HIER, ZH'EH tra-vehl-LE.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Quelle%20heure%20est-il%20%3F"
+  },
+  {
+    "itemId": "365f4fb3-4f67-4435-86d5-5113a20652cb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Today is Monday.'?",
+    "correctAnswer": "{{fr-FR|Aujourd'hui, c'est lundi.||auz-hoord'-HUI, C'EST lun-DI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Demain, je voyagerai.||de-MEHN, ZHE voya-ge-REH.}}",
+      "{{fr-FR|Hier, j'ai travaillé.||HIER, ZH'EH tra-vehl-LE.}}",
+      "{{fr-FR|Ça ouvre à neuf heures.||CA oo-VRE A NUHF huh-RES.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Aujourd%27hui%2C%20c%27est%20lundi."
+  },
+  {
+    "itemId": "6ea508fa-3ec8-464e-b9e9-2f40743a212b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Tomorrow I will travel.'.",
+    "correctAnswer": "{{fr-FR|Demain, je voyagerai.||de-MEHN, ZHE voya-ge-REH.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Hier, j'ai travaillé.||HIER, ZH'EH tra-vehl-LE.}}",
+      "{{fr-FR|Ça ouvre à neuf heures.||CA oo-VRE A NUHF huh-RES.}}",
+      "{{fr-FR|Ça ferme à six heures.||CA fer-ME A SIX huh-RES.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Demain%2C%20je%20voyagerai."
+  },
+  {
+    "itemId": "38135e2e-e745-4105-b2d0-7f0d749b3ee0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Yesterday I worked.'?",
+    "correctAnswer": "{{fr-FR|Hier, j'ai travaillé.||HIER, ZH'EH tra-vehl-LE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Ça ouvre à neuf heures.||CA oo-VRE A NUHF huh-RES.}}",
+      "{{fr-FR|Ça ferme à six heures.||CA fer-ME A SIX huh-RES.}}",
+      "{{fr-FR|J'arrive plus tard.||j'ar-ri-VE PLUS TARD.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Hier%2C%20j%27ai%20travaill%C3%A9."
+  },
+  {
+    "itemId": "a758e17d-29f1-4981-a96c-189196ee7767",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'It opens at nine.'?",
+    "correctAnswer": "{{fr-FR|Ça ouvre à neuf heures.||CA oo-VRE A NUHF huh-RES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Ça ferme à six heures.||CA fer-ME A SIX huh-RES.}}",
+      "{{fr-FR|J'arrive plus tard.||j'ar-ri-VE PLUS TARD.}}",
+      "{{fr-FR|Je reviendrai bientôt.||JE re-vien-DREH bien-TOT.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%87a%20ouvre%20%C3%A0%20neuf%20heures."
+  },
+  {
+    "itemId": "8d190af8-d451-4e20-88c8-d19fb3f2137b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'It closes at six.'?",
+    "correctAnswer": "{{fr-FR|Ça ferme à six heures.||CA fer-ME A SIX huh-RES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'arrive plus tard.||j'ar-ri-VE PLUS TARD.}}",
+      "{{fr-FR|Je reviendrai bientôt.||JE re-vien-DREH bien-TOT.}}",
+      "{{fr-FR|J'ai besoin de cinq minutes.||J'EH bes-WAHN DE CINQ mi-nu-TES.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%87a%20ferme%20%C3%A0%20six%20heures."
+  },
+  {
+    "itemId": "7dbd392a-1c55-4354-825c-799d16ba9f8d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I arrive later.'.",
+    "correctAnswer": "{{fr-FR|J'arrive plus tard.||j'ar-ri-VE PLUS TARD.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je reviendrai bientôt.||JE re-vien-DREH bien-TOT.}}",
+      "{{fr-FR|J'ai besoin de cinq minutes.||J'EH bes-WAHN DE CINQ mi-nu-TES.}}",
+      "{{fr-FR|Il est trop tard.||IL EST TROP TARD.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27arrive%20plus%20tard."
+  },
+  {
+    "itemId": "a1b75942-85bf-4c8a-b622-5425b8229118",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I will come back soon.'?",
+    "correctAnswer": "{{fr-FR|Je reviendrai bientôt.||JE re-vien-DREH bien-TOT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin de cinq minutes.||J'EH bes-WAHN DE CINQ mi-nu-TES.}}",
+      "{{fr-FR|Il est trop tard.||IL EST TROP TARD.}}",
+      "{{fr-FR|Cette semaine est chargée.||cet-TE se-meh-NE EST shar-GEE.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20reviendrai%20bient%C3%B4t."
+  },
+  {
+    "itemId": "563779f4-5571-4682-b90e-b3c155f2eb18",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I need five minutes.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin de cinq minutes.||J'EH bes-WAHN DE CINQ mi-nu-TES.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il est trop tard.||IL EST TROP TARD.}}",
+      "{{fr-FR|Cette semaine est chargée.||cet-TE se-meh-NE EST shar-GEE.}}",
+      "{{fr-FR|Le mois prochain, je suis libre.||LE MWAHS pro-SHEHN, ZHE SUIS li-BRE.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20de%20cinq%20minutes."
+  },
+  {
+    "itemId": "a86f7ffc-3fd4-4804-aeaf-e20dd5b68641",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'It is too late.'?",
+    "correctAnswer": "{{fr-FR|Il est trop tard.||IL EST TROP TARD.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Cette semaine est chargée.||cet-TE se-meh-NE EST shar-GEE.}}",
+      "{{fr-FR|Le mois prochain, je suis libre.||LE MWAHS pro-SHEHN, ZHE SUIS li-BRE.}}",
+      "{{fr-FR|Quelle heure est-il ?||quel-LE huh-RE EST-IL ?}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20est%20trop%20tard."
+  },
+  {
+    "itemId": "76348f14-5881-401a-bad9-e6201df7aba9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'This week is busy.'.",
+    "correctAnswer": "{{fr-FR|Cette semaine est chargée.||cet-TE se-meh-NE EST shar-GEE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le mois prochain, je suis libre.||LE MWAHS pro-SHEHN, ZHE SUIS li-BRE.}}",
+      "{{fr-FR|Quelle heure est-il ?||quel-LE huh-RE EST-IL ?}}",
+      "{{fr-FR|Aujourd'hui, c'est lundi.||auz-hoord'-HUI, C'EST lun-DI.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Cette%20semaine%20est%20charg%C3%A9e."
+  },
+  {
+    "itemId": "f1f74bbf-4649-420a-89a1-3c424de7a797",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Next month I am free.'?",
+    "correctAnswer": "{{fr-FR|Le mois prochain, je suis libre.||LE MWAHS pro-SHEHN, ZHE SUIS li-BRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quelle heure est-il ?||quel-LE huh-RE EST-IL ?}}",
+      "{{fr-FR|Aujourd'hui, c'est lundi.||auz-hoord'-HUI, C'EST lun-DI.}}",
+      "{{fr-FR|Demain, je voyagerai.||de-MEHN, ZHE voya-ge-REH.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20mois%20prochain%2C%20je%20suis%20libre."
+  },
+  {
+    "itemId": "1f9652b3-784b-426e-a8ca-446ded15c5af",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'What is the weather like?'?",
+    "correctAnswer": "{{fr-FR|Quel temps fait-il ?||QUEL TEMPS FEHT-IL ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il fait chaud.||IL FEHT SHOHD.}}",
+      "{{fr-FR|Il fait froid.||IL FEHT FRWAHD.}}",
+      "{{fr-FR|Il pleut.||IL PLUHT.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Quel%20temps%20fait-il%20%3F"
+  },
+  {
+    "itemId": "7221b9ab-15ce-4fdc-9773-a7bac087ff79",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'It is hot.'?",
+    "correctAnswer": "{{fr-FR|Il fait chaud.||IL FEHT SHOHD.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il fait froid.||IL FEHT FRWAHD.}}",
+      "{{fr-FR|Il pleut.||IL PLUHT.}}",
+      "{{fr-FR|Il y a du vent.||IL Y A DU VENT.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20fait%20chaud."
+  },
+  {
+    "itemId": "52fc675e-66ca-4e7c-98f4-bad326417f38",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'It is cold.'.",
+    "correctAnswer": "{{fr-FR|Il fait froid.||IL FEHT FRWAHD.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il pleut.||IL PLUHT.}}",
+      "{{fr-FR|Il y a du vent.||IL Y A DU VENT.}}",
+      "{{fr-FR|Il y a du soleil.||IL Y A DU so-LEHL.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20fait%20froid."
+  },
+  {
+    "itemId": "e92b31c9-9bb9-44f6-b5a2-bceec370f8b7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'It is raining.'?",
+    "correctAnswer": "{{fr-FR|Il pleut.||IL PLUHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il y a du vent.||IL Y A DU VENT.}}",
+      "{{fr-FR|Il y a du soleil.||IL Y A DU so-LEHL.}}",
+      "{{fr-FR|Il neige.||IL neh-GE.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20pleut."
+  },
+  {
+    "itemId": "299fd5d9-4f21-4886-892c-2dcc85a6c393",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'It is windy.'?",
+    "correctAnswer": "{{fr-FR|Il y a du vent.||IL Y A DU VENT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il y a du soleil.||IL Y A DU so-LEHL.}}",
+      "{{fr-FR|Il neige.||IL neh-GE.}}",
+      "{{fr-FR|Quelle belle journée !||quel-LE bel-LE zhoor-NEE !}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20y%20a%20du%20vent."
+  },
+  {
+    "itemId": "820885a6-5eb5-470b-9275-a204e99802c2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'It is sunny.'?",
+    "correctAnswer": "{{fr-FR|Il y a du soleil.||IL Y A DU so-LEHL.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il neige.||IL neh-GE.}}",
+      "{{fr-FR|Quelle belle journée !||quel-LE bel-LE zhoor-NEE !}}",
+      "{{fr-FR|C'est nuageux.||C'EST nua-GUH.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20y%20a%20du%20soleil."
+  },
+  {
+    "itemId": "7f689892-95d5-4dfc-bbb0-75fa16254492",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'It is snowing.'.",
+    "correctAnswer": "{{fr-FR|Il neige.||IL neh-GE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quelle belle journée !||quel-LE bel-LE zhoor-NEE !}}",
+      "{{fr-FR|C'est nuageux.||C'EST nua-GUH.}}",
+      "{{fr-FR|J'ai besoin d'un parapluie.||J'EH bes-WAHN D'UN pa-ra-PLUIE.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20neige."
+  },
+  {
+    "itemId": "949374cd-ab18-409e-bab9-bf3ce65c5b20",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'What a beautiful day!'?",
+    "correctAnswer": "{{fr-FR|Quelle belle journée !||quel-LE bel-LE zhoor-NEE !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est nuageux.||C'EST nua-GUH.}}",
+      "{{fr-FR|J'ai besoin d'un parapluie.||J'EH bes-WAHN D'UN pa-ra-PLUIE.}}",
+      "{{fr-FR|Il fait beau aujourd'hui.||IL FEHT BOH ohz-hoord'-HUI.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Quelle%20belle%20journ%C3%A9e%20%21"
+  },
+  {
+    "itemId": "dd06b482-46ce-4370-a162-e18dacab5318",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'It is cloudy.'?",
+    "correctAnswer": "{{fr-FR|C'est nuageux.||C'EST nua-GUH.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un parapluie.||J'EH bes-WAHN D'UN pa-ra-PLUIE.}}",
+      "{{fr-FR|Il fait beau aujourd'hui.||IL FEHT BOH ohz-hoord'-HUI.}}",
+      "{{fr-FR|Le ciel est dégagé.||LE CIEL EST de-ga-GE.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20nuageux."
+  },
+  {
+    "itemId": "636835da-2e1a-4bba-a2e9-ad4dc74e3409",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I need an umbrella.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un parapluie.||J'EH bes-WAHN D'UN pa-ra-PLUIE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il fait beau aujourd'hui.||IL FEHT BOH ohz-hoord'-HUI.}}",
+      "{{fr-FR|Le ciel est dégagé.||LE CIEL EST de-ga-GE.}}",
+      "{{fr-FR|Quel temps fait-il ?||QUEL TEMPS FEHT-IL ?}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20parapluie."
+  },
+  {
+    "itemId": "dd62ec6e-1793-488e-9073-007c2bd69249",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'The weather is nice today.'.",
+    "correctAnswer": "{{fr-FR|Il fait beau aujourd'hui.||IL FEHT BOH ohz-hoord'-HUI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le ciel est dégagé.||LE CIEL EST de-ga-GE.}}",
+      "{{fr-FR|Quel temps fait-il ?||QUEL TEMPS FEHT-IL ?}}",
+      "{{fr-FR|Il fait chaud.||IL FEHT SHOHD.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20fait%20beau%20aujourd%27hui."
+  },
+  {
+    "itemId": "35acff2f-05d8-44e0-af63-b85f29855590",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'The sky is clear.'?",
+    "correctAnswer": "{{fr-FR|Le ciel est dégagé.||LE CIEL EST de-ga-GE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Quel temps fait-il ?||QUEL TEMPS FEHT-IL ?}}",
+      "{{fr-FR|Il fait chaud.||IL FEHT SHOHD.}}",
+      "{{fr-FR|Il fait froid.||IL FEHT FRWAHD.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20ciel%20est%20d%C3%A9gag%C3%A9."
+  },
+  {
+    "itemId": "2fc06607-1962-4dc7-9cc6-702b4113c134",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Help!'?",
+    "correctAnswer": "{{fr-FR|Au secours !||AU se-COORS !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Appelez la police !||ap-pe-LEZ LA po-li-CE !}}",
+      "{{fr-FR|J'ai perdu mon passeport.||J'EH per-DU MON pas-se-PORT.}}",
+      "{{fr-FR|On m'a volé mon portefeuille.||ON M'A vo-LE MON por-te-fu-hil-LE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Au%20secours%20%21"
+  },
+  {
+    "itemId": "ef3be0ee-560c-4b12-96d0-e30fa04e742b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Call the police!'?",
+    "correctAnswer": "{{fr-FR|Appelez la police !||ap-pe-LEZ LA po-li-CE !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai perdu mon passeport.||J'EH per-DU MON pas-se-PORT.}}",
+      "{{fr-FR|On m'a volé mon portefeuille.||ON M'A vo-LE MON por-te-fu-hil-LE.}}",
+      "{{fr-FR|J'ai besoin d'une ambulance.||J'EH bes-WAHN d'u-NE am-bu-lan-CE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Appelez%20la%20police%20%21"
+  },
+  {
+    "itemId": "d134bc68-d895-4708-9ecc-4d88feb8c2e1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I have lost my passport.'.",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon passeport.||J'EH per-DU MON pas-se-PORT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|On m'a volé mon portefeuille.||ON M'A vo-LE MON por-te-fu-hil-LE.}}",
+      "{{fr-FR|J'ai besoin d'une ambulance.||J'EH bes-WAHN d'u-NE am-bu-lan-CE.}}",
+      "{{fr-FR|Appelez un médecin !||ap-pe-LEZ UN me-de-CIN !}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20perdu%20mon%20passeport."
+  },
+  {
+    "itemId": "69d34bc3-75b6-46cc-aa4a-febe28f51db0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'My wallet was stolen.'?",
+    "correctAnswer": "{{fr-FR|On m'a volé mon portefeuille.||ON M'A vo-LE MON por-te-fu-hil-LE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'une ambulance.||J'EH bes-WAHN d'u-NE am-bu-lan-CE.}}",
+      "{{fr-FR|Appelez un médecin !||ap-pe-LEZ UN me-de-CIN !}}",
+      "{{fr-FR|Il y a un incendie.||IL Y A UN in-cen-DIE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/On%20m%27a%20vol%C3%A9%20mon%20portefeuille."
+  },
+  {
+    "itemId": "19b0307b-f9d1-48e0-b9a8-c0bec5eced5f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I need an ambulance.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'une ambulance.||J'EH bes-WAHN d'u-NE am-bu-lan-CE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Appelez un médecin !||ap-pe-LEZ UN me-de-CIN !}}",
+      "{{fr-FR|Il y a un incendie.||IL Y A UN in-cen-DIE.}}",
+      "{{fr-FR|J'ai besoin d'aide maintenant.||J'EH bes-WAHN d'eh-DE mehn-te-NANT.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27une%20ambulance."
+  },
+  {
+    "itemId": "a4209c5b-ba94-4a07-b365-2d18c9dbc446",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Call a doctor!'?",
+    "correctAnswer": "{{fr-FR|Appelez un médecin !||ap-pe-LEZ UN me-de-CIN !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Il y a un incendie.||IL Y A UN in-cen-DIE.}}",
+      "{{fr-FR|J'ai besoin d'aide maintenant.||J'EH bes-WAHN d'eh-DE mehn-te-NANT.}}",
+      "{{fr-FR|J'ai perdu mon téléphone.||J'EH per-DU MON te-le-pho-NE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Appelez%20un%20m%C3%A9decin%20%21"
+  },
+  {
+    "itemId": "f9d088ed-501e-403e-8aaf-ea5c928a30f5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'There is a fire.'.",
+    "correctAnswer": "{{fr-FR|Il y a un incendie.||IL Y A UN in-cen-DIE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'aide maintenant.||J'EH bes-WAHN d'eh-DE mehn-te-NANT.}}",
+      "{{fr-FR|J'ai perdu mon téléphone.||J'EH per-DU MON te-le-pho-NE.}}",
+      "{{fr-FR|J'ai perdu mon sac.||J'EH per-DU MON SAC.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Il%20y%20a%20un%20incendie."
+  },
+  {
+    "itemId": "7d39683f-0bc3-4f3e-be83-ed0c84795c4d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I need help now.'?",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'aide maintenant.||J'EH bes-WAHN d'eh-DE mehn-te-NANT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai perdu mon téléphone.||J'EH per-DU MON te-le-pho-NE.}}",
+      "{{fr-FR|J'ai perdu mon sac.||J'EH per-DU MON SAC.}}",
+      "{{fr-FR|Mon ami est blessé.||MON a-MI EST bles-SE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27aide%20maintenant."
+  },
+  {
+    "itemId": "fcb72d04-37ae-451f-8603-e8ea97bc41dd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I lost my phone.'?",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon téléphone.||J'EH per-DU MON te-le-pho-NE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai perdu mon sac.||J'EH per-DU MON SAC.}}",
+      "{{fr-FR|Mon ami est blessé.||MON a-MI EST bles-SE.}}",
+      "{{fr-FR|C'est une urgence.||C'EST u-NE ur-gen-CE.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20perdu%20mon%20t%C3%A9l%C3%A9phone."
+  },
+  {
+    "itemId": "af690238-baa4-41c8-bfc4-142f47fb1a47",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I lost my bag.'?",
+    "correctAnswer": "{{fr-FR|J'ai perdu mon sac.||J'EH per-DU MON SAC.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Mon ami est blessé.||MON a-MI EST bles-SE.}}",
+      "{{fr-FR|C'est une urgence.||C'EST u-NE ur-gen-CE.}}",
+      "{{fr-FR|Au secours !||AU se-COORS !}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20perdu%20mon%20sac."
+  },
+  {
+    "itemId": "69494e1e-1b48-4554-9d7f-2f9f7df22e4e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'My friend is hurt.'.",
+    "correctAnswer": "{{fr-FR|Mon ami est blessé.||MON a-MI EST bles-SE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|C'est une urgence.||C'EST u-NE ur-gen-CE.}}",
+      "{{fr-FR|Au secours !||AU se-COORS !}}",
+      "{{fr-FR|Appelez la police !||ap-pe-LEZ LA po-li-CE !}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/Mon%20ami%20est%20bless%C3%A9."
+  },
+  {
+    "itemId": "f07bffb2-3ea0-43de-b41a-245577efc9f0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'This is an emergency.'?",
+    "correctAnswer": "{{fr-FR|C'est une urgence.||C'EST u-NE ur-gen-CE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Au secours !||AU se-COORS !}}",
+      "{{fr-FR|Appelez la police !||ap-pe-LEZ LA po-li-CE !}}",
+      "{{fr-FR|J'ai perdu mon passeport.||J'EH per-DU MON pas-se-PORT.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://www.wordreference.com/fren/C%27est%20une%20urgence."
+  },
+  {
+    "itemId": "1f2bbd44-9b81-4c51-b84e-36c0baf61ec9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Happy birthday!'?",
+    "correctAnswer": "{{fr-FR|Joyeux anniversaire !||JOYUH an-ni-ver-seh-RE !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Félicitations !||fe-li-ci-ta-TIONS !}}",
+      "{{fr-FR|Bonne chance !||bon-NE shan-CE !}}",
+      "{{fr-FR|De rien.||DE RIEN.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Joyeux%20anniversaire%20%21"
+  },
+  {
+    "itemId": "861ab19a-6eb4-401c-9765-d212a47eb891",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Congratulations!'?",
+    "correctAnswer": "{{fr-FR|Félicitations !||fe-li-ci-ta-TIONS !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bonne chance !||bon-NE shan-CE !}}",
+      "{{fr-FR|De rien.||DE RIEN.}}",
+      "{{fr-FR|Ce n'est rien.||CE N'EST RIEN.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/F%C3%A9licitations%20%21"
+  },
+  {
+    "itemId": "d079240b-a3d6-476c-b2e2-69cb5ae1f75b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Good luck!'.",
+    "correctAnswer": "{{fr-FR|Bonne chance !||bon-NE shan-CE !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|De rien.||DE RIEN.}}",
+      "{{fr-FR|Ce n'est rien.||CE N'EST RIEN.}}",
+      "{{fr-FR|Je suis désolé de l'apprendre.||JE SUIS de-so-LE DE l'ap-pren-DRE.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bonne%20chance%20%21"
+  },
+  {
+    "itemId": "84aab4ce-29b8-4b4e-8557-d1ec0263e52e",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'You're welcome.'?",
+    "correctAnswer": "{{fr-FR|De rien.||DE RIEN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Ce n'est rien.||CE N'EST RIEN.}}",
+      "{{fr-FR|Je suis désolé de l'apprendre.||JE SUIS de-so-LE DE l'ap-pren-DRE.}}",
+      "{{fr-FR|Bon appétit.||BON ap-pe-TIT.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/De%20rien."
+  },
+  {
+    "itemId": "3891d464-0987-4c4f-a81c-3ced37cea0d9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Don't mention it.'?",
+    "correctAnswer": "{{fr-FR|Ce n'est rien.||CE N'EST RIEN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je suis désolé de l'apprendre.||JE SUIS de-so-LE DE l'ap-pren-DRE.}}",
+      "{{fr-FR|Bon appétit.||BON ap-pe-TIT.}}",
+      "{{fr-FR|Bon voyage.||BON voya-GE.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Ce%20n%27est%20rien."
+  },
+  {
+    "itemId": "3a81d891-96e0-4a48-bc1c-a6b1d92bd9b3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I'm sorry to hear that.'?",
+    "correctAnswer": "{{fr-FR|Je suis désolé de l'apprendre.||JE SUIS de-so-LE DE l'ap-pren-DRE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bon appétit.||BON ap-pe-TIT.}}",
+      "{{fr-FR|Bon voyage.||BON voya-GE.}}",
+      "{{fr-FR|On se voit lundi.||ON SE VWAHT lun-DI.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20suis%20d%C3%A9sol%C3%A9%20de%20l%27apprendre."
+  },
+  {
+    "itemId": "65d12e93-243e-4c61-9041-07e399bd02b3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Enjoy your meal.'.",
+    "correctAnswer": "{{fr-FR|Bon appétit.||BON ap-pe-TIT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bon voyage.||BON voya-GE.}}",
+      "{{fr-FR|On se voit lundi.||ON SE VWAHT lun-DI.}}",
+      "{{fr-FR|Bienvenue dans notre ville.||bien-ve-NUE DANS no-TRE vil-LE.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bon%20app%C3%A9tit."
+  },
+  {
+    "itemId": "b716b50b-ad23-40aa-a7b1-63fb4f861010",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Have a nice trip.'?",
+    "correctAnswer": "{{fr-FR|Bon voyage.||BON voya-GE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|On se voit lundi.||ON SE VWAHT lun-DI.}}",
+      "{{fr-FR|Bienvenue dans notre ville.||bien-ve-NUE DANS no-TRE vil-LE.}}",
+      "{{fr-FR|Bonnes fêtes !||bon-NES fe-TES !}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bon%20voyage."
+  },
+  {
+    "itemId": "d6a86e60-b96c-4b7e-879a-75d7cfbe022d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'See you on Monday.'?",
+    "correctAnswer": "{{fr-FR|On se voit lundi.||ON SE VWAHT lun-DI.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bienvenue dans notre ville.||bien-ve-NUE DANS no-TRE vil-LE.}}",
+      "{{fr-FR|Bonnes fêtes !||bon-NES fe-TES !}}",
+      "{{fr-FR|Amusez-vous bien !||a-mu-SEZ-VOOS BIEN !}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/On%20se%20voit%20lundi."
+  },
+  {
+    "itemId": "1a1b44aa-8815-4e1f-ae64-eecf069b28b6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Welcome to our city.'?",
+    "correctAnswer": "{{fr-FR|Bienvenue dans notre ville.||bien-ve-NUE DANS no-TRE vil-LE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Bonnes fêtes !||bon-NES fe-TES !}}",
+      "{{fr-FR|Amusez-vous bien !||a-mu-SEZ-VOOS BIEN !}}",
+      "{{fr-FR|Joyeux anniversaire !||JOYUH an-ni-ver-seh-RE !}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bienvenue%20dans%20notre%20ville."
+  },
+  {
+    "itemId": "86a7ef3c-a6b2-427d-a3a2-748495956aba",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'Happy holidays!'.",
+    "correctAnswer": "{{fr-FR|Bonnes fêtes !||bon-NES fe-TES !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Amusez-vous bien !||a-mu-SEZ-VOOS BIEN !}}",
+      "{{fr-FR|Joyeux anniversaire !||JOYUH an-ni-ver-seh-RE !}}",
+      "{{fr-FR|Félicitations !||fe-li-ci-ta-TIONS !}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Bonnes%20f%C3%AAtes%20%21"
+  },
+  {
+    "itemId": "cf5ce5e8-3e4e-400d-be63-87547f3752df",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Have fun!'?",
+    "correctAnswer": "{{fr-FR|Amusez-vous bien !||a-mu-SEZ-VOOS BIEN !}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Joyeux anniversaire !||JOYUH an-ni-ver-seh-RE !}}",
+      "{{fr-FR|Félicitations !||fe-li-ci-ta-TIONS !}}",
+      "{{fr-FR|Bonne chance !||bon-NE shan-CE !}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/fren/Amusez-vous%20bien%20%21"
+  },
+  {
+    "itemId": "f1aa8231-a28f-48ba-8c6d-20cc5c7e04f1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I work in an office.'?",
+    "correctAnswer": "{{fr-FR|Je travaille dans un bureau.||JE tra-vehl-LE DANS UN bu-ROH.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je travaille comme professeur.||JE tra-vehl-LE com-ME pro-fes-SUHR.}}",
+      "{{fr-FR|J'étudie tous les jours.||j'e-tu-DIE TOOS LES ZHOORS.}}",
+      "{{fr-FR|J'apprends la langue.||j'ap-PRENDS LA lan-GUE.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20travaille%20dans%20un%20bureau."
+  },
+  {
+    "itemId": "8bbf7c22-7e69-4d60-b033-4633f1823dcf",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'I work as a teacher.'?",
+    "correctAnswer": "{{fr-FR|Je travaille comme professeur.||JE tra-vehl-LE com-ME pro-fes-SUHR.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'étudie tous les jours.||j'e-tu-DIE TOOS LES ZHOORS.}}",
+      "{{fr-FR|J'apprends la langue.||j'ap-PRENDS LA lan-GUE.}}",
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||e-cri-VEZ-LE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20travaille%20comme%20professeur."
+  },
+  {
+    "itemId": "556976c2-15d5-4c24-9475-48ed801cfaeb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I study every day.'.",
+    "correctAnswer": "{{fr-FR|J'étudie tous les jours.||j'e-tu-DIE TOOS LES ZHOORS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'apprends la langue.||j'ap-PRENDS LA lan-GUE.}}",
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||e-cri-VEZ-LE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Le cours commence maintenant.||LE COORS com-men-CE mehn-te-NANT.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27%C3%A9tudie%20tous%20les%20jours."
+  },
+  {
+    "itemId": "20831f2e-7331-4fec-be3b-a6c7e5806c8c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am learning the language.'?",
+    "correctAnswer": "{{fr-FR|J'apprends la langue.||j'ap-PRENDS LA lan-GUE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Écrivez-le, s'il vous plaît.||e-cri-VEZ-LE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Le cours commence maintenant.||LE COORS com-men-CE mehn-te-NANT.}}",
+      "{{fr-FR|J'ai besoin d'un stylo.||J'EH bes-WAHN D'UN sty-LO.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27apprends%20la%20langue."
+  },
+  {
+    "itemId": "8e5c4e63-c8b6-45f2-ab5d-7c5427ed413c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Please write it down.'?",
+    "correctAnswer": "{{fr-FR|Écrivez-le, s'il vous plaît.||e-cri-VEZ-LE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le cours commence maintenant.||LE COORS com-men-CE mehn-te-NANT.}}",
+      "{{fr-FR|J'ai besoin d'un stylo.||J'EH bes-WAHN D'UN sty-LO.}}",
+      "{{fr-FR|J'ai des devoirs.||J'EH DES dev-WAHRS.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/%C3%89crivez-le%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "bf6d4a65-8b7f-486c-aa55-43feeacc8224",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'The class starts now.'?",
+    "correctAnswer": "{{fr-FR|Le cours commence maintenant.||LE COORS com-men-CE mehn-te-NANT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai besoin d'un stylo.||J'EH bes-WAHN D'UN sty-LO.}}",
+      "{{fr-FR|J'ai des devoirs.||J'EH DES dev-WAHRS.}}",
+      "{{fr-FR|J'ai un examen demain.||J'EH UN e-xa-MEN de-MEHN.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20cours%20commence%20maintenant."
+  },
+  {
+    "itemId": "01d80ee9-e191-4257-a730-6d9758d5975d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I need a pen.'.",
+    "correctAnswer": "{{fr-FR|J'ai besoin d'un stylo.||J'EH bes-WAHN D'UN sty-LO.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai des devoirs.||J'EH DES dev-WAHRS.}}",
+      "{{fr-FR|J'ai un examen demain.||J'EH UN e-xa-MEN de-MEHN.}}",
+      "{{fr-FR|Où est la salle de classe ?||OU EST LA sal-LE DE clas-SE ?}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20besoin%20d%27un%20stylo."
+  },
+  {
+    "itemId": "8bd5733b-5c10-4f1d-9778-4549131c16f1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I have homework.'?",
+    "correctAnswer": "{{fr-FR|J'ai des devoirs.||J'EH DES dev-WAHRS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'ai un examen demain.||J'EH UN e-xa-MEN de-MEHN.}}",
+      "{{fr-FR|Où est la salle de classe ?||OU EST LA sal-LE DE clas-SE ?}}",
+      "{{fr-FR|Le livre est sur la table.||LE li-VRE EST SUR LA ta-BLE.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20des%20devoirs."
+  },
+  {
+    "itemId": "67b9539d-8a31-4c0a-b535-4a6524dc3e60",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I have an exam tomorrow.'?",
+    "correctAnswer": "{{fr-FR|J'ai un examen demain.||J'EH UN e-xa-MEN de-MEHN.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Où est la salle de classe ?||OU EST LA sal-LE DE clas-SE ?}}",
+      "{{fr-FR|Le livre est sur la table.||LE li-VRE EST SUR LA ta-BLE.}}",
+      "{{fr-FR|Mon professeur est très gentil.||MON pro-fes-SUHR EST TRES gen-TIL.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27ai%20un%20examen%20demain."
+  },
+  {
+    "itemId": "3e7733ad-b009-4820-9adc-507751d669d4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Where is the classroom?'?",
+    "correctAnswer": "{{fr-FR|Où est la salle de classe ?||OU EST LA sal-LE DE clas-SE ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Le livre est sur la table.||LE li-VRE EST SUR LA ta-BLE.}}",
+      "{{fr-FR|Mon professeur est très gentil.||MON pro-fes-SUHR EST TRES gen-TIL.}}",
+      "{{fr-FR|Je travaille dans un bureau.||JE tra-vehl-LE DANS UN bu-ROH.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/O%C3%B9%20est%20la%20salle%20de%20classe%20%3F"
+  },
+  {
+    "itemId": "169e7b84-8fdc-4e05-916a-2577c54df7c9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'The book is on the table.'.",
+    "correctAnswer": "{{fr-FR|Le livre est sur la table.||LE li-VRE EST SUR LA ta-BLE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Mon professeur est très gentil.||MON pro-fes-SUHR EST TRES gen-TIL.}}",
+      "{{fr-FR|Je travaille dans un bureau.||JE tra-vehl-LE DANS UN bu-ROH.}}",
+      "{{fr-FR|Je travaille comme professeur.||JE tra-vehl-LE com-ME pro-fes-SUHR.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/Le%20livre%20est%20sur%20la%20table."
+  },
+  {
+    "itemId": "650aa1a1-566b-4ebb-b66a-0e9cb05248d3",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'My teacher is very kind.'?",
+    "correctAnswer": "{{fr-FR|Mon professeur est très gentil.||MON pro-fes-SUHR EST TRES gen-TIL.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je travaille dans un bureau.||JE tra-vehl-LE DANS UN bu-ROH.}}",
+      "{{fr-FR|Je travaille comme professeur.||JE tra-vehl-LE com-ME pro-fes-SUHR.}}",
+      "{{fr-FR|J'étudie tous les jours.||j'e-tu-DIE TOOS LES ZHOORS.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://www.wordreference.com/fren/Mon%20professeur%20est%20tr%C3%A8s%20gentil."
+  },
+  {
+    "itemId": "3bc7b990-6667-4126-ba66-4efedf43656c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I speak a little of the language.'?",
+    "correctAnswer": "{{fr-FR|Je parle un peu la langue.||JE par-LE UN PUH LA lan-GUE.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||di-TES-LE en-co-RE u-NE FWAHS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Que veut dire ce mot ?||QUE VUHT di-RE CE MOT ?}}",
+      "{{fr-FR|Je ne connais pas ce mot.||JE NE con-NEHS PAS CE MOT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20parle%20un%20peu%20la%20langue."
+  },
+  {
+    "itemId": "375a5e53-e625-4d76-a669-17ef1587d5d0",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Please say that again.'?",
+    "correctAnswer": "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||di-TES-LE en-co-RE u-NE FWAHS, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Que veut dire ce mot ?||QUE VUHT di-RE CE MOT ?}}",
+      "{{fr-FR|Je ne connais pas ce mot.||JE NE con-NEHS PAS CE MOT.}}",
+      "{{fr-FR|Est-ce correct ?||EST-CE cor-RECT ?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Dites-le%20encore%20une%20fois%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "0652f920-a874-4429-ad4b-992350d389e4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'What does this word mean?'.",
+    "correctAnswer": "{{fr-FR|Que veut dire ce mot ?||QUE VUHT di-RE CE MOT ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je ne connais pas ce mot.||JE NE con-NEHS PAS CE MOT.}}",
+      "{{fr-FR|Est-ce correct ?||EST-CE cor-RECT ?}}",
+      "{{fr-FR|Pouvez-vous l'expliquer ?||poo-VEZ-VOOS l'ex-pli-QUER ?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Que%20veut%20dire%20ce%20mot%20%3F"
+  },
+  {
+    "itemId": "613c5cce-d129-4cfb-a292-58411db3fb7d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I do not know this word.'?",
+    "correctAnswer": "{{fr-FR|Je ne connais pas ce mot.||JE NE con-NEHS PAS CE MOT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Est-ce correct ?||EST-CE cor-RECT ?}}",
+      "{{fr-FR|Pouvez-vous l'expliquer ?||poo-VEZ-VOOS l'ex-pli-QUER ?}}",
+      "{{fr-FR|Je comprends maintenant.||JE com-PRENDS mehn-te-NANT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20ne%20connais%20pas%20ce%20mot."
+  },
+  {
+    "itemId": "8726a8c9-7408-4d7d-a68f-9fdc31331e96",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Is this correct?'?",
+    "correctAnswer": "{{fr-FR|Est-ce correct ?||EST-CE cor-RECT ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Pouvez-vous l'expliquer ?||poo-VEZ-VOOS l'ex-pli-QUER ?}}",
+      "{{fr-FR|Je comprends maintenant.||JE com-PRENDS mehn-te-NANT.}}",
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||u-ti-li-SEZ DES MOTS sim-PLES, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Est-ce%20correct%20%3F"
+  },
+  {
+    "itemId": "6e1323a7-c816-4fe2-954f-4a0e011011a8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Can you explain it?'?",
+    "correctAnswer": "{{fr-FR|Pouvez-vous l'expliquer ?||poo-VEZ-VOOS l'ex-pli-QUER ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je comprends maintenant.||JE com-PRENDS mehn-te-NANT.}}",
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||u-ti-li-SEZ DES MOTS sim-PLES, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Je m'entraîne tous les jours.||JE m'en-treh-NE TOOS LES ZHOORS.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Pouvez-vous%20l%27expliquer%20%3F"
+  },
+  {
+    "itemId": "c70d51ba-29bf-4684-a206-8a47d6bc2f3d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'I understand now.'.",
+    "correctAnswer": "{{fr-FR|Je comprends maintenant.||JE com-PRENDS mehn-te-NANT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||u-ti-li-SEZ DES MOTS sim-PLES, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Je m'entraîne tous les jours.||JE m'en-treh-NE TOOS LES ZHOORS.}}",
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||li-SEZ cet-TE phra-SE, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20comprends%20maintenant."
+  },
+  {
+    "itemId": "cdd44981-ec51-4778-a718-fcb4b3486275",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'Please use simple words.'?",
+    "correctAnswer": "{{fr-FR|Utilisez des mots simples, s'il vous plaît.||u-ti-li-SEZ DES MOTS sim-PLES, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je m'entraîne tous les jours.||JE m'en-treh-NE TOOS LES ZHOORS.}}",
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||li-SEZ cet-TE phra-SE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Comment écrit-on ce mot ?||com-MENT e-CRIT-ON CE MOT ?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Utilisez%20des%20mots%20simples%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "71c0fb38-ae62-4748-9a88-b5a57b63f7e2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'I am practicing every day.'?",
+    "correctAnswer": "{{fr-FR|Je m'entraîne tous les jours.||JE m'en-treh-NE TOOS LES ZHOORS.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Lisez cette phrase, s'il vous plaît.||li-SEZ cet-TE phra-SE, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Comment écrit-on ce mot ?||com-MENT e-CRIT-ON CE MOT ?}}",
+      "{{fr-FR|J'apprends lentement.||j'ap-PRENDS len-te-MENT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Je%20m%27entra%C3%AEne%20tous%20les%20jours."
+  },
+  {
+    "itemId": "c849883d-c96e-4936-8e9e-db26868306f4",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Which French phrase means 'Please read this sentence.'?",
+    "correctAnswer": "{{fr-FR|Lisez cette phrase, s'il vous plaît.||li-SEZ cet-TE phra-SE, S'IL VOOS PLEHT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Comment écrit-on ce mot ?||com-MENT e-CRIT-ON CE MOT ?}}",
+      "{{fr-FR|J'apprends lentement.||j'ap-PRENDS len-te-MENT.}}",
+      "{{fr-FR|Je parle un peu la langue.||JE par-LE UN PUH LA lan-GUE.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Lisez%20cette%20phrase%2C%20s%27il%20vous%20pla%C3%AEt."
+  },
+  {
+    "itemId": "0944b4ed-5410-4dc6-a305-59413178c8cd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct French phrase for 'How do you write that word?'.",
+    "correctAnswer": "{{fr-FR|Comment écrit-on ce mot ?||com-MENT e-CRIT-ON CE MOT ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|J'apprends lentement.||j'ap-PRENDS len-te-MENT.}}",
+      "{{fr-FR|Je parle un peu la langue.||JE par-LE UN PUH LA lan-GUE.}}",
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||di-TES-LE en-co-RE u-NE FWAHS, S'IL VOOS PLEHT.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/Comment%20%C3%A9crit-on%20ce%20mot%20%3F"
+  },
+  {
+    "itemId": "01eaaaee-f837-4dd4-aa93-bb3f0b890dcb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural French sentence for 'I am learning slowly.'?",
+    "correctAnswer": "{{fr-FR|J'apprends lentement.||j'ap-PRENDS len-te-MENT.}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Je parle un peu la langue.||JE par-LE UN PUH LA lan-GUE.}}",
+      "{{fr-FR|Dites-le encore une fois, s'il vous plaît.||di-TES-LE en-co-RE u-NE FWAHS, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Que veut dire ce mot ?||QUE VUHT di-RE CE MOT ?}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://www.wordreference.com/fren/J%27apprends%20lentement."
+  },
+  {
+    "itemId": "4536826b-aecf-4060-8a76-bbca58380cf9",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner French, how do you say 'Where are you from?'?",
+    "correctAnswer": "{{fr-FR|D'où venez-vous ?||D'OO ve-NEZ-VOOS ?}}",
+    "incorrectAnswers": [
+      "{{fr-FR|Comment vous appelez-vous ?||com-MENT VOOS ap-pe-LEZ-VOOS ?}}",
+      "{{fr-FR|Je viens des États-Unis.||JE VIENS DES e-TATS-u-NIS.}}",
+      "{{fr-FR|J'habite à Chicago.||j'ha-bi-TE A chi-ca-GO.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/fren/D%27o%C3%B9%20venez-vous%20%3F"
   }
 ]

@@ -1,0 +1,464 @@
+[
+  {
+    "itemId": "84d8541d-6c9c-4ecf-8d46-e939c4b3254d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner French, which indefinite article usually comes before a masculine singular noun?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "une",
+      "des",
+      "les"
+    ],
+    "explanation": "French usually uses \"un\" before a masculine singular noun.",
+    "keywords": [
+      "articles",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "3740c609-242e-4e41-a6cf-6fe517b33f0d",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner French, which indefinite article usually comes before plural nouns?",
+    "correctAnswer": "des",
+    "incorrectAnswers": [
+      "un",
+      "une",
+      "du"
+    ],
+    "explanation": "French usually uses \"des\" with plural count nouns.",
+    "keywords": [
+      "articles",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "f940afc5-9ce4-4bb4-8bff-9f93cfeb7436",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner French, where do adjectives usually go?",
+    "correctAnswer": "after the noun",
+    "incorrectAnswers": [
+      "before the noun only",
+      "at the end of every paragraph",
+      "before the article"
+    ],
+    "explanation": "Many common French adjectives come after the noun, though some frequent ones can come before it.",
+    "keywords": [
+      "adjectives",
+      "word-order",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/"
+  },
+  {
+    "itemId": "f42a908e-152a-4539-b091-cc3826e459d1",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "What do many regular French plural nouns usually add in writing?",
+    "correctAnswer": "-s",
+    "incorrectAnswers": [
+      "-nt",
+      "-ez",
+      "-ait"
+    ],
+    "explanation": "Many French plural nouns add \"-s\" in writing.",
+    "keywords": [
+      "plural",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "a5cd7495-b28c-48e9-b49c-b2c9ecb3747f",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which definite article is used for plural nouns in French?",
+    "correctAnswer": "les",
+    "incorrectAnswers": [
+      "la",
+      "le",
+      "l'"
+    ],
+    "explanation": "French uses \"les\" for plural nouns of any gender.",
+    "keywords": [
+      "articles",
+      "plural",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "0d241aa6-2505-4f44-9a0c-6d57c26ca58a",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which phrase commonly means \"there is\" or \"there are\" in French?",
+    "correctAnswer": "il y a",
+    "incorrectAnswers": [
+      "c'est",
+      "je suis",
+      "on est"
+    ],
+    "explanation": "French commonly uses \"il y a\" for existence.",
+    "keywords": [
+      "existence",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "786dbde9-e676-4ab1-b399-af0ffaf88fd2",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which starter is very common for everyday yes-or-no questions in French?",
+    "correctAnswer": "est-ce que",
+    "incorrectAnswers": [
+      "ne ... pas",
+      "il y a",
+      "c'est que"
+    ],
+    "explanation": "French often starts everyday yes-or-no questions with \"est-ce que\".",
+    "keywords": [
+      "questions",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  },
+  {
+    "itemId": "4198a750-1ff9-431f-9ce1-955397da2013",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In French, possessive adjectives usually agree with what?",
+    "correctAnswer": "the thing possessed",
+    "incorrectAnswers": [
+      "the speaker only",
+      "the last verb only",
+      "the punctuation mark"
+    ],
+    "explanation": "French possessive adjectives usually agree with the noun that follows them.",
+    "keywords": [
+      "possessives",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "1cd296e1-ebd8-4e33-954d-ca454c79f4d8",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Before a feminine singular noun that starts with a vowel sound, which form often means \"my\" in French?",
+    "correctAnswer": "mon",
+    "incorrectAnswers": [
+      "ma",
+      "mes",
+      "mienne"
+    ],
+    "explanation": "French often uses \"mon\" before a feminine singular noun that starts with a vowel sound for easier pronunciation.",
+    "keywords": [
+      "possessives",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  },
+  {
+    "itemId": "ee7d4148-2e1e-4be9-8024-e68c97270aa6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is common for the near future in French?",
+    "correctAnswer": "aller + infinitive",
+    "incorrectAnswers": [
+      "etre + noun",
+      "avoir + adjective",
+      "de + article + infinitive"
+    ],
+    "explanation": "French often uses \"aller\" plus an infinitive for the near future.",
+    "keywords": [
+      "future",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/"
+  },
+  {
+    "itemId": "8554db86-91b0-44ef-be16-ddbb3dfbb5bd",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is common for the everyday past in French?",
+    "correctAnswer": "avoir or etre + past participle",
+    "incorrectAnswers": [
+      "aller + present participle",
+      "noun + adjective",
+      "est-ce que + infinitive"
+    ],
+    "explanation": "French commonly uses the passe compose with \"avoir\" or \"etre\" plus a past participle.",
+    "keywords": [
+      "past-tense",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "d231938e-39b4-46d0-b116-6e09dc2ab94c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "For many regular -ir verbs in French, which ending goes with \"nous\" in the present tense?",
+    "correctAnswer": "-issons",
+    "incorrectAnswers": [
+      "-ons",
+      "-ez",
+      "-ent"
+    ],
+    "explanation": "Many regular -ir verbs like \"finir\" use \"-issons\" with \"nous.\"",
+    "keywords": [
+      "present-tense",
+      "verbs",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/regular-french-er-verbs/"
+  },
+  {
+    "itemId": "a9e1c562-a8ac-42ed-8288-52a4d50b3802",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "After negation, what often replaces an indefinite or partitive article in French?",
+    "correctAnswer": "de or d'",
+    "incorrectAnswers": [
+      "les",
+      "un",
+      "ce"
+    ],
+    "explanation": "After negation, French often changes indefinite or partitive articles to \"de\" or \"d'.\"",
+    "keywords": [
+      "negation",
+      "articles",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  },
+  {
+    "itemId": "10f9a06d-3904-40cb-a78d-384118e0f63b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner French, where do direct object pronouns usually go?",
+    "correctAnswer": "before the verb",
+    "incorrectAnswers": [
+      "after the noun only",
+      "after the subject only",
+      "at the end of every sentence"
+    ],
+    "explanation": "French direct object pronouns usually come before the verb.",
+    "keywords": [
+      "object-pronouns",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "0e95a9fc-4297-41fe-b1eb-17af651d37cb",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "How do French reflexive pronouns usually appear with a verb?",
+    "correctAnswer": "before the verb",
+    "incorrectAnswers": [
+      "inside the adjective",
+      "after the article",
+      "only at the end of questions"
+    ],
+    "explanation": "French reflexive pronouns like me, te, and se usually come before the verb.",
+    "keywords": [
+      "reflexive-verbs",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "69a801ca-1c1e-4e7d-b340-4926f7ec11bc",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which forms often express \"some\" before a noun in French?",
+    "correctAnswer": "du, de la, or de l'",
+    "incorrectAnswers": [
+      "le, la, or les only",
+      "mon, ma, or mes only",
+      "pas, jamais, or rien"
+    ],
+    "explanation": "French often uses partitive forms like \"du\" and \"de la\" for an unspecified amount.",
+    "keywords": [
+      "partitive",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "f8c1ac39-e011-417d-9f6f-c3a5395b94a7",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which phrase is often used for simple identification in French?",
+    "correctAnswer": "c'est",
+    "incorrectAnswers": [
+      "il y a",
+      "ne ... pas",
+      "est-ce que"
+    ],
+    "explanation": "French often uses \"c'est\" for basic identification.",
+    "keywords": [
+      "identification",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "dedccd44-4a88-432e-8841-c4754e45ebab",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "After \"etre,\" what usually happens with a profession noun in French?",
+    "correctAnswer": "it usually appears without an article",
+    "incorrectAnswers": [
+      "it always needs \"les\"",
+      "it always needs \"des\"",
+      "it always needs a question mark"
+    ],
+    "explanation": "French often omits the article with professions after \"etre.\"",
+    "keywords": [
+      "professions",
+      "french-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/french-english/%C3%AAtre"
+  },
+  {
+    "itemId": "08a10075-06f1-4718-a05e-a4ee37bb3783",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner French, what do many adjectives add in writing for the plural?",
+    "correctAnswer": "-s",
+    "incorrectAnswers": [
+      "-e only",
+      "-ons",
+      "-ment"
+    ],
+    "explanation": "Many French adjectives add \"-s\" in writing for the plural.",
+    "keywords": [
+      "adjective-agreement",
+      "plural",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "356320a5-76d4-4be9-aa3a-e258303f9da5",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "What usually happens to \"ne\" before a vowel sound in French?",
+    "correctAnswer": "it becomes n'",
+    "incorrectAnswers": [
+      "it becomes nepas",
+      "it disappears forever",
+      "it changes to les"
+    ],
+    "explanation": "French often shortens \"ne\" to \"n'\" before a vowel sound.",
+    "keywords": [
+      "negation",
+      "elision",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "0ff2a8f5-18f5-4867-ba97-ec3158f654b6",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Can basic yes-or-no questions in French be formed just with rising intonation?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in legal documents",
+      "only with plural nouns"
+    ],
+    "explanation": "Everyday spoken French often uses rising intonation for yes-or-no questions.",
+    "keywords": [
+      "questions",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  },
+  {
+    "itemId": "ec6892c2-3d41-4455-af8c-5901c87dcade",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "Which demonstrative usually comes before a masculine singular French noun that starts with a vowel sound?",
+    "correctAnswer": "cet",
+    "incorrectAnswers": [
+      "ce",
+      "cette",
+      "cesse"
+    ],
+    "explanation": "French uses \"cet\" before a masculine singular noun starting with a vowel sound.",
+    "keywords": [
+      "demonstratives",
+      "french-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/french-english/homme"
+  },
+  {
+    "itemId": "a54f8e43-0b9b-49ca-99aa-37cd12269206",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic comparison often formed in French?",
+    "correctAnswer": "plus + adjective + que",
+    "incorrectAnswers": [
+      "tres + adjective + de",
+      "le + noun + sur",
+      "il y a + adjective"
+    ],
+    "explanation": "French often compares with \"plus ... que.\"",
+    "keywords": [
+      "comparatives",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  },
+  {
+    "itemId": "a689df13-4c18-4f9a-82f7-1627e58bd5df",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic superlative often formed in French?",
+    "correctAnswer": "le/la/les + plus + adjective",
+    "incorrectAnswers": [
+      "un + adjective + que",
+      "du + noun + de",
+      "ne + adjective + pas"
+    ],
+    "explanation": "French often forms the superlative with an article plus \"plus\" and an adjective.",
+    "keywords": [
+      "superlatives",
+      "french-grammar"
+    ],
+    "source": "https://www.lawlessfrench.com/grammar/questions/"
+  }
+]

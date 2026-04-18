@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
+  createSpeechUtterances,
   isSpeechSynthesisSupported,
   speakText,
   stopSpeaking,
@@ -8,6 +9,11 @@ import {
 const makeSpeechMock = () => ({
   cancel: vi.fn(),
   speak: vi.fn(),
+  getVoices: vi.fn(() => []),
+  addEventListener: vi.fn(),
+  speaking: false,
+  pending: false,
+  paused: false,
 });
 
 describe("isSpeechSynthesisSupported", () => {
@@ -48,6 +54,46 @@ describe("isSpeechSynthesisSupported", () => {
   });
 });
 
+describe("createSpeechUtterances", () => {
+  beforeEach(() => {
+    Object.defineProperty(window, "speechSynthesis", {
+      value: makeSpeechMock(),
+      configurable: true,
+    });
+    Object.defineProperty(window, "SpeechSynthesisUtterance", {
+      value: class {
+        text: string;
+        lang = "";
+        voice?: SpeechSynthesisVoice;
+
+        constructor(text: string) {
+          this.text = text;
+        }
+      },
+      configurable: true,
+      writable: true,
+    });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("splits foreign phrase markup into a speech queue", () => {
+    const utterances = createSpeechUtterances(
+      "What does '{{ja-JP|こんにちは|konnichiwa|kon-NEE-chee-wah}}' mean?"
+    );
+
+    expect(utterances).toHaveLength(3);
+    expect(utterances.map((utterance) => utterance.text)).toEqual([
+      "What does '",
+      "kon-NEE-chee-wah",
+      "' mean?",
+    ]);
+    expect(utterances[1].text).not.toContain("ja-JP");
+  });
+});
+
 describe("speakText", () => {
   let cancelMock: ReturnType<typeof vi.fn>;
   let speakMock: ReturnType<typeof vi.fn>;
@@ -81,10 +127,33 @@ describe("speakText", () => {
     expect(speakMock).toHaveBeenCalledOnce();
   });
 
+  it("cancels without restarting when the same text is already playing", () => {
+    const speechSynthesisMock = window.speechSynthesis as SpeechSynthesis;
+
+    speakText("Hello world");
+    Object.assign(speechSynthesisMock, { speaking: true });
+
+    speakText("Hello world");
+
+    expect(cancelMock).toHaveBeenCalledTimes(2);
+    expect(speakMock).toHaveBeenCalledOnce();
+  });
+
   it("passes trimmed text to the utterance", () => {
     speakText("  hello  ");
     const utterance = speakMock.mock.calls[0][0];
     expect(utterance.text).toBe("hello");
+  });
+
+  it("speaks parsed foreign phrases without reading markup", () => {
+    speakText("What does '{{ja-JP|こんにちは|konnichiwa|kon-NEE-chee-wah}}' mean?");
+
+    expect(speakMock).toHaveBeenCalledTimes(3);
+    expect(speakMock.mock.calls.map(([utterance]) => utterance.text)).toEqual([
+      "What does '",
+      "kon-NEE-chee-wah",
+      "' mean?",
+    ]);
   });
 
   it("is a no-op when API is not available", () => {

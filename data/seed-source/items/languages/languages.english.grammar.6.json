@@ -1,0 +1,122 @@
+[
+  {
+    "itemId": "d2e92382-adaf-475a-a2d8-a021930d7a30",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which group is a full sentence in standard written English?",
+    "correctAnswer": "Birds fly.",
+    "incorrectAnswers": [
+      "Because it was sunny.",
+      "Running fast.",
+      "After the meeting."
+    ],
+    "explanation": "A basic sentence needs at least a subject and a verb and expresses a complete thought. The other groups are fragments.",
+    "keywords": [
+      "sentence",
+      "complete-thought",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/sentence_clarity/sentence_fragments/index.html"
+  },
+  {
+    "itemId": "47841da3-53be-44ab-bc80-0db69a6c88b3",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence is a yes/no question in standard English?",
+    "correctAnswer": "Do you speak English?",
+    "incorrectAnswers": [
+      "You speak English.",
+      "What you speak.",
+      "Speaking English you are."
+    ],
+    "explanation": "Many yes/no questions begin with an auxiliary like \"do\" before the subject.",
+    "keywords": [
+      "questions",
+      "word-order",
+      "sentence-form"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/questions"
+  },
+  {
+    "itemId": "4baaf2ab-b9aa-4fb8-8514-0d1959835246",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence is a common imperative that gives a direct request?",
+    "correctAnswer": "Please open the window.",
+    "incorrectAnswers": [
+      "The window is open.",
+      "Opening the window is fun.",
+      "If you open the window."
+    ],
+    "explanation": "Imperatives often use the base verb first to give commands or polite requests; the subject \"you\" is understood.",
+    "keywords": [
+      "imperative",
+      "commands",
+      "sentence-form"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/imperatives"
+  },
+  {
+    "itemId": "b55c1823-6de4-4fcc-99ef-249ae42c1669",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "What is the usual word order in a simple English statement?",
+    "correctAnswer": "subject, then verb, then object",
+    "incorrectAnswers": [
+      "verb, then subject, then object",
+      "object, then verb, then subject",
+      "subject, then object, then verb only"
+    ],
+    "explanation": "Many English statements follow subject-verb-object order, as in \"She reads books.\"",
+    "keywords": [
+      "word-order",
+      "svo",
+      "sentence-form"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/word-order-and-focus-from-english-grammar-today"
+  },
+  {
+    "itemId": "69876d67-9b1a-401c-a36f-88c95cb33bfe",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which option correctly joins two full ideas with a coordinating conjunction?",
+    "correctAnswer": "I was tired, so I went to bed.",
+    "incorrectAnswers": [
+      "I was tired I went to bed.",
+      "Because I was tired went to bed.",
+      "Tired I bed went."
+    ],
+    "explanation": "Coordinators like \"so\" can link two independent clauses into one sentence when punctuation and structure match the pattern.",
+    "keywords": [
+      "compound-sentence",
+      "conjunctions",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/grammar_exercises/coordination_and_subordination/index.html"
+  },
+  {
+    "itemId": "7ed27592-bef7-459c-ba1e-ef60e17ac636",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Why is \"Although it was late\" not a sentence on its own in formal writing?",
+    "correctAnswer": "It is a dependent clause and does not finish the thought alone.",
+    "incorrectAnswers": [
+      "It has too many words.",
+      "It must always be a question.",
+      "English never allows \"although\" at the start."
+    ],
+    "explanation": "Dependent clauses starting with words like \"although\" need an independent clause to form a complete sentence.",
+    "keywords": [
+      "dependent-clause",
+      "fragments",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/sentence_clarity/sentence_fragments/index.html"
+  }
+]

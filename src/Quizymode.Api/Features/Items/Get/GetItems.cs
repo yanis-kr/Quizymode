@@ -2,6 +2,7 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
 
@@ -52,7 +53,10 @@ public static class GetItems
         string? Source,
         string? UploadId = null,
         decimal? FactualRisk = null,
-        string? ReviewComments = null);
+        string? ReviewComments = null,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed record KeywordResponse(
         string Id,

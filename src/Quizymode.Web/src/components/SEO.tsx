@@ -14,7 +14,7 @@ const DEFAULT_TITLE = "Quizymode – Smart Flashcards & Learning Quizzes";
 const DEFAULT_DESCRIPTION =
   "Quizymode is a smart learning platform with flashcards and quizzes for exams, AWS, Spanish, and more.";
 const DEFAULT_URL = "https://www.quizymode.com";
-const DEFAULT_OG_IMAGE = "https://www.quizymode.com/og-image.png";
+const DEFAULT_OG_IMAGE = "https://www.quizymode.com/og-image.svg";
 
 export const SEO = ({
   title,

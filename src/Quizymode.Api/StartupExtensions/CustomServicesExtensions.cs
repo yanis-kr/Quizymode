@@ -34,6 +34,7 @@ internal static partial class StartupExtensions
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();
         builder.Services.AddScoped<ICategoryResolver, CategoryResolver>();
+        builder.Services.AddScoped<LanguagesTaxonomyNormalizationService>();
         builder.Services.AddScoped<ITaxonomyItemCategoryResolver, TaxonomyItemCategoryResolver>();
         builder.Services.AddScoped<IStudyGuideChunkingService, StudyGuideChunkingService>();
         builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /admin
+Disallow: /admin/
 Sitemap: https://www.quizymode.com/sitemap.xml
-
-
-
-

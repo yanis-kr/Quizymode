@@ -16,7 +16,10 @@ public static class ApproveItem
         string CorrectAnswer,
         List<string> IncorrectAnswers,
         string Explanation,
-        DateTime CreatedAt);
+        DateTime CreatedAt,
+        ItemSpeechSupport? QuestionSpeech = null,
+        ItemSpeechSupport? CorrectAnswerSpeech = null,
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -79,7 +82,10 @@ public static class ApproveItem
                 item.CorrectAnswer,
                 item.IncorrectAnswers,
                 item.Explanation,
-                item.CreatedAt);
+                item.CreatedAt,
+                item.QuestionSpeech,
+                item.CorrectAnswerSpeech,
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
 
             return Result.Success(response);
         }
