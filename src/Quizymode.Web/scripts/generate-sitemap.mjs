@@ -8,22 +8,22 @@ const TAXONOMY_PATH = resolve(WEB_ROOT, "..", "..", "docs", "quizymode_taxonomy.
 const SITEMAP_PATH = resolve(WEB_ROOT, "public", "sitemap.xml");
 const REPO_ROOT = resolve(WEB_ROOT, "..", "..");
 
-// Use the last git commit date of the taxonomy file as lastmod.
-// This stays stable across builds and only advances when the taxonomy actually changes.
-// Falls back to today if git is unavailable (e.g. fresh checkout without history).
-function getTaxonomyLastMod() {
+const TODAY = new Date().toISOString().slice(0, 10);
+
+function gitLastMod(...repoPaths) {
   try {
-    const date = execSync("git log -1 --format=%cs -- docs/quizymode_taxonomy.yaml", {
+    const args = repoPaths.join(" ");
+    const date = execSync(`git log -1 --format=%cs -- ${args}`, {
       cwd: REPO_ROOT,
       encoding: "utf8",
     }).trim();
-    return date || new Date().toISOString().slice(0, 10);
+    return date || TODAY;
   } catch {
-    return new Date().toISOString().slice(0, 10);
+    return TODAY;
   }
 }
 
-const LAST_MOD = getTaxonomyLastMod();
+const TAXONOMY_LAST_MOD = gitLastMod("docs/quizymode_taxonomy.yaml");
 
 function parseTaxonomy(yamlText) {
   const categories = [];
@@ -98,28 +98,30 @@ function xmlEscape(value) {
     .replaceAll("'", "&apos;");
 }
 
-function buildUrlEntry(path, changefreq, priority) {
+function buildUrlEntry(path, changefreq, priority, lastmod) {
   const loc = `${SITE_URL}${path}`;
   return [
     "  <url>",
     `    <loc>${xmlEscape(loc)}</loc>`,
-    `    <lastmod>${LAST_MOD}</lastmod>`,
+    `    <lastmod>${lastmod}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
     "  </url>",
   ].join("\n");
 }
 
+const WEB_SRC = "src/Quizymode.Web/src";
+
 const staticPaths = [
-  { path: "/", changefreq: "weekly", priority: 1.0 },
-  { path: "/categories", changefreq: "weekly", priority: 0.9 },
-  { path: "/collections", changefreq: "weekly", priority: 0.8 },
-  { path: "/about", changefreq: "monthly", priority: 0.7 },
-  { path: "/ideas", changefreq: "weekly", priority: 0.8 },
-  { path: "/roadmap", changefreq: "monthly", priority: 0.6 },
-  { path: "/feedback", changefreq: "monthly", priority: 0.6 },
-  { path: "/privacy", changefreq: "yearly", priority: 0.3 },
-  { path: "/terms", changefreq: "yearly", priority: 0.3 },
+  { path: "/", changefreq: "weekly", priority: 1.0, srcPaths: [`${WEB_SRC}/features/home`] },
+  { path: "/categories", changefreq: "weekly", priority: 0.9, srcPaths: [`${WEB_SRC}/features/categories`] },
+  { path: "/collections", changefreq: "weekly", priority: 0.8, srcPaths: [`${WEB_SRC}/features/collections`] },
+  { path: "/about", changefreq: "monthly", priority: 0.7, srcPaths: [`${WEB_SRC}/features/about`] },
+  { path: "/ideas", changefreq: "weekly", priority: 0.8, srcPaths: [`${WEB_SRC}/features/ideas`] },
+  { path: "/roadmap", changefreq: "monthly", priority: 0.6, srcPaths: [`${WEB_SRC}/features/roadmap`] },
+  { path: "/feedback", changefreq: "monthly", priority: 0.6, srcPaths: [`${WEB_SRC}/features/feedback`] },
+  { path: "/privacy", changefreq: "yearly", priority: 0.3, srcPaths: [`${WEB_SRC}/features/legal`] },
+  { path: "/terms", changefreq: "yearly", priority: 0.3, srcPaths: [`${WEB_SRC}/features/legal`] },
 ];
 
 const taxonomy = parseTaxonomy(readFileSync(TAXONOMY_PATH, "utf8"));
@@ -130,16 +132,16 @@ for (const category of taxonomy) {
     path: `/categories/${encodeURIComponent(category.slug)}`,
     changefreq: "weekly",
     priority: 0.8,
+    lastmod: TAXONOMY_LAST_MOD,
   });
 
   for (const group of category.groups) {
-    const l1Path = `/categories/${encodeURIComponent(category.slug)}/${encodeURIComponent(group.slug)}`;
     dynamicPaths.push({
-      path: l1Path,
+      path: `/categories/${encodeURIComponent(category.slug)}/${encodeURIComponent(group.slug)}`,
       changefreq: "weekly",
       priority: 0.7,
+      lastmod: TAXONOMY_LAST_MOD,
     });
-
   }
 }
 
@@ -151,9 +153,10 @@ for (const entry of [...staticPaths, ...dynamicPaths]) {
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...Array.from(uniquePaths.values()).map((entry) =>
-    buildUrlEntry(entry.path, entry.changefreq, entry.priority)
-  ),
+  ...Array.from(uniquePaths.values()).map((entry) => {
+    const lastmod = entry.lastmod ?? gitLastMod(...entry.srcPaths);
+    return buildUrlEntry(entry.path, entry.changefreq, entry.priority, lastmod);
+  }),
   "</urlset>",
   "",
 ].join("\n");
