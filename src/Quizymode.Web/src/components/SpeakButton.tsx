@@ -1,8 +1,7 @@
 import { SpeakerWaveIcon } from "@heroicons/react/24/outline";
 import type { ItemSpeechSupport } from "@/types/api";
 import { toSpeakableText } from "@/utils/itemSpeech";
-import { parseForeignPhrases, hasForeignPhrases } from "@/utils/foreignPhrase";
-import { speakText, speakPhrases } from "@/utils/speechSynthesis";
+import { speakText } from "@/utils/speechSynthesis";
 
 interface SpeakButtonProps {
   text: string;
@@ -27,11 +26,7 @@ export function SpeakButton({
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (hasForeignPhrases(text)) {
-      speakPhrases(parseForeignPhrases(text), text);
-    } else {
-      speakText(toSpeakableText(text, speech));
-    }
+    speakText(toSpeakableText(text, speech));
   };
 
   return (

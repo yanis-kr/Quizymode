@@ -46,6 +46,7 @@ const MARKER_RE = /\{\{([A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*)\|([^|{}]+)(?:\|([^|
  * Returns a single PlainSegment when no markup is present (zero overhead for normal items).
  */
 export function parseForeignPhrases(text: string): Segment[] {
+  MARKER_RE.lastIndex = 0;
   const segments: Segment[] = [];
   let lastIndex = 0;
 

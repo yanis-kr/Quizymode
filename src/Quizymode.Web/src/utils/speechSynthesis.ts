@@ -4,7 +4,11 @@
  */
 
 import type { SpeakableText } from "@/utils/itemSpeech";
-import { type Segment } from "@/utils/foreignPhrase";
+import {
+  hasForeignPhrases,
+  parseForeignPhrases,
+  type Segment,
+} from "@/utils/foreignPhrase";
 
 let activeUtterance: SpeechSynthesisUtterance | null = null;
 let activeTextKey: string | null = null;
@@ -88,6 +92,39 @@ export function createSpeechUtterance(input: string | SpeakableText): SpeechSynt
   return utterance;
 }
 
+function createSpeechUtterancesFromSegments(segments: Segment[]): SpeechSynthesisUtterance[] {
+  return segments.flatMap((segment) => {
+    const utterance =
+      segment.type === "foreign"
+        ? createSpeechUtterance({
+            text: segment.text,
+            languageCode: segment.lang,
+            pronunciation: segment.pronunciation ?? segment.translit,
+          })
+        : createSpeechUtterance(segment.text);
+
+    return utterance ? [utterance] : [];
+  });
+}
+
+export function createSpeechUtterances(input: string | SpeakableText): SpeechSynthesisUtterance[] {
+  if (!isSpeechSynthesisSupported()) return [];
+
+  const resolvedInput =
+    typeof input === "string"
+      ? { text: input }
+      : input;
+  const trimmedText = resolvedInput.text.trim();
+  if (!trimmedText) return [];
+
+  if (hasForeignPhrases(trimmedText)) {
+    return createSpeechUtterancesFromSegments(parseForeignPhrases(trimmedText));
+  }
+
+  const utterance = createSpeechUtterance(resolvedInput);
+  return utterance ? [utterance] : [];
+}
+
 export function speakText(input: string | SpeakableText): void {
   if (!isSpeechSynthesisSupported()) return;
 
@@ -112,16 +149,20 @@ export function speakText(input: string | SpeakableText): void {
 
   speechSynthesis.cancel();
 
-  const utterance = createSpeechUtterance(resolvedInput);
-  if (!utterance) {
+  const utterances = createSpeechUtterances(resolvedInput);
+  if (utterances.length === 0) {
     return;
   }
 
-  activeUtterance = utterance;
+  activeUtterance = utterances[0];
   activeTextKey = activeKey;
-  utterance.onend = () => clearActiveSpeech(utterance);
-  utterance.onerror = () => clearActiveSpeech(utterance);
-  speechSynthesis.speak(utterance);
+  const lastUtterance = utterances[utterances.length - 1];
+  lastUtterance.onend = () => clearActiveSpeech(lastUtterance);
+  lastUtterance.onerror = () => clearActiveSpeech(lastUtterance);
+
+  for (const utterance of utterances) {
+    speechSynthesis.speak(utterance);
+  }
 }
 
 /**
@@ -156,18 +197,7 @@ export function speakPhrases(segments: Segment[], toggleKey: string): void {
 
   if (isSameActive) return;
 
-  const utterances: SpeechSynthesisUtterance[] = [];
-  for (const seg of segments) {
-    const u =
-      seg.type === "foreign"
-        ? createSpeechUtterance({
-            text: seg.text,
-            languageCode: seg.lang,
-            pronunciation: seg.pronunciation ?? seg.translit,
-          })
-        : createSpeechUtterance(seg.text);
-    if (u) utterances.push(u);
-  }
+  const utterances = createSpeechUtterancesFromSegments(segments);
 
   if (utterances.length === 0) return;
 
