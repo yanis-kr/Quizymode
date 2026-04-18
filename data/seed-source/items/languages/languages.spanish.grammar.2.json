@@ -1,0 +1,461 @@
+[
+  {
+    "itemId": "87cb45e3-3737-4e69-84c0-d99d43c243b1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, which article usually comes before a feminine singular noun?",
+    "correctAnswer": "la",
+    "incorrectAnswers": [
+      "el",
+      "los",
+      "un"
+    ],
+    "explanation": "Spanish usually uses \"la\" before feminine singular nouns.",
+    "keywords": [
+      "articles",
+      "spanish-grammar"
+    ],
+    "source": "https://www.rae.es/"
+  },
+  {
+    "itemId": "b1c575ea-41d1-4428-b9db-68b920114dab",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, which indefinite article usually comes before a masculine singular noun?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "una",
+      "unos",
+      "las"
+    ],
+    "explanation": "Spanish usually uses \"un\" before a masculine singular noun.",
+    "keywords": [
+      "articles",
+      "spanish-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/libro"
+  },
+  {
+    "itemId": "2dd06394-0af7-4e0c-9233-df243eb38f4f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, where do adjectives usually go?",
+    "correctAnswer": "after the noun",
+    "incorrectAnswers": [
+      "before the noun only",
+      "at the very end of the sentence only",
+      "between the article and noun only"
+    ],
+    "explanation": "In everyday Spanish, adjectives often come after the noun.",
+    "keywords": [
+      "adjectives",
+      "word-order",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "f4a37980-ef41-41f7-bea3-5f48056012ad",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, what must adjectives usually do?",
+    "correctAnswer": "agree with the noun in gender and number",
+    "incorrectAnswers": [
+      "stay the same in every sentence",
+      "agree only in number",
+      "agree only in gender"
+    ],
+    "explanation": "Spanish adjectives usually match the noun they describe in both gender and number.",
+    "keywords": [
+      "adjective-agreement",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "c86e96f3-db90-487a-873d-1c9837d6e639",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, which verb is usually used for location?",
+    "correctAnswer": "estar",
+    "incorrectAnswers": [
+      "ser",
+      "haber",
+      "tener"
+    ],
+    "explanation": "Spanish normally uses \"estar\" for location.",
+    "keywords": [
+      "ser-vs-estar",
+      "spanish-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
+  },
+  {
+    "itemId": "1286d2d8-6d4e-4946-9c80-5a9cca4fbb39",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, which verb is usually used for identity or origin?",
+    "correctAnswer": "ser",
+    "incorrectAnswers": [
+      "estar",
+      "ir",
+      "hacer"
+    ],
+    "explanation": "Spanish normally uses \"ser\" for identity, origin, and permanent traits.",
+    "keywords": [
+      "ser-vs-estar",
+      "spanish-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
+  },
+  {
+    "itemId": "57d44d9f-4802-47a3-855e-e16f48b8b94a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, which word is commonly used for \"there is\" or \"there are\"?",
+    "correctAnswer": "hay",
+    "incorrectAnswers": [
+      "esta",
+      "son",
+      "tiene"
+    ],
+    "explanation": "Spanish uses \"hay\" for both singular and plural existence.",
+    "keywords": [
+      "existence",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "42af50e8-79b5-4473-809a-97bb8500ef59",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "With one thing after \"gustar,\" which verb form is usual?",
+    "correctAnswer": "gusta",
+    "incorrectAnswers": [
+      "gustan",
+      "gusto",
+      "gustamos"
+    ],
+    "explanation": "Use \"gusta\" when the thing liked is singular or an infinitive.",
+    "keywords": [
+      "gustar",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "196e099a-763d-4db4-ac51-9ccea8d6dd77",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "With more than one thing after \"gustar,\" which verb form is usual?",
+    "correctAnswer": "gustan",
+    "incorrectAnswers": [
+      "gusta",
+      "gusto",
+      "gustais"
+    ],
+    "explanation": "Use \"gustan\" when the thing liked is plural.",
+    "keywords": [
+      "gustar",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "1d4eb5ae-09dd-45ca-90a6-c523ad940121",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, where do object pronouns usually go with a conjugated verb?",
+    "correctAnswer": "before the conjugated verb",
+    "incorrectAnswers": [
+      "after the noun only",
+      "before the subject only",
+      "at the start of every paragraph"
+    ],
+    "explanation": "Spanish object pronouns usually come before the conjugated verb.",
+    "keywords": [
+      "object-pronouns",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "39e082f1-df14-4bb5-9351-cf40a506f4b7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Spanish, where do reflexive pronouns usually go with a conjugated verb?",
+    "correctAnswer": "before the conjugated verb",
+    "incorrectAnswers": [
+      "after the subject only",
+      "after the article",
+      "inside the noun phrase"
+    ],
+    "explanation": "Reflexive pronouns like me, te, and se usually come before a conjugated verb.",
+    "keywords": [
+      "reflexive-verbs",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "830bf4e9-b700-486b-bdf2-8fb5195537ca",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is common for talking about the near future in Spanish?",
+    "correctAnswer": "ir + a + infinitive",
+    "incorrectAnswers": [
+      "ser + de + infinitive",
+      "estar + no + noun",
+      "haber + con + infinitive"
+    ],
+    "explanation": "Spanish often uses \"ir a\" plus an infinitive for the near future.",
+    "keywords": [
+      "future",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "29db48db-7762-4b5c-9b00-40fdc2ed5631",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Which past tense is usually used for a finished action in Spanish?",
+    "correctAnswer": "the preterite",
+    "incorrectAnswers": [
+      "the imperfect only",
+      "the gerund",
+      "the infinitive"
+    ],
+    "explanation": "The preterite is commonly used for completed past actions.",
+    "keywords": [
+      "preterite",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "ccaf7788-08e1-425b-879a-2719c263cbf9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Which past tense often describes ongoing or habitual past actions in Spanish?",
+    "correctAnswer": "the imperfect",
+    "incorrectAnswers": [
+      "the preterite only",
+      "the future",
+      "the imperative"
+    ],
+    "explanation": "The imperfect is often used for repeated, ongoing, or background past actions.",
+    "keywords": [
+      "imperfect",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "fafa357a-3023-4fab-ba5b-012f89bbd26b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Does Spanish usually need a helper like \"do\" to form a basic question?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes, always",
+      "yes, but only in writing",
+      "yes, but only with adjectives"
+    ],
+    "explanation": "Spanish can form questions with intonation, punctuation, or word order without using \"do.\"",
+    "keywords": [
+      "questions",
+      "spanish-grammar"
+    ],
+    "source": "https://www.rae.es/"
+  },
+  {
+    "itemId": "327d2f51-7570-45f9-bf45-dd5c118db9eb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Which possessive usually means \"my\" before a singular noun in Spanish?",
+    "correctAnswer": "mi",
+    "incorrectAnswers": [
+      "mio",
+      "mis",
+      "tuya"
+    ],
+    "explanation": "Spanish commonly uses \"mi\" before a singular noun.",
+    "keywords": [
+      "possessives",
+      "spanish-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
+  },
+  {
+    "itemId": "edf60d6e-a970-4e13-a45b-152321e8db6e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic comparison often formed in Spanish?",
+    "correctAnswer": "mas + adjective + que",
+    "incorrectAnswers": [
+      "muy + adjective + de",
+      "tan + noun + para",
+      "el + adjective + en"
+    ],
+    "explanation": "Spanish often compares with \"mas ... que\".",
+    "keywords": [
+      "comparatives",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "d48b4249-9aeb-42cb-8974-6f0e3132153f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic superlative often formed in Spanish?",
+    "correctAnswer": "el/la/los/las + mas + adjective",
+    "incorrectAnswers": [
+      "muy + noun + que",
+      "un + adjective + de",
+      "ser + adjective + a"
+    ],
+    "explanation": "Spanish often forms the superlative with an article plus \"mas\" and an adjective.",
+    "keywords": [
+      "superlatives",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "ddf0d4b4-c24b-4d42-aa52-fa9cd8c9cfa5",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "To talk about age in Spanish, which verb is usually used?",
+    "correctAnswer": "tener",
+    "incorrectAnswers": [
+      "ser",
+      "estar",
+      "haber"
+    ],
+    "explanation": "Spanish usually uses \"tener\" for age, as in \"tener veinte anos.\"",
+    "keywords": [
+      "tener",
+      "spanish-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/ser"
+  },
+  {
+    "itemId": "66810642-1bde-44c5-914f-8af875b088c1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "In general statements about days, which article often appears in Spanish?",
+    "correctAnswer": "el or los",
+    "incorrectAnswers": [
+      "un or una",
+      "de or del",
+      "no article at all"
+    ],
+    "explanation": "Spanish often uses \"el\" or \"los\" with days in general statements.",
+    "keywords": [
+      "articles",
+      "days",
+      "spanish-grammar"
+    ],
+    "source": "https://www.rae.es/"
+  },
+  {
+    "itemId": "9607b31d-3c29-451c-956a-f75c2c6d6d87",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "Which negative word commonly follows \"no\" to mean \"never\" in Spanish?",
+    "correctAnswer": "nunca",
+    "incorrectAnswers": [
+      "siempre",
+      "tambien",
+      "porque"
+    ],
+    "explanation": "\"No ... nunca\" is a common way to say \"never\" in Spanish.",
+    "keywords": [
+      "negation",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "ca0b5eb6-160d-4aed-a524-9229e44c5fb0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "How is the present progressive commonly formed in Spanish?",
+    "correctAnswer": "estar + gerund",
+    "incorrectAnswers": [
+      "ser + infinitive",
+      "ir + noun",
+      "haber + adjective"
+    ],
+    "explanation": "Spanish often forms the progressive with \"estar\" plus a gerund.",
+    "keywords": [
+      "progressive",
+      "spanish-grammar"
+    ],
+    "source": "https://www.spanishdict.com/guide"
+  },
+  {
+    "itemId": "33f7a973-9fa7-4b78-9c5f-171acae83e9d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "What marker often appears before a direct object that is a person in Spanish?",
+    "correctAnswer": "the personal a",
+    "incorrectAnswers": [
+      "the article lo",
+      "the marker de",
+      "the ending -mente"
+    ],
+    "explanation": "Spanish often uses the personal \"a\" before a specific person as a direct object.",
+    "keywords": [
+      "personal-a",
+      "spanish-grammar"
+    ],
+    "source": "https://www.rae.es/"
+  },
+  {
+    "itemId": "fd50a01d-5e42-4d16-9406-22cf3b2952d3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "grammar",
+    "question": "With regular -er verbs in Spanish, which ending usually goes with \"nosotros\" in the present tense?",
+    "correctAnswer": "-emos",
+    "incorrectAnswers": [
+      "-amos",
+      "-imos",
+      "-ais"
+    ],
+    "explanation": "Regular -er verbs usually take \"-emos\" with \"nosotros\".",
+    "keywords": [
+      "present-tense",
+      "verbs",
+      "spanish-grammar"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/spanish-english/hablar"
+  }
+]

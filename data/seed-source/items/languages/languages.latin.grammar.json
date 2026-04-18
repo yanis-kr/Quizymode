@@ -1,0 +1,576 @@
+[
+  {
+    "itemId": "6b75b352-fc17-4590-94a2-794a5eb7fc6d",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What usually replaces English articles like \"a\" and \"the\" in Latin?",
+    "correctAnswer": "no article is used",
+    "incorrectAnswers": [
+      "an article is attached to the noun",
+      "an article follows every verb",
+      "articles appear only in questions"
+    ],
+    "explanation": "Latin has no separate definite or indefinite articles.",
+    "keywords": [
+      "articles",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "20f627d7-6453-42a7-833c-4caee7068ac8",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What is a common beginner word-order pattern for Latin reading?",
+    "correctAnswer": "the verb often comes near the end",
+    "incorrectAnswers": [
+      "the article always comes first",
+      "the adjective must always be last",
+      "the object must always vanish"
+    ],
+    "explanation": "Latin word order is flexible, but many textbook sentences place the verb near the end.",
+    "keywords": [
+      "word-order",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_syntax"
+  },
+  {
+    "itemId": "78479b67-8cdd-4881-84da-2d249592bf7b",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "How many main cases do beginners usually learn first in Latin?",
+    "correctAnswer": "six",
+    "incorrectAnswers": [
+      "two",
+      "three",
+      "ten"
+    ],
+    "explanation": "Latin commonly teaches nominative, vocative, accusative, genitive, dative, and ablative.",
+    "keywords": [
+      "cases",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "893e7755-130f-4f6b-903a-bce41bf91f47",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case usually marks the subject in Latin?",
+    "correctAnswer": "the nominative",
+    "incorrectAnswers": [
+      "the accusative",
+      "the genitive",
+      "the ablative"
+    ],
+    "explanation": "Latin usually uses the nominative for the subject.",
+    "keywords": [
+      "nominative",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "324685df-283a-4844-adc0-86333cb40243",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case usually marks the direct object in Latin?",
+    "correctAnswer": "the accusative",
+    "incorrectAnswers": [
+      "the genitive",
+      "the dative",
+      "the vocative"
+    ],
+    "explanation": "Latin usually uses the accusative for a direct object.",
+    "keywords": [
+      "accusative",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "e1a7e97b-351c-42f9-a9b5-75464155b067",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often shows possession in Latin?",
+    "correctAnswer": "the genitive",
+    "incorrectAnswers": [
+      "the nominative",
+      "the imperative",
+      "the participle"
+    ],
+    "explanation": "Latin often uses the genitive for possession or \"of\" meanings.",
+    "keywords": [
+      "genitive",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "abb93969-0dab-406c-b2d9-117767f2cfa5",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often marks the indirect object in Latin?",
+    "correctAnswer": "the dative",
+    "incorrectAnswers": [
+      "the accusative",
+      "the vocative",
+      "the infinitive"
+    ],
+    "explanation": "Latin often uses the dative for the recipient.",
+    "keywords": [
+      "dative",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "1e417516-8a0b-4b41-b084-535d53f3c50e",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case often expresses means, separation, or location with some prepositions in Latin?",
+    "correctAnswer": "the ablative",
+    "incorrectAnswers": [
+      "the nominative",
+      "the vocative",
+      "the article case"
+    ],
+    "explanation": "Latin often uses the ablative for several important relationships.",
+    "keywords": [
+      "ablative",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ablative_%28Latin%29"
+  },
+  {
+    "itemId": "0b194f4d-a725-4be8-acdd-026fc97cff94",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case is used for direct address in Latin?",
+    "correctAnswer": "the vocative",
+    "incorrectAnswers": [
+      "the genitive",
+      "the locative only",
+      "the superlative"
+    ],
+    "explanation": "Latin uses the vocative when directly addressing someone.",
+    "keywords": [
+      "vocative",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "263805f7-6407-46e4-8950-09f0df4e0ed6",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What do Latin adjectives usually do?",
+    "correctAnswer": "agree with the noun in gender, number, and case",
+    "incorrectAnswers": [
+      "stay the same always",
+      "agree only with the verb",
+      "agree only in number"
+    ],
+    "explanation": "Latin adjectives usually match the noun they describe.",
+    "keywords": [
+      "adjective-agreement",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "64e45ed0-003f-4944-8828-a1fe60bcf650",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which cases do many Latin prepositions govern?",
+    "correctAnswer": "the accusative or the ablative",
+    "incorrectAnswers": [
+      "the article case only",
+      "the superlative only",
+      "the present participle only"
+    ],
+    "explanation": "Many Latin prepositions take either the accusative or the ablative.",
+    "keywords": [
+      "prepositions",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_syntax"
+  },
+  {
+    "itemId": "5ea0e511-d9b7-4c46-af4a-46f196284f7b",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What is a common beginner rule for first-declension nouns in Latin?",
+    "correctAnswer": "many are feminine",
+    "incorrectAnswers": [
+      "many are always neuter",
+      "many are all plural",
+      "many are question words"
+    ],
+    "explanation": "Many first-declension nouns are feminine.",
+    "keywords": [
+      "declensions",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "c3e247f0-816e-4469-b918-4c94681605c7",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What is a common beginner rule for second-declension nouns ending in -us?",
+    "correctAnswer": "many are masculine",
+    "incorrectAnswers": [
+      "many are feminine only",
+      "many are always plural",
+      "many are adverbs"
+    ],
+    "explanation": "Many second-declension nouns ending in -us are masculine.",
+    "keywords": [
+      "declensions",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "6aab54d2-1278-4f58-89cf-8c582bcdefc5",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What is a common beginner rule for second-declension nouns ending in -um?",
+    "correctAnswer": "many are neuter",
+    "incorrectAnswers": [
+      "many are feminine",
+      "many are verbs",
+      "many are conjunctions"
+    ],
+    "explanation": "Many second-declension nouns ending in -um are neuter.",
+    "keywords": [
+      "declensions",
+      "latin-grammar"
+    ],
+    "source": "https://dcc.dickinson.edu/grammar/latin/case-endings-five-declensions"
+  },
+  {
+    "itemId": "b61ea493-4e3f-4ef0-9726-27ba2a2488e8",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "For neuter Latin nouns, what is usually true about nominative and accusative forms?",
+    "correctAnswer": "they are the same",
+    "incorrectAnswers": [
+      "they are always opposite",
+      "they never exist",
+      "they only appear in questions"
+    ],
+    "explanation": "Neuter nominative and accusative forms are usually the same.",
+    "keywords": [
+      "neuter",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_declension"
+  },
+  {
+    "itemId": "293c6726-3426-4205-a5ca-84ce1f84f13b",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "For many neuter Latin nouns, what is a common nominative and accusative plural ending?",
+    "correctAnswer": "-a",
+    "incorrectAnswers": [
+      "-s",
+      "-es",
+      "-ment"
+    ],
+    "explanation": "Many neuter plurals end in -a.",
+    "keywords": [
+      "neuter",
+      "plural",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_declension"
+  },
+  {
+    "itemId": "9c1813be-4cda-40e8-b474-73c0da598586",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What do Latin verb endings usually show?",
+    "correctAnswer": "person and number",
+    "incorrectAnswers": [
+      "article type",
+      "noun color",
+      "comma placement only"
+    ],
+    "explanation": "Latin verb endings usually show the subject person and number.",
+    "keywords": [
+      "verbs",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "22e5da48-1def-4086-827a-894b061ffc88",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What ending often appears on a Latin infinitive?",
+    "correctAnswer": "-re",
+    "incorrectAnswers": [
+      "-ing",
+      "-ly",
+      "-ment"
+    ],
+    "explanation": "Many Latin infinitives end in -re.",
+    "keywords": [
+      "infinitive",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "8b661dba-316e-43b0-a4af-d94c2bf99fd0",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What ending is common for first-person singular present verbs in Latin?",
+    "correctAnswer": "-o",
+    "incorrectAnswers": [
+      "-mus",
+      "-tis",
+      "-nt"
+    ],
+    "explanation": "Many first-person singular present Latin verbs end in -o.",
+    "keywords": [
+      "present-tense",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "07b71cda-cbfa-4ad1-a465-dcc2894e41ce",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "How can Latin often express a completed past action?",
+    "correctAnswer": "with a single perfect-tense verb form",
+    "incorrectAnswers": [
+      "only with a helper article",
+      "only with punctuation",
+      "only with no verb"
+    ],
+    "explanation": "Latin often uses a single perfect-tense form for a completed past action.",
+    "keywords": [
+      "perfect-tense",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "ff509578-94ef-429b-a44e-bfb3eca01e02",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Does Latin have a true passive voice built into verb forms?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in adjectives",
+      "only in plural nouns"
+    ],
+    "explanation": "Latin has passive verb forms.",
+    "keywords": [
+      "passive",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "1526beb0-08be-4de8-ae94-d2adc835807e",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Can Latin often leave out a subject pronoun because the verb ending already shows the person?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in questions",
+      "only in poetry dictionaries"
+    ],
+    "explanation": "Latin often omits subject pronouns because the verb ending is clear enough.",
+    "keywords": [
+      "subject-pronouns",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "fd137cdd-b0d3-4c69-afa1-61a81e4861c6",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Where can a Latin adjective appear?",
+    "correctAnswer": "it can appear before or after the noun",
+    "incorrectAnswers": [
+      "only before the noun",
+      "only after punctuation",
+      "only inside a preposition"
+    ],
+    "explanation": "Latin adjective position is flexible.",
+    "keywords": [
+      "adjectives",
+      "word-order",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_syntax"
+  },
+  {
+    "itemId": "e165b3b5-d584-48e2-bc8c-e8232566fe42",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What common Latin word means \"is\"?",
+    "correctAnswer": "est",
+    "incorrectAnswers": [
+      "sumus",
+      "non",
+      "cum"
+    ],
+    "explanation": "The common third-person singular present form of \"to be\" is \"est.\"",
+    "keywords": [
+      "to-be",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "7aaf118b-50e5-4490-a77a-2d0e0bb8cd83",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Where does the negation word \"non\" usually go in Latin?",
+    "correctAnswer": "before the word or phrase it negates",
+    "incorrectAnswers": [
+      "after the article only",
+      "inside the noun ending",
+      "after the final period only"
+    ],
+    "explanation": "Latin usually places \"non\" before the word or phrase it negates.",
+    "keywords": [
+      "negation",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_syntax"
+  },
+  {
+    "itemId": "c34054cb-ffc9-4a16-ac31-be5c7834caad",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "How can Latin mark a yes-or-no question?",
+    "correctAnswer": "with particles like -ne, nonne, or num, or with context",
+    "incorrectAnswers": [
+      "only with do-support",
+      "only with articles",
+      "only with plural adjectives"
+    ],
+    "explanation": "Latin can mark yes-or-no questions with special particles.",
+    "keywords": [
+      "questions",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "f63b1e84-e9e7-4482-b69c-86face045649",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What form is commonly used for direct commands in Latin?",
+    "correctAnswer": "the imperative",
+    "incorrectAnswers": [
+      "the article",
+      "the accusative only",
+      "the superlative"
+    ],
+    "explanation": "Latin often uses the imperative for commands.",
+    "keywords": [
+      "imperative",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "7bca85b0-8582-4f8b-890c-80357b696065",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "Which case commonly follows \"cum\" to mean \"with\" in Latin?",
+    "correctAnswer": "the ablative",
+    "incorrectAnswers": [
+      "the nominative",
+      "the vocative",
+      "the article case"
+    ],
+    "explanation": "Latin commonly uses the ablative after \"cum.\"",
+    "keywords": [
+      "prepositions",
+      "ablative",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Ablative_%28Latin%29"
+  },
+  {
+    "itemId": "94bc163a-c327-463e-aca1-f6861534e96f",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What rare extra case survives in a few Latin place words such as domi or Romae?",
+    "correctAnswer": "the locative",
+    "incorrectAnswers": [
+      "the article case",
+      "the future case",
+      "the comparative case"
+    ],
+    "explanation": "Latin keeps a locative form in a small set of words.",
+    "keywords": [
+      "locative",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_grammar"
+  },
+  {
+    "itemId": "d7bbc524-fd6d-4c96-b3b5-04c2253e28b7",
+    "category": "languages",
+    "navigationKeyword1": "latin",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Latin meaning?",
+    "correctAnswer": "case endings matter more than fixed English-like word order",
+    "incorrectAnswers": [
+      "word order never matters",
+      "articles matter most",
+      "capital letters matter most"
+    ],
+    "explanation": "Latin relies heavily on endings to show grammatical role.",
+    "keywords": [
+      "cases",
+      "word-order",
+      "latin-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Latin_syntax"
+  }
+]

@@ -1,0 +1,575 @@
+[
+  {
+    "itemId": "ed46a263-6193-4eb7-a371-358b891aed51",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Bulgarian, what usually replaces English articles like \"a\" and \"the\" as separate words?",
+    "correctAnswer": "Bulgarian uses a suffix article instead of a separate word",
+    "incorrectAnswers": [
+      "it uses no definiteness at all",
+      "it uses English articles",
+      "it puts the article before every verb"
+    ],
+    "explanation": "Bulgarian marks definiteness with an ending attached to the word.",
+    "keywords": [
+      "articles",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "d26d465e-4303-4926-a4c3-1a71f234f74a",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a key beginner fact about the Bulgarian definite article?",
+    "correctAnswer": "it is attached to the word",
+    "incorrectAnswers": [
+      "it always stands alone",
+      "it comes only before verbs",
+      "it disappears in speech"
+    ],
+    "explanation": "Bulgarian usually adds the definite article to the end of the noun phrase word it attaches to.",
+    "keywords": [
+      "articles",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "54f2b512-132b-4450-8349-fbf7cc3143f4",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "How many grammatical genders do beginners usually learn first in Bulgarian?",
+    "correctAnswer": "three",
+    "incorrectAnswers": [
+      "one",
+      "two",
+      "five"
+    ],
+    "explanation": "Bulgarian commonly uses masculine, feminine, and neuter gender.",
+    "keywords": [
+      "gender",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "c856f286-ef64-438d-b166-280722efded0",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a helpful beginner word order in Bulgarian?",
+    "correctAnswer": "subject-verb-object",
+    "incorrectAnswers": [
+      "verb-subject-object only",
+      "article-noun-verb only",
+      "adjective-article-verb only"
+    ],
+    "explanation": "Bulgarian word order can vary, but subject-verb-object is a useful starting pattern.",
+    "keywords": [
+      "word-order",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "454168b4-7dc7-4b60-a6be-181c6f1d9272",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What important beginner difference sets Bulgarian apart from many Slavic languages?",
+    "correctAnswer": "it has mostly lost the old noun case system",
+    "incorrectAnswers": [
+      "it has English-style articles only",
+      "it has no verb conjugation",
+      "it has no gender"
+    ],
+    "explanation": "Bulgarian keeps much less noun case marking than many other Slavic languages.",
+    "keywords": [
+      "cases",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "90ac6e48-fcd0-4929-b1f5-b4f80c52270e",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What do Bulgarian adjectives usually do?",
+    "correctAnswer": "agree with the noun in gender and number",
+    "incorrectAnswers": [
+      "stay the same always",
+      "agree only with the verb",
+      "agree only in questions"
+    ],
+    "explanation": "Bulgarian adjectives usually match the noun they describe.",
+    "keywords": [
+      "adjective-agreement",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "f8c0a6f9-97a4-4c3b-a2a6-0564cedf75ef",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "Where do Bulgarian adjectives usually go?",
+    "correctAnswer": "before the noun",
+    "incorrectAnswers": [
+      "after the noun only",
+      "inside the verb",
+      "after punctuation only"
+    ],
+    "explanation": "Bulgarian adjectives usually come before the noun.",
+    "keywords": [
+      "adjectives",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "45fad631-cae8-4244-9096-a5adbc34c395",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "Where does \"ne\" usually go in a Bulgarian negative sentence?",
+    "correctAnswer": "before the verb or the word it negates",
+    "incorrectAnswers": [
+      "after the noun only",
+      "inside the article ending",
+      "after the period"
+    ],
+    "explanation": "Bulgarian usually places \"ne\" before the word it negates, often before the verb.",
+    "keywords": [
+      "negation",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "c694fe96-113d-4ed6-9228-9f5a73b0a7d4",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "Which small word commonly marks a yes-or-no question in Bulgarian?",
+    "correctAnswer": "li",
+    "incorrectAnswers": [
+      "ne",
+      "da",
+      "za"
+    ],
+    "explanation": "Bulgarian often uses the particle \"li\" in yes-or-no questions.",
+    "keywords": [
+      "questions",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "85f1728d-f0bf-4c1d-839a-7b92b9ff7cb5",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "Where does a Bulgarian question word usually go?",
+    "correctAnswer": "near the start of the sentence",
+    "incorrectAnswers": [
+      "after the final period",
+      "inside the article",
+      "after every adjective"
+    ],
+    "explanation": "Bulgarian question words usually appear near the beginning of the sentence.",
+    "keywords": [
+      "questions",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "373e3f0a-533b-4272-9d79-fd9cc79b8504",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What do Bulgarian present-tense verb endings usually show?",
+    "correctAnswer": "person and number",
+    "incorrectAnswers": [
+      "article type",
+      "noun color",
+      "comma placement only"
+    ],
+    "explanation": "Bulgarian present-tense endings usually show person and number.",
+    "keywords": [
+      "present-tense",
+      "verbs",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "a0620556-2276-4c90-994d-a3933a5c6a5e",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What common verb means \"to be\" in Bulgarian grammar?",
+    "correctAnswer": "sam or sum in transliteration",
+    "incorrectAnswers": [
+      "imam",
+      "stavam",
+      "davam"
+    ],
+    "explanation": "Bulgarian has its own present-tense forms of \"to be.\"",
+    "keywords": [
+      "to-be",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "83e288cd-240c-485d-b193-412a347cb898",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "How is the future commonly formed in Bulgarian?",
+    "correctAnswer": "sht? + present-tense verb",
+    "incorrectAnswers": [
+      "with an English-style will only",
+      "with articles only",
+      "with no verb at all"
+    ],
+    "explanation": "Bulgarian often forms the future with the particle \"shte\" plus a present-tense verb.",
+    "keywords": [
+      "future",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "ed15fbd6-af4c-462e-84cf-f9fc28fbabdc",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What often changes in singular past tense Bulgarian verbs?",
+    "correctAnswer": "the form can reflect gender",
+    "incorrectAnswers": [
+      "the article disappears",
+      "the noun becomes plural",
+      "the punctuation changes"
+    ],
+    "explanation": "Bulgarian singular past forms can reflect masculine, feminine, or neuter gender.",
+    "keywords": [
+      "past-tense",
+      "gender",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "136c5bee-3a58-4e4f-bf09-f4105c37f224",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a very important beginner fact about Bulgarian infinitives?",
+    "correctAnswer": "modern Bulgarian usually uses da + present instead of an infinitive",
+    "incorrectAnswers": [
+      "it always uses English to + verb",
+      "it never uses subordinate clauses",
+      "it has only noun commands"
+    ],
+    "explanation": "Modern Bulgarian generally replaces the old infinitive with \"da\" plus a present form.",
+    "keywords": [
+      "infinitive",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "405c9d00-ffa3-4a42-bbe8-9cbe64302ddb",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic comparison often formed in Bulgarian?",
+    "correctAnswer": "with po- before the adjective",
+    "incorrectAnswers": [
+      "with -er only",
+      "with articles only",
+      "with no adjective change ever"
+    ],
+    "explanation": "Bulgarian often forms the comparative with the prefix \"po-.\"",
+    "keywords": [
+      "comparatives",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "c8bc5ee2-4203-4956-93a9-848f19286f6e",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic superlative often formed in Bulgarian?",
+    "correctAnswer": "with nay- before the adjective",
+    "incorrectAnswers": [
+      "with the article only",
+      "with plural nouns only",
+      "with a question particle"
+    ],
+    "explanation": "Bulgarian often forms the superlative with the prefix \"nay-.\"",
+    "keywords": [
+      "superlatives",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "e6607ef8-c503-4f60-87af-d405e57feef3",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Bulgarian direct objects?",
+    "correctAnswer": "they usually come after the verb in a basic SVO sentence",
+    "incorrectAnswers": [
+      "they must always come first",
+      "they are always deleted",
+      "they only appear in questions"
+    ],
+    "explanation": "A simple Bulgarian sentence often follows subject-verb-object order.",
+    "keywords": [
+      "word-order",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "967c56a3-dbb9-46b7-b657-430c0cec513d",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens with Bulgarian object pronouns?",
+    "correctAnswer": "short clitic forms can appear before the verb",
+    "incorrectAnswers": [
+      "they replace the noun case system completely",
+      "they always go after punctuation",
+      "they never occur in speech"
+    ],
+    "explanation": "Bulgarian often uses short object pronouns before the verb.",
+    "keywords": [
+      "object-pronouns",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "60697f86-ad58-4c9d-82ef-e62cc1269a05",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Bulgarian possession words?",
+    "correctAnswer": "possessive words usually come before the noun",
+    "incorrectAnswers": [
+      "they always come after punctuation",
+      "they replace the verb",
+      "they never change"
+    ],
+    "explanation": "Bulgarian possessive words usually come before the noun.",
+    "keywords": [
+      "possessives",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "73f33d14-e04e-486c-9c93-16482169a7d1",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens to Bulgarian plural nouns?",
+    "correctAnswer": "they take a plural ending",
+    "incorrectAnswers": [
+      "they keep the singular shape always",
+      "they gain an English article",
+      "they remove the verb"
+    ],
+    "explanation": "Bulgarian usually shows plural meaning with changed endings.",
+    "keywords": [
+      "plural",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "2fd6f7aa-550b-43c9-9583-751417e4c220",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Bulgarian sentence building?",
+    "correctAnswer": "learn verb forms and article endings early",
+    "incorrectAnswers": [
+      "skip verbs completely",
+      "ignore nouns",
+      "learn punctuation before words"
+    ],
+    "explanation": "Bulgarian grammar depends heavily on verb forms and article endings.",
+    "keywords": [
+      "articles",
+      "verbs",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "9682fb86-fed7-4176-945e-a55762941850",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a useful beginner rule for Bulgarian place expressions?",
+    "correctAnswer": "prepositions matter even though noun cases are reduced",
+    "incorrectAnswers": [
+      "prepositions never matter",
+      "prepositions replace verbs",
+      "prepositions erase nouns"
+    ],
+    "explanation": "Bulgarian still relies on prepositions to show many relationships.",
+    "keywords": [
+      "prepositions",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "c62f08fa-6210-491d-965c-fce96d90bfd4",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "Can Bulgarian often omit the subject pronoun when the verb form already makes it clear?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in dictionaries",
+      "only in questions"
+    ],
+    "explanation": "Bulgarian can often leave out the subject pronoun when context is clear.",
+    "keywords": [
+      "subject-pronouns",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "56fa1be0-4f12-4d6a-876f-dcaa03b3d483",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What usually matters more in Bulgarian than memorizing English-style articles?",
+    "correctAnswer": "the suffix article patterns",
+    "incorrectAnswers": [
+      "the silent letter system only",
+      "capital letters only",
+      "commas only"
+    ],
+    "explanation": "Bulgarian definiteness is learned through article endings, not separate words.",
+    "keywords": [
+      "articles",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "51e67b24-3e5c-4e1b-a27c-f5e6fd84d898",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a safe beginner rule for Bulgarian negatives with \"to be\"?",
+    "correctAnswer": "\"ne\" still goes before the verb form",
+    "incorrectAnswers": [
+      "the verb disappears",
+      "the noun becomes definite",
+      "the question particle replaces it"
+    ],
+    "explanation": "Bulgarian keeps the normal negative pattern with the verb \"to be\" too.",
+    "keywords": [
+      "negation",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "6aa8f26a-a777-41b6-a635-9055137722fa",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a good beginner summary of Bulgarian grammar structure?",
+    "correctAnswer": "the language mixes Slavic verb patterns with Balkan-style article behavior",
+    "incorrectAnswers": [
+      "it is identical to English grammar",
+      "it has no grammar endings",
+      "it uses only fixed word order"
+    ],
+    "explanation": "Bulgarian keeps Slavic-style verbs but uses a postposed definite article, which is a major beginner feature.",
+    "keywords": [
+      "overview",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  },
+  {
+    "itemId": "7e6fe826-40d4-42b9-a125-c39b2f640ea1",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a useful beginner rule for Bulgarian commands?",
+    "correctAnswer": "special verb forms can give commands",
+    "incorrectAnswers": [
+      "commands always need an article",
+      "commands always need plural nouns",
+      "commands are made only with adjectives"
+    ],
+    "explanation": "Bulgarian uses special verb forms for commands.",
+    "keywords": [
+      "imperative",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "4202c553-a212-4450-a613-0cce9497734f",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What is a useful beginner rule for Bulgarian question intonation?",
+    "correctAnswer": "intonation still matters even when a question particle appears",
+    "incorrectAnswers": [
+      "intonation never matters",
+      "intonation creates articles",
+      "intonation replaces verbs"
+    ],
+    "explanation": "Bulgarian questions use both particles and spoken intonation.",
+    "keywords": [
+      "questions",
+      "bulgarian-grammar"
+    ],
+    "source": "https://bulgarianinstitute.com/bulgarian-grammar"
+  },
+  {
+    "itemId": "6572ccf7-aa60-4375-bbd0-e7496efaf968",
+    "category": "languages",
+    "navigationKeyword1": "bulgarian",
+    "navigationKeyword2": "grammar",
+    "question": "What should a beginner notice first in Bulgarian noun phrases?",
+    "correctAnswer": "only one word in the phrase carries the definite article ending",
+    "incorrectAnswers": [
+      "every word carries the article ending",
+      "no word can carry definiteness",
+      "only verbs carry definiteness"
+    ],
+    "explanation": "In Bulgarian noun phrases, definiteness is usually marked once rather than repeated on every word.",
+    "keywords": [
+      "articles",
+      "bulgarian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Bulgarian_grammar"
+  }
+]

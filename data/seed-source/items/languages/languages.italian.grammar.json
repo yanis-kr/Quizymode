@@ -1,0 +1,575 @@
+[
+  {
+    "itemId": "777f83e8-eace-427e-9194-6fccd34de795",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, which article usually comes before a masculine singular noun?",
+    "correctAnswer": "il",
+    "incorrectAnswers": [
+      "la",
+      "le",
+      "una"
+    ],
+    "explanation": "Italian often uses \"il\" before a masculine singular noun.",
+    "keywords": [
+      "articles",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-definite-articles-4055936"
+  },
+  {
+    "itemId": "8745f6ef-dc08-41cc-8726-a9e47af5c560",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, which article usually comes before a feminine singular noun?",
+    "correctAnswer": "la",
+    "incorrectAnswers": [
+      "il",
+      "i",
+      "un"
+    ],
+    "explanation": "Italian often uses \"la\" before a feminine singular noun.",
+    "keywords": [
+      "articles",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-definite-articles-4055936"
+  },
+  {
+    "itemId": "50fa2cc0-5570-4653-8fb4-8379b565c540",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which indefinite article usually comes before a masculine singular noun in Italian?",
+    "correctAnswer": "un",
+    "incorrectAnswers": [
+      "una",
+      "le",
+      "gli"
+    ],
+    "explanation": "Italian usually uses \"un\" before many masculine singular nouns.",
+    "keywords": [
+      "articles",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-indefinite-articles-4092996"
+  },
+  {
+    "itemId": "3bf6635e-30ef-4b01-8929-36e42ef5d294",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which indefinite article usually comes before a feminine singular noun in Italian?",
+    "correctAnswer": "una",
+    "incorrectAnswers": [
+      "un",
+      "i",
+      "il"
+    ],
+    "explanation": "Italian usually uses \"una\" before a feminine singular noun.",
+    "keywords": [
+      "articles",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-indefinite-articles-4092996"
+  },
+  {
+    "itemId": "d99e1e3d-3255-401f-82a5-b56f5fbdb7f0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, nouns ending in -o are often what gender in the singular?",
+    "correctAnswer": "masculine",
+    "incorrectAnswers": [
+      "feminine",
+      "always plural",
+      "genderless"
+    ],
+    "explanation": "A common beginner rule is that many singular nouns ending in -o are masculine.",
+    "keywords": [
+      "gender",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "46229f7d-a5c1-4e7c-836f-a1ecbc48c616",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, nouns ending in -a are often what gender in the singular?",
+    "correctAnswer": "feminine",
+    "incorrectAnswers": [
+      "masculine",
+      "always neuter",
+      "always plural"
+    ],
+    "explanation": "A common beginner rule is that many singular nouns ending in -a are feminine.",
+    "keywords": [
+      "gender",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "468bdfd7-5046-49c5-b164-9fbdc7e5dd50",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens to a singular Italian noun ending in -o when it becomes plural?",
+    "correctAnswer": "it changes to -i",
+    "incorrectAnswers": [
+      "it changes to -a only",
+      "it never changes",
+      "it changes to -mente"
+    ],
+    "explanation": "Many Italian nouns in -o form the plural in -i.",
+    "keywords": [
+      "plural",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-plural-nouns-ending-in-o-2011411"
+  },
+  {
+    "itemId": "a5637667-6870-43d6-b1a8-2ef6c0deea05",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens to a singular Italian noun ending in -a when it becomes plural?",
+    "correctAnswer": "it changes to -e",
+    "incorrectAnswers": [
+      "it changes to -i only",
+      "it disappears",
+      "it adds -s"
+    ],
+    "explanation": "Many Italian nouns in -a form the plural in -e.",
+    "keywords": [
+      "plural",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "77c448a4-d2a4-451f-a118-da267cd65486",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, what do adjectives usually do?",
+    "correctAnswer": "agree with the noun in gender and number",
+    "incorrectAnswers": [
+      "stay the same always",
+      "agree only with the verb",
+      "agree only in the plural"
+    ],
+    "explanation": "Italian adjectives usually match the noun they describe.",
+    "keywords": [
+      "adjective-agreement",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "f5548abe-0032-4250-977e-4135c4d9924f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Where do many Italian adjectives usually go?",
+    "correctAnswer": "after the noun",
+    "incorrectAnswers": [
+      "before the noun only",
+      "at the end of every paragraph",
+      "before the article"
+    ],
+    "explanation": "Many common Italian adjectives follow the noun.",
+    "keywords": [
+      "adjectives",
+      "word-order",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "934298f1-4b8a-490d-be6f-4bb275050625",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Italian verbs are commonly grouped by which infinitive endings?",
+    "correctAnswer": "-are, -ere, and -ire",
+    "incorrectAnswers": [
+      "-ing, -ed, and -s",
+      "-um, -a, and -e",
+      "-ly, -tion, and -ment"
+    ],
+    "explanation": "Italian verbs are commonly grouped by their infinitive endings.",
+    "keywords": [
+      "verbs",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "1a37dfba-a132-4f81-8d7a-cb5d38225516",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "For many regular Italian verbs, which ending is common with \"io\" in the present tense?",
+    "correctAnswer": "-o",
+    "incorrectAnswers": [
+      "-iamo",
+      "-ano",
+      "-ete"
+    ],
+    "explanation": "Many regular Italian present-tense forms for \"io\" end in -o.",
+    "keywords": [
+      "present-tense",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/understanding-the-italian-present-tense-2011712"
+  },
+  {
+    "itemId": "1cf2c85a-00bb-4b9f-b1b7-83884148b956",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "For many regular -are verbs in Italian, which ending is common with \"noi\" in the present tense?",
+    "correctAnswer": "-iamo",
+    "incorrectAnswers": [
+      "-ano",
+      "-ete",
+      "-ono"
+    ],
+    "explanation": "Many regular -are verbs use -iamo with \"noi.\"",
+    "keywords": [
+      "present-tense",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/understanding-the-italian-present-tense-2011712"
+  },
+  {
+    "itemId": "eeb71791-6319-419b-8610-48fe98a7969a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Where does \"non\" usually go in an Italian sentence?",
+    "correctAnswer": "before the conjugated verb",
+    "incorrectAnswers": [
+      "after the noun only",
+      "after the article",
+      "inside the adjective"
+    ],
+    "explanation": "Italian negation usually places \"non\" before the conjugated verb.",
+    "keywords": [
+      "negation",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "a69dd869-20f0-45d9-9110-8c8410021ace",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Does Italian usually need a helper like \"do\" to form a basic question?",
+    "correctAnswer": "no",
+    "incorrectAnswers": [
+      "yes, always",
+      "yes, but only in writing",
+      "yes, but only with plural nouns"
+    ],
+    "explanation": "Italian can form basic questions with intonation and context without using a helper like English \"do.\"",
+    "keywords": [
+      "questions",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "7b067080-6bc8-41eb-b9cc-bcd794b16f6a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Can Italian often omit the subject pronoun when it is clear from the verb ending?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no, never",
+      "only in commands",
+      "only in dictionaries"
+    ],
+    "explanation": "Italian often leaves out the subject pronoun because the verb ending already shows the person.",
+    "keywords": [
+      "subject-pronouns",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "2fd832af-ba4d-4529-8087-be6b9789abaa",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern usually means \"there is\" in Italian?",
+    "correctAnswer": "c'e",
+    "incorrectAnswers": [
+      "ci sono",
+      "sono io",
+      "non e"
+    ],
+    "explanation": "Italian commonly uses \"c'e\" for a singular thing that exists.",
+    "keywords": [
+      "existence",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/there-is-versus-there-are-italian-4038491"
+  },
+  {
+    "itemId": "eb38637b-ef35-4e19-8671-d91239329c7f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern usually means \"there are\" in Italian?",
+    "correctAnswer": "ci sono",
+    "incorrectAnswers": [
+      "c'e",
+      "sono io",
+      "ho"
+    ],
+    "explanation": "Italian commonly uses \"ci sono\" for plural things that exist.",
+    "keywords": [
+      "existence",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/there-is-versus-there-are-italian-4038491"
+  },
+  {
+    "itemId": "c7887f17-416a-4c8f-927d-723a894504a0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is common for the present progressive in Italian?",
+    "correctAnswer": "stare + gerund",
+    "incorrectAnswers": [
+      "essere + noun",
+      "avere + adjective",
+      "non + infinitive"
+    ],
+    "explanation": "Italian often forms the progressive with \"stare\" plus a gerund.",
+    "keywords": [
+      "progressive",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "ef2118cb-65f4-481c-b39d-fd19d475ad1f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "What often happens when a simple Italian preposition meets a definite article?",
+    "correctAnswer": "they combine into one form",
+    "incorrectAnswers": [
+      "the noun disappears",
+      "the article moves to the end",
+      "nothing ever changes"
+    ],
+    "explanation": "Italian often combines simple prepositions with definite articles.",
+    "keywords": [
+      "prepositions",
+      "articles",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/articulated-prepositions-in-italian-4056547"
+  },
+  {
+    "itemId": "93e99c30-6acc-489f-a34a-84221f2b14be",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "With many Italian possessives, what usually appears before the noun too?",
+    "correctAnswer": "a definite article",
+    "incorrectAnswers": [
+      "a question word",
+      "the word non",
+      "nothing"
+    ],
+    "explanation": "Italian often uses a definite article together with a possessive adjective.",
+    "keywords": [
+      "possessives",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-possessive-adjectives-aggettivi-possessivi-4092972"
+  },
+  {
+    "itemId": "db149700-d2da-4396-b467-0501247a8a70",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Where do Italian object pronouns usually go with a conjugated verb?",
+    "correctAnswer": "before the conjugated verb",
+    "incorrectAnswers": [
+      "after the article",
+      "after the subject only",
+      "inside the adjective"
+    ],
+    "explanation": "Italian object pronouns usually come before the conjugated verb.",
+    "keywords": [
+      "object-pronouns",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "31197b75-af1e-4236-8795-62739dd6e6be",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Where do Italian reflexive pronouns usually go with a conjugated verb?",
+    "correctAnswer": "before the conjugated verb",
+    "incorrectAnswers": [
+      "after the noun only",
+      "at the end of every sentence",
+      "between the article and noun"
+    ],
+    "explanation": "Italian reflexive pronouns like mi, ti, and si usually come before the conjugated verb.",
+    "keywords": [
+      "reflexive-verbs",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "02e70665-8e8e-4d6b-aea0-5eb808bf8d8c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which pattern is common for the everyday past in Italian?",
+    "correctAnswer": "avere or essere + past participle",
+    "incorrectAnswers": [
+      "stare + present participle",
+      "article + noun only",
+      "non + adjective"
+    ],
+    "explanation": "Italian often forms the everyday past with \"avere\" or \"essere\" plus a past participle.",
+    "keywords": [
+      "past-tense",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "cc32c8e1-78c8-48c3-aaae-1b6cbc5d0803",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "How is a basic comparison often formed in Italian?",
+    "correctAnswer": "piu + adjective + di or che",
+    "incorrectAnswers": [
+      "molto + noun + da",
+      "non + adjective + in",
+      "article + adjective + da"
+    ],
+    "explanation": "Italian often compares with \"piu\" plus an adjective.",
+    "keywords": [
+      "comparatives",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "b58a3170-9144-427e-a1f6-23a8bbe97da1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "How is a common superlative often formed in Italian?",
+    "correctAnswer": "il/la + piu + adjective",
+    "incorrectAnswers": [
+      "un + adjective + che",
+      "non + adjective + mai",
+      "stare + adjective"
+    ],
+    "explanation": "Italian often forms the superlative with an article plus \"piu\" and an adjective.",
+    "keywords": [
+      "superlatives",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "6aa6271c-f9c4-44ba-b4e3-be1debcea71c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "Which short pattern often means \"never\" in Italian negation?",
+    "correctAnswer": "non ... mai",
+    "incorrectAnswers": [
+      "mai ... si",
+      "e ... mai",
+      "solo ... mai"
+    ],
+    "explanation": "Italian often combines \"non\" and \"mai\" to say \"never.\"",
+    "keywords": [
+      "negation",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "5b30ed30-8de9-47a2-905e-24554520591b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "With close family members in the singular, what often happens to the article before an Italian possessive?",
+    "correctAnswer": "it is often omitted",
+    "incorrectAnswers": [
+      "it becomes plural",
+      "it moves after the noun",
+      "it changes to non"
+    ],
+    "explanation": "With many close-family nouns in the singular, Italian often omits the article before the possessive.",
+    "keywords": [
+      "possessives",
+      "family",
+      "italian-grammar"
+    ],
+    "source": "https://www.thoughtco.com/italian-possessive-adjectives-aggettivi-possessivi-4092972"
+  },
+  {
+    "itemId": "5da12f21-1284-4596-ab0d-cefc9d8f35bf",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, which verb commonly means \"to be\"?",
+    "correctAnswer": "essere",
+    "incorrectAnswers": [
+      "avere",
+      "stare only",
+      "fare"
+    ],
+    "explanation": "Italian commonly uses \"essere\" for identity and description.",
+    "keywords": [
+      "to-be",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  },
+  {
+    "itemId": "8bd68fa2-600e-44d3-a9df-9ff3caf5151d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "grammar",
+    "question": "In beginner Italian, which verb commonly means \"to have\"?",
+    "correctAnswer": "avere",
+    "incorrectAnswers": [
+      "essere",
+      "andare",
+      "dire"
+    ],
+    "explanation": "Italian commonly uses \"avere\" for possession and in many compound tenses.",
+    "keywords": [
+      "to-have",
+      "italian-grammar"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Italian_grammar"
+  }
+]
