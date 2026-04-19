@@ -44,14 +44,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which sentence talks about a plan or prediction with \"will\"?",
+    "question": "Which sentence uses \"will\" to talk about a future plan, prediction, or decision?",
     "correctAnswer": "I will call you after work.",
     "incorrectAnswers": [
       "I call you every day.",
       "I called you yesterday.",
       "I am calling you now."
     ],
-    "explanation": "\"Will\" + base verb is a common way to express a future intention or offer.",
+    "explanation": "English often uses \"will\" for a future idea. The verb after \"will\" stays in the base form.",
     "keywords": [
       "future",
       "will",
@@ -71,7 +71,7 @@
       "She studied last year.",
       "She will study tomorrow."
     ],
-    "explanation": "The present continuous (am/is/are + -ing) often describes an action in progress now or in a current period.",
+    "explanation": "English present continuous uses be + verb-ing for an action happening now or around now. That form highlights an ongoing activity.",
     "keywords": [
       "present-continuous",
       "time-forms",
@@ -84,14 +84,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which sentence uses present perfect for life experience up to now?",
+    "question": "Which sentence uses present perfect to describe life experience up to now?",
     "correctAnswer": "I have visited two countries in Europe.",
     "incorrectAnswers": [
       "I visit Europe every year.",
       "I visited Spain in 2010.",
       "I am visiting Europe next summer."
     ],
-    "explanation": "\"Have/has\" + past participle often marks experience without a single finished past time.",
+    "explanation": "Present perfect often describes life experience up to now without naming a finished past time. The correct sentence uses have + past participle for that meaning.",
     "keywords": [
       "present-perfect",
       "experience",

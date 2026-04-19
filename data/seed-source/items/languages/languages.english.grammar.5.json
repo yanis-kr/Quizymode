@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which mark usually ends a normal statement in English?",
+    "question": "You are writing a simple statement like \"The train is late.\" Which mark usually ends it?",
     "correctAnswer": "a period",
     "incorrectAnswers": [
       "a question mark",
       "an exclamation point only",
       "a comma alone"
     ],
-    "explanation": "Statements that are not questions or strong commands usually end with a period.",
+    "explanation": "A normal English statement usually ends with a period. That mark tells the reader the sentence is complete and not a question.",
     "keywords": [
       "period",
       "full-stop",
@@ -24,14 +24,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which mark ends a direct yes-or-no question?",
+    "question": "You are writing a direct question like \"Are you ready\". Which mark should end it?",
     "correctAnswer": "a question mark",
     "incorrectAnswers": [
       "a period",
       "a semicolon",
       "a colon only"
     ],
-    "explanation": "Direct questions are usually followed by a question mark.",
+    "explanation": "A direct English question usually ends with a question mark. That mark shows the reader the sentence is asking something.",
     "keywords": [
       "question-mark",
       "questions",
@@ -44,14 +44,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "In the list \"bread, milk, and eggs,\" what separates the items?",
+    "question": "You are writing a short list like \"bread, milk, and eggs.\" What separates the items?",
     "correctAnswer": "commas",
     "incorrectAnswers": [
       "only periods",
       "only semicolons between every word",
       "apostrophes"
     ],
-    "explanation": "Commas often separate items in a simple series before the last item.",
+    "explanation": "English normally uses commas to separate items in a list. Each comma marks the boundary between one list item and the next.",
     "keywords": [
       "comma",
       "lists",
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which sentence uses the apostrophe correctly for \"it is\"?",
+    "question": "You want to write the contraction for \"it is\" in a sentence. Which option uses the apostrophe correctly?",
     "correctAnswer": "It's cold today.",
     "incorrectAnswers": [
       "Its cold today.",
       "Its' cold today.",
       "It,s cold today."
     ],
-    "explanation": "The contraction for \"it is\" is \"it's\" with an apostrophe. The possessive \"its\" has no apostrophe.",
+    "explanation": "The contraction \"it's\" uses an apostrophe to show that letters are missing from \"it is.\" Without the apostrophe, \"its\" is the possessive form instead.",
     "keywords": [
       "apostrophe",
       "contractions",
@@ -84,14 +84,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which shows singular possession for one student?",
+    "question": "You want to say that one student owns the bag. Which form shows singular possession correctly?",
     "correctAnswer": "the student's book",
     "incorrectAnswers": [
       "the students book",
       "the students' book",
       "the studentss book"
     ],
-    "explanation": "For one owner, English often adds apostrophe + s to show possession.",
+    "explanation": "A singular English noun usually shows possession with apostrophe + s. That marks one owner instead of a contraction or a plural.",
     "keywords": [
       "possessive",
       "apostrophe",
@@ -104,14 +104,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "What usually surrounds the exact words a person says in writing?",
+    "question": "You are writing the exact words someone said in English. What usually surrounds that quoted speech?",
     "correctAnswer": "quotation marks",
     "incorrectAnswers": [
       "only parentheses",
       "only hyphens",
       "only brackets for all speech"
     ],
-    "explanation": "Direct speech is often placed inside quotation marks to show the speaker's exact words.",
+    "explanation": "English usually puts direct speech inside quotation marks. Those marks show where the speaker's exact words begin and end.",
     "keywords": [
       "quotation-marks",
       "direct-speech",

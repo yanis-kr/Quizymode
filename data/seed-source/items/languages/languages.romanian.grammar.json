@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a key beginner fact about the Romanian definite article?",
+    "question": "You want to say \"the book\" in Romanian. What should you notice about how the definite article works?",
     "correctAnswer": "it is usually attached to the end of the noun",
     "incorrectAnswers": [
       "it always stands as a separate word before the noun",
       "it comes only before verbs",
       "it does not exist"
     ],
-    "explanation": "Romanian commonly attaches the definite article to the end of the noun.",
+    "explanation": "In Romanian, the definite article is attached to the noun instead of standing alone as a separate word. That means the \"the\" idea is built into the noun phrase itself.",
     "keywords": [
       "articles",
       "romanian-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a key beginner fact about the Romanian indefinite article?",
+    "question": "You want to say \"a book\" in Romanian. What should you notice about the indefinite article?",
     "correctAnswer": "it usually appears before the noun",
     "incorrectAnswers": [
       "it is attached to the verb",
       "it disappears in singular nouns",
       "it goes only after adjectives"
     ],
-    "explanation": "Romanian usually places the indefinite article before the noun.",
+    "explanation": "In Romanian, the indefinite article usually comes before the noun. So a phrase like \"a book\" uses a separate word in front of the noun, not an ending attached to it.",
     "keywords": [
       "articles",
       "romanian-grammar"
@@ -42,14 +42,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "How many grammatical genders do beginners usually learn first in Romanian?",
+    "question": "When you learn basic nouns in Romanian, how many grammatical genders do you usually need to track?",
     "correctAnswer": "three",
     "incorrectAnswers": [
       "one",
       "two",
       "five"
     ],
-    "explanation": "Romanian commonly teaches masculine, feminine, and neuter behavior.",
+    "explanation": "Beginners usually learn three grammatical genders in Romanian. That helps you choose matching articles, adjectives, or endings correctly.",
     "keywords": [
       "gender",
       "romanian-grammar"
@@ -61,14 +61,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Where do many Romanian adjectives usually go?",
+    "question": "You want to say \"a red car\" in Romanian. Where does the adjective usually go?",
     "correctAnswer": "after the noun",
     "incorrectAnswers": [
       "before the noun only",
       "after punctuation only",
       "inside the verb"
     ],
-    "explanation": "Romanian often places adjectives after the noun.",
+    "explanation": "In Romanian, the adjective usually goes after the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "romanian-grammar"
@@ -80,14 +80,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What do Romanian adjectives usually do?",
+    "question": "You want to describe a feminine or plural noun in Romanian. What should the adjective do?",
     "correctAnswer": "agree with the noun in gender and number",
     "incorrectAnswers": [
       "stay the same always",
       "agree only with the verb",
       "agree only in the plural"
     ],
-    "explanation": "Romanian adjectives usually match the noun they describe.",
+    "explanation": "In Romanian, the adjective should agree with the noun in gender and number. The adjective changes so it matches the noun it describes, not some other word in the sentence.",
     "keywords": [
       "adjective-agreement",
       "romanian-grammar"
@@ -99,14 +99,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What often happens to Romanian plural nouns?",
+    "question": "You want to show there is more than one thing in Romanian. What usually carries that plural meaning?",
     "correctAnswer": "they take a plural ending",
     "incorrectAnswers": [
       "they keep the singular form always",
       "they gain an English article",
       "they erase the verb"
     ],
-    "explanation": "Romanian usually shows plural meaning with changed endings.",
+    "explanation": "In Romanian, they take a plural ending. Learners should watch the word ending or noun form instead of expecting English-style plural behavior.",
     "keywords": [
       "plural",
       "romanian-grammar"
@@ -118,14 +118,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What do Romanian present-tense verb endings usually show?",
+    "question": "If you compare forms like \"I speak\" and \"we speak\" in Romanian, what do the present-tense endings usually show?",
     "correctAnswer": "person and number",
     "incorrectAnswers": [
       "article type",
       "noun color",
       "comma placement only"
     ],
-    "explanation": "Romanian present-tense endings usually show person and number.",
+    "explanation": "In Romanian, present-tense endings usually show person and number. The ending changes help the listener know who is doing the action.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -138,14 +138,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Can Romanian often omit the subject pronoun when the verb ending already makes it clear?",
+    "question": "If the verb ending already makes the subject clear in Romanian, can you often leave the subject pronoun out?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in questions",
       "only in commands"
     ],
-    "explanation": "Romanian can often omit the subject pronoun when context is clear.",
+    "explanation": "Yes. In Romanian, yes when the verb ending or the context already tells you who the subject is.",
     "keywords": [
       "subject-pronouns",
       "romanian-grammar"
@@ -157,14 +157,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Where does \"nu\" usually go in a Romanian negative sentence?",
+    "question": "You want to say \"I am not ready\" in Romanian. Where does \"nu\" usually go?",
     "correctAnswer": "before the verb",
     "incorrectAnswers": [
       "after the noun only",
       "inside the article",
       "after the final period only"
     ],
-    "explanation": "Romanian usually places \"nu\" before the verb for negation.",
+    "explanation": "In Romanian, \"nu\" usually comes before the verb. In a sentence like \"I am not ready,\" that puts the negative right in front of the verb phrase.",
     "keywords": [
       "negation",
       "romanian-grammar"
@@ -176,14 +176,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Does Romanian usually need a helper like English \"do\" to form a basic question?",
+    "question": "You want to ask \"Do you speak Romanian?\" in a simple Romanian conversation. Do you usually need a helper like English \"do\"?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes, always",
       "yes, but only in writing",
       "yes, but only with plural nouns"
     ],
-    "explanation": "Romanian can form basic questions with intonation and word order without using a helper like English \"do.\"",
+    "explanation": "Romanian normally does not use a separate helper like English \"do\" for basic questions. The question is usually shown by intonation, word order, or a question marker instead.",
     "keywords": [
       "questions",
       "romanian-grammar"
@@ -195,14 +195,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a helpful beginner word order in Romanian?",
+    "question": "A beginner wants to say \"Anna reads a book\" in Romanian. Which word order is the safest starting pattern?",
     "correctAnswer": "subject-verb-object",
     "incorrectAnswers": [
       "verb-subject-object only",
       "article-noun-verb only",
       "adjective-article-verb only"
     ],
-    "explanation": "Romanian commonly uses subject-verb-object as a beginner base pattern.",
+    "explanation": "The safest beginner pattern in Romanian is subject-verb-object. That gives you a clear base sentence before you start using freer emphasis, cases, or particles.",
     "keywords": [
       "word-order",
       "romanian-grammar"
@@ -214,14 +214,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Which verb commonly means \"to be\" in Romanian grammar?",
+    "question": "You want to say \"I am ready\" in Romanian. Which verb gives the meaning \"to be\"?",
     "correctAnswer": "a fi",
     "incorrectAnswers": [
       "a avea",
       "a merge",
       "a spune"
     ],
-    "explanation": "Romanian uses forms of \"a fi\" for identity and description.",
+    "explanation": "In Romanian, a fi is the basic verb for \"to be.\" Learners need it for identity, description, or other simple \"is / am / are\" sentences.",
     "keywords": [
       "to-be",
       "romanian-grammar"
@@ -233,14 +233,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What ending pattern often introduces the Romanian infinitive?",
+    "question": "When you look up a verb in a Romanian dictionary, what ending do you often see on the infinitive?",
     "correctAnswer": "a + verb",
     "incorrectAnswers": [
       "to + article",
       "nu + noun",
       "the + adjective"
     ],
-    "explanation": "Romanian infinitives commonly appear with \"a\" before the verb form.",
+    "explanation": "In Romanian, many infinitives use a + verb. That ending is a useful clue for spotting the base verb form in lists and dictionaries.",
     "keywords": [
       "infinitive",
       "romanian-grammar"
@@ -252,14 +252,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What beginner pattern is common for a near-future idea in Romanian?",
+    "question": "You want to say \"I am going to study tomorrow\" in Romanian. Which beginner future pattern is common?",
     "correctAnswer": "a future marker plus the verb, often o sa + verb",
     "incorrectAnswers": [
       "English will only",
       "an attached article only",
       "no verb at all"
     ],
-    "explanation": "Romanian commonly uses future markers such as \"o sa\" with a verb.",
+    "explanation": "Romanian often uses a helper-based future pattern for near-future meaning. That structure gives beginners a practical way to talk about future plans.",
     "keywords": [
       "future",
       "romanian-grammar"
@@ -271,14 +271,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What special marker often appears before a definite human direct object in Romanian?",
+    "question": "You want to say \"I see Mihai\" in Romanian with a definite human direct object. What special marker often appears?",
     "correctAnswer": "pe",
     "incorrectAnswers": [
       "nu",
       "si",
       "ca"
     ],
-    "explanation": "Romanian often uses \"pe\" before definite human direct objects.",
+    "explanation": "Romanian often uses the marker \"pe\" before a definite human direct object. It helps signal that the person is the object of the verb.",
     "keywords": [
       "direct-object",
       "romanian-grammar"
@@ -290,14 +290,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner fact about Romanian genitive and dative forms?",
+    "question": "When you start learning possession and indirect-object patterns in Romanian, what beginner fact helps about the genitive and dative?",
     "correctAnswer": "they are often closely related",
     "incorrectAnswers": [
       "they never overlap",
       "they replace all verbs",
       "they only appear in questions"
     ],
-    "explanation": "Romanian genitive and dative forms are often closely linked.",
+    "explanation": "Romanian often shares forms between the genitive and dative. Learners should notice that these two functions are closely linked in the noun and article system.",
     "keywords": [
       "genitive",
       "dative",
@@ -310,14 +310,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Where do many Romanian possessive adjectives usually go?",
+    "question": "You want to say \"my bag\" in Romanian. What beginner rule helps with possession words?",
     "correctAnswer": "after the noun",
     "incorrectAnswers": [
       "before the noun only",
       "inside the article ending",
       "after the period"
     ],
-    "explanation": "Romanian often places possessive adjectives after the noun, especially in common patterns like \"cartea mea.\"",
+    "explanation": "In Romanian, possessive words usually go after the noun. That rule gives learners the safest default pattern for short possessive phrases.",
     "keywords": [
       "possessives",
       "romanian-grammar"
@@ -329,14 +329,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "How is a basic comparison often formed in Romanian?",
+    "question": "You want to say \"This book is bigger than that one\" in Romanian. How is that kind of comparison often formed?",
     "correctAnswer": "mai + adjective",
     "incorrectAnswers": [
       "-er only",
       "article + noun only",
       "no adjective change ever"
     ],
-    "explanation": "Romanian often uses \"mai\" before the adjective for a comparison.",
+    "explanation": "The usual pattern in Romanian is mai + adjective. That pattern gives learners a clean way to compare two things in an everyday sentence.",
     "keywords": [
       "comparatives",
       "romanian-grammar"
@@ -348,14 +348,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "How is a basic superlative often formed in Romanian?",
+    "question": "You want to say \"She is the fastest student\" in Romanian. How is that kind of superlative often formed?",
     "correctAnswer": "cel/cea/cei/cele + mai + adjective",
     "incorrectAnswers": [
       "the article only",
       "nu + adjective",
       "verb + article"
     ],
-    "explanation": "Romanian often forms the superlative with a form of \"cel\" plus \"mai\" and an adjective.",
+    "explanation": "The usual pattern in Romanian is cel/cea/cei/cele + mai + adjective. That pattern expresses the strongest degree inside a group, not just a comparison between two things.",
     "keywords": [
       "superlatives",
       "romanian-grammar"
@@ -367,14 +367,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner rule for Romanian prepositions?",
+    "question": "You want to build a short Romanian phrase like \"with a friend\" or \"in the city.\" What beginner rule helps with prepositions?",
     "correctAnswer": "they often work together with noun case patterns",
     "incorrectAnswers": [
       "they never matter",
       "they replace nouns",
       "they erase adjectives"
     ],
-    "explanation": "Romanian prepositions still matter because they interact with noun forms and meanings.",
+    "explanation": "Romanian prepositions need to be learned together with the forms they trigger. Learners get better results by memorizing short phrase patterns, not isolated prepositions alone.",
     "keywords": [
       "prepositions",
       "romanian-grammar"
@@ -386,14 +386,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What usually happens to Romanian nouns in the definite form?",
+    "question": "You want to say \"the book\" in Romanian. What usually happens to the noun in the definite form?",
     "correctAnswer": "the article is attached to the noun ending",
     "incorrectAnswers": [
       "a separate word always appears before the noun",
       "the adjective disappears",
       "the verb becomes plural"
     ],
-    "explanation": "Romanian usually marks definiteness on the end of the noun.",
+    "explanation": "In Romanian, the definite article is usually attached to the noun ending. So learners need to watch the noun form itself, not just look for a separate word like English \"the.\"",
     "keywords": [
       "articles",
       "romanian-grammar"
@@ -405,14 +405,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What do Romanian adjectives and articles together often reveal?",
+    "question": "When you look at a Romanian noun together with its adjective, what two things do they often reveal together?",
     "correctAnswer": "gender and number",
     "incorrectAnswers": [
       "verb tense only",
       "punctuation mood only",
       "article-free spelling only"
     ],
-    "explanation": "Romanian adjective and article forms often help show gender and number.",
+    "explanation": "In Romanian, the adjective and noun together often reveal gender and number. Reading the whole phrase helps learners identify both at once.",
     "keywords": [
       "gender",
       "adjective-agreement",
@@ -425,14 +425,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Romanian nouns plus adjectives?",
+    "question": "You want to say \"a red car\" in Romanian. What is the safest beginner rule for the noun and adjective order?",
     "correctAnswer": "noun + adjective is very common",
     "incorrectAnswers": [
       "adjective + noun is the only pattern",
       "verbs replace adjectives",
       "articles replace adjectives"
     ],
-    "explanation": "Romanian often uses noun + adjective order.",
+    "explanation": "Romanian often puts the adjective after the noun in ordinary learner-friendly phrases. Starting with that order helps you build natural beginner sentences.",
     "keywords": [
       "word-order",
       "adjectives",
@@ -445,14 +445,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Romanian plural meaning?",
+    "question": "In Romanian, if there is no separate plural article, what usually shows that a noun is plural?",
     "correctAnswer": "plural is usually shown by endings, not by a separate plural article",
     "incorrectAnswers": [
       "plural appears only in punctuation",
       "plural is invisible",
       "plural is shown only by verbs"
     ],
-    "explanation": "Romanian usually shows plural meaning through changed forms.",
+    "explanation": "Romanian usually shows plural meaning through endings, not through a separate plural article. Learners should watch the noun form itself to spot plurality.",
     "keywords": [
       "plural",
       "romanian-grammar"
@@ -464,14 +464,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "Can Romanian use object pronouns before the verb?",
+    "question": "You want to say \"I see him\" in Romanian with a normal conjugated verb. Where does the object pronoun usually go?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only after punctuation",
       "only with adjectives"
     ],
-    "explanation": "Romanian can place short object pronouns before the verb.",
+    "explanation": "In Romanian, the object pronoun usually goes yes. That keeps the short pronoun attached to the verb frame learners use most often.",
     "keywords": [
       "object-pronouns",
       "romanian-grammar"
@@ -483,14 +483,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner fact about Romanian reflexive verbs?",
+    "question": "You want to say \"I wake up\" in Romanian with a normal conjugated verb. Where does the reflexive pronoun usually go?",
     "correctAnswer": "they often use se or similar reflexive forms",
     "incorrectAnswers": [
       "they always drop the subject",
       "they never change form",
       "they use English pronouns only"
     ],
-    "explanation": "Romanian has common reflexive verb patterns.",
+    "explanation": "In Romanian, the reflexive pronoun usually goes they often use se or similar reflexive forms. That is the most useful beginner pattern for everyday reflexive sentences.",
     "keywords": [
       "reflexive-verbs",
       "romanian-grammar"
@@ -502,14 +502,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner rule for Romanian subjunctive-style patterns?",
+    "question": "You want to say a pattern like \"I want him to come\" in Romanian. What beginner rule helps with the subjunctive-style structure?",
     "correctAnswer": "many common verbs are followed by sa + a verb form",
     "incorrectAnswers": [
       "Romanian never uses subordinate verb markers",
       "only adjectives can follow common verbs",
       "questions replace subordinate clauses"
     ],
-    "explanation": "Romanian often uses \"sa\" before a following verb in many common patterns.",
+    "explanation": "Romanian often uses a subjunctive-style pattern instead of an English-looking infinitive structure in this kind of sentence. Learners should expect the clause marker and verb form to do that work together.",
     "keywords": [
       "subjunctive",
       "romanian-grammar"
@@ -521,14 +521,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What usually matters more in Romanian than memorizing English article habits?",
+    "question": "When you build meaning in Romanian, what usually matters more than copying English article habits?",
     "correctAnswer": "noun endings and attached article forms",
     "incorrectAnswers": [
       "capital letters only",
       "commas only",
       "silent letters only"
     ],
-    "explanation": "Romanian grammar often depends on endings and attached article forms.",
+    "explanation": "In Romanian, noun endings and attached article forms often matter more than English-style article instincts. Learners get better results by reading the whole noun phrase together.",
     "keywords": [
       "articles",
       "romanian-grammar"
@@ -540,14 +540,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner summary of Romanian grammar?",
+    "question": "If a beginner wants to make sense of Romanian sentences faster, what big-picture rule is most helpful to remember?",
     "correctAnswer": "it mixes Romance-style vocabulary with Balkan-style article behavior",
     "incorrectAnswers": [
       "it is identical to English grammar",
       "it has no noun changes",
       "it uses only fixed word order"
     ],
-    "explanation": "Romanian is a Romance language with a postposed definite article, which is a major beginner feature.",
+    "explanation": "In Romanian, it mixes Romance-style vocabulary with Balkan-style article behavior. That summary tells the learner where the grammar meaning is really being carried.",
     "keywords": [
       "overview",
       "romanian-grammar"
@@ -559,14 +559,14 @@
     "category": "languages",
     "navigationKeyword1": "romanian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner rule for Romanian question words?",
+    "question": "In a Romanian question like \"Where is the station?\", what beginner rule helps with question words?",
     "correctAnswer": "they usually appear near the start of the sentence",
     "incorrectAnswers": [
       "they always appear at the end",
       "they replace the verb",
       "they erase the noun"
     ],
-    "explanation": "Romanian question words usually come near the beginning of the sentence.",
+    "explanation": "Romanian question words usually come early in the sentence. Putting them near the front makes the question clear right away for the listener.",
     "keywords": [
       "questions",
       "romanian-grammar"

@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
-    "question": "In standard Spanish, which article is commonly used before \"agua\" in phrases like \"el agua fría\"?",
+    "question": "You want to say \"the cold water\" in Spanish. Which article normally appears before {{es-ES|agua||AH-gwa}} in the singular?",
     "correctAnswer": "{{es-ES|el||EL}}",
     "incorrectAnswers": [
       "{{es-ES|la||LA}}",
       "{{es-ES|los||LOS}}",
       "{{es-ES|las||LAS}}"
     ],
-    "explanation": "Many feminine nouns that begin with stressed a- use \"el\" in the singular for easier pronunciation, but they still take feminine adjectives.",
+    "explanation": "Spanish uses \"el\" before feminine singular nouns like \"agua\" when the stressed opening sound would clash with \"la.\" The noun is still feminine, so the rest of the phrase stays feminine, as in \"el agua fria.\"",
     "keywords": [
       "water",
       "articles",
@@ -24,14 +24,14 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
-    "question": "Which word fits this sentence about identity: \"___ soy estudiante\"?",
+    "question": "You want to say \"I am a student\" in Spanish. Which word fits before \"soy estudiante\"?",
     "correctAnswer": "{{es-ES|Yo||YO}}",
     "incorrectAnswers": [
       "{{es-ES|Tú||TU}}",
       "{{es-ES|Ella||EYA}}",
       "{{es-ES|Nosotros||no-SO-tros}}"
     ],
-    "explanation": "The verb \"soy\" matches \"yo\" (I am). The subject pronoun is optional in Spanish, but only \"yo\" matches \"soy\" here.",
+    "explanation": "Only \"yo\" matches the first-person singular verb \"soy\" here. Spanish often drops the pronoun, but if you include it, it still has to match the verb.",
     "keywords": [
       "to-be",
       "subject-pronouns",
@@ -104,14 +104,14 @@
     "category": "languages",
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "grammar",
-    "question": "After \"para\" meaning \"in order to,\" which verb form usually follows?",
+    "question": "You want to say \"I study to learn\" in Spanish after \"para.\" Which verb form usually follows?",
     "correctAnswer": "the infinitive",
     "incorrectAnswers": [
       "the gerund",
       "the past participle alone",
       "the imperative"
     ],
-    "explanation": "Purpose with \"para\" is commonly expressed with an infinitive, for example \"para estudiar\" (in order to study).",
+    "explanation": "After \"para\" meaning purpose, Spanish usually uses the infinitive. In a phrase like \"para estudiar,\" the infinitive states the action directly.",
     "keywords": [
       "infinitive",
       "purpose",

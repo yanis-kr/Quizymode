@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "In beginner Latvian, what usually replaces English articles like \"a\" and \"the\"?",
+    "question": "In a simple Latvian sentence like \"This is a book,\" what do you usually use instead of English articles like \"a\" or \"the\"?",
     "correctAnswer": "no article is used",
     "incorrectAnswers": [
       "an article is added after every noun",
       "an article always comes before the verb",
       "the article changes by tense"
     ],
-    "explanation": "Latvian has no separate definite or indefinite articles.",
+    "explanation": "Latvian normally uses no separate article. In a sentence like \"This is a book,\" the noun and the context carry that meaning without an extra word like English \"a\" or \"the\".",
     "keywords": [
       "articles",
       "latvian-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "How many grammatical genders do beginners usually learn first in Latvian?",
+    "question": "When you learn basic nouns in Latvian, how many grammatical genders do you usually need to track?",
     "correctAnswer": "two",
     "incorrectAnswers": [
       "one",
       "three",
       "five"
     ],
-    "explanation": "Latvian commonly uses masculine and feminine gender.",
+    "explanation": "Beginners usually learn two grammatical genders in Latvian. That helps you choose matching articles, adjectives, or endings correctly.",
     "keywords": [
       "gender",
       "latvian-grammar"
@@ -42,14 +42,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a common beginner word order in Latvian?",
+    "question": "A beginner wants to say \"Anna reads a book\" in Latvian. Which word order is the safest starting pattern?",
     "correctAnswer": "subject-verb-object",
     "incorrectAnswers": [
       "verb-subject-object only",
       "article-noun-verb only",
       "adjective-article-verb only"
     ],
-    "explanation": "Latvian word order is flexible, but subject-verb-object is a useful starting pattern.",
+    "explanation": "The safest beginner pattern in Latvian is subject-verb-object. That gives you a clear base sentence before you start using freer emphasis, cases, or particles.",
     "keywords": [
       "word-order",
       "latvian-grammar"
@@ -61,14 +61,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What do Latvian nouns usually change for?",
+    "question": "If the same noun is the subject in one Latvian sentence and the object in another, what does it usually change for?",
     "correctAnswer": "case and number",
     "incorrectAnswers": [
       "question marks only",
       "capital letters only",
       "punctuation only"
     ],
-    "explanation": "Latvian nouns change form for case and number.",
+    "explanation": "In Latvian, nouns usually change for case and number. Those changes help show the noun's job in the sentence.",
     "keywords": [
       "cases",
       "latvian-grammar"
@@ -80,14 +80,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks the subject in Latvian?",
+    "question": "In a Latvian sentence like \"The teacher arrives.\", which case usually marks the highlighted role?",
     "correctAnswer": "the nominative",
     "incorrectAnswers": [
       "the genitive",
       "the dative",
       "the locative"
     ],
-    "explanation": "Latvian usually uses the nominative for the subject.",
+    "explanation": "In Latvian, the nominative case usually marks the subject. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "nominative",
       "latvian-grammar"
@@ -99,14 +99,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks a direct object in beginner Latvian?",
+    "question": "In a Latvian sentence like \"I see the teacher.\", which case usually marks the highlighted role?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the nominative",
       "the vocative",
       "the article case"
     ],
-    "explanation": "Latvian commonly uses the accusative for a direct object.",
+    "explanation": "In Latvian, the accusative case usually marks the direct object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "accusative",
       "latvian-grammar"
@@ -118,14 +118,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often shows possession in Latvian?",
+    "question": "In a Latvian sentence like \"the color of the car\", which case usually marks the highlighted role?",
     "correctAnswer": "the genitive",
     "incorrectAnswers": [
       "the imperative",
       "the nominative",
       "the future case"
     ],
-    "explanation": "Latvian often uses the genitive for possession and many \"of\" meanings.",
+    "explanation": "In Latvian, the genitive often shows possession or an \"of\" meaning. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "genitive",
       "latvian-grammar"
@@ -137,14 +137,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often marks the recipient in Latvian?",
+    "question": "In a Latvian sentence like \"I gave Anna the book.\", which case usually marks the highlighted role?",
     "correctAnswer": "the dative",
     "incorrectAnswers": [
       "the nominative",
       "the accusative only",
       "the comparative"
     ],
-    "explanation": "Latvian often uses the dative for the person who receives something.",
+    "explanation": "In Latvian, the dative often marks the recipient or indirect object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "dative",
       "latvian-grammar"
@@ -156,14 +156,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often marks location in Latvian?",
+    "question": "In a Latvian sentence like \"in the city\", which case usually marks the highlighted role?",
     "correctAnswer": "the locative",
     "incorrectAnswers": [
       "the nominative",
       "the imperative",
       "the article case"
     ],
-    "explanation": "Latvian often uses the locative for location.",
+    "explanation": "In Latvian, the locative is often used after prepositions for location. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "locative",
       "latvian-grammar"
@@ -175,14 +175,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What do Latvian adjectives usually do?",
+    "question": "You want to describe a feminine or plural noun in Latvian. What should the adjective do?",
     "correctAnswer": "agree with the noun in gender, number, and case",
     "incorrectAnswers": [
       "stay the same always",
       "agree only with the verb",
       "agree only in gender"
     ],
-    "explanation": "Latvian adjectives usually match the noun they describe.",
+    "explanation": "In Latvian, the adjective should agree with the noun in gender, number, and case. The adjective changes so it matches the noun it describes, not some other word in the sentence.",
     "keywords": [
       "adjective-agreement",
       "latvian-grammar"
@@ -194,14 +194,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Where do Latvian adjectives usually go?",
+    "question": "You want to say \"a red car\" in Latvian. Where does the adjective usually go?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "after punctuation only",
       "inside the verb"
     ],
-    "explanation": "Latvian adjectives usually come before the noun.",
+    "explanation": "In Latvian, the adjective usually goes before the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "latvian-grammar"
@@ -213,14 +213,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What often happens to Latvian plural nouns?",
+    "question": "You want to show there is more than one thing in Latvian. What usually carries that plural meaning?",
     "correctAnswer": "they take a new plural ending",
     "incorrectAnswers": [
       "they keep the singular ending always",
       "they gain an article only",
       "they lose the verb"
     ],
-    "explanation": "Latvian usually forms the plural by changing the noun ending.",
+    "explanation": "In Latvian, they take a new plural ending. Learners should watch the word ending or noun form instead of expecting English-style plural behavior.",
     "keywords": [
       "plural",
       "latvian-grammar"
@@ -232,14 +232,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What ending do many Latvian infinitives have?",
+    "question": "When you look up a verb in a Latvian dictionary, what ending do you often see on the infinitive?",
     "correctAnswer": "-t",
     "incorrectAnswers": [
       "-ing",
       "-ly",
       "-ment"
     ],
-    "explanation": "Many Latvian infinitives end in -t.",
+    "explanation": "In Latvian, many infinitives use -t. That ending is a useful clue for spotting the base verb form in lists and dictionaries.",
     "keywords": [
       "infinitive",
       "latvian-grammar"
@@ -251,14 +251,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What do Latvian present-tense verb endings usually show?",
+    "question": "If you compare forms like \"I speak\" and \"we speak\" in Latvian, what do the present-tense endings usually show?",
     "correctAnswer": "person and number",
     "incorrectAnswers": [
       "article type",
       "noun color",
       "punctuation mood"
     ],
-    "explanation": "Latvian present-tense endings usually show person and number.",
+    "explanation": "In Latvian, present-tense endings usually show person and number. The ending changes help the listener know who is doing the action.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -271,14 +271,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Can Latvian often omit the subject pronoun when the verb ending already makes it clear?",
+    "question": "If the verb ending already makes the subject clear in Latvian, can you often leave the subject pronoun out?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in commands",
       "only in nouns"
     ],
-    "explanation": "Latvian can often leave out the subject pronoun when context is clear.",
+    "explanation": "Yes. In Latvian, yes when the verb ending or the context already tells you who the subject is.",
     "keywords": [
       "subject-pronouns",
       "latvian-grammar"
@@ -290,14 +290,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "How is negation commonly formed with a Latvian verb?",
+    "question": "You want to say \"I do not work\" in Latvian. How is negation commonly formed with the verb?",
     "correctAnswer": "with ne- before the verb",
     "incorrectAnswers": [
       "with an article after the noun",
       "with a silent ending only",
       "with two question marks"
     ],
-    "explanation": "Latvian commonly puts ne- before the verb for negation.",
+    "explanation": "Latvian commonly forms negation with \"ne-\" before the verb. The negative marker stays close to the verb instead of standing far away in the sentence.",
     "keywords": [
       "negation",
       "latvian-grammar"
@@ -328,14 +328,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "Where does a Latvian question word usually appear?",
+    "question": "In a Latvian question like \"Where is the station?\", where does the question word usually go?",
     "correctAnswer": "near the start of the sentence",
     "incorrectAnswers": [
       "after the final period",
       "inside the noun ending",
       "after every adjective"
     ],
-    "explanation": "Latvian question words usually appear near the beginning of the sentence.",
+    "explanation": "In Latvian, the question word usually goes near the start of the sentence. Putting it there makes the question clear right away for the listener.",
     "keywords": [
       "questions",
       "latvian-grammar"
@@ -347,14 +347,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What safe beginner rule fits Latvian possession?",
+    "question": "You want to say \"my bag\" in Latvian. What beginner rule helps with possession words?",
     "correctAnswer": "possessive pronouns usually come before the noun",
     "incorrectAnswers": [
       "possessives always come after punctuation",
       "possessives replace the verb",
       "possessives are never used"
     ],
-    "explanation": "Latvian possessive pronouns usually come before the noun.",
+    "explanation": "In Latvian, possessive words usually go possessive pronouns usually come before the noun. That rule gives learners the safest default pattern for short possessive phrases.",
     "keywords": [
       "possessives",
       "latvian-grammar"
@@ -366,14 +366,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What usually matters more than a fixed article system in Latvian grammar?",
+    "question": "When you try to understand meaning in Latvian, what usually matters more than looking for an article like English \"the\"?",
     "correctAnswer": "word endings",
     "incorrectAnswers": [
       "articles",
       "silent letters only",
       "capitalization only"
     ],
-    "explanation": "Latvian relies heavily on endings to show grammatical role.",
+    "explanation": "In Latvian, word endings. Learners usually get more mileage from endings, cases, or context than from searching for an article system that works like English.",
     "keywords": [
       "cases",
       "latvian-grammar"
@@ -385,14 +385,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a useful beginner rule for Latvian place expressions?",
+    "question": "You want to say where something is or where you are going in Latvian. What beginner rule helps with place expressions?",
     "correctAnswer": "prepositions often work together with cases",
     "incorrectAnswers": [
       "prepositions never matter",
       "prepositions erase nouns",
       "prepositions replace verbs"
     ],
-    "explanation": "Latvian prepositions often go with specific cases.",
+    "explanation": "In Latvian, prepositions often work together with cases. Prepositions do a lot of the work, so learners need to watch them closely in place phrases.",
     "keywords": [
       "prepositions",
       "latvian-grammar"
@@ -404,14 +404,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latvian gender clues?",
+    "question": "When you meet a new noun in Latvian, what clue often helps you guess the gender?",
     "correctAnswer": "many noun endings help signal gender",
     "incorrectAnswers": [
       "gender is random in every sentence",
       "verbs decide noun gender",
       "punctuation decides gender"
     ],
-    "explanation": "Latvian noun endings often help show gender.",
+    "explanation": "In Latvian, many noun endings help signal gender. The noun ending often gives the learner the first useful clue about gender.",
     "keywords": [
       "gender",
       "latvian-grammar"
@@ -423,14 +423,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What usually happens to Latvian nouns across cases?",
+    "question": "If the same Latvian noun appears in different sentence roles, what usually happens to its form across cases?",
     "correctAnswer": "the ending changes",
     "incorrectAnswers": [
       "the first letter vanishes",
       "the article changes",
       "the verb becomes plural"
     ],
-    "explanation": "Latvian nouns usually change ending across cases.",
+    "explanation": "Latvian nouns change their endings across cases. Those form changes help show the noun's role in the sentence instead of relying on a fixed English-like word order.",
     "keywords": [
       "cases",
       "latvian-grammar"
@@ -442,14 +442,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latvian verbs in the past?",
+    "question": "You want to talk about yesterday in Latvian. What beginner rule helps with past-tense verbs?",
     "correctAnswer": "the language uses past verb forms rather than an English-style helper \"did\"",
     "incorrectAnswers": [
       "it always uses \"did\"",
       "it uses articles for the past",
       "it drops all verbs"
     ],
-    "explanation": "Latvian has its own past verb forms.",
+    "explanation": "Latvian uses real past verb forms instead of an English-style helper like \"did.\" Learners should focus on the past verb form itself, not on adding a separate helper.",
     "keywords": [
       "past-tense",
       "latvian-grammar"
@@ -461,14 +461,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "How is comparison often formed in Latvian?",
+    "question": "You want to say \"This book is bigger than that one\" in Latvian. How is that kind of comparison often formed?",
     "correctAnswer": "with a comparative ending or a comparison form of the adjective",
     "incorrectAnswers": [
       "with English-style -er only",
       "with articles only",
       "with no adjective change ever"
     ],
-    "explanation": "Latvian adjectives have their own comparative patterns.",
+    "explanation": "The usual pattern in Latvian is with a comparative ending or a comparison form of the adjective. That pattern gives learners a clean way to compare two things in an everyday sentence.",
     "keywords": [
       "comparatives",
       "latvian-grammar"
@@ -480,14 +480,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latvian plurals?",
+    "question": "In Latvian, if there is no separate plural article, what usually shows that a noun is plural?",
     "correctAnswer": "plural meaning is usually shown by endings, not by an article",
     "incorrectAnswers": [
       "plural meaning is shown only by punctuation",
       "plural meaning is shown only by a helper verb",
       "plural meaning is invisible"
     ],
-    "explanation": "Latvian usually shows plural meaning through endings.",
+    "explanation": "Latvian usually shows plural meaning through endings, not through a separate plural article. Learners should watch the noun form itself to spot plurality.",
     "keywords": [
       "plural",
       "latvian-grammar"
@@ -499,14 +499,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latvian direct address?",
+    "question": "In a Latvian sentence like \"Marcus, come here!\", which case usually marks the highlighted role?",
     "correctAnswer": "special case forms can appear in the vocative",
     "incorrectAnswers": [
       "there is never direct address",
       "the accusative is always used for names",
       "questions replace names"
     ],
-    "explanation": "Latvian can use special vocative-style forms for direct address.",
+    "explanation": "In Latin, the vocative is used for direct address. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "vocative",
       "latvian-grammar"
@@ -518,14 +518,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a good beginner summary of Latvian sentence building?",
+    "question": "If you want to build clearer beginner sentences in Latvian, what summary rule should you remember?",
     "correctAnswer": "learn the endings because endings carry grammar",
     "incorrectAnswers": [
       "memorize articles first",
       "ignore nouns and only study verbs",
       "punctuation carries most grammar"
     ],
-    "explanation": "Latvian is strongly ending-based, so endings carry a lot of grammar information.",
+    "explanation": "In Latvian, learn the endings because endings carry grammar. That tells the learner where to focus first when sentence endings or case forms carry the grammar.",
     "keywords": [
       "cases",
       "latvian-grammar"
@@ -537,14 +537,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What often happens with Latvian reflexive verbs in dictionary form?",
+    "question": "You want to say \"I wake up\" in Latvian with a normal conjugated verb. Where does the reflexive pronoun usually go?",
     "correctAnswer": "many have a special reflexive ending pattern",
     "incorrectAnswers": [
       "they use English pronouns only",
       "they always lose the subject",
       "they never change form"
     ],
-    "explanation": "Latvian has recognizable reflexive verb patterns.",
+    "explanation": "In Latvian, the reflexive pronoun usually goes many have a special reflexive ending pattern. That is the most useful beginner pattern for everyday reflexive sentences.",
     "keywords": [
       "reflexive-verbs",
       "latvian-grammar"
@@ -556,14 +556,14 @@
     "category": "languages",
     "navigationKeyword1": "latvian",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latvian learning order?",
+    "question": "If a beginner cannot master every Latvian case at once, which cases should be learned early first?",
     "correctAnswer": "master nominative, accusative, genitive, dative, and locative early",
     "incorrectAnswers": [
       "skip cases completely",
       "study only punctuation",
       "learn adjectives without nouns"
     ],
-    "explanation": "Early Latvian progress depends a lot on learning the main noun cases.",
+    "explanation": "Mastering the main everyday cases first gives learners quicker usable control of Latvian. Those core cases cover a large share of simple sentence building.",
     "keywords": [
       "cases",
       "latvian-grammar"

@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which group is a full sentence in standard written English?",
+    "question": "You want to write one complete English idea, not just a phrase. Which option is a full sentence?",
     "correctAnswer": "Birds fly.",
     "incorrectAnswers": [
       "Because it was sunny.",
       "Running fast.",
       "After the meeting."
     ],
-    "explanation": "A basic sentence needs at least a subject and a verb and expresses a complete thought. The other groups are fragments.",
+    "explanation": "A full sentence needs a complete thought, usually with a subject and a verb. A fragment is missing one of those core pieces.",
     "keywords": [
       "sentence",
       "complete-thought",
@@ -44,14 +44,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which sentence is a common imperative that gives a direct request?",
+    "question": "You want to tell someone \"Come here\" in English. What beginner rule helps with commands?",
     "correctAnswer": "Please open the window.",
     "incorrectAnswers": [
       "The window is open.",
       "Opening the window is fun.",
       "If you open the window."
     ],
-    "explanation": "Imperatives often use the base verb first to give commands or polite requests; the subject \"you\" is understood.",
+    "explanation": "In English, Please open the window.. Commands use their own verb pattern, so learners should treat them as more than ordinary statements said loudly.",
     "keywords": [
       "imperative",
       "commands",
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "What is the usual word order in a simple English statement?",
+    "question": "You want to say \"The child opened the door\" in normal English. What is the usual word order?",
     "correctAnswer": "subject, then verb, then object",
     "incorrectAnswers": [
       "verb, then subject, then object",
       "object, then verb, then subject",
       "subject, then object, then verb only"
     ],
-    "explanation": "Many English statements follow subject-verb-object order, as in \"She reads books.\"",
+    "explanation": "English usually follows subject-verb-object order in a simple statement. That puts the doer first, the action next, and the object after the verb.",
     "keywords": [
       "word-order",
       "svo",
@@ -84,14 +84,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which option correctly joins two full ideas with a coordinating conjunction?",
+    "question": "You want to join two full English ideas, like \"She was tired\" and \"she kept working.\" Which option does that correctly with a coordinating conjunction?",
     "correctAnswer": "I was tired, so I went to bed.",
     "incorrectAnswers": [
       "I was tired I went to bed.",
       "Because I was tired went to bed.",
       "Tired I bed went."
     ],
-    "explanation": "Coordinators like \"so\" can link two independent clauses into one sentence when punctuation and structure match the pattern.",
+    "explanation": "A compound sentence joins two full ideas with a coordinating conjunction such as \"and\" or \"but.\" The joined sentence has to keep both ideas complete.",
     "keywords": [
       "compound-sentence",
       "conjunctions",
@@ -104,14 +104,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Why is \"Although it was late\" not a sentence on its own in formal writing?",
+    "question": "You wrote \"Although it was late\" by itself. Why is that not a full sentence in formal writing?",
     "correctAnswer": "It is a dependent clause and does not finish the thought alone.",
     "incorrectAnswers": [
       "It has too many words.",
       "It must always be a question.",
       "English never allows \"although\" at the start."
     ],
-    "explanation": "Dependent clauses starting with words like \"although\" need an independent clause to form a complete sentence.",
+    "explanation": "A dependent clause cannot stand alone as a full sentence because it leaves the main idea unfinished. It needs an independent clause to complete the thought.",
     "keywords": [
       "dependent-clause",
       "fragments",

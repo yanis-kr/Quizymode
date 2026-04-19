@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In a normal German statement, where does the main verb usually go?",
+    "question": "You want to say \"Today Anna reads a book\" in German. Where does the main verb usually go in a normal statement?",
     "correctAnswer": "second position",
     "incorrectAnswers": [
       "always at the end",
       "always first",
       "after the object phrase only"
     ],
-    "explanation": "German main clauses often follow verb-second order: one element comes first, then the finite verb.",
+    "explanation": "German main clauses usually follow verb-second order. Even if another part comes first, the finite verb still stays in the second position.",
     "keywords": [
       "word-order",
       "german-grammar"
@@ -80,14 +80,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article matches a singular neuter noun like '{{de-DE|Kind||KIND}}' in the nominative case?",
+    "question": "You want to say \"The child is here\" in German. Which article fits the neuter singular subject?",
     "correctAnswer": "{{de-DE|das||DAS}}",
     "incorrectAnswers": [
       "{{de-DE|der||DER}}",
       "{{de-DE|die||DEE}}",
       "{{de-DE|den||DEN}}"
     ],
-    "explanation": "Neuter singular nominative often uses 'das', as in 'das Kind'.",
+    "explanation": "Use {{de-DE|das||DAS}} here because the noun is neuter singular and stands as the subject. The article marks nominative use in the example.",
     "keywords": [
       "articles",
       "german-grammar"
@@ -99,14 +99,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "What is the usual first-person singular present form of '{{de-DE|sein||SEYEN}}' (to be)?",
+    "question": "You want to say \"I am ready\" in German. Which present-tense form of {{de-DE|sein||ZINE}} fits with \"ich\"?",
     "correctAnswer": "{{de-DE|ich bin||ICH BIN}}",
     "incorrectAnswers": [
       "{{de-DE|ich bist||ICH BISHT}}",
       "{{de-DE|ich sind||ICH SIND}}",
       "{{de-DE|ich war||ICH VAR}}"
     ],
-    "explanation": "'Ich bin' is the common present form meaning 'I am'.",
+    "explanation": "German uses \"ich bin\" for \"I am.\" The verb {{de-DE|sein||ZINE}} is irregular, so learners need to memorize this common form early.",
     "keywords": [
       "sein",
       "german-grammar"

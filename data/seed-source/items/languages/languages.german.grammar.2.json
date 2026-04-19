@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In beginner German, which article usually marks a feminine singular noun in the nominative case?",
+    "question": "You want to say \"The woman is here\" in German. Which article marks the feminine singular subject?",
     "correctAnswer": "die",
     "incorrectAnswers": [
       "der",
       "das",
       "den"
     ],
-    "explanation": "German usually uses \"die\" for feminine singular nominative nouns.",
+    "explanation": "Use die here because the noun is feminine singular and works as the subject. In nominative use, the article has to match both gender and case.",
     "keywords": [
       "articles",
       "german-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In beginner German, which article usually marks plural nouns in the nominative case?",
+    "question": "You want to say \"The children are here\" in German. Which article marks the plural subject?",
     "correctAnswer": "die",
     "incorrectAnswers": [
       "der",
       "das",
       "den"
     ],
-    "explanation": "German usually uses \"die\" for plural nominative nouns.",
+    "explanation": "Use die here because the noun is plural and works as the subject. In nominative use, the article has to match that role.",
     "keywords": [
       "articles",
       "plural",
@@ -43,14 +43,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In beginner German, which article usually marks a masculine singular direct object?",
+    "question": "You want to say \"I see the man\" in German. Which article marks the masculine direct object?",
     "correctAnswer": "den",
     "incorrectAnswers": [
       "der",
       "die",
       "das"
     ],
-    "explanation": "The accusative masculine definite article is usually \"den.\"",
+    "explanation": "Use \"den\" here because the noun is masculine singular and works as the direct object. The accusative form changes the article for this role.",
     "keywords": [
       "accusative",
       "articles",
@@ -120,14 +120,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In beginner German, where do adjectives usually go?",
+    "question": "You want to say \"a red car\" in German. Where does the adjective usually go?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "between the verb parts only",
       "only at sentence end"
     ],
-    "explanation": "German attributive adjectives usually come before the noun.",
+    "explanation": "In German, the adjective usually goes before the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "word-order",
@@ -140,14 +140,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In beginner German, where do possessive adjectives usually go?",
+    "question": "You want to say \"my bag\" in German. What beginner rule helps with possession words?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "after the full clause",
       "inside the article"
     ],
-    "explanation": "Possessive adjectives like \"mein\" usually come before the noun.",
+    "explanation": "In German, possessive words usually go before the noun. That rule gives learners the safest default pattern for short possessive phrases.",
     "keywords": [
       "possessives",
       "german-grammar"
@@ -159,14 +159,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "For many regular verbs in German, which ending is common with \"du\" in the present tense?",
+    "question": "You want the \"you\" singular form of a regular German verb. Which ending is common with \"du\"?",
     "correctAnswer": "-st",
     "incorrectAnswers": [
       "-en",
       "-t",
       "-e"
     ],
-    "explanation": "Many regular German verbs use \"-st\" with \"du.\"",
+    "explanation": "Many regular German verbs take \"-st\" with \"du\" in the present tense. That ending shows the second-person singular form.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -179,14 +179,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "For many regular verbs in German, which ending is common with \"wir\" in the present tense?",
+    "question": "You want the \"we\" form of a regular German verb. Which ending is common with \"wir\"?",
     "correctAnswer": "-en",
     "incorrectAnswers": [
       "-st",
       "-e",
       "-t"
     ],
-    "explanation": "Many regular German verbs use \"-en\" with \"wir.\"",
+    "explanation": "Many regular German verbs use \"-en\" with \"wir\" in the present tense. That ending marks the first-person plural form.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -199,14 +199,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "With a separable-prefix verb in a main clause, where does the prefix usually go?",
+    "question": "You want to say \"I get up early\" with a separable German verb in a main clause. Where does the prefix usually go?",
     "correctAnswer": "to the end of the clause",
     "incorrectAnswers": [
       "before the article only",
       "inside the noun phrase",
       "after a comma only"
     ],
-    "explanation": "In main clauses, separable prefixes often move to the end.",
+    "explanation": "In a German main clause, the separable prefix usually moves to the end. The verb stem stays in the normal verb position while the prefix separates off.",
     "keywords": [
       "separable-verbs",
       "german-grammar"
@@ -218,14 +218,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In a subordinate clause in German, where does the finite verb usually go?",
+    "question": "You are building a German subordinate clause after a word like \"weil\" or \"dass.\" Where does the finite verb usually go?",
     "correctAnswer": "at the end",
     "incorrectAnswers": [
       "in first position",
       "in second position always",
       "before every noun"
     ],
-    "explanation": "German subordinate clauses often place the finite verb at the end.",
+    "explanation": "In German subordinate clauses, the finite verb usually goes at the end. Learners should expect a different verb position than in a main clause.",
     "keywords": [
       "subordinate-clauses",
       "german-grammar"
@@ -237,14 +237,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually follows \"es gibt\" in German?",
+    "question": "In German, after \"es gibt\" in a sentence like \"There is a problem,\" which case usually follows?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the nominative only",
       "the genitive only",
       "the vocative"
     ],
-    "explanation": "German usually uses the accusative after \"es gibt.\"",
+    "explanation": "German usually uses the accusative after \"es gibt.\" The noun phrase after it takes accusative even though English does not show a case change here.",
     "keywords": [
       "accusative",
       "german-grammar"
@@ -295,14 +295,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "In German, which article usually marks plural nouns in the accusative case?",
+    "question": "You want to say \"I see the children\" in German. Which article marks the plural direct object?",
     "correctAnswer": "die",
     "incorrectAnswers": [
       "der",
       "das",
       "den"
     ],
-    "explanation": "German usually keeps \"die\" for plural definite nouns in the accusative case.",
+    "explanation": "Use \"die\" here because the noun is plural and works as the direct object. The article matches the accusative role in the example.",
     "keywords": [
       "articles",
       "accusative",
@@ -316,14 +316,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually follows \"mit\" in German?",
+    "question": "In a German sentence like \"I gave Anna the book.\", which case usually marks the highlighted role?",
     "correctAnswer": "the dative",
     "incorrectAnswers": [
       "the nominative",
       "the accusative only",
       "the imperative"
     ],
-    "explanation": "German usually uses the dative after \"mit.\"",
+    "explanation": "In German, the dative often marks the recipient or indirect object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "dative",
       "prepositions",
@@ -336,14 +336,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually follows prepositions like \"durch,\" \"fur,\" \"ohne,\" and \"um\" in German?",
+    "question": "You want to say a phrase with German prepositions like \"durch,\" \"fur,\" \"ohne,\" or \"um.\" Which case usually follows them?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the nominative",
       "the dative only",
       "the vocative"
     ],
-    "explanation": "These common German prepositions usually take the accusative.",
+    "explanation": "Those common German prepositions usually take the accusative. Learners should expect the noun phrase after them to use accusative forms.",
     "keywords": [
       "accusative",
       "prepositions",
@@ -356,14 +356,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "What word-order guideline is often taught for German details after the verb?",
+    "question": "When a German sentence adds time, manner, and place details after the verb, what order is a helpful beginner guide?",
     "correctAnswer": "time, manner, place",
     "incorrectAnswers": [
       "place, time, manner",
       "manner, place, article",
       "question, article, noun"
     ],
-    "explanation": "A common beginner rule is time, manner, place.",
+    "explanation": "A common beginner guide is to keep German details in the usual time-manner-place order. That pattern makes longer sentences easier to build and easier to follow.",
     "keywords": [
       "word-order",
       "german-grammar"
@@ -375,14 +375,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Can German usually drop the subject pronoun in ordinary sentences?",
+    "question": "If the verb ending already makes the subject clear in German, can you often leave the subject pronoun out?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes, always",
       "yes, but only in the plural",
       "yes, but only after commas"
     ],
-    "explanation": "German usually keeps the subject pronoun in an ordinary sentence.",
+    "explanation": "Yes. In German, no when the verb ending or the context already tells you who the subject is.",
     "keywords": [
       "subject-pronouns",
       "german-grammar"
@@ -394,14 +394,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "With \"weil\" in standard German, where does the finite verb usually go?",
+    "question": "You want to say \"because I am tired\" in standard German with \"weil.\" Where does the finite verb usually go?",
     "correctAnswer": "at the end",
     "incorrectAnswers": [
       "always first",
       "always second",
       "before the article"
     ],
-    "explanation": "Standard German usually places the finite verb at the end after \"weil.\"",
+    "explanation": "In a standard German subordinate clause with \"weil,\" the finite verb usually goes at the end. That final position is a core rule for subordinate clauses.",
     "keywords": [
       "subordinate-clauses",
       "german-grammar"
@@ -413,14 +413,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "What often determines adjective endings before a noun in German?",
+    "question": "You want to say a phrase like \"the good book\" in German. What often determines the adjective ending before the noun?",
     "correctAnswer": "the article or determiner",
     "incorrectAnswers": [
       "the punctuation only",
       "the last adverb only",
       "the noun gender never matters"
     ],
-    "explanation": "German adjective endings often depend on the article or determiner before the noun.",
+    "explanation": "German adjective endings often depend on the article or determiner before the noun. Learners need to look at the whole noun phrase, not the adjective by itself.",
     "keywords": [
       "adjective-endings",
       "german-grammar"
@@ -432,14 +432,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article usually marks a feminine singular direct object in German?",
+    "question": "You want to say \"I see the woman\" in German. Which article marks the feminine direct object?",
     "correctAnswer": "die",
     "incorrectAnswers": [
       "der",
       "das",
       "den"
     ],
-    "explanation": "German usually keeps \"die\" for feminine singular accusative nouns.",
+    "explanation": "Use \"die\" here because the noun is feminine singular and works as the direct object. The article matches the accusative role in the example.",
     "keywords": [
       "articles",
       "accusative",
@@ -452,14 +452,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "grammar",
-    "question": "Which article usually marks a neuter singular direct object in German?",
+    "question": "You want to say \"I see the child\" in German. Which article marks the neuter direct object?",
     "correctAnswer": "das",
     "incorrectAnswers": [
       "der",
       "die",
       "den"
     ],
-    "explanation": "German usually keeps \"das\" for neuter singular accusative nouns.",
+    "explanation": "Use \"das\" here because the noun is neuter singular and works as the direct object. The article matches the accusative role in the example.",
     "keywords": [
       "articles",
       "accusative",
