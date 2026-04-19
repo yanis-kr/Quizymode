@@ -396,6 +396,22 @@ internal sealed class SeedSyncAdminService(
         HashSet<Guid> availableItemIds = existingById.Keys.ToHashSet();
         availableItemIds.UnionWith(incomingItemIds);
 
+        // Collections may reference items synced in a previous shard — check the DB for any referenced IDs not in the current payload.
+        HashSet<Guid> referencedByCollections = normalizedCollections
+            .SelectMany(collection => collection.ItemIds)
+            .Where(id => !availableItemIds.Contains(id))
+            .ToHashSet();
+
+        if (referencedByCollections.Count > 0)
+        {
+            List<Guid> existingReferencedIds = await db.Items
+                .Where(item => referencedByCollections.Contains(item.Id))
+                .Select(item => item.Id)
+                .ToListAsync(cancellationToken);
+
+            availableItemIds.UnionWith(existingReferencedIds);
+        }
+
         Dictionary<Guid, Collection> existingCollectionsById = existingCollections.ToDictionary(collection => collection.Id);
         List<PlannedSeedCollectionChange> collectionChanges = [];
 

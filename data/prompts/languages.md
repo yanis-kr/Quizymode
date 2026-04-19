@@ -61,6 +61,39 @@ Avoid:
 - translation traps with ambiguous wording
 - hyper-literal distractors that make the answer too obvious
 
+## Grammar item rule
+
+For `grammar` seed files, make the question practical first and the rule second.
+
+Prefer:
+
+1. short sentence completion
+2. choose-the-best-sentence items
+3. a realistic mini context such as ordering food, introducing yourself, asking for directions, or describing something simple
+4. side-by-side choices that show a real learner confusion in a concrete sentence
+
+Do not default to rule-only stems such as:
+
+- "Which form is usually used...?"
+- "What is the rule for...?"
+- "How is X commonly formed?"
+
+unless the rule cannot be taught naturally through an example.
+
+If a grammar point can be shown with a short example sentence, do that instead.
+
+Good:
+
+- "You want to say `I am studying now` in Spanish. Which pattern fits?"
+- "Which sentence correctly says `I do not speak French`?"
+- "You want to say `a red car` in Italian. Where does the adjective usually go?"
+
+Weak:
+
+- "How is the present progressive formed in Spanish?"
+- "What is the rule for adjective position in Italian?"
+- "Which tense is usually used for...?" when no example is given
+
 ## Distractor tone
 
 Most distractors should stay fully straight-faced.
@@ -156,6 +189,9 @@ Per file:
 - Make the explanation teach the key language point directly.
 - Keep beginner items especially short and readable.
 - Prefer one clean learning point per item.
+- For grammar items, explain the rule in plain English and then tie it back to the exact example.
+- Keep grammar explanations concise: usually 1 or 2 short sentences.
+- Do not turn the explanation into a mini textbook paragraph.
 
 ## Output shape
 

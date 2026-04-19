@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "In beginner Russian, what usually replaces English articles like \"a\" and \"the\"?",
+    "question": "In a simple Russian sentence like \"This is a book,\" what do you usually use instead of English articles like \"a\" or \"the\"?",
     "correctAnswer": "no article is used",
     "incorrectAnswers": [
       "an article is attached to the noun",
       "an article always comes after the verb",
       "the article changes with tense"
     ],
-    "explanation": "Russian has no separate definite or indefinite articles.",
+    "explanation": "Russian normally uses no separate article. In a sentence like \"This is a book,\" the noun and the context carry that meaning without an extra word like English \"a\" or \"the\".",
     "keywords": [
       "articles",
       "russian-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "How many grammatical genders do beginner Russian learners usually learn first?",
+    "question": "When you learn basic nouns in Russian, how many grammatical genders do you usually need to track?",
     "correctAnswer": "three",
     "incorrectAnswers": [
       "one",
       "two",
       "five"
     ],
-    "explanation": "Russian commonly uses masculine, feminine, and neuter.",
+    "explanation": "Beginners usually learn three grammatical genders in Russian. That helps you choose matching articles, adjectives, or endings correctly.",
     "keywords": [
       "gender",
       "russian-grammar"
@@ -42,14 +42,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What is the most common neutral word order taught first in Russian?",
+    "question": "A beginner wants to say \"Anna reads a book\" in Russian. Which word order is the safest starting pattern?",
     "correctAnswer": "subject-verb-object",
     "incorrectAnswers": [
       "verb-subject-object only",
       "article-noun-verb only",
       "adjective-article-verb only"
     ],
-    "explanation": "Russian word order is flexible, but beginners often start with subject-verb-object.",
+    "explanation": "The safest beginner pattern in Russian is subject-verb-object. That gives you a clear base sentence before you start using freer emphasis, cases, or particles.",
     "keywords": [
       "word-order",
       "russian-grammar"
@@ -61,14 +61,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "In simple present-tense Russian sentences, what usually happens to the verb \"to be\"?",
+    "question": "You want to say \"I am tired\" in a simple present-tense Russian sentence. What usually happens to the verb \"to be\"?",
     "correctAnswer": "it is usually omitted",
     "incorrectAnswers": [
       "it must appear twice",
       "it always goes at the end",
       "it changes into an article"
     ],
-    "explanation": "Russian usually omits the present-tense form of \"to be\" in simple statements.",
+    "explanation": "In simple present-tense Russian statements, the verb \"to be\" is usually omitted. The sentence still works because Russian lets the predicate carry the meaning without a present-tense copula.",
     "keywords": [
       "to-be",
       "present-tense",
@@ -81,14 +81,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Where does \"ne\" usually go in a basic Russian negative sentence?",
+    "question": "You want to say \"I am not ready\" in Russian. Where does \"ne\" usually go?",
     "correctAnswer": "before the word it negates",
     "incorrectAnswers": [
       "after the noun only",
       "inside the article",
       "at the very end only"
     ],
-    "explanation": "Russian usually places \"ne\" before the word it negates, often before the verb.",
+    "explanation": "In Russian, \"ne\" usually comes before the word it negates. In a sentence like \"I am not ready,\" that puts the negative right next to the part you are denying.",
     "keywords": [
       "negation",
       "russian-grammar"
@@ -100,14 +100,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "How are many yes-or-no questions formed in beginner Russian?",
+    "question": "If you want to ask \"Are you ready?\" in Russian, how are many yes-or-no questions formed?",
     "correctAnswer": "with intonation",
     "incorrectAnswers": [
       "with a special article only",
       "with do-support",
       "by deleting the verb"
     ],
-    "explanation": "Russian often forms yes-or-no questions with intonation.",
+    "explanation": "In Russian, many yes-or-no questions are formed with intonation. The sentence can stay close to the statement pattern while the voice or ending signals the question.",
     "keywords": [
       "questions",
       "russian-grammar"
@@ -119,14 +119,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What do Russian nouns usually change for?",
+    "question": "If the same noun is the subject in one Russian sentence and the object in another, what does it usually change for?",
     "correctAnswer": "case and number",
     "incorrectAnswers": [
       "capital letters only",
       "punctuation only",
       "question marks only"
     ],
-    "explanation": "Russian nouns change form for case and number.",
+    "explanation": "In Russian, nouns usually change for case and number. Those changes help show the noun's job in the sentence.",
     "keywords": [
       "cases",
       "russian-grammar"
@@ -138,14 +138,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks the subject in Russian?",
+    "question": "In a Russian sentence like \"The teacher arrives.\", which case usually marks the highlighted role?",
     "correctAnswer": "the nominative",
     "incorrectAnswers": [
       "the accusative",
       "the dative",
       "the instrumental"
     ],
-    "explanation": "Russian usually uses the nominative for the subject.",
+    "explanation": "In Russian, the nominative case usually marks the subject. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "nominative",
       "russian-grammar"
@@ -157,14 +157,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks the direct object in Russian?",
+    "question": "In a Russian sentence like \"I see the teacher.\", which case usually marks the highlighted role?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the nominative",
       "the dative",
       "the locative"
     ],
-    "explanation": "Russian usually uses the accusative for a direct object.",
+    "explanation": "In Russian, the accusative case usually marks the direct object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "accusative",
       "russian-grammar"
@@ -176,14 +176,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often shows possession or \"of\" meanings in Russian?",
+    "question": "In a Russian sentence like \"the color of the car\", which case usually marks the highlighted role?",
     "correctAnswer": "the genitive",
     "incorrectAnswers": [
       "the nominative",
       "the imperative",
       "the vocative"
     ],
-    "explanation": "Russian often uses the genitive for possession and many \"of\" meanings.",
+    "explanation": "In Russian, the genitive often shows possession or an \"of\" meaning. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "genitive",
       "russian-grammar"
@@ -195,14 +195,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often marks the recipient in Russian?",
+    "question": "In a Russian sentence like \"I gave Anna the book.\", which case usually marks the highlighted role?",
     "correctAnswer": "the dative",
     "incorrectAnswers": [
       "the nominative",
       "the accusative only",
       "the infinitive"
     ],
-    "explanation": "Russian often uses the dative for the person who receives something.",
+    "explanation": "In Russian, the dative often marks the recipient or indirect object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "dative",
       "russian-grammar"
@@ -214,14 +214,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case often means \"with\" or describes a role in Russian?",
+    "question": "In a Russian sentence like \"with a friend\", which case usually marks the highlighted role?",
     "correctAnswer": "the instrumental",
     "incorrectAnswers": [
       "the nominative",
       "the accusative",
       "the article case"
     ],
-    "explanation": "Russian often uses the instrumental for \"with\" and for roles after some verbs.",
+    "explanation": "In Russian, the instrumental often shows \"with\" or a role. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "instrumental",
       "russian-grammar"
@@ -233,14 +233,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case is often used after certain prepositions for location or topic in Russian?",
+    "question": "In a Russian sentence like \"about the book / in the city\", which case usually marks the highlighted role?",
     "correctAnswer": "the prepositional",
     "incorrectAnswers": [
       "the vocative",
       "the article case",
       "the imperative"
     ],
-    "explanation": "Russian often uses the prepositional after common location and topic prepositions.",
+    "explanation": "In Russian, the prepositional case is often used after certain prepositions for topic or location. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "prepositional",
       "russian-grammar"
@@ -252,14 +252,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What do Russian adjectives usually do?",
+    "question": "You want to describe a feminine or plural noun in Russian. What should the adjective do?",
     "correctAnswer": "agree with the noun in gender, number, and case",
     "incorrectAnswers": [
       "stay the same always",
       "agree only with the verb",
       "agree only in the plural"
     ],
-    "explanation": "Russian adjectives usually match the noun they describe.",
+    "explanation": "In Russian, the adjective should agree with the noun in gender, number, and case. The adjective changes so it matches the noun it describes, not some other word in the sentence.",
     "keywords": [
       "adjective-agreement",
       "russian-grammar"
@@ -271,14 +271,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Where do Russian adjectives usually go?",
+    "question": "You want to say \"a red car\" in Russian. Where does the adjective usually go?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "inside the verb",
       "after the punctuation only"
     ],
-    "explanation": "Russian adjectives usually come before the noun.",
+    "explanation": "In Russian, the adjective usually goes before the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "word-order",
@@ -291,14 +291,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "In singular past tense Russian, what often changes with the subject?",
+    "question": "Compare a sentence like \"He worked yesterday\" with \"She worked yesterday\" in Russian. What often changes in the singular past?",
     "correctAnswer": "the verb ending shows gender",
     "incorrectAnswers": [
       "the article changes",
       "the noun disappears",
       "the punctuation changes"
     ],
-    "explanation": "Russian singular past tense often shows masculine, feminine, or neuter gender.",
+    "explanation": "In Russian, the verb ending shows gender. The past form often reflects the subject, so the verb shape is not always the same for every singular subject.",
     "keywords": [
       "past-tense",
       "gender",
@@ -311,14 +311,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What ending do many Russian infinitives have?",
+    "question": "When you look up a verb in a Russian dictionary, what ending do you often see on the infinitive?",
     "correctAnswer": "-t or -ti in transliteration",
     "incorrectAnswers": [
       "-ing",
       "-ment",
       "-ly"
     ],
-    "explanation": "Many Russian infinitives end in forms transliterated as -t or -ti.",
+    "explanation": "In Russian, many infinitives use -t or -ti in transliteration. That ending is a useful clue for spotting the base verb form in lists and dictionaries.",
     "keywords": [
       "infinitive",
       "russian-grammar"
@@ -330,14 +330,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "When a Russian noun is a place you move into, which case often follows \"v\"?",
+    "question": "You want to say \"I am going into the city\" in Russian after \"v.\" Which case often follows?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the nominative only",
       "the instrumental only",
       "the article case"
     ],
-    "explanation": "Russian often uses the accusative after \"v\" for movement toward a place.",
+    "explanation": "With movement into a place, Russian often uses the accusative after \"v.\" The case helps show direction instead of location.",
     "keywords": [
       "prepositions",
       "accusative",
@@ -350,14 +350,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "When a Russian noun names a place where something is located, which case often follows \"v\"?",
+    "question": "You want to say \"I am in the city\" in Russian after \"v.\" Which case often follows?",
     "correctAnswer": "the prepositional",
     "incorrectAnswers": [
       "the genitive only",
       "the nominative only",
       "the imperative"
     ],
-    "explanation": "Russian often uses the prepositional after \"v\" for location.",
+    "explanation": "With location in a place, Russian often uses the prepositional after \"v.\" The case helps show where something is, not where it is moving.",
     "keywords": [
       "prepositions",
       "prepositional",
@@ -370,14 +370,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "How do many Russian plural nouns change?",
+    "question": "You want to change a singular Russian noun into the plural. What usually changes?",
     "correctAnswer": "they take a new plural ending",
     "incorrectAnswers": [
       "they keep the singular form always",
       "they add an article only",
       "they move the verb only"
     ],
-    "explanation": "Russian usually forms the plural by changing the noun ending.",
+    "explanation": "Many Russian plural nouns change by taking a new plural ending. Learners should watch the noun ending because that is where the number change usually appears.",
     "keywords": [
       "plural",
       "russian-grammar"
@@ -389,14 +389,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "With many animate masculine direct objects, which pattern often appears in Russian?",
+    "question": "You want to say \"I see the man\" with an animate masculine direct object in Russian. What pattern often appears?",
     "correctAnswer": "the accusative looks like the genitive",
     "incorrectAnswers": [
       "the accusative always looks like the nominative",
       "the accusative disappears",
       "the noun becomes an adjective"
     ],
-    "explanation": "Animate masculine direct objects often take accusative forms that match the genitive.",
+    "explanation": "With many animate masculine direct objects, Russian often uses a genitive-like accusative pattern. Animacy changes the form, so the direct object does not always behave like an inanimate noun.",
     "keywords": [
       "accusative",
       "animacy",
@@ -409,14 +409,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What is one of the most important verb ideas in Russian grammar?",
+    "question": "When you pick a Russian verb for a real action, what major grammar idea do you often need to choose first?",
     "correctAnswer": "aspect",
     "incorrectAnswers": [
       "articles",
       "capital letters",
       "silent adjectives only"
     ],
-    "explanation": "Russian verbs often come in imperfective and perfective pairs.",
+    "explanation": "Russian verbs often require you to think about aspect first. The choice tells the listener whether you mean the action as complete or as ongoing / repeated.",
     "keywords": [
       "aspect",
       "russian-grammar"
@@ -428,14 +428,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "How is the future of many imperfective Russian verbs commonly formed?",
+    "question": "You want to say \"I will read tomorrow\" with an imperfective verb in Russian. How is that future commonly formed?",
     "correctAnswer": "budu + infinitive",
     "incorrectAnswers": [
       "ne + adjective",
       "article + noun",
       "present tense only"
     ],
-    "explanation": "Russian often forms the future of imperfective verbs with a future form of \"to be\" plus the infinitive.",
+    "explanation": "Many imperfective Russian verbs form the future with a future form of \"to be\" plus the infinitive. That pattern lets you talk about a future action without switching to a perfective verb.",
     "keywords": [
       "future",
       "russian-grammar"
@@ -447,14 +447,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Where do Russian possessive pronouns usually go?",
+    "question": "You want to say \"my bag\" in Russian. What beginner rule helps with possession words?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the punctuation only",
       "inside the verb",
       "after the article"
     ],
-    "explanation": "Russian possessive pronouns usually come before the noun.",
+    "explanation": "In Russian, possessive words usually go before the noun. That rule gives learners the safest default pattern for short possessive phrases.",
     "keywords": [
       "possessives",
       "russian-grammar"
@@ -466,14 +466,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Can Russian often leave out the subject pronoun when context is clear?",
+    "question": "If the verb ending already makes the subject clear in Russian, can you often leave the subject pronoun out?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in questions",
       "only in plural nouns"
     ],
-    "explanation": "Russian can often omit the subject pronoun when the meaning is already clear.",
+    "explanation": "Yes. In Russian, yes when the verb ending or the context already tells you who the subject is.",
     "keywords": [
       "subject-pronouns",
       "russian-grammar"
@@ -485,14 +485,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What usually comes early in a Russian sentence with a question word?",
+    "question": "In a Russian question like \"Where is the station?\", what usually comes early in the sentence?",
     "correctAnswer": "the question word",
     "incorrectAnswers": [
       "the article",
       "the past participle only",
       "the genitive ending only"
     ],
-    "explanation": "Russian question words usually appear near the front of the sentence.",
+    "explanation": "Russian question words usually come near the front of the sentence. That placement helps signal the question quickly and clearly.",
     "keywords": [
       "questions",
       "russian-grammar"
@@ -504,14 +504,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually follows many prepositions meaning \"about\" in Russian?",
+    "question": "You want to say \"We are talking about the book\" in Russian. Which case usually follows many prepositions meaning \"about\"?",
     "correctAnswer": "the prepositional",
     "incorrectAnswers": [
       "the nominative",
       "the imperative",
       "the vocative"
     ],
-    "explanation": "Russian often uses the prepositional after prepositions meaning \"about.\"",
+    "explanation": "In Russian, many prepositions meaning \"about\" take the prepositional case. So the noun after the preposition changes to that form.",
     "keywords": [
       "prepositions",
       "prepositional",
@@ -524,14 +524,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What usually matters more than a fixed article pattern in Russian meaning?",
+    "question": "When you try to understand meaning in Russian, what usually matters more than looking for an article like English \"the\"?",
     "correctAnswer": "case endings",
     "incorrectAnswers": [
       "articles",
       "silent letters only",
       "capitalization only"
     ],
-    "explanation": "Russian relies heavily on endings instead of articles to show grammatical roles.",
+    "explanation": "In Russian, case endings usually matter more. Learners get more mileage from reading the endings and sentence roles than from searching for an article system that works like English.",
     "keywords": [
       "cases",
       "russian-grammar"
@@ -543,14 +543,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "In beginner Russian, what do present-tense verb endings usually show?",
+    "question": "If you compare forms like \"I speak\" and \"we speak\" in Russian, what do the present-tense endings usually show?",
     "correctAnswer": "person and number",
     "incorrectAnswers": [
       "article type",
       "noun color",
       "punctuation mood"
     ],
-    "explanation": "Russian present-tense verb endings usually show person and number.",
+    "explanation": "In Russian, present-tense endings usually show person and number. The ending changes help the listener know who is doing the action.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -563,14 +563,14 @@
     "category": "languages",
     "navigationKeyword1": "russian",
     "navigationKeyword2": "grammar",
-    "question": "What is the safest beginner rule for Russian word order?",
+    "question": "You can move words around in Russian for emphasis, but you still need a safe starting model. What is the safest beginner rule for word order?",
     "correctAnswer": "word order can move, but SVO is a good starting point",
     "incorrectAnswers": [
       "the verb must always be last",
       "the noun must always be first",
       "the adjective must always be alone"
     ],
-    "explanation": "Russian word order is flexible, but SVO is a helpful beginner base pattern.",
+    "explanation": "Russian word order can move for emphasis, but beginners should still start from a clear SVO pattern. Learn the neutral order first, then notice how context and emphasis can shift it.",
     "keywords": [
       "word-order",
       "russian-grammar"

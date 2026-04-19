@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What basic word order is commonly taught first in Japanese?",
+    "question": "A beginner wants to say \"Anna reads a book\" in Japanese. Which word order is the safest starting pattern?",
     "correctAnswer": "subject-object-verb",
     "incorrectAnswers": [
       "subject-verb-object",
       "verb-subject-object",
       "article-subject-verb"
     ],
-    "explanation": "Japanese often places the verb at the end of the sentence.",
+    "explanation": "The safest beginner pattern in Japanese is subject-object-verb. That gives you a clear base sentence before you start using freer emphasis, cases, or particles.",
     "keywords": [
       "word-order",
       "japanese-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly marks the topic in Japanese?",
+    "question": "In a sentence like \"As for Tanaka, he is a teacher,\" which particle usually marks the topic?",
     "correctAnswer": "wa",
     "incorrectAnswers": [
       "ga",
       "o",
       "ni"
     ],
-    "explanation": "The particle pronounced \"wa\" commonly marks the topic.",
+    "explanation": "Japanese usually uses \"wa\" to mark the topic. The topic tells the listener what the sentence is about before the rest of the information arrives.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -42,14 +42,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly marks the subject in Japanese?",
+    "question": "In a sentence like \"The cat is sleeping,\" which particle can mark the subject?",
     "correctAnswer": "ga",
     "incorrectAnswers": [
       "wa",
       "o",
       "de"
     ],
-    "explanation": "The particle \"ga\" commonly marks the subject.",
+    "explanation": "Japanese often uses \"ga\" to mark the subject. It highlights the noun doing the action or carrying the state.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -61,14 +61,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly marks the direct object in Japanese?",
+    "question": "In a sentence like \"I drink tea,\" which particle marks \"tea\" as the direct object?",
     "correctAnswer": "o",
     "incorrectAnswers": [
       "wa",
       "ni",
       "ka"
     ],
-    "explanation": "The particle \"o\" commonly marks the direct object.",
+    "explanation": "Japanese uses \"o\" to mark the direct object. The particle shows which thing receives the action of the verb.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -80,14 +80,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly marks a destination or a specific time in Japanese?",
+    "question": "In a sentence like \"I go to school at eight,\" which particle often marks the destination or specific time?",
     "correctAnswer": "ni",
     "incorrectAnswers": [
       "o",
       "wa",
       "mo"
     ],
-    "explanation": "The particle \"ni\" often marks a destination or a specific time.",
+    "explanation": "Japanese often uses \"ni\" for a destination or a specific time point. The same particle can link different kinds of target information.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -99,14 +99,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly marks the place where an action happens in Japanese?",
+    "question": "In a sentence like \"I study at the library,\" which particle marks the place where the action happens?",
     "correctAnswer": "de",
     "incorrectAnswers": [
       "ni",
       "wa",
       "ka"
     ],
-    "explanation": "The particle \"de\" commonly marks the place of an action.",
+    "explanation": "Japanese often uses \"de\" for the place where an action happens. It shows the location of the action, not just a destination.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -118,14 +118,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle commonly shows possession or connection in Japanese?",
+    "question": "In a phrase like \"my friend's book\" or \"Japanese teacher,\" which particle shows possession or connection?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "ga",
       "o",
       "ne"
     ],
-    "explanation": "The particle \"no\" often links one noun to another.",
+    "explanation": "Japanese uses \"no\" to link two nouns with a possession or connection meaning. It works a bit like English \"of\" or \"'s\" depending on the phrase.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -137,14 +137,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Where do Japanese adjectives usually go when they directly describe a noun?",
+    "question": "You want to say \"a red car\" in Japanese. Where does the adjective usually go?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "after the verb only",
       "after punctuation only"
     ],
-    "explanation": "Japanese adjectives usually come before the noun they describe.",
+    "explanation": "In Japanese, the adjective usually goes before the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "japanese-grammar"
@@ -156,14 +156,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What extra marker usually follows a na-adjective before a noun in Japanese?",
+    "question": "You want to say \"a quiet room\" in Japanese with a na-adjective. What extra marker usually follows the adjective before the noun?",
     "correctAnswer": "na",
     "incorrectAnswers": [
       "ga",
       "o",
       "yo"
     ],
-    "explanation": "Na-adjectives usually take \"na\" before a noun.",
+    "explanation": "Japanese na-adjectives normally take \"na\" before a noun. That small marker links the adjective to the noun in a direct noun phrase.",
     "keywords": [
       "na-adjectives",
       "japanese-grammar"
@@ -175,14 +175,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What is a common polite copula in Japanese?",
+    "question": "You want to say \"It is quiet\" politely in Japanese. Which copula is common?",
     "correctAnswer": "desu",
     "incorrectAnswers": [
       "masu",
       "o",
       "ni"
     ],
-    "explanation": "Japanese often uses \"desu\" in polite statements.",
+    "explanation": "Japanese commonly uses \"desu\" as a polite copula. It makes simple statement sentences sound polite without changing the core meaning.",
     "keywords": [
       "copula",
       "politeness",
@@ -195,14 +195,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What ending often marks a polite Japanese verb?",
+    "question": "You want to say \"I study\" politely in Japanese. Which ending often marks the polite verb?",
     "correctAnswer": "masu",
     "incorrectAnswers": [
       "desu only",
       "wa",
       "ra"
     ],
-    "explanation": "Japanese often uses \"masu\" for a polite verb form.",
+    "explanation": "In polite Japanese, \"-masu\" often marks the polite verb form. The ending adds politeness without changing the core action.",
     "keywords": [
       "politeness",
       "verbs",
@@ -215,14 +215,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "In polite Japanese, what often marks a basic question at the end?",
+    "question": "You want to say \"Are you a student?\" politely in Japanese. What often marks the question at the end?",
     "correctAnswer": "ka",
     "incorrectAnswers": [
       "o",
       "de",
       "no"
     ],
-    "explanation": "The particle \"ka\" often marks a polite question.",
+    "explanation": "In polite Japanese, \"ka\" often marks a basic question at the end of the sentence. The listener hears the full statement first and the question marker last.",
     "keywords": [
       "questions",
       "japanese-grammar"
@@ -234,14 +234,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Do Japanese verbs usually change for person or number?",
+    "question": "If the subject changes from \"I\" to \"we\" in Japanese, do the verb endings usually change for person or number?",
     "correctAnswer": "no",
     "incorrectAnswers": [
       "yes, for every subject",
       "yes, but only in the plural",
       "yes, but only for adjectives"
     ],
-    "explanation": "Japanese verbs do not usually change for person or number.",
+    "explanation": "No. Japanese verbs usually do not change for person or number, so the same verb form can often work with different subjects when the context is clear.",
     "keywords": [
       "verbs",
       "japanese-grammar"
@@ -253,14 +253,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What often happens to subject pronouns in Japanese when the context is clear?",
+    "question": "If the subject is already obvious from the situation in Japanese, what often happens to the subject pronoun?",
     "correctAnswer": "they are often omitted",
     "incorrectAnswers": [
       "they must be repeated twice",
       "they move after the verb",
       "they become articles"
     ],
-    "explanation": "Japanese often omits pronouns when the meaning is already clear.",
+    "explanation": "Japanese often omits subject pronouns when the context is clear. Learners should not expect every sentence to say the pronoun out loud.",
     "keywords": [
       "subject-pronouns",
       "japanese-grammar"
@@ -272,14 +272,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What often replaces English articles like \"a\" and \"the\" in Japanese?",
+    "question": "In a simple Japanese sentence like \"This is a book,\" what do you usually use instead of English articles like \"a\" or \"the\"?",
     "correctAnswer": "no article is used",
     "incorrectAnswers": [
       "an article after every noun",
       "an article before every verb",
       "an article only in questions"
     ],
-    "explanation": "Japanese has no direct equivalent of English articles.",
+    "explanation": "Japanese normally uses no separate article. In a sentence like \"This is a book,\" the noun and the context carry that meaning without an extra word like English \"a\" or \"the\".",
     "keywords": [
       "articles",
       "japanese-grammar"
@@ -291,14 +291,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Can a present-form Japanese verb often describe a future action too?",
+    "question": "If tomorrow is clear from the context, can a Japanese present-form verb still describe a future action?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in dictionaries",
       "only with numbers"
     ],
-    "explanation": "Japanese present-form verbs can often describe future actions when context is clear.",
+    "explanation": "Yes. Japanese often lets the plain present form cover a future action when the time is already clear from the context.",
     "keywords": [
       "present-tense",
       "future",
@@ -311,14 +311,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What ending often marks a polite negative verb in Japanese?",
+    "question": "You want to say \"I do not drink coffee\" politely in Japanese. Which ending often marks the polite negative verb?",
     "correctAnswer": "masen",
     "incorrectAnswers": [
       "desu",
       "o",
       "yo"
     ],
-    "explanation": "Japanese often uses \"masen\" for polite negative verbs.",
+    "explanation": "In polite Japanese, \"-masen\" often marks a negative verb. It adds both politeness and negation to the verb form in one ending.",
     "keywords": [
       "negation",
       "politeness",
@@ -331,14 +331,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What ending often marks a polite past verb in Japanese?",
+    "question": "You want to say \"I studied yesterday\" politely in Japanese. Which ending often marks the polite past verb?",
     "correctAnswer": "mashita",
     "incorrectAnswers": [
       "masen",
       "desu",
       "ka"
     ],
-    "explanation": "Japanese often uses \"mashita\" for polite past verbs.",
+    "explanation": "In polite Japanese, \"-mashita\" often marks a past verb. The ending shows both politeness and past time in one form.",
     "keywords": [
       "past-tense",
       "politeness",
@@ -351,14 +351,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What often happens after numbers in Japanese?",
+    "question": "You want to say \"three books\" or \"two people\" in Japanese. What often happens after the number?",
     "correctAnswer": "a counter often appears",
     "incorrectAnswers": [
       "the noun disappears",
       "the verb becomes plural",
       "an article must appear"
     ],
-    "explanation": "Japanese often uses counters after numbers.",
+    "explanation": "Japanese often adds a counter after numbers. The counter matches the type of thing being counted, so the number phrase needs more than just the bare number.",
     "keywords": [
       "counters",
       "japanese-grammar"
@@ -370,14 +370,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What form often links actions together in Japanese?",
+    "question": "You want to say \"I went home and slept\" in Japanese. Which form often links actions together?",
     "correctAnswer": "the te-form",
     "incorrectAnswers": [
       "the article form",
       "the plural suffix only",
       "the question article"
     ],
-    "explanation": "Japanese often uses the te-form to connect actions.",
+    "explanation": "Japanese often uses the te-form to connect actions smoothly. It links the first action to the next one without making a full stop.",
     "keywords": [
       "te-form",
       "japanese-grammar"
@@ -389,14 +389,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Where does a Japanese relative clause usually go?",
+    "question": "If you want to say \"the book that I bought\" in Japanese, where does the relative clause usually go?",
     "correctAnswer": "before the noun",
     "incorrectAnswers": [
       "after the noun only",
       "after the article",
       "after the punctuation"
     ],
-    "explanation": "Japanese relative clauses come before the noun they modify.",
+    "explanation": "In Japanese, the relative clause comes before the noun it describes. So the descriptive part arrives first and the noun comes after it.",
     "keywords": [
       "relative-clauses",
       "japanese-grammar"
@@ -408,14 +408,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle often means \"also\" in Japanese?",
+    "question": "If you want to say \"I also study\" in Japanese, which particle often gives the meaning \"also\"?",
     "correctAnswer": "mo",
     "incorrectAnswers": [
       "ga",
       "o",
       "ni"
     ],
-    "explanation": "The particle \"mo\" often means \"also.\"",
+    "explanation": "Japanese often uses \"mo\" for the meaning \"also.\" It replaces or joins another particle to add the idea of inclusion.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -427,14 +427,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "When written as a particle, how is the topic marker ? usually pronounced?",
+    "question": "When the Japanese topic marker is written as a particle, how is it usually pronounced in speech?",
     "correctAnswer": "wa",
     "incorrectAnswers": [
       "ha",
       "ba",
       "pa"
     ],
-    "explanation": "The topic particle is written with the kana for \"ha\" but pronounced \"wa.\"",
+    "explanation": "The topic marker is written with the hiragana for \"ha\" but pronounced \"wa\" as a particle. Learners need that sound rule because the writing and pronunciation do not match here.",
     "keywords": [
       "particles",
       "pronunciation",
@@ -447,14 +447,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What usually comes at the end of a basic Japanese sentence?",
+    "question": "In a basic Japanese sentence like \"Tanaka tea drank,\" what usually comes at the end?",
     "correctAnswer": "the verb or predicate",
     "incorrectAnswers": [
       "the article",
       "the subject only",
       "the adjective marker only"
     ],
-    "explanation": "Japanese sentences often end with the verb or another predicate.",
+    "explanation": "Japanese basic sentences usually end with the verb or another predicate. That is why the key action or state often comes last.",
     "keywords": [
       "word-order",
       "japanese-grammar"
@@ -466,14 +466,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What polite negative copula is common in standard beginner Japanese?",
+    "question": "You want to say \"It is not quiet\" politely in Japanese. Which negative copula is common?",
     "correctAnswer": "dewa arimasen",
     "incorrectAnswers": [
       "masen ka",
       "o desu",
       "ga desu"
     ],
-    "explanation": "A common polite negative copula is \"dewa arimasen.\"",
+    "explanation": "In standard beginner Japanese, \"dewa arimasen\" is a common polite negative copula. It turns a polite \"is\" sentence into a polite negative one.",
     "keywords": [
       "copula",
       "negation",
@@ -486,14 +486,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What does the particle \"ni\" often mark with people in beginner Japanese?",
+    "question": "In a sentence like \"I gave the teacher a book,\" what does the particle \"ni\" often mark with people?",
     "correctAnswer": "the target or recipient",
     "incorrectAnswers": [
       "the article type",
       "the adjective class only",
       "the plural ending"
     ],
-    "explanation": "Japanese often uses \"ni\" for the target or recipient.",
+    "explanation": "With people, \"ni\" often marks the target or recipient. It shows who receives something or who an action is directed toward.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -505,14 +505,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What basic negative pattern do many i-adjectives use in Japanese?",
+    "question": "You want to change a Japanese i-adjective like \"high\" into \"not high.\" Which basic negative pattern do many i-adjectives use?",
     "correctAnswer": "-kunai",
     "incorrectAnswers": [
       "-masu",
       "-desu",
       "-tara"
     ],
-    "explanation": "Many i-adjectives form the negative with a pattern transliterated as -kunai.",
+    "explanation": "Many Japanese i-adjectives form the basic negative with \"-kunai.\" That pattern changes the adjective itself instead of adding a separate word like English \"not.\"",
     "keywords": [
       "i-adjectives",
       "negation",
@@ -525,14 +525,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What does the particle \"to\" often do in beginner Japanese?",
+    "question": "In beginner Japanese, what does the particle \"to\" often do in a sentence?",
     "correctAnswer": "mark a quote or a with-meaning depending on use",
     "incorrectAnswers": [
       "mark every adjective",
       "replace all verbs",
       "create articles"
     ],
-    "explanation": "The particle \"to\" has important uses such as quotations and some linking meanings.",
+    "explanation": "Japanese \"to\" often marks either a quoted phrase or a \"with\" meaning depending on the use. Learners need to read the surrounding words to know which job it is doing.",
     "keywords": [
       "particles",
       "japanese-grammar"
@@ -544,14 +544,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Japanese plurals?",
+    "question": "You want to show there is more than one thing in Japanese. What usually carries that plural meaning?",
     "correctAnswer": "nouns usually do not need a plural ending",
     "incorrectAnswers": [
       "every noun must end in -s",
       "every noun must double",
       "only verbs can be plural"
     ],
-    "explanation": "Japanese often leaves nouns unchanged for singular and plural when context is clear.",
+    "explanation": "In Japanese, nouns usually do not need a plural ending. Learners should watch the word ending or noun form instead of expecting English-style plural behavior.",
     "keywords": [
       "plural",
       "japanese-grammar"
@@ -563,14 +563,14 @@
     "category": "languages",
     "navigationKeyword1": "japanese",
     "navigationKeyword2": "grammar",
-    "question": "Which particle often marks the place you move toward in Japanese?",
+    "question": "In a sentence like \"I am going to school,\" which particle often marks the place you move toward?",
     "correctAnswer": "ni or e",
     "incorrectAnswers": [
       "wa only",
       "o only",
       "ka only"
     ],
-    "explanation": "Japanese often uses \"ni\" or \"e\" for movement toward a destination.",
+    "explanation": "Japanese often uses \"ni\" or \"e\" to mark movement toward a destination. Both can point to where the motion is headed.",
     "keywords": [
       "particles",
       "movement",

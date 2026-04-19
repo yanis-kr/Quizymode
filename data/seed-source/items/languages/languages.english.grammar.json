@@ -44,14 +44,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which pattern is the usual shape of present perfect?",
+    "question": "In the sentence \"I have visited Rome,\" what pattern builds the present-perfect verb phrase?",
     "correctAnswer": "have/has + past participle",
     "incorrectAnswers": [
       "will + base verb",
       "be + -ing",
       "did + base verb"
     ],
-    "explanation": "Present perfect is commonly formed with have or has plus the past participle, like have finished.",
+    "explanation": "English present perfect links a past experience to the present time. The pattern is have / has plus a past participle.",
     "keywords": [
       "present-perfect",
       "auxiliary-verbs",
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "After most prepositions, which verb form is usually required?",
+    "question": "In the phrase \"interested in learning,\" which verb form comes after the preposition?",
     "correctAnswer": "the -ing form (gerund)",
     "incorrectAnswers": [
       "the base form only",
       "the infinitive with to",
       "the past tense"
     ],
-    "explanation": "After a preposition, English usually uses the -ing form of the verb, for example interested in learning.",
+    "explanation": "After most prepositions in English, the verb usually takes the -ing form. That is why \"learning\" fits after \"in\" here, not a bare verb or infinitive.",
     "keywords": [
       "gerund",
       "prepositions",
@@ -84,14 +84,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "In a first conditional sentence, what tense is typical in the if-clause?",
+    "question": "In the sentence \"If it rains, we will stay home,\" what tense appears in the if-clause?",
     "correctAnswer": "present (not future with will in the if-part)",
     "incorrectAnswers": [
       "past simple",
       "present perfect",
       "future with will"
     ],
-    "explanation": "First conditional if-clauses usually use present tense for future situations, for example If it rains, we will stay home.",
+    "explanation": "In first conditional sentences, the if-clause usually uses present tense even when the whole idea is about the future. That is why English says \"If it rains,\" not \"If it will rain.\"",
     "keywords": [
       "conditionals",
       "first-conditional",
@@ -104,14 +104,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "For one-syllable adjectives, what is the usual comparative form?",
+    "question": "You want to compare two short adjectives, as in \"This bag is smaller than that one.\" What form is usual?",
     "correctAnswer": "adjective + -er (and than in comparisons)",
     "incorrectAnswers": [
       "more + adjective",
       "most + adjective",
       "adjective + -est only"
     ],
-    "explanation": "Short adjectives often add -er for comparison, like faster than, while longer adjectives often use more.",
+    "explanation": "With many one-syllable English adjectives, the comparative adds -er and often uses \"than\" after it. That is the standard pattern in a sentence like \"smaller than that one.\"",
     "keywords": [
       "comparatives",
       "adjectives",

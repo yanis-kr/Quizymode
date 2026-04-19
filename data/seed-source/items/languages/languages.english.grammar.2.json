@@ -24,14 +24,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which form is correct in present simple for we?",
+    "question": "You want a normal present-simple sentence with \"we\" in English. Which form is correct?",
     "correctAnswer": "We work here.",
     "incorrectAnswers": [
       "We works here.",
       "We working here.",
       "We be work here."
     ],
-    "explanation": "With we, present simple uses the base verb without -s: we work.",
+    "explanation": "With \"we,\" English present simple usually keeps the base verb without an extra -s ending. The ending changes with he, she, and it, not with \"we.\"",
     "keywords": [
       "present-simple",
       "subject-verb",
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "english",
     "navigationKeyword2": "grammar",
-    "question": "Which sentence uses the past of go?",
+    "question": "You are talking about yesterday in English. Which sentence uses the past of \"go\" correctly?",
     "correctAnswer": "Yesterday I went to school.",
     "incorrectAnswers": [
       "Yesterday I goed to school.",
       "Yesterday I go to school.",
       "Yesterday I going to school."
     ],
-    "explanation": "Go is irregular; the past form is went, not goed.",
+    "explanation": "The past of \"go\" is \"went.\" English learners need to memorize it because it does not follow the regular -ed pattern.",
     "keywords": [
       "past-simple",
       "irregular-verbs",

@@ -44,14 +44,14 @@
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "Which adjective form matches a feminine singular noun: \"une robe ___\"?",
+    "question": "You want to describe a feminine or plural noun in French. What should the adjective do?",
     "correctAnswer": "{{fr-FR|blanche||blan-SHE}}",
     "incorrectAnswers": [
       "{{fr-FR|blanc||BLANC}}",
       "{{fr-FR|blancs||BLANCS}}",
       "{{fr-FR|blanches||blan-SHES}}"
     ],
-    "explanation": "\"Robe\" is feminine singular, so the adjective agrees: \"blanche\" ends with -e and matches feminine singular.",
+    "explanation": "In French, the adjective should {{fr-FR|blanche||blan-SHE}}. The adjective changes so it matches the noun it describes, not some other word in the sentence.",
     "keywords": [
       "adjective-agreement",
       "gender",
@@ -64,14 +64,14 @@
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "Which subject pronoun fits this sentence: \"___ suis étudiant\"?",
+    "question": "You want to say \"I am a student\" in French. Which subject pronoun fits before the verb?",
     "correctAnswer": "{{fr-FR|Je||JE}}",
     "incorrectAnswers": [
       "{{fr-FR|Tu||TU}}",
       "{{fr-FR|Il||IL}}",
       "{{fr-FR|Nous||NOOS}}"
     ],
-    "explanation": "\"Suis\" is the first-person singular form of \"être,\" so it goes with \"je\".",
+    "explanation": "French \"suis\" matches \"je.\" The subject pronoun has to agree with the verb form in the example sentence.",
     "keywords": [
       "subject-pronouns",
       "to-be",
@@ -84,14 +84,14 @@
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "For regular -er verbs in the present tense, which ending goes with \"nous\"?",
+    "question": "You want the \"we\" form of a regular -er verb such as \"parler\" in French. Which ending usually fits?",
     "correctAnswer": "{{fr-FR|-ons||-ONS}}",
     "incorrectAnswers": [
       "{{fr-FR|-ez||-EZ}}",
       "{{fr-FR|-ent||-ENT}}",
       "{{fr-FR|-es||-ES}}"
     ],
-    "explanation": "Regular verbs like \"parler\" add \"-ons\" for \"nous\": \"nous parlons\".",
+    "explanation": "Regular French -er verbs usually take \"-ons\" with \"nous.\" In a sentence like \"we speak,\" that ending marks the \"we\" form.",
     "keywords": [
       "present-tense",
       "verbs",
@@ -104,14 +104,14 @@
     "category": "languages",
     "navigationKeyword1": "french",
     "navigationKeyword2": "grammar",
-    "question": "Which contraction is normal before a vowel sound for \"the man\"?",
+    "question": "You want to say \"the man\" in French, but the noun starts with a vowel sound. Which form fits?",
     "correctAnswer": "{{fr-FR|l'homme||l'hom-ME}}",
     "incorrectAnswers": [
       "{{fr-FR|le homme||LE hom-ME}}",
       "{{fr-FR|la homme||LA hom-ME}}",
       "{{fr-FR|les homme||LES hom-ME}}"
     ],
-    "explanation": "French uses \"l'\" before a vowel sound to avoid a rough break between words.",
+    "explanation": "French normally shortens the article to \"l'\" before a vowel sound. That is why \"the man\" becomes \"l'homme\" instead of keeping the full article.",
     "keywords": [
       "elision",
       "articles",

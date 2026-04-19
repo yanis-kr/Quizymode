@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What usually replaces English articles like \"a\" and \"the\" in Latin?",
+    "question": "In a simple Latin sentence like \"This is a book,\" what do you usually use instead of English articles like \"a\" or \"the\"?",
     "correctAnswer": "no article is used",
     "incorrectAnswers": [
       "an article is attached to the noun",
       "an article follows every verb",
       "articles appear only in questions"
     ],
-    "explanation": "Latin has no separate definite or indefinite articles.",
+    "explanation": "Latin normally uses no separate article. In a sentence like \"This is a book,\" the noun and the context carry that meaning without an extra word like English \"a\" or \"the\".",
     "keywords": [
       "articles",
       "latin-grammar"
@@ -23,14 +23,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What is a common beginner word-order pattern for Latin reading?",
+    "question": "When you read a simple Latin sentence for the first time, where does the verb often appear?",
     "correctAnswer": "the verb often comes near the end",
     "incorrectAnswers": [
       "the article always comes first",
       "the adjective must always be last",
       "the object must always vanish"
     ],
-    "explanation": "Latin word order is flexible, but many textbook sentences place the verb near the end.",
+    "explanation": "In beginner Latin reading, the verb often comes near the end. That pattern is common enough to help learners scan the sentence more confidently.",
     "keywords": [
       "word-order",
       "latin-grammar"
@@ -42,14 +42,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "How many main cases do beginners usually learn first in Latin?",
+    "question": "When you start learning beginner noun charts in Latin, how many main cases are you usually asked to learn first?",
     "correctAnswer": "six",
     "incorrectAnswers": [
       "two",
       "three",
       "ten"
     ],
-    "explanation": "Latin commonly teaches nominative, vocative, accusative, genitive, dative, and ablative.",
+    "explanation": "Beginners usually learn six main cases in Latin. Those core cases explain many of the form changes you see in simple phrases and sentences.",
     "keywords": [
       "cases",
       "latin-grammar"
@@ -61,14 +61,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks the subject in Latin?",
+    "question": "In a Latin sentence like \"The teacher arrives.\", which case usually marks the highlighted role?",
     "correctAnswer": "the nominative",
     "incorrectAnswers": [
       "the accusative",
       "the genitive",
       "the ablative"
     ],
-    "explanation": "Latin usually uses the nominative for the subject.",
+    "explanation": "In Latin, the nominative case usually marks the subject. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "nominative",
       "latin-grammar"
@@ -80,14 +80,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case usually marks the direct object in Latin?",
+    "question": "In a Latin sentence like \"I see the teacher.\", which case usually marks the highlighted role?",
     "correctAnswer": "the accusative",
     "incorrectAnswers": [
       "the genitive",
       "the dative",
       "the vocative"
     ],
-    "explanation": "Latin usually uses the accusative for a direct object.",
+    "explanation": "In Latin, the accusative case usually marks the direct object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "accusative",
       "latin-grammar"
@@ -99,14 +99,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case often shows possession in Latin?",
+    "question": "In a Latin sentence like \"the color of the car\", which case usually marks the highlighted role?",
     "correctAnswer": "the genitive",
     "incorrectAnswers": [
       "the nominative",
       "the imperative",
       "the participle"
     ],
-    "explanation": "Latin often uses the genitive for possession or \"of\" meanings.",
+    "explanation": "In Latin, the genitive often shows possession or an \"of\" meaning. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "genitive",
       "latin-grammar"
@@ -118,14 +118,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case often marks the indirect object in Latin?",
+    "question": "In a Latin sentence like \"I gave Anna the book.\", which case usually marks the highlighted role?",
     "correctAnswer": "the dative",
     "incorrectAnswers": [
       "the accusative",
       "the vocative",
       "the infinitive"
     ],
-    "explanation": "Latin often uses the dative for the recipient.",
+    "explanation": "In Latin, the dative often marks the recipient or indirect object. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "dative",
       "latin-grammar"
@@ -137,14 +137,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case often expresses means, separation, or location with some prepositions in Latin?",
+    "question": "In a Latin sentence like \"with care / from Rome\", which case usually marks the highlighted role?",
     "correctAnswer": "the ablative",
     "incorrectAnswers": [
       "the nominative",
       "the vocative",
       "the article case"
     ],
-    "explanation": "Latin often uses the ablative for several important relationships.",
+    "explanation": "In Latin, the ablative often expresses means, separation, or place with some prepositions. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "ablative",
       "latin-grammar"
@@ -156,14 +156,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case is used for direct address in Latin?",
+    "question": "In a Latin sentence like \"Marcus, come here!\", which case usually marks the highlighted role?",
     "correctAnswer": "the vocative",
     "incorrectAnswers": [
       "the genitive",
       "the locative only",
       "the superlative"
     ],
-    "explanation": "Latin uses the vocative when directly addressing someone.",
+    "explanation": "In Latin, the vocative is used for direct address. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "vocative",
       "latin-grammar"
@@ -175,14 +175,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What do Latin adjectives usually do?",
+    "question": "You want to describe a feminine or plural noun in Latin. What should the adjective do?",
     "correctAnswer": "agree with the noun in gender, number, and case",
     "incorrectAnswers": [
       "stay the same always",
       "agree only with the verb",
       "agree only in number"
     ],
-    "explanation": "Latin adjectives usually match the noun they describe.",
+    "explanation": "In Latin, the adjective should agree with the noun in gender, number, and case. The adjective changes so it matches the noun it describes, not some other word in the sentence.",
     "keywords": [
       "adjective-agreement",
       "latin-grammar"
@@ -213,14 +213,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What is a common beginner rule for first-declension nouns in Latin?",
+    "question": "When you meet a basic first-declension noun in Latin, what beginner rule often helps with its gender?",
     "correctAnswer": "many are feminine",
     "incorrectAnswers": [
       "many are always neuter",
       "many are all plural",
       "many are question words"
     ],
-    "explanation": "Many first-declension nouns are feminine.",
+    "explanation": "Many first-declension Latin nouns are feminine. That rule gives learners a useful default, even though they will meet some exceptions.",
     "keywords": [
       "declensions",
       "latin-grammar"
@@ -232,14 +232,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What is a common beginner rule for second-declension nouns ending in -us?",
+    "question": "When you meet a second-declension Latin noun ending in -us, what beginner rule often helps?",
     "correctAnswer": "many are masculine",
     "incorrectAnswers": [
       "many are feminine only",
       "many are always plural",
       "many are adverbs"
     ],
-    "explanation": "Many second-declension nouns ending in -us are masculine.",
+    "explanation": "Many second-declension Latin nouns ending in -us are masculine. The ending gives learners a practical first guess about gender.",
     "keywords": [
       "declensions",
       "latin-grammar"
@@ -251,14 +251,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What is a common beginner rule for second-declension nouns ending in -um?",
+    "question": "When you meet a second-declension Latin noun ending in -um, what beginner rule often helps?",
     "correctAnswer": "many are neuter",
     "incorrectAnswers": [
       "many are feminine",
       "many are verbs",
       "many are conjunctions"
     ],
-    "explanation": "Many second-declension nouns ending in -um are neuter.",
+    "explanation": "Many second-declension Latin nouns ending in -um are neuter. The ending gives learners a practical first guess about gender and later case behavior.",
     "keywords": [
       "declensions",
       "latin-grammar"
@@ -270,14 +270,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "For neuter Latin nouns, what is usually true about nominative and accusative forms?",
+    "question": "If a Latin neuter noun is the subject in one sentence and the direct object in another, what is often true about the nominative and accusative forms?",
     "correctAnswer": "they are the same",
     "incorrectAnswers": [
       "they are always opposite",
       "they never exist",
       "they only appear in questions"
     ],
-    "explanation": "Neuter nominative and accusative forms are usually the same.",
+    "explanation": "For neuter Latin nouns, the nominative and accusative forms are often the same. Learners use that rule all the time when checking simple neuter nouns.",
     "keywords": [
       "neuter",
       "latin-grammar"
@@ -289,14 +289,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "For many neuter Latin nouns, what is a common nominative and accusative plural ending?",
+    "question": "You want the nominative or accusative plural of a neuter Latin noun. Which ending is common?",
     "correctAnswer": "-a",
     "incorrectAnswers": [
       "-s",
       "-es",
       "-ment"
     ],
-    "explanation": "Many neuter plurals end in -a.",
+    "explanation": "Many neuter Latin nouns use \"-a\" in the nominative and accusative plural. That is one of the most important beginner neuter patterns.",
     "keywords": [
       "neuter",
       "plural",
@@ -309,14 +309,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What do Latin verb endings usually show?",
+    "question": "If the subject changes from \"I\" to \"we\" in Latin, what do the verb endings usually show?",
     "correctAnswer": "person and number",
     "incorrectAnswers": [
       "article type",
       "noun color",
       "comma placement only"
     ],
-    "explanation": "Latin verb endings usually show the subject person and number.",
+    "explanation": "Latin verb endings usually show person and number. That means the ending itself often tells you who is doing the action.",
     "keywords": [
       "verbs",
       "latin-grammar"
@@ -328,14 +328,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What ending often appears on a Latin infinitive?",
+    "question": "When you look up a verb in a Latin dictionary, what ending do you often see on the infinitive?",
     "correctAnswer": "-re",
     "incorrectAnswers": [
       "-ing",
       "-ly",
       "-ment"
     ],
-    "explanation": "Many Latin infinitives end in -re.",
+    "explanation": "In Latin, many infinitives use -re. That ending is a useful clue for spotting the base verb form in lists and dictionaries.",
     "keywords": [
       "infinitive",
       "latin-grammar"
@@ -347,14 +347,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What ending is common for first-person singular present verbs in Latin?",
+    "question": "You want the \"I\" form of a basic Latin present-tense verb. Which ending is common?",
     "correctAnswer": "-o",
     "incorrectAnswers": [
       "-mus",
       "-tis",
       "-nt"
     ],
-    "explanation": "Many first-person singular present Latin verbs end in -o.",
+    "explanation": "A common first-person singular present ending in Latin is \"-o.\" That ending helps learners recognize the \"I\" form quickly.",
     "keywords": [
       "present-tense",
       "latin-grammar"
@@ -366,14 +366,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "How can Latin often express a completed past action?",
+    "question": "You want to say that an action was completed in the past in Latin. How can Latin often express that meaning?",
     "correctAnswer": "with a single perfect-tense verb form",
     "incorrectAnswers": [
       "only with a helper article",
       "only with punctuation",
       "only with no verb"
     ],
-    "explanation": "Latin often uses a single perfect-tense form for a completed past action.",
+    "explanation": "Latin often uses the perfect tense for a completed past action. That tense frames the action as finished rather than ongoing.",
     "keywords": [
       "perfect-tense",
       "latin-grammar"
@@ -385,14 +385,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Does Latin have a true passive voice built into verb forms?",
+    "question": "If you want to say \"The letter was written\" in Latin, does the language have a true passive voice built into verb forms?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in adjectives",
       "only in plural nouns"
     ],
-    "explanation": "Latin has passive verb forms.",
+    "explanation": "Yes. Latin builds passive meaning directly into verb forms, so learners do not need a separate English-style helper pattern every time.",
     "keywords": [
       "passive",
       "latin-grammar"
@@ -404,14 +404,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Can Latin often leave out a subject pronoun because the verb ending already shows the person?",
+    "question": "If the verb ending already makes the subject clear in Latin, can you often leave the subject pronoun out?",
     "correctAnswer": "yes",
     "incorrectAnswers": [
       "no, never",
       "only in questions",
       "only in poetry dictionaries"
     ],
-    "explanation": "Latin often omits subject pronouns because the verb ending is clear enough.",
+    "explanation": "Yes. In Latin, yes when the verb ending or the context already tells you who the subject is.",
     "keywords": [
       "subject-pronouns",
       "latin-grammar"
@@ -423,14 +423,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Where can a Latin adjective appear?",
+    "question": "You want to say \"a red car\" in Latin. Where does the adjective usually go?",
     "correctAnswer": "it can appear before or after the noun",
     "incorrectAnswers": [
       "only before the noun",
       "only after punctuation",
       "only inside a preposition"
     ],
-    "explanation": "Latin adjective position is flexible.",
+    "explanation": "In Latin, the adjective usually goes it can appear before or after the noun. That is the most useful default pattern for a short phrase like \"a red car.\"",
     "keywords": [
       "adjectives",
       "word-order",
@@ -443,14 +443,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What common Latin word means \"is\"?",
+    "question": "You want to say \"The road is long\" in Latin. Which common word means \"is\"?",
     "correctAnswer": "est",
     "incorrectAnswers": [
       "sumus",
       "non",
       "cum"
     ],
-    "explanation": "The common third-person singular present form of \"to be\" is \"est.\"",
+    "explanation": "Latin commonly uses \"est\" for \"is.\" Learners meet it constantly because it appears in simple identification and description sentences.",
     "keywords": [
       "to-be",
       "latin-grammar"
@@ -462,14 +462,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Where does the negation word \"non\" usually go in Latin?",
+    "question": "You want to say \"I am not ready\" in Latin. Where does \"non\" usually go?",
     "correctAnswer": "before the word or phrase it negates",
     "incorrectAnswers": [
       "after the article only",
       "inside the noun ending",
       "after the final period only"
     ],
-    "explanation": "Latin usually places \"non\" before the word or phrase it negates.",
+    "explanation": "In Latin, \"non\" usually comes before the word or phrase it negates. In a sentence like \"I am not ready,\" that keeps the negative close to the meaning it changes.",
     "keywords": [
       "negation",
       "latin-grammar"
@@ -481,14 +481,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "How can Latin mark a yes-or-no question?",
+    "question": "You want to turn a Latin statement into a yes-or-no question. How can Latin mark that question?",
     "correctAnswer": "with particles like -ne, nonne, or num, or with context",
     "incorrectAnswers": [
       "only with do-support",
       "only with articles",
       "only with plural adjectives"
     ],
-    "explanation": "Latin can mark yes-or-no questions with special particles.",
+    "explanation": "Latin can mark a yes-or-no question with intonation, punctuation, or question particles depending on the style. Learners should watch for those markers instead of expecting English-style helper verbs.",
     "keywords": [
       "questions",
       "latin-grammar"
@@ -500,14 +500,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What form is commonly used for direct commands in Latin?",
+    "question": "You want to give a direct command in Latin, like \"Come!\" What form is commonly used?",
     "correctAnswer": "the imperative",
     "incorrectAnswers": [
       "the article",
       "the accusative only",
       "the superlative"
     ],
-    "explanation": "Latin often uses the imperative for commands.",
+    "explanation": "Latin commonly uses the imperative for direct commands. That form tells someone to do something instead of just describing an action.",
     "keywords": [
       "imperative",
       "latin-grammar"
@@ -519,14 +519,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "Which case commonly follows \"cum\" to mean \"with\" in Latin?",
+    "question": "After the Latin preposition \"cum\" in a phrase like \"with a friend,\" which case commonly follows?",
     "correctAnswer": "the ablative",
     "incorrectAnswers": [
       "the nominative",
       "the vocative",
       "the article case"
     ],
-    "explanation": "Latin commonly uses the ablative after \"cum.\"",
+    "explanation": "In Latin, \"cum\" commonly takes the ablative. So the noun after \"cum\" changes to the ablative form in that phrase.",
     "keywords": [
       "prepositions",
       "ablative",
@@ -539,14 +539,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What rare extra case survives in a few Latin place words such as domi or Romae?",
+    "question": "In a Latin sentence like \"in the city\", which case usually marks the highlighted role?",
     "correctAnswer": "the locative",
     "incorrectAnswers": [
       "the article case",
       "the future case",
       "the comparative case"
     ],
-    "explanation": "Latin keeps a locative form in a small set of words.",
+    "explanation": "In Latin, the locative is often used after prepositions for location. In this example, that case shows the job the noun is doing in the sentence.",
     "keywords": [
       "locative",
       "latin-grammar"
@@ -558,14 +558,14 @@
     "category": "languages",
     "navigationKeyword1": "latin",
     "navigationKeyword2": "grammar",
-    "question": "What is a safe beginner rule for Latin meaning?",
+    "question": "If Latin word order moves around, what is the safest beginner rule for understanding the meaning?",
     "correctAnswer": "case endings matter more than fixed English-like word order",
     "incorrectAnswers": [
       "word order never matters",
       "articles matter most",
       "capital letters matter most"
     ],
-    "explanation": "Latin relies heavily on endings to show grammatical role.",
+    "explanation": "In Latin, endings carry more meaning than a fixed English-like word order. Learners should read the forms first and the order second.",
     "keywords": [
       "cases",
       "word-order",
