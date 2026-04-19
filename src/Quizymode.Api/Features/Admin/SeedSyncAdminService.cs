@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -30,13 +31,19 @@ internal sealed class SeedSyncAdminService(
     {
         try
         {
+            Stopwatch sw = Stopwatch.StartNew();
             Result<LoadedGitHubSeedManifest> loadResult = await _gitHubSeedSource.LoadManifestAsync(request, cancellationToken);
             if (loadResult.IsFailure)
             {
                 return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
             }
 
-            return await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+            Result<SeedSyncAdmin.PreviewResponse> result = await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+            sw.Stop();
+
+            return result.IsSuccess
+                ? Result.Success(result.Value! with { DurationMs = sw.ElapsedMilliseconds })
+                : result;
         }
         catch (Exception ex)
         {
@@ -71,39 +78,57 @@ internal sealed class SeedSyncAdminService(
         SeedSyncAdmin.Request request,
         CancellationToken cancellationToken)
     {
+        Stopwatch sw = Stopwatch.StartNew();
         Result<LoadedGitHubSeedManifest> loadResult = await _gitHubSeedSource.LoadManifestAsync(request, cancellationToken);
         if (loadResult.IsFailure)
         {
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
         }
 
-        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+        Result<SeedSyncAdmin.ApplyResponse> result = await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+        sw.Stop();
+
+        return result.IsSuccess
+            ? Result.Success(result.Value! with { DurationMs = sw.ElapsedMilliseconds })
+            : result;
     }
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewLocalAsync(
         SeedSyncAdmin.LocalRequest request,
         CancellationToken cancellationToken)
     {
+        Stopwatch sw = Stopwatch.StartNew();
         Result<LoadedLocalSeedManifest> loadResult = await _localSeedLoader.LoadManifestAsync(request.DeltaPreviewLimit, cancellationToken);
         if (loadResult.IsFailure)
         {
             return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
         }
 
-        return await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+        Result<SeedSyncAdmin.PreviewResponse> result = await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+        sw.Stop();
+
+        return result.IsSuccess
+            ? Result.Success(result.Value! with { DurationMs = sw.ElapsedMilliseconds })
+            : result;
     }
 
     public async Task<Result<SeedSyncAdmin.ApplyResponse>> ApplyLocalAsync(
         SeedSyncAdmin.LocalRequest request,
         CancellationToken cancellationToken)
     {
+        Stopwatch sw = Stopwatch.StartNew();
         Result<LoadedLocalSeedManifest> loadResult = await _localSeedLoader.LoadManifestAsync(request.DeltaPreviewLimit, cancellationToken);
         if (loadResult.IsFailure)
         {
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
         }
 
-        return await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+        Result<SeedSyncAdmin.ApplyResponse> result = await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+        sw.Stop();
+
+        return result.IsSuccess
+            ? Result.Success(result.Value! with { DurationMs = sw.ElapsedMilliseconds })
+            : result;
     }
 
     public async Task<Result<SeedSyncAdmin.ApplyResponse>> ApplyManifestAsync(
@@ -143,9 +168,22 @@ internal sealed class SeedSyncAdminService(
                 ? BuildHistoryRun(plan, sourceContext, utcNow)
                 : null;
 
+            const int saveBatchSize = 200;
+            int pendingItemChanges = 0;
             foreach (PlannedSeedItemChange change in plan.Changes)
             {
+                if (change.ChangeKind == SeedSyncChangeKind.Unchanged)
+                {
+                    continue;
+                }
+
                 ApplyChange(change, publicKeywordMap, utcNow);
+                pendingItemChanges++;
+
+                if (pendingItemChanges % saveBatchSize == 0)
+                {
+                    await db.SaveChangesAsync(cancellationToken);
+                }
             }
 
             foreach (PlannedSeedCollectionChange change in plan.CollectionChanges)
@@ -705,6 +743,11 @@ internal sealed class SeedSyncAdminService(
             plan.CollectionUpdateCount,
             plan.CollectionDeleteCount,
             plan.CollectionUnchangedCount,
+            sourceContext.TotalFiles,
+            sourceContext.ProcessedFiles,
+            sourceContext.NextFileOffset,
+            sourceContext.IsComplete,
+            DurationMs: 0,
             plan.DeltaChangeCount > deltaChanges.Count,
             deltaChanges);
     }
@@ -741,6 +784,11 @@ internal sealed class SeedSyncAdminService(
             plan.CollectionUpdateCount,
             plan.CollectionDeleteCount,
             plan.CollectionUnchangedCount,
+            sourceContext.TotalFiles,
+            sourceContext.ProcessedFiles,
+            sourceContext.NextFileOffset,
+            sourceContext.IsComplete,
+            DurationMs: 0,
             historyRun?.Id,
             historyRun?.CreatedUtc,
             plan.DeltaChangeCount > deltaChanges.Count,

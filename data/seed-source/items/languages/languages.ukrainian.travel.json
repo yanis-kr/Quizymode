@@ -1,319 +1,17 @@
 [
   {
-    "itemId": "d920388d-0a16-41e2-b8dc-8202acf3b909",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you ask 'Where is the bathroom?' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Де туалет?|De tualet?|DE tua-LET?}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Що таке туалет?|Shcho take tualet?|SHCHO TA-ke tua-LET?}}",
-      "{{uk-UA|Коли відкрито?|Koly vidkryto?|KO-ly vid-KRY-to?}}",
-      "{{uk-UA|Скільки коштує?|Skilky koshtuye?|SKIL-ky KOSH-tuye?}}"
-    ],
-    "explanation": "'De' means 'where'. 'De tualet?' is the most practical travel phrase.",
-    "keywords": [
-      "freq-100",
-      "situation-directions",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "b12d79ef-fbbf-4efb-a621-4ee9c3b7182e",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you ask 'How much does this cost?' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Скільки це коштує?|Skilky tse koshtuye?|SKIL-ky TSE KOSH-tuye?}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Що це таке?|Shcho tse take?|SHCHO TSE TA-ke?}}",
-      "{{uk-UA|Де це купити?|De tse kupyty?|DE TSE ku-PY-ty?}}",
-      "{{uk-UA|Чи є знижка?|Chy ye znyzhka?|CHY YE ZNYZH-ka?}}"
-    ],
-    "explanation": "'Skilky tse koshtuye?' — 'How much does this cost?' — essential for markets.",
-    "keywords": [
-      "freq-100",
-      "situation-prices",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "d8402b61-700a-4904-a3a0-13f9eed06c19",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you order 'a coffee, please' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Каву, будь ласка.|Kavu, bud laska.|KA-vu, BUD LAS-ka.}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Каву зараз!|Kavu zaraz!|KA-vu za-RAZ!}}",
-      "{{uk-UA|Хочу каву.|Khochu kavu.|KHO-chu KA-vu.}}",
-      "{{uk-UA|Давайте каву.|Davayte kavu.|da-VAY-te KA-vu.}}"
-    ],
-    "explanation": "'[Item], bud laska' — '[Item], please' — the polite café order pattern.",
-    "keywords": [
-      "freq-100",
-      "situation-cafe",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "ce63417d-0f67-4c6e-9dd0-69eeef0702d8",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you ask for the bill in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Рахунок, будь ласка.|Rakhunok, bud laska.|rak-HU-nok, BUD LAS-ka.}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Меню, будь ласка.|Menyu, bud laska.|ME-nyu, BUD LAS-ka.}}",
-      "{{uk-UA|Ще одну страву.|Shche odnu stravu.|SHCHE OD-nu STRA-vu.}}",
-      "{{uk-UA|Дякую за їжу.|Dyakuyu za yizhu.|DYA-kuyu ZA YIZ-hu.}}"
-    ],
-    "explanation": "'Rakhunok' = the bill/check. Add 'bud laska' to make it polite.",
-    "keywords": [
-      "freq-100",
-      "situation-cafe",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "4569e74b-52c2-42a0-b321-ac8380282564",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'I don't understand' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Я не розумію.|Ya ne rozumiyu.|YA NE ro-ZU-miyu.}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Я не знаю.|Ya ne znayu.|YA NE ZNAYU.}}",
-      "{{uk-UA|Я не чую.|Ya ne chuyu.|YA NE CHUYU.}}",
-      "{{uk-UA|Я не говорю.|Ya ne hovoryu.|YA NE ho-VO-ryu.}}"
-    ],
-    "explanation": "'Ya ne rozumiyu' — the essential phrase for when you've lost the thread.",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "5703cc2f-0433-47d8-b126-1fb6c610d19b",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'Do you speak English?' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Ви говорите англійською?|Vy hovoryte angliyiyskoyu?|VY ho-vo-RY-te an-GLIYIYS-koyu?}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Ви розумієте мене?|Vy rozumiyete mene?|VY ro-zu-MIYE-te ME-ne?}}",
-      "{{uk-UA|Ви знаєте англійську?|Vy znayete angliysku?|VY ZNAYE-te an-GLIYS-ku?}}",
-      "{{uk-UA|Говоріть повільніше.|Hovorit povil'nishe.|ho-VO-rit po-vil'-NI-she.}}"
-    ],
-    "explanation": "Polite plural form 'Vy hovoryte angliyiyskoyu?' — informal: 'Ty hovorysh angliyiyskoyu?'",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "575fcbfd-aec9-4615-a7b3-65b3ee12808e",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'hello' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Привіт|Pryvit|pry-VIT}}",
-    "incorrectAnswers": [
-      "{{uk-UA|До побачення|Do pobachennya|DO po-ba-CHEN-nya}}",
-      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
-      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}"
-    ],
-    "explanation": "'Pryvit' is the casual hello. Formal: 'Dobroho dnya' (good day).",
-    "keywords": [
-      "freq-100",
-      "situation-greetings",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "2d772e98-ae49-4805-8bfe-714f237e1367",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'thank you' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
-      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
-      "{{uk-UA|Привіт|Pryvit|pry-VIT}}"
-    ],
-    "explanation": "'Dyakuyu' is the everyday thank you. 'Dyakuyu duzhe' = thank you very much.",
-    "keywords": [
-      "freq-100",
-      "situation-greetings",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "127a82f1-d38a-4b0f-a8ba-6932e2b4c0c1",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'please' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
-      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
-      "{{uk-UA|Так|Tak|TAK}}"
-    ],
-    "explanation": "'Bud laska' means please and is also used for 'you're welcome' and 'here you go'.",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "f35972cd-0165-4e47-bbd9-a8339ca42ceb",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'yes' and 'no' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Так|Tak|TAK}} / {{uk-UA|Ні|Ni|NI}}",
-    "incorrectAnswers": [
-      "Да / Нет",
-      "Oui / Non",
-      "Jā / Nē"
-    ],
-    "explanation": "'Tak' is yes, 'Ni' is no. Note: Ukrainian 'Tak' and Russian 'Da' differ.",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "eb8a73b6-23a5-4178-98b5-33ac6d95ea82",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'goodbye' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|До побачення|Do pobachennya|DO po-ba-CHEN-nya}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Привіт|Pryvit|pry-VIT}}",
-      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
-      "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}"
-    ],
-    "explanation": "'Do pobachennya' — 'until we see each other' — is the formal goodbye. Informal: 'Buvay'.",
-    "keywords": [
-      "freq-100",
-      "situation-greetings",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "3c71e686-1cb7-403b-ab42-24335c8d917c",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'my name is' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Мене звати...|Mene zvaty...|ME-ne ZVA-ty...}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Я живу в...|Ya zhyvu v...|YA ZHY-vu V...}}",
-      "{{uk-UA|Я з...|Ya z...|YA Z...}}",
-      "{{uk-UA|Мені подобається...|Meni podobayetsya...|ME-ni po-do-BAYE-tsya...}}"
-    ],
-    "explanation": "'Mene zvaty [name]' — 'My name is [name]' — the standard self-introduction.",
-    "keywords": [
-      "freq-100",
-      "situation-intro",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "6e9c516b-6ab3-401d-a5ae-23ff969e11b9",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'water' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|вода|voda|VO-da}}",
-    "incorrectAnswers": [
-      "{{uk-UA|хліб|khlib|KHLIB}}",
-      "{{uk-UA|молоко|moloko|mo-LO-ko}}",
-      "{{uk-UA|сік|sik|SIK}}"
-    ],
-    "explanation": "'Voda' means water — same root as Russian. 'Khlib' is bread, 'moloko' is milk.",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
-    "itemId": "a875c2c3-43bd-422b-a40e-edceb959a7a3",
-    "category": "languages",
-    "navigationKeyword1": "ukrainian",
-    "navigationKeyword2": "travel",
-    "question": "How do you say 'excuse me / sorry' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Вибачте|Vybachte|vy-BACH-te}}",
-    "incorrectAnswers": [
-      "{{uk-UA|Дякую|Dyakuyu|DYA-kuyu}}",
-      "{{uk-UA|Будь ласка|Bud laska|BUD LAS-ka}}",
-      "{{uk-UA|Привіт|Pryvit|pry-VIT}}"
-    ],
-    "explanation": "'Vybachte' is formal excuse me/sorry. Informal: 'Vybachay'. Used to get attention or apologize.",
-    "keywords": [
-      "freq-100",
-      "cefr-a1",
-      "situation-travel",
-      "ukrainian-travel"
-    ],
-    "source": "https://www.omniglot.com/language/phrases/ukrainian.htm"
-  },
-  {
     "itemId": "5ddc9c98-b58c-414d-9bb9-9f8739acfe03",
     "category": "languages",
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you say 'Help!' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Допоможіть!|Dopomozhit!|do-po-mo-ZHIT!}}",
+    "correctAnswer": "{{uk-UA|\u0414\u043e\u043f\u043e\u043c\u043e\u0436\u0456\u0442\u044c!|Dopomozhit!|do-po-mo-ZHIT!}}",
     "incorrectAnswers": [
-      "{{uk-UA|Обережно!|Oberezhno!|o-be-REZH-no!}}",
-      "{{uk-UA|Перепрошую.|Pereproshuyu.|pe-re-pro-SHU-yu.}}",
-      "{{uk-UA|Я не розумію.|Ya ne rozumiyu.|YA NE ro-zu-MI-yu.}}"
+      "{{uk-UA|\u041e\u0431\u0435\u0440\u0435\u0436\u043d\u043e!|Oberezhno!|o-be-REZH-no!}}",
+      "{{uk-UA|\u041f\u0435\u0440\u0435\u043f\u0440\u043e\u0448\u0443\u044e.|Pereproshuyu.|pe-re-pro-SHU-yu.}}",
+      "{{uk-UA|\u042f \u043d\u0435 \u0440\u043e\u0437\u0443\u043c\u0456\u044e.|Ya ne rozumiyu.|YA NE ro-zu-MI-yu.}}"
     ],
-    "explanation": "Use 'Допоможіть!' when you urgently need help in a public place.",
+    "explanation": "Use '\u0414\u043e\u043f\u043e\u043c\u043e\u0436\u0456\u0442\u044c!' when you urgently need help in a public place.",
     "keywords": [
       "help",
       "emergency",
@@ -328,11 +26,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you ask for one ticket in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Один квиток, будь ласка.|Odyn kvytok, bud laska.|o-DYN kvi-TOK, BUD LAS-ka.}}",
+    "correctAnswer": "{{uk-UA|\u041e\u0434\u0438\u043d \u043a\u0432\u0438\u0442\u043e\u043a, \u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430.|Odyn kvytok, bud laska.|o-DYN kvi-TOK, BUD LAS-ka.}}",
     "incorrectAnswers": [
-      "{{uk-UA|Одне таксі, будь ласка.|Odne taksi, bud laska.|OD-ne tak-SI, BUD LAS-ka.}}",
-      "{{uk-UA|Один рахунок, будь ласка.|Odyn rakhunok, bud laska.|o-DYN ra-KHU-nok, BUD LAS-ka.}}",
-      "{{uk-UA|Одна кава, будь ласка.|Odna kava, bud laska.|od-NA KA-va, BUD LAS-ka.}}"
+      "{{uk-UA|\u041e\u0434\u043d\u0435 \u0442\u0430\u043a\u0441\u0456, \u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430.|Odne taksi, bud laska.|OD-ne tak-SI, BUD LAS-ka.}}",
+      "{{uk-UA|\u041e\u0434\u0438\u043d \u0440\u0430\u0445\u0443\u043d\u043e\u043a, \u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430.|Odyn rakhunok, bud laska.|o-DYN ra-KHU-nok, BUD LAS-ka.}}",
+      "{{uk-UA|\u041e\u0434\u043d\u0430 \u043a\u0430\u0432\u0430, \u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430.|Odna kava, bud laska.|od-NA KA-va, BUD LAS-ka.}}"
     ],
     "explanation": "This is the core ticket phrase for buses and trains; add the destination after it when needed.",
     "keywords": [
@@ -349,11 +47,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you ask 'Where is the train or bus to ___?' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Де автобус або потяг до _____?|De avtobus abo potyah do _____?|DE av-TO-bus A-bo po-TYAH do _____?}}",
+    "correctAnswer": "{{uk-UA|\u0414\u0435 \u0430\u0432\u0442\u043e\u0431\u0443\u0441 \u0430\u0431\u043e \u043f\u043e\u0442\u044f\u0433 \u0434\u043e _____?|De avtobus abo potyah do _____?|DE av-TO-bus A-bo po-TYAH do _____?}}",
     "incorrectAnswers": [
-      "{{uk-UA|Куди їде цей автобус?|Kudy yide tsey avtobus?|ku-DY YI-de tsey av-TO-bus?}}",
-      "{{uk-UA|Я хочу автобус до _____.|Ya khochu avtobus do _____.|YA KHO-chu av-TO-bus do _____ .}}",
-      "{{uk-UA|Автобус тут зупиняється?|Avtobus tut zupynyayetsya?|av-TO-bus tut zu-py-NYA-yet-sya?}}"
+      "{{uk-UA|\u041a\u0443\u0434\u0438 \u0457\u0434\u0435 \u0446\u0435\u0439 \u0430\u0432\u0442\u043e\u0431\u0443\u0441?|Kudy yide tsey avtobus?|ku-DY YI-de tsey av-TO-bus?}}",
+      "{{uk-UA|\u042f \u0445\u043e\u0447\u0443 \u0430\u0432\u0442\u043e\u0431\u0443\u0441 \u0434\u043e _____.|Ya khochu avtobus do _____.|YA KHO-chu av-TO-bus do _____ .}}",
+      "{{uk-UA|\u0410\u0432\u0442\u043e\u0431\u0443\u0441 \u0442\u0443\u0442 \u0437\u0443\u043f\u0438\u043d\u044f\u0454\u0442\u044c\u0441\u044f?|Avtobus tut zupynyayetsya?|av-TO-bus tut zu-py-NYA-yet-sya?}}"
     ],
     "explanation": "This is a practical station question when you need the platform or departure point.",
     "keywords": [
@@ -371,11 +69,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you call for a taxi in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Таксі!|Taksi!|tak-SI!}}",
+    "correctAnswer": "{{uk-UA|\u0422\u0430\u043a\u0441\u0456!|Taksi!|tak-SI!}}",
     "incorrectAnswers": [
-      "{{uk-UA|Автобус!|Avtobus!|av-TO-bus!}}",
-      "{{uk-UA|Потяг!|Potyah!|po-TYAH!}}",
-      "{{uk-UA|Готель!|Hotel!|ho-TEL!}}"
+      "{{uk-UA|\u0410\u0432\u0442\u043e\u0431\u0443\u0441!|Avtobus!|av-TO-bus!}}",
+      "{{uk-UA|\u041f\u043e\u0442\u044f\u0433!|Potyah!|po-TYAH!}}",
+      "{{uk-UA|\u0413\u043e\u0442\u0435\u043b\u044c!|Hotel!|ho-TEL!}}"
     ],
     "explanation": "A short direct call that is still useful on the street or in front of a station.",
     "keywords": [
@@ -392,11 +90,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you say 'Take me there, please' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|Відвезіть мене туди, будь ласка.|Vidvezit mene tudy, bud laska.|vid-ve-ZIT me-NE tu-DY, BUD LAS-ka.}}",
+    "correctAnswer": "{{uk-UA|\u0412\u0456\u0434\u0432\u0435\u0437\u0456\u0442\u044c \u043c\u0435\u043d\u0435 \u0442\u0443\u0434\u0438, \u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430.|Vidvezit mene tudy, bud laska.|vid-ve-ZIT me-NE tu-DY, BUD LAS-ka.}}",
     "incorrectAnswers": [
-      "{{uk-UA|Покажіть мені це місце на мапі.|Pokazhit meni tse mistse na mapi.|po-ka-ZHIT me-NI tse MIS-tse na MA-pi.}}",
-      "{{uk-UA|Я зупинюся тут.|Ya zupynyusya tut.|YA zu-py-NYU-sya tut.}}",
-      "{{uk-UA|Я хочу виписатись.|Ya khochu vypysatys.|YA KHO-chu vy-py-SA-tys.}}"
+      "{{uk-UA|\u041f\u043e\u043a\u0430\u0436\u0456\u0442\u044c \u043c\u0435\u043d\u0456 \u0446\u0435 \u043c\u0456\u0441\u0446\u0435 \u043d\u0430 \u043c\u0430\u043f\u0456.|Pokazhit meni tse mistse na mapi.|po-ka-ZHIT me-NI tse MIS-tse na MA-pi.}}",
+      "{{uk-UA|\u042f \u0437\u0443\u043f\u0438\u043d\u044e\u0441\u044f \u0442\u0443\u0442.|Ya zupynyusya tut.|YA zu-py-NYU-sya tut.}}",
+      "{{uk-UA|\u042f \u0445\u043e\u0447\u0443 \u0432\u0438\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044c.|Ya khochu vypysatys.|YA KHO-chu vy-py-SA-tys.}}"
     ],
     "explanation": "This is the convenient taxi phrase when you can point to a map, sign, or address.",
     "keywords": [
@@ -413,11 +111,11 @@
     "navigationKeyword1": "ukrainian",
     "navigationKeyword2": "travel",
     "question": "How do you ask 'Do you have any rooms available?' in Ukrainian?",
-    "correctAnswer": "{{uk-UA|У вас є вільні кімнати?|U vas ye vilni kimnaty?|U VAS YE VIL-ni kim-NA-ty?}}",
+    "correctAnswer": "{{uk-UA|\u0423 \u0432\u0430\u0441 \u0454 \u0432\u0456\u043b\u044c\u043d\u0456 \u043a\u0456\u043c\u043d\u0430\u0442\u0438?|U vas ye vilni kimnaty?|U VAS YE VIL-ni kim-NA-ty?}}",
     "incorrectAnswers": [
-      "{{uk-UA|Скільки коштує кімната?|Skilky koshtuye kimnata?|SKIL-ky kosh-TU-ye kim-NA-ta?}}",
-      "{{uk-UA|Можу я подивитись кімнату?|Mozhu ya podyvytys kimnatu?|MO-zhu YA po-dy-VY-tys kim-NA-tu?}}",
-      "{{uk-UA|Я хочу виписатись.|Ya khochu vypysatys.|YA KHO-chu vy-py-SA-tys.}}"
+      "{{uk-UA|\u0421\u043a\u0456\u043b\u044c\u043a\u0438 \u043a\u043e\u0448\u0442\u0443\u0454 \u043a\u0456\u043c\u043d\u0430\u0442\u0430?|Skilky koshtuye kimnata?|SKIL-ky kosh-TU-ye kim-NA-ta?}}",
+      "{{uk-UA|\u041c\u043e\u0436\u0443 \u044f \u043f\u043e\u0434\u0438\u0432\u0438\u0442\u0438\u0441\u044c \u043a\u0456\u043c\u043d\u0430\u0442\u0443?|Mozhu ya podyvytys kimnatu?|MO-zhu YA po-dy-VY-tys kim-NA-tu?}}",
+      "{{uk-UA|\u042f \u0445\u043e\u0447\u0443 \u0432\u0438\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044c.|Ya khochu vypysatys.|YA KHO-chu vy-py-SA-tys.}}"
     ],
     "explanation": "This is the quickest front-desk question when you still need a place to stay.",
     "keywords": [

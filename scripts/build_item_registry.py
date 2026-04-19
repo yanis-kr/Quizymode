@@ -8,7 +8,8 @@ from seed_source_common import (
     regenerate_taxonomy_seed_sql,
     validate_source,
     write_item_registry,
-    write_items_bundle,
+    write_sitemap,
+    write_source_file_index,
 )
 
 
@@ -21,9 +22,11 @@ def main() -> int:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
     write_item_registry(items)
-    write_items_bundle(items)
+    write_source_file_index(items)
+    write_sitemap(items)
     regenerate_taxonomy_seed_sql()
-    print(f"Wrote registry, bundle, and taxonomy seed SQL for {len(items)} items.")
+    source_files = len({item.path for item in items})
+    print(f"Wrote registry, source-file-index ({source_files} files), sitemap, and taxonomy seed SQL for {len(items)} items.")
     return 0
 
 
