@@ -4870,6 +4870,11 @@
           "collectionUpdatedCount",
           "collectionDeletedCount",
           "collectionUnchangedCount",
+          "totalFiles",
+          "processedFiles",
+          "nextFileOffset",
+          "isComplete",
+          "durationMs",
           "historyRunId",
           "historyRecordedUtc",
           "hasMoreChanges",
@@ -4945,6 +4950,21 @@
           },
           "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalFiles": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "processedFiles": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "nextFileOffset": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "isComplete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "durationMs": {
+            "$ref": "#/components/schemas/System.Int64"
           },
           "historyRunId": {
             "oneOf": [
@@ -5178,6 +5198,11 @@
           "collectionUpdatedCount",
           "collectionDeletedCount",
           "collectionUnchangedCount",
+          "totalFiles",
+          "processedFiles",
+          "nextFileOffset",
+          "isComplete",
+          "durationMs",
           "hasMoreChanges",
           "changes"
         ],
@@ -5252,6 +5277,21 @@
           "collectionUnchangedCount": {
             "$ref": "#/components/schemas/System.Int32"
           },
+          "totalFiles": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "processedFiles": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "nextFileOffset": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "isComplete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "durationMs": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
           "hasMoreChanges": {
             "$ref": "#/components/schemas/System.Boolean"
           },
@@ -5282,6 +5322,22 @@
             "$ref": "#/components/schemas/System.String"
           },
           "deltaPreviewLimit": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sinceCommitSha": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "fileOffset": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "fileBatchSize": {
             "$ref": "#/components/schemas/System.Int32"
           }
         }

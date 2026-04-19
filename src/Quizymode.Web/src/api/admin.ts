@@ -216,6 +216,9 @@ export interface SeedSyncRequest {
   repositoryName: string;
   gitRef: string;
   deltaPreviewLimit?: number;
+  sinceCommitSha?: string | null;
+  fileOffset?: number;
+  fileBatchSize?: number;
 }
 
 export interface LocalSeedSyncRequest {
@@ -256,6 +259,11 @@ export interface SeedSyncPreviewResponse {
   collectionUpdatedCount: number;
   collectionDeletedCount: number;
   collectionUnchangedCount: number;
+  totalFiles: number;
+  processedFiles: number;
+  nextFileOffset: number;
+  isComplete: boolean;
+  durationMs: number;
   hasMoreChanges: boolean;
   changes: SeedSyncChangeResponse[];
 }
@@ -284,6 +292,11 @@ export interface SeedSyncApplyResponse {
   collectionUpdatedCount: number;
   collectionDeletedCount: number;
   collectionUnchangedCount: number;
+  totalFiles: number;
+  processedFiles: number;
+  nextFileOffset: number;
+  isComplete: boolean;
+  durationMs: number;
   historyRunId?: string | null;
   historyRecordedUtc?: string | null;
   hasMoreChanges: boolean;

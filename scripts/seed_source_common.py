@@ -20,6 +20,21 @@ SEED_DEV_ITEMS_ROOT = ROOT / "data" / "seed-dev" / "items"
 SEED_DEV_COLLECTIONS_ROOT = ROOT / "data" / "seed-dev" / "collections"
 TAXONOMY_YAML_PATH = ROOT / "docs" / "quizymode_taxonomy.yaml"
 TAXONOMY_SEED_SQL_PATH = ROOT / "docs" / "quizymode_taxonomy_seed.sql"
+SITEMAP_PATH = ROOT / "src" / "Quizymode.Web" / "public" / "sitemap.xml"
+SITEMAP_BASE_URL = "https://www.quizymode.com"
+
+# Static app pages: (path, lastmod, changefreq, priority)
+_STATIC_PAGES: list[tuple[str, str, str, str]] = [
+    ("/",           "2026-04-09", "weekly",  "1.0"),
+    ("/categories", "2026-04-12", "weekly",  "0.9"),
+    ("/collections","2026-04-12", "weekly",  "0.8"),
+    ("/about",      "2026-04-12", "monthly", "0.7"),
+    ("/ideas",      "2026-04-09", "weekly",  "0.8"),
+    ("/roadmap",    "2026-01-20", "monthly", "0.6"),
+    ("/feedback",   "2026-03-30", "monthly", "0.6"),
+    ("/privacy",    "2026-04-03", "yearly",  "0.3"),
+    ("/terms",      "2026-04-03", "yearly",  "0.3"),
+]
 
 
 @dataclass(frozen=True)
@@ -245,6 +260,131 @@ def validate_source(
 def write_items_bundle(items: list[SourceItem], path: Path = REGISTRY_ROOT / "items-bundle.json") -> None:
     REGISTRY_ROOT.mkdir(parents=True, exist_ok=True)
     write_json(path, [canonicalize_item_payload(item) for item in items])
+
+
+def _get_file_git_dates(paths: list[Path]) -> dict[Path, str | None]:
+    """Return the last-commit ISO date for each path via a single git log call."""
+    dates: dict[Path, str | None] = {p: None for p in paths}
+    path_set = {p.relative_to(ROOT).as_posix(): p for p in paths}
+    try:
+        result = subprocess.run(
+            ["git", "log", "--name-only", "--pretty=format:%cI", "--", "data/seed-source/items/"],
+            capture_output=True, text=True, cwd=ROOT, check=False,
+        )
+    except FileNotFoundError:
+        return dates
+    current_date: str | None = None
+    for line in result.stdout.splitlines():
+        line = line.strip()
+        if not line:
+            current_date = None
+            continue
+        if len(line) >= 20 and line[4] == "-" and line[7] == "-" and "T" in line:
+            current_date = line
+        elif current_date and line in path_set:
+            path = path_set[line]
+            if dates[path] is None:
+                dates[path] = current_date
+    return dates
+
+
+def write_source_file_index(
+    items: list[SourceItem],
+    path: Path = REGISTRY_ROOT / "source-file-index.json",
+) -> None:
+    from collections import defaultdict
+    from datetime import datetime, timezone
+
+    by_source: dict[Path, list[SourceItem]] = defaultdict(list)
+    for item in items:
+        by_source[item.path].append(item)
+
+    source_paths = sorted(by_source.keys())
+    git_dates = _get_file_git_dates(source_paths)
+
+    files = []
+    for source_path in source_paths:
+        scope = parse_scope_from_path(source_path)
+        files.append({
+            "path": source_path.relative_to(ROOT).as_posix(),
+            "category": scope.category,
+            "nav1": scope.navigation_keyword1,
+            "nav2": scope.navigation_keyword2,
+            "itemCount": len(by_source[source_path]),
+            "modifiedAt": git_dates.get(source_path),
+        })
+
+    index = {
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "totalItems": len(items),
+        "files": files,
+    }
+    write_json(path, index)
+
+
+def write_sitemap(
+    items: list[SourceItem],
+    path: Path = SITEMAP_PATH,
+    base_url: str = SITEMAP_BASE_URL,
+) -> None:
+    from collections import defaultdict
+    from datetime import datetime, timezone
+
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # One git log call for all source files
+    source_paths = sorted({item.path for item in items})
+    raw_dates = _get_file_git_dates(source_paths)
+
+    # L2 dates: (category, nav1, nav2) -> max date across all contributing source files
+    l2_dates: dict[tuple[str, str, str], str] = {}
+    for source_path in source_paths:
+        raw = raw_dates.get(source_path)
+        date = raw[:10] if raw else today
+        scope = parse_scope_from_path(source_path)
+        key = (scope.category, scope.navigation_keyword1, scope.navigation_keyword2)
+        if key not in l2_dates or date > l2_dates[key]:
+            l2_dates[key] = date
+
+    # L1 dates: max of all L2 dates under (category, nav1)
+    l1_dates: dict[tuple[str, str], str] = defaultdict(str)
+    for (cat, nav1, _), date in l2_dates.items():
+        if date > l1_dates[(cat, nav1)]:
+            l1_dates[(cat, nav1)] = date
+
+    # Category dates: max of all L1 dates under category
+    cat_dates: dict[str, str] = defaultdict(str)
+    for (cat, _), date in l1_dates.items():
+        if date > cat_dates[cat]:
+            cat_dates[cat] = date
+
+    def url_block(loc: str, lastmod: str, changefreq: str, priority: str) -> str:
+        return (
+            "  <url>\n"
+            f"    <loc>{base_url}{loc}</loc>\n"
+            f"    <lastmod>{lastmod}</lastmod>\n"
+            f"    <changefreq>{changefreq}</changefreq>\n"
+            f"    <priority>{priority}</priority>\n"
+            "  </url>"
+        )
+
+    blocks: list[str] = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+
+    for page_path, lastmod, changefreq, priority in _STATIC_PAGES:
+        blocks.append(url_block(page_path, lastmod, changefreq, priority))
+
+    for cat in sorted(cat_dates):
+        blocks.append(url_block(f"/categories/{cat}", cat_dates[cat], "weekly", "0.8"))
+        cat_l1s = sorted(nav1 for (c, nav1) in l1_dates if c == cat)
+        for nav1 in cat_l1s:
+            blocks.append(url_block(f"/categories/{cat}/{nav1}", l1_dates[(cat, nav1)], "weekly", "0.7"))
+            cat_l2s = sorted(nav2 for (c, n1, nav2) in l2_dates if c == cat and n1 == nav1)
+            for nav2 in cat_l2s:
+                blocks.append(url_block(f"/categories/{cat}/{nav1}/{nav2}", l2_dates[(cat, nav1, nav2)], "weekly", "0.6"))
+
+    blocks.append("</urlset>")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(blocks) + "\n", encoding="utf-8")
 
 
 def write_item_registry(items: list[SourceItem], path: Path = REGISTRY_ROOT / "item-index.csv") -> None:

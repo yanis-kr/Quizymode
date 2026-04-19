@@ -44,14 +44,21 @@ public static class SeedSyncAdmin
         string ItemsPath,
         int SourceFileCount,
         string CollectionsPath,
-        int CollectionSourceFileCount);
+        int CollectionSourceFileCount,
+        int TotalFiles = 0,
+        int ProcessedFiles = 0,
+        int NextFileOffset = 0,
+        bool IsComplete = true);
 
     public sealed record Request(
         int SchemaVersion,
         string RepositoryOwner,
         string RepositoryName,
         string GitRef,
-        int DeltaPreviewLimit = 200);
+        int DeltaPreviewLimit = 200,
+        string? SinceCommitSha = null,
+        int FileOffset = 0,
+        int FileBatchSize = 50);
 
     public sealed record LocalRequest(int DeltaPreviewLimit = 200);
 
@@ -88,6 +95,11 @@ public static class SeedSyncAdmin
         int CollectionUpdatedCount,
         int CollectionDeletedCount,
         int CollectionUnchangedCount,
+        int TotalFiles,
+        int ProcessedFiles,
+        int NextFileOffset,
+        bool IsComplete,
+        long DurationMs,
         bool HasMoreChanges,
         List<ChangeResponse> Changes);
 
@@ -115,6 +127,11 @@ public static class SeedSyncAdmin
         int CollectionUpdatedCount,
         int CollectionDeletedCount,
         int CollectionUnchangedCount,
+        int TotalFiles,
+        int ProcessedFiles,
+        int NextFileOffset,
+        bool IsComplete,
+        long DurationMs,
         Guid? HistoryRunId,
         DateTime? HistoryRecordedUtc,
         bool HasMoreChanges,
@@ -186,6 +203,19 @@ public static class SeedSyncAdmin
             RuleFor(x => x.DeltaPreviewLimit)
                 .InclusiveBetween(0, 500)
                 .WithMessage("DeltaPreviewLimit must be between 0 and 500.");
+
+            RuleFor(x => x.FileOffset)
+                .GreaterThanOrEqualTo(0)
+                .WithMessage("FileOffset must be >= 0.");
+
+            RuleFor(x => x.FileBatchSize)
+                .InclusiveBetween(1, 200)
+                .WithMessage("FileBatchSize must be between 1 and 200.");
+
+            RuleFor(x => x.SinceCommitSha)
+                .MaximumLength(200)
+                .When(x => x.SinceCommitSha is not null)
+                .WithMessage("SinceCommitSha must not exceed 200 characters.");
         }
     }
 

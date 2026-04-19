@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, Navigate } from "react-router-dom";
 import {
   useMutation,
@@ -16,6 +16,13 @@ import {
 } from "@/api/admin";
 
 type SyncSource = "github" | "local";
+
+interface SyncMeta {
+  wallMs: number;
+  isIncremental: boolean;
+  sinceCommitSha?: string | null;
+  totalBatches: number;
+}
 
 function extractErrorMessage(error: unknown): string {
   const fallback = "The request failed. Check the repository settings and try again.";
@@ -164,12 +171,51 @@ function ChangeTable({
   );
 }
 
+function buildSyncProse(
+  response: SeedSyncPreviewResponse | SeedSyncApplyResponse,
+  meta: SyncMeta,
+): string {
+  const facts: string[] = [];
+
+  if (meta.isIncremental && meta.sinceCommitSha) {
+    facts.push(`incremental from commit ${meta.sinceCommitSha.slice(0, 12)}`);
+  } else if (!meta.isIncremental && meta.totalBatches > 1) {
+    facts.push(`full sync · ${meta.totalBatches} batches of ${FILE_BATCH_SIZE} sequential`);
+  } else {
+    facts.push("full sync");
+  }
+
+  const filesPart = response.totalFiles > 0
+    ? `${response.processedFiles.toLocaleString()} source ${response.processedFiles === 1 ? "file" : "files"} of ${response.totalFiles.toLocaleString()} in index`
+    : `${response.processedFiles.toLocaleString()} source ${response.processedFiles === 1 ? "file" : "files"}`;
+  facts.push(filesPart);
+
+  if (response.totalItemsInPayload > 0) {
+    facts.push(`${response.totalItemsInPayload.toLocaleString()} items in scope`);
+  }
+
+  const changes: string[] = [];
+  if (response.createdCount > 0) changes.push(`${response.createdCount.toLocaleString()} created`);
+  if (response.updatedCount > 0) changes.push(`${response.updatedCount.toLocaleString()} updated`);
+  if (response.unchangedCount > 0) changes.push(`${response.unchangedCount.toLocaleString()} unchanged`);
+  if (changes.length > 0) facts.push(changes.join(" · "));
+
+  if (response.durationMs > 0) {
+    facts.push(`backend ${(response.durationMs / 1000).toFixed(1)} s`);
+  }
+  facts.push(`total ${(meta.wallMs / 1000).toFixed(1)} s`);
+
+  return facts.join("; ");
+}
+
 function ResultsPanel({
   title,
   response,
+  meta,
 }: {
   title: string;
   response: SeedSyncPreviewResponse | SeedSyncApplyResponse;
+  meta: SyncMeta;
 }) {
   const hasRecordedHistory =
     "historyRunId" in response &&
@@ -183,25 +229,12 @@ function ResultsPanel({
           <h2 className="text-lg font-medium text-gray-900">{title}</h2>
           <p className="text-sm text-gray-600">
             {response.repositoryOwner}/{response.repositoryName}
-          </p>
-          <p className="text-sm text-gray-500">
+            {" · "}
             Ref <span className="font-mono">{response.gitRef}</span>
-            {" | "}
-            Commit{" "}
-            <span className="font-mono">
-              {response.resolvedCommitSha.slice(0, 12)}
-            </span>
+            {" · "}
+            Commit <span className="font-mono">{response.resolvedCommitSha.slice(0, 12)}</span>
           </p>
-          <p className="text-sm text-gray-500">
-            Path <span className="font-mono">{response.itemsPath}</span>
-            {" | "}
-            Files {response.sourceFileCount.toLocaleString()}
-          </p>
-          <p className="text-sm text-gray-500">
-            Collections <span className="font-mono">{response.collectionsPath}</span>
-            {" | "}
-            Files {response.collectionSourceFileCount.toLocaleString()}
-          </p>
+          <p className="text-sm text-gray-400">{buildSyncProse(response, meta)}</p>
           {hasRecordedHistory && (
             <p className="text-sm text-emerald-700">
               History recorded{" "}
@@ -214,9 +247,6 @@ function ResultsPanel({
               )}
             </p>
           )}
-        </div>
-        <div className="text-sm text-gray-500">
-          Payload items: {response.totalItemsInPayload.toLocaleString()}
         </div>
       </div>
 
@@ -362,6 +392,15 @@ function HistoryPanel({ history }: { history: SeedSyncHistoryResponse }) {
   );
 }
 
+interface FullSyncProgress {
+  processedFiles: number;
+  totalFiles: number;
+  createdCount: number;
+  updatedCount: number;
+}
+
+const FILE_BATCH_SIZE = 50;
+
 const AdminSeedSyncPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
   const queryClient = useQueryClient();
@@ -370,70 +409,103 @@ const AdminSeedSyncPage = () => {
   const [repositoryName, setRepositoryName] = useState("Quizymode");
   const [gitRef, setGitRef] = useState("main");
   const [deltaPreviewLimit, setDeltaPreviewLimit] = useState("200");
+  const [useIncrementalSync, setUseIncrementalSync] = useState(true);
   const [localError, setLocalError] = useState<string | null>(null);
   const [previewResponse, setPreviewResponse] =
     useState<SeedSyncPreviewResponse | null>(null);
   const [applyResponse, setApplyResponse] =
     useState<SeedSyncApplyResponse | null>(null);
+  const [previewMeta, setPreviewMeta] = useState<SyncMeta | null>(null);
+  const [applyMeta, setApplyMeta] = useState<SyncMeta | null>(null);
+  const [fullSyncProgress, setFullSyncProgress] =
+    useState<FullSyncProgress | null>(null);
+  const callStartRef = useRef<number>(0);
 
   const resetResults = () => {
     setLocalError(null);
     setPreviewResponse(null);
     setApplyResponse(null);
+    setPreviewMeta(null);
+    setApplyMeta(null);
+    setFullSyncProgress(null);
   };
 
   const previewMutation = useMutation({
-    mutationFn: (request: SeedSyncRequest) => adminApi.previewSeedSync(request),
-    onSuccess: (response) => {
+    mutationFn: (request: SeedSyncRequest) => {
+      callStartRef.current = Date.now();
+      return adminApi.previewSeedSync(request);
+    },
+    onSuccess: (response, variables) => {
       setLocalError(null);
       setApplyResponse(null);
+      setApplyMeta(null);
       setPreviewResponse(response);
+      setPreviewMeta({ wallMs: Date.now() - callStartRef.current, isIncremental: !!variables.sinceCommitSha, sinceCommitSha: variables.sinceCommitSha, totalBatches: 1 });
     },
     onError: (error) => {
       setPreviewResponse(null);
+      setPreviewMeta(null);
       setApplyResponse(null);
       setLocalError(extractErrorMessage(error));
     },
   });
 
   const applyMutation = useMutation({
-    mutationFn: (request: SeedSyncRequest) => adminApi.applySeedSync(request),
-    onSuccess: (response) => {
+    mutationFn: (request: SeedSyncRequest) => {
+      callStartRef.current = Date.now();
+      return adminApi.applySeedSync(request);
+    },
+    onSuccess: (response, variables) => {
       setLocalError(null);
       setPreviewResponse(null);
+      setPreviewMeta(null);
       setApplyResponse(response);
+      setApplyMeta({ wallMs: Date.now() - callStartRef.current, isIncremental: !!variables.sinceCommitSha, sinceCommitSha: variables.sinceCommitSha, totalBatches: 1 });
       queryClient.invalidateQueries({ queryKey: ["admin", "seed-sync-history"] });
     },
     onError: (error) => {
       setApplyResponse(null);
+      setApplyMeta(null);
       setLocalError(extractErrorMessage(error));
     },
   });
 
   const localPreviewMutation = useMutation({
-    mutationFn: (request: LocalSeedSyncRequest) => adminApi.previewLocalSeedSync(request),
+    mutationFn: (request: LocalSeedSyncRequest) => {
+      callStartRef.current = Date.now();
+      return adminApi.previewLocalSeedSync(request);
+    },
     onSuccess: (response) => {
       setLocalError(null);
       setApplyResponse(null);
+      setApplyMeta(null);
       setPreviewResponse(response);
+      setPreviewMeta({ wallMs: Date.now() - callStartRef.current, isIncremental: false, totalBatches: 1 });
     },
     onError: (error) => {
       setPreviewResponse(null);
+      setPreviewMeta(null);
       setApplyResponse(null);
       setLocalError(extractErrorMessage(error));
     },
   });
 
   const localApplyMutation = useMutation({
-    mutationFn: (request: LocalSeedSyncRequest) => adminApi.applyLocalSeedSync(request),
+    mutationFn: (request: LocalSeedSyncRequest) => {
+      callStartRef.current = Date.now();
+      return adminApi.applyLocalSeedSync(request);
+    },
     onSuccess: (response) => {
       setLocalError(null);
       setPreviewResponse(null);
+      setPreviewMeta(null);
       setApplyResponse(response);
+      setApplyMeta({ wallMs: Date.now() - callStartRef.current, isIncremental: false, totalBatches: 1 });
       queryClient.invalidateQueries({ queryKey: ["admin", "seed-sync-history"] });
     },
     onError: (error) => {
       setApplyResponse(null);
+      setApplyMeta(null);
       setLocalError(extractErrorMessage(error));
     },
   });
@@ -448,9 +520,11 @@ const AdminSeedSyncPage = () => {
     return <Navigate to="/" replace />;
   }
 
-  const buildGitHubRequest = (): SeedSyncRequest => {
-    resetResults();
+  const lastSyncCommitSha = historyQuery.data?.runs[0]?.resolvedCommitSha ?? null;
+  const sinceCommitSha =
+    syncSource === "github" && useIncrementalSync ? lastSyncCommitSha : null;
 
+  const buildGitHubRequest = (overrides?: { fileOffset?: number }): SeedSyncRequest => {
     const owner = repositoryOwner.trim();
     const repo = repositoryName.trim();
     const ref = gitRef.trim();
@@ -470,6 +544,9 @@ const AdminSeedSyncPage = () => {
       repositoryName: repo,
       gitRef: ref,
       deltaPreviewLimit: limit,
+      sinceCommitSha: sinceCommitSha,
+      fileOffset: overrides?.fileOffset ?? 0,
+      fileBatchSize: sinceCommitSha ? undefined : FILE_BATCH_SIZE,
     };
   };
 
@@ -484,7 +561,47 @@ const AdminSeedSyncPage = () => {
     return { deltaPreviewLimit: limit };
   };
 
+  const runFullSync = async () => {
+    resetResults();
+    const wallStart = Date.now();
+    let offset = 0;
+    let isComplete = false;
+    let totalFiles = 0;
+    let totalItems = 0;
+    let createdCount = 0;
+    let updatedCount = 0;
+    let batchCount = 0;
+    let lastResponse: SeedSyncApplyResponse | null = null;
+
+    try {
+      while (!isComplete) {
+        const request = buildGitHubRequest({ fileOffset: offset });
+        const response = await adminApi.applySeedSync(request);
+        totalFiles = response.totalFiles;
+        isComplete = response.isComplete;
+        offset = response.isComplete ? response.totalFiles : response.nextFileOffset;
+        totalItems += response.totalItemsInPayload;
+        createdCount += response.createdCount;
+        updatedCount += response.updatedCount;
+        batchCount++;
+        lastResponse = response;
+        setFullSyncProgress({ processedFiles: offset, totalFiles, createdCount, updatedCount });
+      }
+
+      if (lastResponse) {
+        setApplyResponse({ ...lastResponse, createdCount, updatedCount, totalItemsInPayload: totalItems });
+        setApplyMeta({ wallMs: Date.now() - wallStart, isIncremental: false, totalBatches: batchCount });
+      }
+      queryClient.invalidateQueries({ queryKey: ["admin", "seed-sync-history"] });
+    } catch (error) {
+      setLocalError(extractErrorMessage(error));
+    } finally {
+      setFullSyncProgress(null);
+    }
+  };
+
   const handlePreview = () => {
+    resetResults();
     try {
       if (syncSource === "local") {
         localPreviewMutation.mutate(buildLocalRequest());
@@ -497,11 +614,14 @@ const AdminSeedSyncPage = () => {
   };
 
   const handleApply = () => {
+    resetResults();
     try {
       if (syncSource === "local") {
         localApplyMutation.mutate(buildLocalRequest());
-      } else {
+      } else if (sinceCommitSha) {
         applyMutation.mutate(buildGitHubRequest());
+      } else {
+        void runFullSync();
       }
     } catch (error) {
       setLocalError(extractErrorMessage(error));
@@ -512,7 +632,8 @@ const AdminSeedSyncPage = () => {
     previewMutation.isPending ||
     applyMutation.isPending ||
     localPreviewMutation.isPending ||
-    localApplyMutation.isPending;
+    localApplyMutation.isPending ||
+    fullSyncProgress !== null;
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -562,6 +683,36 @@ const AdminSeedSyncPage = () => {
           Use an immutable commit SHA for production whenever possible. Branch refs
           are convenient for testing, but commit-based syncs are easier to audit and
           roll back.
+        </div>
+      )}
+
+      {syncSource === "github" && (
+        <div className="mb-6 rounded-lg border border-gray-200 bg-white px-4 py-3">
+          <label className="flex cursor-pointer items-start gap-3">
+            <input
+              type="checkbox"
+              checked={useIncrementalSync}
+              onChange={(e) => { setUseIncrementalSync(e.target.checked); resetResults(); }}
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-indigo-600"
+            />
+            <span className="text-sm">
+              <span className="font-medium text-gray-900">Incremental sync</span>
+              {" — "}
+              {lastSyncCommitSha ? (
+                <span className="text-gray-600">
+                  sync only source files changed since commit{" "}
+                  <span className="font-mono">{lastSyncCommitSha.slice(0, 12)}</span>
+                </span>
+              ) : (
+                <span className="text-gray-400">no previous sync found — will run as full sync</span>
+              )}
+            </span>
+          </label>
+          {!useIncrementalSync && (
+            <p className="mt-2 rounded bg-amber-50 px-3 py-2 text-xs text-amber-800 border border-amber-200">
+              Full sync processes all source files in batches of {FILE_BATCH_SIZE}. Use only for initial setup or recovery.
+            </p>
+          )}
         </div>
       )}
 
@@ -670,10 +821,37 @@ const AdminSeedSyncPage = () => {
               disabled={isWorking}
               className="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
             >
-              {(applyMutation.isPending || localApplyMutation.isPending) ? "Applying..." : "Apply sync"}
+              {applyMutation.isPending || localApplyMutation.isPending || fullSyncProgress !== null
+                ? "Applying..."
+                : "Apply sync"}
             </button>
           </div>
         </div>
+
+        {fullSyncProgress && (
+          <div className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-3">
+            <div className="mb-2 flex items-center justify-between text-sm">
+              <span className="font-medium text-indigo-900">
+                Full sync in progress — batch {Math.ceil(fullSyncProgress.processedFiles / FILE_BATCH_SIZE)} of {Math.ceil(fullSyncProgress.totalFiles / FILE_BATCH_SIZE)}
+              </span>
+              <span className="text-indigo-700">
+                {fullSyncProgress.processedFiles.toLocaleString()} / {fullSyncProgress.totalFiles.toLocaleString()} files
+                {" · "}
+                {(fullSyncProgress.createdCount + fullSyncProgress.updatedCount).toLocaleString()} items synced
+              </span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-indigo-200">
+              <div
+                className="h-full rounded-full bg-indigo-600 transition-all duration-300"
+                style={{
+                  width: fullSyncProgress.totalFiles > 0
+                    ? `${Math.round((fullSyncProgress.processedFiles / fullSyncProgress.totalFiles) * 100)}%`
+                    : "0%"
+                }}
+              />
+            </div>
+          </div>
+        )}
 
         {localError && (
           <div className="mt-4 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
@@ -689,11 +867,11 @@ const AdminSeedSyncPage = () => {
             Recent sync history could not be loaded right now.
           </div>
         )}
-        {previewResponse && (
-          <ResultsPanel title="Preview results" response={previewResponse} />
+        {previewResponse && previewMeta && (
+          <ResultsPanel title="Preview results" response={previewResponse} meta={previewMeta} />
         )}
-        {applyResponse && (
-          <ResultsPanel title="Apply results" response={applyResponse} />
+        {applyResponse && applyMeta && (
+          <ResultsPanel title="Apply results" response={applyResponse} meta={applyMeta} />
         )}
       </div>
     </div>

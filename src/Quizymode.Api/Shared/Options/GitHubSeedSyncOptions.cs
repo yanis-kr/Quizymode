@@ -8,7 +8,7 @@ internal sealed record class GitHubSeedSyncOptions
 
     public string RawBaseUrl { get; init; } = "https://raw.githubusercontent.com";
 
-    public string BundlePath { get; init; } = "data/seed-source/_registry/items-bundle.json";
+    public string SourceFileIndexPath { get; init; } = "data/seed-source/_registry/source-file-index.json";
 
     public string CollectionsPath { get; init; } = "data/seed-source/collections/public";
 

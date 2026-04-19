@@ -24,75 +24,107 @@ internal sealed class GitHubSeedSource(
     {
         try
         {
-            string repositoryOwner = request.RepositoryOwner.Trim();
-            string repositoryName = request.RepositoryName.Trim();
+            string owner = request.RepositoryOwner.Trim();
+            string repo = request.RepositoryName.Trim();
             string gitRef = request.GitRef.Trim();
-            string bundlePath = _options.BundlePath;
-            string collectionsPath = _options.CollectionsPath;
 
             ConfigureApiHeaders();
 
-            Result<string> commitShaResult = await ResolveCommitShaAsync(
-                repositoryOwner,
-                repositoryName,
-                gitRef,
-                cancellationToken);
-
+            Result<string> commitShaResult = await ResolveCommitShaAsync(owner, repo, gitRef, cancellationToken);
             if (commitShaResult.IsFailure)
             {
                 return Result.Failure<LoadedGitHubSeedManifest>(commitShaResult.Error!);
             }
 
-            string resolvedCommitSha = commitShaResult.Value!;
+            string resolvedSha = commitShaResult.Value!;
 
-            Result<List<SeedSyncAdmin.SeedItemRequest>> bundleResult = await LoadBundleAsync(
-                repositoryOwner,
-                repositoryName,
-                resolvedCommitSha,
-                bundlePath,
-                cancellationToken);
-
-            if (bundleResult.IsFailure)
+            Result<SourceFileIndex> indexResult = await LoadSourceFileIndexAsync(
+                owner, repo, resolvedSha, _options.SourceFileIndexPath, cancellationToken);
+            if (indexResult.IsFailure)
             {
-                return Result.Failure<LoadedGitHubSeedManifest>(bundleResult.Error!);
+                return Result.Failure<LoadedGitHubSeedManifest>(indexResult.Error!);
             }
 
-            List<SeedSyncAdmin.SeedItemRequest> items = bundleResult.Value!;
-            Result<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)> collectionsResult =
-                await LoadCollectionsAsync(
-                    repositoryOwner,
-                    repositoryName,
-                    resolvedCommitSha,
-                    collectionsPath,
-                    cancellationToken);
+            SourceFileIndex index = indexResult.Value!;
+            List<SourceFileEntry> filesToProcess;
+            int totalFilteredFiles;
+            int nextFileOffset;
+            bool isIncrementalSync = !string.IsNullOrWhiteSpace(request.SinceCommitSha);
 
+            if (isIncrementalSync)
+            {
+                Result<HashSet<string>> changedFilesResult = await GetChangedSourceFilesAsync(
+                    owner, repo, request.SinceCommitSha!.Trim(), resolvedSha, cancellationToken);
+                if (changedFilesResult.IsFailure)
+                {
+                    return Result.Failure<LoadedGitHubSeedManifest>(changedFilesResult.Error!);
+                }
+
+                HashSet<string> changedFiles = changedFilesResult.Value!;
+                filesToProcess = index.Files
+                    .Where(f => changedFiles.Contains(f.Path))
+                    .ToList();
+                totalFilteredFiles = filesToProcess.Count;
+                nextFileOffset = 0;
+            }
+            else
+            {
+                totalFilteredFiles = index.Files.Count;
+                filesToProcess = index.Files
+                    .Skip(request.FileOffset)
+                    .Take(request.FileBatchSize)
+                    .ToList();
+                nextFileOffset = request.FileOffset + filesToProcess.Count;
+            }
+
+            bool isComplete = isIncrementalSync || nextFileOffset >= totalFilteredFiles;
+
+            List<SeedSyncAdmin.SeedItemRequest> items = [];
+            foreach (SourceFileEntry file in filesToProcess)
+            {
+                Result<List<SeedSyncAdmin.SeedItemRequest>> fileResult = await LoadSourceFileItemsAsync(
+                    owner, repo, resolvedSha, file.Path, cancellationToken);
+                if (fileResult.IsFailure)
+                {
+                    return Result.Failure<LoadedGitHubSeedManifest>(fileResult.Error!);
+                }
+
+                items.AddRange(fileResult.Value!);
+            }
+
+            Result<(List<SeedSyncAdmin.SeedCollectionRequest> Collections, int SourceFileCount)> collectionsResult =
+                await LoadCollectionsAsync(owner, repo, resolvedSha, _options.CollectionsPath, cancellationToken);
             if (collectionsResult.IsFailure)
             {
                 return Result.Failure<LoadedGitHubSeedManifest>(collectionsResult.Error!);
             }
 
             SeedSyncAdmin.ManifestRequest manifest = new(
-                SeedSet: bundlePath,
+                SeedSet: _options.SourceFileIndexPath,
                 Items: items,
                 Collections: collectionsResult.Value!.Collections,
                 DeltaPreviewLimit: request.DeltaPreviewLimit);
 
-            return Result.Success(new LoadedGitHubSeedManifest(
-                manifest,
-                new SeedSyncAdmin.SourceContext(
-                    repositoryOwner,
-                    repositoryName,
-                    gitRef,
-                    resolvedCommitSha,
-                    bundlePath,
-                    SourceFileCount: 1,
-                    CollectionsPath: collectionsPath,
-                    CollectionSourceFileCount: collectionsResult.Value.SourceFileCount)));
+            SeedSyncAdmin.SourceContext sourceContext = new(
+                RepositoryOwner: owner,
+                RepositoryName: repo,
+                GitRef: gitRef,
+                ResolvedCommitSha: resolvedSha,
+                ItemsPath: _options.SourceFileIndexPath,
+                SourceFileCount: filesToProcess.Count,
+                CollectionsPath: _options.CollectionsPath,
+                CollectionSourceFileCount: collectionsResult.Value.SourceFileCount,
+                TotalFiles: totalFilteredFiles,
+                ProcessedFiles: filesToProcess.Count,
+                NextFileOffset: isComplete ? 0 : nextFileOffset,
+                IsComplete: isComplete);
+
+            return Result.Success(new LoadedGitHubSeedManifest(manifest, sourceContext));
         }
         catch (Exception ex)
         {
             return Result.Failure<LoadedGitHubSeedManifest>(
-                Error.Problem("Admin.SeedSyncGitHubFetchFailed", $"Failed to load items bundle from GitHub: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncGitHubFetchFailed", $"Failed to load items from GitHub: {ex.Message}"));
         }
     }
 
@@ -146,15 +178,84 @@ internal sealed class GitHubSeedSource(
         return Result.Success(commit.Sha);
     }
 
-    private async Task<Result<List<SeedSyncAdmin.SeedItemRequest>>> LoadBundleAsync(
+    private async Task<Result<SourceFileIndex>> LoadSourceFileIndexAsync(
         string repositoryOwner,
         string repositoryName,
         string resolvedCommitSha,
-        string bundlePath,
+        string indexPath,
         CancellationToken cancellationToken)
     {
-        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{bundlePath}";
+        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{indexPath}";
+        using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
+        if (!response.IsSuccessStatusCode)
+        {
+            string description = await BuildErrorDescriptionAsync(response, cancellationToken);
+            return Result.Failure<SourceFileIndex>(
+                Error.Problem(
+                    "Admin.SeedSyncSourceFileIndexFetchFailed",
+                    $"Unable to fetch source file index '{indexPath}' at '{resolvedCommitSha}': {description}"));
+        }
+
+        SourceFileIndex? index = await JsonSerializer.DeserializeAsync<SourceFileIndex>(
+            await response.Content.ReadAsStreamAsync(cancellationToken),
+            JsonOptions,
+            cancellationToken);
+
+        if (index is null || index.Files.Count == 0)
+        {
+            return Result.Failure<SourceFileIndex>(
+                Error.Problem(
+                    "Admin.SeedSyncSourceFileIndexEmpty",
+                    $"Source file index '{indexPath}' contained no files."));
+        }
+
+        return Result.Success(index);
+    }
+
+    private async Task<Result<HashSet<string>>> GetChangedSourceFilesAsync(
+        string repositoryOwner,
+        string repositoryName,
+        string sinceCommitSha,
+        string headCommitSha,
+        CancellationToken cancellationToken)
+    {
+        using HttpResponseMessage response = await _httpClient.GetAsync(
+            $"/repos/{repositoryOwner}/{repositoryName}/compare/{sinceCommitSha}...{headCommitSha}",
+            cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            string description = await BuildErrorDescriptionAsync(response, cancellationToken);
+            return Result.Failure<HashSet<string>>(
+                Error.Problem(
+                    "Admin.SeedSyncCompareFailed",
+                    $"Unable to compare '{sinceCommitSha}' and '{headCommitSha}' in {repositoryOwner}/{repositoryName}: {description}"));
+        }
+
+        GitHubCompareResponse? compare = await JsonSerializer.DeserializeAsync<GitHubCompareResponse>(
+            await response.Content.ReadAsStreamAsync(cancellationToken),
+            JsonOptions,
+            cancellationToken);
+
+        HashSet<string> changedFiles = compare?.Files is null
+            ? []
+            : compare.Files
+                .Select(f => f.Filename)
+                .Where(f => !string.IsNullOrEmpty(f))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        return Result.Success(changedFiles);
+    }
+
+    private async Task<Result<List<SeedSyncAdmin.SeedItemRequest>>> LoadSourceFileItemsAsync(
+        string repositoryOwner,
+        string repositoryName,
+        string resolvedCommitSha,
+        string filePath,
+        CancellationToken cancellationToken)
+    {
+        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{filePath}";
         using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
         if (!response.IsSuccessStatusCode)
@@ -162,8 +263,8 @@ internal sealed class GitHubSeedSource(
             string description = await BuildErrorDescriptionAsync(response, cancellationToken);
             return Result.Failure<List<SeedSyncAdmin.SeedItemRequest>>(
                 Error.Problem(
-                    "Admin.SeedSyncBundleFetchFailed",
-                    $"Unable to fetch items bundle '{bundlePath}' at '{resolvedCommitSha}': {description}"));
+                    "Admin.SeedSyncSourceFileFetchFailed",
+                    $"Unable to fetch source file '{filePath}' at '{resolvedCommitSha}': {description}"));
         }
 
         List<SeedSyncAdmin.SeedItemRequest>? items = await JsonSerializer.DeserializeAsync<List<SeedSyncAdmin.SeedItemRequest>>(
@@ -171,12 +272,12 @@ internal sealed class GitHubSeedSource(
             JsonOptions,
             cancellationToken);
 
-        if (items is null || items.Count == 0)
+        if (items is null)
         {
             return Result.Failure<List<SeedSyncAdmin.SeedItemRequest>>(
                 Error.Problem(
-                    "Admin.SeedSyncBundleEmpty",
-                    $"Items bundle '{bundlePath}' did not contain any items."));
+                    "Admin.SeedSyncSourceFileEmpty",
+                    $"Source file '{filePath}' was empty or invalid."));
         }
 
         return Result.Success(items);
@@ -298,6 +399,20 @@ internal sealed class GitHubSeedSource(
     }
 
     private sealed record GitHubCommitResponse(string Sha);
+
+    private sealed record SourceFileIndex(int TotalItems, List<SourceFileEntry> Files);
+
+    private sealed record SourceFileEntry(
+        string Path,
+        string Category,
+        string Nav1,
+        string Nav2,
+        int ItemCount,
+        string? ModifiedAt);
+
+    private sealed record GitHubCompareResponse(List<GitHubCompareFile>? Files);
+
+    private sealed record GitHubCompareFile(string Filename);
 
     private sealed record GitHubTreeResponse(List<GitHubTreeEntry> Tree);
 
