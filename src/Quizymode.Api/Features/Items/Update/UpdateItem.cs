@@ -280,6 +280,7 @@ public static class UpdateItem
             {
                 item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
             }
+            item.UpdatedAt = DateTime.UtcNow;
 
             if (request.Keywords is not null)
             {

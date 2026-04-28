@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Quizymode.Api.Data;
@@ -11,9 +12,11 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260427133432_AddItemUpdatedAt")]
+    partial class AddItemUpdatedAt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -311,60 +314,6 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("ItemId");
 
                     b.ToTable("Comments", (string)null);
-                });
-
-            modelBuilder.Entity("Quizymode.Api.Shared.Models.FeaturedItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasDefaultValueSql("gen_random_uuid()");
-
-                    b.Property<string>("CategorySlug")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<Guid?>("CollectionId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<string>("NavKeyword1")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("NavKeyword2")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<int>("SortOrder")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasDefaultValue(0);
-
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CollectionId");
-
-                    b.HasIndex("SortOrder");
-
-                    b.HasIndex("Type");
-
-                    b.ToTable("FeaturedItems", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.FeedbackSubmission", b =>
@@ -1443,16 +1392,6 @@ namespace Quizymode.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("UserSettings", (string)null);
-                });
-
-            modelBuilder.Entity("Quizymode.Api.Shared.Models.FeaturedItem", b =>
-                {
-                    b.HasOne("Quizymode.Api.Shared.Models.Collection", "Collection")
-                        .WithMany()
-                        .HasForeignKey("CollectionId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Collection");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.IdeaComment", b =>

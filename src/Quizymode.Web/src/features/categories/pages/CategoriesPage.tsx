@@ -788,6 +788,8 @@ const CategoriesPage = () => {
     ? `${buildItemsViewPath()}?${buildItemsViewSearchParams(itemsPage, pageSize).toString()}`
     : undefined;
 
+  const fromFeatured = searchParams.get("from") === "featured";
+
   if (isLoading) return <LoadingSpinner />;
   if (error) {
     const errorDetail = getApiErrorMessage(error);
@@ -845,6 +847,15 @@ const CategoriesPage = () => {
           canonical={`https://www.quizymode.com${scopePath}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
+          {fromFeatured && (
+            <Link
+              to="/featured"
+              className="inline-flex items-center gap-1 text-sm font-medium text-indigo-400 hover:text-indigo-300"
+            >
+              <ChevronLeftIcon className="h-4 w-4" />
+              Back to Featured
+            </Link>
+          )}
           {!categoryName ? (
             <CategoryPageHero
               theme={categoriesOverviewTheme}
@@ -1164,6 +1175,15 @@ const CategoriesPage = () => {
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
+          {fromFeatured && (
+            <Link
+              to="/featured"
+              className="inline-flex items-center gap-1 text-sm font-medium text-indigo-400 hover:text-indigo-300"
+            >
+              <ChevronLeftIcon className="h-4 w-4" />
+              Back to Featured
+            </Link>
+          )}
           <section className="rounded-[30px] border border-white/10 bg-white/95 p-3 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
             <ScopeSecondaryBar
               scopeType="category"

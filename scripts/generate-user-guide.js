@@ -64,6 +64,7 @@ export function getGuideConfigs() {
 }
 
 export const baseDescriptions = {
+  featured: `The **Featured** page at \`/featured\` showcases hand-picked sets and collections curated by the Quizymode team. Use the **Sets / Collections** tab switcher to move between the two types, and use the **Sort** control to order cards by **Last Modified** (newest first, the default) or **Name** (A-Z). Each Set card shows the category and keyword path that scopes it, plus the date the content in that set was last updated. Each Collection card shows the collection description, item count, and last-modified date. Clicking a card navigates directly into that set's study view or the collection's study page; a **← Back to Featured** link appears at the top of the destination so you can return without using the browser back button.`,
   home: `The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.`,
   categories: `The Categories page lists all public subject areas available in Quizymode. You can search categories by name and sort by name, number of items, or average rating. Clicking a category opens its Sets view, where you can drill down through topics and subtopics to find exactly the items you want to study.`,
   "nav-geography": `Clicking a category card (here: Geography) opens the Sets view for that subject area. Each card represents a primary topic (rank-1 keyword) such as Capitals, Physical Geography, or Flags. The breadcrumb at the top shows your current position in the hierarchy and lets you navigate back at any time.`,
@@ -106,6 +107,7 @@ export const baseDescriptions = {
 };
 
 export const mobileDescriptionOverrides = {
+  featured: `On mobile, the **Featured** page keeps the same Sets / Collections tab switcher and Sort control, but both controls and the card grid stack into a single-column layout. Each card fills the full screen width, making the category path, item count, and last-modified date easy to read at a glance without horizontal scrolling.`,
   home: `On mobile, the home page keeps the same hero and discovery content but compresses it into a narrow, scroll-first layout. The primary navigation moves behind the hamburger menu, so the screen emphasizes the category cards, featured sets, and footer actions rather than the full desktop nav bar.`,
   categories: `The Categories page keeps the same search and sort tools on mobile, but the controls stack vertically and the results fill the screen one card at a time. This makes category browsing feel more like a feed, with each tap moving deeper into the taxonomy.`,
   "nav-geography": `On mobile, opening Geography keeps the breadcrumb trail but the topic cards stack and wrap to fit the narrow screen. The focus shifts to one tap target at a time, which makes drilling into the taxonomy easier with a thumb.`,
@@ -149,6 +151,7 @@ export const mobileDescriptionOverrides = {
 
 export const sections = [
   { title: "Home", slugs: ["home"] },
+  { title: "Featured", slugs: ["featured"] },
   {
     title: "Browsing the Taxonomy",
     slugs: [

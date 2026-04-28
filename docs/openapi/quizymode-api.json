@@ -6,6 +6,57 @@
     "version": "v1"
   },
   "paths": {
+    "/admin/featured": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Add a featured set or collection (Admin only)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AddFeaturedItem.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AddFeaturedItem.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List all featured items (Admin only)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetFeaturedAdmin.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/users/{id}/settings": {
       "get": {
         "tags": [
@@ -556,6 +607,69 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/admin/featured/{id}": {
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Remove a featured item (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update a featured item's display name or sort order (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.UpdateFeaturedItem.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -1877,6 +1991,26 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/featured": {
+      "get": {
+        "tags": [
+          "Featured"
+        ],
+        "summary": "Get featured sets and collections",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Featured.GetFeatured.Response"
+                }
+              }
+            }
           }
         }
       }
@@ -3763,6 +3897,79 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.AddFeaturedItem.Request": {
+        "required": [
+          "type",
+          "displayName",
+          "categorySlug",
+          "navKeyword1",
+          "navKeyword2",
+          "collectionId"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navKeyword1": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navKeyword2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "sortOrder": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AddFeaturedItem.Response": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.AdminUsersActivity.UserActivityResponse": {
         "required": [
           "user",
@@ -4548,6 +4755,99 @@
           },
           "sizeGigabytes": {
             "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto": {
+        "required": [
+          "id",
+          "type",
+          "displayName",
+          "categorySlug",
+          "navKeyword1",
+          "navKeyword2",
+          "collectionId",
+          "collectionName",
+          "sortOrder",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navKeyword1": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navKeyword2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "collectionName": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sortOrder": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetFeaturedAdmin.Response": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto"
           }
         }
       },
@@ -5523,6 +5823,35 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.UpdateFeaturedItem.Request": {
+        "required": [
+          "displayName",
+          "sortOrder"
+        ],
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sortOrder": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.UpdateKeywordAdmin.UpdateKeywordAdminRequest": {
         "required": [
           "name"
@@ -6353,6 +6682,133 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto": {
+        "required": [
+          "id",
+          "collectionId",
+          "displayName",
+          "description",
+          "itemCount",
+          "lastModifiedAt",
+          "sortOrder"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "lastModifiedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "sortOrder": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Featured.GetFeatured.FeaturedSetDto": {
+        "required": [
+          "id",
+          "displayName",
+          "categorySlug",
+          "navKeyword1",
+          "navKeyword2",
+          "lastModifiedAt",
+          "sortOrder"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "categorySlug": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navKeyword1": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navKeyword2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "lastModifiedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "sortOrder": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Featured.GetFeatured.Response": {
+        "required": [
+          "sets",
+          "collections"
+        ],
+        "type": "object",
+        "properties": {
+          "sets": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedSetDto"
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto"
           }
         }
       },
@@ -9381,6 +9837,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse": {
         "type": "array",
         "items": {
@@ -9451,6 +9913,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Comments.GetComments.CommentResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedSetDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Featured.GetFeatured.FeaturedSetDto"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaCommentResponse": {
@@ -9595,7 +10069,8 @@
           "integer",
           "string"
         ],
-        "format": "int32"
+        "format": "int32",
+        "default": 0
       },
       "System.Int64": {
         "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -9673,6 +10148,9 @@
     },
     {
       "name": "Comments"
+    },
+    {
+      "name": "Featured"
     },
     {
       "name": "Feedback"

@@ -97,9 +97,10 @@ const categoryDescriptions = new Map<string, string>([
  */
 const HOME_CATEGORY_ORDER = [
   "exams",
-  "trivia",
+  "languages",
   "history",
   "geography",
+  "trivia",
   // remaining categories follow in their natural order
 ];
 

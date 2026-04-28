@@ -85,6 +85,7 @@ internal static class UpdateItemCategoriesHandler
 
             // Update item's category
             item.CategoryId = category.Id;
+            item.UpdatedAt = DateTime.UtcNow;
             await db.SaveChangesAsync(cancellationToken);
 
             // Build response

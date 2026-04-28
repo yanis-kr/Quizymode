@@ -31,6 +31,8 @@ public sealed class Item
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+    public DateTime? UpdatedAt { get; set; }
+
     public bool ReadyForReview { get; set; }
 
     public string? Source { get; set; }

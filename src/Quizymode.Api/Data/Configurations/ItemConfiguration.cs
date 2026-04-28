@@ -95,6 +95,9 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.CreatedAt)
             .IsRequired();
 
+        builder.Property(x => x.UpdatedAt)
+            .IsRequired(false);
+
         builder.Property(x => x.ReadyForReview)
             .IsRequired()
             .HasDefaultValue(false);

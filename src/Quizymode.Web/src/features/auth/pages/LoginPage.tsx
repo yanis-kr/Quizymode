@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { SEO } from "@/components/SEO";
 
@@ -13,8 +13,7 @@ const LoginPage = () => {
 
   // If already authenticated, redirect to home
   if (!authLoading && isAuthenticated) {
-    navigate("/", { replace: true });
-    return null;
+    return <Navigate to="/" replace />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,7 +23,7 @@ const LoginPage = () => {
 
     try {
       await login(email, password);
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (err: unknown) {
       // Handle "already signed in" error gracefully
       if (err instanceof Error && err.message.includes("already")) {

@@ -5,12 +5,121 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
+import { SEO } from "@/components/SEO";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
 import UserProfileModal from "./UserProfileModal";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface LayoutProps {
   children: ReactNode;
+}
+
+function getFallbackTitle(pathname: string): string | undefined {
+  if (pathname === "/") {
+    return "Quizymode";
+  }
+
+  if (pathname === "/login") {
+    return "Sign In";
+  }
+
+  if (pathname === "/signup") {
+    return "Sign Up";
+  }
+
+  if (pathname === "/categories" || pathname.startsWith("/categories/")) {
+    return "Categories";
+  }
+
+  if (pathname === "/featured") {
+    return "Featured";
+  }
+
+  if (pathname === "/collections" || pathname.startsWith("/collections/")) {
+    return "Collections";
+  }
+
+  if (pathname.startsWith("/explore/collections/")) {
+    return "Explore Collection";
+  }
+
+  if (pathname === "/explore" || pathname.startsWith("/explore/")) {
+    return "Explore";
+  }
+
+  if (pathname.startsWith("/quiz/collections/")) {
+    return "Quiz Collection";
+  }
+
+  if (pathname === "/quiz" || pathname.startsWith("/quiz/")) {
+    return "Quiz";
+  }
+
+  if (pathname === "/items") {
+    return "Items";
+  }
+
+  if (pathname === "/items/add" || pathname === "/add-new-item" || pathname === "/items/create") {
+    return "Add Items";
+  }
+
+  if (pathname === "/items/bulk-create") {
+    return "Bulk Create Items";
+  }
+
+  if (pathname === "/items/upload") {
+    return "Upload to Collection";
+  }
+
+  if (pathname.endsWith("/edit")) {
+    return "Edit Item";
+  }
+
+  if (pathname.includes("/comments")) {
+    return "Item Comments";
+  }
+
+  if (pathname.startsWith("/items/")) {
+    return "Item Details";
+  }
+
+  if (pathname === "/study-guide") {
+    return "Study Guide";
+  }
+
+  if (pathname === "/study-guide/import") {
+    return "Import Study Guide";
+  }
+
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return "Admin";
+  }
+
+  if (pathname === "/about") {
+    return "About";
+  }
+
+  if (pathname === "/ideas") {
+    return "Ideas";
+  }
+
+  if (pathname === "/roadmap") {
+    return "Roadmap";
+  }
+
+  if (pathname === "/feedback") {
+    return "Feedback";
+  }
+
+  if (pathname === "/privacy" || pathname === "/privacy-policy") {
+    return "Privacy Policy";
+  }
+
+  if (pathname === "/terms" || pathname === "/terms-of-service") {
+    return "Terms of Service";
+  }
+
+  return undefined;
 }
 
 const Layout = ({ children }: LayoutProps) => {
@@ -47,12 +156,15 @@ const Layout = ({ children }: LayoutProps) => {
     setMobileMenuOpen(false);
   };
 
+  const fallbackTitle = getFallbackTitle(location.pathname);
+
   const isHomePage = location.pathname === "/";
   /** Pages that render their own full-bleed dark container (no white wrapper from Layout). */
   const isFullBleedPage =
     isHomePage ||
     location.pathname === "/categories" ||
     location.pathname === "/collections" ||
+    location.pathname === "/featured" ||
     location.pathname === "/items/add" ||
     location.pathname === "/ideas";
 
@@ -82,6 +194,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
+      {fallbackTitle && <SEO title={fallbackTitle} noindex={location.pathname === "/login" || location.pathname === "/signup"} />}
       <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14">
@@ -102,6 +215,12 @@ const Layout = ({ children }: LayoutProps) => {
                   className={desktopNavLinkClass(isPathActive("/categories"))}
                 >
                   Categories
+                </Link>
+                <Link
+                  to="/featured"
+                  className={desktopNavLinkClass(isPathActive("/featured"))}
+                >
+                  Featured
                 </Link>
                 <Link
                   to="/collections"
@@ -196,6 +315,13 @@ const Layout = ({ children }: LayoutProps) => {
                 onClick={closeMobileMenu}
               >
                 Categories
+              </Link>
+              <Link
+                to="/featured"
+                className={mobileNavLinkClass(isPathActive("/featured"))}
+                onClick={closeMobileMenu}
+              >
+                Featured
               </Link>
               <Link
                 to="/collections"

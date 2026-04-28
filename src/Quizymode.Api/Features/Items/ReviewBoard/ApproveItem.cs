@@ -68,6 +68,7 @@ public static class ApproveItem
             // Approve: make it global and remove from review board
             item.IsPrivate = false;
             item.ReadyForReview = false;
+            item.UpdatedAt = DateTime.UtcNow;
 
             await db.SaveChangesAsync(cancellationToken);
 
