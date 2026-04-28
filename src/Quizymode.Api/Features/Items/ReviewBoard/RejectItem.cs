@@ -77,6 +77,7 @@ public static class RejectItem
 
             // Reject: keep it private, remove from review board, and append a rejection note
             item.ReadyForReview = false;
+            item.UpdatedAt = DateTime.UtcNow;
 
             string adminIdentifier = userContext.UserId ?? "admin";
             string reason = string.IsNullOrWhiteSpace(request.Reason)

@@ -68,6 +68,7 @@ public static class SetItemVisibility
             }
 
             item.IsPrivate = request.IsPrivate;
+            item.UpdatedAt = DateTime.UtcNow;
             await db.SaveChangesAsync(cancellationToken);
 
             Response response = new(

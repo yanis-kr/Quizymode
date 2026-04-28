@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
 import Layout from "./Layout";
 
@@ -29,7 +30,7 @@ vi.mock("@/features/feedback/components/FeedbackDialog", () => ({
   default: () => null,
 }));
 
-function renderLayout() {
+function renderLayout(initialEntries: string[] = ["/"]) {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -39,13 +40,15 @@ function renderLayout() {
   });
 
   return render(
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter>
-        <Layout>
-          <div>Page content</div>
-        </Layout>
-      </MemoryRouter>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={initialEntries}>
+          <Layout>
+            <div>Page content</div>
+          </Layout>
+        </MemoryRouter>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 
@@ -101,5 +104,13 @@ describe("Layout", () => {
       "/ideas"
     );
     expect(screen.queryByRole("button", { name: "Map" })).not.toBeInTheDocument();
+  });
+
+  it("applies a fallback title for routes without a page-specific SEO component", async () => {
+    renderLayout(["/study-guide"]);
+
+    await waitFor(() => {
+      expect(document.title).toBe("Study Guide | Quizymode");
+    });
   });
 });

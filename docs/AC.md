@@ -1195,6 +1195,49 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 ---
 
+## AC 10. Featured page
+
+A public page at `/featured` shows Admin-curated Sets and Collections with modification timestamps and sorting.
+
+### AC 10.1 Data model
+
+- **AC 10.1.1** [Admin] A `FeaturedItems` table stores entries of two types: `Set` (category slug + optional L1/L2 navigation keyword names) and `Collection` (reference to an existing Collection by ID). Each entry has a `DisplayName`, `SortOrder`, `CreatedBy`, and `CreatedAt`.
+- **AC 10.1.2** [Admin] An `Item` record gains an `UpdatedAt` (`DateTime?`) column. It is set to `DateTime.UtcNow` whenever an item is modified via `UpdateItem`, `UpdateItemCategories`, `SetItemVisibility`, `ApproveItem`, or `RejectItem`.
+
+### AC 10.2 API — Public
+
+- **AC 10.2.1** [Anonymous, Authenticated] `GET /featured` returns two arrays: `sets` and `collections`, each ordered by `SortOrder ASC, DisplayName ASC`.
+- **AC 10.2.2** [Anonymous, Authenticated] Each Set entry includes: `id`, `displayName`, `categorySlug`, `navKeyword1`, `navKeyword2`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across public items matching the set's category/keyword path, or `null` if no items exist), `sortOrder`.
+- **AC 10.2.3** [Anonymous, Authenticated] Each Collection entry includes: `id`, `collectionId`, `displayName`, `description`, `itemCount`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across items in the collection, or `null` if no items), `sortOrder`.
+
+### AC 10.3 API — Admin
+
+- **AC 10.3.1** [Admin] `GET /admin/featured` returns all featured items with full fields (type, display name, category/keyword path or collection reference, sort order, created at).
+- **AC 10.3.2** [Admin] `POST /admin/featured` adds a new featured item. Requires `type` ("Set" or "Collection"), `displayName` (max 200 chars), and type-specific fields (`categorySlug` + `navKeyword1` for sets; `collectionId` for collections). Returns 201 with `{ id }`.
+- **AC 10.3.3** [Admin] `PATCH /admin/featured/{id}` updates `displayName` and/or `sortOrder` on an existing item. Returns 204. Returns 404 if not found.
+- **AC 10.3.4** [Admin] `DELETE /admin/featured/{id}` removes a featured item. Returns 204. Returns 404 if not found.
+- **AC 10.3.5** [Anonymous, Authenticated (non-admin)] All `/admin/featured` endpoints return 403 Forbidden.
+
+### AC 10.4 UI — Featured page
+
+- **AC 10.4.1** [Anonymous, Authenticated] A "Featured" link appears in the main nav between Categories and Collections (desktop and mobile).
+- **AC 10.4.2** [Anonymous, Authenticated] `/featured` renders a full-bleed dark page with a tab switcher (Sets | Collections) and sort controls (Last Modified | Name).
+- **AC 10.4.3** [Anonymous, Authenticated] Each Set card shows: display name, category › L1 › L2 path as subtitle, and last modified date. Clicking navigates to `/categories/:categorySlug/:kw1/:kw2?from=featured`.
+- **AC 10.4.4** [Anonymous, Authenticated] Each Collection card shows: display name, description (if any), item count, and last modified date. Clicking navigates to the collection detail page with `?from=featured`.
+- **AC 10.4.5** [Anonymous, Authenticated] Sorting by "Last Modified" orders cards newest-first. Sorting by "Name" orders alphabetically. Default is "Last Modified".
+- **AC 10.4.6** [Anonymous, Authenticated] When navigated from Featured (i.e. `?from=featured` is present), both CategoriesPage and CollectionDetailPage display a "← Back to Featured" link at the top of the page content.
+- **AC 10.4.7** [Anonymous, Authenticated] When a tab (Sets or Collections) has no items, the page shows an empty state: "No featured {tab} yet. Check back soon."
+
+### AC 10.5 UI — Admin Featured page
+
+- **AC 10.5.1** [Admin] `/admin/featured` is linked from the Admin Dashboard.
+- **AC 10.5.2** [Admin] The page lists all current featured items in a table (type badge, display name, path/collection reference, sort order, edit/remove actions).
+- **AC 10.5.3** [Admin] "Add Set" opens a form: category picker (from public categories), L1 keyword picker (from navigation keywords for that category), L2 keyword picker (optional), display name, sort order. Submitting calls `POST /admin/featured`.
+- **AC 10.5.4** [Admin] "Add Collection" opens a form: free-text search against public collections (via Discover), selection of a collection, optional display name override, sort order. Submitting calls `POST /admin/featured`.
+- **AC 10.5.5** [Admin] Each row has an inline edit action (pencil icon) to update display name and sort order, and a remove action (trash icon) to delete. Changes take effect immediately after save.
+
+---
+
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).

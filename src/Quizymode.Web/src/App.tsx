@@ -37,6 +37,8 @@ import TermsOfServicePage from "./features/legal/pages/TermsOfServicePage";
 import PageViewTracker from "./features/analytics/PageViewTracker";
 import RequireAuthRoute from "./components/RequireAuthRoute";
 import AdminIdeasPage from "./features/admin/pages/AdminIdeasPage";
+import FeaturedPage from "./features/featured/pages/FeaturedPage";
+import AdminFeaturedPage from "./features/admin/pages/AdminFeaturedPage";
 
 function App() {
   return (
@@ -107,6 +109,7 @@ function App() {
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
+        <Route path="/featured" element={<FeaturedPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id/:slug" element={<CollectionDetailPage />} />
         <Route path="/collections/:id" element={<CollectionDetailPage />} />
@@ -122,6 +125,7 @@ function App() {
           <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
           <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
           <Route path="/admin/ideas" element={<AdminIdeasPage />} />
+          <Route path="/admin/featured" element={<AdminFeaturedPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/ideas" element={<IdeasPage />} />

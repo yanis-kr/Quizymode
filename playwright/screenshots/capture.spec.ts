@@ -808,6 +808,13 @@ test.describe("User guide screenshots", () => {
     await capture(page, testInfo, "home", "/");
   });
 
+  test("featured", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "featured", "/featured", [
+      "button:has-text('Sets')",
+      "text=No featured sets yet",
+    ]);
+  });
+
   test("categories", async ({ page }, testInfo) => {
     await capture(page, testInfo, "categories", "/categories");
   });

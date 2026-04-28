@@ -71,6 +71,13 @@ const AdminDashboardPage = () => {
           </p>
         </Link>
         <Link
+          to="/admin/featured"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Featured</h3>
+          <p className="text-sm text-gray-500">Curate featured sets and collections on the public page</p>
+        </Link>
+        <Link
           to="/admin/seed-sync"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >

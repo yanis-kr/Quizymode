@@ -70,6 +70,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<StudyGuideDedupResult> StudyGuideDedupResults => Set<StudyGuideDedupResult>();
 
+    public DbSet<FeaturedItem> FeaturedItems => Set<FeaturedItem>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

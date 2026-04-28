@@ -9,7 +9,7 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { EyeIcon, EyeSlashIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, EyeSlashIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
@@ -137,6 +137,8 @@ const CollectionDetailPage = () => {
     }
   };
 
+  const fromFeatured = searchParams.get("from") === "featured";
+
   const isLoading = isLoadingCollection || isLoadingItems;
   const error = collectionError || itemsError;
 
@@ -162,6 +164,15 @@ const CollectionDetailPage = () => {
 
   return (
     <div className="space-y-4">
+      {fromFeatured && (
+        <Link
+          to="/featured"
+          className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-800"
+        >
+          <ChevronLeftIcon className="h-4 w-4" />
+          Back to Featured
+        </Link>
+      )}
       {allItems.length > 0 && (
         <ScopeSecondaryBar
           scopeType="collection"

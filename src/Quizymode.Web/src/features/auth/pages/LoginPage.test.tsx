@@ -60,7 +60,7 @@ describe("LoginPage", () => {
 
     await waitFor(() => {
       expect(mockLogin).toHaveBeenCalledWith("user@example.com", "password123");
-      expect(mockNavigate).toHaveBeenCalledWith("/");
+      expect(mockNavigate).toHaveBeenCalledWith("/", { replace: true });
     });
   });
 
