@@ -1,0 +1,2393 @@
+[
+  {
+    "itemId": "94e3405f-7eee-4d05-8fc5-25e4177d69aa",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'child'.",
+    "correctAnswer": "{{es-ES|niño||NI-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|bebé||BE-be}}",
+      "{{es-ES|hombre||HOM-bre}}",
+      "{{es-ES|mujer||mu-HER}}"
+    ],
+    "explanation": "'niño' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "child"
+    ],
+    "source": "https://www.spanishdict.com/translate/ni%C3%B1o"
+  },
+  {
+    "itemId": "bf3bce6d-f10e-46cb-8e56-14ec78451f4a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'baby'?",
+    "correctAnswer": "{{es-ES|bebé||BE-be}}",
+    "incorrectAnswers": [
+      "{{es-ES|hombre||HOM-bre}}",
+      "{{es-ES|mujer||mu-HER}}",
+      "{{es-ES|persona||per-SO-na}}"
+    ],
+    "explanation": "'bebé' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "baby"
+    ],
+    "source": "https://www.spanishdict.com/translate/beb%C3%A9"
+  },
+  {
+    "itemId": "b6477170-d022-4f74-86d5-289c8dbc1416",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'man'?",
+    "correctAnswer": "{{es-ES|hombre||HOM-bre}}",
+    "incorrectAnswers": [
+      "{{es-ES|mujer||mu-HER}}",
+      "{{es-ES|persona||per-SO-na}}",
+      "{{es-ES|madre||MA-dre}}"
+    ],
+    "explanation": "'hombre' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "man"
+    ],
+    "source": "https://www.spanishdict.com/translate/hombre"
+  },
+  {
+    "itemId": "21d692c2-83c1-4bc1-a04f-ba6fdc6ed87b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'woman' in everyday use?",
+    "correctAnswer": "{{es-ES|mujer||mu-HER}}",
+    "incorrectAnswers": [
+      "{{es-ES|persona||per-SO-na}}",
+      "{{es-ES|madre||MA-dre}}",
+      "{{es-ES|padre||PA-dre}}"
+    ],
+    "explanation": "'mujer' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "woman"
+    ],
+    "source": "https://www.spanishdict.com/translate/mujer"
+  },
+  {
+    "itemId": "95dca67c-4877-4261-8111-e710d5ec54b7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'person'.",
+    "correctAnswer": "{{es-ES|persona||per-SO-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|madre||MA-dre}}",
+      "{{es-ES|padre||PA-dre}}",
+      "{{es-ES|hermano||her-MA-no}}"
+    ],
+    "explanation": "'persona' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "person"
+    ],
+    "source": "https://www.spanishdict.com/translate/persona"
+  },
+  {
+    "itemId": "678e105c-7328-4ef9-9b72-3ed8043b4526",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'head'?",
+    "correctAnswer": "{{es-ES|cabeza||ca-BE-za}}",
+    "incorrectAnswers": [
+      "{{es-ES|mano||MA-no}}",
+      "{{es-ES|pie||PIE}}",
+      "{{es-ES|ojo||O-ho}}"
+    ],
+    "explanation": "'cabeza' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "head"
+    ],
+    "source": "https://www.spanishdict.com/translate/cabeza"
+  },
+  {
+    "itemId": "0d21b865-e39c-4c29-8e39-6a399437796e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'hand' in everyday use?",
+    "correctAnswer": "{{es-ES|mano||MA-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|pie||PIE}}",
+      "{{es-ES|ojo||O-ho}}",
+      "{{es-ES|oreja||o-RE-ha}}"
+    ],
+    "explanation": "'mano' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "hand"
+    ],
+    "source": "https://www.spanishdict.com/translate/mano"
+  },
+  {
+    "itemId": "616fd527-2cc0-44a9-a1ca-d088ae97ac6e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'foot'.",
+    "correctAnswer": "{{es-ES|pie||PIE}}",
+    "incorrectAnswers": [
+      "{{es-ES|ojo||O-ho}}",
+      "{{es-ES|oreja||o-RE-ha}}",
+      "{{es-ES|nariz||na-RIZ}}"
+    ],
+    "explanation": "'pie' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "foot"
+    ],
+    "source": "https://www.spanishdict.com/translate/pie"
+  },
+  {
+    "itemId": "705d3d50-49c3-4be5-9e11-83c97851f015",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'eye'?",
+    "correctAnswer": "{{es-ES|ojo||O-ho}}",
+    "incorrectAnswers": [
+      "{{es-ES|oreja||o-RE-ha}}",
+      "{{es-ES|nariz||na-RIZ}}",
+      "{{es-ES|boca||BO-ca}}"
+    ],
+    "explanation": "'ojo' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "eye"
+    ],
+    "source": "https://www.spanishdict.com/translate/ojo"
+  },
+  {
+    "itemId": "ddaf22e9-7543-4fef-9a50-964132851991",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'ear'?",
+    "correctAnswer": "{{es-ES|oreja||o-RE-ha}}",
+    "incorrectAnswers": [
+      "{{es-ES|nariz||na-RIZ}}",
+      "{{es-ES|boca||BO-ca}}",
+      "{{es-ES|corazón||co-RA-zon}}"
+    ],
+    "explanation": "'oreja' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "ear"
+    ],
+    "source": "https://www.spanishdict.com/translate/oreja"
+  },
+  {
+    "itemId": "41735896-6be5-4dda-addd-463893b8f4b9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'nose' in everyday use?",
+    "correctAnswer": "{{es-ES|nariz||na-RIZ}}",
+    "incorrectAnswers": [
+      "{{es-ES|boca||BO-ca}}",
+      "{{es-ES|corazón||co-RA-zon}}",
+      "{{es-ES|estómago||es-to-MA-go}}"
+    ],
+    "explanation": "'nariz' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "nose"
+    ],
+    "source": "https://www.spanishdict.com/translate/nariz"
+  },
+  {
+    "itemId": "5b63a155-3284-48b6-a5da-3563c5a63b19",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'mouth'.",
+    "correctAnswer": "{{es-ES|boca||BO-ca}}",
+    "incorrectAnswers": [
+      "{{es-ES|corazón||co-RA-zon}}",
+      "{{es-ES|estómago||es-to-MA-go}}",
+      "{{es-ES|brazo||BRA-zo}}"
+    ],
+    "explanation": "'boca' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "mouth"
+    ],
+    "source": "https://www.spanishdict.com/translate/boca"
+  },
+  {
+    "itemId": "c0971cd8-f268-4cd6-a2b0-1286cf6d703b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'heart'?",
+    "correctAnswer": "{{es-ES|corazón||co-RA-zon}}",
+    "incorrectAnswers": [
+      "{{es-ES|estómago||es-to-MA-go}}",
+      "{{es-ES|brazo||BRA-zo}}",
+      "{{es-ES|pierna||PIER-na}}"
+    ],
+    "explanation": "'corazón' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "heart"
+    ],
+    "source": "https://www.spanishdict.com/translate/coraz%C3%B3n"
+  },
+  {
+    "itemId": "34ad42e3-1e79-46ff-80b3-424ab97b79b3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'stomach'?",
+    "correctAnswer": "{{es-ES|estómago||es-to-MA-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|brazo||BRA-zo}}",
+      "{{es-ES|pierna||PIER-na}}",
+      "{{es-ES|dedo||DE-do}}"
+    ],
+    "explanation": "'estómago' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "stomach"
+    ],
+    "source": "https://www.spanishdict.com/translate/est%C3%B3mago"
+  },
+  {
+    "itemId": "ec68f96a-4fa1-44be-9ba8-9ace5e7d056e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'arm' in everyday use?",
+    "correctAnswer": "{{es-ES|brazo||BRA-zo}}",
+    "incorrectAnswers": [
+      "{{es-ES|pierna||PIER-na}}",
+      "{{es-ES|dedo||DE-do}}",
+      "{{es-ES|espalda||es-PAL-da}}"
+    ],
+    "explanation": "'brazo' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "arm"
+    ],
+    "source": "https://www.spanishdict.com/translate/brazo"
+  },
+  {
+    "itemId": "758a69bc-04af-4b4b-b61a-773d3203fe7f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'leg'.",
+    "correctAnswer": "{{es-ES|pierna||PIER-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|dedo||DE-do}}",
+      "{{es-ES|espalda||es-PAL-da}}",
+      "{{es-ES|cabeza||ca-BE-za}}"
+    ],
+    "explanation": "'pierna' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "leg"
+    ],
+    "source": "https://www.spanishdict.com/translate/pierna"
+  },
+  {
+    "itemId": "6a488719-b525-4b74-bdbc-49d025a90f3d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'finger'?",
+    "correctAnswer": "{{es-ES|dedo||DE-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|espalda||es-PAL-da}}",
+      "{{es-ES|cabeza||ca-BE-za}}",
+      "{{es-ES|mano||MA-no}}"
+    ],
+    "explanation": "'dedo' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "finger"
+    ],
+    "source": "https://www.spanishdict.com/translate/dedo"
+  },
+  {
+    "itemId": "22743cf6-70c9-4e4f-bece-2061fcb5e17d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'back'?",
+    "correctAnswer": "{{es-ES|espalda||es-PAL-da}}",
+    "incorrectAnswers": [
+      "{{es-ES|cabeza||ca-BE-za}}",
+      "{{es-ES|mano||MA-no}}",
+      "{{es-ES|pie||PIE}}"
+    ],
+    "explanation": "'espalda' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "back"
+    ],
+    "source": "https://www.spanishdict.com/translate/espalda"
+  },
+  {
+    "itemId": "aed46ae5-ec51-478b-875a-0fa0639ebc23",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'bread'?",
+    "correctAnswer": "{{es-ES|pan||PAN}}",
+    "incorrectAnswers": [
+      "{{es-ES|leche||LE-che}}",
+      "{{es-ES|huevo||HUE-bo}}",
+      "{{es-ES|carne||CAR-ne}}"
+    ],
+    "explanation": "'pan' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "bread"
+    ],
+    "source": "https://www.spanishdict.com/translate/pan"
+  },
+  {
+    "itemId": "910a680b-6bee-42ce-bdd0-1ca72d2f486d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'milk' in everyday use?",
+    "correctAnswer": "{{es-ES|leche||LE-che}}",
+    "incorrectAnswers": [
+      "{{es-ES|huevo||HUE-bo}}",
+      "{{es-ES|carne||CAR-ne}}",
+      "{{es-ES|pescado||pes-CA-do}}"
+    ],
+    "explanation": "'leche' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "milk"
+    ],
+    "source": "https://www.spanishdict.com/translate/leche"
+  },
+  {
+    "itemId": "f6135517-e716-4b0d-bc83-bf8068b8b7d3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'egg'.",
+    "correctAnswer": "{{es-ES|huevo||HUE-bo}}",
+    "incorrectAnswers": [
+      "{{es-ES|carne||CAR-ne}}",
+      "{{es-ES|pescado||pes-CA-do}}",
+      "{{es-ES|fruta||FRU-ta}}"
+    ],
+    "explanation": "'huevo' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "egg"
+    ],
+    "source": "https://www.spanishdict.com/translate/huevo"
+  },
+  {
+    "itemId": "28316de0-9961-4f57-8a91-123404b1b534",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'meat'?",
+    "correctAnswer": "{{es-ES|carne||CAR-ne}}",
+    "incorrectAnswers": [
+      "{{es-ES|pescado||pes-CA-do}}",
+      "{{es-ES|fruta||FRU-ta}}",
+      "{{es-ES|verdura||ber-DU-ra}}"
+    ],
+    "explanation": "'carne' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "meat"
+    ],
+    "source": "https://www.spanishdict.com/translate/carne"
+  },
+  {
+    "itemId": "e03970c4-a2d2-4b0d-b716-e107da152849",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'fish'?",
+    "correctAnswer": "{{es-ES|pescado||pes-CA-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|fruta||FRU-ta}}",
+      "{{es-ES|verdura||ber-DU-ra}}",
+      "{{es-ES|arroz||ar-ROZ}}"
+    ],
+    "explanation": "'pescado' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fish"
+    ],
+    "source": "https://www.spanishdict.com/translate/pescado"
+  },
+  {
+    "itemId": "74bf8c33-f337-48ec-a894-6157f89949d5",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'fruit' in everyday use?",
+    "correctAnswer": "{{es-ES|fruta||FRU-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|verdura||ber-DU-ra}}",
+      "{{es-ES|arroz||ar-ROZ}}",
+      "{{es-ES|pasta||PAS-ta}}"
+    ],
+    "explanation": "'fruta' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fruit"
+    ],
+    "source": "https://www.spanishdict.com/translate/fruta"
+  },
+  {
+    "itemId": "746f6ce7-3f49-4204-b781-2b3def1b40e1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'vegetable'.",
+    "correctAnswer": "{{es-ES|verdura||ber-DU-ra}}",
+    "incorrectAnswers": [
+      "{{es-ES|arroz||ar-ROZ}}",
+      "{{es-ES|pasta||PAS-ta}}",
+      "{{es-ES|queso||KE-so}}"
+    ],
+    "explanation": "'verdura' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "vegetable"
+    ],
+    "source": "https://www.spanishdict.com/translate/verdura"
+  },
+  {
+    "itemId": "d3e5d6cb-c3d7-49c2-a54f-103d1b0b4aca",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'rice'?",
+    "correctAnswer": "{{es-ES|arroz||ar-ROZ}}",
+    "incorrectAnswers": [
+      "{{es-ES|pasta||PAS-ta}}",
+      "{{es-ES|queso||KE-so}}",
+      "{{es-ES|café||CA-fe}}"
+    ],
+    "explanation": "'arroz' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "rice"
+    ],
+    "source": "https://www.spanishdict.com/translate/arroz"
+  },
+  {
+    "itemId": "80bf7a4c-2645-459c-afb5-603ad120e139",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'pasta'?",
+    "correctAnswer": "{{es-ES|pasta||PAS-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|queso||KE-so}}",
+      "{{es-ES|café||CA-fe}}",
+      "{{es-ES|té||TE}}"
+    ],
+    "explanation": "'pasta' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "pasta"
+    ],
+    "source": "https://www.spanishdict.com/translate/pasta"
+  },
+  {
+    "itemId": "76cb0607-fac1-4554-9f81-c14cb909c04a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'cheese' in everyday use?",
+    "correctAnswer": "{{es-ES|queso||KE-so}}",
+    "incorrectAnswers": [
+      "{{es-ES|café||CA-fe}}",
+      "{{es-ES|té||TE}}",
+      "{{es-ES|jugo||HU-go}}"
+    ],
+    "explanation": "'queso' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "cheese"
+    ],
+    "source": "https://www.spanishdict.com/translate/queso"
+  },
+  {
+    "itemId": "bff0d296-3375-4b79-93b7-f15134787065",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'coffee'.",
+    "correctAnswer": "{{es-ES|café||CA-fe}}",
+    "incorrectAnswers": [
+      "{{es-ES|té||TE}}",
+      "{{es-ES|jugo||HU-go}}",
+      "{{es-ES|cerveza||sehr-BE-za}}"
+    ],
+    "explanation": "'café' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "coffee"
+    ],
+    "source": "https://www.spanishdict.com/translate/caf%C3%A9"
+  },
+  {
+    "itemId": "15e213f7-78b5-4ecd-8918-9da9c2e59420",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'tea'?",
+    "correctAnswer": "{{es-ES|té||TE}}",
+    "incorrectAnswers": [
+      "{{es-ES|jugo||HU-go}}",
+      "{{es-ES|cerveza||sehr-BE-za}}",
+      "{{es-ES|vino||BI-no}}"
+    ],
+    "explanation": "'té' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "tea"
+    ],
+    "source": "https://www.spanishdict.com/translate/t%C3%A9"
+  },
+  {
+    "itemId": "a7391c24-6127-40ba-aa26-c62891933462",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'juice'?",
+    "correctAnswer": "{{es-ES|jugo||HU-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|cerveza||sehr-BE-za}}",
+      "{{es-ES|vino||BI-no}}",
+      "{{es-ES|aceite||a-se-HI-te}}"
+    ],
+    "explanation": "'jugo' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "juice"
+    ],
+    "source": "https://www.spanishdict.com/translate/jugo"
+  },
+  {
+    "itemId": "0d8a40a9-4837-44ac-98bd-b8c0f9917605",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'beer' in everyday use?",
+    "correctAnswer": "{{es-ES|cerveza||sehr-BE-za}}",
+    "incorrectAnswers": [
+      "{{es-ES|vino||BI-no}}",
+      "{{es-ES|aceite||a-se-HI-te}}",
+      "{{es-ES|sal||SAL}}"
+    ],
+    "explanation": "'cerveza' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "beer"
+    ],
+    "source": "https://www.spanishdict.com/translate/cerveza"
+  },
+  {
+    "itemId": "2942097f-9216-4385-9326-abb22fc89d4a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'wine'.",
+    "correctAnswer": "{{es-ES|vino||BI-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|aceite||a-se-HI-te}}",
+      "{{es-ES|sal||SAL}}",
+      "{{es-ES|azúcar||a-zu-CAR}}"
+    ],
+    "explanation": "'vino' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "wine"
+    ],
+    "source": "https://www.spanishdict.com/translate/vino"
+  },
+  {
+    "itemId": "4c69fcea-e8ba-406c-bfb6-74d9e96ed26e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'oil'?",
+    "correctAnswer": "{{es-ES|aceite||a-se-HI-te}}",
+    "incorrectAnswers": [
+      "{{es-ES|sal||SAL}}",
+      "{{es-ES|azúcar||a-zu-CAR}}",
+      "{{es-ES|pan||PAN}}"
+    ],
+    "explanation": "'aceite' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "oil"
+    ],
+    "source": "https://www.spanishdict.com/translate/aceite"
+  },
+  {
+    "itemId": "eaeb00bd-5254-4f78-bf30-e6200bbe1d15",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'salt'?",
+    "correctAnswer": "{{es-ES|sal||SAL}}",
+    "incorrectAnswers": [
+      "{{es-ES|azúcar||a-zu-CAR}}",
+      "{{es-ES|pan||PAN}}",
+      "{{es-ES|leche||LE-che}}"
+    ],
+    "explanation": "'sal' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "salt"
+    ],
+    "source": "https://www.spanishdict.com/translate/sal"
+  },
+  {
+    "itemId": "bd900641-7c67-4428-915f-38ca9f5dea89",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'sugar' in everyday use?",
+    "correctAnswer": "{{es-ES|azúcar||a-zu-CAR}}",
+    "incorrectAnswers": [
+      "{{es-ES|pan||PAN}}",
+      "{{es-ES|leche||LE-che}}",
+      "{{es-ES|huevo||HUE-bo}}"
+    ],
+    "explanation": "'azúcar' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "sugar"
+    ],
+    "source": "https://www.spanishdict.com/translate/az%C3%BAcar"
+  },
+  {
+    "itemId": "372464c5-aaa2-4096-8577-ef35c400d6d7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'dog'?",
+    "correctAnswer": "{{es-ES|perro||PER-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|gato||GA-to}}",
+      "{{es-ES|pájaro||pa-HA-ro}}",
+      "{{es-ES|caballo||CA-bayo}}"
+    ],
+    "explanation": "'perro' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "dog"
+    ],
+    "source": "https://www.spanishdict.com/translate/perro"
+  },
+  {
+    "itemId": "98320930-1fd0-4cfd-840e-932d4473af8f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'cat' in everyday use?",
+    "correctAnswer": "{{es-ES|gato||GA-to}}",
+    "incorrectAnswers": [
+      "{{es-ES|pájaro||pa-HA-ro}}",
+      "{{es-ES|caballo||CA-bayo}}",
+      "{{es-ES|vaca||BA-ca}}"
+    ],
+    "explanation": "'gato' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cat"
+    ],
+    "source": "https://www.spanishdict.com/translate/gato"
+  },
+  {
+    "itemId": "b5bfbaae-aa73-40f1-835d-71d6bf4dc64e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'bird'.",
+    "correctAnswer": "{{es-ES|pájaro||pa-HA-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|caballo||CA-bayo}}",
+      "{{es-ES|vaca||BA-ca}}",
+      "{{es-ES|cerdo||SEHR-do}}"
+    ],
+    "explanation": "'pájaro' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "bird"
+    ],
+    "source": "https://www.spanishdict.com/translate/p%C3%A1jaro"
+  },
+  {
+    "itemId": "7c395dc9-e2e1-4969-bf44-6e86085c2f21",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'horse'?",
+    "correctAnswer": "{{es-ES|caballo||CA-bayo}}",
+    "incorrectAnswers": [
+      "{{es-ES|vaca||BA-ca}}",
+      "{{es-ES|cerdo||SEHR-do}}",
+      "{{es-ES|pollo||POYO}}"
+    ],
+    "explanation": "'caballo' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "horse"
+    ],
+    "source": "https://www.spanishdict.com/translate/caballo"
+  },
+  {
+    "itemId": "e50a1ef0-fae9-4f2b-810c-68acf0f91636",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'cow'?",
+    "correctAnswer": "{{es-ES|vaca||BA-ca}}",
+    "incorrectAnswers": [
+      "{{es-ES|cerdo||SEHR-do}}",
+      "{{es-ES|pollo||POYO}}",
+      "{{es-ES|ratón||RA-ton}}"
+    ],
+    "explanation": "'vaca' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cow"
+    ],
+    "source": "https://www.spanishdict.com/translate/vaca"
+  },
+  {
+    "itemId": "8cc50067-8e6e-454b-8125-75afc3b799f5",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'pig' in everyday use?",
+    "correctAnswer": "{{es-ES|cerdo||SEHR-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|pollo||POYO}}",
+      "{{es-ES|ratón||RA-ton}}",
+      "{{es-ES|conejo||co-NE-ho}}"
+    ],
+    "explanation": "'cerdo' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "pig"
+    ],
+    "source": "https://www.spanishdict.com/translate/cerdo"
+  },
+  {
+    "itemId": "e1e5ef0b-eef3-4324-b2ba-b4faa1b0b4e6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'chicken'.",
+    "correctAnswer": "{{es-ES|pollo||POYO}}",
+    "incorrectAnswers": [
+      "{{es-ES|ratón||RA-ton}}",
+      "{{es-ES|conejo||co-NE-ho}}",
+      "{{es-ES|perro||PER-ro}}"
+    ],
+    "explanation": "'pollo' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "chicken"
+    ],
+    "source": "https://www.spanishdict.com/translate/pollo"
+  },
+  {
+    "itemId": "74cd9fe8-2f41-4c7d-a24a-3e565ca3d727",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'mouse'?",
+    "correctAnswer": "{{es-ES|ratón||RA-ton}}",
+    "incorrectAnswers": [
+      "{{es-ES|conejo||co-NE-ho}}",
+      "{{es-ES|perro||PER-ro}}",
+      "{{es-ES|gato||GA-to}}"
+    ],
+    "explanation": "'ratón' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "mouse"
+    ],
+    "source": "https://www.spanishdict.com/translate/rat%C3%B3n"
+  },
+  {
+    "itemId": "abd21f3c-16ed-45f8-b409-da1c0859591b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'rabbit'?",
+    "correctAnswer": "{{es-ES|conejo||co-NE-ho}}",
+    "incorrectAnswers": [
+      "{{es-ES|perro||PER-ro}}",
+      "{{es-ES|gato||GA-to}}",
+      "{{es-ES|pájaro||pa-HA-ro}}"
+    ],
+    "explanation": "'conejo' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "rabbit"
+    ],
+    "source": "https://www.spanishdict.com/translate/conejo"
+  },
+  {
+    "itemId": "6058e5eb-47e3-45de-852d-1e165003938d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'house'?",
+    "correctAnswer": "{{es-ES|casa||CA-sa}}",
+    "incorrectAnswers": [
+      "{{es-ES|habitación||ha-bi-TA-seeon}}",
+      "{{es-ES|puerta||PUER-ta}}",
+      "{{es-ES|ventana||ben-TA-na}}"
+    ],
+    "explanation": "'casa' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "house"
+    ],
+    "source": "https://www.spanishdict.com/translate/casa"
+  },
+  {
+    "itemId": "7698e0cc-a504-4852-a743-8562efe12a49",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'room' in everyday use?",
+    "correctAnswer": "{{es-ES|habitación||ha-bi-TA-seeon}}",
+    "incorrectAnswers": [
+      "{{es-ES|puerta||PUER-ta}}",
+      "{{es-ES|ventana||ben-TA-na}}",
+      "{{es-ES|cama||CA-ma}}"
+    ],
+    "explanation": "'habitación' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "room"
+    ],
+    "source": "https://www.spanishdict.com/translate/habitaci%C3%B3n"
+  },
+  {
+    "itemId": "c7448f14-59a7-44d6-afd0-61f5b16edbb9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'door'.",
+    "correctAnswer": "{{es-ES|puerta||PUER-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|ventana||ben-TA-na}}",
+      "{{es-ES|cama||CA-ma}}",
+      "{{es-ES|mesa||ME-sa}}"
+    ],
+    "explanation": "'puerta' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "door"
+    ],
+    "source": "https://www.spanishdict.com/translate/puerta"
+  },
+  {
+    "itemId": "bb10b06b-a731-41fe-b4a8-9fd9a7c75ba6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'window'?",
+    "correctAnswer": "{{es-ES|ventana||ben-TA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|cama||CA-ma}}",
+      "{{es-ES|mesa||ME-sa}}",
+      "{{es-ES|silla||SIYA}}"
+    ],
+    "explanation": "'ventana' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "window"
+    ],
+    "source": "https://www.spanishdict.com/translate/ventana"
+  },
+  {
+    "itemId": "70a33ea1-a39f-4985-84fd-eae60adcc113",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'bed'?",
+    "correctAnswer": "{{es-ES|cama||CA-ma}}",
+    "incorrectAnswers": [
+      "{{es-ES|mesa||ME-sa}}",
+      "{{es-ES|silla||SIYA}}",
+      "{{es-ES|cocina||co-SEE-na}}"
+    ],
+    "explanation": "'cama' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bed"
+    ],
+    "source": "https://www.spanishdict.com/translate/cama"
+  },
+  {
+    "itemId": "1106708f-4e40-4aa5-9287-83d3fe151a5e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'table' in everyday use?",
+    "correctAnswer": "{{es-ES|mesa||ME-sa}}",
+    "incorrectAnswers": [
+      "{{es-ES|silla||SIYA}}",
+      "{{es-ES|cocina||co-SEE-na}}",
+      "{{es-ES|baño||BA-no}}"
+    ],
+    "explanation": "'mesa' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "table"
+    ],
+    "source": "https://www.spanishdict.com/translate/mesa"
+  },
+  {
+    "itemId": "5f461aff-5b46-40ae-a384-8fe544caa6a7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'chair'.",
+    "correctAnswer": "{{es-ES|silla||SIYA}}",
+    "incorrectAnswers": [
+      "{{es-ES|cocina||co-SEE-na}}",
+      "{{es-ES|baño||BA-no}}",
+      "{{es-ES|jardín||HAR-din}}"
+    ],
+    "explanation": "'silla' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "chair"
+    ],
+    "source": "https://www.spanishdict.com/translate/silla"
+  },
+  {
+    "itemId": "26888cf2-e6fb-4323-878c-9128ea2cb42b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'kitchen'?",
+    "correctAnswer": "{{es-ES|cocina||co-SEE-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|baño||BA-no}}",
+      "{{es-ES|jardín||HAR-din}}",
+      "{{es-ES|suelo||SUE-lo}}"
+    ],
+    "explanation": "'cocina' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "kitchen"
+    ],
+    "source": "https://www.spanishdict.com/translate/cocina"
+  },
+  {
+    "itemId": "0ba78f9d-1ab1-419f-bd0b-0c20ea7c41c7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'bathroom'?",
+    "correctAnswer": "{{es-ES|baño||BA-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|jardín||HAR-din}}",
+      "{{es-ES|suelo||SUE-lo}}",
+      "{{es-ES|pared||pa-RED}}"
+    ],
+    "explanation": "'baño' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bathroom"
+    ],
+    "source": "https://www.spanishdict.com/translate/ba%C3%B1o"
+  },
+  {
+    "itemId": "506fc10b-bbe7-46c1-9217-aac29dab08ca",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'garden' in everyday use?",
+    "correctAnswer": "{{es-ES|jardín||HAR-din}}",
+    "incorrectAnswers": [
+      "{{es-ES|suelo||SUE-lo}}",
+      "{{es-ES|pared||pa-RED}}",
+      "{{es-ES|techo||TE-cho}}"
+    ],
+    "explanation": "'jardín' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "garden"
+    ],
+    "source": "https://www.spanishdict.com/translate/jard%C3%ADn"
+  },
+  {
+    "itemId": "dc12c719-f495-40a7-aa4e-5e84d38d820b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'floor'.",
+    "correctAnswer": "{{es-ES|suelo||SUE-lo}}",
+    "incorrectAnswers": [
+      "{{es-ES|pared||pa-RED}}",
+      "{{es-ES|techo||TE-cho}}",
+      "{{es-ES|lámpara||lam-PA-ra}}"
+    ],
+    "explanation": "'suelo' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "floor"
+    ],
+    "source": "https://www.spanishdict.com/translate/suelo"
+  },
+  {
+    "itemId": "a5f13ea9-6558-4981-ae54-ee9e612c861d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'wall'?",
+    "correctAnswer": "{{es-ES|pared||pa-RED}}",
+    "incorrectAnswers": [
+      "{{es-ES|techo||TE-cho}}",
+      "{{es-ES|lámpara||lam-PA-ra}}",
+      "{{es-ES|casa||CA-sa}}"
+    ],
+    "explanation": "'pared' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "wall"
+    ],
+    "source": "https://www.spanishdict.com/translate/pared"
+  },
+  {
+    "itemId": "b4edb9b0-380a-48c2-837e-5e663d0d3215",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'roof'?",
+    "correctAnswer": "{{es-ES|techo||TE-cho}}",
+    "incorrectAnswers": [
+      "{{es-ES|lámpara||lam-PA-ra}}",
+      "{{es-ES|casa||CA-sa}}",
+      "{{es-ES|habitación||ha-bi-TA-seeon}}"
+    ],
+    "explanation": "'techo' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "roof"
+    ],
+    "source": "https://www.spanishdict.com/translate/techo"
+  },
+  {
+    "itemId": "fa7cf06b-6a35-4f55-a538-11fc7529ec4a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'lamp' in everyday use?",
+    "correctAnswer": "{{es-ES|lámpara||lam-PA-ra}}",
+    "incorrectAnswers": [
+      "{{es-ES|casa||CA-sa}}",
+      "{{es-ES|habitación||ha-bi-TA-seeon}}",
+      "{{es-ES|puerta||PUER-ta}}"
+    ],
+    "explanation": "'lámpara' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "lamp"
+    ],
+    "source": "https://www.spanishdict.com/translate/l%C3%A1mpara"
+  },
+  {
+    "itemId": "c17b8cd0-5414-4821-8f09-1ff5ba74b8e9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'shirt'?",
+    "correctAnswer": "{{es-ES|camisa||ca-MI-sa}}",
+    "incorrectAnswers": [
+      "{{es-ES|pantalones||pan-ta-LO-nes}}",
+      "{{es-ES|vestido||bes-TI-do}}",
+      "{{es-ES|zapatos||za-PA-tos}}"
+    ],
+    "explanation": "'camisa' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shirt"
+    ],
+    "source": "https://www.spanishdict.com/translate/camisa"
+  },
+  {
+    "itemId": "0b303572-b85c-45e3-9d38-b55dad6afd77",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'pants' in everyday use?",
+    "correctAnswer": "{{es-ES|pantalones||pan-ta-LO-nes}}",
+    "incorrectAnswers": [
+      "{{es-ES|vestido||bes-TI-do}}",
+      "{{es-ES|zapatos||za-PA-tos}}",
+      "{{es-ES|calcetines||cal-seh-TI-nes}}"
+    ],
+    "explanation": "'pantalones' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "pants"
+    ],
+    "source": "https://www.spanishdict.com/translate/pantalones"
+  },
+  {
+    "itemId": "bfc39acb-947e-4929-a357-21aba0b7531b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'dress'.",
+    "correctAnswer": "{{es-ES|vestido||bes-TI-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|zapatos||za-PA-tos}}",
+      "{{es-ES|calcetines||cal-seh-TI-nes}}",
+      "{{es-ES|chaqueta||cha-KE-ta}}"
+    ],
+    "explanation": "'vestido' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "dress"
+    ],
+    "source": "https://www.spanishdict.com/translate/vestido"
+  },
+  {
+    "itemId": "c92ef0f7-f37c-4f95-a633-05f834fab595",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'shoes'?",
+    "correctAnswer": "{{es-ES|zapatos||za-PA-tos}}",
+    "incorrectAnswers": [
+      "{{es-ES|calcetines||cal-seh-TI-nes}}",
+      "{{es-ES|chaqueta||cha-KE-ta}}",
+      "{{es-ES|sombrero||som-BRE-ro}}"
+    ],
+    "explanation": "'zapatos' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shoes"
+    ],
+    "source": "https://www.spanishdict.com/translate/zapatos"
+  },
+  {
+    "itemId": "9f909396-9d26-49e6-9a07-9e950fa9008d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'socks'?",
+    "correctAnswer": "{{es-ES|calcetines||cal-seh-TI-nes}}",
+    "incorrectAnswers": [
+      "{{es-ES|chaqueta||cha-KE-ta}}",
+      "{{es-ES|sombrero||som-BRE-ro}}",
+      "{{es-ES|bolso||BOL-so}}"
+    ],
+    "explanation": "'calcetines' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "socks"
+    ],
+    "source": "https://www.spanishdict.com/translate/calcetines"
+  },
+  {
+    "itemId": "66b6f9f2-1398-437c-b4c3-79f7776f5bbf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'jacket' in everyday use?",
+    "correctAnswer": "{{es-ES|chaqueta||cha-KE-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|sombrero||som-BRE-ro}}",
+      "{{es-ES|bolso||BOL-so}}",
+      "{{es-ES|abrigo||a-BRI-go}}"
+    ],
+    "explanation": "'chaqueta' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "jacket"
+    ],
+    "source": "https://www.spanishdict.com/translate/chaqueta"
+  },
+  {
+    "itemId": "c98383ac-2e29-4655-b807-206a5970a09d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'hat'.",
+    "correctAnswer": "{{es-ES|sombrero||som-BRE-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|bolso||BOL-so}}",
+      "{{es-ES|abrigo||a-BRI-go}}",
+      "{{es-ES|camisa||ca-MI-sa}}"
+    ],
+    "explanation": "'sombrero' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "hat"
+    ],
+    "source": "https://www.spanishdict.com/translate/sombrero"
+  },
+  {
+    "itemId": "99a3598e-b2d8-4152-91cb-6815b68032ea",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'bag'?",
+    "correctAnswer": "{{es-ES|bolso||BOL-so}}",
+    "incorrectAnswers": [
+      "{{es-ES|abrigo||a-BRI-go}}",
+      "{{es-ES|camisa||ca-MI-sa}}",
+      "{{es-ES|pantalones||pan-ta-LO-nes}}"
+    ],
+    "explanation": "'bolso' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "bag"
+    ],
+    "source": "https://www.spanishdict.com/translate/bolso"
+  },
+  {
+    "itemId": "98df2f3a-33c2-448b-9c93-8d1475e7fe92",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'coat'?",
+    "correctAnswer": "{{es-ES|abrigo||a-BRI-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|camisa||ca-MI-sa}}",
+      "{{es-ES|pantalones||pan-ta-LO-nes}}",
+      "{{es-ES|vestido||bes-TI-do}}"
+    ],
+    "explanation": "'abrigo' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "coat"
+    ],
+    "source": "https://www.spanishdict.com/translate/abrigo"
+  },
+  {
+    "itemId": "a65f83ba-4d40-4b6a-ba3d-b7e1b6d1abf2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'car'?",
+    "correctAnswer": "{{es-ES|coche||CO-che}}",
+    "incorrectAnswers": [
+      "{{es-ES|autobús||au-TO-bus}}",
+      "{{es-ES|tren||TREN}}",
+      "{{es-ES|avión||A-bion}}"
+    ],
+    "explanation": "'coche' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "car"
+    ],
+    "source": "https://www.spanishdict.com/translate/coche"
+  },
+  {
+    "itemId": "d0fd0e68-878f-4e95-b63d-6e6004c397f2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'bus' in everyday use?",
+    "correctAnswer": "{{es-ES|autobús||au-TO-bus}}",
+    "incorrectAnswers": [
+      "{{es-ES|tren||TREN}}",
+      "{{es-ES|avión||A-bion}}",
+      "{{es-ES|bicicleta||bi-see-CLE-ta}}"
+    ],
+    "explanation": "'autobús' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bus"
+    ],
+    "source": "https://www.spanishdict.com/translate/autob%C3%BAs"
+  },
+  {
+    "itemId": "6b9e0055-1231-4779-bdc1-a2b70396c3c9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'train'.",
+    "correctAnswer": "{{es-ES|tren||TREN}}",
+    "incorrectAnswers": [
+      "{{es-ES|avión||A-bion}}",
+      "{{es-ES|bicicleta||bi-see-CLE-ta}}",
+      "{{es-ES|barco||BAR-co}}"
+    ],
+    "explanation": "'tren' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "train"
+    ],
+    "source": "https://www.spanishdict.com/translate/tren"
+  },
+  {
+    "itemId": "a0be4c54-eaac-4403-9275-4d5a91f840c5",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'plane'?",
+    "correctAnswer": "{{es-ES|avión||A-bion}}",
+    "incorrectAnswers": [
+      "{{es-ES|bicicleta||bi-see-CLE-ta}}",
+      "{{es-ES|barco||BAR-co}}",
+      "{{es-ES|taxi||TA-xi}}"
+    ],
+    "explanation": "'avión' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "plane"
+    ],
+    "source": "https://www.spanishdict.com/translate/avi%C3%B3n"
+  },
+  {
+    "itemId": "48b092ad-f47f-4217-99c3-3a72956c714b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'bicycle'?",
+    "correctAnswer": "{{es-ES|bicicleta||bi-see-CLE-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|barco||BAR-co}}",
+      "{{es-ES|taxi||TA-xi}}",
+      "{{es-ES|metro||ME-tro}}"
+    ],
+    "explanation": "'bicicleta' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bicycle"
+    ],
+    "source": "https://www.spanishdict.com/translate/bicicleta"
+  },
+  {
+    "itemId": "65fcffb6-dff7-4186-b294-0cce33e48d4a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'boat' in everyday use?",
+    "correctAnswer": "{{es-ES|barco||BAR-co}}",
+    "incorrectAnswers": [
+      "{{es-ES|taxi||TA-xi}}",
+      "{{es-ES|metro||ME-tro}}",
+      "{{es-ES|coche||CO-che}}"
+    ],
+    "explanation": "'barco' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "boat"
+    ],
+    "source": "https://www.spanishdict.com/translate/barco"
+  },
+  {
+    "itemId": "442e295e-ca1a-439f-b820-6bb98738e3cb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'taxi'.",
+    "correctAnswer": "{{es-ES|taxi||TA-xi}}",
+    "incorrectAnswers": [
+      "{{es-ES|metro||ME-tro}}",
+      "{{es-ES|coche||CO-che}}",
+      "{{es-ES|autobús||au-TO-bus}}"
+    ],
+    "explanation": "'taxi' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "taxi"
+    ],
+    "source": "https://www.spanishdict.com/translate/taxi"
+  },
+  {
+    "itemId": "fc121a8a-8440-4606-9601-3223bd72b3dc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'metro'?",
+    "correctAnswer": "{{es-ES|metro||ME-tro}}",
+    "incorrectAnswers": [
+      "{{es-ES|coche||CO-che}}",
+      "{{es-ES|autobús||au-TO-bus}}",
+      "{{es-ES|tren||TREN}}"
+    ],
+    "explanation": "'metro' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "metro"
+    ],
+    "source": "https://www.spanishdict.com/translate/metro"
+  },
+  {
+    "itemId": "f3666304-43a9-4e6d-9122-05b38d6964f2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'sun'?",
+    "correctAnswer": "{{es-ES|sol||SOL}}",
+    "incorrectAnswers": [
+      "{{es-ES|luna||LU-na}}",
+      "{{es-ES|estrella||ES-treya}}",
+      "{{es-ES|lluvia||YU-bia}}"
+    ],
+    "explanation": "'sol' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sun"
+    ],
+    "source": "https://www.spanishdict.com/translate/sol"
+  },
+  {
+    "itemId": "1b4a6654-2f16-419c-a783-d15fec7fd73e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'moon' in everyday use?",
+    "correctAnswer": "{{es-ES|luna||LU-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|estrella||ES-treya}}",
+      "{{es-ES|lluvia||YU-bia}}",
+      "{{es-ES|nieve||NIE-be}}"
+    ],
+    "explanation": "'luna' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "moon"
+    ],
+    "source": "https://www.spanishdict.com/translate/luna"
+  },
+  {
+    "itemId": "5bd7980f-fbb5-4151-92cb-e6ce53c08e7b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'star'.",
+    "correctAnswer": "{{es-ES|estrella||ES-treya}}",
+    "incorrectAnswers": [
+      "{{es-ES|lluvia||YU-bia}}",
+      "{{es-ES|nieve||NIE-be}}",
+      "{{es-ES|viento||BIEN-to}}"
+    ],
+    "explanation": "'estrella' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "star"
+    ],
+    "source": "https://www.spanishdict.com/translate/estrella"
+  },
+  {
+    "itemId": "0e98a4cb-a019-4f8f-bae8-0de32f9e3419",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'rain'?",
+    "correctAnswer": "{{es-ES|lluvia||YU-bia}}",
+    "incorrectAnswers": [
+      "{{es-ES|nieve||NIE-be}}",
+      "{{es-ES|viento||BIEN-to}}",
+      "{{es-ES|nube||NU-be}}"
+    ],
+    "explanation": "'lluvia' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "rain"
+    ],
+    "source": "https://www.spanishdict.com/translate/lluvia"
+  },
+  {
+    "itemId": "053da11e-4697-44d7-b45b-f9764944edc0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'snow'?",
+    "correctAnswer": "{{es-ES|nieve||NIE-be}}",
+    "incorrectAnswers": [
+      "{{es-ES|viento||BIEN-to}}",
+      "{{es-ES|nube||NU-be}}",
+      "{{es-ES|montaña||mon-TA-na}}"
+    ],
+    "explanation": "'nieve' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "snow"
+    ],
+    "source": "https://www.spanishdict.com/translate/nieve"
+  },
+  {
+    "itemId": "73d7e0e0-923c-49e8-b8d7-4697ba2b152b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'wind' in everyday use?",
+    "correctAnswer": "{{es-ES|viento||BIEN-to}}",
+    "incorrectAnswers": [
+      "{{es-ES|nube||NU-be}}",
+      "{{es-ES|montaña||mon-TA-na}}",
+      "{{es-ES|río||RIO}}"
+    ],
+    "explanation": "'viento' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "wind"
+    ],
+    "source": "https://www.spanishdict.com/translate/viento"
+  },
+  {
+    "itemId": "29b0f37a-c0b4-47f0-855e-56cda3a1da9b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'cloud'.",
+    "correctAnswer": "{{es-ES|nube||NU-be}}",
+    "incorrectAnswers": [
+      "{{es-ES|montaña||mon-TA-na}}",
+      "{{es-ES|río||RIO}}",
+      "{{es-ES|mar||MAR}}"
+    ],
+    "explanation": "'nube' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "cloud"
+    ],
+    "source": "https://www.spanishdict.com/translate/nube"
+  },
+  {
+    "itemId": "e0ca20ca-85f5-44bd-92d3-3eda61aec154",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'mountain'?",
+    "correctAnswer": "{{es-ES|montaña||mon-TA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|río||RIO}}",
+      "{{es-ES|mar||MAR}}",
+      "{{es-ES|playa||PLAYA}}"
+    ],
+    "explanation": "'montaña' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "mountain"
+    ],
+    "source": "https://www.spanishdict.com/translate/monta%C3%B1a"
+  },
+  {
+    "itemId": "9d1f8bda-2568-4a89-8563-7c69622bd490",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'river'?",
+    "correctAnswer": "{{es-ES|río||RIO}}",
+    "incorrectAnswers": [
+      "{{es-ES|mar||MAR}}",
+      "{{es-ES|playa||PLAYA}}",
+      "{{es-ES|bosque||BOS-ke}}"
+    ],
+    "explanation": "'río' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "river"
+    ],
+    "source": "https://www.spanishdict.com/translate/r%C3%ADo"
+  },
+  {
+    "itemId": "9ad4047e-3696-4b72-8c79-4c3c0bc73779",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'sea' in everyday use?",
+    "correctAnswer": "{{es-ES|mar||MAR}}",
+    "incorrectAnswers": [
+      "{{es-ES|playa||PLAYA}}",
+      "{{es-ES|bosque||BOS-ke}}",
+      "{{es-ES|árbol||ar-BOL}}"
+    ],
+    "explanation": "'mar' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sea"
+    ],
+    "source": "https://www.spanishdict.com/translate/mar"
+  },
+  {
+    "itemId": "4996f2f1-f518-4ed5-af0d-9f6381229e8c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'beach'.",
+    "correctAnswer": "{{es-ES|playa||PLAYA}}",
+    "incorrectAnswers": [
+      "{{es-ES|bosque||BOS-ke}}",
+      "{{es-ES|árbol||ar-BOL}}",
+      "{{es-ES|flor||FLOR}}"
+    ],
+    "explanation": "'playa' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "beach"
+    ],
+    "source": "https://www.spanishdict.com/translate/playa"
+  },
+  {
+    "itemId": "b0951c98-94f5-434a-9840-f8c68ebd76f6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'forest'?",
+    "correctAnswer": "{{es-ES|bosque||BOS-ke}}",
+    "incorrectAnswers": [
+      "{{es-ES|árbol||ar-BOL}}",
+      "{{es-ES|flor||FLOR}}",
+      "{{es-ES|clima||CLI-ma}}"
+    ],
+    "explanation": "'bosque' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "forest"
+    ],
+    "source": "https://www.spanishdict.com/translate/bosque"
+  },
+  {
+    "itemId": "3fc2ae35-8680-4bdd-a8eb-08231219d180",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'tree'?",
+    "correctAnswer": "{{es-ES|árbol||ar-BOL}}",
+    "incorrectAnswers": [
+      "{{es-ES|flor||FLOR}}",
+      "{{es-ES|clima||CLI-ma}}",
+      "{{es-ES|sol||SOL}}"
+    ],
+    "explanation": "'árbol' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "tree"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C3%A1rbol"
+  },
+  {
+    "itemId": "3010f33d-58a4-48e4-ad54-75ce43d57924",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'flower' in everyday use?",
+    "correctAnswer": "{{es-ES|flor||FLOR}}",
+    "incorrectAnswers": [
+      "{{es-ES|clima||CLI-ma}}",
+      "{{es-ES|sol||SOL}}",
+      "{{es-ES|luna||LU-na}}"
+    ],
+    "explanation": "'flor' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "flower"
+    ],
+    "source": "https://www.spanishdict.com/translate/flor"
+  },
+  {
+    "itemId": "814e5f76-512a-4dff-b5d5-105923a95570",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'weather'.",
+    "correctAnswer": "{{es-ES|clima||CLI-ma}}",
+    "incorrectAnswers": [
+      "{{es-ES|sol||SOL}}",
+      "{{es-ES|luna||LU-na}}",
+      "{{es-ES|estrella||ES-treya}}"
+    ],
+    "explanation": "'clima' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "weather"
+    ],
+    "source": "https://www.spanishdict.com/translate/clima"
+  },
+  {
+    "itemId": "633af2ca-f2f0-4ff7-80f6-e95ff3e152f1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'be'?",
+    "correctAnswer": "{{es-ES|ser||SER}}",
+    "incorrectAnswers": [
+      "{{es-ES|tener||te-NER}}",
+      "{{es-ES|querer||ke-RER}}",
+      "{{es-ES|necesitar||ne-seh-si-TAR}}"
+    ],
+    "explanation": "'ser' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "be"
+    ],
+    "source": "https://www.spanishdict.com/translate/ser"
+  },
+  {
+    "itemId": "611f7cab-7fde-4719-a60c-60f5dc3fad5c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'have' in everyday use?",
+    "correctAnswer": "{{es-ES|tener||te-NER}}",
+    "incorrectAnswers": [
+      "{{es-ES|querer||ke-RER}}",
+      "{{es-ES|necesitar||ne-seh-si-TAR}}",
+      "{{es-ES|ir||IR}}"
+    ],
+    "explanation": "'tener' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "have"
+    ],
+    "source": "https://www.spanishdict.com/translate/tener"
+  },
+  {
+    "itemId": "f6cc75a4-9e1f-48ea-8ee3-817a5180c3f1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'want'.",
+    "correctAnswer": "{{es-ES|querer||ke-RER}}",
+    "incorrectAnswers": [
+      "{{es-ES|necesitar||ne-seh-si-TAR}}",
+      "{{es-ES|ir||IR}}",
+      "{{es-ES|venir||be-NIR}}"
+    ],
+    "explanation": "'querer' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "want"
+    ],
+    "source": "https://www.spanishdict.com/translate/querer"
+  },
+  {
+    "itemId": "d4ff060a-ff9f-4183-b91c-ee9b822baa41",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'need'?",
+    "correctAnswer": "{{es-ES|necesitar||ne-seh-si-TAR}}",
+    "incorrectAnswers": [
+      "{{es-ES|ir||IR}}",
+      "{{es-ES|venir||be-NIR}}",
+      "{{es-ES|comer||co-MER}}"
+    ],
+    "explanation": "'necesitar' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "need"
+    ],
+    "source": "https://www.spanishdict.com/translate/necesitar"
+  },
+  {
+    "itemId": "7aa4640f-882b-48ce-b708-2b131f8f5ec6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'go'?",
+    "correctAnswer": "{{es-ES|ir||IR}}",
+    "incorrectAnswers": [
+      "{{es-ES|venir||be-NIR}}",
+      "{{es-ES|comer||co-MER}}",
+      "{{es-ES|beber||be-BER}}"
+    ],
+    "explanation": "'ir' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "go"
+    ],
+    "source": "https://www.spanishdict.com/translate/ir"
+  },
+  {
+    "itemId": "87f268d3-d974-4d23-ac38-fbdbe4550641",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'come' in everyday use?",
+    "correctAnswer": "{{es-ES|venir||be-NIR}}",
+    "incorrectAnswers": [
+      "{{es-ES|comer||co-MER}}",
+      "{{es-ES|beber||be-BER}}",
+      "{{es-ES|dormir||dor-MIR}}"
+    ],
+    "explanation": "'venir' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "come"
+    ],
+    "source": "https://www.spanishdict.com/translate/venir"
+  },
+  {
+    "itemId": "3cea9ac1-21c2-427f-a56c-6fde491c44bc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'eat'.",
+    "correctAnswer": "{{es-ES|comer||co-MER}}",
+    "incorrectAnswers": [
+      "{{es-ES|beber||be-BER}}",
+      "{{es-ES|dormir||dor-MIR}}",
+      "{{es-ES|despertarse||des-per-TAR-se}}"
+    ],
+    "explanation": "'comer' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "eat"
+    ],
+    "source": "https://www.spanishdict.com/translate/comer"
+  },
+  {
+    "itemId": "b39f8f11-bfca-4915-80c8-54c345029a1e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'drink'?",
+    "correctAnswer": "{{es-ES|beber||be-BER}}",
+    "incorrectAnswers": [
+      "{{es-ES|dormir||dor-MIR}}",
+      "{{es-ES|despertarse||des-per-TAR-se}}",
+      "{{es-ES|trabajar||tra-ba-HAR}}"
+    ],
+    "explanation": "'beber' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "drink"
+    ],
+    "source": "https://www.spanishdict.com/translate/beber"
+  },
+  {
+    "itemId": "829b28d2-c7d7-4568-97a3-10b977b6963b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'sleep'?",
+    "correctAnswer": "{{es-ES|dormir||dor-MIR}}",
+    "incorrectAnswers": [
+      "{{es-ES|despertarse||des-per-TAR-se}}",
+      "{{es-ES|trabajar||tra-ba-HAR}}",
+      "{{es-ES|hablar||ha-BLAR}}"
+    ],
+    "explanation": "'dormir' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "sleep"
+    ],
+    "source": "https://www.spanishdict.com/translate/dormir"
+  }
+]

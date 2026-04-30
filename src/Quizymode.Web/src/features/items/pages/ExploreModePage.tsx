@@ -119,6 +119,7 @@ const ExploreModePage = () => {
   // Must be declared before useQuery that references it
   // Initialize synchronously from sessionStorage to avoid race conditions
   // Restore if we have an itemId (meaning we're navigating to a specific item)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getStoredItems = (): any[] | null => {
     if (!collectionId && itemId) {
       // Restore when navigating to a specific item (from ItemsPage or comments)
@@ -139,7 +140,7 @@ const ExploreModePage = () => {
               return context.items;
             }
           }
-        } catch (e) {
+        } catch {
           // Invalid stored data, ignore
         }
       }
@@ -147,6 +148,7 @@ const ExploreModePage = () => {
     return null;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [storedItems, setStoredItems] = useState<any[] | null>(
     getStoredItems()
   );
@@ -212,10 +214,12 @@ const ExploreModePage = () => {
                 !category;
               if (itemInStoredList || categoryMatches) {
               // Set storedItems state with the full items list
+              // eslint-disable-next-line react-hooks/set-state-in-effect
               setStoredItems(context.items);
 
               // Find the index of the current itemId in stored items
               const index = context.items.findIndex(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (item: any) => item.id === itemId
               );
               if (index !== -1) {
@@ -227,7 +231,7 @@ const ExploreModePage = () => {
               setHasRestoredItems(true);
             }
           }
-        } catch (e) {
+        } catch {
           // Invalid stored data, ignore
         }
       }
@@ -249,7 +253,7 @@ const ExploreModePage = () => {
           if (categoryMatches && context.mode === "explore") {
             sessionStorage.removeItem("navigationContext_explore");
           }
-        } catch (e) {
+        } catch {
           // Invalid stored data, ignore
         }
       }
@@ -273,6 +277,7 @@ const ExploreModePage = () => {
     if (itemId && items.length > 0) {
       const index = items.findIndex((item) => item.id === itemId);
       if (index !== -1) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCurrentIndex(index);
       }
     }
@@ -328,6 +333,7 @@ const ExploreModePage = () => {
 
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentIndex(0);
     }
   }, [items.length, currentIndex]);

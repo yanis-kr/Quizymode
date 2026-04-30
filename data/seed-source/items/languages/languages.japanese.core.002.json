@@ -1,0 +1,2393 @@
+[
+  {
+    "itemId": "148eb0c0-aa97-4a33-8ef1-fce42f58342c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'child'.",
+    "correctAnswer": "{{ja-JP|子ども|kodomo|koh-DOH-moh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|赤ちゃん|akachan|AH-kah-chahn}}",
+      "{{ja-JP|男|otoko|oh-TOH-koh}}",
+      "{{ja-JP|女|onna|OHN-nah}}"
+    ],
+    "explanation": "'子ども' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "child"
+    ],
+    "source": "https://jisho.org/search/%E5%AD%90%E3%81%A9%E3%82%82"
+  },
+  {
+    "itemId": "af4128b7-aa56-4756-af1f-e8e783b47b62",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'baby'?",
+    "correctAnswer": "{{ja-JP|赤ちゃん|akachan|AH-kah-chahn}}",
+    "incorrectAnswers": [
+      "{{ja-JP|男|otoko|oh-TOH-koh}}",
+      "{{ja-JP|女|onna|OHN-nah}}",
+      "{{ja-JP|人|hito|HEE-toh}}"
+    ],
+    "explanation": "'赤ちゃん' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "baby"
+    ],
+    "source": "https://jisho.org/search/%E8%B5%A4%E3%81%A1%E3%82%83%E3%82%93"
+  },
+  {
+    "itemId": "b2cbf861-1199-4d48-9d7c-73bda2b702ee",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'man'?",
+    "correctAnswer": "{{ja-JP|男|otoko|oh-TOH-koh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|女|onna|OHN-nah}}",
+      "{{ja-JP|人|hito|HEE-toh}}",
+      "{{ja-JP|母|haha|HAH-hah}}"
+    ],
+    "explanation": "'男' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "man"
+    ],
+    "source": "https://jisho.org/search/%E7%94%B7"
+  },
+  {
+    "itemId": "64b72e70-d84f-4b0c-bb4e-4acc2e383cda",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'woman' in everyday use?",
+    "correctAnswer": "{{ja-JP|女|onna|OHN-nah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|人|hito|HEE-toh}}",
+      "{{ja-JP|母|haha|HAH-hah}}",
+      "{{ja-JP|父|chichi|CHEE-chee}}"
+    ],
+    "explanation": "'女' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "woman"
+    ],
+    "source": "https://jisho.org/search/%E5%A5%B3"
+  },
+  {
+    "itemId": "2b0a43c6-135c-463a-9b32-2299d87d977e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'person'.",
+    "correctAnswer": "{{ja-JP|人|hito|HEE-toh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|母|haha|HAH-hah}}",
+      "{{ja-JP|父|chichi|CHEE-chee}}",
+      "{{ja-JP|兄|ani|AH-nee}}"
+    ],
+    "explanation": "'人' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "person"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%BA"
+  },
+  {
+    "itemId": "cdd640a8-23dc-4b46-a6d6-2c2fcfbb3bfa",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'head'?",
+    "correctAnswer": "{{ja-JP|頭|atama|ah-TAH-mah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|手|te|TEH}}",
+      "{{ja-JP|足|ashi|AH-shee}}",
+      "{{ja-JP|目|me|MEH}}"
+    ],
+    "explanation": "'頭' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "head"
+    ],
+    "source": "https://jisho.org/search/%E9%A0%AD"
+  },
+  {
+    "itemId": "1309425e-9e52-4a7b-9788-5b23e75f4aa7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'hand' in everyday use?",
+    "correctAnswer": "{{ja-JP|手|te|TEH}}",
+    "incorrectAnswers": [
+      "{{ja-JP|足|ashi|AH-shee}}",
+      "{{ja-JP|目|me|MEH}}",
+      "{{ja-JP|耳|mimi|MEE-mee}}"
+    ],
+    "explanation": "'手' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "hand"
+    ],
+    "source": "https://jisho.org/search/%E6%89%8B"
+  },
+  {
+    "itemId": "80fac5a7-1980-42be-9aa4-739256232298",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'foot'.",
+    "correctAnswer": "{{ja-JP|足|ashi|AH-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|目|me|MEH}}",
+      "{{ja-JP|耳|mimi|MEE-mee}}",
+      "{{ja-JP|鼻|hana|HAH-nah}}"
+    ],
+    "explanation": "'足' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "foot"
+    ],
+    "source": "https://jisho.org/search/%E8%B6%B3"
+  },
+  {
+    "itemId": "e25ab0eb-bf63-4091-b5fb-e6538472042d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'eye'?",
+    "correctAnswer": "{{ja-JP|目|me|MEH}}",
+    "incorrectAnswers": [
+      "{{ja-JP|耳|mimi|MEE-mee}}",
+      "{{ja-JP|鼻|hana|HAH-nah}}",
+      "{{ja-JP|口|kuchi|KOO-chee}}"
+    ],
+    "explanation": "'目' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "eye"
+    ],
+    "source": "https://jisho.org/search/%E7%9B%AE"
+  },
+  {
+    "itemId": "80e65059-d64a-4df0-964b-82909e91f4d2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'ear'?",
+    "correctAnswer": "{{ja-JP|耳|mimi|MEE-mee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|鼻|hana|HAH-nah}}",
+      "{{ja-JP|口|kuchi|KOO-chee}}",
+      "{{ja-JP|心|kokoro|koh-KOH-roh}}"
+    ],
+    "explanation": "'耳' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "ear"
+    ],
+    "source": "https://jisho.org/search/%E8%80%B3"
+  },
+  {
+    "itemId": "6e9d8952-2ded-4db8-87d7-6619eac3a15d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'nose' in everyday use?",
+    "correctAnswer": "{{ja-JP|鼻|hana|HAH-nah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|口|kuchi|KOO-chee}}",
+      "{{ja-JP|心|kokoro|koh-KOH-roh}}",
+      "{{ja-JP|おなか|onaka|oh-NAH-kah}}"
+    ],
+    "explanation": "'鼻' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "nose"
+    ],
+    "source": "https://jisho.org/search/%E9%BC%BB"
+  },
+  {
+    "itemId": "e2560724-81d2-40d3-9ac6-2616d137278f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'mouth'.",
+    "correctAnswer": "{{ja-JP|口|kuchi|KOO-chee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|心|kokoro|koh-KOH-roh}}",
+      "{{ja-JP|おなか|onaka|oh-NAH-kah}}",
+      "{{ja-JP|腕|ude|OO-deh}}"
+    ],
+    "explanation": "'口' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "mouth"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%A3"
+  },
+  {
+    "itemId": "7b273b73-0711-479d-8f73-b9954d956629",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'heart'?",
+    "correctAnswer": "{{ja-JP|心|kokoro|koh-KOH-roh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|おなか|onaka|oh-NAH-kah}}",
+      "{{ja-JP|腕|ude|OO-deh}}",
+      "{{ja-JP|脚|ashi|AH-shee}}"
+    ],
+    "explanation": "'心' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "heart"
+    ],
+    "source": "https://jisho.org/search/%E5%BF%83"
+  },
+  {
+    "itemId": "a06b7fc1-c3fe-4417-a1f2-91b18b892df4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'stomach'?",
+    "correctAnswer": "{{ja-JP|おなか|onaka|oh-NAH-kah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|腕|ude|OO-deh}}",
+      "{{ja-JP|脚|ashi|AH-shee}}",
+      "{{ja-JP|指|yubi|YOO-bee}}"
+    ],
+    "explanation": "'おなか' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "stomach"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E3%81%AA%E3%81%8B"
+  },
+  {
+    "itemId": "ef8154c5-b0c8-4b0f-b508-3dc8e37b3245",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'arm' in everyday use?",
+    "correctAnswer": "{{ja-JP|腕|ude|OO-deh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|脚|ashi|AH-shee}}",
+      "{{ja-JP|指|yubi|YOO-bee}}",
+      "{{ja-JP|背中|senaka|seh-NAH-kah}}"
+    ],
+    "explanation": "'腕' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "arm"
+    ],
+    "source": "https://jisho.org/search/%E8%85%95"
+  },
+  {
+    "itemId": "0762a024-12af-460d-b182-97552bc44830",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'leg'.",
+    "correctAnswer": "{{ja-JP|脚|ashi|AH-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|指|yubi|YOO-bee}}",
+      "{{ja-JP|背中|senaka|seh-NAH-kah}}",
+      "{{ja-JP|頭|atama|ah-TAH-mah}}"
+    ],
+    "explanation": "'脚' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "leg"
+    ],
+    "source": "https://jisho.org/search/%E8%84%9A"
+  },
+  {
+    "itemId": "0a81f9f6-6187-4849-aeb0-8531a93774e0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'finger'?",
+    "correctAnswer": "{{ja-JP|指|yubi|YOO-bee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|背中|senaka|seh-NAH-kah}}",
+      "{{ja-JP|頭|atama|ah-TAH-mah}}",
+      "{{ja-JP|手|te|TEH}}"
+    ],
+    "explanation": "'指' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "finger"
+    ],
+    "source": "https://jisho.org/search/%E6%8C%87"
+  },
+  {
+    "itemId": "2a42a510-844d-4c3e-8777-4f80cd441592",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'back'?",
+    "correctAnswer": "{{ja-JP|背中|senaka|seh-NAH-kah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|頭|atama|ah-TAH-mah}}",
+      "{{ja-JP|手|te|TEH}}",
+      "{{ja-JP|足|ashi|AH-shee}}"
+    ],
+    "explanation": "'背中' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "back"
+    ],
+    "source": "https://jisho.org/search/%E8%83%8C%E4%B8%AD"
+  },
+  {
+    "itemId": "5f443273-9674-422a-a9a8-dcf33eb62421",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'bread'?",
+    "correctAnswer": "{{ja-JP|パン|pan|PAHN}}",
+    "incorrectAnswers": [
+      "{{ja-JP|牛乳|gyuunyuu|GYOO-nyoo}}",
+      "{{ja-JP|卵|tamago|tah-MAH-goh}}",
+      "{{ja-JP|肉|niku|NEE-koo}}"
+    ],
+    "explanation": "'パン' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "bread"
+    ],
+    "source": "https://jisho.org/search/%E3%83%91%E3%83%B3"
+  },
+  {
+    "itemId": "deb41fad-f334-4614-93bf-4518516a967e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'milk' in everyday use?",
+    "correctAnswer": "{{ja-JP|牛乳|gyuunyuu|GYOO-nyoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|卵|tamago|tah-MAH-goh}}",
+      "{{ja-JP|肉|niku|NEE-koo}}",
+      "{{ja-JP|魚|sakana|sah-KAH-nah}}"
+    ],
+    "explanation": "'牛乳' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "milk"
+    ],
+    "source": "https://jisho.org/search/%E7%89%9B%E4%B9%B3"
+  },
+  {
+    "itemId": "b6f7b24b-5dbe-4be9-ae7c-7c3e0cea5f71",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'egg'.",
+    "correctAnswer": "{{ja-JP|卵|tamago|tah-MAH-goh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|肉|niku|NEE-koo}}",
+      "{{ja-JP|魚|sakana|sah-KAH-nah}}",
+      "{{ja-JP|果物|kudamono|koo-dah-MOH-noh}}"
+    ],
+    "explanation": "'卵' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "egg"
+    ],
+    "source": "https://jisho.org/search/%E5%8D%B5"
+  },
+  {
+    "itemId": "bc67fa13-6635-4726-bdbc-bbbece858f4e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'meat'?",
+    "correctAnswer": "{{ja-JP|肉|niku|NEE-koo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|魚|sakana|sah-KAH-nah}}",
+      "{{ja-JP|果物|kudamono|koo-dah-MOH-noh}}",
+      "{{ja-JP|野菜|yasai|yah-SY}}"
+    ],
+    "explanation": "'肉' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "meat"
+    ],
+    "source": "https://jisho.org/search/%E8%82%89"
+  },
+  {
+    "itemId": "d92b78a1-1457-4355-b331-934810ef3629",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'fish'?",
+    "correctAnswer": "{{ja-JP|魚|sakana|sah-KAH-nah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|果物|kudamono|koo-dah-MOH-noh}}",
+      "{{ja-JP|野菜|yasai|yah-SY}}",
+      "{{ja-JP|ご飯|gohan|goh-HAHN}}"
+    ],
+    "explanation": "'魚' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fish"
+    ],
+    "source": "https://jisho.org/search/%E9%AD%9A"
+  },
+  {
+    "itemId": "e2919ba6-4391-49a9-9a2b-4cd5f17104bb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'fruit' in everyday use?",
+    "correctAnswer": "{{ja-JP|果物|kudamono|koo-dah-MOH-noh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|野菜|yasai|yah-SY}}",
+      "{{ja-JP|ご飯|gohan|goh-HAHN}}",
+      "{{ja-JP|パスタ|pasuta|PAH-soo-tah}}"
+    ],
+    "explanation": "'果物' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fruit"
+    ],
+    "source": "https://jisho.org/search/%E6%9E%9C%E7%89%A9"
+  },
+  {
+    "itemId": "4c885f24-4027-4822-83f8-fd1a9f66be1c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'vegetable'.",
+    "correctAnswer": "{{ja-JP|野菜|yasai|yah-SY}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ご飯|gohan|goh-HAHN}}",
+      "{{ja-JP|パスタ|pasuta|PAH-soo-tah}}",
+      "{{ja-JP|チーズ|chiizu|CHEE-zoo}}"
+    ],
+    "explanation": "'野菜' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "vegetable"
+    ],
+    "source": "https://jisho.org/search/%E9%87%8E%E8%8F%9C"
+  },
+  {
+    "itemId": "6346cf56-2282-40f3-9874-4a4c59a5d588",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'rice'?",
+    "correctAnswer": "{{ja-JP|ご飯|gohan|goh-HAHN}}",
+    "incorrectAnswers": [
+      "{{ja-JP|パスタ|pasuta|PAH-soo-tah}}",
+      "{{ja-JP|チーズ|chiizu|CHEE-zoo}}",
+      "{{ja-JP|コーヒー|koohii|KOH-hee}}"
+    ],
+    "explanation": "'ご飯' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "rice"
+    ],
+    "source": "https://jisho.org/search/%E3%81%94%E9%A3%AF"
+  },
+  {
+    "itemId": "c8a3cb3e-a683-48e3-884b-48b38ebfa922",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'pasta'?",
+    "correctAnswer": "{{ja-JP|パスタ|pasuta|PAH-soo-tah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|チーズ|chiizu|CHEE-zoo}}",
+      "{{ja-JP|コーヒー|koohii|KOH-hee}}",
+      "{{ja-JP|お茶|ocha|oh-CHAH}}"
+    ],
+    "explanation": "'パスタ' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "pasta"
+    ],
+    "source": "https://jisho.org/search/%E3%83%91%E3%82%B9%E3%82%BF"
+  },
+  {
+    "itemId": "c86b09a0-2f7a-4369-bae1-19f6f7b558d4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'cheese' in everyday use?",
+    "correctAnswer": "{{ja-JP|チーズ|chiizu|CHEE-zoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|コーヒー|koohii|KOH-hee}}",
+      "{{ja-JP|お茶|ocha|oh-CHAH}}",
+      "{{ja-JP|ジュース|juusu|JOO-soo}}"
+    ],
+    "explanation": "'チーズ' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "cheese"
+    ],
+    "source": "https://jisho.org/search/%E3%83%81%E3%83%BC%E3%82%BA"
+  },
+  {
+    "itemId": "f87bfe3b-7b47-4203-97f2-ad20fd542d63",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'coffee'.",
+    "correctAnswer": "{{ja-JP|コーヒー|koohii|KOH-hee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|お茶|ocha|oh-CHAH}}",
+      "{{ja-JP|ジュース|juusu|JOO-soo}}",
+      "{{ja-JP|ビール|biiru|BEE-roo}}"
+    ],
+    "explanation": "'コーヒー' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "coffee"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC"
+  },
+  {
+    "itemId": "daf3c49c-759d-42d3-8cac-eae78a058c06",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'tea'?",
+    "correctAnswer": "{{ja-JP|お茶|ocha|oh-CHAH}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ジュース|juusu|JOO-soo}}",
+      "{{ja-JP|ビール|biiru|BEE-roo}}",
+      "{{ja-JP|ワイン|wain|WY-n}}"
+    ],
+    "explanation": "'お茶' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "tea"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%8C%B6"
+  },
+  {
+    "itemId": "69fc0a12-7550-4cfa-80a9-3a45d92b3877",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'juice'?",
+    "correctAnswer": "{{ja-JP|ジュース|juusu|JOO-soo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ビール|biiru|BEE-roo}}",
+      "{{ja-JP|ワイン|wain|WY-n}}",
+      "{{ja-JP|油|abura|ah-BOO-rah}}"
+    ],
+    "explanation": "'ジュース' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "juice"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9"
+  },
+  {
+    "itemId": "860e0fb2-096f-4ec8-bcf5-5a4a91bf0881",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'beer' in everyday use?",
+    "correctAnswer": "{{ja-JP|ビール|biiru|BEE-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ワイン|wain|WY-n}}",
+      "{{ja-JP|油|abura|ah-BOO-rah}}",
+      "{{ja-JP|塩|shio|SHEE-oh}}"
+    ],
+    "explanation": "'ビール' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "beer"
+    ],
+    "source": "https://jisho.org/search/%E3%83%93%E3%83%BC%E3%83%AB"
+  },
+  {
+    "itemId": "f91bd432-ed82-44c8-a69f-df9729007065",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'wine'.",
+    "correctAnswer": "{{ja-JP|ワイン|wain|WY-n}}",
+    "incorrectAnswers": [
+      "{{ja-JP|油|abura|ah-BOO-rah}}",
+      "{{ja-JP|塩|shio|SHEE-oh}}",
+      "{{ja-JP|砂糖|satou|sah-TOH}}"
+    ],
+    "explanation": "'ワイン' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "wine"
+    ],
+    "source": "https://jisho.org/search/%E3%83%AF%E3%82%A4%E3%83%B3"
+  },
+  {
+    "itemId": "645907c5-a92b-42e4-bf03-41e98d616991",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'oil'?",
+    "correctAnswer": "{{ja-JP|油|abura|ah-BOO-rah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|塩|shio|SHEE-oh}}",
+      "{{ja-JP|砂糖|satou|sah-TOH}}",
+      "{{ja-JP|パン|pan|PAHN}}"
+    ],
+    "explanation": "'油' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "oil"
+    ],
+    "source": "https://jisho.org/search/%E6%B2%B9"
+  },
+  {
+    "itemId": "c2d75a41-4a97-40d8-ba65-69b52b8e1cc8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'salt'?",
+    "correctAnswer": "{{ja-JP|塩|shio|SHEE-oh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|砂糖|satou|sah-TOH}}",
+      "{{ja-JP|パン|pan|PAHN}}",
+      "{{ja-JP|牛乳|gyuunyuu|GYOO-nyoo}}"
+    ],
+    "explanation": "'塩' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "salt"
+    ],
+    "source": "https://jisho.org/search/%E5%A1%A9"
+  },
+  {
+    "itemId": "3f300323-bcc6-4d22-a75f-1b9222614bae",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'sugar' in everyday use?",
+    "correctAnswer": "{{ja-JP|砂糖|satou|sah-TOH}}",
+    "incorrectAnswers": [
+      "{{ja-JP|パン|pan|PAHN}}",
+      "{{ja-JP|牛乳|gyuunyuu|GYOO-nyoo}}",
+      "{{ja-JP|卵|tamago|tah-MAH-goh}}"
+    ],
+    "explanation": "'砂糖' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "sugar"
+    ],
+    "source": "https://jisho.org/search/%E7%A0%82%E7%B3%96"
+  },
+  {
+    "itemId": "d00e24bf-f133-4561-b0e6-818d3f5cc478",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'dog'?",
+    "correctAnswer": "{{ja-JP|犬|inu|EE-noo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|猫|neko|NEH-koh}}",
+      "{{ja-JP|鳥|tori|TOH-ree}}",
+      "{{ja-JP|馬|uma|OO-mah}}"
+    ],
+    "explanation": "'犬' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "dog"
+    ],
+    "source": "https://jisho.org/search/%E7%8A%AC"
+  },
+  {
+    "itemId": "085e6d5e-0b05-46f9-8a08-03c4b5dfcb7e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'cat' in everyday use?",
+    "correctAnswer": "{{ja-JP|猫|neko|NEH-koh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|鳥|tori|TOH-ree}}",
+      "{{ja-JP|馬|uma|OO-mah}}",
+      "{{ja-JP|牛|ushi|OO-shee}}"
+    ],
+    "explanation": "'猫' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cat"
+    ],
+    "source": "https://jisho.org/search/%E7%8C%AB"
+  },
+  {
+    "itemId": "89ab2605-7042-4240-8bd2-06a272628cb1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'bird'.",
+    "correctAnswer": "{{ja-JP|鳥|tori|TOH-ree}}",
+    "incorrectAnswers": [
+      "{{ja-JP|馬|uma|OO-mah}}",
+      "{{ja-JP|牛|ushi|OO-shee}}",
+      "{{ja-JP|豚|buta|BOO-tah}}"
+    ],
+    "explanation": "'鳥' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "bird"
+    ],
+    "source": "https://jisho.org/search/%E9%B3%A5"
+  },
+  {
+    "itemId": "ff4e3929-e97f-4ee1-8ef2-85591083d1de",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'horse'?",
+    "correctAnswer": "{{ja-JP|馬|uma|OO-mah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|牛|ushi|OO-shee}}",
+      "{{ja-JP|豚|buta|BOO-tah}}",
+      "{{ja-JP|鶏|niwatori|nee-wah-TOH-ree}}"
+    ],
+    "explanation": "'馬' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "horse"
+    ],
+    "source": "https://jisho.org/search/%E9%A6%AC"
+  },
+  {
+    "itemId": "51ae4752-edf6-47cb-a638-26ca695c0d02",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'cow'?",
+    "correctAnswer": "{{ja-JP|牛|ushi|OO-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|豚|buta|BOO-tah}}",
+      "{{ja-JP|鶏|niwatori|nee-wah-TOH-ree}}",
+      "{{ja-JP|ねずみ|nezumi|neh-ZOO-mee}}"
+    ],
+    "explanation": "'牛' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cow"
+    ],
+    "source": "https://jisho.org/search/%E7%89%9B"
+  },
+  {
+    "itemId": "66ca0512-b4cb-4d84-8e1b-c17e1632c711",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'pig' in everyday use?",
+    "correctAnswer": "{{ja-JP|豚|buta|BOO-tah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|鶏|niwatori|nee-wah-TOH-ree}}",
+      "{{ja-JP|ねずみ|nezumi|neh-ZOO-mee}}",
+      "{{ja-JP|うさぎ|usagi|oo-SAH-gee}}"
+    ],
+    "explanation": "'豚' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "pig"
+    ],
+    "source": "https://jisho.org/search/%E8%B1%9A"
+  },
+  {
+    "itemId": "b352fac0-a86a-4030-b82c-a8cf4cb9066b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'chicken'.",
+    "correctAnswer": "{{ja-JP|鶏|niwatori|nee-wah-TOH-ree}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ねずみ|nezumi|neh-ZOO-mee}}",
+      "{{ja-JP|うさぎ|usagi|oo-SAH-gee}}",
+      "{{ja-JP|犬|inu|EE-noo}}"
+    ],
+    "explanation": "'鶏' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "chicken"
+    ],
+    "source": "https://jisho.org/search/%E9%B6%8F"
+  },
+  {
+    "itemId": "c59b3d30-91a7-4b6c-8aac-b4d8b050894d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'mouse'?",
+    "correctAnswer": "{{ja-JP|ねずみ|nezumi|neh-ZOO-mee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|うさぎ|usagi|oo-SAH-gee}}",
+      "{{ja-JP|犬|inu|EE-noo}}",
+      "{{ja-JP|猫|neko|NEH-koh}}"
+    ],
+    "explanation": "'ねずみ' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "mouse"
+    ],
+    "source": "https://jisho.org/search/%E3%81%AD%E3%81%9A%E3%81%BF"
+  },
+  {
+    "itemId": "79248872-cc03-4267-8d3f-925dfb915323",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'rabbit'?",
+    "correctAnswer": "{{ja-JP|うさぎ|usagi|oo-SAH-gee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|犬|inu|EE-noo}}",
+      "{{ja-JP|猫|neko|NEH-koh}}",
+      "{{ja-JP|鳥|tori|TOH-ree}}"
+    ],
+    "explanation": "'うさぎ' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "rabbit"
+    ],
+    "source": "https://jisho.org/search/%E3%81%86%E3%81%95%E3%81%8E"
+  },
+  {
+    "itemId": "290ca0bb-a901-4cdd-87aa-4029fb153e2d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'house'?",
+    "correctAnswer": "{{ja-JP|家|ie|EE-eh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|部屋|heya|HEH-yah}}",
+      "{{ja-JP|ドア|doa|DOH-ah}}",
+      "{{ja-JP|窓|mado|MAH-doh}}"
+    ],
+    "explanation": "'家' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "house"
+    ],
+    "source": "https://jisho.org/search/%E5%AE%B6"
+  },
+  {
+    "itemId": "d01f9380-43a9-41e1-b187-47164348a57c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'room' in everyday use?",
+    "correctAnswer": "{{ja-JP|部屋|heya|HEH-yah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ドア|doa|DOH-ah}}",
+      "{{ja-JP|窓|mado|MAH-doh}}",
+      "{{ja-JP|ベッド|beddo|BEH-doh}}"
+    ],
+    "explanation": "'部屋' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "room"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B"
+  },
+  {
+    "itemId": "1864109d-260d-4d9a-b7b0-05d221e4d607",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'door'.",
+    "correctAnswer": "{{ja-JP|ドア|doa|DOH-ah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|窓|mado|MAH-doh}}",
+      "{{ja-JP|ベッド|beddo|BEH-doh}}",
+      "{{ja-JP|テーブル|tēburu|TEH-boo-roo}}"
+    ],
+    "explanation": "'ドア' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "door"
+    ],
+    "source": "https://jisho.org/search/%E3%83%89%E3%82%A2"
+  },
+  {
+    "itemId": "336ed0ee-f1e8-4230-a4c1-de8322dba7ef",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'window'?",
+    "correctAnswer": "{{ja-JP|窓|mado|MAH-doh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ベッド|beddo|BEH-doh}}",
+      "{{ja-JP|テーブル|tēburu|TEH-boo-roo}}",
+      "{{ja-JP|椅子|isu|EE-soo}}"
+    ],
+    "explanation": "'窓' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "window"
+    ],
+    "source": "https://jisho.org/search/%E7%AA%93"
+  },
+  {
+    "itemId": "dd7eba58-ea43-4b03-8ff1-2e7c76534096",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'bed'?",
+    "correctAnswer": "{{ja-JP|ベッド|beddo|BEH-doh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|テーブル|tēburu|TEH-boo-roo}}",
+      "{{ja-JP|椅子|isu|EE-soo}}",
+      "{{ja-JP|台所|daidokoro|dy-doh-KOH-roh}}"
+    ],
+    "explanation": "'ベッド' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bed"
+    ],
+    "source": "https://jisho.org/search/%E3%83%99%E3%83%83%E3%83%89"
+  },
+  {
+    "itemId": "04dce9d7-b5a1-4d36-b253-8096e7392832",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'table' in everyday use?",
+    "correctAnswer": "{{ja-JP|テーブル|tēburu|TEH-boo-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|椅子|isu|EE-soo}}",
+      "{{ja-JP|台所|daidokoro|dy-doh-KOH-roh}}",
+      "{{ja-JP|おふろ|ofuro|oh-FOO-roh}}"
+    ],
+    "explanation": "'テーブル' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "table"
+    ],
+    "source": "https://jisho.org/search/%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB"
+  },
+  {
+    "itemId": "4b72b1e4-cc82-4294-88b2-c3d24c32d2ea",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'chair'.",
+    "correctAnswer": "{{ja-JP|椅子|isu|EE-soo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|台所|daidokoro|dy-doh-KOH-roh}}",
+      "{{ja-JP|おふろ|ofuro|oh-FOO-roh}}",
+      "{{ja-JP|庭|niwa|NEE-wah}}"
+    ],
+    "explanation": "'椅子' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "chair"
+    ],
+    "source": "https://jisho.org/search/%E6%A4%85%E5%AD%90"
+  },
+  {
+    "itemId": "54d5157c-2672-4517-9543-fe65ae9375b9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'kitchen'?",
+    "correctAnswer": "{{ja-JP|台所|daidokoro|dy-doh-KOH-roh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|おふろ|ofuro|oh-FOO-roh}}",
+      "{{ja-JP|庭|niwa|NEE-wah}}",
+      "{{ja-JP|床|yuka|YOO-kah}}"
+    ],
+    "explanation": "'台所' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "kitchen"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%B0%E6%89%80"
+  },
+  {
+    "itemId": "5adbe568-b819-4718-aac9-0d74bc0acdc1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'bathroom'?",
+    "correctAnswer": "{{ja-JP|おふろ|ofuro|oh-FOO-roh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|庭|niwa|NEE-wah}}",
+      "{{ja-JP|床|yuka|YOO-kah}}",
+      "{{ja-JP|壁|kabe|KAH-beh}}"
+    ],
+    "explanation": "'おふろ' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bathroom"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E3%81%B5%E3%82%8D"
+  },
+  {
+    "itemId": "20bb5f47-de27-45ce-b7fe-07fb1e2a667d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'garden' in everyday use?",
+    "correctAnswer": "{{ja-JP|庭|niwa|NEE-wah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|床|yuka|YOO-kah}}",
+      "{{ja-JP|壁|kabe|KAH-beh}}",
+      "{{ja-JP|屋根|yane|YAH-neh}}"
+    ],
+    "explanation": "'庭' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "garden"
+    ],
+    "source": "https://jisho.org/search/%E5%BA%AD"
+  },
+  {
+    "itemId": "d8dff056-91c6-4575-b9de-6e39302dcb3d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'floor'.",
+    "correctAnswer": "{{ja-JP|床|yuka|YOO-kah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|壁|kabe|KAH-beh}}",
+      "{{ja-JP|屋根|yane|YAH-neh}}",
+      "{{ja-JP|ランプ|ranpu|RAHN-poo}}"
+    ],
+    "explanation": "'床' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "floor"
+    ],
+    "source": "https://jisho.org/search/%E5%BA%8A"
+  },
+  {
+    "itemId": "c92f7f24-fc76-43c1-bafd-d34a8062aaf3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'wall'?",
+    "correctAnswer": "{{ja-JP|壁|kabe|KAH-beh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|屋根|yane|YAH-neh}}",
+      "{{ja-JP|ランプ|ranpu|RAHN-poo}}",
+      "{{ja-JP|家|ie|EE-eh}}"
+    ],
+    "explanation": "'壁' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "wall"
+    ],
+    "source": "https://jisho.org/search/%E5%A3%81"
+  },
+  {
+    "itemId": "59ff9707-c92e-43f9-ace0-01e838ccacce",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'roof'?",
+    "correctAnswer": "{{ja-JP|屋根|yane|YAH-neh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ランプ|ranpu|RAHN-poo}}",
+      "{{ja-JP|家|ie|EE-eh}}",
+      "{{ja-JP|部屋|heya|HEH-yah}}"
+    ],
+    "explanation": "'屋根' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "roof"
+    ],
+    "source": "https://jisho.org/search/%E5%B1%8B%E6%A0%B9"
+  },
+  {
+    "itemId": "4096101c-db1e-4448-bfbc-3d5129e33991",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'lamp' in everyday use?",
+    "correctAnswer": "{{ja-JP|ランプ|ranpu|RAHN-poo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|家|ie|EE-eh}}",
+      "{{ja-JP|部屋|heya|HEH-yah}}",
+      "{{ja-JP|ドア|doa|DOH-ah}}"
+    ],
+    "explanation": "'ランプ' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "lamp"
+    ],
+    "source": "https://jisho.org/search/%E3%83%A9%E3%83%B3%E3%83%97"
+  },
+  {
+    "itemId": "c988487e-3095-4c33-a67a-2e9fd74f7a00",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'shirt'?",
+    "correctAnswer": "{{ja-JP|シャツ|shatsu|SHAH-tsoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ズボン|zubon|ZOO-bohn}}",
+      "{{ja-JP|ドレス|doresu|DOH-reh-soo}}",
+      "{{ja-JP|くつ|kutsu|KOO-tsoo}}"
+    ],
+    "explanation": "'シャツ' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shirt"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B7%E3%83%A3%E3%83%84"
+  },
+  {
+    "itemId": "7fd3de8b-81bc-454b-a886-8ebb74c0a895",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'pants' in everyday use?",
+    "correctAnswer": "{{ja-JP|ズボン|zubon|ZOO-bohn}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ドレス|doresu|DOH-reh-soo}}",
+      "{{ja-JP|くつ|kutsu|KOO-tsoo}}",
+      "{{ja-JP|くつした|kutsushita|KOO-tsoo-shee-tah}}"
+    ],
+    "explanation": "'ズボン' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "pants"
+    ],
+    "source": "https://jisho.org/search/%E3%82%BA%E3%83%9C%E3%83%B3"
+  },
+  {
+    "itemId": "930ba097-f1b4-4f26-9ae9-af6d59fd7cca",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'dress'.",
+    "correctAnswer": "{{ja-JP|ドレス|doresu|DOH-reh-soo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|くつ|kutsu|KOO-tsoo}}",
+      "{{ja-JP|くつした|kutsushita|KOO-tsoo-shee-tah}}",
+      "{{ja-JP|ジャケット|jaketto|JAH-keh-toh}}"
+    ],
+    "explanation": "'ドレス' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "dress"
+    ],
+    "source": "https://jisho.org/search/%E3%83%89%E3%83%AC%E3%82%B9"
+  },
+  {
+    "itemId": "2841574b-2c5e-4ab0-957c-287a3ebdd5b1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'shoes'?",
+    "correctAnswer": "{{ja-JP|くつ|kutsu|KOO-tsoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|くつした|kutsushita|KOO-tsoo-shee-tah}}",
+      "{{ja-JP|ジャケット|jaketto|JAH-keh-toh}}",
+      "{{ja-JP|帽子|boushi|BOH-shee}}"
+    ],
+    "explanation": "'くつ' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shoes"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8F%E3%81%A4"
+  },
+  {
+    "itemId": "a0dda2df-0a5a-4dc9-ae93-2e2594f60c0e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'socks'?",
+    "correctAnswer": "{{ja-JP|くつした|kutsushita|KOO-tsoo-shee-tah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ジャケット|jaketto|JAH-keh-toh}}",
+      "{{ja-JP|帽子|boushi|BOH-shee}}",
+      "{{ja-JP|かばん|kaban|KAH-bahn}}"
+    ],
+    "explanation": "'くつした' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "socks"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8F%E3%81%A4%E3%81%97%E3%81%9F"
+  },
+  {
+    "itemId": "d46ef87b-fdaa-413a-a1ce-38eec392c47d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'jacket' in everyday use?",
+    "correctAnswer": "{{ja-JP|ジャケット|jaketto|JAH-keh-toh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|帽子|boushi|BOH-shee}}",
+      "{{ja-JP|かばん|kaban|KAH-bahn}}",
+      "{{ja-JP|コート|kooto|KOH-toh}}"
+    ],
+    "explanation": "'ジャケット' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "jacket"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B8%E3%83%A3%E3%82%B1%E3%83%83%E3%83%88"
+  },
+  {
+    "itemId": "916266ae-ad65-4c8b-870f-b3d32276a262",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'hat'.",
+    "correctAnswer": "{{ja-JP|帽子|boushi|BOH-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|かばん|kaban|KAH-bahn}}",
+      "{{ja-JP|コート|kooto|KOH-toh}}",
+      "{{ja-JP|シャツ|shatsu|SHAH-tsoo}}"
+    ],
+    "explanation": "'帽子' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "hat"
+    ],
+    "source": "https://jisho.org/search/%E5%B8%BD%E5%AD%90"
+  },
+  {
+    "itemId": "c7bba5cb-0e29-4bdd-a610-195d7df02684",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'bag'?",
+    "correctAnswer": "{{ja-JP|かばん|kaban|KAH-bahn}}",
+    "incorrectAnswers": [
+      "{{ja-JP|コート|kooto|KOH-toh}}",
+      "{{ja-JP|シャツ|shatsu|SHAH-tsoo}}",
+      "{{ja-JP|ズボン|zubon|ZOO-bohn}}"
+    ],
+    "explanation": "'かばん' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "bag"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8B%E3%81%B0%E3%82%93"
+  },
+  {
+    "itemId": "0e5e6a99-9ce9-40bf-8b71-88b6f30f0de2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'coat'?",
+    "correctAnswer": "{{ja-JP|コート|kooto|KOH-toh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|シャツ|shatsu|SHAH-tsoo}}",
+      "{{ja-JP|ズボン|zubon|ZOO-bohn}}",
+      "{{ja-JP|ドレス|doresu|DOH-reh-soo}}"
+    ],
+    "explanation": "'コート' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "coat"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B3%E3%83%BC%E3%83%88"
+  },
+  {
+    "itemId": "7f690e89-d1dc-42a9-99ce-13d80931557c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'car'?",
+    "correctAnswer": "{{ja-JP|車|kuruma|koo-ROO-mah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|バス|basu|BAH-soo}}",
+      "{{ja-JP|電車|densha|DEN-shah}}",
+      "{{ja-JP|飛行機|hikouki|hee-KOH-kee}}"
+    ],
+    "explanation": "'車' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "car"
+    ],
+    "source": "https://jisho.org/search/%E8%BB%8A"
+  },
+  {
+    "itemId": "bba4070b-f2cb-4bf6-818c-6210b4e0d7f0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'bus' in everyday use?",
+    "correctAnswer": "{{ja-JP|バス|basu|BAH-soo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|電車|densha|DEN-shah}}",
+      "{{ja-JP|飛行機|hikouki|hee-KOH-kee}}",
+      "{{ja-JP|自転車|jitensha|jee-TEN-shah}}"
+    ],
+    "explanation": "'バス' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bus"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9"
+  },
+  {
+    "itemId": "3b32f968-fcd5-4970-9bda-5ba313974aa5",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'train'.",
+    "correctAnswer": "{{ja-JP|電車|densha|DEN-shah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|飛行機|hikouki|hee-KOH-kee}}",
+      "{{ja-JP|自転車|jitensha|jee-TEN-shah}}",
+      "{{ja-JP|船|fune|FOO-neh}}"
+    ],
+    "explanation": "'電車' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "train"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%BB%E8%BB%8A"
+  },
+  {
+    "itemId": "9c4dff6f-1a1b-49ba-bab3-8ac5a10724cc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'plane'?",
+    "correctAnswer": "{{ja-JP|飛行機|hikouki|hee-KOH-kee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|自転車|jitensha|jee-TEN-shah}}",
+      "{{ja-JP|船|fune|FOO-neh}}",
+      "{{ja-JP|タクシー|takushii|TAH-koo-shee}}"
+    ],
+    "explanation": "'飛行機' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "plane"
+    ],
+    "source": "https://jisho.org/search/%E9%A3%9B%E8%A1%8C%E6%A9%9F"
+  },
+  {
+    "itemId": "16934691-e1ac-4e17-af73-c261d23427a3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'bicycle'?",
+    "correctAnswer": "{{ja-JP|自転車|jitensha|jee-TEN-shah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|船|fune|FOO-neh}}",
+      "{{ja-JP|タクシー|takushii|TAH-koo-shee}}",
+      "{{ja-JP|地下鉄|chikatetsu|chee-kah-TEH-tsoo}}"
+    ],
+    "explanation": "'自転車' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bicycle"
+    ],
+    "source": "https://jisho.org/search/%E8%87%AA%E8%BB%A2%E8%BB%8A"
+  },
+  {
+    "itemId": "76a9d9da-a81d-4ef4-9fa5-a18e51147643",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'boat' in everyday use?",
+    "correctAnswer": "{{ja-JP|船|fune|FOO-neh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|タクシー|takushii|TAH-koo-shee}}",
+      "{{ja-JP|地下鉄|chikatetsu|chee-kah-TEH-tsoo}}",
+      "{{ja-JP|車|kuruma|koo-ROO-mah}}"
+    ],
+    "explanation": "'船' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "boat"
+    ],
+    "source": "https://jisho.org/search/%E8%88%B9"
+  },
+  {
+    "itemId": "d280cc0b-30b1-4f84-9d16-296d627ca650",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'taxi'.",
+    "correctAnswer": "{{ja-JP|タクシー|takushii|TAH-koo-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|地下鉄|chikatetsu|chee-kah-TEH-tsoo}}",
+      "{{ja-JP|車|kuruma|koo-ROO-mah}}",
+      "{{ja-JP|バス|basu|BAH-soo}}"
+    ],
+    "explanation": "'タクシー' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "taxi"
+    ],
+    "source": "https://jisho.org/search/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC"
+  },
+  {
+    "itemId": "3b9460d1-9d43-4c71-8b0c-d8a5254ab618",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'metro'?",
+    "correctAnswer": "{{ja-JP|地下鉄|chikatetsu|chee-kah-TEH-tsoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|車|kuruma|koo-ROO-mah}}",
+      "{{ja-JP|バス|basu|BAH-soo}}",
+      "{{ja-JP|電車|densha|DEN-shah}}"
+    ],
+    "explanation": "'地下鉄' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "metro"
+    ],
+    "source": "https://jisho.org/search/%E5%9C%B0%E4%B8%8B%E9%89%84"
+  },
+  {
+    "itemId": "49a67a79-186f-45ee-8dae-11f1d9a91c88",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'sun'?",
+    "correctAnswer": "{{ja-JP|太陽|taiyou|TY-yoh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|月|tsuki|TSOO-kee}}",
+      "{{ja-JP|星|hoshi|HOH-shee}}",
+      "{{ja-JP|雨|ame|AH-meh}}"
+    ],
+    "explanation": "'太陽' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sun"
+    ],
+    "source": "https://jisho.org/search/%E5%A4%AA%E9%99%BD"
+  },
+  {
+    "itemId": "d67c098f-fa19-4d3f-82f6-6efa9193d93e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'moon' in everyday use?",
+    "correctAnswer": "{{ja-JP|月|tsuki|TSOO-kee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|星|hoshi|HOH-shee}}",
+      "{{ja-JP|雨|ame|AH-meh}}",
+      "{{ja-JP|雪|yuki|YOO-kee}}"
+    ],
+    "explanation": "'月' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "moon"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%88"
+  },
+  {
+    "itemId": "dfdee9f5-5a38-4693-8075-1ee00446f035",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'star'.",
+    "correctAnswer": "{{ja-JP|星|hoshi|HOH-shee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|雨|ame|AH-meh}}",
+      "{{ja-JP|雪|yuki|YOO-kee}}",
+      "{{ja-JP|風|kaze|KAH-zeh}}"
+    ],
+    "explanation": "'星' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "star"
+    ],
+    "source": "https://jisho.org/search/%E6%98%9F"
+  },
+  {
+    "itemId": "bc1b71c6-03d7-41a8-a281-1d7147ce8036",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'rain'?",
+    "correctAnswer": "{{ja-JP|雨|ame|AH-meh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|雪|yuki|YOO-kee}}",
+      "{{ja-JP|風|kaze|KAH-zeh}}",
+      "{{ja-JP|雲|kumo|KOO-moh}}"
+    ],
+    "explanation": "'雨' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "rain"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%A8"
+  },
+  {
+    "itemId": "876f8ba5-2734-4a24-adfd-387d565e1df0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'snow'?",
+    "correctAnswer": "{{ja-JP|雪|yuki|YOO-kee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|風|kaze|KAH-zeh}}",
+      "{{ja-JP|雲|kumo|KOO-moh}}",
+      "{{ja-JP|山|yama|YAH-mah}}"
+    ],
+    "explanation": "'雪' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "snow"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%AA"
+  },
+  {
+    "itemId": "ceda77aa-5939-4622-befc-d6ac9643a9a6",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'wind' in everyday use?",
+    "correctAnswer": "{{ja-JP|風|kaze|KAH-zeh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|雲|kumo|KOO-moh}}",
+      "{{ja-JP|山|yama|YAH-mah}}",
+      "{{ja-JP|川|kawa|KAH-wah}}"
+    ],
+    "explanation": "'風' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "wind"
+    ],
+    "source": "https://jisho.org/search/%E9%A2%A8"
+  },
+  {
+    "itemId": "80f6ed5b-fdd9-42ba-af59-a4c9884585de",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'cloud'.",
+    "correctAnswer": "{{ja-JP|雲|kumo|KOO-moh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|山|yama|YAH-mah}}",
+      "{{ja-JP|川|kawa|KAH-wah}}",
+      "{{ja-JP|海|umi|OO-mee}}"
+    ],
+    "explanation": "'雲' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "cloud"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%B2"
+  },
+  {
+    "itemId": "9beffdeb-ba52-48fd-8934-e555ca051b10",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'mountain'?",
+    "correctAnswer": "{{ja-JP|山|yama|YAH-mah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|川|kawa|KAH-wah}}",
+      "{{ja-JP|海|umi|OO-mee}}",
+      "{{ja-JP|ビーチ|biichi|BEE-chee}}"
+    ],
+    "explanation": "'山' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "mountain"
+    ],
+    "source": "https://jisho.org/search/%E5%B1%B1"
+  },
+  {
+    "itemId": "682853ef-868b-488c-b8db-15146056e2d3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'river'?",
+    "correctAnswer": "{{ja-JP|川|kawa|KAH-wah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|海|umi|OO-mee}}",
+      "{{ja-JP|ビーチ|biichi|BEE-chee}}",
+      "{{ja-JP|森|mori|MOH-ree}}"
+    ],
+    "explanation": "'川' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "river"
+    ],
+    "source": "https://jisho.org/search/%E5%B7%9D"
+  },
+  {
+    "itemId": "318a1733-6035-40b8-ab39-f5d8aa9fea1e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'sea' in everyday use?",
+    "correctAnswer": "{{ja-JP|海|umi|OO-mee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ビーチ|biichi|BEE-chee}}",
+      "{{ja-JP|森|mori|MOH-ree}}",
+      "{{ja-JP|木|ki|KEE}}"
+    ],
+    "explanation": "'海' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sea"
+    ],
+    "source": "https://jisho.org/search/%E6%B5%B7"
+  },
+  {
+    "itemId": "b0794a31-ac7d-47cb-a67b-bfb2da49b67e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'beach'.",
+    "correctAnswer": "{{ja-JP|ビーチ|biichi|BEE-chee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|森|mori|MOH-ree}}",
+      "{{ja-JP|木|ki|KEE}}",
+      "{{ja-JP|花|hana|HAH-nah}}"
+    ],
+    "explanation": "'ビーチ' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "beach"
+    ],
+    "source": "https://jisho.org/search/%E3%83%93%E3%83%BC%E3%83%81"
+  },
+  {
+    "itemId": "a80dcc08-e767-483c-a762-cc9210a0d019",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'forest'?",
+    "correctAnswer": "{{ja-JP|森|mori|MOH-ree}}",
+    "incorrectAnswers": [
+      "{{ja-JP|木|ki|KEE}}",
+      "{{ja-JP|花|hana|HAH-nah}}",
+      "{{ja-JP|天気|tenki|TEN-kee}}"
+    ],
+    "explanation": "'森' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "forest"
+    ],
+    "source": "https://jisho.org/search/%E6%A3%AE"
+  },
+  {
+    "itemId": "74e40691-a806-4a31-b9ca-f9711a09f2ea",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'tree'?",
+    "correctAnswer": "{{ja-JP|木|ki|KEE}}",
+    "incorrectAnswers": [
+      "{{ja-JP|花|hana|HAH-nah}}",
+      "{{ja-JP|天気|tenki|TEN-kee}}",
+      "{{ja-JP|太陽|taiyou|TY-yoh}}"
+    ],
+    "explanation": "'木' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "tree"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%A8"
+  },
+  {
+    "itemId": "abe52ecd-3612-42a6-98d7-dd0c88882d62",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'flower' in everyday use?",
+    "correctAnswer": "{{ja-JP|花|hana|HAH-nah}}",
+    "incorrectAnswers": [
+      "{{ja-JP|天気|tenki|TEN-kee}}",
+      "{{ja-JP|太陽|taiyou|TY-yoh}}",
+      "{{ja-JP|月|tsuki|TSOO-kee}}"
+    ],
+    "explanation": "'花' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "flower"
+    ],
+    "source": "https://jisho.org/search/%E8%8A%B1"
+  },
+  {
+    "itemId": "625f2db1-3384-4e0c-9482-50b5a0b0e3fe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'weather'.",
+    "correctAnswer": "{{ja-JP|天気|tenki|TEN-kee}}",
+    "incorrectAnswers": [
+      "{{ja-JP|太陽|taiyou|TY-yoh}}",
+      "{{ja-JP|月|tsuki|TSOO-kee}}",
+      "{{ja-JP|星|hoshi|HOH-shee}}"
+    ],
+    "explanation": "'天気' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "weather"
+    ],
+    "source": "https://jisho.org/search/%E5%A4%A9%E6%B0%97"
+  },
+  {
+    "itemId": "f087f9c3-c2dd-4d4c-824d-b296bfae14d7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'be'?",
+    "correctAnswer": "{{ja-JP|いる|iru|EE-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|持つ|motsu|MOH-tsoo}}",
+      "{{ja-JP|欲しがる|hoshigaru|hoh-shee-GAH-roo}}",
+      "{{ja-JP|要る|iru|EE-roo}}"
+    ],
+    "explanation": "'いる' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "be"
+    ],
+    "source": "https://jisho.org/search/%E3%81%84%E3%82%8B"
+  },
+  {
+    "itemId": "88e46a54-8aa7-4ee3-b8a2-5ebb6abd7469",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'have' in everyday use?",
+    "correctAnswer": "{{ja-JP|持つ|motsu|MOH-tsoo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|欲しがる|hoshigaru|hoh-shee-GAH-roo}}",
+      "{{ja-JP|要る|iru|EE-roo}}",
+      "{{ja-JP|行く|iku|EE-koo}}"
+    ],
+    "explanation": "'持つ' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "have"
+    ],
+    "source": "https://jisho.org/search/%E6%8C%81%E3%81%A4"
+  },
+  {
+    "itemId": "20a417ce-1307-4251-a135-5ed2c7d858cd",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'want'.",
+    "correctAnswer": "{{ja-JP|欲しがる|hoshigaru|hoh-shee-GAH-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|要る|iru|EE-roo}}",
+      "{{ja-JP|行く|iku|EE-koo}}",
+      "{{ja-JP|来る|kuru|KOO-roo}}"
+    ],
+    "explanation": "'欲しがる' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "want"
+    ],
+    "source": "https://jisho.org/search/%E6%AC%B2%E3%81%97%E3%81%8C%E3%82%8B"
+  },
+  {
+    "itemId": "b2b75a0d-545d-40b3-b2dc-4c133583d525",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'need'?",
+    "correctAnswer": "{{ja-JP|要る|iru|EE-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|行く|iku|EE-koo}}",
+      "{{ja-JP|来る|kuru|KOO-roo}}",
+      "{{ja-JP|食べる|taberu|tah-BEH-roo}}"
+    ],
+    "explanation": "'要る' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "need"
+    ],
+    "source": "https://jisho.org/search/%E8%A6%81%E3%82%8B"
+  },
+  {
+    "itemId": "0bab5f45-a533-42e5-8321-3ffdfdd5a37e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'go'?",
+    "correctAnswer": "{{ja-JP|行く|iku|EE-koo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|来る|kuru|KOO-roo}}",
+      "{{ja-JP|食べる|taberu|tah-BEH-roo}}",
+      "{{ja-JP|飲む|nomu|NOH-moo}}"
+    ],
+    "explanation": "'行く' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "go"
+    ],
+    "source": "https://jisho.org/search/%E8%A1%8C%E3%81%8F"
+  },
+  {
+    "itemId": "dc99ef7a-8e1a-4e24-adb9-fded66a04e00",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Which Japanese word means 'come' in everyday use?",
+    "correctAnswer": "{{ja-JP|来る|kuru|KOO-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|食べる|taberu|tah-BEH-roo}}",
+      "{{ja-JP|飲む|nomu|NOH-moo}}",
+      "{{ja-JP|寝る|neru|NEH-roo}}"
+    ],
+    "explanation": "'来る' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "come"
+    ],
+    "source": "https://jisho.org/search/%E6%9D%A5%E3%82%8B"
+  },
+  {
+    "itemId": "c500732a-8493-4e67-a44f-90acb4d507db",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "Choose the Japanese word for 'eat'.",
+    "correctAnswer": "{{ja-JP|食べる|taberu|tah-BEH-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|飲む|nomu|NOH-moo}}",
+      "{{ja-JP|寝る|neru|NEH-roo}}",
+      "{{ja-JP|起きる|okiru|oh-KEE-roo}}"
+    ],
+    "explanation": "'食べる' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "eat"
+    ],
+    "source": "https://jisho.org/search/%E9%A3%9F%E3%81%B9%E3%82%8B"
+  },
+  {
+    "itemId": "8ec8777d-9a95-4875-affb-6ff2909d37e4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Japanese word for 'drink'?",
+    "correctAnswer": "{{ja-JP|飲む|nomu|NOH-moo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|寝る|neru|NEH-roo}}",
+      "{{ja-JP|起きる|okiru|oh-KEE-roo}}",
+      "{{ja-JP|働く|hataraku|hah-tah-RAH-koo}}"
+    ],
+    "explanation": "'飲む' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "drink"
+    ],
+    "source": "https://jisho.org/search/%E9%A3%B2%E3%82%80"
+  },
+  {
+    "itemId": "dc6e3125-1445-4ff1-8b3b-734d038f6909",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "core",
+    "question": "In beginner Japanese, how do you say 'sleep'?",
+    "correctAnswer": "{{ja-JP|寝る|neru|NEH-roo}}",
+    "incorrectAnswers": [
+      "{{ja-JP|起きる|okiru|oh-KEE-roo}}",
+      "{{ja-JP|働く|hataraku|hah-tah-RAH-koo}}",
+      "{{ja-JP|話す|hanasu|hah-NAH-soo}}"
+    ],
+    "explanation": "'寝る' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "japanese",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "sleep"
+    ],
+    "source": "https://jisho.org/search/%E5%AF%9D%E3%82%8B"
+  }
+]

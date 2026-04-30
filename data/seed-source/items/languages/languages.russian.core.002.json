@@ -1,0 +1,2393 @@
+[
+  {
+    "itemId": "9f134167-490d-40d7-b567-75af4f05b1f4",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'child'.",
+    "correctAnswer": "{{ru-RU|ребёнок|rebyonok|re-BYO-nok}}",
+    "incorrectAnswers": [
+      "{{ru-RU|малыш|malysh|ma-LYSH}}",
+      "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}"
+    ],
+    "explanation": "'ребёнок' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "child"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D0%B5%D0%B1%D1%91%D0%BD%D0%BE%D0%BA"
+  },
+  {
+    "itemId": "71c7f676-e169-4b01-97ce-16c85a3350a7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'baby'?",
+    "correctAnswer": "{{ru-RU|малыш|malysh|ma-LYSH}}",
+    "incorrectAnswers": [
+      "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
+      "{{ru-RU|человек|chelovek|che-LO-vek}}"
+    ],
+    "explanation": "'малыш' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "baby"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%B0%D0%BB%D1%8B%D1%88"
+  },
+  {
+    "itemId": "8fb311ad-888b-49b4-90ad-3ef32feae62c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'man'?",
+    "correctAnswer": "{{ru-RU|мужчина|muzhchina|muzh-CHI-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
+      "{{ru-RU|человек|chelovek|che-LO-vek}}",
+      "{{ru-RU|мать|mat|MAT}}"
+    ],
+    "explanation": "'мужчина' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "man"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "db21a85e-2036-4d90-bc9e-4adda5f4c5b4",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'woman' in everyday use?",
+    "correctAnswer": "{{ru-RU|женщина|zhenshchina|zhensh-CHI-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|человек|chelovek|che-LO-vek}}",
+      "{{ru-RU|мать|mat|MAT}}",
+      "{{ru-RU|отец|otets|o-TETS}}"
+    ],
+    "explanation": "'женщина' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "woman"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B6%D0%B5%D0%BD%D1%89%D0%B8%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "138095df-5c6a-4859-9c32-c9faf324ee79",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'person'.",
+    "correctAnswer": "{{ru-RU|человек|chelovek|che-LO-vek}}",
+    "incorrectAnswers": [
+      "{{ru-RU|мать|mat|MAT}}",
+      "{{ru-RU|отец|otets|o-TETS}}",
+      "{{ru-RU|брат|brat|BRAT}}"
+    ],
+    "explanation": "'человек' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "person"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA"
+  },
+  {
+    "itemId": "dfb99ea1-8cd7-4488-97c1-951b521830b8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'head'?",
+    "correctAnswer": "{{ru-RU|голова|golova|go-LO-va}}",
+    "incorrectAnswers": [
+      "{{ru-RU|ладонь|ladon|la-DON}}",
+      "{{ru-RU|ступня|stupnya|STUP-nya}}",
+      "{{ru-RU|глаз|glaz|GLAZ}}"
+    ],
+    "explanation": "'голова' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "head"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%B0"
+  },
+  {
+    "itemId": "db30c627-dfaf-42f9-a8a6-51ae0015c9f6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'hand' in everyday use?",
+    "correctAnswer": "{{ru-RU|ладонь|ladon|la-DON}}",
+    "incorrectAnswers": [
+      "{{ru-RU|ступня|stupnya|STUP-nya}}",
+      "{{ru-RU|глаз|glaz|GLAZ}}",
+      "{{ru-RU|ухо|ukho|UK-ho}}"
+    ],
+    "explanation": "'ладонь' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "hand"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D0%B0%D0%B4%D0%BE%D0%BD%D1%8C"
+  },
+  {
+    "itemId": "0e8e8b9d-ff01-4539-ae8b-db6623a32c32",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'foot'.",
+    "correctAnswer": "{{ru-RU|ступня|stupnya|STUP-nya}}",
+    "incorrectAnswers": [
+      "{{ru-RU|глаз|glaz|GLAZ}}",
+      "{{ru-RU|ухо|ukho|UK-ho}}",
+      "{{ru-RU|нос|nos|NOS}}"
+    ],
+    "explanation": "'ступня' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "foot"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8F"
+  },
+  {
+    "itemId": "9adadd36-fd7f-46af-8240-204b95cb0342",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'eye'?",
+    "correctAnswer": "{{ru-RU|глаз|glaz|GLAZ}}",
+    "incorrectAnswers": [
+      "{{ru-RU|ухо|ukho|UK-ho}}",
+      "{{ru-RU|нос|nos|NOS}}",
+      "{{ru-RU|рот|rot|ROT}}"
+    ],
+    "explanation": "'глаз' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "eye"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B3%D0%BB%D0%B0%D0%B7"
+  },
+  {
+    "itemId": "9b378f14-d178-46eb-a9d9-492c28076e20",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'ear'?",
+    "correctAnswer": "{{ru-RU|ухо|ukho|UK-ho}}",
+    "incorrectAnswers": [
+      "{{ru-RU|нос|nos|NOS}}",
+      "{{ru-RU|рот|rot|ROT}}",
+      "{{ru-RU|сердце|serdtse|SERD-tse}}"
+    ],
+    "explanation": "'ухо' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "ear"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%83%D1%85%D0%BE"
+  },
+  {
+    "itemId": "20bce1da-bc1e-406d-a16e-151b2c4c8f43",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'nose' in everyday use?",
+    "correctAnswer": "{{ru-RU|нос|nos|NOS}}",
+    "incorrectAnswers": [
+      "{{ru-RU|рот|rot|ROT}}",
+      "{{ru-RU|сердце|serdtse|SERD-tse}}",
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}"
+    ],
+    "explanation": "'нос' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "nose"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BD%D0%BE%D1%81"
+  },
+  {
+    "itemId": "e1c2479c-3d8d-4262-814d-68b5c9145cf5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'mouth'.",
+    "correctAnswer": "{{ru-RU|рот|rot|ROT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сердце|serdtse|SERD-tse}}",
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
+      "{{ru-RU|рука|ruka|RU-ka}}"
+    ],
+    "explanation": "'рот' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "mouth"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D0%BE%D1%82"
+  },
+  {
+    "itemId": "0b9f9d85-da93-4c06-9bf6-eddc041ee65c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'heart'?",
+    "correctAnswer": "{{ru-RU|сердце|serdtse|SERD-tse}}",
+    "incorrectAnswers": [
+      "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
+      "{{ru-RU|рука|ruka|RU-ka}}",
+      "{{ru-RU|нога|noga|NO-ga}}"
+    ],
+    "explanation": "'сердце' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "heart"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B5"
+  },
+  {
+    "itemId": "a9093f09-00ee-4b6b-8dcf-46d972845b55",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'stomach'?",
+    "correctAnswer": "{{ru-RU|желудок|zheludok|zhe-LU-dok}}",
+    "incorrectAnswers": [
+      "{{ru-RU|рука|ruka|RU-ka}}",
+      "{{ru-RU|нога|noga|NO-ga}}",
+      "{{ru-RU|палец|palets|pa-LETS}}"
+    ],
+    "explanation": "'желудок' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "stomach"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B6%D0%B5%D0%BB%D1%83%D0%B4%D0%BE%D0%BA"
+  },
+  {
+    "itemId": "f2bc1423-6d4c-4022-bcc1-e1195fa13ee6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'arm' in everyday use?",
+    "correctAnswer": "{{ru-RU|рука|ruka|RU-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|нога|noga|NO-ga}}",
+      "{{ru-RU|палец|palets|pa-LETS}}",
+      "{{ru-RU|спина|spina|SPI-na}}"
+    ],
+    "explanation": "'рука' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "arm"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D1%83%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "0fdbd087-166d-4fd8-8b3f-c3648473d81b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'leg'.",
+    "correctAnswer": "{{ru-RU|нога|noga|NO-ga}}",
+    "incorrectAnswers": [
+      "{{ru-RU|палец|palets|pa-LETS}}",
+      "{{ru-RU|спина|spina|SPI-na}}",
+      "{{ru-RU|голова|golova|go-LO-va}}"
+    ],
+    "explanation": "'нога' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "leg"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BD%D0%BE%D0%B3%D0%B0"
+  },
+  {
+    "itemId": "e862f17b-b4b9-422f-9b92-39961213352f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'finger'?",
+    "correctAnswer": "{{ru-RU|палец|palets|pa-LETS}}",
+    "incorrectAnswers": [
+      "{{ru-RU|спина|spina|SPI-na}}",
+      "{{ru-RU|голова|golova|go-LO-va}}",
+      "{{ru-RU|ладонь|ladon|la-DON}}"
+    ],
+    "explanation": "'палец' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "finger"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%B0%D0%BB%D0%B5%D1%86"
+  },
+  {
+    "itemId": "2b2087b8-c860-4c56-8262-56e3d3d6805b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'back'?",
+    "correctAnswer": "{{ru-RU|спина|spina|SPI-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|голова|golova|go-LO-va}}",
+      "{{ru-RU|ладонь|ladon|la-DON}}",
+      "{{ru-RU|ступня|stupnya|STUP-nya}}"
+    ],
+    "explanation": "'спина' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "back"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BF%D0%B8%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "aa34d352-2453-459d-a5b9-f47c66578be6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'bread'?",
+    "correctAnswer": "{{ru-RU|хлеб|khleb|KHLEB}}",
+    "incorrectAnswers": [
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}",
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}",
+      "{{ru-RU|мясо|myaso|MYA-so}}"
+    ],
+    "explanation": "'хлеб' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "bread"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%85%D0%BB%D0%B5%D0%B1"
+  },
+  {
+    "itemId": "1afbbbe2-cefe-4946-b932-7f7f254eb7c3",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'milk' in everyday use?",
+    "correctAnswer": "{{ru-RU|молоко|moloko|mo-LO-ko}}",
+    "incorrectAnswers": [
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}",
+      "{{ru-RU|мясо|myaso|MYA-so}}",
+      "{{ru-RU|рыба|ryba|RY-ba}}"
+    ],
+    "explanation": "'молоко' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "milk"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE"
+  },
+  {
+    "itemId": "0ea6330a-0247-4128-9094-2caacecb947f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'egg'.",
+    "correctAnswer": "{{ru-RU|яйцо|yaytso|YAY-tso}}",
+    "incorrectAnswers": [
+      "{{ru-RU|мясо|myaso|MYA-so}}",
+      "{{ru-RU|рыба|ryba|RY-ba}}",
+      "{{ru-RU|фрукт|frukt|FRUKT}}"
+    ],
+    "explanation": "'яйцо' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "egg"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%8F%D0%B9%D1%86%D0%BE"
+  },
+  {
+    "itemId": "bbd5b8f8-55de-4128-8611-279d1f41e9c9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'meat'?",
+    "correctAnswer": "{{ru-RU|мясо|myaso|MYA-so}}",
+    "incorrectAnswers": [
+      "{{ru-RU|рыба|ryba|RY-ba}}",
+      "{{ru-RU|фрукт|frukt|FRUKT}}",
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}"
+    ],
+    "explanation": "'мясо' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "meat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D1%8F%D1%81%D0%BE"
+  },
+  {
+    "itemId": "f845b7c4-32bd-48ec-b2e3-730249e72503",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'fish'?",
+    "correctAnswer": "{{ru-RU|рыба|ryba|RY-ba}}",
+    "incorrectAnswers": [
+      "{{ru-RU|фрукт|frukt|FRUKT}}",
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
+      "{{ru-RU|рис|ris|RIS}}"
+    ],
+    "explanation": "'рыба' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fish"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D1%8B%D0%B1%D0%B0"
+  },
+  {
+    "itemId": "666710df-3c09-40de-ba00-40d1893e25c3",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'fruit' in everyday use?",
+    "correctAnswer": "{{ru-RU|фрукт|frukt|FRUKT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
+      "{{ru-RU|рис|ris|RIS}}",
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}"
+    ],
+    "explanation": "'фрукт' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fruit"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%84%D1%80%D1%83%D0%BA%D1%82"
+  },
+  {
+    "itemId": "41b8c471-bd6f-4573-a049-1250bc014737",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'vegetable'.",
+    "correctAnswer": "{{ru-RU|овощ|ovoshch|o-VOSHCH}}",
+    "incorrectAnswers": [
+      "{{ru-RU|рис|ris|RIS}}",
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
+      "{{ru-RU|сыр|syr|SYR}}"
+    ],
+    "explanation": "'овощ' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "vegetable"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BE%D0%B2%D0%BE%D1%89"
+  },
+  {
+    "itemId": "26d50611-cdc1-4541-a9a4-a4df923eb814",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'rice'?",
+    "correctAnswer": "{{ru-RU|рис|ris|RIS}}",
+    "incorrectAnswers": [
+      "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
+      "{{ru-RU|сыр|syr|SYR}}",
+      "{{ru-RU|кофе|kofe|KO-fe}}"
+    ],
+    "explanation": "'рис' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "rice"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D0%B8%D1%81"
+  },
+  {
+    "itemId": "08010a8f-8e31-4b54-adf3-7fdf4340d7e1",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'pasta'?",
+    "correctAnswer": "{{ru-RU|макароны|makarony|ma-ka-RO-ny}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сыр|syr|SYR}}",
+      "{{ru-RU|кофе|kofe|KO-fe}}",
+      "{{ru-RU|чай|chay|CHAY}}"
+    ],
+    "explanation": "'макароны' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "pasta"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%B0%D0%BA%D0%B0%D1%80%D0%BE%D0%BD%D1%8B"
+  },
+  {
+    "itemId": "d2de7274-c352-4e68-a640-925b0313e441",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'cheese' in everyday use?",
+    "correctAnswer": "{{ru-RU|сыр|syr|SYR}}",
+    "incorrectAnswers": [
+      "{{ru-RU|кофе|kofe|KO-fe}}",
+      "{{ru-RU|чай|chay|CHAY}}",
+      "{{ru-RU|сок|sok|SOK}}"
+    ],
+    "explanation": "'сыр' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "cheese"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%8B%D1%80"
+  },
+  {
+    "itemId": "5486fc9d-f7e9-4b2e-a418-951b957867e2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'coffee'.",
+    "correctAnswer": "{{ru-RU|кофе|kofe|KO-fe}}",
+    "incorrectAnswers": [
+      "{{ru-RU|чай|chay|CHAY}}",
+      "{{ru-RU|сок|sok|SOK}}",
+      "{{ru-RU|пиво|pivo|PI-vo}}"
+    ],
+    "explanation": "'кофе' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "coffee"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D0%BE%D1%84%D0%B5"
+  },
+  {
+    "itemId": "59ecf716-9bcf-40cf-b165-263e784ef1e5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'tea'?",
+    "correctAnswer": "{{ru-RU|чай|chay|CHAY}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сок|sok|SOK}}",
+      "{{ru-RU|пиво|pivo|PI-vo}}",
+      "{{ru-RU|вино|vino|VI-no}}"
+    ],
+    "explanation": "'чай' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "tea"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%87%D0%B0%D0%B9"
+  },
+  {
+    "itemId": "e7715188-6b95-432c-9078-e386e825338c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'juice'?",
+    "correctAnswer": "{{ru-RU|сок|sok|SOK}}",
+    "incorrectAnswers": [
+      "{{ru-RU|пиво|pivo|PI-vo}}",
+      "{{ru-RU|вино|vino|VI-no}}",
+      "{{ru-RU|масло|maslo|MAS-lo}}"
+    ],
+    "explanation": "'сок' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "juice"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BE%D0%BA"
+  },
+  {
+    "itemId": "01f6d012-5fa9-40a2-9a02-6fa7367732e6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'beer' in everyday use?",
+    "correctAnswer": "{{ru-RU|пиво|pivo|PI-vo}}",
+    "incorrectAnswers": [
+      "{{ru-RU|вино|vino|VI-no}}",
+      "{{ru-RU|масло|maslo|MAS-lo}}",
+      "{{ru-RU|соль|sol|SOL}}"
+    ],
+    "explanation": "'пиво' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "beer"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%B8%D0%B2%D0%BE"
+  },
+  {
+    "itemId": "7959d35e-4269-408b-8dfe-5ba406faf277",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'wine'.",
+    "correctAnswer": "{{ru-RU|вино|vino|VI-no}}",
+    "incorrectAnswers": [
+      "{{ru-RU|масло|maslo|MAS-lo}}",
+      "{{ru-RU|соль|sol|SOL}}",
+      "{{ru-RU|сахар|sakhar|sak-HAR}}"
+    ],
+    "explanation": "'вино' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "wine"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B2%D0%B8%D0%BD%D0%BE"
+  },
+  {
+    "itemId": "83a78ef8-0169-496e-8e29-62446354d543",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'oil'?",
+    "correctAnswer": "{{ru-RU|масло|maslo|MAS-lo}}",
+    "incorrectAnswers": [
+      "{{ru-RU|соль|sol|SOL}}",
+      "{{ru-RU|сахар|sakhar|sak-HAR}}",
+      "{{ru-RU|хлеб|khleb|KHLEB}}"
+    ],
+    "explanation": "'масло' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "oil"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%B0%D1%81%D0%BB%D0%BE"
+  },
+  {
+    "itemId": "ee273c8d-f2c3-4ebb-bf72-0146d8e91502",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'salt'?",
+    "correctAnswer": "{{ru-RU|соль|sol|SOL}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сахар|sakhar|sak-HAR}}",
+      "{{ru-RU|хлеб|khleb|KHLEB}}",
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}"
+    ],
+    "explanation": "'соль' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "salt"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BE%D0%BB%D1%8C"
+  },
+  {
+    "itemId": "95af7064-5cc8-446a-941c-78ee126abca7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'sugar' in everyday use?",
+    "correctAnswer": "{{ru-RU|сахар|sakhar|sak-HAR}}",
+    "incorrectAnswers": [
+      "{{ru-RU|хлеб|khleb|KHLEB}}",
+      "{{ru-RU|молоко|moloko|mo-LO-ko}}",
+      "{{ru-RU|яйцо|yaytso|YAY-tso}}"
+    ],
+    "explanation": "'сахар' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "sugar"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%B0%D1%85%D0%B0%D1%80"
+  },
+  {
+    "itemId": "51da3757-a21b-428f-a162-18e3dcdde615",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'dog'?",
+    "correctAnswer": "{{ru-RU|собака|sobaka|so-BA-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|кошка|koshka|KOSH-ka}}",
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}",
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}"
+    ],
+    "explanation": "'собака' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "dog"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "7b386b84-69f5-4e1a-af32-77ecd4933730",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'cat' in everyday use?",
+    "correctAnswer": "{{ru-RU|кошка|koshka|KOSH-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}",
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}",
+      "{{ru-RU|корова|korova|ko-RO-va}}"
+    ],
+    "explanation": "'кошка' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D0%BE%D1%88%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "418a3ce6-91b9-44c0-99e4-b33d8c5c477f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'bird'.",
+    "correctAnswer": "{{ru-RU|птица|ptitsa|PTI-tsa}}",
+    "incorrectAnswers": [
+      "{{ru-RU|лошадь|loshad|lo-SHAD}}",
+      "{{ru-RU|корова|korova|ko-RO-va}}",
+      "{{ru-RU|свинья|svinya|SVI-nya}}"
+    ],
+    "explanation": "'птица' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "bird"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D1%82%D0%B8%D1%86%D0%B0"
+  },
+  {
+    "itemId": "5929a1c8-e6f9-4186-96eb-2006f3a56bc7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'horse'?",
+    "correctAnswer": "{{ru-RU|лошадь|loshad|lo-SHAD}}",
+    "incorrectAnswers": [
+      "{{ru-RU|корова|korova|ko-RO-va}}",
+      "{{ru-RU|свинья|svinya|SVI-nya}}",
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}"
+    ],
+    "explanation": "'лошадь' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "horse"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D0%BE%D1%88%D0%B0%D0%B4%D1%8C"
+  },
+  {
+    "itemId": "cc7358f2-1895-4530-8999-2134e871ca51",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'cow'?",
+    "correctAnswer": "{{ru-RU|корова|korova|ko-RO-va}}",
+    "incorrectAnswers": [
+      "{{ru-RU|свинья|svinya|SVI-nya}}",
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
+      "{{ru-RU|мышь|mysh|MYSH}}"
+    ],
+    "explanation": "'корова' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cow"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D0%BE%D1%80%D0%BE%D0%B2%D0%B0"
+  },
+  {
+    "itemId": "4c9d1dc1-26b1-420c-8b68-667597411eea",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'pig' in everyday use?",
+    "correctAnswer": "{{ru-RU|свинья|svinya|SVI-nya}}",
+    "incorrectAnswers": [
+      "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
+      "{{ru-RU|мышь|mysh|MYSH}}",
+      "{{ru-RU|кролик|krolik|kro-LIK}}"
+    ],
+    "explanation": "'свинья' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "pig"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%B2%D0%B8%D0%BD%D1%8C%D1%8F"
+  },
+  {
+    "itemId": "93f2975c-287c-44d3-b6de-b55fafdf73ea",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'chicken'.",
+    "correctAnswer": "{{ru-RU|курица|kuritsa|ku-RI-tsa}}",
+    "incorrectAnswers": [
+      "{{ru-RU|мышь|mysh|MYSH}}",
+      "{{ru-RU|кролик|krolik|kro-LIK}}",
+      "{{ru-RU|собака|sobaka|so-BA-ka}}"
+    ],
+    "explanation": "'курица' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "chicken"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%83%D1%80%D0%B8%D1%86%D0%B0"
+  },
+  {
+    "itemId": "a47046b0-d2a8-4c52-b295-c46eba394293",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'mouse'?",
+    "correctAnswer": "{{ru-RU|мышь|mysh|MYSH}}",
+    "incorrectAnswers": [
+      "{{ru-RU|кролик|krolik|kro-LIK}}",
+      "{{ru-RU|собака|sobaka|so-BA-ka}}",
+      "{{ru-RU|кошка|koshka|KOSH-ka}}"
+    ],
+    "explanation": "'мышь' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "mouse"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D1%8B%D1%88%D1%8C"
+  },
+  {
+    "itemId": "a78093a5-d9e9-4c92-bbac-0d15818175e4",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'rabbit'?",
+    "correctAnswer": "{{ru-RU|кролик|krolik|kro-LIK}}",
+    "incorrectAnswers": [
+      "{{ru-RU|собака|sobaka|so-BA-ka}}",
+      "{{ru-RU|кошка|koshka|KOSH-ka}}",
+      "{{ru-RU|птица|ptitsa|PTI-tsa}}"
+    ],
+    "explanation": "'кролик' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "rabbit"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%80%D0%BE%D0%BB%D0%B8%D0%BA"
+  },
+  {
+    "itemId": "3be41d80-75a6-4b0e-86dd-c3d05609e9d9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'house'?",
+    "correctAnswer": "{{ru-RU|дом|dom|DOM}}",
+    "incorrectAnswers": [
+      "{{ru-RU|комната|komnata|kom-NA-ta}}",
+      "{{ru-RU|дверь|dver|DVER}}",
+      "{{ru-RU|окно|okno|OK-no}}"
+    ],
+    "explanation": "'дом' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "house"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B4%D0%BE%D0%BC"
+  },
+  {
+    "itemId": "4cf01e96-7655-4bc8-aa31-b957ea880d1a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'room' in everyday use?",
+    "correctAnswer": "{{ru-RU|комната|komnata|kom-NA-ta}}",
+    "incorrectAnswers": [
+      "{{ru-RU|дверь|dver|DVER}}",
+      "{{ru-RU|окно|okno|OK-no}}",
+      "{{ru-RU|кровать|krovat|kro-VAT}}"
+    ],
+    "explanation": "'комната' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "room"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%B0"
+  },
+  {
+    "itemId": "8074f245-778c-4c95-a9b3-3201502fda9d",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'door'.",
+    "correctAnswer": "{{ru-RU|дверь|dver|DVER}}",
+    "incorrectAnswers": [
+      "{{ru-RU|окно|okno|OK-no}}",
+      "{{ru-RU|кровать|krovat|kro-VAT}}",
+      "{{ru-RU|стол|stol|STOL}}"
+    ],
+    "explanation": "'дверь' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "door"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B4%D0%B2%D0%B5%D1%80%D1%8C"
+  },
+  {
+    "itemId": "18e9d2c0-c8d1-4dbe-b04a-5d8153fdd519",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'window'?",
+    "correctAnswer": "{{ru-RU|окно|okno|OK-no}}",
+    "incorrectAnswers": [
+      "{{ru-RU|кровать|krovat|kro-VAT}}",
+      "{{ru-RU|стол|stol|STOL}}",
+      "{{ru-RU|стул|stul|STUL}}"
+    ],
+    "explanation": "'окно' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "window"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BE%D0%BA%D0%BD%D0%BE"
+  },
+  {
+    "itemId": "8d899ad5-1f17-4c76-b466-321aa823163b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'bed'?",
+    "correctAnswer": "{{ru-RU|кровать|krovat|kro-VAT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|стол|stol|STOL}}",
+      "{{ru-RU|стул|stul|STUL}}",
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}"
+    ],
+    "explanation": "'кровать' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bed"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C"
+  },
+  {
+    "itemId": "b5c6cfef-1cf0-475a-a399-d7036094b2a8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'table' in everyday use?",
+    "correctAnswer": "{{ru-RU|стол|stol|STOL}}",
+    "incorrectAnswers": [
+      "{{ru-RU|стул|stul|STUL}}",
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
+      "{{ru-RU|ванная|vannaya|VAN-naya}}"
+    ],
+    "explanation": "'стол' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "table"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%82%D0%BE%D0%BB"
+  },
+  {
+    "itemId": "0ed0604d-eff1-4f1e-9f0f-6e812871702a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'chair'.",
+    "correctAnswer": "{{ru-RU|стул|stul|STUL}}",
+    "incorrectAnswers": [
+      "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
+      "{{ru-RU|ванная|vannaya|VAN-naya}}",
+      "{{ru-RU|сад|sad|SAD}}"
+    ],
+    "explanation": "'стул' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "chair"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%82%D1%83%D0%BB"
+  },
+  {
+    "itemId": "2033d23f-6a00-4031-8775-715dd1c23665",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'kitchen'?",
+    "correctAnswer": "{{ru-RU|кухня|kukhnya|KUKH-nya}}",
+    "incorrectAnswers": [
+      "{{ru-RU|ванная|vannaya|VAN-naya}}",
+      "{{ru-RU|сад|sad|SAD}}",
+      "{{ru-RU|пол|pol|POL}}"
+    ],
+    "explanation": "'кухня' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "kitchen"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%83%D1%85%D0%BD%D1%8F"
+  },
+  {
+    "itemId": "042428a8-8797-494b-979a-7a7b6ad63f50",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'bathroom'?",
+    "correctAnswer": "{{ru-RU|ванная|vannaya|VAN-naya}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сад|sad|SAD}}",
+      "{{ru-RU|пол|pol|POL}}",
+      "{{ru-RU|стена|stena|STE-na}}"
+    ],
+    "explanation": "'ванная' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bathroom"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F"
+  },
+  {
+    "itemId": "6a184a3b-d89f-4376-a4f8-084d74e5e12e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'garden' in everyday use?",
+    "correctAnswer": "{{ru-RU|сад|sad|SAD}}",
+    "incorrectAnswers": [
+      "{{ru-RU|пол|pol|POL}}",
+      "{{ru-RU|стена|stena|STE-na}}",
+      "{{ru-RU|крыша|krysha|KRY-sha}}"
+    ],
+    "explanation": "'сад' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "garden"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%B0%D0%B4"
+  },
+  {
+    "itemId": "75290022-67eb-4b92-9943-3e0d6894e433",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'floor'.",
+    "correctAnswer": "{{ru-RU|пол|pol|POL}}",
+    "incorrectAnswers": [
+      "{{ru-RU|стена|stena|STE-na}}",
+      "{{ru-RU|крыша|krysha|KRY-sha}}",
+      "{{ru-RU|лампа|lampa|LAM-pa}}"
+    ],
+    "explanation": "'пол' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "floor"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%BE%D0%BB"
+  },
+  {
+    "itemId": "2e996970-9c88-4969-9445-194a087ed9ca",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'wall'?",
+    "correctAnswer": "{{ru-RU|стена|stena|STE-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|крыша|krysha|KRY-sha}}",
+      "{{ru-RU|лампа|lampa|LAM-pa}}",
+      "{{ru-RU|дом|dom|DOM}}"
+    ],
+    "explanation": "'стена' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "wall"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%82%D0%B5%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "e2ee4760-e91a-4c78-b7f5-056fbccc72a7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'roof'?",
+    "correctAnswer": "{{ru-RU|крыша|krysha|KRY-sha}}",
+    "incorrectAnswers": [
+      "{{ru-RU|лампа|lampa|LAM-pa}}",
+      "{{ru-RU|дом|dom|DOM}}",
+      "{{ru-RU|комната|komnata|kom-NA-ta}}"
+    ],
+    "explanation": "'крыша' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "roof"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%80%D1%8B%D1%88%D0%B0"
+  },
+  {
+    "itemId": "f5c6da6d-fbe6-4b64-807c-15a1117087e5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'lamp' in everyday use?",
+    "correctAnswer": "{{ru-RU|лампа|lampa|LAM-pa}}",
+    "incorrectAnswers": [
+      "{{ru-RU|дом|dom|DOM}}",
+      "{{ru-RU|комната|komnata|kom-NA-ta}}",
+      "{{ru-RU|дверь|dver|DVER}}"
+    ],
+    "explanation": "'лампа' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "lamp"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D0%B0%D0%BC%D0%BF%D0%B0"
+  },
+  {
+    "itemId": "061182de-85c9-415f-9387-7ada345469bf",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'shirt'?",
+    "correctAnswer": "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}",
+      "{{ru-RU|платье|plate|PLA-te}}",
+      "{{ru-RU|туфли|tufli|TU-fli}}"
+    ],
+    "explanation": "'рубашка' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shirt"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "6c1cee56-9d0f-4027-8bba-4bf63df1d507",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'pants' in everyday use?",
+    "correctAnswer": "{{ru-RU|брюки|bryuki|BRYU-ki}}",
+    "incorrectAnswers": [
+      "{{ru-RU|платье|plate|PLA-te}}",
+      "{{ru-RU|туфли|tufli|TU-fli}}",
+      "{{ru-RU|носки|noski|NOS-ki}}"
+    ],
+    "explanation": "'брюки' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "pants"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B1%D1%80%D1%8E%D0%BA%D0%B8"
+  },
+  {
+    "itemId": "0e8f10e0-2ca7-4760-ac88-5f54750c32f2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'dress'.",
+    "correctAnswer": "{{ru-RU|платье|plate|PLA-te}}",
+    "incorrectAnswers": [
+      "{{ru-RU|туфли|tufli|TU-fli}}",
+      "{{ru-RU|носки|noski|NOS-ki}}",
+      "{{ru-RU|куртка|kurtka|KURT-ka}}"
+    ],
+    "explanation": "'платье' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "dress"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%BB%D0%B0%D1%82%D1%8C%D0%B5"
+  },
+  {
+    "itemId": "10b07022-9baf-469d-a39e-fad58f8229b8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'shoes'?",
+    "correctAnswer": "{{ru-RU|туфли|tufli|TU-fli}}",
+    "incorrectAnswers": [
+      "{{ru-RU|носки|noski|NOS-ki}}",
+      "{{ru-RU|куртка|kurtka|KURT-ka}}",
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}"
+    ],
+    "explanation": "'туфли' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shoes"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%82%D1%83%D1%84%D0%BB%D0%B8"
+  },
+  {
+    "itemId": "07d4e9d4-cde2-49d7-8c39-bfec1cf5a5d0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'socks'?",
+    "correctAnswer": "{{ru-RU|носки|noski|NOS-ki}}",
+    "incorrectAnswers": [
+      "{{ru-RU|куртка|kurtka|KURT-ka}}",
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
+      "{{ru-RU|сумка|sumka|SUM-ka}}"
+    ],
+    "explanation": "'носки' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "socks"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BD%D0%BE%D1%81%D0%BA%D0%B8"
+  },
+  {
+    "itemId": "16f0cdd4-ad70-4566-809d-89bcf86ec72f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'jacket' in everyday use?",
+    "correctAnswer": "{{ru-RU|куртка|kurtka|KURT-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
+      "{{ru-RU|сумка|sumka|SUM-ka}}",
+      "{{ru-RU|пальто|palto|PAL-to}}"
+    ],
+    "explanation": "'куртка' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "jacket"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BA%D1%83%D1%80%D1%82%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "5b74fb68-5f67-4595-aaa3-a3a97d9ffceb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'hat'.",
+    "correctAnswer": "{{ru-RU|шляпа|shlyapa|SHLYA-pa}}",
+    "incorrectAnswers": [
+      "{{ru-RU|сумка|sumka|SUM-ka}}",
+      "{{ru-RU|пальто|palto|PAL-to}}",
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}"
+    ],
+    "explanation": "'шляпа' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "hat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%88%D0%BB%D1%8F%D0%BF%D0%B0"
+  },
+  {
+    "itemId": "21555967-167c-4912-a88e-1fd8b3599330",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'bag'?",
+    "correctAnswer": "{{ru-RU|сумка|sumka|SUM-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|пальто|palto|PAL-to}}",
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}"
+    ],
+    "explanation": "'сумка' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "bag"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D1%83%D0%BC%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "554eb20c-734d-4149-a1a8-909d92596cec",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'coat'?",
+    "correctAnswer": "{{ru-RU|пальто|palto|PAL-to}}",
+    "incorrectAnswers": [
+      "{{ru-RU|рубашка|rubashka|ru-BASH-ka}}",
+      "{{ru-RU|брюки|bryuki|BRYU-ki}}",
+      "{{ru-RU|платье|plate|PLA-te}}"
+    ],
+    "explanation": "'пальто' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "coat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%B0%D0%BB%D1%8C%D1%82%D0%BE"
+  },
+  {
+    "itemId": "b6419d61-74a7-4de5-8889-ec2c673f1268",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'car'?",
+    "correctAnswer": "{{ru-RU|машина|mashina|ma-SHI-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}",
+      "{{ru-RU|поезд|poezd|POEZD}}",
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}"
+    ],
+    "explanation": "'машина' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "car"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "c561cd47-0a91-4aa1-8075-c5405008765c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'bus' in everyday use?",
+    "correctAnswer": "{{ru-RU|автобус|avtobus|av-TO-bus}}",
+    "incorrectAnswers": [
+      "{{ru-RU|поезд|poezd|POEZD}}",
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}"
+    ],
+    "explanation": "'автобус' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bus"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B0%D0%B2%D1%82%D0%BE%D0%B1%D1%83%D1%81"
+  },
+  {
+    "itemId": "d48fb74a-855a-4654-a1c7-64d19d6e4042",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'train'.",
+    "correctAnswer": "{{ru-RU|поезд|poezd|POEZD}}",
+    "incorrectAnswers": [
+      "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{ru-RU|лодка|lodka|LOD-ka}}"
+    ],
+    "explanation": "'поезд' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "train"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4"
+  },
+  {
+    "itemId": "ddc81d16-bb9d-47cd-8325-5d70f96f823e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'plane'?",
+    "correctAnswer": "{{ru-RU|самолёт|samolyot|sa-MO-lyot}}",
+    "incorrectAnswers": [
+      "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
+      "{{ru-RU|лодка|lodka|LOD-ka}}",
+      "{{ru-RU|такси|taksi|TAK-si}}"
+    ],
+    "explanation": "'самолёт' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "plane"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%B0%D0%BC%D0%BE%D0%BB%D1%91%D1%82"
+  },
+  {
+    "itemId": "5f338a23-8703-4ed9-9406-c2dd7234492d",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'bicycle'?",
+    "correctAnswer": "{{ru-RU|велосипед|velosiped|ve-lo-SI-ped}}",
+    "incorrectAnswers": [
+      "{{ru-RU|лодка|lodka|LOD-ka}}",
+      "{{ru-RU|такси|taksi|TAK-si}}",
+      "{{ru-RU|метро|metro|ME-tro}}"
+    ],
+    "explanation": "'велосипед' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bicycle"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B2%D0%B5%D0%BB%D0%BE%D1%81%D0%B8%D0%BF%D0%B5%D0%B4"
+  },
+  {
+    "itemId": "74d74836-0dac-4be5-b2a8-0842c33252fa",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'boat' in everyday use?",
+    "correctAnswer": "{{ru-RU|лодка|lodka|LOD-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|такси|taksi|TAK-si}}",
+      "{{ru-RU|метро|metro|ME-tro}}",
+      "{{ru-RU|машина|mashina|ma-SHI-na}}"
+    ],
+    "explanation": "'лодка' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "boat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D0%BE%D0%B4%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "be09e5c7-0003-4791-a53b-b996c0ad4d16",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'taxi'.",
+    "correctAnswer": "{{ru-RU|такси|taksi|TAK-si}}",
+    "incorrectAnswers": [
+      "{{ru-RU|метро|metro|ME-tro}}",
+      "{{ru-RU|машина|mashina|ma-SHI-na}}",
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}"
+    ],
+    "explanation": "'такси' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "taxi"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%82%D0%B0%D0%BA%D1%81%D0%B8"
+  },
+  {
+    "itemId": "6f9f5a6e-630e-492c-9c84-76497e540317",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'metro'?",
+    "correctAnswer": "{{ru-RU|метро|metro|ME-tro}}",
+    "incorrectAnswers": [
+      "{{ru-RU|машина|mashina|ma-SHI-na}}",
+      "{{ru-RU|автобус|avtobus|av-TO-bus}}",
+      "{{ru-RU|поезд|poezd|POEZD}}"
+    ],
+    "explanation": "'метро' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "metro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%B5%D1%82%D1%80%D0%BE"
+  },
+  {
+    "itemId": "15fd404d-5adb-4825-83ff-f8190d83a784",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'sun'?",
+    "correctAnswer": "{{ru-RU|солнце|solntse|SOLN-tse}}",
+    "incorrectAnswers": [
+      "{{ru-RU|луна|luna|LU-na}}",
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
+      "{{ru-RU|дождь|dozhd|DOZHD}}"
+    ],
+    "explanation": "'солнце' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sun"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BE%D0%BB%D0%BD%D1%86%D0%B5"
+  },
+  {
+    "itemId": "e5a42daa-9a6a-4857-a5a2-11fae537fc75",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'moon' in everyday use?",
+    "correctAnswer": "{{ru-RU|луна|luna|LU-na}}",
+    "incorrectAnswers": [
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
+      "{{ru-RU|дождь|dozhd|DOZHD}}",
+      "{{ru-RU|снег|sneg|SNEG}}"
+    ],
+    "explanation": "'луна' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "moon"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D1%83%D0%BD%D0%B0"
+  },
+  {
+    "itemId": "48c9717c-1065-4b16-99ac-c01e03f4cc59",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'star'.",
+    "correctAnswer": "{{ru-RU|звезда|zvezda|ZVEZ-da}}",
+    "incorrectAnswers": [
+      "{{ru-RU|дождь|dozhd|DOZHD}}",
+      "{{ru-RU|снег|sneg|SNEG}}",
+      "{{ru-RU|ветер|veter|ve-TER}}"
+    ],
+    "explanation": "'звезда' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "star"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B7%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0"
+  },
+  {
+    "itemId": "5687b364-7d57-4922-a065-dc5e674f0ab8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'rain'?",
+    "correctAnswer": "{{ru-RU|дождь|dozhd|DOZHD}}",
+    "incorrectAnswers": [
+      "{{ru-RU|снег|sneg|SNEG}}",
+      "{{ru-RU|ветер|veter|ve-TER}}",
+      "{{ru-RU|облако|oblako|o-BLA-ko}}"
+    ],
+    "explanation": "'дождь' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "rain"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B4%D0%BE%D0%B6%D0%B4%D1%8C"
+  },
+  {
+    "itemId": "b4a788d9-5018-4a54-8cf7-c94e936db4f0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'snow'?",
+    "correctAnswer": "{{ru-RU|снег|sneg|SNEG}}",
+    "incorrectAnswers": [
+      "{{ru-RU|ветер|veter|ve-TER}}",
+      "{{ru-RU|облако|oblako|o-BLA-ko}}",
+      "{{ru-RU|гора|gora|GO-ra}}"
+    ],
+    "explanation": "'снег' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "snow"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BD%D0%B5%D0%B3"
+  },
+  {
+    "itemId": "3fee9ccb-2939-4a3a-a868-6f4a8305ed50",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'wind' in everyday use?",
+    "correctAnswer": "{{ru-RU|ветер|veter|ve-TER}}",
+    "incorrectAnswers": [
+      "{{ru-RU|облако|oblako|o-BLA-ko}}",
+      "{{ru-RU|гора|gora|GO-ra}}",
+      "{{ru-RU|река|reka|RE-ka}}"
+    ],
+    "explanation": "'ветер' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "wind"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B2%D0%B5%D1%82%D0%B5%D1%80"
+  },
+  {
+    "itemId": "44e28d6d-e82d-4adc-a940-44d15167ae38",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'cloud'.",
+    "correctAnswer": "{{ru-RU|облако|oblako|o-BLA-ko}}",
+    "incorrectAnswers": [
+      "{{ru-RU|гора|gora|GO-ra}}",
+      "{{ru-RU|река|reka|RE-ka}}",
+      "{{ru-RU|море|more|MO-re}}"
+    ],
+    "explanation": "'облако' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "cloud"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE"
+  },
+  {
+    "itemId": "e3da2b06-dff0-4487-9b5d-8df5df3a214a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'mountain'?",
+    "correctAnswer": "{{ru-RU|гора|gora|GO-ra}}",
+    "incorrectAnswers": [
+      "{{ru-RU|река|reka|RE-ka}}",
+      "{{ru-RU|море|more|MO-re}}",
+      "{{ru-RU|пляж|plyazh|PLYAZH}}"
+    ],
+    "explanation": "'гора' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "mountain"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B3%D0%BE%D1%80%D0%B0"
+  },
+  {
+    "itemId": "036b23ae-209b-416e-923a-e551b8eeaef2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'river'?",
+    "correctAnswer": "{{ru-RU|река|reka|RE-ka}}",
+    "incorrectAnswers": [
+      "{{ru-RU|море|more|MO-re}}",
+      "{{ru-RU|пляж|plyazh|PLYAZH}}",
+      "{{ru-RU|лес|les|LES}}"
+    ],
+    "explanation": "'река' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "river"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%80%D0%B5%D0%BA%D0%B0"
+  },
+  {
+    "itemId": "53b95773-0d1b-4763-bb0f-6941d129b6f9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'sea' in everyday use?",
+    "correctAnswer": "{{ru-RU|море|more|MO-re}}",
+    "incorrectAnswers": [
+      "{{ru-RU|пляж|plyazh|PLYAZH}}",
+      "{{ru-RU|лес|les|LES}}",
+      "{{ru-RU|дерево|derevo|de-RE-vo}}"
+    ],
+    "explanation": "'море' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sea"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BC%D0%BE%D1%80%D0%B5"
+  },
+  {
+    "itemId": "04258d85-a0cc-4818-bc0b-dd7354a1383e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'beach'.",
+    "correctAnswer": "{{ru-RU|пляж|plyazh|PLYAZH}}",
+    "incorrectAnswers": [
+      "{{ru-RU|лес|les|LES}}",
+      "{{ru-RU|дерево|derevo|de-RE-vo}}",
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}"
+    ],
+    "explanation": "'пляж' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "beach"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%BB%D1%8F%D0%B6"
+  },
+  {
+    "itemId": "d8228111-1f13-4bdd-927f-5fa3ff7b5306",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'forest'?",
+    "correctAnswer": "{{ru-RU|лес|les|LES}}",
+    "incorrectAnswers": [
+      "{{ru-RU|дерево|derevo|de-RE-vo}}",
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
+      "{{ru-RU|погода|pogoda|po-GO-da}}"
+    ],
+    "explanation": "'лес' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "forest"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BB%D0%B5%D1%81"
+  },
+  {
+    "itemId": "f23fa60a-f8d7-4727-b69f-a43acc80347c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'tree'?",
+    "correctAnswer": "{{ru-RU|дерево|derevo|de-RE-vo}}",
+    "incorrectAnswers": [
+      "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
+      "{{ru-RU|погода|pogoda|po-GO-da}}",
+      "{{ru-RU|солнце|solntse|SOLN-tse}}"
+    ],
+    "explanation": "'дерево' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "tree"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE"
+  },
+  {
+    "itemId": "d12516b8-20cf-4335-b207-b6a7a31a182c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'flower' in everyday use?",
+    "correctAnswer": "{{ru-RU|цветок|tsvetok|tsve-TOK}}",
+    "incorrectAnswers": [
+      "{{ru-RU|погода|pogoda|po-GO-da}}",
+      "{{ru-RU|солнце|solntse|SOLN-tse}}",
+      "{{ru-RU|луна|luna|LU-na}}"
+    ],
+    "explanation": "'цветок' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "flower"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BA"
+  },
+  {
+    "itemId": "629f0ac3-062c-42dc-ba4c-829f42937322",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'weather'.",
+    "correctAnswer": "{{ru-RU|погода|pogoda|po-GO-da}}",
+    "incorrectAnswers": [
+      "{{ru-RU|солнце|solntse|SOLN-tse}}",
+      "{{ru-RU|луна|luna|LU-na}}",
+      "{{ru-RU|звезда|zvezda|ZVEZ-da}}"
+    ],
+    "explanation": "'погода' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "weather"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0"
+  },
+  {
+    "itemId": "f5b73f64-a942-4d51-a75e-dc7398a3df41",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'be'?",
+    "correctAnswer": "{{ru-RU|быть|byt|BYT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|иметь|imet|i-MET}}",
+      "{{ru-RU|хотеть|khotet|kho-TET}}",
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}"
+    ],
+    "explanation": "'быть' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "be"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B1%D1%8B%D1%82%D1%8C"
+  },
+  {
+    "itemId": "89934e9d-12c9-433e-b821-5554c4b8baa7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'have' in everyday use?",
+    "correctAnswer": "{{ru-RU|иметь|imet|i-MET}}",
+    "incorrectAnswers": [
+      "{{ru-RU|хотеть|khotet|kho-TET}}",
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
+      "{{ru-RU|идти|idti|ID-ti}}"
+    ],
+    "explanation": "'иметь' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "have"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B8%D0%BC%D0%B5%D1%82%D1%8C"
+  },
+  {
+    "itemId": "ce4b2ad7-9a49-41f0-885c-694a9a7c54aa",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'want'.",
+    "correctAnswer": "{{ru-RU|хотеть|khotet|kho-TET}}",
+    "incorrectAnswers": [
+      "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
+      "{{ru-RU|идти|idti|ID-ti}}",
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}"
+    ],
+    "explanation": "'хотеть' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "want"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%85%D0%BE%D1%82%D0%B5%D1%82%D1%8C"
+  },
+  {
+    "itemId": "1d883959-cdaa-4707-895f-b28d1e708d08",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'need'?",
+    "correctAnswer": "{{ru-RU|нуждаться|nuzhdatsya|nuzh-DA-tsya}}",
+    "incorrectAnswers": [
+      "{{ru-RU|идти|idti|ID-ti}}",
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
+      "{{ru-RU|есть|est|EST}}"
+    ],
+    "explanation": "'нуждаться' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "need"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BD%D1%83%D0%B6%D0%B4%D0%B0%D1%82%D1%8C%D1%81%D1%8F"
+  },
+  {
+    "itemId": "7a375fde-0ef4-4b0c-a297-32b156b6ac3c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'go'?",
+    "correctAnswer": "{{ru-RU|идти|idti|ID-ti}}",
+    "incorrectAnswers": [
+      "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
+      "{{ru-RU|есть|est|EST}}",
+      "{{ru-RU|пить|pit|PIT}}"
+    ],
+    "explanation": "'идти' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "go"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B8%D0%B4%D1%82%D0%B8"
+  },
+  {
+    "itemId": "85169371-deb8-4b88-b33b-3bfe84b84f2b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Which Russian word means 'come' in everyday use?",
+    "correctAnswer": "{{ru-RU|приходить|prikhodit|prik-HO-dit}}",
+    "incorrectAnswers": [
+      "{{ru-RU|есть|est|EST}}",
+      "{{ru-RU|пить|pit|PIT}}",
+      "{{ru-RU|спать|spat|SPAT}}"
+    ],
+    "explanation": "'приходить' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "come"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%8C"
+  },
+  {
+    "itemId": "9771f9a5-1b16-4791-a53e-a66e93fdf9e5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Russian word for 'eat'.",
+    "correctAnswer": "{{ru-RU|есть|est|EST}}",
+    "incorrectAnswers": [
+      "{{ru-RU|пить|pit|PIT}}",
+      "{{ru-RU|спать|spat|SPAT}}",
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}"
+    ],
+    "explanation": "'есть' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "eat"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%B5%D1%81%D1%82%D1%8C"
+  },
+  {
+    "itemId": "0aee15a8-9026-47cd-ab19-d0261a9296be",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Russian word for 'drink'?",
+    "correctAnswer": "{{ru-RU|пить|pit|PIT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|спать|spat|SPAT}}",
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}",
+      "{{ru-RU|работать|rabotat|ra-BO-tat}}"
+    ],
+    "explanation": "'пить' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "drink"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%BF%D0%B8%D1%82%D1%8C"
+  },
+  {
+    "itemId": "b972d451-d67e-4803-ac68-35c5229369c2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Russian, how do you say 'sleep'?",
+    "correctAnswer": "{{ru-RU|спать|spat|SPAT}}",
+    "incorrectAnswers": [
+      "{{ru-RU|просыпаться|prosypatsya|pro-sy-PA-tsya}}",
+      "{{ru-RU|работать|rabotat|ra-BO-tat}}",
+      "{{ru-RU|говорить|govorit|go-VO-rit}}"
+    ],
+    "explanation": "'спать' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "russian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "sleep"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D1%81%D0%BF%D0%B0%D1%82%D1%8C"
+  }
+]

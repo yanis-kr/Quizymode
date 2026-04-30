@@ -334,6 +334,7 @@ const CategoriesMapModal = ({
       return;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setExpandedNodeIds(new Set());
   }, [isOpen]);
 

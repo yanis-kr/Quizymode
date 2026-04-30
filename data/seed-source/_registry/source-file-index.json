@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-19T13:44:35.796666+00:00",
-  "totalItems": 12683,
+  "generatedAt": "2026-04-30T11:20:44.079Z",
+  "totalItems": 12678,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -1171,260 +1171,60 @@
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p01.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.001.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 12,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.551Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p02.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.002.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.563Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p03.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.003.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.567Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p04.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.004.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.571Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p05.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.005.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.571Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p06.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.006.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.579Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p07.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.007.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p08.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p09.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p10.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p11.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p12.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p13.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p14.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p15.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p16.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p17.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p18.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p19.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p20.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p21.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p22.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p23.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p24.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p25.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p26.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p27.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p28.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p29.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p30.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p31.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 17,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p32.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 64,
-      "modifiedAt": "2026-04-12T09:54:39-05:00"
+      "itemCount": 73,
+      "modifiedAt": "2026-04-30T12:00:02.582Z"
     },
     {
       "path": "data/seed-source/items/exams/exams.aws.sap-c02.json",
@@ -3315,12 +3115,36 @@
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
-      "path": "data/seed-source/items/languages/languages.bulgarian.core.json",
+      "path": "data/seed-source/items/languages/languages.arabic.core.json",
+      "category": "languages",
+      "nav1": "arabic",
+      "nav2": "core",
+      "itemCount": 6,
+      "modifiedAt": "2026-04-30T11:36:57.551Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.bulgarian.core.001.json",
       "category": "languages",
       "nav1": "bulgarian",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.553Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.bulgarian.core.002.json",
+      "category": "languages",
+      "nav1": "bulgarian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.554Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.bulgarian.core.003.json",
+      "category": "languages",
+      "nav1": "bulgarian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.556Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.bulgarian.grammar.json",
@@ -3328,7 +3152,7 @@
       "nav1": "bulgarian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.558Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.bulgarian.idioms.json",
@@ -3336,15 +3160,31 @@
       "nav1": "bulgarian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.792Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.bulgarian.phrases.json",
+      "path": "data/seed-source/items/languages/languages.bulgarian.phrases.001.json",
       "category": "languages",
       "nav1": "bulgarian",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.560Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.bulgarian.phrases.002.json",
+      "category": "languages",
+      "nav1": "bulgarian",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.562Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.chinese.core.json",
+      "category": "languages",
+      "nav1": "chinese",
+      "nav2": "core",
+      "itemCount": 6,
+      "modifiedAt": "2026-04-30T11:36:57.563Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.conversation.json",
@@ -3352,143 +3192,31 @@
       "nav1": "english",
       "nav2": "conversation",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.core.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "core",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.565Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.core.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "core",
-      "itemCount": 8,
-      "modifiedAt": "2026-04-16T07:43:56-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.3.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.4.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.5.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.6.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.7.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.grammar.8.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 14,
+      "modifiedAt": "2026-04-30T11:36:57.566Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.grammar.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.3.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.4.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.5.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.6.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.idioms.7.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 48,
+      "modifiedAt": "2026-04-30T11:36:57.567Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.idioms.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "idioms",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "itemCount": 25,
+      "modifiedAt": "2026-04-30T11:36:57.567Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.listening.json",
@@ -3496,7 +3224,7 @@
       "nav1": "english",
       "nav2": "listening",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.568Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.phrases.json",
@@ -3504,7 +3232,7 @@
       "nav1": "english",
       "nav2": "phrases",
       "itemCount": 7,
-      "modifiedAt": "2026-04-16T07:43:56-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.569Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.pronunciation.json",
@@ -3512,135 +3240,31 @@
       "nav1": "english",
       "nav2": "pronunciation",
       "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.reading.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "reading",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.570Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.reading.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "reading",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.travel.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.travel.3.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.travel.4.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.travel.5.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.travel.6.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 12,
+      "modifiedAt": "2026-04-30T11:36:57.571Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.travel.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "travel",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.2.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.3.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.4.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.5.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.6.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.7.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.english.vocab.8.json",
-      "category": "languages",
-      "nav1": "english",
-      "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 36,
+      "modifiedAt": "2026-04-30T11:36:57.572Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.vocab.json",
       "category": "languages",
       "nav1": "english",
       "nav2": "vocab",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "itemCount": 48,
+      "modifiedAt": "2026-04-30T11:36:57.573Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.english.writing.json",
@@ -3648,7 +3272,7 @@
       "nav1": "english",
       "nav2": "writing",
       "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.574Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.conversation.json",
@@ -3656,31 +3280,47 @@
       "nav1": "french",
       "nav2": "conversation",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.575Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.french.core.json",
+      "path": "data/seed-source/items/languages/languages.french.core.001.json",
       "category": "languages",
       "nav1": "french",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.577Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.french.grammar.2.json",
+      "path": "data/seed-source/items/languages/languages.french.core.002.json",
       "category": "languages",
       "nav1": "french",
-      "nav2": "grammar",
-      "itemCount": 24,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.578Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.french.core.003.json",
+      "category": "languages",
+      "nav1": "french",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.580Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.grammar.json",
       "category": "languages",
       "nav1": "french",
       "nav2": "grammar",
+      "itemCount": 30,
+      "modifiedAt": "2026-04-30T11:36:57.580Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.french.idioms.json",
+      "category": "languages",
+      "nav1": "french",
+      "nav2": "idioms",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.794Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.listening.json",
@@ -3688,15 +3328,23 @@
       "nav1": "french",
       "nav2": "listening",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.582Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.french.phrases.json",
+      "path": "data/seed-source/items/languages/languages.french.phrases.001.json",
       "category": "languages",
       "nav1": "french",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.584Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.french.phrases.002.json",
+      "category": "languages",
+      "nav1": "french",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.585Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.travel.json",
@@ -3704,7 +3352,7 @@
       "nav1": "french",
       "nav2": "travel",
       "itemCount": 6,
-      "modifiedAt": "2026-04-19T08:01:01-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.586Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.verbs.json",
@@ -3712,7 +3360,7 @@
       "nav1": "french",
       "nav2": "verbs",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.587Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.french.vocab.json",
@@ -3720,7 +3368,7 @@
       "nav1": "french",
       "nav2": "vocab",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.587Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.cases.json",
@@ -3728,7 +3376,7 @@
       "nav1": "german",
       "nav2": "cases",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.588Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.conversation.json",
@@ -3736,31 +3384,39 @@
       "nav1": "german",
       "nav2": "conversation",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.589Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.german.core.json",
+      "path": "data/seed-source/items/languages/languages.german.core.001.json",
       "category": "languages",
       "nav1": "german",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.591Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.german.grammar.2.json",
+      "path": "data/seed-source/items/languages/languages.german.core.002.json",
       "category": "languages",
       "nav1": "german",
-      "nav2": "grammar",
-      "itemCount": 24,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.592Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.german.core.003.json",
+      "category": "languages",
+      "nav1": "german",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.593Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.grammar.json",
       "category": "languages",
       "nav1": "german",
       "nav2": "grammar",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 30,
+      "modifiedAt": "2026-04-30T11:36:57.594Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.listening.json",
@@ -3768,15 +3424,23 @@
       "nav1": "german",
       "nav2": "listening",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.594Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.german.phrases.json",
+      "path": "data/seed-source/items/languages/languages.german.phrases.001.json",
       "category": "languages",
       "nav1": "german",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.596Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.german.phrases.002.json",
+      "category": "languages",
+      "nav1": "german",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.597Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.travel.json",
@@ -3784,7 +3448,7 @@
       "nav1": "german",
       "nav2": "travel",
       "itemCount": 6,
-      "modifiedAt": "2026-04-19T08:01:01-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.597Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.german.vocab.json",
@@ -3792,15 +3456,31 @@
       "nav1": "german",
       "nav2": "vocab",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.599Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.italian.core.json",
+      "path": "data/seed-source/items/languages/languages.italian.core.001.json",
       "category": "languages",
       "nav1": "italian",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.600Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.italian.core.002.json",
+      "category": "languages",
+      "nav1": "italian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.602Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.italian.core.003.json",
+      "category": "languages",
+      "nav1": "italian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.603Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.italian.grammar.json",
@@ -3808,7 +3488,7 @@
       "nav1": "italian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.604Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.italian.idioms.json",
@@ -3816,23 +3496,47 @@
       "nav1": "italian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.795Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.italian.phrases.json",
+      "path": "data/seed-source/items/languages/languages.italian.phrases.001.json",
       "category": "languages",
       "nav1": "italian",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.606Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.japanese.core.json",
+      "path": "data/seed-source/items/languages/languages.italian.phrases.002.json",
+      "category": "languages",
+      "nav1": "italian",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.607Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.japanese.core.001.json",
       "category": "languages",
       "nav1": "japanese",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.609Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.japanese.core.002.json",
+      "category": "languages",
+      "nav1": "japanese",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.610Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.japanese.core.003.json",
+      "category": "languages",
+      "nav1": "japanese",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.612Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.japanese.grammar.json",
@@ -3840,7 +3544,7 @@
       "nav1": "japanese",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.613Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.japanese.idioms.json",
@@ -3848,23 +3552,47 @@
       "nav1": "japanese",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.796Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.japanese.phrases.json",
+      "path": "data/seed-source/items/languages/languages.japanese.phrases.001.json",
       "category": "languages",
       "nav1": "japanese",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.615Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.latin.expressions.json",
+      "path": "data/seed-source/items/languages/languages.japanese.phrases.002.json",
+      "category": "languages",
+      "nav1": "japanese",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.617Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.korean.core.json",
+      "category": "languages",
+      "nav1": "korean",
+      "nav2": "core",
+      "itemCount": 6,
+      "modifiedAt": "2026-04-30T11:36:57.617Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.latin.expressions.001.json",
       "category": "languages",
       "nav1": "latin",
       "nav2": "expressions",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.619Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.latin.expressions.002.json",
+      "category": "languages",
+      "nav1": "latin",
+      "nav2": "expressions",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.620Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.latin.grammar.json",
@@ -3872,15 +3600,31 @@
       "nav1": "latin",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.621Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.latvian.core.json",
+      "path": "data/seed-source/items/languages/languages.latvian.core.001.json",
       "category": "languages",
       "nav1": "latvian",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.622Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.latvian.core.002.json",
+      "category": "languages",
+      "nav1": "latvian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.624Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.latvian.core.003.json",
+      "category": "languages",
+      "nav1": "latvian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.625Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.latvian.grammar.json",
@@ -3888,7 +3632,7 @@
       "nav1": "latvian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.626Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.latvian.idioms.json",
@@ -3896,55 +3640,55 @@
       "nav1": "latvian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.797Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.latvian.phrases.json",
+      "path": "data/seed-source/items/languages/languages.latvian.phrases.001.json",
       "category": "languages",
       "nav1": "latvian",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.629Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.other-langs.arabic.json",
+      "path": "data/seed-source/items/languages/languages.latvian.phrases.002.json",
       "category": "languages",
-      "nav1": "other-langs",
-      "nav2": "arabic",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "nav1": "latvian",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.631Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.other-langs.chinese.json",
+      "path": "data/seed-source/items/languages/languages.portuguese.core.json",
       "category": "languages",
-      "nav1": "other-langs",
-      "nav2": "chinese",
+      "nav1": "portuguese",
+      "nav2": "core",
       "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.632Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.other-langs.korean.json",
-      "category": "languages",
-      "nav1": "other-langs",
-      "nav2": "korean",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.other-langs.portuguese.json",
-      "category": "languages",
-      "nav1": "other-langs",
-      "nav2": "portuguese",
-      "itemCount": 6,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
-    },
-    {
-      "path": "data/seed-source/items/languages/languages.romanian.core.json",
+      "path": "data/seed-source/items/languages/languages.romanian.core.001.json",
       "category": "languages",
       "nav1": "romanian",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.633Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.romanian.core.002.json",
+      "category": "languages",
+      "nav1": "romanian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.636Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.romanian.core.003.json",
+      "category": "languages",
+      "nav1": "romanian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.638Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.romanian.grammar.json",
@@ -3952,7 +3696,7 @@
       "nav1": "romanian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.638Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.romanian.idioms.json",
@@ -3960,23 +3704,47 @@
       "nav1": "romanian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.798Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.romanian.phrases.json",
+      "path": "data/seed-source/items/languages/languages.romanian.phrases.001.json",
       "category": "languages",
       "nav1": "romanian",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.641Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.russian.core.json",
+      "path": "data/seed-source/items/languages/languages.romanian.phrases.002.json",
+      "category": "languages",
+      "nav1": "romanian",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.645Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.russian.core.001.json",
       "category": "languages",
       "nav1": "russian",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.646Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.russian.core.002.json",
+      "category": "languages",
+      "nav1": "russian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.648Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.russian.core.003.json",
+      "category": "languages",
+      "nav1": "russian",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.650Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.russian.grammar.json",
@@ -3984,7 +3752,7 @@
       "nav1": "russian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.651Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.russian.idioms.json",
@@ -3992,15 +3760,23 @@
       "nav1": "russian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.800Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.russian.phrases.json",
+      "path": "data/seed-source/items/languages/languages.russian.phrases.001.json",
       "category": "languages",
       "nav1": "russian",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.654Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.russian.phrases.002.json",
+      "category": "languages",
+      "nav1": "russian",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.655Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.conversation.json",
@@ -4008,31 +3784,47 @@
       "nav1": "spanish",
       "nav2": "conversation",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.656Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.spanish.core.json",
+      "path": "data/seed-source/items/languages/languages.spanish.core.001.json",
       "category": "languages",
       "nav1": "spanish",
       "nav2": "core",
-      "itemCount": 300,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.657Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.spanish.grammar.2.json",
+      "path": "data/seed-source/items/languages/languages.spanish.core.002.json",
       "category": "languages",
       "nav1": "spanish",
-      "nav2": "grammar",
-      "itemCount": 24,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.658Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.spanish.core.003.json",
+      "category": "languages",
+      "nav1": "spanish",
+      "nav2": "core",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.660Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.grammar.json",
       "category": "languages",
       "nav1": "spanish",
       "nav2": "grammar",
+      "itemCount": 30,
+      "modifiedAt": "2026-04-30T11:36:57.661Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.spanish.idioms.json",
+      "category": "languages",
+      "nav1": "spanish",
+      "nav2": "idioms",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.801Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.listening.json",
@@ -4040,15 +3832,23 @@
       "nav1": "spanish",
       "nav2": "listening",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.663Z"
     },
     {
-      "path": "data/seed-source/items/languages/languages.spanish.phrases.json",
+      "path": "data/seed-source/items/languages/languages.spanish.phrases.001.json",
       "category": "languages",
       "nav1": "spanish",
       "nav2": "phrases",
-      "itemCount": 200,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.664Z"
+    },
+    {
+      "path": "data/seed-source/items/languages/languages.spanish.phrases.002.json",
+      "category": "languages",
+      "nav1": "spanish",
+      "nav2": "phrases",
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T11:36:57.665Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.travel.json",
@@ -4056,7 +3856,7 @@
       "nav1": "spanish",
       "nav2": "travel",
       "itemCount": 6,
-      "modifiedAt": "2026-04-19T08:01:01-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.665Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.verbs.json",
@@ -4064,7 +3864,7 @@
       "nav1": "spanish",
       "nav2": "verbs",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.666Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.spanish.vocab.json",
@@ -4072,7 +3872,7 @@
       "nav1": "spanish",
       "nav2": "vocab",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.667Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.ukrainian.core.json",
@@ -4080,7 +3880,7 @@
       "nav1": "ukrainian",
       "nav2": "core",
       "itemCount": 9,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.668Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.ukrainian.grammar.json",
@@ -4088,7 +3888,7 @@
       "nav1": "ukrainian",
       "nav2": "grammar",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.669Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.ukrainian.idioms.json",
@@ -4096,7 +3896,7 @@
       "nav1": "ukrainian",
       "nav2": "idioms",
       "itemCount": 30,
-      "modifiedAt": "2026-04-18T10:51:08-05:00"
+      "modifiedAt": "2026-04-30T11:51:34.802Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.ukrainian.phrases.json",
@@ -4104,7 +3904,7 @@
       "nav1": "ukrainian",
       "nav2": "phrases",
       "itemCount": 6,
-      "modifiedAt": "2026-04-18T10:02:49-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.671Z"
     },
     {
       "path": "data/seed-source/items/languages/languages.ukrainian.travel.json",
@@ -4112,7 +3912,7 @@
       "nav1": "ukrainian",
       "nav2": "travel",
       "itemCount": 6,
-      "modifiedAt": "2026-04-19T08:01:01-05:00"
+      "modifiedAt": "2026-04-30T11:36:57.672Z"
     },
     {
       "path": "data/seed-source/items/nature/nature.animals.birds.json",

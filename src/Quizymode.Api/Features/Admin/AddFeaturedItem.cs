@@ -17,7 +17,7 @@ public static class AddFeaturedItem
         string? NavKeyword1,
         string? NavKeyword2,
         Guid? CollectionId,
-        int SortOrder = 0);
+        int? SortOrder = null);
 
     public sealed record Response(Guid Id);
 
@@ -99,17 +99,43 @@ public static class AddFeaturedItem
         {
             FeaturedItemType type = request.Type == "Collection" ? FeaturedItemType.Collection : FeaturedItemType.Set;
 
-            if (type == FeaturedItemType.Collection && request.CollectionId.HasValue)
+            if (type == FeaturedItemType.Set)
             {
+                string? catSlug = request.CategorySlug?.Trim().ToLower();
+                string? kw1 = request.NavKeyword1?.Trim().ToLower();
+                string? kw2 = string.IsNullOrWhiteSpace(request.NavKeyword2) ? null : request.NavKeyword2.Trim().ToLower();
+
+                bool isDuplicate = await db.FeaturedItems
+                    .AnyAsync(f => f.Type == FeaturedItemType.Set
+                        && f.CategorySlug == catSlug
+                        && f.NavKeyword1 == kw1
+                        && f.NavKeyword2 == kw2, cancellationToken);
+
+                if (isDuplicate)
+                    return Result.Failure<Response>(Error.Conflict("Featured.DuplicateSet", "This set is already featured."));
+            }
+            else if (type == FeaturedItemType.Collection)
+            {
+                if (!request.CollectionId.HasValue)
+                    return Result.Failure<Response>(Error.Failure("Featured.MissingCollection", "CollectionId is required."));
+
                 bool collectionExists = await db.Collections
                     .AnyAsync(c => c.Id == request.CollectionId.Value, cancellationToken);
 
                 if (!collectionExists)
-                {
-                    return Result.Failure<Response>(
-                        Error.NotFound("Collection.NotFound", $"Collection {request.CollectionId} not found"));
-                }
+                    return Result.Failure<Response>(Error.NotFound("Collection.NotFound", $"Collection {request.CollectionId} not found"));
+
+                bool isDuplicate = await db.FeaturedItems
+                    .AnyAsync(f => f.Type == FeaturedItemType.Collection
+                        && f.CollectionId == request.CollectionId.Value, cancellationToken);
+
+                if (isDuplicate)
+                    return Result.Failure<Response>(Error.Conflict("Featured.DuplicateCollection", "This collection is already featured."));
             }
+
+            int sortOrder = request.SortOrder ?? (await db.FeaturedItems
+                .Where(f => f.Type == type)
+                .MaxAsync(f => (int?)f.SortOrder, cancellationToken) ?? -1) + 1;
 
             FeaturedItem item = new()
             {
@@ -120,7 +146,7 @@ public static class AddFeaturedItem
                 NavKeyword1 = request.NavKeyword1?.Trim().ToLower(),
                 NavKeyword2 = string.IsNullOrWhiteSpace(request.NavKeyword2) ? null : request.NavKeyword2.Trim().ToLower(),
                 CollectionId = request.CollectionId,
-                SortOrder = request.SortOrder,
+                SortOrder = sortOrder,
                 CreatedBy = userContext.UserId ?? string.Empty,
                 CreatedAt = DateTime.UtcNow,
             };

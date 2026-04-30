@@ -231,7 +231,7 @@ const AdminKeywordsPage = () => {
     try {
       const created = await createKeywordMutation.mutateAsync(kw.name);
       return created.id;
-    } catch (e) {
+    } catch {
       return null;
     }
   };

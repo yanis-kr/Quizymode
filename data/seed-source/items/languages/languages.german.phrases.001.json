@@ -1,0 +1,2201 @@
+[
+  {
+    "itemId": "c16ea07e-65b8-4d70-852c-80be0ba6f7ea",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in German?",
+    "correctAnswer": "{{de-DE|Wo ist die Toilette?||WO ISHT DEE TOI-let-te?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wann ist die Toilette?||WANN ISHT DEE TOI-let-te?}}",
+      "{{de-DE|Was ist die Toilette?||WAS ISHT DEE TOI-let-te?}}",
+      "{{de-DE|Wie ist die Toilette?||WEE ISHT DEE TOI-let-te?}}"
+    ],
+    "explanation": "'Wo ist' = 'Where is'. Replace 'die Toilette' with any destination: der Bahnhof, das Hotel, etc.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wo"
+  },
+  {
+    "itemId": "718b5d57-2f06-4c73-b199-c585c58dd5dd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in German?",
+    "correctAnswer": "{{de-DE|Wie viel kostet das?||WEE VEEL KOSH-tet DAS?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Was ist das?||WAS ISHT DAS?}}",
+      "{{de-DE|Wo kann ich das kaufen?||WO KANN ICH DAS KOW-fen?}}",
+      "{{de-DE|Gibt es einen Rabatt?||GIBT ES EYE-nen RA-batt?}}"
+    ],
+    "explanation": "'Wie viel kostet das?' — 'How much does this cost?' — the key shopping phrase.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/wie-viel"
+  },
+  {
+    "itemId": "13d33296-bbef-47e1-a9ea-2399bd1376bf",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in German?",
+    "correctAnswer": "{{de-DE|Einen Kaffee, bitte.||EI-nen KAF-fee, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich will Kaffee!||ICH VILL KAF-fee!}}",
+      "{{de-DE|Gib mir Kaffee.||GIB MIR KAF-fee.}}",
+      "{{de-DE|Kaffee sofort, bitte.||KAF-fee SO-fort, BIT-te.}}"
+    ],
+    "explanation": "'Einen [item], bitte' — 'One [item], please'. Note the accusative 'einen' for masculine nouns.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.germanpod101.com/german-phrases/"
+  },
+  {
+    "itemId": "c207f96d-a39c-4efd-862e-5e0d8d6c6177",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in a German restaurant?",
+    "correctAnswer": "{{de-DE|Die Rechnung, bitte.||DEE RECH-nung, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Die Speisekarte, bitte.||DEE SPEYE-se-kar-te, BIT-te.}}",
+      "{{de-DE|Noch einmal, bitte.||NOCH EYEN-mal, BIT-te.}}",
+      "{{de-DE|Es war sehr lecker.||ES VAR SEHR LEC-ker.}}"
+    ],
+    "explanation": "'Die Rechnung, bitte' — 'The bill, please'. In Austria/Bavaria you may also hear 'Zahlen, bitte'.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/rechnung"
+  },
+  {
+    "itemId": "f87a86f3-6207-4ac8-9f2b-6ca52c4ba00c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in German?",
+    "correctAnswer": "{{de-DE|Sprechen Sie Englisch?||SPRE-chen SEE EN-glish?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Verstehen Sie Englisch?||versh-TE-hen SEE EN-glish?}}",
+      "{{de-DE|Kennen Sie Englisch?||KEN-nen SEE EN-glish?}}",
+      "{{de-DE|Lernen Sie Englisch?||LER-nen SEE EN-glish?}}"
+    ],
+    "explanation": "'Sprechen Sie Englisch?' — formal. Informal: 'Sprichst du Englisch?'",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/sprechen"
+  },
+  {
+    "itemId": "8cf0157f-de41-4b67-9064-2a512d823a9b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Turn left' in German?",
+    "correctAnswer": "{{de-DE|Biegen Sie links ab.||bee-GEN SEE LINKS AB.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Biegen Sie rechts ab.||bee-GEN SEE RECHTS AB.}}",
+      "{{de-DE|Fahren Sie geradeaus.||FAH-ren SEE ge-RA-deows.}}",
+      "{{de-DE|Halten Sie hier an.||HAL-ten SEE HEER AN.}}"
+    ],
+    "explanation": "'Links' = left, 'rechts' = right, 'geradeaus' = straight ahead — the three key direction words.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/links"
+  },
+  {
+    "itemId": "2665a822-f8f0-4145-8f52-7a4fba065e9e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'A table for two, please' in German?",
+    "correctAnswer": "{{de-DE|Einen Tisch für zwei Personen, bitte.||EI-nen TISH FUR TSVEYE PER-so-nen, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zwei Leute möchten sitzen.||ZVEYE LOY-te MOCH-ten SIT-tsen.}}",
+      "{{de-DE|Wir brauchen einen großen Tisch.||WIR BROW-chen EYE-nen GROS-sen TISH.}}",
+      "{{de-DE|Tisch für uns beide.||TISH FUR UNS beye-DE.}}"
+    ],
+    "explanation": "'Einen Tisch für [number] Personen, bitte' — swap the number as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/german-english/tisch"
+  },
+  {
+    "itemId": "25d3af25-443c-4a27-a909-ec3564fd6f7a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Good evening.'?",
+    "correctAnswer": "{{de-DE|Guten Abend.||GU-ten A-bend.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wie geht es Ihnen?||WEE GEHT ES IH-nen?}}",
+      "{{de-DE|Mir geht es gut, danke.||MIR GEHT ES GUT, DAN-ke.}}",
+      "{{de-DE|Sehr gut, danke.||SEHR GUT, DAN-ke.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Guten%20Abend."
+  },
+  {
+    "itemId": "22eda4db-ed48-4cba-bfb7-3639542b3576",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'How are you?'?",
+    "correctAnswer": "{{de-DE|Wie geht es Ihnen?||WEE GEHT ES IH-nen?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mir geht es gut, danke.||MIR GEHT ES GUT, DAN-ke.}}",
+      "{{de-DE|Sehr gut, danke.||SEHR GUT, DAN-ke.}}",
+      "{{de-DE|Bis später.||BIS SHPA-ter.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wie%20geht%20es%20Ihnen%3F"
+  },
+  {
+    "itemId": "d0e5b75d-a105-4283-b935-5c64267fc655",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{de-DE|Mir geht es gut, danke.||MIR GEHT ES GUT, DAN-ke.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Sehr gut, danke.||SEHR GUT, DAN-ke.}}",
+      "{{de-DE|Bis später.||BIS SHPA-ter.}}",
+      "{{de-DE|Bis morgen.||BIS MOR-gen.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mir%20geht%20es%20gut%2C%20danke."
+  },
+  {
+    "itemId": "b07a0a5d-fef2-4e3a-9de2-219b914cfbf9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{de-DE|Sehr gut, danke.||SEHR GUT, DAN-ke.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bis später.||BIS SHPA-ter.}}",
+      "{{de-DE|Bis morgen.||BIS MOR-gen.}}",
+      "{{de-DE|Schönen Tag noch.||SCHO-nen TAG NOCH.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Sehr%20gut%2C%20danke."
+  },
+  {
+    "itemId": "e474cb8c-60fc-4a8d-9c0c-bd4312aef678",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'See you later.'?",
+    "correctAnswer": "{{de-DE|Bis später.||BIS SHPA-ter.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bis morgen.||BIS MOR-gen.}}",
+      "{{de-DE|Schönen Tag noch.||SCHO-nen TAG NOCH.}}",
+      "{{de-DE|Willkommen.||WILL-kom-men.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bis%20sp%C3%A4ter."
+  },
+  {
+    "itemId": "740a764a-25d0-4dfe-8cec-b1ce79d1fab0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{de-DE|Bis morgen.||BIS MOR-gen.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schönen Tag noch.||SCHO-nen TAG NOCH.}}",
+      "{{de-DE|Willkommen.||WILL-kom-men.}}",
+      "{{de-DE|Freut mich.||FROYT MICH.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bis%20morgen."
+  },
+  {
+    "itemId": "389412a0-69c2-40bd-b842-3e0ced0dfa28",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Have a good day.'.",
+    "correctAnswer": "{{de-DE|Schönen Tag noch.||SCHO-nen TAG NOCH.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Willkommen.||WILL-kom-men.}}",
+      "{{de-DE|Freut mich.||FROYT MICH.}}",
+      "{{de-DE|Schön, Sie wiederzusehen.||SCHON, SEE VEE-der-tsu-se-hen.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Sch%C3%B6nen%20Tag%20noch."
+  },
+  {
+    "itemId": "0c2e62b3-ae19-46b1-9c15-6b1f53134d38",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Welcome.'?",
+    "correctAnswer": "{{de-DE|Willkommen.||WILL-kom-men.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Freut mich.||FROYT MICH.}}",
+      "{{de-DE|Schön, Sie wiederzusehen.||SCHON, SEE VEE-der-tsu-se-hen.}}",
+      "{{de-DE|Bis bald.||BIS BALD.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Willkommen."
+  },
+  {
+    "itemId": "3b76fbaa-11bc-486c-89d5-5f6b1ec4d1bf",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{de-DE|Freut mich.||FROYT MICH.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schön, Sie wiederzusehen.||SCHON, SEE VEE-der-tsu-se-hen.}}",
+      "{{de-DE|Bis bald.||BIS BALD.}}",
+      "{{de-DE|Schönen Abend.||SCHO-nen A-bend.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Freut%20mich."
+  },
+  {
+    "itemId": "18929534-36ba-4fb6-9e89-61ea861cc1d9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{de-DE|Schön, Sie wiederzusehen.||SCHON, SEE VEE-der-tsu-se-hen.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bis bald.||BIS BALD.}}",
+      "{{de-DE|Schönen Abend.||SCHO-nen A-bend.}}",
+      "{{de-DE|Guten Abend.||GU-ten A-bend.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Sch%C3%B6n%2C%20Sie%20wiederzusehen."
+  },
+  {
+    "itemId": "a12a14ca-f08f-4dd1-b4dc-9e3f82abdbf0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'See you soon.'.",
+    "correctAnswer": "{{de-DE|Bis bald.||BIS BALD.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schönen Abend.||SCHO-nen A-bend.}}",
+      "{{de-DE|Guten Abend.||GU-ten A-bend.}}",
+      "{{de-DE|Wie geht es Ihnen?||WEE GEHT ES IH-nen?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bis%20bald."
+  },
+  {
+    "itemId": "61db880c-e12d-4b1f-bf15-f4ae8373deed",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{de-DE|Schönen Abend.||SCHO-nen A-bend.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Guten Abend.||GU-ten A-bend.}}",
+      "{{de-DE|Wie geht es Ihnen?||WEE GEHT ES IH-nen?}}",
+      "{{de-DE|Mir geht es gut, danke.||MIR GEHT ES GUT, DAN-ke.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=Sch%C3%B6nen%20Abend."
+  },
+  {
+    "itemId": "943a9dce-50ca-4bb8-8ca6-5d7f3140a41e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'What is your name?'?",
+    "correctAnswer": "{{de-DE|Wie heißen Sie?||WEE HEYES-sen SEE?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich komme aus den USA.||ICH KOM-me OWS DEN U-sa.}}",
+      "{{de-DE|Ich wohne in Chicago.||ICH VOH-ne IN CHI-ca-go.}}",
+      "{{de-DE|Ich bin zwanzig Jahre alt.||ICH BIN TSVAN-tsig JAH-re ALT.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wie%20hei%C3%9Fen%20Sie%3F"
+  },
+  {
+    "itemId": "4007c9ed-69e6-4531-aa63-3c6a2a8c6d56",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{de-DE|Ich komme aus den USA.||ICH KOM-me OWS DEN U-sa.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich wohne in Chicago.||ICH VOH-ne IN CHI-ca-go.}}",
+      "{{de-DE|Ich bin zwanzig Jahre alt.||ICH BIN TSVAN-tsig JAH-re ALT.}}",
+      "{{de-DE|Das ist mein Freund.||DAS ISHT MEYEN FROYND.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20komme%20aus%20den%20USA."
+  },
+  {
+    "itemId": "cf97095e-7962-44e2-a74e-57381f74f52b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{de-DE|Ich wohne in Chicago.||ICH VOH-ne IN CHI-ca-go.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin zwanzig Jahre alt.||ICH BIN TSVAN-tsig JAH-re ALT.}}",
+      "{{de-DE|Das ist mein Freund.||DAS ISHT MEYEN FROYND.}}",
+      "{{de-DE|Das ist meine Schwester.||DAS ISHT MEYE-ne SCHVESH-ter.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20wohne%20in%20Chicago."
+  },
+  {
+    "itemId": "824f846f-4bd8-492d-8719-fd816f0cb4df",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{de-DE|Ich bin zwanzig Jahre alt.||ICH BIN TSVAN-tsig JAH-re ALT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das ist mein Freund.||DAS ISHT MEYEN FROYND.}}",
+      "{{de-DE|Das ist meine Schwester.||DAS ISHT MEYE-ne SCHVESH-ter.}}",
+      "{{de-DE|Ich bin verheiratet.||ICH BIN ver-HEYE-ra-tet.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20zwanzig%20Jahre%20alt."
+  },
+  {
+    "itemId": "c665443e-e2d6-404c-9718-f7cc32045731",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{de-DE|Das ist mein Freund.||DAS ISHT MEYEN FROYND.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das ist meine Schwester.||DAS ISHT MEYE-ne SCHVESH-ter.}}",
+      "{{de-DE|Ich bin verheiratet.||ICH BIN ver-HEYE-ra-tet.}}",
+      "{{de-DE|Ich bin Student/Studentin.||ICH BIN STU-dent/STU-den-tin.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20ist%20mein%20Freund."
+  },
+  {
+    "itemId": "43efd75a-92b0-4b1d-8278-3a89b6df38d0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'This is my sister.'?",
+    "correctAnswer": "{{de-DE|Das ist meine Schwester.||DAS ISHT MEYE-ne SCHVESH-ter.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin verheiratet.||ICH BIN ver-HEYE-ra-tet.}}",
+      "{{de-DE|Ich bin Student/Studentin.||ICH BIN STU-dent/STU-den-tin.}}",
+      "{{de-DE|Ich bin hier im Urlaub.||ICH BIN HEER IM UR-lowb.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20ist%20meine%20Schwester."
+  },
+  {
+    "itemId": "9d7f1611-4d3e-4311-9a29-c7097ff5a492",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I am married.'.",
+    "correctAnswer": "{{de-DE|Ich bin verheiratet.||ICH BIN ver-HEYE-ra-tet.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin Student/Studentin.||ICH BIN STU-dent/STU-den-tin.}}",
+      "{{de-DE|Ich bin hier im Urlaub.||ICH BIN HEER IM UR-lowb.}}",
+      "{{de-DE|Mein Nachname ist Garcia.||MEYEN NACH-na-me ISHT GAR-cia.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20verheiratet."
+  },
+  {
+    "itemId": "a4c38919-07df-48a7-bf94-8f20adac4f96",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I am a student.'?",
+    "correctAnswer": "{{de-DE|Ich bin Student/Studentin.||ICH BIN STU-dent/STU-den-tin.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin hier im Urlaub.||ICH BIN HEER IM UR-lowb.}}",
+      "{{de-DE|Mein Nachname ist Garcia.||MEYEN NACH-na-me ISHT GAR-cia.}}",
+      "{{de-DE|Meine Telefonnummer ist...||MEYE-ne TE-le-fon-num-mer ISHT...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20Student/Studentin."
+  },
+  {
+    "itemId": "80beb0f2-7114-409e-aabc-3dab3fd192c4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{de-DE|Ich bin hier im Urlaub.||ICH BIN HEER IM UR-lowb.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mein Nachname ist Garcia.||MEYEN NACH-na-me ISHT GAR-cia.}}",
+      "{{de-DE|Meine Telefonnummer ist...||MEYE-ne TE-le-fon-num-mer ISHT...}}",
+      "{{de-DE|Meine Adresse ist...||MEYE-ne A-dres-se ISHT...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20hier%20im%20Urlaub."
+  },
+  {
+    "itemId": "696b62ca-1797-4d4e-ba09-c235abfde09d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{de-DE|Mein Nachname ist Garcia.||MEYEN NACH-na-me ISHT GAR-cia.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Meine Telefonnummer ist...||MEYE-ne TE-le-fon-num-mer ISHT...}}",
+      "{{de-DE|Meine Adresse ist...||MEYE-ne A-dres-se ISHT...}}",
+      "{{de-DE|Wie heißen Sie?||WEE HEYES-sen SEE?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mein%20Nachname%20ist%20Garcia."
+  },
+  {
+    "itemId": "9ef56dd1-412a-469d-93dd-dcf2f71adba7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'My phone number is...'.",
+    "correctAnswer": "{{de-DE|Meine Telefonnummer ist...||MEYE-ne TE-le-fon-num-mer ISHT...}}",
+    "incorrectAnswers": [
+      "{{de-DE|Meine Adresse ist...||MEYE-ne A-dres-se ISHT...}}",
+      "{{de-DE|Wie heißen Sie?||WEE HEYES-sen SEE?}}",
+      "{{de-DE|Ich komme aus den USA.||ICH KOM-me OWS DEN U-sa.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Meine%20Telefonnummer%20ist..."
+  },
+  {
+    "itemId": "00364b11-267d-4087-84ed-6184cb2976bb",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'My address is...'?",
+    "correctAnswer": "{{de-DE|Meine Adresse ist...||MEYE-ne A-dres-se ISHT...}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wie heißen Sie?||WEE HEYES-sen SEE?}}",
+      "{{de-DE|Ich komme aus den USA.||ICH KOM-me OWS DEN U-sa.}}",
+      "{{de-DE|Ich wohne in Chicago.||ICH VOH-ne IN CHI-ca-go.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=Meine%20Adresse%20ist..."
+  },
+  {
+    "itemId": "f4bfe4b6-670c-4476-a44b-7807c89da83b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'I need water.'?",
+    "correctAnswer": "{{de-DE|Ich brauche Wasser.||ICH BROW-che WAS-ser.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche einen Stadtplan.||ICH BROW-che EYE-nen STADT-plan.}}",
+      "{{de-DE|Ich brauche ein Taxi.||ICH BROW-che EYEN TA-xi.}}",
+      "{{de-DE|Ich brauche ein Zimmer.||ICH BROW-che EYEN ZIM-mer.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20Wasser."
+  },
+  {
+    "itemId": "654c9c37-ef97-4373-85b1-2ba9dad51823",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I need a map.'?",
+    "correctAnswer": "{{de-DE|Ich brauche einen Stadtplan.||ICH BROW-che EYE-nen STADT-plan.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche ein Taxi.||ICH BROW-che EYEN TA-xi.}}",
+      "{{de-DE|Ich brauche ein Zimmer.||ICH BROW-che EYEN ZIM-mer.}}",
+      "{{de-DE|Haben Sie WLAN?||HA-ben SEE WLAN?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20einen%20Stadtplan."
+  },
+  {
+    "itemId": "faf6abfe-978b-425d-8672-9811daff7c40",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{de-DE|Ich brauche ein Taxi.||ICH BROW-che EYEN TA-xi.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche ein Zimmer.||ICH BROW-che EYEN ZIM-mer.}}",
+      "{{de-DE|Haben Sie WLAN?||HA-ben SEE WLAN?}}",
+      "{{de-DE|Haben Sie Brot?||HA-ben SEE BROT?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20ein%20Taxi."
+  },
+  {
+    "itemId": "e1a7a943-8096-4050-8d29-8afc85800ff0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I need a room.'?",
+    "correctAnswer": "{{de-DE|Ich brauche ein Zimmer.||ICH BROW-che EYEN ZIM-mer.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie WLAN?||HA-ben SEE WLAN?}}",
+      "{{de-DE|Haben Sie Brot?||HA-ben SEE BROT?}}",
+      "{{de-DE|Kann ich die Speisekarte haben?||KANN ICH DEE SPEYE-se-kar-te HA-ben?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20ein%20Zimmer."
+  },
+  {
+    "itemId": "42db65da-44bf-480b-9c25-5038d649cf56",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{de-DE|Haben Sie WLAN?||HA-ben SEE WLAN?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie Brot?||HA-ben SEE BROT?}}",
+      "{{de-DE|Kann ich die Speisekarte haben?||KANN ICH DEE SPEYE-se-kar-te HA-ben?}}",
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||KANN ICH EYE-ne FLA-she WAS-ser HA-ben?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20WLAN%3F"
+  },
+  {
+    "itemId": "0defd2d5-4b9d-4acb-8a7e-6edd0cd539b3",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{de-DE|Haben Sie Brot?||HA-ben SEE BROT?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kann ich die Speisekarte haben?||KANN ICH DEE SPEYE-se-kar-te HA-ben?}}",
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||KANN ICH EYE-ne FLA-she WAS-ser HA-ben?}}",
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||ge-BEN SEE MIR BIT-te EYE-ne TU-te.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20Brot%3F"
+  },
+  {
+    "itemId": "b884e0cd-5ae9-45fb-9e68-125915bb7b3e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{de-DE|Kann ich die Speisekarte haben?||KANN ICH DEE SPEYE-se-kar-te HA-ben?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kann ich eine Flasche Wasser haben?||KANN ICH EYE-ne FLA-she WAS-ser HA-ben?}}",
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||ge-BEN SEE MIR BIT-te EYE-ne TU-te.}}",
+      "{{de-DE|Ich brauche mehr Zeit.||ICH BROW-che MEHR ZEYET.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kann%20ich%20die%20Speisekarte%20haben%3F"
+  },
+  {
+    "itemId": "ab2ea36f-afa3-4d9e-83ca-958e44116308",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{de-DE|Kann ich eine Flasche Wasser haben?||KANN ICH EYE-ne FLA-she WAS-ser HA-ben?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Geben Sie mir bitte eine Tüte.||ge-BEN SEE MIR BIT-te EYE-ne TU-te.}}",
+      "{{de-DE|Ich brauche mehr Zeit.||ICH BROW-che MEHR ZEYET.}}",
+      "{{de-DE|Ich brauche den Beleg.||ICH BROW-che DEN be-LEG.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kann%20ich%20eine%20Flasche%20Wasser%20haben%3F"
+  },
+  {
+    "itemId": "09ce552c-be49-4f26-a24c-4f90e8f8c443",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{de-DE|Geben Sie mir bitte eine Tüte.||ge-BEN SEE MIR BIT-te EYE-ne TU-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche mehr Zeit.||ICH BROW-che MEHR ZEYET.}}",
+      "{{de-DE|Ich brauche den Beleg.||ICH BROW-che DEN be-LEG.}}",
+      "{{de-DE|Haben Sie vegetarisches Essen?||HA-ben SEE VE-ge-ta-ri-shes ES-sen?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Geben%20Sie%20mir%20bitte%20eine%20T%C3%BCte."
+  },
+  {
+    "itemId": "d93d595a-e619-4f8e-86fd-a5fa0df07105",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I need more time.'?",
+    "correctAnswer": "{{de-DE|Ich brauche mehr Zeit.||ICH BROW-che MEHR ZEYET.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche den Beleg.||ICH BROW-che DEN be-LEG.}}",
+      "{{de-DE|Haben Sie vegetarisches Essen?||HA-ben SEE VE-ge-ta-ri-shes ES-sen?}}",
+      "{{de-DE|Ich brauche Wasser.||ICH BROW-che WAS-ser.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20mehr%20Zeit."
+  },
+  {
+    "itemId": "963aea62-2320-4f3a-b68d-3cc5e6712e34",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{de-DE|Ich brauche den Beleg.||ICH BROW-che DEN be-LEG.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie vegetarisches Essen?||HA-ben SEE VE-ge-ta-ri-shes ES-sen?}}",
+      "{{de-DE|Ich brauche Wasser.||ICH BROW-che WAS-ser.}}",
+      "{{de-DE|Ich brauche einen Stadtplan.||ICH BROW-che EYE-nen STADT-plan.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20den%20Beleg."
+  },
+  {
+    "itemId": "749395e4-0b52-4f58-a01a-b9f87d9538dd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{de-DE|Haben Sie vegetarisches Essen?||HA-ben SEE VE-ge-ta-ri-shes ES-sen?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche Wasser.||ICH BROW-che WAS-ser.}}",
+      "{{de-DE|Ich brauche einen Stadtplan.||ICH BROW-che EYE-nen STADT-plan.}}",
+      "{{de-DE|Ich brauche ein Taxi.||ICH BROW-che EYEN TA-xi.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20vegetarisches%20Essen%3F"
+  },
+  {
+    "itemId": "c396c4d5-afea-40eb-a380-ac45b7fc040f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{de-DE|Wo ist die Bank?||WO ISHT DEE BANK?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wo ist das Museum?||WO ISHT DAS MU-soym?}}",
+      "{{de-DE|Wo ist das Stadtzentrum?||WO ISHT DAS STADT-tsen-trum?}}",
+      "{{de-DE|Wo ist die Bushaltestelle?||WO ISHT DEE BU-shal-tesh-tel-le?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wo%20ist%20die%20Bank%3F"
+  },
+  {
+    "itemId": "b9bcb15d-c6cd-4faf-8337-55c7e8c913c5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{de-DE|Wo ist das Museum?||WO ISHT DAS MU-soym?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wo ist das Stadtzentrum?||WO ISHT DAS STADT-tsen-trum?}}",
+      "{{de-DE|Wo ist die Bushaltestelle?||WO ISHT DEE BU-shal-tesh-tel-le?}}",
+      "{{de-DE|Gehen Sie geradeaus.||ge-HEN SEE ge-RA-deows.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wo%20ist%20das%20Museum%3F"
+  },
+  {
+    "itemId": "c6b70aaf-a4f5-4f2b-a491-b15e732e7533",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{de-DE|Wo ist das Stadtzentrum?||WO ISHT DAS STADT-tsen-trum?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wo ist die Bushaltestelle?||WO ISHT DEE BU-shal-tesh-tel-le?}}",
+      "{{de-DE|Gehen Sie geradeaus.||ge-HEN SEE ge-RA-deows.}}",
+      "{{de-DE|Nehmen Sie die erste Straße.||NEH-men SEE DEE ersh-TE STRAS-se.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wo%20ist%20das%20Stadtzentrum%3F"
+  },
+  {
+    "itemId": "b97336cd-68a4-4cb4-b705-c13a1b78b68b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "{{de-DE|Wo ist die Bushaltestelle?||WO ISHT DEE BU-shal-tesh-tel-le?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Gehen Sie geradeaus.||ge-HEN SEE ge-RA-deows.}}",
+      "{{de-DE|Nehmen Sie die erste Straße.||NEH-men SEE DEE ersh-TE STRAS-se.}}",
+      "{{de-DE|Nehmen Sie die zweite Straße.||NEH-men SEE DEE TSVEYE-te STRAS-se.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wo%20ist%20die%20Bushaltestelle%3F"
+  },
+  {
+    "itemId": "8403b9ad-a892-418b-84eb-58184828c96d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Go straight.'?",
+    "correctAnswer": "{{de-DE|Gehen Sie geradeaus.||ge-HEN SEE ge-RA-deows.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Nehmen Sie die erste Straße.||NEH-men SEE DEE ersh-TE STRAS-se.}}",
+      "{{de-DE|Nehmen Sie die zweite Straße.||NEH-men SEE DEE TSVEYE-te STRAS-se.}}",
+      "{{de-DE|Ist es weit?||ISHT ES VEYET?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Gehen%20Sie%20geradeaus."
+  },
+  {
+    "itemId": "69bfc592-92e2-4826-bf00-edf122818d9a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Take the first street.'?",
+    "correctAnswer": "{{de-DE|Nehmen Sie die erste Straße.||NEH-men SEE DEE ersh-TE STRAS-se.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Nehmen Sie die zweite Straße.||NEH-men SEE DEE TSVEYE-te STRAS-se.}}",
+      "{{de-DE|Ist es weit?||ISHT ES VEYET?}}",
+      "{{de-DE|Ist es nah?||ISHT ES NAH?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Nehmen%20Sie%20die%20erste%20Stra%C3%9Fe."
+  },
+  {
+    "itemId": "1da775bf-6f71-4ccc-9a38-1351e3af027b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Take the second street.'.",
+    "correctAnswer": "{{de-DE|Nehmen Sie die zweite Straße.||NEH-men SEE DEE TSVEYE-te STRAS-se.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ist es weit?||ISHT ES VEYET?}}",
+      "{{de-DE|Ist es nah?||ISHT ES NAH?}}",
+      "{{de-DE|Ich habe mich verlaufen.||ICH HA-be MICH ver-LOW-fen.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Nehmen%20Sie%20die%20zweite%20Stra%C3%9Fe."
+  },
+  {
+    "itemId": "519436cf-7baa-4a33-9a50-b165f3ab68b5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Is it far?'?",
+    "correctAnswer": "{{de-DE|Ist es weit?||ISHT ES VEYET?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ist es nah?||ISHT ES NAH?}}",
+      "{{de-DE|Ich habe mich verlaufen.||ICH HA-be MICH ver-LOW-fen.}}",
+      "{{de-DE|Wir suchen das Hotel.||WIR SU-chen DAS HO-tel.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ist%20es%20weit%3F"
+  },
+  {
+    "itemId": "d6bdcee5-d2c0-41f7-ab56-baf202802942",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Is it near?'?",
+    "correctAnswer": "{{de-DE|Ist es nah?||ISHT ES NAH?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich habe mich verlaufen.||ICH HA-be MICH ver-LOW-fen.}}",
+      "{{de-DE|Wir suchen das Hotel.||WIR SU-chen DAS HO-tel.}}",
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||ZEYE-gen SEE ES MIR BIT-te OWF DER KAR-te.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ist%20es%20nah%3F"
+  },
+  {
+    "itemId": "6dfdbb20-d496-4de9-905f-3cd61ce6d651",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I am lost.'?",
+    "correctAnswer": "{{de-DE|Ich habe mich verlaufen.||ICH HA-be MICH ver-LOW-fen.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wir suchen das Hotel.||WIR SU-chen DAS HO-tel.}}",
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||ZEYE-gen SEE ES MIR BIT-te OWF DER KAR-te.}}",
+      "{{de-DE|Wo ist die Bank?||WO ISHT DEE BANK?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20habe%20mich%20verlaufen."
+  },
+  {
+    "itemId": "af4bd6a6-c455-4726-8ace-d5771dd5bb5c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{de-DE|Wir suchen das Hotel.||WIR SU-chen DAS HO-tel.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||ZEYE-gen SEE ES MIR BIT-te OWF DER KAR-te.}}",
+      "{{de-DE|Wo ist die Bank?||WO ISHT DEE BANK?}}",
+      "{{de-DE|Wo ist das Museum?||WO ISHT DAS MU-soym?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wir%20suchen%20das%20Hotel."
+  },
+  {
+    "itemId": "0a421c9e-4858-4145-b84c-6db07930d6da",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{de-DE|Zeigen Sie es mir bitte auf der Karte.||ZEYE-gen SEE ES MIR BIT-te OWF DER KAR-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wo ist die Bank?||WO ISHT DEE BANK?}}",
+      "{{de-DE|Wo ist das Museum?||WO ISHT DAS MU-soym?}}",
+      "{{de-DE|Wo ist das Stadtzentrum?||WO ISHT DAS STADT-tsen-trum?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zeigen%20Sie%20es%20mir%20bitte%20auf%20der%20Karte."
+  },
+  {
+    "itemId": "8f67cafc-edb4-492b-a791-83ff5cf94aa8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{de-DE|Können Sie das wiederholen?||KON-nen SEE DAS VEE-der-ho-len?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Können Sie langsamer sprechen?||KON-nen SEE LANG-sa-mer SHPRE-chen?}}",
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||WEE BUCHSH-ta-beert MAN IH-ren NA-men?}}",
+      "{{de-DE|Das macht insgesamt zehn Euro.||DAS MACHT INS-ge-samt TSEHN EU-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=K%C3%B6nnen%20Sie%20das%20wiederholen%3F"
+  },
+  {
+    "itemId": "a80bbd43-5229-4dc6-aaaf-07d38931c79f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{de-DE|Können Sie langsamer sprechen?||KON-nen SEE LANG-sa-mer SHPRE-chen?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||WEE BUCHSH-ta-beert MAN IH-ren NA-men?}}",
+      "{{de-DE|Das macht insgesamt zehn Euro.||DAS MACHT INS-ge-samt TSEHN EU-ro.}}",
+      "{{de-DE|Es kostet zwanzig Euro.||ES KOSH-tet TSVAN-tsig EU-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=K%C3%B6nnen%20Sie%20langsamer%20sprechen%3F"
+  },
+  {
+    "itemId": "9831ef02-ca11-4103-8f5f-4df826c3f852",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{de-DE|Wie buchstabiert man Ihren Namen?||WEE BUCHSH-ta-beert MAN IH-ren NA-men?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das macht insgesamt zehn Euro.||DAS MACHT INS-ge-samt TSEHN EU-ro.}}",
+      "{{de-DE|Es kostet zwanzig Euro.||ES KOSH-tet TSVAN-tsig EU-ro.}}",
+      "{{de-DE|Zimmer Nummer zwölf.||ZIM-mer NUM-mer TSVOLF.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wie%20buchstabiert%20man%20Ihren%20Namen%3F"
+  },
+  {
+    "itemId": "29324525-7e34-41e2-9924-eecc1c0fc33e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{de-DE|Das macht insgesamt zehn Euro.||DAS MACHT INS-ge-samt TSEHN EU-ro.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Es kostet zwanzig Euro.||ES KOSH-tet TSVAN-tsig EU-ro.}}",
+      "{{de-DE|Zimmer Nummer zwölf.||ZIM-mer NUM-mer TSVOLF.}}",
+      "{{de-DE|Bahnsteig Nummer vier.||BAHNSH-teyeg NUM-mer VEER.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20macht%20insgesamt%20zehn%20Euro."
+  },
+  {
+    "itemId": "490b1dc0-1a2f-4b37-bb9d-896ea1ddfbbd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{de-DE|Es kostet zwanzig Euro.||ES KOSH-tet TSVAN-tsig EU-ro.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zimmer Nummer zwölf.||ZIM-mer NUM-mer TSVOLF.}}",
+      "{{de-DE|Bahnsteig Nummer vier.||BAHNSH-teyeg NUM-mer VEER.}}",
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||EI-nen TISH FUR DREYE PER-so-nen, BIT-te.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Es%20kostet%20zwanzig%20Euro."
+  },
+  {
+    "itemId": "0a1c9c66-a1d5-4bdf-8824-b5683fcff63d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{de-DE|Zimmer Nummer zwölf.||ZIM-mer NUM-mer TSVOLF.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bahnsteig Nummer vier.||BAHNSH-teyeg NUM-mer VEER.}}",
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||EI-nen TISH FUR DREYE PER-so-nen, BIT-te.}}",
+      "{{de-DE|Zwei Fahrkarten, bitte.||ZVEYE FAHR-kar-ten, BIT-te.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zimmer%20Nummer%20zw%C3%B6lf."
+  },
+  {
+    "itemId": "044d6e17-ac25-4bb6-b1b5-f77f1ef16609",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Platform number four.'.",
+    "correctAnswer": "{{de-DE|Bahnsteig Nummer vier.||BAHNSH-teyeg NUM-mer VEER.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Einen Tisch für drei Personen, bitte.||EI-nen TISH FUR DREYE PER-so-nen, BIT-te.}}",
+      "{{de-DE|Zwei Fahrkarten, bitte.||ZVEYE FAHR-kar-ten, BIT-te.}}",
+      "{{de-DE|Können Sie es aufschreiben?||KON-nen SEE ES OWFSH-reye-ben?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bahnsteig%20Nummer%20vier."
+  },
+  {
+    "itemId": "c9299f71-8a9f-4aa5-82eb-63d69c743332",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{de-DE|Einen Tisch für drei Personen, bitte.||EI-nen TISH FUR DREYE PER-so-nen, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zwei Fahrkarten, bitte.||ZVEYE FAHR-kar-ten, BIT-te.}}",
+      "{{de-DE|Können Sie es aufschreiben?||KON-nen SEE ES OWFSH-reye-ben?}}",
+      "{{de-DE|Welches Datum haben wir heute?||WEL-ches DA-tum HA-ben VIR HOY-te?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Einen%20Tisch%20f%C3%BCr%20drei%20Personen%2C%20bitte."
+  },
+  {
+    "itemId": "98cda712-d2c3-49a1-bb4f-f5aaeecb166e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{de-DE|Zwei Fahrkarten, bitte.||ZVEYE FAHR-kar-ten, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Können Sie es aufschreiben?||KON-nen SEE ES OWFSH-reye-ben?}}",
+      "{{de-DE|Welches Datum haben wir heute?||WEL-ches DA-tum HA-ben VIR HOY-te?}}",
+      "{{de-DE|Einen Moment, bitte.||EI-nen MO-ment, BIT-te.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zwei%20Fahrkarten%2C%20bitte."
+  },
+  {
+    "itemId": "ae38adff-49b2-4b84-b050-c2d5d44b56de",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{de-DE|Können Sie es aufschreiben?||KON-nen SEE ES OWFSH-reye-ben?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Welches Datum haben wir heute?||WEL-ches DA-tum HA-ben VIR HOY-te?}}",
+      "{{de-DE|Einen Moment, bitte.||EI-nen MO-ment, BIT-te.}}",
+      "{{de-DE|Können Sie das wiederholen?||KON-nen SEE DAS VEE-der-ho-len?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=K%C3%B6nnen%20Sie%20es%20aufschreiben%3F"
+  },
+  {
+    "itemId": "8567d955-9c73-4fa7-92dc-e2c750761541",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'What is today's date?'.",
+    "correctAnswer": "{{de-DE|Welches Datum haben wir heute?||WEL-ches DA-tum HA-ben VIR HOY-te?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Einen Moment, bitte.||EI-nen MO-ment, BIT-te.}}",
+      "{{de-DE|Können Sie das wiederholen?||KON-nen SEE DAS VEE-der-ho-len?}}",
+      "{{de-DE|Können Sie langsamer sprechen?||KON-nen SEE LANG-sa-mer SHPRE-chen?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Welches%20Datum%20haben%20wir%20heute%3F"
+  },
+  {
+    "itemId": "b7f60f52-22d9-4a9b-bcf3-8b88f74f89a0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'One moment, please.'?",
+    "correctAnswer": "{{de-DE|Einen Moment, bitte.||EI-nen MO-ment, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Können Sie das wiederholen?||KON-nen SEE DAS VEE-der-ho-len?}}",
+      "{{de-DE|Können Sie langsamer sprechen?||KON-nen SEE LANG-sa-mer SHPRE-chen?}}",
+      "{{de-DE|Wie buchstabiert man Ihren Namen?||WEE BUCHSH-ta-beert MAN IH-ren NA-men?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=Einen%20Moment%2C%20bitte."
+  },
+  {
+    "itemId": "903842c2-e951-46eb-b515-17d168b1cd9a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{de-DE|Ich habe Hunger.||ICH HA-be HUN-ger.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich habe Durst.||ICH HA-be DURSHT.}}",
+      "{{de-DE|Die Speisekarte, bitte.||DEE SPEYE-se-kar-te, BIT-te.}}",
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||ICH BIN VE-ge-ta-reer/VE-ge-ta-ree-rin.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20habe%20Hunger."
+  },
+  {
+    "itemId": "3a733c70-8e75-4fe8-86fb-697ad94d3643",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{de-DE|Ich habe Durst.||ICH HA-be DURSHT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Die Speisekarte, bitte.||DEE SPEYE-se-kar-te, BIT-te.}}",
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||ICH BIN VE-ge-ta-reer/VE-ge-ta-ree-rin.}}",
+      "{{de-DE|Ohne Fleisch, bitte.||OH-ne FLEYESH, BIT-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20habe%20Durst."
+  },
+  {
+    "itemId": "9327cc26-b5df-4b5b-b421-2bb464404543",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'The menu, please.'.",
+    "correctAnswer": "{{de-DE|Die Speisekarte, bitte.||DEE SPEYE-se-kar-te, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin Vegetarier/Vegetarierin.||ICH BIN VE-ge-ta-reer/VE-ge-ta-ree-rin.}}",
+      "{{de-DE|Ohne Fleisch, bitte.||OH-ne FLEYESH, BIT-te.}}",
+      "{{de-DE|Ohne Zucker, bitte.||OH-ne ZUC-ker, BIT-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Die%20Speisekarte%2C%20bitte."
+  },
+  {
+    "itemId": "6c59c127-63bd-48e5-b38d-b9728c793f67",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{de-DE|Ich bin Vegetarier/Vegetarierin.||ICH BIN VE-ge-ta-reer/VE-ge-ta-ree-rin.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ohne Fleisch, bitte.||OH-ne FLEYESH, BIT-te.}}",
+      "{{de-DE|Ohne Zucker, bitte.||OH-ne ZUC-ker, BIT-te.}}",
+      "{{de-DE|Mit Milch, bitte.||MIT MILCH, BIT-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20Vegetarier/Vegetarierin."
+  },
+  {
+    "itemId": "6bc4b46a-3ba5-4144-8bf0-f4c8751da86a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{de-DE|Ohne Fleisch, bitte.||OH-ne FLEYESH, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ohne Zucker, bitte.||OH-ne ZUC-ker, BIT-te.}}",
+      "{{de-DE|Mit Milch, bitte.||MIT MILCH, BIT-te.}}",
+      "{{de-DE|Es war lecker.||ES VAR LEC-ker.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ohne%20Fleisch%2C%20bitte."
+  },
+  {
+    "itemId": "6b49a1da-bdab-4962-bf1f-e55317fb57e5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{de-DE|Ohne Zucker, bitte.||OH-ne ZUC-ker, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mit Milch, bitte.||MIT MILCH, BIT-te.}}",
+      "{{de-DE|Es war lecker.||ES VAR LEC-ker.}}",
+      "{{de-DE|Das ist sehr gut.||DAS ISHT SEHR GUT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ohne%20Zucker%2C%20bitte."
+  },
+  {
+    "itemId": "37646085-3bd9-4d76-8a9b-dbc37069ae80",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'With milk, please.'.",
+    "correctAnswer": "{{de-DE|Mit Milch, bitte.||MIT MILCH, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Es war lecker.||ES VAR LEC-ker.}}",
+      "{{de-DE|Das ist sehr gut.||DAS ISHT SEHR GUT.}}",
+      "{{de-DE|Die Suppe ist kalt.||DEE SUP-pe ISHT KALT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mit%20Milch%2C%20bitte."
+  },
+  {
+    "itemId": "56ca1001-db5c-4af4-9f93-848a756f55c0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'It was delicious.'?",
+    "correctAnswer": "{{de-DE|Es war lecker.||ES VAR LEC-ker.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Das ist sehr gut.||DAS ISHT SEHR GUT.}}",
+      "{{de-DE|Die Suppe ist kalt.||DEE SUP-pe ISHT KALT.}}",
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||ICH BIN ge-GEN NUS-se AL-ler-gish.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Es%20war%20lecker."
+  },
+  {
+    "itemId": "dbb7b9cf-b3a4-454e-8ea9-c2d277516888",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'This is very good.'?",
+    "correctAnswer": "{{de-DE|Das ist sehr gut.||DAS ISHT SEHR GUT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Die Suppe ist kalt.||DEE SUP-pe ISHT KALT.}}",
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||ICH BIN ge-GEN NUS-se AL-ler-gish.}}",
+      "{{de-DE|Eine Flasche Wasser, bitte.||EI-ne FLA-she WAS-ser, BIT-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Das%20ist%20sehr%20gut."
+  },
+  {
+    "itemId": "680146a4-c075-47b8-b4c0-c2996c0edde0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{de-DE|Die Suppe ist kalt.||DEE SUP-pe ISHT KALT.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich bin gegen Nüsse allergisch.||ICH BIN ge-GEN NUS-se AL-ler-gish.}}",
+      "{{de-DE|Eine Flasche Wasser, bitte.||EI-ne FLA-she WAS-ser, BIT-te.}}",
+      "{{de-DE|Ich habe Hunger.||ICH HA-be HUN-ger.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Die%20Suppe%20ist%20kalt."
+  },
+  {
+    "itemId": "44a2c0d4-6517-4da8-a825-1d4faee53eb7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{de-DE|Ich bin gegen Nüsse allergisch.||ICH BIN ge-GEN NUS-se AL-ler-gish.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Eine Flasche Wasser, bitte.||EI-ne FLA-she WAS-ser, BIT-te.}}",
+      "{{de-DE|Ich habe Hunger.||ICH HA-be HUN-ger.}}",
+      "{{de-DE|Ich habe Durst.||ICH HA-be DURSHT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20bin%20gegen%20N%C3%BCsse%20allergisch."
+  },
+  {
+    "itemId": "e19e3cb5-c7fd-4416-a17c-8ad02a22a24b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{de-DE|Eine Flasche Wasser, bitte.||EI-ne FLA-she WAS-ser, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich habe Hunger.||ICH HA-be HUN-ger.}}",
+      "{{de-DE|Ich habe Durst.||ICH HA-be DURSHT.}}",
+      "{{de-DE|Die Speisekarte, bitte.||DEE SPEYE-se-kar-te, BIT-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=Eine%20Flasche%20Wasser%2C%20bitte."
+  },
+  {
+    "itemId": "eb4a09e2-fb30-4327-8c89-0facece0fae6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{de-DE|Haben Sie das in einer anderen Größe?||HA-ben SEE DAS IN EYE-ner AN-de-ren GROS-se?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||HA-ben SEE DAS IN EYE-ner AN-de-ren FAR-be?}}",
+      "{{de-DE|Kann ich das anprobieren?||KANN ICH DAS AN-pro-bee-ren?}}",
+      "{{de-DE|Es ist zu teuer.||ES ISHT TSU TOYER.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20das%20in%20einer%20anderen%20Gr%C3%B6%C3%9Fe%3F"
+  },
+  {
+    "itemId": "57800b40-0a63-4b2c-9209-984c01c6170e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{de-DE|Haben Sie das in einer anderen Farbe?||HA-ben SEE DAS IN EYE-ner AN-de-ren FAR-be?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kann ich das anprobieren?||KANN ICH DAS AN-pro-bee-ren?}}",
+      "{{de-DE|Es ist zu teuer.||ES ISHT TSU TOYER.}}",
+      "{{de-DE|Es ist billig.||ES ISHT BIL-lig.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haben%20Sie%20das%20in%20einer%20anderen%20Farbe%3F"
+  },
+  {
+    "itemId": "834b90a3-901d-4983-b13a-6d82f914700e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{de-DE|Kann ich das anprobieren?||KANN ICH DAS AN-pro-bee-ren?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Es ist zu teuer.||ES ISHT TSU TOYER.}}",
+      "{{de-DE|Es ist billig.||ES ISHT BIL-lig.}}",
+      "{{de-DE|Ich nehme es.||ICH NEH-me ES.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kann%20ich%20das%20anprobieren%3F"
+  },
+  {
+    "itemId": "edcc4323-42f9-4b0c-87ca-878e1bf3a371",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{de-DE|Es ist zu teuer.||ES ISHT TSU TOYER.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Es ist billig.||ES ISHT BIL-lig.}}",
+      "{{de-DE|Ich nehme es.||ICH NEH-me ES.}}",
+      "{{de-DE|Wo ist die Kasse?||WO ISHT DEE KAS-se?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Es%20ist%20zu%20teuer."
+  },
+  {
+    "itemId": "22d79537-49fc-47fe-bf27-52f86b558933",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{de-DE|Es ist billig.||ES ISHT BIL-lig.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich nehme es.||ICH NEH-me ES.}}",
+      "{{de-DE|Wo ist die Kasse?||WO ISHT DEE KAS-se?}}",
+      "{{de-DE|Ich schaue mich nur um.||ICH SHO-we MICH NUR UM.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Es%20ist%20billig."
+  },
+  {
+    "itemId": "cfbf6a88-e561-4a34-82f5-83d7f7fe460f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I will take it.'?",
+    "correctAnswer": "{{de-DE|Ich nehme es.||ICH NEH-me ES.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wo ist die Kasse?||WO ISHT DEE KAS-se?}}",
+      "{{de-DE|Ich schaue mich nur um.||ICH SHO-we MICH NUR UM.}}",
+      "{{de-DE|Akzeptieren Sie Karten?||AK-tsep-tee-ren SEE KAR-ten?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20nehme%20es."
+  },
+  {
+    "itemId": "8af8ee5a-a739-40da-9bce-7becd0e288ce",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{de-DE|Wo ist die Kasse?||WO ISHT DEE KAS-se?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich schaue mich nur um.||ICH SHO-we MICH NUR UM.}}",
+      "{{de-DE|Akzeptieren Sie Karten?||AK-tsep-tee-ren SEE KAR-ten?}}",
+      "{{de-DE|Ich brauche einen Beleg.||ICH BROW-che EYE-nen be-LEG.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wo%20ist%20die%20Kasse%3F"
+  },
+  {
+    "itemId": "befbddc7-06b6-4e78-aceb-c5c045171bd7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I am just looking.'?",
+    "correctAnswer": "{{de-DE|Ich schaue mich nur um.||ICH SHO-we MICH NUR UM.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Akzeptieren Sie Karten?||AK-tsep-tee-ren SEE KAR-ten?}}",
+      "{{de-DE|Ich brauche einen Beleg.||ICH BROW-che EYE-nen be-LEG.}}",
+      "{{de-DE|Diese Größe ist zu klein.||DEE-se GROS-se ISHT TSU KLEYEN.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20schaue%20mich%20nur%20um."
+  },
+  {
+    "itemId": "9e3296a9-e894-4390-a331-99235b6c10f1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{de-DE|Akzeptieren Sie Karten?||AK-tsep-tee-ren SEE KAR-ten?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich brauche einen Beleg.||ICH BROW-che EYE-nen be-LEG.}}",
+      "{{de-DE|Diese Größe ist zu klein.||DEE-se GROS-se ISHT TSU KLEYEN.}}",
+      "{{de-DE|Diese Größe ist zu groß.||DEE-se GROS-se ISHT TSU GROSS.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Akzeptieren%20Sie%20Karten%3F"
+  },
+  {
+    "itemId": "e1136879-0ee8-4928-a7e1-c8c3c70aec3f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{de-DE|Ich brauche einen Beleg.||ICH BROW-che EYE-nen be-LEG.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Diese Größe ist zu klein.||DEE-se GROS-se ISHT TSU KLEYEN.}}",
+      "{{de-DE|Diese Größe ist zu groß.||DEE-se GROS-se ISHT TSU GROSS.}}",
+      "{{de-DE|Haben Sie das in einer anderen Größe?||HA-ben SEE DAS IN EYE-ner AN-de-ren GROS-se?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20einen%20Beleg."
+  },
+  {
+    "itemId": "87400472-c9cc-44d3-98a6-ceb5e9b8b8d5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'This size is too small.'.",
+    "correctAnswer": "{{de-DE|Diese Größe ist zu klein.||DEE-se GROS-se ISHT TSU KLEYEN.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Diese Größe ist zu groß.||DEE-se GROS-se ISHT TSU GROSS.}}",
+      "{{de-DE|Haben Sie das in einer anderen Größe?||HA-ben SEE DAS IN EYE-ner AN-de-ren GROS-se?}}",
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||HA-ben SEE DAS IN EYE-ner AN-de-ren FAR-be?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Diese%20Gr%C3%B6%C3%9Fe%20ist%20zu%20klein."
+  },
+  {
+    "itemId": "b8a1348b-4a09-493b-90e0-1659feaf641d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'This size is too big.'?",
+    "correctAnswer": "{{de-DE|Diese Größe ist zu groß.||DEE-se GROS-se ISHT TSU GROSS.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haben Sie das in einer anderen Größe?||HA-ben SEE DAS IN EYE-ner AN-de-ren GROS-se?}}",
+      "{{de-DE|Haben Sie das in einer anderen Farbe?||HA-ben SEE DAS IN EYE-ner AN-de-ren FAR-be?}}",
+      "{{de-DE|Kann ich das anprobieren?||KANN ICH DAS AN-pro-bee-ren?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=Diese%20Gr%C3%B6%C3%9Fe%20ist%20zu%20gro%C3%9F."
+  },
+  {
+    "itemId": "0228504a-4c99-4223-9a9a-8f51cd619715",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{de-DE|Ich brauche eine Fahrkarte zum Flughafen.||ICH BROW-che EYE-ne FAHR-kar-te TSUM FLUG-ha-fen.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||EI-ne FAHR-kar-te INS STADT-tsen-trum, BIT-te.}}",
+      "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||EI-ne HIN- UND RUCK-fahr-kar-te, BIT-te.}}",
+      "{{de-DE|Welcher Bahnsteig ist das?||WEL-cher BAHNSH-teyeg ISHT DAS?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20brauche%20eine%20Fahrkarte%20zum%20Flughafen."
+  },
+  {
+    "itemId": "77647e86-9307-4ca6-bfe1-c540791c164f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{de-DE|Eine Fahrkarte ins Stadtzentrum, bitte.||EI-ne FAHR-kar-te INS STADT-tsen-trum, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||EI-ne HIN- UND RUCK-fahr-kar-te, BIT-te.}}",
+      "{{de-DE|Welcher Bahnsteig ist das?||WEL-cher BAHNSH-teyeg ISHT DAS?}}",
+      "{{de-DE|Ist dieser Platz frei?||ISHT DEE-ser PLATTS FREYE?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Eine%20Fahrkarte%20ins%20Stadtzentrum%2C%20bitte."
+  },
+  {
+    "itemId": "ae5046ee-b276-444d-9932-0a5bf172dc61",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{de-DE|Eine Hin- und Rückfahrkarte, bitte.||EI-ne HIN- UND RUCK-fahr-kar-te, BIT-te.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Welcher Bahnsteig ist das?||WEL-cher BAHNSH-teyeg ISHT DAS?}}",
+      "{{de-DE|Ist dieser Platz frei?||ISHT DEE-ser PLATTS FREYE?}}",
+      "{{de-DE|Rufen Sie bitte ein Taxi.||RU-fen SEE BIT-te EYEN TA-xi.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Eine%20Hin-%20und%20R%C3%BCckfahrkarte%2C%20bitte."
+  },
+  {
+    "itemId": "4fb49255-292e-4e62-9080-c622a53983bd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{de-DE|Welcher Bahnsteig ist das?||WEL-cher BAHNSH-teyeg ISHT DAS?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ist dieser Platz frei?||ISHT DEE-ser PLATTS FREYE?}}",
+      "{{de-DE|Rufen Sie bitte ein Taxi.||RU-fen SEE BIT-te EYEN TA-xi.}}",
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||FAHRT DEE-ser BUS INS ZEN-trum?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Welcher%20Bahnsteig%20ist%20das%3F"
+  },
+  {
+    "itemId": "97d05ff6-fc76-4b0f-b002-5c03286344ce",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{de-DE|Ist dieser Platz frei?||ISHT DEE-ser PLATTS FREYE?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Rufen Sie bitte ein Taxi.||RU-fen SEE BIT-te EYEN TA-xi.}}",
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||FAHRT DEE-ser BUS INS ZEN-trum?}}",
+      "{{de-DE|Ich möchte zum Flughafen fahren.||ICH MOCH-te TSUM FLUG-ha-fen FAH-ren.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ist%20dieser%20Platz%20frei%3F"
+  },
+  {
+    "itemId": "332a7af3-3db0-4b5e-9fa8-2164a2fb978d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Which German phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{de-DE|Rufen Sie bitte ein Taxi.||RU-fen SEE BIT-te EYEN TA-xi.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fährt dieser Bus ins Zentrum?||FAHRT DEE-ser BUS INS ZEN-trum?}}",
+      "{{de-DE|Ich möchte zum Flughafen fahren.||ICH MOCH-te TSUM FLUG-ha-fen FAH-ren.}}",
+      "{{de-DE|Wir steigen hier aus.||WIR SHTEYE-gen HEER OWS.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Rufen%20Sie%20bitte%20ein%20Taxi."
+  },
+  {
+    "itemId": "44c7992d-9cd1-4b4c-9995-07adb73060f3",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct German phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{de-DE|Fährt dieser Bus ins Zentrum?||FAHRT DEE-ser BUS INS ZEN-trum?}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich möchte zum Flughafen fahren.||ICH MOCH-te TSUM FLUG-ha-fen FAH-ren.}}",
+      "{{de-DE|Wir steigen hier aus.||WIR SHTEYE-gen HEER OWS.}}",
+      "{{de-DE|Ich habe den Bus verpasst.||ICH HA-be DEN BUS ver-PASSHT.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=F%C3%A4hrt%20dieser%20Bus%20ins%20Zentrum%3F"
+  },
+  {
+    "itemId": "80ce6913-6f08-44c1-97c9-9e04c03fb726",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural German sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{de-DE|Ich möchte zum Flughafen fahren.||ICH MOCH-te TSUM FLUG-ha-fen FAH-ren.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wir steigen hier aus.||WIR SHTEYE-gen HEER OWS.}}",
+      "{{de-DE|Ich habe den Bus verpasst.||ICH HA-be DEN BUS ver-PASSHT.}}",
+      "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||WO KANN ICH EYE-ne FAHR-kar-te KOW-fen?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ich%20m%C3%B6chte%20zum%20Flughafen%20fahren."
+  },
+  {
+    "itemId": "6b6eecfa-f2ab-4820-b158-dd3068b99c46",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner German, how do you say 'We get off here.'?",
+    "correctAnswer": "{{de-DE|Wir steigen hier aus.||WIR SHTEYE-gen HEER OWS.}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ich habe den Bus verpasst.||ICH HA-be DEN BUS ver-PASSHT.}}",
+      "{{de-DE|Wo kann ich eine Fahrkarte kaufen?||WO KANN ICH EYE-ne FAHR-kar-te KOW-fen?}}",
+      "{{de-DE|Der Bus kommt um zwölf Uhr an.||DER BUS KOMMT UM TSVOLF UHR AN.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "german",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wir%20steigen%20hier%20aus."
+  }
+]

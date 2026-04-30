@@ -77,6 +77,7 @@ const IdeaFormModal = ({
       return;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setValues({
       title: initialValues?.title ?? "",
       problem: initialValues?.problem ?? "",
@@ -84,6 +85,7 @@ const IdeaFormModal = ({
       tradeOffs: initialValues?.tradeOffs ?? "",
       turnstileToken: null,
     });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTouched(new Set());
   }, [initialValues, isOpen]);
 

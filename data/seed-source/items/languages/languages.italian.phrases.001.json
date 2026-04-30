@@ -1,0 +1,2200 @@
+[
+  {
+    "itemId": "dfbbd0f9-7e02-40e9-b458-6316b7a54e82",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I would like a coffee, please' in Italian?",
+    "correctAnswer": "{{it-IT|Vorrei un caffè, per favore.||VOR-rei UN CAF-fe, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Voglio caffè adesso.||VO-lyio CAF-fe a-DES-so.}}",
+      "{{it-IT|Dammi il caffè.||DAM-mi IL CAF-fe.}}",
+      "{{it-IT|Un caffè, naturalmente.||UN CAF-fe, na-tu-ral-MEN-te.}}"
+    ],
+    "explanation": "'Vorrei' (I would like) is the polite conditional form, preferred in cafés and restaurants.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/volere/"
+  },
+  {
+    "itemId": "3ad6661d-086e-41d3-bd50-14c9a2969c07",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Italian?",
+    "correctAnswer": "{{it-IT|Dov'è il bagno?||DOV-'e IL BA-nyo?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Che cos'è il bagno?||CHE COS-'e IL BA-nyo?}}",
+      "{{it-IT|Come si chiama il bagno?||CO-me SI KIA-ma IL BA-nyo?}}",
+      "{{it-IT|Quando apre il bagno?||QUAN-do A-pre IL BA-nyo?}}"
+    ],
+    "explanation": "'Dov'è' = 'Where is', 'il bagno' = 'the bathroom'. One of the most essential travel phrases.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
+  },
+  {
+    "itemId": "1d45525d-92de-4cb9-a175-51d063ad0bdb",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Italian?",
+    "correctAnswer": "{{it-IT|Quanto costa?||QUAN-to COS-ta?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Cosa è questo?||CO-sa E QUES-to?}}",
+      "{{it-IT|Dove compro questo?||DO-ve COM-pro QUES-to?}}",
+      "{{it-IT|Posso avere uno sconto?||POS-so a-VE-re U-no SCON-to?}}"
+    ],
+    "explanation": "'Quanto costa?' is the go-to phrase at markets, shops, and cafés.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/quanto"
+  },
+  {
+    "itemId": "095cf27a-d56c-44c7-8a9d-37b56b29332a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill at a restaurant in Italian?",
+    "correctAnswer": "{{it-IT|Il conto, per favore.||IL CON-to, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|La ricevuta, subito.||LA ri-ke-VU-ta, su-BI-to.}}",
+      "{{it-IT|Vorrei pagare domani.||VOR-rei pa-GA-re do-MA-ni.}}",
+      "{{it-IT|Dov'è il menu?||DOV-'e IL ME-nu?}}"
+    ],
+    "explanation": "'Il conto' means the bill/check. Saying it with 'per favore' is the polite way to ask.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/conto"
+  },
+  {
+    "itemId": "35d510e1-c38a-4dca-85ba-8937f95ea3f9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Can you help me?' in Italian?",
+    "correctAnswer": "{{it-IT|Può aiutarmi?||PUO aiu-TAR-mi?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Aiuto adesso!||AIU-to a-DES-so!}}",
+      "{{it-IT|Voglio aiuto.||VO-lyio AIU-to.}}",
+      "{{it-IT|Tu aiuti me?||TU AIU-ti ME?}}"
+    ],
+    "explanation": "'Può aiutarmi?' uses the polite 'Lei' form ('può' = can you) — best for asking strangers.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/aiutare"
+  },
+  {
+    "itemId": "bc82d0da-1a05-4e42-990b-7c97587147e7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Italian?",
+    "correctAnswer": "{{it-IT|Non capisco.||NON ca-PIS-co.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Non parlo italiano.||NON PAR-lo i-ta-LIA-no.}}",
+      "{{it-IT|Non so niente.||NON SO NIEN-te.}}",
+      "{{it-IT|Parli più piano.||PAR-li PIU PIA-no.}}"
+    ],
+    "explanation": "'Non capisco' is the first phrase to use when you're lost in conversation.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/capire"
+  },
+  {
+    "itemId": "e565cde7-29fe-4c21-b45d-1f1ee58dda0f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the train station?' in Italian?",
+    "correctAnswer": "{{it-IT|Dov'è la stazione?||DOV-'e LA sta-ZIO-ne?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Come si va alla stazione?||CO-me SI VA AL-la sta-ZIO-ne?}}",
+      "{{it-IT|Quando parte il treno?||QUAN-do PAR-te IL TRE-no?}}",
+      "{{it-IT|Quanto costa il treno?||QUAN-to COS-ta IL TRE-no?}}"
+    ],
+    "explanation": "'Dov'è la stazione?' — replace 'stazione' with any destination (hotel, museum, etc.).",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/stazione"
+  },
+  {
+    "itemId": "835c7888-7d6d-4f0f-b640-61eeaab0b00d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'A table for two, please' in Italian?",
+    "correctAnswer": "{{it-IT|Un tavolo per due, per favore.||UN ta-VO-lo PER DUE, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Due persone mangiano.||DUE per-SO-ne man-JA-no.}}",
+      "{{it-IT|Vogliamo sederci insieme.||vo-LYIA-mo se-DER-ci in-SIE-me.}}",
+      "{{it-IT|Tavolo grande, subito.||ta-VO-lo GRAN-de, su-BI-to.}}"
+    ],
+    "explanation": "'Un tavolo per due' — swap 'due' with any number: tre, quattro, etc.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/tavolo"
+  },
+  {
+    "itemId": "f506ae94-a758-4d82-8919-13469eab4c2d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Good evening.'?",
+    "correctAnswer": "{{it-IT|Buonasera.||buo-na-SE-ra.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Come sta?||CO-me STA?}}",
+      "{{it-IT|Sto bene, grazie.||STO BE-ne, GRA-zie.}}",
+      "{{it-IT|Molto bene, grazie.||MOL-to BE-ne, GRA-zie.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Buonasera."
+  },
+  {
+    "itemId": "705d1478-ae8b-42d7-8112-4c25f20a00e0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'How are you?'?",
+    "correctAnswer": "{{it-IT|Come sta?||CO-me STA?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sto bene, grazie.||STO BE-ne, GRA-zie.}}",
+      "{{it-IT|Molto bene, grazie.||MOL-to BE-ne, GRA-zie.}}",
+      "{{it-IT|A più tardi.||A PIU TAR-di.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Come%20sta%3F"
+  },
+  {
+    "itemId": "0c84cfc9-ee60-44ac-9a85-7e6063bfa4ba",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{it-IT|Sto bene, grazie.||STO BE-ne, GRA-zie.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Molto bene, grazie.||MOL-to BE-ne, GRA-zie.}}",
+      "{{it-IT|A più tardi.||A PIU TAR-di.}}",
+      "{{it-IT|A domani.||A do-MA-ni.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Sto%20bene%2C%20grazie."
+  },
+  {
+    "itemId": "86aa6ee2-2d20-4205-a2c1-6a7ed6b7e5bd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{it-IT|Molto bene, grazie.||MOL-to BE-ne, GRA-zie.}}",
+    "incorrectAnswers": [
+      "{{it-IT|A più tardi.||A PIU TAR-di.}}",
+      "{{it-IT|A domani.||A do-MA-ni.}}",
+      "{{it-IT|Buona giornata.||BUO-na jor-NA-ta.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Molto%20bene%2C%20grazie."
+  },
+  {
+    "itemId": "f043e9b7-a0db-46f4-9622-f97262cdb21a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'See you later.'?",
+    "correctAnswer": "{{it-IT|A più tardi.||A PIU TAR-di.}}",
+    "incorrectAnswers": [
+      "{{it-IT|A domani.||A do-MA-ni.}}",
+      "{{it-IT|Buona giornata.||BUO-na jor-NA-ta.}}",
+      "{{it-IT|Benvenuto.||ben-ve-NU-to.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/A%20pi%C3%B9%20tardi."
+  },
+  {
+    "itemId": "914401cf-a425-49a7-9547-39fb79c30549",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{it-IT|A domani.||A do-MA-ni.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Buona giornata.||BUO-na jor-NA-ta.}}",
+      "{{it-IT|Benvenuto.||ben-ve-NU-to.}}",
+      "{{it-IT|Piacere di conoscerLa.||pia-KE-re DI co-nos-KER-la.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/A%20domani."
+  },
+  {
+    "itemId": "67998d85-5107-4aad-ae40-75b681235c0b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Have a good day.'.",
+    "correctAnswer": "{{it-IT|Buona giornata.||BUO-na jor-NA-ta.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Benvenuto.||ben-ve-NU-to.}}",
+      "{{it-IT|Piacere di conoscerLa.||pia-KE-re DI co-nos-KER-la.}}",
+      "{{it-IT|Mi fa piacere rivederLa.||MI FA pia-KE-re ri-ve-DER-la.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Buona%20giornata."
+  },
+  {
+    "itemId": "914307af-20b5-44ac-b6eb-400bbe6f0529",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Welcome.'?",
+    "correctAnswer": "{{it-IT|Benvenuto.||ben-ve-NU-to.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Piacere di conoscerLa.||pia-KE-re DI co-nos-KER-la.}}",
+      "{{it-IT|Mi fa piacere rivederLa.||MI FA pia-KE-re ri-ve-DER-la.}}",
+      "{{it-IT|A presto.||A PRES-to.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Benvenuto."
+  },
+  {
+    "itemId": "e9d7cbc3-a9f3-46b4-b2f5-e8bff368dcae",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{it-IT|Piacere di conoscerLa.||pia-KE-re DI co-nos-KER-la.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Mi fa piacere rivederLa.||MI FA pia-KE-re ri-ve-DER-la.}}",
+      "{{it-IT|A presto.||A PRES-to.}}",
+      "{{it-IT|Buona serata.||BUO-na se-RA-ta.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Piacere%20di%20conoscerLa."
+  },
+  {
+    "itemId": "e1001b12-01ba-4372-b73b-349f4ed31db8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{it-IT|Mi fa piacere rivederLa.||MI FA pia-KE-re ri-ve-DER-la.}}",
+    "incorrectAnswers": [
+      "{{it-IT|A presto.||A PRES-to.}}",
+      "{{it-IT|Buona serata.||BUO-na se-RA-ta.}}",
+      "{{it-IT|Buonasera.||buo-na-SE-ra.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Mi%20fa%20piacere%20rivederLa."
+  },
+  {
+    "itemId": "7c54afec-c19b-4479-98d4-150fbb612829",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'See you soon.'.",
+    "correctAnswer": "{{it-IT|A presto.||A PRES-to.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Buona serata.||BUO-na se-RA-ta.}}",
+      "{{it-IT|Buonasera.||buo-na-SE-ra.}}",
+      "{{it-IT|Come sta?||CO-me STA?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/A%20presto."
+  },
+  {
+    "itemId": "fd7b1290-4e14-45cb-be58-5be9aaae970e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{it-IT|Buona serata.||BUO-na se-RA-ta.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Buonasera.||buo-na-SE-ra.}}",
+      "{{it-IT|Come sta?||CO-me STA?}}",
+      "{{it-IT|Sto bene, grazie.||STO BE-ne, GRA-zie.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/iten/Buona%20serata."
+  },
+  {
+    "itemId": "b03f3d76-e468-4f63-b7c6-632b3c5f44a7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'What is your name?'?",
+    "correctAnswer": "{{it-IT|Come si chiama?||CO-me SI KIA-ma?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Vengo dagli Stati Uniti.||VEN-go DA-lyi STA-ti u-NI-ti.}}",
+      "{{it-IT|Abito a Chicago.||a-BI-to A chi-CA-go.}}",
+      "{{it-IT|Ho vent'anni.||HO vent-'AN-ni.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Come%20si%20chiama%3F"
+  },
+  {
+    "itemId": "5dbdecfa-044c-4a12-8289-5cdb773c7cc8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{it-IT|Vengo dagli Stati Uniti.||VEN-go DA-lyi STA-ti u-NI-ti.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Abito a Chicago.||a-BI-to A chi-CA-go.}}",
+      "{{it-IT|Ho vent'anni.||HO vent-'AN-ni.}}",
+      "{{it-IT|Questo è il mio amico.||QUES-to E IL MIO a-MI-co.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Vengo%20dagli%20Stati%20Uniti."
+  },
+  {
+    "itemId": "e37d70b6-2ccf-4029-a6d6-e945dd0191ac",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{it-IT|Abito a Chicago.||a-BI-to A chi-CA-go.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho vent'anni.||HO vent-'AN-ni.}}",
+      "{{it-IT|Questo è il mio amico.||QUES-to E IL MIO a-MI-co.}}",
+      "{{it-IT|Questa è mia sorella.||QUES-ta E MIA so-REL-la.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Abito%20a%20Chicago."
+  },
+  {
+    "itemId": "57e92eb2-7559-46d7-9822-c5d45d5455a0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{it-IT|Ho vent'anni.||HO vent-'AN-ni.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questo è il mio amico.||QUES-to E IL MIO a-MI-co.}}",
+      "{{it-IT|Questa è mia sorella.||QUES-ta E MIA so-REL-la.}}",
+      "{{it-IT|Sono sposato/sposata.||SO-no spo-SA-to/spo-SA-ta.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20vent%27anni."
+  },
+  {
+    "itemId": "3bd556f6-c6bb-4a0d-98f4-25a3c178a62b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{it-IT|Questo è il mio amico.||QUES-to E IL MIO a-MI-co.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questa è mia sorella.||QUES-ta E MIA so-REL-la.}}",
+      "{{it-IT|Sono sposato/sposata.||SO-no spo-SA-to/spo-SA-ta.}}",
+      "{{it-IT|Sono studente/studentessa.||SO-no stu-DEN-te/stu-den-TES-sa.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Questo%20%C3%A8%20il%20mio%20amico."
+  },
+  {
+    "itemId": "29453083-3816-45b8-b7e6-3631eca548a2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'This is my sister.'?",
+    "correctAnswer": "{{it-IT|Questa è mia sorella.||QUES-ta E MIA so-REL-la.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sono sposato/sposata.||SO-no spo-SA-to/spo-SA-ta.}}",
+      "{{it-IT|Sono studente/studentessa.||SO-no stu-DEN-te/stu-den-TES-sa.}}",
+      "{{it-IT|Sono qui in vacanza.||SO-no QUI IN va-CAN-za.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Questa%20%C3%A8%20mia%20sorella."
+  },
+  {
+    "itemId": "abbf7dca-74df-4fdc-b5c6-6d49b961e7f1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I am married.'.",
+    "correctAnswer": "{{it-IT|Sono sposato/sposata.||SO-no spo-SA-to/spo-SA-ta.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sono studente/studentessa.||SO-no stu-DEN-te/stu-den-TES-sa.}}",
+      "{{it-IT|Sono qui in vacanza.||SO-no QUI IN va-CAN-za.}}",
+      "{{it-IT|Il mio cognome è Garcia.||IL MIO co-NYO-me E GAR-ka.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Sono%20sposato/sposata."
+  },
+  {
+    "itemId": "32ea5633-4bae-48bb-b997-a5d8985572bc",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I am a student.'?",
+    "correctAnswer": "{{it-IT|Sono studente/studentessa.||SO-no stu-DEN-te/stu-den-TES-sa.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sono qui in vacanza.||SO-no QUI IN va-CAN-za.}}",
+      "{{it-IT|Il mio cognome è Garcia.||IL MIO co-NYO-me E GAR-ka.}}",
+      "{{it-IT|Il mio numero di telefono è...||IL MIO nu-ME-ro DI te-le-FO-no E...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Sono%20studente/studentessa."
+  },
+  {
+    "itemId": "08167407-fc0b-4d08-be1e-7189f9d6699c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{it-IT|Sono qui in vacanza.||SO-no QUI IN va-CAN-za.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Il mio cognome è Garcia.||IL MIO co-NYO-me E GAR-ka.}}",
+      "{{it-IT|Il mio numero di telefono è...||IL MIO nu-ME-ro DI te-le-FO-no E...}}",
+      "{{it-IT|Il mio indirizzo è...||IL MIO in-di-RIZ-zo E...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Sono%20qui%20in%20vacanza."
+  },
+  {
+    "itemId": "17010fc3-8d0c-4ba0-b009-cf670eac86c4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{it-IT|Il mio cognome è Garcia.||IL MIO co-NYO-me E GAR-ka.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Il mio numero di telefono è...||IL MIO nu-ME-ro DI te-le-FO-no E...}}",
+      "{{it-IT|Il mio indirizzo è...||IL MIO in-di-RIZ-zo E...}}",
+      "{{it-IT|Come si chiama?||CO-me SI KIA-ma?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Il%20mio%20cognome%20%C3%A8%20Garcia."
+  },
+  {
+    "itemId": "75e1f52b-d398-4b5d-b399-cd5bac5f5db0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'My phone number is...'.",
+    "correctAnswer": "{{it-IT|Il mio numero di telefono è...||IL MIO nu-ME-ro DI te-le-FO-no E...}}",
+    "incorrectAnswers": [
+      "{{it-IT|Il mio indirizzo è...||IL MIO in-di-RIZ-zo E...}}",
+      "{{it-IT|Come si chiama?||CO-me SI KIA-ma?}}",
+      "{{it-IT|Vengo dagli Stati Uniti.||VEN-go DA-lyi STA-ti u-NI-ti.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Il%20mio%20numero%20di%20telefono%20%C3%A8..."
+  },
+  {
+    "itemId": "227798fe-bfd6-4081-9c56-42fe6c196874",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'My address is...'?",
+    "correctAnswer": "{{it-IT|Il mio indirizzo è...||IL MIO in-di-RIZ-zo E...}}",
+    "incorrectAnswers": [
+      "{{it-IT|Come si chiama?||CO-me SI KIA-ma?}}",
+      "{{it-IT|Vengo dagli Stati Uniti.||VEN-go DA-lyi STA-ti u-NI-ti.}}",
+      "{{it-IT|Abito a Chicago.||a-BI-to A chi-CA-go.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/iten/Il%20mio%20indirizzo%20%C3%A8..."
+  },
+  {
+    "itemId": "6cd1ff4b-90ec-4c9a-b796-b11a79f0f43f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'I need water.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di acqua.||HO bi-SO-nyo DI AC-qua.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di una mappa.||HO bi-SO-nyo DI U-na MAP-pa.}}",
+      "{{it-IT|Ho bisogno di un taxi.||HO bi-SO-nyo DI UN TA-xi.}}",
+      "{{it-IT|Ho bisogno di una stanza.||HO bi-SO-nyo DI U-na STAN-za.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20acqua."
+  },
+  {
+    "itemId": "5898f897-fa6e-4903-b050-56aff3a289d6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I need a map.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di una mappa.||HO bi-SO-nyo DI U-na MAP-pa.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di un taxi.||HO bi-SO-nyo DI UN TA-xi.}}",
+      "{{it-IT|Ho bisogno di una stanza.||HO bi-SO-nyo DI U-na STAN-za.}}",
+      "{{it-IT|Ha il Wi-Fi?||HA IL WI-FI?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20una%20mappa."
+  },
+  {
+    "itemId": "fc801012-bccc-44b8-9464-eb97a570b4ac",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{it-IT|Ho bisogno di un taxi.||HO bi-SO-nyo DI UN TA-xi.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di una stanza.||HO bi-SO-nyo DI U-na STAN-za.}}",
+      "{{it-IT|Ha il Wi-Fi?||HA IL WI-FI?}}",
+      "{{it-IT|Ha del pane?||HA DEL PA-ne?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20un%20taxi."
+  },
+  {
+    "itemId": "79c5523e-ee2f-4806-b285-9decdb8ff7fc",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I need a room.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di una stanza.||HO bi-SO-nyo DI U-na STAN-za.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ha il Wi-Fi?||HA IL WI-FI?}}",
+      "{{it-IT|Ha del pane?||HA DEL PA-ne?}}",
+      "{{it-IT|Posso avere il menu, per favore?||POS-so a-VE-re IL ME-nu, PER fa-VO-re?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20una%20stanza."
+  },
+  {
+    "itemId": "9098c2ff-da9c-4d8b-bf36-587d3cdb7c3e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{it-IT|Ha il Wi-Fi?||HA IL WI-FI?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ha del pane?||HA DEL PA-ne?}}",
+      "{{it-IT|Posso avere il menu, per favore?||POS-so a-VE-re IL ME-nu, PER fa-VO-re?}}",
+      "{{it-IT|Posso avere una bottiglia d'acqua?||POS-so a-VE-re U-na bot-TI-lyia D'AC-qua?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ha%20il%20Wi-Fi%3F"
+  },
+  {
+    "itemId": "95ff429d-6c6d-448b-9434-b341598f9c91",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{it-IT|Ha del pane?||HA DEL PA-ne?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Posso avere il menu, per favore?||POS-so a-VE-re IL ME-nu, PER fa-VO-re?}}",
+      "{{it-IT|Posso avere una bottiglia d'acqua?||POS-so a-VE-re U-na bot-TI-lyia D'AC-qua?}}",
+      "{{it-IT|Mi dia una borsa, per favore.||MI DIA U-na BOR-sa, PER fa-VO-re.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ha%20del%20pane%3F"
+  },
+  {
+    "itemId": "c3799576-2157-4d6c-b94d-984a2940242d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{it-IT|Posso avere il menu, per favore?||POS-so a-VE-re IL ME-nu, PER fa-VO-re?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Posso avere una bottiglia d'acqua?||POS-so a-VE-re U-na bot-TI-lyia D'AC-qua?}}",
+      "{{it-IT|Mi dia una borsa, per favore.||MI DIA U-na BOR-sa, PER fa-VO-re.}}",
+      "{{it-IT|Ho bisogno di più tempo.||HO bi-SO-nyo DI PIU TEM-po.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Posso%20avere%20il%20menu%2C%20per%20favore%3F"
+  },
+  {
+    "itemId": "adccd927-ffb5-4a82-a9a7-7e094c612627",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{it-IT|Posso avere una bottiglia d'acqua?||POS-so a-VE-re U-na bot-TI-lyia D'AC-qua?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Mi dia una borsa, per favore.||MI DIA U-na BOR-sa, PER fa-VO-re.}}",
+      "{{it-IT|Ho bisogno di più tempo.||HO bi-SO-nyo DI PIU TEM-po.}}",
+      "{{it-IT|Ho bisogno della ricevuta.||HO bi-SO-nyo DEL-la ri-ke-VU-ta.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Posso%20avere%20una%20bottiglia%20d%27acqua%3F"
+  },
+  {
+    "itemId": "f0f9697e-8d7e-4a63-9a97-8ae94101c2c6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{it-IT|Mi dia una borsa, per favore.||MI DIA U-na BOR-sa, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di più tempo.||HO bi-SO-nyo DI PIU TEM-po.}}",
+      "{{it-IT|Ho bisogno della ricevuta.||HO bi-SO-nyo DEL-la ri-ke-VU-ta.}}",
+      "{{it-IT|Ha cibo vegetariano?||HA CI-bo ve-je-ta-RIA-no?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Mi%20dia%20una%20borsa%2C%20per%20favore."
+  },
+  {
+    "itemId": "924308e5-b599-4c00-892c-ef3add50d4fd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I need more time.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di più tempo.||HO bi-SO-nyo DI PIU TEM-po.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno della ricevuta.||HO bi-SO-nyo DEL-la ri-ke-VU-ta.}}",
+      "{{it-IT|Ha cibo vegetariano?||HA CI-bo ve-je-ta-RIA-no?}}",
+      "{{it-IT|Ho bisogno di acqua.||HO bi-SO-nyo DI AC-qua.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20pi%C3%B9%20tempo."
+  },
+  {
+    "itemId": "bbce1b67-3046-47f6-9e3b-beb68e4b8455",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{it-IT|Ho bisogno della ricevuta.||HO bi-SO-nyo DEL-la ri-ke-VU-ta.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ha cibo vegetariano?||HA CI-bo ve-je-ta-RIA-no?}}",
+      "{{it-IT|Ho bisogno di acqua.||HO bi-SO-nyo DI AC-qua.}}",
+      "{{it-IT|Ho bisogno di una mappa.||HO bi-SO-nyo DI U-na MAP-pa.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20della%20ricevuta."
+  },
+  {
+    "itemId": "aee981bf-2965-40c8-b0a3-7e346010eaf7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{it-IT|Ha cibo vegetariano?||HA CI-bo ve-je-ta-RIA-no?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di acqua.||HO bi-SO-nyo DI AC-qua.}}",
+      "{{it-IT|Ho bisogno di una mappa.||HO bi-SO-nyo DI U-na MAP-pa.}}",
+      "{{it-IT|Ho bisogno di un taxi.||HO bi-SO-nyo DI UN TA-xi.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ha%20cibo%20vegetariano%3F"
+  },
+  {
+    "itemId": "9c78fc04-40b2-4146-b454-2303fb0df9fb",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{it-IT|Dov'è la banca?||DOV-'e LA BAN-ca?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Dov'è il museo?||DOV-'e IL MU-seo?}}",
+      "{{it-IT|Dov'è il centro?||DOV-'e IL KEN-tro?}}",
+      "{{it-IT|Dov'è la fermata dell'autobus?||DOV-'e LA fer-MA-ta dell-'au-TO-bus?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Dov%27%C3%A8%20la%20banca%3F"
+  },
+  {
+    "itemId": "31ef5b8d-1d5b-4080-852f-2c1099b42a52",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{it-IT|Dov'è il museo?||DOV-'e IL MU-seo?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Dov'è il centro?||DOV-'e IL KEN-tro?}}",
+      "{{it-IT|Dov'è la fermata dell'autobus?||DOV-'e LA fer-MA-ta dell-'au-TO-bus?}}",
+      "{{it-IT|Vada dritto.||VA-da DRIT-to.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Dov%27%C3%A8%20il%20museo%3F"
+  },
+  {
+    "itemId": "b89048c5-7c41-4cb4-a49a-4b839827b9f4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{it-IT|Dov'è il centro?||DOV-'e IL KEN-tro?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Dov'è la fermata dell'autobus?||DOV-'e LA fer-MA-ta dell-'au-TO-bus?}}",
+      "{{it-IT|Vada dritto.||VA-da DRIT-to.}}",
+      "{{it-IT|Prenda la prima strada.||PREN-da LA PRI-ma STRA-da.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Dov%27%C3%A8%20il%20centro%3F"
+  },
+  {
+    "itemId": "05b78d29-3eee-4c82-862b-00863878dc92",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "{{it-IT|Dov'è la fermata dell'autobus?||DOV-'e LA fer-MA-ta dell-'au-TO-bus?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Vada dritto.||VA-da DRIT-to.}}",
+      "{{it-IT|Prenda la prima strada.||PREN-da LA PRI-ma STRA-da.}}",
+      "{{it-IT|Prenda la seconda strada.||PREN-da LA se-CON-da STRA-da.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Dov%27%C3%A8%20la%20fermata%20dell%27autobus%3F"
+  },
+  {
+    "itemId": "fa144824-0919-476e-afcf-a0de27cf6c9e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Go straight.'?",
+    "correctAnswer": "{{it-IT|Vada dritto.||VA-da DRIT-to.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Prenda la prima strada.||PREN-da LA PRI-ma STRA-da.}}",
+      "{{it-IT|Prenda la seconda strada.||PREN-da LA se-CON-da STRA-da.}}",
+      "{{it-IT|È lontano?||E lon-TA-no?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Vada%20dritto."
+  },
+  {
+    "itemId": "668efbcd-78ae-4696-bdd1-6697682897d0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Take the first street.'?",
+    "correctAnswer": "{{it-IT|Prenda la prima strada.||PREN-da LA PRI-ma STRA-da.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Prenda la seconda strada.||PREN-da LA se-CON-da STRA-da.}}",
+      "{{it-IT|È lontano?||E lon-TA-no?}}",
+      "{{it-IT|È vicino?||E vi-CI-no?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Prenda%20la%20prima%20strada."
+  },
+  {
+    "itemId": "54685f54-5f12-4c17-ac66-9b221f5279de",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Take the second street.'.",
+    "correctAnswer": "{{it-IT|Prenda la seconda strada.||PREN-da LA se-CON-da STRA-da.}}",
+    "incorrectAnswers": [
+      "{{it-IT|È lontano?||E lon-TA-no?}}",
+      "{{it-IT|È vicino?||E vi-CI-no?}}",
+      "{{it-IT|Mi sono perso/persa.||MI SO-no PER-so/PER-sa.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Prenda%20la%20seconda%20strada."
+  },
+  {
+    "itemId": "92184596-38fc-4c22-8301-04fbfe2802af",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Is it far?'?",
+    "correctAnswer": "{{it-IT|È lontano?||E lon-TA-no?}}",
+    "incorrectAnswers": [
+      "{{it-IT|È vicino?||E vi-CI-no?}}",
+      "{{it-IT|Mi sono perso/persa.||MI SO-no PER-so/PER-sa.}}",
+      "{{it-IT|Cerchiamo l'hotel.||cer-KIA-mo L'HO-tel.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/%C3%88%20lontano%3F"
+  },
+  {
+    "itemId": "3ea307a2-5c25-45d2-9577-b3f09fd62aa9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Is it near?'?",
+    "correctAnswer": "{{it-IT|È vicino?||E vi-CI-no?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Mi sono perso/persa.||MI SO-no PER-so/PER-sa.}}",
+      "{{it-IT|Cerchiamo l'hotel.||cer-KIA-mo L'HO-tel.}}",
+      "{{it-IT|Mi mostri sulla mappa, per favore.||MI MOS-tri SUL-la MAP-pa, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/%C3%88%20vicino%3F"
+  },
+  {
+    "itemId": "997a1a28-2f7d-4281-8ef1-dbef82559025",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I am lost.'?",
+    "correctAnswer": "{{it-IT|Mi sono perso/persa.||MI SO-no PER-so/PER-sa.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Cerchiamo l'hotel.||cer-KIA-mo L'HO-tel.}}",
+      "{{it-IT|Mi mostri sulla mappa, per favore.||MI MOS-tri SUL-la MAP-pa, PER fa-VO-re.}}",
+      "{{it-IT|Dov'è la banca?||DOV-'e LA BAN-ca?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Mi%20sono%20perso/persa."
+  },
+  {
+    "itemId": "cfbc25dc-3454-40c0-a3d8-4ab58ea650b5",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{it-IT|Cerchiamo l'hotel.||cer-KIA-mo L'HO-tel.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Mi mostri sulla mappa, per favore.||MI MOS-tri SUL-la MAP-pa, PER fa-VO-re.}}",
+      "{{it-IT|Dov'è la banca?||DOV-'e LA BAN-ca?}}",
+      "{{it-IT|Dov'è il museo?||DOV-'e IL MU-seo?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Cerchiamo%20l%27hotel."
+  },
+  {
+    "itemId": "9ffd9cd9-0d61-43fe-af8a-a7b1aa3a9ba9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{it-IT|Mi mostri sulla mappa, per favore.||MI MOS-tri SUL-la MAP-pa, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Dov'è la banca?||DOV-'e LA BAN-ca?}}",
+      "{{it-IT|Dov'è il museo?||DOV-'e IL MU-seo?}}",
+      "{{it-IT|Dov'è il centro?||DOV-'e IL KEN-tro?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/iten/Mi%20mostri%20sulla%20mappa%2C%20per%20favore."
+  },
+  {
+    "itemId": "97baac23-f3ce-4d17-b717-db66f3261e21",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{it-IT|Può ripetere?||PUO ri-pe-TE-re?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Può parlare più lentamente?||PUO par-LA-re PIU len-ta-MEN-te?}}",
+      "{{it-IT|Come si scrive il suo nome?||CO-me SI SCRI-ve IL SUO NO-me?}}",
+      "{{it-IT|Il totale è di dieci euro.||IL to-TA-le E DI DIE-ci EU-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Pu%C3%B2%20ripetere%3F"
+  },
+  {
+    "itemId": "836ff188-8c8f-4d6c-aa29-0cb86ba6287a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{it-IT|Può parlare più lentamente?||PUO par-LA-re PIU len-ta-MEN-te?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Come si scrive il suo nome?||CO-me SI SCRI-ve IL SUO NO-me?}}",
+      "{{it-IT|Il totale è di dieci euro.||IL to-TA-le E DI DIE-ci EU-ro.}}",
+      "{{it-IT|Costa venti euro.||COS-ta VEN-ti EU-ro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Pu%C3%B2%20parlare%20pi%C3%B9%20lentamente%3F"
+  },
+  {
+    "itemId": "08d347a5-a2a9-4ca1-a2d0-d3eedc92c565",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{it-IT|Come si scrive il suo nome?||CO-me SI SCRI-ve IL SUO NO-me?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Il totale è di dieci euro.||IL to-TA-le E DI DIE-ci EU-ro.}}",
+      "{{it-IT|Costa venti euro.||COS-ta VEN-ti EU-ro.}}",
+      "{{it-IT|Camera numero dodici.||ca-ME-ra nu-ME-ro do-DI-ci.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Come%20si%20scrive%20il%20suo%20nome%3F"
+  },
+  {
+    "itemId": "6c196093-3343-4cbd-b08f-a88c8082c529",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{it-IT|Il totale è di dieci euro.||IL to-TA-le E DI DIE-ci EU-ro.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Costa venti euro.||COS-ta VEN-ti EU-ro.}}",
+      "{{it-IT|Camera numero dodici.||ca-ME-ra nu-ME-ro do-DI-ci.}}",
+      "{{it-IT|Binario numero quattro.||bi-NA-rio nu-ME-ro QUAT-tro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Il%20totale%20%C3%A8%20di%20dieci%20euro."
+  },
+  {
+    "itemId": "ef05575a-b159-48da-99cd-0d9518d1c9da",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{it-IT|Costa venti euro.||COS-ta VEN-ti EU-ro.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Camera numero dodici.||ca-ME-ra nu-ME-ro do-DI-ci.}}",
+      "{{it-IT|Binario numero quattro.||bi-NA-rio nu-ME-ro QUAT-tro.}}",
+      "{{it-IT|Un tavolo per tre, per favore.||UN ta-VO-lo PER TRE, PER fa-VO-re.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Costa%20venti%20euro."
+  },
+  {
+    "itemId": "71bc97ca-5323-49cb-a784-6f368eba84aa",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{it-IT|Camera numero dodici.||ca-ME-ra nu-ME-ro do-DI-ci.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Binario numero quattro.||bi-NA-rio nu-ME-ro QUAT-tro.}}",
+      "{{it-IT|Un tavolo per tre, per favore.||UN ta-VO-lo PER TRE, PER fa-VO-re.}}",
+      "{{it-IT|Due biglietti, per favore.||DUE bi-LYIET-ti, PER fa-VO-re.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Camera%20numero%20dodici."
+  },
+  {
+    "itemId": "61167e87-588f-4d64-90f9-439c22086084",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Platform number four.'.",
+    "correctAnswer": "{{it-IT|Binario numero quattro.||bi-NA-rio nu-ME-ro QUAT-tro.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Un tavolo per tre, per favore.||UN ta-VO-lo PER TRE, PER fa-VO-re.}}",
+      "{{it-IT|Due biglietti, per favore.||DUE bi-LYIET-ti, PER fa-VO-re.}}",
+      "{{it-IT|Può scriverlo?||PUO scri-VER-lo?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Binario%20numero%20quattro."
+  },
+  {
+    "itemId": "1ddb09ca-bd71-49b5-b64f-30f248afc210",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{it-IT|Un tavolo per tre, per favore.||UN ta-VO-lo PER TRE, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Due biglietti, per favore.||DUE bi-LYIET-ti, PER fa-VO-re.}}",
+      "{{it-IT|Può scriverlo?||PUO scri-VER-lo?}}",
+      "{{it-IT|Qual è la data di oggi?||QUAL E LA DA-ta DI OG-gi?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Un%20tavolo%20per%20tre%2C%20per%20favore."
+  },
+  {
+    "itemId": "0f57d49d-211b-4e68-b610-7a5f4c687850",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{it-IT|Due biglietti, per favore.||DUE bi-LYIET-ti, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Può scriverlo?||PUO scri-VER-lo?}}",
+      "{{it-IT|Qual è la data di oggi?||QUAL E LA DA-ta DI OG-gi?}}",
+      "{{it-IT|Un momento, per favore.||UN mo-MEN-to, PER fa-VO-re.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Due%20biglietti%2C%20per%20favore."
+  },
+  {
+    "itemId": "70414132-8d22-4c3f-b410-3e336d8d6306",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{it-IT|Può scriverlo?||PUO scri-VER-lo?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Qual è la data di oggi?||QUAL E LA DA-ta DI OG-gi?}}",
+      "{{it-IT|Un momento, per favore.||UN mo-MEN-to, PER fa-VO-re.}}",
+      "{{it-IT|Può ripetere?||PUO ri-pe-TE-re?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Pu%C3%B2%20scriverlo%3F"
+  },
+  {
+    "itemId": "6966392c-9aee-42d2-9957-55fee08447c8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'What is today's date?'.",
+    "correctAnswer": "{{it-IT|Qual è la data di oggi?||QUAL E LA DA-ta DI OG-gi?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Un momento, per favore.||UN mo-MEN-to, PER fa-VO-re.}}",
+      "{{it-IT|Può ripetere?||PUO ri-pe-TE-re?}}",
+      "{{it-IT|Può parlare più lentamente?||PUO par-LA-re PIU len-ta-MEN-te?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Qual%20%C3%A8%20la%20data%20di%20oggi%3F"
+  },
+  {
+    "itemId": "46e9d6b2-c870-4f52-867f-9b1d9e1cbbc6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'One moment, please.'?",
+    "correctAnswer": "{{it-IT|Un momento, per favore.||UN mo-MEN-to, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Può ripetere?||PUO ri-pe-TE-re?}}",
+      "{{it-IT|Può parlare più lentamente?||PUO par-LA-re PIU len-ta-MEN-te?}}",
+      "{{it-IT|Come si scrive il suo nome?||CO-me SI SCRI-ve IL SUO NO-me?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/Un%20momento%2C%20per%20favore."
+  },
+  {
+    "itemId": "dd5ce6db-bd2c-4782-8165-79d0e153424b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{it-IT|Ho fame.||HO FA-me.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho sete.||HO SE-te.}}",
+      "{{it-IT|Il menu, per favore.||IL ME-nu, PER fa-VO-re.}}",
+      "{{it-IT|Sono vegetariano/vegetariana.||SO-no ve-je-ta-RIA-no/ve-je-ta-RIA-na.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20fame."
+  },
+  {
+    "itemId": "ceb7a734-e77d-43aa-b1bc-cbac193ac635",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{it-IT|Ho sete.||HO SE-te.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Il menu, per favore.||IL ME-nu, PER fa-VO-re.}}",
+      "{{it-IT|Sono vegetariano/vegetariana.||SO-no ve-je-ta-RIA-no/ve-je-ta-RIA-na.}}",
+      "{{it-IT|Senza carne, per favore.||SEN-za CAR-ne, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20sete."
+  },
+  {
+    "itemId": "d06dc3ee-b0ab-49e9-be65-184a943e27cb",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'The menu, please.'.",
+    "correctAnswer": "{{it-IT|Il menu, per favore.||IL ME-nu, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sono vegetariano/vegetariana.||SO-no ve-je-ta-RIA-no/ve-je-ta-RIA-na.}}",
+      "{{it-IT|Senza carne, per favore.||SEN-za CAR-ne, PER fa-VO-re.}}",
+      "{{it-IT|Senza zucchero, per favore.||SEN-za zuc-KE-ro, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Il%20menu%2C%20per%20favore."
+  },
+  {
+    "itemId": "24fc707d-a17e-4a39-aac1-51cb1eefe2f5",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{it-IT|Sono vegetariano/vegetariana.||SO-no ve-je-ta-RIA-no/ve-je-ta-RIA-na.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Senza carne, per favore.||SEN-za CAR-ne, PER fa-VO-re.}}",
+      "{{it-IT|Senza zucchero, per favore.||SEN-za zuc-KE-ro, PER fa-VO-re.}}",
+      "{{it-IT|Con il latte, per favore.||CON IL LAT-te, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Sono%20vegetariano/vegetariana."
+  },
+  {
+    "itemId": "32872e17-48cd-4ad6-9a59-956c9401b457",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{it-IT|Senza carne, per favore.||SEN-za CAR-ne, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Senza zucchero, per favore.||SEN-za zuc-KE-ro, PER fa-VO-re.}}",
+      "{{it-IT|Con il latte, per favore.||CON IL LAT-te, PER fa-VO-re.}}",
+      "{{it-IT|Era delizioso.||E-ra de-li-ZIO-so.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Senza%20carne%2C%20per%20favore."
+  },
+  {
+    "itemId": "27be0906-321d-48ee-b356-c4c300b060e3",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{it-IT|Senza zucchero, per favore.||SEN-za zuc-KE-ro, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Con il latte, per favore.||CON IL LAT-te, PER fa-VO-re.}}",
+      "{{it-IT|Era delizioso.||E-ra de-li-ZIO-so.}}",
+      "{{it-IT|Questo è molto buono.||QUES-to E MOL-to BUO-no.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Senza%20zucchero%2C%20per%20favore."
+  },
+  {
+    "itemId": "aa99fcb7-08f3-4eb3-9b8e-ace2327a8743",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'With milk, please.'.",
+    "correctAnswer": "{{it-IT|Con il latte, per favore.||CON IL LAT-te, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Era delizioso.||E-ra de-li-ZIO-so.}}",
+      "{{it-IT|Questo è molto buono.||QUES-to E MOL-to BUO-no.}}",
+      "{{it-IT|La zuppa è fredda.||LA ZUP-pa E FRED-da.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Con%20il%20latte%2C%20per%20favore."
+  },
+  {
+    "itemId": "187eb68a-e828-4cc5-a0c2-a2ae3e73d47e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'It was delicious.'?",
+    "correctAnswer": "{{it-IT|Era delizioso.||E-ra de-li-ZIO-so.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questo è molto buono.||QUES-to E MOL-to BUO-no.}}",
+      "{{it-IT|La zuppa è fredda.||LA ZUP-pa E FRED-da.}}",
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||SO-no al-ler-GI-co/al-ler-GI-ca AL-la FRUT-ta SEC-ca.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Era%20delizioso."
+  },
+  {
+    "itemId": "20ae2059-829f-40e1-9664-89ac54a2dc22",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'This is very good.'?",
+    "correctAnswer": "{{it-IT|Questo è molto buono.||QUES-to E MOL-to BUO-no.}}",
+    "incorrectAnswers": [
+      "{{it-IT|La zuppa è fredda.||LA ZUP-pa E FRED-da.}}",
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||SO-no al-ler-GI-co/al-ler-GI-ca AL-la FRUT-ta SEC-ca.}}",
+      "{{it-IT|Una bottiglia d'acqua, per favore.||U-na bot-TI-lyia D'AC-qua, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Questo%20%C3%A8%20molto%20buono."
+  },
+  {
+    "itemId": "ee9dac13-1769-4ca0-b914-8a4b803f7159",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{it-IT|La zuppa è fredda.||LA ZUP-pa E FRED-da.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sono allergico/allergica alla frutta secca.||SO-no al-ler-GI-co/al-ler-GI-ca AL-la FRUT-ta SEC-ca.}}",
+      "{{it-IT|Una bottiglia d'acqua, per favore.||U-na bot-TI-lyia D'AC-qua, PER fa-VO-re.}}",
+      "{{it-IT|Ho fame.||HO FA-me.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/La%20zuppa%20%C3%A8%20fredda."
+  },
+  {
+    "itemId": "d5b9bf66-fba5-4a63-9bea-1dd11dcf6a45",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{it-IT|Sono allergico/allergica alla frutta secca.||SO-no al-ler-GI-co/al-ler-GI-ca AL-la FRUT-ta SEC-ca.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Una bottiglia d'acqua, per favore.||U-na bot-TI-lyia D'AC-qua, PER fa-VO-re.}}",
+      "{{it-IT|Ho fame.||HO FA-me.}}",
+      "{{it-IT|Ho sete.||HO SE-te.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Sono%20allergico/allergica%20alla%20frutta%20secca."
+  },
+  {
+    "itemId": "4c3981f9-7d37-44e6-8424-3c2b20ed55cc",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{it-IT|Una bottiglia d'acqua, per favore.||U-na bot-TI-lyia D'AC-qua, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho fame.||HO FA-me.}}",
+      "{{it-IT|Ho sete.||HO SE-te.}}",
+      "{{it-IT|Il menu, per favore.||IL ME-nu, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/Una%20bottiglia%20d%27acqua%2C%20per%20favore."
+  },
+  {
+    "itemId": "38e3a4b8-278b-4d7b-93a3-018cf82c1cfa",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{it-IT|Ha questo in un'altra taglia?||HA QUES-to IN un-'AL-tra TA-lyia?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ha questo in un altro colore?||HA QUES-to IN UN AL-tro co-LO-re?}}",
+      "{{it-IT|Posso provarlo?||POS-so pro-VAR-lo?}}",
+      "{{it-IT|È troppo caro.||E TROP-po CA-ro.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ha%20questo%20in%20un%27altra%20taglia%3F"
+  },
+  {
+    "itemId": "45f7d84f-1037-41ff-adc0-36458305f5ee",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{it-IT|Ha questo in un altro colore?||HA QUES-to IN UN AL-tro co-LO-re?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Posso provarlo?||POS-so pro-VAR-lo?}}",
+      "{{it-IT|È troppo caro.||E TROP-po CA-ro.}}",
+      "{{it-IT|È economico.||E e-co-no-MI-co.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ha%20questo%20in%20un%20altro%20colore%3F"
+  },
+  {
+    "itemId": "8e117289-4aa6-48a9-a915-44e4fe1838d8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{it-IT|Posso provarlo?||POS-so pro-VAR-lo?}}",
+    "incorrectAnswers": [
+      "{{it-IT|È troppo caro.||E TROP-po CA-ro.}}",
+      "{{it-IT|È economico.||E e-co-no-MI-co.}}",
+      "{{it-IT|Lo prendo.||LO PREN-do.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Posso%20provarlo%3F"
+  },
+  {
+    "itemId": "82a2615f-e1f9-440f-a4c6-65bca0f5b2d0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{it-IT|È troppo caro.||E TROP-po CA-ro.}}",
+    "incorrectAnswers": [
+      "{{it-IT|È economico.||E e-co-no-MI-co.}}",
+      "{{it-IT|Lo prendo.||LO PREN-do.}}",
+      "{{it-IT|Dov'è la cassa?||DOV-'e LA CAS-sa?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/%C3%88%20troppo%20caro."
+  },
+  {
+    "itemId": "27fa71c5-8430-4bf3-b183-f4fae57d473b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{it-IT|È economico.||E e-co-no-MI-co.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Lo prendo.||LO PREN-do.}}",
+      "{{it-IT|Dov'è la cassa?||DOV-'e LA CAS-sa?}}",
+      "{{it-IT|Sto solo guardando.||STO SO-lo guar-DAN-do.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/%C3%88%20economico."
+  },
+  {
+    "itemId": "b577fb07-1ca6-4885-a000-3d47dc9b6308",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I will take it.'?",
+    "correctAnswer": "{{it-IT|Lo prendo.||LO PREN-do.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Dov'è la cassa?||DOV-'e LA CAS-sa?}}",
+      "{{it-IT|Sto solo guardando.||STO SO-lo guar-DAN-do.}}",
+      "{{it-IT|Accetta carte?||ac-KET-ta CAR-te?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Lo%20prendo."
+  },
+  {
+    "itemId": "738d5b59-111b-4403-8849-7ebe71c67111",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{it-IT|Dov'è la cassa?||DOV-'e LA CAS-sa?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Sto solo guardando.||STO SO-lo guar-DAN-do.}}",
+      "{{it-IT|Accetta carte?||ac-KET-ta CAR-te?}}",
+      "{{it-IT|Ho bisogno di una ricevuta.||HO bi-SO-nyo DI U-na ri-ke-VU-ta.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Dov%27%C3%A8%20la%20cassa%3F"
+  },
+  {
+    "itemId": "1e6334a7-c5b1-47c7-9a6b-8d4b2f59ef83",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I am just looking.'?",
+    "correctAnswer": "{{it-IT|Sto solo guardando.||STO SO-lo guar-DAN-do.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Accetta carte?||ac-KET-ta CAR-te?}}",
+      "{{it-IT|Ho bisogno di una ricevuta.||HO bi-SO-nyo DI U-na ri-ke-VU-ta.}}",
+      "{{it-IT|Questa taglia è troppo piccola.||QUES-ta TA-lyia E TROP-po pic-CO-la.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Sto%20solo%20guardando."
+  },
+  {
+    "itemId": "97e33937-2b24-4860-9afb-fe69ffcdd764",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{it-IT|Accetta carte?||ac-KET-ta CAR-te?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ho bisogno di una ricevuta.||HO bi-SO-nyo DI U-na ri-ke-VU-ta.}}",
+      "{{it-IT|Questa taglia è troppo piccola.||QUES-ta TA-lyia E TROP-po pic-CO-la.}}",
+      "{{it-IT|Questa taglia è troppo grande.||QUES-ta TA-lyia E TROP-po GRAN-de.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Accetta%20carte%3F"
+  },
+  {
+    "itemId": "9e27c730-ad68-4af5-9e9f-d1b9789b98dd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di una ricevuta.||HO bi-SO-nyo DI U-na ri-ke-VU-ta.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questa taglia è troppo piccola.||QUES-ta TA-lyia E TROP-po pic-CO-la.}}",
+      "{{it-IT|Questa taglia è troppo grande.||QUES-ta TA-lyia E TROP-po GRAN-de.}}",
+      "{{it-IT|Ha questo in un'altra taglia?||HA QUES-to IN un-'AL-tra TA-lyia?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20una%20ricevuta."
+  },
+  {
+    "itemId": "fafec2d2-a325-4cab-bae0-344105c14385",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'This size is too small.'.",
+    "correctAnswer": "{{it-IT|Questa taglia è troppo piccola.||QUES-ta TA-lyia E TROP-po pic-CO-la.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questa taglia è troppo grande.||QUES-ta TA-lyia E TROP-po GRAN-de.}}",
+      "{{it-IT|Ha questo in un'altra taglia?||HA QUES-to IN un-'AL-tra TA-lyia?}}",
+      "{{it-IT|Ha questo in un altro colore?||HA QUES-to IN UN AL-tro co-LO-re?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Questa%20taglia%20%C3%A8%20troppo%20piccola."
+  },
+  {
+    "itemId": "46598bcf-1c8f-46c5-925f-45c1ea238dc6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'This size is too big.'?",
+    "correctAnswer": "{{it-IT|Questa taglia è troppo grande.||QUES-ta TA-lyia E TROP-po GRAN-de.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Ha questo in un'altra taglia?||HA QUES-to IN un-'AL-tra TA-lyia?}}",
+      "{{it-IT|Ha questo in un altro colore?||HA QUES-to IN UN AL-tro co-LO-re?}}",
+      "{{it-IT|Posso provarlo?||POS-so pro-VAR-lo?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/Questa%20taglia%20%C3%A8%20troppo%20grande."
+  },
+  {
+    "itemId": "e164def8-a91a-498d-b1b7-0b2c831e75e4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{it-IT|Ho bisogno di un biglietto per l'aeroporto.||HO bi-SO-nyo DI UN bi-LYIET-to PER l'ae-ro-POR-to.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Un biglietto per il centro, per favore.||UN bi-LYIET-to PER IL KEN-tro, PER fa-VO-re.}}",
+      "{{it-IT|Un biglietto di andata e ritorno, per favore.||UN bi-LYIET-to DI an-DA-ta E ri-TOR-no, PER fa-VO-re.}}",
+      "{{it-IT|Qual è il binario?||QUAL E IL bi-NA-rio?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Ho%20bisogno%20di%20un%20biglietto%20per%20l%27aeroporto."
+  },
+  {
+    "itemId": "593a03c4-80cf-444c-be90-7aaea5c33554",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{it-IT|Un biglietto per il centro, per favore.||UN bi-LYIET-to PER IL KEN-tro, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Un biglietto di andata e ritorno, per favore.||UN bi-LYIET-to DI an-DA-ta E ri-TOR-no, PER fa-VO-re.}}",
+      "{{it-IT|Qual è il binario?||QUAL E IL bi-NA-rio?}}",
+      "{{it-IT|Questo posto è libero?||QUES-to POS-to E li-BE-ro?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Un%20biglietto%20per%20il%20centro%2C%20per%20favore."
+  },
+  {
+    "itemId": "596e225d-599a-44ed-9489-28099057114b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{it-IT|Un biglietto di andata e ritorno, per favore.||UN bi-LYIET-to DI an-DA-ta E ri-TOR-no, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Qual è il binario?||QUAL E IL bi-NA-rio?}}",
+      "{{it-IT|Questo posto è libero?||QUES-to POS-to E li-BE-ro?}}",
+      "{{it-IT|Chiami un taxi, per favore.||CHIA-mi UN TA-xi, PER fa-VO-re.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Un%20biglietto%20di%20andata%20e%20ritorno%2C%20per%20favore."
+  },
+  {
+    "itemId": "5b2cd848-6400-4e2d-a866-35ae57abf6d4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{it-IT|Qual è il binario?||QUAL E IL bi-NA-rio?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questo posto è libero?||QUES-to POS-to E li-BE-ro?}}",
+      "{{it-IT|Chiami un taxi, per favore.||CHIA-mi UN TA-xi, PER fa-VO-re.}}",
+      "{{it-IT|Questo autobus va in centro?||QUES-to au-TO-bus VA IN KEN-tro?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Qual%20%C3%A8%20il%20binario%3F"
+  },
+  {
+    "itemId": "a9984322-d5c6-417e-99fd-a35bedafbd06",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Italian, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{it-IT|Questo posto è libero?||QUES-to POS-to E li-BE-ro?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Chiami un taxi, per favore.||CHIA-mi UN TA-xi, PER fa-VO-re.}}",
+      "{{it-IT|Questo autobus va in centro?||QUES-to au-TO-bus VA IN KEN-tro?}}",
+      "{{it-IT|Voglio andare all'aeroporto.||VO-lyio an-DA-re all-'ae-ro-POR-to.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Questo%20posto%20%C3%A8%20libero%3F"
+  },
+  {
+    "itemId": "e34625f4-4013-47b8-a3fa-ffeb76486ce9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Italian phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{it-IT|Chiami un taxi, per favore.||CHIA-mi UN TA-xi, PER fa-VO-re.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Questo autobus va in centro?||QUES-to au-TO-bus VA IN KEN-tro?}}",
+      "{{it-IT|Voglio andare all'aeroporto.||VO-lyio an-DA-re all-'ae-ro-POR-to.}}",
+      "{{it-IT|Scendiamo qui.||sken-DIA-mo QUI.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Chiami%20un%20taxi%2C%20per%20favore."
+  },
+  {
+    "itemId": "a0c9343e-eb13-42bb-b888-445e85de0b3a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Italian phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{it-IT|Questo autobus va in centro?||QUES-to au-TO-bus VA IN KEN-tro?}}",
+    "incorrectAnswers": [
+      "{{it-IT|Voglio andare all'aeroporto.||VO-lyio an-DA-re all-'ae-ro-POR-to.}}",
+      "{{it-IT|Scendiamo qui.||sken-DIA-mo QUI.}}",
+      "{{it-IT|Ho perso l'autobus.||HO PER-so l'au-TO-bus.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Questo%20autobus%20va%20in%20centro%3F"
+  },
+  {
+    "itemId": "dad8d901-588f-4a0c-a1ab-10cc1f806196",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Italian sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{it-IT|Voglio andare all'aeroporto.||VO-lyio an-DA-re all-'ae-ro-POR-to.}}",
+    "incorrectAnswers": [
+      "{{it-IT|Scendiamo qui.||sken-DIA-mo QUI.}}",
+      "{{it-IT|Ho perso l'autobus.||HO PER-so l'au-TO-bus.}}",
+      "{{it-IT|Dove posso comprare un biglietto?||DO-ve POS-so com-PRA-re UN bi-LYIET-to?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "italian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/Voglio%20andare%20all%27aeroporto."
+  }
+]

@@ -5,17 +5,18 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "You want a one-way train ticket. Which short phrase asks for that?",
-    "correctAnswer": "{{fr-FR|Un aller simple, s'il vous pla\u00eet.||UN al-LER sim-PLE, S'IL VOOS PLEHT.}}",
+    "correctAnswer": "{{fr-FR|Un aller simple, s'il vous plaît.||UN al-LER sim-PLE, S'IL VOOS PLEHT.}}",
     "incorrectAnswers": [
-      "{{fr-FR|Une table pour deux, s'il vous pla\u00eet.||u-NE ta-BLE POOR DUH, S'IL VOOS PLEHT.}}",
-      "{{fr-FR|L'addition, s'il vous pla\u00eet.||l'ad-di-TION, S'IL VOOS PLEHT.}}",
-      "{{fr-FR|O\u00f9 sont les toilettes ?||OU SONT LES twah-let-TES ?}}"
+      "{{fr-FR|Une table pour deux, s'il vous plaît.||u-NE ta-BLE POOR DUH, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|L'addition, s'il vous plaît.||l'ad-di-TION, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Où sont les toilettes ?||OU SONT LES twah-let-TES ?}}"
     ],
     "explanation": "\"Aller simple\" is a common label for a one-way ticket in travel French.",
     "keywords": [
+      "french",
+      "travel",
       "ticket",
       "train",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/aller-simple"
@@ -34,9 +35,10 @@
     ],
     "explanation": "\"Passeport\" is the standard word for passport.",
     "keywords": [
+      "french",
+      "travel",
       "passport",
       "airport",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/passeport"
@@ -51,13 +53,14 @@
     "incorrectAnswers": [
       "{{fr-FR|rue||RUE}}",
       "{{fr-FR|place||pla-CE}}",
-      "{{fr-FR|h\u00f4tel||ho-TEL}}"
+      "{{fr-FR|hôtel||ho-TEL}}"
     ],
     "explanation": "\"Gare\" is the common word for a station, especially a train station.",
     "keywords": [
+      "french",
+      "travel",
       "station",
       "train",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/gare"
@@ -68,17 +71,18 @@
     "navigationKeyword1": "french",
     "navigationKeyword2": "travel",
     "question": "In French, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "{{fr-FR|O\u00f9 est la banque la plus proche ?||OU EST LA ban-QUE LA PLUS pro-SHE ?}}",
+    "correctAnswer": "{{fr-FR|Où est la banque la plus proche ?||OU EST LA ban-QUE LA PLUS pro-SHE ?}}",
     "incorrectAnswers": [
       "{{fr-FR|C'est combien ?||C'EST com-BIEN ?}}",
       "{{fr-FR|Avez-vous un menu en anglais ?||a-VEZ-VOOS UN me-NU EN an-GLEHS ?}}",
       "{{fr-FR|Je voudrais le plat du jour.||JE voo-DREHS LE PLAT DU ZHOOR.}}"
     ],
-    "explanation": "\"O\u00f9 est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
+    "explanation": "\"Où est...\" asks where something is; \"banque\" means bank and \"proche\" means nearby.",
     "keywords": [
+      "french",
+      "travel",
       "bank",
       "directions",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/banque"
@@ -93,13 +97,14 @@
     "incorrectAnswers": [
       "{{fr-FR|droite||drwah-TE}}",
       "{{fr-FR|tout droit||TOOT DRWAHT}}",
-      "{{fr-FR|pr\u00e8s||PRES}}"
+      "{{fr-FR|près||PRES}}"
     ],
-    "explanation": "\"Gauche\" means left; \"\u00e0 gauche\" is a common direction phrase.",
+    "explanation": "\"Gauche\" means left; \"à gauche\" is a common direction phrase.",
     "keywords": [
+      "french",
+      "travel",
       "left",
       "directions",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/french-english/gauche"
@@ -112,15 +117,16 @@
     "question": "At a hotel desk, which phrase asks if they have a free room?",
     "correctAnswer": "{{fr-FR|Avez-vous une chambre libre ?||a-VEZ-VOOS u-NE sham-BRE li-BRE ?}}",
     "incorrectAnswers": [
-      "{{fr-FR|\u00c0 quelle heure est le vol ?||A quel-LE huh-RE EST LE VOL ?}}",
-      "{{fr-FR|Un caf\u00e9 au lait, s'il vous pla\u00eet.||UN ca-FE OH LEHT, S'IL VOOS PLEHT.}}",
-      "{{fr-FR|Combien co\u00fbte l'entr\u00e9e ?||com-BIEN coo-TE l'en-TREE ?}}"
+      "{{fr-FR|À quelle heure est le vol ?||A quel-LE huh-RE EST LE VOL ?}}",
+      "{{fr-FR|Un café au lait, s'il vous plaît.||UN ca-FE OH LEHT, S'IL VOOS PLEHT.}}",
+      "{{fr-FR|Combien coûte l'entrée ?||com-BIEN coo-TE l'en-TREE ?}}"
     ],
     "explanation": "\"Chambre\" means room; \"libre\" often signals that a room is available.",
     "keywords": [
+      "french",
+      "travel",
       "hotel",
       "room",
-      "french-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/french-english/chambre"

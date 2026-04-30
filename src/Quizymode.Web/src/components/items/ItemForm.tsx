@@ -102,6 +102,7 @@ export function ItemForm({
   }, [prefix, extraKeywordAutocompleteSource, values.keywords, r1, r2]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHighlightIndex(matches.length > 0 ? 0 : -1);
   }, [prefix, matches.length]);
 

@@ -1,0 +1,2328 @@
+[
+  {
+    "itemId": "e679d8fc-57a2-4188-902a-cb17ead6c4d7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'wake up' in everyday use?",
+    "correctAnswer": "{{lv-LV|mosties||MOS-ties}}",
+    "incorrectAnswers": [
+      "{{lv-LV|strādāt||STRA-dat}}",
+      "{{lv-LV|runāt||RU-nat}}",
+      "{{lv-LV|dzirdēt||DZIR-det}}"
+    ],
+    "explanation": "'mosties' is the infinitive 'to wake up'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "wake-up"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/mosties"
+  },
+  {
+    "itemId": "041496c7-6bc6-4f7f-8c5b-40f2126c05f6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'work'.",
+    "correctAnswer": "{{lv-LV|strādāt||STRA-dat}}",
+    "incorrectAnswers": [
+      "{{lv-LV|runāt||RU-nat}}",
+      "{{lv-LV|dzirdēt||DZIR-det}}",
+      "{{lv-LV|redzēt||RED-zet}}"
+    ],
+    "explanation": "'strādāt' is the infinitive 'to work'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "work"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/str%C4%81d%C4%81t"
+  },
+  {
+    "itemId": "e3c68830-c9cd-4247-8621-1e67f4a9e9f9",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'speak'?",
+    "correctAnswer": "{{lv-LV|runāt||RU-nat}}",
+    "incorrectAnswers": [
+      "{{lv-LV|dzirdēt||DZIR-det}}",
+      "{{lv-LV|redzēt||RED-zet}}",
+      "{{lv-LV|lasīt||LA-sit}}"
+    ],
+    "explanation": "'runāt' is the infinitive 'to speak'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "speak"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/run%C4%81t"
+  },
+  {
+    "itemId": "fa01c946-e652-4aba-9814-dd1aac7c9224",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'hear'?",
+    "correctAnswer": "{{lv-LV|dzirdēt||DZIR-det}}",
+    "incorrectAnswers": [
+      "{{lv-LV|redzēt||RED-zet}}",
+      "{{lv-LV|lasīt||LA-sit}}",
+      "{{lv-LV|rakstīt||RAKS-tit}}"
+    ],
+    "explanation": "'dzirdēt' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "hear"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/dzird%C4%93t"
+  },
+  {
+    "itemId": "31f123e8-16dd-482a-b8bd-f3b90ccb7d02",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'see' in everyday use?",
+    "correctAnswer": "{{lv-LV|redzēt||RED-zet}}",
+    "incorrectAnswers": [
+      "{{lv-LV|lasīt||LA-sit}}",
+      "{{lv-LV|rakstīt||RAKS-tit}}",
+      "{{lv-LV|pirkt||PIRKT}}"
+    ],
+    "explanation": "'redzēt' is the infinitive 'to see'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "see"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/redz%C4%93t"
+  },
+  {
+    "itemId": "a613663e-6d83-4354-8d75-dfa755235e56",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'read'.",
+    "correctAnswer": "{{lv-LV|lasīt||LA-sit}}",
+    "incorrectAnswers": [
+      "{{lv-LV|rakstīt||RAKS-tit}}",
+      "{{lv-LV|pirkt||PIRKT}}",
+      "{{lv-LV|maksāt||MAK-sat}}"
+    ],
+    "explanation": "'lasīt' is the infinitive 'to read'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "read"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/las%C4%ABt"
+  },
+  {
+    "itemId": "62d75c7d-7a31-49b3-81a8-f9575cf4fecd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'write'?",
+    "correctAnswer": "{{lv-LV|rakstīt||RAKS-tit}}",
+    "incorrectAnswers": [
+      "{{lv-LV|pirkt||PIRKT}}",
+      "{{lv-LV|maksāt||MAK-sat}}",
+      "{{lv-LV|atvērt||AT-vert}}"
+    ],
+    "explanation": "'rakstīt' is the infinitive 'to write'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "write"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/rakst%C4%ABt"
+  },
+  {
+    "itemId": "e8a71600-25a4-4b9d-b96a-f7c59697795c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'buy'?",
+    "correctAnswer": "{{lv-LV|pirkt||PIRKT}}",
+    "incorrectAnswers": [
+      "{{lv-LV|maksāt||MAK-sat}}",
+      "{{lv-LV|atvērt||AT-vert}}",
+      "{{lv-LV|aizvērt||AIZ-vert}}"
+    ],
+    "explanation": "'pirkt' is the infinitive 'to buy'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "buy"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/pirkt"
+  },
+  {
+    "itemId": "2fa6bcd3-cdc5-4ee1-86f1-4ab71aa72b76",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'pay' in everyday use?",
+    "correctAnswer": "{{lv-LV|maksāt||MAK-sat}}",
+    "incorrectAnswers": [
+      "{{lv-LV|atvērt||AT-vert}}",
+      "{{lv-LV|aizvērt||AIZ-vert}}",
+      "{{lv-LV|dot||DOT}}"
+    ],
+    "explanation": "'maksāt' is the infinitive 'to pay'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "pay"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/maks%C4%81t"
+  },
+  {
+    "itemId": "65937e11-62a8-4c0a-9d25-7f731c9bbe51",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'open'.",
+    "correctAnswer": "{{lv-LV|atvērt||AT-vert}}",
+    "incorrectAnswers": [
+      "{{lv-LV|aizvērt||AIZ-vert}}",
+      "{{lv-LV|dot||DOT}}",
+      "{{lv-LV|ņemt||NEMT}}"
+    ],
+    "explanation": "'atvērt' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "open"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/atv%C4%93rt"
+  },
+  {
+    "itemId": "742fd627-df27-4cd5-b5b7-86ccb8e4a637",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'close'?",
+    "correctAnswer": "{{lv-LV|aizvērt||AIZ-vert}}",
+    "incorrectAnswers": [
+      "{{lv-LV|dot||DOT}}",
+      "{{lv-LV|ņemt||NEMT}}",
+      "{{lv-LV|zināt||ZI-nat}}"
+    ],
+    "explanation": "'aizvērt' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "close"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/aizv%C4%93rt"
+  },
+  {
+    "itemId": "f2b76b1b-2de6-4a57-b236-dea66f650ac7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'give'?",
+    "correctAnswer": "{{lv-LV|dot||DOT}}",
+    "incorrectAnswers": [
+      "{{lv-LV|ņemt||NEMT}}",
+      "{{lv-LV|zināt||ZI-nat}}",
+      "{{lv-LV|patikt||PA-tikt}}"
+    ],
+    "explanation": "'dot' is the infinitive 'to give'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "give"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/dot"
+  },
+  {
+    "itemId": "99c7553e-626d-4905-a969-ff86ea75b533",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'take' in everyday use?",
+    "correctAnswer": "{{lv-LV|ņemt||NEMT}}",
+    "incorrectAnswers": [
+      "{{lv-LV|zināt||ZI-nat}}",
+      "{{lv-LV|patikt||PA-tikt}}",
+      "{{lv-LV|mīlēt||MI-let}}"
+    ],
+    "explanation": "'ņemt' is the infinitive 'to take'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "take"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%86emt"
+  },
+  {
+    "itemId": "73b2f7e0-0d5d-4dd4-b5fa-80f3f8e1def0",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'know'.",
+    "correctAnswer": "{{lv-LV|zināt||ZI-nat}}",
+    "incorrectAnswers": [
+      "{{lv-LV|patikt||PA-tikt}}",
+      "{{lv-LV|mīlēt||MI-let}}",
+      "{{lv-LV|palīdzēt||PA-lid-zet}}"
+    ],
+    "explanation": "'zināt' is the infinitive 'to know'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "know"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/zin%C4%81t"
+  },
+  {
+    "itemId": "d2a2446f-3238-4043-9106-e4bf326a0332",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'like'?",
+    "correctAnswer": "{{lv-LV|patikt||PA-tikt}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mīlēt||MI-let}}",
+      "{{lv-LV|palīdzēt||PA-lid-zet}}",
+      "{{lv-LV|mācīties||MA-ci-ties}}"
+    ],
+    "explanation": "'patikt' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "like"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/patikt"
+  },
+  {
+    "itemId": "1235609e-fd36-4fad-af42-448bcfc07e2b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'love'?",
+    "correctAnswer": "{{lv-LV|mīlēt||MI-let}}",
+    "incorrectAnswers": [
+      "{{lv-LV|palīdzēt||PA-lid-zet}}",
+      "{{lv-LV|mācīties||MA-ci-ties}}",
+      "{{lv-LV|būt||BUT}}"
+    ],
+    "explanation": "'mīlēt' is the infinitive 'to love'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "love"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/m%C4%ABl%C4%93t"
+  },
+  {
+    "itemId": "75dd94da-1e97-4d78-a6c0-f000bba4339e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'help' in everyday use?",
+    "correctAnswer": "{{lv-LV|palīdzēt||PA-lid-zet}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mācīties||MA-ci-ties}}",
+      "{{lv-LV|būt||BUT}}",
+      "{{lv-LV|man ir||MAN IR}}"
+    ],
+    "explanation": "'palīdzēt' is the infinitive 'to help'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "help"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/pal%C4%ABdz%C4%93t"
+  },
+  {
+    "itemId": "a1953c4c-f7da-4df1-9d60-a79ab500f5e4",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'learn'.",
+    "correctAnswer": "{{lv-LV|mācīties||MA-ci-ties}}",
+    "incorrectAnswers": [
+      "{{lv-LV|būt||BUT}}",
+      "{{lv-LV|man ir||MAN IR}}",
+      "{{lv-LV|gribēt||GRI-bet}}"
+    ],
+    "explanation": "'mācīties' is the infinitive 'to learn'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "learn"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/m%C4%81c%C4%ABties"
+  },
+  {
+    "itemId": "af93bfdc-be50-4cd0-91a0-0f5b2a8981ef",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'big'?",
+    "correctAnswer": "{{lv-LV|liels||LIELS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mazs||MAZS}}",
+      "{{lv-LV|jauns||JAUNS}}",
+      "{{lv-LV|vecs||VECS}}"
+    ],
+    "explanation": "'liels' means 'big'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "big"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/liels"
+  },
+  {
+    "itemId": "e06b3772-5299-4ce0-8ca1-f0706cf5c5b1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'small' in everyday use?",
+    "correctAnswer": "{{lv-LV|mazs||MAZS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|jauns||JAUNS}}",
+      "{{lv-LV|vecs||VECS}}",
+      "{{lv-LV|labs||LABS}}"
+    ],
+    "explanation": "'mazs' means 'small'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "small"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/mazs"
+  },
+  {
+    "itemId": "0d0a1bb9-4b90-4643-8802-ae56e1521a36",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'new'.",
+    "correctAnswer": "{{lv-LV|jauns||JAUNS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|vecs||VECS}}",
+      "{{lv-LV|labs||LABS}}",
+      "{{lv-LV|slikts||SLIKTS}}"
+    ],
+    "explanation": "'jauns' means 'new'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "new"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/jauns"
+  },
+  {
+    "itemId": "5cb478be-3cbb-4e0f-823d-f9c49fe7bc0a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'old'?",
+    "correctAnswer": "{{lv-LV|vecs||VECS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|labs||LABS}}",
+      "{{lv-LV|slikts||SLIKTS}}",
+      "{{lv-LV|karsts||KARSTS}}"
+    ],
+    "explanation": "'vecs' means 'old'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "old"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vecs"
+  },
+  {
+    "itemId": "b8cafe6a-502b-45c0-9006-b81e130ee2ba",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'good'?",
+    "correctAnswer": "{{lv-LV|labs||LABS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|slikts||SLIKTS}}",
+      "{{lv-LV|karsts||KARSTS}}",
+      "{{lv-LV|auksts||AUKSTS}}"
+    ],
+    "explanation": "'labs' means 'good'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "good"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/labs"
+  },
+  {
+    "itemId": "e9dd9a52-7a5a-465a-a9b1-0bff91319105",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'bad' in everyday use?",
+    "correctAnswer": "{{lv-LV|slikts||SLIKTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|karsts||KARSTS}}",
+      "{{lv-LV|auksts||AUKSTS}}",
+      "{{lv-LV|ātrs||ATRS}}"
+    ],
+    "explanation": "'slikts' means 'bad'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "bad"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/slikts"
+  },
+  {
+    "itemId": "2efbb1d7-2fd3-43ee-b9ae-97fe66ab4e6a",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'hot'.",
+    "correctAnswer": "{{lv-LV|karsts||KARSTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|auksts||AUKSTS}}",
+      "{{lv-LV|ātrs||ATRS}}",
+      "{{lv-LV|lēns||LENS}}"
+    ],
+    "explanation": "'karsts' means 'hot'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "hot"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/karsts"
+  },
+  {
+    "itemId": "5d5f3200-86fc-4b78-bc83-a7316bf056a2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'cold'?",
+    "correctAnswer": "{{lv-LV|auksts||AUKSTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|ātrs||ATRS}}",
+      "{{lv-LV|lēns||LENS}}",
+      "{{lv-LV|viegls||VIEGLS}}"
+    ],
+    "explanation": "'auksts' means 'cold'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "cold"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/auksts"
+  },
+  {
+    "itemId": "13e11c89-c6ed-45ac-a161-4c86797d973c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'fast'?",
+    "correctAnswer": "{{lv-LV|ātrs||ATRS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|lēns||LENS}}",
+      "{{lv-LV|viegls||VIEGLS}}",
+      "{{lv-LV|grūts||GRUTS}}"
+    ],
+    "explanation": "'ātrs' means 'fast'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "fast"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%81trs"
+  },
+  {
+    "itemId": "2249abc5-e146-415e-ae1c-c9c5f1fe2ea2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'slow' in everyday use?",
+    "correctAnswer": "{{lv-LV|lēns||LENS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|viegls||VIEGLS}}",
+      "{{lv-LV|grūts||GRUTS}}",
+      "{{lv-LV|tīrs||TIRS}}"
+    ],
+    "explanation": "'lēns' means 'slow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "slow"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/l%C4%93ns"
+  },
+  {
+    "itemId": "7693b47f-35bd-4948-bf3d-a97a99ef980e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'easy'.",
+    "correctAnswer": "{{lv-LV|viegls||VIEGLS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|grūts||GRUTS}}",
+      "{{lv-LV|tīrs||TIRS}}",
+      "{{lv-LV|netīrs||NE-tirs}}"
+    ],
+    "explanation": "'viegls' means 'easy'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "easy"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/viegls"
+  },
+  {
+    "itemId": "f282d4a0-9b2f-421a-b568-1fc0e23c77f2",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'difficult'?",
+    "correctAnswer": "{{lv-LV|grūts||GRUTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|tīrs||TIRS}}",
+      "{{lv-LV|netīrs||NE-tirs}}",
+      "{{lv-LV|lēts||LETS}}"
+    ],
+    "explanation": "'grūts' means 'difficult'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "difficult"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/gr%C5%ABts"
+  },
+  {
+    "itemId": "2cd95473-95a1-446d-b9d0-0f972b0b04a7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'clean'?",
+    "correctAnswer": "{{lv-LV|tīrs||TIRS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|netīrs||NE-tirs}}",
+      "{{lv-LV|lēts||LETS}}",
+      "{{lv-LV|dārgs||DARGS}}"
+    ],
+    "explanation": "'tīrs' means 'clean'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "clean"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/t%C4%ABrs"
+  },
+  {
+    "itemId": "92ce5a47-0648-4d46-a2c9-c8a6db5f5ae1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'dirty' in everyday use?",
+    "correctAnswer": "{{lv-LV|netīrs||NE-tirs}}",
+    "incorrectAnswers": [
+      "{{lv-LV|lēts||LETS}}",
+      "{{lv-LV|dārgs||DARGS}}",
+      "{{lv-LV|skaists||SKAISTS}}"
+    ],
+    "explanation": "'netīrs' means 'dirty'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "dirty"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/net%C4%ABrs"
+  },
+  {
+    "itemId": "6734ed56-d707-41af-84da-0fcb7ce0ebc5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'cheap'.",
+    "correctAnswer": "{{lv-LV|lēts||LETS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|dārgs||DARGS}}",
+      "{{lv-LV|skaists||SKAISTS}}",
+      "{{lv-LV|neglīts||NE-glits}}"
+    ],
+    "explanation": "'lēts' means 'cheap'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "cheap"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/l%C4%93ts"
+  },
+  {
+    "itemId": "1efb137f-39d4-44c9-b76b-2c29ac6193a1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'expensive'?",
+    "correctAnswer": "{{lv-LV|dārgs||DARGS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|skaists||SKAISTS}}",
+      "{{lv-LV|neglīts||NE-glits}}",
+      "{{lv-LV|garš||GARS}}"
+    ],
+    "explanation": "'dārgs' means 'expensive'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "expensive"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/d%C4%81rgs"
+  },
+  {
+    "itemId": "0258559f-6f25-4b15-b143-e4dc0ee89e48",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'beautiful'?",
+    "correctAnswer": "{{lv-LV|skaists||SKAISTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|neglīts||NE-glits}}",
+      "{{lv-LV|garš||GARS}}",
+      "{{lv-LV|īss||ISS}}"
+    ],
+    "explanation": "'skaists' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "beautiful"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/skaists"
+  },
+  {
+    "itemId": "1059a9f8-f7cf-4eda-8777-f152c1d273d7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'ugly' in everyday use?",
+    "correctAnswer": "{{lv-LV|neglīts||NE-glits}}",
+    "incorrectAnswers": [
+      "{{lv-LV|garš||GARS}}",
+      "{{lv-LV|īss||ISS}}",
+      "{{lv-LV|atvērts||AT-verts}}"
+    ],
+    "explanation": "'neglīts' means 'ugly'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "ugly"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/negl%C4%ABts"
+  },
+  {
+    "itemId": "d2eb1b1e-57d9-4269-acae-92dfda641808",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'long'.",
+    "correctAnswer": "{{lv-LV|garš||GARS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|īss||ISS}}",
+      "{{lv-LV|atvērts||AT-verts}}",
+      "{{lv-LV|aizvērts||AIZ-verts}}"
+    ],
+    "explanation": "'garš' means 'long'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "long"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/gar%C5%A1"
+  },
+  {
+    "itemId": "ba8951c4-36ed-44cd-9874-c44a15487518",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'short'?",
+    "correctAnswer": "{{lv-LV|īss||ISS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|atvērts||AT-verts}}",
+      "{{lv-LV|aizvērts||AIZ-verts}}",
+      "{{lv-LV|labais||LA-bais}}"
+    ],
+    "explanation": "'īss' means 'short'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "short"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%ABss"
+  },
+  {
+    "itemId": "d87ee965-0bc2-4b38-aaaa-d58674db6f72",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'open'?",
+    "correctAnswer": "{{lv-LV|atvērts||AT-verts}}",
+    "incorrectAnswers": [
+      "{{lv-LV|aizvērts||AIZ-verts}}",
+      "{{lv-LV|labais||LA-bais}}",
+      "{{lv-LV|kreisais||KREI-sais}}"
+    ],
+    "explanation": "'atvērts' means 'open'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "open"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/atv%C4%93rts"
+  },
+  {
+    "itemId": "b70f9752-39f7-4be9-a49c-5740da1b75c5",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'closed' in everyday use?",
+    "correctAnswer": "{{lv-LV|aizvērts||AIZ-verts}}",
+    "incorrectAnswers": [
+      "{{lv-LV|labais||LA-bais}}",
+      "{{lv-LV|kreisais||KREI-sais}}",
+      "{{lv-LV|vienāds||VIE-nads}}"
+    ],
+    "explanation": "'aizvērts' means 'closed'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "closed"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/aizv%C4%93rts"
+  },
+  {
+    "itemId": "4a25c2dd-79f6-4c47-b0fc-cb02e6b5e115",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'right'.",
+    "correctAnswer": "{{lv-LV|labais||LA-bais}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kreisais||KREI-sais}}",
+      "{{lv-LV|vienāds||VIE-nads}}",
+      "{{lv-LV|atšķirīgs||ATS-ki-rigs}}"
+    ],
+    "explanation": "'labais' means 'right'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "right"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/labais"
+  },
+  {
+    "itemId": "9cf34860-6617-4c3a-ab9f-cccf99e596fc",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'left'?",
+    "correctAnswer": "{{lv-LV|kreisais||KREI-sais}}",
+    "incorrectAnswers": [
+      "{{lv-LV|vienāds||VIE-nads}}",
+      "{{lv-LV|atšķirīgs||ATS-ki-rigs}}",
+      "{{lv-LV|liels||LIELS}}"
+    ],
+    "explanation": "'kreisais' means 'left'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "left"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/kreisais"
+  },
+  {
+    "itemId": "e6fd84fd-e64a-4cc4-9100-011b9e15868c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'same'?",
+    "correctAnswer": "{{lv-LV|vienāds||VIE-nads}}",
+    "incorrectAnswers": [
+      "{{lv-LV|atšķirīgs||ATS-ki-rigs}}",
+      "{{lv-LV|liels||LIELS}}",
+      "{{lv-LV|mazs||MAZS}}"
+    ],
+    "explanation": "'vienāds' means 'same'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "same"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vien%C4%81ds"
+  },
+  {
+    "itemId": "15554275-577e-413e-9811-ce0584f287d8",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'different' in everyday use?",
+    "correctAnswer": "{{lv-LV|atšķirīgs||ATS-ki-rigs}}",
+    "incorrectAnswers": [
+      "{{lv-LV|liels||LIELS}}",
+      "{{lv-LV|mazs||MAZS}}",
+      "{{lv-LV|jauns||JAUNS}}"
+    ],
+    "explanation": "'atšķirīgs' means 'different'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "different"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/at%C5%A1%C4%B7ir%C4%ABgs"
+  },
+  {
+    "itemId": "d59184cf-9ee8-4aa6-871e-e91d10c4535d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'who'?",
+    "correctAnswer": "{{lv-LV|kurš||KURS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kas||KAS}}",
+      "{{lv-LV|kad||KAD}}",
+      "{{lv-LV|kāpēc||KA-pec}}"
+    ],
+    "explanation": "'kurš' is the word for 'who'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "who"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/kur%C5%A1"
+  },
+  {
+    "itemId": "647e17e5-df17-4074-babc-580a5182f04c",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'what' in everyday use?",
+    "correctAnswer": "{{lv-LV|kas||KAS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kad||KAD}}",
+      "{{lv-LV|kāpēc||KA-pec}}",
+      "{{lv-LV|kā||KA}}"
+    ],
+    "explanation": "'kas' is the word for 'what'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "what"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/kas"
+  },
+  {
+    "itemId": "34923946-82f5-4ab1-985d-0ca7948e6311",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'when'.",
+    "correctAnswer": "{{lv-LV|kad||KAD}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kāpēc||KA-pec}}",
+      "{{lv-LV|kā||KA}}",
+      "{{lv-LV|cik||CIK}}"
+    ],
+    "explanation": "'kad' is the word for 'when'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "when"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/kad"
+  },
+  {
+    "itemId": "91624b27-6fe9-4614-8de9-0f7b26d2f0ad",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'why'?",
+    "correctAnswer": "{{lv-LV|kāpēc||KA-pec}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kā||KA}}",
+      "{{lv-LV|cik||CIK}}",
+      "{{lv-LV|cik daudz||CIK DAUDZ}}"
+    ],
+    "explanation": "'kāpēc' is the word for 'why'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "why"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/k%C4%81p%C4%93c"
+  },
+  {
+    "itemId": "97ec1e40-7920-4158-a723-e1c054190f92",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'how'?",
+    "correctAnswer": "{{lv-LV|kā||KA}}",
+    "incorrectAnswers": [
+      "{{lv-LV|cik||CIK}}",
+      "{{lv-LV|cik daudz||CIK DAUDZ}}",
+      "{{lv-LV|kurš||KURS}}"
+    ],
+    "explanation": "'kā' is the word for 'how'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/k%C4%81"
+  },
+  {
+    "itemId": "744c8c54-12f4-4e71-b507-e2a3460263a7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'how much' in everyday use?",
+    "correctAnswer": "{{lv-LV|cik||CIK}}",
+    "incorrectAnswers": [
+      "{{lv-LV|cik daudz||CIK DAUDZ}}",
+      "{{lv-LV|kurš||KURS}}",
+      "{{lv-LV|kas||KAS}}"
+    ],
+    "explanation": "'cik' is the word for 'how much'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how-much"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/cik"
+  },
+  {
+    "itemId": "6dcfd11b-a3ca-4af7-b88d-48ff94113e29",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'how many'.",
+    "correctAnswer": "{{lv-LV|cik daudz||CIK DAUDZ}}",
+    "incorrectAnswers": [
+      "{{lv-LV|kurš||KURS}}",
+      "{{lv-LV|kas||KAS}}",
+      "{{lv-LV|kad||KAD}}"
+    ],
+    "explanation": "'cik daudz' is the word for 'how many'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how-many"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/cik%20daudz"
+  },
+  {
+    "itemId": "26507111-fc53-407e-85b4-54ddc6523638",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'and'?",
+    "correctAnswer": "{{lv-LV|un||UN}}",
+    "incorrectAnswers": [
+      "{{lv-LV|vai||VAI}}",
+      "{{lv-LV|bet||BET}}",
+      "{{lv-LV|jo||JO}}"
+    ],
+    "explanation": "'un' is the word for 'and'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "and"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/un"
+  },
+  {
+    "itemId": "69d3a654-5f75-4980-8328-f5e45b4156fa",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'or' in everyday use?",
+    "correctAnswer": "{{lv-LV|vai||VAI}}",
+    "incorrectAnswers": [
+      "{{lv-LV|bet||BET}}",
+      "{{lv-LV|jo||JO}}",
+      "{{lv-LV|ja||JA}}"
+    ],
+    "explanation": "'vai' is the word for 'or'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "or"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vai"
+  },
+  {
+    "itemId": "6e1cee51-d452-474e-820d-9cf155a67bbd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'but'.",
+    "correctAnswer": "{{lv-LV|bet||BET}}",
+    "incorrectAnswers": [
+      "{{lv-LV|jo||JO}}",
+      "{{lv-LV|ja||JA}}",
+      "{{lv-LV|un||UN}}"
+    ],
+    "explanation": "'bet' is the word for 'but'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "but"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/bet"
+  },
+  {
+    "itemId": "d909ee51-8f28-4154-b1c4-7183e59ca308",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'because'?",
+    "correctAnswer": "{{lv-LV|jo||JO}}",
+    "incorrectAnswers": [
+      "{{lv-LV|ja||JA}}",
+      "{{lv-LV|un||UN}}",
+      "{{lv-LV|vai||VAI}}"
+    ],
+    "explanation": "'jo' is the word for 'because'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "because"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/jo"
+  },
+  {
+    "itemId": "d67d6f6f-63ee-465a-bd54-d4396910a3fb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'if'?",
+    "correctAnswer": "{{lv-LV|ja||JA}}",
+    "incorrectAnswers": [
+      "{{lv-LV|un||UN}}",
+      "{{lv-LV|vai||VAI}}",
+      "{{lv-LV|bet||BET}}"
+    ],
+    "explanation": "'ja' is the word for 'if'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "if"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/ja"
+  },
+  {
+    "itemId": "9060f9cf-d6fe-49e9-8f31-75343630649e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'very'?",
+    "correctAnswer": "{{lv-LV|ļoti||LO-ti}}",
+    "incorrectAnswers": [
+      "{{lv-LV|arī||A-ri}}",
+      "{{lv-LV|tikai||TI-kai}}",
+      "{{lv-LV|šeit||SEIT}}"
+    ],
+    "explanation": "'ļoti' is the word for 'very'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "very"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%BCoti"
+  },
+  {
+    "itemId": "92e22523-40d8-4b5c-97d7-fa0de6e00511",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'also' in everyday use?",
+    "correctAnswer": "{{lv-LV|arī||A-ri}}",
+    "incorrectAnswers": [
+      "{{lv-LV|tikai||TI-kai}}",
+      "{{lv-LV|šeit||SEIT}}",
+      "{{lv-LV|tur||TUR}}"
+    ],
+    "explanation": "'arī' is the word for 'also'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "also"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/ar%C4%AB"
+  },
+  {
+    "itemId": "2a27af81-85be-4027-9254-0b7a53178712",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'only'.",
+    "correctAnswer": "{{lv-LV|tikai||TI-kai}}",
+    "incorrectAnswers": [
+      "{{lv-LV|šeit||SEIT}}",
+      "{{lv-LV|tur||TUR}}",
+      "{{lv-LV|vienmēr||VIEN-mer}}"
+    ],
+    "explanation": "'tikai' is the word for 'only'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "only"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/tikai"
+  },
+  {
+    "itemId": "741992da-3562-4bdc-95d2-75fd769a831f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'here'?",
+    "correctAnswer": "{{lv-LV|šeit||SEIT}}",
+    "incorrectAnswers": [
+      "{{lv-LV|tur||TUR}}",
+      "{{lv-LV|vienmēr||VIEN-mer}}",
+      "{{lv-LV|nekad||NE-kad}}"
+    ],
+    "explanation": "'šeit' is the word for 'here'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "here"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C5%A1eit"
+  },
+  {
+    "itemId": "f859342f-8462-4eb8-86e5-2ef76002e10e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'there'?",
+    "correctAnswer": "{{lv-LV|tur||TUR}}",
+    "incorrectAnswers": [
+      "{{lv-LV|vienmēr||VIEN-mer}}",
+      "{{lv-LV|nekad||NE-kad}}",
+      "{{lv-LV|ļoti||LO-ti}}"
+    ],
+    "explanation": "'tur' is the word for 'there'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "there"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/tur"
+  },
+  {
+    "itemId": "2ee47a68-3cf7-4c74-b255-772f9deec855",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'always' in everyday use?",
+    "correctAnswer": "{{lv-LV|vienmēr||VIEN-mer}}",
+    "incorrectAnswers": [
+      "{{lv-LV|nekad||NE-kad}}",
+      "{{lv-LV|ļoti||LO-ti}}",
+      "{{lv-LV|arī||A-ri}}"
+    ],
+    "explanation": "'vienmēr' is the word for 'always'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "always"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vienm%C4%93r"
+  },
+  {
+    "itemId": "954a4e76-6f61-431a-bab7-4c58ea51bc0e",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'never'.",
+    "correctAnswer": "{{lv-LV|nekad||NE-kad}}",
+    "incorrectAnswers": [
+      "{{lv-LV|ļoti||LO-ti}}",
+      "{{lv-LV|arī||A-ri}}",
+      "{{lv-LV|tikai||TI-kai}}"
+    ],
+    "explanation": "'nekad' is the word for 'never'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "never"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/nekad"
+  },
+  {
+    "itemId": "2f2984bf-9c62-476f-bcf6-159f6533da1d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'I'?",
+    "correctAnswer": "{{lv-LV|es||ES}}",
+    "incorrectAnswers": [
+      "{{lv-LV|tu||TU}}",
+      "{{lv-LV|viņš||VINS}}",
+      "{{lv-LV|viņa||VI-na}}"
+    ],
+    "explanation": "'es' is used for 'I'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "i"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/es"
+  },
+  {
+    "itemId": "a8b3ef02-ed06-4fd5-84c1-609544824dcd",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'you' in everyday use?",
+    "correctAnswer": "{{lv-LV|tu||TU}}",
+    "incorrectAnswers": [
+      "{{lv-LV|viņš||VINS}}",
+      "{{lv-LV|viņa||VI-na}}",
+      "{{lv-LV|mēs||MES}}"
+    ],
+    "explanation": "'tu' is used for 'you'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "you"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/tu"
+  },
+  {
+    "itemId": "8641a08e-24e8-4d97-a0e2-cfa13f3d0ac7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'he'.",
+    "correctAnswer": "{{lv-LV|viņš||VINS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|viņa||VI-na}}",
+      "{{lv-LV|mēs||MES}}",
+      "{{lv-LV|jūs||JUS}}"
+    ],
+    "explanation": "'viņš' is used for 'he'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "he"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vi%C5%86%C5%A1"
+  },
+  {
+    "itemId": "32d25822-0583-48c6-82a4-0bb72489cba1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'she'?",
+    "correctAnswer": "{{lv-LV|viņa||VI-na}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mēs||MES}}",
+      "{{lv-LV|jūs||JUS}}",
+      "{{lv-LV|viņi||VI-ni}}"
+    ],
+    "explanation": "'viņa' is used for 'she'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "she"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vi%C5%86a"
+  },
+  {
+    "itemId": "2e5b6e1d-e769-4ced-beec-4751be2e1fda",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'we'?",
+    "correctAnswer": "{{lv-LV|mēs||MES}}",
+    "incorrectAnswers": [
+      "{{lv-LV|jūs||JUS}}",
+      "{{lv-LV|viņi||VI-ni}}",
+      "{{lv-LV|es||ES}}"
+    ],
+    "explanation": "'mēs' is used for 'we'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "we"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/m%C4%93s"
+  },
+  {
+    "itemId": "70d565ea-1c4c-4d89-93a6-d474a43e578d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'you (plural)' in everyday use?",
+    "correctAnswer": "{{lv-LV|jūs||JUS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|viņi||VI-ni}}",
+      "{{lv-LV|es||ES}}",
+      "{{lv-LV|tu||TU}}"
+    ],
+    "explanation": "'jūs' is used for 'you (plural)'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "you-plural"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/j%C5%ABs"
+  },
+  {
+    "itemId": "4aaf2bc1-5898-4443-be34-42142bdef765",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'they'.",
+    "correctAnswer": "{{lv-LV|viņi||VI-ni}}",
+    "incorrectAnswers": [
+      "{{lv-LV|es||ES}}",
+      "{{lv-LV|tu||TU}}",
+      "{{lv-LV|viņš||VINS}}"
+    ],
+    "explanation": "'viņi' is used for 'they'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "they"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vi%C5%86i"
+  },
+  {
+    "itemId": "e08b4f3a-6739-429b-bd0d-d7cac6f52555",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'my'?",
+    "correctAnswer": "{{lv-LV|mans||MANS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|tavs||TAVS}}",
+      "{{lv-LV|mūsu||MU-su}}",
+      "{{lv-LV|viņu||VI-nu}}"
+    ],
+    "explanation": "'mans' is used for 'my'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "my"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/mans"
+  },
+  {
+    "itemId": "aa517ec5-c4f5-485b-a8e5-8080959aabe6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'your' in everyday use?",
+    "correctAnswer": "{{lv-LV|tavs||TAVS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mūsu||MU-su}}",
+      "{{lv-LV|viņu||VI-nu}}",
+      "{{lv-LV|mans||MANS}}"
+    ],
+    "explanation": "'tavs' is used for 'your'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "your"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/tavs"
+  },
+  {
+    "itemId": "5d95ed89-b32a-42cc-be2f-34f44e131176",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'our'.",
+    "correctAnswer": "{{lv-LV|mūsu||MU-su}}",
+    "incorrectAnswers": [
+      "{{lv-LV|viņu||VI-nu}}",
+      "{{lv-LV|mans||MANS}}",
+      "{{lv-LV|tavs||TAVS}}"
+    ],
+    "explanation": "'mūsu' is used for 'our'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "our"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/m%C5%ABsu"
+  },
+  {
+    "itemId": "101ba33b-1555-46ac-ab36-2fc8fb397383",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'their'?",
+    "correctAnswer": "{{lv-LV|viņu||VI-nu}}",
+    "incorrectAnswers": [
+      "{{lv-LV|mans||MANS}}",
+      "{{lv-LV|tavs||TAVS}}",
+      "{{lv-LV|mūsu||MU-su}}"
+    ],
+    "explanation": "'viņu' is used for 'their'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "their"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vi%C5%86u"
+  },
+  {
+    "itemId": "18fadf3d-d0d8-4963-b323-ff6baff41a37",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'doctor'?",
+    "correctAnswer": "{{lv-LV|ārsts||ARSTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|slimnīca||SLIM-ni-ca}}",
+      "{{lv-LV|aptieka||AP-tie-ka}}",
+      "{{lv-LV|sāpes||SA-pes}}"
+    ],
+    "explanation": "'ārsts' means 'doctor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "doctor"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/%C4%81rsts"
+  },
+  {
+    "itemId": "02d35fd5-321b-4305-8267-1a5870cfc1ac",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'hospital' in everyday use?",
+    "correctAnswer": "{{lv-LV|slimnīca||SLIM-ni-ca}}",
+    "incorrectAnswers": [
+      "{{lv-LV|aptieka||AP-tie-ka}}",
+      "{{lv-LV|sāpes||SA-pes}}",
+      "{{lv-LV|palīdzība||PA-lid-zi-ba}}"
+    ],
+    "explanation": "'slimnīca' means 'hospital'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "hospital"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/slimn%C4%ABca"
+  },
+  {
+    "itemId": "df6037f2-3aa1-4cb7-86db-e7560446f274",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'pharmacy'.",
+    "correctAnswer": "{{lv-LV|aptieka||AP-tie-ka}}",
+    "incorrectAnswers": [
+      "{{lv-LV|sāpes||SA-pes}}",
+      "{{lv-LV|palīdzība||PA-lid-zi-ba}}",
+      "{{lv-LV|policija||PO-li-ci-ja}}"
+    ],
+    "explanation": "'aptieka' means 'pharmacy'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "pharmacy"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/aptieka"
+  },
+  {
+    "itemId": "fc699764-e534-4b83-93b1-6adf98687379",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'pain'?",
+    "correctAnswer": "{{lv-LV|sāpes||SA-pes}}",
+    "incorrectAnswers": [
+      "{{lv-LV|palīdzība||PA-lid-zi-ba}}",
+      "{{lv-LV|policija||PO-li-ci-ja}}",
+      "{{lv-LV|uguns||U-guns}}"
+    ],
+    "explanation": "'sāpes' means 'pain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "pain"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/s%C4%81pes"
+  },
+  {
+    "itemId": "d95cd554-0652-47ff-b23e-3ceafdee5729",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'help'?",
+    "correctAnswer": "{{lv-LV|palīdzība||PA-lid-zi-ba}}",
+    "incorrectAnswers": [
+      "{{lv-LV|policija||PO-li-ci-ja}}",
+      "{{lv-LV|uguns||U-guns}}",
+      "{{lv-LV|slims||SLIMS}}"
+    ],
+    "explanation": "'palīdzība' means 'help'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "help"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/pal%C4%ABdz%C4%ABba"
+  },
+  {
+    "itemId": "cc575488-59a8-4bce-93b0-5b51f7f700ba",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'police' in everyday use?",
+    "correctAnswer": "{{lv-LV|policija||PO-li-ci-ja}}",
+    "incorrectAnswers": [
+      "{{lv-LV|uguns||U-guns}}",
+      "{{lv-LV|slims||SLIMS}}",
+      "{{lv-LV|zāles||ZA-les}}"
+    ],
+    "explanation": "'policija' means 'police'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "police"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/policija"
+  },
+  {
+    "itemId": "00500454-50b0-42c4-b3bd-621c3b742a6b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'fire'.",
+    "correctAnswer": "{{lv-LV|uguns||U-guns}}",
+    "incorrectAnswers": [
+      "{{lv-LV|slims||SLIMS}}",
+      "{{lv-LV|zāles||ZA-les}}",
+      "{{lv-LV|ārsts||ARSTS}}"
+    ],
+    "explanation": "'uguns' means 'fire'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "fire"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/uguns"
+  },
+  {
+    "itemId": "8c313221-2e02-4605-877d-c027da25436f",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'sick'?",
+    "correctAnswer": "{{lv-LV|slims||SLIMS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|zāles||ZA-les}}",
+      "{{lv-LV|ārsts||ARSTS}}",
+      "{{lv-LV|slimnīca||SLIM-ni-ca}}"
+    ],
+    "explanation": "'slims' means 'sick'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "sick"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/slims"
+  },
+  {
+    "itemId": "f52731a8-5b28-4e09-8b8b-d34bd263d8e0",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'medicine'?",
+    "correctAnswer": "{{lv-LV|zāles||ZA-les}}",
+    "incorrectAnswers": [
+      "{{lv-LV|ārsts||ARSTS}}",
+      "{{lv-LV|slimnīca||SLIM-ni-ca}}",
+      "{{lv-LV|aptieka||AP-tie-ka}}"
+    ],
+    "explanation": "'zāles' means 'medicine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "medicine"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/z%C4%81les"
+  },
+  {
+    "itemId": "fa18a18c-debc-4d69-89a5-a877fe5923ad",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'school'?",
+    "correctAnswer": "{{lv-LV|skola||SKO-la}}",
+    "incorrectAnswers": [
+      "{{lv-LV|skolotājs||SKO-lo-tajs}}",
+      "{{lv-LV|students||STU-dents}}",
+      "{{lv-LV|grāmata||GRA-ma-ta}}"
+    ],
+    "explanation": "'skola' means 'school'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "school"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/skola"
+  },
+  {
+    "itemId": "85eb96e7-7471-417f-9d4f-942f245c37c1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'teacher' in everyday use?",
+    "correctAnswer": "{{lv-LV|skolotājs||SKO-lo-tajs}}",
+    "incorrectAnswers": [
+      "{{lv-LV|students||STU-dents}}",
+      "{{lv-LV|grāmata||GRA-ma-ta}}",
+      "{{lv-LV|pildspalva||PILDS-pal-va}}"
+    ],
+    "explanation": "'skolotājs' means 'teacher'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "teacher"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/skolot%C4%81js"
+  },
+  {
+    "itemId": "6ed472d3-b491-4ace-ae59-c27409e21b68",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'student'.",
+    "correctAnswer": "{{lv-LV|students||STU-dents}}",
+    "incorrectAnswers": [
+      "{{lv-LV|grāmata||GRA-ma-ta}}",
+      "{{lv-LV|pildspalva||PILDS-pal-va}}",
+      "{{lv-LV|papīrs||PA-pirs}}"
+    ],
+    "explanation": "'students' means 'student'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "student"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/students"
+  },
+  {
+    "itemId": "88e334c7-2d62-40e8-b274-494a6bd7f6f4",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'book'?",
+    "correctAnswer": "{{lv-LV|grāmata||GRA-ma-ta}}",
+    "incorrectAnswers": [
+      "{{lv-LV|pildspalva||PILDS-pal-va}}",
+      "{{lv-LV|papīrs||PA-pirs}}",
+      "{{lv-LV|klase||KLA-se}}"
+    ],
+    "explanation": "'grāmata' means 'book'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "book"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/gr%C4%81mata"
+  },
+  {
+    "itemId": "5886b88d-04ef-4e40-96fe-1fcb9bb52eec",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'pen'?",
+    "correctAnswer": "{{lv-LV|pildspalva||PILDS-pal-va}}",
+    "incorrectAnswers": [
+      "{{lv-LV|papīrs||PA-pirs}}",
+      "{{lv-LV|klase||KLA-se}}",
+      "{{lv-LV|birojs||BI-rojs}}"
+    ],
+    "explanation": "'pildspalva' means 'pen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "pen"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/pildspalva"
+  },
+  {
+    "itemId": "20855d75-bb41-4b61-b08d-e23f46bd4cde",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'paper' in everyday use?",
+    "correctAnswer": "{{lv-LV|papīrs||PA-pirs}}",
+    "incorrectAnswers": [
+      "{{lv-LV|klase||KLA-se}}",
+      "{{lv-LV|birojs||BI-rojs}}",
+      "{{lv-LV|nauda||NAU-da}}"
+    ],
+    "explanation": "'papīrs' means 'paper'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "paper"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/pap%C4%ABrs"
+  },
+  {
+    "itemId": "1428f7df-9826-4dd0-b3fb-7eb4c001a55b",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'class'.",
+    "correctAnswer": "{{lv-LV|klase||KLA-se}}",
+    "incorrectAnswers": [
+      "{{lv-LV|birojs||BI-rojs}}",
+      "{{lv-LV|nauda||NAU-da}}",
+      "{{lv-LV|veikals||VEI-kals}}"
+    ],
+    "explanation": "'klase' means 'class'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "class"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/klase"
+  },
+  {
+    "itemId": "2a254bb1-7105-4277-8bbb-82a864d726d7",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'office'?",
+    "correctAnswer": "{{lv-LV|birojs||BI-rojs}}",
+    "incorrectAnswers": [
+      "{{lv-LV|nauda||NAU-da}}",
+      "{{lv-LV|veikals||VEI-kals}}",
+      "{{lv-LV|cena||CE-na}}"
+    ],
+    "explanation": "'birojs' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "office"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/birojs"
+  },
+  {
+    "itemId": "741083b7-e030-4fe6-93c6-778007f04a57",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'money'?",
+    "correctAnswer": "{{lv-LV|nauda||NAU-da}}",
+    "incorrectAnswers": [
+      "{{lv-LV|veikals||VEI-kals}}",
+      "{{lv-LV|cena||CE-na}}",
+      "{{lv-LV|darbs||DARBS}}"
+    ],
+    "explanation": "'nauda' means 'money'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "money"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/nauda"
+  },
+  {
+    "itemId": "51fe4042-d9c3-4ca8-9ba0-5dc2d6d3eb28",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'shop' in everyday use?",
+    "correctAnswer": "{{lv-LV|veikals||VEI-kals}}",
+    "incorrectAnswers": [
+      "{{lv-LV|cena||CE-na}}",
+      "{{lv-LV|darbs||DARBS}}",
+      "{{lv-LV|skola||SKO-la}}"
+    ],
+    "explanation": "'veikals' means 'shop'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "shop"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/veikals"
+  },
+  {
+    "itemId": "30b8ea1a-379e-4bc1-9436-b3672e2a5f44",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'price'.",
+    "correctAnswer": "{{lv-LV|cena||CE-na}}",
+    "incorrectAnswers": [
+      "{{lv-LV|darbs||DARBS}}",
+      "{{lv-LV|skola||SKO-la}}",
+      "{{lv-LV|skolotājs||SKO-lo-tajs}}"
+    ],
+    "explanation": "'cena' means 'price'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "price"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/cena"
+  },
+  {
+    "itemId": "2df90897-4639-4d71-b873-d8fa1f74bfe9",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'job'?",
+    "correctAnswer": "{{lv-LV|darbs||DARBS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|skola||SKO-la}}",
+      "{{lv-LV|skolotājs||SKO-lo-tajs}}",
+      "{{lv-LV|students||STU-dents}}"
+    ],
+    "explanation": "'darbs' means 'job'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "job"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/darbs"
+  },
+  {
+    "itemId": "27317577-0803-475e-8011-df08d6b939c1",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'age'?",
+    "correctAnswer": "{{lv-LV|vecums||VE-cums}}",
+    "incorrectAnswers": [
+      "{{lv-LV|adrese||A-dre-se}}",
+      "{{lv-LV|telefons||TE-le-fons}}",
+      "{{lv-LV|internets||IN-ter-nets}}"
+    ],
+    "explanation": "'vecums' means 'age'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "age"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/vecums"
+  },
+  {
+    "itemId": "b790f3e6-efdd-4d36-a054-e526a2b9da64",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Which Latvian word means 'address' in everyday use?",
+    "correctAnswer": "{{lv-LV|adrese||A-dre-se}}",
+    "incorrectAnswers": [
+      "{{lv-LV|telefons||TE-le-fons}}",
+      "{{lv-LV|internets||IN-ter-nets}}",
+      "{{lv-LV|e-pasts||E-PASTS}}"
+    ],
+    "explanation": "'adrese' means 'address'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "address"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/adrese"
+  },
+  {
+    "itemId": "e7500da7-b9d0-42de-872e-3372e6235c1d",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Latvian word for 'phone'.",
+    "correctAnswer": "{{lv-LV|telefons||TE-le-fons}}",
+    "incorrectAnswers": [
+      "{{lv-LV|internets||IN-ter-nets}}",
+      "{{lv-LV|e-pasts||E-PASTS}}",
+      "{{lv-LV|vecums||VE-cums}}"
+    ],
+    "explanation": "'telefons' means 'phone'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "phone"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/telefons"
+  },
+  {
+    "itemId": "ffa73343-e14f-4efa-a9c4-4f6e0162c2e6",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Latvian word for 'internet'?",
+    "correctAnswer": "{{lv-LV|internets||IN-ter-nets}}",
+    "incorrectAnswers": [
+      "{{lv-LV|e-pasts||E-PASTS}}",
+      "{{lv-LV|vecums||VE-cums}}",
+      "{{lv-LV|adrese||A-dre-se}}"
+    ],
+    "explanation": "'internets' means 'internet'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "internet"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/internets"
+  },
+  {
+    "itemId": "5544fdf3-1f75-44a1-a67f-e245e67033eb",
+    "category": "languages",
+    "navigationKeyword1": "latvian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Latvian, how do you say 'email'?",
+    "correctAnswer": "{{lv-LV|e-pasts||E-PASTS}}",
+    "incorrectAnswers": [
+      "{{lv-LV|vecums||VE-cums}}",
+      "{{lv-LV|adrese||A-dre-se}}",
+      "{{lv-LV|telefons||TE-le-fons}}"
+    ],
+    "explanation": "'e-pasts' means 'email'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "latvian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "email"
+    ],
+    "source": "https://mlvv.tezaurs.lv/_search/e-pasts"
+  }
+]

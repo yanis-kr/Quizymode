@@ -1,0 +1,2200 @@
+[
+  {
+    "itemId": "fa0a26a8-03ac-4d75-a584-09f42db4ad50",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I would like a coffee, please' in Russian?",
+    "correctAnswer": "{{ru-RU|Я бы хотел(а) кофе, пожалуйста.|Ya by khotel(a) kofe, pozhaluysta.|YA BY kho-TEL(A) KO-fe, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Дай мне кофе.|Day mne kofe.|DAY MNE KO-fe.}}",
+      "{{ru-RU|Кофе сейчас!|Kofe seychas!|KO-fe sey-CHAS!}}",
+      "{{ru-RU|Я пью кофе.|Ya pyu kofe.|YA PYU KO-fe.}}"
+    ],
+    "explanation": "'Ya by khotel(a)' is the polite conditional 'I would like'. Add -a for female speaker.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson9_main.php"
+  },
+  {
+    "itemId": "f399315e-76e0-485c-b14e-909a898f1f18",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Russian?",
+    "correctAnswer": "{{ru-RU|Где туалет?|Gde tualet?|GDE tua-LET?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Что такое туалет?|Chto takoye tualet?|CHTO TA-koye tua-LET?}}",
+      "{{ru-RU|Когда открыт туалет?|Kogda otkryt tualet?|KOG-da ot-KRYT tua-LET?}}",
+      "{{ru-RU|Есть ли туалет?|Yest li tualet?|YEST LI tua-LET?}}"
+    ],
+    "explanation": "'Gde' means 'where'. 'Gde tualet?' is the most practical phrase for any traveller.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/where"
+  },
+  {
+    "itemId": "96f88677-d08b-42fc-b072-9568bb4682e0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Russian?",
+    "correctAnswer": "{{ru-RU|Сколько это стоит?|Skolko eto stoit?|SKOL-ko E-to STOIT?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Что это такое?|Chto eto takoye?|CHTO E-to TA-koye?}}",
+      "{{ru-RU|Где это купить?|Gde eto kupit?|GDE E-to ku-PIT?}}",
+      "{{ru-RU|Можно скидку?|Mozhno skidku?|MOZH-no SKID-ku?}}"
+    ],
+    "explanation": "'Skolko eto stoit?' — literally 'How much does this cost?' — essential for markets and shops.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/how-much"
+  },
+  {
+    "itemId": "02627f80-ad3a-46a2-8866-2944e86f3842",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in a Russian restaurant?",
+    "correctAnswer": "{{ru-RU|Счёт, пожалуйста.|Schyot, pozhaluysta.|SCHYOT, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Дайте меню.|Dayte menyu.|DAY-te ME-nyu.}}",
+      "{{ru-RU|Ещё одно блюдо.|Yeshchyo odno blyudo.|YESH-chyo OD-no BLYU-do.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}"
+    ],
+    "explanation": "'Schyot' means 'the bill/check'. Adding 'pozhaluysta' makes it polite.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/bill"
+  },
+  {
+    "itemId": "50bf3ef0-3fbb-4b98-a69a-801e394c6ead",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'I don't understand' in Russian?",
+    "correctAnswer": "{{ru-RU|Я не понимаю.|Ya ne ponimayu.|YA NE po-NI-mayu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я не знаю.|Ya ne znayu.|YA NE ZNAYU.}}",
+      "{{ru-RU|Я не говорю.|Ya ne govoryu.|YA NE go-VO-ryu.}}",
+      "{{ru-RU|Я не слышу.|Ya ne slyshu.|YA NE SLY-shu.}}"
+    ],
+    "explanation": "'Ya ne ponimayu' is essential when you need to signal you've lost the thread.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson4_main.php"
+  },
+  {
+    "itemId": "248d9883-a6cb-4ceb-a6dc-4d29a80d832b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the metro station?' in Russian?",
+    "correctAnswer": "{{ru-RU|Где метро?|Gde metro?|GDE ME-tro?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как добраться?|Kak dobratsa?|KAK do-BRA-tsa?}}",
+      "{{ru-RU|Далеко ли отсюда?|Daleko li otsyuda?|da-LE-ko LI o-TSYU-da?}}",
+      "{{ru-RU|Остановите здесь.|Ostanovite zdes.|os-ta-no-VI-te ZDES.}}"
+    ],
+    "explanation": "'Gde metro?' — swap 'metro' for any destination: vokzal (station), aeroporty (airport), etc.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-russian/metro"
+  },
+  {
+    "itemId": "6efedf53-6c05-4b85-97d2-8e36797e94ec",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Russian?",
+    "correctAnswer": "{{ru-RU|Вы говорите по-английски?|Vy govorite po-angliyski?|VY go-vo-RI-te PO-an-GLIYS-ki?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Вы понимаете меня?|Vy ponimaete menya?|VY po-ni-MAE-te ME-nya?}}",
+      "{{ru-RU|Вы знаете английский?|Vy znaete angliyskiy?|VY ZNAE-te an-GLIYS-kiy?}}",
+      "{{ru-RU|Говорите медленно.|Govorite medlenno.|go-vo-RI-te med-LEN-no.}}"
+    ],
+    "explanation": "'Vy govorite po-angliyski?' is the polite form — use 'ty' form with friends.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.russianlessons.net/lessons/lesson3_main.php"
+  },
+  {
+    "itemId": "ca35d956-3964-4235-b377-9f417a0496d6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Good evening.'?",
+    "correctAnswer": "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%87%D0%B5%D1%80."
+  },
+  {
+    "itemId": "bebbb87d-6222-4f33-ac2b-857c6a626b2a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'How are you?'?",
+    "correctAnswer": "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%B0%D0%BA%20%D0%B4%D0%B5%D0%BB%D0%B0%3F"
+  },
+  {
+    "itemId": "5756179f-6b30-4929-b3d6-4523ab3ffb65",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B2%D1%81%D1%91%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%2C%20%D1%81%D0%BF%D0%B0%D1%81%D0%B8%D0%B1%D0%BE."
+  },
+  {
+    "itemId": "84291c78-df0c-4aeb-9b01-1de69690a91e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{ru-RU|Очень хорошо, спасибо.|Ochen khorosho, spasibo.|o-CHEN kho-RO-sho, spa-SI-bo.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9E%D1%87%D0%B5%D0%BD%D1%8C%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%2C%20%D1%81%D0%BF%D0%B0%D1%81%D0%B8%D0%B1%D0%BE."
+  },
+  {
+    "itemId": "5ff92805-fdf5-44a1-ace0-26aa60a39d66",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'See you later.'?",
+    "correctAnswer": "{{ru-RU|До скорого.|Do skorogo.|DO sko-RO-go.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%20%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D0%B3%D0%BE."
+  },
+  {
+    "itemId": "db28270c-c61c-4ea3-aecf-2ee498d628cb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{ru-RU|До завтра.|Do zavtra.|DO ZAV-tra.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%20%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0."
+  },
+  {
+    "itemId": "53da2d25-0c34-4191-b7ce-e8716abad7ba",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Have a good day.'.",
+    "correctAnswer": "{{ru-RU|Хорошего дня.|Khoroshego dnya.|kho-ro-SHE-go DNYA.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A5%D0%BE%D1%80%D0%BE%D1%88%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F."
+  },
+  {
+    "itemId": "7b1ce3a4-e2a8-4461-96ca-aaf9a9267e2e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Welcome.'?",
+    "correctAnswer": "{{ru-RU|Добро пожаловать.|Dobro pozhalovat.|DO-bro poz-ha-LO-vat.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C."
+  },
+  {
+    "itemId": "2a10c3b4-0010-4ea9-96ba-e3bde7e9744b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{ru-RU|Приятно познакомиться.|Priyatno poznakomitsya.|PRIYAT-no poz-na-ko-MI-tsya.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D1%80%D0%B8%D1%8F%D1%82%D0%BD%D0%BE%20%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D0%B8%D1%82%D1%8C%D1%81%D1%8F."
+  },
+  {
+    "itemId": "898ba57e-442e-43de-b5c2-a818aac9da09",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{ru-RU|Рад(а) снова вас видеть.|Rad(a) snova vas videt.|RAD(A) SNO-va VAS vi-DET.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A0%D0%B0%D0%B4%28%D0%B0%29%20%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%B2%D0%B0%D1%81%20%D0%B2%D0%B8%D0%B4%D0%B5%D1%82%D1%8C."
+  },
+  {
+    "itemId": "31497088-03b3-4cf4-8f15-99cd074702ab",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'See you soon.'.",
+    "correctAnswer": "{{ru-RU|До скорой встречи.|Do skoroy vstrechi.|DO SKO-roy VSTRE-chi.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%BE%20%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D0%B9%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B8."
+  },
+  {
+    "itemId": "d23237cb-06f6-47e3-a63a-f98a87f5d74a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{ru-RU|Хорошего вечера.|Khoroshego vechera.|kho-ro-SHE-go ve-CHE-ra.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Добрый вечер.|Dobryy vecher.|DO-bryy ve-CHER.}}",
+      "{{ru-RU|Как дела?|Kak dela?|KAK DE-la?}}",
+      "{{ru-RU|У меня всё хорошо, спасибо.|U menya vsyo khorosho, spasibo.|U ME-nya VSYO kho-RO-sho, spa-SI-bo.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A5%D0%BE%D1%80%D0%BE%D1%88%D0%B5%D0%B3%D0%BE%20%D0%B2%D0%B5%D1%87%D0%B5%D1%80%D0%B0."
+  },
+  {
+    "itemId": "a4e2fb8d-84f9-42dd-813d-8d8c2502e812",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'What is your name?'?",
+    "correctAnswer": "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%B0%D0%BA%20%D0%B2%D0%B0%D1%81%20%D0%B7%D0%BE%D0%B2%D1%83%D1%82%3F"
+  },
+  {
+    "itemId": "2bb4818b-df6e-4208-a3b3-acd430aee0e7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B8%D0%B7%20%D0%A1%D0%A8%D0%90."
+  },
+  {
+    "itemId": "e3252633-a602-49cf-8dc2-104dac0d7c55",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B6%D0%B8%D0%B2%D1%83%20%D0%B2%20%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE."
+  },
+  {
+    "itemId": "d45dd08d-14a5-4a11-b07a-d1a065efd320",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{ru-RU|Мне двадцать лет.|Mne dvadtsat let.|MNE dvad-TSAT LET.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%B4%D0%B2%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D1%8C%20%D0%BB%D0%B5%D1%82."
+  },
+  {
+    "itemId": "41a290db-e6dd-400f-be85-d4a292baa944",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{ru-RU|Это мой друг.|Eto moy drug.|E-to MOY DRUG.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%BC%D0%BE%D0%B9%20%D0%B4%D1%80%D1%83%D0%B3."
+  },
+  {
+    "itemId": "6f0fae95-387a-49ee-bb52-2ce2ba105f5c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'This is my sister.'?",
+    "correctAnswer": "{{ru-RU|Это моя сестра.|Eto moya sestra.|E-to MOYA SES-tra.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%BC%D0%BE%D1%8F%20%D1%81%D0%B5%D1%81%D1%82%D1%80%D0%B0."
+  },
+  {
+    "itemId": "f9fc7c9c-6d2a-4d82-b73c-6fe974566ae5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I am married.'.",
+    "correctAnswer": "{{ru-RU|Я женат/замужем.|Ya zhenat/zamuzhem.|YA zhe-NAT/za-MUZ-hem.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B6%D0%B5%D0%BD%D0%B0%D1%82/%D0%B7%D0%B0%D0%BC%D1%83%D0%B6%D0%B5%D0%BC."
+  },
+  {
+    "itemId": "8f131833-ddfb-4660-b92d-d149bc0a85c8",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I am a student.'?",
+    "correctAnswer": "{{ru-RU|Я студент/студентка.|Ya student/studentka.|YA stu-DENT/stu-DENT-ka.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82/%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D0%BA%D0%B0."
+  },
+  {
+    "itemId": "ced1b4be-f038-433a-b685-d7db43ae08ca",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{ru-RU|Я здесь в отпуске.|Ya zdes v otpuske.|YA ZDES V ot-PUS-ke.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B7%D0%B4%D0%B5%D1%81%D1%8C%20%D0%B2%20%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA%D0%B5."
+  },
+  {
+    "itemId": "7227fcdd-8dd0-47a0-b082-5a975719870c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{ru-RU|Моя фамилия Гарсия.|Moya familiya Garsiya.|MOYA fa-MI-liya GAR-siya.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D1%8F%20%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F%20%D0%93%D0%B0%D1%80%D1%81%D0%B8%D1%8F."
+  },
+  {
+    "itemId": "ce09e2c9-bffe-4e5b-af20-c4680971d400",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'My phone number is...'.",
+    "correctAnswer": "{{ru-RU|Мой номер телефона...|Moy nomer telefona...|MOY no-MER te-le-FO-na...}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B9%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0..."
+  },
+  {
+    "itemId": "7e4b058b-1471-4994-861a-6c07cfca6771",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'My address is...'?",
+    "correctAnswer": "{{ru-RU|Мой адрес...|Moy adres...|MOY a-DRES...}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как вас зовут?|Kak vas zovut?|KAK VAS zo-VUT?}}",
+      "{{ru-RU|Я из США.|Ya iz SShA.|YA IZ SSHA.}}",
+      "{{ru-RU|Я живу в Чикаго.|Ya zhivu v Chikago.|YA ZHI-vu V chi-KA-go.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B9%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81..."
+  },
+  {
+    "itemId": "ceb6fceb-6bd3-43b4-884d-3b860a71bf64",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'I need water.'?",
+    "correctAnswer": "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%B2%D0%BE%D0%B4%D0%B0."
+  },
+  {
+    "itemId": "b4a0ccc4-69fe-4300-83c9-0008177536fc",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I need a map.'?",
+    "correctAnswer": "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%B0%D1%80%D1%82%D0%B0."
+  },
+  {
+    "itemId": "f3a79d13-4d94-46cd-aa2f-e8d00db32092",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D1%82%D0%B0%D0%BA%D1%81%D0%B8."
+  },
+  {
+    "itemId": "767877ad-1b4c-4486-af2f-6d3fed8aa1f5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I need a room.'?",
+    "correctAnswer": "{{ru-RU|Мне нужен номер.|Mne nuzhen nomer.|MNE nuz-HEN no-MER.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80."
+  },
+  {
+    "itemId": "c5c81b77-75e6-41dd-92d2-b5da7c1624b6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{ru-RU|У вас есть Wi-Fi?|U vas est Wi-Fi?|U VAS EST WI-FI?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20Wi-Fi%3F"
+  },
+  {
+    "itemId": "ab011782-f4bc-4b2e-999b-c3f2bef9a9a5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{ru-RU|У вас есть хлеб?|U vas est khleb?|U VAS EST KHLEB?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D1%85%D0%BB%D0%B5%D0%B1%3F"
+  },
+  {
+    "itemId": "081a30a9-79db-4bea-bfb7-1a469de9ab0a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{ru-RU|Можно меню, пожалуйста?|Mozhno menyu, pozhaluysta?|MOZH-no ME-nyu, poz-ha-LUYS-ta?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BC%D0%B5%D0%BD%D1%8E%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%3F"
+  },
+  {
+    "itemId": "11fe5abf-1634-4a8b-b7f1-81161689077f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{ru-RU|Можно бутылку воды?|Mozhno butylku vody?|MOZH-no bu-TYL-ku VO-dy?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%83%D1%82%D1%8B%D0%BB%D0%BA%D1%83%20%D0%B2%D0%BE%D0%B4%D1%8B%3F"
+  },
+  {
+    "itemId": "f5e1c30a-c3fb-4678-a516-5315ddb31f28",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{ru-RU|Дайте мне пакет, пожалуйста.|Dayte mne paket, pozhaluysta.|DAY-te MNE pa-KET, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "5da70a45-8d09-4402-a27a-fbfbddf8856c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I need more time.'?",
+    "correctAnswer": "{{ru-RU|Мне нужно больше времени.|Mne nuzhno bolshe vremeni.|MNE NUZH-no BOL-she vre-ME-ni.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8."
+  },
+  {
+    "itemId": "f3e609a2-6623-465e-997b-26968686a985",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D1%87%D0%B5%D0%BA."
+  },
+  {
+    "itemId": "0e8c52f4-6d8a-4356-81e3-5b273bb95202",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{ru-RU|У вас есть вегетарианская еда?|U vas est vegetarianskaya eda?|U VAS EST ve-ge-ta-RIANS-kaya E-da?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужна вода.|Mne nuzhna voda.|MNE NUZH-na VO-da.}}",
+      "{{ru-RU|Мне нужна карта.|Mne nuzhna karta.|MNE NUZH-na KAR-ta.}}",
+      "{{ru-RU|Мне нужно такси.|Mne nuzhno taksi.|MNE NUZH-no TAK-si.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D0%B3%D0%B5%D1%82%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B5%D0%B4%D0%B0%3F"
+  },
+  {
+    "itemId": "828ccc9e-e544-4907-98bb-eb56afc70201",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%93%D0%B4%D0%B5%20%D0%B1%D0%B0%D0%BD%D0%BA%3F"
+  },
+  {
+    "itemId": "27b7b47e-3587-41f0-a8a5-e44738b7733b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%93%D0%B4%D0%B5%20%D0%BC%D1%83%D0%B7%D0%B5%D0%B9%3F"
+  },
+  {
+    "itemId": "5f07c369-197c-4ae9-a05d-78420217b888",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%93%D0%B4%D0%B5%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0%3F"
+  },
+  {
+    "itemId": "84df6061-8af6-43ca-bf23-c6ab6450e9e7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "{{ru-RU|Где автобусная остановка?|Gde avtobusnaya ostanovka?|GDE av-to-BUS-naya os-ta-NOV-ka?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%93%D0%B4%D0%B5%20%D0%B0%D0%B2%D1%82%D0%BE%D0%B1%D1%83%D1%81%D0%BD%D0%B0%D1%8F%20%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%3F"
+  },
+  {
+    "itemId": "9e269c59-090b-4b62-983b-5aa1c919a0b0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Go straight.'?",
+    "correctAnswer": "{{ru-RU|Идите прямо.|Idite pryamo.|i-DI-te PRYA-mo.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%98%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D1%8F%D0%BC%D0%BE."
+  },
+  {
+    "itemId": "21aac622-51ee-4b3e-8424-c101672ba88f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Take the first street.'?",
+    "correctAnswer": "{{ru-RU|Поверните на первую улицу.|Povernite na pervuyu ulitsu.|po-ver-NI-te NA PER-vuyu u-LI-tsu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D0%BE%D0%B2%D0%B5%D1%80%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B2%D1%83%D1%8E%20%D1%83%D0%BB%D0%B8%D1%86%D1%83."
+  },
+  {
+    "itemId": "3048d971-b0bd-4207-a38b-c6be9102788b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Take the second street.'.",
+    "correctAnswer": "{{ru-RU|Поверните на вторую улицу.|Povernite na vtoruyu ulitsu.|po-ver-NI-te NA VTO-ruyu u-LI-tsu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D0%BE%D0%B2%D0%B5%D1%80%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BD%D0%B0%20%D0%B2%D1%82%D0%BE%D1%80%D1%83%D1%8E%20%D1%83%D0%BB%D0%B8%D1%86%D1%83."
+  },
+  {
+    "itemId": "be32c488-2163-453f-ba71-1417c2f6bff9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Is it far?'?",
+    "correctAnswer": "{{ru-RU|Это далеко?|Eto daleko?|E-to da-LE-ko?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%B4%D0%B0%D0%BB%D0%B5%D0%BA%D0%BE%3F"
+  },
+  {
+    "itemId": "f023acbc-382b-433c-a326-271ea34b6b0e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Is it near?'?",
+    "correctAnswer": "{{ru-RU|Это близко?|Eto blizko?|E-to BLIZ-ko?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%B1%D0%BB%D0%B8%D0%B7%D0%BA%D0%BE%3F"
+  },
+  {
+    "itemId": "a1741796-2566-4744-a426-f190516f83dd",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I am lost.'?",
+    "correctAnswer": "{{ru-RU|Я заблудился/заблудилась.|Ya zabludilsya/zabludilas.|YA za-blu-DIL-sya/za-blu-DI-las.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B7%D0%B0%D0%B1%D0%BB%D1%83%D0%B4%D0%B8%D0%BB%D1%81%D1%8F/%D0%B7%D0%B0%D0%B1%D0%BB%D1%83%D0%B4%D0%B8%D0%BB%D0%B0%D1%81%D1%8C."
+  },
+  {
+    "itemId": "b02be1e2-0970-45d8-ba9a-a43e4ab07d7b",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{ru-RU|Мы ищем гостиницу.|My ishchem gostinitsu.|MY ish-CHEM gos-ti-NI-tsu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D1%8B%20%D0%B8%D1%89%D0%B5%D0%BC%20%D0%B3%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B8%D1%86%D1%83."
+  },
+  {
+    "itemId": "3f3f4b91-9f2c-4c18-b785-e9c6fe535bf5",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{ru-RU|Покажите мне это на карте, пожалуйста.|Pokazhite mne eto na karte, pozhaluysta.|po-kaz-HI-te MNE E-to NA KAR-te, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Где банк?|Gde bank?|GDE BANK?}}",
+      "{{ru-RU|Где музей?|Gde muzey?|GDE MU-zey?}}",
+      "{{ru-RU|Где центр города?|Gde tsentr goroda?|GDE TSENTR go-RO-da?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BD%D0%B5%20%D1%8D%D1%82%D0%BE%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D1%80%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "ca5051e6-3269-4fce-a5e8-b592d89e9803",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%BF%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D1%82%D1%8C%3F"
+  },
+  {
+    "itemId": "fcfeb823-e2ba-44e7-a0b7-c02d27876918",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B4%D0%BB%D0%B5%D0%BD%D0%BD%D0%B5%D0%B5%3F"
+  },
+  {
+    "itemId": "6485552e-d35b-4979-a018-4eda7883b7c3",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%B8%D1%88%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%B8%D0%BC%D1%8F%3F"
+  },
+  {
+    "itemId": "6ddf99cb-d8a7-4b0b-94dd-3b37a83a4b47",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{ru-RU|Всего десять евро.|Vsego desyat evro.|VSE-go de-SYAT E-vro.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%92%D1%81%D0%B5%D0%B3%D0%BE%20%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D1%8C%20%D0%B5%D0%B2%D1%80%D0%BE."
+  },
+  {
+    "itemId": "8c36899b-00e4-4c9f-8853-d9886baeca56",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{ru-RU|Это стоит двадцать евро.|Eto stoit dvadtsat evro.|E-to STOIT dvad-TSAT E-vro.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D1%81%D1%82%D0%BE%D0%B8%D1%82%20%D0%B4%D0%B2%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D1%8C%20%D0%B5%D0%B2%D1%80%D0%BE."
+  },
+  {
+    "itemId": "d48213a4-22fa-413d-983e-8c8ff605553d",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{ru-RU|Номер комнаты двенадцать.|Nomer komnaty dvenadtsat.|no-MER kom-NA-ty dve-NAD-tsat.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9D%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D1%8B%20%D0%B4%D0%B2%D0%B5%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D1%8C."
+  },
+  {
+    "itemId": "49993a44-0fb8-4643-8914-2a1e14a6a4bc",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Platform number four.'.",
+    "correctAnswer": "{{ru-RU|Платформа номер четыре.|Platforma nomer chetyre.|plat-FOR-ma no-MER che-TY-re.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9F%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D1%87%D0%B5%D1%82%D1%8B%D1%80%D0%B5."
+  },
+  {
+    "itemId": "329d748b-c3fa-4ae7-806f-0b74ea29f593",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{ru-RU|Столик на троих, пожалуйста.|Stolik na troikh, pozhaluysta.|sto-LIK NA TROIKH, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A1%D1%82%D0%BE%D0%BB%D0%B8%D0%BA%20%D0%BD%D0%B0%20%D1%82%D1%80%D0%BE%D0%B8%D1%85%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "9230154e-b5f5-4e16-9fa2-9ec36dd854a7",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{ru-RU|Два билета, пожалуйста.|Dva bileta, pozhaluysta.|DVA bi-LE-ta, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%94%D0%B2%D0%B0%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D0%B0%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "cbd3f3f0-cb3f-488e-9de0-2a4ec080b470",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{ru-RU|Можете это написать?|Mozhete eto napisat?|moz-HE-te E-to na-PI-sat?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D1%8D%D1%82%D0%BE%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%3F"
+  },
+  {
+    "itemId": "76f925b0-5b8f-4374-92c1-fda722c48fbb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'What is today's date?'.",
+    "correctAnswer": "{{ru-RU|Какое сегодня число?|Kakoe segodnya chislo?|KA-koe se-GOD-nya CHIS-lo?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%3F"
+  },
+  {
+    "itemId": "889e80f8-a436-4161-93ea-e36c423188e6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'One moment, please.'?",
+    "correctAnswer": "{{ru-RU|Одну минуту, пожалуйста.|Odnu minutu, pozhaluysta.|OD-nu mi-NU-tu, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можете повторить?|Mozhete povtorit?|moz-HE-te pov-TO-rit?}}",
+      "{{ru-RU|Можете говорить медленнее?|Mozhete govorit medlennee?|moz-HE-te go-VO-rit med-LEN-nee?}}",
+      "{{ru-RU|Как пишется ваше имя?|Kak pishetsya vashe imya?|KAK pi-SHE-tsya VA-she I-mya?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9E%D0%B4%D0%BD%D1%83%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D1%83%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "7fbfbdc0-4089-4508-adf5-1399e65472c9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D0%BD/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D0%B0."
+  },
+  {
+    "itemId": "b4458de7-22bf-4765-bf58-455789d369e6",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%B8%D1%82%D1%8C."
+  },
+  {
+    "itemId": "5eef41e3-5489-4266-a478-743ab6ad3714",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'The menu, please.'.",
+    "correctAnswer": "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%B5%D0%BD%D1%8E%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "0d9cd555-6275-4641-a544-d25345293844",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{ru-RU|Я вегетарианец/вегетарианка.|Ya vegetarianets/vegetarianka.|YA ve-ge-ta-RIA-nets/ve-ge-ta-RIAN-ka.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%B2%D0%B5%D0%B3%D0%B5%D1%82%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D0%B5%D1%86/%D0%B2%D0%B5%D0%B3%D0%B5%D1%82%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D0%BA%D0%B0."
+  },
+  {
+    "itemId": "4e3e07dc-494a-4aa8-abcc-842ecb2fb274",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{ru-RU|Без мяса, пожалуйста.|Bez myasa, pozhaluysta.|BEZ MYA-sa, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%91%D0%B5%D0%B7%20%D0%BC%D1%8F%D1%81%D0%B0%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "3cf94bb4-ef3e-4df9-99eb-9d00aec6e201",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{ru-RU|Без сахара, пожалуйста.|Bez sakhara, pozhaluysta.|BEZ sak-HA-ra, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%91%D0%B5%D0%B7%20%D1%81%D0%B0%D1%85%D0%B0%D1%80%D0%B0%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "4103c3a2-a2bc-4ce8-a27f-6a9119948ede",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'With milk, please.'.",
+    "correctAnswer": "{{ru-RU|С молоком, пожалуйста.|S molokom, pozhaluysta.|S mo-LO-kom, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A1%20%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BC%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "e5db58ec-5ab9-4440-b96b-d7e4777bc4df",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'It was delicious.'?",
+    "correctAnswer": "{{ru-RU|Было очень вкусно.|Bylo ochen vkusno.|BY-lo o-CHEN VKUS-no.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%91%D1%8B%D0%BB%D0%BE%20%D0%BE%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B2%D0%BA%D1%83%D1%81%D0%BD%D0%BE."
+  },
+  {
+    "itemId": "d31c7481-7574-488f-a301-15b6fd9d15a0",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'This is very good.'?",
+    "correctAnswer": "{{ru-RU|Это очень вкусно.|Eto ochen vkusno.|E-to o-CHEN VKUS-no.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%BE%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B2%D0%BA%D1%83%D1%81%D0%BD%D0%BE."
+  },
+  {
+    "itemId": "f322b208-4b08-4b22-b62d-59a6b54c00cf",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{ru-RU|Суп холодный.|Sup kholodnyy.|SUP kho-LOD-nyy.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A1%D1%83%D0%BF%20%D1%85%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9."
+  },
+  {
+    "itemId": "87cc2931-9470-41b3-999c-9b0f6b8a9c07",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{ru-RU|У меня аллергия на орехи.|U menya allergiya na orekhi.|U ME-nya al-LER-giya NA o-REK-hi.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%BE%D1%80%D0%B5%D1%85%D0%B8."
+  },
+  {
+    "itemId": "64148fe3-43ca-4c9a-8bb0-80ce4f02bd0d",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{ru-RU|Бутылку воды, пожалуйста.|Butylku vody, pozhaluysta.|bu-TYL-ku VO-dy, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я голоден/голодна.|Ya goloden/golodna.|YA go-LO-den/go-LOD-na.}}",
+      "{{ru-RU|Я хочу пить.|Ya khochu pit.|YA KHO-chu PIT.}}",
+      "{{ru-RU|Меню, пожалуйста.|Menyu, pozhaluysta.|ME-nyu, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%91%D1%83%D1%82%D1%8B%D0%BB%D0%BA%D1%83%20%D0%B2%D0%BE%D0%B4%D1%8B%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "29b41671-5623-43f2-8312-282e7d500d5c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D1%8D%D1%82%D0%BE%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%B0%3F"
+  },
+  {
+    "itemId": "085b652a-8a65-423a-9b70-45ab569e21a2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%A3%20%D0%B2%D0%B0%D1%81%20%D0%B5%D1%81%D1%82%D1%8C%20%D1%8D%D1%82%D0%BE%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B3%D0%BE%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%3F"
+  },
+  {
+    "itemId": "33be9a2b-83e7-47eb-818d-68b03b03ab98",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B8%D1%82%D1%8C%3F"
+  },
+  {
+    "itemId": "2bfb1bf2-4d1e-4641-8a8b-1c589f7274a1",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{ru-RU|Это слишком дорого.|Eto slishkom dorogo.|E-to slish-KOM do-RO-go.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D1%81%D0%BB%D0%B8%D1%88%D0%BA%D0%BE%D0%BC%20%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE."
+  },
+  {
+    "itemId": "0056c46b-84c2-4f8b-b180-0319053d2bd9",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{ru-RU|Это дёшево.|Eto dyoshevo.|E-to dyo-SHE-vo.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%B4%D1%91%D1%88%D0%B5%D0%B2%D0%BE."
+  },
+  {
+    "itemId": "8c81aba6-40a2-4747-967b-55f19c59146e",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I will take it.'?",
+    "correctAnswer": "{{ru-RU|Я это возьму.|Ya eto vozmu.|YA E-to VOZ-mu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D1%8D%D1%82%D0%BE%20%D0%B2%D0%BE%D0%B7%D1%8C%D0%BC%D1%83."
+  },
+  {
+    "itemId": "06c2a430-47f0-4218-a45e-d352e9d31b7f",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{ru-RU|Где касса?|Gde kassa?|GDE KAS-sa?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%93%D0%B4%D0%B5%20%D0%BA%D0%B0%D1%81%D1%81%D0%B0%3F"
+  },
+  {
+    "itemId": "9854f8a8-59dc-4be7-b3b4-b58f2433afb2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I am just looking.'?",
+    "correctAnswer": "{{ru-RU|Я просто смотрю.|Ya prosto smotryu.|YA PROS-to SMO-tryu.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%20%D1%81%D0%BC%D0%BE%D1%82%D1%80%D1%8E."
+  },
+  {
+    "itemId": "8268fbc6-eada-4666-9297-b8fe65bea88c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{ru-RU|Вы принимаете карты?|Vy prinimaete karty?|VY pri-ni-MAE-te KAR-ty?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%92%D1%8B%20%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%D0%B5%20%D0%BA%D0%B0%D1%80%D1%82%D1%8B%3F"
+  },
+  {
+    "itemId": "8a6ddea5-b723-4c5d-bb3b-90f4586983bb",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{ru-RU|Мне нужен чек.|Mne nuzhen chek.|MNE nuz-HEN CHEK.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D1%87%D0%B5%D0%BA."
+  },
+  {
+    "itemId": "4683cca8-4bab-4626-bea0-c6eb318b0a46",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'This size is too small.'.",
+    "correctAnswer": "{{ru-RU|Этот размер слишком маленький.|Etot razmer slishkom malenkiy.|e-TOT raz-MER slish-KOM ma-LEN-kiy.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%D1%81%D0%BB%D0%B8%D1%88%D0%BA%D0%BE%D0%BC%20%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9."
+  },
+  {
+    "itemId": "764691e1-7284-44e2-b49f-566aabda4210",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'This size is too big.'?",
+    "correctAnswer": "{{ru-RU|Этот размер слишком большой.|Etot razmer slishkom bolshoy.|e-TOT raz-MER slish-KOM BOL-shoy.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|У вас есть это другого размера?|U vas est eto drugogo razmera?|U VAS EST E-to dru-GO-go raz-ME-ra?}}",
+      "{{ru-RU|У вас есть это другого цвета?|U vas est eto drugogo tsveta?|U VAS EST E-to dru-GO-go TSVE-ta?}}",
+      "{{ru-RU|Можно примерить?|Mozhno primerit?|MOZH-no pri-ME-rit?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%D1%82%20%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%D1%81%D0%BB%D0%B8%D1%88%D0%BA%D0%BE%D0%BC%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9."
+  },
+  {
+    "itemId": "d02aa974-297d-4d23-8e84-98fe8edddead",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{ru-RU|Мне нужен билет в аэропорт.|Mne nuzhen bilet v aeroport.|MNE nuz-HEN bi-LET V ae-RO-port.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%20%D0%B2%20%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82."
+  },
+  {
+    "itemId": "65a86190-51e5-4a96-9e0b-5d51b2e3abd2",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{ru-RU|Один билет в центр, пожалуйста.|Odin bilet v tsentr, pozhaluysta.|o-DIN bi-LET V TSENTR, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9E%D0%B4%D0%B8%D0%BD%20%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%20%D0%B2%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "179698a3-14a9-491b-ac7b-c59b047acfab",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{ru-RU|Билет туда и обратно, пожалуйста.|Bilet tuda i obratno, pozhaluysta.|bi-LET TU-da I o-BRAT-no, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%91%D0%B8%D0%BB%D0%B5%D1%82%20%D1%82%D1%83%D0%B4%D0%B0%20%D0%B8%20%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "1b6dd51c-d54c-4edd-a99e-e194f21583ef",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{ru-RU|Какая это платформа?|Kakaya eto platforma?|KA-kaya E-to plat-FOR-ma?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F%20%D1%8D%D1%82%D0%BE%20%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0%3F"
+  },
+  {
+    "itemId": "f882abbb-18ba-4f89-9d39-729c4d7b474a",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{ru-RU|Это место свободно?|Eto mesto svobodno?|E-to MES-to svo-BOD-no?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%3F"
+  },
+  {
+    "itemId": "e128f90a-df6e-4a10-8b89-ded9dd67ad49",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Which Russian phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{ru-RU|Вызовите такси, пожалуйста.|Vyzovite taksi, pozhaluysta.|vy-zo-VI-te TAK-si, poz-ha-LUYS-ta.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%92%D1%8B%D0%B7%D0%BE%D0%B2%D0%B8%D1%82%D0%B5%20%D1%82%D0%B0%D0%BA%D1%81%D0%B8%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0."
+  },
+  {
+    "itemId": "de7c25c2-6378-4bd8-b607-0663ad1f6a9c",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Russian phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{ru-RU|Этот автобус идёт в центр?|Etot avtobus idyot v tsentr?|e-TOT av-TO-bus i-DYOT V TSENTR?}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AD%D1%82%D0%BE%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%D0%B1%D1%83%D1%81%20%D0%B8%D0%B4%D1%91%D1%82%20%D0%B2%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%3F"
+  },
+  {
+    "itemId": "0dff9a41-ab30-4436-a8aa-11055eb42799",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Russian sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{ru-RU|Я хочу поехать в аэропорт.|Ya khochu poekhat v aeroport.|YA KHO-chu poek-HAT V ae-RO-port.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}",
+      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B5%D1%85%D0%B0%D1%82%D1%8C%20%D0%B2%20%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82."
+  },
+  {
+    "itemId": "821af732-6be1-4701-9cfa-156432779086",
+    "category": "languages",
+    "navigationKeyword1": "russian",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Russian, how do you say 'We get off here.'?",
+    "correctAnswer": "{{ru-RU|Мы выходим здесь.|My vykhodim zdes.|MY vyk-HO-dim ZDES.}}",
+    "incorrectAnswers": [
+      "{{ru-RU|Я опоздал(а) на автобус.|Ya opozdal(a) na avtobus.|YA o-POZ-dal(A) NA av-TO-bus.}}",
+      "{{ru-RU|Где можно купить билет?|Gde mozhno kupit bilet?|GDE MOZH-no ku-PIT bi-LET?}}",
+      "{{ru-RU|Автобус прибывает в полдень.|Avtobus pribyvaet v polden.|av-TO-bus pri-BY-vaet V pol-DEN.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "russian",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/search?q=%D0%9C%D1%8B%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%20%D0%B7%D0%B4%D0%B5%D1%81%D1%8C."
+  }
+]

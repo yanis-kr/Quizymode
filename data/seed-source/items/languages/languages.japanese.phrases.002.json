@@ -1,0 +1,2202 @@
+[
+  {
+    "itemId": "f81d5632-2372-4c5e-b6c7-8fef64a33b8b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I missed the bus.'?",
+    "correctAnswer": "{{ja-JP|バスに乗り遅れました。|Basu ni noriokuremashita.|BA-su NI NO-rio-ku-re-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|KIP-pu WA DO-ko DE KAE-ma-su KA.}}",
+      "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|BA-su WA SHOH-go NI TSOO-ki-ma-su.}}",
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|KOO-koh MA-de NO KIP-pu GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9%E3%81%AB%E4%B9%97%E3%82%8A%E9%81%85%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "7931aab0-9494-4ca8-a363-66d6fe9f78b0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Where can I buy a ticket?'.",
+    "correctAnswer": "{{ja-JP|切符はどこで買えますか。|Kippu wa doko de kaemasu ka.|KIP-pu WA DO-ko DE KAE-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|BA-su WA SHOH-go NI TSOO-ki-ma-su.}}",
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|KOO-koh MA-de NO KIP-pu GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|CHOO-sheen-bu MA-de NO KIP-pu WO I-chee-mai KU-da-sai.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E5%88%87%E7%AC%A6%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E8%B2%B7%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1f6a9a26-6b77-4fd2-a284-fca522a2fc09",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The bus arrives at noon.'?",
+    "correctAnswer": "{{ja-JP|バスは正午に着きます。|Basu wa shougo ni tsukimasu.|BA-su WA SHOH-go NI TSOO-ki-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|空港までの切符が必要です。|Kuukou made no kippu ga hitsuyou desu.|KOO-koh MA-de NO KIP-pu GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|中心部までの切符を一枚ください。|Chuushinbu made no kippu wo ichimai kudasai.|CHOO-sheen-bu MA-de NO KIP-pu WO I-chee-mai KU-da-sai.}}",
+      "{{ja-JP|往復切符をください。|Oufuku kippu wo kudasai.|OU-foo-ku KIP-pu WO KU-da-sai.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://jisho.org/search/%E3%83%90%E3%82%B9%E3%81%AF%E6%AD%A3%E5%8D%88%E3%81%AB%E7%9D%80%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5863f82b-b917-4fbc-8609-9b8c84199bc8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I have a reservation.'?",
+    "correctAnswer": "{{ja-JP|予約があります。|Yoyaku ga arimasu.|YOYA-ku GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|SHIN-gu-ru ROO-mu WA A-ri-ma-su KA.}}",
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|DA-bu-ru ROO-mu WA A-ri-ma-su KA.}}",
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|WI-FI NO PA-su-waa-do WO O-ne-gai-shee-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%88%E7%B4%84%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f7ef6ef1-6983-4336-b724-03318199ebeb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Do you have a single room?'?",
+    "correctAnswer": "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|SHIN-gu-ru ROO-mu WA A-ri-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|DA-bu-ru ROO-mu WA A-ri-ma-su KA.}}",
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|WI-FI NO PA-su-waa-do WO O-ne-gai-shee-ma-su.}}",
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|HEYA NI MON-dai GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%AB%E3%83%BC%E3%83%A0%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "53e08e55-fff7-4b00-b720-8dd00dfb9d04",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Do you have a double room?'.",
+    "correctAnswer": "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|DA-bu-ru ROO-mu WA A-ri-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|WI-FI NO PA-su-waa-do WO O-ne-gai-shee-ma-su.}}",
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|HEYA NI MON-dai GA A-ri-ma-su.}}",
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|SHA-waa GA U-go-ki-ma-sen.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%83%80%E3%83%96%E3%83%AB%E3%83%AB%E3%83%BC%E3%83%A0%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "3348cc86-f15e-47a4-8690-8c4c32cb459f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The WiFi password, please.'?",
+    "correctAnswer": "{{ja-JP|Wi-Fiのパスワードをお願いします。|Wi-Fi no pasuwaado wo onegaishimasu.|WI-FI NO PA-su-waa-do WO O-ne-gai-shee-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|HEYA NI MON-dai GA A-ri-ma-su.}}",
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|SHA-waa GA U-go-ki-ma-sen.}}",
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|HEYA GA SA-mu SU-gi-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/Wi-Fi%E3%81%AE%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "27bf5ca8-e1c6-40ed-9289-4133d3a04398",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'There is a problem with the room.'?",
+    "correctAnswer": "{{ja-JP|部屋に問題があります。|Heya ni mondai ga arimasu.|HEYA NI MON-dai GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|SHA-waa GA U-go-ki-ma-sen.}}",
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|HEYA GA SA-mu SU-gi-ma-su.}}",
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|KI-ray-na TAO-ru GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E3%81%AB%E5%95%8F%E9%A1%8C%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "52775992-0992-4878-a12e-72461d4390b2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'The shower does not work.'?",
+    "correctAnswer": "{{ja-JP|シャワーが動きません。|Shawaa ga ugokimasen.|SHA-waa GA U-go-ki-ma-sen.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|HEYA GA SA-mu SU-gi-ma-su.}}",
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|KI-ray-na TAO-ru GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|CHOH-sho-ku WA TSOOI-te I-ma-su KA.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%B7%E3%83%A3%E3%83%AF%E3%83%BC%E3%81%8C%E5%8B%95%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82"
+  },
+  {
+    "itemId": "549dd382-2027-4b3c-920a-a6138a0edef4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The room is too cold.'.",
+    "correctAnswer": "{{ja-JP|部屋が寒すぎます。|Heya ga samu sugimasu.|HEYA GA SA-mu SU-gi-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|KI-ray-na TAO-ru GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|CHOH-sho-ku WA TSOOI-te I-ma-su KA.}}",
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|MOH HI-to-tsoo KA-gi WO KU-da-sai.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E9%83%A8%E5%B1%8B%E3%81%8C%E5%AF%92%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "2102557b-d545-4738-badc-8f9d275297f7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need clean towels.'?",
+    "correctAnswer": "{{ja-JP|きれいなタオルが必要です。|Kireina taoru ga hitsuyou desu.|KI-ray-na TAO-ru GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|CHOH-sho-ku WA TSOOI-te I-ma-su KA.}}",
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|MOH HI-to-tsoo KA-gi WO KU-da-sai.}}",
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|EA-kon GA KO-wa-re-te I-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E3%82%BF%E3%82%AA%E3%83%AB%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a13659e4-1708-429d-b2d0-cf83ca178d90",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is breakfast included?'?",
+    "correctAnswer": "{{ja-JP|朝食はついていますか。|Choushoku wa tsuite imasu ka.|CHOH-sho-ku WA TSOOI-te I-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|MOH HI-to-tsoo KA-gi WO KU-da-sai.}}",
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|EA-kon GA KO-wa-re-te I-ma-su.}}",
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|CHOH-sho-ku WA SHEE-chee-ji NI HA-ji-ma-ri-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%9D%E9%A3%9F%E3%81%AF%E3%81%A4%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "80a9b9da-f56a-4168-90ca-6572898937c7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can I have another key?'?",
+    "correctAnswer": "{{ja-JP|もう一つ鍵をください。|Mou hitotsu kagi wo kudasai.|MOH HI-to-tsoo KA-gi WO KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|EA-kon GA KO-wa-re-te I-ma-su.}}",
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|CHOH-sho-ku WA SHEE-chee-ji NI HA-ji-ma-ri-ma-su.}}",
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|YOYA-ku GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%86%E4%B8%80%E3%81%A4%E9%8D%B5%E3%82%92%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "fb6f9435-964f-4905-b27b-a05df4c4ba8f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The air conditioner is broken.'.",
+    "correctAnswer": "{{ja-JP|エアコンが壊れています。|Eakon ga kowarete imasu.|EA-kon GA KO-wa-re-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|CHOH-sho-ku WA SHEE-chee-ji NI HA-ji-ma-ri-ma-su.}}",
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|YOYA-ku GA A-ri-ma-su.}}",
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|SHIN-gu-ru ROO-mu WA A-ri-ma-su KA.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E3%82%A8%E3%82%A2%E3%82%B3%E3%83%B3%E3%81%8C%E5%A3%8A%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "00c7602f-dc28-49dd-8eb2-66eeb67b0b1a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Breakfast starts at seven.'?",
+    "correctAnswer": "{{ja-JP|朝食は七時に始まります。|Choushoku wa shichiji ni hajimarimasu.|CHOH-sho-ku WA SHEE-chee-ji NI HA-ji-ma-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|予約があります。|Yoyaku ga arimasu.|YOYA-ku GA A-ri-ma-su.}}",
+      "{{ja-JP|シングルルームはありますか。|Shinguru ruumu wa arimasu ka.|SHIN-gu-ru ROO-mu WA A-ri-ma-su KA.}}",
+      "{{ja-JP|ダブルルームはありますか。|Daburu ruumu wa arimasu ka.|DA-bu-ru ROO-mu WA A-ri-ma-su KA.}}"
+    ],
+    "explanation": "This is standard accommodation language for front-desk conversations. It is polite and easy to reuse.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-travel"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%9D%E9%A3%9F%E3%81%AF%E4%B8%83%E6%99%82%E3%81%AB%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5d6e3771-c9c9-4d32-9cb2-11316593767c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I feel sick.'?",
+    "correctAnswer": "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|KI-bun GA WA-rui DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|A-ta-ma GA I-tai DE-su.}}",
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|NE-tsoo GA A-ri-ma-su.}}",
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|I-sha GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "b11eeffe-5327-41c9-b4cb-e55c7fc0359a",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I have a headache.'?",
+    "correctAnswer": "{{ja-JP|頭が痛いです。|Atama ga itai desu.|A-ta-ma GA I-tai DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|NE-tsoo GA A-ri-ma-su.}}",
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|I-sha GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|YAK-kyo-ku WA DO-ko DE-su KA.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%A0%AD%E3%81%8C%E7%97%9B%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "94dfd731-1cc6-4f33-9b0d-3a7c4954baea",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I have a fever.'.",
+    "correctAnswer": "{{ja-JP|熱があります。|Netsu ga arimasu.|NE-tsoo GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|I-sha GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|YAK-kyo-ku WA DO-ko DE-su KA.}}",
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|PE-ni-shee-rin NO A-re-ru-gii GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%86%B1%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f9771833-597c-4621-9fc6-cde0ee766454",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need a doctor.'?",
+    "correctAnswer": "{{ja-JP|医者が必要です。|Isha ga hitsuyou desu.|I-sha GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|YAK-kyo-ku WA DO-ko DE-su KA.}}",
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|PE-ni-shee-rin NO A-re-ru-gii GA A-ri-ma-su.}}",
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|O-na-ka GA I-tai DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8C%BB%E8%80%85%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1b83ba90-f60e-4d5c-b6a2-2f1582046c75",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Where is the pharmacy?'?",
+    "correctAnswer": "{{ja-JP|薬局はどこですか。|Yakkyoku wa doko desu ka.|YAK-kyo-ku WA DO-ko DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|PE-ni-shee-rin NO A-re-ru-gii GA A-ri-ma-su.}}",
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|O-na-ka GA I-tai DE-su.}}",
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|KU-su-ri GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%96%AC%E5%B1%80%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "c1df2a54-3f0f-4341-9f9c-8e882c7fc0ad",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I am allergic to penicillin.'?",
+    "correctAnswer": "{{ja-JP|ペニシリンのアレルギーがあります。|Penishirin no arerugii ga arimasu.|PE-ni-shee-rin NO A-re-ru-gii GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|O-na-ka GA I-tai DE-su.}}",
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|KU-su-ri GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|ME-mai GA SHEE-ma-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9A%E3%83%8B%E3%82%B7%E3%83%AA%E3%83%B3%E3%81%AE%E3%82%A2%E3%83%AC%E3%83%AB%E3%82%AE%E3%83%BC%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "c4bbe008-b9a6-404f-aedd-413fc21b6d49",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'My stomach hurts.'.",
+    "correctAnswer": "{{ja-JP|お腹が痛いです。|Onaka ga itai desu.|O-na-ka GA I-tai DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|KU-su-ri GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|ME-mai GA SHEE-ma-su.}}",
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|KA-ze WO HII-te I-ma-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%85%B9%E3%81%8C%E7%97%9B%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f0e3b45b-2e69-43bc-8585-8f9041cecb6d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need medicine.'?",
+    "correctAnswer": "{{ja-JP|薬が必要です。|Kusuri ga hitsuyou desu.|KU-su-ri GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|めまいがします。|Memai ga shimasu.|ME-mai GA SHEE-ma-su.}}",
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|KA-ze WO HII-te I-ma-su.}}",
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|BYO-hin GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%96%AC%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "6fa08ee0-cd8e-4c1b-9614-2f256959c85f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I feel dizzy.'?",
+    "correctAnswer": "{{ja-JP|めまいがします。|Memai ga shimasu.|ME-mai GA SHEE-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|KA-ze WO HII-te I-ma-su.}}",
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|BYO-hin GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|I-ma WA SU-ko-shee YO-ku NA-ri-ma-shee-ta.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%82%81%E3%81%BE%E3%81%84%E3%81%8C%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0f2d35b8-86f2-44cc-bdb6-f3860834b89e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I have a cold.'?",
+    "correctAnswer": "{{ja-JP|風邪をひいています。|Kaze wo hiite imasu.|KA-ze WO HII-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|BYO-hin GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|I-ma WA SU-ko-shee YO-ku NA-ri-ma-shee-ta.}}",
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|KI-bun GA WA-rui DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%A2%A8%E9%82%AA%E3%82%92%E3%81%B2%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "c907925c-98c3-48e9-a1c0-49f3423b1d4d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need a hospital.'.",
+    "correctAnswer": "{{ja-JP|病院が必要です。|Byouin ga hitsuyou desu.|BYO-hin GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|I-ma WA SU-ko-shee YO-ku NA-ri-ma-shee-ta.}}",
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|KI-bun GA WA-rui DE-su.}}",
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|A-ta-ma GA I-tai DE-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%97%85%E9%99%A2%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0066be52-10a5-439b-b609-61b0562cf995",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I feel better now.'?",
+    "correctAnswer": "{{ja-JP|今は少しよくなりました。|Ima wa sukoshi yoku narimashita.|I-ma WA SU-ko-shee YO-ku NA-ri-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|気分が悪いです。|Kibun ga warui desu.|KI-bun GA WA-rui DE-su.}}",
+      "{{ja-JP|頭が痛いです。|Atama ga itai desu.|A-ta-ma GA I-tai DE-su.}}",
+      "{{ja-JP|熱があります。|Netsu ga arimasu.|NE-tsoo GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This phrase helps you explain a symptom or ask for care. It is worth learning exactly as a chunk.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%81%AF%E5%B0%91%E3%81%97%E3%82%88%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "92b14b3c-113c-488d-a351-3ae693c82385",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'What time is it?'?",
+    "correctAnswer": "{{ja-JP|今何時ですか。|Ima nanji desu ka.|I-ma NAN-ji DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|KYOH WA GE-tsooyoh-bi DE-su.}}",
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|A-shee-ta RYO-koh SHEE-ma-su.}}",
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|KI-noh HA-ta-ra-ki-ma-shee-ta.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E4%BD%95%E6%99%82%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "4817167d-c29e-40eb-ae12-4e47dcde37fe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Today is Monday.'?",
+    "correctAnswer": "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|KYOH WA GE-tsooyoh-bi DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|A-shee-ta RYO-koh SHEE-ma-su.}}",
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|KI-noh HA-ta-ra-ki-ma-shee-ta.}}",
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|KU-ji NI A-ki-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E6%97%A5%E3%81%AF%E6%9C%88%E6%9B%9C%E6%97%A5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "bc4258f3-8538-4d81-947b-6ce773da61b3",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Tomorrow I will travel.'.",
+    "correctAnswer": "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|A-shee-ta RYO-koh SHEE-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|KI-noh HA-ta-ra-ki-ma-shee-ta.}}",
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|KU-ji NI A-ki-ma-su.}}",
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|RO-ku-ji NI SHEE-ma-ri-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%98%8E%E6%97%A5%E6%97%85%E8%A1%8C%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1dc43849-5cd7-4cd4-a6d4-edaf0b764c9d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Yesterday I worked.'?",
+    "correctAnswer": "{{ja-JP|昨日働きました。|Kinou hatarakimashita.|KI-noh HA-ta-ra-ki-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|九時に開きます。|Kuji ni akimasu.|KU-ji NI A-ki-ma-su.}}",
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|RO-ku-ji NI SHEE-ma-ri-ma-su.}}",
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|A-to DE KI-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%98%A8%E6%97%A5%E5%83%8D%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "d14aff8d-902d-4ee5-9672-0560c35cd6a2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It opens at nine.'?",
+    "correctAnswer": "{{ja-JP|九時に開きます。|Kuji ni akimasu.|KU-ji NI A-ki-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|RO-ku-ji NI SHEE-ma-ri-ma-su.}}",
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|A-to DE KI-ma-su.}}",
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|SU-gu MO-do-ri-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%B9%9D%E6%99%82%E3%81%AB%E9%96%8B%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f5cae932-5fe5-4f31-a578-6d53e29da801",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It closes at six.'?",
+    "correctAnswer": "{{ja-JP|六時に閉まります。|Rokuji ni shimarimasu.|RO-ku-ji NI SHEE-ma-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|あとで来ます。|Ato de kimasu.|A-to DE KI-ma-su.}}",
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|SU-gu MO-do-ri-ma-su.}}",
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|GO-foon HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E5%85%AD%E6%99%82%E3%81%AB%E9%96%89%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1b16e248-bbe4-491f-b62f-f004c1932322",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I arrive later.'.",
+    "correctAnswer": "{{ja-JP|あとで来ます。|Ato de kimasu.|A-to DE KI-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|SU-gu MO-do-ri-ma-su.}}",
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|GO-foon HI-tsooyoh DE-su.}}",
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|O-so SU-gi-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E3%81%82%E3%81%A8%E3%81%A7%E6%9D%A5%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "30b6131c-52df-4ca4-b70c-bd0b3db44f0d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I will come back soon.'?",
+    "correctAnswer": "{{ja-JP|すぐ戻ります。|Sugu modorimasu.|SU-gu MO-do-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|GO-foon HI-tsooyoh DE-su.}}",
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|O-so SU-gi-ma-su.}}",
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|KON-shoo WA I-so-ga-sheei DE-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E3%81%99%E3%81%90%E6%88%BB%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f234b18f-1143-48ea-bfe7-a274f7148197",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need five minutes.'?",
+    "correctAnswer": "{{ja-JP|五分必要です。|Gofun hitsuyou desu.|GO-foon HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|遅すぎます。|Oso sugimasu.|O-so SU-gi-ma-su.}}",
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|KON-shoo WA I-so-ga-sheei DE-su.}}",
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|RAI-ge-tsoo WA HI-ma DE-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BA%94%E5%88%86%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "22da5ca4-4476-4e8f-983c-9a0160db916c",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is too late.'?",
+    "correctAnswer": "{{ja-JP|遅すぎます。|Oso sugimasu.|O-so SU-gi-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|KON-shoo WA I-so-ga-sheei DE-su.}}",
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|RAI-ge-tsoo WA HI-ma DE-su.}}",
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|I-ma NAN-ji DE-su KA.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E9%81%85%E3%81%99%E3%81%8E%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "37083803-f0ad-49e5-a584-d0fcbd895b84",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'This week is busy.'.",
+    "correctAnswer": "{{ja-JP|今週は忙しいです。|Konshuu wa isogashii desu.|KON-shoo WA I-so-ga-sheei DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|RAI-ge-tsoo WA HI-ma DE-su.}}",
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|I-ma NAN-ji DE-su KA.}}",
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|KYOH WA GE-tsooyoh-bi DE-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E9%80%B1%E3%81%AF%E5%BF%99%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "e792fac2-6306-44a2-9ce3-008197da30b1",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Next month I am free.'?",
+    "correctAnswer": "{{ja-JP|来月は暇です。|Raigetsu wa hima desu.|RAI-ge-tsoo WA HI-ma DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今何時ですか。|Ima nanji desu ka.|I-ma NAN-ji DE-su KA.}}",
+      "{{ja-JP|今日は月曜日です。|Kyou wa getsuyoubi desu.|KYOH WA GE-tsooyoh-bi DE-su.}}",
+      "{{ja-JP|明日旅行します。|Ashita ryokou shimasu.|A-shee-ta RYO-koh SHEE-ma-su.}}"
+    ],
+    "explanation": "This is a basic time expression for plans and schedules. Notice the simple high-frequency time words in it.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-time"
+    ],
+    "source": "https://jisho.org/search/%E6%9D%A5%E6%9C%88%E3%81%AF%E6%9A%87%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8536d07a-1646-463c-b1c8-4ba98629ffac",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'What is the weather like?'?",
+    "correctAnswer": "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|TEN-ki WA DOH DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|暑いです。|Atsui desu.|A-tsooi DE-su.}}",
+      "{{ja-JP|寒いです。|Samui desu.|SA-mui DE-su.}}",
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|A-me GA FOOT-te I-ma-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%A4%A9%E6%B0%97%E3%81%AF%E3%81%A9%E3%81%86%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "1a01b55d-3e0f-4aa9-aec4-8571de7844de",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is hot.'?",
+    "correctAnswer": "{{ja-JP|暑いです。|Atsui desu.|A-tsooi DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|寒いです。|Samui desu.|SA-mui DE-su.}}",
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|A-me GA FOOT-te I-ma-su.}}",
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|KA-ze GA TSOOYOI DE-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%9A%91%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f2bb2d97-aa0c-4808-b4af-ddc284524ccb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'It is cold.'.",
+    "correctAnswer": "{{ja-JP|寒いです。|Samui desu.|SA-mui DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|雨が降っています。|Ame ga futte imasu.|A-me GA FOOT-te I-ma-su.}}",
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|KA-ze GA TSOOYOI DE-su.}}",
+      "{{ja-JP|晴れています。|Harete imasu.|HA-re-te I-ma-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%AF%92%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5b7b03ea-d9b4-4d16-b1a9-2a358a073afe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'It is raining.'?",
+    "correctAnswer": "{{ja-JP|雨が降っています。|Ame ga futte imasu.|A-me GA FOOT-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|KA-ze GA TSOOYOI DE-su.}}",
+      "{{ja-JP|晴れています。|Harete imasu.|HA-re-te I-ma-su.}}",
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|YU-ki GA FOOT-te I-ma-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%A8%E3%81%8C%E9%99%8D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a53e5383-8cbb-425e-bdc5-2c49c1b17131",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It is windy.'?",
+    "correctAnswer": "{{ja-JP|風が強いです。|Kaze ga tsuyoi desu.|KA-ze GA TSOOYOI DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|晴れています。|Harete imasu.|HA-re-te I-ma-su.}}",
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|YU-ki GA FOOT-te I-ma-su.}}",
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|NAN-te KI-ray-na HI DE-shoh.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%A2%A8%E3%81%8C%E5%BC%B7%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8cc8fb92-a49e-4725-9719-3cbfe596c00e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'It is sunny.'?",
+    "correctAnswer": "{{ja-JP|晴れています。|Harete imasu.|HA-re-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|YU-ki GA FOOT-te I-ma-su.}}",
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|NAN-te KI-ray-na HI DE-shoh.}}",
+      "{{ja-JP|曇っています。|Kumotte imasu.|KU-mot-te I-ma-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%99%B4%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "8de80a67-2149-4e0d-8c38-2586f735d7eb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'It is snowing.'.",
+    "correctAnswer": "{{ja-JP|雪が降っています。|Yuki ga futte imasu.|YU-ki GA FOOT-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|NAN-te KI-ray-na HI DE-shoh.}}",
+      "{{ja-JP|曇っています。|Kumotte imasu.|KU-mot-te I-ma-su.}}",
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|KA-sa GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%AA%E3%81%8C%E9%99%8D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ee114822-3082-48a2-ba73-697ffdb3036d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'What a beautiful day!'?",
+    "correctAnswer": "{{ja-JP|なんてきれいな日でしょう。|Nante kireina hi deshou.|NAN-te KI-ray-na HI DE-shoh.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|曇っています。|Kumotte imasu.|KU-mot-te I-ma-su.}}",
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|KA-sa GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|KYOH WA TEN-ki GA II DE-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E3%81%AA%E3%82%93%E3%81%A6%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%97%A5%E3%81%A7%E3%81%97%E3%82%87%E3%81%86%E3%80%82"
+  },
+  {
+    "itemId": "181b3a65-f5b3-4c24-927b-59143203a8cf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'It is cloudy.'?",
+    "correctAnswer": "{{ja-JP|曇っています。|Kumotte imasu.|KU-mot-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|KA-sa GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|KYOH WA TEN-ki GA II DE-su.}}",
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|SO-ra GA HA-re-te I-ma-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E6%9B%87%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "20438109-60b7-401f-84ef-917509c36828",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I need an umbrella.'?",
+    "correctAnswer": "{{ja-JP|傘が必要です。|Kasa ga hitsuyou desu.|KA-sa GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|KYOH WA TEN-ki GA II DE-su.}}",
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|SO-ra GA HA-re-te I-ma-su.}}",
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|TEN-ki WA DOH DE-su KA.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E5%82%98%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "9f6f64d9-663b-4742-8cf2-d833252f81c4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The weather is nice today.'.",
+    "correctAnswer": "{{ja-JP|今日は天気がいいです。|Kyou wa tenki ga ii desu.|KYOH WA TEN-ki GA II DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|空が晴れています。|Sora ga harete imasu.|SO-ra GA HA-re-te I-ma-su.}}",
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|TEN-ki WA DOH DE-su KA.}}",
+      "{{ja-JP|暑いです。|Atsui desu.|A-tsooi DE-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E6%97%A5%E3%81%AF%E5%A4%A9%E6%B0%97%E3%81%8C%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "17a88f80-24fd-4867-95ca-ba4e766f39ad",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'The sky is clear.'?",
+    "correctAnswer": "{{ja-JP|空が晴れています。|Sora ga harete imasu.|SO-ra GA HA-re-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|天気はどうですか。|Tenki wa dou desu ka.|TEN-ki WA DOH DE-su KA.}}",
+      "{{ja-JP|暑いです。|Atsui desu.|A-tsooi DE-su.}}",
+      "{{ja-JP|寒いです。|Samui desu.|SA-mui DE-su.}}"
+    ],
+    "explanation": "This is a common weather phrase for travel and small talk. Beginners often reuse it with simple adjectives or weather verbs.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-weather"
+    ],
+    "source": "https://jisho.org/search/%E7%A9%BA%E3%81%8C%E6%99%B4%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ea940432-1cb0-44a5-bc00-50b8dc3c1c2d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Help!'?",
+    "correctAnswer": "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
+    "incorrectAnswers": [
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|KAY-sa-tsoo WO YON-de KU-da-sai.}}",
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|PA-su-poo-to WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|SAI-foo WO NU-su-ma-re-ma-shee-ta.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8A%A9%E3%81%91%E3%81%A6%21"
+  },
+  {
+    "itemId": "8e005b42-ad23-41fb-8dc0-d9577c7e611e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Call the police!'?",
+    "correctAnswer": "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|KAY-sa-tsoo WO YON-de KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|PA-su-poo-to WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|SAI-foo WO NU-su-ma-re-ma-shee-ta.}}",
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|KYOO-kyoo-sha GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%AD%A6%E5%AF%9F%E3%82%92%E5%91%BC%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "217d27f1-6a90-4939-b0cb-4dbd596ba998",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I have lost my passport.'.",
+    "correctAnswer": "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|PA-su-poo-to WO NA-ku-shee-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|SAI-foo WO NU-su-ma-re-ma-shee-ta.}}",
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|KYOO-kyoo-sha GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|I-sha WO YON-de KU-da-sai.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%83%91%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "03d97e1a-aabf-4761-afbe-935ee76939b7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'My wallet was stolen.'?",
+    "correctAnswer": "{{ja-JP|財布を盗まれました。|Saifu wo nusumaremashita.|SAI-foo WO NU-su-ma-re-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|KYOO-kyoo-sha GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|I-sha WO YON-de KU-da-sai.}}",
+      "{{ja-JP|火事です。|Kaji desu.|KA-ji DE-su.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E8%B2%A1%E5%B8%83%E3%82%92%E7%9B%97%E3%81%BE%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "94c10663-c1eb-4c6c-95fa-cccb200d93af",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I need an ambulance.'?",
+    "correctAnswer": "{{ja-JP|救急車が必要です。|Kyuukyuusha ga hitsuyou desu.|KYOO-kyoo-sha GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|I-sha WO YON-de KU-da-sai.}}",
+      "{{ja-JP|火事です。|Kaji desu.|KA-ji DE-su.}}",
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|I-ma SU-gu TA-su-ke GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E6%95%91%E6%80%A5%E8%BB%8A%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "dc05497f-96f7-4a56-a604-c7aad463c10d",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Call a doctor!'?",
+    "correctAnswer": "{{ja-JP|医者を呼んでください。|Isha wo yonde kudasai.|I-sha WO YON-de KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|火事です。|Kaji desu.|KA-ji DE-su.}}",
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|I-ma SU-gu TA-su-ke GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|DEN-wa WO NA-ku-shee-ma-shee-ta.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8C%BB%E8%80%85%E3%82%92%E5%91%BC%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "6edea21a-9eb1-4f70-8e12-0a63efd6981e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'There is a fire.'.",
+    "correctAnswer": "{{ja-JP|火事です。|Kaji desu.|KA-ji DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|I-ma SU-gu TA-su-ke GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|DEN-wa WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|KA-ban WO NA-ku-shee-ma-shee-ta.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%81%AB%E4%BA%8B%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "f5d57b6e-36ea-4e2e-9551-b53f6f1a1dfe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I need help now.'?",
+    "correctAnswer": "{{ja-JP|今すぐ助けが必要です。|Ima sugu tasuke ga hitsuyou desu.|I-ma SU-gu TA-su-ke GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|DEN-wa WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|KA-ban WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|TO-mo-da-chee GA KE-ga WO SHEE-ma-shee-ta.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%81%99%E3%81%90%E5%8A%A9%E3%81%91%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "7d5cdeeb-5113-417e-bc82-f96a6a2b4093",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I lost my phone.'?",
+    "correctAnswer": "{{ja-JP|電話をなくしました。|Denwa wo nakushimashita.|DEN-wa WO NA-ku-shee-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|KA-ban WO NA-ku-shee-ma-shee-ta.}}",
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|TO-mo-da-chee GA KE-ga WO SHEE-ma-shee-ta.}}",
+      "{{ja-JP|緊急です。|Kinkyuu desu.|KIN-kyoo DE-su.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E9%9B%BB%E8%A9%B1%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "acd780e9-c85b-4641-bb54-c30ff0ec7bdf",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I lost my bag.'?",
+    "correctAnswer": "{{ja-JP|かばんをなくしました。|Kaban wo nakushimashita.|KA-ban WO NA-ku-shee-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|TO-mo-da-chee GA KE-ga WO SHEE-ma-shee-ta.}}",
+      "{{ja-JP|緊急です。|Kinkyuu desu.|KIN-kyoo DE-su.}}",
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8B%E3%81%B0%E3%82%93%E3%82%92%E3%81%AA%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "d084b7dd-5b53-40ef-a290-526c15214630",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'My friend is hurt.'.",
+    "correctAnswer": "{{ja-JP|友だちがけがをしました。|Tomodachi ga kega wo shimashita.|TO-mo-da-chee GA KE-ga WO SHEE-ma-shee-ta.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|緊急です。|Kinkyuu desu.|KIN-kyoo DE-su.}}",
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|KAY-sa-tsoo WO YON-de KU-da-sai.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%8B%E3%81%A0%E3%81%A1%E3%81%8C%E3%81%91%E3%81%8C%E3%82%92%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
+  },
+  {
+    "itemId": "f3b8728a-097c-4ca7-afcf-18d3a5441660",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'This is an emergency.'?",
+    "correctAnswer": "{{ja-JP|緊急です。|Kinkyuu desu.|KIN-kyoo DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|助けて!|Tasukete!|tah-SOO-keh-teh}}",
+      "{{ja-JP|警察を呼んでください。|Keisatsu wo yonde kudasai.|KAY-sa-tsoo WO YON-de KU-da-sai.}}",
+      "{{ja-JP|パスポートをなくしました。|Pasupooto wo nakushimashita.|PA-su-poo-to WO NA-ku-shee-ma-shee-ta.}}"
+    ],
+    "explanation": "This is an emergency phrase that should stay direct and easy to say under stress. Learn it exactly as written.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-health"
+    ],
+    "source": "https://jisho.org/search/%E7%B7%8A%E6%80%A5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "a8bcba69-58ff-4290-9e34-7f3151fe6cfb",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Happy birthday!'?",
+    "correctAnswer": "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|O-tan-joh-bi O-me-de-toh GO-zai-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|O-me-de-toh GO-zai-ma-su.}}",
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|GAN-bat-te KU-da-sai.}}",
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|DOH I-ta-shee-ma-shee-te.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "69af4cda-6946-4799-ae3c-146b5faa2927",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Congratulations!'?",
+    "correctAnswer": "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|O-me-de-toh GO-zai-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|GAN-bat-te KU-da-sai.}}",
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|DOH I-ta-shee-ma-shee-te.}}",
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|KI NI SHEE-nai-de KU-da-sai.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "5c979104-99c6-4038-b5f7-339e430d6b5e",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Good luck!'.",
+    "correctAnswer": "{{ja-JP|頑張ってください。|Ganbatte kudasai.|GAN-bat-te KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|どういたしまして。|Dou itashimashite.|DOH I-ta-shee-ma-shee-te.}}",
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|KI NI SHEE-nai-de KU-da-sai.}}",
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|SO-re WA ZAN-nen DE-su.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "5dfa5b9b-a395-4459-a1af-7a9b7a98f60b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'You're welcome.'?",
+    "correctAnswer": "{{ja-JP|どういたしまして。|Dou itashimashite.|DOH I-ta-shee-ma-shee-te.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|KI NI SHEE-nai-de KU-da-sai.}}",
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|SO-re WA ZAN-nen DE-su.}}",
+      "{{ja-JP|召し上がれ。|Meshiagare.|ME-sheea-ga-re.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A9%E3%81%86%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%A6%E3%80%82"
+  },
+  {
+    "itemId": "b75852f0-1358-44ee-a495-eda206942fbe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Don't mention it.'?",
+    "correctAnswer": "{{ja-JP|気にしないでください。|Ki ni shinaide kudasai.|KI NI SHEE-nai-de KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|それは残念です。|Sore wa zannen desu.|SO-re WA ZAN-nen DE-su.}}",
+      "{{ja-JP|召し上がれ。|Meshiagare.|ME-sheea-ga-re.}}",
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|YOI TA-bi WO.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%B0%97%E3%81%AB%E3%81%97%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "fe188cf2-d2fa-46ed-a390-e16a7c3e9d54",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I'm sorry to hear that.'?",
+    "correctAnswer": "{{ja-JP|それは残念です。|Sore wa zannen desu.|SO-re WA ZAN-nen DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|召し上がれ。|Meshiagare.|ME-sheea-ga-re.}}",
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|YOI TA-bi WO.}}",
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|GE-tsooyoh-bi NI MA-ta AI-ma-shoh.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%81%9D%E3%82%8C%E3%81%AF%E6%AE%8B%E5%BF%B5%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "ac3fcab4-9853-4a38-a15c-5902b08769af",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Enjoy your meal.'.",
+    "correctAnswer": "{{ja-JP|召し上がれ。|Meshiagare.|ME-sheea-ga-re.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|よい旅を。|Yoi tabi wo.|YOI TA-bi WO.}}",
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|GE-tsooyoh-bi NI MA-ta AI-ma-shoh.}}",
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|WA-ta-shee-ta-chee NO MA-chee E YOH-ko-so.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E5%8F%AC%E3%81%97%E4%B8%8A%E3%81%8C%E3%82%8C%E3%80%82"
+  },
+  {
+    "itemId": "a2d16525-20ad-43ea-8d96-b3cfd4ba8d61",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Have a nice trip.'?",
+    "correctAnswer": "{{ja-JP|よい旅を。|Yoi tabi wo.|YOI TA-bi WO.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|GE-tsooyoh-bi NI MA-ta AI-ma-shoh.}}",
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|WA-ta-shee-ta-chee NO MA-chee E YOH-ko-so.}}",
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|TA-no-sheei KYOO-ji-tsoo WO.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E3%82%88%E3%81%84%E6%97%85%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "8319589e-ba52-4af7-b7bc-94fb70709d48",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'See you on Monday.'?",
+    "correctAnswer": "{{ja-JP|月曜日にまた会いましょう。|Getsuyoubi ni mata aimashou.|GE-tsooyoh-bi NI MA-ta AI-ma-shoh.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|WA-ta-shee-ta-chee NO MA-chee E YOH-ko-so.}}",
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|TA-no-sheei KYOO-ji-tsoo WO.}}",
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|TA-no-sheen-de KU-da-sai.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%88%E6%9B%9C%E6%97%A5%E3%81%AB%E3%81%BE%E3%81%9F%E4%BC%9A%E3%81%84%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%80%82"
+  },
+  {
+    "itemId": "61cfe9a7-ab91-49e3-93a7-91fd3fa4e0a8",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Welcome to our city.'?",
+    "correctAnswer": "{{ja-JP|私たちの町へようこそ。|Watashitachi no machi e youkoso.|WA-ta-shee-ta-chee NO MA-chee E YOH-ko-so.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|TA-no-sheei KYOO-ji-tsoo WO.}}",
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|TA-no-sheen-de KU-da-sai.}}",
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|O-tan-joh-bi O-me-de-toh GO-zai-ma-su.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%9F%E3%81%A1%E3%81%AE%E7%94%BA%E3%81%B8%E3%82%88%E3%81%86%E3%81%93%E3%81%9D%E3%80%82"
+  },
+  {
+    "itemId": "ddb19b38-e381-497e-82ea-4e6e73491428",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'Happy holidays!'.",
+    "correctAnswer": "{{ja-JP|楽しい休日を。|Tanoshii kyuujitsu wo.|TA-no-sheei KYOO-ji-tsoo WO.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|TA-no-sheen-de KU-da-sai.}}",
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|O-tan-joh-bi O-me-de-toh GO-zai-ma-su.}}",
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|O-me-de-toh GO-zai-ma-su.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%A5%BD%E3%81%97%E3%81%84%E4%BC%91%E6%97%A5%E3%82%92%E3%80%82"
+  },
+  {
+    "itemId": "1ae57113-7aff-4d7a-a370-4dff5b1c6f39",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Have fun!'?",
+    "correctAnswer": "{{ja-JP|楽しんでください。|Tanoshinde kudasai.|TA-no-sheen-de KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|お誕生日おめでとうございます。|Otanjoubi omedetou gozaimasu.|O-tan-joh-bi O-me-de-toh GO-zai-ma-su.}}",
+      "{{ja-JP|おめでとうございます。|Omedetou gozaimasu.|O-me-de-toh GO-zai-ma-su.}}",
+      "{{ja-JP|頑張ってください。|Ganbatte kudasai.|GAN-bat-te KU-da-sai.}}"
+    ],
+    "explanation": "This is a natural social phrase for polite everyday interaction. It often works as a fixed expression.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://jisho.org/search/%E6%A5%BD%E3%81%97%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "bdc638e7-154c-4bb4-8ad5-1870e97a45b2",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I work in an office.'?",
+    "correctAnswer": "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|WA-ta-shee WA O-fi-su DE HA-ta-rai-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|WA-ta-shee WA SEN-say TO-shee-te HA-ta-rai-te I-ma-su.}}",
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|WA-ta-shee WA MAI-ni-chee BEN-kyoh SHEE-ma-su.}}",
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|WA-ta-shee WA SO-no GEN-go WO BEN-kyoh SHEE-te I-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%81%A7%E5%83%8D%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "28de62f0-8921-43a3-9c81-bd3e33593668",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'I work as a teacher.'?",
+    "correctAnswer": "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|WA-ta-shee WA SEN-say TO-shee-te HA-ta-rai-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|WA-ta-shee WA MAI-ni-chee BEN-kyoh SHEE-ma-su.}}",
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|WA-ta-shee WA SO-no GEN-go WO BEN-kyoh SHEE-te I-ma-su.}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|KAI-te KU-da-sai.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E5%85%88%E7%94%9F%E3%81%A8%E3%81%97%E3%81%A6%E5%83%8D%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "e29f2972-f3ee-44fc-b75b-688286e817e0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I study every day.'.",
+    "correctAnswer": "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|WA-ta-shee WA MAI-ni-chee BEN-kyoh SHEE-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|WA-ta-shee WA SO-no GEN-go WO BEN-kyoh SHEE-te I-ma-su.}}",
+      "{{ja-JP|書いてください。|Kaite kudasai.|KAI-te KU-da-sai.}}",
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|JU-gyoh WA I-ma HA-ji-ma-ri-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%AF%8E%E6%97%A5%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0e8243f0-6f32-4b08-9b67-88b112acf051",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am learning the language.'?",
+    "correctAnswer": "{{ja-JP|私はその言語を勉強しています。|Watashi wa sono gengo wo benkyou shite imasu.|WA-ta-shee WA SO-no GEN-go WO BEN-kyoh SHEE-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|書いてください。|Kaite kudasai.|KAI-te KU-da-sai.}}",
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|JU-gyoh WA I-ma HA-ji-ma-ri-ma-su.}}",
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|PEN GA HI-tsooyoh DE-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%81%9D%E3%81%AE%E8%A8%80%E8%AA%9E%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1ab88640-04c2-492e-b874-3e7dc2aa1d11",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Please write it down.'?",
+    "correctAnswer": "{{ja-JP|書いてください。|Kaite kudasai.|KAI-te KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|JU-gyoh WA I-ma HA-ji-ma-ri-ma-su.}}",
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|PEN GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|SHU-ku-dai GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%9B%B8%E3%81%84%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "8f53e8fb-1304-45dc-bdc1-afd694d23674",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'The class starts now.'?",
+    "correctAnswer": "{{ja-JP|授業は今始まります。|Jugyou wa ima hajimarimasu.|JU-gyoh WA I-ma HA-ji-ma-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|PEN GA HI-tsooyoh DE-su.}}",
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|SHU-ku-dai GA A-ri-ma-su.}}",
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|A-shee-ta SHEE-ken GA A-ri-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%8E%88%E6%A5%AD%E3%81%AF%E4%BB%8A%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "bb35947a-21e4-490a-8059-900e0e69aaa4",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I need a pen.'.",
+    "correctAnswer": "{{ja-JP|ペンが必要です。|Pen ga hitsuyou desu.|PEN GA HI-tsooyoh DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|宿題があります。|Shukudai ga arimasu.|SHU-ku-dai GA A-ri-ma-su.}}",
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|A-shee-ta SHEE-ken GA A-ri-ma-su.}}",
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|KYOH-shee-tsoo WA DO-ko DE-su KA.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E3%83%9A%E3%83%B3%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "243dac8e-0666-4ee1-8a63-0c6b13194538",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I have homework.'?",
+    "correctAnswer": "{{ja-JP|宿題があります。|Shukudai ga arimasu.|SHU-ku-dai GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|A-shee-ta SHEE-ken GA A-ri-ma-su.}}",
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|KYOH-shee-tsoo WA DO-ko DE-su KA.}}",
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|HON WA TE-bu-ru NO UE NI A-ri-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E5%AE%BF%E9%A1%8C%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "54e16d88-3f3a-4628-b481-a6e634538e73",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I have an exam tomorrow.'?",
+    "correctAnswer": "{{ja-JP|明日試験があります。|Ashita shiken ga arimasu.|A-shee-ta SHEE-ken GA A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|KYOH-shee-tsoo WA DO-ko DE-su KA.}}",
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|HON WA TE-bu-ru NO UE NI A-ri-ma-su.}}",
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|WA-ta-shee NO SEN-say WA TO-te-mo SHEEN-se-tsoo DE-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%98%8E%E6%97%A5%E8%A9%A6%E9%A8%93%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "286e140d-4fec-412b-aa1d-9c4b3856d5fe",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Where is the classroom?'?",
+    "correctAnswer": "{{ja-JP|教室はどこですか。|Kyoushitsu wa doko desu ka.|KYOH-shee-tsoo WA DO-ko DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|HON WA TE-bu-ru NO UE NI A-ri-ma-su.}}",
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|WA-ta-shee NO SEN-say WA TO-te-mo SHEEN-se-tsoo DE-su.}}",
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|WA-ta-shee WA O-fi-su DE HA-ta-rai-te I-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%95%99%E5%AE%A4%E3%81%AF%E3%81%A9%E3%81%93%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "624d5268-830f-4291-80d8-51f7c23a6cf7",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'The book is on the table.'.",
+    "correctAnswer": "{{ja-JP|本はテーブルの上にあります。|Hon wa tēburu no ue ni arimasu.|HON WA TE-bu-ru NO UE NI A-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|WA-ta-shee NO SEN-say WA TO-te-mo SHEEN-se-tsoo DE-su.}}",
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|WA-ta-shee WA O-fi-su DE HA-ta-rai-te I-ma-su.}}",
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|WA-ta-shee WA SEN-say TO-shee-te HA-ta-rai-te I-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E6%9C%AC%E3%81%AF%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E4%B8%8A%E3%81%AB%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "61af0d9c-0658-49ab-8dc3-149beb819517",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'My teacher is very kind.'?",
+    "correctAnswer": "{{ja-JP|私の先生はとても親切です。|Watashi no sensei wa totemo shinsetsu desu.|WA-ta-shee NO SEN-say WA TO-te-mo SHEEN-se-tsoo DE-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私はオフィスで働いています。|Watashi wa ofisu de hataraite imasu.|WA-ta-shee WA O-fi-su DE HA-ta-rai-te I-ma-su.}}",
+      "{{ja-JP|私は先生として働いています。|Watashi wa sensei toshite hataraite imasu.|WA-ta-shee WA SEN-say TO-shee-te HA-ta-rai-te I-ma-su.}}",
+      "{{ja-JP|私は毎日勉強します。|Watashi wa mainichi benkyou shimasu.|WA-ta-shee WA MAI-ni-chee BEN-kyoh SHEE-ma-su.}}"
+    ],
+    "explanation": "This is a useful classroom or work phrase built from simple high-frequency words. It is easy to reuse in daily study situations.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-school"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AE%E5%85%88%E7%94%9F%E3%81%AF%E3%81%A8%E3%81%A6%E3%82%82%E8%A6%AA%E5%88%87%E3%81%A7%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "28cbae53-65a8-4533-982c-226bfbef0391",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I speak a little of the language.'?",
+    "correctAnswer": "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|WA-ta-shee WA NI-hon-go WO SU-ko-shee HA-na-shee-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|MOH I-chee-do IT-te KU-da-sai.}}",
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|KO-no KO-to-ba WA DOH IU I-mi DE-su KA.}}",
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|KO-no KO-to-ba WO SHEE-ri-ma-sen.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%92%E5%B0%91%E3%81%97%E8%A9%B1%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "fdab6f08-7713-4e4b-ac76-a14b30863b7b",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Please say that again.'?",
+    "correctAnswer": "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|MOH I-chee-do IT-te KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|KO-no KO-to-ba WA DOH IU I-mi DE-su KA.}}",
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|KO-no KO-to-ba WO SHEE-ri-ma-sen.}}",
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|KO-re WA TA-da-sheei DE-su KA.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E8%A8%80%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "9f7b7b43-3f0e-4c02-b7b1-11e1f4655316",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'What does this word mean?'.",
+    "correctAnswer": "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|KO-no KO-to-ba WA DOH IU I-mi DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|KO-no KO-to-ba WO SHEE-ri-ma-sen.}}",
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|KO-re WA TA-da-sheei DE-su KA.}}",
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|SE-tsoo-may SHEE-te MO-rae-ma-su KA.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E8%A8%80%E8%91%89%E3%81%AF%E3%81%A9%E3%81%86%E3%81%84%E3%81%86%E6%84%8F%E5%91%B3%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "0761800b-b50c-4c7a-ad96-e4e35847b157",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I do not know this word.'?",
+    "correctAnswer": "{{ja-JP|この言葉を知りません。|Kono kotoba wo shirimasen.|KO-no KO-to-ba WO SHEE-ri-ma-sen.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|KO-re WA TA-da-sheei DE-su KA.}}",
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|SE-tsoo-may SHEE-te MO-rae-ma-su KA.}}",
+      "{{ja-JP|今わかります。|Ima wakarimasu.|I-ma WA-ka-ri-ma-su.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E8%A8%80%E8%91%89%E3%82%92%E7%9F%A5%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82"
+  },
+  {
+    "itemId": "97993596-444a-4897-b5a5-49aff521a1cc",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Is this correct?'?",
+    "correctAnswer": "{{ja-JP|これは正しいですか。|Kore wa tadashii desu ka.|KO-re WA TA-da-sheei DE-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|SE-tsoo-may SHEE-te MO-rae-ma-su KA.}}",
+      "{{ja-JP|今わかります。|Ima wakarimasu.|I-ma WA-ka-ri-ma-su.}}",
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|KAN-tan NA KO-to-ba WO TSOO-kat-te KU-da-sai.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%82%8C%E3%81%AF%E6%AD%A3%E3%81%97%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "2e8fb38f-f5c2-4aa6-95e0-81181c1f8704",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Can you explain it?'?",
+    "correctAnswer": "{{ja-JP|説明してもらえますか。|Setsumei shite moraemasu ka.|SE-tsoo-may SHEE-te MO-rae-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|今わかります。|Ima wakarimasu.|I-ma WA-ka-ri-ma-su.}}",
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|KAN-tan NA KO-to-ba WO TSOO-kat-te KU-da-sai.}}",
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|WA-ta-shee WA MAI-ni-chee REN-shoo SHEE-te I-ma-su.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E8%AA%AC%E6%98%8E%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "d49b74bd-97ca-462b-a4a1-f8dc4321b9a9",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'I understand now.'.",
+    "correctAnswer": "{{ja-JP|今わかります。|Ima wakarimasu.|I-ma WA-ka-ri-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|KAN-tan NA KO-to-ba WO TSOO-kat-te KU-da-sai.}}",
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|WA-ta-shee WA MAI-ni-chee REN-shoo SHEE-te I-ma-su.}}",
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|KO-no BUN WO YON-de KU-da-sai.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E4%BB%8A%E3%82%8F%E3%81%8B%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "1cc6f2e1-33c7-42f2-851a-17b76bb5e700",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'Please use simple words.'?",
+    "correctAnswer": "{{ja-JP|簡単な言葉を使ってください。|Kantan na kotoba wo tsukatte kudasai.|KAN-tan NA KO-to-ba WO TSOO-kat-te KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|WA-ta-shee WA MAI-ni-chee REN-shoo SHEE-te I-ma-su.}}",
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|KO-no BUN WO YON-de KU-da-sai.}}",
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|SO-no KO-to-ba WA DOH KA-ki-ma-su KA.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%B0%A1%E5%8D%98%E3%81%AA%E8%A8%80%E8%91%89%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "dfd82fcd-e46b-4518-aef9-f793c920b812",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'I am practicing every day.'?",
+    "correctAnswer": "{{ja-JP|私は毎日練習しています。|Watashi wa mainichi renshuu shite imasu.|WA-ta-shee WA MAI-ni-chee REN-shoo SHEE-te I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|KO-no BUN WO YON-de KU-da-sai.}}",
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|SO-no KO-to-ba WA DOH KA-ki-ma-su KA.}}",
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|WA-ta-shee WA YUK-ku-ri MA-nan-de I-ma-su.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E6%AF%8E%E6%97%A5%E7%B7%B4%E7%BF%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "0013a578-9e88-44c3-8b53-88824875d5fd",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Which Japanese phrase means 'Please read this sentence.'?",
+    "correctAnswer": "{{ja-JP|この文を読んでください。|Kono bun wo yonde kudasai.|KO-no BUN WO YON-de KU-da-sai.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|SO-no KO-to-ba WA DOH KA-ki-ma-su KA.}}",
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|WA-ta-shee WA YUK-ku-ri MA-nan-de I-ma-su.}}",
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|WA-ta-shee WA NI-hon-go WO SU-ko-shee HA-na-shee-ma-su.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%93%E3%81%AE%E6%96%87%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
+  },
+  {
+    "itemId": "823f7b8c-1b5b-42a8-801e-5812e5c6376f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Japanese phrase for 'How do you write that word?'.",
+    "correctAnswer": "{{ja-JP|その言葉はどう書きますか。|Sono kotoba wa dou kakimasu ka.|SO-no KO-to-ba WA DOH KA-ki-ma-su KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|WA-ta-shee WA YUK-ku-ri MA-nan-de I-ma-su.}}",
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|WA-ta-shee WA NI-hon-go WO SU-ko-shee HA-na-shee-ma-su.}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|MOH I-chee-do IT-te KU-da-sai.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E3%81%9D%E3%81%AE%E8%A8%80%E8%91%89%E3%81%AF%E3%81%A9%E3%81%86%E6%9B%B8%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82"
+  },
+  {
+    "itemId": "b6e841c1-e973-45fb-bf0c-7aa76b92e8e0",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Japanese sentence for 'I am learning slowly.'?",
+    "correctAnswer": "{{ja-JP|私はゆっくり学んでいます。|Watashi wa yukkuri manande imasu.|WA-ta-shee WA YUK-ku-ri MA-nan-de I-ma-su.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|私は日本語を少し話します。|Watashi wa nihongo wo sukoshi hanashimasu.|WA-ta-shee WA NI-hon-go WO SU-ko-shee HA-na-shee-ma-su.}}",
+      "{{ja-JP|もう一度言ってください。|Mou ichido itte kudasai.|MOH I-chee-do IT-te KU-da-sai.}}",
+      "{{ja-JP|この言葉はどういう意味ですか。|Kono kotoba wa dou iu imi desu ka.|KO-no KO-to-ba WA DOH IU I-mi DE-su KA.}}"
+    ],
+    "explanation": "This phrase helps keep a conversation going when you are learning. It is especially useful for clarification and support.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-work"
+    ],
+    "source": "https://jisho.org/search/%E7%A7%81%E3%81%AF%E3%82%86%E3%81%A3%E3%81%8F%E3%82%8A%E5%AD%A6%E3%82%93%E3%81%A7%E3%81%84%E3%81%BE%E3%81%99%E3%80%82"
+  },
+  {
+    "itemId": "961a4c1a-79aa-4efa-8476-b5c32438be5f",
+    "category": "languages",
+    "navigationKeyword1": "japanese",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Japanese, how do you say 'Where are you from?'?",
+    "correctAnswer": "{{ja-JP|どちらから来ましたか。|Dochira kara kimashita ka.|DO-chee-ra KA-ra KI-ma-shee-ta KA.}}",
+    "incorrectAnswers": [
+      "{{ja-JP|お名前は何ですか。|Onamae wa nan desu ka.|O-na-mae WA NAN DE-su KA.}}",
+      "{{ja-JP|私はアメリカ出身です。|Watashi wa Amerika shusshin desu.|WA-ta-shee WA A-me-ri-ka SHUS-sheen DE-su.}}",
+      "{{ja-JP|私はシカゴに住んでいます。|Watashi wa Shikago ni sunde imasu.|WA-ta-shee WA SHI-ka-go NI SUN-de I-ma-su.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "japanese",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://jisho.org/search/%E3%81%A9%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8B%E3%80%82"
+  }
+]

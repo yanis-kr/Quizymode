@@ -386,6 +386,7 @@ const CollectionsPage = () => {
 
   useEffect(() => {
     if (tabParam && ["mine", "bookmarked", "discover"].includes(tabParam)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveTab(tabParam as TabId);
     }
   }, [tabParam]);
@@ -393,6 +394,7 @@ const CollectionsPage = () => {
   useEffect(() => {
     if (authLoading || isAuthenticated) return;
     if (activeTab === "mine" || activeTab === "bookmarked") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveTab("discover");
       setSearchParams((prev) => {
         const next = new URLSearchParams(prev);
@@ -403,6 +405,7 @@ const CollectionsPage = () => {
   }, [authLoading, isAuthenticated, activeTab, setSearchParams]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!discoverNav1.trim()) setDiscoverNav2("");
   }, [discoverNav1]);
 

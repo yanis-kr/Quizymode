@@ -13,9 +13,10 @@
     ],
     "explanation": "The main idea is the central message, often supported by details and examples.",
     "keywords": [
+      "english",
+      "reading",
       "main-idea",
-      "comprehension",
-      "english-reading"
+      "comprehension"
     ],
     "source": "https://owl.purdue.edu/owl/general_writing/academic_writing/essay_writing/paragraphs_and_paragraphing.html"
   },
@@ -33,9 +34,10 @@
     ],
     "explanation": "Skimming means moving quickly to catch the topic, structure, and key points.",
     "keywords": [
+      "english",
+      "reading",
       "skimming",
-      "reading-strategy",
-      "english-reading"
+      "reading-strategy"
     ],
     "source": "https://www.britishcouncil.org/learnenglish/reading"
   },
@@ -53,9 +55,10 @@
     ],
     "explanation": "Scanning means searching quickly for a particular piece of information.",
     "keywords": [
+      "english",
+      "reading",
       "scanning",
-      "reading-strategy",
-      "english-reading"
+      "reading-strategy"
     ],
     "source": "https://www.merriam-webster.com/dictionary/scan"
   },
@@ -73,9 +76,10 @@
     ],
     "explanation": "Explicit information is written plainly in the text, not guessed from clues.",
     "keywords": [
+      "english",
+      "reading",
       "explicit-meaning",
-      "evidence",
-      "english-reading"
+      "evidence"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/explicit"
   },
@@ -93,9 +97,10 @@
     ],
     "explanation": "Context clues are the surrounding words and sentences that hint at meaning.",
     "keywords": [
+      "english",
+      "reading",
       "context-clues",
-      "vocabulary",
-      "english-reading"
+      "vocabulary"
     ],
     "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning"
   },
@@ -113,10 +118,143 @@
     ],
     "explanation": "A topic sentence often starts the paragraph and states the paragraph's focus.",
     "keywords": [
+      "english",
+      "reading",
       "topic-sentence",
-      "paragraph-structure",
-      "english-reading"
+      "paragraph-structure"
     ],
     "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/"
+  },
+  {
+    "itemId": "5551a68e-33eb-401b-87b1-321955710f59",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "Before you read, what can a title help you predict?",
+    "correctAnswer": "The topic of the text.",
+    "incorrectAnswers": [
+      "The writer's shoe size.",
+      "Every word you will read.",
+      "The price of the book only."
+    ],
+    "explanation": "A title usually signals the main topic so you know what to expect.",
+    "keywords": [
+      "english",
+      "reading",
+      "title",
+      "prediction",
+      "esl-reading"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/title"
+  },
+  {
+    "itemId": "599ddbd7-e978-4802-9299-49d799d8426e",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "If a text has photos near the words, what can photos help you do?",
+    "correctAnswer": "Guess meanings and follow the topic.",
+    "incorrectAnswers": [
+      "Ignore all new words.",
+      "Skip the first paragraph.",
+      "Replace reading aloud."
+    ],
+    "explanation": "Pictures give context clues that support understanding.",
+    "keywords": [
+      "english",
+      "reading",
+      "context-clues",
+      "pictures",
+      "esl-reading"
+    ],
+    "source": "https://www.britishcouncil.org/learnenglish/reading"
+  },
+  {
+    "itemId": "79fce207-e189-4fd4-9dc1-be7d93725b9b",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "When you get a long writing assignment, what is a good first step?",
+    "correctAnswer": "Read the whole prompt from beginning to end once.",
+    "incorrectAnswers": [
+      "Write the conclusion first.",
+      "Skip to the due date only.",
+      "Ignore the task words."
+    ],
+    "explanation": "Reading the full prompt first gives you the overall goal before you plan your answer.",
+    "keywords": [
+      "english",
+      "reading",
+      "instructions",
+      "prompts",
+      "esl-reading"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/understanding_writing_assignments.html"
+  },
+  {
+    "itemId": "3653347d-70bc-4bc7-8780-1335df5f6cee",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "When you look for a bus time in a schedule, what skill is that?",
+    "correctAnswer": "scanning for a specific detail",
+    "incorrectAnswers": [
+      "memorizing the whole page",
+      "writing new times",
+      "ignoring numbers"
+    ],
+    "explanation": "Scanning means searching quickly for one fact, like a departure time.",
+    "keywords": [
+      "english",
+      "reading",
+      "scanning",
+      "schedules",
+      "esl-reading"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/scan"
+  },
+  {
+    "itemId": "be5a9e03-b07c-429b-a3bc-6d3774816534",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "If you underline the topic sentence, what idea does it usually express?",
+    "correctAnswer": "The paragraph's main point.",
+    "incorrectAnswers": [
+      "A random detail only.",
+      "The author's birth year.",
+      "The page number."
+    ],
+    "explanation": "The topic sentence states the paragraph's focus.",
+    "keywords": [
+      "english",
+      "reading",
+      "topic-sentence",
+      "paragraphs",
+      "esl-reading"
+    ],
+    "source": "https://writingcenter.unc.edu/tips-and-tools/paragraphs/"
+  },
+  {
+    "itemId": "295c0c31-cca5-4ec1-abc5-990cdec4c37b",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "reading",
+    "question": "If a word is new, what is a safe first step?",
+    "correctAnswer": "Look at the nearby words for hints.",
+    "incorrectAnswers": [
+      "Delete the sentence.",
+      "Guess only from one letter.",
+      "Stop reading completely."
+    ],
+    "explanation": "Context clues in the same sentence often help you understand a new word.",
+    "keywords": [
+      "english",
+      "reading",
+      "context-clues",
+      "vocabulary",
+      "esl-reading"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/how-to-use-context-to-determine-word-meaning"
   }
 ]

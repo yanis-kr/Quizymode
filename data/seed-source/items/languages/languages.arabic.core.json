@@ -1,0 +1,122 @@
+[
+  {
+    "itemId": "55e95ff7-dae9-4d42-8298-c6929fb306e6",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "What does 'مرحبا' (marhaban) often mean?",
+    "correctAnswer": "hello / welcome",
+    "incorrectAnswers": [
+      "good night only",
+      "thank you",
+      "sorry"
+    ],
+    "explanation": "'Marhaban' is a common greeting word learners meet early.",
+    "keywords": [
+      "arabic",
+      "core",
+      "hello"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/hello"
+  },
+  {
+    "itemId": "e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "What does 'شكرا' (shukran) mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "hello",
+      "goodbye"
+    ],
+    "explanation": "'Shukran' is a widely used way to say thank you.",
+    "keywords": [
+      "arabic",
+      "core",
+      "thank-you"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/thank-you"
+  },
+  {
+    "itemId": "aece5a88-7dd5-49c7-afb6-45c5121711fc",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "What does 'ماء' (ma') mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "tea"
+    ],
+    "explanation": "'Ma'' is a basic word for water in many courses.",
+    "keywords": [
+      "arabic",
+      "core",
+      "water"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/water"
+  },
+  {
+    "itemId": "d70e8d11-1848-4d5a-a720-388dc1c89d95",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "What does 'نعم' (na'am) often mean?",
+    "correctAnswer": "yes",
+    "incorrectAnswers": [
+      "no",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'Na'am' is a common word for yes in many dialects and classroom Arabic.",
+    "keywords": [
+      "arabic",
+      "core",
+      "yes"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/yes"
+  },
+  {
+    "itemId": "54924c48-413d-4417-b7a4-e73ab3cfeb71",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "What does 'لا' (la) often mean?",
+    "correctAnswer": "no / not",
+    "incorrectAnswers": [
+      "yes",
+      "maybe",
+      "please"
+    ],
+    "explanation": "'La' is a basic negation word, like no or not.",
+    "keywords": [
+      "arabic",
+      "core",
+      "no"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english-arabic/no"
+  },
+  {
+    "itemId": "da2cf1e7-262c-4a4b-988d-a57fa402b3c6",
+    "category": "languages",
+    "navigationKeyword1": "arabic",
+    "navigationKeyword2": "core",
+    "question": "How is Arabic usually written on a page for Modern Standard Arabic?",
+    "correctAnswer": "from right to left",
+    "incorrectAnswers": [
+      "from bottom to top",
+      "from left to right",
+      "only in columns upward"
+    ],
+    "explanation": "Arabic script runs right to left, which affects how beginners read signs and books.",
+    "keywords": [
+      "arabic",
+      "core",
+      "script-direction"
+    ],
+    "source": "https://www.britannica.com/topic/Arabic-alphabet"
+  }
+]

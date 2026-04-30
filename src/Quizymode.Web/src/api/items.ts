@@ -8,6 +8,19 @@ import type {
   BulkCreateItemsRequest,
 } from "@/types/api";
 
+export interface SeedExportItem {
+  itemId: string;
+  category: string;
+  navigationKeyword1?: string;
+  navigationKeyword2?: string;
+  question: string;
+  correctAnswer: string;
+  incorrectAnswers: string[];
+  explanation: string;
+  keywords: string[];
+  source?: string;
+}
+
 export interface UploadToCollectionResponse {
   collectionId: string;
   name: string;
@@ -122,6 +135,18 @@ export const itemsApi = {
       `/items/${id}/visibility`,
       { isPrivate }
     );
+    return response.data;
+  },
+
+  exportItems: async (
+    category: string,
+    navigationKeywords: string[]
+  ): Promise<SeedExportItem[]> => {
+    const params: Record<string, string> = { category };
+    if (navigationKeywords.length > 0) {
+      params.nav = navigationKeywords.join(",");
+    }
+    const response = await apiClient.get<SeedExportItem[]>("/items/export", { params });
     return response.data;
   },
 };

@@ -1,0 +1,2201 @@
+[
+  {
+    "itemId": "183f611b-36bb-4e3c-8fde-c0cdafbebc3a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Where is the bathroom?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Dónde está el baño?||DON-de ES-ta EL BA-no?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Cuándo está el baño?||CUAN-do ES-ta EL BA-no?}}",
+      "{{es-ES|¿Qué es el baño?||QUE ES EL BA-no?}}",
+      "{{es-ES|¿Cómo está el baño?||CO-mo ES-ta EL BA-no?}}"
+    ],
+    "explanation": "'¿Dónde está?' = 'Where is?'. Replace 'el baño' with any place: la estación, el hotel, etc.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/where%20is%20the%20bathroom"
+  },
+  {
+    "itemId": "0ab1b67a-b51b-4a72-864c-5e49c88205b9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'How much does this cost?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Cuánto cuesta esto?||CUAN-to CUES-ta ES-to?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Qué es esto?||QUE ES ES-to?}}",
+      "{{es-ES|¿Dónde compro esto?||DON-de COM-pro ES-to?}}",
+      "{{es-ES|¿Hay descuento?||HAY des-CUEN-to?}}"
+    ],
+    "explanation": "'¿Cuánto cuesta?' — 'How much does it cost?' — the key phrase for any market or shop.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-prices",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/how%20much%20does%20this%20cost"
+  },
+  {
+    "itemId": "74505ee7-78ac-488f-891e-24a44b7743de",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you order 'a coffee, please' in Spanish?",
+    "correctAnswer": "{{es-ES|Un café, por favor.||UN CA-fe, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Quiero café ahora.||QUIE-ro CA-fe a-HO-ra.}}",
+      "{{es-ES|Dame café.||DA-me CA-fe.}}",
+      "{{es-ES|Café rápido.||CA-fe ra-PI-do.}}"
+    ],
+    "explanation": "'Un [item], por favor' — 'One [item], please' — the polite café order pattern.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/a%20coffee%20please"
+  },
+  {
+    "itemId": "164538ef-366b-42b9-a76e-30a8e1fe1bb3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask for the bill in Spanish?",
+    "correctAnswer": "{{es-ES|La cuenta, por favor.||LA CUEN-ta, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Más comida, por favor.||MAS co-MI-da, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}"
+    ],
+    "explanation": "'La cuenta, por favor' — 'The bill, please' — the standard way to end a meal.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/the%20bill%20please"
+  },
+  {
+    "itemId": "83645b16-6388-4423-bd8b-6a3f9894b172",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Do you speak English?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Habla usted inglés?||HA-bla us-TED IN-gles?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Entiende inglés?||en-TIEN-de IN-gles?}}",
+      "{{es-ES|¿Sabe inglés?||SA-be IN-gles?}}",
+      "{{es-ES|¿Estudia inglés?||es-TU-dia IN-gles?}}"
+    ],
+    "explanation": "'¿Habla usted inglés?' is polite formal. Informal: '¿Hablas inglés?' (using tú).",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/do%20you%20speak%20english"
+  },
+  {
+    "itemId": "992cc6ed-d6bc-4519-a37d-32a14628af6f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'Turn left / right' in Spanish?",
+    "correctAnswer": "{{es-ES|Gire a la izquierda||GI-re A LA iz-KIER-da}} / {{es-ES|a la derecha.||A LA de-RE-cha.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Dé la vuelta.||DE LA BUEL-ta.}}",
+      "{{es-ES|Pare aquí.||PA-re A-ki.}}"
+    ],
+    "explanation": "'Izquierda' = left, 'derecha' = right, 'recto' = straight ahead. The three directions for navigation.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/turn%20left"
+  },
+  {
+    "itemId": "5289748a-ad56-4b09-a964-beca2d7db4d6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you say 'A table for two, please' in Spanish?",
+    "correctAnswer": "{{es-ES|Una mesa para dos, por favor.||U-na ME-sa PA-ra DOS, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Dos personas, aquí.||DOS per-SO-nas, A-ki.}}",
+      "{{es-ES|Queremos sentarnos juntos.||que-RE-mos sen-TAR-nos HUN-tos.}}",
+      "{{es-ES|Mesa grande, por favor.||ME-sa GRAN-de, POR fa-BOR.}}"
+    ],
+    "explanation": "'Una mesa para [number], por favor' — swap 'dos' with any number: tres, cuatro, etc.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-food",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/a%20table%20for%20two"
+  },
+  {
+    "itemId": "07893eba-365b-4bac-99a2-1e5668c95ecd",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "How do you ask 'Is there a hospital nearby?' in Spanish?",
+    "correctAnswer": "{{es-ES|¿Hay un hospital cerca?||HAY UN hos-pi-TAL SEHR-ca?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está el médico?||DON-de ES-ta EL me-DI-co?}}",
+      "{{es-ES|¿Necesito un doctor?||ne-seh-SI-to UN doc-TOR?}}",
+      "{{es-ES|¿Cuándo abre el hospital?||CUAN-do A-bre EL hos-pi-TAL?}}"
+    ],
+    "explanation": "'¿Hay...?' = 'Is there...?' — very versatile: ¿Hay un banco cerca? ¿Hay WiFi aquí?",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-100",
+      "situation-health",
+      "cefr-a1"
+    ],
+    "source": "https://www.spanishdict.com/translate/is%20there%20a%20hospital%20nearby"
+  },
+  {
+    "itemId": "e557208f-204d-468e-af1a-b3bfb3f51251",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Good evening.'?",
+    "correctAnswer": "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Buenas%20noches."
+  },
+  {
+    "itemId": "70da2445-f01b-4644-8fa2-3dfcfe6acd3b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'How are you?'?",
+    "correctAnswer": "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFC%C3%B3mo%20est%C3%A1%3F"
+  },
+  {
+    "itemId": "c5aeb767-b0f4-46b6-bfc1-127d2268ba31",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I am fine, thank you.'.",
+    "correctAnswer": "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Estoy%20bien%2C%20gracias."
+  },
+  {
+    "itemId": "0996fb9f-c607-4e6e-9ec1-51849143d1e7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Very well, thanks.'?",
+    "correctAnswer": "{{es-ES|Muy bien, gracias.||MUY BIEN, GRA-seeas.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Muy%20bien%2C%20gracias."
+  },
+  {
+    "itemId": "35207547-eb7f-4eb5-ad25-1c40fa53108c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'See you later.'?",
+    "correctAnswer": "{{es-ES|Hasta luego.||HAS-ta LUE-go.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Hasta%20luego."
+  },
+  {
+    "itemId": "fb4acfb7-c118-4fb8-beae-f1344bbcd5fc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'See you tomorrow.'?",
+    "correctAnswer": "{{es-ES|Hasta mañana.||HAS-ta ma-NA-na.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Hasta%20ma%C3%B1ana."
+  },
+  {
+    "itemId": "9c11b0fb-5e6c-486c-a01d-282022a7fbb6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Have a good day.'.",
+    "correctAnswer": "{{es-ES|Que tenga un buen día.||QUE TEN-ga UN BUEN DIA.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Que%20tenga%20un%20buen%20d%C3%ADa."
+  },
+  {
+    "itemId": "61b8649f-3adb-474c-a0e0-2bf3f080ac88",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Welcome.'?",
+    "correctAnswer": "{{es-ES|Bienvenido.||bien-be-NI-do.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Bienvenido."
+  },
+  {
+    "itemId": "6d8c8080-dfd8-4e42-8ded-a9718f19a09e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Nice to meet you.'?",
+    "correctAnswer": "{{es-ES|Mucho gusto.||MU-cho GUS-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Mucho%20gusto."
+  },
+  {
+    "itemId": "9e683d8d-c49b-4307-9d2d-567c5c18720f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Nice to see you again.'?",
+    "correctAnswer": "{{es-ES|Me alegra verle de nuevo.||ME a-LE-gra BER-le DE NUE-bo.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Me%20alegra%20verle%20de%20nuevo."
+  },
+  {
+    "itemId": "09f204e3-d0b8-4e97-ab27-7713e6776e8b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'See you soon.'.",
+    "correctAnswer": "{{es-ES|Hasta pronto.||HAS-ta PRON-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Hasta%20pronto."
+  },
+  {
+    "itemId": "298422c3-d205-451e-8303-99ef55fa7b9e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Have a nice evening.'?",
+    "correctAnswer": "{{es-ES|Que tenga una buena noche.||QUE TEN-ga U-na BUE-na NO-che.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Buenas noches.||BUE-nas NO-ches.}}",
+      "{{es-ES|¿Cómo está?||CO-mo ES-ta?}}",
+      "{{es-ES|Estoy bien, gracias.||es-TOY BIEN, GRA-seeas.}}"
+    ],
+    "explanation": "This is a common greeting or farewell used as a fixed chunk in everyday conversation. Memorizing it whole makes it easier to sound natural.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-greetings"
+    ],
+    "source": "https://www.spanishdict.com/translate/Que%20tenga%20una%20buena%20noche."
+  },
+  {
+    "itemId": "88802fca-7359-410a-b8c2-17be2165dc67",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'What is your name?'?",
+    "correctAnswer": "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFC%C3%B3mo%20se%20llama%3F"
+  },
+  {
+    "itemId": "68abead4-b6ce-443b-b875-d9f172cf270c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I am from the United States.'?",
+    "correctAnswer": "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Soy%20de%20Estados%20Unidos."
+  },
+  {
+    "itemId": "b938866c-44b6-4e2c-8ef7-5bc2a0576782",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I live in Chicago.'.",
+    "correctAnswer": "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Vivo%20en%20Chicago."
+  },
+  {
+    "itemId": "c44c91d7-7306-47a0-afcb-96a27a07fce1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I am twenty years old.'?",
+    "correctAnswer": "{{es-ES|Tengo veinte años.||TEN-go BEIN-te A-nos.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tengo%20veinte%20a%C3%B1os."
+  },
+  {
+    "itemId": "41259fb2-4406-4eb1-a7e7-b2466cfbb882",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'This is my friend.'?",
+    "correctAnswer": "{{es-ES|Este es mi amigo.||ES-te ES MI a-MI-go.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Este%20es%20mi%20amigo."
+  },
+  {
+    "itemId": "6f794e1d-f8a3-4aa3-a1b2-1b511f8db274",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'This is my sister.'?",
+    "correctAnswer": "{{es-ES|Esta es mi hermana.||ES-ta ES MI her-MA-na.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Esta%20es%20mi%20hermana."
+  },
+  {
+    "itemId": "3b93ec8b-b4f4-43c7-8d6d-d65bc28f09c0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I am married.'.",
+    "correctAnswer": "{{es-ES|Estoy casado/casada.||es-TOY ca-SA-do/ca-SA-da.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Estoy%20casado/casada."
+  },
+  {
+    "itemId": "008a409d-2023-461f-9f46-5bfde7b3c81d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I am a student.'?",
+    "correctAnswer": "{{es-ES|Soy estudiante.||SOY es-tu-DIAN-te.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Soy%20estudiante."
+  },
+  {
+    "itemId": "b69cd341-b5e1-4516-8192-47496a8570e1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'I am here on vacation.'?",
+    "correctAnswer": "{{es-ES|Estoy aquí de vacaciones.||es-TOY A-ki DE ba-ca-SEEO-nes.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Estoy%20aqu%C3%AD%20de%20vacaciones."
+  },
+  {
+    "itemId": "d4ed6d92-148a-4303-98c9-3a829324dbcf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'My surname is Garcia.'?",
+    "correctAnswer": "{{es-ES|Mi apellido es García.||MI a-PEYI-do ES GAR-seea.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Mi%20apellido%20es%20Garc%C3%ADa."
+  },
+  {
+    "itemId": "db037d67-5988-4e44-9ab8-14a529a54b17",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'My phone number is...'.",
+    "correctAnswer": "{{es-ES|Mi número de teléfono es...||MI nu-ME-ro DE te-le-FO-no ES...}}",
+    "incorrectAnswers": [
+      "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Mi%20n%C3%BAmero%20de%20tel%C3%A9fono%20es..."
+  },
+  {
+    "itemId": "be065cc7-55d4-4753-985f-112bb3bb560d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'My address is...'?",
+    "correctAnswer": "{{es-ES|Mi dirección es...||MI di-REC-seeon ES...}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Cómo se llama?||CO-mo SE YA-ma?}}",
+      "{{es-ES|Soy de Estados Unidos.||SOY DE es-TA-dos u-NI-dos.}}",
+      "{{es-ES|Vivo en Chicago.||VI-bo EN chi-CA-go.}}"
+    ],
+    "explanation": "This is a standard introduction or personal-information phrase. It is useful in first meetings, hotels, and simple forms.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-intro"
+    ],
+    "source": "https://www.spanishdict.com/translate/Mi%20direcci%C3%B3n%20es..."
+  },
+  {
+    "itemId": "30fa1131-70e1-49f2-98d9-98e9c53560ed",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'I need water.'?",
+    "correctAnswer": "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20agua."
+  },
+  {
+    "itemId": "20befa6d-b7a8-411c-bd8e-2f564b6d3b43",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I need a map.'?",
+    "correctAnswer": "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20un%20mapa."
+  },
+  {
+    "itemId": "548e8034-78a1-4cb5-89aa-4f9c271b1dde",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I need a taxi.'.",
+    "correctAnswer": "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20un%20taxi."
+  },
+  {
+    "itemId": "6297d047-4ccb-4c45-959f-a7cef84468fd",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I need a room.'?",
+    "correctAnswer": "{{es-ES|Necesito una habitación.||ne-seh-SI-to U-na ha-bi-TA-seeon.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20una%20habitaci%C3%B3n."
+  },
+  {
+    "itemId": "2085b427-262d-444f-b246-c3c83ccad600",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Do you have WiFi?'?",
+    "correctAnswer": "{{es-ES|¿Tiene wifi?||TIE-ne WI-fi?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20wifi%3F"
+  },
+  {
+    "itemId": "acbcf175-669c-4df0-8a1f-8d4386a5e3ad",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Do you have bread?'?",
+    "correctAnswer": "{{es-ES|¿Tiene pan?||TIE-ne PAN?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20pan%3F"
+  },
+  {
+    "itemId": "3baa4474-ff34-4258-8cde-a1cb739c1ace",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Can I have the menu?'.",
+    "correctAnswer": "{{es-ES|¿Me trae el menú, por favor?||ME TRAE EL ME-nu, POR fa-BOR?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFMe%20trae%20el%20men%C3%BA%2C%20por%20favor%3F"
+  },
+  {
+    "itemId": "eddf61a0-6ae4-44dd-aeb5-7ec411d2c7f0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Can I have a bottle of water?'?",
+    "correctAnswer": "{{es-ES|¿Me trae una botella de agua?||ME TRAE U-na BO-teya DE A-gua?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFMe%20trae%20una%20botella%20de%20agua%3F"
+  },
+  {
+    "itemId": "9d1f07ff-2f46-45d4-b418-5984a8f7e90e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Please give me a bag.'?",
+    "correctAnswer": "{{es-ES|Deme una bolsa, por favor.||DE-me U-na BOL-sa, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Deme%20una%20bolsa%2C%20por%20favor."
+  },
+  {
+    "itemId": "6d107144-a4e3-4e84-a82f-d1a9f49dd195",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I need more time.'?",
+    "correctAnswer": "{{es-ES|Necesito más tiempo.||ne-seh-SI-to MAS TIEM-po.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20m%C3%A1s%20tiempo."
+  },
+  {
+    "itemId": "3f15859f-7bf4-4f4f-b49a-98284130ad02",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I need the receipt.'.",
+    "correctAnswer": "{{es-ES|Necesito el recibo.||ne-seh-SI-to EL re-SEE-bo.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20el%20recibo."
+  },
+  {
+    "itemId": "e5049bf6-4fc5-4587-9183-c1df77463bf8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Do you have vegetarian food?'?",
+    "correctAnswer": "{{es-ES|¿Tiene comida vegetariana?||TIE-ne co-MI-da be-heh-ta-RIA-na?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito agua.||ne-seh-SI-to A-gua.}}",
+      "{{es-ES|Necesito un mapa.||ne-seh-SI-to UN MA-pa.}}",
+      "{{es-ES|Necesito un taxi.||ne-seh-SI-to UN TA-xi.}}"
+    ],
+    "explanation": "This phrase helps you ask for something clearly and politely. Replace the key noun to reuse the pattern in many situations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20comida%20vegetariana%3F"
+  },
+  {
+    "itemId": "5c98dca4-96bc-40c5-9c2a-cf4d69b243e2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Where is the bank?'?",
+    "correctAnswer": "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFD%C3%B3nde%20est%C3%A1%20el%20banco%3F"
+  },
+  {
+    "itemId": "a0a25d20-cecf-4904-addc-0b099d1a78e1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Where is the museum?'?",
+    "correctAnswer": "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFD%C3%B3nde%20est%C3%A1%20el%20museo%3F"
+  },
+  {
+    "itemId": "3ad52636-4b3d-4e66-a144-e054684ee96c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Where is the city center?'.",
+    "correctAnswer": "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFD%C3%B3nde%20est%C3%A1%20el%20centro%3F"
+  },
+  {
+    "itemId": "b7475bbe-9687-4ea4-9a15-d4735fb738e6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Where is the bus stop?'?",
+    "correctAnswer": "{{es-ES|¿Dónde está la parada de autobús?||DON-de ES-ta LA pa-RA-da DE au-TO-bus?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFD%C3%B3nde%20est%C3%A1%20la%20parada%20de%20autob%C3%BAs%3F"
+  },
+  {
+    "itemId": "5951ec4b-e3e0-41f7-866b-ab160004836d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Go straight.'?",
+    "correctAnswer": "{{es-ES|Siga recto.||SI-ga REC-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Siga%20recto."
+  },
+  {
+    "itemId": "efcb5363-e71f-48c1-b05a-a33e37a8ce1e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Take the first street.'?",
+    "correctAnswer": "{{es-ES|Tome la primera calle.||TO-me LA pri-ME-ra CAYE.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tome%20la%20primera%20calle."
+  },
+  {
+    "itemId": "ffba5aa5-ea60-4d82-9960-b625e5942988",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Take the second street.'.",
+    "correctAnswer": "{{es-ES|Tome la segunda calle.||TO-me LA se-GUN-da CAYE.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tome%20la%20segunda%20calle."
+  },
+  {
+    "itemId": "c3c8179e-717a-4427-ab7c-52a24df4fc73",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Is it far?'?",
+    "correctAnswer": "{{es-ES|¿Está lejos?||ES-ta LE-hos?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFEst%C3%A1%20lejos%3F"
+  },
+  {
+    "itemId": "b32cff08-5375-497f-b843-81962d9bf21e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Is it near?'?",
+    "correctAnswer": "{{es-ES|¿Está cerca?||ES-ta SEHR-ca?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFEst%C3%A1%20cerca%3F"
+  },
+  {
+    "itemId": "149fa9a8-bbf9-457b-afbb-9c7effa14aab",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I am lost.'?",
+    "correctAnswer": "{{es-ES|Estoy perdido/perdida.||es-TOY per-DI-do/per-DI-da.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Estoy%20perdido/perdida."
+  },
+  {
+    "itemId": "809c1ac1-45bf-462b-b8b8-6458a1f87bcc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'We are looking for the hotel.'.",
+    "correctAnswer": "{{es-ES|Buscamos el hotel.||bus-CA-mos EL ho-TEL.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Buscamos%20el%20hotel."
+  },
+  {
+    "itemId": "83c9271a-6bee-4025-a9bf-b285caa5cec8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Please show me on the map.'?",
+    "correctAnswer": "{{es-ES|Muéstreme en el mapa, por favor.||mues-TRE-me EN EL MA-pa, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está el banco?||DON-de ES-ta EL BAN-co?}}",
+      "{{es-ES|¿Dónde está el museo?||DON-de ES-ta EL MU-seo?}}",
+      "{{es-ES|¿Dónde está el centro?||DON-de ES-ta EL SEHN-tro?}}"
+    ],
+    "explanation": "This is a travel phrase for finding places or following directions. The same structure works with many other destinations.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-directions"
+    ],
+    "source": "https://www.spanishdict.com/translate/Mu%C3%A9streme%20en%20el%20mapa%2C%20por%20favor."
+  },
+  {
+    "itemId": "14e22d50-929c-4945-a3be-88ac9908b4da",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Can you repeat that?'?",
+    "correctAnswer": "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFPuede%20repetir%20eso%3F"
+  },
+  {
+    "itemId": "87673ec1-9ff2-49cf-9041-9b8f82a07b2e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Can you speak more slowly?'?",
+    "correctAnswer": "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFPuede%20hablar%20m%C3%A1s%20despacio%3F"
+  },
+  {
+    "itemId": "08caec4b-90ad-4d9c-b02d-139593373ba7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'How do you spell your name?'.",
+    "correctAnswer": "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFC%C3%B3mo%20se%20deletrea%20su%20nombre%3F"
+  },
+  {
+    "itemId": "af0bcc24-b312-410a-9057-193682744161",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'The total is ten euros.'?",
+    "correctAnswer": "{{es-ES|Son diez euros en total.||SON DIEZ EU-ros EN to-TAL.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Son%20diez%20euros%20en%20total."
+  },
+  {
+    "itemId": "4578880c-badd-4c86-9ae1-277479a1a916",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'It costs twenty euros.'?",
+    "correctAnswer": "{{es-ES|Cuesta veinte euros.||CUES-ta BEIN-te EU-ros.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Cuesta%20veinte%20euros."
+  },
+  {
+    "itemId": "11d49e62-f0b7-4504-a894-d5d0e471a47f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Room number twelve.'?",
+    "correctAnswer": "{{es-ES|Habitación número doce.||ha-bi-TA-seeon nu-ME-ro do-SEH.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Habitaci%C3%B3n%20n%C3%BAmero%20doce."
+  },
+  {
+    "itemId": "64bfe685-0c9f-474d-a5a6-9ee8248ae84c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Platform number four.'.",
+    "correctAnswer": "{{es-ES|Andén número cuatro.||AN-den nu-ME-ro CUA-tro.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/And%C3%A9n%20n%C3%BAmero%20cuatro."
+  },
+  {
+    "itemId": "0ced58c3-684d-4d23-9a1d-a117374ca67f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'A table for three, please.'?",
+    "correctAnswer": "{{es-ES|Una mesa para tres, por favor.||U-na ME-sa PA-ra TRES, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Una%20mesa%20para%20tres%2C%20por%20favor."
+  },
+  {
+    "itemId": "ac90ce56-2c7a-45f1-b1a2-bf58dc8122e4",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Two tickets, please.'?",
+    "correctAnswer": "{{es-ES|Dos billetes, por favor.||DOS BIYE-tes, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Dos%20billetes%2C%20por%20favor."
+  },
+  {
+    "itemId": "3883e9b4-c3d7-449d-81a3-e01d2f6d6e5f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Can you write it down?'?",
+    "correctAnswer": "{{es-ES|¿Puede escribirlo?||PUE-de es-cri-BIR-lo?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFPuede%20escribirlo%3F"
+  },
+  {
+    "itemId": "4f1f31cd-f429-4e2d-87d7-c8391da0622b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'What is today's date?'.",
+    "correctAnswer": "{{es-ES|¿Qué fecha es hoy?||QUE FE-cha ES HOY?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFQu%C3%A9%20fecha%20es%20hoy%3F"
+  },
+  {
+    "itemId": "1aca034d-4072-4812-97f4-54f4400fbf7a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'One moment, please.'?",
+    "correctAnswer": "{{es-ES|Un momento, por favor.||UN mo-MEN-to, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Puede repetir eso?||PUE-de re-pe-TIR E-so?}}",
+      "{{es-ES|¿Puede hablar más despacio?||PUE-de ha-BLAR MAS des-PA-seeo?}}",
+      "{{es-ES|¿Cómo se deletrea su nombre?||CO-mo SE de-LE-trea SU NOM-bre?}}"
+    ],
+    "explanation": "This phrase helps with prices, numbers, spelling, or repeating information. It is especially useful in shops, stations, and hotels.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-numbers"
+    ],
+    "source": "https://www.spanishdict.com/translate/Un%20momento%2C%20por%20favor."
+  },
+  {
+    "itemId": "182bb1b1-15cf-42f2-a184-824b57bf1249",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'I am hungry.'?",
+    "correctAnswer": "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tengo sed.||TEN-go SED.}}",
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tengo%20hambre."
+  },
+  {
+    "itemId": "2343dacd-d75c-436e-b13c-ea03910cd0ed",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I am thirsty.'?",
+    "correctAnswer": "{{es-ES|Tengo sed.||TEN-go SED.}}",
+    "incorrectAnswers": [
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Tengo%20sed."
+  },
+  {
+    "itemId": "314f5720-1ad1-4b82-8001-745d86438c6d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'The menu, please.'.",
+    "correctAnswer": "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/El%20men%C3%BA%2C%20por%20favor."
+  },
+  {
+    "itemId": "387726ad-8787-41a1-8874-d6ad9e841f69",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I am vegetarian.'?",
+    "correctAnswer": "{{es-ES|Soy vegetariano/vegetariana.||SOY be-heh-ta-RIA-no/be-heh-ta-RIA-na.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Soy%20vegetariano/vegetariana."
+  },
+  {
+    "itemId": "e8bd49fd-2b49-4b54-8dc9-a9143263023b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'No meat, please.'?",
+    "correctAnswer": "{{es-ES|Sin carne, por favor.||SIN CAR-ne, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Sin%20carne%2C%20por%20favor."
+  },
+  {
+    "itemId": "68fc3e0d-7667-4593-b491-f407fdcd4b75",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Without sugar, please.'?",
+    "correctAnswer": "{{es-ES|Sin azúcar, por favor.||SIN a-zu-CAR, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Sin%20az%C3%BAcar%2C%20por%20favor."
+  },
+  {
+    "itemId": "da9047b0-6297-4f46-b949-01bfed55e916",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'With milk, please.'.",
+    "correctAnswer": "{{es-ES|Con leche, por favor.||CON LE-che, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Con%20leche%2C%20por%20favor."
+  },
+  {
+    "itemId": "bee7927a-f7a4-4064-945f-225ac5d3f32d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'It was delicious.'?",
+    "correctAnswer": "{{es-ES|Estaba delicioso.||es-TA-ba de-li-SEEO-so.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Estaba%20delicioso."
+  },
+  {
+    "itemId": "57c4bfbc-7873-426d-bfa3-686d332f35de",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'This is very good.'?",
+    "correctAnswer": "{{es-ES|Esto está muy bueno.||ES-to ES-ta MUY BUE-no.}}",
+    "incorrectAnswers": [
+      "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Esto%20est%C3%A1%20muy%20bueno."
+  },
+  {
+    "itemId": "db5899c6-a4ed-43a1-8a34-c09b0b5da0ac",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'The soup is cold.'?",
+    "correctAnswer": "{{es-ES|La sopa está fría.||LA SO-pa ES-ta FRIA.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/La%20sopa%20est%C3%A1%20fr%C3%ADa."
+  },
+  {
+    "itemId": "90372bfa-ce08-4faf-8dc3-bbdf764aa139",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'I am allergic to nuts.'.",
+    "correctAnswer": "{{es-ES|Soy alérgico/alérgica a los frutos secos.||SOY a-ler-HEE-co/a-ler-HEE-ca A LOS FRU-tos SE-cos.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
+      "{{es-ES|Tengo sed.||TEN-go SED.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Soy%20al%C3%A9rgico/al%C3%A9rgica%20a%20los%20frutos%20secos."
+  },
+  {
+    "itemId": "e24a2fc5-bcde-4f16-8bdf-24e4db24ac97",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'A bottle of water, please.'?",
+    "correctAnswer": "{{es-ES|Una botella de agua, por favor.||U-na BO-teya DE A-gua, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Tengo hambre.||TEN-go HAM-bre.}}",
+      "{{es-ES|Tengo sed.||TEN-go SED.}}",
+      "{{es-ES|El menú, por favor.||EL ME-nu, POR fa-BOR.}}"
+    ],
+    "explanation": "This is a standard restaurant phrase. You can reuse the same pattern with other foods, drinks, or preferences.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-food"
+    ],
+    "source": "https://www.spanishdict.com/translate/Una%20botella%20de%20agua%2C%20por%20favor."
+  },
+  {
+    "itemId": "c49ac380-b8d1-41f3-be52-f04a4d23369d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Do you have this in another size?'?",
+    "correctAnswer": "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20esto%20en%20otra%20talla%3F"
+  },
+  {
+    "itemId": "c423672f-5dd2-4d46-afb5-e2d8293af987",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Do you have this in another color?'?",
+    "correctAnswer": "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
+      "{{es-ES|Es barato.||ES ba-RA-to.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFTiene%20esto%20en%20otro%20color%3F"
+  },
+  {
+    "itemId": "a53e514d-f139-4122-84e4-3021c0b7675f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Can I try it on?'.",
+    "correctAnswer": "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
+      "{{es-ES|Es barato.||ES ba-RA-to.}}",
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFPuedo%20prob%C3%A1rmelo%3F"
+  },
+  {
+    "itemId": "f55ae953-e19e-44ff-a2cb-44e2f51f26ef",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'It is too expensive.'?",
+    "correctAnswer": "{{es-ES|Es demasiado caro.||ES de-ma-SIA-do CA-ro.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Es barato.||ES ba-RA-to.}}",
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Es%20demasiado%20caro."
+  },
+  {
+    "itemId": "75b17b39-3d85-4e5b-ad21-0cdf21140237",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'It is cheap.'?",
+    "correctAnswer": "{{es-ES|Es barato.||ES ba-RA-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Es%20barato."
+  },
+  {
+    "itemId": "9b54ec76-472f-4428-8ec9-cf3e0de6057d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I will take it.'?",
+    "correctAnswer": "{{es-ES|Me lo llevo.||ME LO YE-bo.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Me%20lo%20llevo."
+  },
+  {
+    "itemId": "575819a2-6c71-417d-82a4-23f072dba1f1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Where is the checkout?'.",
+    "correctAnswer": "{{es-ES|¿Dónde está la caja?||DON-de ES-ta LA CA-ha?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFD%C3%B3nde%20est%C3%A1%20la%20caja%3F"
+  },
+  {
+    "itemId": "b3cd3961-f48d-4d10-afc7-4826ab9a6eaa",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I am just looking.'?",
+    "correctAnswer": "{{es-ES|Solo estoy mirando.||SO-lo es-TOY mi-RAN-do.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Solo%20estoy%20mirando."
+  },
+  {
+    "itemId": "1c40762b-7ce4-480c-9d5b-711a76bc2583",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Do you accept cards?'?",
+    "correctAnswer": "{{es-ES|¿Acepta tarjeta?||a-SEHP-ta tar-HE-ta?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFAcepta%20tarjeta%3F"
+  },
+  {
+    "itemId": "516593ec-5c4c-4f31-b2f3-f641e0ed946d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'I need a receipt.'?",
+    "correctAnswer": "{{es-ES|Necesito un recibo.||ne-seh-SI-to UN re-SEE-bo.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20un%20recibo."
+  },
+  {
+    "itemId": "32131488-73ef-406d-bfe0-1bbec08f7999",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'This size is too small.'.",
+    "correctAnswer": "{{es-ES|Esta talla es demasiado pequeña.||ES-ta TAYA ES de-ma-SIA-do pe-KE-na.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Esta%20talla%20es%20demasiado%20peque%C3%B1a."
+  },
+  {
+    "itemId": "79df2bb0-a895-451d-8ccb-ac62fa284ee7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'This size is too big.'?",
+    "correctAnswer": "{{es-ES|Esta talla es demasiado grande.||ES-ta TAYA ES de-ma-SIA-do GRAN-de.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Tiene esto en otra talla?||TIE-ne ES-to EN O-tra TAYA?}}",
+      "{{es-ES|¿Tiene esto en otro color?||TIE-ne ES-to EN O-tro co-LOR?}}",
+      "{{es-ES|¿Puedo probármelo?||PUE-do pro-bar-ME-lo?}}"
+    ],
+    "explanation": "This phrase is useful in shops and markets. The wording is polite and easy to adapt.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-shopping"
+    ],
+    "source": "https://www.spanishdict.com/translate/Esta%20talla%20es%20demasiado%20grande."
+  },
+  {
+    "itemId": "6d0f6382-51c9-4e18-9b70-209b4a35b30c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'I need a ticket to the airport.'?",
+    "correctAnswer": "{{es-ES|Necesito un billete al aeropuerto.||ne-seh-SI-to UN BIYE-te AL ae-ro-PUER-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}",
+      "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/Necesito%20un%20billete%20al%20aeropuerto."
+  },
+  {
+    "itemId": "b8313088-4b76-4397-b343-7ad64eac1fb6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'One ticket to the city center, please.'?",
+    "correctAnswer": "{{es-ES|Un billete al centro, por favor.||UN BIYE-te AL SEHN-tro, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/Un%20billete%20al%20centro%2C%20por%20favor."
+  },
+  {
+    "itemId": "7f9709cf-c25b-45c1-8f7c-be9bd891e386",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'A round-trip ticket, please.'.",
+    "correctAnswer": "{{es-ES|Un billete de ida y vuelta, por favor.||UN BIYE-te DE I-da Y BUEL-ta, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/Un%20billete%20de%20ida%20y%20vuelta%2C%20por%20favor."
+  },
+  {
+    "itemId": "34400e17-ff52-4026-b63e-488460e5b3c2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'Which platform is it?'?",
+    "correctAnswer": "{{es-ES|¿Qué andén es?||QUE AN-den ES?}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFQu%C3%A9%20and%C3%A9n%20es%3F"
+  },
+  {
+    "itemId": "3f06a3e3-12f1-4dbb-9c55-18b9c5064eed",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "In beginner Spanish, how do you say 'Is this seat free?'?",
+    "correctAnswer": "{{es-ES|¿Está libre este asiento?||ES-ta LI-bre ES-te a-SIEN-to?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFEst%C3%A1%20libre%20este%20asiento%3F"
+  },
+  {
+    "itemId": "df4c033b-d000-41df-a501-ce5d986c912a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Which Spanish phrase means 'Please call a taxi.'?",
+    "correctAnswer": "{{es-ES|Llame a un taxi, por favor.||LLA-me A UN TA-xi, POR fa-BOR.}}",
+    "incorrectAnswers": [
+      "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/Llame%20a%20un%20taxi%2C%20por%20favor."
+  },
+  {
+    "itemId": "2f3c2702-f756-4f1d-85a2-49364ff67491",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "Choose the correct Spanish phrase for 'Does this bus go downtown?'.",
+    "correctAnswer": "{{es-ES|¿Este autobús va al centro?||ES-te au-TO-bus BA AL SEHN-tro?}}",
+    "incorrectAnswers": [
+      "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}",
+      "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/%C2%BFEste%20autob%C3%BAs%20va%20al%20centro%3F"
+  },
+  {
+    "itemId": "98609ae5-5a9b-41bc-b75c-12572cf64477",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "phrases",
+    "question": "What is the natural Spanish sentence for 'I want to go to the airport.'?",
+    "correctAnswer": "{{es-ES|Quiero ir al aeropuerto.||QUIE-ro IR AL ae-ro-PUER-to.}}",
+    "incorrectAnswers": [
+      "{{es-ES|Bajamos aquí.||ba-HA-mos A-ki.}}",
+      "{{es-ES|Perdí el autobús.||PER-di EL au-TO-bus.}}",
+      "{{es-ES|¿Dónde puedo comprar un billete?||DON-de PUE-do com-PRAR UN BIYE-te?}}"
+    ],
+    "explanation": "This is common transport language for buses, taxis, and tickets. Swap the destination or ticket type as needed.",
+    "keywords": [
+      "spanish",
+      "phrases",
+      "freq-500",
+      "cefr-a1",
+      "situation-transport"
+    ],
+    "source": "https://www.spanishdict.com/translate/Quiero%20ir%20al%20aeropuerto."
+  }
+]

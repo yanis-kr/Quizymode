@@ -98,8 +98,10 @@ export const useMyItemsFilters = () => {
   // Track itemType in activeFilters
   useEffect(() => {
     if (filters.filterType !== "all") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveFilters((prev) => new Set(prev).add("itemType"));
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveFilters((prev) => {
         const newSet = new Set(prev);
         newSet.delete("itemType");
@@ -111,6 +113,7 @@ export const useMyItemsFilters = () => {
   // Auto-show filters if any are active
   useEffect(() => {
     if (hasActiveFilters && !showFilters) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowFilters(true);
     }
   }, [hasActiveFilters, showFilters]);

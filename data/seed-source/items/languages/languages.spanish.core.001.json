@@ -1,0 +1,2388 @@
+[
+  {
+    "itemId": "96addc76-22d6-427c-aa28-7ac2c4c9ab94",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'hello' in Spanish?",
+    "correctAnswer": "{{es-ES|Hola||HO-la}}",
+    "incorrectAnswers": [
+      "{{es-ES|Adiós||A-dios}}",
+      "{{es-ES|Gracias||GRA-seeas}}",
+      "{{es-ES|Por favor||POR fa-BOR}}"
+    ],
+    "explanation": "'Hola' is the universal Spanish greeting, used at any time of day.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1",
+      "hello"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/hola"
+  },
+  {
+    "itemId": "f9a9f00f-bc29-424f-a354-0ae13979f2dc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'thank you' in Spanish?",
+    "correctAnswer": "{{es-ES|Gracias||GRA-seeas}}",
+    "incorrectAnswers": [
+      "{{es-ES|Por favor||POR fa-BOR}}",
+      "{{es-ES|Lo siento||LO SIEN-to}}",
+      "{{es-ES|De nada||DE NA-da}}"
+    ],
+    "explanation": "'Gracias' is the standard thank you. 'Muchas gracias' = thank you very much.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1",
+      "thank-you"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/gracias"
+  },
+  {
+    "itemId": "a4b7d0ff-9953-4972-b85e-49671741b8bb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'please' in Spanish?",
+    "correctAnswer": "{{es-ES|Por favor||POR fa-BOR}}",
+    "incorrectAnswers": [
+      "{{es-ES|Gracias||GRA-seeas}}",
+      "{{es-ES|Lo siento||LO SIEN-to}}",
+      "{{es-ES|De nada||DE NA-da}}"
+    ],
+    "explanation": "'Por favor' = please. 'De nada' = you're welcome.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "please"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/por-favor"
+  },
+  {
+    "itemId": "b1d19c29-3fcf-48aa-aa48-be56e217ffdf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'my name is' in Spanish?",
+    "correctAnswer": "{{es-ES|Me llamo...||ME YA-mo...}}",
+    "incorrectAnswers": [
+      "{{es-ES|Yo soy...||YO SOY...}}",
+      "{{es-ES|Vivo en...||VI-bo EN...}}",
+      "{{es-ES|Soy de...||SOY DE...}}"
+    ],
+    "explanation": "'Me llamo [name]' = 'I call myself [name]'. Both 'me llamo' and 'soy' are used for introductions.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "situation-intro",
+      "cefr-a1",
+      "my-name-is"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/llamarse"
+  },
+  {
+    "itemId": "7722b9ba-107e-43aa-a8e9-1c47cc6fdabc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you count 1, 2, 3 in Spanish?",
+    "correctAnswer": "{{es-ES|uno, dos, tres||U-no, DOS, TRES}}",
+    "incorrectAnswers": [
+      "{{es-ES|un, deux, trois||UN, DEUX, TROIS}}",
+      "{{es-ES|unu, doi, trei||U-nu, DOI, TREI}}",
+      "{{es-ES|ein, zwei, drei||EIN, ZWEI, DREI}}"
+    ],
+    "explanation": "Spanish numbers 1-3: uno (1), dos (2), tres (3).",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "count-1-2-3"
+    ],
+    "source": "https://www.spanishdict.com/guide/counting-in-spanish"
+  },
+  {
+    "itemId": "1e47f36c-9a12-4127-bae5-1c9759f79451",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'goodbye' in Spanish?",
+    "correctAnswer": "{{es-ES|Adiós||A-dios}}",
+    "incorrectAnswers": [
+      "{{es-ES|Hola||HO-la}}",
+      "{{es-ES|Hasta luego||HAS-ta LUE-go}}",
+      "{{es-ES|Buenas noches||BUE-nas NO-ches}}"
+    ],
+    "explanation": "'Adiós' is the formal farewell. 'Hasta luego' (see you later) and 'hasta mañana' (see you tomorrow) are also common.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1",
+      "goodbye"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/adios"
+  },
+  {
+    "itemId": "5299843f-7052-40f3-b466-1e990646a0bb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'good morning' in Spanish?",
+    "correctAnswer": "{{es-ES|Buenos días||BUE-nos DIAS}}",
+    "incorrectAnswers": [
+      "{{es-ES|Buenas tardes||BUE-nas TAR-des}}",
+      "{{es-ES|Buenas noches||BUE-nas NO-ches}}",
+      "{{es-ES|Buen provecho||BUEN pro-BE-cho}}"
+    ],
+    "explanation": "'Buenos días' = good morning; 'buenas tardes' = good afternoon; 'buenas noches' = good evening/night.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1",
+      "good-morning"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/buenos-dias"
+  },
+  {
+    "itemId": "3cd0d1d9-d54a-4956-ba9a-c8706b4dfba3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'excuse me / sorry' in Spanish?",
+    "correctAnswer": "{{es-ES|Perdón||PER-don}} / {{es-ES|Disculpe||dis-CUL-pe}}",
+    "incorrectAnswers": [
+      "{{es-ES|Gracias||GRA-seeas}}",
+      "{{es-ES|Por favor||POR fa-BOR}}",
+      "{{es-ES|De nada||DE NA-da}}"
+    ],
+    "explanation": "'Perdón' = pardon/sorry. 'Disculpe' = excuse me (to get attention). 'Lo siento' = I'm sorry (apology).",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "excuse-me",
+      "sorry"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/perdon"
+  },
+  {
+    "itemId": "87ef9abd-da11-4c4f-bb31-c3fb665bf03a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'I don't understand' in Spanish?",
+    "correctAnswer": "{{es-ES|No entiendo||NO en-TIEN-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|No sé||NO SE}}",
+      "{{es-ES|No hablo español||NO HA-blo es-pa-NOL}}",
+      "{{es-ES|No escucho||NO es-CU-cho}}"
+    ],
+    "explanation": "'No entiendo' — essential phrase for any learner. 'No sé' = I don't know.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "i-dont-understand"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/entender"
+  },
+  {
+    "itemId": "da6ab309-5c3b-4791-9f0e-a02858a09688",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'water' in Spanish?",
+    "correctAnswer": "{{es-ES|agua||A-gua}}",
+    "incorrectAnswers": [
+      "{{es-ES|pan||PAN}}",
+      "{{es-ES|leche||LE-che}}",
+      "{{es-ES|vino||BI-no}}"
+    ],
+    "explanation": "'Agua' (water) is feminine but takes masculine article el — 'el agua fría'. A common gender trap.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "water"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/spanish-english/agua"
+  },
+  {
+    "itemId": "7a8e6215-26e4-4b19-bd96-db907c18d82c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'four'?",
+    "correctAnswer": "{{es-ES|cuatro||CUA-tro}}",
+    "incorrectAnswers": [
+      "{{es-ES|cinco||SEEN-co}}",
+      "{{es-ES|seis||SEIS}}",
+      "{{es-ES|siete||SIE-te}}"
+    ],
+    "explanation": "'cuatro' is the word for 'four'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "four"
+    ],
+    "source": "https://www.spanishdict.com/translate/cuatro"
+  },
+  {
+    "itemId": "a7b80cdd-ff10-413c-baf7-aa72c3b06178",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'five' in everyday use?",
+    "correctAnswer": "{{es-ES|cinco||SEEN-co}}",
+    "incorrectAnswers": [
+      "{{es-ES|seis||SEIS}}",
+      "{{es-ES|siete||SIE-te}}",
+      "{{es-ES|ocho||O-cho}}"
+    ],
+    "explanation": "'cinco' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "five"
+    ],
+    "source": "https://www.spanishdict.com/translate/cinco"
+  },
+  {
+    "itemId": "af8bfde1-8c3c-4d77-81f8-2ede1f931a91",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'six'.",
+    "correctAnswer": "{{es-ES|seis||SEIS}}",
+    "incorrectAnswers": [
+      "{{es-ES|siete||SIE-te}}",
+      "{{es-ES|ocho||O-cho}}",
+      "{{es-ES|nueve||NUE-be}}"
+    ],
+    "explanation": "'seis' is the word for 'six'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "six"
+    ],
+    "source": "https://www.spanishdict.com/translate/seis"
+  },
+  {
+    "itemId": "c498b620-b375-4503-ac42-5e9936cc4b38",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'seven'?",
+    "correctAnswer": "{{es-ES|siete||SIE-te}}",
+    "incorrectAnswers": [
+      "{{es-ES|ocho||O-cho}}",
+      "{{es-ES|nueve||NUE-be}}",
+      "{{es-ES|diez||DIEZ}}"
+    ],
+    "explanation": "'siete' is the word for 'seven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "seven"
+    ],
+    "source": "https://www.spanishdict.com/translate/siete"
+  },
+  {
+    "itemId": "3ef27a86-9b3d-4d55-8821-2a3c706d2269",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'eight'?",
+    "correctAnswer": "{{es-ES|ocho||O-cho}}",
+    "incorrectAnswers": [
+      "{{es-ES|nueve||NUE-be}}",
+      "{{es-ES|diez||DIEZ}}",
+      "{{es-ES|once||on-SEH}}"
+    ],
+    "explanation": "'ocho' is the word for 'eight'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "eight"
+    ],
+    "source": "https://www.spanishdict.com/translate/ocho"
+  },
+  {
+    "itemId": "6e0487ec-a67a-4f05-9284-abee68e20bca",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'nine' in everyday use?",
+    "correctAnswer": "{{es-ES|nueve||NUE-be}}",
+    "incorrectAnswers": [
+      "{{es-ES|diez||DIEZ}}",
+      "{{es-ES|once||on-SEH}}",
+      "{{es-ES|doce||do-SEH}}"
+    ],
+    "explanation": "'nueve' is the word for 'nine'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "nine"
+    ],
+    "source": "https://www.spanishdict.com/translate/nueve"
+  },
+  {
+    "itemId": "562f2e2a-408c-4661-85e5-aa6c3d9f5518",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'ten'.",
+    "correctAnswer": "{{es-ES|diez||DIEZ}}",
+    "incorrectAnswers": [
+      "{{es-ES|once||on-SEH}}",
+      "{{es-ES|doce||do-SEH}}",
+      "{{es-ES|trece||tre-SEH}}"
+    ],
+    "explanation": "'diez' is the word for 'ten'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "ten"
+    ],
+    "source": "https://www.spanishdict.com/translate/diez"
+  },
+  {
+    "itemId": "5347d1e3-ea0f-4db7-9c01-34f34054f4bf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'eleven'?",
+    "correctAnswer": "{{es-ES|once||on-SEH}}",
+    "incorrectAnswers": [
+      "{{es-ES|doce||do-SEH}}",
+      "{{es-ES|trece||tre-SEH}}",
+      "{{es-ES|catorce||ca-tor-SEH}}"
+    ],
+    "explanation": "'once' is the word for 'eleven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "eleven"
+    ],
+    "source": "https://www.spanishdict.com/translate/once"
+  },
+  {
+    "itemId": "8b335b8e-ac86-43a2-816d-9659fc832a13",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'twelve'?",
+    "correctAnswer": "{{es-ES|doce||do-SEH}}",
+    "incorrectAnswers": [
+      "{{es-ES|trece||tre-SEH}}",
+      "{{es-ES|catorce||ca-tor-SEH}}",
+      "{{es-ES|quince||kin-SEH}}"
+    ],
+    "explanation": "'doce' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "twelve"
+    ],
+    "source": "https://www.spanishdict.com/translate/doce"
+  },
+  {
+    "itemId": "1f36ba89-e366-4491-86fb-b54ceaed7df2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'thirteen' in everyday use?",
+    "correctAnswer": "{{es-ES|trece||tre-SEH}}",
+    "incorrectAnswers": [
+      "{{es-ES|catorce||ca-tor-SEH}}",
+      "{{es-ES|quince||kin-SEH}}",
+      "{{es-ES|dieciséis||die-SEE-seis}}"
+    ],
+    "explanation": "'trece' is the word for 'thirteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "thirteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/trece"
+  },
+  {
+    "itemId": "cbbfa770-c496-4f20-8f59-8f341ac52299",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'fourteen'.",
+    "correctAnswer": "{{es-ES|catorce||ca-tor-SEH}}",
+    "incorrectAnswers": [
+      "{{es-ES|quince||kin-SEH}}",
+      "{{es-ES|dieciséis||die-SEE-seis}}",
+      "{{es-ES|diecisiete||die-see-SIE-te}}"
+    ],
+    "explanation": "'catorce' is the word for 'fourteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "fourteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/catorce"
+  },
+  {
+    "itemId": "800b63ce-52a0-4686-8abb-b2ad7dbcfbf5",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'fifteen'?",
+    "correctAnswer": "{{es-ES|quince||kin-SEH}}",
+    "incorrectAnswers": [
+      "{{es-ES|dieciséis||die-SEE-seis}}",
+      "{{es-ES|diecisiete||die-see-SIE-te}}",
+      "{{es-ES|dieciocho||die-SEEO-cho}}"
+    ],
+    "explanation": "'quince' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "fifteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/quince"
+  },
+  {
+    "itemId": "aa93cf82-550b-48c0-9233-d872ee0b16e2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'sixteen'?",
+    "correctAnswer": "{{es-ES|dieciséis||die-SEE-seis}}",
+    "incorrectAnswers": [
+      "{{es-ES|diecisiete||die-see-SIE-te}}",
+      "{{es-ES|dieciocho||die-SEEO-cho}}",
+      "{{es-ES|diecinueve||die-see-NUE-be}}"
+    ],
+    "explanation": "'dieciséis' is the word for 'sixteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "sixteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/diecis%C3%A9is"
+  },
+  {
+    "itemId": "fa4293ba-e450-455f-8ce4-d85e1ecf74d0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'seventeen' in everyday use?",
+    "correctAnswer": "{{es-ES|diecisiete||die-see-SIE-te}}",
+    "incorrectAnswers": [
+      "{{es-ES|dieciocho||die-SEEO-cho}}",
+      "{{es-ES|diecinueve||die-see-NUE-be}}",
+      "{{es-ES|veinte||BEIN-te}}"
+    ],
+    "explanation": "'diecisiete' is the word for 'seventeen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "seventeen"
+    ],
+    "source": "https://www.spanishdict.com/translate/diecisiete"
+  },
+  {
+    "itemId": "19c29d38-1b90-4f52-b9b3-6c3ce60eacd1",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'eighteen'.",
+    "correctAnswer": "{{es-ES|dieciocho||die-SEEO-cho}}",
+    "incorrectAnswers": [
+      "{{es-ES|diecinueve||die-see-NUE-be}}",
+      "{{es-ES|veinte||BEIN-te}}",
+      "{{es-ES|treinta||TREIN-ta}}"
+    ],
+    "explanation": "'dieciocho' is the word for 'eighteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "eighteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/dieciocho"
+  },
+  {
+    "itemId": "8372b8cf-f66a-4b04-9cdd-b412b7ce20f2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'nineteen'?",
+    "correctAnswer": "{{es-ES|diecinueve||die-see-NUE-be}}",
+    "incorrectAnswers": [
+      "{{es-ES|veinte||BEIN-te}}",
+      "{{es-ES|treinta||TREIN-ta}}",
+      "{{es-ES|cuarenta||cua-REN-ta}}"
+    ],
+    "explanation": "'diecinueve' is the word for 'nineteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "nineteen"
+    ],
+    "source": "https://www.spanishdict.com/translate/diecinueve"
+  },
+  {
+    "itemId": "26adbc77-7b5f-4426-b1b7-79a79ba6f461",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'twenty'?",
+    "correctAnswer": "{{es-ES|veinte||BEIN-te}}",
+    "incorrectAnswers": [
+      "{{es-ES|treinta||TREIN-ta}}",
+      "{{es-ES|cuarenta||cua-REN-ta}}",
+      "{{es-ES|cincuenta||seen-CUEN-ta}}"
+    ],
+    "explanation": "'veinte' is the word for 'twenty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "twenty"
+    ],
+    "source": "https://www.spanishdict.com/translate/veinte"
+  },
+  {
+    "itemId": "618cb5b3-5bbf-43b5-ac6f-97e21134f7f2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'thirty' in everyday use?",
+    "correctAnswer": "{{es-ES|treinta||TREIN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|cuarenta||cua-REN-ta}}",
+      "{{es-ES|cincuenta||seen-CUEN-ta}}",
+      "{{es-ES|sesenta||se-SEN-ta}}"
+    ],
+    "explanation": "'treinta' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "thirty"
+    ],
+    "source": "https://www.spanishdict.com/translate/treinta"
+  },
+  {
+    "itemId": "9c719d9a-429d-4652-a005-5abc9b562388",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'forty'.",
+    "correctAnswer": "{{es-ES|cuarenta||cua-REN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|cincuenta||seen-CUEN-ta}}",
+      "{{es-ES|sesenta||se-SEN-ta}}",
+      "{{es-ES|setenta||se-TEN-ta}}"
+    ],
+    "explanation": "'cuarenta' is the word for 'forty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "forty"
+    ],
+    "source": "https://www.spanishdict.com/translate/cuarenta"
+  },
+  {
+    "itemId": "f7360881-569c-4c01-98dc-4cc84100ac43",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'fifty'?",
+    "correctAnswer": "{{es-ES|cincuenta||seen-CUEN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|sesenta||se-SEN-ta}}",
+      "{{es-ES|setenta||se-TEN-ta}}",
+      "{{es-ES|ochenta||o-CHEN-ta}}"
+    ],
+    "explanation": "'cincuenta' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "fifty"
+    ],
+    "source": "https://www.spanishdict.com/translate/cincuenta"
+  },
+  {
+    "itemId": "e8ba3f38-3b90-4cc0-bab0-24c3d6aa11dc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'sixty'?",
+    "correctAnswer": "{{es-ES|sesenta||se-SEN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|setenta||se-TEN-ta}}",
+      "{{es-ES|ochenta||o-CHEN-ta}}",
+      "{{es-ES|noventa||no-BEN-ta}}"
+    ],
+    "explanation": "'sesenta' is the word for 'sixty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "sixty"
+    ],
+    "source": "https://www.spanishdict.com/translate/sesenta"
+  },
+  {
+    "itemId": "f1218185-ed3a-4cb0-ba7a-556281c3f54c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'seventy' in everyday use?",
+    "correctAnswer": "{{es-ES|setenta||se-TEN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|ochenta||o-CHEN-ta}}",
+      "{{es-ES|noventa||no-BEN-ta}}",
+      "{{es-ES|cien||SEEEN}}"
+    ],
+    "explanation": "'setenta' is the word for 'seventy'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "seventy"
+    ],
+    "source": "https://www.spanishdict.com/translate/setenta"
+  },
+  {
+    "itemId": "cd95e250-d5f2-4440-b578-5f4103c84bdb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'eighty'.",
+    "correctAnswer": "{{es-ES|ochenta||o-CHEN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|noventa||no-BEN-ta}}",
+      "{{es-ES|cien||SEEEN}}",
+      "{{es-ES|cuatro||CUA-tro}}"
+    ],
+    "explanation": "'ochenta' is the word for 'eighty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "eighty"
+    ],
+    "source": "https://www.spanishdict.com/translate/ochenta"
+  },
+  {
+    "itemId": "f973cdcb-9205-4922-b9cd-8864411d1050",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'ninety'?",
+    "correctAnswer": "{{es-ES|noventa||no-BEN-ta}}",
+    "incorrectAnswers": [
+      "{{es-ES|cien||SEEEN}}",
+      "{{es-ES|cuatro||CUA-tro}}",
+      "{{es-ES|cinco||SEEN-co}}"
+    ],
+    "explanation": "'noventa' is the word for 'ninety'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "ninety"
+    ],
+    "source": "https://www.spanishdict.com/translate/noventa"
+  },
+  {
+    "itemId": "ed5025f4-9283-40b6-a162-0595641a281e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'one hundred'?",
+    "correctAnswer": "{{es-ES|cien||SEEEN}}",
+    "incorrectAnswers": [
+      "{{es-ES|cuatro||CUA-tro}}",
+      "{{es-ES|cinco||SEEN-co}}",
+      "{{es-ES|seis||SEIS}}"
+    ],
+    "explanation": "'cien' is the word for 'one hundred'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers",
+      "one-hundred"
+    ],
+    "source": "https://www.spanishdict.com/translate/cien"
+  },
+  {
+    "itemId": "d53dfb43-796b-463a-af39-cc771db5289c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'first'?",
+    "correctAnswer": "{{es-ES|primero||pri-ME-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|segundo||se-GUN-do}}",
+      "{{es-ES|tercero||ter-SEH-ro}}",
+      "{{es-ES|mitad||mi-TAD}}"
+    ],
+    "explanation": "'primero' is the word for 'first'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers",
+      "first"
+    ],
+    "source": "https://www.spanishdict.com/translate/primero"
+  },
+  {
+    "itemId": "6a04f1cb-c12d-4963-b2e0-872167fd56c7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'second' in everyday use?",
+    "correctAnswer": "{{es-ES|segundo||se-GUN-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|tercero||ter-SEH-ro}}",
+      "{{es-ES|mitad||mi-TAD}}",
+      "{{es-ES|cuarto||CUAR-to}}"
+    ],
+    "explanation": "'segundo' is the word for 'second'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers",
+      "second"
+    ],
+    "source": "https://www.spanishdict.com/translate/segundo"
+  },
+  {
+    "itemId": "cb58bc5b-5001-49d3-a465-4f54b0f3686d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'third'.",
+    "correctAnswer": "{{es-ES|tercero||ter-SEH-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|mitad||mi-TAD}}",
+      "{{es-ES|cuarto||CUAR-to}}",
+      "{{es-ES|primero||pri-ME-ro}}"
+    ],
+    "explanation": "'tercero' is the word for 'third'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers",
+      "third"
+    ],
+    "source": "https://www.spanishdict.com/translate/tercero"
+  },
+  {
+    "itemId": "8297fb55-d833-4b97-8026-e42b1156fc70",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'a half'?",
+    "correctAnswer": "{{es-ES|mitad||mi-TAD}}",
+    "incorrectAnswers": [
+      "{{es-ES|cuarto||CUAR-to}}",
+      "{{es-ES|primero||pri-ME-ro}}",
+      "{{es-ES|segundo||se-GUN-do}}"
+    ],
+    "explanation": "'mitad' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers",
+      "half"
+    ],
+    "source": "https://www.spanishdict.com/translate/mitad"
+  },
+  {
+    "itemId": "6fd02ce3-a7e3-42ff-872b-4c4de6841c5a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'a quarter'?",
+    "correctAnswer": "{{es-ES|cuarto||CUAR-to}}",
+    "incorrectAnswers": [
+      "{{es-ES|primero||pri-ME-ro}}",
+      "{{es-ES|segundo||se-GUN-do}}",
+      "{{es-ES|tercero||ter-SEH-ro}}"
+    ],
+    "explanation": "'cuarto' is the word for 'a quarter'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers",
+      "quarter"
+    ],
+    "source": "https://www.spanishdict.com/translate/cuarto"
+  },
+  {
+    "itemId": "c7e04601-6b68-4ee4-acf6-d98031d5c6bd",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'Monday'?",
+    "correctAnswer": "{{es-ES|lunes||LU-nes}}",
+    "incorrectAnswers": [
+      "{{es-ES|martes||MAR-tes}}",
+      "{{es-ES|miércoles||mier-CO-les}}",
+      "{{es-ES|jueves||HUE-bes}}"
+    ],
+    "explanation": "'lunes' means 'Monday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "monday"
+    ],
+    "source": "https://www.spanishdict.com/translate/lunes"
+  },
+  {
+    "itemId": "668f6cc4-092c-45e6-96ed-dee08a6e62d0",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'Tuesday' in everyday use?",
+    "correctAnswer": "{{es-ES|martes||MAR-tes}}",
+    "incorrectAnswers": [
+      "{{es-ES|miércoles||mier-CO-les}}",
+      "{{es-ES|jueves||HUE-bes}}",
+      "{{es-ES|viernes||BIER-nes}}"
+    ],
+    "explanation": "'martes' means 'Tuesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "tuesday"
+    ],
+    "source": "https://www.spanishdict.com/translate/martes"
+  },
+  {
+    "itemId": "6b2e5917-de0b-445d-ae4e-de6a57d80b3b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'Wednesday'.",
+    "correctAnswer": "{{es-ES|miércoles||mier-CO-les}}",
+    "incorrectAnswers": [
+      "{{es-ES|jueves||HUE-bes}}",
+      "{{es-ES|viernes||BIER-nes}}",
+      "{{es-ES|sábado||sa-BA-do}}"
+    ],
+    "explanation": "'miércoles' means 'Wednesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "wednesday"
+    ],
+    "source": "https://www.spanishdict.com/translate/mi%C3%A9rcoles"
+  },
+  {
+    "itemId": "2cf4cd7b-4a8a-4123-b945-00e6b8e1ded8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'Thursday'?",
+    "correctAnswer": "{{es-ES|jueves||HUE-bes}}",
+    "incorrectAnswers": [
+      "{{es-ES|viernes||BIER-nes}}",
+      "{{es-ES|sábado||sa-BA-do}}",
+      "{{es-ES|domingo||do-MIN-go}}"
+    ],
+    "explanation": "'jueves' means 'Thursday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "thursday"
+    ],
+    "source": "https://www.spanishdict.com/translate/jueves"
+  },
+  {
+    "itemId": "e8234891-7c48-46fb-9b67-9e01564c10c9",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'Friday'?",
+    "correctAnswer": "{{es-ES|viernes||BIER-nes}}",
+    "incorrectAnswers": [
+      "{{es-ES|sábado||sa-BA-do}}",
+      "{{es-ES|domingo||do-MIN-go}}",
+      "{{es-ES|lunes||LU-nes}}"
+    ],
+    "explanation": "'viernes' means 'Friday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "friday"
+    ],
+    "source": "https://www.spanishdict.com/translate/viernes"
+  },
+  {
+    "itemId": "55573c4b-fb63-4151-bc4d-71fe58ada41a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'Saturday' in everyday use?",
+    "correctAnswer": "{{es-ES|sábado||sa-BA-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|domingo||do-MIN-go}}",
+      "{{es-ES|lunes||LU-nes}}",
+      "{{es-ES|martes||MAR-tes}}"
+    ],
+    "explanation": "'sábado' means 'Saturday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "saturday"
+    ],
+    "source": "https://www.spanishdict.com/translate/s%C3%A1bado"
+  },
+  {
+    "itemId": "7e88d0b8-d9b9-4cfe-a47c-c048525d9dd6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'Sunday'.",
+    "correctAnswer": "{{es-ES|domingo||do-MIN-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|lunes||LU-nes}}",
+      "{{es-ES|martes||MAR-tes}}",
+      "{{es-ES|miércoles||mier-CO-les}}"
+    ],
+    "explanation": "'domingo' means 'Sunday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "sunday"
+    ],
+    "source": "https://www.spanishdict.com/translate/domingo"
+  },
+  {
+    "itemId": "2f011dea-ddd9-41b5-90b4-3896fbb04498",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'January'?",
+    "correctAnswer": "{{es-ES|enero||e-NE-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|febrero||fe-BRE-ro}}",
+      "{{es-ES|marzo||MAR-zo}}",
+      "{{es-ES|abril||a-BRIL}}"
+    ],
+    "explanation": "'enero' means 'January'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "january"
+    ],
+    "source": "https://www.spanishdict.com/translate/enero"
+  },
+  {
+    "itemId": "f29b970a-8f7e-4250-99f1-6287be9fb62b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'February' in everyday use?",
+    "correctAnswer": "{{es-ES|febrero||fe-BRE-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|marzo||MAR-zo}}",
+      "{{es-ES|abril||a-BRIL}}",
+      "{{es-ES|mayo||MAYO}}"
+    ],
+    "explanation": "'febrero' means 'February'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "february"
+    ],
+    "source": "https://www.spanishdict.com/translate/febrero"
+  },
+  {
+    "itemId": "2dc2f446-1285-41c2-8cd8-12b19cf80e14",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'March'.",
+    "correctAnswer": "{{es-ES|marzo||MAR-zo}}",
+    "incorrectAnswers": [
+      "{{es-ES|abril||a-BRIL}}",
+      "{{es-ES|mayo||MAYO}}",
+      "{{es-ES|junio||HU-nio}}"
+    ],
+    "explanation": "'marzo' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "march"
+    ],
+    "source": "https://www.spanishdict.com/translate/marzo"
+  },
+  {
+    "itemId": "cb50bf7c-2dd7-419f-8a95-8b92865c43f7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'April'?",
+    "correctAnswer": "{{es-ES|abril||a-BRIL}}",
+    "incorrectAnswers": [
+      "{{es-ES|mayo||MAYO}}",
+      "{{es-ES|junio||HU-nio}}",
+      "{{es-ES|julio||HU-lio}}"
+    ],
+    "explanation": "'abril' means 'April'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "april"
+    ],
+    "source": "https://www.spanishdict.com/translate/abril"
+  },
+  {
+    "itemId": "49502a63-fc0a-48b7-a493-40662fb678bf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'May'?",
+    "correctAnswer": "{{es-ES|mayo||MAYO}}",
+    "incorrectAnswers": [
+      "{{es-ES|junio||HU-nio}}",
+      "{{es-ES|julio||HU-lio}}",
+      "{{es-ES|agosto||a-GOS-to}}"
+    ],
+    "explanation": "'mayo' means 'May'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "may"
+    ],
+    "source": "https://www.spanishdict.com/translate/mayo"
+  },
+  {
+    "itemId": "93d84ac7-02c1-4217-9b9f-f1748fba8854",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'June' in everyday use?",
+    "correctAnswer": "{{es-ES|junio||HU-nio}}",
+    "incorrectAnswers": [
+      "{{es-ES|julio||HU-lio}}",
+      "{{es-ES|agosto||a-GOS-to}}",
+      "{{es-ES|septiembre||sep-TIEM-bre}}"
+    ],
+    "explanation": "'junio' means 'June'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "june"
+    ],
+    "source": "https://www.spanishdict.com/translate/junio"
+  },
+  {
+    "itemId": "e3da1310-746f-4c3d-ad7d-159111ade89f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'July'.",
+    "correctAnswer": "{{es-ES|julio||HU-lio}}",
+    "incorrectAnswers": [
+      "{{es-ES|agosto||a-GOS-to}}",
+      "{{es-ES|septiembre||sep-TIEM-bre}}",
+      "{{es-ES|octubre||oc-TU-bre}}"
+    ],
+    "explanation": "'julio' means 'July'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "july"
+    ],
+    "source": "https://www.spanishdict.com/translate/julio"
+  },
+  {
+    "itemId": "5db59a36-dadc-4ca4-b6c5-fe4be2f64b45",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'August'?",
+    "correctAnswer": "{{es-ES|agosto||a-GOS-to}}",
+    "incorrectAnswers": [
+      "{{es-ES|septiembre||sep-TIEM-bre}}",
+      "{{es-ES|octubre||oc-TU-bre}}",
+      "{{es-ES|noviembre||no-BIEM-bre}}"
+    ],
+    "explanation": "'agosto' means 'August'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "august"
+    ],
+    "source": "https://www.spanishdict.com/translate/agosto"
+  },
+  {
+    "itemId": "7e23af96-a97c-4d60-8a0b-a14b36462463",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'September'?",
+    "correctAnswer": "{{es-ES|septiembre||sep-TIEM-bre}}",
+    "incorrectAnswers": [
+      "{{es-ES|octubre||oc-TU-bre}}",
+      "{{es-ES|noviembre||no-BIEM-bre}}",
+      "{{es-ES|diciembre||di-SEEEM-bre}}"
+    ],
+    "explanation": "'septiembre' means 'September'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "september"
+    ],
+    "source": "https://www.spanishdict.com/translate/septiembre"
+  },
+  {
+    "itemId": "61a2e742-2951-444c-abf6-b5fd92de19ef",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'October' in everyday use?",
+    "correctAnswer": "{{es-ES|octubre||oc-TU-bre}}",
+    "incorrectAnswers": [
+      "{{es-ES|noviembre||no-BIEM-bre}}",
+      "{{es-ES|diciembre||di-SEEEM-bre}}",
+      "{{es-ES|enero||e-NE-ro}}"
+    ],
+    "explanation": "'octubre' means 'October'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "october"
+    ],
+    "source": "https://www.spanishdict.com/translate/octubre"
+  },
+  {
+    "itemId": "33637d87-feed-4134-938b-f5f03ceb9997",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'November'.",
+    "correctAnswer": "{{es-ES|noviembre||no-BIEM-bre}}",
+    "incorrectAnswers": [
+      "{{es-ES|diciembre||di-SEEEM-bre}}",
+      "{{es-ES|enero||e-NE-ro}}",
+      "{{es-ES|febrero||fe-BRE-ro}}"
+    ],
+    "explanation": "'noviembre' means 'November'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "november"
+    ],
+    "source": "https://www.spanishdict.com/translate/noviembre"
+  },
+  {
+    "itemId": "4fd8311d-9f0e-4977-84ef-4993ca31bbda",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'December'?",
+    "correctAnswer": "{{es-ES|diciembre||di-SEEEM-bre}}",
+    "incorrectAnswers": [
+      "{{es-ES|enero||e-NE-ro}}",
+      "{{es-ES|febrero||fe-BRE-ro}}",
+      "{{es-ES|marzo||MAR-zo}}"
+    ],
+    "explanation": "'diciembre' means 'December'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "december"
+    ],
+    "source": "https://www.spanishdict.com/translate/diciembre"
+  },
+  {
+    "itemId": "f880c3a8-0292-46a8-a45f-d322719cad12",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'spring'?",
+    "correctAnswer": "{{es-ES|primavera||pri-ma-BE-ra}}",
+    "incorrectAnswers": [
+      "{{es-ES|verano||be-RA-no}}",
+      "{{es-ES|otoño||o-TO-no}}",
+      "{{es-ES|invierno||in-BIER-no}}"
+    ],
+    "explanation": "'primavera' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "spring"
+    ],
+    "source": "https://www.spanishdict.com/translate/primavera"
+  },
+  {
+    "itemId": "05d13d75-f362-4757-914b-b61baa428e21",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'summer' in everyday use?",
+    "correctAnswer": "{{es-ES|verano||be-RA-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|otoño||o-TO-no}}",
+      "{{es-ES|invierno||in-BIER-no}}",
+      "{{es-ES|primavera||pri-ma-BE-ra}}"
+    ],
+    "explanation": "'verano' means 'summer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "summer"
+    ],
+    "source": "https://www.spanishdict.com/translate/verano"
+  },
+  {
+    "itemId": "db785a0d-de66-45eb-91eb-18b0937d2ffc",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'autumn'.",
+    "correctAnswer": "{{es-ES|otoño||o-TO-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|invierno||in-BIER-no}}",
+      "{{es-ES|primavera||pri-ma-BE-ra}}",
+      "{{es-ES|verano||be-RA-no}}"
+    ],
+    "explanation": "'otoño' means 'autumn'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "autumn"
+    ],
+    "source": "https://www.spanishdict.com/translate/oto%C3%B1o"
+  },
+  {
+    "itemId": "8d79e824-6909-4d34-aa0b-e83d8c19ca9e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'winter'?",
+    "correctAnswer": "{{es-ES|invierno||in-BIER-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|primavera||pri-ma-BE-ra}}",
+      "{{es-ES|verano||be-RA-no}}",
+      "{{es-ES|otoño||o-TO-no}}"
+    ],
+    "explanation": "'invierno' means 'winter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "winter"
+    ],
+    "source": "https://www.spanishdict.com/translate/invierno"
+  },
+  {
+    "itemId": "b9382c3d-8612-46f9-8144-c254276be374",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'morning'?",
+    "correctAnswer": "{{es-ES|mañana||ma-NA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|tarde||TAR-de}}",
+      "{{es-ES|noche||NO-che}}",
+      "{{es-ES|hora||HO-ra}}"
+    ],
+    "explanation": "'mañana' means 'morning'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "morning"
+    ],
+    "source": "https://www.spanishdict.com/translate/ma%C3%B1ana"
+  },
+  {
+    "itemId": "9575ea7f-249f-4e9b-9532-b04499312ee4",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'afternoon' in everyday use?",
+    "correctAnswer": "{{es-ES|tarde||TAR-de}}",
+    "incorrectAnswers": [
+      "{{es-ES|noche||NO-che}}",
+      "{{es-ES|hora||HO-ra}}",
+      "{{es-ES|minuto||mi-NU-to}}"
+    ],
+    "explanation": "'tarde' means 'afternoon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "afternoon"
+    ],
+    "source": "https://www.spanishdict.com/translate/tarde"
+  },
+  {
+    "itemId": "f8a0e3ac-6aea-4e72-972d-c7b51edbacd3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'evening'.",
+    "correctAnswer": "{{es-ES|noche||NO-che}}",
+    "incorrectAnswers": [
+      "{{es-ES|hora||HO-ra}}",
+      "{{es-ES|minuto||mi-NU-to}}",
+      "{{es-ES|semana||se-MA-na}}"
+    ],
+    "explanation": "'noche' means 'evening'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "evening"
+    ],
+    "source": "https://www.spanishdict.com/translate/noche"
+  },
+  {
+    "itemId": "3ca9e5fe-04ed-41fe-a102-d873b5d3feac",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'hour'?",
+    "correctAnswer": "{{es-ES|hora||HO-ra}}",
+    "incorrectAnswers": [
+      "{{es-ES|minuto||mi-NU-to}}",
+      "{{es-ES|semana||se-MA-na}}",
+      "{{es-ES|mes||MES}}"
+    ],
+    "explanation": "'hora' means 'hour'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "hour"
+    ],
+    "source": "https://www.spanishdict.com/translate/hora"
+  },
+  {
+    "itemId": "b11b1f46-6660-4083-b3b1-3dbf6a00bc13",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'minute'?",
+    "correctAnswer": "{{es-ES|minuto||mi-NU-to}}",
+    "incorrectAnswers": [
+      "{{es-ES|semana||se-MA-na}}",
+      "{{es-ES|mes||MES}}",
+      "{{es-ES|año||A-no}}"
+    ],
+    "explanation": "'minuto' means 'minute'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "minute"
+    ],
+    "source": "https://www.spanishdict.com/translate/minuto"
+  },
+  {
+    "itemId": "d0a4e0b6-f446-420e-8a40-2e817d0611af",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'week' in everyday use?",
+    "correctAnswer": "{{es-ES|semana||se-MA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|mes||MES}}",
+      "{{es-ES|año||A-no}}",
+      "{{es-ES|mañana||ma-NA-na}}"
+    ],
+    "explanation": "'semana' means 'week'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "week"
+    ],
+    "source": "https://www.spanishdict.com/translate/semana"
+  },
+  {
+    "itemId": "a2d0fbdd-3299-439e-af82-0b2a61141d19",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'month'.",
+    "correctAnswer": "{{es-ES|mes||MES}}",
+    "incorrectAnswers": [
+      "{{es-ES|año||A-no}}",
+      "{{es-ES|mañana||ma-NA-na}}",
+      "{{es-ES|tarde||TAR-de}}"
+    ],
+    "explanation": "'mes' means 'month'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "month"
+    ],
+    "source": "https://www.spanishdict.com/translate/mes"
+  },
+  {
+    "itemId": "ed08d9ef-0b1c-45dc-9861-234b1bfeba63",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'year'?",
+    "correctAnswer": "{{es-ES|año||A-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|mañana||ma-NA-na}}",
+      "{{es-ES|tarde||TAR-de}}",
+      "{{es-ES|noche||NO-che}}"
+    ],
+    "explanation": "'año' means 'year'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time",
+      "year"
+    ],
+    "source": "https://www.spanishdict.com/translate/a%C3%B1o"
+  },
+  {
+    "itemId": "81a61e78-2aad-4ecb-bb6b-d13b7c52502b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'today'?",
+    "correctAnswer": "{{es-ES|hoy||HOY}}",
+    "incorrectAnswers": [
+      "{{es-ES|mañana||ma-NA-na}}",
+      "{{es-ES|ayer||AYER}}",
+      "{{es-ES|ahora||a-HO-ra}}"
+    ],
+    "explanation": "'hoy' is the word for 'today'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "today"
+    ],
+    "source": "https://www.spanishdict.com/translate/hoy"
+  },
+  {
+    "itemId": "02d3e2a9-cf23-47f3-b6e8-984a0b6311f3",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'tomorrow' in everyday use?",
+    "correctAnswer": "{{es-ES|mañana||ma-NA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|ayer||AYER}}",
+      "{{es-ES|ahora||a-HO-ra}}",
+      "{{es-ES|luego||LUE-go}}"
+    ],
+    "explanation": "'mañana' is the word for 'tomorrow'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "tomorrow"
+    ],
+    "source": "https://www.spanishdict.com/translate/ma%C3%B1ana"
+  },
+  {
+    "itemId": "e9a7eca0-6852-4bf9-9a7c-fde331b24ab7",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'yesterday'.",
+    "correctAnswer": "{{es-ES|ayer||AYER}}",
+    "incorrectAnswers": [
+      "{{es-ES|ahora||a-HO-ra}}",
+      "{{es-ES|luego||LUE-go}}",
+      "{{es-ES|antes||AN-tes}}"
+    ],
+    "explanation": "'ayer' is the word for 'yesterday'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "yesterday"
+    ],
+    "source": "https://www.spanishdict.com/translate/ayer"
+  },
+  {
+    "itemId": "cf4f66fc-e763-4ee9-8f07-debec6ec8029",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'now'?",
+    "correctAnswer": "{{es-ES|ahora||a-HO-ra}}",
+    "incorrectAnswers": [
+      "{{es-ES|luego||LUE-go}}",
+      "{{es-ES|antes||AN-tes}}",
+      "{{es-ES|hoy||HOY}}"
+    ],
+    "explanation": "'ahora' is the word for 'now'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "now"
+    ],
+    "source": "https://www.spanishdict.com/translate/ahora"
+  },
+  {
+    "itemId": "f5ee049e-92ae-48e8-986a-f108c259760e",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'later'?",
+    "correctAnswer": "{{es-ES|luego||LUE-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|antes||AN-tes}}",
+      "{{es-ES|hoy||HOY}}",
+      "{{es-ES|mañana||ma-NA-na}}"
+    ],
+    "explanation": "'luego' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "later"
+    ],
+    "source": "https://www.spanishdict.com/translate/luego"
+  },
+  {
+    "itemId": "c684d70b-6948-4103-bf7a-159dc523c878",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'before' in everyday use?",
+    "correctAnswer": "{{es-ES|antes||AN-tes}}",
+    "incorrectAnswers": [
+      "{{es-ES|hoy||HOY}}",
+      "{{es-ES|mañana||ma-NA-na}}",
+      "{{es-ES|ayer||AYER}}"
+    ],
+    "explanation": "'antes' is the word for 'before'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time",
+      "before"
+    ],
+    "source": "https://www.spanishdict.com/translate/antes"
+  },
+  {
+    "itemId": "17108b83-626c-418b-a4f3-48fc9b6fff94",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'red'?",
+    "correctAnswer": "{{es-ES|rojo||RO-ho}}",
+    "incorrectAnswers": [
+      "{{es-ES|azul||a-ZUL}}",
+      "{{es-ES|verde||BER-de}}",
+      "{{es-ES|amarillo||a-MA-riyo}}"
+    ],
+    "explanation": "'rojo' means 'red'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "red"
+    ],
+    "source": "https://www.spanishdict.com/translate/rojo"
+  },
+  {
+    "itemId": "b9ed77e4-ace5-4eee-bd74-331e84cbc1a6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'blue' in everyday use?",
+    "correctAnswer": "{{es-ES|azul||a-ZUL}}",
+    "incorrectAnswers": [
+      "{{es-ES|verde||BER-de}}",
+      "{{es-ES|amarillo||a-MA-riyo}}",
+      "{{es-ES|negro||NE-gro}}"
+    ],
+    "explanation": "'azul' means 'blue'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "blue"
+    ],
+    "source": "https://www.spanishdict.com/translate/azul"
+  },
+  {
+    "itemId": "4616c99d-3927-477c-b076-7a22231ad876",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'green'.",
+    "correctAnswer": "{{es-ES|verde||BER-de}}",
+    "incorrectAnswers": [
+      "{{es-ES|amarillo||a-MA-riyo}}",
+      "{{es-ES|negro||NE-gro}}",
+      "{{es-ES|blanco||BLAN-co}}"
+    ],
+    "explanation": "'verde' means 'green'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "green"
+    ],
+    "source": "https://www.spanishdict.com/translate/verde"
+  },
+  {
+    "itemId": "595fca08-eef6-4d2e-8824-e76dcb4b78b6",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'yellow'?",
+    "correctAnswer": "{{es-ES|amarillo||a-MA-riyo}}",
+    "incorrectAnswers": [
+      "{{es-ES|negro||NE-gro}}",
+      "{{es-ES|blanco||BLAN-co}}",
+      "{{es-ES|gris||GRIS}}"
+    ],
+    "explanation": "'amarillo' means 'yellow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "yellow"
+    ],
+    "source": "https://www.spanishdict.com/translate/amarillo"
+  },
+  {
+    "itemId": "f5c93dc0-2900-4163-978a-5c1f99d68c49",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'black'?",
+    "correctAnswer": "{{es-ES|negro||NE-gro}}",
+    "incorrectAnswers": [
+      "{{es-ES|blanco||BLAN-co}}",
+      "{{es-ES|gris||GRIS}}",
+      "{{es-ES|marrón||MAR-ron}}"
+    ],
+    "explanation": "'negro' means 'black'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "black"
+    ],
+    "source": "https://www.spanishdict.com/translate/negro"
+  },
+  {
+    "itemId": "bab5db09-dbdd-470b-845e-2b5d9574e24c",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'white' in everyday use?",
+    "correctAnswer": "{{es-ES|blanco||BLAN-co}}",
+    "incorrectAnswers": [
+      "{{es-ES|gris||GRIS}}",
+      "{{es-ES|marrón||MAR-ron}}",
+      "{{es-ES|naranja||na-RAN-ha}}"
+    ],
+    "explanation": "'blanco' means 'white'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "white"
+    ],
+    "source": "https://www.spanishdict.com/translate/blanco"
+  },
+  {
+    "itemId": "68fe15d1-903f-4abe-8bff-17962182200b",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'gray'.",
+    "correctAnswer": "{{es-ES|gris||GRIS}}",
+    "incorrectAnswers": [
+      "{{es-ES|marrón||MAR-ron}}",
+      "{{es-ES|naranja||na-RAN-ha}}",
+      "{{es-ES|rosa||RO-sa}}"
+    ],
+    "explanation": "'gris' means 'gray'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "gray"
+    ],
+    "source": "https://www.spanishdict.com/translate/gris"
+  },
+  {
+    "itemId": "59c42391-267f-4bbf-aa1d-e83daaf26e2f",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'brown'?",
+    "correctAnswer": "{{es-ES|marrón||MAR-ron}}",
+    "incorrectAnswers": [
+      "{{es-ES|naranja||na-RAN-ha}}",
+      "{{es-ES|rosa||RO-sa}}",
+      "{{es-ES|morado||mo-RA-do}}"
+    ],
+    "explanation": "'marrón' means 'brown'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "brown"
+    ],
+    "source": "https://www.spanishdict.com/translate/marr%C3%B3n"
+  },
+  {
+    "itemId": "83f26136-760b-41e2-b527-bf0ecd9732f2",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'orange'?",
+    "correctAnswer": "{{es-ES|naranja||na-RAN-ha}}",
+    "incorrectAnswers": [
+      "{{es-ES|rosa||RO-sa}}",
+      "{{es-ES|morado||mo-RA-do}}",
+      "{{es-ES|claro||CLA-ro}}"
+    ],
+    "explanation": "'naranja' means 'orange'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "orange"
+    ],
+    "source": "https://www.spanishdict.com/translate/naranja"
+  },
+  {
+    "itemId": "c5a7cc9e-874b-48ee-b3f0-7cfd1ae7f21a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'pink' in everyday use?",
+    "correctAnswer": "{{es-ES|rosa||RO-sa}}",
+    "incorrectAnswers": [
+      "{{es-ES|morado||mo-RA-do}}",
+      "{{es-ES|claro||CLA-ro}}",
+      "{{es-ES|oscuro||os-CU-ro}}"
+    ],
+    "explanation": "'rosa' means 'pink'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "pink"
+    ],
+    "source": "https://www.spanishdict.com/translate/rosa"
+  },
+  {
+    "itemId": "1f91357f-c585-4370-b28e-7c097ae4fc39",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'purple'.",
+    "correctAnswer": "{{es-ES|morado||mo-RA-do}}",
+    "incorrectAnswers": [
+      "{{es-ES|claro||CLA-ro}}",
+      "{{es-ES|oscuro||os-CU-ro}}",
+      "{{es-ES|rojo||RO-ho}}"
+    ],
+    "explanation": "'morado' means 'purple'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "purple"
+    ],
+    "source": "https://www.spanishdict.com/translate/morado"
+  },
+  {
+    "itemId": "66bdb93f-627e-4dfd-bc78-1965669596a8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'light'?",
+    "correctAnswer": "{{es-ES|claro||CLA-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|oscuro||os-CU-ro}}",
+      "{{es-ES|rojo||RO-ho}}",
+      "{{es-ES|azul||a-ZUL}}"
+    ],
+    "explanation": "'claro' means 'light'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "light"
+    ],
+    "source": "https://www.spanishdict.com/translate/claro"
+  },
+  {
+    "itemId": "c2b7bec7-e692-4999-ab36-d5be908ffbaf",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'dark'?",
+    "correctAnswer": "{{es-ES|oscuro||os-CU-ro}}",
+    "incorrectAnswers": [
+      "{{es-ES|rojo||RO-ho}}",
+      "{{es-ES|azul||a-ZUL}}",
+      "{{es-ES|verde||BER-de}}"
+    ],
+    "explanation": "'oscuro' means 'dark'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors",
+      "dark"
+    ],
+    "source": "https://www.spanishdict.com/translate/oscuro"
+  },
+  {
+    "itemId": "2c312a3b-d5bf-4a3d-abdf-82cc4615ae4d",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'mother'?",
+    "correctAnswer": "{{es-ES|madre||MA-dre}}",
+    "incorrectAnswers": [
+      "{{es-ES|padre||PA-dre}}",
+      "{{es-ES|hermano||her-MA-no}}",
+      "{{es-ES|hermana||her-MA-na}}"
+    ],
+    "explanation": "'madre' means 'mother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "mother"
+    ],
+    "source": "https://www.spanishdict.com/translate/madre"
+  },
+  {
+    "itemId": "84908817-8940-4f36-bfc6-4a7c76050126",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'father' in everyday use?",
+    "correctAnswer": "{{es-ES|padre||PA-dre}}",
+    "incorrectAnswers": [
+      "{{es-ES|hermano||her-MA-no}}",
+      "{{es-ES|hermana||her-MA-na}}",
+      "{{es-ES|hijo||HI-ho}}"
+    ],
+    "explanation": "'padre' means 'father'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "father"
+    ],
+    "source": "https://www.spanishdict.com/translate/padre"
+  },
+  {
+    "itemId": "0aadbc3d-3706-4d72-bb27-2bbe34755e70",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'brother'.",
+    "correctAnswer": "{{es-ES|hermano||her-MA-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|hermana||her-MA-na}}",
+      "{{es-ES|hijo||HI-ho}}",
+      "{{es-ES|hija||HI-ha}}"
+    ],
+    "explanation": "'hermano' means 'brother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "brother"
+    ],
+    "source": "https://www.spanishdict.com/translate/hermano"
+  },
+  {
+    "itemId": "7c8e871d-1e8d-49b2-bfb4-34e1fdc34668",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'sister'?",
+    "correctAnswer": "{{es-ES|hermana||her-MA-na}}",
+    "incorrectAnswers": [
+      "{{es-ES|hijo||HI-ho}}",
+      "{{es-ES|hija||HI-ha}}",
+      "{{es-ES|esposo||es-PO-so}}"
+    ],
+    "explanation": "'hermana' means 'sister'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "sister"
+    ],
+    "source": "https://www.spanishdict.com/translate/hermana"
+  },
+  {
+    "itemId": "78721951-88f9-4a30-b53d-bbd8d9463b08",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'son'?",
+    "correctAnswer": "{{es-ES|hijo||HI-ho}}",
+    "incorrectAnswers": [
+      "{{es-ES|hija||HI-ha}}",
+      "{{es-ES|esposo||es-PO-so}}",
+      "{{es-ES|esposa||es-PO-sa}}"
+    ],
+    "explanation": "'hijo' means 'son'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "son"
+    ],
+    "source": "https://www.spanishdict.com/translate/hijo"
+  },
+  {
+    "itemId": "29931c59-3cd1-42eb-a578-65ba5483672a",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'daughter' in everyday use?",
+    "correctAnswer": "{{es-ES|hija||HI-ha}}",
+    "incorrectAnswers": [
+      "{{es-ES|esposo||es-PO-so}}",
+      "{{es-ES|esposa||es-PO-sa}}",
+      "{{es-ES|amigo||a-MI-go}}"
+    ],
+    "explanation": "'hija' means 'daughter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "daughter"
+    ],
+    "source": "https://www.spanishdict.com/translate/hija"
+  },
+  {
+    "itemId": "800b622c-d3bf-4f4c-a350-703c70d53ed8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Choose the Spanish word for 'husband'.",
+    "correctAnswer": "{{es-ES|esposo||es-PO-so}}",
+    "incorrectAnswers": [
+      "{{es-ES|esposa||es-PO-sa}}",
+      "{{es-ES|amigo||a-MI-go}}",
+      "{{es-ES|vecino||be-SEE-no}}"
+    ],
+    "explanation": "'esposo' means 'husband'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "husband"
+    ],
+    "source": "https://www.spanishdict.com/translate/esposo"
+  },
+  {
+    "itemId": "049ecae0-e3e9-4857-95e1-c3bd7b996ddb",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Spanish word for 'wife'?",
+    "correctAnswer": "{{es-ES|esposa||es-PO-sa}}",
+    "incorrectAnswers": [
+      "{{es-ES|amigo||a-MI-go}}",
+      "{{es-ES|vecino||be-SEE-no}}",
+      "{{es-ES|niño||NI-no}}"
+    ],
+    "explanation": "'esposa' means 'wife'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "wife"
+    ],
+    "source": "https://www.spanishdict.com/translate/esposa"
+  },
+  {
+    "itemId": "f7a8ea9b-4379-47e8-a33a-be575c6d9f37",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "In beginner Spanish, how do you say 'friend'?",
+    "correctAnswer": "{{es-ES|amigo||a-MI-go}}",
+    "incorrectAnswers": [
+      "{{es-ES|vecino||be-SEE-no}}",
+      "{{es-ES|niño||NI-no}}",
+      "{{es-ES|bebé||BE-be}}"
+    ],
+    "explanation": "'amigo' means 'friend'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "friend"
+    ],
+    "source": "https://www.spanishdict.com/translate/amigo"
+  },
+  {
+    "itemId": "af05852f-43fd-4156-9857-10e4d1152fc8",
+    "category": "languages",
+    "navigationKeyword1": "spanish",
+    "navigationKeyword2": "core",
+    "question": "Which Spanish word means 'neighbor' in everyday use?",
+    "correctAnswer": "{{es-ES|vecino||be-SEE-no}}",
+    "incorrectAnswers": [
+      "{{es-ES|niño||NI-no}}",
+      "{{es-ES|bebé||BE-be}}",
+      "{{es-ES|hombre||HOM-bre}}"
+    ],
+    "explanation": "'vecino' means 'neighbor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "spanish",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "neighbor"
+    ],
+    "source": "https://www.spanishdict.com/translate/vecino"
+  }
+]

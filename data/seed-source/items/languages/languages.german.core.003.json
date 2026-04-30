@@ -1,0 +1,2328 @@
+[
+  {
+    "itemId": "6dd62412-611c-43e1-ab58-cc75dd226830",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'work'.",
+    "correctAnswer": "{{de-DE|arbeiten||AR-beye-ten}}",
+    "incorrectAnswers": [
+      "{{de-DE|sprechen||SHPRE-chen}}",
+      "{{de-DE|hören||HO-ren}}",
+      "{{de-DE|sehen||SE-hen}}"
+    ],
+    "explanation": "'arbeiten' is the infinitive 'to work'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "work"
+    ],
+    "source": "https://www.wordreference.com/search?q=arbeiten"
+  },
+  {
+    "itemId": "25584f62-de26-4848-81cd-702cb93de087",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'speak'?",
+    "correctAnswer": "{{de-DE|sprechen||SHPRE-chen}}",
+    "incorrectAnswers": [
+      "{{de-DE|hören||HO-ren}}",
+      "{{de-DE|sehen||SE-hen}}",
+      "{{de-DE|lesen||LE-sen}}"
+    ],
+    "explanation": "'sprechen' is the infinitive 'to speak'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "speak"
+    ],
+    "source": "https://www.wordreference.com/search?q=sprechen"
+  },
+  {
+    "itemId": "10527dbd-8da4-4791-89ec-d819cfe88e36",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'hear'?",
+    "correctAnswer": "{{de-DE|hören||HO-ren}}",
+    "incorrectAnswers": [
+      "{{de-DE|sehen||SE-hen}}",
+      "{{de-DE|lesen||LE-sen}}",
+      "{{de-DE|schreiben||SHREYE-ben}}"
+    ],
+    "explanation": "'hören' is the infinitive 'to hear'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "hear"
+    ],
+    "source": "https://www.wordreference.com/search?q=h%C3%B6ren"
+  },
+  {
+    "itemId": "eff1ef36-a272-49ba-a4df-fac0ee6ca7d6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'see' in everyday use?",
+    "correctAnswer": "{{de-DE|sehen||SE-hen}}",
+    "incorrectAnswers": [
+      "{{de-DE|lesen||LE-sen}}",
+      "{{de-DE|schreiben||SHREYE-ben}}",
+      "{{de-DE|kaufen||KOW-fen}}"
+    ],
+    "explanation": "'sehen' is the infinitive 'to see'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "see"
+    ],
+    "source": "https://www.wordreference.com/search?q=sehen"
+  },
+  {
+    "itemId": "d07149ee-4224-49d1-8cf1-1c79d8e70d53",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'read'.",
+    "correctAnswer": "{{de-DE|lesen||LE-sen}}",
+    "incorrectAnswers": [
+      "{{de-DE|schreiben||SHREYE-ben}}",
+      "{{de-DE|kaufen||KOW-fen}}",
+      "{{de-DE|bezahlen||be-TSAH-len}}"
+    ],
+    "explanation": "'lesen' is the infinitive 'to read'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "read"
+    ],
+    "source": "https://www.wordreference.com/search?q=lesen"
+  },
+  {
+    "itemId": "659530d6-e86d-42b1-8a7c-ac1f32be0750",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'write'?",
+    "correctAnswer": "{{de-DE|schreiben||SHREYE-ben}}",
+    "incorrectAnswers": [
+      "{{de-DE|kaufen||KOW-fen}}",
+      "{{de-DE|bezahlen||be-TSAH-len}}",
+      "{{de-DE|öffnen||OFF-nen}}"
+    ],
+    "explanation": "'schreiben' is the infinitive 'to write'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "write"
+    ],
+    "source": "https://www.wordreference.com/search?q=schreiben"
+  },
+  {
+    "itemId": "7257a867-ef01-4c01-8048-eaed6c3f7440",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'buy'?",
+    "correctAnswer": "{{de-DE|kaufen||KOW-fen}}",
+    "incorrectAnswers": [
+      "{{de-DE|bezahlen||be-TSAH-len}}",
+      "{{de-DE|öffnen||OFF-nen}}",
+      "{{de-DE|schließen||SHLEES-sen}}"
+    ],
+    "explanation": "'kaufen' is the infinitive 'to buy'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "buy"
+    ],
+    "source": "https://www.wordreference.com/search?q=kaufen"
+  },
+  {
+    "itemId": "fe4c2ae7-3d15-4cc7-a6ee-6659073d8c55",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'pay' in everyday use?",
+    "correctAnswer": "{{de-DE|bezahlen||be-TSAH-len}}",
+    "incorrectAnswers": [
+      "{{de-DE|öffnen||OFF-nen}}",
+      "{{de-DE|schließen||SHLEES-sen}}",
+      "{{de-DE|geben||ge-BEN}}"
+    ],
+    "explanation": "'bezahlen' is the infinitive 'to pay'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "pay"
+    ],
+    "source": "https://www.wordreference.com/search?q=bezahlen"
+  },
+  {
+    "itemId": "ea8b6b1f-e444-4388-902c-80ecfdd86a4d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'open'.",
+    "correctAnswer": "{{de-DE|öffnen||OFF-nen}}",
+    "incorrectAnswers": [
+      "{{de-DE|schließen||SHLEES-sen}}",
+      "{{de-DE|geben||ge-BEN}}",
+      "{{de-DE|nehmen||NEH-men}}"
+    ],
+    "explanation": "'öffnen' is the infinitive 'to open'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "open"
+    ],
+    "source": "https://www.wordreference.com/search?q=%C3%B6ffnen"
+  },
+  {
+    "itemId": "52e74886-3d24-4447-b0d8-bd7eabcab8a8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'close'?",
+    "correctAnswer": "{{de-DE|schließen||SHLEES-sen}}",
+    "incorrectAnswers": [
+      "{{de-DE|geben||ge-BEN}}",
+      "{{de-DE|nehmen||NEH-men}}",
+      "{{de-DE|wissen||VIS-sen}}"
+    ],
+    "explanation": "'schließen' is the infinitive 'to close'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "close"
+    ],
+    "source": "https://www.wordreference.com/search?q=schlie%C3%9Fen"
+  },
+  {
+    "itemId": "23009109-aa4b-499c-8b80-36ea0b1576b4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'give'?",
+    "correctAnswer": "{{de-DE|geben||ge-BEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|nehmen||NEH-men}}",
+      "{{de-DE|wissen||VIS-sen}}",
+      "{{de-DE|mögen||MO-gen}}"
+    ],
+    "explanation": "'geben' is the infinitive 'to give'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "give"
+    ],
+    "source": "https://www.wordreference.com/search?q=geben"
+  },
+  {
+    "itemId": "6b1fcc83-4824-4809-9d04-b7bcc92c0433",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'take' in everyday use?",
+    "correctAnswer": "{{de-DE|nehmen||NEH-men}}",
+    "incorrectAnswers": [
+      "{{de-DE|wissen||VIS-sen}}",
+      "{{de-DE|mögen||MO-gen}}",
+      "{{de-DE|lieben||LEE-ben}}"
+    ],
+    "explanation": "'nehmen' is the infinitive 'to take'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "take"
+    ],
+    "source": "https://www.wordreference.com/search?q=nehmen"
+  },
+  {
+    "itemId": "b0467ff0-aaa1-4d97-b823-28a72c52afd1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'know'.",
+    "correctAnswer": "{{de-DE|wissen||VIS-sen}}",
+    "incorrectAnswers": [
+      "{{de-DE|mögen||MO-gen}}",
+      "{{de-DE|lieben||LEE-ben}}",
+      "{{de-DE|helfen||HEL-fen}}"
+    ],
+    "explanation": "'wissen' is the infinitive 'to know'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "know"
+    ],
+    "source": "https://www.wordreference.com/search?q=wissen"
+  },
+  {
+    "itemId": "a82904af-a6f6-40cc-880d-cfd79c9c0760",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'like'?",
+    "correctAnswer": "{{de-DE|mögen||MO-gen}}",
+    "incorrectAnswers": [
+      "{{de-DE|lieben||LEE-ben}}",
+      "{{de-DE|helfen||HEL-fen}}",
+      "{{de-DE|lernen||LER-nen}}"
+    ],
+    "explanation": "'mögen' is the infinitive 'to like'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "like"
+    ],
+    "source": "https://www.wordreference.com/search?q=m%C3%B6gen"
+  },
+  {
+    "itemId": "3f50d643-f93f-4b48-be32-88a48ba6dac9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'love'?",
+    "correctAnswer": "{{de-DE|lieben||LEE-ben}}",
+    "incorrectAnswers": [
+      "{{de-DE|helfen||HEL-fen}}",
+      "{{de-DE|lernen||LER-nen}}",
+      "{{de-DE|sein||SEYEN}}"
+    ],
+    "explanation": "'lieben' is the infinitive 'to love'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "love"
+    ],
+    "source": "https://www.wordreference.com/search?q=lieben"
+  },
+  {
+    "itemId": "8a43ae99-03bd-40b2-8cfa-063ffcd04600",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'help' in everyday use?",
+    "correctAnswer": "{{de-DE|helfen||HEL-fen}}",
+    "incorrectAnswers": [
+      "{{de-DE|lernen||LER-nen}}",
+      "{{de-DE|sein||SEYEN}}",
+      "{{de-DE|haben||HA-ben}}"
+    ],
+    "explanation": "'helfen' is the infinitive 'to help'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "help"
+    ],
+    "source": "https://www.wordreference.com/search?q=helfen"
+  },
+  {
+    "itemId": "9c3d894e-213c-400b-8b8a-99005bf8cb5b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'learn'.",
+    "correctAnswer": "{{de-DE|lernen||LER-nen}}",
+    "incorrectAnswers": [
+      "{{de-DE|sein||SEYEN}}",
+      "{{de-DE|haben||HA-ben}}",
+      "{{de-DE|wollen||VOL-len}}"
+    ],
+    "explanation": "'lernen' is the infinitive 'to learn'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "learn"
+    ],
+    "source": "https://www.wordreference.com/search?q=lernen"
+  },
+  {
+    "itemId": "380d01e8-1795-4fc0-b6b8-4e016c6c832f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'big'?",
+    "correctAnswer": "{{de-DE|groß||GROSS}}",
+    "incorrectAnswers": [
+      "{{de-DE|klein||KLEYEN}}",
+      "{{de-DE|neu||NOY}}",
+      "{{de-DE|alt||ALT}}"
+    ],
+    "explanation": "'groß' means 'big'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "big"
+    ],
+    "source": "https://www.wordreference.com/search?q=gro%C3%9F"
+  },
+  {
+    "itemId": "fb852de7-ddd8-4871-8d49-4493586c1f6a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'small' in everyday use?",
+    "correctAnswer": "{{de-DE|klein||KLEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|neu||NOY}}",
+      "{{de-DE|alt||ALT}}",
+      "{{de-DE|gut||GUT}}"
+    ],
+    "explanation": "'klein' means 'small'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "small"
+    ],
+    "source": "https://www.wordreference.com/search?q=klein"
+  },
+  {
+    "itemId": "b6883a83-5f88-4657-8fee-e43bcabd7133",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'new'.",
+    "correctAnswer": "{{de-DE|neu||NOY}}",
+    "incorrectAnswers": [
+      "{{de-DE|alt||ALT}}",
+      "{{de-DE|gut||GUT}}",
+      "{{de-DE|schlecht||SHLECHT}}"
+    ],
+    "explanation": "'neu' means 'new'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "new"
+    ],
+    "source": "https://www.wordreference.com/search?q=neu"
+  },
+  {
+    "itemId": "eb55bdbf-f21b-4ed3-9f1b-9de80c5a5c91",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'old'?",
+    "correctAnswer": "{{de-DE|alt||ALT}}",
+    "incorrectAnswers": [
+      "{{de-DE|gut||GUT}}",
+      "{{de-DE|schlecht||SHLECHT}}",
+      "{{de-DE|heiß||HEYESS}}"
+    ],
+    "explanation": "'alt' means 'old'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "old"
+    ],
+    "source": "https://www.wordreference.com/search?q=alt"
+  },
+  {
+    "itemId": "42361cfb-4d61-414e-b4c0-72b47f200ebf",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'good'?",
+    "correctAnswer": "{{de-DE|gut||GUT}}",
+    "incorrectAnswers": [
+      "{{de-DE|schlecht||SHLECHT}}",
+      "{{de-DE|heiß||HEYESS}}",
+      "{{de-DE|kalt||KALT}}"
+    ],
+    "explanation": "'gut' means 'good'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "good"
+    ],
+    "source": "https://www.wordreference.com/search?q=gut"
+  },
+  {
+    "itemId": "775be377-20c3-4e13-ab16-76a42e7388e9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'bad' in everyday use?",
+    "correctAnswer": "{{de-DE|schlecht||SHLECHT}}",
+    "incorrectAnswers": [
+      "{{de-DE|heiß||HEYESS}}",
+      "{{de-DE|kalt||KALT}}",
+      "{{de-DE|schnell||SHNELL}}"
+    ],
+    "explanation": "'schlecht' means 'bad'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "bad"
+    ],
+    "source": "https://www.wordreference.com/search?q=schlecht"
+  },
+  {
+    "itemId": "e1e18e54-2e28-4183-af04-23a8fd7268ab",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'hot'.",
+    "correctAnswer": "{{de-DE|heiß||HEYESS}}",
+    "incorrectAnswers": [
+      "{{de-DE|kalt||KALT}}",
+      "{{de-DE|schnell||SHNELL}}",
+      "{{de-DE|langsam||LANG-sam}}"
+    ],
+    "explanation": "'heiß' means 'hot'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "hot"
+    ],
+    "source": "https://www.wordreference.com/search?q=hei%C3%9F"
+  },
+  {
+    "itemId": "e94d984e-f343-430c-b1c9-3cb963a5e4df",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'cold'?",
+    "correctAnswer": "{{de-DE|kalt||KALT}}",
+    "incorrectAnswers": [
+      "{{de-DE|schnell||SHNELL}}",
+      "{{de-DE|langsam||LANG-sam}}",
+      "{{de-DE|leicht||LEYECHT}}"
+    ],
+    "explanation": "'kalt' means 'cold'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "cold"
+    ],
+    "source": "https://www.wordreference.com/search?q=kalt"
+  },
+  {
+    "itemId": "d804d6a3-8e56-46cf-8aa3-c7cd400f1bc1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'fast'?",
+    "correctAnswer": "{{de-DE|schnell||SHNELL}}",
+    "incorrectAnswers": [
+      "{{de-DE|langsam||LANG-sam}}",
+      "{{de-DE|leicht||LEYECHT}}",
+      "{{de-DE|schwierig||SHVEE-rig}}"
+    ],
+    "explanation": "'schnell' means 'fast'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "fast"
+    ],
+    "source": "https://www.wordreference.com/search?q=schnell"
+  },
+  {
+    "itemId": "1ed9c80f-dbc2-40ec-90e3-83aff5dee7cd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'slow' in everyday use?",
+    "correctAnswer": "{{de-DE|langsam||LANG-sam}}",
+    "incorrectAnswers": [
+      "{{de-DE|leicht||LEYECHT}}",
+      "{{de-DE|schwierig||SHVEE-rig}}",
+      "{{de-DE|sauber||SOW-ber}}"
+    ],
+    "explanation": "'langsam' means 'slow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "slow"
+    ],
+    "source": "https://www.wordreference.com/search?q=langsam"
+  },
+  {
+    "itemId": "6a0f6252-bd95-4ce0-834a-0d9d1edd7c95",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'easy'.",
+    "correctAnswer": "{{de-DE|leicht||LEYECHT}}",
+    "incorrectAnswers": [
+      "{{de-DE|schwierig||SHVEE-rig}}",
+      "{{de-DE|sauber||SOW-ber}}",
+      "{{de-DE|schmutzig||SHMUT-tsig}}"
+    ],
+    "explanation": "'leicht' means 'easy'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "easy"
+    ],
+    "source": "https://www.wordreference.com/search?q=leicht"
+  },
+  {
+    "itemId": "64947777-6e24-4580-bbeb-38ec4c7d2a9b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'difficult'?",
+    "correctAnswer": "{{de-DE|schwierig||SHVEE-rig}}",
+    "incorrectAnswers": [
+      "{{de-DE|sauber||SOW-ber}}",
+      "{{de-DE|schmutzig||SHMUT-tsig}}",
+      "{{de-DE|billig||BIL-lig}}"
+    ],
+    "explanation": "'schwierig' means 'difficult'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "difficult"
+    ],
+    "source": "https://www.wordreference.com/search?q=schwierig"
+  },
+  {
+    "itemId": "18cf99fd-c937-44fb-aad9-86898282a69b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'clean'?",
+    "correctAnswer": "{{de-DE|sauber||SOW-ber}}",
+    "incorrectAnswers": [
+      "{{de-DE|schmutzig||SHMUT-tsig}}",
+      "{{de-DE|billig||BIL-lig}}",
+      "{{de-DE|teuer||TOYER}}"
+    ],
+    "explanation": "'sauber' means 'clean'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "clean"
+    ],
+    "source": "https://www.wordreference.com/search?q=sauber"
+  },
+  {
+    "itemId": "6817bafe-a4ff-4c3b-b3a2-c167f846bd37",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'dirty' in everyday use?",
+    "correctAnswer": "{{de-DE|schmutzig||SHMUT-tsig}}",
+    "incorrectAnswers": [
+      "{{de-DE|billig||BIL-lig}}",
+      "{{de-DE|teuer||TOYER}}",
+      "{{de-DE|schön||SHON}}"
+    ],
+    "explanation": "'schmutzig' means 'dirty'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "dirty"
+    ],
+    "source": "https://www.wordreference.com/search?q=schmutzig"
+  },
+  {
+    "itemId": "e5c6bcca-db54-4007-8919-96743272f7b7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'cheap'.",
+    "correctAnswer": "{{de-DE|billig||BIL-lig}}",
+    "incorrectAnswers": [
+      "{{de-DE|teuer||TOYER}}",
+      "{{de-DE|schön||SHON}}",
+      "{{de-DE|hässlich||HASS-lich}}"
+    ],
+    "explanation": "'billig' means 'cheap'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "cheap"
+    ],
+    "source": "https://www.wordreference.com/search?q=billig"
+  },
+  {
+    "itemId": "dd94bafe-e70e-4370-b7b4-fb5af216dc9c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'expensive'?",
+    "correctAnswer": "{{de-DE|teuer||TOYER}}",
+    "incorrectAnswers": [
+      "{{de-DE|schön||SHON}}",
+      "{{de-DE|hässlich||HASS-lich}}",
+      "{{de-DE|lang||LANG}}"
+    ],
+    "explanation": "'teuer' means 'expensive'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "expensive"
+    ],
+    "source": "https://www.wordreference.com/search?q=teuer"
+  },
+  {
+    "itemId": "44bed2bf-a6a5-4763-86bc-9e48dd8757b0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'beautiful'?",
+    "correctAnswer": "{{de-DE|schön||SHON}}",
+    "incorrectAnswers": [
+      "{{de-DE|hässlich||HASS-lich}}",
+      "{{de-DE|lang||LANG}}",
+      "{{de-DE|kurz||KURTS}}"
+    ],
+    "explanation": "'schön' means 'beautiful'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "beautiful"
+    ],
+    "source": "https://www.wordreference.com/search?q=sch%C3%B6n"
+  },
+  {
+    "itemId": "f01d6866-7dae-4353-b7ac-0741ca475a43",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'ugly' in everyday use?",
+    "correctAnswer": "{{de-DE|hässlich||HASS-lich}}",
+    "incorrectAnswers": [
+      "{{de-DE|lang||LANG}}",
+      "{{de-DE|kurz||KURTS}}",
+      "{{de-DE|offen||OF-fen}}"
+    ],
+    "explanation": "'hässlich' means 'ugly'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "ugly"
+    ],
+    "source": "https://www.wordreference.com/search?q=h%C3%A4sslich"
+  },
+  {
+    "itemId": "93b4232c-929f-45cf-a909-1680b1fc3458",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'long'.",
+    "correctAnswer": "{{de-DE|lang||LANG}}",
+    "incorrectAnswers": [
+      "{{de-DE|kurz||KURTS}}",
+      "{{de-DE|offen||OF-fen}}",
+      "{{de-DE|geschlossen||gesh-LOS-sen}}"
+    ],
+    "explanation": "'lang' means 'long'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "long"
+    ],
+    "source": "https://www.wordreference.com/search?q=lang"
+  },
+  {
+    "itemId": "1655c5b4-f3e6-43d2-859d-692eae1639d8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'short'?",
+    "correctAnswer": "{{de-DE|kurz||KURTS}}",
+    "incorrectAnswers": [
+      "{{de-DE|offen||OF-fen}}",
+      "{{de-DE|geschlossen||gesh-LOS-sen}}",
+      "{{de-DE|rechts||RECHTS}}"
+    ],
+    "explanation": "'kurz' means 'short'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "short"
+    ],
+    "source": "https://www.wordreference.com/search?q=kurz"
+  },
+  {
+    "itemId": "41fb1739-688f-4614-8686-67936119190a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'open'?",
+    "correctAnswer": "{{de-DE|offen||OF-fen}}",
+    "incorrectAnswers": [
+      "{{de-DE|geschlossen||gesh-LOS-sen}}",
+      "{{de-DE|rechts||RECHTS}}",
+      "{{de-DE|links||LINKS}}"
+    ],
+    "explanation": "'offen' means 'open'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "open"
+    ],
+    "source": "https://www.wordreference.com/search?q=offen"
+  },
+  {
+    "itemId": "f3202bd2-77bd-4c65-9ded-960b8eaf5192",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'closed' in everyday use?",
+    "correctAnswer": "{{de-DE|geschlossen||gesh-LOS-sen}}",
+    "incorrectAnswers": [
+      "{{de-DE|rechts||RECHTS}}",
+      "{{de-DE|links||LINKS}}",
+      "{{de-DE|gleich||GLEYECH}}"
+    ],
+    "explanation": "'geschlossen' means 'closed'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "closed"
+    ],
+    "source": "https://www.wordreference.com/search?q=geschlossen"
+  },
+  {
+    "itemId": "b00d987d-3c8e-4d7e-9456-e73e5e1b85dd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'right'.",
+    "correctAnswer": "{{de-DE|rechts||RECHTS}}",
+    "incorrectAnswers": [
+      "{{de-DE|links||LINKS}}",
+      "{{de-DE|gleich||GLEYECH}}",
+      "{{de-DE|anders||AN-ders}}"
+    ],
+    "explanation": "'rechts' means 'right'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "right"
+    ],
+    "source": "https://www.wordreference.com/search?q=rechts"
+  },
+  {
+    "itemId": "c6ebce45-6452-4072-a15b-19211bd6ac5e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'left'?",
+    "correctAnswer": "{{de-DE|links||LINKS}}",
+    "incorrectAnswers": [
+      "{{de-DE|gleich||GLEYECH}}",
+      "{{de-DE|anders||AN-ders}}",
+      "{{de-DE|groß||GROSS}}"
+    ],
+    "explanation": "'links' means 'left'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "left"
+    ],
+    "source": "https://www.wordreference.com/search?q=links"
+  },
+  {
+    "itemId": "96a0d59c-4c57-4a93-93ac-44fc4d3f8d58",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'same'?",
+    "correctAnswer": "{{de-DE|gleich||GLEYECH}}",
+    "incorrectAnswers": [
+      "{{de-DE|anders||AN-ders}}",
+      "{{de-DE|groß||GROSS}}",
+      "{{de-DE|klein||KLEYEN}}"
+    ],
+    "explanation": "'gleich' means 'same'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "same"
+    ],
+    "source": "https://www.wordreference.com/search?q=gleich"
+  },
+  {
+    "itemId": "7c0267d8-0982-43b6-869f-19dbdb7c0945",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'different' in everyday use?",
+    "correctAnswer": "{{de-DE|anders||AN-ders}}",
+    "incorrectAnswers": [
+      "{{de-DE|groß||GROSS}}",
+      "{{de-DE|klein||KLEYEN}}",
+      "{{de-DE|neu||NOY}}"
+    ],
+    "explanation": "'anders' means 'different'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "different"
+    ],
+    "source": "https://www.wordreference.com/search?q=anders"
+  },
+  {
+    "itemId": "6af12042-318b-4f62-94a1-3c39d2be0eb9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'who'?",
+    "correctAnswer": "{{de-DE|wer||VER}}",
+    "incorrectAnswers": [
+      "{{de-DE|was||VAS}}",
+      "{{de-DE|wann||VANN}}",
+      "{{de-DE|warum||VA-rum}}"
+    ],
+    "explanation": "'wer' is the word for 'who'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "who"
+    ],
+    "source": "https://www.wordreference.com/search?q=wer"
+  },
+  {
+    "itemId": "eaaf4eb9-8500-46e0-bc38-bcb73ec0ace7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'what' in everyday use?",
+    "correctAnswer": "{{de-DE|was||VAS}}",
+    "incorrectAnswers": [
+      "{{de-DE|wann||VANN}}",
+      "{{de-DE|warum||VA-rum}}",
+      "{{de-DE|wie||VEE}}"
+    ],
+    "explanation": "'was' is the word for 'what'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "what"
+    ],
+    "source": "https://www.wordreference.com/search?q=was"
+  },
+  {
+    "itemId": "dac1a733-c280-4ab9-9648-3d27b3ed3b6b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'when'.",
+    "correctAnswer": "{{de-DE|wann||VANN}}",
+    "incorrectAnswers": [
+      "{{de-DE|warum||VA-rum}}",
+      "{{de-DE|wie||VEE}}",
+      "{{de-DE|wie viel||VEE VEEL}}"
+    ],
+    "explanation": "'wann' is the word for 'when'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "when"
+    ],
+    "source": "https://www.wordreference.com/search?q=wann"
+  },
+  {
+    "itemId": "383ab248-2466-4f56-a0c7-e5078c5ae0ae",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'why'?",
+    "correctAnswer": "{{de-DE|warum||VA-rum}}",
+    "incorrectAnswers": [
+      "{{de-DE|wie||VEE}}",
+      "{{de-DE|wie viel||VEE VEEL}}",
+      "{{de-DE|wie viele||VEE VEE-le}}"
+    ],
+    "explanation": "'warum' is the word for 'why'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "why"
+    ],
+    "source": "https://www.wordreference.com/search?q=warum"
+  },
+  {
+    "itemId": "fd8d3de7-af7f-4c37-9aef-5fb9627bb535",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'how'?",
+    "correctAnswer": "{{de-DE|wie||VEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|wie viel||VEE VEEL}}",
+      "{{de-DE|wie viele||VEE VEE-le}}",
+      "{{de-DE|wer||VER}}"
+    ],
+    "explanation": "'wie' is the word for 'how'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how"
+    ],
+    "source": "https://www.wordreference.com/search?q=wie"
+  },
+  {
+    "itemId": "8060be36-9351-415c-be3a-223ae80073b9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'how much' in everyday use?",
+    "correctAnswer": "{{de-DE|wie viel||VEE VEEL}}",
+    "incorrectAnswers": [
+      "{{de-DE|wie viele||VEE VEE-le}}",
+      "{{de-DE|wer||VER}}",
+      "{{de-DE|was||VAS}}"
+    ],
+    "explanation": "'wie viel' is the word for 'how much'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how-much"
+    ],
+    "source": "https://www.wordreference.com/search?q=wie%20viel"
+  },
+  {
+    "itemId": "71df766c-8aaa-4bfe-9467-d6252f4a332e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'how many'.",
+    "correctAnswer": "{{de-DE|wie viele||VEE VEE-le}}",
+    "incorrectAnswers": [
+      "{{de-DE|wer||VER}}",
+      "{{de-DE|was||VAS}}",
+      "{{de-DE|wann||VANN}}"
+    ],
+    "explanation": "'wie viele' is the word for 'how many'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "how-many"
+    ],
+    "source": "https://www.wordreference.com/search?q=wie%20viele"
+  },
+  {
+    "itemId": "b2242de0-cc1d-44d8-814c-94181e7a7713",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'and'?",
+    "correctAnswer": "{{de-DE|und||UND}}",
+    "incorrectAnswers": [
+      "{{de-DE|oder||O-der}}",
+      "{{de-DE|aber||A-ber}}",
+      "{{de-DE|weil||VEYEL}}"
+    ],
+    "explanation": "'und' is the word for 'and'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "and"
+    ],
+    "source": "https://www.wordreference.com/search?q=und"
+  },
+  {
+    "itemId": "e0cf37b7-8f61-4ee6-a668-d37f829fa4e2",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'or' in everyday use?",
+    "correctAnswer": "{{de-DE|oder||O-der}}",
+    "incorrectAnswers": [
+      "{{de-DE|aber||A-ber}}",
+      "{{de-DE|weil||VEYEL}}",
+      "{{de-DE|wenn||VENN}}"
+    ],
+    "explanation": "'oder' is the word for 'or'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "or"
+    ],
+    "source": "https://www.wordreference.com/search?q=oder"
+  },
+  {
+    "itemId": "28860b44-87c7-4096-9697-35154c7aa7ea",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'but'.",
+    "correctAnswer": "{{de-DE|aber||A-ber}}",
+    "incorrectAnswers": [
+      "{{de-DE|weil||VEYEL}}",
+      "{{de-DE|wenn||VENN}}",
+      "{{de-DE|und||UND}}"
+    ],
+    "explanation": "'aber' is the word for 'but'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "but"
+    ],
+    "source": "https://www.wordreference.com/search?q=aber"
+  },
+  {
+    "itemId": "88bcc2a2-4daa-495b-bdb9-c74e7ccd69a5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'because'?",
+    "correctAnswer": "{{de-DE|weil||VEYEL}}",
+    "incorrectAnswers": [
+      "{{de-DE|wenn||VENN}}",
+      "{{de-DE|und||UND}}",
+      "{{de-DE|oder||O-der}}"
+    ],
+    "explanation": "'weil' is the word for 'because'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "because"
+    ],
+    "source": "https://www.wordreference.com/search?q=weil"
+  },
+  {
+    "itemId": "75345e1f-4781-4321-a942-4e6787a6c70b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'if'?",
+    "correctAnswer": "{{de-DE|wenn||VENN}}",
+    "incorrectAnswers": [
+      "{{de-DE|und||UND}}",
+      "{{de-DE|oder||O-der}}",
+      "{{de-DE|aber||A-ber}}"
+    ],
+    "explanation": "'wenn' is the word for 'if'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-conjunction",
+      "if"
+    ],
+    "source": "https://www.wordreference.com/search?q=wenn"
+  },
+  {
+    "itemId": "61f92774-32b1-4e4d-9588-1467f80dab47",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'very'?",
+    "correctAnswer": "{{de-DE|sehr||SEHR}}",
+    "incorrectAnswers": [
+      "{{de-DE|auch||OWCH}}",
+      "{{de-DE|nur||NUR}}",
+      "{{de-DE|hier||HEER}}"
+    ],
+    "explanation": "'sehr' is the word for 'very'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "very"
+    ],
+    "source": "https://www.wordreference.com/search?q=sehr"
+  },
+  {
+    "itemId": "427db401-0691-4f9b-8fea-53a2d90d8279",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'also' in everyday use?",
+    "correctAnswer": "{{de-DE|auch||OWCH}}",
+    "incorrectAnswers": [
+      "{{de-DE|nur||NUR}}",
+      "{{de-DE|hier||HEER}}",
+      "{{de-DE|da||DA}}"
+    ],
+    "explanation": "'auch' is the word for 'also'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "also"
+    ],
+    "source": "https://www.wordreference.com/search?q=auch"
+  },
+  {
+    "itemId": "48f483e7-a384-4e0c-b135-f52315dc0eec",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'only'.",
+    "correctAnswer": "{{de-DE|nur||NUR}}",
+    "incorrectAnswers": [
+      "{{de-DE|hier||HEER}}",
+      "{{de-DE|da||DA}}",
+      "{{de-DE|immer||IM-mer}}"
+    ],
+    "explanation": "'nur' is the word for 'only'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "only"
+    ],
+    "source": "https://www.wordreference.com/search?q=nur"
+  },
+  {
+    "itemId": "ee64c667-2d09-4fc7-a548-940a80e7d951",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'here'?",
+    "correctAnswer": "{{de-DE|hier||HEER}}",
+    "incorrectAnswers": [
+      "{{de-DE|da||DA}}",
+      "{{de-DE|immer||IM-mer}}",
+      "{{de-DE|nie||NEE}}"
+    ],
+    "explanation": "'hier' is the word for 'here'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "here"
+    ],
+    "source": "https://www.wordreference.com/search?q=hier"
+  },
+  {
+    "itemId": "f798f678-4227-4f12-86c2-718f20151bea",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'there'?",
+    "correctAnswer": "{{de-DE|da||DA}}",
+    "incorrectAnswers": [
+      "{{de-DE|immer||IM-mer}}",
+      "{{de-DE|nie||NEE}}",
+      "{{de-DE|sehr||SEHR}}"
+    ],
+    "explanation": "'da' is the word for 'there'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "there"
+    ],
+    "source": "https://www.wordreference.com/search?q=da"
+  },
+  {
+    "itemId": "8f248ce3-0cf7-4f28-b87f-dc4ea6b82162",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'always' in everyday use?",
+    "correctAnswer": "{{de-DE|immer||IM-mer}}",
+    "incorrectAnswers": [
+      "{{de-DE|nie||NEE}}",
+      "{{de-DE|sehr||SEHR}}",
+      "{{de-DE|auch||OWCH}}"
+    ],
+    "explanation": "'immer' is the word for 'always'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "always"
+    ],
+    "source": "https://www.wordreference.com/search?q=immer"
+  },
+  {
+    "itemId": "f9d7bf3f-677a-4743-a2bd-dd3b881653b2",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'never'.",
+    "correctAnswer": "{{de-DE|nie||NEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|sehr||SEHR}}",
+      "{{de-DE|auch||OWCH}}",
+      "{{de-DE|nur||NUR}}"
+    ],
+    "explanation": "'nie' is the word for 'never'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "never"
+    ],
+    "source": "https://www.wordreference.com/search?q=nie"
+  },
+  {
+    "itemId": "a0172c11-5871-45d8-8fa0-4246aac14211",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'I'?",
+    "correctAnswer": "{{de-DE|ich||ICH}}",
+    "incorrectAnswers": [
+      "{{de-DE|du||DU}}",
+      "{{de-DE|er||ER}}",
+      "{{de-DE|sie||SEE}}"
+    ],
+    "explanation": "'ich' is used for 'I'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "i"
+    ],
+    "source": "https://www.wordreference.com/search?q=ich"
+  },
+  {
+    "itemId": "2d816467-4c15-421f-b063-b4068e95a545",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'you' in everyday use?",
+    "correctAnswer": "{{de-DE|du||DU}}",
+    "incorrectAnswers": [
+      "{{de-DE|er||ER}}",
+      "{{de-DE|sie||SEE}}",
+      "{{de-DE|wir||VIR}}"
+    ],
+    "explanation": "'du' is used for 'you'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "you"
+    ],
+    "source": "https://www.wordreference.com/search?q=du"
+  },
+  {
+    "itemId": "fa3aa733-73a3-4e50-af8d-0042f3b4de24",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'he'.",
+    "correctAnswer": "{{de-DE|er||ER}}",
+    "incorrectAnswers": [
+      "{{de-DE|sie||SEE}}",
+      "{{de-DE|wir||VIR}}",
+      "{{de-DE|ihr||IHR}}"
+    ],
+    "explanation": "'er' is used for 'he'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "he"
+    ],
+    "source": "https://www.wordreference.com/search?q=er"
+  },
+  {
+    "itemId": "7435df9e-32cb-4447-b81c-e92e86ee7977",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'she'?",
+    "correctAnswer": "{{de-DE|sie||SEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|wir||VIR}}",
+      "{{de-DE|ihr||IHR}}",
+      "{{de-DE|sie||SEE}}"
+    ],
+    "explanation": "'sie' is used for 'she'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "she"
+    ],
+    "source": "https://www.wordreference.com/search?q=sie"
+  },
+  {
+    "itemId": "f5ddcbe6-c6f0-443a-9129-7c5f1b42cc6c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'we'?",
+    "correctAnswer": "{{de-DE|wir||VIR}}",
+    "incorrectAnswers": [
+      "{{de-DE|ihr||IHR}}",
+      "{{de-DE|sie||SEE}}",
+      "{{de-DE|ich||ICH}}"
+    ],
+    "explanation": "'wir' is used for 'we'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "we"
+    ],
+    "source": "https://www.wordreference.com/search?q=wir"
+  },
+  {
+    "itemId": "3f00e54a-7c00-4614-9ffb-2e46b2f51c89",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'you (plural)' in everyday use?",
+    "correctAnswer": "{{de-DE|ihr||IHR}}",
+    "incorrectAnswers": [
+      "{{de-DE|sie||SEE}}",
+      "{{de-DE|ich||ICH}}",
+      "{{de-DE|du||DU}}"
+    ],
+    "explanation": "'ihr' is used for 'you (plural)'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "you-plural"
+    ],
+    "source": "https://www.wordreference.com/search?q=ihr"
+  },
+  {
+    "itemId": "d6d69e52-f366-4bec-923b-0c501d75490a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'they'.",
+    "correctAnswer": "{{de-DE|sie||SEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|ich||ICH}}",
+      "{{de-DE|du||DU}}",
+      "{{de-DE|er||ER}}"
+    ],
+    "explanation": "'sie' is used for 'they'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-100",
+      "cefr-a1",
+      "pos-pronoun",
+      "they"
+    ],
+    "source": "https://www.wordreference.com/search?q=sie"
+  },
+  {
+    "itemId": "7ddbf60a-edf4-4b54-bffc-065f773054d0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'my'?",
+    "correctAnswer": "{{de-DE|mein||MEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|dein||DEYEN}}",
+      "{{de-DE|unser||UN-ser}}",
+      "{{de-DE|ihr||IHR}}"
+    ],
+    "explanation": "'mein' is used for 'my'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "my"
+    ],
+    "source": "https://www.wordreference.com/search?q=mein"
+  },
+  {
+    "itemId": "2438ca44-ecb5-41c8-bb7b-8db23cc436cd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'your' in everyday use?",
+    "correctAnswer": "{{de-DE|dein||DEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|unser||UN-ser}}",
+      "{{de-DE|ihr||IHR}}",
+      "{{de-DE|mein||MEYEN}}"
+    ],
+    "explanation": "'dein' is used for 'your'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "your"
+    ],
+    "source": "https://www.wordreference.com/search?q=dein"
+  },
+  {
+    "itemId": "1750c4ca-57ed-42e4-9bfd-fd6952634e16",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'our'.",
+    "correctAnswer": "{{de-DE|unser||UN-ser}}",
+    "incorrectAnswers": [
+      "{{de-DE|ihr||IHR}}",
+      "{{de-DE|mein||MEYEN}}",
+      "{{de-DE|dein||DEYEN}}"
+    ],
+    "explanation": "'unser' is used for 'our'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "our"
+    ],
+    "source": "https://www.wordreference.com/search?q=unser"
+  },
+  {
+    "itemId": "3942f8f5-3892-45a2-aad6-9217e85d22b9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'their'?",
+    "correctAnswer": "{{de-DE|ihr||IHR}}",
+    "incorrectAnswers": [
+      "{{de-DE|mein||MEYEN}}",
+      "{{de-DE|dein||DEYEN}}",
+      "{{de-DE|unser||UN-ser}}"
+    ],
+    "explanation": "'ihr' is used for 'their'. Beginners see it often in introductions and short descriptions.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "their"
+    ],
+    "source": "https://www.wordreference.com/search?q=ihr"
+  },
+  {
+    "itemId": "a387ec53-4c96-49b5-926a-d3015ccc540b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'doctor'?",
+    "correctAnswer": "{{de-DE|Arzt||ARTST}}",
+    "incorrectAnswers": [
+      "{{de-DE|Krankenhaus||KRAN-ken-hows}}",
+      "{{de-DE|Apotheke||A-po-the-ke}}",
+      "{{de-DE|Schmerz||SCHMERTS}}"
+    ],
+    "explanation": "'Arzt' means 'doctor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "doctor"
+    ],
+    "source": "https://www.wordreference.com/search?q=Arzt"
+  },
+  {
+    "itemId": "f6514770-3f47-4bde-9a6c-9e5b4f953ac1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'hospital' in everyday use?",
+    "correctAnswer": "{{de-DE|Krankenhaus||KRAN-ken-hows}}",
+    "incorrectAnswers": [
+      "{{de-DE|Apotheke||A-po-the-ke}}",
+      "{{de-DE|Schmerz||SCHMERTS}}",
+      "{{de-DE|Hilfe||HIL-fe}}"
+    ],
+    "explanation": "'Krankenhaus' means 'hospital'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "hospital"
+    ],
+    "source": "https://www.wordreference.com/search?q=Krankenhaus"
+  },
+  {
+    "itemId": "d2df95de-ebb0-4314-a8a1-639e7800cfe4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'pharmacy'.",
+    "correctAnswer": "{{de-DE|Apotheke||A-po-the-ke}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schmerz||SCHMERTS}}",
+      "{{de-DE|Hilfe||HIL-fe}}",
+      "{{de-DE|Polizei||PO-li-tseye}}"
+    ],
+    "explanation": "'Apotheke' means 'pharmacy'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "pharmacy"
+    ],
+    "source": "https://www.wordreference.com/search?q=Apotheke"
+  },
+  {
+    "itemId": "e6b311f8-c9e7-44b1-a41a-118918c3e219",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'pain'?",
+    "correctAnswer": "{{de-DE|Schmerz||SCHMERTS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hilfe||HIL-fe}}",
+      "{{de-DE|Polizei||PO-li-tseye}}",
+      "{{de-DE|Feuer||FOYER}}"
+    ],
+    "explanation": "'Schmerz' means 'pain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "pain"
+    ],
+    "source": "https://www.wordreference.com/search?q=Schmerz"
+  },
+  {
+    "itemId": "6a502076-d3fd-40c5-bfd6-3c9e2e84cf83",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'help'?",
+    "correctAnswer": "{{de-DE|Hilfe||HIL-fe}}",
+    "incorrectAnswers": [
+      "{{de-DE|Polizei||PO-li-tseye}}",
+      "{{de-DE|Feuer||FOYER}}",
+      "{{de-DE|krank||KRANK}}"
+    ],
+    "explanation": "'Hilfe' means 'help'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "help"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hilfe"
+  },
+  {
+    "itemId": "1956c174-171c-4beb-9beb-07d3543dbf7d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'police' in everyday use?",
+    "correctAnswer": "{{de-DE|Polizei||PO-li-tseye}}",
+    "incorrectAnswers": [
+      "{{de-DE|Feuer||FOYER}}",
+      "{{de-DE|krank||KRANK}}",
+      "{{de-DE|Medizin||ME-di-tsin}}"
+    ],
+    "explanation": "'Polizei' means 'police'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "police"
+    ],
+    "source": "https://www.wordreference.com/search?q=Polizei"
+  },
+  {
+    "itemId": "985a575a-6dab-46a6-843f-c39ef71f7950",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'fire'.",
+    "correctAnswer": "{{de-DE|Feuer||FOYER}}",
+    "incorrectAnswers": [
+      "{{de-DE|krank||KRANK}}",
+      "{{de-DE|Medizin||ME-di-tsin}}",
+      "{{de-DE|Arzt||ARTST}}"
+    ],
+    "explanation": "'Feuer' means 'fire'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "fire"
+    ],
+    "source": "https://www.wordreference.com/search?q=Feuer"
+  },
+  {
+    "itemId": "baf622aa-bdf0-44c0-a14a-890ef87895b9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'sick'?",
+    "correctAnswer": "{{de-DE|krank||KRANK}}",
+    "incorrectAnswers": [
+      "{{de-DE|Medizin||ME-di-tsin}}",
+      "{{de-DE|Arzt||ARTST}}",
+      "{{de-DE|Krankenhaus||KRAN-ken-hows}}"
+    ],
+    "explanation": "'krank' means 'sick'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "sick"
+    ],
+    "source": "https://www.wordreference.com/search?q=krank"
+  },
+  {
+    "itemId": "587ec342-d6b8-43a4-9d7f-22e0d552b308",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'medicine'?",
+    "correctAnswer": "{{de-DE|Medizin||ME-di-tsin}}",
+    "incorrectAnswers": [
+      "{{de-DE|Arzt||ARTST}}",
+      "{{de-DE|Krankenhaus||KRAN-ken-hows}}",
+      "{{de-DE|Apotheke||A-po-the-ke}}"
+    ],
+    "explanation": "'Medizin' means 'medicine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-health",
+      "medicine"
+    ],
+    "source": "https://www.wordreference.com/search?q=Medizin"
+  },
+  {
+    "itemId": "277fce62-0854-42f1-bf92-91f547264f0c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'school'?",
+    "correctAnswer": "{{de-DE|Schule||SCHU-le}}",
+    "incorrectAnswers": [
+      "{{de-DE|Lehrer||LEH-rer}}",
+      "{{de-DE|Student||STU-dent}}",
+      "{{de-DE|Buch||BUCH}}"
+    ],
+    "explanation": "'Schule' means 'school'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "school"
+    ],
+    "source": "https://www.wordreference.com/search?q=Schule"
+  },
+  {
+    "itemId": "f1be25b9-2b8f-489e-ade1-b4ec1abdcacb",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'teacher' in everyday use?",
+    "correctAnswer": "{{de-DE|Lehrer||LEH-rer}}",
+    "incorrectAnswers": [
+      "{{de-DE|Student||STU-dent}}",
+      "{{de-DE|Buch||BUCH}}",
+      "{{de-DE|Stift||STIFT}}"
+    ],
+    "explanation": "'Lehrer' means 'teacher'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "teacher"
+    ],
+    "source": "https://www.wordreference.com/search?q=Lehrer"
+  },
+  {
+    "itemId": "aff779b8-cd8c-49f0-b001-354fd87cdc77",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'student'.",
+    "correctAnswer": "{{de-DE|Student||STU-dent}}",
+    "incorrectAnswers": [
+      "{{de-DE|Buch||BUCH}}",
+      "{{de-DE|Stift||STIFT}}",
+      "{{de-DE|Papier||PA-peer}}"
+    ],
+    "explanation": "'Student' means 'student'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "student"
+    ],
+    "source": "https://www.wordreference.com/search?q=Student"
+  },
+  {
+    "itemId": "0db6d306-82d9-4a8e-99cc-29814dffc006",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'book'?",
+    "correctAnswer": "{{de-DE|Buch||BUCH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Stift||STIFT}}",
+      "{{de-DE|Papier||PA-peer}}",
+      "{{de-DE|Klasse||KLAS-se}}"
+    ],
+    "explanation": "'Buch' means 'book'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "book"
+    ],
+    "source": "https://www.wordreference.com/search?q=Buch"
+  },
+  {
+    "itemId": "c371ecf0-3a6d-4cf0-82ae-6b44bf11e652",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'pen'?",
+    "correctAnswer": "{{de-DE|Stift||STIFT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Papier||PA-peer}}",
+      "{{de-DE|Klasse||KLAS-se}}",
+      "{{de-DE|Büro||BU-ro}}"
+    ],
+    "explanation": "'Stift' means 'pen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "pen"
+    ],
+    "source": "https://www.wordreference.com/search?q=Stift"
+  },
+  {
+    "itemId": "d66a5db3-ceff-43d1-810a-1c3dd97d6f78",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'paper' in everyday use?",
+    "correctAnswer": "{{de-DE|Papier||PA-peer}}",
+    "incorrectAnswers": [
+      "{{de-DE|Klasse||KLAS-se}}",
+      "{{de-DE|Büro||BU-ro}}",
+      "{{de-DE|Geld||GELD}}"
+    ],
+    "explanation": "'Papier' means 'paper'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "paper"
+    ],
+    "source": "https://www.wordreference.com/search?q=Papier"
+  },
+  {
+    "itemId": "33a311c2-aba9-47c0-b0bf-1bae2f75a99b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'class'.",
+    "correctAnswer": "{{de-DE|Klasse||KLAS-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Büro||BU-ro}}",
+      "{{de-DE|Geld||GELD}}",
+      "{{de-DE|Laden||LA-den}}"
+    ],
+    "explanation": "'Klasse' means 'class'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "class"
+    ],
+    "source": "https://www.wordreference.com/search?q=Klasse"
+  },
+  {
+    "itemId": "d0d24014-d289-4f05-9509-b135bc8cbd17",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'office'?",
+    "correctAnswer": "{{de-DE|Büro||BU-ro}}",
+    "incorrectAnswers": [
+      "{{de-DE|Geld||GELD}}",
+      "{{de-DE|Laden||LA-den}}",
+      "{{de-DE|Preis||PREYES}}"
+    ],
+    "explanation": "'Büro' means 'office'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "office"
+    ],
+    "source": "https://www.wordreference.com/search?q=B%C3%BCro"
+  },
+  {
+    "itemId": "160db860-152a-4c5a-bff4-1e0c295c3ce6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'money'?",
+    "correctAnswer": "{{de-DE|Geld||GELD}}",
+    "incorrectAnswers": [
+      "{{de-DE|Laden||LA-den}}",
+      "{{de-DE|Preis||PREYES}}",
+      "{{de-DE|Arbeit||AR-beyet}}"
+    ],
+    "explanation": "'Geld' means 'money'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "money"
+    ],
+    "source": "https://www.wordreference.com/search?q=Geld"
+  },
+  {
+    "itemId": "8cd19a20-0ba2-4287-a230-5605bc51c8ef",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'shop' in everyday use?",
+    "correctAnswer": "{{de-DE|Laden||LA-den}}",
+    "incorrectAnswers": [
+      "{{de-DE|Preis||PREYES}}",
+      "{{de-DE|Arbeit||AR-beyet}}",
+      "{{de-DE|Schule||SCHU-le}}"
+    ],
+    "explanation": "'Laden' means 'shop'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "shop"
+    ],
+    "source": "https://www.wordreference.com/search?q=Laden"
+  },
+  {
+    "itemId": "c834ea9a-5138-428c-8beb-7862c8bf2352",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'price'.",
+    "correctAnswer": "{{de-DE|Preis||PREYES}}",
+    "incorrectAnswers": [
+      "{{de-DE|Arbeit||AR-beyet}}",
+      "{{de-DE|Schule||SCHU-le}}",
+      "{{de-DE|Lehrer||LEH-rer}}"
+    ],
+    "explanation": "'Preis' means 'price'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "price"
+    ],
+    "source": "https://www.wordreference.com/search?q=Preis"
+  },
+  {
+    "itemId": "1568e4cd-3903-4d37-b9dd-70ce427608ee",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'job'?",
+    "correctAnswer": "{{de-DE|Arbeit||AR-beyet}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schule||SCHU-le}}",
+      "{{de-DE|Lehrer||LEH-rer}}",
+      "{{de-DE|Student||STU-dent}}"
+    ],
+    "explanation": "'Arbeit' means 'job'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-school",
+      "job"
+    ],
+    "source": "https://www.wordreference.com/search?q=Arbeit"
+  },
+  {
+    "itemId": "533c3107-1dc8-4330-8f84-7eeaad53a5d7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'age'?",
+    "correctAnswer": "{{de-DE|Alter||AL-ter}}",
+    "incorrectAnswers": [
+      "{{de-DE|Adresse||A-dres-se}}",
+      "{{de-DE|Telefon||TE-le-fon}}",
+      "{{de-DE|Internet||IN-ter-net}}"
+    ],
+    "explanation": "'Alter' means 'age'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "age"
+    ],
+    "source": "https://www.wordreference.com/search?q=Alter"
+  },
+  {
+    "itemId": "411060cc-80c7-4bd4-9ea3-54366347ba6a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'address' in everyday use?",
+    "correctAnswer": "{{de-DE|Adresse||A-dres-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Telefon||TE-le-fon}}",
+      "{{de-DE|Internet||IN-ter-net}}",
+      "{{de-DE|E-Mail||E-MAIL}}"
+    ],
+    "explanation": "'Adresse' means 'address'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "address"
+    ],
+    "source": "https://www.wordreference.com/search?q=Adresse"
+  },
+  {
+    "itemId": "270483ba-fb47-4c22-b752-b688d10dc3bd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'phone'.",
+    "correctAnswer": "{{de-DE|Telefon||TE-le-fon}}",
+    "incorrectAnswers": [
+      "{{de-DE|Internet||IN-ter-net}}",
+      "{{de-DE|E-Mail||E-MAIL}}",
+      "{{de-DE|Alter||AL-ter}}"
+    ],
+    "explanation": "'Telefon' means 'phone'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "phone"
+    ],
+    "source": "https://www.wordreference.com/search?q=Telefon"
+  },
+  {
+    "itemId": "2d8deefe-215b-4e78-a856-b7f76e85284f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'internet'?",
+    "correctAnswer": "{{de-DE|Internet||IN-ter-net}}",
+    "incorrectAnswers": [
+      "{{de-DE|E-Mail||E-MAIL}}",
+      "{{de-DE|Alter||AL-ter}}",
+      "{{de-DE|Adresse||A-dres-se}}"
+    ],
+    "explanation": "'Internet' means 'internet'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "internet"
+    ],
+    "source": "https://www.wordreference.com/search?q=Internet"
+  },
+  {
+    "itemId": "a0754cf8-337d-4a80-8a7b-d55489256b92",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'email'?",
+    "correctAnswer": "{{de-DE|E-Mail||E-MAIL}}",
+    "incorrectAnswers": [
+      "{{de-DE|Alter||AL-ter}}",
+      "{{de-DE|Adresse||A-dres-se}}",
+      "{{de-DE|Telefon||TE-le-fon}}"
+    ],
+    "explanation": "'E-Mail' means 'email'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-intro",
+      "email"
+    ],
+    "source": "https://www.wordreference.com/search?q=E-Mail"
+  },
+  {
+    "itemId": "59b13224-ce36-407c-800d-cbd6b10f2ae1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'where'.",
+    "correctAnswer": "{{de-DE|wo||VO}}",
+    "incorrectAnswers": [
+      "{{de-DE|was||VAS}}",
+      "{{de-DE|wann||VANN}}",
+      "{{de-DE|warum||VA-rum}}"
+    ],
+    "explanation": "'wo' is the word for 'where'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-pronoun",
+      "where"
+    ],
+    "source": "https://www.wordreference.com/search?q=wo"
+  }
+]
