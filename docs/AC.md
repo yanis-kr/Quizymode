@@ -758,9 +758,9 @@ On the Categories page (Sets view and List view), a **filter dialog** lets the u
 
 **Taxonomy structure:**
 
-- Each promoted language (English, Spanish, French, German, Italian, Russian, Japanese, Latvian, Ukrainian, Bulgarian, Latin, Romanian) has its own **rank-1 keyword** under the `languages` category.
+- Each promoted language (English, Spanish, French, German, Italian, Russian, Japanese, Latvian, Ukrainian, Bulgarian, Latin, Romanian, Portuguese, Arabic, Chinese, Korean) has its own **rank-1 keyword** under the `languages` category.
 - The `languages` category exposes only **language-name rank-1 keywords** plus one catch-all rank-1 bucket: `other-langs`.
-- Each promoted language keeps language-specific rank-2 subtopics such as `core`, `phrases`, `vocab`, `grammar`, `idioms`, `conversation`, and `travel` where applicable. Some languages have additional subtopics (for example `hiragana`, `katakana`, `kanji` for Japanese; `expressions` for Latin; `reading`, `writing`, `pronunciation`, and `listening` for English).
+- Each promoted language keeps language-specific rank-2 subtopics such as `core`, `phrases`, `vocab`, `grammar`, `idioms`, `conversation`, and `travel` where applicable. Some languages have additional subtopics (for example `hiragana`, `katakana`, `kanji` for Japanese; `expressions` for Latin; `reading`, `writing`, `pronunciation`, and `listening` for English; `characters` for Chinese; `hangul` for Korean).
 - Less-developed or uncategorized language content stays under the `other-langs` rank-1 keyword and can be promoted later as content grows.
 - Legacy non-language rank-1 buckets under `languages` (`esl`, `travel`, `vocab`, `grammar`, `idioms`, `general`, `mixed`) are not valid browse roots anymore. Existing rows using those paths must be migrated to a language-specific path (usually `english/...`) or to `other-langs/mixed`.
 
@@ -790,7 +790,7 @@ These item-level keywords are **not** navigation keywords. They are stored as pu
 
 - **AC 3.11.1** [Anyone] **Given** a user browses `/categories/languages/{language}/core`, **when** the scope loads, **then** it shows items whose `navigationKeyword1` = that language and `navigationKeyword2` = `core`; items tagged `freq-100` are retrievable by adding `?keywords=freq-100` as an item tag filter.
 - **AC 3.11.2** [Anyone] **Given** a user browses `/categories/languages/latin/expressions`, **when** the scope loads, **then** it shows items in the famous Latin expressions set; each item's question is the Latin phrase and the correct answer is the English translation with context.
-- **AC 3.11.3** [Anyone] **Given** `other-langs` rank-1 still exists (for Chinese, Korean, Arabic, Portuguese), **when** items reference `navigationKeyword1 = "other-langs"`, **then** those items remain accessible at `/categories/languages/other-langs/{lang}`; Italian, Russian, and Japanese are no longer valid rank-2 options under `other-langs` and existing items referencing those paths should be migrated to their new promoted rank-1 paths.
+- **AC 3.11.3** [Anyone] **Given** `other-langs` rank-1 still exists as a catch-all, **when** items reference `navigationKeyword1 = "other-langs"`, **then** those items remain accessible at `/categories/languages/other-langs/mixed`; Arabic, Chinese, Korean, and Portuguese are now promoted to their own rank-1 groups and their `core` subtopic is accessible at `/categories/languages/{language}/core`.
 - **AC 3.11.4** [Admin/System] **Given** the API starts or an admin seed-sync apply runs, **when** legacy `languages` items still use retired rank-1 paths such as `esl`, `travel`, `vocab`, `grammar`, `idioms`, `general`, or `mixed`, **then** the database normalizes those items to the current language-first taxonomy before continuing so browse counts and navigation remain aligned with `GET /taxonomy`.
 
 ---

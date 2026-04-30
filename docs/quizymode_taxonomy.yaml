@@ -1026,15 +1026,55 @@ languages:
         expressions: Famous expressions
         vocab: Word building
         grammar: Grammar rules
+    portuguese:
+      description: Portuguese
+      keywords:
+        general-portuguese: Portuguese
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+        travel: Travel phrases
+    arabic:
+      description: Arabic
+      keywords:
+        general-arabic: Arabic
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        idioms: Expressions
+        conversation: Everyday talk
+        travel: Travel phrases
+    chinese:
+      description: Chinese
+      keywords:
+        general-chinese: Chinese
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        characters: Characters
+        conversation: Everyday talk
+        travel: Travel phrases
+    korean:
+      description: Korean
+      keywords:
+        general-korean: Korean
+        core: Essential words
+        phrases: Common phrases
+        grammar: Grammar rules
+        vocab: Word building
+        hangul: Hangul script
+        conversation: Everyday talk
+        travel: Travel phrases
     other-langs:
       description: Catch-all languages
       keywords:
         general-other-langs: Catch-all languages
         mixed: Cross language
-        portuguese: Portuguese
-        chinese: Chinese
-        korean: Korean
-        arabic: Arabic
 humanities:
   description: Literature, philosophy, art, music, and the cultural study of human thought.
   keywords:
