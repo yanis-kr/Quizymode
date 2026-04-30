@@ -1,0 +1,2392 @@
+[
+  {
+    "itemId": "62c18a65-56fc-4844-9730-2db2869806a4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'baby'?",
+    "correctAnswer": "{{de-DE|Baby||BA-by}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mann||MANN}}",
+      "{{de-DE|Frau||FROW}}",
+      "{{de-DE|Person||PER-son}}"
+    ],
+    "explanation": "'Baby' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "baby"
+    ],
+    "source": "https://www.wordreference.com/search?q=Baby"
+  },
+  {
+    "itemId": "490fe9b0-5a93-47a2-8687-0d2ddcd17323",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'man'?",
+    "correctAnswer": "{{de-DE|Mann||MANN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Frau||FROW}}",
+      "{{de-DE|Person||PER-son}}",
+      "{{de-DE|Mutter||MUT-ter}}"
+    ],
+    "explanation": "'Mann' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "man"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mann"
+  },
+  {
+    "itemId": "dfa12af6-6dce-4944-a061-7c4f488cd7ff",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'woman' in everyday use?",
+    "correctAnswer": "{{de-DE|Frau||FROW}}",
+    "incorrectAnswers": [
+      "{{de-DE|Person||PER-son}}",
+      "{{de-DE|Mutter||MUT-ter}}",
+      "{{de-DE|Vater||VA-ter}}"
+    ],
+    "explanation": "'Frau' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "woman"
+    ],
+    "source": "https://www.wordreference.com/search?q=Frau"
+  },
+  {
+    "itemId": "d9555606-afe9-478f-bed3-cdc9d1bd750a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'person'.",
+    "correctAnswer": "{{de-DE|Person||PER-son}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mutter||MUT-ter}}",
+      "{{de-DE|Vater||VA-ter}}",
+      "{{de-DE|Bruder||BRU-der}}"
+    ],
+    "explanation": "'Person' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "person"
+    ],
+    "source": "https://www.wordreference.com/search?q=Person"
+  },
+  {
+    "itemId": "ee7742f4-a3ac-4897-abaf-43069a588252",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'head'?",
+    "correctAnswer": "{{de-DE|Kopf||KOPF}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hand||HAND}}",
+      "{{de-DE|Fuß||FUSS}}",
+      "{{de-DE|Auge||AU-ge}}"
+    ],
+    "explanation": "'Kopf' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "head"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kopf"
+  },
+  {
+    "itemId": "97e88f10-5ecd-4426-b86b-4133f5ecb898",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'hand' in everyday use?",
+    "correctAnswer": "{{de-DE|Hand||HAND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fuß||FUSS}}",
+      "{{de-DE|Auge||AU-ge}}",
+      "{{de-DE|Ohr||OHR}}"
+    ],
+    "explanation": "'Hand' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "hand"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hand"
+  },
+  {
+    "itemId": "85bbbcc5-768f-4dfb-a8e3-7d5140d614ad",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'foot'.",
+    "correctAnswer": "{{de-DE|Fuß||FUSS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Auge||AU-ge}}",
+      "{{de-DE|Ohr||OHR}}",
+      "{{de-DE|Nase||NA-se}}"
+    ],
+    "explanation": "'Fuß' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "foot"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fu%C3%9F"
+  },
+  {
+    "itemId": "9a501346-0465-4c1e-a1e2-7cd258d592fc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'eye'?",
+    "correctAnswer": "{{de-DE|Auge||AU-ge}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ohr||OHR}}",
+      "{{de-DE|Nase||NA-se}}",
+      "{{de-DE|Mund||MUND}}"
+    ],
+    "explanation": "'Auge' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "eye"
+    ],
+    "source": "https://www.wordreference.com/search?q=Auge"
+  },
+  {
+    "itemId": "31fbf020-0e14-44d5-bb46-95792cd2736f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'ear'?",
+    "correctAnswer": "{{de-DE|Ohr||OHR}}",
+    "incorrectAnswers": [
+      "{{de-DE|Nase||NA-se}}",
+      "{{de-DE|Mund||MUND}}",
+      "{{de-DE|Herz||HERTS}}"
+    ],
+    "explanation": "'Ohr' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "ear"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ohr"
+  },
+  {
+    "itemId": "a6e3f0ae-2dec-4d34-bf34-f62bacf1d6a6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'nose' in everyday use?",
+    "correctAnswer": "{{de-DE|Nase||NA-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mund||MUND}}",
+      "{{de-DE|Herz||HERTS}}",
+      "{{de-DE|Magen||MA-gen}}"
+    ],
+    "explanation": "'Nase' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "nose"
+    ],
+    "source": "https://www.wordreference.com/search?q=Nase"
+  },
+  {
+    "itemId": "dbc67afa-59c0-4e11-9e8a-63a521788d40",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'mouth'.",
+    "correctAnswer": "{{de-DE|Mund||MUND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Herz||HERTS}}",
+      "{{de-DE|Magen||MA-gen}}",
+      "{{de-DE|Arm||ARM}}"
+    ],
+    "explanation": "'Mund' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "mouth"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mund"
+  },
+  {
+    "itemId": "bbf34cf9-ab9d-4b81-beea-c0dd5c7a57cf",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'heart'?",
+    "correctAnswer": "{{de-DE|Herz||HERTS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Magen||MA-gen}}",
+      "{{de-DE|Arm||ARM}}",
+      "{{de-DE|Bein||BEYEN}}"
+    ],
+    "explanation": "'Herz' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "heart"
+    ],
+    "source": "https://www.wordreference.com/search?q=Herz"
+  },
+  {
+    "itemId": "2c9526f0-740c-4e71-ab88-31e9dd7f3e73",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'stomach'?",
+    "correctAnswer": "{{de-DE|Magen||MA-gen}}",
+    "incorrectAnswers": [
+      "{{de-DE|Arm||ARM}}",
+      "{{de-DE|Bein||BEYEN}}",
+      "{{de-DE|Finger||FIN-ger}}"
+    ],
+    "explanation": "'Magen' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "stomach"
+    ],
+    "source": "https://www.wordreference.com/search?q=Magen"
+  },
+  {
+    "itemId": "01a10481-1000-4bc3-9996-8798a3656aae",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'arm' in everyday use?",
+    "correctAnswer": "{{de-DE|Arm||ARM}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bein||BEYEN}}",
+      "{{de-DE|Finger||FIN-ger}}",
+      "{{de-DE|Rücken||RUC-ken}}"
+    ],
+    "explanation": "'Arm' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "arm"
+    ],
+    "source": "https://www.wordreference.com/search?q=Arm"
+  },
+  {
+    "itemId": "111d04e6-7787-4a42-b923-ff734ee244bc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'leg'.",
+    "correctAnswer": "{{de-DE|Bein||BEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Finger||FIN-ger}}",
+      "{{de-DE|Rücken||RUC-ken}}",
+      "{{de-DE|Kopf||KOPF}}"
+    ],
+    "explanation": "'Bein' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "leg"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bein"
+  },
+  {
+    "itemId": "1e7fa99d-740c-4829-8af3-5a53761a6b14",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'finger'?",
+    "correctAnswer": "{{de-DE|Finger||FIN-ger}}",
+    "incorrectAnswers": [
+      "{{de-DE|Rücken||RUC-ken}}",
+      "{{de-DE|Kopf||KOPF}}",
+      "{{de-DE|Hand||HAND}}"
+    ],
+    "explanation": "'Finger' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "finger"
+    ],
+    "source": "https://www.wordreference.com/search?q=Finger"
+  },
+  {
+    "itemId": "03c9bf75-0833-467b-982a-4df9634e4ce4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'back'?",
+    "correctAnswer": "{{de-DE|Rücken||RUC-ken}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kopf||KOPF}}",
+      "{{de-DE|Hand||HAND}}",
+      "{{de-DE|Fuß||FUSS}}"
+    ],
+    "explanation": "'Rücken' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "back"
+    ],
+    "source": "https://www.wordreference.com/search?q=R%C3%BCcken"
+  },
+  {
+    "itemId": "62b0dcdb-78b4-4628-9acd-21e11869a620",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'bread'?",
+    "correctAnswer": "{{de-DE|Brot||BROT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Milch||MILCH}}",
+      "{{de-DE|Ei||EI}}",
+      "{{de-DE|Fleisch||FLEYESH}}"
+    ],
+    "explanation": "'Brot' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "bread"
+    ],
+    "source": "https://www.wordreference.com/search?q=Brot"
+  },
+  {
+    "itemId": "f057b745-fc04-48c6-bd7b-3c5ce60c49d8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'milk' in everyday use?",
+    "correctAnswer": "{{de-DE|Milch||MILCH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Ei||EI}}",
+      "{{de-DE|Fleisch||FLEYESH}}",
+      "{{de-DE|Fisch||FISH}}"
+    ],
+    "explanation": "'Milch' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "milk"
+    ],
+    "source": "https://www.wordreference.com/search?q=Milch"
+  },
+  {
+    "itemId": "e3c6b3f3-5665-42ec-8b03-45e8520e2c13",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'egg'.",
+    "correctAnswer": "{{de-DE|Ei||EI}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fleisch||FLEYESH}}",
+      "{{de-DE|Fisch||FISH}}",
+      "{{de-DE|Obst||OBSHT}}"
+    ],
+    "explanation": "'Ei' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "egg"
+    ],
+    "source": "https://www.wordreference.com/search?q=Ei"
+  },
+  {
+    "itemId": "270c8895-a20a-4fa6-9b6e-0d0a1390ee78",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'meat'?",
+    "correctAnswer": "{{de-DE|Fleisch||FLEYESH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fisch||FISH}}",
+      "{{de-DE|Obst||OBSHT}}",
+      "{{de-DE|Gemüse||ge-MU-se}}"
+    ],
+    "explanation": "'Fleisch' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "meat"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fleisch"
+  },
+  {
+    "itemId": "ffd21225-2c79-4951-a75c-a6d05247e0ab",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'fish'?",
+    "correctAnswer": "{{de-DE|Fisch||FISH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Obst||OBSHT}}",
+      "{{de-DE|Gemüse||ge-MU-se}}",
+      "{{de-DE|Reis||REYES}}"
+    ],
+    "explanation": "'Fisch' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fish"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fisch"
+  },
+  {
+    "itemId": "2d045e41-9dc0-418e-9511-6adabfdd8ba5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'fruit' in everyday use?",
+    "correctAnswer": "{{de-DE|Obst||OBSHT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Gemüse||ge-MU-se}}",
+      "{{de-DE|Reis||REYES}}",
+      "{{de-DE|Nudeln||NU-deln}}"
+    ],
+    "explanation": "'Obst' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fruit"
+    ],
+    "source": "https://www.wordreference.com/search?q=Obst"
+  },
+  {
+    "itemId": "eba4f390-e692-4c1e-be3d-37888176214f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'vegetable'.",
+    "correctAnswer": "{{de-DE|Gemüse||ge-MU-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Reis||REYES}}",
+      "{{de-DE|Nudeln||NU-deln}}",
+      "{{de-DE|Käse||KA-se}}"
+    ],
+    "explanation": "'Gemüse' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "vegetable"
+    ],
+    "source": "https://www.wordreference.com/search?q=Gem%C3%BCse"
+  },
+  {
+    "itemId": "389335c3-8804-4fc7-91b8-2b39ae109fb4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'rice'?",
+    "correctAnswer": "{{de-DE|Reis||REYES}}",
+    "incorrectAnswers": [
+      "{{de-DE|Nudeln||NU-deln}}",
+      "{{de-DE|Käse||KA-se}}",
+      "{{de-DE|Kaffee||KAF-fee}}"
+    ],
+    "explanation": "'Reis' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "rice"
+    ],
+    "source": "https://www.wordreference.com/search?q=Reis"
+  },
+  {
+    "itemId": "1415feee-5145-4745-8622-be98d9186ec0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'pasta'?",
+    "correctAnswer": "{{de-DE|Nudeln||NU-deln}}",
+    "incorrectAnswers": [
+      "{{de-DE|Käse||KA-se}}",
+      "{{de-DE|Kaffee||KAF-fee}}",
+      "{{de-DE|Tee||TEE}}"
+    ],
+    "explanation": "'Nudeln' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "pasta"
+    ],
+    "source": "https://www.wordreference.com/search?q=Nudeln"
+  },
+  {
+    "itemId": "f52a5286-abeb-47d0-8624-d59012d8d1f0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'cheese' in everyday use?",
+    "correctAnswer": "{{de-DE|Käse||KA-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kaffee||KAF-fee}}",
+      "{{de-DE|Tee||TEE}}",
+      "{{de-DE|Saft||SAFT}}"
+    ],
+    "explanation": "'Käse' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "cheese"
+    ],
+    "source": "https://www.wordreference.com/search?q=K%C3%A4se"
+  },
+  {
+    "itemId": "6619d085-a2d2-4d65-a918-ad2005131bad",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'coffee'.",
+    "correctAnswer": "{{de-DE|Kaffee||KAF-fee}}",
+    "incorrectAnswers": [
+      "{{de-DE|Tee||TEE}}",
+      "{{de-DE|Saft||SAFT}}",
+      "{{de-DE|Bier||BEER}}"
+    ],
+    "explanation": "'Kaffee' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "coffee"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kaffee"
+  },
+  {
+    "itemId": "4b554391-57ad-40f1-a881-ec88b0989f63",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'tea'?",
+    "correctAnswer": "{{de-DE|Tee||TEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|Saft||SAFT}}",
+      "{{de-DE|Bier||BEER}}",
+      "{{de-DE|Wein||WEYEN}}"
+    ],
+    "explanation": "'Tee' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "tea"
+    ],
+    "source": "https://www.wordreference.com/search?q=Tee"
+  },
+  {
+    "itemId": "e1bc7d48-87bb-44df-a241-403b201b0768",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'juice'?",
+    "correctAnswer": "{{de-DE|Saft||SAFT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bier||BEER}}",
+      "{{de-DE|Wein||WEYEN}}",
+      "{{de-DE|Öl||OL}}"
+    ],
+    "explanation": "'Saft' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "juice"
+    ],
+    "source": "https://www.wordreference.com/search?q=Saft"
+  },
+  {
+    "itemId": "687ed69f-d3c6-463b-8d2e-3d314b072756",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'beer' in everyday use?",
+    "correctAnswer": "{{de-DE|Bier||BEER}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wein||WEYEN}}",
+      "{{de-DE|Öl||OL}}",
+      "{{de-DE|Salz||SALTS}}"
+    ],
+    "explanation": "'Bier' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "beer"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bier"
+  },
+  {
+    "itemId": "0573670e-6d48-42ca-bc3c-6ce78d7dfa01",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'wine'.",
+    "correctAnswer": "{{de-DE|Wein||WEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Öl||OL}}",
+      "{{de-DE|Salz||SALTS}}",
+      "{{de-DE|Zucker||ZUC-ker}}"
+    ],
+    "explanation": "'Wein' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "wine"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wein"
+  },
+  {
+    "itemId": "17867c87-9bee-4ce8-a02e-b47e95ff1f21",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'oil'?",
+    "correctAnswer": "{{de-DE|Öl||OL}}",
+    "incorrectAnswers": [
+      "{{de-DE|Salz||SALTS}}",
+      "{{de-DE|Zucker||ZUC-ker}}",
+      "{{de-DE|Brot||BROT}}"
+    ],
+    "explanation": "'Öl' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "oil"
+    ],
+    "source": "https://www.wordreference.com/search?q=%C3%96l"
+  },
+  {
+    "itemId": "8383fe42-d9b2-4eee-8709-88406cd38a5f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'salt'?",
+    "correctAnswer": "{{de-DE|Salz||SALTS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zucker||ZUC-ker}}",
+      "{{de-DE|Brot||BROT}}",
+      "{{de-DE|Milch||MILCH}}"
+    ],
+    "explanation": "'Salz' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "salt"
+    ],
+    "source": "https://www.wordreference.com/search?q=Salz"
+  },
+  {
+    "itemId": "87f59990-8c37-4cad-a397-46d55431f2d0",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'sugar' in everyday use?",
+    "correctAnswer": "{{de-DE|Zucker||ZUC-ker}}",
+    "incorrectAnswers": [
+      "{{de-DE|Brot||BROT}}",
+      "{{de-DE|Milch||MILCH}}",
+      "{{de-DE|Ei||EI}}"
+    ],
+    "explanation": "'Zucker' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "sugar"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zucker"
+  },
+  {
+    "itemId": "d931d587-0b87-47d0-91cd-dd5188d76057",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'dog'?",
+    "correctAnswer": "{{de-DE|Hund||HUND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Katze||KAT-tse}}",
+      "{{de-DE|Vogel||VO-gel}}",
+      "{{de-DE|Pferd||PFERD}}"
+    ],
+    "explanation": "'Hund' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "dog"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hund"
+  },
+  {
+    "itemId": "e8d3d554-89f6-4e0f-909c-9f2624418bf1",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'cat' in everyday use?",
+    "correctAnswer": "{{de-DE|Katze||KAT-tse}}",
+    "incorrectAnswers": [
+      "{{de-DE|Vogel||VO-gel}}",
+      "{{de-DE|Pferd||PFERD}}",
+      "{{de-DE|Kuh||KUH}}"
+    ],
+    "explanation": "'Katze' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cat"
+    ],
+    "source": "https://www.wordreference.com/search?q=Katze"
+  },
+  {
+    "itemId": "9d7134b7-41c8-4c7a-9734-9bfd82eb4ede",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'bird'.",
+    "correctAnswer": "{{de-DE|Vogel||VO-gel}}",
+    "incorrectAnswers": [
+      "{{de-DE|Pferd||PFERD}}",
+      "{{de-DE|Kuh||KUH}}",
+      "{{de-DE|Schwein||SCHVEYEN}}"
+    ],
+    "explanation": "'Vogel' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "bird"
+    ],
+    "source": "https://www.wordreference.com/search?q=Vogel"
+  },
+  {
+    "itemId": "6290927f-960b-4d2c-9694-3f8d4471a40b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'horse'?",
+    "correctAnswer": "{{de-DE|Pferd||PFERD}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kuh||KUH}}",
+      "{{de-DE|Schwein||SCHVEYEN}}",
+      "{{de-DE|Huhn||HUHN}}"
+    ],
+    "explanation": "'Pferd' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "horse"
+    ],
+    "source": "https://www.wordreference.com/search?q=Pferd"
+  },
+  {
+    "itemId": "e27ff537-b508-48f6-ae4c-5906d1552cfd",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'cow'?",
+    "correctAnswer": "{{de-DE|Kuh||KUH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schwein||SCHVEYEN}}",
+      "{{de-DE|Huhn||HUHN}}",
+      "{{de-DE|Maus||MOWS}}"
+    ],
+    "explanation": "'Kuh' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cow"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kuh"
+  },
+  {
+    "itemId": "14df5f02-0209-411a-a316-42c6c79487e2",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'pig' in everyday use?",
+    "correctAnswer": "{{de-DE|Schwein||SCHVEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Huhn||HUHN}}",
+      "{{de-DE|Maus||MOWS}}",
+      "{{de-DE|Kaninchen||KA-nin-chen}}"
+    ],
+    "explanation": "'Schwein' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "pig"
+    ],
+    "source": "https://www.wordreference.com/search?q=Schwein"
+  },
+  {
+    "itemId": "9a37a482-f7a5-465e-8b76-8526046db276",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'chicken'.",
+    "correctAnswer": "{{de-DE|Huhn||HUHN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Maus||MOWS}}",
+      "{{de-DE|Kaninchen||KA-nin-chen}}",
+      "{{de-DE|Hund||HUND}}"
+    ],
+    "explanation": "'Huhn' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "chicken"
+    ],
+    "source": "https://www.wordreference.com/search?q=Huhn"
+  },
+  {
+    "itemId": "d4e15756-f438-410f-8214-e249ad0826ed",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'mouse'?",
+    "correctAnswer": "{{de-DE|Maus||MOWS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kaninchen||KA-nin-chen}}",
+      "{{de-DE|Hund||HUND}}",
+      "{{de-DE|Katze||KAT-tse}}"
+    ],
+    "explanation": "'Maus' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "mouse"
+    ],
+    "source": "https://www.wordreference.com/search?q=Maus"
+  },
+  {
+    "itemId": "51bbcada-2e1f-428f-9d30-4ae27bdfaa89",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'rabbit'?",
+    "correctAnswer": "{{de-DE|Kaninchen||KA-nin-chen}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hund||HUND}}",
+      "{{de-DE|Katze||KAT-tse}}",
+      "{{de-DE|Vogel||VO-gel}}"
+    ],
+    "explanation": "'Kaninchen' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "rabbit"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kaninchen"
+  },
+  {
+    "itemId": "3856a988-c86e-4067-8380-01f414de93f8",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'house'?",
+    "correctAnswer": "{{de-DE|Haus||HOWS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zimmer||ZIM-mer}}",
+      "{{de-DE|Tür||TUR}}",
+      "{{de-DE|Fenster||FENSH-ter}}"
+    ],
+    "explanation": "'Haus' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "house"
+    ],
+    "source": "https://www.wordreference.com/search?q=Haus"
+  },
+  {
+    "itemId": "7612bcc7-f756-427f-b1fd-12f8998cc344",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'room' in everyday use?",
+    "correctAnswer": "{{de-DE|Zimmer||ZIM-mer}}",
+    "incorrectAnswers": [
+      "{{de-DE|Tür||TUR}}",
+      "{{de-DE|Fenster||FENSH-ter}}",
+      "{{de-DE|Bett||BETT}}"
+    ],
+    "explanation": "'Zimmer' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "room"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zimmer"
+  },
+  {
+    "itemId": "abf9c515-1e39-4d05-bf80-abcfe9e7d9d7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'door'.",
+    "correctAnswer": "{{de-DE|Tür||TUR}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fenster||FENSH-ter}}",
+      "{{de-DE|Bett||BETT}}",
+      "{{de-DE|Tisch||TISH}}"
+    ],
+    "explanation": "'Tür' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "door"
+    ],
+    "source": "https://www.wordreference.com/search?q=T%C3%BCr"
+  },
+  {
+    "itemId": "cdfd7275-da6e-43db-8eb9-2f61ea66c5c6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'window'?",
+    "correctAnswer": "{{de-DE|Fenster||FENSH-ter}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bett||BETT}}",
+      "{{de-DE|Tisch||TISH}}",
+      "{{de-DE|Stuhl||STUHL}}"
+    ],
+    "explanation": "'Fenster' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "window"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fenster"
+  },
+  {
+    "itemId": "1b9ea4c1-53a8-4d43-a64f-bb8d15b51314",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'bed'?",
+    "correctAnswer": "{{de-DE|Bett||BETT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Tisch||TISH}}",
+      "{{de-DE|Stuhl||STUHL}}",
+      "{{de-DE|Küche||KU-che}}"
+    ],
+    "explanation": "'Bett' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bed"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bett"
+  },
+  {
+    "itemId": "070efcf4-d759-44fb-9893-d7fdd4a7acce",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'table' in everyday use?",
+    "correctAnswer": "{{de-DE|Tisch||TISH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Stuhl||STUHL}}",
+      "{{de-DE|Küche||KU-che}}",
+      "{{de-DE|Badezimmer||BA-de-tsim-mer}}"
+    ],
+    "explanation": "'Tisch' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "table"
+    ],
+    "source": "https://www.wordreference.com/search?q=Tisch"
+  },
+  {
+    "itemId": "d631e562-3773-45cc-bb93-d59e3420141b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'chair'.",
+    "correctAnswer": "{{de-DE|Stuhl||STUHL}}",
+    "incorrectAnswers": [
+      "{{de-DE|Küche||KU-che}}",
+      "{{de-DE|Badezimmer||BA-de-tsim-mer}}",
+      "{{de-DE|Garten||GAR-ten}}"
+    ],
+    "explanation": "'Stuhl' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "chair"
+    ],
+    "source": "https://www.wordreference.com/search?q=Stuhl"
+  },
+  {
+    "itemId": "eebee486-f254-42ff-94c5-a3d697baf22b",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'kitchen'?",
+    "correctAnswer": "{{de-DE|Küche||KU-che}}",
+    "incorrectAnswers": [
+      "{{de-DE|Badezimmer||BA-de-tsim-mer}}",
+      "{{de-DE|Garten||GAR-ten}}",
+      "{{de-DE|Boden||BO-den}}"
+    ],
+    "explanation": "'Küche' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "kitchen"
+    ],
+    "source": "https://www.wordreference.com/search?q=K%C3%BCche"
+  },
+  {
+    "itemId": "6f0f9f89-b0fb-43d2-9060-16c15b3e6c3c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'bathroom'?",
+    "correctAnswer": "{{de-DE|Badezimmer||BA-de-tsim-mer}}",
+    "incorrectAnswers": [
+      "{{de-DE|Garten||GAR-ten}}",
+      "{{de-DE|Boden||BO-den}}",
+      "{{de-DE|Wand||WAND}}"
+    ],
+    "explanation": "'Badezimmer' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bathroom"
+    ],
+    "source": "https://www.wordreference.com/search?q=Badezimmer"
+  },
+  {
+    "itemId": "72258f50-8bcd-468a-a787-ef51224fefdc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'garden' in everyday use?",
+    "correctAnswer": "{{de-DE|Garten||GAR-ten}}",
+    "incorrectAnswers": [
+      "{{de-DE|Boden||BO-den}}",
+      "{{de-DE|Wand||WAND}}",
+      "{{de-DE|Dach||DACH}}"
+    ],
+    "explanation": "'Garten' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "garden"
+    ],
+    "source": "https://www.wordreference.com/search?q=Garten"
+  },
+  {
+    "itemId": "dbb4bdc7-996c-446b-b881-163b2cd89f06",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'floor'.",
+    "correctAnswer": "{{de-DE|Boden||BO-den}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wand||WAND}}",
+      "{{de-DE|Dach||DACH}}",
+      "{{de-DE|Lampe||LAM-pe}}"
+    ],
+    "explanation": "'Boden' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "floor"
+    ],
+    "source": "https://www.wordreference.com/search?q=Boden"
+  },
+  {
+    "itemId": "ed096e67-f2a3-4504-9ddf-32ac7b283279",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'wall'?",
+    "correctAnswer": "{{de-DE|Wand||WAND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Dach||DACH}}",
+      "{{de-DE|Lampe||LAM-pe}}",
+      "{{de-DE|Haus||HOWS}}"
+    ],
+    "explanation": "'Wand' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "wall"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wand"
+  },
+  {
+    "itemId": "b394552d-294e-4492-a2b6-4b011af05265",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'roof'?",
+    "correctAnswer": "{{de-DE|Dach||DACH}}",
+    "incorrectAnswers": [
+      "{{de-DE|Lampe||LAM-pe}}",
+      "{{de-DE|Haus||HOWS}}",
+      "{{de-DE|Zimmer||ZIM-mer}}"
+    ],
+    "explanation": "'Dach' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "roof"
+    ],
+    "source": "https://www.wordreference.com/search?q=Dach"
+  },
+  {
+    "itemId": "2bd48cd5-bc4c-45b2-84a9-e5a84345f7ff",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'lamp' in everyday use?",
+    "correctAnswer": "{{de-DE|Lampe||LAM-pe}}",
+    "incorrectAnswers": [
+      "{{de-DE|Haus||HOWS}}",
+      "{{de-DE|Zimmer||ZIM-mer}}",
+      "{{de-DE|Tür||TUR}}"
+    ],
+    "explanation": "'Lampe' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "lamp"
+    ],
+    "source": "https://www.wordreference.com/search?q=Lampe"
+  },
+  {
+    "itemId": "ced30e7f-57c3-48a5-b662-c912d9bec6a4",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'shirt'?",
+    "correctAnswer": "{{de-DE|Hemd||HEMD}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hose||HO-se}}",
+      "{{de-DE|Kleid||KLEYED}}",
+      "{{de-DE|Schuhe||SCHU-he}}"
+    ],
+    "explanation": "'Hemd' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shirt"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hemd"
+  },
+  {
+    "itemId": "81afa2e1-aa37-4994-b8c7-fb7d16b8c908",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'pants' in everyday use?",
+    "correctAnswer": "{{de-DE|Hose||HO-se}}",
+    "incorrectAnswers": [
+      "{{de-DE|Kleid||KLEYED}}",
+      "{{de-DE|Schuhe||SCHU-he}}",
+      "{{de-DE|Socken||SOC-ken}}"
+    ],
+    "explanation": "'Hose' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "pants"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hose"
+  },
+  {
+    "itemId": "b0d28c00-5463-4681-9f98-e4f783b0e6e2",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'dress'.",
+    "correctAnswer": "{{de-DE|Kleid||KLEYED}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schuhe||SCHU-he}}",
+      "{{de-DE|Socken||SOC-ken}}",
+      "{{de-DE|Jacke||JAC-ke}}"
+    ],
+    "explanation": "'Kleid' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "dress"
+    ],
+    "source": "https://www.wordreference.com/search?q=Kleid"
+  },
+  {
+    "itemId": "0283b795-21d2-4864-af40-32e3d0822261",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'shoes'?",
+    "correctAnswer": "{{de-DE|Schuhe||SCHU-he}}",
+    "incorrectAnswers": [
+      "{{de-DE|Socken||SOC-ken}}",
+      "{{de-DE|Jacke||JAC-ke}}",
+      "{{de-DE|Hut||HUT}}"
+    ],
+    "explanation": "'Schuhe' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shoes"
+    ],
+    "source": "https://www.wordreference.com/search?q=Schuhe"
+  },
+  {
+    "itemId": "20e918e1-9292-4c03-b6b2-6b0d1f182d03",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'socks'?",
+    "correctAnswer": "{{de-DE|Socken||SOC-ken}}",
+    "incorrectAnswers": [
+      "{{de-DE|Jacke||JAC-ke}}",
+      "{{de-DE|Hut||HUT}}",
+      "{{de-DE|Tasche||TA-she}}"
+    ],
+    "explanation": "'Socken' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "socks"
+    ],
+    "source": "https://www.wordreference.com/search?q=Socken"
+  },
+  {
+    "itemId": "87d0541b-e1fe-4f0c-8b6d-e23d93c46bdf",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'jacket' in everyday use?",
+    "correctAnswer": "{{de-DE|Jacke||JAC-ke}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hut||HUT}}",
+      "{{de-DE|Tasche||TA-she}}",
+      "{{de-DE|Mantel||MAN-tel}}"
+    ],
+    "explanation": "'Jacke' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "jacket"
+    ],
+    "source": "https://www.wordreference.com/search?q=Jacke"
+  },
+  {
+    "itemId": "dd48ba9f-78c7-4d15-bf8b-9f51745ce8d3",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'hat'.",
+    "correctAnswer": "{{de-DE|Hut||HUT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Tasche||TA-she}}",
+      "{{de-DE|Mantel||MAN-tel}}",
+      "{{de-DE|Hemd||HEMD}}"
+    ],
+    "explanation": "'Hut' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "hat"
+    ],
+    "source": "https://www.wordreference.com/search?q=Hut"
+  },
+  {
+    "itemId": "469de57b-08bd-4e52-8c08-e7b69d0069f6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'bag'?",
+    "correctAnswer": "{{de-DE|Tasche||TA-she}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mantel||MAN-tel}}",
+      "{{de-DE|Hemd||HEMD}}",
+      "{{de-DE|Hose||HO-se}}"
+    ],
+    "explanation": "'Tasche' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "bag"
+    ],
+    "source": "https://www.wordreference.com/search?q=Tasche"
+  },
+  {
+    "itemId": "b71ade33-52ab-4f76-ad61-313cdae0fd1f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'coat'?",
+    "correctAnswer": "{{de-DE|Mantel||MAN-tel}}",
+    "incorrectAnswers": [
+      "{{de-DE|Hemd||HEMD}}",
+      "{{de-DE|Hose||HO-se}}",
+      "{{de-DE|Kleid||KLEYED}}"
+    ],
+    "explanation": "'Mantel' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "coat"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mantel"
+  },
+  {
+    "itemId": "d9291726-5e58-4b33-b930-a632b0bc0d2a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'car'?",
+    "correctAnswer": "{{de-DE|Auto||AU-to}}",
+    "incorrectAnswers": [
+      "{{de-DE|Bus||BUS}}",
+      "{{de-DE|Zug||ZUG}}",
+      "{{de-DE|Flugzeug||FLUG-tsoyg}}"
+    ],
+    "explanation": "'Auto' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "car"
+    ],
+    "source": "https://www.wordreference.com/search?q=Auto"
+  },
+  {
+    "itemId": "3974fb29-bad1-4afe-bc79-5931974940e9",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'bus' in everyday use?",
+    "correctAnswer": "{{de-DE|Bus||BUS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Zug||ZUG}}",
+      "{{de-DE|Flugzeug||FLUG-tsoyg}}",
+      "{{de-DE|Fahrrad||FAHR-rad}}"
+    ],
+    "explanation": "'Bus' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bus"
+    ],
+    "source": "https://www.wordreference.com/search?q=Bus"
+  },
+  {
+    "itemId": "41849ccd-1321-4b8d-96a4-6529ebab9a36",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'train'.",
+    "correctAnswer": "{{de-DE|Zug||ZUG}}",
+    "incorrectAnswers": [
+      "{{de-DE|Flugzeug||FLUG-tsoyg}}",
+      "{{de-DE|Fahrrad||FAHR-rad}}",
+      "{{de-DE|Boot||BOOT}}"
+    ],
+    "explanation": "'Zug' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "train"
+    ],
+    "source": "https://www.wordreference.com/search?q=Zug"
+  },
+  {
+    "itemId": "a205e802-e347-4447-b5e4-6e8a9fbddb0f",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'plane'?",
+    "correctAnswer": "{{de-DE|Flugzeug||FLUG-tsoyg}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fahrrad||FAHR-rad}}",
+      "{{de-DE|Boot||BOOT}}",
+      "{{de-DE|Taxi||TA-xi}}"
+    ],
+    "explanation": "'Flugzeug' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "plane"
+    ],
+    "source": "https://www.wordreference.com/search?q=Flugzeug"
+  },
+  {
+    "itemId": "5b55d596-7cb0-49c9-85ce-be5f7689a175",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'bicycle'?",
+    "correctAnswer": "{{de-DE|Fahrrad||FAHR-rad}}",
+    "incorrectAnswers": [
+      "{{de-DE|Boot||BOOT}}",
+      "{{de-DE|Taxi||TA-xi}}",
+      "{{de-DE|U-Bahn||U-BAHN}}"
+    ],
+    "explanation": "'Fahrrad' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bicycle"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fahrrad"
+  },
+  {
+    "itemId": "f92ea9dc-6792-427b-8cef-ffc7b1bf5e03",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'boat' in everyday use?",
+    "correctAnswer": "{{de-DE|Boot||BOOT}}",
+    "incorrectAnswers": [
+      "{{de-DE|Taxi||TA-xi}}",
+      "{{de-DE|U-Bahn||U-BAHN}}",
+      "{{de-DE|Auto||AU-to}}"
+    ],
+    "explanation": "'Boot' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "boat"
+    ],
+    "source": "https://www.wordreference.com/search?q=Boot"
+  },
+  {
+    "itemId": "ee193bc3-a7c9-444f-afc9-1095f75ff3c6",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'taxi'.",
+    "correctAnswer": "{{de-DE|Taxi||TA-xi}}",
+    "incorrectAnswers": [
+      "{{de-DE|U-Bahn||U-BAHN}}",
+      "{{de-DE|Auto||AU-to}}",
+      "{{de-DE|Bus||BUS}}"
+    ],
+    "explanation": "'Taxi' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "taxi"
+    ],
+    "source": "https://www.wordreference.com/search?q=Taxi"
+  },
+  {
+    "itemId": "04990efe-5a9f-4ac0-9757-005bfad29497",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'metro'?",
+    "correctAnswer": "{{de-DE|U-Bahn||U-BAHN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Auto||AU-to}}",
+      "{{de-DE|Bus||BUS}}",
+      "{{de-DE|Zug||ZUG}}"
+    ],
+    "explanation": "'U-Bahn' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "metro"
+    ],
+    "source": "https://www.wordreference.com/search?q=U-Bahn"
+  },
+  {
+    "itemId": "1bd0b76b-3fa5-4e81-be47-7911a2d975ec",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'sun'?",
+    "correctAnswer": "{{de-DE|Sonne||SON-ne}}",
+    "incorrectAnswers": [
+      "{{de-DE|Mond||MOND}}",
+      "{{de-DE|Stern||STERN}}",
+      "{{de-DE|Regen||RE-gen}}"
+    ],
+    "explanation": "'Sonne' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sun"
+    ],
+    "source": "https://www.wordreference.com/search?q=Sonne"
+  },
+  {
+    "itemId": "d736c73d-5ece-4975-86b0-612422f40455",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'moon' in everyday use?",
+    "correctAnswer": "{{de-DE|Mond||MOND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Stern||STERN}}",
+      "{{de-DE|Regen||RE-gen}}",
+      "{{de-DE|Schnee||SCHNEE}}"
+    ],
+    "explanation": "'Mond' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "moon"
+    ],
+    "source": "https://www.wordreference.com/search?q=Mond"
+  },
+  {
+    "itemId": "42e4d217-13bb-4583-b038-5c967ae7955e",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'star'.",
+    "correctAnswer": "{{de-DE|Stern||STERN}}",
+    "incorrectAnswers": [
+      "{{de-DE|Regen||RE-gen}}",
+      "{{de-DE|Schnee||SCHNEE}}",
+      "{{de-DE|Wind||WIND}}"
+    ],
+    "explanation": "'Stern' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "star"
+    ],
+    "source": "https://www.wordreference.com/search?q=Stern"
+  },
+  {
+    "itemId": "3a4e68fd-9805-4331-a81a-af3f88576660",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'rain'?",
+    "correctAnswer": "{{de-DE|Regen||RE-gen}}",
+    "incorrectAnswers": [
+      "{{de-DE|Schnee||SCHNEE}}",
+      "{{de-DE|Wind||WIND}}",
+      "{{de-DE|Wolke||WOL-ke}}"
+    ],
+    "explanation": "'Regen' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "rain"
+    ],
+    "source": "https://www.wordreference.com/search?q=Regen"
+  },
+  {
+    "itemId": "8c65d617-640c-4154-99ec-fd86b6195fd3",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'snow'?",
+    "correctAnswer": "{{de-DE|Schnee||SCHNEE}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wind||WIND}}",
+      "{{de-DE|Wolke||WOL-ke}}",
+      "{{de-DE|Berg||BERG}}"
+    ],
+    "explanation": "'Schnee' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "snow"
+    ],
+    "source": "https://www.wordreference.com/search?q=Schnee"
+  },
+  {
+    "itemId": "9f66eded-b459-457a-a229-8fa2a02b3586",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'wind' in everyday use?",
+    "correctAnswer": "{{de-DE|Wind||WIND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wolke||WOL-ke}}",
+      "{{de-DE|Berg||BERG}}",
+      "{{de-DE|Fluss||FLUSS}}"
+    ],
+    "explanation": "'Wind' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "wind"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wind"
+  },
+  {
+    "itemId": "d4344e69-68c0-4e1b-bc90-0238c21c43a5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'cloud'.",
+    "correctAnswer": "{{de-DE|Wolke||WOL-ke}}",
+    "incorrectAnswers": [
+      "{{de-DE|Berg||BERG}}",
+      "{{de-DE|Fluss||FLUSS}}",
+      "{{de-DE|Meer||MEER}}"
+    ],
+    "explanation": "'Wolke' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "cloud"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wolke"
+  },
+  {
+    "itemId": "db57c3a4-d25b-44fa-a77c-1a9646dd7ad2",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'mountain'?",
+    "correctAnswer": "{{de-DE|Berg||BERG}}",
+    "incorrectAnswers": [
+      "{{de-DE|Fluss||FLUSS}}",
+      "{{de-DE|Meer||MEER}}",
+      "{{de-DE|Strand||STRAND}}"
+    ],
+    "explanation": "'Berg' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "mountain"
+    ],
+    "source": "https://www.wordreference.com/search?q=Berg"
+  },
+  {
+    "itemId": "156f94ce-47ee-48cc-babf-092f68ce3503",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'river'?",
+    "correctAnswer": "{{de-DE|Fluss||FLUSS}}",
+    "incorrectAnswers": [
+      "{{de-DE|Meer||MEER}}",
+      "{{de-DE|Strand||STRAND}}",
+      "{{de-DE|Wald||WALD}}"
+    ],
+    "explanation": "'Fluss' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "river"
+    ],
+    "source": "https://www.wordreference.com/search?q=Fluss"
+  },
+  {
+    "itemId": "e40f9786-864d-4c41-bceb-e77cfbd1b63a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'sea' in everyday use?",
+    "correctAnswer": "{{de-DE|Meer||MEER}}",
+    "incorrectAnswers": [
+      "{{de-DE|Strand||STRAND}}",
+      "{{de-DE|Wald||WALD}}",
+      "{{de-DE|Baum||BOWM}}"
+    ],
+    "explanation": "'Meer' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sea"
+    ],
+    "source": "https://www.wordreference.com/search?q=Meer"
+  },
+  {
+    "itemId": "658a40fd-0c44-451e-8c4e-de7aad9892b5",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'beach'.",
+    "correctAnswer": "{{de-DE|Strand||STRAND}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wald||WALD}}",
+      "{{de-DE|Baum||BOWM}}",
+      "{{de-DE|Blume||BLU-me}}"
+    ],
+    "explanation": "'Strand' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "beach"
+    ],
+    "source": "https://www.wordreference.com/search?q=Strand"
+  },
+  {
+    "itemId": "aa1f08be-c264-4967-af2f-3c90545fe00c",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'forest'?",
+    "correctAnswer": "{{de-DE|Wald||WALD}}",
+    "incorrectAnswers": [
+      "{{de-DE|Baum||BOWM}}",
+      "{{de-DE|Blume||BLU-me}}",
+      "{{de-DE|Wetter||WET-ter}}"
+    ],
+    "explanation": "'Wald' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "forest"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wald"
+  },
+  {
+    "itemId": "87622a2f-fa4c-40d2-9577-7ef668a04a7d",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'tree'?",
+    "correctAnswer": "{{de-DE|Baum||BOWM}}",
+    "incorrectAnswers": [
+      "{{de-DE|Blume||BLU-me}}",
+      "{{de-DE|Wetter||WET-ter}}",
+      "{{de-DE|Sonne||SON-ne}}"
+    ],
+    "explanation": "'Baum' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "tree"
+    ],
+    "source": "https://www.wordreference.com/search?q=Baum"
+  },
+  {
+    "itemId": "03c4ccca-0260-4287-8139-718e0c7102bc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'flower' in everyday use?",
+    "correctAnswer": "{{de-DE|Blume||BLU-me}}",
+    "incorrectAnswers": [
+      "{{de-DE|Wetter||WET-ter}}",
+      "{{de-DE|Sonne||SON-ne}}",
+      "{{de-DE|Mond||MOND}}"
+    ],
+    "explanation": "'Blume' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "flower"
+    ],
+    "source": "https://www.wordreference.com/search?q=Blume"
+  },
+  {
+    "itemId": "d0379a8d-3199-48f9-b621-2dd26e818dac",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'weather'.",
+    "correctAnswer": "{{de-DE|Wetter||WET-ter}}",
+    "incorrectAnswers": [
+      "{{de-DE|Sonne||SON-ne}}",
+      "{{de-DE|Mond||MOND}}",
+      "{{de-DE|Stern||STERN}}"
+    ],
+    "explanation": "'Wetter' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "weather"
+    ],
+    "source": "https://www.wordreference.com/search?q=Wetter"
+  },
+  {
+    "itemId": "ecbbb7f8-6445-49ba-b6f0-e8d74d2bf404",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'be'?",
+    "correctAnswer": "{{de-DE|sein||SEYEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|haben||HA-ben}}",
+      "{{de-DE|wollen||VOL-len}}",
+      "{{de-DE|brauchen||BROW-chen}}"
+    ],
+    "explanation": "'sein' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "be"
+    ],
+    "source": "https://www.wordreference.com/search?q=sein"
+  },
+  {
+    "itemId": "8d37f33a-5d3f-440e-b53d-43cfeb8dca5a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'have' in everyday use?",
+    "correctAnswer": "{{de-DE|haben||HA-ben}}",
+    "incorrectAnswers": [
+      "{{de-DE|wollen||VOL-len}}",
+      "{{de-DE|brauchen||BROW-chen}}",
+      "{{de-DE|gehen||ge-HEN}}"
+    ],
+    "explanation": "'haben' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "have"
+    ],
+    "source": "https://www.wordreference.com/search?q=haben"
+  },
+  {
+    "itemId": "a6e0f3cd-c5c0-40b7-b77b-04cc4edd0aeb",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'want'.",
+    "correctAnswer": "{{de-DE|wollen||VOL-len}}",
+    "incorrectAnswers": [
+      "{{de-DE|brauchen||BROW-chen}}",
+      "{{de-DE|gehen||ge-HEN}}",
+      "{{de-DE|kommen||KOM-men}}"
+    ],
+    "explanation": "'wollen' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "want"
+    ],
+    "source": "https://www.wordreference.com/search?q=wollen"
+  },
+  {
+    "itemId": "9fa316db-77da-4b58-ab19-f0a2ad2f951a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'need'?",
+    "correctAnswer": "{{de-DE|brauchen||BROW-chen}}",
+    "incorrectAnswers": [
+      "{{de-DE|gehen||ge-HEN}}",
+      "{{de-DE|kommen||KOM-men}}",
+      "{{de-DE|essen||ES-sen}}"
+    ],
+    "explanation": "'brauchen' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "need"
+    ],
+    "source": "https://www.wordreference.com/search?q=brauchen"
+  },
+  {
+    "itemId": "064505c2-39b5-4aff-9b79-8cb56b84f4de",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'go'?",
+    "correctAnswer": "{{de-DE|gehen||ge-HEN}}",
+    "incorrectAnswers": [
+      "{{de-DE|kommen||KOM-men}}",
+      "{{de-DE|essen||ES-sen}}",
+      "{{de-DE|trinken||TRIN-ken}}"
+    ],
+    "explanation": "'gehen' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "go"
+    ],
+    "source": "https://www.wordreference.com/search?q=gehen"
+  },
+  {
+    "itemId": "b4bcff61-5f7b-4e49-ad1b-688a4c8f69db",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'come' in everyday use?",
+    "correctAnswer": "{{de-DE|kommen||KOM-men}}",
+    "incorrectAnswers": [
+      "{{de-DE|essen||ES-sen}}",
+      "{{de-DE|trinken||TRIN-ken}}",
+      "{{de-DE|schlafen||SHLA-fen}}"
+    ],
+    "explanation": "'kommen' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "come"
+    ],
+    "source": "https://www.wordreference.com/search?q=kommen"
+  },
+  {
+    "itemId": "1b3e1128-5f6d-4a45-9f02-07c5a3763124",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Choose the German word for 'eat'.",
+    "correctAnswer": "{{de-DE|essen||ES-sen}}",
+    "incorrectAnswers": [
+      "{{de-DE|trinken||TRIN-ken}}",
+      "{{de-DE|schlafen||SHLA-fen}}",
+      "{{de-DE|aufwachen||OWF-va-chen}}"
+    ],
+    "explanation": "'essen' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "eat"
+    ],
+    "source": "https://www.wordreference.com/search?q=essen"
+  },
+  {
+    "itemId": "36d8a82a-1378-4700-ba9f-8f50df3fb5f7",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday German word for 'drink'?",
+    "correctAnswer": "{{de-DE|trinken||TRIN-ken}}",
+    "incorrectAnswers": [
+      "{{de-DE|schlafen||SHLA-fen}}",
+      "{{de-DE|aufwachen||OWF-va-chen}}",
+      "{{de-DE|arbeiten||AR-beye-ten}}"
+    ],
+    "explanation": "'trinken' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "drink"
+    ],
+    "source": "https://www.wordreference.com/search?q=trinken"
+  },
+  {
+    "itemId": "c8a01711-a159-455b-be2c-30f991b35e00",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "In beginner German, how do you say 'sleep'?",
+    "correctAnswer": "{{de-DE|schlafen||SHLA-fen}}",
+    "incorrectAnswers": [
+      "{{de-DE|aufwachen||OWF-va-chen}}",
+      "{{de-DE|arbeiten||AR-beye-ten}}",
+      "{{de-DE|sprechen||SHPRE-chen}}"
+    ],
+    "explanation": "'schlafen' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "sleep"
+    ],
+    "source": "https://www.wordreference.com/search?q=schlafen"
+  },
+  {
+    "itemId": "72607497-040b-4ec2-87cc-a2ac1f8273fc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "core",
+    "question": "Which German word means 'wake up' in everyday use?",
+    "correctAnswer": "{{de-DE|aufwachen||OWF-va-chen}}",
+    "incorrectAnswers": [
+      "{{de-DE|arbeiten||AR-beye-ten}}",
+      "{{de-DE|sprechen||SHPRE-chen}}",
+      "{{de-DE|hören||HO-ren}}"
+    ],
+    "explanation": "'aufwachen' is the infinitive 'to wake up'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "german",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "wake-up"
+    ],
+    "source": "https://www.wordreference.com/search?q=aufwachen"
+  }
+]

@@ -95,6 +95,8 @@ dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 ## Change Rules
 
 - Do not hand-edit generated OpenAPI unless the generation path is broken and you are explicitly repairing it.
+- For repo-managed seed item JSON under `data/seed-source/items`, keep one semantic source file per `category/nav1/nav2` when the set has 100 or fewer items, named `<category>.<nav1>.<nav2>.json`. Split larger sets into 100-item chunks using padded suffixes (`.001`, `.002`, ...), and do not use ad hoc small numbered files such as `.2.json`.
+- When moving, merging, or chunking repo-managed seed items, preserve `itemId` for the same logical item and update generated registries/indexes only through the generation/repair path.
 - Do not duplicate large architecture or endpoint inventories across docs.
 - Root `README.md` is the canonical human/AI entry point.
 - Additional README files should be minimal and local in scope.

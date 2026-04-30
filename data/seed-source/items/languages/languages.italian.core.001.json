@@ -1,0 +1,2288 @@
+[
+  {
+    "itemId": "a05d5e9c-9ccc-4db6-9d8f-e8e9b04c84a9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Ciao' often mean in everyday Italian?",
+    "correctAnswer": "hi or bye (informal)",
+    "incorrectAnswers": [
+      "please",
+      "excuse me",
+      "you are welcome"
+    ],
+    "explanation": "'Ciao' is a common informal greeting and goodbye, depending on context.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/ciao"
+  },
+  {
+    "itemId": "53b1281e-d373-4150-a6bc-09e03dc4d66b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'Grazie' mean?",
+    "correctAnswer": "thank you",
+    "incorrectAnswers": [
+      "please",
+      "sorry",
+      "hello"
+    ],
+    "explanation": "'Grazie' is the standard way to say thank you.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/grazie/"
+  },
+  {
+    "itemId": "3745203e-596c-43ba-9c68-f5fa715244a5",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'acqua' mean?",
+    "correctAnswer": "water",
+    "incorrectAnswers": [
+      "bread",
+      "milk",
+      "wine"
+    ],
+    "explanation": "'Acqua' means water, a very common word in daily life.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/acqua"
+  },
+  {
+    "itemId": "4b157145-2a6d-402b-bcc8-4f9d0d66a67c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'io sono' mean in a simple introduction?",
+    "correctAnswer": "I am",
+    "incorrectAnswers": [
+      "you are",
+      "we are",
+      "they are"
+    ],
+    "explanation": "'Io sono' uses 'essere' for 'I am', often used in introductions.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/sono"
+  },
+  {
+    "itemId": "a018a74d-c323-4aff-8dc5-2d117f5cdb5f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which indefinite article often matches a singular masculine noun like 'libro'?",
+    "correctAnswer": "{{it-IT|un||UN}}",
+    "incorrectAnswers": [
+      "{{it-IT|una||U-na}}",
+      "{{it-IT|il||IL}}",
+      "{{it-IT|la||LA}}"
+    ],
+    "explanation": "'Un libro' is a common pattern: masculine singular indefinite article 'un' before most consonants.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1"
+    ],
+    "source": "https://www.treccani.it/vocabolario/un/"
+  },
+  {
+    "itemId": "f7c3e81c-7a5d-4e25-82fd-e3c8358d9d42",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'dove' mean in a travel question?",
+    "correctAnswer": "where",
+    "incorrectAnswers": [
+      "when",
+      "why",
+      "how"
+    ],
+    "explanation": "'Dove' asks where something is, useful for directions.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-directions",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/dove"
+  },
+  {
+    "itemId": "0c0482c8-862f-4593-905a-0b3edb8ef14b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "How do you say 'yes' in Italian?",
+    "correctAnswer": "{{it-IT|sì||SI}}",
+    "incorrectAnswers": [
+      "{{it-IT|no||NO}}",
+      "{{it-IT|forse||FOR-se}}",
+      "{{it-IT|bene||BE-ne}}"
+    ],
+    "explanation": "'Sì' (with accent) is the standard word for yes. 'No' stays the same as in English.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/si"
+  },
+  {
+    "itemId": "4b267a65-36f2-4379-bb0e-b8a02c620e94",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'per favore' mean?",
+    "correctAnswer": "please",
+    "incorrectAnswers": [
+      "thank you",
+      "excuse me",
+      "sorry"
+    ],
+    "explanation": "'Per favore' literally means 'as a favour' and is the standard polite 'please'.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/per-favore"
+  },
+  {
+    "itemId": "b27c3077-6eed-49a0-a7df-c417148db72c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'mi chiamo' mean?",
+    "correctAnswer": "my name is",
+    "incorrectAnswers": [
+      "I live in",
+      "I am from",
+      "I like"
+    ],
+    "explanation": "'Mi chiamo' literally means 'I call myself' — used to introduce your name.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-intro",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/chiamarsi"
+  },
+  {
+    "itemId": "0eeede75-d35c-4e30-86e0-8d8caea6f041",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What does 'arrivederci' mean?",
+    "correctAnswer": "goodbye (formal)",
+    "incorrectAnswers": [
+      "hello",
+      "see you tomorrow",
+      "good morning"
+    ],
+    "explanation": "'Arrivederci' is a formal farewell — 'until we see each other again'. Use 'ciao' informally.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-100",
+      "situation-greetings",
+      "cefr-a1"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/italian-english/arrivederci"
+  },
+  {
+    "itemId": "b7501148-a91a-41c7-95f4-6ab53225f14c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'four'?",
+    "correctAnswer": "{{it-IT|quattro||QUAT-tro}}",
+    "incorrectAnswers": [
+      "{{it-IT|cinque||CIN-que}}",
+      "{{it-IT|sei||SEI}}",
+      "{{it-IT|sette||SET-te}}"
+    ],
+    "explanation": "'quattro' is the word for 'four'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/quattro"
+  },
+  {
+    "itemId": "5244a8ed-fd21-4d1d-8a72-5d9ec21cf4c4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'five' in everyday use?",
+    "correctAnswer": "{{it-IT|cinque||CIN-que}}",
+    "incorrectAnswers": [
+      "{{it-IT|sei||SEI}}",
+      "{{it-IT|sette||SET-te}}",
+      "{{it-IT|otto||OT-to}}"
+    ],
+    "explanation": "'cinque' is the word for 'five'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/cinque"
+  },
+  {
+    "itemId": "16bcd0a4-9ab4-4bdf-8064-e78e55b4bf5d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'six'.",
+    "correctAnswer": "{{it-IT|sei||SEI}}",
+    "incorrectAnswers": [
+      "{{it-IT|sette||SET-te}}",
+      "{{it-IT|otto||OT-to}}",
+      "{{it-IT|nove||NO-ve}}"
+    ],
+    "explanation": "'sei' is the word for 'six'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/sei"
+  },
+  {
+    "itemId": "6b471dd4-3b7c-4cb9-96e7-6bfe463e287b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'seven'?",
+    "correctAnswer": "{{it-IT|sette||SET-te}}",
+    "incorrectAnswers": [
+      "{{it-IT|otto||OT-to}}",
+      "{{it-IT|nove||NO-ve}}",
+      "{{it-IT|dieci||DIE-ci}}"
+    ],
+    "explanation": "'sette' is the word for 'seven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/sette"
+  },
+  {
+    "itemId": "96dacd85-1214-4971-8785-2ef231a17dd7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'eight'?",
+    "correctAnswer": "{{it-IT|otto||OT-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|nove||NO-ve}}",
+      "{{it-IT|dieci||DIE-ci}}",
+      "{{it-IT|undici||un-DI-ci}}"
+    ],
+    "explanation": "'otto' is the word for 'eight'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/otto"
+  },
+  {
+    "itemId": "55d11dd0-c3a4-40ec-af44-b21737854872",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'nine' in everyday use?",
+    "correctAnswer": "{{it-IT|nove||NO-ve}}",
+    "incorrectAnswers": [
+      "{{it-IT|dieci||DIE-ci}}",
+      "{{it-IT|undici||un-DI-ci}}",
+      "{{it-IT|dodici||do-DI-ci}}"
+    ],
+    "explanation": "'nove' is the word for 'nine'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/nove"
+  },
+  {
+    "itemId": "1d1fb768-37f5-44f8-8449-e42c1b313e2b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'ten'.",
+    "correctAnswer": "{{it-IT|dieci||DIE-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|undici||un-DI-ci}}",
+      "{{it-IT|dodici||do-DI-ci}}",
+      "{{it-IT|tredici||tre-DI-ci}}"
+    ],
+    "explanation": "'dieci' is the word for 'ten'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/dieci"
+  },
+  {
+    "itemId": "2d005a0d-5668-420e-8b5e-56fefc59ca59",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'eleven'?",
+    "correctAnswer": "{{it-IT|undici||un-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|dodici||do-DI-ci}}",
+      "{{it-IT|tredici||tre-DI-ci}}",
+      "{{it-IT|quattordici||quat-tor-DI-ci}}"
+    ],
+    "explanation": "'undici' is the word for 'eleven'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/undici"
+  },
+  {
+    "itemId": "985a4cd8-1eeb-4fe2-9b19-2d71d9fa4969",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'twelve'?",
+    "correctAnswer": "{{it-IT|dodici||do-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|tredici||tre-DI-ci}}",
+      "{{it-IT|quattordici||quat-tor-DI-ci}}",
+      "{{it-IT|quindici||quin-DI-ci}}"
+    ],
+    "explanation": "'dodici' is the word for 'twelve'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/dodici"
+  },
+  {
+    "itemId": "b230341b-ccb7-4526-8b16-9c069790de0c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'thirteen' in everyday use?",
+    "correctAnswer": "{{it-IT|tredici||tre-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|quattordici||quat-tor-DI-ci}}",
+      "{{it-IT|quindici||quin-DI-ci}}",
+      "{{it-IT|sedici||se-DI-ci}}"
+    ],
+    "explanation": "'tredici' is the word for 'thirteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/tredici"
+  },
+  {
+    "itemId": "537cf972-8965-4add-8a5a-417f2d580658",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'fourteen'.",
+    "correctAnswer": "{{it-IT|quattordici||quat-tor-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|quindici||quin-DI-ci}}",
+      "{{it-IT|sedici||se-DI-ci}}",
+      "{{it-IT|diciassette||di-kas-SET-te}}"
+    ],
+    "explanation": "'quattordici' is the word for 'fourteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/quattordici"
+  },
+  {
+    "itemId": "24eddd39-346c-4126-b054-128985b9d9d0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'fifteen'?",
+    "correctAnswer": "{{it-IT|quindici||quin-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|sedici||se-DI-ci}}",
+      "{{it-IT|diciassette||di-kas-SET-te}}",
+      "{{it-IT|diciotto||di-KOT-to}}"
+    ],
+    "explanation": "'quindici' is the word for 'fifteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/quindici"
+  },
+  {
+    "itemId": "a1e5f292-44ca-4ebc-baca-4123c3a8ab14",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'sixteen'?",
+    "correctAnswer": "{{it-IT|sedici||se-DI-ci}}",
+    "incorrectAnswers": [
+      "{{it-IT|diciassette||di-kas-SET-te}}",
+      "{{it-IT|diciotto||di-KOT-to}}",
+      "{{it-IT|diciannove||di-kan-NO-ve}}"
+    ],
+    "explanation": "'sedici' is the word for 'sixteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/sedici"
+  },
+  {
+    "itemId": "a90805c5-38dd-43b8-be42-dd182ce542e2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'seventeen' in everyday use?",
+    "correctAnswer": "{{it-IT|diciassette||di-kas-SET-te}}",
+    "incorrectAnswers": [
+      "{{it-IT|diciotto||di-KOT-to}}",
+      "{{it-IT|diciannove||di-kan-NO-ve}}",
+      "{{it-IT|venti||VEN-ti}}"
+    ],
+    "explanation": "'diciassette' is the word for 'seventeen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/diciassette"
+  },
+  {
+    "itemId": "e5ed378e-3e8c-4ea4-9b45-3a4b8878d8d4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'eighteen'.",
+    "correctAnswer": "{{it-IT|diciotto||di-KOT-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|diciannove||di-kan-NO-ve}}",
+      "{{it-IT|venti||VEN-ti}}",
+      "{{it-IT|trenta||TREN-ta}}"
+    ],
+    "explanation": "'diciotto' is the word for 'eighteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/diciotto"
+  },
+  {
+    "itemId": "b5537fd7-15cc-4a7a-afcd-a37e1c887d60",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'nineteen'?",
+    "correctAnswer": "{{it-IT|diciannove||di-kan-NO-ve}}",
+    "incorrectAnswers": [
+      "{{it-IT|venti||VEN-ti}}",
+      "{{it-IT|trenta||TREN-ta}}",
+      "{{it-IT|quaranta||qua-RAN-ta}}"
+    ],
+    "explanation": "'diciannove' is the word for 'nineteen'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/diciannove"
+  },
+  {
+    "itemId": "5073a928-abba-405b-9652-9f64a9ca07d6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'twenty'?",
+    "correctAnswer": "{{it-IT|venti||VEN-ti}}",
+    "incorrectAnswers": [
+      "{{it-IT|trenta||TREN-ta}}",
+      "{{it-IT|quaranta||qua-RAN-ta}}",
+      "{{it-IT|cinquanta||cin-QUAN-ta}}"
+    ],
+    "explanation": "'venti' is the word for 'twenty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/venti"
+  },
+  {
+    "itemId": "60a420e2-e4d2-48a5-8d6c-265cc61d45aa",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'thirty' in everyday use?",
+    "correctAnswer": "{{it-IT|trenta||TREN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|quaranta||qua-RAN-ta}}",
+      "{{it-IT|cinquanta||cin-QUAN-ta}}",
+      "{{it-IT|sessanta||ses-SAN-ta}}"
+    ],
+    "explanation": "'trenta' is the word for 'thirty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/trenta"
+  },
+  {
+    "itemId": "c5a3b99f-7473-4e34-aa9c-6af03735a880",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'forty'.",
+    "correctAnswer": "{{it-IT|quaranta||qua-RAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|cinquanta||cin-QUAN-ta}}",
+      "{{it-IT|sessanta||ses-SAN-ta}}",
+      "{{it-IT|settanta||set-TAN-ta}}"
+    ],
+    "explanation": "'quaranta' is the word for 'forty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/quaranta"
+  },
+  {
+    "itemId": "b40be739-2e34-41c3-9533-9bf1b297085a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'fifty'?",
+    "correctAnswer": "{{it-IT|cinquanta||cin-QUAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|sessanta||ses-SAN-ta}}",
+      "{{it-IT|settanta||set-TAN-ta}}",
+      "{{it-IT|ottanta||ot-TAN-ta}}"
+    ],
+    "explanation": "'cinquanta' is the word for 'fifty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/cinquanta"
+  },
+  {
+    "itemId": "51a3ae27-ee9c-49af-bc70-f0715968d692",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'sixty'?",
+    "correctAnswer": "{{it-IT|sessanta||ses-SAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|settanta||set-TAN-ta}}",
+      "{{it-IT|ottanta||ot-TAN-ta}}",
+      "{{it-IT|novanta||no-VAN-ta}}"
+    ],
+    "explanation": "'sessanta' is the word for 'sixty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/sessanta"
+  },
+  {
+    "itemId": "98d676cb-f5ca-45fb-bfde-e2bbd41d03fe",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'seventy' in everyday use?",
+    "correctAnswer": "{{it-IT|settanta||set-TAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|ottanta||ot-TAN-ta}}",
+      "{{it-IT|novanta||no-VAN-ta}}",
+      "{{it-IT|cento||KEN-to}}"
+    ],
+    "explanation": "'settanta' is the word for 'seventy'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/settanta"
+  },
+  {
+    "itemId": "6fd4c760-d521-4f91-b988-4a3aacd52e76",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'eighty'.",
+    "correctAnswer": "{{it-IT|ottanta||ot-TAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|novanta||no-VAN-ta}}",
+      "{{it-IT|cento||KEN-to}}",
+      "{{it-IT|quattro||QUAT-tro}}"
+    ],
+    "explanation": "'ottanta' is the word for 'eighty'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/ottanta"
+  },
+  {
+    "itemId": "76156fe8-5ac8-4740-95b4-f06017fb482e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'ninety'?",
+    "correctAnswer": "{{it-IT|novanta||no-VAN-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|cento||KEN-to}}",
+      "{{it-IT|quattro||QUAT-tro}}",
+      "{{it-IT|cinque||CIN-que}}"
+    ],
+    "explanation": "'novanta' is the word for 'ninety'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/novanta"
+  },
+  {
+    "itemId": "1c6506d0-e924-4be9-8325-0798bc511077",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'one hundred'?",
+    "correctAnswer": "{{it-IT|cento||KEN-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|quattro||QUAT-tro}}",
+      "{{it-IT|cinque||CIN-que}}",
+      "{{it-IT|sei||SEI}}"
+    ],
+    "explanation": "'cento' is the word for 'one hundred'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/cento"
+  },
+  {
+    "itemId": "0f3b9d36-d1f1-45bf-ae53-03285abaa7b4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'first'?",
+    "correctAnswer": "{{it-IT|primo||PRI-mo}}",
+    "incorrectAnswers": [
+      "{{it-IT|secondo||se-CON-do}}",
+      "{{it-IT|terzo||TER-zo}}",
+      "{{it-IT|metà||ME-ta}}"
+    ],
+    "explanation": "'primo' is the word for 'first'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/primo"
+  },
+  {
+    "itemId": "8f6f4e2b-41e7-448c-a450-fa55b80ab38d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'second' in everyday use?",
+    "correctAnswer": "{{it-IT|secondo||se-CON-do}}",
+    "incorrectAnswers": [
+      "{{it-IT|terzo||TER-zo}}",
+      "{{it-IT|metà||ME-ta}}",
+      "{{it-IT|quarto||QUAR-to}}"
+    ],
+    "explanation": "'secondo' is the word for 'second'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/secondo"
+  },
+  {
+    "itemId": "120f8dcc-bf9e-410b-891e-182b2770530c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'third'.",
+    "correctAnswer": "{{it-IT|terzo||TER-zo}}",
+    "incorrectAnswers": [
+      "{{it-IT|metà||ME-ta}}",
+      "{{it-IT|quarto||QUAR-to}}",
+      "{{it-IT|primo||PRI-mo}}"
+    ],
+    "explanation": "'terzo' is the word for 'third'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/terzo"
+  },
+  {
+    "itemId": "8b25c03b-fe5c-4286-9e48-c1bfb2491c19",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'a half'?",
+    "correctAnswer": "{{it-IT|metà||ME-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|quarto||QUAR-to}}",
+      "{{it-IT|primo||PRI-mo}}",
+      "{{it-IT|secondo||se-CON-do}}"
+    ],
+    "explanation": "'metà' is the word for 'a half'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/met%C3%A0"
+  },
+  {
+    "itemId": "09690740-23bf-4b73-960f-2a9d10c7ebf8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'a quarter'?",
+    "correctAnswer": "{{it-IT|quarto||QUAR-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|primo||PRI-mo}}",
+      "{{it-IT|secondo||se-CON-do}}",
+      "{{it-IT|terzo||TER-zo}}"
+    ],
+    "explanation": "'quarto' is the word for 'a quarter'. Say it with nearby numbers to make it easier to remember.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a2",
+      "pos-number",
+      "situation-numbers"
+    ],
+    "source": "https://www.wordreference.com/iten/quarto"
+  },
+  {
+    "itemId": "ad20a645-a890-4752-80bc-ecab7ec9a217",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'Monday'?",
+    "correctAnswer": "{{it-IT|lunedì||lu-NE-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|martedì||mar-TE-di}}",
+      "{{it-IT|mercoledì||mer-co-LE-di}}",
+      "{{it-IT|giovedì||jo-VE-di}}"
+    ],
+    "explanation": "'lunedì' means 'Monday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/luned%C3%AC"
+  },
+  {
+    "itemId": "f3cdabdb-586a-4bed-b065-62f3ea081a38",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'Tuesday' in everyday use?",
+    "correctAnswer": "{{it-IT|martedì||mar-TE-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|mercoledì||mer-co-LE-di}}",
+      "{{it-IT|giovedì||jo-VE-di}}",
+      "{{it-IT|venerdì||ve-NER-di}}"
+    ],
+    "explanation": "'martedì' means 'Tuesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/marted%C3%AC"
+  },
+  {
+    "itemId": "a2838192-6231-4816-9ab8-06809586746c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'Wednesday'.",
+    "correctAnswer": "{{it-IT|mercoledì||mer-co-LE-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|giovedì||jo-VE-di}}",
+      "{{it-IT|venerdì||ve-NER-di}}",
+      "{{it-IT|sabato||sa-BA-to}}"
+    ],
+    "explanation": "'mercoledì' means 'Wednesday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/mercoled%C3%AC"
+  },
+  {
+    "itemId": "5b78141d-2b86-4f9a-8cc9-a4b688a3d4f8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'Thursday'?",
+    "correctAnswer": "{{it-IT|giovedì||jo-VE-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|venerdì||ve-NER-di}}",
+      "{{it-IT|sabato||sa-BA-to}}",
+      "{{it-IT|domenica||do-me-NI-ca}}"
+    ],
+    "explanation": "'giovedì' means 'Thursday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/gioved%C3%AC"
+  },
+  {
+    "itemId": "e246b1b2-5609-4b00-8793-5e2c10078ba0",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'Friday'?",
+    "correctAnswer": "{{it-IT|venerdì||ve-NER-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|sabato||sa-BA-to}}",
+      "{{it-IT|domenica||do-me-NI-ca}}",
+      "{{it-IT|lunedì||lu-NE-di}}"
+    ],
+    "explanation": "'venerdì' means 'Friday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/venerd%C3%AC"
+  },
+  {
+    "itemId": "b6c455bd-0321-4e9a-b710-1d85c05c4697",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'Saturday' in everyday use?",
+    "correctAnswer": "{{it-IT|sabato||sa-BA-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|domenica||do-me-NI-ca}}",
+      "{{it-IT|lunedì||lu-NE-di}}",
+      "{{it-IT|martedì||mar-TE-di}}"
+    ],
+    "explanation": "'sabato' means 'Saturday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/sabato"
+  },
+  {
+    "itemId": "93c2cfdb-c035-4caf-94e5-1d28387045a9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'Sunday'.",
+    "correctAnswer": "{{it-IT|domenica||do-me-NI-ca}}",
+    "incorrectAnswers": [
+      "{{it-IT|lunedì||lu-NE-di}}",
+      "{{it-IT|martedì||mar-TE-di}}",
+      "{{it-IT|mercoledì||mer-co-LE-di}}"
+    ],
+    "explanation": "'domenica' means 'Sunday'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/domenica"
+  },
+  {
+    "itemId": "5de41c88-7209-4a50-aa1e-ac801e8d04d4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'January'?",
+    "correctAnswer": "{{it-IT|gennaio||JEN-naio}}",
+    "incorrectAnswers": [
+      "{{it-IT|febbraio||FEB-braio}}",
+      "{{it-IT|marzo||MAR-zo}}",
+      "{{it-IT|aprile||a-PRI-le}}"
+    ],
+    "explanation": "'gennaio' means 'January'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/gennaio"
+  },
+  {
+    "itemId": "46dc58fb-c0f7-47ec-ad02-05a1c067b63c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'February' in everyday use?",
+    "correctAnswer": "{{it-IT|febbraio||FEB-braio}}",
+    "incorrectAnswers": [
+      "{{it-IT|marzo||MAR-zo}}",
+      "{{it-IT|aprile||a-PRI-le}}",
+      "{{it-IT|maggio||MAG-jo}}"
+    ],
+    "explanation": "'febbraio' means 'February'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/febbraio"
+  },
+  {
+    "itemId": "a7d1fa53-7f61-4840-8e38-80dcad6c344a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'March'.",
+    "correctAnswer": "{{it-IT|marzo||MAR-zo}}",
+    "incorrectAnswers": [
+      "{{it-IT|aprile||a-PRI-le}}",
+      "{{it-IT|maggio||MAG-jo}}",
+      "{{it-IT|giugno||JU-nyo}}"
+    ],
+    "explanation": "'marzo' means 'March'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/marzo"
+  },
+  {
+    "itemId": "4683e0af-882e-413b-a538-b6e4c35db7c8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'April'?",
+    "correctAnswer": "{{it-IT|aprile||a-PRI-le}}",
+    "incorrectAnswers": [
+      "{{it-IT|maggio||MAG-jo}}",
+      "{{it-IT|giugno||JU-nyo}}",
+      "{{it-IT|luglio||LU-lyio}}"
+    ],
+    "explanation": "'aprile' means 'April'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/aprile"
+  },
+  {
+    "itemId": "dd14dfee-22f8-4ec3-a5fb-6bf0375ca6e7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'May'?",
+    "correctAnswer": "{{it-IT|maggio||MAG-jo}}",
+    "incorrectAnswers": [
+      "{{it-IT|giugno||JU-nyo}}",
+      "{{it-IT|luglio||LU-lyio}}",
+      "{{it-IT|agosto||a-GOS-to}}"
+    ],
+    "explanation": "'maggio' means 'May'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/maggio"
+  },
+  {
+    "itemId": "00d7799e-c384-401d-8632-7e983234c9c5",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'June' in everyday use?",
+    "correctAnswer": "{{it-IT|giugno||JU-nyo}}",
+    "incorrectAnswers": [
+      "{{it-IT|luglio||LU-lyio}}",
+      "{{it-IT|agosto||a-GOS-to}}",
+      "{{it-IT|settembre||set-TEM-bre}}"
+    ],
+    "explanation": "'giugno' means 'June'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/giugno"
+  },
+  {
+    "itemId": "952a38bd-2e19-41da-8ff3-373179273e08",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'July'.",
+    "correctAnswer": "{{it-IT|luglio||LU-lyio}}",
+    "incorrectAnswers": [
+      "{{it-IT|agosto||a-GOS-to}}",
+      "{{it-IT|settembre||set-TEM-bre}}",
+      "{{it-IT|ottobre||ot-TO-bre}}"
+    ],
+    "explanation": "'luglio' means 'July'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/luglio"
+  },
+  {
+    "itemId": "770ebec2-731e-4460-82d9-4f89cff9d7ad",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'August'?",
+    "correctAnswer": "{{it-IT|agosto||a-GOS-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|settembre||set-TEM-bre}}",
+      "{{it-IT|ottobre||ot-TO-bre}}",
+      "{{it-IT|novembre||no-VEM-bre}}"
+    ],
+    "explanation": "'agosto' means 'August'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/agosto"
+  },
+  {
+    "itemId": "4dc353ab-3973-41c4-96e0-0459a063b262",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'September'?",
+    "correctAnswer": "{{it-IT|settembre||set-TEM-bre}}",
+    "incorrectAnswers": [
+      "{{it-IT|ottobre||ot-TO-bre}}",
+      "{{it-IT|novembre||no-VEM-bre}}",
+      "{{it-IT|dicembre||di-KEM-bre}}"
+    ],
+    "explanation": "'settembre' means 'September'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/settembre"
+  },
+  {
+    "itemId": "cb2f4520-0597-467f-b6c8-92661a795fef",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'October' in everyday use?",
+    "correctAnswer": "{{it-IT|ottobre||ot-TO-bre}}",
+    "incorrectAnswers": [
+      "{{it-IT|novembre||no-VEM-bre}}",
+      "{{it-IT|dicembre||di-KEM-bre}}",
+      "{{it-IT|gennaio||JEN-naio}}"
+    ],
+    "explanation": "'ottobre' means 'October'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/ottobre"
+  },
+  {
+    "itemId": "cef38c2c-fa9b-4854-8c4f-cee9f7218587",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'November'.",
+    "correctAnswer": "{{it-IT|novembre||no-VEM-bre}}",
+    "incorrectAnswers": [
+      "{{it-IT|dicembre||di-KEM-bre}}",
+      "{{it-IT|gennaio||JEN-naio}}",
+      "{{it-IT|febbraio||FEB-braio}}"
+    ],
+    "explanation": "'novembre' means 'November'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/novembre"
+  },
+  {
+    "itemId": "47323c39-af4f-4cb1-b842-c1224fc9f4ea",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'December'?",
+    "correctAnswer": "{{it-IT|dicembre||di-KEM-bre}}",
+    "incorrectAnswers": [
+      "{{it-IT|gennaio||JEN-naio}}",
+      "{{it-IT|febbraio||FEB-braio}}",
+      "{{it-IT|marzo||MAR-zo}}"
+    ],
+    "explanation": "'dicembre' means 'December'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/dicembre"
+  },
+  {
+    "itemId": "96e69741-dcbc-4a03-bb0a-86bd7cd1adce",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'spring'?",
+    "correctAnswer": "{{it-IT|primavera||pri-ma-VE-ra}}",
+    "incorrectAnswers": [
+      "{{it-IT|estate||es-TA-te}}",
+      "{{it-IT|autunno||au-TUN-no}}",
+      "{{it-IT|inverno||in-VER-no}}"
+    ],
+    "explanation": "'primavera' means 'spring'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/primavera"
+  },
+  {
+    "itemId": "47e131cf-5010-46cf-932c-4d91e5b6ec48",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'summer' in everyday use?",
+    "correctAnswer": "{{it-IT|estate||es-TA-te}}",
+    "incorrectAnswers": [
+      "{{it-IT|autunno||au-TUN-no}}",
+      "{{it-IT|inverno||in-VER-no}}",
+      "{{it-IT|primavera||pri-ma-VE-ra}}"
+    ],
+    "explanation": "'estate' means 'summer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/estate"
+  },
+  {
+    "itemId": "957e891d-7090-475b-ae85-9de09877c9df",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'autumn'.",
+    "correctAnswer": "{{it-IT|autunno||au-TUN-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|inverno||in-VER-no}}",
+      "{{it-IT|primavera||pri-ma-VE-ra}}",
+      "{{it-IT|estate||es-TA-te}}"
+    ],
+    "explanation": "'autunno' means 'autumn'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/autunno"
+  },
+  {
+    "itemId": "58189426-d9ed-41fb-b654-09ef5ea53cdd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'winter'?",
+    "correctAnswer": "{{it-IT|inverno||in-VER-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|primavera||pri-ma-VE-ra}}",
+      "{{it-IT|estate||es-TA-te}}",
+      "{{it-IT|autunno||au-TUN-no}}"
+    ],
+    "explanation": "'inverno' means 'winter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/inverno"
+  },
+  {
+    "itemId": "f01e6c47-ae5d-451f-bf30-02ee616406a9",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'morning'?",
+    "correctAnswer": "{{it-IT|mattina||mat-TI-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|pomeriggio||po-me-RIG-jo}}",
+      "{{it-IT|sera||SE-ra}}",
+      "{{it-IT|ora||O-ra}}"
+    ],
+    "explanation": "'mattina' means 'morning'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/mattina"
+  },
+  {
+    "itemId": "398e6839-c244-4dcc-b599-b43515393bd1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'afternoon' in everyday use?",
+    "correctAnswer": "{{it-IT|pomeriggio||po-me-RIG-jo}}",
+    "incorrectAnswers": [
+      "{{it-IT|sera||SE-ra}}",
+      "{{it-IT|ora||O-ra}}",
+      "{{it-IT|minuto||mi-NU-to}}"
+    ],
+    "explanation": "'pomeriggio' means 'afternoon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/pomeriggio"
+  },
+  {
+    "itemId": "9eccd000-a9e7-41da-be68-07716c2f65e3",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'evening'.",
+    "correctAnswer": "{{it-IT|sera||SE-ra}}",
+    "incorrectAnswers": [
+      "{{it-IT|ora||O-ra}}",
+      "{{it-IT|minuto||mi-NU-to}}",
+      "{{it-IT|settimana||set-ti-MA-na}}"
+    ],
+    "explanation": "'sera' means 'evening'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/sera"
+  },
+  {
+    "itemId": "9a9e7da5-3044-418a-b74e-19cea860c788",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'hour'?",
+    "correctAnswer": "{{it-IT|ora||O-ra}}",
+    "incorrectAnswers": [
+      "{{it-IT|minuto||mi-NU-to}}",
+      "{{it-IT|settimana||set-ti-MA-na}}",
+      "{{it-IT|mese||ME-se}}"
+    ],
+    "explanation": "'ora' means 'hour'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/ora"
+  },
+  {
+    "itemId": "4cfc2da2-b01a-441a-9e0b-c5e7c06d6cfa",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'minute'?",
+    "correctAnswer": "{{it-IT|minuto||mi-NU-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|settimana||set-ti-MA-na}}",
+      "{{it-IT|mese||ME-se}}",
+      "{{it-IT|anno||AN-no}}"
+    ],
+    "explanation": "'minuto' means 'minute'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/minuto"
+  },
+  {
+    "itemId": "88bd4281-879a-488f-a3b0-e447676c73b6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'week' in everyday use?",
+    "correctAnswer": "{{it-IT|settimana||set-ti-MA-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|mese||ME-se}}",
+      "{{it-IT|anno||AN-no}}",
+      "{{it-IT|mattina||mat-TI-na}}"
+    ],
+    "explanation": "'settimana' means 'week'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/settimana"
+  },
+  {
+    "itemId": "1854f516-8fca-415e-b8ed-fca19763d614",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'month'.",
+    "correctAnswer": "{{it-IT|mese||ME-se}}",
+    "incorrectAnswers": [
+      "{{it-IT|anno||AN-no}}",
+      "{{it-IT|mattina||mat-TI-na}}",
+      "{{it-IT|pomeriggio||po-me-RIG-jo}}"
+    ],
+    "explanation": "'mese' means 'month'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/mese"
+  },
+  {
+    "itemId": "5fd47db3-d361-408b-b34d-a6fae95361ac",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'year'?",
+    "correctAnswer": "{{it-IT|anno||AN-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|mattina||mat-TI-na}}",
+      "{{it-IT|pomeriggio||po-me-RIG-jo}}",
+      "{{it-IT|sera||SE-ra}}"
+    ],
+    "explanation": "'anno' means 'year'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-noun",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/anno"
+  },
+  {
+    "itemId": "bf1c97f2-e762-4f02-aa63-1eb92abd2261",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'today'?",
+    "correctAnswer": "{{it-IT|oggi||OG-gi}}",
+    "incorrectAnswers": [
+      "{{it-IT|domani||do-MA-ni}}",
+      "{{it-IT|ieri||IE-ri}}",
+      "{{it-IT|adesso||a-DES-so}}"
+    ],
+    "explanation": "'oggi' is the word for 'today'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/oggi"
+  },
+  {
+    "itemId": "e942d0c1-b961-47d3-a134-e3e45bb6c84e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'tomorrow' in everyday use?",
+    "correctAnswer": "{{it-IT|domani||do-MA-ni}}",
+    "incorrectAnswers": [
+      "{{it-IT|ieri||IE-ri}}",
+      "{{it-IT|adesso||a-DES-so}}",
+      "{{it-IT|più tardi||PIU TAR-di}}"
+    ],
+    "explanation": "'domani' is the word for 'tomorrow'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/domani"
+  },
+  {
+    "itemId": "c836a750-4c7c-40ed-84e0-8b8ff63d3f58",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'yesterday'.",
+    "correctAnswer": "{{it-IT|ieri||IE-ri}}",
+    "incorrectAnswers": [
+      "{{it-IT|adesso||a-DES-so}}",
+      "{{it-IT|più tardi||PIU TAR-di}}",
+      "{{it-IT|prima||PRI-ma}}"
+    ],
+    "explanation": "'ieri' is the word for 'yesterday'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/ieri"
+  },
+  {
+    "itemId": "2c317237-800e-401b-916d-4d52b8f965ef",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'now'?",
+    "correctAnswer": "{{it-IT|adesso||a-DES-so}}",
+    "incorrectAnswers": [
+      "{{it-IT|più tardi||PIU TAR-di}}",
+      "{{it-IT|prima||PRI-ma}}",
+      "{{it-IT|oggi||OG-gi}}"
+    ],
+    "explanation": "'adesso' is the word for 'now'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/adesso"
+  },
+  {
+    "itemId": "cd893c83-02e5-4746-a7a7-f7c644c075f8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'later'?",
+    "correctAnswer": "{{it-IT|più tardi||PIU TAR-di}}",
+    "incorrectAnswers": [
+      "{{it-IT|prima||PRI-ma}}",
+      "{{it-IT|oggi||OG-gi}}",
+      "{{it-IT|domani||do-MA-ni}}"
+    ],
+    "explanation": "'più tardi' is the word for 'later'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/pi%C3%B9%20tardi"
+  },
+  {
+    "itemId": "ca41bd21-40e1-4759-b87e-f81597b5ee47",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'before' in everyday use?",
+    "correctAnswer": "{{it-IT|prima||PRI-ma}}",
+    "incorrectAnswers": [
+      "{{it-IT|oggi||OG-gi}}",
+      "{{it-IT|domani||do-MA-ni}}",
+      "{{it-IT|ieri||IE-ri}}"
+    ],
+    "explanation": "'prima' is the word for 'before'. These short function words appear everywhere, so they are worth memorizing early.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-adverb",
+      "situation-time"
+    ],
+    "source": "https://www.wordreference.com/iten/prima"
+  },
+  {
+    "itemId": "8d0adf75-3c2e-4723-a776-6c27947149f1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'red'?",
+    "correctAnswer": "{{it-IT|rosso||ROS-so}}",
+    "incorrectAnswers": [
+      "{{it-IT|blu||BLU}}",
+      "{{it-IT|verde||VER-de}}",
+      "{{it-IT|giallo||JAL-lo}}"
+    ],
+    "explanation": "'rosso' means 'red'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/rosso"
+  },
+  {
+    "itemId": "a44278a6-e2ee-4bdb-927c-cdf399894334",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'blue' in everyday use?",
+    "correctAnswer": "{{it-IT|blu||BLU}}",
+    "incorrectAnswers": [
+      "{{it-IT|verde||VER-de}}",
+      "{{it-IT|giallo||JAL-lo}}",
+      "{{it-IT|nero||NE-ro}}"
+    ],
+    "explanation": "'blu' means 'blue'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/blu"
+  },
+  {
+    "itemId": "9b7e2f19-e7b2-4749-93ca-67beae491213",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'green'.",
+    "correctAnswer": "{{it-IT|verde||VER-de}}",
+    "incorrectAnswers": [
+      "{{it-IT|giallo||JAL-lo}}",
+      "{{it-IT|nero||NE-ro}}",
+      "{{it-IT|bianco||BIAN-co}}"
+    ],
+    "explanation": "'verde' means 'green'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/verde"
+  },
+  {
+    "itemId": "67a23a94-8108-4323-87a5-8498f05ca83c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'yellow'?",
+    "correctAnswer": "{{it-IT|giallo||JAL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|nero||NE-ro}}",
+      "{{it-IT|bianco||BIAN-co}}",
+      "{{it-IT|grigio||GRI-jo}}"
+    ],
+    "explanation": "'giallo' means 'yellow'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/giallo"
+  },
+  {
+    "itemId": "4380294d-667a-4bfa-bbb1-e757f9fedb44",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'black'?",
+    "correctAnswer": "{{it-IT|nero||NE-ro}}",
+    "incorrectAnswers": [
+      "{{it-IT|bianco||BIAN-co}}",
+      "{{it-IT|grigio||GRI-jo}}",
+      "{{it-IT|marrone||mar-RO-ne}}"
+    ],
+    "explanation": "'nero' means 'black'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/nero"
+  },
+  {
+    "itemId": "539eefa3-9c18-42fc-95a0-bb1463ea087d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'white' in everyday use?",
+    "correctAnswer": "{{it-IT|bianco||BIAN-co}}",
+    "incorrectAnswers": [
+      "{{it-IT|grigio||GRI-jo}}",
+      "{{it-IT|marrone||mar-RO-ne}}",
+      "{{it-IT|arancione||a-ran-KO-ne}}"
+    ],
+    "explanation": "'bianco' means 'white'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/bianco"
+  },
+  {
+    "itemId": "bded1d3e-b05a-4d2f-858b-ea8b4aeb1668",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'gray'.",
+    "correctAnswer": "{{it-IT|grigio||GRI-jo}}",
+    "incorrectAnswers": [
+      "{{it-IT|marrone||mar-RO-ne}}",
+      "{{it-IT|arancione||a-ran-KO-ne}}",
+      "{{it-IT|rosa||RO-sa}}"
+    ],
+    "explanation": "'grigio' means 'gray'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/grigio"
+  },
+  {
+    "itemId": "a4c30f20-f05c-4aa5-b0e8-fa005787ba10",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'brown'?",
+    "correctAnswer": "{{it-IT|marrone||mar-RO-ne}}",
+    "incorrectAnswers": [
+      "{{it-IT|arancione||a-ran-KO-ne}}",
+      "{{it-IT|rosa||RO-sa}}",
+      "{{it-IT|viola||VIO-la}}"
+    ],
+    "explanation": "'marrone' means 'brown'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/marrone"
+  },
+  {
+    "itemId": "4daf7af3-5a1e-43bb-b0f0-5e2ff6d63309",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'orange'?",
+    "correctAnswer": "{{it-IT|arancione||a-ran-KO-ne}}",
+    "incorrectAnswers": [
+      "{{it-IT|rosa||RO-sa}}",
+      "{{it-IT|viola||VIO-la}}",
+      "{{it-IT|chiaro||KIA-ro}}"
+    ],
+    "explanation": "'arancione' means 'orange'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/arancione"
+  },
+  {
+    "itemId": "7b0eedda-b1a5-4757-a3aa-34f59d1d78ae",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'pink' in everyday use?",
+    "correctAnswer": "{{it-IT|rosa||RO-sa}}",
+    "incorrectAnswers": [
+      "{{it-IT|viola||VIO-la}}",
+      "{{it-IT|chiaro||KIA-ro}}",
+      "{{it-IT|scuro||SCU-ro}}"
+    ],
+    "explanation": "'rosa' means 'pink'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/rosa"
+  },
+  {
+    "itemId": "4a8879c7-39ab-46c1-8d40-108861168736",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'purple'.",
+    "correctAnswer": "{{it-IT|viola||VIO-la}}",
+    "incorrectAnswers": [
+      "{{it-IT|chiaro||KIA-ro}}",
+      "{{it-IT|scuro||SCU-ro}}",
+      "{{it-IT|rosso||ROS-so}}"
+    ],
+    "explanation": "'viola' means 'purple'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/viola"
+  },
+  {
+    "itemId": "9c6898d3-6bd4-4dd4-8aea-5e1a944709fc",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'light'?",
+    "correctAnswer": "{{it-IT|chiaro||KIA-ro}}",
+    "incorrectAnswers": [
+      "{{it-IT|scuro||SCU-ro}}",
+      "{{it-IT|rosso||ROS-so}}",
+      "{{it-IT|blu||BLU}}"
+    ],
+    "explanation": "'chiaro' means 'light'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/chiaro"
+  },
+  {
+    "itemId": "13258c8b-d3de-4008-971d-7f7e242cb6c8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'dark'?",
+    "correctAnswer": "{{it-IT|scuro||SCU-ro}}",
+    "incorrectAnswers": [
+      "{{it-IT|rosso||ROS-so}}",
+      "{{it-IT|blu||BLU}}",
+      "{{it-IT|verde||VER-de}}"
+    ],
+    "explanation": "'scuro' means 'dark'. In real sentences, adjectives often change for gender or number.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-adjective",
+      "situation-colors"
+    ],
+    "source": "https://www.wordreference.com/iten/scuro"
+  },
+  {
+    "itemId": "3af926cf-d6b1-40da-a576-7a7485e1ccde",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'mother'?",
+    "correctAnswer": "{{it-IT|madre||MA-dre}}",
+    "incorrectAnswers": [
+      "{{it-IT|padre||PA-dre}}",
+      "{{it-IT|fratello||fra-TEL-lo}}",
+      "{{it-IT|sorella||so-REL-la}}"
+    ],
+    "explanation": "'madre' means 'mother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/madre"
+  },
+  {
+    "itemId": "5d4d0869-f0e9-4155-bf70-a2516f3972f2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'father' in everyday use?",
+    "correctAnswer": "{{it-IT|padre||PA-dre}}",
+    "incorrectAnswers": [
+      "{{it-IT|fratello||fra-TEL-lo}}",
+      "{{it-IT|sorella||so-REL-la}}",
+      "{{it-IT|figlio||FI-lyio}}"
+    ],
+    "explanation": "'padre' means 'father'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/padre"
+  },
+  {
+    "itemId": "b0c3b65e-ba57-4a80-8cb9-328fcdafdc5f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'brother'.",
+    "correctAnswer": "{{it-IT|fratello||fra-TEL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|sorella||so-REL-la}}",
+      "{{it-IT|figlio||FI-lyio}}",
+      "{{it-IT|figlia||FI-lyia}}"
+    ],
+    "explanation": "'fratello' means 'brother'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/fratello"
+  },
+  {
+    "itemId": "5c6096e1-e41c-4bbd-9884-17af2df7b43e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'sister'?",
+    "correctAnswer": "{{it-IT|sorella||so-REL-la}}",
+    "incorrectAnswers": [
+      "{{it-IT|figlio||FI-lyio}}",
+      "{{it-IT|figlia||FI-lyia}}",
+      "{{it-IT|marito||ma-RI-to}}"
+    ],
+    "explanation": "'sorella' means 'sister'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/sorella"
+  },
+  {
+    "itemId": "cb631c63-341b-4b3a-9b56-9647b978bc78",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'son'?",
+    "correctAnswer": "{{it-IT|figlio||FI-lyio}}",
+    "incorrectAnswers": [
+      "{{it-IT|figlia||FI-lyia}}",
+      "{{it-IT|marito||ma-RI-to}}",
+      "{{it-IT|moglie||MO-lyie}}"
+    ],
+    "explanation": "'figlio' means 'son'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/figlio"
+  },
+  {
+    "itemId": "8069f814-7da7-4dca-b68a-f40f7a4f3165",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'daughter' in everyday use?",
+    "correctAnswer": "{{it-IT|figlia||FI-lyia}}",
+    "incorrectAnswers": [
+      "{{it-IT|marito||ma-RI-to}}",
+      "{{it-IT|moglie||MO-lyie}}",
+      "{{it-IT|amico||a-MI-co}}"
+    ],
+    "explanation": "'figlia' means 'daughter'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/figlia"
+  },
+  {
+    "itemId": "ba0bf9ca-6eef-45e6-9887-869679b8e85e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'husband'.",
+    "correctAnswer": "{{it-IT|marito||ma-RI-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|moglie||MO-lyie}}",
+      "{{it-IT|amico||a-MI-co}}",
+      "{{it-IT|vicino||vi-CI-no}}"
+    ],
+    "explanation": "'marito' means 'husband'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/marito"
+  },
+  {
+    "itemId": "d6b37fab-ea70-4b75-9395-abf629968f9c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'wife'?",
+    "correctAnswer": "{{it-IT|moglie||MO-lyie}}",
+    "incorrectAnswers": [
+      "{{it-IT|amico||a-MI-co}}",
+      "{{it-IT|vicino||vi-CI-no}}",
+      "{{it-IT|bambino||bam-BI-no}}"
+    ],
+    "explanation": "'moglie' means 'wife'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/moglie"
+  },
+  {
+    "itemId": "91e77e9a-7577-4021-90c0-cdca79162299",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'friend'?",
+    "correctAnswer": "{{it-IT|amico||a-MI-co}}",
+    "incorrectAnswers": [
+      "{{it-IT|vicino||vi-CI-no}}",
+      "{{it-IT|bambino||bam-BI-no}}",
+      "{{it-IT|bebè||BE-be}}"
+    ],
+    "explanation": "'amico' means 'friend'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/amico"
+  },
+  {
+    "itemId": "1defeb79-c90d-43c2-9975-de69a4241e47",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'neighbor' in everyday use?",
+    "correctAnswer": "{{it-IT|vicino||vi-CI-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|bambino||bam-BI-no}}",
+      "{{it-IT|bebè||BE-be}}",
+      "{{it-IT|uomo||UO-mo}}"
+    ],
+    "explanation": "'vicino' means 'neighbor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/vicino"
+  }
+]

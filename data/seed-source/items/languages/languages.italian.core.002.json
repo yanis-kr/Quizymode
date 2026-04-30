@@ -1,0 +1,2293 @@
+[
+  {
+    "itemId": "7586d911-4a17-4b8d-8ca1-118bdd33879d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'child'.",
+    "correctAnswer": "{{it-IT|bambino||bam-BI-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|bebè||BE-be}}",
+      "{{it-IT|uomo||UO-mo}}",
+      "{{it-IT|donna||DON-na}}"
+    ],
+    "explanation": "'bambino' means 'child'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/bambino"
+  },
+  {
+    "itemId": "62336997-5ae6-457a-a295-ac059da24973",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'baby'?",
+    "correctAnswer": "{{it-IT|bebè||BE-be}}",
+    "incorrectAnswers": [
+      "{{it-IT|uomo||UO-mo}}",
+      "{{it-IT|donna||DON-na}}",
+      "{{it-IT|persona||per-SO-na}}"
+    ],
+    "explanation": "'bebè' means 'baby'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/beb%C3%A8"
+  },
+  {
+    "itemId": "1af56656-8879-4e5f-b9ef-d9c125bd93ba",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'man'?",
+    "correctAnswer": "{{it-IT|uomo||UO-mo}}",
+    "incorrectAnswers": [
+      "{{it-IT|donna||DON-na}}",
+      "{{it-IT|persona||per-SO-na}}",
+      "{{it-IT|madre||MA-dre}}"
+    ],
+    "explanation": "'uomo' means 'man'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/uomo"
+  },
+  {
+    "itemId": "03045497-e02f-46f4-904d-b11efea5e5d4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'woman' in everyday use?",
+    "correctAnswer": "{{it-IT|donna||DON-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|persona||per-SO-na}}",
+      "{{it-IT|madre||MA-dre}}",
+      "{{it-IT|padre||PA-dre}}"
+    ],
+    "explanation": "'donna' means 'woman'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/donna"
+  },
+  {
+    "itemId": "18a1a508-d655-419e-993f-de60efe93870",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'person'.",
+    "correctAnswer": "{{it-IT|persona||per-SO-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|madre||MA-dre}}",
+      "{{it-IT|padre||PA-dre}}",
+      "{{it-IT|fratello||fra-TEL-lo}}"
+    ],
+    "explanation": "'persona' means 'person'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family"
+    ],
+    "source": "https://www.wordreference.com/iten/persona"
+  },
+  {
+    "itemId": "a4e2030e-d26d-402b-a6b8-a8f9e0198851",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'head'?",
+    "correctAnswer": "{{it-IT|testa||TES-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|mano||MA-no}}",
+      "{{it-IT|piede||PIE-de}}",
+      "{{it-IT|occhio||OC-kio}}"
+    ],
+    "explanation": "'testa' means 'head'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/testa"
+  },
+  {
+    "itemId": "59bf4bda-bbdb-4d55-9365-ded6b39ac860",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'hand' in everyday use?",
+    "correctAnswer": "{{it-IT|mano||MA-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|piede||PIE-de}}",
+      "{{it-IT|occhio||OC-kio}}",
+      "{{it-IT|orecchio||o-REC-kio}}"
+    ],
+    "explanation": "'mano' means 'hand'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/mano"
+  },
+  {
+    "itemId": "b41ce901-ffb4-47f9-892a-579d0ab8089a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'foot'.",
+    "correctAnswer": "{{it-IT|piede||PIE-de}}",
+    "incorrectAnswers": [
+      "{{it-IT|occhio||OC-kio}}",
+      "{{it-IT|orecchio||o-REC-kio}}",
+      "{{it-IT|naso||NA-so}}"
+    ],
+    "explanation": "'piede' means 'foot'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/piede"
+  },
+  {
+    "itemId": "a68fe3e5-7e7d-4a45-92f1-505de469ee71",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'eye'?",
+    "correctAnswer": "{{it-IT|occhio||OC-kio}}",
+    "incorrectAnswers": [
+      "{{it-IT|orecchio||o-REC-kio}}",
+      "{{it-IT|naso||NA-so}}",
+      "{{it-IT|bocca||BOC-ca}}"
+    ],
+    "explanation": "'occhio' means 'eye'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/occhio"
+  },
+  {
+    "itemId": "2473832d-49e8-4b68-aba7-f7688215e8dd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'ear'?",
+    "correctAnswer": "{{it-IT|orecchio||o-REC-kio}}",
+    "incorrectAnswers": [
+      "{{it-IT|naso||NA-so}}",
+      "{{it-IT|bocca||BOC-ca}}",
+      "{{it-IT|cuore||CUO-re}}"
+    ],
+    "explanation": "'orecchio' means 'ear'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/orecchio"
+  },
+  {
+    "itemId": "d2f0e7e3-a245-4afb-9f66-eba8362a9212",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'nose' in everyday use?",
+    "correctAnswer": "{{it-IT|naso||NA-so}}",
+    "incorrectAnswers": [
+      "{{it-IT|bocca||BOC-ca}}",
+      "{{it-IT|cuore||CUO-re}}",
+      "{{it-IT|stomaco||sto-MA-co}}"
+    ],
+    "explanation": "'naso' means 'nose'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/naso"
+  },
+  {
+    "itemId": "c151a63d-a994-417d-93e1-697901520a3f",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'mouth'.",
+    "correctAnswer": "{{it-IT|bocca||BOC-ca}}",
+    "incorrectAnswers": [
+      "{{it-IT|cuore||CUO-re}}",
+      "{{it-IT|stomaco||sto-MA-co}}",
+      "{{it-IT|braccio||BRAC-ko}}"
+    ],
+    "explanation": "'bocca' means 'mouth'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/bocca"
+  },
+  {
+    "itemId": "d817d284-f105-4a75-906a-e5291f45bcb8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'heart'?",
+    "correctAnswer": "{{it-IT|cuore||CUO-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|stomaco||sto-MA-co}}",
+      "{{it-IT|braccio||BRAC-ko}}",
+      "{{it-IT|gamba||GAM-ba}}"
+    ],
+    "explanation": "'cuore' means 'heart'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/cuore"
+  },
+  {
+    "itemId": "0ab8a339-3952-480d-a72a-e9b8402e87c3",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'stomach'?",
+    "correctAnswer": "{{it-IT|stomaco||sto-MA-co}}",
+    "incorrectAnswers": [
+      "{{it-IT|braccio||BRAC-ko}}",
+      "{{it-IT|gamba||GAM-ba}}",
+      "{{it-IT|dito||DI-to}}"
+    ],
+    "explanation": "'stomaco' means 'stomach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/stomaco"
+  },
+  {
+    "itemId": "4ccfb9f2-1920-4ca3-9a00-29eb1ac23c43",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'arm' in everyday use?",
+    "correctAnswer": "{{it-IT|braccio||BRAC-ko}}",
+    "incorrectAnswers": [
+      "{{it-IT|gamba||GAM-ba}}",
+      "{{it-IT|dito||DI-to}}",
+      "{{it-IT|schiena||SKIE-na}}"
+    ],
+    "explanation": "'braccio' means 'arm'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/braccio"
+  },
+  {
+    "itemId": "bfea6520-d427-44cc-9032-4b4243649034",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'leg'.",
+    "correctAnswer": "{{it-IT|gamba||GAM-ba}}",
+    "incorrectAnswers": [
+      "{{it-IT|dito||DI-to}}",
+      "{{it-IT|schiena||SKIE-na}}",
+      "{{it-IT|testa||TES-ta}}"
+    ],
+    "explanation": "'gamba' means 'leg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/gamba"
+  },
+  {
+    "itemId": "91ba7fcd-30a8-45be-8db4-dd6de9661d13",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'finger'?",
+    "correctAnswer": "{{it-IT|dito||DI-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|schiena||SKIE-na}}",
+      "{{it-IT|testa||TES-ta}}",
+      "{{it-IT|mano||MA-no}}"
+    ],
+    "explanation": "'dito' means 'finger'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/dito"
+  },
+  {
+    "itemId": "6471b18e-afc0-42ea-adc0-bb5c47d4a8a1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'back'?",
+    "correctAnswer": "{{it-IT|schiena||SKIE-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|testa||TES-ta}}",
+      "{{it-IT|mano||MA-no}}",
+      "{{it-IT|piede||PIE-de}}"
+    ],
+    "explanation": "'schiena' means 'back'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body"
+    ],
+    "source": "https://www.wordreference.com/iten/schiena"
+  },
+  {
+    "itemId": "413502c2-51f3-44ed-9d63-f9704f58a44a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'bread'?",
+    "correctAnswer": "{{it-IT|pane||PA-ne}}",
+    "incorrectAnswers": [
+      "{{it-IT|latte||LAT-te}}",
+      "{{it-IT|uovo||UO-vo}}",
+      "{{it-IT|carne||CAR-ne}}"
+    ],
+    "explanation": "'pane' means 'bread'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/pane"
+  },
+  {
+    "itemId": "44240eee-190c-4ae9-a453-c8f88396733c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'milk' in everyday use?",
+    "correctAnswer": "{{it-IT|latte||LAT-te}}",
+    "incorrectAnswers": [
+      "{{it-IT|uovo||UO-vo}}",
+      "{{it-IT|carne||CAR-ne}}",
+      "{{it-IT|pesce||PES-ke}}"
+    ],
+    "explanation": "'latte' means 'milk'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/latte"
+  },
+  {
+    "itemId": "c197381b-f7f5-43c7-be4f-4a27bba810fd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'egg'.",
+    "correctAnswer": "{{it-IT|uovo||UO-vo}}",
+    "incorrectAnswers": [
+      "{{it-IT|carne||CAR-ne}}",
+      "{{it-IT|pesce||PES-ke}}",
+      "{{it-IT|frutta||FRUT-ta}}"
+    ],
+    "explanation": "'uovo' means 'egg'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/uovo"
+  },
+  {
+    "itemId": "039fd10d-d38e-40dd-bfc5-ea62d13d2166",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'meat'?",
+    "correctAnswer": "{{it-IT|carne||CAR-ne}}",
+    "incorrectAnswers": [
+      "{{it-IT|pesce||PES-ke}}",
+      "{{it-IT|frutta||FRUT-ta}}",
+      "{{it-IT|verdura||ver-DU-ra}}"
+    ],
+    "explanation": "'carne' means 'meat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/carne"
+  },
+  {
+    "itemId": "260e01b0-627c-4248-bc4b-ab21cbda9d20",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'fish'?",
+    "correctAnswer": "{{it-IT|pesce||PES-ke}}",
+    "incorrectAnswers": [
+      "{{it-IT|frutta||FRUT-ta}}",
+      "{{it-IT|verdura||ver-DU-ra}}",
+      "{{it-IT|riso||RI-so}}"
+    ],
+    "explanation": "'pesce' means 'fish'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/pesce"
+  },
+  {
+    "itemId": "657386bb-74d7-424e-9a05-24aa81bf25ef",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'fruit' in everyday use?",
+    "correctAnswer": "{{it-IT|frutta||FRUT-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|verdura||ver-DU-ra}}",
+      "{{it-IT|riso||RI-so}}",
+      "{{it-IT|pasta||PAS-ta}}"
+    ],
+    "explanation": "'frutta' means 'fruit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/frutta"
+  },
+  {
+    "itemId": "7b833163-95e4-4528-961c-4c39dd2d52c4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'vegetable'.",
+    "correctAnswer": "{{it-IT|verdura||ver-DU-ra}}",
+    "incorrectAnswers": [
+      "{{it-IT|riso||RI-so}}",
+      "{{it-IT|pasta||PAS-ta}}",
+      "{{it-IT|formaggio||for-MAG-jo}}"
+    ],
+    "explanation": "'verdura' means 'vegetable'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/verdura"
+  },
+  {
+    "itemId": "94b40d21-d074-4c4e-aed2-16545ff9dc65",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'rice'?",
+    "correctAnswer": "{{it-IT|riso||RI-so}}",
+    "incorrectAnswers": [
+      "{{it-IT|pasta||PAS-ta}}",
+      "{{it-IT|formaggio||for-MAG-jo}}",
+      "{{it-IT|caffè||CAF-fe}}"
+    ],
+    "explanation": "'riso' means 'rice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/riso"
+  },
+  {
+    "itemId": "3657ec26-d114-4902-abc5-e94e0ea38553",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'pasta'?",
+    "correctAnswer": "{{it-IT|pasta||PAS-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|formaggio||for-MAG-jo}}",
+      "{{it-IT|caffè||CAF-fe}}",
+      "{{it-IT|tè||TE}}"
+    ],
+    "explanation": "'pasta' means 'pasta'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/pasta"
+  },
+  {
+    "itemId": "89428f55-041e-4492-b895-4722a3fc91f1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'cheese' in everyday use?",
+    "correctAnswer": "{{it-IT|formaggio||for-MAG-jo}}",
+    "incorrectAnswers": [
+      "{{it-IT|caffè||CAF-fe}}",
+      "{{it-IT|tè||TE}}",
+      "{{it-IT|succo||SUC-co}}"
+    ],
+    "explanation": "'formaggio' means 'cheese'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/formaggio"
+  },
+  {
+    "itemId": "f35b3a50-e360-4577-9955-44a0146d6f1c",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'coffee'.",
+    "correctAnswer": "{{it-IT|caffè||CAF-fe}}",
+    "incorrectAnswers": [
+      "{{it-IT|tè||TE}}",
+      "{{it-IT|succo||SUC-co}}",
+      "{{it-IT|birra||BIR-ra}}"
+    ],
+    "explanation": "'caffè' means 'coffee'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/caff%C3%A8"
+  },
+  {
+    "itemId": "5804d4f6-1699-488c-ad7e-a9f8618ed71b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'tea'?",
+    "correctAnswer": "{{it-IT|tè||TE}}",
+    "incorrectAnswers": [
+      "{{it-IT|succo||SUC-co}}",
+      "{{it-IT|birra||BIR-ra}}",
+      "{{it-IT|vino||VI-no}}"
+    ],
+    "explanation": "'tè' means 'tea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/t%C3%A8"
+  },
+  {
+    "itemId": "34af9df1-de1b-4231-a58e-078241988eec",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'juice'?",
+    "correctAnswer": "{{it-IT|succo||SUC-co}}",
+    "incorrectAnswers": [
+      "{{it-IT|birra||BIR-ra}}",
+      "{{it-IT|vino||VI-no}}",
+      "{{it-IT|olio||O-lio}}"
+    ],
+    "explanation": "'succo' means 'juice'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/succo"
+  },
+  {
+    "itemId": "591c4d1b-2550-4059-9978-1739c1e6e52b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'beer' in everyday use?",
+    "correctAnswer": "{{it-IT|birra||BIR-ra}}",
+    "incorrectAnswers": [
+      "{{it-IT|vino||VI-no}}",
+      "{{it-IT|olio||O-lio}}",
+      "{{it-IT|sale||SA-le}}"
+    ],
+    "explanation": "'birra' means 'beer'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/birra"
+  },
+  {
+    "itemId": "ae9ef097-dc8a-467b-b577-042ef02323eb",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'wine'.",
+    "correctAnswer": "{{it-IT|vino||VI-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|olio||O-lio}}",
+      "{{it-IT|sale||SA-le}}",
+      "{{it-IT|zucchero||zuc-KE-ro}}"
+    ],
+    "explanation": "'vino' means 'wine'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/vino"
+  },
+  {
+    "itemId": "7dee2140-92e5-4b71-8e3f-bab828247398",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'oil'?",
+    "correctAnswer": "{{it-IT|olio||O-lio}}",
+    "incorrectAnswers": [
+      "{{it-IT|sale||SA-le}}",
+      "{{it-IT|zucchero||zuc-KE-ro}}",
+      "{{it-IT|pane||PA-ne}}"
+    ],
+    "explanation": "'olio' means 'oil'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/olio"
+  },
+  {
+    "itemId": "faa42100-86d8-4129-870b-3cd98a91472b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'salt'?",
+    "correctAnswer": "{{it-IT|sale||SA-le}}",
+    "incorrectAnswers": [
+      "{{it-IT|zucchero||zuc-KE-ro}}",
+      "{{it-IT|pane||PA-ne}}",
+      "{{it-IT|latte||LAT-te}}"
+    ],
+    "explanation": "'sale' means 'salt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/sale"
+  },
+  {
+    "itemId": "99017fe0-11b7-4d77-9d2f-e562f51d1a4b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'sugar' in everyday use?",
+    "correctAnswer": "{{it-IT|zucchero||zuc-KE-ro}}",
+    "incorrectAnswers": [
+      "{{it-IT|pane||PA-ne}}",
+      "{{it-IT|latte||LAT-te}}",
+      "{{it-IT|uovo||UO-vo}}"
+    ],
+    "explanation": "'zucchero' means 'sugar'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food"
+    ],
+    "source": "https://www.wordreference.com/iten/zucchero"
+  },
+  {
+    "itemId": "a5e5d2f8-29c5-4c7f-948c-2cb8bf93ffa1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'dog'?",
+    "correctAnswer": "{{it-IT|cane||CA-ne}}",
+    "incorrectAnswers": [
+      "{{it-IT|gatto||GAT-to}}",
+      "{{it-IT|uccello||uc-KEL-lo}}",
+      "{{it-IT|cavallo||ca-VAL-lo}}"
+    ],
+    "explanation": "'cane' means 'dog'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/cane"
+  },
+  {
+    "itemId": "608bd016-4613-4fb1-8a0c-b988ea4188bd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'cat' in everyday use?",
+    "correctAnswer": "{{it-IT|gatto||GAT-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|uccello||uc-KEL-lo}}",
+      "{{it-IT|cavallo||ca-VAL-lo}}",
+      "{{it-IT|mucca||MUC-ca}}"
+    ],
+    "explanation": "'gatto' means 'cat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/gatto"
+  },
+  {
+    "itemId": "28a6ee56-788d-4f66-8db3-7080fdc9e429",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'bird'.",
+    "correctAnswer": "{{it-IT|uccello||uc-KEL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|cavallo||ca-VAL-lo}}",
+      "{{it-IT|mucca||MUC-ca}}",
+      "{{it-IT|maiale||MAIA-le}}"
+    ],
+    "explanation": "'uccello' means 'bird'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/uccello"
+  },
+  {
+    "itemId": "6ee53bcc-6cac-46d8-a74a-7012e7661a11",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'horse'?",
+    "correctAnswer": "{{it-IT|cavallo||ca-VAL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|mucca||MUC-ca}}",
+      "{{it-IT|maiale||MAIA-le}}",
+      "{{it-IT|pollo||POL-lo}}"
+    ],
+    "explanation": "'cavallo' means 'horse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/cavallo"
+  },
+  {
+    "itemId": "8231eabc-c96a-4146-9c54-d92ad27bed1d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'cow'?",
+    "correctAnswer": "{{it-IT|mucca||MUC-ca}}",
+    "incorrectAnswers": [
+      "{{it-IT|maiale||MAIA-le}}",
+      "{{it-IT|pollo||POL-lo}}",
+      "{{it-IT|topo||TO-po}}"
+    ],
+    "explanation": "'mucca' means 'cow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/mucca"
+  },
+  {
+    "itemId": "7eb96842-1870-4d38-86d7-8c01dde61be2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'pig' in everyday use?",
+    "correctAnswer": "{{it-IT|maiale||MAIA-le}}",
+    "incorrectAnswers": [
+      "{{it-IT|pollo||POL-lo}}",
+      "{{it-IT|topo||TO-po}}",
+      "{{it-IT|coniglio||co-NI-lyio}}"
+    ],
+    "explanation": "'maiale' means 'pig'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/maiale"
+  },
+  {
+    "itemId": "6cf88989-e749-4397-84a1-c01106f4bb72",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'chicken'.",
+    "correctAnswer": "{{it-IT|pollo||POL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|topo||TO-po}}",
+      "{{it-IT|coniglio||co-NI-lyio}}",
+      "{{it-IT|cane||CA-ne}}"
+    ],
+    "explanation": "'pollo' means 'chicken'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/pollo"
+  },
+  {
+    "itemId": "29e9abed-0790-4713-8ad0-5409ffce4b0b",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'mouse'?",
+    "correctAnswer": "{{it-IT|topo||TO-po}}",
+    "incorrectAnswers": [
+      "{{it-IT|coniglio||co-NI-lyio}}",
+      "{{it-IT|cane||CA-ne}}",
+      "{{it-IT|gatto||GAT-to}}"
+    ],
+    "explanation": "'topo' means 'mouse'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/topo"
+  },
+  {
+    "itemId": "185d27e1-3de8-4855-b222-6457faa07218",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'rabbit'?",
+    "correctAnswer": "{{it-IT|coniglio||co-NI-lyio}}",
+    "incorrectAnswers": [
+      "{{it-IT|cane||CA-ne}}",
+      "{{it-IT|gatto||GAT-to}}",
+      "{{it-IT|uccello||uc-KEL-lo}}"
+    ],
+    "explanation": "'coniglio' means 'rabbit'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals"
+    ],
+    "source": "https://www.wordreference.com/iten/coniglio"
+  },
+  {
+    "itemId": "cb4ffcfc-6af1-44cf-86f4-cf35cdf1c858",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'house'?",
+    "correctAnswer": "{{it-IT|casa||CA-sa}}",
+    "incorrectAnswers": [
+      "{{it-IT|stanza||STAN-za}}",
+      "{{it-IT|porta||POR-ta}}",
+      "{{it-IT|finestra||fi-NES-tra}}"
+    ],
+    "explanation": "'casa' means 'house'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/casa"
+  },
+  {
+    "itemId": "376aa8de-cd33-4168-983b-9aafb7d0c1ca",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'room' in everyday use?",
+    "correctAnswer": "{{it-IT|stanza||STAN-za}}",
+    "incorrectAnswers": [
+      "{{it-IT|porta||POR-ta}}",
+      "{{it-IT|finestra||fi-NES-tra}}",
+      "{{it-IT|letto||LET-to}}"
+    ],
+    "explanation": "'stanza' means 'room'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/stanza"
+  },
+  {
+    "itemId": "0a020d53-cf00-4d8a-8a84-80ae16ab35f6",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'door'.",
+    "correctAnswer": "{{it-IT|porta||POR-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|finestra||fi-NES-tra}}",
+      "{{it-IT|letto||LET-to}}",
+      "{{it-IT|tavolo||ta-VO-lo}}"
+    ],
+    "explanation": "'porta' means 'door'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/porta"
+  },
+  {
+    "itemId": "2bb60ea4-cffa-48d2-8a27-793bf38aa980",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'window'?",
+    "correctAnswer": "{{it-IT|finestra||fi-NES-tra}}",
+    "incorrectAnswers": [
+      "{{it-IT|letto||LET-to}}",
+      "{{it-IT|tavolo||ta-VO-lo}}",
+      "{{it-IT|sedia||SE-dia}}"
+    ],
+    "explanation": "'finestra' means 'window'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/finestra"
+  },
+  {
+    "itemId": "76e510ed-de53-4b3e-b740-9417795e4cfd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'bed'?",
+    "correctAnswer": "{{it-IT|letto||LET-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|tavolo||ta-VO-lo}}",
+      "{{it-IT|sedia||SE-dia}}",
+      "{{it-IT|cucina||cu-CI-na}}"
+    ],
+    "explanation": "'letto' means 'bed'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/letto"
+  },
+  {
+    "itemId": "d74e3c04-a06d-4a4c-9b43-9a77805cee06",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'table' in everyday use?",
+    "correctAnswer": "{{it-IT|tavolo||ta-VO-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|sedia||SE-dia}}",
+      "{{it-IT|cucina||cu-CI-na}}",
+      "{{it-IT|bagno||BA-nyo}}"
+    ],
+    "explanation": "'tavolo' means 'table'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/tavolo"
+  },
+  {
+    "itemId": "f3b62f78-4826-48dc-89ab-fde06cfe538d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'chair'.",
+    "correctAnswer": "{{it-IT|sedia||SE-dia}}",
+    "incorrectAnswers": [
+      "{{it-IT|cucina||cu-CI-na}}",
+      "{{it-IT|bagno||BA-nyo}}",
+      "{{it-IT|giardino||jar-DI-no}}"
+    ],
+    "explanation": "'sedia' means 'chair'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/sedia"
+  },
+  {
+    "itemId": "6ac5fb4e-8224-4ed5-ac52-dc5ba2d1d0b1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'kitchen'?",
+    "correctAnswer": "{{it-IT|cucina||cu-CI-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|bagno||BA-nyo}}",
+      "{{it-IT|giardino||jar-DI-no}}",
+      "{{it-IT|pavimento||pa-vi-MEN-to}}"
+    ],
+    "explanation": "'cucina' means 'kitchen'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/cucina"
+  },
+  {
+    "itemId": "298b914e-a2b6-471b-b596-27b8b17cff84",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'bathroom'?",
+    "correctAnswer": "{{it-IT|bagno||BA-nyo}}",
+    "incorrectAnswers": [
+      "{{it-IT|giardino||jar-DI-no}}",
+      "{{it-IT|pavimento||pa-vi-MEN-to}}",
+      "{{it-IT|parete||pa-RE-te}}"
+    ],
+    "explanation": "'bagno' means 'bathroom'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/bagno"
+  },
+  {
+    "itemId": "47b8796f-86a0-46ab-8991-d5762c8729f8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'garden' in everyday use?",
+    "correctAnswer": "{{it-IT|giardino||jar-DI-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|pavimento||pa-vi-MEN-to}}",
+      "{{it-IT|parete||pa-RE-te}}",
+      "{{it-IT|tetto||TET-to}}"
+    ],
+    "explanation": "'giardino' means 'garden'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/giardino"
+  },
+  {
+    "itemId": "d03a0f68-77cc-43ba-9b1d-8e3067c08f3a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'floor'.",
+    "correctAnswer": "{{it-IT|pavimento||pa-vi-MEN-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|parete||pa-RE-te}}",
+      "{{it-IT|tetto||TET-to}}",
+      "{{it-IT|lampada||lam-PA-da}}"
+    ],
+    "explanation": "'pavimento' means 'floor'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/pavimento"
+  },
+  {
+    "itemId": "0f7bc506-68e1-4a69-839f-55e5811fea25",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'wall'?",
+    "correctAnswer": "{{it-IT|parete||pa-RE-te}}",
+    "incorrectAnswers": [
+      "{{it-IT|tetto||TET-to}}",
+      "{{it-IT|lampada||lam-PA-da}}",
+      "{{it-IT|casa||CA-sa}}"
+    ],
+    "explanation": "'parete' means 'wall'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/parete"
+  },
+  {
+    "itemId": "33929003-cec8-46f1-88fc-e72a2fb50dd5",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'roof'?",
+    "correctAnswer": "{{it-IT|tetto||TET-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|lampada||lam-PA-da}}",
+      "{{it-IT|casa||CA-sa}}",
+      "{{it-IT|stanza||STAN-za}}"
+    ],
+    "explanation": "'tetto' means 'roof'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/tetto"
+  },
+  {
+    "itemId": "e49d6d6b-84b5-4fc2-acfd-be25a3cce715",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'lamp' in everyday use?",
+    "correctAnswer": "{{it-IT|lampada||lam-PA-da}}",
+    "incorrectAnswers": [
+      "{{it-IT|casa||CA-sa}}",
+      "{{it-IT|stanza||STAN-za}}",
+      "{{it-IT|porta||POR-ta}}"
+    ],
+    "explanation": "'lampada' means 'lamp'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home"
+    ],
+    "source": "https://www.wordreference.com/iten/lampada"
+  },
+  {
+    "itemId": "d56581f1-79d7-4bc3-9e0b-596cc1286711",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'shirt'?",
+    "correctAnswer": "{{it-IT|camicia||ca-MI-ka}}",
+    "incorrectAnswers": [
+      "{{it-IT|pantaloni||pan-ta-LO-ni}}",
+      "{{it-IT|vestito||ves-TI-to}}",
+      "{{it-IT|scarpe||SCAR-pe}}"
+    ],
+    "explanation": "'camicia' means 'shirt'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/camicia"
+  },
+  {
+    "itemId": "5dc5466f-a916-4144-9349-8515448aec08",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'pants' in everyday use?",
+    "correctAnswer": "{{it-IT|pantaloni||pan-ta-LO-ni}}",
+    "incorrectAnswers": [
+      "{{it-IT|vestito||ves-TI-to}}",
+      "{{it-IT|scarpe||SCAR-pe}}",
+      "{{it-IT|calzini||cal-ZI-ni}}"
+    ],
+    "explanation": "'pantaloni' means 'pants'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/pantaloni"
+  },
+  {
+    "itemId": "d4c0c978-a6b4-4e7c-bf10-076ae59cce64",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'dress'.",
+    "correctAnswer": "{{it-IT|vestito||ves-TI-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|scarpe||SCAR-pe}}",
+      "{{it-IT|calzini||cal-ZI-ni}}",
+      "{{it-IT|giacca||JAC-ca}}"
+    ],
+    "explanation": "'vestito' means 'dress'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/vestito"
+  },
+  {
+    "itemId": "b6138e0f-98c0-422c-a935-5f9a8de0c944",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'shoes'?",
+    "correctAnswer": "{{it-IT|scarpe||SCAR-pe}}",
+    "incorrectAnswers": [
+      "{{it-IT|calzini||cal-ZI-ni}}",
+      "{{it-IT|giacca||JAC-ca}}",
+      "{{it-IT|cappello||cap-PEL-lo}}"
+    ],
+    "explanation": "'scarpe' means 'shoes'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/scarpe"
+  },
+  {
+    "itemId": "f807d21c-b8d6-4a74-b6dd-9634e5124b27",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'socks'?",
+    "correctAnswer": "{{it-IT|calzini||cal-ZI-ni}}",
+    "incorrectAnswers": [
+      "{{it-IT|giacca||JAC-ca}}",
+      "{{it-IT|cappello||cap-PEL-lo}}",
+      "{{it-IT|borsa||BOR-sa}}"
+    ],
+    "explanation": "'calzini' means 'socks'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/calzini"
+  },
+  {
+    "itemId": "b09bbae6-0cbc-41c7-8c6a-65dff780b407",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'jacket' in everyday use?",
+    "correctAnswer": "{{it-IT|giacca||JAC-ca}}",
+    "incorrectAnswers": [
+      "{{it-IT|cappello||cap-PEL-lo}}",
+      "{{it-IT|borsa||BOR-sa}}",
+      "{{it-IT|cappotto||cap-POT-to}}"
+    ],
+    "explanation": "'giacca' means 'jacket'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/giacca"
+  },
+  {
+    "itemId": "b7caaee8-90a2-41a1-bbc5-fea73f55d9c8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'hat'.",
+    "correctAnswer": "{{it-IT|cappello||cap-PEL-lo}}",
+    "incorrectAnswers": [
+      "{{it-IT|borsa||BOR-sa}}",
+      "{{it-IT|cappotto||cap-POT-to}}",
+      "{{it-IT|camicia||ca-MI-ka}}"
+    ],
+    "explanation": "'cappello' means 'hat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/cappello"
+  },
+  {
+    "itemId": "5de50f35-db10-4e2c-83ef-456fc319fdca",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'bag'?",
+    "correctAnswer": "{{it-IT|borsa||BOR-sa}}",
+    "incorrectAnswers": [
+      "{{it-IT|cappotto||cap-POT-to}}",
+      "{{it-IT|camicia||ca-MI-ka}}",
+      "{{it-IT|pantaloni||pan-ta-LO-ni}}"
+    ],
+    "explanation": "'borsa' means 'bag'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/borsa"
+  },
+  {
+    "itemId": "7e121664-981d-486c-a817-2ba208aa5b26",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'coat'?",
+    "correctAnswer": "{{it-IT|cappotto||cap-POT-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|camicia||ca-MI-ka}}",
+      "{{it-IT|pantaloni||pan-ta-LO-ni}}",
+      "{{it-IT|vestito||ves-TI-to}}"
+    ],
+    "explanation": "'cappotto' means 'coat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping"
+    ],
+    "source": "https://www.wordreference.com/iten/cappotto"
+  },
+  {
+    "itemId": "ab136290-423c-47c4-a497-7a1497cb40b2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'car'?",
+    "correctAnswer": "{{it-IT|auto||AU-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|autobus||au-TO-bus}}",
+      "{{it-IT|treno||TRE-no}}",
+      "{{it-IT|aereo||AE-reo}}"
+    ],
+    "explanation": "'auto' means 'car'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/auto"
+  },
+  {
+    "itemId": "eb314c72-fb1c-44a2-8857-d63419f020cd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'bus' in everyday use?",
+    "correctAnswer": "{{it-IT|autobus||au-TO-bus}}",
+    "incorrectAnswers": [
+      "{{it-IT|treno||TRE-no}}",
+      "{{it-IT|aereo||AE-reo}}",
+      "{{it-IT|bicicletta||bi-ci-CLET-ta}}"
+    ],
+    "explanation": "'autobus' means 'bus'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/autobus"
+  },
+  {
+    "itemId": "b495917c-0148-4e05-a352-1c9d7e9f4df8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'train'.",
+    "correctAnswer": "{{it-IT|treno||TRE-no}}",
+    "incorrectAnswers": [
+      "{{it-IT|aereo||AE-reo}}",
+      "{{it-IT|bicicletta||bi-ci-CLET-ta}}",
+      "{{it-IT|barca||BAR-ca}}"
+    ],
+    "explanation": "'treno' means 'train'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/treno"
+  },
+  {
+    "itemId": "4cefbbca-9c68-4c12-947b-db095f8aadfd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'plane'?",
+    "correctAnswer": "{{it-IT|aereo||AE-reo}}",
+    "incorrectAnswers": [
+      "{{it-IT|bicicletta||bi-ci-CLET-ta}}",
+      "{{it-IT|barca||BAR-ca}}",
+      "{{it-IT|taxi||TA-xi}}"
+    ],
+    "explanation": "'aereo' means 'plane'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/aereo"
+  },
+  {
+    "itemId": "c3b263ff-d04f-433b-835c-a78479432e17",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'bicycle'?",
+    "correctAnswer": "{{it-IT|bicicletta||bi-ci-CLET-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|barca||BAR-ca}}",
+      "{{it-IT|taxi||TA-xi}}",
+      "{{it-IT|metropolitana||me-tro-po-li-TA-na}}"
+    ],
+    "explanation": "'bicicletta' means 'bicycle'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/bicicletta"
+  },
+  {
+    "itemId": "4c2dd0ac-51c1-4013-a7cb-c1923ecdabd2",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'boat' in everyday use?",
+    "correctAnswer": "{{it-IT|barca||BAR-ca}}",
+    "incorrectAnswers": [
+      "{{it-IT|taxi||TA-xi}}",
+      "{{it-IT|metropolitana||me-tro-po-li-TA-na}}",
+      "{{it-IT|auto||AU-to}}"
+    ],
+    "explanation": "'barca' means 'boat'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/barca"
+  },
+  {
+    "itemId": "2fa65a43-126e-4b9c-b801-266e25a40635",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'taxi'.",
+    "correctAnswer": "{{it-IT|taxi||TA-xi}}",
+    "incorrectAnswers": [
+      "{{it-IT|metropolitana||me-tro-po-li-TA-na}}",
+      "{{it-IT|auto||AU-to}}",
+      "{{it-IT|autobus||au-TO-bus}}"
+    ],
+    "explanation": "'taxi' means 'taxi'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/taxi"
+  },
+  {
+    "itemId": "fccd3558-affd-4dee-9234-dd42d2820945",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'metro'?",
+    "correctAnswer": "{{it-IT|metropolitana||me-tro-po-li-TA-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|auto||AU-to}}",
+      "{{it-IT|autobus||au-TO-bus}}",
+      "{{it-IT|treno||TRE-no}}"
+    ],
+    "explanation": "'metropolitana' means 'metro'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport"
+    ],
+    "source": "https://www.wordreference.com/iten/metropolitana"
+  },
+  {
+    "itemId": "d216f622-3f90-4e8f-a291-b04b90ddc488",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'sun'?",
+    "correctAnswer": "{{it-IT|sole||SO-le}}",
+    "incorrectAnswers": [
+      "{{it-IT|luna||LU-na}}",
+      "{{it-IT|stella||STEL-la}}",
+      "{{it-IT|pioggia||PIOG-ja}}"
+    ],
+    "explanation": "'sole' means 'sun'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/sole"
+  },
+  {
+    "itemId": "cc45d750-6e8a-441d-b394-feacd8e12ee1",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'moon' in everyday use?",
+    "correctAnswer": "{{it-IT|luna||LU-na}}",
+    "incorrectAnswers": [
+      "{{it-IT|stella||STEL-la}}",
+      "{{it-IT|pioggia||PIOG-ja}}",
+      "{{it-IT|neve||NE-ve}}"
+    ],
+    "explanation": "'luna' means 'moon'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/luna"
+  },
+  {
+    "itemId": "31b7bdfb-a712-43c4-b4a5-d087220694fe",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'star'.",
+    "correctAnswer": "{{it-IT|stella||STEL-la}}",
+    "incorrectAnswers": [
+      "{{it-IT|pioggia||PIOG-ja}}",
+      "{{it-IT|neve||NE-ve}}",
+      "{{it-IT|vento||VEN-to}}"
+    ],
+    "explanation": "'stella' means 'star'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/stella"
+  },
+  {
+    "itemId": "665f4f99-d890-43a5-b2ea-8f650ddc54ad",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'rain'?",
+    "correctAnswer": "{{it-IT|pioggia||PIOG-ja}}",
+    "incorrectAnswers": [
+      "{{it-IT|neve||NE-ve}}",
+      "{{it-IT|vento||VEN-to}}",
+      "{{it-IT|nuvola||nu-VO-la}}"
+    ],
+    "explanation": "'pioggia' means 'rain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/pioggia"
+  },
+  {
+    "itemId": "7a90c086-ec78-49f9-b3f4-f6969f6a0d86",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'snow'?",
+    "correctAnswer": "{{it-IT|neve||NE-ve}}",
+    "incorrectAnswers": [
+      "{{it-IT|vento||VEN-to}}",
+      "{{it-IT|nuvola||nu-VO-la}}",
+      "{{it-IT|montagna||mon-TA-nya}}"
+    ],
+    "explanation": "'neve' means 'snow'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/neve"
+  },
+  {
+    "itemId": "189922dd-acca-463a-9ccd-ec70fa546d58",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'wind' in everyday use?",
+    "correctAnswer": "{{it-IT|vento||VEN-to}}",
+    "incorrectAnswers": [
+      "{{it-IT|nuvola||nu-VO-la}}",
+      "{{it-IT|montagna||mon-TA-nya}}",
+      "{{it-IT|fiume||FIU-me}}"
+    ],
+    "explanation": "'vento' means 'wind'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/vento"
+  },
+  {
+    "itemId": "962dd215-625d-4d6c-be34-74cb335b57ae",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'cloud'.",
+    "correctAnswer": "{{it-IT|nuvola||nu-VO-la}}",
+    "incorrectAnswers": [
+      "{{it-IT|montagna||mon-TA-nya}}",
+      "{{it-IT|fiume||FIU-me}}",
+      "{{it-IT|mare||MA-re}}"
+    ],
+    "explanation": "'nuvola' means 'cloud'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/nuvola"
+  },
+  {
+    "itemId": "00f81e44-4e60-494a-829c-70b07c1cd155",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'mountain'?",
+    "correctAnswer": "{{it-IT|montagna||mon-TA-nya}}",
+    "incorrectAnswers": [
+      "{{it-IT|fiume||FIU-me}}",
+      "{{it-IT|mare||MA-re}}",
+      "{{it-IT|spiaggia||SPIAG-ja}}"
+    ],
+    "explanation": "'montagna' means 'mountain'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/montagna"
+  },
+  {
+    "itemId": "df4a55a8-adda-484e-b5b3-026e01bb8b90",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'river'?",
+    "correctAnswer": "{{it-IT|fiume||FIU-me}}",
+    "incorrectAnswers": [
+      "{{it-IT|mare||MA-re}}",
+      "{{it-IT|spiaggia||SPIAG-ja}}",
+      "{{it-IT|foresta||fo-RES-ta}}"
+    ],
+    "explanation": "'fiume' means 'river'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/fiume"
+  },
+  {
+    "itemId": "16e3114b-e5e3-4a8f-8adf-e11b48d75c34",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'sea' in everyday use?",
+    "correctAnswer": "{{it-IT|mare||MA-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|spiaggia||SPIAG-ja}}",
+      "{{it-IT|foresta||fo-RES-ta}}",
+      "{{it-IT|albero||al-BE-ro}}"
+    ],
+    "explanation": "'mare' means 'sea'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/mare"
+  },
+  {
+    "itemId": "44027cd8-e63e-4a08-bed2-37ef8573797e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'beach'.",
+    "correctAnswer": "{{it-IT|spiaggia||SPIAG-ja}}",
+    "incorrectAnswers": [
+      "{{it-IT|foresta||fo-RES-ta}}",
+      "{{it-IT|albero||al-BE-ro}}",
+      "{{it-IT|fiore||FIO-re}}"
+    ],
+    "explanation": "'spiaggia' means 'beach'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/spiaggia"
+  },
+  {
+    "itemId": "5cf70b35-0c51-40a8-ae68-f6b8d44fc0c8",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'forest'?",
+    "correctAnswer": "{{it-IT|foresta||fo-RES-ta}}",
+    "incorrectAnswers": [
+      "{{it-IT|albero||al-BE-ro}}",
+      "{{it-IT|fiore||FIO-re}}",
+      "{{it-IT|tempo||TEM-po}}"
+    ],
+    "explanation": "'foresta' means 'forest'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/foresta"
+  },
+  {
+    "itemId": "2cd6cb82-d293-492c-90c1-4dc88b5a4101",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'tree'?",
+    "correctAnswer": "{{it-IT|albero||al-BE-ro}}",
+    "incorrectAnswers": [
+      "{{it-IT|fiore||FIO-re}}",
+      "{{it-IT|tempo||TEM-po}}",
+      "{{it-IT|sole||SO-le}}"
+    ],
+    "explanation": "'albero' means 'tree'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/albero"
+  },
+  {
+    "itemId": "0be47d55-3532-43fb-9aaf-fb6a2a606b4e",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'flower' in everyday use?",
+    "correctAnswer": "{{it-IT|fiore||FIO-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|tempo||TEM-po}}",
+      "{{it-IT|sole||SO-le}}",
+      "{{it-IT|luna||LU-na}}"
+    ],
+    "explanation": "'fiore' means 'flower'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/fiore"
+  },
+  {
+    "itemId": "344257d4-23e2-418b-a7bf-32706dd7e71d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'weather'.",
+    "correctAnswer": "{{it-IT|tempo||TEM-po}}",
+    "incorrectAnswers": [
+      "{{it-IT|sole||SO-le}}",
+      "{{it-IT|luna||LU-na}}",
+      "{{it-IT|stella||STEL-la}}"
+    ],
+    "explanation": "'tempo' means 'weather'. Learn it as a chunk you can reuse in simple everyday sentences.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather"
+    ],
+    "source": "https://www.wordreference.com/iten/tempo"
+  },
+  {
+    "itemId": "2a4e7e6c-4fe3-4719-878b-433cc30b14d7",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'be'?",
+    "correctAnswer": "{{it-IT|essere||es-SE-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|avere||a-VE-re}}",
+      "{{it-IT|volere||vo-LE-re}}",
+      "{{it-IT|avere bisogno di||a-VE-re bi-SO-nyo DI}}"
+    ],
+    "explanation": "'essere' is the infinitive 'to be'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/essere"
+  },
+  {
+    "itemId": "b28afddf-c2e3-48f7-82b2-581dac3ccbbd",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'have' in everyday use?",
+    "correctAnswer": "{{it-IT|avere||a-VE-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|volere||vo-LE-re}}",
+      "{{it-IT|avere bisogno di||a-VE-re bi-SO-nyo DI}}",
+      "{{it-IT|andare||an-DA-re}}"
+    ],
+    "explanation": "'avere' is the infinitive 'to have'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/avere"
+  },
+  {
+    "itemId": "d1fdb89d-902a-40c7-b6b1-e6c69be34dea",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'want'.",
+    "correctAnswer": "{{it-IT|volere||vo-LE-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|avere bisogno di||a-VE-re bi-SO-nyo DI}}",
+      "{{it-IT|andare||an-DA-re}}",
+      "{{it-IT|venire||ve-NI-re}}"
+    ],
+    "explanation": "'volere' is the infinitive 'to want'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/volere"
+  },
+  {
+    "itemId": "cbd148f6-0f54-4470-afc1-1369cd97a853",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'need'?",
+    "correctAnswer": "{{it-IT|avere bisogno di||a-VE-re bi-SO-nyo DI}}",
+    "incorrectAnswers": [
+      "{{it-IT|andare||an-DA-re}}",
+      "{{it-IT|venire||ve-NI-re}}",
+      "{{it-IT|mangiare||man-JA-re}}"
+    ],
+    "explanation": "'avere bisogno di' is the infinitive 'to need'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/avere%20bisogno%20di"
+  },
+  {
+    "itemId": "5c2dcc9d-f428-4420-b1a8-d5c712122c56",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'go'?",
+    "correctAnswer": "{{it-IT|andare||an-DA-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|venire||ve-NI-re}}",
+      "{{it-IT|mangiare||man-JA-re}}",
+      "{{it-IT|bere||BE-re}}"
+    ],
+    "explanation": "'andare' is the infinitive 'to go'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/andare"
+  },
+  {
+    "itemId": "3db6e4d0-adb1-4afb-a84b-84cb9e30141a",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Which Italian word means 'come' in everyday use?",
+    "correctAnswer": "{{it-IT|venire||ve-NI-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|mangiare||man-JA-re}}",
+      "{{it-IT|bere||BE-re}}",
+      "{{it-IT|dormire||dor-MI-re}}"
+    ],
+    "explanation": "'venire' is the infinitive 'to come'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/venire"
+  },
+  {
+    "itemId": "b4323394-ab23-4b59-b86b-a60f67d42d9d",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Italian word for 'eat'.",
+    "correctAnswer": "{{it-IT|mangiare||man-JA-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|bere||BE-re}}",
+      "{{it-IT|dormire||dor-MI-re}}",
+      "{{it-IT|svegliarsi||sve-LYIAR-si}}"
+    ],
+    "explanation": "'mangiare' is the infinitive 'to eat'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/mangiare"
+  },
+  {
+    "itemId": "785d12ab-18f9-40bb-bb5d-d6234c8c0360",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Italian word for 'drink'?",
+    "correctAnswer": "{{it-IT|bere||BE-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|dormire||dor-MI-re}}",
+      "{{it-IT|svegliarsi||sve-LYIAR-si}}",
+      "{{it-IT|lavorare||la-vo-RA-re}}"
+    ],
+    "explanation": "'bere' is the infinitive 'to drink'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/bere"
+  },
+  {
+    "itemId": "94ec28f0-6c59-49b0-a4db-933fe1c92dc4",
+    "category": "languages",
+    "navigationKeyword1": "italian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Italian, how do you say 'sleep'?",
+    "correctAnswer": "{{it-IT|dormire||dor-MI-re}}",
+    "incorrectAnswers": [
+      "{{it-IT|svegliarsi||sve-LYIAR-si}}",
+      "{{it-IT|lavorare||la-vo-RA-re}}",
+      "{{it-IT|parlare||par-LA-re}}"
+    ],
+    "explanation": "'dormire' is the infinitive 'to sleep'. Learn the infinitive first, then add conjugations later.",
+    "keywords": [
+      "italian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb"
+    ],
+    "source": "https://www.wordreference.com/iten/dormire"
+  }
+]

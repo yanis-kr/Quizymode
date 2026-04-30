@@ -1,0 +1,2393 @@
+[
+  {
+    "itemId": "7edc4607-f97c-1857-d8a6-efe581d87443",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'child'.",
+    "correctAnswer": "{{ro-RO|copil||CO-pil}}",
+    "incorrectAnswers": [
+      "{{ro-RO|bebeluș||be-BE-lus}}",
+      "{{ro-RO|bărbat||BAR-bat}}",
+      "{{ro-RO|femeie||fe-MEIE}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "child"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "6bc207b1-7c4c-fb91-4c41-690e0e701c93",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'baby'?",
+    "correctAnswer": "{{ro-RO|bebeluș||be-BE-lus}}",
+    "incorrectAnswers": [
+      "{{ro-RO|bărbat||BAR-bat}}",
+      "{{ro-RO|femeie||fe-MEIE}}",
+      "{{ro-RO|persoană||per-SOA-na}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "baby"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "93add04c-9a42-5a97-a56c-c7f10ff9c2b9",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'man'?",
+    "correctAnswer": "{{ro-RO|bărbat||BAR-bat}}",
+    "incorrectAnswers": [
+      "{{ro-RO|femeie||fe-MEIE}}",
+      "{{ro-RO|persoană||per-SOA-na}}",
+      "{{ro-RO|cap||CAP}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "man"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "9d70e627-6a61-fcdf-ca4b-38afa9aeb5f1",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'woman' in everyday use?",
+    "correctAnswer": "{{ro-RO|femeie||fe-MEIE}}",
+    "incorrectAnswers": [
+      "{{ro-RO|persoană||per-SOA-na}}",
+      "{{ro-RO|cap||CAP}}",
+      "{{ro-RO|mână||MA-na}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "woman"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "85e75a8f-7f4e-fed8-ee8b-462cfc7bb1ed",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'person'.",
+    "correctAnswer": "{{ro-RO|persoană||per-SOA-na}}",
+    "incorrectAnswers": [
+      "{{ro-RO|cap||CAP}}",
+      "{{ro-RO|mână||MA-na}}",
+      "{{ro-RO|picior||PI-cheeor}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-family",
+      "person"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "a774efd8-5cb5-574d-4cee-25386e633a53",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'head'?",
+    "correctAnswer": "{{ro-RO|cap||CAP}}",
+    "incorrectAnswers": [
+      "{{ro-RO|mână||MA-na}}",
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|ochi||O-chi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "head"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "49b548eb-856d-ff2c-ea34-f59ea2ee32e5",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'hand' in everyday use?",
+    "correctAnswer": "{{ro-RO|mână||MA-na}}",
+    "incorrectAnswers": [
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|ochi||O-chi}}",
+      "{{ro-RO|ureche||u-RE-che}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "hand"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "55352a11-3ad1-05b6-4f9b-df2ba9f597da",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'foot'.",
+    "correctAnswer": "{{ro-RO|picior||PI-cheeor}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ochi||O-chi}}",
+      "{{ro-RO|ureche||u-RE-che}}",
+      "{{ro-RO|nas||NAS}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "foot"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "207b30b2-609a-3c58-486b-61fe60849b5b",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'eye'?",
+    "correctAnswer": "{{ro-RO|ochi||O-chi}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ureche||u-RE-che}}",
+      "{{ro-RO|nas||NAS}}",
+      "{{ro-RO|gură||GU-ra}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "eye"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b98d85cf-e135-b612-9f52-e5cf600c6bb4",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'ear'?",
+    "correctAnswer": "{{ro-RO|ureche||u-RE-che}}",
+    "incorrectAnswers": [
+      "{{ro-RO|nas||NAS}}",
+      "{{ro-RO|gură||GU-ra}}",
+      "{{ro-RO|inimă||i-NI-ma}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "ear"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "083e6495-f45d-8acb-6980-18afb941f454",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'nose' in everyday use?",
+    "correctAnswer": "{{ro-RO|nas||NAS}}",
+    "incorrectAnswers": [
+      "{{ro-RO|gură||GU-ra}}",
+      "{{ro-RO|inimă||i-NI-ma}}",
+      "{{ro-RO|stomac||STO-mac}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "nose"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "95ca28f6-219d-83f5-e7e7-6f22375f70bf",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'mouth'.",
+    "correctAnswer": "{{ro-RO|gură||GU-ra}}",
+    "incorrectAnswers": [
+      "{{ro-RO|inimă||i-NI-ma}}",
+      "{{ro-RO|stomac||STO-mac}}",
+      "{{ro-RO|braț||BRAT}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "mouth"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "f2f94778-3b82-e784-6571-749ad4f725f2",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'heart'?",
+    "correctAnswer": "{{ro-RO|inimă||i-NI-ma}}",
+    "incorrectAnswers": [
+      "{{ro-RO|stomac||STO-mac}}",
+      "{{ro-RO|braț||BRAT}}",
+      "{{ro-RO|picior||PI-cheeor}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "heart"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "79ec15e0-96c2-a59a-532a-3623742ba97f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'stomach'?",
+    "correctAnswer": "{{ro-RO|stomac||STO-mac}}",
+    "incorrectAnswers": [
+      "{{ro-RO|braț||BRAT}}",
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|deget||DE-jet}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "stomach"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d26be99e-2acb-5c0a-a739-2f0496b6db47",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'arm' in everyday use?",
+    "correctAnswer": "{{ro-RO|braț||BRAT}}",
+    "incorrectAnswers": [
+      "{{ro-RO|picior||PI-cheeor}}",
+      "{{ro-RO|deget||DE-jet}}",
+      "{{ro-RO|spate||SPA-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "arm"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "8bf1428a-e368-a321-7972-656e81d5b152",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'leg'.",
+    "correctAnswer": "{{ro-RO|picior||PI-cheeor}}",
+    "incorrectAnswers": [
+      "{{ro-RO|deget||DE-jet}}",
+      "{{ro-RO|spate||SPA-te}}",
+      "{{ro-RO|pâine||PAI-ne}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "leg"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b2d60313-3b0f-64ec-75d6-647fdaaf1c6f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'finger'?",
+    "correctAnswer": "{{ro-RO|deget||DE-jet}}",
+    "incorrectAnswers": [
+      "{{ro-RO|spate||SPA-te}}",
+      "{{ro-RO|pâine||PAI-ne}}",
+      "{{ro-RO|lapte||LAP-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "finger"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0315627d-c913-e0c5-9900-2b0e5e8d3b8c",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'back'?",
+    "correctAnswer": "{{ro-RO|spate||SPA-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pâine||PAI-ne}}",
+      "{{ro-RO|lapte||LAP-te}}",
+      "{{ro-RO|ou||OU}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-body",
+      "back"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "521ae610-5c32-82d7-0c98-71a839977a80",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'bread'?",
+    "correctAnswer": "{{ro-RO|pâine||PAI-ne}}",
+    "incorrectAnswers": [
+      "{{ro-RO|lapte||LAP-te}}",
+      "{{ro-RO|ou||OU}}",
+      "{{ro-RO|carne||CAR-ne}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "bread"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "c4b14e21-ee9d-c75c-76ba-1a22c67dafcf",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'milk' in everyday use?",
+    "correctAnswer": "{{ro-RO|lapte||LAP-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ou||OU}}",
+      "{{ro-RO|carne||CAR-ne}}",
+      "{{ro-RO|pește||PES-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "milk"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1739b29b-d6c5-4eca-4969-e8285ec1cc15",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'egg'.",
+    "correctAnswer": "{{ro-RO|ou||OU}}",
+    "incorrectAnswers": [
+      "{{ro-RO|carne||CAR-ne}}",
+      "{{ro-RO|pește||PES-te}}",
+      "{{ro-RO|fruct||FRUCT}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "egg"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "86963ffb-33cb-78a3-0aa4-dd13b0f959e2",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'meat'?",
+    "correctAnswer": "{{ro-RO|carne||CAR-ne}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pește||PES-te}}",
+      "{{ro-RO|fruct||FRUCT}}",
+      "{{ro-RO|legumă||le-GU-ma}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "meat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "f8953594-ca03-d596-8c82-9b16facc7349",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'fish'?",
+    "correctAnswer": "{{ro-RO|pește||PES-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|fruct||FRUCT}}",
+      "{{ro-RO|legumă||le-GU-ma}}",
+      "{{ro-RO|orez||o-REZ}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fish"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "cc096624-caaa-942c-d759-93d201af4e5c",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'fruit' in everyday use?",
+    "correctAnswer": "{{ro-RO|fruct||FRUCT}}",
+    "incorrectAnswers": [
+      "{{ro-RO|legumă||le-GU-ma}}",
+      "{{ro-RO|orez||o-REZ}}",
+      "{{ro-RO|paste||PAS-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "fruit"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "8fe22b3b-4bf2-d082-33a8-5e6f15d5330a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'vegetable'.",
+    "correctAnswer": "{{ro-RO|legumă||le-GU-ma}}",
+    "incorrectAnswers": [
+      "{{ro-RO|orez||o-REZ}}",
+      "{{ro-RO|paste||PAS-te}}",
+      "{{ro-RO|brânză||BRAN-za}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "vegetable"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "7202b633-d6ea-ec4c-a199-f982d4c1d972",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'rice'?",
+    "correctAnswer": "{{ro-RO|orez||o-REZ}}",
+    "incorrectAnswers": [
+      "{{ro-RO|paste||PAS-te}}",
+      "{{ro-RO|brânză||BRAN-za}}",
+      "{{ro-RO|cafea||ca-FEA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "rice"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b1fe3bef-ddcd-bb51-72d3-f7cc4e6d3e7d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'pasta'?",
+    "correctAnswer": "{{ro-RO|paste||PAS-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|brânză||BRAN-za}}",
+      "{{ro-RO|cafea||ca-FEA}}",
+      "{{ro-RO|ceai||CHEAI}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "pasta"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ebc2498f-9b1d-d7e9-173c-b4fcc12c0a8f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'cheese' in everyday use?",
+    "correctAnswer": "{{ro-RO|brânză||BRAN-za}}",
+    "incorrectAnswers": [
+      "{{ro-RO|cafea||ca-FEA}}",
+      "{{ro-RO|ceai||CHEAI}}",
+      "{{ro-RO|suc||SUC}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "cheese"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "e5785117-d4c9-7124-f36a-803dfe582b1b",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'coffee'.",
+    "correctAnswer": "{{ro-RO|cafea||ca-FEA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ceai||CHEAI}}",
+      "{{ro-RO|suc||SUC}}",
+      "{{ro-RO|bere||BE-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "coffee"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "7a68c9e6-df6b-a56f-53c7-1bcabb85cb15",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'tea'?",
+    "correctAnswer": "{{ro-RO|ceai||CHEAI}}",
+    "incorrectAnswers": [
+      "{{ro-RO|suc||SUC}}",
+      "{{ro-RO|bere||BE-re}}",
+      "{{ro-RO|vin||VIN}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "tea"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "dd121857-92d2-82de-afcd-9d60b72f90ee",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'juice'?",
+    "correctAnswer": "{{ro-RO|suc||SUC}}",
+    "incorrectAnswers": [
+      "{{ro-RO|bere||BE-re}}",
+      "{{ro-RO|vin||VIN}}",
+      "{{ro-RO|ulei||U-lei}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "juice"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "cd1d1975-de9c-d7dd-c9dc-0d9006ac75ec",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'beer' in everyday use?",
+    "correctAnswer": "{{ro-RO|bere||BE-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|vin||VIN}}",
+      "{{ro-RO|ulei||U-lei}}",
+      "{{ro-RO|sare||SA-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "beer"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "afb50022-1fe8-0d8f-00e1-004bc5302a76",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'wine'.",
+    "correctAnswer": "{{ro-RO|vin||VIN}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ulei||U-lei}}",
+      "{{ro-RO|sare||SA-re}}",
+      "{{ro-RO|zahăr||ZA-har}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "wine"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b0268b56-faea-6d77-f2ab-b3822fc7e18d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'oil'?",
+    "correctAnswer": "{{ro-RO|ulei||U-lei}}",
+    "incorrectAnswers": [
+      "{{ro-RO|sare||SA-re}}",
+      "{{ro-RO|zahăr||ZA-har}}",
+      "{{ro-RO|câine||CAI-ne}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "oil"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "338a9568-97de-a2a5-76c6-402fa7e913db",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'salt'?",
+    "correctAnswer": "{{ro-RO|sare||SA-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|zahăr||ZA-har}}",
+      "{{ro-RO|câine||CAI-ne}}",
+      "{{ro-RO|pisică||pi-SI-ca}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "salt"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b476325e-29fd-5ac1-1d96-efb1f3db07ab",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'sugar' in everyday use?",
+    "correctAnswer": "{{ro-RO|zahăr||ZA-har}}",
+    "incorrectAnswers": [
+      "{{ro-RO|câine||CAI-ne}}",
+      "{{ro-RO|pisică||pi-SI-ca}}",
+      "{{ro-RO|pasăre||pa-SA-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-food",
+      "sugar"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "e907b101-ef9f-27d1-e22f-9e811319da03",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'dog'?",
+    "correctAnswer": "{{ro-RO|câine||CAI-ne}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pisică||pi-SI-ca}}",
+      "{{ro-RO|pasăre||pa-SA-re}}",
+      "{{ro-RO|cal||CAL}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "dog"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "afb2654c-9405-0cc6-2dd2-0a7cb0aeba51",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'cat' in everyday use?",
+    "correctAnswer": "{{ro-RO|pisică||pi-SI-ca}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pasăre||pa-SA-re}}",
+      "{{ro-RO|cal||CAL}}",
+      "{{ro-RO|vacă||VA-ca}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "32f9b7fe-a9e2-de2c-825e-887a90007fd4",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'bird'.",
+    "correctAnswer": "{{ro-RO|pasăre||pa-SA-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|cal||CAL}}",
+      "{{ro-RO|vacă||VA-ca}}",
+      "{{ro-RO|porc||PORC}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "bird"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0b3cbe96-8fdf-a3ee-186b-54a89f80b7eb",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'horse'?",
+    "correctAnswer": "{{ro-RO|cal||CAL}}",
+    "incorrectAnswers": [
+      "{{ro-RO|vacă||VA-ca}}",
+      "{{ro-RO|porc||PORC}}",
+      "{{ro-RO|pui||PUI}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "horse"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d1ef46c2-128f-b006-9f09-afc3523d25d3",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'cow'?",
+    "correctAnswer": "{{ro-RO|vacă||VA-ca}}",
+    "incorrectAnswers": [
+      "{{ro-RO|porc||PORC}}",
+      "{{ro-RO|pui||PUI}}",
+      "{{ro-RO|șoarece||soa-RE-che}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "cow"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "8954ca42-6323-8739-dbd0-e396a9d1b346",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'pig' in everyday use?",
+    "correctAnswer": "{{ro-RO|porc||PORC}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pui||PUI}}",
+      "{{ro-RO|șoarece||soa-RE-che}}",
+      "{{ro-RO|iepure||ie-PU-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "pig"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "eaf9eb5b-01ee-b759-6251-990d61f8efc4",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'chicken'.",
+    "correctAnswer": "{{ro-RO|pui||PUI}}",
+    "incorrectAnswers": [
+      "{{ro-RO|șoarece||soa-RE-che}}",
+      "{{ro-RO|iepure||ie-PU-re}}",
+      "{{ro-RO|casă||CA-sa}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "chicken"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "e8351e43-0c91-525f-580e-4c729e84543f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'mouse'?",
+    "correctAnswer": "{{ro-RO|șoarece||soa-RE-che}}",
+    "incorrectAnswers": [
+      "{{ro-RO|iepure||ie-PU-re}}",
+      "{{ro-RO|casă||CA-sa}}",
+      "{{ro-RO|cameră||ca-ME-ra}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "mouse"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "7ead9660-bab8-c5a6-1e3a-b947008d1c58",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'rabbit'?",
+    "correctAnswer": "{{ro-RO|iepure||ie-PU-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|casă||CA-sa}}",
+      "{{ro-RO|cameră||ca-ME-ra}}",
+      "{{ro-RO|ușă||U-sa}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-animals",
+      "rabbit"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "af1c0062-7599-d654-778c-ba8327353e9f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'house'?",
+    "correctAnswer": "{{ro-RO|casă||CA-sa}}",
+    "incorrectAnswers": [
+      "{{ro-RO|cameră||ca-ME-ra}}",
+      "{{ro-RO|ușă||U-sa}}",
+      "{{ro-RO|fereastră||fe-REAS-tra}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "house"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "86a56210-15a6-1915-7e53-ea722377b76d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'room' in everyday use?",
+    "correctAnswer": "{{ro-RO|cameră||ca-ME-ra}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ușă||U-sa}}",
+      "{{ro-RO|fereastră||fe-REAS-tra}}",
+      "{{ro-RO|pat||PAT}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "room"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d3958421-c684-3fb0-7830-a4beb768c07c",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'door'.",
+    "correctAnswer": "{{ro-RO|ușă||U-sa}}",
+    "incorrectAnswers": [
+      "{{ro-RO|fereastră||fe-REAS-tra}}",
+      "{{ro-RO|pat||PAT}}",
+      "{{ro-RO|masă||MA-sa}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "door"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "c8ff6a4e-3a4c-f6d6-48b2-20de80c11e1a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'window'?",
+    "correctAnswer": "{{ro-RO|fereastră||fe-REAS-tra}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pat||PAT}}",
+      "{{ro-RO|masă||MA-sa}}",
+      "{{ro-RO|scaun||SCAUN}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "window"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "45499373-3021-541c-c008-d6df847f4802",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'bed'?",
+    "correctAnswer": "{{ro-RO|pat||PAT}}",
+    "incorrectAnswers": [
+      "{{ro-RO|masă||MA-sa}}",
+      "{{ro-RO|scaun||SCAUN}}",
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bed"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "da5a418e-7d19-58a7-7198-66961ad1974f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'table' in everyday use?",
+    "correctAnswer": "{{ro-RO|masă||MA-sa}}",
+    "incorrectAnswers": [
+      "{{ro-RO|scaun||SCAUN}}",
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
+      "{{ro-RO|baie||BAIE}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "table"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "99ff1451-421e-8ead-04fd-42685c97d33a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'chair'.",
+    "correctAnswer": "{{ro-RO|scaun||SCAUN}}",
+    "incorrectAnswers": [
+      "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
+      "{{ro-RO|baie||BAIE}}",
+      "{{ro-RO|grădină||gra-DI-na}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "chair"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "85dc9c59-372c-ab12-6259-0266c92b0f7b",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'kitchen'?",
+    "correctAnswer": "{{ro-RO|bucătărie||bu-ca-TA-rie}}",
+    "incorrectAnswers": [
+      "{{ro-RO|baie||BAIE}}",
+      "{{ro-RO|grădină||gra-DI-na}}",
+      "{{ro-RO|podea||po-DEA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "kitchen"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "17b3f1a2-bf92-4ae2-da5b-4d732cca4442",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'bathroom'?",
+    "correctAnswer": "{{ro-RO|baie||BAIE}}",
+    "incorrectAnswers": [
+      "{{ro-RO|grădină||gra-DI-na}}",
+      "{{ro-RO|podea||po-DEA}}",
+      "{{ro-RO|perete||pe-RE-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "bathroom"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "91cb8237-b63a-1a8a-0908-d703676a0b97",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'garden' in everyday use?",
+    "correctAnswer": "{{ro-RO|grădină||gra-DI-na}}",
+    "incorrectAnswers": [
+      "{{ro-RO|podea||po-DEA}}",
+      "{{ro-RO|perete||pe-RE-te}}",
+      "{{ro-RO|acoperiș||a-co-PE-ris}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "garden"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "4058781c-40b2-b0eb-9eed-7d499229c79a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'floor'.",
+    "correctAnswer": "{{ro-RO|podea||po-DEA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|perete||pe-RE-te}}",
+      "{{ro-RO|acoperiș||a-co-PE-ris}}",
+      "{{ro-RO|lampă||LAM-pa}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "floor"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "02c78dee-06f6-8798-2c68-48df3c327ce5",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'wall'?",
+    "correctAnswer": "{{ro-RO|perete||pe-RE-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|acoperiș||a-co-PE-ris}}",
+      "{{ro-RO|lampă||LAM-pa}}",
+      "{{ro-RO|cămașă||ca-MA-sa}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "wall"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1ecb7536-970d-206d-238c-b780b82eb7bb",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'roof'?",
+    "correctAnswer": "{{ro-RO|acoperiș||a-co-PE-ris}}",
+    "incorrectAnswers": [
+      "{{ro-RO|lampă||LAM-pa}}",
+      "{{ro-RO|cămașă||ca-MA-sa}}",
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "roof"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ffc56ef4-fd96-f731-de44-4123e65da23f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'lamp' in everyday use?",
+    "correctAnswer": "{{ro-RO|lampă||LAM-pa}}",
+    "incorrectAnswers": [
+      "{{ro-RO|cămașă||ca-MA-sa}}",
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
+      "{{ro-RO|rochie||ro-CHIE}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-home",
+      "lamp"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "3b59fa81-f70e-3c03-043a-04c61bf82253",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'shirt'?",
+    "correctAnswer": "{{ro-RO|cămașă||ca-MA-sa}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
+      "{{ro-RO|rochie||ro-CHIE}}",
+      "{{ro-RO|pantofi||pan-TO-fi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shirt"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "458e28fa-9dd4-f1ce-0a66-668713cb70cd",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'pants' in everyday use?",
+    "correctAnswer": "{{ro-RO|pantaloni||pan-ta-LO-ni}}",
+    "incorrectAnswers": [
+      "{{ro-RO|rochie||ro-CHIE}}",
+      "{{ro-RO|pantofi||pan-TO-fi}}",
+      "{{ro-RO|șosete||so-SE-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "pants"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "db8dd5a9-8130-8e87-e4df-5653574e0c01",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'dress'.",
+    "correctAnswer": "{{ro-RO|rochie||ro-CHIE}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pantofi||pan-TO-fi}}",
+      "{{ro-RO|șosete||so-SE-te}}",
+      "{{ro-RO|jachetă||ja-CHE-ta}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "dress"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "21c80fcd-2276-901e-706f-7de426d73a5c",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'shoes'?",
+    "correctAnswer": "{{ro-RO|pantofi||pan-TO-fi}}",
+    "incorrectAnswers": [
+      "{{ro-RO|șosete||so-SE-te}}",
+      "{{ro-RO|jachetă||ja-CHE-ta}}",
+      "{{ro-RO|pălărie||pa-LA-rie}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "shoes"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "89ba3555-6b78-6e5c-9b8d-f11c3fa6674f",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'socks'?",
+    "correctAnswer": "{{ro-RO|șosete||so-SE-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|jachetă||ja-CHE-ta}}",
+      "{{ro-RO|pălărie||pa-LA-rie}}",
+      "{{ro-RO|geantă||JEAN-ta}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "socks"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1937b305-5726-5fb0-58dd-569553dd1329",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'jacket' in everyday use?",
+    "correctAnswer": "{{ro-RO|jachetă||ja-CHE-ta}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pălărie||pa-LA-rie}}",
+      "{{ro-RO|geantă||JEAN-ta}}",
+      "{{ro-RO|palton||PAL-ton}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "jacket"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0cd02f90-11c6-e091-500c-41f89afe86bb",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'hat'.",
+    "correctAnswer": "{{ro-RO|pălărie||pa-LA-rie}}",
+    "incorrectAnswers": [
+      "{{ro-RO|geantă||JEAN-ta}}",
+      "{{ro-RO|palton||PAL-ton}}",
+      "{{ro-RO|mașină||ma-SI-na}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "hat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0f1c4f74-ec8c-b728-4361-a9ef16860d1d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'bag'?",
+    "correctAnswer": "{{ro-RO|geantă||JEAN-ta}}",
+    "incorrectAnswers": [
+      "{{ro-RO|palton||PAL-ton}}",
+      "{{ro-RO|mașină||ma-SI-na}}",
+      "{{ro-RO|autobuz||au-TO-buz}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "bag"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b97076b4-a350-eb1e-39cc-b21f3748ed6c",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'coat'?",
+    "correctAnswer": "{{ro-RO|palton||PAL-ton}}",
+    "incorrectAnswers": [
+      "{{ro-RO|mașină||ma-SI-na}}",
+      "{{ro-RO|autobuz||au-TO-buz}}",
+      "{{ro-RO|tren||TREN}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-shopping",
+      "coat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "36381cad-092f-d30f-9c08-f967beb41204",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'car'?",
+    "correctAnswer": "{{ro-RO|mașină||ma-SI-na}}",
+    "incorrectAnswers": [
+      "{{ro-RO|autobuz||au-TO-buz}}",
+      "{{ro-RO|tren||TREN}}",
+      "{{ro-RO|avion||A-vion}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "car"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "fcf37794-50bc-36a5-47ac-e033037c8fff",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'bus' in everyday use?",
+    "correctAnswer": "{{ro-RO|autobuz||au-TO-buz}}",
+    "incorrectAnswers": [
+      "{{ro-RO|tren||TREN}}",
+      "{{ro-RO|avion||A-vion}}",
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bus"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "7ccd6b79-489f-d726-bf2e-1fc513bf1db2",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'train'.",
+    "correctAnswer": "{{ro-RO|tren||TREN}}",
+    "incorrectAnswers": [
+      "{{ro-RO|avion||A-vion}}",
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
+      "{{ro-RO|barcă||BAR-ca}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "train"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "867be786-b413-b8b9-efdc-e553ed06a2e6",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'plane'?",
+    "correctAnswer": "{{ro-RO|avion||A-vion}}",
+    "incorrectAnswers": [
+      "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
+      "{{ro-RO|barcă||BAR-ca}}",
+      "{{ro-RO|taxi||TA-xi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "plane"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "dbbc3df9-e094-3d4c-56dc-4f326ce14adb",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'bicycle'?",
+    "correctAnswer": "{{ro-RO|bicicletă||bi-chee-CLE-ta}}",
+    "incorrectAnswers": [
+      "{{ro-RO|barcă||BAR-ca}}",
+      "{{ro-RO|taxi||TA-xi}}",
+      "{{ro-RO|metrou||ME-trou}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "bicycle"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "73742575-618b-0af9-8578-fa3decce29e4",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'boat' in everyday use?",
+    "correctAnswer": "{{ro-RO|barcă||BAR-ca}}",
+    "incorrectAnswers": [
+      "{{ro-RO|taxi||TA-xi}}",
+      "{{ro-RO|metrou||ME-trou}}",
+      "{{ro-RO|soare||SOA-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "boat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "8d576376-9f28-1e6c-b406-71a4a71e29db",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'taxi'.",
+    "correctAnswer": "{{ro-RO|taxi||TA-xi}}",
+    "incorrectAnswers": [
+      "{{ro-RO|metrou||ME-trou}}",
+      "{{ro-RO|soare||SOA-re}}",
+      "{{ro-RO|lună||LU-na}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "taxi"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "61a60852-edd7-c7db-42ea-45b5bc2e10b9",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'metro'?",
+    "correctAnswer": "{{ro-RO|metrou||ME-trou}}",
+    "incorrectAnswers": [
+      "{{ro-RO|soare||SOA-re}}",
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|stea||STEA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-transport",
+      "metro"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ae62974f-9605-a7eb-6440-1bb056df41fa",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'sun'?",
+    "correctAnswer": "{{ro-RO|soare||SOA-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|lună||LU-na}}",
+      "{{ro-RO|stea||STEA}}",
+      "{{ro-RO|ploaie||PLOAIE}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sun"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d1c1df13-437a-5942-37ab-44369e7f47e8",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'moon' in everyday use?",
+    "correctAnswer": "{{ro-RO|lună||LU-na}}",
+    "incorrectAnswers": [
+      "{{ro-RO|stea||STEA}}",
+      "{{ro-RO|ploaie||PLOAIE}}",
+      "{{ro-RO|zăpadă||za-PA-da}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "moon"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "11f13ba8-5653-46f4-1867-45d7ac68abe7",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'star'.",
+    "correctAnswer": "{{ro-RO|stea||STEA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|ploaie||PLOAIE}}",
+      "{{ro-RO|zăpadă||za-PA-da}}",
+      "{{ro-RO|vânt||VANT}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "star"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "59f13dda-87eb-76fc-fd49-8814be6678cb",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'rain'?",
+    "correctAnswer": "{{ro-RO|ploaie||PLOAIE}}",
+    "incorrectAnswers": [
+      "{{ro-RO|zăpadă||za-PA-da}}",
+      "{{ro-RO|vânt||VANT}}",
+      "{{ro-RO|nor||NOR}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "rain"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "030aa7bb-c4f2-8704-60a8-ec9e23e0aa81",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'snow'?",
+    "correctAnswer": "{{ro-RO|zăpadă||za-PA-da}}",
+    "incorrectAnswers": [
+      "{{ro-RO|vânt||VANT}}",
+      "{{ro-RO|nor||NOR}}",
+      "{{ro-RO|munte||MUN-te}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "snow"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d6b86aa1-d7ac-b2df-742c-e360a68ba721",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'wind' in everyday use?",
+    "correctAnswer": "{{ro-RO|vânt||VANT}}",
+    "incorrectAnswers": [
+      "{{ro-RO|nor||NOR}}",
+      "{{ro-RO|munte||MUN-te}}",
+      "{{ro-RO|râu||RAU}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "wind"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "013d78a2-6c4d-d8b9-bf1d-8e12d4b0497d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'cloud'.",
+    "correctAnswer": "{{ro-RO|nor||NOR}}",
+    "incorrectAnswers": [
+      "{{ro-RO|munte||MUN-te}}",
+      "{{ro-RO|râu||RAU}}",
+      "{{ro-RO|mare||MA-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "cloud"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ba4b76c5-f161-ad60-1a6d-fe5bd710f280",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'mountain'?",
+    "correctAnswer": "{{ro-RO|munte||MUN-te}}",
+    "incorrectAnswers": [
+      "{{ro-RO|râu||RAU}}",
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|plajă||PLA-ja}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "mountain"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "c097f19c-4543-be2b-d96c-9fdd689f7a43",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'river'?",
+    "correctAnswer": "{{ro-RO|râu||RAU}}",
+    "incorrectAnswers": [
+      "{{ro-RO|mare||MA-re}}",
+      "{{ro-RO|plajă||PLA-ja}}",
+      "{{ro-RO|pădure||pa-DU-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "river"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b11e098f-42d6-9a2e-ac8c-cd087c80aafd",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'sea' in everyday use?",
+    "correctAnswer": "{{ro-RO|mare||MA-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|plajă||PLA-ja}}",
+      "{{ro-RO|pădure||pa-DU-re}}",
+      "{{ro-RO|copac||CO-pac}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "sea"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "6b96d2a1-578e-170a-f1ea-67434c6c4d22",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'beach'.",
+    "correctAnswer": "{{ro-RO|plajă||PLA-ja}}",
+    "incorrectAnswers": [
+      "{{ro-RO|pădure||pa-DU-re}}",
+      "{{ro-RO|copac||CO-pac}}",
+      "{{ro-RO|floare||FLOA-re}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "beach"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d2930754-7f2e-ed6b-8324-6502f04c2a08",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'forest'?",
+    "correctAnswer": "{{ro-RO|pădure||pa-DU-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|copac||CO-pac}}",
+      "{{ro-RO|floare||FLOA-re}}",
+      "{{ro-RO|vreme||VRE-me}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "forest"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "58617caf-ec98-68cb-951b-793620ee8f56",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'tree'?",
+    "correctAnswer": "{{ro-RO|copac||CO-pac}}",
+    "incorrectAnswers": [
+      "{{ro-RO|floare||FLOA-re}}",
+      "{{ro-RO|vreme||VRE-me}}",
+      "{{ro-RO|a fi||A FI}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "tree"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "ec80b61f-0a40-6416-3ccd-ff8ba972fef7",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'flower' in everyday use?",
+    "correctAnswer": "{{ro-RO|floare||FLOA-re}}",
+    "incorrectAnswers": [
+      "{{ro-RO|vreme||VRE-me}}",
+      "{{ro-RO|a fi||A FI}}",
+      "{{ro-RO|a avea||A a-VEA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "flower"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1fddeee7-64aa-24e2-39dd-f9dfd106c46d",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'weather'.",
+    "correctAnswer": "{{ro-RO|vreme||VRE-me}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a fi||A FI}}",
+      "{{ro-RO|a avea||A a-VEA}}",
+      "{{ro-RO|a vrea||A VREA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-1000",
+      "cefr-a1",
+      "pos-noun",
+      "situation-weather",
+      "weather"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "0db18a1b-9f82-69ec-6c2f-e75aa1bffbaf",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'be'?",
+    "correctAnswer": "{{ro-RO|a fi||A FI}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a avea||A a-VEA}}",
+      "{{ro-RO|a vrea||A VREA}}",
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "be"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "12a43eef-e632-0b49-17aa-52dd8c74adb7",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'have' in everyday use?",
+    "correctAnswer": "{{ro-RO|a avea||A a-VEA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a vrea||A VREA}}",
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
+      "{{ro-RO|a merge||A MER-je}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "have"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "e328e610-d399-244d-0d78-7f5da1406dac",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'want'.",
+    "correctAnswer": "{{ro-RO|a vrea||A VREA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
+      "{{ro-RO|a merge||A MER-je}}",
+      "{{ro-RO|a veni||A VE-ni}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "want"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b3da3733-a0b3-e941-b369-a925191c21dc",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'need'?",
+    "correctAnswer": "{{ro-RO|a avea nevoie||A a-VEA ne-VOIE}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a merge||A MER-je}}",
+      "{{ro-RO|a veni||A VE-ni}}",
+      "{{ro-RO|a mânca||A MAN-ca}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "need"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "1cbdd649-fdc8-1073-f2a4-e5911d35dc4a",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'go'?",
+    "correctAnswer": "{{ro-RO|a merge||A MER-je}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a veni||A VE-ni}}",
+      "{{ro-RO|a mânca||A MAN-ca}}",
+      "{{ro-RO|a bea||A BEA}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "go"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "211c325e-2baf-faef-5027-f238c27171fa",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Which Romanian word means 'come' in everyday use?",
+    "correctAnswer": "{{ro-RO|a veni||A VE-ni}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a mânca||A MAN-ca}}",
+      "{{ro-RO|a bea||A BEA}}",
+      "{{ro-RO|a dormi||A DOR-mi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "come"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "d1d21d36-98bb-f3be-5817-9785d75068c0",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "Choose the Romanian word for 'eat'.",
+    "correctAnswer": "{{ro-RO|a mânca||A MAN-ca}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a bea||A BEA}}",
+      "{{ro-RO|a dormi||A DOR-mi}}",
+      "{{ro-RO|a se trezi||A SE TRE-zi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "eat"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "37637cb6-3754-6dab-92c5-16d45ca47972",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "What is the everyday Romanian word for 'drink'?",
+    "correctAnswer": "{{ro-RO|a bea||A BEA}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a dormi||A DOR-mi}}",
+      "{{ro-RO|a se trezi||A SE TRE-zi}}",
+      "{{ro-RO|a lucra||A LU-cra}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "drink"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  },
+  {
+    "itemId": "b4a0150b-2536-885f-06a7-41947fe9d1cd",
+    "category": "languages",
+    "navigationKeyword1": "romanian",
+    "navigationKeyword2": "core",
+    "question": "In beginner Romanian, how do you say 'sleep'?",
+    "correctAnswer": "{{ro-RO|a dormi||A DOR-mi}}",
+    "incorrectAnswers": [
+      "{{ro-RO|a se trezi||A SE TRE-zi}}",
+      "{{ro-RO|a lucra||A LU-cra}}",
+      "{{ro-RO|a vorbi||A VOR-bi}}"
+    ],
+    "explanation": "A common romanian word or expression for beginner use.",
+    "keywords": [
+      "romanian",
+      "core",
+      "freq-500",
+      "cefr-a1",
+      "pos-verb",
+      "sleep"
+    ],
+    "source": "https://www.omniglot.com/language/phrases/romanian.htm"
+  }
+]

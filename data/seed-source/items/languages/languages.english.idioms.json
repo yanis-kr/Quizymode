@@ -13,9 +13,9 @@
     ],
     "explanation": "Piece of cake is an informal idiom meaning something is easy to do.",
     "keywords": [
+      "english",
       "piece-of-cake",
-      "easy",
-      "english-idioms"
+      "easy"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/piece-of-cake"
   },
@@ -33,9 +33,9 @@
     ],
     "explanation": "Break the ice means to reduce tension and help people begin a friendly conversation.",
     "keywords": [
+      "english",
       "break-the-ice",
-      "conversation",
-      "english-idioms"
+      "conversation"
     ],
     "source": "https://www.merriam-webster.com/dictionary/break%20the%20ice"
   },
@@ -53,9 +53,9 @@
     ],
     "explanation": "Under the weather is an idiom meaning mildly ill or unwell.",
     "keywords": [
+      "english",
       "under-the-weather",
-      "health",
-      "english-idioms"
+      "health"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/under-the-weather"
   },
@@ -73,9 +73,9 @@
     ],
     "explanation": "Once in a blue moon means something happens very infrequently.",
     "keywords": [
+      "english",
       "once-in-a-blue-moon",
-      "rarely",
-      "english-idioms"
+      "rarely"
     ],
     "source": "https://www.merriam-webster.com/dictionary/once%20in%20a%20blue%20moon"
   },
@@ -93,9 +93,9 @@
     ],
     "explanation": "Hit the nail on the head means to be exactly correct about something.",
     "keywords": [
+      "english",
       "hit-the-nail-on-the-head",
-      "accuracy",
-      "english-idioms"
+      "accuracy"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/english/hit-the-nail-on-the-head"
   },
@@ -113,10 +113,389 @@
     ],
     "explanation": "The ball is in your court means the next step is your responsibility.",
     "keywords": [
+      "english",
       "ball-in-your-court",
-      "responsibility",
-      "english-idioms"
+      "responsibility"
     ],
     "source": "https://www.merriam-webster.com/dictionary/the%20ball%20is%20in%20one%27s%20court"
+  },
+  {
+    "itemId": "7a1b134d-2549-4138-becd-c67c0769e348",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If you \"spill the beans,\" what did you do?",
+    "correctAnswer": "You told a secret you should have kept quiet.",
+    "incorrectAnswers": [
+      "You dropped food on the floor.",
+      "You started cooking beans.",
+      "You refused to answer a simple question."
+    ],
+    "explanation": "\"Spill the beans\" means to reveal secret information too soon.",
+    "keywords": [
+      "english",
+      "secrets"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/spill-the-beans"
+  },
+  {
+    "itemId": "bec5d9a5-891e-4755-83a9-7e363fc0eb2e",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The proverb \"Honesty is the best policy\" praises which choice?",
+    "correctAnswer": "Telling the truth even when it is hard.",
+    "incorrectAnswers": [
+      "Hiding facts to keep peace.",
+      "Changing your story often.",
+      "Avoiding all difficult topics."
+    ],
+    "explanation": "The proverb links honesty with good long-term results.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "honesty"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/honesty-is-the-best-policy"
+  },
+  {
+    "itemId": "ad5baaee-899a-43ba-a68e-501331f54860",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "What does \"Actions speak louder than words\" ask you to trust more?",
+    "correctAnswer": "What people do, not only what they say.",
+    "incorrectAnswers": [
+      "Loud voices in a crowd.",
+      "Written contracts only.",
+      "Short speeches only."
+    ],
+    "explanation": "The proverb warns that real intent shows up in behavior.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "behavior"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/actions%20speak%20louder%20than%20words"
+  },
+  {
+    "itemId": "f9ef0c7d-7f99-40f1-9678-17213e2f4f9a",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The proverb \"Practice makes perfect\" supports which idea?",
+    "correctAnswer": "Repeating a skill improves it over time.",
+    "incorrectAnswers": [
+      "Talent alone is always enough.",
+      "Mistakes should never happen.",
+      "Rest is the only path to success."
+    ],
+    "explanation": "It encourages steady effort rather than expecting instant mastery.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "learning"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/practice-makes-perfect"
+  },
+  {
+    "itemId": "03704cee-a4e0-49e0-9c67-e5399a179c7e",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "\"A friend in need is a friend indeed\" highlights which kind of friend?",
+    "correctAnswer": "Someone who helps you during real trouble.",
+    "incorrectAnswers": [
+      "Someone who only shares jokes.",
+      "Someone who borrows money often.",
+      "Someone who avoids all conflict."
+    ],
+    "explanation": "The proverb values loyalty shown when support truly matters.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "friendship"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/a-friend-in-need-is-a-friend-indeed"
+  },
+  {
+    "itemId": "5e66944b-97e8-43df-88c4-31237e066de2",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The proverb \"Don't put all your eggs in one basket\" warns about what risk?",
+    "correctAnswer": "Depending on only one plan or place for everything important.",
+    "incorrectAnswers": [
+      "Cooking breakfast too slowly.",
+      "Carrying too many bags at once.",
+      "Avoiding all new ideas."
+    ],
+    "explanation": "It encourages spreading risk so one failure does not ruin everything.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "risk"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/don-t-put-all-your-eggs-in-one-basket"
+  },
+  {
+    "itemId": "31fe32ad-369d-4de8-a378-504e37182ca9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "\"You reap what you sow\" connects results to what earlier choice?",
+    "correctAnswer": "The effort and choices you made before.",
+    "incorrectAnswers": [
+      "The weather during harvest season.",
+      "Luck alone on one day.",
+      "How fast you read a book."
+    ],
+    "explanation": "The proverb says outcomes often match the work and care you invest.",
+    "keywords": [
+      "english",
+      "proverbs",
+      "consequences"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/reap-what-sow"
+  },
+  {
+    "itemId": "eff8398b-973a-4549-87b6-b56c400081d9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The saying \"Better late than never\" stresses which idea?",
+    "correctAnswer": "Finishing late is still better than not finishing at all.",
+    "incorrectAnswers": [
+      "You should always ignore deadlines.",
+      "Fast work is always careless.",
+      "Being early is rude in every culture."
+    ],
+    "explanation": "The saying praises action even when timing is not perfect.",
+    "keywords": [
+      "english",
+      "sayings",
+      "lateness"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/better-late-than-never"
+  },
+  {
+    "itemId": "7e6767d6-8b7d-4061-840e-74779bded7cd",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If someone says \"Look before you leap,\" what are they warning you to do?",
+    "correctAnswer": "Think about risks before you act.",
+    "incorrectAnswers": [
+      "Jump as high as you can.",
+      "Avoid looking at maps.",
+      "Trust strangers quickly."
+    ],
+    "explanation": "The saying asks for careful checking before a big decision.",
+    "keywords": [
+      "english",
+      "sayings",
+      "caution"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/look%20before%20you%20leap"
+  },
+  {
+    "itemId": "61216b7c-c02a-4b88-bbef-efb3975f00f1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The saying \"The early bird catches the worm\" is most often used to support which habit?",
+    "correctAnswer": "Starting early can bring an advantage.",
+    "incorrectAnswers": [
+      "Birds are better pets than dogs.",
+      "Breakfast should always be large.",
+      "Night work is always wrong."
+    ],
+    "explanation": "People use it to praise prompt action or early arrival.",
+    "keywords": [
+      "english",
+      "sayings",
+      "punctuality"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/the-early-bird-catches-the-worm"
+  },
+  {
+    "itemId": "3b2f31f9-3396-4d22-ac22-ed089746ae2a",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "\"Don't count your chickens before they hatch\" warns against what mistake?",
+    "correctAnswer": "Assuming future success before it really happens.",
+    "incorrectAnswers": [
+      "Buying eggs at the market.",
+      "Learning math with small numbers.",
+      "Cooking food too slowly."
+    ],
+    "explanation": "The saying tells you not to treat a hoped-for result as certain too soon.",
+    "keywords": [
+      "english",
+      "sayings",
+      "planning"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/don-t-count-your-chickens-before-they-hatch"
+  },
+  {
+    "itemId": "23e2a1fc-8024-4717-935e-3ace496da249",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "When English speakers say \"You can't judge a book by its cover,\" what idea do they mean?",
+    "correctAnswer": "Outward looks do not show the full truth about someone or something.",
+    "incorrectAnswers": [
+      "Libraries should hide old books.",
+      "Fashion is always dishonest.",
+      "Reading speed is the only skill that matters."
+    ],
+    "explanation": "The saying asks people to look deeper than first impressions.",
+    "keywords": [
+      "english",
+      "sayings",
+      "appearance"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/you-can-t-judge-a-book-by-its-cover"
+  },
+  {
+    "itemId": "e02b4cfd-5f0d-4ea4-87e1-d59c2fad6ba3",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "The saying \"Rome wasn't built in a day\" is used when someone needs to remember what?",
+    "correctAnswer": "Big goals take patience and steady work over time.",
+    "incorrectAnswers": [
+      "Ancient cities were always small.",
+      "Travel should always be fast.",
+      "History is easy to memorize in one night."
+    ],
+    "explanation": "It calms impatience by reminding people that progress can be slow.",
+    "keywords": [
+      "english",
+      "sayings",
+      "patience"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/rome-wasn-t-built-in-a-day"
+  },
+  {
+    "itemId": "920f22ad-bd73-4e25-85d4-3843dbcd9ef1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "In casual English, if someone says an idea sounds \"cool,\" what do they usually mean?",
+    "correctAnswer": "They like it or approve of it.",
+    "incorrectAnswers": [
+      "They think the room is cold.",
+      "They want ice in every drink.",
+      "They dislike modern music."
+    ],
+    "explanation": "\"Cool\" is very common casual praise for something good, stylish, or acceptable.",
+    "keywords": [
+      "english",
+      "slang",
+      "approval"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/cool"
+  },
+  {
+    "itemId": "c1143583-10c0-40c8-9b0a-565ac68ef6cf",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If a friend says \"Let's hang out this weekend,\" what are they suggesting?",
+    "correctAnswer": "Spend relaxed time together without a strict plan.",
+    "incorrectAnswers": [
+      "Do laundry at the same laundromat.",
+      "Exercise until you feel tired.",
+      "Study alone at the library."
+    ],
+    "explanation": "\"Hang out\" is everyday English for informal social time with friends.",
+    "keywords": [
+      "english",
+      "slang",
+      "social"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/hang%20out"
+  },
+  {
+    "itemId": "1e778fbe-d086-4f54-933f-6b5ced1e2504",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "When someone says \"I'm beat\" after a long day, what do they most likely mean?",
+    "correctAnswer": "They feel very tired.",
+    "incorrectAnswers": [
+      "They lost a sports match.",
+      "They feel hungry for sweets.",
+      "They are angry at traffic only."
+    ],
+    "explanation": "In casual speech, \"beat\" can mean exhausted, not physically hit.",
+    "keywords": [
+      "english",
+      "slang",
+      "tired"
+    ],
+    "source": "https://www.collinsdictionary.com/dictionary/english/beat"
+  },
+  {
+    "itemId": "0769fdbc-1f77-48af-84e2-b99c8c9e0af3",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If a person says \"No worries\" to calm you, what is the usual social meaning?",
+    "correctAnswer": "You do not need to feel bad or stressed about it.",
+    "incorrectAnswers": [
+      "You should worry more tomorrow.",
+      "The problem is impossible to fix.",
+      "They want you to pay money now."
+    ],
+    "explanation": "\"No worries\" is a friendly way to say \"it is okay\" or \"do not apologize.\"",
+    "keywords": [
+      "english",
+      "slang",
+      "reassurance"
+    ],
+    "source": "https://www.oxfordlearnersdictionaries.com/definition/english/no-worries_1"
+  },
+  {
+    "itemId": "c752ca41-93b7-4ce0-a868-929c107811c9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "In casual English, what does it mean when something is \"a rip-off\"?",
+    "correctAnswer": "It costs too much for what you get.",
+    "incorrectAnswers": [
+      "It is free for students.",
+      "It is always illegal.",
+      "It is handmade with care."
+    ],
+    "explanation": "People use \"rip-off\" to complain that a price feels unfair or too high.",
+    "keywords": [
+      "english",
+      "slang",
+      "price"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/rip-off"
+  },
+  {
+    "itemId": "5fccacce-d77f-42d7-9782-d2ef1581237f",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "idioms",
+    "question": "If someone says \"I'm in,\" what are they often expressing?",
+    "correctAnswer": "They agree to join or take part.",
+    "incorrectAnswers": [
+      "They are stuck inside a room.",
+      "They want to leave early.",
+      "They refuse to answer."
+    ],
+    "explanation": "Casual speakers use \"I'm in\" to accept an invitation or a plan.",
+    "keywords": [
+      "english",
+      "slang",
+      "agreement"
+    ],
+    "source": "https://dictionary.cambridge.org/dictionary/english/count-me-in"
   }
 ]

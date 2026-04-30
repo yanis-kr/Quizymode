@@ -9,13 +9,14 @@
     "incorrectAnswers": [
       "{{es-ES|Una mesa para dos, por favor.||U-na ME-sa PA-ra DOS, POR fa-BOR.}}",
       "{{es-ES|La cuenta, por favor.||LA CUEN-ta, POR fa-BOR.}}",
-      "{{es-ES|\u00bfD\u00f3nde est\u00e1 el ba\u00f1o?||DON-de ES-ta EL BA-no?}}"
+      "{{es-ES|¿Dónde está el baño?||DON-de ES-ta EL BA-no?}}"
     ],
     "explanation": "\"Billete\" (or \"boleto\" in many regions) with \"sencillo\" signals a one-way or single ticket in travel contexts.",
     "keywords": [
+      "spanish",
+      "travel",
       "ticket",
       "train",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/billete"
@@ -34,9 +35,10 @@
     ],
     "explanation": "\"Pasaporte\" is the standard word for passport.",
     "keywords": [
+      "spanish",
+      "travel",
       "passport",
       "airport",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/pasaporte"
@@ -47,17 +49,18 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "You need the main train station. Which word often means \"station\" in this context?",
-    "correctAnswer": "{{es-ES|estaci\u00f3n||es-TA-seeon}}",
+    "correctAnswer": "{{es-ES|estación||es-TA-seeon}}",
     "incorrectAnswers": [
       "{{es-ES|calle||CAYE}}",
       "{{es-ES|plaza||PLA-za}}",
       "{{es-ES|hotel||ho-TEL}}"
     ],
-    "explanation": "\"Estaci\u00f3n\" is the common word for a station, including train stations.",
+    "explanation": "\"Estación\" is the common word for a station, including train stations.",
     "keywords": [
+      "spanish",
+      "travel",
       "station",
       "train",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/estaci%C3%B3n"
@@ -68,17 +71,18 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "In Spanish, which phrase politely asks where the nearest bank is?",
-    "correctAnswer": "{{es-ES|\u00bfD\u00f3nde est\u00e1 el banco m\u00e1s cercano?||DON-de ES-ta EL BAN-co MAS sehr-CA-no?}}",
+    "correctAnswer": "{{es-ES|¿Dónde está el banco más cercano?||DON-de ES-ta EL BAN-co MAS sehr-CA-no?}}",
     "incorrectAnswers": [
-      "{{es-ES|\u00bfCu\u00e1nto cuesta?||CUAN-to CUES-ta?}}",
-      "{{es-ES|\u00bfTiene men\u00fa en ingl\u00e9s?||TIE-ne ME-nu EN IN-gles?}}",
-      "{{es-ES|Quisiera el men\u00fa del d\u00eda.||qui-SIE-ra EL ME-nu DEL DIA.}}"
+      "{{es-ES|¿Cuánto cuesta?||CUAN-to CUES-ta?}}",
+      "{{es-ES|¿Tiene menú en inglés?||TIE-ne ME-nu EN IN-gles?}}",
+      "{{es-ES|Quisiera el menú del día.||qui-SIE-ra EL ME-nu DEL DIA.}}"
     ],
-    "explanation": "\"\u00bfD\u00f3nde est\u00e1...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
+    "explanation": "\"¿Dónde está...?\" asks where something is; \"banco\" means bank and \"cercano\" means nearby.",
     "keywords": [
+      "spanish",
+      "travel",
       "bank",
       "directions",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/banco"
@@ -97,9 +101,10 @@
     ],
     "explanation": "\"Izquierda\" means left; \"a la izquierda\" is a common direction phrase.",
     "keywords": [
+      "spanish",
+      "travel",
       "left",
       "directions",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://dictionary.cambridge.org/dictionary/spanish-english/izquierda"
@@ -110,17 +115,18 @@
     "navigationKeyword1": "spanish",
     "navigationKeyword2": "travel",
     "question": "At a hotel front desk, which phrase asks if they have a free room?",
-    "correctAnswer": "{{es-ES|\u00bfTienen una habitaci\u00f3n libre?||TIE-nen U-na ha-bi-TA-seeon LI-bre?}}",
+    "correctAnswer": "{{es-ES|¿Tienen una habitación libre?||TIE-nen U-na ha-bi-TA-seeon LI-bre?}}",
     "incorrectAnswers": [
-      "{{es-ES|\u00bfA qu\u00e9 hora sale el vuelo?||A KE HO-ra SA-le EL BUE-lo?}}",
-      "{{es-ES|Un caf\u00e9 con leche, por favor.||UN CA-fe CON LE-che, POR fa-BOR.}}",
-      "{{es-ES|\u00bfCu\u00e1nto cuesta la entrada?||CUAN-to CUES-ta LA en-TRA-da?}}"
+      "{{es-ES|¿A qué hora sale el vuelo?||A KE HO-ra SA-le EL BUE-lo?}}",
+      "{{es-ES|Un café con leche, por favor.||UN CA-fe CON LE-che, POR fa-BOR.}}",
+      "{{es-ES|¿Cuánto cuesta la entrada?||CUAN-to CUES-ta LA en-TRA-da?}}"
     ],
-    "explanation": "\"Habitaci\u00f3n\" means room; \"libre\" or \"disponible\" often signals availability.",
+    "explanation": "\"Habitación\" means room; \"libre\" or \"disponible\" often signals availability.",
     "keywords": [
+      "spanish",
+      "travel",
       "hotel",
       "room",
-      "spanish-travel",
       "situation-travel"
     ],
     "source": "https://www.collinsdictionary.com/dictionary/spanish-english/habitaci%C3%B3n"

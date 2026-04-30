@@ -13,9 +13,10 @@
     ],
     "explanation": "In present simple, third-person singular subjects (he, she, it) usually take a verb ending in -s or -es, like runs or watches.",
     "keywords": [
+      "english",
+      "grammar",
       "present-simple",
-      "subject-verb-agreement",
-      "english-grammar"
+      "subject-verb-agreement"
     ],
     "source": "https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement.html"
   },
@@ -33,9 +34,10 @@
     ],
     "explanation": "Use an before words that begin with a vowel sound. Hour starts with a vowel sound, so we say an hour.",
     "keywords": [
+      "english",
+      "grammar",
       "articles",
-      "an-vs-a",
-      "english-grammar"
+      "an-vs-a"
     ],
     "source": "https://www.merriam-webster.com/words-at-play/is-it-a-or-an"
   },
@@ -53,9 +55,10 @@
     ],
     "explanation": "English present perfect links a past experience to the present time. The pattern is have / has plus a past participle.",
     "keywords": [
+      "english",
+      "grammar",
       "present-perfect",
-      "auxiliary-verbs",
-      "english-grammar"
+      "auxiliary-verbs"
     ],
     "source": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect"
   },
@@ -73,9 +76,10 @@
     ],
     "explanation": "After most prepositions in English, the verb usually takes the -ing form. That is why \"learning\" fits after \"in\" here, not a bare verb or infinitive.",
     "keywords": [
+      "english",
+      "grammar",
       "gerund",
-      "prepositions",
-      "english-grammar"
+      "prepositions"
     ],
     "source": "https://www.merriam-webster.com/dictionary/gerund"
   },
@@ -93,9 +97,10 @@
     ],
     "explanation": "In first conditional sentences, the if-clause usually uses present tense even when the whole idea is about the future. That is why English says \"If it rains,\" not \"If it will rain.\"",
     "keywords": [
+      "english",
+      "grammar",
       "conditionals",
-      "first-conditional",
-      "english-grammar"
+      "first-conditional"
     ],
     "source": "https://dictionary.cambridge.org/grammar/british-grammar/first-conditional"
   },
@@ -113,10 +118,935 @@
     ],
     "explanation": "With many one-syllable English adjectives, the comparative adds -er and often uses \"than\" after it. That is the standard pattern in a sentence like \"smaller than that one.\"",
     "keywords": [
+      "english",
+      "grammar",
       "comparatives",
-      "adjectives",
-      "english-grammar"
+      "adjectives"
     ],
     "source": "https://dictionary.cambridge.org/grammar/british-grammar/comparative-adjectives"
+  },
+  {
+    "itemId": "869512d6-4a0f-4ef8-b19d-2f7e4039b3e5",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses a correctly?",
+    "correctAnswer": "I need a pen.",
+    "incorrectAnswers": [
+      "I need an pen.",
+      "I need pen.",
+      "I need the pen always."
+    ],
+    "explanation": "Use a before consonant sounds; pen starts with /p/, so a pen is standard.",
+    "keywords": [
+      "english",
+      "grammar",
+      "articles",
+      "a-an",
+      "esl-grammar"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/is-it-a-or-an"
+  },
+  {
+    "itemId": "51603289-c70d-4693-bf37-a157683d16cd",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want a normal present-simple sentence with \"we\" in English. Which form is correct?",
+    "correctAnswer": "We work here.",
+    "incorrectAnswers": [
+      "We works here.",
+      "We working here.",
+      "We be work here."
+    ],
+    "explanation": "With \"we,\" English present simple usually keeps the base verb without an extra -s ending. The ending changes with he, she, and it, not with \"we.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "present-simple",
+      "subject-verb",
+      "esl-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/present-simple"
+  },
+  {
+    "itemId": "6f4813c0-82d3-45ed-b264-86f682f747e1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which question has standard word order?",
+    "correctAnswer": "Do you speak English?",
+    "incorrectAnswers": [
+      "You do speak English?",
+      "Speak you English?",
+      "English you speak?"
+    ],
+    "explanation": "Yes/no questions with most verbs use do/does before the subject: Do you...?",
+    "keywords": [
+      "english",
+      "grammar",
+      "questions",
+      "do-support",
+      "esl-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/questions-does-do-did"
+  },
+  {
+    "itemId": "ea120941-b678-460a-90ad-13df1c5f935a",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You are talking about yesterday in English. Which sentence uses the past of \"go\" correctly?",
+    "correctAnswer": "Yesterday I went to school.",
+    "incorrectAnswers": [
+      "Yesterday I goed to school.",
+      "Yesterday I go to school.",
+      "Yesterday I going to school."
+    ],
+    "explanation": "The past of \"go\" is \"went.\" English learners need to memorize it because it does not follow the regular -ed pattern.",
+    "keywords": [
+      "english",
+      "grammar",
+      "past-simple",
+      "irregular-verbs",
+      "esl-grammar"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/went"
+  },
+  {
+    "itemId": "49eee48a-e6cd-47c9-8781-90ecc1e0f15b",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which word completes the negative: She ___ not like coffee.",
+    "correctAnswer": "does",
+    "incorrectAnswers": [
+      "do",
+      "is",
+      "have"
+    ],
+    "explanation": "In present simple negatives, she takes does not (doesn't) before the base verb.",
+    "keywords": [
+      "english",
+      "grammar",
+      "negatives",
+      "present-simple",
+      "esl-grammar"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/negation"
+  },
+  {
+    "itemId": "a1f93849-9c6f-468f-aad2-f0bbac80be38",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which preposition fits time on a clock: ___ 3 o'clock?",
+    "correctAnswer": "at",
+    "incorrectAnswers": [
+      "on",
+      "in",
+      "by"
+    ],
+    "explanation": "English often uses at with clock times, like at 3 o'clock.",
+    "keywords": [
+      "english",
+      "grammar",
+      "prepositions",
+      "time",
+      "esl-grammar"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/at"
+  },
+  {
+    "itemId": "8d04712d-4a47-4e83-9e1e-db25d844c292",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb agrees with the plural subject? \"The keys ___ on the table.\"",
+    "correctAnswer": "are",
+    "incorrectAnswers": [
+      "is",
+      "was",
+      "has"
+    ],
+    "explanation": "A plural subject like \"keys\" takes a plural verb in the present: \"are.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "subject-verb-agreement",
+      "plural",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/subject-verb-agreement-1"
+  },
+  {
+    "itemId": "901c74dc-9e72-4d7f-ae37-5a7504856d5c",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb fits? \"She ___ English and Spanish.\"",
+    "correctAnswer": "speaks",
+    "incorrectAnswers": [
+      "speak",
+      "speaking",
+      "are speaking"
+    ],
+    "explanation": "The third-person singular subject \"she\" usually takes a verb with -s in the present: \"speaks.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "subject-verb-agreement",
+      "third-person",
+      "grammar-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/agreement-from-english-grammar-today"
+  },
+  {
+    "itemId": "71831b1b-cfbc-4bb5-bb84-ad16e770d8a4",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence matches plural \"these\"?",
+    "correctAnswer": "These are my books.",
+    "incorrectAnswers": [
+      "These is my book.",
+      "These is my books.",
+      "These am my books."
+    ],
+    "explanation": "\"These\" is plural, so the verb and noun should be plural too: \"are\" and \"books.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "this-these",
+      "plural",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/demonstratives"
+  },
+  {
+    "itemId": "c8d28540-8ec3-4f88-8eec-a76a44064a79",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which pronoun agrees with a singular person when you do not know their gender?",
+    "correctAnswer": "Someone left their bag here.",
+    "incorrectAnswers": [
+      "Someone left they bag here.",
+      "Someone left them bag here.",
+      "Someone left she bag here."
+    ],
+    "explanation": "In modern English, singular \"they/their\" is widely used for an unknown person.",
+    "keywords": [
+      "english",
+      "grammar",
+      "pronoun-agreement",
+      "singular-they",
+      "grammar-basics"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/singular-nonbinary-they"
+  },
+  {
+    "itemId": "e242a262-6b3e-4063-ab72-f5c8ea65c45c",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb fits? \"Each student ___ a notebook.\"",
+    "correctAnswer": "has",
+    "incorrectAnswers": [
+      "have",
+      "are having",
+      "having"
+    ],
+    "explanation": "\"Each\" focuses on one person at a time, so the verb is often singular: \"has.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "each",
+      "singular",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/subject-verb-agreement-1"
+  },
+  {
+    "itemId": "c431b342-5ce8-4547-bb45-996db0d7f5f9",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb agrees with the compound subject joined by \"and\"? \"My brother and I ___ going.\"",
+    "correctAnswer": "are",
+    "incorrectAnswers": [
+      "is",
+      "am",
+      "be"
+    ],
+    "explanation": "\"My brother and I\" is a plural subject, so the plural verb \"are\" fits.",
+    "keywords": [
+      "english",
+      "grammar",
+      "compound-subject",
+      "subject-verb-agreement",
+      "grammar-basics"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/subject_verb_agreement/index.html"
+  },
+  {
+    "itemId": "3273e414-7ea4-4345-8d55-04999ccfaf4d",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In the sentence \"The small dog sleeps,\" which word names a person, place, thing, or idea?",
+    "correctAnswer": "dog",
+    "incorrectAnswers": [
+      "small",
+      "sleeps",
+      "the"
+    ],
+    "explanation": "A noun names a thing; here \"dog\" is the noun. \"Small\" describes it, \"sleeps\" is the action, and \"the\" is a determiner.",
+    "keywords": [
+      "english",
+      "grammar",
+      "nouns",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/nouns"
+  },
+  {
+    "itemId": "ebf16173-4047-487f-8947-03fd15eb8004",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In \"They walk to school,\" which word shows an action or state?",
+    "correctAnswer": "walk",
+    "incorrectAnswers": [
+      "They",
+      "to",
+      "school"
+    ],
+    "explanation": "Verbs often show an action; \"walk\" is the verb. \"They\" is a pronoun, \"to\" is a preposition, and \"school\" is a noun.",
+    "keywords": [
+      "english",
+      "grammar",
+      "verbs",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/verbs"
+  },
+  {
+    "itemId": "1ac0d639-02f1-48e8-a75e-786e2d372da6",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which word describes the noun \"cake\" in \"The chocolate cake tastes good\"?",
+    "correctAnswer": "chocolate",
+    "incorrectAnswers": [
+      "The",
+      "tastes",
+      "good"
+    ],
+    "explanation": "Adjectives describe nouns; \"chocolate\" tells what kind of cake. \"Good\" describes the taste but is placed after a linking verb here.",
+    "keywords": [
+      "english",
+      "grammar",
+      "adjectives",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/adjectives-from-english-grammar-today"
+  },
+  {
+    "itemId": "cff586a0-60d1-4e5e-a3b3-d3a8e8ab6aa4",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In \"She speaks clearly,\" which word tells how she speaks?",
+    "correctAnswer": "clearly",
+    "incorrectAnswers": [
+      "She",
+      "speaks",
+      "not"
+    ],
+    "explanation": "Many adverbs describe verbs and answer \"how\"; \"clearly\" shows the manner of speaking.",
+    "keywords": [
+      "english",
+      "grammar",
+      "adverbs",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/adverbs-manner"
+  },
+  {
+    "itemId": "f7d1d463-ebf8-493b-899e-8c54798dd406",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In \"We waited before class,\" which word shows a relationship in time or place before a noun phrase?",
+    "correctAnswer": "before",
+    "incorrectAnswers": [
+      "We",
+      "waited",
+      "class"
+    ],
+    "explanation": "Prepositions often link nouns or pronouns to other words; \"before\" relates \"waited\" to \"class.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "prepositions",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/prepositions-time"
+  },
+  {
+    "itemId": "d037849a-4ce1-41a4-be5a-552e9ffce563",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "In \"This is my book,\" which word points to something without naming it with a full noun phrase?",
+    "correctAnswer": "This",
+    "incorrectAnswers": [
+      "is",
+      "my",
+      "book"
+    ],
+    "explanation": "Demonstratives like \"this\" and \"that\" point to things; \"this\" replaces a longer naming phrase in simple speech.",
+    "keywords": [
+      "english",
+      "grammar",
+      "pronouns",
+      "word-types",
+      "grammar-basics"
+    ],
+    "source": "https://www.merriam-webster.com/dictionary/this"
+  },
+  {
+    "itemId": "e1393356-6d6d-4ab1-8946-e08ffc6d25c1",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You are writing a simple statement like \"The train is late.\" Which mark usually ends it?",
+    "correctAnswer": "a period",
+    "incorrectAnswers": [
+      "a question mark",
+      "an exclamation point only",
+      "a comma alone"
+    ],
+    "explanation": "A normal English statement usually ends with a period. That mark tells the reader the sentence is complete and not a question.",
+    "keywords": [
+      "english",
+      "grammar",
+      "period",
+      "full-stop",
+      "punctuation"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/punctuation-1"
+  },
+  {
+    "itemId": "0fa862c6-fed2-4d69-9644-6a35c491be20",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You are writing a direct question like \"Are you ready\". Which mark should end it?",
+    "correctAnswer": "a question mark",
+    "incorrectAnswers": [
+      "a period",
+      "a semicolon",
+      "a colon only"
+    ],
+    "explanation": "A direct English question usually ends with a question mark. That mark shows the reader the sentence is asking something.",
+    "keywords": [
+      "english",
+      "grammar",
+      "question-mark",
+      "questions",
+      "punctuation"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/question-mark-history-usage"
+  },
+  {
+    "itemId": "e8158a89-525e-4c6b-a25c-b81a73b842e0",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You are writing a short list like \"bread, milk, and eggs.\" What separates the items?",
+    "correctAnswer": "commas",
+    "incorrectAnswers": [
+      "only periods",
+      "only semicolons between every word",
+      "apostrophes"
+    ],
+    "explanation": "English normally uses commas to separate items in a list. Each comma marks the boundary between one list item and the next.",
+    "keywords": [
+      "english",
+      "grammar",
+      "comma",
+      "lists",
+      "punctuation"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/punctuation-1"
+  },
+  {
+    "itemId": "2e3e9009-bb75-4a38-acdd-ee881ed69586",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to write the contraction for \"it is\" in a sentence. Which option uses the apostrophe correctly?",
+    "correctAnswer": "It's cold today.",
+    "incorrectAnswers": [
+      "Its cold today.",
+      "Its' cold today.",
+      "It,s cold today."
+    ],
+    "explanation": "The contraction \"it's\" uses an apostrophe to show that letters are missing from \"it is.\" Without the apostrophe, \"its\" is the possessive form instead.",
+    "keywords": [
+      "english",
+      "grammar",
+      "apostrophe",
+      "contractions",
+      "punctuation"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/possessive-s"
+  },
+  {
+    "itemId": "c1661f4d-084f-4b7a-8aa8-58cb202fe7ad",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to say that one student owns the bag. Which form shows singular possession correctly?",
+    "correctAnswer": "the student's book",
+    "incorrectAnswers": [
+      "the students book",
+      "the students' book",
+      "the studentss book"
+    ],
+    "explanation": "A singular English noun usually shows possession with apostrophe + s. That marks one owner instead of a contraction or a plural.",
+    "keywords": [
+      "english",
+      "grammar",
+      "possessive",
+      "apostrophe",
+      "punctuation"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/punctuation/apostrophe_introduction/index.html"
+  },
+  {
+    "itemId": "abc68386-7cb3-428a-ad89-255ac5c77489",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You are writing the exact words someone said in English. What usually surrounds that quoted speech?",
+    "correctAnswer": "quotation marks",
+    "incorrectAnswers": [
+      "only parentheses",
+      "only hyphens",
+      "only brackets for all speech"
+    ],
+    "explanation": "English usually puts direct speech inside quotation marks. Those marks show where the speaker's exact words begin and end.",
+    "keywords": [
+      "english",
+      "grammar",
+      "quotation-marks",
+      "direct-speech",
+      "punctuation"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/writing/a1-writing/punctuation-1"
+  },
+  {
+    "itemId": "d2e92382-adaf-475a-a2d8-a021930d7a30",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to write one complete English idea, not just a phrase. Which option is a full sentence?",
+    "correctAnswer": "Birds fly.",
+    "incorrectAnswers": [
+      "Because it was sunny.",
+      "Running fast.",
+      "After the meeting."
+    ],
+    "explanation": "A full sentence needs a complete thought, usually with a subject and a verb. A fragment is missing one of those core pieces.",
+    "keywords": [
+      "english",
+      "grammar",
+      "sentence",
+      "complete-thought",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/sentence_clarity/sentence_fragments/index.html"
+  },
+  {
+    "itemId": "47841da3-53be-44ab-bc80-0db69a6c88b3",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence is a yes/no question in standard English?",
+    "correctAnswer": "Do you speak English?",
+    "incorrectAnswers": [
+      "You speak English.",
+      "What you speak.",
+      "Speaking English you are."
+    ],
+    "explanation": "Many yes/no questions begin with an auxiliary like \"do\" before the subject.",
+    "keywords": [
+      "english",
+      "grammar",
+      "questions",
+      "word-order",
+      "sentence-form"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/questions"
+  },
+  {
+    "itemId": "4baaf2ab-b9aa-4fb8-8514-0d1959835246",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to tell someone \"Come here\" in English. What beginner rule helps with commands?",
+    "correctAnswer": "Please open the window.",
+    "incorrectAnswers": [
+      "The window is open.",
+      "Opening the window is fun.",
+      "If you open the window."
+    ],
+    "explanation": "In English, Please open the window.. Commands use their own verb pattern, so learners should treat them as more than ordinary statements said loudly.",
+    "keywords": [
+      "english",
+      "grammar",
+      "imperative",
+      "commands",
+      "sentence-form"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/imperatives"
+  },
+  {
+    "itemId": "b55c1823-6de4-4fcc-99ef-249ae42c1669",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to say \"The child opened the door\" in normal English. What is the usual word order?",
+    "correctAnswer": "subject, then verb, then object",
+    "incorrectAnswers": [
+      "verb, then subject, then object",
+      "object, then verb, then subject",
+      "subject, then object, then verb only"
+    ],
+    "explanation": "English usually follows subject-verb-object order in a simple statement. That puts the doer first, the action next, and the object after the verb.",
+    "keywords": [
+      "english",
+      "grammar",
+      "word-order",
+      "svo",
+      "sentence-form"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/word-order-and-focus-from-english-grammar-today"
+  },
+  {
+    "itemId": "69876d67-9b1a-401c-a36f-88c95cb33bfe",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You want to join two full English ideas, like \"She was tired\" and \"she kept working.\" Which option does that correctly with a coordinating conjunction?",
+    "correctAnswer": "I was tired, so I went to bed.",
+    "incorrectAnswers": [
+      "I was tired I went to bed.",
+      "Because I was tired went to bed.",
+      "Tired I bed went."
+    ],
+    "explanation": "A compound sentence joins two full ideas with a coordinating conjunction such as \"and\" or \"but.\" The joined sentence has to keep both ideas complete.",
+    "keywords": [
+      "english",
+      "grammar",
+      "compound-sentence",
+      "conjunctions",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/grammar_exercises/coordination_and_subordination/index.html"
+  },
+  {
+    "itemId": "7ed27592-bef7-459c-ba1e-ef60e17ac636",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "You wrote \"Although it was late\" by itself. Why is that not a full sentence in formal writing?",
+    "correctAnswer": "It is a dependent clause and does not finish the thought alone.",
+    "incorrectAnswers": [
+      "It has too many words.",
+      "It must always be a question.",
+      "English never allows \"although\" at the start."
+    ],
+    "explanation": "A dependent clause cannot stand alone as a full sentence because it leaves the main idea unfinished. It needs an independent clause to complete the thought.",
+    "keywords": [
+      "english",
+      "grammar",
+      "dependent-clause",
+      "fragments",
+      "sentence-form"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/mechanics/sentence_clarity/sentence_fragments/index.html"
+  },
+  {
+    "itemId": "a988818a-20f0-4ede-8906-2929aa2fe61d",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses the present simple for a habit or routine?",
+    "correctAnswer": "I brush my teeth every night.",
+    "incorrectAnswers": [
+      "I am brushing my teeth right now.",
+      "I brushed my teeth yesterday.",
+      "I will brush my teeth later."
+    ],
+    "explanation": "Present simple often shows habits with time words like \"every night.\" The other choices focus on now, past, or future.",
+    "keywords": [
+      "english",
+      "grammar",
+      "present-simple",
+      "habits",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-simple"
+  },
+  {
+    "itemId": "9d8bf647-a302-43a2-a86d-6597669f4fbd",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb form best completes this past sentence? \"Yesterday, she ___ her friend at the cafe.\"",
+    "correctAnswer": "met",
+    "incorrectAnswers": [
+      "meets",
+      "is meeting",
+      "will meet"
+    ],
+    "explanation": "\"Yesterday\" places the action in the past, so the past form \"met\" fits.",
+    "keywords": [
+      "english",
+      "grammar",
+      "past-simple",
+      "time-forms",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/past-simple"
+  },
+  {
+    "itemId": "1ded1e5f-3a6a-480a-ba6a-e1dde214af75",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses \"will\" to talk about a future plan, prediction, or decision?",
+    "correctAnswer": "I will call you after work.",
+    "incorrectAnswers": [
+      "I call you every day.",
+      "I called you yesterday.",
+      "I am calling you now."
+    ],
+    "explanation": "English often uses \"will\" for a future idea. The verb after \"will\" stays in the base form.",
+    "keywords": [
+      "english",
+      "grammar",
+      "future",
+      "will",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/future-will"
+  },
+  {
+    "itemId": "ed99a7d1-9a83-4ba9-b448-1edbf1744565",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses the present continuous for something happening around now?",
+    "correctAnswer": "She is studying for an exam tonight.",
+    "incorrectAnswers": [
+      "She studies English every Monday.",
+      "She studied last year.",
+      "She will study tomorrow."
+    ],
+    "explanation": "English present continuous uses be + verb-ing for an action happening now or around now. That form highlights an ongoing activity.",
+    "keywords": [
+      "english",
+      "grammar",
+      "present-continuous",
+      "time-forms",
+      "grammar-basics"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-continuous"
+  },
+  {
+    "itemId": "a35ff9c6-b2ac-4a29-8ad6-bdb05a795615",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses present perfect to describe life experience up to now?",
+    "correctAnswer": "I have visited two countries in Europe.",
+    "incorrectAnswers": [
+      "I visit Europe every year.",
+      "I visited Spain in 2010.",
+      "I am visiting Europe next summer."
+    ],
+    "explanation": "Present perfect often describes life experience up to now without naming a finished past time. The correct sentence uses have + past participle for that meaning.",
+    "keywords": [
+      "english",
+      "grammar",
+      "present-perfect",
+      "experience",
+      "time-forms"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/present-perfect"
+  },
+  {
+    "itemId": "6a8de004-427a-46e9-9986-3873b303bf8f",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which verb fits best with a state verb like \"know\" in present meaning?",
+    "correctAnswer": "I know the answer.",
+    "incorrectAnswers": [
+      "I am knowing the answer.",
+      "I was knowing the answer.",
+      "I will knowing the answer."
+    ],
+    "explanation": "Verbs like \"know\" and \"like\" usually use simple present, not continuous forms, in standard English.",
+    "keywords": [
+      "english",
+      "grammar",
+      "stative-verbs",
+      "present-simple",
+      "time-forms"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/know-from-english-grammar-today"
+  },
+  {
+    "itemId": "25df5254-b177-4323-a161-d6140ed6c6ec",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses \"fewer\" for things you can count?",
+    "correctAnswer": "We need fewer eggs for this recipe.",
+    "incorrectAnswers": [
+      "We need less eggs for this recipe.",
+      "We need fewer sugar for this recipe.",
+      "We need fewer water for this recipe."
+    ],
+    "explanation": "Traditional usage pairs \"fewer\" with countable nouns like \"eggs.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "fewer-less",
+      "countable",
+      "usage"
+    ],
+    "source": "https://www.merriam-webster.com/words-at-play/fewer-vs-less-usage"
+  },
+  {
+    "itemId": "427bca72-280a-4415-ba57-6de089671852",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which word completes this sentence? \"She speaks English very ___.\"",
+    "correctAnswer": "well",
+    "incorrectAnswers": [
+      "good",
+      "nice",
+      "happy"
+    ],
+    "explanation": "Use the adverb \"well\" to describe how an action is done. \"Good\" is an adjective and does not fit after the verb here.",
+    "keywords": [
+      "english",
+      "grammar",
+      "good-well",
+      "adverbs",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/adjectives-and-adverbs"
+  },
+  {
+    "itemId": "0b92b134-5398-4d86-aa1c-06beb2db453a",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses the possessive \"its\" correctly?",
+    "correctAnswer": "The company changed its name.",
+    "incorrectAnswers": [
+      "The company changed it's name.",
+      "The company changed its' name.",
+      "The company changed it name."
+    ],
+    "explanation": "Possessive \"its\" has no apostrophe; \"it's\" always means \"it is\" or \"it has.\"",
+    "keywords": [
+      "english",
+      "grammar",
+      "its-its",
+      "possessive",
+      "usage"
+    ],
+    "source": "https://owl.purdue.edu/owl/general_writing/grammar/its_versus_its/index.html"
+  },
+  {
+    "itemId": "34edc9f9-1906-4dd7-9c0e-9df33f5d14ba",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which pair matches \"bring\" for movement toward the speaker's place?",
+    "correctAnswer": "Can you bring the chairs here?",
+    "incorrectAnswers": [
+      "Can you take the chairs here?",
+      "Can you carry the chairs nowhere?",
+      "Can you bring the chairs away only?"
+    ],
+    "explanation": "Many learners use \"bring\" for coming toward the speaker or destination and \"take\" for movement away.",
+    "keywords": [
+      "english",
+      "grammar",
+      "bring-take",
+      "direction",
+      "usage"
+    ],
+    "source": "https://dictionary.cambridge.org/grammar/british-grammar/bring-or-take-from-english-grammar-today"
+  },
+  {
+    "itemId": "8538b208-9162-4a1d-bf8f-643c3e0effcb",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses \"listen\" with the right partner word?",
+    "correctAnswer": "Please listen to the instructions.",
+    "incorrectAnswers": [
+      "Please listen the instructions.",
+      "Please listen at the instructions.",
+      "Please listen on the instructions."
+    ],
+    "explanation": "The verb \"listen\" often needs \"to\" before the object in English.",
+    "keywords": [
+      "english",
+      "grammar",
+      "listen",
+      "prepositions",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/verbs-prepositions"
+  },
+  {
+    "itemId": "2a49e215-435b-4b06-b0e6-e03576ec975c",
+    "category": "languages",
+    "navigationKeyword1": "english",
+    "navigationKeyword2": "grammar",
+    "question": "Which sentence uses \"say\" in a typical pattern?",
+    "correctAnswer": "What did she say?",
+    "incorrectAnswers": [
+      "What did she say me?",
+      "What did she tell to?",
+      "What did she tell about to you strictly?"
+    ],
+    "explanation": "\"Say\" often focuses on words without a required indirect object; \"tell\" more often needs a person as an object.",
+    "keywords": [
+      "english",
+      "grammar",
+      "say-tell",
+      "reporting-speech",
+      "usage"
+    ],
+    "source": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar/say-or-tell"
   }
 ]
