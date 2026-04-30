@@ -9387,7 +9387,16 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 5, 'Travel phrases', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 5, 'Expressions', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'idioms' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'spanish' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'languages'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 6, 'Travel phrases', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'travel' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'spanish' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9396,7 +9405,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 6, 'Everyday talk', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 7, 'Everyday talk', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'conversation' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'spanish' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9405,7 +9414,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 7, 'Verb forms', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 8, 'Verb forms', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'verbs' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'spanish' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9414,7 +9423,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 8, 'Listening', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 9, 'Listening', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'listening' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'spanish' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9476,7 +9485,16 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 5, 'Travel phrases', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 5, 'Expressions', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'idioms' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'french' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'languages'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 6, 'Travel phrases', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'travel' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'french' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9485,7 +9503,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 6, 'Everyday talk', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 7, 'Everyday talk', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'conversation' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'french' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9494,7 +9512,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 7, 'Verb forms', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 8, 'Verb forms', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'verbs' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'french' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
@@ -9503,7 +9521,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 8, 'Listening', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 9, 'Listening', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" ck ON ck."Name" = 'listening' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
 JOIN "Keywords" pk ON pk."Name" = 'french' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'

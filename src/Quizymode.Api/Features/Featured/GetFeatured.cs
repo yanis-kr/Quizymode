@@ -87,10 +87,14 @@ public static class GetFeatured
                 .Distinct()
                 .ToList();
 
-            Dictionary<string, Guid> keywordIdByName = await db.Keywords
+            List<Keyword> matchedKeywords = await db.Keywords
                 .AsNoTracking()
-                .Where(k => allKeywordNames.Contains(k.Name.ToLower()))
-                .ToDictionaryAsync(k => k.Name.ToLower(), k => k.Id, cancellationToken);
+                .Where(k => !k.IsPrivate && allKeywordNames.Contains(k.Name.ToLower()))
+                .ToListAsync(cancellationToken);
+
+            Dictionary<string, Guid> keywordIdByName = matchedKeywords
+                .GroupBy(k => k.Name.ToLower())
+                .ToDictionary(g => g.Key, g => g.First().Id);
 
             // Build set DTOs with lastModifiedAt
             List<FeaturedSetDto> sets = [];
