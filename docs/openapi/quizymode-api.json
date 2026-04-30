@@ -2753,6 +2753,45 @@
         }
       }
     },
+    "/items/export": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Export items in seed JSON format",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "nav",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Export.ExportItems.SeedItemDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/admin/items/{id}/approval": {
       "put": {
         "tags": [
@@ -7675,6 +7714,74 @@
           }
         }
       },
+      "Quizymode.Api.Features.Items.Export.ExportItems.SeedItemDto": {
+        "required": [
+          "itemId",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "question",
+          "correctAnswer",
+          "incorrectAnswers",
+          "explanation",
+          "keywords",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navigationKeyword2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "incorrectAnswers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "explanation": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Items.Get.GetItems.CollectionResponse": {
         "required": [
           "id",
@@ -9961,6 +10068,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Items.AddBulk.AddItemsBulk.KeywordRequest"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Export.ExportItems.SeedItemDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Items.Export.ExportItems.SeedItemDto"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.CollectionResponse": {

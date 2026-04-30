@@ -407,6 +407,25 @@ Terms used in this document with a specific meaning:
 - **AC 2.2.6.15** [Authenticated] **Given** the AI returns optional **keywords** on items, **when** the app parses the response, **then** it keeps at most **five** keywords per item that match the allowed keyword format, deduplicates case-insensitively, and drops keywords that duplicate my navigation topics or my setup **additional keywords**; invalid or duplicate suggestions are silently omitted. On save, retained keywords are merged with navigation and extra keywords per item like other bulk item keywords.
 - **AC 2.2.6.16** [Authenticated] **Given** the AI response includes extra identity-style fields such as `seedId` or `itemId`, **when** the app parses the response, **then** those fields are ignored for the user bulk-create flow. When accepted items are submitted to `POST /items/bulk`, the payload does **not** include any repo-managed permanent identifier; the backend always **inserts** new user items and never overwrites an existing item by a caller-supplied repo identity. Duplicate prevention in this flow relies on the existing same-user text/simhash rules rather than a persisted seed identifier. **Contrast with admin seed-sync:** repo-managed admin sync uses explicit permanent `itemId` values and may update an existing public repo-managed row in place.
 
+### AC 2.2.7 Export items as seed JSON
+
+**API**
+
+- **AC 2.2.7.1** [Authenticated] **Given** I call `GET /items/export?category={category}&nav={kw1}` or `GET /items/export?category={category}&nav={kw1},{kw2}`, **then** the API returns a JSON array of all visible items in scope (public items + my own private items) formatted in seed-source format (`itemId`, `category`, `navigationKeyword1`, `navigationKeyword2`, `question`, `correctAnswer`, `incorrectAnswers`, `explanation`, `keywords`, `source`). No pagination is applied — all matching items are returned.
+- **AC 2.2.7.2** [Anonymous] **Given** I call `GET /items/export` without authentication, **then** the API returns 401.
+- **AC 2.2.7.3** [Authenticated] **Given** `category` is omitted, **then** the API returns 400.
+- **AC 2.2.7.4** [Authenticated] **Given** `nav` contains more than two comma-separated keywords, **then** the API returns 400.
+- **AC 2.2.7.5** [Authenticated] **Given** navigation keywords are provided, **then** `navigationKeyword1` and `navigationKeyword2` in each exported item are returned as lowercase names matching the seed-source convention.
+
+**UI**
+
+- **AC 2.2.7.6** [Authenticated] **Given** I am authenticated and browsing the Sets view at a nav1 or nav1/nav2 level (e.g. `/categories/languages/bulgarian` or `/categories/languages/bulgarian/idioms`), **then** I see an **Export** button to the left of the **+Add** button in the toolbar (both desktop and mobile).
+- **AC 2.2.7.7** [Authenticated] **Given** I click **Export**, **then** the UI fetches all items in the current scope via `GET /items/export`, serialises them as prettified JSON, and triggers a browser file-save dialog with a pre-filled filename of the form `{category}.{kw1}.json` or `{category}.{kw1}.{kw2}.json` (e.g. `languages.bulgarian.idioms.json`). The user may rename the file before saving.
+- **AC 2.2.7.8** [Authenticated] **Given** the export is in progress, **then** the Export button is disabled and shows "Exporting…" until the download is triggered.
+- **AC 2.2.7.9** [Unauthenticated / root-category level] **Given** I am not authenticated, or I am viewing the root category Sets view with no nav keywords, **then** the Export button is not shown.
+
+---
+
 ### AC 2.3 Direct item access by ID
 
 **API**

@@ -51,6 +51,7 @@ import {
   EyeIcon,
   Squares2X2Icon,
   PlusIcon,
+  ArrowDownTrayIcon,
   ChevronRightIcon as BreadcrumbChevron,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -82,6 +83,7 @@ const CategoriesPage = () => {
   const [itemsPage, setItemsPage] = useState(pageFromUrl);
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
+  const [isExporting, setIsExporting] = useState(false);
   const { pageSize: userPageSize } = usePageSize();
   const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
   const showAnswersParam = searchParams.get("showAnswers");
@@ -576,11 +578,12 @@ const CategoriesPage = () => {
       switch (sortBy) {
         case "name":
           return a.name.localeCompare(b.name);
-        case "rating":
+        case "rating": {
           const aR = a.averageRating ?? -1;
           const bR = b.averageRating ?? -1;
           if (aR !== bR) return bR - aR;
           return a.name.localeCompare(b.name);
+        }
         case "count":
           if (a.itemCount !== b.itemCount) return b.itemCount - a.itemCount;
           return a.name.localeCompare(b.name);
@@ -1164,6 +1167,28 @@ const CategoriesPage = () => {
     );
   }
 
+  const handleExport = async () => {
+    if (!categoryName || pathKeywordsFromUrl.length === 0) return;
+    setIsExporting(true);
+    try {
+      const data = await itemsApi.exportItems(categoryName, pathKeywordsFromUrl);
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const parts = [categoryName.toLowerCase(), ...pathKeywordsFromUrl.map((k) => k.toLowerCase())];
+      const filename = parts.join(".") + ".json";
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   if (categoryName && activeView === "sets") {
     if (isLoadingKeywords) return <LoadingSpinner />;
 
@@ -1198,18 +1223,31 @@ const CategoriesPage = () => {
               }}
               endSlot={
                 isAuthenticated ? (
-                  <Link
-                    to={buildAddItemsPathWithParams(
-                      categoryName,
-                      pathKeywordsFromUrl,
-                      filterKeywordsFromQuery
+                  <div className="hidden items-center gap-2 sm:inline-flex">
+                    {pathKeywordsFromUrl.length >= 1 && (
+                      <button
+                        onClick={handleExport}
+                        disabled={isExporting}
+                        className="inline-flex shrink-0 items-center gap-1 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                        title="Export items as seed JSON"
+                      >
+                        <ArrowDownTrayIcon className="h-4 w-4" />
+                        {isExporting ? "Exporting…" : "Export"}
+                      </button>
                     )}
-                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
-                    title="Add items for this category and navigation path"
-                  >
-                    <PlusIcon className="h-4 w-4" />
-                    Add
-                  </Link>
+                    <Link
+                      to={buildAddItemsPathWithParams(
+                        categoryName,
+                        pathKeywordsFromUrl,
+                        filterKeywordsFromQuery
+                      )}
+                      className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                      title="Add items for this category and navigation path"
+                    >
+                      <PlusIcon className="h-4 w-4" />
+                      Add
+                    </Link>
+                  </div>
                 ) : null
               }
             />
@@ -1223,18 +1261,31 @@ const CategoriesPage = () => {
               onOpenFilters={() => setShowFilters(true)}
               middleSlot={
                 isAuthenticated ? (
-                  <Link
-                    to={buildAddItemsPathWithParams(
-                      categoryName,
-                      pathKeywordsFromUrl,
-                      filterKeywordsFromQuery
+                  <div className="inline-flex items-center gap-2 sm:hidden">
+                    {pathKeywordsFromUrl.length >= 1 && (
+                      <button
+                        onClick={handleExport}
+                        disabled={isExporting}
+                        className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                        title="Export items as seed JSON"
+                      >
+                        <ArrowDownTrayIcon className="h-4 w-4" />
+                        {isExporting ? "Exporting…" : "Export"}
+                      </button>
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
-                    title="Add items for this category and navigation path"
-                  >
-                    <PlusIcon className="h-4 w-4" />
-                    Add
-                  </Link>
+                    <Link
+                      to={buildAddItemsPathWithParams(
+                        categoryName,
+                        pathKeywordsFromUrl,
+                        filterKeywordsFromQuery
+                      )}
+                      className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                      title="Add items for this category and navigation path"
+                    >
+                      <PlusIcon className="h-4 w-4" />
+                      Add
+                    </Link>
+                  </div>
                 ) : null
               }
               onOpenMap={() => setShowMapModal(true)}
