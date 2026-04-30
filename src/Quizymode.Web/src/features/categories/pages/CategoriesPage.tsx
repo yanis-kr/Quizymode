@@ -862,6 +862,28 @@ const CategoriesPage = () => {
 
     const scopePath = scopePathWithNav;
 
+    const handleExport = async () => {
+      if (!categoryName || keywordsForStudy.length === 0) return;
+      setIsExporting(true);
+      try {
+        const data = await itemsApi.exportItems(categoryName, keywordsForStudy);
+        const json = JSON.stringify(data, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const parts = [categoryName.toLowerCase(), ...keywordsForStudy.map((k) => k.toLowerCase())];
+        const filename = parts.join(".") + ".json";
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } finally {
+        setIsExporting(false);
+      }
+    };
+
     return (
       <>
         <SEO
@@ -1212,28 +1234,6 @@ const CategoriesPage = () => {
       </>
     );
   }
-
-  const handleExport = async () => {
-    if (!categoryName || keywordsForStudy.length === 0) return;
-    setIsExporting(true);
-    try {
-      const data = await itemsApi.exportItems(categoryName, keywordsForStudy);
-      const json = JSON.stringify(data, null, 2);
-      const blob = new Blob([json], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const parts = [categoryName.toLowerCase(), ...keywordsForStudy.map((k) => k.toLowerCase())];
-      const filename = parts.join(".") + ".json";
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } finally {
-      setIsExporting(false);
-    }
-  };
 
   if (categoryName && activeView === "sets") {
     if (isLoadingKeywords) return <LoadingSpinner />;
