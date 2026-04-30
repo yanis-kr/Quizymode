@@ -1171,260 +1171,60 @@
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p01.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.001.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 12,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.551Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p02.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.002.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.563Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p03.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.003.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.567Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p04.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.004.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.571Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p05.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.005.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.571Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p06.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.006.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
+      "itemCount": 100,
+      "modifiedAt": "2026-04-30T12:00:02.579Z"
     },
     {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p07.json",
+      "path": "data/seed-source/items/exams/exams.aws.saa-c03.007.json",
       "category": "exams",
       "nav1": "aws",
       "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p08.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p09.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p10.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p11.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p12.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p13.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p14.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p15.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p16.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p17.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p18.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p19.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p20.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p21.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p22.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p23.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p24.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p25.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p26.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p27.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p28.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p29.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p30.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 20,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p31.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 17,
-      "modifiedAt": "2026-04-11T10:42:25-05:00"
-    },
-    {
-      "path": "data/seed-source/items/exams/exams.aws.saa-c03-p32.json",
-      "category": "exams",
-      "nav1": "aws",
-      "nav2": "saa-c03",
-      "itemCount": 64,
-      "modifiedAt": "2026-04-12T09:54:39-05:00"
+      "itemCount": 73,
+      "modifiedAt": "2026-04-30T12:00:02.582Z"
     },
     {
       "path": "data/seed-source/items/exams/exams.aws.sap-c02.json",

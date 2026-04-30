@@ -1,5 +1,286 @@
 [
   {
+    "itemId": "279894c7-2d6d-40af-b28d-5ef5cba34d89",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company runs an SMB file server in its data center. The le server stores large les that the company frequently accesses for up to 7 days after\nthe le creation date. After 7 days, the company needs to be able to access the les with a maximum retrieval time of 24 hours.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.",
+    "incorrectAnswers": [
+      "Create an Amazon S3 File Gateway to increase the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.",
+      "Create an Amazon FSx File Gateway to increase the company's storage space. Create an Amazon S3 Lifecycle policy to transition the data after 7 days.",
+      "Configure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days."
+    ],
+    "explanation": "A company runs an SMB file server in its data center. The le server stores large les that the company frequently accesses for up to 7 days after the le creation date. After 7 days, the company needs to be able to access the... The best-matching choice is: Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.. Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use.\nUPD260411: Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online. (https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "Transfer data securely – DataSync provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. DataSync accesses your AWS storage through built-in AWS security mechanisms, such as AWS Identity and Access Management (IAM) roles. It also supports virtual private cloud (VPC) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.",
+        "source": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ]
+  },
+  {
+    "itemId": "84e11b3c-4cab-4ec8-9c63-f74eb2fc00fe",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes to run an application. The company creates one\nsnapshot of each EBS volume every day to meet compliance requirements. The company wants to implement an architecture that prevents the\naccidental deletion of EBS volume snapshots. The solution must not change the administrative rights of the storage administrator user.\nWhich solution will meet these requirements with the LEAST administrative effort?",
+    "correctAnswer": "Create an IAM role that has permission to delete snapshots. Attach the role to a new EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.",
+    "incorrectAnswers": [
+      "Create an IAM policy that denies snapshot deletion. Attach the policy to the storage administrator user.",
+      "Add tags to the snapshots. Create retention rules in Recycle Bin for EBS snapshots that have the tags.",
+      "Lock the EBS snapshots to prevent deletion."
+    ],
+    "explanation": "A company uses Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes to run an application. The company creates one snapshot of each EBS volume every day to meet compliance requirements. The company wants to implement an architecture that prevents the accidental... The best-matching choice is: Create an IAM role that has permission to delete snapshots. Attach the role to a new EC2 instance. Use the AWS CLI from the new EC2 instance to delete snapshots.. To restrict which roles a user can pass to an Amazon EC2 instance, you create a policy that allows the PassRole action.\nUPD260411: To restrict which roles a user can pass to an Amazon EC2 instance, you create a policy that allows the PassRole action. You then attach the policy to the user (or to an IAM group that the user belongs to) who will launch Amazon EC2 instances. In the Resource element of the policy, you list the role or roles that the user is allowed to pass to Amazon EC2 instances. When the user launches an instance and associates a role with it, Amazon EC2 checks whether the user is allowed to pass that role. Of course, you shou... (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "iam"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "To restrict which roles a user can pass to an Amazon EC2 instance, you create a policy that allows the PassRole action. You then attach the policy to the user (or to an IAM group that the user belongs to) who will launch Amazon EC2 instances. In the Resource element of the policy, you list the role or roles that the user is allowed to pass to Amazon EC2 instances. When the user launches an instance and associates a role with it, Amazon EC2 checks whether the user is allowed to pass that role. Of course, you shou...",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html"
+      }
+    ]
+  },
+  {
+    "itemId": "294b4094-725c-4570-ad7b-cf7bb3b376d1",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an\nAmazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC. The\ncompany wants to send the information to Amazon OpenSearch Service for analysis.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.",
+    "incorrectAnswers": [
+      "Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to stream the logs from the log group to OpenSearch Service.",
+      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Streams to stream the logs from the trail to OpenSearch Service.",
+      "Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose (note: outdated; now Amazon Data Firehose) to stream the logs from the trail to OpenSearch Service."
+    ],
+    "explanation": "A company's application uses Network Load Balancers, Auto Scaling groups, Amazon EC2 instances, and databases that are deployed in an Amazon VPC. The company wants to capture information about traffic to and from the network interfaces in near real time in its Amazon VPC.... The best-matching choice is: Create a log group in Amazon CloudWatch Logs. Configure VPC Flow Logs to send the log data to the log group. Use Amazon Kinesis Data Streams to stream the logs from the log group to OpenSearch Service.. To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone.\nUPD260411: To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone. For example, if one or more target groups does not have a healthy target in an Availability Zone, we remove the IP address for the corresponding subnet from DNS, but the load balancer nodes in the other Availability Zones are still available to route traffic. If a client doesn't honor the time-to-live (... (https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-analytics",
+      "aws-compute",
+      "ec2",
+      "auto-scaling",
+      "kinesis",
+      "opensearch",
+      "vpc",
+      "nlb"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "To increase the fault tolerance of your applications, you can enable multiple Availability Zones for your load balancer and ensure that each target group has at least one target in each enabled Availability Zone. For example, if one or more target groups does not have a healthy target in an Availability Zone, we remove the IP address for the corresponding subnet from DNS, but the load balancer nodes in the other Availability Zones are still available to route traffic. If a client doesn't honor the time-to-live (...",
+        "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+      }
+    ]
+  },
+  {
+    "itemId": "0bfa6042-d891-4e67-b351-cc3f20379a2a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company is developing an application that will run on a production Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster\nhas managed node groups that are provisioned with On-Demand Instances.\nThe company needs a dedicated EKS cluster for development work. The company will use the development cluster infrequently to test the\nresiliency of the application. The EKS cluster must manage all the nodes.\nWhich solution will meet these requirements MOST cost-effectively?",
+    "correctAnswer": "Create a managed node group that contains only Spot Instances.",
+    "incorrectAnswers": [
+      "Create two managed node groups. Provision one node group with On-Demand Instances. Provision the second node group with Spot Instances.",
+      "Create an Auto Scaling group that has a launch conguration that uses Spot Instances. Configure the user data to add the nodes to the EKS cluster.",
+      "Create a managed node group that contains only On-Demand Instances."
+    ],
+    "explanation": "A company is developing an application that will run on a production Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster has managed node groups that are provisioned with On-Demand Instances. The company needs a dedicated EKS cluster for development work. The company... The best-matching choice is: Create a managed node group that contains only Spot Instances.. Amazon EKS not only helps you build and manage clusters, it helps you build and scale application systems with Kubernetes.\nUPD260411: Amazon EKS not only helps you build and manage clusters, it helps you build and scale application systems with Kubernetes. Amazon EKS Capabilities are fully managed cluster services that extend your cluster’s functionality with hands-free Kubernetes-native tools, including: (https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-compute",
+      "eks"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "Amazon EKS not only helps you build and manage clusters, it helps you build and scale application systems with Kubernetes. Amazon EKS Capabilities are fully managed cluster services that extend your cluster’s functionality with hands-free Kubernetes-native tools, including:",
+        "source": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
+      }
+    ]
+  },
+  {
+    "itemId": "87536168-d809-4d90-b7cd-909f2e37c7c3",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company stores sensitive data in Amazon S3. A solutions architect needs to create an encryption solution. The company needs to fully control\nthe ability of users to create, rotate, and disable encryption keys with minimal effort for any data that must be encrypted.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Use default server-side encryption with Amazon S3 managed encryption keys (SSE-S3) to store the sensitive data.",
+    "incorrectAnswers": [
+      "Create a customer managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+      "Create an AWS managed key by using AWS Key Management Service (AWS KMS). Use the new key to encrypt the S3 objects by using server-side encryption with AWS KMS keys (SSE-KMS).",
+      "Download S3 objects to an Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3."
+    ],
+    "explanation": "A company stores sensitive data in Amazon S3. A solutions architect needs to create an encryption solution. The company needs to fully control the ability of users to create, rotate, and disable encryption keys with minimal effort for any data that must be encrypted.... The best-matching choice is: Use default server-side encryption with Amazon S3 managed encryption keys (SSE-S3) to store the sensitive data.. AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available.\nUPD260411: AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr... (https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-security",
+      "s3"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. You can use Cost and Usage Reports to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own. You can receive reports that break down your costs by the hour, day, or month, by product or product resource, or by tags that you define yourself. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spr...",
+        "source": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
+      }
+    ]
+  },
+  {
+    "itemId": "f482817d-70c3-457d-bf4e-2bc18ba962ee",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A solutions architect needs to copy les from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) le system and another S3\nbucket. The les must be copied continuously. New les are added to the original S3 bucket consistently. The copied les should be overwritten\nonly if the source le changes.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer only data that has changed.",
+    "incorrectAnswers": [
+      "Create an AWS Lambda function. Mount the le system to the function. Set up an S3 event notication to invoke the function when les are created and changed in Amazon S3. Configure the function to copy les to the le system and the destination S3 bucket.",
+      "Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer all data.",
+      "Launch an Amazon EC2 instance in the same VPC as the le system. Mount the le system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted le system."
+    ],
+    "explanation": "A solutions architect needs to copy les from an Amazon S3 bucket to an Amazon Elastic File System (Amazon EFS) le system and another S3 bucket. The les must be copied continuously. New les are added to the original S3 bucket consistently. The copied... The best-matching choice is: Create an AWS DataSync location for both the destination S3 bucket and the EFS le system. Create a task for the destination S3 bucket and the EFS le system. Set the transfer mode to transfer only data that has changed.. Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance.\nUPD260411: Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo... (https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "s3",
+      "efs",
+      "datasync"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "Amazon Elastic File System (Amazon EFS) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. Amazon EFS is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because Amazon EFS has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for yo...",
+        "source": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+      }
+    ]
+  },
+  {
+    "itemId": "4437b0f6-bd06-4d3c-8f6a-5db6ec23e7d2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company uses Amazon EC2 instances and stores data on Amazon Elastic Block Store (Amazon EBS) volumes. The company must ensure that\nall data is encrypted at rest by using AWS Key Management Service (AWS KMS). The company must be able to control rotation of the encryption\nkeys.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+    "correctAnswer": "Create a customer managed key. Use the key to encrypt the EBS volumes.",
+    "incorrectAnswers": [
+      "Use an AWS managed key to encrypt the EBS volumes. Use the key to congure automatic key rotation.",
+      "Create an external KMS key with imported key material. Use the key to encrypt the EBS volumes.",
+      "Use an AWS owned key to encrypt the EBS volumes."
+    ],
+    "explanation": "A company uses Amazon EC2 instances and stores data on Amazon Elastic Block Store (Amazon EBS) volumes. The company must ensure that all data is encrypted at rest by using AWS Key Management Service (AWS KMS). The company must be able to control rotation... The best-matching choice is: Create a customer managed key. Use the key to encrypt the EBS volumes.. AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.\nUPD260411: AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS. (https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "kms"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "AWS Key Management Service (AWS KMS) is an AWS managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. The AWS KMS keys that you create in AWS KMS are protected by FIPS 140-3 Security Level 3 validated hardware security modules (HSM) . They never leave AWS KMS unencrypted. To use or manage your KMS keys, you interact with AWS KMS.",
+        "source": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+      }
+    ]
+  },
+  {
+    "itemId": "9d2e0114-a979-47a4-bd13-c469c8b7895a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant\nresources and enforce compliance policies on ndings.\nWhich solution will meet these requirements with the LEAST administrative overhead?",
+    "correctAnswer": "Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Config and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.",
+    "incorrectAnswers": [
+      "Use AWS Key Management Service (AWS KMS) to manage access to encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Lambda and Amazon EventBridge to automate the detection and remediation of unencrypted EBS volumes.",
+      "Use Amazon Macie to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.",
+      "Use Amazon inspector to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes."
+    ],
+    "explanation": "A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant resources and enforce compliance policies on ndings. Which solution will meet these requirements with the LEAST administrative overhead? The best-matching choice is: Use an IAM policy that allows users to create only encrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Config and AWS Systems Manager to automate the detection and remediation of unencrypted EBS volumes.. AWS services that support these attributes might allow you to create multiple key names that differ only by case.\nUPD260411: AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures. (https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-storage",
+      "aws-compute",
+      "ebs",
+      "ec2",
+      "iam",
+      "systems-manager"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "AWS services that support these attributes might allow you to create multiple key names that differ only by case. For example, you might tag an Amazon EC2 instance with ec2=test1 and EC2=test2 . When you use a condition such as \"aws:ResourceTag/EC2\": \"test1\" to allow access to that resource, the key name matches both tags, but only one value matches. This can result in unexpected condition failures.",
+        "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html"
+      }
+    ]
+  },
+  {
+    "itemId": "8041239e-044b-49ff-9218-d78233b26dcc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "saa-c03",
+    "question": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of\nregulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency.\nWhich solution will meet these requirements?",
+    "correctAnswer": "Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to an edge location in Amazon CloudFront.",
+    "incorrectAnswers": [
+      "Deploy the applications in AWS Local Zones by extending the company's VPC from eu-central-1 to the chosen Local Zone.",
+      "Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.",
+      "Deploy the applications in AWS Wavelength Zones by extending the company’s VPC from eu-central-1 to the chosen Wavelength Zone."
+    ],
+    "explanation": "A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency. Which... The best-matching choice is: Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to an edge location in Amazon CloudFront.. You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world.\nUPD260411: You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the... (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)",
+    "keywords": [
+      "aws-saa-c03",
+      "aws-networking",
+      "cloudfront",
+      "vpc"
+    ],
+    "source": "https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution",
+    "factChecks": [
+      {
+        "factChecker": "cursor",
+        "checked": "2026-04-11T15:07:46Z",
+        "conclusion": "correct",
+        "explanation": "You specify origin servers , like an Amazon S3 bucket or your own HTTP server, from which CloudFront gets your files which will then be distributed from CloudFront edge locations all over the world. An origin server stores the original, definitive version of your objects. If you're serving content over HTTP, your origin server is either an Amazon S3 bucket or an HTTP server, such as a web server. Your HTTP server can run on an Amazon Elastic Compute Cloud (Amazon EC2) instance or on a server that you manage; the...",
+        "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+      }
+    ]
+  },
+  {
     "itemId": "9485fd90-60f6-49bb-95d9-3f7f07797db8",
     "category": "exams",
     "navigationKeyword1": "aws",
