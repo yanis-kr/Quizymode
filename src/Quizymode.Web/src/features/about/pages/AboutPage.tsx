@@ -22,7 +22,6 @@ const AboutPage = () => {
             [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5
             [&_li]:my-0.5
             [&_strong]:font-semibold [&_strong]:text-slate-700"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: __ABOUT_HTML__ }}
         />
 

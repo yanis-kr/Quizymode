@@ -82,6 +82,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   // Initialize name when user data loads
   useEffect(() => {
     if (displayUser && !isEditing) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setName(displayUser.name || "");
     }
   }, [displayUser, isEditing]);

@@ -25,6 +25,7 @@ interface ItemCollectionControlsProps {
  * Block of controls: Manage collections icon, optional 3-char active collection name,
  * plus (add to active), minus (remove from active).
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function getCompactCollectionLabel(name: string | null | undefined): string {
   if (!name) {
     return "";

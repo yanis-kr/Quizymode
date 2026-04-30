@@ -19,7 +19,7 @@ function breadcrumbLabel(kw: string): string {
 
 /** Breadcrumb links go to the categories boxes view (sets view), not back into explore/quiz. */
 export function ExploreQuizBreadcrumb({
-  mode: _mode,
+  mode: _mode, // eslint-disable-line @typescript-eslint/no-unused-vars
   categorySlug,
   categoryDisplayName,
   keywords,

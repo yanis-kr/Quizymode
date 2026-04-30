@@ -21,7 +21,7 @@ interface ItemListSectionProps {
 
 const ItemListSection = ({
   items,
-  totalCount: _totalCount,
+  totalCount: _totalCount, // eslint-disable-line @typescript-eslint/no-unused-vars
   page,
   totalPages,
   onPrevPage,

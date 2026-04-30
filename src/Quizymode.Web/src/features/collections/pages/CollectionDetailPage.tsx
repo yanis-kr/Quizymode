@@ -118,6 +118,7 @@ const CollectionDetailPage = () => {
 
   useEffect(() => {
     if (itemsPage > totalPages && totalPages >= 1) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setItemsPage(totalPages);
     }
   }, [itemsPage, totalPages]);

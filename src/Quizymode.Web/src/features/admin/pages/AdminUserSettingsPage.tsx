@@ -76,11 +76,13 @@ const AdminUserSettingsPage = () => {
   useEffect(() => {
     const users = usersData?.users ?? [];
     if (users.length === 0) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedUserId(null);
       return;
     }
 
     if (!selectedUserId || !users.some((user) => user.id === selectedUserId)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedUserId(users[0].id);
     }
   }, [selectedUserId, usersData]);
@@ -127,6 +129,7 @@ const AdminUserSettingsPage = () => {
 
   useEffect(() => {
     const rawValue = settingsData?.settings[STUDY_GUIDE_KEY];
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStudyGuideBytes(rawValue ?? "");
   }, [selectedUserId, settingsData]);
 

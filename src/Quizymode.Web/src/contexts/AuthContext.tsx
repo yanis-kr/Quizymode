@@ -37,6 +37,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -132,6 +133,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               setEmail(resolvedEmail);
               
               // Extract groups and check admin status
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const extractGroups = (tokenPayload: any): string[] => {
                 const groupsClaim = tokenPayload["cognito:groups"];
                 if (Array.isArray(groupsClaim)) {
@@ -141,8 +143,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 }
                 return [];
               };
-              
-              let groups = extractGroups(refreshedPayload);
+
+              const groups = extractGroups(refreshedPayload);
               let isUserAdmin = groups.some((g: string) =>
                 g.toLowerCase().startsWith("admin")
               );
@@ -190,6 +192,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setEmail(resolvedEmail);
 
         // Helper function to extract groups from a token payload
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const extractGroups = (tokenPayload: any): string[] => {
           const groupsClaim = tokenPayload["cognito:groups"];
           if (Array.isArray(groupsClaim)) {
@@ -201,7 +204,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         };
 
         // Check for admin group in access token
-        let groups = extractGroups(payload);
+        const groups = extractGroups(payload);
         let isUserAdmin = groups.some((g: string) =>
           g.toLowerCase().startsWith("admin")
         );

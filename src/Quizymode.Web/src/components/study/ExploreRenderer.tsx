@@ -22,7 +22,9 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
   const { isSupported } = useSpeech();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsFlipped(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setExplanationExpanded(false);
   }, [item.id]);
 

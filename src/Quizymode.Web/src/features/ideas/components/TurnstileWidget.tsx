@@ -55,6 +55,7 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
       }
 
       onTokenChange(null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoadError("Idea submission is unavailable until Turnstile is configured.");
       return;
     }

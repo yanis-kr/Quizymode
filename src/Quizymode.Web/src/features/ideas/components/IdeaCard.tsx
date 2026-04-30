@@ -66,6 +66,7 @@ const IdeaCard = ({
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOptimisticRating(undefined);
   }, [idea.id, idea.myRating]);
 

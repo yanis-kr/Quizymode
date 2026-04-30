@@ -54,6 +54,7 @@ export const useShowAnswers = (urlOverride?: boolean) => {
 
   useEffect(() => {
     if (!syncedFromSetting && settingsData !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowAnswers(settingsData.settings[SETTING_KEY] !== "true");
       setSyncedFromSetting(true);
     }

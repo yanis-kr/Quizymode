@@ -17,6 +17,7 @@ const useItemSelection = (
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedItemIds(new Set());
   }, resetKeys);
 

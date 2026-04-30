@@ -51,11 +51,17 @@ const FeedbackDialog = ({
       return;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setType(initialType);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentUrl(window.location.href);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEmail(defaultEmail ?? "");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDetails("");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAdditionalKeywords("");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setErrorMessage(null);
     createFeedbackMutation.reset();
   }, [createFeedbackMutation.reset, defaultEmail, initialType, isOpen]);

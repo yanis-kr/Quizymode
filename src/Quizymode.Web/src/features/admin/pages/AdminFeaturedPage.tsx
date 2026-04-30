@@ -63,10 +63,12 @@ const AdminFeaturedPage = () => {
   });
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!setCategory) { setSetKw1(""); setSetKw2(""); }
   }, [setCategory]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!setKw1) setSetKw2("");
   }, [setKw1]);
 

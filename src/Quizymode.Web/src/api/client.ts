@@ -72,7 +72,7 @@ apiClient.interceptors.request.use(
         // Try to refresh the token
         await refreshTokens();
         token = getToken();
-      } catch (error) {
+      } catch {
         // Refresh failed, token will be null
         token = null;
       }
@@ -117,7 +117,7 @@ const isPublicEndpoint = (url: string): boolean => {
   const publicEndpoints = ["/categories", "/categories/", "/keywords", "/items", "/collections"];
   return (
     publicEndpoints.some((endpoint) => url.includes(endpoint)) ||
-    /^\/categories\/[^\/]+\/subcategories/.test(url)
+    /^\/categories\/[^/]+\/subcategories/.test(url)
   );
 };
 
@@ -161,7 +161,7 @@ apiClient.interceptors.response.use(
         }
 
         return apiClient(originalRequest);
-      } catch (refreshError) {
+      } catch {
         // Refresh failed, clear tokens and redirect to main page
         handleAuthFailure(originalRequest);
         return Promise.reject(error);

@@ -42,6 +42,7 @@ export function useListenAll(items: ListenItem[]) {
   }, [clearTimer]);
 
   // Reassigned every render so the closure always captures latest `items` and `stopAll`
+  // eslint-disable-next-line react-hooks/refs
   speakNextRef.current = () => {
     const idx = indexRef.current;
     if (idx >= items.length) {

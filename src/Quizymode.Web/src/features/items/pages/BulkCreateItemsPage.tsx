@@ -130,10 +130,13 @@ const BulkCreateItemsPage = () => {
   useEffect(() => {
     if (categoryOptions.length === 0) return;
     if (urlCategory && !category && categoryOptions.some((c) => c.category === urlCategory)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCategory(urlCategory);
     }
     if (urlKeywords.length > 0 && !primaryTopic) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPrimaryTopic(urlKeywords[0] ?? "");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (urlKeywords.length > 1) setSubtopic(urlKeywords[1] ?? "");
     }
   }, [urlCategory, urlKeywords, categoryOptions.length]);
@@ -277,7 +280,7 @@ Generate the JSON array only.`;
         const explanation = (o.explanation ?? "").toString().trim();
         const rawSource = (o.source ?? "").toString().trim();
         const source = rawSource ? rawSource.slice(0, 1000) : undefined;
-        let keywords: string[] = [];
+        const keywords: string[] = [];
         if (Array.isArray(o.keywords)) {
           const raw = (o.keywords as (string | { name?: string })[]).map((k) =>
             typeof k === "string" ? k : ((k as { name?: string }).name ?? "")

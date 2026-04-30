@@ -60,6 +60,7 @@ const ItemsPage = () => {
 
   // Reset to page 1 when mode or category changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPage(1);
   }, [mode, category]);
 

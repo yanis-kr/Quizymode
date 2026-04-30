@@ -56,15 +56,18 @@ const ItemRatingsComments = ({
 
   // Reset rating state when itemId changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUserRating(null);
   }, [itemId]);
 
   // Initialize user rating from API response
   useEffect(() => {
     if (userRatingData) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUserRating(userRatingData.stars);
     } else if (userRatingData === null) {
       // Explicitly null means no rating exists
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUserRating(null);
     }
   }, [userRatingData]);

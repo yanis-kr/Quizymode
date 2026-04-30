@@ -2,7 +2,7 @@ const SESSION_STORAGE_KEY = "quizymode.analytics.session-id";
 const LAST_VIEW_STORAGE_KEY = "quizymode.analytics.last-view";
 const DUPLICATE_WINDOW_MS = 1500;
 
-let fallbackSessionId = createSessionId();
+const fallbackSessionId = createSessionId();
 
 export function getPageViewSessionId(): string {
   try {
