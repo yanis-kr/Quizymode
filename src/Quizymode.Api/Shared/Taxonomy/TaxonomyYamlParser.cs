@@ -8,6 +8,17 @@ public static class TaxonomyYamlParser
     public static IReadOnlyDictionary<string, TaxonomyCategoryDefinition> LoadFromFile(string yamlPath)
     {
         using StreamReader reader = File.OpenText(yamlPath);
+        return ParseFromReader(reader);
+    }
+
+    public static IReadOnlyDictionary<string, TaxonomyCategoryDefinition> LoadFromString(string yamlContent)
+    {
+        using StringReader reader = new(yamlContent);
+        return ParseFromReader(reader);
+    }
+
+    private static IReadOnlyDictionary<string, TaxonomyCategoryDefinition> ParseFromReader(TextReader reader)
+    {
         YamlStream yaml = new();
         yaml.Load(reader);
 

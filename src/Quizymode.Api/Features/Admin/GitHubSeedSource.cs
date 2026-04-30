@@ -119,7 +119,10 @@ internal sealed class GitHubSeedSource(
                 NextFileOffset: isComplete ? 0 : nextFileOffset,
                 IsComplete: isComplete);
 
-            return Result.Success(new LoadedGitHubSeedManifest(manifest, sourceContext));
+            string? branchTaxonomyYaml = await FetchRawFileAsync(owner, repo, resolvedSha, _options.TaxonomyYamlPath, cancellationToken);
+            string? branchTaxonomySql = await FetchRawFileAsync(owner, repo, resolvedSha, _options.TaxonomySeedSqlPath, cancellationToken);
+
+            return Result.Success(new LoadedGitHubSeedManifest(manifest, sourceContext, branchTaxonomyYaml, branchTaxonomySql));
         }
         catch (Exception ex)
         {
@@ -382,6 +385,20 @@ internal sealed class GitHubSeedSource(
             .ToList();
 
         return Result.Success(paths);
+    }
+
+    private async Task<string?> FetchRawFileAsync(
+        string repositoryOwner,
+        string repositoryName,
+        string resolvedCommitSha,
+        string filePath,
+        CancellationToken cancellationToken)
+    {
+        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{filePath}";
+        using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
+        if (!response.IsSuccessStatusCode)
+            return null;
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     private static async Task<string> BuildErrorDescriptionAsync(

@@ -12,6 +12,10 @@ internal sealed record class GitHubSeedSyncOptions
 
     public string CollectionsPath { get; init; } = "data/seed-source/collections/public";
 
+    public string TaxonomyYamlPath { get; init; } = "docs/quizymode_taxonomy.yaml";
+
+    public string TaxonomySeedSqlPath { get; init; } = "docs/quizymode_taxonomy_seed.sql";
+
     public string? Token { get; init; }
 
     public string UserAgent { get; init; } = "Quizymode-SeedSync";

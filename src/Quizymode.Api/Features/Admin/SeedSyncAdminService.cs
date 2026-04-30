@@ -1,3 +1,5 @@
+using System.Data;
+using System.Data.Common;
 using System.Diagnostics;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +10,7 @@ using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Taxonomy;
 
 namespace Quizymode.Api.Features.Admin;
 
@@ -38,7 +41,9 @@ internal sealed class SeedSyncAdminService(
                 return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
             }
 
-            Result<SeedSyncAdmin.PreviewResponse> result = await PreviewManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken);
+            ITaxonomyRegistry? branchRegistry = await BuildBranchRegistryAsync(loadResult.Value!, cancellationToken);
+            Result<SeedSyncAdmin.PreviewResponse> result = await PreviewManifestAsync(
+                loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken, branchRegistry);
             sw.Stop();
 
             return result.IsSuccess
@@ -55,11 +60,12 @@ internal sealed class SeedSyncAdminService(
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewManifestAsync(
         SeedSyncAdmin.ManifestRequest manifest,
         SeedSyncAdmin.SourceContext sourceContext,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ITaxonomyRegistry? taxonomyOverride = null)
     {
         try
         {
-            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken);
+            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken, taxonomyOverride ?? taxonomyRegistry);
             if (planResult.IsFailure)
             {
                 return Result.Failure<SeedSyncAdmin.PreviewResponse>(planResult.Error!);
@@ -85,7 +91,9 @@ internal sealed class SeedSyncAdminService(
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
         }
 
-        Result<SeedSyncAdmin.ApplyResponse> result = await ApplyManifestAsync(loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken: cancellationToken);
+        ITaxonomyRegistry? branchRegistry = await BuildBranchRegistryAsync(loadResult.Value!, cancellationToken);
+        Result<SeedSyncAdmin.ApplyResponse> result = await ApplyManifestAsync(
+            loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken, taxonomyOverride: branchRegistry);
         sw.Stop();
 
         return result.IsSuccess
@@ -135,7 +143,8 @@ internal sealed class SeedSyncAdminService(
         SeedSyncAdmin.ManifestRequest manifest,
         SeedSyncAdmin.SourceContext sourceContext,
         CancellationToken cancellationToken,
-        bool recordHistory = true)
+        bool recordHistory = true,
+        ITaxonomyRegistry? taxonomyOverride = null)
     {
         IDbContextTransaction? transaction = null;
 
@@ -143,7 +152,7 @@ internal sealed class SeedSyncAdminService(
         {
             await _languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
 
-            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken);
+            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken, taxonomyOverride ?? taxonomyRegistry);
             if (planResult.IsFailure)
             {
                 return Result.Failure<SeedSyncAdmin.ApplyResponse>(planResult.Error!);
@@ -286,7 +295,8 @@ internal sealed class SeedSyncAdminService(
 
     private async Task<Result<SeedSyncPlan>> BuildPlanAsync(
         SeedSyncAdmin.ManifestRequest request,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ITaxonomyRegistry registry)
     {
         ValidationResult validationResult = SeedSyncAdmin.ValidateManifest(request);
         if (!validationResult.IsValid)
@@ -346,6 +356,7 @@ internal sealed class SeedSyncAdminService(
                 normalizedItem,
                 categoryCache,
                 navigationCache,
+                registry,
                 cancellationToken);
 
             if (pathResult.IsFailure)
@@ -497,6 +508,7 @@ internal sealed class SeedSyncAdminService(
         NormalizedSeedItem item,
         Dictionary<string, Category> categoryCache,
         Dictionary<string, ResolvedNavigationPath> navigationCache,
+        ITaxonomyRegistry registry,
         CancellationToken cancellationToken)
     {
         string cacheKey = $"{item.Category}|{item.NavigationKeyword1}|{item.NavigationKeyword2}";
@@ -515,7 +527,7 @@ internal sealed class SeedSyncAdminService(
 
         Result<(Keyword Nav1, Keyword Nav2)> navResult = await ItemNavigationAndKeywordsHelper.ResolvePublicNavigationAsync(
             db,
-            taxonomyRegistry,
+            registry,
             category,
             item.NavigationKeyword1,
             item.NavigationKeyword2,
@@ -529,6 +541,42 @@ internal sealed class SeedSyncAdminService(
         ResolvedNavigationPath resolved = new(category, navResult.Value!.Nav1, navResult.Value!.Nav2);
         navigationCache[cacheKey] = resolved;
         return Result.Success(resolved);
+    }
+
+    private async Task<ITaxonomyRegistry?> BuildBranchRegistryAsync(
+        LoadedGitHubSeedManifest loaded,
+        CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(loaded.BranchTaxonomyYaml) || string.IsNullOrWhiteSpace(loaded.BranchTaxonomySql))
+            return null;
+
+        await ApplyBranchTaxonomySqlAsync(loaded.BranchTaxonomySql, cancellationToken);
+
+        IReadOnlyDictionary<string, TaxonomyCategoryDefinition> parsed = TaxonomyYamlParser.LoadFromString(loaded.BranchTaxonomyYaml);
+        return new TaxonomyRegistry(parsed);
+    }
+
+    private async Task ApplyBranchTaxonomySqlAsync(string sql, CancellationToken cancellationToken)
+    {
+        DbConnection connection = db.Database.GetDbConnection();
+        bool shouldClose = connection.State != ConnectionState.Open;
+        if (shouldClose)
+            await db.Database.OpenConnectionAsync(cancellationToken);
+
+        try
+        {
+            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
+            await using DbCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = sql;
+            await command.ExecuteNonQueryAsync(cancellationToken);
+            await transaction.CommitAsync(cancellationToken);
+        }
+        finally
+        {
+            if (shouldClose)
+                await db.Database.CloseConnectionAsync();
+        }
     }
 
     private async Task<Dictionary<string, Keyword>> LoadOrCreatePublicKeywordsAsync(

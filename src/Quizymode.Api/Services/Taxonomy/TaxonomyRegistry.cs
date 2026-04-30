@@ -21,6 +21,12 @@ internal sealed class TaxonomyRegistry : ITaxonomyRegistry
         logger.LogInformation("Loaded taxonomy with {Count} categories.", _categories.Count);
     }
 
+    internal TaxonomyRegistry(IReadOnlyDictionary<string, TaxonomyCategoryDefinition> categories)
+    {
+        _categories = categories;
+        _categorySlugs = categories.Keys.OrderBy(k => k, StringComparer.Ordinal).ToList();
+    }
+
     public IReadOnlyList<string> CategorySlugs => _categorySlugs;
 
     public bool HasCategory(string categoryName)
