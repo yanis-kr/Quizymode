@@ -1,89 +1,68 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { featuredApi } from "@/api/featured";
 import type { AdminFeaturedItemDto } from "@/api/featured";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
-import { TrashIcon, PencilSquareIcon, CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { taxonomyApi } from "@/api/taxonomy";
+import type { CollectionDiscoverItem } from "@/types/api";
+import {
+  TrashIcon,
+  PencilSquareIcon,
+  CheckIcon,
+  XMarkIcon,
+  ChevronUpIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 
-type AddMode = "none" | "set" | "collection";
+type Tab = "set" | "collection";
+
+interface SetCombo {
+  key: string;
+  cat: string;
+  n1: string;
+  n2: string | null;
+  label: string;
+  itemCount: number;
+}
+
+const slugToTitle = (s: string) =>
+  s.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+
+const setComboKey = (cat: string, n1: string, n2?: string | null) =>
+  `${cat}|${n1}|${n2 ?? ""}`;
 
 const AdminFeaturedPage = () => {
   const queryClient = useQueryClient();
 
-  const [addMode, setAddMode] = useState<AddMode>("none");
-
-  // Set form state
-  const [setCategory, setSetCategory] = useState("");
-  const [setKw1, setSetKw1] = useState("");
-  const [setKw2, setSetKw2] = useState("");
-  const [setDisplayName, setSetDisplayName] = useState("");
-  const [setSortOrder, setSetSortOrder] = useState(0);
-
-  // Collection form state
-  const [colSearch, setColSearch] = useState("");
-  const [colSelectedId, setColSelectedId] = useState("");
-  const [colSelectedName, setColSelectedName] = useState("");
-  const [colDisplayName, setColDisplayName] = useState("");
-  const [colSortOrder, setColSortOrder] = useState(0);
-
-  // Inline edit state
+  const [tab, setTab] = useState<Tab>("set");
+  const [search, setSearch] = useState("");
+  const [checked, setChecked] = useState<Set<string>>(new Set());
+  const [isAdding, setIsAdding] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
+  const [isMoving, setIsMoving] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDisplayName, setEditDisplayName] = useState("");
-  const [editSortOrder, setEditSortOrder] = useState(0);
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["adminFeatured"],
     queryFn: () => featuredApi.adminList(),
   });
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
-    enabled: addMode === "set",
+  const { data: taxonomyData } = useQuery({
+    queryKey: ["taxonomy"],
+    queryFn: () => taxonomyApi.getAll(),
+    enabled: tab === "set",
   });
 
-  const { data: kw1Data } = useQuery({
-    queryKey: ["keywords", "rank1", setCategory],
-    queryFn: () => keywordsApi.getNavigationKeywords(setCategory, []),
-    enabled: addMode === "set" && !!setCategory,
-  });
-
-  const { data: kw2Data } = useQuery({
-    queryKey: ["keywords", "rank2", setCategory, setKw1],
-    queryFn: () => keywordsApi.getNavigationKeywords(setCategory, [setKw1]),
-    enabled: addMode === "set" && !!setCategory && !!setKw1,
-  });
-
-  const { data: discoverData } = useQuery({
-    queryKey: ["collections", "discover", colSearch],
-    queryFn: () => collectionsApi.discover({ q: colSearch || undefined, pageSize: 20 }),
-    enabled: addMode === "collection",
-  });
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (!setCategory) { setSetKw1(""); setSetKw2(""); }
-  }, [setCategory]);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (!setKw1) setSetKw2("");
-  }, [setKw1]);
-
-  const addMutation = useMutation({
-    mutationFn: featuredApi.adminAdd,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["adminFeatured"] });
-      queryClient.invalidateQueries({ queryKey: ["featured"] });
-      resetForms();
-    },
+  const { data: collectionsData } = useQuery({
+    queryKey: ["collections", "discover", search],
+    queryFn: () => collectionsApi.discover({ q: search || undefined, pageSize: 30 }),
+    enabled: tab === "collection",
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: { displayName?: string; sortOrder?: number } }) =>
-      featuredApi.adminUpdate(id, data),
+    mutationFn: ({ id, patch }: { id: string; patch: { displayName?: string; sortOrder?: number } }) =>
+      featuredApi.adminUpdate(id, patch),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["adminFeatured"] });
       queryClient.invalidateQueries({ queryKey: ["featured"] });
@@ -99,44 +78,164 @@ const AdminFeaturedPage = () => {
     },
   });
 
-  const resetForms = () => {
-    setAddMode("none");
-    setSetCategory(""); setSetKw1(""); setSetKw2(""); setSetDisplayName(""); setSetSortOrder(0);
-    setColSearch(""); setColSelectedId(""); setColSelectedName(""); setColDisplayName(""); setColSortOrder(0);
+  const items = data?.items ?? [];
+
+  const featuredSets = useMemo(
+    () => [...items.filter((i) => i.type === "Set")].sort((a, b) => a.sortOrder - b.sortOrder),
+    [items]
+  );
+  const featuredCollections = useMemo(
+    () => [...items.filter((i) => i.type === "Collection")].sort((a, b) => a.sortOrder - b.sortOrder),
+    [items]
+  );
+
+  const featuredSetKeys = useMemo(
+    () => new Set(featuredSets.map((i) => setComboKey(i.categorySlug ?? "", i.navKeyword1 ?? "", i.navKeyword2))),
+    [featuredSets]
+  );
+  const featuredCollectionIds = useMemo(
+    () => new Set(featuredCollections.map((i) => i.collectionId ?? "")),
+    [featuredCollections]
+  );
+
+  const allSetCombos = useMemo<SetCombo[]>(() => {
+    if (!taxonomyData) return [];
+    const result: SetCombo[] = [];
+    for (const cat of taxonomyData.categories) {
+      for (const l1 of cat.groups) {
+        result.push({
+          key: setComboKey(cat.slug, l1.slug),
+          cat: cat.slug,
+          n1: l1.slug,
+          n2: null,
+          label: `${cat.name} › ${slugToTitle(l1.slug)}`,
+          itemCount: l1.itemCount,
+        });
+        for (const l2 of l1.keywords) {
+          result.push({
+            key: setComboKey(cat.slug, l1.slug, l2.slug),
+            cat: cat.slug,
+            n1: l1.slug,
+            n2: l2.slug,
+            label: `${cat.name} › ${slugToTitle(l1.slug)} › ${slugToTitle(l2.slug)}`,
+            itemCount: l2.itemCount,
+          });
+        }
+      }
+    }
+    return result;
+  }, [taxonomyData]);
+
+  const filteredCombos = useMemo(() => {
+    const q = search.toLowerCase();
+    if (!q) return allSetCombos;
+    return allSetCombos.filter(
+      (c) =>
+        c.label.toLowerCase().includes(q) ||
+        c.cat.includes(q) ||
+        c.n1.includes(q) ||
+        (c.n2?.includes(q) ?? false)
+    );
+  }, [allSetCombos, search]);
+
+  const filteredCollections: CollectionDiscoverItem[] = collectionsData?.items ?? [];
+
+  const selectedCount = [...checked].filter((k) =>
+    tab === "set" ? !featuredSetKeys.has(k) : !featuredCollectionIds.has(k)
+  ).length;
+
+  const currentItems = tab === "set" ? featuredSets : featuredCollections;
+
+  const handleTabChange = (next: Tab) => {
+    setTab(next);
+    setSearch("");
+    setChecked(new Set());
+    setAddError(null);
   };
 
-  const handleAddSet = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!setCategory || !setKw1 || !setDisplayName.trim()) return;
-    addMutation.mutate({
-      type: "Set",
-      displayName: setDisplayName.trim(),
-      categorySlug: setCategory.toLowerCase(),
-      navKeyword1: setKw1.toLowerCase(),
-      navKeyword2: setKw2 ? setKw2.toLowerCase() : undefined,
-      sortOrder: setSortOrder,
+  const toggleCheck = (key: string) => {
+    setChecked((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
     });
   };
 
-  const handleAddCollection = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!colSelectedId || !colDisplayName.trim()) return;
-    addMutation.mutate({
-      type: "Collection",
-      displayName: colDisplayName.trim(),
-      collectionId: colSelectedId,
-      sortOrder: colSortOrder,
-    });
+  const handleAddSelected = async () => {
+    if (selectedCount === 0) return;
+    setIsAdding(true);
+    setAddError(null);
+    try {
+      let failed = 0;
+      if (tab === "set") {
+        const toAdd = allSetCombos.filter((c) => checked.has(c.key) && !featuredSetKeys.has(c.key));
+        const results = await Promise.allSettled(
+          toAdd.map((c) =>
+            featuredApi.adminAdd({
+              type: "Set",
+              displayName: c.label,
+              categorySlug: c.cat,
+              navKeyword1: c.n1,
+              navKeyword2: c.n2 ?? undefined,
+            })
+          )
+        );
+        failed = results.filter((r) => r.status === "rejected").length;
+      } else {
+        const colMap = new Map(filteredCollections.map((c) => [c.id, c]));
+        const toAdd = [...checked]
+          .filter((id) => !featuredCollectionIds.has(id))
+          .map((id) => colMap.get(id))
+          .filter((c): c is CollectionDiscoverItem => c !== undefined);
+        const results = await Promise.allSettled(
+          toAdd.map((c) =>
+            featuredApi.adminAdd({
+              type: "Collection",
+              displayName: c.name,
+              collectionId: c.id,
+            })
+          )
+        );
+        failed = results.filter((r) => r.status === "rejected").length;
+      }
+      queryClient.invalidateQueries({ queryKey: ["adminFeatured"] });
+      queryClient.invalidateQueries({ queryKey: ["featured"] });
+      setChecked(new Set());
+      if (failed > 0) setAddError(`${failed} item(s) failed to add.`);
+    } finally {
+      setIsAdding(false);
+    }
+  };
+
+  const handleMove = async (orderedItems: AdminFeaturedItemDto[], fromIndex: number, toIndex: number) => {
+    if (toIndex < 0 || toIndex >= orderedItems.length) return;
+    const reordered = [...orderedItems];
+    const [moved] = reordered.splice(fromIndex, 1);
+    reordered.splice(toIndex, 0, moved);
+    const updates = reordered
+      .map((item, newOrder) => ({ item, newOrder }))
+      .filter(({ item, newOrder }) => item.sortOrder !== newOrder);
+    if (updates.length === 0) return;
+    setIsMoving(true);
+    try {
+      await Promise.all(
+        updates.map(({ item, newOrder }) => featuredApi.adminUpdate(item.id, { sortOrder: newOrder }))
+      );
+      queryClient.invalidateQueries({ queryKey: ["adminFeatured"] });
+      queryClient.invalidateQueries({ queryKey: ["featured"] });
+    } finally {
+      setIsMoving(false);
+    }
   };
 
   const handleStartEdit = (item: AdminFeaturedItemDto) => {
     setEditingId(item.id);
     setEditDisplayName(item.displayName);
-    setEditSortOrder(item.sortOrder);
   };
 
   const handleSaveEdit = (id: string) => {
-    updateMutation.mutate({ id, data: { displayName: editDisplayName.trim(), sortOrder: editSortOrder } });
+    updateMutation.mutate({ id, patch: { displayName: editDisplayName.trim() } });
   };
 
   const handleDelete = (item: AdminFeaturedItemDto) => {
@@ -145,15 +244,8 @@ const AdminFeaturedPage = () => {
     }
   };
 
-  const kw1Options = (kw1Data?.keywords ?? []).filter(k => k.name.toLowerCase() !== "other");
-  const kw2Options = (kw2Data?.keywords ?? []).filter(k => k.name.toLowerCase() !== "other");
-  const sortedCategories = [...(categoriesData?.categories ?? [])].sort((a, b) => a.category.localeCompare(b.category));
-  const discoverItems = discoverData?.items ?? [];
-
   if (isLoading) return <div className="p-6 text-gray-600">Loading...</div>;
   if (error) return <div className="p-6 text-red-600">Failed to load featured items.</div>;
-
-  const items = data?.items ?? [];
 
   return (
     <div className="space-y-6">
@@ -164,68 +256,206 @@ const AdminFeaturedPage = () => {
         </p>
       </div>
 
-      {/* Current list */}
-      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-        {items.length === 0 ? (
-          <div className="px-6 py-10 text-center text-gray-500 text-sm">
-            No featured items yet. Add a set or collection below.
+      {/* Tab switcher */}
+      <div className="flex w-fit gap-1 rounded-lg bg-gray-100 p-1">
+        <button
+          type="button"
+          onClick={() => handleTabChange("set")}
+          className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
+            tab === "set"
+              ? "bg-white text-indigo-700 shadow-sm"
+              : "text-gray-600 hover:text-gray-900"
+          }`}
+        >
+          Sets
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTabChange("collection")}
+          className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
+            tab === "collection"
+              ? "bg-white text-amber-700 shadow-sm"
+              : "text-gray-600 hover:text-gray-900"
+          }`}
+        >
+          Collections
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {/* Left: search & add */}
+        <div className="space-y-3">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+            {tab === "set" ? "Add Sets" : "Add Collections"}
+          </h2>
+
+          <input
+            type="search"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setChecked(new Set());
+            }}
+            placeholder={
+              tab === "set" ? "Filter by category or topic..." : "Search collections..."
+            }
+            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+
+          <div className="max-h-80 overflow-y-auto rounded-md border border-gray-200 bg-white">
+            {tab === "set" ? (
+              filteredCombos.length === 0 ? (
+                <p className="px-4 py-8 text-center text-sm text-gray-400">
+                  {taxonomyData ? "No matching sets." : "Loading taxonomy..."}
+                </p>
+              ) : (
+                <ul className="divide-y divide-gray-100">
+                  {filteredCombos.map((combo) => {
+                    const already = featuredSetKeys.has(combo.key);
+                    return (
+                      <li key={combo.key}>
+                        <label
+                          className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 ${
+                            already ? "cursor-not-allowed opacity-40" : ""
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={checked.has(combo.key)}
+                            disabled={already}
+                            onChange={() => toggleCheck(combo.key)}
+                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <span className="flex-1 text-gray-800">{combo.label}</span>
+                          <span className="text-xs text-gray-400">{combo.itemCount}</span>
+                        </label>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )
+            ) : filteredCollections.length === 0 ? (
+              <p className="px-4 py-8 text-center text-sm text-gray-400">
+                {search ? "No matching collections." : "Type to search collections."}
+              </p>
+            ) : (
+              <ul className="divide-y divide-gray-100">
+                {filteredCollections.map((col) => {
+                  const already = featuredCollectionIds.has(col.id);
+                  return (
+                    <li key={col.id}>
+                      <label
+                        className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 ${
+                          already ? "cursor-not-allowed opacity-40" : ""
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={checked.has(col.id)}
+                          disabled={already}
+                          onChange={() => toggleCheck(col.id)}
+                          className="h-4 w-4 rounded border-gray-300 text-amber-500 focus:ring-amber-500"
+                        />
+                        <span className="flex-1 text-gray-800">{col.name}</span>
+                        <span className="text-xs text-gray-400">{col.itemCount} items</span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
-        ) : (
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Type</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Name</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Path / Collection</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Order</th>
-                <th className="px-4 py-3" />
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100 bg-white">
-              {items.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-50">
-                  <td className="whitespace-nowrap px-4 py-3">
-                    <span className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${
-                      item.type === "Set"
-                        ? "bg-indigo-100 text-indigo-700"
-                        : "bg-amber-100 text-amber-700"
-                    }`}>
-                      {item.type}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3">
+
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={handleAddSelected}
+              disabled={selectedCount === 0 || isAdding}
+              className={`rounded-md px-4 py-2 text-sm font-medium text-white disabled:opacity-50 ${
+                tab === "set"
+                  ? "bg-indigo-600 hover:bg-indigo-700"
+                  : "bg-amber-600 hover:bg-amber-700"
+              }`}
+            >
+              {isAdding
+                ? "Adding..."
+                : selectedCount > 0
+                ? `Add ${selectedCount} selected`
+                : "Select items to add"}
+            </button>
+            {selectedCount > 0 && (
+              <button
+                type="button"
+                onClick={() => setChecked(new Set())}
+                className="text-sm text-gray-400 hover:text-gray-600"
+              >
+                Clear selection
+              </button>
+            )}
+          </div>
+          {addError && <p className="text-sm text-red-600">{addError}</p>}
+        </div>
+
+        {/* Right: current featured list */}
+        <div className="space-y-3">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+            Featured {tab === "set" ? "Sets" : "Collections"}
+            <span className="ml-2 font-normal text-gray-400">({currentItems.length})</span>
+          </h2>
+
+          {currentItems.length === 0 ? (
+            <div className="rounded-md border border-dashed border-gray-300 py-10 text-center text-sm text-gray-400">
+              No featured {tab === "set" ? "sets" : "collections"} yet.
+            </div>
+          ) : (
+            <ul className="divide-y divide-gray-100 rounded-md border border-gray-200 bg-white">
+              {currentItems.map((item, index) => (
+                <li key={item.id} className="flex items-center gap-2 px-3 py-2">
+                  <div className="flex flex-col">
+                    <button
+                      type="button"
+                      onClick={() => handleMove(currentItems, index, index - 1)}
+                      disabled={index === 0 || isMoving}
+                      className="rounded p-0.5 text-gray-300 hover:text-gray-600 disabled:invisible"
+                      title="Move up"
+                    >
+                      <ChevronUpIcon className="h-4 w-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleMove(currentItems, index, index + 1)}
+                      disabled={index === currentItems.length - 1 || isMoving}
+                      className="rounded p-0.5 text-gray-300 hover:text-gray-600 disabled:invisible"
+                      title="Move down"
+                    >
+                      <ChevronDownIcon className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  <div className="min-w-0 flex-1">
                     {editingId === item.id ? (
                       <input
                         type="text"
                         value={editDisplayName}
                         onChange={(e) => setEditDisplayName(e.target.value)}
-                        className="w-full rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         autoFocus
+                        className="w-full rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       />
                     ) : (
-                      <span className="text-sm font-medium text-gray-900">{item.displayName}</span>
+                      <p className="truncate text-sm font-medium text-gray-900">{item.displayName}</p>
                     )}
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-500">
-                    {item.type === "Set"
-                      ? [item.categorySlug, item.navKeyword1, item.navKeyword2].filter(Boolean).join(" › ")
-                      : (item.collectionName ?? item.collectionId ?? "—")}
-                  </td>
-                  <td className="px-4 py-3">
+                    <p className="truncate text-xs text-gray-400">
+                      {item.type === "Set"
+                        ? [item.categorySlug, item.navKeyword1, item.navKeyword2]
+                            .filter(Boolean)
+                            .join(" › ")
+                        : (item.collectionName ?? item.collectionId ?? "—")}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-1">
                     {editingId === item.id ? (
-                      <input
-                        type="number"
-                        value={editSortOrder}
-                        onChange={(e) => setEditSortOrder(Number(e.target.value))}
-                        className="w-20 rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      />
-                    ) : (
-                      <span className="text-sm text-gray-600">{item.sortOrder}</span>
-                    )}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-3 text-right">
-                    {editingId === item.id ? (
-                      <div className="flex items-center justify-end gap-1">
+                      <>
                         <button
                           type="button"
                           onClick={() => handleSaveEdit(item.id)}
@@ -243,14 +473,14 @@ const AdminFeaturedPage = () => {
                         >
                           <XMarkIcon className="h-4 w-4" />
                         </button>
-                      </div>
+                      </>
                     ) : (
-                      <div className="flex items-center justify-end gap-1">
+                      <>
                         <button
                           type="button"
                           onClick={() => handleStartEdit(item)}
                           className="rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-indigo-600"
-                          title="Edit"
+                          title="Rename"
                         >
                           <PencilSquareIcon className="h-4 w-4" />
                         </button>
@@ -263,202 +493,15 @@ const AdminFeaturedPage = () => {
                         >
                           <TrashIcon className="h-4 w-4" />
                         </button>
-                      </div>
+                      </>
                     )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
-
-      {/* Add buttons */}
-      {addMode === "none" && (
-        <div className="flex gap-3">
-          <button
-            type="button"
-            onClick={() => setAddMode("set")}
-            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
-          >
-            + Add Set
-          </button>
-          <button
-            type="button"
-            onClick={() => setAddMode("collection")}
-            className="rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
-          >
-            + Add Collection
-          </button>
-        </div>
-      )}
-
-      {/* Add Set form */}
-      {addMode === "set" && (
-        <form onSubmit={handleAddSet} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">Add Featured Set</h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Category</label>
-              <select
-                value={setCategory}
-                onChange={(e) => setSetCategory(e.target.value)}
-                required
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="">Select category</option>
-                {sortedCategories.map((c) => (
-                  <option key={c.id} value={c.category.toLowerCase()}>{c.category}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">L1 Keyword</label>
-              <select
-                value={setKw1}
-                onChange={(e) => setSetKw1(e.target.value)}
-                disabled={!setCategory}
-                required
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                <option value="">Select topic</option>
-                {kw1Options.map((k) => (
-                  <option key={k.name} value={k.name.toLowerCase()}>{k.name}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">L2 Keyword (optional)</label>
-              <select
-                value={setKw2}
-                onChange={(e) => setSetKw2(e.target.value)}
-                disabled={!setKw1}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                <option value="">Any subtopic</option>
-                {kw2Options.map((k) => (
-                  <option key={k.name} value={k.name.toLowerCase()}>{k.name}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Display Name</label>
-              <input
-                type="text"
-                value={setDisplayName}
-                onChange={(e) => setSetDisplayName(e.target.value)}
-                placeholder="e.g. AWS SAA-C03"
-                required
-                maxLength={200}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Sort Order</label>
-              <input
-                type="number"
-                value={setSortOrder}
-                onChange={(e) => setSetSortOrder(Number(e.target.value))}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <button
-              type="submit"
-              disabled={addMutation.isPending || !setCategory || !setKw1 || !setDisplayName.trim()}
-              className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
-            >
-              {addMutation.isPending ? "Adding..." : "Add Set"}
-            </button>
-            <button type="button" onClick={resetForms} className="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Cancel
-            </button>
-          </div>
-          {addMutation.isError && <p className="text-sm text-red-600">Failed to add. Please try again.</p>}
-        </form>
-      )}
-
-      {/* Add Collection form */}
-      {addMode === "collection" && (
-        <form onSubmit={handleAddCollection} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">Add Featured Collection</h2>
-          <div>
-            <label className="mb-1 block text-sm font-medium text-gray-700">Search public collections</label>
-            <input
-              type="search"
-              value={colSearch}
-              onChange={(e) => { setColSearch(e.target.value); setColSelectedId(""); setColSelectedName(""); setColDisplayName(""); }}
-              placeholder="Search by name..."
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
-          {discoverItems.length > 0 && !colSelectedId && (
-            <ul className="divide-y divide-gray-100 rounded-md border border-gray-200 bg-white shadow-sm max-h-60 overflow-y-auto">
-              {discoverItems.map((c) => (
-                <li key={c.id}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setColSelectedId(c.id);
-                      setColSelectedName(c.name);
-                      setColDisplayName(c.name);
-                    }}
-                    className="w-full px-4 py-2 text-left text-sm hover:bg-indigo-50 focus:outline-none"
-                  >
-                    <span className="font-medium text-gray-900">{c.name}</span>
-                    <span className="ml-2 text-gray-400">{c.itemCount} items</span>
-                  </button>
+                  </div>
                 </li>
               ))}
             </ul>
           )}
-          {colSelectedId && (
-            <div className="flex items-center gap-2 rounded-md bg-indigo-50 px-3 py-2 text-sm">
-              <span className="font-medium text-indigo-900">{colSelectedName}</span>
-              <button type="button" onClick={() => { setColSelectedId(""); setColSelectedName(""); setColDisplayName(""); }} className="ml-auto text-indigo-400 hover:text-indigo-600">
-                <XMarkIcon className="h-4 w-4" />
-              </button>
-            </div>
-          )}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Display Name</label>
-              <input
-                type="text"
-                value={colDisplayName}
-                onChange={(e) => setColDisplayName(e.target.value)}
-                placeholder="Leave as collection name or override"
-                required
-                maxLength={200}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Sort Order</label>
-              <input
-                type="number"
-                value={colSortOrder}
-                onChange={(e) => setColSortOrder(Number(e.target.value))}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <button
-              type="submit"
-              disabled={addMutation.isPending || !colSelectedId || !colDisplayName.trim()}
-              className="rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
-            >
-              {addMutation.isPending ? "Adding..." : "Add Collection"}
-            </button>
-            <button type="button" onClick={resetForms} className="rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Cancel
-            </button>
-          </div>
-          {addMutation.isError && <p className="text-sm text-red-600">Failed to add. Please try again.</p>}
-        </form>
-      )}
+        </div>
+      </div>
     </div>
   );
 };

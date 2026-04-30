@@ -1233,7 +1233,7 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 ### AC 10.3 API — Admin
 
 - **AC 10.3.1** [Admin] `GET /admin/featured` returns all featured items with full fields (type, display name, category/keyword path or collection reference, sort order, created at).
-- **AC 10.3.2** [Admin] `POST /admin/featured` adds a new featured item. Requires `type` ("Set" or "Collection"), `displayName` (max 200 chars), and type-specific fields (`categorySlug` + `navKeyword1` for sets; `collectionId` for collections). Returns 201 with `{ id }`.
+- **AC 10.3.2** [Admin] `POST /admin/featured` adds a new featured item. Requires `type` ("Set" or "Collection"), `displayName` (max 200 chars), and type-specific fields (`categorySlug` + `navKeyword1` for sets; `collectionId` for collections). `sortOrder` is optional; if omitted, the item is appended after the highest-ordered item of its type. Returns 201 with `{ id }`. Returns 409 Conflict if the identical set (`categorySlug` + `navKeyword1` + `navKeyword2`) or collection (`collectionId`) is already featured.
 - **AC 10.3.3** [Admin] `PATCH /admin/featured/{id}` updates `displayName` and/or `sortOrder` on an existing item. Returns 204. Returns 404 if not found.
 - **AC 10.3.4** [Admin] `DELETE /admin/featured/{id}` removes a featured item. Returns 204. Returns 404 if not found.
 - **AC 10.3.5** [Anonymous, Authenticated (non-admin)] All `/admin/featured` endpoints return 403 Forbidden.
@@ -1251,10 +1251,11 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 ### AC 10.5 UI — Admin Featured page
 
 - **AC 10.5.1** [Admin] `/admin/featured` is linked from the Admin Dashboard.
-- **AC 10.5.2** [Admin] The page lists all current featured items in a table (type badge, display name, path/collection reference, sort order, edit/remove actions).
-- **AC 10.5.3** [Admin] "Add Set" opens a form: category picker (from public categories), L1 keyword picker (from navigation keywords for that category), L2 keyword picker (optional), display name, sort order. Submitting calls `POST /admin/featured`.
-- **AC 10.5.4** [Admin] "Add Collection" opens a form: free-text search against public collections (via Discover), selection of a collection, optional display name override, sort order. Submitting calls `POST /admin/featured`.
-- **AC 10.5.5** [Admin] Each row has an inline edit action (pencil icon) to update display name and sort order, and a remove action (trash icon) to delete. Changes take effect immediately after save.
+- **AC 10.5.2** [Admin] The page has a tab switcher (Sets | Collections). Each tab shows two panels: an "Add" panel on the left and the current ordered list on the right.
+- **AC 10.5.3** [Admin] The Add panel has a free-text search box. For Sets, it filters all `cat › L1` and `cat › L1 › L2` taxonomy combinations client-side (loaded from `GET /taxonomy`). For Collections, it searches public collections via `GET /collections/discover`. Each result row has a checkbox. Already-featured items are greyed out and their checkboxes are disabled.
+- **AC 10.5.4** [Admin] Checking one or more rows and clicking "Add N selected" bulk-adds them via parallel `POST /admin/featured` calls. Display names are auto-generated from the taxonomy path (e.g. `Cloud Computing › Aws › Saa C03`) or collection name. Items are appended at the bottom of the ordered list (sortOrder auto-assigned by backend).
+- **AC 10.5.5** [Admin] The current list shows items ordered by `sortOrder`. Each row has ↑/↓ buttons to reorder: clicking swaps the item's position with its neighbor and updates `sortOrder` on all affected items via `PATCH`. The first item has no ↑ button; the last has no ↓ button.
+- **AC 10.5.6** [Admin] Each row has a pencil icon for inline rename (display name only) and a trash icon to remove. Changes take effect immediately after save.
 
 ---
 

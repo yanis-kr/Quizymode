@@ -3994,7 +3994,14 @@
             ]
           },
           "sortOrder": {
-            "$ref": "#/components/schemas/System.Int32"
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
           }
         }
       },
@@ -10182,8 +10189,7 @@
           "integer",
           "string"
         ],
-        "format": "int32",
-        "default": 0
+        "format": "int32"
       },
       "System.Int64": {
         "pattern": "^-?(?:0|[1-9]\\d*)$",
