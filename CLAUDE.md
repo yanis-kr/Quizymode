@@ -72,11 +72,12 @@ cd src/Quizymode.Web && npm test -- --run <pattern>
 
 Before considering any task done, always complete **all** of the following:
 
-1. **Update `docs/AC.md`** — add or revise ACs for any behavior, authorization, or user-visible logic that changed.
-2. **Bump `QuizymodeVersion`** in `Directory.Build.props` — PATCH for fixes/polish, MINOR for new features, MAJOR for breaking changes.
-3. **Align `src/Quizymode.Web/package.json`** `version` field to match `QuizymodeVersion`.
-4. **Suggest a commit title** — include a short conventional-commit title in the final response.
-5. **Regenerate OpenAPI** (`verify-openapi.ps1`) if the API surface changed.
+1. **Run pre-push verification** — invoke the `quizymode-prepush` skill if available, or follow `.agent-skills/quizymode-prepush/SKILL.md` before pushing or reporting ready-to-push work.
+2. **Update `docs/AC.md`** — add or revise ACs for any behavior, authorization, or user-visible logic that changed.
+3. **Bump `QuizymodeVersion`** in `Directory.Build.props` — PATCH for fixes/polish, MINOR for new features, MAJOR for breaking changes.
+4. **Align `src/Quizymode.Web/package.json`** `version` field to match `QuizymodeVersion`.
+5. **Suggest a commit title** — include a short conventional-commit title in the final response.
+6. **Regenerate OpenAPI** (`verify-openapi.ps1`) if the API surface changed.
 
 These rules also live in `AGENTS.md` § Change Rules — this section is a checklist summary to prevent omissions.
 
