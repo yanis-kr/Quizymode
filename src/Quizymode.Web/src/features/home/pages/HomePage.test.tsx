@@ -61,10 +61,6 @@ describe("HomePage", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(/categories/i, { selector: "div" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /exams/i })).toHaveAttribute("href", "/categories/exams");
-    expect(screen.getByRole("link", { name: /aws saa-c03/i })).toHaveAttribute(
-      "href",
-      "/quiz/exams?nav=aws,saa-c03"
-    );
     expect(screen.getByRole("link", { name: /try sample collection/i })).toHaveAttribute(
       "href",
       "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/sample+collection"

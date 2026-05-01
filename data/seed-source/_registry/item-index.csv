@@ -3618,6 +3618,12 @@ bde6493c-5a9d-4d43-8fa2-868cc13202e2,humanities,visual-art,painting,Painting is 
 3e7a0da3-b875-49c4-ab2a-8dd713dd968b,humanities,visual-art,sculpture,What makes sculpture different from most painting?,data/seed-source/items/humanities/humanities.visual-art.sculpture.json
 64061a84-d0d3-4bc8-abb7-fc705c73332a,humanities,visual-art,techniques,What does perspective help create in painting?,data/seed-source/items/humanities/humanities.visual-art.techniques.json
 074f29e1-8818-4cb1-b322-30bfbde9d38b,humanities,visual-art,techniques,What is chiaroscuro?,data/seed-source/items/humanities/humanities.visual-art.techniques.json
+da2cf1e7-262c-4a4b-988d-a57fa402b3c6,languages,arabic,core,How is Arabic usually written on a page for Modern,data/seed-source/items/languages/languages.arabic.core.json
+e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2,languages,arabic,core,What does 'شكرا' (shukran) mean?,data/seed-source/items/languages/languages.arabic.core.json
+54924c48-413d-4417-b7a4-e73ab3cfeb71,languages,arabic,core,What does 'لا' (la) often mean?,data/seed-source/items/languages/languages.arabic.core.json
+aece5a88-7dd5-49c7-afb6-45c5121711fc,languages,arabic,core,What does 'ماء' (ma') mean?,data/seed-source/items/languages/languages.arabic.core.json
+55e95ff7-dae9-4d42-8298-c6929fb306e6,languages,arabic,core,What does 'مرحبا' (marhaban) often mean?,data/seed-source/items/languages/languages.arabic.core.json
+d70e8d11-1848-4d5a-a720-388dc1c89d95,languages,arabic,core,What does 'نعم' (na'am) often mean?,data/seed-source/items/languages/languages.arabic.core.json
 85d6a3eb-03be-c924-82cf-1c1631ef1236,languages,bulgarian,core,Choose the Bulgarian word for 'July'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
 ab3856c4-ddf7-e6be-169c-fbea546925eb,languages,bulgarian,core,Choose the Bulgarian word for 'March'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
 c1a54fdd-a6cc-7638-2cc8-b5767adabc94,languages,bulgarian,core,Choose the Bulgarian word for 'November'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
@@ -3978,6 +3984,76 @@ de5473fd-17cc-41ee-abbd-769ec4b969a8,languages,bulgarian,idioms,What does the Bu
 394cfeba-422c-4ed6-8569-afa884381b7c,languages,bulgarian,idioms,What does the Bulgarian idiom '{{bg-BG|Хвърлям пра,data/seed-source/items/languages/languages.bulgarian.idioms.json
 29f36940-0230-477a-8fd4-dd1160faf1cd,languages,bulgarian,idioms,What does the Bulgarian idiom '{{bg-BG|Ходя по тън,data/seed-source/items/languages/languages.bulgarian.idioms.json
 67d8e44a-3935-4f06-a27e-583f742c72eb,languages,bulgarian,idioms,What does the Bulgarian idiom '{{bg-BG|Ябълката не,data/seed-source/items/languages/languages.bulgarian.idioms.json
+4f28fc5d-dbbc-407f-9cef-2f29e0b24458,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+8aab94c1-e26c-41ef-91fa-bc64893fc5d3,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+fb136ab2-6ffc-4a0e-95b1-1efc018efc24,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+667e7a78-9bdb-4647-8227-174fa6d3f2b4,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+b69a808e-7b1f-4c3c-b450-542abb3b3943,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+0b10eff1-bb8c-428a-a2ee-ad7014cc996b,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+6ba5b4e9-ca9b-4160-b6f1-7847be786ed6,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+6d7b9586-1535-464f-9de7-b72338bc8f1e,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+6bc1e678-abc8-4743-8706-f784f8ce4bb6,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d2f4a2b4-33e3-4660-92f7-27e59a9a9084,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+99ce3763-b7dd-49c8-a57f-401b8d2699ad,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+cf93a634-28dd-425b-9c7b-c782bce44662,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+028d865e-b7d6-491f-93d0-a9622e2b68d3,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+5a02c683-ec73-4e99-94d6-4e17d8137d3d,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+1b18d034-c715-4717-a56f-083e0a4a6679,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d5ba8f2f-9f83-453a-93ae-32f9b80328c4,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+f55dfd5f-25e9-4d4a-8b0a-643fc80d6222,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+53c3f642-8ed8-4a9d-80a5-f4219805d27a,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+5b8b6fa3-fdec-42cf-8365-017afe0c7dcf,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+65a7864f-5c95-4767-a1cc-b0717d5a9f16,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+dc7fca29-d1a3-4351-a477-50221ff6bee0,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+cbf7ee29-8cfc-498f-bcf4-0f3da7c45e3f,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+8e837d94-9d30-4700-85e1-4ab270c4ef6b,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+3970b4d3-a581-422c-9dd9-ebbb0b2e06c5,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+ded7c675-d9ce-459d-b03d-585074fa521a,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+6ef36293-4c56-427a-b21d-73f878eceb65,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+3ab4f975-6789-4bb2-9af1-48d37bca50b9,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+e34f99ea-26f6-4b1a-a4ed-9a490279b67b,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+1de563a4-3fe2-4e32-b396-2837bb598551,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+ff4fa497-8e1a-4fd3-965b-9e443a01f371,languages,bulgarian,idioms,What literal image does the Bulgarian idiom '{{bg-,data/seed-source/items/languages/languages.bulgarian.idioms.json
+93ee5193-d144-41db-ae87-abe99c0dc1ff,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+894bcac8-0da7-4892-8b03-6594103f72b3,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+53336162-6a69-4046-841a-c1d81fd08fb6,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+179b6623-79cc-470b-941b-fcc0743f7304,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d861d383-89f4-4964-961e-0f24b5763aed,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d8e12ac7-06fe-4bda-900e-53e4f2e27158,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+989dc081-5292-4d65-a7cb-03b120252956,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+5cded0e6-c5b7-47c9-a146-24a3f295f601,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+0f0f7988-a55f-46f8-94fe-ce880732c975,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+c393b77c-1c4e-4a25-b69d-75b571ff51ca,languages,bulgarian,idioms,Which English idea is closest to the Bulgarian exp,data/seed-source/items/languages/languages.bulgarian.idioms.json
+a581d2e0-8924-4537-983a-148dab69028f,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+12b0ac59-6a30-4c7f-8a02-1ff5526088be,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+51b6709d-30d9-4bd1-b6b8-b4b3575a9817,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+3ab05cb4-d359-4994-90c3-b0c789c30085,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+4844a1cc-3672-4443-b24c-0363cac2b98b,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+aec735a4-fd8a-47ce-918e-6cf3baf7dbe3,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+3166ac30-b398-4b14-9589-f117ae9ebf53,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+1a34525d-99e6-4d0b-8087-0e0380424a73,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+c7d51fe1-d080-4f74-bf14-7f73ffb9529e,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+af7d1086-aa46-42ce-86ed-5b0600340b35,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+de7fc202-eabe-4781-94cf-3b488a1c6f91,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+0fd0152f-b588-4d71-a9e2-f8a7a40a4fbc,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+5434007b-43fe-43b5-a24e-d64bf33ec96a,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+243a8aa4-db11-46e9-9eaa-b6d3e566a514,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d916fecc-8847-47e6-8a58-e7c58ff1963d,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+2928bcec-0c08-47b3-a1b0-ad5d239bbb88,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+cfb41089-0357-4841-97f4-17152cdd898e,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+bcfa2811-213e-4ced-939a-923efd2ef0a2,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+68cb3ff7-3843-4c6b-9682-ae2e9a076b54,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+1dcc849f-b643-40e2-8261-b3de1cc54913,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+346c0df4-1864-4b7e-be03-2d78eadefe16,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+90a6b25c-36b4-49fa-bd3a-5da67b4b8459,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+bd6a045f-0b0a-432a-8415-703120569fe6,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+468047aa-514b-485d-b3c2-d76ce59c0cad,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+f86f3642-9555-47aa-8252-a20960ba5f06,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+d797a108-7403-4140-b7dc-cebfd80ea379,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+e29d091e-b167-4bed-a9c9-23a9581d8fdd,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+98c94971-23f3-42a0-ba74-01d5202f467c,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+bdb4d799-0e27-4c9f-972c-ce8ea320121f,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
+48f184fe-9f42-4eed-89ba-b5bebb92b0ad,languages,bulgarian,idioms,Which everyday situation best fits the Bulgarian i,data/seed-source/items/languages/languages.bulgarian.idioms.json
 9287b8d0-2201-3e3f-68d4-656d6c2d763e,languages,bulgarian,phrases,Choose the correct Bulgarian phrase for 'A round-t,data/seed-source/items/languages/languages.bulgarian.phrases.001.json
 b7cc9fab-041e-836d-1bf0-83922ed0b419,languages,bulgarian,phrases,Choose the correct Bulgarian phrase for 'Can I hav,data/seed-source/items/languages/languages.bulgarian.phrases.001.json
 7e22017d-354b-85e7-629f-1d9cdf45b5ac,languages,bulgarian,phrases,Choose the correct Bulgarian phrase for 'Can I try,data/seed-source/items/languages/languages.bulgarian.phrases.001.json
@@ -4178,6 +4254,12 @@ f542fe71-1f47-e84a-7a6c-d41fc079cd77,languages,bulgarian,phrases,Which Bulgarian
 777dad3b-cae8-b99d-5f4e-31a0ab1ec38d,languages,bulgarian,phrases,Which Bulgarian phrase means 'Where is the classro,data/seed-source/items/languages/languages.bulgarian.phrases.002.json
 92242afd-e304-6a2b-8621-8b0e4c1ba5ee,languages,bulgarian,phrases,Which Bulgarian phrase means 'Where is the museum?,data/seed-source/items/languages/languages.bulgarian.phrases.001.json
 10b885f6-8882-ca54-6f75-088067575412,languages,bulgarian,phrases,"Which Bulgarian phrase means 'Without sugar, pleas",data/seed-source/items/languages/languages.bulgarian.phrases.001.json
+a526cc0c-ef20-4b0c-86eb-80d068e444b8,languages,chinese,core,What does '你好' (nǐ hǎo) mean?,data/seed-source/items/languages/languages.chinese.core.json
+f92fde2e-e99f-4a37-8378-346f35a3356c,languages,chinese,core,What does '是' (shì) often mean in a simple 'A 是 B',data/seed-source/items/languages/languages.chinese.core.json
+6aa8cd14-ebc3-486f-a9e8-1b8b0b3ce978,languages,chinese,core,What does '水' (shuǐ) mean?,data/seed-source/items/languages/languages.chinese.core.json
+96680d43-1589-4954-9604-65fd6938209b,languages,chinese,core,What does '谢谢' (xièxie) mean?,data/seed-source/items/languages/languages.chinese.core.json
+6590fdb0-5a3f-4689-be24-91bd576a4b9d,languages,chinese,core,What is a common neutral measure word for many eve,data/seed-source/items/languages/languages.chinese.core.json
+a3999239-02a7-4ebb-b851-ec02b315f14e,languages,chinese,core,Why do tones matter in Mandarin for words like 'mā,data/seed-source/items/languages/languages.chinese.core.json
 13e2a859-0e69-4d41-8856-a4d66569447c,languages,english,conversation,"If you did not hear a question, what is a polite f",data/seed-source/items/languages/languages.english.conversation.json
 56913daa-fa00-491c-bba6-b6bfa50593c9,languages,english,conversation,"If you need a moment to think, which filler is neu",data/seed-source/items/languages/languages.english.conversation.json
 2bab5d77-035b-4073-81d3-3c1a76168e48,languages,english,conversation,"In a short phone call, what is a clear opening?",data/seed-source/items/languages/languages.english.conversation.json
@@ -4251,24 +4333,42 @@ d2e92382-adaf-475a-a2d8-a021930d7a30,languages,english,grammar,"You want to writ
 31fe32ad-369d-4de8-a378-504e37182ca9,languages,english,idioms,"""You reap what you sow"" connects results to what e",data/seed-source/items/languages/languages.english.idioms.json
 c1143583-10c0-40c8-9b0a-565ac68ef6cf,languages,english,idioms,"If a friend says ""Let's hang out this weekend,"" wh",data/seed-source/items/languages/languages.english.idioms.json
 0769fdbc-1f77-48af-84e2-b99c8c9e0af3,languages,english,idioms,"If a person says ""No worries"" to calm you, what is",data/seed-source/items/languages/languages.english.idioms.json
-0788ba00-0ebc-47ce-be49-df17e0ca0df8,languages,spanish,idioms,"If someone ""está en las nubes,"" what is the usual ",data/seed-source/items/languages/languages.spanish.idioms.json
 5fccacce-d77f-42d7-9782-d2ef1581237f,languages,english,idioms,"If someone says ""I'm in,"" what are they often expr",data/seed-source/items/languages/languages.english.idioms.json
 7e6767d6-8b7d-4061-840e-74779bded7cd,languages,english,idioms,"If someone says ""Look before you leap,"" what are t",data/seed-source/items/languages/languages.english.idioms.json
-12ddeb28-d957-4fc3-9ead-17a0a9a472e4,languages,french,idioms,"If something ""coûte les yeux de la tête,"" what doe",data/seed-source/items/languages/languages.french.idioms.json
+dbe4872b-4ec8-4406-b54c-ed2ce8b50858,languages,english,idioms,If someone says something is 'barking up the wrong,data/seed-source/items/languages/languages.english.idioms.json
+f9ccf857-3a69-4b09-82b6-ca7a7e6a77de,languages,english,idioms,If someone says something is 'big fish in a small ,data/seed-source/items/languages/languages.english.idioms.json
+e3fc8350-254e-459b-9ba1-f3679e34b483,languages,english,idioms,"If someone says something is 'call it a day', what",data/seed-source/items/languages/languages.english.idioms.json
+25e34fbe-2020-4ad1-91f0-96253cef2557,languages,english,idioms,If someone says something is 'cry over spilled mil,data/seed-source/items/languages/languages.english.idioms.json
+1070fb84-f3d5-4dfa-ab28-85955d5d1bce,languages,english,idioms,"If someone says something is 'hang in there', what",data/seed-source/items/languages/languages.english.idioms.json
+54fe4c8f-a94c-4481-909a-a5d3eda8a450,languages,english,idioms,"If someone says something is 'hold your horses', w",data/seed-source/items/languages/languages.english.idioms.json
+66edbfab-6e72-4e59-b771-141a94aeefbc,languages,english,idioms,"If someone says something is 'keep an eye on', wha",data/seed-source/items/languages/languages.english.idioms.json
+1a5f2e71-457b-4177-b5e1-0aec2ac61f46,languages,english,idioms,If someone says something is 'let the cat out of t,data/seed-source/items/languages/languages.english.idioms.json
+9d650a05-96fe-49b8-87c2-4552ce201d2a,languages,english,idioms,"If someone says something is 'miss the boat', what",data/seed-source/items/languages/languages.english.idioms.json
+b0e90860-9fe8-4bdf-b5b4-504769ff18c9,languages,english,idioms,"If someone says something is 'no pain, no gain', w",data/seed-source/items/languages/languages.english.idioms.json
+9c012459-7785-47a9-8d99-73e958585bb2,languages,english,idioms,"If someone says something is 'out of the blue', wh",data/seed-source/items/languages/languages.english.idioms.json
+e3b26b46-3a7a-4d72-a22b-80415f1b4a88,languages,english,idioms,"If someone says something is 'pull someone's leg',",data/seed-source/items/languages/languages.english.idioms.json
+c2022719-1857-439a-bd97-39d90946517d,languages,english,idioms,If someone says something is 'put all your eggs in,data/seed-source/items/languages/languages.english.idioms.json
+245d191e-6d46-48e1-a10c-e276565a9ae9,languages,english,idioms,"If someone says something is 'sit on the fence', w",data/seed-source/items/languages/languages.english.idioms.json
+8597ed72-f083-4f00-bf0a-b8f182c25ccc,languages,english,idioms,If someone says something is 'skeletons in the clo,data/seed-source/items/languages/languages.english.idioms.json
+37e9d8da-57a0-4076-a2f5-4b68d7678606,languages,english,idioms,"If someone says something is 'smooth sailing', wha",data/seed-source/items/languages/languages.english.idioms.json
+188562eb-d110-48fc-83bc-2becf3cf0fd8,languages,english,idioms,"If someone says something is 'spill the beans', wh",data/seed-source/items/languages/languages.english.idioms.json
+47036b91-71ec-45df-8c81-235493ecf5c7,languages,english,idioms,If someone says something is 'steal someone's thun,data/seed-source/items/languages/languages.english.idioms.json
+fa483aaa-8308-4a3e-bb89-0ad188e23e9e,languages,english,idioms,If someone says something is 'take it with a grain,data/seed-source/items/languages/languages.english.idioms.json
+157c27bf-736f-4e1e-8e2b-c1241d13e9a5,languages,english,idioms,If someone says something is 'the ball is in your ,data/seed-source/items/languages/languages.english.idioms.json
+d270e9f1-c355-4681-8b0b-87270481f102,languages,english,idioms,If someone says something is 'the best of both wor,data/seed-source/items/languages/languages.english.idioms.json
+42e8195a-d172-416e-b1f6-e657eb486680,languages,english,idioms,If someone says something is 'the writing on the w,data/seed-source/items/languages/languages.english.idioms.json
+b32b2ca6-14e1-4193-b67f-63e81cb339c2,languages,english,idioms,"If someone says something is 'throw in the towel',",data/seed-source/items/languages/languages.english.idioms.json
+8fe93e49-c1cc-4d41-a813-afa1c248e6bd,languages,english,idioms,If someone says something is 'water under the brid,data/seed-source/items/languages/languages.english.idioms.json
+d2251c64-5670-4bab-8e67-711351740065,languages,english,idioms,If someone says something is 'you can say that aga,data/seed-source/items/languages/languages.english.idioms.json
 c4f45bfd-7a90-45ba-8bb8-2a5a600e5cee,languages,english,idioms,"If something happens once in a blue moon, how ofte",data/seed-source/items/languages/languages.english.idioms.json
 1c33dd6e-57d0-4b45-936c-42e6f0c63662,languages,english,idioms,"If something is a piece of cake, what does that us",data/seed-source/items/languages/languages.english.idioms.json
 b1407449-778d-4fc6-96cb-27fe41817a92,languages,english,idioms,"If the ball is in your court, who must act next?",data/seed-source/items/languages/languages.english.idioms.json
-93dd2e3a-2c92-4dfc-9fe9-fca6f94a5281,languages,french,idioms,"If you ""mettez les pieds dans le plat,"" what did y",data/seed-source/items/languages/languages.french.idioms.json
 7a1b134d-2549-4138-becd-c67c0769e348,languages,english,idioms,"If you ""spill the beans,"" what did you do?",data/seed-source/items/languages/languages.english.idioms.json
 04efab10-edc0-46c2-8a6f-ff554885f753,languages,english,idioms,"If you are under the weather, how do you most like",data/seed-source/items/languages/languages.english.idioms.json
 474dfcce-390c-44af-8ee4-9b10798d4b3a,languages,english,idioms,"If you break the ice at a meeting, what did you he",data/seed-source/items/languages/languages.english.idioms.json
 f198947e-aa5c-43b4-b9a6-c748a83fd013,languages,english,idioms,"If you hit the nail on the head, what did you do?",data/seed-source/items/languages/languages.english.idioms.json
-033dba0b-f69c-49fa-acaf-6c85cd48f75e,languages,french,idioms,"In French, what does ""avoir un coup de foudre"" usu",data/seed-source/items/languages/languages.french.idioms.json
 920f22ad-bd73-4e25-85d4-3843dbcd9ef1,languages,english,idioms,"In casual English, if someone says an idea sounds ",data/seed-source/items/languages/languages.english.idioms.json
 c752ca41-93b7-4ce0-a868-929c107811c9,languages,english,idioms,"In casual English, what does it mean when somethin",data/seed-source/items/languages/languages.english.idioms.json
-b7aaef25-9881-4750-a75d-00f65c3c447a,languages,french,idioms,"In casual French, what does ""poser un lapin à quel",data/seed-source/items/languages/languages.french.idioms.json
-ccd54e61-474a-48c5-9459-5154c3f91f1a,languages,spanish,idioms,"The Spanish expression ""No hay mal que por bien no",data/seed-source/items/languages/languages.spanish.idioms.json
-0e9d0b22-219e-44cc-bf9e-695e01dde4e6,languages,spanish,idioms,"The Spanish idiom ""Ser pan comido"" matches which E",data/seed-source/items/languages/languages.spanish.idioms.json
 5e66944b-97e8-43df-88c4-31237e066de2,languages,english,idioms,"The proverb ""Don't put all your eggs in one basket",data/seed-source/items/languages/languages.english.idioms.json
 bec5d9a5-891e-4755-83a9-7e363fc0eb2e,languages,english,idioms,"The proverb ""Honesty is the best policy"" praises w",data/seed-source/items/languages/languages.english.idioms.json
 f9ef0c7d-7f99-40f1-9678-17213e2f4f9a,languages,english,idioms,"The proverb ""Practice makes perfect"" supports whic",data/seed-source/items/languages/languages.english.idioms.json
@@ -4276,13 +4376,58 @@ eff8398b-973a-4549-87b6-b56c400081d9,languages,english,idioms,"The saying ""Bett
 e02b4cfd-5f0d-4ea4-87e1-d59c2fad6ba3,languages,english,idioms,"The saying ""Rome wasn't built in a day"" is used wh",data/seed-source/items/languages/languages.english.idioms.json
 61216b7c-c02a-4b88-bbef-efb3975f00f1,languages,english,idioms,"The saying ""The early bird catches the worm"" is mo",data/seed-source/items/languages/languages.english.idioms.json
 ad5baaee-899a-43ba-a68e-501331f54860,languages,english,idioms,"What does ""Actions speak louder than words"" ask yo",data/seed-source/items/languages/languages.english.idioms.json
-5d55bfda-2c4a-4a93-a1db-843cd4190c58,languages,spanish,idioms,"What does ""Costar un ojo de la cara"" usually expre",data/seed-source/items/languages/languages.spanish.idioms.json
-399247d3-4a25-49ed-bdad-dce74358dd8c,languages,spanish,idioms,"What does ""Dar en el clavo"" mean in everyday Spani",data/seed-source/items/languages/languages.spanish.idioms.json
-8bd70c5c-c9de-4d17-ae35-d4510ada88d2,languages,french,idioms,"What does ""avoir la gueule de bois"" refer to?",data/seed-source/items/languages/languages.french.idioms.json
-4a69d28b-e707-47b8-8f6e-0d125351f404,languages,spanish,idioms,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.spanish.idioms.json
+3a0fa466-0cac-4eda-b592-974f66ec10a2,languages,english,idioms,What does the English idiom 'a blessing in disguis,data/seed-source/items/languages/languages.english.idioms.json
+67e7d24e-e049-419f-a2d4-53b426543ae0,languages,english,idioms,What does the English idiom 'a wild goose chase' u,data/seed-source/items/languages/languages.english.idioms.json
+8a3d72f8-a5e9-4fc2-9e4d-bcd53379f291,languages,english,idioms,What does the English idiom 'add insult to injury',data/seed-source/items/languages/languages.english.idioms.json
+1b7f4c38-3360-4646-a6e8-ca4b996127a8,languages,english,idioms,What does the English idiom 'bend over backward' u,data/seed-source/items/languages/languages.english.idioms.json
+72c63653-ada6-47e4-a570-2d4ed513f072,languages,english,idioms,What does the English idiom 'cost an arm and a leg,data/seed-source/items/languages/languages.english.idioms.json
+b8f22132-724d-48bb-b72a-fe909b7237c8,languages,english,idioms,What does the English idiom 'cut corners' usually ,data/seed-source/items/languages/languages.english.idioms.json
+9a8ec53e-47b5-4c41-a469-e51ca7708bfa,languages,english,idioms,What does the English idiom 'face the music' usual,data/seed-source/items/languages/languages.english.idioms.json
+16875a81-888f-485f-a3b0-5cddd8527175,languages,english,idioms,What does the English idiom 'fish out of water' us,data/seed-source/items/languages/languages.english.idioms.json
+91341ba0-cffd-4698-b4bb-74ec56375315,languages,english,idioms,What does the English idiom 'get out of hand' usua,data/seed-source/items/languages/languages.english.idioms.json
+1a8ee874-e371-4a96-873a-b17023bcfdac,languages,english,idioms,What does the English idiom 'hit the nail on the h,data/seed-source/items/languages/languages.english.idioms.json
+05707ceb-4341-4046-9bed-c546a9c16fd1,languages,english,idioms,What does the English idiom 'hit the sack' usually,data/seed-source/items/languages/languages.english.idioms.json
+0bfcde52-f3c2-4d8f-800a-8ed8627b6d3b,languages,english,idioms,What does the English idiom 'in hot water' usually,data/seed-source/items/languages/languages.english.idioms.json
+ddce5831-0daf-45d1-9536-7f8e3e723749,languages,english,idioms,What does the English idiom 'in the same boat' usu,data/seed-source/items/languages/languages.english.idioms.json
+08de06d1-e96c-4695-b1a0-5ad6c1472d0f,languages,english,idioms,What does the English idiom 'leave no stone unturn,data/seed-source/items/languages/languages.english.idioms.json
+add60b9e-ce5e-423b-a788-d906fca34eb2,languages,english,idioms,What does the English idiom 'make a mountain out o,data/seed-source/items/languages/languages.english.idioms.json
+ba1cf525-c6e5-40eb-96d4-a1485c98a83a,languages,english,idioms,What does the English idiom 'not my cup of tea' us,data/seed-source/items/languages/languages.english.idioms.json
+4211935d-4e84-45e3-bba5-e21b771a914c,languages,english,idioms,What does the English idiom 'pass with flying colo,data/seed-source/items/languages/languages.english.idioms.json
+f9adcfb1-dc63-4aba-817b-a8f9b90877f3,languages,english,idioms,What does the English idiom 'put something on the ,data/seed-source/items/languages/languages.english.idioms.json
+5334ed30-9176-49d2-b456-c981b7c4c346,languages,english,idioms,What does the English idiom 'read between the line,data/seed-source/items/languages/languages.english.idioms.json
+0e68ad7a-c876-4b95-8b11-2e546e6829d9,languages,english,idioms,What does the English idiom 'snowed under' usually,data/seed-source/items/languages/languages.english.idioms.json
+c5ab09d6-b33e-46d9-a51e-cd351e8918aa,languages,english,idioms,"What does the English idiom 'so far, so good' usua",data/seed-source/items/languages/languages.english.idioms.json
+02247e73-8e70-4639-b016-334b6ca936f1,languages,english,idioms,What does the English idiom 'the last straw' usual,data/seed-source/items/languages/languages.english.idioms.json
+951d6c69-2f50-4fa7-aa8d-729208502ec8,languages,english,idioms,What does the English idiom 'twist someone's arm' ,data/seed-source/items/languages/languages.english.idioms.json
+9e8d5480-7212-4840-baa6-e430480798ae,languages,english,idioms,What does the English idiom 'when pigs fly' usuall,data/seed-source/items/languages/languages.english.idioms.json
+45042332-4d9b-4be9-9729-e6a8b80d1df4,languages,english,idioms,What does the English idiom 'zip your lip' usually,data/seed-source/items/languages/languages.english.idioms.json
 23e2a1fc-8024-4717-935e-3ace496da249,languages,english,idioms,"When English speakers say ""You can't judge a book ",data/seed-source/items/languages/languages.english.idioms.json
-ab81d1f3-f16f-4b48-92ac-87be23ce000b,languages,french,idioms,"When French speakers say ""C'est la vie,"" what tone",data/seed-source/items/languages/languages.french.idioms.json
 1e778fbe-d086-4f54-933f-6b5ced1e2504,languages,english,idioms,"When someone says ""I'm beat"" after a long day, wha",data/seed-source/items/languages/languages.english.idioms.json
+8fd0be1f-a0a5-4494-835e-9f0218b0ce45,languages,english,idioms,Which meaning best matches the idiom 'a penny for ,data/seed-source/items/languages/languages.english.idioms.json
+4b436942-a0cc-4e00-a0f8-53b355938043,languages,english,idioms,Which meaning best matches the idiom 'back to squa,data/seed-source/items/languages/languages.english.idioms.json
+220c9268-4054-437a-ae20-49df18298a27,languages,english,idioms,Which meaning best matches the idiom 'beat around ,data/seed-source/items/languages/languages.english.idioms.json
+9676d17b-2bc1-4a15-9d50-f02c423fbabc,languages,english,idioms,Which meaning best matches the idiom 'bite the bul,data/seed-source/items/languages/languages.english.idioms.json
+d9e2b72c-be86-499c-b91f-62bca1083c8f,languages,english,idioms,Which meaning best matches the idiom 'break a leg',data/seed-source/items/languages/languages.english.idioms.json
+f3e9d988-60dd-4b1f-b760-45160f4f2696,languages,english,idioms,Which meaning best matches the idiom 'burn the mid,data/seed-source/items/languages/languages.english.idioms.json
+1849662c-457d-4ee7-b568-8dfe74d93c19,languages,english,idioms,Which meaning best matches the idiom 'by the skin ,data/seed-source/items/languages/languages.english.idioms.json
+8737b3b4-0e34-4960-8f8f-06a1569e00e2,languages,english,idioms,Which meaning best matches the idiom 'down to the ,data/seed-source/items/languages/languages.english.idioms.json
+65115837-2c32-46ea-be90-5983ed5834bc,languages,english,idioms,Which meaning best matches the idiom 'full of bean,data/seed-source/items/languages/languages.english.idioms.json
+0f7a6f32-c5f0-40cc-9652-b3f2aa8c6f50,languages,english,idioms,Which meaning best matches the idiom 'get cold fee,data/seed-source/items/languages/languages.english.idioms.json
+6f5c866c-4f29-43cf-9ef6-0afc69b72dbf,languages,english,idioms,Which meaning best matches the idiom 'get your duc,data/seed-source/items/languages/languages.english.idioms.json
+141be86f-c6ea-4314-b3ea-0095d9f122c5,languages,english,idioms,Which meaning best matches the idiom 'give someone,data/seed-source/items/languages/languages.english.idioms.json
+ca115c44-6340-4110-8508-f6f0eac84910,languages,english,idioms,Which meaning best matches the idiom 'go the extra,data/seed-source/items/languages/languages.english.idioms.json
+023ed3ee-5331-476b-af4f-17e4e1d57c32,languages,english,idioms,Which meaning best matches the idiom 'jump the gun,data/seed-source/items/languages/languages.english.idioms.json
+380e7458-cc16-4cf3-b234-1439ba150061,languages,english,idioms,Which meaning best matches the idiom 'loose cannon,data/seed-source/items/languages/languages.english.idioms.json
+e14a8bb1-41a4-400e-85f4-6167aec370b1,languages,english,idioms,Which meaning best matches the idiom 'make a long ,data/seed-source/items/languages/languages.english.idioms.json
+91fd1fa8-ff07-41f2-ac48-a2a46b265d1c,languages,english,idioms,Which meaning best matches the idiom 'on cloud nin,data/seed-source/items/languages/languages.english.idioms.json
+b1dc842f-ffa7-4391-ada3-51a0e0aa457d,languages,english,idioms,Which meaning best matches the idiom 'on thin ice',data/seed-source/items/languages/languages.english.idioms.json
+cffd7820-0ce6-44c2-a40c-daa32a79dfc6,languages,english,idioms,Which meaning best matches the idiom 'see eye to e,data/seed-source/items/languages/languages.english.idioms.json
+03e96b90-29ba-4268-9e15-5da5b74bc244,languages,english,idioms,Which meaning best matches the idiom 'take a rain ,data/seed-source/items/languages/languages.english.idioms.json
+12553ea2-ed58-4cc7-8c70-4ccbd9bcf6f9,languages,english,idioms,Which meaning best matches the idiom 'the elephant,data/seed-source/items/languages/languages.english.idioms.json
+574222f2-1119-4696-a863-4036ac783494,languages,english,idioms,Which meaning best matches the idiom 'the tip of t,data/seed-source/items/languages/languages.english.idioms.json
+e389262c-d712-4e31-a15c-7c457e41f780,languages,english,idioms,Which meaning best matches the idiom 'through thic,data/seed-source/items/languages/languages.english.idioms.json
+8d569426-4a1e-4b7e-9129-b75bf22bb07d,languages,english,idioms,Which meaning best matches the idiom 'under your n,data/seed-source/items/languages/languages.english.idioms.json
+a293b50b-87c8-4f3e-8734-7a00eb3da2ca,languages,english,idioms,Which meaning best matches the idiom 'up in the ai,data/seed-source/items/languages/languages.english.idioms.json
 8f0954f9-6cfd-41cb-894a-b2ac0611e45c,languages,english,listening,"If a speaker says ""Could you..."", what kind of fun",data/seed-source/items/languages/languages.english.listening.json
 41d3b8b1-86bc-471e-b0f3-7e814224e9aa,languages,english,listening,"If audio gives a phone number, what kind of listen",data/seed-source/items/languages/languages.english.listening.json
 98bcc298-36cd-40ac-930d-c33ff4802999,languages,english,listening,What helps listeners follow a longer talk?,data/seed-source/items/languages/languages.english.listening.json
@@ -4740,6 +4885,106 @@ e60e85e5-8fbb-4bae-b694-988d9958592b,languages,french,grammar,"You want to say "
 ec6892c2-3d41-4455-af8c-5901c87dcade,languages,french,grammar,"You want to say ""this friend"" in French before a m",data/seed-source/items/languages/languages.french.grammar.json
 0d241aa6-2505-4f44-9a0c-6d57c26ca58a,languages,french,grammar,"You want to say both ""there is"" and ""there are"" in",data/seed-source/items/languages/languages.french.grammar.json
 3740c609-242e-4e41-a6cf-6fe517b33f0d,languages,french,grammar,"You want to talk about ""some books"" in French. Whi",data/seed-source/items/languages/languages.french.grammar.json
+12ddeb28-d957-4fc3-9ead-17a0a9a472e4,languages,french,idioms,"If something ""coûte les yeux de la tête,"" what doe",data/seed-source/items/languages/languages.french.idioms.json
+93dd2e3a-2c92-4dfc-9fe9-fca6f94a5281,languages,french,idioms,"If you ""mettez les pieds dans le plat,"" what did y",data/seed-source/items/languages/languages.french.idioms.json
+033dba0b-f69c-49fa-acaf-6c85cd48f75e,languages,french,idioms,"In French, what does ""avoir un coup de foudre"" usu",data/seed-source/items/languages/languages.french.idioms.json
+b7aaef25-9881-4750-a75d-00f65c3c447a,languages,french,idioms,"In casual French, what does ""poser un lapin à quel",data/seed-source/items/languages/languages.french.idioms.json
+67bf2f09-bc97-4c84-a10b-bec7d04f7acb,languages,french,idioms,"In everyday French, what idea does 'avoir d'autres",data/seed-source/items/languages/languages.french.idioms.json
+aa075acf-6602-4d5f-a8d3-28dda2ab4d21,languages,french,idioms,"In everyday French, what idea does 'avoir la frite",data/seed-source/items/languages/languages.french.idioms.json
+50c1af05-75c2-47a5-8c47-c261db51e4d6,languages,french,idioms,"In everyday French, what idea does 'avoir un poil ",data/seed-source/items/languages/languages.french.idioms.json
+92aa525e-3e47-4bc9-90b0-d88334872a29,languages,french,idioms,"In everyday French, what idea does 'chercher midi ",data/seed-source/items/languages/languages.french.idioms.json
+24646925-44dc-4c4a-90c5-81752c37377a,languages,french,idioms,"In everyday French, what idea does 'faire la grass",data/seed-source/items/languages/languages.french.idioms.json
+900faaf9-b510-42c9-b5ee-09b6c38d6549,languages,french,idioms,"In everyday French, what idea does 'faire la tête'",data/seed-source/items/languages/languages.french.idioms.json
+0d26d5c2-cb82-495d-aa86-56c632609454,languages,french,idioms,"In everyday French, what idea does 'filer à l'angl",data/seed-source/items/languages/languages.french.idioms.json
+2c8acd2b-05b9-4e41-83ea-935d3a6f661e,languages,french,idioms,"In everyday French, what idea does 'garder une poi",data/seed-source/items/languages/languages.french.idioms.json
+898bd1f1-7e9e-4c39-a27b-a6e8f9d4461e,languages,french,idioms,"In everyday French, what idea does 'mettre de l'ea",data/seed-source/items/languages/languages.french.idioms.json
+08134b5c-3526-4b5b-bf7b-0b66ed97f934,languages,french,idioms,"In everyday French, what idea does 'mettre les bou",data/seed-source/items/languages/languages.french.idioms.json
+8c0c6f32-5eb9-43bb-b148-aed3eeba9e72,languages,french,idioms,"In everyday French, what idea does 'noyer le poiss",data/seed-source/items/languages/languages.french.idioms.json
+e911f8d1-8c25-4f2f-bd39-543170000b52,languages,french,idioms,"In everyday French, what idea does 'prendre ses ja",data/seed-source/items/languages/languages.french.idioms.json
+0d257e49-4930-4d69-9a51-605a8f9585aa,languages,french,idioms,"In everyday French, what idea does 'pédaler dans l",data/seed-source/items/languages/languages.french.idioms.json
+27d8a5f9-d15e-4638-bebc-b4a45a622c14,languages,french,idioms,"In everyday French, what idea does 'remettre les p",data/seed-source/items/languages/languages.french.idioms.json
+82fa99d4-f9e5-4fcf-8267-526f8f39ffa0,languages,french,idioms,"In everyday French, what idea does 'se jeter dans ",data/seed-source/items/languages/languages.french.idioms.json
+c199db96-860e-49ea-9414-41606415223b,languages,french,idioms,"In everyday French, what idea does 'tenir la chand",data/seed-source/items/languages/languages.french.idioms.json
+5fce8c58-5711-4c98-b338-06627ca6559d,languages,french,idioms,"In everyday French, what idea does 'tomber à l'eau",data/seed-source/items/languages/languages.french.idioms.json
+9d77f058-5d51-415e-bf94-a3d361e631ed,languages,french,idioms,"In everyday French, what idea does 'tourner autour",data/seed-source/items/languages/languages.french.idioms.json
+b93c67b9-5771-4d2b-a86a-cd4d82ea6b26,languages,french,idioms,"In everyday French, what idea does 'être au bout d",data/seed-source/items/languages/languages.french.idioms.json
+fa2fdf9c-b836-48f0-9fda-6f2b2a744940,languages,french,idioms,"In everyday French, what idea does 'être lessivé' ",data/seed-source/items/languages/languages.french.idioms.json
+8bd70c5c-c9de-4d17-ae35-d4510ada88d2,languages,french,idioms,"What does ""avoir la gueule de bois"" refer to?",data/seed-source/items/languages/languages.french.idioms.json
+6b5d82df-80dc-4bce-9354-f57515127a17,languages,french,idioms,What does the French idiom 'appuyer sur le champig,data/seed-source/items/languages/languages.french.idioms.json
+327dd0de-51b2-48cf-a7f6-ad5b10111abb,languages,french,idioms,What does the French idiom 'avoir la main verte' m,data/seed-source/items/languages/languages.french.idioms.json
+3e22b690-db72-45e9-b962-5d7aa52b3c7d,languages,french,idioms,What does the French idiom 'avoir le cafard' most ,data/seed-source/items/languages/languages.french.idioms.json
+e1e92fa8-2b04-4ede-949a-935c119c6543,languages,french,idioms,What does the French idiom 'avoir une faim de loup,data/seed-source/items/languages/languages.french.idioms.json
+56c4b7b3-7c93-459f-9807-4acdad5012dc,languages,french,idioms,What does the French idiom 'casser du sucre sur le,data/seed-source/items/languages/languages.french.idioms.json
+7628a5b7-40f4-4ce6-9a52-2180243417e8,languages,french,idioms,What does the French idiom 'coûter un bras' most n,data/seed-source/items/languages/languages.french.idioms.json
+e3869c65-a6a0-435b-a1a7-59d3ab64585d,languages,french,idioms,What does the French idiom 'en faire tout un froma,data/seed-source/items/languages/languages.french.idioms.json
+e5ce62fc-e362-40dd-a979-490208265439,languages,french,idioms,What does the French idiom 'faire d'une pierre deu,data/seed-source/items/languages/languages.french.idioms.json
+8f58622a-e2e0-410e-adc3-ab27db40605e,languages,french,idioms,What does the French idiom 'garder la tête froide',data/seed-source/items/languages/languages.french.idioms.json
+b2a4f85b-dddd-4ef3-9e74-e8c50219c458,languages,french,idioms,What does the French idiom 'jeter de l'huile sur l,data/seed-source/items/languages/languages.french.idioms.json
+2a574007-2a5a-4bc0-a28c-602c302e9343,languages,french,idioms,What does the French idiom 'jeter l'éponge' most n,data/seed-source/items/languages/languages.french.idioms.json
+e938c84b-2c78-44bd-a093-3d338c1520fa,languages,french,idioms,What does the French idiom 'mettre son grain de se,data/seed-source/items/languages/languages.french.idioms.json
+84d6545d-bec2-4b81-9ce0-5b0e1d782343,languages,french,idioms,What does the French idiom 'ne pas être dans son a,data/seed-source/items/languages/languages.french.idioms.json
+952b9e48-2c2c-468e-a9bd-e851ba7495e0,languages,french,idioms,What does the French idiom 'passer une nuit blanch,data/seed-source/items/languages/languages.french.idioms.json
+463e111d-84de-43a0-b66d-0378789db2e3,languages,french,idioms,What does the French idiom 'prendre la poudre d'es,data/seed-source/items/languages/languages.french.idioms.json
+96fc01eb-235d-4b2b-8fb4-f015b57d1cf1,languages,french,idioms,What does the French idiom 'raconter des salades' ,data/seed-source/items/languages/languages.french.idioms.json
+b881922f-56f1-4b63-9faa-4781b3b5858d,languages,french,idioms,What does the French idiom 'se creuser la tête' mo,data/seed-source/items/languages/languages.french.idioms.json
+ff5d083f-c2bb-4d00-b158-1eec71b7b18a,languages,french,idioms,What does the French idiom 'se mettre le doigt dan,data/seed-source/items/languages/languages.french.idioms.json
+c68ee450-62a4-473d-85c4-3d97035db088,languages,french,idioms,What does the French idiom 'tirer les vers du nez',data/seed-source/items/languages/languages.french.idioms.json
+e4f6bf80-c6a3-4a13-b48b-a6a92445b649,languages,french,idioms,What does the French idiom 'être serrés comme des ,data/seed-source/items/languages/languages.french.idioms.json
+ab81d1f3-f16f-4b48-92ac-87be23ce000b,languages,french,idioms,"When French speakers say ""C'est la vie,"" what tone",data/seed-source/items/languages/languages.french.idioms.json
+35f286eb-bbe8-4a88-a088-33e6ce6dacbf,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+b16d9fd1-a5ce-4d62-9883-2c09bad55a15,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+fa1a0264-28dd-498a-9fec-270a8b17b8dd,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+28f7cf6b-e26d-42cb-8c00-6085c593f032,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+1f4468be-34e2-4f45-8c79-4ecab7fb557c,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+9ed7a2e4-2861-4de4-a0b5-3ff2b04ba47e,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+77a36f34-732e-4bc5-9318-70a208789b67,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+5c0bc06c-b42b-43d7-b301-f6ce8704f033,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+aac304ba-3120-45b7-88d6-d8520360c3d1,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+c59d2072-a727-4b3c-be5b-a0708cab1820,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+fdff8497-8a25-4a30-a7f9-bf4e03ff4d99,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+972aefc8-cc68-45eb-b039-13222d844670,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+37b14af8-9d89-494e-869b-40409a361db9,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+ed75b407-8f9a-4679-afa4-d50da2c6798b,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+e668ea12-4208-4681-8f61-aabfaff20374,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+ee75beb5-08c8-42cd-b5e3-ee409f54cdc5,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+1d7ef66c-7901-433e-8d4a-29d584f52e9d,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+4ce5b480-8cac-410f-9cae-a25c2a181291,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+82a6fc27-c2e7-499d-a40f-e1d51faee881,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+6bf11150-f444-41ec-b8d9-597b44f4d5c7,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
+6d4eab2a-f6aa-4761-9e4e-97e473dfb6bf,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+5bfed700-e5bf-4701-9818-9d5fa837f132,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+b6c60358-0953-4d9c-b5a8-15068000e63a,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+78fd0249-db81-4a5f-a019-4f40593a71f4,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+a894f7c6-843e-460b-b083-705983a2d626,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+7fc607e3-8247-4d42-8fa9-9e49d8f3e3ed,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+1d4b3aa8-44f5-4f96-9103-fd97f4f6b3e8,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+ee1ad794-756c-4b0e-99bb-02cc687820dc,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+e4d7d0fd-5398-417d-9ee6-9fce3f14e782,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+51e01f28-61a8-4966-a15f-058baf867fb5,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+4baf277b-d2fc-445a-bb24-6972e6385761,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+c5361ded-0658-4dca-9ed0-c760086adf92,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+0bd5d6d9-eaf8-4088-b4ed-79ae6b423996,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+55535a95-425b-4da4-b71b-a9bf2c4796d0,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+d0d5fc7f-2cc9-4101-9f28-a8002b5554d4,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+5d5b2379-80e9-4b89-92da-9f28f64cc3c6,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+13aa7041-5bd2-4f7b-bd20-cd153559479a,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+e40f6967-e612-413c-b1fa-9ec8e40a2589,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+3ea0bcf5-033d-432a-a8fc-d0bbefe73418,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+3a98f10e-3745-4bdd-8d39-517a365d6603,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+e1a826b4-a7b0-4c70-9f74-66d874f7d0ff,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+237e1703-e9e5-40ac-9d4e-33360932065d,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+695267c6-7e7a-4bba-914b-3880f7114a46,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+ab9c9c5d-d68f-4446-ad62-1c9ad88bfd7f,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+64a5fdc3-74b4-4e4f-97a7-00f30b975582,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+c1349e09-054b-4a64-96ab-b3a2295277e4,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+45a6519f-7181-4462-a4a9-a5e31cab9f52,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+6d1d56c8-79cd-47c5-a45b-58e6cceeffd0,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+e20c2b06-984f-4e92-98b1-db6af4760690,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+8e2ebba5-9786-47e5-ac5b-fc0bb3e876d9,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+a64ea5ed-184a-45b6-9536-eac6aa03ce2b,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+774490e7-4a47-41af-8fc8-8d974a6ace50,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+6844920d-b72c-4f87-ba17-7a67da9a63cf,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
+7d698bc8-b246-4a7e-8bef-8ae1be2dbac3,languages,french,idioms,Which everyday situation best fits the French idio,data/seed-source/items/languages/languages.french.idioms.json
 f17ee1c6-8c97-437a-b11a-88a0902541ca,languages,french,listening,"In ""librairie,"" which syllable carries the main st",data/seed-source/items/languages/languages.french.listening.json
 f7e036f3-4734-4770-b4ff-f4bf4c96946b,languages,french,listening,What often signals a yes-no question when the word,data/seed-source/items/languages/languages.french.listening.json
 e7318129-2724-430d-8928-db315f50ff2f,languages,french,listening,"Which final consonant is usually silent in ""Paris""",data/seed-source/items/languages/languages.french.listening.json
@@ -5884,6 +6129,76 @@ cbc6624c-aacc-4e2a-878c-9f557856433e,languages,italian,idioms,What does the Ital
 2689f5a0-0d5c-4da4-9288-9e9f25f3aaa5,languages,italian,idioms,What does the Italian idiom '{{it-IT|Rompere il gh,data/seed-source/items/languages/languages.italian.idioms.json
 8b075a18-3dd2-40b8-8b50-aab3b3b0f406,languages,italian,idioms,What does the Italian idiom '{{it-IT|Tra il dire e,data/seed-source/items/languages/languages.italian.idioms.json
 3f7326cb-8bb9-4271-a3d3-e0221411158f,languages,italian,idioms,What does the Italian idiom '{{it-IT|Vuotare il sa,data/seed-source/items/languages/languages.italian.idioms.json
+72c3e085-6a3c-4bd2-9497-b835addfbb6a,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+bf581724-4f37-40e1-ae6a-f9a2511b88aa,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+a4ef9d95-4e0f-466e-a11a-d64f20ce4de5,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+d9d1cca9-fc4e-4d02-9142-d8496819147d,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+c2155079-debb-4bba-b8ad-744f0a8be304,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+77403bd4-82d0-42ec-b655-2153a7062dd1,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+8c2f7ce1-d8cb-4a6d-a54c-dc3633fbc614,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+540a79d5-d6e2-484b-a1e9-2d7a68a834a9,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+92d1177e-5bf1-4c14-bf5d-06858f6cd15b,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+2f6e7a50-776e-4684-8d96-7cf7c5ec0af8,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+0e17b09a-a450-48b5-8e88-0b83394ec1bf,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+a5c627b0-4d5d-4e8c-a6e9-62693b4fcf91,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+95dc9578-4fcc-4249-8759-4d1c0729c9df,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+5ab8c6e1-21d0-4ace-8344-a5a71191869f,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+ddfa9442-6d33-4eb0-a653-9f6809f96620,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+27987dda-d7a7-4b1d-8840-2e120e30f76e,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+101cef29-cd04-4a64-b97e-12ffb20071cc,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+7a86ad7d-f0bb-4c20-bc97-2f09700d059d,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+22801bbf-f8bc-40ff-a63d-b18a4d9b61d9,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+a0ac1211-75ca-490f-902a-8ee25099aa13,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+edfdd40a-7570-4b03-8291-66ed09d3af97,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+9821d064-3f4d-4b85-8030-ddbe1fd58bb3,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+c00900f5-38b2-4bb3-9319-39ba45d5cfeb,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+0664f546-6052-474b-98e9-38bacaf5d235,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+752743ba-8c1b-433d-b6fd-3f3ca2d13367,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+158382dd-9a94-4de9-9d38-83239f8fd609,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+e142112c-786e-41f6-b5b6-0b0f24cec567,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+db809135-22f1-42e2-8cc2-dc78723b7063,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+e05b882c-c0e2-4b63-8db7-b56336cd2677,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+6c4dd6e2-1ee6-4289-9ffe-f971b7bf12d1,languages,italian,idioms,What literal image does the Italian idiom '{{it-IT,data/seed-source/items/languages/languages.italian.idioms.json
+bb5f8e49-81a2-46f3-ae11-9a506944deb8,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+38049f84-cb34-4683-b667-1f81d2135435,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+ad220559-5ff7-44fb-863e-c8100b152a41,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+d726b27e-9481-4913-a4f4-efbaccf873ea,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+3b6a73f2-b595-4435-bd7c-165a133eb4fe,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+da55be93-811d-422a-a0c6-ebb9ee348b66,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+c9fe01ab-f365-4816-82ff-d8b13928d70d,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+395f9968-cc32-48ee-bf5f-573c50417376,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+083ee3da-7492-4039-8b78-f78d9365be4d,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+c6a32df8-a480-4f2e-896d-faebe7d09b10,languages,italian,idioms,Which English idea is closest to the Italian expre,data/seed-source/items/languages/languages.italian.idioms.json
+807bdcf8-4838-4224-92e2-9243e31f9b73,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+c2baf826-4e96-483a-9db9-adb31c42fd0b,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+be905488-d4d2-4514-a32f-27181bc90b26,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+3dd5a15e-a113-4389-9c05-9f8d96678e7b,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+9c5135fd-98a0-4d6b-83da-3ca41690bed1,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+c5aecc76-ce2f-4e4c-9d41-671e71acf27a,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+43762280-5e9b-48b0-9dcf-1a62731c72bd,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+36487830-18f4-4002-9ee8-fdebea588614,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+115bcc77-3e37-49b8-bead-327c1d458304,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+12ff92e9-9671-4225-950b-8094416dd07e,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+f28ba1a9-faad-4b93-b2ac-9987ecd5029b,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+f9c3c6ee-e6bb-4068-9d88-65ef542ef1a6,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+682a7f77-3ee4-46e1-b543-3ddf87c317c3,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+f7f680b2-2422-46a6-b45c-978827fd1b10,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+ceead41a-1c42-4c74-b7cd-f8c82341e921,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+96ab6636-2c16-4891-81d8-cdf7b0559162,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+ce6015c7-0189-436d-9488-7e9d8cff2674,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+ebd6b057-79ff-43b7-86e8-364b765ba366,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+b6a57929-15fe-4fe3-a8b4-4982030b04b4,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+d7f3e55d-07ed-473e-ac4d-aea921b8f510,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+b7c3ddf0-c636-4242-9fca-19ee7c23e026,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+b4e63518-00ad-4784-8f6d-cc9218ceeca9,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+741c4af0-f789-4aad-a756-0ff78400f2fb,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+ea192ea4-2011-409d-8aba-ef05483f243d,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+b56ac9dc-353d-4895-966a-ba32d4598157,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+daf6ae04-17df-42a1-a937-154ed6a65853,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+547f6eb0-3a29-453a-a4f6-3e185337c362,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+dc079a1e-7f2e-4eb5-8df0-047768d6fb2c,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+a340a129-6dba-4a2c-9227-73dd75919d9a,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
+0c6a09ef-cb5f-426c-bc94-1cfdda324e61,languages,italian,idioms,Which everyday situation best fits the Italian idi,data/seed-source/items/languages/languages.italian.idioms.json
 596e225d-599a-44ed-9489-28099057114b,languages,italian,phrases,Choose the correct Italian phrase for 'A round-tri,data/seed-source/items/languages/languages.italian.phrases.001.json
 c3799576-2157-4d6c-b94d-984a2940242d,languages,italian,phrases,Choose the correct Italian phrase for 'Can I have ,data/seed-source/items/languages/languages.italian.phrases.001.json
 8e117289-4aa6-48a9-a915-44e4fe1838d8,languages,italian,phrases,Choose the correct Italian phrase for 'Can I try i,data/seed-source/items/languages/languages.italian.phrases.001.json
@@ -6444,6 +6759,76 @@ d3402616-2228-44aa-8cb6-bc43835a7122,languages,japanese,idioms,What does the Jap
 2e026ccb-7095-438b-9713-c6565263ec19,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|顔が広い|kao ga ,data/seed-source/items/languages/languages.japanese.idioms.json
 53ce3ca6-e00d-4c1f-bfe7-7a88f3d59689,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|首を長くして待つ|kub,data/seed-source/items/languages/languages.japanese.idioms.json
 ee947893-a66b-483c-b521-11561cd4b18e,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|馬の耳に念仏|uma n,data/seed-source/items/languages/languages.japanese.idioms.json
+83a904af-973a-48d2-b012-c330503c37d4,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+f600f52e-1b43-488b-8a55-c62828a5f042,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+8f3a1e7a-5580-4bdd-b672-64db4616eeac,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+5784b09f-572b-4644-9160-68d78656da31,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+5c29d6fe-9aef-445b-9345-9953951f5938,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+32085bec-ba97-4d14-8312-d5c8a49f573b,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+4819f1b8-430c-4a2c-be40-3d9194ac6cab,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+10b7bfa0-8ded-49f4-b3ae-e5a4663889bb,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+435fde3c-2f6f-47d5-95f9-05ff22c3cd34,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+450b5780-3781-46dc-9465-816ad51fddcb,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+cab950c3-0b3c-4b2a-8a4a-2a90293d4786,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+5d5970c4-d736-42fa-8234-834d85a9dd29,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+f8849924-eedd-44eb-ab46-3c4add8ea02d,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+b4821785-aef0-43ab-a556-983beee6cdb3,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+47886b23-55de-477e-aa18-d38a6aedc460,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+b313b062-e21a-4e6c-aa27-e74e029feca2,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+e927a700-d1ea-4f1d-9fd8-90f9a55d5574,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+c5df349d-bbed-4109-a90e-ab4c54d1b074,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+809e1580-7cba-4021-a8ef-8ffaf4e079db,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+36296155-59de-4f85-b866-be467b3c3758,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+5767c6fb-bdc4-41cf-9b08-fb2f0c5ad7d7,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+bdc13e85-165c-45ff-b41d-efc070b1ba60,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+88348aaa-b018-418c-98bb-d8a8f73e777f,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+ae0332dc-2f71-4872-9c7f-f7812c193c3b,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+c1a0c0ad-ad7b-4e09-a845-bcfce4afc60c,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+a80bf819-deae-4e94-9859-a72e43893fbd,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+bdd89323-2d5f-4cf4-8029-c9255015aeff,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+5d285fb7-8a45-4488-b9d8-dada34448787,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+26f05069-cd63-49ed-bc24-7dedeea070fe,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+9529b16d-e00b-44a5-a7d8-38379beb4420,languages,japanese,idioms,What literal image does the Japanese idiom '{{ja-J,data/seed-source/items/languages/languages.japanese.idioms.json
+1b39e771-743e-4c8c-bc3f-4f2554c0cf5f,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+10831d83-dcd8-41da-abce-aeb9024d2941,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+b09c474a-f953-404f-ae99-b54d04d7bf90,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+14a9ae62-372f-45eb-93ad-add58e322ad8,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+13b22341-bc5e-45f4-888b-93e856eb94b8,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+71a9e24c-7188-47d8-82be-89b7618ea67e,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+ff721ecc-fa95-485c-8167-796bce69f1fc,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+8a03290b-4868-4520-a423-0dd9cb1dc00d,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+30591552-b1ac-4db9-b021-4567494e7b2c,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+b1bdc322-3f38-4fc9-82d8-576b15af47fb,languages,japanese,idioms,Which English idea is closest to the Japanese expr,data/seed-source/items/languages/languages.japanese.idioms.json
+60abc736-1976-4351-a421-cb3cef708310,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+685f58d9-6a45-4b49-8038-43872ed7ed89,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+045fe2d3-69e9-4585-b6f8-24d7aa5cfb2e,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+e6cce63d-e4aa-4b7f-9696-ba2a8c9f6f6e,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+06fd4cfb-bd13-4701-99c8-99bd70c37aa8,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+ce223950-4019-4b85-89f2-34fc58daa789,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+3f129df7-4661-48d8-b5b2-5b4844132691,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+ad26363c-0bd0-4c2c-bb4d-a78ea5a7fb08,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+d95290c3-a259-48a0-8881-09a37d46261b,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+54632cb7-59f7-414b-9218-bd5446d8fea7,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+0ac516b8-304d-467b-8f18-455a1744272b,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+38bbc288-b8d1-4065-bfc8-5cb6708d8159,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+2dec924b-275f-4af5-8edb-eb7b732b22ed,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+3df14428-ff83-426b-bbb5-686337fbd8e2,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+3598781b-2422-46f9-8c53-306a0209959d,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+2d308c7d-ee21-44cf-84e9-c9756a88d344,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+2880a10b-ab62-429c-9c5b-90c61d8930fc,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+44f06f46-ef4f-41dc-93ab-d365c85ccaf3,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+3195d800-ca96-4198-9ede-e83e51447e5d,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+26ddbaad-b659-46c5-a632-67d2d1d2f6ea,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+2e3b7f42-5331-4110-92e7-86e41d1e2908,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+4989e5e3-923c-4850-98fb-6959cbdaf1bc,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+29df02f2-b227-4420-8437-dc78d36f171b,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+2aa8d547-70a4-47db-8f57-eae9cac73e58,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+08de00e0-ad39-45fb-841f-b6ecd999c625,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+b0fca7b0-e371-48c8-936d-715d3057e82b,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+cad3ae3f-7999-4e76-b460-b97e3646163c,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+6a5c8aa1-9e86-49f3-a950-c1b3da63b4bc,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+ab3a2167-4577-4e3f-a40d-03d4d4067dce,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
+b952eb06-48f7-4519-86ee-87c5c3752c04,languages,japanese,idioms,Which everyday situation best fits the Japanese id,data/seed-source/items/languages/languages.japanese.idioms.json
 65ce0dff-e5c6-4fe4-9ff3-1d35177f70d4,languages,japanese,phrases,Choose the correct Japanese phrase for 'A round-tr,data/seed-source/items/languages/languages.japanese.phrases.001.json
 147ab502-e8db-4ad7-8596-44df54e4c76d,languages,japanese,phrases,Choose the correct Japanese phrase for 'Can I have,data/seed-source/items/languages/languages.japanese.phrases.001.json
 1363774f-6843-4d6e-b567-97b47f39ddf4,languages,japanese,phrases,Choose the correct Japanese phrase for 'Can I try ,data/seed-source/items/languages/languages.japanese.phrases.001.json
@@ -6644,6 +7029,12 @@ c559ff2d-2f17-47c2-a884-e216a23dc72c,languages,japanese,phrases,Which Japanese p
 286e140d-4fec-412b-aa1d-9c4b3856d5fe,languages,japanese,phrases,Which Japanese phrase means 'Where is the classroo,data/seed-source/items/languages/languages.japanese.phrases.002.json
 3eec4ae9-a01e-45b2-8cf1-75dc68f6b686,languages,japanese,phrases,Which Japanese phrase means 'Where is the museum?',data/seed-source/items/languages/languages.japanese.phrases.001.json
 7189ef55-b4dd-4ae6-b5f1-35a608e0a6f9,languages,japanese,phrases,"Which Japanese phrase means 'Without sugar, please",data/seed-source/items/languages/languages.japanese.phrases.001.json
+e8b57986-46e7-4ef9-9416-a8db4dbf19a2,languages,korean,core,What does '감사합니다' (gamsahamnida) mean?,data/seed-source/items/languages/languages.korean.core.json
+c16b8527-7ba4-49f8-865c-e0d4673103b5,languages,korean,core,What does '네' (ne) often mean in a simple reply?,data/seed-source/items/languages/languages.korean.core.json
+754de738-3ace-405b-b102-c747f064e1eb,languages,korean,core,What does '물' (mul) mean?,data/seed-source/items/languages/languages.korean.core.json
+a007fc0a-0cbd-41fc-a696-7c30eaa4b298,languages,korean,core,What does '아니요' (aniyo) mean?,data/seed-source/items/languages/languages.korean.core.json
+e506c2ee-df04-4df4-bba2-2b10089feb15,languages,korean,core,What does '안녕하세요' (annyeonghaseyo) mean?,data/seed-source/items/languages/languages.korean.core.json
+eec33d2d-b0dd-4711-bc6e-a47b8e48b9ad,languages,korean,core,What does '학교' (hakgyo) mean?,data/seed-source/items/languages/languages.korean.core.json
 b53d581f-479c-8ae0-b580-3c79f780fd1e,languages,latin,expressions,What does '{{la|A posteriori||A pos-te-RI-o-ri}}' ,data/seed-source/items/languages/languages.latin.expressions.001.json
 fff0b231-4e3c-6921-2649-004a0aac3a3f,languages,latin,expressions,What does '{{la|A priori||A PRI-o-ri}}' mean?,data/seed-source/items/languages/languages.latin.expressions.001.json
 d8d09235-becb-5cf1-fafb-313e37a8104a,languages,latin,expressions,What does '{{la|Ab initio||AB i-NI-ti-o}}' mean?,data/seed-source/items/languages/languages.latin.expressions.002.json
@@ -7234,6 +7625,76 @@ b470394e-9c81-478d-b18d-ebdd63b0e7f3,languages,latvian,idioms,What does the Latv
 ba1902dd-f660-4756-a180-88501d4be909,languages,latvian,idioms,What does the Latvian idiom '{{lv-LV|Vēders smējās,data/seed-source/items/languages/languages.latvian.idioms.json
 c474c303-5f60-45d3-ad52-788a93e75c15,languages,latvian,idioms,What does the Latvian idiom '{{lv-LV|Zilonis istab,data/seed-source/items/languages/languages.latvian.idioms.json
 883663ab-cfe4-4702-a501-9a667ac399dc,languages,latvian,idioms,What does the Latvian idiom '{{lv-LV|Ūdens mutē||U,data/seed-source/items/languages/languages.latvian.idioms.json
+1931e516-fe5a-4133-80d2-b40cfdd0a19e,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+e0c3373e-fc78-494e-97d1-14378a341af1,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+5bf83c00-b0b8-4831-9432-6e457460c671,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+e9a48098-168c-4189-ae9b-9bfaed033cf6,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+16d6bd0c-9b53-4875-9862-dc92e908f366,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+179efe2e-482f-4f15-802f-a8ae223ff8a4,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+954b0711-259f-43e8-b8a4-97a7a421e1c5,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+d0158ebe-f3ed-4b23-a1ad-ad0dda3db48f,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+e4022173-d450-452d-a7b6-9ffe2b40e6ae,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+5ef62b23-f2f5-4c0d-9562-42c9f3d0f330,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+01af7245-5619-4077-a8bd-cee945c164ad,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+0d6e427c-cc7b-4931-b45f-f5849b253649,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+0278f75a-9821-447e-aea5-790e4a87c73b,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+84de62be-a7fd-4e24-b149-ef4f57549e0a,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+ea80ea69-8899-4e80-bd63-52e13428c783,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+4f156c14-a297-4ce9-8af3-7c559dd25b0e,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+5798b15f-0795-498f-b307-c9bcb8f74147,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+e32b1900-f1ac-4260-8b40-8ee3ba57b7be,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+bcc97138-dfcd-48b1-b7cc-2bb50d9a0461,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+8902098e-3442-43fa-9c90-56a32d75f046,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+0814995c-b753-4e24-a77f-e2aae7795367,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+4b517ccc-a44b-4cbe-8045-f6434db6a38f,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+b0ebe460-15a2-4c85-ba29-26464e83c367,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+3b557621-7adf-4126-b484-365a4f815924,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+518bf680-fea1-4fb8-b40e-7d02654397c5,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+7353b41c-ae55-46b6-9e9c-6b0c54a071e6,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+f68c0413-ded4-42eb-90d7-c4d410a1c046,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+dc6ebc9c-f6c0-4af5-a38d-2983a1f36598,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+d555b325-80cb-42d4-9a77-06bf6eefbde4,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+1de85310-2663-402e-9272-d542897e1e86,languages,latvian,idioms,What literal image does the Latvian idiom '{{lv-LV,data/seed-source/items/languages/languages.latvian.idioms.json
+6faa38bf-a973-4040-a567-af0f3ee07aba,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+1ee82fe3-5e3d-40aa-9b11-50d1d2c08241,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+3d6a3cc4-693a-427f-b3bb-5f3299db4ad7,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+5910c610-7bfd-46ab-99f9-4899ccf471a5,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+b6c2002e-5c46-486d-aaeb-acb9d14a8322,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+f0b1052d-747d-4058-888d-3b4111a9e53d,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+2519d3b5-6ca4-400c-accd-576b29890f17,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+1f297ea9-3f0d-491f-80da-1861e1f6925a,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+2a6e3da9-c0ab-4f20-8696-3a3824888efc,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+d252a627-7afd-43ea-a361-7ed95419ba5c,languages,latvian,idioms,Which English idea is closest to the Latvian expre,data/seed-source/items/languages/languages.latvian.idioms.json
+5e7655cc-ef99-4227-9cf6-71f62025117a,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+10fe0d33-be5b-426b-8043-17686b93f626,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+7eeb7ae5-7dff-40c8-828b-76e0dc66899a,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+37cbe659-3a24-4075-8f0a-1681d2683eb6,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+cb1ac580-567a-44e4-b724-c5370fcf5294,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+65a3d814-1694-4a81-aa0f-338dcc1cbe19,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+1db14a30-189e-4eec-9b74-44c7af573ebf,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+68b88246-9a31-4667-b916-c0295d085bf7,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+10212a09-1044-49af-9128-4db24defd0b9,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+6d9731ec-bae5-4eea-93bb-78a01f7e6827,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+8c05f1be-290b-41ab-a058-2f4ce02d97a3,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+7675c037-e131-4e9b-809b-f35d8b6769ed,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+c67c8b47-1aa4-4b3e-a815-c29b9a9ce210,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+2e713aa8-b112-4264-a185-a0a5eb74dc0b,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+16fe0912-1251-4cef-b2ea-fe51a943eb86,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+f7fecb3d-06c5-4ff2-a77f-9859cbab5cee,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+d006a927-f406-4c0a-a8dd-4ee336240e1e,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+8e84304a-da63-4907-81f2-ff32dfb5eaa3,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+1da979d6-d763-45ab-a3d9-8329c92ca2c3,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+069988bc-0644-4101-8a7b-676a1ccd1319,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+61aca1ff-bd41-459f-9f4d-5f5659c2ccd3,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+13028e3b-4ff1-4556-89e3-ae2b4e8c224d,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+edcae2ab-cdfd-4876-862e-3e3325c18f69,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+d8ce0ffc-125d-44d6-8739-295dcb7b5030,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+47bc326e-08e2-49c4-8d1b-f129b6e415f2,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+a3e3c26a-0aa0-4787-bc91-6d7e778ac2d0,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+2b2e1c1f-0185-47e5-a7e8-ddb0f6c67c32,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+cf77ac07-20dc-4276-8765-95fc915a0dff,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+fb314657-92a7-4f1b-b20d-602ebb25116e,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
+d03a2f8d-91ef-483a-81a1-17ce09481e20,languages,latvian,idioms,Which everyday situation best fits the Latvian idi,data/seed-source/items/languages/languages.latvian.idioms.json
 2befa903-b7ec-4fd0-8a26-95f70dd3fd9a,languages,latvian,phrases,Choose the correct Latvian phrase for 'A round-tri,data/seed-source/items/languages/languages.latvian.phrases.001.json
 3ca85d99-e06c-4f58-804d-a437ecf20acf,languages,latvian,phrases,Choose the correct Latvian phrase for 'Can I have ,data/seed-source/items/languages/languages.latvian.phrases.001.json
 9d551464-ebd5-418c-85fa-baa8310587c1,languages,latvian,phrases,Choose the correct Latvian phrase for 'Can I try i,data/seed-source/items/languages/languages.latvian.phrases.001.json
@@ -7434,24 +7895,6 @@ bb5a81e8-8242-4380-b45c-885f997923ab,languages,latvian,phrases,Which Latvian phr
 db151a44-b530-438d-a43f-555100506cf6,languages,latvian,phrases,Which Latvian phrase means 'Where is the classroom,data/seed-source/items/languages/languages.latvian.phrases.002.json
 066edc62-7d88-4f76-8a78-a1213ed200df,languages,latvian,phrases,Which Latvian phrase means 'Where is the museum?'?,data/seed-source/items/languages/languages.latvian.phrases.001.json
 6da71d2c-ee56-4adf-9629-2c395adbe112,languages,latvian,phrases,"Which Latvian phrase means 'Without sugar, please.",data/seed-source/items/languages/languages.latvian.phrases.001.json
-da2cf1e7-262c-4a4b-988d-a57fa402b3c6,languages,arabic,core,How is Arabic usually written on a page for Modern,data/seed-source/items/languages/languages.arabic.core.json
-e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2,languages,arabic,core,What does 'شكرا' (shukran) mean?,data/seed-source/items/languages/languages.arabic.core.json
-54924c48-413d-4417-b7a4-e73ab3cfeb71,languages,arabic,core,What does 'لا' (la) often mean?,data/seed-source/items/languages/languages.arabic.core.json
-aece5a88-7dd5-49c7-afb6-45c5121711fc,languages,arabic,core,What does 'ماء' (ma') mean?,data/seed-source/items/languages/languages.arabic.core.json
-55e95ff7-dae9-4d42-8298-c6929fb306e6,languages,arabic,core,What does 'مرحبا' (marhaban) often mean?,data/seed-source/items/languages/languages.arabic.core.json
-d70e8d11-1848-4d5a-a720-388dc1c89d95,languages,arabic,core,What does 'نعم' (na'am) often mean?,data/seed-source/items/languages/languages.arabic.core.json
-a526cc0c-ef20-4b0c-86eb-80d068e444b8,languages,chinese,core,What does '你好' (nǐ hǎo) mean?,data/seed-source/items/languages/languages.chinese.core.json
-f92fde2e-e99f-4a37-8378-346f35a3356c,languages,chinese,core,What does '是' (shì) often mean in a simple 'A 是 B',data/seed-source/items/languages/languages.chinese.core.json
-6aa8cd14-ebc3-486f-a9e8-1b8b0b3ce978,languages,chinese,core,What does '水' (shuǐ) mean?,data/seed-source/items/languages/languages.chinese.core.json
-96680d43-1589-4954-9604-65fd6938209b,languages,chinese,core,What does '谢谢' (xièxie) mean?,data/seed-source/items/languages/languages.chinese.core.json
-6590fdb0-5a3f-4689-be24-91bd576a4b9d,languages,chinese,core,What is a common neutral measure word for many eve,data/seed-source/items/languages/languages.chinese.core.json
-a3999239-02a7-4ebb-b851-ec02b315f14e,languages,chinese,core,Why do tones matter in Mandarin for words like 'mā,data/seed-source/items/languages/languages.chinese.core.json
-e8b57986-46e7-4ef9-9416-a8db4dbf19a2,languages,korean,core,What does '감사합니다' (gamsahamnida) mean?,data/seed-source/items/languages/languages.korean.core.json
-c16b8527-7ba4-49f8-865c-e0d4673103b5,languages,korean,core,What does '네' (ne) often mean in a simple reply?,data/seed-source/items/languages/languages.korean.core.json
-754de738-3ace-405b-b102-c747f064e1eb,languages,korean,core,What does '물' (mul) mean?,data/seed-source/items/languages/languages.korean.core.json
-a007fc0a-0cbd-41fc-a696-7c30eaa4b298,languages,korean,core,What does '아니요' (aniyo) mean?,data/seed-source/items/languages/languages.korean.core.json
-e506c2ee-df04-4df4-bba2-2b10089feb15,languages,korean,core,What does '안녕하세요' (annyeonghaseyo) mean?,data/seed-source/items/languages/languages.korean.core.json
-eec33d2d-b0dd-4711-bc6e-a47b8e48b9ad,languages,korean,core,What does '학교' (hakgyo) mean?,data/seed-source/items/languages/languages.korean.core.json
 6b43083d-6b34-43a8-b3f1-a4763b064920,languages,portuguese,core,"If a woman says thank you, which form is common in",data/seed-source/items/languages/languages.portuguese.core.json
 bc66c661-c9a5-49c8-bd78-3d0adcd2cede,languages,portuguese,core,What does 'Olá' mean?,data/seed-source/items/languages/languages.portuguese.core.json
 c4a82bbc-7446-412a-bd31-976879e01988,languages,portuguese,core,What does 'não' mean?,data/seed-source/items/languages/languages.portuguese.core.json
@@ -7818,6 +8261,76 @@ db2b1f60-7965-479e-bf12-cc8b71593fc6,languages,romanian,idioms,What does the Rom
 332f31ba-9191-470e-bcff-26af78bbab6a,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A umbla cu c,data/seed-source/items/languages/languages.romanian.idioms.json
 c30bab57-a480-4e62-b3a7-2e5fdfad9f7e,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A înghiți gă,data/seed-source/items/languages/languages.romanian.idioms.json
 0388252a-f0a0-4ad8-a13c-af30ccbd818c,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A-i sări muș,data/seed-source/items/languages/languages.romanian.idioms.json
+143557c7-9d03-4f27-a324-01cfb23e7d10,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+5caf868b-ca7f-447a-be46-5771d8e9f35f,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+d72665f5-d5a7-4e5c-8a69-af9ad3c99aee,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+f9021c3d-1ced-4241-aec0-452948bbc2f3,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+bdfb9ffd-05f5-47d3-91f9-052da831dd21,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+51754067-c7a8-4544-b199-b1fa66ceabee,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+4df4ce6a-4b86-404f-8758-ce18637c8d58,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+0fbb8ed5-a7d8-442c-9605-dd188d9e3aae,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+ebc798bc-fa04-4aa3-92d0-da2165881829,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+b70f3860-c785-4cad-a7c4-1a3689bac4f2,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+6f16ec8d-7e08-4bc3-87b2-d7558426e516,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+31137d52-3442-4347-b43d-773ac4a06165,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+84129cb2-7099-4d14-9a79-f8ebb662d184,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+51e84342-0c9f-4e74-917f-3700ca822bfa,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+d81a5d86-70cc-4dc7-ad1a-a36234e457e1,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+781e62b4-2a81-4016-850a-d262bc592241,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+3f7196e2-806f-4162-83e5-90abc61804cb,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+d56993f2-9203-4140-b5fb-d063be161cc4,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+0723055a-807d-4c77-a446-011c6f200ab6,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+f4f63ee1-8f38-4d18-abce-7cf323b4e72c,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+2f23b22c-32ea-44c6-8750-f547b7e759db,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+0246d08d-df76-442b-ab5b-b2a007b57aac,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+bd31f9be-ce39-4155-9f39-6aef537fddc7,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+46b68dfd-46f5-458a-8f4d-135a16d111ce,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+2ffd75cd-e4c3-4abe-9805-d9a82e25bf46,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+e0069387-a6ed-4e34-acdf-cecae78e9f7e,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+eb764efd-387b-4a26-8eca-ee601f888e5f,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+41311f76-9b5c-4967-9be1-91ce2c68a144,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+c4cdf686-3c31-4187-b1ab-4dec70368ca2,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+ad111896-9ca4-4f9e-bb57-ba00133f4388,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
+58ce5a44-c60d-42f4-9ae8-ff6f4d89f0ff,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+f12ef80b-9d04-4599-8110-e48698bfe7ad,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+3e8df7b8-774e-4a5c-b718-7fb1e16d5db6,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+7ce6236a-7192-45c4-9d9f-55950f96c510,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+7d6098fd-dc57-4237-9574-77da1b5a7068,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+0a2e03a2-c400-4f04-981b-063ff67b9a9a,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+562786e7-a749-40eb-a682-08f22f82ecc5,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+0686f43b-afb0-4474-aa1c-e8e6b7151228,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+eecf6242-c453-449c-b30c-c59020dce72f,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+c592d9e7-14d6-4dee-a153-005274b3bc75,languages,romanian,idioms,Which English idea is closest to the Romanian expr,data/seed-source/items/languages/languages.romanian.idioms.json
+001e47ed-7313-414d-be1e-1d9c1e7518c0,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+b8de2dc7-b42a-4fcb-851a-1d5a7ec06aec,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+616513fa-ef40-44e0-b51d-86500d1712be,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+d5155319-7c12-4ea0-ab2f-ad89731ec04c,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+e519ce10-7f9e-4302-8ed7-2eaaaa4376bc,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+3a6a3672-5359-4312-8640-6abb91a93e08,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+5bb64257-491a-4b52-8d4d-2fd212e7f049,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+7237e1c5-53a1-40d5-8b9f-8b6296cfeaa0,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+eba4e084-3a06-48d2-b463-596818663d32,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+9c3c0d49-1356-47b8-bd7e-715b144dde7f,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+f391dd89-ee1a-47f3-bd80-813acdf72670,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+9ade2dcd-d503-46f2-bb95-f88b215cb9f5,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+5ada1bf7-e723-434a-bc9a-345a91d2f8a9,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+860992a6-ce44-47e8-8832-69d9de226ac6,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+15bf2308-ca38-46dd-8e03-9f28807df197,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+3fc61716-7e3a-4d0c-bf3c-3065aae95fb7,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+09511074-cb1e-4640-ac46-f67f220f595c,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+73a5ea0f-0bfa-4225-967d-fa49612fdc9b,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+aa98a6fc-ceee-47a0-a3cd-6e916252d089,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+ca11eff7-22fc-49ec-8ad4-690ce3de2c64,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+be4e935c-38de-474c-ba00-5ca033769f27,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+4797f873-e3d2-465f-81ee-0f73e73266eb,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+cfeb5c99-d2af-4286-af4e-0f32fef8860b,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+1190ac5d-63ef-46fc-b7b9-6059e7c22a7b,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+861616a1-d142-4bd9-ae92-c3ab91dc1d69,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+d840d873-feb8-4663-8cdf-45b3a9086122,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+e07cbcd4-8c7d-491c-a727-fb75ba4e7e07,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+63a1b571-6778-4361-8d30-06fdd79db70a,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+c7d8bc39-6eb8-49e5-a382-1dc82d7223c4,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
+456e44e9-f7b2-475a-9ac9-d5703efc23f9,languages,romanian,idioms,Which everyday situation best fits the Romanian id,data/seed-source/items/languages/languages.romanian.idioms.json
 309656bc-b8c0-2fb2-3bb6-b434f9337e3f,languages,romanian,phrases,Choose the correct Romanian phrase for 'A round-tr,data/seed-source/items/languages/languages.romanian.phrases.001.json
 5f606081-d1d2-44c1-dae9-4254e5112c3c,languages,romanian,phrases,Choose the correct Romanian phrase for 'Can I have,data/seed-source/items/languages/languages.romanian.phrases.001.json
 80b39a9f-3b48-44b7-c5a0-f54c7327a0ae,languages,romanian,phrases,Choose the correct Romanian phrase for 'Can I try ,data/seed-source/items/languages/languages.romanian.phrases.001.json
@@ -8378,6 +8891,76 @@ b2e49ddb-3be8-40dc-8cb2-28df996827bb,languages,russian,idioms,What does the Russ
 1829eea9-6090-4d7f-9bb5-ab361a423275,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Через пень-ко,data/seed-source/items/languages/languages.russian.idioms.json
 b46aadae-26d7-418c-8e62-a3a3ecea84ab,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Яблоку негде ,data/seed-source/items/languages/languages.russian.idioms.json
 52f68b52-c17b-4aa0-bab6-76609f86e519,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Язык без кост,data/seed-source/items/languages/languages.russian.idioms.json
+a4e55fc6-9f4f-40b4-a90f-f581cccb1141,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+c25df0a1-fe84-4e78-890f-5814fa76a8db,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+87e84053-b380-4499-a504-9bb64b8e25dd,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+dadee295-ee3b-45dc-ade5-1fc310e470c3,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+d2f4e6e4-6093-4904-9a5f-d3b71c77ecab,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+2ff08eff-ebdc-40d4-8310-731848312b41,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+39a1f2d9-76a6-4ef5-b157-9a3651d5fb3d,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+54651fd4-546a-4b07-b16b-975a436719df,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+c4913fb4-3371-462a-ba95-f58b16cb5607,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+ad29c315-56bd-4953-88ef-5ae301ee7fed,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+c1bf815e-9b48-4901-aae2-2905f127934a,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+941aa1b1-3f49-435d-aa41-c9667f00bda7,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+b6822010-3981-446a-96b3-5ab37debbf6c,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+b2259b38-ff9b-456f-ab9e-4e89079fb5e6,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+a84e681b-4c2d-404f-a7d0-c4d89b180c6a,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+9d3792c8-6459-4df7-9d85-9b4cb34d8f6c,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+8229fd89-9d49-4765-8a35-f9ad10dc3076,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+6ed796c5-f69d-475c-80a8-0a2f524377d0,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+a6a1a8fd-15c2-4ced-82ed-b5aa48700dec,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+bdc2e519-400d-441d-89d2-ccd251ed32de,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+01cc5800-315e-4e3f-a033-3f179ba8cf37,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+d895e7f7-f220-49dc-b5b2-1c92a2e693d3,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+2eeff814-0804-4d3e-a1d6-7994ce4261a7,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+9eb2aa82-3ff6-4a9d-a368-3059e08f65d3,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+bc485759-11c6-4a2e-82d6-074e090158e4,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+10e1792f-b77c-43ad-b4af-8ac56dccbffa,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+6a90b09b-df37-4213-886e-11c43e0bc0b0,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+4f5fd4bc-9394-44be-8a11-da6858a9d5d7,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+401cecb2-7174-4206-908e-45efc940807e,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+6f167e9f-49a5-4d59-b49d-c83dda5b1e6b,languages,russian,idioms,What literal image does the Russian idiom '{{ru-RU,data/seed-source/items/languages/languages.russian.idioms.json
+dc0fb9f0-9ec9-41a4-93c5-419b4e0316ea,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+ae5c172d-a8b0-4017-a65a-9f59daf066be,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+912571e9-ffa0-4471-8b0e-93c5a9b40b5f,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+ef961894-72ad-407f-8ff5-e566daee26d9,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+089a0ae0-2ee8-41f5-8a84-8349d5910adf,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+229eecf2-6f6f-473f-b62b-97653d4a9572,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+a743a135-1d7b-42dd-a76b-4ae081fa28b5,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+3b8e3bcb-3bd0-4b83-aacc-3d8977d26dd3,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+e46cff92-9745-460a-bb44-1ded7d479162,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+5029d67f-04e9-46fe-9427-95af22a6c5e4,languages,russian,idioms,Which English idea is closest to the Russian expre,data/seed-source/items/languages/languages.russian.idioms.json
+b35884d1-7258-466f-b0f0-23e693335dcc,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+79cb37ee-3e9b-4dbd-83d9-27fcb3edf1ff,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+57f61f0d-31ad-490c-9f90-093cd746b755,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+1f8ef787-5b94-420a-9edf-a0630cee4668,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+68f669cf-717e-4677-bcb3-bc335fddbc70,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+8087d5ee-954a-4b73-8476-9d84bfc64a9c,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+76b162d9-37ab-4647-841a-23f379c21db6,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+7ad53069-ec38-4bc7-accc-882d4f490ff9,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+f20ef87d-323f-4ab8-b83f-06fad8e1c49d,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+3e315e4f-ec64-424f-90f1-65b48b32129d,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+bffbdcd9-f54b-493d-9f3c-77a2362c6ee6,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+afbcc43f-f6b8-46d9-8879-ad7ed806a95a,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+7c8541e6-8138-4e29-acea-f9ee0dc6757b,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+c08110a3-4dd7-4af0-ac94-9dd2ccfa708c,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+e95ca9e1-ba89-4391-861f-1f3a14e13b27,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+a1189cd9-1d0c-48e2-828d-939e60c1331b,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+4e9e2170-58d3-4e42-b5ef-819cbd85b120,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+1e51f866-8f1d-49df-8da8-0d583a2cc4c1,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+82f9b2a3-e012-47a7-aadd-82f69fb9ee47,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+afea0e60-4d02-4dc6-be51-0da023ef3d59,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+26075da4-42d4-4923-85f5-e0fef48bdf8c,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+f506695e-7ff2-451b-807a-9ad6b2947559,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+50ee6e20-b98d-4956-a8cf-d6ef71ed003d,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+92e0ced9-996c-4ae1-a45a-008a9285a99c,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+a5d771b3-a6cb-48a3-87eb-6617f0db9f96,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+e4013cf7-19f9-4da2-930a-2fd86d00a1a8,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+dd37364b-ded6-415f-b1d3-4731faf4ce58,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+ec1cbe4d-7443-46ac-9ff6-fed223aedca0,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+307c694b-0360-4e6c-a374-70e243d290a3,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
+832b35b2-3483-405f-b8f9-b13e82fbc9af,languages,russian,idioms,Which everyday situation best fits the Russian idi,data/seed-source/items/languages/languages.russian.idioms.json
 179698a3-14a9-491b-ac7b-c59b047acfab,languages,russian,phrases,Choose the correct Russian phrase for 'A round-tri,data/seed-source/items/languages/languages.russian.phrases.001.json
 081a30a9-79db-4bea-bfb7-1a469de9ab0a,languages,russian,phrases,Choose the correct Russian phrase for 'Can I have ,data/seed-source/items/languages/languages.russian.phrases.001.json
 33be9a2b-83e7-47eb-818d-68b03b03ab98,languages,russian,phrases,Choose the correct Russian phrase for 'Can I try i,data/seed-source/items/languages/languages.russian.phrases.001.json
@@ -8914,6 +9497,106 @@ b1c575ea-41d1-4428-b9db-68b920114dab,languages,spanish,grammar,"You want to say 
 346501f4-5c44-4ac8-97fa-1a58afc0960a,languages,spanish,grammar,"You want to say ""the cold water"" in Spanish. Which",data/seed-source/items/languages/languages.spanish.grammar.json
 87cb45e3-3737-4e69-84c0-d99d43c243b1,languages,spanish,grammar,"You want to say ""the house"" in Spanish. Which arti",data/seed-source/items/languages/languages.spanish.grammar.json
 57d44d9f-4802-47a3-855e-e16f48b8b94a,languages,spanish,grammar,"You want to say both ""there is"" and ""there are"" in",data/seed-source/items/languages/languages.spanish.grammar.json
+0788ba00-0ebc-47ce-be49-df17e0ca0df8,languages,spanish,idioms,"If someone ""está en las nubes,"" what is the usual ",data/seed-source/items/languages/languages.spanish.idioms.json
+9c7df0ed-4cf3-495a-83f8-b43004d710d9,languages,spanish,idioms,"In everyday Spanish, what idea does 'dar calabazas",data/seed-source/items/languages/languages.spanish.idioms.json
+d20a8607-2784-497f-a8d5-b734a8170703,languages,spanish,idioms,"In everyday Spanish, what idea does 'dormir como u",data/seed-source/items/languages/languages.spanish.idioms.json
+45b816f4-aab4-415c-ac5a-e8082efd88ed,languages,spanish,idioms,"In everyday Spanish, what idea does 'echar leña al",data/seed-source/items/languages/languages.spanish.idioms.json
+df4ccd42-91a9-4020-9acd-5f52afed1f2a,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar a dos v",data/seed-source/items/languages/languages.spanish.idioms.json
+67ad22ba-6ed0-4b60-9f3b-cd362db950dd,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar como pe",data/seed-source/items/languages/languages.spanish.idioms.json
+3593fade-10b2-4277-a743-4d9981f87991,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar con el ",data/seed-source/items/languages/languages.spanish.idioms.json
+c9a18887-22cc-44b9-a89a-5e0131ec0be0,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar entre l",data/seed-source/items/languages/languages.spanish.idioms.json
+8135c093-fab3-400f-b612-d857559e07fb,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar hecho p",data/seed-source/items/languages/languages.spanish.idioms.json
+5a7e1d99-afb0-4432-8dde-4aae10d93adc,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar hecho u",data/seed-source/items/languages/languages.spanish.idioms.json
+aab2b0dc-a284-42f0-abcc-31ef72c969ed,languages,spanish,idioms,"In everyday Spanish, what idea does 'estar sin bla",data/seed-source/items/languages/languages.spanish.idioms.json
+d062f265-2197-445d-9364-41b71aa794ad,languages,spanish,idioms,"In everyday Spanish, what idea does 'hablar hasta ",data/seed-source/items/languages/languages.spanish.idioms.json
+f65d7717-c910-45c1-af9d-ac6918a2f3f1,languages,spanish,idioms,"In everyday Spanish, what idea does 'ir al grano' ",data/seed-source/items/languages/languages.spanish.idioms.json
+221ae876-6cfa-48e1-80f2-2e2f78a1bdaf,languages,spanish,idioms,"In everyday Spanish, what idea does 'ir como una t",data/seed-source/items/languages/languages.spanish.idioms.json
+bd350794-5950-4ec8-b69c-649fd650af9c,languages,spanish,idioms,"In everyday Spanish, what idea does 'meter cizaña'",data/seed-source/items/languages/languages.spanish.idioms.json
+abae896b-232f-44e2-a342-023b28c70640,languages,spanish,idioms,"In everyday Spanish, what idea does 'montar un pol",data/seed-source/items/languages/languages.spanish.idioms.json
+15ec38dc-cc4f-4090-8836-a21b8506c640,languages,spanish,idioms,"In everyday Spanish, what idea does 'no dar pie co",data/seed-source/items/languages/languages.spanish.idioms.json
+c79af41c-d2ae-4a5e-91dc-7445f6db274e,languages,spanish,idioms,"In everyday Spanish, what idea does 'no pegar ojo'",data/seed-source/items/languages/languages.spanish.idioms.json
+f78d08f3-d22a-4599-b2be-9277ac65820b,languages,spanish,idioms,"In everyday Spanish, what idea does 'pillarlo con ",data/seed-source/items/languages/languages.spanish.idioms.json
+f6a1e5c2-59bf-4e8d-8ada-fa900794691b,languages,spanish,idioms,"In everyday Spanish, what idea does 'tirar la toal",data/seed-source/items/languages/languages.spanish.idioms.json
+d82ec8d8-357d-4fc0-bcaa-91dac33294b9,languages,spanish,idioms,"In everyday Spanish, what idea does 'ver las oreja",data/seed-source/items/languages/languages.spanish.idioms.json
+ccd54e61-474a-48c5-9459-5154c3f91f1a,languages,spanish,idioms,"The Spanish expression ""No hay mal que por bien no",data/seed-source/items/languages/languages.spanish.idioms.json
+0e9d0b22-219e-44cc-bf9e-695e01dde4e6,languages,spanish,idioms,"The Spanish idiom ""Ser pan comido"" matches which E",data/seed-source/items/languages/languages.spanish.idioms.json
+5d55bfda-2c4a-4a93-a1db-843cd4190c58,languages,spanish,idioms,"What does ""Costar un ojo de la cara"" usually expre",data/seed-source/items/languages/languages.spanish.idioms.json
+399247d3-4a25-49ed-bdad-dce74358dd8c,languages,spanish,idioms,"What does ""Dar en el clavo"" mean in everyday Spani",data/seed-source/items/languages/languages.spanish.idioms.json
+656c385b-4a79-4869-84b8-2bef4fa50e8a,languages,spanish,idioms,What does the Spanish idiom 'buscarle tres pies al,data/seed-source/items/languages/languages.spanish.idioms.json
+61e8405b-220e-4422-a9fe-72d08e8f95f6,languages,spanish,idioms,What does the Spanish idiom 'caerse la cara de ver,data/seed-source/items/languages/languages.spanish.idioms.json
+04bbeeb2-08e3-47cb-b49a-edf2ea7dcf4e,languages,spanish,idioms,What does the Spanish idiom 'echar una mano' most ,data/seed-source/items/languages/languages.spanish.idioms.json
+5f8e3978-74fb-437f-9a8f-ba8ddec02dcf,languages,spanish,idioms,What does the Spanish idiom 'estar como una cabra',data/seed-source/items/languages/languages.spanish.idioms.json
+6dad337e-54dd-401d-8961-c8344eecf2fc,languages,spanish,idioms,What does the Spanish idiom 'hacer castillos en el,data/seed-source/items/languages/languages.spanish.idioms.json
+df4a54a5-6ff6-4e0c-9acf-132f2008924c,languages,spanish,idioms,What does the Spanish idiom 'meter la pata' most n,data/seed-source/items/languages/languages.spanish.idioms.json
+85044bbf-71cc-4432-8eb1-de086c001c9a,languages,spanish,idioms,What does the Spanish idiom 'no tener ni pies ni c,data/seed-source/items/languages/languages.spanish.idioms.json
+3c63a796-3616-4472-b081-9d5178e06932,languages,spanish,idioms,What does the Spanish idiom 'pagar el pato' most n,data/seed-source/items/languages/languages.spanish.idioms.json
+00c0ad5c-5951-4a8a-ab64-0c08acd54d8a,languages,spanish,idioms,What does the Spanish idiom 'poner el dedo en la l,data/seed-source/items/languages/languages.spanish.idioms.json
+7ae6eba0-eb44-4790-88ad-0f60dffe3353,languages,spanish,idioms,What does the Spanish idiom 'ponerse las botas' mo,data/seed-source/items/languages/languages.spanish.idioms.json
+e9c8d28d-14c4-4b49-b7d9-98ee9d9ca493,languages,spanish,idioms,What does the Spanish idiom 'ponerse rojo como un ,data/seed-source/items/languages/languages.spanish.idioms.json
+19a705b6-0c48-431f-ab01-63690a41e1f9,languages,spanish,idioms,What does the Spanish idiom 'quedarse con la boca ,data/seed-source/items/languages/languages.spanish.idioms.json
+c85883e5-3870-432a-b02a-bcac907f91be,languages,spanish,idioms,What does the Spanish idiom 'quedarse de piedra' m,data/seed-source/items/languages/languages.spanish.idioms.json
+9f36c437-4307-41a1-b1cc-f53b4872730e,languages,spanish,idioms,What does the Spanish idiom 'quedarse en blanco' m,data/seed-source/items/languages/languages.spanish.idioms.json
+8458ff2b-7783-47b7-b363-61279c533ccb,languages,spanish,idioms,What does the Spanish idiom 'sacar de quicio' most,data/seed-source/items/languages/languages.spanish.idioms.json
+28437ab9-2d41-4431-929f-2a8c1fed8517,languages,spanish,idioms,What does the Spanish idiom 'salir por la tangente,data/seed-source/items/languages/languages.spanish.idioms.json
+8fcfcb65-b156-46f2-bdca-98f0f9347683,languages,spanish,idioms,What does the Spanish idiom 'ser un cero a la izqu,data/seed-source/items/languages/languages.spanish.idioms.json
+5fc1b12f-8d68-409a-9694-9142ee4744de,languages,spanish,idioms,What does the Spanish idiom 'tener la mosca detrás,data/seed-source/items/languages/languages.spanish.idioms.json
+540a6f1d-c2b8-4514-a1a5-ea8e10b156d6,languages,spanish,idioms,What does the Spanish idiom 'tener la sartén por e,data/seed-source/items/languages/languages.spanish.idioms.json
+318d4674-cbd9-48ad-a1aa-969ec86434f0,languages,spanish,idioms,What does the Spanish idiom 'tirar la casa por la ,data/seed-source/items/languages/languages.spanish.idioms.json
+4a69d28b-e707-47b8-8f6e-0d125351f404,languages,spanish,idioms,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.spanish.idioms.json
+5460272e-d194-45c4-8a5a-7cc8c752e8b6,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+15e11b58-38e1-4c71-b610-47129cfd773c,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+865366f6-7477-494c-b312-085d1318d54e,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+6b7a7263-8edb-4428-886c-19c92d52ad7a,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+4fafc790-64cc-4ba5-9866-4d7ea6c290d5,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+dc2a7831-a86b-46e0-b70a-3443300d7ade,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+e461e7bf-f487-4678-a3a6-0de12c42f9b2,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+3253b215-2b79-4b32-ba38-1e22d3ca4d48,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+bf0817d4-2734-42e6-9e77-39e4afe9b369,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+fd823db2-8124-4114-a6f2-3c21ec3ceb95,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+f1068577-5a7a-4b96-9cbe-1d17cfe70c60,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+a287a14c-8866-491f-9b8a-9419e5b4eff7,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+54b6c50b-9daa-4a23-aab8-8f233ed9eea8,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+61ff4acf-e8bd-4c69-b687-a419a1c91486,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+a725fdef-4334-4671-b401-366185afb686,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+6848e464-3bdb-4428-b5eb-a4fe70b013e2,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+230f3b98-386b-4bcc-a038-18a330c11c90,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+c0c9abe9-63a3-44b0-9ebd-03805b64cb18,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+63cbbf17-2001-421e-9c09-61793426dda6,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+6ea41def-349e-4b7a-9760-5a8927d8a2af,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+336d6fe2-077e-4d53-88b4-cb208ec04dd1,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+29f09f4e-ca5a-4a04-995b-78be2fa10732,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+7c426fb8-aaee-4849-bb70-656d8876e139,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+6cfa54d1-050d-44bd-ba99-6508c8ce776b,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+18916f2c-9e8d-416c-8da8-4f08c72b4946,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+b7486ff0-1cfe-4e9c-bef4-759fcd3b0f3b,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+3a185094-70ce-44d5-a326-17f4bd05d512,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+3e8da206-43d6-4b2d-a652-80e163b09ca5,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+1db1dd43-7298-4905-b14e-cbbedc7a6763,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+8a560fa7-6b81-4b66-9edb-279cba06ee75,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+32830815-71ff-4604-8f7c-77f2b703a3d1,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+fb769d78-1371-4373-b930-9bb0a8565449,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+d5375408-34e9-4f28-9395-f929a6f81f57,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+30314d19-160f-4feb-8e24-fd63a61603e1,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+b3a095ff-dd52-4afc-9340-a3e84e97908f,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+3d968a32-7be3-4de2-9741-dc50d6f15911,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+2016f842-446c-467e-86b1-65507a3a5b8a,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+0b5d2663-86ff-44cf-ab19-9667f8a5a710,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+30a431a6-9393-499e-b3db-fb0c46ba6673,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+7ac2214c-f469-4280-9243-f58a496672e0,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+5cf9f487-e29c-478a-8c77-aab4f79a2cd4,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+8b3df0e2-0f3e-476a-af1b-8eb2a6baa0e5,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+2282df98-6e66-4a92-8427-1fc7fd6d8561,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+60c16778-4318-49ad-b8d3-3c615dbe1bc7,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+df045efc-2f4d-4a33-a9bf-48d484288fb4,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+d5be4a80-efac-4fce-b9e3-34ae827e95c9,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+dabb8589-49c0-4390-ab52-6b0595677d03,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+1b91ce4f-c9a9-4fc2-b6e2-2fa5dd29af4f,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+d719c949-ae47-40c5-bfd6-3be5b0fbe1ef,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+cc739edf-4215-4162-9231-7401c0385df4,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+43e3460f-d9c1-4fc3-abdc-912540ab8e39,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+b74c2429-802e-45e4-b14f-003d4b1d2a55,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+f36d015a-4789-453b-9be4-78d4ce4eeb44,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
+a71b2695-d4d1-4e1b-beb5-94c62e29f85c,languages,spanish,idioms,Which everyday situation best fits the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
 f94e9e93-a5b2-4cd3-84f5-1504cfcaabbe,languages,spanish,listening,"In ""teléfono,"" which syllable carries the main str",data/seed-source/items/languages/languages.spanish.listening.json
 6f093cdf-9bcc-4034-8bde-a754e81a5e05,languages,spanish,listening,"In much of Spain, which pair is easier to tell apa",data/seed-source/items/languages/languages.spanish.listening.json
 c59a2c34-bfb8-4d89-879f-dc1c04c82656,languages,spanish,listening,What most often changes between the yes-no questio,data/seed-source/items/languages/languages.spanish.listening.json
@@ -9207,6 +9890,76 @@ cee5a955-1b9b-498a-b92a-da120983b421,languages,ukrainian,idioms,What does the Uk
 079242cd-9612-4542-8412-973f5a5d5abd,languages,ukrainian,idioms,What does the Ukrainian idiom '{{uk-UA|Як дві крап,data/seed-source/items/languages/languages.ukrainian.idioms.json
 3e7c1b5e-abad-46c1-aec0-6dfa9ef1ef91,languages,ukrainian,idioms,What does the Ukrainian idiom '{{uk-UA|Як з медом|,data/seed-source/items/languages/languages.ukrainian.idioms.json
 b301e228-3801-46ac-a311-063b80cff875,languages,ukrainian,idioms,What does the Ukrainian idiom '{{uk-UA|Як сніг на ,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e16c5d22-5037-4e7a-b6fe-d48299c346dc,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+9df3ff28-e977-425d-bb41-33ce1c7820a8,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+3b0d1c09-94f9-4c82-abc8-59d4c8dfa931,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+bdf3d0a6-ea64-4108-a66b-0760ee66596c,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+f0e522e9-e4c5-4a68-9d53-8eb58dc702fb,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+67115930-bcd9-4d89-a2d4-8adcf809e9c0,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+0246e09f-f6a5-41e6-ab4e-8f4a54aebd04,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+f9391f2e-e674-45f5-bb9b-62bdae63c9cf,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+6e230057-b16d-4910-a4d8-fc7ef51db487,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+7e22ffc4-dfa0-457b-bf43-b2845fd7b6c0,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+df56900f-666b-4923-93b7-2335c12fdc03,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+d57c109a-9475-4e3a-833d-e9dd00d80fa2,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e2397d03-8332-4372-94f1-d17f198131c2,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+8c58d761-2f3b-40fe-b1f5-c70f1e17a486,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+3cdbaf2e-5fea-48ef-88b2-f17b7efd0e9f,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+789fec5a-2fcf-4eeb-8812-83877f9893a0,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+1699bd98-c331-4fa4-8c41-b01f33274c82,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+556cec64-c095-402f-b180-88bca7ddb5a3,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+805fb724-f867-4fa5-93b2-382790d8671a,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+4025d349-3458-42ca-9fb8-8c56c2cff180,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+943200a6-ff75-4a36-a6cb-4e57c0bfecb9,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+af0c0b94-0d27-4e1c-a488-2f555841d8fc,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+efe9f1c9-3307-44e9-aada-6f266faa4e30,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+3ea3763a-29f3-4af5-8df1-5f5ffc375de2,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+cecf133d-aaac-42c3-98c6-adb310eee677,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+b34ef5e1-2e52-46c1-ad69-5405cb6d4d1d,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e26f58a0-3953-463c-876d-337a0e0cb27f,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+f54f8a53-a5fd-47c7-ba23-26c31dd00a94,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+4c85d876-71a0-42a0-a858-e384ebc58c7a,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e0997883-429d-43b3-ba10-c169902d837a,languages,ukrainian,idioms,What literal image does the Ukrainian idiom '{{uk-,data/seed-source/items/languages/languages.ukrainian.idioms.json
+7c0b2f64-87db-419c-bf36-c8578217931b,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+2671c49e-2da2-4d96-8b42-f50d129ec0dc,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+dcf6db5f-4cc8-4dd1-8c06-a052b0399818,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+b3d200f6-ae29-42f7-a9bb-efa87bc468ee,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+a60cb100-dd8f-43ba-b986-3eb18bb0fc87,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e6c34225-455f-456b-a87b-63cec68afead,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+9754d855-2787-4874-9e7a-011a53ae8d34,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+5b2da407-7c8a-42fa-ad83-448ccf79b3e5,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+4680b177-0001-4dab-bd7a-e974f3d63446,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+60d3c470-5f50-4efe-a515-d9af65c36fef,languages,ukrainian,idioms,Which English idea is closest to the Ukrainian exp,data/seed-source/items/languages/languages.ukrainian.idioms.json
+16bd323f-45bd-4c36-8979-f2329d144a3c,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+db649313-8497-4b4c-8603-e5a2acc2eafc,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+4fc1f078-018b-4e07-a878-6fa6287a9b0d,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+8740e76d-ecf0-4b6b-974d-9cd0ccf4b9c8,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+15efd685-d9f9-43bb-846d-48ee758a246e,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+e55b226d-d140-4ef7-a9bf-96e4c5843c1d,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+18b51bfc-87fc-4838-97c3-95f5adce4265,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+6e740d4a-8b64-4bde-8269-0716766c6af5,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+73886c8e-77bf-4a65-bccb-6883a1a90419,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+04894f4a-1777-4f94-a025-ba630c67574c,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+4099eb55-79fa-470d-a198-c3c16439d97c,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+88f421f5-b190-49c0-8865-7c62ba325481,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+2c5e4d05-e739-4a85-a876-72ada889fa28,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+9f4c8b20-c658-4312-9022-8e25fec08e79,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+fb4e5162-5adf-428a-9c4c-6e1a7c3c4a46,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+322909d1-e766-438b-8a0b-a2da80c3bf30,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+18c70fb3-178f-4873-9cd8-46ccda711202,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+860d4e3c-c67b-47e6-82e3-9395bbc02df4,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+061db78a-7b49-424c-b565-fb9d161ef11a,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+7eeb19ed-14ba-4dbc-9900-4e5127719d21,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+7fa95ec6-bba0-4d12-8521-965f723d4bc4,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+aefedce5-be1d-4f02-b283-dfb1f040dc86,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+337e78ed-351f-4b0a-a16f-a6c32de2a200,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+3b6760f0-713e-4fa7-9c15-70082f08c841,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+88fb66c9-cd7d-49eb-aeb7-f1136ef36f4f,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+35d9d4cd-e392-404d-9af3-8a358f12947c,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+75f1d088-e508-4849-b581-cdbf1bdadeaf,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+87fca28e-e944-4ef5-8820-4a280ea27499,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+98261d66-8dbd-47c7-9e04-69ade0ef5aca,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
+98ba209d-6fbd-4ee9-bc2b-ead1c5ace288,languages,ukrainian,idioms,Which everyday situation best fits the Ukrainian i,data/seed-source/items/languages/languages.ukrainian.idioms.json
 cd66b651-37dd-412b-bf95-3c5a4eb0dc19,languages,ukrainian,phrases,How do you ask 'How much does this cost?' in Ukrai,data/seed-source/items/languages/languages.ukrainian.phrases.json
 b641b5d4-e9b8-4475-a2e2-d1faaf278dbb,languages,ukrainian,phrases,How do you ask 'Where is the bathroom?' in Ukraini,data/seed-source/items/languages/languages.ukrainian.phrases.json
 448531bb-ed29-4fca-b786-3d3f0f4a0961,languages,ukrainian,phrases,How do you ask for the bill in Ukrainian?,data/seed-source/items/languages/languages.ukrainian.phrases.json

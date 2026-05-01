@@ -40,6 +40,7 @@ import { filterItems } from "../../items/utils/itemFilters";
 import { useBulkRatings } from "../../items/hooks/useBulkRatings";
 import type { FilterType } from "../../items/types/filters";
 import type { ItemTypeFilter as ItemTypeFilterValue } from "../../items/types/filters";
+import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import { getCategoryScopeModeConfig } from "../utils/categoryScopeMode";
 import { getCategoryThemeByName } from "../categoryThemes";
 import {
@@ -199,6 +200,19 @@ const CategoriesPage = () => {
     else p.delete("keywords");
     navigate(`${location.pathname}?${p.toString()}`);
     setShowFilters(false);
+  };
+
+  const addTagKeywordFilter = (kw: string) => {
+    const seen = new Set<string>();
+    const updated = [...filterKeywordsFromQuery, kw].filter((k) => {
+      const lower = k.toLowerCase();
+      if (seen.has(lower)) return false;
+      seen.add(lower);
+      return true;
+    });
+    const p = new URLSearchParams(searchParams);
+    p.set("keywords", updated.join(","));
+    navigate(`${location.pathname}?${p.toString()}`);
   };
 
   const handleApplyFilter = () => {
@@ -406,6 +420,12 @@ const CategoriesPage = () => {
       ),
     enabled: !!categoryName && view === "sets",
   });
+
+  const { extraKeywordAutocompleteSource: setsViewKeywordOptions } = useExtraKeywordAutocompleteSource(
+    categoryName ?? "",
+    [],
+    view === "sets" && !!categoryName
+  );
 
   const tagFromUrl = searchParams.get("tag") || undefined;
   const itemTagKeywords = useMemo(() => {
@@ -824,6 +844,28 @@ const CategoriesPage = () => {
     );
   }
 
+  const handleExport = async () => {
+    if (!categoryName || keywordsForStudy.length === 0) return;
+    setIsExporting(true);
+    try {
+      const data = await itemsApi.exportItems(categoryName, keywordsForStudy);
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const parts = [categoryName.toLowerCase(), ...keywordsForStudy.map((k) => k.toLowerCase())];
+      const filename = parts.join(".") + ".json";
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   if (activeView === "items" && (categoryName || isAllCategoriesSlug(categorySlugParam))) {
     if (isLoadingItems) return <LoadingSpinner />;
     if (itemsError) {
@@ -882,18 +924,31 @@ const CategoriesPage = () => {
               }}
               endSlot={
                 isAuthenticated && categoryName ? (
-                  <Link
-                    to={buildAddItemsPathWithParams(
-                      categoryName,
-                      pathKeywordsFromUrl,
-                      filterKeywordsFromQuery
+                  <div className="hidden items-center gap-2 sm:inline-flex">
+                    {keywordsForStudy.length > 0 && (
+                      <button
+                        onClick={handleExport}
+                        disabled={isExporting}
+                        className="inline-flex shrink-0 items-center gap-1 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                        title="Export items as seed JSON"
+                      >
+                        <ArrowDownTrayIcon className="h-4 w-4" />
+                        {isExporting ? "Exporting…" : "Export"}
+                      </button>
                     )}
-                    className="hidden shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:inline-flex"
-                    title="Add items for this category and navigation path"
-                  >
-                    <PlusIcon className="h-4 w-4" />
-                    Add
-                  </Link>
+                    <Link
+                      to={buildAddItemsPathWithParams(
+                        categoryName,
+                        pathKeywordsFromUrl,
+                        filterKeywordsFromQuery
+                      )}
+                      className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                      title="Add items for this category and navigation path"
+                    >
+                      <PlusIcon className="h-4 w-4" />
+                      Add
+                    </Link>
+                  </div>
                 ) : null
               }
             />
@@ -911,18 +966,31 @@ const CategoriesPage = () => {
               onListenAll={ttsSupported ? handleListenAll : undefined}
               middleSlot={
                 isAuthenticated && categoryName ? (
-                  <Link
-                    to={buildAddItemsPathWithParams(
-                      categoryName,
-                      pathKeywordsFromUrl,
-                      filterKeywordsFromQuery
+                  <div className="inline-flex items-center gap-2 sm:hidden">
+                    {keywordsForStudy.length > 0 && (
+                      <button
+                        onClick={handleExport}
+                        disabled={isExporting}
+                        className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                        title="Export items as seed JSON"
+                      >
+                        <ArrowDownTrayIcon className="h-4 w-4" />
+                        {isExporting ? "Exporting…" : "Export"}
+                      </button>
                     )}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 sm:hidden"
-                    title="Add items for this category and navigation path"
-                  >
-                    <PlusIcon className="h-4 w-4" />
-                    Add
-                  </Link>
+                    <Link
+                      to={buildAddItemsPathWithParams(
+                        categoryName,
+                        pathKeywordsFromUrl,
+                        filterKeywordsFromQuery
+                      )}
+                      className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
+                      title="Add items for this category and navigation path"
+                    >
+                      <PlusIcon className="h-4 w-4" />
+                      Add
+                    </Link>
+                  </div>
                 ) : null
               }
               onOpenMap={() => setShowMapModal(true)}
@@ -1167,28 +1235,6 @@ const CategoriesPage = () => {
     );
   }
 
-  const handleExport = async () => {
-    if (!categoryName || pathKeywordsFromUrl.length === 0) return;
-    setIsExporting(true);
-    try {
-      const data = await itemsApi.exportItems(categoryName, pathKeywordsFromUrl);
-      const json = JSON.stringify(data, null, 2);
-      const blob = new Blob([json], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const parts = [categoryName.toLowerCase(), ...pathKeywordsFromUrl.map((k) => k.toLowerCase())];
-      const filename = parts.join(".") + ".json";
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } finally {
-      setIsExporting(false);
-    }
-  };
-
   if (categoryName && activeView === "sets") {
     if (isLoadingKeywords) return <LoadingSpinner />;
 
@@ -1320,12 +1366,21 @@ const CategoriesPage = () => {
               }}
             >
               <div className="space-y-4">
-                {filterKeywordsFromQuery.length > 0 && (
-                  <div>
-                    <label className="mb-1.5 block text-xs font-medium text-gray-500">
-                      Active keyword filters
-                    </label>
-                    <div className="flex flex-wrap gap-1.5">
+                <div>
+                  <label className="mb-1.5 block text-xs font-medium text-gray-500">
+                    Keywords
+                  </label>
+                  <KeywordFilterCombobox
+                    options={setsViewKeywordOptions.filter(
+                      (k) =>
+                        !filterKeywordsFromQuery.some(
+                          (s) => s.toLowerCase() === k.toLowerCase()
+                        )
+                    )}
+                    onAdd={addTagKeywordFilter}
+                  />
+                  {filterKeywordsFromQuery.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
                       {filterKeywordsFromQuery.map((kw) => (
                         <button
                           key={kw}
@@ -1338,8 +1393,8 @@ const CategoriesPage = () => {
                         </button>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className="flex flex-wrap items-end gap-4">
                   <div>
                     <label className="mb-1 block text-xs font-medium text-gray-500">Category</label>

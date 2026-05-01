@@ -262,29 +262,113 @@ def write_items_bundle(items: list[SourceItem], path: Path = REGISTRY_ROOT / "it
     write_json(path, [canonicalize_item_payload(item) for item in items])
 
 
-def _get_file_git_dates(paths: list[Path]) -> dict[Path, str | None]:
-    """Return the last-commit ISO date for each path via a single git log call."""
-    dates: dict[Path, str | None] = {p: None for p in paths}
-    path_set = {p.relative_to(ROOT).as_posix(): p for p in paths}
+def _load_committed_source_file_dates() -> dict[str, str]:
     try:
         result = subprocess.run(
-            ["git", "log", "--name-only", "--pretty=format:%cI", "--", "data/seed-source/items/"],
-            capture_output=True, text=True, cwd=ROOT, check=False,
+            ["git", "show", "HEAD:data/seed-source/_registry/source-file-index.json"],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
         )
     except FileNotFoundError:
-        return dates
-    current_date: str | None = None
-    for line in result.stdout.splitlines():
-        line = line.strip()
-        if not line:
-            current_date = None
+        result = subprocess.CompletedProcess(args=[], returncode=1, stdout="")
+
+    if result.returncode != 0:
+        try:
+            raw_index = json.loads((REGISTRY_ROOT / "source-file-index.json").read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {}
+    else:
+        try:
+            raw_index = json.loads(result.stdout)
+        except json.JSONDecodeError:
+            return {}
+
+    files = raw_index.get("files", [])
+    if not isinstance(files, list):
+        return {}
+
+    dates: dict[str, str] = {}
+    for entry in files:
+        if not isinstance(entry, dict):
             continue
-        if len(line) >= 20 and line[4] == "-" and line[7] == "-" and "T" in line:
-            current_date = line
-        elif current_date and line in path_set:
-            path = path_set[line]
-            if dates[path] is None:
-                dates[path] = current_date
+        path = entry.get("path")
+        modified_at = entry.get("modifiedAt")
+        if isinstance(path, str) and isinstance(modified_at, str):
+            dates[path] = modified_at
+    return dates
+
+
+def _get_dirty_source_paths() -> set[str]:
+    try:
+        result = subprocess.run(
+            ["git", "status", "--porcelain=v1", "--untracked-files=all", "--", "data/seed-source/items/"],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+    except FileNotFoundError:
+        return set()
+
+    dirty_paths: set[str] = set()
+    for raw_line in result.stdout.splitlines():
+        if len(raw_line) < 4:
+            continue
+        path_text = raw_line[3:].strip()
+        if " -> " in path_text:
+            path_text = path_text.rsplit(" -> ", 1)[1].strip()
+        dirty_paths.add(path_text.replace("\\", "/"))
+    return dirty_paths
+
+
+def _get_last_committed_file_date(path: Path) -> str | None:
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--", path.relative_to(ROOT).as_posix()],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+    except FileNotFoundError:
+        return None
+
+    if result.returncode != 0:
+        return None
+
+    text = result.stdout.strip()
+    return text or None
+
+
+def _get_file_git_dates(paths: list[Path], current_modified_at: str | None = None) -> dict[Path, str | None]:
+    """Return stable modifiedAt values for source files.
+
+    Unchanged files keep the value already committed in source-file-index.json.
+    Dirty or newly tracked files receive the current generation timestamp.
+    Missing entries fall back to the file's last git commit date.
+    """
+    from datetime import datetime, timezone
+
+    dates: dict[Path, str | None] = {}
+    committed_dates = _load_committed_source_file_dates()
+    dirty_paths = _get_dirty_source_paths()
+    if current_modified_at is None:
+        current_modified_at = datetime.now(timezone.utc).isoformat()
+
+    for path in paths:
+        relative_path = path.relative_to(ROOT).as_posix()
+        if relative_path in dirty_paths:
+            dates[path] = current_modified_at
+            continue
+
+        committed_date = committed_dates.get(relative_path)
+        if committed_date is not None:
+            dates[path] = committed_date
+            continue
+
+        dates[path] = _get_last_committed_file_date(path)
     return dates
 
 
@@ -300,7 +384,8 @@ def write_source_file_index(
         by_source[item.path].append(item)
 
     source_paths = sorted(by_source.keys())
-    git_dates = _get_file_git_dates(source_paths)
+    generated_at = datetime.now(timezone.utc).isoformat()
+    git_dates = _get_file_git_dates(source_paths, generated_at)
 
     files = []
     for source_path in source_paths:
@@ -315,7 +400,7 @@ def write_source_file_index(
         })
 
     index = {
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "generatedAt": generated_at,
         "totalItems": len(items),
         "files": files,
     }

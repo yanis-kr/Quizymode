@@ -44,6 +44,7 @@ internal sealed class DatabaseSeederHostedService(
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
             await languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
             await SeedIdeasAsync(db, cancellationToken);
+            await EnsureFeaturedSetsAsync(db, cancellationToken);
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
             {
@@ -323,6 +324,51 @@ internal sealed class DatabaseSeederHostedService(
         await db.SaveChangesAsync(cancellationToken);
 
         _logger.LogInformation("Ensured {Count} seeder ratings (5 stars) for Science items.", ratingsToAdd.Count);
+    }
+
+    private async Task EnsureFeaturedSetsAsync(ApplicationDbContext db, CancellationToken cancellationToken)
+    {
+        var seeds = new[]
+        {
+            (CategorySlug: "exams",    Kw1: "aws",       Kw2: (string?)"saa-c03",        DisplayName: "AWS SAA-C03",               SortOrder: 0),
+            (CategorySlug: "sports",   Kw1: "soccer",    Kw2: (string?)"world-cup",       DisplayName: "World Cup Starter",         SortOrder: 1),
+            (CategorySlug: "nature",   Kw1: "survival",  Kw2: (string?)"tropical-island", DisplayName: "Tropical Island Survival",  SortOrder: 2),
+            (CategorySlug: "science",  Kw1: "astronomy", Kw2: (string?)"solar-system",    DisplayName: "Solar System Sprint",       SortOrder: 3),
+        };
+
+        foreach (var seed in seeds)
+        {
+            bool exists = await db.FeaturedItems.AnyAsync(
+                f => f.Type == FeaturedItemType.Set
+                    && f.CategorySlug == seed.CategorySlug
+                    && f.NavKeyword1 == seed.Kw1
+                    && f.NavKeyword2 == seed.Kw2,
+                cancellationToken);
+
+            if (exists)
+            {
+                continue;
+            }
+
+            db.FeaturedItems.Add(new FeaturedItem
+            {
+                Id = Guid.NewGuid(),
+                Type = FeaturedItemType.Set,
+                DisplayName = seed.DisplayName,
+                CategorySlug = seed.CategorySlug,
+                NavKeyword1 = seed.Kw1,
+                NavKeyword2 = seed.Kw2,
+                SortOrder = seed.SortOrder,
+                CreatedBy = SeederUserId,
+                CreatedAt = DateTime.UtcNow,
+            });
+        }
+
+        int added = await db.SaveChangesAsync(cancellationToken);
+        if (added > 0)
+        {
+            _logger.LogInformation("Seeded {Count} featured set(s).", added);
+        }
     }
 
     private async Task EnsurePublicCollectionsAsync(

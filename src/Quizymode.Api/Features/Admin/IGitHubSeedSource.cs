@@ -11,4 +11,6 @@ internal interface IGitHubSeedSource
 
 internal sealed record LoadedGitHubSeedManifest(
     SeedSyncAdmin.ManifestRequest Manifest,
-    SeedSyncAdmin.SourceContext SourceContext);
+    SeedSyncAdmin.SourceContext SourceContext,
+    string? BranchTaxonomyYaml,
+    string? BranchTaxonomySql);

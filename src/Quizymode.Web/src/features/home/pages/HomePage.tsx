@@ -5,9 +5,11 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
+import { featuredApi } from "@/api/featured";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
+import { buildCategoryPath } from "@/utils/categorySlug";
+import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
 import {
-  featuredSetCards,
   HOME_SAMPLE_COLLECTION_ID,
   HOME_SAMPLE_COLLECTION_NAME,
   homeCategoryCards,
@@ -60,6 +62,15 @@ const HomePage = () => {
     retry: false,
     staleTime: 5 * 60 * 1000,
   });
+
+  const { data: featuredData } = useQuery({
+    queryKey: ["home", "featured"],
+    queryFn: () => featuredApi.get(),
+    retry: false,
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const featuredSets = featuredData?.sets ?? [];
 
   const publicCollections = publicCollectionsData?.items ?? [];
 
@@ -175,41 +186,56 @@ const HomePage = () => {
             </section>
 
             {/* ── Featured Sets lane ── */}
-            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
-              <div className="mb-1.5 flex items-center justify-between gap-3">
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
-                  Featured Sets
-                </div>
-              </div>
-
-              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {featuredSetCards.map((set) => (
+            {featuredSets.length > 0 && (
+              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
+                <div className="mb-1.5 flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+                    Featured Sets
+                  </div>
                   <Link
-                    key={set.id}
-                    to={set.path}
-                    className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                    to="/featured"
+                    className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
                   >
-                    <img
-                      src={set.image}
-                      alt=""
-                      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
-                    <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
-                      <div className="flex justify-end">
-                        <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                          {set.eyebrow}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between gap-2">
-                        <h3 className="text-sm font-semibold text-white">{set.title}</h3>
-                        <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
-                      </div>
-                    </div>
+                    Show all
+                    <ArrowRightIcon className="h-3 w-3" />
                   </Link>
-                ))}
-              </div>
-            </section>
+                </div>
+
+                <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {featuredSets.map((set) => {
+                    const keywords = [set.navKeyword1, set.navKeyword2].filter(Boolean) as string[];
+                    const path = buildCategoryPath(set.categorySlug, keywords);
+                    const image = getCategoryThemeBySlug(set.categorySlug).image;
+
+                    return (
+                      <Link
+                        key={set.id}
+                        to={path}
+                        className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                      >
+                        <img
+                          src={image}
+                          alt=""
+                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                        <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                          <div className="flex justify-end">
+                            <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                              {set.categorySlug}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between gap-2">
+                            <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
+                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
 
             {/* ── Recently Added Collections lane ── */}
             {publicCollections.length > 0 && (

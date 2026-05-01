@@ -50,6 +50,12 @@ export function KeywordFilterCombobox({
           }}
           onFocus={() => setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 150)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && inputText.trim()) {
+              const exact = options.find((o) => o.toLowerCase() === inputText.trim().toLowerCase());
+              handleSelect(exact ?? inputText.trim());
+            }
+          }}
           placeholder={placeholder}
           className="w-full rounded-md border border-gray-300 py-1.5 pl-8 pr-3 text-sm focus:border-indigo-400 focus:outline-none focus:ring-0"
         />
