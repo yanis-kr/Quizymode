@@ -245,10 +245,10 @@ const HomePage = () => {
                     Recently Added Collections
                   </div>
                   <Link
-                    to="/collections"
+                    to="/collections?tab=discover"
                     className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
                   >
-                    Browse all
+                    Show all
                     <ArrowRightIcon className="h-3 w-3" />
                   </Link>
                 </div>

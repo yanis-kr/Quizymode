@@ -6794,6 +6794,7 @@
           "categorySlug",
           "navKeyword1",
           "navKeyword2",
+          "itemCount",
           "lastModifiedAt",
           "sortOrder"
         ],
@@ -6827,6 +6828,9 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
           },
           "lastModifiedAt": {
             "oneOf": [

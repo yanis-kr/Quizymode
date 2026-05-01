@@ -41,7 +41,10 @@ function SetCard({ item, onNavigate }: { item: FeaturedSetDto; onNavigate: () =>
         </span>
       </div>
       <h3 className="text-lg font-semibold text-white mb-1">{item.displayName}</h3>
-      <p className="text-sm text-slate-400 mb-4">{subtitle}</p>
+      <p className="text-sm text-slate-400 mb-1">{subtitle}</p>
+      <p className="text-sm text-slate-500 mb-4">
+        {item.itemCount} {item.itemCount === 1 ? "item" : "items"}
+      </p>
       <div className="flex items-center gap-1.5 text-xs text-slate-500">
         <ClockIcon className="h-3.5 w-3.5" />
         <span>Updated {formatDate(item.lastModifiedAt)}</span>

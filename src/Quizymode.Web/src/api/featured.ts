@@ -6,6 +6,7 @@ export interface FeaturedSetDto {
   categorySlug: string;
   navKeyword1: string | null;
   navKeyword2: string | null;
+  itemCount: number;
   lastModifiedAt: string | null;
   sortOrder: number;
 }

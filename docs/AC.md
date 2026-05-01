@@ -1228,7 +1228,7 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 ### AC 10.2 API — Public
 
 - **AC 10.2.1** [Anonymous, Authenticated] `GET /featured` returns two arrays: `sets` and `collections`, each ordered by `SortOrder ASC, DisplayName ASC`.
-- **AC 10.2.2** [Anonymous, Authenticated] Each Set entry includes: `id`, `displayName`, `categorySlug`, `navKeyword1`, `navKeyword2`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across public items matching the set's category/keyword path, or `null` if no items exist), `sortOrder`. The keyword name-to-ID lookup used to filter items **must only consider public (`IsPrivate = false`) keywords and must deduplicate by name** (the `Keywords` unique index is on `(Name, CreatedBy, IsPrivate)`, so the same name can appear multiple times across different creators; the lookup takes the first match per lowercase name to avoid a duplicate-key crash).
+- **AC 10.2.2** [Anonymous, Authenticated] Each Set entry includes: `id`, `displayName`, `categorySlug`, `navKeyword1`, `navKeyword2`, `itemCount` (count of public items matching the set's category/keyword path), `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across those items, or `null` if no items exist), `sortOrder`. The keyword name-to-ID lookup used to filter items **must only consider public (`IsPrivate = false`) keywords and must deduplicate by name** (the `Keywords` unique index is on `(Name, CreatedBy, IsPrivate)`, so the same name can appear multiple times across different creators; the lookup takes the first match per lowercase name to avoid a duplicate-key crash).
 - **AC 10.2.3** [Anonymous, Authenticated] Each Collection entry includes: `id`, `collectionId`, `displayName`, `description`, `itemCount`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across items in the collection, or `null` if no items), `sortOrder`.
 
 ### AC 10.3 API — Admin
@@ -1243,7 +1243,7 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 
 - **AC 10.4.1** [Anonymous, Authenticated] A "Featured" link appears in the main nav between Categories and Collections (desktop and mobile).
 - **AC 10.4.2** [Anonymous, Authenticated] `/featured` renders a full-bleed dark page with a tab switcher (Sets | Collections) and sort controls (Last Modified | Name).
-- **AC 10.4.3** [Anonymous, Authenticated] Each Set card shows: display name, category › L1 › L2 path as subtitle, and last modified date. Clicking navigates to `/categories/:categorySlug/:kw1/:kw2?from=featured`.
+- **AC 10.4.3** [Anonymous, Authenticated] Each Set card shows: display name, category › L1 › L2 path as subtitle, item count, and last modified date. Clicking navigates to `/categories/:categorySlug/:kw1/:kw2?from=featured`.
 - **AC 10.4.4** [Anonymous, Authenticated] Each Collection card shows: display name, description (if any), item count, and last modified date. Clicking navigates to the collection detail page with `?from=featured`.
 - **AC 10.4.5** [Anonymous, Authenticated] Sorting by "Last Modified" orders cards newest-first. Sorting by "Name" orders alphabetically. Default is "Last Modified".
 - **AC 10.4.6** [Anonymous, Authenticated] When navigated from Featured (i.e. `?from=featured` is present), both CategoriesPage and CollectionDetailPage display a "← Back to Featured" link at the top of the page content.
