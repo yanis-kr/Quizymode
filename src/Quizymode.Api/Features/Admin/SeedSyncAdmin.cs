@@ -299,13 +299,13 @@ public static class SeedSyncAdmin
                 .NotEmpty()
                 .WithMessage("NavigationKeyword1 is required.")
                 .Must(KeywordHelper.IsValidKeywordNameFormat)
-                .WithMessage("NavigationKeyword1 must use only letters, numbers, and hyphens (max 30 characters).");
+                .WithMessage(x => $"NavigationKeyword1 '{x.NavigationKeyword1}' is invalid: use only letters, numbers, and hyphens (max 30 characters).");
 
             RuleFor(x => x.NavigationKeyword2)
                 .NotEmpty()
                 .WithMessage("NavigationKeyword2 is required.")
                 .Must(KeywordHelper.IsValidKeywordNameFormat)
-                .WithMessage("NavigationKeyword2 must use only letters, numbers, and hyphens (max 30 characters).");
+                .WithMessage(x => $"NavigationKeyword2 '{x.NavigationKeyword2}' is invalid: use only letters, numbers, and hyphens (max 30 characters).");
 
             RuleFor(x => x.Question)
                 .NotEmpty()
@@ -353,7 +353,7 @@ public static class SeedSyncAdmin
                 .NotEmpty()
                 .WithMessage("Keyword names cannot be empty.")
                 .Must(KeywordHelper.IsValidKeywordNameFormat)
-                .WithMessage("Keywords must use only letters, numbers, and hyphens (max 30 characters).");
+                .WithMessage((_, kw) => $"Keyword '{kw}' is invalid: use only letters, numbers, and hyphens (max 30 characters).");
         }
     }
 
