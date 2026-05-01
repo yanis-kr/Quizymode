@@ -345,7 +345,9 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
                 ItemsPath: "data/seed-source/items/geography",
                 SourceFileCount: 1,
                 CollectionsPath: "data/seed-source/collections/public",
-                CollectionSourceFileCount: collections?.Count ?? 0));
+                CollectionSourceFileCount: collections?.Count ?? 0),
+            BranchTaxonomyYaml: null,
+            BranchTaxonomySql: null);
 
         return new SeedSyncAdmin.Request(
             SchemaVersion: 2,
