@@ -1608,6 +1608,11 @@ trivia:
         characters: Game roles
         consoles: Game systems
         series: Game series
+    brain-teasers:
+      description: Deductive trivia
+      keywords:
+        general-brain-teasers: Deductive trivia
+        aha-moments: Aha moments
     mixed:
       description: Mixed sets
       keywords:

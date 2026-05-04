@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-03T09:32:07.238042+00:00",
-  "totalItems": 13445,
+  "generatedAt": "2026-05-04T01:52:47.484935+00:00",
+  "totalItems": 13478,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -6331,6 +6331,14 @@
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
+      "path": "data/seed-source/items/trivia/trivia.brain-teasers.aha-moments.json",
+      "category": "trivia",
+      "nav1": "brain-teasers",
+      "nav2": "aha-moments",
+      "itemCount": 33,
+      "modifiedAt": "2026-05-04T01:52:47.484935+00:00"
+    },
+    {
       "path": "data/seed-source/items/trivia/trivia.brands.companies.json",
       "category": "trivia",
       "nav1": "brands",
@@ -6576,7 +6584,7 @@
       "nav1": "mixed",
       "nav2": "family",
       "itemCount": 14,
-      "modifiedAt": "2026-05-03T09:32:07.238042+00:00"
+      "modifiedAt": "2026-05-04T01:52:47.484935+00:00"
     },
     {
       "path": "data/seed-source/items/trivia/trivia.movies-tv.awards.json",
