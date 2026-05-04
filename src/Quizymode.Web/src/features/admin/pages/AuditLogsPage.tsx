@@ -36,6 +36,8 @@ const AuditLogsPage = () => {
   // By default, all event types are selected
   const [selectedActions, setSelectedActions] = useState<AuditAction[]>([...AUDIT_ACTIONS]);
   const [filterMode, setFilterMode] = useState<"all" | "none" | "specific">("all");
+  const [userEmailInput, setUserEmailInput] = useState('');
+  const [userEmailFilter, setUserEmailFilter] = useState('');
   const [page, setPage] = useState(1);
   const pageSize = 50;
 
@@ -73,9 +75,10 @@ const AuditLogsPage = () => {
   };
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['auditLogs', filterMode, selectedActions, page],
+    queryKey: ['auditLogs', filterMode, selectedActions, userEmailFilter, page],
     queryFn: () => adminApi.getAuditLogs(
       filterMode === "none" ? [] : (filterMode === "all" ? undefined : (selectedActions.length > 0 ? selectedActions : undefined)),
+      userEmailFilter || undefined,
       page,
       pageSize
     ),
@@ -114,6 +117,17 @@ const AuditLogsPage = () => {
     setPage(1); // Reset to first page when filter changes
   };
 
+  const applyUserEmailFilter = () => {
+    setUserEmailFilter(userEmailInput.trim());
+    setPage(1);
+  };
+
+  const clearUserEmailFilter = () => {
+    setUserEmailInput('');
+    setUserEmailFilter('');
+    setPage(1);
+  };
+
   const clearFilters = () => {
     setSelectedActions([...AUDIT_ACTIONS]); // Reset to all selected
     setFilterMode("specific"); // Keep in specific mode so checkboxes remain visible
@@ -142,6 +156,38 @@ const AuditLogsPage = () => {
       <div className="bg-white shadow rounded-lg p-6 mb-6">
         <h2 className="text-lg font-medium text-gray-900 mb-4">Filters</h2>
         <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              User Email
+            </label>
+            <div className="flex items-center space-x-2">
+              <input
+                type="email"
+                value={userEmailInput}
+                onChange={(e) => setUserEmailInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && applyUserEmailFilter()}
+                placeholder="Filter by user email..."
+                className="w-full sm:w-80 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+              <button
+                onClick={applyUserEmailFilter}
+                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Apply
+              </button>
+              {userEmailFilter && (
+                <button
+                  onClick={clearUserEmailFilter}
+                  className="text-sm text-indigo-600 hover:text-indigo-800 underline"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <p className="mt-1 text-xs text-gray-500">
+              Excluded by default: test-user@quizymode.com, janskymail@gmail.com
+            </p>
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Event Types

@@ -847,6 +847,8 @@ Authentication uses **email + password** with secure password hashing and short-
 
 - **AC 4.3.0** [System] **Given** an authenticated user makes any API request, **when** the middleware processes the JWT, **then** a `LoginSuccess` audit entry is written at most once per 10-minute window per user; subsequent requests within that window (token refreshes, page navigations) do not generate additional audit entries.
 - **AC 4.3.0a** [System] **Given** the admin views audit logs, the user activity list, or the page-view analytics recent-views, **when** an IP address is present, **then** the API resolves it to a 2-letter ISO country code via ipinfo.io (free tier, HTTPS); results are cached in-process for the application lifetime; loopback and RFC-1918 private addresses resolve to "Local"; failures return null and do not block the response.
+- **AC 4.3.0b** [Admin] **Given** I call `GET /admin/audit-logs`, **when** the `AuditLogs:ExcludedEmails` config list is non-empty, **then** audit entries belonging to those users are silently excluded from all results (anonymous entries with no `UserId` are not excluded); the exclusion applies before pagination so counts are accurate.
+- **AC 4.3.0c** [Admin] **Given** I call `GET /admin/audit-logs?userEmail={email}`, **when** the email matches a known user, **then** only audit entries for that user are returned; **when** the email is unknown, an empty result set is returned; the user-email filter is applied after the configured exclusion list.
 
 - **AC 4.3.1** [Anonymous] **Given** I call `POST /auth/login` with valid credentials (email + password), **when** the credentials match an existing user, **then** the API returns **200 OK** with:
   - a short-lived **access token** (e.g. JWT) and

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-30T17:21:23.541459+00:00",
-  "totalItems": 13431,
+  "generatedAt": "2026-05-03T09:32:07.238042+00:00",
+  "totalItems": 13445,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -6569,6 +6569,14 @@
       "nav2": "websites",
       "itemCount": 10,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/trivia/trivia.mixed.family.json",
+      "category": "trivia",
+      "nav1": "mixed",
+      "nav2": "family",
+      "itemCount": 14,
+      "modifiedAt": "2026-05-03T09:32:07.238042+00:00"
     },
     {
       "path": "data/seed-source/items/trivia/trivia.movies-tv.awards.json",

@@ -690,6 +690,13 @@
             }
           },
           {
+            "name": "userEmail",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
             "name": "page",
             "in": "query",
             "schema": {
