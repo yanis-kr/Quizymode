@@ -847,6 +847,8 @@ Authentication uses **email + password** with secure password hashing and short-
 
 - **AC 4.3.0** [System] **Given** an authenticated user makes any API request, **when** the middleware processes the JWT, **then** a `LoginSuccess` audit entry is written at most once per 10-minute window per user; subsequent requests within that window (token refreshes, page navigations) do not generate additional audit entries.
 - **AC 4.3.0a** [System] **Given** the admin views audit logs, the user activity list, or the page-view analytics recent-views, **when** an IP address is present, **then** the API resolves it to a 2-letter ISO country code via ipinfo.io (free tier, HTTPS); results are cached in-process for the application lifetime; loopback and RFC-1918 private addresses resolve to "Local"; failures return null and do not block the response.
+- **AC 4.3.0b** [Admin] **Given** I call `GET /admin/audit-logs`, **when** the `AuditLogs:ExcludedEmails` config list is non-empty, **then** audit entries belonging to those users are silently excluded from all results (anonymous entries with no `UserId` are not excluded); the exclusion applies before pagination so counts are accurate.
+- **AC 4.3.0c** [Admin] **Given** I call `GET /admin/audit-logs?userEmail={email}`, **when** the email matches a known user, **then** only audit entries for that user are returned; **when** the email is unknown, an empty result set is returned; the user-email filter is applied after the configured exclusion list.
 
 - **AC 4.3.1** [Anonymous] **Given** I call `POST /auth/login` with valid credentials (email + password), **when** the credentials match an existing user, **then** the API returns **200 OK** with:
   - a short-lived **access token** (e.g. JWT) and
@@ -1228,7 +1230,7 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 ### AC 10.2 API — Public
 
 - **AC 10.2.1** [Anonymous, Authenticated] `GET /featured` returns two arrays: `sets` and `collections`, each ordered by `SortOrder ASC, DisplayName ASC`.
-- **AC 10.2.2** [Anonymous, Authenticated] Each Set entry includes: `id`, `displayName`, `categorySlug`, `navKeyword1`, `navKeyword2`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across public items matching the set's category/keyword path, or `null` if no items exist), `sortOrder`. The keyword name-to-ID lookup used to filter items **must only consider public (`IsPrivate = false`) keywords and must deduplicate by name** (the `Keywords` unique index is on `(Name, CreatedBy, IsPrivate)`, so the same name can appear multiple times across different creators; the lookup takes the first match per lowercase name to avoid a duplicate-key crash).
+- **AC 10.2.2** [Anonymous, Authenticated] Each Set entry includes: `id`, `displayName`, `categorySlug`, `navKeyword1`, `navKeyword2`, `itemCount` (count of public items matching the set's category/keyword path), `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across those items, or `null` if no items exist), `sortOrder`. The keyword name-to-ID lookup used to filter items **must only consider public (`IsPrivate = false`) keywords and must deduplicate by name** (the `Keywords` unique index is on `(Name, CreatedBy, IsPrivate)`, so the same name can appear multiple times across different creators; the lookup takes the first match per lowercase name to avoid a duplicate-key crash).
 - **AC 10.2.3** [Anonymous, Authenticated] Each Collection entry includes: `id`, `collectionId`, `displayName`, `description`, `itemCount`, `lastModifiedAt` (max of `COALESCE(UpdatedAt, CreatedAt)` across items in the collection, or `null` if no items), `sortOrder`.
 
 ### AC 10.3 API — Admin
@@ -1243,7 +1245,7 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 
 - **AC 10.4.1** [Anonymous, Authenticated] A "Featured" link appears in the main nav between Categories and Collections (desktop and mobile).
 - **AC 10.4.2** [Anonymous, Authenticated] `/featured` renders a full-bleed dark page with a tab switcher (Sets | Collections) and sort controls (Last Modified | Name).
-- **AC 10.4.3** [Anonymous, Authenticated] Each Set card shows: display name, category › L1 › L2 path as subtitle, and last modified date. Clicking navigates to `/categories/:categorySlug/:kw1/:kw2?from=featured`.
+- **AC 10.4.3** [Anonymous, Authenticated] Each Set card shows: display name, category › L1 › L2 path as subtitle, item count, and last modified date. Clicking navigates to `/categories/:categorySlug/:kw1/:kw2?from=featured`.
 - **AC 10.4.4** [Anonymous, Authenticated] Each Collection card shows: display name, description (if any), item count, and last modified date. Clicking navigates to the collection detail page with `?from=featured`.
 - **AC 10.4.5** [Anonymous, Authenticated] Sorting by "Last Modified" orders cards newest-first. Sorting by "Name" orders alphabetically. Default is "Last Modified".
 - **AC 10.4.6** [Anonymous, Authenticated] When navigated from Featured (i.e. `?from=featured` is present), both CategoriesPage and CollectionDetailPage display a "← Back to Featured" link at the top of the page content.

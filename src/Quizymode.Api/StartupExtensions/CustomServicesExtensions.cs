@@ -22,6 +22,7 @@ internal static partial class StartupExtensions
         builder.Services.Configure<GitHubSeedSyncOptions>(builder.Configuration.GetSection(GitHubSeedSyncOptions.SectionName));
         builder.Services.Configure<IdeaAbuseProtectionOptions>(builder.Configuration.GetSection(IdeaAbuseProtectionOptions.SectionName));
         builder.Services.Configure<TurnstileOptions>(builder.Configuration.GetSection(TurnstileOptions.SectionName));
+        builder.Services.Configure<AuditLogsOptions>(builder.Configuration.GetSection(AuditLogsOptions.SectionName));
         builder.Services.AddSingleton<ITaxonomyRegistry, TaxonomyRegistry>();
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();

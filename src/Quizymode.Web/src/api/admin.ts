@@ -384,6 +384,7 @@ export const adminApi = {
 
   getAuditLogs: async (
     actionTypes?: string[],
+    userEmail?: string,
     page: number = 1,
     pageSize: number = 50
   ): Promise<AuditLogsResponse> => {
@@ -393,6 +394,9 @@ export const adminApi = {
     };
     if (actionTypes && actionTypes.length > 0) {
       params.actionTypes = actionTypes.join(",");
+    }
+    if (userEmail && userEmail.trim().length > 0) {
+      params.userEmail = userEmail.trim();
     }
     const response = await apiClient.get<AuditLogsResponse>(
       "/admin/audit-logs",

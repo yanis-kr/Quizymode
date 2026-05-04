@@ -3,6 +3,7 @@ using Moq;
 using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
@@ -18,6 +19,11 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         return mock.Object;
     }
 
+    private static AuditLogsOptions EmptyOptions() => new();
+
+    private static AuditLogsOptions OptionsWithExclusions(params string[] emails) =>
+        new() { ExcludedEmails = [.. emails] };
+
     private Audit BuildAudit(AuditAction action, Guid? userId = null) => new()
     {
         Id = Guid.NewGuid(),
@@ -31,7 +37,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
     public async Task HandleAsync_NoLogs_ReturnsEmpty()
     {
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().BeEmpty();
@@ -48,7 +54,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.TotalCount.Should().Be(3);
@@ -65,7 +71,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest(new List<AuditAction> { AuditAction.ItemCreated });
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.TotalCount.Should().Be(1);
@@ -82,7 +88,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest(Page: 2, PageSize: 2);
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().HaveCount(2);
@@ -100,7 +106,7 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Should().ContainSingle(l => l.UserEmail == "test@example.com");
@@ -113,9 +119,85 @@ public sealed class GetAuditLogsTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
 
         var request = new GetAuditLogs.QueryRequest();
-        var result = await GetAuditLogs.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Logs.Single().UserEmail.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task HandleAsync_ExcludesConfiguredEmails()
+    {
+        User excluded = new() { Id = Guid.NewGuid(), Subject = "sub-excl", Email = "test-user@quizymode.com" };
+        User included = new() { Id = Guid.NewGuid(), Subject = "sub-incl", Email = "real@example.com" };
+        DbContext.Users.AddRange(excluded, included);
+        DbContext.Audits.AddRange(
+            BuildAudit(AuditAction.LoginSuccess, userId: excluded.Id),
+            BuildAudit(AuditAction.LoginSuccess, userId: included.Id));
+        await DbContext.SaveChangesAsync();
+
+        var request = new GetAuditLogs.QueryRequest();
+        var result = await GetAuditLogs.HandleAsync(
+            request,
+            OptionsWithExclusions("test-user@quizymode.com"),
+            DbContext, NullGeoService(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.TotalCount.Should().Be(1);
+        result.Value.Logs.Should().ContainSingle(l => l.UserEmail == "real@example.com");
+    }
+
+    [Fact]
+    public async Task HandleAsync_AnonymousLogsNotExcluded_WhenExclusionConfigured()
+    {
+        User excluded = new() { Id = Guid.NewGuid(), Subject = "sub-excl", Email = "test-user@quizymode.com" };
+        DbContext.Users.Add(excluded);
+        DbContext.Audits.AddRange(
+            BuildAudit(AuditAction.LoginFailed, userId: excluded.Id),
+            BuildAudit(AuditAction.LoginFailed, userId: null)); // anonymous
+        await DbContext.SaveChangesAsync();
+
+        var request = new GetAuditLogs.QueryRequest();
+        var result = await GetAuditLogs.HandleAsync(
+            request,
+            OptionsWithExclusions("test-user@quizymode.com"),
+            DbContext, NullGeoService(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.TotalCount.Should().Be(1);
+        result.Value.Logs.Single().UserEmail.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task HandleAsync_FiltersByUserEmail_ReturnsOnlyThatUser()
+    {
+        User userA = new() { Id = Guid.NewGuid(), Subject = "sub-a", Email = "alice@example.com" };
+        User userB = new() { Id = Guid.NewGuid(), Subject = "sub-b", Email = "bob@example.com" };
+        DbContext.Users.AddRange(userA, userB);
+        DbContext.Audits.AddRange(
+            BuildAudit(AuditAction.LoginSuccess, userId: userA.Id),
+            BuildAudit(AuditAction.ItemCreated, userId: userB.Id));
+        await DbContext.SaveChangesAsync();
+
+        var request = new GetAuditLogs.QueryRequest(UserEmail: "alice@example.com");
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.TotalCount.Should().Be(1);
+        result.Value.Logs.Should().ContainSingle(l => l.UserEmail == "alice@example.com");
+    }
+
+    [Fact]
+    public async Task HandleAsync_FiltersByUserEmail_ReturnsEmpty_WhenEmailNotFound()
+    {
+        DbContext.Audits.Add(BuildAudit(AuditAction.ItemCreated));
+        await DbContext.SaveChangesAsync();
+
+        var request = new GetAuditLogs.QueryRequest(UserEmail: "nobody@example.com");
+        var result = await GetAuditLogs.HandleAsync(request, EmptyOptions(), DbContext, NullGeoService(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.TotalCount.Should().Be(0);
+        result.Value.Logs.Should().BeEmpty();
     }
 }

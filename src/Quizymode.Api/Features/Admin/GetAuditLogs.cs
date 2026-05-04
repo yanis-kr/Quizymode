@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Admin;
 
@@ -11,6 +13,7 @@ public static class GetAuditLogs
 {
     public sealed record QueryRequest(
         List<AuditAction>? ActionTypes = null,
+        string? UserEmail = null,
         int Page = 1,
         int PageSize = 50);
 
@@ -45,10 +48,12 @@ public static class GetAuditLogs
 
         private static async Task<IResult> Handler(
             string? actionTypes,
+            string? userEmail,
             int page = 1,
             int pageSize = 50,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
+            IOptions<AuditLogsOptions> auditLogsOptions = null!,
             CancellationToken cancellationToken = default)
         {
             // Parse actionTypes from comma-separated string
@@ -70,8 +75,8 @@ public static class GetAuditLogs
                 }
             }
 
-            QueryRequest request = new(parsedActionTypes, page, pageSize);
-            Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
+            QueryRequest request = new(parsedActionTypes, userEmail?.Trim(), page, pageSize);
+            Result<Response> result = await HandleAsync(request, auditLogsOptions.Value, db, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -79,8 +84,9 @@ public static class GetAuditLogs
         }
     }
 
-    public static async Task<Result<Response>> HandleAsync(
+    internal static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
+        AuditLogsOptions options,
         ApplicationDbContext db,
         IIpGeolocationService geoService,
         CancellationToken cancellationToken)
@@ -94,6 +100,35 @@ public static class GetAuditLogs
             if (request.ActionTypes is not null && request.ActionTypes.Count > 0)
             {
                 query = query.Where(a => request.ActionTypes.Contains(a.Action));
+            }
+
+            // Resolve excluded user IDs from config and apply exclusion filter
+            if (options.ExcludedEmails.Count > 0)
+            {
+                List<string> normalizedExcluded = options.ExcludedEmails
+                    .Select(e => e.Trim().ToLowerInvariant())
+                    .ToList();
+                List<Guid> excludedUserIds = await db.Users
+                    .Where(u => u.Email != null && normalizedExcluded.Contains(u.Email.ToLower()))
+                    .Select(u => u.Id)
+                    .ToListAsync(cancellationToken);
+                if (excludedUserIds.Count > 0)
+                {
+                    query = query.Where(a => !a.UserId.HasValue || !excludedUserIds.Contains(a.UserId.Value));
+                }
+            }
+
+            // Apply user email filter if provided
+            if (!string.IsNullOrWhiteSpace(request.UserEmail))
+            {
+                string normalizedEmail = request.UserEmail.ToLowerInvariant();
+                Guid? filteredUserId = await db.Users
+                    .Where(u => u.Email != null && u.Email.ToLower() == normalizedEmail)
+                    .Select(u => (Guid?)u.Id)
+                    .FirstOrDefaultAsync(cancellationToken);
+                query = filteredUserId.HasValue
+                    ? query.Where(a => a.UserId == filteredUserId.Value)
+                    : query.Where(_ => false);
             }
 
             // Get total count before pagination

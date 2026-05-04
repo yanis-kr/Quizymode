@@ -14,6 +14,7 @@ public static class GetFeatured
         string CategorySlug,
         string? NavKeyword1,
         string? NavKeyword2,
+        int ItemCount,
         DateTime? LastModifiedAt,
         int SortOrder);
 
@@ -105,7 +106,7 @@ public static class GetFeatured
                 string catKey = fi.CategorySlug.ToLower();
                 if (!categoryIdBySlug.TryGetValue(catKey, out Guid categoryId))
                 {
-                    sets.Add(new FeaturedSetDto(fi.Id, fi.DisplayName, fi.CategorySlug, fi.NavKeyword1, fi.NavKeyword2, null, fi.SortOrder));
+                    sets.Add(new FeaturedSetDto(fi.Id, fi.DisplayName, fi.CategorySlug, fi.NavKeyword1, fi.NavKeyword2, 0, null, fi.SortOrder));
                     continue;
                 }
 
@@ -123,11 +124,12 @@ public static class GetFeatured
                     query = query.Where(i => i.NavigationKeywordId2 == kw2Id);
                 }
 
-                DateTime? lastMod = await query
-                    .Select(i => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
-                    .MaxAsync(cancellationToken);
+                var stats = await query
+                    .GroupBy(_ => 1)
+                    .Select(g => new { Count = g.Count(), LastMod = g.Max(i => (DateTime?)(i.UpdatedAt ?? i.CreatedAt)) })
+                    .FirstOrDefaultAsync(cancellationToken);
 
-                sets.Add(new FeaturedSetDto(fi.Id, fi.DisplayName, fi.CategorySlug, fi.NavKeyword1, fi.NavKeyword2, lastMod, fi.SortOrder));
+                sets.Add(new FeaturedSetDto(fi.Id, fi.DisplayName, fi.CategorySlug, fi.NavKeyword1, fi.NavKeyword2, stats?.Count ?? 0, stats?.LastMod, fi.SortOrder));
             }
 
             // Build collection DTOs with lastModifiedAt
