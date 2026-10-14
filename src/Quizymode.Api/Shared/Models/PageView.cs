@@ -18,5 +18,9 @@ public sealed class PageView
 
     public string Url { get; set; } = string.Empty;
 
+    public string? UserAgent { get; set; }
+
+    public bool IsBot { get; set; }
+
     public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
 }

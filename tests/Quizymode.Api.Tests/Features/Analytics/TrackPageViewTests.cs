@@ -97,10 +97,90 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         pageView.Url.Should().Be("/collections?page=2");
     }
 
-    private static DefaultHttpContext CreateHttpContext(string ipAddress)
+    [Fact]
+    public async Task HandleAsync_StoresUserAgentAndFlagsHumanTraffic()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        const string browserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+        DefaultHttpContext httpContext = CreateHttpContext("198.51.100.24", browserAgent);
+
+        TrackPageView.Request request = new("/categories", string.Empty, "session-human-1");
+
+        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+
+        PageView? pageView = await DbContext.PageViews.SingleOrDefaultAsync();
+        pageView!.UserAgent.Should().Be(browserAgent);
+        pageView.IsBot.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task HandleAsync_FlagsCrawlerTrafficAsBot()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        DefaultHttpContext httpContext = CreateHttpContext(
+            "66.249.66.1",
+            "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+
+        TrackPageView.Request request = new("/", string.Empty, "session-bot-1");
+
+        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+
+        PageView? pageView = await DbContext.PageViews.SingleOrDefaultAsync();
+        pageView!.IsBot.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleAsync_MissingUserAgent_StoresNullAndIsNotABot()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        DefaultHttpContext httpContext = CreateHttpContext("198.51.100.30");
+
+        TrackPageView.Request request = new("/", string.Empty, "session-no-ua");
+
+        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+
+        PageView? pageView = await DbContext.PageViews.SingleOrDefaultAsync();
+        pageView!.UserAgent.Should().BeNull();
+        pageView.IsBot.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task HandleAsync_TruncatesOverlongUserAgent()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        DefaultHttpContext httpContext = CreateHttpContext("198.51.100.31", new string('a', 900));
+
+        TrackPageView.Request request = new("/", string.Empty, "session-long-ua");
+
+        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+
+        PageView? pageView = await DbContext.PageViews.SingleOrDefaultAsync();
+        pageView!.UserAgent.Should().HaveLength(512);
+    }
+
+    private static DefaultHttpContext CreateHttpContext(string ipAddress, string? userAgent = null)
     {
         DefaultHttpContext httpContext = new();
         httpContext.Connection.RemoteIpAddress = System.Net.IPAddress.Parse(ipAddress);
+
+        if (userAgent is not null)
+        {
+            httpContext.Request.Headers.UserAgent = userAgent;
+        }
+
         return httpContext;
     }
 }

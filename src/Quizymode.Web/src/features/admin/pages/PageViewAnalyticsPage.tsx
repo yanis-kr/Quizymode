@@ -9,6 +9,7 @@ import {
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
+import SessionsTab from "../components/SessionsTab";
 
 const RANGE_OPTIONS: Array<{ label: string; days: number }> = [
   { label: "24h", days: 1 },
@@ -26,9 +27,18 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
+type AnalyticsTab = "pages" | "sessions";
+
+const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
+  { label: "Pages", value: "pages", hint: "Which URLs were hit" },
+  { label: "Sessions", value: "sessions", hint: "Whether visitors stayed" },
+];
+
 const PageViewAnalyticsPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
+  const [tab, setTab] = useState<AnalyticsTab>("sessions");
   const [days, setDays] = useState(7);
+  const [includeBots, setIncludeBots] = useState(false);
   const [visitorType, setVisitorType] = useState<PageViewVisitorType>("all");
   const [pathInput, setPathInput] = useState("");
   const [pathContains, setPathContains] = useState("");
@@ -42,6 +52,7 @@ const PageViewAnalyticsPage = () => {
       visitorType,
       pathContains,
       page,
+      includeBots,
     ],
     queryFn: () =>
       adminApi.getPageViewAnalytics(
@@ -50,26 +61,14 @@ const PageViewAnalyticsPage = () => {
         pathContains || undefined,
         page,
         PAGE_SIZE,
-        TOP_PAGES_LIMIT
+        TOP_PAGES_LIMIT,
+        includeBots
       ),
-    enabled: !!isAuthenticated && !!isAdmin,
+    enabled: !!isAuthenticated && !!isAdmin && tab === "pages",
   });
 
   if (!isAuthenticated || !isAdmin) {
     return <Navigate to="/" replace />;
-  }
-
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-
-  if (error) {
-    return (
-      <ErrorMessage
-        message="Failed to load usage analytics"
-        onRetry={() => refetch()}
-      />
-    );
   }
 
   const summary = data?.summary;
@@ -109,8 +108,9 @@ const PageViewAnalyticsPage = () => {
             Usage Analytics
           </h1>
           <p className="mt-2 max-w-3xl text-sm text-gray-600">
-            Review which SPA URLs were visited, split by anonymous vs authenticated
-            traffic, and inspect recent hits with session IDs and IP addresses.
+            <strong>Sessions</strong> answers whether visitors stayed and explored
+            or landed and left. <strong>Pages</strong> ranks the URLs themselves.
+            Bots are excluded from both unless you opt in.
           </p>
         </div>
         {summary && (
@@ -122,52 +122,111 @@ const PageViewAnalyticsPage = () => {
       </div>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="space-y-3">
-            <div>
-              <div className="text-sm font-medium text-gray-700">Time range</div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {RANGE_OPTIONS.map((option) => (
-                  <button
-                    key={option.days}
-                    type="button"
-                    onClick={() => {
-                      setDays(option.days);
-                      setPage(1);
-                    }}
-                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                      days === option.days
-                        ? "bg-indigo-600 text-white"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
+        <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-4">
+          {TAB_OPTIONS.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setTab(option.value)}
+              aria-pressed={tab === option.value}
+              className={`rounded-xl px-4 py-2 text-left transition ${
+                tab === option.value
+                  ? "bg-indigo-600 text-white"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+              }`}
+            >
+              <div className="text-sm font-semibold">{option.label}</div>
+              <div
+                className={`text-xs ${
+                  tab === option.value ? "text-indigo-100" : "text-slate-500"
+                }`}
+              >
+                {option.hint}
               </div>
-            </div>
+            </button>
+          ))}
+        </div>
 
-            <div>
-              <div className="text-sm font-medium text-gray-700">Visitor type</div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {VISITOR_OPTIONS.map((option) => (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => {
-                      setVisitorType(option.value);
-                      setPage(1);
-                    }}
-                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
-                      visitorType === option.value
-                        ? "bg-slate-900 text-white"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
+        <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div className="text-sm font-medium text-gray-700">Time range</div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {RANGE_OPTIONS.map((option) => (
+                <button
+                  key={option.days}
+                  type="button"
+                  onClick={() => {
+                    setDays(option.days);
+                    setPage(1);
+                  }}
+                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                    days === option.days
+                      ? "bg-indigo-600 text-white"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <label className="flex items-center gap-2 text-sm text-slate-700">
+            <input
+              type="checkbox"
+              checked={includeBots}
+              onChange={(event) => {
+                setIncludeBots(event.target.checked);
+                setPage(1);
+              }}
+              className="h-4 w-4 rounded border-slate-300"
+            />
+            Include bots and crawlers
+          </label>
+        </div>
+      </section>
+
+      {tab === "sessions" && (
+        <SessionsTab
+          days={days}
+          includeBots={includeBots}
+          formatDateTime={formatDateTime}
+        />
+      )}
+
+      {tab === "pages" && isLoading && <LoadingSpinner />}
+
+      {tab === "pages" && error && (
+        <ErrorMessage
+          message="Failed to load usage analytics"
+          onRetry={() => refetch()}
+        />
+      )}
+
+      {tab === "pages" && !isLoading && !error && (
+        <div className="space-y-6">
+      <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <div className="text-sm font-medium text-gray-700">Visitor type</div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {VISITOR_OPTIONS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => {
+                    setVisitorType(option.value);
+                    setPage(1);
+                  }}
+                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                    visitorType === option.value
+                      ? "bg-slate-900 text-white"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -296,7 +355,16 @@ const PageViewAnalyticsPage = () => {
               />
               <div className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
                 Session coverage is split across {summary.authenticatedSessions} authenticated
-                sessions and {summary.anonymousSessions} anonymous sessions.
+                sessions and {summary.anonymousSessions} anonymous sessions. Each session
+                counts once, classified by its first page hit — see the{" "}
+                <button
+                  type="button"
+                  onClick={() => setTab("sessions")}
+                  className="font-medium text-indigo-600 underline hover:text-indigo-800"
+                >
+                  Sessions tab
+                </button>{" "}
+                for visitors who signed in partway through.
               </div>
             </div>
           ) : (
@@ -418,6 +486,8 @@ const PageViewAnalyticsPage = () => {
           </div>
         )}
       </section>
+        </div>
+      )}
     </div>
   );
 };

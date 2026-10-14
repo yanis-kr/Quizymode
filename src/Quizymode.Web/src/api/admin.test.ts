@@ -102,6 +102,67 @@ describe("adminApi", () => {
     expect(opts.params.pathContains).toBe("/home");
   });
 
+  it("getPageViewAnalytics excludes bots by default", async () => {
+    mockGet.mockResolvedValueOnce({ data: {} });
+    await adminApi.getPageViewAnalytics();
+    const [, opts] = mockGet.mock.calls[0];
+    expect(opts.params.includeBots).toBe(false);
+  });
+
+  it("getPageViewSessions calls GET /admin/page-view-sessions with defaults", async () => {
+    const data = {
+      summary: {},
+      depthBuckets: [],
+      landingPages: [],
+      sessions: [],
+      totalCount: 0,
+      page: 1,
+      pageSize: 25,
+      totalPages: 0,
+    };
+    mockGet.mockResolvedValueOnce({ data });
+    const result = await adminApi.getPageViewSessions();
+    expect(mockGet).toHaveBeenCalledWith(
+      "/admin/page-view-sessions",
+      expect.objectContaining({
+        params: expect.objectContaining({
+          days: 7,
+          outcome: "all",
+          includeBots: false,
+          sortBy: "recent",
+          page: 1,
+          pageSize: 25,
+        }),
+      })
+    );
+    expect(result).toEqual(data);
+  });
+
+  it("getPageViewSessions omits minPages when it would not filter anything", async () => {
+    mockGet.mockResolvedValueOnce({ data: {} });
+    await adminApi.getPageViewSessions(7, "all", 1);
+    const [, opts] = mockGet.mock.calls[0];
+    expect(opts.params.minPages).toBeUndefined();
+  });
+
+  it("getPageViewSessions sends minPages when hiding bounces", async () => {
+    mockGet.mockResolvedValueOnce({ data: {} });
+    await adminApi.getPageViewSessions(30, "anonymous", 2, true, "pages");
+    const [, opts] = mockGet.mock.calls[0];
+    expect(opts.params.minPages).toBe(2);
+    expect(opts.params.outcome).toBe("anonymous");
+    expect(opts.params.includeBots).toBe(true);
+    expect(opts.params.sortBy).toBe("pages");
+  });
+
+  it("getPageViewSessionDetail encodes the session id in the path", async () => {
+    const data = { sessionId: "a/b", steps: [] };
+    mockGet.mockResolvedValueOnce({ data });
+    const result = await adminApi.getPageViewSessionDetail("a/b");
+    expect(mockGet).toHaveBeenCalledWith("/admin/page-view-sessions/a%2Fb");
+    expect(result).toEqual(data);
+  });
+
   it("getUsers calls GET /admin/users with defaults", async () => {
     const data = { summary: {}, users: [], totalCount: 0, page: 1, pageSize: 25, totalPages: 0 };
     mockGet.mockResolvedValueOnce({ data });

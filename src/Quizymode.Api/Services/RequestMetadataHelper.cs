@@ -2,6 +2,23 @@ namespace Quizymode.Api.Services;
 
 internal static class RequestMetadataHelper
 {
+    private const int UserAgentMaxLength = 512;
+
+    public static string? GetUserAgent(HttpContext? httpContext)
+    {
+        string? userAgent = httpContext?.Request.Headers.UserAgent.FirstOrDefault();
+        if (string.IsNullOrWhiteSpace(userAgent))
+        {
+            return null;
+        }
+
+        userAgent = userAgent.Trim();
+
+        return userAgent.Length > UserAgentMaxLength
+            ? userAgent[..UserAgentMaxLength]
+            : userAgent;
+    }
+
     public static string GetClientIpAddress(HttpContext? httpContext)
     {
         if (httpContext is null)

@@ -93,6 +93,8 @@ public static class TrackPageView
             userId = parsedUserId;
         }
 
+        string? userAgent = RequestMetadataHelper.GetUserAgent(httpContext);
+
         PageView pageView = new()
         {
             Id = Guid.NewGuid(),
@@ -103,6 +105,8 @@ public static class TrackPageView
             Path = normalizedPath,
             QueryString = normalizedQueryString,
             Url = url,
+            UserAgent = userAgent,
+            IsBot = BotUserAgentDetector.IsBot(userAgent),
             CreatedUtc = DateTime.UtcNow
         };
 

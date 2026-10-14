@@ -867,6 +867,14 @@
               "default": 10,
               "$ref": "#/components/schemas/System.Int32"
             }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
           }
         ],
         "responses": {
@@ -876,6 +884,151 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/page-view-sessions/{sessionId}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the ordered page journey for one session (Admin only)",
+        "description": "Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded.",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessionDetail.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/page-view-sessions": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get session-level page-view engagement (Admin only)",
+        "description": "Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "outcome",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "minPages",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "default": 1,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "default": 25,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "landingPagesLimit",
+            "in": "query",
+            "schema": {
+              "default": 10,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.Response"
                 }
               }
             }
@@ -5010,7 +5163,9 @@
           "authenticatedPageViews",
           "anonymousPageViews",
           "authenticatedSessions",
-          "anonymousSessions"
+          "anonymousSessions",
+          "botSessions",
+          "botsExcluded"
         ],
         "type": "object",
         "properties": {
@@ -5040,6 +5195,12 @@
           },
           "anonymousSessions": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -5071,6 +5232,403 @@
           },
           "lastVisitedUtc": {
             "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
+        "required": [
+          "stepNumber",
+          "path",
+          "queryString",
+          "url",
+          "isAuthenticated",
+          "createdUtc",
+          "dwellSeconds"
+        ],
+        "type": "object",
+        "properties": {
+          "stepNumber": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "path": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "queryString": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "url": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isAuthenticated": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "dwellSeconds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessionDetail.Response": {
+        "required": [
+          "sessionId",
+          "outcome",
+          "startedUtc",
+          "endedUtc",
+          "pageHits",
+          "distinctPages",
+          "durationSeconds",
+          "isBounce",
+          "ipAddress",
+          "country",
+          "userEmail",
+          "userAgent",
+          "isBot",
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "startedUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "endedUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "pageHits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "distinctPages": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "durationSeconds": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "isBounce": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "ipAddress": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "country": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userAgent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "isBot": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "steps": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.DepthBucketResponse": {
+        "required": [
+          "label",
+          "totalSessions",
+          "anonymousSessions",
+          "convertedSessions",
+          "authenticatedSessions"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "anonymousSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "convertedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "authenticatedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.LandingPageResponse": {
+        "required": [
+          "path",
+          "sessions",
+          "bouncedSessions",
+          "bounceRatePercent",
+          "avgPagesPerSession"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bouncedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bounceRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "avgPagesPerSession": {
+            "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse": {
+        "required": [
+          "outcome",
+          "sessions",
+          "bouncedSessions",
+          "bounceRatePercent",
+          "engagedSessions",
+          "avgPagesPerSession"
+        ],
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bouncedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bounceRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "avgPagesPerSession": {
+            "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.Response": {
+        "required": [
+          "summary",
+          "depthBuckets",
+          "landingPages",
+          "sessions",
+          "totalCount",
+          "page",
+          "pageSize",
+          "totalPages"
+        ],
+        "type": "object",
+        "properties": {
+          "summary": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.SummaryResponse"
+          },
+          "depthBuckets": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.DepthBucketResponse"
+          },
+          "landingPages": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.LandingPageResponse"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.SessionResponse"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalPages": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.SessionResponse": {
+        "required": [
+          "sessionId",
+          "outcome",
+          "startedUtc",
+          "endedUtc",
+          "pageHits",
+          "distinctPages",
+          "durationSeconds",
+          "isBounce",
+          "entryPath",
+          "exitPath",
+          "ipAddress",
+          "country",
+          "userEmail",
+          "userAgent",
+          "isBot"
+        ],
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "startedUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "endedUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "pageHits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "distinctPages": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "durationSeconds": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "isBounce": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "entryPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "exitPath": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "ipAddress": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "country": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userAgent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "isBot": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewSessions.SummaryResponse": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalSessions",
+          "totalPageHits",
+          "bouncedSessions",
+          "bounceRatePercent",
+          "engagedSessions",
+          "avgPagesPerSession",
+          "avgDurationSecondsEngaged",
+          "medianDurationSecondsEngaged",
+          "botSessions",
+          "botsExcluded",
+          "byOutcome"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalPageHits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bouncedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bounceRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "avgPagesPerSession": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "avgDurationSecondsEngaged": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "medianDurationSecondsEngaged": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "byOutcome": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse"
           }
         }
       },
@@ -9978,6 +10536,36 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.DepthBucketResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.DepthBucketResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.LandingPageResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.LandingPageResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.SessionResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewSessions.SessionResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse": {
