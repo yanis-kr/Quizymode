@@ -17,7 +17,7 @@ namespace Quizymode.Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.2")
+                .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -845,6 +845,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<bool>("IsAuthenticated")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsBot")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasMaxLength(2048)
@@ -865,6 +870,10 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(4096)
                         .HasColumnType("character varying(4096)");
 
+                    b.Property<string>("UserAgent")
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)");
+
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
@@ -874,6 +883,8 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("IsAuthenticated");
 
+                    b.HasIndex("IsBot");
+
                     b.HasIndex("Path");
 
                     b.HasIndex("SessionId");
@@ -881,6 +892,8 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("UserId");
 
                     b.HasIndex("Path", "CreatedUtc");
+
+                    b.HasIndex("SessionId", "CreatedUtc");
 
                     b.ToTable("PageViews", (string)null);
                 });

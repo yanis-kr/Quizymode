@@ -167,4 +167,110 @@ public sealed class GetPageViewAnalyticsTests : DatabaseTestFixture
 
         result.IsFailure.Should().BeTrue();
     }
+
+    [Fact]
+    public async Task HandleAsync_SessionThatSignsInMidVisitIsCountedOnce()
+    {
+        DateTime now = DateTime.UtcNow;
+        Guid userId = Guid.NewGuid();
+
+        await DbContext.PageViews.AddRangeAsync(
+            // One session that starts anonymous and then authenticates.
+            new PageView
+            {
+                Id = Guid.NewGuid(),
+                UserId = null,
+                IsAuthenticated = false,
+                SessionId = "converting-session",
+                IpAddress = "198.51.100.7",
+                Path = "/",
+                QueryString = string.Empty,
+                Url = "/",
+                CreatedUtc = now.AddMinutes(-20)
+            },
+            new PageView
+            {
+                Id = Guid.NewGuid(),
+                UserId = userId,
+                IsAuthenticated = true,
+                SessionId = "converting-session",
+                IpAddress = "198.51.100.7",
+                Path = "/collections",
+                QueryString = string.Empty,
+                Url = "/collections",
+                CreatedUtc = now.AddMinutes(-15)
+            });
+        await DbContext.SaveChangesAsync();
+
+        GetPageViewAnalytics.QueryRequest request = new(Days: 7, VisitorType: "all");
+
+        var result = await GetPageViewAnalytics.HandleAsync(request, DbContext, NullGeoService(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        GetPageViewAnalytics.SummaryResponse summary = result.Value!.Summary;
+
+        summary.UniqueSessions.Should().Be(1);
+        // Previously this session was counted in both buckets, so the two summed to 2.
+        (summary.AuthenticatedSessions + summary.AnonymousSessions).Should().Be(summary.UniqueSessions);
+        // Classified by its first hit, which was anonymous.
+        summary.AnonymousSessions.Should().Be(1);
+        summary.AuthenticatedSessions.Should().Be(0);
+        // Per-hit counts are unchanged.
+        summary.AuthenticatedPageViews.Should().Be(1);
+        summary.AnonymousPageViews.Should().Be(1);
+    }
+
+    [Fact]
+    public async Task HandleAsync_ExcludesBotTrafficByDefault()
+    {
+        DateTime now = DateTime.UtcNow;
+
+        await DbContext.PageViews.AddRangeAsync(
+            new PageView
+            {
+                Id = Guid.NewGuid(),
+                IsAuthenticated = false,
+                SessionId = "human-session",
+                IpAddress = "198.51.100.9",
+                Path = "/categories",
+                QueryString = string.Empty,
+                Url = "/categories",
+                UserAgent = "Mozilla/5.0",
+                IsBot = false,
+                CreatedUtc = now.AddMinutes(-10)
+            },
+            new PageView
+            {
+                Id = Guid.NewGuid(),
+                IsAuthenticated = false,
+                SessionId = "crawler-session",
+                IpAddress = "66.249.66.1",
+                Path = "/categories",
+                QueryString = string.Empty,
+                Url = "/categories",
+                UserAgent = "Googlebot/2.1",
+                IsBot = true,
+                CreatedUtc = now.AddMinutes(-5)
+            });
+        await DbContext.SaveChangesAsync();
+
+        var excluded = await GetPageViewAnalytics.HandleAsync(
+            new GetPageViewAnalytics.QueryRequest(Days: 7),
+            DbContext,
+            NullGeoService(),
+            CancellationToken.None);
+
+        excluded.Value!.Summary.TotalPageViews.Should().Be(1);
+        excluded.Value.Summary.BotSessions.Should().Be(1);
+        excluded.Value.Summary.BotsExcluded.Should().BeTrue();
+
+        var included = await GetPageViewAnalytics.HandleAsync(
+            new GetPageViewAnalytics.QueryRequest(Days: 7, IncludeBots: true),
+            DbContext,
+            NullGeoService(),
+            CancellationToken.None);
+
+        included.Value!.Summary.TotalPageViews.Should().Be(2);
+        included.Value.Summary.BotsExcluded.Should().BeFalse();
+    }
 }

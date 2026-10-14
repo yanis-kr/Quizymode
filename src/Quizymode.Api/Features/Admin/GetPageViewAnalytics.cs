@@ -15,7 +15,8 @@ public static class GetPageViewAnalytics
         string? PathContains = null,
         int Page = 1,
         int PageSize = 25,
-        int TopPagesLimit = 10);
+        int TopPagesLimit = 10,
+        bool IncludeBots = false);
 
     public sealed record Response(
         SummaryResponse Summary,
@@ -35,7 +36,9 @@ public static class GetPageViewAnalytics
         int AuthenticatedPageViews,
         int AnonymousPageViews,
         int AuthenticatedSessions,
-        int AnonymousSessions);
+        int AnonymousSessions,
+        int BotSessions,
+        bool BotsExcluded);
 
     public sealed record TopPageResponse(
         string Path,
@@ -84,11 +87,12 @@ public static class GetPageViewAnalytics
             int page = 1,
             int pageSize = 25,
             int topPagesLimit = 10,
+            bool includeBots = false,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            QueryRequest request = new(days, visitorType, pathContains, page, pageSize, topPagesLimit);
+            QueryRequest request = new(days, visitorType, pathContains, page, pageSize, topPagesLimit, includeBots);
             Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -130,9 +134,20 @@ public static class GetPageViewAnalytics
         DateTime windowEndUtc = DateTime.UtcNow;
         DateTime windowStartUtc = windowEndUtc.AddDays(-request.Days);
 
-        IQueryable<PageView> query = db.PageViews
+        IQueryable<PageView> windowQuery = db.PageViews
             .AsNoTracking()
             .Where(pageView => pageView.CreatedUtc >= windowStartUtc && pageView.CreatedUtc <= windowEndUtc);
+
+        // Reported even when excluded, so the size of the crawler share stays visible.
+        int botSessions = await windowQuery
+            .Where(pageView => pageView.IsBot)
+            .Select(pageView => pageView.SessionId)
+            .Distinct()
+            .CountAsync(cancellationToken);
+
+        IQueryable<PageView> query = request.IncludeBots
+            ? windowQuery
+            : windowQuery.Where(pageView => !pageView.IsBot);
 
         query = visitorFilter switch
         {
@@ -150,24 +165,41 @@ public static class GetPageViewAnalytics
         int totalPages = totalCount == 0 ? 0 : (int)Math.Ceiling(totalCount / (double)pageSize);
         int skip = (page - 1) * pageSize;
 
-        // Batch auth-split stats into one GROUP BY query (4 sequential queries → 1)
+        // Batch the per-hit auth split into one GROUP BY query (2 sequential queries → 1)
         var authBreakdowns = await query
             .GroupBy(pv => pv.IsAuthenticated)
             .Select(g => new
             {
                 IsAuthenticated = g.Key,
-                PageViews = g.Count(),
-                Sessions = g.Select(pv => pv.SessionId).Distinct().Count()
+                PageViews = g.Count()
             })
             .ToListAsync(cancellationToken);
 
         int uniquePages = await query.Select(pv => pv.Path).Distinct().CountAsync(cancellationToken);
-        int uniqueSessions = await query.Select(pv => pv.SessionId).Distinct().CountAsync(cancellationToken);
+
+        // Session counts are classified by each session's FIRST hit. Grouping sessions by
+        // per-hit auth state counted a visitor who signed in mid-session in both buckets,
+        // so the two figures could sum to more than the unique-session total.
+        var sessionFirstTimes = query
+            .GroupBy(pv => pv.SessionId)
+            .Select(g => new { SessionId = g.Key, FirstUtc = g.Min(pv => pv.CreatedUtc) });
+
+        var sessionFirstHits = await (
+            from pv in query
+            join first in sessionFirstTimes on pv.SessionId equals first.SessionId
+            where pv.CreatedUtc == first.FirstUtc
+            select new { pv.SessionId, pv.IsAuthenticated })
+            .ToListAsync(cancellationToken);
+
+        Dictionary<string, bool> firstHitAuthBySession = sessionFirstHits
+            .GroupBy(hit => hit.SessionId)
+            .ToDictionary(group => group.Key, group => group.First().IsAuthenticated);
 
         int authPageViews = authBreakdowns.FirstOrDefault(x => x.IsAuthenticated)?.PageViews ?? 0;
         int anonPageViews = authBreakdowns.FirstOrDefault(x => !x.IsAuthenticated)?.PageViews ?? 0;
-        int authSessions = authBreakdowns.FirstOrDefault(x => x.IsAuthenticated)?.Sessions ?? 0;
-        int anonSessions = authBreakdowns.FirstOrDefault(x => !x.IsAuthenticated)?.Sessions ?? 0;
+        int uniqueSessions = firstHitAuthBySession.Count;
+        int authSessions = firstHitAuthBySession.Count(entry => entry.Value);
+        int anonSessions = uniqueSessions - authSessions;
 
         SummaryResponse summary = new(
             WindowStartUtc: windowStartUtc,
@@ -178,7 +210,9 @@ public static class GetPageViewAnalytics
             AuthenticatedPageViews: authPageViews,
             AnonymousPageViews: anonPageViews,
             AuthenticatedSessions: authSessions,
-            AnonymousSessions: anonSessions);
+            AnonymousSessions: anonSessions,
+            BotSessions: botSessions,
+            BotsExcluded: !request.IncludeBots);
 
         List<TopPageResponse> topPages = (await query
             .GroupBy(pageView => pageView.Path)

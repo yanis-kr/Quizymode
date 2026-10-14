@@ -96,6 +96,8 @@ export interface PageViewAnalyticsSummary {
   anonymousPageViews: number;
   authenticatedSessions: number;
   anonymousSessions: number;
+  botSessions: number;
+  botsExcluded: boolean;
 }
 
 export interface TopPageAnalyticsResponse {
@@ -128,6 +130,116 @@ export interface PageViewAnalyticsResponse {
   page: number;
   pageSize: number;
   totalPages: number;
+}
+
+/**
+ * A session's outcome is decided by its FIRST hit, so the three values are
+ * mutually exclusive: "converted" means it started anonymous and then signed in.
+ */
+export type SessionOutcome = "anonymous" | "converted" | "authenticated";
+
+export type SessionOutcomeFilter = "all" | SessionOutcome;
+
+export type SessionSortBy = "recent" | "pages" | "duration";
+
+export interface SessionOutcomeStats {
+  outcome: SessionOutcome;
+  sessions: number;
+  bouncedSessions: number;
+  bounceRatePercent: number;
+  engagedSessions: number;
+  avgPagesPerSession: number;
+}
+
+export interface PageViewSessionsSummary {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalSessions: number;
+  totalPageHits: number;
+  bouncedSessions: number;
+  bounceRatePercent: number;
+  engagedSessions: number;
+  avgPagesPerSession: number;
+  /** Averaged over non-bounce sessions only; bounces always have zero duration. */
+  avgDurationSecondsEngaged: number;
+  medianDurationSecondsEngaged: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  byOutcome: SessionOutcomeStats[];
+}
+
+export interface SessionDepthBucket {
+  label: string;
+  totalSessions: number;
+  anonymousSessions: number;
+  convertedSessions: number;
+  authenticatedSessions: number;
+}
+
+export interface LandingPageResponse {
+  path: string;
+  sessions: number;
+  bouncedSessions: number;
+  bounceRatePercent: number;
+  avgPagesPerSession: number;
+}
+
+export interface PageViewSessionResponse {
+  sessionId: string;
+  outcome: SessionOutcome;
+  startedUtc: string;
+  endedUtc: string;
+  pageHits: number;
+  distinctPages: number;
+  durationSeconds: number;
+  isBounce: boolean;
+  entryPath: string;
+  exitPath: string;
+  ipAddress: string;
+  country?: string | null;
+  userEmail: string | null;
+  /** Null for hits recorded before user-agent capture existed. */
+  userAgent: string | null;
+  isBot: boolean;
+}
+
+export interface PageViewSessionsResponse {
+  summary: PageViewSessionsSummary;
+  depthBuckets: SessionDepthBucket[];
+  landingPages: LandingPageResponse[];
+  sessions: PageViewSessionResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
+export interface SessionJourneyStep {
+  stepNumber: number;
+  path: string;
+  queryString: string;
+  url: string;
+  isAuthenticated: boolean;
+  createdUtc: string;
+  /** Null on the final step: no exit event is recorded, so dwell time is unknown. */
+  dwellSeconds: number | null;
+}
+
+export interface PageViewSessionDetailResponse {
+  sessionId: string;
+  outcome: SessionOutcome;
+  startedUtc: string;
+  endedUtc: string;
+  pageHits: number;
+  distinctPages: number;
+  durationSeconds: number;
+  isBounce: boolean;
+  ipAddress: string;
+  country?: string | null;
+  userEmail: string | null;
+  userAgent: string | null;
+  isBot: boolean;
+  steps: SessionJourneyStep[];
 }
 
 export type AdminUserActivityFilter =
@@ -411,14 +523,16 @@ export const adminApi = {
     pathContains?: string,
     page: number = 1,
     pageSize: number = 25,
-    topPagesLimit: number = 10
+    topPagesLimit: number = 10,
+    includeBots: boolean = false
   ): Promise<PageViewAnalyticsResponse> => {
-    const params: Record<string, string | number> = {
+    const params: Record<string, string | number | boolean> = {
       days,
       visitorType,
       page,
       pageSize,
       topPagesLimit,
+      includeBots,
     };
     if (pathContains && pathContains.trim().length > 0) {
       params.pathContains = pathContains.trim();
@@ -427,6 +541,45 @@ export const adminApi = {
     const response = await apiClient.get<PageViewAnalyticsResponse>(
       "/admin/page-view-analytics",
       { params }
+    );
+    return response.data;
+  },
+
+  getPageViewSessions: async (
+    days: number = 7,
+    outcome: SessionOutcomeFilter = "all",
+    minPages?: number,
+    includeBots: boolean = false,
+    sortBy: SessionSortBy = "recent",
+    page: number = 1,
+    pageSize: number = 25,
+    landingPagesLimit: number = 10
+  ): Promise<PageViewSessionsResponse> => {
+    const params: Record<string, string | number | boolean> = {
+      days,
+      outcome,
+      includeBots,
+      sortBy,
+      page,
+      pageSize,
+      landingPagesLimit,
+    };
+    if (minPages && minPages > 1) {
+      params.minPages = minPages;
+    }
+
+    const response = await apiClient.get<PageViewSessionsResponse>(
+      "/admin/page-view-sessions",
+      { params }
+    );
+    return response.data;
+  },
+
+  getPageViewSessionDetail: async (
+    sessionId: string
+  ): Promise<PageViewSessionDetailResponse> => {
+    const response = await apiClient.get<PageViewSessionDetailResponse>(
+      `/admin/page-view-sessions/${encodeURIComponent(sessionId)}`
     );
     return response.data;
   },

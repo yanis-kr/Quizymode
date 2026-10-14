@@ -40,6 +40,13 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
             .IsRequired()
             .HasMaxLength(4096);
 
+        builder.Property(pageView => pageView.UserAgent)
+            .HasMaxLength(512);
+
+        builder.Property(pageView => pageView.IsBot)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(pageView => pageView.CreatedUtc)
             .IsRequired();
 
@@ -48,6 +55,8 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
         builder.HasIndex(pageView => pageView.SessionId);
         builder.HasIndex(pageView => pageView.UserId);
         builder.HasIndex(pageView => pageView.IsAuthenticated);
+        builder.HasIndex(pageView => pageView.IsBot);
         builder.HasIndex(pageView => new { pageView.Path, pageView.CreatedUtc });
+        builder.HasIndex(pageView => new { pageView.SessionId, pageView.CreatedUtc });
     }
 }
