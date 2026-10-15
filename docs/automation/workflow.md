@@ -83,7 +83,7 @@ On restart:
 
 ## Handoff and evidence contracts
 
-The provider-neutral handoff schema is [`handoff.schema.json`](../../scripts/automation/schemas/handoff.schema.json). Claude must implement `Get-QmProviderContract` and `Invoke-QmProviderStage` with the exact signature exposed by [`ClaudeAdapter.contract.psm1`](../../scripts/automation/adapters/ClaudeAdapter.contract.psm1). Its implementation must:
+The provider-neutral handoff schema is [`handoff.schema.json`](../../scripts/automation/schemas/handoff.schema.json). Claude implements `Get-QmProviderContract` and `Invoke-QmProviderStage` in [`ClaudeAdapter.psm1`](../../scripts/automation/adapters/ClaudeAdapter.psm1) (supersedes the earlier contract-only stub of the same directory). Its implementation must:
 
 1. Accept stage, prompt, isolated worktree, output path, JSON schema path, configured model/tier, and timeout.
 2. Use the existing Claude subscription session and machine-readable JSON output.
@@ -183,4 +183,4 @@ Do not enable administrator bypass, weaken branch protection, or add automatic c
 5. Trial one issue through planning/testing/evidence with a draft PR; do not merge it through automation.
 6. Only after reviewing the trial should a separate policy PR enable live scheduling or unattended release.
 
-Remaining rollout blockers are intentional: Claude's adapter is contract-only, GitHub protections need manual configuration, the scheduled task is dry-run-only, smoke URLs are empty, and `ReleaseEnabled` is false.
+Remaining rollout blockers are intentional: Claude's adapter now implements the contract (verified directly against the real `claude.exe` CLI; see its PR for evidence), but `claude.Enabled` and its `Queue` stay false/empty pending a reviewed trial; GitHub protections need manual configuration, the scheduled task is dry-run-only, smoke URLs are empty, and `ReleaseEnabled` is false.

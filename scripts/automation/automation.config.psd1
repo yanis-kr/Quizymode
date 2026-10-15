@@ -52,10 +52,24 @@
         }
         claude = @{
             Enabled = $false
-            Adapter = 'adapters\ClaudeAdapter.contract.psm1'
+            Adapter = 'adapters\ClaudeAdapter.psm1'
             Queue = @()
             BranchPrefix = 'claude'
             ReadyPattern = '(?im)^\*\*Status:\*\*\s*Ready\b'
+            OrchestratorModel = 'sonnet'
+            OrchestratorEffort = 'medium'
+            ArchitectModel = 'opus'
+            ArchitectEffort = 'high'
+            ReviewerModel = 'opus'
+            ReviewerEffort = 'high'
+            CoderModel = 'sonnet'
+            CoderEffort = 'medium'
+            UxModel = 'sonnet'
+            UxEffort = 'medium'
+            TesterModel = 'sonnet'
+            TesterEffort = 'medium'
+            ReporterModel = 'haiku'
+            ReporterEffort = 'medium'
         }
     }
 }
