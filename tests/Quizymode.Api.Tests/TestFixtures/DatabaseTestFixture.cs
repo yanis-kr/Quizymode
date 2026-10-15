@@ -13,6 +13,7 @@ namespace Quizymode.Api.Tests.TestFixtures;
 public abstract class DatabaseTestFixture : IDisposable
 {
     private readonly SqliteConnection _connection;
+    private readonly DbContextOptions<ApplicationDbContext> _options;
     protected ApplicationDbContext DbContext { get; }
 
     protected DatabaseTestFixture()
@@ -21,13 +22,13 @@ public abstract class DatabaseTestFixture : IDisposable
         _connection = new SqliteConnection("Data Source=:memory:");
         _connection.Open();
 
-        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
+        _options = new DbContextOptionsBuilder<ApplicationDbContext>()
             .UseSqlite(_connection)
             .ReplaceService<IModelCustomizer, TestModelCustomizer>()
             .EnableSensitiveDataLogging()
             .Options;
 
-        DbContext = new ApplicationDbContext(options);
+        DbContext = new ApplicationDbContext(_options);
         
         // Ensure database is created - create database directly from model
         // Disable migrations completely to avoid PostgreSQL-specific SQL from migrations
@@ -50,6 +51,12 @@ public abstract class DatabaseTestFixture : IDisposable
                 $"Ensure TestModelCustomizer properly handles all PostgreSQL-specific syntax.", ex);
         }
     }
+
+    /// <summary>
+    /// A separate context on the same in-memory database, for code that owns and disposes its context
+    /// (for example one DI scope per HTTP request).
+    /// </summary>
+    protected ApplicationDbContext CreateDbContext() => new(_options);
 
     public void Dispose()
     {
