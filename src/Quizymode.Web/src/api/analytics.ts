@@ -18,6 +18,9 @@ export interface AnalyticsEventPayload {
   runId?: string;
   score?: number;
   total?: number;
+  itemId?: string;
+  position?: number;
+  isCorrect?: boolean;
 }
 
 export interface TrackAnalyticsEventsRequest {

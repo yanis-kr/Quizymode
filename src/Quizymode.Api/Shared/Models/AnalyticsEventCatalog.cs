@@ -17,6 +17,11 @@ public static class AnalyticsEventCatalog
     public const string SignInCompleted = "sign_in_completed";
     public const string GuestStateImported = "guest_state_imported";
 
+    // Study engagement (ANALYTICS-007). A quiz run starts with QuickQuizStarted and ends with QuizCompleted.
+    public const string QuestionAnswered = "question_answered";
+    public const string FlashcardsStarted = "flashcards_started";
+    public const string FlashcardRevealed = "flashcard_revealed";
+
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
     public enum EventFields
@@ -46,7 +51,15 @@ public static class AnalyticsEventCatalog
         [SignupConfirmationShown] = new(EventFields.None, EventFields.None),
         [SignupConfirmed] = new(EventFields.None, EventFields.None),
         [SignInCompleted] = new(EventFields.None, EventFields.None),
-        [GuestStateImported] = new(EventFields.None, EventFields.None)
+        [GuestStateImported] = new(EventFields.None, EventFields.None),
+        // Item-level: the dedupe key adds the item id, so one run stores one answer or reveal per item.
+        [QuestionAnswered] = new(
+            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect,
+            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect),
+        [FlashcardsStarted] = new(EventFields.RunId | EventFields.Total, EventFields.RunId),
+        [FlashcardRevealed] = new(
+            EventFields.RunId | EventFields.ItemId | EventFields.Position,
+            EventFields.RunId | EventFields.ItemId | EventFields.Position)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>

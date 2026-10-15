@@ -25,10 +25,16 @@ import { ScopePathHeader } from "@/components/ScopePathHeader";
 import type { ViewMode } from "@/components/ModeSwitcher";
 import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
-import type { CollectionRatingResponse } from "@/types/api";
+import type { CollectionRatingResponse, ItemResponse } from "@/types/api";
 import { useQuery as useRatingQuery } from "@tanstack/react-query";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
+import { createAnalyticsId, flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
+import {
+  flashcardsEventContext,
+  trackFlashcardRevealed,
+  trackFlashcardsStarted,
+} from "@/features/items/quiz/quizAnalytics";
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -271,6 +277,24 @@ const ExploreModePage = () => {
   const isLoadingItems = collectionId
     ? collectionLoading
     : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false);
+
+  // Study telemetry (AC 5.5.4): one Flashcards run per page visit and scope; the first reveal of each card is reported.
+  const flashcardsScopeKey = `${collectionId ?? ""}|${category ?? ""}|${keywords.join(",")}`;
+  const flashcardsRun = useRef<{ scopeKey: string; runId: string } | null>(null);
+  useEffect(() => {
+    if (isLoadingItems || items.length === 0) return;
+    if (flashcardsRun.current?.scopeKey === flashcardsScopeKey) return;
+    flashcardsRun.current = { scopeKey: flashcardsScopeKey, runId: createAnalyticsId() };
+    trackFlashcardsStarted(flashcardsRun.current.runId, items.length, flashcardsEventContext(collectionId, category));
+  }, [category, collectionId, flashcardsScopeKey, isLoadingItems, items.length]);
+  useEffect(() => () => flushDeferredAnalyticsEvents(), []);
+
+  const handleFlashcardRevealed = (revealed: ItemResponse) => {
+    const run = flashcardsRun.current;
+    const position = items.findIndex((candidate) => candidate.id === revealed.id) + 1;
+    if (!run || position < 1) return;
+    trackFlashcardRevealed(run.runId, revealed.id, position, flashcardsEventContext(collectionId, category));
+  };
 
   // Calculate current index based on itemId if present
   useEffect(() => {
@@ -695,7 +719,7 @@ const ExploreModePage = () => {
           )
         }
       >
-        {currentItem && <ExploreRenderer item={currentItem} />}
+        {currentItem && <ExploreRenderer item={currentItem} onReveal={handleFlashcardRevealed} />}
       </StudyShell>
 
       <CommentsDrawer

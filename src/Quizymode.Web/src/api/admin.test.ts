@@ -181,6 +181,24 @@ describe("adminApi", () => {
     });
   });
 
+  it("getLearningReport calls GET /admin/analytics/learning with window and bot flag", async () => {
+    const data = { scopes: [] };
+    mockGet.mockResolvedValueOnce({ data });
+
+    const result = await adminApi.getLearningReport(30, true);
+
+    expect(mockGet).toHaveBeenCalledWith("/admin/analytics/learning", {
+      params: { days: 30, includeBots: true },
+    });
+    expect(result).toEqual(data);
+
+    mockGet.mockResolvedValueOnce({ data });
+    await adminApi.getLearningReport(30, false, true);
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/analytics/learning", {
+      params: { days: 30, includeBots: false, includeInternal: true },
+    });
+  });
+
   it("sends includeInternal only when internal traffic is requested", async () => {
     mockGet.mockResolvedValue({ data: {} });
 

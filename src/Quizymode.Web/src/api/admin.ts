@@ -269,6 +269,37 @@ export interface ConversionFunnelResponse {
   steps: ConversionFunnelStep[];
 }
 
+export interface LearningScopeResponse {
+  mode: string;
+  contextType: string | null;
+  contextId: string | null;
+  runsStarted: number;
+  /** Null for flashcards, which have no completion. */
+  runsCompleted: number | null;
+  completionRatePercent: number | null;
+  averageScorePercent: number | null;
+  averageItemsReached: number;
+}
+
+export interface LearningDropOffPointResponse {
+  position: number;
+  runsReached: number;
+  sharePercent: number;
+  runsAbandonedHere: number;
+}
+
+export interface LearningReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  scopes: LearningScopeResponse[];
+  quizRunsAbandonedBeforeFirstAnswer: number;
+  quizDropOff: LearningDropOffPointResponse[];
+}
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
@@ -642,6 +673,23 @@ export const adminApi = {
 
     const response = await apiClient.get<ConversionFunnelResponse>(
       "/admin/analytics/funnel",
+      { params }
+    );
+    return response.data;
+  },
+
+  getLearningReport: async (
+    days: number = 7,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<LearningReportResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<LearningReportResponse>(
+      "/admin/analytics/learning",
       { params }
     );
     return response.data;

@@ -3,11 +3,28 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, waitFor } from "@testing-library/react";
 import {
   flushAnalyticsEvents,
+  flushDeferredAnalyticsEvents,
   resetAnalyticsEventsForTests,
+  sendPendingOnPageHideForTests,
   trackEvent,
+  trackEventDeferredOnce,
   trackEventOnce,
 } from "./analyticsEvents";
 import { useTrackEventOnce } from "./useTrackEventOnce";
+
+function createStorage(): Storage {
+  const store = new Map<string, string>();
+  return {
+    get length() {
+      return store.size;
+    },
+    clear: () => store.clear(),
+    getItem: (key: string) => store.get(key) ?? null,
+    key: (index: number) => Array.from(store.keys())[index] ?? null,
+    removeItem: (key: string) => store.delete(key),
+    setItem: (key: string, value: string) => store.set(key, value),
+  } as Storage;
+}
 
 const { mockTrackEvents, mockIsInternalBrowser } = vi.hoisted(() => ({
   mockTrackEvents: vi.fn(),
@@ -144,5 +161,107 @@ describe("analyticsEvents", () => {
       contextId: "results",
       clientEventId: "prompt-a",
     });
+  });
+});
+
+describe("analyticsEvents deferred batching", () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+    resetAnalyticsEventsForTests();
+    mockTrackEvents.mockReset();
+    mockIsInternalBrowser.mockReset();
+    mockIsInternalBrowser.mockReturnValue(false);
+    mockTrackEvents.mockResolvedValue(undefined);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("holds deferred events until the batch size is reached", async () => {
+    for (let i = 0; i < 4; i += 1) {
+      trackEventDeferredOnce(`run-1:item-${i}`, { name: "question_answered", runId: "run-1" });
+    }
+    await Promise.resolve();
+    expect(mockTrackEvents).not.toHaveBeenCalled();
+
+    trackEventDeferredOnce("run-1:item-4", { name: "question_answered", runId: "run-1" });
+    await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
+    expect(mockTrackEvents.mock.calls[0][0].events).toHaveLength(5);
+  });
+
+  it("ignores a repeated onceKey instead of queuing it again", async () => {
+    trackEventDeferredOnce("run-1:item-0", { name: "question_answered", runId: "run-1" });
+    trackEventDeferredOnce("run-1:item-0", { name: "question_answered", runId: "run-1" });
+    flushDeferredAnalyticsEvents();
+
+    await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
+    expect(mockTrackEvents.mock.calls[0][0].events).toHaveLength(1);
+  });
+
+  it("sends nothing on an explicit flush when nothing is deferred", async () => {
+    flushDeferredAnalyticsEvents();
+    await flushAnalyticsEvents();
+    expect(mockTrackEvents).not.toHaveBeenCalled();
+  });
+
+  it("flushes fewer than the batch size via flushDeferredAnalyticsEvents", async () => {
+    trackEventDeferredOnce("run-1:item-0", { name: "question_answered", runId: "run-1" });
+    trackEventDeferredOnce("run-1:item-1", { name: "question_answered", runId: "run-1" });
+    flushDeferredAnalyticsEvents();
+
+    await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
+    expect(mockTrackEvents.mock.calls[0][0].events).toHaveLength(2);
+  });
+});
+
+describe("analyticsEvents page-hide delivery", () => {
+  let storage: Storage;
+
+  beforeEach(() => {
+    sessionStorage.clear();
+    resetAnalyticsEventsForTests();
+    mockTrackEvents.mockReset();
+    mockIsInternalBrowser.mockReset();
+    mockIsInternalBrowser.mockReturnValue(false);
+    storage = createStorage();
+    vi.stubGlobal("localStorage", storage);
+    Object.defineProperty(window, "localStorage", { value: storage, configurable: true });
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(null, { status: 204 })));
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
+
+  it("sends held deferred events with a keepalive fetch and the bearer token", () => {
+    storage.setItem("idToken", "token-abc");
+    trackEventDeferredOnce("run-1:item-0", { name: "question_answered", runId: "run-1" });
+
+    sendPendingOnPageHideForTests();
+
+    expect(fetch).toHaveBeenCalledTimes(1);
+    const [url, init] = (fetch as unknown as ReturnType<typeof vi.fn>).mock.calls[0];
+    expect(url).toMatch(/\/analytics\/events$/);
+    expect(init.method).toBe("POST");
+    expect(init.keepalive).toBe(true);
+    expect(init.headers.Authorization).toBe("Bearer token-abc");
+    const body = JSON.parse(init.body);
+    expect(body.events).toHaveLength(1);
+  });
+
+  it("omits the Authorization header when no token is stored", () => {
+    trackEventDeferredOnce("run-1:item-0", { name: "question_answered", runId: "run-1" });
+
+    sendPendingOnPageHideForTests();
+
+    const [, init] = (fetch as unknown as ReturnType<typeof vi.fn>).mock.calls[0];
+    expect(init.headers.Authorization).toBeUndefined();
+  });
+
+  it("does nothing when there is nothing pending", () => {
+    sendPendingOnPageHideForTests();
+    expect(fetch).not.toHaveBeenCalled();
   });
 });
