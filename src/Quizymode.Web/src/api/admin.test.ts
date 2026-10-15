@@ -174,6 +174,7 @@ describe("adminApi", () => {
     });
     expect(result).toEqual(data);
 
+    mockGet.mockResolvedValueOnce({ data });
     await adminApi.getConversionFunnel(30, false, true);
     expect(mockGet).toHaveBeenLastCalledWith("/admin/analytics/funnel", {
       params: { days: 30, includeBots: false, includeInternal: true },
