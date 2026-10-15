@@ -33,6 +33,7 @@ import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
+import { trackQuizRunCompleted, trackQuizRunStarted } from "@/features/items/quiz/quizAnalytics";
 import {
   createQuizRun,
   getQuizOptions,
@@ -544,12 +545,22 @@ const QuizModePage = () => {
   };
   const options = currentItem && run ? getQuizOptions(currentItem, run.runId) : [];
 
+  // Funnel telemetry (AC 5.4.9): only a new run id is a new start; other run updates are answers.
+  // trackEventOnce also dedupes per tab, so restores, remounts and StrictMode do not repeat it.
+  const startTrackedRunId = useRef<string | null>(null);
+  useEffect(() => {
+    if (!run || startTrackedRunId.current === run.runId) return;
+    startTrackedRunId.current = run.runId;
+    trackQuizRunStarted(run);
+  }, [run]);
+
   useEffect(() => {
     if (!run || run.completionEmitted || completionPublishedRunIds.current.has(run.runId)) return;
     const snapshot = toCompletionSnapshot(run);
     if (!snapshot) return;
     completionPublishedRunIds.current.add(run.runId);
     publishQuizCompletion(snapshot);
+    trackQuizRunCompleted(snapshot);
     // Persist the one-shot publication marker with the run after notifying consumers.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setRun((current) =>
