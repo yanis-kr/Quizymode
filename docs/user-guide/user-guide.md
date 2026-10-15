@@ -8,6 +8,7 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 ## Table of Contents
 
 - [Home](#home)
+- [Featured](#featured)
 - [Browsing the Taxonomy](#browsing-the-taxonomy)
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
@@ -19,9 +20,11 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 
 ### Home
 
-The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
+The home page is the main entry point for Quizymode. Its primary action opens the five-question **Fun Trivia Facts** collection directly in Quiz mode, with no account or intermediate collection page. Category cards remain available immediately, while featured sets and recently added public collections add more ways to browse when those services are available. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
 
 ![Home](screenshots/user/home.png "Home")
+
+## Featured
 
 ## Browsing the Taxonomy
 

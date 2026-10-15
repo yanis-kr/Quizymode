@@ -8,6 +8,7 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 ## Table of Contents
 
 - [Home](#home)
+- [Featured](#featured)
 - [Browsing the Taxonomy](#browsing-the-taxonomy)
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
@@ -19,9 +20,11 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 
 ### Home
 
-On mobile, the home page keeps the same hero and discovery content but compresses it into a narrow, scroll-first layout. The primary navigation moves behind the hamburger menu, so the screen emphasizes the category cards, featured sets, and footer actions rather than the full desktop nav bar.
+On mobile, the five-question quick quiz remains the primary home action and states that no account is needed. It opens **Fun Trivia Facts** directly in Quiz mode, while the category carousel stays immediately below it for browsing. The primary navigation moves behind the hamburger menu and the hero content wraps for a narrow screen.
 
 ![Home](screenshots/mobile/home.png "Home")
+
+## Featured
 
 ## Browsing the Taxonomy
 
