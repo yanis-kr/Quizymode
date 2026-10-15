@@ -1,0 +1,5 @@
+[xUnit.net 00:00:03.96]     Quizymode.Api.Tests.Features.Admin.InternalTrafficHttpTests.SetUserInternalFlag_WithExpiredOrForeignAdminToken_Returns401 [FAIL]
+[xUnit.net 00:00:04.12]     Quizymode.Api.Tests.Features.Admin.InternalTrafficHttpTests.SetUserInternalFlag_WithoutToken_Returns401 [FAIL]
+[xUnit.net 00:00:04.30]     Quizymode.Api.Tests.Features.Admin.InternalTrafficHttpTests.SetUserInternalFlag_AsNonAdmin_Returns403AndLeavesFlagUnchanged [FAIL]
+   Expected (SendAsync(HttpMethod.Put, $"/admin/users/{member.Id}/internal", expired, new { isInternal = true })) to be HttpStatusCode.Unauthorized {value: 401}, but found HttpStatusCode.OK {value: 200}.
+Failed!  - Failed:     3, Passed:     1, Skipped:     0, Total:     4, Duration: 3 s - Quizymode.Api.Tests.dll (net10.0)

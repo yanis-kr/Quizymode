@@ -1,0 +1,72 @@
+[
+  {
+    "actor": "A-visitor",
+    "path": "/",
+    "sessionId": "3f38c850-495a-41f2-a48e-7bfa01e838e5",
+    "internalBrowser": null,
+    "bearer": false
+  },
+  {
+    "actor": "A-visitor",
+    "path": "/categories",
+    "sessionId": "3f38c850-495a-41f2-a48e-7bfa01e838e5",
+    "internalBrowser": null,
+    "bearer": false
+  },
+  {
+    "actor": "B-member",
+    "path": "/",
+    "sessionId": "e7dea2ae-3895-4d21-acb8-4afa518a8347",
+    "internalBrowser": null,
+    "bearer": true
+  },
+  {
+    "actor": "B-member",
+    "path": "/categories",
+    "sessionId": "e7dea2ae-3895-4d21-acb8-4afa518a8347",
+    "internalBrowser": null,
+    "bearer": true
+  },
+  {
+    "actor": "B-member",
+    "path": "/collections",
+    "sessionId": "e7dea2ae-3895-4d21-acb8-4afa518a8347",
+    "internalBrowser": null,
+    "bearer": true
+  },
+  {
+    "actor": "C-admin",
+    "path": "/categories",
+    "sessionId": "b795e744-20e8-449d-96b5-e90f28cf8307",
+    "internalBrowser": null,
+    "bearer": true
+  },
+  {
+    "actor": "D-mid-session",
+    "path": "/",
+    "sessionId": "981f5241-589f-43a0-a3b8-e1925a473791",
+    "internalBrowser": null,
+    "bearer": false
+  },
+  {
+    "actor": "D-mid-session",
+    "path": "/collections",
+    "sessionId": "981f5241-589f-43a0-a3b8-e1925a473791",
+    "internalBrowser": null,
+    "bearer": true
+  },
+  {
+    "actor": "E-marked-browser",
+    "path": "/",
+    "sessionId": "a5a92a11-7c44-42b5-80af-f7083e32fd73",
+    "internalBrowser": null,
+    "bearer": false
+  },
+  {
+    "actor": "E-marked-browser",
+    "path": "/categories",
+    "sessionId": "0ad7bf40-c01b-4250-88ad-c0535c181688",
+    "internalBrowser": true,
+    "bearer": false
+  }
+]

@@ -1,0 +1,8 @@
+session | Path | IsInternal | IsBot | ua
+422176ba | /categories | t | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+21adb51c | /categories | t | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+21adb51c | /categories/geography | t | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+f632d61f | / | f | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+f632d61f | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts | f | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+f632d61f | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5 | f | f | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+(6 rows)

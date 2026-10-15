@@ -1,0 +1,12 @@
+session | Path | hit_internal | user_email | user_internal | IsBot
+3f38c850 | / | f |  |  | f
+3f38c850 | /categories | f |  |  | f
+e7dea2ae | / | f | member@local.test | t | f
+e7dea2ae | /categories | f | member@local.test | t | f
+e7dea2ae | /collections | f | member@local.test | t | f
+b795e744 | /categories | t | admin@local.test | f | f
+981f5241 | / | f |  |  | f
+981f5241 | /collections | t | admin@local.test | f | f
+a5a92a11 | / | f |  |  | f
+0ad7bf40 | /categories | t |  |  | f
+(10 rows)

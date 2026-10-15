@@ -1,0 +1,2 @@
+   Expected offenders to be empty because specs must import test from playwright/fixtures.ts so production runs are internal traffic, but found at least one item {"e2e\home.spec.ts"}.
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 365 ms - Quizymode.Api.Tests.dll (net10.0)

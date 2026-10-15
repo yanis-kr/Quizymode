@@ -1,0 +1,119 @@
+[
+  {
+    "step": "/admin/* routes send no page hits",
+    "outcome": "PASS",
+    "detail": {
+      "adminRouteHits": []
+    }
+  },
+  {
+    "step": "Marker stored in localStorage",
+    "outcome": "PASS",
+    "detail": {
+      "markerValue": "true"
+    }
+  },
+  {
+    "step": "Signed-out hit from marked browser carries internalBrowser=true",
+    "outcome": "PASS",
+    "detail": {
+      "markedHit": {
+        "actor": "E-marked-browser",
+        "path": "/categories",
+        "sessionId": "0ad7bf40-c01b-4250-88ad-c0535c181688",
+        "internalBrowser": true,
+        "bearer": false
+      }
+    }
+  },
+  {
+    "step": "Unmarked visitor hits carry no marker",
+    "outcome": "PASS",
+    "detail": {
+      "count": 2
+    }
+  },
+  {
+    "step": "PUT /admin/users/{id}/internal without token -> 401",
+    "outcome": "PASS",
+    "detail": {
+      "status": 401,
+      "wwwAuthenticate": "Bearer"
+    }
+  },
+  {
+    "step": "PUT /admin/users/{id}/internal as non-admin -> 403",
+    "outcome": "PASS",
+    "detail": {
+      "status": 403
+    }
+  },
+  {
+    "step": "PUT /admin/users/{id}/internal as admin -> 200",
+    "outcome": "PASS",
+    "detail": {
+      "status": 200,
+      "body": {
+        "id": "fc2bffaf-06ef-406b-b247-31255657f87d",
+        "isInternal": true
+      }
+    }
+  },
+  {
+    "step": "GET /admin/page-view-sessions as non-admin -> 403",
+    "outcome": "PASS",
+    "detail": {
+      "status": 403
+    }
+  },
+  {
+    "step": "Report after flagging (default)",
+    "outcome": "INFO",
+    "detail": {
+      "sessions": [
+        "a5a92a11-7c44-42b5-80af-f7083e32fd73",
+        "3f38c850-495a-41f2-a48e-7bfa01e838e5"
+      ],
+      "internalSessions": 4,
+      "internalExcluded": true
+    }
+  },
+  {
+    "step": "Report after flagging (includeInternal=true)",
+    "outcome": "INFO",
+    "detail": {
+      "sessions": [
+        {
+          "id": "0ad7bf40-c01b-4250-88ad-c0535c181688",
+          "internal": true,
+          "user": null
+        },
+        {
+          "id": "a5a92a11-7c44-42b5-80af-f7083e32fd73",
+          "internal": false,
+          "user": null
+        },
+        {
+          "id": "981f5241-589f-43a0-a3b8-e1925a473791",
+          "internal": true,
+          "user": "admin@local.test"
+        },
+        {
+          "id": "b795e744-20e8-449d-96b5-e90f28cf8307",
+          "internal": true,
+          "user": "admin@local.test"
+        },
+        {
+          "id": "e7dea2ae-3895-4d21-acb8-4afa518a8347",
+          "internal": true,
+          "user": "member@local.test"
+        },
+        {
+          "id": "3f38c850-495a-41f2-a48e-7bfa01e838e5",
+          "internal": false,
+          "user": null
+        }
+      ]
+    }
+  }
+]
