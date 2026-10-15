@@ -8,6 +8,9 @@ namespace Quizymode.Api.StartupExtensions;
 /// Multi-line XML doc comments carry the line endings of the checked-out source file, so a
 /// Windows checkout (core.autocrlf=true) and a Linux checkout would otherwise emit different
 /// OpenAPI artifacts for the same code. Registered last so it sees text from every other transformer.
+/// Example, default and enum values (JSON nodes, e.g. from XML <c>&lt;example&gt;</c> tags), links, callbacks
+/// and external docs are not walked: nothing in the API emits multi-line text there today, and
+/// <c>CommittedArtifact_ContainsNoEscapedCarriageReturns</c> fails if that changes.
 /// </summary>
 internal sealed class NewlineNormalizingOpenApiTransformer : IOpenApiDocumentTransformer
 {

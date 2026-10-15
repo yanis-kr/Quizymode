@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using FluentAssertions;
 using Microsoft.OpenApi;
 using Quizymode.Api.StartupExtensions;
@@ -167,7 +168,9 @@ public sealed class NewlineNormalizingOpenApiTransformerTests
 
         string artifact = File.ReadAllText(artifactPath);
 
-        artifact.Should().NotContain("\\r", "descriptions must use LF so Windows and Linux builds emit the same artifact");
+        // An escaped CR is \r preceded by an even number of backslashes; "C:\\repo" is not one.
+        Regex.IsMatch(artifact, @"(?<!\\)(?:\\\\)*\\r")
+            .Should().BeFalse("descriptions must use LF so Windows and Linux builds emit the same artifact");
     }
 
     private static string FindRepositoryRoot()
