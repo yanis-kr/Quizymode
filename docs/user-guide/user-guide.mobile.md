@@ -60,7 +60,7 @@ On mobile, flashcards stay focused on one item at a time, with the card taking m
 
 ### Mode Quiz
 
-Quiz mode on mobile keeps the same multiple-choice flow, but the question, answers, and progress stack vertically for easier thumb interaction. The layout prioritizes answer selection and feedback without requiring sideways scanning.
+Quiz mode on mobile keeps the same multiple-choice flow, with the question, answers, and progress stacked vertically for easier thumb interaction. The first answer remains locked, and the completion screen provides touch-friendly mistake review and replay actions.
 
 ![Mode Quiz](screenshots/mobile/mode-quiz.png "Mode Quiz")
 
@@ -148,7 +148,7 @@ Collection flashcards on mobile keep the answer-first card interaction, but the 
 
 ### Collection Detail Quiz
 
-Collection quiz mode keeps the same scoring and answer flow on mobile, with content stacked for touch interaction. The narrow layout preserves focus on the current question instead of surrounding chrome.
+Collection quiz mode keeps first-answer scoring and completion review on mobile, with content stacked for touch interaction. Results offer mistake review, return, and same-roster replay without leaving the collection flow.
 
 ![Collection Detail Quiz](screenshots/mobile/collection-detail-quiz.png "Collection Detail Quiz")
 

@@ -120,3 +120,49 @@ test(
     }
   }
 );
+
+test.describe("anonymous collection completion", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
+  test("AC 3.6 @smoke - completes, reviews mistakes, returns to results, and replays", async ({
+    page,
+  }) => {
+    await page.goto(
+      "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts"
+    );
+
+    const deliberatelyWrongAnswers: Record<string, string> = {
+      'What color is the "black box" recorder on most commercial airplanes?': "Black",
+      "What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?": "Dogs",
+      "Which planet has a day longer than its year?": "Mars",
+      "What is the national animal of Scotland?": "The stag",
+      "What everyday food never really spoils when stored properly?": "Brown rice",
+    };
+
+    for (let index = 0; index < 5; index += 1) {
+      const question = page.locator("h3", { hasText: "Question" }).locator("..").locator("p").first();
+      await expect(question).toBeVisible({ timeout: 10_000 });
+      const questionText = (await question.textContent())?.trim() ?? "";
+      const wrongAnswer = deliberatelyWrongAnswers[questionText];
+      expect(wrongAnswer).toBeTruthy();
+      await page.getByRole("button", { name: new RegExp(wrongAnswer, "i") }).click();
+      await expect(page.getByText(/correct answer:/i)).toBeVisible();
+      if (index < 4) {
+        await page.getByRole("button", { name: /^next$/i }).click();
+      }
+    }
+
+    await page.getByRole("button", { name: /view results/i }).click();
+    await expect(page.getByRole("heading", { name: /quiz complete/i })).toBeFocused();
+    await expect(page.getByText("0 / 5")).toBeVisible();
+
+    await page.getByRole("button", { name: /review mistakes/i }).click();
+    await expect(page.getByRole("heading", { name: /review mistakes/i })).toBeFocused();
+    await expect(page.getByText(/your answer:/i).first()).toBeVisible();
+    await page.getByRole("button", { name: /back to results/i }).click();
+    await page.getByRole("button", { name: /play again/i }).click();
+
+    await expect(page.getByText(/score: 0 \/ 0 correct/i)).toBeVisible();
+    await expect(page).not.toHaveURL(/\/login(?:[/?#]|$)/);
+  });
+});

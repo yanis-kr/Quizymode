@@ -32,6 +32,20 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
+import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
+import {
+  createQuizRun,
+  getQuizOptions,
+  publishQuizCompletion,
+  reduceQuizRun,
+  restoreQuizRun,
+  sameQuizScope,
+  summarizeQuizRun,
+  toCompletionSnapshot,
+  uniqueItemIds,
+  type QuizRunScope,
+  type QuizRunState,
+} from "@/features/items/quiz/quizRun";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -73,31 +87,13 @@ const QuizModePage = () => {
     keywords,
     searchParams,
   ]);
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, userId } = useAuth();
+  const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
+  const previousIdentityKey = useRef(identityKey);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Read collection quiz state once at mount (synchronous) so the storage effect below
-  // doesn't overwrite saved state with defaults before a restoration useEffect could run.
-  const [collectionSavedCtx] = useState(() => {
-    if (!collectionId || !itemId) return null;
-    try {
-      const raw = sessionStorage.getItem("navigationContext_quiz");
-      if (!raw) return null;
-      const ctx = JSON.parse(raw);
-      if (ctx.mode === "quiz" && ctx.collectionId === collectionId) return ctx;
-    } catch { /* intentional */ }
-    return null;
-  });
-
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(
-    collectionSavedCtx?.quizStateByItemId?.[itemId!]?.selectedAnswer ?? null
-  );
-  const [showAnswer, setShowAnswer] = useState<boolean>(
-    collectionSavedCtx?.quizStateByItemId?.[itemId!]?.showAnswer ?? false
-  );
-  const [stats, setStats] = useState<{ total: number; correct: number }>(
-    collectionSavedCtx?.stats ?? { total: 0, correct: 0 }
-  );
+  const [run, setRun] = useState<QuizRunState | null>(null);
+  const [runRestartNotice, setRunRestartNotice] = useState<string | null>(null);
+  const completionPublishedRunIds = useRef(new Set<string>());
   /** Quiz uses random N items (default 10); changing this refetches items */
   const [quizSize, setQuizSize] = useState(10);
   /** Controlled display value for the quiz size input; committed on blur */
@@ -129,12 +125,15 @@ const QuizModePage = () => {
     setQuizSize(next);
     setStoredItems(null);
     setCurrentIndex(0);
-    setSelectedAnswer(null);
-    setShowAnswer(false);
-    setStats({ total: 0, correct: 0 });
+    setRun(null);
+    setRunRestartNotice(null);
     hasSyncedInitialItemUrl.current = false;
-    sessionStorage.removeItem("navigationContext_quiz");
-    sessionStorage.removeItem("quiz_scope_items_from_categories");
+    try {
+      sessionStorage.removeItem("navigationContext_quiz");
+      sessionStorage.removeItem("quiz_scope_items_from_categories");
+    } catch {
+      // Storage is optional; the new in-memory run still starts normally.
+    }
 
     if (category) {
       navigate(`/quiz/${categoryNameToSlug(category)}${quizItemSearch}`, {
@@ -169,6 +168,21 @@ const QuizModePage = () => {
     return actualCategoryName || categorySlug; // Fallback to slug if not found
   }, [categorySlug, categoriesData?.categories]);
 
+  const runScope = useMemo<QuizRunScope>(
+    () =>
+      collectionId
+        ? { kind: "collection", collectionId }
+        : {
+            kind: category ? "category" : "global",
+            category: category ?? null,
+            navigationKeywords: [...navigationKeywords],
+            filterKeywords: [...filterKeywords],
+            quizSize,
+          },
+    // eslint-disable-next-line react-hooks/preserve-manual-memoization
+    [collectionId, category, navigationKeywords, filterKeywords, quizSize],
+  );
+
   // Fetch navigation keyword descriptions for breadcrumb tooltips
   const { data: keywordDescriptionsData } = useQuery({
     queryKey: ["keyword-descriptions", category, navigationKeywords],
@@ -185,45 +199,53 @@ const QuizModePage = () => {
   // Prefer dedicated key from Categories list (filtered scope) so we use it before any overwrite
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getStoredItems = (): any[] | null => {
-    if (!collectionId && itemId) {
-      const fromCategories = sessionStorage.getItem(
-        "quiz_scope_items_from_categories"
-      );
-      if (fromCategories) {
-        try {
-          const context = JSON.parse(fromCategories);
-          if (
-            context.items &&
-            Array.isArray(context.items) &&
-            context.items.some((item: { id?: string }) => item.id === itemId)
-          ) {
-            sessionStorage.removeItem("quiz_scope_items_from_categories");
-            return context.items;
-          }
-        } catch {
-          sessionStorage.removeItem("quiz_scope_items_from_categories");
-        }
-      }
-      const stored = sessionStorage.getItem("navigationContext_quiz");
-      if (stored) {
-        try {
-          const context = JSON.parse(stored);
-          if (context.items && context.mode === "quiz") {
-            const itemInStoredList = context.items.some(
-              (item: { id?: string }) => item.id === itemId
-            );
-            const categoryMatches =
-              (!context.category && !category) ||
-              context.category === category ||
-              !category;
-            if (itemInStoredList || categoryMatches) {
+    try {
+      if (!collectionId && itemId) {
+        const fromCategories = sessionStorage.getItem(
+          "quiz_scope_items_from_categories"
+        );
+        if (fromCategories) {
+          try {
+            const context = JSON.parse(fromCategories);
+            if (
+              context.items &&
+              Array.isArray(context.items) &&
+              context.items.some((item: { id?: string }) => item.id === itemId)
+            ) {
+              sessionStorage.removeItem("quiz_scope_items_from_categories");
               return context.items;
             }
+          } catch {
+            sessionStorage.removeItem("quiz_scope_items_from_categories");
           }
-        } catch {
-          // Invalid stored data, ignore
+        }
+        const stored = sessionStorage.getItem("navigationContext_quiz");
+        if (stored) {
+          try {
+            const context = JSON.parse(stored);
+            if (
+              context.items &&
+              context.mode === "quiz" &&
+              context.quizRun?.identityKey === identityKey
+            ) {
+              const itemInStoredList = context.items.some(
+                (item: { id?: string }) => item.id === itemId
+              );
+              const categoryMatches =
+                (!context.category && !category) ||
+                context.category === category ||
+                !category;
+              if (itemInStoredList || categoryMatches) {
+                return context.items;
+              }
+            }
+          } catch {
+            // Invalid stored data, ignore
+          }
         }
       }
+    } catch {
+      return null;
     }
     return null;
   };
@@ -232,34 +254,58 @@ const QuizModePage = () => {
   const [storedItems, setStoredItems] = useState<any[] | null>(
     getStoredItems()
   );
-  const [hasRestoredItems, setHasRestoredItems] = useState(false);
+
+  useEffect(() => {
+    if (previousIdentityKey.current === identityKey) return;
+    previousIdentityKey.current = identityKey;
+    // Identity transitions intentionally invalidate all access-sensitive quiz state.
+    setStoredItems(null);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setRun(null);
+    setRunRestartNotice(null);
+    setCurrentIndex(0);
+    hasSyncedInitialItemUrl.current = false;
+    try {
+      sessionStorage.removeItem("navigationContext_quiz");
+      sessionStorage.removeItem("quiz_scope_items_from_categories");
+    } catch {
+      // Access-sensitive in-memory state is already discarded.
+    }
+    void queryClient.invalidateQueries({ queryKey: ["randomItems"] });
+    void queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+  }, [identityKey, queryClient]);
 
   const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
-    queryKey: ["item", itemId],
+    queryKey: ["item", itemId, identityKey],
     queryFn: () => itemsApi.getById(itemId!),
     enabled: !!itemId && !storedItems, // Disable when restoring from sessionStorage
   });
 
-  const { data: collectionData, isLoading: collectionLoading } = useQuery({
-    queryKey: ["collectionItems", collectionId],
+  const {
+    data: collectionData,
+    isLoading: collectionLoading,
+    error: collectionError,
+    refetch: refetchCollection,
+  } = useQuery({
+    queryKey: ["collectionItems", collectionId, identityKey],
     queryFn: () => collectionsApi.getItems(collectionId!),
     enabled: !!collectionId, // Load even when itemId is present to get full list
   });
 
   const { data: collectionInfo } = useQuery({
-    queryKey: ["collection", collectionId],
+    queryKey: ["collection", collectionId, identityKey],
     queryFn: () => collectionsApi.getById(collectionId!),
     enabled: !!collectionId, // Allow anonymous: shareable link shows collection name and items
   });
 
   const { data: ratingData } = useQuery<CollectionRatingResponse>({
-    queryKey: ["collectionRating", collectionId],
+    queryKey: ["collectionRating", collectionId, identityKey],
     queryFn: () => collectionsApi.getRating(collectionId!),
     enabled: !!collectionId,
   });
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["randomItems", category, quizSize, navigationKeywords, filterKeywords],
+    queryKey: ["randomItems", category, quizSize, navigationKeywords, filterKeywords, identityKey],
     queryFn: () =>
       itemsApi.getRandom(
         category,
@@ -277,7 +323,7 @@ const QuizModePage = () => {
   });
 
   const { data: scopeCountData } = useQuery({
-    queryKey: ["scopeCount", category, navigationKeywords, filterKeywords],
+    queryKey: ["scopeCount", category, navigationKeywords, filterKeywords, identityKey],
     queryFn: () =>
       itemsApi.getAll(
         category,
@@ -300,97 +346,14 @@ const QuizModePage = () => {
       (!categorySlug || !!categoriesData?.categories),
   });
 
-  // Restore items, index, and quiz state from sessionStorage on mount
-  // Restore when navigating to a specific item (itemId present)
-  useEffect(() => {
-    if (!hasRestoredItems && !collectionId && itemId && storedItems) {
-      const stored = sessionStorage.getItem("navigationContext_quiz");
-      if (stored) {
-        try {
-          const context = JSON.parse(stored);
-          if (
-            context.items &&
-            context.mode === "quiz" &&
-            context.items.length > 0
-          ) {
-            const itemInStoredList = context.items.some(
-              (item: { id?: string }) => item.id === itemId
-            );
-            const categoryMatches =
-              (!context.category && !category) ||
-              context.category === category ||
-              !category;
-            if (itemInStoredList || categoryMatches) {
-              // Set storedItems state with the full items list
-              // eslint-disable-next-line react-hooks/set-state-in-effect
-              setStoredItems(context.items);
-
-              // Find the index of the current itemId in stored items, or use stored currentIndex
-              if (itemId) {
-                const index = context.items.findIndex(
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  (item: any) => item.id === itemId
-                );
-                if (index !== -1) {
-                  // eslint-disable-next-line react-hooks/set-state-in-effect
-                  setCurrentIndex(index);
-                  // Restore quiz state for this specific item if available
-                  if (context.quizState && context.quizState[index]) {
-                    const itemState = context.quizState[index];
-                    // eslint-disable-next-line react-hooks/set-state-in-effect
-                    setSelectedAnswer(itemState.selectedAnswer || null);
-                    // eslint-disable-next-line react-hooks/set-state-in-effect
-                    setShowAnswer(itemState.showAnswer || false);
-                  }
-                } else if (context.currentIndex !== undefined) {
-                  // If itemId not found but we have a stored index, use it
-                  // eslint-disable-next-line react-hooks/set-state-in-effect
-                  setCurrentIndex(context.currentIndex);
-                }
-              } else {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setCurrentIndex(context.currentIndex || 0);
-                // Restore quiz state for current index if available
-                if (
-                  context.quizState &&
-                  context.quizState[context.currentIndex || 0]
-                ) {
-                  const itemState =
-                    context.quizState[context.currentIndex || 0];
-                  // eslint-disable-next-line react-hooks/set-state-in-effect
-                  setSelectedAnswer(itemState.selectedAnswer || null);
-                  // eslint-disable-next-line react-hooks/set-state-in-effect
-                  setShowAnswer(itemState.showAnswer || false);
-                }
-              }
-
-              // Restore stats if available
-              if (context.stats) {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setStats(context.stats);
-              }
-
-              // Don't clear sessionStorage - keep it so quiz state persists for future navigation
-              // The storage useEffect will update it as state changes
-              // eslint-disable-next-line react-hooks/set-state-in-effect
-              setHasRestoredItems(true);
-            }
-          }
-        } catch {
-          // Invalid stored data, ignore
-        }
-      }
-    }
-  }, [itemId, hasRestoredItems, category, collectionId]);
-
   // Clear sessionStorage when starting a fresh quiz (no itemId, no collectionId)
   // This ensures we always fetch fresh items instead of restoring old ones
   useEffect(() => {
-    if (!itemId && !collectionId && !hasRestoredItems) {
-      // Clear old sessionStorage for this category when starting fresh
-      const stored = sessionStorage.getItem("navigationContext_quiz");
-      if (stored) {
-        try {
+    if (!itemId && !collectionId) {
+      try {
+        // Clear old sessionStorage for this category when starting fresh
+        const stored = sessionStorage.getItem("navigationContext_quiz");
+        if (stored) {
           const context = JSON.parse(stored);
           // Only clear if category matches (to avoid clearing other categories' data)
           const categoryMatches =
@@ -401,21 +364,33 @@ const QuizModePage = () => {
           ) {
             sessionStorage.removeItem("navigationContext_quiz");
           }
-        } catch {
-          // Invalid stored data, ignore
         }
+      } catch {
+        // Invalid or unavailable storage is ignored.
       }
     }
-  }, [itemId, collectionId, category, hasRestoredItems]);
+  }, [itemId, collectionId, category]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
-  const items = collectionId
-    ? collectionData?.items ||
-      (singleItemData && !storedItems ? [singleItemData] : [])
-    : storedItems ||
-      data?.items ||
-      (singleItemData && !storedItems ? [singleItemData] : []);
+  const availableItems = useMemo(() => {
+    const loadedItems = collectionId
+      ? collectionData?.items ?? []
+      : storedItems ||
+        data?.items ||
+        (singleItemData && !storedItems ? [singleItemData] : []);
+    const seen = new Set<string>();
+    return loadedItems.filter((item) => {
+      if (!item.id || seen.has(item.id)) return false;
+      seen.add(item.id);
+      return true;
+    });
+  }, [collectionData?.items, collectionId, data?.items, singleItemData, storedItems]);
+  const items = useMemo(() => {
+    if (!run || !sameQuizScope(run.scope, runScope)) return availableItems;
+    const byId = new Map(availableItems.map((item) => [item.id, item]));
+    return run.itemIds.map((id) => byId.get(id)).filter((item): item is (typeof availableItems)[number] => Boolean(item));
+  }, [availableItems, run, runScope]);
 
   const isLoadingItems = collectionId
     ? collectionLoading
@@ -464,6 +439,7 @@ const QuizModePage = () => {
     currentIndex,
     collectionId,
     category,
+    collectionInfo?.name,
     quizItemSearch,
     navigate,
   ]);
@@ -474,10 +450,6 @@ const QuizModePage = () => {
     if (items.length > 0 && currentIndex >= items.length) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentIndex(0);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setSelectedAnswer(null);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setShowAnswer(false);
     }
   }, [items.length, currentIndex]);
 
@@ -497,82 +469,57 @@ const QuizModePage = () => {
     }
   }, [collectionId, itemId]);
 
-  // Store items and quiz state in sessionStorage when we have them (for restoration after item detail view)
   useEffect(() => {
-    if (items.length === 0) return;
+    if (isLoadingItems || availableItems.length === 0) return;
+    const roster = uniqueItemIds(availableItems);
+    if (run && run.identityKey === identityKey && sameQuizScope(run.scope, runScope)) {
+      const allRunItemsStillAvailable = run.itemIds.every((id) => roster.includes(id));
+      if (allRunItemsStillAvailable || summarizeQuizRun(run).isComplete) return;
+      // The API roster is authoritative; synchronously replace a now-invalid active run.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setRunRestartNotice("Some questions from the saved run are no longer available, so a new run was started.");
+      setRun(createQuizRun(runScope, roster, identityKey));
+      setCurrentIndex(0);
+      return;
+    }
 
-    if (collectionId) {
-      // Collections: items are always re-fetched from the API so we only persist
-      // stats and per-item answer state, keyed by item ID (not index) so we can
-      // restore them synchronously at mount before the items list is available.
-      let existingByItemId: Record<string, { selectedAnswer: string | null; showAnswer: boolean }> = {};
-      try {
-        const raw = sessionStorage.getItem("navigationContext_quiz");
-        if (raw) {
-          const ctx = JSON.parse(raw);
-          if (ctx.mode === "quiz" && ctx.collectionId === collectionId && ctx.quizStateByItemId) {
-            existingByItemId = ctx.quizStateByItemId;
-          }
+    try {
+      const raw = sessionStorage.getItem("navigationContext_quiz");
+      if (raw) {
+        const context = JSON.parse(raw);
+        const restored = restoreQuizRun(context.quizRun, runScope, roster, identityKey);
+        if (restored) {
+          setRun(restored);
+          return;
         }
-      } catch { /* intentional */ }
-      const currentItemId = items[currentIndex]?.id;
-      if (currentItemId) {
-        existingByItemId = { ...existingByItemId, [currentItemId]: { selectedAnswer, showAnswer } };
       }
+    } catch {
+      // Storage is an optional restoration aid; gameplay remains in memory.
+    }
+
+    setRun(createQuizRun(runScope, roster, identityKey));
+  }, [availableItems, identityKey, isLoadingItems, run, runScope]);
+
+  // Persist the validated run for URL navigation, item details, comments, and reload restoration.
+  useEffect(() => {
+    if (!run || items.length === 0) return;
+    try {
       sessionStorage.setItem(
         "navigationContext_quiz",
         JSON.stringify({
           mode: "quiz",
+          category,
           collectionId,
           currentIndex,
-          itemIds: items.map((i) => i.id),
-          stats,
-          quizStateByItemId: existingByItemId,
+          itemIds: run.itemIds,
+          items: collectionId ? undefined : items,
+          quizRun: run,
         })
       );
-    } else {
-      // Non-collection: existing index-based logic (unchanged)
-      let existingQuizState: Record<
-        number,
-        { selectedAnswer: string | null; showAnswer: boolean }
-      > = {};
-      try {
-        const stored = sessionStorage.getItem("navigationContext_quiz");
-        if (stored) {
-          const context = JSON.parse(stored);
-          const categoryMatches =
-            (!context.category && !category) || context.category === category;
-          if (categoryMatches && context.quizState) {
-            existingQuizState = context.quizState;
-          }
-        }
-      } catch {
-        // Ignore errors
-      }
-      existingQuizState[currentIndex] = { selectedAnswer, showAnswer };
-      sessionStorage.setItem(
-        "navigationContext_quiz",
-        JSON.stringify({
-          mode: "quiz",
-          category: category,
-          collectionId: collectionId,
-          currentIndex: currentIndex,
-          itemIds: items.map((item) => item.id),
-          items: items,
-          stats: stats,
-          quizState: existingQuizState,
-        })
-      );
+    } catch {
+      // Storage failures must never block in-memory play.
     }
-  }, [
-    items,
-    currentIndex,
-    category,
-    collectionId,
-    selectedAnswer,
-    showAnswer,
-    stats,
-  ]);
+  }, [items, currentIndex, category, collectionId, run]);
 
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
@@ -587,40 +534,50 @@ const QuizModePage = () => {
         }
       : undefined;
 
-  const getShuffledOptions = () => {
-    if (!currentItem) return [];
-    const options = [
-      currentItem.correctAnswer,
-      ...currentItem.incorrectAnswers.slice(0, 3),
-    ];
-    return options.sort(() => Math.random() - 0.5);
+  const currentOutcome = currentItem && run ? run.outcomes[currentItem.id] : undefined;
+  const selectedAnswer = currentOutcome?.selectedAnswer ?? null;
+  const showAnswer = Boolean(currentOutcome);
+  const runSummary = run ? summarizeQuizRun(run) : null;
+  const stats = {
+    total: runSummary?.answered ?? 0,
+    correct: runSummary?.correct ?? 0,
   };
-
-  const [options, setOptions] = useState<string[]>([]);
+  const options = currentItem && run ? getQuizOptions(currentItem, run.runId) : [];
 
   useEffect(() => {
-    if (currentItem) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setOptions(getShuffledOptions());
-    }
-  }, [currentItem]);
+    if (!run || run.completionEmitted || completionPublishedRunIds.current.has(run.runId)) return;
+    const snapshot = toCompletionSnapshot(run);
+    if (!snapshot) return;
+    completionPublishedRunIds.current.add(run.runId);
+    publishQuizCompletion(snapshot);
+    // Persist the one-shot publication marker with the run after notifying consumers.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setRun((current) =>
+      current?.runId === run.runId
+        ? reduceQuizRun(current, { type: "mark-completion-emitted" })
+        : current
+    );
+  }, [run]);
 
   const handleAnswerSelect = (answer: string) => {
-    if (showAnswer) return;
-    setSelectedAnswer(answer);
-    setShowAnswer(true);
-    setStats((prev) => ({
-      total: prev.total + 1,
-      correct: prev.correct + (answer === currentItem?.correctAnswer ? 1 : 0),
-    }));
+    if (!run || !currentItem || currentOutcome) return;
+    setRun((current) =>
+      current
+        ? reduceQuizRun(current, {
+            type: "answer",
+            itemId: currentItem.id,
+            selectedAnswer: answer,
+            isCorrect: answer === currentItem.correctAnswer,
+            completedAt: new Date().toISOString(),
+          })
+        : current
+    );
   };
 
   const handleNext = () => {
     if (currentIndex < items.length - 1) {
       const newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
-      setSelectedAnswer(null);
-      setShowAnswer(false);
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
@@ -640,8 +597,6 @@ const QuizModePage = () => {
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
       setCurrentIndex(newIndex);
-      setSelectedAnswer(null);
-      setShowAnswer(false);
       if (items[newIndex]) {
         if (collectionId) {
           navigate(
@@ -655,6 +610,30 @@ const QuizModePage = () => {
         }
       }
     }
+  };
+
+  const navigateToRunItem = (index: number, replace = true) => {
+    const target = items[index];
+    if (!target) return;
+    if (collectionId) {
+      navigate(
+        `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, target.id)}${quizItemSearch}`,
+        { replace },
+      );
+    } else if (category) {
+      navigate(`/quiz/${categoryNameToSlug(category)}/item/${target.id}${quizItemSearch}`, { replace });
+    } else {
+      navigate(`/quiz/item/${target.id}${quizItemSearch}`, { replace });
+    }
+  };
+
+  const handlePlayAgain = () => {
+    if (!run) return;
+    const replay = createQuizRun(run.scope, run.itemIds, identityKey);
+    setRun(replay);
+    setRunRestartNotice(null);
+    setCurrentIndex(0);
+    navigateToRunItem(0);
   };
 
   const handleCollectionChange = (
@@ -712,6 +691,20 @@ const QuizModePage = () => {
   };
 
   if (isLoadingItems) return <LoadingSpinner />;
+  if (collectionId && collectionError)
+    return (
+      <div className="py-4 sm:py-6">
+        <ErrorMessage
+          message="This collection quiz is unavailable."
+          onRetry={() => void refetchCollection()}
+        />
+        <div className="mt-4 text-center">
+          <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+            Browse categories
+          </Link>
+        </div>
+      </div>
+    );
   if (error && !collectionId && !itemId)
     return (
       <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
@@ -720,7 +713,9 @@ const QuizModePage = () => {
     return (
       <div className="py-4 sm:py-6">
         <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">No items found.</p>
+          <p className="text-gray-500 mb-4">
+            {collectionId ? "This collection has no playable quiz items." : "No items found."}
+          </p>
           <Link
             to="/categories"
             className="text-indigo-600 hover:text-indigo-700"
@@ -731,6 +726,7 @@ const QuizModePage = () => {
       </div>
     );
   }
+  if (!run) return <LoadingSpinner />;
 
   const hideSetsMode = !!category && navigationKeywords.length >= 2;
   const categoryAvailableModes: ViewMode[] = collectionId
@@ -761,6 +757,22 @@ const QuizModePage = () => {
   const collectionListPath = collectionId
     ? buildCollectionPath(collectionId, collectionInfo?.name)
     : null;
+
+  if (run.view !== "active") {
+    return (
+      <div className="py-4 sm:py-6">
+        <QuizCompletionView
+          run={run}
+          items={items}
+          browsePath={collectionListPath ?? categoryScopePath}
+          browseLabel={collectionListPath ? "Back to collection" : "Browse topic"}
+          onReviewMistakes={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-mistakes" }) : current)}
+          onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
+          onPlayAgain={handlePlayAgain}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="py-3 sm:py-4">
@@ -913,6 +925,11 @@ const QuizModePage = () => {
           </div>
         </div>
       )}
+      {runRestartNotice && (
+        <div role="alert" className="mx-auto mb-4 max-w-4xl rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+          {runRestartNotice}
+        </div>
+      )}
       <StudyShell
         backContent={
           <>
@@ -969,14 +986,28 @@ const QuizModePage = () => {
         }
       >
         {currentItem && (
-          <QuizRenderer
-            item={currentItem}
-            options={options}
-            selectedAnswer={selectedAnswer}
-            showAnswer={showAnswer}
-            onAnswerSelect={handleAnswerSelect}
-            stats={stats}
-          />
+          <>
+            <QuizRenderer
+              item={currentItem}
+              options={options}
+              selectedAnswer={selectedAnswer}
+              showAnswer={showAnswer}
+              onAnswerSelect={handleAnswerSelect}
+              stats={stats}
+            />
+            {runSummary?.isComplete && (
+              <div role="status" className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-4 text-center">
+                <p className="font-semibold text-indigo-950">You answered every question.</p>
+                <button
+                  type="button"
+                  onClick={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
+                  className="mt-3 rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                >
+                  View results
+                </button>
+              </div>
+            )}
+          </>
         )}
       </StudyShell>
 
@@ -988,8 +1019,6 @@ const QuizModePage = () => {
           if (idx !== -1) {
             setCurrentIndex(idx);
             setCommentsDrawerItemId(targetId);
-            setSelectedAnswer(null);
-            setShowAnswer(false);
           }
         }}
         previousItemId={
