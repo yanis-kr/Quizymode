@@ -1,0 +1,7 @@
+run 1 (drift A): api writes=["create"] log=[]
+rerun (same drift A): api writes=[] log=["Comment 1 already up to date; not rewriting it."]
+run 3 (drift B): api writes=["update"] log=[]
+rerun (same drift B): api writes=[] log=["Comment 1 already up to date; not rewriting it."]
+coverage run 1: api writes=["create"] log=[]
+coverage rerun (identical): api writes=[] log=["Comment 2 already up to date; not rewriting it."]
+total comments=2

@@ -1,0 +1,40 @@
+Building API and generating OpenAPI document...
+  Determining projects to restore...
+/work/src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  All projects are up-to-date for restore.
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+/work/src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  Quizymode.ServiceDefaults -> /work/src/Quizymode.Api.ServiceDefaults/bin/Release/net10.0/Quizymode.ServiceDefaults.dll
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,41): warning CS1573: Parameter 'Path' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,55): warning CS1573: Parameter 'QueryString' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,75): warning CS1573: Parameter 'SessionId' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+  Quizymode.Api -> /work/src/Quizymode.Api/bin/Release/net10.0/Quizymode.Api.dll
+  
+  GenerateOpenApiDocuments:
+    dotnet "/root/.nuget/packages/microsoft.extensions.apidescription.server/10.0.7/build/../tools/dotnet-getdocument.dll" --assembly "/work/src/Quizymode.Api/bin/Release/net10.0/Quizymode.Api.dll" --file-list "obj/Quizymode.Api.OpenApiFiles.cache" --framework ".NETCoreApp,Version=v10.0" --output "/work/docs/openapi" --project "Quizymode.Api" --assets-file "/work/src/Quizymode.Api/obj/project.assets.json" --platform "AnyCPU" --file-name quizymode-api --document-name v1
+  [12:55:24 INF] *** Starting QuizyMode Web API v3.49.1
+  [12:55:25 INF] Authentication configuration - Authority: , Issuer: , ClientId: , Audience: 
+  [12:55:27 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+  [12:55:27 INF] User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+  Generating document named 'v1'.
+  Using discovered `GenerateAsync` overload with version parameter.
+  [12:55:30 INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+  Writing document named 'v1' to '/work/docs/openapi/quizymode-api.json'.
+Build succeeded.
+/work/src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+/work/src/Quizymode.Api/Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+/work/src/Quizymode.Api.ServiceDefaults/Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,41): warning CS1573: Parameter 'Path' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,55): warning CS1573: Parameter 'QueryString' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+/work/src/Quizymode.Api/Features/Analytics/TrackPageView.cs(16,75): warning CS1573: Parameter 'SessionId' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [/work/src/Quizymode.Api/Quizymode.Api.csproj]
+    9 Warning(s)
+    0 Error(s)
+Time Elapsed 00:00:51.63
+Checking committed OpenAPI artifact is in sync...
+OpenAPI artifact is out of date. Rebuild the API and commit the updated spec.

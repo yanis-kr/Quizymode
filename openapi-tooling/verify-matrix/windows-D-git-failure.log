@@ -1,0 +1,172 @@
+Building API and generating OpenAPI document...
+  Determining projects to restore...
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  All projects are up-to-date for restore.
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  Quizymode.ServiceDefaults -> C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\bin\Release\net10.0\Quizymode.ServiceDefaults.dll
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,41): warning CS1573: Parameter 'Path' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,55): warning CS1573: Parameter 'QueryString' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,75): warning CS1573: Parameter 'SessionId' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+  Quizymode.Api -> C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\bin\Release\net10.0\Quizymode.Api.dll
+  
+  GenerateOpenApiDocuments:
+    dotnet "C:\Users\LocalUser\.nuget\packages\microsoft.extensions.apidescription.server\10.0.7\build\../tools/dotnet-getdocument.dll" --assembly "C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\bin\Release\net10.0\Quizymode.Api.dll" --file-list "obj\Quizymode.Api.OpenApiFiles.cache" --framework ".NETCoreApp,Version=v10.0" --output "C:\Projects\Quizymode-wt-neg\docs\openapi" --project "Quizymode.Api" --assets-file "C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\obj\project.assets.json" --platform "AnyCPU" --file-name quizymode-api --document-name v1
+  [07:54:40 INF] *** Starting QuizyMode Web API v3.49.1
+  [07:54:41 INF] Authentication configuration - Authority: , Issuer: , ClientId: , Audience: 
+  [07:54:42 INF] User profile is available. Using 'C:\Users\LocalUser\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+  Generating document named 'v1'.
+  Using discovered `GenerateAsync` overload with version parameter.
+  [07:54:43 INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+  Writing document named 'v1' to 'C:\Projects\Quizymode-wt-neg\docs\openapi\quizymode-api.json'.
+
+Build succeeded.
+
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,41): warning CS1573: Parameter 'Path' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,55): warning CS1573: Parameter 'QueryString' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Features\Analytics\TrackPageView.cs(16,75): warning CS1573: Parameter 'SessionId' has no matching param tag in the XML comment for 'TrackPageView.Request.Request(string, string?, string, bool?)' (but other parameters do) [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+    9 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:49.30
+Checking committed OpenAPI artifact is in sync...
+git: warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+git: usage: git diff --no-index [<options>] <path> <path>
+git: 
+git: Diff output format options
+git:     -p, --patch           generate patch
+git:     -s, --no-patch        suppress diff output
+git:     -u                    generate patch
+git:     -U, --unified[=<n>]   generate diffs with <n> lines context
+git:     -W, --[no-]function-context
+git:                           generate diffs with <n> lines context
+git:     --raw                 generate the diff in raw format
+git:     --patch-with-raw      synonym for '-p --raw'
+git:     --patch-with-stat     synonym for '-p --stat'
+git:     --numstat             machine friendly --stat
+git:     --shortstat           output only the last line of --stat
+git:     -X, --dirstat[=<param1,param2>...]
+git:                           output the distribution of relative amount of changes for each sub-directory
+git:     --cumulative          synonym for --dirstat=cumulative
+git:     --dirstat-by-file[=<param1,param2>...]
+git:                           synonym for --dirstat=files,param1,param2...
+git:     --check               warn if changes introduce conflict markers or whitespace errors
+git:     --summary             condensed summary such as creations, renames and mode changes
+git:     --name-only           show only names of changed files
+git:     --name-status         show only names and status of changed files
+git:     --stat[=<width>[,<name-width>[,<count>]]]
+git:                           generate diffstat
+git:     --stat-width <width>  generate diffstat with a given width
+git:     --stat-name-width <width>
+git:                           generate diffstat with a given name width
+git:     --stat-graph-width <width>
+git:                           generate diffstat with a given graph width
+git:     --stat-count <count>  generate diffstat with limited lines
+git:     --[no-]compact-summary
+git:                           generate compact summary in diffstat
+git:     --binary              output a binary diff that can be applied
+git:     --[no-]full-index     show full pre- and post-image object names on the "index" lines
+git:     --[no-]color[=<when>] show colored diff
+git:     --ws-error-highlight <kind>
+git:                           highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+git:     -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+git:     --[no-]abbrev[=<n>]   use <n> digits to display object names
+git:     --src-prefix <prefix> show the given source prefix instead of "a/"
+git:     --dst-prefix <prefix> show the given destination prefix instead of "b/"
+git:     --line-prefix <prefix>
+git:                           prepend an additional prefix to every line of output
+git:     --no-prefix           do not show any source or destination prefix
+git:     --default-prefix      use default prefixes a/ and b/
+git:     --inter-hunk-context <n>
+git:                           show context between diff hunks up to the specified number of lines
+git:     --output-indicator-new <char>
+git:                           specify the character to indicate a new line instead of '+'
+git:     --output-indicator-old <char>
+git:                           specify the character to indicate an old line instead of '-'
+git:     --output-indicator-context <char>
+git:                           specify the character to indicate a context instead of ' '
+git: 
+git: Diff rename options
+git:     -B, --break-rewrites[=<n>[/<m>]]
+git:                           break complete rewrite changes into pairs of delete and create
+git:     -M, --find-renames[=<n>]
+git:                           detect renames
+git:     -D, --irreversible-delete
+git:                           omit the preimage for deletes
+git:     -C, --find-copies[=<n>]
+git:                           detect copies
+git:     --[no-]find-copies-harder
+git:                           use unmodified files as source to find copies
+git:     --no-renames          disable rename detection
+git:     --[no-]rename-empty   use empty blobs as rename source
+git:     --[no-]follow         continue listing the history of a file beyond renames
+git:     -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+git: 
+git: Diff algorithm options
+git:     --minimal             produce the smallest possible diff
+git:     -w, --ignore-all-space
+git:                           ignore whitespace when comparing lines
+git:     -b, --ignore-space-change
+git:                           ignore changes in amount of whitespace
+git:     --ignore-space-at-eol ignore changes in whitespace at EOL
+git:     --ignore-cr-at-eol    ignore carrier-return at the end of line
+git:     --ignore-blank-lines  ignore changes whose lines are all blank
+git:     -I, --[no-]ignore-matching-lines <regex>
+git:                           ignore changes whose all lines match <regex>
+git:     --[no-]indent-heuristic
+git:                           heuristic to shift diff hunk boundaries for easy reading
+git:     --patience            generate diff using the "patience diff" algorithm
+git:     --histogram           generate diff using the "histogram diff" algorithm
+git:     --diff-algorithm <algorithm>
+git:                           choose a diff algorithm
+git:     --anchored <text>     generate diff using the "anchored diff" algorithm
+git:     --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+git:     --word-diff-regex <regex>
+git:                           use <regex> to decide what a word is
+git:     --color-words[=<regex>]
+git:                           equivalent to --word-diff=color --word-diff-regex=<regex>
+git:     --[no-]color-moved[=<mode>]
+git:                           moved lines of code are colored differently
+git:     --[no-]color-moved-ws <mode>
+git:                           how white spaces are ignored in --color-moved
+git: 
+git: Other diff options
+git:     --[no-]relative[=<prefix>]
+git:                           when run from subdir, exclude changes outside and show relative paths
+git:     -a, --[no-]text       treat all files as text
+git:     -R                    swap two inputs, reverse the diff
+git:     --[no-]exit-code      exit with 1 if there were differences, 0 otherwise
+git:     --[no-]quiet          disable all output of the program
+git:     --[no-]ext-diff       allow an external diff helper to be executed
+git:     --[no-]textconv       run external text conversion filters when comparing binary files
+git:     --ignore-submodules[=<when>]
+git:                           ignore changes to submodules in the diff generation
+git:     --submodule[=<format>]
+git:                           specify how differences in submodules are shown
+git:     --ita-invisible-in-index
+git:                           hide 'git add -N' entries from the index
+git:     --ita-visible-in-index
+git:                           treat 'git add -N' entries as real in the index
+git:     -S <string>           look for differences that change the number of occurrences of the specified string
+git:     -G <regex>            look for differences that change the number of occurrences of the specified regex
+git:     --pickaxe-all         show all changes in the changeset with -S or -G
+git:     --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+git:     -O <file>             control the order in which files appear in the output
+git:     --rotate-to <path>    show the change in the specified path first
+git:     --skip-to <path>      skip the output to the specified path
+git:     --find-object <object-id>
+git:                           look for differences that change the number of occurrences of the specified object
+git:     --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+git:                           select files by diff type
+git:     --output <file>       output to a specific file
+git: 
+Failed to diff OpenAPI artifact (git exit code 129).

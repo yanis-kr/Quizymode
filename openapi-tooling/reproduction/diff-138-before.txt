@@ -1,0 +1,4 @@
+5119c5119
+<                 "description": "Unique sessions at this step as a share of the previous step's; null for the first step or\r\nwhen the previous step has no sessions. Steps are counted independently, so a later step can\r\nexceed an earlier one (for example sign-ins by returning users who never saw a prompt).",
+---
+>                 "description": "Unique sessions at this step as a share of the previous step's; null for the first step or\nwhen the previous step has no sessions. Steps are counted independently, so a later step can\nexceed an earlier one (for example sign-ins by returning users who never saw a prompt).",

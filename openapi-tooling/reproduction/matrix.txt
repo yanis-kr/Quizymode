@@ -1,0 +1,5 @@
+ref | windows sha256 | linux sha256 | identical | escaped CRLF (win/linux)
+137-before | 0a7c128b5e57 | 218c1fc9eb18 | NO | 1/0
+137-after | 218c1fc9eb18 | 218c1fc9eb18 | yes | 0/0
+138-before | 2dc346ba069c | 76ba8d84e489 | NO | 1/0
+138-after | 76ba8d84e489 | 76ba8d84e489 | yes | 0/0

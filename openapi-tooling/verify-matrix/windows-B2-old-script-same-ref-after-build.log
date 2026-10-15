@@ -1,0 +1,26 @@
+Building API and generating OpenAPI document...
+  Determining projects to restore...
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  All projects are up-to-date for restore.
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+  Quizymode.ServiceDefaults -> C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\bin\Release\net10.0\Quizymode.ServiceDefaults.dll
+  Quizymode.Api -> C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\bin\Release\net10.0\Quizymode.Api.dll
+
+Build succeeded.
+
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354 [C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj]
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api\Quizymode.Api.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+C:\Projects\Quizymode-wt-neg\src\Quizymode.Api.ServiceDefaults\Quizymode.ServiceDefaults.csproj : warning NU1903: Package 'OpenTelemetry.Resources.Host' 1.15.1-beta.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v8pv-4842-x354
+    6 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:10.97
+Checking committed OpenAPI artifact is in sync...
+OpenAPI artifact is in sync.

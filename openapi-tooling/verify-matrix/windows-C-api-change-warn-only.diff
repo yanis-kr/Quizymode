@@ -1,0 +1,21 @@
+diff --git a/docs/openapi/quizymode-api.json b/docs/openapi/quizymode-api.json
+index ee6cf16..641674f 100644
+--- a/docs/openapi/quizymode-api.json
++++ b/docs/openapi/quizymode-api.json
+@@ -6435,6 +6435,16 @@
+           },
+           "isInternal": {
+             "$ref": "#/components/schemas/System.Boolean"
++          },
++          "changedBy": {
++            "oneOf": [
++              {
++                "type": "null"
++              },
++              {
++                "$ref": "#/components/schemas/System.String"
++              }
++            ]
+           }
+         }
+       },

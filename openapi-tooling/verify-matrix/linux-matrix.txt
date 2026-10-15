@@ -1,0 +1,11 @@
+
+Case                               Ref     Exit InSync Drift GitWarnings NativeCommandError StderrBytes GhOutput                                                                                               DiffMentionsChange
+----                               ---     ---- ------ ----- ----------- ------------------ ----------- --------                                                                                               ------------------
+A-in-sync                          c3b8419    0   True False           0              False           0 artifact_diff_detected=False                                                                                        False
+B-api-change-strict                11a6e08    1  False  True           0              False           0 artifact_diff_detected=True                                                                                         False
+B2-old-script-same-ref-after-build 11a6e08    0   True False           0              False           0 artifact_diff_detected=False                                                                                        False
+C-api-change-warn-only             11a6e08    0  False  True           0              False           0 artifact_diff_detected=True;artifact_diff_path=/ev/verify/linux-C-api-change-warn-only.diff                          True
+D-git-failure                      c3b8419  129  False False         130              False           0                                                                                                                     False
+E-old-script-api-change-warn-only  11a6e08    0  False  True           0              False           0 artifact_diff_detected=True;artifact_diff_path=/ev/verify/linux-E-old-script-api-change-warn-only.diff               True
+
+

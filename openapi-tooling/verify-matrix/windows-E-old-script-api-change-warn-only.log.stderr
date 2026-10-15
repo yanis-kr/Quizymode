@@ -1,0 +1,11 @@
+Set-Content : Cannot bind parameter 'Encoding'. Cannot convert value "utf8NoBOM" to type 
+"Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding". Error: "Unable to match the identifier name 
+utf8NoBOM to a valid enumerator name. Specify one of the following enumerator names and try again:
+Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem, BigEndianUTF32"
+At C:\Users\LocalUser\AppData\Local\Temp\claude\c--Projects-Quizymode-claude\31c8cf60-ee85-41ea-a777-70f1dc51c228\scrat
+chpad\ev\verify\old-verify-openapi.ps1:34 char:66
++ ... gitDiffOutput | Set-Content -Path $DiffOutputPath -Encoding utf8NoBOM
++                                                                 ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Content], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.SetContentCommand
+ 

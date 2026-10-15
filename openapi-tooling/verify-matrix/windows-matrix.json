@@ -1,0 +1,74 @@
+[
+    {
+        "Case":  "A-in-sync",
+        "Ref":  "c3b8419",
+        "Exit":  0,
+        "InSync":  true,
+        "Drift":  false,
+        "GitWarnings":  0,
+        "NativeCommandError":  false,
+        "StderrBytes":  0,
+        "GhOutput":  "artifact_diff_detected=False",
+        "DiffMentionsChange":  false
+    },
+    {
+        "Case":  "B-api-change-strict",
+        "Ref":  "11a6e08",
+        "Exit":  1,
+        "InSync":  false,
+        "Drift":  true,
+        "GitWarnings":  0,
+        "NativeCommandError":  false,
+        "StderrBytes":  0,
+        "GhOutput":  "artifact_diff_detected=True",
+        "DiffMentionsChange":  false
+    },
+    {
+        "Case":  "B2-old-script-same-ref-after-build",
+        "Ref":  "11a6e08",
+        "Exit":  0,
+        "InSync":  true,
+        "Drift":  false,
+        "GitWarnings":  0,
+        "NativeCommandError":  false,
+        "StderrBytes":  0,
+        "GhOutput":  "artifact_diff_detected=False",
+        "DiffMentionsChange":  false
+    },
+    {
+        "Case":  "C-api-change-warn-only",
+        "Ref":  "11a6e08",
+        "Exit":  0,
+        "InSync":  false,
+        "Drift":  true,
+        "GitWarnings":  0,
+        "NativeCommandError":  false,
+        "StderrBytes":  0,
+        "GhOutput":  "artifact_diff_detected=True;artifact_diff_path=C:\\Users\\LOCALU~1\\AppData\\Local\\Temp\\claude\\c--Projects-Quizymode-claude\\31c8cf60-ee85-41ea-a777-70f1dc51c228\\scratchpad\\ev\\verify/windows-C-api-change-warn-only.diff",
+        "DiffMentionsChange":  true
+    },
+    {
+        "Case":  "D-git-failure",
+        "Ref":  "c3b8419",
+        "Exit":  129,
+        "InSync":  false,
+        "Drift":  false,
+        "GitWarnings":  130,
+        "NativeCommandError":  false,
+        "StderrBytes":  0,
+        "GhOutput":  "",
+        "DiffMentionsChange":  false
+    },
+    {
+        "Case":  "E-old-script-api-change-warn-only",
+        "Ref":  "11a6e08",
+        "Exit":  1,
+        "InSync":  false,
+        "Drift":  false,
+        "GitWarnings":  0,
+        "NativeCommandError":  false,
+        "StderrBytes":  951,
+        "GhOutput":  "",
+        "DiffMentionsChange":  false
+    }
+]
