@@ -34,7 +34,10 @@
     DestructiveMigrationPatterns = @(
         '(?i)\bDROP\s+(TABLE|COLUMN|SCHEMA|DATABASE)\b',
         '(?i)\bTRUNCATE\b',
-        '(?i)\bDELETE\s+FROM\b(?!.*\bWHERE\b)'
+        '(?i)\bDELETE\s+FROM\b(?!.*\bWHERE\b)',
+        # EF Core typed builder calls; `dotnet ef migrations add` emits these, not SQL text.
+        # Only a migration's Up() body is scanned, because every Down() drops what its Up() creates.
+        '\bDrop(Table|Column|Schema)\s*(<[^>]*>)?\s*\('
     )
     Providers = @{
         codex = @{

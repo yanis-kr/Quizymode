@@ -588,6 +588,19 @@ function Get-QmReleaseResumeAction {
     }
 }
 
+# EF Core migrations contain both directions. Every additive migration's Down() drops what Up() creates
+# (for example DropTable for a new table), so only the forward Up() body decides whether a release is
+# destructive. Content without an Up() method (for example a raw .sql script) is scanned as a whole.
+function Get-QmMigrationForwardBody {
+    param([AllowEmptyString()][string]$Content)
+    if ([string]::IsNullOrEmpty($Content)) { return '' }
+    $up = [regex]::Match($Content, '(?i)\bvoid\s+Up\s*\(')
+    if (-not $up.Success) { return $Content }
+    $down = [regex]::Match($Content.Substring($up.Index), '(?i)\bvoid\s+Down\s*\(')
+    if (-not $down.Success) { return $Content.Substring($up.Index) }
+    return $Content.Substring($up.Index, $down.Index)
+}
+
 function Get-QmProtectedScopes {
     param([string[]]$ChangedPaths, [string[]]$MigrationContents, [Parameter(Mandatory = $true)][hashtable]$Config)
     $scopes = New-Object Collections.Generic.List[string]
@@ -603,8 +616,9 @@ function Get-QmProtectedScopes {
         }
     }
     foreach ($content in $MigrationContents) {
+        $forward = Get-QmMigrationForwardBody -Content $content
         foreach ($pattern in $Config.DestructiveMigrationPatterns) {
-            if ($content -match $pattern) { if (-not $scopes.Contains('destructive-migration')) { $scopes.Add('destructive-migration') } }
+            if ($forward -match $pattern) { if (-not $scopes.Contains('destructive-migration')) { $scopes.Add('destructive-migration') } }
         }
     }
     return @($scopes)

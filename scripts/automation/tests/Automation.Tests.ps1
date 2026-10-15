@@ -173,6 +173,48 @@ Describe 'Quizymode trusted policy classifier' {
         ($scopes -contains 'destructive-migration') | Should Be $true
     }
 
+    Context 'destructive EF Core migrations (#143)' {
+        $config = Import-PowerShellDataFile -Path (Join-Path (Split-Path -Parent $PSScriptRoot) 'automation.config.psd1')
+        $repoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
+        $migrations = Join-Path $repoRoot 'src\Quizymode.Api\Migrations'
+        function Test-Destructive([string]$Content) {
+            @(Get-QmProtectedScopes -ChangedPaths @() -MigrationContents @($Content) -Config $config) -contains 'destructive-migration'
+        }
+        function New-Migration([string]$Up, [string]$Down) {
+            "public partial class M : Migration {`n protected override void Up(MigrationBuilder migrationBuilder) {`n$Up`n }`n protected override void Down(MigrationBuilder migrationBuilder) {`n$Down`n }`n}"
+        }
+
+        It 'flags typed DropColumn, DropTable and DropSchema calls in Up' {
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.DropColumn(name: "Foo", table: "Bar");' -Down '')) | Should Be $true
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.DropTable(name: "Baz");' -Down '')) | Should Be $true
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.DropSchema(name: "old");' -Down '')) | Should Be $true
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.DropColumn<int>(name: "Foo", table: "Bar");' -Down '')) | Should Be $true
+        }
+
+        It 'does not flag an additive migration whose Down drops what Up creates' {
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.CreateTable(name: "Baz", columns: table => new { });' -Down 'migrationBuilder.DropTable(name: "Baz");')) | Should Be $false
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.AddColumn<bool>(name: "IsInternal", table: "Users");' -Down 'migrationBuilder.DropColumn(name: "IsInternal", table: "Users");')) | Should Be $false
+        }
+
+        It 'does not flag schema-only drops such as indexes and foreign keys' {
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.DropIndex(name: "IX_A", table: "A"); migrationBuilder.DropForeignKey(name: "FK_A", table: "A");' -Down '')) | Should Be $false
+        }
+
+        It 'still flags raw SQL in Up and scans scripts without an Up method as a whole' {
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.Sql("DROP TABLE Legacy;");' -Down '')) | Should Be $true
+            (Test-Destructive (New-Migration -Up 'migrationBuilder.Sql("TRUNCATE Audits;");' -Down '')) | Should Be $true
+            (Test-Destructive 'ALTER TABLE x ADD y int; DROP TABLE z;') | Should Be $true
+        }
+
+        It 'classifies the repository''s real migrations' {
+            (Test-Destructive (Get-Content -Raw (Join-Path $migrations '20260404211221_RemoveSeedIdentityFields.cs'))) | Should Be $true
+            (Test-Destructive (Get-Content -Raw (Join-Path $migrations '20260317043433_DropCategoryKeywordsAndRenameSuggestionParent.cs'))) | Should Be $true
+            (Test-Destructive (Get-Content -Raw (Join-Path $migrations '20261015184329_AddAnalyticsEvents.cs'))) | Should Be $false
+            (Test-Destructive (Get-Content -Raw (Join-Path $migrations '20261015011209_AddInternalTrafficFlags.cs'))) | Should Be $false
+            (Test-Destructive (Get-Content -Raw (Join-Path $migrations '20260328221103_AddPageViews.cs'))) | Should Be $false
+        }
+    }
+
     It 'parses a database connection string without exposing or truncating password characters' {
         $values = ConvertFrom-QmPgConnectionString -ConnectionString 'Host=localhost;Database=quizymode;Username=agent;Password=a=b=c;SSL Mode=require'
         $values.host | Should Be 'localhost'
