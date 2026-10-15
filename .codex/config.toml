@@ -1,0 +1,30 @@
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 2
+max_depth = 1
+
+[agents.architect]
+description = "Reconciles an issue with current source and creates the smallest criterion-by-criterion plan."
+config_file = "agents/architect.toml"
+
+[agents.ux_designer]
+description = "Defines relevant interaction, responsive, keyboard, loading, empty, and error states."
+config_file = "agents/ux-designer.toml"
+
+[agents.coder]
+description = "Implements an approved plan and regression tests as the sole worktree writer."
+config_file = "agents/coder.toml"
+
+[agents.reviewer]
+description = "Independently reviews plans or final code and evidence."
+config_file = "agents/reviewer.toml"
+
+[agents.tester]
+description = "Executes acceptance checks independently and reports actual outputs."
+config_file = "agents/tester.toml"
+
+[agents.reporter]
+description = "Formats verified handoffs and evidence without inventing results."
+config_file = "agents/reporter.toml"

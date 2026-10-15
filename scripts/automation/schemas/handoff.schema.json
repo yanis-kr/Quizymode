@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quizymode.com/schemas/automation-handoff-v1.json",
+  "title": "Quizymode automation handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "issue", "provider", "stage", "status", "branch", "headSha", "baseSha", "nextAction", "decisions", "artifacts", "blockers", "models"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "issue": { "type": "integer", "minimum": 1 },
+    "provider": { "enum": ["codex", "claude"] },
+    "stage": { "enum": ["architecture", "ux", "plan-review", "implementation", "testing", "final-review", "evidence", "release-candidate", "released", "blocked"] },
+    "status": { "enum": ["pass", "fail", "blocked", "not-run", "skipped"] },
+    "branch": { "type": "string", "minLength": 1 },
+    "headSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "baseSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "pr": { "type": ["integer", "null"], "minimum": 1 },
+    "nextAction": { "type": "string", "minLength": 1 },
+    "decisions": { "type": "array", "items": { "type": "string" } },
+    "artifacts": { "type": "array", "items": { "type": "string" } },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "requested", "actual"],
+        "properties": {
+          "role": { "type": "string" },
+          "requested": { "type": "string" },
+          "actual": { "type": "string" }
+        }
+      }
+    }
+  }
+}

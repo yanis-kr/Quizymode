@@ -326,6 +326,7 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 ## Documentation Map
 
 - [docs/AC.md](./docs/AC.md): canonical behavior and contract reference
+- [docs/automation/workflow.md](./docs/automation/workflow.md): dry-run-first Codex/Claude orchestration, evidence, recovery, and release contract
 - [docs/infra/README.md](./docs/infra/README.md): infrastructure and platform setup notes
 - [docs/openapi/README.md](./docs/openapi/README.md): generated API contract notes
 - [docs/infra/COGNITO_SETUP.md](./docs/infra/COGNITO_SETUP.md): Cognito setup details
