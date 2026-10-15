@@ -81,6 +81,9 @@ try {
     if ($state.PSObject.Properties.Name -notcontains 'models') {
         $state | Add-Member -NotePropertyName models -NotePropertyValue @()
     }
+    if ($state.PSObject.Properties.Name -notcontains 'usage') {
+        $state | Add-Member -NotePropertyName usage -NotePropertyValue @()
+    }
     if ($state.PSObject.Properties.Name -notcontains 'evidencePublication') {
         $state | Add-Member -NotePropertyName evidencePublication -NotePropertyValue $null
     }
@@ -194,14 +197,14 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
             $recoveredOutput = Get-Content -LiteralPath $outputPath -Raw | ConvertFrom-Json
             $recoveredActualModel = 'unknown-after-recovery'
             if ($recoveredOutput.PSObject.Properties.Name -contains 'models' -and @($recoveredOutput.models).Count -gt 0) { $recoveredActualModel = @($recoveredOutput.models)[-1].actual }
-            $providerResult = [pscustomobject]@{ Status = 'completed'; ExitCode = 0; RequestedModel = $model; ActualModel = $recoveredActualModel; Output = $recoveredOutput; StdErr = '' }
+            $providerResult = [pscustomobject]@{ Status = 'completed'; ExitCode = 0; RequestedModel = $model; ActualModel = $recoveredActualModel; Output = $recoveredOutput; StdErr = ''; Usage = $null }
         }
         catch { $providerResult = $null }
     }
     elseif ($null -ne $state.writeAhead -and $state.writeAhead.action -eq 'publish-evidence' -and $state.writeAhead.manifestPath -eq $outputPath -and (Test-Path -LiteralPath $outputPath)) {
         try {
             $recoveredOutput = Get-Content -LiteralPath $outputPath -Raw | ConvertFrom-Json
-            $providerResult = [pscustomobject]@{ Status = 'completed'; ExitCode = 0; RequestedModel = $model; ActualModel = 'recovered-from-checkpoint'; Output = $recoveredOutput; StdErr = '' }
+            $providerResult = [pscustomobject]@{ Status = 'completed'; ExitCode = 0; RequestedModel = $model; ActualModel = 'recovered-from-checkpoint'; Output = $recoveredOutput; StdErr = ''; Usage = $null }
         }
         catch { $providerResult = $null }
     }
@@ -213,8 +216,21 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
     if ($providerResult.Status -eq 'completed' -and $state.stage -ne 'implementation') {
         $postStageStatus = (Invoke-QmGit -Arguments @('status','--porcelain') -WorkingDirectory $state.worktree).StdOut
         if ($postStageStatus -ne $preStageStatus) {
-            $providerResult = [pscustomobject]@{ Status = 'failed'; ExitCode = 1; RequestedModel = $model; ActualModel = $providerResult.ActualModel; Output = $null; StdErr = "Read-only stage '$($state.stage)' changed the worktree. Changes were preserved for diagnosis." }
+            $providerResult = [pscustomobject]@{ Status = 'failed'; ExitCode = 1; RequestedModel = $model; ActualModel = $providerResult.ActualModel; Output = $null; StdErr = "Read-only stage '$($state.stage)' changed the worktree. Changes were preserved for diagnosis."; Usage = $providerResult.Usage }
         }
+    }
+    if ($providerResult.PSObject.Properties.Name -contains 'Usage' -and $null -ne $providerResult.Usage) {
+        $usageRecord = [pscustomobject]@{
+            stage               = $state.stage
+            status              = $providerResult.Status
+            costUsd             = $providerResult.Usage.CostUsd
+            inputTokens         = $providerResult.Usage.InputTokens
+            outputTokens        = $providerResult.Usage.OutputTokens
+            cacheReadTokens     = $providerResult.Usage.CacheReadTokens
+            cacheCreationTokens = $providerResult.Usage.CacheCreationTokens
+            recordedAt          = (Get-QmUtcNow).ToString('o')
+        }
+        $state.usage = @($state.usage) + $usageRecord
     }
     if ($providerResult.Status -eq 'quota-exhausted') {
         $state.status = 'waiting-quota'

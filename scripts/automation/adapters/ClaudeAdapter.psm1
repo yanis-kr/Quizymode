@@ -41,6 +41,30 @@ function Get-QmBalancedJsonObject {
     return $null
 }
 
+function Get-QmClaudeUsage {
+    # Extracts cost/token usage from a claude --output-format json envelope.
+    # Confirmed live against the real CLI: --print --output-format json
+    # always includes total_cost_usd and a usage object (input_tokens,
+    # output_tokens, cache_read_input_tokens, cache_creation_input_tokens)
+    # on every response, success or error. Returns $null fields rather than
+    # throwing if the envelope is missing/malformed -- usage reporting must
+    # never be able to turn a real result into a failure.
+    param([object]$Envelope)
+    $usage = if ($Envelope.PSObject.Properties.Name -contains 'usage') { $Envelope.usage } else { $null }
+    function Get-QmNum {
+        param($Object, [string]$Name)
+        if ($null -ne $Object -and $Object.PSObject.Properties.Name -contains $Name -and $null -ne $Object.$Name) { return [double]$Object.$Name }
+        return $null
+    }
+    return [pscustomobject]@{
+        CostUsd              = Get-QmNum -Object $Envelope -Name 'total_cost_usd'
+        InputTokens          = Get-QmNum -Object $usage -Name 'input_tokens'
+        OutputTokens         = Get-QmNum -Object $usage -Name 'output_tokens'
+        CacheReadTokens      = Get-QmNum -Object $usage -Name 'cache_read_input_tokens'
+        CacheCreationTokens  = Get-QmNum -Object $usage -Name 'cache_creation_input_tokens'
+    }
+}
+
 $script:QmClaudeStageAgentMap = @{
     'architecture'   = 'architect'
     'ux'             = 'ux-designer'
@@ -110,39 +134,45 @@ function Invoke-QmProviderStage {
 
     $result = Invoke-QmNative -FilePath 'claude.exe' -Arguments $arguments -WorkingDirectory $Worktree -TimeoutSeconds $TimeoutSeconds -StandardInput $Prompt
 
+    $noUsage = [pscustomobject]@{ CostUsd = $null; InputTokens = $null; OutputTokens = $null; CacheReadTokens = $null; CacheCreationTokens = $null }
+
     if ($result.TimedOut) {
-        return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
     }
     if ($result.ExitCode -ne 0) {
         if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
-            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
         }
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
     }
 
     $envelope = $null
     try { $envelope = $result.StdOut | ConvertFrom-Json }
     catch {
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = "Malformed claude CLI envelope: $($_.Exception.Message)" }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = "Malformed claude CLI envelope: $($_.Exception.Message)"; Usage = $noUsage }
     }
 
     $actualModel = if ($envelope.PSObject.Properties.Name -contains 'model' -and $null -ne $envelope.model) { $envelope.model } else { $Model }
+    # Cost/tokens are meaningful even on an error response -- the call still
+    # ran and was billed -- so usage is extracted once here and attached to
+    # every return from this point on, success or failure.
+    $usage = Get-QmClaudeUsage -Envelope $envelope
 
     if (($envelope.PSObject.Properties.Name -contains 'is_error' -and $envelope.is_error) -or
         ($envelope.PSObject.Properties.Name -contains 'api_error_status' -and $envelope.api_error_status)) {
         $errorText = [string]$envelope.result
         if (Test-QmQuotaResult -Text $errorText) {
-            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText }
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText; Usage = $usage }
         }
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText; Usage = $usage }
     }
 
     if ($envelope.PSObject.Properties.Name -contains 'subtype' -and $envelope.subtype -ne 'success') {
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = "Claude reported subtype '$($envelope.subtype)'" }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = "Claude reported subtype '$($envelope.subtype)'"; Usage = $usage }
     }
 
     if (-not ($envelope.PSObject.Properties.Name -contains 'result') -or [string]::IsNullOrWhiteSpace($envelope.result)) {
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = 'Claude CLI envelope had no result payload.' }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = 'Claude CLI envelope had no result payload.'; Usage = $usage }
     }
 
     # --json-schema is a validation hint, not a hard guarantee: a custom
@@ -160,13 +190,13 @@ function Invoke-QmProviderStage {
             try { $payload = $candidate | ConvertFrom-Json } catch { $payload = $null }
         }
         if ($null -eq $payload) {
-            return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = "Claude's structured result was not valid JSON against $SchemaPath`: $($_.Exception.Message)" }
+            return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = "Claude's structured result was not valid JSON against $SchemaPath`: $($_.Exception.Message)"; Usage = $usage }
         }
     }
 
     Write-QmAtomicJson -Path $OutputPath -Value $payload
 
-    return [pscustomobject]@{ Status = 'completed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $payload; StdErr = $result.StdErr }
+    return [pscustomobject]@{ Status = 'completed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $payload; StdErr = $result.StdErr; Usage = $usage }
 }
 
 Export-ModuleMember -Function Get-QmProviderContract, Invoke-QmProviderStage

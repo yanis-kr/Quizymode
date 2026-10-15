@@ -42,6 +42,51 @@ Describe 'Claude provider adapter stage invocation' {
         Assert-MockCalled -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -Times 1 -ParameterFilter { $StandardInput -eq 'plan it' }
     }
 
+    It 'extracts cost and token usage from a successful envelope' {
+        Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
+            $envelope = @{
+                type = 'result'; subtype = 'success'; model = 'claude-opus-4-8'
+                total_cost_usd = 0.0194564
+                usage = @{ input_tokens = 9; output_tokens = 43; cache_read_input_tokens = 15854; cache_creation_input_tokens = 8529 }
+                result = (ConvertTo-Json @{ schemaVersion = 1; status = 'pass' })
+            } | ConvertTo-Json -Compress
+            [pscustomobject]@{ ExitCode = 0; StdOut = $envelope; StdErr = ''; TimedOut = $false }
+        }
+        Mock -ModuleName ClaudeAdapter -CommandName Test-QmQuotaResult -MockWith { $false }
+
+        $result = Invoke-QmProviderStage -Stage 'architecture' -Prompt 'plan it' -Worktree $TestDrive -OutputPath $outputPath -SchemaPath $schemaPath -Model 'opus' -Effort 'high'
+
+        $result.Usage.CostUsd | Should Be 0.0194564
+        $result.Usage.InputTokens | Should Be 9
+        $result.Usage.OutputTokens | Should Be 43
+        $result.Usage.CacheReadTokens | Should Be 15854
+        $result.Usage.CacheCreationTokens | Should Be 8529
+    }
+
+    It 'still reports usage on an error envelope, since the call was still billed' {
+        Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
+            $envelope = @{ type = 'result'; subtype = 'error_max_turns'; model = 'claude-sonnet-5'; total_cost_usd = 0.002; usage = @{ input_tokens = 5; output_tokens = 1 } } | ConvertTo-Json -Compress
+            [pscustomobject]@{ ExitCode = 0; StdOut = $envelope; StdErr = ''; TimedOut = $false }
+        }
+        Mock -ModuleName ClaudeAdapter -CommandName Test-QmQuotaResult -MockWith { $false }
+
+        $result = Invoke-QmProviderStage -Stage 'plan-review' -Prompt 'review it' -Worktree $TestDrive -OutputPath $outputPath -SchemaPath $schemaPath -Model 'opus' -Effort 'high'
+
+        $result.Status | Should Be 'failed'
+        $result.Usage.CostUsd | Should Be 0.002
+    }
+
+    It 'returns a usage object with null fields rather than throwing when there is no envelope at all' {
+        Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
+            [pscustomobject]@{ ExitCode = $null; StdOut = ''; StdErr = ''; TimedOut = $true }
+        }
+
+        $result = Invoke-QmProviderStage -Stage 'implementation' -Prompt 'code it' -Worktree $TestDrive -OutputPath $outputPath -SchemaPath $schemaPath -Model 'sonnet' -Effort 'medium'
+
+        $result.Status | Should Be 'timeout'
+        $result.Usage.CostUsd | Should Be $null
+    }
+
     It 'extracts the JSON object when a custom agent persona wraps it in prose' {
         Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
             $proseResult = 'Sure, here is the plan: ' + (ConvertTo-Json @{ schemaVersion = 1; status = 'pass' } -Compress) + ' Trailing notation may use {0,1,2}.'
