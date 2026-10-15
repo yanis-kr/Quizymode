@@ -61,3 +61,10 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Generated OpenAPI artifact: the generator writes LF on every platform, so keep
+# the working copy LF too. Otherwise a Windows checkout (core.autocrlf=true) shows
+# the file as modified after every build and git prints CRLF warnings.
+###############################################################################
+docs/openapi/quizymode-api.json text eol=lf

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quizymode.com/schemas/acceptance-evidence-v1.json",
+  "title": "Quizymode acceptance evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "issue", "pr", "headSha", "baseSha", "testedAt", "environment", "criteria", "commands", "artifacts", "limitations", "deployment"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "issue": { "type": "integer", "minimum": 1 },
+    "pr": { "type": "integer", "minimum": 1 },
+    "headSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "baseSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "testedAt": { "type": "string", "format": "date-time" },
+    "environment": { "type": "string", "minLength": 1 },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status", "summary", "evidence"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["PASS", "FAIL", "NOT RUN", "BLOCKED", "N/A"] },
+          "summary": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "command", "exitCode", "kind"],
+        "properties": {
+          "name": { "type": "string" },
+          "command": { "type": "string" },
+          "exitCode": { "type": ["integer", "null"] },
+          "kind": { "enum": ["mocked", "local", "local-integration", "ci", "production", "not-run"] },
+          "url": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "url", "kind", "retention"],
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string", "pattern": "^https://" },
+          "kind": { "enum": ["original", "annotated", "log", "report", "ci"] },
+          "retention": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "mergeSha", "details"],
+      "properties": {
+        "status": { "enum": ["NOT STARTED", "PENDING", "PASS", "FAIL", "BLOCKED"] },
+        "mergeSha": { "type": ["string", "null"] },
+        "details": { "type": "string" }
+      }
+    }
+  }
+}

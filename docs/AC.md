@@ -1233,6 +1233,13 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 7.3.4** [Dev tooling] `playwright/e2e/collections.spec.ts` covers the collections page (AC 1.1, 1.3, 1.9): page loads with **Mine / Bookmarked / Discover** tabs; authenticated users see a create-collection action; switching to the Discover tab updates the URL query string to `?tab=discover`.
 - **AC 7.3.5** [Dev tooling] `playwright/e2e/quiz.spec.ts` covers quiz mode (AC 3.6): quiz loads with a question and answer options after navigating from the category Sets view; selecting an answer reveals the correct answer; the Next button advances to the next question; the score counter is visible throughout.
 
+### AC 7.4 Autonomous development and release
+
+- **AC 7.4.1** [Dev tooling] The scheduled PowerShell controller advances enabled Codex and Claude queues without a human PR-review or release-approval gate. A candidate becomes releasable only after exact-SHA testing, fresh independent agent review, published issue/PR evidence, and the configured required GitHub checks pass.
+- **AC 7.4.2** [Dev tooling] Controller, provider, merge, deployment, rollback, and issue-finalization side effects use external durable checkpoints and resume without duplicating a PR merge or rollback dispatch. Pausing prevents new stages and releases while allowing an in-flight merge/deployment/rollback to reach a recorded outcome.
+- **AC 7.4.3** [Dev tooling] A candidate containing a destructive migration cannot merge until automation creates a fresh production backup, restores it into an isolated local rehearsal database, and applies the candidate EF migrations successfully. Database rollback is not automatic; migrations must preserve compatibility with the previous application revision.
+- **AC 7.4.4** [Dev tooling] If the merge-correlated deployment or configured production smoke check fails, automation dispatches an application rollback to the previous main SHA for both LightSail and S3/CloudFront, records the rollback outcome, keeps the issue open, and halts subsequent releases.
+
 ---
 
 ## AC 8. Performance characteristics
