@@ -264,6 +264,8 @@ export interface ConversionFunnelResponse {
   sessionsWithEvents: number;
   botSessions: number;
   botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
   steps: ConversionFunnelStep[];
 }
 
@@ -630,11 +632,17 @@ export const adminApi = {
 
   getConversionFunnel: async (
     days: number = 7,
-    includeBots: boolean = false
+    includeBots: boolean = false,
+    includeInternal: boolean = false
   ): Promise<ConversionFunnelResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
     const response = await apiClient.get<ConversionFunnelResponse>(
       "/admin/analytics/funnel",
-      { params: { days, includeBots } }
+      { params }
     );
     return response.data;
   },

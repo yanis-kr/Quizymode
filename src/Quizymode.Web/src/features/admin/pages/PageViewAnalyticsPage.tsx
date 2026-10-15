@@ -218,7 +218,9 @@ const PageViewAnalyticsPage = () => {
         />
       )}
 
-      {tab === "funnel" && <FunnelTab days={days} includeBots={includeBots} />}
+      {tab === "funnel" && (
+        <FunnelTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
+      )}
 
       {tab === "pages" && isLoading && <LoadingSpinner />}
 

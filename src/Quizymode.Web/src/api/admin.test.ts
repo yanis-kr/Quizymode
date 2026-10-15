@@ -173,6 +173,11 @@ describe("adminApi", () => {
       params: { days: 30, includeBots: true },
     });
     expect(result).toEqual(data);
+
+    await adminApi.getConversionFunnel(30, false, true);
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/analytics/funnel", {
+      params: { days: 30, includeBots: false, includeInternal: true },
+    });
   });
 
   it("sends includeInternal only when internal traffic is requested", async () => {

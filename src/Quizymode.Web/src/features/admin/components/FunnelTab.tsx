@@ -19,14 +19,15 @@ const STEP_LABELS: Record<string, string> = {
 interface FunnelTabProps {
   days: number;
   includeBots: boolean;
+  includeInternal?: boolean;
 }
 
 const formatPercent = (value: number | null) => (value === null ? "—" : `${value}%`);
 
-const FunnelTab = ({ days, includeBots }: FunnelTabProps) => {
+const FunnelTab = ({ days, includeBots, includeInternal = false }: FunnelTabProps) => {
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["admin", "conversion-funnel", days, includeBots],
-    queryFn: () => adminApi.getConversionFunnel(days, includeBots),
+    queryKey: ["admin", "conversion-funnel", days, includeBots, includeInternal],
+    queryFn: () => adminApi.getConversionFunnel(days, includeBots, includeInternal),
   });
 
   if (isLoading) {
@@ -58,6 +59,12 @@ const FunnelTab = ({ days, includeBots }: FunnelTabProps) => {
         {data.botsExcluded && data.botSessions > 0 && (
           <p className="mt-2 text-xs text-slate-500">
             {data.botSessions} bot session{data.botSessions === 1 ? " was" : "s were"} excluded.
+          </p>
+        )}
+        {data.internalExcluded && data.internalSessions > 0 && (
+          <p className="mt-2 text-xs text-slate-500">
+            {data.internalSessions} internal session{data.internalSessions === 1 ? " was" : "s were"}{" "}
+            excluded: admins, users flagged internal, and browsers marked as internal.
           </p>
         )}
       </div>

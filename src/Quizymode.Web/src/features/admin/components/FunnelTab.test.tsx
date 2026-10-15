@@ -30,6 +30,8 @@ describe("FunnelTab", () => {
       sessionsWithEvents: 4,
       botSessions: 2,
       botsExcluded: true,
+      internalSessions: 3,
+      internalExcluded: true,
       steps: [
         { eventName: "quick_quiz_started", sessions: 4, events: 5, conversionFromPreviousPercent: null, conversionFromFirstPercent: null },
         { eventName: "quiz_completed", sessions: 2, events: 2, conversionFromPreviousPercent: 50, conversionFromFirstPercent: 50 },
@@ -45,7 +47,8 @@ describe("FunnelTab", () => {
     const startedRow = screen.getByText("Quick quiz started").closest("tr") as HTMLTableRowElement;
     expect(within(startedRow).getAllByText("—")).toHaveLength(2);
     expect(screen.getByText(/2 bot sessions were excluded/)).toBeInTheDocument();
-    expect(mockGetConversionFunnel).toHaveBeenCalledWith(30, false);
+    expect(screen.getByText(/3 internal sessions were excluded/)).toBeInTheDocument();
+    expect(mockGetConversionFunnel).toHaveBeenCalledWith(30, false, false);
   });
 
   it("shows an error state when the report fails", async () => {

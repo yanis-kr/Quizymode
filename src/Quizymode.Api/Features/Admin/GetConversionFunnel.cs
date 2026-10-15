@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -12,7 +13,7 @@ namespace Quizymode.Api.Features.Admin;
 /// </summary>
 public static class GetConversionFunnel
 {
-    public sealed record QueryRequest(int Days = 7, bool IncludeBots = false);
+    public sealed record QueryRequest(int Days = 7, bool IncludeBots = false, bool IncludeInternal = false);
 
     public sealed record Response(
         DateTime WindowStartUtc,
@@ -20,6 +21,8 @@ public static class GetConversionFunnel
         int SessionsWithEvents,
         int BotSessions,
         bool BotsExcluded,
+        int InternalSessions,
+        bool InternalExcluded,
         List<StepResponse> Steps);
 
     /// <param name="ConversionFromPreviousPercent">
@@ -41,7 +44,7 @@ public static class GetConversionFunnel
             app.MapGet("admin/analytics/funnel", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get the conversion event funnel (Admin only)")
-                .WithDescription("Returns unique sessions and step-to-step conversion for each allowlisted funnel event in the selected window. Bot sessions are excluded unless includeBots=true.")
+                .WithDescription("Returns unique sessions and step-to-step conversion for each allowlisted funnel event in the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -50,10 +53,11 @@ public static class GetConversionFunnel
         private static async Task<IResult> Handler(
             int days = 7,
             bool includeBots = false,
+            bool includeInternal = false,
             ApplicationDbContext db = null!,
             CancellationToken cancellationToken = default)
         {
-            Result<Response> result = await HandleAsync(new QueryRequest(days, includeBots), db, cancellationToken);
+            Result<Response> result = await HandleAsync(new QueryRequest(days, includeBots, includeInternal), db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -87,9 +91,28 @@ public static class GetConversionFunnel
             .Distinct()
             .CountAsync(cancellationToken);
 
+        // Events reuse the page-view session id, so a funnel session is internal when its page-view
+        // session is (admin, flagged user, or marked browser) or when any of its events belongs to a
+        // user flagged internal. Both are evaluated at query time, so flagging a user is retroactive.
+        IQueryable<string> windowSessionIds = windowQuery.Select(analyticsEvent => analyticsEvent.SessionId);
+        IQueryable<string> internalSessionIds = InternalTrafficFilter
+            .InternalSessionIds(db, db.PageViews.Where(pageView => windowSessionIds.Contains(pageView.SessionId)))
+            .Union(windowQuery
+                .Where(analyticsEvent =>
+                    analyticsEvent.UserId != null &&
+                    db.Users.Any(user => user.Id == analyticsEvent.UserId && user.IsInternal))
+                .Select(analyticsEvent => analyticsEvent.SessionId));
+
+        int internalSessions = await internalSessionIds.CountAsync(cancellationToken);
+
         IQueryable<AnalyticsEvent> query = request.IncludeBots
             ? windowQuery
             : windowQuery.Where(analyticsEvent => !analyticsEvent.IsBot);
+
+        if (!request.IncludeInternal)
+        {
+            query = query.Where(analyticsEvent => !internalSessionIds.Contains(analyticsEvent.SessionId));
+        }
 
         int sessionsWithEvents = await query
             .Select(analyticsEvent => analyticsEvent.SessionId)
@@ -131,6 +154,8 @@ public static class GetConversionFunnel
             sessionsWithEvents,
             botSessions,
             BotsExcluded: !request.IncludeBots,
+            internalSessions,
+            InternalExcluded: !request.IncludeInternal,
             steps));
     }
 

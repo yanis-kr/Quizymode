@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Admin;
@@ -102,6 +103,61 @@ public sealed class GetConversionFunnelTests : DatabaseTestFixture
         result.IsFailure.Should().BeTrue();
         result.Error.Type.Should().Be(ErrorType.Validation);
     }
+
+    [Fact]
+    public async Task HandleAsync_ExcludesInternalSessionsUnlessRequested()
+    {
+        DateTime now = DateTime.UtcNow;
+        Guid flaggedUserId = Guid.NewGuid();
+        await DbContext.Users.AddAsync(new User { Id = flaggedUserId, Subject = "flagged", Email = "flagged@example.com", Name = "Flagged" });
+
+        // Page-view sessions sharing the client session id: a marked browser, and an anonymous visit
+        // that later signs in as an admin (only its second hit is internal).
+        await DbContext.PageViews.AddRangeAsync(
+            PageHit("s-marked", now.AddMinutes(-50), isInternal: true),
+            PageHit("s-mid", now.AddMinutes(-49), isInternal: false),
+            PageHit("s-mid", now.AddMinutes(-40), isInternal: true),
+            PageHit("s-visitor", now.AddMinutes(-50), isInternal: false));
+
+        AnalyticsEvent flaggedUserEvent = Event("s-flagged", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-30));
+        flaggedUserEvent.UserId = flaggedUserId;
+        await DbContext.AnalyticsEvents.AddRangeAsync(
+            Event("s-visitor", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-50)),
+            Event("s-marked", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-50)),
+            Event("s-mid", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-48)),
+            flaggedUserEvent);
+        await DbContext.SaveChangesAsync();
+
+        // The user is flagged after the event was written, so exclusion must be evaluated at query time.
+        User flaggedUser = await DbContext.Users.SingleAsync(user => user.Id == flaggedUserId);
+        flaggedUser.IsInternal = true;
+        await DbContext.SaveChangesAsync();
+
+        GetConversionFunnel.Response excluded = (await Run(new GetConversionFunnel.QueryRequest(Days: 7))).Value!;
+        excluded.SessionsWithEvents.Should().Be(1);
+        excluded.Steps[0].Sessions.Should().Be(1);
+        excluded.InternalSessions.Should().Be(3);
+        excluded.InternalExcluded.Should().BeTrue();
+
+        GetConversionFunnel.Response included = (await Run(new GetConversionFunnel.QueryRequest(Days: 7, IncludeInternal: true))).Value!;
+        included.SessionsWithEvents.Should().Be(4);
+        included.Steps[0].Sessions.Should().Be(4);
+        included.InternalSessions.Should().Be(3);
+        included.InternalExcluded.Should().BeFalse();
+    }
+
+    private static PageView PageHit(string sessionId, DateTime createdUtc, bool isInternal) => new()
+    {
+        Id = Guid.NewGuid(),
+        SessionId = sessionId,
+        IpAddress = "198.51.100.10",
+        Path = "/",
+        QueryString = string.Empty,
+        Url = "/",
+        UserAgent = "Mozilla/5.0",
+        IsInternal = isInternal,
+        CreatedUtc = createdUtc
+    };
 
     [Fact]
     public void Endpoint_RequiresAdminPolicy_SoNonAdminsGet403()
