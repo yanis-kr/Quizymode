@@ -163,6 +163,18 @@ describe("adminApi", () => {
     expect(result).toEqual(data);
   });
 
+  it("getConversionFunnel calls GET /admin/analytics/funnel with window and bot flag", async () => {
+    const data = { steps: [] };
+    mockGet.mockResolvedValueOnce({ data });
+
+    const result = await adminApi.getConversionFunnel(30, true);
+
+    expect(mockGet).toHaveBeenCalledWith("/admin/analytics/funnel", {
+      params: { days: 30, includeBots: true },
+    });
+    expect(result).toEqual(data);
+  });
+
   it("getUsers calls GET /admin/users with defaults", async () => {
     const data = { summary: {}, users: [], totalCount: 0, page: 1, pageSize: 25, totalPages: 0 };
     mockGet.mockResolvedValueOnce({ data });

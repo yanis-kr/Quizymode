@@ -6,8 +6,29 @@ export interface TrackPageViewRequest {
   sessionId: string;
 }
 
+/** One allowlisted engagement event; see AnalyticsEventCatalog on the API. */
+export interface AnalyticsEventPayload {
+  name: string;
+  path: string;
+  contextType?: string;
+  contextId?: string;
+  clientEventId?: string;
+  runId?: string;
+  score?: number;
+  total?: number;
+}
+
+export interface TrackAnalyticsEventsRequest {
+  sessionId: string;
+  events: AnalyticsEventPayload[];
+}
+
 export const analyticsApi = {
   trackPageView: async (request: TrackPageViewRequest): Promise<void> => {
     await apiClient.post("/analytics/page-views", request);
+  },
+
+  trackEvents: async (request: TrackAnalyticsEventsRequest): Promise<void> => {
+    await apiClient.post("/analytics/events", request);
   },
 };

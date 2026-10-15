@@ -761,6 +761,55 @@
         }
       }
     },
+    "/admin/analytics/funnel": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the conversion event funnel (Admin only)",
+        "description": "Returns unique sessions and step-to-step conversion for each allowlisted funnel event in the selected window. Bot sessions are excluded unless includeBots=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetConversionFunnel.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/database/size": {
       "get": {
         "tags": [
@@ -1403,6 +1452,57 @@
           },
           "409": {
             "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/analytics/events": {
+      "post": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Record allowlisted engagement events",
+        "description": "Stores up to 25 allowlisted funnel events for an anonymous or authenticated session. Run-scoped events are idempotent per session, event, and run id; events with a clientEventId are idempotent per session, event, and that id. Rate limited.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
@@ -4041,6 +4141,64 @@
   },
   "components": {
     "schemas": {
+      "Microsoft.AspNetCore.Http.HttpValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "title": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "status": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "detail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "instance": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "errors": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IDictionaryOfSystem.StringAndSystem.String[]"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Mvc.ProblemDetails": {
         "type": "object",
         "properties": {
@@ -4899,6 +5057,79 @@
         "properties": {
           "keywords": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetConversionFunnel.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "sessionsWithEvents",
+          "botSessions",
+          "botsExcluded",
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "sessionsWithEvents": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "steps": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetConversionFunnel.StepResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetConversionFunnel.StepResponse": {
+        "required": [
+          "eventName",
+          "sessions",
+          "events",
+          "conversionFromPreviousPercent",
+          "conversionFromFirstPercent"
+        ],
+        "type": "object",
+        "properties": {
+          "eventName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "events": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "conversionFromPreviousPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Unique sessions at this step as a share of the previous step's; null for the first step or\r\nwhen the previous step has no sessions. Steps are counted independently, so a later step can\r\nexceed an earlier one (for example sign-ins by returning users who never saw a prompt).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "conversionFromFirstPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
           }
         }
       },
@@ -6497,6 +6728,149 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.EventRequest": {
+        "required": [
+          "name",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "path": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "contextType": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "contextId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "clientEventId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Optional client id for one UI impression or action; repeats within the session are ignored.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "runId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "position": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "isCorrect": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
+          },
+          "score": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "total": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.Request": {
+        "required": [
+          "sessionId",
+          "events"
+        ],
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "events": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Analytics.TrackAnalyticsEvents.EventRequest"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.Response": {
+        "required": [
+          "accepted",
+          "duplicates"
+        ],
+        "type": "object",
+        "properties": {
+          "accepted": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicates": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -10448,6 +10822,12 @@
           "$ref": "#/components/schemas/System.String"
         }
       },
+      "System.Collections.Generic.IDictionaryOfSystem.StringAndSystem.String[]": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/System.String[]"
+        }
+      },
       "System.Collections.Generic.IReadOnlyCollectionOfQuizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceItem": {
         "type": "array",
         "items": {
@@ -10520,6 +10900,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetConversionFunnel.StepResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetConversionFunnel.StepResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto": {
         "type": "array",
         "items": {
@@ -10590,6 +10976,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SeedSyncAdmin.HistoryRunResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Analytics.TrackAnalyticsEvents.EventRequest": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Analytics.TrackAnalyticsEvents.EventRequest"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse": {
@@ -10835,6 +11227,12 @@
       },
       "System.String": {
         "type": "string"
+      },
+      "System.String[]": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/System.String"
+        }
       }
     },
     "securitySchemes": {
