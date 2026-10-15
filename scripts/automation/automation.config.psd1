@@ -14,7 +14,7 @@
     MaxSpecialistsPerOrchestrator = 2
     StageTimeoutMinutes = 45
     QuotaBackoffMinutes = 60
-    RequiredChecks = @('build-test-publish', 'automation-contract')
+    RequiredChecks = @('build-test-publish', 'CodeQL', 'automation-contract')
     DeploymentWorkflows = @('Deploy')
     DeploymentWorkflowFile = 'deploy.yml'
     RollbackWorkflowFile = 'rollback.yml'
