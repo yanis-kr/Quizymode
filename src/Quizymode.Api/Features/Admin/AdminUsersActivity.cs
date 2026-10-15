@@ -14,7 +14,8 @@ public static class AdminUsersActivity
         int ActivityDays = 30,
         string? ActivityFilter = null,
         int Page = 1,
-        int PageSize = 25);
+        int PageSize = 25,
+        bool IncludeInternal = false);
 
     public sealed record UsersResponse(
         UsersSummaryResponse Summary,
@@ -30,7 +31,10 @@ public static class AdminUsersActivity
         int TotalRegisteredUsers,
         int FilteredUsers,
         int UsersWithActivityInWindow,
-        int UsersWithoutActivityInWindow);
+        int UsersWithoutActivityInWindow,
+        int InternalUsers,
+        int InternalSessions,
+        bool InternalExcluded);
 
     public sealed record UserOverviewResponse(
         string Id,
@@ -41,14 +45,16 @@ public static class AdminUsersActivity
         int UniqueUrlsInWindow,
         int TotalPageViewsInWindow,
         DateTime? LastOpenedUtc,
-        string? LastKnownCountry);
+        string? LastKnownCountry,
+        bool IsInternal);
 
     public sealed record UserActivityQueryRequest(
         string UserId,
         int Days = 30,
         string? UrlContains = null,
         int Page = 1,
-        int PageSize = 25);
+        int PageSize = 25,
+        bool IncludeInternal = false);
 
     public sealed record UserActivityResponse(
         UserDetailResponse User,
@@ -64,14 +70,17 @@ public static class AdminUsersActivity
         string? Name,
         string? Email,
         DateTime CreatedAt,
-        DateTime LastLogin);
+        DateTime LastLogin,
+        bool IsInternal);
 
     public sealed record UserActivitySummaryResponse(
         DateTime WindowStartUtc,
         DateTime WindowEndUtc,
         int TotalViews,
         int UniqueUrls,
-        DateTime? LastOpenedUtc);
+        DateTime? LastOpenedUtc,
+        int InternalSessions,
+        bool InternalExcluded);
 
     public sealed record UserUrlHistoryResponse(
         string Url,
@@ -96,7 +105,8 @@ public static class AdminUsersActivity
         DateTime LastLogin,
         int UniqueUrlsInWindow,
         int TotalPageViewsInWindow,
-        DateTime? LastOpenedUtc);
+        DateTime? LastOpenedUtc,
+        bool IsInternal);
 
     private sealed record UserUrlHistoryProjection(
         string Url,
@@ -113,7 +123,7 @@ public static class AdminUsersActivity
             app.MapGet("admin/users", GetUsersHandler)
                 .WithTags("Admin")
                 .WithSummary("Get registered users with activity metrics (Admin only)")
-                .WithDescription("Returns a filterable, paged list of registered users plus page-view activity metrics for a selected time window.")
+                .WithDescription("Returns a filterable, paged list of registered users plus page-view activity metrics for a selected time window. Activity from internal sessions is excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<UsersResponse>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -121,7 +131,7 @@ public static class AdminUsersActivity
             app.MapGet("admin/users/{id}/page-view-history", GetUserActivityHandler)
                 .WithTags("Admin")
                 .WithSummary("Get page-view activity for a specific user (Admin only)")
-                .WithDescription("Returns grouped URL history and activity summary for one registered user in a selected time window.")
+                .WithDescription("Returns grouped URL history and activity summary for one registered user in a selected time window. Hits from internal sessions are excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<UserActivityResponse>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest)
@@ -134,11 +144,12 @@ public static class AdminUsersActivity
             string? activityFilter = null,
             int page = 1,
             int pageSize = 25,
+            bool includeInternal = false,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            UsersQueryRequest request = new(search, activityDays, activityFilter, page, pageSize);
+            UsersQueryRequest request = new(search, activityDays, activityFilter, page, pageSize, includeInternal);
             Result<UsersResponse> result = await HandleGetUsersAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -152,10 +163,11 @@ public static class AdminUsersActivity
             string? urlContains = null,
             int page = 1,
             int pageSize = 25,
+            bool includeInternal = false,
             ApplicationDbContext db = null!,
             CancellationToken cancellationToken = default)
         {
-            UserActivityQueryRequest request = new(id, days, urlContains, page, pageSize);
+            UserActivityQueryRequest request = new(id, days, urlContains, page, pageSize, includeInternal);
             Result<UserActivityResponse> result = await HandleGetUserActivityAsync(request, db, cancellationToken);
 
             return result.Match(
@@ -203,6 +215,7 @@ public static class AdminUsersActivity
 
         IQueryable<User> usersQuery = db.Users.AsNoTracking();
         int totalRegisteredUsers = await usersQuery.CountAsync(cancellationToken);
+        int internalUsers = await usersQuery.CountAsync(user => user.IsInternal, cancellationToken);
 
         if (searchLower is not null)
         {
@@ -217,16 +230,31 @@ public static class AdminUsersActivity
 
         Dictionary<Guid, (int UniqueUrlsInWindow, int TotalPageViewsInWindow)> windowActivityByUserId = [];
         Dictionary<Guid, DateTime> lastOpenedByUserId = [];
+        int internalSessions = 0;
 
         if (filteredUserIds.Count > 0)
         {
-            windowActivityByUserId = (await db.PageViews
+            IQueryable<PageView> userPageViews = db.PageViews
                 .AsNoTracking()
                 .Where(pageView =>
                     pageView.UserId.HasValue &&
-                    filteredUserIds.Contains(pageView.UserId.Value) &&
+                    filteredUserIds.Contains(pageView.UserId.Value));
+
+            IQueryable<PageView> windowPageViews = userPageViews
+                .Where(pageView =>
                     pageView.CreatedUtc >= windowStartUtc &&
-                    pageView.CreatedUtc <= windowEndUtc)
+                    pageView.CreatedUtc <= windowEndUtc);
+
+            internalSessions = await InternalTrafficFilter.InternalSessionIds(db, windowPageViews)
+                .CountAsync(cancellationToken);
+
+            if (!request.IncludeInternal)
+            {
+                userPageViews = InternalTrafficFilter.ExcludeInternalSessions(db, userPageViews);
+                windowPageViews = InternalTrafficFilter.ExcludeInternalSessions(db, windowPageViews);
+            }
+
+            windowActivityByUserId = (await windowPageViews
                 .GroupBy(pageView => pageView.UserId!.Value)
                 .Select(group => new
                 {
@@ -239,11 +267,7 @@ public static class AdminUsersActivity
                     item => item.UserId,
                     item => (item.UniqueUrlsInWindow, item.TotalPageViewsInWindow));
 
-            lastOpenedByUserId = (await db.PageViews
-                .AsNoTracking()
-                .Where(pageView =>
-                    pageView.UserId.HasValue &&
-                    filteredUserIds.Contains(pageView.UserId.Value))
+            lastOpenedByUserId = (await userPageViews
                 .GroupBy(pageView => pageView.UserId!.Value)
                 .Select(group => new
                 {
@@ -270,7 +294,8 @@ public static class AdminUsersActivity
                 user.LastLogin,
                 windowActivity.UniqueUrlsInWindow,
                 windowActivity.TotalPageViewsInWindow,
-                lastOpenedUtc);
+                lastOpenedUtc,
+                user.IsInternal);
         });
 
         overviewQuery = activityFilter switch
@@ -332,7 +357,8 @@ public static class AdminUsersActivity
                     user.UniqueUrlsInWindow,
                     user.TotalPageViewsInWindow,
                     user.LastOpenedUtc,
-                    lastCountry);
+                    lastCountry,
+                    user.IsInternal);
             })
             .ToList();
 
@@ -342,7 +368,10 @@ public static class AdminUsersActivity
             totalRegisteredUsers,
             filteredUsers,
             usersWithActivityInWindow,
-            usersWithoutActivityInWindow);
+            usersWithoutActivityInWindow,
+            internalUsers,
+            internalSessions,
+            InternalExcluded: !request.IncludeInternal);
 
         return Result.Success(new UsersResponse(summary, users, filteredUsers, page, pageSize, totalPages));
     }
@@ -389,6 +418,14 @@ public static class AdminUsersActivity
                 pageView.UserId == userId &&
                 pageView.CreatedUtc >= windowStartUtc &&
                 pageView.CreatedUtc <= windowEndUtc);
+
+        int internalSessions = await InternalTrafficFilter.InternalSessionIds(db, query)
+            .CountAsync(cancellationToken);
+
+        if (!request.IncludeInternal)
+        {
+            query = InternalTrafficFilter.ExcludeInternalSessions(db, query);
+        }
 
         if (urlContains is not null)
         {
@@ -437,14 +474,17 @@ public static class AdminUsersActivity
             user.Name,
             user.Email,
             user.CreatedAt,
-            user.LastLogin);
+            user.LastLogin,
+            user.IsInternal);
 
         UserActivitySummaryResponse summary = new(
             windowStartUtc,
             windowEndUtc,
             totalViews,
             uniqueUrls,
-            lastOpenedUtc);
+            lastOpenedUtc,
+            internalSessions,
+            InternalExcluded: !request.IncludeInternal);
 
         return Result.Success(new UserActivityResponse(
             userResponse,

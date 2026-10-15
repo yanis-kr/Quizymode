@@ -850,6 +850,11 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
+                    b.Property<bool>("IsInternal")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasMaxLength(2048)
@@ -884,6 +889,8 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("IsAuthenticated");
 
                     b.HasIndex("IsBot");
+
+                    b.HasIndex("IsInternal");
 
                     b.HasIndex("Path");
 
@@ -1346,6 +1353,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
+
+                    b.Property<bool>("IsInternal")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime>("LastLogin")
                         .HasColumnType("timestamp with time zone");

@@ -25,7 +25,10 @@ const SessionRow = ({ session, formatDateTime }: SessionRowProps) => {
     error,
   } = useQuery({
     queryKey: ["admin", "page-view-session-detail", session.sessionId],
-    queryFn: () => adminApi.getPageViewSessionDetail(session.sessionId),
+    // An internal row is only listed when internal traffic was requested, so the
+    // detail lookup must opt in too or the API hides it.
+    queryFn: () =>
+      adminApi.getPageViewSessionDetail(session.sessionId, session.isInternal),
     enabled: isExpanded,
   });
 
@@ -51,6 +54,11 @@ const SessionRow = ({ session, formatDateTime }: SessionRowProps) => {
           >
             {OUTCOME_LABELS[session.outcome]}
           </span>
+          {session.isInternal && (
+            <span className="ml-1.5 inline-flex rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+              Internal
+            </span>
+          )}
           {session.userEmail && (
             <div className="mt-2 text-xs text-slate-500">{session.userEmail}</div>
           )}

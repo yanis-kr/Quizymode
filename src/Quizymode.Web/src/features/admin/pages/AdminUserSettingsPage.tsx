@@ -40,6 +40,7 @@ const AdminUserSettingsPage = () => {
   const [activityFilter, setActivityFilter] =
     useState<AdminUserActivityFilter>("all");
   const [usersPage, setUsersPage] = useState(1);
+  const [includeInternal, setIncludeInternal] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
   const [historyDays, setHistoryDays] = useState(30);
   const [urlFilterInput, setUrlFilterInput] = useState("");
@@ -61,6 +62,7 @@ const AdminUserSettingsPage = () => {
       activityDays,
       activityFilter,
       usersPage,
+      includeInternal,
     ],
     queryFn: () =>
       adminApi.getUsers(
@@ -68,7 +70,8 @@ const AdminUserSettingsPage = () => {
         activityDays,
         activityFilter,
         usersPage,
-        USERS_PAGE_SIZE
+        USERS_PAGE_SIZE,
+        includeInternal
       ),
     enabled: !!isAuthenticated && !!isAdmin,
   });
@@ -104,6 +107,7 @@ const AdminUserSettingsPage = () => {
       historyDays,
       urlFilter,
       historyPage,
+      includeInternal,
     ],
     queryFn: () =>
       adminApi.getUserActivity(
@@ -111,7 +115,8 @@ const AdminUserSettingsPage = () => {
         historyDays,
         urlFilter || undefined,
         historyPage,
-        URL_HISTORY_PAGE_SIZE
+        URL_HISTORY_PAGE_SIZE,
+        includeInternal
       ),
     enabled: !!isAuthenticated && !!isAdmin && !!selectedUserId,
   });
@@ -149,6 +154,18 @@ const AdminUserSettingsPage = () => {
       await queryClient.invalidateQueries({
         queryKey: ["admin", "user-settings", selectedUserId],
       });
+    },
+  });
+
+  const internalFlagMutation = useMutation({
+    mutationFn: ({ userId, isInternal }: { userId: string; isInternal: boolean }) =>
+      adminApi.setUserInternal(userId, isInternal),
+    onSuccess: async () => {
+      // Report figures depend on the flag (it applies retroactively), so refresh both views.
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ["admin", "users"] }),
+        queryClient.invalidateQueries({ queryKey: ["admin", "user-activity"] }),
+      ]);
     },
   });
 
@@ -335,6 +352,20 @@ const AdminUserSettingsPage = () => {
                 ))}
               </div>
             </div>
+
+            <label className="flex items-center gap-2 self-end text-sm text-slate-700">
+              <input
+                type="checkbox"
+                checked={includeInternal}
+                onChange={(event) => {
+                  setIncludeInternal(event.target.checked);
+                  setUsersPage(1);
+                  setHistoryPage(1);
+                }}
+                className="h-4 w-4 rounded border-slate-300"
+              />
+              Include internal traffic
+            </label>
           </div>
 
           <form
@@ -385,6 +416,12 @@ const AdminUserSettingsPage = () => {
             <p className="mt-1 text-sm text-gray-600">
               Click a user to inspect their tracked URL history and settings.
             </p>
+            {usersSummary?.internalExcluded && usersSummary.internalSessions > 0 && (
+              <p className="mt-2 text-xs text-slate-500">
+                Activity excludes {usersSummary.internalSessions} internal session
+                {usersSummary.internalSessions === 1 ? "" : "s"}.
+              </p>
+            )}
           </div>
 
           {users.length > 0 ? (
@@ -421,6 +458,11 @@ const AdminUserSettingsPage = () => {
                           <td className="px-5 py-4 text-sm text-slate-900">
                             <div className="font-medium">
                               {user.name || "Unnamed user"}
+                              {user.isInternal && (
+                                <span className="ml-2 inline-flex rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
+                                  Internal
+                                </span>
+                              )}
                             </div>
                             <div className="mt-1 text-xs text-slate-500">
                               {user.email || "No email"}
@@ -549,6 +591,37 @@ const AdminUserSettingsPage = () => {
                     </div>
                   </div>
                 </div>
+              </section>
+
+              <section className="rounded-2xl border border-slate-200 p-4">
+                <label className="flex items-start gap-3 text-sm text-slate-700">
+                  <input
+                    type="checkbox"
+                    checked={selectedUser?.isInternal ?? selectedUserFromList?.isInternal ?? false}
+                    disabled={internalFlagMutation.isPending}
+                    onChange={(event) =>
+                      internalFlagMutation.mutate({
+                        userId: selectedUserId,
+                        isInternal: event.target.checked,
+                      })
+                    }
+                    className="mt-0.5 h-4 w-4 rounded border-slate-300"
+                  />
+                  <span>
+                    <span className="font-medium text-slate-900">
+                      Internal user (exclude from analytics)
+                    </span>
+                    <span className="block text-xs text-slate-500">
+                      For staff and test accounts. Applies to this user&apos;s past
+                      sessions too, including anonymous visits before they signed in.
+                    </span>
+                  </span>
+                </label>
+                {internalFlagMutation.isError && (
+                  <p className="mt-2 text-sm text-red-600">
+                    Failed to update the internal flag. Try again.
+                  </p>
+                )}
               </section>
 
               <section className="grid gap-4 md:grid-cols-3">

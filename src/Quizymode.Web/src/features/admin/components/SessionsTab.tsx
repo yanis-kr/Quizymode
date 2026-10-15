@@ -31,10 +31,16 @@ const LANDING_PAGES_LIMIT = 10;
 interface SessionsTabProps {
   days: number;
   includeBots: boolean;
+  includeInternal?: boolean;
   formatDateTime: (value: string) => string;
 }
 
-const SessionsTab = ({ days, includeBots, formatDateTime }: SessionsTabProps) => {
+const SessionsTab = ({
+  days,
+  includeBots,
+  includeInternal = false,
+  formatDateTime,
+}: SessionsTabProps) => {
   const [outcome, setOutcome] = useState<SessionOutcomeFilter>("all");
   const [sortBy, setSortBy] = useState<SessionSortBy>("recent");
   const [engagedOnly, setEngagedOnly] = useState(false);
@@ -52,6 +58,7 @@ const SessionsTab = ({ days, includeBots, formatDateTime }: SessionsTabProps) =>
       includeBots,
       sortBy,
       page,
+      includeInternal,
     ],
     queryFn: () =>
       adminApi.getPageViewSessions(
@@ -62,7 +69,8 @@ const SessionsTab = ({ days, includeBots, formatDateTime }: SessionsTabProps) =>
         sortBy,
         page,
         PAGE_SIZE,
-        LANDING_PAGES_LIMIT
+        LANDING_PAGES_LIMIT,
+        includeInternal
       ),
   });
 
@@ -126,6 +134,16 @@ const SessionsTab = ({ days, includeBots, formatDateTime }: SessionsTabProps) =>
           numbers. Crawlers almost always view a single page, so leaving them in
           inflates the bounce rate. Toggle{" "}
           <span className="font-medium">Include bots</span> above to compare.
+        </div>
+      )}
+
+      {summary.internalExcluded && summary.internalSessions > 0 && (
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+          <span className="font-medium">{summary.internalSessions}</span> internal
+          session{summary.internalSessions === 1 ? " was" : "s were"} excluded:
+          admins, users flagged internal, and browsers marked as internal. Toggle{" "}
+          <span className="font-medium">Include internal traffic</span> above to
+          compare.
         </div>
       )}
 

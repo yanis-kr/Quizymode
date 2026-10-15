@@ -36,6 +36,8 @@ const baseResponse = {
     medianDurationSecondsEngaged: 180,
     botSessions: 4,
     botsExcluded: true,
+    internalSessions: 2,
+    internalExcluded: true,
     byOutcome: [
       {
         outcome: "anonymous" as const,
@@ -126,6 +128,7 @@ const baseResponse = {
       userEmail: "visitor@example.com",
       userAgent: "Mozilla/5.0",
       isBot: false,
+      isInternal: false,
     },
   ],
   totalCount: 1,
@@ -175,6 +178,46 @@ describe("SessionsTab", () => {
     expect(banner.textContent).toContain("4 bot sessions were excluded");
   });
 
+  it("explains how many internal sessions were excluded", async () => {
+    renderTab();
+
+    const banner = await screen.findByText(/internal sessions were excluded/i);
+    expect(banner.textContent).toContain("2 internal sessions were excluded");
+  });
+
+  it("badges internal sessions and opts their journey lookup into internal traffic", async () => {
+    mockAdminApi.getPageViewSessions.mockResolvedValue({
+      ...baseResponse,
+      summary: { ...baseResponse.summary, internalExcluded: false },
+      sessions: [{ ...baseResponse.sessions[0], isInternal: true }],
+    });
+    mockAdminApi.getPageViewSessionDetail.mockResolvedValue({
+      ...baseResponse.sessions[0],
+      isInternal: true,
+      steps: [],
+    });
+
+    render(
+      <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+        <SessionsTab days={7} includeBots={false} includeInternal formatDateTime={(value) => value} />
+      </QueryClientProvider>
+    );
+
+    expect(await screen.findByText("Internal")).toBeInTheDocument();
+    expect(mockAdminApi.getPageViewSessions).toHaveBeenCalledWith(
+      7, "all", undefined, false, "recent", 1, 25, 10, true
+    );
+    expect(screen.queryByText(/internal sessions? (was|were) excluded/i)).toBeNull();
+
+    await userEvent.click(screen.getByRole("button", { expanded: false }));
+    await waitFor(() =>
+      expect(mockAdminApi.getPageViewSessionDetail).toHaveBeenCalledWith(
+        baseResponse.sessions[0].sessionId,
+        true
+      )
+    );
+  });
+
   it("shows the per-outcome engagement split", async () => {
     renderTab();
 
@@ -211,6 +254,7 @@ describe("SessionsTab", () => {
       userEmail: "visitor@example.com",
       userAgent: "Mozilla/5.0",
       isBot: false,
+      isInternal: false,
       steps: [
         {
           stepNumber: 1,
@@ -244,7 +288,8 @@ describe("SessionsTab", () => {
 
     await waitFor(() =>
       expect(mockAdminApi.getPageViewSessionDetail).toHaveBeenCalledWith(
-        "session-abc"
+        "session-abc",
+        false
       )
     );
 
@@ -269,7 +314,8 @@ describe("SessionsTab", () => {
         "recent",
         1,
         25,
-        10
+        10,
+        false
       )
     );
   });
@@ -293,7 +339,8 @@ describe("SessionsTab", () => {
         "recent",
         1,
         25,
-        10
+        10,
+        false
       )
     );
   });

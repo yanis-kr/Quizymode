@@ -143,7 +143,7 @@
           "Admin"
         ],
         "summary": "Get registered users with activity metrics (Admin only)",
-        "description": "Returns a filterable, paged list of registered users plus page-view activity metrics for a selected time window.",
+        "description": "Returns a filterable, paged list of registered users plus page-view activity metrics for a selected time window. Activity from internal sessions is excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "search",
@@ -182,6 +182,14 @@
               "default": 25,
               "$ref": "#/components/schemas/System.Int32"
             }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
           }
         ],
         "responses": {
@@ -214,7 +222,7 @@
           "Admin"
         ],
         "summary": "Get page-view activity for a specific user (Admin only)",
-        "description": "Returns grouped URL history and activity summary for one registered user in a selected time window.",
+        "description": "Returns grouped URL history and activity summary for one registered user in a selected time window. Hits from internal sessions are excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "id",
@@ -253,6 +261,14 @@
             "schema": {
               "default": 25,
               "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
             }
           }
         ],
@@ -820,7 +836,7 @@
           "Admin"
         ],
         "summary": "Get page-view analytics (Admin only)",
-        "description": "Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic.",
+        "description": "Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "days",
@@ -875,6 +891,14 @@
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
             }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
           }
         ],
         "responses": {
@@ -907,7 +931,7 @@
           "Admin"
         ],
         "summary": "Get the ordered page journey for one session (Admin only)",
-        "description": "Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded.",
+        "description": "Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.",
         "parameters": [
           {
             "name": "sessionId",
@@ -915,6 +939,13 @@
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
             }
           }
         ],
@@ -958,7 +989,7 @@
           "Admin"
         ],
         "summary": "Get session-level page-view engagement (Admin only)",
-        "description": "Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors.",
+        "description": "Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "days",
@@ -1019,6 +1050,14 @@
             "schema": {
               "default": 10,
               "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
             }
           }
         ],
@@ -1357,6 +1396,67 @@
         }
       }
     },
+    "/admin/users/{id}/internal": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Flag or unflag a user as internal traffic (Admin only)",
+        "description": "Internal users' sessions, including earlier ones, are excluded from admin analytics reports unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SetUserInternalFlag.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.SetUserInternalFlag.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/keywords/{id}": {
       "put": {
         "tags": [
@@ -1413,7 +1513,7 @@
           "Analytics"
         ],
         "summary": "Track a SPA page view",
-        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit.",
+        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4217,7 +4317,9 @@
           "windowEndUtc",
           "totalViews",
           "uniqueUrls",
-          "lastOpenedUtc"
+          "lastOpenedUtc",
+          "internalSessions",
+          "internalExcluded"
         ],
         "type": "object",
         "properties": {
@@ -4242,6 +4344,12 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -4251,7 +4359,8 @@
           "name",
           "email",
           "createdAt",
-          "lastLogin"
+          "lastLogin",
+          "isInternal"
         ],
         "type": "object",
         "properties": {
@@ -4283,6 +4392,9 @@
           },
           "lastLogin": {
             "$ref": "#/components/schemas/System.DateTime"
+          },
+          "isInternal": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -4296,7 +4408,8 @@
           "uniqueUrlsInWindow",
           "totalPageViewsInWindow",
           "lastOpenedUtc",
-          "lastKnownCountry"
+          "lastKnownCountry",
+          "isInternal"
         ],
         "type": "object",
         "properties": {
@@ -4354,6 +4467,9 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "isInternal": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -4395,7 +4511,10 @@
           "totalRegisteredUsers",
           "filteredUsers",
           "usersWithActivityInWindow",
-          "usersWithoutActivityInWindow"
+          "usersWithoutActivityInWindow",
+          "internalUsers",
+          "internalSessions",
+          "internalExcluded"
         ],
         "type": "object",
         "properties": {
@@ -4416,6 +4535,15 @@
           },
           "usersWithoutActivityInWindow": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalUsers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -5165,7 +5293,9 @@
           "authenticatedSessions",
           "anonymousSessions",
           "botSessions",
-          "botsExcluded"
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded"
         ],
         "type": "object",
         "properties": {
@@ -5200,6 +5330,12 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
@@ -5292,6 +5428,7 @@
           "userEmail",
           "userAgent",
           "isBot",
+          "isInternal",
           "steps"
         ],
         "type": "object",
@@ -5354,6 +5491,9 @@
             ]
           },
           "isBot": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isInternal": {
             "$ref": "#/components/schemas/System.Boolean"
           },
           "steps": {
@@ -5501,7 +5641,8 @@
           "country",
           "userEmail",
           "userAgent",
-          "isBot"
+          "isBot",
+          "isInternal"
         ],
         "type": "object",
         "properties": {
@@ -5570,6 +5711,9 @@
           },
           "isBot": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isInternal": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -5587,6 +5731,8 @@
           "medianDurationSecondsEngaged",
           "botSessions",
           "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
           "byOutcome"
         ],
         "type": "object",
@@ -5625,6 +5771,12 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
             "$ref": "#/components/schemas/System.Boolean"
           },
           "byOutcome": {
@@ -6253,6 +6405,39 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.SetUserInternalFlag.Request": {
+        "required": [
+          "isInternal"
+        ],
+        "type": "object",
+        "properties": {
+          "isInternal": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.SetUserInternalFlag.Response": {
+        "required": [
+          "id",
+          "isInternal"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isInternal": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.UpdateCategory.UpdateCategoryRequest": {
         "required": [
           "name"
@@ -6523,6 +6708,17 @@
           },
           "sessionId": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "internalBrowser": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
           }
         }
       },

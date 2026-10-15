@@ -4,6 +4,8 @@ import { analyticsApi } from "@/api/analytics";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   getPageViewSessionId,
+  isAdminPath,
+  isInternalBrowser,
   shouldTrackPageView,
 } from "@/utils/pageViewTracking";
 
@@ -19,7 +21,7 @@ const PageViewTracker = () => {
     const path = location.pathname || "/";
     const queryString = location.search || "";
 
-    if (!shouldTrackPageView(path, queryString)) {
+    if (isAdminPath(path) || !shouldTrackPageView(path, queryString)) {
       return;
     }
 
@@ -28,6 +30,7 @@ const PageViewTracker = () => {
         path,
         queryString,
         sessionId: getPageViewSessionId(),
+        ...(isInternalBrowser() ? { internalBrowser: true } : {}),
       })
       .catch((error) => {
         console.debug("Page view tracking failed", error);

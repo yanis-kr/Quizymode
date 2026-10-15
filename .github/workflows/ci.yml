@@ -130,6 +130,12 @@ jobs:
                 comment.user?.type === 'Bot' && comment.body?.includes(marker)
               );
 
+              const normalize = text => (text ?? '').replace(/\r\n/g, '\n').trim();
+              if (existing && normalize(existing.body) === normalize(body)) {
+                console.log(`Comment ${existing.id} already up to date; not rewriting it.`);
+                return;
+              }
+
               if (existing) {
                 await github.rest.issues.updateComment({
                   owner,
@@ -233,6 +239,12 @@ jobs:
               const existing = comments.find(comment =>
                 comment.user?.type === 'Bot' && comment.body?.includes(marker)
               );
+
+              const normalize = text => (text ?? '').replace(/\r\n/g, '\n').trim();
+              if (existing && normalize(existing.body) === normalize(body)) {
+                console.log(`Comment ${existing.id} already up to date; not rewriting it.`);
+                return;
+              }
 
               if (existing) {
                 await github.rest.issues.updateComment({
