@@ -41,7 +41,7 @@ const createFeaturedSetArt = ({
   `)}`;
 
 export const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
-export const HOME_SAMPLE_COLLECTION_NAME = "Sample Collection";
+export const HOME_SAMPLE_COLLECTION_NAME = "Fun Trivia Facts";
 export const TENNIS_TRIVIA_COLLECTION_ID = "a3f6c2e1-7d14-4b8a-9e55-1c2f8d3a0b47";
 export const TENNIS_TRIVIA_COLLECTION_NAME = "Tennis Trivia";
 export const SOUNDS_FAKE_COLLECTION_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
