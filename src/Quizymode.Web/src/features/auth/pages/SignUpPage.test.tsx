@@ -34,10 +34,10 @@ vi.mock("@/features/legal/policyAcceptanceStorage", () => ({
   queueSignUpPolicyAcceptances: vi.fn(),
 }));
 
-function renderPage() {
+function renderPage(initialEntry = "/signup") {
   return render(
     <HelmetProvider>
-      <MemoryRouter>
+      <MemoryRouter initialEntries={[initialEntry]}>
         <SignUpPage />
       </MemoryRouter>
     </HelmetProvider>
@@ -199,5 +199,34 @@ describe("SignUpPage", () => {
     expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
     expect(screen.getByRole("link", { name: /terms of service/i })).toHaveAttribute("href", "/terms");
     expect(screen.getByRole("link", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
+  });
+
+  it("carries returnTo/reason through to the sign-in link", () => {
+    renderPage("/signup?returnTo=%2Fitems%2Fadd&reason=create-content");
+    const link = screen.getByRole("link", { name: /sign in/i });
+    expect(link.getAttribute("href")).toContain("returnTo=%2Fitems%2Fadd");
+    expect(link.getAttribute("href")).toContain("reason=create-content");
+  });
+
+  it("carries returnTo/reason through to the post-confirmation login navigation", async () => {
+    mockSignup.mockResolvedValueOnce(undefined);
+    mockConfirmSignup.mockResolvedValueOnce(undefined);
+    renderPage("/signup?returnTo=%2Fitems%2Fadd&reason=create-content");
+    fillSignUpForm();
+    fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+    await waitFor(() => screen.getByPlaceholderText(/confirmation code/i));
+
+    fireEvent.change(screen.getByPlaceholderText(/confirmation code/i), {
+      target: { value: "123456" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /confirm/i }));
+
+    await waitFor(() => {
+      const navigatedTo = mockNavigate.mock.calls.at(-1)?.[0] as string;
+      expect(navigatedTo).toContain("/login");
+      expect(navigatedTo).toContain("returnTo=%2Fitems%2Fadd");
+      expect(navigatedTo).toContain("reason=create-content");
+    });
   });
 });
