@@ -6715,7 +6715,7 @@
                 "type": "null"
               },
               {
-                "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\r\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
+                "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
