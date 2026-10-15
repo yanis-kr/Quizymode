@@ -171,6 +171,81 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         pageView!.UserAgent.Should().HaveLength(512);
     }
 
+    [Fact]
+    public async Task HandleAsync_OrdinaryVisitor_IsNotInternal()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        var result = await TrackPageView.HandleAsync(
+            new TrackPageView.Request("/", string.Empty, "session-visitor"),
+            CreateHttpContext("198.51.100.40"),
+            DbContext,
+            _userContextMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task HandleAsync_AdminCaller_IsStoredAsInternal()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(true);
+        _userContextMock.SetupGet(context => context.UserId).Returns(Guid.NewGuid().ToString());
+        _userContextMock.SetupGet(context => context.IsAdmin).Returns(true);
+
+        var result = await TrackPageView.HandleAsync(
+            new TrackPageView.Request("/categories", string.Empty, "session-admin"),
+            CreateHttpContext("198.51.100.41"),
+            DbContext,
+            _userContextMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleAsync_UserFlaggedInternal_IsStoredAsInternal()
+    {
+        Guid userId = Guid.NewGuid();
+        DbContext.Users.Add(new User { Id = userId, Subject = "subject-internal", IsInternal = true });
+        await DbContext.SaveChangesAsync();
+
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(true);
+        _userContextMock.SetupGet(context => context.UserId).Returns(userId.ToString());
+
+        var result = await TrackPageView.HandleAsync(
+            new TrackPageView.Request("/collections", string.Empty, "session-internal-user"),
+            CreateHttpContext("198.51.100.42"),
+            DbContext,
+            _userContextMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleAsync_InternalBrowserMarker_IsStoredAsInternalForAnonymousVisitor()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        var result = await TrackPageView.HandleAsync(
+            new TrackPageView.Request("/", string.Empty, "session-marked", InternalBrowser: true),
+            CreateHttpContext("198.51.100.43"),
+            DbContext,
+            _userContextMock.Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        PageView pageView = await DbContext.PageViews.SingleAsync();
+        pageView.IsInternal.Should().BeTrue();
+        pageView.IsAuthenticated.Should().BeFalse();
+    }
+
     private static DefaultHttpContext CreateHttpContext(string ipAddress, string? userAgent = null)
     {
         DefaultHttpContext httpContext = new();

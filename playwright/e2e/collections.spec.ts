@@ -1,7 +1,7 @@
 /**
  * Collections E2E tests — AC 1.1 Creating / AC 1.3 Listing / AC 1.9 Discover
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 async function skipIfAnonymousCollectionsSession(
   page: import("@playwright/test").Page

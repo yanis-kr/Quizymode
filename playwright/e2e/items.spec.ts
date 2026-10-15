@@ -1,7 +1,7 @@
 /**
  * Items E2E tests — AC 2.3 Direct item access / AC 3.5 List Items view
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 function itemDetailLinks(page: import("@playwright/test").Page) {
   return page.locator('a[href^="/items/"][href*="?return="]');

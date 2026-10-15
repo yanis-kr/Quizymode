@@ -4,7 +4,7 @@
  * This file intentionally runs without a pre-authenticated session so it
  * can exercise the login flow from a cold start.
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 // Override project-level storageState so this file starts unauthenticated.
 test.use({ storageState: { cookies: [], origins: [] } });

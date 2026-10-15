@@ -1,0 +1,41 @@
+using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Models;
+
+namespace Quizymode.Api.Services;
+
+/// <summary>
+/// Session-level exclusion of internal traffic (admins, users flagged internal, and browsers
+/// carrying the internal marker) for every admin analytics report.
+/// </summary>
+/// <remarks>
+/// A session is internal when <em>any</em> of its hits is internal, so an anonymous visit that
+/// later signs in as an internal user is excluded in full. The user flag is joined at query time
+/// rather than copied onto hits, which makes flagging a user retroactive without rewriting rows.
+/// </remarks>
+internal static class InternalTrafficFilter
+{
+    /// <summary>
+    /// Session ids, among the sessions present in <paramref name="scope"/>, that contain at least one
+    /// internal hit anywhere in the table (not only inside the scope's time window).
+    /// </summary>
+    public static IQueryable<string> InternalSessionIds(ApplicationDbContext db, IQueryable<PageView> scope)
+    {
+        IQueryable<string> scopeSessionIds = scope.Select(pageView => pageView.SessionId);
+
+        return db.PageViews
+            .Where(pageView => scopeSessionIds.Contains(pageView.SessionId))
+            .Where(pageView =>
+                pageView.IsInternal ||
+                (pageView.UserId != null && db.Users.Any(user => user.Id == pageView.UserId && user.IsInternal)))
+            .Select(pageView => pageView.SessionId)
+            .Distinct();
+    }
+
+    /// <summary>Removes every hit that belongs to an internal session.</summary>
+    public static IQueryable<PageView> ExcludeInternalSessions(ApplicationDbContext db, IQueryable<PageView> query)
+    {
+        IQueryable<string> internalSessionIds = InternalSessionIds(db, query);
+
+        return query.Where(pageView => !internalSessionIds.Contains(pageView.SessionId));
+    }
+}

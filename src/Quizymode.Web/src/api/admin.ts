@@ -98,6 +98,9 @@ export interface PageViewAnalyticsSummary {
   anonymousSessions: number;
   botSessions: number;
   botsExcluded: boolean;
+  /** Sessions with any internal hit or an internal user; counted even when excluded. */
+  internalSessions: number;
+  internalExcluded: boolean;
 }
 
 export interface TopPageAnalyticsResponse {
@@ -165,6 +168,8 @@ export interface PageViewSessionsSummary {
   medianDurationSecondsEngaged: number;
   botSessions: number;
   botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
   byOutcome: SessionOutcomeStats[];
 }
 
@@ -201,6 +206,7 @@ export interface PageViewSessionResponse {
   /** Null for hits recorded before user-agent capture existed. */
   userAgent: string | null;
   isBot: boolean;
+  isInternal: boolean;
 }
 
 export interface PageViewSessionsResponse {
@@ -239,6 +245,7 @@ export interface PageViewSessionDetailResponse {
   userEmail: string | null;
   userAgent: string | null;
   isBot: boolean;
+  isInternal: boolean;
   steps: SessionJourneyStep[];
 }
 
@@ -254,6 +261,9 @@ export interface AdminUsersSummaryResponse {
   filteredUsers: number;
   usersWithActivityInWindow: number;
   usersWithoutActivityInWindow: number;
+  internalUsers: number;
+  internalSessions: number;
+  internalExcluded: boolean;
 }
 
 export interface AdminUserOverviewResponse {
@@ -266,6 +276,7 @@ export interface AdminUserOverviewResponse {
   totalPageViewsInWindow: number;
   lastOpenedUtc?: string | null;
   lastKnownCountry?: string | null;
+  isInternal: boolean;
 }
 
 export interface AdminUsersResponse {
@@ -283,6 +294,8 @@ export interface AdminUserActivitySummaryResponse {
   totalViews: number;
   uniqueUrls: number;
   lastOpenedUtc?: string | null;
+  internalSessions: number;
+  internalExcluded: boolean;
 }
 
 export interface AdminUserUrlHistoryResponse {
@@ -300,6 +313,7 @@ export interface AdminUserDetailResponse {
   email?: string | null;
   createdAt: string;
   lastLogin: string;
+  isInternal: boolean;
 }
 
 export interface AdminUserActivityResponse {
@@ -524,7 +538,8 @@ export const adminApi = {
     page: number = 1,
     pageSize: number = 25,
     topPagesLimit: number = 10,
-    includeBots: boolean = false
+    includeBots: boolean = false,
+    includeInternal: boolean = false
   ): Promise<PageViewAnalyticsResponse> => {
     const params: Record<string, string | number | boolean> = {
       days,
@@ -536,6 +551,9 @@ export const adminApi = {
     };
     if (pathContains && pathContains.trim().length > 0) {
       params.pathContains = pathContains.trim();
+    }
+    if (includeInternal) {
+      params.includeInternal = true;
     }
 
     const response = await apiClient.get<PageViewAnalyticsResponse>(
@@ -553,7 +571,8 @@ export const adminApi = {
     sortBy: SessionSortBy = "recent",
     page: number = 1,
     pageSize: number = 25,
-    landingPagesLimit: number = 10
+    landingPagesLimit: number = 10,
+    includeInternal: boolean = false
   ): Promise<PageViewSessionsResponse> => {
     const params: Record<string, string | number | boolean> = {
       days,
@@ -567,6 +586,9 @@ export const adminApi = {
     if (minPages && minPages > 1) {
       params.minPages = minPages;
     }
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
 
     const response = await apiClient.get<PageViewSessionsResponse>(
       "/admin/page-view-sessions",
@@ -576,11 +598,15 @@ export const adminApi = {
   },
 
   getPageViewSessionDetail: async (
-    sessionId: string
+    sessionId: string,
+    includeInternal: boolean = false
   ): Promise<PageViewSessionDetailResponse> => {
-    const response = await apiClient.get<PageViewSessionDetailResponse>(
-      `/admin/page-view-sessions/${encodeURIComponent(sessionId)}`
-    );
+    const url = `/admin/page-view-sessions/${encodeURIComponent(sessionId)}`;
+    const response = includeInternal
+      ? await apiClient.get<PageViewSessionDetailResponse>(url, {
+          params: { includeInternal: true },
+        })
+      : await apiClient.get<PageViewSessionDetailResponse>(url);
     return response.data;
   },
 
@@ -589,9 +615,10 @@ export const adminApi = {
     activityDays: number = 30,
     activityFilter: AdminUserActivityFilter = "all",
     page: number = 1,
-    pageSize: number = 25
+    pageSize: number = 25,
+    includeInternal: boolean = false
   ): Promise<AdminUsersResponse> => {
-    const params: Record<string, string | number> = {
+    const params: Record<string, string | number | boolean> = {
       activityDays,
       activityFilter,
       page,
@@ -599,6 +626,9 @@ export const adminApi = {
     };
     if (search && search.trim().length > 0) {
       params.search = search.trim();
+    }
+    if (includeInternal) {
+      params.includeInternal = true;
     }
 
     const response = await apiClient.get<AdminUsersResponse>("/admin/users", {
@@ -612,9 +642,10 @@ export const adminApi = {
     days: number = 30,
     urlContains?: string,
     page: number = 1,
-    pageSize: number = 25
+    pageSize: number = 25,
+    includeInternal: boolean = false
   ): Promise<AdminUserActivityResponse> => {
-    const params: Record<string, string | number> = {
+    const params: Record<string, string | number | boolean> = {
       days,
       page,
       pageSize,
@@ -622,10 +653,24 @@ export const adminApi = {
     if (urlContains && urlContains.trim().length > 0) {
       params.urlContains = urlContains.trim();
     }
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
 
     const response = await apiClient.get<AdminUserActivityResponse>(
       `/admin/users/${userId}/page-view-history`,
       { params }
+    );
+    return response.data;
+  },
+
+  setUserInternal: async (
+    userId: string,
+    isInternal: boolean
+  ): Promise<{ id: string; isInternal: boolean }> => {
+    const response = await apiClient.put<{ id: string; isInternal: boolean }>(
+      `/admin/users/${userId}/internal`,
+      { isInternal }
     );
     return response.data;
   },

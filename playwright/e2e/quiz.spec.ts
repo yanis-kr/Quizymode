@@ -1,7 +1,7 @@
 /**
  * Quiz E2E tests — AC 3.6 Flashcards and Quiz by category/keywords
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 /**
  * Navigate to Quiz mode for the first category on /categories that already has items.

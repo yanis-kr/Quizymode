@@ -16,7 +16,8 @@ public static class GetPageViewAnalytics
         int Page = 1,
         int PageSize = 25,
         int TopPagesLimit = 10,
-        bool IncludeBots = false);
+        bool IncludeBots = false,
+        bool IncludeInternal = false);
 
     public sealed record Response(
         SummaryResponse Summary,
@@ -38,7 +39,9 @@ public static class GetPageViewAnalytics
         int AuthenticatedSessions,
         int AnonymousSessions,
         int BotSessions,
-        bool BotsExcluded);
+        bool BotsExcluded,
+        int InternalSessions,
+        bool InternalExcluded);
 
     public sealed record TopPageResponse(
         string Path,
@@ -74,7 +77,7 @@ public static class GetPageViewAnalytics
             app.MapGet("admin/page-view-analytics", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get page-view analytics (Admin only)")
-                .WithDescription("Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic.")
+                .WithDescription("Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -88,11 +91,12 @@ public static class GetPageViewAnalytics
             int pageSize = 25,
             int topPagesLimit = 10,
             bool includeBots = false,
+            bool includeInternal = false,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            QueryRequest request = new(days, visitorType, pathContains, page, pageSize, topPagesLimit, includeBots);
+            QueryRequest request = new(days, visitorType, pathContains, page, pageSize, topPagesLimit, includeBots, includeInternal);
             Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -145,9 +149,18 @@ public static class GetPageViewAnalytics
             .Distinct()
             .CountAsync(cancellationToken);
 
+        // Mirrors the bot count: internal sessions stay visible as a number when excluded.
+        int internalSessions = await InternalTrafficFilter.InternalSessionIds(db, windowQuery)
+            .CountAsync(cancellationToken);
+
         IQueryable<PageView> query = request.IncludeBots
             ? windowQuery
             : windowQuery.Where(pageView => !pageView.IsBot);
+
+        if (!request.IncludeInternal)
+        {
+            query = InternalTrafficFilter.ExcludeInternalSessions(db, query);
+        }
 
         query = visitorFilter switch
         {
@@ -212,7 +225,9 @@ public static class GetPageViewAnalytics
             AuthenticatedSessions: authSessions,
             AnonymousSessions: anonSessions,
             BotSessions: botSessions,
-            BotsExcluded: !request.IncludeBots);
+            BotsExcluded: !request.IncludeBots,
+            InternalSessions: internalSessions,
+            InternalExcluded: !request.IncludeInternal);
 
         List<TopPageResponse> topPages = (await query
             .GroupBy(pageView => pageView.Path)

@@ -1,7 +1,7 @@
 /**
  * Categories E2E tests — AC 3.1 Listing categories / AC 3.4 Sets view
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 async function openFirstCategoryWithItems(page: import("@playwright/test").Page) {
   await page.goto("/categories");
