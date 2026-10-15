@@ -11,6 +11,25 @@ env:
   IMAGE_NAME: quizymode
 
 jobs:
+  automation-contract:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Pester 4.x (legacy Should syntax; Pester 5 removes it)
+        shell: powershell
+        run: |
+          if (-not (Get-Module -ListAvailable -Name Pester | Where-Object { $_.Version.Major -lt 5 })) {
+            Install-Module -Name Pester -RequiredVersion 4.10.1 -Force -SkipPublisherCheck -Scope CurrentUser
+          }
+
+      - name: Run automation contract tests
+        shell: powershell
+        run: .\scripts\automation\Run-Tests.ps1
+
   build-test-publish:
     runs-on: ubuntu-latest
     permissions:
@@ -110,6 +129,12 @@ jobs:
               const existing = comments.find(comment =>
                 comment.user?.type === 'Bot' && comment.body?.includes(marker)
               );
+
+              const normalize = text => (text ?? '').replace(/\r\n/g, '\n').trim();
+              if (existing && normalize(existing.body) === normalize(body)) {
+                console.log(`Comment ${existing.id} already up to date; not rewriting it.`);
+                return;
+              }
 
               if (existing) {
                 await github.rest.issues.updateComment({
@@ -214,6 +239,12 @@ jobs:
               const existing = comments.find(comment =>
                 comment.user?.type === 'Bot' && comment.body?.includes(marker)
               );
+
+              const normalize = text => (text ?? '').replace(/\r\n/g, '\n').trim();
+              if (existing && normalize(existing.body) === normalize(body)) {
+                console.log(`Comment ${existing.id} already up to date; not rewriting it.`);
+                return;
+              }
 
               if (existing) {
                 await github.rest.issues.updateComment({
