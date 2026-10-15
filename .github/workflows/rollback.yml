@@ -1,0 +1,115 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      previous_sha:
+        description: Previously deployed main SHA to restore
+        required: true
+        type: string
+      failed_sha:
+        description: Failed merge SHA being rolled back
+        required: true
+        type: string
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  validate-input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate immutable SHAs
+        env:
+          PREVIOUS_SHA: ${{ inputs.previous_sha }}
+          FAILED_SHA: ${{ inputs.failed_sha }}
+        run: |
+          [[ "$PREVIOUS_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$FAILED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [ "$PREVIOUS_SHA" != "$FAILED_SHA" ]
+
+  rollback-container:
+    needs: validate-input
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Read current environment
+        run: |
+          aws lightsail get-container-service-deployments +            --service-name container-service-1 +            --query 'deployments[0].containers.api.environment' +            --output json > /tmp/env.json
+
+      - name: Restore previous API image
+        env:
+          IMAGE: ghcr.io/yanis-kr/quizymode:${{ inputs.previous_sha }}
+        run: |
+          CONTAINERS=$(jq -n +            --arg image "$IMAGE" +            --slurpfile env /tmp/env.json +            '{api: {image: $image, environment: $env[0], ports: {"8080": "HTTP"}}}')
+          aws lightsail create-container-service-deployment +            --service-name container-service-1 +            --containers "$CONTAINERS" +            --public-endpoint '{
+              "containerName": "api",
+              "containerPort": 8080,
+              "healthCheck": {
+                "path": "/health",
+                "intervalSeconds": 10,
+                "timeoutSeconds": 5,
+                "successCodes": "200-299",
+                "unhealthyThreshold": 2,
+                "healthyThreshold": 2
+              }
+            }'
+
+      - name: Wait for API rollback
+        run: |
+          for i in $(seq 1 40); do
+            STATE=$(aws lightsail get-container-service-deployments +              --service-name container-service-1 +              --query 'deployments[0].state' --output text)
+            echo "[$i/40] state=$STATE"
+            [ "$STATE" = "ACTIVE" ] && exit 0
+            [ "$STATE" = "FAILED" ] && exit 1
+            sleep 15
+          done
+          exit 1
+
+  rollback-ui:
+    needs: rollback-container
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout previous release
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.previous_sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/Quizymode.Web/package-lock.json
+
+      - name: Build previous UI
+        working-directory: src/Quizymode.Web
+        env:
+          VITE_GIT_SHA: ${{ inputs.previous_sha }}
+        run: |
+          npm ci
+          npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Restore S3 site
+        working-directory: src/Quizymode.Web/dist
+        run: |
+          aws s3 sync . s3://quizymode-web/ --delete --exact-timestamps
+          aws cloudfront create-invalidation +            --distribution-id EH1DS9REH8KR5 +            --paths "/*"
