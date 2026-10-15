@@ -15,7 +15,8 @@
     </filter>
   </defs>
 
-  <!-- Background -->
+  <!-- Background (solid base keeps the semi-transparent gradient stop dark on any canvas) -->
+  <rect width="1200" height="630" fill="#0f172a" />
   <rect width="1200" height="630" fill="url(#bg)" />
 
   <!-- Decorative glows -->
@@ -70,7 +71,7 @@
     font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
     font-size="24"
     font-weight="500"
-    fill="#475569"
+    fill="#94a3b8"
   >www.quizymode.com</text>
 
   <!-- Right-side decorative card mock -->
