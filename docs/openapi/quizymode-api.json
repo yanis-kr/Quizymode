@@ -783,7 +783,7 @@
           "Admin"
         ],
         "summary": "Get the conversion event funnel (Admin only)",
-        "description": "Returns unique sessions and step-to-step conversion for each allowlisted funnel event in the selected window. Bot sessions are excluded unless includeBots=true.",
+        "description": "Returns unique sessions and step-to-step conversion for each allowlisted funnel event in the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
         "parameters": [
           {
             "name": "days",
@@ -795,6 +795,14 @@
           },
           {
             "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
             "in": "query",
             "schema": {
               "default": false,
@@ -5195,6 +5203,8 @@
           "sessionsWithEvents",
           "botSessions",
           "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
           "steps"
         ],
         "type": "object",
@@ -5212,6 +5222,12 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
             "$ref": "#/components/schemas/System.Boolean"
           },
           "steps": {
@@ -5244,7 +5260,7 @@
                 "type": "null"
               },
               {
-                "description": "Unique sessions at this step as a share of the previous step's; null for the first step or\r\nwhen the previous step has no sessions. Steps are counted independently, so a later step can\r\nexceed an earlier one (for example sign-ins by returning users who never saw a prompt).",
+                "description": "Unique sessions at this step as a share of the previous step's; null for the first step or\nwhen the previous step has no sessions. Steps are counted independently, so a later step can\nexceed an earlier one (for example sign-ins by returning users who never saw a prompt).",
                 "$ref": "#/components/schemas/System.NullableOfSystem.Double"
               }
             ]
@@ -7089,7 +7105,7 @@
                 "type": "null"
               },
               {
-                "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\r\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
+                "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
