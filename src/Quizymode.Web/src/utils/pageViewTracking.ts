@@ -1,5 +1,10 @@
 const SESSION_STORAGE_KEY = "quizymode.analytics.session-id";
 const LAST_VIEW_STORAGE_KEY = "quizymode.analytics.last-view";
+/**
+ * Set by an admin ("Exclude this browser from analytics") and by Playwright runs.
+ * Lives in localStorage so it survives tabs and sign-outs on that device.
+ */
+export const INTERNAL_BROWSER_STORAGE_KEY = "quizymode.analytics.internal-browser";
 const DUPLICATE_WINDOW_MS = 1500;
 
 const fallbackSessionId = createSessionId();
@@ -45,6 +50,31 @@ export function shouldTrackPageView(path: string, queryString: string): boolean 
   }
 
   return true;
+}
+
+export function isInternalBrowser(): boolean {
+  try {
+    return window.localStorage.getItem(INTERNAL_BROWSER_STORAGE_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
+export function setInternalBrowser(isInternal: boolean): void {
+  try {
+    if (isInternal) {
+      window.localStorage.setItem(INTERNAL_BROWSER_STORAGE_KEY, "true");
+    } else {
+      window.localStorage.removeItem(INTERNAL_BROWSER_STORAGE_KEY);
+    }
+  } catch {
+    // Storage blocked: the browser simply stays unmarked.
+  }
+}
+
+/** Admin screens are never recorded; they would only measure the admin. */
+export function isAdminPath(path: string): boolean {
+  return path === "/admin" || path.startsWith("/admin/");
 }
 
 function createSessionId(): string {

@@ -13,7 +13,7 @@ namespace Quizymode.Api.Features.Admin;
 /// </summary>
 public static class GetPageViewSessionDetail
 {
-    public sealed record QueryRequest(string SessionId);
+    public sealed record QueryRequest(string SessionId, bool IncludeInternal = false);
 
     public sealed record Response(
         string SessionId,
@@ -29,6 +29,7 @@ public static class GetPageViewSessionDetail
         string? UserEmail,
         string? UserAgent,
         bool IsBot,
+        bool IsInternal,
         List<JourneyStepResponse> Steps);
 
     public sealed record JourneyStepResponse(
@@ -47,7 +48,7 @@ public static class GetPageViewSessionDetail
             app.MapGet("admin/page-view-sessions/{sessionId}", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get the ordered page journey for one session (Admin only)")
-                .WithDescription("Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded.")
+                .WithDescription("Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest)
@@ -56,11 +57,13 @@ public static class GetPageViewSessionDetail
 
         private static async Task<IResult> Handler(
             string sessionId,
+            bool? includeInternal,
             ApplicationDbContext db,
             IIpGeolocationService geoService,
             CancellationToken cancellationToken)
         {
-            Result<Response> result = await HandleAsync(new QueryRequest(sessionId), db, geoService, cancellationToken);
+            Result<Response> result = await HandleAsync(
+                new QueryRequest(sessionId, includeInternal ?? false), db, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -92,6 +95,25 @@ public static class GetPageViewSessionDetail
         {
             return Result.Failure<Response>(
                 Error.NotFound("Admin.PageViewSessionDetail.NotFound", $"No page views were found for session '{sessionId}'."));
+        }
+
+        List<Guid> sessionUserIds = hits
+            .Where(hit => hit.UserId.HasValue)
+            .Select(hit => hit.UserId!.Value)
+            .Distinct()
+            .ToList();
+
+        bool isInternal = hits.Any(hit => hit.IsInternal) ||
+            (sessionUserIds.Count > 0 && await db.Users
+                .AsNoTracking()
+                .AnyAsync(user => sessionUserIds.Contains(user.Id) && user.IsInternal, cancellationToken));
+
+        if (isInternal && !request.IncludeInternal)
+        {
+            return Result.Failure<Response>(
+                Error.NotFound(
+                    "Admin.PageViewSessionDetail.InternalSession",
+                    $"Session '{sessionId}' is internal traffic and is excluded. Pass includeInternal=true to view it."));
         }
 
         PageView firstHit = hits[0];
@@ -144,6 +166,7 @@ public static class GetPageViewSessionDetail
             UserEmail: userEmail,
             UserAgent: firstHit.UserAgent,
             IsBot: firstHit.IsBot,
+            IsInternal: isInternal,
             Steps: steps));
     }
 }

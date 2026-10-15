@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
@@ -8,7 +9,11 @@ namespace Quizymode.Api.Features.Analytics;
 
 public static class TrackPageView
 {
-    public sealed record Request(string Path, string? QueryString, string SessionId);
+    /// <param name="InternalBrowser">
+    /// Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).
+    /// Trusting it is safe because it can only remove the sender's own traffic from reports.
+    /// </param>
+    public sealed record Request(string Path, string? QueryString, string SessionId, bool? InternalBrowser = null);
 
     public sealed record Response(string Id, DateTime CreatedUtc);
 
@@ -19,7 +24,7 @@ public static class TrackPageView
             app.MapPost("analytics/page-views", Handler)
                 .WithTags("Analytics")
                 .WithSummary("Track a SPA page view")
-                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit.")
+                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true.")
                 .AllowAnonymous()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -95,6 +100,14 @@ public static class TrackPageView
 
         string? userAgent = RequestMetadataHelper.GetUserAgent(httpContext);
 
+        bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
+        if (!isInternal && userId.HasValue)
+        {
+            isInternal = await db.Users
+                .AsNoTracking()
+                .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
+        }
+
         PageView pageView = new()
         {
             Id = Guid.NewGuid(),
@@ -107,6 +120,7 @@ public static class TrackPageView
             Url = url,
             UserAgent = userAgent,
             IsBot = BotUserAgentDetector.IsBot(userAgent),
+            IsInternal = isInternal,
             CreatedUtc = DateTime.UtcNow
         };
 

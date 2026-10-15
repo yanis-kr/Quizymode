@@ -20,6 +20,7 @@ public enum AuditAction
     IdeaProfanityRejected,
     IdeaCommentCreated,
     IdeaCommentUpdated,
-    IdeaCommentDeleted
+    IdeaCommentDeleted,
+    UserInternalFlagChanged
 }
 

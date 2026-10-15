@@ -24,7 +24,8 @@ public static class GetPageViewSessions
         string? SortBy = null,
         int Page = 1,
         int PageSize = 25,
-        int LandingPagesLimit = 10);
+        int LandingPagesLimit = 10,
+        bool IncludeInternal = false);
 
     public sealed record Response(
         SummaryResponse Summary,
@@ -49,6 +50,8 @@ public static class GetPageViewSessions
         double MedianDurationSecondsEngaged,
         int BotSessions,
         bool BotsExcluded,
+        int InternalSessions,
+        bool InternalExcluded,
         List<OutcomeStatsResponse> ByOutcome);
 
     public sealed record OutcomeStatsResponse(
@@ -88,7 +91,8 @@ public static class GetPageViewSessions
         string? Country,
         string? UserEmail,
         string? UserAgent,
-        bool IsBot);
+        bool IsBot,
+        bool IsInternal);
 
     private enum OutcomeFilter
     {
@@ -116,7 +120,7 @@ public static class GetPageViewSessions
             app.MapGet("admin/page-view-sessions", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get session-level page-view engagement (Admin only)")
-                .WithDescription("Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors.")
+                .WithDescription("Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -131,11 +135,12 @@ public static class GetPageViewSessions
             int page = 1,
             int pageSize = 25,
             int landingPagesLimit = 10,
+            bool includeInternal = false,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            QueryRequest request = new(days, outcome, minPages, includeBots, sortBy, page, pageSize, landingPagesLimit);
+            QueryRequest request = new(days, outcome, minPages, includeBots, sortBy, page, pageSize, landingPagesLimit, includeInternal);
             Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -189,9 +194,20 @@ public static class GetPageViewSessions
             .Distinct()
             .CountAsync(cancellationToken);
 
+        // Internal sessions (admins, flagged users, marked browsers) are counted like bots so the
+        // excluded share stays visible; the id list is small and also flags rows when included.
+        HashSet<string> internalSessionIds = (await InternalTrafficFilter.InternalSessionIds(db, windowQuery)
+            .ToListAsync(cancellationToken))
+            .ToHashSet(StringComparer.Ordinal);
+
         IQueryable<PageView> baseQuery = request.IncludeBots
             ? windowQuery
             : windowQuery.Where(pageView => !pageView.IsBot);
+
+        if (!request.IncludeInternal)
+        {
+            baseQuery = InternalTrafficFilter.ExcludeInternalSessions(db, baseQuery);
+        }
 
         int sessionCount = await baseQuery
             .Select(pageView => pageView.SessionId)
@@ -305,7 +321,9 @@ public static class GetPageViewSessions
             windowEndUtc,
             sessions,
             botSessions,
-            botsExcluded: !request.IncludeBots);
+            botsExcluded: !request.IncludeBots,
+            internalSessions: internalSessionIds.Count,
+            internalExcluded: !request.IncludeInternal);
 
         List<DepthBucketResponse> depthBuckets = BuildDepthBuckets(sessions);
         List<LandingPageResponse> landingPages = BuildLandingPages(sessions, landingPagesLimit);
@@ -385,7 +403,8 @@ public static class GetPageViewSessions
                     ? email
                     : null,
                 session.Boundary.UserAgent,
-                session.Boundary.IsBot))
+                session.Boundary.IsBot,
+                internalSessionIds.Contains(session.SessionId)))
             .ToList();
 
         return Result.Success(new Response(
@@ -404,7 +423,9 @@ public static class GetPageViewSessions
         DateTime windowEndUtc,
         List<SessionRow> sessions,
         int botSessions,
-        bool botsExcluded)
+        bool botsExcluded,
+        int internalSessions,
+        bool internalExcluded)
     {
         int totalSessions = sessions.Count;
         int totalPageHits = sessions.Sum(session => session.PageHits);
@@ -448,6 +469,8 @@ public static class GetPageViewSessions
             MedianDurationSecondsEngaged: Median(engagedDurations),
             BotSessions: botSessions,
             BotsExcluded: botsExcluded,
+            InternalSessions: internalSessions,
+            InternalExcluded: internalExcluded,
             ByOutcome: byOutcome);
     }
 

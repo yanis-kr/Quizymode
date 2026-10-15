@@ -22,5 +22,11 @@ public sealed class PageView
 
     public bool IsBot { get; set; }
 
+    /// <summary>
+    /// True when the hit came from an admin, a user flagged internal, or a browser carrying the
+    /// internal-browser marker. Reports exclude any session containing an internal hit.
+    /// </summary>
+    public bool IsInternal { get; set; }
+
     public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
 }

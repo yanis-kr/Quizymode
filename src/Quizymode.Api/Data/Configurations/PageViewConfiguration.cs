@@ -47,6 +47,10 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(pageView => pageView.IsInternal)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(pageView => pageView.CreatedUtc)
             .IsRequired();
 
@@ -56,6 +60,7 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
         builder.HasIndex(pageView => pageView.UserId);
         builder.HasIndex(pageView => pageView.IsAuthenticated);
         builder.HasIndex(pageView => pageView.IsBot);
+        builder.HasIndex(pageView => pageView.IsInternal);
         builder.HasIndex(pageView => new { pageView.Path, pageView.CreatedUtc });
         builder.HasIndex(pageView => new { pageView.SessionId, pageView.CreatedUtc });
     }

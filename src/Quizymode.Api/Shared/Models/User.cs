@@ -14,4 +14,10 @@ public sealed class User
     public DateTime LastLogin { get; set; } = DateTime.UtcNow;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    /// <summary>
+    /// Marks staff/test accounts whose traffic is excluded from analytics. Evaluated at query
+    /// time as well as write time, so flagging a user retroactively hides their past sessions.
+    /// </summary>
+    public bool IsInternal { get; set; }
 }
