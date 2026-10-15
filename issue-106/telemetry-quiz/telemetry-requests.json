@@ -1,0 +1,70 @@
+{
+  "outcome": "ok",
+  "sessionId": "e53d9062-04a1-4eb4-a32b-2eda0bf163e7",
+  "captured": [
+    {
+      "status": 202,
+      "request": {
+        "sessionId": "e53d9062-04a1-4eb4-a32b-2eda0bf163e7",
+        "events": [
+          {
+            "name": "quick_quiz_started",
+            "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5",
+            "contextType": "home",
+            "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+            "clientEventId": "dcae82e6-0010-403d-95ff-08f39946f0e6",
+            "runId": "dcae82e6-0010-403d-95ff-08f39946f0e6",
+            "total": 5
+          }
+        ]
+      },
+      "response": {
+        "accepted": 1,
+        "duplicates": 0
+      }
+    },
+    {
+      "status": 202,
+      "request": {
+        "sessionId": "e53d9062-04a1-4eb4-a32b-2eda0bf163e7",
+        "events": [
+          {
+            "name": "quiz_completed",
+            "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+            "contextType": "home",
+            "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+            "clientEventId": "dcae82e6-0010-403d-95ff-08f39946f0e6",
+            "runId": "dcae82e6-0010-403d-95ff-08f39946f0e6",
+            "score": 3,
+            "total": 5
+          }
+        ]
+      },
+      "response": {
+        "accepted": 1,
+        "duplicates": 0
+      }
+    },
+    {
+      "status": 202,
+      "request": {
+        "sessionId": "e53d9062-04a1-4eb4-a32b-2eda0bf163e7",
+        "events": [
+          {
+            "name": "quick_quiz_started",
+            "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5",
+            "contextType": "home",
+            "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+            "clientEventId": "8886dca4-7522-4e7c-b1b5-e64a2fef61d6",
+            "runId": "8886dca4-7522-4e7c-b1b5-e64a2fef61d6",
+            "total": 5
+          }
+        ]
+      },
+      "response": {
+        "accepted": 1,
+        "duplicates": 0
+      }
+    }
+  ]
+}

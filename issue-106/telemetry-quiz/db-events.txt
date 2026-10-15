@@ -1,0 +1,8 @@
+EventName | run | Score | Total | ContextType | ctx_id | Path | authed | IsInternal | IsBot
+quick_quiz_started | dcae82e6 |  | 5 | home | 8f9b8c14 | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5 | f | f | f
+quiz_completed | dcae82e6 | 3 | 5 | home | 8f9b8c14 | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9 | f | f | f
+quick_quiz_started | 8886dca4 |  | 5 | home | 8f9b8c14 | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5 | f | f | f
+(3 rows)
+page_views_same_session
+8
+(1 row)
