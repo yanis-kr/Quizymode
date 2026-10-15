@@ -85,7 +85,12 @@ if ($artifactDiffDetected -and -not [string]::IsNullOrWhiteSpace($DiffOutputPath
     }
 
     # utf8NoBOM is not available on Windows PowerShell 5.1, so write the bytes directly.
-    $resolvedDiffPath = [System.IO.Path]::GetFullPath((Join-Path (Get-Location).Path $DiffOutputPath))
+    $resolvedDiffPath = if ([System.IO.Path]::IsPathRooted($DiffOutputPath)) {
+        $DiffOutputPath
+    }
+    else {
+        Join-Path (Get-Location).Path $DiffOutputPath
+    }
     [System.IO.File]::WriteAllText($resolvedDiffPath, $gitDiff.StdOut + "`n", [System.Text.UTF8Encoding]::new($false))
 }
 
