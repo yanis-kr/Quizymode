@@ -249,6 +249,26 @@ export interface PageViewSessionDetailResponse {
   steps: SessionJourneyStep[];
 }
 
+export interface ConversionFunnelStep {
+  eventName: string;
+  sessions: number;
+  events: number;
+  /** Null for the first step or when the previous step had no sessions. */
+  conversionFromPreviousPercent: number | null;
+  conversionFromFirstPercent: number | null;
+}
+
+export interface ConversionFunnelResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  sessionsWithEvents: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  steps: ConversionFunnelStep[];
+}
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
@@ -607,6 +627,23 @@ export const adminApi = {
           params: { includeInternal: true },
         })
       : await apiClient.get<PageViewSessionDetailResponse>(url);
+    return response.data;
+  },
+
+  getConversionFunnel: async (
+    days: number = 7,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<ConversionFunnelResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<ConversionFunnelResponse>(
+      "/admin/analytics/funnel",
+      { params }
+    );
     return response.data;
   },
 

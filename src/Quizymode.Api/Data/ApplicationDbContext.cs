@@ -44,6 +44,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<PageView> PageViews => Set<PageView>();
 
+    public DbSet<AnalyticsEvent> AnalyticsEvents => Set<AnalyticsEvent>();
+
     public DbSet<Keyword> Keywords => Set<Keyword>();
 
     public DbSet<ItemKeyword> ItemKeywords => Set<ItemKeyword>();

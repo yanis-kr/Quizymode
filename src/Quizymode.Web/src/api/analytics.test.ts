@@ -28,4 +28,14 @@ describe("analyticsApi", () => {
     mockPost.mockResolvedValueOnce({});
     await expect(analyticsApi.trackPageView({ path: "/x", sessionId: "s" })).resolves.not.toThrow();
   });
+
+  it("trackEvents calls POST /analytics/events with the batch", async () => {
+    mockPost.mockResolvedValueOnce({});
+    const request = {
+      sessionId: "sess-3",
+      events: [{ name: "quiz_completed", path: "/quiz", runId: "r1", score: 3, total: 5 }],
+    };
+    await analyticsApi.trackEvents(request);
+    expect(mockPost).toHaveBeenCalledWith("/analytics/events", request);
+  });
 });

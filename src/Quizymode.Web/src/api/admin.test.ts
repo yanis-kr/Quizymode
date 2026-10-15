@@ -163,6 +163,24 @@ describe("adminApi", () => {
     expect(result).toEqual(data);
   });
 
+  it("getConversionFunnel calls GET /admin/analytics/funnel with window and bot flag", async () => {
+    const data = { steps: [] };
+    mockGet.mockResolvedValueOnce({ data });
+
+    const result = await adminApi.getConversionFunnel(30, true);
+
+    expect(mockGet).toHaveBeenCalledWith("/admin/analytics/funnel", {
+      params: { days: 30, includeBots: true },
+    });
+    expect(result).toEqual(data);
+
+    mockGet.mockResolvedValueOnce({ data });
+    await adminApi.getConversionFunnel(30, false, true);
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/analytics/funnel", {
+      params: { days: 30, includeBots: false, includeInternal: true },
+    });
+  });
+
   it("sends includeInternal only when internal traffic is requested", async () => {
     mockGet.mockResolvedValue({ data: {} });
 

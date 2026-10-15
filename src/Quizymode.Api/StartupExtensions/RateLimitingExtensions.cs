@@ -27,6 +27,21 @@ internal static partial class StartupExtensions
                 }
             };
 
+            // Generous enough for a full study run plus signup flow; batches of up to 25 events count once.
+            options.AddPolicy("analytics-events", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 120,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("feedback-submissions", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -116,6 +131,11 @@ internal static partial class StartupExtensions
     private static string GetRejectionDetail(PathString requestPath)
     {
         string path = requestPath.Value ?? string.Empty;
+        if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many analytics events. Please slow down.";
+        }
+
         if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/comments", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many idea comments. Please wait a few minutes and try again.";
