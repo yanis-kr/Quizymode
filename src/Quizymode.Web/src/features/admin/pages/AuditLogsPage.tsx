@@ -27,6 +27,7 @@ const AUDIT_ACTIONS = [
   'IdeaCommentCreated',
   'IdeaCommentUpdated',
   'IdeaCommentDeleted',
+  'UserInternalFlagChanged',
 ] as const;
 
 type AuditAction = typeof AUDIT_ACTIONS[number];
@@ -69,6 +70,7 @@ const AuditLogsPage = () => {
       16: 'IdeaCommentCreated',
       17: 'IdeaCommentUpdated',
       18: 'IdeaCommentDeleted',
+      19: 'UserInternalFlagChanged',
     };
     
     return actionMap[action] || `Unknown (${action})`;

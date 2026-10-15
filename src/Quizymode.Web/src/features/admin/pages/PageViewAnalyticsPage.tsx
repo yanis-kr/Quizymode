@@ -10,6 +10,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
 import FunnelTab from "../components/FunnelTab";
+import InternalBrowserToggle from "../components/InternalBrowserToggle";
 import SessionsTab from "../components/SessionsTab";
 
 const RANGE_OPTIONS: Array<{ label: string; days: number }> = [
@@ -41,6 +42,7 @@ const PageViewAnalyticsPage = () => {
   const [tab, setTab] = useState<AnalyticsTab>("sessions");
   const [days, setDays] = useState(7);
   const [includeBots, setIncludeBots] = useState(false);
+  const [includeInternal, setIncludeInternal] = useState(false);
   const [visitorType, setVisitorType] = useState<PageViewVisitorType>("all");
   const [pathInput, setPathInput] = useState("");
   const [pathContains, setPathContains] = useState("");
@@ -55,6 +57,7 @@ const PageViewAnalyticsPage = () => {
       pathContains,
       page,
       includeBots,
+      includeInternal,
     ],
     queryFn: () =>
       adminApi.getPageViewAnalytics(
@@ -64,7 +67,8 @@ const PageViewAnalyticsPage = () => {
         page,
         PAGE_SIZE,
         TOP_PAGES_LIMIT,
-        includeBots
+        includeBots,
+        includeInternal
       ),
     enabled: !!isAuthenticated && !!isAdmin && tab === "pages",
   });
@@ -112,15 +116,19 @@ const PageViewAnalyticsPage = () => {
           <p className="mt-2 max-w-3xl text-sm text-gray-600">
             <strong>Sessions</strong> answers whether visitors stayed and explored
             or landed and left. <strong>Pages</strong> ranks the URLs themselves.
-            Bots are excluded from both unless you opt in.
+            Bots and internal traffic (admins, users flagged internal, and
+            excluded browsers) are left out of both unless you opt in.
           </p>
         </div>
-        {summary && (
-          <div className="rounded-2xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm text-indigo-900">
-            Window: {formatDateTime(summary.windowStartUtc)} to{" "}
-            {formatDateTime(summary.windowEndUtc)}
-          </div>
-        )}
+        <div className="flex flex-col gap-3">
+          {summary && (
+            <div className="rounded-2xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm text-indigo-900">
+              Window: {formatDateTime(summary.windowStartUtc)} to{" "}
+              {formatDateTime(summary.windowEndUtc)}
+            </div>
+          )}
+          <InternalBrowserToggle />
+        </div>
       </div>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -185,6 +193,19 @@ const PageViewAnalyticsPage = () => {
             />
             Include bots and crawlers
           </label>
+
+          <label className="flex items-center gap-2 text-sm text-slate-700">
+            <input
+              type="checkbox"
+              checked={includeInternal}
+              onChange={(event) => {
+                setIncludeInternal(event.target.checked);
+                setPage(1);
+              }}
+              className="h-4 w-4 rounded border-slate-300"
+            />
+            Include internal traffic
+          </label>
         </div>
       </section>
 
@@ -192,6 +213,7 @@ const PageViewAnalyticsPage = () => {
         <SessionsTab
           days={days}
           includeBots={includeBots}
+          includeInternal={includeInternal}
           formatDateTime={formatDateTime}
         />
       )}
@@ -266,6 +288,14 @@ const PageViewAnalyticsPage = () => {
           </form>
         </div>
       </section>
+
+      {summary?.internalExcluded && summary.internalSessions > 0 && (
+        <p className="text-sm text-slate-500">
+          <span className="font-medium">{summary.internalSessions}</span> internal
+          session{summary.internalSessions === 1 ? " was" : "s were"} excluded from
+          these figures.
+        </p>
+      )}
 
       {summary && (
         <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">

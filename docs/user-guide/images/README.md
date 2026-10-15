@@ -4,7 +4,7 @@ Add **PNG** or **WebP** images here so the figures in [`../README.md`](../README
 
 | File | What to capture | Suggested place to shoot |
 |------|-----------------|-------------------------|
-| `01-home.png` | Hero (“Build, share…”), **Explore Categories** grid, optional **Featured sets** / **Try Sample Collection** button. | `https://www.quizymode.com/` |
+| `01-home.png` | Five-question quick-quiz hero, **Categories** carousel, and optional featured/public collection lanes. | `https://www.quizymode.com/` |
 | `02-categories.png` | Categories page with **mode tabs** (Sets / List / Flashcards / Quiz) visible; pick a category that shows both nav and content. | `/categories` or a deeper path like `/categories/sports` |
 | `03-collections.png` | Either **collections list** (`/collections`) or a **collection detail** with items and study links. | Signed in; `/collections` or `/collections/{id}/...` |
 | `04-add-items-hub.png` | **Add Items** hub with category/keyword scope and links to create / bulk / upload. | Signed in; `/items/add` |

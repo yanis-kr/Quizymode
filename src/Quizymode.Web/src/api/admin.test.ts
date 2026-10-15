@@ -175,6 +175,39 @@ describe("adminApi", () => {
     expect(result).toEqual(data);
   });
 
+  it("sends includeInternal only when internal traffic is requested", async () => {
+    mockGet.mockResolvedValue({ data: {} });
+
+    await adminApi.getPageViewSessions(7);
+    expect(mockGet.mock.calls[0][1].params).not.toHaveProperty("includeInternal");
+
+    await adminApi.getPageViewSessions(7, "all", undefined, false, "recent", 1, 25, 10, true);
+    expect(mockGet.mock.calls[1][1].params.includeInternal).toBe(true);
+
+    await adminApi.getPageViewAnalytics(7, "all", undefined, 1, 25, 10, false, true);
+    expect(mockGet.mock.calls[2][1].params.includeInternal).toBe(true);
+
+    await adminApi.getPageViewSessionDetail("s-1", true);
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/page-view-sessions/s-1", {
+      params: { includeInternal: true },
+    });
+
+    await adminApi.getUsers(undefined, 30, "all", 1, 25, true);
+    expect(mockGet.mock.calls[4][1].params.includeInternal).toBe(true);
+
+    await adminApi.getUserActivity("u-1", 30, undefined, 1, 25, true);
+    expect(mockGet.mock.calls[5][1].params.includeInternal).toBe(true);
+  });
+
+  it("setUserInternal calls PUT /admin/users/{id}/internal", async () => {
+    mockPut.mockResolvedValueOnce({ data: { id: "u-1", isInternal: true } });
+
+    const result = await adminApi.setUserInternal("u-1", true);
+
+    expect(mockPut).toHaveBeenCalledWith("/admin/users/u-1/internal", { isInternal: true });
+    expect(result).toEqual({ id: "u-1", isInternal: true });
+  });
+
   it("getUsers calls GET /admin/users with defaults", async () => {
     const data = { summary: {}, users: [], totalCount: 0, page: 1, pageSize: 25, totalPages: 0 };
     mockGet.mockResolvedValueOnce({ data });

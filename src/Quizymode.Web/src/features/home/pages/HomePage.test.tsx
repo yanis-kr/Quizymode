@@ -5,6 +5,8 @@ import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./HomePage";
 import { categoriesApi } from "@/api/categories";
+import { collectionsApi } from "@/api/collections";
+import { featuredApi } from "@/api/featured";
 
 vi.mock("@/api/categories", () => ({
   categoriesApi: {
@@ -14,7 +16,13 @@ vi.mock("@/api/categories", () => ({
 
 vi.mock("@/api/collections", () => ({
   collectionsApi: {
-    discover: vi.fn().mockResolvedValue({ items: [], totalCount: 0 }),
+    discover: vi.fn(),
+  },
+}));
+
+vi.mock("@/api/featured", () => ({
+  featuredApi: {
+    get: vi.fn(),
   },
 }));
 
@@ -47,27 +55,80 @@ function renderPage() {
 describe("HomePage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({ items: [], totalCount: 0 });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
   });
 
-  it("renders the static homepage catalog even when categories API fails", async () => {
+  it("offers the existing five-question public quiz without requiring an account", async () => {
+    renderPage();
+
+    expect(
+      screen.getByRole("heading", {
+        name: /learn something new in five questions/i,
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/no account needed/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /play a 5-question quiz/i })).toHaveAttribute(
+      "href",
+      "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts"
+    );
+
+    await waitFor(() => {
+      expect(document.title).toMatch(/^Quizymode(?: \| Quizymode)?$/);
+      expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
+        "content",
+        expect.stringMatching(/five-question quiz with no account needed/i)
+      );
+    });
+  });
+
+  it("keeps the hero and category browsing usable when categories fail", async () => {
     vi.mocked(categoriesApi.getAll).mockRejectedValueOnce(new Error("db down"));
 
     renderPage();
 
     expect(
       screen.getByRole("heading", {
-        name: /build, share, and study your own quizzes/i,
+        name: /learn something new in five questions/i,
       })
     ).toBeInTheDocument();
     expect(screen.getByText(/categories/i, { selector: "div" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /exams/i })).toHaveAttribute("href", "/categories/exams");
-    expect(screen.getByRole("link", { name: /try sample collection/i })).toHaveAttribute(
-      "href",
-      "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/sample+collection"
-    );
+    expect(screen.getByRole("link", { name: /play a 5-question quiz/i })).toBeInTheDocument();
 
     await waitFor(() => expect(categoriesApi.getAll).toHaveBeenCalledTimes(1));
     expect(screen.queryByText("42 items")).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ["featured sets", () => vi.mocked(featuredApi.get).mockRejectedValueOnce(new Error("featured down"))],
+    ["public collections", () => vi.mocked(collectionsApi.discover).mockRejectedValueOnce(new Error("collections down"))],
+    [
+      "all home queries",
+      () => {
+        vi.mocked(categoriesApi.getAll).mockRejectedValueOnce(new Error("categories down"));
+        vi.mocked(featuredApi.get).mockRejectedValueOnce(new Error("featured down"));
+        vi.mocked(collectionsApi.discover).mockRejectedValueOnce(new Error("collections down"));
+      },
+    ],
+  ])("keeps the quick quiz and categories usable when %s fail", async (_name, arrangeFailure) => {
+    arrangeFailure();
+
+    renderPage();
+
+    expect(screen.getByRole("link", { name: /play a 5-question quiz/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /show all/i })).toHaveAttribute(
+      "href",
+      "/categories"
+    );
+    expect(screen.getByRole("link", { name: /exams/i })).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(categoriesApi.getAll).toHaveBeenCalledTimes(1);
+      expect(featuredApi.get).toHaveBeenCalledTimes(1);
+      expect(collectionsApi.discover).toHaveBeenCalledTimes(1);
+    });
   });
 
   it("adds live category counters when the API responds", async () => {

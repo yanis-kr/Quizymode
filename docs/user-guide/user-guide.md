@@ -8,6 +8,7 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 ## Table of Contents
 
 - [Home](#home)
+- [Featured](#featured)
 - [Browsing the Taxonomy](#browsing-the-taxonomy)
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
@@ -19,9 +20,11 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 
 ### Home
 
-The home page is the main entry point for Quizymode. It shows a hero section with a link to a public sample collection you can explore immediately, a grid of subject-area category cards with artwork and descriptions, and a carousel of featured sets linking directly to specific study scopes. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
+The home page is the main entry point for Quizymode. Its primary action opens the five-question **Fun Trivia Facts** collection directly in Quiz mode, with no account or intermediate collection page. Category cards remain available immediately, while featured sets and recently added public collections add more ways to browse when those services are available. The footer provides access to the User Guide, Feedback, Categories Map, and About from anywhere in the app.
 
 ![Home](screenshots/user/home.png "Home")
+
+## Featured
 
 ## Browsing the Taxonomy
 
@@ -57,7 +60,7 @@ Selecting a subtopic (here: World) reaches the leaf level and shows the actual q
 
 ### Mode Quiz
 
-**Quiz mode** presents each item as a multiple-choice question with the correct answer shuffled among the incorrect options. After answering, the app reveals whether you were right and shows the explanation. At the end of the set your score is displayed.
+**Quiz mode** presents each item as a multiple-choice question with the correct answer shuffled among the incorrect options. Your first submitted answer is locked for that run, and revisiting a question restores its answer and feedback. After every question is answered, **View results** shows your score and offers mistake review or a replay of the same set.
 
 ![Mode Quiz](screenshots/user/mode-quiz.png "Mode Quiz")
 
@@ -145,7 +148,7 @@ Collections support the same **Flashcards** mode as category pages. Each item in
 
 ### Collection Detail Quiz
 
-Collections also support **Quiz** mode: each item is shown as a multiple-choice question. This is handy for testing yourself on a curated set of items you have assembled across different categories.
+Collections also support **Quiz** mode: the full playable collection becomes a multiple-choice run with first-answer scoring. After completing the set, you can review missed questions, return to results, or replay the same collection roster.
 
 ![Collection Detail Quiz](screenshots/user/collection-detail-quiz.png "Collection Detail Quiz")
 

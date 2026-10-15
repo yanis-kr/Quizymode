@@ -1,10 +1,11 @@
-import { expect, test, type Page, type TestInfo } from "@playwright/test";
+import type { Page, TestInfo } from "@playwright/test";
+import { expect, test } from "../fixtures";
 import path from "path";
 import fs from "fs";
 import { slugToFilename } from "../../scripts/generate-user-guide.js";
 
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
-const HOME_SAMPLE_COLLECTION_SLUG = "sample+collection";
+const HOME_SAMPLE_COLLECTION_SLUG = "fun+trivia+facts";
 const HOME_SAMPLE_COLLECTION_DETAIL_PATH = `/collections/${HOME_SAMPLE_COLLECTION_ID}/${HOME_SAMPLE_COLLECTION_SLUG}`;
 const USER_GUIDE_COMMENT_TEXT = "Study tip: grouping capitals by continent makes them easier to remember — try Europe first, then expand to other regions.";
 

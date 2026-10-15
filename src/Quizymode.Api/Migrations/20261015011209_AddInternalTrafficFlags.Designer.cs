@@ -12,8 +12,8 @@ using Quizymode.Api.Data;
 namespace Quizymode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261015013154_AddAnalyticsEvents")]
-    partial class AddAnalyticsEvents
+    [Migration("20261015011209_AddInternalTrafficFlags")]
+    partial class AddInternalTrafficFlags
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,96 +24,6 @@ namespace Quizymode.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("Quizymode.Api.Shared.Models.AnalyticsEvent", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasDefaultValueSql("gen_random_uuid()");
-
-                    b.Property<string>("ContextId")
-                        .HasMaxLength(128)
-                        .HasColumnType("character varying(128)");
-
-                    b.Property<string>("ContextType")
-                        .HasMaxLength(32)
-                        .HasColumnType("character varying(32)");
-
-                    b.Property<string>("DedupeKey")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<string>("EventName")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
-
-                    b.Property<bool>("IsAuthenticated")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("IsBot")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("boolean")
-                        .HasDefaultValue(false);
-
-                    b.Property<bool?>("IsCorrect")
-                        .HasColumnType("boolean");
-
-                    b.Property<Guid?>("ItemId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("OccurredUtc")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasMaxLength(512)
-                        .HasColumnType("character varying(512)");
-
-                    b.Property<int?>("Position")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("RunId")
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
-
-                    b.Property<int?>("Score")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("SessionId")
-                        .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("character varying(128)");
-
-                    b.Property<int?>("Total")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserAgent")
-                        .HasMaxLength(512)
-                        .HasColumnType("character varying(512)");
-
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OccurredUtc");
-
-                    b.HasIndex("RunId");
-
-                    b.HasIndex("SessionId");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("EventName", "OccurredUtc");
-
-                    b.HasIndex("SessionId", "DedupeKey")
-                        .IsUnique()
-                        .HasFilter("\"DedupeKey\" IS NOT NULL");
-
-                    b.ToTable("AnalyticsEvents", (string)null);
-                });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Audit", b =>
                 {
@@ -943,6 +853,11 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
 
+                    b.Property<bool>("IsInternal")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasMaxLength(2048)
@@ -977,6 +892,8 @@ namespace Quizymode.Api.Migrations
                     b.HasIndex("IsAuthenticated");
 
                     b.HasIndex("IsBot");
+
+                    b.HasIndex("IsInternal");
 
                     b.HasIndex("Path");
 
@@ -1439,6 +1356,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
+
+                    b.Property<bool>("IsInternal")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime>("LastLogin")
                         .HasColumnType("timestamp with time zone");

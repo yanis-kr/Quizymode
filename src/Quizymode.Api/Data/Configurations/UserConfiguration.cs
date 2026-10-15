@@ -31,6 +31,10 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.CreatedAt)
             .IsRequired();
 
+        builder.Property(u => u.IsInternal)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.HasIndex(u => u.Subject).IsUnique();
         
         // Unique index on Email (allows multiple nulls, but non-null emails must be unique)
