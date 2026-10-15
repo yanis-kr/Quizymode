@@ -1,0 +1,27 @@
+== UPGRADE: migrate to main's last migration, add a row
+Applying migration '20261015011209_AddInternalTrafficFlags'.
+Done.
+rows before: users=1 pageviews=0
+-- apply candidate
+Applying migration '20261015184329_AddAnalyticsEvents'.
+Done.
+ERROR:  syntax error at or near "\"
+LINE 1: select count(*)||\x27 migrations, last=\x27||max("MigrationI...
+                         ^
+after:  users=1 pageviews=0
+IsInternal column: IsInternal boolean default false
+-- roll back to main's last migration, then re-apply
+Reverting migration '20261015184329_AddAnalyticsEvents'.
+Done.
+Applying migration '20261015184329_AddAnalyticsEvents'.
+Done.
+== FRESH
+Applying migration '20261015011209_AddInternalTrafficFlags'.
+Applying migration '20261015184329_AddAnalyticsEvents'.
+Done.
+ERROR:  syntax error at or near "\"
+LINE 1: select count(*)||\x27 migrations, last=\x27||max("MigrationI...
+                         ^
+fresh:  indexes=8
+
+Note: the two summary "count" lines in this file failed with a shell-quoting error in the harness; the "Applying/Reverting migration" lines and the column/index checks are the evidence.
