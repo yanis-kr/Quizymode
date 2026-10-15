@@ -1,0 +1,12 @@
+Read-only query against the production database (2026-10-15, ~12:45Z), run before the #138 migration was regenerated:
+SELECT "MigrationId" FROM "__EFMigrationsHistory" ORDER BY "MigrationId" DESC LIMIT 5;
+
+20261015011209_AddInternalTrafficFlags
+20260726041953_AddPageViewUserAgentAndBotFlag
+20260427133546_AddFeaturedItems
+20260427133432_AddItemUpdatedAt
+20260417215527_AddItemSpeechMetadata
+
+=> 20261015013154_AddAnalyticsEvents (the old #138 migration) is NOT applied in production, so it was regenerated.
+The local Aspire database is ephemeral (no data volume or persistent lifetime in AppHost.cs), so it holds no history to preserve.
+Note: session-level read-only (PGOPTIONS default_transaction_read_only) was not honored by the Supabase pooler; the statement was a single SELECT.

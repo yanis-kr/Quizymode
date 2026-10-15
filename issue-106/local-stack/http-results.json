@@ -1,0 +1,105 @@
+[
+  {
+    "step": "Anonymous POST /analytics/events -> 202",
+    "outcome": "PASS",
+    "detail": {
+      "status": 202,
+      "json": {
+        "accepted": 2,
+        "duplicates": 0
+      }
+    }
+  },
+  {
+    "step": "Retry of the same run is deduplicated",
+    "outcome": "PASS",
+    "detail": {
+      "status": 202,
+      "json": {
+        "accepted": 0,
+        "duplicates": 1
+      }
+    }
+  },
+  {
+    "step": "Unknown event name -> 400",
+    "outcome": "PASS",
+    "detail": {
+      "status": 400
+    }
+  },
+  {
+    "step": "Authenticated POST /analytics/events -> 202",
+    "outcome": "PASS",
+    "detail": {
+      "status": 202,
+      "json": {
+        "accepted": 1,
+        "duplicates": 0
+      }
+    }
+  },
+  {
+    "step": "GET /admin/analytics/funnel without token -> 401",
+    "outcome": "PASS",
+    "detail": {
+      "status": 401
+    }
+  },
+  {
+    "step": "GET /admin/analytics/funnel as non-admin -> 403",
+    "outcome": "PASS",
+    "detail": {
+      "status": 403
+    }
+  },
+  {
+    "step": "GET /admin/analytics/funnel as admin -> 200",
+    "outcome": "PASS",
+    "detail": {
+      "status": 200
+    }
+  },
+  {
+    "step": "Default funnel excludes the marked-browser and internal-user sessions",
+    "outcome": "PASS",
+    "detail": {
+      "sessionsWithEvents": 1,
+      "quickQuizStarted": {
+        "eventName": "quick_quiz_started",
+        "sessions": 1,
+        "events": 1,
+        "conversionFromPreviousPercent": null,
+        "conversionFromFirstPercent": null
+      },
+      "internalSessions": 2,
+      "internalExcluded": true
+    }
+  },
+  {
+    "step": "includeInternal=true brings them back",
+    "outcome": "PASS",
+    "detail": {
+      "sessionsWithEvents": 3,
+      "quickQuizStarted": {
+        "eventName": "quick_quiz_started",
+        "sessions": 3,
+        "events": 3,
+        "conversionFromPreviousPercent": null,
+        "conversionFromFirstPercent": null
+      },
+      "internalExcluded": false
+    }
+  },
+  {
+    "step": "Completion step for the anonymous run",
+    "outcome": "INFO",
+    "detail": {
+      "eventName": "quiz_completed",
+      "sessions": 1,
+      "events": 1,
+      "conversionFromPreviousPercent": 100,
+      "conversionFromFirstPercent": 100
+    }
+  }
+]

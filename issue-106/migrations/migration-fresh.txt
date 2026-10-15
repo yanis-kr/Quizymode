@@ -1,0 +1,25 @@
+== FRESH empty database (quizymode_fresh), #138 API startup
+Applying migration '20260317010026_InitialCreate'.
+Applying migration '20260317015404_AddKeywordSlug'.
+Applying migration '20260317041803_AddKeywordRelationAndItemNavigationColumns'.
+Applying migration '20260317042002_MigrateCategoryKeywordToKeywordRelation'.
+Applying migration '20260317043433_DropCategoryKeywordsAndRenameSuggestionParent'.
+Applying migration '20260317100000_AddKeywordRelationVisibilityAndDropSuggestions'.
+Applying migration '20260323233433_AddSeedSyncMetadata'.
+Applying migration '20260328195135_AddFeedbackSubmissions'.
+Applying migration '20260328221103_AddPageViews'.
+Applying migration '20260329140912_AddUserPolicyAcceptances'.
+Applying migration '20260329185915_AddStudyGuideExpiry'.
+Applying migration '20260404211221_RemoveSeedIdentityFields'.
+Applying migration '20260405032106_AddRepoManagedContentFlags'.
+Applying migration '20260405215203_AddSeedSyncHistory'.
+Applying migration '20260409140453_AddIdeasBoardWithModeration'.
+Applying migration '20260417164158_IncreaseItemSourceMaxLength'.
+Applying migration '20260417215527_AddItemSpeechMetadata'.
+Applying migration '20260427133432_AddItemUpdatedAt'.
+Applying migration '20260427133546_AddFeaturedItems'.
+Applying migration '20260726041953_AddPageViewUserAgentAndBotFlag'.
+Applying migration '20261015011209_AddInternalTrafficFlags'.
+Applying migration '20261015125000_AddAnalyticsEvents'.
+22 migrations, last=20261015125000_AddAnalyticsEvents
+t|7

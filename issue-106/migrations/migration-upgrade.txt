@@ -1,0 +1,9 @@
+== BEFORE (main schema, existing data)
+21 migrations, last=20261015011209_AddInternalTrafficFlags
+22 page views, 2 users
+f
+== AFTER #138 API startup (MigrateAsync)
+[08:36:40 INF] Applying migration '20261015125000_AddAnalyticsEvents'.
+22 migrations, last=20261015125000_AddAnalyticsEvents
+22 page views, 2 users (preserved)
+t

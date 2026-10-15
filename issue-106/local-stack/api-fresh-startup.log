@@ -1,0 +1,24 @@
+[08:40:32 INF] *** Starting QuizyMode Web API v3.51.0
+[08:40:33 INF] Authentication configuration - Authority: https://localhost:7443, Issuer: https://localhost:7443, ClientId: quizymode-local-evidence, Audience: 63b38es9dto8m59337jguiqli3
+[08:40:35 INF] Applying migration '20260317010026_InitialCreate'.
+[08:40:36 INF] Applying migration '20260317015404_AddKeywordSlug'.
+[08:40:36 INF] Applying migration '20260317041803_AddKeywordRelationAndItemNavigationColumns'.
+[08:40:36 INF] Applying migration '20260317042002_MigrateCategoryKeywordToKeywordRelation'.
+[08:40:36 INF] Applying migration '20260317043433_DropCategoryKeywordsAndRenameSuggestionParent'.
+[08:40:36 INF] Applying migration '20260317100000_AddKeywordRelationVisibilityAndDropSuggestions'.
+[08:40:36 INF] Applying migration '20260323233433_AddSeedSyncMetadata'.
+[08:40:36 INF] Applying migration '20260328195135_AddFeedbackSubmissions'.
+[08:40:36 INF] Applying migration '20260328221103_AddPageViews'.
+[08:40:37 INF] Applying migration '20260329140912_AddUserPolicyAcceptances'.
+[08:40:37 INF] Applying migration '20260329185915_AddStudyGuideExpiry'.
+[08:40:37 INF] Applying migration '20260404211221_RemoveSeedIdentityFields'.
+[08:40:37 INF] Applying migration '20260405032106_AddRepoManagedContentFlags'.
+[08:40:37 INF] Applying migration '20260405215203_AddSeedSyncHistory'.
+[08:40:37 INF] Applying migration '20260409140453_AddIdeasBoardWithModeration'.
+[08:40:37 INF] Applying migration '20260417164158_IncreaseItemSourceMaxLength'.
+[08:40:37 INF] Applying migration '20260417215527_AddItemSpeechMetadata'.
+[08:40:37 INF] Applying migration '20260427133432_AddItemUpdatedAt'.
+[08:40:37 INF] Applying migration '20260427133546_AddFeaturedItems'.
+[08:40:37 INF] Applying migration '20260726041953_AddPageViewUserAgentAndBotFlag'.
+[08:40:37 INF] Applying migration '20261015011209_AddInternalTrafficFlags'.
+[08:40:37 INF] Applying migration '20261015125000_AddAnalyticsEvents'.

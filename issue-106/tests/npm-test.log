@@ -1,0 +1,129 @@
+
+> quizymode-web@3.51.0 test
+> vitest run --run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Projects/Quizymode-claude/src/Quizymode.Web[39m
+
+ [32m✓[39m src/api/studyGuides.test.ts [2m([22m[2m16 tests[22m[2m)[22m[90m 73[2mms[22m[39m
+ [32m✓[39m src/api/items.test.ts [2m([22m[2m15 tests[22m[2m)[22m[90m 63[2mms[22m[39m
+ [32m✓[39m src/api/admin.test.ts [2m([22m[2m31 tests[22m[2m)[22m[90m 119[2mms[22m[39m
+ [32m✓[39m src/features/auth/pages/SignUpPage.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 1838[2mms[22m[39m
+   [33m[2m✓[22m[39m SignUpPage[2m > [22mrenders sign-up form [33m412[2mms[22m[39m
+ [32m✓[39m src/features/admin/components/SessionsTab.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 2299[2mms[22m[39m
+   [33m[2m✓[22m[39m SessionsTab[2m > [22msurfaces bounce rate and engaged sessions [33m401[2mms[22m[39m
+   [33m[2m✓[22m[39m SessionsTab[2m > [22mbadges internal sessions and opts their journey lookup into internal traffic [33m507[2mms[22m[39m
+   [33m[2m✓[22m[39m SessionsTab[2m > [22mloads a session journey only once the row is expanded [33m300[2mms[22m[39m
+ [32m✓[39m src/utils/speechSynthesis.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 63[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/UploadToCollectionPage.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1228[2mms[22m[39m
+   [33m[2m✓[22m[39m UploadToCollectionPage[2m > [22mshows the upload form with category and keyword selectors [33m308[2mms[22m[39m
+   [33m[2m✓[22m[39m UploadToCollectionPage[2m > [22mnavigates to new collection on successful upload [33m536[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/EditItemPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1308[2mms[22m[39m
+   [33m[2m✓[22m[39m EditItemPage[2m > [22mregular user sees readyForReview checkbox [33m731[2mms[22m[39m
+   [33m[2m✓[22m[39m EditItemPage[2m > [22mcalls update API with correct payload on submit [33m318[2mms[22m[39m
+ [32m✓[39m src/api/collections.test.ts [2m([22m[2m14 tests[22m[2m)[22m[90m 44[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/QuizModePage.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 4452[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizModePage[2m > [22mshows the shared leaf scope header and keeps Sets hidden in quiz mode [33m1035[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizModePage[2m > [22mlocks first answers, completes a collection, reviews mistakes, and replays [33m1508[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizModePage[2m > [22mrestores submitted feedback when navigating back without inflating score [33m781[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizModePage[2m > [22mrestores a locked answer after reload [33m432[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizModePage[2m > [22mkeeps an authenticated category quiz playable when storage is unavailable [33m322[2mms[22m[39m
+ [32m✓[39m src/features/analytics/analyticsEvents.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 630[2mms[22m[39m
+ [32m✓[39m src/features/items/quiz/quizRun.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+(node:21100) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m src/features/home/pages/HomePage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 3134[2mms[22m[39m
+   [33m[2m✓[22m[39m HomePage[2m > [22moffers the existing five-question public quiz without requiring an account [33m942[2mms[22m[39m
+   [33m[2m✓[22m[39m HomePage[2m > [22mkeeps the hero and category browsing usable when categories fail [33m411[2mms[22m[39m
+   [33m[2m✓[22m[39m HomePage[2m > [22mkeeps the quick quiz and categories usable when featured sets fail [33m504[2mms[22m[39m
+   [33m[2m✓[22m[39m HomePage[2m > [22mkeeps the quick quiz and categories usable when public collections fail [33m533[2mms[22m[39m
+   [33m[2m✓[22m[39m HomePage[2m > [22mkeeps the quick quiz and categories usable when all home queries fail [33m513[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/AddItemsPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1564[2mms[22m[39m
+   [33m[2m✓[22m[39m AddItemsPage[2m > [22mshows autocomplete suggestions for additional keywords and applies the selection [33m1198[2mms[22m[39m
+(node:25532) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m src/components/ModeSwitcher.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 894[2mms[22m[39m
+   [33m[2m✓[22m[39m ModeSwitcher[2m > [22mrenders only available modes [33m406[2mms[22m[39m
+ [32m✓[39m src/components/CategoriesMapModal.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 1432[2mms[22m[39m
+   [33m[2m✓[22m[39m CategoriesMapModal[2m > [22mrenders the taxonomy tree and supports expand and collapse controls [33m1429[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/CreateItemPage.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 2440[2mms[22m[39m
+   [33m[2m✓[22m[39m CreateItemPage[2m > [22mkeeps URL-prefilled scope editable and redirects to the created item after submit [33m2427[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/ExploreModePage.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 878[2mms[22m[39m
+   [33m[2m✓[22m[39m ExploreModePage[2m > [22mshows the leaf scope header and routes List back to the scoped categories list [33m865[2mms[22m[39m
+ [32m✓[39m src/features/collections/pages/CollectionsPage.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1019[2mms[22m[39m
+   [33m[2m✓[22m[39m CollectionsPage[2m > [22mrenders the page with My Collections tab active by default for authenticated users [33m553[2mms[22m[39m
+ [32m✓[39m src/features/items/utils/itemFilters.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 15[2mms[22m[39m
+ [32m✓[39m src/api/users.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 35[2mms[22m[39m
+ [32m✓[39m src/features/ideas/pages/IdeasPage.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1299[2mms[22m[39m
+   [33m[2m✓[22m[39m IdeasPage[2m > [22mshows the public board and sign-in prompt for anonymous users [33m928[2mms[22m[39m
+   [33m[2m✓[22m[39m IdeasPage[2m > [22mshows private submissions and share action for authenticated users [33m367[2mms[22m[39m
+ [32m✓[39m src/components/items/ItemForm.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1149[2mms[22m[39m
+   [33m[2m✓[22m[39m ItemForm[2m > [22mrenders create mode submit button label [33m471[2mms[22m[39m
+ [32m✓[39m src/utils/tokenStorage.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 40[2mms[22m[39m
+ [32m✓[39m src/utils/pageViewTracking.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 61[2mms[22m[39m
+ [32m✓[39m src/features/items/pages/ItemDetailPage.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 926[2mms[22m[39m
+   [33m[2m✓[22m[39m ItemDetailPage[2m > [22mshows a back-to-quiz button when opened from quiz details and returns to the same URL [33m747[2mms[22m[39m
+ [32m✓[39m src/features/auth/pages/LoginPage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1191[2mms[22m[39m
+   [33m[2m✓[22m[39m LoginPage[2m > [22mrenders sign-in form [33m521[2mms[22m[39m
+   [33m[2m✓[22m[39m LoginPage[2m > [22mshows error message when login fails [33m308[2mms[22m[39m
+ [32m✓[39m src/features/admin/pages/AdminIdeasPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1421[2mms[22m[39m
+   [33m[2m✓[22m[39m AdminIdeasPage[2m > [22mrenders the ideas moderation queue for admins [33m734[2mms[22m[39m
+   [33m[2m✓[22m[39m AdminIdeasPage[2m > [22mshows moderation actions when a card is expanded [33m656[2mms[22m[39m
+ [32m✓[39m src/hooks/usePageSize.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 305[2mms[22m[39m
+ [32m✓[39m src/features/legal/policyAcceptanceStorage.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 48[2mms[22m[39m
+ [32m✓[39m src/features/admin/pages/AdminDashboardPage.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1324[2mms[22m[39m
+   [33m[2m✓[22m[39m AdminDashboardPage[2m > [22mrenders admin tools for admin users [33m876[2mms[22m[39m
+ [32m✓[39m src/features/admin/pages/DatabaseSizePage.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 787[2mms[22m[39m
+   [33m[2m✓[22m[39m DatabaseSizePage[2m > [22mrenders database totals and top table sizes for admins [33m760[2mms[22m[39m
+ [32m✓[39m src/components/Layout.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 874[2mms[22m[39m
+   [33m[2m✓[22m[39m Layout[2m > [22mlinks to the published user guide for desktop browsers [33m529[2mms[22m[39m
+ [32m✓[39m src/components/study/StudyShell.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 267[2mms[22m[39m
+(node:6396) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m src/features/studyGuide/pages/StudyGuideImportPage.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 640[2mms[22m[39m
+   [33m[2m✓[22m[39m StudyGuideImportPage[2m > [22mhydrates scope and set count from query params [33m636[2mms[22m[39m
+ [32m✓[39m src/components/FiltersPanel.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 697[2mms[22m[39m
+   [33m[2m✓[22m[39m FiltersPanel[2m > [22mrenders category select when showCategory is true and categories provided [33m317[2mms[22m[39m
+ [32m✓[39m src/hooks/useItemSelection.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 142[2mms[22m[39m
+ [32m✓[39m src/api/keywords.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 56[2mms[22m[39m
+ [32m✓[39m src/components/ItemRatingsComments.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 850[2mms[22m[39m
+   [33m[2m✓[22m[39m ItemRatingsComments[2m > [22mhides the aggregate summary in list-card mode and keeps the comments label on one line [33m846[2mms[22m[39m
+ [32m✓[39m src/components/study/ExploreRenderer.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1172[2mms[22m[39m
+   [33m[2m✓[22m[39m ExploreRenderer[2m > [22mflips to show answer and explanation when the card is clicked [33m463[2mms[22m[39m
+   [33m[2m✓[22m[39m ExploreRenderer[2m > [22mdoes not render explanation on the back when explanation is empty [33m312[2mms[22m[39m
+ [32m✓[39m src/features/admin/components/FunnelTab.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 431[2mms[22m[39m
+   [33m[2m✓[22m[39m FunnelTab[2m > [22mlists each step with unique sessions and conversion rates [33m349[2mms[22m[39m
+ [32m✓[39m src/components/RequireAuthRoute.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 237[2mms[22m[39m
+ [32m✓[39m src/components/study/QuizRenderer.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1157[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizRenderer[2m > [22mrenders question and options [33m604[2mms[22m[39m
+ [32m✓[39m src/features/analytics/PageViewTracker.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 196[2mms[22m[39m
+ [32m✓[39m src/components/ItemListSection.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 665[2mms[22m[39m
+   [33m[2m✓[22m[39m ItemListSection[2m > [22mrenders bottom Previous and Next buttons when multiple pages exist [33m643[2mms[22m[39m
+ [32m✓[39m src/api/ratings.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 18[2mms[22m[39m
+ [32m✓[39m src/api/comments.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 17[2mms[22m[39m
+ [32m✓[39m src/components/BucketGridView.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 714[2mms[22m[39m
+   [33m[2m✓[22m[39m BucketGridView[2m > [22mcalls onOpenBucket with bucket when a card is clicked [33m412[2mms[22m[39m
+ [32m✓[39m src/features/admin/components/sessionFormatting.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 18[2mms[22m[39m
+ [32m✓[39m src/components/SEO.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 226[2mms[22m[39m
+ [32m✓[39m src/api/reviews.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+ [32m✓[39m src/components/ItemListCard.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 161[2mms[22m[39m
+ [32m✓[39m src/utils/addItemsScopeUrl.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+ [32m✓[39m src/api/analytics.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+ [32m✓[39m src/features/items/utils/studyScopeParams.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32m✓[39m src/api/auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 19[2mms[22m[39m
+ [32m✓[39m src/utils/apiError.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32m✓[39m src/api/taxonomy.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32m✓[39m src/components/FilterControlBar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 413[2mms[22m[39m
+   [33m[2m✓[22m[39m FilterControlBar[2m > [22mrenders the middle action between Filters and Map [33m372[2mms[22m[39m
+ [32m✓[39m src/api/categories.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+ [32m✓[39m src/api/feedback.test.ts [2m([22m[2m1 test[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32m✓[39m src/components/ScopePathHeader.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 226[2mms[22m[39m
+ [32m✓[39m src/features/categories/utils/categoryScopeMode.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 12[2mms[22m[39m
+ [32m✓[39m src/components/ItemCollectionControls.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m64 passed[39m[22m[90m (64)[39m
+[2m      Tests [22m [1m[32m333 passed[39m[22m[90m (333)[39m
+[2m   Start at [22m 08:37:53
+[2m   Duration [22m 68.57s[2m (transform 8.99s, setup 34.35s, collect 123.17s, tests 41.44s, environment 179.30s, prepare 26.33s)[22m
+
+test exit=0

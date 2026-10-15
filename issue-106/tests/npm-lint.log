@@ -1,0 +1,70 @@
+
+> quizymode-web@3.51.0 lint
+> eslint .
+
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\components\ItemRatingsComments.tsx
+  70:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\components\UserProfileModal.tsx
+  125:6  warning  React Hook useEffect has a missing dependency: 'handleCancel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\components\study\ExploreRenderer.tsx
+  27:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\admin\pages\AdminFeaturedPage.tsx
+  81:9  warning  The 'items' logical expression could make the dependencies of useMemo Hook (at line 85) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  81:9  warning  The 'items' logical expression could make the dependencies of useMemo Hook (at line 89) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\admin\pages\AdminUserSettingsPage.tsx
+  88:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\collections\pages\CollectionDetailPage.tsx
+  109:9  warning  The 'allItems' logical expression could make the dependencies of useMemo Hook (at line 117) change on every render. To fix this, wrap the initialization of 'allItems' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\feedback\components\FeedbackDialog.tsx
+  56:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  58:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  60:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  62:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  64:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  67:6  warning  React Hook useEffect has a missing dependency: 'createFeedbackMutation'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\ideas\components\IdeaFormModal.tsx
+  88:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\ideas\pages\IdeasPage.tsx
+  128:9  warning  The 'boardIdeas' logical expression could make the dependencies of useMemo Hook (at line 135) change on every render. Move it inside the useMemo callback. Alternatively, wrap the initialization of 'boardIdeas' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  142:9  warning  The 'myIdeas' logical expression could make the dependencies of useMemo Hook (at line 145) change on every render. To fix this, wrap the initialization of 'myIdeas' in its own useMemo() Hook                                               react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\items\hooks\useMyItemsFilters.ts
+  104:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\items\pages\BulkCreateItemsPage.tsx
+  137:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  139:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  142:6  warning  React Hook useEffect has missing dependencies: 'category', 'categoryOptions', and 'primaryTopic'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\items\pages\ExploreModePage.tsx
+  239:6  warning  React Hook useEffect has a missing dependency: 'storedItems'. Either include it or remove the dependency array                                                                         react-hooks/exhaustive-deps
+  264:9  warning  The 'items' conditional could make the dependencies of useEffect Hook (at line 284) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  264:9  warning  The 'items' conditional could make the dependencies of useEffect Hook (at line 358) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  312:6  warning  React Hook useEffect has a missing dependency: 'collectionInfo?.name'. Either include it or remove the dependency array                                                                react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\items\pages\UploadToCollectionPage.tsx
+  46:9  warning  The 'keywordsFromUrl' conditional could make the dependencies of useEffect Hook (at line 96) change on every render. To fix this, wrap the initialization of 'keywordsFromUrl' in its own useMemo() Hook   react-hooks/exhaustive-deps
+  46:9  warning  The 'keywordsFromUrl' conditional could make the dependencies of useEffect Hook (at line 107) change on every render. To fix this, wrap the initialization of 'keywordsFromUrl' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\features\studyGuide\pages\StudyGuideImportPage.tsx
+  122:9  warning  The 'categories' logical expression could make the dependencies of useMemo Hook (at line 125) change on every render. Move it inside the useMemo callback. Alternatively, wrap the initialization of 'categories' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\hooks\useActiveCollection.ts
+  75:6  warning  React Hook useEffect has a missing dependency: 'updateActiveMutation'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\Quizymode-claude\src\Quizymode.Web\src\hooks\useItemSelection.ts
+  22:6  warning  React Hook useEffect was passed a dependency list that is not an array literal. This means we can't statically verify whether you've passed the correct dependencies  react-hooks/exhaustive-deps
+
+✖ 29 problems (0 errors, 29 warnings)
+  0 errors and 12 warnings potentially fixable with the `--fix` option.
+
+lint exit=0
