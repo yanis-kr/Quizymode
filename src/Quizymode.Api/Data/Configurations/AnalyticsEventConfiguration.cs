@@ -49,6 +49,10 @@ internal sealed class AnalyticsEventConfiguration : IEntityTypeConfiguration<Ana
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(analyticsEvent => analyticsEvent.IsInternal)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(analyticsEvent => analyticsEvent.OccurredUtc)
             .IsRequired();
 
@@ -57,6 +61,7 @@ internal sealed class AnalyticsEventConfiguration : IEntityTypeConfiguration<Ana
         builder.HasIndex(analyticsEvent => analyticsEvent.SessionId);
         builder.HasIndex(analyticsEvent => analyticsEvent.UserId);
         builder.HasIndex(analyticsEvent => analyticsEvent.RunId);
+        builder.HasIndex(analyticsEvent => analyticsEvent.IsInternal);
 
         // The database, not the client, is the final guard against duplicate completions.
         builder.HasIndex(analyticsEvent => new { analyticsEvent.SessionId, analyticsEvent.DedupeKey })

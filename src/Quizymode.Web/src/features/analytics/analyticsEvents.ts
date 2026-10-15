@@ -1,5 +1,5 @@
 import { analyticsApi, type AnalyticsEventPayload } from "@/api/analytics";
-import { getPageViewSessionId } from "@/utils/pageViewTracking";
+import { getPageViewSessionId, isInternalBrowser } from "@/utils/pageViewTracking";
 
 /** Must match AnalyticsEventCatalog on the API; unknown names are rejected there. */
 export type AnalyticsEventName =
@@ -80,7 +80,11 @@ export async function flushAnalyticsEvents(): Promise<void> {
     const batch = queue.slice(0, MAX_BATCH);
     queue = queue.slice(MAX_BATCH);
     try {
-      await analyticsApi.trackEvents({ sessionId: getPageViewSessionId(), events: batch });
+      await analyticsApi.trackEvents({
+        sessionId: getPageViewSessionId(),
+        events: batch,
+        ...(isInternalBrowser() ? { internalBrowser: true } : {}),
+      });
     } catch (error) {
       console.debug("Analytics event delivery failed", error);
     }

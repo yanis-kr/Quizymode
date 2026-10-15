@@ -19,7 +19,10 @@ public static partial class TrackAnalyticsEvents
 {
     public const int MaxEventsPerBatch = 25;
 
-    public sealed record Request(string SessionId, List<EventRequest>? Events);
+    /// <param name="InternalBrowser">
+    /// Client-asserted internal-browser marker, as on page views; it can only remove the sender's own events from reports.
+    /// </param>
+    public sealed record Request(string SessionId, List<EventRequest>? Events, bool? InternalBrowser = null);
 
     /// <param name="ClientEventId">
     /// Optional client id for one UI impression or action; repeats within the session are ignored.
@@ -191,6 +194,14 @@ public static partial class TrackAnalyticsEvents
         bool isBot = BotUserAgentDetector.IsBot(userAgent);
         DateTime occurredUtc = DateTime.UtcNow;
 
+        bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
+        if (!isInternal && userId.HasValue)
+        {
+            isInternal = await db.Users
+                .AsNoTracking()
+                .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
+        }
+
         List<AnalyticsEvent> candidates = request.Events!
             .Select(item => new AnalyticsEvent
             {
@@ -211,6 +222,7 @@ public static partial class TrackAnalyticsEvents
                 DedupeKey = BuildDedupeKey(item),
                 UserAgent = userAgent,
                 IsBot = isBot,
+                IsInternal = isInternal,
                 OccurredUtc = occurredUtc
             })
             .ToList();

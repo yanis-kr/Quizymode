@@ -146,6 +146,25 @@ public sealed class GetConversionFunnelTests : DatabaseTestFixture
         included.InternalExcluded.Should().BeFalse();
     }
 
+    [Fact]
+    public async Task HandleAsync_ExcludesSessionWithInternalEventEvenWithoutPageViews()
+    {
+        DateTime now = DateTime.UtcNow;
+        AnalyticsEvent internalEvent = Event("s-events-only", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-10));
+        internalEvent.IsInternal = true;
+        await DbContext.AnalyticsEvents.AddRangeAsync(
+            internalEvent,
+            Event("s-events-only", AnalyticsEventCatalog.QuizCompleted, now.AddMinutes(-9)),
+            Event("s-visitor", AnalyticsEventCatalog.QuickQuizStarted, now.AddMinutes(-10)));
+        await DbContext.SaveChangesAsync();
+
+        GetConversionFunnel.Response response = (await Run(new GetConversionFunnel.QueryRequest(Days: 7))).Value!;
+
+        response.SessionsWithEvents.Should().Be(1);
+        response.InternalSessions.Should().Be(1);
+        response.Steps[1].Sessions.Should().Be(0, "the internal session's completion is excluded with the rest of the session");
+    }
+
     private static PageView PageHit(string sessionId, DateTime createdUtc, bool isInternal) => new()
     {
         Id = Guid.NewGuid(),

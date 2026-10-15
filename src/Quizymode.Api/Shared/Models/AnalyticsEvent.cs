@@ -48,6 +48,9 @@ public sealed class AnalyticsEvent
 
     public bool IsBot { get; set; }
 
+    /// <summary>Set at write time for admins, users flagged internal, and browsers sending the internal marker.</summary>
+    public bool IsInternal { get; set; }
+
     /// <summary>Assigned by the server; client clocks are not trusted.</summary>
     public DateTime OccurredUtc { get; set; } = DateTime.UtcNow;
 }

@@ -32,6 +32,7 @@ namespace Quizymode.Api.Migrations
                     DedupeKey = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true),
                     UserAgent = table.Column<string>(type: "character varying(512)", maxLength: 512, nullable: true),
                     IsBot = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
+                    IsInternal = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
                     OccurredUtc = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
@@ -43,6 +44,11 @@ namespace Quizymode.Api.Migrations
                 name: "IX_AnalyticsEvents_EventName_OccurredUtc",
                 table: "AnalyticsEvents",
                 columns: new[] { "EventName", "OccurredUtc" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AnalyticsEvents_IsInternal",
+                table: "AnalyticsEvents",
+                column: "IsInternal");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AnalyticsEvents_OccurredUtc",

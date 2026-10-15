@@ -57,6 +57,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<bool?>("IsCorrect")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsInternal")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<Guid?>("ItemId")
                         .HasColumnType("uuid");
 
@@ -94,6 +99,8 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IsInternal");
 
                     b.HasIndex("OccurredUtc");
 

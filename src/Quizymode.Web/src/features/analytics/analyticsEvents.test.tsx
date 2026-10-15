@@ -9,7 +9,10 @@ import {
 } from "./analyticsEvents";
 import { useTrackEventOnce } from "./useTrackEventOnce";
 
-const { mockTrackEvents } = vi.hoisted(() => ({ mockTrackEvents: vi.fn() }));
+const { mockTrackEvents, mockIsInternalBrowser } = vi.hoisted(() => ({
+  mockTrackEvents: vi.fn(),
+  mockIsInternalBrowser: vi.fn(() => false),
+}));
 
 vi.mock("@/api/analytics", () => ({
   analyticsApi: { trackEvents: mockTrackEvents },
@@ -17,6 +20,7 @@ vi.mock("@/api/analytics", () => ({
 
 vi.mock("@/utils/pageViewTracking", () => ({
   getPageViewSessionId: () => "session-1",
+  isInternalBrowser: mockIsInternalBrowser,
 }));
 
 function PromptImpression({ promptId }: { promptId: string }) {
@@ -33,6 +37,8 @@ describe("analyticsEvents", () => {
     sessionStorage.clear();
     resetAnalyticsEventsForTests();
     mockTrackEvents.mockReset();
+    mockIsInternalBrowser.mockReset();
+    mockIsInternalBrowser.mockReturnValue(false);
     mockTrackEvents.mockResolvedValue(undefined);
     window.history.replaceState(null, "", "/quiz/science?item=abc");
   });
@@ -53,6 +59,14 @@ describe("analyticsEvents", () => {
         { name: "quiz_completed", path: "/quiz/science", runId: "run-1", score: 7, total: 10 },
       ],
     });
+  });
+
+  it("sends the internal marker only from a browser marked as internal", async () => {
+    mockIsInternalBrowser.mockReturnValue(true);
+    trackEvent({ name: "quick_quiz_started", runId: "run-1" });
+
+    await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
+    expect(mockTrackEvents.mock.calls[0][0]).toMatchObject({ sessionId: "session-1", internalBrowser: true });
   });
 
   it("never sends a context id without its context type", async () => {

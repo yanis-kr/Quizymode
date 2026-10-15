@@ -51,6 +51,43 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         return result.Value!;
     }
 
+    [Fact]
+    public async Task HandleAsync_FlagsInternalTrafficAtWriteTime()
+    {
+        Guid flaggedUserId = Guid.NewGuid();
+        await DbContext.Users.AddAsync(new User { Id = flaggedUserId, Subject = "flagged", Email = "flagged@example.com", Name = "Flagged", IsInternal = true });
+        await DbContext.SaveChangesAsync();
+        TrackAnalyticsEvents.EventRequest started = new(AnalyticsEventCatalog.QuickQuizStarted, "/", RunId: "r");
+
+        // Plain anonymous visitor.
+        await Track("s-plain", started);
+
+        // Browser carrying the internal marker.
+        TrackAnalyticsEvents.Request marked = new("s-marked", [started], InternalBrowser: true);
+        (await TrackAnalyticsEvents.HandleAsync(marked, HttpContext(), DbContext, _userContextMock.Object, CancellationToken.None))
+            .IsSuccess.Should().BeTrue();
+
+        // Admin caller.
+        _userContextMock.SetupGet(context => context.IsAdmin).Returns(true);
+        await Track("s-admin", started);
+        _userContextMock.SetupGet(context => context.IsAdmin).Returns(false);
+
+        // User already flagged internal.
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(true);
+        _userContextMock.SetupGet(context => context.UserId).Returns(flaggedUserId.ToString());
+        await Track("s-flagged", started);
+
+        Dictionary<string, bool> internalBySession = await DbContext.AnalyticsEvents.AsNoTracking()
+            .ToDictionaryAsync(analyticsEvent => analyticsEvent.SessionId, analyticsEvent => analyticsEvent.IsInternal);
+        internalBySession.Should().BeEquivalentTo(new Dictionary<string, bool>
+        {
+            ["s-plain"] = false,
+            ["s-marked"] = true,
+            ["s-admin"] = true,
+            ["s-flagged"] = true
+        });
+    }
+
     private static TrackAnalyticsEvents.EventRequest Completed(string runId, int score = 7, int total = 10) =>
         new(AnalyticsEventCatalog.QuizCompleted, "/quiz/science", "category", "science", RunId: runId, Score: score, Total: total);
 

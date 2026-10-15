@@ -7057,6 +7057,17 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Analytics.TrackAnalyticsEvents.EventRequest"
               }
             ]
+          },
+          "internalBrowser": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Client-asserted internal-browser marker, as on page views; it can only remove the sender's own events from reports.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
           }
         }
       },
