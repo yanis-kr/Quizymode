@@ -10,6 +10,12 @@ import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
 import { QUIZ_COMPLETED_EVENT, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
 
+const { mockTrackEventOnce } = vi.hoisted(() => ({ mockTrackEventOnce: vi.fn() }));
+
+vi.mock("@/features/analytics/analyticsEvents", () => ({
+  trackEventOnce: mockTrackEventOnce,
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     isAuthenticated: true,
@@ -281,6 +287,17 @@ describe("QuizModePage", () => {
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
     expect(screen.getByText(/Score: 0 \/ 0 correct/i)).toBeInTheDocument();
     expect(completions).toHaveLength(1);
+
+    // Funnel telemetry (AC 5.4.9): one start and one completion for the run, then a new start for the replay.
+    const telemetry = mockTrackEventOnce.mock.calls.map(([, input]) => input);
+    expect(telemetry).toEqual([
+      expect.objectContaining({ name: "quick_quiz_started", total: 2, contextType: "collection", contextId: "collection-1" }),
+      expect.objectContaining({ name: "quiz_completed", score: 1, total: 2, contextType: "collection", contextId: "collection-1" }),
+      expect.objectContaining({ name: "quick_quiz_started", total: 2 }),
+    ]);
+    expect(telemetry[1].runId).toBe(telemetry[0].runId);
+    expect(telemetry[1].runId).toBe(completions[0].runId);
+    expect(telemetry[2].runId).not.toBe(telemetry[0].runId);
 
     window.removeEventListener(QUIZ_COMPLETED_EVENT, onComplete);
   });
