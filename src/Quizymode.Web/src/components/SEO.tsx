@@ -5,6 +5,7 @@ interface SEOProps {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
   noindex?: boolean;
   structuredData?: object;
@@ -14,13 +15,18 @@ const DEFAULT_TITLE = "Quizymode – Smart Flashcards & Learning Quizzes";
 const DEFAULT_DESCRIPTION =
   "Quizymode is a smart learning platform with flashcards and quizzes for exams, AWS, Spanish, and more.";
 const DEFAULT_URL = "https://www.quizymode.com";
-const DEFAULT_OG_IMAGE = "https://www.quizymode.com/og-image.svg";
+// Link-preview crawlers do not render SVG, so the shared default must be a raster image.
+export const DEFAULT_OG_IMAGE = "https://www.quizymode.com/og-image.png";
+const DEFAULT_OG_IMAGE_WIDTH = 1200;
+const DEFAULT_OG_IMAGE_HEIGHT = 630;
+const DEFAULT_OG_IMAGE_ALT = "Quizymode – Smart Flashcards & Learning Quizzes";
 
 export const SEO = ({
   title,
   description,
   canonical,
   ogImage,
+  ogImageAlt,
   ogType = "website",
   noindex = false,
   structuredData,
@@ -31,6 +37,8 @@ export const SEO = ({
   const pageDescription = description || DEFAULT_DESCRIPTION;
   const pageUrl = canonical || DEFAULT_URL;
   const imageUrl = ogImage || DEFAULT_OG_IMAGE;
+  const isDefaultImage = imageUrl === DEFAULT_OG_IMAGE;
+  const imageAlt = ogImageAlt || DEFAULT_OG_IMAGE_ALT;
 
   return (
     <Helmet>
@@ -48,6 +56,14 @@ export const SEO = ({
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={imageUrl} />
+      {isDefaultImage && <meta property="og:image:type" content="image/png" />}
+      {isDefaultImage && (
+        <meta property="og:image:width" content={String(DEFAULT_OG_IMAGE_WIDTH)} />
+      )}
+      {isDefaultImage && (
+        <meta property="og:image:height" content={String(DEFAULT_OG_IMAGE_HEIGHT)} />
+      )}
+      <meta property="og:image:alt" content={imageAlt} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -55,6 +71,7 @@ export const SEO = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={imageAlt} />
 
       {/* Structured Data */}
       {structuredData && (
