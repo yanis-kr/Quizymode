@@ -12,6 +12,35 @@ $ErrorActionPreference = 'Stop'
 # or an API-key auth override. The existing claude.exe session is subscription
 # auth only; this module does not configure or fall back to any other auth.
 
+function Get-QmBalancedJsonObject {
+    # Finds the first top-level {...} object, tracking brace depth and
+    # string/escape state so a literal '}' inside a trailing prose
+    # sentence (e.g. "indices like {0,1,2}") can't be mistaken for the
+    # object's real closing brace -- unlike a plain IndexOf/LastIndexOf scan.
+    param([Parameter(Mandatory = $true)][string]$Text)
+    $start = $Text.IndexOf('{')
+    if ($start -lt 0) { return $null }
+    $depth = 0
+    $inString = $false
+    $escaped = $false
+    for ($i = $start; $i -lt $Text.Length; $i++) {
+        $ch = $Text[$i]
+        if ($inString) {
+            if ($escaped) { $escaped = $false }
+            elseif ($ch -eq '\') { $escaped = $true }
+            elseif ($ch -eq '"') { $inString = $false }
+            continue
+        }
+        if ($ch -eq '"') { $inString = $true; continue }
+        if ($ch -eq '{') { $depth++ }
+        elseif ($ch -eq '}') {
+            $depth--
+            if ($depth -eq 0) { return $Text.Substring($start, $i - $start + 1) }
+        }
+    }
+    return $null
+}
+
 $script:QmClaudeStageAgentMap = @{
     'architecture'   = 'architect'
     'ux'             = 'ux-designer'
@@ -58,8 +87,14 @@ function Invoke-QmProviderStage {
         }
     }
     $schemaJson = $schemaObject | ConvertTo-Json -Depth 20 -Compress
+
+    # Prompt goes over stdin, not as a CLI argument: orchestrator prompts
+    # include the full orchestrator instructions plus the raw issue body and
+    # can exceed Windows's ~32K CreateProcess command-line limit, which would
+    # otherwise throw an uncaught Win32Exception instead of a structured
+    # 'failed' status. Mirrors CodexAdapter.psm1's '-' + -StandardInput.
     $arguments = @(
-        '-p', $Prompt,
+        '-p',
         '--agent', $agentName,
         '--model', $Model,
         '--effort', $Effort,
@@ -68,16 +103,20 @@ function Invoke-QmProviderStage {
         '--json-schema', $schemaJson,
         '--no-session-persistence'
     )
+    if ($Stage -ne 'implementation') {
+        $readOnlyTools = 'Read,Grep,Glob,Bash(git status *),Bash(git diff *),Bash(git log *),Bash(git show *),Bash(rg *),Bash(dotnet test *),Bash(dotnet build *),Bash(npm test *),Bash(npm run build *),Bash(gh issue view *),Bash(gh pr view *),Bash(gh pr diff *)'
+        $arguments += @('--allowedTools', $readOnlyTools)
+    }
 
-    $result = Invoke-QmNative -FilePath 'claude.exe' -Arguments $arguments -WorkingDirectory $Worktree -TimeoutSeconds $TimeoutSeconds
+    $result = Invoke-QmNative -FilePath 'claude.exe' -Arguments $arguments -WorkingDirectory $Worktree -TimeoutSeconds $TimeoutSeconds -StandardInput $Prompt
 
     if ($result.TimedOut) {
         return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
     }
-    if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
-        return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
-    }
     if ($result.ExitCode -ne 0) {
+        if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        }
         return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
     }
 
@@ -88,6 +127,15 @@ function Invoke-QmProviderStage {
     }
 
     $actualModel = if ($envelope.PSObject.Properties.Name -contains 'model' -and $null -ne $envelope.model) { $envelope.model } else { $Model }
+
+    if (($envelope.PSObject.Properties.Name -contains 'is_error' -and $envelope.is_error) -or
+        ($envelope.PSObject.Properties.Name -contains 'api_error_status' -and $envelope.api_error_status)) {
+        $errorText = [string]$envelope.result
+        if (Test-QmQuotaResult -Text $errorText) {
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText }
+        }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = $errorText }
+    }
 
     if ($envelope.PSObject.Properties.Name -contains 'subtype' -and $envelope.subtype -ne 'success') {
         return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $null; StdErr = "Claude reported subtype '$($envelope.subtype)'" }
@@ -100,17 +148,15 @@ function Invoke-QmProviderStage {
     # --json-schema is a validation hint, not a hard guarantee: a custom
     # --agent system prompt (ours are prose personas, not JSON-only
     # instructions) can still make the model wrap the JSON in prose. Try the
-    # raw result first, then fall back to extracting the outermost {...}
-    # object before giving up. This does not weaken validation further
+    # raw result first, then fall back to extracting the first balanced
+    # {...} object before giving up. This does not weaken validation further
     # downstream (e.g. Test-QmEvidence) still checks required shape.
     $payload = $null
     $resultText = $envelope.result
     try { $payload = $resultText | ConvertFrom-Json }
     catch {
-        $firstBrace = $resultText.IndexOf('{')
-        $lastBrace = $resultText.LastIndexOf('}')
-        if ($firstBrace -ge 0 -and $lastBrace -gt $firstBrace) {
-            $candidate = $resultText.Substring($firstBrace, $lastBrace - $firstBrace + 1)
+        $candidate = Get-QmBalancedJsonObject -Text $resultText
+        if ($null -ne $candidate) {
             try { $payload = $candidate | ConvertFrom-Json } catch { $payload = $null }
         }
         if ($null -eq $payload) {

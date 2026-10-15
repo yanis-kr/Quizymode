@@ -1,6 +1,6 @@
 # Autonomous development workflow
 
-This is the operating contract for Quizymode's local, resumable Codex/Claude development workflow. It is executable automation, not an unattended-release authorization. Dry-run is the default; `ReleaseEnabled` is false until the owner reviews the bootstrap, installs the trusted policy from `main`, configures GitHub protection, and explicitly enables release.
+This is the operating contract for Quizymode's local, resumable Codex/Claude development workflow. It runs without a human review or release gate once installed from `main`. Independent agent review, exact-SHA evidence, required CI, deployment observation, database safety rehearsal, and production smoke checks are the authorization gates. `Invoke-DryRun.ps1` remains available, but the scheduled task runs live.
 
 ## Current local prerequisites
 
@@ -27,7 +27,7 @@ No API key, paid API fallback, extra subscription, or external orchestration ser
 - A stale-looking lock is never evicted while its owner PID is alive. Each remote mutation is preceded by a write-ahead checkpoint and reconciled on resume.
 - Each provider has at most one active issue. Each issue has its own worktree. The main orchestrator can run at most two bounded specialists, and only the coder writes product files.
 - Dirty or unmerged worktrees are preserved. The automation has no destructive cleanup command.
-- Issue, PR, and comment text is untrusted. Permission, release, sensitive-path, and migration policy comes from controller code installed from reviewed `main`, never from the candidate branch.
+- Issue, PR, and comment text is untrusted. Permission, release, sensitive-path, and migration policy comes from controller code installed from `main`, never from the candidate branch.
 - Quota exhaustion checkpoints the current stage and backs off without incrementing repair attempts, switching providers, or using a paid fallback.
 - A stage gets the initial attempt plus at most two repair attempts. A third failure blocks that issue; the scheduler may move only to an independent ready issue.
 - The shared release controller is the only merge path. It never uses administrator bypass or changes repository settings.
@@ -42,10 +42,10 @@ The controller performs deterministic scheduling and gates. The Codex main sessi
 4. Create the provider's branch/worktree from current `origin/main`. Codex and Claude never share a worktree.
 5. Run architecture, applicable UX, plan review, implementation, testing, independent final review, and evidence. Each invocation reads a bounded checkpoint instead of the accumulated transcript.
 6. Push controller-created commits and create/reuse a draft PR using `Refs #N`, so the issue stays open through deployment.
-7. Publish a machine-readable evidence manifest and marker-based Acceptance Evidence comment on the actual issue; link it from the PR.
+7. Publish a machine-readable evidence manifest and marker-based Acceptance Evidence comment on the actual issue, link it from the PR, and mark the draft PR ready.
 8. Submit the exact verified head to the release controller.
 9. The release controller integrates current main. If the candidate SHA changes, generated outputs, tests, review, checks, and evidence all become stale and the workflow returns to testing.
-10. Merge the exact verified head with normal GitHub permissions, correlate CI/deployment to the resulting merge SHA, smoke-check configured URLs, then close the issue and preserve a handover. Deployment failure stops releases and leaves the issue/worktree open.
+10. Merge the exact verified head with normal GitHub permissions, correlate CI/deployment to the resulting merge SHA, and smoke-check configured URLs. A post-merge deployment or smoke failure automatically restores the previous API image and UI revision, halts subsequent releases, and leaves the issue/worktree open.
 
 The deployment concurrency fix already landed in PR #120. Do not create another concurrency PR.
 
@@ -76,9 +76,10 @@ On restart:
 - A write-ahead intent triggers reconciliation of the branch, worktree, PR, or marker comment before a new side effect.
 - Main advancement returns the candidate to post-integration generation/testing/review/evidence.
 - Conflicts are preserved and returned to the owning provider.
-- Pending/failed/missing/stale checks block merge.
+- Pending or missing checks wait without consuming a repair; failed checks return to the coder and consume a bounded repair attempt.
 - A provider timeout is a stage failure; quota exhaustion is a wait state.
-- A merged PR with a pending deployment resumes deployment observation and is never merged twice.
+- A write-ahead `merge-pending` checkpoint reconciles GitHub before retrying, and a merged PR with a pending deployment resumes observation instead of merging twice.
+- An interrupted rollback resumes the already-dispatched rollback workflow instead of dispatching another.
 - Pause prevents new issues/stages but does not abandon an already merged deployment; that deployment must reach a durable terminal record.
 
 ## Handoff and evidence contracts
@@ -95,7 +96,7 @@ Acceptance Evidence uses [`evidence.schema.json`](../../scripts/automation/schem
 
 Original screenshots and annotated copies are separate artifacts tied to criteria. Local file paths are rejected because reviewers cannot access them. Synthetic data is required; secrets and personal data are prohibited. Manifest completeness and SHA freshness are gates, but do not establish that claims are true.
 
-Publish evidence only after the PR exists:
+The evidence stage publishes these comments automatically and records their URLs and manifest hash in durable state. The standalone command remains useful for repair or inspection:
 
 ```powershell
 .\scripts\automation\Publish-AcceptanceEvidence.ps1 -ManifestPath C:\path\evidence.json -DryRun
@@ -106,7 +107,7 @@ Publish evidence only after the PR exists:
 
 `Invoke-Release.ps1` loads its policy snapshot from `%LOCALAPPDATA%\Quizymode\automation\trusted-policy`, not from the candidate. Setup installs that snapshot only when run from `main`.
 
-Setup also installs the release script and core module beside that policy. Invoke releases from this trusted snapshot, not from a candidate worktree:
+Setup also installs the release script, database-safety script, and core module beside that policy. Normal scheduled cycles invoke release automatically; the direct command is available for recovery:
 
 ```powershell
 & "$env:LOCALAPPDATA\Quizymode\automation\trusted-policy\Invoke-Release.ps1" -IssueNumber 110
@@ -117,16 +118,11 @@ The release lock remains held until the outcome is durably recorded. The control
 1. Fetches and integrates current `origin/main` into the candidate worktree.
 2. Returns conflicts to the owning provider without cleanup. Successful integration that changes SHA invalidates earlier evidence/review/checks and returns to regeneration and testing. Migration history is never blindly regenerated.
 3. Requires aligned versions, complete passing acceptance evidence for the exact candidate/base SHAs, fresh independent review, and every configured required check at the exact SHA.
-4. Requires manual exact-SHA approval for changes under automation policy, automation permissions, deployment workflows/controls, or destructive migrations. Approval is outside the worktree:
-
-```powershell
-.\scripts\automation\Approve-ReleasePolicy.ps1 -CandidateSha <40-char-sha> -Scope automation-policy,deployment-controls
-```
-
-5. Rechecks that main and head have not moved, then uses `gh pr merge --merge --match-head-commit <sha>` without `--admin`.
-6. Waits for the deployment run correlated to the merge SHA, then runs configured smoke URLs. Failure/timeout is durable `deployment-failed`; it does not close the issue, clean the worktree, or start another release.
-
-Unattended release is disabled in configuration. To enable it later, review and merge a policy change, reinstall trusted policy from `main`, record any required approval, and set `ReleaseEnabled = $true`. The candidate cannot enable its own release.
+4. Classifies automation/deployment policy and destructive migration changes using trusted configuration. Policy changes still require all machine gates, but never a human approval.
+5. Before a destructive migration, creates a fresh custom-format production backup outside the repo, restores it to a uniquely named local rehearsal database, and successfully applies the candidate EF migrations there. The rehearsal database is removed; the retained backup path, hash, timestamp, and retention are checkpointed.
+6. Rechecks that main and head have not moved, then uses `gh pr merge --merge --match-head-commit <sha>` without `--admin`.
+7. Waits for the deployment run correlated to the merge SHA, then runs configured smoke URLs. Failure or timeout dispatches `rollback.yml` with the previous and failed immutable SHAs. The rollback restores the previous LightSail image and rebuilds/redeploys the previous UI. It does not reverse database migrations; migrations must remain backward-compatible with the previous app.
+8. A successful release closes the issue only after deployment and smoke success. Rollback success or failure writes `release-halt.json`, which stops new releases until the failed candidate is diagnosed.
 
 ## Commands
 
@@ -137,14 +133,14 @@ Run from repository root in Windows PowerShell:
 .\scripts\automation\Test-Preflight.ps1
 .\scripts\automation\Test-Preflight.ps1 -ValidateModels
 
-# Initialize external state. Install trusted policy only when on reviewed main.
+# Initialize external state. Install trusted policy only when on main.
 .\scripts\automation\Setup-Automation.ps1
 
 # Demonstrate issue selection/planning/testing/evidence skeleton without side effects.
 .\scripts\automation\Invoke-DryRun.ps1 -Provider codex -IssueNumber 110
 
-# Start one live bounded stage only after rollout approval.
-.\scripts\automation\Start-Automation.ps1 -Provider codex -Once -Live
+# Run one autonomous cycle across enabled providers and release candidates.
+.\scripts\automation\Start-Automation.ps1 -Provider all -Once -Live
 
 # Operator controls and status.
 .\scripts\automation\Pause-Automation.ps1 -Reason 'maintenance'
@@ -154,7 +150,7 @@ Run from repository root in Windows PowerShell:
 # Focused controller/release tests.
 .\scripts\automation\Run-Tests.ps1
 
-# Install per-user scheduled dry-run task (still no live flag).
+# Install the per-user autonomous scheduled task.
 .\scripts\automation\Install-ScheduledTask.ps1 -IntervalMinutes 15
 ```
 
@@ -162,25 +158,21 @@ Task Scheduler runs as the current interactive user so keyring subscription sess
 
 ## GitHub settings to configure manually
 
-The controller never changes these settings. Current inspection found PRs required, one approval, stale-review dismissal, and strict branch updating, but no required status checks. Recommended settings:
+The controller never changes these settings. Configure branch protection so machine gates, rather than a human approval, authorize merge:
 
-- Require exact PR checks `build-test-publish` and the aggregate `CodeQL` context after confirming their spelling on a current PR.
-- Add and require a stable `automation-contract` check after it has first succeeded on `main`.
-- Keep strict up-to-date branches, one approval, stale-review dismissal, force-push/deletion prohibition, and normal merge permissions.
-- Enable approval of the most recent push by someone other than its author and require conversation resolution, if compatible with the solo-maintainer workflow.
+- Require exact PR checks `build-test-publish` and `automation-contract`.
+- Require strict up-to-date branches, conversation resolution, and normal merge permissions; prohibit force pushes and branch deletion.
+- Set required human approving reviews to zero. The fresh final-review agent and exact-SHA evidence remain controller gates rather than GitHub review approvals.
 - Do not make deployment jobs PR-required; `Deploy` runs after successful CI on `main` and contains `deploy-container` followed by `deploy-ui`.
-- Consider a protected `production` environment with one approval gate for the deployment chain. Avoid gates on both jobs, which would prompt twice.
+- Do not configure a human approval gate on the production environment; deployment and rollback must remain unattended.
 - Keep the existing deployment concurrency group (`deploy`, `cancel-in-progress: false`) from PR #120.
 
-Do not enable administrator bypass, weaken branch protection, or add automatic closing keywords. Review solo-maintainer implications before enforcing admin review or CODEOWNERS on automation/deployment/migration paths.
+Do not enable administrator bypass, weaken required machine checks, or add automatic closing keywords.
 
-## Bootstrap rollout
+## Activation
 
-1. Review this bootstrap PR; dry-run and release-disabled defaults must remain.
-2. Run Pester, preflight/model checks, and the issue #110 dry-run. The dry-run artifact stays outside git and records product acceptance as `NOT RUN`.
-3. Merge normally. From updated `main`, run `Setup-Automation.ps1` to install trusted policy.
-4. Configure GitHub settings manually and implement Claude's adapter against the contract above.
-5. Trial one issue through planning/testing/evidence with a draft PR; do not merge it through automation.
-6. Only after reviewing the trial should a separate policy PR enable live scheduling or unattended release.
-
-Remaining rollout blockers are intentional: Claude's adapter now implements the contract (verified directly against the real `claude.exe` CLI; see its PR for evidence), but `claude.Enabled` and its `Queue` stay false/empty pending a reviewed trial; GitHub protections need manual configuration, the scheduled task is dry-run-only, smoke URLs are empty, and `ReleaseEnabled` is false.
+1. Merge the bootstrap normally and update the local `main` checkout.
+2. Run Pester and preflight/model checks, then run `Setup-Automation.ps1 -InstallScheduledTask` from `main`.
+3. Ensure PostgreSQL client tools and `dotnet-ef` are available. Destructive candidates additionally require `QM_AGENT_SUPADB_CS` and the documented local PostgreSQL environment variables.
+4. Configure the two required GitHub checks and zero required human approvals.
+5. Keep the Windows user session available so Codex, Claude, GitHub, and keyring subscription authentication remain usable.

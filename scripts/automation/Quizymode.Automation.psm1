@@ -6,6 +6,40 @@ function Resolve-QmPath {
     return [Environment]::ExpandEnvironmentVariables($Path)
 }
 
+function Resolve-QmExecutable {
+    param([Parameter(Mandatory = $true)][string]$Name)
+    $command = Get-Command $Name -ErrorAction SilentlyContinue
+    if ($null -ne $command) { return $command.Source }
+    if ($Name -eq 'gh.exe') {
+        $fallback = Join-Path $env:ProgramFiles 'GitHub CLI\gh.exe'
+        if (Test-Path -LiteralPath $fallback) { return $fallback }
+    }
+    return $null
+}
+
+function ConvertFrom-QmPgConnectionString {
+    param([Parameter(Mandatory = $true)][string]$ConnectionString)
+    if ($ConnectionString -match '^postgres(?:ql)?://') {
+        $uri = [Uri]$ConnectionString
+        $userInfo = $uri.UserInfo.Split(@(':'), 2, [StringSplitOptions]::None)
+        return @{
+            host = $uri.Host; port = if ($uri.Port -gt 0) { $uri.Port.ToString() } else { '5432' }
+            database = $uri.AbsolutePath.TrimStart('/'); username = [Uri]::UnescapeDataString($userInfo[0])
+            password = if ($userInfo.Count -gt 1) { [Uri]::UnescapeDataString($userInfo[1]) } else { '' }
+            'ssl mode' = 'require'
+        }
+    }
+    $values = @{}
+    foreach ($segment in ($ConnectionString -split ';')) {
+        if ([string]::IsNullOrWhiteSpace($segment) -or $segment -notmatch '=') { continue }
+        $separator = $segment.IndexOf('=')
+        $key = $segment.Substring(0, $separator).Trim().ToLowerInvariant()
+        $value = $segment.Substring($separator + 1).Trim()
+        $values[$key] = $value
+    }
+    return $values
+}
+
 function Get-QmRepositoryRoot {
     return (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 }
@@ -159,7 +193,15 @@ function Invoke-QmNative {
     $stdoutTask = $process.StandardOutput.ReadToEndAsync()
     $stderrTask = $process.StandardError.ReadToEndAsync()
     if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
-        try { $process.Kill() } catch { }
+        try {
+            $taskkill = Resolve-QmExecutable -Name 'taskkill.exe'
+            if ($null -ne $taskkill) {
+                $kill = [Diagnostics.Process]::Start($taskkill, "/PID $($process.Id) /T /F")
+                [void]$kill.WaitForExit(30000)
+            }
+            else { $process.Kill() }
+        }
+        catch { try { $process.Kill() } catch { } }
         return [pscustomobject]@{ ExitCode = $null; StdOut = $stdoutTask.Result; StdErr = $stderrTask.Result; TimedOut = $true }
     }
     return [pscustomobject]@{ ExitCode = $process.ExitCode; StdOut = $stdoutTask.Result; StdErr = $stderrTask.Result; TimedOut = $false }
@@ -167,7 +209,9 @@ function Invoke-QmNative {
 
 function Invoke-QmGitHub {
     param([string[]]$Arguments, [string]$WorkingDirectory = (Get-QmRepositoryRoot), [int]$TimeoutSeconds = 300)
-    return Invoke-QmNative -FilePath 'gh.exe' -Arguments $Arguments -WorkingDirectory $WorkingDirectory -TimeoutSeconds $TimeoutSeconds
+    $executable = Resolve-QmExecutable -Name 'gh.exe'
+    if ($null -eq $executable) { throw 'GitHub CLI executable was not found.' }
+    return Invoke-QmNative -FilePath $executable -Arguments $Arguments -WorkingDirectory $WorkingDirectory -TimeoutSeconds $TimeoutSeconds
 }
 
 function Invoke-QmGit {
@@ -275,7 +319,7 @@ function Install-QmTrustedPolicy {
     $targetDirectory = Join-Path $Config.StateRoot 'trusted-policy'
     if (-not (Test-Path -LiteralPath $targetDirectory)) { New-Item -ItemType Directory -Path $targetDirectory -Force | Out-Null }
     $sourceDirectory = Split-Path -Parent $SourceConfigPath
-    $files = @('automation.config.psd1', 'Quizymode.Automation.psm1', 'Invoke-Release.ps1')
+    $files = @('automation.config.psd1', 'Quizymode.Automation.psm1', 'Invoke-Release.ps1', 'Invoke-DatabaseSafety.ps1')
     $hashes = [ordered]@{}
     foreach ($file in $files) {
         $sourcePath = Join-Path $sourceDirectory $file
@@ -307,6 +351,7 @@ function Select-QmIssue {
             if ($existingPr.Count -gt 0) { continue }
         }
         $existingState = Read-QmJson -Path (Get-QmIssueStatePath -Config $Config -Issue $number)
+        if ($null -ne $existingState -and $existingState.status -in @('released', 'blocked', 'rollback-failed')) { continue }
         if ($null -ne $existingState -and $existingState.provider -ne $Provider -and $existingState.status -notin @('released', 'blocked')) { continue }
         return $issue
     }
@@ -354,6 +399,7 @@ function New-QmIssueState {
         headSha = $BaseSha
         pr = $null
         evidence = $null
+        evidencePublication = $null
         finalReviewSha = $null
         handoffs = @()
         models = @()
@@ -368,7 +414,7 @@ function New-QmIssueState {
 
 function Test-QmQuotaResult {
     param([string]$Text)
-    return $Text -match '(?i)(quota|usage limit|rate limit|too many requests|capacity.*try again)'
+    return $Text -match '(?i)(quota|usage limit|session limit|rate limit|too many requests|capacity.*try again)'
 }
 
 function Test-QmEvidence {
@@ -376,10 +422,14 @@ function Test-QmEvidence {
         [Parameter(Mandatory = $true)]$Manifest,
         [Parameter(Mandatory = $true)][string]$CandidateHeadSha,
         [Parameter(Mandatory = $true)][string]$CurrentBaseSha,
-        [switch]$RequirePass
+        [switch]$RequirePass,
+        [Nullable[int]]$ExpectedIssue,
+        [Nullable[int]]$ExpectedPr
     )
     $errors = New-Object Collections.Generic.List[string]
     if ($Manifest.schemaVersion -ne 1) { $errors.Add('Unsupported evidence schemaVersion.') }
+    if ($null -ne $ExpectedIssue -and [int]$Manifest.issue -ne [int]$ExpectedIssue) { $errors.Add('Evidence issue does not match the controller issue.') }
+    if ($null -ne $ExpectedPr -and [int]$Manifest.pr -ne [int]$ExpectedPr) { $errors.Add('Evidence PR does not match the controller PR.') }
     if ($Manifest.headSha -ne $CandidateHeadSha) { $errors.Add('Evidence is stale for the candidate head SHA.') }
     if ($Manifest.baseSha -ne $CurrentBaseSha) { $errors.Add('Evidence is stale for the current base SHA.') }
     $criteria = @($Manifest.criteria)
@@ -388,13 +438,50 @@ function Test-QmEvidence {
         if (@('PASS', 'FAIL', 'NOT RUN', 'BLOCKED', 'N/A') -notcontains $criterion.status) { $errors.Add("Criterion $($criterion.id) has an invalid status.") }
         if ($RequirePass -and @('PASS', 'N/A') -notcontains $criterion.status) { $errors.Add("Criterion $($criterion.id) is not releasable: $($criterion.status).") }
         if ($criterion.status -eq 'N/A' -and [string]::IsNullOrWhiteSpace($criterion.summary)) { $errors.Add("Criterion $($criterion.id) needs an N/A justification.") }
+        if ($RequirePass -and $criterion.status -eq 'PASS' -and @($criterion.evidence).Count -eq 0) { $errors.Add("Criterion $($criterion.id) has no supporting evidence.") }
     }
-    foreach ($command in @($Manifest.commands)) {
+    $commands = @($Manifest.commands)
+    if ($RequirePass -and $commands.Count -eq 0) { $errors.Add('At least one executed verification command is required.') }
+    foreach ($command in $commands) {
         if ($command.kind -ne 'not-run' -and $null -eq $command.exitCode) { $errors.Add("Command $($command.name) is missing an exit result.") }
+        if ($RequirePass -and $command.kind -ne 'not-run' -and $command.exitCode -ne 0) { $errors.Add("Command $($command.name) did not pass (exit $($command.exitCode)).") }
+        if ($RequirePass -and $command.kind -eq 'not-run') { $errors.Add("Command $($command.name) was not run.") }
     }
     foreach ($artifact in @($Manifest.artifacts)) {
         if ($artifact.url -notmatch '^https://') { $errors.Add("Artifact $($artifact.name) must use an accessible HTTPS URL, not a local path.") }
         if ([string]::IsNullOrWhiteSpace($artifact.retention)) { $errors.Add("Artifact $($artifact.name) is missing retention/expiry.") }
+    }
+    return [pscustomobject]@{ Valid = $errors.Count -eq 0; Errors = @($errors) }
+}
+
+function Test-QmHandoff {
+    param(
+        [Parameter(Mandatory = $true)]$Handoff,
+        [Parameter(Mandatory = $true)][int]$Issue,
+        [Parameter(Mandatory = $true)][string]$Provider,
+        [Parameter(Mandatory = $true)][string]$Stage,
+        [Parameter(Mandatory = $true)][string]$Branch,
+        [Parameter(Mandatory = $true)][string]$HeadSha,
+        [Parameter(Mandatory = $true)][string]$BaseSha
+    )
+    $errors = New-Object Collections.Generic.List[string]
+    foreach ($name in @('schemaVersion','issue','provider','stage','status','branch','headSha','baseSha','nextAction','decisions','artifacts','blockers','models')) {
+        if ($Handoff.PSObject.Properties.Name -notcontains $name) { $errors.Add("Handoff is missing required field: $name") }
+    }
+    if ($errors.Count -eq 0) {
+        if ($Handoff.schemaVersion -ne 1) { $errors.Add('Unsupported handoff schemaVersion.') }
+        if ([int]$Handoff.issue -ne $Issue) { $errors.Add('Handoff issue does not match the controller issue.') }
+        if ($Handoff.provider -ne $Provider) { $errors.Add('Handoff provider does not match the active provider.') }
+        if ($Handoff.stage -ne $Stage) { $errors.Add('Handoff stage does not match the active stage.') }
+        if ($Handoff.branch -ne $Branch) { $errors.Add('Handoff branch does not match the controller branch.') }
+        if ($Handoff.headSha -ne $HeadSha) { $errors.Add('Handoff head SHA is stale or mismatched.') }
+        if ($Handoff.baseSha -ne $BaseSha) { $errors.Add('Handoff base SHA is stale or mismatched.') }
+        if (@('pass','fail','blocked','not-run','skipped') -notcontains $Handoff.status) { $errors.Add('Handoff status is invalid.') }
+        if ($Handoff.status -eq 'skipped' -and $Stage -ne 'ux') { $errors.Add('Only the UX stage may be skipped.') }
+        if ($Handoff.status -in @('not-run','skipped') -and [string]::IsNullOrWhiteSpace($Handoff.nextAction)) { $errors.Add('A non-executed stage requires an explicit next action.') }
+        foreach ($model in @($Handoff.models)) {
+            if ([string]::IsNullOrWhiteSpace($model.role) -or [string]::IsNullOrWhiteSpace($model.requested) -or [string]::IsNullOrWhiteSpace($model.actual)) { $errors.Add('Every handoff model record requires role, requested, and actual values.') }
+        }
     }
     return [pscustomobject]@{ Valid = $errors.Count -eq 0; Errors = @($errors) }
 }
@@ -440,22 +527,6 @@ function ConvertTo-QmEvidenceMarkdown {
     return ($lines -join "`n")
 }
 
-function Test-QmManualApproval {
-    param(
-        [Parameter(Mandatory = $true)][string]$ApprovalPath,
-        [Parameter(Mandatory = $true)][string]$CandidateSha,
-        [string[]]$RequiredScopes
-    )
-    if (-not (Test-Path -LiteralPath $ApprovalPath)) { return [pscustomobject]@{ Valid = $false; Reason = 'Manual approval file is missing.' } }
-    $approval = Read-QmJson -Path $ApprovalPath
-    if ($approval.candidateSha -ne $CandidateSha) { return [pscustomobject]@{ Valid = $false; Reason = 'Manual approval is stale.' } }
-    if ([string]::IsNullOrWhiteSpace($approval.approvedBy)) { return [pscustomobject]@{ Valid = $false; Reason = 'Manual approval has no approver.' } }
-    foreach ($scope in $RequiredScopes) {
-        if (@($approval.scopes) -notcontains $scope) { return [pscustomobject]@{ Valid = $false; Reason = "Manual approval is missing scope: $scope" } }
-    }
-    return [pscustomobject]@{ Valid = $true; Reason = 'Approved.' }
-}
-
 function Test-QmReleaseGate {
     param(
         [Parameter(Mandatory = $true)][string]$CandidateSha,
@@ -467,8 +538,7 @@ function Test-QmReleaseGate {
         [bool]$HasConflicts = $false,
         [bool]$IndependentReviewPassed = $false,
         [bool]$EvidencePassed = $false,
-        [bool]$ReleaseEnabled = $false,
-        [bool]$PolicyApprovalPassed = $true
+        [bool]$ReleaseEnabled = $false
     )
     $reasons = New-Object Collections.Generic.List[string]
     if (-not $ReleaseEnabled) { $reasons.Add('Unattended release is disabled.') }
@@ -477,7 +547,6 @@ function Test-QmReleaseGate {
     if ($BaseSha -ne $VerifiedBaseSha) { $reasons.Add('Base advanced after verification.') }
     if (-not $IndependentReviewPassed) { $reasons.Add('Independent final review has not passed.') }
     if (-not $EvidencePassed) { $reasons.Add('Acceptance evidence is incomplete or stale.') }
-    if (-not $PolicyApprovalPassed) { $reasons.Add('Required manual policy approval is missing or stale.') }
     foreach ($required in $RequiredChecks) {
         $matching = @($Checks | Where-Object { $_.name -eq $required -and $_.sha -eq $CandidateSha })
         if ($matching.Count -eq 0 -or $matching[0].status -ne 'COMPLETED' -or $matching[0].conclusion -ne 'SUCCESS') {
@@ -501,9 +570,21 @@ function Get-QmRecoveryDecision {
             $nextAttempts = $RepairAttempts + 1
             return [pscustomobject]@{ Status = if ($nextAttempts -gt $MaxRepairAttempts) { 'blocked' } else { 'repair' }; NextStage = if ($nextAttempts -gt $MaxRepairAttempts) { 'blocked' } else { 'implementation' }; IncrementRepair = $true; MergeAllowed = $false; CloseIssue = $false; PreserveWorktree = $true }
         }
-        'main-advanced' { return [pscustomobject]@{ Status = 'revalidation-required'; NextStage = 'testing'; IncrementRepair = $false; MergeAllowed = $false; CloseIssue = $false; PreserveWorktree = $true } }
+        'main-advanced' { return [pscustomobject]@{ Status = 'revalidation-required'; NextStage = 'implementation'; IncrementRepair = $false; MergeAllowed = $false; CloseIssue = $false; PreserveWorktree = $true } }
         'integration-conflict' { return [pscustomobject]@{ Status = 'blocked'; NextStage = 'blocked'; IncrementRepair = $false; MergeAllowed = $false; CloseIssue = $false; PreserveWorktree = $true } }
         'deployment-failed' { return [pscustomobject]@{ Status = 'deployment-failed'; NextStage = 'release-candidate'; IncrementRepair = $false; MergeAllowed = $false; CloseIssue = $false; PreserveWorktree = $true } }
+    }
+}
+
+function Get-QmReleaseResumeAction {
+    param([AllowNull()][string]$ReleaseStatus)
+    switch ($ReleaseStatus) {
+        'merge-pending' { return 'reconcile-merge' }
+        'deployment-pending' { return 'observe-deployment' }
+        'rollback-pending' { return 'observe-rollback' }
+        'rollback-retry' { return 'retry-rollback' }
+        'finalizing' { return 'finalize-issue' }
+        default { return 'validate-candidate' }
     }
 }
 
@@ -512,8 +593,14 @@ function Get-QmProtectedScopes {
     $scopes = New-Object Collections.Generic.List[string]
     foreach ($path in $ChangedPaths) {
         $normalized = $path.Replace('\', '/')
-        if ($normalized -like 'scripts/automation/*' -or $normalized -like '.codex/*') { if (-not $scopes.Contains('automation-policy')) { $scopes.Add('automation-policy') } }
-        if ($normalized -like '.github/workflows/*') { if (-not $scopes.Contains('deployment-controls')) { $scopes.Add('deployment-controls') } }
+        $configuredProtectedPaths = if ($Config.ContainsKey('ProtectedPolicyPaths')) { @($Config.ProtectedPolicyPaths) } else { @('scripts/automation/', '.codex/', '.github/workflows/') }
+        foreach ($protectedPath in $configuredProtectedPaths) {
+            $prefix = $protectedPath.Replace('\', '/').TrimEnd('/')
+            if ($normalized -eq $prefix -or $normalized.StartsWith("$prefix/", [StringComparison]::OrdinalIgnoreCase)) {
+                $scope = if ($prefix -eq '.github/workflows') { 'deployment-controls' } else { 'automation-policy' }
+                if (-not $scopes.Contains($scope)) { $scopes.Add($scope) }
+            }
+        }
     }
     foreach ($content in $MigrationContents) {
         foreach ($pattern in $Config.DestructiveMigrationPatterns) {
@@ -540,7 +627,7 @@ function New-QmDryRunEvidence {
         commands = @([ordered]@{ name = 'product verification'; command = 'not executed in dry-run'; exitCode = $null; kind = 'not-run'; url = $null })
         artifacts = @()
         limitations = @('Schema/completeness validation does not prove assertions are true.', 'No merge, issue comment, branch, PR, or product change was created.')
-        deployment = [ordered]@{ status = 'NOT STARTED'; mergeSha = $null; details = 'Release is disabled and dry-run never merges.' }
+        deployment = [ordered]@{ status = 'NOT STARTED'; mergeSha = $null; details = 'Dry-run never submits or merges a candidate.' }
     }
 }
 

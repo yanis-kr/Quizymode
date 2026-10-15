@@ -35,10 +35,10 @@ function Invoke-QmProviderStage {
     if ($result.TimedOut) {
         return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
     }
-    if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
-        return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
-    }
     if ($result.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $OutputPath)) {
+        if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        }
         return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
     }
     $output = Get-Content -LiteralPath $OutputPath -Raw | ConvertFrom-Json

@@ -65,6 +65,40 @@ Describe 'Quizymode evidence contract' {
         $result = Test-QmEvidence -Manifest $manifest -CandidateHeadSha $shaA -CurrentBaseSha $shaB -RequirePass
         $result.Valid | Should Be $false
     }
+
+    It 'rejects nonzero command exits and mismatched issue or PR identity' {
+        $manifest | Add-Member -NotePropertyName issue -NotePropertyValue 110
+        $manifest | Add-Member -NotePropertyName pr -NotePropertyValue 142
+        $manifest.commands[0].exitCode = 1
+        $result = Test-QmEvidence -Manifest $manifest -CandidateHeadSha $shaA -CurrentBaseSha $shaB -RequirePass -ExpectedIssue 110 -ExpectedPr 999
+        $result.Valid | Should Be $false
+        ($result.Errors -join ' ') | Should Match 'PR does not match'
+        ($result.Errors -join ' ') | Should Match 'did not pass'
+    }
+}
+
+Describe 'Quizymode provider handoff validation' {
+    BeforeEach {
+        $script:head = ('a' * 40)
+        $script:base = ('b' * 40)
+        $script:handoff = [pscustomobject]@{
+            schemaVersion=1; issue=110; provider='codex'; stage='testing'; status='pass'; branch='codex/110-automation'
+            headSha=$head; baseSha=$base; nextAction='Review'; decisions=@(); artifacts=@(); blockers=@(); models=@()
+        }
+    }
+
+    It 'accepts an exact current handoff' {
+        (Test-QmHandoff -Handoff $handoff -Issue 110 -Provider codex -Stage testing -Branch 'codex/110-automation' -HeadSha $head -BaseSha $base).Valid | Should Be $true
+    }
+
+    It 'rejects stale identity and non-UX skips' {
+        $handoff.headSha = ('c' * 40)
+        $handoff.status = 'skipped'
+        $result = Test-QmHandoff -Handoff $handoff -Issue 110 -Provider codex -Stage testing -Branch 'codex/110-automation' -HeadSha $head -BaseSha $base
+        $result.Valid | Should Be $false
+        ($result.Errors -join ' ') | Should Match 'head SHA'
+        ($result.Errors -join ' ') | Should Match 'Only the UX'
+    }
 }
 
 Describe 'Quizymode release failure gates' {
@@ -77,7 +111,7 @@ Describe 'Quizymode release failure gates' {
         $gate = Test-QmReleaseGate -CandidateSha $sha -VerifiedSha $sha -BaseSha ('e' * 40) -VerifiedBaseSha ('f' * 40) -Checks $checks -RequiredChecks @('build-test-publish') -IndependentReviewPassed $true -EvidencePassed $true -ReleaseEnabled $true
         $gate.Allowed | Should Be $false
         ($gate.Reasons -join ' ') | Should Match 'Base advanced'
-        (Get-QmRecoveryDecision -Event main-advanced -CurrentStage release-candidate).NextStage | Should Be 'testing'
+        (Get-QmRecoveryDecision -Event main-advanced -CurrentStage release-candidate).NextStage | Should Be 'implementation'
     }
 
     It 'blocks missing pending failed and stale checks' {
@@ -90,14 +124,6 @@ Describe 'Quizymode release failure gates' {
             $gate = Test-QmReleaseGate -CandidateSha $sha -VerifiedSha $sha -BaseSha $sha -VerifiedBaseSha $sha -Checks $badChecks -RequiredChecks @('build-test-publish') -IndependentReviewPassed $true -EvidencePassed $true -ReleaseEnabled $true
             $gate.Allowed | Should Be $false
         }
-    }
-
-    It 'requires exact-SHA manual approval for protected scopes' {
-        $path = Join-Path $TestDrive 'approval.json'
-        Write-QmAtomicJson -Path $path -Value ([ordered]@{ candidateSha = $sha; scopes = @('automation-policy'); approvedBy = 'operator' })
-        (Test-QmManualApproval -ApprovalPath $path -CandidateSha $sha -RequiredScopes @('automation-policy')).Valid | Should Be $true
-        (Test-QmManualApproval -ApprovalPath $path -CandidateSha ('1' * 40) -RequiredScopes @('automation-policy')).Valid | Should Be $false
-        (Test-QmManualApproval -ApprovalPath $path -CandidateSha $sha -RequiredScopes @('deployment-controls')).Valid | Should Be $false
     }
 
     It 'requires release enablement and never interprets policy changes from candidate config' {
@@ -127,14 +153,30 @@ Describe 'Quizymode release failure gates' {
         $decision.NextStage | Should Be 'implementation'
         $decision.IncrementRepair | Should Be $false
     }
+
+    It 'resumes merge deployment rollback and finalization at the durable side effect' {
+        (Get-QmReleaseResumeAction -ReleaseStatus 'merge-pending') | Should Be 'reconcile-merge'
+        (Get-QmReleaseResumeAction -ReleaseStatus 'deployment-pending') | Should Be 'observe-deployment'
+        (Get-QmReleaseResumeAction -ReleaseStatus 'rollback-pending') | Should Be 'observe-rollback'
+        (Get-QmReleaseResumeAction -ReleaseStatus 'rollback-retry') | Should Be 'retry-rollback'
+        (Get-QmReleaseResumeAction -ReleaseStatus 'finalizing') | Should Be 'finalize-issue'
+        (Get-QmReleaseResumeAction -ReleaseStatus 'checks-failed') | Should Be 'validate-candidate'
+    }
 }
 
 Describe 'Quizymode trusted policy classifier' {
-    It 'requires approval for automation deployment controls and destructive migrations' {
-        $config = @{ DestructiveMigrationPatterns = @('(?i)\bDROP\s+TABLE\b') }
+    It 'classifies configured automation deployment controls and destructive migrations for machine gates' {
+        $config = @{ ProtectedPolicyPaths = @('scripts/automation/', '.github/workflows/'); DestructiveMigrationPatterns = @('(?i)\bDROP\s+TABLE\b') }
         $scopes = @(Get-QmProtectedScopes -ChangedPaths @('scripts/automation/a.ps1', '.github/workflows/deploy.yml') -MigrationContents @('DROP TABLE Users;') -Config $config)
         ($scopes -contains 'automation-policy') | Should Be $true
         ($scopes -contains 'deployment-controls') | Should Be $true
         ($scopes -contains 'destructive-migration') | Should Be $true
+    }
+
+    It 'parses a database connection string without exposing or truncating password characters' {
+        $values = ConvertFrom-QmPgConnectionString -ConnectionString 'Host=localhost;Database=quizymode;Username=agent;Password=a=b=c;SSL Mode=require'
+        $values.host | Should Be 'localhost'
+        $values.password | Should Be 'a=b=c'
+        $values.'ssl mode' | Should Be 'require'
     }
 }

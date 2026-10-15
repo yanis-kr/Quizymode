@@ -31,7 +31,7 @@ try {
     $activeStates = @()
     $issueStateDirectory = Join-Path $config.StateRoot 'issues'
     if (Test-Path -LiteralPath $issueStateDirectory) {
-        $activeStates = @(Get-ChildItem -LiteralPath $issueStateDirectory -Filter '*.json' | ForEach-Object { Read-QmJson -Path $_.FullName } | Where-Object { $_.provider -eq $Provider -and $_.status -notin @('released', 'blocked', 'dry-run-complete') })
+        $activeStates = @(Get-ChildItem -LiteralPath $issueStateDirectory -Filter '*.json' | ForEach-Object { Read-QmJson -Path $_.FullName } | Where-Object { $_.provider -eq $Provider -and $_.status -notin @('released', 'blocked', 'dry-run-complete', 'rollback-failed') })
     }
     if ($activeStates.Count -gt 1) { throw "Provider $Provider has multiple active checkpoints; reconcile shared state before continuing." }
     if ($activeStates.Count -eq 1) {
@@ -80,6 +80,9 @@ try {
     }
     if ($state.PSObject.Properties.Name -notcontains 'models') {
         $state | Add-Member -NotePropertyName models -NotePropertyValue @()
+    }
+    if ($state.PSObject.Properties.Name -notcontains 'evidencePublication') {
+        $state | Add-Member -NotePropertyName evidencePublication -NotePropertyValue $null
     }
 
     if ($state.status -eq 'waiting-quota' -and $null -ne $state.notBeforeUtc -and (Get-QmUtcNow) -lt [DateTime]::Parse($state.notBeforeUtc).ToUniversalTime()) {
@@ -184,6 +187,7 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
     if ($state.stage -eq 'evidence') {
         $prompt += "`nReturn exactly the acceptance-evidence v1 schema instead of the handoff schema. Use the current PR number and only actual evidence."
     }
+    $preStageStatus = (Invoke-QmGit -Arguments @('status','--porcelain') -WorkingDirectory $state.worktree).StdOut
     $providerResult = $null
     if ($null -ne $state.writeAhead -and $state.writeAhead.action -eq 'provider-stage' -and $state.writeAhead.outputPath -eq $outputPath -and (Test-Path -LiteralPath $outputPath)) {
         try {
@@ -194,10 +198,23 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
         }
         catch { $providerResult = $null }
     }
+    elseif ($null -ne $state.writeAhead -and $state.writeAhead.action -eq 'publish-evidence' -and $state.writeAhead.manifestPath -eq $outputPath -and (Test-Path -LiteralPath $outputPath)) {
+        try {
+            $recoveredOutput = Get-Content -LiteralPath $outputPath -Raw | ConvertFrom-Json
+            $providerResult = [pscustomobject]@{ Status = 'completed'; ExitCode = 0; RequestedModel = $model; ActualModel = 'recovered-from-checkpoint'; Output = $recoveredOutput; StdErr = '' }
+        }
+        catch { $providerResult = $null }
+    }
     if ($null -eq $providerResult) {
         $state.writeAhead = [ordered]@{ action = 'provider-stage'; stage = $state.stage; outputPath = $outputPath; headSha = $state.headSha; startedAt = (Get-QmUtcNow).ToString('o') }
         Save-QmCheckpoint -Config $config -State $state
         $providerResult = Invoke-QmProviderStage -Stage $state.stage -Prompt $prompt -Worktree $state.worktree -OutputPath $outputPath -SchemaPath $schemaPath -Model $model -Effort $effort -TimeoutSeconds ($config.StageTimeoutMinutes * 60)
+    }
+    if ($providerResult.Status -eq 'completed' -and $state.stage -ne 'implementation') {
+        $postStageStatus = (Invoke-QmGit -Arguments @('status','--porcelain') -WorkingDirectory $state.worktree).StdOut
+        if ($postStageStatus -ne $preStageStatus) {
+            $providerResult = [pscustomobject]@{ Status = 'failed'; ExitCode = 1; RequestedModel = $model; ActualModel = $providerResult.ActualModel; Output = $null; StdErr = "Read-only stage '$($state.stage)' changed the worktree. Changes were preserved for diagnosis." }
+        }
     }
     if ($providerResult.Status -eq 'quota-exhausted') {
         $state.status = 'waiting-quota'
@@ -227,10 +244,32 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
     $modelRecord = [pscustomobject]@{ role = $state.stage; requested = $providerResult.RequestedModel; actual = $providerResult.ActualModel }
     $state.models = @($state.models) + $modelRecord
     if ($state.stage -eq 'evidence') {
-        $evidenceValidation = Test-QmEvidence -Manifest $providerResult.Output -CandidateHeadSha $state.headSha -CurrentBaseSha $state.baseSha
-        if (-not $evidenceValidation.Valid) { throw "Reporter produced incomplete or stale evidence: $($evidenceValidation.Errors -join '; ')" }
+        $evidenceValidation = Test-QmEvidence -Manifest $providerResult.Output -CandidateHeadSha $state.headSha -CurrentBaseSha $state.baseSha -RequirePass -ExpectedIssue ([int]$state.issue) -ExpectedPr ([int]$state.pr)
+        if (-not $evidenceValidation.Valid) {
+            $attempt = 0
+            if ($state.repairAttempts.PSObject.Properties.Name -contains 'evidence') { $attempt = [int]$state.repairAttempts.evidence }
+            $attempt++
+            $state.repairAttempts | Add-Member -NotePropertyName evidence -NotePropertyValue $attempt -Force
+            $state.blockers = @($evidenceValidation.Errors)
+            $productFailure = ($evidenceValidation.Errors -join ' ') -match '(?i)(not releasable|did not pass|was not run)'
+            if ($attempt -gt $config.MaxRepairAttempts) { $state.stage = 'blocked'; $state.status = 'blocked' }
+            elseif ($productFailure) { $state.stage = 'implementation'; $state.status = 'repair'; $state.nextAction = 'Coder must repair the failures captured in acceptance evidence.' }
+            else { $state.status = 'provider-failed'; $state.nextAction = 'Reporter must repair the incomplete or stale evidence manifest.' }
+            $state.writeAhead = $null
+            Save-QmCheckpoint -Config $config -State $state
+            throw "Reporter produced non-releasable evidence: $($evidenceValidation.Errors -join '; ')"
+        }
         $state.evidence = $outputPath
         $state.handoffs = @($state.handoffs) + $outputPath
+        $state.writeAhead = [ordered]@{ action = 'publish-evidence'; manifestPath = $outputPath; headSha = $state.headSha; startedAt = (Get-QmUtcNow).ToString('o') }
+        Save-QmCheckpoint -Config $config -State $state
+        $evidenceBody = ConvertTo-QmEvidenceMarkdown -Manifest $providerResult.Output
+        $issueComment = Publish-QmMarkedComment -Repository $config.Repository -Issue ([int]$state.issue) -Marker '<!-- quizymode-acceptance-evidence:v1 -->' -Body $evidenceBody
+        $prBody = "<!-- quizymode-evidence-link:v1 -->`nAcceptance evidence: $($issueComment.Url)"
+        $prComment = Publish-QmMarkedComment -Repository $config.Repository -Issue ([int]$state.pr) -Marker '<!-- quizymode-evidence-link:v1 -->' -Body $prBody
+        $state.evidencePublication = [ordered]@{ issueUrl = $issueComment.Url; prUrl = $prComment.Url; manifestHash = (Get-QmEvidenceHash -Body (ConvertTo-QmJson $providerResult.Output)); headSha = $state.headSha; publishedAt = (Get-QmUtcNow).ToString('o') }
+        $ready = Invoke-QmGitHub -Arguments @('pr', 'ready', $state.pr.ToString(), '--repo', $config.Repository) -WorkingDirectory $state.worktree
+        if ($ready.ExitCode -ne 0 -and ($ready.StdOut + $ready.StdErr) -notmatch '(?i)already.*ready') { throw "Mark PR ready failed: $($ready.StdErr)" }
         $state.stage = 'release-candidate'
         $state.status = 'awaiting-release'
         $state.nextAction = 'Shared release controller must integrate current main and revalidate before merge.'
@@ -241,6 +280,20 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
     }
 
     $handoff = $providerResult.Output
+    $handoffValidation = Test-QmHandoff -Handoff $handoff -Issue ([int]$state.issue) -Provider $Provider -Stage $state.stage -Branch $state.branch -HeadSha $state.headSha -BaseSha $state.baseSha
+    if (-not $handoffValidation.Valid) {
+        $attempt = 0
+        if ($state.repairAttempts.PSObject.Properties.Name -contains $state.stage) { $attempt = [int]$state.repairAttempts.($state.stage) }
+        $attempt++
+        $state.repairAttempts | Add-Member -NotePropertyName $state.stage -NotePropertyValue $attempt -Force
+        $state.status = if ($attempt -gt $config.MaxRepairAttempts) { 'blocked' } else { 'provider-failed' }
+        if ($state.status -eq 'blocked') { $state.stage = 'blocked' }
+        $state.blockers = @($handoffValidation.Errors)
+        $state.nextAction = 'Retry the stage with a complete, current, schema-conformant handoff.'
+        $state.writeAhead = $null
+        Save-QmCheckpoint -Config $config -State $state
+        throw "Provider handoff was rejected: $($handoffValidation.Errors -join '; ')"
+    }
     $handoff.models = @($handoff.models) + $modelRecord
     Write-QmAtomicJson -Path $outputPath -Value $handoff
     $state.handoffs = @($state.handoffs) + $outputPath
@@ -248,13 +301,14 @@ Perform only this bounded stage. Return exactly the JSON handoff schema. The con
     $state.nextAction = $handoff.nextAction
     $state.blockers = @($handoff.blockers)
     $state.notBeforeUtc = $null
-    if ($handoff.status -in @('fail', 'blocked')) {
+    if ($handoff.status -in @('fail', 'blocked', 'not-run')) {
         $attempt = 0
         if ($state.repairAttempts.PSObject.Properties.Name -contains $state.stage) { $attempt = [int]$state.repairAttempts.($state.stage) }
         $attempt++
         $state.repairAttempts | Add-Member -NotePropertyName $state.stage -NotePropertyValue $attempt -Force
         if ($attempt -gt $config.MaxRepairAttempts) { $state.status = 'blocked'; $state.stage = 'blocked' }
         elseif ($state.stage -in @('testing', 'final-review')) { $state.stage = 'implementation'; $state.nextAction = 'Coder must repair the independently reported failures.' }
+        elseif ($state.stage -eq 'plan-review') { $state.stage = 'architecture'; $state.nextAction = 'Architect must revise the rejected plan.' }
     }
     else {
         if ($state.stage -eq 'implementation') {

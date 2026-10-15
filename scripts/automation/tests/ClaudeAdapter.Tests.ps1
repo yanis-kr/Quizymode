@@ -39,11 +39,12 @@ Describe 'Claude provider adapter stage invocation' {
         $result.Output.status | Should Be 'pass'
         (Test-Path -LiteralPath $outputPath) | Should Be $true
         (Get-Content -LiteralPath $outputPath -Raw | ConvertFrom-Json).status | Should Be 'pass'
+        Assert-MockCalled -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -Times 1 -ParameterFilter { $StandardInput -eq 'plan it' }
     }
 
     It 'extracts the JSON object when a custom agent persona wraps it in prose' {
         Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
-            $proseResult = 'Sure, here is the plan: ' + (ConvertTo-Json @{ schemaVersion = 1; status = 'pass' } -Compress) + ' Let me know if you need anything else.'
+            $proseResult = 'Sure, here is the plan: ' + (ConvertTo-Json @{ schemaVersion = 1; status = 'pass' } -Compress) + ' Trailing notation may use {0,1,2}.'
             $envelope = @{ type = 'result'; subtype = 'success'; model = 'claude-opus-4-8'; result = $proseResult } | ConvertTo-Json -Compress
             [pscustomobject]@{ ExitCode = 0; StdOut = $envelope; StdErr = ''; TimedOut = $false }
         }
@@ -65,6 +66,15 @@ Describe 'Claude provider adapter stage invocation' {
 
         $result.Status | Should Be 'quota-exhausted'
         (Test-Path -LiteralPath $outputPath) | Should Be $false
+    }
+
+    It 'recognizes Claude JSON session-limit envelopes even when the CLI exits zero' {
+        Mock -ModuleName ClaudeAdapter -CommandName Invoke-QmNative -MockWith {
+            $envelope = @{ type='result'; subtype='success'; is_error=$true; api_error_status=429; result='You have hit your session limit' } | ConvertTo-Json -Compress
+            [pscustomobject]@{ ExitCode = 0; StdOut = $envelope; StdErr = ''; TimedOut = $false }
+        }
+        $result = Invoke-QmProviderStage -Stage 'testing' -Prompt 'test it' -Worktree $TestDrive -OutputPath $outputPath -SchemaPath $schemaPath -Model 'sonnet' -Effort 'medium'
+        $result.Status | Should Be 'quota-exhausted'
     }
 
     It 'reports timeout distinctly from a hard CLI failure' {

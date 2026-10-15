@@ -18,4 +18,4 @@ else {
 }
 
 if ($InstallScheduledTask) { & (Join-Path $PSScriptRoot 'Install-ScheduledTask.ps1') }
-Write-Output 'Setup complete. Dry-run remains the default and unattended release remains disabled.'
+Write-Output 'Setup complete. The scheduled task runs unattended when installed; Invoke-DryRun.ps1 remains available for harmless validation.'
