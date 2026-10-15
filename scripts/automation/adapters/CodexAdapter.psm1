@@ -32,21 +32,33 @@ function Invoke-QmProviderStage {
         '-'
     )
     $result = Invoke-QmNative -FilePath 'codex.exe' -Arguments $arguments -WorkingDirectory $Worktree -TimeoutSeconds $TimeoutSeconds -StandardInput $Prompt
+    $noUsage = [pscustomobject]@{ CostUsd = $null; InputTokens = $null; OutputTokens = $null; CacheReadTokens = $null; CacheCreationTokens = $null }
     if ($result.TimedOut) {
-        return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        return [pscustomobject]@{ Status = 'timeout'; ExitCode = $null; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
     }
     if ($result.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $OutputPath)) {
         if (Test-QmQuotaResult -Text ($result.StdOut + "`n" + $result.StdErr)) {
-            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+            return [pscustomobject]@{ Status = 'quota-exhausted'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
         }
-        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr }
+        return [pscustomobject]@{ Status = 'failed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $null; Output = $null; StdErr = $result.StdErr; Usage = $noUsage }
     }
     $output = Get-Content -LiteralPath $OutputPath -Raw | ConvertFrom-Json
     $actualModel = $Model
+    # Best-effort, UNVERIFIED against a real codex.exe (none available in the
+    # environment this was written in -- see the issue tracking this gap).
+    # `codex exec --json` streams JSONL events to stdout; scans every line
+    # (not just the first match) since a token-count event is typically
+    # separate from the model-identifying event.
+    $inputTokens = $null; $outputTokens = $null; $cachedTokens = $null; $costUsd = $null
     foreach ($line in ($result.StdOut -split "`r?`n")) {
-        if ($line -match '"model"\s*:\s*"([^"]+)"') { $actualModel = $Matches[1]; break }
+        if ($line -match '"model"\s*:\s*"([^"]+)"') { $actualModel = $Matches[1] }
+        if ($line -match '"input_tokens"\s*:\s*(\d+)') { $inputTokens = [double]$Matches[1] }
+        if ($line -match '"output_tokens"\s*:\s*(\d+)') { $outputTokens = [double]$Matches[1] }
+        if ($line -match '"cached_input_tokens"\s*:\s*(\d+)') { $cachedTokens = [double]$Matches[1] }
+        if ($line -match '"total_cost_usd"\s*:\s*([\d.]+)') { $costUsd = [double]$Matches[1] }
     }
-    return [pscustomobject]@{ Status = 'completed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $output; StdErr = $result.StdErr }
+    $usage = [pscustomobject]@{ CostUsd = $costUsd; InputTokens = $inputTokens; OutputTokens = $outputTokens; CacheReadTokens = $cachedTokens; CacheCreationTokens = $null }
+    return [pscustomobject]@{ Status = 'completed'; ExitCode = $result.ExitCode; RequestedModel = $Model; ActualModel = $actualModel; Output = $output; StdErr = $result.StdErr; Usage = $usage }
 }
 
 Export-ModuleMember -Function Get-QmProviderContract, Invoke-QmProviderStage

@@ -142,7 +142,8 @@ Run from repository root in Windows PowerShell:
 # Run one autonomous cycle across enabled providers and release candidates.
 .\scripts\automation\Start-Automation.ps1 -Provider all -Once -Live
 
-# Operator controls and status.
+# Operator controls and status (includes a usageSummary: cost/tokens per
+# provider, aggregated from each issue checkpoint's usage records).
 .\scripts\automation\Pause-Automation.ps1 -Reason 'maintenance'
 .\scripts\automation\Resume-Automation.ps1
 .\scripts\automation\Get-AutomationStatus.ps1

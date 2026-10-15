@@ -610,6 +610,46 @@ function Get-QmProtectedScopes {
     return @($scopes)
 }
 
+function Get-QmUsageSummary {
+    # Aggregates the per-stage usage records adapters attach to each issue
+    # state's `usage` array (added alongside the existing `models` array in
+    # Invoke-Controller.ps1) into running totals, so an operator can see
+    # cost/token spend without digging through individual checkpoint files.
+    # Entries with a $null field (provider/stage didn't report it, e.g. a
+    # timeout before any envelope was returned) are skipped for that field
+    # rather than treated as zero, so partial data never understates cost.
+    param([Parameter(Mandatory = $true)][array]$States)
+    $byProvider = [ordered]@{}
+    foreach ($state in $States) {
+        if ($state.PSObject.Properties.Name -notcontains 'usage') { continue }
+        $provider = [string]$state.provider
+        if (-not $byProvider.Contains($provider)) {
+            $byProvider[$provider] = [ordered]@{
+                provider = $provider
+                costUsd = 0.0
+                inputTokens = 0.0
+                outputTokens = 0.0
+                cacheReadTokens = 0.0
+                cacheCreationTokens = 0.0
+                recordedStages = 0
+            }
+        }
+        foreach ($entry in @($state.usage)) {
+            $bucket = $byProvider[$provider]
+            $hadAny = $false
+            foreach ($pair in @(@('costUsd', 'costUsd'), @('inputTokens', 'inputTokens'), @('outputTokens', 'outputTokens'), @('cacheReadTokens', 'cacheReadTokens'), @('cacheCreationTokens', 'cacheCreationTokens'))) {
+                $sourceField = $pair[0]
+                if ($entry.PSObject.Properties.Name -contains $sourceField -and $null -ne $entry.$sourceField) {
+                    $bucket[$pair[1]] = [double]$bucket[$pair[1]] + [double]$entry.$sourceField
+                    $hadAny = $true
+                }
+            }
+            if ($hadAny) { $bucket.recordedStages = [int]$bucket.recordedStages + 1 }
+        }
+    }
+    return @($byProvider.Values | ForEach-Object { [pscustomobject]$_ })
+}
+
 function New-QmDryRunEvidence {
     param([int]$Issue, [string]$HeadSha, [string]$BaseSha)
     return [ordered]@{
