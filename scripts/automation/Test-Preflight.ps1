@@ -11,8 +11,8 @@ foreach ($command in @('powershell.exe', 'git.exe', 'gh.exe', 'codex.exe', 'clau
     if ($null -eq (Get-Command $command -ErrorAction SilentlyContinue)) { $failures.Add("Missing command: $command") }
 }
 if ($PSVersionTable.PSVersion.Major -lt 5) { $failures.Add('Windows PowerShell 5.1 or later is required.') }
-$pester = @(Get-Module -ListAvailable Pester | Sort-Object Version -Descending | Select-Object -First 1)
-if ($pester.Count -eq 0) { $failures.Add('Pester is required for controller tests.') }
+$pester = @(Get-Module -ListAvailable Pester | Where-Object { $_.Version.Major -lt 5 } | Sort-Object Version -Descending | Select-Object -First 1)
+if ($pester.Count -eq 0) { $failures.Add('Pester 3.4.0-4.x is required for controller tests (legacy Should syntax; Pester 5 removes it).') }
 elseif ($pester[0].Version -lt [Version]'3.4.0') { $failures.Add('Pester 3.4.0 or later is required.') }
 
 if ($config.StateRoot.StartsWith((Get-QmRepositoryRoot), [StringComparison]::OrdinalIgnoreCase)) { $failures.Add('Runtime state must be outside the repository.') }

@@ -19,6 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Install Pester 4.x (legacy Should syntax; Pester 5 removes it)
+        shell: powershell
+        run: |
+          if (-not (Get-Module -ListAvailable -Name Pester | Where-Object { $_.Version.Major -lt 5 })) {
+            Install-Module -Name Pester -RequiredVersion 4.10.1 -Force -SkipPublisherCheck -Scope CurrentUser
+          }
+
       - name: Run automation contract tests
         shell: powershell
         run: .\scripts\automation\Run-Tests.ps1
