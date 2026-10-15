@@ -15,6 +15,8 @@ internal static partial class StartupExtensions
             // For generic types, Type.FullName embeds assembly-qualified names of type args (including Version=x.y.z),
             // which changes every release. Build a clean, version-stable name recursively instead.
             options.CreateSchemaReferenceId = (JsonTypeInfo typeInfo) => BuildSchemaId(typeInfo.Type);
+            // Keep last: XML doc text must not depend on the checkout's line endings.
+            options.AddDocumentTransformer<NewlineNormalizingOpenApiTransformer>();
         });
 
         return builder;
