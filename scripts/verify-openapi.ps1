@@ -11,6 +11,9 @@ $PSNativeCommandUseErrorActionPreference = $false
 
 $apiProject = "src/Quizymode.Api/Quizymode.Api.csproj"
 $openApiArtifact = "docs/openapi/quizymode-api.json"
+# GenerateOpenApiDocuments only re-runs when the API assembly is newer than this cache, so a reverted
+# or stale artifact would otherwise be reported as in sync after an incremental build.
+$openApiGenerationCache = "src/Quizymode.Api/obj/Quizymode.Api.OpenApiFiles.cache"
 
 # Runs git and returns its exit code, stdout and stderr separately. Git writes advisory warnings
 # (for example "LF will be replaced by CRLF") to stderr even when it succeeds, and Windows
@@ -43,6 +46,10 @@ function Invoke-Git {
 }
 
 Write-Host "Building API and generating OpenAPI document..." -ForegroundColor Cyan
+if (Test-Path $openApiGenerationCache) {
+    Remove-Item -Path $openApiGenerationCache -Force
+}
+
 dotnet build $apiProject --configuration $Configuration --nologo
 if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
