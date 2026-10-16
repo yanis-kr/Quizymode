@@ -1,0 +1,4 @@
+[PASS] Browser payloads already carry no relative-URL query {"messages":["No route matches URL \"/signup\"","GET /api/items failed"],"paths":["/categories","/categories"]}
+[PASS] Raw report with relative-URL queries accepted {"status":202}
+[PASS] DB: no stored path, message or stack contains a query string or fragment {"rowsWithQuery":"0"}
+[PASS] Rotating X-Forwarded-For and sessionId cannot store unbounded rows (global ceiling 300 per 10 min) {"sent":340,"accepted":297,"limited":43,"first429At":298,"rowsBefore":3,"rowsAfter":300}

@@ -1,0 +1,7 @@
+ Source  |            Message             |    Path     |                                                                                                Stack                                                                                                 
+---------+--------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ window  | No route matches URL "/signup" | /categories | Error: No route matches URL "/signup" |     at eval (eval at evaluate (:290:30), <anonymous>:1:34)
+ promise | GET /api/items failed          | /categories | Error: GET /api/items failed |     at eval (eval at evaluate (:290:30), <anonymous>:1:24) |     at UtilityScript.evaluate (<anonymous>:292:16) |     at UtilityScript.<anonymous> (<anonymous>:1:44)
+ window  | No route matches URL "/signup" | /signup     | Error: x |     at go (/src/router.ts:3:4) |     at 
+(3 rows)
+

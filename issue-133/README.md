@@ -38,3 +38,15 @@ Validated code: branch `feat/133-frontend-error-reporting` at `37104f7` (PR for 
 - Grafana Loki ingestion (needs production credentials), and that the deployed site serves no `.map`. Production was not touched. The S3 exclusion is a config change in `deploy.yml` and `scripts/deploy-to-s3.ps1`.
 - A real Cognito login. A local test issuer was used instead.
 - Production builds: the browser run used the Vite dev server, so the stacks point at `/src/...` modules rather than minified bundles.
+
+## Review fixes re-proof (PR #162 at `691b8e5`, v3.58.1)
+
+Folder `review-fixes/`, screenshot `screenshots/08-review-fixes-reproof.png`. Local stack in Development, no test issuer needed.
+
+- **Relative-URL query strings.** Browser errors whose messages embed `/signup?returnTo=/x&code=123456` and `/api/items?search=my+secret` were sent and stored as `"/signup"` and `/api/items`. A raw HTTP report with unsanitized text was also stripped by the server (path `/signup?...#frag` became `/signup`, and stack `/src/router.ts?t=99:3:4` became `/src/router.ts:3:4`). The query `"Path" ~ '[?#]' OR "Message" ~ '[?#]' OR "Stack" ~ '[?#]'` matched 0 rows (`db-rows-relative-urls.txt`).
+- **Flood with rotated `X-Forwarded-For` and `sessionId`** (340 requests, about 6 KB each): 297 got 202 and 43 got 429, with the first 429 at request 298. The table stopped at exactly 300 rows, the global ceiling, and nothing more was stored (`flood-statuses.txt`).
+  - Development trusts the loopback peer as a proxy (Aspire), so here the API honored the rightmost forwarded hop. That is why the per-IP 30 did not apply to this loopback client.
+  - The per-IP partition is proven by the xUnit HTTP tests in `dotnet-test-client-errors.txt` (48 passed):
+    - `Post_RotatingForwardedForAndSessionId_DoesNotEscapeTheRateLimit`: untrusted peer, 30 accepted then 429, 30 rows.
+    - `Post_BehindTrustedProxy_UsesOnlyTheProxyAppendedHop`: the client-spoofed left entries are ignored, 30 then 429.
+- **Dedupe race.** Migration `MakeClientErrorSessionFingerprintUnique` was applied from empty. It only drops and recreates the index, so the gate does not flag it as destructive. `Database_RejectsASecondRowForTheSameSessionAndFingerprint` passes.
