@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
 import { SEO } from "@/components/SEO";
+import {
+  LOGIN_PATH,
+  buildAuthIntentQuery,
+  parseAuthIntent,
+} from "@/features/auth/utils/authIntent";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { signup, confirmSignup } = useAuth();
+  const intent = parseAuthIntent(location.search);
+  const loginHref = `${LOGIN_PATH}${buildAuthIntentQuery(intent)}`;
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -87,7 +95,7 @@ const SignUpPage = () => {
     try {
       // Use email for confirmation since Cognito username is now the email
       await confirmSignup(email, confirmationCode);
-      navigate("/login");
+      navigate(loginHref);
     } catch (err: unknown) {
       setError(
         err instanceof Error
@@ -266,7 +274,7 @@ const SignUpPage = () => {
           <div className="text-center text-sm">
             <span className="text-gray-600">Already have an account? </span>
             <Link
-              to="/login"
+              to={loginHref}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Sign in

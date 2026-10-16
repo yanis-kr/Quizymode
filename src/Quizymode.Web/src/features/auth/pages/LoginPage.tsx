@@ -1,19 +1,29 @@
 import { useState } from "react";
-import { useNavigate, Link, Navigate } from "react-router-dom";
+import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { SEO } from "@/components/SEO";
+import {
+  SIGNUP_PATH,
+  buildAuthIntentQuery,
+  parseAuthIntent,
+} from "@/features/auth/utils/authIntent";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login, isAuthenticated, isLoading: authLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // If already authenticated, redirect to home
+  const intent = parseAuthIntent(location.search);
+  const signupHref = `${SIGNUP_PATH}${buildAuthIntentQuery(intent)}`;
+
+  // Already-authenticated visitors follow the same validated-destination
+  // rule, once initial auth loading has settled.
   if (!authLoading && isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={intent.returnTo} replace />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,14 +32,12 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
+      // login() only resolves once the provider reports completed sign-in
+      // AND the app has verified an authenticated session -- a resolved
+      // promise is itself sufficient evidence to navigate now.
       await login(email, password);
-      navigate("/", { replace: true });
+      navigate(intent.returnTo, { replace: true });
     } catch (err: unknown) {
-      // Handle "already signed in" error gracefully
-      if (err instanceof Error && err.message.includes("already")) {
-        navigate("/", { replace: true });
-        return;
-      }
       setError(
         err instanceof Error ? err.message : "Login failed. Please try again."
       );
@@ -102,7 +110,7 @@ const LoginPage = () => {
           <div className="text-center text-sm">
             <span className="text-gray-600">Don't have an account? </span>
             <Link
-              to="/signup"
+              to={signupHref}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Sign up

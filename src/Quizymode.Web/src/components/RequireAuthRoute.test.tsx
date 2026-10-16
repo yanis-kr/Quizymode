@@ -11,7 +11,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 
 function LocationDisplay() {
   const location = useLocation();
-  return <div data-testid="location">{location.pathname}</div>;
+  return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
 }
 
 function renderRoutes(options?: { requireAdmin?: boolean; initialEntry?: string }) {
@@ -24,7 +24,7 @@ function renderRoutes(options?: { requireAdmin?: boolean; initialEntry?: string 
           <Route path="/items/add" element={<div>Protected page</div>} />
           <Route path="/admin" element={<div>Admin page</div>} />
         </Route>
-        <Route path="/" element={<LocationDisplay />} />
+        <Route path="*" element={<LocationDisplay />} />
       </Routes>
     </MemoryRouter>
   );
@@ -43,7 +43,7 @@ describe("RequireAuthRoute", () => {
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
   });
 
-  it("redirects unauthenticated users to the home page", async () => {
+  it("redirects unauthenticated users to login, carrying the destination as returnTo", async () => {
     mockUseAuth.mockReturnValue({
       isAuthenticated: false,
       isAdmin: false,
@@ -52,7 +52,9 @@ describe("RequireAuthRoute", () => {
 
     renderRoutes();
 
-    expect(await screen.findByTestId("location")).toHaveTextContent("/");
+    expect(await screen.findByTestId("location")).toHaveTextContent(
+      "/login?returnTo=%2Fitems%2Fadd"
+    );
   });
 
   it("redirects non-admin users away from admin routes", async () => {

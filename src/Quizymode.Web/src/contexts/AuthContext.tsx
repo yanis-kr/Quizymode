@@ -32,7 +32,8 @@ interface AuthContextType {
   signup: (username: string, password: string, email: string) => Promise<void>;
   confirmSignup: (username: string, code: string) => Promise<void>;
   logout: () => Promise<void>;
-  refreshAuth: () => Promise<void>;
+  /** Resolves true only when a verified authenticated session was established. */
+  refreshAuth: () => Promise<boolean>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -90,7 +91,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     clearTokens();
   }, []);
 
-  const refreshAuth = useCallback(async () => {
+  /** Returns true only when a verified, unexpired authenticated session was established. */
+  const refreshAuth = useCallback(async (): Promise<boolean> => {
     try {
       // Use forceRefresh to ensure we get fresh tokens if refresh token is available
       const session = await fetchAuthSession({ forceRefresh: false });
@@ -115,7 +117,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 // Still expired after refresh - clear auth state
                 console.warn("Token still expired after refresh, clearing auth state");
                 clearAuthState();
-                return;
+                return false;
               }
               
               // Use refreshed token
@@ -170,17 +172,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               
               setIsAdmin(isUserAdmin);
               await syncPendingPolicyAcceptances(resolvedEmail);
-              return;
+              return true;
             } else {
               // No tokens after refresh - clear auth state
               clearAuthState();
-              return;
+              return false;
             }
           } catch (refreshError) {
             // Refresh failed - clear auth state
             console.warn("Token refresh failed:", refreshError);
             clearAuthState();
-            return;
+            return false;
           }
         }
 
@@ -236,7 +238,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                   // Still expired - clear auth state
                   console.warn("ID token still expired after refresh, clearing auth state");
                   clearAuthState();
-                  return;
+                  return false;
                 }
                 
                 // Use refreshed ID token
@@ -257,13 +259,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               } else {
                 // No ID token after refresh - clear auth state
                 clearAuthState();
-                return;
+                return false;
               }
             } catch (refreshError) {
               // Refresh failed - clear auth state
               console.warn("ID token refresh failed:", refreshError);
               clearAuthState();
-              return;
+              return false;
             }
           } else {
             // Get email from idToken if not in accessToken
@@ -284,12 +286,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         setIsAdmin(isUserAdmin);
         await syncPendingPolicyAcceptances(resolvedEmail);
+        return true;
       } else {
         clearAuthState();
+        return false;
       }
     } catch (error) {
       console.error("Auth refresh error:", error);
       clearAuthState();
+      return false;
     } finally {
       setIsLoading(false);
     }
@@ -327,13 +332,29 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
   }, [isAuthenticated, refreshAuth]);
 
+  /**
+   * Resolves only when the provider reports completed sign-in AND the app has
+   * verified an authenticated session via refreshAuth -- a resolved signIn
+   * promise alone (e.g. isSignedIn: false pending another step) is not
+   * sufficient evidence to navigate. "Already signed in" is detected via
+   * Amplify's typed exception name, not by matching error message text.
+   */
   const login = async (username: string, password: string) => {
     try {
-      const { isSignedIn } = await signIn({ username, password });
-      if (isSignedIn) {
-        await refreshAuth();
+      const { isSignedIn, nextStep } = await signIn({ username, password });
+      if (!isSignedIn) {
+        throw new Error(`Sign-in requires an additional step: ${nextStep.signInStep}`);
+      }
+      const established = await refreshAuth();
+      if (!established) {
+        throw new Error("Sign-in succeeded but the session could not be established.");
       }
     } catch (error) {
+      if (error instanceof Error && error.name === "UserAlreadyAuthenticatedException") {
+        const established = await refreshAuth();
+        if (established) return;
+        throw error;
+      }
       console.error("Login error:", error);
       throw error;
     }
