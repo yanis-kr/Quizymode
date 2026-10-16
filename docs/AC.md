@@ -1302,6 +1302,13 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 8.1.5** All read-only item, comment, and rating queries use `AsNoTracking()` so EF Core does not maintain change-tracking state for entities that are never modified.
 - **AC 8.1.6** The database has indexes on `CollectionItems(CollectionId)`, `CollectionItems(ItemId)`, `LOWER(Keywords.Name)`, and `LOWER(Categories.Name)` to support efficient joins and case-insensitive name lookups.
 
+### AC 8.2 Route-level code splitting (PERF-001)
+
+- **AC 8.2.1** [Anonymous] **Given** a visitor opens `/`, **then** the browser downloads only the eager bundle (home, categories, items list, explore/flashcards, quiz, collections, featured, item detail and comments, login and signup) plus shared vendor chunks; no admin (`/admin/*`), authoring (`/items/add`, `/items/bulk-create`, `/items/upload`, `/items/create`, `/add-new-item`, `/items/:id/edit`), study guide (`/study-guide`, `/study-guide/import`), community (`/ideas`, `/roadmap`, `/feedback`) or legal/about (`/about`, `/privacy*`, `/terms*`) page code is fetched.
+- **AC 8.2.2** [Any user] **Given** the user navigates to a lazy route, **then** the existing loading spinner renders inside the layout (header and navigation stay visible) until the page chunk arrives, then the page renders.
+- **AC 8.2.3** [Any user] **Given** a lazy page chunk fails to load (for example a stale tab after a deploy), **then** the app reloads the page automatically at most once per tab session (guarded in `sessionStorage`); if loading fails again, or storage is unavailable, it shows "This page failed to load" with a **Retry** button that reloads the page only when clicked (browsers cache a failed module import for the life of the page), so it never loops. A successful lazy load clears the guard. Navigating to another route clears the failure view. Non-chunk render errors still reach the app-level error boundary and are reported per AC 5.6.
+- **AC 8.2.4** [System] The deploy S3 sync keeps earlier hashed `*.js` and `*.css` files (they are excluded from `--delete`), so tabs running an older `index.html` can still open lazy routes after a deploy.
+
 ---
 
 ## AC 9. Text-to-speech (browser TTS)
