@@ -55,6 +55,21 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
+/**
+ * The email Cognito reports on the ID token. Access tokens often carry no `email` claim and, when the pool signs users
+ * in by email, a `username` that is the sub rather than the address, so the pending policy-acceptance record (keyed by
+ * the signup email) must also be matched against this one (#158).
+ */
+function readIdTokenEmail(idToken: { toString(): string } | undefined): string | null {
+  if (!idToken) return null;
+  try {
+    const payload = JSON.parse(atob(idToken.toString().split(".")[1]));
+    return typeof payload.email === "string" && payload.email ? payload.email : null;
+  } catch {
+    return null;
+  }
+}
+
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,10 +79,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   const syncPendingPolicyAcceptances = useCallback(
-    async (resolvedEmail: string | null) => {
-      const pendingAcceptances = getPendingPolicyAcceptancesForEmail(
-        resolvedEmail
-      );
+    async (candidateEmails: Array<string | null>) => {
+      const pendingAcceptances = candidateEmails
+        .map((candidate) => getPendingPolicyAcceptancesForEmail(candidate))
+        .find((acceptances) => acceptances.length > 0) ?? [];
 
       if (pendingAcceptances.length === 0) {
         return;
@@ -175,7 +190,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               }
               
               setIsAdmin(isUserAdmin);
-              await syncPendingPolicyAcceptances(resolvedEmail);
+              await syncPendingPolicyAcceptances([
+                resolvedEmail,
+                readIdTokenEmail(refreshedSession.tokens.idToken),
+              ]);
               return true;
             } else {
               // No tokens after refresh - clear auth state
@@ -289,7 +307,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
 
         setIsAdmin(isUserAdmin);
-        await syncPendingPolicyAcceptances(resolvedEmail);
+        await syncPendingPolicyAcceptances([resolvedEmail, readIdTokenEmail(session.tokens.idToken)]);
         return true;
       } else {
         clearAuthState();
