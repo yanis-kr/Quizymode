@@ -138,6 +138,163 @@ public sealed class IdeasFeatureTests : DatabaseTestFixture
         updatedIdea.ReviewedAt.Should().NotBeNull();
     }
 
+    [Fact]
+    public async Task HandleCreateAsync_RejectsWhenDailyLimitReached()
+    {
+        string userId = Guid.NewGuid().ToString();
+        DbContext.Ideas.AddRange(
+            NewIdea(userId, "First recent idea", DateTime.UtcNow.AddHours(-1)),
+            NewIdea(userId, "Second recent idea", DateTime.UtcNow.AddHours(-2)),
+            NewIdea(userId, "Old idea outside the window", DateTime.UtcNow.AddHours(-30)),
+            NewIdea(Guid.NewGuid().ToString(), "Someone else's idea", DateTime.UtcNow.AddHours(-1)));
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> limited = await CreateAsync(userId, "Brand new idea title", dailyLimit: 2);
+
+        limited.IsFailure.Should().BeTrue();
+        limited.Error.Code.Should().Be("Ideas.DailyLimitExceeded");
+
+        Result<IdeaSummaryResponse> allowed = await CreateAsync(userId, "Brand new idea title", dailyLimit: 3);
+
+        allowed.IsSuccess.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleCreateAsync_RejectsExactDuplicateIgnoringCaseAndWhitespace()
+    {
+        string userId = Guid.NewGuid().ToString();
+        DbContext.Ideas.Add(NewIdea(userId, "Resume study session", DateTime.UtcNow.AddDays(-3)));
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await CreateAsync(userId, "  resume   STUDY session ", dailyLimit: 5);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("Ideas.Duplicate");
+    }
+
+    [Fact]
+    public async Task HandleCreateAsync_AllowsSameTitleFromDifferentUserOrDifferentContent()
+    {
+        string userId = Guid.NewGuid().ToString();
+        DbContext.Ideas.Add(NewIdea(Guid.NewGuid().ToString(), "Resume study session", DateTime.UtcNow.AddDays(-3)));
+        Idea ownIdea = NewIdea(userId, "Resume study session", DateTime.UtcNow.AddDays(-3));
+        ownIdea.Problem = "A completely different problem statement for this idea.";
+        DbContext.Ideas.Add(ownIdea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await CreateAsync(userId, "Resume study session", dailyLimit: 5);
+
+        result.IsSuccess.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleUpdateAsync_DoesNotTreatTheIdeaItselfAsDuplicate()
+    {
+        string userId = Guid.NewGuid().ToString();
+        Idea idea = NewIdea(userId, "Resume study session", DateTime.UtcNow.AddDays(-1));
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleUpdateAsync(
+            idea.Id,
+            new IdeaCrud.UpdateRequest(idea.Title, idea.Problem, idea.ProposedChange, "Updated trade-offs text here."),
+            DbContext,
+            AuthenticatedUser(userId).Object,
+            CleanModeration().Object,
+            new Mock<IAuditService>().Object,
+            new DefaultHttpContext(),
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.TradeOffs.Should().Be("Updated trade-offs text here.");
+    }
+
+    [Fact]
+    public async Task HandleStatusUpdateAsync_ReturnsValidationErrorForUnknownStatus()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        idea.Status = IdeaStatus.Planned;
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleStatusUpdateAsync(
+            idea.Id,
+            new IdeaCrud.StatusRequest("Exploding"),
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("Ideas.InvalidStatus");
+        result.Error.Type.Should().Be(ErrorType.Validation);
+        DbContext.Ideas.Single().Status.Should().Be(IdeaStatus.Planned);
+    }
+
+    [Fact]
+    public async Task HandleStatusUpdateAsync_AppliesValidStatus()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleStatusUpdateAsync(
+            idea.Id,
+            new IdeaCrud.StatusRequest("In Progress"),
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Status.Should().Be("In Progress");
+    }
+
+    private async Task<Result<IdeaSummaryResponse>> CreateAsync(string userId, string title, int dailyLimit)
+    {
+        Mock<ITurnstileVerificationService> turnstileVerificationService = new();
+        turnstileVerificationService
+            .Setup(service => service.VerifyAsync(It.IsAny<string>(), It.IsAny<string?>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new TurnstileVerificationResult(true));
+
+        return await IdeaCrud.HandleCreateAsync(
+            new IdeaCrud.CreateRequest(
+                title,
+                "Learners need a faster way to continue from where they stopped.",
+                "Add a continue action that restores the last study context.",
+                null,
+                "dev-turnstile-bypass"),
+            DbContext,
+            AuthenticatedUser(userId).Object,
+            turnstileVerificationService.Object,
+            CleanModeration().Object,
+            new Mock<IAuditService>().Object,
+            new IdeaAbuseProtectionOptions { CreateDailyLimit = dailyLimit },
+            new DefaultHttpContext(),
+            CancellationToken.None);
+    }
+
+    private static Idea NewIdea(string createdBy, string title, DateTime createdAt) => new()
+    {
+        Id = Guid.NewGuid(),
+        Title = title,
+        Problem = "Learners need a faster way to continue from where they stopped.",
+        ProposedChange = "Add a continue action that restores the last study context.",
+        Status = IdeaStatus.Proposed,
+        ModerationState = IdeaModerationState.PendingReview,
+        CreatedBy = createdBy,
+        CreatedAt = createdAt
+    };
+
+    private static Mock<ITextModerationService> CleanModeration()
+    {
+        Mock<ITextModerationService> textModerationService = new();
+        textModerationService
+            .Setup(service => service.Evaluate(It.IsAny<string?[]>()))
+            .Returns(new TextModerationResult(TextModerationOutcome.Clean));
+        return textModerationService;
+    }
+
     private static Mock<IUserContext> AnonymousUser()
     {
         Mock<IUserContext> userContext = new();
