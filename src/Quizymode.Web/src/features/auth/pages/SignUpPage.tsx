@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
@@ -8,36 +8,126 @@ import {
   LOGIN_PATH,
   buildAuthIntentQuery,
   parseAuthIntent,
+  type AuthReason,
 } from "@/features/auth/utils/authIntent";
+import {
+  clearSignupRecovery,
+  readSignupRecovery,
+  saveSignupRecovery,
+} from "@/features/auth/utils/signupRecovery";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+
+const RESEND_COOLDOWN_MS = 60_000;
+
+interface BenefitCopy {
+  heading: string;
+  body: string;
+}
+
+// Maps only #110's allowlisted reasons. Before PROGRESS-001 (#114) and
+// CLAIM-003 (#115) ship, save-progress copy must not promise score sync --
+// it explains the guest result stays in this browser and offers the
+// account benefits that actually exist today instead.
+const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
+  "keep-collection": {
+    heading: "Make your next study session yours.",
+    body: "Create a free account to bookmark this collection for later and build private practice sets.",
+  },
+  "create-content": {
+    heading: "Make your next study session yours.",
+    body: "Create a free account to create private items and collections, and use the existing study-guide import workflow.",
+  },
+  "join-discussion": {
+    heading: "Make your next study session yours.",
+    body: "Create a free account to join the discussion where it's available.",
+  },
+  "save-progress": {
+    heading: "Keep this result",
+    body: "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+  },
+};
+
+const DEFAULT_BENEFIT: BenefitCopy = {
+  heading: "Make your next study session yours.",
+  body: "Create a free account to bookmark public collections and build private practice sets.",
+};
+
+function describeConfirmError(err: unknown): string {
+  if (err instanceof Error) {
+    if (err.name === "CodeMismatchException") {
+      return "That code doesn't match. Check it and try again, or resend a new code.";
+    }
+    if (err.name === "ExpiredCodeException") {
+      return "That code has expired. Resend a new code to continue.";
+    }
+    return err.message;
+  }
+  return "Confirmation failed. Please try again.";
+}
 
 const SignUpPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { signup, confirmSignup } = useAuth();
+  const {
+    signup,
+    confirmSignup,
+    resendConfirmationCode,
+    isAuthenticated,
+    isLoading: authLoading,
+  } = useAuth();
   const intent = parseAuthIntent(location.search);
+  const benefit = intent.reason ? BENEFIT_COPY[intent.reason] : DEFAULT_BENEFIT;
   const loginHref = `${LOGIN_PATH}${buildAuthIntentQuery(intent)}`;
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [confirmationCode, setConfirmationCode] = useState("");
   const [hasAcceptedLegal, setHasAcceptedLegal] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [needsConfirmation, setNeedsConfirmation] = useState(false);
+  const [autoSignInFailed, setAutoSignInFailed] = useState(false);
+  const [resendCooldownUntil, setResendCooldownUntil] = useState<number | null>(null);
+  const [now, setNow] = useState(() => Date.now());
+
+  // Restore the confirmation step after a reload. Only ever reads email and
+  // cooldown timing -- never a password or verification code.
+  useEffect(() => {
+    const recovery = readSignupRecovery();
+    if (recovery) {
+      setEmail(recovery.email);
+      setNeedsConfirmation(true);
+      setResendCooldownUntil(recovery.cooldownUntil);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!resendCooldownUntil) return;
+    const interval = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(interval);
+  }, [resendCooldownUntil]);
+
+  const cooldownRemainingSeconds = resendCooldownUntil
+    ? Math.max(0, Math.ceil((resendCooldownUntil - now) / 1000))
+    : 0;
+
+  // Already-authenticated visitors follow the same validated-destination
+  // rule as LoginPage (#110), once initial auth loading has settled. This
+  // also prevents a confusing identity mix-up: without it, signing up for a
+  // second account in a tab where account A is still logged in could leave
+  // confirmSignup verifying A's still-valid session instead of B's.
+  if (!authLoading && isAuthenticated) {
+    return <Navigate to={intent.returnTo} replace />;
+  }
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
-    // Validate that username is not the same as email
     if (username.trim().toLowerCase() === email.trim().toLowerCase()) {
-      setError("Username cannot be the same as email");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError("Display name cannot be the same as email");
       return;
     }
 
@@ -54,7 +144,6 @@ const SignUpPage = () => {
     setIsLoading(true);
 
     try {
-      // Check if username or email already exists
       const availability = await usersApi.checkAvailability({
         username: username.trim(),
         email: email.trim(),
@@ -77,6 +166,10 @@ const SignUpPage = () => {
       const acceptedAtUtc = new Date().toISOString();
       await signup(username, password, email);
       queueSignUpPolicyAcceptances(email.trim(), acceptedAtUtc);
+
+      const cooldownUntil = Date.now() + RESEND_COOLDOWN_MS;
+      setResendCooldownUntil(cooldownUntil);
+      saveSignupRecovery({ email: email.trim(), cooldownUntil });
       setNeedsConfirmation(true);
     } catch (err: unknown) {
       setError(
@@ -94,18 +187,64 @@ const SignUpPage = () => {
 
     try {
       // Use email for confirmation since Cognito username is now the email
-      await confirmSignup(email, confirmationCode);
-      navigate(loginHref);
+      const authenticated = await confirmSignup(email, confirmationCode);
+      clearSignupRecovery();
+      if (authenticated) {
+        navigate(intent.returnTo, { replace: true });
+      } else {
+        // Confirmation succeeded but a real session couldn't be verified
+        // (auto-sign-in unavailable/expired/interrupted). Do not ask the
+        // user to register again or retain the password for replay.
+        setAutoSignInFailed(true);
+      }
     } catch (err: unknown) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Confirmation failed. Please try again."
-      );
+      setError(describeConfirmError(err));
     } finally {
       setIsLoading(false);
     }
   };
+
+  const handleResend = async () => {
+    setError("");
+    try {
+      await resendConfirmationCode(email);
+      const cooldownUntil = Date.now() + RESEND_COOLDOWN_MS;
+      setResendCooldownUntil(cooldownUntil);
+      saveSignupRecovery({ email, cooldownUntil });
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error ? err.message : "Could not resend the code. Please try again."
+      );
+    }
+  };
+
+  const handleUseDifferentEmail = () => {
+    clearSignupRecovery();
+    setNeedsConfirmation(false);
+    setAutoSignInFailed(false);
+    setConfirmationCode("");
+    setError("");
+    setResendCooldownUntil(null);
+  };
+
+  if (autoSignInFailed) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-6 text-center">
+          <h2 className="text-2xl font-bold text-gray-900">Account confirmed — sign in to continue</h2>
+          <p className="text-sm text-gray-600">
+            Your account is confirmed. Sign in to continue to where you were.
+          </p>
+          <Link
+            to={loginHref}
+            className="inline-flex justify-center w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Sign in
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (needsConfirmation) {
     return (
@@ -116,7 +255,7 @@ const SignUpPage = () => {
               Confirm your account
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              Please check your email for the confirmation code
+              We sent a confirmation code to {email}.
             </p>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleConfirm}>
@@ -126,18 +265,20 @@ const SignUpPage = () => {
               </div>
             )}
             <div>
-              <label htmlFor="code" className="sr-only">
-                Confirmation Code
+              <label htmlFor="code" className="block text-sm font-medium text-gray-700">
+                Confirmation code
               </label>
               <input
                 id="code"
                 name="code"
                 type="text"
+                autoComplete="one-time-code"
+                inputMode="numeric"
                 required
                 value={confirmationCode}
                 onChange={(e) => setConfirmationCode(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Confirmation Code"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="123456"
               />
             </div>
 
@@ -150,6 +291,26 @@ const SignUpPage = () => {
                 {isLoading ? "Confirming..." : "Confirm"}
               </button>
             </div>
+
+            <div className="flex items-center justify-between text-sm">
+              <button
+                type="button"
+                onClick={handleResend}
+                disabled={cooldownRemainingSeconds > 0}
+                className="font-medium text-indigo-600 hover:text-indigo-500 disabled:text-gray-400 disabled:cursor-not-allowed"
+              >
+                {cooldownRemainingSeconds > 0
+                  ? `Resend code (${cooldownRemainingSeconds}s)`
+                  : "Resend code"}
+              </button>
+              <button
+                type="button"
+                onClick={handleUseDifferentEmail}
+                className="font-medium text-gray-500 hover:text-gray-700"
+              >
+                Use a different email
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -160,22 +321,23 @@ const SignUpPage = () => {
     <>
       <SEO title="Sign Up" noindex />
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full space-y-6">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create your account
+          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+            {benefit.heading}
           </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">{benefit.body}</p>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSignUp}>
+        <form className="space-y-6" onSubmit={handleSignUp}>
           {error && (
             <div className="rounded-md bg-red-50 p-4">
               <div className="text-sm text-red-800">{error}</div>
             </div>
           )}
-          <div className="rounded-md shadow-sm space-y-4">
+          <div className="space-y-4">
             <div>
-              <label htmlFor="username" className="sr-only">
-                Username
+              <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+                Display name
               </label>
               <input
                 id="username"
@@ -185,12 +347,12 @@ const SignUpPage = () => {
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Username"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="How you'll appear to others"
               />
             </div>
             <div>
-              <label htmlFor="email" className="sr-only">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email
               </label>
               <input
@@ -201,41 +363,40 @@ const SignUpPage = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="you@example.com"
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password (min 8 characters)"
-              />
-            </div>
-            <div>
-              <label htmlFor="confirmPassword" className="sr-only">
-                Confirm Password
-              </label>
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                autoComplete="new-password"
-                required
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Confirm Password"
-              />
+              <div className="mt-1 relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="new-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none relative block w-full px-3 py-2 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="At least 8 characters"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? (
+                    <EyeSlashIcon className="h-5 w-5" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5" />
+                  )}
+                </button>
+              </div>
+              <p className="mt-1 text-xs text-gray-500">At least 8 characters.</p>
             </div>
           </div>
 
@@ -256,7 +417,7 @@ const SignUpPage = () => {
                 <Link to="/privacy" className="font-medium text-indigo-600 hover:text-indigo-500">
                   Privacy Policy
                 </Link>
-                .
+                . You control whether your collections are private or shared.
               </span>
             </label>
           </div>

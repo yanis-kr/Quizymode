@@ -12,6 +12,8 @@ import {
   signOut,
   signUp,
   confirmSignUp,
+  autoSignIn,
+  resendSignUpCode,
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
 import {
@@ -30,7 +32,9 @@ interface AuthContextType {
   isAdmin: boolean;
   login: (username: string, password: string) => Promise<void>;
   signup: (username: string, password: string, email: string) => Promise<void>;
-  confirmSignup: (username: string, code: string) => Promise<void>;
+  /** Resolves true only when confirmation completed AND a real session was verified (auto-sign-in succeeded). */
+  confirmSignup: (username: string, code: string) => Promise<boolean>;
+  resendConfirmationCode: (username: string) => Promise<void>;
   logout: () => Promise<void>;
   /** Resolves true only when a verified authenticated session was established. */
   refreshAuth: () => Promise<boolean>;
@@ -372,6 +376,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             email,
             name: username, // Store the display username in the 'name' attribute
           },
+          autoSignIn: true,
         },
       });
     } catch (error) {
@@ -380,11 +385,41 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  const confirmSignup = async (username: string, code: string) => {
+  /**
+   * Confirmation completion alone does not establish an authenticated
+   * session. When the provider reports COMPLETE_AUTO_SIGN_IN, this calls
+   * autoSignIn() and then verifies the real session via refreshAuth before
+   * resolving -- callers must not infer success from confirmSignUp alone.
+   *
+   * autoSignIn() is caught separately: confirmSignUp having already
+   * succeeded means the account IS confirmed even if the auto-sign-in step
+   * itself is unavailable/expired/interrupted (a real AutoSignInException
+   * case, not hypothetical). That must resolve false (the UI's "confirmed,
+   * sign in to continue" path), not reject -- the caller would otherwise
+   * have no way to clear pending confirmation state or route anywhere.
+   */
+  const confirmSignup = async (username: string, code: string): Promise<boolean> => {
     try {
-      await confirmSignUp({ username, confirmationCode: code });
+      const { nextStep } = await confirmSignUp({ username, confirmationCode: code });
+      if (nextStep.signUpStep === "COMPLETE_AUTO_SIGN_IN") {
+        try {
+          await autoSignIn();
+        } catch (autoSignInError) {
+          console.warn("Auto-sign-in could not complete:", autoSignInError);
+        }
+      }
+      return await refreshAuth();
     } catch (error) {
       console.error("Confirm signup error:", error);
+      throw error;
+    }
+  };
+
+  const resendConfirmationCode = async (username: string): Promise<void> => {
+    try {
+      await resendSignUpCode({ username });
+    } catch (error) {
+      console.error("Resend confirmation code error:", error);
       throw error;
     }
   };
@@ -412,6 +447,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         login,
         signup,
         confirmSignup,
+        resendConfirmationCode,
         logout,
         refreshAuth,
       }}
