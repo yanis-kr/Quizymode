@@ -1,0 +1,72 @@
+{
+  "outcome": "ok url=https://www.quizymode.com/signup?returnTo=%2Fquiz%2Fcollections%2F8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511%2Ffun%2Btrivia%2Bfacts%2Fitem%2Fb9aaa60d-33ec-4b02-b313-3720665a01f9&reason=save-progress",
+  "sid": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59",
+  "captured": [
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "quick_quiz_started",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        }
+      ],
+      "sessionId": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "quiz_completed",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        }
+      ],
+      "sessionId": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "question_answered",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        },
+        {
+          "name": "question_answered",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        },
+        {
+          "name": "question_answered",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        },
+        {
+          "name": "question_answered",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        },
+        {
+          "name": "question_answered",
+          "ctx": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+        }
+      ],
+      "sessionId": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_prompt_viewed",
+          "ctx": "save-progress"
+        }
+      ],
+      "sessionId": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_prompt_clicked",
+          "ctx": "save-progress"
+        }
+      ],
+      "sessionId": "c8e1b7b1-b0b7-41ae-a5d4-b52840999a59"
+    }
+  ]
+}
