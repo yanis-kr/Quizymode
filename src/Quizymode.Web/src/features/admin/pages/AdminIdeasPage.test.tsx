@@ -73,7 +73,6 @@ describe("AdminIdeasPage", () => {
           canEdit: true,
           canDelete: true,
           canChangeStatus: true,
-          canModerate: true,
         },
       ],
     });
@@ -87,6 +86,24 @@ describe("AdminIdeasPage", () => {
     expect(await screen.findByRole("heading", { name: /ideas moderation/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /pending review/i })).toBeInTheDocument();
     expect(await screen.findByText("Review pending idea")).toBeInTheDocument();
+  });
+
+  it("offers an All filter that requests every moderation state", async () => {
+    const user = userEvent.setup();
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+
+    renderPage();
+
+    await screen.findByText("Review pending idea");
+    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("PendingReview");
+
+    await user.click(screen.getByRole("button", { name: /^all$/i }));
+
+    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("all");
+    expect(screen.getByRole("button", { name: /^all$/i })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
   });
 
   it("shows moderation actions when a card is expanded", async () => {

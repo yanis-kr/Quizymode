@@ -33,7 +33,6 @@ export interface IdeaSummaryResponse {
   canEdit: boolean;
   canDelete: boolean;
   canChangeStatus: boolean;
-  canModerate: boolean;
 }
 
 export interface IdeaBoardResponse {
