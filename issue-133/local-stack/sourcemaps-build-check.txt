@@ -1,0 +1,8 @@
+# vite build with sourcemap: "hidden" (worktree feat/133, local build)
+## .map files produced in dist/
+dist/assets/index-DqI7MCfC.js.map
+dist/assets/query-Cmaiuzq0.js.map
+dist/assets/vendor-CL7WSBeu.js.map
+## bundles referencing a source map (sourceMappingURL) - expected none:
+0
+## aws s3 sync dry-run is not possible locally; deploy.yml general sync now has --exclude "*.map" (see PR diff)

@@ -1,0 +1,8 @@
+request body bytes: 16478
+POST /client-errors -> 202 {"stored":true,"reason":null,"fingerprint":"0dc2d9ba5617964513560ca42259d4f0"}
+ name_len | message_len | stack_len | component_len | path_len | path_has_query | stack_has_secret | IsAuthenticated | has_user 
+----------+-------------+-----------+---------------+----------+----------------+------------------+-----------------+----------
+      100 |         500 |      4000 |          2000 |      512 | f              | f                | t               | t
+(1 row)
+
+

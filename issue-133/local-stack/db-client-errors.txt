@@ -1,0 +1,48 @@
+-- ClientErrors rows from browser sessions (HTTP flood rows summarized below)
+  Source  |   ErrorName    |                                          Message                                           |    Path     | AppVersion |    Session    | HasUser | Auth | DeviceClass | IsBot | IsInternal | StackLen | CompStackLen |      Fp      
+----------+----------------+--------------------------------------------------------------------------------------------+-------------+------------+---------------+---------+------+-------------+-------+------------+----------+--------------+--------------
+ boundary | TypeError      | featuredSets.map is not a function                                                         | /           | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |     1045 |          964 | c527119b9275
+ window   | Error          | Evidence runtime error for [email] at https://localhost:7000/quiz                          | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |      131 |              | 999a899bb172
+ promise  | Error          | Evidence unhandled rejection                                                               | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |      197 |              | 933fb190b77f
+ promise  | TypeError      | Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |      110 |              | 522dbcfbefed
+ window   | ChunkLoadError | Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |          |              | 18299cc313cb
+ window   | Error          | Evidence flood error number a                                                              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |       95 |              | 809c6270d1e7
+ window   | Error          | Evidence flood error number b                                                              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |       95 |              | 1820b2c6cfef
+ window   | Error          | Evidence flood error number c                                                              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |       95 |              | 09ae8a71cba0
+ window   | Error          | Evidence flood error number d                                                              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |       95 |              | 7cbb15435920
+ window   | Error          | Evidence flood error number e                                                              | /categories | 3.58.0     | 6be34670-3a40 | f       | f    | desktop     | f     | f          |       95 |              | 9ad1d76c92b0
+ window   | Error          | Evidence error from internal browser                                                       | /categories | 3.58.0     | 5a566808-36ce | f       | f    | desktop     | f     | t          |      102 |              | 8a846d1e1268
+ window   | Error          | Evidence error from signed-in member                                                       | /categories | 3.58.0     | 96188d51-c050 | t       | t    | desktop     | f     | f          |      102 |              | 55949271d0a2
+(12 rows)
+
+
+-- Rows per session
+              SessionId               | Rows | DistinctFingerprints | Internal 
+--------------------------------------+------+----------------------+----------
+ 6be34670-3a40-46b3-8f56-09c7927de6d9 |   10 |                   10 | f
+ 96188d51-c050-4b8b-a588-200a09aebe44 |    1 |                    1 | f
+ http-flood-0                         |    1 |                    1 | f
+ http-flood-1                         |    1 |                    1 | f
+ http-flood-10                        |    1 |                    1 | f
+ http-flood-11                        |    1 |                    1 | f
+ http-flood-12                        |    1 |                    1 | f
+ http-flood-2                         |    1 |                    1 | f
+(8 rows)
+
+
+-- Privacy / bounds checks over ALL rows
+ PathsWithQuery | RowsWithSecrets | RowsWithEmails | MaxMessage | MaxStack | MaxComponentStack | MaxPath | TotalRows 
+----------------+-----------------+----------------+------------+----------+-------------------+---------+-----------
+              0 |               0 |              0 |         99 |     1045 |               964 |      11 |        25
+(1 row)
+
+
+-- Sanitized message/stack samples (query strings and email removed)
+                                               Message                                               |                                                     Stack                                                      
+-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------
+ Evidence runtime error for [email] at https://localhost:7000/quiz                                   | Error: Evidence runtime error for [email] at https://localhost:7000/quiz                                      +
+                                                                                                     |     at eval (eval at evaluate (:290:30), <anonymous>:3:15)
+ Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js | TypeError: Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js
+ Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js                       | 
+(3 rows)
+

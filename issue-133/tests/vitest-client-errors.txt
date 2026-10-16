@@ -1,0 +1,19 @@
+ ✓ src/features/admin/pages/AdminClientErrorsPage.test.tsx > AdminClientErrorsPage > redirects non-admins home
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > reports a render error caught by ErrorBoundary once, with component stack, path, version and session
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > captures window error events
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > captures unhandled promise rejections, without serializing non-Error values
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > captures failed script (chunk) loads without their query strings
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > sends the same error only once per tab session, across reloads
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > stops after 10 distinct errors in a tab session
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > ignores cross-origin 'Script error.' and errors whose frames all come from extensions
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > truncates long fields and strips secrets before sending
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > marks reports from internal browsers
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > uses a keepalive fetch with the bearer token when signed in
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > falls back to fetch when sendBeacon refuses, and never throws when delivery fails
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > keeps rendering the fallback UI when reporting itself fails
+ ✓ src/features/errorReporting/clientErrorReporter.test.tsx > clientErrorReporter > sanitizes URLs, emails and bearer tokens
+ ✓ src/features/admin/pages/AdminClientErrorsPage.test.tsx > AdminClientErrorsPage > shows grouped errors excluding bots and internal traffic by default
+ ✓ src/features/admin/pages/AdminClientErrorsPage.test.tsx > AdminClientErrorsPage > filters by app version, window, bots and internal traffic
+ ✓ src/features/admin/pages/AdminClientErrorsPage.test.tsx > AdminClientErrorsPage > loads the sample session journey on demand
+ Test Files  2 passed (2)
+      Tests  17 passed (17)

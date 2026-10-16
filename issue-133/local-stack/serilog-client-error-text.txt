@@ -1,0 +1,25 @@
+[14:51:56 WRN] Client error c527119b927527c08a6e758d68c64171 (TypeError) from boundary on / in app version 3.58.0: featuredSets.map is not a function
+[14:52:00 WRN] Client error 999a899bb17265509163d1dd5f342d90 (Error) from window on /categories in app version 3.58.0: Evidence runtime error for [email] at https://localhost:7000/quiz
+[14:52:03 WRN] Client error 933fb190b77fe41016d9d6b73b1c40ce (Error) from promise on /categories in app version 3.58.0: Evidence unhandled rejection
+[14:52:05 WRN] Client error 522dbcfbefed616bf59d22a8d94eafaa (TypeError) from promise on /categories in app version 3.58.0: Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js
+[14:52:06 WRN] Client error 18299cc313cb9d2497f5a220e8fa04ef (ChunkLoadError) from window on /categories in app version 3.58.0: Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js
+[14:52:08 WRN] Client error 809c6270d1e7ed3817d3ac9383b6c15e (Error) from window on /categories in app version 3.58.0: Evidence flood error number a
+[14:52:08 WRN] Client error 1820b2c6cfef4f2714d23e55d83c4294 (Error) from window on /categories in app version 3.58.0: Evidence flood error number b
+[14:52:08 WRN] Client error 09ae8a71cba0427559e2d8405ba09aec (Error) from window on /categories in app version 3.58.0: Evidence flood error number c
+[14:52:08 WRN] Client error 7cbb15435920a1a06d582a4a909177c5 (Error) from window on /categories in app version 3.58.0: Evidence flood error number d
+[14:52:08 WRN] Client error 9ad1d76c92b0e12dce869410cc3fc753 (Error) from window on /categories in app version 3.58.0: Evidence flood error number e
+[14:52:12 WRN] Client error 8a846d1e1268ca3577b77afe576fd767 (Error) from window on /categories in app version 3.58.0: Evidence error from internal browser
+[14:52:17 WRN] Client error 55949271d0a2682e8e1862bcf5bf8449 (Error) from window on /categories in app version 3.58.0: Evidence error from signed-in member
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood
+[14:52:20 WRN] Client error b05110c85949a59f488248e93c46772d (Error) from window on /flood in app version 3.58.0: Evidence HTTP flood

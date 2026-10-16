@@ -1,0 +1,446 @@
+{
+  "windowStartUtc": "2026-10-15T19:52:21.4799156Z",
+  "windowEndUtc": "2026-10-16T19:52:21.4799156Z",
+  "totalReports": 25,
+  "totalGroups": 13,
+  "newGroups": 13,
+  "botReports": 0,
+  "botsExcluded": true,
+  "internalSessions": 1,
+  "internalExcluded": false,
+  "truncated": false,
+  "appVersions": [
+    "3.58.0"
+  ],
+  "groups": [
+    {
+      "fingerprint": "b05110c85949a59f488248e93c46772d",
+      "errorName": "Error",
+      "message": "Evidence HTTP flood",
+      "source": "window",
+      "count": 13,
+      "sessions": 13,
+      "firstSeenUtc": "2026-10-16T19:52:20.796417Z",
+      "lastSeenUtc": "2026-10-16T19:52:20.963329Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/flood",
+          "count": 13
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 13
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 13
+        }
+      ],
+      "sampleStack": null,
+      "sampleComponentStack": null,
+      "sampleSessionId": "http-flood-12"
+    },
+    {
+      "fingerprint": "55949271d0a2682e8e1862bcf5bf8449",
+      "errorName": "Error",
+      "message": "Evidence error from signed-in member",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:17.207068Z",
+      "lastSeenUtc": "2026-10-16T19:52:17.207068Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence error from signed-in member\n    at eval (eval at evaluate (:290:30), <anonymous>:1:34)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "96188d51-c050-4b8b-a588-200a09aebe44"
+    },
+    {
+      "fingerprint": "8a846d1e1268ca3577b77afe576fd767",
+      "errorName": "Error",
+      "message": "Evidence error from internal browser",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:12.895424Z",
+      "lastSeenUtc": "2026-10-16T19:52:12.895424Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence error from internal browser\n    at eval (eval at evaluate (:290:30), <anonymous>:1:34)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "5a566808-36ce-4aa1-96b3-964066b05405"
+    },
+    {
+      "fingerprint": "9ad1d76c92b0e12dce869410cc3fc753",
+      "errorName": "Error",
+      "message": "Evidence flood error number e",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:08.503573Z",
+      "lastSeenUtc": "2026-10-16T19:52:08.503573Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence flood error number e\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "7cbb15435920a1a06d582a4a909177c5",
+      "errorName": "Error",
+      "message": "Evidence flood error number d",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:08.484976Z",
+      "lastSeenUtc": "2026-10-16T19:52:08.484976Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence flood error number d\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "09ae8a71cba0427559e2d8405ba09aec",
+      "errorName": "Error",
+      "message": "Evidence flood error number c",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:08.467244Z",
+      "lastSeenUtc": "2026-10-16T19:52:08.467244Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence flood error number c\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "1820b2c6cfef4f2714d23e55d83c4294",
+      "errorName": "Error",
+      "message": "Evidence flood error number b",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:08.448748Z",
+      "lastSeenUtc": "2026-10-16T19:52:08.448748Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence flood error number b\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "809c6270d1e7ed3817d3ac9383b6c15e",
+      "errorName": "Error",
+      "message": "Evidence flood error number a",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:08.427107Z",
+      "lastSeenUtc": "2026-10-16T19:52:08.427107Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence flood error number a\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "18299cc313cb9d2497f5a220e8fa04ef",
+      "errorName": "ChunkLoadError",
+      "message": "Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:06.903836Z",
+      "lastSeenUtc": "2026-10-16T19:52:06.903836Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": null,
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "522dbcfbefed616bf59d22a8d94eafaa",
+      "errorName": "TypeError",
+      "message": "Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js",
+      "source": "promise",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:05.393092Z",
+      "lastSeenUtc": "2026-10-16T19:52:05.393092Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "TypeError: Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "933fb190b77fe41016d9d6b73b1c40ce",
+      "errorName": "Error",
+      "message": "Evidence unhandled rejection",
+      "source": "promise",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:03.87553Z",
+      "lastSeenUtc": "2026-10-16T19:52:03.87553Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence unhandled rejection\n    at eval (eval at evaluate (:290:30), <anonymous>:1:24)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "999a899bb17265509163d1dd5f342d90",
+      "errorName": "Error",
+      "message": "Evidence runtime error for [email] at https://localhost:7000/quiz",
+      "source": "window",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:52:00.815604Z",
+      "lastSeenUtc": "2026-10-16T19:52:00.815604Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/categories",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "Error: Evidence runtime error for [email] at https://localhost:7000/quiz\n    at eval (eval at evaluate (:290:30), <anonymous>:3:15)",
+      "sampleComponentStack": null,
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    {
+      "fingerprint": "c527119b927527c08a6e758d68c64171",
+      "errorName": "TypeError",
+      "message": "featuredSets.map is not a function",
+      "source": "boundary",
+      "count": 1,
+      "sessions": 1,
+      "firstSeenUtc": "2026-10-16T19:51:56.335153Z",
+      "lastSeenUtc": "2026-10-16T19:51:56.335153Z",
+      "isNew": true,
+      "latestAppVersion": "3.58.0",
+      "topPaths": [
+        {
+          "value": "/",
+          "count": 1
+        }
+      ],
+      "browsers": [
+        {
+          "value": "Chrome",
+          "count": 1
+        }
+      ],
+      "devices": [
+        {
+          "value": "desktop",
+          "count": 1
+        }
+      ],
+      "sampleStack": "TypeError: featuredSets.map is not a function\n    at HomePage (http://localhost:7000/src/features/home/pages/HomePage.tsx:333:167)\n    at Object.react_stack_bottom_frame (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:18509:20)\n    at renderWithHooks (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:5654:24)\n    at updateFunctionComponent (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:7475:21)\n    at beginWork (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:8525:20)\n    at runWithFiberInDEV (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:997:72)\n    at performUnitOfWork (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12561:98)\n    at workLoopSync (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12424:43)\n    at renderRootSync (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12408:13)\n    at performWorkOnRoot (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:11827:37)",
+      "sampleComponentStack": "at HomePage (http://localhost:7000/src/features/home/pages/HomePage.tsx:50:36)\n    at RenderedRoute (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:6292:26)\n    at Routes (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:7135:3)\n    at main (<anonymous>)\n    at div (<anonymous>)\n    at Layout (http://localhost:7000/src/components/Layout.tsx:94:19)\n    at App (<anonymous>)\n    at AuthProvider (http://localhost:7000/src/contexts/AuthContext.tsx:36:32)\n    at Router (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:7076:13)\n    at BrowserRouter (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:10235:3)\n    at QueryClientProvider (http://localhost:7000/node_modules/.vite/deps/@tanstack_react-query.js:3101:3)\n    at ErrorBoundary (http://localhost:7000/src/components/ErrorBoundary.tsx:6:5)\n    at _HelmetProvider (http://localhost:7000/node_modules/.vite/deps/react-helmet-async.js:624:5)",
+      "sampleSessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[PASS] Render error caught by ErrorBoundary is reported once (source=boundary, componentStack, path, appVersion, sessionId) {"requests":1,"source":"boundary","path":"/","appVersion":"3.58.0","sessionId":"6be34670-3a40-46b3-8f56-09c7927de6d9","hasComponentStack":true,"transport":"ping"}
+[PASS] Plain runtime error (window error event) is captured {"message":"Evidence runtime error for [email] at https://localhost:7000/quiz"}
+[PASS] Same runtime error thrown 5 times in one tab is sent once {"sent":1}
+[PASS] Unhandled promise rejection is captured {"sent":1}
+[PASS] Failed dynamic import of a missing chunk is captured (unhandled rejection) {"message":"Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js"}
+[PASS] Failed <script> load is captured as ChunkLoadError {"message":"Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js"}
+[PASS] At most 10 reports leave one tab; the 11th+ distinct errors are not sent {"sentFromTab":10,"floodSent":5}
+[PASS] Anonymous reports use sendBeacon with a text/plain body {"resourceTypes":["ping"],"contentTypes":["text/plain;charset=UTF-8"]}
+[PASS] UI still works after reporting (categories page rendered, no fallback) 
+[PASS] Marked browser sends internalBrowser=true {"internalBrowser":true}
+[PASS] Signed-in report goes by keepalive fetch with a bearer token (application/json) {"resourceType":"fetch","contentType":"application/json","bearer":true}
+[PASS] Invalid payloads return 400 (oversized body 413) and store nothing {"badStatuses":{"unknown source":400,"absolute path":400,"blank message":400,"session id with spaces":400,"not JSON":400,"40 KB body":413},"rowsBefore":12,"rowsAfter":12}
+[PASS] Flood is capped: requests beyond the 30-per-10-minutes budget get 429 and store nothing {"sent":40,"accepted":13,"limited":27,"first429At":14,"rowsAdded":13,"statuses":"202,202,202,202,202,202,202,202,202,202,202,202,202,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429,429"}
+[PASS] Admin report: anonymous 401, non-admin 403 {"anonymous":401,"member":403}
+[PASS] Admin report excludes the internal-marker session by default and includes it with includeInternal=true {"defaultGroups":12,"includeInternalGroups":13,"internalSessions":1}
+[PASS] Admin groups by fingerprint (HTTP flood rows form one group with one session each) {"count":13,"sessions":13,"fingerprint":"b05110c85949a59f488248e93c46772d"}
+[PASS] Admin UI lists the render-error group 
+[PASS] Non-admin opening /admin/client-errors is redirected home {"landedOn":"/"}
+[PASS] DB: anonymous tab stored exactly 10 rows; repeated runtime error stored once {"sessionRows":10,"runtimeErrorRows":1}
+[PASS] DB: no query strings, secrets, or emails stored {"pathsWithQuery_secretRows_emailRows":"0,0,0"}
+[PASS] DB: internal flag per #121 (marker row internal, anonymous/member rows not) {"markerRowInternal":"t","anonymousInternalRows":"0","memberRow_auth_hasUser_internal":"true,true,false"}
+[PASS] DB: normal Chrome UA rows are not bot-flagged; device class desktop {"botRows":"0","devices":"desktop"}
+
+22/22 checks passed

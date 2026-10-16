@@ -1,0 +1,267 @@
+[
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "boundary",
+      "name": "TypeError",
+      "message": "featuredSets.map is not a function",
+      "stack": "TypeError: featuredSets.map is not a function\n    at HomePage (http://localhost:7000/src/features/home/pages/HomePage.tsx:333:167)\n    at Object.react_stack_bottom_frame (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:18509:20)\n    at renderWithHooks (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:5654:24)\n    at updateFunctionComponent (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:7475:21)\n    at beginWork (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:8525:20)\n    at runWithFiberInDEV (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:997:72)\n    at performUnitOfWork (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12561:98)\n    at workLoopSync (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12424:43)\n    at renderRootSync (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:12408:13)\n    at performWorkOnRoot (http://localhost:7000/node_modules/.vite/deps/react-dom_client.js:11827:37)",
+      "componentStack": "\n    at HomePage (http://localhost:7000/src/features/home/pages/HomePage.tsx:50:36)\n    at RenderedRoute (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:6292:26)\n    at Routes (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:7135:3)\n    at main (<anonymous>)\n    at div (<anonymous>)\n    at Layout (http://localhost:7000/src/components/Layout.tsx:94:19)\n    at App (<anonymous>)\n    at AuthProvider (http://localhost:7000/src/contexts/AuthContext.tsx:36:32)\n    at Router (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:7076:13)\n    at BrowserRouter (http://localhost:7000/node_modules/.vite/deps/react-router-dom.js:10235:3)\n    at QueryClientProvider (http://localhost:7000/node_modules/.vite/deps/@tanstack_react-query.js:3101:3)\n    at ErrorBoundary (http://localhost:7000/src/components/ErrorBoundary.tsx:6:5)\n    at _HelmetProvider (http://localhost:7000/node_modules/.vite/deps/react-helmet-async.js:624:5)",
+      "path": "/",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "c527119b927527c08a6e758d68c64171"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence runtime error for [email] at https://localhost:7000/quiz",
+      "stack": "Error: Evidence runtime error for [email] at https://localhost:7000/quiz\n    at eval (eval at evaluate (:290:30), <anonymous>:3:15)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "999a899bb17265509163d1dd5f342d90"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "promise",
+      "name": "Error",
+      "message": "Evidence unhandled rejection",
+      "stack": "Error: Evidence unhandled rejection\n    at eval (eval at evaluate (:290:30), <anonymous>:1:24)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "933fb190b77fe41016d9d6b73b1c40ce"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "promise",
+      "name": "TypeError",
+      "message": "Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js",
+      "stack": "TypeError: Failed to fetch dynamically imported module: http://localhost:7000/assets/missing-chunk-Ab12Cd34.js",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "522dbcfbefed616bf59d22a8d94eafaa"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "ChunkLoadError",
+      "message": "Failed to load script http://localhost:7000/assets/legacy-missing-Zz99Yy88.js",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "18299cc313cb9d2497f5a220e8fa04ef"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence flood error number a",
+      "stack": "Error: Evidence flood error number a\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "809c6270d1e7ed3817d3ac9383b6c15e"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence flood error number b",
+      "stack": "Error: Evidence flood error number b\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "1820b2c6cfef4f2714d23e55d83c4294"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence flood error number c",
+      "stack": "Error: Evidence flood error number c\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "09ae8a71cba0427559e2d8405ba09aec"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence flood error number d",
+      "stack": "Error: Evidence flood error number d\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "7cbb15435920a1a06d582a4a909177c5"
+    }
+  },
+  {
+    "actor": "A-anonymous",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence flood error number e",
+      "stack": "Error: Evidence flood error number e\n    at eval (eval at evaluate (:290:30), <anonymous>:3:32)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "6be34670-3a40-46b3-8f56-09c7927de6d9"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "9ad1d76c92b0e12dce869410cc3fc753"
+    }
+  },
+  {
+    "actor": "B-internal-marker",
+    "url": "/api/client-errors",
+    "resourceType": "ping",
+    "contentType": "text/plain;charset=UTF-8",
+    "bearer": false,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence error from internal browser",
+      "stack": "Error: Evidence error from internal browser\n    at eval (eval at evaluate (:290:30), <anonymous>:1:34)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "5a566808-36ce-4aa1-96b3-964066b05405",
+      "internalBrowser": true
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "8a846d1e1268ca3577b77afe576fd767"
+    }
+  },
+  {
+    "actor": "C-member",
+    "url": "/api/client-errors",
+    "resourceType": "fetch",
+    "contentType": "application/json",
+    "bearer": true,
+    "body": {
+      "source": "window",
+      "name": "Error",
+      "message": "Evidence error from signed-in member",
+      "stack": "Error: Evidence error from signed-in member\n    at eval (eval at evaluate (:290:30), <anonymous>:1:34)",
+      "path": "/categories",
+      "appVersion": "3.58.0",
+      "sessionId": "96188d51-c050-4b8b-a588-200a09aebe44"
+    },
+    "status": 202,
+    "response": {
+      "stored": true,
+      "reason": null,
+      "fingerprint": "55949271d0a2682e8e1862bcf5bf8449"
+    }
+  }
+]
