@@ -6,6 +6,22 @@ export interface TrackPageViewRequest {
   sessionId: string;
   /** Present only when this browser carries the internal-traffic marker. */
   internalBrowser?: boolean;
+  /** Visitor id from localStorage; omitted when GPC is on or storage is unavailable. */
+  visitorId?: string;
+  /** Raw referrer URL, sent only on a session's first hit. */
+  referrer?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  msclkid?: string;
+  ttclid?: string;
+  /** Build version of the SPA, stored on the session's first-hit snapshot. */
+  appVersion?: string;
 }
 
 /** One allowlisted engagement event; see AnalyticsEventCatalog on the API. */
@@ -28,6 +44,8 @@ export interface TrackAnalyticsEventsRequest {
   events: AnalyticsEventPayload[];
   /** Present only when this browser carries the internal-traffic marker. */
   internalBrowser?: boolean;
+  /** Visitor id from localStorage; fills a missing visitor id on the session's attribution row. */
+  visitorId?: string;
 }
 
 export const analyticsApi = {

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using Quizymode.Api.Features.Analytics;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
@@ -13,6 +14,7 @@ namespace Quizymode.Api.Tests.Features.Analytics;
 public sealed class TrackPageViewTests : DatabaseTestFixture
 {
     private readonly Mock<IUserContext> _userContextMock = new();
+    private readonly IAttributionClassifier _classifier = new AttributionClassifier();
 
     [Fact]
     public async Task HandleAsync_StoresAnonymousPageView()
@@ -23,7 +25,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/categories/science", "?sort=popular", "session-anon-1");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -48,7 +50,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/admin", string.Empty, "session-auth-1");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -72,7 +74,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new(path, string.Empty, "session-1");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsFailure.Should().BeTrue();
         (await DbContext.PageViews.CountAsync()).Should().Be(0);
@@ -87,7 +89,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/collections", "page=2", "session-2");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -108,7 +110,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/categories", string.Empty, "session-human-1");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -128,7 +130,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/", string.Empty, "session-bot-1");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -145,7 +147,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/", string.Empty, "session-no-ua");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -163,7 +165,7 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
 
         TrackPageView.Request request = new("/", string.Empty, "session-long-ua");
 
-        var result = await TrackPageView.HandleAsync(request, httpContext, DbContext, _userContextMock.Object, CancellationToken.None);
+        var result = await HandleAsync(request, httpContext);
 
         result.IsSuccess.Should().BeTrue();
 
@@ -177,12 +179,9 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
         _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
 
-        var result = await TrackPageView.HandleAsync(
+        var result = await HandleAsync(
             new TrackPageView.Request("/", string.Empty, "session-visitor"),
-            CreateHttpContext("198.51.100.40"),
-            DbContext,
-            _userContextMock.Object,
-            CancellationToken.None);
+            CreateHttpContext("198.51.100.40"));
 
         result.IsSuccess.Should().BeTrue();
         (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeFalse();
@@ -195,12 +194,9 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         _userContextMock.SetupGet(context => context.UserId).Returns(Guid.NewGuid().ToString());
         _userContextMock.SetupGet(context => context.IsAdmin).Returns(true);
 
-        var result = await TrackPageView.HandleAsync(
+        var result = await HandleAsync(
             new TrackPageView.Request("/categories", string.Empty, "session-admin"),
-            CreateHttpContext("198.51.100.41"),
-            DbContext,
-            _userContextMock.Object,
-            CancellationToken.None);
+            CreateHttpContext("198.51.100.41"));
 
         result.IsSuccess.Should().BeTrue();
         (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeTrue();
@@ -216,12 +212,9 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(true);
         _userContextMock.SetupGet(context => context.UserId).Returns(userId.ToString());
 
-        var result = await TrackPageView.HandleAsync(
+        var result = await HandleAsync(
             new TrackPageView.Request("/collections", string.Empty, "session-internal-user"),
-            CreateHttpContext("198.51.100.42"),
-            DbContext,
-            _userContextMock.Object,
-            CancellationToken.None);
+            CreateHttpContext("198.51.100.42"));
 
         result.IsSuccess.Should().BeTrue();
         (await DbContext.PageViews.SingleAsync()).IsInternal.Should().BeTrue();
@@ -233,17 +226,176 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
         _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
 
-        var result = await TrackPageView.HandleAsync(
+        var result = await HandleAsync(
             new TrackPageView.Request("/", string.Empty, "session-marked", InternalBrowser: true),
-            CreateHttpContext("198.51.100.43"),
-            DbContext,
-            _userContextMock.Object,
-            CancellationToken.None);
+            CreateHttpContext("198.51.100.43"));
 
         result.IsSuccess.Should().BeTrue();
         PageView pageView = await DbContext.PageViews.SingleAsync();
         pageView.IsInternal.Should().BeTrue();
         pageView.IsAuthenticated.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task HandleAsync_FirstHit_CreatesAnalyticsSessionWithAttribution()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        string visitorId = Guid.NewGuid().ToString();
+
+        var result = await HandleAsync(
+            new TrackPageView.Request(
+                "/categories/science",
+                "?utm_source=newsletter&utm_medium=email",
+                "session-first-hit",
+                VisitorId: visitorId,
+                Referrer: "https://mail.google.com/",
+                UtmSource: "newsletter",
+                UtmMedium: "email"),
+            CreateHttpContext("198.51.100.50", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"));
+
+        result.IsSuccess.Should().BeTrue();
+
+        AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync();
+        session.SessionId.Should().Be("session-first-hit");
+        session.VisitorId.Should().Be(visitorId);
+        session.LandingPath.Should().Be("/categories/science");
+        session.LandingQuery.Should().Be("?utm_source=newsletter&utm_medium=email");
+        session.UtmSource.Should().Be("newsletter");
+        session.Channel.Should().Be("email");
+        session.DeviceClass.Should().Be("desktop");
+    }
+
+    [Fact]
+    public async Task HandleAsync_SubsequentHit_DoesNotModifyExistingAnalyticsSession()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        await HandleAsync(
+            new TrackPageView.Request(
+                "/",
+                "?utm_source=first",
+                "session-repeat",
+                Referrer: "https://www.bing.com/search",
+                UtmSource: "first"),
+            CreateHttpContext("198.51.100.51"));
+
+        await HandleAsync(
+            new TrackPageView.Request(
+                "/categories",
+                "?utm_source=second",
+                "session-repeat",
+                Referrer: "https://www.facebook.com/",
+                UtmSource: "second"),
+            CreateHttpContext("198.51.100.51"));
+
+        (await DbContext.AnalyticsSessions.CountAsync()).Should().Be(1);
+        AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync();
+        session.LandingPath.Should().Be("/");
+        session.UtmSource.Should().Be("first");
+        // A utm_* tag takes priority over referrer-based classification (rule 3 before rule 4).
+        session.Channel.Should().Be("campaign");
+
+        (await DbContext.PageViews.CountAsync()).Should().Be(2);
+    }
+
+    [Fact]
+    public async Task HandleAsync_SignInLaterInSession_LinksUserAndVisitorWithoutChangingAttribution()
+    {
+        Guid userId = Guid.NewGuid();
+        DbContext.Users.Add(new User { Id = userId, Subject = "sub-link", Email = "link@example.com" });
+        await DbContext.SaveChangesAsync();
+
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        await HandleAsync(
+            new TrackPageView.Request("/", "?utm_source=reddit", "session-link", UtmSource: "reddit"),
+            CreateHttpContext("198.51.100.60"));
+
+        string visitorId = Guid.NewGuid().ToString();
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(true);
+        _userContextMock.SetupGet(context => context.UserId).Returns(userId.ToString());
+
+        await HandleAsync(
+            new TrackPageView.Request("/collections", string.Empty, "session-link", VisitorId: visitorId, UtmSource: "other"),
+            CreateHttpContext("198.51.100.60"));
+
+        AnalyticsSession session = await DbContext.AnalyticsSessions.AsNoTracking().SingleAsync();
+        session.UserId.Should().Be(userId);
+        session.VisitorId.Should().Be(visitorId);
+        session.UtmSource.Should().Be("reddit");
+        session.LandingPath.Should().Be("/");
+    }
+
+    [Fact]
+    public async Task HandleAsync_AppVersion_IsStoredOnFirstHitSnapshot()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        await HandleAsync(
+            new TrackPageView.Request("/", string.Empty, "session-version", AppVersion: "3.60.0"),
+            CreateHttpContext("198.51.100.61"));
+
+        (await DbContext.AnalyticsSessions.SingleAsync()).AppVersion.Should().Be("3.60.0");
+    }
+
+    [Fact]
+    public async Task HandleAsync_InvalidVisitorId_IsIgnoredButHitIsStillStored()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+
+        var result = await HandleAsync(
+            new TrackPageView.Request("/", string.Empty, "session-bad-visitor", VisitorId: "not-a-uuid"),
+            CreateHttpContext("198.51.100.52"));
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.PageViews.CountAsync()).Should().Be(1);
+        AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync();
+        session.VisitorId.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task HandleAsync_OversizedUtmValues_AreTruncatedAndHitIsStillStored()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        string oversizedUtmSource = new('x', 250);
+
+        var result = await HandleAsync(
+            new TrackPageView.Request(
+                "/",
+                string.Empty,
+                "session-oversized-utm",
+                UtmSource: oversizedUtmSource),
+            CreateHttpContext("198.51.100.53"));
+
+        result.IsSuccess.Should().BeTrue();
+        AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync();
+        session.UtmSource.Should().HaveLength(100);
+    }
+
+    private Task<Result<TrackPageView.Response>> HandleAsync(TrackPageView.Request request, DefaultHttpContext httpContext)
+    {
+        return TrackPageView.HandleAsync(
+            request,
+            httpContext,
+            DbContext,
+            _userContextMock.Object,
+            _classifier,
+            NullGeoService(),
+            CancellationToken.None);
+    }
+
+    private static IIpGeolocationService NullGeoService()
+    {
+        Mock<IIpGeolocationService> mock = new();
+        mock.Setup(g => g.GetCountryAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((string?)null);
+        return mock.Object;
     }
 
     private static DefaultHttpContext CreateHttpContext(string ipAddress, string? userAgent = null)

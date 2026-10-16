@@ -9,6 +9,7 @@ import {
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
+import AcquisitionTab from "../components/AcquisitionTab";
 import FunnelTab from "../components/FunnelTab";
 import InternalBrowserToggle from "../components/InternalBrowserToggle";
 import LearningTab from "../components/LearningTab";
@@ -30,11 +31,12 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
-type AnalyticsTab = "pages" | "sessions" | "funnel" | "learning";
+type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
   { label: "Pages", value: "pages", hint: "Which URLs were hit" },
   { label: "Sessions", value: "sessions", hint: "Whether visitors stayed" },
+  { label: "Acquisition", value: "acquisition", hint: "Where visitors came from" },
   { label: "Funnel", value: "funnel", hint: "Where visitors convert" },
   { label: "Learning", value: "learning", hint: "How study runs go" },
 ];
@@ -218,6 +220,10 @@ const PageViewAnalyticsPage = () => {
           includeInternal={includeInternal}
           formatDateTime={formatDateTime}
         />
+      )}
+
+      {tab === "acquisition" && (
+        <AcquisitionTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
       )}
 
       {tab === "funnel" && (

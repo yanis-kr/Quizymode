@@ -2,6 +2,7 @@ import { analyticsApi, type AnalyticsEventPayload } from "@/api/analytics";
 import { API_URL } from "@/api/client";
 import { getPageViewSessionId, isInternalBrowser } from "@/utils/pageViewTracking";
 import { getToken } from "@/utils/tokenStorage";
+import { getVisitorId } from "@/utils/visitorId";
 
 /** Must match AnalyticsEventCatalog on the API; unknown names are rejected there. */
 export type AnalyticsEventName =
@@ -122,6 +123,12 @@ export function createAnalyticsId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
+/** The visitor id (ANALYTICS-003) when one is allowed; omitted under Global Privacy Control or without storage. */
+function visitorIdField(): { visitorId?: string } {
+  const visitorId = getVisitorId();
+  return visitorId ? { visitorId } : {};
+}
+
 /** Sends anything still queued. Exposed for tests and for callers about to navigate away. */
 export async function flushAnalyticsEvents(): Promise<void> {
   flushScheduled = false;
@@ -133,6 +140,7 @@ export async function flushAnalyticsEvents(): Promise<void> {
         sessionId: getPageViewSessionId(),
         events: batch,
         ...(isInternalBrowser() ? { internalBrowser: true } : {}),
+        ...visitorIdField(),
       });
     } catch (error) {
       console.debug("Analytics event delivery failed", error);
@@ -214,6 +222,7 @@ function sendPendingOnPageHide(): void {
           sessionId: getPageViewSessionId(),
           events: pending.slice(start, start + MAX_BATCH),
           ...(isInternalBrowser() ? { internalBrowser: true } : {}),
+          ...visitorIdField(),
         }),
       }).catch(() => undefined);
     }

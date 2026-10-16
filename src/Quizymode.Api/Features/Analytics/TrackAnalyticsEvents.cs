@@ -22,7 +22,15 @@ public static partial class TrackAnalyticsEvents
     /// <param name="InternalBrowser">
     /// Client-asserted internal-browser marker, as on page views; it can only remove the sender's own events from reports.
     /// </param>
-    public sealed record Request(string SessionId, List<EventRequest>? Events, bool? InternalBrowser = null);
+    /// <param name="VisitorId">
+    /// Browser visitor id (ANALYTICS-003). A syntactically invalid value is ignored, not rejected. When the
+    /// session already has an attribution row with no visitor id, it is filled in from here.
+    /// </param>
+    public sealed record Request(
+        string SessionId,
+        List<EventRequest>? Events,
+        bool? InternalBrowser = null,
+        string? VisitorId = null);
 
     /// <param name="ClientEventId">
     /// Optional client id for one UI impression or action; repeats within the session are ignored.
@@ -189,7 +197,13 @@ public static partial class TrackAnalyticsEvents
         CancellationToken cancellationToken)
     {
         string sessionId = request.SessionId.Trim();
+
+        // A syntactically invalid visitor id is ignored rather than rejecting the batch.
+        string? visitorId = Guid.TryParse(request.VisitorId, out Guid _) ? request.VisitorId!.Trim() : null;
+
         Guid? userId = Guid.TryParse(userContext.UserId, out Guid parsedUserId) ? parsedUserId : null;
+
+        await LinkSessionIdentityAsync(db, sessionId, visitorId, userId, cancellationToken);
         string? userAgent = RequestMetadataHelper.GetUserAgent(httpContext);
         bool isBot = BotUserAgentDetector.IsBot(userAgent);
         DateTime occurredUtc = DateTime.UtcNow;
@@ -322,6 +336,48 @@ public static partial class TrackAnalyticsEvents
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IValidator<Request>, Validator>();
+        }
+    }
+    /// <summary>
+    /// Fills in a missing visitor id or user id on the session's attribution row, if one exists.
+    /// Attribution columns are never touched.
+    /// </summary>
+    private static async Task LinkSessionIdentityAsync(
+        ApplicationDbContext db,
+        string sessionId,
+        string? visitorId,
+        Guid? userId,
+        CancellationToken cancellationToken)
+    {
+        if (visitorId is null && userId is null)
+        {
+            return;
+        }
+
+        AnalyticsSession? session = await db.AnalyticsSessions
+            .FirstOrDefaultAsync(row => row.SessionId == sessionId, cancellationToken);
+
+        if (session is null)
+        {
+            return;
+        }
+
+        bool changed = false;
+        if (session.VisitorId is null && visitorId is not null)
+        {
+            session.VisitorId = visitorId;
+            changed = true;
+        }
+
+        if (session.UserId is null && userId is not null)
+        {
+            session.UserId = userId;
+            changed = true;
+        }
+
+        if (changed)
+        {
+            await db.SaveChangesAsync(cancellationToken);
         }
     }
 }

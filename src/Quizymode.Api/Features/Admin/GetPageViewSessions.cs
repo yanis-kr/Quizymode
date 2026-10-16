@@ -35,7 +35,8 @@ public static class GetPageViewSessions
         int TotalCount,
         int Page,
         int PageSize,
-        int TotalPages);
+        int TotalPages,
+        VisitorCohortReport.Response Visitors);
 
     public sealed record SummaryResponse(
         DateTime WindowStartUtc,
@@ -109,9 +110,9 @@ public static class GetPageViewSessions
         Duration
     }
 
-    public const string OutcomeAnonymous = "anonymous";
-    public const string OutcomeConverted = "converted";
-    public const string OutcomeAuthenticated = "authenticated";
+    public const string OutcomeAnonymous = SessionClassifier.OutcomeAnonymous;
+    public const string OutcomeConverted = SessionClassifier.OutcomeConverted;
+    public const string OutcomeAuthenticated = SessionClassifier.OutcomeAuthenticated;
 
     public sealed class Endpoint : IEndpoint
     {
@@ -222,99 +223,9 @@ public static class GetPageViewSessions
                     $"The selected window contains {sessionCount} sessions, which exceeds the {MaxSessionsAnalyzed} session analysis limit. Select a shorter time range."));
         }
 
-        // Q1: one row per session. Count(Distinct) inside GroupBy translates on both
-        // Npgsql and the SQLite provider used by the test fixture.
-        var aggregates = await baseQuery
-            .GroupBy(pageView => pageView.SessionId)
-            .Select(group => new
-            {
-                SessionId = group.Key,
-                FirstSeenUtc = group.Min(pageView => pageView.CreatedUtc),
-                LastSeenUtc = group.Max(pageView => pageView.CreatedUtc),
-                PageHits = group.Count(),
-                DistinctPages = group.Select(pageView => pageView.Path).Distinct().Count(),
-                AuthHits = group.Sum(pageView => pageView.IsAuthenticated ? 1 : 0)
-            })
-            .ToListAsync(cancellationToken);
-
-        // Q2: the first and last hit of every session, for entry/exit path and the auth
-        // state the outcome classification is based on.
-        var boundaryTimes = baseQuery
-            .GroupBy(pageView => pageView.SessionId)
-            .Select(group => new
-            {
-                SessionId = group.Key,
-                FirstUtc = group.Min(pageView => pageView.CreatedUtc),
-                LastUtc = group.Max(pageView => pageView.CreatedUtc)
-            });
-
-        var boundaryRows = await (
-            from pageView in baseQuery
-            join boundary in boundaryTimes on pageView.SessionId equals boundary.SessionId
-            where pageView.CreatedUtc == boundary.FirstUtc || pageView.CreatedUtc == boundary.LastUtc
-            select new
-            {
-                pageView.Id,
-                pageView.SessionId,
-                pageView.Path,
-                pageView.CreatedUtc,
-                pageView.IsAuthenticated,
-                pageView.UserId,
-                pageView.IpAddress,
-                pageView.UserAgent,
-                pageView.IsBot,
-                boundary.FirstUtc,
-                boundary.LastUtc
-            }).ToListAsync(cancellationToken);
-
-        // Two hits sharing a timestamp inside one session would otherwise produce duplicate
-        // boundary rows; ordering by Id makes the pick deterministic.
-        Dictionary<string, Boundary> boundaries = boundaryRows
-            .GroupBy(row => row.SessionId)
-            .ToDictionary(
-                group => group.Key,
-                group =>
-                {
-                    var entry = group.Where(row => row.CreatedUtc == row.FirstUtc)
-                        .OrderBy(row => row.Id)
-                        .First();
-                    var exit = group.Where(row => row.CreatedUtc == row.LastUtc)
-                        .OrderBy(row => row.Id)
-                        .Last();
-
-                    return new Boundary(
-                        EntryPath: entry.Path,
-                        ExitPath: exit.Path,
-                        EntryAuthenticated: entry.IsAuthenticated,
-                        UserId: exit.UserId ?? entry.UserId,
-                        IpAddress: entry.IpAddress,
-                        UserAgent: entry.UserAgent,
-                        IsBot: entry.IsBot);
-                });
-
-        List<SessionRow> sessions = aggregates
-            .Where(aggregate => boundaries.ContainsKey(aggregate.SessionId))
-            .Select(aggregate =>
-            {
-                Boundary boundary = boundaries[aggregate.SessionId];
-
-                string outcome = boundary.EntryAuthenticated
-                    ? OutcomeAuthenticated
-                    : aggregate.AuthHits > 0
-                        ? OutcomeConverted
-                        : OutcomeAnonymous;
-
-                return new SessionRow(
-                    SessionId: aggregate.SessionId,
-                    Outcome: outcome,
-                    StartedUtc: aggregate.FirstSeenUtc,
-                    EndedUtc: aggregate.LastSeenUtc,
-                    PageHits: aggregate.PageHits,
-                    DistinctPages: aggregate.DistinctPages,
-                    DurationSeconds: (int)Math.Round((aggregate.LastSeenUtc - aggregate.FirstSeenUtc).TotalSeconds),
-                    Boundary: boundary);
-            })
-            .ToList();
+        // Shared with GetAcquisitionReport so bounce/engaged/outcome numbers can never disagree
+        // between the two reports for the same window and exclusions.
+        List<SessionClassifier.ClassifiedSession> sessions = await SessionClassifier.ClassifyAsync(baseQuery, cancellationToken);
 
         SummaryResponse summary = BuildSummary(
             windowStartUtc,
@@ -330,7 +241,7 @@ public static class GetPageViewSessions
 
         // Outcome and minPages narrow the session list only; the summary, histogram, and
         // landing pages always describe the whole window so the denominators stay stable.
-        List<SessionRow> filtered = sessions
+        List<SessionClassifier.ClassifiedSession> filtered = sessions
             .Where(session => outcomeFilter switch
             {
                 OutcomeFilter.Anonymous => session.Outcome == OutcomeAnonymous,
@@ -359,15 +270,15 @@ public static class GetPageViewSessions
 
         int totalCount = filtered.Count;
         int totalPages = totalCount == 0 ? 0 : (int)Math.Ceiling(totalCount / (double)pageSize);
-        List<SessionRow> pageRows = filtered
+        List<SessionClassifier.ClassifiedSession> pageRows = filtered
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToList();
 
         // Resolve emails and countries for the visible page only.
         List<Guid> userIds = pageRows
-            .Where(session => session.Boundary.UserId.HasValue)
-            .Select(session => session.Boundary.UserId!.Value)
+            .Where(session => session.UserId.HasValue)
+            .Select(session => session.UserId!.Value)
             .Distinct()
             .ToList();
 
@@ -380,7 +291,7 @@ public static class GetPageViewSessions
                 .ToDictionaryAsync(user => user.Id, user => user.Email, cancellationToken);
         }
 
-        List<string> uniqueIps = pageRows.Select(session => session.Boundary.IpAddress).Distinct().ToList();
+        List<string> uniqueIps = pageRows.Select(session => session.IpAddress).Distinct().ToList();
         Dictionary<string, string?> countryByIp = (await Task.WhenAll(
             uniqueIps.Select(async ip => (ip, country: await geoService.GetCountryAsync(ip, cancellationToken)))))
             .ToDictionary(entry => entry.ip, entry => entry.country);
@@ -394,18 +305,21 @@ public static class GetPageViewSessions
                 session.PageHits,
                 session.DistinctPages,
                 session.DurationSeconds,
-                session.PageHits == 1,
-                session.Boundary.EntryPath,
-                session.Boundary.ExitPath,
-                session.Boundary.IpAddress,
-                countryByIp.GetValueOrDefault(session.Boundary.IpAddress),
-                session.Boundary.UserId.HasValue && userEmails.TryGetValue(session.Boundary.UserId.Value, out string? email)
+                session.IsBounce,
+                session.EntryPath,
+                session.ExitPath,
+                session.IpAddress,
+                countryByIp.GetValueOrDefault(session.IpAddress),
+                session.UserId.HasValue && userEmails.TryGetValue(session.UserId.Value, out string? email)
                     ? email
                     : null,
-                session.Boundary.UserAgent,
-                session.Boundary.IsBot,
+                session.UserAgent,
+                session.IsBot,
                 internalSessionIds.Contains(session.SessionId)))
             .ToList();
+
+        VisitorCohortReport.Response visitors = await VisitorCohortReport.BuildAsync(
+            db, windowStartUtc, windowEndUtc, request.IncludeBots, request.IncludeInternal, cancellationToken);
 
         return Result.Success(new Response(
             summary,
@@ -415,13 +329,14 @@ public static class GetPageViewSessions
             totalCount,
             page,
             pageSize,
-            totalPages));
+            totalPages,
+            visitors));
     }
 
     private static SummaryResponse BuildSummary(
         DateTime windowStartUtc,
         DateTime windowEndUtc,
-        List<SessionRow> sessions,
+        List<SessionClassifier.ClassifiedSession> sessions,
         int botSessions,
         bool botsExcluded,
         int internalSessions,
@@ -443,7 +358,7 @@ public static class GetPageViewSessions
         List<OutcomeStatsResponse> byOutcome = new[] { OutcomeAnonymous, OutcomeConverted, OutcomeAuthenticated }
             .Select(outcome =>
             {
-                List<SessionRow> group = sessions.Where(session => session.Outcome == outcome).ToList();
+                List<SessionClassifier.ClassifiedSession> group = sessions.Where(session => session.Outcome == outcome).ToList();
                 int groupBounced = group.Count(session => session.PageHits == 1);
 
                 return new OutcomeStatsResponse(
@@ -474,7 +389,7 @@ public static class GetPageViewSessions
             ByOutcome: byOutcome);
     }
 
-    private static List<DepthBucketResponse> BuildDepthBuckets(List<SessionRow> sessions)
+    private static List<DepthBucketResponse> BuildDepthBuckets(List<SessionClassifier.ClassifiedSession> sessions)
     {
         (string Label, int Min, int Max)[] buckets =
         [
@@ -488,7 +403,7 @@ public static class GetPageViewSessions
         return buckets
             .Select(bucket =>
             {
-                List<SessionRow> group = sessions
+                List<SessionClassifier.ClassifiedSession> group = sessions
                     .Where(session => session.PageHits >= bucket.Min && session.PageHits <= bucket.Max)
                     .ToList();
 
@@ -502,10 +417,10 @@ public static class GetPageViewSessions
             .ToList();
     }
 
-    private static List<LandingPageResponse> BuildLandingPages(List<SessionRow> sessions, int limit)
+    private static List<LandingPageResponse> BuildLandingPages(List<SessionClassifier.ClassifiedSession> sessions, int limit)
     {
         return sessions
-            .GroupBy(session => session.Boundary.EntryPath)
+            .GroupBy(session => session.EntryPath)
             .Select(group =>
             {
                 int bounced = group.Count(session => session.PageHits == 1);
@@ -574,23 +489,4 @@ public static class GetPageViewSessions
             _ => throw new ArgumentException("SortBy must be one of: recent, pages, duration.")
         };
     }
-
-    private sealed record Boundary(
-        string EntryPath,
-        string ExitPath,
-        bool EntryAuthenticated,
-        Guid? UserId,
-        string IpAddress,
-        string? UserAgent,
-        bool IsBot);
-
-    private sealed record SessionRow(
-        string SessionId,
-        string Outcome,
-        DateTime StartedUtc,
-        DateTime EndedUtc,
-        int PageHits,
-        int DistinctPages,
-        int DurationSeconds,
-        Boundary Boundary);
 }

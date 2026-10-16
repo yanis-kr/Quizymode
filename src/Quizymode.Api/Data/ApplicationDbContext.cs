@@ -47,6 +47,7 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<AnalyticsEvent> AnalyticsEvents => Set<AnalyticsEvent>();
 
     public DbSet<ClientError> ClientErrors => Set<ClientError>();
+    public DbSet<AnalyticsSession> AnalyticsSessions => Set<AnalyticsSession>();
 
     public DbSet<Keyword> Keywords => Set<Keyword>();
 
