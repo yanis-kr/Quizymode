@@ -15,6 +15,13 @@ import {
   readSignupRecovery,
   saveSignupRecovery,
 } from "@/features/auth/utils/signupRecovery";
+import {
+  trackSignInCompleted,
+  trackSignupConfirmationShown,
+  trackSignupConfirmed,
+  trackSignupFormStarted,
+  trackSignupSubmitted,
+} from "@/features/auth/utils/authAnalytics";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const RESEND_COOLDOWN_MS = 60_000;
@@ -142,6 +149,7 @@ const SignUpPage = () => {
     }
 
     setIsLoading(true);
+    trackSignupSubmitted(intent);
 
     try {
       const availability = await usersApi.checkAvailability({
@@ -171,6 +179,7 @@ const SignUpPage = () => {
       setResendCooldownUntil(cooldownUntil);
       saveSignupRecovery({ email: email.trim(), cooldownUntil });
       setNeedsConfirmation(true);
+      trackSignupConfirmationShown(intent);
     } catch (err: unknown) {
       setError(
         err instanceof Error ? err.message : "Sign up failed. Please try again."
@@ -189,7 +198,9 @@ const SignUpPage = () => {
       // Use email for confirmation since Cognito username is now the email
       const authenticated = await confirmSignup(email, confirmationCode);
       clearSignupRecovery();
+      trackSignupConfirmed(intent);
       if (authenticated) {
+        trackSignInCompleted(intent);
         navigate(intent.returnTo, { replace: true });
       } else {
         // Confirmation succeeded but a real session couldn't be verified
@@ -328,7 +339,11 @@ const SignUpPage = () => {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">{benefit.body}</p>
         </div>
-        <form className="space-y-6" onSubmit={handleSignUp}>
+        <form
+          className="space-y-6"
+          onSubmit={handleSignUp}
+          onFocus={() => trackSignupFormStarted(intent)}
+        >
           {error && (
             <div className="rounded-md bg-red-50 p-4">
               <div className="text-sm text-red-800">{error}</div>
