@@ -59,6 +59,16 @@ const DEFAULT_BENEFIT: BenefitCopy = {
   body: "Create a free account to bookmark public collections and build private practice sets.",
 };
 
+type FieldId = "username" | "email" | "password" | "legal" | "code";
+const FIELD_DOM_ID: Record<FieldId, string> = {
+  username: "username",
+  email: "email",
+  password: "password",
+  legal: "legal",
+  code: "code",
+};
+const ERROR_ID = "signup-error";
+
 function describeConfirmError(err: unknown): string {
   if (err instanceof Error) {
     if (err.name === "CodeMismatchException") {
@@ -93,6 +103,7 @@ const SignUpPage = () => {
   const [confirmationCode, setConfirmationCode] = useState("");
   const [hasAcceptedLegal, setHasAcceptedLegal] = useState(false);
   const [error, setError] = useState("");
+  const [errorFields, setErrorFields] = useState<FieldId[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [needsConfirmation, setNeedsConfirmation] = useState(false);
   const [autoSignInFailed, setAutoSignInFailed] = useState(false);
@@ -129,22 +140,44 @@ const SignUpPage = () => {
     return <Navigate to={intent.returnTo} replace />;
   }
 
+  const clearError = () => {
+    setError("");
+    setErrorFields([]);
+  };
+
+  // Shows an error in the alert region, marks the offending field(s) invalid and, when a field is
+  // known, moves focus to it so keyboard and screen-reader users land on what to fix.
+  const showError = (message: string, fields: FieldId[] = []) => {
+    setError(message);
+    setErrorFields(fields);
+    if (fields.length > 0) document.getElementById(FIELD_DOM_ID[fields[0]])?.focus();
+  };
+
+  const fieldErrorProps = (field: FieldId, extraDescribedBy?: string) => {
+    const invalid = errorFields.includes(field);
+    const describedBy = [extraDescribedBy, invalid ? ERROR_ID : undefined].filter(Boolean).join(" ");
+    return {
+      "aria-invalid": invalid || undefined,
+      "aria-describedby": describedBy || undefined,
+    };
+  };
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
 
     if (username.trim().toLowerCase() === email.trim().toLowerCase()) {
-      setError("Display name cannot be the same as email");
+      showError("Display name cannot be the same as email", ["username", "email"]);
       return;
     }
 
     if (password.length < 8) {
-      setError("Password must be at least 8 characters");
+      showError("Password must be at least 8 characters", ["password"]);
       return;
     }
 
     if (!hasAcceptedLegal) {
-      setError("You must agree to the Terms of Service and acknowledge the Privacy Policy");
+      showError("You must agree to the Terms of Service and acknowledge the Privacy Policy", ["legal"]);
       return;
     }
 
@@ -158,15 +191,18 @@ const SignUpPage = () => {
       });
 
       const errors: string[] = [];
+      const errorFieldIds: FieldId[] = [];
       if (!availability.isUsernameAvailable && availability.usernameError) {
         errors.push(availability.usernameError);
+        errorFieldIds.push("username");
       }
       if (!availability.isEmailAvailable && availability.emailError) {
         errors.push(availability.emailError);
+        errorFieldIds.push("email");
       }
 
       if (errors.length > 0) {
-        setError(errors.join(". "));
+        showError(errors.join(". "), errorFieldIds);
         setIsLoading(false);
         return;
       }
@@ -181,9 +217,7 @@ const SignUpPage = () => {
       setNeedsConfirmation(true);
       trackSignupConfirmationShown(intent);
     } catch (err: unknown) {
-      setError(
-        err instanceof Error ? err.message : "Sign up failed. Please try again."
-      );
+      showError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -191,7 +225,7 @@ const SignUpPage = () => {
 
   const handleConfirm = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
     setIsLoading(true);
 
     try {
@@ -209,23 +243,21 @@ const SignUpPage = () => {
         setAutoSignInFailed(true);
       }
     } catch (err: unknown) {
-      setError(describeConfirmError(err));
+      showError(describeConfirmError(err), ["code"]);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleResend = async () => {
-    setError("");
+    clearError();
     try {
       await resendConfirmationCode(email);
       const cooldownUntil = Date.now() + RESEND_COOLDOWN_MS;
       setResendCooldownUntil(cooldownUntil);
       saveSignupRecovery({ email, cooldownUntil });
     } catch (err: unknown) {
-      setError(
-        err instanceof Error ? err.message : "Could not resend the code. Please try again."
-      );
+      showError(err instanceof Error ? err.message : "Could not resend the code. Please try again.");
     }
   };
 
@@ -234,7 +266,7 @@ const SignUpPage = () => {
     setNeedsConfirmation(false);
     setAutoSignInFailed(false);
     setConfirmationCode("");
-    setError("");
+    clearError();
     setResendCooldownUntil(null);
   };
 
@@ -265,13 +297,13 @@ const SignUpPage = () => {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Confirm your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            <p className="mt-2 text-center text-sm text-gray-600 [overflow-wrap:anywhere]">
               We sent a confirmation code to {email}.
             </p>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleConfirm}>
             {error && (
-              <div className="rounded-md bg-red-50 p-4">
+              <div id={ERROR_ID} role="alert" className="rounded-md bg-red-50 p-4">
                 <div className="text-sm text-red-800">{error}</div>
               </div>
             )}
@@ -284,11 +316,12 @@ const SignUpPage = () => {
                 name="code"
                 type="text"
                 autoComplete="one-time-code"
+                {...fieldErrorProps("code")}
                 inputMode="numeric"
                 required
                 value={confirmationCode}
                 onChange={(e) => setConfirmationCode(e.target.value)}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="123456"
               />
             </div>
@@ -303,7 +336,7 @@ const SignUpPage = () => {
               </button>
             </div>
 
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-sm">
               <button
                 type="button"
                 onClick={handleResend}
@@ -345,7 +378,7 @@ const SignUpPage = () => {
           onFocus={() => trackSignupFormStarted(intent)}
         >
           {error && (
-            <div className="rounded-md bg-red-50 p-4">
+            <div id={ERROR_ID} role="alert" className="rounded-md bg-red-50 p-4">
               <div className="text-sm text-red-800">{error}</div>
             </div>
           )}
@@ -359,10 +392,11 @@ const SignUpPage = () => {
                 name="username"
                 type="text"
                 autoComplete="nickname"
+                {...fieldErrorProps("username")}
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="How you'll appear to others"
               />
             </div>
@@ -375,10 +409,11 @@ const SignUpPage = () => {
                 name="email"
                 type="email"
                 autoComplete="username"
+                {...fieldErrorProps("email")}
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="you@example.com"
               />
             </div>
@@ -392,10 +427,11 @@ const SignUpPage = () => {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   autoComplete="new-password"
+                  {...fieldErrorProps("password", "password-hint")}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full px-3 py-2 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-2 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="At least 8 characters"
                 />
                 <button
@@ -411,14 +447,16 @@ const SignUpPage = () => {
                   )}
                 </button>
               </div>
-              <p className="mt-1 text-xs text-gray-500">At least 8 characters.</p>
+              <p id="password-hint" className="mt-1 text-xs text-gray-500">At least 8 characters.</p>
             </div>
           </div>
 
           <div className="rounded-md border border-slate-200 bg-slate-50 p-3">
             <label className="flex items-start gap-3 text-sm text-slate-700">
               <input
+                id="legal"
                 type="checkbox"
+                {...fieldErrorProps("legal")}
                 checked={hasAcceptedLegal}
                 onChange={(e) => setHasAcceptedLegal(e.target.checked)}
                 className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
