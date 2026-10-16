@@ -20,7 +20,7 @@ interface SignupPromptProps {
 
 /**
  * A small, dismissible, inline signup prompt tied to the visitor's current action (CONV-001,
- * AC 4.2.9). It never blocks the page, is hidden for signed-in users (and while auth is still
+ * AC 4.2.10). It never blocks the page, is hidden for signed-in users (and while auth is still
  * resolving), and stays hidden for the tab session once dismissed.
  */
 export function SignupPrompt({ reason, returnTo, className }: SignupPromptProps) {

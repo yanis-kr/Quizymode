@@ -86,7 +86,7 @@ export function QuizCompletionView({
           {browseLabel}
         </Link>
       </div>
-      {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.9). */}
+      {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.10). */}
       <SignupPrompt reason="save-progress" className="mt-6" />
     </section>
   );

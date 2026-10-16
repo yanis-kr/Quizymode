@@ -64,7 +64,7 @@ function renderPrompt(reason: AuthReason, entry = "/quiz/collections/abc?quizSiz
   return render(strict ? <StrictMode>{tree}</StrictMode> : tree);
 }
 
-describe("SignupPrompt (CONV-001, AC 4.2.9)", () => {
+describe("SignupPrompt (CONV-001, AC 4.2.10)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockTrackEvents.mockResolvedValue({ accepted: 1, duplicates: 0 });

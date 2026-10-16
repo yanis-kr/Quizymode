@@ -2,7 +2,7 @@ import { trackEventOnce } from "@/features/analytics/analyticsEvents";
 import { SIGNUP_PATH, buildAuthIntentQuery, type AuthReason } from "./authIntent";
 
 /**
- * Contextual signup prompts (CONV-001, AC 4.2.9). Copy is a fixed, truthful lookup per allowlisted
+ * Contextual signup prompts (CONV-001, AC 4.2.10). Copy is a fixed, truthful lookup per allowlisted
  * reason: before PROGRESS-001 (#114) and CLAIM-003 (#115) ship, nothing here may claim that a guest
  * score is saved to, synced with, or imported into an account.
  */
@@ -15,7 +15,7 @@ export interface SignupPromptCopy {
 export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
   "save-progress": {
     heading: "Make your next quiz yours",
-    body: "Quiz scores are not saved to accounts yet. A free account lets you bookmark collections and build private practice sets.",
+    body: "Quiz scores are not saved to accounts yet. A free account lets you bookmark public collections and build private practice sets.",
     cta: "Create a free account",
   },
   "keep-collection": {

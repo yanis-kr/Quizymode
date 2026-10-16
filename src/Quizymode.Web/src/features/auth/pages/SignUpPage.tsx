@@ -32,9 +32,9 @@ interface BenefitCopy {
 }
 
 // Maps only #110's allowlisted reasons. Before PROGRESS-001 (#114) and
-// CLAIM-003 (#115) ship, save-progress copy must not promise score sync --
-// it explains the guest result stays in this browser and offers the
-// account benefits that actually exist today instead.
+// CLAIM-003 (#115) ship, save-progress copy must not claim a result is
+// saved, kept, synced or imported anywhere -- it says scores are not saved to
+// accounts yet and offers the account benefits that actually exist today.
 const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
   "keep-collection": {
     heading: "Make your next study session yours.",
@@ -49,8 +49,8 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
     body: "Create a free account to join the discussion where it's available.",
   },
   "save-progress": {
-    heading: "Keep this result",
-    body: "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+    heading: "Make your next quiz yours",
+    body: "Quiz scores are not saved to accounts yet. Create a free account to bookmark public collections and build private practice sets.",
   },
 };
 
