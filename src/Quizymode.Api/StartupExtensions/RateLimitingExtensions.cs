@@ -46,7 +46,9 @@ internal static partial class StartupExtensions
             // bites when an error loop or a script floods the endpoint.
             options.AddPolicy("client-errors", httpContext =>
             {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                // Keyed on the server-trusted client IP, never on a client-sent X-Forwarded-For value
+                // or session id, so rotating either cannot buy a fresh budget.
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
                 return RateLimitPartition.GetFixedWindowLimiter(
                     partitionKey,
                     static _ => new FixedWindowRateLimiterOptions
@@ -142,6 +144,25 @@ internal static partial class StartupExtensions
 
         string ipAddress = httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous";
         return $"ip:{ipAddress}";
+    }
+
+    /// <summary>
+    /// The user subject when authenticated, otherwise <see cref="ConnectionInfo.RemoteIpAddress"/>, which
+    /// <c>UseForwardedHeaders</c> sets from X-Forwarded-For only for hops appended by configured trusted proxies.
+    /// </summary>
+    internal static string GetAuthenticatedOrTrustedIpPartitionKey(HttpContext httpContext)
+    {
+        ClaimsPrincipal user = httpContext.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            string? subject = user.FindFirstValue("sub") ?? user.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!string.IsNullOrWhiteSpace(subject))
+            {
+                return $"user:{subject}";
+            }
+        }
+
+        return $"ip:{httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown"}";
     }
 
     private static string GetRejectionDetail(PathString requestPath)

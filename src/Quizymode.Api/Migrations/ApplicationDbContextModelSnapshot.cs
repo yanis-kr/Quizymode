@@ -294,7 +294,8 @@ namespace Quizymode.Api.Migrations
 
                     b.HasIndex("Fingerprint", "OccurredUtc");
 
-                    b.HasIndex("SessionId", "Fingerprint");
+                    b.HasIndex("SessionId", "Fingerprint")
+                        .IsUnique();
 
                     b.ToTable("ClientErrors", (string)null);
                 });

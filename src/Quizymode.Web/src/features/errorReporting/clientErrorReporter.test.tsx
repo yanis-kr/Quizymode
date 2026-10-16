@@ -238,6 +238,17 @@ describe("clientErrorReporter", () => {
     expect(screen.getByRole("button", { name: "Reload Page" })).toBeInTheDocument();
   });
 
+  it("strips query strings and fragments from app-relative URLs", () => {
+    expect(sanitize('No route matches URL "/signup?returnTo=/x&code=123456"')).toBe(
+      'No route matches URL "/signup"'
+    );
+    expect(sanitize("GET /api/items?search=my+secret failed")).toBe("GET /api/items failed");
+    expect(sanitize("at load (/src/a.ts?t=171:12:5)")).toBe("at load (/src/a.ts:12:5)");
+    expect(sanitize("redirect to /quiz#answer-3 failed")).toBe("redirect to /quiz failed");
+    expect(sanitize("bad params ?code=123456&state=abc here")).toBe("bad params  here");
+    expect(sanitize("ratio 3/4 is fine")).toBe("ratio 3/4 is fine");
+  });
+
   it("sanitizes URLs, emails and bearer tokens", () => {
     expect(
       sanitize("GET https://user:pw@api.test/items?q=1#x failed for a.b@example.com with Bearer abc.def")

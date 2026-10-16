@@ -188,6 +188,78 @@ public sealed class ReportClientErrorTests : DatabaseTestFixture
         first.Should().MatchRegex("^[0-9a-f]{32}$");
     }
 
+    [Theory]
+    [InlineData("No route matches URL \"/signup?returnTo=/x&code=123456\"", "No route matches URL \"/signup\"")]
+    [InlineData("GET /api/items?search=my+secret failed", "GET /api/items failed")]
+    [InlineData("at load (/src/a.ts?t=171:12:5)", "at load (/src/a.ts:12:5)")]
+    [InlineData("redirect to /quiz#answer-3 failed", "redirect to /quiz failed")]
+    [InlineData("bad params ?code=123456&state=abc here", "bad params  here")]
+    [InlineData("ratio 3/4 is fine", "ratio 3/4 is fine")]
+    public void Sanitize_StripsQueryStringsFromRelativeUrls(string input, string expected)
+    {
+        ReportClientError.Sanitize(input).Should().Be(expected);
+    }
+
+    [Fact]
+    public async Task HandleAsync_StoresNoQueryStringFromRelativeUrlsInMessageOrStack()
+    {
+        await Report(Valid(
+            message: "No route matches URL \"/signup?returnTo=/x&code=123456\"",
+            stack: "Error: x\n    at go (/src/router.ts?t=99:3:4)"));
+
+        ClientError row = await DbContext.ClientErrors.AsNoTracking().SingleAsync();
+        row.Message.Should().Be("No route matches URL \"/signup\"");
+        row.Stack.Should().Contain("/src/router.ts:3:4").And.NotContain("?");
+    }
+
+    [Fact]
+    public void Fingerprint_GroupsChunkLoadErrorsAcrossReleases()
+    {
+        ReportClientError.ComputeFingerprint("ChunkLoadError", "Failed to load script https://quizymode.com/assets/QuizModePage-BvA9x2_q.js", null)
+            .Should().Be(ReportClientError.ComputeFingerprint("ChunkLoadError", "Failed to load script https://quizymode.com/assets/QuizModePage-Cx81LmQz.js", null));
+    }
+
+    [Fact]
+    public async Task HandleAsync_StopsStoringAtTheGlobalCeilingWhateverTheSessionId()
+    {
+        DbContext.ClientErrors.AddRange(Enumerable.Range(0, ReportClientError.GlobalMaxReportsPerWindow).Select(index => new ClientError
+        {
+            Id = Guid.NewGuid(),
+            Fingerprint = $"{index:D32}",
+            Source = "window",
+            ErrorName = "Error",
+            Message = "m",
+            Path = "/",
+            SessionId = $"rotated-{index}",
+            DeviceClass = "desktop",
+            OccurredUtc = DateTime.UtcNow.AddMinutes(-1)
+        }));
+        await DbContext.SaveChangesAsync();
+
+        ReportClientError.Response response = await Report(Valid(sessionId: "brand-new-session"));
+
+        response.Stored.Should().BeFalse();
+        response.Reason.Should().Be(ReportClientError.GlobalLimitReason);
+        (await DbContext.ClientErrors.CountAsync()).Should().Be(ReportClientError.GlobalMaxReportsPerWindow);
+    }
+
+    [Fact]
+    public async Task Database_RejectsASecondRowForTheSameSessionAndFingerprint()
+    {
+        ClientError First() => new()
+        {
+            Id = Guid.NewGuid(), Fingerprint = "f", Source = "window", ErrorName = "Error", Message = "m",
+            Path = "/", SessionId = "dup", DeviceClass = "desktop", OccurredUtc = DateTime.UtcNow
+        };
+        DbContext.ClientErrors.Add(First());
+        await DbContext.SaveChangesAsync();
+        DbContext.ClientErrors.Add(First());
+
+        Func<Task> concurrentInsert = () => DbContext.SaveChangesAsync();
+
+        await concurrentInsert.Should().ThrowAsync<DbUpdateException>();
+    }
+
     [Fact]
     public void TopFrame_SupportsChromeAndFirefoxFormats()
     {

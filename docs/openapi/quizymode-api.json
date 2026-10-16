@@ -7829,7 +7829,7 @@
                 "type": "null"
               },
               {
-                "description": "`duplicate` or `session_limit` when not stored.",
+                "description": "`duplicate` or `session_limit` when not stored (`global_limit` is answered with 429).",
                 "$ref": "#/components/schemas/System.String"
               }
             ]

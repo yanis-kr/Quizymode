@@ -24,6 +24,17 @@ public static partial class ReportClientError
     /// <summary>Server-side backstop for the client's per-tab limit.</summary>
     public const int MaxReportsPerSession = 10;
 
+    /// <summary>
+    /// Ceiling on reports stored across all callers per <see cref="GlobalWindow"/>. It does not depend on any
+    /// client-supplied value, so rotating session ids and IPs together still cannot store unbounded rows.
+    /// </summary>
+    public const int GlobalMaxReportsPerWindow = 300;
+
+    /// <summary><see cref="Response.Reason"/> when the global ceiling is reached; the endpoint answers 429.</summary>
+    public const string GlobalLimitReason = "global_limit";
+
+    public static readonly TimeSpan GlobalWindow = TimeSpan.FromMinutes(10);
+
     public const string SourceBoundary = "boundary";
     public const string SourceWindow = "window";
     public const string SourcePromise = "promise";
@@ -53,7 +64,7 @@ public static partial class ReportClientError
         bool? InternalBrowser = null);
 
     /// <param name="Stored">False when the same error was already stored for this session, or the session hit its limit.</param>
-    /// <param name="Reason"><c>duplicate</c> or <c>session_limit</c> when not stored.</param>
+    /// <param name="Reason"><c>duplicate</c> or <c>session_limit</c> when not stored (<c>global_limit</c> is answered with 429).</param>
     /// <param name="Fingerprint">The report's 32-hex-character grouping key.</param>
     public sealed record Response(bool Stored, string? Reason, string Fingerprint);
 
@@ -66,6 +77,17 @@ public static partial class ReportClientError
     /// <summary>A URL: drops userinfo, query string, and fragment, keeps a trailing <c>:line:col</c>.</summary>
     [GeneratedRegex("""(?<scheme>[A-Za-z][A-Za-z0-9+.\-]*://)(?:[^\s/@?#]*@)?(?<rest>[^\s?#()'"<>]*)(?:[?#][^\s()'"<>]*?)?(?<pos>(?::\d+){1,2})?(?=[\s()'"<>]|$)""")]
     private static partial Regex UrlPattern();
+
+    /// <summary>
+    /// An app-relative path (starts with <c>/</c> after start, whitespace, a quote, bracket, <c>=</c> or <c>:</c>)
+    /// followed by a query string or fragment: drops the query/fragment, keeps a trailing <c>:line:col</c>.
+    /// </summary>
+    [GeneratedRegex("""(?<=^|[\s("'=:,\[])(?<path>/[^\s?#()'"<>]*)[?#][^\s()'"<>]*?(?<pos>(?::\d+){1,2})?(?=[\s()'"<>,\]]|$)""")]
+    private static partial Regex RelativeUrlPattern();
+
+    /// <summary>A bare query string token such as <c>?code=123</c> that is not attached to a path.</summary>
+    [GeneratedRegex("""(?<=^|[\s("'])\?[^\s()'"<>]*=[^\s()'"<>]*""")]
+    private static partial Regex BareQueryPattern();
 
     [GeneratedRegex(@"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")]
     private static partial Regex EmailPattern();
@@ -170,6 +192,14 @@ public static partial class ReportClientError
 
             ILogger logger = loggerFactory.CreateLogger(typeof(ReportClientError).FullName!);
             Response response = await HandleAsync(request!, httpContext, db, userContext, logger, cancellationToken);
+            if (response.Reason == GlobalLimitReason)
+            {
+                return Results.Problem(
+                    title: "Too Many Requests",
+                    detail: "Too many error reports. Please slow down.",
+                    statusCode: StatusCodes.Status429TooManyRequests);
+            }
+
             return Results.Accepted(value: response);
         }
     }
@@ -258,6 +288,15 @@ public static partial class ReportClientError
             return new Response(false, "session_limit", fingerprint);
         }
 
+        DateTime globalWindowStartUtc = DateTime.UtcNow - GlobalWindow;
+        int storedInWindow = await db.ClientErrors
+            .AsNoTracking()
+            .CountAsync(clientError => clientError.OccurredUtc >= globalWindowStartUtc, cancellationToken);
+        if (storedInWindow >= GlobalMaxReportsPerWindow)
+        {
+            return new Response(false, GlobalLimitReason, fingerprint);
+        }
+
         bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
         if (!isInternal && userId.HasValue)
         {
@@ -289,8 +328,25 @@ public static partial class ReportClientError
         };
 
         db.ClientErrors.Add(row);
-        // A report must not be lost because the page that sent it went away mid-request.
-        await db.SaveChangesAsync(CancellationToken.None);
+        try
+        {
+            // A report must not be lost because the page that sent it went away mid-request.
+            await db.SaveChangesAsync(CancellationToken.None);
+        }
+        catch (DbUpdateException)
+        {
+            // A concurrent report of the same error in the same session won the unique (SessionId, Fingerprint) race.
+            db.ChangeTracker.Clear();
+            bool alreadyStored = await db.ClientErrors
+                .AsNoTracking()
+                .AnyAsync(clientError => clientError.SessionId == sessionId && clientError.Fingerprint == fingerprint, CancellationToken.None);
+            if (alreadyStored)
+            {
+                return new Response(false, "duplicate", fingerprint);
+            }
+
+            throw;
+        }
 
         logger.LogWarning(
             "Client error {ClientErrorFingerprint} ({ClientErrorName}) from {ClientErrorSource} on {ClientErrorPath} in app version {ClientAppVersion}: {ClientErrorMessage}",
@@ -305,13 +361,16 @@ public static partial class ReportClientError
     }
 
     /// <summary>
-    /// Removes secrets and identifiers that must never be stored: URL query strings, fragments and
-    /// userinfo, email addresses, JWTs, and bearer tokens.
+    /// Removes secrets and identifiers that must never be stored: query strings and fragments of absolute
+    /// and app-relative URLs (and bare <c>?key=value</c> tokens), URL userinfo, email addresses, JWTs, and
+    /// bearer tokens.
     /// </summary>
     internal static string Sanitize(string value)
     {
         string result = UrlPattern().Replace(value, match =>
             match.Groups["scheme"].Value + match.Groups["rest"].Value + match.Groups["pos"].Value);
+        result = RelativeUrlPattern().Replace(result, match => match.Groups["path"].Value + match.Groups["pos"].Value);
+        result = BareQueryPattern().Replace(result, string.Empty);
         result = JwtPattern().Replace(result, "[token]");
         result = BearerPattern().Replace(result, "Bearer [token]");
         result = EmailPattern().Replace(result, "[email]");
@@ -332,7 +391,9 @@ public static partial class ReportClientError
 
     internal static string NormalizeMessage(string message)
     {
-        string result = GuidPattern().Replace(message, "<id>");
+        // Bundle content hashes change every release; chunk-load messages embed them in file names.
+        string result = BundleHashPattern().Replace(message, string.Empty);
+        result = GuidPattern().Replace(result, "<id>");
         result = HexPattern().Replace(result, "<hex>");
         result = DigitsPattern().Replace(result, "<n>");
         return WhitespacePattern().Replace(result, " ").Trim();

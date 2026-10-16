@@ -36,6 +36,19 @@ internal static partial class StartupExtensions
                 // In production, only trust Cloudflare's IP ranges
                 // Cloudflare IPs should be configured via KnownNetworks
             }
+
+            // Proxies in front of the API (for example the load balancer's private range) are trusted only when
+            // configured: ForwardedHeaders:KnownNetworks is a comma-separated CIDR list. Only then does
+            // Connection.RemoteIpAddress take the hop such a proxy appended to X-Forwarded-For; a value the
+            // client sent itself is never trusted, so per-IP rate limits cannot be dodged by spoofing it.
+            string? knownNetworks = builder.Configuration["ForwardedHeaders:KnownNetworks"];
+            if (!string.IsNullOrWhiteSpace(knownNetworks))
+            {
+                foreach (string cidr in knownNetworks.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                {
+                    options.KnownIPNetworks.Add(System.Net.IPNetwork.Parse(cidr));
+                }
+            }
         });
 
         // Add authentication before custom services so middleware and IUserContext work

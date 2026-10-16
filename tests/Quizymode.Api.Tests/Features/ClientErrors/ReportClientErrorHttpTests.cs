@@ -117,6 +117,26 @@ public sealed class ReportClientErrorHttpTests : DatabaseTestFixture, IAsyncLife
     }
 
     [Fact]
+    public async Task Post_RotatingForwardedForAndSessionId_DoesNotEscapeTheRateLimit()
+    {
+        List<HttpStatusCode> statuses = [];
+        for (int attempt = 0; attempt < 40; attempt++)
+        {
+            using HttpRequestMessage request = new(HttpMethod.Post, "/client-errors")
+            {
+                Content = JsonContent.Create(Body($"spoof-{attempt}"))
+            };
+            request.Headers.Add("X-Forwarded-For", $"203.0.113.{attempt + 1}");
+            using HttpResponseMessage response = await _client.SendAsync(request);
+            statuses.Add(response.StatusCode);
+        }
+
+        statuses.Take(30).Should().OnlyContain(status => status == HttpStatusCode.Accepted);
+        statuses.Skip(30).Should().OnlyContain(status => status == HttpStatusCode.TooManyRequests);
+        (await RowCountAsync()).Should().Be(30);
+    }
+
+    [Fact]
     public async Task Post_BeyondRateLimit_Returns429AndStoresNothingMore()
     {
         List<HttpStatusCode> statuses = [];

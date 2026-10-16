@@ -57,7 +57,7 @@ public sealed class GetClientErrorsTests : DatabaseTestFixture
         DbContext.ClientErrors.AddRange(
             Error("aaa", "s1", now.AddHours(-3), "/quiz", "3.57.0"),
             Error("aaa", "s2", now.AddHours(-2), "/quiz", "3.58.0", IPhone),
-            Error("aaa", "s2", now.AddHours(-1), "/categories", null),
+            Error("aaa", "s5", now.AddHours(-1), "/categories", null),
             Error("bbb", "s3", now.AddMinutes(-5), "/"),
             Error("old", "s4", now.AddDays(-30)));
         await DbContext.SaveChangesAsync();
@@ -69,12 +69,12 @@ public sealed class GetClientErrorsTests : DatabaseTestFixture
         GetClientErrors.GroupResponse top = response.Groups[0];
         top.Fingerprint.Should().Be("aaa");
         top.Count.Should().Be(3);
-        top.Sessions.Should().Be(2);
+        top.Sessions.Should().Be(3);
         top.LatestAppVersion.Should().Be("3.58.0");
         top.TopPaths.Should().Equal(new GetClientErrors.ValueCount("/quiz", 2), new GetClientErrors.ValueCount("/categories", 1));
         top.Browsers.Should().BeEquivalentTo([new GetClientErrors.ValueCount("Chrome", 2), new GetClientErrors.ValueCount("Safari", 1)]);
         top.Devices.Should().BeEquivalentTo([new GetClientErrors.ValueCount("desktop", 2), new GetClientErrors.ValueCount("mobile", 1)]);
-        top.SampleSessionId.Should().Be("s2");
+        top.SampleSessionId.Should().Be("s5");
         top.SampleStack.Should().StartWith("stack aaa");
         top.FirstSeenUtc.Should().BeCloseTo(now.AddHours(-3), TimeSpan.FromSeconds(1));
         top.LastSeenUtc.Should().BeCloseTo(now.AddHours(-1), TimeSpan.FromSeconds(1));

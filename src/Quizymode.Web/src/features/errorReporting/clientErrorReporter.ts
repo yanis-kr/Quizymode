@@ -43,6 +43,9 @@ const STORAGE_KEY = "quizymode.client-errors.sent";
 const EXTENSION_URL = /\b(?:chrome|moz|safari(?:-web)?|ms-browser|edge)-extension:\/\//i;
 const URL_PATTERN =
   /([A-Za-z][A-Za-z0-9+.-]*:\/\/)(?:[^\s/@?#]*@)?([^\s?#()'"<>]*)(?:[?#][^\s()'"<>]*?)?((?::\d+){1,2})?(?=[\s()'"<>]|$)/g;
+const RELATIVE_URL_PATTERN =
+  /(?<=^|[\s("'=:,[])(\/[^\s?#()'"<>]*)[?#][^\s()'"<>]*?((?::\d+){1,2})?(?=[\s()'"<>,\]]|$)/g;
+const BARE_QUERY_PATTERN = /(?<=^|[\s("'])\?[^\s()'"<>]*=[^\s()'"<>]*/g;
 const EMAIL_PATTERN = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 const JWT_PATTERN = /eyJ[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]*/g;
 const BEARER_PATTERN = /\bbearer\s+[A-Za-z0-9._~+/=-]+/gi;
@@ -140,12 +143,14 @@ export function installClientErrorReporting(): () => void {
   return installedCleanup;
 }
 
-/** Removes query strings, fragments and userinfo from URLs, and emails and tokens from text. */
+/** Removes query strings, fragments and userinfo from absolute and app-relative URLs, and emails and tokens from text. */
 export function sanitize(value: string): string {
   return value
     .replace(URL_PATTERN, (_match, scheme: string, rest: string, position?: string) =>
       `${scheme}${rest}${position ?? ""}`
     )
+    .replace(RELATIVE_URL_PATTERN, (_match, path: string, position?: string) => `${path}${position ?? ""}`)
+    .replace(BARE_QUERY_PATTERN, "")
     .replace(JWT_PATTERN, "[token]")
     .replace(BEARER_PATTERN, "Bearer [token]")
     .replace(EMAIL_PATTERN, "[email]");

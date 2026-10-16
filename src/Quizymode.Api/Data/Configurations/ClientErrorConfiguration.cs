@@ -74,7 +74,9 @@ internal sealed class ClientErrorConfiguration : IEntityTypeConfiguration<Client
 
         builder.HasIndex(clientError => clientError.OccurredUtc);
         builder.HasIndex(clientError => new { clientError.Fingerprint, clientError.OccurredUtc });
-        builder.HasIndex(clientError => new { clientError.SessionId, clientError.Fingerprint });
+        // The database, not check-then-insert, guarantees one row per error per session under concurrency.
+        builder.HasIndex(clientError => new { clientError.SessionId, clientError.Fingerprint })
+            .IsUnique();
         builder.HasIndex(clientError => clientError.AppVersion);
     }
 }
