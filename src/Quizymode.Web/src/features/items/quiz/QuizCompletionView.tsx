@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { ItemResponse } from "@/types/api";
 import type { QuizRunState } from "./quizRun";
 import { summarizeQuizRun } from "./quizRun";
+import { SignupPrompt } from "@/features/auth/components/SignupPrompt";
 
 interface QuizCompletionViewProps {
   run: QuizRunState;
@@ -85,6 +86,8 @@ export function QuizCompletionView({
           {browseLabel}
         </Link>
       </div>
+      {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.9). */}
+      <SignupPrompt reason="save-progress" className="mt-6" />
     </section>
   );
 }
