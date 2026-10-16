@@ -1,0 +1,17 @@
+﻿
+ RUN  v2.1.9 C:/Projects/Quizymode-wt-151/src/Quizymode.Web
+
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > offers the existing five-question public quiz without requiring an account
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > clips the decorative hero shapes so they cannot cause horizontal page scroll
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > keeps the hero and category browsing usable when categories fail
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > keeps the quick quiz and categories usable when featured sets fail
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > keeps the quick quiz and categories usable when public collections fail
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > keeps the quick quiz and categories usable when all home queries fail
+ ✓ src/features/home/pages/HomePage.test.tsx > HomePage > adds live category counters when the API responds
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  14:20:26
+   Duration  3.53s (transform 189ms, setup 179ms, collect 1.08s, tests 761ms, environment 821ms, prepare 198ms)
+
+

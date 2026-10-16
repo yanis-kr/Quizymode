@@ -1,0 +1,21 @@
+﻿
+Running 15 tests using 1 worker
+
+  ok  1 [e2e-full] › playwright\e2e\home.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz (1.2s)
+  ok  2 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 (1.3s)
+  ok  3 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 (1.2s)
+  ok  4 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 (1.3s)
+  ok  5 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 390x844 (1.3s)
+  ok  6 [e2e-full] › playwright\e2e\home.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz (1.3s)
+  ok  7 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 (1.3s)
+  ok  8 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 (1.2s)
+  ok  9 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 (1.3s)
+  ok 10 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 390x844 (1.4s)
+  ok 11 [e2e-full] › playwright\e2e\home.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz (1.5s)
+  ok 12 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 (1.4s)
+  ok 13 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 (1.2s)
+  ok 14 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 (1.6s)
+  ok 15 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 390x844 (1.6s)
+
+  15 passed (25.7s)
+

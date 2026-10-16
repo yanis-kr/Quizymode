@@ -1,0 +1,82 @@
+﻿
+Running 5 tests using 1 worker
+
+  ok 1 [e2e-full] › playwright\e2e\home.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz (1.2s)
+  x  2 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 (1.4s)
+  x  3 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 (1.4s)
+  x  4 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 (1.4s)
+  ok 5 [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 390x844 (1.5s)
+
+
+  1) [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m195[39m
+    Received:    [31m247[39m
+
+      54 |       innerWidth: window.innerWidth,
+      55 |     }));
+    > 56 |     expect(scrollWidth).toBeLessThanOrEqual(innerWidth);
+         |                         ^
+      57 |   });
+      58 | }
+      59 |
+        at C:\Projects\Quizymode-wt-151\playwright\e2e\home.spec.ts:56:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    playwright\test-results\e2e-home-AC-3-0-4---home-h-6ec46-izontal-overflow-at-195x422-e2e-full\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: playwright\test-results\e2e-home-AC-3-0-4---home-h-6ec46-izontal-overflow-at-195x422-e2e-full\error-context.md
+
+  2) [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m260[39m
+    Received:    [31m288[39m
+
+      54 |       innerWidth: window.innerWidth,
+      55 |     }));
+    > 56 |     expect(scrollWidth).toBeLessThanOrEqual(innerWidth);
+         |                         ^
+      57 |   });
+      58 | }
+      59 |
+        at C:\Projects\Quizymode-wt-151\playwright\e2e\home.spec.ts:56:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    playwright\test-results\e2e-home-AC-3-0-4---home-h-d415b-izontal-overflow-at-260x450-e2e-full\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: playwright\test-results\e2e-home-AC-3-0-4---home-h-d415b-izontal-overflow-at-260x450-e2e-full\error-context.md
+
+  3) [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m320[39m
+    Received:    [31m333[39m
+
+      54 |       innerWidth: window.innerWidth,
+      55 |     }));
+    > 56 |     expect(scrollWidth).toBeLessThanOrEqual(innerWidth);
+         |                         ^
+      57 |   });
+      58 | }
+      59 |
+        at C:\Projects\Quizymode-wt-151\playwright\e2e\home.spec.ts:56:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    playwright\test-results\e2e-home-AC-3-0-4---home-h-f06c0-izontal-overflow-at-320x568-e2e-full\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: playwright\test-results\e2e-home-AC-3-0-4---home-h-f06c0-izontal-overflow-at-320x568-e2e-full\error-context.md
+
+  3 failed
+    [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 195x422 
+    [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 260x450 
+    [e2e-full] › playwright\e2e\home.spec.ts:34:3 › AC 3.0.4 - home has no horizontal overflow at 320x568 
+  2 passed (14.5s)
+

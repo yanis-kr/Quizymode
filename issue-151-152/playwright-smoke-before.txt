@@ -1,0 +1,49 @@
+﻿
+Running 1 test using 1 worker
+
+playwright.cmd : (node:20312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+At line:1 char:468
++ ... tinue; $o = & node_modules\.bin\playwright.cmd test --no-deps --proje ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:20312) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [smoke] › playwright\e2e\zz-before-152.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz (2.2s)
+
+
+  1) [smoke] › playwright\e2e\zz-before-152.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('Question')
+    Expected: visible
+    Error: strict mode violation: getByText('Question') resolved to 2 elements:
+        1) <div class="text-sm text-gray-500 truncate max-w-xs sm:max-w-sm md:max-w-lg">A public five-item trivia sampler with surprising…</div> aka getByText('A public five-item trivia')
+        2) <h3 class="text-base font-medium text-gray-900">Question</h3> aka getByRole('heading', { name: 'Question' })
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('Question')[22m
+
+
+      17 |     /\/quiz\/collections\/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511\/fun\+trivia\+facts/
+      18 |   );
+    > 19 |   await expect(page.getByText("Question")).toBeVisible({ timeout: 10_000 });
+         |                                            ^
+      20 |   await expect(page.getByText(/^\s*A\./).first()).toBeVisible();
+      21 |   await expect(page).not.toHaveURL(/\/login(?:[/?#]|$)/);
+      22 | });
+        at C:\Projects\Quizymode-wt-151\playwright\e2e\zz-before-152.spec.ts:19:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    playwright\test-results\e2e-zz-before-152-AC-3-0-s-b1604-the-five-question-home-quiz-smoke\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: playwright\test-results\e2e-zz-before-152-AC-3-0-s-b1604-the-five-question-home-quiz-smoke\error-context.md
+
+  1 failed
+    [smoke] › playwright\e2e\zz-before-152.spec.ts:5:1 › AC 3.0 @smoke - anonymous visitor can start the five-question home quiz 
+

@@ -1,0 +1,15 @@
+﻿before 195x422: scrollWidth=247 innerWidth=195 overflow=52px maxScrollX=52 ctaVisible=true ctaInside=true
+before 260x450: scrollWidth=288 innerWidth=260 overflow=28px maxScrollX=28 ctaVisible=true ctaInside=true
+before 320x568: scrollWidth=333 innerWidth=320 overflow=13px maxScrollX=13 ctaVisible=true ctaInside=true
+before 390x844: scrollWidth=390 innerWidth=390 overflow=0px maxScrollX=0 ctaVisible=true ctaInside=true
+before 1280x900: scrollWidth=1280 innerWidth=1280 overflow=0px maxScrollX=0 ctaVisible=true ctaInside=true
+195x422
+    247 div absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl
+    238 div absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5
+    230 div absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl
+260x450
+    288 div absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl
+320x568
+    333 div absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl
+390x844
+1280x900

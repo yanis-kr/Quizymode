@@ -1,0 +1,130 @@
+[
+  {
+    "label": "before",
+    "viewport": "195x422",
+    "overflowPx": 52,
+    "ctaVisible": true,
+    "innerWidth": 195,
+    "clientWidth": 195,
+    "scrollWidth": 247,
+    "bodyScrollWidth": 247,
+    "maxScrollX": 52,
+    "ctaBox": {
+      "x": 15,
+      "y": 276,
+      "w": 165,
+      "h": 60
+    },
+    "ctaFullyInsideHorizontally": true,
+    "elementsPastRightEdge": [
+      {
+        "tag": "div",
+        "cls": "absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl",
+        "right": 247
+      },
+      {
+        "tag": "div",
+        "cls": "absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5",
+        "right": 238
+      },
+      {
+        "tag": "div",
+        "cls": "absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl",
+        "right": 230
+      }
+    ],
+    "screenshot": "screenshots/before-195x422-home.png"
+  },
+  {
+    "label": "before",
+    "viewport": "260x450",
+    "overflowPx": 28,
+    "ctaVisible": true,
+    "innerWidth": 260,
+    "clientWidth": 260,
+    "scrollWidth": 288,
+    "bodyScrollWidth": 288,
+    "maxScrollX": 28,
+    "ctaBox": {
+      "x": 15,
+      "y": 228,
+      "w": 230,
+      "h": 40
+    },
+    "ctaFullyInsideHorizontally": true,
+    "elementsPastRightEdge": [
+      {
+        "tag": "div",
+        "cls": "absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl",
+        "right": 288
+      }
+    ],
+    "screenshot": "screenshots/before-260x450-home.png"
+  },
+  {
+    "label": "before",
+    "viewport": "320x568",
+    "overflowPx": 13,
+    "ctaVisible": true,
+    "innerWidth": 320,
+    "clientWidth": 320,
+    "scrollWidth": 333,
+    "bodyScrollWidth": 333,
+    "maxScrollX": 13,
+    "ctaBox": {
+      "x": 15,
+      "y": 208,
+      "w": 290,
+      "h": 40
+    },
+    "ctaFullyInsideHorizontally": true,
+    "elementsPastRightEdge": [
+      {
+        "tag": "div",
+        "cls": "absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl",
+        "right": 333
+      }
+    ],
+    "screenshot": "screenshots/before-320x568-home.png"
+  },
+  {
+    "label": "before",
+    "viewport": "390x844",
+    "overflowPx": 0,
+    "ctaVisible": true,
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "bodyScrollWidth": 390,
+    "maxScrollX": 0,
+    "ctaBox": {
+      "x": 15,
+      "y": 180,
+      "w": 360,
+      "h": 40
+    },
+    "ctaFullyInsideHorizontally": true,
+    "elementsPastRightEdge": [],
+    "screenshot": "screenshots/before-390x844-home.png"
+  },
+  {
+    "label": "before",
+    "viewport": "1280x900",
+    "overflowPx": 0,
+    "ctaVisible": true,
+    "innerWidth": 1280,
+    "clientWidth": 1280,
+    "scrollWidth": 1280,
+    "bodyScrollWidth": 1280,
+    "maxScrollX": 0,
+    "ctaBox": {
+      "x": 1014,
+      "y": 99,
+      "w": 213,
+      "h": 40
+    },
+    "ctaFullyInsideHorizontally": true,
+    "elementsPastRightEdge": [],
+    "screenshot": "screenshots/before-1280x900-home.png"
+  }
+]
