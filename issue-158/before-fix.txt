@@ -1,0 +1,8 @@
+    at startTests (file:///C:/Projects/Quizymode-claude/src/Quizymode.Web/node_modules/@vitest/runner/dist/index.js:1271:3)
+   × pending policy acceptance sync after confirming a new account (#158) > records the acceptance and clears the queue when username is the sub, email only on the ID token 78ms
+     → expected "spy" to be called 1 times, but got 0 times
+   × pending policy acceptance sync after confirming a new account (#158) > records the acceptance and clears the queue when cognito:username is the sub, email only on the ID token 76ms
+     → expected "spy" to be called 1 times, but got 0 times
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
