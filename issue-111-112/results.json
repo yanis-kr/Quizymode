@@ -1,0 +1,936 @@
+{
+  "layout": [
+    {
+      "viewport": "mobile-390x844",
+      "reason": "default",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "reason": "save-progress",
+      "heading": "Keep this result",
+      "body": "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 737,
+        "bottom": 775,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 737,
+        "bottom": 775,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "reason": "keep-collection",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark this collection for later and build private practice sets.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "reason": "create-content",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to create private items and collections, and use the existing study-guide import workflow.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 755,
+        "bottom": 793,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 755,
+        "bottom": 793,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "reason": "join-discussion",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to join the discussion where it's available.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "reason": "unknown-script",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 745,
+        "bottom": 783,
+        "left": 41,
+        "right": 349,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "default",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "save-progress",
+      "heading": "Keep this result",
+      "body": "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 763,
+        "bottom": 801,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 763,
+        "bottom": 801,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "keep-collection",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark this collection for later and build private practice sets.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "create-content",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to create private items and collections, and use the existing study-guide import workflow.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "join-discussion",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to join the discussion where it's available.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 771,
+        "bottom": 809,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 771,
+        "bottom": 809,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-1280x900",
+      "reason": "unknown-script",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 781,
+        "bottom": 819,
+        "left": 416,
+        "right": 864,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-200pct-640x450",
+      "reason": "default",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 640,
+      "scrollWidth": 640,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 670,
+        "bottom": 708,
+        "left": 96,
+        "right": 544,
+        "fullyInViewport": false
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 206,
+        "bottom": 244,
+        "left": 96,
+        "right": 544,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "desktop-200pct-640x450",
+      "reason": "save-progress",
+      "heading": "Keep this result",
+      "body": "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 640,
+      "scrollWidth": 640,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 634,
+        "bottom": 672,
+        "left": 96,
+        "right": 544,
+        "fullyInViewport": false
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 206,
+        "bottom": 244,
+        "left": 96,
+        "right": 544,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-200pct-195x422",
+      "reason": "default",
+      "heading": "Make your next study session yours.",
+      "body": "Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 195,
+      "scrollWidth": 195,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 1070,
+        "bottom": 1108,
+        "left": 41,
+        "right": 154,
+        "fullyInViewport": false
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 192,
+        "bottom": 230,
+        "left": 41,
+        "right": 154,
+        "fullyInViewport": true
+      }
+    },
+    {
+      "viewport": "mobile-200pct-195x422",
+      "reason": "save-progress",
+      "heading": "Keep this result",
+      "body": "Your result stays saved in this browser for now. Create a free account to bookmark public collections and build private practice sets.",
+      "innerWidth": 195,
+      "scrollWidth": 195,
+      "overflowX": 0,
+      "submitBeforeScroll": {
+        "top": 1022,
+        "bottom": 1060,
+        "left": 41,
+        "right": 154,
+        "fullyInViewport": false
+      },
+      "scriptReflected": false,
+      "submitAfterScroll": {
+        "top": 192,
+        "bottom": 230,
+        "left": 41,
+        "right": 154,
+        "fullyInViewport": true
+      }
+    }
+  ],
+  "keyboard": {
+    "desktop": [
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Quizymode",
+        "href": "/",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Categories",
+        "href": "/categories",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Featured",
+        "href": "/featured",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Collections",
+        "href": "/collections",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Sign In",
+        "href": "/login",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Sign Up",
+        "href": "/signup",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "id": "username",
+        "label": "Display name",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "nickname",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "id": "email",
+        "label": "Email",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "username",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "id": "password",
+        "label": "Password",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "new-password",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "id": null,
+        "label": null,
+        "aria": "Show password",
+        "text": "",
+        "href": null,
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "id": null,
+        "label": "I agree to the Terms of Service and acknowledge the Privacy Policy. You control whether your collections are private or shared.",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Terms of Service",
+        "href": "/terms",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Privacy Policy",
+        "href": "/privacy",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "submit",
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Sign up",
+        "href": null,
+        "autocomplete": null,
+        "outline": "none 0px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0"
+      }
+    ],
+    "passwordToggleViaKeyboard": "text",
+    "checkboxViaSpace": true,
+    "legalLinks": {
+      "termsHref": "/terms",
+      "privacyHref": "/privacy"
+    },
+    "termsNavigated": "http://localhost:7000/terms",
+    "mobile": [
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Quizymode",
+        "href": "/",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Open main menu",
+        "href": null,
+        "autocomplete": null,
+        "outline": "none 0px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "id": "username",
+        "label": "Display name",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "nickname",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "id": "email",
+        "label": "Email",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "username",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "id": "password",
+        "label": "Password",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": "new-password",
+        "outline": "none 0px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "id": null,
+        "label": null,
+        "aria": "Show password",
+        "text": "",
+        "href": null,
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "id": null,
+        "label": "I agree to the Terms of Service and acknowledge the Privacy Policy. You control whether your collections are private or shared.",
+        "aria": null,
+        "text": "",
+        "href": null,
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Terms of Service",
+        "href": "/terms",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Privacy Policy",
+        "href": "/privacy",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "submit",
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Sign up",
+        "href": null,
+        "autocomplete": null,
+        "outline": "none 0px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Sign in",
+        "href": "/login?reason=save-progress",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "About",
+        "href": "/about",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "type": null,
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "User Guide",
+        "href": "https://yanis-kr.github.io/Quizymode/",
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "type": "button",
+        "id": null,
+        "label": null,
+        "aria": null,
+        "text": "Feedback",
+        "href": null,
+        "autocomplete": null,
+        "outline": "auto 1px",
+        "boxShadow": "none"
+      }
+    ]
+  },
+  "a11y": {
+    "fields": [
+      {
+        "tag": "button",
+        "id": null,
+        "type": "button",
+        "label": null,
+        "ariaLabel": null,
+        "autocomplete": null,
+        "required": null,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "input",
+        "id": "username",
+        "type": "text",
+        "label": "Display name",
+        "ariaLabel": null,
+        "autocomplete": "nickname",
+        "required": true,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "input",
+        "id": "email",
+        "type": "email",
+        "label": "Email",
+        "ariaLabel": null,
+        "autocomplete": "username",
+        "required": true,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "input",
+        "id": "password",
+        "type": "password",
+        "label": "Password",
+        "ariaLabel": null,
+        "autocomplete": "new-password",
+        "required": true,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "button",
+        "id": null,
+        "type": "button",
+        "label": null,
+        "ariaLabel": "Show password",
+        "autocomplete": null,
+        "required": null,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "input",
+        "id": null,
+        "type": "checkbox",
+        "label": "I agree to the Terms of Service and acknowledge the Privacy ",
+        "ariaLabel": null,
+        "autocomplete": null,
+        "required": false,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "button",
+        "id": null,
+        "type": "submit",
+        "label": null,
+        "ariaLabel": null,
+        "autocomplete": null,
+        "required": null,
+        "describedBy": null,
+        "invalid": null
+      },
+      {
+        "tag": "button",
+        "id": null,
+        "type": "button",
+        "label": null,
+        "ariaLabel": null,
+        "autocomplete": null,
+        "required": null,
+        "describedBy": null,
+        "invalid": null
+      }
+    ],
+    "requirementsHintBeforeSubmit": 1,
+    "shortPasswordError": {
+      "text": "Password must be at least 8 characters",
+      "role": null,
+      "ariaLive": null,
+      "passwordDescribedBy": null,
+      "passwordInvalid": null,
+      "nativeValidationMessage": "",
+      "focused": ""
+    }
+  },
+  "confirmation": {
+    "mobile-390x844": {
+      "codeInput": {
+        "autocomplete": "one-time-code",
+        "inputMode": "numeric",
+        "type": "text",
+        "autofocus": false
+      },
+      "overflow": {
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "overflowX": 0
+      },
+      "badCode": {
+        "text": "That code doesn't match. Check it and try again, or resend a new code.",
+        "role": null,
+        "ariaLive": null,
+        "url": "/signup"
+      },
+      "stillOnConfirmation": 1,
+      "emailKept": 1,
+      "resendButtonText": "Resend code (61s)",
+      "resendDisabled": true,
+      "afterReload": {
+        "confirmationShown": 1,
+        "emailShown": 1,
+        "storage": {
+          "quizymode.signup-recovery.v1": "{\"version\":1,\"email\":\"review.user@example.com\",\"cooldownUntil\":1792171930520,\"expiresAt\":1792258270520}"
+        }
+      },
+      "storageContainsSecrets": false,
+      "confirmed": {
+        "overflow": {
+          "innerWidth": 390,
+          "scrollWidth": 390,
+          "overflowX": 0
+        },
+        "signInHref": "/login?reason=save-progress"
+      }
+    },
+    "desktop-1280x900": {
+      "codeInput": {
+        "autocomplete": "one-time-code",
+        "inputMode": "numeric",
+        "type": "text",
+        "autofocus": false
+      },
+      "overflow": {
+        "innerWidth": 1280,
+        "scrollWidth": 1280,
+        "overflowX": 0
+      },
+      "badCode": {
+        "text": "That code doesn't match. Check it and try again, or resend a new code.",
+        "role": null,
+        "ariaLive": null,
+        "url": "/signup"
+      },
+      "stillOnConfirmation": 1,
+      "emailKept": 1,
+      "resendButtonText": "Resend code (59s)",
+      "resendDisabled": true,
+      "afterReload": {
+        "confirmationShown": 1,
+        "emailShown": 1,
+        "storage": {
+          "quizymode.signup-recovery.v1": "{\"version\":1,\"email\":\"review.user@example.com\",\"cooldownUntil\":1792171934635,\"expiresAt\":1792258274635}"
+        }
+      },
+      "storageContainsSecrets": false,
+      "confirmed": {
+        "overflow": {
+          "innerWidth": 1280,
+          "scrollWidth": 1280,
+          "overflowX": 0
+        },
+        "signInHref": "/login?reason=save-progress"
+      }
+    },
+    "mobile-200pct-195x422": {
+      "overflow": {
+        "innerWidth": 195,
+        "scrollWidth": 208,
+        "overflowX": 13
+      }
+    }
+  },
+  "notes": [],
+  "cognitoCalls": [
+    "SignUp",
+    "ConfirmSignUp",
+    "ConfirmSignUp",
+    "SignUp",
+    "ConfirmSignUp",
+    "ConfirmSignUp",
+    "SignUp"
+  ]
+}
