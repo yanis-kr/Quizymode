@@ -7,6 +7,7 @@ import {
   buildAuthIntentQuery,
   parseAuthIntent,
 } from "@/features/auth/utils/authIntent";
+import { trackSignInCompleted } from "@/features/auth/utils/authAnalytics";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const LoginPage = () => {
       // AND the app has verified an authenticated session -- a resolved
       // promise is itself sufficient evidence to navigate now.
       await login(email, password);
+      trackSignInCompleted(intent);
       navigate(intent.returnTo, { replace: true });
     } catch (err: unknown) {
       setError(
